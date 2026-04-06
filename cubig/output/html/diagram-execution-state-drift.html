@@ -1,0 +1,217 @@
+<style>
+/* ── ESD Diagram: Execution State Drift — Light theme ── */
+.esd-diag {
+  font-family: var(--ds-font-base, "DM Sans", sans-serif);
+  margin-top: var(--ds-space-lg, 24px);
+}
+
+/* OS Window frame */
+.esd-diag__window {
+  background: var(--ds-color-surface-white, #fff);
+  border-radius: var(--ds-radius-md, 18px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.esd-diag__titlebar {
+  background: linear-gradient(180deg, #f0f0f0 0%, #e4e4e4 100%);
+  height: 36px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 8px;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.esd-diag__dot { width: 12px; height: 12px; border-radius: 50%; }
+.esd-diag__dot--close { background: #ff5f57; }
+.esd-diag__dot--min   { background: #ffbd2e; }
+.esd-diag__dot--max   { background: #28ca41; }
+
+/* Content area — white */
+.esd-diag__content {
+  background: var(--ds-color-surface-white, #fff);
+  padding: var(--ds-space-xl, 32px);
+}
+
+/* 2-col comparison grid */
+.esd-diag__compare {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--ds-space-lg, 24px);
+  align-items: start;
+}
+
+/* Column headers */
+.esd-diag__col-header {
+  padding: 12px 16px;
+  border-radius: var(--ds-radius-sm, 8px);
+  font-size: var(--ds-text-sm, 14px);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: var(--ds-space-sm, 12px);
+}
+
+.esd-diag__col-header--left {
+  background: var(--ds-color-neutral-050, #f2f2f2);
+  color: var(--ds-color-text-primary, #0f0f0f);
+  border: 1px solid var(--ds-color-border-default, #e6e7e9);
+}
+
+.esd-diag__col-header--right {
+  background: #fff0f0;
+  color: #ff3030;
+  border: 1px solid #ffcccc;
+}
+
+/* VS separator */
+.esd-diag__vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8px;
+  font-size: var(--ds-text-sm, 14px);
+  font-weight: 500;
+  color: var(--ds-color-text-tertiary, #9c9c9c);
+  min-width: 32px;
+}
+
+/* Individual cards */
+.esd-diag__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: var(--ds-radius-sm, 8px);
+  margin-bottom: var(--ds-space-xs, 8px);
+}
+
+.esd-diag__item:last-of-type { margin-bottom: 0; }
+
+/* Left cards — neutral light */
+.esd-diag__item--left {
+  background: var(--ds-color-surface-white, #fff);
+  border: 1px solid var(--ds-color-border-default, #e6e7e9);
+}
+
+.esd-diag__item-label--left {
+  font-size: var(--ds-text-sm, 14px);
+  font-weight: 500;
+  color: var(--ds-color-text-primary, #0f0f0f);
+}
+
+.esd-diag__item-status {
+  font-size: var(--ds-text-xs, 12px);
+  font-weight: 500;
+  color: var(--ds-color-success, #0e824c);
+  white-space: nowrap;
+}
+
+/* Right cards — warm red/orange emphasis */
+.esd-diag__item--right {
+  background: #fff5f5;
+  border: 1px solid #ffcccc;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.esd-diag__item-label--right {
+  font-size: var(--ds-text-sm, 14px);
+  font-weight: 600;
+  color: var(--ds-color-error, #ff3030);
+}
+
+.esd-diag__item-drift {
+  font-size: var(--ds-text-xs, 12px);
+  font-weight: 400;
+  color: var(--ds-color-error-light, #ff6b6b);
+}
+
+/* Column footnotes — same layer, below cards */
+.esd-diag__footnote {
+  margin-top: var(--ds-space-sm, 12px);
+  font-size: var(--ds-text-xs, 12px);
+  color: var(--ds-color-text-tertiary, #9c9c9c);
+  font-style: italic;
+  text-align: center;
+  padding: 8px 0;
+  border-top: 1px dashed var(--ds-color-border-default, #e6e7e9);
+}
+
+.esd-diag__footnote--right {
+  color: var(--ds-color-error, #ff3030);
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Bottom caption */
+.esd-diag__caption {
+  margin-top: var(--ds-space-md, 16px);
+  text-align: center;
+  font-size: var(--ds-text-xs, 12px);
+  color: var(--ds-color-text-tertiary, #9c9c9c);
+}
+
+/* Responsive: 2-col → 1-col */
+@media (max-width: 640px) {
+  .esd-diag__compare { grid-template-columns: 1fr; gap: var(--ds-space-sm, 12px); }
+  .esd-diag__vs { padding: 0; justify-content: flex-start; }
+  .esd-diag__content { padding: var(--ds-space-md, 16px); }
+}
+</style>
+
+<div class="esd-diag">
+  <div class="esd-diag__window">
+    <div class="esd-diag__titlebar">
+      <span class="esd-diag__dot esd-diag__dot--close"></span>
+      <span class="esd-diag__dot esd-diag__dot--min"></span>
+      <span class="esd-diag__dot esd-diag__dot--max"></span>
+    </div>
+
+    <div class="esd-diag__content">
+      <div class="esd-diag__compare">
+
+        <div class="esd-diag__left-col">
+          <div class="esd-diag__col-header esd-diag__col-header--left">What teams check</div>
+          <div class="esd-diag__item esd-diag__item--left">
+            <span class="esd-diag__item-label--left">Model weights</span>
+            <span class="esd-diag__item-status">Unchanged ✓</span>
+          </div>
+          <div class="esd-diag__item esd-diag__item--left">
+            <span class="esd-diag__item-label--left">Hyperparameters</span>
+            <span class="esd-diag__item-status">Unchanged ✓</span>
+          </div>
+          <div class="esd-diag__item esd-diag__item--left">
+            <span class="esd-diag__item-label--left">Model registry</span>
+            <span class="esd-diag__item-status">No update ✓</span>
+          </div>
+          <p class="esd-diag__footnote">Results were still wrong.</p>
+        </div>
+
+        <div class="esd-diag__vs">vs</div>
+
+        <div class="esd-diag__right-col">
+          <div class="esd-diag__col-header esd-diag__col-header--right">What actually changed</div>
+          <div class="esd-diag__item esd-diag__item--right">
+            <span class="esd-diag__item-label--right">Schema</span>
+            <span class="esd-diag__item-drift">Silently drifted</span>
+          </div>
+          <div class="esd-diag__item esd-diag__item--right">
+            <span class="esd-diag__item-label--right">Pipeline</span>
+            <span class="esd-diag__item-drift">Silently drifted</span>
+          </div>
+          <div class="esd-diag__item esd-diag__item--right">
+            <span class="esd-diag__item-label--right">Runtime</span>
+            <span class="esd-diag__item-drift">Silently drifted</span>
+          </div>
+          <p class="esd-diag__footnote esd-diag__footnote--right">Execution state drift</p>
+        </div>
+
+      </div>
+
+      <p class="esd-diag__caption">Most drift monitors are not built to detect this.</p>
+
+    </div>
+  </div>
+</div>

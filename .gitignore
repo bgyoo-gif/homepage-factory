@@ -1,0 +1,7 @@
+.DS_Store
+server/certs/
+server/jobs/
+server/server.log
+server/__pycache__/
+*.pyc
+node_modules/

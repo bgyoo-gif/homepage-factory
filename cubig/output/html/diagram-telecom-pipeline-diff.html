@@ -1,0 +1,251 @@
+<!-- Telecom Pipeline Diff — DS [W] Diagram 토큰 기반 -->
+<style>
+.tcp-diag {
+  font-family: var(--ds-font-base, "DM Sans", sans-serif);
+  margin-top: var(--ds-space-lg, 24px);
+}
+/* OS Window — ds-diagram__window */
+.tcp-diag__window {
+  background: var(--ds-diag-surface, #f8f8f8);
+  border-radius: var(--ds-radius-md, 18px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10);
+  overflow: hidden;
+}
+.tcp-diag__titlebar {
+  background: linear-gradient(180deg, #e8e8e8 0%, #d8d8d8 100%);
+  height: 36px; display: flex; align-items: center; padding: 0 14px; gap: 8px;
+  border-bottom: 1px solid #c0c0c0;
+}
+.tcp-diag__dot { width: 12px; height: 12px; border-radius: 50%; }
+.tcp-diag__dot--close { background: #ff5f57; }
+.tcp-diag__dot--min { background: #ffbd2e; }
+.tcp-diag__dot--max { background: #28ca41; }
+.tcp-diag__titlebar-label {
+  margin: 0 auto; font-size: var(--ds-text-xs, 12px); font-weight: 500;
+  color: var(--ds-diag-text-sub, #666); font-family: var(--ds-font-code, monospace);
+  transform: translateX(-18px);
+}
+/* Content — ds-diag-os-content gradient */
+.tcp-diag__content {
+  background: var(--ds-diag-os-content, linear-gradient(135deg, #dff0ea 0%, #eef3ff 40%, #f3eeff 70%, #fdeef8 100%));
+  padding: var(--ds-space-xl, 32px);
+  position: relative;
+}
+/* Main card — silver gradient */
+.tcp-diag__card {
+  background: linear-gradient(145deg, #ffffff 0%, #f0f0f0 40%, #e8e8e8 70%, #f5f5f5 100%);
+  border: 1px solid var(--ds-diag-border, #d0d0d0);
+  border-radius: var(--ds-radius-md, 18px);
+  overflow: hidden;
+  position: relative;
+}
+/* Card title */
+.tcp-diag__card-title {
+  text-align: center; padding: var(--ds-space-sm, 12px) var(--ds-space-lg, 24px);
+  font-size: var(--ds-text-sm, 14px); font-weight: 500;
+  color: var(--ds-diag-text, #2a2a2a); letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--ds-diag-border-light, #e0e0e0);
+  font-family: var(--ds-font-code, monospace);
+  background: linear-gradient(180deg, #fff 0%, #f8f8f8 100%);
+}
+/* Pipeline nodes row */
+.tcp-diag__nodes {
+  display: flex; align-items: stretch; padding: var(--ds-space-lg, 24px) var(--ds-space-md, 16px);
+  gap: 0; position: relative;
+}
+/* Individual node */
+.tcp-diag__node {
+  flex: 1; text-align: center; padding: 14px 10px;
+  border-radius: var(--ds-radius-sm, 8px);
+  border: 1px solid var(--ds-diag-border-light, #e0e0e0);
+  background: var(--ds-diag-surface-inner, #f2f2f2);
+  display: flex; flex-direction: column; gap: 3px; align-items: center; justify-content: center;
+}
+.tcp-diag__node-title { font-size: var(--ds-text-sm, 14px); font-weight: 600; color: var(--ds-diag-text, #2a2a2a); }
+.tcp-diag__node-sub { font-size: var(--ds-text-xs, 12px); color: var(--ds-diag-text-sub, #666); }
+/* Error node — [V-2] gradient card 패턴 참조 (red tint) */
+.tcp-diag__node--error {
+  background: linear-gradient(145deg, #fff5f5 0%, #ffe8e8 100%);
+  border: 1.5px solid #ff3030;
+}
+.tcp-diag__node--error .tcp-diag__node-title { color: #ff3030; }
+.tcp-diag__node--error .tcp-diag__node-sub { color: #ff6b6b; }
+/* Arrow gap between nodes */
+.tcp-diag__arrow-gap {
+  width: 36px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+}
+/* Schema change label (above first node) */
+.tcp-diag__schema-label {
+  position: absolute; top: 6px; left: var(--ds-space-md, 16px);
+  font-size: var(--ds-text-xs, 12px); color: #ff3030; font-weight: 500;
+  display: flex; align-items: center; gap: 4px;
+}
+.tcp-diag__schema-label::after {
+  content: ''; display: inline-block; width: 0; height: 0;
+  border-left: 4px solid transparent; border-right: 4px solid transparent;
+  border-top: 5px solid #ff3030;
+}
+/* SVG overlay for arrows */
+.tcp-diag__svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+/* Run Binding — ds-diagram__default-wrap (silver gradient card) */
+.tcp-diag__rb {
+  margin: var(--ds-space-md, 16px) var(--ds-space-md, 16px) 0;
+  padding: 2px;
+  border-radius: var(--ds-radius-md, 18px);
+  background: var(--ds-gradient-card-silver, linear-gradient(109deg, #898989 0%, #fff 17%, #D5D5D5 63%, #F6F5F6 84%, #898989 100%));
+  box-shadow: rgba(113, 141, 176, 0.25) 0px 1px 20px 0px;
+}
+.tcp-diag__rb-inner {
+  background: var(--ds-color-surface-white, #fff);
+  border-radius: calc(var(--ds-radius-md, 18px) - 2px);
+  padding: var(--ds-space-md, 16px) var(--ds-space-lg, 24px);
+  text-align: center;
+}
+.tcp-diag__rb-title { font-size: var(--ds-text-sm, 14px); font-weight: 600; color: var(--ds-diag-text, #2a2a2a); margin: 0 0 4px; }
+.tcp-diag__rb-desc { font-size: var(--ds-text-xs, 12px); color: var(--ds-diag-text-sub, #666); margin: 0; }
+/* Bottom comparison */
+.tcp-diag__compare {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--ds-space-sm, 12px);
+  margin: var(--ds-space-md, 16px) var(--ds-space-md, 16px) var(--ds-space-md, 16px);
+}
+/* Without — ds-diagram__default-wrap (silver) */
+.tcp-diag__cmp-without {
+  padding: 2px; border-radius: var(--ds-radius-md, 18px);
+  background: var(--ds-gradient-card-silver, linear-gradient(109deg, #898989 0%, #fff 17%, #D5D5D5 63%, #F6F5F6 84%, #898989 100%));
+  box-shadow: rgba(113, 141, 176, 0.25) 0px 1px 20px 0px;
+}
+.tcp-diag__cmp-without-inner {
+  background: var(--ds-color-surface-white, #fff);
+  border-radius: calc(var(--ds-radius-md, 18px) - 2px);
+  padding: var(--ds-space-sm, 12px); text-align: center;
+}
+/* With — ds-diagram__exchange-wrap--blue (blue gradient) */
+.tcp-diag__cmp-with {
+  padding: 2px; border-radius: var(--ds-radius-md, 18px);
+  background: var(--ds-gradient-card-blue, linear-gradient(109deg, #BFE1FB 0%, #fff 17%, #FFEDFA 38%, #81B8FB 51%, #E2E3F0 73%, #BFE1FB 100%));
+  box-shadow: rgba(113, 141, 176, 0.25) 0px 1px 20px 0px;
+}
+.tcp-diag__cmp-with-inner {
+  background: var(--ds-gradient-inner-blue, linear-gradient(99deg, #E9EEFB 0%, #FCFCFE 58%, #fff 100%));
+  border-radius: calc(var(--ds-radius-md, 18px) - 2px);
+  padding: var(--ds-space-sm, 12px); text-align: center;
+}
+.tcp-diag__cmp-title { font-size: var(--ds-text-sm, 14px); font-weight: 600; margin: 0 0 3px; color: var(--ds-diag-text, #2a2a2a); }
+.tcp-diag__cmp-desc { font-size: var(--ds-text-xs, 12px); color: var(--ds-diag-text-sub, #666); margin: 0; }
+/* Responsive */
+@media (max-width: 640px) {
+  .tcp-diag__nodes { flex-wrap: wrap; gap: 8px; }
+  .tcp-diag__arrow-gap { display: none; }
+  .tcp-diag__node { flex: 1 1 calc(50% - 4px); }
+  .tcp-diag__compare { grid-template-columns: 1fr; }
+  .tcp-diag__svg { display: none; }
+}
+</style>
+
+<div class="tcp-diag">
+  <div class="tcp-diag__window">
+    <div class="tcp-diag__titlebar">
+      <span class="tcp-diag__dot tcp-diag__dot--close"></span>
+      <span class="tcp-diag__dot tcp-diag__dot--min"></span>
+      <span class="tcp-diag__dot tcp-diag__dot--max"></span>
+      <span class="tcp-diag__titlebar-label">Telecom churn prediction pipeline</span>
+    </div>
+    <div class="tcp-diag__content">
+      <div class="tcp-diag__card">
+        <div class="tcp-diag__card-title">Pipeline flow</div>
+
+        <div class="tcp-diag__nodes" id="tcp-nodes">
+          <div class="tcp-diag__schema-label">schema change</div>
+
+          <div class="tcp-diag__node tcp-diag__node--error" id="tcp-n1">
+            <span class="tcp-diag__node-title">Upstream schema</span>
+            <span class="tcp-diag__node-sub">New segment field</span>
+          </div>
+          <div class="tcp-diag__arrow-gap" id="tcp-a1"></div>
+          <div class="tcp-diag__node" id="tcp-n2">
+            <span class="tcp-diag__node-title">Feature store</span>
+            <span class="tcp-diag__node-sub">Customer features</span>
+          </div>
+          <div class="tcp-diag__arrow-gap" id="tcp-a2"></div>
+          <div class="tcp-diag__node" id="tcp-n3">
+            <span class="tcp-diag__node-title">Churn model</span>
+            <span class="tcp-diag__node-sub">Unchanged</span>
+          </div>
+          <div class="tcp-diag__arrow-gap" id="tcp-a3"></div>
+          <div class="tcp-diag__node tcp-diag__node--error" id="tcp-n4">
+            <span class="tcp-diag__node-title">Prediction scores</span>
+            <span class="tcp-diag__node-sub">Shifted</span>
+          </div>
+
+          <svg class="tcp-diag__svg" id="tcp-svg" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="tcp-arr-dark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="#444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+            </defs>
+          </svg>
+        </div>
+
+        <div class="tcp-diag__rb">
+          <div class="tcp-diag__rb-inner">
+            <p class="tcp-diag__rb-title">Run Binding</p>
+            <p class="tcp-diag__rb-desc">Diffs Release State between runs — surfaces schema change immediately</p>
+          </div>
+        </div>
+
+        <div class="tcp-diag__compare">
+          <div class="tcp-diag__cmp-without">
+            <div class="tcp-diag__cmp-without-inner">
+              <p class="tcp-diag__cmp-title">Without Run Binding</p>
+              <p class="tcp-diag__cmp-desc">No mechanism to identify cause</p>
+            </div>
+          </div>
+          <div class="tcp-diag__cmp-with">
+            <div class="tcp-diag__cmp-with-inner">
+              <p class="tcp-diag__cmp-title">With Run Binding</p>
+              <p class="tcp-diag__cmp-desc">Diff surfaces schema change at source</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var GAP = 8;
+  function draw(){
+    var wrap = document.getElementById('tcp-nodes');
+    var svg = document.getElementById('tcp-svg');
+    if(!wrap||!svg) return;
+    var wr = wrap.getBoundingClientRect();
+    var defs = svg.querySelector('defs');
+    svg.innerHTML = ''; if(defs) svg.appendChild(defs);
+    var NS = 'http://www.w3.org/2000/svg';
+    var nodes = [
+      document.getElementById('tcp-n1'),
+      document.getElementById('tcp-n2'),
+      document.getElementById('tcp-n3'),
+      document.getElementById('tcp-n4')
+    ];
+    for(var i=0;i<nodes.length-1;i++){
+      var a = nodes[i].getBoundingClientRect();
+      var b = nodes[i+1].getBoundingClientRect();
+      var x1 = a.right - wr.left + GAP;
+      var y1 = a.top - wr.top + a.height/2;
+      var x2 = b.left - wr.left - GAP;
+      var y2 = b.top - wr.top + b.height/2;
+      var line = document.createElementNS(NS,'line');
+      line.setAttribute('x1',x1); line.setAttribute('y1',y1);
+      line.setAttribute('x2',x2); line.setAttribute('y2',y2);
+      line.setAttribute('stroke','#444');
+      line.setAttribute('stroke-width','1.5');
+      line.setAttribute('marker-end','url(#tcp-arr-dark)');
+      svg.appendChild(line);
+    }
+  }
+  setTimeout(draw,100);
+  window.addEventListener('resize',draw);
+})();
+</script>
