@@ -1,7 +1,7 @@
 """
-CUBIG DS — Conversion Pipeline
+Homepage Factory — Conversion Pipeline (Multi-Brand)
 Anthropic API로 product-designer → frontend-dev → qa 자동 실행
-서버에서 직접 호출하여 완전 자동화
+브랜드별 DS 로드 + 경로 분기
 """
 
 import json
@@ -11,17 +11,26 @@ import subprocess
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-INPUT_DIR = PROJECT_ROOT / "input"
-OUTPUT_DIR = PROJECT_ROOT / "output"
 JOBS_DIR = PROJECT_ROOT / "server" / "jobs"
 SKILLS_DIR = PROJECT_ROOT / ".claude" / "skills"
 
-# Design system excerpt (for context)
-def load_ds_excerpt(max_chars=6000):
-    ds_path = SKILLS_DIR / "design-system.md"
-    if ds_path.exists():
-        return ds_path.read_text(encoding="utf-8")[:max_chars]
-    return ""
+GITHUB_BASES = {
+    "cubig": "https://bgyoo-gif.github.io/homepage-factory/cubig",
+    "llm-capsule": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
+}
+
+
+def load_ds_excerpt(brand: str, max_chars=6000):
+    """core DS + brand DS를 합쳐서 로드"""
+    core_path = SKILLS_DIR / "design-system-core.md"
+    brand_path = SKILLS_DIR / f"design-system-{brand}.md"
+
+    text = ""
+    if core_path.exists():
+        text += core_path.read_text(encoding="utf-8")[:max_chars]
+    if brand_path.exists():
+        text += "\n\n---\n\n" + brand_path.read_text(encoding="utf-8")[:2000]
+    return text
 
 
 def update_job(job_id, stage, message, status=None, result=None):
@@ -45,7 +54,6 @@ def call_claude(system_prompt, user_prompt, max_tokens=8000):
     try:
         import anthropic
     except ImportError:
-        # Try venv
         import sys
         venv_path = PROJECT_ROOT / ".venv" / "lib"
         for p in venv_path.glob("python*/site-packages"):
@@ -73,8 +81,18 @@ def run_pipeline(job_id):
     filename = job["filename"]
     filepath = Path(job["filepath"])
     basename = filepath.stem
+    brand = job.get("brand", "cubig")
 
-    update_job(job_id, "orchestrator", "Pipeline started", "running")
+    # 브랜드별 경로
+    input_dir = PROJECT_ROOT / brand / "input"
+    output_dir = PROJECT_ROOT / brand / "output"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    (output_dir / "html").mkdir(exist_ok=True)
+    (output_dir / "docs").mkdir(exist_ok=True)
+
+    github_base = GITHUB_BASES.get(brand, GITHUB_BASES["cubig"])
+
+    update_job(job_id, "orchestrator", f"Pipeline started (brand: {brand})", "running")
 
     # Read input
     try:
@@ -84,26 +102,25 @@ def run_pipeline(job_id):
         return
 
     update_job(job_id, "upload", f"File loaded: {len(input_html):,} chars")
-    ds_excerpt = load_ds_excerpt()
+    ds_excerpt = load_ds_excerpt(brand)
 
     # ── Step 1: Product Designer ──
     update_job(job_id, "product-designer", "Analyzing A-type HTML...")
 
     pd_system = (
-        "You are a product designer for CUBIG homepage. Analyze HTML and create a layout specification. "
+        f"You are a product designer for {brand} homepage. Analyze HTML and create a layout specification. "
         "Output ONLY the spec in markdown, no explanation. Follow these rules strictly: "
         "No eyebrow in any section. FAQ must use accordion. Steps must use step-tabs. "
         "Cert/partner must use official DS components. Section headers center-aligned by default."
     )
-    pd_prompt = f"Create a B-type conversion spec for this A-type HTML.\n\nHTML:\n{input_html[:12000]}\n\nDesign System:\n{ds_excerpt[:4000]}"
+    pd_prompt = f"Create a B-type conversion spec for this A-type HTML.\n\nBrand: {brand}\n\nHTML:\n{input_html[:12000]}\n\nDesign System:\n{ds_excerpt[:4000]}"
 
     spec_result, err = call_claude(pd_system, pd_prompt, max_tokens=6000)
     if err:
         update_job(job_id, "product-designer", f"API error: {err}", "error")
         return
 
-    spec_path = OUTPUT_DIR / "docs" / f"{basename}-spec.md"
-    spec_path.parent.mkdir(exist_ok=True)
+    spec_path = output_dir / "docs" / f"{basename}-spec.md"
     spec_path.write_text(spec_result, encoding="utf-8")
     update_job(job_id, "product-designer", f"Spec saved ({len(spec_result):,} chars)")
 
@@ -115,12 +132,12 @@ def run_pipeline(job_id):
         "Output ONLY the HTML file, no explanation. Rules: "
         "No eyebrow. text-wrap: balance (headings) / pretty (body). "
         "description max-width responsive (100% → 720px → 860px). "
-        "Image paths: https://bgyoo-gif.github.io/cubig-homepage-design-system/reference/images/ "
-        "brand-purple: #725bea. brand gradient: linear-gradient(130deg, #673AFF 0%, #D932FF 50%, #FF266A 100%). "
+        f"Image paths: {github_base}/reference/images/ "
         "FAQ: ds-ac-card accordion. KPI overlay: rgba(0,0,0,0.35). banner-full padding: space-xl."
     )
     fe_prompt = (
         f"Convert this spec into B-type HTML.\n\n"
+        f"Brand: {brand}\n\n"
         f"SPEC:\n{spec_result[:6000]}\n\n"
         f"ORIGINAL HTML (for text):\n{input_html[:8000]}\n\n"
         f"DESIGN SYSTEM:\n{ds_excerpt[:4000]}"
@@ -131,8 +148,7 @@ def run_pipeline(job_id):
         update_job(job_id, "frontend-dev", f"API error: {err}", "error")
         return
 
-    html_path = OUTPUT_DIR / "html" / f"{basename}-b-type.html"
-    html_path.parent.mkdir(exist_ok=True)
+    html_path = output_dir / "html" / f"{basename}-b-type.html"
     html_path.write_text(html_result, encoding="utf-8")
     update_job(job_id, "frontend-dev", f"B-type HTML saved ({len(html_result):,} chars)")
 
@@ -144,11 +160,11 @@ def run_pipeline(job_id):
         "Check: content integrity, DS compliance, code quality, responsiveness. "
         "Output a brief QA report with PASS/CONDITIONAL PASS/FAIL verdict."
     )
-    qa_prompt = f"Validate this B-type HTML.\n\nHTML:\n{html_result[:10000]}"
+    qa_prompt = f"Validate this B-type HTML.\nBrand: {brand}\n\nHTML:\n{html_result[:10000]}"
 
     qa_result, err = call_claude(qa_system, qa_prompt, max_tokens=4000)
     if not err and qa_result:
-        qa_path = OUTPUT_DIR / "docs" / f"{basename}-qa-report.md"
+        qa_path = output_dir / "docs" / f"{basename}-qa-report.md"
         qa_path.write_text(qa_result, encoding="utf-8")
 
         if "FAIL" in qa_result.upper() and "CONDITIONAL" not in qa_result.upper().split("FAIL")[0][-30:]:
@@ -166,7 +182,7 @@ def run_pipeline(job_id):
             cwd=str(PROJECT_ROOT), capture_output=True, timeout=30
         )
         subprocess.run(
-            ["git", "commit", "-m", f"Auto-deploy: {basename} pipeline complete"],
+            ["git", "commit", "-m", f"Auto-deploy: {brand}/{basename} pipeline complete"],
             cwd=str(PROJECT_ROOT), capture_output=True, timeout=30
         )
         push_result = subprocess.run(
@@ -182,7 +198,7 @@ def run_pipeline(job_id):
 
     # ── Complete ──
     update_job(job_id, "complete", "Pipeline complete", "done", {
-        "spec": f"output/docs/{basename}-spec.md",
-        "html": f"output/html/{basename}-b-type.html",
-        "qa": f"output/docs/{basename}-qa-report.md",
+        "spec": f"{brand}/output/docs/{basename}-spec.md",
+        "html": f"{brand}/output/html/{basename}-b-type.html",
+        "qa": f"{brand}/output/docs/{basename}-qa-report.md",
     })

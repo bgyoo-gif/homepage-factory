@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-CUBIG DS — FastAPI Server
+Homepage Factory — FastAPI Server (Multi-Brand)
 파일 업로드 + 작업 상태 관리 + WebSocket 실시간 알림 + 정적 파일 서빙
-여러 사용자 동시 접근 가능 (async + WebSocket broadcast)
+브랜드별(cubig, llm-capsule) 경로 자동 분기
 """
 
 import asyncio
@@ -13,23 +13,32 @@ import uuid
 from pathlib import Path
 from typing import Dict, List, Set
 
-from fastapi import FastAPI, UploadFile, File, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, UploadFile, File, WebSocket, WebSocketDisconnect, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-INPUT_DIR = PROJECT_ROOT / "input"
-OUTPUT_DIR = PROJECT_ROOT / "output"
 JOBS_DIR = PROJECT_ROOT / "server" / "jobs"
+VALID_BRANDS = ("cubig", "llm-capsule")
 
-INPUT_DIR.mkdir(exist_ok=True)
-OUTPUT_DIR.mkdir(exist_ok=True)
 JOBS_DIR.mkdir(exist_ok=True)
 
-app = FastAPI(title="CUBIG DS Server")
 
-# CORS — 모든 origin 허용 (사내 다른 PC에서 접근)
+def brand_dirs(brand: str):
+    """브랜드별 input/output 디렉토리 반환"""
+    if brand not in VALID_BRANDS:
+        raise ValueError(f"Invalid brand: {brand}. Must be one of {VALID_BRANDS}")
+    input_dir = PROJECT_ROOT / brand / "input"
+    output_dir = PROJECT_ROOT / brand / "output"
+    input_dir.mkdir(parents=True, exist_ok=True)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    return input_dir, output_dir
+
+
+app = FastAPI(title="Homepage Factory Server")
+
+# CORS — 모든 origin 허용
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -72,14 +81,15 @@ manager = ConnectionManager()
 # Job Management
 # ══════════════════════════════════════
 
-def create_job(filename: str, filepath: Path) -> dict:
+def create_job(filename: str, filepath: Path, brand: str) -> dict:
     job_id = str(uuid.uuid4())[:8]
     job = {
         "id": job_id,
         "filename": filename,
         "filepath": str(filepath),
+        "brand": brand,
         "status": "pending",
-        "logs": [{"time": time.strftime("%H:%M:%S"), "stage": "upload", "message": f"File received: {filename}"}],
+        "logs": [{"time": time.strftime("%H:%M:%S"), "stage": "upload", "message": f"File received: {filename} (brand: {brand})"}],
         "result": None,
         "created_at": time.strftime("%Y-%m-%d %H:%M:%S"),
     }
@@ -94,11 +104,14 @@ def load_job(job_id: str) -> dict | None:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def list_jobs() -> list:
+def list_jobs(brand: str = None) -> list:
     jobs = []
     for p in sorted(JOBS_DIR.glob("*.json"), key=lambda x: x.stat().st_mtime, reverse=True):
         try:
-            jobs.append(json.loads(p.read_text(encoding="utf-8")))
+            job = json.loads(p.read_text(encoding="utf-8"))
+            if brand and job.get("brand") != brand:
+                continue
+            jobs.append(job)
         except Exception:
             pass
     return jobs
@@ -109,11 +122,15 @@ def list_jobs() -> list:
 # ══════════════════════════════════════
 
 @app.post("/api/upload")
-async def upload_file(file: UploadFile = File(...)):
+async def upload_file(file: UploadFile = File(...), brand: str = Query(default="cubig")):
+    if brand not in VALID_BRANDS:
+        return JSONResponse(status_code=400, content={"error": f"Invalid brand. Use: {', '.join(VALID_BRANDS)}"})
+
+    input_dir, _ = brand_dirs(brand)
     content = await file.read()
-    filepath = INPUT_DIR / file.filename
+    filepath = input_dir / file.filename
     filepath.write_bytes(content)
-    job = create_job(file.filename, filepath)
+    job = create_job(file.filename, filepath, brand)
 
     # broadcast to all connected clients
     await manager.broadcast({
@@ -131,12 +148,12 @@ async def upload_file(file: UploadFile = File(...)):
     thread = threading.Thread(target=run_pipeline, args=(job["id"],), daemon=True)
     thread.start()
 
-    return {"job_id": job["id"], "filename": file.filename, "message": "Pipeline started automatically."}
+    return {"job_id": job["id"], "filename": file.filename, "brand": brand, "message": "Pipeline started automatically."}
 
 
 @app.get("/api/jobs")
-async def get_jobs():
-    return list_jobs()
+async def get_jobs(brand: str = Query(default=None)):
+    return list_jobs(brand)
 
 
 @app.get("/api/job/{job_id}")
@@ -147,11 +164,27 @@ async def get_job(job_id: str):
     return job
 
 
+@app.get("/api/brands")
+async def get_brands():
+    """사용 가능한 브랜드 목록 반환"""
+    result = []
+    for b in VALID_BRANDS:
+        input_dir, output_dir = brand_dirs(b)
+        input_count = len(list(input_dir.glob("*.html")))
+        output_count = len(list(output_dir.rglob("*")))
+        result.append({"name": b, "inputs": input_count, "outputs": output_count})
+    return result
+
+
 @app.get("/api/files")
-async def list_files():
-    """output 디렉토리 실시간 스캔"""
+async def list_files(brand: str = Query(default="cubig")):
+    """브랜드별 output 디렉토리 실시간 스캔"""
+    if brand not in VALID_BRANDS:
+        return JSONResponse(status_code=400, content={"error": f"Invalid brand"})
+
+    _, output_dir = brand_dirs(brand)
     files = []
-    for p in sorted(OUTPUT_DIR.rglob("*")):
+    for p in sorted(output_dir.rglob("*")):
         if p.is_file() and not p.name.startswith("."):
             rel = p.relative_to(PROJECT_ROOT)
             files.append({
@@ -166,11 +199,17 @@ async def list_files():
 
 
 @app.get("/api/tree")
-async def file_tree():
-    """Input → Output 매핑 트리 반환"""
+async def file_tree(brand: str = Query(default="cubig")):
+    """브랜드별 Input → Output 매핑 트리 반환"""
+    if brand not in VALID_BRANDS:
+        return JSONResponse(status_code=400, content={"error": f"Invalid brand"})
+
+    input_dir, output_dir = brand_dirs(brand)
 
     def scan(directory):
         result = []
+        if not directory.exists():
+            return result
         for p in sorted(directory.rglob("*")):
             if p.is_file() and not p.name.startswith("."):
                 rel = p.relative_to(PROJECT_ROOT)
@@ -182,8 +221,8 @@ async def file_tree():
                 })
         return result
 
-    inputs = scan(INPUT_DIR)
-    outputs = scan(OUTPUT_DIR)
+    inputs = scan(input_dir)
+    outputs = scan(output_dir)
 
     # input 파일별로 output 매핑
     tree = []
@@ -194,7 +233,8 @@ async def file_tree():
             oname = out["name"]
             opath = out["path"]
             # 파일명에 base가 포함되면 연결
-            if base in oname or base.replace("A-", "").replace("cubig-", "") in opath:
+            clean_base = base.replace("A-", "").replace("cubig-", "").replace("llm-capsule-", "")
+            if base in oname or clean_base in opath:
                 if out["ext"] in (".html",) and "preview" in oname:
                     related["preview"].append(out)
                 elif out["ext"] in (".html",) and "framer" not in opath:
@@ -203,11 +243,10 @@ async def file_tree():
                     related["tsx"].append(out)
                 elif out["ext"] in (".md",):
                     related["md"].append(out)
-        # output이 하나라도 있는 input만 포함
         if any(related[k] for k in related):
             tree.append({"input": inp, "output": related})
 
-    # 매핑 안 된 output (독립 파일)
+    # 매핑 안 된 output
     mapped_paths = set()
     for t in tree:
         for k in t["output"]:
@@ -226,7 +265,7 @@ async def file_tree():
                 orphans["html"].append(out)
     has_orphans = any(orphans[k] for k in orphans)
 
-    return {"tree": tree, "orphans": orphans if has_orphans else None}
+    return {"brand": brand, "tree": tree, "orphans": orphans if has_orphans else None}
 
 
 @app.get("/api/file-content")
@@ -253,7 +292,6 @@ async def websocket_endpoint(ws: WebSocket):
     await manager.connect(ws)
     try:
         while True:
-            # 클라이언트에서 메시지를 보낼 수 있음 (ping 등)
             data = await ws.receive_text()
             if data == "ping":
                 await ws.send_json({"type": "pong"})
@@ -262,43 +300,48 @@ async def websocket_endpoint(ws: WebSocket):
 
 
 # ══════════════════════════════════════
-# File Watcher — output 변경 감지 → broadcast
+# File Watcher — 모든 브랜드 output 변경 감지
 # ══════════════════════════════════════
 
-async def watch_output_dir():
-    """output 디렉토리를 주기적으로 스캔, 변경 시 broadcast"""
+async def watch_output_dirs():
+    """모든 브랜드의 output 디렉토리를 주기적으로 스캔, 변경 시 broadcast"""
     known: Dict[str, float] = {}
 
-    # 초기 스캔
-    for p in OUTPUT_DIR.rglob("*"):
-        if p.is_file() and not p.name.startswith("."):
-            known[str(p)] = p.stat().st_mtime
+    # 초기 스캔 — 모든 브랜드
+    for brand in VALID_BRANDS:
+        _, output_dir = brand_dirs(brand)
+        for p in output_dir.rglob("*"):
+            if p.is_file() and not p.name.startswith("."):
+                known[str(p)] = p.stat().st_mtime
 
     while True:
         await asyncio.sleep(3)
         current: Dict[str, float] = {}
-        for p in OUTPUT_DIR.rglob("*"):
-            if p.is_file() and not p.name.startswith("."):
-                current[str(p)] = p.stat().st_mtime
+        for brand in VALID_BRANDS:
+            _, output_dir = brand_dirs(brand)
+            for p in output_dir.rglob("*"):
+                if p.is_file() and not p.name.startswith("."):
+                    current[str(p)] = p.stat().st_mtime
 
-        # 새 파일
         new_files = set(current) - set(known)
-        # 수정된 파일
         modified_files = {k for k in set(current) & set(known) if current[k] != known[k]}
-        # 삭제된 파일
         deleted_files = set(known) - set(current)
 
         if new_files or modified_files or deleted_files:
             changes = []
             for f in new_files:
                 rel = str(Path(f).relative_to(PROJECT_ROOT))
-                changes.append({"action": "created", "path": rel, "name": Path(f).name})
+                # 브랜드 감지
+                detected_brand = next((b for b in VALID_BRANDS if rel.startswith(b + "/")), None)
+                changes.append({"action": "created", "path": rel, "name": Path(f).name, "brand": detected_brand})
             for f in modified_files:
                 rel = str(Path(f).relative_to(PROJECT_ROOT))
-                changes.append({"action": "modified", "path": rel, "name": Path(f).name})
+                detected_brand = next((b for b in VALID_BRANDS if rel.startswith(b + "/")), None)
+                changes.append({"action": "modified", "path": rel, "name": Path(f).name, "brand": detected_brand})
             for f in deleted_files:
                 rel = str(Path(f).relative_to(PROJECT_ROOT))
-                changes.append({"action": "deleted", "path": rel, "name": Path(f).name})
+                detected_brand = next((b for b in VALID_BRANDS if rel.startswith(b + "/")), None)
+                changes.append({"action": "deleted", "path": rel, "name": Path(f).name, "brand": detected_brand})
 
             await manager.broadcast({
                 "type": "files_changed",
@@ -311,7 +354,7 @@ async def watch_output_dir():
 
 @app.on_event("startup")
 async def startup():
-    asyncio.create_task(watch_output_dir())
+    asyncio.create_task(watch_output_dirs())
 
 
 # ══════════════════════════════════════
@@ -333,9 +376,10 @@ if __name__ == "__main__":
 
     proto = "https" if use_ssl else "http"
     ws_proto = "wss" if use_ssl else "ws"
-    print(f"\n  CUBIG DS Server @ {proto}://localhost:{port}")
-    print(f"  Viewer: {proto}://localhost:{port}/reference/design-system-viewer.html")
-    print(f"  API:    {proto}://localhost:{port}/api/files")
+    print(f"\n  Homepage Factory Server @ {proto}://localhost:{port}")
+    print(f"  Brands: {', '.join(VALID_BRANDS)}")
+    print(f"  Viewer: {proto}://localhost:{port}/cubig/reference/design-system-viewer.html")
+    print(f"  API:    {proto}://localhost:{port}/api/brands")
     print(f"  WS:     {ws_proto}://localhost:{port}/ws")
     print(f"  SSL:    {'ON' if use_ssl else 'OFF (run: mkcert -install && mkcert localhost 127.0.0.1)'}")
     print(f"  Ctrl+C to stop\n")
