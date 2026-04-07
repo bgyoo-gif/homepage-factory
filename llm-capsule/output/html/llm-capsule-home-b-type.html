@@ -1018,12 +1018,19 @@
       --ds-diag-arrow-dark:    #444444;
       --ds-diag-arrow-accent:  #4a9de0;
       --ds-diag-os-content:    linear-gradient(135deg, #dff0ea 0%, #eef3ff 40%, #f3eeff 70%, #fdeef8 100%);
-      /* 브랜드 토큰 (LLM Capsule) */
-      --dp-brand-primary:   #1821E8;
-      --dp-brand-secondary: #5690D4;
-      --dp-brand-green:     #55B45D;
-      --dp-brand-purple:    #725bea;
-      --dp-trust-red:       #e03030;
+      /* 다이어그램 로컬 토큰 (DS 미정의 값만) */
+      --lc-diag-brand-purple: #725bea;
+      --lc-diag-yellow:       #febc2e;
+      --lc-diag-brand-a08:    var(--lc-diag-brand-a08);
+      --lc-diag-brand-a15:    var(--lc-diag-brand-a15);
+      --lc-diag-brand-a20:    var(--lc-diag-brand-a20);
+      --lc-diag-brand-a30:    var(--lc-diag-brand-a30);
+      --lc-diag-accent-a12:   var(--lc-diag-accent-a12);
+      --lc-diag-accent-a25:   var(--lc-diag-accent-a25);
+      --lc-diag-accent-a30:   var(--lc-diag-accent-a30);
+      --lc-diag-accent-a90:   var(--lc-diag-accent-a90);
+      --lc-diag-error-a90:    var(--lc-diag-error-a90);
+      --lc-diag-key-bg:       rgba(0,0,0,0.15);
       font-family: var(--ds-font-base, "DM Sans", sans-serif);
     }
 
@@ -1096,8 +1103,8 @@
       border-radius: 50%;
       flex-shrink: 0;
     }
-    .ds-diagram-lc__panel-dot--green  { background: var(--dp-brand-green); }
-    .ds-diagram-lc__panel-dot--yellow { background: #febc2e; }
+    .ds-diagram-lc__panel-dot--green  { background: var(--ds-color-brand-accent); }
+    .ds-diagram-lc__panel-dot--yellow { background: var(--lc-diag-yellow); }
     .ds-diagram-lc__panel-title {
       font-size: 10px;
       font-weight: var(--ds-weight-bold, 700);
@@ -1134,7 +1141,7 @@
 
     /* LLM Capsule badge at bottom of left panel */
     .ds-diagram-lc__capsule-badge {
-      background: var(--dp-brand-green);
+      background: var(--ds-color-brand-accent);
       padding: 10px 14px;
       text-align: center;
     }
@@ -1182,7 +1189,7 @@
     .ds-diagram-lc__trust-boundary {
       width: 2px;
       background: transparent;
-      border-left: 2px dashed var(--dp-trust-red);
+      border-left: 2px dashed var(--ds-color-error);
       margin: 0 32px;
       position: relative;
       flex-shrink: 0;
@@ -1195,7 +1202,7 @@
       transform: translate(-50%, -50%) rotate(-90deg);
       font-size: 9px;
       font-weight: var(--ds-weight-bold, 700);
-      color: var(--dp-trust-red);
+      color: var(--ds-color-error);
       letter-spacing: var(--ds-tracking-wide, 0.08em);
       text-transform: uppercase;
       white-space: nowrap;
@@ -1214,7 +1221,7 @@
       position: relative;
     }
     .ds-diagram-lc__step--external {
-      border-color: rgba(24,33,232,0.2);
+      border-color: var(--lc-diag-brand-a20);
       background: linear-gradient(145deg, #f0f3ff, #e8edff, #eef3ff, #f5f5f5);
     }
     .ds-diagram-lc__step-badge {
@@ -1230,19 +1237,19 @@
       margin-bottom: 6px;
     }
     .ds-diagram-lc__step-badge--local {
-      background: rgba(85,180,93,0.12);
-      color: var(--dp-brand-green);
-      border: 1px solid rgba(85,180,93,0.25);
+      background: var(--lc-diag-accent-a12);
+      color: var(--ds-color-brand-accent);
+      border: 1px solid var(--lc-diag-accent-a25);
     }
     .ds-diagram-lc__step-badge--external {
-      background: rgba(24,33,232,0.08);
-      color: var(--dp-brand-primary);
-      border: 1px solid rgba(24,33,232,0.2);
+      background: var(--lc-diag-brand-a08);
+      color: var(--ds-color-brand-primary);
+      border: 1px solid var(--lc-diag-brand-a20);
     }
     .ds-diagram-lc__step-num {
       font-size: var(--ds-text-xs, 12px);
       font-weight: var(--ds-weight-bold, 700);
-      color: var(--dp-brand-primary);
+      color: var(--ds-color-brand-primary);
       margin-bottom: 2px;
     }
     .ds-diagram-lc__step-title {
@@ -1271,7 +1278,7 @@
     }
     .ds-diagram-lc__step-example--safe {
       background: #f0fff5;
-      border-color: rgba(85,180,93,0.3);
+      border-color: var(--lc-diag-accent-a30);
     }
     .ds-diagram-lc__step-example--token {
       background: #fdf0ff;
@@ -1279,7 +1286,7 @@
     }
     .ds-diagram-lc__step-example--external {
       background: #f0f3ff;
-      border-color: rgba(24,33,232,0.15);
+      border-color: var(--lc-diag-brand-a15);
     }
     .ds-diagram-lc__token {
       display: inline;
@@ -1292,7 +1299,7 @@
     .ds-diagram-lc__highlight {
       display: inline;
       font-weight: var(--ds-weight-bold, 700);
-      color: var(--dp-brand-primary);
+      color: var(--ds-color-brand-primary);
     }
 
     /* Flow output button */
@@ -1301,7 +1308,7 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      background: var(--dp-brand-green);
+      background: var(--ds-color-brand-accent);
       color: #fff;
       border-radius: 8px;
       padding: 10px 16px;
@@ -1323,18 +1330,11 @@
 
     /* Right panel — External AI Services */
     .ds-diagram-lc__panel-right {
-      background-color: var(--dp-brand-primary);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: linear-gradient(145deg, #fff, #f0f0f0, #e8e8e8, #f5f5f5);
+      border: 1px solid var(--ds-diag-border-light);
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 2px 12px rgba(24,33,232,0.3);
-    }
-    .ds-diagram-lc__panel-right .ds-diagram-lc__panel-header {
-      background: rgba(255,255,255,0.08);
-      border-bottom-color: rgba(255,255,255,0.12);
-    }
-    .ds-diagram-lc__panel-right .ds-diagram-lc__panel-title {
-      color: rgba(255,255,255,0.9);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
     .ds-diagram-lc__ai-list {
       list-style: none;
@@ -1345,46 +1345,46 @@
       align-items: center;
       gap: 10px;
       padding: 8px 14px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid var(--ds-diag-border-light);
       font-size: var(--ds-text-xs, 12px);
-      color: rgba(255,255,255,0.9);
+      color: var(--ds-diag-text);
       font-weight: var(--ds-weight-medium, 500);
     }
     .ds-diagram-lc__ai-item:last-child { border-bottom: none; }
     .ds-diagram-lc__ai-logo {
       width: 28px; height: 28px;
       border-radius: 6px;
-      background: rgba(255,255,255,0.12);
+      background: var(--ds-diag-surface-inner);
       display: flex; align-items: center; justify-content: center;
       font-size: 13px;
       font-weight: var(--ds-weight-bold, 700);
-      color: #fff;
+      color: var(--ds-diag-text);
       flex-shrink: 0;
       letter-spacing: var(--ds-tracking-tight, -0.5px);
     }
     .ds-diagram-lc__ai-logo--sm     { font-size: 11px; }
     .ds-diagram-lc__ai-logo--lg     { font-size: 16px; line-height: 1; }
     .ds-diagram-lc__ai-logo--dots   { font-size: 12px; letter-spacing: normal; }
-    .ds-diagram-lc__ai-logo--teal   { background: rgba(14,159,142,0.25); }
-    .ds-diagram-lc__ai-logo--purple { background: rgba(114,91,234,0.25); }
+    .ds-diagram-lc__ai-logo--teal   { background: #e0f5f4; }
+    .ds-diagram-lc__ai-logo--purple { background: #f0ebff; }
     .ds-diagram-lc__ai-sub {
       font-size: 10px;
-      color: rgba(255,255,255,0.5);
+      color: var(--ds-diag-text-sub);
     }
     .ds-diagram-lc__ai-info { display: flex; flex-direction: column; gap: 1px; }
 
     /* KEY legend */
     .ds-diagram-lc__key {
-      border-top: 1px solid rgba(255,255,255,0.12);
+      border-top: 1px solid var(--ds-diag-border-light);
       padding: 10px 14px;
-      background: rgba(0,0,0,0.15);
+      background: var(--ds-diag-surface-inner);
     }
     .ds-diagram-lc__key-title {
       font-size: 9px;
       font-weight: var(--ds-weight-bold, 700);
       letter-spacing: var(--ds-tracking-wide, 0.08em);
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
+      color: var(--ds-diag-text-sub);
       margin-bottom: 6px;
     }
     .ds-diagram-lc__key-item {
@@ -1393,15 +1393,15 @@
       gap: 6px;
       margin-bottom: 4px;
       font-size: 10px;
-      color: rgba(255,255,255,0.75);
+      color: var(--ds-diag-text);
     }
     .ds-diagram-lc__key-line {
       width: 24px; height: 0;
       flex-shrink: 0;
     }
     .ds-diagram-lc__key-line--purple { border-top: 2px dashed rgba(160,120,255,0.8); }
-    .ds-diagram-lc__key-line--green  { border-top: 2px dashed rgba(85,180,93,0.9); }
-    .ds-diagram-lc__key-line--red    { border-top: 2px dashed rgba(224,48,48,0.9); }
+    .ds-diagram-lc__key-line--green  { border-top: 2px dashed var(--lc-diag-accent-a90); }
+    .ds-diagram-lc__key-line--red    { border-top: 2px dashed var(--lc-diag-error-a90); }
 
     /* Bottom legend row */
     .ds-diagram-lc__legend {
@@ -1424,11 +1424,11 @@
       flex-shrink: 0;
     }
     .ds-diagram-lc__legend-dot--hollow {
-      border: 2px solid var(--dp-brand-primary);
+      border: 2px solid var(--ds-color-brand-primary);
       background: transparent;
     }
     .ds-diagram-lc__legend-dot--filled {
-      background: var(--dp-brand-primary);
+      background: var(--ds-color-brand-primary);
     }
 
     /* Responsive */
@@ -1458,7 +1458,7 @@
       .ds-diagram-lc__trust-boundary {
         width: 100%; height: 2px;
         border-left: none;
-        border-top: 2px dashed var(--dp-trust-red);
+        border-top: 2px dashed var(--ds-color-error);
         margin: 4px 0;
       }
       .ds-diagram-lc__trust-label {
