@@ -940,35 +940,8 @@
     .ds-card--before { border-color: rgba(255, 48, 48, 0.3); }
     .ds-card--after  { border-color: rgba(24, 33, 232, 0.3); }
 
-    /* Section 9 — Architecture placeholder */
-    .ds-arch-placeholder {
-      border: 2px dashed var(--ds-color-border-default);
-      border-radius: var(--ds-radius-md);
-      padding: var(--ds-space-4xl) var(--ds-space-lg);
-      text-align: center;
-      background-color: var(--ds-color-surface-light);
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--ds-space-md);
-      min-height: 360px;
-    }
-    .ds-arch-placeholder__icon { font-size: 40px; opacity: 0.4; }
-    .ds-arch-placeholder__label { font-family: var(--ds-font-code); font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary); text-transform: uppercase; letter-spacing: var(--ds-tracking-wide); }
-    .ds-arch-placeholder__title { font-size: var(--ds-text-lg); font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-secondary); }
-    .ds-arch-placeholder__desc { font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary); }
-
     /* Section 10 — KPI section w/ banner below */
     .ds-section-kpi-proof { background-color: var(--ds-color-surface-white); padding: var(--ds-space-4xl) 0; }
-
-    /* Flow steps row */
-    .ds-flow-steps { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ds-space-sm); margin-top: var(--ds-space-2xl); }
-    .ds-flow-step { display: flex; align-items: center; gap: var(--ds-space-xs); }
-    .ds-flow-step__num { width: 28px; height: 28px; border-radius: 50%; background: var(--ds-color-brand-primary); color: var(--ds-color-white); display: flex; align-items: center; justify-content: center; font-size: var(--ds-text-xs); font-weight: var(--ds-weight-bold); flex-shrink: 0; }
-    .ds-flow-step__label { font-size: var(--ds-text-sm); font-weight: var(--ds-weight-medium); color: var(--ds-color-text-primary); }
-    .ds-flow-arrow { color: var(--ds-color-text-tertiary); font-size: var(--ds-text-lg); flex-shrink: 0; }
-
-    @media (max-width: 767px) {
-      .ds-flow-steps { flex-direction: column; align-items: flex-start; }
-      .ds-flow-arrow { transform: rotate(90deg); }
-    }
 
     /* Case Study Card */
     .ds-card--case-study { display: grid; grid-template-columns: 240px 1fr; gap: 0; padding: 0; overflow: hidden; }
@@ -986,6 +959,460 @@
     .ds-card-grid--3col .ds-card--case-study .ds-card__right { padding: var(--ds-space-sm) var(--ds-space-md); gap: var(--ds-space-xs); }
     .ds-card-grid--3col .ds-case-badge-row { margin-bottom: 0; }
     @media (max-width: 767px) { .ds-card--case-study { grid-template-columns: 1fr; } }
+
+    /* ============================================================
+       [W] ds-diagram — LLM Capsule Architecture Diagram (Section 9)
+    ============================================================ */
+    .diag-lc {
+      --diag-brand-primary:   #1821E8;
+      --diag-brand-secondary: #5690D4;
+      --diag-brand-green:     #55B45D;
+      --diag-brand-teal:      #0e9f8e;
+      --diag-trust-red:       #e03030;
+      --diag-external-bg:     #1821E8;
+      --diag-external-bg2:    #0e1acc;
+      --diag-surface:         #f8f8f8;
+      --diag-surface-inner:   #f2f2f2;
+      --diag-border:          #d0d0d0;
+      --diag-border-light:    #e0e0e0;
+      --diag-text:            #2a2a2a;
+      --diag-text-sub:        #555;
+      font-family: var(--ds-font-base, "DM Sans", sans-serif);
+    }
+
+    /* OS Window Frame */
+    .diag-lc__window {
+      border-radius: var(--ds-radius-md, 18px);
+      border: 1px solid var(--diag-border);
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      margin-top: var(--ds-space-xl, 32px);
+    }
+    .diag-lc__titlebar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      background: linear-gradient(180deg, #e8e8e8 0%, #d8d8d8 100%);
+      border-bottom: 1px solid var(--diag-border);
+    }
+    .diag-lc__titlebar-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .diag-lc__titlebar-dot--red    { background: #ff5f57; }
+    .diag-lc__titlebar-dot--yellow { background: #febc2e; }
+    .diag-lc__titlebar-dot--green  { background: #28c840; }
+    .diag-lc__titlebar-label {
+      margin-left: 8px;
+      font-size: var(--ds-text-xs, 12px);
+      color: #555;
+      letter-spacing: var(--ds-tracking-wide, 0.08em);
+      text-transform: uppercase;
+      font-weight: var(--ds-weight-semibold, 600);
+    }
+
+    /* Content Area */
+    .diag-lc__content {
+      background-color: #fff;
+      padding: 24px;
+    }
+
+    /* 3-column grid */
+    .diag-lc__grid {
+      display: grid;
+      grid-template-columns: 220px 1fr 220px;
+      gap: 16px;
+      align-items: start;
+    }
+
+    /* Left panel — Internal Environment */
+    .diag-lc__panel-left {
+      background-color: #fff;
+      border: 1px solid var(--diag-border-light);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .diag-lc__panel-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--diag-border-light);
+      background: #fafafa;
+    }
+    .diag-lc__panel-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .diag-lc__panel-dot--green  { background: var(--diag-brand-green); }
+    .diag-lc__panel-dot--yellow { background: #e8b400; }
+    .diag-lc__panel-title {
+      font-size: 10px;
+      font-weight: var(--ds-weight-bold, 700);
+      letter-spacing: var(--ds-tracking-wide, 0.08em);
+      text-transform: uppercase;
+      color: var(--diag-text);
+    }
+    .diag-lc__env-list {
+      list-style: none;
+      padding: 10px 0;
+    }
+    .diag-lc__env-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: var(--ds-text-xs, 12px);
+      color: var(--diag-text);
+      font-weight: var(--ds-weight-medium, 500);
+    }
+    .diag-lc__env-item:last-child { border-bottom: none; }
+    .diag-lc__env-icon {
+      width: 28px; height: 28px;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .diag-lc__env-icon--blue   { background: #e8f0fe; }
+    .diag-lc__env-icon--purple { background: #f0ebff; }
+    .diag-lc__env-icon--gray   { background: #f0f0f0; }
+    .diag-lc__env-icon--teal   { background: #e0f5f4; }
+
+    /* LLM Capsule badge at bottom of left panel */
+    .diag-lc__capsule-badge {
+      background: var(--diag-brand-green);
+      padding: 10px 14px;
+      text-align: center;
+    }
+    .diag-lc__capsule-badge-name {
+      font-size: var(--ds-text-xs, 12px);
+      font-weight: var(--ds-weight-bold, 700);
+      color: #fff;
+      letter-spacing: var(--ds-tracking-wide, 0.08em);
+    }
+    .diag-lc__capsule-badge-sub {
+      font-size: 10px;
+      color: rgba(255,255,255,0.85);
+      margin-top: 2px;
+    }
+
+    /* Center panel — flow */
+    .diag-lc__center {
+      position: relative;
+    }
+    .diag-lc__center-title {
+      font-size: 10px;
+      font-weight: var(--ds-weight-bold, 700);
+      letter-spacing: var(--ds-tracking-wide, 0.08em);
+      text-transform: uppercase;
+      color: var(--diag-text-sub);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    /* Flow layout: 2 left steps | trust | 2 right steps */
+    .diag-lc__flow-wrapper {
+      position: relative;
+      display: flex;
+      gap: 0;
+      align-items: stretch;
+    }
+    .diag-lc__flow-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+    .diag-lc__flow-col--right {
+      flex: 1;
+    }
+
+    /* Trust boundary separator */
+    .diag-lc__trust-boundary {
+      width: 2px;
+      background: transparent;
+      border-left: 2px dashed var(--diag-trust-red);
+      margin: 0 16px;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .diag-lc__trust-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-90deg);
+      font-size: 9px;
+      font-weight: var(--ds-weight-bold, 700);
+      color: var(--diag-trust-red);
+      letter-spacing: var(--ds-tracking-wide, 0.08em);
+      text-transform: uppercase;
+      white-space: nowrap;
+      background: #fff;
+      padding: 2px 4px;
+    }
+
+    /* Step cards */
+    .diag-lc__step {
+      border: 1px solid var(--diag-border-light);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    .diag-lc__step--external {
+      border-color: rgba(24,33,232,0.2);
+      background: linear-gradient(135deg, #f0f3ff 0%, #fff 100%);
+    }
+    .diag-lc__step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 9px;
+      font-weight: var(--ds-weight-bold, 700);
+      letter-spacing: var(--ds-tracking-wide, 0.08em);
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 999px;
+      margin-bottom: 6px;
+    }
+    .diag-lc__step-badge--local {
+      background: rgba(85,180,93,0.12);
+      color: var(--diag-brand-green);
+      border: 1px solid rgba(85,180,93,0.25);
+    }
+    .diag-lc__step-badge--external {
+      background: rgba(24,33,232,0.08);
+      color: var(--diag-brand-primary);
+      border: 1px solid rgba(24,33,232,0.2);
+    }
+    .diag-lc__step-num {
+      font-size: var(--ds-text-xs, 12px);
+      font-weight: var(--ds-weight-bold, 700);
+      color: var(--diag-brand-primary);
+      margin-bottom: 2px;
+    }
+    .diag-lc__step-title {
+      font-size: var(--ds-text-xs, 12px);
+      font-weight: var(--ds-weight-semibold, 600);
+      color: var(--diag-text);
+      margin-bottom: 4px;
+    }
+    .diag-lc__step-desc {
+      font-size: 11px;
+      color: var(--diag-text-sub);
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    /* Example box inside step */
+    .diag-lc__step-example {
+      background: #f7f8ff;
+      border: 1px solid #e0e4f8;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 11px;
+      color: #444;
+      line-height: 1.5;
+      font-family: var(--ds-font-code, monospace);
+    }
+    .diag-lc__step-example--safe {
+      background: #f0fff5;
+      border-color: rgba(85,180,93,0.3);
+    }
+    .diag-lc__step-example--token {
+      background: #fdf0ff;
+      border-color: rgba(114,91,234,0.25);
+    }
+    .diag-lc__step-example--external {
+      background: #f0f3ff;
+      border-color: rgba(24,33,232,0.15);
+    }
+    .diag-lc__token {
+      display: inline;
+      background: rgba(114,91,234,0.15);
+      color: #5b3ea6;
+      border-radius: 3px;
+      padding: 0 3px;
+      font-weight: var(--ds-weight-semibold, 600);
+    }
+    .diag-lc__highlight {
+      display: inline;
+      font-weight: var(--ds-weight-bold, 700);
+      color: var(--diag-brand-primary);
+    }
+
+    /* Flow output button */
+    .diag-lc__output-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: var(--diag-brand-green);
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: var(--ds-text-xs, 12px);
+      font-weight: var(--ds-weight-bold, 700);
+      text-align: center;
+      margin-top: 4px;
+      letter-spacing: var(--ds-tracking-wide, 0.08em);
+    }
+
+    /* SVG arrow layer */
+    .diag-lc__arrow-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    /* Right panel — External AI Services */
+    .diag-lc__panel-right {
+      background-color: var(--diag-external-bg);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(24,33,232,0.3);
+    }
+    .diag-lc__panel-right .diag-lc__panel-header {
+      background: rgba(255,255,255,0.08);
+      border-bottom-color: rgba(255,255,255,0.12);
+    }
+    .diag-lc__panel-right .diag-lc__panel-title {
+      color: rgba(255,255,255,0.9);
+    }
+    .diag-lc__ai-list {
+      list-style: none;
+      padding: 10px 0;
+    }
+    .diag-lc__ai-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: var(--ds-text-xs, 12px);
+      color: rgba(255,255,255,0.9);
+      font-weight: var(--ds-weight-medium, 500);
+    }
+    .diag-lc__ai-item:last-child { border-bottom: none; }
+    .diag-lc__ai-logo {
+      width: 28px; height: 28px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px;
+      font-weight: var(--ds-weight-bold, 700);
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .diag-lc__ai-sub {
+      font-size: 10px;
+      color: rgba(255,255,255,0.5);
+    }
+    .diag-lc__ai-info { display: flex; flex-direction: column; gap: 1px; }
+
+    /* KEY legend */
+    .diag-lc__key {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 10px 14px;
+      background: rgba(0,0,0,0.15);
+    }
+    .diag-lc__key-title {
+      font-size: 9px;
+      font-weight: var(--ds-weight-bold, 700);
+      letter-spacing: var(--ds-tracking-wide, 0.08em);
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 6px;
+    }
+    .diag-lc__key-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+      font-size: 10px;
+      color: rgba(255,255,255,0.75);
+    }
+    .diag-lc__key-line {
+      width: 24px; height: 0;
+      flex-shrink: 0;
+    }
+    .diag-lc__key-line--purple { border-top: 2px dashed rgba(160,120,255,0.8); }
+    .diag-lc__key-line--green  { border-top: 2px dashed rgba(85,180,93,0.9); }
+    .diag-lc__key-line--red    { border-top: 2px dashed rgba(224,48,48,0.9); }
+
+    /* Bottom legend row */
+    .diag-lc__legend {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .diag-lc__legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--diag-text-sub);
+    }
+    .diag-lc__legend-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .diag-lc__legend-dot--hollow {
+      border: 2px solid var(--diag-brand-primary);
+      background: transparent;
+    }
+    .diag-lc__legend-dot--filled {
+      background: var(--diag-brand-primary);
+    }
+
+    /* Responsive */
+    @media (max-width: 1023px) {
+      .diag-lc__grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+          "center center"
+          "left right";
+      }
+      .diag-lc__center { grid-area: center; }
+      .diag-lc__panel-left  { grid-area: left; }
+      .diag-lc__panel-right { grid-area: right; }
+    }
+    @media (max-width: 639px) {
+      .diag-lc__grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "center"
+          "left"
+          "right";
+      }
+      .diag-lc__flow-wrapper {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .diag-lc__trust-boundary {
+        width: 100%; height: 2px;
+        border-left: none;
+        border-top: 2px dashed var(--diag-trust-red);
+        margin: 4px 0;
+      }
+      .diag-lc__trust-label {
+        transform: translate(-50%, -50%) rotate(0deg);
+        top: -8px;
+        left: 50%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -2045,45 +2472,352 @@
           </p>
         </div>
 
-        <!-- Architecture Diagram Placeholder -->
-        <div class="ds-arch-placeholder" role="img" aria-label="LLM Capsule architecture diagram — diagram-builder generation pending">
-          <div class="ds-arch-placeholder__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
-            </svg>
-          </div>
-          <p class="ds-arch-placeholder__label">Architecture Diagram</p>
-          <p class="ds-arch-placeholder__title">LLM Capsule Architecture — diagram-builder 에이전트로 별도 생성 예정</p>
-          <p class="ds-arch-placeholder__desc">Internal Environment → LLM Capsule (Detection → Encapsulation → Restoration) → [TRUST BOUNDARY] → External AI Services</p>
-        </div>
+        <!-- Architecture Diagram — [W] ds-diagram Mode B -->
+        <div class="diag-lc" role="region" aria-label="LLM Capsule architecture diagram">
+          <div class="diag-lc__window">
+            <!-- OS Window Titlebar -->
+            <div class="diag-lc__titlebar" aria-hidden="true">
+              <span class="diag-lc__titlebar-dot diag-lc__titlebar-dot--red"></span>
+              <span class="diag-lc__titlebar-dot diag-lc__titlebar-dot--yellow"></span>
+              <span class="diag-lc__titlebar-dot diag-lc__titlebar-dot--green"></span>
+              <span class="diag-lc__titlebar-label">LLM Capsule — Data Flow Architecture</span>
+            </div>
 
-        <!-- Data Flow Steps -->
-        <div class="ds-flow-steps" role="list" aria-label="Data flow steps">
-          <div class="ds-flow-step" role="listitem">
-            <span class="ds-flow-step__num">1</span>
-            <span class="ds-flow-step__label">Detection</span>
-          </div>
-          <span class="ds-flow-arrow" aria-hidden="true">→</span>
-          <div class="ds-flow-step" role="listitem">
-            <span class="ds-flow-step__num">2</span>
-            <span class="ds-flow-step__label">Encapsulation</span>
-          </div>
-          <span class="ds-flow-arrow" aria-hidden="true">→</span>
-          <div class="ds-flow-step" role="listitem">
-            <span class="ds-flow-step__num">3</span>
-            <span class="ds-flow-step__label">LLM Processing</span>
-          </div>
-          <span class="ds-flow-arrow" aria-hidden="true">→</span>
-          <div class="ds-flow-step" role="listitem">
-            <span class="ds-flow-step__num">4</span>
-            <span class="ds-flow-step__label">Restoration</span>
-          </div>
-          <span class="ds-flow-arrow" aria-hidden="true">→</span>
-          <div class="ds-flow-step" role="listitem">
-            <span class="ds-flow-step__num">5</span>
-            <span class="ds-flow-step__label">Business-Ready Output</span>
-          </div>
-        </div>
+            <!-- Content -->
+            <div class="diag-lc__content">
+              <div class="diag-lc__grid">
+
+                <!-- LEFT: Internal Environment -->
+                <div class="diag-lc__panel-left">
+                  <div class="diag-lc__panel-header">
+                    <span class="diag-lc__panel-dot diag-lc__panel-dot--green"></span>
+                    <span class="diag-lc__panel-title">Internal Environment</span>
+                  </div>
+                  <ul class="diag-lc__env-list">
+                    <li class="diag-lc__env-item">
+                      <span class="diag-lc__env-icon diag-lc__env-icon--blue" aria-hidden="true">📄</span>
+                      Customer Documents
+                    </li>
+                    <li class="diag-lc__env-item">
+                      <span class="diag-lc__env-icon diag-lc__env-icon--teal" aria-hidden="true">💾</span>
+                      Internal Databases
+                    </li>
+                    <li class="diag-lc__env-item">
+                      <span class="diag-lc__env-icon diag-lc__env-icon--purple" aria-hidden="true">🔍</span>
+                      RAG Pipelines
+                    </li>
+                    <li class="diag-lc__env-item">
+                      <span class="diag-lc__env-icon diag-lc__env-icon--gray" aria-hidden="true">⚙️</span>
+                      Admin Console
+                    </li>
+                    <li class="diag-lc__env-item">
+                      <span class="diag-lc__env-icon diag-lc__env-icon--purple" aria-hidden="true">📊</span>
+                      Policy Engine
+                    </li>
+                  </ul>
+                  <div class="diag-lc__capsule-badge">
+                    <div class="diag-lc__capsule-badge-name">LLM Capsule</div>
+                    <div class="diag-lc__capsule-badge-sub">Encapsulation &amp; Restoration</div>
+                  </div>
+                </div>
+
+                <!-- CENTER: How Data Flows -->
+                <div class="diag-lc__center" id="diag-lc-center">
+                  <div class="diag-lc__center-title">How Data Flows Through LLM Capsule</div>
+
+                  <div class="diag-lc__flow-wrapper" id="diag-lc-flow">
+                    <!-- SVG arrow layer (runtime-drawn) -->
+                    <svg class="diag-lc__arrow-layer" id="diag-lc-arrows" aria-hidden="true">
+                      <defs>
+                        <marker id="lc-arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                          <polygon points="0 0, 10 3.5, 0 7" fill="#5690D4"/>
+                        </marker>
+                        <marker id="lc-arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                          <polygon points="0 0, 10 3.5, 0 7" fill="#8b6df0"/>
+                        </marker>
+                        <marker id="lc-arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                          <polygon points="0 0, 10 3.5, 0 7" fill="#55B45D"/>
+                        </marker>
+                      </defs>
+                    </svg>
+
+                    <!-- Left column: Step 1 + Step 2 -->
+                    <div class="diag-lc__flow-col">
+                      <!-- Step 1 -->
+                      <div class="diag-lc__step" id="lc-step1" data-arrow-from="1">
+                        <div class="diag-lc__step-badge diag-lc__step-badge--local">Local</div>
+                        <div class="diag-lc__step-num">Step 1</div>
+                        <div class="diag-lc__step-title">Detection</div>
+                        <div class="diag-lc__step-desc">Auto-detects PII and org-defined entities</div>
+                        <div class="diag-lc__step-example">
+                          Contract with <span class="diag-lc__highlight">Samsung</span>...
+                        </div>
+                      </div>
+
+                      <!-- Step 2 -->
+                      <div class="diag-lc__step" id="lc-step2" data-arrow-from="2">
+                        <div class="diag-lc__step-badge diag-lc__step-badge--local">Local</div>
+                        <div class="diag-lc__step-num">Step 2</div>
+                        <div class="diag-lc__step-title">Encapsulation</div>
+                        <div class="diag-lc__step-desc">Replaces sensitive data with safe tokens locally</div>
+                        <div class="diag-lc__step-example diag-lc__step-example--token">
+                          Contract with <span class="diag-lc__token">[ORG_A]</span>...
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Trust Boundary -->
+                    <div class="diag-lc__trust-boundary" id="lc-trust" aria-label="Trust boundary">
+                      <span class="diag-lc__trust-label">Trust Boundary</span>
+                    </div>
+
+                    <!-- Right column: Step 3 + Step 4 -->
+                    <div class="diag-lc__flow-col diag-lc__flow-col--right">
+                      <!-- Step 3 -->
+                      <div class="diag-lc__step diag-lc__step--external" id="lc-step3" data-arrow-from="3">
+                        <div class="diag-lc__step-badge diag-lc__step-badge--external">External</div>
+                        <div class="diag-lc__step-num">Step 3</div>
+                        <div class="diag-lc__step-title">LLM Processing</div>
+                        <div class="diag-lc__step-desc">AI processes capsule. No real data exposed.</div>
+                        <div class="diag-lc__step-example diag-lc__step-example--external">
+                          The deal with <span class="diag-lc__token">[ORG_A]</span>...
+                        </div>
+                      </div>
+
+                      <!-- Step 4 + Output -->
+                      <div class="diag-lc__step" id="lc-step4">
+                        <div class="diag-lc__step-badge diag-lc__step-badge--local">Local</div>
+                        <div class="diag-lc__step-num">Step 4</div>
+                        <div class="diag-lc__step-title">Restoration</div>
+                        <div class="diag-lc__step-desc">Auto-restores original values locally</div>
+                        <div class="diag-lc__step-example diag-lc__step-example--safe">
+                          The deal with <span class="diag-lc__highlight">Samsung</span>...
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Output Button -->
+                  <div class="diag-lc__output-btn" role="status" aria-label="Business-ready output">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                    Business-Ready Output
+                  </div>
+
+                  <!-- Bottom legend -->
+                  <div class="diag-lc__legend" aria-label="Legend">
+                    <div class="diag-lc__legend-item">
+                      <span class="diag-lc__legend-dot diag-lc__legend-dot--hollow"></span>
+                      Encapsulate &amp; Restore
+                    </div>
+                    <div class="diag-lc__legend-item">
+                      <span class="diag-lc__legend-dot diag-lc__legend-dot--filled"></span>
+                      External LLM Zone
+                    </div>
+                  </div>
+                </div>
+
+                <!-- RIGHT: External AI Services -->
+                <div class="diag-lc__panel-right">
+                  <div class="diag-lc__panel-header">
+                    <span class="diag-lc__panel-dot diag-lc__panel-dot--yellow"></span>
+                    <span class="diag-lc__panel-title">External AI Services</span>
+                  </div>
+                  <ul class="diag-lc__ai-list">
+                    <li class="diag-lc__ai-item">
+                      <span class="diag-lc__ai-logo" aria-hidden="true" style="font-size:11px; letter-spacing:-0.5px;">G</span>
+                      <div class="diag-lc__ai-info">
+                        <span>ChatGPT / OpenAI</span>
+                        <span class="diag-lc__ai-sub">OpenAI</span>
+                      </div>
+                    </li>
+                    <li class="diag-lc__ai-item">
+                      <span class="diag-lc__ai-logo" aria-hidden="true" style="font-size:11px;">A</span>
+                      <div class="diag-lc__ai-info">
+                        <span>Claude / Anthropic</span>
+                        <span class="diag-lc__ai-sub">Anthropic</span>
+                      </div>
+                    </li>
+                    <li class="diag-lc__ai-item">
+                      <span class="diag-lc__ai-logo" aria-hidden="true" style="background: rgba(52,211,153,0.2); font-size:16px; line-height:1;">+</span>
+                      <div class="diag-lc__ai-info">
+                        <span>Gemini / Google</span>
+                        <span class="diag-lc__ai-sub">Google</span>
+                      </div>
+                    </li>
+                    <li class="diag-lc__ai-item">
+                      <span class="diag-lc__ai-logo" aria-hidden="true" style="background: rgba(160,120,255,0.25); font-size:14px;">⚡</span>
+                      <div class="diag-lc__ai-info">
+                        <span>Perplexity</span>
+                        <span class="diag-lc__ai-sub">Perplexity AI</span>
+                      </div>
+                    </li>
+                    <li class="diag-lc__ai-item">
+                      <span class="diag-lc__ai-logo" aria-hidden="true" style="font-size:12px;">···</span>
+                      <div class="diag-lc__ai-info">
+                        <span>Any LLM API</span>
+                        <span class="diag-lc__ai-sub">Open standard</span>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <!-- KEY -->
+                  <div class="diag-lc__key">
+                    <div class="diag-lc__key-title">Key</div>
+                    <div class="diag-lc__key-item">
+                      <span class="diag-lc__key-line diag-lc__key-line--purple"></span>
+                      Encapsulated data
+                    </div>
+                    <div class="diag-lc__key-item">
+                      <span class="diag-lc__key-line diag-lc__key-line--green"></span>
+                      Restored response
+                    </div>
+                    <div class="diag-lc__key-item">
+                      <span class="diag-lc__key-line diag-lc__key-line--red"></span>
+                      Trust boundary
+                    </div>
+                  </div>
+                </div>
+
+              </div><!-- /diag-lc__grid -->
+            </div><!-- /diag-lc__content -->
+          </div><!-- /diag-lc__window -->
+        </div><!-- /diag-lc -->
+
+        <script>
+        (function() {
+          function drawLcArrows() {
+            var flow = document.getElementById('diag-lc-flow');
+            var svg  = document.getElementById('diag-lc-arrows');
+            if (!flow || !svg) return;
+
+            // Preserve defs
+            var defs = svg.querySelector('defs');
+            while (svg.lastChild && svg.lastChild !== defs) {
+              svg.removeChild(svg.lastChild);
+            }
+            if (defs && svg.firstChild !== defs) svg.insertBefore(defs, svg.firstChild);
+
+            var fp = flow.getBoundingClientRect();
+            var NS = 'http://www.w3.org/2000/svg';
+            var GAP = 8;
+
+            function getRect(el) {
+              var r = el.getBoundingClientRect();
+              return {
+                top:    r.top    - fp.top,
+                bottom: r.bottom - fp.top,
+                left:   r.left   - fp.left,
+                right:  r.right  - fp.left,
+                midX:   (r.left + r.right)  / 2 - fp.left,
+                midY:   (r.top  + r.bottom) / 2 - fp.top
+              };
+            }
+
+            function makePath(d, stroke, dasharray, marker) {
+              var p = document.createElementNS(NS, 'path');
+              p.setAttribute('d', d);
+              p.setAttribute('fill', 'none');
+              p.setAttribute('stroke', stroke);
+              p.setAttribute('stroke-width', '1.8');
+              p.setAttribute('stroke-linecap', 'round');
+              if (dasharray) p.setAttribute('stroke-dasharray', dasharray);
+              if (marker)    p.setAttribute('marker-end', 'url(#' + marker + ')');
+              return p;
+            }
+
+            function makeLabel(x, y, text, color) {
+              var t = document.createElementNS(NS, 'text');
+              t.setAttribute('x', x);
+              t.setAttribute('y', y);
+              t.setAttribute('text-anchor', 'middle');
+              t.setAttribute('font-size', '9');
+              t.setAttribute('font-family', 'DM Sans, sans-serif');
+              t.setAttribute('fill', color);
+              t.setAttribute('font-weight', '600');
+              t.textContent = text;
+              return t;
+            }
+
+            var step1 = document.getElementById('lc-step1');
+            var step2 = document.getElementById('lc-step2');
+            var step3 = document.getElementById('lc-step3');
+            var step4 = document.getElementById('lc-step4');
+            if (!step1 || !step2 || !step3 || !step4) return;
+
+            var r1 = getRect(step1);
+            var r2 = getRect(step2);
+            var r3 = getRect(step3);
+            var r4 = getRect(step4);
+
+            // Check if mobile layout (flow-wrapper is column)
+            var isMobile = window.innerWidth <= 639;
+
+            if (!isMobile) {
+              // Arrow 1: Step1 bottom → Step2 top (blue solid, vertical)
+              var a1 = makePath(
+                'M' + r1.midX + ' ' + (r1.bottom + GAP) +
+                ' L' + r2.midX + ' ' + (r2.top - GAP),
+                '#5690D4', null, 'lc-arrow-blue'
+              );
+              svg.appendChild(a1);
+
+              // Arrow 2: Step2 right → Step3 left (purple dashed, "capsule only")
+              var trust = document.getElementById('lc-trust');
+              var rt    = trust ? getRect(trust) : null;
+              var x2start = r2.right + GAP;
+              var x2end   = r3.left - GAP;
+              var y2mid   = (r2.midY + r3.midY) / 2;
+              var a2 = makePath(
+                'M' + x2start + ' ' + r2.midY +
+                ' L' + x2end   + ' ' + r3.midY,
+                '#8b6df0', '5,4', 'lc-arrow-purple'
+              );
+              svg.appendChild(a2);
+              var lbl2x = (x2start + x2end) / 2;
+              var lbl2y = Math.min(r2.midY, r3.midY) - 6;
+              svg.appendChild(makeLabel(lbl2x, lbl2y, 'capsule only', '#8b6df0'));
+
+              // Arrow 3: Step3 bottom → Step4 top (green dashed, "AI response")
+              var x3mid = r3.midX;
+              var a3 = makePath(
+                'M' + x3mid + ' ' + (r3.bottom + GAP) +
+                ' L' + r4.midX + ' ' + (r4.top - GAP),
+                '#55B45D', '5,4', 'lc-arrow-green'
+              );
+              svg.appendChild(a3);
+              var lbl3x = r3.midX + 28;
+              var lbl3y = (r3.bottom + r4.top) / 2;
+              svg.appendChild(makeLabel(lbl3x, lbl3y, 'AI response', '#55B45D'));
+
+            } else {
+              // Mobile: all vertical
+              var a1m = makePath(
+                'M' + r1.midX + ' ' + (r1.bottom + GAP) +
+                ' L' + r2.midX + ' ' + (r2.top - GAP),
+                '#5690D4', null, 'lc-arrow-blue'
+              );
+              svg.appendChild(a1m);
+
+              var a2m = makePath(
+                'M' + r2.midX + ' ' + (r2.bottom + GAP) +
+                ' L' + r3.midX + ' ' + (r3.top - GAP),
+                '#8b6df0', '5,4', 'lc-arrow-purple'
+              );
+              svg.appendChild(a2m);
+
+              var a3m = makePath(
+                'M' + r3.midX + ' ' + (r3.bottom + GAP) +
+                ' L' + r4.midX + ' ' + (r4.top - GAP),
+                '#55B45D', '5,4', 'lc-arrow-green'
+              );
+              svg.appendChild(a3m);
+            }
+          }
+
+          setTimeout(drawLcArrows, 120);
+          window.addEventListener('resize', drawLcArrows);
+        })();
+        </script>
 
       </div><!-- /ds-container -->
     </section>
