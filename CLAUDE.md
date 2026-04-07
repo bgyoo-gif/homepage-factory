@@ -87,6 +87,25 @@ homepage-factory/
 
 `{brand}` = `cubig` 또는 `llm-capsule`
 
+### 공유 자원 (Shared Assets) — 전역 규칙
+
+이미지, 로고, 아이콘 등 시각 자원은 **cubig 브랜드 폴더에 원본을 관리**하고, 모든 브랜드가 공유한다.
+
+**B타입 HTML에서 이미지 참조 시 반드시 절대 URL 사용:**
+```
+https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/   ← 배경, 스크린샷, 파트너 로고
+https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/ ← 인증, 일러스트레이션, 케이스스터디
+https://bgyoo-gif.github.io/homepage-factory/cubig/reference/icons/    ← 아이콘
+```
+
+**CSS background-image URL도 동일한 절대 경로 사용:**
+```css
+--ds-bg-img-grad-deep: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png');
+```
+
+**금지:** 상대 경로(`../../cubig/reference/`, `../reference/images/`) — 브랜드별 output 위치에 따라 깨짐.
+**예외:** 각 브랜드 전용 이미지(브랜드 로고 등)만 `{brand}/reference/images/`에 별도 보관.
+
 ---
 
 ## 에이전트 파이프라인

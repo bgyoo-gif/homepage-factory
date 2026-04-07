@@ -347,11 +347,16 @@
     .ds-hero__screenshot-frame {
       margin-top: var(--ds-space-2xl);
       border-radius: var(--ds-radius-xl) var(--ds-radius-xl) 0 0;
-      padding: var(--ds-space-2xl) 0 0;
+      padding: var(--ds-space-2xl) var(--ds-space-2xl) 0;
       background-size: cover; background-position: center;
       overflow: hidden;
     }
-    .ds-hero__screenshot { overflow: hidden; background-color: var(--ds-color-surface-white); }
+    .ds-hero__screenshot {
+      overflow: hidden;
+      background-color: var(--ds-color-surface-white);
+      border-radius: var(--ds-radius-lg) var(--ds-radius-lg) 0 0;
+      box-shadow: 0 -8px 40px rgba(0,0,0,0.12);
+    }
     .ds-hero__screenshot img { width: 100%; display: block; }
     .ds-hero__actions-below {
       display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
