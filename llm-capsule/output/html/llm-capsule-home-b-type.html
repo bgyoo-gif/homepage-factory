@@ -1162,7 +1162,7 @@
     .diag-lc__flow-col {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 24px;
       flex: 1;
     }
     .diag-lc__flow-col--right {
@@ -1174,9 +1174,10 @@
       width: 2px;
       background: transparent;
       border-left: 2px dashed var(--diag-trust-red);
-      margin: 0 16px;
+      margin: 0 32px;
       position: relative;
       flex-shrink: 0;
+      z-index: 2;
     }
     .diag-lc__trust-label {
       position: absolute;
@@ -1190,7 +1191,8 @@
       text-transform: uppercase;
       white-space: nowrap;
       background-color: var(--ds-color-surface-white, #fff);
-      padding: 2px 4px;
+      padding: 2px 6px;
+      z-index: 3;
     }
 
     /* Step cards */
@@ -1307,6 +1309,7 @@
       inset: 0;
       pointer-events: none;
       overflow: visible;
+      z-index: 1;
     }
 
     /* Right panel — External AI Services */
@@ -2803,31 +2806,28 @@
               );
               svg.appendChild(a1);
 
-              // Arrow 2: Step2 right → Step3 left (purple dashed, "capsule only")
-              var trust = document.getElementById('lc-trust');
-              var rt    = trust ? getRect(trust) : null;
-              var x2start = r2.right + GAP;
+              // Arrow 2: Step1 right → Step3 left (purple dashed, "capsule only")
+              // Goes from step1 bottom-right area across trust boundary to step3
+              var x2start = r1.right + GAP;
               var x2end   = r3.left - GAP;
-              var y2mid   = (r2.midY + r3.midY) / 2;
               var a2 = makePath(
-                'M' + x2start + ' ' + r2.midY +
+                'M' + x2start + ' ' + r1.midY +
                 ' L' + x2end   + ' ' + r3.midY,
                 '#8b6df0', '5,4', 'lc-arrow-purple'
               );
               svg.appendChild(a2);
               var lbl2x = (x2start + x2end) / 2;
-              var lbl2y = Math.min(r2.midY, r3.midY) - 6;
+              var lbl2y = Math.min(r1.midY, r3.midY) - 10;
               svg.appendChild(makeLabel(lbl2x, lbl2y, 'capsule only', '#8b6df0'));
 
               // Arrow 3: Step3 bottom → Step4 top (green dashed, "AI response")
-              var x3mid = r3.midX;
               var a3 = makePath(
-                'M' + x3mid + ' ' + (r3.bottom + GAP) +
+                'M' + r3.midX + ' ' + (r3.bottom + GAP) +
                 ' L' + r4.midX + ' ' + (r4.top - GAP),
                 '#55B45D', '5,4', 'lc-arrow-green'
               );
               svg.appendChild(a3);
-              var lbl3x = r3.midX + 28;
+              var lbl3x = r3.midX + 40;
               var lbl3y = (r3.bottom + r4.top) / 2;
               svg.appendChild(makeLabel(lbl3x, lbl3y, 'AI response', '#55B45D'));
 
