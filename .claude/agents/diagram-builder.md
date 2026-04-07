@@ -51,6 +51,8 @@ skills:
 
 ### 컬러
 - **DS [W] Diagram 토큰을 최우선 사용** — 원본 스크린샷의 컬러 톤은 참고하되, 구현은 반드시 DS Diagram 토큰으로
+- **원본에 색상 지정이 없으면 DS diag 토큰 기본값만 사용한다** — 임의 색상 창작 금지. 원본에 명시된 색상이 없는 패널/배경에 다크 인디고, 진한 회색, brand primary color 등을 임의로 적용하는 것은 결함이다.
+- **brand primary color를 panel background에 직접 사용 금지** — `#3061f2`, `#725bea` 등 brand 색상은 텍스트/border/화살표 강조에만 허용되고, 노드/패널의 배경색으로는 사용하지 않는다.
 - 다이어그램 전용 CSS 변수(`--dp-*`, `--diag-*`)로 스코프 — 부모 DS 변수와 충돌 방지
 - 원본이 다크 테마여도 DS 라이트 테마(silver gradient + 파스텔 os-content)로 변환
 - 상세 토큰 목록은 아래 "컬러 — DS [W] Diagram 토큰 필수 사용" 섹션 참조

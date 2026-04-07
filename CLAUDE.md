@@ -235,6 +235,8 @@ Low 결함만 남은 경우 CONDITIONAL PASS.
 11. **screenshot-frame 배경색 누락** → fallback 추가
 12. **모바일 배경 이미지 비율** → background-image: none
 13. **배경 이미지 적용 위치 오류** → section vs component 재확인
+14. **다이어그램 임의 색상 창작** → 원본에 없는 색상(다크 패널, brand primary 배경 등) → DS diag 토큰 기본값으로 교체
+15. **QA 수정 시 변수명만 교체** → 실제 렌더 색상이 여전히 잘못된 경우 → 시각적 결과까지 확인 후 PASS 선언
 
 ---
 

@@ -1,0 +1,68 @@
+{
+  "brand": "llm-capsule",
+  "generated": "2026-04-07 16:37:55",
+  "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
+  "groups": [
+    {
+      "input": {
+        "name": "llm-capsule-home.html",
+        "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/input/llm-capsule-home.html",
+        "modified": "2026-04-07"
+      },
+      "html": [
+        {
+          "name": "llm-capsule-home-b-type-part1.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/llm-capsule-home-b-type-part1.html",
+          "modified": "2026-04-07"
+        },
+        {
+          "name": "llm-capsule-home-b-type-part2.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/llm-capsule-home-b-type-part2.html",
+          "modified": "2026-04-07"
+        },
+        {
+          "name": "llm-capsule-home-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/llm-capsule-home-b-type.html",
+          "modified": "2026-04-07"
+        }
+      ],
+      "docs": [
+        {
+          "name": "llm-capsule-home-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/llm-capsule-home-qa-report.md",
+          "modified": "2026-04-07"
+        },
+        {
+          "name": "llm-capsule-home-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/llm-capsule-home-spec.md",
+          "modified": "2026-04-07"
+        }
+      ],
+      "tsx": [],
+      "preview": []
+    },
+    {
+      "input": {
+        "name": "(standalone)",
+        "path": "",
+        "modified": ""
+      },
+      "html": [
+        {
+          "name": "feedback-log.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/feedback-log.html",
+          "modified": "2026-04-07"
+        }
+      ],
+      "docs": [
+        {
+          "name": "diagram-llm-capsule-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/diagram-llm-capsule-qa-report.md",
+          "modified": "2026-04-07"
+        }
+      ],
+      "tsx": [],
+      "preview": []
+    }
+  ]
+}
