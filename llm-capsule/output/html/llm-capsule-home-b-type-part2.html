@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enable Enterprise AI on Sensitive Data — AI-Ready Data Layer &amp; Plugin | LLM Capsule</title>
+  <meta name="description" content="LLM Capsule: AI enablement data layer for sensitive enterprise documents. Define your own confidentiality rules, process with any LLM, restore outputs.">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="enterprise AI enablement, AI-ready data layer, AI adoption enabler, LLM plugin, enterprise AI data layer, secure AI workflow, AI enablement plugin, enterprise LLM integration">
+  <link rel="canonical" href="https://llmcapsule.ai/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Enable Enterprise AI on Sensitive Data — AI-Ready Data Layer &amp; Plugin | LLM Capsule">
+  <meta property="og:description" content="LLM Capsule is an enterprise AI enablement data layer that lets organizations use any LLM on sensitive documents. The fastest path to enterprise AI adoption.">
+  <meta property="og:url" content="https://llmcapsule.ai/">
+  <meta property="og:site_name" content="LLM Capsule">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Enable Enterprise AI on Sensitive Data — AI-Ready Data Layer &amp; Plugin | LLM Capsule">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"LLM Capsule","url":"https://llmcapsule.ai","description":"Enterprise AI enablement data layer and plugin by CUBIG.","parentOrganization":{"@type":"Organization","name":"CUBIG","url":"https://cubig.ai"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"LLM Capsule","description":"Enterprise AI enablement data layer and plugin. Enable AI. Protect data. Restore results.","brand":{"@type":"Brand","name":"CUBIG"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does LLM Capsule protect enterprise data during AI processing?","acceptedAnswer":{"@type":"Answer","text":"LLM Capsule encapsulates sensitive data locally before it leaves the enterprise environment. Only protected representations are sent to AI models. After processing, outputs are restored locally so they remain usable for real enterprise workflows."}},{"@type":"Question","name":"How is LLM Capsule different from data masking?","acceptedAnswer":{"@type":"Answer","text":"Unlike masking which permanently removes data and breaks AI output usability, LLM Capsule encapsulates data locally and restores outputs after processing, preserving both protection and usability."}},{"@type":"Question","name":"Where can LLM Capsule be deployed?","acceptedAnswer":{"@type":"Answer","text":"LLM Capsule supports on-premise, air-gapped, cloud (including AWS Marketplace), hybrid, and embedded deployment models."}},{"@type":"Question","name":"What certifications does LLM Capsule hold?","acceptedAnswer":{"@type":"Answer","text":"ISO 27001, ISO 42001, GS Certification. Available on AWS Marketplace."}},{"@type":"Question","name":"What is the difference between LLM Capsule and prompt security gateways?","acceptedAnswer":{"@type":"Answer","text":"Prompt security gateways filter at the API level but cannot protect enterprise documents end to end. LLM Capsule operates at the data layer."}},{"@type":"Question","name":"What is enterprise AI data protection?","acceptedAnswer":{"@type":"Answer","text":"Enterprise AI data protection prevents sensitive enterprise information from being exposed to external AI services while still enabling AI-powered workflows."}}]}</script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       1. CSS Reset + 전역 기본값
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--ds-font-base);
+      color: var(--ds-color-text-primary);
+      background-color: var(--ds-color-surface-white);
+      padding-top: 58px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, video { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    p, li, dt, dd, blockquote,
+    .ds-section-header__description,
+    .ds-hero__description,
+    .ds-cta-band__description,
+    .ds-body-l, .ds-body-m, .ds-body-s,
+    .ds-ac-card__title,
+    .ds-card__description {
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      text-wrap: pretty;
+    }
+
+    /* ============================================================
+       2. :root — CSS 변수
+    ============================================================ */
+    :root {
+      /* LLM Capsule Brand Colors */
+      --ds-color-brand-primary:   #1821E8;
+      --ds-color-brand-secondary: #5690D4;
+      --ds-color-brand-accent:    #55B45D;
+      --ds-color-brand-light:     #B8D4EE;
+      --ds-color-teal-accent:     #0e9f8e;
+      --ds-color-brand-purple:    #5690D4;
+      --ds-color-brand-purple-lt: #B8D4EE;
+      --ds-color-brand-purple-md: #5690D4;
+
+      /* Brand gradient */
+      --ds-gradient-brand: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+      --ds-gradient-dark:  linear-gradient(180deg, #0f0f0f 0%, #171719 100%);
+
+      /* Gradient card borders */
+      --ds-gradient-card-indigo: linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #E8F0FF 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%);
+      --ds-gradient-card-blue:   linear-gradient(109deg, #BFD8F4 0%, #fff 17%, #E8F0FF 38%, #5690D4 51%, #E2EBF5 73%, #BFD8F4 100%);
+      --ds-gradient-card-green:  linear-gradient(109deg, #55B45D 0%, #F0FFF2 17%, #9AE6AD 43%, #C9FFE1 65%, #55B45D 84%, #55B45D 100%);
+      --ds-gradient-card-silver: linear-gradient(109deg, #898989 0%, #fff 17%, #D5D5D5 63%, #F6F5F6 84%, #898989 100%);
+      --ds-gradient-card-purple: linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #E8F0FF 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%);
+
+      /* Gradient card inner */
+      --ds-gradient-inner-indigo: linear-gradient(99deg, #ECEEFF 0%, #FCFCFE 58%, #fff 100%);
+      --ds-gradient-inner-blue:   linear-gradient(99deg, #EAF0F9 0%, #FCFCFE 58%, #fff 100%);
+      --ds-gradient-inner-green:  linear-gradient(99deg, #F0FDF5 0%, #FCFCFE 58%, #fff 100%);
+      --ds-gradient-inner-purple: linear-gradient(99deg, #ECEEFF 0%, #FCFCFE 58%, #fff 100%);
+
+      /* Architecture header */
+      --ds-gradient-arch-header: linear-gradient(115deg, #5670E8 0%, #5690D4 50%, #55B45D 100%);
+
+      /* Neutral */
+      --ds-color-neutral-900: #0f0f0f;
+      --ds-color-neutral-850: #141414;
+      --ds-color-neutral-800: #171719;
+      --ds-color-neutral-700: #303135;
+      --ds-color-neutral-500: #636363;
+      --ds-color-neutral-400: #9c9c9c;
+      --ds-color-neutral-350: #adadad;
+      --ds-color-neutral-300: #bababa;
+      --ds-color-neutral-250: #c4c4c4;
+      --ds-color-neutral-200: #e0e0e0;
+      --ds-color-neutral-150: #e6e7e9;
+      --ds-color-neutral-100: #ececec;
+      --ds-color-neutral-050: #f2f2f2;
+      --ds-color-neutral-025: #f7f7f7;
+      --ds-color-white:       #ffffff;
+      --ds-color-black:       #000000;
+
+      /* Text */
+      --ds-color-text-primary:   #0f0f0f;
+      --ds-color-text-secondary: #636363;
+      --ds-color-text-tertiary:  #9c9c9c;
+      --ds-color-text-inverse:   #ffffff;
+      --ds-color-text-muted:     #cacccf;
+
+      /* Functional */
+      --ds-color-success:       #0e824c;
+      --ds-color-error:         #ff3030;
+      --ds-color-info:          #155ea0;
+      --ds-color-success-light: #34d399;
+      --ds-color-error-light:   #ff6b6b;
+      --ds-color-info-light:    #60a5fa;
+      --ds-color-warn-light:    #fbbf24;
+
+      /* Border */
+      --ds-color-border-default: #e6e7e9;
+      --ds-color-border-strong:  #171719;
+      --ds-color-border-brand:   #5690D4;
+
+      /* Surface */
+      --ds-color-surface-dark:  #171719;
+      --ds-color-surface-mid:   #f2f2f2;
+      --ds-color-surface-light: #f7f7f7;
+      --ds-color-surface-white: #ffffff;
+
+      /* Typography */
+      --ds-font-base:    "DM Sans", "DM Sans Placeholder", sans-serif;
+      --ds-font-brand:   "Oxanium", sans-serif;
+      --ds-font-code:    "Fragment Mono", "Geist Mono", monospace;
+
+      --ds-text-xs:   12px;
+      --ds-text-sm:   14px;
+      --ds-text-md:   16px;
+      --ds-text-lg:   18px;
+      --ds-text-xl:   20px;
+      --ds-text-2xl:  24px;
+      --ds-text-3xl:  30px;
+      --ds-text-4xl:  36px;
+      --ds-text-5xl:  40px;
+      --ds-text-6xl:  50px;
+      --ds-text-7xl:  64px;
+
+      --ds-weight-light:    300;
+      --ds-weight-regular:  400;
+      --ds-weight-medium:   500;
+      --ds-weight-semibold: 600;
+      --ds-weight-bold:     700;
+
+      --ds-leading-tight:   1.2;
+      --ds-leading-normal:  1.5;
+      --ds-leading-relaxed: 1.7;
+
+      --ds-tracking-tight:  -0.5px;
+      --ds-tracking-normal: 0px;
+      --ds-tracking-wide:   0.08em;
+
+      /* Spacing */
+      --ds-space-2xs:  4px;
+      --ds-space-xs:   8px;
+      --ds-space-sm:   12px;
+      --ds-space-md:   16px;
+      --ds-space-lg:   24px;
+      --ds-space-xl:   32px;
+      --ds-space-2xl:  48px;
+      --ds-space-3xl:  64px;
+      --ds-space-4xl:  80px;
+      --ds-space-5xl: 100px;
+      --ds-space-6xl: 150px;
+
+      /* Shape */
+      --ds-radius-none: 0px;
+      --ds-radius-xs:   5px;
+      --ds-radius-sm:   8px;
+      --ds-radius-md:   18px;
+      --ds-radius-lg:   24px;
+      --ds-radius-xl:   40px;
+      --ds-radius-2xl:  56px;
+      --ds-radius-pill: 9999px;
+
+      --ds-border-default: 1px solid var(--ds-color-border-default);
+      --ds-shadow-card:    0px 24px 40px rgba(0, 0, 0, 0.04);
+      --ds-shadow-modal:   0px 24px 40px rgba(0, 0, 0, 0.10);
+
+      /* Container */
+      --ds-container-padding-mobile:     16px;
+      --ds-container-padding-tablet:     32px;
+      --ds-container-padding-sm-desktop: 32px;
+      --ds-container-padding-desktop:    120px;
+      --ds-content-max-width:            1200px;
+
+      /* Background images */
+      --ds-bg-img-grad-navy:      url('../../reference/images/bg-gradient-navy-teal.png');
+      --ds-bg-img-wave-teal:      url('../../reference/images/bg-wave-teal-blue.png');
+      --ds-bg-img-paint-blue:     url('../../reference/images/bg-paint-blue-iridescent.png');
+      --ds-bg-img-paint-lavender: url('../../reference/images/bg-paint-lavender-gold.png');
+      --ds-bg-img-grad-sky:       url('../../reference/images/bg-gradient-sky-blush.png');
+      --ds-bg-img-grad-deep:      url('../../reference/images/bg-gradient-deep-teal.png');
+
+      /* Diagram */
+      --ds-diag-surface:       #f8f8f8;
+      --ds-diag-surface-inner: #f2f2f2;
+      --ds-diag-border:        #d0d0d0;
+      --ds-diag-border-light:  #e0e0e0;
+      --ds-diag-text:          #2a2a2a;
+      --ds-diag-text-sub:      #666666;
+      --ds-diag-arrow-dark:    #444444;
+      --ds-diag-arch-header:   var(--ds-gradient-arch-header);
+    }
+
+    /* ============================================================
+       3. Typography Base
+    ============================================================ */
+    h1, h2, h3, h4 { text-wrap: balance; }
+    p, li { text-wrap: pretty; }
+
+    h2 { font-family: var(--ds-font-base); font-size: var(--ds-text-5xl); font-weight: var(--ds-weight-bold); line-height: var(--ds-leading-tight); letter-spacing: var(--ds-tracking-tight); }
+    h3 { font-family: var(--ds-font-base); font-size: var(--ds-text-3xl); font-weight: var(--ds-weight-semibold); line-height: var(--ds-leading-tight); }
+
+    @media (max-width: 767px) { h2 { font-size: var(--ds-text-2xl); } h3 { font-size: var(--ds-text-xl); } }
+    @media (min-width: 768px)  { h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { h2 { font-size: var(--ds-text-2xl); } h3 { font-size: var(--ds-text-xl); } }
+    @media (min-width: 1440px) { h2 { font-size: 28px; } h3 { font-size: 22px; } }
+
+    /* ============================================================
+       4. Layout Components
+    ============================================================ */
+    .ds-container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 var(--ds-container-padding-mobile);
+    }
+    @media (min-width: 768px)  { .ds-container { padding: 0 var(--ds-container-padding-tablet); } }
+    @media (min-width: 1024px) { .ds-container { padding: 0 var(--ds-container-padding-sm-desktop); } }
+    @media (min-width: 1440px) { .ds-container { padding: 0 var(--ds-container-padding-desktop); max-width: 1440px; } }
+
+    .ds-section { width: 100%; padding: var(--ds-space-4xl) 0; background-color: var(--ds-color-surface-white); }
+    .ds-section--dark { background-color: var(--ds-color-surface-dark); color: var(--ds-color-text-inverse); }
+
+    /* Nav placeholder */
+    .ds-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 58px; display: flex; align-items: center;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--ds-color-border-default);
+      padding: 0 var(--ds-container-padding-mobile);
+    }
+    @media (min-width: 1440px) { .ds-nav { padding: 0 var(--ds-container-padding-desktop); } }
+    .ds-nav__inner { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .ds-nav__logo { font-family: var(--ds-font-brand); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-lg); color: var(--ds-color-brand-primary); }
+    .ds-nav__links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    @media (max-width: 767px) { .ds-nav__links { display: none; } }
+    .ds-nav__link { font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary); transition: color 0.15s; }
+    .ds-nav__link:hover { color: var(--ds-color-text-primary); }
+    .ds-nav__cta { margin-left: auto; }
+
+    /* ============================================================
+       5. Section Header
+    ============================================================ */
+    .ds-section-header { margin-bottom: var(--ds-space-2xl); text-align: center; }
+    .ds-section-header__title {
+      font-family: var(--ds-font-base); font-size: var(--ds-text-5xl); font-weight: var(--ds-weight-bold);
+      color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight);
+      letter-spacing: var(--ds-tracking-tight); margin-bottom: var(--ds-space-md);
+    }
+    .ds-section-header__description {
+      font-size: var(--ds-text-lg); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed); max-width: 100%; margin: 0 auto;
+    }
+    @media (min-width: 1024px) { .ds-section-header__description { max-width: 720px; } }
+    @media (min-width: 1440px) { .ds-section-header__description { max-width: 860px; } }
+    .ds-section-header--underline {
+      padding-bottom: var(--ds-space-lg);
+      border-bottom: 1px solid var(--ds-color-border-default);
+      margin-bottom: var(--ds-space-xl);
+    }
+    @media (max-width: 767px) {
+      .ds-section-header { text-align: left; }
+      .ds-section-header__title { font-size: var(--ds-text-2xl); }
+    }
+    @media (min-width: 768px)  { .ds-section-header__title { font-size: 22px; } }
+    @media (min-width: 1024px) { .ds-section-header__title { font-size: var(--ds-text-2xl); } }
+    @media (min-width: 1440px) { .ds-section-header__title { font-size: 28px; } }
+
+    /* ============================================================
+       6. Text Utilities
+    ============================================================ */
+    .ds-text--brand { color: var(--ds-color-brand-primary); }
+    .ds-text--brand-light { color: var(--ds-color-brand-light); }
+    .ds-text--product { font-family: var(--ds-font-brand); font-weight: var(--ds-weight-bold); }
+
+    /* ============================================================
+       7. Button
+    ============================================================ */
+    .ds-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-xs);
+      border-radius: var(--ds-radius-pill);
+      font-family: var(--ds-font-base); font-weight: var(--ds-weight-medium); font-size: var(--ds-text-md);
+      cursor: pointer; border: none; transition: opacity 0.2s, background-color 0.2s;
+      white-space: nowrap; text-decoration: none;
+    }
+    .ds-btn--sm { padding: var(--ds-space-xs) var(--ds-space-md);  font-size: var(--ds-text-sm); }
+    .ds-btn--md { padding: var(--ds-space-sm) var(--ds-space-xl);  font-size: var(--ds-text-md); }
+    .ds-btn--lg { padding: var(--ds-space-md) var(--ds-space-2xl); font-size: var(--ds-text-lg); }
+    .ds-btn--primary   { background: var(--ds-gradient-brand); color: var(--ds-color-white); }
+    .ds-btn--primary:hover { opacity: 0.88; }
+    .ds-btn--secondary { background-color: transparent; color: var(--ds-color-text-primary); border: var(--ds-border-default); }
+    .ds-btn--secondary:hover { background-color: var(--ds-color-surface-light); }
+
+    /* ============================================================
+       8. Card
+    ============================================================ */
+    .ds-card {
+      background-color: var(--ds-color-surface-white);
+      border-radius: var(--ds-radius-md);
+      border: var(--ds-border-default);
+      padding: var(--ds-space-lg);
+      box-shadow: var(--ds-shadow-card);
+    }
+    .ds-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .ds-card-grid .ds-card { display: flex; flex-direction: column; }
+    @media (min-width: 768px)  { .ds-card-grid--2col { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 768px)  { .ds-card-grid--3col { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .ds-card-grid--3col { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1440px) { .ds-card { padding: var(--ds-space-xl); } }
+
+    .ds-card__badge {
+      display: inline-flex; align-items: center; width: fit-content;
+      padding: 4px 12px; border-radius: var(--ds-radius-pill);
+      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-medium);
+      font-family: var(--ds-font-code); text-transform: uppercase;
+      letter-spacing: var(--ds-tracking-wide);
+      border: 1px solid currentColor; margin-bottom: var(--ds-space-md);
+    }
+    .ds-card__badge--brand { color: var(--ds-color-brand-primary);  border-color: var(--ds-color-brand-primary); }
+    .ds-card__badge--red   { color: var(--ds-color-error);           border-color: var(--ds-color-error); }
+    .ds-card__badge--teal  { color: var(--ds-color-teal-accent);       border-color: var(--ds-color-teal-accent); }
+    .ds-card__badge--gray  { color: var(--ds-color-text-tertiary);   border-color: var(--ds-color-border-default); }
+
+    .ds-card__title { font-family: var(--ds-font-base); font-size: var(--ds-text-2xl); font-weight: var(--ds-weight-bold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); margin-bottom: var(--ds-space-sm); }
+    .ds-card__subtitle { font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary); margin-bottom: var(--ds-space-md); }
+    .ds-card__description { font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary); line-height: var(--ds-leading-relaxed); flex: 1; }
+    .ds-card__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--ds-space-md); }
+    .ds-card__tag { font-size: var(--ds-text-xs); color: var(--ds-color-text-tertiary); background: var(--ds-color-surface-mid); padding: 2px 10px; border-radius: var(--ds-radius-pill); }
+    .ds-card__icon { margin-bottom: var(--ds-space-sm); display: block; }
+
+    /* Case Study Card */
+    .ds-card--case-study { display: grid; grid-template-columns: 100px 1fr; gap: 0; padding: 0; overflow: hidden; }
+    .ds-card--case-study .ds-card__left { background: transparent; border-right: 1px solid var(--ds-color-border-default); padding: var(--ds-space-sm); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: var(--ds-space-sm); }
+    .ds-card--case-study .ds-card__left-image { width: 72px; height: 60px; object-fit: contain; border-radius: var(--ds-radius-md); }
+    .ds-card--case-study .ds-card__left-category { font-size: 10px; color: var(--ds-color-text-secondary); letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; }
+    .ds-card--case-study .ds-card__left-title { font-size: var(--ds-text-xs); font-weight: var(--ds-weight-bold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); }
+    .ds-card--case-study .ds-card__right { padding: var(--ds-space-md); display: flex; flex-direction: column; gap: var(--ds-space-xs); }
+    .ds-card--case-study .ds-card__right .ds-badge + .ds-badge { margin-left: var(--ds-space-xs); }
+    .ds-card--case-study .ds-card__tags { display: flex; flex-wrap: wrap; gap: var(--ds-space-xs); margin-top: auto; justify-content: flex-end; }
+    @media (max-width: 767px) { .ds-card--case-study { grid-template-columns: 1fr; } .ds-card--case-study .ds-card__left { border-right: none; border-bottom: 1px solid var(--ds-color-border-default); flex-direction: row; justify-content: flex-start; padding: var(--ds-space-md); } }
+
+    /* ============================================================
+       9. Badge
+    ============================================================ */
+    .ds-badge {
+      display: inline-flex; align-items: center; gap: var(--ds-space-2xs);
+      padding: var(--ds-space-2xs) var(--ds-space-xs);
+      border-radius: var(--ds-radius-pill);
+      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-medium);
+      line-height: 1; white-space: nowrap;
+    }
+    .ds-badge--primary { background-color: var(--ds-color-brand-primary); color: var(--ds-color-white); }
+    .ds-badge--purple  { background-color: var(--ds-color-brand-light);   color: var(--ds-color-brand-primary); }
+    .ds-badge--neutral { background-color: var(--ds-color-neutral-150);   color: var(--ds-color-text-secondary); }
+    .ds-badge--success { background-color: rgba(14, 130, 76, 0.12);       color: var(--ds-color-success); }
+    .ds-badge--error   { background-color: rgba(255, 48, 48, 0.12);       color: var(--ds-color-error); }
+    .ds-badge--dark    { background-color: var(--ds-color-neutral-700);   color: var(--ds-color-text-inverse); }
+
+    /* ============================================================
+       10. Bullet List
+    ============================================================ */
+    .ds-bullet { list-style: none; display: flex; flex-direction: column; gap: var(--ds-space-sm); }
+    .ds-bullet__item { display: flex; align-items: flex-start; gap: var(--ds-space-xs); font-size: var(--ds-text-md); line-height: var(--ds-leading-normal); color: var(--ds-color-text-primary); }
+    .ds-bullet__icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; }
+    .ds-bullet--dot .ds-bullet__icon::before { content: "•"; color: var(--ds-color-brand-primary); font-size: var(--ds-text-xl); line-height: 1; }
+    .ds-bullet--check .ds-bullet__icon::before { content: "✓"; color: var(--ds-color-success); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-md); line-height: 1; }
+    .ds-bullet--number { counter-reset: bullet; }
+    .ds-bullet--number .ds-bullet__item { counter-increment: bullet; }
+    .ds-bullet--number .ds-bullet__icon::before { content: counter(bullet); font-size: var(--ds-text-sm); font-weight: var(--ds-weight-bold); color: var(--ds-color-brand-primary); }
+
+    /* ============================================================
+       11. Accordion Card (.ds-ac-card)
+    ============================================================ */
+    .ds-ac-list { display: flex; flex-direction: column; gap: 2px; }
+    .ds-ac-card { border: var(--ds-border-default); border-radius: var(--ds-radius-sm); background-color: var(--ds-color-surface-white); overflow: hidden; transition: background-color 0.2s; }
+    .ds-ac-card:hover { background-color: var(--ds-color-neutral-025); }
+    .ds-ac-card__header { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: var(--ds-space-md); padding: var(--ds-space-lg); cursor: pointer; user-select: none; }
+    .ds-ac-card__title-wrap { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+    .ds-ac-card__industry { font-family: var(--ds-font-code); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ds-color-text-tertiary); display: flex; align-items: center; gap: var(--ds-space-2xs); }
+    .ds-ac-card__industry-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .ds-ac-card__title { font-family: var(--ds-font-base); font-size: var(--ds-text-lg); font-weight: var(--ds-weight-medium); line-height: var(--ds-leading-tight); color: var(--ds-color-text-primary); word-break: keep-all; overflow-wrap: break-word; }
+    .ds-ac-card__meta { display: flex; align-items: center; gap: var(--ds-space-xs); flex-wrap: wrap; flex-shrink: 0; }
+    .ds-ac-card__toggle { width: 28px; height: 28px; border-radius: 6px; border: 0.5px solid var(--ds-color-border-default); background: var(--ds-color-surface-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; transition: border-color 0.15s, background 0.15s; }
+    .ds-ac-card__toggle:hover { border-color: var(--ds-color-border-strong); background: var(--ds-color-surface-mid); }
+    .ds-ac-card__toggle-icon { width: 12px; height: 12px; position: relative; flex-shrink: 0; }
+    .ds-ac-card__toggle-icon::before, .ds-ac-card__toggle-icon::after { content: ''; position: absolute; background: var(--ds-color-text-tertiary); border-radius: 1px; transition: opacity 0.2s; }
+    .ds-ac-card__toggle-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .ds-ac-card__toggle-icon::after  { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; }
+    .ds-ac-card.ds-ac--open .ds-ac-card__toggle-icon::after { opacity: 0; }
+    .ds-ac-card.ds-ac--open .ds-ac-card__toggle-icon::before { background: var(--ds-color-text-secondary); }
+    .ds-ac-card__body { display: none; padding: var(--ds-space-lg); border-top: var(--ds-border-default); background: var(--ds-color-surface-light); }
+    .ds-ac-card.ds-ac--open .ds-ac-card__body { display: block; }
+    .ds-ac-card__body p { font-size: var(--ds-text-md); color: var(--ds-color-text-secondary); line-height: var(--ds-leading-relaxed); }
+    @media (max-width: 767px) { .ds-ac-card__header { grid-template-columns: 1fr auto; align-items: start; } .ds-ac-card__meta { display: none; } }
+
+    /* ============================================================
+       12. Step Tabs
+    ============================================================ */
+    .ds-step-tabs__nav {
+      display: flex; justify-content: center; gap: var(--ds-space-sm);
+      flex-wrap: wrap; margin-bottom: var(--ds-space-3xl);
+    }
+    .ds-step-tabs__tab {
+      display: inline-flex; align-items: center; gap: var(--ds-space-xs);
+      padding: var(--ds-space-xs) var(--ds-space-lg);
+      border-radius: var(--ds-radius-pill); border: var(--ds-border-default);
+      background-color: var(--ds-color-surface-white);
+      font-family: var(--ds-font-base); font-size: var(--ds-text-sm); font-weight: var(--ds-weight-medium);
+      color: var(--ds-color-text-secondary); cursor: pointer; transition: all 0.2s; white-space: nowrap;
+    }
+    .ds-step-tabs__tab-number {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 22px; height: 22px; border-radius: 50%;
+      background-color: var(--ds-color-neutral-100); border: 1px solid var(--ds-color-border-default);
+      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-bold);
+      color: var(--ds-color-text-secondary); flex-shrink: 0; transition: all 0.2s;
+    }
+    .ds-step-tabs__tab:hover { background-color: var(--ds-color-neutral-900); border-color: var(--ds-color-neutral-900); color: var(--ds-color-white); }
+    .ds-step-tabs__tab:hover .ds-step-tabs__tab-number { background-color: var(--ds-color-white); border-color: var(--ds-color-white); color: var(--ds-color-neutral-900); }
+    .ds-step-tabs__tab--active { background-color: var(--ds-color-neutral-900); border-color: var(--ds-color-neutral-900); color: var(--ds-color-white); font-weight: var(--ds-weight-semibold); }
+    .ds-step-tabs__tab--active .ds-step-tabs__tab-number { background-color: var(--ds-color-white); border-color: var(--ds-color-white); color: var(--ds-color-neutral-900); }
+    .ds-step-tabs__panel { display: none; }
+    .ds-step-tabs__panel--active { display: grid; grid-template-columns: 1fr; gap: var(--ds-space-2xl); align-items: center; }
+    @media (min-width: 1024px) { .ds-step-tabs__panel--active { grid-template-columns: 5fr 7fr; gap: var(--ds-space-3xl); } }
+    @media (min-width: 1440px) { .ds-step-tabs__panel--active { gap: var(--ds-space-4xl); } }
+    .ds-step-tabs__content { display: flex; flex-direction: column; gap: var(--ds-space-lg); }
+    .ds-step-tabs__title { font-family: var(--ds-font-base); font-size: var(--ds-text-3xl); font-weight: var(--ds-weight-bold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); }
+    .ds-step-tabs__description { font-size: var(--ds-text-md); color: var(--ds-color-text-secondary); line-height: var(--ds-leading-relaxed); }
+    .ds-step-tabs__screenshot { border-radius: var(--ds-radius-lg); overflow: hidden; border: var(--ds-border-default); box-shadow: var(--ds-shadow-card); background-color: var(--ds-color-surface-light); max-height: 420px; display: flex; align-items: center; justify-content: center; min-height: 280px; }
+    .ds-step-tabs__screenshot-placeholder { font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary); font-family: var(--ds-font-code); }
+    @media (min-width: 768px) { .ds-step-tabs__title { font-size: var(--ds-text-4xl); } }
+    @media (max-width: 767px) {
+      .ds-step-tabs__nav { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: var(--ds-space-xs); }
+      .ds-step-tabs__nav::-webkit-scrollbar { display: none; }
+      .ds-step-tabs__screenshot { max-height: 280px; }
+    }
+
+    /* ============================================================
+       13. Table
+    ============================================================ */
+    .ds-table-wrap { overflow-x: auto; border-radius: var(--ds-radius-lg); border: 1px solid var(--ds-color-border-default); }
+    .ds-table { width: 100%; border-collapse: collapse; font-size: var(--ds-text-sm); }
+    .ds-table thead th { font-family: var(--ds-font-code); font-size: 11px; text-transform: uppercase; letter-spacing: var(--ds-tracking-wide); color: var(--ds-color-text-primary); font-weight: var(--ds-weight-semibold); padding: 12px 16px; border-bottom: 2px solid var(--ds-color-border-default); text-align: left; background: var(--ds-color-surface-light); }
+    .ds-table tbody td { padding: 14px 16px; border-bottom: 1px solid var(--ds-color-border-default); color: var(--ds-color-text-primary); vertical-align: top; line-height: var(--ds-leading-normal); }
+    .ds-table tbody tr:last-child td { border-bottom: none; }
+    .ds-table tbody td:first-child { font-weight: var(--ds-weight-semibold); }
+    .ds-table tbody tr:hover td { background: var(--ds-color-surface-light); }
+
+    /* ============================================================
+       14. Banner
+    ============================================================ */
+    .ds-banner {
+      padding: var(--ds-space-md) var(--ds-space-lg);
+      border-radius: 0; border: none;
+      border-top: 1px solid var(--ds-color-border-default);
+      border-bottom: 1px solid var(--ds-color-border-default);
+      background-color: var(--ds-color-surface-light);
+      font-size: var(--ds-text-sm); line-height: var(--ds-leading-relaxed);
+      text-align: center; word-break: keep-all; overflow-wrap: break-word;
+    }
+    .ds-banner a { display: block; margin-top: var(--ds-space-sm); }
+    .ds-banner--full {
+      width: 100%; text-align: center;
+      padding: var(--ds-space-xl) var(--ds-space-2xl);
+      border-radius: var(--ds-radius-xl);
+      background-size: cover; background-position: center;
+      position: relative; overflow: hidden;
+      color: var(--ds-color-text-primary);
+      font-size: var(--ds-text-lg); font-weight: var(--ds-weight-medium);
+      line-height: var(--ds-leading-relaxed); border: none;
+      word-break: keep-all; overflow-wrap: break-word;
+    }
+    .ds-banner--full::before {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(255,255,255,0.72); z-index: 0;
+    }
+    .ds-banner--full > * { position: relative; z-index: 1; }
+    .ds-banner--full { isolation: isolate; }
+    .ds-banner--full a { display: block; margin-top: var(--ds-space-sm); }
+    .ds-banner--spaced { margin: var(--ds-space-2xl) 0; }
+    .ds-banner--spaced-top { margin-top: var(--ds-space-xl); }
+    .ds-banner--full__sub { margin-top: var(--ds-space-sm); font-size: var(--ds-text-md); font-weight: var(--ds-weight-regular); }
+
+    /* ============================================================
+       15. KPI Band
+    ============================================================ */
+    .ds-kpi-band {
+      border-radius: var(--ds-radius-xl); padding: 48px 40px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+      justify-items: center;
+      background-size: cover; background-position: center;
+      position: relative; overflow: hidden;
+    }
+    .ds-kpi-band:not([class*="ds-bg--"]) { background: var(--ds-gradient-brand); }
+    .ds-kpi-band[class*="ds-bg--"]::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.35); z-index: 0; }
+    .ds-kpi-band > * { position: relative; z-index: 1; }
+    .ds-kpi-band__item { display: flex; flex-direction: column; gap: 12px; text-align: center; }
+    .ds-kpi-band__number { font-family: var(--ds-font-base); font-size: var(--ds-text-6xl); font-weight: var(--ds-weight-bold); line-height: 1; color: var(--ds-color-white); }
+    .ds-kpi-band__label { font-size: var(--ds-text-sm); color: rgba(255,255,255,0.85); line-height: var(--ds-leading-normal); }
+    @media (max-width: 1023px) { .ds-kpi-band { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 767px)  { .ds-kpi-band { grid-template-columns: 1fr; padding: 32px 20px; } }
+
+    /* ============================================================
+       16. CTA Band
+    ============================================================ */
+    .ds-cta-band {
+      width: 100%; position: relative; overflow: hidden;
+      padding: 80px var(--ds-container-padding-mobile);
+      text-align: center;
+      background-size: cover; background-position: center;
+    }
+    .ds-cta-band:not([class*="ds-bg--"]) { background: var(--ds-gradient-brand); }
+    .ds-cta-band::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.15); z-index: 0; }
+    .ds-cta-band > * { position: relative; z-index: 1; }
+    .ds-cta-band__inner { max-width: 100%; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: var(--ds-space-lg); }
+    @media (min-width: 1024px) { .ds-cta-band__inner { max-width: 720px; } }
+    @media (min-width: 1440px) { .ds-cta-band__inner { max-width: 860px; } }
+    .ds-cta-band__title { font-family: var(--ds-font-base); font-size: var(--ds-text-5xl); font-weight: var(--ds-weight-bold); color: #ffffff; line-height: var(--ds-leading-tight); letter-spacing: var(--ds-tracking-tight); margin: 0; }
+    .ds-cta-band__description { font-size: var(--ds-text-lg); color: rgba(255,255,255,0.85); line-height: var(--ds-leading-relaxed); margin: 0; word-break: keep-all; overflow-wrap: break-word; }
+    .ds-cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .ds-cta-band__actions .ds-btn { background: rgba(255,255,255,0.92); color: var(--ds-color-text-primary); border: 1px solid rgba(255,255,255,0.6); backdrop-filter: blur(8px); }
+    .ds-cta-band__actions .ds-btn:hover { background-color: var(--ds-color-white); }
+    @media (min-width: 768px)  { .ds-cta-band { padding: 100px var(--ds-container-padding-tablet); } }
+    @media (min-width: 1440px) { .ds-cta-band { padding: 120px var(--ds-container-padding-desktop); max-width: 1440px; margin: 0 auto; } }
+    @media (max-width: 767px) {
+      .ds-cta-band__title { font-size: var(--ds-text-4xl); }
+      .ds-cta-band__actions { flex-direction: column; align-items: center; }
+      .ds-cta-band__actions .ds-btn { width: 100%; max-width: 320px; }
+    }
+    @media (min-width: 1440px) { .ds-cta-band__title { font-size: var(--ds-text-6xl); } }
+
+    /* ============================================================
+       17. Background image utility classes
+    ============================================================ */
+    .ds-bg--grad-deep     { background-image: var(--ds-bg-img-grad-deep); }
+    .ds-bg--grad-navy     { background-image: var(--ds-bg-img-grad-navy); }
+    .ds-bg--wave-teal     { background-image: var(--ds-bg-img-wave-teal); }
+    .ds-bg--paint-blue    { background-image: var(--ds-bg-img-paint-blue); }
+    .ds-bg--paint-lavender{ background-image: var(--ds-bg-img-paint-lavender); }
+    .ds-bg--grad-sky      { background-image: var(--ds-bg-img-grad-sky); }
+
+    /* ============================================================
+       18. Footer
+    ============================================================ */
+    .ds-footer {
+      background-color: var(--ds-color-surface-dark);
+      color: var(--ds-color-text-inverse);
+      padding: var(--ds-space-3xl) 0 var(--ds-space-xl);
+    }
+    .ds-footer__inner { display: flex; flex-direction: column; gap: var(--ds-space-lg); }
+    .ds-footer__brand { font-family: var(--ds-font-brand); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-xl); color: var(--ds-color-brand-light); margin-bottom: var(--ds-space-xs); }
+    .ds-footer__tagline { font-size: var(--ds-text-sm); color: var(--ds-color-neutral-400); line-height: var(--ds-leading-relaxed); }
+    .ds-footer__divider { border: none; border-top: 1px solid var(--ds-color-neutral-700); margin: var(--ds-space-md) 0; }
+    .ds-footer__copy { font-size: var(--ds-text-xs); color: var(--ds-color-neutral-400); }
+
+    /* ============================================================
+       19. Section-specific overrides
+    ============================================================ */
+
+    /* Section 4 — Badge pairs inline */
+    .ds-case-badge-row { display: flex; flex-wrap: wrap; gap: var(--ds-space-xs); margin-bottom: var(--ds-space-sm); }
+
+    /* Section 7 — Banner with brand tint */
+    .ds-banner--brand-tint {
+      --ds-banner-bg: rgba(24, 33, 232, 0.06);
+      background-color: rgba(24, 33, 232, 0.06);
+    }
+
+    /* Section 8 — Before/After card colors */
+    .ds-card--before { border-color: rgba(255, 48, 48, 0.3); }
+    .ds-card--after  { border-color: rgba(24, 33, 232, 0.3); }
+
+    /* Section 9 — Architecture placeholder */
+    .ds-arch-placeholder {
+      border: 2px dashed var(--ds-color-border-default);
+      border-radius: var(--ds-radius-md);
+      padding: var(--ds-space-4xl) var(--ds-space-lg);
+      text-align: center;
+      background-color: var(--ds-color-surface-light);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--ds-space-md);
+      min-height: 360px;
+    }
+    .ds-arch-placeholder__icon { font-size: 40px; opacity: 0.4; }
+    .ds-arch-placeholder__label { font-family: var(--ds-font-code); font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary); text-transform: uppercase; letter-spacing: var(--ds-tracking-wide); }
+    .ds-arch-placeholder__title { font-size: var(--ds-text-lg); font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-secondary); }
+    .ds-arch-placeholder__desc { font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary); }
+
+    /* Section 10 — KPI section w/ banner below */
+    .ds-section-kpi-proof { background-color: var(--ds-color-surface-white); padding: var(--ds-space-4xl) 0; }
+
+    /* Flow steps row */
+    .ds-flow-steps { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ds-space-sm); margin-top: var(--ds-space-2xl); }
+    .ds-flow-step { display: flex; align-items: center; gap: var(--ds-space-xs); }
+    .ds-flow-step__num { width: 28px; height: 28px; border-radius: 50%; background: var(--ds-color-brand-primary); color: var(--ds-color-white); display: flex; align-items: center; justify-content: center; font-size: var(--ds-text-xs); font-weight: var(--ds-weight-bold); flex-shrink: 0; }
+    .ds-flow-step__label { font-size: var(--ds-text-sm); font-weight: var(--ds-weight-medium); color: var(--ds-color-text-primary); }
+    .ds-flow-arrow { color: var(--ds-color-text-tertiary); font-size: var(--ds-text-lg); flex-shrink: 0; }
+
+    @media (max-width: 767px) {
+      .ds-flow-steps { flex-direction: column; align-items: flex-start; }
+      .ds-flow-arrow { transform: rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="ds-nav" role="navigation" aria-label="Main navigation">
+    <div class="ds-nav__inner">
+      <a href="/" class="ds-nav__logo" aria-label="LLM Capsule home">
+        <span class="ds-text--product">LLM Capsule</span>
+      </a>
+      <ul class="ds-nav__links">
+        <li><a href="#section-4" class="ds-nav__link">Industries</a></li>
+        <li><a href="#section-5" class="ds-nav__link">Architecture</a></li>
+        <li><a href="#section-6" class="ds-nav__link">Use Cases</a></li>
+        <li><a href="#section-12" class="ds-nav__link">FAQ</a></li>
+      </ul>
+      <a href="request-pov.html" class="ds-btn ds-btn--primary ds-btn--sm ds-nav__cta">Request PoV</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         Section 4: Industry Proof
+    ============================================================ -->
+    <section class="ds-section" id="section-4">
+      <div class="ds-container">
+        <div class="ds-section-header ds-section-header--underline">
+          <h2 class="ds-section-header__title">
+            Enabling AI adoption across <span class="ds-text--brand">regulated industries</span>
+          </h2>
+          <p class="ds-section-header__description">
+            <span class="ds-text--product">LLM Capsule</span> unlocks AI usage on real enterprise documents across financial services, government, healthcare, and legal workflows — turning blocked projects into production deployments.
+          </p>
+        </div>
+
+        <div class="ds-card-grid ds-card-grid--3col">
+
+          <!-- Public Sector -->
+          <article class="ds-card ds-card--case-study">
+            <div class="ds-card__left">
+              <img src="../../cubig/reference/graphics/illustration-public-sector.png"
+                   alt="Public Sector" class="ds-card__left-image">
+              <span class="ds-card__left-category">Industry</span>
+              <span class="ds-card__left-title">Public Sector</span>
+            </div>
+            <div class="ds-card__right">
+              <div class="ds-case-badge-row">
+                <span class="ds-badge ds-badge--error">BLOCKED</span>
+                <span class="ds-badge ds-badge--primary">LLM CAPSULE</span>
+              </div>
+              <p class="ds-card__description">
+                <strong>Blocked:</strong> Classified documents and citizen data cannot reach external AI services under government data handling regulations.<br>
+                <strong>Enabled:</strong> Sensitive identifiers are encapsulated locally before processing. Outputs are restored with real data — compliant with government data policies.
+              </p>
+              <div class="ds-card__tags">
+                <span class="ds-card__tag">#LLMCapsule</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Finance & Insurance -->
+          <article class="ds-card ds-card--case-study">
+            <div class="ds-card__left">
+              <img src="../../cubig/reference/graphics/illustration-finance.png"
+                   alt="Finance and Insurance" class="ds-card__left-image">
+              <span class="ds-card__left-category">Industry</span>
+              <span class="ds-card__left-title">Finance &amp; Insurance</span>
+            </div>
+            <div class="ds-card__right">
+              <div class="ds-case-badge-row">
+                <span class="ds-badge ds-badge--error">BLOCKED</span>
+                <span class="ds-badge ds-badge--primary">LLM CAPSULE</span>
+              </div>
+              <p class="ds-card__description">
+                <strong>Blocked:</strong> Account numbers, policy IDs, and financial records are prohibited from external AI platforms under financial compliance mandates.<br>
+                <strong>Enabled:</strong> Claims, contracts, and reports are processed with AI while all financial identifiers are encapsulated and fully restored.
+              </p>
+              <div class="ds-card__tags">
+                <span class="ds-card__tag">#LLMCapsule</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Healthcare -->
+          <article class="ds-card ds-card--case-study">
+            <div class="ds-card__left">
+              <img src="../../cubig/reference/graphics/illustration-healthcare.png"
+                   alt="Healthcare" class="ds-card__left-image">
+              <span class="ds-card__left-category">Industry</span>
+              <span class="ds-card__left-title">Healthcare</span>
+            </div>
+            <div class="ds-card__right">
+              <div class="ds-case-badge-row">
+                <span class="ds-badge ds-badge--error">BLOCKED</span>
+                <span class="ds-badge ds-badge--primary">LLM CAPSULE</span>
+              </div>
+              <p class="ds-card__description">
+                <strong>Blocked:</strong> Patient records and clinical data carry strict privacy obligations that block any external AI access under healthcare regulations.<br>
+                <strong>Enabled:</strong> Medical summaries, clinical notes, and reports are AI-processed with zero patient data exposure — restored outputs ready for clinical use.
+              </p>
+              <div class="ds-card__tags">
+                <span class="ds-card__tag">#LLMCapsule</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Legal -->
+          <article class="ds-card ds-card--case-study">
+            <div class="ds-card__left">
+              <img src="../../cubig/reference/graphics/illustration-persona.png"
+                   alt="Legal" class="ds-card__left-image">
+              <span class="ds-card__left-category">Industry</span>
+              <span class="ds-card__left-title">Legal</span>
+            </div>
+            <div class="ds-card__right">
+              <div class="ds-case-badge-row">
+                <span class="ds-badge ds-badge--error">BLOCKED</span>
+                <span class="ds-badge ds-badge--primary">LLM CAPSULE</span>
+              </div>
+              <p class="ds-card__description">
+                <strong>Blocked:</strong> Privileged communications, deal terms, and client identities cannot be exposed to AI services under attorney-client confidentiality obligations.<br>
+                <strong>Enabled:</strong> Contract review, clause extraction, and risk analysis proceed with AI — real party names and amounts restored for direct workflow integration.
+              </p>
+              <div class="ds-card__tags">
+                <span class="ds-card__tag">#LLMCapsule</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Telecom -->
+          <article class="ds-card ds-card--case-study">
+            <div class="ds-card__left">
+              <img src="../../cubig/reference/graphics/illustration-security.png"
+                   alt="Telecom" class="ds-card__left-image">
+              <span class="ds-card__left-category">Industry</span>
+              <span class="ds-card__left-title">Telecom</span>
+            </div>
+            <div class="ds-card__right">
+              <div class="ds-case-badge-row">
+                <span class="ds-badge ds-badge--error">BLOCKED</span>
+                <span class="ds-badge ds-badge--primary">LLM CAPSULE</span>
+              </div>
+              <p class="ds-card__description">
+                <strong>Blocked:</strong> Subscriber data, network configurations, and service records contain sensitive identifiers that cannot reach external AI providers.<br>
+                <strong>Enabled:</strong> Customer communications, fault analysis, and service reports are AI-processed — subscriber identities remain protected and restored in outputs.
+              </p>
+              <div class="ds-card__tags">
+                <span class="ds-card__tag">#LLMCapsule</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Network Security -->
+          <article class="ds-card ds-card--case-study">
+            <div class="ds-card__left">
+              <img src="../../cubig/reference/graphics/illustration-defense.png"
+                   alt="Network Security" class="ds-card__left-image">
+              <span class="ds-card__left-category">Industry</span>
+              <span class="ds-card__left-title">Network Security</span>
+            </div>
+            <div class="ds-card__right">
+              <div class="ds-case-badge-row">
+                <span class="ds-badge ds-badge--error">BLOCKED</span>
+                <span class="ds-badge ds-badge--primary">LLM CAPSULE</span>
+              </div>
+              <p class="ds-card__description">
+                <strong>Blocked:</strong> Threat intelligence, incident reports, and network topology data are too sensitive to process through external AI models.<br>
+                <strong>Enabled:</strong> Threat analysis, incident summaries, and security reports are generated with AI — all critical infrastructure identifiers are encapsulated and restored.
+              </p>
+              <div class="ds-card__tags">
+                <span class="ds-card__tag">#LLMCapsule</span>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /ds-card-grid -->
+      </div><!-- /ds-container -->
+    </section>
+
+    <!-- ============================================================
+         Section 5: Core 3+2 Architecture (Accordion)
+    ============================================================ -->
+    <section class="ds-section" id="section-5">
+      <div class="ds-container">
+        <div class="ds-section-header ds-section-header--underline">
+          <h2 class="ds-section-header__title">
+            Enterprise AI enablement through a <span class="ds-text--brand">3+2 architecture</span>
+          </h2>
+          <p class="ds-section-header__description">
+            Three core enablement pillars plus two additional value capabilities.
+          </p>
+        </div>
+
+        <div class="ds-ac-list" role="list">
+
+          <!-- Core 1: Zero Exposure -->
+          <article class="ds-ac-card ds-ac--open" role="listitem">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <div class="ds-ac-card__title-wrap">
+                <div class="ds-ac-card__industry">
+                  <span class="ds-ac-card__industry-dot" style="background-color: var(--ds-color-brand-primary)"></span>
+                  CORE 1
+                </div>
+                <div class="ds-ac-card__title">Zero Exposure</div>
+              </div>
+              <div class="ds-ac-card__meta">
+                <span class="ds-badge ds-badge--error">Zero Data Leak</span>
+              </div>
+              <div class="ds-ac-card__toggle" role="button" aria-label="Toggle section">
+                <span class="ds-ac-card__toggle-icon"></span>
+              </div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Sensitive data is replaced with safe placeholders (encapsulation) inside your environment before anything leaves. Original values never reach external AI services. Zero exposure means the AI provider processes useful data but cannot reconstruct original sensitive values. Even if the provider logged, stored, or trained on the received data, no original enterprise information would be exposed.</p>
+            </div>
+          </article>
+
+          <!-- Core 2: Restoration -->
+          <article class="ds-ac-card" role="listitem">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <div class="ds-ac-card__title-wrap">
+                <div class="ds-ac-card__industry">
+                  <span class="ds-ac-card__industry-dot" style="background-color: var(--ds-color-brand-primary)"></span>
+                  CORE 2
+                </div>
+                <div class="ds-ac-card__title">Restoration</div>
+              </div>
+              <div class="ds-ac-card__meta">
+                <span class="ds-badge ds-badge--success">100% Restore</span>
+              </div>
+              <div class="ds-ac-card__toggle" role="button" aria-label="Toggle section">
+                <span class="ds-ac-card__toggle-icon"></span>
+              </div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>AI outputs are automatically restored locally — not abstracted, not anonymized, but fully restored with real business data for immediate use. Unlike masking tools that produce generic AI outputs requiring manual reconstruction, LLM Capsule automatically restores AI results with original names, account numbers, dates, and references. Restored outputs are directly usable in enterprise workflows — regulatory reports, legal documents, claim analysis, and internal communications.</p>
+            </div>
+          </article>
+
+          <!-- Core 3: Enterprise Context -->
+          <article class="ds-ac-card" role="listitem">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <div class="ds-ac-card__title-wrap">
+                <div class="ds-ac-card__industry">
+                  <span class="ds-ac-card__industry-dot" style="background-color: var(--ds-color-brand-primary)"></span>
+                  CORE 3
+                </div>
+                <div class="ds-ac-card__title">Enterprise Context</div>
+              </div>
+              <div class="ds-ac-card__meta">
+                <span class="ds-badge ds-badge--purple">Custom Policy</span>
+              </div>
+              <div class="ds-ac-card__toggle" role="button" aria-label="Toggle section">
+                <span class="ds-ac-card__toggle-icon"></span>
+              </div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Define and control sensitive entities beyond standard PII — project codes, internal IDs, contract terms, and strategic data specific to your organization. A legal memo about a pending acquisition contains no PII but is filled with deal structure, valuation ranges, and strategic rationale. Enterprise context enables policy-based sensitivity classification through context-aware data control.</p>
+            </div>
+          </article>
+
+          <!-- +1: Structure-Preserving -->
+          <article class="ds-ac-card" role="listitem">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <div class="ds-ac-card__title-wrap">
+                <div class="ds-ac-card__industry">
+                  <span class="ds-ac-card__industry-dot" style="background-color: var(--ds-color-teal-accent)"></span>
+                  +1
+                </div>
+                <div class="ds-ac-card__title">Structure-Preserving</div>
+              </div>
+              <div class="ds-ac-card__meta">
+                <span class="ds-badge ds-badge--neutral">Tables &amp; Layouts</span>
+              </div>
+              <div class="ds-ac-card__toggle" role="button" aria-label="Toggle section">
+                <span class="ds-ac-card__toggle-icon"></span>
+              </div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Tables, diagrams, cross-references, and document hierarchy remain intact. Masking tools destroy document context. LLM Capsule keeps tables, diagrams, and entity relationships intact so AI understands the full context while sensitive values are replaced.</p>
+            </div>
+          </article>
+
+          <!-- +2: Cross-Model Execution -->
+          <article class="ds-ac-card" role="listitem">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <div class="ds-ac-card__title-wrap">
+                <div class="ds-ac-card__industry">
+                  <span class="ds-ac-card__industry-dot" style="background-color: var(--ds-color-teal-accent)"></span>
+                  +2
+                </div>
+                <div class="ds-ac-card__title">Cross-Model Execution</div>
+              </div>
+              <div class="ds-ac-card__meta">
+                <span class="ds-badge ds-badge--neutral">Any LLM</span>
+              </div>
+              <div class="ds-ac-card__toggle" role="button" aria-label="Toggle section">
+                <span class="ds-ac-card__toggle-icon"></span>
+              </div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Works with any AI model. Switch between ChatGPT, Claude, Gemini, or any LLM API instantly — no re-engineering, no vendor lock-in. LLM Capsule acts as a model-agnostic AI enablement layer for all AI models. Connect to any model simultaneously, including CUBIG's own SynTitan platform.</p>
+            </div>
+          </article>
+
+        </div><!-- /ds-ac-list -->
+      </div><!-- /ds-container -->
+    </section>
+
+    <!-- ============================================================
+         Section 6: Use Cases (Step Tabs)
+    ============================================================ -->
+    <section class="ds-section" id="section-6">
+      <div class="ds-container">
+        <div class="ds-section-header ds-section-header--underline">
+          <h2 class="ds-section-header__title">
+            AI-Enabled <span class="ds-text--brand">Enterprise Workflows</span>
+          </h2>
+          <p class="ds-section-header__description">
+            <span class="ds-text--product">LLM Capsule</span> plugs into the most common enterprise AI workflows — from document intake to output delivery.
+          </p>
+        </div>
+
+        <div data-step-tabs>
+          <!-- Tab Navigation -->
+          <div class="ds-step-tabs__nav" role="tablist">
+            <button class="ds-step-tabs__tab ds-step-tabs__tab--active" data-tab="1" role="tab" aria-selected="true">
+              <span class="ds-step-tabs__tab-number">1</span>
+              Document Summarization
+            </button>
+            <button class="ds-step-tabs__tab" data-tab="2" role="tab" aria-selected="false">
+              <span class="ds-step-tabs__tab-number">2</span>
+              Claims Processing
+            </button>
+            <button class="ds-step-tabs__tab" data-tab="3" role="tab" aria-selected="false">
+              <span class="ds-step-tabs__tab-number">3</span>
+              Contract Review
+            </button>
+            <button class="ds-step-tabs__tab" data-tab="4" role="tab" aria-selected="false">
+              <span class="ds-step-tabs__tab-number">4</span>
+              Report Generation
+            </button>
+          </div>
+
+          <!-- Panel 1: Document Summarization -->
+          <div class="ds-step-tabs__panel ds-step-tabs__panel--active" data-panel="1" role="tabpanel">
+            <div class="ds-step-tabs__content">
+              <h3 class="ds-step-tabs__title">Secure Document Summarization</h3>
+              <p class="ds-step-tabs__description">
+                AI generates executive summaries of sensitive documents — contracts, reports, filings — while all confidential elements are replaced with safe placeholders. Restored summaries contain real names, dates, and figures ready for business use.
+              </p>
+              <ul class="ds-bullet ds-bullet--check" aria-label="Key features">
+                <li class="ds-bullet__item">
+                  <span class="ds-bullet__icon" aria-hidden="true"></span>
+                  <span>Contracts, reports, filings protected</span>
+                </li>
+                <li class="ds-bullet__item">
+                  <span class="ds-bullet__icon" aria-hidden="true"></span>
+                  <span>Real names, dates, figures restored</span>
+                </li>
+              </ul>
+            </div>
+            <div class="ds-step-tabs__screenshot" aria-label="Document Summarization screenshot placeholder">
+              <span class="ds-step-tabs__screenshot-placeholder">Screenshot — screenshot-usecase-summarization.png</span>
+            </div>
+          </div>
+
+          <!-- Panel 2: Claims Processing -->
+          <div class="ds-step-tabs__panel" data-panel="2" role="tabpanel">
+            <div class="ds-step-tabs__content">
+              <h3 class="ds-step-tabs__title">AI Claims Processing</h3>
+              <p class="ds-step-tabs__description">
+                Insurance and financial claims go through <span class="ds-text--product">LLM Capsule</span> before AI-powered classification, damage assessment, and fraud detection. Restored outputs feed directly into claims management systems with real policyholder data.
+              </p>
+              <ul class="ds-bullet ds-bullet--check" aria-label="Key features">
+                <li class="ds-bullet__item">
+                  <span class="ds-bullet__icon" aria-hidden="true"></span>
+                  <span>Classification, damage assessment, fraud detection</span>
+                </li>
+                <li class="ds-bullet__item">
+                  <span class="ds-bullet__icon" aria-hidden="true"></span>
+                  <span>Restored outputs feed claims systems</span>
+                </li>
+              </ul>
+            </div>
+            <div class="ds-step-tabs__screenshot" aria-label="Claims Processing screenshot placeholder">
+              <span class="ds-step-tabs__screenshot-placeholder">Screenshot — screenshot-usecase-claims.png</span>
+            </div>
+          </div>
+
+          <!-- Panel 3: Contract Review -->
+          <div class="ds-step-tabs__panel" data-panel="3" role="tabpanel">
+            <div class="ds-step-tabs__content">
+              <h3 class="ds-step-tabs__title">Confidential Contract Review</h3>
+              <p class="ds-step-tabs__description">
+                AI extracts key terms, obligations, and risk clauses from protected contracts. Restored outputs include real party names, amounts, and clause references — ready for direct integration into deal management systems.
+              </p>
+              <ul class="ds-bullet ds-bullet--check" aria-label="Key features">
+                <li class="ds-bullet__item">
+                  <span class="ds-bullet__icon" aria-hidden="true"></span>
+                  <span>Key terms, obligations, risk clauses extracted</span>
+                </li>
+                <li class="ds-bullet__item">
+                  <span class="ds-bullet__icon" aria-hidden="true"></span>
+                  <span>Real party names, amounts restored</span>
+                </li>
+              </ul>
+            </div>
+            <div class="ds-step-tabs__screenshot" aria-label="Contract Review screenshot placeholder">
+              <span class="ds-step-tabs__screenshot-placeholder">Screenshot — screenshot-usecase-contract.png</span>
+            </div>
+          </div>
+
+          <!-- Panel 4: Report Generation -->
+          <div class="ds-step-tabs__panel" data-panel="4" role="tabpanel">
+            <div class="ds-step-tabs__content">
+              <h3 class="ds-step-tabs__title">Internal Report Generation</h3>
+              <p class="ds-step-tabs__description">
+                AI drafts internal reports from protected data sources — performance reviews, audit findings, compliance summaries. Restored reports contain real employee names, department data, and metric values.
+              </p>
+              <ul class="ds-bullet ds-bullet--check" aria-label="Key features">
+                <li class="ds-bullet__item">
+                  <span class="ds-bullet__icon" aria-hidden="true"></span>
+                  <span>Performance reviews, audit findings, compliance</span>
+                </li>
+                <li class="ds-bullet__item">
+                  <span class="ds-bullet__icon" aria-hidden="true"></span>
+                  <span>Real employee names, department data restored</span>
+                </li>
+              </ul>
+            </div>
+            <div class="ds-step-tabs__screenshot" aria-label="Report Generation screenshot placeholder">
+              <span class="ds-step-tabs__screenshot-placeholder">Screenshot — screenshot-usecase-report.png</span>
+            </div>
+          </div>
+
+        </div><!-- /data-step-tabs -->
+      </div><!-- /ds-container -->
+    </section>
+
+    <!-- ============================================================
+         Section 7: Problem
+    ============================================================ -->
+    <section class="ds-section" id="section-7">
+      <div class="ds-container">
+        <div class="ds-section-header ds-section-header--underline">
+          <h2 class="ds-section-header__title">
+            Enterprise data is <span class="ds-text--brand">never AI-ready</span> by default
+          </h2>
+          <p class="ds-section-header__description">
+            Every enterprise document contains sensitive information that cannot be sent to external AI models. But without real data, AI outputs are generic and unusable.
+          </p>
+        </div>
+
+        <!-- Banner: Traditional approaches definition -->
+        <div class="ds-banner ds-banner--brand-tint" role="note">
+          Traditional approaches — masking, redaction, tokenization, and prompt security gateways — were not designed for AI workflows.
+        </div>
+
+        <!-- Positioning banner with background -->
+        <div class="ds-banner--full ds-bg--paint-lavender ds-banner--spaced">
+          <p>
+            <span class="ds-text--product">LLM Capsule</span> sits between your documents and any AI model. It replaces sensitive data with safe placeholders inside your environment, lets AI process the protected version, then restores real data back into AI outputs — not at the model layer, not at the prompt layer, but at the data layer where it matters.
+          </p>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="ds-table-wrap" role="region" aria-label="Comparison of existing approaches">
+          <table class="ds-table">
+            <thead>
+              <tr>
+                <th scope="col">Approach</th>
+                <th scope="col">Method</th>
+                <th scope="col">Limitation</th>
+                <th scope="col">AI Workflow Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Masking &amp; Redaction</td>
+                <td>Permanently removes data</td>
+                <td>Destroys context</td>
+                <td>AI produces unusable outputs with [REDACTED] placeholders</td>
+              </tr>
+              <tr>
+                <td>Prompt Security Gateways</td>
+                <td>API-level filtering</td>
+                <td>No document-level protection</td>
+                <td>No output restoration</td>
+              </tr>
+              <tr>
+                <td>Synthetic Data Platforms</td>
+                <td>Artificial data generation</td>
+                <td>Training only</td>
+                <td>Cannot replace real documents in live workflows</td>
+              </tr>
+              <tr>
+                <td>Security Team Blocks</td>
+                <td>Manual approval</td>
+                <td>Blocks all AI</td>
+                <td>Projects never demonstrate value</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div><!-- /ds-container -->
+    </section>
+
+    <!-- ============================================================
+         Section 8: Before / After
+    ============================================================ -->
+    <section class="ds-section" id="section-8">
+      <div class="ds-container">
+        <div class="ds-section-header ds-section-header--underline">
+          <h2 class="ds-section-header__title">
+            From blocked AI projects to <span class="ds-text--brand">enabled enterprise AI</span>
+          </h2>
+        </div>
+
+        <div class="ds-card-grid ds-card-grid--2col">
+
+          <!-- Without LLM Capsule -->
+          <article class="ds-card ds-card--before">
+            <span class="ds-card__badge ds-card__badge--red">WITHOUT LLM CAPSULE</span>
+            <ul class="ds-bullet ds-bullet--dot" aria-label="Challenges without LLM Capsule">
+              <li class="ds-bullet__item">
+                <span class="ds-bullet__icon" aria-hidden="true"></span>
+                <span>AI blocked entirely — security teams reject proposals due to data exposure risk</span>
+              </li>
+              <li class="ds-bullet__item">
+                <span class="ds-bullet__icon" aria-hidden="true"></span>
+                <span>Masking and redaction strip context — AI outputs are abstracted and unusable</span>
+              </li>
+              <li class="ds-bullet__item">
+                <span class="ds-bullet__icon" aria-hidden="true"></span>
+                <span>Manual review workflows persist</span>
+              </li>
+              <li class="ds-bullet__item">
+                <span class="ds-bullet__icon" aria-hidden="true"></span>
+                <span>Document structure destroyed</span>
+              </li>
+              <li class="ds-bullet__item">
+                <span class="ds-bullet__icon" aria-hidden="true"></span>
+                <span>Low-quality AI output requires extensive manual reconstruction</span>
+              </li>
+              <li class="ds-bullet__item">
+                <span class="ds-bullet__icon" aria-hidden="true"></span>
+                <span>Enterprise AI projects stall in pilot</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- With LLM Capsule -->
+          <article class="ds-card ds-card--after">
+            <span class="ds-card__badge ds-card__badge--brand">WITH LLM CAPSULE</span>
+            <ul class="ds-bullet ds-bullet--check" aria-label="Benefits with LLM Capsule">
+              <li class="ds-bullet__item">
+                <span class="ds-bullet__icon" aria-hidden="true"></span>
+                <span>AI enabled on sensitive documents</span>
+              </li>
+              <li class="ds-bullet__item">
+                <span class="ds-bullet__icon" aria-hidden="true"></span>
+                <span>Real documents processed with best-in-class LLMs — ChatGPT, Claude, Gemini, Perplexity, or any LLM API</span>
+              </li>
+              <li class="ds-bullet__item">
+                <span class="ds-bullet__icon" aria-hidden="true"></span>
+                <span>Compliance satisfied — zero exposure architecture</span>
+              </li>
+              <li class="ds-bullet__item">
+                <span class="ds-bullet__icon" aria-hidden="true"></span>
+                <span>Restored outputs retain original business context</span>
+              </li>
+              <li class="ds-bullet__item">
+                <span class="ds-bullet__icon" aria-hidden="true"></span>
+                <span>Tables, layouts, cross-references preserved</span>
+              </li>
+              <li class="ds-bullet__item">
+                <span class="ds-bullet__icon" aria-hidden="true"></span>
+                <span>98% output similarity with zero data exposure</span>
+              </li>
+            </ul>
+          </article>
+
+        </div><!-- /ds-card-grid -->
+      </div><!-- /ds-container -->
+    </section>
+
+    <!-- ============================================================
+         Section 9: Architecture
+    ============================================================ -->
+    <section class="ds-section" id="section-9">
+      <div class="ds-container">
+        <div class="ds-section-header ds-section-header--underline">
+          <h2 class="ds-section-header__title">
+            A <span class="ds-text--brand">data layer</span> between your enterprise and any LLM
+          </h2>
+          <p class="ds-section-header__description">
+            <span class="ds-text--product">LLM Capsule</span> sits between your internal systems and external AI models. Raw data stays inside your environment — the trust boundary is never crossed by original data.
+          </p>
+        </div>
+
+        <!-- Architecture Diagram Placeholder -->
+        <div class="ds-arch-placeholder" role="img" aria-label="LLM Capsule architecture diagram — diagram-builder generation pending">
+          <div class="ds-arch-placeholder__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+            </svg>
+          </div>
+          <p class="ds-arch-placeholder__label">Architecture Diagram</p>
+          <p class="ds-arch-placeholder__title">LLM Capsule Architecture — diagram-builder 에이전트로 별도 생성 예정</p>
+          <p class="ds-arch-placeholder__desc">Internal Environment → LLM Capsule (Detection → Encapsulation → Restoration) → [TRUST BOUNDARY] → External AI Services</p>
+        </div>
+
+        <!-- Data Flow Steps -->
+        <div class="ds-flow-steps" role="list" aria-label="Data flow steps">
+          <div class="ds-flow-step" role="listitem">
+            <span class="ds-flow-step__num">1</span>
+            <span class="ds-flow-step__label">Detection</span>
+          </div>
+          <span class="ds-flow-arrow" aria-hidden="true">→</span>
+          <div class="ds-flow-step" role="listitem">
+            <span class="ds-flow-step__num">2</span>
+            <span class="ds-flow-step__label">Encapsulation</span>
+          </div>
+          <span class="ds-flow-arrow" aria-hidden="true">→</span>
+          <div class="ds-flow-step" role="listitem">
+            <span class="ds-flow-step__num">3</span>
+            <span class="ds-flow-step__label">LLM Processing</span>
+          </div>
+          <span class="ds-flow-arrow" aria-hidden="true">→</span>
+          <div class="ds-flow-step" role="listitem">
+            <span class="ds-flow-step__num">4</span>
+            <span class="ds-flow-step__label">Restoration</span>
+          </div>
+          <span class="ds-flow-arrow" aria-hidden="true">→</span>
+          <div class="ds-flow-step" role="listitem">
+            <span class="ds-flow-step__num">5</span>
+            <span class="ds-flow-step__label">Business-Ready Output</span>
+          </div>
+        </div>
+
+      </div><!-- /ds-container -->
+    </section>
+
+    <!-- ============================================================
+         Section 10: Proof / Performance KPI
+    ============================================================ -->
+    <section class="ds-section ds-section-kpi-proof" id="section-10">
+      <div class="ds-container">
+        <div class="ds-section-header ds-section-header--underline">
+          <h2 class="ds-section-header__title">
+            <span class="ds-text--brand">Measured performance</span> on real enterprise workloads
+          </h2>
+          <p class="ds-section-header__description">
+            Metrics measured on enterprise documents with 2,200+ character average length across regulated industry workflows.
+          </p>
+        </div>
+
+        <!-- KPI Band — ds-bg--grad-navy (different from section 2b's grad-deep) -->
+        <div class="ds-kpi-band ds-bg--grad-navy" role="list" aria-label="Performance metrics">
+          <div class="ds-kpi-band__item" role="listitem">
+            <div class="ds-kpi-band__number">98.1%</div>
+            <div class="ds-kpi-band__label">Detection Accuracy</div>
+          </div>
+          <div class="ds-kpi-band__item" role="listitem">
+            <div class="ds-kpi-band__number">99.14%</div>
+            <div class="ds-kpi-band__label">Workflow Accuracy</div>
+          </div>
+          <div class="ds-kpi-band__item" role="listitem">
+            <div class="ds-kpi-band__number">100%</div>
+            <div class="ds-kpi-band__label">Structured PII</div>
+          </div>
+          <div class="ds-kpi-band__item" role="listitem">
+            <div class="ds-kpi-band__number">98%</div>
+            <div class="ds-kpi-band__label">Response Similarity</div>
+          </div>
+        </div>
+
+        <!-- Banner below KPI -->
+        <div class="ds-banner--full ds-bg--wave-teal ds-banner--spaced-top">
+          <p>Enable AI. Protect data. Restore results. Track everything.</p>
+          <p class="ds-banner--full__sub">0.12s processing per 2,200-character document</p>
+        </div>
+
+      </div><!-- /ds-container -->
+    </section>
+
+    <!-- ============================================================
+         Section 11: Final CTA (container 밖 전폭 배치)
+    ============================================================ -->
+    <section class="ds-cta-band ds-bg--paint-blue" id="section-11" aria-labelledby="cta-title">
+      <div class="ds-cta-band__inner">
+        <h2 class="ds-cta-band__title" id="cta-title">
+          See how <span class="ds-text--product">LLM Capsule</span> enables AI on your enterprise documents
+        </h2>
+        <p class="ds-cta-band__description">
+          Bring your documents, deployment constraints, and evaluation criteria. We demonstrate how the AI enablement data layer works on your actual data, in your environment, against your compliance requirements.
+        </p>
+        <div class="ds-cta-band__actions">
+          <a href="request-pov.html" class="ds-btn ds-btn--md">Request PoV</a>
+          <a href="architecture.html" class="ds-btn ds-btn--md">Talk to an Architect</a>
+          <a href="downloads.html" class="ds-btn ds-btn--md">Download Architecture Brief</a>
+          <a href="https://aws.amazon.com/marketplace" class="ds-btn ds-btn--md" target="_blank" rel="noopener noreferrer">Available on AWS Marketplace</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 12: FAQ (Accordion)
+    ============================================================ -->
+    <section class="ds-section" id="section-12">
+      <div class="ds-container">
+        <div class="ds-section-header ds-section-header--underline">
+          <h2 class="ds-section-header__title">
+            Frequently Asked <span class="ds-text--brand">Questions</span>
+          </h2>
+        </div>
+
+        <div class="ds-ac-list" role="list">
+
+          <!-- FAQ 1 -->
+          <article class="ds-ac-card ds-ac--open" role="listitem">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <div class="ds-ac-card__title-wrap">
+                <div class="ds-ac-card__industry">
+                  <span class="ds-ac-card__industry-dot" style="background-color: var(--ds-color-brand-primary)"></span>
+                  FAQ
+                </div>
+                <div class="ds-ac-card__title">How does LLM Capsule protect enterprise data during AI processing?</div>
+              </div>
+              <div class="ds-ac-card__toggle" role="button" aria-label="Toggle answer">
+                <span class="ds-ac-card__toggle-icon"></span>
+              </div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p><span class="ds-text--product">LLM Capsule</span> acts as an AI enablement data layer that encapsulates sensitive data locally before it leaves the enterprise environment. Only protected representations are sent to AI models. After processing, outputs are restored locally.</p>
+            </div>
+          </article>
+
+          <!-- FAQ 2 -->
+          <article class="ds-ac-card" role="listitem">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <div class="ds-ac-card__title-wrap">
+                <div class="ds-ac-card__industry">
+                  <span class="ds-ac-card__industry-dot" style="background-color: var(--ds-color-brand-primary)"></span>
+                  FAQ
+                </div>
+                <div class="ds-ac-card__title">How is LLM Capsule different from data masking and redaction tools?</div>
+              </div>
+              <div class="ds-ac-card__toggle" role="button" aria-label="Toggle answer">
+                <span class="ds-ac-card__toggle-icon"></span>
+              </div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Masking and redaction permanently remove data, destroying context. <span class="ds-text--product">LLM Capsule</span> encapsulates data with structure-preserving processing and restores outputs after AI processing.</p>
+            </div>
+          </article>
+
+          <!-- FAQ 3 -->
+          <article class="ds-ac-card" role="listitem">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <div class="ds-ac-card__title-wrap">
+                <div class="ds-ac-card__industry">
+                  <span class="ds-ac-card__industry-dot" style="background-color: var(--ds-color-brand-primary)"></span>
+                  FAQ
+                </div>
+                <div class="ds-ac-card__title">What is the difference between LLM Capsule and prompt security gateways?</div>
+              </div>
+              <div class="ds-ac-card__toggle" role="button" aria-label="Toggle answer">
+                <span class="ds-ac-card__toggle-icon"></span>
+              </div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Prompt security gateways filter at the API level. They cannot protect enterprise documents through RAG pipelines or batch workflows. <span class="ds-text--product">LLM Capsule</span> operates as a data layer plugin.</p>
+            </div>
+          </article>
+
+          <!-- FAQ 4 -->
+          <article class="ds-ac-card" role="listitem">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <div class="ds-ac-card__title-wrap">
+                <div class="ds-ac-card__industry">
+                  <span class="ds-ac-card__industry-dot" style="background-color: var(--ds-color-brand-primary)"></span>
+                  FAQ
+                </div>
+                <div class="ds-ac-card__title">Where can LLM Capsule be deployed?</div>
+              </div>
+              <div class="ds-ac-card__toggle" role="button" aria-label="Toggle answer">
+                <span class="ds-ac-card__toggle-icon"></span>
+              </div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>On-premise, air-gapped, cloud (including AWS Marketplace), hybrid, and embedded deployment models.</p>
+            </div>
+          </article>
+
+          <!-- FAQ 5 -->
+          <article class="ds-ac-card" role="listitem">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <div class="ds-ac-card__title-wrap">
+                <div class="ds-ac-card__industry">
+                  <span class="ds-ac-card__industry-dot" style="background-color: var(--ds-color-brand-primary)"></span>
+                  FAQ
+                </div>
+                <div class="ds-ac-card__title">What is enterprise AI data protection?</div>
+              </div>
+              <div class="ds-ac-card__toggle" role="button" aria-label="Toggle answer">
+                <span class="ds-ac-card__toggle-icon"></span>
+              </div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Making sensitive enterprise data AI-ready so organizations can adopt LLMs without exposing original information.</p>
+            </div>
+          </article>
+
+          <!-- FAQ 6 -->
+          <article class="ds-ac-card" role="listitem">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <div class="ds-ac-card__title-wrap">
+                <div class="ds-ac-card__industry">
+                  <span class="ds-ac-card__industry-dot" style="background-color: var(--ds-color-brand-primary)"></span>
+                  FAQ
+                </div>
+                <div class="ds-ac-card__title">What certifications does LLM Capsule hold?</div>
+              </div>
+              <div class="ds-ac-card__toggle" role="button" aria-label="Toggle answer">
+                <span class="ds-ac-card__toggle-icon"></span>
+              </div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>ISO 27001, ISO 42001, GS Certification. Available on AWS Marketplace.</p>
+            </div>
+          </article>
+
+        </div><!-- /ds-ac-list -->
+      </div><!-- /ds-container -->
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="ds-footer" role="contentinfo">
+    <div class="ds-container">
+      <div class="ds-footer__inner">
+        <div>
+          <div class="ds-footer__brand">LLM Capsule</div>
+          <p class="ds-footer__tagline">
+            LLM Capsule — Enterprise AI enablement by CUBIG. Enable AI. Protect data. Restore results.
+          </p>
+        </div>
+        <hr class="ds-footer__divider">
+        <p class="ds-footer__copy">© 2025 LLM Capsule by CUBIG. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* Accordion toggle */
+    function toggleAcCard(header) {
+      var card = header.closest('.ds-ac-card');
+      card.classList.toggle('ds-ac--open');
+    }
+
+    /* Step Tabs */
+    document.querySelectorAll('[data-step-tabs]').forEach(function(root) {
+      root.querySelectorAll('.ds-step-tabs__tab').forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          var idx = this.getAttribute('data-tab');
+          root.querySelectorAll('.ds-step-tabs__tab').forEach(function(t) {
+            t.classList.remove('ds-step-tabs__tab--active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          root.querySelectorAll('.ds-step-tabs__panel').forEach(function(p) {
+            p.classList.remove('ds-step-tabs__panel--active');
+          });
+          this.classList.add('ds-step-tabs__tab--active');
+          this.setAttribute('aria-selected', 'true');
+          root.querySelector('[data-panel="' + idx + '"]').classList.add('ds-step-tabs__panel--active');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
