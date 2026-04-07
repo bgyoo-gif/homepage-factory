@@ -204,18 +204,18 @@
       --ds-content-max-width:            1200px;
 
       /* Background Images */
-      --ds-bg-img-green-wave:    url('../../cubig/reference/images/bg-green-wave.png');
-      --ds-bg-img-lavender:      url('../../cubig/reference/images/bg-lavender.png');
-      --ds-bg-img-wave-teal:     url('../../cubig/reference/images/bg-wave-teal-blue.png');
-      --ds-bg-img-paint-blue:    url('../../cubig/reference/images/bg-paint-blue-iridescent.png');
-      --ds-bg-img-paint-lavender:url('../../cubig/reference/images/bg-paint-lavender-gold.png');
-      --ds-bg-img-paint-teal:    url('../../cubig/reference/images/bg-paint-white-teal.png');
-      --ds-bg-img-grad-blue:     url('../../cubig/reference/images/bg-gradient-blue-violet.png');
-      --ds-bg-img-grad-cream:    url('../../cubig/reference/images/bg-gradient-cream-jade.png');
-      --ds-bg-img-grad-deep:     url('../../cubig/reference/images/bg-gradient-deep-teal.png');
-      --ds-bg-img-grad-navy:     url('../../cubig/reference/images/bg-gradient-navy-teal.png');
-      --ds-bg-img-grad-sky:      url('../../cubig/reference/images/bg-gradient-sky-blush.png');
-      --ds-bg-img-grad-violet:   url('../../cubig/reference/images/bg-gradient-violet-teal.png');
+      --ds-bg-img-green-wave:    url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-green-wave.png');
+      --ds-bg-img-lavender:      url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-lavender.png');
+      --ds-bg-img-wave-teal:     url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-wave-teal-blue.png');
+      --ds-bg-img-paint-blue:    url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.png');
+      --ds-bg-img-paint-lavender:url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-lavender-gold.png');
+      --ds-bg-img-paint-teal:    url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-white-teal.png');
+      --ds-bg-img-grad-blue:     url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-blue-violet.png');
+      --ds-bg-img-grad-cream:    url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-cream-jade.png');
+      --ds-bg-img-grad-deep:     url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png');
+      --ds-bg-img-grad-navy:     url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-navy-teal.png');
+      --ds-bg-img-grad-sky:      url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-sky-blush.png');
+      --ds-bg-img-grad-violet:   url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-violet-teal.png');
     }
 
     /* ============================================================
@@ -341,6 +341,28 @@
     /* --- Hero --- */
     .ds-hero { padding: 0; display: grid; grid-template-columns: 1fr; gap: var(--ds-space-lg); align-items: center; }
     .ds-hero--text-only { max-width: 860px; }
+    .ds-hero--screenshot { text-align: center; max-width: 860px; margin: 0 auto; }
+    .ds-hero-screenshot-section { padding: 100px 0 0; overflow: visible; }
+    .ds-hero-screenshot-section .ds-hero--screenshot .ds-hero__description { margin-left: auto; margin-right: auto; }
+    .ds-hero__screenshot-frame {
+      margin-top: var(--ds-space-2xl);
+      border-radius: var(--ds-radius-xl) var(--ds-radius-xl) 0 0;
+      padding: var(--ds-space-2xl) 0 0;
+      background-size: cover; background-position: center;
+      overflow: hidden;
+    }
+    .ds-hero__screenshot { overflow: hidden; background-color: var(--ds-color-surface-white); }
+    .ds-hero__screenshot img { width: 100%; display: block; }
+    .ds-hero__actions-below {
+      display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+      margin-top: 20px; padding-bottom: var(--ds-space-3xl);
+    }
+    @media (max-width: 767px) {
+      .ds-hero-screenshot-section { padding: 100px 0 0; }
+      .ds-hero__screenshot-frame { border-radius: var(--ds-radius-lg) var(--ds-radius-lg) 0 0; background-image: none; }
+      .ds-hero__actions-below { flex-direction: column; align-items: center; }
+      .ds-hero__actions-below .ds-btn { width: 100%; max-width: 320px; }
+    }
     .ds-hero__title {
       font-family: var(--ds-font-base); font-size: 24px; font-weight: var(--ds-weight-bold);
       color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight);
@@ -950,7 +972,7 @@
   <nav class="ds-nav" role="navigation" aria-label="Main navigation">
     <div class="ds-nav__inner">
       <a href="/" class="ds-nav__logo" aria-label="LLM Capsule Home">
-        <img src="llm-capsule/reference/images/logo-llmcapsule.avif" alt="LLM Capsule" width="120" height="28">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/logo-llmcapsule.avif" alt="LLM Capsule" width="120" height="28">
       </a>
       <ul class="ds-nav__links" role="list">
         <li><a href="#section-2" class="ds-nav__link">Why LLM Capsule</a></li>
@@ -970,40 +992,34 @@
     <!-- ============================================================
          Section 1: Hero
     ============================================================ -->
-    <section id="section-1" class="ds-section ds-section--hero">
+    <section id="section-1" class="ds-section ds-hero-screenshot-section">
       <div class="ds-container">
-        <div class="ds-hero ds-hero--text-only">
+        <div class="ds-hero ds-hero--screenshot">
+          <h1 class="ds-hero__title">
+            Use any AI on your real documents —
+            <span class="ds-text--brand">without exposing a single line</span>
+          </h1>
+          <p class="ds-hero__description">
+            Your sensitive documents go through <span class="ds-text--product">LLM Capsule</span> before reaching AI. Confidential names, figures, and terms are replaced locally — AI processes the safe version — then results are restored with your original data.
+          </p>
+        </div>
 
-          <div>
-            <h1 class="ds-hero__title">
-              Use any AI on your real documents —
-              <span class="ds-text--brand">without exposing a single line</span>
-            </h1>
-
-            <p class="ds-hero__description">
-              Your sensitive documents go through <span class="ds-text--product">LLM Capsule</span> before reaching AI. Confidential names, figures, and terms are replaced locally — AI processes the safe version — then results are restored with your original data. Each organization defines what counts as sensitive.
-            </p>
-
-            <p class="ds-hero__description--secondary">
-              Companies want to use AI but can't — sensitive data blocks adoption, masking destroys context, and security teams say no. <span class="ds-text--product">LLM Capsule</span> removes this barrier in under 0.12 seconds per page.
-            </p>
-
-            <p class="ds-hero__tagline">Encapsulate. Process. Restore.</p>
-
-            <div class="ds-hero__actions">
-              <a href="request-pov.html" class="ds-btn ds-btn--primary ds-btn--md">Request PoV</a>
-              <a href="downloads.html" class="ds-btn ds-btn--secondary ds-btn--md">Download Architecture Brief</a>
-              <a href="architecture.html" class="ds-btn ds-btn--secondary ds-btn--md">Talk to an Architect</a>
-            </div>
-
-            <div class="ds-hero__aws-badge">
-              <a href="https://aws.amazon.com/marketplace" class="ds-btn ds-btn--secondary ds-btn--sm" target="_blank" rel="noopener">
-                <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Available on AWS Marketplace
-              </a>
-            </div>
+        <!-- Screenshot Frame with background image -->
+        <div class="ds-hero__screenshot-frame ds-bg--grad-deep" style="background-color: var(--ds-color-surface-white);">
+          <div class="ds-hero__screenshot">
+            <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/screenshot-llmcapsule.webp" alt="LLM Capsule Product Screenshot" loading="eager">
           </div>
+        </div>
 
+        <!-- CTA below screenshot -->
+        <div class="ds-hero__actions-below">
+          <a href="request-pov.html" class="ds-btn ds-btn--primary ds-btn--md">Request PoV</a>
+          <a href="downloads.html" class="ds-btn ds-btn--secondary ds-btn--md">Download Architecture Brief</a>
+          <a href="architecture.html" class="ds-btn ds-btn--secondary ds-btn--md">Talk to an Architect</a>
+          <a href="https://aws.amazon.com/marketplace" class="ds-btn ds-btn--secondary ds-btn--sm" target="_blank" rel="noopener">
+            <svg class="ds-icon ds-icon--sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            AWS Marketplace
+          </a>
         </div>
       </div>
     </section>
@@ -1030,93 +1046,93 @@
 
           <!-- Original set -->
           <div class="ds-partner-item">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-gartner.png" alt="Gartner" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-gartner.png" alt="Gartner" loading="lazy">
             <span class="ds-partner-item__name">Gartner</span>
           </div>
           <div class="ds-partner-item">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-navercloud.avif" alt="Naver Cloud" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-navercloud.avif" alt="Naver Cloud" loading="lazy">
             <span class="ds-partner-item__name">Naver Cloud</span>
           </div>
           <div class="ds-partner-item">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-sktelecom.avif" alt="SK Telecom" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-sktelecom.avif" alt="SK Telecom" loading="lazy">
             <span class="ds-partner-item__name">SK Telecom</span>
           </div>
           <div class="ds-partner-item">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-kyobo.avif" alt="Kyobo" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-kyobo.avif" alt="Kyobo" loading="lazy">
             <span class="ds-partner-item__name">Kyobo</span>
           </div>
           <div class="ds-partner-item">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-korea army.avif" alt="ROK Army" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-korea army.avif" alt="ROK Army" loading="lazy">
             <span class="ds-partner-item__name">ROK Army</span>
           </div>
           <div class="ds-partner-item">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-korea-airforce.avif" alt="ROK Air Force" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-korea-airforce.avif" alt="ROK Air Force" loading="lazy">
             <span class="ds-partner-item__name">ROK Air Force</span>
           </div>
           <div class="ds-partner-item">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-eumc.avif" alt="EUMC" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-eumc.avif" alt="EUMC" loading="lazy">
             <span class="ds-partner-item__name">EUMC</span>
           </div>
           <div class="ds-partner-item">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-deutsche-telekom.avif" alt="Deutsche Telekom" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-deutsche-telekom.avif" alt="Deutsche Telekom" loading="lazy">
             <span class="ds-partner-item__name">Deutsche Telekom</span>
           </div>
           <div class="ds-partner-item">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-claroty.png" alt="Claroty" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-claroty.png" alt="Claroty" loading="lazy">
             <span class="ds-partner-item__name">Claroty</span>
           </div>
           <div class="ds-partner-item">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-korea-heritage-service.jpg" alt="Korea Heritage Service" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-korea-heritage-service.jpg" alt="Korea Heritage Service" loading="lazy">
             <span class="ds-partner-item__name">Korea Heritage Service</span>
           </div>
           <div class="ds-partner-item">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-ministry-of-data-and-statistics.png" alt="Ministry of Data and Statistics" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-ministry-of-data-and-statistics.png" alt="Ministry of Data and Statistics" loading="lazy">
             <span class="ds-partner-item__name">Ministry of Data and Statistics</span>
           </div>
 
           <!-- Duplicate set for seamless loop -->
           <div class="ds-partner-item" aria-hidden="true">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-gartner.png" alt="" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-gartner.png" alt="" loading="lazy">
             <span class="ds-partner-item__name">Gartner</span>
           </div>
           <div class="ds-partner-item" aria-hidden="true">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-navercloud.avif" alt="" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-navercloud.avif" alt="" loading="lazy">
             <span class="ds-partner-item__name">Naver Cloud</span>
           </div>
           <div class="ds-partner-item" aria-hidden="true">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-sktelecom.avif" alt="" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-sktelecom.avif" alt="" loading="lazy">
             <span class="ds-partner-item__name">SK Telecom</span>
           </div>
           <div class="ds-partner-item" aria-hidden="true">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-kyobo.avif" alt="" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-kyobo.avif" alt="" loading="lazy">
             <span class="ds-partner-item__name">Kyobo</span>
           </div>
           <div class="ds-partner-item" aria-hidden="true">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-korea army.avif" alt="" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-korea army.avif" alt="" loading="lazy">
             <span class="ds-partner-item__name">ROK Army</span>
           </div>
           <div class="ds-partner-item" aria-hidden="true">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-korea-airforce.avif" alt="" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-korea-airforce.avif" alt="" loading="lazy">
             <span class="ds-partner-item__name">ROK Air Force</span>
           </div>
           <div class="ds-partner-item" aria-hidden="true">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-eumc.avif" alt="" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-eumc.avif" alt="" loading="lazy">
             <span class="ds-partner-item__name">EUMC</span>
           </div>
           <div class="ds-partner-item" aria-hidden="true">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-deutsche-telekom.avif" alt="" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-deutsche-telekom.avif" alt="" loading="lazy">
             <span class="ds-partner-item__name">Deutsche Telekom</span>
           </div>
           <div class="ds-partner-item" aria-hidden="true">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-claroty.png" alt="" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-claroty.png" alt="" loading="lazy">
             <span class="ds-partner-item__name">Claroty</span>
           </div>
           <div class="ds-partner-item" aria-hidden="true">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-korea-heritage-service.jpg" alt="" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-korea-heritage-service.jpg" alt="" loading="lazy">
             <span class="ds-partner-item__name">Korea Heritage Service</span>
           </div>
           <div class="ds-partner-item" aria-hidden="true">
-            <img class="ds-partner-item__logo" src="cubig/reference/images/partner-ministry-of-data-and-statistics.png" alt="" loading="lazy">
+            <img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-ministry-of-data-and-statistics.png" alt="" loading="lazy">
             <span class="ds-partner-item__name">Ministry of Data and Statistics</span>
           </div>
 
@@ -1153,155 +1169,155 @@
           <div class="ds-cert-card">
             <div class="ds-cert-card__group">Certifications</div>
             <div class="ds-cert-card__wreath">
-              <img class="ds-cert-card__wreath-left" src="cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
               <div class="ds-cert-card__wreath-text">ISO/IEC 27001 (ISMS)</div>
-              <img class="ds-cert-card__wreath-right" src="cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
             </div>
             <div class="ds-cert-card__org">ISO</div>
             <div class="ds-cert-card__year">2026</div>
-            <img class="ds-cert-card__logo" src="cubig/reference/graphics/cert-iso.png" alt="ISO" loading="lazy">
+            <img class="ds-cert-card__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-iso.png" alt="ISO" loading="lazy">
           </div>
 
           <div class="ds-cert-card">
             <div class="ds-cert-card__group">Certifications</div>
             <div class="ds-cert-card__wreath">
-              <img class="ds-cert-card__wreath-left" src="cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
               <div class="ds-cert-card__wreath-text">ISO/IEC 42001 (AIMS)</div>
-              <img class="ds-cert-card__wreath-right" src="cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
             </div>
             <div class="ds-cert-card__org">ISO</div>
             <div class="ds-cert-card__year">2026</div>
-            <img class="ds-cert-card__logo" src="cubig/reference/graphics/cert-iso.png" alt="ISO" loading="lazy">
+            <img class="ds-cert-card__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-iso.png" alt="ISO" loading="lazy">
           </div>
 
           <div class="ds-cert-card">
             <div class="ds-cert-card__group">Certifications</div>
             <div class="ds-cert-card__wreath">
-              <img class="ds-cert-card__wreath-left" src="cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
               <div class="ds-cert-card__wreath-text">GS Certification</div>
-              <img class="ds-cert-card__wreath-right" src="cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
             </div>
             <div class="ds-cert-card__org">TTA</div>
             <div class="ds-cert-card__year">2025</div>
-            <img class="ds-cert-card__logo" src="cubig/reference/graphics/cert-gs.png" alt="GS" loading="lazy">
+            <img class="ds-cert-card__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-gs.png" alt="GS" loading="lazy">
           </div>
 
           <div class="ds-cert-card">
             <div class="ds-cert-card__group">Certifications</div>
             <div class="ds-cert-card__wreath">
-              <img class="ds-cert-card__wreath-left" src="cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
               <div class="ds-cert-card__wreath-text">Information Security Fast Track</div>
-              <img class="ds-cert-card__wreath-right" src="cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
             </div>
             <div class="ds-cert-card__org">KISA</div>
             <div class="ds-cert-card__year">2024</div>
-            <img class="ds-cert-card__logo" src="cubig/reference/graphics/cert-kisa.png" alt="KISA" loading="lazy">
+            <img class="ds-cert-card__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-kisa.png" alt="KISA" loading="lazy">
           </div>
 
           <div class="ds-cert-card">
             <div class="ds-cert-card__group">Awards</div>
             <div class="ds-cert-card__wreath">
-              <img class="ds-cert-card__wreath-left" src="cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
               <div class="ds-cert-card__wreath-text">Information Security Innovation Award</div>
-              <img class="ds-cert-card__wreath-right" src="cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
             </div>
             <div class="ds-cert-card__org">Ministry of Science &amp; ICT</div>
             <div class="ds-cert-card__year">2024</div>
-            <img class="ds-cert-card__logo" src="cubig/reference/graphics/awards-ministry-of-science-and-ict.jpg" alt="Ministry of Science and ICT" loading="lazy">
+            <img class="ds-cert-card__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/awards-ministry-of-science-and-ict.jpg" alt="Ministry of Science and ICT" loading="lazy">
           </div>
 
           <div class="ds-cert-card">
             <div class="ds-cert-card__group">Awards</div>
             <div class="ds-cert-card__wreath">
-              <img class="ds-cert-card__wreath-left" src="cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
               <div class="ds-cert-card__wreath-text">Startup World Cup — Finalist</div>
-              <img class="ds-cert-card__wreath-right" src="cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
             </div>
             <div class="ds-cert-card__org">Startup World Cup</div>
             <div class="ds-cert-card__year">2025</div>
-            <img class="ds-cert-card__logo" src="cubig/reference/graphics/cert-startupworldcup.png" alt="Startup World Cup" loading="lazy">
+            <img class="ds-cert-card__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-startupworldcup.png" alt="Startup World Cup" loading="lazy">
           </div>
 
           <div class="ds-cert-card">
             <div class="ds-cert-card__group">Awards</div>
             <div class="ds-cert-card__wreath">
-              <img class="ds-cert-card__wreath-left" src="cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
               <div class="ds-cert-card__wreath-text">Next Rise — Global Innovator</div>
-              <img class="ds-cert-card__wreath-right" src="cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
             </div>
             <div class="ds-cert-card__org">Next Rise</div>
             <div class="ds-cert-card__year">2025</div>
-            <img class="ds-cert-card__logo" src="cubig/reference/graphics/awards-NextRise.png" alt="Next Rise" loading="lazy">
+            <img class="ds-cert-card__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/awards-NextRise.png" alt="Next Rise" loading="lazy">
           </div>
 
           <div class="ds-cert-card">
             <div class="ds-cert-card__group">Awards</div>
             <div class="ds-cert-card__wreath">
-              <img class="ds-cert-card__wreath-left" src="cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
               <div class="ds-cert-card__wreath-text">T Challenge 2026 — Finalist</div>
-              <img class="ds-cert-card__wreath-right" src="cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
             </div>
             <div class="ds-cert-card__org">Deutsche Telekom</div>
             <div class="ds-cert-card__year">2026</div>
-            <img class="ds-cert-card__logo" src="cubig/reference/images/partner-deutsche-telekom.avif" alt="Deutsche Telekom" loading="lazy">
+            <img class="ds-cert-card__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-deutsche-telekom.avif" alt="Deutsche Telekom" loading="lazy">
           </div>
 
           <div class="ds-cert-card">
             <div class="ds-cert-card__group">Recognition</div>
             <div class="ds-cert-card__wreath">
-              <img class="ds-cert-card__wreath-left" src="cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
               <div class="ds-cert-card__wreath-text">Representative Vendor, Hyper-Synthetic Data</div>
-              <img class="ds-cert-card__wreath-right" src="cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
             </div>
             <div class="ds-cert-card__org">Gartner</div>
             <div class="ds-cert-card__year">2025</div>
-            <img class="ds-cert-card__logo" src="cubig/reference/graphics/cert-gartner.svg.png" alt="Gartner" loading="lazy">
+            <img class="ds-cert-card__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-gartner.svg.png" alt="Gartner" loading="lazy">
           </div>
 
           <!-- Duplicate for seamless loop -->
           <div class="ds-cert-card" aria-hidden="true">
             <div class="ds-cert-card__group">Certifications</div>
             <div class="ds-cert-card__wreath">
-              <img class="ds-cert-card__wreath-left" src="cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
               <div class="ds-cert-card__wreath-text">ISO/IEC 27001 (ISMS)</div>
-              <img class="ds-cert-card__wreath-right" src="cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
             </div>
             <div class="ds-cert-card__org">ISO</div>
             <div class="ds-cert-card__year">2026</div>
-            <img class="ds-cert-card__logo" src="cubig/reference/graphics/cert-iso.png" alt="" loading="lazy">
+            <img class="ds-cert-card__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-iso.png" alt="" loading="lazy">
           </div>
           <div class="ds-cert-card" aria-hidden="true">
             <div class="ds-cert-card__group">Certifications</div>
             <div class="ds-cert-card__wreath">
-              <img class="ds-cert-card__wreath-left" src="cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
               <div class="ds-cert-card__wreath-text">ISO/IEC 42001 (AIMS)</div>
-              <img class="ds-cert-card__wreath-right" src="cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
             </div>
             <div class="ds-cert-card__org">ISO</div>
             <div class="ds-cert-card__year">2026</div>
-            <img class="ds-cert-card__logo" src="cubig/reference/graphics/cert-iso.png" alt="" loading="lazy">
+            <img class="ds-cert-card__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-iso.png" alt="" loading="lazy">
           </div>
           <div class="ds-cert-card" aria-hidden="true">
             <div class="ds-cert-card__group">Certifications</div>
             <div class="ds-cert-card__wreath">
-              <img class="ds-cert-card__wreath-left" src="cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
               <div class="ds-cert-card__wreath-text">GS Certification</div>
-              <img class="ds-cert-card__wreath-right" src="cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
             </div>
             <div class="ds-cert-card__org">TTA</div>
             <div class="ds-cert-card__year">2025</div>
-            <img class="ds-cert-card__logo" src="cubig/reference/graphics/cert-gs.png" alt="" loading="lazy">
+            <img class="ds-cert-card__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-gs.png" alt="" loading="lazy">
           </div>
           <div class="ds-cert-card" aria-hidden="true">
             <div class="ds-cert-card__group">Awards</div>
             <div class="ds-cert-card__wreath">
-              <img class="ds-cert-card__wreath-left" src="cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" loading="lazy">
               <div class="ds-cert-card__wreath-text">Startup World Cup — Finalist</div>
-              <img class="ds-cert-card__wreath-right" src="cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
+              <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" loading="lazy">
             </div>
             <div class="ds-cert-card__org">Startup World Cup</div>
             <div class="ds-cert-card__year">2025</div>
-            <img class="ds-cert-card__logo" src="cubig/reference/graphics/cert-startupworldcup.png" alt="" loading="lazy">
+            <img class="ds-cert-card__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-startupworldcup.png" alt="" loading="lazy">
           </div>
 
         </div>
@@ -1446,7 +1462,7 @@
           <!-- Public Sector -->
           <article class="ds-card ds-card--case-study">
             <div class="ds-card__left">
-              <img src="../../cubig/reference/graphics/illustration-public-sector.png"
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/illustration-public-sector.png"
                    alt="Public Sector" class="ds-card__left-image">
               <span class="ds-card__left-category">Industry</span>
               <span class="ds-card__left-title">Public Sector</span>
@@ -1469,7 +1485,7 @@
           <!-- Finance & Insurance -->
           <article class="ds-card ds-card--case-study">
             <div class="ds-card__left">
-              <img src="../../cubig/reference/graphics/illustration-finance.png"
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/illustration-finance.png"
                    alt="Finance and Insurance" class="ds-card__left-image">
               <span class="ds-card__left-category">Industry</span>
               <span class="ds-card__left-title">Finance &amp; Insurance</span>
@@ -1492,7 +1508,7 @@
           <!-- Healthcare -->
           <article class="ds-card ds-card--case-study">
             <div class="ds-card__left">
-              <img src="../../cubig/reference/graphics/illustration-healthcare.png"
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/illustration-healthcare.png"
                    alt="Healthcare" class="ds-card__left-image">
               <span class="ds-card__left-category">Industry</span>
               <span class="ds-card__left-title">Healthcare</span>
@@ -1515,7 +1531,7 @@
           <!-- Legal -->
           <article class="ds-card ds-card--case-study">
             <div class="ds-card__left">
-              <img src="../../cubig/reference/graphics/illustration-persona.png"
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/illustration-persona.png"
                    alt="Legal" class="ds-card__left-image">
               <span class="ds-card__left-category">Industry</span>
               <span class="ds-card__left-title">Legal</span>
@@ -1538,7 +1554,7 @@
           <!-- Telecom -->
           <article class="ds-card ds-card--case-study">
             <div class="ds-card__left">
-              <img src="../../cubig/reference/graphics/illustration-security.png"
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/illustration-security.png"
                    alt="Telecom" class="ds-card__left-image">
               <span class="ds-card__left-category">Industry</span>
               <span class="ds-card__left-title">Telecom</span>
@@ -1561,7 +1577,7 @@
           <!-- Network Security -->
           <article class="ds-card ds-card--case-study">
             <div class="ds-card__left">
-              <img src="../../cubig/reference/graphics/illustration-defense.png"
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/illustration-defense.png"
                    alt="Network Security" class="ds-card__left-image">
               <span class="ds-card__left-category">Industry</span>
               <span class="ds-card__left-title">Network Security</span>
