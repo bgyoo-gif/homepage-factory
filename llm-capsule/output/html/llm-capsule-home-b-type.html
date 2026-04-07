@@ -1014,7 +1014,7 @@
 
     /* Content Area */
     .diag-lc__content {
-      background-color: #fff;
+      background-color: var(--ds-color-surface-white, #fff);
       padding: 24px;
     }
 
@@ -1028,7 +1028,7 @@
 
     /* Left panel — Internal Environment */
     .diag-lc__panel-left {
-      background-color: #fff;
+      background-color: var(--ds-color-surface-white, #fff);
       border: 1px solid var(--diag-border-light);
       border-radius: 12px;
       overflow: hidden;
@@ -1048,7 +1048,7 @@
       flex-shrink: 0;
     }
     .diag-lc__panel-dot--green  { background: var(--diag-brand-green); }
-    .diag-lc__panel-dot--yellow { background: #e8b400; }
+    .diag-lc__panel-dot--yellow { background: rgba(255,255,255,0.7); }
     .diag-lc__panel-title {
       font-size: 10px;
       font-weight: var(--ds-weight-bold, 700);
@@ -1152,7 +1152,7 @@
       letter-spacing: var(--ds-tracking-wide, 0.08em);
       text-transform: uppercase;
       white-space: nowrap;
-      background: #fff;
+      background-color: var(--ds-color-surface-white, #fff);
       padding: 2px 4px;
     }
 
@@ -1161,7 +1161,7 @@
       border: 1px solid var(--diag-border-light);
       border-radius: 10px;
       padding: 12px;
-      background: #fff;
+      background-color: var(--ds-color-surface-white, #fff);
       box-shadow: 0 1px 4px rgba(0,0,0,0.05);
       position: relative;
     }
@@ -1311,7 +1311,13 @@
       font-weight: var(--ds-weight-bold, 700);
       color: #fff;
       flex-shrink: 0;
+      letter-spacing: var(--ds-tracking-tight, -0.5px);
     }
+    .diag-lc__ai-logo--sm   { font-size: 11px; }
+    .diag-lc__ai-logo--lg   { font-size: 16px; line-height: 1; }
+    .diag-lc__ai-logo--dots { font-size: 12px; letter-spacing: normal; }
+    .diag-lc__ai-logo--teal { background: rgba(14,159,142,0.25); }
+    .diag-lc__ai-logo--purple { background: rgba(114,91,234,0.25); }
     .diag-lc__ai-sub {
       font-size: 10px;
       color: rgba(255,255,255,0.5);
@@ -2623,35 +2629,35 @@
                   </div>
                   <ul class="diag-lc__ai-list">
                     <li class="diag-lc__ai-item">
-                      <span class="diag-lc__ai-logo" aria-hidden="true" style="font-size:11px; letter-spacing:-0.5px;">G</span>
+                      <span class="diag-lc__ai-logo diag-lc__ai-logo--sm" aria-hidden="true">G</span>
                       <div class="diag-lc__ai-info">
                         <span>ChatGPT / OpenAI</span>
                         <span class="diag-lc__ai-sub">OpenAI</span>
                       </div>
                     </li>
                     <li class="diag-lc__ai-item">
-                      <span class="diag-lc__ai-logo" aria-hidden="true" style="font-size:11px;">A</span>
+                      <span class="diag-lc__ai-logo diag-lc__ai-logo--sm" aria-hidden="true">A</span>
                       <div class="diag-lc__ai-info">
                         <span>Claude / Anthropic</span>
                         <span class="diag-lc__ai-sub">Anthropic</span>
                       </div>
                     </li>
                     <li class="diag-lc__ai-item">
-                      <span class="diag-lc__ai-logo" aria-hidden="true" style="background: rgba(52,211,153,0.2); font-size:16px; line-height:1;">+</span>
+                      <span class="diag-lc__ai-logo diag-lc__ai-logo--lg diag-lc__ai-logo--teal" aria-hidden="true">+</span>
                       <div class="diag-lc__ai-info">
                         <span>Gemini / Google</span>
                         <span class="diag-lc__ai-sub">Google</span>
                       </div>
                     </li>
                     <li class="diag-lc__ai-item">
-                      <span class="diag-lc__ai-logo" aria-hidden="true" style="background: rgba(160,120,255,0.25); font-size:14px;">⚡</span>
+                      <span class="diag-lc__ai-logo diag-lc__ai-logo--purple" aria-hidden="true">⚡</span>
                       <div class="diag-lc__ai-info">
                         <span>Perplexity</span>
                         <span class="diag-lc__ai-sub">Perplexity AI</span>
                       </div>
                     </li>
                     <li class="diag-lc__ai-item">
-                      <span class="diag-lc__ai-logo" aria-hidden="true" style="font-size:12px;">···</span>
+                      <span class="diag-lc__ai-logo diag-lc__ai-logo--dots" aria-hidden="true">···</span>
                       <div class="diag-lc__ai-info">
                         <span>Any LLM API</span>
                         <span class="diag-lc__ai-sub">Open standard</span>
