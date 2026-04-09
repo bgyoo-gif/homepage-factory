@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trust &amp; Compliance — LLM Capsule Enterprise Security</title>
+  <meta name="description" content="ISO 27001, ISO 42001, GS Certification. LLM Capsule's enterprise-grade security enables AI adoption with full audit trails and data sovereignty enforcement.">
+  <meta name="keywords" content="enterprise AI enablement, AI-ready data layer, AI adoption enabler, LLM plugin, cross-model execution">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://llmcapsule.ai/trust">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Trust &amp; Compliance — LLM Capsule Enterprise Security">
+  <meta property="og:description" content="ISO 27001, ISO 42001, GS Certification. LLM Capsule's enterprise-grade security enables AI adoption with full audit trails and data sovereignty enforcement.">
+  <meta property="og:url" content="https://llmcapsule.ai/trust">
+  <meta property="og:site_name" content="LLM Capsule">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},{"@type":"ListItem","position":2,"name":"Trust","item":"https://llmcapsule.ai/trust"}]}</script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       1. CSS Reset + Global
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--ds-font-base);
+      color: var(--ds-color-text-primary);
+      background-color: var(--ds-color-surface-white);
+      padding-top: 58px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, video { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    p, li, dt, dd, blockquote,
+    .ds-section-header__description,
+    .ds-hero__description,
+    .ds-cta-band__description,
+    .ds-body-l, .ds-body-m, .ds-body-s,
+    .ds-ac-card__title,
+    .ds-card__description {
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      text-wrap: pretty;
+    }
+    h1, h2, h3, h4 { text-wrap: balance; }
+
+    /* ============================================================
+       2. :root — CSS Variables (Core + Capsule Brand Tokens)
+    ============================================================ */
+    :root {
+      /* LLM Capsule Brand Colors */
+      --ds-color-brand-primary:   #1821E8;
+      --ds-color-brand-secondary: #5690D4;
+      --ds-color-brand-accent:    #55B45D;
+      --ds-color-brand-light:     #B8D4EE;
+      --ds-color-border-brand:    #5690D4;
+
+      /* Gradient */
+      --ds-gradient-brand: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+      --ds-gradient-dark:  linear-gradient(180deg, #0f0f0f 0%, #171719 100%);
+
+      /* Gradient Card Border */
+      --ds-gradient-card-indigo: linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #E8F0FF 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%);
+      --ds-gradient-card-blue:   linear-gradient(109deg, #BFD8F4 0%, #fff 17%, #E8F0FF 38%, #5690D4 51%, #E2EBF5 73%, #BFD8F4 100%);
+
+      /* Gradient Card Inner */
+      --ds-gradient-inner-indigo: linear-gradient(99deg, #ECEEFF 0%, #FCFCFE 58%, #fff 100%);
+      --ds-gradient-inner-blue:   linear-gradient(99deg, #EAF0F9 0%, #FCFCFE 58%, #fff 100%);
+
+      /* Overlay values */
+      --ds-overlay-nav-bg:          rgba(255,255,255,0.92);
+      --ds-overlay-dark-medium:     rgba(0,0,0,0.35);
+      --ds-overlay-dark-light:      rgba(0,0,0,0.15);
+      --ds-overlay-white-85:        rgba(255,255,255,0.85);
+      --ds-overlay-white-70:        rgba(255,255,255,0.70);
+      --ds-overlay-white-55:        rgba(255,255,255,0.55);
+      --ds-overlay-white-45:        rgba(255,255,255,0.45);
+      --ds-overlay-cta-btn-bdr:     rgba(255,255,255,0.6);
+      --ds-overlay-brand-tint:      rgba(24,33,232,0.04);
+      --ds-overlay-brand-tint-md:   rgba(24,33,232,0.08);
+      --ds-overlay-brand-tint-light:rgba(24,33,232,0.06);
+      --ds-overlay-success-tint:    rgba(14,130,76,0.08);
+      --ds-overlay-success-bdr:     rgba(14,130,76,0.2);
+      --ds-shadow-gradient-card:    rgba(113,141,176,0.25) 0px 1px 20px 0px;
+
+      /* Neutral */
+      --ds-color-neutral-900: #0f0f0f;
+      --ds-color-neutral-850: #141414;
+      --ds-color-neutral-800: #171719;
+      --ds-color-neutral-700: #303135;
+      --ds-color-neutral-500: #636363;
+      --ds-color-neutral-400: #9c9c9c;
+      --ds-color-neutral-350: #adadad;
+      --ds-color-neutral-300: #bababa;
+      --ds-color-neutral-250: #c4c4c4;
+      --ds-color-neutral-200: #e0e0e0;
+      --ds-color-neutral-150: #e6e7e9;
+      --ds-color-neutral-100: #ececec;
+      --ds-color-neutral-050: #f2f2f2;
+      --ds-color-neutral-025: #f7f7f7;
+      --ds-color-white: #ffffff;
+      --ds-color-black: #000000;
+
+      /* Text */
+      --ds-color-text-primary:   #0f0f0f;
+      --ds-color-text-secondary: #636363;
+      --ds-color-text-tertiary:  #9c9c9c;
+      --ds-color-text-inverse:   #ffffff;
+
+      /* Functional */
+      --ds-color-success:       #0e824c;
+      --ds-color-error:         #ff3030;
+      --ds-color-info:          #155ea0;
+      --ds-color-success-light: #34d399;
+
+      /* Border */
+      --ds-color-border-default: #e6e7e9;
+      --ds-color-border-strong:  #171719;
+
+      /* Surface */
+      --ds-color-surface-dark:  #171719;
+      --ds-color-surface-mid:   #f2f2f2;
+      --ds-color-surface-light: #f7f7f7;
+      --ds-color-surface-white: #ffffff;
+
+      /* Typography */
+      --ds-font-base:  "DM Sans", "DM Sans Placeholder", sans-serif;
+      --ds-font-brand: "Oxanium", sans-serif;
+      --ds-font-code:  "Fragment Mono", "Geist Mono", monospace;
+
+      --ds-text-xs:   12px;
+      --ds-text-sm:   14px;
+      --ds-text-md:   16px;
+      --ds-text-lg:   18px;
+      --ds-text-xl:   20px;
+      --ds-text-2xl:  24px;
+      --ds-text-3xl:  30px;
+      --ds-text-4xl:  36px;
+      --ds-text-5xl:  40px;
+      --ds-text-6xl:  50px;
+      --ds-text-7xl:  64px;
+
+      --ds-weight-light:    300;
+      --ds-weight-regular:  400;
+      --ds-weight-medium:   500;
+      --ds-weight-semibold: 600;
+      --ds-weight-bold:     700;
+
+      --ds-leading-tight:   1.2;
+      --ds-leading-normal:  1.5;
+      --ds-leading-relaxed: 1.7;
+
+      --ds-tracking-tight:  -0.5px;
+      --ds-tracking-normal: 0px;
+      --ds-tracking-wide:   0.08em;
+
+      /* Spacing */
+      --ds-space-2xs:  4px;
+      --ds-space-xs:   8px;
+      --ds-space-sm:   12px;
+      --ds-space-md:   16px;
+      --ds-space-lg:   24px;
+      --ds-space-xl:   32px;
+      --ds-space-2xl:  48px;
+      --ds-space-3xl:  64px;
+      --ds-space-4xl:  80px;
+      --ds-space-5xl: 100px;
+
+      /* Shape */
+      --ds-radius-none: 0px;
+      --ds-radius-xs:   5px;
+      --ds-radius-sm:   8px;
+      --ds-radius-md:   18px;
+      --ds-radius-lg:   24px;
+      --ds-radius-xl:   40px;
+      --ds-radius-2xl:  56px;
+      --ds-radius-pill: 9999px;
+
+      --ds-border-default: 1px solid var(--ds-color-border-default);
+      --ds-shadow-card:  0px 24px 40px rgba(0, 0, 0, 0.04);
+
+      /* Container */
+      --ds-container-padding-mobile:     16px;
+      --ds-container-padding-tablet:     32px;
+      --ds-container-padding-sm-desktop: 32px;
+      --ds-container-padding-desktop:    120px;
+      --ds-content-max-width:            1440px;
+
+      /* Background Images — only used on this page */
+      --ds-bg-img-paint-blue: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.png');
+      --ds-bg-img-wave-teal:  url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-wave-teal.png');
+    }
+
+    /* ============================================================
+       3. Base Typography
+    ============================================================ */
+    h1, .ds-h1 {
+      font-family: var(--ds-font-base); font-size: 24px;
+      font-weight: var(--ds-weight-bold); line-height: var(--ds-leading-tight);
+      letter-spacing: var(--ds-tracking-tight);
+    }
+    h2, .ds-h2 {
+      font-family: var(--ds-font-base); font-size: 20px;
+      font-weight: var(--ds-weight-bold); line-height: var(--ds-leading-tight);
+      letter-spacing: var(--ds-tracking-tight);
+    }
+    h3, .ds-h3 {
+      font-family: var(--ds-font-base); font-size: 18px;
+      font-weight: var(--ds-weight-semibold); line-height: var(--ds-leading-tight);
+    }
+    .ds-body-l { font-size: var(--ds-text-xl);  font-weight: var(--ds-weight-regular); line-height: var(--ds-leading-normal); }
+    .ds-body-m { font-size: var(--ds-text-md);  font-weight: var(--ds-weight-medium);  line-height: var(--ds-leading-normal); }
+    .ds-body-s { font-size: var(--ds-text-sm);  font-weight: var(--ds-weight-medium);  line-height: var(--ds-leading-normal); }
+    .ds-caption { font-size: var(--ds-text-xs);  font-weight: var(--ds-weight-medium);  line-height: var(--ds-leading-normal); }
+
+    @media (min-width: 768px)  { h1, .ds-h1 { font-size: 28px; } h2, .ds-h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { h1, .ds-h1 { font-size: 32px; } h2, .ds-h2 { font-size: 24px; } h3, .ds-h3 { font-size: 20px; } }
+    @media (min-width: 1440px) { h1, .ds-h1 { font-size: 36px; } h2, .ds-h2 { font-size: 28px; } h3, .ds-h3 { font-size: 22px; } }
+
+    .ds-text--brand       { color: var(--ds-color-brand-secondary); }
+    .ds-text--product     { font-family: var(--ds-font-brand); font-weight: var(--ds-weight-bold); }
+
+    /* ============================================================
+       4. Components
+    ============================================================ */
+
+    /* --- Navigation --- */
+    .ds-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 58px; display: flex; align-items: center;
+      background-color: var(--ds-overlay-nav-bg);
+      backdrop-filter: blur(20px); border-bottom: 1px solid var(--ds-color-border-default);
+      padding: 0 var(--ds-container-padding-mobile);
+    }
+    @media (min-width: 1440px) { .ds-nav { padding: 0 var(--ds-container-padding-desktop); } }
+    .ds-nav__inner { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .ds-nav__logo { display: flex; align-items: center; gap: 8px; font-family: var(--ds-font-base); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-lg); color: var(--ds-color-text-primary); }
+    .ds-nav__logo img { height: 28px; width: auto; }
+    .ds-nav__links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    @media (max-width: 767px) { .ds-nav__links { display: none; } }
+    .ds-nav__link { font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary); transition: color 0.15s; }
+    .ds-nav__link:hover { color: var(--ds-color-text-primary); }
+    .ds-nav__link--active { color: var(--ds-color-text-primary); font-weight: var(--ds-weight-semibold); }
+    .ds-nav__actions { display: flex; align-items: center; gap: var(--ds-space-sm); }
+
+    /* --- Section --- */
+    .ds-section { width: 100%; padding: var(--ds-space-4xl) 0; background-color: var(--ds-color-surface-white); }
+    .ds-section--hero { padding: 100px 0 var(--ds-space-5xl); background-color: var(--ds-color-surface-white); }
+    .ds-section--bg-img { background-size: cover; background-position: center; position: relative; }
+    .ds-section--bg-img::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: var(--ds-overlay-white-45); z-index: 0;
+    }
+    .ds-section--bg-img > * { position: relative; z-index: 1; }
+
+    @media (min-width: 768px)  { .ds-section { padding: var(--ds-space-5xl) 0; } .ds-section--hero { padding: 100px 0 var(--ds-space-5xl); } }
+    @media (min-width: 1024px) { .ds-section { padding: 100px 0; } }
+    @media (min-width: 1440px) { .ds-section { padding: 120px 0; } }
+
+    /* --- Container --- */
+    .ds-container { width: 100%; margin: 0 auto; padding: 0 var(--ds-container-padding-mobile); }
+    @media (min-width: 768px)  { .ds-container { padding: 0 var(--ds-container-padding-tablet); } }
+    @media (min-width: 1024px) { .ds-container { padding: 0 var(--ds-container-padding-sm-desktop); } }
+    @media (min-width: 1440px) { .ds-container { padding: 0 var(--ds-container-padding-desktop); max-width: 1440px; } }
+
+    /* --- Button --- */
+    .ds-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-xs);
+      border-radius: var(--ds-radius-pill);
+      font-family: var(--ds-font-base); font-weight: var(--ds-weight-medium);
+      cursor: pointer; border: none; transition: opacity 0.2s, background-color 0.2s;
+      white-space: nowrap; text-decoration: none;
+    }
+    .ds-btn--sm { padding: var(--ds-space-xs) var(--ds-space-md);  font-size: var(--ds-text-sm); }
+    .ds-btn--md { padding: var(--ds-space-sm) var(--ds-space-xl);  font-size: var(--ds-text-md); }
+    .ds-btn--lg { padding: var(--ds-space-md) var(--ds-space-2xl); font-size: var(--ds-text-lg); }
+    .ds-btn--primary   { background: var(--ds-gradient-brand); color: var(--ds-color-white); }
+    .ds-btn--primary:hover { opacity: 0.88; }
+    .ds-btn--secondary { background-color: transparent; color: var(--ds-color-text-primary); border: var(--ds-border-default); }
+    .ds-btn--secondary:hover { background-color: var(--ds-color-surface-light); }
+
+    /* --- Section Header --- */
+    .ds-section-header { margin-bottom: var(--ds-space-2xl); text-align: center; }
+    .ds-section-header__title {
+      font-size: var(--ds-text-5xl); font-weight: var(--ds-weight-bold);
+      color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight);
+      letter-spacing: var(--ds-tracking-tight); margin-bottom: var(--ds-space-md);
+    }
+    .ds-section-header__description {
+      font-size: var(--ds-text-lg); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed); max-width: 100%; margin: 0 auto;
+    }
+    @media (min-width: 1024px) { .ds-section-header__description { max-width: 720px; } }
+    @media (min-width: 1440px) { .ds-section-header__description { max-width: 860px; } }
+    .ds-section-header--underline {
+      padding-bottom: var(--ds-space-lg);
+      border-bottom: 1px solid var(--ds-color-border-default);
+      margin-bottom: var(--ds-space-xl);
+    }
+    @media (max-width: 767px) { .ds-section-header { text-align: left; } }
+    @media (max-width: 767px) { .ds-section-header__title { font-size: var(--ds-text-4xl); } }
+    @media (min-width: 768px)  { .ds-section-header__title { font-size: var(--ds-text-5xl); } }
+    @media (min-width: 1440px) { .ds-section-header__title { font-size: var(--ds-text-6xl); } }
+
+    /* --- Hero Text-Only --- */
+    .ds-hero--text-only { max-width: 860px; }
+    .ds-hero__title {
+      font-family: var(--ds-font-base); font-size: 24px; font-weight: var(--ds-weight-bold);
+      color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight);
+      letter-spacing: var(--ds-tracking-tight); margin-bottom: var(--ds-space-md);
+    }
+    @media (min-width: 768px)  { .ds-hero__title { font-size: 32px; } }
+    @media (min-width: 1024px) { .ds-hero__title { font-size: 44px; } }
+    @media (min-width: 1440px) { .ds-hero__title { font-size: 56px; } }
+    .ds-hero__description {
+      font-size: var(--ds-text-lg); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed); max-width: 100%; margin-bottom: var(--ds-space-xl);
+    }
+    @media (min-width: 1024px) { .ds-hero__description { max-width: 720px; } }
+    @media (min-width: 1440px) { .ds-hero__description { max-width: 860px; } }
+    .ds-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    @media (max-width: 767px) { .ds-hero__actions { flex-direction: column; } }
+
+    /* --- Cert Grid (Marquee) --- */
+    .ds-cert-grid { overflow: hidden; padding: var(--ds-space-lg) 0; }
+    .ds-cert-grid__track {
+      display: flex; gap: 24px;
+      animation: marquee 40s linear infinite; width: max-content;
+    }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .ds-cert-card {
+      flex-shrink: 0; width: 200px; padding: var(--ds-space-md);
+      border: var(--ds-border-default); border-radius: var(--ds-radius-md);
+      background-color: var(--ds-color-surface-white);
+      text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--ds-space-xs);
+    }
+    .ds-cert-card__group {
+      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-bold);
+      color: var(--ds-color-brand-secondary); text-transform: uppercase;
+      letter-spacing: var(--ds-tracking-wide);
+    }
+    .ds-cert-card__wreath { display: flex; align-items: center; gap: var(--ds-space-xs); }
+    .ds-cert-card__wreath img { height: 40px; width: auto; }
+    .ds-cert-card__text { font-size: var(--ds-text-md); font-weight: var(--ds-weight-bold); color: var(--ds-color-text-primary); }
+    .ds-cert-card__org { font-size: var(--ds-text-xs); color: var(--ds-color-text-tertiary); }
+    .ds-cert-card__year { font-size: var(--ds-text-xs); color: var(--ds-color-text-tertiary); }
+    @media (max-width: 767px) { .ds-cert-card { width: 170px; } .ds-cert-grid__track { animation-duration: 25s; } }
+
+    /* --- Card Grid --- */
+    .ds-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px) { .ds-card-grid--2col { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 768px)  { .ds-card-grid--4col { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .ds-card-grid--4col { grid-template-columns: repeat(4, 1fr); } }
+
+    /* --- Card --- */
+    .ds-card {
+      background-color: var(--ds-color-surface-white);
+      border-radius: var(--ds-radius-md); border: var(--ds-border-default);
+      padding: var(--ds-space-lg); box-shadow: var(--ds-shadow-card);
+      display: flex; flex-direction: column;
+    }
+    @media (min-width: 1440px) { .ds-card { padding: var(--ds-space-xl); } }
+    .ds-card__icon-wrap { margin-bottom: var(--ds-space-sm); color: var(--ds-color-brand-secondary); }
+    .ds-card__title { font-size: var(--ds-text-xl); font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); margin-bottom: var(--ds-space-sm); }
+    .ds-card__description { font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary); line-height: var(--ds-leading-relaxed); flex: 1; }
+
+    /* --- Gradient Card --- */
+    .ds-card--gradient {
+      padding: 2px; border-radius: var(--ds-radius-md);
+      box-shadow: var(--ds-shadow-gradient-card);
+    }
+    .ds-card--gradient-indigo { background: var(--ds-gradient-card-indigo); }
+    .ds-card--gradient-blue   { background: var(--ds-gradient-card-blue); }
+    .ds-card--gradient__inner {
+      border-radius: calc(var(--ds-radius-md) - 2px);
+      padding: var(--ds-space-xl);
+      display: flex; flex-direction: column; gap: var(--ds-space-sm);
+      height: 100%;
+    }
+    .ds-card--gradient-indigo .ds-card--gradient__inner { background: var(--ds-gradient-inner-indigo); }
+    .ds-card--gradient-blue .ds-card--gradient__inner   { background: var(--ds-gradient-inner-blue); }
+    .ds-card--gradient__icon { color: var(--ds-color-brand-secondary); margin-bottom: var(--ds-space-2xs); }
+    .ds-card--gradient__title { font-size: var(--ds-text-xl); font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); }
+    .ds-card--gradient__description { font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary); line-height: var(--ds-leading-relaxed); }
+
+    /* --- Feature Grid (2x2) --- */
+    .ds-feature-grid {
+      border: 1px solid var(--ds-color-border-default);
+      border-radius: var(--ds-radius-xl); padding: 40px;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 48px;
+    }
+    .ds-feature-grid--on-bg { background-color: var(--ds-overlay-white-85); }
+    .ds-feature-item { display: flex; flex-direction: column; gap: var(--ds-space-xs); }
+    .ds-feature-item__icon { color: var(--ds-color-brand-secondary); margin-bottom: var(--ds-space-2xs); }
+    .ds-feature-item__title { font-size: var(--ds-text-lg); font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-primary); }
+    .ds-feature-item__description { font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary); line-height: var(--ds-leading-relaxed); }
+    @media (max-width: 767px) { .ds-feature-grid { grid-template-columns: 1fr; padding: 24px; gap: 24px; } }
+
+    /* --- Banner --- */
+    .ds-banner {
+      padding: var(--ds-space-md) var(--ds-space-lg);
+      border-radius: 0; border: none;
+      border-top: 1px solid var(--ds-color-border-default);
+      border-bottom: 1px solid var(--ds-color-border-default);
+      background-color: var(--ds-banner-bg, var(--ds-color-surface-light));
+      font-size: var(--ds-text-sm); line-height: var(--ds-leading-relaxed);
+      text-align: center; word-break: keep-all; overflow-wrap: break-word;
+    }
+    .ds-banner--info { --ds-banner-bg: rgba(21, 94, 160, 0.06); }
+
+    /* --- Banner Full --- */
+    .ds-banner--full {
+      padding: var(--ds-space-2xl) var(--ds-space-lg);
+      text-align: center; border-radius: var(--ds-radius-xl);
+      background-size: cover; background-position: center;
+      background-color: var(--ds-color-surface-light);
+      position: relative; overflow: hidden;
+    }
+    .ds-banner--full[class*="ds-bg--"]::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: var(--ds-overlay-white-45); z-index: 0;
+    }
+    .ds-banner--full > * { position: relative; z-index: 1; }
+    .ds-banner--full p {
+      font-size: var(--ds-text-md); color: var(--ds-color-text-primary);
+      line-height: var(--ds-leading-relaxed); max-width: 860px; margin: 0 auto;
+    }
+    .ds-banner--full__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: var(--ds-space-lg); }
+
+    /* --- Bullet List --- */
+    .ds-bullet { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--ds-space-sm); }
+    .ds-bullet__item {
+      display: flex; align-items: flex-start; gap: var(--ds-space-xs);
+      font-size: var(--ds-text-md); line-height: var(--ds-leading-normal); color: var(--ds-color-text-primary);
+    }
+    .ds-bullet__icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; }
+    .ds-bullet--check .ds-bullet__icon::before { content: "✓"; color: var(--ds-color-success); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-md); line-height: 1; }
+
+    /* --- Background Image Classes --- */
+    .ds-bg--paint-blue { background-image: var(--ds-bg-img-paint-blue); }
+    .ds-bg--wave-teal  { background-image: var(--ds-bg-img-wave-teal); }
+    @media (max-width: 767px) {
+      .ds-section--bg-img { background-image: none; }
+      .ds-banner--full[class*="ds-bg--"] { background-image: none; }
+    }
+
+    /* --- Icon --- */
+    .ds-icon { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .ds-icon--lg { width: 32px; height: 32px; }
+
+    /* --- CTA Band --- */
+    .ds-cta-band {
+      width: 100%; position: relative; overflow: hidden;
+      padding: 80px var(--ds-container-padding-mobile);
+      text-align: center;
+      background-color: var(--ds-color-neutral-800);
+      background-size: cover; background-position: center;
+    }
+    .ds-cta-band:not([class*="ds-bg--"]) { background: var(--ds-gradient-brand); }
+    .ds-cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: var(--ds-overlay-dark-light); z-index: 0;
+    }
+    .ds-cta-band > * { position: relative; z-index: 1; }
+    .ds-cta-band__inner {
+      max-width: 100%; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: var(--ds-space-lg);
+    }
+    @media (min-width: 1024px) { .ds-cta-band__inner { max-width: 720px; } }
+    @media (min-width: 1440px) { .ds-cta-band__inner { max-width: 860px; } }
+    .ds-cta-band__title {
+      font-family: var(--ds-font-base); font-size: var(--ds-text-4xl);
+      font-weight: var(--ds-weight-bold); color: var(--ds-color-white);
+      line-height: var(--ds-leading-tight); letter-spacing: var(--ds-tracking-tight); margin: 0;
+    }
+    .ds-cta-band__description {
+      font-size: var(--ds-text-lg); color: var(--ds-overlay-white-85);
+      line-height: var(--ds-leading-relaxed); margin: 0;
+    }
+    .ds-cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .ds-cta-band__actions .ds-btn { background-color: var(--ds-overlay-nav-bg); color: var(--ds-color-text-primary); border: 1px solid var(--ds-overlay-cta-btn-bdr); backdrop-filter: blur(8px); }
+    .ds-cta-band__actions .ds-btn:hover { background-color: var(--ds-color-white); }
+    .ds-cta-band__footnote {
+      font-size: var(--ds-text-xs); color: var(--ds-overlay-white-70);
+      display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: center;
+    }
+    .ds-cta-band__footnote a { color: var(--ds-overlay-white-85); transition: color 0.2s; }
+    .ds-cta-band__footnote a:hover { color: var(--ds-color-white); }
+    .ds-cta-band__footnote span { color: var(--ds-overlay-white-55); }
+    @media (min-width: 768px)  { .ds-cta-band { padding: 100px var(--ds-container-padding-tablet); } .ds-cta-band__title { font-size: var(--ds-text-5xl); } }
+    @media (min-width: 1440px) { .ds-cta-band { padding: 120px var(--ds-container-padding-desktop); max-width: 1440px; margin: 0 auto; } .ds-cta-band__title { font-size: var(--ds-text-6xl); } }
+    @media (max-width: 767px) {
+      .ds-cta-band { background-image: none; }
+      .ds-cta-band__title { font-size: var(--ds-text-4xl); }
+      .ds-cta-band__actions { flex-direction: column; align-items: center; }
+      .ds-cta-band__actions .ds-btn { width: 100%; max-width: 320px; }
+    }
+
+    /* --- Footer --- */
+    .ds-footer { padding: 56px 0 32px; border-top: 1px solid var(--ds-color-border-default); background-color: var(--ds-color-surface-white); }
+    .ds-footer__grid { display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 40px; margin-bottom: 40px; }
+    @media (max-width: 1023px) { .ds-footer__grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 767px)  { .ds-footer__grid { grid-template-columns: 1fr; gap: 24px; } }
+    .ds-footer__brand { font-family: var(--ds-font-brand); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-lg); color: var(--ds-color-brand-primary); }
+    .ds-footer__brand-desc { font-family: var(--ds-font-base); font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary); margin-top: 10px; line-height: var(--ds-leading-relaxed); font-weight: var(--ds-weight-regular); max-width: 260px; }
+    .ds-footer__col h4 { font-size: 11px; font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-tertiary); text-transform: uppercase; letter-spacing: var(--ds-tracking-wide); margin-bottom: 14px; }
+    .ds-footer__col ul { list-style: none; }
+    .ds-footer__col li { margin-bottom: 8px; }
+    .ds-footer__col a { font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary); transition: color 0.2s; }
+    .ds-footer__col a:hover { color: var(--ds-color-text-primary); }
+    .ds-footer__bottom { padding-top: 20px; border-top: 1px solid var(--ds-color-border-default); display: flex; justify-content: space-between; align-items: center; font-size: var(--ds-text-xs); color: var(--ds-color-text-tertiary); }
+    @media (max-width: 767px) { .ds-footer__bottom { flex-direction: column; gap: 8px; text-align: center; } }
+
+    /* --- Utility --- */
+    .ds-spaced-top { margin-top: var(--ds-space-lg); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="ds-nav" role="navigation" aria-label="Main navigation">
+    <div class="ds-nav__inner">
+      <a href="index.html" class="ds-nav__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/logo-llmcapsule.avif"
+             alt="LLM Capsule" onerror="this.style.display='none'">
+        <span class="ds-text--product">LLM Capsule</span>
+      </a>
+      <ul class="ds-nav__links" role="list">
+        <li><a href="product.html" class="ds-nav__link">Product</a></li>
+        <li><a href="architecture.html" class="ds-nav__link">Architecture</a></li>
+        <li><a href="solutions.html" class="ds-nav__link">Solutions</a></li>
+        <li><a href="trust.html" class="ds-nav__link ds-nav__link--active">Trust</a></li>
+        <li><a href="pricing.html" class="ds-nav__link">Pricing</a></li>
+        <li><a href="resources.html" class="ds-nav__link">Resources</a></li>
+      </ul>
+      <div class="ds-nav__actions">
+        <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" class="ds-btn ds-btn--secondary ds-btn--sm">AWS Marketplace</a>
+        <a href="request-pov.html" class="ds-btn ds-btn--primary ds-btn--sm">Request PoV</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         Section 1: Hero — Text-Only
+    ============================================================ -->
+    <section id="section-1" class="ds-section ds-section--hero">
+      <div class="ds-container">
+        <div class="ds-hero--text-only">
+          <h1 class="ds-hero__title">
+            Enterprise-Grade <span class="ds-text--brand">Security</span> and Compliance
+          </h1>
+          <p class="ds-hero__description">
+            <span class="ds-text--product">LLM Capsule</span> is built for regulated enterprise environments. Certified, auditable, and designed for data sovereignty. This security foundation is what enables enterprises to adopt AI confidently on their most sensitive data.
+          </p>
+          <div class="ds-hero__actions">
+            <a href="request-pov.html" class="ds-btn ds-btn--primary ds-btn--md">Request PoV</a>
+            <a href="architecture.html" class="ds-btn ds-btn--secondary ds-btn--md">View Architecture</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 2: Certifications — Cert Grid Marquee + 4-col Cards
+    ============================================================ -->
+    <section id="section-2" class="ds-section">
+      <div class="ds-container">
+        <div class="ds-section-header ds-section-header--underline">
+          <h2 class="ds-section-header__title">Certified <span class="ds-text--brand">Trust</span></h2>
+        </div>
+      </div>
+
+      <!-- Cert Marquee (full-bleed) -->
+      <div class="ds-cert-grid" aria-label="Certifications and accreditations">
+        <div class="ds-cert-grid__track">
+          <!-- Set 1 -->
+          <div class="ds-cert-card">
+            <span class="ds-cert-card__group">Information Security</span>
+            <div class="ds-cert-card__wreath">
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" aria-hidden="true">
+              <span class="ds-cert-card__text">ISO 27001</span>
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" aria-hidden="true">
+            </div>
+            <span class="ds-cert-card__org">Information Security Management</span>
+            <span class="ds-cert-card__year">2024</span>
+          </div>
+          <div class="ds-cert-card">
+            <span class="ds-cert-card__group">AI Governance</span>
+            <div class="ds-cert-card__wreath">
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" aria-hidden="true">
+              <span class="ds-cert-card__text">ISO 42001</span>
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" aria-hidden="true">
+            </div>
+            <span class="ds-cert-card__org">AI Management System</span>
+            <span class="ds-cert-card__year">2024</span>
+          </div>
+          <div class="ds-cert-card">
+            <span class="ds-cert-card__group">Software Quality</span>
+            <div class="ds-cert-card__wreath">
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" aria-hidden="true">
+              <span class="ds-cert-card__text">GS Cert Grade 1</span>
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" aria-hidden="true">
+            </div>
+            <span class="ds-cert-card__org">Korean Government</span>
+            <span class="ds-cert-card__year">2024</span>
+          </div>
+          <div class="ds-cert-card">
+            <span class="ds-cert-card__group">Cloud Platform</span>
+            <div class="ds-cert-card__wreath">
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="" aria-hidden="true">
+              <span class="ds-cert-card__text">AWS Marketplace</span>
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="" aria-hidden="true">
+            </div>
+            <span class="ds-cert-card__org">Enterprise Procurement</span>
+            <span class="ds-cert-card__year">2024</span>
+          </div>
+          <!-- Set 2 — duplicate for seamless loop -->
+          <div class="ds-cert-card" aria-hidden="true">
+            <span class="ds-cert-card__group">Information Security</span>
+            <div class="ds-cert-card__wreath">
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+              <span class="ds-cert-card__text">ISO 27001</span>
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+            </div>
+            <span class="ds-cert-card__org">Information Security Management</span>
+            <span class="ds-cert-card__year">2024</span>
+          </div>
+          <div class="ds-cert-card" aria-hidden="true">
+            <span class="ds-cert-card__group">AI Governance</span>
+            <div class="ds-cert-card__wreath">
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+              <span class="ds-cert-card__text">ISO 42001</span>
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+            </div>
+            <span class="ds-cert-card__org">AI Management System</span>
+            <span class="ds-cert-card__year">2024</span>
+          </div>
+          <div class="ds-cert-card" aria-hidden="true">
+            <span class="ds-cert-card__group">Software Quality</span>
+            <div class="ds-cert-card__wreath">
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+              <span class="ds-cert-card__text">GS Cert Grade 1</span>
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+            </div>
+            <span class="ds-cert-card__org">Korean Government</span>
+            <span class="ds-cert-card__year">2024</span>
+          </div>
+          <div class="ds-cert-card" aria-hidden="true">
+            <span class="ds-cert-card__group">Cloud Platform</span>
+            <div class="ds-cert-card__wreath">
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+              <span class="ds-cert-card__text">AWS Marketplace</span>
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+            </div>
+            <span class="ds-cert-card__org">Enterprise Procurement</span>
+            <span class="ds-cert-card__year">2024</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail Cards -->
+      <div class="ds-container ds-spaced-top">
+        <div class="ds-card-grid ds-card-grid--4col">
+
+          <div class="ds-card">
+            <div class="ds-card__icon-wrap">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <h3 class="ds-card__title">ISO 27001</h3>
+            <p class="ds-card__description">Information security management system certification. Demonstrates systematic approach to managing sensitive company information.</p>
+          </div>
+
+          <div class="ds-card">
+            <div class="ds-card__icon-wrap">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/>
+                <path d="M12 8v4l2 2"/>
+                <circle cx="12" cy="12" r="2"/>
+                <path d="M12 2v2M12 20v2M2 12h2M20 12h2"/>
+              </svg>
+            </div>
+            <h3 class="ds-card__title">ISO 42001</h3>
+            <p class="ds-card__description">AI management system certification. Demonstrates responsible AI governance and risk management practices.</p>
+          </div>
+
+          <div class="ds-card">
+            <div class="ds-card__icon-wrap">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <h3 class="ds-card__title">GS Certification</h3>
+            <p class="ds-card__description">Korean government software quality certification (Grade 1). Listed on 조달청 혁신장터 for public sector procurement.</p>
+          </div>
+
+          <div class="ds-card">
+            <div class="ds-card__icon-wrap">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+              </svg>
+            </div>
+            <h3 class="ds-card__title">AWS Marketplace</h3>
+            <p class="ds-card__description">Available on AWS Marketplace for streamlined enterprise procurement, billing, and deployment within AWS environments.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 3: Data Sovereignty — Gradient Card Grid 2col
+    ============================================================ -->
+    <section id="section-3" class="ds-section">
+      <div class="ds-container">
+        <div class="ds-section-header ds-section-header--underline">
+          <h2 class="ds-section-header__title">Data <span class="ds-text--brand">Sovereignty</span></h2>
+          <p class="ds-section-header__description"><span class="ds-text--product">LLM Capsule</span> enforces data sovereignty by design, and this enforcement is what enables AI adoption in regulated environments.</p>
+        </div>
+
+        <div class="ds-card-grid ds-card-grid--2col">
+
+          <div class="ds-card--gradient ds-card--gradient-indigo">
+            <div class="ds-card--gradient__inner">
+              <div class="ds-card--gradient__icon">
+                <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </div>
+              <h3 class="ds-card--gradient__title">Local Encapsulation</h3>
+              <p class="ds-card--gradient__description">The encapsulation engine runs entirely within the enterprise environment. Original sensitive data never leaves the controlled boundary. Only encapsulated representations — with sensitive values replaced by structure-preserving tokens — cross to external AI services.</p>
+            </div>
+          </div>
+
+          <div class="ds-card--gradient ds-card--gradient-blue">
+            <div class="ds-card--gradient__inner">
+              <div class="ds-card--gradient__icon">
+                <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <h3 class="ds-card--gradient__title">Zero Exposure Guarantee</h3>
+              <p class="ds-card--gradient__description">The mapping between original and encapsulated values is stored locally and never transmitted. Even in the event of a breach at the AI provider, no original enterprise data would be exposed because it was never transmitted.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 4: Audit & Compliance — Feature Grid on bg image
+    ============================================================ -->
+    <section id="section-4" class="ds-section ds-section--bg-img ds-bg--paint-blue">
+      <div class="ds-container">
+        <div class="ds-section-header ds-section-header--underline">
+          <h2 class="ds-section-header__title">Audit &amp; <span class="ds-text--brand">Compliance</span></h2>
+          <p class="ds-section-header__description">Every encapsulation and restoration event generates a complete audit record.</p>
+        </div>
+
+        <div class="ds-feature-grid ds-feature-grid--on-bg">
+
+          <div class="ds-feature-item">
+            <div class="ds-feature-item__icon">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <h3 class="ds-feature-item__title">Data Protection Records</h3>
+            <p class="ds-feature-item__description">What data was protected and which elements were encapsulated in each transaction.</p>
+          </div>
+
+          <div class="ds-feature-item">
+            <div class="ds-feature-item__icon">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="10" rx="2"/>
+                <circle cx="12" cy="5" r="2"/>
+                <path d="M12 7v4"/>
+                <line x1="8" y1="16" x2="8" y2="16"/>
+                <line x1="16" y1="16" x2="16" y2="16"/>
+              </svg>
+            </div>
+            <h3 class="ds-feature-item__title">AI Service Tracking</h3>
+            <p class="ds-feature-item__description">Which AI service processed the request and what outputs were restored.</p>
+          </div>
+
+          <div class="ds-feature-item">
+            <div class="ds-feature-item__icon">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                <path d="m9 14 2 2 4-4"/>
+              </svg>
+            </div>
+            <h3 class="ds-feature-item__title">Governance Support</h3>
+            <p class="ds-feature-item__description">Audit logs support enterprise AI governance, regulatory compliance reporting, and internal security reviews.</p>
+          </div>
+
+          <div class="ds-feature-item">
+            <div class="ds-feature-item__icon">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3a9 9 0 1 0 0 18A9 9 0 0 0 12 3z"/>
+                <path d="M16 12H8"/>
+                <path d="M12 8v8"/>
+              </svg>
+            </div>
+            <h3 class="ds-feature-item__title">Regulatory Alignment</h3>
+            <p class="ds-feature-item__description">Supports enterprise compliance with GDPR, HIPAA, SOX, and sector-specific data regulations.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 5: Regulatory Support — Banner + Checklist
+    ============================================================ -->
+    <section id="section-5" class="ds-section">
+      <div class="ds-container">
+
+        <div class="ds-banner ds-banner--info">
+          <p><span class="ds-text--product">LLM Capsule</span> supports enterprise compliance by ensuring sensitive data never leaves the enterprise environment during AI processing. Organizations should evaluate specific compliance requirements with their legal counsel.</p>
+        </div>
+
+        <ul class="ds-bullet ds-bullet--check ds-spaced-top" role="list" aria-label="Supported compliance frameworks">
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon" aria-hidden="true"></span>
+            <span>GDPR</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon" aria-hidden="true"></span>
+            <span>HIPAA</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon" aria-hidden="true"></span>
+            <span>SOX</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon" aria-hidden="true"></span>
+            <span>Sector-specific data regulations</span>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 6: AWS Marketplace Banner — Banner--full with bg image
+    ============================================================ -->
+    <section id="section-6" class="ds-section">
+      <div class="ds-container">
+        <div class="ds-banner--full ds-bg--wave-teal">
+          <p><span class="ds-text--product">LLM Capsule</span> is available on AWS Marketplace for streamlined enterprise procurement, billing, and deployment within AWS environments.</p>
+          <div class="ds-banner--full__actions">
+            <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" class="ds-btn ds-btn--secondary ds-btn--sm">View on AWS Marketplace</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       Section 7: CTA Band
+  ============================================================ -->
+  <div id="section-7" class="ds-cta-band">
+    <div class="ds-cta-band__inner">
+      <h2 class="ds-cta-band__title">See how <span class="ds-text--product">LLM Capsule</span> works with your data</h2>
+      <p class="ds-cta-band__description">Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</p>
+      <div class="ds-cta-band__actions">
+        <a href="request-pov.html" class="ds-btn ds-btn--md">Request PoV</a>
+        <a href="architecture.html" class="ds-btn ds-btn--md">Talk to an Architect</a>
+      </div>
+      <div class="ds-cta-band__footnote">
+        <a href="downloads.html">Download Architecture Brief</a>
+        <span>|</span>
+        <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener">Available on AWS Marketplace</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="ds-footer">
+    <div class="ds-container">
+      <div class="ds-footer__grid">
+        <div>
+          <div class="ds-footer__brand">LLM Capsule</div>
+          <p class="ds-footer__brand-desc">Enterprise AI enablement by CUBIG. Enable AI. Protect data. Restore results.</p>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="architecture.html">Architecture</a></li>
+            <li><a href="trust.html">Trust</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener">AWS Marketplace</a></li>
+          </ul>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="solutions.html">All Solutions</a></li>
+          </ul>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="resources.html">Resources Hub</a></li>
+            <li><a href="learn.html">Learn</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="trust-center.html">Trust Center</a></li>
+          </ul>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="request-pov.html">Request PoV</a></li>
+            <li><a href="https://cubig.ai" target="_blank" rel="noopener">CUBIG</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ds-footer__bottom">
+        <span>&copy; 2025 LLM Capsule by CUBIG. All rights reserved.</span>
+        <span>Enterprise AI Enablement</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
