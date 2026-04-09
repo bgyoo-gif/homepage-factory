@@ -2783,52 +2783,7 @@ code, .ds-code-inline {
 
   <div id="output-toast" style="display:none;padding:10px 16px;background:rgba(14,130,76,0.06);border:1px solid rgba(14,130,76,0.15);border-radius:8px;font-size:13px;color:#0e824c;margin-bottom:16px;"></div>
 
-  <div id="output-file-list"><div style="text-align:center;padding:48px 0;color:#9c9c9c;font-size:14px;">Loading...</div></div>
-  <script>
-  (function(){
-    var thS='padding:10px 12px;font-size:11px;font-weight:600;color:#9c9c9c;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;';
-
-    function lnk(f){return '<span class="v-ot-link" onclick="openDetail(\''+f.path+'\',\''+f.name+'\')">'+f.name+'</span>';}
-
-    function renderManifest(m) {
-      var o='<table style="width:100%;border-collapse:collapse;font-size:13px;"><thead><tr style="border-bottom:2px solid #e6e7e9;text-align:left;">';
-      o+='<th style="'+thS+'">Input File</th><th style="'+thS+'">Updated</th>';
-      o+='<th style="'+thS+'"><span style="font-size:10px;font-weight:600;color:#3061f2;background:rgba(48,97,242,0.08);padding:2px 8px;border-radius:4px;">HTML / Docs</span></th>';
-      o+='<th style="'+thS+'"><span style="font-size:10px;font-weight:600;color:#725bea;background:rgba(114,91,234,0.08);padding:2px 8px;border-radius:4px;">TSX</span></th>';
-      o+='</tr></thead><tbody>';
-
-      m.groups.forEach(function(g){
-        var inp = g.input;
-        var allHtml = (g.html||[]).concat(g.docs||[]);
-        var allTsx = g.tsx||[];
-
-        o+='<tr style="border-bottom:1px solid #f7f7f7;">';
-        var il = inp.path ? '<span class="v-ot-link" onclick="openDetail(\''+inp.path+'\',\''+inp.name+'\')" style="color:#0f0f0f;font-weight:600;">'+inp.name+'</span>' : inp.name;
-        o+='<td style="padding:10px 12px;font-weight:500;vertical-align:top;white-space:nowrap;">'+il+'</td>';
-        o+='<td style="padding:10px 12px;font-size:12px;color:#9c9c9c;vertical-align:top;white-space:nowrap;">'+inp.modified+'</td>';
-        o+='<td style="padding:10px 12px;vertical-align:top;line-height:1.8;">';
-        allHtml.forEach(function(f){o+='<div style="font-size:12px;">'+lnk(f)+'</div>';});
-        if(!allHtml.length)o+='<span style="color:#9c9c9c;">—</span>';
-        o+='</td><td style="padding:10px 12px;vertical-align:top;line-height:1.8;">';
-        allTsx.forEach(function(f){o+='<div style="font-size:12px;">'+lnk(f)+'</div>';});
-        if(!allTsx.length)o+='<span style="color:#9c9c9c;">—</span>';
-        o+='</td></tr>';
-      });
-
-      o+='</tbody></table>';
-      o+='<p style="margin-top:12px;font-size:11px;color:#9c9c9c;text-align:right;">Generated: '+m.generated+'</p>';
-      document.getElementById('output-file-list').innerHTML=o;
-    }
-
-    // Fetch manifest.json (same origin — no CORS, no server needed)
-    fetch('../output/manifest.json')
-      .then(function(r){return r.json();})
-      .then(renderManifest)
-      .catch(function(){
-        document.getElementById('output-file-list').innerHTML='<div style="text-align:center;padding:48px 0;color:#9c9c9c;font-size:14px;">manifest.json을 찾을 수 없습니다.<br><code style="font-size:12px;">python3 server/manifest.py</code> 실행 후 deploy해주세요.</div>';
-      });
-  })();
-  </script>
+  <div id="output-file-list"></div>
 
 </div><!-- /page-output -->
 
@@ -3326,26 +3281,17 @@ function typeBadge(type) {
 }
 function resolveStaticPath(f) {
   var n = f.name;
-  if (n.endsWith('.tsx')) return 'output/framer/' + n;
-  if (n.endsWith('-b-type.html') || n.startsWith('figure_')) return 'output/html/' + n;
-  if (n.endsWith('-spec.md') || n.endsWith('-qa-report.md')) return 'output/docs/' + n;
-  return 'output/' + n;
+  var prefix = currentBrand === 'cubig' ? '' : '../../llm-capsule/';
+  if (n.endsWith('.tsx')) return prefix + 'output/framer/' + n;
+  if (n.endsWith('-b-type.html') || n.startsWith('figure_')) return prefix + 'output/html/' + n;
+  if (n.endsWith('-spec.md') || n.endsWith('-qa-report.md')) return prefix + 'output/docs/' + n;
+  return prefix + 'output/' + n;
 }
 function renderStaticTable() {
   var container = document.getElementById('output-file-list');
 
-  // LLM Capsule — 아직 output 없음
-  if (currentBrand === 'llm-capsule') {
-    container.innerHTML = '<div style="text-align:center;padding:64px 0;">' +
-      '<div style="font-size:48px;margin-bottom:16px;opacity:0.3">📦</div>' +
-      '<div style="font-size:16px;font-weight:600;color:var(--ds-color-text-primary);margin-bottom:8px;">LLM Capsule Output</div>' +
-      '<div style="font-size:14px;color:var(--ds-color-text-secondary);">아직 변환된 파일이 없습니다.</div>' +
-      '<div style="font-size:13px;color:var(--ds-color-text-tertiary);margin-top:8px;">llm-capsule/input/ 폴더에 A타입 HTML을 넣고 변환을 시작하세요.</div>' +
-      '</div>';
-    return;
-  }
-
-  var data = [
+  var STATIC_DATA = {
+    cubig: [
     { input: 'A-cubig-llm-v3.html', ipath: '../input/A-cubig-llm-v3.html', idate: '2026-03-18', outputs: [
       { type: 'md', name: 'A-cubig-llm-v3-spec.md', date: '2026-03-18' },
       { type: 'html', name: 'A-cubig-llm-v3-b-type.html', date: '2026-03-19' },
@@ -3401,7 +3347,44 @@ function renderStaticTable() {
       { type: 'tsx', name: 'ArchitectureDiagram.tsx', date: '2026-03-19' },
       { type: 'tsx', name: 'Figure_Architecture.tsx', date: '2026-03-19' },
     ]},
-  ];
+    ],
+    'llm-capsule': [
+      { input: 'llm-capsule-home.html', ipath: '../../llm-capsule/input/llm-capsule-home.html', idate: '2026-04-06', outputs: [
+        { type: 'md', name: 'index-spec.md', date: '2026-04-09' },
+        { type: 'html', name: 'index-b-type.html', date: '2026-04-09' },
+        { type: 'md', name: 'index-qa-report.md', date: '2026-04-09' },
+      ]},
+      { input: 'llm-capsule-product.html', ipath: '../../llm-capsule/input/llm-capsule-product.html', idate: '2026-04-06', outputs: [
+        { type: 'md', name: 'product-spec.md', date: '2026-04-09' },
+        { type: 'html', name: 'product-b-type.html', date: '2026-04-09' },
+      ]},
+      { input: 'llm-capsule-pricing.html', ipath: '../../llm-capsule/input/llm-capsule-pricing.html', idate: '2026-04-06', outputs: [
+        { type: 'md', name: 'pricing-spec.md', date: '2026-04-09' },
+        { type: 'html', name: 'pricing-b-type.html', date: '2026-04-09' },
+        { type: 'md', name: 'pricing-qa-report.md', date: '2026-04-09' },
+      ]},
+      { input: 'llm-capsule-solutions.html', ipath: '../../llm-capsule/input/llm-capsule-solutions.html', idate: '2026-04-06', outputs: [
+        { type: 'md', name: 'solutions-spec.md', date: '2026-04-09' },
+        { type: 'html', name: 'solutions-b-type.html', date: '2026-04-09' },
+      ]},
+      { input: 'llm-capsule-trust.html', ipath: '../../llm-capsule/input/llm-capsule-trust.html', idate: '2026-04-06', outputs: [
+        { type: 'md', name: 'trust-spec.md', date: '2026-04-09' },
+        { type: 'html', name: 'trust-b-type.html', date: '2026-04-09' },
+        { type: 'md', name: 'trust-qa-report.md', date: '2026-04-09' },
+      ]},
+      { input: 'llm-capsule-downloads.html', ipath: '../../llm-capsule/input/llm-capsule-downloads.html', idate: '2026-04-06', outputs: [
+        { type: 'md', name: 'downloads-spec.md', date: '2026-04-09' },
+        { type: 'html', name: 'downloads-b-type.html', date: '2026-04-09' },
+        { type: 'md', name: 'downloads-qa-report.md', date: '2026-04-09' },
+      ]},
+      { input: 'llm-capsule-architecture.html', ipath: '../../llm-capsule/input/llm-capsule-architecture.html', idate: '2026-04-06', outputs: [
+        { type: 'md', name: 'architecture-spec.md', date: '2026-04-09' },
+        { type: 'html', name: 'architecture-b-type.html', date: '2026-04-09' },
+      ]},
+    ],
+  };
+
+  var data = STATIC_DATA[currentBrand] || [];
 
   var thStyle = 'padding:10px 12px;font-size:11px;font-weight:600;color:var(--ds-color-text-tertiary);letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;';
   var html = '<table style="width:100%;border-collapse:collapse;font-size:13px;">';
