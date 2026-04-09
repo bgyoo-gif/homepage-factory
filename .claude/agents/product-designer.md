@@ -112,15 +112,15 @@ frontend-dev 에이전트에게 구현을 위임합니다.
 ## 레이아웃 카탈로그
 
 ### [A] Hero text-only — ds-hero--text-only
-사용 시점: 페이지 최상단, 텍스트 중심 히어로
+사용 시점: 페이지 최상단, **원본 A타입에 이미지/비주얼 영역이 없는** 텍스트 중심 히어로
 배경: 흰색/밝은 배경만 (배경 이미지 금지)
 
 ### [A-2] Hero Screenshot — ds-hero--screenshot
-사용 시점: **실제 스크린샷 이미지가 확보된 경우에만** 사용. 스크린샷 없이 placeholder만 넣는 것은 금지 — 스크린샷이 없으면 [A] text-only 사용.
+사용 시점: **원본 A타입에 이미지/목업/스크린샷 영역이 있을 때** 사용. 실제 이미지 파일이 아직 없더라도 `ds-hero__screenshot` + `<img>` 구조로 프레임을 만들어 둔다. **SVG 목업이나 placeholder 텍스트를 직접 만들어 넣는 것은 금지.**
 배경: 섹션은 흰색, 배경 이미지는 프레임(ds-hero__screenshot-frame)에 적용
 
 ### [B] Hero Split — ds-hero--split
-사용 시점: 페이지 최상단, **실제 제품 스크린샷/이미지 파일이 확보된 경우에만** 사용. SVG 목업이나 placeholder를 직접 만들어서 넣는 것은 금지 — 이미지가 없으면 [A] text-only 사용.
+사용 시점: **원본 A타입이 좌우 분할 구조(텍스트+이미지)일 때** 사용. 단, SVG 목업이나 placeholder를 직접 만들어 넣는 것은 금지 — 이미지가 없으면 [A-2] screenshot Hero로 대체.
 
 ### [C] 제품 Split — ds-product-split
 비율: 4:6 (visual : content)
