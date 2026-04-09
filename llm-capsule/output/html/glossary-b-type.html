@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossary — Enterprise AI Enablement Terms | LLM Capsule</title>
+  <meta name="description" content="Definitions of key enterprise AI enablement concepts: restoration, zero exposure, enterprise context control, and more.">
+  <meta name="keywords" content="enterprise AI enablement, AI-ready data layer, AI adoption enabler, LLM plugin, enterprise AI data layer">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://llmcapsule.ai/resources/glossary">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Glossary — Enterprise AI Enablement Terms | LLM Capsule">
+  <meta property="og:description" content="Key concepts in enterprise AI enablement — restoration, zero exposure, enterprise context control, and structure-preserving processing.">
+  <meta property="og:url" content="https://llmcapsule.ai/resources/glossary">
+  <meta property="og:site_name" content="LLM Capsule">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://llmcapsule.ai/resources"},{"@type":"ListItem","position":3,"name":"Glossary","item":"https://llmcapsule.ai/resources/glossary"}]}</script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       1. CSS Reset + Global
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--ds-font-base);
+      color: var(--ds-color-text-primary);
+      background-color: var(--ds-color-surface-white);
+      padding-top: 58px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, video { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    p, li, dt, dd, blockquote,
+    .ds-section-header__description,
+    .ds-hero__description,
+    .ds-cta-band__description,
+    .ds-body-l, .ds-body-m, .ds-body-s,
+    .ds-ac-card__title,
+    .ds-card__description {
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      text-wrap: pretty;
+    }
+    h1, h2, h3, h4 { text-wrap: balance; }
+
+    /* ============================================================
+       2. :root — CSS Variables (Core + Capsule Brand Tokens)
+    ============================================================ */
+    :root {
+      /* LLM Capsule Brand Colors */
+      --ds-color-brand-primary:   #1821E8;
+      --ds-color-brand-secondary: #5690D4;
+      --ds-color-brand-accent:    #55B45D;
+      --ds-color-brand-light:     #B8D4EE;
+      --ds-color-border-brand:    #5690D4;
+
+      /* Gradient */
+      --ds-gradient-brand: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+      --ds-gradient-dark:  linear-gradient(180deg, #0f0f0f 0%, #171719 100%);
+
+      /* Overlay values */
+      --ds-overlay-nav-bg:          rgba(255,255,255,0.92);
+      --ds-overlay-dark-light:      rgba(0,0,0,0.15);
+      --ds-overlay-white-85:        rgba(255,255,255,0.85);
+      --ds-overlay-cta-btn-bdr:     rgba(255,255,255,0.6);
+
+      /* Neutral */
+      --ds-color-neutral-900: #0f0f0f;
+      --ds-color-neutral-800: #171719;
+      --ds-color-neutral-700: #303135;
+      --ds-color-neutral-500: #636363;
+      --ds-color-neutral-400: #9c9c9c;
+      --ds-color-neutral-200: #e0e0e0;
+      --ds-color-neutral-150: #e6e7e9;
+      --ds-color-neutral-100: #ececec;
+      --ds-color-neutral-025: #f7f7f7;
+      --ds-color-white: #ffffff;
+      --ds-color-black: #000000;
+
+      /* Text */
+      --ds-color-text-primary:   #0f0f0f;
+      --ds-color-text-secondary: #636363;
+      --ds-color-text-tertiary:  #9c9c9c;
+      --ds-color-text-inverse:   #ffffff;
+
+      /* Border */
+      --ds-color-border-default: #e6e7e9;
+      --ds-color-border-strong:  #171719;
+
+      /* Surface */
+      --ds-color-surface-dark:  #171719;
+      --ds-color-surface-mid:   #f2f2f2;
+      --ds-color-surface-light: #f7f7f7;
+      --ds-color-surface-white: #ffffff;
+
+      /* Typography */
+      --ds-font-base:  "DM Sans", "DM Sans Placeholder", sans-serif;
+      --ds-font-brand: "Oxanium", sans-serif;
+      --ds-font-code:  "Fragment Mono", "Geist Mono", monospace;
+
+      --ds-text-xs:   12px;
+      --ds-text-sm:   14px;
+      --ds-text-md:   16px;
+      --ds-text-lg:   18px;
+      --ds-text-xl:   20px;
+      --ds-text-2xl:  24px;
+      --ds-text-3xl:  30px;
+      --ds-text-4xl:  36px;
+      --ds-text-5xl:  40px;
+      --ds-text-6xl:  50px;
+
+      --ds-weight-light:    300;
+      --ds-weight-regular:  400;
+      --ds-weight-medium:   500;
+      --ds-weight-semibold: 600;
+      --ds-weight-bold:     700;
+
+      --ds-leading-tight:   1.2;
+      --ds-leading-normal:  1.5;
+      --ds-leading-relaxed: 1.7;
+
+      --ds-tracking-tight:  -0.5px;
+      --ds-tracking-normal: 0px;
+      --ds-tracking-wide:   0.08em;
+
+      /* Spacing */
+      --ds-space-2xs:  4px;
+      --ds-space-xs:   8px;
+      --ds-space-sm:   12px;
+      --ds-space-md:   16px;
+      --ds-space-lg:   24px;
+      --ds-space-xl:   32px;
+      --ds-space-2xl:  48px;
+      --ds-space-3xl:  64px;
+      --ds-space-4xl:  80px;
+      --ds-space-5xl: 100px;
+
+      /* Shape */
+      --ds-radius-none: 0px;
+      --ds-radius-xs:   5px;
+      --ds-radius-sm:   8px;
+      --ds-radius-md:   18px;
+      --ds-radius-lg:   24px;
+      --ds-radius-xl:   40px;
+      --ds-radius-pill: 9999px;
+
+      --ds-border-default: 1px solid var(--ds-color-border-default);
+      --ds-shadow-card:  0px 24px 40px rgba(0, 0, 0, 0.04);
+
+      /* Container */
+      --ds-container-padding-mobile:     16px;
+      --ds-container-padding-tablet:     32px;
+      --ds-container-padding-sm-desktop: 32px;
+      --ds-container-padding-desktop:    120px;
+      --ds-content-max-width:            1440px;
+    }
+
+    /* ============================================================
+       3. Base Typography
+    ============================================================ */
+    h1, .ds-h1 {
+      font-family: var(--ds-font-base); font-size: 24px;
+      font-weight: var(--ds-weight-bold); line-height: var(--ds-leading-tight);
+      letter-spacing: var(--ds-tracking-tight);
+    }
+    h2, .ds-h2 {
+      font-family: var(--ds-font-base); font-size: 20px;
+      font-weight: var(--ds-weight-bold); line-height: var(--ds-leading-tight);
+      letter-spacing: var(--ds-tracking-tight);
+    }
+    h3, .ds-h3 {
+      font-family: var(--ds-font-base); font-size: 18px;
+      font-weight: var(--ds-weight-semibold); line-height: var(--ds-leading-tight);
+    }
+    .ds-body-l { font-size: var(--ds-text-xl);  font-weight: var(--ds-weight-regular); line-height: var(--ds-leading-normal); }
+    .ds-body-m { font-size: var(--ds-text-md);  font-weight: var(--ds-weight-medium);  line-height: var(--ds-leading-normal); }
+    .ds-body-s { font-size: var(--ds-text-sm);  font-weight: var(--ds-weight-medium);  line-height: var(--ds-leading-normal); }
+    .ds-caption { font-size: var(--ds-text-xs);  font-weight: var(--ds-weight-medium);  line-height: var(--ds-leading-normal); }
+
+    @media (min-width: 768px)  { h1, .ds-h1 { font-size: 28px; } h2, .ds-h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { h1, .ds-h1 { font-size: 32px; } h2, .ds-h2 { font-size: 24px; } h3, .ds-h3 { font-size: 20px; } }
+    @media (min-width: 1440px) { h1, .ds-h1 { font-size: 36px; } h2, .ds-h2 { font-size: 28px; } h3, .ds-h3 { font-size: 22px; } }
+
+    .ds-text--brand   { color: var(--ds-color-brand-secondary); }
+    .ds-text--product { font-family: var(--ds-font-brand); font-weight: var(--ds-weight-bold); }
+
+    /* ============================================================
+       4. Components
+    ============================================================ */
+
+    /* --- Navigation --- */
+    .ds-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 58px; display: flex; align-items: center;
+      background-color: var(--ds-overlay-nav-bg);
+      backdrop-filter: blur(20px); border-bottom: 1px solid var(--ds-color-border-default);
+      padding: 0 var(--ds-container-padding-mobile);
+    }
+    @media (min-width: 1440px) { .ds-nav { padding: 0 var(--ds-container-padding-desktop); } }
+    .ds-nav__inner { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .ds-nav__logo { display: flex; align-items: center; gap: 8px; font-family: var(--ds-font-base); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-lg); color: var(--ds-color-text-primary); }
+    .ds-nav__logo img { height: 28px; width: auto; }
+    .ds-nav__links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    @media (max-width: 767px) { .ds-nav__links { display: none; } }
+    .ds-nav__link { font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary); transition: color 0.15s; }
+    .ds-nav__link:hover { color: var(--ds-color-text-primary); }
+    .ds-nav__actions { display: flex; align-items: center; gap: var(--ds-space-sm); }
+
+    /* --- Section --- */
+    .ds-section { width: 100%; padding: var(--ds-space-4xl) 0; background-color: var(--ds-color-surface-white); }
+    .ds-section--hero { padding: 100px 0 var(--ds-space-5xl); background-color: var(--ds-color-surface-white); }
+
+    @media (min-width: 768px)  { .ds-section { padding: var(--ds-space-5xl) 0; } .ds-section--hero { padding: 100px 0 var(--ds-space-5xl); } }
+    @media (min-width: 1024px) { .ds-section { padding: 100px 0; } }
+    @media (min-width: 1440px) { .ds-section { padding: 120px 0; } }
+
+    /* --- Container --- */
+    .ds-container { width: 100%; margin: 0 auto; padding: 0 var(--ds-container-padding-mobile); }
+    @media (min-width: 768px)  { .ds-container { padding: 0 var(--ds-container-padding-tablet); } }
+    @media (min-width: 1024px) { .ds-container { padding: 0 var(--ds-container-padding-sm-desktop); } }
+    @media (min-width: 1440px) { .ds-container { padding: 0 var(--ds-container-padding-desktop); max-width: 1440px; } }
+
+    /* --- Button --- */
+    .ds-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-xs);
+      border-radius: var(--ds-radius-pill);
+      font-family: var(--ds-font-base); font-weight: var(--ds-weight-medium);
+      cursor: pointer; border: none; transition: opacity 0.2s, background-color 0.2s;
+      white-space: nowrap; text-decoration: none;
+    }
+    .ds-btn--sm { padding: var(--ds-space-xs) var(--ds-space-md);  font-size: var(--ds-text-sm); }
+    .ds-btn--md { padding: var(--ds-space-sm) var(--ds-space-xl);  font-size: var(--ds-text-md); }
+    .ds-btn--lg { padding: var(--ds-space-md) var(--ds-space-2xl); font-size: var(--ds-text-lg); }
+    .ds-btn--primary   { background: var(--ds-gradient-brand); color: var(--ds-color-white); }
+    .ds-btn--primary:hover { opacity: 0.88; }
+    .ds-btn--secondary { background-color: transparent; color: var(--ds-color-text-primary); border: var(--ds-border-default); }
+    .ds-btn--secondary:hover { background-color: var(--ds-color-surface-light); }
+    .ds-btn--ghost { background-color: transparent; color: var(--ds-color-text-secondary); border: none; font-size: var(--ds-text-sm); padding: var(--ds-space-xs) 0; }
+    .ds-btn--ghost:hover { color: var(--ds-color-text-primary); }
+
+    /* --- Hero text-only --- */
+    .ds-hero--text-only { text-align: center; }
+    .ds-hero__title {
+      font-family: var(--ds-font-base); font-size: 24px; font-weight: var(--ds-weight-bold);
+      color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight);
+      letter-spacing: var(--ds-tracking-tight); margin-bottom: var(--ds-space-md);
+    }
+    @media (min-width: 768px)  { .ds-hero__title { font-size: 28px; } }
+    @media (min-width: 1024px) { .ds-hero__title { font-size: 32px; } }
+    @media (min-width: 1440px) { .ds-hero__title { font-size: 36px; } }
+    .ds-hero__description {
+      font-size: var(--ds-text-lg); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed); max-width: 100%; margin: 0 auto var(--ds-space-xl);
+    }
+    @media (min-width: 1024px) { .ds-hero__description { max-width: 720px; } }
+    @media (min-width: 1440px) { .ds-hero__description { max-width: 860px; } }
+
+    /* --- Breadcrumb --- */
+    .ds-breadcrumb {
+      display: flex; align-items: center; gap: var(--ds-space-xs);
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary);
+      margin-bottom: var(--ds-space-lg); flex-wrap: wrap; justify-content: center;
+    }
+    .ds-breadcrumb__link { color: var(--ds-color-brand-secondary); transition: color 0.15s; }
+    .ds-breadcrumb__link:hover { color: var(--ds-color-brand-primary); }
+    .ds-breadcrumb__sep { color: var(--ds-color-neutral-200); }
+
+    /* --- Card Grid --- */
+    .ds-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px)  { .ds-card-grid--3col { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .ds-card-grid--3col { grid-template-columns: repeat(3, 1fr); } }
+
+    /* --- Card --- */
+    .ds-card {
+      background-color: var(--ds-color-surface-white);
+      border-radius: var(--ds-radius-md); border: var(--ds-border-default);
+      padding: var(--ds-space-lg); box-shadow: var(--ds-shadow-card);
+      display: flex; flex-direction: column;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .ds-card:hover {
+      border-color: var(--ds-color-border-brand);
+      box-shadow: var(--ds-shadow-card);
+      transform: translateY(-2px);
+    }
+    @media (min-width: 1440px) { .ds-card { padding: var(--ds-space-xl); } }
+    .ds-card__icon-wrap { margin-bottom: var(--ds-space-sm); color: var(--ds-color-brand-secondary); }
+    .ds-card__title { font-size: var(--ds-text-2xl); font-weight: var(--ds-weight-bold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); margin-bottom: var(--ds-space-sm); }
+    .ds-card__title--sm { font-size: var(--ds-text-lg); }
+    .ds-card__footer { margin-top: auto; padding-top: var(--ds-space-md); }
+
+    /* --- Icon --- */
+    .ds-icon { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .ds-icon--lg { width: 32px; height: 32px; }
+    .ds-icon--sm { width: 16px; height: 16px; }
+
+    /* --- CTA Band --- */
+    .ds-cta-band {
+      width: 100%; position: relative; overflow: hidden;
+      padding: 80px var(--ds-container-padding-mobile);
+      text-align: center;
+      background-color: var(--ds-color-neutral-800);
+      background-size: cover; background-position: center;
+    }
+    .ds-cta-band:not([class*="ds-bg--"]) { background: var(--ds-gradient-brand); }
+    .ds-cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: var(--ds-overlay-dark-light); z-index: 0;
+    }
+    .ds-cta-band > * { position: relative; z-index: 1; }
+    .ds-cta-band__inner {
+      max-width: 100%; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: var(--ds-space-lg);
+    }
+    @media (min-width: 1024px) { .ds-cta-band__inner { max-width: 720px; } }
+    @media (min-width: 1440px) { .ds-cta-band__inner { max-width: 860px; } }
+    .ds-cta-band__title {
+      font-family: var(--ds-font-base); font-size: 36px;
+      font-weight: var(--ds-weight-bold); color: var(--ds-color-white);
+      line-height: var(--ds-leading-tight); letter-spacing: var(--ds-tracking-tight); margin: 0;
+    }
+    .ds-cta-band__description {
+      font-size: var(--ds-text-lg); color: var(--ds-overlay-white-85);
+      line-height: var(--ds-leading-relaxed); margin: 0;
+    }
+    .ds-cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .ds-cta-band__actions .ds-btn { background-color: var(--ds-overlay-nav-bg); color: var(--ds-color-text-primary); border: 1px solid var(--ds-overlay-cta-btn-bdr); backdrop-filter: blur(8px); }
+    .ds-cta-band__actions .ds-btn:hover { background-color: var(--ds-color-white); }
+    .ds-cta-band__footnote {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: var(--ds-space-lg); margin-top: var(--ds-space-sm);
+    }
+    .ds-cta-band__footnote .ds-btn--ghost { color: var(--ds-overlay-white-85); }
+    .ds-cta-band__footnote .ds-btn--ghost:hover { color: var(--ds-color-white); }
+    @media (min-width: 768px)  { .ds-cta-band { padding: 100px var(--ds-container-padding-tablet); } .ds-cta-band__title { font-size: 40px; } }
+    @media (min-width: 1440px) { .ds-cta-band { padding: 120px var(--ds-container-padding-desktop); max-width: 1440px; margin: 0 auto; } .ds-cta-band__title { font-size: 50px; } }
+    @media (max-width: 767px) {
+      .ds-cta-band { background-image: none; }
+      .ds-cta-band__title { font-size: 36px; }
+      .ds-cta-band__actions { flex-direction: column; align-items: center; }
+      .ds-cta-band__actions .ds-btn { width: 100%; max-width: 320px; }
+      .ds-cta-band__footnote { flex-direction: column; gap: var(--ds-space-sm); }
+    }
+
+    /* --- Footer --- */
+    .ds-footer { padding: 56px 0 32px; border-top: 1px solid var(--ds-color-border-default); background-color: var(--ds-color-surface-white); }
+    .ds-footer__grid { display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 40px; margin-bottom: 40px; }
+    @media (max-width: 1023px) { .ds-footer__grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 767px)  { .ds-footer__grid { grid-template-columns: 1fr; gap: 24px; } }
+    .ds-footer__brand { font-family: var(--ds-font-brand); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-lg); color: var(--ds-color-brand-primary); }
+    .ds-footer__brand-desc { font-family: var(--ds-font-base); font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary); margin-top: 10px; line-height: var(--ds-leading-relaxed); font-weight: var(--ds-weight-regular); max-width: 260px; }
+    .ds-footer__col h4 { font-size: 11px; font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-tertiary); text-transform: uppercase; letter-spacing: var(--ds-tracking-wide); margin-bottom: 14px; }
+    .ds-footer__col ul { list-style: none; }
+    .ds-footer__col li { margin-bottom: 8px; }
+    .ds-footer__col a { font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary); transition: color 0.2s; }
+    .ds-footer__col a:hover { color: var(--ds-color-text-primary); }
+    .ds-footer__bottom { padding-top: 20px; border-top: 1px solid var(--ds-color-border-default); display: flex; justify-content: space-between; align-items: center; font-size: var(--ds-text-xs); color: var(--ds-color-text-tertiary); }
+    @media (max-width: 767px) { .ds-footer__bottom { flex-direction: column; gap: 8px; text-align: center; } }
+
+    /* --- Reveal animation --- */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="ds-nav" role="navigation" aria-label="Main navigation">
+    <div class="ds-nav__inner">
+      <a href="index.html" class="ds-nav__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/logo-llmcapsule.avif"
+             alt="LLM Capsule" onerror="this.style.display='none'">
+        <span class="ds-text--product">LLM Capsule</span>
+      </a>
+      <ul class="ds-nav__links" role="list">
+        <li><a href="product.html" class="ds-nav__link">Product</a></li>
+        <li><a href="architecture.html" class="ds-nav__link">Architecture</a></li>
+        <li><a href="solutions.html" class="ds-nav__link">Solutions</a></li>
+        <li><a href="trust.html" class="ds-nav__link">Trust</a></li>
+        <li><a href="pricing.html" class="ds-nav__link">Pricing</a></li>
+        <li><a href="resources.html" class="ds-nav__link">Resources</a></li>
+      </ul>
+      <div class="ds-nav__actions">
+        <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" class="ds-btn ds-btn--secondary ds-btn--sm">AWS Marketplace</a>
+        <a href="request-pov.html" class="ds-btn ds-btn--primary ds-btn--sm">Request PoV</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         Section 1: Hero
+    ============================================================ -->
+    <section id="section-1" class="ds-section ds-section--hero">
+      <div class="ds-container">
+        <div class="ds-hero--text-only">
+
+          <!-- Breadcrumb -->
+          <nav class="ds-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html" class="ds-breadcrumb__link ds-body-s">Home</a>
+            <span class="ds-breadcrumb__sep" aria-hidden="true">/</span>
+            <a href="resources.html" class="ds-breadcrumb__link ds-body-s">Resources</a>
+            <span class="ds-breadcrumb__sep" aria-hidden="true">/</span>
+            <span class="ds-body-s">Glossary</span>
+          </nav>
+
+          <h1 class="ds-hero__title reveal">
+            Enterprise AI <span class="ds-text--brand">Enablement</span> Glossary
+          </h1>
+          <p class="ds-hero__description reveal reveal-delay-1">
+            Key terms and definitions for enterprise AI enablement, LLM data privacy, and secure enterprise AI workflows.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 2: Glossary Terms
+    ============================================================ -->
+    <section id="section-2" class="ds-section">
+      <div class="ds-container">
+
+        <div class="ds-card-grid ds-card-grid--3col">
+
+          <!-- Card 1: Restoration -->
+          <a href="restoration.html" class="ds-card reveal">
+            <div class="ds-card__icon-wrap">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="23 4 23 10 17 10"/>
+                <polyline points="1 20 1 14 7 14"/>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+              </svg>
+            </div>
+            <h2 class="ds-card__title ds-card__title--sm">Restoration</h2>
+            <div class="ds-card__footer">
+              <span class="ds-btn ds-btn--ghost ds-btn--sm">Read definition &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Card 2: Zero Exposure -->
+          <a href="zero-exposure.html" class="ds-card reveal reveal-delay-1">
+            <div class="ds-card__icon-wrap">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                <line x1="1" y1="1" x2="23" y2="23"/>
+              </svg>
+            </div>
+            <h2 class="ds-card__title ds-card__title--sm">Zero Exposure</h2>
+            <div class="ds-card__footer">
+              <span class="ds-btn ds-btn--ghost ds-btn--sm">Read definition &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Card 3: Enterprise Context Control -->
+          <a href="enterprise-context-control.html" class="ds-card reveal reveal-delay-2">
+            <div class="ds-card__icon-wrap">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+            </div>
+            <h2 class="ds-card__title ds-card__title--sm">Enterprise Context Control</h2>
+            <div class="ds-card__footer">
+              <span class="ds-btn ds-btn--ghost ds-btn--sm">Read definition &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Card 4: Structure-Preserving Processing -->
+          <a href="structure-preserving-processing.html" class="ds-card reveal reveal-delay-3">
+            <div class="ds-card__icon-wrap">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                <polyline points="2 17 12 22 22 17"/>
+                <polyline points="2 12 12 17 22 12"/>
+              </svg>
+            </div>
+            <h2 class="ds-card__title ds-card__title--sm">Structure-Preserving Processing</h2>
+            <div class="ds-card__footer">
+              <span class="ds-btn ds-btn--ghost ds-btn--sm">Read definition &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Card 5: Restorable Workflow -->
+          <a href="restorable-workflow.html" class="ds-card reveal reveal-delay-4">
+            <div class="ds-card__icon-wrap">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+              </svg>
+            </div>
+            <h2 class="ds-card__title ds-card__title--sm">Restorable Workflow</h2>
+            <div class="ds-card__footer">
+              <span class="ds-btn ds-btn--ghost ds-btn--sm">Read definition &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Card 6: Secure LLM Usage -->
+          <a href="secure-llm-usage.html" class="ds-card reveal reveal-delay-5">
+            <div class="ds-card__icon-wrap">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <polyline points="9 12 11 14 15 10"/>
+              </svg>
+            </div>
+            <h2 class="ds-card__title ds-card__title--sm">Secure LLM Usage</h2>
+            <div class="ds-card__footer">
+              <span class="ds-btn ds-btn--ghost ds-btn--sm">Read definition &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 3: Final CTA
+    ============================================================ -->
+    <section id="section-3">
+    <div class="ds-cta-band" role="region" aria-label="Call to action">
+      <div class="ds-cta-band__inner">
+        <h2 class="ds-cta-band__title">
+          See how <span class="ds-text--product">LLM Capsule</span> works with your data
+        </h2>
+        <p class="ds-cta-band__description">
+          Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.
+        </p>
+        <div class="ds-cta-band__actions">
+          <a href="request-pov.html" class="ds-btn ds-btn--md">Request PoV</a>
+          <a href="architecture.html" class="ds-btn ds-btn--md">Talk to an Architect</a>
+        </div>
+        <div class="ds-cta-band__footnote">
+          <a href="downloads.html" class="ds-btn ds-btn--ghost ds-btn--sm">Download Architecture Brief</a>
+          <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" class="ds-btn ds-btn--secondary ds-btn--sm">Available on AWS Marketplace</a>
+        </div>
+      </div>
+    </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="ds-footer" role="contentinfo">
+    <div class="ds-container">
+      <div class="ds-footer__grid">
+        <div>
+          <div class="ds-footer__brand"><span class="ds-text--product">LLM Capsule</span></div>
+          <p class="ds-footer__brand-desc">Enterprise AI enablement by CUBIG. Enable AI. Protect data. Restore results.</p>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="architecture.html">Architecture</a></li>
+            <li><a href="trust.html">Trust</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener">AWS Marketplace</a></li>
+          </ul>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="solutions.html">All Solutions</a></li>
+          </ul>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="resources.html">Resources Hub</a></li>
+            <li><a href="learn.html">Learn</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="trust-center.html">Trust Center</a></li>
+          </ul>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="request-pov.html">Request PoV</a></li>
+            <li><a href="https://cubig.ai" target="_blank" rel="noopener">CUBIG</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ds-footer__bottom">
+        <span>&copy; 2025 LLM Capsule by CUBIG. All rights reserved.</span>
+        <span>Enterprise AI Enablement</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      obs.observe(el);
+    });
+  </script>
+
+</body>
+</html>
