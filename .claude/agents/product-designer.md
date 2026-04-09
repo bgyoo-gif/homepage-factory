@@ -120,7 +120,7 @@ frontend-dev 에이전트에게 구현을 위임합니다.
 배경: 섹션은 흰색, 배경 이미지는 프레임(ds-hero__screenshot-frame)에 적용
 
 ### [B] Hero Split — ds-hero--split
-사용 시점: 페이지 최상단, 제품 스크린샷/이미지가 있을 때
+사용 시점: 페이지 최상단, **실제 제품 스크린샷/이미지 파일이 확보된 경우에만** 사용. SVG 목업이나 placeholder를 직접 만들어서 넣는 것은 금지 — 이미지가 없으면 [A] text-only 사용.
 
 ### [C] 제품 Split — ds-product-split
 비율: 4:6 (visual : content)
