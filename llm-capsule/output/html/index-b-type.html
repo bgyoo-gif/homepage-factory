@@ -323,9 +323,30 @@
     @media (min-width: 768px)  { .ds-section-header__title { font-size: var(--ds-text-5xl); } }
     @media (min-width: 1440px) { .ds-section-header__title { font-size: var(--ds-text-6xl); } }
 
-    /* --- Hero Split --- */
-    .ds-hero--split { display: grid; grid-template-columns: 1fr; gap: var(--ds-space-2xl); align-items: center; }
-    @media (min-width: 1024px) { .ds-hero--split { grid-template-columns: 1fr 1fr; } }
+    /* --- Hero Screenshot --- */
+    .ds-hero { padding: 0; display: grid; grid-template-columns: 1fr; gap: var(--ds-space-lg); align-items: center; }
+    .ds-hero--screenshot { text-align: center; max-width: 860px; margin: 0 auto; }
+    .ds-hero-screenshot-section { padding: 100px 0 0; overflow: visible; }
+    .ds-hero-screenshot-section .ds-hero--screenshot .ds-hero__description { margin-left: auto; margin-right: auto; }
+    .ds-hero__screenshot-frame {
+      margin-top: var(--ds-space-2xl);
+      border-radius: var(--ds-radius-xl) var(--ds-radius-xl) 0 0;
+      padding: var(--ds-space-2xl) var(--ds-space-2xl) 0;
+      background-size: cover; background-position: center;
+      overflow: hidden;
+    }
+    .ds-hero__screenshot { overflow: hidden; background: var(--ds-color-surface-white); }
+    .ds-hero__screenshot img { width: 100%; display: block; }
+    .ds-hero__actions-below {
+      display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+      margin-top: 20px; padding-bottom: var(--ds-space-3xl);
+    }
+    @media (max-width: 767px) {
+      .ds-hero-screenshot-section { padding: 100px 0 0; }
+      .ds-hero__screenshot-frame { border-radius: var(--ds-radius-lg) var(--ds-radius-lg) 0 0; background-image: none; }
+      .ds-hero__actions-below { flex-direction: column; align-items: center; }
+      .ds-hero__actions-below .ds-btn { width: 100%; max-width: 320px; }
+    }
     .ds-hero__title {
       font-family: var(--ds-font-base); font-size: 24px; font-weight: var(--ds-weight-bold);
       color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight);
@@ -340,23 +361,6 @@
     }
     @media (min-width: 1024px) { .ds-hero__description { max-width: 720px; } }
     @media (min-width: 1440px) { .ds-hero__description { max-width: 860px; } }
-    .ds-hero__body {
-      font-size: var(--ds-text-md); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed); max-width: 100%; margin-bottom: var(--ds-space-sm);
-    }
-    .ds-hero__tagline {
-      font-size: var(--ds-text-md); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-xl);
-    }
-    .ds-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    @media (max-width: 767px) { .ds-hero__actions { flex-direction: column; } }
-    .ds-hero__image {
-      border-radius: var(--ds-radius-xl); border: var(--ds-border-default);
-      box-shadow: var(--ds-shadow-card); overflow: hidden;
-      background-color: var(--ds-color-surface-light);
-    }
-    .ds-hero__image svg { width: 100%; height: auto; display: block; }
-    @media (max-width: 767px) { .ds-hero__image { display: none; } }
 
     /* --- Partner Grid (Marquee) --- */
     .ds-partner-grid { overflow: hidden; padding: var(--ds-space-lg) 0; }
@@ -790,29 +794,28 @@
   <main>
 
     <!-- ============================================================
-         Section 1: Hero (text-only)
+         Section 1: Hero Screenshot
     ============================================================ -->
-    <section id="section-1" class="ds-section ds-section--hero">
+    <section id="section-1" class="ds-section ds-hero-screenshot-section">
       <div class="ds-container">
-        <div class="ds-hero--text-only">
+        <div class="ds-hero ds-hero--screenshot">
           <h1 class="ds-hero__title">
             Use any AI on your real documents — <span class="ds-text--brand">without exposing</span> a single line
           </h1>
           <p class="ds-hero__description">
             Your sensitive documents go through <span class="ds-text--product">LLM Capsule</span> before reaching AI. Confidential names, figures, and terms are replaced locally — AI processes the safe version — then results are restored with your original data. Each organization defines what counts as sensitive.
           </p>
-          <p class="ds-hero__body">
-            Companies want to use AI but can't — sensitive data blocks adoption, masking destroys context, and security teams say no. <span class="ds-text--product">LLM Capsule</span> removes this barrier in under 0.12 seconds per page.
-          </p>
-          <p class="ds-hero__tagline">Encapsulate. Process. Restore.</p>
-          <div class="ds-hero__actions">
-            <a href="request-pov.html" class="ds-btn ds-btn--primary ds-btn--md">Request PoV</a>
-            <a href="downloads.html" class="ds-btn ds-btn--secondary ds-btn--md">Download Architecture Brief</a>
-            <a href="architecture.html" class="ds-btn ds-btn--secondary ds-btn--md">Talk to an Architect</a>
+        </div>
+        <div class="ds-hero__screenshot-frame ds-bg--paint-blue" style="background-color: var(--ds-color-neutral-100);">
+          <div class="ds-hero__screenshot">
+            <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/screenshot-llmcapsule.webp" alt="LLM Capsule Dashboard" loading="eager">
           </div>
-          <div class="ds-spaced-top">
-            <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" class="ds-btn ds-btn--secondary ds-btn--sm">Available on AWS Marketplace</a>
-          </div>
+        </div>
+        <div class="ds-hero__actions-below">
+          <a href="request-pov.html" class="ds-btn ds-btn--primary ds-btn--md">Request PoV</a>
+          <a href="downloads.html" class="ds-btn ds-btn--secondary ds-btn--md">Download Architecture Brief</a>
+          <a href="architecture.html" class="ds-btn ds-btn--secondary ds-btn--md">Talk to an Architect</a>
+          <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" class="ds-btn ds-btn--secondary ds-btn--sm">Available on AWS Marketplace</a>
         </div>
       </div>
     </section>
