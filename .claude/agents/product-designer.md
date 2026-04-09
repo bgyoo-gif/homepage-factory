@@ -116,7 +116,7 @@ frontend-dev 에이전트에게 구현을 위임합니다.
 배경: 흰색/밝은 배경만 (배경 이미지 금지)
 
 ### [A-2] Hero Screenshot — ds-hero--screenshot
-사용 시점: 제품/서비스 대표 스크린샷이 있을 때
+사용 시점: **실제 스크린샷 이미지가 확보된 경우에만** 사용. 스크린샷 없이 placeholder만 넣는 것은 금지 — 스크린샷이 없으면 [A] text-only 사용.
 배경: 섹션은 흰색, 배경 이미지는 프레임(ds-hero__screenshot-frame)에 적용
 
 ### [B] Hero Split — ds-hero--split
