@@ -76,6 +76,7 @@ frontend-dev 에이전트에게 구현을 위임합니다.
 
 **⚠️ 섹션 헤더 필수 규칙**
 모든 섹션은 반드시 아래 구조 순서로 시작한다. 예외 없음.
+**단, Hero 바로 다음 섹션은 Hero와 제목/설명이 동일하면 섹션 헤더를 생략한다.** Hero에서 이미 전달한 메시지를 반복하지 않는다.
 
 1. `ds-section-header--underline` (타이틀 + description + 구분선)
    - eyebrow: 사용 금지 — A타입에 있어도 B타입에서는 삭제 (banner label 포함)

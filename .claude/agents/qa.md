@@ -33,6 +33,7 @@ skills:
 - [ ] 모든 본문 텍스트가 누락/변경 없이 존재하는가
 - [ ] 수치/데이터가 정확히 일치하는가
 - [ ] 목록 항목 수가 일치하는가
+- [ ] **섹션 간 제목/설명 중복 없는가** — Hero와 바로 다음 섹션 헤더가 동일 텍스트를 반복하면 FAIL
 
 ### [CAT-2] Design System 준수 (High)
 `.claude/skills/design-system-core.md` 및 `.claude/skills/design-system-{brand}.md`와 대조하고 bash로 실제 파일을 직접 검사한다.
