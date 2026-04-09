@@ -3281,11 +3281,12 @@ function typeBadge(type) {
 }
 function resolveStaticPath(f) {
   var n = f.name;
-  var prefix = currentBrand === 'cubig' ? '' : '../../llm-capsule/';
-  if (n.endsWith('.tsx')) return prefix + 'output/framer/' + n;
-  if (n.endsWith('-b-type.html') || n.startsWith('figure_')) return prefix + 'output/html/' + n;
-  if (n.endsWith('-spec.md') || n.endsWith('-qa-report.md')) return prefix + 'output/docs/' + n;
-  return prefix + 'output/' + n;
+  var ghBase = 'https://bgyoo-gif.github.io/homepage-factory/';
+  var brandBase = ghBase + currentBrand + '/';
+  if (n.endsWith('.tsx')) return brandBase + 'output/framer/' + n;
+  if (n.endsWith('-b-type.html') || n.startsWith('figure_')) return brandBase + 'output/html/' + n;
+  if (n.endsWith('-spec.md') || n.endsWith('-qa-report.md')) return brandBase + 'output/docs/' + n;
+  return brandBase + 'output/' + n;
 }
 function renderStaticTable() {
   var container = document.getElementById('output-file-list');
