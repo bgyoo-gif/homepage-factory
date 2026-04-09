@@ -743,7 +743,7 @@ HTML:
 .ds-hero__screenshot-frame {
   margin-top: var(--ds-space-2xl);
   border-radius: var(--ds-radius-xl) var(--ds-radius-xl) 0 0;
-  padding: var(--ds-space-2xl) 0 0;
+  padding: var(--ds-space-2xl) var(--ds-space-2xl) 0;
   background-size: cover; background-position: center;
   overflow: hidden;
 }

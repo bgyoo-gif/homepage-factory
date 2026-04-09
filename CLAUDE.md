@@ -237,6 +237,7 @@ Low 결함만 남은 경우 CONDITIONAL PASS.
 13. **배경 이미지 적용 위치 오류** → section vs component 재확인
 14. **다이어그램 임의 색상 창작** → 원본에 없는 색상(다크 패널, brand primary 배경 등) → DS diag 토큰 기본값으로 교체
 15. **QA 수정 시 변수명만 교체** → 실제 렌더 색상이 여전히 잘못된 경우 → 시각적 결과까지 확인 후 PASS 선언
+16. **screenshot-frame 좌우 padding 누락** → `padding: 2xl 2xl 0` 필수 (좌우 0이면 배경 이미지가 프레임으로 보이지 않음)
 
 ---
 
