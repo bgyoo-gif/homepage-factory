@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise AI Document Processing — Secure Document Intelligence with Structure Preservation | LLM Capsule</title>
+  <meta name="description" content="Enterprise AI document processing with structure-preserving protection and local restoration. Get usable AI outputs from sensitive documents.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://llmcapsule.ai/resources/learn/enterprise-ai-document-processing">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Enterprise AI Document Processing — Secure Document Intelligence with Structure Preservation | LLM Capsule">
+  <meta property="og:description" content="Guide to enterprise AI document processing. How to use AI on sensitive enterprise documents with structure-preserving protection and local restoration for usable outputs.">
+  <meta property="og:url" content="https://llmcapsule.ai/resources/learn/enterprise-ai-document-processing">
+  <meta property="og:site_name" content="LLM Capsule">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Enterprise AI Document Processing — Secure Document Intelligence with Structure Preservation | LLM Capsule">
+  <meta name="twitter:description" content="Guide to enterprise AI document processing. How to use AI on sensitive enterprise documents with structure-preserving protection and local restoration for usable outputs.">
+  <meta name="keywords" content="enterprise AI enablement, AI-ready data layer, AI adoption enabler, LLM plugin, cross-model execution">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://llmcapsule.ai/resources"},{"@type":"ListItem","position":3,"name":"Learn","item":"https://llmcapsule.ai/resources/learn"},{"@type":"ListItem","position":4,"name":"Enterprise AI Document Processing","item":"https://llmcapsule.ai/resources/learn/enterprise-ai-document-processing"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is enterprise AI document processing?","acceptedAnswer":{"@type":"Answer","text":"Enterprise AI document processing uses large language models to summarize, extract, classify, and translate enterprise documents while protecting sensitive data through local encapsulation and restoring usable outputs through local restoration."}}]}</script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       1. CSS Reset + Global
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--ds-font-base);
+      color: var(--ds-color-text-primary);
+      background-color: var(--ds-color-surface-white);
+      padding-top: 58px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, video { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    p, li, dt, dd, blockquote,
+    .ds-section-header__description,
+    .ds-hero__description,
+    .ds-cta-band__description,
+    .ds-body-l, .ds-body-m, .ds-body-s,
+    .ds-ac-card__title,
+    .ds-card__description {
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      text-wrap: pretty;
+    }
+    h1, h2, h3, h4 { text-wrap: balance; }
+
+    /* ============================================================
+       2. :root — CSS Variables (Core + Capsule Brand Tokens)
+    ============================================================ */
+    :root {
+      /* LLM Capsule Brand Colors */
+      --ds-color-brand-primary:   #1821E8;
+      --ds-color-brand-secondary: #5690D4;
+      --ds-color-brand-accent:    #55B45D;
+      --ds-color-brand-light:     #B8D4EE;
+      --ds-color-border-brand:    #5690D4;
+
+      /* Gradient */
+      --ds-gradient-brand: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+      --ds-gradient-dark:  linear-gradient(180deg, #0f0f0f 0%, #171719 100%);
+
+      /* Overlay values */
+      --ds-overlay-nav-bg:          rgba(255,255,255,0.92);
+      --ds-overlay-dark-medium:     rgba(0,0,0,0.35);
+      --ds-overlay-dark-light:      rgba(0,0,0,0.15);
+      --ds-overlay-white-85:        rgba(255,255,255,0.85);
+      --ds-overlay-white-70:        rgba(255,255,255,0.70);
+      --ds-overlay-white-55:        rgba(255,255,255,0.55);
+      --ds-overlay-white-45:        rgba(255,255,255,0.45);
+      --ds-overlay-cta-btn-bdr:     rgba(255,255,255,0.6);
+      --ds-overlay-error-tint:      rgba(255,48,48,0.08);
+      --ds-overlay-brand-tint:      rgba(24,33,232,0.04);
+      --ds-overlay-brand-tint-md:   rgba(24,33,232,0.08);
+      --ds-overlay-brand-tint-light:rgba(24,33,232,0.06);
+      --ds-overlay-success-tint:    rgba(14,130,76,0.08);
+      --ds-overlay-success-bdr:     rgba(14,130,76,0.2);
+      --ds-shadow-gradient-card:    rgba(113,141,176,0.25) 0px 1px 20px 0px;
+
+      /* Neutral */
+      --ds-color-neutral-900: #0f0f0f;
+      --ds-color-neutral-850: #141414;
+      --ds-color-neutral-800: #171719;
+      --ds-color-neutral-700: #303135;
+      --ds-color-neutral-500: #636363;
+      --ds-color-neutral-400: #9c9c9c;
+      --ds-color-neutral-350: #adadad;
+      --ds-color-neutral-300: #bababa;
+      --ds-color-neutral-250: #c4c4c4;
+      --ds-color-neutral-200: #e0e0e0;
+      --ds-color-neutral-150: #e6e7e9;
+      --ds-color-neutral-100: #ececec;
+      --ds-color-neutral-050: #f2f2f2;
+      --ds-color-neutral-025: #f7f7f7;
+      --ds-color-white: #ffffff;
+      --ds-color-black: #000000;
+
+      /* Text */
+      --ds-color-text-primary:   #0f0f0f;
+      --ds-color-text-secondary: #636363;
+      --ds-color-text-tertiary:  #9c9c9c;
+      --ds-color-text-inverse:   #ffffff;
+
+      /* Functional */
+      --ds-color-success:       #0e824c;
+      --ds-color-error:         #ff3030;
+      --ds-color-info:          #155ea0;
+      --ds-color-success-light: #34d399;
+      --ds-color-error-light:   #ff6b6b;
+
+      /* Border */
+      --ds-color-border-default: #e6e7e9;
+      --ds-color-border-strong:  #171719;
+
+      /* Surface */
+      --ds-color-surface-dark:  #171719;
+      --ds-color-surface-mid:   #f2f2f2;
+      --ds-color-surface-light: #f7f7f7;
+      --ds-color-surface-white: #ffffff;
+
+      /* Typography */
+      --ds-font-base:  "DM Sans", "DM Sans Placeholder", sans-serif;
+      --ds-font-brand: "Oxanium", sans-serif;
+      --ds-font-code:  "Fragment Mono", "Geist Mono", monospace;
+
+      --ds-text-xs:   12px;
+      --ds-text-sm:   14px;
+      --ds-text-md:   16px;
+      --ds-text-lg:   18px;
+      --ds-text-xl:   20px;
+      --ds-text-2xl:  24px;
+      --ds-text-3xl:  30px;
+      --ds-text-4xl:  36px;
+      --ds-text-5xl:  40px;
+      --ds-text-6xl:  50px;
+      --ds-text-7xl:  64px;
+
+      --ds-weight-light:    300;
+      --ds-weight-regular:  400;
+      --ds-weight-medium:   500;
+      --ds-weight-semibold: 600;
+      --ds-weight-bold:     700;
+
+      --ds-leading-tight:   1.2;
+      --ds-leading-normal:  1.5;
+      --ds-leading-relaxed: 1.7;
+
+      --ds-tracking-tight:  -0.5px;
+      --ds-tracking-normal: 0px;
+      --ds-tracking-wide:   0.08em;
+
+      /* Spacing */
+      --ds-space-2xs:  4px;
+      --ds-space-xs:   8px;
+      --ds-space-sm:   12px;
+      --ds-space-md:   16px;
+      --ds-space-lg:   24px;
+      --ds-space-xl:   32px;
+      --ds-space-2xl:  48px;
+      --ds-space-3xl:  64px;
+      --ds-space-4xl:  80px;
+      --ds-space-5xl: 100px;
+
+      /* Shape */
+      --ds-radius-none: 0px;
+      --ds-radius-xs:   5px;
+      --ds-radius-sm:   8px;
+      --ds-radius-md:   18px;
+      --ds-radius-lg:   24px;
+      --ds-radius-xl:   40px;
+      --ds-radius-2xl:  56px;
+      --ds-radius-pill: 9999px;
+
+      --ds-border-default: 1px solid var(--ds-color-border-default);
+      --ds-shadow-card:  0px 24px 40px rgba(0, 0, 0, 0.04);
+
+      /* Container */
+      --ds-container-padding-mobile:     16px;
+      --ds-container-padding-tablet:     32px;
+      --ds-container-padding-sm-desktop: 32px;
+      --ds-container-padding-desktop:    120px;
+      --ds-content-max-width:            1440px;
+
+      /* Background Images */
+      --ds-bg-img-paint-blue: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.png');
+    }
+
+    /* ============================================================
+       3. Base Typography
+    ============================================================ */
+    h1, .ds-h1 {
+      font-family: var(--ds-font-base); font-size: 24px;
+      font-weight: var(--ds-weight-bold); line-height: var(--ds-leading-tight);
+      letter-spacing: var(--ds-tracking-tight);
+    }
+    h2, .ds-h2 {
+      font-family: var(--ds-font-base); font-size: 20px;
+      font-weight: var(--ds-weight-bold); line-height: var(--ds-leading-tight);
+      letter-spacing: var(--ds-tracking-tight);
+    }
+    h3, .ds-h3 {
+      font-family: var(--ds-font-base); font-size: 18px;
+      font-weight: var(--ds-weight-semibold); line-height: var(--ds-leading-tight);
+    }
+    .ds-body-l { font-size: var(--ds-text-xl);  font-weight: var(--ds-weight-regular); line-height: var(--ds-leading-normal); }
+    .ds-body-m { font-size: var(--ds-text-md);  font-weight: var(--ds-weight-medium);  line-height: var(--ds-leading-normal); }
+    .ds-body-s { font-size: var(--ds-text-sm);  font-weight: var(--ds-weight-medium);  line-height: var(--ds-leading-normal); }
+    .ds-caption { font-size: var(--ds-text-xs);  font-weight: var(--ds-weight-medium);  line-height: var(--ds-leading-normal); }
+
+    @media (min-width: 768px)  { h1, .ds-h1 { font-size: 28px; } h2, .ds-h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { h1, .ds-h1 { font-size: 32px; } h2, .ds-h2 { font-size: 24px; } h3, .ds-h3 { font-size: 20px; } }
+    @media (min-width: 1440px) { h1, .ds-h1 { font-size: 36px; } h2, .ds-h2 { font-size: 28px; } h3, .ds-h3 { font-size: 22px; } }
+
+    .ds-text--brand   { color: var(--ds-color-brand-secondary); }
+    .ds-text--product { font-family: var(--ds-font-brand); font-weight: var(--ds-weight-bold); }
+
+    /* Inline code */
+    code, .ds-code-inline {
+      font-family: var(--ds-font-code);
+      font-size: 0.875em;
+      font-weight: var(--ds-weight-regular);
+      background-color: var(--ds-color-neutral-100);
+      border-radius: 3px;
+      padding: 0 4px;
+      color: inherit;
+    }
+
+    /* ============================================================
+       4. Components
+    ============================================================ */
+
+    /* --- Navigation --- */
+    .ds-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 58px; display: flex; align-items: center;
+      background-color: var(--ds-overlay-nav-bg);
+      backdrop-filter: blur(20px); border-bottom: 1px solid var(--ds-color-border-default);
+      padding: 0 var(--ds-container-padding-mobile);
+    }
+    @media (min-width: 1440px) { .ds-nav { padding: 0 var(--ds-container-padding-desktop); } }
+    .ds-nav__inner { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .ds-nav__logo { display: flex; align-items: center; gap: 8px; font-family: var(--ds-font-base); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-lg); color: var(--ds-color-text-primary); }
+    .ds-nav__logo img { height: 28px; width: auto; }
+    .ds-nav__links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    @media (max-width: 767px) { .ds-nav__links { display: none; } }
+    .ds-nav__link { font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary); transition: color 0.15s; }
+    .ds-nav__link:hover { color: var(--ds-color-text-primary); }
+    .ds-nav__actions { display: flex; align-items: center; gap: var(--ds-space-sm); }
+
+    /* --- Section --- */
+    .ds-section { width: 100%; padding: var(--ds-space-4xl) 0; background-color: var(--ds-color-surface-white); }
+    .ds-section--hero { padding: 100px 0 var(--ds-space-5xl); background-color: var(--ds-color-surface-white); }
+
+    @media (min-width: 768px)  { .ds-section { padding: var(--ds-space-5xl) 0; } .ds-section--hero { padding: 100px 0 var(--ds-space-5xl); } }
+    @media (min-width: 1024px) { .ds-section { padding: 100px 0; } }
+    @media (min-width: 1440px) { .ds-section { padding: 120px 0; } }
+
+    /* --- Container --- */
+    .ds-container { width: 100%; margin: 0 auto; padding: 0 var(--ds-container-padding-mobile); }
+    @media (min-width: 768px)  { .ds-container { padding: 0 var(--ds-container-padding-tablet); } }
+    @media (min-width: 1024px) { .ds-container { padding: 0 var(--ds-container-padding-sm-desktop); } }
+    @media (min-width: 1440px) { .ds-container { padding: 0 var(--ds-container-padding-desktop); max-width: 1440px; } }
+
+    /* --- Button --- */
+    .ds-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-xs);
+      border-radius: var(--ds-radius-pill);
+      font-family: var(--ds-font-base); font-weight: var(--ds-weight-medium);
+      cursor: pointer; border: none; transition: opacity 0.2s, background-color 0.2s;
+      white-space: nowrap; text-decoration: none;
+    }
+    .ds-btn--sm { padding: var(--ds-space-xs) var(--ds-space-md);  font-size: var(--ds-text-sm); }
+    .ds-btn--md { padding: var(--ds-space-sm) var(--ds-space-xl);  font-size: var(--ds-text-md); }
+    .ds-btn--lg { padding: var(--ds-space-md) var(--ds-space-2xl); font-size: var(--ds-text-lg); }
+    .ds-btn--primary   { background: var(--ds-gradient-brand); color: var(--ds-color-white); }
+    .ds-btn--primary:hover { opacity: 0.88; }
+    .ds-btn--secondary { background-color: transparent; color: var(--ds-color-text-primary); border: var(--ds-border-default); }
+    .ds-btn--secondary:hover { background-color: var(--ds-color-surface-light); }
+
+    /* --- Section Header --- */
+    .ds-section-header { margin-bottom: var(--ds-space-2xl); text-align: center; }
+    .ds-section-header__title {
+      font-size: var(--ds-text-5xl); font-weight: var(--ds-weight-bold);
+      color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight);
+      letter-spacing: var(--ds-tracking-tight); margin-bottom: var(--ds-space-md);
+    }
+    .ds-section-header__description {
+      font-size: var(--ds-text-lg); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed); max-width: 100%; margin: 0 auto;
+    }
+    @media (min-width: 1024px) { .ds-section-header__description { max-width: 720px; } }
+    @media (min-width: 1440px) { .ds-section-header__description { max-width: 860px; } }
+    @media (max-width: 767px) { .ds-section-header { text-align: left; } }
+
+    /* --- Card --- */
+    .ds-card {
+      background-color: var(--ds-color-surface-white);
+      border-radius: var(--ds-radius-md); border: var(--ds-border-default);
+      padding: var(--ds-space-lg); box-shadow: var(--ds-shadow-card);
+      display: flex; flex-direction: column;
+    }
+    @media (min-width: 1440px) { .ds-card { padding: var(--ds-space-xl); } }
+    .ds-card__divider { border: none; border-top: 1px solid var(--ds-color-border-default); margin: var(--ds-space-md) 0; }
+
+    /* --- Card Dark --- */
+    .ds-card--dark {
+      background-color: var(--ds-color-neutral-850);
+      border-color: var(--ds-color-neutral-700);
+      color: var(--ds-color-text-inverse);
+      border-radius: var(--ds-radius-md);
+      padding: var(--ds-space-lg);
+      box-shadow: var(--ds-shadow-card);
+      display: flex; align-items: center; gap: var(--ds-space-md);
+      transition: background-color 0.2s;
+    }
+    .ds-card--dark:hover { background-color: var(--ds-color-neutral-800); }
+    .ds-card--dark .ds-card--dark__icon { flex-shrink: 0; color: var(--ds-color-brand-secondary); }
+    .ds-card--dark .ds-card--dark__title {
+      font-size: var(--ds-text-md); font-weight: var(--ds-weight-semibold);
+      color: var(--ds-color-text-inverse);
+    }
+
+    /* --- Card Grid --- */
+    .ds-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px)  { .ds-card-grid--2col { grid-template-columns: repeat(2, 1fr); } }
+
+    /* --- Banner --- */
+    .ds-banner {
+      padding: var(--ds-space-lg) var(--ds-space-xl);
+      border-radius: var(--ds-radius-md);
+      border-top: 1px solid var(--ds-color-border-default);
+      border-bottom: 1px solid var(--ds-color-border-default);
+      background-color: var(--ds-banner-bg, var(--ds-color-surface-light));
+      font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed);
+      text-align: left; word-break: keep-all; overflow-wrap: break-word;
+    }
+    .ds-banner__label {
+      font-family: var(--ds-font-code); font-size: var(--ds-text-xs);
+      text-transform: uppercase; letter-spacing: var(--ds-tracking-wide);
+      color: var(--ds-color-text-tertiary); margin-bottom: var(--ds-space-xs); display: block;
+    }
+    .ds-banner--brand { --ds-banner-bg: rgba(24, 33, 232, 0.06); }
+    .ds-banner--brand p {
+      font-size: var(--ds-text-md); color: var(--ds-color-text-primary);
+      line-height: var(--ds-leading-relaxed); margin: 0;
+    }
+    .ds-banner--key {
+      --ds-banner-bg: var(--ds-color-neutral-800);
+      border-color: var(--ds-color-neutral-700);
+      color: var(--ds-color-text-inverse);
+    }
+    .ds-banner--key p {
+      font-size: var(--ds-text-md); color: var(--ds-color-text-inverse);
+      line-height: var(--ds-leading-relaxed); margin: 0;
+    }
+
+    /* --- Icon --- */
+    .ds-icon { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .ds-icon--lg { width: 32px; height: 32px; }
+    .ds-icon--sm { width: 16px; height: 16px; }
+
+    /* --- Section Title Icon --- */
+    .ds-section-title-icon { display: flex; align-items: center; gap: 12px; margin-bottom: var(--ds-space-lg); }
+    .ds-section-title-icon__icon { color: var(--ds-color-brand-secondary); flex-shrink: 0; }
+    .ds-section-title-icon__text { font-family: var(--ds-font-base); font-size: var(--ds-text-xl); font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); }
+
+    /* --- Accordion (FAQ) --- */
+    .ds-ac-card {
+      border: 1px solid var(--ds-color-border-default);
+      border-radius: var(--ds-radius-sm);
+      margin-bottom: var(--ds-space-xs);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .ds-ac-card:hover { border-color: var(--ds-color-neutral-300); }
+    .ds-ac-card__trigger {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: var(--ds-space-md) var(--ds-space-lg);
+      cursor: pointer; background-color: var(--ds-color-surface-white);
+      font-size: var(--ds-text-md); font-weight: var(--ds-weight-semibold);
+      color: var(--ds-color-text-primary); gap: var(--ds-space-sm);
+      list-style: none; width: 100%; border: none; text-align: left;
+    }
+    .ds-ac-card__trigger::after {
+      content: '+'; font-size: 20px; font-weight: var(--ds-weight-regular);
+      color: var(--ds-color-text-tertiary); flex-shrink: 0; transition: transform 0.2s;
+    }
+    .ds-ac-card.is-open .ds-ac-card__trigger::after { content: '−'; }
+    .ds-ac-card__body {
+      padding: 0 var(--ds-space-lg) var(--ds-space-md);
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed); display: none;
+    }
+    .ds-ac-card.is-open .ds-ac-card__body { display: block; }
+
+    /* --- CTA Band --- */
+    .ds-cta-band {
+      width: 100%; position: relative; overflow: hidden;
+      padding: 80px var(--ds-container-padding-mobile);
+      text-align: center;
+      background-color: var(--ds-color-neutral-800);
+      background-size: cover; background-position: center;
+    }
+    .ds-cta-band { background: var(--ds-gradient-brand); }
+    .ds-cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: var(--ds-overlay-dark-light); z-index: 0;
+    }
+    .ds-cta-band > * { position: relative; z-index: 1; }
+    .ds-cta-band__inner {
+      max-width: 100%; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: var(--ds-space-lg);
+    }
+    @media (min-width: 1024px) { .ds-cta-band__inner { max-width: 720px; } }
+    @media (min-width: 1440px) { .ds-cta-band__inner { max-width: 860px; } }
+    .ds-cta-band__title {
+      font-family: var(--ds-font-base); font-size: var(--ds-text-5xl);
+      font-weight: var(--ds-weight-bold); color: var(--ds-color-white);
+      line-height: var(--ds-leading-tight); letter-spacing: var(--ds-tracking-tight); margin: 0;
+    }
+    .ds-cta-band__description {
+      font-size: var(--ds-text-lg); color: var(--ds-overlay-white-85);
+      line-height: var(--ds-leading-relaxed); margin: 0;
+    }
+    .ds-cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .ds-cta-band__actions .ds-btn { background-color: var(--ds-overlay-nav-bg); color: var(--ds-color-text-primary); border: 1px solid var(--ds-overlay-cta-btn-bdr); backdrop-filter: blur(8px); }
+    .ds-cta-band__actions .ds-btn:hover { background-color: var(--ds-color-white); }
+    .ds-cta-band__footnote { font-size: var(--ds-text-xs); color: var(--ds-overlay-white-70); margin-top: var(--ds-space-xs); }
+    @media (min-width: 768px)  { .ds-cta-band { padding: 100px var(--ds-container-padding-tablet); } }
+    @media (min-width: 1440px) { .ds-cta-band { padding: 120px var(--ds-container-padding-desktop); max-width: 1440px; margin: 0 auto; } }
+    @media (max-width: 767px) {
+      .ds-cta-band__title { font-size: var(--ds-text-4xl); }
+      .ds-cta-band__actions { flex-direction: column; align-items: center; }
+      .ds-cta-band__actions .ds-btn { width: 100%; max-width: 320px; }
+    }
+    @media (min-width: 1440px) { .ds-cta-band__title { font-size: var(--ds-text-6xl); } }
+
+    /* --- Footer --- */
+    .ds-footer { padding: 56px 0 32px; border-top: 1px solid var(--ds-color-border-default); background-color: var(--ds-color-surface-white); }
+    .ds-footer__grid { display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 40px; margin-bottom: 40px; }
+    @media (max-width: 1023px) { .ds-footer__grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 767px)  { .ds-footer__grid { grid-template-columns: 1fr; gap: 24px; } }
+    .ds-footer__brand { font-family: var(--ds-font-brand); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-lg); color: var(--ds-color-brand-primary); }
+    .ds-footer__brand-desc { font-family: var(--ds-font-base); font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary); margin-top: 10px; line-height: var(--ds-leading-relaxed); font-weight: var(--ds-weight-regular); max-width: 260px; }
+    .ds-footer__col h4 { font-size: 11px; font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-tertiary); text-transform: uppercase; letter-spacing: var(--ds-tracking-wide); margin-bottom: 14px; }
+    .ds-footer__col ul { list-style: none; }
+    .ds-footer__col li { margin-bottom: 8px; }
+    .ds-footer__col a { font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary); transition: color 0.2s; }
+    .ds-footer__col a:hover { color: var(--ds-color-text-primary); }
+    .ds-footer__bottom { padding-top: 20px; border-top: 1px solid var(--ds-color-border-default); display: flex; justify-content: space-between; align-items: center; font-size: var(--ds-text-xs); color: var(--ds-color-text-tertiary); }
+    @media (max-width: 767px) { .ds-footer__bottom { flex-direction: column; gap: 8px; text-align: center; } }
+
+    /* ============================================================
+       5. Page-specific Styles
+    ============================================================ */
+
+    /* Article container — 860px max-width for body sections */
+    .ds-article-container {
+      width: 100%; max-width: 860px; margin: 0 auto;
+      padding: 0 var(--ds-container-padding-mobile);
+    }
+    @media (min-width: 768px)  { .ds-article-container { padding: 0 var(--ds-container-padding-tablet); } }
+    @media (min-width: 1024px) { .ds-article-container { padding: 0 var(--ds-container-padding-sm-desktop); } }
+    @media (min-width: 1440px) { .ds-article-container { padding: 0; } }
+
+    /* Breadcrumb */
+    .ds-breadcrumb {
+      display: flex; align-items: center; gap: var(--ds-space-xs);
+      flex-wrap: wrap; margin-bottom: var(--ds-space-lg);
+    }
+    .ds-breadcrumb__link {
+      font-size: var(--ds-text-sm); color: var(--ds-color-brand-secondary);
+      font-weight: var(--ds-weight-medium); transition: color 0.15s;
+    }
+    .ds-breadcrumb__link:hover { color: var(--ds-color-brand-primary); }
+    .ds-breadcrumb__sep {
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary);
+    }
+    .ds-breadcrumb__current {
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary);
+    }
+
+    /* Hero title for article pages */
+    .ds-article-hero__title {
+      font-family: var(--ds-font-base); font-size: 28px;
+      font-weight: var(--ds-weight-bold); color: var(--ds-color-text-primary);
+      line-height: var(--ds-leading-tight); letter-spacing: var(--ds-tracking-tight);
+      margin-bottom: var(--ds-space-md);
+    }
+    @media (min-width: 768px)  { .ds-article-hero__title { font-size: 36px; } }
+    @media (min-width: 1024px) { .ds-article-hero__title { font-size: 44px; } }
+    @media (min-width: 1440px) { .ds-article-hero__title { font-size: 52px; } }
+
+    /* Article hero description */
+    .ds-article-hero__description {
+      font-size: var(--ds-text-lg); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed); max-width: 100%;
+    }
+
+    /* Screenshot frame within article */
+    .ds-article-screenshot-frame {
+      margin-top: var(--ds-space-2xl);
+      border-radius: var(--ds-radius-xl) var(--ds-radius-xl) 0 0;
+      padding: var(--ds-space-xl) var(--ds-space-xl) 0;
+      background-color: var(--ds-color-neutral-050);
+      background-size: cover; background-position: center;
+      overflow: hidden;
+    }
+    .ds-article-screenshot-frame.ds-bg--paint-blue { background-image: var(--ds-bg-img-paint-blue); }
+    @media (max-width: 767px) {
+      .ds-article-screenshot-frame { border-radius: var(--ds-radius-lg) var(--ds-radius-lg) 0 0; }
+      .ds-article-screenshot-frame.ds-bg--paint-blue { background-image: none; }
+    }
+    .ds-article-screenshot {
+      background-color: var(--ds-color-surface-white);
+      border-radius: var(--ds-radius-sm) var(--ds-radius-sm) 0 0;
+      overflow: hidden;
+      min-height: 200px;
+      display: flex; align-items: center; justify-content: center;
+      padding: var(--ds-space-2xl) var(--ds-space-lg);
+    }
+    .ds-article-screenshot__label {
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary);
+      text-align: center; line-height: var(--ds-leading-relaxed);
+    }
+
+    /* Article body section reduced top padding */
+    .ds-section--article-body { padding: var(--ds-space-xl) 0; background-color: var(--ds-color-surface-white); }
+    @media (min-width: 768px)  { .ds-section--article-body { padding: var(--ds-space-2xl) 0; } }
+    @media (min-width: 1024px) { .ds-section--article-body { padding: var(--ds-space-2xl) 0; } }
+    @media (min-width: 1440px) { .ds-section--article-body { padding: var(--ds-space-3xl) 0; } }
+
+    /* Article body text paragraphs */
+    .ds-article-body__paragraph {
+      font-size: var(--ds-text-md); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-md);
+    }
+    .ds-article-body__paragraph:last-child { margin-bottom: 0; }
+
+    /* Section header underline within article */
+    .ds-article-section-header {
+      margin-bottom: var(--ds-space-lg);
+      padding-bottom: var(--ds-space-md);
+      border-bottom: 1px solid var(--ds-color-border-default);
+      text-align: center;
+    }
+    .ds-article-section-header h2 {
+      font-size: 20px; font-weight: var(--ds-weight-bold);
+      color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight);
+      letter-spacing: var(--ds-tracking-tight);
+    }
+    @media (min-width: 768px)  { .ds-article-section-header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .ds-article-section-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .ds-article-section-header h2 { font-size: 28px; } }
+    @media (max-width: 767px) { .ds-article-section-header { text-align: left; } }
+
+    /* Key message banner (dark) */
+    .ds-key-message {
+      background-color: var(--ds-color-neutral-800);
+      color: var(--ds-color-text-inverse);
+      padding: var(--ds-space-lg) var(--ds-space-xl);
+      border-radius: var(--ds-radius-md);
+      margin: var(--ds-space-xl) 0;
+      font-size: var(--ds-text-md);
+      font-weight: var(--ds-weight-medium);
+      line-height: var(--ds-leading-relaxed);
+    }
+    .ds-key-message__highlight {
+      color: var(--ds-color-brand-secondary);
+    }
+
+    /* Example card */
+    .ds-example-card {
+      background-color: var(--ds-color-surface-light);
+      border: 1px solid var(--ds-color-border-default);
+      border-radius: var(--ds-radius-md);
+      padding: var(--ds-space-lg);
+      margin: var(--ds-space-lg) 0;
+    }
+    .ds-example-card__title {
+      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
+      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-sm);
+    }
+    .ds-example-card__body {
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-sm);
+    }
+    .ds-example-card__body:last-child { margin-bottom: 0; }
+
+    /* Comparison table */
+    .ds-cmp-table-wrap { overflow-x: auto; margin: var(--ds-space-xl) 0; }
+    .ds-cmp-table {
+      width: 100%; border-collapse: collapse;
+      font-size: var(--ds-text-sm);
+    }
+    .ds-cmp-table thead { background-color: var(--ds-color-surface-mid); }
+    .ds-cmp-table th {
+      padding: 14px 16px; text-align: left;
+      font-weight: var(--ds-weight-semibold); font-size: var(--ds-text-xs);
+      color: var(--ds-color-text-primary);
+      border-bottom: 2px solid var(--ds-color-border-default);
+    }
+    .ds-cmp-table th.ds-cmp-highlight {
+      background-color: var(--ds-overlay-brand-tint);
+      color: var(--ds-color-brand-primary);
+    }
+    .ds-cmp-table td {
+      padding: 12px 16px; border-bottom: 1px solid var(--ds-color-border-default);
+      color: var(--ds-color-text-secondary); vertical-align: top;
+    }
+    .ds-cmp-table td.ds-cmp-highlight {
+      background-color: var(--ds-overlay-brand-tint);
+      color: var(--ds-color-brand-primary); font-weight: var(--ds-weight-medium);
+    }
+    .ds-cmp-table .ds-cmp-check { color: var(--ds-color-success); font-weight: var(--ds-weight-semibold); }
+    .ds-cmp-table .ds-cmp-cross { color: var(--ds-color-error); font-weight: var(--ds-weight-semibold); }
+    @media (max-width: 767px) {
+      .ds-cmp-table { font-size: var(--ds-text-xs); }
+      .ds-cmp-table th, .ds-cmp-table td { padding: 8px 10px; }
+    }
+
+    /* Related links grid */
+    .ds-internal-links { border-top: 1px solid var(--ds-color-border-default); padding-top: var(--ds-space-xl); margin-top: var(--ds-space-2xl); }
+    .ds-internal-links__grid {
+      display: grid; gap: var(--ds-space-sm);
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 768px)  { .ds-internal-links__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .ds-internal-links__grid { grid-template-columns: repeat(3, 1fr); } }
+    .ds-internal-links__card {
+      display: flex; align-items: center; gap: var(--ds-space-sm);
+      padding: var(--ds-space-sm) var(--ds-space-md);
+      border: 1px solid var(--ds-color-border-default);
+      border-radius: var(--ds-radius-sm);
+      transition: all 0.2s;
+      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-medium);
+      color: var(--ds-color-text-primary);
+    }
+    .ds-internal-links__card:hover {
+      border-color: var(--ds-color-brand-secondary);
+      background-color: var(--ds-overlay-brand-tint);
+      transform: translateY(-1px);
+    }
+    .ds-internal-links__card-icon { font-size: var(--ds-text-lg); flex-shrink: 0; }
+
+    /* Spacing utility */
+    .ds-spaced-top { margin-top: var(--ds-space-lg); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="ds-nav" role="navigation" aria-label="Main navigation">
+    <div class="ds-nav__inner">
+      <a href="index.html" class="ds-nav__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/logo-llmcapsule.avif"
+             alt="LLM Capsule" onerror="this.style.display='none'">
+        <span class="ds-text--product">LLM Capsule</span>
+      </a>
+      <ul class="ds-nav__links" role="list">
+        <li><a href="product.html" class="ds-nav__link">Product</a></li>
+        <li><a href="architecture.html" class="ds-nav__link">Architecture</a></li>
+        <li><a href="solutions.html" class="ds-nav__link">Solutions</a></li>
+        <li><a href="trust.html" class="ds-nav__link">Trust</a></li>
+        <li><a href="pricing.html" class="ds-nav__link">Pricing</a></li>
+        <li><a href="resources.html" class="ds-nav__link">Resources</a></li>
+      </ul>
+      <div class="ds-nav__actions">
+        <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" class="ds-btn ds-btn--secondary ds-btn--sm">AWS Marketplace</a>
+        <a href="request-pov.html" class="ds-btn ds-btn--primary ds-btn--sm">Request PoV</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         Section 1: Hero
+    ============================================================ -->
+    <section id="section-hero" class="ds-section ds-section--hero">
+      <div class="ds-article-container">
+        <nav class="ds-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html" class="ds-breadcrumb__link">Home</a>
+          <span class="ds-breadcrumb__sep">/</span>
+          <a href="resources.html" class="ds-breadcrumb__link">Resources</a>
+          <span class="ds-breadcrumb__sep">/</span>
+          <a href="learn.html" class="ds-breadcrumb__link">Learn</a>
+          <span class="ds-breadcrumb__sep">/</span>
+          <span class="ds-breadcrumb__current">Enterprise AI Document Processing</span>
+        </nav>
+        <h1 class="ds-article-hero__title">Enterprise AI Document Processing</h1>
+        <p class="ds-article-hero__description">
+          How to process sensitive enterprise documents through AI with structure-preserving protection and restorable outputs for AI document security.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 2: Screenshot Placeholder
+    ============================================================ -->
+    <section id="section-2" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-screenshot-frame ds-bg--paint-blue">
+          <div class="ds-article-screenshot">
+            <p class="ds-article-screenshot__label">
+              Document Processing Pipeline — Contract analysis flowing through detection, encapsulation, AI, and restoration
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 3: Problem
+    ============================================================ -->
+    <section id="section-3" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2><span class="ds-text--brand">Problem</span></h2>
+        </div>
+        <p class="ds-article-body__paragraph">
+          Enterprises sit on enormous volumes of unstructured and semi-structured documents — contracts, reports, correspondence, filings, medical records, and technical documentation. AI document processing promises to unlock value through automated summarization, extraction, classification, and translation. But these documents contain the most sensitive enterprise information.
+        </p>
+        <p class="ds-article-body__paragraph">
+          Current AI document security approaches either restrict AI to non-sensitive documents (limiting value) or apply destructive masking that produces unusable outputs (limiting usefulness). Neither scales for enterprise document intelligence.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 4: Definition
+    ============================================================ -->
+    <section id="section-4" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2><span class="ds-text--brand">Definition</span></h2>
+        </div>
+        <div class="ds-banner ds-banner--brand">
+          <span class="ds-banner__label">Enterprise AI Document Processing</span>
+          <p>Enterprise AI document processing uses large language models to summarize, extract, classify, and translate enterprise documents while protecting sensitive data through local encapsulation and restoring usable outputs through local restoration. It applies structure-preserving processing to maintain document integrity during protection.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 5: Explanation
+    ============================================================ -->
+    <section id="section-5" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2><span class="ds-text--brand">Explanation</span></h2>
+        </div>
+        <p class="ds-article-body__paragraph">
+          Enterprise AI document processing addresses five core document intelligence use cases:
+        </p>
+        <p class="ds-article-body__paragraph">
+          <strong>Summarization.</strong> AI generates executive summaries of long documents — contracts, reports, filings. Encapsulation protects sensitive details while preserving the structural context AI needs for accurate summarization. Restored summaries contain real names and figures.
+        </p>
+        <p class="ds-article-body__paragraph">
+          <strong>Extraction.</strong> AI extracts structured data from unstructured documents — key terms from contracts, diagnosis codes from medical records, entity information from legal filings. Structure-preserving processing ensures extraction accuracy by maintaining table layouts and field relationships.
+        </p>
+        <p class="ds-article-body__paragraph">
+          <strong>Classification.</strong> AI categorizes documents by type, risk level, priority, or topic. Encapsulation protects content while preserving the semantic signals AI uses for accurate classification.
+        </p>
+        <p class="ds-article-body__paragraph">
+          <strong>Translation.</strong> AI translates enterprise documents across languages. Encapsulation protects names, numbers, and proprietary terms while allowing AI to translate surrounding content accurately. Restoration restores protected elements in the translated output.
+        </p>
+        <p class="ds-article-body__paragraph">
+          <strong>Q&amp;A and RAG.</strong> AI answers questions about enterprise document collections. Documents are encapsulated before indexing in RAG pipelines. Retrieved context is protected during generation, and responses are restored before delivery to users.
+        </p>
+
+        <div class="ds-key-message">
+          <span class="ds-key-message__highlight"><span class="ds-text--product">LLM Capsule</span> enables AI document processing</span> by protecting data at the data layer. Structure-preserving processing with local restoration delivers both AI enablement and data protection simultaneously.
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 6: Enterprise Examples
+    ============================================================ -->
+    <section id="section-6" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>Enterprise <span class="ds-text--brand">Examples</span></h2>
+        </div>
+        <div class="ds-example-card">
+          <p class="ds-example-card__title">Legal: Clause Extraction from Vendor Contracts</p>
+          <p class="ds-example-card__body">A procurement team needs AI to extract liability clauses, payment terms, and termination conditions from 300 vendor contracts. Each contract contains vendor names, proprietary pricing, and internal project references. <span class="ds-text--product">LLM Capsule</span> encapsulates all sensitive elements, AI performs structured extraction, and restoration produces a vendor-by-vendor comparison ready for procurement review.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 7: FAQ
+    ============================================================ -->
+    <section id="section-7" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2><span class="ds-text--brand">FAQ</span></h2>
+        </div>
+        <div class="ds-ac-card">
+          <button class="ds-ac-card__trigger" aria-expanded="false">What is enterprise AI document processing?</button>
+          <div class="ds-ac-card__body">Enterprise AI document processing uses large language models to summarize, extract, classify, and translate enterprise documents while protecting sensitive data through local encapsulation and restoring usable outputs through local restoration.</div>
+        </div>
+        <div class="ds-ac-card">
+          <button class="ds-ac-card__trigger" aria-expanded="false">What document formats does <span class="ds-text--product">LLM Capsule</span> support?</button>
+          <div class="ds-ac-card__body"><span class="ds-text--product">LLM Capsule</span> processes common enterprise document formats including PDF, DOCX, XLSX, HTML, plain text, and structured data formats. Format-specific processing preserves layout and structure during encapsulation.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 8: Learn More (Internal Links)
+    ============================================================ -->
+    <section id="section-8" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-section-title-icon">
+          <span class="ds-section-title-icon__icon">
+            <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+            </svg>
+          </span>
+          <span class="ds-section-title-icon__text">Learn More</span>
+        </div>
+        <div class="ds-internal-links__grid">
+          <a href="product.html" class="ds-internal-links__card">
+            <span class="ds-internal-links__card-icon">&#9651;</span>
+            Product Overview
+          </a>
+          <a href="architecture.html" class="ds-internal-links__card">
+            <span class="ds-internal-links__card-icon">&#9671;</span>
+            Architecture
+          </a>
+          <a href="trust.html" class="ds-internal-links__card">
+            <span class="ds-internal-links__card-icon">&#10003;</span>
+            Trust &amp; Compliance
+          </a>
+          <a href="request-pov.html" class="ds-internal-links__card">
+            <span class="ds-internal-links__card-icon">&#8594;</span>
+            Request PoV
+          </a>
+          <a href="what-is-ai-data-capsule.html" class="ds-internal-links__card">
+            <span class="ds-internal-links__card-icon">&#128196;</span>
+            What Is an AI Data Capsule
+          </a>
+          <a href="how-to-use-ai-on-sensitive-enterprise-data.html" class="ds-internal-links__card">
+            <span class="ds-internal-links__card-icon">&#128196;</span>
+            AI on Sensitive Data
+          </a>
+          <a href="why-redaction-breaks-enterprise-ai-workflows.html" class="ds-internal-links__card">
+            <span class="ds-internal-links__card-icon">&#128196;</span>
+            Why Redaction Breaks AI
+          </a>
+          <a href="secure-enterprise-ai-workflows.html" class="ds-internal-links__card">
+            <span class="ds-internal-links__card-icon">&#128196;</span>
+            Secure AI Workflows
+          </a>
+          <a href="structure-preserving-document-processing.html" class="ds-internal-links__card">
+            <span class="ds-internal-links__card-icon">&#128196;</span>
+            Structure-Preserving Processing
+          </a>
+          <a href="pii-protection-vs-enterprise-confidentiality-control.html" class="ds-internal-links__card">
+            <span class="ds-internal-links__card-icon">&#128196;</span>
+            PII vs Confidentiality Control
+          </a>
+          <a href="on-premise-vs-cloud-ai-data-protection.html" class="ds-internal-links__card">
+            <span class="ds-internal-links__card-icon">&#128196;</span>
+            On-Premise vs Cloud
+          </a>
+          <a href="ai-data-pipeline-protection.html" class="ds-internal-links__card">
+            <span class="ds-internal-links__card-icon">&#128196;</span>
+            AI Pipeline Protection
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 9: CTA Band (full-width, inside main per spec)
+    ============================================================ -->
+    <section id="section-cta" class="ds-cta-band">
+      <div class="ds-cta-band__inner">
+        <h2 class="ds-cta-band__title">See how <span class="ds-text--product">LLM Capsule</span> works with your data</h2>
+        <p class="ds-cta-band__description">Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</p>
+        <div class="ds-cta-band__actions">
+          <a href="request-pov.html" class="ds-btn ds-btn--lg">Request PoV</a>
+          <a href="architecture.html" class="ds-btn ds-btn--lg">Talk to an Architect</a>
+        </div>
+        <p class="ds-cta-band__footnote">
+          <a href="downloads.html">Download Architecture Brief</a>
+          &nbsp;&nbsp;·&nbsp;&nbsp;
+          <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener">AWS Marketplace</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="ds-footer">
+    <div class="ds-container">
+      <div class="ds-footer__grid">
+        <div>
+          <div class="ds-footer__brand">LLM Capsule</div>
+          <p class="ds-footer__brand-desc">Enterprise AI enablement by CUBIG. Enable AI. Protect data. Restore results.</p>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="architecture.html">Architecture</a></li>
+            <li><a href="trust.html">Trust</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener">AWS Marketplace</a></li>
+          </ul>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="solutions.html">All Solutions</a></li>
+          </ul>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="resources.html">Resources Hub</a></li>
+            <li><a href="learn.html">Learn</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="trust-center.html">Trust Center</a></li>
+          </ul>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="request-pov.html">Request PoV</a></li>
+            <li><a href="https://cubig.ai" target="_blank" rel="noopener">CUBIG</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ds-footer__bottom">
+        <span>&copy; 2025 LLM Capsule by CUBIG. All rights reserved.</span>
+        <span>Enterprise AI Enablement</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.ds-ac-card__trigger').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var card = this.closest('.ds-ac-card');
+        var isOpen = card.classList.contains('is-open');
+        card.closest('section').querySelectorAll('.ds-ac-card').forEach(function(c) {
+          c.classList.remove('is-open');
+          c.querySelector('.ds-ac-card__trigger').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          card.classList.add('is-open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
