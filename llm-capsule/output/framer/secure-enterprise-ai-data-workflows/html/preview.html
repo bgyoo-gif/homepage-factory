@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Secure Enterprise AI Data Workflows | LLM Capsule</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: #0f0f0f;
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    p, li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
+    h1, h2, h3, h4 { text-wrap: balance; }
+
+    /* ── Article container — 860px ── */
+    .seadw-article-container {
+      width: 100%; max-width: 860px; margin: 0 auto; padding: 0 16px;
+    }
+    @media (min-width: 768px)  { .seadw-article-container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .seadw-article-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .seadw-article-container { padding: 0; } }
+
+    /* ── Buttons ── */
+    .seadw-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border-radius: 9999px; font-family: "DM Sans", sans-serif;
+      font-weight: 500; cursor: pointer; border: none;
+      transition: opacity 0.2s, background-color 0.2s;
+      white-space: nowrap; text-decoration: none;
+    }
+    .seadw-btn--sm { padding: 8px 16px; font-size: 14px; }
+    .seadw-btn--lg { padding: 16px 48px; font-size: 18px; }
+    .seadw-btn--secondary {
+      background-color: transparent; color: #0f0f0f;
+      border: 1px solid #e6e7e9;
+    }
+    .seadw-btn--secondary:hover { background-color: #f7f7f7; }
+
+    /* ── Breadcrumb ── */
+    .seadw-breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      flex-wrap: wrap; margin-bottom: 24px;
+    }
+    .seadw-breadcrumb__link { font-size: 14px; color: #5690D4; font-weight: 500; }
+    .seadw-breadcrumb__sep { font-size: 14px; color: #9c9c9c; }
+    .seadw-breadcrumb__current { font-size: 14px; color: #9c9c9c; }
+
+    /* ── Hero Section ── */
+    .seadw-section--hero {
+      padding: 100px 0 0;
+      background-color: #ffffff;
+    }
+    .seadw-article-hero__title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 28px; font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2; letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    @media (min-width: 768px)  { .seadw-article-hero__title { font-size: 36px; } }
+    @media (min-width: 1024px) { .seadw-article-hero__title { font-size: 44px; } }
+    @media (min-width: 1440px) { .seadw-article-hero__title { font-size: 52px; } }
+    .seadw-article-hero__description {
+      font-size: 18px; color: #636363;
+      line-height: 1.7; max-width: 100%;
+    }
+
+    /* ── Article Body Section ── */
+    .seadw-section--article-body {
+      padding: 32px 0; background-color: #ffffff;
+    }
+    @media (min-width: 768px)  { .seadw-section--article-body { padding: 48px 0; } }
+    @media (min-width: 1440px) { .seadw-section--article-body { padding: 64px 0; } }
+
+    /* ── Article Section Header ── */
+    .seadw-article-section-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .seadw-article-section-header h2 {
+      font-size: 20px; font-weight: 700;
+      color: #0f0f0f; line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    @media (min-width: 768px)  { .seadw-article-section-header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .seadw-article-section-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .seadw-article-section-header h2 { font-size: 28px; } }
+    @media (max-width: 767px)  { .seadw-article-section-header { text-align: left; } }
+
+    /* ── Body Paragraphs ── */
+    .seadw-body-paragraph {
+      font-size: 16px; color: #636363;
+      line-height: 1.7; margin-bottom: 16px;
+    }
+    .seadw-body-paragraph:last-child { margin-bottom: 0; }
+
+    /* ── Subsection Title ── */
+    .seadw-subsection-title {
+      font-size: 17px; font-weight: 600;
+      color: #0f0f0f;
+      line-height: 1.2;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    @media (min-width: 768px)  { .seadw-subsection-title { font-size: 18px; } }
+    @media (min-width: 1024px) { .seadw-subsection-title { font-size: 19px; } }
+    @media (min-width: 1440px) { .seadw-subsection-title { font-size: 20px; } }
+
+    /* ── Banner ── */
+    .seadw-banner {
+      padding: 24px 32px;
+      border-radius: 18px;
+      border-top: 1px solid #e6e7e9;
+      border-bottom: 1px solid #e6e7e9;
+      background-color: rgba(24, 33, 232, 0.06);
+      font-size: 16px; line-height: 1.7;
+      word-break: keep-all; overflow-wrap: break-word;
+    }
+    .seadw-banner p {
+      font-size: 16px; color: #0f0f0f;
+      line-height: 1.7; margin: 0;
+    }
+    .seadw-banner p + p { margin-top: 8px; }
+
+    /* ── Card ── */
+    .seadw-card {
+      background-color: #ffffff;
+      border-radius: 18px; border: 1px solid #e6e7e9;
+      padding: 24px; box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
+      display: flex; flex-direction: column; margin-bottom: 16px;
+    }
+    .seadw-card:last-child { margin-bottom: 0; }
+    @media (min-width: 1440px) { .seadw-card { padding: 32px; } }
+    .seadw-card__title {
+      font-size: 16px; font-weight: 600;
+      color: #0f0f0f; line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .seadw-card p {
+      font-size: 16px; color: #636363;
+      line-height: 1.7; margin: 0;
+    }
+
+    /* ── Accordion ── */
+    .seadw-ac-list { display: flex; flex-direction: column; gap: 2px; }
+    .seadw-ac-card {
+      border: 1px solid #e6e7e9; border-radius: 8px;
+      background-color: #ffffff; overflow: hidden;
+      transition: background-color 0.2s;
+    }
+    .seadw-ac-card:hover { background-color: #f7f7f7; }
+    .seadw-ac-card__header {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 24px; cursor: pointer; user-select: none;
+    }
+    .seadw-ac-card__title {
+      font-family: "DM Sans", sans-serif; font-size: 18px;
+      font-weight: 500; line-height: 1.2;
+      color: #0f0f0f;
+    }
+    .seadw-ac-card__toggle {
+      width: 28px; height: 28px; border-radius: 6px;
+      border: 0.5px solid #e6e7e9;
+      background-color: #f7f7f7;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .seadw-ac-card__toggle-icon {
+      width: 12px; height: 12px; position: relative; flex-shrink: 0;
+    }
+    .seadw-ac-card__toggle-icon::before,
+    .seadw-ac-card__toggle-icon::after {
+      content: ''; position: absolute; background-color: #9c9c9c; border-radius: 1px;
+    }
+    .seadw-ac-card__toggle-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .seadw-ac-card__toggle-icon::after  { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; transition: opacity 0.2s; }
+    .seadw-ac-card.seadw-ac--open .seadw-ac-card__toggle-icon::after { opacity: 0; }
+    .seadw-ac-card__body {
+      display: none; padding: 24px;
+      border-top: 1px solid #e6e7e9;
+      background-color: #f7f7f7;
+      font-size: 14px; color: #636363;
+      line-height: 1.7;
+    }
+    .seadw-ac-card.seadw-ac--open .seadw-ac-card__body { display: block; }
+
+    /* ── Section Title Icon ── */
+    .seadw-section-title-icon {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 24px;
+    }
+    .seadw-section-title-icon__icon { color: #5690D4; flex-shrink: 0; }
+    .seadw-section-title-icon__text {
+      font-family: "DM Sans", sans-serif;
+      font-size: 20px; font-weight: 600;
+      color: #0f0f0f; line-height: 1.2;
+    }
+
+    /* ── Card Grid ── */
+    .seadw-card-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 768px) { .seadw-card-grid--2col { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ── Dark Card ── */
+    .seadw-card--dark {
+      background-color: #141414;
+      border: 1px solid #303135;
+      color: #ffffff;
+      border-radius: 18px;
+      padding: 20px 24px;
+      box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
+      display: flex; align-items: center; gap: 16px;
+      transition: background-color 0.2s;
+      text-decoration: none;
+    }
+    .seadw-card--dark:hover { background-color: #171719; }
+    .seadw-card--dark__icon { flex-shrink: 0; color: #5690D4; }
+    .seadw-card--dark__title { font-size: 16px; font-weight: 600; color: #ffffff; }
+    .seadw-icon {
+      width: 24px; height: 24px; stroke: currentColor; fill: none;
+      stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    /* ── Text utilities ── */
+    .seadw-text--product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+    .seadw-text--brand   { color: #5690D4; }
+
+    /* ── CTA Band ── */
+    .seadw-cta-band {
+      width: 100%; position: relative; overflow: hidden;
+      padding: 80px 16px; text-align: center;
+      background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+    }
+    .seadw-cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: rgba(0,0,0,0.15); z-index: 0;
+    }
+    .seadw-cta-band > * { position: relative; z-index: 1; }
+    .seadw-cta-band__inner {
+      max-width: 100%; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: 24px;
+    }
+    @media (min-width: 768px)  { .seadw-cta-band { padding: 100px 32px; } }
+    @media (min-width: 1024px) { .seadw-cta-band__inner { max-width: 720px; } }
+    @media (min-width: 1440px) {
+      .seadw-cta-band { padding: 120px 120px; max-width: 1440px; margin: 0 auto; }
+      .seadw-cta-band__inner { max-width: 860px; }
+    }
+    .seadw-cta-band__title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 40px; font-weight: 700;
+      color: #ffffff; line-height: 1.2;
+      letter-spacing: -0.5px; margin: 0;
+    }
+    @media (max-width: 767px) { .seadw-cta-band__title { font-size: 36px; } }
+    @media (min-width: 1440px) { .seadw-cta-band__title { font-size: 50px; } }
+    .seadw-cta-band__description {
+      font-size: 18px; color: rgba(255,255,255,0.85);
+      line-height: 1.7; margin: 0;
+    }
+    .seadw-cta-band__actions {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
+    }
+    .seadw-cta-band__actions .seadw-btn {
+      background-color: rgba(255,255,255,0.92);
+      color: #0f0f0f;
+      border: 1px solid rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+    }
+    .seadw-cta-band__actions .seadw-btn:hover { background-color: #ffffff; }
+    .seadw-cta-band__footnote {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;
+      margin-top: 8px;
+    }
+    .seadw-cta-band__footnote a {
+      font-size: 12px; color: rgba(255,255,255,0.7); transition: color 0.2s;
+    }
+    .seadw-cta-band__footnote a:hover { color: #ffffff; }
+  </style>
+</head>
+<body>
+<main>
+
+  <!-- ── Section 1: Hero ────────────────────────────────────────────────── -->
+  <section id="section-hero" class="seadw-section--hero">
+    <div class="seadw-article-container">
+      <nav class="seadw-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html" class="seadw-breadcrumb__link">Home</a>
+        <span class="seadw-breadcrumb__sep">/</span>
+        <a href="resources.html" class="seadw-breadcrumb__link">Resources</a>
+        <span class="seadw-breadcrumb__sep">/</span>
+        <a href="learn.html" class="seadw-breadcrumb__link">Learn</a>
+        <span class="seadw-breadcrumb__sep">/</span>
+        <span class="seadw-breadcrumb__current">Secure Enterprise AI Data Workflows</span>
+      </nav>
+      <h1 class="seadw-article-hero__title">Secure Enterprise AI Data Workflows</h1>
+      <p class="seadw-article-hero__description">
+        Complete guide to enterprise AI data privacy — how to protect sensitive data throughout AI processing while producing usable, restorable enterprise outputs.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Section 2: Problem ─────────────────────────────────────────────── -->
+  <section id="section-2" class="seadw-section--article-body">
+    <div class="seadw-article-container">
+      <div class="seadw-article-section-header">
+        <h2>Problem</h2>
+      </div>
+      <p class="seadw-body-paragraph">
+        Enterprise AI adoption is blocked by a fundamental tension: AI delivers value by processing real data, but enterprise data governance prohibits sending sensitive information to external AI services. This creates a stalemate that affects every regulated industry — finance, healthcare, legal, government, and telecom.
+      </p>
+      <p class="seadw-body-paragraph">
+        The consequence is either AI projects using only sanitized, non-sensitive data (limiting value), or data teams building complex workarounds that introduce risk and compliance gaps. Neither approach scales.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Section 3: Definition ──────────────────────────────────────────── -->
+  <section id="section-3" class="seadw-section--article-body">
+    <div class="seadw-article-container">
+      <div class="seadw-article-section-header">
+        <h2>Definition</h2>
+      </div>
+      <div class="seadw-banner">
+        <p><strong>Secure Enterprise AI Data Workflow</strong></p>
+        <p>A secure enterprise AI data workflow is an end-to-end data processing pattern that protects sensitive information at the data layer before AI processing, preserves document structure for AI accuracy, and restores enterprise context in outputs through local restoration. It enables enterprise AI adoption without sacrificing data privacy or AI output quality.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 4: Explanation ─────────────────────────────────────────── -->
+  <section id="section-4" class="seadw-section--article-body">
+    <div class="seadw-article-container">
+      <div class="seadw-article-section-header">
+        <h2>Explanation</h2>
+      </div>
+      <p class="seadw-body-paragraph">
+        Building secure enterprise AI data workflows requires addressing protection at three distinct layers:
+      </p>
+
+      <h3 class="seadw-subsection-title">Data Layer Protection</h3>
+      <p class="seadw-body-paragraph">
+        Enterprise AI data privacy starts before data reaches any AI model. <span class="seadw-text--product">LLM Capsule</span> applies context-aware data control at the document level — identifying and encapsulating sensitive elements based on configurable enterprise policies. This is fundamentally different from API gateway filtering, which only sees prompts, not the underlying data structures.
+      </p>
+
+      <h3 class="seadw-subsection-title">Processing Layer Integrity</h3>
+      <p class="seadw-body-paragraph">
+        Protected documents must retain enough structure for AI models to produce meaningful results. Structure-preserving processing ensures that tables, entity relationships, cross-references, and document hierarchies remain intact in the encapsulated representation. AI models process structurally complete documents, not fragmented masked text.
+      </p>
+
+      <h3 class="seadw-subsection-title">Output Layer Restoration</h3>
+      <p class="seadw-body-paragraph">
+        AI results are restored through local restoration. The locally stored mapping between original and encapsulated values is applied to AI outputs automatically. This produces enterprise-ready outputs — with real names, real amounts, real references — that integrate directly into business systems without manual post-processing.
+      </p>
+
+      <div class="seadw-banner" style="margin-top: 32px;">
+        <strong>Enable AI. Protect data. Restore results.</strong> This is the operating principle of every enterprise AI data workflow built on <span class="seadw-text--product">LLM Capsule</span>.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 5: Enterprise Examples ────────────────────────────────── -->
+  <section id="section-5" class="seadw-section--article-body">
+    <div class="seadw-article-container">
+      <div class="seadw-article-section-header">
+        <h2>Enterprise Examples</h2>
+      </div>
+      <div class="seadw-card">
+        <h4 class="seadw-card__title">Finance: Regulatory Reporting Automation</h4>
+        <p>A bank automates quarterly regulatory report generation using AI. Source documents contain customer account data, transaction histories, and internal risk assessments. <span class="seadw-text--product">LLM Capsule</span> encapsulates all sensitive data, AI generates structured reports from protected sources, and restoration produces regulator-ready output.</p>
+      </div>
+      <div class="seadw-card">
+        <h4 class="seadw-card__title">Healthcare: Clinical Trial Document Processing</h4>
+        <p>A pharmaceutical company uses AI to extract adverse event data from clinical trial reports. Documents contain patient identifiers, investigator names, and proprietary compound information. The secure workflow encapsulates all protected elements, AI extracts structured data, and restoration links extracted events to real patient identifiers in the internal safety database.</p>
+      </div>
+      <div class="seadw-card">
+        <h4 class="seadw-card__title">Legal: Multi-Jurisdictional Contract Review</h4>
+        <p>A multinational corporation reviews employment contracts across 12 jurisdictions using AI for clause extraction and compliance checking. Each jurisdiction's contracts contain locally sensitive employee data. Enterprise confidentiality control applies jurisdiction-appropriate encapsulation policies, and restored outputs map to the appropriate HR systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 6: FAQ ─────────────────────────────────────────────────── -->
+  <section id="section-6" class="seadw-section--article-body">
+    <div class="seadw-article-container">
+      <div class="seadw-article-section-header">
+        <h2>FAQ</h2>
+      </div>
+      <div class="seadw-ac-list">
+        <div class="seadw-ac-card seadw-ac--open" onclick="this.classList.toggle('seadw-ac--open')">
+          <div class="seadw-ac-card__header">
+            <span class="seadw-ac-card__title">How do you build a secure enterprise AI data workflow?</span>
+            <span class="seadw-ac-card__toggle"><span class="seadw-ac-card__toggle-icon"></span></span>
+          </div>
+          <div class="seadw-ac-card__body">
+            <p>A secure enterprise AI data workflow encapsulates sensitive data locally before AI processing, preserves document structure for AI accuracy, and restores outputs through local restoration. This requires a data-layer protection approach, not just API-level filtering.</p>
+          </div>
+        </div>
+        <div class="seadw-ac-card" onclick="this.classList.toggle('seadw-ac--open')">
+          <div class="seadw-ac-card__header">
+            <span class="seadw-ac-card__title">What is a restorable workflow?</span>
+            <span class="seadw-ac-card__toggle"><span class="seadw-ac-card__toggle-icon"></span></span>
+          </div>
+          <div class="seadw-ac-card__body">
+            <p>A restorable workflow is an AI data processing pattern where sensitive data is replaced with reversible representations before AI processing. After processing, outputs are restored with original data locally, producing enterprise-ready results.</p>
+          </div>
+        </div>
+        <div class="seadw-ac-card" onclick="this.classList.toggle('seadw-ac--open')">
+          <div class="seadw-ac-card__header">
+            <span class="seadw-ac-card__title">Can secure AI workflows work with RAG pipelines?</span>
+            <span class="seadw-ac-card__toggle"><span class="seadw-ac-card__toggle-icon"></span></span>
+          </div>
+          <div class="seadw-ac-card__body">
+            <p>Yes. <span class="seadw-text--product">LLM Capsule</span> integrates with RAG (Retrieval-Augmented Generation) pipelines by encapsulating retrieved documents before they are included in AI prompts. Retrieved context remains protected throughout the generation process.</p>
+          </div>
+        </div>
+        <div class="seadw-ac-card" onclick="this.classList.toggle('seadw-ac--open')">
+          <div class="seadw-ac-card__header">
+            <span class="seadw-ac-card__title">What industries need secure enterprise AI data workflows?</span>
+            <span class="seadw-ac-card__toggle"><span class="seadw-ac-card__toggle-icon"></span></span>
+          </div>
+          <div class="seadw-ac-card__body">
+            <p>Any industry handling sensitive data — financial services, healthcare, legal, government, defense, telecom, and insurance. Any organization subject to GDPR, HIPAA, SOX, or industry-specific data regulations benefits from secure AI data workflows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 7: Learn More ──────────────────────────────────────────── -->
+  <section id="section-7" class="seadw-section--article-body">
+    <div class="seadw-article-container">
+      <div class="seadw-section-title-icon">
+        <span class="seadw-section-title-icon__icon">
+          <svg class="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+        </span>
+        <span class="seadw-section-title-icon__text">Learn More</span>
+      </div>
+      <div class="seadw-card-grid seadw-card-grid--2col">
+        <a href="product.html" class="seadw-card--dark">
+          <span class="seadw-card--dark__icon">
+            <svg class="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            </svg>
+          </span>
+          <span class="seadw-card--dark__title">Product Overview</span>
+        </a>
+        <a href="architecture.html" class="seadw-card--dark">
+          <span class="seadw-card--dark__icon">
+            <svg class="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </span>
+          <span class="seadw-card--dark__title">Architecture</span>
+        </a>
+        <a href="trust.html" class="seadw-card--dark">
+          <span class="seadw-card--dark__icon">
+            <svg class="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </span>
+          <span class="seadw-card--dark__title">Trust &amp; Compliance</span>
+        </a>
+        <a href="request-pov.html" class="seadw-card--dark">
+          <span class="seadw-card--dark__icon">
+            <svg class="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+          <span class="seadw-card--dark__title">Request a Demo</span>
+        </a>
+        <a href="what-is-ai-data-capsule.html" class="seadw-card--dark">
+          <span class="seadw-card--dark__icon">
+            <svg class="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+          </span>
+          <span class="seadw-card--dark__title">What Is an AI Data Capsule</span>
+        </a>
+        <a href="how-to-use-ai-on-sensitive-enterprise-data.html" class="seadw-card--dark">
+          <span class="seadw-card--dark__icon">
+            <svg class="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </span>
+          <span class="seadw-card--dark__title">AI on Sensitive Data</span>
+        </a>
+        <a href="why-redaction-breaks-enterprise-ai-workflows.html" class="seadw-card--dark">
+          <span class="seadw-card--dark__icon">
+            <svg class="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
+            </svg>
+          </span>
+          <span class="seadw-card--dark__title">Why Redaction Breaks AI</span>
+        </a>
+        <a href="secure-enterprise-ai-workflows.html" class="seadw-card--dark">
+          <span class="seadw-card--dark__icon">
+            <svg class="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </span>
+          <span class="seadw-card--dark__title">Secure AI Workflows</span>
+        </a>
+        <a href="structure-preserving-document-processing.html" class="seadw-card--dark">
+          <span class="seadw-card--dark__icon">
+            <svg class="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <line x1="3" y1="15" x2="21" y2="15"/>
+              <line x1="9" y1="3" x2="9" y2="21"/>
+            </svg>
+          </span>
+          <span class="seadw-card--dark__title">Structure-Preserving Processing</span>
+        </a>
+        <a href="pii-protection-vs-enterprise-confidentiality-control.html" class="seadw-card--dark">
+          <span class="seadw-card--dark__icon">
+            <svg class="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </span>
+          <span class="seadw-card--dark__title">PII vs Confidentiality Control</span>
+        </a>
+        <a href="on-premise-vs-cloud-ai-data-protection.html" class="seadw-card--dark">
+          <span class="seadw-card--dark__icon">
+            <svg class="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <polyline points="17 1 21 5 17 9"/>
+              <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+              <polyline points="7 23 3 19 7 15"/>
+              <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+            </svg>
+          </span>
+          <span class="seadw-card--dark__title">On-Premise vs Cloud</span>
+        </a>
+        <a href="ai-data-pipeline-protection.html" class="seadw-card--dark">
+          <span class="seadw-card--dark__icon">
+            <svg class="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </span>
+          <span class="seadw-card--dark__title">AI Pipeline Protection</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section CTA ────────────────────────────────────────────────────── -->
+  <section id="section-cta" class="seadw-cta-band">
+    <div class="seadw-cta-band__inner">
+      <h2 class="seadw-cta-band__title">
+        See how <span class="seadw-text--product">LLM Capsule</span> works with your data
+      </h2>
+      <p class="seadw-cta-band__description">Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</p>
+      <div class="seadw-cta-band__actions">
+        <a href="request-pov.html" class="seadw-btn seadw-btn--lg">Request a Demo</a>
+        <a href="architecture.html" class="seadw-btn seadw-btn--lg">Talk to an Architect</a>
+      </div>
+      <div class="seadw-cta-band__footnote">
+        <a href="downloads.html">Download Architecture Brief</a>
+        <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener">AWS Marketplace</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

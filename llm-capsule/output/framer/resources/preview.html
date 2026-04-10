@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources — LLM Capsule [Framer Preview]</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: #0f0f0f;
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    p, li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
+    h1, h2, h3 { text-wrap: balance; }
+
+    /* ── Container ───────────────────────────────────────────── */
+    .res-container {
+      width: 100%; margin: 0 auto; padding: 0 16px;
+    }
+    @media (min-width: 768px)  { .res-container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .res-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .res-container { padding: 0 120px; max-width: 1440px; } }
+
+    /* ── Buttons ─────────────────────────────────────────────── */
+    .res-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border-radius: 9999px; font-family: "DM Sans", sans-serif;
+      font-weight: 500; cursor: pointer; border: none;
+      transition: opacity 0.2s, background-color 0.2s;
+      white-space: nowrap; text-decoration: none;
+    }
+    .res-btn--sm { padding: 8px 16px; font-size: 14px; }
+    .res-btn--md { padding: 12px 32px; font-size: 16px; }
+    .res-btn--ghost {
+      background: transparent; color: #5690D4;
+      font-size: 14px; font-weight: 600;
+      padding: 0; border: none;
+    }
+    .res-btn--ghost:hover { opacity: 0.75; }
+    .res-btn--cta {
+      background-color: rgba(255,255,255,0.92);
+      color: #0f0f0f;
+      border: 1px solid rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+    }
+    .res-btn--cta:hover { background-color: #ffffff; }
+    .res-btn--cta-sec {
+      background-color: transparent;
+      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.3);
+      font-size: 14px;
+    }
+    .res-btn--cta-sec:hover { opacity: 0.75; }
+
+    /* ── Text helpers ────────────────────────────────────────── */
+    .res-text--brand   { color: #5690D4; }
+    .res-text--product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+
+    /* ── Section ─────────────────────────────────────────────── */
+    .res-section { width: 100%; padding: 60px 0; background-color: #ffffff; }
+    .res-section--hero { padding: 100px 0 0; background-color: #ffffff; }
+
+    /* ── BG Image section ────────────────────────────────────── */
+    .res-section--bg {
+      background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.png');
+      background-size: cover; background-position: center;
+      position: relative; background-color: #ffffff;
+    }
+    .res-section--bg::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: rgba(255,255,255,0.45); z-index: 0;
+    }
+    .res-section--bg > * { position: relative; z-index: 1; }
+    @media (max-width: 767px) { .res-section--bg { background-image: none; } }
+
+    /* ── Hero ────────────────────────────────────────────────── */
+    .res-hero__title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 32px; font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2; letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    @media (min-width: 768px)  { .res-hero { text-align: center; } .res-hero__title { font-size: 40px; } }
+    @media (min-width: 1024px) { .res-hero__title { font-size: 48px; } }
+    @media (min-width: 1440px) { .res-hero__title { font-size: 64px; } }
+    .res-hero__description {
+      font-size: 18px; color: #636363;
+      line-height: 1.7; max-width: 100%;
+    }
+    @media (min-width: 768px)  { .res-hero__description { margin-left: auto; margin-right: auto; max-width: 720px; } }
+    @media (min-width: 1440px) { .res-hero__description { max-width: 860px; } }
+
+    /* ── Section Header ──────────────────────────────────────── */
+    .res-section-header { margin-bottom: 48px; text-align: center; }
+    @media (max-width: 767px) { .res-section-header { text-align: left; } }
+    .res-section-header--underline {
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e6e7e9;
+      margin-bottom: 32px;
+    }
+    .res-section-header__title {
+      font-size: 20px; font-weight: 700;
+      color: #0f0f0f; line-height: 1.2;
+      letter-spacing: -0.5px; margin-bottom: 16px;
+    }
+    @media (min-width: 768px)  { .res-section-header__title { font-size: 22px; } }
+    @media (min-width: 1024px) { .res-section-header__title { font-size: 24px; } }
+    @media (min-width: 1440px) { .res-section-header__title { font-size: 28px; } }
+    .res-section-header__description {
+      font-size: 18px; color: #636363;
+      line-height: 1.7; max-width: 100%; margin: 0 auto;
+    }
+    @media (min-width: 1024px) { .res-section-header__description { max-width: 720px; } }
+    @media (min-width: 1440px) { .res-section-header__description { max-width: 860px; } }
+
+    /* ── Icon ────────────────────────────────────────────────── */
+    .res-icon { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .res-icon--lg { width: 32px; height: 32px; }
+
+    /* ── Card Grid ───────────────────────────────────────────── */
+    .res-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px)  { .res-card-grid--4col { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .res-card-grid--4col { grid-template-columns: repeat(4, 1fr); } }
+    @media (min-width: 768px)  { .res-card-grid--3col { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .res-card-grid--3col { grid-template-columns: repeat(3, 1fr); } }
+
+    /* ── Standard Card ───────────────────────────────────────── */
+    .res-card {
+      background-color: #ffffff;
+      border-radius: 18px; border: 1px solid #e6e7e9;
+      padding: 24px; box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
+      display: flex; flex-direction: column;
+      text-decoration: none; color: inherit;
+    }
+    @media (min-width: 1440px) { .res-card { padding: 32px; } }
+    .res-card__icon-wrap { margin-bottom: 12px; color: #5690D4; }
+    .res-card__title {
+      font-size: 18px; font-weight: 600;
+      color: #0f0f0f; line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .res-card__description {
+      font-size: 14px; color: #636363;
+      line-height: 1.7; flex: 1;
+    }
+    .res-card__button { margin-top: 24px; }
+
+    /* ── Gradient Card ───────────────────────────────────────── */
+    .res-card--gradient {
+      padding: 2px; border-radius: 18px;
+      box-shadow: rgba(113,141,176,0.25) 0px 1px 20px 0px;
+      display: flex; flex-direction: column;
+      text-decoration: none; color: inherit;
+    }
+    .res-card--gradient-indigo { background: linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #E8F0FF 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%); }
+    .res-card--gradient-blue   { background: linear-gradient(109deg, #BFD8F4 0%, #fff 17%, #E8F0FF 38%, #5690D4 51%, #E2EBF5 73%, #BFD8F4 100%); }
+    .res-card--gradient-green  { background: linear-gradient(109deg, #55B45D 0%, #F0FFF2 17%, #9AE6AD 43%, #C9FFE1 65%, #55B45D 84%, #55B45D 100%); }
+    .res-card--gradient-silver { background: linear-gradient(109deg, #898989 0%, #fff 17%, #D5D5D5 63%, #F6F5F6 84%, #898989 100%); }
+    .res-card--gradient__inner {
+      border-radius: 16px;
+      padding: 32px;
+      flex: 1;
+      display: flex; flex-direction: column; gap: 12px;
+      background-color: #ffffff;
+    }
+    .res-card--gradient-indigo .res-card--gradient__inner { background: linear-gradient(99deg, #ECEEFF 0%, #FCFCFE 58%, #fff 100%); }
+    .res-card--gradient-blue   .res-card--gradient__inner { background: linear-gradient(99deg, #EAF0F9 0%, #FCFCFE 58%, #fff 100%); }
+    .res-card--gradient-green  .res-card--gradient__inner { background: linear-gradient(99deg, #F0FDF5 0%, #FCFCFE 58%, #fff 100%); }
+    .res-card--gradient__icon { margin-bottom: 8px; color: #0f0f0f; }
+    .res-card--gradient__title {
+      font-size: 20px; font-weight: 700;
+      color: #0f0f0f; line-height: 1.2;
+    }
+    .res-card--gradient__description {
+      font-size: 14px; color: #636363;
+      line-height: 1.7; flex: 1;
+    }
+    .res-card--gradient__button { margin-top: auto; padding-top: 24px; }
+
+    /* ── CTA Band ────────────────────────────────────────────── */
+    .res-cta-band {
+      width: 100%; position: relative; overflow: hidden;
+      padding: 80px 16px; text-align: center;
+      background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+    }
+    .res-cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: rgba(0,0,0,0.15); z-index: 0;
+    }
+    .res-cta-band > * { position: relative; z-index: 1; }
+    .res-cta-band__inner {
+      max-width: 100%; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: 24px;
+    }
+    @media (min-width: 1024px) { .res-cta-band__inner { max-width: 720px; } }
+    @media (min-width: 1440px) { .res-cta-band__inner { max-width: 860px; } }
+    @media (min-width: 768px)  { .res-cta-band { padding: 100px 32px; } }
+    @media (min-width: 1440px) { .res-cta-band { padding: 120px 120px; max-width: 1440px; margin: 0 auto; } }
+    .res-cta-band__title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 40px; font-weight: 700;
+      color: #ffffff; line-height: 1.2;
+      letter-spacing: -0.5px; margin: 0;
+    }
+    @media (max-width: 767px) { .res-cta-band__title { font-size: 36px; } }
+    @media (min-width: 1440px) { .res-cta-band__title { font-size: 50px; } }
+    .res-cta-band__description {
+      font-size: 18px; color: rgba(255,255,255,0.85);
+      line-height: 1.7; margin: 0;
+    }
+    .res-cta-band__actions {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
+    }
+    @media (max-width: 767px) {
+      .res-cta-band__actions { flex-direction: column; align-items: center; }
+      .res-cta-band__actions .res-btn--cta { width: 100%; max-width: 320px; }
+    }
+    .res-cta-band__secondary {
+      display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+      margin-top: 16px;
+    }
+    @media (max-width: 767px) {
+      .res-cta-band__secondary { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+<main>
+
+  <!-- Section 1: Hero -->
+  <section id="section-1" class="res-section res-section--hero">
+    <div class="res-container">
+      <div class="res-hero">
+        <h1 class="res-hero__title">
+          Enterprise AI Enablement <span class="res-text--brand">Resources</span>
+        </h1>
+        <p class="res-hero__description">
+          Technical documentation, learning resources, glossary, and downloads for enterprise AI enablement with <span class="res-text--product">LLM Capsule</span>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Resource Hub -->
+  <section id="section-2" class="res-section">
+    <div class="res-container">
+
+      <div class="res-section-header res-section-header--underline">
+        <h2 class="res-section-header__title">Explore <span class="res-text--brand">Resources</span></h2>
+        <p class="res-section-header__description">Browse documentation, learning materials, key terms, and trust information.</p>
+      </div>
+
+      <div class="res-card-grid res-card-grid--4col">
+
+        <!-- Card 1: Learn -->
+        <a href="learn.html" class="res-card--gradient res-card--gradient-indigo">
+          <div class="res-card--gradient__inner">
+            <div class="res-card--gradient__icon">
+              <svg class="res-icon res-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+            </div>
+            <h3 class="res-card--gradient__title">Learn</h3>
+            <p class="res-card--gradient__description">In-depth articles on enterprise AI enablement, secure LLM usage, structure-preserving processing, and restorable workflows.</p>
+            <div class="res-card--gradient__button">
+              <span class="res-btn res-btn--ghost">Browse Learn &#8594;</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 2: Glossary -->
+        <a href="glossary.html" class="res-card--gradient res-card--gradient-blue">
+          <div class="res-card--gradient__inner">
+            <div class="res-card--gradient__icon">
+              <svg class="res-icon res-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                <line x1="8" y1="7" x2="15" y2="7"/>
+                <line x1="8" y1="11" x2="15" y2="11"/>
+              </svg>
+            </div>
+            <h3 class="res-card--gradient__title">Glossary</h3>
+            <p class="res-card--gradient__description">Definitions of key concepts &#8212; restoration, zero exposure, enterprise context control, and structure-preserving processing.</p>
+            <div class="res-card--gradient__button">
+              <span class="res-btn res-btn--ghost">Browse Glossary &#8594;</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3: Downloads -->
+        <a href="downloads.html" class="res-card--gradient res-card--gradient-green">
+          <div class="res-card--gradient__inner">
+            <div class="res-card--gradient__icon">
+              <svg class="res-icon res-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </div>
+            <h3 class="res-card--gradient__title">Downloads</h3>
+            <p class="res-card--gradient__description">Architecture briefs, technical documentation, and deployment guides for enterprise evaluation.</p>
+            <div class="res-card--gradient__button">
+              <span class="res-btn res-btn--ghost">Browse Downloads &#8594;</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 4: Trust Center -->
+        <a href="trust-center.html" class="res-card--gradient res-card--gradient-silver">
+          <div class="res-card--gradient__inner">
+            <div class="res-card--gradient__icon">
+              <svg class="res-icon res-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <h3 class="res-card--gradient__title">Trust Center</h3>
+            <p class="res-card--gradient__description">Security certifications, compliance documentation, and audit information.</p>
+            <div class="res-card--gradient__button">
+              <span class="res-btn res-btn--ghost">Browse Trust Center &#8594;</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Core Guides -->
+  <section id="section-3" class="res-section res-section--bg">
+    <div class="res-container">
+
+      <div class="res-section-header res-section-header--underline">
+        <h2 class="res-section-header__title">Core guides for enterprise AI <span class="res-text--brand">enablement</span></h2>
+        <p class="res-section-header__description">Start with the documents that explain the operating model, the failure of redaction-based approaches, and the architecture behind usable AI outputs.</p>
+      </div>
+
+      <div class="res-card-grid res-card-grid--3col">
+
+        <!-- Guide 1 -->
+        <a href="secure-enterprise-ai-data-workflows.html" class="res-card">
+          <div class="res-card__icon-wrap">
+            <svg class="res-icon res-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+            </svg>
+          </div>
+          <h3 class="res-card__title">Secure Enterprise AI Data Workflows</h3>
+          <p class="res-card__description">The end-to-end operating model for protecting sensitive data across AI workflows while restoring usable outputs locally.</p>
+          <div class="res-card__button">
+            <span class="res-btn res-btn--ghost">Read guide &#8594;</span>
+          </div>
+        </a>
+
+        <!-- Guide 2 -->
+        <a href="what-is-ai-data-capsule.html" class="res-card">
+          <div class="res-card__icon-wrap">
+            <svg class="res-icon res-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <h3 class="res-card__title">What Is an AI Data Capsule?</h3>
+          <p class="res-card__description">The core concept behind local encapsulation, protected AI processing, and local restoration.</p>
+          <div class="res-card__button">
+            <span class="res-btn res-btn--ghost">Read guide &#8594;</span>
+          </div>
+        </a>
+
+        <!-- Guide 3 -->
+        <a href="why-redaction-breaks-enterprise-ai-workflows.html" class="res-card">
+          <div class="res-card__icon-wrap">
+            <svg class="res-icon res-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="6" cy="6" r="3"/>
+              <circle cx="18" cy="18" r="3"/>
+              <line x1="20" y1="4" x2="4" y2="20"/>
+            </svg>
+          </div>
+          <h3 class="res-card__title">Why Redaction Breaks Enterprise AI Workflows</h3>
+          <p class="res-card__description">Why masking and redaction tools fail in AI workflows, and what replaces them in enterprise production settings.</p>
+          <div class="res-card__button">
+            <span class="res-btn res-btn--ghost">Read guide &#8594;</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: CTA Band -->
+  <section id="section-4" class="res-cta-band" aria-label="Call to action">
+    <div class="res-cta-band__inner">
+      <h2 class="res-cta-band__title">
+        See how <span class="res-text--product">LLM Capsule</span> works with your data
+      </h2>
+      <p class="res-cta-band__description">Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</p>
+      <div class="res-cta-band__actions">
+        <a href="request-pov.html" class="res-btn res-btn--md res-btn--cta">Request a Demo</a>
+        <a href="architecture.html" class="res-btn res-btn--md res-btn--cta">Talk to an Architect</a>
+      </div>
+      <div class="res-cta-band__secondary">
+        <a href="downloads.html" class="res-btn res-btn--sm res-btn--cta-sec">Download Architecture Brief</a>
+        <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" class="res-btn res-btn--sm res-btn--cta-sec">Available on AWS Marketplace</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
