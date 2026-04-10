@@ -693,10 +693,16 @@
         <div class="ds-article-section-header">
           <h2>Enterprise Workflow Example</h2>
         </div>
-        <div class="ds-card">
+        <div class="ds-card ds-card--case-study">
+          <div class="ds-card__icon-wrap"><svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12.572l-7.5 7.428l-7.5-7.428A5 5 0 0 1 12 6.006a5 5 0 0 1 7.5 6.572"/><path d="M12 6V2"/><path d="M8 2h8"/></svg></div>
+          <span class="ds-card__badge ds-card__badge--brand">HEALTHCARE</span>
           <h4 class="ds-card__title">Patient Discharge Summaries</h4>
-          <p>A hospital needs AI to generate discharge summaries from patient records. Anonymized records remove patient identifiers — but discharge summaries must reference real patient names, medications, and attending physicians to be clinically useful.</p>
-          <p><span class="ds-text--product">LLM Capsule</span> encapsulates patient records, AI generates structured summaries, and local restoration restores all patient identifiers into the discharge documents. The summaries are clinically ready without any manual re-identification.</p>
+          <p class="ds-card__description">A hospital needs AI to generate discharge summaries from patient records. Anonymized records remove patient identifiers — but discharge summaries must reference real patient names, medications, and attending physicians to be clinically useful.</p>
+          <ul class="ds-bullet ds-bullet--check">
+            <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span><span class="ds-text--product">LLM Capsule</span> encapsulates patient records, AI generates structured summaries</span></li>
+            <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Local restoration restores all patient identifiers into discharge documents</span></li>
+            <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Summaries are clinically ready without any manual re-identification</span></li>
+          </ul>
         </div>
       </div>
     </section>
@@ -799,7 +805,7 @@
     <!-- ============================================================
          Section 10: CTA Band
     ============================================================ -->
-    <section id="section-cta" class="ds-cta-band">
+    <section id="section-cta" class="ds-cta-band ds-bg--grad-navy">
       <div class="ds-cta-band__inner">
         <h2 class="ds-cta-band__title">See how <span class="ds-text--product">LLM Capsule</span> works with your data</h2>
         <p class="ds-cta-band__description">Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</p>
