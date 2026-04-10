@@ -346,34 +346,43 @@
     .ds-section-title-icon__text { font-family: var(--ds-font-base); font-size: var(--ds-text-xl); font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); }
 
     /* --- Accordion Card --- */
+    .ds-ac-list { display: flex; flex-direction: column; gap: 2px; }
     .ds-ac-card {
-      border: var(--ds-border-default);
-      border-radius: var(--ds-radius-sm);
-      overflow: hidden;
-      margin-bottom: var(--ds-space-xs);
+      border: var(--ds-border-default); border-radius: var(--ds-radius-sm);
+      background-color: var(--ds-color-surface-white); overflow: hidden; transition: background-color 0.2s;
     }
-    .ds-ac-card__trigger {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: var(--ds-space-md) var(--ds-space-lg);
-      cursor: pointer; background-color: var(--ds-color-surface-white);
-      gap: var(--ds-space-sm); list-style: none;
+    .ds-ac-card:hover { background-color: var(--ds-color-neutral-025); }
+    .ds-ac-card__header {
+      display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-md);
+      padding: var(--ds-space-lg); cursor: pointer; user-select: none;
     }
-    .ds-ac-card__trigger::-webkit-details-marker { display: none; }
     .ds-ac-card__title {
-      font-size: var(--ds-text-md); font-weight: var(--ds-weight-semibold);
+      font-family: var(--ds-font-base); font-size: var(--ds-text-lg);
+      font-weight: var(--ds-weight-medium); line-height: var(--ds-leading-tight);
       color: var(--ds-color-text-primary);
     }
-    .ds-ac-card__icon {
-      flex-shrink: 0; color: var(--ds-color-text-tertiary);
-      transition: transform 0.2s;
+    .ds-ac-card__toggle {
+      width: 28px; height: 28px; border-radius: 6px;
+      border: 0.5px solid var(--ds-color-border-default);
+      background-color: var(--ds-color-surface-light);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer;
     }
-    details[open] .ds-ac-card__icon { transform: rotate(45deg); }
+    .ds-ac-card__toggle-icon { width: 12px; height: 12px; position: relative; flex-shrink: 0; }
+    .ds-ac-card__toggle-icon::before, .ds-ac-card__toggle-icon::after {
+      content: ''; position: absolute; background-color: var(--ds-color-text-tertiary); border-radius: 1px;
+    }
+    .ds-ac-card__toggle-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .ds-ac-card__toggle-icon::after { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; transition: opacity 0.2s; }
+    .ds-ac-card.ds-ac--open .ds-ac-card__toggle-icon::after { opacity: 0; }
     .ds-ac-card__body {
-      padding: 0 var(--ds-space-lg) var(--ds-space-md);
+      display: none; padding: var(--ds-space-lg);
+      border-top: var(--ds-border-default);
+      background-color: var(--ds-color-surface-light);
       font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
       line-height: var(--ds-leading-relaxed);
-      background-color: var(--ds-color-surface-white);
     }
+    .ds-ac-card.ds-ac--open .ds-ac-card__body { display: block; }
+    .ds-ac-card__body p + p { margin-top: var(--ds-space-sm); }
 
     /* --- CTA Band --- */
     .ds-cta-band {
@@ -750,40 +759,28 @@
         <div class="ds-article-section-header">
           <h2>FAQ</h2>
         </div>
+        <div class="ds-ac-list">
 
-        <div class="ds-ac-card">
-          <details>
-            <summary class="ds-ac-card__trigger">
+
+        <div class="ds-ac-card ds-ac--open" onclick="toggleAcCard(this)">
+            <div class="ds-ac-card__header">
               <span class="ds-ac-card__title">What is AI data pipeline protection?</span>
-              <span class="ds-ac-card__icon">
-                <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="5" x2="12" y2="19"/>
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                </svg>
-              </span>
-            </summary>
-            <div class="ds-ac-card__body">
-              AI data pipeline protection secures sensitive enterprise data at every stage of the AI processing pipeline — from document ingestion through model interaction to output delivery.
+              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
             </div>
-          </details>
-        </div>
+            <div class="ds-ac-card__body">
+              <p>AI data pipeline protection secures sensitive enterprise data at every stage of the AI processing pipeline — from document ingestion through model interaction to output delivery.</p>
+            </div>
+          </div>
 
-        <div class="ds-ac-card">
-          <details>
-            <summary class="ds-ac-card__trigger">
+        <div class="ds-ac-card" onclick="toggleAcCard(this)">
+            <div class="ds-ac-card__header">
               <span class="ds-ac-card__title">How does this differ from API-level security?</span>
-              <span class="ds-ac-card__icon">
-                <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="5" x2="12" y2="19"/>
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                </svg>
-              </span>
-            </summary>
-            <div class="ds-ac-card__body">
-              API-level security filters prompts and scans outputs at the model interface. AI data pipeline protection operates at the data layer across the entire pipeline, ensuring data is protected before it reaches any external system.
+              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
             </div>
-          </details>
-        </div>
+            <div class="ds-ac-card__body">
+              <p>API-level security filters prompts and scans outputs at the model interface. AI data pipeline protection operates at the data layer across the entire pipeline, ensuring data is protected before it reaches any external system.</p>
+            </div>
+          </div>
       </div>
     </section>
 
@@ -914,5 +911,10 @@
     </div>
   </footer>
 
+  <script>
+    function toggleAcCard(card) {
+      card.classList.toggle('ds-ac--open');
+    }
+  </script>
 </body>
 </html>

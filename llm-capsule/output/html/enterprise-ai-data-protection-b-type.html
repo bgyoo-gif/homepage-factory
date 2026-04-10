@@ -348,6 +348,45 @@
     .ds-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
     @media (min-width: 768px) { .ds-card-grid--2col { grid-template-columns: repeat(2, 1fr); } }
 
+    /* --- Accordion Card --- */
+    .ds-ac-list { display: flex; flex-direction: column; gap: 2px; }
+    .ds-ac-card {
+      border: var(--ds-border-default); border-radius: var(--ds-radius-sm);
+      background-color: var(--ds-color-surface-white); overflow: hidden; transition: background-color 0.2s;
+    }
+    .ds-ac-card:hover { background-color: var(--ds-color-neutral-025); }
+    .ds-ac-card__header {
+      display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-md);
+      padding: var(--ds-space-lg); cursor: pointer; user-select: none;
+    }
+    .ds-ac-card__title {
+      font-family: var(--ds-font-base); font-size: var(--ds-text-lg);
+      font-weight: var(--ds-weight-medium); line-height: var(--ds-leading-tight);
+      color: var(--ds-color-text-primary);
+    }
+    .ds-ac-card__toggle {
+      width: 28px; height: 28px; border-radius: 6px;
+      border: 0.5px solid var(--ds-color-border-default);
+      background-color: var(--ds-color-surface-light);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer;
+    }
+    .ds-ac-card__toggle-icon { width: 12px; height: 12px; position: relative; flex-shrink: 0; }
+    .ds-ac-card__toggle-icon::before, .ds-ac-card__toggle-icon::after {
+      content: ''; position: absolute; background-color: var(--ds-color-text-tertiary); border-radius: 1px;
+    }
+    .ds-ac-card__toggle-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .ds-ac-card__toggle-icon::after { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; transition: opacity 0.2s; }
+    .ds-ac-card.ds-ac--open .ds-ac-card__toggle-icon::after { opacity: 0; }
+    .ds-ac-card__body {
+      display: none; padding: var(--ds-space-lg);
+      border-top: var(--ds-border-default);
+      background-color: var(--ds-color-surface-light);
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed);
+    }
+    .ds-ac-card.ds-ac--open .ds-ac-card__body { display: block; }
+    .ds-ac-card__body p + p { margin-top: var(--ds-space-sm); }
+
     /* --- CTA Band --- */
     .ds-cta-band {
       width: 100%; position: relative; overflow: hidden;
@@ -510,38 +549,7 @@
 
     /* Accordion / FAQ */
     .ds-ac-list { margin-top: var(--ds-space-md); }
-    .ds-ac-card {
-      border: var(--ds-border-default);
-      border-radius: var(--ds-radius-sm);
-      margin-bottom: var(--ds-space-xs);
-      overflow: hidden;
-      transition: border-color 0.15s;
-    }
-    .ds-ac-card:hover { border-color: var(--ds-color-neutral-300); }
-    .ds-ac-card__trigger {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: var(--ds-space-md) var(--ds-space-lg);
-      cursor: pointer;
-      background-color: var(--ds-color-surface-white);
-      gap: var(--ds-space-sm);
-    }
-    .ds-ac-card__title {
-      font-size: var(--ds-text-md); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary);
-    }
-    .ds-ac-card__icon {
-      flex-shrink: 0; color: var(--ds-color-text-tertiary);
-      font-size: 20px; font-weight: var(--ds-weight-regular);
-      transition: transform 0.2s;
-    }
-    .ds-ac-card.is-open .ds-ac-card__icon { transform: rotate(45deg); }
-    .ds-ac-card__body {
-      padding: 0 var(--ds-space-lg) var(--ds-space-md);
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed);
-      display: none;
-    }
-    .ds-ac-card.is-open .ds-ac-card__body { display: block; }
+
 
     /* Related links */
     .ds-related-terms {
@@ -707,27 +715,33 @@
         <div class="ds-article-section-header">
           <h2><span class="ds-text--brand">FAQ</span></h2>
         </div>
-        <div class="ds-ac-list" role="list">
-          <div class="ds-ac-card" role="listitem">
-            <div class="ds-ac-card__trigger" role="button" tabindex="0" aria-expanded="false">
+        <div class="ds-ac-list">
+          <div class="ds-ac-card ds-ac--open" onclick="toggleAcCard(this)">
+            <div class="ds-ac-card__header">
               <span class="ds-ac-card__title">What is enterprise AI data protection?</span>
-              <span class="ds-ac-card__icon" aria-hidden="true">+</span>
+              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
             </div>
-            <div class="ds-ac-card__body">Enterprise AI data protection is a data security discipline that prevents sensitive enterprise information from being exposed to external AI services while still enabling AI-powered workflows. It operates at the data layer through encapsulation, structure preservation, and local restoration.</div>
+            <div class="ds-ac-card__body">
+              <p>Enterprise AI data protection is a data security discipline that prevents sensitive enterprise information from being exposed to external AI services while still enabling AI-powered workflows. It operates at the data layer through encapsulation, structure preservation, and local restoration.</p>
+            </div>
           </div>
-          <div class="ds-ac-card" role="listitem">
-            <div class="ds-ac-card__trigger" role="button" tabindex="0" aria-expanded="false">
+          <div class="ds-ac-card" onclick="toggleAcCard(this)">
+            <div class="ds-ac-card__header">
               <span class="ds-ac-card__title">How does LLM data protection work?</span>
-              <span class="ds-ac-card__icon" aria-hidden="true">+</span>
+              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
             </div>
-            <div class="ds-ac-card__body">LLM data protection encapsulates sensitive data locally before it reaches any language model. The AI processes structurally intact but protected documents. After processing, outputs are restored locally with original enterprise data.</div>
+            <div class="ds-ac-card__body">
+              <p>LLM data protection encapsulates sensitive data locally before it reaches any language model. The AI processes structurally intact but protected documents. After processing, outputs are restored locally with original enterprise data.</p>
+            </div>
           </div>
-          <div class="ds-ac-card" role="listitem">
-            <div class="ds-ac-card__trigger" role="button" tabindex="0" aria-expanded="false">
+          <div class="ds-ac-card" onclick="toggleAcCard(this)">
+            <div class="ds-ac-card__header">
               <span class="ds-ac-card__title">Is LLM Capsule compliant with GDPR?</span>
-              <span class="ds-ac-card__icon" aria-hidden="true">+</span>
+              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
             </div>
-            <div class="ds-ac-card__body"><span class="ds-text--product">LLM Capsule</span> is designed to support GDPR compliance by ensuring personal data never leaves the enterprise environment during AI processing. Organizations should evaluate their specific compliance requirements with legal counsel.</div>
+            <div class="ds-ac-card__body">
+              <p><span class="ds-text--product">LLM Capsule</span> is designed to support GDPR compliance by ensuring personal data never leaves the enterprise environment during AI processing. Organizations should evaluate their specific compliance requirements with legal counsel.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -933,27 +947,9 @@
   </footer>
 
   <script>
-    document.querySelectorAll('.ds-ac-card__trigger').forEach(function(trigger) {
-      trigger.addEventListener('click', function() {
-        var card = this.closest('.ds-ac-card');
-        var isOpen = card.classList.contains('is-open');
-        card.closest('.ds-ac-list').querySelectorAll('.ds-ac-card').forEach(function(c) {
-          c.classList.remove('is-open');
-          c.querySelector('.ds-ac-card__trigger').setAttribute('aria-expanded', 'false');
-        });
-        if (!isOpen) {
-          card.classList.add('is-open');
-          this.setAttribute('aria-expanded', 'true');
-        }
-      });
-      trigger.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          this.click();
-        }
-      });
-    });
+    function toggleAcCard(card) {
+      card.classList.toggle('ds-ac--open');
+    }
   </script>
-
 </body>
 </html>

@@ -348,6 +348,45 @@
     .ds-section-title-icon__icon { color: var(--ds-color-brand-secondary); flex-shrink: 0; }
     .ds-section-title-icon__text { font-family: var(--ds-font-base); font-size: var(--ds-text-xl); font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); }
 
+    /* --- Accordion Card --- */
+    .ds-ac-list { display: flex; flex-direction: column; gap: 2px; }
+    .ds-ac-card {
+      border: var(--ds-border-default); border-radius: var(--ds-radius-sm);
+      background-color: var(--ds-color-surface-white); overflow: hidden; transition: background-color 0.2s;
+    }
+    .ds-ac-card:hover { background-color: var(--ds-color-neutral-025); }
+    .ds-ac-card__header {
+      display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-md);
+      padding: var(--ds-space-lg); cursor: pointer; user-select: none;
+    }
+    .ds-ac-card__title {
+      font-family: var(--ds-font-base); font-size: var(--ds-text-lg);
+      font-weight: var(--ds-weight-medium); line-height: var(--ds-leading-tight);
+      color: var(--ds-color-text-primary);
+    }
+    .ds-ac-card__toggle {
+      width: 28px; height: 28px; border-radius: 6px;
+      border: 0.5px solid var(--ds-color-border-default);
+      background-color: var(--ds-color-surface-light);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer;
+    }
+    .ds-ac-card__toggle-icon { width: 12px; height: 12px; position: relative; flex-shrink: 0; }
+    .ds-ac-card__toggle-icon::before, .ds-ac-card__toggle-icon::after {
+      content: ''; position: absolute; background-color: var(--ds-color-text-tertiary); border-radius: 1px;
+    }
+    .ds-ac-card__toggle-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .ds-ac-card__toggle-icon::after { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; transition: opacity 0.2s; }
+    .ds-ac-card.ds-ac--open .ds-ac-card__toggle-icon::after { opacity: 0; }
+    .ds-ac-card__body {
+      display: none; padding: var(--ds-space-lg);
+      border-top: var(--ds-border-default);
+      background-color: var(--ds-color-surface-light);
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed);
+    }
+    .ds-ac-card.ds-ac--open .ds-ac-card__body { display: block; }
+    .ds-ac-card__body p + p { margin-top: var(--ds-space-sm); }
+
     /* --- CTA Band --- */
     .ds-cta-band {
       width: 100%; position: relative; overflow: hidden;
@@ -511,36 +550,6 @@
     @media (min-width: 1024px) { .ds-article-section-header h2 { font-size: 24px; } }
     @media (min-width: 1440px) { .ds-article-section-header h2 { font-size: 28px; } }
     @media (max-width: 767px) { .ds-article-section-header { text-align: left; } }
-
-    /* FAQ Accordion */
-    .ds-faq { margin-top: var(--ds-space-lg); }
-    .ds-faq__item {
-      border: 1px solid var(--ds-color-border-default);
-      border-radius: var(--ds-radius-sm);
-      margin-bottom: var(--ds-space-xs);
-      overflow: hidden; transition: border-color 0.2s;
-    }
-    .ds-faq__item:hover { border-color: var(--ds-color-neutral-300); }
-    .ds-faq__question {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: var(--ds-space-md) var(--ds-space-lg);
-      cursor: pointer; list-style: none;
-      font-size: var(--ds-text-md); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary);
-      background-color: var(--ds-color-surface-white);
-      gap: var(--ds-space-sm);
-    }
-    .ds-faq__question::-webkit-details-marker { display: none; }
-    .ds-faq__question::after {
-      content: '+'; font-size: 20px; font-weight: var(--ds-weight-regular);
-      color: var(--ds-color-text-tertiary); flex-shrink: 0; transition: transform 0.2s;
-    }
-    details[open] .ds-faq__question::after { content: '-'; }
-    .ds-faq__answer {
-      padding: 0 var(--ds-space-lg) var(--ds-space-md);
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed);
-    }
 
     /* Comparison Table */
     .ds-comparison-table-wrap { overflow-x: auto; margin: var(--ds-space-lg) 0; }
@@ -735,35 +744,47 @@
         <div class="ds-article-section-header">
           <h2>FAQ</h2>
         </div>
-        <div class="ds-faq">
+        <div class="ds-ac-list">
 
-          <details class="ds-faq__item">
-            <summary class="ds-faq__question">What is an AI data capsule?</summary>
-            <div class="ds-faq__answer">
-              An AI data capsule is a locally generated AI enablement layer that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.
+          <div class="ds-ac-card ds-ac--open" onclick="toggleAcCard(this)">
+            <div class="ds-ac-card__header">
+              <span class="ds-ac-card__title">What is an AI data capsule?</span>
+              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
             </div>
-          </details>
+            <div class="ds-ac-card__body">
+              <p>An AI data capsule is a locally generated AI enablement layer that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.</p>
+            </div>
+          </div>
 
-          <details class="ds-faq__item">
-            <summary class="ds-faq__question">How does an AI data capsule differ from data masking?</summary>
-            <div class="ds-faq__answer">
-              Data masking permanently removes sensitive information, making AI outputs unusable for enterprise workflows. An AI data capsule preserves data structure and enables restoration, so AI results can be restored to their full enterprise context locally.
+          <div class="ds-ac-card" onclick="toggleAcCard(this)">
+            <div class="ds-ac-card__header">
+              <span class="ds-ac-card__title">How does an AI data capsule differ from data masking?</span>
+              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
             </div>
-          </details>
+            <div class="ds-ac-card__body">
+              <p>Data masking permanently removes sensitive information, making AI outputs unusable for enterprise workflows. An AI data capsule preserves data structure and enables restoration, so AI results can be restored to their full enterprise context locally.</p>
+            </div>
+          </div>
 
-          <details class="ds-faq__item">
-            <summary class="ds-faq__question">Does the AI data capsule work with any LLM?</summary>
-            <div class="ds-faq__answer">
-              Yes. Because the capsule operates at the data layer before transmission, it works with any external AI service — ChatGPT, Claude, Gemini, or any LLM API.
+          <div class="ds-ac-card" onclick="toggleAcCard(this)">
+            <div class="ds-ac-card__header">
+              <span class="ds-ac-card__title">Does the AI data capsule work with any LLM?</span>
+              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
             </div>
-          </details>
+            <div class="ds-ac-card__body">
+              <p>Yes. Because the capsule operates at the data layer before transmission, it works with any external AI service — ChatGPT, Claude, Gemini, or any LLM API.</p>
+            </div>
+          </div>
 
-          <details class="ds-faq__item">
-            <summary class="ds-faq__question">Where is the mapping data stored?</summary>
-            <div class="ds-faq__answer">
-              The mapping between original and encapsulated values is stored entirely within the enterprise environment. It is never transmitted to external services.
+          <div class="ds-ac-card" onclick="toggleAcCard(this)">
+            <div class="ds-ac-card__header">
+              <span class="ds-ac-card__title">Where is the mapping data stored?</span>
+              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
             </div>
-          </details>
+            <div class="ds-ac-card__body">
+              <p>The mapping between original and encapsulated values is stored entirely within the enterprise environment. It is never transmitted to external services.</p>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -913,5 +934,10 @@
     </div>
   </footer>
 
+  <script>
+    function toggleAcCard(card) {
+      card.classList.toggle('ds-ac--open');
+    }
+  </script>
 </body>
 </html>
