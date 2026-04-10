@@ -190,6 +190,11 @@
       --ds-content-max-width:            1440px;
 
       /* Background Images */
+      --ds-bg-img-grad-deep: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png');
+      --ds-bg-img-grad-navy: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-navy-teal.png');
+      --ds-bg-img-grad-blue: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-blue-violet.png');
+      --ds-bg-img-grad-violet: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-violet-teal.png');
+      --ds-bg-img-wave-teal: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-wave-teal-blue.png');
       --ds-bg-img-paint-blue: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.png');
     }
 
@@ -372,13 +377,16 @@
 
     /* --- CTA Band --- */
     .ds-cta-band {
+
       width: 100%; position: relative; overflow: hidden;
       padding: 80px var(--ds-container-padding-mobile);
       text-align: center;
       background-color: var(--ds-color-neutral-800);
       background-size: cover; background-position: center;
     }
-    .ds-cta-band { background: var(--ds-gradient-brand); }
+    .ds-cta-band {
+ background-color: var(--ds-color-neutral-800);
+      background-size: cover; background-position: center; }
     .ds-cta-band::before {
       content: ''; position: absolute; inset: 0;
       background-color: var(--ds-overlay-dark-light); z-index: 0;
@@ -403,8 +411,10 @@
     .ds-cta-band__actions .ds-btn { background-color: var(--ds-overlay-nav-bg); color: var(--ds-color-text-primary); border: 1px solid var(--ds-overlay-cta-btn-bdr); backdrop-filter: blur(8px); }
     .ds-cta-band__actions .ds-btn:hover { background-color: var(--ds-color-white); }
     .ds-cta-band__footnote { font-size: var(--ds-text-xs); color: var(--ds-overlay-white-70); margin-top: var(--ds-space-xs); }
-    @media (min-width: 768px)  { .ds-cta-band { padding: 100px var(--ds-container-padding-tablet); } }
-    @media (min-width: 1440px) { .ds-cta-band { padding: 120px var(--ds-container-padding-desktop); max-width: 1440px; margin: 0 auto; } }
+    @media (min-width: 768px)  { .ds-cta-band {
+ padding: 100px var(--ds-container-padding-tablet); } }
+    @media (min-width: 1440px) { .ds-cta-band {
+ padding: 120px var(--ds-container-padding-desktop); max-width: 1440px; margin: 0 auto; } }
     @media (max-width: 767px) {
       .ds-cta-band__title { font-size: var(--ds-text-4xl); }
       .ds-cta-band__actions { flex-direction: column; align-items: center; }
@@ -576,6 +586,17 @@
     .ds-bullet__icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; }
     .ds-bullet--dot .ds-bullet__icon::before { content: "•"; color: var(--ds-color-brand-secondary); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-lg); line-height: 1; }
     .ds-bullet--check .ds-bullet__icon::before { content: "✓"; color: var(--ds-color-success); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-md); line-height: 1; }
+
+
+    /* --- CTA Background Image Classes --- */
+    .ds-cta-band.ds-bg--grad-deep   { background-image: var(--ds-bg-img-grad-deep); }
+    .ds-cta-band.ds-bg--grad-navy   { background-image: var(--ds-bg-img-grad-navy); }
+    .ds-cta-band.ds-bg--grad-blue   { background-image: var(--ds-bg-img-grad-blue); }
+    .ds-cta-band.ds-bg--grad-violet { background-image: var(--ds-bg-img-grad-violet); }
+    .ds-cta-band.ds-bg--paint-blue  { background-image: var(--ds-bg-img-paint-blue); }
+    .ds-cta-band.ds-bg--wave-teal   { background-image: var(--ds-bg-img-wave-teal); }
+    .ds-cta-band:not([class*="ds-bg--"]) { background: var(--ds-gradient-brand); }
+    @media (max-width: 767px) { .ds-cta-band[class*="ds-bg--"] { background-image: none; } }
 
   </style>
 </head>

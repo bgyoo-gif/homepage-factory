@@ -40,7 +40,11 @@
   --ds-gradient-arch-header: linear-gradient(115deg, #5670E8 0%, #5690D4 50%, #55B45D 100%);
 
   /* Neutral */
-  --ds-color-neutral-900: #0f0f0f;
+  --ds-bg-img-grad-navy: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-navy-teal.png');
+      --ds-bg-img-grad-violet: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-violet-teal.png');
+      --ds-bg-img-paint-blue: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.png');
+      --ds-bg-img-wave-teal: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-wave-teal-blue.png');
+      --ds-color-neutral-900: #0f0f0f;
   --ds-color-neutral-850: #141414;
   --ds-color-neutral-800: #171719;
   --ds-color-neutral-700: #303135;
@@ -518,6 +522,7 @@ h3, .ds-h3 { font-family: var(--ds-font-base); font-size: 18px; font-weight: var
 
 /* === CTA Band === */
 .ds-cta-band {
+
   width: 100%; position: relative; overflow: hidden;
   padding: 80px var(--ds-container-padding-mobile);
   text-align: center;
@@ -550,13 +555,16 @@ h3, .ds-h3 { font-family: var(--ds-font-base); font-size: 18px; font-weight: var
 .ds-cta-band__footnote { font-size: var(--ds-text-xs); color: rgba(255,255,255,0.6); font-family: var(--ds-font-code); letter-spacing: var(--ds-tracking-wide); }
 .ds-cta-band__footnote a { color: rgba(255,255,255,0.8); text-decoration: underline; }
 .ds-cta-band__footnote a:hover { color: var(--ds-color-white); }
-@media (min-width: 768px)  { .ds-cta-band { padding: 100px var(--ds-container-padding-tablet); } }
-@media (min-width: 1440px) { .ds-cta-band { padding: 120px var(--ds-container-padding-desktop); max-width: 1440px; margin: 0 auto; } .ds-cta-band__title { font-size: var(--ds-text-6xl); } }
+@media (min-width: 768px)  { .ds-cta-band {
+ padding: 100px var(--ds-container-padding-tablet); } }
+@media (min-width: 1440px) { .ds-cta-band {
+ padding: 120px var(--ds-container-padding-desktop); max-width: 1440px; margin: 0 auto; } .ds-cta-band__title { font-size: var(--ds-text-6xl); } }
 @media (max-width: 767px) {
   .ds-cta-band__title { font-size: var(--ds-text-4xl); }
   .ds-cta-band__actions { flex-direction: column; align-items: center; }
   .ds-cta-band__actions .ds-btn { width: 100%; max-width: 320px; }
-  .ds-cta-band { background-image: none; }
+  .ds-cta-band {
+ background-image: none; }
 }
 
 /* === Footer === */
