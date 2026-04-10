@@ -117,15 +117,25 @@ description: >
 
 ---
 
-## 인증 데이터 (Cert Grid 전용 — 이 목록만 사용)
+## 인증/수상 데이터 (Cert Grid 전용 — CUBIG 회사 레벨 공유)
 
-| 그룹 | 인증명 | 기관명 | 로고 파일 |
-|------|--------|--------|-----------|
-| ISO | ISO 27001 (ISMS) | International Organization for Standardization | cert-iso.png |
-| ISO | ISO 42001 (AIMS) | AI Management System | cert-iso.png |
-| GS | GS Certification | TTA Korea | cert-gs.png |
+CUBIG 회사 인증/수상을 LLM Capsule에서도 동일하게 사용한다.
 
-> **AWS Marketplace는 인증이 아니므로 cert grid에 넣지 않는다.** 플랫폼/에코시스템 항목은 별도 처리.
+| 그룹 | 인증/수상명 | 기관명 | 연도 | 로고 파일 |
+|------|------------|--------|------|-----------|
+| Certifications | Information Security Fast Track | KISA | 2024 | cert-kisa.png |
+| Certifications | GS Certification | TTA | 2025 | cert-gs.png |
+| Certifications | ISO/IEC 27001 (ISMS) | ISO | 2026 | cert-iso.png |
+| Certifications | ISO/IEC 42001 (AIMS) | ISO | 2026 | cert-iso.png |
+| Awards | Information Security Innovation Award | Ministry of Science & ICT | 2024 | awards-ministry-of-science-and-ict.jpg |
+| Awards | Startup World Cup — Finalist | Startup World Cup | 2025 | cert-startupworldcup.png |
+| Awards | Next Rise — Global Innovator | Next Rise | 2025 | — (이모지 🏆 대체) |
+| Awards | T Challenge 2026 — Finalist | Deutsche Telekom | 2026 | partner-deutsche-telekom.avif |
+| Awards | AI Medical Innovation Award | AI EXPO KOREA | 2025 | awards-koreaia.png |
+| Recognition | Emerging AI+X Top 100 | — | 2026 | — (이모지 🌟 대체) |
+| Recognition | Representative Vendor, Hyper-Synthetic Data | Gartner | 2025 | cert-gartner.svg.png |
+
+> **AWS Marketplace는 인증이 아니므로 cert grid에 넣지 않는다.**
 
 로고 경로: `cubig/reference/graphics/`
 월계수: `cubig/reference/graphics/cert-left.png`, `cubig/reference/graphics/cert-right.png`
