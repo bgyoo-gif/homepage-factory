@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Local Restoration vs Anonymization | LLM Capsule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset ─────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: #0f0f0f;
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    p, li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
+    h1, h2, h3, h4 { text-wrap: balance; }
+
+    /* ── Article container (860px) ──────────────────────────────────── */
+    .lrva-article-container {
+      width: 100%; max-width: 860px; margin: 0 auto;
+      padding: 0 16px;
+    }
+    @media (min-width: 768px)  { .lrva-article-container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .lrva-article-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .lrva-article-container { padding: 0; } }
+
+    /* ── Breadcrumb ─────────────────────────────────────────────────── */
+    .lrva-breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      flex-wrap: wrap; margin-bottom: 24px;
+    }
+    .lrva-breadcrumb__link { font-size: 14px; color: #5690D4; font-weight: 500; }
+    .lrva-breadcrumb__sep  { font-size: 14px; color: #9c9c9c; }
+    .lrva-breadcrumb__current { font-size: 14px; color: #9c9c9c; }
+
+    /* ── Hero ───────────────────────────────────────────────────────── */
+    .lrva-section--hero { padding: 100px 0 0; background-color: #ffffff; }
+    .lrva-article-hero__title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 28px; font-weight: 700; color: #0f0f0f;
+      line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 16px;
+    }
+    @media (min-width: 768px)  { .lrva-article-hero__title { font-size: 36px; } }
+    @media (min-width: 1024px) { .lrva-article-hero__title { font-size: 44px; } }
+    @media (min-width: 1440px) { .lrva-article-hero__title { font-size: 52px; } }
+    .lrva-article-hero__description { font-size: 18px; color: #636363; line-height: 1.7; }
+
+    /* ── Text utilities ─────────────────────────────────────────────── */
+    .lrva-text--product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+    .lrva-text--brand   { color: #5690D4; }
+
+    /* ── Article Body Section ───────────────────────────────────────── */
+    .lrva-section--article-body { padding: 32px 0; background-color: #ffffff; }
+    @media (min-width: 768px)  { .lrva-section--article-body { padding: 48px 0; } }
+    @media (min-width: 1440px) { .lrva-section--article-body { padding: 64px 0; } }
+
+    /* ── Article Section Header ─────────────────────────────────────── */
+    .lrva-article-section-header {
+      margin-bottom: 24px; padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9; text-align: center;
+    }
+    @media (max-width: 767px) { .lrva-article-section-header { text-align: left; } }
+    .lrva-article-section-header h2 {
+      font-size: 20px; font-weight: 700; color: #0f0f0f;
+      line-height: 1.2; letter-spacing: -0.5px;
+    }
+    @media (min-width: 768px)  { .lrva-article-section-header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .lrva-article-section-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .lrva-article-section-header h2 { font-size: 28px; } }
+
+    /* ── Article Body Paragraph ─────────────────────────────────────── */
+    .lrva-body-paragraph { font-size: 16px; color: #636363; line-height: 1.7; margin-bottom: 16px; }
+    .lrva-body-paragraph:last-child { margin-bottom: 0; }
+
+    /* ── Banner ─────────────────────────────────────────────────────── */
+    .lrva-banner {
+      padding: 24px 32px; border-radius: 18px;
+      border-top: 1px solid #e6e7e9; border-bottom: 1px solid #e6e7e9;
+      background-color: rgba(24, 33, 232, 0.06);
+      font-size: 16px; line-height: 1.7;
+      margin-top: 24px;
+    }
+    .lrva-banner p { font-size: 16px; color: #0f0f0f; line-height: 1.7; margin: 0; }
+
+    /* ── Bullet List ────────────────────────────────────────────────── */
+    .lrva-bullet { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+    .lrva-bullet__item {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 16px; line-height: 1.5; color: #0f0f0f;
+    }
+    .lrva-bullet__icon {
+      width: 20px; height: 20px; flex-shrink: 0;
+      margin-top: 2px; display: flex; align-items: center; justify-content: center;
+    }
+    .lrva-bullet--dot .lrva-bullet__icon::before {
+      content: "•"; color: #5690D4; font-weight: 700; font-size: 18px; line-height: 1;
+    }
+
+    /* ── Table ──────────────────────────────────────────────────────── */
+    .lrva-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0; }
+    .lrva-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .lrva-table thead { background-color: #f7f7f7; }
+    .lrva-table th {
+      padding: 14px 16px; text-align: left;
+      font-weight: 600; font-size: 12px; color: #0f0f0f;
+      border-bottom: 2px solid #e6e7e9;
+    }
+    .lrva-table th.lrva-table__th--highlight {
+      background-color: rgba(24, 33, 232, 0.04);
+      color: #1821E8;
+    }
+    .lrva-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e6e7e9;
+      color: #636363; vertical-align: top;
+    }
+    .lrva-table td.lrva-table__td--highlight {
+      background-color: rgba(24, 33, 232, 0.04);
+      color: #1821E8; font-weight: 500;
+    }
+    @media (max-width: 767px) {
+      .lrva-table th, .lrva-table td { padding: 10px 12px; font-size: 12px; }
+    }
+
+    /* ── Card ───────────────────────────────────────────────────────── */
+    .lrva-card {
+      background-color: #ffffff; border-radius: 18px;
+      border: 1px solid #e6e7e9; padding: 24px;
+      box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    @media (min-width: 1440px) { .lrva-card { padding: 32px; } }
+    .lrva-card h4 { font-size: 16px; font-weight: 600; color: #0f0f0f; line-height: 1.2; }
+    .lrva-card p  { font-size: 16px; color: #636363; line-height: 1.7; }
+
+    /* ── Accordion ──────────────────────────────────────────────────── */
+    .lrva-ac-list { display: flex; flex-direction: column; gap: 2px; }
+    .lrva-ac-card {
+      border: 1px solid #e6e7e9; border-radius: 8px;
+      background-color: #ffffff; overflow: hidden;
+    }
+    .lrva-ac-card__header {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 24px; cursor: pointer; user-select: none;
+    }
+    .lrva-ac-card__title { font-size: 18px; font-weight: 500; line-height: 1.2; color: #0f0f0f; }
+    .lrva-ac-card__toggle {
+      width: 28px; height: 28px; border-radius: 6px;
+      border: 0.5px solid #e6e7e9; background-color: #f7f7f7;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .lrva-ac-toggle-icon { width: 12px; height: 12px; position: relative; flex-shrink: 0; }
+    .lrva-ac-toggle-icon::before, .lrva-ac-toggle-icon::after {
+      content: ''; position: absolute; background-color: #9c9c9c; border-radius: 1px;
+    }
+    .lrva-ac-toggle-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .lrva-ac-toggle-icon::after  { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: opacity 0.2s; }
+    .lrva-ac-card__body {
+      display: none; padding: 0 24px 24px;
+      border-top: 1px solid #e6e7e9;
+      background-color: #f7f7f7;
+      font-size: 14px; color: #636363; line-height: 1.7;
+    }
+    .lrva-ac-card__body p { padding-top: 16px; }
+    .lrva-ac-card__body p + p { margin-top: 12px; }
+    .lrva-ac-card.ds-ac--open .lrva-ac-card__body { display: block; }
+    .lrva-ac-card.ds-ac--open .lrva-ac-toggle-icon::after { opacity: 0; }
+
+    /* ── Dark Card ──────────────────────────────────────────────────── */
+    .lrva-card--dark {
+      background-color: #141414; border: 1px solid #303135; color: #ffffff;
+      border-radius: 18px; padding: 24px;
+      box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
+      display: flex; align-items: center; gap: 16px;
+      transition: background-color 0.2s; text-decoration: none;
+    }
+    .lrva-card--dark:hover { background-color: #171719; }
+    .lrva-card--dark__icon { flex-shrink: 0; color: #5690D4; }
+    .lrva-card--dark__title { font-size: 16px; font-weight: 600; color: #ffffff; }
+
+    /* ── Card Grid ──────────────────────────────────────────────────── */
+    .lrva-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px) { .lrva-card-grid--2col { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ── Icon ───────────────────────────────────────────────────────── */
+    .lrva-icon {
+      width: 24px; height: 24px; stroke: currentColor; fill: none;
+      stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    /* ── Section Title Icon ─────────────────────────────────────────── */
+    .lrva-section-title-icon { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .lrva-section-title-icon__icon { color: #5690D4; flex-shrink: 0; }
+    .lrva-section-title-icon__text {
+      font-family: "DM Sans", sans-serif; font-size: 20px;
+      font-weight: 600; color: #0f0f0f; line-height: 1.2;
+    }
+
+    /* ── Button ─────────────────────────────────────────────────────── */
+    .lrva-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border-radius: 9999px; font-family: "DM Sans", sans-serif;
+      font-weight: 500; cursor: pointer; border: none;
+      transition: opacity 0.2s, background-color 0.2s;
+      white-space: nowrap; text-decoration: none;
+    }
+    .lrva-btn--lg { padding: 16px 48px; font-size: 18px; }
+
+    /* ── CTA Band ───────────────────────────────────────────────────── */
+    .lrva-cta-band {
+      width: 100%; position: relative; overflow: hidden;
+      padding: 80px 16px; text-align: center;
+      background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+    }
+    .lrva-cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: rgba(0,0,0,0.15); z-index: 0;
+    }
+    .lrva-cta-band > * { position: relative; z-index: 1; }
+    .lrva-cta-band__inner {
+      max-width: 100%; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: 24px;
+    }
+    @media (min-width: 768px)  { .lrva-cta-band { padding: 100px 32px; } }
+    @media (min-width: 1024px) { .lrva-cta-band__inner { max-width: 720px; } }
+    @media (min-width: 1440px) {
+      .lrva-cta-band { padding: 120px 120px; max-width: 1440px; margin: 0 auto; }
+      .lrva-cta-band__inner { max-width: 860px; }
+    }
+    .lrva-cta-band__title {
+      font-family: "DM Sans", sans-serif; font-size: 40px; font-weight: 700;
+      color: #ffffff; line-height: 1.2; letter-spacing: -0.5px; margin: 0;
+    }
+    @media (max-width: 767px) { .lrva-cta-band__title { font-size: 36px; } }
+    @media (min-width: 1440px) { .lrva-cta-band__title { font-size: 50px; } }
+    .lrva-cta-band__description { font-size: 18px; color: rgba(255,255,255,0.85); line-height: 1.7; margin: 0; }
+    .lrva-cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .lrva-cta-band__actions .lrva-btn {
+      background-color: rgba(255,255,255,0.92);
+      color: #0f0f0f; border: 1px solid rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+    }
+    .lrva-cta-band__actions .lrva-btn:hover { background-color: #ffffff; }
+    .lrva-cta-band__footnote {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 8px;
+    }
+    .lrva-cta-band__footnote a { font-size: 14px; color: rgba(255,255,255,0.7); }
+    .lrva-cta-band__footnote a:hover { color: #ffffff; }
+  </style>
+</head>
+<body>
+<main>
+
+  <!-- ── Section 1: Hero ──────────────────────────────────────────── -->
+  <section id="section-hero" class="lrva-section--hero">
+    <div class="lrva-article-container">
+      <nav class="lrva-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html" class="lrva-breadcrumb__link">Home</a>
+        <span class="lrva-breadcrumb__sep">/</span>
+        <a href="resources.html" class="lrva-breadcrumb__link">Resources</a>
+        <span class="lrva-breadcrumb__sep">/</span>
+        <a href="comparison.html" class="lrva-breadcrumb__link">Comparison</a>
+        <span class="lrva-breadcrumb__sep">/</span>
+        <span class="lrva-breadcrumb__current">Local Restoration vs Anonymization</span>
+      </nav>
+      <h1 class="lrva-article-hero__title">Local Restoration vs Anonymization</h1>
+      <p class="lrva-article-hero__description">
+        Compare local restoration (restoration) with anonymization for enterprise AI. Anonymization is permanent; local restoration restores real enterprise data in AI outputs automatically.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Section 2: Overview ──────────────────────────────────────── -->
+  <section id="section-2" class="lrva-section--article-body">
+    <div class="lrva-article-container">
+      <div class="lrva-article-section-header">
+        <h2>Overview</h2>
+      </div>
+      <p class="lrva-body-paragraph">
+        Anonymization and local restoration represent opposite approaches to data protection in AI workflows. Anonymization permanently removes identifying information. Local restoration temporarily protects data and restores it after AI processing — producing enterprise-ready outputs with real data.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Section 3: How Anonymization Works ───────────────────────── -->
+  <section id="section-3" class="lrva-section--article-body">
+    <div class="lrva-article-container">
+      <div class="lrva-article-section-header">
+        <h2>How Anonymization Works</h2>
+      </div>
+      <p class="lrva-body-paragraph">
+        Anonymization techniques — k-anonymity, differential privacy, generalization, suppression — transform data so that individual records cannot be re-identified. The transformation is designed to be irreversible. Anonymized data is considered non-personal under most regulatory frameworks.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Section 4: Limitations ───────────────────────────────────── -->
+  <section id="section-4" class="lrva-section--article-body">
+    <div class="lrva-article-container">
+      <div class="lrva-article-section-header">
+        <h2>Limitations</h2>
+      </div>
+      <ul class="lrva-bullet lrva-bullet--dot">
+        <li class="lrva-bullet__item">
+          <span class="lrva-bullet__icon"></span>
+          <span><strong>Irreversibility.</strong> Anonymization is permanent by design. Once data is anonymized, there is no automated path to recover original values. AI outputs based on anonymized data remain anonymous — they cannot reference real individuals, real accounts, or real events.</span>
+        </li>
+        <li class="lrva-bullet__item">
+          <span class="lrva-bullet__icon"></span>
+          <span><strong>Information loss.</strong> Generalization replaces specific values with ranges ("age 35" → "30-40"). Suppression removes values entirely. Both reduce AI's ability to produce precise, actionable outputs.</span>
+        </li>
+        <li class="lrva-bullet__item">
+          <span class="lrva-bullet__icon"></span>
+          <span><strong>Not designed for document intelligence.</strong> Anonymization techniques were developed for structured databases, not unstructured enterprise documents. Applying anonymization to contracts, reports, and correspondence produces severely degraded content.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Section 5: How LLM Capsule Differs ──────────────────────── -->
+  <section id="section-5" class="lrva-section--article-body">
+    <div class="lrva-article-container">
+      <div class="lrva-article-section-header">
+        <h2>How <span class="lrva-text--product">LLM Capsule</span> Differs</h2>
+      </div>
+      <p class="lrva-body-paragraph">
+        Local restoration (restoration) is the process of restoring AI outputs to their full enterprise context using locally stored mappings. Data is encapsulated (not anonymized) before AI processing — sensitive values are replaced with reversible, structure-preserving representations. After AI processing, the original values are restored automatically.
+      </p>
+      <div class="lrva-banner">
+        <p><strong>AI results are restored locally.</strong> <span class="lrva-text--product">LLM Capsule</span> enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 6: Comparison Table ─────────────────────────────── -->
+  <section id="section-6" class="lrva-section--article-body">
+    <div class="lrva-article-container">
+      <div class="lrva-article-section-header">
+        <h2>Comparison</h2>
+      </div>
+      <div class="lrva-table-wrap">
+        <table class="lrva-table">
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th>Anonymization</th>
+              <th class="lrva-table__th--highlight"><span class="lrva-text--product">LLM Capsule</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reversibility</td>
+              <td>Irreversible</td>
+              <td class="lrva-table__td--highlight">Fully reversible</td>
+            </tr>
+            <tr>
+              <td>Output usability</td>
+              <td>Anonymous, non-actionable</td>
+              <td class="lrva-table__td--highlight">Enterprise-ready, actionable</td>
+            </tr>
+            <tr>
+              <td>Information loss</td>
+              <td>Significant</td>
+              <td class="lrva-table__td--highlight">None (structure preserved)</td>
+            </tr>
+            <tr>
+              <td>Document support</td>
+              <td>Structured data only</td>
+              <td class="lrva-table__td--highlight">All document types</td>
+            </tr>
+            <tr>
+              <td>Post-processing required</td>
+              <td>Extensive manual work</td>
+              <td class="lrva-table__td--highlight">Automatic restoration</td>
+            </tr>
+            <tr>
+              <td>Enterprise workflow fit</td>
+              <td>Analytics / research only</td>
+              <td class="lrva-table__td--highlight">Full production workflows</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 7: Enterprise Workflow Example ───────────────────── -->
+  <section id="section-7" class="lrva-section--article-body">
+    <div class="lrva-article-container">
+      <div class="lrva-article-section-header">
+        <h2>Enterprise Workflow Example</h2>
+      </div>
+      <div class="lrva-card">
+        <h4>Patient Discharge Summaries</h4>
+        <p>A hospital needs AI to generate discharge summaries from patient records. Anonymized records remove patient identifiers — but discharge summaries must reference real patient names, medications, and attending physicians to be clinically useful.</p>
+        <p><span class="lrva-text--product">LLM Capsule</span> encapsulates patient records, AI generates structured summaries, and local restoration restores all patient identifiers into the discharge documents. The summaries are clinically ready without any manual re-identification.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 8: FAQ ───────────────────────────────────────────── -->
+  <section id="section-8" class="lrva-section--article-body">
+    <div class="lrva-article-container">
+      <div class="lrva-article-section-header">
+        <h2>FAQ</h2>
+      </div>
+      <div class="lrva-ac-list">
+        <div class="lrva-ac-card ds-ac--open" onclick="this.classList.toggle('ds-ac--open')">
+          <div class="lrva-ac-card__header">
+            <span class="lrva-ac-card__title">What is the difference between anonymization and restoration?</span>
+            <span class="lrva-ac-card__toggle"><span class="lrva-ac-toggle-icon"></span></span>
+          </div>
+          <div class="lrva-ac-card__body">
+            <p>Anonymization permanently removes identifying data. Local restoration (restoration) temporarily protects data through reversible encapsulation and automatically restores original values in AI outputs.</p>
+          </div>
+        </div>
+        <div class="lrva-ac-card" onclick="this.classList.toggle('ds-ac--open')">
+          <div class="lrva-ac-card__header">
+            <span class="lrva-ac-card__title">When should I use anonymization vs local restoration?</span>
+            <span class="lrva-ac-card__toggle"><span class="lrva-ac-toggle-icon"></span></span>
+          </div>
+          <div class="lrva-ac-card__body">
+            <p>Use anonymization for research datasets and analytics where individual identity is not needed. Use local restoration (<span class="lrva-text--product">LLM Capsule</span>) for production AI workflows where outputs must reference real enterprise data.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 9: Related Pages ─────────────────────────────────── -->
+  <section id="section-9" class="lrva-section--article-body">
+    <div class="lrva-article-container">
+      <div class="lrva-section-title-icon">
+        <span class="lrva-section-title-icon__icon">
+          <svg class="lrva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+        </span>
+        <span class="lrva-section-title-icon__text">Related</span>
+      </div>
+      <div class="lrva-card-grid lrva-card-grid--2col">
+        <a href="product.html" class="lrva-card--dark">
+          <span class="lrva-card--dark__icon">
+            <svg class="lrva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            </svg>
+          </span>
+          <span class="lrva-card--dark__title">Product Overview</span>
+        </a>
+        <a href="architecture.html" class="lrva-card--dark">
+          <span class="lrva-card--dark__icon">
+            <svg class="lrva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </span>
+          <span class="lrva-card--dark__title">Architecture</span>
+        </a>
+        <a href="trust.html" class="lrva-card--dark">
+          <span class="lrva-card--dark__icon">
+            <svg class="lrva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </span>
+          <span class="lrva-card--dark__title">Trust &amp; Compliance</span>
+        </a>
+        <a href="request-pov.html" class="lrva-card--dark">
+          <span class="lrva-card--dark__icon">
+            <svg class="lrva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+          <span class="lrva-card--dark__title">Request a Demo</span>
+        </a>
+        <a href="learn.html" class="lrva-card--dark">
+          <span class="lrva-card--dark__icon">
+            <svg class="lrva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </span>
+          <span class="lrva-card--dark__title">Learn Hub</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 10: CTA Band ──────────────────────────────────────── -->
+  <section id="section-cta" class="lrva-cta-band">
+    <div class="lrva-cta-band__inner">
+      <h2 class="lrva-cta-band__title">See how <span class="lrva-text--product">LLM Capsule</span> works with your data</h2>
+      <p class="lrva-cta-band__description">Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</p>
+      <div class="lrva-cta-band__actions">
+        <a href="request-pov.html" class="lrva-btn lrva-btn--lg">Request a Demo</a>
+        <a href="architecture.html" class="lrva-btn lrva-btn--lg">Talk to an Architect</a>
+      </div>
+      <div class="lrva-cta-band__footnote">
+        <a href="downloads.html">Download Architecture Brief</a>
+        <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener">AWS Marketplace</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
