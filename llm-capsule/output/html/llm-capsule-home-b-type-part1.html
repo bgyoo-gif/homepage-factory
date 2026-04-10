@@ -34,7 +34,6 @@
       font-family: var(--ds-font-base);
       color: var(--ds-color-text-primary);
       background-color: var(--ds-color-surface-white);
-      padding-top: 58px;
       word-break: keep-all;
       overflow-wrap: break-word;
       word-wrap: break-word;
@@ -295,24 +294,6 @@
     }
 
     /* --- Navigation --- */
-    .ds-nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      height: 58px;
-      display: flex; align-items: center;
-      background-color: rgba(255,255,255,0.92);
-      backdrop-filter: blur(20px);
-      border-bottom: var(--ds-border-default);
-      padding: 0 var(--ds-container-padding-mobile);
-    }
-    @media (min-width: 1440px) { .ds-nav { padding: 0 var(--ds-container-padding-desktop); } }
-    .ds-nav__inner { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .ds-nav__logo { font-family: var(--ds-font-base); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-lg); color: var(--ds-color-text-primary); display: flex; align-items: center; gap: var(--ds-space-xs); }
-    .ds-nav__logo img { height: 28px; width: auto; object-fit: contain; }
-    .ds-nav__links { display: flex; align-items: center; gap: 32px; list-style: none; padding: 0; margin: 0; }
-    @media (max-width: 767px) { .ds-nav__links { display: none; } }
-    .ds-nav__link { font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary); transition: color 0.15s; }
-    .ds-nav__link:hover { color: var(--ds-color-text-primary); }
-    .ds-nav__actions { display: flex; align-items: center; gap: var(--ds-space-sm); }
 
     /* --- Section Header --- */
     .ds-section-header { margin-bottom: var(--ds-space-2xl); text-align: center; }
@@ -742,27 +723,7 @@
   </style>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav class="ds-nav" role="navigation" aria-label="Main navigation">
-    <div class="ds-nav__inner">
-      <a href="/" class="ds-nav__logo" aria-label="LLM Capsule Home">
-        <img src="llm-capsule/reference/images/logo-llmcapsule.avif" alt="LLM Capsule" width="120" height="28">
-      </a>
-      <ul class="ds-nav__links" role="list">
-        <li><a href="#section-2" class="ds-nav__link">Why LLM Capsule</a></li>
-        <li><a href="#section-3" class="ds-nav__link">Capabilities</a></li>
-        <li><a href="#section-4" class="ds-nav__link">Industries</a></li>
-        <li><a href="#section-6" class="ds-nav__link">Use Cases</a></li>
-        <li><a href="#section-12" class="ds-nav__link">FAQ</a></li>
-      </ul>
-      <div class="ds-nav__actions">
-        <a href="request-pov.html" class="ds-btn ds-btn--primary ds-btn--sm">Request a Demo</a>
-      </div>
-    </div>
-  </nav>
-
-  <main>
+<main>
 
     <!-- ============================================================
          Section 1: Hero
@@ -1234,8 +1195,6 @@
     <!-- Section 10: Proof / Performance KPI -->
     <!-- Section 11: Final CTA -->
     <!-- Section 12: FAQ -->
-    <!-- Footer -->
-
   </main>
 
   <script>
