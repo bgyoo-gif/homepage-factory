@@ -899,12 +899,12 @@ code, .ds-code-inline {
       <span class="v-brand-switch__arrow">▾</span>
     </button>
     <div class="v-brand-switch__menu" id="brand-menu">
-      <div class="v-brand-switch__option v-brand-switch__option--active" data-brand="cubig" onclick="switchBrand('cubig')">
+      <div class="v-brand-switch__option v-brand-switch__option--active" data-brand="cubig" onclick="event.stopPropagation(); switchBrand('cubig')">
         <span class="v-brand-switch__option-dot" style="background:#3061f2"></span>
         CUBIG
         <span class="v-brand-switch__option-check" id="check-cubig">✓</span>
       </div>
-      <div class="v-brand-switch__option" data-brand="llm-capsule" onclick="switchBrand('llm-capsule')">
+      <div class="v-brand-switch__option" data-brand="llm-capsule" onclick="event.stopPropagation(); switchBrand('llm-capsule')">
         <span class="v-brand-switch__option-dot" style="background:#1821E8"></span>
         LLM Capsule
         <span class="v-brand-switch__option-check" id="check-llm-capsule" style="display:none">✓</span>
@@ -2867,6 +2867,7 @@ document.addEventListener('click', function(e) {
 });
 
 function switchBrand(brandKey) {
+  console.log('[switchBrand] switching to:', brandKey);
   if (brandKey === currentBrand) {
     document.getElementById('brand-menu').classList.remove('v-brand-switch__menu--open');
     return;
@@ -2874,6 +2875,7 @@ function switchBrand(brandKey) {
   currentBrand = brandKey;
   localStorage.setItem('ds-viewer-brand', brandKey);
   var brand = BRANDS[brandKey];
+  if (!brand) { console.error('[switchBrand] brand not found:', brandKey); return; }
 
   // 1. Swap CSS variables
   Object.keys(brand.tokens).forEach(function(k) {
