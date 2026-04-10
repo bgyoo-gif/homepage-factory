@@ -93,8 +93,6 @@ interface Props {
   ctaFootnote?: string
 
   // Footer
-  footerCopyright?: string
-  footerTagline?: string
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────────
@@ -119,8 +117,6 @@ export default function Restoration({
   ctaBtn2Href = "product.html",
   ctaFootnote = "Enterprise AI Enablement by CUBIG",
 
-  footerCopyright = "© 2025 LLM Capsule by CUBIG. All rights reserved.",
-  footerTagline = "Enterprise AI Enablement",
 }: Props) {
   return (
     <>
@@ -155,34 +151,6 @@ export default function Restoration({
 
         /* ── Container Query wrapper ─────────────────────────────── */
         .rst-inner { width: 100%; container-type: inline-size; }
-
-        /* ── Nav ─────────────────────────────────────────────────── */
-        .rst-nav {
-          position: sticky; top: 0; z-index: 100;
-          height: 58px; display: flex; align-items: center;
-          background-color: rgba(255,255,255,0.92);
-          backdrop-filter: blur(20px);
-          border-bottom: 1px solid ${P.borderDefault};
-          padding: 0 16px;
-        }
-        @container (min-width: 1440px) { .rst-nav { padding: 0 120px; } }
-        .rst-nav__inner {
-          width: 100%; display: flex; align-items: center;
-          justify-content: space-between; gap: 24px;
-        }
-        .rst-nav__logo {
-          display: flex; align-items: center; gap: 8px;
-          font-family: "Oxanium", sans-serif; font-weight: 700;
-          font-size: 18px; color: ${P.brandPrimary};
-        }
-        .rst-nav__logo img { height: 28px; width: auto; }
-        .rst-nav__links { display: none; list-style: none; }
-        @container (min-width: 768px) {
-          .rst-nav__links { display: flex; align-items: center; gap: 32px; }
-        }
-        .rst-nav__link { font-size: 14px; color: ${P.textSecondary}; transition: color 0.15s; }
-        .rst-nav__link:hover { color: ${P.textPrimary}; }
-        .rst-nav__actions { display: flex; align-items: center; gap: 12px; }
 
         /* ── Buttons ─────────────────────────────────────────────── */
         .rst-btn {
@@ -434,95 +402,16 @@ export default function Restoration({
         }
 
         /* ── Footer ──────────────────────────────────────────────── */
-        .rst-footer {
-          padding: 56px 0 32px;
-          border-top: 1px solid ${P.borderDefault};
-          background-color: ${P.surfaceWhite};
-        }
         .rst-container {
           width: 100%; margin: 0 auto; padding: 0 16px;
         }
         @container (min-width: 768px)  { .rst-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .rst-container { padding: 0 32px; } }
         @container (min-width: 1440px) { .rst-container { padding: 0 120px; max-width: 1440px; } }
-        .rst-footer__grid {
-          display: grid; grid-template-columns: 1fr;
-          gap: 24px; margin-bottom: 40px;
-        }
-        @container (min-width: 768px) {
-          .rst-footer__grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-        }
-        @container (min-width: 1024px) {
-          .rst-footer__grid { grid-template-columns: 2fr repeat(4, 1fr); }
-        }
-        .rst-footer__brand {
-          font-family: "Oxanium", sans-serif;
-          font-weight: 700; font-size: 18px;
-          color: ${P.brandPrimary};
-        }
-        .rst-footer__brand-desc {
-          font-family: "DM Sans", sans-serif;
-          font-size: 14px; color: ${P.textTertiary};
-          margin-top: 10px; line-height: 1.7;
-          font-weight: 400; max-width: 260px;
-        }
-        .rst-footer__col h4 {
-          font-size: 11px; font-weight: 600;
-          color: ${P.textTertiary}; text-transform: uppercase;
-          letter-spacing: 0.08em; margin-bottom: 14px;
-        }
-        .rst-footer__col ul { list-style: none; }
-        .rst-footer__col li { margin-bottom: 8px; }
-        .rst-footer__col a {
-          font-size: 14px; color: ${P.textSecondary}; transition: color 0.2s;
-        }
-        .rst-footer__col a:hover { color: ${P.textPrimary}; }
-        .rst-footer__bottom {
-          padding-top: 20px;
-          border-top: 1px solid ${P.borderDefault};
-          display: flex; justify-content: space-between; align-items: center;
-          font-size: 12px; color: ${P.textTertiary};
-          flex-wrap: wrap; gap: 8px;
-        }
       `}</style>
 
       <div className="rst-root">
         <div className="rst-inner">
-
-          {/* ── Navigation ──────────────────────────────────────────────── */}
-          <nav className="rst-nav" role="navigation" aria-label="Main navigation">
-            <div className="rst-nav__inner">
-              <a href="index.html" className="rst-nav__logo">
-                <img
-                  src={`${LOGO_BASE}/logo-llmcapsule.avif`}
-                  alt="LLM Capsule"
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = "none" }}
-                />
-                <span>LLM Capsule</span>
-              </a>
-              <ul className="rst-nav__links" role="list">
-                <li><a href="product.html" className="rst-nav__link">Product</a></li>
-                <li><a href="architecture.html" className="rst-nav__link">Architecture</a></li>
-                <li><a href="solutions.html" className="rst-nav__link">Solutions</a></li>
-                <li><a href="trust.html" className="rst-nav__link">Trust</a></li>
-                <li><a href="pricing.html" className="rst-nav__link">Pricing</a></li>
-                <li><a href="resources.html" className="rst-nav__link">Resources</a></li>
-              </ul>
-              <div className="rst-nav__actions">
-                <a
-                  href="https://aws.amazon.com/marketplace"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rst-btn rst-btn--secondary rst-btn--sm"
-                >
-                  AWS Marketplace
-                </a>
-                <a href="request-pov.html" className="rst-btn rst-btn--primary rst-btn--sm">
-                  Request a Demo
-                </a>
-              </div>
-            </div>
-          </nav>
 
           <main>
 
@@ -702,57 +591,6 @@ export default function Restoration({
 
           </main>
 
-          {/* ── Footer ────────────────────────────────────────────────────── */}
-          <footer className="rst-footer">
-            <div className="rst-container">
-              <div className="rst-footer__grid">
-                <div>
-                  <div className="rst-footer__brand">LLM Capsule</div>
-                  <p className="rst-footer__brand-desc">Enterprise AI enablement by CUBIG. Enable AI. Protect data. Restore results.</p>
-                </div>
-                <div className="rst-footer__col">
-                  <h4>Product</h4>
-                  <ul>
-                    <li><a href="product.html">Product</a></li>
-                    <li><a href="architecture.html">Architecture</a></li>
-                    <li><a href="trust.html">Trust</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener noreferrer">AWS Marketplace</a></li>
-                  </ul>
-                </div>
-                <div className="rst-footer__col">
-                  <h4>Solutions</h4>
-                  <ul>
-                    <li><a href="solutions.html">All Solutions</a></li>
-                  </ul>
-                </div>
-                <div className="rst-footer__col">
-                  <h4>Resources</h4>
-                  <ul>
-                    <li><a href="resources.html">Resources Hub</a></li>
-                    <li><a href="learn.html">Learn</a></li>
-                    <li><a href="glossary.html">Glossary</a></li>
-                    <li><a href="downloads.html">Downloads</a></li>
-                    <li><a href="trust-center.html">Trust Center</a></li>
-                  </ul>
-                </div>
-                <div className="rst-footer__col">
-                  <h4>Company</h4>
-                  <ul>
-                    <li><a href="request-pov.html">Request a Demo</a></li>
-                    <li><a href="https://cubig.ai" target="_blank" rel="noopener noreferrer">CUBIG</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Terms</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div className="rst-footer__bottom">
-                <span>{footerCopyright}</span>
-                <span>{footerTagline}</span>
-              </div>
-            </div>
-          </footer>
-
         </div>
       </div>
     </>
@@ -843,15 +681,5 @@ addPropertyControls(Restoration, {
     type: ControlType.String,
     title: "CTA Footnote",
     defaultValue: "Enterprise AI Enablement by CUBIG",
-  },
-  footerCopyright: {
-    type: ControlType.String,
-    title: "Footer Copyright",
-    defaultValue: "© 2025 LLM Capsule by CUBIG. All rights reserved.",
-  },
-  footerTagline: {
-    type: ControlType.String,
-    title: "Footer Tagline",
-    defaultValue: "Enterprise AI Enablement",
   },
 })
