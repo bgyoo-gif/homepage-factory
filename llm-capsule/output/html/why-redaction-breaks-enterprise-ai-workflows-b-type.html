@@ -634,15 +634,11 @@
         <div class="ds-article-section-header">
           <h2>Problem</h2>
         </div>
-        <p class="ds-article-body__paragraph">
-          Enterprise teams adopt PII protection tools — redaction engines, masking utilities, tokenization layers — to protect sensitive data before AI processing. These tools were designed for compliance reporting and static data anonymization. They were never designed for AI workflows.
-        </p>
-        <p class="ds-article-body__paragraph">
-          When a redaction tool removes a customer name from a contract, the AI model receives "[REDACTED]" in its place. The model cannot determine who the contract party is, which clauses reference that party, or how to structure outputs around the original entity relationships. The result is abstracted, generic AI output that requires extensive manual reconstruction before it can be used in any enterprise process.
-        </p>
-        <p class="ds-article-body__paragraph">
-          This is the fundamental flaw: <strong>redaction protects data by destroying it. Enterprise AI requires data that is protected and preserved simultaneously.</strong> Any approach to enterprise AI data privacy and AI data pipeline protection must solve this without sacrificing AI output quality.
-        </p>
+        <ul class="ds-bullet ds-bullet--dot">
+          <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span><strong>Enterprise teams adopt PII protection tools.</strong> Redaction engines, masking utilities, tokenization layers — to protect sensitive data before AI processing. These tools were designed for compliance reporting and static data anonymization. They were never designed for AI workflows.</span></li>
+          <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span><strong>When a redaction tool removes a customer name from a contract, the AI model receives "[REDACTED]" in its place.</strong> The model cannot determine who the contract party is, which clauses reference that party, or how to structure outputs around the original entity relationships. The result is abstracted, generic AI output that requires extensive manual reconstruction before it can be used in any enterprise process.</span></li>
+          <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span><strong>Redaction protects data by destroying it.</strong> Enterprise AI requires data that is protected and preserved simultaneously. Any approach to enterprise AI data privacy and AI data pipeline protection must solve this without sacrificing AI output quality.</span></li>
+        </ul>
       </div>
     </section>
 
@@ -783,9 +779,11 @@
         </div>
         <div class="ds-card">
           <h4 class="ds-card__title">Legal Contract Review</h4>
-          <p>A law firm needs AI to review 200 acquisition agreements and extract key terms — parties, obligations, termination clauses, governing law. Each agreement contains names of real companies, executives, and financial figures.</p>
-          <p><strong>With redaction:</strong> Party names become "[REDACTED]," making it impossible to distinguish acquirer from target. Financial terms become "[AMOUNT]," preventing comparison across agreements. The AI produces generic extraction that requires 200 rounds of manual restoration.</p>
-          <p><strong>With <span class="ds-text--product">LLM Capsule</span>:</strong> Sensitive elements are encapsulated locally with structure-preserving processing. AI processes the protected documents and produces structured extractions. Local restoration restores all real party names, amounts, and clause references. The extraction output is directly usable in the firm's deal management system.</p>
+          <ul class="ds-bullet ds-bullet--dot">
+            <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span><strong>A law firm needs AI to review 200 acquisition agreements.</strong> Extract key terms — parties, obligations, termination clauses, governing law. Each agreement contains names of real companies, executives, and financial figures.</span></li>
+            <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span><strong>With redaction:</strong> Party names become "[REDACTED]," making it impossible to distinguish acquirer from target. Financial terms become "[AMOUNT]," preventing comparison across agreements. The AI produces generic extraction that requires 200 rounds of manual restoration.</span></li>
+            <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span><strong>With <span class="ds-text--product">LLM Capsule</span>:</strong> Sensitive elements are encapsulated locally with structure-preserving processing. AI processes the protected documents and produces structured extractions. Local restoration restores all real party names, amounts, and clause references. The extraction output is directly usable in the firm's deal management system.</span></li>
+          </ul>
         </div>
       </div>
     </section>
