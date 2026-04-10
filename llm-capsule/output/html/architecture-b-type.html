@@ -233,12 +233,12 @@ h3, .ds-h3 { font-family: var(--ds-font-base); font-size: 18px; font-weight: var
 /* === Hero === */
 .ds-hero { padding: 0; display: grid; grid-template-columns: 1fr; gap: var(--ds-space-lg); align-items: center; }
 .ds-hero--text-only { max-width: 860px; }
-.ds-hero__title { font-family: var(--ds-font-base); font-size: var(--ds-text-7xl); font-weight: var(--ds-weight-bold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); letter-spacing: -2px; margin-bottom: var(--ds-space-sm); }
+.ds-hero__title { font-family: var(--ds-font-base); font-size: var(--ds-text-7xl); font-weight: var(--ds-weight-bold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); letter-spacing: var(--ds-tracking-tight); margin-bottom: var(--ds-space-sm); }
 .ds-hero__description { font-size: var(--ds-text-lg); color: var(--ds-color-text-secondary); line-height: var(--ds-leading-relaxed); max-width: 100%; margin-bottom: var(--ds-space-xl); word-break: keep-all; overflow-wrap: break-word; }
 @media (min-width: 1024px) { .ds-hero__description { max-width: 720px; } }
 @media (min-width: 1440px) { .ds-hero__description { max-width: 860px; } }
 @media (max-width: 767px) {
-  .ds-hero__title { font-size: var(--ds-text-5xl); letter-spacing: -1px; }
+  .ds-hero__title { font-size: var(--ds-text-5xl); letter-spacing: var(--ds-tracking-tight); }
 }
 
 /* === Section Header === */
