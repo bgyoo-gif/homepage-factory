@@ -363,17 +363,30 @@
     @media (min-width: 1440px) { .ds-hero__description { max-width: 860px; } }
 
     /* --- Partner Grid (Marquee) --- */
-    .ds-partner-grid { width: 100vw; margin-left: calc(-50vw + 50%); overflow: hidden; padding: var(--ds-space-xl) 0; }
-    .ds-partner-grid__track { display: flex; gap: var(--ds-space-3xl); align-items: center; width: max-content; animation: ds-marquee 30s linear infinite; }
-    .ds-partner-grid__track:hover { animation-play-state: paused; }
-    .ds-partner-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--ds-space-xs); flex-shrink: 0; height: 100px; }
-    .ds-partner-item__logo { width: 120px; height: 100px; object-fit: contain; filter: grayscale(1); opacity: 0.65; transition: filter 0.2s, opacity 0.2s; }
-    .ds-partner-item__logo:hover { filter: grayscale(0); opacity: 1; }
-    .ds-partner-item__name { font-size: var(--ds-text-sm); font-weight: var(--ds-weight-bold); color: var(--ds-color-neutral-400); white-space: nowrap; letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; }
+    .ds-partner-grid { overflow: hidden; width: 100%; position: relative; }
+    .ds-partner-grid:hover .ds-partner-track { animation-play-state: paused; }
+    .ds-partner-track {
+      display: flex; align-items: center;
+      gap: var(--ds-space-3xl);
+      animation: ds-marquee 40s linear infinite;
+      width: max-content;
+    }
+    .ds-partner-item { flex-shrink: 0; height: 100px; display: flex; align-items: center; justify-content: center; }
+    .ds-partner-item img {
+      height: 100%; width: auto; max-width: 160px; object-fit: contain;
+      filter: grayscale(1); opacity: 0.65; transition: filter 0.2s, opacity 0.2s;
+    }
+    .ds-partner-item img:hover { filter: grayscale(0); opacity: 1; }
+    .ds-partner-item--text {
+      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-bold);
+      color: var(--ds-color-neutral-400); white-space: nowrap;
+      letter-spacing: var(--ds-tracking-wide); text-transform: uppercase;
+    }
     @keyframes ds-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     @media (max-width: 767px) {
-      .ds-partner-item__logo { width: 100px; height: 75px; }
-      .ds-partner-grid__track { gap: var(--ds-space-2xl); animation-duration: 20s; }
+      .ds-partner-item { height: 75px; }
+      .ds-partner-item img { max-width: 120px; }
+      .ds-partner-track { gap: var(--ds-space-2xl); animation-duration: 25s; }
     }
 
     /* --- KPI Band --- */
@@ -405,9 +418,9 @@
     @media (max-width: 767px)  { .ds-kpi-band--4col { grid-template-columns: 1fr; } }
 
     /* --- Cert Grid (Marquee) --- */
-    .ds-cert-grid { width: 100vw; margin-left: calc(-50vw + 50%); overflow: hidden; padding: var(--ds-space-xl) 0; }
-    .ds-cert-grid__track { display: flex; gap: var(--ds-space-lg); align-items: stretch; width: max-content; animation: ds-marquee 40s linear infinite; }
-    .ds-cert-grid__track:hover { animation-play-state: paused; }
+    .ds-cert-grid { overflow: hidden; width: 100%; position: relative; }
+    .ds-cert-grid:hover .ds-cert-track { animation-play-state: paused; }
+    .ds-cert-track { display: flex; gap: var(--ds-space-lg); animation: ds-marquee 40s linear infinite; width: max-content; }
     .ds-cert-card {
       background-color: var(--ds-color-surface-white); border: 1px solid var(--ds-color-border-default);
       border-radius: var(--ds-radius-lg); padding: var(--ds-space-lg) var(--ds-space-xl);
@@ -433,7 +446,7 @@
       .ds-cert-card { width: 170px; padding: var(--ds-space-md); }
       .ds-cert-card__wreath { width: 130px; height: 96px; }
       .ds-cert-card__wreath-text { font-size: var(--ds-text-xs); max-width: 72px; }
-      .ds-cert-grid__track { gap: var(--ds-space-md); animation-duration: 25s; }
+      .ds-cert-track { gap: var(--ds-space-md); animation-duration: 25s; }
     }
 
     /* --- Card Grid --- */
@@ -841,25 +854,26 @@
           <p class="ds-section-header__description">across finance, insurance, legal, healthcare, and telecom</p>
         </div>
 
-        <div class="ds-partner-grid">
-          <div class="ds-partner-grid__track">
-            <div class="ds-partner-item"><img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-deutsche-telekom.avif" alt="Deutsche Telekom"></div>
-            <div class="ds-partner-item"><span class="ds-partner-item__name">IBK</span></div>
-            <div class="ds-partner-item"><span class="ds-partner-item__name">DB 손해보험</span></div>
-            <div class="ds-partner-item"><img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-kyobo.avif" alt="Kyobo"></div>
-            <div class="ds-partner-item"><span class="ds-partner-item__name">Shin &amp; Kim</span></div>
-            <div class="ds-partner-item"><img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-claroty.png" alt="Claroty"></div>
-            <div class="ds-partner-item"><img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-eumc.avif" alt="EUMC"></div>
-            <div class="ds-partner-item"><img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-navercloud.avif" alt="Naver Cloud"></div>
-            <!-- duplicate set for seamless loop -->
-            <div class="ds-partner-item"><img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-deutsche-telekom.avif" alt="Deutsche Telekom"></div>
-            <div class="ds-partner-item"><span class="ds-partner-item__name">IBK</span></div>
-            <div class="ds-partner-item"><span class="ds-partner-item__name">DB 손해보험</span></div>
-            <div class="ds-partner-item"><img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-kyobo.avif" alt="Kyobo"></div>
-            <div class="ds-partner-item"><span class="ds-partner-item__name">Shin &amp; Kim</span></div>
-            <div class="ds-partner-item"><img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-claroty.png" alt="Claroty"></div>
-            <div class="ds-partner-item"><img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-eumc.avif" alt="EUMC"></div>
-            <div class="ds-partner-item"><img class="ds-partner-item__logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-navercloud.avif" alt="Naver Cloud"></div>
+        <div class="ds-partner-grid" aria-label="Partners and customers">
+          <div class="ds-partner-track">
+            <!-- Original items -->
+            <div class="ds-partner-item"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-deutsche-telekom.avif" alt="Deutsche Telekom" loading="lazy"></div>
+            <div class="ds-partner-item ds-partner-item--text">IBK</div>
+            <div class="ds-partner-item ds-partner-item--text">DB 손해보험</div>
+            <div class="ds-partner-item"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-kyobo.avif" alt="Kyobo" loading="lazy"></div>
+            <div class="ds-partner-item ds-partner-item--text">Shin &amp; Kim</div>
+            <div class="ds-partner-item"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-claroty.png" alt="Claroty" loading="lazy"></div>
+            <div class="ds-partner-item"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-eumc.avif" alt="EUMC" loading="lazy"></div>
+            <div class="ds-partner-item"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-navercloud.avif" alt="Naver Cloud" loading="lazy"></div>
+            <!-- Duplicate set for seamless loop -->
+            <div class="ds-partner-item"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-deutsche-telekom.avif" alt="Deutsche Telekom" loading="lazy"></div>
+            <div class="ds-partner-item ds-partner-item--text">IBK</div>
+            <div class="ds-partner-item ds-partner-item--text">DB 손해보험</div>
+            <div class="ds-partner-item"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-kyobo.avif" alt="Kyobo" loading="lazy"></div>
+            <div class="ds-partner-item ds-partner-item--text">Shin &amp; Kim</div>
+            <div class="ds-partner-item"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-claroty.png" alt="Claroty" loading="lazy"></div>
+            <div class="ds-partner-item"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-eumc.avif" alt="EUMC" loading="lazy"></div>
+            <div class="ds-partner-item"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-navercloud.avif" alt="Naver Cloud" loading="lazy"></div>
           </div>
         </div>
 
@@ -872,7 +886,7 @@
 
         <!-- 2c: Cert Grid -->
         <div class="ds-cert-grid" aria-label="Certifications">
-          <div class="ds-cert-grid__track">
+          <div class="ds-cert-track">
             <div class="ds-cert-card">
               <span class="ds-cert-card__group">ISO</span>
               <div class="ds-cert-card__wreath">
