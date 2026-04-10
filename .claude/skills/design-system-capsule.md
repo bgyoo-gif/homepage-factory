@@ -117,10 +117,32 @@ description: >
 
 ---
 
-## 파트너/인증 데이터
+## 인증 데이터 (Cert Grid 전용 — 이 목록만 사용)
 
-> LLM Capsule 전용 파트너/인증 데이터는 추후 확정 시 추가.
-> 현재는 CUBIG 공식 파트너 중 LLM Capsule 관련 항목만 선별 사용 가능.
+| 그룹 | 인증명 | 기관명 | 로고 파일 |
+|------|--------|--------|-----------|
+| ISO | ISO 27001 (ISMS) | International Organization for Standardization | cert-iso.png |
+| ISO | ISO 42001 (AIMS) | AI Management System | cert-iso.png |
+| GS | GS Certification | TTA Korea | cert-gs.png |
+
+> **AWS Marketplace는 인증이 아니므로 cert grid에 넣지 않는다.** 플랫폼/에코시스템 항목은 별도 처리.
+
+로고 경로: `cubig/reference/graphics/`
+월계수: `cubig/reference/graphics/cert-left.png`, `cubig/reference/graphics/cert-right.png`
+
+## 파트너 데이터 (Partner Grid 전용 — 로고 이미지 있는 것만 사용)
+
+| 파트너명 | 로고 파일 |
+|----------|-----------|
+| Deutsche Telekom | partner-deutsche-telekom.avif |
+| Kyobo | partner-kyobo.avif |
+| Claroty | partner-claroty.png |
+| EUMC | partner-eumc.avif |
+| Naver Cloud | partner-navercloud.avif |
+
+> **로고 이미지가 없는 파트너(IBK, DB손해보험, Shin&Kim)는 partner grid에 넣지 않는다.** 텍스트 대체 금지.
+
+로고 경로: `cubig/reference/images/`
 
 ---
 
