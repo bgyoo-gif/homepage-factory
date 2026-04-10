@@ -720,6 +720,17 @@
       }
     }
 
+
+    /* --- CTA Background Image Classes --- */
+    .ds-cta-band.ds-bg--grad-deep   { background-image: var(--ds-bg-img-grad-deep); }
+    .ds-cta-band.ds-bg--grad-navy   { background-image: var(--ds-bg-img-grad-navy); }
+    .ds-cta-band.ds-bg--grad-blue   { background-image: var(--ds-bg-img-grad-blue); }
+    .ds-cta-band.ds-bg--grad-violet { background-image: var(--ds-bg-img-grad-violet); }
+    .ds-cta-band.ds-bg--paint-blue  { background-image: var(--ds-bg-img-paint-blue); }
+    .ds-cta-band.ds-bg--wave-teal   { background-image: var(--ds-bg-img-wave-teal); }
+    .ds-cta-band:not([class*="ds-bg--"]) { background: var(--ds-gradient-brand); }
+    @media (max-width: 767px) { .ds-cta-band[class*="ds-bg--"] { background-image: none; } }
+
   </style>
 </head>
 <body>
