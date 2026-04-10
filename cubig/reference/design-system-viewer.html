@@ -3376,13 +3376,13 @@ function renderStaticTable() {
       html += '<td style="padding:12px;font-weight:600;">' + group.input + '</td>';
       html += '<td style="padding:12px;">';
       htmlDocs.forEach(function(f) {
-        var url = f.name.endsWith('.md') ? brandBase + 'output/docs/' + f.name : brandBase + 'output/html/' + f.name;
-        html += '<a href="' + url + '" target="_blank" style="display:block;color:var(--ds-color-info);font-size:12px;margin-bottom:2px;">' + f.name + '</a>';
+        var fpath = f.name.endsWith('.md') ? brandBase + 'output/docs/' + f.name : brandBase + 'output/html/' + f.name;
+        html += '<div><span class="v-ot-link" onclick="openDetail(\'' + fpath + '\',\'' + f.name + '\')" style="font-size:12px;">' + f.name + '</span></div>';
       });
       html += '</td><td style="padding:12px;">';
       tsxFiles.forEach(function(f) {
-        var tsxUrl = brandBase + 'output/framer/' + (f.dir ? f.dir + '/' : '') + f.name;
-        html += '<a href="' + tsxUrl + '" target="_blank" style="display:block;color:var(--ds-color-info);font-size:12px;margin-bottom:2px;">' + f.name + '</a>';
+        var fpath = brandBase + 'output/framer/' + (f.dir ? f.dir + '/' : '') + f.name;
+        html += '<div><span class="v-ot-link" onclick="openDetail(\'' + fpath + '\',\'' + f.name + '\')" style="font-size:12px;">' + f.name + '</span></div>';
       });
       if (tsxFiles.length === 0) html += '<span style="color:var(--ds-color-text-tertiary);">—</span>';
       html += '</td></tr>';
