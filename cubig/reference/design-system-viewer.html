@@ -2853,7 +2853,7 @@ var BRANDS = {
   }
 };
 
-var currentBrand = 'cubig';
+var currentBrand = localStorage.getItem('ds-viewer-brand') || 'cubig';
 
 function toggleBrandMenu() {
   document.getElementById('brand-menu').classList.toggle('v-brand-switch__menu--open');
@@ -2872,6 +2872,7 @@ function switchBrand(brandKey) {
     return;
   }
   currentBrand = brandKey;
+  localStorage.setItem('ds-viewer-brand', brandKey);
   var brand = BRANDS[brandKey];
 
   // 1. Swap CSS variables
@@ -3291,6 +3292,88 @@ function resolveStaticPath(f) {
 function renderStaticTable() {
   var container = document.getElementById('output-file-list');
 
+  // 동적 스캔: GitHub Contents API로 실제 파일 목록 가져오기
+  var ghApiBase = 'https://api.github.com/repos/bgyoo-gif/homepage-factory/contents/';
+  var brand = currentBrand;
+  var htmlDir = brand + '/output/html';
+  var docsDir = brand + '/output/docs';
+  var framerDir = brand + '/output/framer';
+
+  Promise.all([
+    fetch(ghApiBase + htmlDir + '?ref=gh-pages').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
+    fetch(ghApiBase + docsDir + '?ref=gh-pages').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
+    fetch(ghApiBase + framerDir + '?ref=gh-pages').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; })
+  ]).then(function(results) {
+    var htmlFiles = results[0].filter(function(f) { return f.name.endsWith('-b-type.html'); });
+    var docsFiles = results[1].filter(function(f) { return f.name.endsWith('.md'); });
+    var framerDirs = results[2].filter(function(f) { return f.type === 'dir'; });
+
+    if (htmlFiles.length === 0) { renderStaticFallback(); return; }
+
+    // B타입 HTML 기준으로 그룹화
+    var groups = htmlFiles.map(function(hf) {
+      var baseName = hf.name.replace('-b-type.html', '');
+      var outputs = [];
+      // spec
+      var spec = docsFiles.find(function(d) { return d.name === baseName + '-spec.md'; });
+      if (spec) outputs.push({ type: 'md', name: spec.name });
+      // b-type html
+      outputs.push({ type: 'html', name: hf.name });
+      // qa report
+      var qa = docsFiles.find(function(d) { return d.name === baseName + '-qa-report.md'; });
+      if (qa) outputs.push({ type: 'md', name: qa.name });
+      // tsx (check framer subdirectory match)
+      var tsxDir = framerDirs.find(function(d) { return d.name === baseName; });
+      if (tsxDir) outputs.push({ type: 'tsx', name: baseName + '/' });
+
+      return { input: baseName + '.html', outputs: outputs };
+    });
+
+    renderDynamicTable(container, groups);
+    var status = document.getElementById('ot-server-status');
+    if (status) status.textContent = '동적 목록 (GitHub API) — ' + htmlFiles.length + '개 파일';
+  }).catch(function() {
+    renderStaticFallback();
+  });
+
+  // 즉시 정적 테이블 표시 (API 응답 전 fallback)
+  renderStaticFallback();
+
+  function renderDynamicTable(cont, groups) {
+    var ghBase = 'https://bgyoo-gif.github.io/homepage-factory/';
+    var brandBase = ghBase + brand + '/';
+    var thStyle = 'padding:10px 12px;font-size:11px;font-weight:600;color:var(--ds-color-text-tertiary);letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;';
+    var html = '<table style="width:100%;border-collapse:collapse;font-size:13px;">';
+    html += '<thead><tr style="border-bottom:2px solid var(--ds-color-border-default);text-align:left;">';
+    html += '<th style="' + thStyle + '">Input File</th>';
+    html += '<th style="' + thStyle + '">' + typeBadge('html') + '</th>';
+    html += '<th style="' + thStyle + '">' + typeBadge('tsx') + '</th>';
+    html += '</tr></thead><tbody>';
+
+    groups.forEach(function(group) {
+      var htmlDocs = group.outputs.filter(function(o) { return o.type === 'html' || o.type === 'md'; });
+      var tsxFiles = group.outputs.filter(function(o) { return o.type === 'tsx'; });
+
+      html += '<tr style="border-bottom:1px solid var(--ds-color-surface-light);">';
+      html += '<td style="padding:12px;font-weight:600;">' + group.input + '</td>';
+      html += '<td style="padding:12px;">';
+      htmlDocs.forEach(function(f) {
+        var url = f.name.endsWith('.md') ? brandBase + 'output/docs/' + f.name : brandBase + 'output/html/' + f.name;
+        html += '<a href="' + url + '" target="_blank" style="display:block;color:var(--ds-color-info);font-size:12px;margin-bottom:2px;">' + f.name + '</a>';
+      });
+      html += '</td><td style="padding:12px;">';
+      tsxFiles.forEach(function(f) {
+        html += '<span style="font-size:12px;color:var(--ds-color-text-tertiary);">' + f.name + '</span>';
+      });
+      if (tsxFiles.length === 0) html += '<span style="color:var(--ds-color-text-tertiary);">—</span>';
+      html += '</td></tr>';
+    });
+    html += '</tbody></table>';
+    cont.innerHTML = html;
+  }
+
+  function renderStaticFallback() {
+
   var STATIC_DATA = {
     cubig: [
     { input: 'A-cubig-llm-v3.html', ipath: '../input/A-cubig-llm-v3.html', idate: '2026-03-18', outputs: [
@@ -3524,7 +3607,8 @@ function renderStaticTable() {
   html += '</tbody></table>';
   html += '<p style="margin-top:16px;font-size:12px;color:var(--ds-color-text-tertiary);text-align:center;">정적 목록입니다. 실시간 업데이트는 로컬 서버 실행 시 활성화됩니다.</p>';
   container.innerHTML = html;
-}
+  } // end renderStaticFallback
+} // end renderStaticTable
 
 // WebSocket 연결
 function connectWebSocket() {
@@ -3757,6 +3841,11 @@ function checkServer() {
 }
 checkServer();
 setInterval(checkServer, 10000);
+
+// Restore saved brand on load
+if (currentBrand !== 'cubig') {
+  switchBrand(currentBrand);
+}
 </script>
 </body>
 </html>
