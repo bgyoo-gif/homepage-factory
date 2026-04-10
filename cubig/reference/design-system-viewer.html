@@ -3286,7 +3286,7 @@ function resolveStaticPath(f) {
   var n = f.name;
   var ghBase = 'https://bgyoo-gif.github.io/homepage-factory/';
   var brandBase = ghBase + currentBrand + '/';
-  if (n.endsWith('.tsx')) return brandBase + 'output/framer/' + n;
+  if (n.endsWith('.tsx')) return brandBase + 'output/framer/' + (f.dir ? f.dir + '/' : '') + n;
   if (n.endsWith('-b-type.html') || n.startsWith('figure_')) return brandBase + 'output/html/' + n;
   if (n.endsWith('-spec.md') || n.endsWith('-qa-report.md')) return brandBase + 'output/docs/' + n;
   return brandBase + 'output/' + n;
@@ -3356,8 +3356,8 @@ function renderStaticTable() {
     renderStaticFallback();
   });
 
-  // 즉시 정적 테이블 표시 (API 응답 전 fallback)
-  renderStaticFallback();
+  // 로딩 중 표시 (API 응답 전)
+  container.innerHTML = '<p style="padding:40px;text-align:center;color:var(--ds-color-text-tertiary);font-size:13px;">Loading files...</p>';
 
   function renderDynamicTable(cont, groups) {
     var ghBase = 'https://bgyoo-gif.github.io/homepage-factory/';
@@ -3495,11 +3495,13 @@ function renderStaticTable() {
         { type: 'md', name: 'request-pov-spec.md', date: '2026-04-10' },
         { type: 'html', name: 'request-pov-b-type.html', date: '2026-04-10' },
         { type: 'md', name: 'request-pov-qa-report.md', date: '2026-04-10' },
+        { type: 'tsx', name: 'RequestPov.tsx', date: '2026-04-10', dir: 'request-pov' },
       ]},
       { input: 'learn.html', ipath: '../../llm-capsule/input/LLM_Capsule_Website_Updated_v3/learn.html', idate: '2026-04-10', outputs: [
         { type: 'md', name: 'learn-spec.md', date: '2026-04-10' },
         { type: 'html', name: 'learn-b-type.html', date: '2026-04-10' },
         { type: 'md', name: 'learn-qa-report.md', date: '2026-04-10' },
+        { type: 'tsx', name: 'Learn.tsx', date: '2026-04-10', dir: 'learn' },
       ]},
       { input: 'glossary.html', ipath: '../../llm-capsule/input/LLM_Capsule_Website_Updated_v3/glossary.html', idate: '2026-04-10', outputs: [
         { type: 'md', name: 'glossary-spec.md', date: '2026-04-10' },
@@ -3509,11 +3511,13 @@ function renderStaticTable() {
         { type: 'md', name: 'resources-spec.md', date: '2026-04-10' },
         { type: 'html', name: 'resources-b-type.html', date: '2026-04-10' },
         { type: 'md', name: 'resources-qa-report.md', date: '2026-04-10' },
+        { type: 'tsx', name: 'Resources.tsx', date: '2026-04-10', dir: 'resources' },
       ]},
       { input: 'restoration.html', ipath: '../../llm-capsule/input/LLM_Capsule_Website_Updated_v3/restoration.html', idate: '2026-04-10', outputs: [
         { type: 'md', name: 'restoration-spec.md', date: '2026-04-10' },
         { type: 'html', name: 'restoration-b-type.html', date: '2026-04-10' },
         { type: 'md', name: 'restoration-qa-report.md', date: '2026-04-10' },
+        { type: 'tsx', name: 'Restoration.tsx', date: '2026-04-10', dir: 'restoration' },
       ]},
       { input: 'zero-exposure.html', ipath: '../../llm-capsule/input/LLM_Capsule_Website_Updated_v3/zero-exposure.html', idate: '2026-04-10', outputs: [
         { type: 'md', name: 'zero-exposure-spec.md', date: '2026-04-10' },
@@ -3561,6 +3565,7 @@ function renderStaticTable() {
       ]},
       { input: 'local-restorationvs-anonymization.html', ipath: '../../llm-capsule/input/LLM_Capsule_Website_Updated_v3/local-restorationvs-anonymization.html', idate: '2026-04-10', outputs: [
         { type: 'html', name: 'local-restorationvs-anonymization-b-type.html', date: '2026-04-10' },
+        { type: 'tsx', name: 'LocalRestorationVsAnonymization.tsx', date: '2026-04-10', dir: 'local-restorationvs-anonymization' },
       ]},
       { input: 'on-premise-vs-cloud-ai-data-protection.html', ipath: '../../llm-capsule/input/LLM_Capsule_Website_Updated_v3/on-premise-vs-cloud-ai-data-protection.html', idate: '2026-04-10', outputs: [
         { type: 'html', name: 'on-premise-vs-cloud-ai-data-protection-b-type.html', date: '2026-04-10' },
@@ -3576,6 +3581,7 @@ function renderStaticTable() {
       ]},
       { input: 'secure-enterprise-ai-data-workflows.html', ipath: '../../llm-capsule/input/LLM_Capsule_Website_Updated_v3/secure-enterprise-ai-data-workflows.html', idate: '2026-04-10', outputs: [
         { type: 'html', name: 'secure-enterprise-ai-data-workflows-b-type.html', date: '2026-04-10' },
+        { type: 'tsx', name: 'SecureEnterpriseAiDataWorkflows.tsx', date: '2026-04-10', dir: 'secure-enterprise-ai-data-workflows' },
       ]},
       { input: 'secure-enterprise-ai-workflows.html', ipath: '../../llm-capsule/input/LLM_Capsule_Website_Updated_v3/secure-enterprise-ai-workflows.html', idate: '2026-04-10', outputs: [
         { type: 'html', name: 'secure-enterprise-ai-workflows-b-type.html', date: '2026-04-10' },
