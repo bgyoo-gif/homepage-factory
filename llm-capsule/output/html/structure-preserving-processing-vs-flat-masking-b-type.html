@@ -562,53 +562,6 @@
     @media (min-width: 1440px) { .ds-article-section-header h2 { font-size: 28px; } }
     @media (max-width: 767px) { .ds-article-section-header { text-align: left; } }
 
-    /* Key message banner (dark) */
-    .ds-key-message {
-      background-color: var(--ds-color-surface-dark);
-      color: var(--ds-color-text-inverse);
-      padding: var(--ds-space-lg) var(--ds-space-xl);
-      border-radius: var(--ds-radius-md);
-      margin: var(--ds-space-lg) 0;
-      font-size: var(--ds-text-md); font-weight: var(--ds-weight-medium);
-      line-height: var(--ds-leading-relaxed);
-    }
-    .ds-key-message strong { color: var(--ds-color-brand-light); }
-
-    /* Example card */
-    .ds-example-card {
-      background-color: var(--ds-color-surface-light);
-      border: 1px solid var(--ds-color-border-default);
-      border-radius: var(--ds-radius-md);
-      padding: var(--ds-space-lg);
-      margin: var(--ds-space-lg) 0;
-    }
-    .ds-example-card h4 {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-sm);
-    }
-    .ds-example-card p {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-xs);
-    }
-    .ds-example-card p:last-child { margin-bottom: 0; }
-
-    /* Limitations list */
-    .ds-limitations-list { display: flex; flex-direction: column; gap: var(--ds-space-md); margin: var(--ds-space-md) 0; }
-    .ds-limitations-list__item {
-      padding: var(--ds-space-md) var(--ds-space-lg);
-      border-radius: var(--ds-radius-sm);
-      border-left: 3px solid var(--ds-color-error);
-      background-color: var(--ds-overlay-error-tint);
-    }
-    .ds-limitations-list__label {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-2xs);
-    }
-    .ds-limitations-list__desc {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed);
-    }
-
     /* Related links */
     .ds-related-links {
       display: grid; grid-template-columns: 1fr; gap: var(--ds-space-sm);
@@ -721,24 +674,24 @@
         <div class="ds-article-section-header">
           <h2>Limitations</h2>
         </div>
-        <div class="ds-limitations-list">
-          <div class="ds-limitations-list__item">
-            <div class="ds-limitations-list__label">Entity collapse.</div>
-            <p class="ds-limitations-list__desc">In a multi-party contract, all party names become [NAME]. AI cannot distinguish acquirer from target, lender from borrower, plaintiff from defendant.</p>
-          </div>
-          <div class="ds-limitations-list__item">
-            <div class="ds-limitations-list__label">Table destruction.</div>
-            <p class="ds-limitations-list__desc">Column headers masked as [FIELD] and cell values masked as [VALUE] eliminate the schema information AI needs for accurate extraction.</p>
-          </div>
-          <div class="ds-limitations-list__item">
-            <div class="ds-limitations-list__label">Cross-reference breakage.</div>
-            <p class="ds-limitations-list__desc">When a document references "see Section 3.2 regarding [NAME]'s obligations," flat masking removes the entity link that gives the reference meaning.</p>
-          </div>
-          <div class="ds-limitations-list__item">
-            <div class="ds-limitations-list__label">Inconsistent replacement.</div>
-            <p class="ds-limitations-list__desc">The same entity may receive different tokens in different document locations, breaking AI's ability to track entities across sections.</p>
-          </div>
-        </div>
+        <ul class="ds-bullet ds-bullet--dot">
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Entity collapse.</strong> In a multi-party contract, all party names become [NAME]. AI cannot distinguish acquirer from target, lender from borrower, plaintiff from defendant.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Table destruction.</strong> Column headers masked as [FIELD] and cell values masked as [VALUE] eliminate the schema information AI needs for accurate extraction.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Cross-reference breakage.</strong> When a document references "see Section 3.2 regarding [NAME]'s obligations," flat masking removes the entity link that gives the reference meaning.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Inconsistent replacement.</strong> The same entity may receive different tokens in different document locations, breaking AI's ability to track entities across sections.</span>
+            </li>
+        </ul>
       </div>
     </section>
 
@@ -753,7 +706,7 @@
         <p class="ds-article-body__paragraph">
           Structure-preserving processing maintains document integrity during data protection. Entity consistency is enforced across the entire document. Table structures, cross-references, and semantic relationships are preserved. AI receives a structurally complete document that supports accurate processing.
         </p>
-        <div class="ds-key-message">
+        <div class="ds-banner ds-banner--brand">
           <strong>AI results are automatically restored locally with original enterprise data.</strong> <span class="ds-text--product">LLM Capsule</span>'s AI enablement data layer protects sensitive data while preserving the document structure AI needs for accurate outputs.
         </div>
       </div>
@@ -821,8 +774,8 @@
         <div class="ds-article-section-header">
           <h2>Enterprise Workflow Example</h2>
         </div>
-        <div class="ds-example-card">
-          <h4>Multi-Party Financial Analysis</h4>
+        <div class="ds-card">
+          <h4 class="ds-card__title">Multi-Party Financial Analysis</h4>
           <p>An investment bank analyzes term sheets involving three parties — lead investor, co-investor, and target company. Each term sheet contains overlapping entity names in different roles.</p>
           <p>Flat masking turns all three parties into [NAME], making it impossible for AI to attribute terms to the correct party. Structure-preserving processing assigns consistent, distinct representations to each party, enabling accurate extraction of party-specific terms. Restoration restores real party names in the analysis output.</p>
         </div>

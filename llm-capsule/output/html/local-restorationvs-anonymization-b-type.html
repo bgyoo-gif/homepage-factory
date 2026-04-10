@@ -537,53 +537,6 @@
     @media (min-width: 1440px) { .ds-article-section-header h2 { font-size: 28px; } }
     @media (max-width: 767px) { .ds-article-section-header { text-align: left; } }
 
-    /* Key message banner (dark) */
-    .ds-key-message {
-      background-color: var(--ds-color-surface-dark);
-      color: var(--ds-color-text-inverse);
-      padding: var(--ds-space-lg) var(--ds-space-xl);
-      border-radius: var(--ds-radius-md);
-      margin: var(--ds-space-lg) 0;
-      font-size: var(--ds-text-md); font-weight: var(--ds-weight-medium);
-      line-height: var(--ds-leading-relaxed);
-    }
-    .ds-key-message strong { color: var(--ds-color-brand-light); }
-
-    /* Example card */
-    .ds-example-card {
-      background-color: var(--ds-color-surface-light);
-      border: 1px solid var(--ds-color-border-default);
-      border-radius: var(--ds-radius-md);
-      padding: var(--ds-space-lg);
-      margin: var(--ds-space-lg) 0;
-    }
-    .ds-example-card h4 {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-sm);
-    }
-    .ds-example-card p {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-xs);
-    }
-    .ds-example-card p:last-child { margin-bottom: 0; }
-
-    /* Limitations list */
-    .ds-limitations-list { display: flex; flex-direction: column; gap: var(--ds-space-md); margin: var(--ds-space-md) 0; }
-    .ds-limitations-list__item {
-      padding: var(--ds-space-md) var(--ds-space-lg);
-      border-radius: var(--ds-radius-sm);
-      border-left: 3px solid var(--ds-color-error);
-      background-color: var(--ds-overlay-error-tint);
-    }
-    .ds-limitations-list__label {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-2xs);
-    }
-    .ds-limitations-list__desc {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed);
-    }
-
     /* Related links */
     .ds-related-links {
       display: grid; grid-template-columns: 1fr; gap: var(--ds-space-sm);
@@ -681,20 +634,20 @@
         <div class="ds-article-section-header">
           <h2>Limitations</h2>
         </div>
-        <div class="ds-limitations-list">
-          <div class="ds-limitations-list__item">
-            <div class="ds-limitations-list__label">Irreversibility.</div>
-            <p class="ds-limitations-list__desc">Anonymization is permanent by design. Once data is anonymized, there is no automated path to recover original values. AI outputs based on anonymized data remain anonymous — they cannot reference real individuals, real accounts, or real events.</p>
-          </div>
-          <div class="ds-limitations-list__item">
-            <div class="ds-limitations-list__label">Information loss.</div>
-            <p class="ds-limitations-list__desc">Generalization replaces specific values with ranges ("age 35" → "30-40"). Suppression removes values entirely. Both reduce AI's ability to produce precise, actionable outputs.</p>
-          </div>
-          <div class="ds-limitations-list__item">
-            <div class="ds-limitations-list__label">Not designed for document intelligence.</div>
-            <p class="ds-limitations-list__desc">Anonymization techniques were developed for structured databases, not unstructured enterprise documents. Applying anonymization to contracts, reports, and correspondence produces severely degraded content.</p>
-          </div>
-        </div>
+        <ul class="ds-bullet ds-bullet--dot">
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Irreversibility.</strong> Anonymization is permanent by design. Once data is anonymized, there is no automated path to recover original values. AI outputs based on anonymized data remain anonymous — they cannot reference real individuals, real accounts, or real events.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Information loss.</strong> Generalization replaces specific values with ranges ("age 35" → "30-40"). Suppression removes values entirely. Both reduce AI's ability to produce precise, actionable outputs.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Not designed for document intelligence.</strong> Anonymization techniques were developed for structured databases, not unstructured enterprise documents. Applying anonymization to contracts, reports, and correspondence produces severely degraded content.</span>
+            </li>
+        </ul>
       </div>
     </section>
 
@@ -709,7 +662,7 @@
         <p class="ds-article-body__paragraph">
           Local restoration (restoration) is the process of restoring AI outputs to their full enterprise context using locally stored mappings. Data is encapsulated (not anonymized) before AI processing — sensitive values are replaced with reversible, structure-preserving representations. After AI processing, the original values are restored automatically.
         </p>
-        <div class="ds-key-message">
+        <div class="ds-banner ds-banner--brand">
           <strong>AI results are restored locally.</strong> <span class="ds-text--product">LLM Capsule</span> enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.
         </div>
       </div>
@@ -777,8 +730,8 @@
         <div class="ds-article-section-header">
           <h2>Enterprise Workflow Example</h2>
         </div>
-        <div class="ds-example-card">
-          <h4>Patient Discharge Summaries</h4>
+        <div class="ds-card">
+          <h4 class="ds-card__title">Patient Discharge Summaries</h4>
           <p>A hospital needs AI to generate discharge summaries from patient records. Anonymized records remove patient identifiers — but discharge summaries must reference real patient names, medications, and attending physicians to be clinically useful.</p>
           <p><span class="ds-text--product">LLM Capsule</span> encapsulates patient records, AI generates structured summaries, and local restoration restores all patient identifiers into the discharge documents. The summaries are clinically ready without any manual re-identification.</p>
         </div>

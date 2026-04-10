@@ -529,52 +529,7 @@
     @media (min-width: 1440px) { .ds-article-section-header h2 { font-size: 28px; } }
     @media (max-width: 767px) { .ds-article-section-header { text-align: left; } }
 
-    /* Key message banner (dark) */
-    .ds-key-message {
-      background-color: var(--ds-color-surface-dark);
-      color: var(--ds-color-text-inverse);
-      padding: var(--ds-space-lg) var(--ds-space-xl);
-      border-radius: var(--ds-radius-md);
-      margin: var(--ds-space-lg) 0;
-      font-size: var(--ds-text-md); font-weight: var(--ds-weight-medium);
-      line-height: var(--ds-leading-relaxed);
-    }
-    .ds-key-message strong { color: var(--ds-color-brand-light); }
-
-    /* Example card */
-    .ds-example-card {
-      background-color: var(--ds-color-surface-light);
-      border: 1px solid var(--ds-color-border-default);
-      border-radius: var(--ds-radius-md);
-      padding: var(--ds-space-lg);
-      margin: var(--ds-space-lg) 0;
-    }
-    .ds-example-card h4 {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-sm);
-    }
-    .ds-example-card p {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-xs);
-    }
-    .ds-example-card p:last-child { margin-bottom: 0; }
-
     /* Property list — four properties */
-    .ds-property-list { display: flex; flex-direction: column; gap: var(--ds-space-md); margin: var(--ds-space-md) 0; }
-    .ds-property-list__item {
-      padding: var(--ds-space-md) var(--ds-space-lg);
-      border-radius: var(--ds-radius-sm);
-      border-left: 3px solid var(--ds-color-brand-secondary);
-      background-color: var(--ds-overlay-brand-tint);
-    }
-    .ds-property-list__label {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-2xs);
-    }
-    .ds-property-list__desc {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed);
-    }
 
     /* Related links */
     .ds-related-links {
@@ -678,25 +633,25 @@
           <h2>Explanation</h2>
         </div>
         <p class="ds-article-body__paragraph">A secure enterprise AI workflow has four properties:</p>
-        <div class="ds-property-list">
-          <div class="ds-property-list__item">
-            <div class="ds-property-list__label">Pre-transmission protection.</div>
-            <p class="ds-property-list__desc">All sensitive data is encapsulated within the enterprise environment before reaching any AI service. This is not a filter applied at the API gateway — it is a transformation applied to the data itself through context-aware data control.</p>
-          </div>
-          <div class="ds-property-list__item">
-            <div class="ds-property-list__label">Structure preservation.</div>
-            <p class="ds-property-list__desc">Protected data must retain its document structure, entity relationships, and semantic context. AI models process structure-preserving representations that enable accurate summarization, extraction, and analysis.</p>
-          </div>
-          <div class="ds-property-list__item">
-            <div class="ds-property-list__label">Model independence.</div>
-            <p class="ds-property-list__desc">The AI enablement layer must work with any LLM provider. Enterprises should not be locked into a single AI vendor to maintain AI data pipeline protection.</p>
-          </div>
-          <div class="ds-property-list__item">
-            <div class="ds-property-list__label">Output Restoration.</div>
-            <p class="ds-property-list__desc">AI results are restored locally. Enterprise AI workflows produce enterprise-ready outputs — with real names, real figures, real references — without requiring manual post-processing.</p>
-          </div>
+        <ul class="ds-bullet ds-bullet--dot">
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Pre-transmission protection.</strong> All sensitive data is encapsulated within the enterprise environment before reaching any AI service. This is not a filter applied at the API gateway — it is a transformation applied to the data itself through context-aware data control.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Structure preservation.</strong> Protected data must retain its document structure, entity relationships, and semantic context. AI models process structure-preserving representations that enable accurate summarization, extraction, and analysis.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Model independence.</strong> The AI enablement layer must work with any LLM provider. Enterprises should not be locked into a single AI vendor to maintain AI data pipeline protection.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Output Restoration.</strong> AI results are restored locally. Enterprise AI workflows produce enterprise-ready outputs — with real names, real figures, real references — without requiring manual post-processing.</span>
+            </li>
         </div>
-        <div class="ds-key-message">
+        <div class="ds-banner ds-banner--brand">
           <strong>Enterprise AI enablement</strong> requires an AI-ready data layer, not model-layer security. <span class="ds-text--product">LLM Capsule</span> operates before data leaves and after results return — enabling AI adoption while protecting data.
         </div>
       </div>
@@ -710,8 +665,8 @@
         <div class="ds-article-section-header">
           <h2>Enterprise Example</h2>
         </div>
-        <div class="ds-example-card">
-          <h4>Insurance Claims Processing</h4>
+        <div class="ds-card">
+          <h4 class="ds-card__title">Insurance Claims Processing</h4>
           <p>An insurance company processes 5,000 claims per month through AI for classification, damage assessment summarization, and fraud pattern detection. Each claim contains policyholder PII, medical records, and financial data.</p>
           <p><span class="ds-text--product">LLM Capsule</span> encapsulates all sensitive data locally. AI classifies and summarizes protected claims. Local restoration restores policyholder details into the outputs, which feed directly into the claims management system. No manual re-linking required.</p>
         </div>

@@ -563,53 +563,6 @@
     @media (min-width: 1440px) { .ds-article-section-header h2 { font-size: 28px; } }
     @media (max-width: 767px) { .ds-article-section-header { text-align: left; } }
 
-    /* Key message banner (dark) */
-    .ds-key-message {
-      background-color: var(--ds-color-surface-dark);
-      color: var(--ds-color-text-inverse);
-      padding: var(--ds-space-lg) var(--ds-space-xl);
-      border-radius: var(--ds-radius-md);
-      margin: var(--ds-space-lg) 0;
-      font-size: var(--ds-text-md); font-weight: var(--ds-weight-medium);
-      line-height: var(--ds-leading-relaxed);
-    }
-    .ds-key-message strong { color: var(--ds-color-brand-light); }
-
-    /* Example card */
-    .ds-example-card {
-      background-color: var(--ds-color-surface-light);
-      border: 1px solid var(--ds-color-border-default);
-      border-radius: var(--ds-radius-md);
-      padding: var(--ds-space-lg);
-      margin: var(--ds-space-lg) 0;
-    }
-    .ds-example-card h4 {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-sm);
-    }
-    .ds-example-card p {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-xs);
-    }
-    .ds-example-card p:last-child { margin-bottom: 0; }
-
-    /* Limitations list */
-    .ds-limitations-list { display: flex; flex-direction: column; gap: var(--ds-space-md); margin: var(--ds-space-md) 0; }
-    .ds-limitations-list__item {
-      padding: var(--ds-space-md) var(--ds-space-lg);
-      border-radius: var(--ds-radius-sm);
-      border-left: 3px solid var(--ds-color-error);
-      background-color: var(--ds-overlay-error-tint);
-    }
-    .ds-limitations-list__label {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-2xs);
-    }
-    .ds-limitations-list__desc {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed);
-    }
-
     /* Related links */
     .ds-related-links {
       display: grid; grid-template-columns: 1fr; gap: var(--ds-space-sm);
@@ -722,24 +675,24 @@
         <div class="ds-article-section-header">
           <h2>Limitations of Masking for AI</h2>
         </div>
-        <div class="ds-limitations-list">
-          <div class="ds-limitations-list__item">
-            <div class="ds-limitations-list__label">Context destruction.</div>
-            <p class="ds-limitations-list__desc">AI models lose entity relationships when all names become "[NAME]." Multi-party documents become indistinguishable.</p>
-          </div>
-          <div class="ds-limitations-list__item">
-            <div class="ds-limitations-list__label">Output unusability.</div>
-            <p class="ds-limitations-list__desc">AI outputs inherit the masking. Summaries contain "[REDACTED]" placeholders instead of real data, requiring manual reconstruction.</p>
-          </div>
-          <div class="ds-limitations-list__item">
-            <div class="ds-limitations-list__label">Structural damage.</div>
-            <p class="ds-limitations-list__desc">Flat masking breaks table schemas, cross-references, and nested document structures.</p>
-          </div>
-          <div class="ds-limitations-list__item">
-            <div class="ds-limitations-list__label">No automation path.</div>
-            <p class="ds-limitations-list__desc">Every masked AI output requires human intervention to restore context, eliminating efficiency gains.</p>
-          </div>
-        </div>
+        <ul class="ds-bullet ds-bullet--dot">
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Context destruction.</strong> AI models lose entity relationships when all names become "[NAME]." Multi-party documents become indistinguishable.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Output unusability.</strong> AI outputs inherit the masking. Summaries contain "[REDACTED]" placeholders instead of real data, requiring manual reconstruction.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Structural damage.</strong> Flat masking breaks table schemas, cross-references, and nested document structures.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>No automation path.</strong> Every masked AI output requires human intervention to restore context, eliminating efficiency gains.</span>
+            </li>
+        </ul>
       </div>
     </section>
 
@@ -754,7 +707,7 @@
         <p class="ds-article-body__paragraph">
           <span class="ds-text--product">LLM Capsule</span> replaces masking with encapsulation — a reversible, structure-preserving protection that maintains document integrity for AI processing and enables automated output restoration.
         </p>
-        <div class="ds-key-message">
+        <div class="ds-banner ds-banner--brand">
           <strong>AI results are automatically restored locally with original enterprise data.</strong> <span class="ds-text--product">LLM Capsule</span> is an AI enablement data layer that protects sensitive data while enabling usable enterprise AI outputs.
         </div>
       </div>
@@ -832,8 +785,8 @@
         <div class="ds-article-section-header">
           <h2>Enterprise Workflow Example</h2>
         </div>
-        <div class="ds-example-card">
-          <h4>Contract Analysis Pipeline</h4>
+        <div class="ds-card">
+          <h4 class="ds-card__title">Contract Analysis Pipeline</h4>
           <p><strong>With masking:</strong> 200 contracts masked → AI produces generic summaries with "[REDACTED]" throughout → Legal team manually restores ~40 hours of context rebuilding.</p>
           <p><strong>With <span class="ds-text--product">LLM Capsule</span>:</strong> 200 contracts encapsulated → AI produces structured summaries → Local restoration restores all parties, amounts, and dates → Output feeds directly into contract management system.</p>
         </div>

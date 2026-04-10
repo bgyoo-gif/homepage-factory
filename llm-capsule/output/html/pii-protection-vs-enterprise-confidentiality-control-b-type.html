@@ -482,70 +482,7 @@
     @media (min-width: 1440px) { .ds-article-section-header h2 { font-size: 28px; } }
     @media (max-width: 767px) { .ds-article-section-header { text-align: left; } }
 
-    /* Definition box */
-    .ds-definition-box {
-      background-color: var(--ds-overlay-brand-tint-light);
-      border-left: 3px solid var(--ds-color-brand-secondary);
-      padding: var(--ds-space-lg) var(--ds-space-xl);
-      border-radius: 0 var(--ds-radius-sm) var(--ds-radius-sm) 0;
-      margin: var(--ds-space-lg) 0;
-    }
-    .ds-definition-box__label {
-      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-semibold);
-      letter-spacing: var(--ds-tracking-wide); text-transform: uppercase;
-      color: var(--ds-color-brand-secondary); margin-bottom: var(--ds-space-xs);
-    }
-    .ds-definition-box p {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-primary);
-      font-weight: var(--ds-weight-medium); line-height: var(--ds-leading-relaxed); margin: 0;
-    }
-
-    /* Key message banner (dark) */
-    .ds-key-message {
-      background-color: var(--ds-color-surface-dark);
-      color: var(--ds-color-text-inverse);
-      padding: var(--ds-space-lg) var(--ds-space-xl);
-      border-radius: var(--ds-radius-md);
-      margin: var(--ds-space-lg) 0;
-      font-size: var(--ds-text-md); font-weight: var(--ds-weight-medium);
-      line-height: var(--ds-leading-relaxed);
-    }
-    .ds-key-message strong { color: var(--ds-color-brand-light); }
-
     /* Explanation items */
-    .ds-explanation-list { display: flex; flex-direction: column; gap: var(--ds-space-md); margin: var(--ds-space-md) 0; }
-    .ds-explanation-list__item {
-      padding: var(--ds-space-md) var(--ds-space-lg);
-      border-radius: var(--ds-radius-sm);
-      border-left: 3px solid var(--ds-color-brand-secondary);
-      background-color: var(--ds-color-surface-light);
-    }
-    .ds-explanation-list__label {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-2xs);
-    }
-    .ds-explanation-list__desc {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed);
-    }
-
-    /* Example card */
-    .ds-example-card {
-      background-color: var(--ds-color-surface-light);
-      border: 1px solid var(--ds-color-border-default);
-      border-radius: var(--ds-radius-md);
-      padding: var(--ds-space-lg);
-      margin: var(--ds-space-lg) 0;
-    }
-    .ds-example-card h4 {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-sm);
-    }
-    .ds-example-card p {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-xs);
-    }
-    .ds-example-card p:last-child { margin-bottom: 0; }
 
     /* Spacing utility */
     .ds-spaced-top { margin-top: var(--ds-space-lg); }
@@ -625,8 +562,8 @@
         <div class="ds-article-section-header">
           <h2>Definition</h2>
         </div>
-        <div class="ds-definition-box">
-          <div class="ds-definition-box__label">Enterprise Confidentiality Control</div>
+        <div class="ds-banner ds-banner--brand">
+          <p><strong>Enterprise Confidentiality Control</strong></p>
           <p>Enterprise confidentiality control is a data protection approach for AI workflows that extends beyond PII to cover all categories of business-sensitive information. It enables policy-based classification and encapsulation of trade secrets, financial terms, strategic data, and operational details alongside personal data protection.</p>
         </div>
       </div>
@@ -643,20 +580,20 @@
         <p class="ds-article-body__paragraph">
           Enterprise confidentiality control differs from PII protection in scope and configurability:
         </p>
-        <div class="ds-explanation-list">
-          <div class="ds-explanation-list__item">
-            <div class="ds-explanation-list__label">Scope.</div>
-            <p class="ds-explanation-list__desc">PII protection covers regulatory-defined categories — names, identification numbers, health records. Enterprise confidentiality control covers organization-defined categories — deal terms, pricing, internal metrics, competitive analysis, and strategic plans.</p>
-          </div>
-          <div class="ds-explanation-list__item">
-            <div class="ds-explanation-list__label">Policy-driven classification.</div>
-            <p class="ds-explanation-list__desc">What counts as sensitive varies by department, document type, and workflow. A revenue figure is sensitive in a board presentation but routine in a published annual report. Context-aware data control enables policy-driven sensitivity classification, not just regex pattern matching.</p>
-          </div>
-          <div class="ds-explanation-list__item">
-            <div class="ds-explanation-list__label">Workflow integration.</div>
-            <p class="ds-explanation-list__desc">Enterprise confidentiality control integrates with governance frameworks, audit systems, and compliance workflows — providing visibility into what data is protected, how, and by whom.</p>
-          </div>
-        </div>
+        <ul class="ds-bullet ds-bullet--dot">
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Scope.</strong> PII protection covers regulatory-defined categories — names, identification numbers, health records. Enterprise confidentiality control covers organization-defined categories — deal terms, pricing, internal metrics, competitive analysis, and strategic plans.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Policy-driven classification.</strong> What counts as sensitive varies by department, document type, and workflow. A revenue figure is sensitive in a board presentation but routine in a published annual report. Context-aware data control enables policy-driven sensitivity classification, not just regex pattern matching.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Workflow integration.</strong> Enterprise confidentiality control integrates with governance frameworks, audit systems, and compliance workflows — providing visibility into what data is protected, how, and by whom.</span>
+            </li>
+        </ul>
       </div>
     </section>
 
@@ -668,8 +605,8 @@
         <div class="ds-article-section-header">
           <h2>Enterprise Example</h2>
         </div>
-        <div class="ds-example-card">
-          <h4>M&amp;A Due Diligence</h4>
+        <div class="ds-card">
+          <h4 class="ds-card__title">M&amp;A Due Diligence</h4>
           <p>An investment bank uses AI to analyze target company documents during due diligence. Documents contain no customer PII but are filled with sensitive deal terms, valuation models, and strategic assessments.</p>
           <p><span class="ds-text--product">LLM Capsule</span>'s enterprise confidentiality control encapsulates deal-specific terminology, financial figures, and company identifiers. AI performs analysis on the protected documents. Local restoration restores deal context into the analysis outputs for the advisory team.</p>
         </div>
