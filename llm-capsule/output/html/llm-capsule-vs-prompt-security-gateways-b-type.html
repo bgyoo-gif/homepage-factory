@@ -32,7 +32,6 @@
       font-family: var(--ds-font-base);
       color: var(--ds-color-text-primary);
       background-color: var(--ds-color-surface-white);
-      padding-top: 58px;
       word-break: keep-all;
       overflow-wrap: break-word;
       word-wrap: break-word;
@@ -234,22 +233,6 @@
     ============================================================ */
 
     /* --- Navigation --- */
-    .ds-nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      height: 58px; display: flex; align-items: center;
-      background-color: var(--ds-overlay-nav-bg);
-      backdrop-filter: blur(20px); border-bottom: 1px solid var(--ds-color-border-default);
-      padding: 0 var(--ds-container-padding-mobile);
-    }
-    @media (min-width: 1440px) { .ds-nav { padding: 0 var(--ds-container-padding-desktop); } }
-    .ds-nav__inner { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .ds-nav__logo { display: flex; align-items: center; gap: 8px; font-family: var(--ds-font-base); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-lg); color: var(--ds-color-text-primary); }
-    .ds-nav__logo img { height: 28px; width: auto; }
-    .ds-nav__links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    @media (max-width: 767px) { .ds-nav__links { display: none; } }
-    .ds-nav__link { font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary); transition: color 0.15s; }
-    .ds-nav__link:hover { color: var(--ds-color-text-primary); }
-    .ds-nav__actions { display: flex; align-items: center; gap: var(--ds-space-sm); }
 
     /* --- Section --- */
     .ds-section { width: 100%; padding: 60px 0; background-color: var(--ds-color-surface-white); }
@@ -464,19 +447,6 @@
     @media (min-width: 1440px) { .ds-cta-band__title { font-size: var(--ds-text-6xl); } }
 
     /* --- Footer --- */
-    .ds-footer { padding: 56px 0 32px; border-top: 1px solid var(--ds-color-border-default); background-color: var(--ds-color-surface-white); }
-    .ds-footer__grid { display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 40px; margin-bottom: 40px; }
-    @media (max-width: 1023px) { .ds-footer__grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 767px)  { .ds-footer__grid { grid-template-columns: 1fr; gap: 24px; } }
-    .ds-footer__brand { font-family: var(--ds-font-brand); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-lg); color: var(--ds-color-brand-primary); }
-    .ds-footer__brand-desc { font-family: var(--ds-font-base); font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary); margin-top: 10px; line-height: var(--ds-leading-relaxed); font-weight: var(--ds-weight-regular); max-width: 260px; }
-    .ds-footer__col h4 { font-size: 11px; font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-tertiary); text-transform: uppercase; letter-spacing: var(--ds-tracking-wide); margin-bottom: 14px; }
-    .ds-footer__col ul { list-style: none; }
-    .ds-footer__col li { margin-bottom: 8px; }
-    .ds-footer__col a { font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary); transition: color 0.2s; }
-    .ds-footer__col a:hover { color: var(--ds-color-text-primary); }
-    .ds-footer__bottom { padding-top: 20px; border-top: 1px solid var(--ds-color-border-default); display: flex; justify-content: space-between; align-items: center; font-size: var(--ds-text-xs); color: var(--ds-color-text-tertiary); }
-    @media (max-width: 767px) { .ds-footer__bottom { flex-direction: column; gap: 8px; text-align: center; } }
 
     /* ============================================================
        5. Page-specific Styles
@@ -602,47 +572,14 @@
   </style>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav class="ds-nav" role="navigation" aria-label="Main navigation">
-    <div class="ds-nav__inner">
-      <a href="index.html" class="ds-nav__logo">
-        <img src="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/logo-llmcapsule.avif"
-             alt="LLM Capsule" onerror="this.style.display='none'">
-        <span class="ds-text--product">LLM Capsule</span>
-      </a>
-      <ul class="ds-nav__links" role="list">
-        <li><a href="product.html" class="ds-nav__link">Product</a></li>
-        <li><a href="architecture.html" class="ds-nav__link">Architecture</a></li>
-        <li><a href="solutions.html" class="ds-nav__link">Solutions</a></li>
-        <li><a href="trust.html" class="ds-nav__link">Trust</a></li>
-        <li><a href="pricing.html" class="ds-nav__link">Pricing</a></li>
-        <li><a href="resources.html" class="ds-nav__link">Resources</a></li>
-      </ul>
-      <div class="ds-nav__actions">
-        <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" class="ds-btn ds-btn--secondary ds-btn--sm">AWS Marketplace</a>
-        <a href="request-pov.html" class="ds-btn ds-btn--primary ds-btn--sm">Request a Demo</a>
-      </div>
-    </div>
-  </nav>
-
-  <main>
+<main>
 
     <!-- ============================================================
          Section 1: Hero
     ============================================================ -->
     <section id="section-hero" class="ds-section ds-section--hero">
       <div class="ds-article-container">
-        <nav class="ds-breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html" class="ds-breadcrumb__link">Home</a>
-          <span class="ds-breadcrumb__sep">/</span>
-          <a href="resources.html" class="ds-breadcrumb__link">Resources</a>
-          <span class="ds-breadcrumb__sep">/</span>
-          <span class="ds-breadcrumb__current">Comparison</span>
-          <span class="ds-breadcrumb__sep">/</span>
-          <span class="ds-breadcrumb__current"><span class="ds-text--product">LLM Capsule</span> vs Prompt Security Gateways</span>
-        </nav>
-        <h1 class="ds-article-hero__title"><span class="ds-text--product">LLM Capsule</span> vs Prompt Security Gateways</h1>
+<h1 class="ds-article-hero__title"><span class="ds-text--product">LLM Capsule</span> vs Prompt Security Gateways</h1>
         <p class="ds-article-hero__description">
           Compare <span class="ds-text--product">LLM Capsule</span> with prompt security gateways. Gateways filter at the API layer; <span class="ds-text--product">LLM Capsule</span> enables AI adoption at the data layer with structure-preserving encapsulation.
         </p>
@@ -927,58 +864,7 @@
     </section>
 
   </main>
-
-  <footer class="ds-footer">
-    <div class="ds-container">
-      <div class="ds-footer__grid">
-        <div>
-          <div class="ds-footer__brand"><span class="ds-text--product">LLM Capsule</span></div>
-          <p class="ds-footer__brand-desc">Enterprise AI enablement by CUBIG. Enable AI. Protect data. Restore results.</p>
-        </div>
-        <div class="ds-footer__col">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="product.html">Product</a></li>
-            <li><a href="architecture.html">Architecture</a></li>
-            <li><a href="trust.html">Trust</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener">AWS Marketplace</a></li>
-          </ul>
-        </div>
-        <div class="ds-footer__col">
-          <h4>Solutions</h4>
-          <ul>
-            <li><a href="solutions.html">All Solutions</a></li>
-          </ul>
-        </div>
-        <div class="ds-footer__col">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="resources.html">Resources Hub</a></li>
-            <li><a href="learn.html">Learn</a></li>
-            <li><a href="glossary.html">Glossary</a></li>
-            <li><a href="downloads.html">Downloads</a></li>
-            <li><a href="trust-center.html">Trust Center</a></li>
-          </ul>
-        </div>
-        <div class="ds-footer__col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="request-pov.html">Request a Demo</a></li>
-            <li><a href="https://cubig.ai" target="_blank" rel="noopener">CUBIG</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Terms</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="ds-footer__bottom">
-        <span>&copy; 2025 LLM Capsule by CUBIG. All rights reserved.</span>
-        <span>Enterprise AI Enablement</span>
-      </div>
-    </div>
-  </footer>
-
-  <script>
+<script>
     function toggleAcCard(card) {
       card.classList.toggle('ds-ac--open');
     }
