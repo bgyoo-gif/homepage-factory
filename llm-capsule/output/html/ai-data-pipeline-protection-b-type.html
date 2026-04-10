@@ -577,23 +577,6 @@
     }
     .ds-article-key-message strong { color: var(--ds-color-brand-light); }
 
-    /* Example card */
-    .ds-example-card {
-      background-color: var(--ds-color-surface-light);
-      border: var(--ds-border-default);
-      border-radius: var(--ds-radius-md);
-      padding: var(--ds-space-lg);
-    }
-    .ds-example-card__title {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-sm);
-    }
-    .ds-example-card__text {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-sm);
-    }
-    .ds-example-card__text:last-child { margin-bottom: 0; }
-
     /* CTA footnote links */
     .ds-cta-band__footnote-link {
       color: var(--ds-overlay-white-70);
@@ -751,10 +734,10 @@
           <h2>Enterprise <span class="ds-text--brand">Example</span></h2>
         </div>
 
-        <div class="ds-example-card">
-          <h3 class="ds-example-card__title">Telecom Customer Service Automation</h3>
-          <p class="ds-example-card__text">A telecom company routes 50,000 customer support tickets per month through AI for automated categorization, priority scoring, and response drafting. Tickets contain customer account numbers, addresses, service plan details, and payment history.</p>
-          <p class="ds-example-card__text"><span class="ds-text--product">LLM Capsule</span> enables the entire pipeline: tickets are encapsulated at ingestion, AI processes protected tickets, responses are restored with real customer data, and formatted outputs route directly to the support platform.</p>
+        <div class="ds-card">
+          <h4 class="ds-card__title">Telecom Customer Service Automation</h4>
+          <p class="ds-card__description">A telecom company routes 50,000 customer support tickets per month through AI for automated categorization, priority scoring, and response drafting. Tickets contain customer account numbers, addresses, service plan details, and payment history.</p>
+          <p class="ds-card__description"><span class="ds-text--product">LLM Capsule</span> enables the entire pipeline: tickets are encapsulated at ingestion, AI processes protected tickets, responses are restored with real customer data, and formatted outputs route directly to the support platform.</p>
         </div>
       </div>
     </section>

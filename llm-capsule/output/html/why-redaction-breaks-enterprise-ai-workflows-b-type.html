@@ -547,69 +547,7 @@
     @media (min-width: 768px)  { .ds-article-sub-header { font-size: var(--ds-text-lg); } }
     @media (min-width: 1024px) { .ds-article-sub-header { font-size: var(--ds-text-xl); } }
 
-    /* Key message banner (dark) */
-    .ds-key-message {
-      background-color: var(--ds-color-surface-dark);
-      color: var(--ds-color-text-inverse);
-      padding: var(--ds-space-lg) var(--ds-space-xl);
-      border-radius: var(--ds-radius-md);
-      margin: var(--ds-space-lg) 0;
-      font-size: var(--ds-text-md); font-weight: var(--ds-weight-medium);
-      line-height: var(--ds-leading-relaxed);
-    }
-    .ds-key-message strong { color: var(--ds-color-brand-light); }
-
-    /* Example card */
-    .ds-example-card {
-      background-color: var(--ds-color-surface-light);
-      border: 1px solid var(--ds-color-border-default);
-      border-radius: var(--ds-radius-md);
-      padding: var(--ds-space-lg);
-      margin: var(--ds-space-lg) 0;
-    }
-    .ds-example-card h4 {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-sm);
-    }
-    .ds-example-card p {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-xs);
-    }
-    .ds-example-card p:last-child { margin-bottom: 0; }
-
     /* Requirements list — grouped sub-sections */
-    .ds-requirements-list { display: flex; flex-direction: column; gap: var(--ds-space-md); margin: var(--ds-space-md) 0; }
-    .ds-requirements-list__item {
-      padding: var(--ds-space-md) var(--ds-space-lg);
-      border-radius: var(--ds-radius-sm);
-      border-left: 3px solid var(--ds-color-brand-secondary);
-      background-color: var(--ds-overlay-brand-tint-light);
-    }
-    .ds-requirements-list__label {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-2xs);
-    }
-    .ds-requirements-list__desc {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed);
-    }
-
-    /* Limitations list */
-    .ds-limitations-list { display: flex; flex-direction: column; gap: var(--ds-space-md); margin: var(--ds-space-md) 0; }
-    .ds-limitations-list__item {
-      padding: var(--ds-space-md) var(--ds-space-lg);
-      border-radius: var(--ds-radius-sm);
-      border-left: 3px solid var(--ds-color-error);
-      background-color: var(--ds-overlay-error-tint);
-    }
-    .ds-limitations-list__label {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-2xs);
-    }
-    .ds-limitations-list__desc {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed);
-    }
 
     /* Related links */
     .ds-related-links {
@@ -701,24 +639,24 @@
           <h2>How Redaction and Masking Tools Fail in AI Workflows</h2>
         </div>
 
-        <div class="ds-limitations-list">
-          <div class="ds-limitations-list__item">
-            <div class="ds-limitations-list__label">Context Destruction</div>
-            <p class="ds-limitations-list__desc">Masking tools replace sensitive values with generic tokens — [NAME], [ACCOUNT], [DATE]. AI models lose the ability to distinguish between entities. In a multi-party contract, all parties become "[NAME]," collapsing the semantic relationships the AI needs to produce meaningful analysis.</p>
-          </div>
-          <div class="ds-limitations-list__item">
-            <div class="ds-limitations-list__label">Output Unusability</div>
-            <p class="ds-limitations-list__desc">When AI processes a redacted document, its outputs inherit the redaction. A summary of a masked contract produces statements like "The agreement between [NAME] and [NAME] covers [AMOUNT]." This output cannot be filed, forwarded, or used in any business workflow without manual restoration.</p>
-          </div>
-          <div class="ds-limitations-list__item">
-            <div class="ds-limitations-list__label">Structural Damage</div>
-            <p class="ds-limitations-list__desc">Enterprise documents contain structured data — tables, nested references, cross-document citations. Flat masking breaks these structures. A table column header masked as "[FIELD]" destroys the schema information AI needs for accurate extraction.</p>
-          </div>
-          <div class="ds-limitations-list__item">
-            <div class="ds-limitations-list__label">No Restoration Path</div>
-            <p class="ds-limitations-list__desc">Redaction is a one-way operation. Once data is removed, there is no automated mechanism to restore AI outputs to their original context. Every document processed through a redaction-then-AI pipeline requires manual post-processing, eliminating the efficiency gains AI is supposed to deliver.</p>
-          </div>
-        </div>
+        <ul class="ds-bullet ds-bullet--dot">
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Context Destruction</strong> Masking tools replace sensitive values with generic tokens — [NAME], [ACCOUNT], [DATE]. AI models lose the ability to distinguish between entities. In a multi-party contract, all parties become "[NAME]," collapsing the semantic relationships the AI needs to produce meaningful analysis.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Output Unusability</strong> When AI processes a redacted document, its outputs inherit the redaction. A summary of a masked contract produces statements like "The agreement between [NAME] and [NAME] covers [AMOUNT]." This output cannot be filed, forwarded, or used in any business workflow without manual restoration.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>Structural Damage</strong> Enterprise documents contain structured data — tables, nested references, cross-document citations. Flat masking breaks these structures. A table column header masked as "[FIELD]" destroys the schema information AI needs for accurate extraction.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span><strong>No Restoration Path</strong> Redaction is a one-way operation. Once data is removed, there is no automated mechanism to restore AI outputs to their original context. Every document processed through a redaction-then-AI pipeline requires manual post-processing, eliminating the efficiency gains AI is supposed to deliver.</span>
+            </li>
+        </ul>
       </div>
     </section>
 
@@ -734,22 +672,22 @@
           Achieving AI document security and secure LLM usage in regulated environments demands more than pattern-based redaction. Enterprise AI data pipelines need a protection mechanism that satisfies three requirements simultaneously:
         </p>
 
-        <div class="ds-requirements-list">
-          <div class="ds-requirements-list__item">
-            <div class="ds-requirements-list__label">Structure-preserving processing.</div>
-            <p class="ds-requirements-list__desc">Document structure, entity relationships, and semantic context must remain intact for AI comprehension.</p>
-          </div>
-          <div class="ds-requirements-list__item">
-            <div class="ds-requirements-list__label">Zero exposure.</div>
-            <p class="ds-requirements-list__desc">Original sensitive data must never leave the enterprise environment.</p>
-          </div>
-          <div class="ds-requirements-list__item">
-            <div class="ds-requirements-list__label">Restorable workflow.</div>
-            <p class="ds-requirements-list__desc">AI results are automatically restored locally with original enterprise data. Outputs contain real names, real amounts, real dates — ready for direct use in business processes.</p>
-          </div>
+        <ul class="ds-bullet ds-bullet--check">
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon">&#10003;</span>
+              <span><strong>Structure-preserving processing.</strong> Document structure, entity relationships, and semantic context must remain intact for AI comprehension.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon">&#10003;</span>
+              <span><strong>Zero exposure.</strong> Original sensitive data must never leave the enterprise environment.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon">&#10003;</span>
+              <span><strong>Restorable workflow.</strong> AI results are automatically restored locally with original enterprise data. Outputs contain real names, real amounts, real dates — ready for direct use in business processes.</span>
+            </li>
         </div>
 
-        <div class="ds-key-message">
+        <div class="ds-banner ds-banner--brand">
           <strong>AI results are automatically restored locally with original enterprise data.</strong> This is the fundamental capability that separates <span class="ds-text--product">LLM Capsule</span> as an AI enablement data layer from static redaction tools.
         </div>
       </div>
@@ -827,8 +765,8 @@
         <div class="ds-article-section-header">
           <h2>Enterprise Example</h2>
         </div>
-        <div class="ds-example-card">
-          <h4>Legal Contract Review</h4>
+        <div class="ds-card">
+          <h4 class="ds-card__title">Legal Contract Review</h4>
           <p>A law firm needs AI to review 200 acquisition agreements and extract key terms — parties, obligations, termination clauses, governing law. Each agreement contains names of real companies, executives, and financial figures.</p>
           <p><strong>With redaction:</strong> Party names become "[REDACTED]," making it impossible to distinguish acquirer from target. Financial terms become "[AMOUNT]," preventing comparison across agreements. The AI produces generic extraction that requires 200 rounds of manual restoration.</p>
           <p><strong>With <span class="ds-text--product">LLM Capsule</span>:</strong> Sensitive elements are encapsulated locally with structure-preserving processing. AI processes the protected documents and produces structured extractions. Local restoration restores all real party names, amounts, and clause references. The extraction output is directly usable in the firm's deal management system.</p>

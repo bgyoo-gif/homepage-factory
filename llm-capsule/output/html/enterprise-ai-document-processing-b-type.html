@@ -565,39 +565,6 @@
     @media (min-width: 1440px) { .ds-article-section-header h2 { font-size: 28px; } }
     @media (max-width: 767px) { .ds-article-section-header { text-align: left; } }
 
-    /* Key message banner (dark) */
-    .ds-key-message {
-      background-color: var(--ds-color-neutral-800);
-      color: var(--ds-color-text-inverse);
-      padding: var(--ds-space-lg) var(--ds-space-xl);
-      border-radius: var(--ds-radius-md);
-      margin: var(--ds-space-xl) 0;
-      font-size: var(--ds-text-md);
-      font-weight: var(--ds-weight-medium);
-      line-height: var(--ds-leading-relaxed);
-    }
-    .ds-key-message__highlight {
-      color: var(--ds-color-brand-secondary);
-    }
-
-    /* Example card */
-    .ds-example-card {
-      background-color: var(--ds-color-surface-light);
-      border: 1px solid var(--ds-color-border-default);
-      border-radius: var(--ds-radius-md);
-      padding: var(--ds-space-lg);
-      margin: var(--ds-space-lg) 0;
-    }
-    .ds-example-card__title {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-sm);
-    }
-    .ds-example-card__body {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-sm);
-    }
-    .ds-example-card__body:last-child { margin-bottom: 0; }
-
     /* Comparison table */
     .ds-cmp-table-wrap { overflow-x: auto; margin: var(--ds-space-xl) 0; }
     .ds-cmp-table {
@@ -631,28 +598,8 @@
     }
 
     /* Related links grid */
-    .ds-internal-links { border-top: 1px solid var(--ds-color-border-default); padding-top: var(--ds-space-xl); margin-top: var(--ds-space-2xl); }
-    .ds-internal-links__grid {
-      display: grid; gap: var(--ds-space-sm);
-      grid-template-columns: 1fr;
-    }
-    @media (min-width: 768px)  { .ds-internal-links__grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1024px) { .ds-internal-links__grid { grid-template-columns: repeat(3, 1fr); } }
-    .ds-internal-links__card {
-      display: flex; align-items: center; gap: var(--ds-space-sm);
-      padding: var(--ds-space-sm) var(--ds-space-md);
-      border: 1px solid var(--ds-color-border-default);
-      border-radius: var(--ds-radius-sm);
-      transition: all 0.2s;
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-medium);
-      color: var(--ds-color-text-primary);
-    }
-    .ds-internal-links__card:hover {
-      border-color: var(--ds-color-brand-secondary);
-      background-color: var(--ds-overlay-brand-tint);
-      transform: translateY(-1px);
-    }
-    .ds-internal-links__card-icon { font-size: var(--ds-text-lg); flex-shrink: 0; }
+    @media (min-width: 768px)  { }
+    @media (min-width: 1024px) { }
 
     /* Spacing utility */
     .ds-spaced-top { margin-top: var(--ds-space-lg); }
@@ -780,8 +727,8 @@
           <strong>Q&amp;A and RAG.</strong> AI answers questions about enterprise document collections. Documents are encapsulated before indexing in RAG pipelines. Retrieved context is protected during generation, and responses are restored before delivery to users.
         </p>
 
-        <div class="ds-key-message">
-          <span class="ds-key-message__highlight"><span class="ds-text--product">LLM Capsule</span> enables AI document processing</span> by protecting data at the data layer. Structure-preserving processing with local restoration delivers both AI enablement and data protection simultaneously.
+        <div class="ds-banner ds-banner--brand">
+          <strong><span class="ds-text--product">LLM Capsule</span> enables AI document processing</strong> by protecting data at the data layer. Structure-preserving processing with local restoration delivers both AI enablement and data protection simultaneously.
         </div>
       </div>
     </section>
@@ -794,9 +741,9 @@
         <div class="ds-article-section-header">
           <h2>Enterprise <span class="ds-text--brand">Examples</span></h2>
         </div>
-        <div class="ds-example-card">
-          <p class="ds-example-card__title">Legal: Clause Extraction from Vendor Contracts</p>
-          <p class="ds-example-card__body">A procurement team needs AI to extract liability clauses, payment terms, and termination conditions from 300 vendor contracts. Each contract contains vendor names, proprietary pricing, and internal project references. <span class="ds-text--product">LLM Capsule</span> encapsulates all sensitive elements, AI performs structured extraction, and restoration produces a vendor-by-vendor comparison ready for procurement review.</p>
+        <div class="ds-card">
+          <h4 class="ds-card__title">Legal: Clause Extraction from Vendor Contracts</h4>
+          <p class="ds-card__description">A procurement team needs AI to extract liability clauses, payment terms, and termination conditions from 300 vendor contracts. Each contract contains vendor names, proprietary pricing, and internal project references. <span class="ds-text--product">LLM Capsule</span> encapsulates all sensitive elements, AI performs structured extraction, and restoration produces a vendor-by-vendor comparison ready for procurement review.</p>
         </div>
       </div>
     </section>
@@ -834,54 +781,30 @@
           </span>
           <span class="ds-section-title-icon__text">Learn More</span>
         </div>
-        <div class="ds-internal-links__grid">
-          <a href="product.html" class="ds-internal-links__card">
-            <span class="ds-internal-links__card-icon">&#9651;</span>
-            Product Overview
+        <div class="ds-card-grid ds-card-grid--2col">
+          <a href="product.html" class="ds-card ds-card--dark">Product Overview
           </a>
-          <a href="architecture.html" class="ds-internal-links__card">
-            <span class="ds-internal-links__card-icon">&#9671;</span>
-            Architecture
+          <a href="architecture.html" class="ds-card ds-card--dark">Architecture
           </a>
-          <a href="trust.html" class="ds-internal-links__card">
-            <span class="ds-internal-links__card-icon">&#10003;</span>
-            Trust &amp; Compliance
+          <a href="trust.html" class="ds-card ds-card--dark">Trust &amp; Compliance
           </a>
-          <a href="request-pov.html" class="ds-internal-links__card">
-            <span class="ds-internal-links__card-icon">&#8594;</span>
-            Request PoV
+          <a href="request-pov.html" class="ds-card ds-card--dark">Request PoV
           </a>
-          <a href="what-is-ai-data-capsule.html" class="ds-internal-links__card">
-            <span class="ds-internal-links__card-icon">&#128196;</span>
-            What Is an AI Data Capsule
+          <a href="what-is-ai-data-capsule.html" class="ds-card ds-card--dark">What Is an AI Data Capsule
           </a>
-          <a href="how-to-use-ai-on-sensitive-enterprise-data.html" class="ds-internal-links__card">
-            <span class="ds-internal-links__card-icon">&#128196;</span>
-            AI on Sensitive Data
+          <a href="how-to-use-ai-on-sensitive-enterprise-data.html" class="ds-card ds-card--dark">AI on Sensitive Data
           </a>
-          <a href="why-redaction-breaks-enterprise-ai-workflows.html" class="ds-internal-links__card">
-            <span class="ds-internal-links__card-icon">&#128196;</span>
-            Why Redaction Breaks AI
+          <a href="why-redaction-breaks-enterprise-ai-workflows.html" class="ds-card ds-card--dark">Why Redaction Breaks AI
           </a>
-          <a href="secure-enterprise-ai-workflows.html" class="ds-internal-links__card">
-            <span class="ds-internal-links__card-icon">&#128196;</span>
-            Secure AI Workflows
+          <a href="secure-enterprise-ai-workflows.html" class="ds-card ds-card--dark">Secure AI Workflows
           </a>
-          <a href="structure-preserving-document-processing.html" class="ds-internal-links__card">
-            <span class="ds-internal-links__card-icon">&#128196;</span>
-            Structure-Preserving Processing
+          <a href="structure-preserving-document-processing.html" class="ds-card ds-card--dark">Structure-Preserving Processing
           </a>
-          <a href="pii-protection-vs-enterprise-confidentiality-control.html" class="ds-internal-links__card">
-            <span class="ds-internal-links__card-icon">&#128196;</span>
-            PII vs Confidentiality Control
+          <a href="pii-protection-vs-enterprise-confidentiality-control.html" class="ds-card ds-card--dark">PII vs Confidentiality Control
           </a>
-          <a href="on-premise-vs-cloud-ai-data-protection.html" class="ds-internal-links__card">
-            <span class="ds-internal-links__card-icon">&#128196;</span>
-            On-Premise vs Cloud
+          <a href="on-premise-vs-cloud-ai-data-protection.html" class="ds-card ds-card--dark">On-Premise vs Cloud
           </a>
-          <a href="ai-data-pipeline-protection.html" class="ds-internal-links__card">
-            <span class="ds-internal-links__card-icon">&#128196;</span>
-            AI Pipeline Protection
+          <a href="ai-data-pipeline-protection.html" class="ds-card ds-card--dark">AI Pipeline Protection
           </a>
         </div>
       </div>

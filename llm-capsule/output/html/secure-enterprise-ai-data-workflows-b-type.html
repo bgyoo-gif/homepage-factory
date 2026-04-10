@@ -548,54 +548,6 @@
     @media (min-width: 1024px) { .ds-article-subsection-title { font-size: 19px; } }
     @media (min-width: 1440px) { .ds-article-subsection-title { font-size: 20px; } }
 
-    /* Key message banner (dark) */
-    .ds-key-message {
-      background-color: var(--ds-color-surface-dark);
-      color: var(--ds-color-text-inverse);
-      padding: var(--ds-space-lg) var(--ds-space-xl);
-      border-radius: var(--ds-radius-md);
-      margin: var(--ds-space-lg) 0;
-      font-size: var(--ds-text-md); font-weight: var(--ds-weight-medium);
-      line-height: var(--ds-leading-relaxed);
-    }
-    .ds-key-message strong { color: var(--ds-color-brand-light); }
-
-    /* Definition box */
-    .ds-definition-box {
-      background-color: var(--ds-overlay-brand-tint-light);
-      border-left: 3px solid var(--ds-color-brand-secondary);
-      padding: var(--ds-space-lg) var(--ds-space-xl);
-      border-radius: 0 var(--ds-radius-sm) var(--ds-radius-sm) 0;
-      margin: var(--ds-space-lg) 0;
-    }
-    .ds-definition-box__label {
-      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-semibold);
-      letter-spacing: var(--ds-tracking-wide); text-transform: uppercase;
-      color: var(--ds-color-brand-secondary); margin-bottom: var(--ds-space-xs);
-    }
-    .ds-definition-box p {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-primary);
-      font-weight: var(--ds-weight-medium); line-height: var(--ds-leading-relaxed); margin: 0;
-    }
-
-    /* Example card */
-    .ds-example-card {
-      background-color: var(--ds-color-surface-light);
-      border: 1px solid var(--ds-color-border-default);
-      border-radius: var(--ds-radius-md);
-      padding: var(--ds-space-lg);
-      margin: var(--ds-space-lg) 0;
-    }
-    .ds-example-card h4 {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-sm);
-    }
-    .ds-example-card p {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-xs);
-    }
-    .ds-example-card p:last-child { margin-bottom: 0; }
-
     /* Related links */
     .ds-related-links {
       display: grid; grid-template-columns: 1fr; gap: var(--ds-space-sm);
@@ -682,8 +634,8 @@
         <div class="ds-article-section-header">
           <h2>Definition</h2>
         </div>
-        <div class="ds-definition-box">
-          <div class="ds-definition-box__label">Secure Enterprise AI Data Workflow</div>
+        <div class="ds-banner ds-banner--brand">
+          <p><strong>Secure Enterprise AI Data Workflow</strong></p>
           <p>A secure enterprise AI data workflow is an end-to-end data processing pattern that protects sensitive information at the data layer before AI processing, preserves document structure for AI accuracy, and restores enterprise context in outputs through local restoration. It enables enterprise AI adoption without sacrificing data privacy or AI output quality.</p>
         </div>
       </div>
@@ -716,7 +668,7 @@
           AI results are restored through local restoration. The locally stored mapping between original and encapsulated values is applied to AI outputs automatically. This produces enterprise-ready outputs — with real names, real amounts, real references — that integrate directly into business systems without manual post-processing.
         </p>
 
-        <div class="ds-key-message">
+        <div class="ds-banner ds-banner--brand">
           <strong>Enable AI. Protect data. Restore results.</strong> This is the operating principle of every enterprise AI data workflow built on <span class="ds-text--product">LLM Capsule</span>.
         </div>
       </div>
@@ -730,16 +682,16 @@
         <div class="ds-article-section-header">
           <h2>Enterprise Examples</h2>
         </div>
-        <div class="ds-example-card">
-          <h4>Finance: Regulatory Reporting Automation</h4>
+        <div class="ds-card">
+          <h4 class="ds-card__title">Finance: Regulatory Reporting Automation</h4>
           <p>A bank automates quarterly regulatory report generation using AI. Source documents contain customer account data, transaction histories, and internal risk assessments. <span class="ds-text--product">LLM Capsule</span> encapsulates all sensitive data, AI generates structured reports from protected sources, and restoration produces regulator-ready output.</p>
         </div>
-        <div class="ds-example-card">
-          <h4>Healthcare: Clinical Trial Document Processing</h4>
+        <div class="ds-card">
+          <h4 class="ds-card__title">Healthcare: Clinical Trial Document Processing</h4>
           <p>A pharmaceutical company uses AI to extract adverse event data from clinical trial reports. Documents contain patient identifiers, investigator names, and proprietary compound information. The secure workflow encapsulates all protected elements, AI extracts structured data, and restoration links extracted events to real patient identifiers in the internal safety database.</p>
         </div>
-        <div class="ds-example-card">
-          <h4>Legal: Multi-Jurisdictional Contract Review</h4>
+        <div class="ds-card">
+          <h4 class="ds-card__title">Legal: Multi-Jurisdictional Contract Review</h4>
           <p>A multinational corporation reviews employment contracts across 12 jurisdictions using AI for clause extraction and compliance checking. Each jurisdiction's contracts contain locally sensitive employee data. Enterprise confidentiality control applies jurisdiction-appropriate encapsulation policies, and restored outputs map to the appropriate HR systems.</p>
         </div>
       </div>

@@ -503,52 +503,7 @@
     @media (min-width: 1440px) { .ds-article-section-header h2 { font-size: 28px; } }
     @media (max-width: 767px) { .ds-article-section-header { text-align: left; } }
 
-    /* Key message banner (dark) */
-    .ds-key-message {
-      background-color: var(--ds-color-surface-dark);
-      color: var(--ds-color-text-inverse);
-      padding: var(--ds-space-lg) var(--ds-space-xl);
-      border-radius: var(--ds-radius-md);
-      margin: var(--ds-space-lg) 0;
-      font-size: var(--ds-text-md); font-weight: var(--ds-weight-medium);
-      line-height: var(--ds-leading-relaxed);
-    }
-    .ds-key-message strong { color: var(--ds-color-brand-light); }
-
-    /* Example card */
-    .ds-example-card {
-      background-color: var(--ds-color-surface-light);
-      border: 1px solid var(--ds-color-border-default);
-      border-radius: var(--ds-radius-md);
-      padding: var(--ds-space-lg);
-      margin: var(--ds-space-lg) 0;
-    }
-    .ds-example-card h4 {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-sm);
-    }
-    .ds-example-card p {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-xs);
-    }
-    .ds-example-card p:last-child { margin-bottom: 0; }
-
     /* Deployment model cards */
-    .ds-deployment-list { display: flex; flex-direction: column; gap: var(--ds-space-md); margin: var(--ds-space-md) 0; }
-    .ds-deployment-list__item {
-      padding: var(--ds-space-md) var(--ds-space-lg);
-      border-radius: var(--ds-radius-sm);
-      border-left: 3px solid var(--ds-color-brand-secondary);
-      background-color: var(--ds-overlay-brand-tint);
-    }
-    .ds-deployment-list__label {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-2xs);
-    }
-    .ds-deployment-list__desc {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed);
-    }
 
     /* Related links */
     .ds-related-links {
@@ -635,30 +590,30 @@
         <div class="ds-article-section-header">
           <h2>Explanation</h2>
         </div>
-        <div class="ds-deployment-list">
-          <div class="ds-deployment-list__item">
-            <div class="ds-deployment-list__label">On-premise deployment.</div>
-            <p class="ds-deployment-list__desc">The encapsulation engine runs entirely within the enterprise data center. Sensitive data never traverses any network boundary. The AI enablement data layer operates within existing security perimeters. Only encapsulated data is sent to external AI services when needed.</p>
-          </div>
-          <div class="ds-deployment-list__item">
-            <div class="ds-deployment-list__label">Air-gapped deployment.</div>
-            <p class="ds-deployment-list__desc">For the most sensitive environments, <span class="ds-text--product">LLM Capsule</span> can operate within air-gapped networks. Documents are encapsulated locally, transferred to an AI-connected environment through controlled channels, processed, and results are transferred back for local restoration.</p>
-          </div>
-          <div class="ds-deployment-list__item">
-            <div class="ds-deployment-list__label">Cloud deployment.</div>
-            <p class="ds-deployment-list__desc">Available on AWS Marketplace. The encapsulation layer runs within the enterprise's cloud account or VPC. Data remains within the enterprise's cloud boundary while AI services are accessed externally.</p>
-          </div>
-          <div class="ds-deployment-list__item">
-            <div class="ds-deployment-list__label">Hybrid deployment.</div>
-            <p class="ds-deployment-list__desc">Different document types or sensitivity levels route through different deployment modes within a single <span class="ds-text--product">LLM Capsule</span> instance.</p>
-          </div>
-          <div class="ds-deployment-list__item">
-            <div class="ds-deployment-list__label">Embedded integration.</div>
-            <p class="ds-deployment-list__desc"><span class="ds-text--product">LLM Capsule</span> can be embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within the enterprise's own software stack.</p>
-          </div>
+        <ul class="ds-bullet ds-bullet--number">
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon">1</span>
+              <span><strong>On-premise deployment.</strong> The encapsulation engine runs entirely within the enterprise data center. Sensitive data never traverses any network boundary. The AI enablement data layer operates within existing security perimeters. Only encapsulated data is sent to external AI services when needed.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon">2</span>
+              <span><strong>Air-gapped deployment.</strong> For the most sensitive environments, <span class="ds-text--product">LLM Capsule</span> can operate within air-gapped networks. Documents are encapsulated locally, transferred to an AI-connected environment through controlled channels, processed, and results are transferred back for local restoration.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon">3</span>
+              <span><strong>Cloud deployment.</strong> Available on AWS Marketplace. The encapsulation layer runs within the enterprise's cloud account or VPC. Data remains within the enterprise's cloud boundary while AI services are accessed externally.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon">4</span>
+              <span><strong>Hybrid deployment.</strong> Different document types or sensitivity levels route through different deployment modes within a single <span class="ds-text--product">LLM Capsule</span> instance.</span>
+            </li>
+          <li class="ds-bullet__item">
+              <span class="ds-bullet__icon">5</span>
+              <span><strong>Embedded integration.</strong> <span class="ds-text--product">LLM Capsule</span> can be embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within the enterprise's own software stack.</span>
+            </li>
         </div>
 
-        <div class="ds-key-message">
+        <div class="ds-banner ds-banner--brand">
           <strong>One enablement model, any deployment.</strong> The encapsulation and restoration logic is identical regardless of where <span class="ds-text--product">LLM Capsule</span> runs. AI results are restored locally in every deployment scenario.
         </div>
       </div>
@@ -672,8 +627,8 @@
         <div class="ds-article-section-header">
           <h2>Enterprise Example</h2>
         </div>
-        <div class="ds-example-card">
-          <h4>Government Agency — Air-Gapped Deployment</h4>
+        <div class="ds-card">
+          <h4 class="ds-card__title">Government Agency — Air-Gapped Deployment</h4>
           <p>A government agency needs AI to process classified briefing documents for automated summarization. The classified network has no external connectivity.</p>
           <p><span class="ds-text--product">LLM Capsule</span> encapsulates documents on the classified network. Encapsulated data is transferred to the AI-connected environment through an approved data diode. AI generates summaries. Results are transferred back and restored on the classified network, producing classified-ready summaries.</p>
         </div>

@@ -579,36 +579,6 @@
       .ds-comparison-table th, .ds-comparison-table td { padding: var(--ds-space-xs) var(--ds-space-sm); }
     }
 
-    /* Example card */
-    .ds-example-card {
-      background-color: var(--ds-color-surface-light);
-      border: 1px solid var(--ds-color-border-default);
-      border-radius: var(--ds-radius-md);
-      padding: var(--ds-space-lg); margin: var(--ds-space-lg) 0;
-    }
-    .ds-example-card h4 {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-sm);
-    }
-    .ds-example-card p {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-xs);
-    }
-    .ds-example-card p:last-child { margin-bottom: 0; }
-
-    /* Key message banner */
-    .ds-key-message {
-      background-color: var(--ds-color-surface-dark);
-      color: var(--ds-color-text-inverse);
-      padding: var(--ds-space-md) var(--ds-space-xl);
-      border-radius: var(--ds-radius-md);
-      margin: var(--ds-space-xl) 0;
-      font-size: var(--ds-text-md);
-      font-weight: var(--ds-weight-medium);
-      line-height: var(--ds-leading-relaxed);
-    }
-    .ds-key-message strong { color: var(--ds-color-brand-light); }
-
     /* Related links row */
     .ds-related-links {
       display: flex; flex-wrap: wrap; gap: var(--ds-space-sm);
@@ -735,7 +705,7 @@
         <p class="ds-article-body__paragraph">
           <strong>Local Restoration.</strong> AI results are automatically restored locally with original enterprise data. The locally stored mapping is applied to reconstruct outputs with real names, amounts, and references, producing results that are directly usable in business workflows.
         </p>
-        <div class="ds-key-message">
+        <div class="ds-banner ds-banner--brand">
           <strong>Key concept:</strong> AI results are automatically restored locally with original enterprise data. The AI data capsule enables AI adoption by ensuring original data never leaves the enterprise environment.
         </div>
       </div>
@@ -749,8 +719,8 @@
         <div class="ds-article-section-header">
           <h2><span class="ds-text--brand">Enterprise Example</span></h2>
         </div>
-        <div class="ds-example-card">
-          <h4>Financial Compliance Review</h4>
+        <div class="ds-card">
+          <h4 class="ds-card__title">Financial Compliance Review</h4>
           <p>A bank needs AI to summarize 500 loan applications for compliance review. Each document contains customer names, social security numbers, account balances, and income data.</p>
           <p>With <span class="ds-text--product">LLM Capsule</span>, the bank encapsulates all documents locally. AI processes the protected versions and generates structured summaries. Local restoration restores the real customer names and account details into the summaries, producing compliance-ready outputs without ever exposing raw customer data to the AI provider.</p>
         </div>

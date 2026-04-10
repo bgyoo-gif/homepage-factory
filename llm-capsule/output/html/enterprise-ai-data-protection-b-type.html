@@ -508,24 +508,6 @@
     @media (min-width: 1440px) { .ds-article-section-header h2 { font-size: 28px; } }
     @media (max-width: 767px)  { .ds-article-section-header { text-align: left; } }
 
-    /* Example card */
-    .ds-example-card {
-      background-color: var(--ds-color-surface-light);
-      border-radius: var(--ds-radius-md);
-      border: var(--ds-border-default);
-      padding: var(--ds-space-lg);
-      margin-bottom: var(--ds-space-md);
-    }
-    .ds-example-card:last-child { margin-bottom: 0; }
-    .ds-example-card__title {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-xs);
-    }
-    .ds-example-card__body {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed);
-    }
-
     /* Accordion / FAQ */
     .ds-ac-list { margin-top: var(--ds-space-md); }
     .ds-ac-card {
@@ -706,13 +688,13 @@
         <div class="ds-article-section-header">
           <h2>Enterprise <span class="ds-text--brand">Examples</span></h2>
         </div>
-        <div class="ds-example-card">
-          <p class="ds-example-card__title">Public Sector: Citizen Services AI</p>
-          <p class="ds-example-card__body">A government agency uses AI to process citizen benefit applications. Each application contains PII, income data, and residency information. Enterprise AI data protection ensures no citizen data leaves the government environment while AI automates eligibility assessment and case routing.</p>
+        <div class="ds-card">
+          <h4 class="ds-card__title">Public Sector: Citizen Services AI</h4>
+          <p class="ds-card__description">A government agency uses AI to process citizen benefit applications. Each application contains PII, income data, and residency information. Enterprise AI data protection ensures no citizen data leaves the government environment while AI automates eligibility assessment and case routing.</p>
         </div>
-        <div class="ds-example-card">
-          <p class="ds-example-card__title">Telecom: Network Security Intelligence</p>
-          <p class="ds-example-card__body">A telecom operator uses AI to analyze network incident reports that contain customer data, infrastructure details, and vulnerability information. Encapsulation protects all sensitive elements while AI performs pattern analysis and threat classification.</p>
+        <div class="ds-card">
+          <h4 class="ds-card__title">Telecom: Network Security Intelligence</h4>
+          <p class="ds-card__description">A telecom operator uses AI to analyze network incident reports that contain customer data, infrastructure details, and vulnerability information. Encapsulation protects all sensitive elements while AI performs pattern analysis and threat classification.</p>
         </div>
       </div>
     </section>
