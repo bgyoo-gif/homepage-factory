@@ -303,7 +303,7 @@
     /* --- Section Header --- */
     .ds-section-header { margin-bottom: var(--ds-space-2xl); text-align: center; }
     .ds-section-header__title {
-      font-size: var(--ds-text-5xl); font-weight: var(--ds-weight-bold);
+      font-size: 20px; font-weight: var(--ds-weight-bold);
       color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight);
       letter-spacing: var(--ds-tracking-tight); margin-bottom: var(--ds-space-md);
     }
@@ -319,9 +319,9 @@
       margin-bottom: var(--ds-space-xl);
     }
     @media (max-width: 767px) { .ds-section-header { text-align: left; } }
-    @media (max-width: 767px) { .ds-section-header__title { font-size: var(--ds-text-4xl); } }
-    @media (min-width: 768px)  { .ds-section-header__title { font-size: var(--ds-text-5xl); } }
-    @media (min-width: 1440px) { .ds-section-header__title { font-size: var(--ds-text-6xl); } }
+    @media (min-width: 768px)  { .ds-section-header__title { font-size: 22px; } }
+    @media (min-width: 1024px) { .ds-section-header__title { font-size: 24px; } }
+    @media (min-width: 1440px) { .ds-section-header__title { font-size: 28px; } }
 
     /* --- Hero Screenshot --- */
     .ds-hero { padding: 0; display: grid; grid-template-columns: 1fr; gap: var(--ds-space-lg); align-items: center; }
@@ -363,20 +363,18 @@
     @media (min-width: 1440px) { .ds-hero__description { max-width: 860px; } }
 
     /* --- Partner Grid (Marquee) --- */
-    .ds-partner-grid { overflow: hidden; padding: var(--ds-space-lg) 0; }
-    .ds-partner-grid__track {
-      display: flex; align-items: center; gap: 64px;
-      animation: marquee 30s linear infinite; width: max-content;
+    .ds-partner-grid { width: 100vw; margin-left: calc(-50vw + 50%); overflow: hidden; padding: var(--ds-space-xl) 0; }
+    .ds-partner-grid__track { display: flex; gap: var(--ds-space-3xl); align-items: center; width: max-content; animation: ds-marquee 30s linear infinite; }
+    .ds-partner-grid__track:hover { animation-play-state: paused; }
+    .ds-partner-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--ds-space-xs); flex-shrink: 0; height: 100px; }
+    .ds-partner-item__logo { width: 120px; height: 100px; object-fit: contain; filter: grayscale(1); opacity: 0.65; transition: filter 0.2s, opacity 0.2s; }
+    .ds-partner-item__logo:hover { filter: grayscale(0); opacity: 1; }
+    .ds-partner-item__name { font-size: var(--ds-text-sm); font-weight: var(--ds-weight-bold); color: var(--ds-color-neutral-400); white-space: nowrap; letter-spacing: var(--ds-tracking-wide); text-transform: uppercase; }
+    @keyframes ds-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @media (max-width: 767px) {
+      .ds-partner-item__logo { width: 100px; height: 75px; }
+      .ds-partner-grid__track { gap: var(--ds-space-2xl); animation-duration: 20s; }
     }
-    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .ds-partner-item { display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .ds-partner-item__logo { height: 32px; width: auto; opacity: 0.5; filter: grayscale(1); transition: opacity 0.3s, filter 0.3s; }
-    .ds-partner-item__logo:hover { opacity: 0.8; filter: grayscale(0); }
-    .ds-partner-item__name {
-      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-bold);
-      color: var(--ds-color-neutral-400); letter-spacing: var(--ds-tracking-normal); white-space: nowrap;
-    }
-    @media (max-width: 767px) { .ds-partner-grid__track { gap: 48px; animation-duration: 20s; } .ds-partner-item__logo { height: 24px; } }
 
     /* --- KPI Band --- */
     .ds-kpi-band {
@@ -407,27 +405,36 @@
     @media (max-width: 767px)  { .ds-kpi-band--4col { grid-template-columns: 1fr; } }
 
     /* --- Cert Grid (Marquee) --- */
-    .ds-cert-grid { overflow: hidden; padding: var(--ds-space-lg) 0; }
-    .ds-cert-grid__track {
-      display: flex; gap: 24px;
-      animation: marquee 40s linear infinite; width: max-content;
-    }
+    .ds-cert-grid { width: 100vw; margin-left: calc(-50vw + 50%); overflow: hidden; padding: var(--ds-space-xl) 0; }
+    .ds-cert-grid__track { display: flex; gap: var(--ds-space-lg); align-items: stretch; width: max-content; animation: ds-marquee 40s linear infinite; }
+    .ds-cert-grid__track:hover { animation-play-state: paused; }
     .ds-cert-card {
-      flex-shrink: 0; width: 200px; padding: var(--ds-space-md);
-      border: var(--ds-border-default); border-radius: var(--ds-radius-md);
-      background-color: var(--ds-color-surface-white);
-      text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--ds-space-xs);
+      background-color: var(--ds-color-surface-white); border: 1px solid var(--ds-color-border-default);
+      border-radius: var(--ds-radius-lg); padding: var(--ds-space-lg) var(--ds-space-xl);
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      gap: var(--ds-space-xs); flex-shrink: 0; width: 200px;
     }
     .ds-cert-card__group {
-      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-bold);
-      color: var(--ds-color-brand-secondary); text-transform: uppercase;
-      letter-spacing: var(--ds-tracking-wide);
+      font-family: var(--ds-font-code); font-size: 10px; font-weight: var(--ds-weight-medium);
+      text-transform: uppercase; letter-spacing: var(--ds-tracking-wide);
+      color: var(--ds-color-brand-secondary); margin-bottom: var(--ds-space-2xs);
     }
-    .ds-cert-card__wreath { display: flex; align-items: center; gap: var(--ds-space-xs); }
-    .ds-cert-card__wreath img { height: 40px; width: auto; }
-    .ds-cert-card__text { font-size: var(--ds-text-md); font-weight: var(--ds-weight-bold); color: var(--ds-color-text-primary); }
-    .ds-cert-card__org { font-size: var(--ds-text-xs); color: var(--ds-color-text-tertiary); }
-    @media (max-width: 767px) { .ds-cert-card { width: 170px; } .ds-cert-grid__track { animation-duration: 25s; } }
+    .ds-cert-card__wreath { position: relative; width: 160px; height: 120px; display: flex; align-items: center; justify-content: center; }
+    .ds-cert-card__wreath-left,
+    .ds-cert-card__wreath-right { position: absolute; top: 0; height: 100%; width: 34%; object-fit: contain; }
+    .ds-cert-card__wreath-left { left: -6px; object-position: right; }
+    .ds-cert-card__wreath-right { right: -6px; object-position: left; }
+    .ds-cert-card__wreath-text {
+      position: relative; z-index: 1; font-size: var(--ds-text-sm); font-weight: var(--ds-weight-bold);
+      color: var(--ds-color-text-primary); text-align: center; line-height: var(--ds-leading-tight); max-width: 90px;
+    }
+    .ds-cert-card__org { font-size: var(--ds-text-xs); color: var(--ds-color-text-secondary); }
+    @media (max-width: 767px) {
+      .ds-cert-card { width: 170px; padding: var(--ds-space-md); }
+      .ds-cert-card__wreath { width: 130px; height: 96px; }
+      .ds-cert-card__wreath-text { font-size: var(--ds-text-xs); max-width: 72px; }
+      .ds-cert-grid__track { gap: var(--ds-space-md); animation-duration: 25s; }
+    }
 
     /* --- Card Grid --- */
     .ds-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
@@ -864,17 +871,81 @@
         </div>
 
         <!-- 2c: Cert Grid -->
-        <div class="ds-cert-grid">
+        <div class="ds-cert-grid" aria-label="Certifications">
           <div class="ds-cert-grid__track">
-            <div class="ds-cert-card"><span class="ds-cert-card__group">ISO</span><div class="ds-cert-card__wreath"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt=""><span class="ds-cert-card__text">ISO 27001</span><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt=""></div><span class="ds-cert-card__org">International Organization for Standardization</span></div>
-            <div class="ds-cert-card"><span class="ds-cert-card__group">ISO</span><div class="ds-cert-card__wreath"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt=""><span class="ds-cert-card__text">ISO 42001</span><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt=""></div><span class="ds-cert-card__org">AI Management System</span></div>
-            <div class="ds-cert-card"><span class="ds-cert-card__group">GS</span><div class="ds-cert-card__wreath"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt=""><span class="ds-cert-card__text">GS Certification</span><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt=""></div><span class="ds-cert-card__org">TTA Korea</span></div>
-            <div class="ds-cert-card"><span class="ds-cert-card__group">AWS</span><div class="ds-cert-card__wreath"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt=""><span class="ds-cert-card__text">AWS Marketplace</span><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt=""></div><span class="ds-cert-card__org">Amazon Web Services</span></div>
-            <!-- duplicate set -->
-            <div class="ds-cert-card"><span class="ds-cert-card__group">ISO</span><div class="ds-cert-card__wreath"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt=""><span class="ds-cert-card__text">ISO 27001</span><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt=""></div><span class="ds-cert-card__org">International Organization for Standardization</span></div>
-            <div class="ds-cert-card"><span class="ds-cert-card__group">ISO</span><div class="ds-cert-card__wreath"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt=""><span class="ds-cert-card__text">ISO 42001</span><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt=""></div><span class="ds-cert-card__org">AI Management System</span></div>
-            <div class="ds-cert-card"><span class="ds-cert-card__group">GS</span><div class="ds-cert-card__wreath"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt=""><span class="ds-cert-card__text">GS Certification</span><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt=""></div><span class="ds-cert-card__org">TTA Korea</span></div>
-            <div class="ds-cert-card"><span class="ds-cert-card__group">AWS</span><div class="ds-cert-card__wreath"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt=""><span class="ds-cert-card__text">AWS Marketplace</span><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt=""></div><span class="ds-cert-card__org">Amazon Web Services</span></div>
+            <div class="ds-cert-card">
+              <span class="ds-cert-card__group">ISO</span>
+              <div class="ds-cert-card__wreath">
+                <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+                <span class="ds-cert-card__wreath-text">ISO 27001</span>
+                <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+              </div>
+              <span class="ds-cert-card__org">International Organization for Standardization</span>
+            </div>
+            <div class="ds-cert-card">
+              <span class="ds-cert-card__group">ISO</span>
+              <div class="ds-cert-card__wreath">
+                <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+                <span class="ds-cert-card__wreath-text">ISO 42001</span>
+                <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+              </div>
+              <span class="ds-cert-card__org">AI Management System</span>
+            </div>
+            <div class="ds-cert-card">
+              <span class="ds-cert-card__group">GS</span>
+              <div class="ds-cert-card__wreath">
+                <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+                <span class="ds-cert-card__wreath-text">GS Certification</span>
+                <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+              </div>
+              <span class="ds-cert-card__org">TTA Korea</span>
+            </div>
+            <div class="ds-cert-card">
+              <span class="ds-cert-card__group">AWS</span>
+              <div class="ds-cert-card__wreath">
+                <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+                <span class="ds-cert-card__wreath-text">AWS Marketplace</span>
+                <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+              </div>
+              <span class="ds-cert-card__org">Amazon Web Services</span>
+            </div>
+            <!-- duplicate set for seamless loop -->
+            <div class="ds-cert-card">
+              <span class="ds-cert-card__group">ISO</span>
+              <div class="ds-cert-card__wreath">
+                <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+                <span class="ds-cert-card__wreath-text">ISO 27001</span>
+                <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+              </div>
+              <span class="ds-cert-card__org">International Organization for Standardization</span>
+            </div>
+            <div class="ds-cert-card">
+              <span class="ds-cert-card__group">ISO</span>
+              <div class="ds-cert-card__wreath">
+                <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+                <span class="ds-cert-card__wreath-text">ISO 42001</span>
+                <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+              </div>
+              <span class="ds-cert-card__org">AI Management System</span>
+            </div>
+            <div class="ds-cert-card">
+              <span class="ds-cert-card__group">GS</span>
+              <div class="ds-cert-card__wreath">
+                <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+                <span class="ds-cert-card__wreath-text">GS Certification</span>
+                <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+              </div>
+              <span class="ds-cert-card__org">TTA Korea</span>
+            </div>
+            <div class="ds-cert-card">
+              <span class="ds-cert-card__group">AWS</span>
+              <div class="ds-cert-card__wreath">
+                <img class="ds-cert-card__wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+                <span class="ds-cert-card__wreath-text">AWS Marketplace</span>
+                <img class="ds-cert-card__wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+              </div>
+              <span class="ds-cert-card__org">Amazon Web Services</span>
+            </div>
           </div>
         </div>
 

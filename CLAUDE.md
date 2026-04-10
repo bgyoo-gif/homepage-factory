@@ -237,6 +237,13 @@ Low 결함만 남은 경우 CONDITIONAL PASS.
 13. **배경 이미지 적용 위치 오류** → section vs component 재확인
 14. **다이어그램 임의 색상 창작** → 원본에 없는 색상(다크 패널, brand primary 배경 등) → DS diag 토큰 기본값으로 교체
 15. **QA 수정 시 변수명만 교체** → 실제 렌더 색상이 여전히 잘못된 경우 → 시각적 결과까지 확인 후 PASS 선언
+16. **CTA band gradient 하드코딩** → `.ds-cta-band:not([class*="ds-bg--"])` 에 hex 직접 사용 → 반드시 `var(--ds-gradient-brand)` 사용
+17. **섹션 헤더 타이틀 font-size 임의 확대** → text-4xl/5xl/6xl 사용 → h2 기본 반응형(20/22/24/28px) 사용 필수
+18. **Partner Grid DS 미준수** → 로고 32px, gap 하드코딩, hover pause 없음 → DS core 기준(120x100px, ds-space-3xl, hover pause, 전폭 100vw)
+19. **Cert Grid DS 미준수** → flat wreath, 작은 카드, hover 없음 → DS core 기준(wreath 포지셔닝 160x120, hover pause, 전폭 100vw, font-code group)
+20. **CTA section 태그 오류** → `<div>` 사용 또는 `</main>` 밖 배치 → `<section>` 태그 + `main` 내부 필수
+21. **ds-badge--purple 배경색 오류** → `overlay-brand-tint-light` 사용 → `var(--ds-color-brand-light)` 사용
+22. **키프레임 이름 불일치** → `@keyframes marquee` → `@keyframes ds-marquee` 사용
 16. **screenshot-frame 좌우 padding 누락** → `padding: 2xl 2xl 0` 필수 (좌우 0이면 배경 이미지가 프레임으로 보이지 않음)
 17. **Hero ↔ 다음 섹션 제목/설명 중복** → Hero에 이미 있는 제목+설명을 바로 다음 섹션 헤더에서 반복 금지. 둘 중 하나만 남기기
 

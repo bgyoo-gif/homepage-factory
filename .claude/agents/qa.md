@@ -108,6 +108,38 @@ grep -oP '--ds-[a-zA-Z0-9-]+' {brand}/output/html/[파일명]-b-type.html | sort
 - [ ] ds-section-header--left가 사용되지 않았는가
 - [ ] 모든 CSS 변수가 design-system 파일에 정의된 것만 사용됐는가
 
+**반복 결함 필수 검사 (FAIL 트리거):**
+
+```bash
+# CTA band gradient 하드코딩 (FAIL 필수)
+grep -n 'ds-cta-band.*linear-gradient\|ds-cta-band.*#[0-9a-fA-F]' {brand}/output/html/[파일명]-b-type.html
+
+# 섹션 헤더 타이틀 과대 font-size (text-4xl/5xl/6xl 금지 — h2 20/22/24/28px 필수)
+grep -n 'section-header__title.*text-4xl\|section-header__title.*text-5xl\|section-header__title.*text-6xl' {brand}/output/html/[파일명]-b-type.html
+
+# CTA가 main 밖에 있는지 확인
+grep -n '</main>' {brand}/output/html/[파일명]-b-type.html
+
+# Partner/Cert Grid hover pause 누락 확인
+grep -n 'animation-play-state.*paused' {brand}/output/html/[파일명]-b-type.html
+
+# ds-badge--purple 잘못된 배경색 확인
+grep -n 'badge--purple.*overlay-brand-tint' {brand}/output/html/[파일명]-b-type.html
+
+# 키프레임 이름 확인 (marquee → ds-marquee)
+grep -n '@keyframes marquee[^-]' {brand}/output/html/[파일명]-b-type.html
+```
+
+추가 체크리스트:
+- [ ] CTA band fallback gradient에 `var(--ds-gradient-brand)` 사용 (hex 금지)
+- [ ] `.ds-section-header__title` font-size가 h2 기본 반응형(20/22/24/28px)인가
+- [ ] CTA band가 `<section>` 태그이며 `<main>` 내부에 있는가
+- [ ] Partner/Cert Grid에 hover pause (`animation-play-state: paused`) 있는가
+- [ ] Partner Grid 로고 크기가 `120x100px`인가 (32px 아님)
+- [ ] Cert Grid wreath가 포지셔닝 방식(`position: relative; width: 160px; height: 120px`)인가
+- [ ] `ds-badge--purple` 배경이 `var(--ds-color-brand-light)`인가
+- [ ] 키프레임 이름이 `ds-marquee`인가
+
 ### [CAT-3] 코드 품질 (Medium)
 - [ ] 시맨틱 태그를 사용했는가
 - [ ] 모든 section에 id가 있는가

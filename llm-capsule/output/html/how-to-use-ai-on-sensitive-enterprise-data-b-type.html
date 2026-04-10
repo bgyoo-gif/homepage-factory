@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restorable Workflow — AI Processing Pattern with Reversible Data Protection | LLM Capsule Glossary</title>
-  <meta name="description" content="A restorable workflow preserves enterprise context while protecting sensitive data, enabling AI outputs restored with original data after processing.">
+  <title>How to Use AI on Sensitive Enterprise Data — Secure LLM Usage Without Data Exposure | LLM Capsule</title>
+  <meta name="description" content="How to use LLMs on sensitive enterprise data without exposing documents. Encapsulate locally, process safely, restore outputs.">
+  <meta name="keywords" content="enterprise AI enablement, AI-ready data layer, AI adoption enabler, LLM plugin, enterprise AI data layer, sensitive data AI">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://llmcapsule.ai/resources/glossary/restorable-workflow">
+  <link rel="canonical" href="https://llmcapsule.ai/resources/learn/how-to-use-ai-on-sensitive-enterprise-data">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Restorable Workflow — AI Processing Pattern with Reversible Data Protection | LLM Capsule Glossary">
-  <meta property="og:description" content="A restorable workflow is an AI data processing pattern where sensitive data is protected reversibly, enabling AI outputs to be restored with original enterprise data after processing.">
-  <meta property="og:url" content="https://llmcapsule.ai/resources/glossary/restorable-workflow">
+  <meta property="og:title" content="How to Use AI on Sensitive Enterprise Data — Secure LLM Usage Without Data Exposure | LLM Capsule">
+  <meta property="og:description" content="Learn how to use large language models on sensitive enterprise data without exposing original documents. Encapsulate locally, process safely, restore usable outputs.">
+  <meta property="og:url" content="https://llmcapsule.ai/resources/learn/how-to-use-ai-on-sensitive-enterprise-data">
   <meta property="og:site_name" content="LLM Capsule">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Restorable Workflow — AI Processing Pattern with Reversible Data Protection | LLM Capsule Glossary">
-  <meta name="twitter:description" content="A restorable workflow is an AI data processing pattern where sensitive data is protected reversibly, enabling AI outputs to be restored with original enterprise data after processing.">
-  <meta name="keywords" content="enterprise AI enablement, AI-ready data layer, AI adoption enabler, LLM plugin, cross-model execution">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://llmcapsule.ai/resources"},{"@type":"ListItem","position":3,"name":"Glossary","item":"https://llmcapsule.ai/resources/glossary"},{"@type":"ListItem","position":4,"name":"Restorable Workflow","item":"https://llmcapsule.ai/resources/glossary/restorable-workflow"}]}</script>
+  <meta name="twitter:title" content="How to Use AI on Sensitive Enterprise Data — Secure LLM Usage Without Data Exposure | LLM Capsule">
+  <meta name="twitter:description" content="Learn how to use large language models on sensitive enterprise data without exposing original documents. Encapsulate locally, process safely, restore usable outputs.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://llmcapsule.ai/resources"},{"@type":"ListItem","position":3,"name":"Learn","item":"https://llmcapsule.ai/resources/learn"},{"@type":"ListItem","position":4,"name":"How to Use AI on Sensitive Enterprise Data","item":"https://llmcapsule.ai/resources/learn/how-to-use-ai-on-sensitive-enterprise-data"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can enterprises use AI on sensitive data safely?","acceptedAnswer":{"@type":"Answer","text":"Yes. By encapsulating sensitive data locally before AI processing and restoring outputs afterward, enterprises can use LLMs on real documents without exposing the original data."}},{"@type":"Question","name":"What types of enterprise data can LLM Capsule handle?","acceptedAnswer":{"@type":"Answer","text":"LLM Capsule handles structured and unstructured enterprise data including contracts, financial documents, medical records, legal filings, HR files, and customer communications."}}]}</script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,15 +77,10 @@
       --ds-overlay-dark-light:      rgba(0,0,0,0.15);
       --ds-overlay-white-85:        rgba(255,255,255,0.85);
       --ds-overlay-white-70:        rgba(255,255,255,0.70);
-      --ds-overlay-white-55:        rgba(255,255,255,0.55);
-      --ds-overlay-white-45:        rgba(255,255,255,0.45);
       --ds-overlay-cta-btn-bdr:     rgba(255,255,255,0.6);
-      --ds-overlay-error-tint:      rgba(255,48,48,0.08);
       --ds-overlay-brand-tint:      rgba(24,33,232,0.04);
       --ds-overlay-brand-tint-md:   rgba(24,33,232,0.08);
       --ds-overlay-brand-tint-light:rgba(24,33,232,0.06);
-      --ds-overlay-success-tint:    rgba(14,130,76,0.08);
-      --ds-overlay-success-bdr:     rgba(14,130,76,0.2);
       --ds-shadow-gradient-card:    rgba(113,141,176,0.25) 0px 1px 20px 0px;
 
       /* Neutral */
@@ -368,6 +364,38 @@
     .ds-section-title-icon__icon { color: var(--ds-color-brand-secondary); flex-shrink: 0; }
     .ds-section-title-icon__text { font-family: var(--ds-font-base); font-size: var(--ds-text-xl); font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); }
 
+    /* --- Accordion --- */
+    .ds-ac-card {
+      border: 1px solid var(--ds-color-border-default);
+      border-radius: var(--ds-radius-sm);
+      margin-bottom: var(--ds-space-xs);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .ds-ac-card:hover { border-color: var(--ds-color-neutral-300); }
+    .ds-ac-card__trigger {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: var(--ds-space-md) var(--ds-space-lg);
+      cursor: pointer; background-color: var(--ds-color-surface-white);
+      gap: var(--ds-space-sm);
+    }
+    .ds-ac-card__title {
+      font-size: var(--ds-text-md); font-weight: var(--ds-weight-semibold);
+      color: var(--ds-color-text-primary); line-height: var(--ds-leading-normal);
+    }
+    .ds-ac-card__chevron {
+      flex-shrink: 0; color: var(--ds-color-text-tertiary);
+      font-size: 20px; font-weight: var(--ds-weight-regular);
+      transition: transform 0.2s; user-select: none;
+    }
+    .ds-ac-card__body {
+      padding: 0 var(--ds-space-lg) var(--ds-space-md);
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed); display: none;
+    }
+    .ds-ac-card.is-open .ds-ac-card__chevron { transform: rotate(45deg); }
+    .ds-ac-card.is-open .ds-ac-card__body { display: block; }
+
     /* --- CTA Band --- */
     .ds-cta-band {
       width: 100%; position: relative; overflow: hidden;
@@ -532,19 +560,22 @@
     @media (min-width: 1440px) { .ds-article-section-header h2 { font-size: 28px; } }
     @media (max-width: 767px) { .ds-article-section-header { text-align: left; } }
 
-    /* Example card success text */
-    .ds-example-restored {
-      font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-success);
+    /* Key message banner */
+    .ds-key-message {
+      background-color: var(--ds-color-neutral-850);
+      color: var(--ds-color-text-inverse);
+      padding: var(--ds-space-lg) var(--ds-space-xl);
+      border-radius: var(--ds-radius-md);
+      margin: var(--ds-space-xl) 0;
+      font-size: var(--ds-text-md);
+      font-weight: var(--ds-weight-medium);
+      line-height: var(--ds-leading-relaxed);
+    }
+    .ds-key-message strong {
+      color: var(--ds-color-brand-accent);
     }
 
-    /* Related terms row */
-    .ds-related-terms {
-      display: flex; flex-wrap: wrap; gap: var(--ds-space-sm);
-      margin-bottom: var(--ds-space-xl);
-    }
-
-    /* Spacing utility */
+    /* Related links spacing utility */
     .ds-spaced-top { margin-top: var(--ds-space-lg); }
   </style>
 </head>
@@ -585,26 +616,26 @@
           <span class="ds-breadcrumb__sep">/</span>
           <a href="resources.html" class="ds-breadcrumb__link">Resources</a>
           <span class="ds-breadcrumb__sep">/</span>
-          <a href="glossary.html" class="ds-breadcrumb__link">Glossary</a>
+          <a href="learn.html" class="ds-breadcrumb__link">Learn</a>
           <span class="ds-breadcrumb__sep">/</span>
-          <span class="ds-breadcrumb__current">Restorable Workflow</span>
+          <span class="ds-breadcrumb__current">How to Use AI on Sensitive Enterprise Data</span>
         </nav>
-        <h1 class="ds-article-hero__title">Restorable Workflow</h1>
+        <h1 class="ds-article-hero__title">How to Use AI on Sensitive Enterprise Data</h1>
         <p class="ds-article-hero__description">
-          An AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling <span class="ds-text--product">LLM Capsule</span> to automatically restore original enterprise data into AI outputs.
+          Learn how to use large language models on sensitive enterprise data without exposing original documents. Encapsulate locally, process safely, restore usable outputs.
         </p>
       </div>
     </section>
 
     <!-- ============================================================
-         Section 2: Screenshot Placeholder
+         Section 2: Screenshot Frame
     ============================================================ -->
     <section id="section-2" class="ds-section--article-body">
       <div class="ds-article-container">
         <div class="ds-article-screenshot-frame ds-bg--paint-blue">
           <div class="ds-article-screenshot">
             <p class="ds-article-screenshot__label">
-              Restorable Workflow — End-to-end document processing with full restoration of business context
+              Secure Enterprise AI — Sensitive documents encapsulated locally, processed by AI, outputs restored with original data
             </p>
           </div>
         </div>
@@ -612,71 +643,199 @@
     </section>
 
     <!-- ============================================================
-         Section 3: Definition
+         Section 3: The Challenge
     ============================================================ -->
     <section id="section-3" class="ds-section--article-body">
       <div class="ds-article-container">
-        <div class="ds-banner ds-banner--brand">
-          <span class="ds-banner__label">DEFINITION</span>
-          <p>A restorable workflow is an AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which <span class="ds-text--product">LLM Capsule</span> enables AI adoption on sensitive data.</p>
+        <div class="ds-article-section-header">
+          <h2>The <span class="ds-text--brand">Challenge</span></h2>
         </div>
+        <p class="ds-article-body__paragraph">
+          Enterprises generate massive volumes of sensitive documents &#8212; contracts, financial reports, medical records, legal filings, HR communications, and internal strategy memos. These documents contain exactly the information that AI could transform: extracting key clauses, summarizing quarterly results, classifying patient records, or translating technical specifications.
+        </p>
+        <p class="ds-article-body__paragraph">
+          But sending this data to external AI services means exposing it. Every prompt, every document, every query transmitted to an LLM API becomes visible to the AI provider&#8217;s infrastructure. For regulated industries and security-conscious organizations, this creates a fundamental conflict: the data that benefits most from AI is the data that cannot be exposed.
+        </p>
       </div>
     </section>
 
     <!-- ============================================================
-         Section 4: Explanation
+         Section 4: The Requirements for Secure Enterprise AI
     ============================================================ -->
     <section id="section-4" class="ds-section--article-body">
       <div class="ds-article-container">
         <div class="ds-article-section-header">
-          <h2><span class="ds-text--brand">Explanation</span></h2>
+          <h2>The Requirements for <span class="ds-text--brand">Secure Enterprise AI</span></h2>
         </div>
         <p class="ds-article-body__paragraph">
-          Traditional data protection workflows are <span class="ds-text--brand">one-directional</span>: protect data, process it, and accept that outputs lack original context. A restorable workflow closes the loop — outputs are automatically restored with real enterprise data. This is what makes <span class="ds-text--product">LLM Capsule</span> an AI enabler rather than just a data protector.
+          Secure LLM usage on sensitive enterprise data requires three capabilities working together:
         </p>
-        <p class="ds-article-body__paragraph ds-article-body__paragraph--strong">
-          The key properties of a restorable workflow are: reversible encapsulation (not permanent masking), locally stored mappings (never transmitted), structure-preserving protection (AI accuracy maintained), and deterministic restoration (outputs exactly match original data).
+        <p class="ds-article-body__paragraph">
+          <strong>1. Pre-processing protection.</strong> Sensitive data must be identified and replaced before it leaves the enterprise. This is not simple keyword matching &#8212; enterprise documents contain context-dependent sensitivity. A name in a contract carries different risk than the same name in a public directory. Structure-preserving processing ensures the document&#8217;s semantic relationships remain intact for AI comprehension.
+        </p>
+        <p class="ds-article-body__paragraph">
+          <strong>2. Model-agnostic processing.</strong> The AI enablement layer must work with any LLM &#8212; not just one provider&#8217;s API. Enterprises use multiple AI models for different tasks. The AI enablement data layer must operate independently of the model layer.
+        </p>
+        <p class="ds-article-body__paragraph">
+          <strong>3. Output Restoration (Restoration).</strong> AI results are restored locally. Without this, AI outputs are abstracted and unusable. Enterprise AI enablement requires that outputs contain real names, real account numbers, and real references &#8212; restored locally after AI processing completes.
         </p>
       </div>
     </section>
 
     <!-- ============================================================
-         Section 5: Example
+         Section 5: How LLM Capsule Enables This
     ============================================================ -->
     <section id="section-5" class="ds-section--article-body">
       <div class="ds-article-container">
         <div class="ds-article-section-header">
-          <h2><span class="ds-text--brand">Example</span></h2>
+          <h2>How <span class="ds-text--product">LLM Capsule</span> Enables This</h2>
         </div>
-        <div class="ds-card">
-          <p class="ds-article-body__paragraph">
-            An HR department uses AI to generate performance review summaries. Employee names, performance ratings, and salary information are encapsulated. AI produces structured summaries from protected data.
-          </p>
-          <hr class="ds-card__divider">
-          <p class="ds-article-body__paragraph ds-article-body__paragraph--strong">
-            Restoration restores all employee details, producing <span class="ds-example-restored">manager-ready review documents</span> without any manual editing.
-          </p>
+        <p class="ds-article-body__paragraph">
+          <span class="ds-text--product">LLM Capsule</span> operates as an AI enablement data layer between enterprise data systems and external AI services. The process follows four steps:
+        </p>
+        <p class="ds-article-body__paragraph">
+          <strong>Step 1: Sensitive Detection.</strong> <span class="ds-text--product">LLM Capsule</span> automatically identifies sensitive elements within enterprise documents &#8212; names, account numbers, dates, financial figures, project codes, and organization-defined entities beyond standard PII.
+        </p>
+        <p class="ds-article-body__paragraph">
+          <strong>Step 2: Local Encapsulation.</strong> Detected sensitive elements are replaced with structure-preserving tokens locally. The document retains its full semantic structure &#8212; tables, references, hierarchies &#8212; so AI models can process it accurately. The mapping between original values and tokens is stored locally and never transmitted.
+        </p>
+        <p class="ds-article-body__paragraph">
+          <strong>Step 3: AI Processing.</strong> Only the encapsulated document crosses the trust boundary. The AI provider receives a structurally complete document with protected values. It can summarize, extract, classify, and analyze &#8212; but never sees the original sensitive data.
+        </p>
+        <p class="ds-article-body__paragraph">
+          <strong>Step 4: Local Restoration.</strong> AI outputs are restored locally using the stored mapping. Real names, figures, dates, and references return automatically. The result is a business-ready document that can be used directly in enterprise workflows without manual post-processing.
+        </p>
+
+        <div class="ds-key-message">
+          <strong>Key principle:</strong> Your data stays on-premise. Only capsules travel. Outputs come back complete.
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         Section 6: Related Terms + Related Links
+         Section 6: Enterprise Use Cases
     ============================================================ -->
     <section id="section-6" class="ds-section--article-body">
       <div class="ds-article-container">
         <div class="ds-article-section-header">
-          <h2>Related <span class="ds-text--brand">Terms</span></h2>
+          <h2>Enterprise <span class="ds-text--brand">Use Cases</span></h2>
         </div>
-
-        <!-- Related Terms buttons -->
-        <div class="ds-related-terms">
-          <a href="restoration.html" class="ds-btn ds-btn--secondary ds-btn--sm">Restoration</a>
-          <a href="structure-preserving-processing.html" class="ds-btn ds-btn--secondary ds-btn--sm">Structure-Preserving Processing</a>
-          <a href="secure-llm-usage.html" class="ds-btn ds-btn--secondary ds-btn--sm">Secure LLM Usage</a>
+        <div class="ds-card-grid ds-card-grid--2col">
+          <div class="ds-card">
+            <div class="ds-section-title-icon">
+              <span class="ds-section-title-icon__icon">
+                <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <path d="M8 21h8"/>
+                  <path d="M12 17v4"/>
+                </svg>
+              </span>
+              <span class="ds-section-title-icon__text">Financial Services</span>
+            </div>
+            <p class="ds-article-body__paragraph">
+              Banks and insurance companies process loan applications, claims documents, and regulatory filings through AI &#8212; with all customer PII, account numbers, and financial figures encapsulated before transmission.
+            </p>
+          </div>
+          <div class="ds-card">
+            <div class="ds-section-title-icon">
+              <span class="ds-section-title-icon__icon">
+                <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 12l2 2 4-4"/>
+                  <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/>
+                </svg>
+              </span>
+              <span class="ds-section-title-icon__text">Healthcare &amp; Legal</span>
+            </div>
+            <p class="ds-article-body__paragraph">
+              Hospitals and law firms use AI for medical record summarization, contract analysis, and case research &#8212; with patient identifiers, client names, and privileged information protected throughout.
+            </p>
+          </div>
+          <div class="ds-card">
+            <div class="ds-section-title-icon">
+              <span class="ds-section-title-icon__icon">
+                <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </span>
+              <span class="ds-section-title-icon__text">Defense &amp; Public Sector</span>
+            </div>
+            <p class="ds-article-body__paragraph">
+              Government agencies and defense organizations draft confidential documents using AI &#8212; with classified terms, operation names, and tactical data encapsulated in air-gapped environments.
+            </p>
+          </div>
+          <div class="ds-card">
+            <div class="ds-section-title-icon">
+              <span class="ds-section-title-icon__icon">
+                <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12h16"/>
+                  <path d="M4 12a8 8 0 0 1 8-8 8 8 0 0 1 8 8"/>
+                  <path d="M4 12a8 8 0 0 0 8 8 8 8 0 0 0 8-8"/>
+                </svg>
+              </span>
+              <span class="ds-section-title-icon__text">Telecom &amp; Security</span>
+            </div>
+            <p class="ds-article-body__paragraph">
+              Infrastructure companies analyze vulnerability logs and network data with AI &#8212; with sensitive IP addresses, topology details, and security findings protected from external exposure.
+            </p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Related Pages sub-header -->
+    <!-- ============================================================
+         Section 7: FAQ
+    ============================================================ -->
+    <section id="section-7" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>FAQ</h2>
+        </div>
+        <div role="list">
+          <div class="ds-ac-card" role="listitem">
+            <div class="ds-ac-card__trigger" role="button" aria-expanded="false" tabindex="0">
+              <span class="ds-ac-card__title">Can enterprises use AI on sensitive data safely?</span>
+              <span class="ds-ac-card__chevron" aria-hidden="true">+</span>
+            </div>
+            <div class="ds-ac-card__body">
+              Yes. By encapsulating sensitive data locally before AI processing and restoring outputs afterward, enterprises can use LLMs on real documents without exposing the original data.
+            </div>
+          </div>
+          <div class="ds-ac-card" role="listitem">
+            <div class="ds-ac-card__trigger" role="button" aria-expanded="false" tabindex="0">
+              <span class="ds-ac-card__title">What types of enterprise data can <span class="ds-text--product">LLM Capsule</span> handle?</span>
+              <span class="ds-ac-card__chevron" aria-hidden="true">+</span>
+            </div>
+            <div class="ds-ac-card__body">
+              <span class="ds-text--product">LLM Capsule</span> handles structured and unstructured enterprise data including contracts, financial documents, medical records, legal filings, HR files, and customer communications.
+            </div>
+          </div>
+          <div class="ds-ac-card" role="listitem">
+            <div class="ds-ac-card__trigger" role="button" aria-expanded="false" tabindex="0">
+              <span class="ds-ac-card__title">Does <span class="ds-text--product">LLM Capsule</span> work with any AI model?</span>
+              <span class="ds-ac-card__chevron" aria-hidden="true">+</span>
+            </div>
+            <div class="ds-ac-card__body">
+              Yes. <span class="ds-text--product">LLM Capsule</span> is model-agnostic. It works with ChatGPT, Claude, Gemini, Perplexity, or any LLM API because it operates at the data layer before transmission.
+            </div>
+          </div>
+          <div class="ds-ac-card" role="listitem">
+            <div class="ds-ac-card__trigger" role="button" aria-expanded="false" tabindex="0">
+              <span class="ds-ac-card__title">What happens to AI outputs after processing?</span>
+              <span class="ds-ac-card__chevron" aria-hidden="true">+</span>
+            </div>
+            <div class="ds-ac-card__body">
+              AI outputs are automatically restored locally. Original names, figures, dates, and references are mapped back into the AI results, producing business-ready documents without manual post-processing.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 8: Related Pages
+    ============================================================ -->
+    <section id="section-8" class="ds-section--article-body">
+      <div class="ds-article-container">
         <div class="ds-section-title-icon">
           <span class="ds-section-title-icon__icon">
             <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -684,10 +843,8 @@
               <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
             </svg>
           </span>
-          <span class="ds-section-title-icon__text">Related Pages</span>
+          <span class="ds-section-title-icon__text">Related</span>
         </div>
-
-        <!-- Related Links cards -->
         <div class="ds-card-grid ds-card-grid--2col">
           <a href="product.html" class="ds-card--dark">
             <span class="ds-card--dark__icon">
@@ -730,12 +887,12 @@
     </section>
 
     <!-- ============================================================
-         Section 7: CTA Band
+         Section 9: CTA Band (full-width, inside main per spec)
     ============================================================ -->
     <section id="section-cta" class="ds-cta-band">
       <div class="ds-cta-band__inner">
-        <h2 class="ds-cta-band__title">See <span class="ds-text--product">LLM Capsule</span> Restorable Workflow in Action</h2>
-        <p class="ds-cta-band__description">Experience how enterprise AI outputs are automatically restored with real business data — no manual post-processing required.</p>
+        <h2 class="ds-cta-band__title">Use AI on Your Sensitive Data with <span class="ds-text--product">LLM Capsule</span></h2>
+        <p class="ds-cta-band__description">Enable enterprise AI on real documents without exposing sensitive data. Encapsulate locally, process safely, restore completely.</p>
         <div class="ds-cta-band__actions">
           <a href="request-pov.html" class="ds-btn ds-btn--lg">Request PoV</a>
           <a href="product.html" class="ds-btn ds-btn--lg">View Product</a>
@@ -796,6 +953,33 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Accordion toggle
+    document.querySelectorAll('.ds-ac-card__trigger').forEach(function(trigger) {
+      trigger.addEventListener('click', function() {
+        var card = this.closest('.ds-ac-card');
+        var isOpen = card.classList.contains('is-open');
+        // Close all
+        document.querySelectorAll('.ds-ac-card').forEach(function(c) {
+          c.classList.remove('is-open');
+          var t = c.querySelector('.ds-ac-card__trigger');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+        // Open clicked if was closed
+        if (!isOpen) {
+          card.classList.add('is-open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+      trigger.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

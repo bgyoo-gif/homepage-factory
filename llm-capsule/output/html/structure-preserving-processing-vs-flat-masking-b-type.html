@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restorable Workflow — AI Processing Pattern with Reversible Data Protection | LLM Capsule Glossary</title>
-  <meta name="description" content="A restorable workflow preserves enterprise context while protecting sensitive data, enabling AI outputs restored with original data after processing.">
+  <title>Structure-Preserving Processing vs Flat Masking | LLM Capsule</title>
+  <meta name="description" content="Structure-preserving processing vs flat masking: flat masking collapses document structure, structure preservation maintains AI output accuracy.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://llmcapsule.ai/resources/glossary/restorable-workflow">
+  <link rel="canonical" href="https://llmcapsule.ai/resources/comparison/structure-preserving-processing-vs-flat-masking">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Restorable Workflow — AI Processing Pattern with Reversible Data Protection | LLM Capsule Glossary">
-  <meta property="og:description" content="A restorable workflow is an AI data processing pattern where sensitive data is protected reversibly, enabling AI outputs to be restored with original enterprise data after processing.">
-  <meta property="og:url" content="https://llmcapsule.ai/resources/glossary/restorable-workflow">
+  <meta property="og:title" content="Structure-Preserving Processing vs Flat Masking | LLM Capsule">
+  <meta property="og:description" content="Compare structure-preserving processing with flat masking for enterprise AI. Flat masking collapses document structure; structure preservation maintains integrity for accurate AI outputs.">
+  <meta property="og:url" content="https://llmcapsule.ai/resources/comparison/structure-preserving-processing-vs-flat-masking">
   <meta property="og:site_name" content="LLM Capsule">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Restorable Workflow — AI Processing Pattern with Reversible Data Protection | LLM Capsule Glossary">
-  <meta name="twitter:description" content="A restorable workflow is an AI data processing pattern where sensitive data is protected reversibly, enabling AI outputs to be restored with original enterprise data after processing.">
+  <meta name="twitter:title" content="Structure-Preserving Processing vs Flat Masking | LLM Capsule">
+  <meta name="twitter:description" content="Compare structure-preserving processing with flat masking for enterprise AI. Flat masking collapses document structure; structure preservation maintains integrity for accurate AI outputs.">
   <meta name="keywords" content="enterprise AI enablement, AI-ready data layer, AI adoption enabler, LLM plugin, cross-model execution">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://llmcapsule.ai/resources"},{"@type":"ListItem","position":3,"name":"Glossary","item":"https://llmcapsule.ai/resources/glossary"},{"@type":"ListItem","position":4,"name":"Restorable Workflow","item":"https://llmcapsule.ai/resources/glossary/restorable-workflow"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://llmcapsule.ai/resources"},{"@type":"ListItem","position":3,"name":"Comparison","item":"https://llmcapsule.ai/resources/comparison"},{"@type":"ListItem","position":4,"name":"Structure-Preserving Processing vs Flat Masking","item":"https://llmcapsule.ai/resources/comparison/structure-preserving-processing-vs-flat-masking"}]}</script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,20 +72,16 @@
 
       /* Overlay values */
       --ds-overlay-nav-bg:          rgba(255,255,255,0.92);
-      --ds-overlay-dark-medium:     rgba(0,0,0,0.35);
       --ds-overlay-dark-light:      rgba(0,0,0,0.15);
       --ds-overlay-white-85:        rgba(255,255,255,0.85);
       --ds-overlay-white-70:        rgba(255,255,255,0.70);
-      --ds-overlay-white-55:        rgba(255,255,255,0.55);
-      --ds-overlay-white-45:        rgba(255,255,255,0.45);
       --ds-overlay-cta-btn-bdr:     rgba(255,255,255,0.6);
-      --ds-overlay-error-tint:      rgba(255,48,48,0.08);
       --ds-overlay-brand-tint:      rgba(24,33,232,0.04);
       --ds-overlay-brand-tint-md:   rgba(24,33,232,0.08);
       --ds-overlay-brand-tint-light:rgba(24,33,232,0.06);
       --ds-overlay-success-tint:    rgba(14,130,76,0.08);
       --ds-overlay-success-bdr:     rgba(14,130,76,0.2);
-      --ds-shadow-gradient-card:    rgba(113,141,176,0.25) 0px 1px 20px 0px;
+      --ds-overlay-error-tint:      rgba(255,48,48,0.08);
 
       /* Neutral */
       --ds-color-neutral-900: #0f0f0f;
@@ -114,7 +110,6 @@
       /* Functional */
       --ds-color-success:       #0e824c;
       --ds-color-error:         #ff3030;
-      --ds-color-info:          #155ea0;
       --ds-color-success-light: #34d399;
       --ds-color-error-light:   #ff6b6b;
 
@@ -215,7 +210,6 @@
     .ds-body-l { font-size: var(--ds-text-xl);  font-weight: var(--ds-weight-regular); line-height: var(--ds-leading-normal); }
     .ds-body-m { font-size: var(--ds-text-md);  font-weight: var(--ds-weight-medium);  line-height: var(--ds-leading-normal); }
     .ds-body-s { font-size: var(--ds-text-sm);  font-weight: var(--ds-weight-medium);  line-height: var(--ds-leading-normal); }
-    .ds-caption { font-size: var(--ds-text-xs);  font-weight: var(--ds-weight-medium);  line-height: var(--ds-leading-normal); }
 
     @media (min-width: 768px)  { h1, .ds-h1 { font-size: 28px; } h2, .ds-h2 { font-size: 22px; } }
     @media (min-width: 1024px) { h1, .ds-h1 { font-size: 32px; } h2, .ds-h2 { font-size: 24px; } h3, .ds-h3 { font-size: 20px; } }
@@ -287,24 +281,6 @@
     .ds-btn--secondary { background-color: transparent; color: var(--ds-color-text-primary); border: var(--ds-border-default); }
     .ds-btn--secondary:hover { background-color: var(--ds-color-surface-light); }
 
-    /* --- Section Header --- */
-    .ds-section-header { margin-bottom: var(--ds-space-2xl); text-align: center; }
-    .ds-section-header__title {
-      font-size: 20px; font-weight: var(--ds-weight-bold);
-      color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight);
-      letter-spacing: var(--ds-tracking-tight); margin-bottom: var(--ds-space-md);
-    }
-    .ds-section-header__description {
-      font-size: var(--ds-text-lg); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed); max-width: 100%; margin: 0 auto;
-    }
-    @media (min-width: 1024px) { .ds-section-header__description { max-width: 720px; } }
-    @media (min-width: 1440px) { .ds-section-header__description { max-width: 860px; } }
-    @media (max-width: 767px) { .ds-section-header { text-align: left; } }
-    @media (min-width: 768px)  { .ds-section-header__title { font-size: 22px; } }
-    @media (min-width: 1024px) { .ds-section-header__title { font-size: 24px; } }
-    @media (min-width: 1440px) { .ds-section-header__title { font-size: 28px; } }
-
     /* --- Card --- */
     .ds-card {
       background-color: var(--ds-color-surface-white);
@@ -318,7 +294,7 @@
     /* --- Card Dark --- */
     .ds-card--dark {
       background-color: var(--ds-color-neutral-850);
-      border-color: var(--ds-color-neutral-700);
+      border: 1px solid var(--ds-color-neutral-700);
       color: var(--ds-color-text-inverse);
       border-radius: var(--ds-radius-md);
       padding: var(--ds-space-lg);
@@ -345,12 +321,7 @@
       border-bottom: 1px solid var(--ds-color-border-default);
       background-color: var(--ds-banner-bg, var(--ds-color-surface-light));
       font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed);
-      text-align: center; word-break: keep-all; overflow-wrap: break-word;
-    }
-    .ds-banner__label {
-      font-family: var(--ds-font-code); font-size: var(--ds-text-xs);
-      text-transform: uppercase; letter-spacing: var(--ds-tracking-wide);
-      color: var(--ds-color-text-tertiary); margin-bottom: var(--ds-space-xs); display: block;
+      word-break: keep-all; overflow-wrap: break-word;
     }
     .ds-banner--brand { --ds-banner-bg: rgba(24, 33, 232, 0.06); }
     .ds-banner--brand p {
@@ -368,15 +339,79 @@
     .ds-section-title-icon__icon { color: var(--ds-color-brand-secondary); flex-shrink: 0; }
     .ds-section-title-icon__text { font-family: var(--ds-font-base); font-size: var(--ds-text-xl); font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); }
 
+    /* --- Accordion FAQ --- */
+    .ds-ac-card {
+      border: 1px solid var(--ds-color-border-default);
+      border-radius: var(--ds-radius-sm);
+      margin-bottom: var(--ds-space-xs);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .ds-ac-card:hover { border-color: var(--ds-color-neutral-300); }
+    .ds-ac-card__trigger {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: var(--ds-space-md) var(--ds-space-lg);
+      cursor: pointer; background-color: var(--ds-color-surface-white);
+      gap: var(--ds-space-sm);
+    }
+    .ds-ac-card__title {
+      font-size: var(--ds-text-md); font-weight: var(--ds-weight-semibold);
+      color: var(--ds-color-text-primary); flex: 1;
+    }
+    .ds-ac-card__icon {
+      flex-shrink: 0; width: 20px; height: 20px;
+      color: var(--ds-color-text-tertiary); transition: transform 0.2s;
+    }
+    .ds-ac-card.is-open .ds-ac-card__icon { transform: rotate(45deg); }
+    .ds-ac-card__body {
+      display: none; padding: 0 var(--ds-space-lg) var(--ds-space-md);
+    }
+    .ds-ac-card.is-open .ds-ac-card__body { display: block; }
+    .ds-ac-card__body p {
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed);
+    }
+
+    /* --- Table --- */
+    .ds-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: var(--ds-space-lg) 0; }
+    .ds-table {
+      width: 100%; border-collapse: collapse;
+      font-size: var(--ds-text-sm);
+    }
+    .ds-table thead { background-color: var(--ds-color-neutral-025); }
+    .ds-table th {
+      padding: 14px var(--ds-space-md); text-align: left;
+      font-weight: var(--ds-weight-semibold); font-size: var(--ds-text-xs);
+      color: var(--ds-color-text-primary);
+      border-bottom: 2px solid var(--ds-color-border-default);
+    }
+    .ds-table th.ds-table__th--highlight {
+      background-color: var(--ds-overlay-brand-tint);
+      color: var(--ds-color-brand-primary);
+    }
+    .ds-table td {
+      padding: 12px var(--ds-space-md);
+      border-bottom: 1px solid var(--ds-color-border-default);
+      color: var(--ds-color-text-secondary); vertical-align: top;
+    }
+    .ds-table td.ds-table__td--highlight {
+      background-color: var(--ds-overlay-brand-tint);
+      color: var(--ds-color-brand-primary);
+      font-weight: var(--ds-weight-medium);
+    }
+    .ds-table__check { color: var(--ds-color-success); font-weight: var(--ds-weight-semibold); }
+    .ds-table__cross { color: var(--ds-color-error);   font-weight: var(--ds-weight-semibold); }
+    @media (max-width: 767px) {
+      .ds-table th, .ds-table td { padding: 10px var(--ds-space-sm); font-size: var(--ds-text-xs); }
+    }
+
     /* --- CTA Band --- */
     .ds-cta-band {
       width: 100%; position: relative; overflow: hidden;
       padding: 80px var(--ds-container-padding-mobile);
       text-align: center;
-      background-color: var(--ds-color-neutral-800);
-      background-size: cover; background-position: center;
+      background: var(--ds-gradient-brand);
     }
-    .ds-cta-band { background: var(--ds-gradient-brand); }
     .ds-cta-band::before {
       content: ''; position: absolute; inset: 0;
       background-color: var(--ds-overlay-dark-light); z-index: 0;
@@ -400,7 +435,9 @@
     .ds-cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
     .ds-cta-band__actions .ds-btn { background-color: var(--ds-overlay-nav-bg); color: var(--ds-color-text-primary); border: 1px solid var(--ds-overlay-cta-btn-bdr); backdrop-filter: blur(8px); }
     .ds-cta-band__actions .ds-btn:hover { background-color: var(--ds-color-white); }
-    .ds-cta-band__footnote { font-size: var(--ds-text-xs); color: var(--ds-overlay-white-70); margin-top: var(--ds-space-xs); }
+    .ds-cta-band__footnote { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--ds-space-lg); margin-top: var(--ds-space-xs); }
+    .ds-cta-band__footnote a { font-size: var(--ds-text-sm); color: var(--ds-overlay-white-70); transition: color 0.2s; }
+    .ds-cta-band__footnote a:hover { color: var(--ds-color-white); }
     @media (min-width: 768px)  { .ds-cta-band { padding: 100px var(--ds-container-padding-tablet); } }
     @media (min-width: 1440px) { .ds-cta-band { padding: 120px var(--ds-container-padding-desktop); max-width: 1440px; margin: 0 auto; } }
     @media (max-width: 767px) {
@@ -429,7 +466,7 @@
        5. Page-specific Styles
     ============================================================ */
 
-    /* Article container — 860px max-width for body sections */
+    /* Article container — 860px max-width */
     .ds-article-container {
       width: 100%; max-width: 860px; margin: 0 auto;
       padding: 0 var(--ds-container-padding-mobile);
@@ -448,12 +485,8 @@
       font-weight: var(--ds-weight-medium); transition: color 0.15s;
     }
     .ds-breadcrumb__link:hover { color: var(--ds-color-brand-primary); }
-    .ds-breadcrumb__sep {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary);
-    }
-    .ds-breadcrumb__current {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary);
-    }
+    .ds-breadcrumb__sep { font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary); }
+    .ds-breadcrumb__current { font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary); }
 
     /* Hero title for article pages */
     .ds-article-hero__title {
@@ -489,8 +522,7 @@
     .ds-article-screenshot {
       background-color: var(--ds-color-surface-white);
       border-radius: var(--ds-radius-sm) var(--ds-radius-sm) 0 0;
-      overflow: hidden;
-      min-height: 200px;
+      overflow: hidden; min-height: 200px;
       display: flex; align-items: center; justify-content: center;
       padding: var(--ds-space-2xl) var(--ds-space-lg);
     }
@@ -500,7 +532,7 @@
     }
 
     /* Article body section reduced top padding */
-    .ds-section--article-body { padding: var(--ds-space-xl) 0; }
+    .ds-section--article-body { padding: var(--ds-space-xl) 0; background-color: var(--ds-color-surface-white); }
     @media (min-width: 768px)  { .ds-section--article-body { padding: var(--ds-space-2xl) 0; } }
     @media (min-width: 1024px) { .ds-section--article-body { padding: var(--ds-space-2xl) 0; } }
     @media (min-width: 1440px) { .ds-section--article-body { padding: var(--ds-space-3xl) 0; } }
@@ -511,11 +543,9 @@
       line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-md);
     }
     .ds-article-body__paragraph:last-child { margin-bottom: 0; }
-    .ds-article-body__paragraph--strong {
-      font-weight: var(--ds-weight-medium);
-    }
+    .ds-article-body__paragraph--strong { font-weight: var(--ds-weight-medium); }
 
-    /* Section header underline within article */
+    /* Section header within article */
     .ds-article-section-header {
       margin-bottom: var(--ds-space-lg);
       padding-bottom: var(--ds-space-md);
@@ -532,20 +562,64 @@
     @media (min-width: 1440px) { .ds-article-section-header h2 { font-size: 28px; } }
     @media (max-width: 767px) { .ds-article-section-header { text-align: left; } }
 
-    /* Example card success text */
-    .ds-example-restored {
-      font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-success);
+    /* Key message banner (dark) */
+    .ds-key-message {
+      background-color: var(--ds-color-surface-dark);
+      color: var(--ds-color-text-inverse);
+      padding: var(--ds-space-lg) var(--ds-space-xl);
+      border-radius: var(--ds-radius-md);
+      margin: var(--ds-space-lg) 0;
+      font-size: var(--ds-text-md); font-weight: var(--ds-weight-medium);
+      line-height: var(--ds-leading-relaxed);
+    }
+    .ds-key-message strong { color: var(--ds-color-brand-light); }
+
+    /* Example card */
+    .ds-example-card {
+      background-color: var(--ds-color-surface-light);
+      border: 1px solid var(--ds-color-border-default);
+      border-radius: var(--ds-radius-md);
+      padding: var(--ds-space-lg);
+      margin: var(--ds-space-lg) 0;
+    }
+    .ds-example-card h4 {
+      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
+      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-sm);
+    }
+    .ds-example-card p {
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-xs);
+    }
+    .ds-example-card p:last-child { margin-bottom: 0; }
+
+    /* Limitations list */
+    .ds-limitations-list { display: flex; flex-direction: column; gap: var(--ds-space-md); margin: var(--ds-space-md) 0; }
+    .ds-limitations-list__item {
+      padding: var(--ds-space-md) var(--ds-space-lg);
+      border-radius: var(--ds-radius-sm);
+      border-left: 3px solid var(--ds-color-error);
+      background-color: var(--ds-overlay-error-tint);
+    }
+    .ds-limitations-list__label {
+      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
+      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-2xs);
+    }
+    .ds-limitations-list__desc {
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed);
     }
 
-    /* Related terms row */
-    .ds-related-terms {
-      display: flex; flex-wrap: wrap; gap: var(--ds-space-sm);
-      margin-bottom: var(--ds-space-xl);
+    /* Related links */
+    .ds-related-links {
+      display: grid; grid-template-columns: 1fr; gap: var(--ds-space-sm);
+      margin-top: var(--ds-space-md);
     }
+    @media (min-width: 768px) { .ds-related-links { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .ds-related-links { grid-template-columns: repeat(3, 1fr); } }
 
     /* Spacing utility */
     .ds-spaced-top { margin-top: var(--ds-space-lg); }
+    .ds-spaced-top-xl { margin-top: var(--ds-space-xl); }
   </style>
 </head>
 <body>
@@ -585,13 +659,13 @@
           <span class="ds-breadcrumb__sep">/</span>
           <a href="resources.html" class="ds-breadcrumb__link">Resources</a>
           <span class="ds-breadcrumb__sep">/</span>
-          <a href="glossary.html" class="ds-breadcrumb__link">Glossary</a>
+          <span class="ds-breadcrumb__current">Comparison</span>
           <span class="ds-breadcrumb__sep">/</span>
-          <span class="ds-breadcrumb__current">Restorable Workflow</span>
+          <span class="ds-breadcrumb__current">Structure-Preserving Processing vs Flat Masking</span>
         </nav>
-        <h1 class="ds-article-hero__title">Restorable Workflow</h1>
+        <h1 class="ds-article-hero__title">Structure-Preserving Processing vs Flat Masking</h1>
         <p class="ds-article-hero__description">
-          An AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling <span class="ds-text--product">LLM Capsule</span> to automatically restore original enterprise data into AI outputs.
+          Compare structure-preserving processing with flat masking for enterprise AI. Flat masking collapses document structure; structure preservation maintains integrity for accurate AI outputs.
         </p>
       </div>
     </section>
@@ -604,7 +678,7 @@
         <div class="ds-article-screenshot-frame ds-bg--paint-blue">
           <div class="ds-article-screenshot">
             <p class="ds-article-screenshot__label">
-              Restorable Workflow — End-to-end document processing with full restoration of business context
+              Structure-Preserving Processing vs Flat Masking — Side-by-side output comparison showing entity consistency vs. collapsed token substitution
             </p>
           </div>
         </div>
@@ -612,86 +686,189 @@
     </section>
 
     <!-- ============================================================
-         Section 3: Definition
+         Section 3: Overview
     ============================================================ -->
     <section id="section-3" class="ds-section--article-body">
       <div class="ds-article-container">
-        <div class="ds-banner ds-banner--brand">
-          <span class="ds-banner__label">DEFINITION</span>
-          <p>A restorable workflow is an AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which <span class="ds-text--product">LLM Capsule</span> enables AI adoption on sensitive data.</p>
+        <div class="ds-article-section-header">
+          <h2>Overview</h2>
         </div>
+        <p class="ds-article-body__paragraph">
+          Flat masking and structure-preserving processing both aim to protect sensitive data before AI processing. They differ fundamentally in how they handle document structure, entity relationships, and semantic context — and this difference determines whether AI outputs are usable.
+        </p>
       </div>
     </section>
 
     <!-- ============================================================
-         Section 4: Explanation
+         Section 4: How Flat Masking Works
     ============================================================ -->
     <section id="section-4" class="ds-section--article-body">
       <div class="ds-article-container">
         <div class="ds-article-section-header">
-          <h2><span class="ds-text--brand">Explanation</span></h2>
+          <h2>How Flat Masking Works</h2>
         </div>
         <p class="ds-article-body__paragraph">
-          Traditional data protection workflows are <span class="ds-text--brand">one-directional</span>: protect data, process it, and accept that outputs lack original context. A restorable workflow closes the loop — outputs are automatically restored with real enterprise data. This is what makes <span class="ds-text--product">LLM Capsule</span> an AI enabler rather than just a data protector.
-        </p>
-        <p class="ds-article-body__paragraph ds-article-body__paragraph--strong">
-          The key properties of a restorable workflow are: reversible encapsulation (not permanent masking), locally stored mappings (never transmitted), structure-preserving protection (AI accuracy maintained), and deterministic restoration (outputs exactly match original data).
+          Flat masking scans documents for sensitive patterns and replaces each match with a generic token. The replacement is uniform — every name becomes [NAME], every number becomes [NUMBER], every date becomes [DATE]. The masking engine treats each sensitive value independently, without considering its role in the document's structure.
         </p>
       </div>
     </section>
 
     <!-- ============================================================
-         Section 5: Example
+         Section 5: Limitations
     ============================================================ -->
     <section id="section-5" class="ds-section--article-body">
       <div class="ds-article-container">
         <div class="ds-article-section-header">
-          <h2><span class="ds-text--brand">Example</span></h2>
+          <h2>Limitations</h2>
         </div>
-        <div class="ds-card">
-          <p class="ds-article-body__paragraph">
-            An HR department uses AI to generate performance review summaries. Employee names, performance ratings, and salary information are encapsulated. AI produces structured summaries from protected data.
-          </p>
-          <hr class="ds-card__divider">
-          <p class="ds-article-body__paragraph ds-article-body__paragraph--strong">
-            Restoration restores all employee details, producing <span class="ds-example-restored">manager-ready review documents</span> without any manual editing.
-          </p>
+        <div class="ds-limitations-list">
+          <div class="ds-limitations-list__item">
+            <div class="ds-limitations-list__label">Entity collapse.</div>
+            <p class="ds-limitations-list__desc">In a multi-party contract, all party names become [NAME]. AI cannot distinguish acquirer from target, lender from borrower, plaintiff from defendant.</p>
+          </div>
+          <div class="ds-limitations-list__item">
+            <div class="ds-limitations-list__label">Table destruction.</div>
+            <p class="ds-limitations-list__desc">Column headers masked as [FIELD] and cell values masked as [VALUE] eliminate the schema information AI needs for accurate extraction.</p>
+          </div>
+          <div class="ds-limitations-list__item">
+            <div class="ds-limitations-list__label">Cross-reference breakage.</div>
+            <p class="ds-limitations-list__desc">When a document references "see Section 3.2 regarding [NAME]'s obligations," flat masking removes the entity link that gives the reference meaning.</p>
+          </div>
+          <div class="ds-limitations-list__item">
+            <div class="ds-limitations-list__label">Inconsistent replacement.</div>
+            <p class="ds-limitations-list__desc">The same entity may receive different tokens in different document locations, breaking AI's ability to track entities across sections.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         Section 6: Related Terms + Related Links
+         Section 6: How LLM Capsule Differs
     ============================================================ -->
     <section id="section-6" class="ds-section--article-body">
       <div class="ds-article-container">
         <div class="ds-article-section-header">
-          <h2>Related <span class="ds-text--brand">Terms</span></h2>
+          <h2>How <span class="ds-text--product">LLM Capsule</span> Differs</h2>
         </div>
-
-        <!-- Related Terms buttons -->
-        <div class="ds-related-terms">
-          <a href="restoration.html" class="ds-btn ds-btn--secondary ds-btn--sm">Restoration</a>
-          <a href="structure-preserving-processing.html" class="ds-btn ds-btn--secondary ds-btn--sm">Structure-Preserving Processing</a>
-          <a href="secure-llm-usage.html" class="ds-btn ds-btn--secondary ds-btn--sm">Secure LLM Usage</a>
+        <p class="ds-article-body__paragraph">
+          Structure-preserving processing maintains document integrity during data protection. Entity consistency is enforced across the entire document. Table structures, cross-references, and semantic relationships are preserved. AI receives a structurally complete document that supports accurate processing.
+        </p>
+        <div class="ds-key-message">
+          <strong>AI results are automatically restored locally with original enterprise data.</strong> <span class="ds-text--product">LLM Capsule</span>'s AI enablement data layer protects sensitive data while preserving the document structure AI needs for accurate outputs.
         </div>
+      </div>
+    </section>
 
-        <!-- Related Pages sub-header -->
+    <!-- ============================================================
+         Section 7: Comparison Table
+    ============================================================ -->
+    <section id="section-7" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>Comparison</h2>
+        </div>
+        <div class="ds-table-wrap">
+          <table class="ds-table">
+            <thead>
+              <tr>
+                <th>Capability</th>
+                <th>Flat Masking</th>
+                <th class="ds-table__th--highlight"><span class="ds-text--product">LLM Capsule</span> (AI Enablement Data Layer)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Entity handling</td>
+                <td>All entities → same token</td>
+                <td class="ds-table__td--highlight">Consistent per-entity mapping</td>
+              </tr>
+              <tr>
+                <td>Table structures</td>
+                <td>Destroyed</td>
+                <td class="ds-table__td--highlight">Preserved</td>
+              </tr>
+              <tr>
+                <td>Cross-references</td>
+                <td>Broken</td>
+                <td class="ds-table__td--highlight">Maintained</td>
+              </tr>
+              <tr>
+                <td>Multi-document consistency</td>
+                <td><span class="ds-table__cross">✗</span></td>
+                <td class="ds-table__td--highlight"><span class="ds-table__check">✓</span></td>
+              </tr>
+              <tr>
+                <td>AI output accuracy</td>
+                <td>Degraded</td>
+                <td class="ds-table__td--highlight">High fidelity</td>
+              </tr>
+              <tr>
+                <td>Restoration support</td>
+                <td><span class="ds-table__cross">✗</span></td>
+                <td class="ds-table__td--highlight"><span class="ds-table__check">✓</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 8: Enterprise Workflow Example
+    ============================================================ -->
+    <section id="section-8" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>Enterprise Workflow Example</h2>
+        </div>
+        <div class="ds-example-card">
+          <h4>Multi-Party Financial Analysis</h4>
+          <p>An investment bank analyzes term sheets involving three parties — lead investor, co-investor, and target company. Each term sheet contains overlapping entity names in different roles.</p>
+          <p>Flat masking turns all three parties into [NAME], making it impossible for AI to attribute terms to the correct party. Structure-preserving processing assigns consistent, distinct representations to each party, enabling accurate extraction of party-specific terms. Restoration restores real party names in the analysis output.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 9: FAQ
+    ============================================================ -->
+    <section id="section-9" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>FAQ</h2>
+        </div>
+        <div class="ds-ac-card" role="region">
+          <button class="ds-ac-card__trigger" aria-expanded="false">
+            <span class="ds-ac-card__title">What is the main difference between flat masking and structure-preserving processing?</span>
+            <svg class="ds-ac-card__icon ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </button>
+          <div class="ds-ac-card__body">
+            <p>Flat masking treats every sensitive value independently, collapsing entity relationships and document structure. Structure-preserving processing maintains entity consistency, table schemas, and semantic relationships throughout the document.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 10: Related Pages
+    ============================================================ -->
+    <section id="section-10" class="ds-section--article-body">
+      <div class="ds-article-container">
         <div class="ds-section-title-icon">
           <span class="ds-section-title-icon__icon">
-            <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
               <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
             </svg>
           </span>
-          <span class="ds-section-title-icon__text">Related Pages</span>
+          <span class="ds-section-title-icon__text">Related</span>
         </div>
-
-        <!-- Related Links cards -->
         <div class="ds-card-grid ds-card-grid--2col">
           <a href="product.html" class="ds-card--dark">
             <span class="ds-card--dark__icon">
-              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
               </svg>
             </span>
@@ -699,7 +876,7 @@
           </a>
           <a href="architecture.html" class="ds-card--dark">
             <span class="ds-card--dark__icon">
-              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M12 2L2 7l10 5 10-5-10-5z"/>
                 <path d="M2 17l10 5 10-5"/>
                 <path d="M2 12l10 5 10-5"/>
@@ -709,7 +886,7 @@
           </a>
           <a href="trust.html" class="ds-card--dark">
             <span class="ds-card--dark__icon">
-              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 <path d="m9 12 2 2 4-4"/>
               </svg>
@@ -718,40 +895,51 @@
           </a>
           <a href="request-pov.html" class="ds-card--dark">
             <span class="ds-card--dark__icon">
-              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"/>
                 <polyline points="12 5 19 12 12 19"/>
               </svg>
             </span>
             <span class="ds-card--dark__title">Request PoV</span>
           </a>
+          <a href="learn.html" class="ds-card--dark">
+            <span class="ds-card--dark__icon">
+              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+            </span>
+            <span class="ds-card--dark__title">Learn Hub</span>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         Section 7: CTA Band
+         Section 11: CTA Band
     ============================================================ -->
     <section id="section-cta" class="ds-cta-band">
       <div class="ds-cta-band__inner">
-        <h2 class="ds-cta-band__title">See <span class="ds-text--product">LLM Capsule</span> Restorable Workflow in Action</h2>
-        <p class="ds-cta-band__description">Experience how enterprise AI outputs are automatically restored with real business data — no manual post-processing required.</p>
+        <h2 class="ds-cta-band__title">See how <span class="ds-text--product">LLM Capsule</span> works with your data</h2>
+        <p class="ds-cta-band__description">Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</p>
         <div class="ds-cta-band__actions">
           <a href="request-pov.html" class="ds-btn ds-btn--lg">Request PoV</a>
-          <a href="product.html" class="ds-btn ds-btn--lg">View Product</a>
+          <a href="architecture.html" class="ds-btn ds-btn--lg">Talk to an Architect</a>
         </div>
-        <p class="ds-cta-band__footnote">Enterprise AI Enablement by CUBIG</p>
+        <div class="ds-cta-band__footnote">
+          <a href="downloads.html">Download Architecture Brief</a>
+          <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener">AWS Marketplace</a>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Footer -->
   <footer class="ds-footer">
     <div class="ds-container">
       <div class="ds-footer__grid">
         <div>
-          <div class="ds-footer__brand">LLM Capsule</div>
+          <div class="ds-footer__brand"><span class="ds-text--product">LLM Capsule</span></div>
           <p class="ds-footer__brand-desc">Enterprise AI enablement by CUBIG. Enable AI. Protect data. Restore results.</p>
         </div>
         <div class="ds-footer__col">
@@ -796,6 +984,27 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Accordion FAQ
+    document.querySelectorAll('.ds-ac-card__trigger').forEach(function(trigger) {
+      trigger.addEventListener('click', function() {
+        var card = this.closest('.ds-ac-card');
+        var isOpen = card.classList.contains('is-open');
+        // Close all
+        document.querySelectorAll('.ds-ac-card').forEach(function(c) {
+          c.classList.remove('is-open');
+          var t = c.querySelector('.ds-ac-card__trigger');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+        // Open clicked if was closed
+        if (!isOpen) {
+          card.classList.add('is-open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

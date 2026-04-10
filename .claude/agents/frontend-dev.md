@@ -110,6 +110,16 @@ a { text-decoration: none; color: inherit; }
 - **background shorthand 금지**: 배경 이미지가 있는 요소에는 `background-color`만 사용
 - **ds-section--light 전면 금지**: 섹션 배경은 항상 `var(--ds-color-surface-white)` (white)
 
+#### 반복 결함 방지 규칙 (절대 위반 금지)
+
+1. **CTA band gradient**: `.ds-cta-band:not([class*="ds-bg--"]) { background: var(--ds-gradient-brand); }` — hex 색상 직접 작성 절대 금지. `linear-gradient(135deg, #1821E8...)` 같은 하드코딩은 무조건 FAIL
+2. **섹션 헤더 타이틀 font-size**: `.ds-section-header__title`은 h2 기본 반응형과 동일해야 함 — `font-size: 20px` → 768px: 22px → 1024px: 24px → 1440px: 28px. text-4xl/5xl/6xl 사용 금지
+3. **Partner Grid**: DS core 그대로 — `width: 100vw; margin-left: calc(-50vw + 50%)` 전폭, 로고 `width: 120px; height: 100px`, gap `var(--ds-space-3xl)`, hover pause 필수, 키프레임 `ds-marquee`
+4. **Cert Grid**: DS core 그대로 — 전폭, wreath 포지셔닝(`position: relative; width: 160px; height: 120px`), 클래스 `__wreath-left`/`__wreath-right`/`__wreath-text`, `__group`에 `font-family: var(--ds-font-code)`, hover pause 필수
+5. **CTA section 구조**: 반드시 `<section>` 태그 사용, `<main>` 내부에 배치. `<div>` 또는 `</main>` 밖 배치 금지
+6. **ds-badge--purple**: `background-color: var(--ds-color-brand-light)` — `overlay-brand-tint-light` 사용 금지
+7. **키프레임 이름**: `@keyframes ds-marquee` 사용 — `@keyframes marquee` 금지
+
 #### 반응형 규칙 (Mobile-first, 4단계 필수)
 ```css
 /* ① mobile 기본 (375px) */
@@ -163,6 +173,16 @@ grep -n 'section-header--left' {brand}/output/html/[파일명]-b-type.html
 
 # 7. letter-spacing 하드코딩
 grep -n 'letter-spacing:.*-[0-9]\|letter-spacing:.*[0-9]px\|letter-spacing:.*[0-9]em' {brand}/output/html/[파일명]-b-type.html | grep -v 'tracking-tight\|tracking-wide\|tracking-normal'
+
+# 8. CTA gradient 하드코딩 (FAIL 필수)
+grep -n 'ds-cta-band.*linear-gradient\|ds-cta-band.*#[0-9a-fA-F]' {brand}/output/html/[파일명]-b-type.html
+
+# 9. 섹션 헤더 타이틀 과대 font-size (text-4xl/5xl/6xl 금지)
+grep -n 'section-header__title.*text-4xl\|section-header__title.*text-5xl\|section-header__title.*text-6xl' {brand}/output/html/[파일명]-b-type.html
+
+# 10. CTA가 main 내부에 있는지 확인
+grep -n '</main>' {brand}/output/html/[파일명]-b-type.html
+grep -n 'ds-cta-band' {brand}/output/html/[파일명]-b-type.html
 ```
 
 → 모든 검증을 통과한 후에만 Step 6으로 진행한다.

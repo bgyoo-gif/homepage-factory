@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restorable Workflow — AI Processing Pattern with Reversible Data Protection | LLM Capsule Glossary</title>
-  <meta name="description" content="A restorable workflow preserves enterprise context while protecting sensitive data, enabling AI outputs restored with original data after processing.">
+  <title>AI Data Pipeline Protection — Enabling Enterprise AI at Every Stage of Processing | LLM Capsule</title>
+  <meta name="description" content="AI data pipeline protection from ingestion to output. Learn how encapsulation enables every pipeline stage while protecting sensitive data.">
+  <meta name="keywords" content="enterprise AI enablement, AI-ready data layer, AI adoption enabler, LLM plugin, enterprise AI data layer, AI data pipeline">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://llmcapsule.ai/resources/glossary/restorable-workflow">
+  <link rel="canonical" href="https://llmcapsule.ai/resources/learn/ai-data-pipeline-protection">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Restorable Workflow — AI Processing Pattern with Reversible Data Protection | LLM Capsule Glossary">
-  <meta property="og:description" content="A restorable workflow is an AI data processing pattern where sensitive data is protected reversibly, enabling AI outputs to be restored with original enterprise data after processing.">
-  <meta property="og:url" content="https://llmcapsule.ai/resources/glossary/restorable-workflow">
+  <meta property="og:title" content="AI Data Pipeline Protection — Securing Every Stage of Enterprise AI Processing | LLM Capsule">
+  <meta property="og:description" content="AI data pipeline protection secures enterprise data from ingestion through AI processing to output delivery. Learn how encapsulation protects every stage of the AI data pipeline.">
+  <meta property="og:url" content="https://llmcapsule.ai/resources/learn/ai-data-pipeline-protection">
   <meta property="og:site_name" content="LLM Capsule">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Restorable Workflow — AI Processing Pattern with Reversible Data Protection | LLM Capsule Glossary">
-  <meta name="twitter:description" content="A restorable workflow is an AI data processing pattern where sensitive data is protected reversibly, enabling AI outputs to be restored with original enterprise data after processing.">
-  <meta name="keywords" content="enterprise AI enablement, AI-ready data layer, AI adoption enabler, LLM plugin, cross-model execution">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://llmcapsule.ai/resources"},{"@type":"ListItem","position":3,"name":"Glossary","item":"https://llmcapsule.ai/resources/glossary"},{"@type":"ListItem","position":4,"name":"Restorable Workflow","item":"https://llmcapsule.ai/resources/glossary/restorable-workflow"}]}</script>
+  <meta name="twitter:title" content="AI Data Pipeline Protection — Securing Every Stage of Enterprise AI Processing | LLM Capsule">
+  <meta name="twitter:description" content="AI data pipeline protection secures enterprise data from ingestion through AI processing to output delivery. Learn how encapsulation protects every stage of the AI data pipeline.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://llmcapsule.ai/resources"},{"@type":"ListItem","position":3,"name":"Learn","item":"https://llmcapsule.ai/resources/learn"},{"@type":"ListItem","position":4,"name":"AI Data Pipeline Protection","item":"https://llmcapsule.ai/resources/learn/ai-data-pipeline-protection"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is AI data pipeline protection?","acceptedAnswer":{"@type":"Answer","text":"AI data pipeline protection secures sensitive enterprise data at every stage of the AI processing pipeline — from document ingestion and pre-processing through model interaction and output generation to final delivery and integration."}}]}</script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,20 +73,15 @@
 
       /* Overlay values */
       --ds-overlay-nav-bg:          rgba(255,255,255,0.92);
-      --ds-overlay-dark-medium:     rgba(0,0,0,0.35);
       --ds-overlay-dark-light:      rgba(0,0,0,0.15);
       --ds-overlay-white-85:        rgba(255,255,255,0.85);
       --ds-overlay-white-70:        rgba(255,255,255,0.70);
-      --ds-overlay-white-55:        rgba(255,255,255,0.55);
-      --ds-overlay-white-45:        rgba(255,255,255,0.45);
       --ds-overlay-cta-btn-bdr:     rgba(255,255,255,0.6);
-      --ds-overlay-error-tint:      rgba(255,48,48,0.08);
       --ds-overlay-brand-tint:      rgba(24,33,232,0.04);
       --ds-overlay-brand-tint-md:   rgba(24,33,232,0.08);
       --ds-overlay-brand-tint-light:rgba(24,33,232,0.06);
       --ds-overlay-success-tint:    rgba(14,130,76,0.08);
       --ds-overlay-success-bdr:     rgba(14,130,76,0.2);
-      --ds-shadow-gradient-card:    rgba(113,141,176,0.25) 0px 1px 20px 0px;
 
       /* Neutral */
       --ds-color-neutral-900: #0f0f0f;
@@ -96,7 +92,6 @@
       --ds-color-neutral-400: #9c9c9c;
       --ds-color-neutral-350: #adadad;
       --ds-color-neutral-300: #bababa;
-      --ds-color-neutral-250: #c4c4c4;
       --ds-color-neutral-200: #e0e0e0;
       --ds-color-neutral-150: #e6e7e9;
       --ds-color-neutral-100: #ececec;
@@ -287,24 +282,6 @@
     .ds-btn--secondary { background-color: transparent; color: var(--ds-color-text-primary); border: var(--ds-border-default); }
     .ds-btn--secondary:hover { background-color: var(--ds-color-surface-light); }
 
-    /* --- Section Header --- */
-    .ds-section-header { margin-bottom: var(--ds-space-2xl); text-align: center; }
-    .ds-section-header__title {
-      font-size: 20px; font-weight: var(--ds-weight-bold);
-      color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight);
-      letter-spacing: var(--ds-tracking-tight); margin-bottom: var(--ds-space-md);
-    }
-    .ds-section-header__description {
-      font-size: var(--ds-text-lg); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed); max-width: 100%; margin: 0 auto;
-    }
-    @media (min-width: 1024px) { .ds-section-header__description { max-width: 720px; } }
-    @media (min-width: 1440px) { .ds-section-header__description { max-width: 860px; } }
-    @media (max-width: 767px) { .ds-section-header { text-align: left; } }
-    @media (min-width: 768px)  { .ds-section-header__title { font-size: 22px; } }
-    @media (min-width: 1024px) { .ds-section-header__title { font-size: 24px; } }
-    @media (min-width: 1440px) { .ds-section-header__title { font-size: 28px; } }
-
     /* --- Card --- */
     .ds-card {
       background-color: var(--ds-color-surface-white);
@@ -367,6 +344,36 @@
     .ds-section-title-icon { display: flex; align-items: center; gap: 12px; margin-bottom: var(--ds-space-lg); }
     .ds-section-title-icon__icon { color: var(--ds-color-brand-secondary); flex-shrink: 0; }
     .ds-section-title-icon__text { font-family: var(--ds-font-base); font-size: var(--ds-text-xl); font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); }
+
+    /* --- Accordion Card --- */
+    .ds-ac-card {
+      border: var(--ds-border-default);
+      border-radius: var(--ds-radius-sm);
+      overflow: hidden;
+      margin-bottom: var(--ds-space-xs);
+    }
+    .ds-ac-card__trigger {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: var(--ds-space-md) var(--ds-space-lg);
+      cursor: pointer; background-color: var(--ds-color-surface-white);
+      gap: var(--ds-space-sm); list-style: none;
+    }
+    .ds-ac-card__trigger::-webkit-details-marker { display: none; }
+    .ds-ac-card__title {
+      font-size: var(--ds-text-md); font-weight: var(--ds-weight-semibold);
+      color: var(--ds-color-text-primary);
+    }
+    .ds-ac-card__icon {
+      flex-shrink: 0; color: var(--ds-color-text-tertiary);
+      transition: transform 0.2s;
+    }
+    details[open] .ds-ac-card__icon { transform: rotate(45deg); }
+    .ds-ac-card__body {
+      padding: 0 var(--ds-space-lg) var(--ds-space-md);
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed);
+      background-color: var(--ds-color-surface-white);
+    }
 
     /* --- CTA Band --- */
     .ds-cta-band {
@@ -532,17 +539,67 @@
     @media (min-width: 1440px) { .ds-article-section-header h2 { font-size: 28px; } }
     @media (max-width: 767px) { .ds-article-section-header { text-align: left; } }
 
-    /* Example card success text */
-    .ds-example-restored {
-      font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-success);
+    /* Pipeline stages — numbered step list */
+    .ds-pipeline-stages { display: flex; flex-direction: column; gap: var(--ds-space-md); }
+    .ds-pipeline-stage {
+      display: flex; gap: var(--ds-space-md); align-items: flex-start;
+      padding: var(--ds-space-lg); border: var(--ds-border-default);
+      border-radius: var(--ds-radius-md); background-color: var(--ds-color-surface-white);
+      box-shadow: var(--ds-shadow-card);
+    }
+    .ds-pipeline-stage__number {
+      flex-shrink: 0; width: 36px; height: 36px;
+      border-radius: var(--ds-radius-pill);
+      background-color: var(--ds-color-brand-primary);
+      color: var(--ds-color-white);
+      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-bold);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ds-pipeline-stage__content { flex: 1; }
+    .ds-pipeline-stage__label {
+      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
+      color: var(--ds-color-brand-secondary); margin-bottom: var(--ds-space-xs);
+    }
+    .ds-pipeline-stage__text {
+      font-size: var(--ds-text-md); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed);
     }
 
-    /* Related terms row */
-    .ds-related-terms {
-      display: flex; flex-wrap: wrap; gap: var(--ds-space-sm);
-      margin-bottom: var(--ds-space-xl);
+    /* Key message banner */
+    .ds-article-key-message {
+      padding: var(--ds-space-lg) var(--ds-space-xl);
+      border-radius: var(--ds-radius-md);
+      background-color: var(--ds-color-surface-dark);
+      color: var(--ds-color-text-inverse);
+      font-size: var(--ds-text-md); font-weight: var(--ds-weight-medium);
+      line-height: var(--ds-leading-relaxed);
+      margin: var(--ds-space-xl) 0;
     }
+    .ds-article-key-message strong { color: var(--ds-color-brand-light); }
+
+    /* Example card */
+    .ds-example-card {
+      background-color: var(--ds-color-surface-light);
+      border: var(--ds-border-default);
+      border-radius: var(--ds-radius-md);
+      padding: var(--ds-space-lg);
+    }
+    .ds-example-card__title {
+      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
+      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-sm);
+    }
+    .ds-example-card__text {
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-sm);
+    }
+    .ds-example-card__text:last-child { margin-bottom: 0; }
+
+    /* CTA footnote links */
+    .ds-cta-band__footnote-link {
+      color: var(--ds-overlay-white-70);
+      transition: color 0.15s;
+    }
+    .ds-cta-band__footnote-link:hover { color: var(--ds-color-white); }
 
     /* Spacing utility */
     .ds-spaced-top { margin-top: var(--ds-space-lg); }
@@ -585,13 +642,13 @@
           <span class="ds-breadcrumb__sep">/</span>
           <a href="resources.html" class="ds-breadcrumb__link">Resources</a>
           <span class="ds-breadcrumb__sep">/</span>
-          <a href="glossary.html" class="ds-breadcrumb__link">Glossary</a>
+          <a href="learn.html" class="ds-breadcrumb__link">Learn</a>
           <span class="ds-breadcrumb__sep">/</span>
-          <span class="ds-breadcrumb__current">Restorable Workflow</span>
+          <span class="ds-breadcrumb__current">AI Data Pipeline Protection</span>
         </nav>
-        <h1 class="ds-article-hero__title">Restorable Workflow</h1>
+        <h1 class="ds-article-hero__title">AI Data Pipeline Protection</h1>
         <p class="ds-article-hero__description">
-          An AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling <span class="ds-text--product">LLM Capsule</span> to automatically restore original enterprise data into AI outputs.
+          Enabling enterprise AI at every stage of the processing pipeline — ingestion, encapsulation, processing, restoration, and delivery.
         </p>
       </div>
     </section>
@@ -604,7 +661,7 @@
         <div class="ds-article-screenshot-frame ds-bg--paint-blue">
           <div class="ds-article-screenshot">
             <p class="ds-article-screenshot__label">
-              Restorable Workflow — End-to-end document processing with full restoration of business context
+              AI Data Pipeline Protection — Continuous data-layer protection from ingestion through AI processing to output delivery
             </p>
           </div>
         </div>
@@ -612,71 +669,146 @@
     </section>
 
     <!-- ============================================================
-         Section 3: Definition
+         Section 3: Problem
     ============================================================ -->
     <section id="section-3" class="ds-section--article-body">
       <div class="ds-article-container">
-        <div class="ds-banner ds-banner--brand">
-          <span class="ds-banner__label">DEFINITION</span>
-          <p>A restorable workflow is an AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which <span class="ds-text--product">LLM Capsule</span> enables AI adoption on sensitive data.</p>
+        <div class="ds-article-section-header">
+          <h2><span class="ds-text--brand">Problem</span></h2>
         </div>
+        <p class="ds-article-body__paragraph">
+          Enterprise AI pipelines move data through multiple stages and systems. Documents are ingested from internal sources, pre-processed for AI consumption, sent to language models, processed, and outputs are routed back to business systems. Each stage represents a potential exposure point.
+        </p>
+        <p class="ds-article-body__paragraph">
+          Point solutions — API gateways that filter prompts, output scanners that check responses — address individual stages but leave gaps between them. AI data pipeline protection requires a continuous data-layer approach.
+        </p>
       </div>
     </section>
 
     <!-- ============================================================
-         Section 4: Explanation
+         Section 4: Explanation — Pipeline Stages
     ============================================================ -->
     <section id="section-4" class="ds-section--article-body">
       <div class="ds-article-container">
         <div class="ds-article-section-header">
           <h2><span class="ds-text--brand">Explanation</span></h2>
         </div>
-        <p class="ds-article-body__paragraph">
-          Traditional data protection workflows are <span class="ds-text--brand">one-directional</span>: protect data, process it, and accept that outputs lack original context. A restorable workflow closes the loop — outputs are automatically restored with real enterprise data. This is what makes <span class="ds-text--product">LLM Capsule</span> an AI enabler rather than just a data protector.
-        </p>
-        <p class="ds-article-body__paragraph ds-article-body__paragraph--strong">
-          The key properties of a restorable workflow are: reversible encapsulation (not permanent masking), locally stored mappings (never transmitted), structure-preserving protection (AI accuracy maintained), and deterministic restoration (outputs exactly match original data).
-        </p>
+
+        <div class="ds-pipeline-stages">
+          <div class="ds-pipeline-stage">
+            <span class="ds-pipeline-stage__number">1</span>
+            <div class="ds-pipeline-stage__content">
+              <div class="ds-pipeline-stage__label">Stage 1: Ingestion</div>
+              <p class="ds-pipeline-stage__text">Documents enter the pipeline from enterprise systems — document management, email, databases, RAG pipelines. <span class="ds-text--product">LLM Capsule</span> intercepts data at this stage and applies context-aware data control to classify sensitivity.</p>
+            </div>
+          </div>
+
+          <div class="ds-pipeline-stage">
+            <span class="ds-pipeline-stage__number">2</span>
+            <div class="ds-pipeline-stage__content">
+              <div class="ds-pipeline-stage__label">Stage 2: Encapsulation</div>
+              <p class="ds-pipeline-stage__text">Sensitive elements are replaced with structure-preserving representations. The encapsulation occurs entirely within the enterprise environment. Mapping data is stored locally and never transmitted.</p>
+            </div>
+          </div>
+
+          <div class="ds-pipeline-stage">
+            <span class="ds-pipeline-stage__number">3</span>
+            <div class="ds-pipeline-stage__content">
+              <div class="ds-pipeline-stage__label">Stage 3: AI Processing</div>
+              <p class="ds-pipeline-stage__text">Encapsulated data is sent to the AI model. The model processes structurally intact documents and generates useful outputs. No original sensitive data reaches the AI provider.</p>
+            </div>
+          </div>
+
+          <div class="ds-pipeline-stage">
+            <span class="ds-pipeline-stage__number">4</span>
+            <div class="ds-pipeline-stage__content">
+              <div class="ds-pipeline-stage__label">Stage 4: Restoration</div>
+              <p class="ds-pipeline-stage__text">AI results are restored through local restoration. The locally stored mapping is applied to reconstruct outputs with real enterprise data.</p>
+            </div>
+          </div>
+
+          <div class="ds-pipeline-stage">
+            <span class="ds-pipeline-stage__number">5</span>
+            <div class="ds-pipeline-stage__content">
+              <div class="ds-pipeline-stage__label">Stage 5: Delivery</div>
+              <p class="ds-pipeline-stage__text">Restored outputs are routed to downstream business systems — compliance platforms, case management, analytics dashboards — ready for immediate use.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-article-key-message">
+          <strong>AI data pipeline protection</strong> is not a single checkpoint, but a continuous AI enablement data layer that protects data from ingestion to delivery, enabling enterprise AI adoption at every stage.
+        </div>
       </div>
     </section>
 
     <!-- ============================================================
-         Section 5: Example
+         Section 5: Enterprise Example
     ============================================================ -->
     <section id="section-5" class="ds-section--article-body">
       <div class="ds-article-container">
         <div class="ds-article-section-header">
-          <h2><span class="ds-text--brand">Example</span></h2>
+          <h2>Enterprise <span class="ds-text--brand">Example</span></h2>
         </div>
-        <div class="ds-card">
-          <p class="ds-article-body__paragraph">
-            An HR department uses AI to generate performance review summaries. Employee names, performance ratings, and salary information are encapsulated. AI produces structured summaries from protected data.
-          </p>
-          <hr class="ds-card__divider">
-          <p class="ds-article-body__paragraph ds-article-body__paragraph--strong">
-            Restoration restores all employee details, producing <span class="ds-example-restored">manager-ready review documents</span> without any manual editing.
-          </p>
+
+        <div class="ds-example-card">
+          <h3 class="ds-example-card__title">Telecom Customer Service Automation</h3>
+          <p class="ds-example-card__text">A telecom company routes 50,000 customer support tickets per month through AI for automated categorization, priority scoring, and response drafting. Tickets contain customer account numbers, addresses, service plan details, and payment history.</p>
+          <p class="ds-example-card__text"><span class="ds-text--product">LLM Capsule</span> enables the entire pipeline: tickets are encapsulated at ingestion, AI processes protected tickets, responses are restored with real customer data, and formatted outputs route directly to the support platform.</p>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         Section 6: Related Terms + Related Links
+         Section 6: FAQ
     ============================================================ -->
     <section id="section-6" class="ds-section--article-body">
       <div class="ds-article-container">
         <div class="ds-article-section-header">
-          <h2>Related <span class="ds-text--brand">Terms</span></h2>
+          <h2>FAQ</h2>
         </div>
 
-        <!-- Related Terms buttons -->
-        <div class="ds-related-terms">
-          <a href="restoration.html" class="ds-btn ds-btn--secondary ds-btn--sm">Restoration</a>
-          <a href="structure-preserving-processing.html" class="ds-btn ds-btn--secondary ds-btn--sm">Structure-Preserving Processing</a>
-          <a href="secure-llm-usage.html" class="ds-btn ds-btn--secondary ds-btn--sm">Secure LLM Usage</a>
+        <div class="ds-ac-card">
+          <details>
+            <summary class="ds-ac-card__trigger">
+              <span class="ds-ac-card__title">What is AI data pipeline protection?</span>
+              <span class="ds-ac-card__icon">
+                <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="ds-ac-card__body">
+              AI data pipeline protection secures sensitive enterprise data at every stage of the AI processing pipeline — from document ingestion through model interaction to output delivery.
+            </div>
+          </details>
         </div>
 
-        <!-- Related Pages sub-header -->
+        <div class="ds-ac-card">
+          <details>
+            <summary class="ds-ac-card__trigger">
+              <span class="ds-ac-card__title">How does this differ from API-level security?</span>
+              <span class="ds-ac-card__icon">
+                <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="ds-ac-card__body">
+              API-level security filters prompts and scans outputs at the model interface. AI data pipeline protection operates at the data layer across the entire pipeline, ensuring data is protected before it reaches any external system.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 7: Related Pages
+    ============================================================ -->
+    <section id="section-7" class="ds-section--article-body">
+      <div class="ds-article-container">
         <div class="ds-section-title-icon">
           <span class="ds-section-title-icon__icon">
             <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -684,10 +816,9 @@
               <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
             </svg>
           </span>
-          <span class="ds-section-title-icon__text">Related Pages</span>
+          <span class="ds-section-title-icon__text">Related</span>
         </div>
 
-        <!-- Related Links cards -->
         <div class="ds-card-grid ds-card-grid--2col">
           <a href="product.html" class="ds-card--dark">
             <span class="ds-card--dark__icon">
@@ -730,28 +861,31 @@
     </section>
 
     <!-- ============================================================
-         Section 7: CTA Band
+         Section 8: CTA Band (full-width, inside main per spec)
     ============================================================ -->
     <section id="section-cta" class="ds-cta-band">
       <div class="ds-cta-band__inner">
-        <h2 class="ds-cta-band__title">See <span class="ds-text--product">LLM Capsule</span> Restorable Workflow in Action</h2>
-        <p class="ds-cta-band__description">Experience how enterprise AI outputs are automatically restored with real business data — no manual post-processing required.</p>
+        <h2 class="ds-cta-band__title">See how <span class="ds-text--product">LLM Capsule</span> works with your data</h2>
+        <p class="ds-cta-band__description">Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</p>
         <div class="ds-cta-band__actions">
           <a href="request-pov.html" class="ds-btn ds-btn--lg">Request PoV</a>
-          <a href="product.html" class="ds-btn ds-btn--lg">View Product</a>
+          <a href="architecture.html" class="ds-btn ds-btn--lg">Talk to an Architect</a>
         </div>
-        <p class="ds-cta-band__footnote">Enterprise AI Enablement by CUBIG</p>
+        <p class="ds-cta-band__footnote">
+          <a href="downloads.html" class="ds-cta-band__footnote-link">Download Architecture Brief</a>
+          &nbsp;&nbsp;·&nbsp;&nbsp;
+          <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" class="ds-cta-band__footnote-link">AWS Marketplace</a>
+        </p>
       </div>
     </section>
 
   </main>
 
-  <!-- Footer -->
   <footer class="ds-footer">
     <div class="ds-container">
       <div class="ds-footer__grid">
         <div>
-          <div class="ds-footer__brand">LLM Capsule</div>
+          <div class="ds-footer__brand"><span class="ds-text--product">LLM Capsule</span></div>
           <p class="ds-footer__brand-desc">Enterprise AI enablement by CUBIG. Enable AI. Protect data. Restore results.</p>
         </div>
         <div class="ds-footer__col">

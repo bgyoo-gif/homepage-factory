@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restorable Workflow — AI Processing Pattern with Reversible Data Protection | LLM Capsule Glossary</title>
-  <meta name="description" content="A restorable workflow preserves enterprise context while protecting sensitive data, enabling AI outputs restored with original data after processing.">
+  <title>PII Protection vs Enterprise Confidentiality Control — Beyond Personal Data in AI Workflows | LLM Capsule</title>
+  <meta name="description" content="PII protection covers personal data only. Enterprise confidentiality control protects trade secrets, deal terms, and strategic data for AI.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://llmcapsule.ai/resources/glossary/restorable-workflow">
+  <link rel="canonical" href="https://llmcapsule.ai/resources/learn/pii-protection-vs-enterprise-confidentiality-control">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Restorable Workflow — AI Processing Pattern with Reversible Data Protection | LLM Capsule Glossary">
-  <meta property="og:description" content="A restorable workflow is an AI data processing pattern where sensitive data is protected reversibly, enabling AI outputs to be restored with original enterprise data after processing.">
-  <meta property="og:url" content="https://llmcapsule.ai/resources/glossary/restorable-workflow">
+  <meta property="og:title" content="PII Protection vs Enterprise Confidentiality Control — Beyond Personal Data in AI Workflows | LLM Capsule">
+  <meta property="og:description" content="PII protection covers personal data only. Enterprise confidentiality control protects business-critical information including trade secrets, deal terms, and strategic data during AI processing.">
+  <meta property="og:url" content="https://llmcapsule.ai/resources/learn/pii-protection-vs-enterprise-confidentiality-control">
   <meta property="og:site_name" content="LLM Capsule">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Restorable Workflow — AI Processing Pattern with Reversible Data Protection | LLM Capsule Glossary">
-  <meta name="twitter:description" content="A restorable workflow is an AI data processing pattern where sensitive data is protected reversibly, enabling AI outputs to be restored with original enterprise data after processing.">
+  <meta name="twitter:title" content="PII Protection vs Enterprise Confidentiality Control — Beyond Personal Data in AI Workflows | LLM Capsule">
+  <meta name="twitter:description" content="PII protection covers personal data only. Enterprise confidentiality control protects business-critical information including trade secrets, deal terms, and strategic data during AI processing.">
   <meta name="keywords" content="enterprise AI enablement, AI-ready data layer, AI adoption enabler, LLM plugin, cross-model execution">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://llmcapsule.ai/resources"},{"@type":"ListItem","position":3,"name":"Glossary","item":"https://llmcapsule.ai/resources/glossary"},{"@type":"ListItem","position":4,"name":"Restorable Workflow","item":"https://llmcapsule.ai/resources/glossary/restorable-workflow"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://llmcapsule.ai/resources"},{"@type":"ListItem","position":3,"name":"Learn","item":"https://llmcapsule.ai/resources/learn"},{"@type":"ListItem","position":4,"name":"PII Protection vs Enterprise Confidentiality Control","item":"https://llmcapsule.ai/resources/learn/pii-protection-vs-enterprise-confidentiality-control"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is enterprise confidentiality control?","acceptedAnswer":{"@type":"Answer","text":"Enterprise confidentiality control is a data protection approach that goes beyond PII to cover all business-sensitive information — trade secrets, deal terms, pricing strategies, internal metrics, and competitive intelligence — during AI processing."}}]}</script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,20 +73,16 @@
 
       /* Overlay values */
       --ds-overlay-nav-bg:          rgba(255,255,255,0.92);
-      --ds-overlay-dark-medium:     rgba(0,0,0,0.35);
       --ds-overlay-dark-light:      rgba(0,0,0,0.15);
       --ds-overlay-white-85:        rgba(255,255,255,0.85);
       --ds-overlay-white-70:        rgba(255,255,255,0.70);
-      --ds-overlay-white-55:        rgba(255,255,255,0.55);
-      --ds-overlay-white-45:        rgba(255,255,255,0.45);
       --ds-overlay-cta-btn-bdr:     rgba(255,255,255,0.6);
-      --ds-overlay-error-tint:      rgba(255,48,48,0.08);
       --ds-overlay-brand-tint:      rgba(24,33,232,0.04);
       --ds-overlay-brand-tint-md:   rgba(24,33,232,0.08);
       --ds-overlay-brand-tint-light:rgba(24,33,232,0.06);
       --ds-overlay-success-tint:    rgba(14,130,76,0.08);
       --ds-overlay-success-bdr:     rgba(14,130,76,0.2);
-      --ds-shadow-gradient-card:    rgba(113,141,176,0.25) 0px 1px 20px 0px;
+      --ds-overlay-error-tint:      rgba(255,48,48,0.08);
 
       /* Neutral */
       --ds-color-neutral-900: #0f0f0f;
@@ -114,7 +111,6 @@
       /* Functional */
       --ds-color-success:       #0e824c;
       --ds-color-error:         #ff3030;
-      --ds-color-info:          #155ea0;
       --ds-color-success-light: #34d399;
       --ds-color-error-light:   #ff6b6b;
 
@@ -215,7 +211,6 @@
     .ds-body-l { font-size: var(--ds-text-xl);  font-weight: var(--ds-weight-regular); line-height: var(--ds-leading-normal); }
     .ds-body-m { font-size: var(--ds-text-md);  font-weight: var(--ds-weight-medium);  line-height: var(--ds-leading-normal); }
     .ds-body-s { font-size: var(--ds-text-sm);  font-weight: var(--ds-weight-medium);  line-height: var(--ds-leading-normal); }
-    .ds-caption { font-size: var(--ds-text-xs);  font-weight: var(--ds-weight-medium);  line-height: var(--ds-leading-normal); }
 
     @media (min-width: 768px)  { h1, .ds-h1 { font-size: 28px; } h2, .ds-h2 { font-size: 22px; } }
     @media (min-width: 1024px) { h1, .ds-h1 { font-size: 32px; } h2, .ds-h2 { font-size: 24px; } h3, .ds-h3 { font-size: 20px; } }
@@ -223,17 +218,6 @@
 
     .ds-text--brand   { color: var(--ds-color-brand-secondary); }
     .ds-text--product { font-family: var(--ds-font-brand); font-weight: var(--ds-weight-bold); }
-
-    /* Inline code */
-    code, .ds-code-inline {
-      font-family: var(--ds-font-code);
-      font-size: 0.875em;
-      font-weight: var(--ds-weight-regular);
-      background-color: var(--ds-color-neutral-100);
-      border-radius: 3px;
-      padding: 0 4px;
-      color: inherit;
-    }
 
     /* ============================================================
        4. Components
@@ -287,38 +271,10 @@
     .ds-btn--secondary { background-color: transparent; color: var(--ds-color-text-primary); border: var(--ds-border-default); }
     .ds-btn--secondary:hover { background-color: var(--ds-color-surface-light); }
 
-    /* --- Section Header --- */
-    .ds-section-header { margin-bottom: var(--ds-space-2xl); text-align: center; }
-    .ds-section-header__title {
-      font-size: 20px; font-weight: var(--ds-weight-bold);
-      color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight);
-      letter-spacing: var(--ds-tracking-tight); margin-bottom: var(--ds-space-md);
-    }
-    .ds-section-header__description {
-      font-size: var(--ds-text-lg); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed); max-width: 100%; margin: 0 auto;
-    }
-    @media (min-width: 1024px) { .ds-section-header__description { max-width: 720px; } }
-    @media (min-width: 1440px) { .ds-section-header__description { max-width: 860px; } }
-    @media (max-width: 767px) { .ds-section-header { text-align: left; } }
-    @media (min-width: 768px)  { .ds-section-header__title { font-size: 22px; } }
-    @media (min-width: 1024px) { .ds-section-header__title { font-size: 24px; } }
-    @media (min-width: 1440px) { .ds-section-header__title { font-size: 28px; } }
-
-    /* --- Card --- */
-    .ds-card {
-      background-color: var(--ds-color-surface-white);
-      border-radius: var(--ds-radius-md); border: var(--ds-border-default);
-      padding: var(--ds-space-lg); box-shadow: var(--ds-shadow-card);
-      display: flex; flex-direction: column;
-    }
-    @media (min-width: 1440px) { .ds-card { padding: var(--ds-space-xl); } }
-    .ds-card__divider { border: none; border-top: 1px solid var(--ds-color-border-default); margin: var(--ds-space-md) 0; }
-
     /* --- Card Dark --- */
     .ds-card--dark {
       background-color: var(--ds-color-neutral-850);
-      border-color: var(--ds-color-neutral-700);
+      border: 1px solid var(--ds-color-neutral-700);
       color: var(--ds-color-text-inverse);
       border-radius: var(--ds-radius-md);
       padding: var(--ds-space-lg);
@@ -335,7 +291,7 @@
 
     /* --- Card Grid --- */
     .ds-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-    @media (min-width: 768px)  { .ds-card-grid--2col { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 768px) { .ds-card-grid--2col { grid-template-columns: repeat(2, 1fr); } }
 
     /* --- Banner --- */
     .ds-banner {
@@ -345,14 +301,9 @@
       border-bottom: 1px solid var(--ds-color-border-default);
       background-color: var(--ds-banner-bg, var(--ds-color-surface-light));
       font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed);
-      text-align: center; word-break: keep-all; overflow-wrap: break-word;
+      word-break: keep-all; overflow-wrap: break-word;
     }
-    .ds-banner__label {
-      font-family: var(--ds-font-code); font-size: var(--ds-text-xs);
-      text-transform: uppercase; letter-spacing: var(--ds-tracking-wide);
-      color: var(--ds-color-text-tertiary); margin-bottom: var(--ds-space-xs); display: block;
-    }
-    .ds-banner--brand { --ds-banner-bg: rgba(24, 33, 232, 0.06); }
+    .ds-banner--brand { --ds-banner-bg: var(--ds-overlay-brand-tint-light); }
     .ds-banner--brand p {
       font-size: var(--ds-text-md); color: var(--ds-color-text-primary);
       line-height: var(--ds-leading-relaxed); margin: 0;
@@ -368,15 +319,46 @@
     .ds-section-title-icon__icon { color: var(--ds-color-brand-secondary); flex-shrink: 0; }
     .ds-section-title-icon__text { font-family: var(--ds-font-base); font-size: var(--ds-text-xl); font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); }
 
+    /* --- Accordion FAQ --- */
+    .ds-ac-card {
+      border: 1px solid var(--ds-color-border-default);
+      border-radius: var(--ds-radius-sm);
+      margin-bottom: var(--ds-space-xs);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .ds-ac-card:hover { border-color: var(--ds-color-neutral-300); }
+    .ds-ac-card__trigger {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: var(--ds-space-md) var(--ds-space-lg);
+      cursor: pointer; background-color: var(--ds-color-surface-white);
+      gap: var(--ds-space-sm); width: 100%; text-align: left; border: none; font-family: var(--ds-font-base);
+    }
+    .ds-ac-card__title {
+      font-size: var(--ds-text-md); font-weight: var(--ds-weight-semibold);
+      color: var(--ds-color-text-primary); flex: 1;
+    }
+    .ds-ac-card__icon {
+      flex-shrink: 0; width: 20px; height: 20px;
+      color: var(--ds-color-text-tertiary); transition: transform 0.2s;
+    }
+    .ds-ac-card.is-open .ds-ac-card__icon { transform: rotate(45deg); }
+    .ds-ac-card__body {
+      display: none; padding: 0 var(--ds-space-lg) var(--ds-space-md);
+    }
+    .ds-ac-card.is-open .ds-ac-card__body { display: block; }
+    .ds-ac-card__body p {
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed);
+    }
+
     /* --- CTA Band --- */
     .ds-cta-band {
       width: 100%; position: relative; overflow: hidden;
       padding: 80px var(--ds-container-padding-mobile);
       text-align: center;
-      background-color: var(--ds-color-neutral-800);
-      background-size: cover; background-position: center;
+      background: var(--ds-gradient-brand);
     }
-    .ds-cta-band { background: var(--ds-gradient-brand); }
     .ds-cta-band::before {
       content: ''; position: absolute; inset: 0;
       background-color: var(--ds-overlay-dark-light); z-index: 0;
@@ -400,7 +382,9 @@
     .ds-cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
     .ds-cta-band__actions .ds-btn { background-color: var(--ds-overlay-nav-bg); color: var(--ds-color-text-primary); border: 1px solid var(--ds-overlay-cta-btn-bdr); backdrop-filter: blur(8px); }
     .ds-cta-band__actions .ds-btn:hover { background-color: var(--ds-color-white); }
-    .ds-cta-band__footnote { font-size: var(--ds-text-xs); color: var(--ds-overlay-white-70); margin-top: var(--ds-space-xs); }
+    .ds-cta-band__footnote { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--ds-space-lg); margin-top: var(--ds-space-xs); }
+    .ds-cta-band__footnote a { font-size: var(--ds-text-sm); color: var(--ds-overlay-white-70); transition: color 0.2s; }
+    .ds-cta-band__footnote a:hover { color: var(--ds-color-white); }
     @media (min-width: 768px)  { .ds-cta-band { padding: 100px var(--ds-container-padding-tablet); } }
     @media (min-width: 1440px) { .ds-cta-band { padding: 120px var(--ds-container-padding-desktop); max-width: 1440px; margin: 0 auto; } }
     @media (max-width: 767px) {
@@ -429,7 +413,7 @@
        5. Page-specific Styles
     ============================================================ */
 
-    /* Article container — 860px max-width for body sections */
+    /* Article container — 860px max-width */
     .ds-article-container {
       width: 100%; max-width: 860px; margin: 0 auto;
       padding: 0 var(--ds-container-padding-mobile);
@@ -448,12 +432,8 @@
       font-weight: var(--ds-weight-medium); transition: color 0.15s;
     }
     .ds-breadcrumb__link:hover { color: var(--ds-color-brand-primary); }
-    .ds-breadcrumb__sep {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary);
-    }
-    .ds-breadcrumb__current {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary);
-    }
+    .ds-breadcrumb__sep { font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary); }
+    .ds-breadcrumb__current { font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary); }
 
     /* Hero title for article pages */
     .ds-article-hero__title {
@@ -472,35 +452,8 @@
       line-height: var(--ds-leading-relaxed); max-width: 100%;
     }
 
-    /* Screenshot frame within article */
-    .ds-article-screenshot-frame {
-      margin-top: var(--ds-space-2xl);
-      border-radius: var(--ds-radius-xl) var(--ds-radius-xl) 0 0;
-      padding: var(--ds-space-xl) var(--ds-space-xl) 0;
-      background-color: var(--ds-color-neutral-050);
-      background-size: cover; background-position: center;
-      overflow: hidden;
-    }
-    .ds-article-screenshot-frame.ds-bg--paint-blue { background-image: var(--ds-bg-img-paint-blue); }
-    @media (max-width: 767px) {
-      .ds-article-screenshot-frame { border-radius: var(--ds-radius-lg) var(--ds-radius-lg) 0 0; }
-      .ds-article-screenshot-frame.ds-bg--paint-blue { background-image: none; }
-    }
-    .ds-article-screenshot {
-      background-color: var(--ds-color-surface-white);
-      border-radius: var(--ds-radius-sm) var(--ds-radius-sm) 0 0;
-      overflow: hidden;
-      min-height: 200px;
-      display: flex; align-items: center; justify-content: center;
-      padding: var(--ds-space-2xl) var(--ds-space-lg);
-    }
-    .ds-article-screenshot__label {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary);
-      text-align: center; line-height: var(--ds-leading-relaxed);
-    }
-
     /* Article body section reduced top padding */
-    .ds-section--article-body { padding: var(--ds-space-xl) 0; }
+    .ds-section--article-body { padding: var(--ds-space-xl) 0; background-color: var(--ds-color-surface-white); }
     @media (min-width: 768px)  { .ds-section--article-body { padding: var(--ds-space-2xl) 0; } }
     @media (min-width: 1024px) { .ds-section--article-body { padding: var(--ds-space-2xl) 0; } }
     @media (min-width: 1440px) { .ds-section--article-body { padding: var(--ds-space-3xl) 0; } }
@@ -511,11 +464,8 @@
       line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-md);
     }
     .ds-article-body__paragraph:last-child { margin-bottom: 0; }
-    .ds-article-body__paragraph--strong {
-      font-weight: var(--ds-weight-medium);
-    }
 
-    /* Section header underline within article */
+    /* Section header within article */
     .ds-article-section-header {
       margin-bottom: var(--ds-space-lg);
       padding-bottom: var(--ds-space-md);
@@ -532,20 +482,74 @@
     @media (min-width: 1440px) { .ds-article-section-header h2 { font-size: 28px; } }
     @media (max-width: 767px) { .ds-article-section-header { text-align: left; } }
 
-    /* Example card success text */
-    .ds-example-restored {
-      font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-success);
+    /* Definition box */
+    .ds-definition-box {
+      background-color: var(--ds-overlay-brand-tint-light);
+      border-left: 3px solid var(--ds-color-brand-secondary);
+      padding: var(--ds-space-lg) var(--ds-space-xl);
+      border-radius: 0 var(--ds-radius-sm) var(--ds-radius-sm) 0;
+      margin: var(--ds-space-lg) 0;
+    }
+    .ds-definition-box__label {
+      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-semibold);
+      letter-spacing: var(--ds-tracking-wide); text-transform: uppercase;
+      color: var(--ds-color-brand-secondary); margin-bottom: var(--ds-space-xs);
+    }
+    .ds-definition-box p {
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-primary);
+      font-weight: var(--ds-weight-medium); line-height: var(--ds-leading-relaxed); margin: 0;
     }
 
-    /* Related terms row */
-    .ds-related-terms {
-      display: flex; flex-wrap: wrap; gap: var(--ds-space-sm);
-      margin-bottom: var(--ds-space-xl);
+    /* Key message banner (dark) */
+    .ds-key-message {
+      background-color: var(--ds-color-surface-dark);
+      color: var(--ds-color-text-inverse);
+      padding: var(--ds-space-lg) var(--ds-space-xl);
+      border-radius: var(--ds-radius-md);
+      margin: var(--ds-space-lg) 0;
+      font-size: var(--ds-text-md); font-weight: var(--ds-weight-medium);
+      line-height: var(--ds-leading-relaxed);
     }
+    .ds-key-message strong { color: var(--ds-color-brand-light); }
+
+    /* Explanation items */
+    .ds-explanation-list { display: flex; flex-direction: column; gap: var(--ds-space-md); margin: var(--ds-space-md) 0; }
+    .ds-explanation-list__item {
+      padding: var(--ds-space-md) var(--ds-space-lg);
+      border-radius: var(--ds-radius-sm);
+      border-left: 3px solid var(--ds-color-brand-secondary);
+      background-color: var(--ds-color-surface-light);
+    }
+    .ds-explanation-list__label {
+      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
+      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-2xs);
+    }
+    .ds-explanation-list__desc {
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed);
+    }
+
+    /* Example card */
+    .ds-example-card {
+      background-color: var(--ds-color-surface-light);
+      border: 1px solid var(--ds-color-border-default);
+      border-radius: var(--ds-radius-md);
+      padding: var(--ds-space-lg);
+      margin: var(--ds-space-lg) 0;
+    }
+    .ds-example-card h4 {
+      font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
+      color: var(--ds-color-text-primary); margin-bottom: var(--ds-space-sm);
+    }
+    .ds-example-card p {
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-xs);
+    }
+    .ds-example-card p:last-child { margin-bottom: 0; }
 
     /* Spacing utility */
     .ds-spaced-top { margin-top: var(--ds-space-lg); }
+    .ds-spaced-top-xl { margin-top: var(--ds-space-xl); }
   </style>
 </head>
 <body>
@@ -585,29 +589,31 @@
           <span class="ds-breadcrumb__sep">/</span>
           <a href="resources.html" class="ds-breadcrumb__link">Resources</a>
           <span class="ds-breadcrumb__sep">/</span>
-          <a href="glossary.html" class="ds-breadcrumb__link">Glossary</a>
+          <a href="learn.html" class="ds-breadcrumb__link">Learn</a>
           <span class="ds-breadcrumb__sep">/</span>
-          <span class="ds-breadcrumb__current">Restorable Workflow</span>
+          <span class="ds-breadcrumb__current">PII Protection vs Enterprise Confidentiality Control</span>
         </nav>
-        <h1 class="ds-article-hero__title">Restorable Workflow</h1>
+        <h1 class="ds-article-hero__title">PII Protection vs Enterprise Confidentiality Control</h1>
         <p class="ds-article-hero__description">
-          An AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling <span class="ds-text--product">LLM Capsule</span> to automatically restore original enterprise data into AI outputs.
+          Why protecting only personal data is insufficient for enterprise AI enablement. Business-critical information requires enterprise confidentiality control to truly enable AI adoption.
         </p>
       </div>
     </section>
 
     <!-- ============================================================
-         Section 2: Screenshot Placeholder
+         Section 2: Problem
     ============================================================ -->
     <section id="section-2" class="ds-section--article-body">
       <div class="ds-article-container">
-        <div class="ds-article-screenshot-frame ds-bg--paint-blue">
-          <div class="ds-article-screenshot">
-            <p class="ds-article-screenshot__label">
-              Restorable Workflow — End-to-end document processing with full restoration of business context
-            </p>
-          </div>
+        <div class="ds-article-section-header">
+          <h2>Problem</h2>
         </div>
+        <p class="ds-article-body__paragraph">
+          Most AI data protection solutions focus on personally identifiable information (PII) — names, social security numbers, email addresses. But true enterprise AI enablement requires protecting far more than PII. Enterprise documents contain trade secrets, acquisition targets, pricing models, internal performance metrics, strategic plans, and client relationship details — all enterprise-sensitive but not classified as PII.
+        </p>
+        <p class="ds-article-body__paragraph">
+          A legal memo about a pending acquisition contains no PII. It contains deal structure, valuation ranges, and strategic rationale — all of which would be damaging if exposed to an AI provider's training pipeline or logging system.
+        </p>
       </div>
     </section>
 
@@ -616,9 +622,12 @@
     ============================================================ -->
     <section id="section-3" class="ds-section--article-body">
       <div class="ds-article-container">
-        <div class="ds-banner ds-banner--brand">
-          <span class="ds-banner__label">DEFINITION</span>
-          <p>A restorable workflow is an AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which <span class="ds-text--product">LLM Capsule</span> enables AI adoption on sensitive data.</p>
+        <div class="ds-article-section-header">
+          <h2>Definition</h2>
+        </div>
+        <div class="ds-definition-box">
+          <div class="ds-definition-box__label">Enterprise Confidentiality Control</div>
+          <p>Enterprise confidentiality control is a data protection approach for AI workflows that extends beyond PII to cover all categories of business-sensitive information. It enables policy-based classification and encapsulation of trade secrets, financial terms, strategic data, and operational details alongside personal data protection.</p>
         </div>
       </div>
     </section>
@@ -629,69 +638,95 @@
     <section id="section-4" class="ds-section--article-body">
       <div class="ds-article-container">
         <div class="ds-article-section-header">
-          <h2><span class="ds-text--brand">Explanation</span></h2>
+          <h2>Explanation</h2>
         </div>
         <p class="ds-article-body__paragraph">
-          Traditional data protection workflows are <span class="ds-text--brand">one-directional</span>: protect data, process it, and accept that outputs lack original context. A restorable workflow closes the loop — outputs are automatically restored with real enterprise data. This is what makes <span class="ds-text--product">LLM Capsule</span> an AI enabler rather than just a data protector.
+          Enterprise confidentiality control differs from PII protection in scope and configurability:
         </p>
-        <p class="ds-article-body__paragraph ds-article-body__paragraph--strong">
-          The key properties of a restorable workflow are: reversible encapsulation (not permanent masking), locally stored mappings (never transmitted), structure-preserving protection (AI accuracy maintained), and deterministic restoration (outputs exactly match original data).
-        </p>
+        <div class="ds-explanation-list">
+          <div class="ds-explanation-list__item">
+            <div class="ds-explanation-list__label">Scope.</div>
+            <p class="ds-explanation-list__desc">PII protection covers regulatory-defined categories — names, identification numbers, health records. Enterprise confidentiality control covers organization-defined categories — deal terms, pricing, internal metrics, competitive analysis, and strategic plans.</p>
+          </div>
+          <div class="ds-explanation-list__item">
+            <div class="ds-explanation-list__label">Policy-driven classification.</div>
+            <p class="ds-explanation-list__desc">What counts as sensitive varies by department, document type, and workflow. A revenue figure is sensitive in a board presentation but routine in a published annual report. Context-aware data control enables policy-driven sensitivity classification, not just regex pattern matching.</p>
+          </div>
+          <div class="ds-explanation-list__item">
+            <div class="ds-explanation-list__label">Workflow integration.</div>
+            <p class="ds-explanation-list__desc">Enterprise confidentiality control integrates with governance frameworks, audit systems, and compliance workflows — providing visibility into what data is protected, how, and by whom.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ============================================================
-         Section 5: Example
+         Section 5: Enterprise Example
     ============================================================ -->
     <section id="section-5" class="ds-section--article-body">
       <div class="ds-article-container">
         <div class="ds-article-section-header">
-          <h2><span class="ds-text--brand">Example</span></h2>
+          <h2>Enterprise Example</h2>
         </div>
-        <div class="ds-card">
-          <p class="ds-article-body__paragraph">
-            An HR department uses AI to generate performance review summaries. Employee names, performance ratings, and salary information are encapsulated. AI produces structured summaries from protected data.
-          </p>
-          <hr class="ds-card__divider">
-          <p class="ds-article-body__paragraph ds-article-body__paragraph--strong">
-            Restoration restores all employee details, producing <span class="ds-example-restored">manager-ready review documents</span> without any manual editing.
-          </p>
+        <div class="ds-example-card">
+          <h4>M&amp;A Due Diligence</h4>
+          <p>An investment bank uses AI to analyze target company documents during due diligence. Documents contain no customer PII but are filled with sensitive deal terms, valuation models, and strategic assessments.</p>
+          <p><span class="ds-text--product">LLM Capsule</span>'s enterprise confidentiality control encapsulates deal-specific terminology, financial figures, and company identifiers. AI performs analysis on the protected documents. Local restoration restores deal context into the analysis outputs for the advisory team.</p>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         Section 6: Related Terms + Related Links
+         Section 6: FAQ
     ============================================================ -->
     <section id="section-6" class="ds-section--article-body">
       <div class="ds-article-container">
         <div class="ds-article-section-header">
-          <h2>Related <span class="ds-text--brand">Terms</span></h2>
+          <h2>FAQ</h2>
         </div>
-
-        <!-- Related Terms buttons -->
-        <div class="ds-related-terms">
-          <a href="restoration.html" class="ds-btn ds-btn--secondary ds-btn--sm">Restoration</a>
-          <a href="structure-preserving-processing.html" class="ds-btn ds-btn--secondary ds-btn--sm">Structure-Preserving Processing</a>
-          <a href="secure-llm-usage.html" class="ds-btn ds-btn--secondary ds-btn--sm">Secure LLM Usage</a>
+        <div class="ds-ac-card" role="region">
+          <button class="ds-ac-card__trigger" aria-expanded="false">
+            <span class="ds-ac-card__title">What is enterprise confidentiality control?</span>
+            <svg class="ds-ac-card__icon ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </button>
+          <div class="ds-ac-card__body">
+            <p>Enterprise confidentiality control is a data protection approach that goes beyond PII to cover all business-sensitive information — trade secrets, deal terms, pricing strategies, internal metrics, and competitive intelligence — during AI processing.</p>
+          </div>
         </div>
+        <div class="ds-ac-card" role="region">
+          <button class="ds-ac-card__trigger" aria-expanded="false">
+            <span class="ds-ac-card__title">Why is PII protection insufficient for enterprise AI?</span>
+            <svg class="ds-ac-card__icon ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </button>
+          <div class="ds-ac-card__body">
+            <p>Enterprise documents contain sensitive business data that is not PII. Protecting only names and IDs while exposing deal terms, financial models, and strategic plans still creates unacceptable data exposure risk.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Related Pages sub-header -->
+    <!-- ============================================================
+         Section 7: Related Pages
+    ============================================================ -->
+    <section id="section-7" class="ds-section--article-body">
+      <div class="ds-article-container">
         <div class="ds-section-title-icon">
           <span class="ds-section-title-icon__icon">
-            <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
               <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
             </svg>
           </span>
-          <span class="ds-section-title-icon__text">Related Pages</span>
+          <span class="ds-section-title-icon__text">Related</span>
         </div>
-
-        <!-- Related Links cards -->
         <div class="ds-card-grid ds-card-grid--2col">
           <a href="product.html" class="ds-card--dark">
             <span class="ds-card--dark__icon">
-              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
               </svg>
             </span>
@@ -699,7 +734,7 @@
           </a>
           <a href="architecture.html" class="ds-card--dark">
             <span class="ds-card--dark__icon">
-              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M12 2L2 7l10 5 10-5-10-5z"/>
                 <path d="M2 17l10 5 10-5"/>
                 <path d="M2 12l10 5 10-5"/>
@@ -709,7 +744,7 @@
           </a>
           <a href="trust.html" class="ds-card--dark">
             <span class="ds-card--dark__icon">
-              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 <path d="m9 12 2 2 4-4"/>
               </svg>
@@ -718,7 +753,7 @@
           </a>
           <a href="request-pov.html" class="ds-card--dark">
             <span class="ds-card--dark__icon">
-              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"/>
                 <polyline points="12 5 19 12 12 19"/>
               </svg>
@@ -730,28 +765,30 @@
     </section>
 
     <!-- ============================================================
-         Section 7: CTA Band
+         Section 8: CTA Band
     ============================================================ -->
     <section id="section-cta" class="ds-cta-band">
       <div class="ds-cta-band__inner">
-        <h2 class="ds-cta-band__title">See <span class="ds-text--product">LLM Capsule</span> Restorable Workflow in Action</h2>
-        <p class="ds-cta-band__description">Experience how enterprise AI outputs are automatically restored with real business data — no manual post-processing required.</p>
+        <h2 class="ds-cta-band__title">See how <span class="ds-text--product">LLM Capsule</span> works with your data</h2>
+        <p class="ds-cta-band__description">Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</p>
         <div class="ds-cta-band__actions">
           <a href="request-pov.html" class="ds-btn ds-btn--lg">Request PoV</a>
-          <a href="product.html" class="ds-btn ds-btn--lg">View Product</a>
+          <a href="architecture.html" class="ds-btn ds-btn--lg">Talk to an Architect</a>
         </div>
-        <p class="ds-cta-band__footnote">Enterprise AI Enablement by CUBIG</p>
+        <div class="ds-cta-band__footnote">
+          <a href="downloads.html">Download Architecture Brief</a>
+          <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener">AWS Marketplace</a>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Footer -->
   <footer class="ds-footer">
     <div class="ds-container">
       <div class="ds-footer__grid">
         <div>
-          <div class="ds-footer__brand">LLM Capsule</div>
+          <div class="ds-footer__brand"><span class="ds-text--product">LLM Capsule</span></div>
           <p class="ds-footer__brand-desc">Enterprise AI enablement by CUBIG. Enable AI. Protect data. Restore results.</p>
         </div>
         <div class="ds-footer__col">
@@ -796,6 +833,23 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('.ds-ac-card__trigger').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var card = this.closest('.ds-ac-card');
+        var isOpen = card.classList.contains('is-open');
+        card.closest('section').querySelectorAll('.ds-ac-card').forEach(function(c) {
+          c.classList.remove('is-open');
+          c.querySelector('.ds-ac-card__trigger').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          card.classList.add('is-open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
