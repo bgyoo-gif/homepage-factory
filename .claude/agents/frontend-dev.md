@@ -109,6 +109,7 @@ a { text-decoration: none; color: inherit; }
 - **주황/오렌지 계열 색상 금지**
 - **background shorthand 금지**: 배경 이미지가 있는 요소에는 `background-color`만 사용
 - **ds-section--light 전면 금지**: 섹션 배경은 항상 `var(--ds-color-surface-white)` (white)
+- **연속 본문 3단락 이상 금지**: 같은 컨텍스트에서 `<p>` 3개 이상 연속 시 → `ds-bullet--dot` 불릿 리스트로 변환. 각 항목의 첫 문장을 `<strong>`으로 감싸고 나머지를 이어서 작성
 
 #### 반복 결함 방지 규칙 (절대 위반 금지)
 

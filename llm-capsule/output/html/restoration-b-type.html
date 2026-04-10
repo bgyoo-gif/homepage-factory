@@ -636,15 +636,11 @@
         <div class="ds-article-section-header">
           <h2><span class="ds-text--brand">Explanation</span></h2>
         </div>
-        <p class="ds-article-body__paragraph">
-          When <span class="ds-text--product">LLM Capsule</span> encapsulates a document, it creates a local mapping table that records the relationship between each original sensitive value and its replacement. This mapping never leaves the enterprise environment.
-        </p>
-        <p class="ds-article-body__paragraph">
-          After AI processing completes, the restoration engine applies this mapping to the AI output in reverse — replacing encapsulated tokens with original values. The result is an AI output that contains real names, real figures, and real references, ready for enterprise use.
-        </p>
-        <p class="ds-article-body__paragraph ds-article-body__paragraph--strong">
-          Restoration is deterministic. Every encapsulated value maps to exactly one original value. There is no ambiguity, no approximation, and no manual intervention required.
-        </p>
+        <ul class="ds-bullet ds-bullet--dot">
+          <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span><strong>When <span class="ds-text--product">LLM Capsule</span> encapsulates a document, it creates a local mapping table.</strong> The table records the relationship between each original sensitive value and its replacement. This mapping never leaves the enterprise environment.</span></li>
+          <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span><strong>After AI processing completes, the restoration engine applies this mapping in reverse.</strong> Encapsulated tokens are replaced with original values. The result is an AI output that contains real names, real figures, and real references, ready for enterprise use.</span></li>
+          <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span><strong>Restoration is deterministic.</strong> Every encapsulated value maps to exactly one original value. There is no ambiguity, no approximation, and no manual intervention required.</span></li>
+        </ul>
       </div>
     </section>
 

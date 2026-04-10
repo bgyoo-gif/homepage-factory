@@ -705,15 +705,11 @@
         <p class="ds-article-body__paragraph">
           An AI data capsule operates as an AI enablement data layer through three stages within a restorable workflow:
         </p>
-        <p class="ds-article-body__paragraph">
-          <strong>Local Encapsulation.</strong> Sensitive elements in enterprise documents — names, account numbers, dates, medical codes, contract terms — are detected and replaced with structure-preserving representations. The mapping between original and replaced values is stored locally, never transmitted.
-        </p>
-        <p class="ds-article-body__paragraph">
-          <strong>Protected AI Processing.</strong> The encapsulated document is sent to any external LLM. Because document structure is preserved, the AI model can perform summarization, extraction, classification, and translation effectively. No original sensitive data leaves the enterprise environment.
-        </p>
-        <p class="ds-article-body__paragraph">
-          <strong>Local Restoration.</strong> AI results are automatically restored locally with original enterprise data. The locally stored mapping is applied to reconstruct outputs with real names, amounts, and references, producing results that are directly usable in business workflows.
-        </p>
+        <ul class="ds-bullet ds-bullet--dot">
+          <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span><strong>Local Encapsulation.</strong> Sensitive elements in enterprise documents — names, account numbers, dates, medical codes, contract terms — are detected and replaced with structure-preserving representations. The mapping between original and replaced values is stored locally, never transmitted.</span></li>
+          <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span><strong>Protected AI Processing.</strong> The encapsulated document is sent to any external LLM. Because document structure is preserved, the AI model can perform summarization, extraction, classification, and translation effectively. No original sensitive data leaves the enterprise environment.</span></li>
+          <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span><strong>Local Restoration.</strong> AI results are automatically restored locally with original enterprise data. The locally stored mapping is applied to reconstruct outputs with real names, amounts, and references, producing results that are directly usable in business workflows.</span></li>
+        </ul>
         <div class="ds-banner ds-banner--brand">
           <strong>Key concept:</strong> AI results are automatically restored locally with original enterprise data. The AI data capsule enables AI adoption by ensuring original data never leaves the enterprise environment.
         </div>

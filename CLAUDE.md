@@ -166,6 +166,7 @@ deploy (gh-pages push)
 - h1·h2·데이터 숫자 등 일반 텍스트는 모두 `var(--ds-font-base)` (DM Sans)
 - 줄바꿈: `body { word-break: keep-all; overflow-wrap: break-word; }` 전역 적용
 - 긴 문장 분리: 짧은 독립 문장 2개+ → `ds-bullet--dot` 불릿 리스트
+- 연속 본문 3단락 이상 금지: 같은 섹션 내 `<p>` 3개 이상 연속 시 → `ds-bullet--dot` 불릿 리스트로 분리 (각 단락 첫 문장을 `<strong>`으로)
 - 폰트 색상 최소 명도: 텍스트 최소 neutral-400 (#9c9c9c)
 - 배경 이미지 중복 금지: 동일 `ds-bg--*` 2번 이상 사용 금지
 - 페이지 최상단 여백: `ds-section--hero` padding-top 100px 고정
