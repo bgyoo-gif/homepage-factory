@@ -361,8 +361,8 @@
     }
 
     /* --- Form --- */
-    .ds-form-group { display: flex; flex-direction: column; gap: var(--ds-space-xs); margin-bottom: var(--ds-space-lg); }
-    .ds-form-group:last-of-type { margin-bottom: 0; }
+    .ds-form-group { display: flex; flex-direction: column; gap: var(--ds-space-xs); margin-bottom: var(--ds-space-md); }
+    .ds-form-group:last-of-type { margin-bottom: var(--ds-space-lg); }
     .ds-form-group label {
       font-size: var(--ds-text-sm); font-weight: var(--ds-weight-semibold);
       color: var(--ds-color-text-primary);
@@ -404,8 +404,12 @@
       color: var(--ds-color-text-tertiary);
     }
     .ds-form-group select option[value=""] { color: var(--ds-color-text-tertiary); }
+    .ds-form__submit {
+      width: 100%;
+      margin-bottom: var(--ds-space-md);
+    }
     .ds-form__footnote {
-      margin-top: var(--ds-space-md);
+      margin-top: 0;
       text-align: center;
       color: var(--ds-color-text-tertiary);
       font-size: var(--ds-text-xs);
@@ -747,7 +751,7 @@
                 <textarea id="pov-usecase" name="use_case" placeholder="Describe your primary AI use case and the types of documents you need to process."></textarea>
               </div>
 
-              <button type="submit" class="ds-btn ds-btn--primary ds-btn--lg">Submit Request</button>
+              <button type="submit" class="ds-btn ds-btn--primary ds-btn--lg ds-form__submit">Submit Request</button>
 
               <p class="ds-form__footnote">We respond to all PoV requests within 1 business day.</p>
 
