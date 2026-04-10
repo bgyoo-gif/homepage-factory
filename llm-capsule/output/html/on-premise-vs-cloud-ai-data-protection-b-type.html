@@ -340,37 +340,46 @@
     .ds-section-title-icon__text { font-family: var(--ds-font-base); font-size: var(--ds-text-xl); font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); }
 
     /* --- Accordion FAQ --- */
+
+
+    /* --- Accordion Card --- */
+    .ds-ac-list { display: flex; flex-direction: column; gap: 2px; }
     .ds-ac-card {
-      border: 1px solid var(--ds-color-border-default);
-      border-radius: var(--ds-radius-sm);
-      margin-bottom: var(--ds-space-xs);
-      overflow: hidden;
-      transition: border-color 0.2s;
+      border: var(--ds-border-default); border-radius: var(--ds-radius-sm);
+      background-color: var(--ds-color-surface-white); overflow: hidden; transition: background-color 0.2s;
     }
-    .ds-ac-card:hover { border-color: var(--ds-color-neutral-300); }
-    .ds-ac-card__trigger {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: var(--ds-space-md) var(--ds-space-lg);
-      cursor: pointer; background-color: var(--ds-color-surface-white);
-      gap: var(--ds-space-sm);
+    .ds-ac-card:hover { background-color: var(--ds-color-neutral-025); }
+    .ds-ac-card__header {
+      display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-md);
+      padding: var(--ds-space-lg); cursor: pointer; user-select: none;
     }
     .ds-ac-card__title {
-      font-size: var(--ds-text-md); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); flex: 1;
+      font-family: var(--ds-font-base); font-size: var(--ds-text-lg);
+      font-weight: var(--ds-weight-medium); line-height: var(--ds-leading-tight);
+      color: var(--ds-color-text-primary);
     }
-    .ds-ac-card__icon {
-      flex-shrink: 0; width: 20px; height: 20px;
-      color: var(--ds-color-text-tertiary); transition: transform 0.2s;
+    .ds-ac-card__toggle {
+      width: 28px; height: 28px; border-radius: 6px;
+      border: 0.5px solid var(--ds-color-border-default);
+      background-color: var(--ds-color-surface-light);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer;
     }
-    .ds-ac-card.is-open .ds-ac-card__icon { transform: rotate(45deg); }
+    .ds-ac-card__toggle-icon { width: 12px; height: 12px; position: relative; flex-shrink: 0; }
+    .ds-ac-card__toggle-icon::before, .ds-ac-card__toggle-icon::after {
+      content: ''; position: absolute; background-color: var(--ds-color-text-tertiary); border-radius: 1px;
+    }
+    .ds-ac-card__toggle-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .ds-ac-card__toggle-icon::after { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; transition: opacity 0.2s; }
+    .ds-ac-card.ds-ac--open .ds-ac-card__toggle-icon::after { opacity: 0; }
     .ds-ac-card__body {
-      display: none; padding: 0 var(--ds-space-lg) var(--ds-space-md);
-    }
-    .ds-ac-card.is-open .ds-ac-card__body { display: block; }
-    .ds-ac-card__body p {
+      display: none; padding: var(--ds-space-lg);
+      border-top: var(--ds-border-default);
+      background-color: var(--ds-color-surface-light);
       font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
       line-height: var(--ds-leading-relaxed);
     }
+    .ds-ac-card.ds-ac--open .ds-ac-card__body { display: block; }
+    .ds-ac-card__body p + p { margin-top: var(--ds-space-sm); }
 
     /* --- CTA Band --- */
     .ds-cta-band {
@@ -643,28 +652,26 @@
         <div class="ds-article-section-header">
           <h2>FAQ</h2>
         </div>
-        <div class="ds-ac-card" role="region">
-          <button class="ds-ac-card__trigger" aria-expanded="false">
-            <span class="ds-ac-card__title">Does <span class="ds-text--product">LLM Capsule</span> work on-premise?</span>
-            <svg class="ds-ac-card__icon ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-          </button>
-          <div class="ds-ac-card__body">
-            <p>Yes. <span class="ds-text--product">LLM Capsule</span> supports on-premise, air-gapped, cloud, hybrid, and embedded deployment models. The encapsulation engine runs entirely within your environment regardless of deployment type.</p>
+        <div class="ds-ac-list">
+
+        <div class="ds-ac-card ds-ac--open" onclick="toggleAcCard(this)">
+            <div class="ds-ac-card__header">
+              <span class="ds-ac-card__title">Does <span class="ds-text--product">LLM Capsule</span> work on-premise?</span>
+              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Yes. <span class="ds-text--product">LLM Capsule</span> supports on-premise, air-gapped, cloud, hybrid, and embedded deployment models. The encapsulation engine runs entirely within your environment regardless of deployment type.</p>
+            </div>
           </div>
-        </div>
-        <div class="ds-ac-card" role="region">
-          <button class="ds-ac-card__trigger" aria-expanded="false">
-            <span class="ds-ac-card__title">Is <span class="ds-text--product">LLM Capsule</span> available on AWS Marketplace?</span>
-            <svg class="ds-ac-card__icon ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-          </button>
-          <div class="ds-ac-card__body">
-            <p>Yes. <span class="ds-text--product">LLM Capsule</span> is available on AWS Marketplace for cloud deployment within your AWS account.</p>
+        <div class="ds-ac-card" onclick="toggleAcCard(this)">
+            <div class="ds-ac-card__header">
+              <span class="ds-ac-card__title">Is <span class="ds-text--product">LLM Capsule</span> available on AWS Marketplace?</span>
+              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Yes. <span class="ds-text--product">LLM Capsule</span> is available on AWS Marketplace for cloud deployment within your AWS account.</p>
+            </div>
           </div>
-        </div>
       </div>
     </section>
 
@@ -794,25 +801,9 @@
   </footer>
 
   <script>
-    // Accordion FAQ
-    document.querySelectorAll('.ds-ac-card__trigger').forEach(function(trigger) {
-      trigger.addEventListener('click', function() {
-        var card = this.closest('.ds-ac-card');
-        var isOpen = card.classList.contains('is-open');
-        // Close all
-        document.querySelectorAll('.ds-ac-card').forEach(function(c) {
-          c.classList.remove('is-open');
-          var t = c.querySelector('.ds-ac-card__trigger');
-          if (t) t.setAttribute('aria-expanded', 'false');
-        });
-        // Open clicked if was closed
-        if (!isOpen) {
-          card.classList.add('is-open');
-          this.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
+    function toggleAcCard(card) {
+      card.classList.toggle('ds-ac--open');
+    }
   </script>
-
 </body>
 </html>

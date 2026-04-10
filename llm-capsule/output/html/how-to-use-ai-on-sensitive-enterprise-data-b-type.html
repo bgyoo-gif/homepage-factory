@@ -364,37 +364,44 @@
     .ds-section-title-icon__icon { color: var(--ds-color-brand-secondary); flex-shrink: 0; }
     .ds-section-title-icon__text { font-family: var(--ds-font-base); font-size: var(--ds-text-xl); font-weight: var(--ds-weight-semibold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); }
 
-    /* --- Accordion --- */
+    /* --- Accordion Card --- */
+    .ds-ac-list { display: flex; flex-direction: column; gap: 2px; }
     .ds-ac-card {
-      border: 1px solid var(--ds-color-border-default);
-      border-radius: var(--ds-radius-sm);
-      margin-bottom: var(--ds-space-xs);
-      overflow: hidden;
-      transition: border-color 0.2s;
+      border: var(--ds-border-default); border-radius: var(--ds-radius-sm);
+      background-color: var(--ds-color-surface-white); overflow: hidden; transition: background-color 0.2s;
     }
-    .ds-ac-card:hover { border-color: var(--ds-color-neutral-300); }
-    .ds-ac-card__trigger {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: var(--ds-space-md) var(--ds-space-lg);
-      cursor: pointer; background-color: var(--ds-color-surface-white);
-      gap: var(--ds-space-sm);
+    .ds-ac-card:hover { background-color: var(--ds-color-neutral-025); }
+    .ds-ac-card__header {
+      display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-md);
+      padding: var(--ds-space-lg); cursor: pointer; user-select: none;
     }
     .ds-ac-card__title {
-      font-size: var(--ds-text-md); font-weight: var(--ds-weight-semibold);
-      color: var(--ds-color-text-primary); line-height: var(--ds-leading-normal);
+      font-family: var(--ds-font-base); font-size: var(--ds-text-lg);
+      font-weight: var(--ds-weight-medium); line-height: var(--ds-leading-tight);
+      color: var(--ds-color-text-primary);
     }
-    .ds-ac-card__chevron {
-      flex-shrink: 0; color: var(--ds-color-text-tertiary);
-      font-size: 20px; font-weight: var(--ds-weight-regular);
-      transition: transform 0.2s; user-select: none;
+    .ds-ac-card__toggle {
+      width: 28px; height: 28px; border-radius: 6px;
+      border: 0.5px solid var(--ds-color-border-default);
+      background-color: var(--ds-color-surface-light);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer;
     }
+    .ds-ac-card__toggle-icon { width: 12px; height: 12px; position: relative; flex-shrink: 0; }
+    .ds-ac-card__toggle-icon::before, .ds-ac-card__toggle-icon::after {
+      content: ''; position: absolute; background-color: var(--ds-color-text-tertiary); border-radius: 1px;
+    }
+    .ds-ac-card__toggle-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .ds-ac-card__toggle-icon::after { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; transition: opacity 0.2s; }
+    .ds-ac-card.ds-ac--open .ds-ac-card__toggle-icon::after { opacity: 0; }
     .ds-ac-card__body {
-      padding: 0 var(--ds-space-lg) var(--ds-space-md);
+      display: none; padding: var(--ds-space-lg);
+      border-top: var(--ds-border-default);
+      background-color: var(--ds-color-surface-light);
       font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
-      line-height: var(--ds-leading-relaxed); display: none;
+      line-height: var(--ds-leading-relaxed);
     }
-    .ds-ac-card.is-open .ds-ac-card__chevron { transform: rotate(45deg); }
-    .ds-ac-card.is-open .ds-ac-card__body { display: block; }
+    .ds-ac-card.ds-ac--open .ds-ac-card__body { display: block; }
+    .ds-ac-card__body p + p { margin-top: var(--ds-space-sm); }
 
     /* --- CTA Band --- */
     .ds-cta-band {
@@ -775,45 +782,44 @@
         <div class="ds-article-section-header">
           <h2>FAQ</h2>
         </div>
-        <div role="list">
-          <div class="ds-ac-card" role="listitem">
-            <div class="ds-ac-card__trigger" role="button" aria-expanded="false" tabindex="0">
+        <div class="ds-ac-list">
+          <div class="ds-ac-card ds-ac--open" onclick="toggleAcCard(this)">
+            <div class="ds-ac-card__header">
               <span class="ds-ac-card__title">Can enterprises use AI on sensitive data safely?</span>
-              <span class="ds-ac-card__chevron" aria-hidden="true">+</span>
+              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
             </div>
             <div class="ds-ac-card__body">
-              Yes. By encapsulating sensitive data locally before AI processing and restoring outputs afterward, enterprises can use LLMs on real documents without exposing the original data.
+              <p>Yes. By encapsulating sensitive data locally before AI processing and restoring outputs afterward, enterprises can use LLMs on real documents without exposing the original data.</p>
             </div>
           </div>
-          <div class="ds-ac-card" role="listitem">
-            <div class="ds-ac-card__trigger" role="button" aria-expanded="false" tabindex="0">
+          <div class="ds-ac-card" onclick="toggleAcCard(this)">
+            <div class="ds-ac-card__header">
               <span class="ds-ac-card__title">What types of enterprise data can <span class="ds-text--product">LLM Capsule</span> handle?</span>
-              <span class="ds-ac-card__chevron" aria-hidden="true">+</span>
+              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
             </div>
             <div class="ds-ac-card__body">
-              <span class="ds-text--product">LLM Capsule</span> handles structured and unstructured enterprise data including contracts, financial documents, medical records, legal filings, HR files, and customer communications.
+              <p><span class="ds-text--product">LLM Capsule</span> handles structured and unstructured enterprise data including contracts, financial documents, medical records, legal filings, HR files, and customer communications.</p>
             </div>
           </div>
-          <div class="ds-ac-card" role="listitem">
-            <div class="ds-ac-card__trigger" role="button" aria-expanded="false" tabindex="0">
+          <div class="ds-ac-card" onclick="toggleAcCard(this)">
+            <div class="ds-ac-card__header">
               <span class="ds-ac-card__title">Does <span class="ds-text--product">LLM Capsule</span> work with any AI model?</span>
-              <span class="ds-ac-card__chevron" aria-hidden="true">+</span>
+              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
             </div>
             <div class="ds-ac-card__body">
-              Yes. <span class="ds-text--product">LLM Capsule</span> is model-agnostic. It works with ChatGPT, Claude, Gemini, Perplexity, or any LLM API because it operates at the data layer before transmission.
+              <p>Yes. <span class="ds-text--product">LLM Capsule</span> is model-agnostic. It works with ChatGPT, Claude, Gemini, Perplexity, or any LLM API because it operates at the data layer before transmission.</p>
             </div>
           </div>
-          <div class="ds-ac-card" role="listitem">
-            <div class="ds-ac-card__trigger" role="button" aria-expanded="false" tabindex="0">
+          <div class="ds-ac-card" onclick="toggleAcCard(this)">
+            <div class="ds-ac-card__header">
               <span class="ds-ac-card__title">What happens to AI outputs after processing?</span>
-              <span class="ds-ac-card__chevron" aria-hidden="true">+</span>
+              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
             </div>
             <div class="ds-ac-card__body">
-              AI outputs are automatically restored locally. Original names, figures, dates, and references are mapped back into the AI results, producing business-ready documents without manual post-processing.
+              <p>AI outputs are automatically restored locally. Original names, figures, dates, and references are mapped back into the AI results, producing business-ready documents without manual post-processing.</p>
             </div>
           </div>
         </div>
-      </div>
     </section>
 
     <!-- ============================================================
@@ -940,31 +946,9 @@
   </footer>
 
   <script>
-    // Accordion toggle
-    document.querySelectorAll('.ds-ac-card__trigger').forEach(function(trigger) {
-      trigger.addEventListener('click', function() {
-        var card = this.closest('.ds-ac-card');
-        var isOpen = card.classList.contains('is-open');
-        // Close all
-        document.querySelectorAll('.ds-ac-card').forEach(function(c) {
-          c.classList.remove('is-open');
-          var t = c.querySelector('.ds-ac-card__trigger');
-          if (t) t.setAttribute('aria-expanded', 'false');
-        });
-        // Open clicked if was closed
-        if (!isOpen) {
-          card.classList.add('is-open');
-          this.setAttribute('aria-expanded', 'true');
-        }
-      });
-      trigger.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          this.click();
-        }
-      });
-    });
+    function toggleAcCard(card) {
+      card.classList.toggle('ds-ac--open');
+    }
   </script>
-
 </body>
 </html>
