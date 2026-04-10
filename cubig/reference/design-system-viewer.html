@@ -3310,28 +3310,46 @@ function renderStaticTable() {
 
     if (htmlFiles.length === 0) { renderStaticFallback(); return; }
 
-    // B타입 HTML 기준으로 그룹화
-    var groups = htmlFiles.map(function(hf) {
-      var baseName = hf.name.replace('-b-type.html', '');
-      var outputs = [];
-      // spec
-      var spec = docsFiles.find(function(d) { return d.name === baseName + '-spec.md'; });
-      if (spec) outputs.push({ type: 'md', name: spec.name });
-      // b-type html
-      outputs.push({ type: 'html', name: hf.name });
-      // qa report
-      var qa = docsFiles.find(function(d) { return d.name === baseName + '-qa-report.md'; });
-      if (qa) outputs.push({ type: 'md', name: qa.name });
-      // tsx (check framer subdirectory match)
-      var tsxDir = framerDirs.find(function(d) { return d.name === baseName; });
-      if (tsxDir) outputs.push({ type: 'tsx', name: baseName + '/' });
-
-      return { input: baseName + '.html', outputs: outputs };
+    // framer 서브디렉토리 안의 tsx 파일 목록 가져오기
+    var tsxPromises = framerDirs.map(function(dir) {
+      return fetch(ghApiBase + dir.path + '?ref=gh-pages')
+        .then(function(r) { return r.ok ? r.json() : []; })
+        .then(function(files) {
+          return { dirName: dir.name, files: files.filter(function(f) { return f.name.endsWith('.tsx'); }) };
+        })
+        .catch(function() { return { dirName: dir.name, files: [] }; });
     });
 
-    renderDynamicTable(container, groups);
-    var status = document.getElementById('ot-server-status');
-    if (status) status.textContent = '동적 목록 (GitHub API) — ' + htmlFiles.length + '개 파일';
+    Promise.all(tsxPromises).then(function(tsxResults) {
+      var tsxMap = {};
+      tsxResults.forEach(function(r) { tsxMap[r.dirName] = r.files; });
+
+      // B타입 HTML 기준으로 그룹화
+      var groups = htmlFiles.map(function(hf) {
+        var baseName = hf.name.replace('-b-type.html', '');
+        var outputs = [];
+        // spec
+        var spec = docsFiles.find(function(d) { return d.name === baseName + '-spec.md'; });
+        if (spec) outputs.push({ type: 'md', name: spec.name });
+        // b-type html
+        outputs.push({ type: 'html', name: hf.name });
+        // qa report
+        var qa = docsFiles.find(function(d) { return d.name === baseName + '-qa-report.md'; });
+        if (qa) outputs.push({ type: 'md', name: qa.name });
+        // tsx files from framer subdirectory
+        if (tsxMap[baseName]) {
+          tsxMap[baseName].forEach(function(tf) {
+            outputs.push({ type: 'tsx', name: tf.name, dir: baseName });
+          });
+        }
+
+        return { input: baseName + '.html', outputs: outputs };
+      });
+
+      renderDynamicTable(container, groups);
+      var status = document.getElementById('ot-server-status');
+      if (status) status.textContent = '동적 목록 (GitHub API) — ' + htmlFiles.length + '개 파일';
+    });
   }).catch(function() {
     renderStaticFallback();
   });
@@ -3363,7 +3381,8 @@ function renderStaticTable() {
       });
       html += '</td><td style="padding:12px;">';
       tsxFiles.forEach(function(f) {
-        html += '<span style="font-size:12px;color:var(--ds-color-text-tertiary);">' + f.name + '</span>';
+        var tsxUrl = brandBase + 'output/framer/' + (f.dir ? f.dir + '/' : '') + f.name;
+        html += '<a href="' + tsxUrl + '" target="_blank" style="display:block;color:var(--ds-color-info);font-size:12px;margin-bottom:2px;">' + f.name + '</a>';
       });
       if (tsxFiles.length === 0) html += '<span style="color:var(--ds-color-text-tertiary);">—</span>';
       html += '</td></tr>';
