@@ -245,6 +245,7 @@ Low 결함만 남은 경우 CONDITIONAL PASS.
 20. **CTA section 태그 오류** → `<div>` 사용 또는 `</main>` 밖 배치 → `<section>` 태그 + `main` 내부 필수
 21. **ds-badge--purple 배경색 오류** → `overlay-brand-tint-light` 사용 → `var(--ds-color-brand-light)` 사용
 22. **키프레임 이름 불일치** → `@keyframes marquee` → `@keyframes ds-marquee` 사용
+23. **폼 필드-버튼 간격 부족** → 마지막 form-group의 margin-bottom을 0으로 하면 안 됨 → `var(--ds-space-lg)` 유지, submit 버튼은 `width: 100%` + `margin-bottom: var(--ds-space-md)`
 16. **screenshot-frame 좌우 padding 누락** → `padding: 2xl 2xl 0` 필수 (좌우 0이면 배경 이미지가 프레임으로 보이지 않음)
 17. **Hero ↔ 다음 섹션 제목/설명 중복** → Hero에 이미 있는 제목+설명을 바로 다음 섹션 헤더에서 반복 금지. 둘 중 하나만 남기기
 
