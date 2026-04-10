@@ -1100,7 +1100,7 @@
     </section>
 
     <!-- ============================================================
-         Section 5: Core Differentiation (3+2 Accordion)
+         Section 5: Core Differentiation — 3+2 Architecture (Step Tabs)
     ============================================================ -->
     <section id="section-5" class="ds-section">
       <div class="ds-container">
@@ -1109,88 +1109,61 @@
           <p class="ds-section-header__description"><span class="ds-text--product">LLM Capsule</span> enables enterprise AI adoption on sensitive data through a 3+2 data layer architecture: three core enablement pillars plus two additional value capabilities that ensure output quality and model flexibility.</p>
         </div>
 
-        <div class="ds-ac-list">
-          <div class="ds-ac-card ds-ac--open" onclick="toggleAcCard(this)">
-            <div class="ds-ac-card__header">
-              <div class="ds-ac-card__header-left">
-                <span class="ds-ac-card__dot"></span>
-                <span class="ds-ac-card__label">CORE 1</span>
-                <span class="ds-ac-card__title">Zero Exposure</span>
-              </div>
-              <div class="ds-ac-card__meta"><span class="ds-badge ds-badge--error">Zero Data Leak</span></div>
-              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
-            </div>
-            <div class="ds-ac-card__body">
+        <div class="ds-step-tabs" data-step-tabs>
+          <div class="ds-step-tabs__nav">
+            <div class="ds-step-tabs__tab ds-step-tabs__tab--active" data-tab="core1">Core 1 — Zero Exposure</div>
+            <div class="ds-step-tabs__tab" data-tab="core2">Core 2 — Restoration</div>
+            <div class="ds-step-tabs__tab" data-tab="core3">Core 3 — Enterprise Context</div>
+            <div class="ds-step-tabs__tab" data-tab="plus1">+1 Structure-Preserving</div>
+            <div class="ds-step-tabs__tab" data-tab="plus2">+2 Cross-Model</div>
+          </div>
+
+          <div class="ds-step-tabs__panel ds-step-tabs__panel--active" data-panel="core1">
+            <div class="ds-step-tabs__content">
+              <h3>Zero Exposure</h3>
               <p>Sensitive data is replaced with safe placeholders (encapsulation) inside your environment before anything leaves. Original values never reach external AI services.</p>
               <p>Zero exposure means the AI provider processes useful data but cannot reconstruct original sensitive values. Even if the provider logged, stored, or trained on the received data, no original enterprise information would be exposed. Encapsulation creates a data representation that is both processable by AI and opaque to the receiving service — provider logs are safe, raw data never leaves.</p>
             </div>
+            <div class="ds-step-tabs__screenshot">Zero Exposure</div>
           </div>
-          <div class="ds-ac-card" onclick="toggleAcCard(this)">
-            <div class="ds-ac-card__header">
-              <div class="ds-ac-card__header-left">
-                <span class="ds-ac-card__dot"></span>
-                <span class="ds-ac-card__label">CORE 2</span>
-                <span class="ds-ac-card__title">Restoration</span>
-              </div>
-              <div class="ds-ac-card__meta"><span class="ds-badge ds-badge--success">100% Restore</span></div>
-              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
-            </div>
-            <div class="ds-ac-card__body">
+          <div class="ds-step-tabs__panel" data-panel="core2">
+            <div class="ds-step-tabs__content">
+              <h3>Restoration</h3>
               <p>AI outputs are automatically restored locally — not abstracted, not anonymized, but fully restored with real business data for immediate use.</p>
               <p>Unlike masking tools that produce generic AI outputs requiring manual reconstruction, <span class="ds-text--product">LLM Capsule</span> automatically restores AI results with original names, account numbers, dates, and references. Restored outputs are directly usable in enterprise workflows — regulatory reports, legal documents, claim analysis, and internal communications — without any post-processing step. This eliminates the "manual review loop" that kills AI ROI.</p>
             </div>
+            <div class="ds-step-tabs__screenshot">Restoration</div>
           </div>
-          <div class="ds-ac-card" onclick="toggleAcCard(this)">
-            <div class="ds-ac-card__header">
-              <div class="ds-ac-card__header-left">
-                <span class="ds-ac-card__dot"></span>
-                <span class="ds-ac-card__label">CORE 3</span>
-                <span class="ds-ac-card__title">Enterprise Context</span>
-              </div>
-              <div class="ds-ac-card__meta"><span class="ds-badge ds-badge--purple">Custom Policy</span></div>
-              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
-            </div>
-            <div class="ds-ac-card__body">
+          <div class="ds-step-tabs__panel" data-panel="core3">
+            <div class="ds-step-tabs__content">
+              <h3>Enterprise Context</h3>
               <p>Define and control sensitive entities beyond standard PII — project codes, internal IDs, contract terms, and strategic data specific to your organization.</p>
               <p>Enterprise documents contain far more sensitivity than personally identifiable information alone. A legal memo about a pending acquisition contains no PII but is filled with deal structure, valuation ranges, and strategic rationale. Enterprise context enables policy-based sensitivity classification through context-aware data control that adapts to document type, department, and workflow context — tailored protection for your specific business logic and secrets.</p>
             </div>
+            <div class="ds-step-tabs__screenshot">Enterprise Context</div>
           </div>
-          <div class="ds-ac-card" onclick="toggleAcCard(this)">
-            <div class="ds-ac-card__header">
-              <div class="ds-ac-card__header-left">
-                <span class="ds-ac-card__dot ds-ac-card__dot--accent"></span>
-                <span class="ds-ac-card__label">+1</span>
-                <span class="ds-ac-card__title">Structure-Preserving</span>
-              </div>
-              <div class="ds-ac-card__meta"><span class="ds-badge ds-badge--neutral">Tables &amp; Layouts</span></div>
-              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
-            </div>
-            <div class="ds-ac-card__body">
+          <div class="ds-step-tabs__panel" data-panel="plus1">
+            <div class="ds-step-tabs__content">
+              <h3>Structure-Preserving</h3>
               <p>Tables, diagrams, cross-references, and document hierarchy remain intact — your document layout stays readable to AI throughout the process.</p>
               <p>Masking tools destroy document context. <span class="ds-text--product">LLM Capsule</span> keeps tables, diagrams, and entity relationships intact so AI understands the full context while sensitive values are replaced. Reference consistency, diagram preservation, and document hierarchy are all maintained.</p>
             </div>
+            <div class="ds-step-tabs__screenshot">Structure-Preserving</div>
           </div>
-          <div class="ds-ac-card" onclick="toggleAcCard(this)">
-            <div class="ds-ac-card__header">
-              <div class="ds-ac-card__header-left">
-                <span class="ds-ac-card__dot ds-ac-card__dot--accent"></span>
-                <span class="ds-ac-card__label">+2</span>
-                <span class="ds-ac-card__title">Cross-Model Execution</span>
-              </div>
-              <div class="ds-ac-card__meta"><span class="ds-badge ds-badge--neutral">Any LLM</span></div>
-              <span class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></span>
-            </div>
-            <div class="ds-ac-card__body">
+          <div class="ds-step-tabs__panel" data-panel="plus2">
+            <div class="ds-step-tabs__content">
+              <h3>Cross-Model Execution</h3>
               <p>Works with any AI model. Switch between ChatGPT, Claude, Gemini, or any LLM API instantly — no re-engineering, no vendor lock-in.</p>
               <p><span class="ds-text--product">LLM Capsule</span> acts as a model-agnostic AI enablement layer for all AI models. Swap or mix models anytime — zero re-engineering, no vendor lock-in, consistent protection across every provider. Connect to any model simultaneously, including CUBIG's own SynTitan platform.</p>
             </div>
+            <div class="ds-step-tabs__screenshot">Cross-Model Execution</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         Section 6: Use Cases (Step Tabs)
+         Section 6: AI-Enabled Enterprise Workflows (Case Study Cards)
     ============================================================ -->
     <section id="section-6" class="ds-section">
       <div class="ds-container">
@@ -1199,57 +1172,42 @@
           <p class="ds-section-header__description"><span class="ds-text--product">LLM Capsule</span> plugs into the most common enterprise AI workflows — from document intake to output delivery, one data layer enables AI adoption on real documents.</p>
         </div>
 
-        <div class="ds-step-tabs" data-step-tabs>
-          <div class="ds-step-tabs__nav">
-            <div class="ds-step-tabs__tab ds-step-tabs__tab--active" data-tab="1">Document Summarization</div>
-            <div class="ds-step-tabs__tab" data-tab="2">Claims Processing</div>
-            <div class="ds-step-tabs__tab" data-tab="3">Contract Review</div>
-            <div class="ds-step-tabs__tab" data-tab="4">Report Generation</div>
+        <div class="ds-card-grid ds-card-grid--2col">
+          <div class="ds-card ds-card--case-study">
+            <div class="ds-card__icon-wrap"><svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+            <h3 class="ds-card__title">Secure Document Summarization</h3>
+            <p class="ds-card__description">AI generates executive summaries of sensitive documents — contracts, reports, filings — while all confidential elements are replaced with safe placeholders. Restored summaries contain real names, dates, and figures ready for business use.</p>
+            <ul class="ds-bullet ds-bullet--check">
+              <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Contracts, reports, and filings protected</span></li>
+              <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Real names, dates, and figures restored in output</span></li>
+            </ul>
           </div>
-
-          <div class="ds-step-tabs__panel ds-step-tabs__panel--active" data-panel="1">
-            <div class="ds-step-tabs__content">
-              <h3>Secure Document Summarization</h3>
-              <p>AI generates executive summaries of sensitive documents — contracts, reports, filings — while all confidential elements are replaced with safe placeholders. Restored summaries contain real names, dates, and figures ready for business use.</p>
-              <ul class="ds-bullet ds-bullet--check">
-                <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Contracts, reports, and filings protected</span></li>
-                <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Real names, dates, and figures restored in output</span></li>
-              </ul>
-            </div>
-            <div class="ds-step-tabs__screenshot">Document Summarization</div>
+          <div class="ds-card ds-card--case-study">
+            <div class="ds-card__icon-wrap"><svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg></div>
+            <h3 class="ds-card__title">AI Claims Processing</h3>
+            <p class="ds-card__description">Insurance and financial claims go through <span class="ds-text--product">LLM Capsule</span> before AI-powered classification, damage assessment, and fraud detection. Restored outputs feed directly into claims management systems with real policyholder data.</p>
+            <ul class="ds-bullet ds-bullet--check">
+              <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Classification, damage assessment, fraud detection enabled</span></li>
+              <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Restored outputs feed directly into claims systems</span></li>
+            </ul>
           </div>
-          <div class="ds-step-tabs__panel" data-panel="2">
-            <div class="ds-step-tabs__content">
-              <h3>AI Claims Processing</h3>
-              <p>Insurance and financial claims go through <span class="ds-text--product">LLM Capsule</span> before AI-powered classification, damage assessment, and fraud detection. Restored outputs feed directly into claims management systems with real policyholder data.</p>
-              <ul class="ds-bullet ds-bullet--check">
-                <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Classification, damage assessment, fraud detection enabled</span></li>
-                <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Restored outputs feed directly into claims systems</span></li>
-              </ul>
-            </div>
-            <div class="ds-step-tabs__screenshot">Claims Processing</div>
+          <div class="ds-card ds-card--case-study">
+            <div class="ds-card__icon-wrap"><svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></div>
+            <h3 class="ds-card__title">Confidential Contract Review</h3>
+            <p class="ds-card__description">AI extracts key terms, obligations, and risk clauses from protected contracts. Restored outputs include real party names, amounts, and clause references — ready for direct integration into deal management systems.</p>
+            <ul class="ds-bullet ds-bullet--check">
+              <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Key terms, obligations, and risk clauses extracted</span></li>
+              <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Real party names, amounts, and references restored</span></li>
+            </ul>
           </div>
-          <div class="ds-step-tabs__panel" data-panel="3">
-            <div class="ds-step-tabs__content">
-              <h3>Confidential Contract Review</h3>
-              <p>AI extracts key terms, obligations, and risk clauses from protected contracts. Restored outputs include real party names, amounts, and clause references — ready for direct integration into deal management systems.</p>
-              <ul class="ds-bullet ds-bullet--check">
-                <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Key terms, obligations, and risk clauses extracted</span></li>
-                <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Real party names, amounts, and references restored</span></li>
-              </ul>
-            </div>
-            <div class="ds-step-tabs__screenshot">Contract Review</div>
-          </div>
-          <div class="ds-step-tabs__panel" data-panel="4">
-            <div class="ds-step-tabs__content">
-              <h3>Internal Report Generation</h3>
-              <p>AI drafts internal reports from protected data sources — performance reviews, audit findings, compliance summaries. Restored reports contain real employee names, department data, and metric values.</p>
-              <ul class="ds-bullet ds-bullet--check">
-                <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Performance reviews, audit findings, compliance summaries</span></li>
-                <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Real employee names, department data, and metrics restored</span></li>
-              </ul>
-            </div>
-            <div class="ds-step-tabs__screenshot">Report Generation</div>
+          <div class="ds-card ds-card--case-study">
+            <div class="ds-card__icon-wrap"><svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15V6"/><path d="M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/><path d="M12 12H3"/><path d="M16 6H3"/><path d="M12 18H3"/></svg></div>
+            <h3 class="ds-card__title">Internal Report Generation</h3>
+            <p class="ds-card__description">AI drafts internal reports from protected data sources — performance reviews, audit findings, compliance summaries. Restored reports contain real employee names, department data, and metric values.</p>
+            <ul class="ds-bullet ds-bullet--check">
+              <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Performance reviews, audit findings, compliance summaries</span></li>
+              <li class="ds-bullet__item"><span class="ds-bullet__icon"></span><span>Real employee names, department data, and metrics restored</span></li>
+            </ul>
           </div>
         </div>
       </div>
