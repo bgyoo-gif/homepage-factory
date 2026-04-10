@@ -551,6 +551,16 @@
     /* Spacing utility */
     .ds-spaced-top { margin-top: var(--ds-space-lg); }
     .ds-spaced-top-xl { margin-top: var(--ds-space-xl); }
+    /* --- Bullet List --- */
+    .ds-bullet { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--ds-space-sm); }
+    .ds-bullet__item {
+      display: flex; align-items: flex-start; gap: var(--ds-space-xs);
+      font-size: var(--ds-text-md); line-height: var(--ds-leading-normal); color: var(--ds-color-text-primary);
+    }
+    .ds-bullet__icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; }
+    .ds-bullet--dot .ds-bullet__icon::before { content: "•"; color: var(--ds-color-brand-secondary); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-lg); line-height: 1; }
+    .ds-bullet--check .ds-bullet__icon::before { content: "✓"; color: var(--ds-color-success); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-md); line-height: 1; }
+
   </style>
 </head>
 <body>
