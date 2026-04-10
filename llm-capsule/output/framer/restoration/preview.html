@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Restoration | LLM Capsule Framer Component</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset ─────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: #0f0f0f;
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      padding-top: 58px;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    p, li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
+    h1, h2, h3 { text-wrap: balance; }
+
+    /* ── Nav ──────────────────────────────────────────────────────── */
+    .rst-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 58px; display: flex; align-items: center;
+      background-color: rgba(255,255,255,0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid #e6e7e9;
+      padding: 0 16px;
+    }
+    @media (min-width: 1440px) { .rst-nav { padding: 0 120px; } }
+    .rst-nav__inner {
+      width: 100%; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
+    }
+    .rst-nav__logo {
+      display: flex; align-items: center; gap: 8px;
+      font-family: "Oxanium", sans-serif; font-weight: 700;
+      font-size: 18px; color: #1821E8;
+    }
+    .rst-nav__logo img { height: 28px; width: auto; }
+    .rst-nav__links {
+      display: none; list-style: none;
+      align-items: center; gap: 32px;
+    }
+    @media (min-width: 768px) { .rst-nav__links { display: flex; } }
+    .rst-nav__link { font-size: 14px; color: #636363; transition: color 0.15s; }
+    .rst-nav__link:hover { color: #0f0f0f; }
+    .rst-nav__actions { display: flex; align-items: center; gap: 12px; }
+
+    /* ── Buttons ──────────────────────────────────────────────────── */
+    .rst-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border-radius: 9999px; font-family: "DM Sans", sans-serif;
+      font-weight: 500; cursor: pointer; border: none;
+      transition: opacity 0.2s, background-color 0.2s;
+      white-space: nowrap; text-decoration: none;
+    }
+    .rst-btn--sm { padding: 8px 16px; font-size: 14px; }
+    .rst-btn--lg { padding: 16px 48px; font-size: 18px; }
+    .rst-btn--primary {
+      background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+      color: #ffffff;
+    }
+    .rst-btn--primary:hover { opacity: 0.88; }
+    .rst-btn--secondary {
+      background-color: transparent; color: #0f0f0f;
+      border: 1px solid #e6e7e9;
+    }
+    .rst-btn--secondary:hover { background-color: #f7f7f7; }
+
+    /* ── Article Container ────────────────────────────────────────── */
+    .rst-article-container {
+      width: 100%; max-width: 860px; margin: 0 auto; padding: 0 16px;
+    }
+    @media (min-width: 768px)  { .rst-article-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .rst-article-container { padding: 0; } }
+
+    /* ── Breadcrumb ───────────────────────────────────────────────── */
+    .rst-breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      flex-wrap: wrap; margin-bottom: 24px;
+    }
+    .rst-breadcrumb__link {
+      font-size: 14px; color: #5690D4; font-weight: 500; transition: color 0.15s;
+    }
+    .rst-breadcrumb__link:hover { color: #1821E8; }
+    .rst-breadcrumb__sep { font-size: 14px; color: #9c9c9c; }
+    .rst-breadcrumb__current { font-size: 14px; color: #9c9c9c; }
+
+    /* ── Hero ─────────────────────────────────────────────────────── */
+    .rst-section--hero { padding: 100px 0 0; background-color: #ffffff; }
+    .rst-article-hero__title {
+      font-family: "DM Sans", sans-serif; font-size: 28px; font-weight: 700;
+      color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 16px;
+    }
+    @media (min-width: 768px)  { .rst-article-hero__title { font-size: 36px; } }
+    @media (min-width: 1024px) { .rst-article-hero__title { font-size: 44px; } }
+    @media (min-width: 1440px) { .rst-article-hero__title { font-size: 52px; } }
+    .rst-article-hero__description { font-size: 18px; color: #636363; line-height: 1.7; }
+    .rst-text--product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+    .rst-text--brand { color: #5690D4; }
+
+    /* ── Article Body ─────────────────────────────────────────────── */
+    .rst-section--article-body { padding: 32px 0; }
+    @media (min-width: 768px)  { .rst-section--article-body { padding: 48px 0; } }
+    @media (min-width: 1440px) { .rst-section--article-body { padding: 64px 0; } }
+
+    /* ── Article Section Header ───────────────────────────────────── */
+    .rst-article-section-header {
+      margin-bottom: 24px; padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9; text-align: center;
+    }
+    .rst-article-section-header h2 {
+      font-size: 20px; font-weight: 700; color: #0f0f0f;
+      line-height: 1.2; letter-spacing: -0.5px;
+    }
+    @media (min-width: 768px)  { .rst-article-section-header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .rst-article-section-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .rst-article-section-header h2 { font-size: 28px; } }
+    @media (max-width: 767px) { .rst-article-section-header { text-align: left; } }
+
+    /* ── Banner ───────────────────────────────────────────────────── */
+    .rst-banner {
+      padding: 24px 32px; border-radius: 18px;
+      border-top: 1px solid #e6e7e9; border-bottom: 1px solid #e6e7e9;
+      background-color: rgba(24, 33, 232, 0.06);
+      font-size: 16px; line-height: 1.7; text-align: center;
+      word-break: keep-all; overflow-wrap: break-word;
+    }
+    .rst-banner__label {
+      font-family: "Fragment Mono", monospace; font-size: 12px;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: #9c9c9c; margin-bottom: 8px; display: block;
+    }
+    .rst-banner p { font-size: 16px; color: #0f0f0f; line-height: 1.7; margin: 0; }
+
+    /* ── Bullet ───────────────────────────────────────────────────── */
+    .rst-bullet {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .rst-bullet__item {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 16px; line-height: 1.5; color: #0f0f0f;
+    }
+    .rst-bullet__icon {
+      width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .rst-bullet--dot .rst-bullet__icon::before {
+      content: "•"; color: #5690D4; font-weight: 700; font-size: 18px; line-height: 1;
+    }
+
+    /* ── Card ─────────────────────────────────────────────────────── */
+    .rst-card {
+      background-color: #ffffff; border-radius: 18px;
+      border: 1px solid #e6e7e9; padding: 24px;
+      box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
+      display: flex; flex-direction: column;
+    }
+    @media (min-width: 1440px) { .rst-card { padding: 32px; } }
+    .rst-card__divider { border: none; border-top: 1px solid #e6e7e9; margin: 16px 0; }
+    .rst-body-paragraph { font-size: 16px; color: #636363; line-height: 1.7; margin-bottom: 16px; }
+    .rst-body-paragraph:last-child { margin-bottom: 0; }
+    .rst-body-paragraph--strong { font-weight: 500; }
+    .rst-code-inline {
+      font-family: "Fragment Mono", monospace; font-size: 0.875em;
+      background-color: #ececec; border-radius: 3px; padding: 0 4px; color: inherit;
+    }
+    .rst-example-restored { font-weight: 600; color: #0e824c; }
+
+    /* ── Related Terms ────────────────────────────────────────────── */
+    .rst-related-terms { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
+
+    /* ── Section Title Icon ───────────────────────────────────────── */
+    .rst-section-title-icon { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .rst-section-title-icon__icon { color: #5690D4; flex-shrink: 0; }
+    .rst-section-title-icon__text {
+      font-family: "DM Sans", sans-serif; font-size: 20px;
+      font-weight: 600; color: #0f0f0f; line-height: 1.2;
+    }
+
+    /* ── Card Grid ────────────────────────────────────────────────── */
+    .rst-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px) { .rst-card-grid--2col { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ── Dark Card ────────────────────────────────────────────────── */
+    .rst-card--dark {
+      background-color: #141414; border: 1px solid #303135;
+      color: #ffffff; border-radius: 18px; padding: 24px;
+      box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
+      display: flex; align-items: center; gap: 16px;
+      transition: background-color 0.2s; text-decoration: none;
+    }
+    .rst-card--dark:hover { background-color: #171719; }
+    .rst-card--dark__icon { flex-shrink: 0; color: #5690D4; }
+    .rst-card--dark__title { font-size: 16px; font-weight: 600; color: #ffffff; }
+    .rst-icon {
+      width: 24px; height: 24px; stroke: currentColor; fill: none;
+      stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    /* ── CTA Band ─────────────────────────────────────────────────── */
+    .rst-cta-band {
+      width: 100%; position: relative; overflow: hidden;
+      padding: 80px 16px; text-align: center;
+      background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+    }
+    .rst-cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: rgba(0,0,0,0.15); z-index: 0;
+    }
+    .rst-cta-band > * { position: relative; z-index: 1; }
+    .rst-cta-band__inner {
+      max-width: 100%; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: 24px;
+    }
+    @media (min-width: 768px)  { .rst-cta-band { padding: 100px 32px; } }
+    @media (min-width: 1024px) { .rst-cta-band__inner { max-width: 720px; } }
+    @media (min-width: 1440px) {
+      .rst-cta-band { padding: 120px 120px; max-width: 1440px; margin: 0 auto; }
+      .rst-cta-band__inner { max-width: 860px; }
+    }
+    .rst-cta-band__title {
+      font-family: "DM Sans", sans-serif; font-size: 36px; font-weight: 700;
+      color: #ffffff; line-height: 1.2; letter-spacing: -0.5px; margin: 0;
+    }
+    @media (min-width: 768px)  { .rst-cta-band__title { font-size: 40px; } }
+    @media (min-width: 1440px) { .rst-cta-band__title { font-size: 50px; } }
+    .rst-cta-band__description { font-size: 18px; color: rgba(255,255,255,0.85); line-height: 1.7; margin: 0; }
+    .rst-cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .rst-cta-band__actions .rst-btn {
+      background-color: rgba(255,255,255,0.92); color: #0f0f0f;
+      border: 1px solid rgba(255,255,255,0.6); backdrop-filter: blur(8px);
+    }
+    .rst-cta-band__actions .rst-btn:hover { background-color: #ffffff; }
+    @media (max-width: 767px) {
+      .rst-cta-band__actions { flex-direction: column; align-items: center; }
+      .rst-cta-band__actions .rst-btn { width: 100%; max-width: 320px; }
+    }
+    .rst-cta-band__footnote { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 8px; }
+
+    /* ── Footer ───────────────────────────────────────────────────── */
+    .rst-footer { padding: 56px 0 32px; border-top: 1px solid #e6e7e9; background-color: #ffffff; }
+    .rst-container { width: 100%; margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 768px)  { .rst-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .rst-container { padding: 0 120px; max-width: 1440px; } }
+    .rst-footer__grid {
+      display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px;
+    }
+    @media (min-width: 768px)  { .rst-footer__grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+    @media (min-width: 1024px) { .rst-footer__grid { grid-template-columns: 2fr repeat(4, 1fr); } }
+    .rst-footer__brand { font-family: "Oxanium", sans-serif; font-weight: 700; font-size: 18px; color: #1821E8; }
+    .rst-footer__brand-desc {
+      font-family: "DM Sans", sans-serif; font-size: 14px; color: #9c9c9c;
+      margin-top: 10px; line-height: 1.7; font-weight: 400; max-width: 260px;
+    }
+    .rst-footer__col h4 {
+      font-size: 11px; font-weight: 600; color: #9c9c9c;
+      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px;
+    }
+    .rst-footer__col ul { list-style: none; }
+    .rst-footer__col li { margin-bottom: 8px; }
+    .rst-footer__col a { font-size: 14px; color: #636363; transition: color 0.2s; }
+    .rst-footer__col a:hover { color: #0f0f0f; }
+    .rst-footer__bottom {
+      padding-top: 20px; border-top: 1px solid #e6e7e9;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 12px; color: #9c9c9c; flex-wrap: wrap; gap: 8px;
+    }
+    @media (max-width: 767px) { .rst-footer__bottom { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="rst-nav" role="navigation" aria-label="Main navigation">
+    <div class="rst-nav__inner">
+      <a href="index.html" class="rst-nav__logo">
+        <img
+          src="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/logo-llmcapsule.avif"
+          alt="LLM Capsule"
+          onerror="this.style.display='none'"
+        >
+        <span>LLM Capsule</span>
+      </a>
+      <ul class="rst-nav__links" role="list">
+        <li><a href="product.html" class="rst-nav__link">Product</a></li>
+        <li><a href="architecture.html" class="rst-nav__link">Architecture</a></li>
+        <li><a href="solutions.html" class="rst-nav__link">Solutions</a></li>
+        <li><a href="trust.html" class="rst-nav__link">Trust</a></li>
+        <li><a href="pricing.html" class="rst-nav__link">Pricing</a></li>
+        <li><a href="resources.html" class="rst-nav__link">Resources</a></li>
+      </ul>
+      <div class="rst-nav__actions">
+        <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" class="rst-btn rst-btn--secondary rst-btn--sm">AWS Marketplace</a>
+        <a href="request-pov.html" class="rst-btn rst-btn--primary rst-btn--sm">Request a Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Section 1: Hero -->
+    <section id="section-hero" class="rst-section--hero">
+      <div class="rst-article-container">
+        <nav class="rst-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html" class="rst-breadcrumb__link">Home</a>
+          <span class="rst-breadcrumb__sep">/</span>
+          <a href="resources.html" class="rst-breadcrumb__link">Resources</a>
+          <span class="rst-breadcrumb__sep">/</span>
+          <a href="glossary.html" class="rst-breadcrumb__link">Glossary</a>
+          <span class="rst-breadcrumb__sep">/</span>
+          <span class="rst-breadcrumb__current">Restoration</span>
+        </nav>
+        <h1 class="rst-article-hero__title">Restoration</h1>
+        <p class="rst-article-hero__description">
+          Restoring AI outputs to original enterprise context using locally stored mappings after AI processing. A core capability of <span class="rst-text--product">LLM Capsule</span>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3: Definition -->
+    <section id="section-3" class="rst-section--article-body">
+      <div class="rst-article-container">
+        <div class="rst-banner">
+          <span class="rst-banner__label">DEFINITION</span>
+          <p>Restoration (also known as local restoration) is the process of restoring AI-generated outputs to their original enterprise context. After AI processes encapsulated data, the locally stored mapping between original and protected values is applied to the AI output, replacing encapsulated representations with real enterprise data. AI results are restored locally through this automated process.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Explanation -->
+    <section id="section-4" class="rst-section--article-body">
+      <div class="rst-article-container">
+        <div class="rst-article-section-header">
+          <h2><span class="rst-text--brand">Explanation</span></h2>
+        </div>
+        <ul class="rst-bullet rst-bullet--dot">
+          <li class="rst-bullet__item">
+            <span class="rst-bullet__icon"></span>
+            <span><strong>When <span class="rst-text--product">LLM Capsule</span> encapsulates a document, it creates a local mapping table.</strong> The table records the relationship between each original sensitive value and its replacement. This mapping never leaves the enterprise environment.</span>
+          </li>
+          <li class="rst-bullet__item">
+            <span class="rst-bullet__icon"></span>
+            <span><strong>After AI processing completes, the restoration engine applies this mapping in reverse.</strong> Encapsulated tokens are replaced with original values. The result is an AI output that contains real names, real figures, and real references, ready for enterprise use.</span>
+          </li>
+          <li class="rst-bullet__item">
+            <span class="rst-bullet__icon"></span>
+            <span><strong>Restoration is deterministic.</strong> Every encapsulated value maps to exactly one original value. There is no ambiguity, no approximation, and no manual intervention required.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 5: Example -->
+    <section id="section-5" class="rst-section--article-body">
+      <div class="rst-article-container">
+        <div class="rst-article-section-header">
+          <h2><span class="rst-text--brand">Example</span></h2>
+        </div>
+        <div class="rst-card">
+          <p class="rst-body-paragraph">
+            AI processes an encapsulated contract and generates a summary: "The agreement between <code class="rst-code-inline">ENTITY_A</code> and <code class="rst-code-inline">ENTITY_B</code> provides for a payment of <code class="rst-code-inline">AMOUNT_1</code> due on <code class="rst-code-inline">DATE_1</code>."
+          </p>
+          <hr class="rst-card__divider">
+          <p class="rst-body-paragraph rst-body-paragraph--strong">
+            Local restoration applies the mapping and produces: "The agreement between <span class="rst-example-restored">Acme Corp</span> and <span class="rst-example-restored">GlobalTech</span> provides for a payment of <span class="rst-example-restored">$2.4M</span> due on <span class="rst-example-restored">March 15, 2026</span>."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Related Terms + Links -->
+    <section id="section-6" class="rst-section--article-body">
+      <div class="rst-article-container">
+        <div class="rst-article-section-header">
+          <h2>Related <span class="rst-text--brand">Terms</span></h2>
+        </div>
+
+        <div class="rst-related-terms">
+          <a href="zero-exposure.html" class="rst-btn rst-btn--secondary rst-btn--sm">Zero Exposure</a>
+          <a href="restorable-workflow.html" class="rst-btn rst-btn--secondary rst-btn--sm">Restorable Workflow</a>
+          <a href="structure-preserving-processing.html" class="rst-btn rst-btn--secondary rst-btn--sm">Structure-Preserving Processing</a>
+          <a href="enterprise-context-control.html" class="rst-btn rst-btn--secondary rst-btn--sm">Enterprise Context Control</a>
+        </div>
+
+        <div class="rst-section-title-icon">
+          <span class="rst-section-title-icon__icon">
+            <svg class="rst-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+            </svg>
+          </span>
+          <span class="rst-section-title-icon__text">Related Pages</span>
+        </div>
+
+        <div class="rst-card-grid rst-card-grid--2col">
+          <a href="product.html" class="rst-card--dark">
+            <span class="rst-card--dark__icon">
+              <svg class="rst-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              </svg>
+            </span>
+            <span class="rst-card--dark__title">Product Overview</span>
+          </a>
+          <a href="architecture.html" class="rst-card--dark">
+            <span class="rst-card--dark__icon">
+              <svg class="rst-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </span>
+            <span class="rst-card--dark__title">Architecture</span>
+          </a>
+          <a href="trust.html" class="rst-card--dark">
+            <span class="rst-card--dark__icon">
+              <svg class="rst-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </span>
+            <span class="rst-card--dark__title">Trust &amp; Compliance</span>
+          </a>
+          <a href="request-pov.html" class="rst-card--dark">
+            <span class="rst-card--dark__icon">
+              <svg class="rst-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+            <span class="rst-card--dark__title">Request a Demo</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: CTA Band -->
+    <section id="section-cta" class="rst-cta-band">
+      <div class="rst-cta-band__inner">
+        <h2 class="rst-cta-band__title">See <span class="rst-text--product">LLM Capsule</span> Restoration in Action</h2>
+        <p class="rst-cta-band__description">Experience how enterprise AI outputs are restored to their original context with real data.</p>
+        <div class="rst-cta-band__actions">
+          <a href="request-pov.html" class="rst-btn rst-btn--lg">Request a Demo</a>
+          <a href="product.html" class="rst-btn rst-btn--lg">View Product</a>
+        </div>
+        <p class="rst-cta-band__footnote">Enterprise AI Enablement by CUBIG</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="rst-footer">
+    <div class="rst-container">
+      <div class="rst-footer__grid">
+        <div>
+          <div class="rst-footer__brand">LLM Capsule</div>
+          <p class="rst-footer__brand-desc">Enterprise AI enablement by CUBIG. Enable AI. Protect data. Restore results.</p>
+        </div>
+        <div class="rst-footer__col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="architecture.html">Architecture</a></li>
+            <li><a href="trust.html">Trust</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener">AWS Marketplace</a></li>
+          </ul>
+        </div>
+        <div class="rst-footer__col">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="solutions.html">All Solutions</a></li>
+          </ul>
+        </div>
+        <div class="rst-footer__col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="resources.html">Resources Hub</a></li>
+            <li><a href="learn.html">Learn</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="trust-center.html">Trust Center</a></li>
+          </ul>
+        </div>
+        <div class="rst-footer__col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="request-pov.html">Request a Demo</a></li>
+            <li><a href="https://cubig.ai" target="_blank" rel="noopener">CUBIG</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="rst-footer__bottom">
+        <span>&copy; 2025 LLM Capsule by CUBIG. All rights reserved.</span>
+        <span>Enterprise AI Enablement</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
