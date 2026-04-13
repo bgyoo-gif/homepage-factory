@@ -3958,7 +3958,11 @@ function convertToTsx() {
 
 // Restore saved brand on load
 if (currentBrand !== 'cubig') {
-  switchBrand(currentBrand);
+  // Force switch — currentBrand already set from localStorage,
+  // temporarily reset to trigger switchBrand logic
+  var savedBrand = currentBrand;
+  currentBrand = 'cubig';
+  switchBrand(savedBrand);
 }
 </script>
 </body>
