@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section03 Explanation | On-Premise vs Cloud AI Data Protection</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f2f2f2; }
+
+    .section { width: 100%; padding: 32px 0; background-color: #ffffff; }
+    .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 768px)  { .container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .container { padding: 0; } }
+
+    .header {
+      margin-bottom: 24px; padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9; text-align: center;
+    }
+    .header h2 { font-size: 20px; font-weight: 700; color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px; }
+    @media (min-width: 768px)  { .header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .header h2 { font-size: 28px; } }
+    @media (max-width: 767px)  { .header { text-align: left; } }
+
+    .brand { color: #5690D4; }
+    .product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+
+    .bullet {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: 12px;
+      counter-reset: bullet;
+    }
+    .bullet__item {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 16px; line-height: 1.5; color: #0f0f0f;
+      word-break: keep-all; overflow-wrap: break-word;
+      counter-increment: bullet;
+    }
+    .bullet__icon {
+      flex-shrink: 0; width: 20px; height: 20px; margin-top: 2px;
+      display: inline-flex; align-items: center; justify-content: center; font-size: 0;
+    }
+    .bullet__icon::before {
+      content: counter(bullet);
+      font-size: 12px; font-weight: 700; color: #ffffff;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 20px; height: 20px; border-radius: 50%;
+      background-color: #1821E8;
+    }
+    .bullet__item strong { font-weight: 600; color: #0f0f0f; }
+
+    .banner {
+      padding: 24px 32px;
+      border-radius: 18px;
+      border-top: 1px solid #e6e7e9;
+      border-bottom: 1px solid #e6e7e9;
+      background-color: rgba(24,33,232,0.06);
+      font-size: 16px; line-height: 1.7; color: #0f0f0f;
+      word-break: keep-all; overflow-wrap: break-word;
+      margin-top: 32px;
+    }
+    .banner strong { font-weight: 600; }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="header">
+        <h2><span class="brand">Explanation</span></h2>
+      </div>
+      <ul class="bullet">
+        <li class="bullet__item">
+          <span class="bullet__icon"></span>
+          <span><strong>On-premise deployment.</strong> The encapsulation engine runs entirely within the enterprise data center. Sensitive data never traverses any network boundary. The AI enablement data layer operates within existing security perimeters. Only encapsulated data is sent to external AI services when needed.</span>
+        </li>
+        <li class="bullet__item">
+          <span class="bullet__icon"></span>
+          <span><strong>Air-gapped deployment.</strong> For the most sensitive environments, <span class="product">LLM Capsule</span> can operate within air-gapped networks. Documents are encapsulated locally, transferred to an AI-connected environment through controlled channels, processed, and results are transferred back for local restoration.</span>
+        </li>
+        <li class="bullet__item">
+          <span class="bullet__icon"></span>
+          <span><strong>Cloud deployment.</strong> Available on AWS Marketplace. The encapsulation layer runs within the enterprise's cloud account or VPC. Data remains within the enterprise's cloud boundary while AI services are accessed externally.</span>
+        </li>
+        <li class="bullet__item">
+          <span class="bullet__icon"></span>
+          <span><strong>Hybrid deployment.</strong> Different document types or sensitivity levels route through different deployment modes within a single <span class="product">LLM Capsule</span> instance.</span>
+        </li>
+        <li class="bullet__item">
+          <span class="bullet__icon"></span>
+          <span><strong>Embedded integration.</strong> <span class="product">LLM Capsule</span> can be embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within the enterprise's own software stack.</span>
+        </li>
+      </ul>
+      <div class="banner">
+        <strong>One enablement model, any deployment.</strong> The encapsulation and restoration logic is identical regardless of where <span class="product">LLM Capsule</span> runs. AI results are restored locally in every deployment scenario.
+      </div>
+    </div>
+  </section>
+</body>
+</html>

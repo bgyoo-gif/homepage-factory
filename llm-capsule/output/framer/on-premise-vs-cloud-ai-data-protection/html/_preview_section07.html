@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section07 CTA Band | On-Premise vs Cloud AI Data Protection</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f2f2f2; }
+
+    .cta {
+      width: 100%;
+      position: relative; overflow: hidden;
+      padding: 80px 16px;
+      text-align: center;
+      background-color: #171719;
+      background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-blue-violet.png');
+      background-size: cover; background-position: center;
+    }
+    .cta::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: rgba(0,0,0,0.15); z-index: 0;
+    }
+    .cta > * { position: relative; z-index: 1; }
+
+    .cta__inner {
+      max-width: 100%; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: 24px;
+    }
+    @media (min-width: 768px)  { .cta { padding: 100px 32px; } }
+    @media (min-width: 1024px) { .cta__inner { max-width: 720px; } }
+    @media (min-width: 1440px) { .cta { padding: 120px 120px; } .cta__inner { max-width: 1080px; } .cta__title { font-size: 50px; } }
+
+    .cta__title {
+      font-size: 36px; font-weight: 700; color: #ffffff;
+      line-height: 1.2; letter-spacing: -0.5px; margin: 0;
+      word-break: keep-all; overflow-wrap: break-word;
+    }
+    .product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+
+    .cta__description {
+      font-size: 18px; color: rgba(255,255,255,0.85);
+      line-height: 1.7; margin: 0;
+      word-break: keep-all; overflow-wrap: break-word;
+    }
+    .cta__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .cta__btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 9999px; font-family: "DM Sans", sans-serif;
+      font-weight: 500; font-size: 18px; padding: 16px 48px;
+      text-decoration: none; white-space: nowrap;
+      background-color: rgba(255,255,255,0.92); color: #0f0f0f;
+      border: 1px solid rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px); transition: background-color 0.2s;
+    }
+    .cta__btn:hover { background-color: #ffffff; }
+    .cta__footnote { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 8px; }
+    .cta__footnote a { font-size: 14px; color: rgba(255,255,255,0.70); text-decoration: none; transition: color 0.2s; }
+    .cta__footnote a:hover { color: #ffffff; }
+
+    @media (max-width: 767px) {
+      .cta { background-image: none; }
+      .cta__title { font-size: 36px; }
+      .cta__actions { flex-direction: column; align-items: center; }
+      .cta__btn { width: 100%; max-width: 320px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="cta">
+    <div class="cta__inner">
+      <h2 class="cta__title">See how <span class="product">LLM Capsule</span> works with your data</h2>
+      <p class="cta__description">Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</p>
+      <div class="cta__actions">
+        <a href="request-pov.html" class="cta__btn">Request a Demo</a>
+        <a href="architecture.html" class="cta__btn">Talk to an Architect</a>
+      </div>
+      <div class="cta__footnote">
+        <a href="downloads.html">Download Architecture Brief</a>
+        <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener">AWS Marketplace</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

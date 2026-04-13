@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section06 Related Pages | On-Premise vs Cloud AI Data Protection</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f2f2f2; }
+
+    .section { width: 100%; padding: 32px 0; background-color: #ffffff; }
+    .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 768px)  { .container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .container { padding: 0; } }
+
+    .section-title { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .section-title__icon { color: #5690D4; flex-shrink: 0; }
+    .section-title__icon svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .section-title__text { font-size: 20px; font-weight: 600; color: #0f0f0f; line-height: 1.2; }
+
+    .grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .card {
+      background-color: #141414;
+      border: 1px solid #303135;
+      color: #ffffff;
+      border-radius: 18px;
+      padding: 24px;
+      display: flex; align-items: center; gap: 16px;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+    .card:hover { background-color: #171719; }
+    .card__icon { flex-shrink: 0; color: #5690D4; }
+    .card__icon svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .card__title { font-size: 16px; font-weight: 600; color: #ffffff; }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <span class="section-title__icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+        </span>
+        <span class="section-title__text">Related</span>
+      </div>
+      <div class="grid">
+        <a href="product.html" class="card">
+          <span class="card__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            </svg>
+          </span>
+          <span class="card__title">Product Overview</span>
+        </a>
+        <a href="architecture.html" class="card">
+          <span class="card__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </span>
+          <span class="card__title">Architecture</span>
+        </a>
+        <a href="trust.html" class="card">
+          <span class="card__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </span>
+          <span class="card__title">Trust &amp; Compliance</span>
+        </a>
+        <a href="request-pov.html" class="card">
+          <span class="card__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+          <span class="card__title">Request a Demo</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
