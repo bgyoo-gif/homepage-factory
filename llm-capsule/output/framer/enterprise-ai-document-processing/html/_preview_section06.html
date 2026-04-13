@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 06: FAQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f2f2f2; }
+
+    .s6-section {
+      width: 100%;
+      padding: 60px 0;
+      background-color: #ffffff;
+    }
+    .s6-container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+    .s6-section-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .s6-section-header h2 {
+      font-family: "DM Sans", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    .s6-brand { color: #5690D4; }
+    .s6-product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+    .s6-ac-list { display: flex; flex-direction: column; gap: 2px; }
+    .s6-ac-card {
+      border: 1px solid #e6e7e9;
+      border-radius: 8px;
+      background-color: #ffffff;
+      overflow: hidden;
+      transition: background-color 0.2s;
+    }
+    .s6-ac-card:hover { background-color: #f7f7f7; }
+    .s6-ac-card__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 24px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .s6-ac-card__title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #0f0f0f;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .s6-ac-card__toggle {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      border: 0.5px solid #e6e7e9;
+      background-color: #f7f7f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .s6-toggle-icon {
+      width: 12px;
+      height: 12px;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .s6-toggle-icon::before, .s6-toggle-icon::after {
+      content: '';
+      position: absolute;
+      background-color: #9c9c9c;
+      border-radius: 1px;
+    }
+    .s6-toggle-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .s6-toggle-icon::after { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: opacity 0.2s; }
+    .s6-ac-card.open .s6-toggle-icon::after { opacity: 0; }
+    .s6-ac-card__body {
+      display: none;
+      padding: 24px;
+      border-top: 1px solid #e6e7e9;
+      background-color: #f7f7f7;
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      color: #636363;
+      line-height: 1.7;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .s6-ac-card.open .s6-ac-card__body { display: block; }
+    @media (min-width: 768px) {
+      .s6-container { padding: 0 32px; }
+      .s6-section-header h2 { font-size: 22px; }
+    }
+    @media (min-width: 1024px) {
+      .s6-section-header h2 { font-size: 24px; }
+    }
+    @media (min-width: 1440px) {
+      .s6-container { padding: 0 120px; max-width: 1440px; }
+      .s6-section-header h2 { font-size: 28px; }
+    }
+    @media (max-width: 767px) { .s6-section-header { text-align: left; } }
+  </style>
+</head>
+<body>
+  <section class="s6-section" id="section-7">
+    <div class="s6-container">
+      <div class="s6-section-header">
+        <h2><span class="s6-brand">FAQ</span></h2>
+      </div>
+      <div class="s6-ac-list">
+        <div class="s6-ac-card open" onclick="this.classList.toggle('open')">
+          <div class="s6-ac-card__header">
+            <span class="s6-ac-card__title">What is enterprise AI document processing?</span>
+            <span class="s6-ac-card__toggle"><span class="s6-toggle-icon"></span></span>
+          </div>
+          <div class="s6-ac-card__body">
+            <p>Enterprise AI document processing uses large language models to summarize, extract, classify, and translate enterprise documents while protecting sensitive data through local encapsulation and restoring usable outputs through local restoration.</p>
+          </div>
+        </div>
+        <div class="s6-ac-card" onclick="this.classList.toggle('open')">
+          <div class="s6-ac-card__header">
+            <span class="s6-ac-card__title">What document formats does <span class="s6-product">LLM Capsule</span> support?</span>
+            <span class="s6-ac-card__toggle"><span class="s6-toggle-icon"></span></span>
+          </div>
+          <div class="s6-ac-card__body">
+            <p><span class="s6-product">LLM Capsule</span> processes common enterprise document formats including PDF, DOCX, XLSX, HTML, plain text, and structured data formats. Format-specific processing preserves layout and structure during encapsulation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

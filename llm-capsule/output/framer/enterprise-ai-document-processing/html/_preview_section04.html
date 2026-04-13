@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 04: Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f2f2f2; }
+
+    .s4-section {
+      width: 100%;
+      padding: 60px 0;
+      background-color: #ffffff;
+    }
+    .s4-container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+    .s4-section-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .s4-section-header h2 {
+      font-family: "DM Sans", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    .s4-brand { color: #5690D4; }
+    .s4-product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+    .s4-intro {
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      color: #636363;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .s4-bullet {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .s4-bullet__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #0f0f0f;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .s4-bullet__icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .s4-bullet__icon::before {
+      content: "•";
+      color: #5690D4;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1;
+    }
+    .s4-banner {
+      padding: 24px 32px;
+      border-radius: 18px;
+      border-top: 1px solid #e6e7e9;
+      border-bottom: 1px solid #e6e7e9;
+      background-color: rgba(24, 33, 232, 0.06);
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #0f0f0f;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    @media (min-width: 768px) {
+      .s4-container { padding: 0 32px; }
+      .s4-section-header h2 { font-size: 22px; }
+    }
+    @media (min-width: 1024px) {
+      .s4-section-header h2 { font-size: 24px; }
+    }
+    @media (min-width: 1440px) {
+      .s4-container { padding: 0 120px; max-width: 1440px; }
+      .s4-section-header h2 { font-size: 28px; }
+    }
+    @media (max-width: 767px) { .s4-section-header { text-align: left; } }
+  </style>
+</head>
+<body>
+  <section class="s4-section" id="section-5">
+    <div class="s4-container">
+      <div class="s4-section-header">
+        <h2><span class="s4-brand">Explanation</span></h2>
+      </div>
+      <p class="s4-intro">Enterprise AI document processing addresses five core document intelligence use cases:</p>
+      <ul class="s4-bullet">
+        <li class="s4-bullet__item"><span class="s4-bullet__icon"></span><span><strong>Summarization.</strong> AI generates executive summaries of long documents — contracts, reports, filings. Encapsulation protects sensitive details while preserving the structural context AI needs for accurate summarization. Restored summaries contain real names and figures.</span></li>
+        <li class="s4-bullet__item"><span class="s4-bullet__icon"></span><span><strong>Extraction.</strong> AI extracts structured data from unstructured documents — key terms from contracts, diagnosis codes from medical records, entity information from legal filings. Structure-preserving processing ensures extraction accuracy by maintaining table layouts and field relationships.</span></li>
+        <li class="s4-bullet__item"><span class="s4-bullet__icon"></span><span><strong>Classification.</strong> AI categorizes documents by type, risk level, priority, or topic. Encapsulation protects content while preserving the semantic signals AI uses for accurate classification.</span></li>
+        <li class="s4-bullet__item"><span class="s4-bullet__icon"></span><span><strong>Translation.</strong> AI translates enterprise documents across languages. Encapsulation protects names, numbers, and proprietary terms while allowing AI to translate surrounding content accurately. Restoration restores protected elements in the translated output.</span></li>
+        <li class="s4-bullet__item"><span class="s4-bullet__icon"></span><span><strong>Q&amp;A and RAG.</strong> AI answers questions about enterprise document collections. Documents are encapsulated before indexing in RAG pipelines. Retrieved context is protected during generation, and responses are restored before delivery to users.</span></li>
+      </ul>
+      <div class="s4-banner">
+        <strong><span class="s4-product">LLM Capsule</span> enables AI document processing</strong> by protecting data at the data layer. Structure-preserving processing with local restoration delivers both AI enablement and data protection simultaneously.
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 03: Definition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f2f2f2; }
+
+    .s3-section {
+      width: 100%;
+      padding: 60px 0;
+      background-color: #ffffff;
+    }
+    .s3-container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+    .s3-section-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .s3-section-header h2 {
+      font-family: "DM Sans", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    .s3-brand { color: #5690D4; }
+    .s3-banner {
+      padding: 24px 32px;
+      border-radius: 18px;
+      border-top: 1px solid #e6e7e9;
+      border-bottom: 1px solid #e6e7e9;
+      background-color: rgba(24, 33, 232, 0.06);
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .s3-banner__label {
+      font-family: "Fragment Mono", monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9c9c9c;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .s3-banner p {
+      font-size: 16px;
+      color: #0f0f0f;
+      line-height: 1.7;
+      margin: 0;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    @media (min-width: 768px) {
+      .s3-container { padding: 0 32px; }
+      .s3-section-header h2 { font-size: 22px; }
+    }
+    @media (min-width: 1024px) {
+      .s3-section-header h2 { font-size: 24px; }
+    }
+    @media (min-width: 1440px) {
+      .s3-container { padding: 0 120px; max-width: 1440px; }
+      .s3-section-header h2 { font-size: 28px; }
+    }
+    @media (max-width: 767px) { .s3-section-header { text-align: left; } }
+  </style>
+</head>
+<body>
+  <section class="s3-section" id="section-4">
+    <div class="s3-container">
+      <div class="s3-section-header">
+        <h2><span class="s3-brand">Definition</span></h2>
+      </div>
+      <div class="s3-banner">
+        <span class="s3-banner__label">Enterprise AI Document Processing</span>
+        <p>Enterprise AI document processing uses large language models to summarize, extract, classify, and translate enterprise documents while protecting sensitive data through local encapsulation and restoring usable outputs through local restoration. It applies structure-preserving processing to maintain document integrity during protection.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
