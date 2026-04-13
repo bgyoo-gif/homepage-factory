@@ -559,7 +559,7 @@ export default function Resources({
             </section>
 
             {/* ── Section 3: Core Guides ───────────────────────────────── */}
-            <section id="section-3" className="res-section res-section--bg">
+            <section id="section-3" className="res-section">
               <div className="res-container">
 
                 <div className="res-section-header res-section-header--underline">
