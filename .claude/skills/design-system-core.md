@@ -519,6 +519,8 @@ p, li, dt, dd, blockquote,
 }
 .ds-card--flat { background: transparent; border: none; padding: 0; box-shadow: none; }
 
+.ds-card p { font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed); color: var(--ds-color-text-secondary); margin: 0; }
+.ds-card p + p { margin-top: var(--ds-space-sm); }
 @media (min-width: 768px)  { .ds-card { padding: var(--ds-space-lg); } }
 @media (min-width: 1440px) { .ds-card { padding: var(--ds-space-xl); } }
 ```

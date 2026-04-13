@@ -259,6 +259,16 @@
     .ds-btn--secondary { background-color: transparent; color: var(--ds-color-text-primary); border: var(--ds-border-default); }
     .ds-btn--secondary:hover { background-color: var(--ds-color-surface-light); }
 
+    /* --- Card --- */
+    .ds-card {
+      background-color: var(--ds-color-surface-white);
+      border-radius: var(--ds-radius-md); border: var(--ds-border-default);
+      padding: var(--ds-space-lg); box-shadow: var(--ds-shadow-card);
+      display: flex; flex-direction: column; gap: var(--ds-space-sm);
+    }
+    .ds-card p { font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed); color: var(--ds-color-text-secondary); margin: 0; }
+    .ds-card p + p { margin-top: var(--ds-space-sm); }
+
     /* --- Card Dark --- */
     .ds-card--dark {
       background-color: var(--ds-color-neutral-850);

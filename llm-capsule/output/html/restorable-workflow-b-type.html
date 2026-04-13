@@ -298,10 +298,11 @@
       background-color: var(--ds-color-surface-white);
       border-radius: var(--ds-radius-md); border: var(--ds-border-default);
       padding: var(--ds-space-lg); box-shadow: var(--ds-shadow-card);
-      display: flex; flex-direction: column;
+      display: flex; flex-direction: column; gap: var(--ds-space-sm);
     }
     @media (min-width: 1440px) { .ds-card { padding: var(--ds-space-xl); } }
-    .ds-card__divider { border: none; border-top: 1px solid var(--ds-color-border-default); margin: var(--ds-space-md) 0; }
+    .ds-card p { font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed); color: var(--ds-color-text-secondary); margin: 0; }
+    .ds-card p + p { margin-top: var(--ds-space-sm); }    .ds-card__divider { border: none; border-top: 1px solid var(--ds-color-border-default); margin: var(--ds-space-md) 0; }
 
     /* --- Card Dark --- */
     .ds-card--dark {
