@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section 03 CTA Band — Downloads</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: #0f0f0f;
+      background-color: #ffffff;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .s3-section {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 16px;
+      text-align: center;
+      background-color: #171719;
+      background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png');
+      background-size: cover;
+      background-position: center;
+      box-sizing: border-box;
+    }
+    .s3-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0,0,0,0.15);
+      z-index: 0;
+    }
+    .s3-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .s3-title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin: 0;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      text-wrap: balance;
+    }
+    .s3-title-product {
+      font-family: "Oxanium", sans-serif;
+      font-weight: 700;
+    }
+    .s3-description {
+      font-family: "DM Sans", sans-serif;
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+      margin: 0;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      text-wrap: pretty;
+    }
+    .s3-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+    .s3-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 9999px;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity 0.2s, background-color 0.2s;
+      white-space: nowrap;
+      text-decoration: none;
+      background-color: rgba(255,255,255,0.92);
+      color: #0f0f0f;
+      border: 1px solid rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+    }
+    .s3-btn:hover {
+      background-color: #ffffff;
+    }
+    .s3-btn--md {
+      padding: 12px 32px;
+      font-size: 16px;
+    }
+    .s3-btn--sm {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 767px) {
+      .s3-section {
+        background-image: none;
+      }
+      .s3-title { font-size: 36px; }
+      .s3-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+      .s3-actions .s3-btn {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+    @media (min-width: 768px) {
+      .s3-section { padding: 100px 32px; }
+    }
+    @media (min-width: 1024px) {
+      .s3-inner { max-width: 720px; }
+    }
+    @media (min-width: 1440px) {
+      .s3-section { padding: 120px 120px; }
+      .s3-inner { max-width: 1080px; }
+      .s3-title { font-size: 50px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="s3-section" id="section-3" aria-labelledby="s3-cta-title">
+    <div class="s3-inner">
+      <h2 class="s3-title" id="s3-cta-title">
+        See how <span class="s3-title-product">LLM Capsule</span> works with your data
+      </h2>
+      <p class="s3-description">
+        Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.
+      </p>
+      <div class="s3-actions">
+        <a href="/request-a-demo" class="s3-btn s3-btn--md">Request a Demo</a>
+        <a href="/architecture" class="s3-btn s3-btn--md">Talk to an Architect</a>
+        <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" class="s3-btn s3-btn--sm">Available on AWS Marketplace</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

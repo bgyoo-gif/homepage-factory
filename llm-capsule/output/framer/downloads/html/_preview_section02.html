@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section 02 Downloads Grid — Downloads</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: #0f0f0f;
+      background-color: #ffffff;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .s2-section {
+      width: 100%;
+      padding: 60px 0;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .s2-container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+
+    /* Section Header */
+    .s2-header {
+      text-align: center;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e6e7e9;
+      margin-bottom: 32px;
+    }
+    .s2-header-title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin: 0 0 16px;
+      text-wrap: balance;
+      word-break: keep-all;
+    }
+    .s2-header-highlight {
+      color: #5690D4;
+    }
+    .s2-header-description {
+      font-family: "DM Sans", sans-serif;
+      font-size: 18px;
+      color: #636363;
+      line-height: 1.7;
+      max-width: 100%;
+      margin: 0 auto;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      text-wrap: pretty;
+    }
+
+    /* Card Grid */
+    .s2-card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Gradient Card */
+    .s2-card {
+      padding: 2px;
+      border-radius: 18px;
+      box-shadow: rgba(113,141,176,0.25) 0px 1px 20px 0px;
+      display: flex;
+    }
+    .s2-card--indigo { background: linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #E8F0FF 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%); }
+    .s2-card--blue   { background: linear-gradient(109deg, #BFD8F4 0%, #fff 17%, #E8F0FF 38%, #5690D4 51%, #E2EBF5 73%, #BFD8F4 100%); }
+    .s2-card--green  { background: linear-gradient(109deg, #55B45D 0%, #F0FFF2 17%, #9AE6AD 43%, #C9FFE1 65%, #55B45D 84%, #55B45D 100%); }
+
+    .s2-card-inner {
+      border-radius: 16px;
+      padding: 32px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .s2-card--indigo .s2-card-inner { background: linear-gradient(99deg, #ECEEFF 0%, #FCFCFE 58%, #fff 100%); }
+    .s2-card--blue   .s2-card-inner { background: linear-gradient(99deg, #EAF0F9 0%, #FCFCFE 58%, #fff 100%); }
+    .s2-card--green  .s2-card-inner { background: linear-gradient(99deg, #F0FDF5 0%, #FCFCFE 58%, #fff 100%); }
+
+    .s2-card-icon {
+      margin-bottom: 8px;
+    }
+    .s2-card-icon--indigo { color: #1821E8; }
+    .s2-card-icon--blue   { color: #5690D4; }
+    .s2-card-icon--green  { color: #55B45D; }
+
+    .s2-card-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .s2-card-title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      margin: 0;
+      text-wrap: balance;
+      word-break: keep-all;
+    }
+    .s2-card-description {
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      color: #636363;
+      line-height: 1.7;
+      margin: 0;
+      flex: 1;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      text-wrap: pretty;
+    }
+    .s2-card-button {
+      margin-top: auto;
+      padding-top: 16px;
+    }
+    .s2-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 9999px;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 500;
+      cursor: default;
+      border: 1px solid #e6e7e9;
+      background-color: transparent;
+      color: #0f0f0f;
+      padding: 8px 16px;
+      font-size: 14px;
+      white-space: nowrap;
+      text-decoration: none;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    @media (max-width: 767px) {
+      .s2-header { text-align: left; }
+    }
+    @media (min-width: 768px) {
+      .s2-container { padding: 0 32px; }
+      .s2-card-grid { grid-template-columns: repeat(2, 1fr); }
+      .s2-header-title { font-size: 22px; }
+    }
+    @media (min-width: 1024px) {
+      .s2-container { padding: 0 32px; }
+      .s2-card-grid { grid-template-columns: repeat(3, 1fr); }
+      .s2-header-title { font-size: 24px; }
+      .s2-header-description { max-width: 720px; }
+    }
+    @media (min-width: 1440px) {
+      .s2-container { padding: 0 120px; max-width: 1440px; }
+      .s2-header-title { font-size: 28px; }
+      .s2-header-description { max-width: 1080px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="s2-section" id="section-2">
+    <div class="s2-container">
+      <header class="s2-header">
+        <h2 class="s2-header-title">
+          Available <span class="s2-header-highlight">Resources</span>
+        </h2>
+        <p class="s2-header-description">
+          Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation.
+        </p>
+      </header>
+
+      <ul class="s2-card-grid" role="list">
+        <!-- Card 1: Architecture Brief -->
+        <li role="listitem">
+          <article class="s2-card s2-card--indigo">
+            <div class="s2-card-inner">
+              <div class="s2-card-icon s2-card-icon--indigo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+              </div>
+              <h3 class="s2-card-title">Architecture Brief</h3>
+              <p class="s2-card-description">Technical overview of the LLM Capsule architecture -- encapsulation, trust boundary, restoration, and deployment models.</p>
+              <div class="s2-card-button">
+                <span class="s2-btn" aria-disabled="true">Download PDF (coming soon)</span>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <!-- Card 2: Product Overview -->
+        <li role="listitem">
+          <article class="s2-card s2-card--blue">
+            <div class="s2-card-inner">
+              <div class="s2-card-icon s2-card-icon--blue">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                  <line x1="12" y1="11" x2="16" y2="11"/>
+                  <line x1="12" y1="16" x2="16" y2="16"/>
+                  <line x1="8" y1="11" x2="8.01" y2="11"/>
+                  <line x1="8" y1="16" x2="8.01" y2="16"/>
+                </svg>
+              </div>
+              <h3 class="s2-card-title">Product Overview</h3>
+              <p class="s2-card-description">Executive summary of LLM Capsule capabilities, competitive positioning, and enterprise use cases.</p>
+              <div class="s2-card-button">
+                <span class="s2-btn" aria-disabled="true">Download PDF (coming soon)</span>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <!-- Card 3: Integration Guide -->
+        <li role="listitem">
+          <article class="s2-card s2-card--green">
+            <div class="s2-card-inner">
+              <div class="s2-card-icon s2-card-icon--green">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                </svg>
+              </div>
+              <h3 class="s2-card-title">Integration Guide</h3>
+              <p class="s2-card-description">Technical integration documentation for enterprise deployment -- API reference, configuration, and deployment instructions.</p>
+              <div class="s2-card-button">
+                <span class="s2-btn" aria-disabled="true">Download PDF (coming soon)</span>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>
