@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 04 Restoration</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #ffffff; word-break: keep-all; overflow-wrap: break-word; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+
+    .s4-section { width: 100%; padding: 60px 0; background-color: #ffffff; overflow: hidden; }
+    .s4-container { width: 100%; padding: 0 16px; margin: 0 auto; box-sizing: border-box; }
+    @media (min-width: 768px)  { .s4-container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .s4-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .s4-container { padding: 0 120px; max-width: 1440px; } }
+
+    .s4-header { text-align: center; margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid #e6e7e9; }
+    @media (max-width: 767px) { .s4-header { text-align: left; } }
+    .s4-header__title { font-size: 20px; font-weight: 700; color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px; margin: 0 0 16px; }
+    @media (min-width: 768px)  { .s4-header__title { font-size: 22px; } }
+    @media (min-width: 1024px) { .s4-header__title { font-size: 24px; } }
+    @media (min-width: 1440px) { .s4-header__title { font-size: 28px; } }
+    .s4-header__brand { color: #5690D4; }
+    .s4-header__desc { font-size: 18px; color: #636363; line-height: 1.7; max-width: 100%; margin: 0 auto; }
+    @media (min-width: 1024px) { .s4-header__desc { max-width: 720px; } }
+
+    .s4-split { display: grid; grid-template-columns: 4fr 6fr; gap: 64px; align-items: stretch; direction: rtl; }
+    .s4-split > * { direction: ltr; }
+    @media (max-width: 1023px) { .s4-split { grid-template-columns: 1fr; gap: 32px; direction: ltr; } }
+
+    .s4-visual { border-radius: 40px; overflow: hidden; background-color: #f7f7f7; background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.png'); background-size: cover; background-position: center; padding: 24px; display: flex; flex-direction: column; justify-content: flex-end; gap: 12px; min-height: 320px; }
+    @media (max-width: 767px) { .s4-visual { background-image: none; } }
+    .s4-code-panels { display: flex; flex-direction: column; gap: 12px; height: 100%; padding-bottom: 24px; }
+    .s4-code-block { background-color: #0f0f0f; border: none; border-radius: 8px; padding: 16px; font-family: "Fragment Mono", monospace; font-size: 14px; line-height: 1.9; color: #bababa; overflow-x: auto; }
+    .s4-code-block--restored { background-color: rgba(14,130,76,0.08); border: 1px solid rgba(14,130,76,0.2); color: #0f0f0f; }
+    .s4-code-label { font-family: "Fragment Mono", monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; display: block; }
+    .s4-code-block .s4-code-label { color: #9c9c9c; }
+    .s4-code-block--restored .s4-code-label { color: #0e824c; }
+
+    .s4-content { display: flex; flex-direction: column; gap: 16px; }
+    .s4-lead { font-size: 16px; color: #0f0f0f; line-height: 1.7; font-weight: 500; margin: 0; }
+    .s4-body { font-size: 14px; color: #636363; line-height: 1.7; margin: 0; }
+    .s4-body strong { font-weight: 600; color: #0f0f0f; }
+  </style>
+</head>
+<body>
+  <section class="s4-section" id="section-4">
+    <div class="s4-container">
+      <div class="s4-header">
+        <h2 class="s4-header__title">Enable AI without breaking enterprise <span class="s4-header__brand">workflows</span></h2>
+        <p class="s4-header__desc">LLM Capsule does more than hide data. It auto-restores usable output inside the environment after AI processing.</p>
+      </div>
+      <div class="s4-split">
+        <div class="s4-content">
+          <p class="s4-lead">LLM Capsule does more than hide data. It auto-restores usable output inside the environment after AI processing so enterprise teams can actually use the result in real workflows. This is a restorable workflow — not just protection, but AI enablement with usable output.</p>
+          <p class="s4-body">Traditional masking protects data by removing meaning. That may reduce risk, but it also reduces output quality and business usability. Restored outputs from LLM Capsule are directly usable in: <strong>claims documents</strong> with real policyholder data, <strong>legal reviews</strong> with real party names and clause references, <strong>regulatory reports</strong> with real customer and account data, and <strong>internal analysis</strong> with real business metrics.</p>
+          <p class="s4-body">This is the capability that makes enterprise AI operationally viable. Secure document summarization, AI claims processing, and confidential contract review with AI all depend on the ability to restore results. Without restoration, every AI output requires manual reconstruction — eliminating the efficiency gains AI is supposed to deliver.</p>
+        </div>
+        <div class="s4-visual">
+          <div class="s4-code-panels">
+            <div class="s4-code-block">
+              <span class="s4-code-label">Encapsulated</span>
+              <span>[PERSON_01] submitted claim #[ID_04] on [DATE_02] for property at [ADDR_03]. Total assessed damage: [AMOUNT_01].</span>
+            </div>
+            <div class="s4-code-block s4-code-block--restored">
+              <span class="s4-code-label">Restored</span>
+              <span>James Mitchell submitted claim #INS-2024-0847 on March 5, 2025 for property at 42 Lincoln Ave, Chicago. Total assessed damage: $247,000.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

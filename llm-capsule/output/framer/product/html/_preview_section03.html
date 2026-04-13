@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 03 Zero Exposure</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #ffffff; word-break: keep-all; overflow-wrap: break-word; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+
+    .s3-section { width: 100%; padding: 60px 0; background-color: #ffffff; overflow: hidden; }
+    .s3-container { width: 100%; padding: 0 16px; margin: 0 auto; box-sizing: border-box; }
+    @media (min-width: 768px)  { .s3-container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .s3-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .s3-container { padding: 0 120px; max-width: 1440px; } }
+
+    .s3-header { text-align: center; margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid #e6e7e9; }
+    @media (max-width: 767px) { .s3-header { text-align: left; } }
+    .s3-header__title { font-size: 20px; font-weight: 700; color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px; margin: 0 0 16px; }
+    @media (min-width: 768px)  { .s3-header__title { font-size: 22px; } }
+    @media (min-width: 1024px) { .s3-header__title { font-size: 24px; } }
+    @media (min-width: 1440px) { .s3-header__title { font-size: 28px; } }
+    .s3-header__brand { color: #5690D4; }
+    .s3-header__desc { font-size: 18px; color: #636363; line-height: 1.7; max-width: 100%; margin: 0 auto; }
+    @media (min-width: 1024px) { .s3-header__desc { max-width: 720px; } }
+
+    .s3-split { display: grid; grid-template-columns: 4fr 6fr; gap: 64px; align-items: stretch; }
+    @media (max-width: 1023px) { .s3-split { grid-template-columns: 1fr; gap: 32px; } }
+
+    .s3-visual { border-radius: 40px; overflow: hidden; background-color: #f7f7f7; background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png'); background-size: cover; background-position: center; padding: 24px 24px 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 12px; min-height: 320px; }
+    @media (max-width: 767px) { .s3-visual { background-image: none; } }
+    .s3-visual-placeholder { flex: 1; min-height: 200px; background-color: rgba(255,255,255,0.15); border: 2px dashed rgba(255,255,255,0.4); border-radius: 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 24px; text-align: center; }
+    .s3-visual-placeholder svg { width: 32px; height: 32px; stroke: rgba(255,255,255,0.6); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .s3-visual-placeholder-label { font-family: "Fragment Mono", monospace; font-size: 12px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.08em; }
+    .s3-visual-placeholder-desc { font-size: 14px; color: rgba(255,255,255,0.55); }
+
+    .s3-content { display: flex; flex-direction: column; gap: 16px; }
+    .s3-lead { font-size: 16px; color: #0f0f0f; line-height: 1.7; font-weight: 500; margin: 0; }
+    .s3-body { font-size: 14px; color: #636363; line-height: 1.7; margin: 0; }
+
+    .s3-checklist { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-direction: column; gap: 12px; }
+    .s3-check-item { display: flex; align-items: flex-start; gap: 8px; font-size: 16px; line-height: 1.5; color: #0f0f0f; }
+    .s3-check-icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; }
+    .s3-check-icon::before { content: "✓"; color: #0e824c; font-weight: 700; font-size: 16px; line-height: 1; }
+    .s3-check-content strong { font-weight: 600; color: #0f0f0f; }
+  </style>
+</head>
+<body>
+  <section class="s3-section" id="section-3">
+    <div class="s3-container">
+      <div class="s3-header">
+        <h2 class="s3-header__title">Encapsulate before outbound — raw data never <span class="s3-header__brand">leaves</span></h2>
+        <p class="s3-header__desc">LLM Capsule encapsulates sensitive entities locally before any data leaves the enterprise environment.</p>
+      </div>
+      <div class="s3-split">
+        <div class="s3-visual">
+          <div class="s3-visual-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span class="s3-visual-placeholder-label">Product Screenshot</span>
+            <span class="s3-visual-placeholder-desc">Document Encapsulation — Before and after view of a contract with sensitive data replaced by tokens</span>
+          </div>
+        </div>
+        <div class="s3-content">
+          <p class="s3-lead">LLM Capsule encapsulates sensitive entities locally before any data leaves the enterprise environment. Only the protected capsule is sent for AI processing. This is local encapsulation at the data layer — fundamentally different from API-level filtering or prompt scanning.</p>
+          <p class="s3-body">Most enterprise AI risk starts when raw business data is exposed outside the controlled environment. With LLM Capsule, sensitive content is transformed locally through protected outbound flow so external models never receive the raw original data. This enables secure enterprise AI workflows where the enterprise maintains complete data sovereignty.</p>
+          <p class="s3-body">The mapping between original and encapsulated values is stored entirely within the enterprise environment and never transmitted. Even in the event of a breach at the AI provider, no original enterprise data would be exposed because it was never transmitted.</p>
+          <ul class="s3-checklist">
+            <li class="s3-check-item"><span class="s3-check-icon"></span><span class="s3-check-content"><strong>Local real-time encapsulation</strong> — Raw data stays inside the enterprise environment. Sensitive elements are detected and replaced before any outbound transmission.</span></li>
+            <li class="s3-check-item"><span class="s3-check-icon"></span><span class="s3-check-content"><strong>Protected outbound flow</strong> — Only encapsulated representations cross the trust boundary. The AI provider processes useful but opaque data.</span></li>
+            <li class="s3-check-item"><span class="s3-check-icon"></span><span class="s3-check-content"><strong>Environment-bound processing</strong> — Supports controlled enterprise and regulated environments including on-premise, air-gapped, and VPC deployments.</span></li>
+            <li class="s3-check-item"><span class="s3-check-icon"></span><span class="s3-check-content"><strong>Audit trail</strong> — Every encapsulation event is logged with full traceability for enterprise AI governance and compliance reporting.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

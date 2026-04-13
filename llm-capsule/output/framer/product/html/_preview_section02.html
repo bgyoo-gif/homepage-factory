@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 02 Core Differentiation</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #ffffff; word-break: keep-all; overflow-wrap: break-word; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+
+    .s2-section { width: 100%; padding: 60px 0; background-color: #ffffff; overflow: hidden; }
+    .s2-container { width: 100%; padding: 0 16px; margin: 0 auto; box-sizing: border-box; }
+    @media (min-width: 768px)  { .s2-container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .s2-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .s2-container { padding: 0 120px; max-width: 1440px; } }
+
+    .s2-header { text-align: center; margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid #e6e7e9; }
+    @media (max-width: 767px) { .s2-header { text-align: left; } }
+    .s2-header__title { font-size: 20px; font-weight: 700; color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px; margin: 0 0 16px; }
+    @media (min-width: 768px)  { .s2-header__title { font-size: 22px; } }
+    @media (min-width: 1024px) { .s2-header__title { font-size: 24px; } }
+    @media (min-width: 1440px) { .s2-header__title { font-size: 28px; } }
+    .s2-header__brand { color: #5690D4; }
+    .s2-header__desc { font-size: 18px; color: #636363; line-height: 1.7; max-width: 100%; margin: 0 auto; }
+    @media (min-width: 1024px) { .s2-header__desc { max-width: 720px; } }
+
+    .s2-screenshot-frame { margin-top: 48px; border-radius: 40px 40px 0 0; padding: 48px 48px 0; background-color: #f7f7f7; background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-blue-violet.png'); background-size: cover; background-position: center; overflow: hidden; }
+    @media (max-width: 767px) { .s2-screenshot-frame { border-radius: 24px 24px 0 0; background-image: none; padding: 24px 24px 0; } }
+    .s2-screenshot-placeholder { background-color: #f2f2f2; border: 2px dashed #e6e7e9; border-radius: 18px 18px 0 0; padding: 80px 24px; text-align: center; min-height: 240px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+    .s2-placeholder-icon { width: 32px; height: 32px; stroke: #9c9c9c; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .s2-placeholder-label { font-family: "Fragment Mono", monospace; font-size: 12px; color: #9c9c9c; text-transform: uppercase; letter-spacing: 0.08em; }
+    .s2-placeholder-desc { font-size: 14px; color: #9c9c9c; }
+
+    .s2-cards-wrap { margin-top: 48px; }
+    .s2-grid--3col { display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 24px; }
+    @media (min-width: 768px)  { .s2-grid--3col { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .s2-grid--3col { grid-template-columns: repeat(3, 1fr); } }
+    .s2-grid--2col { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px) { .s2-grid--2col { grid-template-columns: repeat(2, 1fr); } }
+
+    .s2-grad-card { padding: 2px; border-radius: 18px; box-shadow: rgba(113,141,176,0.25) 0px 1px 20px 0px; }
+    .s2-grad-card--indigo { background: linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #E8F0FF 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%); }
+    .s2-grad-card--blue   { background: linear-gradient(109deg, #BFD8F4 0%, #fff 17%, #E8F0FF 38%, #5690D4 51%, #E2EBF5 73%, #BFD8F4 100%); }
+    .s2-grad-card__inner { border-radius: 16px; padding: 32px; height: 100%; display: flex; flex-direction: column; gap: 12px; }
+    .s2-grad-card--indigo .s2-grad-card__inner { background: linear-gradient(99deg, #ECEEFF 0%, #FCFCFE 58%, #fff 100%); }
+    .s2-grad-card--blue   .s2-grad-card__inner { background: linear-gradient(99deg, #EAF0F9 0%, #FCFCFE 58%, #fff 100%); }
+
+    .s2-badge { display: inline-flex; align-items: center; gap: 4px; padding: 4px 8px; border-radius: 9999px; font-size: 12px; font-weight: 500; line-height: 1; width: fit-content; }
+    .s2-badge--primary { background-color: #1821E8; color: #ffffff; }
+    .s2-badge--neutral { background-color: #e6e7e9; color: #636363; }
+    .s2-card-icon { margin-bottom: 4px; color: #0f0f0f; }
+    .s2-card-icon svg { width: 32px; height: 32px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .s2-card-title { font-size: 20px; font-weight: 700; color: #0f0f0f; line-height: 1.2; margin: 0; }
+    .s2-card-desc { font-size: 14px; color: #636363; line-height: 1.7; flex: 1; margin: 0; }
+
+    .s2-banner { margin-top: 48px; padding: 16px 24px; border-top: 1px solid #e6e7e9; border-bottom: 1px solid #e6e7e9; background-color: rgba(24,33,232,0.06); font-size: 14px; line-height: 1.7; text-align: center; color: #636363; }
+  </style>
+</head>
+<body>
+  <section class="s2-section" id="section-2">
+    <div class="s2-container">
+      <div class="s2-header">
+        <h2 class="s2-header__title">Enterprise AI enablement through five core <span class="s2-header__brand">capabilities</span></h2>
+        <p class="s2-header__desc">LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 architecture — three core enablement capabilities plus structure-preserving processing and cross-model execution.</p>
+      </div>
+
+      <div class="s2-screenshot-frame">
+        <div class="s2-screenshot-placeholder">
+          <svg class="s2-placeholder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="s2-placeholder-label">Product Screenshot</span>
+          <span class="s2-placeholder-desc">LLM Capsule Dashboard — Real-time encapsulation pipeline with document processing status</span>
+        </div>
+      </div>
+
+      <div class="s2-cards-wrap">
+        <div class="s2-grid--3col">
+          <article class="s2-grad-card s2-grad-card--indigo">
+            <div class="s2-grad-card__inner">
+              <span class="s2-badge s2-badge--primary">CORE</span>
+              <div class="s2-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <h3 class="s2-card-title">Zero Exposure</h3>
+              <p class="s2-card-desc">Sensitive data is encapsulated locally before leaving the environment. Raw data never reaches external AI services. Even if the provider logged or stored the data, no enterprise information would be exposed.</p>
+            </div>
+          </article>
+          <article class="s2-grad-card s2-grad-card--indigo">
+            <div class="s2-grad-card__inner">
+              <span class="s2-badge s2-badge--primary">CORE</span>
+              <div class="s2-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
+              <h3 class="s2-card-title">Restoration</h3>
+              <p class="s2-card-desc">AI outputs are auto-restored locally with real data into usable enterprise documents after processing. Restored outputs work directly in reports, claims documents, legal reviews, and internal analysis — no manual reconstruction required.</p>
+            </div>
+          </article>
+          <article class="s2-grad-card s2-grad-card--indigo">
+            <div class="s2-grad-card__inner">
+              <span class="s2-badge s2-badge--primary">CORE</span>
+              <div class="s2-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div>
+              <h3 class="s2-card-title">Enterprise Context</h3>
+              <p class="s2-card-desc">Organizations can define sensitive entities beyond standard PII — project names, internal identifiers, customer-specific confidential markers, and contract references. Context-aware data control adapts to your business.</p>
+            </div>
+          </article>
+        </div>
+        <div class="s2-grid--2col">
+          <article class="s2-grad-card s2-grad-card--blue">
+            <div class="s2-grad-card__inner">
+              <span class="s2-badge s2-badge--neutral">+1</span>
+              <div class="s2-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+              <h3 class="s2-card-title">Structure-Preserving</h3>
+              <p class="s2-card-desc">Tables, diagrams, cross-references, and document layouts remain intact during encapsulation. AI receives structurally complete documents that enable accurate extraction and analysis.</p>
+            </div>
+          </article>
+          <article class="s2-grad-card s2-grad-card--blue">
+            <div class="s2-grad-card__inner">
+              <span class="s2-badge s2-badge--neutral">+2</span>
+              <div class="s2-card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></div>
+              <h3 class="s2-card-title">Cross-Model Execution</h3>
+              <p class="s2-card-desc">Model-agnostic by design. Use any LLM — ChatGPT, Claude, Gemini, Perplexity, or any API — without vendor lock-in. Protection stays consistent regardless of which model you choose.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="s2-banner">These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise AI enablement from traditional masking tools.</div>
+    </div>
+  </section>
+</body>
+</html>
