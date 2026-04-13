@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { addPropertyControls, ControlType } from "framer"
+import { addPropertyControls, ControlType, useLocaleInfo } from "framer"
 
 // ─── Asset Base ────────────────────────────────────────────────────────────────
 const IMG = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images"
@@ -975,7 +975,10 @@ export default function Index({
   ctaBtn3Href = "downloads.html",
   ctaBtn4Href = "https://aws.amazon.com/marketplace",
 }: Props) {
-  const t = COPY[lang] || COPY.en
+  // Framer Localization 연동: activeLocale.id로 언어 결정
+  const { activeLocale } = useLocaleInfo()
+  const localeId = (activeLocale?.id || "en") as Lang
+  const t = COPY[localeId] || COPY.en
   const [activeTab, setActiveTab] = useState("core1")
   const [openFaq, setOpenFaq] = useState<number | null>(0)
 
