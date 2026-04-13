@@ -244,7 +244,7 @@ export default function StructurePreservingDocumentProcessing({
 
         /* ── Article Container (860px max-width) ─────────────────── */
         .spdp-article-container {
-          width: 100%; max-width: 860px; margin: 0 auto;
+          width: 100%; max-width: 1080px; margin: 0 auto;
           padding: 0 16px;
         }
         @container (min-width: 768px)  { .spdp-article-container { padding: 0 32px; } }
@@ -495,7 +495,7 @@ export default function StructurePreservingDocumentProcessing({
           display: flex; flex-direction: column; align-items: center; gap: 24px;
         }
         @container (min-width: 1024px) { .spdp-cta-band__inner { max-width: 720px; } }
-        @container (min-width: 1440px) { .spdp-cta-band__inner { max-width: 860px; } }
+        @container (min-width: 1440px) { .spdp-cta-band__inner { max-width: 1080px; } }
         .spdp-cta-band__title {
           font-family: "DM Sans", sans-serif;
           font-size: 40px; font-weight: 700;

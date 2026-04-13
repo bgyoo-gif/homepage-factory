@@ -413,7 +413,7 @@ export default function Index({
           line-height: 1.7; max-width: 100%; margin: 0 auto;
         }
         @container (min-width: 1024px) { .idx-section-header__desc { max-width: 720px; } }
-        @container (min-width: 1440px) { .idx-section-header__desc { max-width: 860px; } }
+        @container (min-width: 1440px) { .idx-section-header__desc { max-width: 1080px; } }
 
         /* ── Section 1: Hero ──────────────────────────────────────── */
         .idx-hero-section { padding: 100px 0 0; background-color: ${P.surfaceWhite}; width: 100%; }
@@ -430,7 +430,7 @@ export default function Index({
           max-width: 100%; margin: 0 auto 16px;
         }
         @container (min-width: 1024px) { .idx-hero__desc { max-width: 720px; } }
-        @container (min-width: 1440px) { .idx-hero__desc { max-width: 860px; } }
+        @container (min-width: 1440px) { .idx-hero__desc { max-width: 1080px; } }
         .idx-hero__frame {
           margin-top: 32px;
           border-radius: 40px 40px 0 0;
@@ -619,7 +619,7 @@ export default function Index({
         .idx-banner-full > * { position: relative; z-index: 1; }
         .idx-banner-full p {
           font-size: 16px; color: ${P.textPrimary}; line-height: 1.7;
-          max-width: 860px; margin: 0 auto;
+          max-width: 1080px; margin: 0 auto;
         }
         .idx-banner-full__actions {
           display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 24px;
@@ -660,7 +660,7 @@ export default function Index({
           line-height: 1.7; max-width: 100%; margin-bottom: 24px;
         }
         @container (min-width: 1024px) { .idx-section-body { max-width: 720px; } }
-        @container (min-width: 1440px) { .idx-section-body { max-width: 860px; } }
+        @container (min-width: 1440px) { .idx-section-body { max-width: 1080px; } }
         .idx-section-body--center { margin-left: auto; margin-right: auto; text-align: center; }
 
         /* Table */
@@ -766,7 +766,7 @@ export default function Index({
           background-color: rgba(255,255,255,0.45); z-index: 0;
         }
         .idx-perf-banner > * { position: relative; z-index: 1; }
-        .idx-perf-banner p { font-size: 16px; color: ${P.textPrimary}; line-height: 1.7; max-width: 860px; margin: 0 auto; }
+        .idx-perf-banner p { font-size: 16px; color: ${P.textPrimary}; line-height: 1.7; max-width: 1080px; margin: 0 auto; }
         .idx-perf-banner .idx-caption { font-size: 12px; color: ${P.textSecondary}; margin-top: 8px; display: block; }
         @container (max-width: 767px) { .idx-perf-banner { background-image: none; } }
 

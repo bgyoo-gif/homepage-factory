@@ -289,7 +289,7 @@ export default function SecureEnterpriseAiDataWorkflows({
 
         /* ── Article container — 860px ──────────────────────────── */
         .seadw-article-container {
-          width: 100%; max-width: 860px; margin: 0 auto; padding: 0 16px;
+          width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px;
         }
         @container (min-width: 768px)  { .seadw-article-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .seadw-article-container { padding: 0 32px; } }
@@ -488,7 +488,7 @@ export default function SecureEnterpriseAiDataWorkflows({
         @container (min-width: 1024px) { .seadw-cta-band__inner { max-width: 720px; } }
         @container (min-width: 1440px) {
           .seadw-cta-band { padding: 120px 120px; }
-          .seadw-cta-band__inner { max-width: 860px; }
+          .seadw-cta-band__inner { max-width: 1080px; }
         }
         .seadw-cta-band__title {
           font-family: "DM Sans", sans-serif;

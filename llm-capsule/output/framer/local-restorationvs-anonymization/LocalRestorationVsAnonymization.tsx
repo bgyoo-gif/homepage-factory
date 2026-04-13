@@ -216,7 +216,7 @@ export default function LocalRestorationVsAnonymization({
 
         /* ── Article container (860px) ──────────────────────────────── */
         .lrva-article-container {
-          width: 100%; max-width: 860px; margin: 0 auto;
+          width: 100%; max-width: 1080px; margin: 0 auto;
           padding: 0 16px;
         }
         @container (min-width: 768px)  { .lrva-article-container { padding: 0 32px; } }
@@ -507,7 +507,7 @@ export default function LocalRestorationVsAnonymization({
         @container (min-width: 1024px) { .lrva-cta-band__inner { max-width: 720px; } }
         @container (min-width: 1440px) {
           .lrva-cta-band { padding: 120px 120px; }
-          .lrva-cta-band__inner { max-width: 860px; }
+          .lrva-cta-band__inner { max-width: 1080px; }
         }
         .lrva-cta-band__title {
           font-family: "DM Sans", sans-serif;

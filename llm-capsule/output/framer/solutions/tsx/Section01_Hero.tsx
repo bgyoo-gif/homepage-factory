@@ -136,7 +136,7 @@ export default function Section01_Hero({
         @container s1 (min-width: 1440px) {
           .s1-container { padding: 0 120px; max-width: 1440px; }
           .s1-title { font-size: 64px; }
-          .s1-description { max-width: 860px; }
+          .s1-description { max-width: 1080px; }
         }
       `}</style>
       <section className="s1-section">

@@ -311,7 +311,7 @@ export default function RequestPov({
           background-color: ${P.surfaceWhite};
         }
         .rpov-section--hero .rpov-hero-text-only {
-          max-width: 860px;
+          max-width: 1080px;
         }
         .rpov-hero__title {
           font-family: "DM Sans", sans-serif;
@@ -327,7 +327,7 @@ export default function RequestPov({
           line-height: 1.7; max-width: 100%; margin-bottom: 32px;
         }
         @container (min-width: 1024px) { .rpov-hero__description { max-width: 720px; } }
-        @container (min-width: 1440px) { .rpov-hero__description { max-width: 860px; } }
+        @container (min-width: 1440px) { .rpov-hero__description { max-width: 1080px; } }
 
         /* ─────────────────────────────────────────────────────────
            Section 2: Layout (Process + Form)
@@ -498,7 +498,7 @@ export default function RequestPov({
           display: flex; flex-direction: column; align-items: center; gap: 24px;
         }
         @container (min-width: 1024px) { .rpov-cta-band__inner { max-width: 720px; } }
-        @container (min-width: 1440px) { .rpov-cta-band__inner { max-width: 860px; } }
+        @container (min-width: 1440px) { .rpov-cta-band__inner { max-width: 1080px; } }
 
         .rpov-cta-band__title {
           font-family: "DM Sans", sans-serif;

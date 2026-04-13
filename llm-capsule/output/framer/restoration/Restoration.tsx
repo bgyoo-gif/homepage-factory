@@ -176,7 +176,7 @@ export default function Restoration({
 
         /* ── Article Container (860px) ───────────────────────────── */
         .rst-article-container {
-          width: 100%; max-width: 860px; margin: 0 auto;
+          width: 100%; max-width: 1080px; margin: 0 auto;
           padding: 0 16px;
         }
         @container (min-width: 768px)  { .rst-article-container { padding: 0 32px; } }
@@ -371,7 +371,7 @@ export default function Restoration({
         @container (min-width: 1024px) { .rst-cta-band__inner { max-width: 720px; } }
         @container (min-width: 1440px) {
           .rst-cta-band { padding: 120px 120px; }
-          .rst-cta-band__inner { max-width: 860px; }
+          .rst-cta-band__inner { max-width: 1080px; }
         }
         @container (min-width: 768px) { .rst-cta-band { padding: 100px 32px; } }
         .rst-cta-band__title {

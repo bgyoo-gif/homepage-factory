@@ -160,7 +160,7 @@ export default function Section11_CTABand({
         }
         @container (min-width: 1440px) {
           .s11-section { padding: 120px 120px; }
-          .s11-container { max-width: 860px; }
+          .s11-container { max-width: 1080px; }
           .s11-title { font-size: 50px; }
         }
       `}</style>

@@ -39,7 +39,7 @@ export default function Section03_Overview({
         }
         .s3-container {
           width: 100%;
-          max-width: 860px;
+          max-width: 1080px;
           margin: 0 auto;
           padding: 0 16px;
           box-sizing: border-box;
@@ -83,7 +83,7 @@ export default function Section03_Overview({
           .s3-header h2 { font-size: 24px; }
         }
         @container (min-width: 1440px) {
-          .s3-container { padding: 0; max-width: 860px; }
+          .s3-container { padding: 0; max-width: 1080px; }
           .s3-header h2 { font-size: 28px; }
           .s3-section { padding: 64px 0; }
         }

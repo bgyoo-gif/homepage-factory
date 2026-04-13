@@ -81,7 +81,7 @@ export default function Section07_CTABand({
           gap: 24px;
         }
         @container (min-width: 1024px) { .s7-content { max-width: 720px; } }
-        @container (min-width: 1440px) { .s7-content { max-width: 860px; } }
+        @container (min-width: 1440px) { .s7-content { max-width: 1080px; } }
 
         @container (min-width: 768px)  { .s7-section { padding: 100px 32px; } }
         @container (min-width: 1440px) { .s7-section { padding: 120px 120px; } }

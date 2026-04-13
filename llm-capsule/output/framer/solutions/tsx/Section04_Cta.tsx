@@ -164,7 +164,7 @@ export default function Section04_Cta({
         }
         @container s4 (min-width: 1440px) {
           .s4-cta-band { padding: 120px 120px; }
-          .s4-cta-inner { max-width: 860px; }
+          .s4-cta-inner { max-width: 1080px; }
           .s4-cta-title { font-size: 50px; }
         }
       `}</style>

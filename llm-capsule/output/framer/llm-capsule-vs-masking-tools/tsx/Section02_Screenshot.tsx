@@ -33,7 +33,7 @@ export default function Section02_Screenshot({
         }
         .s2-container {
           width: 100%;
-          max-width: 860px;
+          max-width: 1080px;
           margin: 0 auto;
           padding: 0 16px;
           box-sizing: border-box;
@@ -74,7 +74,7 @@ export default function Section02_Screenshot({
           .s2-container { padding: 0 32px; }
         }
         @container (min-width: 1440px) {
-          .s2-container { padding: 0; max-width: 860px; }
+          .s2-container { padding: 0; max-width: 1080px; }
         }
       `}</style>
       <section className="s2-section" id="section-2">

@@ -476,7 +476,7 @@ export default function Learn({
           line-height: 1.7; max-width: 100%;
         }
         @container (min-width: 1024px) { .lrn-hero__description { max-width: 720px; } }
-        @container (min-width: 1440px) { .lrn-hero__description { max-width: 860px; } }
+        @container (min-width: 1440px) { .lrn-hero__description { max-width: 1080px; } }
 
         /* ── Card Grid ───────────────────────────────────────────── */
         .lrn-card-grid {
@@ -559,7 +559,7 @@ export default function Learn({
           display: flex; flex-direction: column; align-items: center; gap: 24px;
         }
         @container (min-width: 1024px) { .lrn-cta-band__inner { max-width: 720px; } }
-        @container (min-width: 1440px) { .lrn-cta-band__inner { max-width: 860px; } }
+        @container (min-width: 1440px) { .lrn-cta-band__inner { max-width: 1080px; } }
 
         .lrn-cta-band__title {
           font-family: "DM Sans", sans-serif;

@@ -199,7 +199,7 @@ export default function Section09_CTA({
         }
         @container (min-width: 1440px) {
           .s9-cta { padding: 120px 120px; }
-          .s9-inner { max-width: 860px; }
+          .s9-inner { max-width: 1080px; }
           .s9-title { font-size: 50px; }
         }
       `}</style>

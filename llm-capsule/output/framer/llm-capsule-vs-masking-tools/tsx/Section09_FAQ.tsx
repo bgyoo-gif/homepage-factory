@@ -64,7 +64,7 @@ export default function Section09_FAQ({
         }
         .s9-container {
           width: 100%;
-          max-width: 860px;
+          max-width: 1080px;
           margin: 0 auto;
           padding: 0 16px;
           box-sizing: border-box;
@@ -179,7 +179,7 @@ export default function Section09_FAQ({
           .s9-header h2 { font-size: 24px; }
         }
         @container (min-width: 1440px) {
-          .s9-container { padding: 0; max-width: 860px; }
+          .s9-container { padding: 0; max-width: 1080px; }
           .s9-header h2 { font-size: 28px; }
           .s9-section { padding: 64px 0; }
         }

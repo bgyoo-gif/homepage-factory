@@ -43,7 +43,7 @@ export default function Section01_Hero({
         }
         .s1-container {
           width: 100%;
-          max-width: 860px;
+          max-width: 1080px;
           margin: 0 auto;
           padding: 0 16px;
           box-sizing: border-box;
@@ -81,7 +81,7 @@ export default function Section01_Hero({
           .s1-title { font-size: 44px; }
         }
         @container (min-width: 1440px) {
-          .s1-container { padding: 0; max-width: 860px; }
+          .s1-container { padding: 0; max-width: 1080px; }
           .s1-title { font-size: 52px; }
         }
       `}</style>

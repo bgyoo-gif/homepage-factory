@@ -181,7 +181,7 @@ export default function Section09_CTABand({
         @container (min-width: 1440px) {
           .s9-section { padding: 120px 120px; }
           .s9-title { font-size: 50px; }
-          .s9-inner { max-width: 860px; }
+          .s9-inner { max-width: 1080px; }
         }
       `}</style>
 

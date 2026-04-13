@@ -239,7 +239,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
 
         /* ── Article Container (860px) ────────────────────────────── */
         .vs-article-container {
-          width: 100%; max-width: 860px; margin: 0 auto;
+          width: 100%; max-width: 1080px; margin: 0 auto;
           padding: 0 16px;
         }
         @container (min-width: 768px)  { .vs-article-container { padding: 0 32px; } }
@@ -525,7 +525,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
           display: flex; flex-direction: column; align-items: center; gap: 24px;
         }
         @container (min-width: 1024px) { .vs-cta-band__inner { max-width: 720px; } }
-        @container (min-width: 1440px) { .vs-cta-band__inner { max-width: 860px; } }
+        @container (min-width: 1440px) { .vs-cta-band__inner { max-width: 1080px; } }
         @container (min-width: 768px)  { .vs-cta-band { padding: 100px 32px; } }
         @container (min-width: 1440px) { .vs-cta-band { padding: 120px 120px; } }
         @container (max-width: 767px)  { .vs-cta-band { background-image: none; } }

@@ -347,7 +347,7 @@ export default function Section02_IndustryUseCases({
         @container s2 (min-width: 1440px) {
           .s2-container { padding: 0 120px; max-width: 1440px; }
           .s2-section-title { font-size: 28px; }
-          .s2-section-desc { max-width: 860px; }
+          .s2-section-desc { max-width: 1080px; }
         }
       `}</style>
       <section className="s2-section">

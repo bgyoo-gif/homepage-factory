@@ -58,7 +58,7 @@ export default function Section03_Problem({
         }
         .s3-container {
           width: 100%;
-          max-width: 860px;
+          max-width: 1080px;
           margin: 0 auto;
           padding: 0 16px;
           box-sizing: border-box;

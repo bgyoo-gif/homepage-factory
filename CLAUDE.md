@@ -183,7 +183,7 @@ deploy (gh-pages push)
 - 카드 내 코드블록 앞 divider 금지
 - description max-width 반응형: mobile 100% → 1024px 720px → 1440px 860px
 - 텍스트 최소 명도: `var(--ds-color-text-muted)` 사용 금지
-- 아티클형 페이지 본문 860px 통일
+- 아티클형 페이지 본문 1080px 통일
 - 섹션 헤더 기본 center 정렬 (--left 금지)
 - CTA band 타이포: 기본 40px, mobile 36px, desktop 50px
 - letter-spacing 하드코딩 금지

@@ -149,7 +149,7 @@ export default function Section07_CTA({
           .s7-inner { max-width: 720px; }
         }
         @container (min-width: 1440px) {
-          .s7-inner { max-width: 860px; }
+          .s7-inner { max-width: 1080px; }
           .s7-title { font-size: 50px; }
         }
         @container (max-width: 767px) {
