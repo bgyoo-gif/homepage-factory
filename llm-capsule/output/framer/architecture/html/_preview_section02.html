@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview — Section 02 Architecture Overview</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "DM Sans", sans-serif; background-color: #ffffff; color: #0f0f0f; word-break: keep-all; overflow-wrap: break-word; -webkit-font-smoothing: antialiased; }
+
+.s2-section {
+  width: 100%;
+  overflow: hidden;
+  padding: 60px 0;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-blue-violet.png');
+}
+.s2-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255,255,255,0.45);
+  z-index: 0;
+}
+.s2-section > * { position: relative; z-index: 1; }
+@media (max-width: 767px) { .s2-section { background-image: none; } }
+
+.s2-container {
+  width: 100%;
+  padding: 0 16px;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+@media (min-width: 768px)  { .s2-container { padding: 0 32px; } }
+@media (min-width: 1024px) { .s2-container { padding: 0 32px; } }
+@media (min-width: 1440px) { .s2-container { padding: 0 120px; max-width: 1440px; } }
+
+.s2-section-header {
+  margin-bottom: 48px;
+  text-align: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e6e7e9;
+}
+.s2-section-header__title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #0f0f0f;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+.s2-section-header__description {
+  font-size: 18px;
+  color: #636363;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto;
+  word-break: keep-all;
+}
+.s2-text--brand { color: #5690D4; }
+.s2-product-name { font-family: "Oxanium", sans-serif; font-weight: 700; }
+
+/* Diagram */
+.s2-diagram-window {
+  background-color: #f8f8f8;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10);
+  overflow: hidden;
+}
+.s2-diagram-titlebar {
+  background-image: linear-gradient(180deg, #e8e8e8 0%, #d8d8d8 100%);
+  height: 36px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 8px;
+  border-bottom: 1px solid #c0c0c0;
+}
+.s2-titlebar-dot { width: 12px; height: 12px; border-radius: 50%; }
+.s2-titlebar-dot--close { background-color: #ff5f57; }
+.s2-titlebar-dot--min   { background-color: #ffbd2e; }
+.s2-titlebar-dot--max   { background-color: #28ca41; }
+
+.s2-diagram-content {
+  background-image: linear-gradient(135deg, #dff0ea 0%, #eef3ff 40%, #f3eeff 70%, #fdeef8 100%);
+  padding: 32px;
+}
+.s2-diagram-arch {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+@media (max-width: 767px) { .s2-diagram-arch { grid-template-columns: 1fr; gap: 24px; } }
+
+.s2-zone {
+  background-color: #ffffff;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.s2-zone-header {
+  padding: 12px 16px;
+  font-family: "Fragment Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.s2-zone-header--internal {
+  background-image: linear-gradient(115deg, #5670E8 0%, #5690D4 50%, #55B45D 100%);
+  color: #ffffff;
+}
+.s2-zone-header--flow { background-color: #f2f2f2; color: #1821E8; }
+.s2-zone-header--external { background-color: #171719; color: #ffffff; }
+.s2-zone-body { padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+
+.s2-zone-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #2a2a2a;
+  background-color: #ffffff;
+}
+.s2-zone-item--capsule {
+  background-image: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+.s2-zone-item--dark { background-color: #171719; color: #ffffff; border-color: #303135; }
+.s2-zone-item--muted { background-color: #171719; color: #9c9c9c; border-color: #303135; border-style: dashed; }
+
+.s2-step-card { background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; }
+.s2-step-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 8px; border-radius: 5px;
+  font-size: 12px; font-weight: 700; margin-bottom: 8px;
+}
+.s2-step-badge--local    { background-color: #1821E8; color: #ffffff; }
+.s2-step-badge--external { background-color: #155ea0; color: #ffffff; }
+.s2-step-title { font-size: 14px; font-weight: 700; color: #2a2a2a; margin-bottom: 4px; }
+.s2-step-desc  { font-size: 12px; color: #666666; line-height: 1.5; }
+
+.s2-arrow-down {
+  width: 1.5px; height: 14px; background-color: #444444;
+  margin: 6px auto; position: relative;
+}
+.s2-arrow-down::after {
+  content: ''; position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%);
+  border-left: 5px solid transparent; border-right: 5px solid transparent;
+  border-top: 6px solid #444444;
+}
+
+.s2-result-badge {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 8px 16px; border-radius: 8px;
+  background-color: #0e824c; color: #ffffff;
+  font-size: 12px; font-weight: 700;
+}
+
+.s2-legend {
+  display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+  padding-top: 16px; border-top: 1px solid #e0e0e0; margin-top: 16px;
+}
+.s2-legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #666666; }
+.s2-legend-line { width: 24px; height: 2px; border-radius: 1px; }
+.s2-legend-line--encap   { background-color: #1821E8; }
+.s2-legend-line--restore { background-color: #0e824c; }
+.s2-legend-line--boundary { background-color: transparent; height: 0; border-top: 2px dashed #ff3030; }
+</style>
+</head>
+<body>
+<section class="s2-section" id="section-2">
+  <div class="s2-container">
+    <div class="s2-section-header">
+      <h2 class="s2-section-header__title">Architecture <span class="s2-text--brand">Overview</span></h2>
+      <p class="s2-section-header__description"><span class="s2-product-name">LLM Capsule</span> operates as an AI enablement data layer that encapsulates sensitive enterprise data locally, transmits only protected representations to any external AI service, and restores AI outputs within the enterprise environment — enabling safe AI adoption at scale.</p>
+    </div>
+
+    <div class="s2-diagram-window">
+      <div class="s2-diagram-titlebar">
+        <div class="s2-titlebar-dot s2-titlebar-dot--close"></div>
+        <div class="s2-titlebar-dot s2-titlebar-dot--min"></div>
+        <div class="s2-titlebar-dot s2-titlebar-dot--max"></div>
+      </div>
+      <div class="s2-diagram-content">
+        <div class="s2-diagram-arch">
+
+          <!-- Zone 1: Internal Environment -->
+          <div class="s2-zone">
+            <div class="s2-zone-header s2-zone-header--internal">Internal Environment</div>
+            <div class="s2-zone-body">
+              <div class="s2-zone-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+                Customer Documents
+              </div>
+              <div class="s2-zone-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+                Internal Databases
+              </div>
+              <div class="s2-zone-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                RAG Pipelines
+              </div>
+              <div class="s2-zone-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+                Admin Console
+              </div>
+              <div class="s2-zone-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                Policy Engine
+              </div>
+              <div class="s2-zone-item s2-zone-item--capsule">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="12" cy="12" r="4"/></svg>
+                <span class="s2-product-name">LLM Capsule</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Zone 2: Data Flow -->
+          <div class="s2-zone">
+            <div class="s2-zone-header s2-zone-header--flow">How Data Flows Through <span class="s2-product-name">LLM Capsule</span></div>
+            <div class="s2-zone-body">
+              <div class="s2-step-card">
+                <div class="s2-step-badge s2-step-badge--local">Step 1 — Local</div>
+                <div class="s2-step-title">Detection</div>
+                <div class="s2-step-desc">Auto-detects PII and org-defined entities</div>
+              </div>
+              <div class="s2-arrow-down"></div>
+              <div class="s2-step-card">
+                <div class="s2-step-badge s2-step-badge--local">Step 2 — Local</div>
+                <div class="s2-step-title">Encapsulation</div>
+                <div class="s2-step-desc">Replaces sensitive data with safe tokens locally</div>
+              </div>
+              <div class="s2-arrow-down"></div>
+              <div class="s2-step-card">
+                <div class="s2-step-badge s2-step-badge--external">Step 3 — External</div>
+                <div class="s2-step-title">LLM Processing</div>
+                <div class="s2-step-desc">AI processes capsule. No real data exposed.</div>
+              </div>
+              <div class="s2-arrow-down"></div>
+              <div class="s2-step-card">
+                <div class="s2-step-badge s2-step-badge--local">Step 4 — Local</div>
+                <div class="s2-step-title">Restoration</div>
+                <div class="s2-step-desc">Auto-restores original values locally</div>
+              </div>
+              <div class="s2-arrow-down"></div>
+              <div class="s2-result-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Business-Ready Output
+              </div>
+            </div>
+          </div>
+
+          <!-- Zone 3: External AI Services -->
+          <div class="s2-zone">
+            <div class="s2-zone-header s2-zone-header--external">External AI Services</div>
+            <div class="s2-zone-body">
+              <div class="s2-zone-item s2-zone-item--dark">ChatGPT / OpenAI</div>
+              <div class="s2-zone-item s2-zone-item--dark">Claude / Anthropic</div>
+              <div class="s2-zone-item s2-zone-item--dark">Gemini / Google</div>
+              <div class="s2-zone-item s2-zone-item--dark">Perplexity</div>
+              <div class="s2-zone-item s2-zone-item--muted">Any LLM API</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Legend -->
+        <div class="s2-legend">
+          <div class="s2-legend-item">
+            <div class="s2-legend-line s2-legend-line--encap"></div>
+            Encapsulated data
+          </div>
+          <div class="s2-legend-item">
+            <div class="s2-legend-line s2-legend-line--restore"></div>
+            Restored response
+          </div>
+          <div class="s2-legend-item">
+            <div class="s2-legend-line s2-legend-line--boundary"></div>
+            Trust boundary
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</body>
+</html>
