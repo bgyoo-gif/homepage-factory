@@ -2869,6 +2869,7 @@ document.addEventListener('click', function(e) {
 
 function switchBrand(brandKey) {
   console.log('[switchBrand] switching to:', brandKey);
+  try {
   if (brandKey === currentBrand) {
     document.getElementById('brand-menu').classList.remove('v-brand-switch__menu--open');
     return;
@@ -2908,6 +2909,8 @@ function switchBrand(brandKey) {
 
   // Close menu
   document.getElementById('brand-menu').classList.remove('v-brand-switch__menu--open');
+  console.log('[switchBrand] done:', brandKey);
+  } catch(e) { console.error('[switchBrand] ERROR:', e); }
 }
 
 function updateBrandSwatches(brandKey) {
@@ -3300,7 +3303,9 @@ function resolveStaticPath(f) {
   return brandBase + 'output/' + n;
 }
 function renderStaticTable() {
+  console.log('[renderStaticTable] called, brand:', currentBrand);
   var container = document.getElementById('output-file-list');
+  if (!container) { console.error('[renderStaticTable] container not found'); return; }
 
   // 동적 스캔: GitHub Contents API로 실제 파일 목록 가져오기
   var ghApiBase = 'https://api.github.com/repos/bgyoo-gif/homepage-factory/contents/';
