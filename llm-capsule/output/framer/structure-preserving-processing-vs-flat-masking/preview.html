@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Structure-Preserving Processing vs Flat Masking | LLM Capsule</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset ────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: #0f0f0f;
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    p, li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
+    h1, h2, h3 { text-wrap: balance; }
+
+    /* ── Article Container (860px) ────────────────────────────── */
+    .spp-article-container {
+      width: 100%; max-width: 860px; margin: 0 auto;
+      padding: 0 16px;
+    }
+    @media (min-width: 768px)  { .spp-article-container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .spp-article-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .spp-article-container { padding: 0; } }
+
+    /* ── Buttons ──────────────────────────────────────────────── */
+    .spp-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border-radius: 9999px; font-family: "DM Sans", sans-serif;
+      font-weight: 500; cursor: pointer; border: none;
+      transition: opacity 0.2s, background-color 0.2s;
+      white-space: nowrap; text-decoration: none;
+    }
+    .spp-btn--sm { padding: 8px 16px; font-size: 14px; }
+    .spp-btn--lg { padding: 16px 48px; font-size: 18px; }
+    .spp-btn--secondary {
+      background-color: transparent; color: #0f0f0f;
+      border: 1px solid #e6e7e9;
+    }
+    .spp-btn--secondary:hover { background-color: #f7f7f7; }
+
+    /* ── Breadcrumb ───────────────────────────────────────────── */
+    .spp-breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      flex-wrap: wrap; margin-bottom: 24px;
+    }
+    .spp-breadcrumb__link { font-size: 14px; color: #5690D4; font-weight: 500; transition: color 0.15s; }
+    .spp-breadcrumb__link:hover { color: #1821E8; }
+    .spp-breadcrumb__sep { font-size: 14px; color: #9c9c9c; }
+    .spp-breadcrumb__current { font-size: 14px; color: #9c9c9c; }
+
+    /* ── Section: Hero ────────────────────────────────────────── */
+    .spp-section--hero { padding: 100px 0 0; background-color: #ffffff; }
+    .spp-article-hero__title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 28px; font-weight: 700;
+      color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    @media (min-width: 768px)  { .spp-article-hero__title { font-size: 36px; } }
+    @media (min-width: 1024px) { .spp-article-hero__title { font-size: 44px; } }
+    @media (min-width: 1440px) { .spp-article-hero__title { font-size: 52px; } }
+    .spp-article-hero__description {
+      font-size: 18px; color: #636363; line-height: 1.7; max-width: 100%;
+    }
+
+    /* ── Text utilities ───────────────────────────────────────── */
+    .spp-text--product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+    .spp-text--brand   { color: #5690D4; }
+
+    /* ── Section: Article Body ────────────────────────────────── */
+    .spp-section--article-body { padding: 32px 0; background-color: #ffffff; }
+    @media (min-width: 768px)  { .spp-section--article-body { padding: 48px 0; } }
+    @media (min-width: 1440px) { .spp-section--article-body { padding: 64px 0; } }
+
+    /* ── Article Section Header ───────────────────────────────── */
+    .spp-article-section-header {
+      margin-bottom: 24px; padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9; text-align: center;
+    }
+    .spp-article-section-header h2 {
+      font-size: 20px; font-weight: 700;
+      color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px;
+    }
+    @media (min-width: 768px)  { .spp-article-section-header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .spp-article-section-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .spp-article-section-header h2 { font-size: 28px; } }
+    @media (max-width: 767px)  { .spp-article-section-header { text-align: left; } }
+
+    /* ── Body Paragraph ───────────────────────────────────────── */
+    .spp-body-paragraph { font-size: 16px; color: #636363; line-height: 1.7; margin-bottom: 16px; }
+    .spp-body-paragraph:last-child { margin-bottom: 0; }
+
+    /* ── Bullet List ──────────────────────────────────────────── */
+    .spp-bullet { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+    .spp-bullet__item { display: flex; align-items: flex-start; gap: 8px; font-size: 16px; line-height: 1.5; color: #0f0f0f; }
+    .spp-bullet__icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; }
+    .spp-bullet--dot .spp-bullet__icon::before { content: "•"; color: #5690D4; font-weight: 700; font-size: 18px; line-height: 1; }
+
+    /* ── Banner ───────────────────────────────────────────────── */
+    .spp-banner {
+      padding: 24px 32px; border-radius: 18px;
+      border-top: 1px solid #e6e7e9; border-bottom: 1px solid #e6e7e9;
+      background-color: rgba(24, 33, 232, 0.06);
+      font-size: 16px; line-height: 1.7;
+      word-break: keep-all; overflow-wrap: break-word; margin-top: 16px;
+    }
+    .spp-banner p { font-size: 16px; color: #0f0f0f; line-height: 1.7; margin: 0; }
+
+    /* ── Table ────────────────────────────────────────────────── */
+    .spp-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px 0; }
+    .spp-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .spp-table thead { background-color: #f7f7f7; }
+    .spp-table th {
+      padding: 14px 16px; text-align: left;
+      font-weight: 600; font-size: 12px; color: #0f0f0f;
+      border-bottom: 2px solid #e6e7e9;
+    }
+    .spp-table th.spp-table__th--highlight {
+      background-color: rgba(24, 33, 232, 0.04); color: #1821E8;
+    }
+    .spp-table td {
+      padding: 12px 16px; border-bottom: 1px solid #e6e7e9;
+      color: #636363; vertical-align: top;
+    }
+    .spp-table td.spp-table__td--highlight {
+      background-color: rgba(24, 33, 232, 0.04); color: #1821E8; font-weight: 500;
+    }
+    .spp-table__check { color: #0e824c; font-weight: 600; }
+    .spp-table__cross { color: #ff3030; font-weight: 600; }
+    @media (max-width: 767px) {
+      .spp-table th, .spp-table td { padding: 10px 12px; font-size: 12px; }
+    }
+
+    /* ── Card ─────────────────────────────────────────────────── */
+    .spp-card {
+      background-color: #ffffff; border-radius: 18px;
+      border: 1px solid #e6e7e9; padding: 24px;
+      box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    @media (min-width: 1440px) { .spp-card { padding: 32px; } }
+    .spp-card__title { font-size: 16px; font-weight: 600; color: #0f0f0f; line-height: 1.2; }
+    .spp-card p { font-size: 16px; color: #636363; line-height: 1.7; }
+
+    /* ── Accordion ────────────────────────────────────────────── */
+    .spp-ac-list { display: flex; flex-direction: column; gap: 2px; }
+    .spp-ac-card {
+      border: 1px solid #e6e7e9; border-radius: 8px;
+      background-color: #ffffff; overflow: hidden; transition: background-color 0.2s;
+    }
+    .spp-ac-card:hover { background-color: #f7f7f7; }
+    .spp-ac-card__header {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 24px; cursor: pointer; user-select: none;
+    }
+    .spp-ac-card__title {
+      font-family: "DM Sans", sans-serif; font-size: 18px; font-weight: 500;
+      line-height: 1.2; color: #0f0f0f;
+    }
+    .spp-ac-card__toggle {
+      width: 28px; height: 28px; border-radius: 6px;
+      border: 0.5px solid #e6e7e9; background-color: #f7f7f7;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .spp-ac-card__toggle-icon { width: 12px; height: 12px; position: relative; }
+    .spp-ac-card__toggle-icon::before, .spp-ac-card__toggle-icon::after {
+      content: ''; position: absolute; background-color: #9c9c9c; border-radius: 1px;
+    }
+    .spp-ac-card__toggle-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .spp-ac-card__toggle-icon::after { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; transition: opacity 0.2s; }
+    .spp-ac-card.spp-ac--open .spp-ac-card__toggle-icon::after { opacity: 0; }
+    .spp-ac-card__body {
+      display: none; padding: 24px; border-top: 1px solid #e6e7e9;
+      background-color: #f7f7f7; font-size: 14px; color: #636363; line-height: 1.7;
+    }
+    .spp-ac-card.spp-ac--open .spp-ac-card__body { display: block; }
+    .spp-ac-card__body p + p { margin-top: 12px; }
+
+    /* ── Dark Card ────────────────────────────────────────────── */
+    .spp-card--dark {
+      background-color: #141414; border: 1px solid #303135;
+      color: #ffffff; border-radius: 18px; padding: 24px;
+      box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
+      display: flex; align-items: center; gap: 16px;
+      transition: background-color 0.2s; text-decoration: none;
+    }
+    .spp-card--dark:hover { background-color: #171719; }
+    .spp-card--dark__icon { flex-shrink: 0; color: #5690D4; }
+    .spp-card--dark__title { font-size: 16px; font-weight: 600; color: #ffffff; }
+
+    /* ── Card Grid ────────────────────────────────────────────── */
+    .spp-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px) { .spp-card-grid--2col { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ── Section Title Icon ───────────────────────────────────── */
+    .spp-section-title-icon { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .spp-section-title-icon__icon { color: #5690D4; flex-shrink: 0; }
+    .spp-section-title-icon__text {
+      font-family: "DM Sans", sans-serif; font-size: 20px; font-weight: 600;
+      color: #0f0f0f; line-height: 1.2;
+    }
+
+    /* ── Icon ─────────────────────────────────────────────────── */
+    .spp-icon {
+      width: 24px; height: 24px; stroke: currentColor; fill: none;
+      stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    /* ── CTA Band ─────────────────────────────────────────────── */
+    .spp-cta-band {
+      width: 100%; position: relative; overflow: hidden;
+      padding: 80px 16px; text-align: center;
+      background-color: #171719;
+      background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.png');
+      background-size: cover; background-position: center;
+    }
+    @media (min-width: 768px)  { .spp-cta-band { padding: 100px 32px; } }
+    @media (max-width: 767px)  { .spp-cta-band { background-image: none; } }
+    @media (min-width: 1440px) { .spp-cta-band { padding: 120px 120px; } }
+    .spp-cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: rgba(0,0,0,0.15); z-index: 0;
+    }
+    .spp-cta-band > * { position: relative; z-index: 1; }
+    .spp-cta-band__inner {
+      max-width: 100%; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: 24px;
+    }
+    @media (min-width: 1024px) { .spp-cta-band__inner { max-width: 720px; } }
+    @media (min-width: 1440px) { .spp-cta-band__inner { max-width: 860px; } }
+    .spp-cta-band__title {
+      font-family: "DM Sans", sans-serif; font-size: 40px; font-weight: 700;
+      color: #ffffff; line-height: 1.2; letter-spacing: -0.5px; margin: 0;
+    }
+    @media (max-width: 767px) { .spp-cta-band__title { font-size: 36px; } }
+    @media (min-width: 1440px) { .spp-cta-band__title { font-size: 50px; } }
+    .spp-cta-band__description { font-size: 18px; color: rgba(255,255,255,0.85); line-height: 1.7; margin: 0; }
+    .spp-cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .spp-cta-band__actions .spp-btn {
+      background-color: rgba(255,255,255,0.92); color: #0f0f0f;
+      border: 1px solid rgba(255,255,255,0.6); backdrop-filter: blur(8px);
+    }
+    .spp-cta-band__actions .spp-btn:hover { background-color: #ffffff; }
+    .spp-cta-band__footnote {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 8px;
+    }
+    .spp-cta-band__footnote a { font-size: 14px; color: rgba(255,255,255,0.7); transition: color 0.2s; }
+    .spp-cta-band__footnote a:hover { color: #ffffff; }
+  </style>
+</head>
+<body>
+<main>
+
+  <!-- ── Section 1: Hero ──────────────────────────────────────── -->
+  <section id="section-hero" class="spp-section--hero">
+    <div class="spp-article-container">
+      <nav class="spp-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html" class="spp-breadcrumb__link">Home</a>
+        <span class="spp-breadcrumb__sep">/</span>
+        <a href="resources.html" class="spp-breadcrumb__link">Resources</a>
+        <span class="spp-breadcrumb__sep">/</span>
+        <a href="comparison.html" class="spp-breadcrumb__link">Comparison</a>
+        <span class="spp-breadcrumb__sep">/</span>
+        <span class="spp-breadcrumb__current">Structure-Preserving Processing vs Flat Masking</span>
+      </nav>
+      <h1 class="spp-article-hero__title">Structure-Preserving Processing vs Flat Masking</h1>
+      <p class="spp-article-hero__description">
+        Compare structure-preserving processing with flat masking for enterprise AI. Flat masking collapses document structure; structure preservation maintains integrity for accurate AI outputs.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Section 3: Overview ──────────────────────────────────── -->
+  <section id="section-3" class="spp-section--article-body">
+    <div class="spp-article-container">
+      <div class="spp-article-section-header">
+        <h2>Overview</h2>
+      </div>
+      <p class="spp-body-paragraph">
+        Flat masking and structure-preserving processing both aim to protect sensitive data before AI processing. They differ fundamentally in how they handle document structure, entity relationships, and semantic context — and this difference determines whether AI outputs are usable.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Section 4: How Flat Masking Works ───────────────────── -->
+  <section id="section-4" class="spp-section--article-body">
+    <div class="spp-article-container">
+      <div class="spp-article-section-header">
+        <h2>How Flat Masking Works</h2>
+      </div>
+      <p class="spp-body-paragraph">
+        Flat masking scans documents for sensitive patterns and replaces each match with a generic token. The replacement is uniform — every name becomes [NAME], every number becomes [NUMBER], every date becomes [DATE]. The masking engine treats each sensitive value independently, without considering its role in the document's structure.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Section 5: Limitations ───────────────────────────────── -->
+  <section id="section-5" class="spp-section--article-body">
+    <div class="spp-article-container">
+      <div class="spp-article-section-header">
+        <h2>Limitations</h2>
+      </div>
+      <ul class="spp-bullet spp-bullet--dot">
+        <li class="spp-bullet__item">
+          <span class="spp-bullet__icon"></span>
+          <span><strong>Entity collapse.</strong> In a multi-party contract, all party names become [NAME]. AI cannot distinguish acquirer from target, lender from borrower, plaintiff from defendant.</span>
+        </li>
+        <li class="spp-bullet__item">
+          <span class="spp-bullet__icon"></span>
+          <span><strong>Table destruction.</strong> Column headers masked as [FIELD] and cell values masked as [VALUE] eliminate the schema information AI needs for accurate extraction.</span>
+        </li>
+        <li class="spp-bullet__item">
+          <span class="spp-bullet__icon"></span>
+          <span><strong>Cross-reference breakage.</strong> When a document references "see Section 3.2 regarding [NAME]'s obligations," flat masking removes the entity link that gives the reference meaning.</span>
+        </li>
+        <li class="spp-bullet__item">
+          <span class="spp-bullet__icon"></span>
+          <span><strong>Inconsistent replacement.</strong> The same entity may receive different tokens in different document locations, breaking AI's ability to track entities across sections.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Section 6: How LLM Capsule Differs ──────────────────── -->
+  <section id="section-6" class="spp-section--article-body">
+    <div class="spp-article-container">
+      <div class="spp-article-section-header">
+        <h2>How <span class="spp-text--product">LLM Capsule</span> Differs</h2>
+      </div>
+      <p class="spp-body-paragraph">
+        Structure-preserving processing maintains document integrity during data protection. Entity consistency is enforced across the entire document. Table structures, cross-references, and semantic relationships are preserved. AI receives a structurally complete document that supports accurate processing.
+      </p>
+      <div class="spp-banner">
+        <p>
+          <strong>AI results are automatically restored locally with original enterprise data.</strong>
+          <span class="spp-text--product">LLM Capsule</span>'s AI enablement data layer protects sensitive data while preserving the document structure AI needs for accurate outputs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 7: Comparison Table ──────────────────────────── -->
+  <section id="section-7" class="spp-section--article-body">
+    <div class="spp-article-container">
+      <div class="spp-article-section-header">
+        <h2>Comparison</h2>
+      </div>
+      <div class="spp-table-wrap">
+        <table class="spp-table">
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th>Flat Masking</th>
+              <th class="spp-table__th--highlight"><span class="spp-text--product">LLM Capsule</span> (AI Enablement Data Layer)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Entity handling</td>
+              <td>All entities → same token</td>
+              <td class="spp-table__td--highlight">Consistent per-entity mapping</td>
+            </tr>
+            <tr>
+              <td>Table structures</td>
+              <td>Destroyed</td>
+              <td class="spp-table__td--highlight">Preserved</td>
+            </tr>
+            <tr>
+              <td>Cross-references</td>
+              <td>Broken</td>
+              <td class="spp-table__td--highlight">Maintained</td>
+            </tr>
+            <tr>
+              <td>Multi-document consistency</td>
+              <td><span class="spp-table__cross">✗</span></td>
+              <td class="spp-table__td--highlight"><span class="spp-table__check">✓</span></td>
+            </tr>
+            <tr>
+              <td>AI output accuracy</td>
+              <td>Degraded</td>
+              <td class="spp-table__td--highlight">High fidelity</td>
+            </tr>
+            <tr>
+              <td>Restoration support</td>
+              <td><span class="spp-table__cross">✗</span></td>
+              <td class="spp-table__td--highlight"><span class="spp-table__check">✓</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 8: Enterprise Workflow Example ───────────────── -->
+  <section id="section-8" class="spp-section--article-body">
+    <div class="spp-article-container">
+      <div class="spp-article-section-header">
+        <h2>Enterprise Workflow Example</h2>
+      </div>
+      <div class="spp-card">
+        <h4 class="spp-card__title">Multi-Party Financial Analysis</h4>
+        <p>An investment bank analyzes term sheets involving three parties — lead investor, co-investor, and target company. Each term sheet contains overlapping entity names in different roles.</p>
+        <p>Flat masking turns all three parties into [NAME], making it impossible for AI to attribute terms to the correct party. Structure-preserving processing assigns consistent, distinct representations to each party, enabling accurate extraction of party-specific terms. Restoration restores real party names in the analysis output.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 9: FAQ ────────────────────────────────────────── -->
+  <section id="section-9" class="spp-section--article-body">
+    <div class="spp-article-container">
+      <div class="spp-article-section-header">
+        <h2>FAQ</h2>
+      </div>
+      <div class="spp-ac-list">
+        <div class="spp-ac-card spp-ac--open" onclick="this.classList.toggle('spp-ac--open')">
+          <div class="spp-ac-card__header">
+            <span class="spp-ac-card__title">What is the main difference between flat masking and structure-preserving processing?</span>
+            <span class="spp-ac-card__toggle"><span class="spp-ac-card__toggle-icon"></span></span>
+          </div>
+          <div class="spp-ac-card__body">
+            <p>Flat masking treats every sensitive value independently, collapsing entity relationships and document structure. Structure-preserving processing maintains entity consistency, table schemas, and semantic relationships throughout the document.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 10: Related Pages ────────────────────────────── -->
+  <section id="section-10" class="spp-section--article-body">
+    <div class="spp-article-container">
+      <div class="spp-section-title-icon">
+        <span class="spp-section-title-icon__icon">
+          <svg class="spp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+        </span>
+        <span class="spp-section-title-icon__text">Related</span>
+      </div>
+      <div class="spp-card-grid spp-card-grid--2col">
+        <a href="product.html" class="spp-card--dark">
+          <span class="spp-card--dark__icon">
+            <svg class="spp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            </svg>
+          </span>
+          <span class="spp-card--dark__title">Product Overview</span>
+        </a>
+        <a href="architecture.html" class="spp-card--dark">
+          <span class="spp-card--dark__icon">
+            <svg class="spp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </span>
+          <span class="spp-card--dark__title">Architecture</span>
+        </a>
+        <a href="trust.html" class="spp-card--dark">
+          <span class="spp-card--dark__icon">
+            <svg class="spp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </span>
+          <span class="spp-card--dark__title">Trust &amp; Compliance</span>
+        </a>
+        <a href="request-pov.html" class="spp-card--dark">
+          <span class="spp-card--dark__icon">
+            <svg class="spp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+          <span class="spp-card--dark__title">Request a Demo</span>
+        </a>
+        <a href="learn.html" class="spp-card--dark">
+          <span class="spp-card--dark__icon">
+            <svg class="spp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </span>
+          <span class="spp-card--dark__title">Learn Hub</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 11: CTA Band ──────────────────────────────────── -->
+  <section id="section-cta" class="spp-cta-band">
+    <div class="spp-cta-band__inner">
+      <h2 class="spp-cta-band__title">
+        See how <span class="spp-text--product">LLM Capsule</span> works with your data
+      </h2>
+      <p class="spp-cta-band__description">Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</p>
+      <div class="spp-cta-band__actions">
+        <a href="request-pov.html" class="spp-btn spp-btn--lg">Request a Demo</a>
+        <a href="architecture.html" class="spp-btn spp-btn--lg">Talk to an Architect</a>
+      </div>
+      <div class="spp-cta-band__footnote">
+        <a href="downloads.html">Download Architecture Brief</a>
+        <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener">AWS Marketplace</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
