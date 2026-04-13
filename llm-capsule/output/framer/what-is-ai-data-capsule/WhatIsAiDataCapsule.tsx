@@ -327,7 +327,7 @@ export default function WhatIsAiDataCapsule({
         }
         @container (min-width: 768px)  { .wiac-article-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .wiac-article-container { padding: 0 32px; } }
-        @container (min-width: 1440px) { .wiac-article-container { padding: 0 120px; } }
+        @container (min-width: 1440px) { .wiac-article-container { padding: 0 120px; max-width: 1440px; } }
 
         /* ── Section ── */
         .wiac-section {

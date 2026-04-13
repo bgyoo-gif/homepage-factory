@@ -181,6 +181,7 @@ export default function Restoration({
         }
         @container (min-width: 768px)  { .rst-article-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .rst-article-container { padding: 0 32px; } }
+        @container (min-width: 1440px) { .rst-article-container { padding: 0 120px; max-width: 1440px; } }
         
 
         /* ── Breadcrumb ──────────────────────────────────────────── */

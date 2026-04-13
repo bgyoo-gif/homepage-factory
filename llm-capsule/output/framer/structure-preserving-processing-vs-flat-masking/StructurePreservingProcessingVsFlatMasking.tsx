@@ -189,6 +189,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
         }
         @container (min-width: 768px)  { .spp-article-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .spp-article-container { padding: 0 32px; } }
+        @container (min-width: 1440px) { .spp-article-container { padding: 0 120px; max-width: 1440px; } }
         
 
         /* ── Full-width container ────────────────────────────────── */

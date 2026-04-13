@@ -306,7 +306,7 @@ export default function AiDataPipelineProtection({
         }
         @container (min-width: 768px)  { .adpp-article-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .adpp-article-container { padding: 0 32px; } }
-        @container (min-width: 1440px) { .adpp-article-container { padding: 0 120px; } }
+        @container (min-width: 1440px) { .adpp-article-container { padding: 0 120px; max-width: 1440px; } }
 
         /* ── Full-width container (CTA) ── */
         .adpp-full-container {
