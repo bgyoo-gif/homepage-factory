@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section03 Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background-color: #f2f2f2; }
+
+    .s3-section {
+      width: 100%;
+      padding: 32px 0;
+      background-color: #ffffff;
+      overflow: hidden;
+    }
+    .s3-container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+    .s3-section-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .s3-section-header h2 {
+      font-family: "DM Sans", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      text-wrap: balance;
+    }
+    .s3-brand { color: #5690D4; }
+    .s3-paragraph {
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      color: #636363;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      text-wrap: pretty;
+    }
+    .s3-paragraph:last-child { margin-bottom: 0; }
+    .s3-paragraph--strong { font-weight: 500; }
+    .s3-product-name { font-family: "Oxanium", sans-serif; font-weight: 700; }
+
+    @media (min-width: 768px) {
+      .s3-container { padding: 0 32px; }
+      .s3-section-header h2 { font-size: 22px; }
+    }
+    @media (min-width: 1024px) { .s3-section-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) {
+      .s3-container { padding: 0 120px; max-width: 1440px; }
+      .s3-section-header h2 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="s3-section" id="section-4">
+    <div class="s3-container">
+      <div class="s3-section-header">
+        <h2><span class="s3-brand">Explanation</span></h2>
+      </div>
+      <p class="s3-paragraph">
+        Traditional data protection workflows are <span class="s3-brand">one-directional</span>: protect data, process it, and accept that outputs lack original context. A restorable workflow closes the loop — outputs are automatically restored with real enterprise data. This is what makes <span class="s3-product-name">LLM Capsule</span> an AI enabler rather than just a data protector.
+      </p>
+      <p class="s3-paragraph s3-paragraph--strong">
+        The key properties of a restorable workflow are: reversible encapsulation (not permanent masking), locally stored mappings (never transmitted), structure-preserving protection (AI accuracy maintained), and deterministic restoration (outputs exactly match original data).
+      </p>
+    </div>
+  </section>
+</body>
+</html>
