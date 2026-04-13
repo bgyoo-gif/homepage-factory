@@ -52,9 +52,9 @@ export default function Section05_FAQ({
           padding: 32px 0;
           background-color: ${P.surfaceWhite};
         }
-        @container (min-width: 768px)  { .s5-section { padding: 48px 0; } }
-        @container (min-width: 1024px) { .s5-section { padding: 48px 0; } }
-        @container (min-width: 1440px) { .s5-section { padding: 64px 0; } }
+        @container (min-width: 768px)  { .s5-section { padding: 60px 0; } }
+        @container (min-width: 1024px) { .s5-section { padding: 60px 0; } }
+        @container (min-width: 1440px) { .s5-section { padding: 60px 0; } }
 
         .s5-inner {
           width: 100%;

@@ -85,7 +85,7 @@ export default function Section03_Overview({
         @container (min-width: 1440px) {
           .s3-container { padding: 0; max-width: 1080px; }
           .s3-header h2 { font-size: 28px; }
-          .s3-section { padding: 64px 0; }
+          .s3-section { padding: 60px 0; }
         }
       `}</style>
       <section className="s3-section" id="section-3">

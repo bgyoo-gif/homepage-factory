@@ -182,7 +182,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
         /* ── Container Query wrapper ─────────────────────────────── */
         .spp-inner { width: 100%; container-type: inline-size; }
 
-        /* ── Article Container (860px) ───────────────────────────── */
+        /* ── Article Container (1080px) ───────────────────────────── */
         .spp-article-container {
           width: 100%; max-width: 1080px; margin: 0 auto;
           padding: 0 16px;
@@ -258,8 +258,8 @@ export default function StructurePreservingProcessingVsFlatMasking({
           padding: 32px 0;
           background-color: ${P.surfaceWhite};
         }
-        @container (min-width: 768px)  { .spp-section--article-body { padding: 48px 0; } }
-        @container (min-width: 1440px) { .spp-section--article-body { padding: 64px 0; } }
+        @container (min-width: 768px)  { .spp-section--article-body { padding: 60px 0; } }
+        @container (min-width: 1440px) { .spp-section--article-body { padding: 60px 0; } }
 
         /* ── Article Section Header ──────────────────────────────── */
         .spp-article-section-header {

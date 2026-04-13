@@ -242,7 +242,7 @@ export default function StructurePreservingDocumentProcessing({
         }
         .spdp-btn--secondary:hover { background-color: ${P.surfaceLight}; }
 
-        /* ── Article Container (860px max-width) ─────────────────── */
+        /* ── Article Container (1080px max-width) ─────────────────── */
         .spdp-article-container {
           width: 100%; max-width: 1080px; margin: 0 auto;
           padding: 0 16px;
@@ -291,8 +291,8 @@ export default function StructurePreservingDocumentProcessing({
           padding: 32px 0;
           background-color: ${P.surfaceWhite};
         }
-        @container (min-width: 768px)  { .spdp-section--article-body { padding: 48px 0; } }
-        @container (min-width: 1440px) { .spdp-section--article-body { padding: 64px 0; } }
+        @container (min-width: 768px)  { .spdp-section--article-body { padding: 60px 0; } }
+        @container (min-width: 1440px) { .spdp-section--article-body { padding: 60px 0; } }
 
         /* ── Article Section Header ──────────────────────────────── */
         .spdp-article-section-header {

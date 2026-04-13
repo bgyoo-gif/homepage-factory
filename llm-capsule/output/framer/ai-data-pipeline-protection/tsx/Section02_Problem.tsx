@@ -33,9 +33,9 @@ export default function Section02_Problem({
           padding: 32px 0;
           background-color: ${P.surfaceWhite};
         }
-        @container (min-width: 768px)  { .s2-section { padding: 48px 0; } }
-        @container (min-width: 1024px) { .s2-section { padding: 48px 0; } }
-        @container (min-width: 1440px) { .s2-section { padding: 64px 0; } }
+        @container (min-width: 768px)  { .s2-section { padding: 60px 0; } }
+        @container (min-width: 1024px) { .s2-section { padding: 60px 0; } }
+        @container (min-width: 1440px) { .s2-section { padding: 60px 0; } }
 
         .s2-inner {
           width: 100%;

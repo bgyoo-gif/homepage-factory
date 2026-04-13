@@ -174,7 +174,7 @@ export default function Restoration({
         }
         .rst-btn--secondary:hover { background-color: ${P.surfaceLight}; }
 
-        /* ── Article Container (860px) ───────────────────────────── */
+        /* ── Article Container (1080px) ───────────────────────────── */
         .rst-article-container {
           width: 100%; max-width: 1080px; margin: 0 auto;
           padding: 0 16px;
@@ -219,8 +219,8 @@ export default function Restoration({
 
         /* ── Article Body Section ────────────────────────────────── */
         .rst-section--article-body { padding: 32px 0; }
-        @container (min-width: 768px)  { .rst-section--article-body { padding: 48px 0; } }
-        @container (min-width: 1440px) { .rst-section--article-body { padding: 64px 0; } }
+        @container (min-width: 768px)  { .rst-section--article-body { padding: 60px 0; } }
+        @container (min-width: 1440px) { .rst-section--article-body { padding: 60px 0; } }
 
         /* ── Article Section Header ──────────────────────────────── */
         .rst-article-section-header {

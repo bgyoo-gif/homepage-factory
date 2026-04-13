@@ -147,7 +147,7 @@ export default function Section07_ComparisonTable({
         @container (min-width: 1440px) {
           .s7-container { padding: 0; max-width: 1080px; }
           .s7-header h2 { font-size: 28px; }
-          .s7-section { padding: 64px 0; }
+          .s7-section { padding: 60px 0; }
           .s7-table th, .s7-table td { padding: 14px 16px; }
         }
       `}</style>

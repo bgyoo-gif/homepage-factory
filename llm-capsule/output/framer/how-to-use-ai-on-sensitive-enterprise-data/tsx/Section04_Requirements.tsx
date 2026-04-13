@@ -108,7 +108,7 @@ export default function Section04_Requirements({
         }
         @container (min-width: 1440px) {
           .s4-container { padding: 0; }
-          .s4-section { padding: 64px 0; }
+          .s4-section { padding: 60px 0; }
         }
 
         .s4-header {

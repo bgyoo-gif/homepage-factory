@@ -143,7 +143,7 @@ export default function Section06_UseCases({
         }
         @container (min-width: 1440px) {
           .s6-container { padding: 0; }
-          .s6-section { padding: 64px 0; }
+          .s6-section { padding: 60px 0; }
         }
 
         .s6-header {

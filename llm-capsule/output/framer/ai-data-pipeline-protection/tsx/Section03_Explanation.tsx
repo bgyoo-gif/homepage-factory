@@ -75,9 +75,9 @@ export default function Section03_Explanation({
           padding: 32px 0;
           background-color: ${P.surfaceWhite};
         }
-        @container (min-width: 768px)  { .s3-section { padding: 48px 0; } }
-        @container (min-width: 1024px) { .s3-section { padding: 48px 0; } }
-        @container (min-width: 1440px) { .s3-section { padding: 64px 0; } }
+        @container (min-width: 768px)  { .s3-section { padding: 60px 0; } }
+        @container (min-width: 1024px) { .s3-section { padding: 60px 0; } }
+        @container (min-width: 1440px) { .s3-section { padding: 60px 0; } }
 
         .s3-inner {
           width: 100%;

@@ -135,7 +135,7 @@ export default function Section08_RelatedPages({
         }
         @container (min-width: 1440px) {
           .s8-container { padding: 0; }
-          .s8-section { padding: 64px 0; }
+          .s8-section { padding: 60px 0; }
         }
 
         .s8-section-title {

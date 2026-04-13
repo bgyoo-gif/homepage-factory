@@ -181,7 +181,7 @@ export default function Section09_FAQ({
         @container (min-width: 1440px) {
           .s9-container { padding: 0; max-width: 1080px; }
           .s9-header h2 { font-size: 28px; }
-          .s9-section { padding: 64px 0; }
+          .s9-section { padding: 60px 0; }
         }
       `}</style>
       <script

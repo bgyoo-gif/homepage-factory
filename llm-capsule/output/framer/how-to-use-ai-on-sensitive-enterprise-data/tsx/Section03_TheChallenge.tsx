@@ -125,7 +125,7 @@ export default function Section03_TheChallenge({
         }
         @container (min-width: 1440px) {
           .s3-section-header h2 { font-size: 28px; }
-          .s3-section { padding: 64px 0; }
+          .s3-section { padding: 60px 0; }
         }
       `}</style>
 

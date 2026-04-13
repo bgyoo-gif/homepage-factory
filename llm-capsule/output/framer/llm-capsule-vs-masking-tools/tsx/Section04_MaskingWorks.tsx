@@ -76,7 +76,7 @@ export default function Section04_MaskingWorks({
         @container (min-width: 1440px) {
           .s4-container { padding: 0; max-width: 1080px; }
           .s4-header h2 { font-size: 28px; }
-          .s4-section { padding: 64px 0; }
+          .s4-section { padding: 60px 0; }
         }
       `}</style>
       <section className="s4-section" id="section-4">

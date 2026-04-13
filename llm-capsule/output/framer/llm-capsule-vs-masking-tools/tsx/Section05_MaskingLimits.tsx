@@ -127,7 +127,7 @@ export default function Section05_MaskingLimits({
         @container (min-width: 1440px) {
           .s5-container { padding: 0; max-width: 1080px; }
           .s5-header h2 { font-size: 28px; }
-          .s5-section { padding: 64px 0; }
+          .s5-section { padding: 60px 0; }
         }
       `}</style>
       <section className="s5-section" id="section-5">

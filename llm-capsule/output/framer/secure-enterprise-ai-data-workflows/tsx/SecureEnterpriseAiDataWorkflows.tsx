@@ -287,7 +287,7 @@ export default function SecureEnterpriseAiDataWorkflows({
         @container (min-width: 1024px) { .seadw-container { padding: 0 32px; } }
         @container (min-width: 1440px) { .seadw-container { padding: 0 120px; max-width: 1440px; } }
 
-        /* ── Article container — 860px ──────────────────────────── */
+        /* ── Article container — 1080px ──────────────────────────── */
         .seadw-article-container {
           width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px;
         }
@@ -350,8 +350,8 @@ export default function SecureEnterpriseAiDataWorkflows({
         .seadw-section--article-body {
           padding: 32px 0; background-color: ${P.surfaceWhite};
         }
-        @container (min-width: 768px)  { .seadw-section--article-body { padding: 48px 0; } }
-        @container (min-width: 1440px) { .seadw-section--article-body { padding: 64px 0; } }
+        @container (min-width: 768px)  { .seadw-section--article-body { padding: 60px 0; } }
+        @container (min-width: 1440px) { .seadw-section--article-body { padding: 60px 0; } }
 
         /* ── Article Section Header ─────────────────────────────── */
         .seadw-article-section-header {

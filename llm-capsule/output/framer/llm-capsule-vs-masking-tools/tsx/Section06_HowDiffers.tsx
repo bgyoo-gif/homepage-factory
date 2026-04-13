@@ -107,7 +107,7 @@ export default function Section06_HowDiffers({
         @container (min-width: 1440px) {
           .s6-container { padding: 0; max-width: 1080px; }
           .s6-header h2 { font-size: 28px; }
-          .s6-section { padding: 64px 0; }
+          .s6-section { padding: 60px 0; }
         }
       `}</style>
       <section className="s6-section" id="section-6">

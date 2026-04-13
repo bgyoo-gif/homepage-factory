@@ -38,9 +38,9 @@ export default function Section04_EnterpriseExample({
           padding: 32px 0;
           background-color: ${P.surfaceWhite};
         }
-        @container (min-width: 768px)  { .s4-section { padding: 48px 0; } }
-        @container (min-width: 1024px) { .s4-section { padding: 48px 0; } }
-        @container (min-width: 1440px) { .s4-section { padding: 64px 0; } }
+        @container (min-width: 768px)  { .s4-section { padding: 60px 0; } }
+        @container (min-width: 1024px) { .s4-section { padding: 60px 0; } }
+        @container (min-width: 1440px) { .s4-section { padding: 60px 0; } }
 
         .s4-inner {
           width: 100%;

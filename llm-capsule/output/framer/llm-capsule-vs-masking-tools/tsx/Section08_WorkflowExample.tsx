@@ -108,7 +108,7 @@ export default function Section08_WorkflowExample({
           .s8-container { padding: 0; max-width: 1080px; }
           .s8-header h2 { font-size: 28px; }
           .s8-card { padding: 32px; }
-          .s8-section { padding: 64px 0; }
+          .s8-section { padding: 60px 0; }
         }
       `}</style>
       <section className="s8-section" id="section-8">
