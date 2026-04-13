@@ -138,3 +138,5 @@ Style Converter에서 업로드 시 `server/jobs/[job_id].json`이 생성된다.
 - [ ] `grep -r '새값'` → 예상 파일 수 일치
 - [ ] 주석 안 '원본값' → 0건
 - [ ] HTML + TSX + preview 모두 확인
+
+**TSX 수정 시 반드시 `bash server/verify-tsx.sh` 실행** — FAIL이면 커밋하지 않는다.

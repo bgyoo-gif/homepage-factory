@@ -69,6 +69,7 @@ export default function Section05_FAQ({
         }
         @container (min-width: 768px)  { .s5-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .s5-container { padding: 0 32px; } }
+        @container (min-width: 1440px) { .s5-container { padding: 0 120px; max-width: 1440px; } }
         
 
         .s5-header {
