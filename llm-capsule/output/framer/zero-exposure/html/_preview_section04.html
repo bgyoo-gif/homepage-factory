@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section04 Example | Zero Exposure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f0f0f0; font-family: "DM Sans", sans-serif; }
+
+    .s4-section {
+      width: 100%;
+      padding: 32px 0;
+      background-color: #ffffff;
+      overflow: hidden;
+    }
+    .s4-container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+    .s4-section-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .s4-section-header h2 {
+      font-family: "DM Sans", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      text-wrap: balance;
+    }
+    .s4-brand-color { color: #5690D4; }
+    .s4-card {
+      background-color: #ffffff;
+      border-radius: 18px;
+      border: 1px solid #e6e7e9;
+      padding: 24px;
+      box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .s4-card__text {
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      color: #636363;
+      line-height: 1.7;
+      margin: 0;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      text-wrap: pretty;
+    }
+
+    @media (min-width: 768px) {
+      .s4-container { padding: 0 32px; }
+      .s4-section-header h2 { font-size: 22px; }
+    }
+    @media (min-width: 1024px) {
+      .s4-container { padding: 0 32px; }
+      .s4-section-header h2 { font-size: 24px; }
+      .s4-card { padding: 32px; }
+    }
+    @media (min-width: 1440px) {
+      .s4-container { padding: 0; max-width: 1080px; }
+      .s4-section-header h2 { font-size: 28px; }
+    }
+    @media (max-width: 767px) { .s4-section-header { text-align: left; } }
+  </style>
+</head>
+<body>
+  <section class="s4-section">
+    <div class="s4-container">
+      <div class="s4-section-header">
+        <h2><span class="s4-brand-color">Example</span></h2>
+      </div>
+      <div class="s4-card">
+        <p class="s4-card__text">
+          A healthcare organization sends patient records to AI for diagnostic summarization. With zero exposure, the AI provider receives records where patient names are replaced with consistent tokens, medical record numbers are replaced with synthetic identifiers, and dates are shifted — but all clinical relationships remain intact for accurate summarization.
+        </p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
