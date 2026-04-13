@@ -193,6 +193,43 @@ addPropertyControls(SectionNN_Name, {
 - 원문 텍스트를 단 한 글자도 바꾸지 않는다
 - 이미지 경로는 반드시 `IMAGE_BASE` 상수 경유
 - 각 섹션 컴포넌트는 독립적으로 동작해야 한다 (다른 섹션에 의존 금지)
-- JSON-LD 필수: Hero(Section01)에 BreadcrumbList, FAQ 섹션에 FAQPage 스키마를 `dangerouslySetInnerHTML`로 삽입. Framer에서는 TSX만 배포되므로 JSON-LD가 TSX에 없으면 SEO 구조화 데이터가 적용되지 않는다.
-- tsx 파일은 `{brand}/output/framer/[페이지명]/tsx/`, 프리뷰 HTML은 `{brand}/output/framer/[페이지명]/html/`에 저장
-- TSX 변환 완료 후 반드시 `cubig/reference/design-system-viewer.html`의 STATIC_DATA[brand] 해당 input 항목에 TSX 파일 목록을 추가한다. **각 TSX 파일을 개별 객체로 1줄씩 작성** (배열이나 files 필드로 묶지 않는다). 형식: `{ type: 'tsx', name: 'Section01_Hero.tsx', date: '2026-04-13', dir: '[페이지명]/tsx' }`
+- JSON-LD 필수: Hero(Section01)에 BreadcrumbList, FAQ 섹션에 FAQPage 스키마를 `dangerouslySetInnerHTML`로 삽입
+- TSX 변환 완료 후 반드시 `cubig/reference/design-system-viewer.html`의 STATIC_DATA에 TSX 항목 추가 (단, `]},` 닫힘 균형 반드시 확인)
+
+---
+
+## 반복 결함 방지 (절대 위반 금지)
+
+1. **nav/footer 넣지 않는다** — B타입 HTML에서 이미 삭제됨
+2. **body padding-top 없음** — nav가 없으므로 불필요
+3. **CTA band에 max-width 넣지 않는다** — 전폭(full-bleed). `__inner`에만 max-width 적용
+4. **container max-width: 1440px** — `@container (min-width: 1440px) { padding: 0 120px; max-width: 1440px; }`
+5. **Hero title 반응형: 32/40/48/64px** — 다른 사이즈 사용 금지
+6. **Section header title: 20/22/24/28px** — h2 기본 반응형
+7. **Section padding: 60px 0** — 반응형으로 키우지 않음
+8. **Hero bottom padding: 0** — section 기본 padding으로 충분
+9. **@media 금지** — Container Queries(@container)만 사용
+10. **screenshot/placeholder 영역 넣지 않는다** — B타입에서 이미 삭제됨
+
+### LLM Capsule 브랜드 팔레트 (brand === 'llm-capsule' 일 때)
+
+```typescript
+const P = {
+  brandPrimary:   "#1821E8",
+  brandSecondary: "#5690D4",
+  brandAccent:    "#55B45D",
+  brandLight:     "#B8D4EE",
+  gradientBrand: "linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%)",
+  // ... neutral/text/surface 값은 core와 동일
+}
+```
+
+### 출력 경로 (단일 파일 구조 — 페이지 하나당 TSX 1개)
+
+```
+{brand}/output/framer/[페이지명]/
+  ├── [ComponentName].tsx
+  └── preview.html
+```
+
+> 기존 섹션별 분할(tsx/ 디렉토리) 대신 **페이지 전체를 단일 TSX**로 변환한다.
