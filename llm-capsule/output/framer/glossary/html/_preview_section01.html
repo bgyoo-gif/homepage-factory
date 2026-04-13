@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section 01 — Hero | Glossary | LLM Capsule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "DM Sans", sans-serif;
+      background-color: #f2f2f2;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .preview-label {
+      background-color: #171719;
+      color: #9c9c9c;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    /* Section styles */
+    .s1-section {
+      width: 100%;
+      padding: 100px 0 60px;
+      background-color: #ffffff;
+      overflow: hidden;
+    }
+
+    .s1-container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+      .s1-container { padding: 0 32px; }
+    }
+    @media (min-width: 1024px) {
+      .s1-container { padding: 0 32px; }
+    }
+    @media (min-width: 1440px) {
+      .s1-container { padding: 0 120px; max-width: 1440px; }
+    }
+
+    .s1-hero {
+      text-align: center;
+    }
+
+    .s1-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #9c9c9c;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .s1-breadcrumb__link {
+      color: #5690D4;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .s1-breadcrumb__link:hover {
+      color: #1821E8;
+    }
+
+    .s1-breadcrumb__sep {
+      color: #e0e0e0;
+    }
+
+    .s1-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      text-wrap: balance;
+    }
+
+    @media (min-width: 768px) {
+      .s1-title { font-size: 40px; }
+    }
+    @media (min-width: 1024px) {
+      .s1-title { font-size: 48px; }
+    }
+    @media (min-width: 1440px) {
+      .s1-title { font-size: 64px; }
+    }
+
+    .s1-title__highlight {
+      color: #5690D4;
+    }
+
+    .s1-description {
+      font-size: 18px;
+      color: #636363;
+      line-height: 1.7;
+      max-width: 100%;
+      margin: 0 auto;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      text-wrap: pretty;
+    }
+
+    @media (min-width: 1024px) {
+      .s1-description { max-width: 720px; }
+    }
+    @media (min-width: 1440px) {
+      .s1-description { max-width: 1080px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-label">Glossary / Section 01 — Hero</div>
+
+  <section class="s1-section">
+    <div class="s1-container">
+      <div class="s1-hero">
+        <nav class="s1-breadcrumb" aria-label="Breadcrumb">
+          <a href="/" class="s1-breadcrumb__link">Home</a>
+          <span class="s1-breadcrumb__sep" aria-hidden="true">/</span>
+          <a href="/resources" class="s1-breadcrumb__link">Resources</a>
+          <span class="s1-breadcrumb__sep" aria-hidden="true">/</span>
+          <span>Glossary</span>
+        </nav>
+        <h1 class="s1-title">
+          Enterprise AI <span class="s1-title__highlight">Enablement</span> Glossary
+        </h1>
+        <p class="s1-description">
+          Key terms and definitions for enterprise AI enablement, LLM data privacy, and secure enterprise AI workflows.
+        </p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
