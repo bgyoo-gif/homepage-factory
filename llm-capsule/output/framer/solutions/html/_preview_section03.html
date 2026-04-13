@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 03 KPI Proof Strip | Solutions | LLM Capsule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "DM Sans", sans-serif;
+      background-color: #f2f2f2;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .s3-section {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 60px 0;
+      background-color: #ffffff;
+    }
+    .s3-container {
+      width: 100%;
+      padding: 0 16px;
+      max-width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    .s3-kpi-band {
+      border-radius: 40px;
+      padding: 32px 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      justify-items: center;
+      background-color: #171719;
+      background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.webp');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .s3-kpi-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0,0,0,0.35);
+      z-index: 0;
+    }
+    .s3-kpi-band > * { position: relative; z-index: 1; }
+    .s3-kpi-item { display: flex; flex-direction: column; gap: 12px; text-align: center; }
+    .s3-kpi-number {
+      font-family: "DM Sans", sans-serif;
+      font-size: 50px; font-weight: 700;
+      line-height: 1; color: #ffffff;
+    }
+    .s3-kpi-label { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+    .s3-banner {
+      margin-top: 32px;
+      padding: 16px 24px;
+      border-top: 1px solid #e6e7e9;
+      border-bottom: 1px solid #e6e7e9;
+      background-color: rgba(24,33,232,0.06);
+      text-align: center;
+    }
+    .s3-banner-tagline {
+      font-size: 16px; font-weight: 600;
+      color: #0f0f0f; margin-bottom: 8px;
+    }
+    .s3-banner-note { font-size: 14px; color: #636363; }
+
+    @media (min-width: 768px) {
+      .s3-container { padding: 0 32px; }
+      .s3-kpi-band { grid-template-columns: repeat(2, 1fr); padding: 48px 40px; }
+    }
+    @media (min-width: 1024px) {
+      .s3-kpi-band { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (min-width: 1440px) {
+      .s3-container { padding: 0 120px; max-width: 1440px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="s3-section">
+    <div class="s3-container">
+      <div class="s3-kpi-band">
+        <div class="s3-kpi-item">
+          <div class="s3-kpi-number">98.1%</div>
+          <div class="s3-kpi-label">Detection Accuracy</div>
+        </div>
+        <div class="s3-kpi-item">
+          <div class="s3-kpi-number">99.14%</div>
+          <div class="s3-kpi-label">Workflow Accuracy</div>
+        </div>
+        <div class="s3-kpi-item">
+          <div class="s3-kpi-number">100%</div>
+          <div class="s3-kpi-label">Structured PII</div>
+        </div>
+        <div class="s3-kpi-item">
+          <div class="s3-kpi-number">98%</div>
+          <div class="s3-kpi-label">Response Similarity</div>
+        </div>
+      </div>
+
+      <div class="s3-banner">
+        <div class="s3-banner-tagline">Enable AI. Protect data. Restore results. Track everything.</div>
+        <div class="s3-banner-note">0.12s processing per 2,200-character document</div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
