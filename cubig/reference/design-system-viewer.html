@@ -3326,18 +3326,36 @@ function renderStaticTable() {
     if (htmlFiles.length === 0) { renderStaticFallback(); return; }
 
     // framer 서브디렉토리 안의 tsx 파일 목록 가져오기
+    // 구조: framer/[page]/tsx/*.tsx 또는 framer/[page]/*.tsx
     var tsxPromises = framerDirs.map(function(dir) {
       return fetch(ghApiBase + dir.path + '?ref=gh-pages')
         .then(function(r) { return r.ok ? r.json() : []; })
         .then(function(files) {
-          return { dirName: dir.name, files: files.filter(function(f) { return f.name.endsWith('.tsx'); }) };
+          var directTsx = files.filter(function(f) { return f.name.endsWith('.tsx'); });
+          if (directTsx.length > 0) {
+            return { dirName: dir.name, files: directTsx };
+          }
+          // tsx/ 서브디렉토리가 있으면 한 단계 더 탐색
+          var tsxDir = files.find(function(f) { return f.name === 'tsx' && f.type === 'dir'; });
+          if (tsxDir) {
+            return fetch(ghApiBase + tsxDir.path + '?ref=gh-pages')
+              .then(function(r2) { return r2.ok ? r2.json() : []; })
+              .then(function(tsxFiles) {
+                return { dirName: dir.name, files: tsxFiles.filter(function(f) { return f.name.endsWith('.tsx'); }) };
+              });
+          }
+          return { dirName: dir.name, files: [] };
         })
         .catch(function() { return { dirName: dir.name, files: [] }; });
     });
 
     Promise.all(tsxPromises).then(function(tsxResults) {
       var tsxMap = {};
-      tsxResults.forEach(function(r) { tsxMap[r.dirName] = r.files; });
+      tsxResults.forEach(function(r) {
+        // files[0].path로 tsx/ 서브디렉토리 여부 판별
+        var hasSubDir = r.files.length > 0 && r.files[0].path && r.files[0].path.indexOf('/tsx/') > -1;
+        tsxMap[r.dirName] = { files: r.files, subDir: hasSubDir };
+      });
 
       // B타입 HTML 기준으로 그룹화
       var groups = htmlFiles.map(function(hf) {
@@ -3353,8 +3371,10 @@ function renderStaticTable() {
         if (qa) outputs.push({ type: 'md', name: qa.name });
         // tsx files from framer subdirectory
         if (tsxMap[baseName]) {
-          tsxMap[baseName].forEach(function(tf) {
-            outputs.push({ type: 'tsx', name: tf.name, dir: baseName });
+          var tsxInfo = tsxMap[baseName];
+          var tsxDirPath = tsxInfo.subDir ? baseName + '/tsx' : baseName;
+          tsxInfo.files.forEach(function(tf) {
+            outputs.push({ type: 'tsx', name: tf.name, dir: tsxDirPath });
           });
         }
 
