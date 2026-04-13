@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — SecureLlmUsage Framer Component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background-color: #f2f2f2;
+      color: #0f0f0f;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Preview wrapper ── */
+    .preview-frame {
+      max-width: 1440px;
+      margin: 0 auto;
+      background-color: #ffffff;
+    }
+
+    /* ── Article Container (1080px) ── */
+    .slu-article-container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    @media (min-width: 768px)  { .slu-article-container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .slu-article-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .slu-article-container { padding: 0 120px; max-width: 1440px; } }
+
+    /* ── Sections ── */
+    .slu-section-hero {
+      width: 100%;
+      padding: 100px 0 0;
+      background-color: #ffffff;
+    }
+
+    .slu-section-body {
+      width: 100%;
+      padding: 32px 0;
+    }
+    @media (min-width: 768px)  { .slu-section-body { padding: 60px 0; } }
+    @media (min-width: 1440px) { .slu-section-body { padding: 60px 0; } }
+
+    /* ── CTA Band ── */
+    .slu-cta-band {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 16px;
+      text-align: center;
+      background-color: #171719;
+      background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-blue-violet.png');
+      background-size: cover;
+      background-position: center;
+    }
+    @media (min-width: 768px)  { .slu-cta-band { padding: 100px 32px; } }
+    @media (min-width: 1440px) { .slu-cta-band { padding: 120px 120px; } }
+    @media (max-width: 767px)  { .slu-cta-band { background-image: none; } }
+
+    .slu-cta-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0,0,0,0.15);
+      z-index: 0;
+    }
+    .slu-cta-band > * { position: relative; z-index: 1; }
+
+    .slu-cta-inner {
+      max-width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    @media (min-width: 1024px) { .slu-cta-inner { max-width: 720px; } }
+    @media (min-width: 1440px) { .slu-cta-inner { max-width: 1080px; } }
+
+    .slu-cta-title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin: 0;
+    }
+    @media (max-width: 767px) { .slu-cta-title { font-size: 36px; } }
+    @media (min-width: 1440px) { .slu-cta-title { font-size: 50px; } }
+
+    .slu-cta-desc {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .slu-cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+    @media (max-width: 767px) {
+      .slu-cta-actions { flex-direction: column; align-items: center; }
+      .slu-cta-actions .slu-btn { width: 100%; max-width: 320px; }
+    }
+
+    .slu-cta-footnote {
+      font-size: 12px;
+      color: rgba(255,255,255,0.70);
+      margin-top: 8px;
+    }
+
+    /* ── Breadcrumb ── */
+    .slu-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .slu-breadcrumb__link {
+      font-size: 14px;
+      color: #5690D4;
+      font-weight: 500;
+      transition: color 0.15s;
+      cursor: pointer;
+    }
+    .slu-breadcrumb__link:hover { color: #1821E8; }
+    .slu-breadcrumb__sep { font-size: 14px; color: #9c9c9c; }
+    .slu-breadcrumb__current { font-size: 14px; color: #9c9c9c; }
+
+    /* ── Hero Title ── */
+    .slu-hero-title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    @media (min-width: 768px)  { .slu-hero-title { font-size: 40px; } }
+    @media (min-width: 1024px) { .slu-hero-title { font-size: 48px; } }
+    @media (min-width: 1440px) { .slu-hero-title { font-size: 64px; } }
+
+    .slu-hero-desc {
+      font-size: 18px;
+      color: #636363;
+      line-height: 1.7;
+      max-width: 100%;
+    }
+
+    /* ── Screenshot Frame ── */
+    .slu-screenshot-frame {
+      margin-top: 48px;
+      border-radius: 40px 40px 0 0;
+      padding: 32px 32px 0;
+      background-color: #f2f2f2;
+      background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.png');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    @media (max-width: 767px) {
+      .slu-screenshot-frame {
+        border-radius: 24px 24px 0 0;
+        background-image: none;
+      }
+    }
+
+    .slu-screenshot-inner {
+      background-color: #ffffff;
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+
+    .slu-screenshot-label {
+      font-size: 14px;
+      color: #9c9c9c;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    /* ── Banner ── */
+    .slu-banner {
+      padding: 24px 32px;
+      border-radius: 18px;
+      border-top: 1px solid #e6e7e9;
+      border-bottom: 1px solid #e6e7e9;
+      background-color: rgba(24, 33, 232, 0.06);
+      font-size: 16px;
+      line-height: 1.7;
+      text-align: center;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .slu-banner-label {
+      font-family: "Fragment Mono", monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9c9c9c;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .slu-banner p {
+      font-size: 16px;
+      color: #0f0f0f;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── Article Section Header ── */
+    .slu-section-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    @media (max-width: 767px) { .slu-section-header { text-align: left; } }
+
+    .slu-section-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    @media (min-width: 768px)  { .slu-section-header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .slu-section-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .slu-section-header h2 { font-size: 28px; } }
+
+    /* ── Article Body Paragraphs ── */
+    .slu-para {
+      font-size: 16px;
+      color: #636363;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .slu-para:last-child { margin-bottom: 0; }
+
+    /* ── Card ── */
+    .slu-card {
+      background-color: #ffffff;
+      border-radius: 18px;
+      border: 1px solid #e6e7e9;
+      padding: 24px;
+      box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    @media (min-width: 1440px) { .slu-card { padding: 32px; } }
+
+    /* ── Related Terms ── */
+    .slu-related-terms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    /* ── Section Title Icon ── */
+    .slu-title-icon {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .slu-title-icon__icon { color: #5690D4; flex-shrink: 0; }
+    .slu-title-icon__text {
+      font-family: "DM Sans", sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #0f0f0f;
+      line-height: 1.2;
+    }
+
+    /* ── Card Grid ── */
+    .slu-card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) { .slu-card-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ── Dark Card ── */
+    .slu-card-dark {
+      background-color: #141414;
+      border: 1px solid #303135;
+      color: #ffffff;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: background-color 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .slu-card-dark:hover { background-color: #171719; }
+    .slu-card-dark__icon { flex-shrink: 0; color: #5690D4; }
+    .slu-card-dark__title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    /* ── Button ── */
+    .slu-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 9999px;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.2s, background-color 0.2s;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .slu-btn--sm {
+      padding: 8px 16px;
+      font-size: 14px;
+      background-color: transparent;
+      color: #0f0f0f;
+      border: 1px solid #e6e7e9;
+    }
+    .slu-btn--sm:hover { background-color: #f7f7f7; }
+
+    .slu-btn--lg {
+      padding: 16px 48px;
+      font-size: 18px;
+      background-color: rgba(255,255,255,0.92);
+      color: #0f0f0f;
+      border: 1px solid rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+    }
+    .slu-btn--lg:hover { background-color: #ffffff; }
+
+    /* ── Brand text ── */
+    .slu-text-brand { color: #5690D4; }
+    .slu-text-product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<div class="preview-frame">
+
+  <!-- ============================================================
+       Section 1: Hero
+  ============================================================ -->
+  <section id="section-hero" class="slu-section-hero">
+    <div class="slu-article-container">
+      <!-- Breadcrumb -->
+      <nav class="slu-breadcrumb" aria-label="Breadcrumb">
+        <a href="https://llmcapsule.ai/" class="slu-breadcrumb__link">Home</a>
+        <span class="slu-breadcrumb__sep">/</span>
+        <a href="https://llmcapsule.ai/resources" class="slu-breadcrumb__link">Resources</a>
+        <span class="slu-breadcrumb__sep">/</span>
+        <a href="https://llmcapsule.ai/resources/glossary" class="slu-breadcrumb__link">Glossary</a>
+        <span class="slu-breadcrumb__sep">/</span>
+        <span class="slu-breadcrumb__current">Secure LLM Usage</span>
+      </nav>
+
+      <h1 class="slu-hero-title">
+        <span class="slu-text-brand">Secure</span> LLM Usage
+      </h1>
+      <p class="slu-hero-desc">
+        Using large language models for enterprise tasks without exposing original sensitive data to external AI services. Enabled by <span class="slu-text-product">LLM Capsule</span>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Section 2: Screenshot Frame
+  ============================================================ -->
+  <section id="section-2" class="slu-section-body">
+    <div class="slu-article-container">
+      <div class="slu-screenshot-frame">
+        <div class="slu-screenshot-inner">
+          <p class="slu-screenshot-label">
+            Secure LLM Usage — Sensitive enterprise data encapsulated before reaching any LLM, results restored locally
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Section 3: Definition
+  ============================================================ -->
+  <section id="section-3" class="slu-section-body">
+    <div class="slu-article-container">
+      <div class="slu-banner">
+        <span class="slu-banner-label">DEFINITION</span>
+        <p>Secure LLM usage is the practice of using large language models for enterprise tasks — summarization, extraction, classification, translation — without exposing original sensitive data to the AI provider. <span class="slu-text-product">LLM Capsule</span> enables secure LLM usage through its AI enablement data layer: pre-processing encapsulation and post-processing restoration that work across any LLM.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Section 4: Explanation
+  ============================================================ -->
+  <section id="section-4" class="slu-section-body">
+    <div class="slu-article-container">
+      <div class="slu-section-header">
+        <h2><span class="slu-text-brand">Explanation</span></h2>
+      </div>
+      <p class="slu-para">
+        Secure LLM usage is distinct from model-level security measures like prompt filtering or output scanning. Those approaches monitor the interaction with the AI model but do not prevent the data itself from being transmitted. Secure LLM usage operates at the data layer — transforming what the AI receives so that sensitive information never reaches the model.
+      </p>
+      <p class="slu-para">
+        This approach is model-agnostic. Whether the enterprise uses ChatGPT, Claude, Gemini, Perplexity, or any other LLM API, the AI enablement data layer remains consistent because it operates before the data reaches any model — enabling cross-model execution from a single AI enablement layer.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Section 5: Example
+  ============================================================ -->
+  <section id="section-5" class="slu-section-body">
+    <div class="slu-article-container">
+      <div class="slu-section-header">
+        <h2><span class="slu-text-brand">Example</span></h2>
+      </div>
+      <div class="slu-card">
+        <p class="slu-para">
+          A legal team uses Claude to analyze contract clauses across 100 vendor agreements. Each agreement contains proprietary pricing, vendor names, and internal project codes. Secure LLM usage means Claude receives structurally intact contracts with protected values — it can perform clause analysis accurately, but never receives the original vendor names or pricing figures. Outputs are restored locally for the legal team.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Section 6: Related Terms + Related Links
+  ============================================================ -->
+  <section id="section-6" class="slu-section-body">
+    <div class="slu-article-container">
+      <div class="slu-section-header">
+        <h2>Related <span class="slu-text-brand">Terms</span></h2>
+      </div>
+
+      <!-- Related Terms buttons -->
+      <div class="slu-related-terms">
+        <a href="zero-exposure.html" class="slu-btn slu-btn--sm">Zero Exposure</a>
+        <a href="restoration.html" class="slu-btn slu-btn--sm">Restoration</a>
+        <a href="restorable-workflow.html" class="slu-btn slu-btn--sm">Restorable Workflow</a>
+      </div>
+
+      <!-- Related Pages sub-header -->
+      <div class="slu-title-icon">
+        <span class="slu-title-icon__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+        </span>
+        <span class="slu-title-icon__text">Related Pages</span>
+      </div>
+
+      <!-- Related Link Cards -->
+      <div class="slu-card-grid">
+        <a href="product.html" class="slu-card-dark">
+          <span class="slu-card-dark__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            </svg>
+          </span>
+          <span class="slu-card-dark__title">Product Overview</span>
+        </a>
+        <a href="architecture.html" class="slu-card-dark">
+          <span class="slu-card-dark__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </span>
+          <span class="slu-card-dark__title">Architecture</span>
+        </a>
+        <a href="trust.html" class="slu-card-dark">
+          <span class="slu-card-dark__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </span>
+          <span class="slu-card-dark__title">Trust &amp; Compliance</span>
+        </a>
+        <a href="request-pov.html" class="slu-card-dark">
+          <span class="slu-card-dark__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+          <span class="slu-card-dark__title">Request a Demo</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Section 7: CTA Band (full-width)
+  ============================================================ -->
+  <section id="section-cta" class="slu-cta-band">
+    <div class="slu-cta-inner">
+      <h2 class="slu-cta-title">Enable <span class="slu-text-product">Secure LLM Usage</span> for Your Enterprise</h2>
+      <p class="slu-cta-desc">Process sensitive data through any LLM without exposure. Experience the AI enablement data layer.</p>
+      <div class="slu-cta-actions">
+        <a href="request-pov.html" class="slu-btn slu-btn--lg">Request a Demo</a>
+        <a href="product.html" class="slu-btn slu-btn--lg">View Product</a>
+      </div>
+      <p class="slu-cta-footnote">Enterprise AI Enablement by CUBIG</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
