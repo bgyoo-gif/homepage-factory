@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions Preview — LLM Capsule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: #0f0f0f;
+      background-color: #ffffff;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ── Container ── */
+    .sol-container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    @media (min-width: 768px)  { .sol-container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .sol-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .sol-container { padding: 0 120px; max-width: 1440px; } }
+
+    /* ══ SECTION 1 — HERO ══ */
+    .sol-hero-section {
+      width: 100%;
+      padding: 100px 0 60px;
+      background-color: #ffffff;
+    }
+    .sol-hero { text-align: center; }
+    .sol-hero__title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      color: #0f0f0f;
+      margin-bottom: 12px;
+    }
+    @media (min-width: 768px)  { .sol-hero__title { font-size: 40px; } }
+    @media (min-width: 1024px) { .sol-hero__title { font-size: 48px; } }
+    @media (min-width: 1440px) { .sol-hero__title { font-size: 64px; } }
+    .sol-hero__title-highlight { color: #5690D4; }
+    .sol-hero__description {
+      font-size: 18px;
+      color: #636363;
+      line-height: 1.7;
+      max-width: 100%;
+      margin: 0 auto 16px;
+    }
+    @media (min-width: 1024px) { .sol-hero__description { max-width: 720px; } }
+    @media (min-width: 1440px) { .sol-hero__description { max-width: 1080px; } }
+    .sol-hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    @media (max-width: 767px) {
+      .sol-hero__actions { flex-direction: column; align-items: center; }
+      .sol-hero__actions .sol-btn { width: 100%; max-width: 320px; }
+    }
+
+    /* ══ BUTTONS ══ */
+    .sol-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 9999px;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.2s, background-color 0.2s;
+      white-space: nowrap;
+      text-decoration: none;
+      padding: 12px 32px;
+      font-size: 16px;
+    }
+    .sol-btn--primary {
+      background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+      color: #ffffff;
+    }
+    .sol-btn--primary:hover { opacity: 0.88; }
+    .sol-btn--secondary {
+      background-color: transparent;
+      color: #0f0f0f;
+      border: 1px solid #e6e7e9;
+    }
+    .sol-btn--secondary:hover { background-color: #f7f7f7; }
+    .sol-btn--sm { padding: 8px 16px; font-size: 14px; }
+    .sol-btn--cta {
+      background-color: rgba(255,255,255,0.92);
+      color: #0f0f0f;
+      border: 1px solid rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+      padding: 12px 32px;
+      font-size: 16px;
+    }
+    .sol-btn--cta:hover { background-color: #ffffff; }
+
+    /* ══ SECTION 2 — INDUSTRY CARDS ══ */
+    .sol-section {
+      width: 100%;
+      padding: 60px 0;
+      background-color: #ffffff;
+    }
+    .sol-section-header {
+      margin-bottom: 48px;
+      text-align: center;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e6e7e9;
+    }
+    @media (max-width: 767px) { .sol-section-header { text-align: left; } }
+    .sol-section-header__title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    @media (min-width: 768px)  { .sol-section-header__title { font-size: 22px; } }
+    @media (min-width: 1024px) { .sol-section-header__title { font-size: 24px; } }
+    @media (min-width: 1440px) { .sol-section-header__title { font-size: 28px; } }
+    .sol-section-header__highlight { color: #5690D4; }
+    .sol-section-header__description {
+      font-size: 18px;
+      color: #636363;
+      line-height: 1.7;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    @media (min-width: 1024px) { .sol-section-header__description { max-width: 720px; } }
+    @media (min-width: 1440px) { .sol-section-header__description { max-width: 1080px; } }
+
+    /* Card Grid */
+    .sol-card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px)  { .sol-card-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .sol-card-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* Card */
+    .sol-card {
+      background-color: #ffffff;
+      border-radius: 18px;
+      border: 1px solid #e6e7e9;
+      padding: 24px;
+      box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    @media (min-width: 1440px) { .sol-card { padding: 32px; } }
+    .sol-card__icon-wrap { color: #5690D4; margin-bottom: 4px; }
+    .sol-card__title { font-size: 18px; font-weight: 600; color: #0f0f0f; line-height: 1.2; }
+    .sol-card__description { font-size: 14px; color: #636363; line-height: 1.7; flex: 1; }
+    .sol-card__divider { border: none; border-top: 1px solid #e6e7e9; margin: 4px 0; }
+
+    /* Industry states */
+    .sol-industry-states { display: flex; flex-direction: column; gap: 8px; }
+    .sol-industry-state {
+      display: flex; align-items: flex-start; gap: 8px;
+      padding: 12px; border-radius: 5px; font-size: 14px; line-height: 1.5;
+    }
+    .sol-industry-state--blocked { background-color: #f2f2f2; color: #636363; }
+    .sol-industry-state--enabled { background-color: rgba(14,130,76,0.06); color: #0f0f0f; }
+
+    /* Badge */
+    .sol-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 2px 6px; border-radius: 9999px;
+      font-size: 10px; font-weight: 500; line-height: 1;
+      white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+    }
+    .sol-badge--error  { background-color: rgba(255,48,48,0.12);  color: #ff3030; }
+    .sol-badge--success { background-color: rgba(14,130,76,0.12); color: #0e824c; }
+
+    /* Tags */
+    .sol-card__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .sol-card__tag {
+      font-size: 12px; color: #9c9c9c;
+      background-color: #f2f2f2; padding: 2px 10px; border-radius: 9999px;
+    }
+
+    /* ══ SECTION 3 — KPI BAND ══ */
+    .sol-kpi-section {
+      width: 100%;
+      padding: 60px 0;
+      background-color: #ffffff;
+    }
+    .sol-kpi-band {
+      border-radius: 40px;
+      padding: 48px 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      justify-items: center;
+      background-color: #171719;
+      background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.webp');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .sol-kpi-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: rgba(0,0,0,0.35); z-index: 0;
+    }
+    .sol-kpi-band > * { position: relative; z-index: 1; }
+    .sol-kpi-band__item { display: flex; flex-direction: column; gap: 12px; text-align: center; }
+    .sol-kpi-band__number {
+      font-family: "DM Sans", sans-serif;
+      font-size: 50px; font-weight: 700; line-height: 1; color: #ffffff;
+    }
+    .sol-kpi-band__label { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+    @media (max-width: 1023px) { .sol-kpi-band { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 767px)  {
+      .sol-kpi-band { grid-template-columns: 1fr; padding: 32px 20px; background-image: none; }
+    }
+
+    /* Banner */
+    .sol-banner {
+      margin-top: 32px;
+      padding: 16px 24px;
+      border-top: 1px solid #e6e7e9;
+      border-bottom: 1px solid #e6e7e9;
+      background-color: rgba(24,33,232,0.06);
+      font-size: 14px; line-height: 1.7; text-align: center;
+    }
+    .sol-banner__tagline { font-size: 16px; font-weight: 600; color: #0f0f0f; margin-bottom: 8px; }
+    .sol-banner__note   { font-size: 14px; color: #636363; }
+
+    /* ══ SECTION 4 — CTA BAND ══ */
+    .sol-cta-section { width: 100%; padding: 0; }
+    .sol-cta-band {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 16px;
+      text-align: center;
+      background-color: #171719;
+      background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-wave-teal-blue.webp');
+      background-size: cover;
+      background-position: center;
+    }
+    .sol-cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: rgba(0,0,0,0.15); z-index: 0;
+    }
+    .sol-cta-band > * { position: relative; z-index: 1; }
+    @media (min-width: 768px)  { .sol-cta-band { padding: 100px 32px; } }
+    @media (min-width: 1440px) { .sol-cta-band { padding: 120px 120px; } }
+    @media (max-width: 767px)  { .sol-cta-band { background-image: none; } }
+
+    .sol-cta-band__inner {
+      max-width: 100%; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: 24px;
+    }
+    @media (min-width: 1024px) { .sol-cta-band__inner { max-width: 720px; } }
+    @media (min-width: 1440px) { .sol-cta-band__inner { max-width: 1080px; } }
+
+    .sol-cta-band__title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 40px; font-weight: 700; color: #ffffff;
+      line-height: 1.2; letter-spacing: -0.5px; margin: 0;
+    }
+    .sol-cta-band__title-highlight { font-family: "Oxanium", sans-serif; font-weight: 700; }
+    @media (max-width: 767px)  { .sol-cta-band__title { font-size: 36px; } }
+    @media (min-width: 1440px) { .sol-cta-band__title { font-size: 50px; } }
+
+    .sol-cta-band__description { font-size: 18px; color: rgba(255,255,255,0.85); line-height: 1.7; margin: 0; }
+    .sol-cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .sol-cta-band__footnote { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    @media (max-width: 767px) {
+      .sol-cta-band__actions { flex-direction: column; align-items: center; }
+      .sol-cta-band__actions .sol-btn--cta { width: 100%; max-width: 320px; }
+    }
+
+    /* Product name */
+    .sol-product-name { font-family: "Oxanium", sans-serif; font-weight: 700; }
+  </style>
+</head>
+<body>
+<main>
+
+  <!-- ══ SECTION 1: HERO ══════════════════════════════════════ -->
+  <section id="section-hero">
+    <div class="sol-hero-section">
+      <div class="sol-container">
+        <div class="sol-hero">
+          <h1 class="sol-hero__title">
+            AI, Now Safe for <span class="sol-hero__title-highlight">Every Industry</span>
+          </h1>
+          <p class="sol-hero__description">
+            Regulated and document-heavy industries can now adopt AI on real enterprise data. <span class="sol-product-name">LLM Capsule</span> is an AI enablement data layer and plugin that removes the data exposure barrier blocking enterprise AI adoption &mdash; enabling AI first, protecting data at the data layer.
+          </p>
+          <div class="sol-hero__actions">
+            <a href="https://llmcapsule.ai/request-pov" class="sol-btn sol-btn--primary">Request a Demo</a>
+            <a href="https://llmcapsule.ai/product" class="sol-btn sol-btn--secondary">See Product</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 2: INDUSTRY USE CASES ════════════════════════ -->
+  <section id="section-2" class="sol-section">
+    <div class="sol-container">
+      <div class="sol-section-header">
+        <h2 class="sol-section-header__title">
+          How Each Industry Uses <span class="sol-section-header__highlight"><span class="sol-product-name">LLM Capsule</span></span>
+        </h2>
+        <p class="sol-section-header__description">
+          Regulated industries can now adopt AI on real enterprise data. See how each industry uses LLM Capsule to enable AI while protecting sensitive information.
+        </p>
+      </div>
+
+      <div class="sol-card-grid">
+
+        <!-- Card 1: Public Sector -->
+        <div class="sol-card">
+          <div class="sol-card__icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 20h20"/><path d="M5 20v-8h4v8"/><path d="M15 20v-8h4v8"/><path d="M12 4l-8 8h16l-8-8z"/>
+            </svg>
+          </div>
+          <h3 class="sol-card__title">Public Sector</h3>
+          <p class="sol-card__description">Uses AI to draft operational briefings, no classified info ever reaches external servers.</p>
+          <hr class="sol-card__divider">
+          <div class="sol-industry-states">
+            <div class="sol-industry-state sol-industry-state--blocked">
+              <span class="sol-badge sol-badge--error">Blocked</span>
+              <span>Military personnel data, classified operation details &amp; security-grade documents</span>
+            </div>
+            <div class="sol-industry-state sol-industry-state--enabled">
+              <span class="sol-badge sol-badge--success">Enabled</span>
+              <span>AI-assisted intelligence reports &amp; briefing summaries &mdash; with full audit trail</span>
+            </div>
+          </div>
+          <div class="sol-card__tags">
+            <span class="sol-card__tag">Ministry of National Defense (South Korea)</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Finance / Insurance -->
+        <div class="sol-card">
+          <div class="sol-card__icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+              <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+              <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+              <path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/>
+            </svg>
+          </div>
+          <h3 class="sol-card__title">Finance / Insurance</h3>
+          <p class="sol-card__description">Uses AI to streamline claim reviews, policyholder data stays fully protected.</p>
+          <hr class="sol-card__divider">
+          <div class="sol-industry-states">
+            <div class="sol-industry-state sol-industry-state--blocked">
+              <span class="sol-badge sol-badge--error">Blocked</span>
+              <span>Policyholder names, claim records &amp; credit information in prompts</span>
+            </div>
+            <div class="sol-industry-state sol-industry-state--enabled">
+              <span class="sol-badge sol-badge--success">Enabled</span>
+              <span>AI-powered insurance claim analysis &amp; underwriting reports &mdash; no customer data leaves</span>
+            </div>
+          </div>
+          <div class="sol-card__tags">
+            <span class="sol-card__tag">Kyobo</span>
+            <span class="sol-card__tag">DB Insurance</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Healthcare -->
+        <div class="sol-card">
+          <div class="sol-card__icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
+            </svg>
+          </div>
+          <h3 class="sol-card__title">Healthcare</h3>
+          <p class="sol-card__description">Uses AI to summarize patient records, PHI never touches an external server.</p>
+          <hr class="sol-card__divider">
+          <div class="sol-industry-states">
+            <div class="sol-industry-state sol-industry-state--blocked">
+              <span class="sol-badge sol-badge--error">Blocked</span>
+              <span>Patient names, diagnoses &amp; medical record IDs</span>
+            </div>
+            <div class="sol-industry-state sol-industry-state--enabled">
+              <span class="sol-badge sol-badge--success">Enabled</span>
+              <span>AI-generated clinical summaries &amp; radiology reports &mdash; PHI stays local</span>
+            </div>
+          </div>
+          <div class="sol-card__tags">
+            <span class="sol-card__tag">Ewha Womans University Medical Center</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Legal -->
+        <div class="sol-card">
+          <div class="sol-card__icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+              <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+              <path d="M7 21h10"/><path d="M12 3v18"/>
+              <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>
+            </svg>
+          </div>
+          <h3 class="sol-card__title">Legal</h3>
+          <p class="sol-card__description">Drafts court documents with AI, no case info leaves the firm.</p>
+          <hr class="sol-card__divider">
+          <div class="sol-industry-states">
+            <div class="sol-industry-state sol-industry-state--blocked">
+              <span class="sol-badge sol-badge--error">Blocked</span>
+              <span>Client names, case details &amp; privileged information</span>
+            </div>
+            <div class="sol-industry-state sol-industry-state--enabled">
+              <span class="sol-badge sol-badge--success">Enabled</span>
+              <span>AI-drafted memos, briefs &amp; contract reviews &mdash; fully contained</span>
+            </div>
+          </div>
+          <div class="sol-card__tags">
+            <span class="sol-card__tag">Shin&amp;Kim</span>
+          </div>
+        </div>
+
+        <!-- Card 5: Telecom -->
+        <div class="sol-card">
+          <div class="sol-card__icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12 7 2"/><path d="m7 12 5-10"/><path d="m12 12 5-10"/><path d="m17 12 5-10"/>
+              <path d="M4.5 7h15"/><path d="M12 16v6"/>
+            </svg>
+          </div>
+          <h3 class="sol-card__title">Telecom</h3>
+          <p class="sol-card__description">Leverage AI across operations, customer and network data fully de-identified.</p>
+          <hr class="sol-card__divider">
+          <div class="sol-industry-states">
+            <div class="sol-industry-state sol-industry-state--blocked">
+              <span class="sol-badge sol-badge--error">Blocked</span>
+              <span>Subscriber identities, call records, IP addresses &amp; network configs</span>
+            </div>
+            <div class="sol-industry-state sol-industry-state--enabled">
+              <span class="sol-badge sol-badge--success">Enabled</span>
+              <span>AI-driven customer analysis &amp; network operations &mdash; all data de-identified before use</span>
+            </div>
+          </div>
+          <div class="sol-card__tags">
+            <span class="sol-card__tag">SK Telecom</span>
+            <span class="sol-card__tag">Deutsche Telekom</span>
+            <span class="sol-card__tag">T Challenge 2026 Top 12</span>
+          </div>
+        </div>
+
+        <!-- Card 6: Network Security -->
+        <div class="sol-card">
+          <div class="sol-card__icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <h3 class="sol-card__title">Network Security</h3>
+          <p class="sol-card__description">Enables industrial clients to use public AI with all sensitive operational data protected.</p>
+          <hr class="sol-card__divider">
+          <div class="sol-industry-states">
+            <div class="sol-industry-state sol-industry-state--blocked">
+              <span class="sol-badge sol-badge--error">Blocked</span>
+              <span>Internal system data, vulnerability reports &amp; infrastructure details in prompts</span>
+            </div>
+            <div class="sol-industry-state sol-industry-state--enabled">
+              <span class="sol-badge sol-badge--success">Enabled</span>
+              <span>Regulated industries can safely adopt public LLMs &mdash; sensitive info de-identified at the gate</span>
+            </div>
+          </div>
+          <div class="sol-card__tags">
+            <span class="sol-card__tag">Claroty</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 3: KPI BAND ══════════════════════════════════ -->
+  <section id="section-3" class="sol-kpi-section">
+    <div class="sol-container">
+      <div class="sol-kpi-band">
+        <div class="sol-kpi-band__item">
+          <div class="sol-kpi-band__number">98.1%</div>
+          <div class="sol-kpi-band__label">Detection Accuracy</div>
+        </div>
+        <div class="sol-kpi-band__item">
+          <div class="sol-kpi-band__number">99.14%</div>
+          <div class="sol-kpi-band__label">Workflow Accuracy</div>
+        </div>
+        <div class="sol-kpi-band__item">
+          <div class="sol-kpi-band__number">100%</div>
+          <div class="sol-kpi-band__label">Structured PII</div>
+        </div>
+        <div class="sol-kpi-band__item">
+          <div class="sol-kpi-band__number">98%</div>
+          <div class="sol-kpi-band__label">Response Similarity</div>
+        </div>
+      </div>
+      <div class="sol-banner">
+        <div class="sol-banner__tagline">Enable AI. Protect data. Restore results. Track everything.</div>
+        <div class="sol-banner__note">0.12s processing per 2,200-character document</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 4: CTA BAND (full-width) ═════════════════════ -->
+  <section id="section-cta" class="sol-cta-section">
+    <div class="sol-cta-band">
+      <div class="sol-cta-band__inner">
+        <h2 class="sol-cta-band__title">
+          See how your industry uses <span class="sol-cta-band__title-highlight">LLM Capsule</span>
+        </h2>
+        <p class="sol-cta-band__description">Bring your documents, deployment constraints, and evaluation questions. We will show how LLM Capsule fits your environment.</p>
+        <div class="sol-cta-band__actions">
+          <a href="https://llmcapsule.ai/request-pov" class="sol-btn sol-btn--cta">Request a Demo</a>
+          <a href="https://llmcapsule.ai/product" class="sol-btn sol-btn--cta">See Product</a>
+          <a href="https://llmcapsule.ai/architecture" class="sol-btn sol-btn--cta">View Architecture</a>
+        </div>
+        <div class="sol-cta-band__footnote">
+          <a href="https://llmcapsule.ai/downloads" class="sol-btn sol-btn--secondary sol-btn--sm">Download Architecture Brief</a>
+          <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" class="sol-btn sol-btn--secondary sol-btn--sm">Available on AWS Marketplace</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
