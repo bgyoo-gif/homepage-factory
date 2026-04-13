@@ -301,6 +301,16 @@
     .ds-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
     @media (min-width: 768px)  { .ds-card-grid--2col { grid-template-columns: repeat(2, 1fr); } }
 
+    /* --- Bullet --- */
+    .ds-bullet { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--ds-space-sm); }
+    .ds-bullet__item { display: flex; align-items: flex-start; gap: var(--ds-space-xs); font-size: var(--ds-text-md); line-height: var(--ds-leading-normal); color: var(--ds-color-text-primary); }
+    .ds-bullet__icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; }
+    .ds-bullet--dot .ds-bullet__icon::before { content: "•"; color: var(--ds-color-brand-secondary); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-lg); line-height: 1; }
+    .ds-bullet--check .ds-bullet__icon::before { content: "✓"; color: var(--ds-color-success); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-md); line-height: 1; }
+    .ds-bullet--number { counter-reset: bullet; }
+    .ds-bullet--number .ds-bullet__icon { font-size: 0; }
+    .ds-bullet--number .ds-bullet__icon::before { counter-increment: bullet; content: counter(bullet); font-size: var(--ds-text-sm); font-weight: var(--ds-weight-bold); color: var(--ds-color-white); display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background-color: var(--ds-color-brand-primary); }
+
     /* --- Banner --- */
     .ds-banner {
       padding: var(--ds-space-lg) var(--ds-space-xl);
@@ -310,6 +320,7 @@
       background-color: var(--ds-banner-bg, var(--ds-color-surface-light));
       font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed);
       word-break: keep-all; overflow-wrap: break-word;
+      margin-top: var(--ds-space-2xl);
     }
     .ds-banner--brand { --ds-banner-bg: rgba(24, 33, 232, 0.06); }
     .ds-banner--brand p {
@@ -575,7 +586,7 @@
               <span class="ds-bullet__icon">5</span>
               <span><strong>Embedded integration.</strong> <span class="ds-text--product">LLM Capsule</span> can be embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within the enterprise's own software stack.</span>
             </li>
-        </div>
+        </ul>
 
         <div class="ds-banner ds-banner--brand">
           <strong>One enablement model, any deployment.</strong> The encapsulation and restoration logic is identical regardless of where <span class="ds-text--product">LLM Capsule</span> runs. AI results are restored locally in every deployment scenario.
