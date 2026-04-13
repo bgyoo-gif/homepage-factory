@@ -194,3 +194,4 @@ addPropertyControls(SectionNN_Name, {
 - 이미지 경로는 반드시 `IMAGE_BASE` 상수 경유
 - 각 섹션 컴포넌트는 독립적으로 동작해야 한다 (다른 섹션에 의존 금지)
 - tsx 파일은 `{brand}/output/framer/[페이지명]/tsx/`, 프리뷰 HTML은 `{brand}/output/framer/[페이지명]/html/`에 저장
+- TSX 변환 완료 후 반드시 `cubig/reference/design-system-viewer.html`의 STATIC_DATA[brand] 해당 input 항목에 TSX 파일 목록을 추가한다 (dir 필드 포함, 예: `{ type: 'tsx', name: 'Section01_Hero.tsx', date: '2026-04-13', dir: '[페이지명]/tsx' }`)

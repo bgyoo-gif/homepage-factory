@@ -70,6 +70,11 @@ Style Converter에서 업로드 시 `server/jobs/[job_id].json`이 생성된다.
   │  NO  → 건너뛰기
   │
   ▼
+[②-b viewer 정적 목록] TSX 변환을 했는가?
+  │  YES → design-system-viewer.html의 STATIC_DATA에 TSX 항목 추가 (dir 필드 포함)
+  │  NO  → 건너뛰기
+  │
+  ▼
 [③ viewer-qa] viewer를 수정했는가?
   │  YES → viewer-qa 실행, FAIL이면 수정 후 재검증
   │  NO  → 건너뛰기
