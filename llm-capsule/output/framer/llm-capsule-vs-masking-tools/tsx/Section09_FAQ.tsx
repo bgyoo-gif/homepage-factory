@@ -184,6 +184,21 @@ export default function Section09_FAQ({
           .s9-section { padding: 64px 0; }
         }
       `}</style>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": items.map((item) => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.answer
+            }
+          }))
+        })}}
+      />
       <section className="s9-section" id="section-9">
         <div className="s9-inner">
           <div className="s9-container">

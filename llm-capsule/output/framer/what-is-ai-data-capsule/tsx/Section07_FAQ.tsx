@@ -218,6 +218,21 @@ export default function Section07_FAQ({
           .s7-section-header h2 { font-size: 28px; }
         }
       `}</style>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": displayItems.map((item) => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.answer
+            }
+          }))
+        })}}
+      />
       <section className="s7-section">
         <div className="s7-inner">
           <div className="s7-container">

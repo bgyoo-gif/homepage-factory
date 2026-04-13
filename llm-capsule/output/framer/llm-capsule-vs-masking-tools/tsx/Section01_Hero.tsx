@@ -85,6 +85,18 @@ export default function Section01_Hero({
           .s1-title { font-size: 52px; }
         }
       `}</style>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://llmcapsule.ai/" },
+            { "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://llmcapsule.ai/learn" },
+            { "@type": "ListItem", "position": 3, "name": "LLM Capsule vs Masking Tools", "item": "https://llmcapsule.ai/learn/llm-capsule-vs-masking-tools" }
+          ]
+        })}}
+      />
       <section className="s1-section" id="section-hero">
         <div className="s1-inner">
           <div className="s1-container">

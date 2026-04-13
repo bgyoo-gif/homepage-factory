@@ -193,5 +193,6 @@ addPropertyControls(SectionNN_Name, {
 - 원문 텍스트를 단 한 글자도 바꾸지 않는다
 - 이미지 경로는 반드시 `IMAGE_BASE` 상수 경유
 - 각 섹션 컴포넌트는 독립적으로 동작해야 한다 (다른 섹션에 의존 금지)
+- JSON-LD 필수: Hero(Section01)에 BreadcrumbList, FAQ 섹션에 FAQPage 스키마를 `dangerouslySetInnerHTML`로 삽입. Framer에서는 TSX만 배포되므로 JSON-LD가 TSX에 없으면 SEO 구조화 데이터가 적용되지 않는다.
 - tsx 파일은 `{brand}/output/framer/[페이지명]/tsx/`, 프리뷰 HTML은 `{brand}/output/framer/[페이지명]/html/`에 저장
 - TSX 변환 완료 후 반드시 `cubig/reference/design-system-viewer.html`의 STATIC_DATA[brand] 해당 input 항목에 TSX 파일 목록을 추가한다. **각 TSX 파일을 개별 객체로 1줄씩 작성** (배열이나 files 필드로 묶지 않는다). 형식: `{ type: 'tsx', name: 'Section01_Hero.tsx', date: '2026-04-13', dir: '[페이지명]/tsx' }`

@@ -99,6 +99,18 @@ export default function Section01_Hero({
           .s1-title { font-size: 52px; }
         }
       `}</style>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://llmcapsule.ai/" },
+            { "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://llmcapsule.ai/learn" },
+            { "@type": "ListItem", "position": 3, "name": "What Is an AI Data Capsule?", "item": "https://llmcapsule.ai/learn/what-is-ai-data-capsule" }
+          ]
+        })}}
+      />
       <section className="s1-section">
         <div className="s1-inner">
           <div className="s1-container">
