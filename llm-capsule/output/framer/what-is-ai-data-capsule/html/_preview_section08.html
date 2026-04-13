@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section08_Related</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #ffffff; -webkit-font-smoothing: antialiased; }
+
+    .s8-section { width: 100%; padding: 32px 0 64px; background-color: #ffffff; }
+    .s8-container { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 16px; box-sizing: border-box; }
+    .s8-title-row { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; margin-top: 24px; }
+    .s8-title-icon { color: #5690D4; flex-shrink: 0; }
+    .s8-title-text { font-size: 20px; font-weight: 600; color: #0f0f0f; line-height: 1.2; }
+    .s8-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .s8-card {
+      background-color: #141414;
+      border: 1px solid #303135;
+      color: #ffffff;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.04);
+      display: flex; align-items: center; gap: 16px;
+      text-decoration: none; cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .s8-card:hover { background-color: #171719; }
+    .s8-card-icon { flex-shrink: 0; color: #5690D4; }
+    .s8-card-title { font-size: 16px; font-weight: 600; color: #ffffff; }
+
+    @media (min-width: 768px) { .s8-container { padding: 0 32px; } .s8-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1440px) { .s8-container { padding: 0; } }
+  </style>
+</head>
+<body>
+  <section class="s8-section">
+    <div class="s8-container">
+      <div class="s8-title-row">
+        <span class="s8-title-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+        </span>
+        <span class="s8-title-text">Related</span>
+      </div>
+      <div class="s8-grid">
+        <a href="product.html" class="s8-card">
+          <span class="s8-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            </svg>
+          </span>
+          <span class="s8-card-title">Product Overview</span>
+        </a>
+        <a href="architecture.html" class="s8-card">
+          <span class="s8-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </span>
+          <span class="s8-card-title">Architecture</span>
+        </a>
+        <a href="trust.html" class="s8-card">
+          <span class="s8-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </span>
+          <span class="s8-card-title">Trust &amp; Compliance</span>
+        </a>
+        <a href="request-pov.html" class="s8-card">
+          <span class="s8-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+          <span class="s8-card-title">Request a Demo</span>
+        </a>
+        <a href="why-redaction-breaks-enterprise-ai-workflows.html" class="s8-card">
+          <span class="s8-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </span>
+          <span class="s8-card-title">Why Redaction Breaks AI</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

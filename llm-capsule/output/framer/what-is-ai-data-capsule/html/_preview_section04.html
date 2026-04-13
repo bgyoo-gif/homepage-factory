@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section04_Definition</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #ffffff; -webkit-font-smoothing: antialiased; word-break: keep-all; overflow-wrap: break-word; }
+
+    .s4-section { width: 100%; padding: 32px 0 48px; background-color: #ffffff; }
+    .s4-container { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 16px; box-sizing: border-box; }
+    .s4-section-header {
+      margin-bottom: 24px; padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9; text-align: center;
+    }
+    .s4-section-header h2 { font-size: 20px; font-weight: 700; line-height: 1.2; letter-spacing: -0.5px; color: #0f0f0f; }
+    .s4-label-brand { color: #5690D4; }
+    .s4-banner {
+      padding: 24px 32px;
+      border-radius: 18px;
+      border-top: 1px solid #e6e7e9;
+      border-bottom: 1px solid #e6e7e9;
+      background-color: rgba(24, 33, 232, 0.06);
+      margin-top: 32px;
+    }
+    .s4-banner-label {
+      font-family: "Fragment Mono", monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9c9c9c;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .s4-banner-text { font-size: 16px; color: #0f0f0f; line-height: 1.7; margin: 0; text-wrap: pretty; }
+
+    @media (min-width: 768px) { .s4-container { padding: 0 32px; } .s4-section-header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .s4-section-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .s4-container { padding: 0; } .s4-section-header h2 { font-size: 28px; } }
+    @media (max-width: 767px) { .s4-section-header { text-align: left; } }
+  </style>
+</head>
+<body>
+  <section class="s4-section">
+    <div class="s4-container">
+      <div class="s4-section-header">
+        <h2><span class="s4-label-brand">Definition</span></h2>
+      </div>
+      <div class="s4-banner">
+        <span class="s4-banner-label">AI Data Capsule</span>
+        <p class="s4-banner-text">An AI data capsule is a locally generated AI enablement layer that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
