@@ -187,6 +187,35 @@ addPropertyControls(SectionNN_Name, {
 
 ### Step 4: 자가 검증 (건너뛰기 금지)
 
+TSX 저장 후 아래 bash를 **모두 실행**하고, 1건이라도 위반 시 수정 후 재검증:
+
+```bash
+FILE="[생성한 TSX 파일 경로]"
+
+# 1. @media 사용 금지 (Container Queries만)
+grep -c '@media' "$FILE"
+
+# 2. CTA band에 max-width 1440 없어야 함
+grep 'cta.*band.*max-width.*1440\|cta.*band.*1440.*max-width' "$FILE"
+
+# 3. article container max-width가 1080px인지
+grep 'max-width.*860\|860.*max-width' "$FILE"
+
+# 4. section padding이 60px인지 (64/48/80 금지)
+grep 'padding: 64px\|padding: 48px\|padding: 80px' "$FILE"
+
+# 5. hero title 반응형 (32/40/48/64px 이외 금지)
+grep 'hero.*title.*font-size' "$FILE" | grep -v '32px\|40px\|48px\|64px'
+
+# 6. nav/footer 없어야 함
+grep -c 'nav\b.*role\|<footer\|<nav ' "$FILE"
+
+# 7. 860px 잔여 (주석 포함)
+grep '860' "$FILE"
+```
+
+→ 모든 검증을 통과한 후에만 커밋 + viewer 업데이트로 진행.
+
 ---
 
 ## 절대 규칙
