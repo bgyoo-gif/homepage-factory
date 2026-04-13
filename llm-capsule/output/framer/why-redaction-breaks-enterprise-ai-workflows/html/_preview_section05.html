@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 05 Comparison Table</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #ffffff; -webkit-font-smoothing: antialiased; }
+
+    .s5-section { width: 100%; padding: 32px 0; background-color: #ffffff; }
+    .s5-container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+    .s5-section-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #e6e7e9; text-align: center; }
+    .s5-section-header h2 { font-size: 20px; font-weight: 700; color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px; text-wrap: balance; }
+    .s5-product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+    .s5-brand { color: #5690D4; }
+    .s5-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0; }
+    .s5-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .s5-table thead { background-color: #f7f7f7; }
+    .s5-table th { padding: 14px 16px; text-align: left; font-weight: 600; font-size: 12px; color: #0f0f0f; border-bottom: 2px solid #e6e7e9; }
+    .s5-table th.highlight { background-color: rgba(24,33,232,0.04); color: #1821E8; }
+    .s5-table td { padding: 12px 16px; border-bottom: 1px solid #e6e7e9; color: #636363; vertical-align: top; }
+    .s5-table td.highlight { background-color: rgba(24,33,232,0.04); color: #1821E8; font-weight: 500; }
+    .s5-check { color: #0e824c; font-weight: 600; }
+    .s5-cross { color: #ff3030; font-weight: 600; }
+
+    @media (min-width: 768px) { .s5-container { padding: 0 32px; } .s5-section-header h2 { font-size: 22px; } .s5-section { padding: 40px 0; } }
+    @media (min-width: 1024px) { .s5-section-header h2 { font-size: 24px; } .s5-section { padding: 60px 0; } }
+    @media (min-width: 1440px) { .s5-container { padding: 0 120px; max-width: 1440px; } .s5-section-header h2 { font-size: 28px; } .s5-section { padding: 60px 0; } }
+  </style>
+</head>
+<body>
+  <section class="s5-section">
+    <div class="s5-container">
+      <div class="s5-section-header">
+        <h2><span class="s5-product">LLM Capsule</span> vs <span class="s5-brand">Redaction Tools</span></h2>
+      </div>
+      <div class="s5-table-wrap">
+        <table class="s5-table">
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th>Redaction / Masking Tools</th>
+              <th class="highlight"><span class="s5-product">LLM Capsule</span> (AI Enablement Data Layer)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Data protection</td><td>Permanent removal</td><td class="highlight">Reversible encapsulation</td></tr>
+            <tr><td>Document structure</td><td>Destroyed</td><td class="highlight">Preserved</td></tr>
+            <tr><td>Entity relationships</td><td>Collapsed</td><td class="highlight">Maintained</td></tr>
+            <tr><td>AI output usability</td><td>Abstracted, generic</td><td class="highlight">Restored, enterprise-ready</td></tr>
+            <tr><td>Output restoration</td><td><span class="s5-cross">✗</span> None</td><td class="highlight"><span class="s5-check">✓</span> Local restoration</td></tr>
+            <tr><td>Workflow automation</td><td>Requires manual post-processing</td><td class="highlight">End-to-end automated</td></tr>
+            <tr><td>Context-aware data control</td><td><span class="s5-cross">✗</span></td><td class="highlight"><span class="s5-check">✓</span></td></tr>
+            <tr><td>Enterprise confidentiality control</td><td>Partial</td><td class="highlight">Complete</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
