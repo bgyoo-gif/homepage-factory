@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 03 Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f0f0f0; font-family: "DM Sans", sans-serif; }
+
+    .s3-section {
+      width: 100%;
+      padding: 32px 0;
+      background-color: #ffffff;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px)  { .s3-section { padding: 60px 0; } }
+    @media (min-width: 1440px) { .s3-section { padding: 60px 0; } }
+
+    .s3-container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+
+    @media (min-width: 768px)  { .s3-container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .s3-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .s3-container { padding: 0 120px; max-width: 1440px; } }
+
+    .s3-section-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+
+    @media (max-width: 767px) { .s3-section-header { text-align: left; } }
+
+    .s3-section-header h2 {
+      font-family: "DM Sans", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    @media (min-width: 768px)  { .s3-section-header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .s3-section-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .s3-section-header h2 { font-size: 28px; } }
+
+    .s3-text--brand { color: #5690D4; }
+
+    .s3-paragraph {
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      color: #636363;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .s3-paragraph:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+  <section class="s3-section">
+    <div class="s3-container">
+      <div class="s3-section-header">
+        <h2><span class="s3-text--brand">Explanation</span></h2>
+      </div>
+      <p class="s3-paragraph">Not all data carries the same sensitivity in every context. A company name in a press release is public. The same company name in an M&amp;A target list is highly sensitive. Enterprise context control enables organizations to define protection policies that reflect these contextual differences.</p>
+      <p class="s3-paragraph">This goes beyond PII detection. Enterprise context control covers trade secrets, financial terms, strategic data, internal metrics, and any organization-specific sensitivity category — providing true enterprise confidentiality control.</p>
+    </div>
+  </section>
+</body>
+</html>
