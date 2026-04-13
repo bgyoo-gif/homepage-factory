@@ -221,7 +221,7 @@ export default function LocalRestorationVsAnonymization({
         }
         @container (min-width: 768px)  { .lrva-article-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .lrva-article-container { padding: 0 32px; } }
-        @container (min-width: 1440px) { .lrva-article-container { padding: 0; } }
+        
 
         /* ── Full-width container (1440px) ──────────────────────────── */
         .lrva-container {

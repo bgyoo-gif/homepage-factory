@@ -66,7 +66,7 @@ export default function Section06_RelatedPages({
         }
         @container (min-width: 768px)  { .s6-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .s6-container { padding: 0 32px; } }
-        @container (min-width: 1440px) { .s6-container { padding: 0; } }
+        
 
         .s6-title-icon {
           display: flex;

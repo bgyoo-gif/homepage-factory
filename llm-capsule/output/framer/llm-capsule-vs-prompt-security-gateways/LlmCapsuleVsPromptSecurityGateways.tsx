@@ -244,7 +244,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
         }
         @container (min-width: 768px)  { .vs-article-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .vs-article-container { padding: 0 32px; } }
-        @container (min-width: 1440px) { .vs-article-container { padding: 0; } }
+        
 
         /* ── Full-width container (CTA) ───────────────────────────── */
         .vs-container {

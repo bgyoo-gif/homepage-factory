@@ -105,7 +105,7 @@ export default function Section03_Problem({
           .s3-section-header h2 { font-size: 24px; }
         }
         @container (min-width: 1440px) {
-          .s3-container { padding: 0; }
+          .s3-container { padding: 0 120px; max-width: 1440px; }
           .s3-section-header h2 { font-size: 28px; }
           .s3-section-header { text-align: center; }
         }

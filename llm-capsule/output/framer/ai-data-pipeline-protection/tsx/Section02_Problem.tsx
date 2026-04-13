@@ -50,7 +50,7 @@ export default function Section02_Problem({
         }
         @container (min-width: 768px)  { .s2-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .s2-container { padding: 0 32px; } }
-        @container (min-width: 1440px) { .s2-container { padding: 0; } }
+        
 
         .s2-header {
           margin-bottom: 24px;

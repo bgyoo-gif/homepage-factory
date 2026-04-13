@@ -194,7 +194,7 @@ export default function Section06_RelatedTerms({
           .s6-section-title { font-size: 24px; }
         }
         @container (min-width: 1440px) {
-          .s6-container { padding: 0; }
+          .s6-container { padding: 0 120px; max-width: 1440px; }
           .s6-section-title { font-size: 28px; }
         }
         @container (max-width: 767px) {

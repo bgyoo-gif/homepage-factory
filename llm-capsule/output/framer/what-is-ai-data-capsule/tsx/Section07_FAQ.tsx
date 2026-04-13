@@ -217,7 +217,7 @@ export default function Section07_FAQ({
           .s7-section-header h2 { font-size: 24px; }
         }
         @container (min-width: 1440px) {
-          .s7-container { padding: 0; }
+          .s7-container { padding: 0 120px; max-width: 1440px; }
           .s7-section-header h2 { font-size: 28px; }
         }
       `}</style>

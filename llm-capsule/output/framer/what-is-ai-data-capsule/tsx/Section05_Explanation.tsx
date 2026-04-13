@@ -195,7 +195,7 @@ export default function Section05_Explanation({
           .s5-section-header h2 { font-size: 24px; }
         }
         @container (min-width: 1440px) {
-          .s5-container { padding: 0; }
+          .s5-container { padding: 0 120px; max-width: 1440px; }
           .s5-section-header h2 { font-size: 28px; }
         }
       `}</style>

@@ -249,7 +249,7 @@ export default function StructurePreservingDocumentProcessing({
         }
         @container (min-width: 768px)  { .spdp-article-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .spdp-article-container { padding: 0 32px; } }
-        @container (min-width: 1440px) { .spdp-article-container { padding: 0; } }
+        
 
         /* ── Breadcrumb ──────────────────────────────────────────── */
         .spdp-breadcrumb {

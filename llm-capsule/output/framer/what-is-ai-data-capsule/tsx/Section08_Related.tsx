@@ -182,9 +182,7 @@ export default function Section08_Related({
           .s8-container { padding: 0 32px; }
         }
         @container (min-width: 1440px) { .s8-container { padding: 0 120px; max-width: 1440px; } }
-        @container (min-width: 1440px) {
-          .s8-container { padding: 0; }
-        }
+        
       `}</style>
       <section className="s8-section">
         <div className="s8-inner">

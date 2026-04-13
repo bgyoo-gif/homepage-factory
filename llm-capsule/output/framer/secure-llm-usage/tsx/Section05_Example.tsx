@@ -96,7 +96,7 @@ export default function Section05_Example({
           .s5-card { padding: 32px; }
         }
         @container (min-width: 1440px) {
-          .s5-container { padding: 0; }
+          .s5-container { padding: 0 120px; max-width: 1440px; }
           .s5-section-title { font-size: 28px; }
         }
         @container (max-width: 767px) {

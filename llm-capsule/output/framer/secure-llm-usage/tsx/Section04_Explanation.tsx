@@ -88,7 +88,7 @@ export default function Section04_Explanation({
           .s4-section-title { font-size: 24px; }
         }
         @container (min-width: 1440px) {
-          .s4-container { padding: 0; }
+          .s4-container { padding: 0 120px; max-width: 1440px; }
           .s4-section-title { font-size: 28px; }
         }
         @container (max-width: 767px) {

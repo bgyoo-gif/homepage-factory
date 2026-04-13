@@ -125,7 +125,7 @@ export default function Section04_Definition({
           .s4-section-header h2 { font-size: 24px; }
         }
         @container (min-width: 1440px) {
-          .s4-container { padding: 0; }
+          .s4-container { padding: 0 120px; max-width: 1440px; }
           .s4-section-header h2 { font-size: 28px; }
         }
       `}</style>

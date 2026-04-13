@@ -109,7 +109,7 @@ export default function Section05_HowItWorks({
         }
         @container (min-width: 1440px) { .s5-container { padding: 0 120px; max-width: 1440px; } }
         @container (min-width: 1440px) {
-          .s5-container { padding: 0; }
+          .s5-container { padding: 0 120px; max-width: 1440px; }
           .s5-section { padding: 60px 0; }
         }
 

@@ -67,7 +67,7 @@ export default function Section01_Hero({
         }
         @container (min-width: 768px)  { .s1-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .s1-container { padding: 0 32px; } }
-        @container (min-width: 1440px) { .s1-container { padding: 0; } }
+        
 
         .s1-breadcrumb {
           display: flex;

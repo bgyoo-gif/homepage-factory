@@ -77,7 +77,7 @@ export default function Section02_Screenshot({
         }
         @container (min-width: 1440px) { .s2-container { padding: 0 120px; max-width: 1440px; } }
         @container (min-width: 1440px) {
-          .s2-container { padding: 0; }
+          .s2-container { padding: 0 120px; max-width: 1440px; }
           .s2-frame { border-radius: 40px 40px 0 0; }
         }
 

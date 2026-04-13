@@ -97,7 +97,7 @@ export default function Section01_Hero({
           .s1-title { font-size: 44px; }
         }
         @container (min-width: 1440px) {
-          .s1-container { padding: 0; }
+          .s1-container { padding: 0 120px; max-width: 1440px; }
           .s1-title { font-size: 52px; }
         }
       `}</style>

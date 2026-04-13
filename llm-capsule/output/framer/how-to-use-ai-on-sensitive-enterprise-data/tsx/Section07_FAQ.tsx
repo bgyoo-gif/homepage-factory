@@ -144,7 +144,7 @@ export default function Section07_FAQ({
         }
         @container (min-width: 1440px) { .s7-container { padding: 0 120px; max-width: 1440px; } }
         @container (min-width: 1440px) {
-          .s7-container { padding: 0; }
+          .s7-container { padding: 0 120px; max-width: 1440px; }
           .s7-section { padding: 60px 0; }
         }
 

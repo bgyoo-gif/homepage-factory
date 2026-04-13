@@ -293,7 +293,7 @@ export default function SecureEnterpriseAiDataWorkflows({
         }
         @container (min-width: 768px)  { .seadw-article-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .seadw-article-container { padding: 0 32px; } }
-        @container (min-width: 1440px) { .seadw-article-container { padding: 0; } }
+        
 
         /* ── Buttons ────────────────────────────────────────────── */
         .seadw-btn {

@@ -136,7 +136,7 @@ export default function Section06_EnterpriseExample({
           .s6-card { padding: 32px; }
         }
         @container (min-width: 1440px) {
-          .s6-container { padding: 0; }
+          .s6-container { padding: 0 120px; max-width: 1440px; }
           .s6-section-header h2 { font-size: 28px; }
         }
       `}</style>
