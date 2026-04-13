@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 02: Problem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #ffffff; }
+
+    .s2-section {
+      width: 100%;
+      padding: 32px 0;
+      background-color: #ffffff;
+    }
+    @media (min-width: 768px)  { .s2-section { padding: 48px 0; } }
+    @media (min-width: 1440px) { .s2-section { padding: 64px 0; } }
+
+    .s2-container {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+    @media (min-width: 768px)  { .s2-container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .s2-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .s2-container { padding: 0; } }
+
+    .s2-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .s2-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    @media (min-width: 768px)  { .s2-header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .s2-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .s2-header h2 { font-size: 28px; } }
+
+    .s2-brand { color: #5690D4; }
+
+    .s2-paragraph {
+      font-size: 16px;
+      color: #636363;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .s2-paragraph:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+  <section class="s2-section" id="section-3">
+    <div class="s2-container">
+      <div class="s2-header">
+        <h2><span class="s2-brand">Problem</span></h2>
+      </div>
+      <p class="s2-paragraph">
+        Enterprise AI pipelines move data through multiple stages and systems. Documents are ingested from internal sources, pre-processed for AI consumption, sent to language models, processed, and outputs are routed back to business systems. Each stage represents a potential exposure point.
+      </p>
+      <p class="s2-paragraph">
+        Point solutions — API gateways that filter prompts, output scanners that check responses — address individual stages but leave gaps between them. AI data pipeline protection requires a continuous data-layer approach.
+      </p>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 06: Related Pages</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #ffffff; }
+
+    .s6-section {
+      width: 100%;
+      padding: 32px 0;
+      background-color: #ffffff;
+    }
+    @media (min-width: 768px)  { .s6-section { padding: 48px 0; } }
+    @media (min-width: 1440px) { .s6-section { padding: 64px 0; } }
+
+    .s6-container {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+    @media (min-width: 768px)  { .s6-container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .s6-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .s6-container { padding: 0; } }
+
+    .s6-title-icon {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .s6-title-icon__icon {
+      color: #5690D4;
+      flex-shrink: 0;
+    }
+    .s6-title-icon__text {
+      font-size: 20px;
+      font-weight: 600;
+      color: #0f0f0f;
+      line-height: 1.2;
+    }
+
+    .s6-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) { .s6-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .s6-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background-color: #141414;
+      border: 1px solid #303135;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.04);
+      color: #ffffff;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+    .s6-card:hover { background-color: #171719; }
+
+    .s6-card__icon {
+      flex-shrink: 0;
+      color: #5690D4;
+      width: 24px;
+      height: 24px;
+    }
+
+    .s6-card__title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .ds-icon {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+  <section class="s6-section" id="section-7">
+    <div class="s6-container">
+      <div class="s6-title-icon">
+        <span class="s6-title-icon__icon">
+          <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+        </span>
+        <span class="s6-title-icon__text">Related</span>
+      </div>
+
+      <div class="s6-grid">
+        <a href="product.html" class="s6-card">
+          <span class="s6-card__icon">
+            <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            </svg>
+          </span>
+          <span class="s6-card__title">Product Overview</span>
+        </a>
+        <a href="architecture.html" class="s6-card">
+          <span class="s6-card__icon">
+            <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </span>
+          <span class="s6-card__title">Architecture</span>
+        </a>
+        <a href="trust.html" class="s6-card">
+          <span class="s6-card__icon">
+            <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </span>
+          <span class="s6-card__title">Trust &amp; Compliance</span>
+        </a>
+        <a href="request-pov.html" class="s6-card">
+          <span class="s6-card__icon">
+            <svg class="ds-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+          <span class="s6-card__title">Request a Demo</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
