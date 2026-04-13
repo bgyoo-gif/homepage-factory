@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section 04 — Explanation</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f2f2f2; }
+
+    .s4-section {
+      width: 100%;
+      padding: 32px 0;
+      background-color: #ffffff;
+    }
+    .s4-container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+    .s4-section-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .s4-section-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    .s4-brand-text { color: #5690D4; }
+    .s4-product-name { font-family: "Oxanium", sans-serif; font-weight: 700; }
+    .s4-intro {
+      font-size: 16px;
+      color: #636363;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      word-break: keep-all;
+    }
+    .s4-bullet-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .s4-bullet-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #0f0f0f;
+    }
+    .s4-bullet-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .s4-bullet-icon::before {
+      content: "•";
+      color: #5690D4;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1;
+    }
+    .s4-banner {
+      margin-top: 24px;
+      padding: 24px 32px;
+      border-radius: 18px;
+      border-top: 1px solid #e6e7e9;
+      border-bottom: 1px solid #e6e7e9;
+      background-color: rgba(24, 33, 232, 0.06);
+    }
+    .s4-banner p {
+      font-size: 16px;
+      color: #0f0f0f;
+      line-height: 1.7;
+      margin: 0;
+      word-break: keep-all;
+    }
+
+    @media (min-width: 768px) {
+      .s4-container { padding: 0 32px; }
+      .s4-section-header h2 { font-size: 22px; }
+      .s4-section { padding: 60px 0; }
+    }
+    @media (min-width: 1024px) {
+      .s4-section-header h2 { font-size: 24px; }
+    }
+    @media (min-width: 1440px) {
+      .s4-container { padding: 0 120px; max-width: 1440px; }
+      .s4-section-header h2 { font-size: 28px; }
+      .s4-section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+  <section class="s4-section" id="section-5">
+    <div class="s4-container">
+      <div class="s4-section-header">
+        <h2><span class="s4-brand-text">Explanation</span></h2>
+      </div>
+      <p class="s4-intro"><span class="s4-product-name">LLM Capsule</span> enables enterprise AI adoption through a 3+2 architecture — three core capabilities and two extended capabilities:</p>
+      <ul class="s4-bullet-list">
+        <li class="s4-bullet-item">
+          <span class="s4-bullet-icon"></span>
+          <span><strong>Core 1: Zero Exposure.</strong> Original sensitive data never leaves the enterprise environment. Only encapsulated representations cross the trust boundary to AI services. The AI provider processes useful data but cannot reconstruct original sensitive values.</span>
+        </li>
+        <li class="s4-bullet-item">
+          <span class="s4-bullet-icon"></span>
+          <span><strong>Core 2: Restoration.</strong> AI results are automatically restored locally with original enterprise data. The mapping between encapsulated and original values is stored locally and applied to AI outputs within the enterprise environment. This produces enterprise-ready results without manual reconstruction.</span>
+        </li>
+        <li class="s4-bullet-item">
+          <span class="s4-bullet-icon"></span>
+          <span><strong>Core 3: Enterprise Context.</strong> Sensitive elements are identified using context-aware data control and replaced with structure-preserving representations. Unlike masking, encapsulation is reversible and policy-driven — what counts as sensitive is configurable per department, document type, and workflow.</span>
+        </li>
+        <li class="s4-bullet-item">
+          <span class="s4-bullet-icon"></span>
+          <span><strong>+1: Structure-Preserving.</strong> Document layout, entity relationships, and semantic context are maintained during encapsulation. AI models receive structurally intact documents, producing high-quality outputs.</span>
+        </li>
+        <li class="s4-bullet-item">
+          <span class="s4-bullet-icon"></span>
+          <span><strong>+2: Cross-Model Execution.</strong> Because protection operates at the data layer before transmission, it works with any external AI service — ChatGPT, Claude, Gemini, or any LLM API — without model-specific integration.</span>
+        </li>
+      </ul>
+      <div class="s4-banner">
+        <p><strong><span class="s4-product-name">LLM Capsule</span></strong> is an AI enablement data layer and plugin. It enables AI adoption by protecting data at the data layer — not by blocking AI, but by making AI safe to use on real enterprise data.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section 02 — Problem</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f2f2f2; }
+
+    .s2-section {
+      width: 100%;
+      padding: 32px 0;
+      background-color: #ffffff;
+    }
+    .s2-container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+    .s2-section-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .s2-section-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    .s2-brand-text { color: #5690D4; }
+    .s2-paragraph {
+      font-size: 16px;
+      color: #636363;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .s2-paragraph:last-child { margin-bottom: 0; }
+
+    @media (min-width: 768px) {
+      .s2-container { padding: 0 32px; }
+      .s2-section-header h2 { font-size: 22px; }
+      .s2-section { padding: 60px 0; }
+    }
+    @media (min-width: 1024px) {
+      .s2-section-header h2 { font-size: 24px; }
+    }
+    @media (min-width: 1440px) {
+      .s2-container { padding: 0 120px; max-width: 1440px; }
+      .s2-section-header h2 { font-size: 28px; }
+      .s2-section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+  <section class="s2-section" id="section-3">
+    <div class="s2-container">
+      <div class="s2-section-header">
+        <h2><span class="s2-brand-text">Problem</span></h2>
+      </div>
+      <p class="s2-paragraph">Every enterprise that sends data to an external AI service creates a data exposure event. Even when AI providers offer data processing agreements and claim not to use customer data for training, the data still transits external infrastructure, is processed by external compute, and generates logs and metadata in external systems.</p>
+      <p class="s2-paragraph">For regulated enterprises, this exposure is often non-negotiable — not because of trust issues with AI providers, but because of regulatory mandates, contractual obligations, and internal governance requirements that prohibit sensitive data from leaving controlled environments.</p>
+    </div>
+  </section>
+</body>
+</html>
