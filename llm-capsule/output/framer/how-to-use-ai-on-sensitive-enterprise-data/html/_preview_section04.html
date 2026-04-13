@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 04: Requirements for Secure Enterprise AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #ffffff; }
+
+    .s4-section {
+      width: 100%;
+      padding: 32px 0;
+      background-color: #ffffff;
+      overflow: hidden;
+    }
+    .s4-container {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+    .s4-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .s4-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin: 0;
+    }
+    .s4-highlight { color: #5690D4; }
+    .s4-intro {
+      font-size: 16px;
+      color: #636363;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      word-break: keep-all;
+    }
+    .s4-bullet {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .s4-bullet__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #0f0f0f;
+      word-break: keep-all;
+    }
+    .s4-bullet__icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .s4-bullet__icon::before {
+      content: "•";
+      color: #5690D4;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    @media (max-width: 767px) {
+      .s4-header { text-align: left; }
+    }
+    @media (min-width: 768px) {
+      .s4-container { padding: 0 32px; }
+      .s4-header h2 { font-size: 22px; }
+    }
+    @media (min-width: 1024px) {
+      .s4-header h2 { font-size: 24px; }
+    }
+    @media (min-width: 1440px) {
+      .s4-container { padding: 0; }
+      .s4-section { padding: 64px 0; }
+      .s4-header h2 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="s4-section">
+    <div class="s4-container">
+      <div class="s4-header">
+        <h2>The Requirements for <span class="s4-highlight">Secure Enterprise AI</span></h2>
+      </div>
+      <p class="s4-intro">
+        Secure LLM usage on sensitive enterprise data requires three capabilities working together:
+      </p>
+      <ul class="s4-bullet">
+        <li class="s4-bullet__item">
+          <span class="s4-bullet__icon"></span>
+          <span><strong>1. Pre-processing protection.</strong> Sensitive data must be identified and replaced before it leaves the enterprise. This is not simple keyword matching &#8212; enterprise documents contain context-dependent sensitivity. A name in a contract carries different risk than the same name in a public directory. Structure-preserving processing ensures the document&#8217;s semantic relationships remain intact for AI comprehension.</span>
+        </li>
+        <li class="s4-bullet__item">
+          <span class="s4-bullet__icon"></span>
+          <span><strong>2. Model-agnostic processing.</strong> The AI enablement layer must work with any LLM &#8212; not just one provider&#8217;s API. Enterprises use multiple AI models for different tasks. The AI enablement data layer must operate independently of the model layer.</span>
+        </li>
+        <li class="s4-bullet__item">
+          <span class="s4-bullet__icon"></span>
+          <span><strong>3. Output Restoration (Restoration).</strong> AI results are restored locally. Without this, AI outputs are abstracted and unusable. Enterprise AI enablement requires that outputs contain real names, real account numbers, and real references &#8212; restored locally after AI processing completes.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>

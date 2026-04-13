@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 05: How LLM Capsule Enables This</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #ffffff; }
+
+    .s5-section {
+      width: 100%;
+      padding: 32px 0;
+      background-color: #ffffff;
+      overflow: hidden;
+    }
+    .s5-container {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+    .s5-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .s5-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin: 0;
+    }
+    .s5-brand {
+      font-family: "Oxanium", sans-serif;
+      font-weight: 700;
+    }
+    .s5-paragraph {
+      font-size: 16px;
+      color: #636363;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      word-break: keep-all;
+    }
+    .s5-paragraph:last-child { margin-bottom: 0; }
+    .s5-banner {
+      padding: 24px 32px;
+      border-radius: 18px;
+      border-top: 1px solid #e6e7e9;
+      border-bottom: 1px solid #e6e7e9;
+      background-color: rgba(24, 33, 232, 0.06);
+      font-size: 16px;
+      line-height: 1.7;
+      text-align: center;
+      color: #0f0f0f;
+      word-break: keep-all;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 767px) {
+      .s5-header { text-align: left; }
+    }
+    @media (min-width: 768px) {
+      .s5-container { padding: 0 32px; }
+      .s5-header h2 { font-size: 22px; }
+    }
+    @media (min-width: 1024px) {
+      .s5-header h2 { font-size: 24px; }
+    }
+    @media (min-width: 1440px) {
+      .s5-container { padding: 0; }
+      .s5-section { padding: 64px 0; }
+      .s5-header h2 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="s5-section">
+    <div class="s5-container">
+      <div class="s5-header">
+        <h2>How <span class="s5-brand">LLM Capsule</span> Enables This</h2>
+      </div>
+      <p class="s5-paragraph">
+        <span class="s5-brand">LLM Capsule</span> operates as an AI enablement data layer between enterprise data systems and external AI services. The process follows four steps:
+      </p>
+      <p class="s5-paragraph">
+        <strong>Step 1: Sensitive Detection.</strong> <span class="s5-brand">LLM Capsule</span> automatically identifies sensitive elements within enterprise documents &#8212; names, account numbers, dates, financial figures, project codes, and organization-defined entities beyond standard PII.
+      </p>
+      <p class="s5-paragraph">
+        <strong>Step 2: Local Encapsulation.</strong> Detected sensitive elements are replaced with structure-preserving tokens locally. The document retains its full semantic structure &#8212; tables, references, hierarchies &#8212; so AI models can process it accurately. The mapping between original values and tokens is stored locally and never transmitted.
+      </p>
+      <p class="s5-paragraph">
+        <strong>Step 3: AI Processing.</strong> Only the encapsulated document crosses the trust boundary. The AI provider receives a structurally complete document with protected values. It can summarize, extract, classify, and analyze &#8212; but never sees the original sensitive data.
+      </p>
+      <p class="s5-paragraph">
+        <strong>Step 4: Local Restoration.</strong> AI outputs are restored locally using the stored mapping. Real names, figures, dates, and references return automatically. The result is a business-ready document that can be used directly in enterprise workflows without manual post-processing.
+      </p>
+      <div class="s5-banner">
+        <strong>Key principle:</strong> Your data stays on-premise. Only capsules travel. Outputs come back complete.
+      </div>
+    </div>
+  </section>
+</body>
+</html>

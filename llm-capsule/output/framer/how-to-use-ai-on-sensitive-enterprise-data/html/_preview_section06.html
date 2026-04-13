@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 06: Enterprise Use Cases</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #ffffff; }
+
+    .s6-section {
+      width: 100%;
+      padding: 32px 0;
+      background-color: #ffffff;
+      overflow: hidden;
+    }
+    .s6-container {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+    .s6-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .s6-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin: 0;
+    }
+    .s6-highlight { color: #5690D4; }
+    .s6-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .s6-card {
+      background-color: #ffffff;
+      border-radius: 18px;
+      border: 1px solid #e6e7e9;
+      padding: 24px;
+      box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+    }
+    .s6-card-title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .s6-card-icon { color: #5690D4; flex-shrink: 0; }
+    .s6-card-icon svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .s6-card-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #0f0f0f;
+      line-height: 1.2;
+    }
+    .s6-card-desc {
+      font-size: 16px;
+      color: #636363;
+      line-height: 1.7;
+      margin: 0;
+      word-break: keep-all;
+    }
+
+    @media (max-width: 767px) {
+      .s6-header { text-align: left; }
+    }
+    @media (min-width: 768px) {
+      .s6-container { padding: 0 32px; }
+      .s6-header h2 { font-size: 22px; }
+      .s6-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .s6-header h2 { font-size: 24px; }
+    }
+    @media (min-width: 1440px) {
+      .s6-container { padding: 0; }
+      .s6-section { padding: 64px 0; }
+      .s6-header h2 { font-size: 28px; }
+      .s6-card { padding: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="s6-section">
+    <div class="s6-container">
+      <div class="s6-header">
+        <h2>Enterprise <span class="s6-highlight">Use Cases</span></h2>
+      </div>
+      <div class="s6-grid">
+        <div class="s6-card">
+          <div class="s6-card-title-row">
+            <span class="s6-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            </span>
+            <span class="s6-card-title">Financial Services</span>
+          </div>
+          <p class="s6-card-desc">Banks and insurance companies process loan applications, claims documents, and regulatory filings through AI &#8212; with all customer PII, account numbers, and financial figures encapsulated before transmission.</p>
+        </div>
+        <div class="s6-card">
+          <div class="s6-card-title-row">
+            <span class="s6-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/></svg>
+            </span>
+            <span class="s6-card-title">Healthcare &amp; Legal</span>
+          </div>
+          <p class="s6-card-desc">Hospitals and law firms use AI for medical record summarization, contract analysis, and case research &#8212; with patient identifiers, client names, and privileged information protected throughout.</p>
+        </div>
+        <div class="s6-card">
+          <div class="s6-card-title-row">
+            <span class="s6-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <span class="s6-card-title">Defense &amp; Public Sector</span>
+          </div>
+          <p class="s6-card-desc">Government agencies and defense organizations draft confidential documents using AI &#8212; with classified terms, operation names, and tactical data encapsulated in air-gapped environments.</p>
+        </div>
+        <div class="s6-card">
+          <div class="s6-card-title-row">
+            <span class="s6-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M4 12a8 8 0 0 1 8-8 8 8 0 0 1 8 8"/><path d="M4 12a8 8 0 0 0 8 8 8 8 0 0 0 8-8"/></svg>
+            </span>
+            <span class="s6-card-title">Telecom &amp; Security</span>
+          </div>
+          <p class="s6-card-desc">Infrastructure companies analyze vulnerability logs and network data with AI &#8212; with sensitive IP addresses, topology details, and security findings protected from external exposure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
