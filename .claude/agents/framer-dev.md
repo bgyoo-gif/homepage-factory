@@ -148,6 +148,19 @@ addPropertyControls(SectionNN_Name, {
 
 **Localization 필수 — 화면에 보이는 모든 텍스트**를 Props + addPropertyControls로 노출한다. 하드코딩 텍스트 금지.
 
+**다국어 COPY 구조 (en/ko/ja/de):**
+```typescript
+const COPY = {
+  en: { title: "English", description: "..." },
+  ko: { title: "", description: "" },  // translator 에이전트가 채움
+  ja: { title: "", description: "" },
+  de: { title: "", description: "" },
+}
+```
+- `lang` prop: `addPropertyControls`에 `options: ["en", "ko", "ja", "de"]`로 노출
+- ko/ja/de 값은 빈 문자열로 두되, en 값은 필수 입력
+- 번역은 translator 에이전트가 후처리로 채운다
+
 ### 3. 스타일 규칙
 
 **CSS는 `<style>` 태그 안에 내장** (외부 CSS 없음).
