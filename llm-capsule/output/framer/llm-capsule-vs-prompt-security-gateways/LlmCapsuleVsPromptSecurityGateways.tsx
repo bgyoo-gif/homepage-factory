@@ -300,8 +300,8 @@ export default function LlmCapsuleVsPromptSecurityGateways({
           padding: 32px 0;
           background-color: ${P.surfaceWhite};
         }
-        @container (min-width: 768px)  { .vs-section--article-body { padding: 48px 0; } }
-        @container (min-width: 1440px) { .vs-section--article-body { padding: 64px 0; } }
+        @container (min-width: 768px)  { .vs-section--article-body { padding: 60px 0; } }
+        @container (min-width: 1440px) { .vs-section--article-body { padding: 60px 0; } }
 
         /* ── Article Section Header ───────────────────────────────── */
         .vs-article-section-header {
