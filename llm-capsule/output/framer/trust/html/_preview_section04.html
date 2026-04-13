@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 04 Audit &amp; Compliance</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background-color: #ffffff; word-break: keep-all; overflow-wrap: break-word; -webkit-font-smoothing: antialiased; }
+    img, video { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .s4-section {
+      width: 100%; overflow: hidden; padding: 60px 0;
+      background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.png');
+      background-size: cover; background-position: center;
+      background-color: #ffffff;
+      position: relative;
+    }
+    .s4-section::before { content: ''; position: absolute; inset: 0; background-color: rgba(255,255,255,0.45); z-index: 0; }
+    .s4-section > * { position: relative; z-index: 1; }
+    @media (max-width: 767px) { .s4-section { background-image: none; } }
+
+    .s4-container { width: 100%; padding: 0 16px; max-width: 100%; margin: 0 auto; position: relative; z-index: 1; }
+    @media (min-width: 768px)  { .s4-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .s4-container { padding: 0 120px; max-width: 1440px; } }
+
+    .s4-section-header { margin-bottom: 48px; text-align: center; padding-bottom: 24px; border-bottom: 1px solid #e6e7e9; }
+    .s4-section-header__title { font-size: 20px; font-weight: 700; color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 16px; text-wrap: balance; }
+    @media (min-width: 768px)  { .s4-section-header__title { font-size: 22px; } }
+    @media (min-width: 1024px) { .s4-section-header__title { font-size: 24px; } }
+    @media (min-width: 1440px) { .s4-section-header__title { font-size: 28px; } }
+    .s4-section-header__description { font-size: 18px; color: #636363; line-height: 1.7; max-width: 100%; margin: 0 auto; word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
+    @media (min-width: 1024px) { .s4-section-header__description { max-width: 720px; } }
+    @media (min-width: 1440px) { .s4-section-header__description { max-width: 1080px; } }
+    .s4-title-highlight { color: #5690D4; }
+
+    .s4-feature-grid { border: 1px solid #e6e7e9; border-radius: 40px; padding: 40px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 48px; background-color: rgba(255,255,255,0.85); }
+    @media (max-width: 767px) { .s4-feature-grid { grid-template-columns: 1fr; padding: 24px; gap: 24px; } }
+
+    .s4-feature-item { display: flex; flex-direction: column; gap: 8px; }
+    .s4-feature-item__icon { color: #5690D4; margin-bottom: 4px; }
+    .s4-feature-item__icon svg { width: 32px; height: 32px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .s4-feature-item__title { font-size: 18px; font-weight: 600; color: #0f0f0f; }
+    .s4-feature-item__description { font-size: 14px; color: #636363; line-height: 1.7; word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
+  </style>
+</head>
+<body>
+  <section class="s4-section">
+    <div class="s4-container">
+      <div class="s4-section-header">
+        <h2 class="s4-section-header__title">Audit &amp; <span class="s4-title-highlight">Compliance</span></h2>
+        <p class="s4-section-header__description">Every encapsulation and restoration event generates a complete audit record.</p>
+      </div>
+
+      <div class="s4-feature-grid">
+        <div class="s4-feature-item">
+          <div class="s4-feature-item__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+          <h3 class="s4-feature-item__title">Data Protection Records</h3>
+          <p class="s4-feature-item__description">What data was protected and which elements were encapsulated in each transaction.</p>
+        </div>
+        <div class="s4-feature-item">
+          <div class="s4-feature-item__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg></div>
+          <h3 class="s4-feature-item__title">AI Service Tracking</h3>
+          <p class="s4-feature-item__description">Which AI service processed the request and what outputs were restored.</p>
+        </div>
+        <div class="s4-feature-item">
+          <div class="s4-feature-item__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="m9 14 2 2 4-4"/></svg></div>
+          <h3 class="s4-feature-item__title">Governance Support</h3>
+          <p class="s4-feature-item__description">Audit logs support enterprise AI governance, regulatory compliance reporting, and internal security reviews.</p>
+        </div>
+        <div class="s4-feature-item">
+          <div class="s4-feature-item__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18A9 9 0 0 0 12 3z"/><path d="M16 12H8"/><path d="M12 8v8"/></svg></div>
+          <h3 class="s4-feature-item__title">Regulatory Alignment</h3>
+          <p class="s4-feature-item__description">Supports enterprise compliance with GDPR, HIPAA, SOX, and sector-specific data regulations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 06 AWS Marketplace</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background-color: #ffffff; word-break: keep-all; overflow-wrap: break-word; -webkit-font-smoothing: antialiased; }
+    img, video { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .s6-section { width: 100%; overflow: hidden; padding: 60px 0; background-color: #ffffff; }
+    .s6-container { width: 100%; padding: 0 16px; max-width: 100%; margin: 0 auto; }
+    @media (min-width: 768px)  { .s6-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .s6-container { padding: 0 120px; max-width: 1440px; } }
+
+    .s6-banner--full {
+      padding: 48px 24px;
+      text-align: center;
+      border-radius: 40px;
+      background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-wave-teal.png');
+      background-size: cover;
+      background-position: center;
+      background-color: #f7f7f7;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (max-width: 767px) { .s6-banner--full { background-image: none; } }
+    .s6-banner--full::before { content: ''; position: absolute; inset: 0; background-color: rgba(255,255,255,0.45); z-index: 0; }
+    .s6-banner--full > * { position: relative; z-index: 1; }
+    .s6-banner--full p { font-size: 16px; color: #0f0f0f; line-height: 1.7; max-width: 1080px; margin: 0 auto; word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
+    .s6-product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+    .s6-banner__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 24px; position: relative; z-index: 1; }
+    .s6-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border-radius: 9999px; font-weight: 500; cursor: pointer;
+      transition: opacity 0.2s, background-color 0.2s; white-space: nowrap;
+      text-decoration: none; padding: 8px 16px; font-size: 14px;
+      background-color: transparent; color: #0f0f0f; border: 1px solid #e6e7e9;
+    }
+    .s6-btn:hover { background-color: #f7f7f7; }
+  </style>
+</head>
+<body>
+  <section class="s6-section">
+    <div class="s6-container">
+      <div class="s6-banner--full">
+        <p><span class="s6-product">LLM Capsule</span> is available on AWS Marketplace for streamlined enterprise procurement, billing, and deployment within AWS environments.</p>
+        <div class="s6-banner__actions">
+          <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" class="s6-btn">View on AWS Marketplace</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

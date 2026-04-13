@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 03 Data Sovereignty</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background-color: #ffffff; word-break: keep-all; overflow-wrap: break-word; -webkit-font-smoothing: antialiased; }
+    img, video { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .s3-section { width: 100%; overflow: hidden; padding: 60px 0; background-color: #ffffff; }
+    .s3-container { width: 100%; padding: 0 16px; max-width: 100%; margin: 0 auto; }
+    @media (min-width: 768px)  { .s3-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .s3-container { padding: 0 120px; max-width: 1440px; } }
+
+    .s3-section-header { margin-bottom: 48px; text-align: center; padding-bottom: 24px; border-bottom: 1px solid #e6e7e9; }
+    .s3-section-header__title { font-size: 20px; font-weight: 700; color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 16px; text-wrap: balance; }
+    @media (min-width: 768px)  { .s3-section-header__title { font-size: 22px; } }
+    @media (min-width: 1024px) { .s3-section-header__title { font-size: 24px; } }
+    @media (min-width: 1440px) { .s3-section-header__title { font-size: 28px; } }
+    .s3-section-header__description { font-size: 18px; color: #636363; line-height: 1.7; max-width: 100%; margin: 0 auto; word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
+    @media (min-width: 1024px) { .s3-section-header__description { max-width: 720px; } }
+    @media (min-width: 1440px) { .s3-section-header__description { max-width: 1080px; } }
+    .s3-title-highlight { color: #5690D4; }
+    .s3-product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+
+    .s3-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px) { .s3-card-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .s3-card--gradient { padding: 2px; border-radius: 18px; box-shadow: rgba(113, 141, 176, 0.25) 0px 1px 20px 0px; }
+    .s3-card--gradient-indigo { background: linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #E8F0FF 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%); }
+    .s3-card--gradient-blue   { background: linear-gradient(109deg, #BFD8F4 0%, #fff 17%, #E8F0FF 38%, #5690D4 51%, #E2EBF5 73%, #BFD8F4 100%); }
+    .s3-card--gradient__inner { border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 12px; height: 100%; }
+    .s3-card--gradient-indigo .s3-card--gradient__inner { background: linear-gradient(99deg, #ECEEFF 0%, #FCFCFE 58%, #fff 100%); }
+    .s3-card--gradient-blue .s3-card--gradient__inner   { background: linear-gradient(99deg, #EAF0F9 0%, #FCFCFE 58%, #fff 100%); }
+    .s3-card--gradient__icon { color: #5690D4; margin-bottom: 4px; }
+    .s3-card--gradient__icon svg { width: 32px; height: 32px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .s3-card--gradient__title { font-size: 20px; font-weight: 600; color: #0f0f0f; line-height: 1.2; }
+    .s3-card--gradient__description { font-size: 14px; color: #636363; line-height: 1.7; word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
+  </style>
+</head>
+<body>
+  <section class="s3-section">
+    <div class="s3-container">
+      <div class="s3-section-header">
+        <h2 class="s3-section-header__title">Data <span class="s3-title-highlight">Sovereignty</span></h2>
+        <p class="s3-section-header__description"><span class="s3-product">LLM Capsule</span> enforces data sovereignty by design, and this enforcement is what enables AI adoption in regulated environments.</p>
+      </div>
+
+      <div class="s3-card-grid">
+        <div class="s3-card--gradient s3-card--gradient-indigo">
+          <div class="s3-card--gradient__inner">
+            <div class="s3-card--gradient__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+            <h3 class="s3-card--gradient__title">Local Encapsulation</h3>
+            <p class="s3-card--gradient__description">The encapsulation engine runs entirely within the enterprise environment. Original sensitive data never leaves the controlled boundary. Only encapsulated representations — with sensitive values replaced by structure-preserving tokens — cross to external AI services.</p>
+          </div>
+        </div>
+        <div class="s3-card--gradient s3-card--gradient-blue">
+          <div class="s3-card--gradient__inner">
+            <div class="s3-card--gradient__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3 class="s3-card--gradient__title">Zero Exposure Guarantee</h3>
+            <p class="s3-card--gradient__description">The mapping between original and encapsulated values is stored locally and never transmitted. Even in the event of a breach at the AI provider, no original enterprise data would be exposed because it was never transmitted.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
