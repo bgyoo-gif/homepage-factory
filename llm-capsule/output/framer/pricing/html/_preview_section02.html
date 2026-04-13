@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 02 Pricing Plans | Pricing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "DM Sans", sans-serif;
+      background-color: #f2f2f2;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .s2-section {
+      width: 100%;
+      padding: 60px 0;
+      background-color: #ffffff;
+      overflow: hidden;
+    }
+    .s2-container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+
+    /* Card Grid */
+    .s2-card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* Gradient Card Wrapper */
+    .s2-card {
+      padding: 2px;
+      border-radius: 18px;
+      box-shadow: rgba(113,141,176,0.25) 0px 1px 20px 0px;
+    }
+    .s2-card--indigo { background: linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #E8F0FF 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%); }
+    .s2-card--blue   { background: linear-gradient(109deg, #BFD8F4 0%, #fff 17%, #E8F0FF 38%, #5690D4 51%, #E2EBF5 73%, #BFD8F4 100%); }
+    .s2-card--silver { background: linear-gradient(109deg, #898989 0%, #fff 17%, #D5D5D5 63%, #F6F5F6 84%, #898989 100%); }
+
+    /* Card Inner */
+    .s2-card__inner {
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background-color: #ffffff;
+    }
+    .s2-card--indigo .s2-card__inner {
+      background: linear-gradient(99deg, #ECEEFF 0%, #FCFCFE 58%, #fff 100%);
+    }
+    .s2-card--blue .s2-card__inner {
+      background: linear-gradient(99deg, #EAF0F9 0%, #FCFCFE 58%, #fff 100%);
+    }
+
+    /* Badge */
+    .s2-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 12px;
+      width: fit-content;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .s2-badge--brand {
+      color: #5690D4;
+      border: 1px solid #5690D4;
+      background-color: transparent;
+    }
+    .s2-badge--gray {
+      color: #636363;
+      border: 1px solid #e0e0e0;
+      background-color: #f7f7f7;
+    }
+
+    /* Price Title */
+    .s2-price {
+      font-size: 30px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    /* Subtitle */
+    .s2-subtitle {
+      font-size: 14px;
+      color: #636363;
+      margin-bottom: 16px;
+    }
+
+    /* Divider */
+    .s2-divider {
+      border: none;
+      border-top: 1px solid #e6e7e9;
+      margin-bottom: 16px;
+    }
+
+    /* Feature List */
+    .s2-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+    .s2-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #0f0f0f;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      text-wrap: pretty;
+    }
+    .s2-check {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0e824c;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    /* Card Actions */
+    .s2-card__actions {
+      margin-top: auto;
+      padding-top: 32px;
+    }
+
+    /* Buttons */
+    .s2-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 9999px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.2s, background-color 0.2s;
+      white-space: nowrap;
+      text-decoration: none;
+      padding: 12px 32px;
+      font-size: 16px;
+      width: 100%;
+    }
+    .s2-btn--primary {
+      background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+      color: #ffffff;
+    }
+    .s2-btn--primary:hover { opacity: 0.88; }
+    .s2-btn--secondary {
+      background-color: transparent;
+      color: #0f0f0f;
+      border: 1px solid #e6e7e9;
+    }
+    .s2-btn--secondary:hover { background-color: #f7f7f7; }
+
+    @media (min-width: 768px) {
+      .s2-container { padding: 0 32px; }
+      .s2-card-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .s2-card-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 1440px) {
+      .s2-container { padding: 0 120px; max-width: 1440px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="s2-section" id="section-2">
+    <div class="s2-container">
+      <div class="s2-card-grid">
+
+        <!-- Card 1: Proof of Value -->
+        <div class="s2-card s2-card--blue">
+          <div class="s2-card__inner">
+            <span class="s2-badge s2-badge--brand">PROOF OF VALUE</span>
+            <p class="s2-price">Custom</p>
+            <p class="s2-subtitle">Evaluation period</p>
+            <hr class="s2-divider">
+            <ul class="s2-features" role="list">
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>Test with your own documents</span></li>
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>Full encapsulation + restoration</span></li>
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>Any LLM provider</span></li>
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>On-premise or cloud deployment</span></li>
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>Dedicated technical support</span></li>
+            </ul>
+            <div class="s2-card__actions">
+              <a href="/request-a-demo" class="s2-btn s2-btn--primary">Request a Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Enterprise -->
+        <div class="s2-card s2-card--indigo">
+          <div class="s2-card__inner">
+            <span class="s2-badge s2-badge--brand">ENTERPRISE</span>
+            <p class="s2-price">Custom</p>
+            <p class="s2-subtitle">Annual license</p>
+            <hr class="s2-divider">
+            <ul class="s2-features" role="list">
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>Unlimited document processing</span></li>
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>Full 3+2 capability set</span></li>
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>Enterprise context control</span></li>
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>Custom deployment model</span></li>
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>Admin console &amp; audit</span></li>
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>Dedicated architecture support</span></li>
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>SLA &amp; enterprise support</span></li>
+            </ul>
+            <div class="s2-card__actions">
+              <a href="/request-a-demo" class="s2-btn s2-btn--primary">Contact Sales</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: AWS Marketplace -->
+        <div class="s2-card s2-card--silver">
+          <div class="s2-card__inner">
+            <span class="s2-badge s2-badge--gray">AWS MARKETPLACE</span>
+            <p class="s2-price">Listed</p>
+            <p class="s2-subtitle">Pay through AWS</p>
+            <hr class="s2-divider">
+            <ul class="s2-features" role="list">
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>Streamlined procurement</span></li>
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>AWS billing integration</span></li>
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>VPC deployment</span></li>
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>Standard feature set</span></li>
+              <li class="s2-feature-item"><span class="s2-check" aria-hidden="true">✓</span><span>AWS support channels</span></li>
+            </ul>
+            <div class="s2-card__actions">
+              <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" class="s2-btn s2-btn--secondary">
+                View on AWS Marketplace
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>
