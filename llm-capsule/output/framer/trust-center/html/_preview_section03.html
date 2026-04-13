@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 03 Data Principles | Trust Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f2f2f2; }
+
+    .s3-section {
+      width: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding: 60px 0;
+      background-color: #ffffff;
+      background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .s3-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255,255,255,0.82);
+      z-index: 0;
+    }
+    @media (max-width: 767px) { .s3-section { background-image: none; } }
+    .s3-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 0 16px;
+      max-width: 1440px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    @media (min-width: 768px)  { .s3-container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .s3-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .s3-container { padding: 0 120px; } }
+
+    .s3-section-header {
+      margin-bottom: 48px;
+      text-align: center;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e6e7e9;
+    }
+    .s3-section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      text-wrap: balance;
+    }
+    @media (min-width: 768px)  { .s3-section-title { font-size: 22px; } }
+    @media (min-width: 1024px) { .s3-section-title { font-size: 24px; } }
+    @media (min-width: 1440px) { .s3-section-title { font-size: 28px; } }
+    .s3-title-highlight { color: #5690D4; }
+    .s3-section-desc {
+      font-size: 18px;
+      color: #636363;
+      line-height: 1.7;
+      max-width: 720px;
+      margin: 0 auto;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .s3-card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) { .s3-card-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .s3-card {
+      background-color: #ffffff;
+      border-radius: 18px;
+      border: 1px solid #e6e7e9;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
+    }
+    @media (min-width: 1440px) { .s3-card { padding: 32px; } }
+    .s3-card-icon {
+      display: block;
+      margin-bottom: 12px;
+      color: #5690D4;
+    }
+    .s3-card-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .s3-card-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0f0f0f;
+      line-height: 1.2;
+    }
+    .s3-card-desc {
+      font-size: 14px;
+      color: #636363;
+      line-height: 1.7;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+  <section class="s3-section" aria-labelledby="s3-data-principles-title">
+    <div class="s3-container">
+      <div class="s3-section-header">
+        <h2 class="s3-section-title" id="s3-data-principles-title">
+          Data Handling <span class="s3-title-highlight">Principles</span>
+        </h2>
+        <p class="s3-section-desc">
+          Zero exposure by design. Original sensitive enterprise data never leaves the enterprise environment.
+        </p>
+      </div>
+
+      <div class="s3-card-grid">
+
+        <article class="s3-card">
+          <span class="s3-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </span>
+          <h3 class="s3-card-title">Zero Exposure by Design</h3>
+          <p class="s3-card-desc">Original sensitive enterprise data never leaves the enterprise environment. Only encapsulated representations cross the trust boundary to external AI services.</p>
+        </article>
+
+        <article class="s3-card">
+          <span class="s3-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/>
+              <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/>
+              <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>
+            </svg>
+          </span>
+          <h3 class="s3-card-title">Local-only Mapping Storage</h3>
+          <p class="s3-card-desc">The mapping between original and encapsulated values is stored entirely within the enterprise environment and never transmitted externally.</p>
+        </article>
+
+        <article class="s3-card">
+          <span class="s3-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+              <path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/>
+            </svg>
+          </span>
+          <h3 class="s3-card-title">Complete Audit Trails</h3>
+          <p class="s3-card-desc">Every encapsulation and restoration event is logged with full audit data supporting enterprise AI governance and regulatory compliance.</p>
+        </article>
+
+        <article class="s3-card">
+          <span class="s3-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </span>
+          <h3 class="s3-card-title">Model-agnostic Protection</h3>
+          <p class="s3-card-desc">Protection operates at the data layer, independent of any specific AI provider, ensuring consistent security regardless of which LLM is used.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>

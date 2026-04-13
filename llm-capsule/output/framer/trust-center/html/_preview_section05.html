@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 05 CTA | Trust Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f2f2f2; }
+
+    .s5-section {
+      width: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding: 0;
+      background-color: #ffffff;
+    }
+
+    .s5-cta-band {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 16px;
+      text-align: center;
+      background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+    }
+    @media (min-width: 768px)  { .s5-cta-band { padding: 100px 32px; } }
+    @media (min-width: 1440px) { .s5-cta-band { padding: 120px 120px; } }
+    .s5-cta-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0,0,0,0.15);
+      z-index: 0;
+    }
+    .s5-cta-band > * { position: relative; z-index: 1; }
+
+    .s5-cta-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    @media (min-width: 1440px) { .s5-cta-inner { max-width: 1080px; } }
+
+    .s5-cta-title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin: 0;
+      text-wrap: balance;
+    }
+    @media (max-width: 767px) { .s5-cta-title { font-size: 36px; } }
+    @media (min-width: 1440px) { .s5-cta-title { font-size: 50px; } }
+    .s5-product-name {
+      font-family: "Oxanium", sans-serif;
+      font-weight: 700;
+    }
+    .s5-cta-desc {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+      margin: 0;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .s5-cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+    @media (max-width: 767px) {
+      .s5-cta-actions { flex-direction: column; align-items: center; }
+      .s5-cta-actions .s5-btn { width: 100%; max-width: 320px; }
+    }
+    .s5-cta-footnote {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    @media (max-width: 767px) {
+      .s5-cta-footnote { flex-direction: column; align-items: center; }
+      .s5-cta-footnote .s5-btn { width: 100%; max-width: 320px; }
+    }
+
+    .s5-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 9999px;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity 0.2s, background-color 0.2s;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .s5-btn-md { padding: 12px 32px; font-size: 16px; }
+    .s5-btn-sm { padding: 8px 16px; font-size: 14px; }
+    .s5-btn-action {
+      background-color: rgba(255,255,255,0.85);
+      color: #0f0f0f;
+      border: 1px solid rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+    }
+    .s5-btn-action:hover { background-color: #ffffff; }
+    .s5-btn-footnote {
+      background-color: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+    .s5-btn-footnote:hover { background-color: rgba(255,255,255,0.6); }
+  </style>
+</head>
+<body>
+  <section class="s5-section" aria-labelledby="s5-cta-title">
+    <div class="s5-cta-band">
+      <div class="s5-cta-inner">
+        <h2 class="s5-cta-title" id="s5-cta-title">
+          See how <span class="s5-product-name">LLM Capsule</span> works with your data
+        </h2>
+        <p class="s5-cta-desc">
+          Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.
+        </p>
+        <div class="s5-cta-actions">
+          <a href="/request-a-demo" class="s5-btn s5-btn-md s5-btn-action">Request a Demo</a>
+          <a href="/request-a-demo" class="s5-btn s5-btn-md s5-btn-action">Talk to an Architect</a>
+        </div>
+        <div class="s5-cta-footnote">
+          <a href="/downloads" class="s5-btn s5-btn-sm s5-btn-footnote">Download Architecture Brief</a>
+          <a href="https://aws.amazon.com/marketplace" class="s5-btn s5-btn-sm s5-btn-footnote" target="_blank" rel="noopener">Available on AWS Marketplace</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

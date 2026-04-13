@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 04 Evidence Hub | Trust Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f2f2f2; }
+
+    .s4-section {
+      width: 100%;
+      background-color: #ffffff;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding: 60px 0;
+    }
+    .s4-container {
+      width: 100%;
+      padding: 0 16px;
+      max-width: 1440px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    @media (min-width: 768px)  { .s4-container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .s4-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .s4-container { padding: 0 120px; } }
+
+    .s4-section-header {
+      margin-bottom: 48px;
+      text-align: center;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e6e7e9;
+    }
+    .s4-section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      text-wrap: balance;
+    }
+    @media (min-width: 768px)  { .s4-section-title { font-size: 22px; } }
+    @media (min-width: 1024px) { .s4-section-title { font-size: 24px; } }
+    @media (min-width: 1440px) { .s4-section-title { font-size: 28px; } }
+    .s4-title-highlight { color: #5690D4; }
+    .s4-section-desc {
+      font-size: 18px;
+      color: #636363;
+      line-height: 1.7;
+      max-width: 720px;
+      margin: 0 auto;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .s4-feature-grid {
+      background-color: #ffffff;
+      border: 1px solid #e6e7e9;
+      border-radius: 40px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 48px;
+    }
+    @media (max-width: 767px) { .s4-feature-grid { grid-template-columns: 1fr; padding: 24px; } }
+
+    .s4-feature-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .s4-feature-icon {
+      color: #5690D4;
+      margin-bottom: 4px;
+    }
+    .s4-feature-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .s4-feature-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0f0f0f;
+    }
+    .s4-feature-desc {
+      font-size: 14px;
+      color: #636363;
+      line-height: 1.7;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .s4-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    @media (max-width: 767px) {
+      .s4-actions { flex-direction: column; align-items: center; }
+      .s4-actions .s4-btn { width: 100%; max-width: 320px; }
+    }
+    .s4-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 9999px;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+      text-decoration: none;
+      padding: 12px 32px;
+      font-size: 16px;
+    }
+    .s4-btn-primary {
+      background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+      color: #ffffff;
+      border: none;
+    }
+    .s4-btn-primary:hover { opacity: 0.88; }
+    .s4-btn-secondary {
+      background-color: transparent;
+      color: #0f0f0f;
+      border: 1px solid #e6e7e9;
+    }
+    .s4-btn-secondary:hover { background-color: #f7f7f7; }
+  </style>
+</head>
+<body>
+  <section class="s4-section" aria-labelledby="s4-evidence-title">
+    <div class="s4-container">
+      <div class="s4-section-header">
+        <h2 class="s4-section-title" id="s4-evidence-title">
+          Documents &amp; Review Items for Enterprise <span class="s4-title-highlight">Evaluation</span>
+        </h2>
+        <p class="s4-section-desc">
+          Use this page as the operational trust hub for procurement, security review, architecture review, and compliance validation.
+        </p>
+      </div>
+
+      <div class="s4-feature-grid">
+
+        <div class="s4-feature-item">
+          <span class="s4-feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" x2="8" y1="13" y2="13"/>
+              <line x1="16" x2="8" y1="17" y2="17"/>
+              <line x1="10" x2="8" y1="9" y2="9"/>
+            </svg>
+          </span>
+          <h3 class="s4-feature-title">Architecture Brief</h3>
+          <p class="s4-feature-desc">High-level architecture, trust boundary, local mapping model, and restoration flow.</p>
+        </div>
+
+        <div class="s4-feature-item">
+          <span class="s4-feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </span>
+          <h3 class="s4-feature-title">Security Review Package</h3>
+          <p class="s4-feature-desc">Data handling principles, audit model, deployment assumptions, and security questionnaire support.</p>
+        </div>
+
+        <div class="s4-feature-item">
+          <span class="s4-feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <rect width="20" height="8" x="2" y="2" rx="2" ry="2"/>
+              <rect width="20" height="8" x="2" y="14" rx="2" ry="2"/>
+              <line x1="6" x2="6.01" y1="6" y2="6"/>
+              <line x1="6" x2="6.01" y1="18" y2="18"/>
+            </svg>
+          </span>
+          <h3 class="s4-feature-title">Deployment Options</h3>
+          <p class="s4-feature-desc">On-premise, air-gapped, VPC, cloud, hybrid, and embedded deployment patterns for evaluation.</p>
+        </div>
+
+        <div class="s4-feature-item">
+          <span class="s4-feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 2.7h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.3a16 16 0 0 0 6.29 6.29l1.06-1.06a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </span>
+          <h3 class="s4-feature-title">Talk to an Architect</h3>
+          <p class="s4-feature-desc">Review your environment, data flow, policy requirements, and evaluation criteria with the technical team.</p>
+        </div>
+
+      </div>
+
+      <div class="s4-actions">
+        <a href="/request-a-demo" class="s4-btn s4-btn-primary">Request a Demo</a>
+        <a href="/downloads" class="s4-btn s4-btn-secondary">Download Brief</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

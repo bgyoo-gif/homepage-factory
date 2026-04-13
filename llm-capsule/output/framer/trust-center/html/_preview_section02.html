@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 02 Certifications | Trust Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f2f2f2; overflow-x: hidden; }
+
+    .s2-section {
+      width: 100%;
+      background-color: #ffffff;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding: 60px 0;
+    }
+    .s2-container {
+      width: 100%;
+      padding: 0 16px;
+      max-width: 1440px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    @media (min-width: 768px)  { .s2-container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .s2-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .s2-container { padding: 0 120px; } }
+
+    .s2-section-header {
+      margin-bottom: 48px;
+      text-align: center;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e6e7e9;
+    }
+    .s2-section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      text-wrap: balance;
+    }
+    @media (min-width: 768px)  { .s2-section-title { font-size: 22px; } }
+    @media (min-width: 1024px) { .s2-section-title { font-size: 24px; } }
+    @media (min-width: 1440px) { .s2-section-title { font-size: 28px; } }
+    .s2-title-highlight { color: #5690D4; }
+    .s2-section-desc {
+      font-size: 18px;
+      color: #636363;
+      line-height: 1.7;
+      max-width: 720px;
+      margin: 0 auto;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    /* Marquee */
+    .s2-cert-grid {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      overflow: hidden;
+      padding: 32px 0;
+    }
+    .s2-cert-track {
+      display: flex;
+      gap: 24px;
+      align-items: stretch;
+      width: max-content;
+      animation: s2-marquee 40s linear infinite;
+    }
+    .s2-cert-track:hover { animation-play-state: paused; }
+    @keyframes s2-marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .s2-cert-card {
+      background-color: #ffffff;
+      border: 1px solid #e6e7e9;
+      border-radius: 24px;
+      padding: 24px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+      flex-shrink: 0;
+      width: 200px;
+    }
+    .s2-cert-card-group {
+      font-family: "Fragment Mono", monospace;
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #5690D4;
+      margin-bottom: 4px;
+    }
+    .s2-cert-card-wreath {
+      position: relative;
+      width: 160px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .s2-cert-wreath-left,
+    .s2-cert-wreath-right {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 34%;
+      object-fit: contain;
+    }
+    .s2-cert-wreath-left { left: -6px; object-position: right; }
+    .s2-cert-wreath-right { right: -6px; object-position: left; }
+    .s2-cert-wreath-text {
+      position: relative;
+      z-index: 1;
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f0f0f;
+      text-align: center;
+      line-height: 1.2;
+      max-width: 90px;
+    }
+    .s2-cert-card-org {
+      font-size: 12px;
+      color: #636363;
+    }
+    .s2-cert-card-logo {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-top: auto;
+      margin-bottom: -10px;
+    }
+    @media (max-width: 767px) {
+      .s2-cert-card { width: 170px; padding: 16px; }
+      .s2-cert-card-wreath { width: 130px; height: 96px; }
+      .s2-cert-wreath-text { font-size: 12px; max-width: 72px; }
+      .s2-cert-card-logo { width: 48px; height: 48px; }
+      .s2-cert-track { gap: 16px; animation-duration: 25s; }
+    }
+  </style>
+</head>
+<body>
+  <section class="s2-section" aria-labelledby="s2-cert-title">
+    <div class="s2-container">
+      <div class="s2-section-header">
+        <h2 class="s2-section-title" id="s2-cert-title">
+          Certifications &amp; <span class="s2-title-highlight">Compliance</span>
+        </h2>
+        <p class="s2-section-desc">
+          Information security management, AI governance, and government software quality certifications.
+        </p>
+      </div>
+    </div>
+
+    <div class="s2-cert-grid" aria-label="Certifications and compliance">
+      <div class="s2-cert-track">
+        <!-- Set 1 -->
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">KISA</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">Information Security Fast Track</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">KISA</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-kisa.png" alt="KISA" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">GS</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">GS Certification</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">TTA</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-gs.png" alt="TTA" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">ISO</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">ISO/IEC 27001</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">ISO</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-iso.png" alt="ISO" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">ISO</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">ISO/IEC 42001</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">ISO</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-iso.png" alt="ISO" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">Award</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">Security Innovation Award</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">Ministry of Science &amp; ICT</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/awards-ministry-of-science-and-ict.jpg" alt="Ministry of Science and ICT" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">Award</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">Startup World Cup</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">Startup World Cup</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-startupworldcup.png" alt="Startup World Cup" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">Award</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">Next Rise Global Innovator</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">Next Rise</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/awards-NextRise.png" alt="Next Rise" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">Award</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">T Challenge 2026</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">Deutsche Telekom</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-deutsche-telekom.avif" alt="Deutsche Telekom" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">Award</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">AI Medical Innovation</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">AI EXPO KOREA</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/awards-koreaia.png" alt="AI EXPO KOREA" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">Recognition</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">Emerging AI+X Top 100</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">Emerging AI+X</span>
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">Recognition</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">Gartner Vendor</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">Gartner</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-gartner.svg.png" alt="Gartner" loading="lazy">
+        </div>
+        <!-- Set 2 (duplicate for seamless loop) -->
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">KISA</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">Information Security Fast Track</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">KISA</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-kisa.png" alt="KISA" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">GS</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">GS Certification</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">TTA</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-gs.png" alt="TTA" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">ISO</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">ISO/IEC 27001</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">ISO</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-iso.png" alt="ISO" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">ISO</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">ISO/IEC 42001</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">ISO</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-iso.png" alt="ISO" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">Award</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">Security Innovation Award</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">Ministry of Science &amp; ICT</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/awards-ministry-of-science-and-ict.jpg" alt="Ministry of Science and ICT" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">Award</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">Startup World Cup</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">Startup World Cup</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-startupworldcup.png" alt="Startup World Cup" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">Award</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">Next Rise Global Innovator</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">Next Rise</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/awards-NextRise.png" alt="Next Rise" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">Award</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">T Challenge 2026</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">Deutsche Telekom</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-deutsche-telekom.avif" alt="Deutsche Telekom" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">Award</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">AI Medical Innovation</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">AI EXPO KOREA</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/awards-koreaia.png" alt="AI EXPO KOREA" loading="lazy">
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">Recognition</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">Emerging AI+X Top 100</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">Emerging AI+X</span>
+        </div>
+        <div class="s2-cert-card">
+          <span class="s2-cert-card-group">Recognition</span>
+          <div class="s2-cert-card-wreath">
+            <img class="s2-cert-wreath-left" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-left.png" alt="">
+            <span class="s2-cert-wreath-text">Gartner Vendor</span>
+            <img class="s2-cert-wreath-right" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-right.png" alt="">
+          </div>
+          <span class="s2-cert-card-org">Gartner</span>
+          <img class="s2-cert-card-logo" src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-gartner.svg.png" alt="Gartner" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
