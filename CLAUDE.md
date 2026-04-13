@@ -194,6 +194,8 @@ deploy (gh-pages push)
 - TSX 반응형: CSS Container Queries 사용
 - TSX JSON-LD 필수
 - 이미지 WebP 우선
+- Hero Screenshot(.ds-hero--screenshot) 컨테이너에 max-width 금지 — description에만 860px 제한 가능
+- FAQ 영역(ds-faq-wrap)에 max-width 금지 — 아티클 페이지가 아닌 이상 ds-container 전폭 사용
 
 ---
 

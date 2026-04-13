@@ -720,7 +720,7 @@ HTML:
 ```css
 .ds-hero { padding: 0; display: grid; grid-template-columns: 1fr; gap: var(--ds-space-lg); align-items: center; }
 .ds-hero--text-only { max-width: 860px; }
-.ds-hero--screenshot { text-align: center; max-width: 860px; margin: 0 auto; }
+.ds-hero--screenshot { text-align: center; margin: 0 auto; }
 .ds-hero--split { grid-template-columns: 1fr 1fr; gap: 64px; }
 @media (max-width: 1023px) { .ds-hero--split { grid-template-columns: 1fr; } }
 .ds-hero__title { font-family: var(--ds-font-base); font-size: var(--ds-text-7xl); font-weight: var(--ds-weight-bold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); letter-spacing: -2px; margin-bottom: var(--ds-space-sm); }

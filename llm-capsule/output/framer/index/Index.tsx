@@ -417,7 +417,7 @@ export default function Index({
 
         /* ── Section 1: Hero ──────────────────────────────────────── */
         .idx-hero-section { padding: 100px 0 0; background-color: ${P.surfaceWhite}; width: 100%; }
-        .idx-hero { text-align: center; max-width: 860px; margin: 0 auto; }
+        .idx-hero { text-align: center; margin: 0 auto; }
         .idx-hero__title {
           font-family: "DM Sans", sans-serif; font-size: 32px; font-weight: 700;
           color: ${P.textPrimary}; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 12px;
@@ -807,7 +807,7 @@ export default function Index({
         }
 
         /* FAQ Accordion */
-        .idx-faq-wrap { max-width: 860px; margin: 0 auto; }
+        .idx-faq-wrap { margin: 0 auto; }
         .idx-ac-list { display: flex; flex-direction: column; gap: 2px; }
         .idx-ac-card {
           border: 1px solid ${P.borderDefault}; border-radius: 8px;

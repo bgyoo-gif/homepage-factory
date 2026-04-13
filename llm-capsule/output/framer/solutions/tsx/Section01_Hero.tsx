@@ -61,7 +61,6 @@ export default function Section01_Hero({
         }
         .s1-hero {
           text-align: center;
-          max-width: 860px;
           margin: 0 auto;
         }
         .s1-title {
