@@ -345,7 +345,7 @@ export default function HowToUseAiOnSensitiveEnterpriseData({
         }
         @container page (min-width: 768px)  { .htua-article { padding: 0 32px; } }
         @container page (min-width: 1024px) { .htua-article { padding: 0 32px; } }
-        @container page (min-width: 1440px) { .htua-article { padding: 0; } }
+        @container page (min-width: 1440px) { .htua-article { padding: 0 120px; max-width: 1440px; } }
 
         /* ---- Full-width container: max-width 1440px ---- */
         .htua-container {
@@ -356,7 +356,7 @@ export default function HowToUseAiOnSensitiveEnterpriseData({
         }
         @container page (min-width: 768px)  { .htua-container { padding: 0 32px; } }
         @container page (min-width: 1024px) { .htua-container { padding: 0 32px; } }
-        @container page (min-width: 1440px) { .htua-container { padding: 0 120px; } }
+        @container page (min-width: 1440px) { .htua-container { padding: 0 120px; max-width: 1440px; } }
 
         /* ---- Sections ---- */
         .htua-section {
@@ -374,8 +374,8 @@ export default function HowToUseAiOnSensitiveEnterpriseData({
           padding: 32px 0;
           background-color: ${P.surfaceWhite};
         }
-        @container page (min-width: 768px)  { .htua-section--body { padding: 48px 0; } }
-        @container page (min-width: 1440px) { .htua-section--body { padding: 64px 0; } }
+        @container page (min-width: 768px)  { .htua-section--body { padding: 60px 0; } }
+        @container page (min-width: 1440px) { .htua-section--body { padding: 60px 0; } }
 
         /* ---- Hero Typography ---- */
         .htua-hero-title {
