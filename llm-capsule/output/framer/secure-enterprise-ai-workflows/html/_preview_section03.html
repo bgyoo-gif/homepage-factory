@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 03 Explanation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f2f2f2; padding: 40px 0; }
+
+    .s3-section {
+      width: 100%;
+      background-color: #ffffff;
+      padding: 32px 0;
+    }
+    .s3-container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .s3-section-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .s3-section-header h2 {
+      font-size: 20px; font-weight: 700; color: #0f0f0f;
+      line-height: 1.2; letter-spacing: -0.5px; margin: 0;
+    }
+    .s3-brand-text { color: #5690D4; }
+    .s3-product-text { font-family: "Oxanium", sans-serif; font-weight: 700; }
+    .s3-intro {
+      font-size: 16px; color: #636363; line-height: 1.7;
+      margin-bottom: 16px; word-break: keep-all; overflow-wrap: break-word;
+    }
+    .s3-bullet-list {
+      list-style: none; padding: 0; margin: 0 0 24px 0;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .s3-bullet-item {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 16px; line-height: 1.5; color: #0f0f0f;
+      word-break: keep-all;
+    }
+    .s3-bullet-icon {
+      width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px;
+      display: flex; align-items: center; justify-content: center;
+      color: #5690D4; font-weight: 700; font-size: 18px; line-height: 1;
+    }
+    .s3-bullet-icon::before { content: "•"; }
+    .s3-banner {
+      padding: 24px 32px; border-radius: 18px;
+      border-top: 1px solid #e6e7e9; border-bottom: 1px solid #e6e7e9;
+      background-color: rgba(24, 33, 232, 0.06);
+      font-size: 16px; line-height: 1.7; color: #0f0f0f;
+      word-break: keep-all;
+    }
+    @media (min-width: 768px) {
+      .s3-container { padding: 0 32px; }
+      .s3-section-header h2 { font-size: 22px; }
+      .s3-section { padding: 60px 0; }
+    }
+    @media (min-width: 1440px) {
+      .s3-container { padding: 0 120px; max-width: 1440px; }
+      .s3-section-header h2 { font-size: 28px; }
+      .s3-section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+  <section class="s3-section">
+    <div class="s3-container">
+      <div class="s3-section-header">
+        <h2><span class="s3-brand-text">Explanation</span></h2>
+      </div>
+      <p class="s3-intro">A secure enterprise AI workflow has four properties:</p>
+      <ul class="s3-bullet-list">
+        <li class="s3-bullet-item">
+          <span class="s3-bullet-icon"></span>
+          <span><strong>Pre-transmission protection.</strong> All sensitive data is encapsulated within the enterprise environment before reaching any AI service. This is not a filter applied at the API gateway — it is a transformation applied to the data itself through context-aware data control.</span>
+        </li>
+        <li class="s3-bullet-item">
+          <span class="s3-bullet-icon"></span>
+          <span><strong>Structure preservation.</strong> Protected data must retain its document structure, entity relationships, and semantic context. AI models process structure-preserving representations that enable accurate summarization, extraction, and analysis.</span>
+        </li>
+        <li class="s3-bullet-item">
+          <span class="s3-bullet-icon"></span>
+          <span><strong>Model independence.</strong> The AI enablement layer must work with any LLM provider. Enterprises should not be locked into a single AI vendor to maintain AI data pipeline protection.</span>
+        </li>
+        <li class="s3-bullet-item">
+          <span class="s3-bullet-icon"></span>
+          <span><strong>Output Restoration.</strong> AI results are restored locally. Enterprise AI workflows produce enterprise-ready outputs — with real names, real figures, real references — without requiring manual post-processing.</span>
+        </li>
+      </ul>
+      <div class="s3-banner">
+        <strong>Enterprise AI enablement</strong> requires an AI-ready data layer, not model-layer security. <span class="s3-product-text">LLM Capsule</span> operates before data leaves and after results return — enabling AI adoption while protecting data.
+      </div>
+    </div>
+  </section>
+</body>
+</html>

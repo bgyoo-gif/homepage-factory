@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — Section 02 Problem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f2f2f2; padding: 40px 0; }
+
+    .s2-section {
+      width: 100%;
+      background-color: #ffffff;
+      padding: 32px 0;
+    }
+    .s2-container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .s2-section-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .s2-section-header h2 {
+      font-family: "DM Sans", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin: 0;
+    }
+    .s2-brand-text { color: #5690D4; }
+    .s2-paragraph {
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      color: #636363;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .s2-paragraph:last-child { margin-bottom: 0; }
+    @media (min-width: 768px) {
+      .s2-container { padding: 0 32px; }
+      .s2-section-header h2 { font-size: 22px; }
+      .s2-section { padding: 60px 0; }
+    }
+    @media (min-width: 1440px) {
+      .s2-container { padding: 0 120px; max-width: 1440px; }
+      .s2-section-header h2 { font-size: 28px; }
+      .s2-section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+  <section class="s2-section">
+    <div class="s2-container">
+      <div class="s2-section-header">
+        <h2><span class="s2-brand-text">Problem</span></h2>
+      </div>
+      <p class="s2-paragraph">Enterprise AI workflows involve multiple stages: document ingestion, pre-processing, AI model interaction, output generation, and integration into business systems. A security gap at any single stage exposes the entire pipeline. Most current approaches focus on model-level security — prompt filtering, output scanning — while leaving the data layer unprotected.</p>
+      <p class="s2-paragraph">Secure LLM usage requires protection that operates at the data layer, not the model layer. Enterprise data must be protected before it enters any AI pipeline stage.</p>
+    </div>
+  </section>
+</body>
+</html>
