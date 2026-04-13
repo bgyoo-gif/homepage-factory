@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section07 Workflow Example</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f2f2f2; }
+
+    .s7-section { width: 100%; padding: 60px 0; background-color: #ffffff; }
+    .s7-container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px; box-sizing: border-box; }
+    .s7-section-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #e6e7e9; text-align: center; }
+    .s7-section-header h2 { font-family: "DM Sans", sans-serif; font-size: 20px; font-weight: 700; color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px; }
+    .s7-brand-text { color: #5690D4; }
+    .s7-brand-name { font-family: "Oxanium", sans-serif; font-weight: 700; }
+    .s7-card { background-color: #ffffff; border-radius: 18px; border: 1px solid #e6e7e9; padding: 24px; box-shadow: 0px 24px 40px rgba(0,0,0,0.04); display: flex; flex-direction: column; gap: 12px; }
+    .s7-card__title { font-family: "DM Sans", sans-serif; font-size: 16px; font-weight: 600; color: #0f0f0f; line-height: 1.2; }
+    .s7-card p { font-family: "DM Sans", sans-serif; font-size: 16px; line-height: 1.7; color: #636363; margin: 0; word-break: keep-all; overflow-wrap: break-word; }
+    .s7-card p + p { margin-top: 12px; }
+
+    @media (min-width: 768px) { .s7-container { padding: 0 32px; } .s7-section-header h2 { font-size: 22px; } .s7-card { padding: 32px; } }
+    @media (min-width: 1024px) { .s7-section-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .s7-container { padding: 0 120px; max-width: 1440px; } .s7-section-header h2 { font-size: 28px; } }
+  </style>
+</head>
+<body>
+  <section class="s7-section">
+    <div class="s7-container">
+      <div class="s7-section-header">
+        <h2>Enterprise Workflow <span class="s7-brand-text">Example</span></h2>
+      </div>
+      <div class="s7-card">
+        <h4 class="s7-card__title">Compliance Document Analysis</h4>
+        <p>A compliance team needs AI to identify risk indicators in 1,000 real audit reports. Synthetic data cannot help — synthetic audit reports do not contain the real findings, real entity references, and real risk patterns the team needs to analyze.</p>
+        <p><span class="s7-brand-name">LLM Capsule</span> encapsulates the real audit reports, AI identifies risk patterns in the protected documents, and restoration produces an actionable risk assessment with real entity names and findings linked to real reports.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

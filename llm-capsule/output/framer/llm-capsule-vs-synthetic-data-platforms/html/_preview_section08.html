@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section08 FAQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f2f2f2; }
+
+    .s8-section { width: 100%; padding: 60px 0; background-color: #ffffff; }
+    .s8-container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px; box-sizing: border-box; }
+    .s8-section-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #e6e7e9; text-align: center; }
+    .s8-section-header h2 { font-family: "DM Sans", sans-serif; font-size: 20px; font-weight: 700; color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px; }
+    .s8-brand-text { color: #5690D4; }
+    .s8-brand-name { font-family: "Oxanium", sans-serif; font-weight: 700; }
+    .s8-ac-list { display: flex; flex-direction: column; gap: 2px; }
+    .s8-ac-card { border: 1px solid #e6e7e9; border-radius: 8px; background-color: #ffffff; overflow: hidden; transition: background-color 0.2s; }
+    .s8-ac-card:hover { background-color: #f7f7f7; }
+    .s8-ac-card__header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 24px; cursor: pointer; user-select: none; }
+    .s8-ac-card__title { font-family: "DM Sans", sans-serif; font-size: 18px; font-weight: 500; line-height: 1.2; color: #0f0f0f; word-break: keep-all; overflow-wrap: break-word; }
+    .s8-ac-card__toggle { width: 28px; height: 28px; border-radius: 6px; border: 0.5px solid #e6e7e9; background-color: #f7f7f7; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; }
+    .s8-toggle-icon { width: 12px; height: 12px; position: relative; flex-shrink: 0; }
+    .s8-toggle-icon::before, .s8-toggle-icon::after { content: ''; position: absolute; background-color: #9c9c9c; border-radius: 1px; }
+    .s8-toggle-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .s8-toggle-icon::after { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: opacity 0.2s; }
+    .s8-ac-card.open .s8-toggle-icon::after { opacity: 0; }
+    .s8-ac-card__body { display: none; padding: 24px; border-top: 1px solid #e6e7e9; background-color: #f7f7f7; }
+    .s8-ac-card.open .s8-ac-card__body { display: block; }
+    .s8-ac-card__body p { font-family: "DM Sans", sans-serif; font-size: 14px; color: #636363; line-height: 1.7; word-break: keep-all; overflow-wrap: break-word; }
+
+    @media (min-width: 768px) { .s8-container { padding: 0 32px; } .s8-section-header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .s8-section-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .s8-container { padding: 0 120px; max-width: 1440px; } .s8-section-header h2 { font-size: 28px; } }
+  </style>
+</head>
+<body>
+  <section class="s8-section">
+    <div class="s8-container">
+      <div class="s8-section-header">
+        <h2><span class="s8-brand-text">FAQ</span></h2>
+      </div>
+      <div class="s8-ac-list">
+        <div class="s8-ac-card open" onclick="this.classList.toggle('open')">
+          <div class="s8-ac-card__header">
+            <span class="s8-ac-card__title">When should I use synthetic data vs <span class="s8-brand-name">LLM Capsule</span>?</span>
+            <span class="s8-ac-card__toggle"><span class="s8-toggle-icon"></span></span>
+          </div>
+          <div class="s8-ac-card__body">
+            <p>Use synthetic data for model training and testing where statistical properties matter. Use <span class="s8-brand-name">LLM Capsule</span> for production AI workflows where AI must process and produce outputs about real enterprise documents.</p>
+          </div>
+        </div>
+        <div class="s8-ac-card" onclick="this.classList.toggle('open')">
+          <div class="s8-ac-card__header">
+            <span class="s8-ac-card__title">Does <span class="s8-brand-name">LLM Capsule</span> generate synthetic data?</span>
+            <span class="s8-ac-card__toggle"><span class="s8-toggle-icon"></span></span>
+          </div>
+          <div class="s8-ac-card__body">
+            <p>No. <span class="s8-brand-name">LLM Capsule</span> encapsulates real data — preserving its structure while protecting sensitive elements. It is not a synthetic data platform.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

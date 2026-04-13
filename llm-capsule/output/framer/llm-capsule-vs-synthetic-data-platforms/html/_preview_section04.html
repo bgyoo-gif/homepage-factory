@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section04 Limitations</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f2f2f2; }
+
+    .s4-section { width: 100%; padding: 60px 0; background-color: #ffffff; }
+    .s4-container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px; box-sizing: border-box; }
+    .s4-section-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #e6e7e9; text-align: center; }
+    .s4-section-header h2 { font-family: "DM Sans", sans-serif; font-size: 20px; font-weight: 700; color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px; }
+    .s4-brand-text { color: #5690D4; }
+    .s4-bullet { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+    .s4-bullet__item { display: flex; align-items: flex-start; gap: 8px; font-family: "DM Sans", sans-serif; font-size: 16px; line-height: 1.5; color: #0f0f0f; word-break: keep-all; overflow-wrap: break-word; }
+    .s4-bullet__icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; }
+    .s4-bullet__icon::before { content: "•"; color: #5690D4; font-weight: 700; font-size: 18px; line-height: 1; }
+
+    @media (min-width: 768px) { .s4-container { padding: 0 32px; } .s4-section-header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .s4-section-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .s4-container { padding: 0 120px; max-width: 1440px; } .s4-section-header h2 { font-size: 28px; } }
+  </style>
+</head>
+<body>
+  <section class="s4-section">
+    <div class="s4-container">
+      <div class="s4-section-header">
+        <h2><span class="s4-brand-text">Limitations</span></h2>
+      </div>
+      <ul class="s4-bullet">
+        <li class="s4-bullet__item">
+          <span class="s4-bullet__icon"></span>
+          <span><strong>Not suitable for document processing.</strong> Synthetic data platforms generate tabular data, not documents. They cannot create synthetic versions of contracts, medical records, or legal filings that retain their specific content and meaning.</span>
+        </li>
+        <li class="s4-bullet__item">
+          <span class="s4-bullet__icon"></span>
+          <span><strong>Loss of specificity.</strong> Synthetic data preserves statistical patterns but not specific enterprise content. You cannot summarize a synthetic contract — it does not contain real terms, real parties, or real obligations.</span>
+        </li>
+        <li class="s4-bullet__item">
+          <span class="s4-bullet__icon"></span>
+          <span><strong>No real-world output.</strong> AI outputs based on synthetic data describe synthetic scenarios, not real enterprise situations. There is no mechanism to map synthetic outputs back to real enterprise context.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>
