@@ -569,6 +569,7 @@ p, li, dt, dd, blockquote,
   background-color: var(--ds-banner-bg, var(--ds-color-surface-light));
   font-size: var(--ds-text-sm); line-height: var(--ds-leading-relaxed);
   text-align: center; word-break: keep-all; overflow-wrap: break-word;
+  margin-top: var(--ds-space-2xl);
 }
 .ds-banner a, .ds-banner--full a { display: block; margin-top: var(--ds-space-sm); }
 .ds-banner__label {
