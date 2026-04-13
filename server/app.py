@@ -151,6 +151,33 @@ async def upload_file(file: UploadFile = File(...), brand: str = Query(default="
     return {"job_id": job["id"], "filename": file.filename, "brand": brand, "message": "Pipeline started automatically."}
 
 
+@app.post("/api/convert-tsx")
+async def convert_tsx(brand: str = Query(default="llm-capsule"), filename: str = Query(...)):
+    """B-type HTML → Framer TSX 변환 시작"""
+    if brand not in VALID_BRANDS:
+        return JSONResponse(status_code=400, content={"error": f"Invalid brand. Use: {', '.join(VALID_BRANDS)}"})
+
+    _, output_dir = brand_dirs(brand)
+    html_path = output_dir / "html" / filename
+    if not html_path.exists():
+        return JSONResponse(status_code=404, content={"error": f"File not found: {filename}"})
+
+    job = create_job(filename, html_path, brand)
+
+    await manager.broadcast({"type": "tsx_job_created", "job": job})
+
+    import threading
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("pipeline", Path(__file__).parent / "pipeline.py")
+    pipeline_mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(pipeline_mod)
+    run_tsx = pipeline_mod.run_tsx_conversion
+    thread = threading.Thread(target=run_tsx, args=(job["id"],), daemon=True)
+    thread.start()
+
+    return {"job_id": job["id"], "filename": filename, "brand": brand, "message": "TSX conversion started."}
+
+
 @app.get("/api/jobs")
 async def get_jobs(brand: str = Query(default=None)):
     return list_jobs(brand)

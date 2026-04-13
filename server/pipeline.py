@@ -202,3 +202,103 @@ def run_pipeline(job_id):
         "html": f"{brand}/output/html/{basename}-b-type.html",
         "qa": f"{brand}/output/docs/{basename}-qa-report.md",
     })
+
+
+def run_tsx_conversion(job_id):
+    """Convert a B-type HTML to Framer TSX + preview."""
+    path = JOBS_DIR / f"{job_id}.json"
+    job = json.loads(path.read_text(encoding="utf-8"))
+    html_filename = job["filename"]  # e.g. "restoration-b-type.html"
+    brand = job.get("brand", "llm-capsule")
+
+    basename = html_filename.replace("-b-type.html", "")
+    component_name = "".join(w.capitalize() for w in basename.split("-"))
+
+    output_dir = PROJECT_ROOT / brand / "output"
+    html_path = output_dir / "html" / html_filename
+    framer_dir = output_dir / "framer" / basename
+    framer_dir.mkdir(parents=True, exist_ok=True)
+
+    update_job(job_id, "framer-dev", f"Converting {html_filename} to TSX...", "running")
+
+    if not html_path.exists():
+        update_job(job_id, "framer-dev", f"File not found: {html_path}", "error")
+        return
+
+    b_type_html = html_path.read_text(encoding="utf-8")
+    ds_excerpt = load_ds_excerpt(brand, max_chars=3000)
+
+    system_prompt = (
+        "You are a Framer Code Component developer. Convert this B-type HTML into a single TSX file. "
+        "Rules: "
+        "1. No nav/footer — already removed. "
+        "2. CSS Container Queries only (no @media). "
+        "3. All visible text as props + addPropertyControls. "
+        "4. JSON-LD (BreadcrumbList + page-specific schema). "
+        "5. Container max-width: 1440px, padding: 16/32/32/120px. "
+        "6. Palette constant object (no hardcoded colors in markup). "
+        f"7. Class prefix: unique short prefix based on '{basename}'. "
+        "8. FAQ/accordion: useState hook. "
+        "9. Images: WebP preferred, absolute URLs. "
+        "Output ONLY the TSX code, no explanation."
+    )
+    user_prompt = (
+        f"Convert this B-type HTML to Framer TSX.\n\n"
+        f"Brand: {brand}\n"
+        f"Component name: {component_name}\n\n"
+        f"HTML:\n{b_type_html[:14000]}\n\n"
+        f"Design System:\n{ds_excerpt}"
+    )
+
+    tsx_result, err = call_claude(system_prompt, user_prompt, max_tokens=16000)
+    if err:
+        update_job(job_id, "framer-dev", f"API error: {err}", "error")
+        return
+
+    # Save TSX
+    tsx_path = framer_dir / f"{component_name}.tsx"
+    tsx_result_clean = tsx_result.strip()
+    if tsx_result_clean.startswith("```"):
+        tsx_result_clean = "\n".join(tsx_result_clean.split("\n")[1:])
+    if tsx_result_clean.endswith("```"):
+        tsx_result_clean = "\n".join(tsx_result_clean.split("\n")[:-1])
+    tsx_path.write_text(tsx_result_clean, encoding="utf-8")
+    update_job(job_id, "framer-dev", f"TSX saved: {tsx_path.name} ({len(tsx_result_clean):,} chars)")
+
+    # Generate preview HTML
+    preview_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{component_name} — Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+<style>body {{ margin: 0; font-family: "DM Sans", sans-serif; }}</style>
+</head>
+<body>
+<p style="padding:40px;text-align:center;color:#9c9c9c;">
+TSX preview — open {component_name}.tsx in Framer to render.
+</p>
+</body>
+</html>"""
+    (framer_dir / "preview.html").write_text(preview_html, encoding="utf-8")
+
+    # Deploy
+    update_job(job_id, "deploy", "Pushing TSX to GitHub...")
+    try:
+        subprocess.run(["git", "add", "-A"], cwd=str(PROJECT_ROOT), capture_output=True, timeout=30)
+        subprocess.run(
+            ["git", "commit", "-m", f"Auto-deploy: {brand}/{basename} TSX conversion"],
+            cwd=str(PROJECT_ROOT), capture_output=True, timeout=30
+        )
+        subprocess.run(
+            ["git", "push", "origin", "main"],
+            cwd=str(PROJECT_ROOT), capture_output=True, timeout=60
+        )
+    except Exception as e:
+        update_job(job_id, "deploy", f"Deploy error: {str(e)}")
+
+    update_job(job_id, "complete", "TSX conversion complete", "done", {
+        "tsx": f"{brand}/output/framer/{basename}/{component_name}.tsx",
+        "preview": f"{brand}/output/framer/{basename}/preview.html",
+    })

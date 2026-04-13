@@ -2793,6 +2793,7 @@ code, .ds-code-inline {
     <div class="v-detail-header">
       <span class="v-detail-header__title" id="detail-title"></span>
       <button class="v-detail-header__btn v-detail-header__btn--refresh" onclick="refreshDetail()">Refresh</button>
+      <button class="v-detail-header__btn v-detail-header__btn--tsx" id="detail-tsx-btn" onclick="convertToTsx()" style="display:none; background:var(--ds-gradient-brand); color:#fff; border:none;">Convert to TSX</button>
       <button class="v-detail-header__btn v-detail-header__btn--download" id="detail-download" onclick="downloadFile()">Download</button>
       <button class="v-detail-header__btn v-detail-header__btn--close" onclick="closeDetail()">Close</button>
     </div>
@@ -3087,6 +3088,13 @@ function openDetail(path, name) {
   iframe.src = '';
   iframe.srcdoc = '<html><body style="display:flex;align-items:center;justify-content:center;height:100vh;margin:0;color:#9c9c9c;font-family:DM Sans,sans-serif"><p>불러오는 중...</p></body></html>';
   document.getElementById('detail-overlay').classList.add('v-detail-overlay--open');
+
+  // Show "Convert to TSX" button only for b-type HTML files
+  var tsxBtn = document.getElementById('detail-tsx-btn');
+  if (tsxBtn) {
+    tsxBtn.style.display = name.endsWith('-b-type.html') ? '' : 'none';
+    tsxBtn.dataset.filename = name;
+  }
 
   // 절대 URL이면 그대로, 상대경로면 ../prefix 붙이기
   var isAbsolute = path.startsWith('http://') || path.startsWith('https://');
@@ -3868,6 +3876,57 @@ function checkServer() {
 }
 checkServer();
 setInterval(checkServer, 10000);
+
+// Convert to TSX via server API
+function convertToTsx() {
+  var btn = document.getElementById('detail-tsx-btn');
+  var filename = btn.dataset.filename;
+  if (!filename) return;
+
+  btn.textContent = 'Converting...';
+  btn.disabled = true;
+  btn.style.opacity = '0.6';
+
+  var url = SERVER_URL + '/api/convert-tsx?brand=' + encodeURIComponent(currentBrand) + '&filename=' + encodeURIComponent(filename);
+
+  fetch(url, { method: 'POST' })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.error) {
+        btn.textContent = 'Error: ' + data.error;
+        setTimeout(function() { btn.textContent = 'Convert to TSX'; btn.disabled = false; btn.style.opacity = '1'; }, 3000);
+        return;
+      }
+      btn.textContent = 'Started! Job: ' + data.job_id;
+      // Poll job status
+      var jobId = data.job_id;
+      var poll = setInterval(function() {
+        fetch(SERVER_URL + '/api/job/' + jobId)
+          .then(function(r) { return r.json(); })
+          .then(function(job) {
+            if (job.status === 'done') {
+              clearInterval(poll);
+              btn.textContent = 'Done! ✓';
+              btn.style.opacity = '1';
+              setTimeout(function() {
+                btn.textContent = 'Convert to TSX';
+                btn.disabled = false;
+                if (typeof loadOutputFiles === 'function') loadOutputFiles();
+              }, 2000);
+            } else if (job.status === 'error') {
+              clearInterval(poll);
+              var lastLog = job.logs[job.logs.length - 1];
+              btn.textContent = 'Failed: ' + (lastLog ? lastLog.message : 'unknown');
+              setTimeout(function() { btn.textContent = 'Convert to TSX'; btn.disabled = false; btn.style.opacity = '1'; }, 4000);
+            }
+          }).catch(function() { clearInterval(poll); });
+      }, 2000);
+    })
+    .catch(function(err) {
+      btn.textContent = 'Server not running';
+      setTimeout(function() { btn.textContent = 'Convert to TSX'; btn.disabled = false; btn.style.opacity = '1'; }, 3000);
+    });
+}
 
 // Restore saved brand on load
 if (currentBrand !== 'cubig') {
