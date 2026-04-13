@@ -370,7 +370,7 @@ export default function Restoration({
         }
         @container (min-width: 1024px) { .rst-cta-band__inner { max-width: 720px; } }
         @container (min-width: 1440px) {
-          .rst-cta-band { padding: 120px 120px; max-width: 1440px; margin: 0 auto; }
+          .rst-cta-band { padding: 120px 120px; }
           .rst-cta-band__inner { max-width: 860px; }
         }
         @container (min-width: 768px) { .rst-cta-band { padding: 100px 32px; } }

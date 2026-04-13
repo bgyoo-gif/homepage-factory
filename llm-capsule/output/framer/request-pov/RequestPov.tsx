@@ -491,7 +491,7 @@ export default function RequestPov({
         }
         .rpov-cta-band > * { position: relative; z-index: 1; }
         @container (min-width: 768px)  { .rpov-cta-band { padding: 100px 32px; } }
-        @container (min-width: 1440px) { .rpov-cta-band { padding: 120px 120px; max-width: 1440px; margin: 0 auto; } }
+        @container (min-width: 1440px) { .rpov-cta-band { padding: 120px 120px; } }
 
         .rpov-cta-band__inner {
           max-width: 100%; margin: 0 auto;

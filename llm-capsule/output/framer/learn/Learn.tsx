@@ -570,7 +570,7 @@ export default function Learn({
         .lrn-text--product { font-family: "Oxanium", sans-serif; font-weight: 700; }
         @container (max-width: 767px) { .lrn-cta-band__title { font-size: 36px; } }
         @container (min-width: 1440px) {
-          .lrn-cta-band { padding: 120px 120px; max-width: 1440px; margin: 0 auto; }
+          .lrn-cta-band { padding: 120px 120px; }
           .lrn-cta-band__title { font-size: 50px; }
         }
         @container (min-width: 768px) { .lrn-cta-band { padding: 100px 32px; } }

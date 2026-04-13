@@ -506,7 +506,7 @@ export default function LocalRestorationVsAnonymization({
         @container (min-width: 768px)  { .lrva-cta-band { padding: 100px 32px; } }
         @container (min-width: 1024px) { .lrva-cta-band__inner { max-width: 720px; } }
         @container (min-width: 1440px) {
-          .lrva-cta-band { padding: 120px 120px; max-width: 1440px; margin: 0 auto; }
+          .lrva-cta-band { padding: 120px 120px; }
           .lrva-cta-band__inner { max-width: 860px; }
         }
         .lrva-cta-band__title {

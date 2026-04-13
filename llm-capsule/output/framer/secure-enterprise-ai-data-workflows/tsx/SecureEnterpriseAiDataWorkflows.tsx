@@ -487,7 +487,7 @@ export default function SecureEnterpriseAiDataWorkflows({
         @container (min-width: 768px)  { .seadw-cta-band { padding: 100px 32px; } }
         @container (min-width: 1024px) { .seadw-cta-band__inner { max-width: 720px; } }
         @container (min-width: 1440px) {
-          .seadw-cta-band { padding: 120px 120px; max-width: 1440px; margin: 0 auto; }
+          .seadw-cta-band { padding: 120px 120px; }
           .seadw-cta-band__inner { max-width: 860px; }
         }
         .seadw-cta-band__title {

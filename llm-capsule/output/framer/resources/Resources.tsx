@@ -422,7 +422,7 @@ export default function Resources({
         @container (min-width: 1024px) { .res-cta-band__inner { max-width: 720px; } }
         @container (min-width: 1440px) { .res-cta-band__inner { max-width: 860px; } }
         @container (min-width: 768px)  { .res-cta-band { padding: 100px 32px; } }
-        @container (min-width: 1440px) { .res-cta-band { padding: 120px 120px; max-width: 1440px; margin: 0 auto; } }
+        @container (min-width: 1440px) { .res-cta-band { padding: 120px 120px; } }
         .res-cta-band__title {
           font-family: "DM Sans", sans-serif;
           font-size: 40px; font-weight: 700;
