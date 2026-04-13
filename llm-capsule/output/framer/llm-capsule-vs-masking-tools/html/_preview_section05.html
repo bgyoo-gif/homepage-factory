@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section05_MaskingLimits</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #ffffff; }
+
+    .s5-section { width: 100%; overflow: hidden; padding: 32px 0; background-color: #ffffff; }
+    .s5-container { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 16px; }
+    .s5-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #e6e7e9; text-align: center; }
+    .s5-header h2 { font-family: "DM Sans", sans-serif; font-size: 20px; font-weight: 700; color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px; margin: 0; }
+    .s5-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+    .s5-item { display: flex; align-items: flex-start; gap: 8px; font-size: 16px; line-height: 1.5; color: #0f0f0f; word-break: keep-all; overflow-wrap: break-word; }
+    .s5-bullet { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; }
+    .s5-bullet::before { content: "•"; color: #5690D4; font-weight: 700; font-size: 18px; line-height: 1; }
+    @media (min-width: 768px) { .s5-container { padding: 0 32px; } .s5-header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .s5-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .s5-container { padding: 0; } .s5-header h2 { font-size: 28px; } .s5-section { padding: 64px 0; } }
+  </style>
+</head>
+<body>
+  <section class="s5-section">
+    <div class="s5-container">
+      <div class="s5-header"><h2>Limitations of Masking for AI</h2></div>
+      <ul class="s5-list">
+        <li class="s5-item">
+          <span class="s5-bullet" aria-hidden="true"></span>
+          <span><strong>Context destruction.</strong> AI models lose entity relationships when all names become "[NAME]." Multi-party documents become indistinguishable.</span>
+        </li>
+        <li class="s5-item">
+          <span class="s5-bullet" aria-hidden="true"></span>
+          <span><strong>Output unusability.</strong> AI outputs inherit the masking. Summaries contain "[REDACTED]" placeholders instead of real data, requiring manual reconstruction.</span>
+        </li>
+        <li class="s5-item">
+          <span class="s5-bullet" aria-hidden="true"></span>
+          <span><strong>Structural damage.</strong> Flat masking breaks table schemas, cross-references, and nested document structures.</span>
+        </li>
+        <li class="s5-item">
+          <span class="s5-bullet" aria-hidden="true"></span>
+          <span><strong>No automation path.</strong> Every masked AI output requires human intervention to restore context, eliminating efficiency gains.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>

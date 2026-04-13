@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section04_MaskingWorks</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #ffffff; }
+
+    .s4-section { width: 100%; overflow: hidden; padding: 32px 0; background-color: #ffffff; }
+    .s4-container { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 16px; }
+    .s4-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #e6e7e9; text-align: center; }
+    .s4-header h2 { font-family: "DM Sans", sans-serif; font-size: 20px; font-weight: 700; color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px; margin: 0; }
+    .s4-paragraph { font-size: 16px; color: #636363; line-height: 1.7; margin: 0; word-break: keep-all; overflow-wrap: break-word; }
+    @media (min-width: 768px) { .s4-container { padding: 0 32px; } .s4-header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .s4-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .s4-container { padding: 0; } .s4-header h2 { font-size: 28px; } .s4-section { padding: 64px 0; } }
+  </style>
+</head>
+<body>
+  <section class="s4-section">
+    <div class="s4-container">
+      <div class="s4-header"><h2>How Traditional Masking Works</h2></div>
+      <p class="s4-paragraph">
+        Masking tools scan documents for sensitive patterns — names, numbers, dates — and replace them with generic tokens ([REDACTED], [NAME], ****) or remove them entirely. The replacement is permanent. There is no mechanism to restore original values after processing.
+      </p>
+    </div>
+  </section>
+</body>
+</html>

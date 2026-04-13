@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section02_Screenshot</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #ffffff; }
+
+    .s2-section {
+      width: 100%;
+      overflow: hidden;
+      padding: 32px 0;
+      background-color: #ffffff;
+    }
+    .s2-container {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .s2-frame {
+      border-radius: 40px 40px 0 0;
+      padding: 32px 32px 0;
+      background-color: #f2f2f2;
+      background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.png');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    .s2-screenshot {
+      background-color: #ffffff;
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+    .s2-label {
+      font-size: 14px;
+      color: #9c9c9c;
+      text-align: center;
+      line-height: 1.7;
+    }
+    @media (max-width: 767px) {
+      .s2-frame { background-image: none; border-radius: 24px 24px 0 0; }
+    }
+    @media (min-width: 768px) {
+      .s2-container { padding: 0 32px; }
+    }
+    @media (min-width: 1440px) {
+      .s2-container { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <section class="s2-section">
+    <div class="s2-container">
+      <div class="s2-frame">
+        <div class="s2-screenshot">
+          <p class="s2-label">Masking vs. Encapsulation — Side-by-side output comparison showing restored vs. redacted results</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
