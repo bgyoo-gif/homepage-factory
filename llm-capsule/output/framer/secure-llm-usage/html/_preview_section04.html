@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section04 Explanation — Secure LLM Usage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f2f2f2; }
+
+    .s4-section {
+      width: 100%;
+      padding: 32px 0;
+      background-color: #ffffff;
+    }
+    .s4-container {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .s4-section-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .s4-section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin: 0;
+    }
+    .s4-title-brand { color: #5690D4; }
+    .s4-paragraph {
+      font-size: 16px;
+      color: #636363;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .s4-paragraph:last-child { margin-bottom: 0; }
+
+    @media (min-width: 768px) {
+      .s4-container { padding: 0 32px; }
+      .s4-section-title { font-size: 22px; }
+    }
+    @media (min-width: 1024px) { .s4-section-title { font-size: 24px; } }
+    @media (min-width: 1440px) {
+      .s4-container { padding: 0; }
+      .s4-section-title { font-size: 28px; }
+    }
+    @media (max-width: 767px) { .s4-section-header { text-align: left; } }
+  </style>
+</head>
+<body>
+  <section class="s4-section">
+    <div class="s4-container">
+      <div class="s4-section-header">
+        <h2 class="s4-section-title"><span class="s4-title-brand">Explanation</span></h2>
+      </div>
+      <p class="s4-paragraph">
+        Secure LLM usage is distinct from model-level security measures like prompt filtering or output scanning. Those approaches monitor the interaction with the AI model but do not prevent the data itself from being transmitted. Secure LLM usage operates at the data layer — transforming what the AI receives so that sensitive information never reaches the model.
+      </p>
+      <p class="s4-paragraph">
+        This approach is model-agnostic. Whether the enterprise uses ChatGPT, Claude, Gemini, Perplexity, or any other LLM API, the AI enablement data layer remains consistent because it operates before the data reaches any model — enabling cross-model execution from a single AI enablement layer.
+      </p>
+    </div>
+  </section>
+</body>
+</html>
