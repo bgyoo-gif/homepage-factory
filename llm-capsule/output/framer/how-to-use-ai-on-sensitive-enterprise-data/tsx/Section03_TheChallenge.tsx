@@ -77,6 +77,7 @@ export default function Section03_TheChallenge({
         @container (min-width: 1024px) {
           .s3-container { padding: 0 32px; }
         }
+        @container (min-width: 1440px) { .s3-container { padding: 0 120px; max-width: 1440px; } }
         @container (min-width: 1440px) {
           .s3-container { padding: 0; }
         }

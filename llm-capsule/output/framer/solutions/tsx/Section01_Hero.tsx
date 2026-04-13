@@ -59,6 +59,9 @@ export default function Section01_Hero({
           margin: 0 auto;
           box-sizing: border-box;
         }
+        @container (min-width: 768px) { .s1-container { padding: 0 32px; } }
+        @container (min-width: 1024px) { .s1-container { padding: 0 32px; } }
+        @container (min-width: 1440px) { .s1-container { padding: 0 120px; max-width: 1440px; } }
         .s1-hero {
           text-align: center;
           margin: 0 auto;

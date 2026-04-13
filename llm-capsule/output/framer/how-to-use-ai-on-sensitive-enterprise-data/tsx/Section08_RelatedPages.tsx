@@ -133,6 +133,7 @@ export default function Section08_RelatedPages({
         @container (min-width: 1024px) {
           .s8-container { padding: 0 32px; }
         }
+        @container (min-width: 1440px) { .s8-container { padding: 0 120px; max-width: 1440px; } }
         @container (min-width: 1440px) {
           .s8-container { padding: 0; }
           .s8-section { padding: 60px 0; }

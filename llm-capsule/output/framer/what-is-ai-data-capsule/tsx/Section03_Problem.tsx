@@ -63,6 +63,9 @@ export default function Section03_Problem({
           padding: 0 16px;
           box-sizing: border-box;
         }
+        @container (min-width: 768px) { .s3-container { padding: 0 32px; } }
+        @container (min-width: 1024px) { .s3-container { padding: 0 32px; } }
+        @container (min-width: 1440px) { .s3-container { padding: 0 120px; max-width: 1440px; } }
         .s3-section-header {
           margin-bottom: 24px;
           padding-bottom: 16px;

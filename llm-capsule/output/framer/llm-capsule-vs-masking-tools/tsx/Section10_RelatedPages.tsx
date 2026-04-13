@@ -138,6 +138,7 @@ export default function Section10_RelatedPages({
         @container (min-width: 1024px) {
           .s10-container { padding: 0 32px; }
         }
+        @container (min-width: 1440px) { .s10-container { padding: 0 120px; max-width: 1440px; } }
         @container (min-width: 1440px) {
           .s10-container { padding: 0; max-width: 1080px; }
           .s10-section { padding: 32px 0 80px; }

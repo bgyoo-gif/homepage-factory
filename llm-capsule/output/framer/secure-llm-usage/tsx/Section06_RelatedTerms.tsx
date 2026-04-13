@@ -69,6 +69,9 @@ export default function Section06_RelatedTerms({
           padding: 0 16px;
           box-sizing: border-box;
         }
+        @container (min-width: 768px) { .s6-container { padding: 0 32px; } }
+        @container (min-width: 1024px) { .s6-container { padding: 0 32px; } }
+        @container (min-width: 1440px) { .s6-container { padding: 0 120px; max-width: 1440px; } }
         .s6-section-header {
           margin-bottom: 24px;
           padding-bottom: 16px;

@@ -158,6 +158,7 @@ export default function Section11_CTABand({
         @container (min-width: 1024px) {
           .s11-container { max-width: 720px; }
         }
+        @container (min-width: 1440px) { .s11-container { padding: 0 120px; max-width: 1440px; } }
         @container (min-width: 1440px) {
           .s11-section { padding: 120px 120px; }
           .s11-container { max-width: 1080px; }

@@ -44,6 +44,9 @@ export default function Section04_Explanation({
           padding: 0 16px;
           box-sizing: border-box;
         }
+        @container (min-width: 768px) { .s4-container { padding: 0 32px; } }
+        @container (min-width: 1024px) { .s4-container { padding: 0 32px; } }
+        @container (min-width: 1440px) { .s4-container { padding: 0 120px; max-width: 1440px; } }
         .s4-section-header {
           margin-bottom: 24px;
           padding-bottom: 16px;

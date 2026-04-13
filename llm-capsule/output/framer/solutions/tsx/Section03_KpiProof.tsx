@@ -51,6 +51,9 @@ export default function Section03_KpiProof({
           margin: 0 auto;
           box-sizing: border-box;
         }
+        @container (min-width: 768px) { .s3-container { padding: 0 32px; } }
+        @container (min-width: 1024px) { .s3-container { padding: 0 32px; } }
+        @container (min-width: 1440px) { .s3-container { padding: 0 120px; max-width: 1440px; } }
         .s3-kpi-band {
           border-radius: 40px;
           padding: 48px 40px;

@@ -101,6 +101,7 @@ export default function Section01_Hero({
         @container (min-width: 1024px) {
           .s1-container { padding: 0 32px; }
         }
+        @container (min-width: 1440px) { .s1-container { padding: 0 120px; max-width: 1440px; } }
         @container (min-width: 1440px) {
           .s1-container { padding: 0; }
         }
