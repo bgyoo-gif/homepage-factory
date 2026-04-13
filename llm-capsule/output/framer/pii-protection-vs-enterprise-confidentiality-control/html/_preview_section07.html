@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section07 Related Pages</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f7f7f7; }
+
+    .s7-section {
+      width: 100%;
+      padding: 32px 0 64px;
+      background-color: #ffffff;
+      font-family: "DM Sans", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .s7-container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+    @media (min-width: 768px)  { .s7-container { padding: 0 32px; } .s7-section { padding: 48px 0 80px; } }
+    @media (min-width: 1024px) { .s7-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .s7-container { padding: 0; } .s7-section { padding: 64px 0 100px; } }
+
+    .s7-section-title-icon { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .s7-section-title-icon__icon { color: #5690D4; flex-shrink: 0; }
+    .s7-section-title-icon__text { font-size: 20px; font-weight: 600; color: #0f0f0f; line-height: 1.2; }
+
+    .s7-icon { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    .s7-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px) { .s7-card-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .s7-card--dark {
+      background-color: #141414;
+      border: 1px solid #303135;
+      color: #ffffff;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: background-color 0.2s;
+      text-decoration: none;
+    }
+    .s7-card--dark:hover { background-color: #171719; }
+    .s7-card--dark__icon { flex-shrink: 0; color: #5690D4; }
+    .s7-card--dark__title { font-size: 16px; font-weight: 600; color: #ffffff; }
+  </style>
+</head>
+<body>
+  <section class="s7-section" id="section-7">
+    <div class="s7-container">
+      <div class="s7-section-title-icon">
+        <span class="s7-section-title-icon__icon">
+          <svg class="s7-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+        </span>
+        <span class="s7-section-title-icon__text">Related</span>
+      </div>
+      <div class="s7-card-grid">
+        <a href="product.html" class="s7-card--dark">
+          <span class="s7-card--dark__icon">
+            <svg class="s7-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            </svg>
+          </span>
+          <span class="s7-card--dark__title">Product Overview</span>
+        </a>
+        <a href="architecture.html" class="s7-card--dark">
+          <span class="s7-card--dark__icon">
+            <svg class="s7-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </span>
+          <span class="s7-card--dark__title">Architecture</span>
+        </a>
+        <a href="trust.html" class="s7-card--dark">
+          <span class="s7-card--dark__icon">
+            <svg class="s7-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </span>
+          <span class="s7-card--dark__title">Trust &amp; Compliance</span>
+        </a>
+        <a href="request-pov.html" class="s7-card--dark">
+          <span class="s7-card--dark__icon">
+            <svg class="s7-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+          <span class="s7-card--dark__title">Request a Demo</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

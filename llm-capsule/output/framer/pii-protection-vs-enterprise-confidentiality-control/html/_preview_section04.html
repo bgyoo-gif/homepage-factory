@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section04 Explanation</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f7f7f7; }
+
+    .s4-section {
+      width: 100%;
+      padding: 32px 0;
+      background-color: #ffffff;
+      font-family: "DM Sans", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .s4-container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+    @media (min-width: 768px)  { .s4-container { padding: 0 32px; } .s4-section { padding: 48px 0; } }
+    @media (min-width: 1024px) { .s4-container { padding: 0 32px; } .s4-section { padding: 48px 0; } }
+    @media (min-width: 1440px) { .s4-container { padding: 0; } .s4-section { padding: 64px 0; } }
+
+    .s4-section-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .s4-section-header h2 { font-size: 20px; font-weight: 700; color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px; }
+    @media (min-width: 768px)  { .s4-section-header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .s4-section-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .s4-section-header h2 { font-size: 28px; } }
+    @media (max-width: 767px)  { .s4-section-header { text-align: left; } }
+
+    .s4-text--brand { color: #5690D4; }
+
+    .s4-paragraph { font-size: 16px; color: #636363; line-height: 1.7; margin-bottom: 16px; }
+
+    .s4-bullet { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+    .s4-bullet__item {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 16px; line-height: 1.5; color: #0f0f0f;
+      word-break: keep-all; overflow-wrap: break-word;
+    }
+    .s4-bullet__icon {
+      width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .s4-bullet__icon::before { content: "•"; color: #5690D4; font-weight: 700; font-size: 18px; line-height: 1; }
+    .s4-bullet__item strong { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <section class="s4-section" id="section-4">
+    <div class="s4-container">
+      <div class="s4-section-header">
+        <h2><span class="s4-text--brand">Explanation</span></h2>
+      </div>
+      <p class="s4-paragraph">Enterprise confidentiality control differs from PII protection in scope and configurability:</p>
+      <ul class="s4-bullet">
+        <li class="s4-bullet__item">
+          <span class="s4-bullet__icon" aria-hidden="true"></span>
+          <span><strong>Scope.</strong> PII protection covers regulatory-defined categories — names, identification numbers, health records. Enterprise confidentiality control covers organization-defined categories — deal terms, pricing, internal metrics, competitive analysis, and strategic plans.</span>
+        </li>
+        <li class="s4-bullet__item">
+          <span class="s4-bullet__icon" aria-hidden="true"></span>
+          <span><strong>Policy-driven classification.</strong> What counts as sensitive varies by department, document type, and workflow. A revenue figure is sensitive in a board presentation but routine in a published annual report. Context-aware data control enables policy-driven sensitivity classification, not just regex pattern matching.</span>
+        </li>
+        <li class="s4-bullet__item">
+          <span class="s4-bullet__icon" aria-hidden="true"></span>
+          <span><strong>Workflow integration.</strong> Enterprise confidentiality control integrates with governance frameworks, audit systems, and compliance workflows — providing visibility into what data is protected, how, and by whom.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>

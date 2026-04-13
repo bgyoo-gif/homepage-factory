@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section02 Problem</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f7f7f7; }
+
+    .s2-section {
+      width: 100%;
+      padding: 32px 0;
+      background-color: #ffffff;
+      font-family: "DM Sans", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .s2-container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+    @media (min-width: 768px)  { .s2-container { padding: 0 32px; } .s2-section { padding: 48px 0; } }
+    @media (min-width: 1024px) { .s2-container { padding: 0 32px; } .s2-section { padding: 48px 0; } }
+    @media (min-width: 1440px) { .s2-container { padding: 0; } .s2-section { padding: 64px 0; } }
+
+    .s2-section-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .s2-section-header h2 { font-size: 20px; font-weight: 700; color: #0f0f0f; line-height: 1.2; letter-spacing: -0.5px; }
+    @media (min-width: 768px)  { .s2-section-header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .s2-section-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .s2-section-header h2 { font-size: 28px; } }
+    @media (max-width: 767px)  { .s2-section-header { text-align: left; } }
+
+    .s2-text--brand { color: #5690D4; }
+
+    .s2-paragraph {
+      font-size: 16px;
+      color: #636363;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .s2-paragraph:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+  <section class="s2-section" id="section-2">
+    <div class="s2-container">
+      <div class="s2-section-header">
+        <h2><span class="s2-text--brand">Problem</span></h2>
+      </div>
+      <p class="s2-paragraph">
+        Most AI data protection solutions focus on personally identifiable information (PII) — names, social security numbers, email addresses. But true enterprise AI enablement requires protecting far more than PII. Enterprise documents contain trade secrets, acquisition targets, pricing models, internal performance metrics, strategic plans, and client relationship details — all enterprise-sensitive but not classified as PII.
+      </p>
+      <p class="s2-paragraph">
+        A legal memo about a pending acquisition contains no PII. It contains deal structure, valuation ranges, and strategic rationale — all of which would be damaging if exposed to an AI provider's training pipeline or logging system.
+      </p>
+    </div>
+  </section>
+</body>
+</html>

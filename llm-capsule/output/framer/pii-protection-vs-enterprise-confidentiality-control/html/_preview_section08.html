@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section08 CTA Band</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; }
+
+    .s8-cta-band {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 16px;
+      text-align: center;
+      background-color: #171719;
+      background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-violet-teal.png');
+      background-size: cover;
+      background-position: center;
+      font-family: "DM Sans", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .s8-cta-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0,0,0,0.15);
+      z-index: 0;
+    }
+    .s8-cta-band > * { position: relative; z-index: 1; }
+
+    @media (max-width: 767px) { .s8-cta-band { background-image: none; } }
+    @media (min-width: 768px) { .s8-cta-band { padding: 100px 32px; } }
+    @media (min-width: 1440px) { .s8-cta-band { padding: 120px 120px; } }
+
+    .s8-cta-band__inner {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    @media (min-width: 1024px) { .s8-cta-band__inner { max-width: 720px; } }
+    @media (min-width: 1440px) { .s8-cta-band__inner { max-width: 1080px; } }
+
+    .s8-cta-band__title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin: 0;
+    }
+    @media (max-width: 767px) { .s8-cta-band__title { font-size: 36px; } }
+    @media (min-width: 1440px) { .s8-cta-band__title { font-size: 50px; } }
+
+    .s8-product-name { font-family: "Oxanium", sans-serif; font-weight: 700; }
+
+    .s8-cta-band__description { font-size: 18px; color: rgba(255,255,255,0.85); line-height: 1.7; margin: 0; }
+
+    .s8-cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    @media (max-width: 767px) { .s8-cta-band__actions { flex-direction: column; align-items: center; } }
+
+    .s8-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border-radius: 9999px; font-family: "DM Sans", sans-serif; font-weight: 500;
+      cursor: pointer; white-space: nowrap; text-decoration: none;
+      padding: 16px 48px; font-size: 18px;
+      background-color: rgba(255,255,255,0.92); color: #0f0f0f;
+      border: 1px solid rgba(255,255,255,0.6); backdrop-filter: blur(8px);
+      transition: background-color 0.2s;
+    }
+    .s8-btn:hover { background-color: #ffffff; }
+    @media (max-width: 767px) { .s8-btn { width: 100%; max-width: 320px; } }
+
+    .s8-cta-band__footnote { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 8px; }
+    .s8-cta-band__footnote a { font-size: 14px; color: rgba(255,255,255,0.70); transition: color 0.2s; text-decoration: none; }
+    .s8-cta-band__footnote a:hover { color: #ffffff; }
+  </style>
+</head>
+<body>
+  <section class="s8-cta-band" id="section-cta">
+    <div class="s8-cta-band__inner">
+      <h2 class="s8-cta-band__title">
+        See how <span class="s8-product-name">LLM Capsule</span> works with your data
+      </h2>
+      <p class="s8-cta-band__description">Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</p>
+      <div class="s8-cta-band__actions">
+        <a href="request-pov.html" class="s8-btn">Request a Demo</a>
+        <a href="architecture.html" class="s8-btn">Talk to an Architect</a>
+      </div>
+      <div class="s8-cta-band__footnote">
+        <a href="downloads.html">Download Architecture Brief</a>
+        <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener">AWS Marketplace</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
