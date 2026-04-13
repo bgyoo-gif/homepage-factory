@@ -500,31 +500,7 @@
       font-size: var(--ds-text-lg); color: var(--ds-color-text-secondary);
       line-height: var(--ds-leading-relaxed); max-width: 100%;
     }
-
-    /* Screenshot frame within article */
-    .ds-article-screenshot-frame {
-      margin-top: var(--ds-space-2xl);
-      border-radius: var(--ds-radius-xl) var(--ds-radius-xl) 0 0;
-      padding: var(--ds-space-xl) var(--ds-space-xl) 0;
-      background-color: var(--ds-color-neutral-050);
-      background-size: cover; background-position: center;
-      overflow: hidden;
-    }
-    .ds-article-screenshot-frame.ds-bg--paint-blue { background-image: var(--ds-bg-img-paint-blue); }
     @media (max-width: 767px) {
-      .ds-article-screenshot-frame { border-radius: var(--ds-radius-lg) var(--ds-radius-lg) 0 0; }
-      .ds-article-screenshot-frame.ds-bg--paint-blue { background-image: none; }
-    }
-    .ds-article-screenshot {
-      background-color: var(--ds-color-surface-white);
-      border-radius: var(--ds-radius-sm) var(--ds-radius-sm) 0 0;
-      overflow: hidden; min-height: 200px;
-      display: flex; align-items: center; justify-content: center;
-      padding: var(--ds-space-2xl) var(--ds-space-lg);
-    }
-    .ds-article-screenshot__label {
-      font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary);
-      text-align: center; line-height: var(--ds-leading-relaxed);
     }
 
     /* Article body section reduced top padding */
@@ -604,21 +580,6 @@
         <p class="ds-article-hero__description">
           Compare <span class="ds-text--product">LLM Capsule</span> with synthetic data platforms for enterprise AI. Synthetic data replaces real data entirely; <span class="ds-text--product">LLM Capsule</span> preserves and restores real enterprise data.
         </p>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         Section 2: Screenshot Placeholder
-    ============================================================ -->
-    <section id="section-2" class="ds-section--article-body">
-      <div class="ds-article-container">
-        <div class="ds-article-screenshot-frame ds-bg--paint-blue">
-          <div class="ds-article-screenshot">
-            <p class="ds-article-screenshot__label">
-              Real vs. Synthetic — Encapsulated real documents compared to artificially generated data
-            </p>
-          </div>
-        </div>
       </div>
     </section>
 
