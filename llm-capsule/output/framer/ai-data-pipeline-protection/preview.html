@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview — AI Data Pipeline Protection | LLM Capsule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: #0f0f0f;
+      background-color: #ffffff;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    p, li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
+    h1, h2, h3, h4 { text-wrap: balance; }
+
+    /* ── Icons ── */
+    .adpp-icon {
+      width: 24px; height: 24px;
+      stroke: currentColor; fill: none;
+      stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* ── Container ── */
+    .adpp-article-container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    @media (min-width: 768px)  { .adpp-article-container { padding: 0 32px; } }
+    @media (min-width: 1024px) { .adpp-article-container { padding: 0 32px; } }
+    @media (min-width: 1440px) { .adpp-article-container { padding: 0 120px; } }
+
+    /* ── Sections ── */
+    .adpp-section--hero {
+      width: 100%;
+      padding: 100px 0 0;
+      background-color: #ffffff;
+    }
+    .adpp-section--body {
+      width: 100%;
+      padding: 32px 0;
+      background-color: #ffffff;
+    }
+
+    /* ── Hero ── */
+    .adpp-hero-title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    @media (min-width: 768px)  { .adpp-hero-title { font-size: 40px; } }
+    @media (min-width: 1024px) { .adpp-hero-title { font-size: 48px; } }
+    @media (min-width: 1440px) { .adpp-hero-title { font-size: 64px; } }
+
+    .adpp-hero-desc {
+      font-size: 18px;
+      color: #636363;
+      line-height: 1.7;
+      max-width: 100%;
+    }
+    @media (min-width: 1024px) { .adpp-hero-desc { max-width: 720px; } }
+    @media (min-width: 1440px) { .adpp-hero-desc { max-width: 1080px; } }
+
+    /* ── Section header ── */
+    .adpp-section-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e6e7e9;
+      text-align: center;
+    }
+    .adpp-section-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f0f0f;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    @media (min-width: 768px)  { .adpp-section-header h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { .adpp-section-header h2 { font-size: 24px; } }
+    @media (min-width: 1440px) { .adpp-section-header h2 { font-size: 28px; } }
+    @media (max-width: 767px)  { .adpp-section-header { text-align: left; } }
+
+    /* ── Body text ── */
+    .adpp-body-para {
+      font-size: 16px;
+      color: #636363;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .adpp-body-para:last-child { margin-bottom: 0; }
+
+    /* ── Text helpers ── */
+    .adpp-text-brand { color: #5690D4; }
+    .adpp-text-product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+
+    /* ── Pipeline stages ── */
+    .adpp-pipeline-stages { display: flex; flex-direction: column; gap: 16px; }
+    .adpp-pipeline-stage {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 24px;
+      border: 1px solid #e6e7e9;
+      border-radius: 18px;
+      background-color: #ffffff;
+      box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.04);
+    }
+    .adpp-stage-number {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      border-radius: 9999px;
+      background-color: #1821E8;
+      color: #ffffff;
+      font-size: 14px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .adpp-stage-content { flex: 1; }
+    .adpp-stage-label {
+      font-size: 14px; font-weight: 600;
+      color: #5690D4;
+      margin-bottom: 8px;
+    }
+    .adpp-stage-text {
+      font-size: 16px; color: #636363; line-height: 1.7;
+    }
+
+    /* ── Key message ── */
+    .adpp-key-message {
+      padding: 24px 32px;
+      border-radius: 18px;
+      background-color: #171719;
+      color: #ffffff;
+      font-size: 16px; font-weight: 500; line-height: 1.7;
+      margin: 32px 0;
+    }
+    .adpp-key-message strong { color: #B8D4EE; }
+
+    /* ── Card ── */
+    .adpp-card {
+      background-color: #ffffff;
+      border-radius: 18px;
+      border: 1px solid #e6e7e9;
+      padding: 24px;
+      box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.04);
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    @media (min-width: 1440px) { .adpp-card { padding: 32px; } }
+    .adpp-card h4 { font-size: 16px; font-weight: 600; color: #0f0f0f; line-height: 1.2; }
+    .adpp-card p { font-size: 16px; line-height: 1.7; color: #636363; margin: 0; }
+
+    /* ── Accordion ── */
+    .adpp-ac-list { display: flex; flex-direction: column; gap: 2px; }
+    .adpp-ac-card {
+      border: 1px solid #e6e7e9;
+      border-radius: 8px;
+      background-color: #ffffff;
+      overflow: hidden;
+      transition: background-color 0.2s;
+    }
+    .adpp-ac-card:hover { background-color: #f7f7f7; }
+    .adpp-ac-card__header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 24px;
+      cursor: pointer; user-select: none;
+    }
+    .adpp-ac-card__title {
+      font-size: 18px; font-weight: 500; line-height: 1.2; color: #0f0f0f;
+    }
+    .adpp-ac-card__toggle {
+      width: 28px; height: 28px;
+      border-radius: 6px;
+      border: 0.5px solid #e6e7e9;
+      background-color: #f7f7f7;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; cursor: pointer;
+    }
+    .adpp-toggle-icon {
+      width: 12px; height: 12px; position: relative; flex-shrink: 0; display: block;
+    }
+    .adpp-toggle-icon::before, .adpp-toggle-icon::after {
+      content: ''; position: absolute;
+      background-color: #9c9c9c; border-radius: 1px;
+    }
+    .adpp-toggle-icon::before {
+      width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    }
+    .adpp-toggle-icon::after {
+      width: 1.5px; height: 10px; top: 50%; left: 50%;
+      transform: translate(-50%, -50%); opacity: 1; transition: opacity 0.2s;
+    }
+    .adpp-ac-card.is-open .adpp-toggle-icon::after { opacity: 0; }
+    .adpp-ac-card__body {
+      display: none; padding: 24px;
+      border-top: 1px solid #e6e7e9;
+      background-color: #f7f7f7;
+      font-size: 14px; color: #636363; line-height: 1.7;
+    }
+    .adpp-ac-card.is-open .adpp-ac-card__body { display: block; }
+    .adpp-ac-card__body p + p { margin-top: 12px; }
+
+    /* ── Section title icon ── */
+    .adpp-section-title-icon {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+    }
+    .adpp-section-title-icon__icon { color: #5690D4; flex-shrink: 0; }
+    .adpp-section-title-icon__text {
+      font-family: "DM Sans", sans-serif;
+      font-size: 20px; font-weight: 600; color: #0f0f0f; line-height: 1.2;
+    }
+
+    /* ── Card grid ── */
+    .adpp-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px) { .adpp-card-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ── Dark card ── */
+    .adpp-card-dark {
+      background-color: #141414;
+      border: 1px solid #303135;
+      color: #ffffff;
+      border-radius: 18px; padding: 24px;
+      box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.04);
+      display: flex; align-items: center; gap: 16px;
+      transition: background-color 0.2s; text-decoration: none;
+    }
+    .adpp-card-dark:hover { background-color: #171719; }
+    .adpp-card-dark__icon { flex-shrink: 0; color: #5690D4; }
+    .adpp-card-dark__title { font-size: 16px; font-weight: 600; color: #ffffff; }
+
+    /* ── CTA Band ── */
+    .adpp-cta-band {
+      width: 100%; position: relative; overflow: hidden;
+      padding: 80px 16px; text-align: center;
+      background-color: #171719;
+      background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-wave-teal-blue.png');
+      background-size: cover; background-position: center;
+    }
+    @media (min-width: 768px)  { .adpp-cta-band { padding: 100px 32px; } }
+    @media (min-width: 1440px) { .adpp-cta-band { padding: 120px 120px; } }
+    @media (max-width: 767px)  { .adpp-cta-band { background-image: none; } }
+    .adpp-cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: rgba(0,0,0,0.15); z-index: 0;
+    }
+    .adpp-cta-band > * { position: relative; z-index: 1; }
+    .adpp-cta-band__inner {
+      max-width: 100%; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: 24px;
+    }
+    @media (min-width: 1024px) { .adpp-cta-band__inner { max-width: 720px; } }
+    @media (min-width: 1440px) { .adpp-cta-band__inner { max-width: 1080px; } }
+    .adpp-cta-title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 36px; font-weight: 700; color: #ffffff;
+      line-height: 1.2; letter-spacing: -0.5px; margin: 0;
+    }
+    @media (min-width: 768px)  { .adpp-cta-title { font-size: 40px; } }
+    @media (min-width: 1440px) { .adpp-cta-title { font-size: 50px; } }
+    .adpp-cta-desc {
+      font-size: 18px; color: rgba(255,255,255,0.85); line-height: 1.7; margin: 0;
+    }
+    .adpp-cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    @media (max-width: 767px) {
+      .adpp-cta-actions { flex-direction: column; align-items: center; }
+      .adpp-cta-actions .adpp-btn { width: 100%; max-width: 320px; }
+    }
+    .adpp-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border-radius: 9999px;
+      font-family: "DM Sans", sans-serif; font-weight: 500;
+      cursor: pointer; transition: opacity 0.2s, background-color 0.2s;
+      white-space: nowrap; text-decoration: none;
+      padding: 16px 48px; font-size: 18px;
+      background-color: rgba(255,255,255,0.92);
+      color: #0f0f0f;
+      border: 1px solid rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+    }
+    .adpp-btn:hover { background-color: #ffffff; }
+    .adpp-cta-footnote {
+      font-size: 12px; color: rgba(255,255,255,0.70); margin-top: 8px;
+    }
+    .adpp-cta-footnote a {
+      color: rgba(255,255,255,0.70); transition: color 0.15s; text-decoration: none;
+    }
+    .adpp-cta-footnote a:hover { color: #ffffff; }
+  </style>
+</head>
+<body>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://llmcapsule.ai/resources"},{"@type":"ListItem","position":3,"name":"Learn","item":"https://llmcapsule.ai/resources/learn"},{"@type":"ListItem","position":4,"name":"AI Data Pipeline Protection","item":"https://llmcapsule.ai/resources/learn/ai-data-pipeline-protection"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is AI data pipeline protection?","acceptedAnswer":{"@type":"Answer","text":"AI data pipeline protection secures sensitive enterprise data at every stage of the AI processing pipeline — from document ingestion through model interaction to output delivery."}},{"@type":"Question","name":"How does this differ from API-level security?","acceptedAnswer":{"@type":"Answer","text":"API-level security filters prompts and scans outputs at the model interface. AI data pipeline protection operates at the data layer across the entire pipeline, ensuring data is protected before it reaches any external system."}}]}</script>
+
+  <main>
+
+    <!-- Section 1: Hero -->
+    <section id="section-hero" class="adpp-section--hero">
+      <div class="adpp-article-container">
+        <h1 class="adpp-hero-title">AI Data Pipeline Protection</h1>
+        <p class="adpp-hero-desc">
+          Enabling enterprise AI at every stage of the processing pipeline — ingestion, encapsulation, processing, restoration, and delivery.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: Problem -->
+    <section id="section-3" class="adpp-section--body">
+      <div class="adpp-article-container">
+        <div class="adpp-section-header">
+          <h2><span class="adpp-text-brand">Problem</span></h2>
+        </div>
+        <p class="adpp-body-para">
+          Enterprise AI pipelines move data through multiple stages and systems. Documents are ingested from internal sources, pre-processed for AI consumption, sent to language models, processed, and outputs are routed back to business systems. Each stage represents a potential exposure point.
+        </p>
+        <p class="adpp-body-para">
+          Point solutions — API gateways that filter prompts, output scanners that check responses — address individual stages but leave gaps between them. AI data pipeline protection requires a continuous data-layer approach.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 4: Explanation — Pipeline Stages -->
+    <section id="section-4" class="adpp-section--body">
+      <div class="adpp-article-container">
+        <div class="adpp-section-header">
+          <h2><span class="adpp-text-brand">Explanation</span></h2>
+        </div>
+
+        <div class="adpp-pipeline-stages">
+          <div class="adpp-pipeline-stage">
+            <span class="adpp-stage-number">1</span>
+            <div class="adpp-stage-content">
+              <div class="adpp-stage-label">Stage 1: Ingestion</div>
+              <p class="adpp-stage-text">Documents enter the pipeline from enterprise systems — document management, email, databases, RAG pipelines. <span class="adpp-text-product">LLM Capsule</span> intercepts data at this stage and applies context-aware data control to classify sensitivity.</p>
+            </div>
+          </div>
+
+          <div class="adpp-pipeline-stage">
+            <span class="adpp-stage-number">2</span>
+            <div class="adpp-stage-content">
+              <div class="adpp-stage-label">Stage 2: Encapsulation</div>
+              <p class="adpp-stage-text">Sensitive elements are replaced with structure-preserving representations. The encapsulation occurs entirely within the enterprise environment. Mapping data is stored locally and never transmitted.</p>
+            </div>
+          </div>
+
+          <div class="adpp-pipeline-stage">
+            <span class="adpp-stage-number">3</span>
+            <div class="adpp-stage-content">
+              <div class="adpp-stage-label">Stage 3: AI Processing</div>
+              <p class="adpp-stage-text">Encapsulated data is sent to the AI model. The model processes structurally intact documents and generates useful outputs. No original sensitive data reaches the AI provider.</p>
+            </div>
+          </div>
+
+          <div class="adpp-pipeline-stage">
+            <span class="adpp-stage-number">4</span>
+            <div class="adpp-stage-content">
+              <div class="adpp-stage-label">Stage 4: Restoration</div>
+              <p class="adpp-stage-text">AI results are restored through local restoration. The locally stored mapping is applied to reconstruct outputs with real enterprise data.</p>
+            </div>
+          </div>
+
+          <div class="adpp-pipeline-stage">
+            <span class="adpp-stage-number">5</span>
+            <div class="adpp-stage-content">
+              <div class="adpp-stage-label">Stage 5: Delivery</div>
+              <p class="adpp-stage-text">Restored outputs are routed to downstream business systems — compliance platforms, case management, analytics dashboards — ready for immediate use.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="adpp-key-message">
+          <strong>AI data pipeline protection</strong> is not a single checkpoint, but a continuous AI enablement data layer that protects data from ingestion to delivery, enabling enterprise AI adoption at every stage.
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Enterprise Example -->
+    <section id="section-5" class="adpp-section--body">
+      <div class="adpp-article-container">
+        <div class="adpp-section-header">
+          <h2>Enterprise <span class="adpp-text-brand">Example</span></h2>
+        </div>
+
+        <div class="adpp-card">
+          <h4>Telecom Customer Service Automation</h4>
+          <p>A telecom company routes 50,000 customer support tickets per month through AI for automated categorization, priority scoring, and response drafting. Tickets contain customer account numbers, addresses, service plan details, and payment history.</p>
+          <p><span class="adpp-text-product">LLM Capsule</span> enables the entire pipeline: tickets are encapsulated at ingestion, AI processes protected tickets, responses are restored with real customer data, and formatted outputs route directly to the support platform.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: FAQ -->
+    <section id="section-6" class="adpp-section--body">
+      <div class="adpp-article-container">
+        <div class="adpp-section-header">
+          <h2><span class="adpp-text-brand">FAQ</span></h2>
+        </div>
+
+        <div class="adpp-ac-list">
+          <div class="adpp-ac-card is-open" onclick="this.classList.toggle('is-open')">
+            <div class="adpp-ac-card__header">
+              <span class="adpp-ac-card__title">What is AI data pipeline protection?</span>
+              <span class="adpp-ac-card__toggle"><span class="adpp-toggle-icon"></span></span>
+            </div>
+            <div class="adpp-ac-card__body">
+              <p>AI data pipeline protection secures sensitive enterprise data at every stage of the AI processing pipeline — from document ingestion through model interaction to output delivery.</p>
+            </div>
+          </div>
+
+          <div class="adpp-ac-card" onclick="this.classList.toggle('is-open')">
+            <div class="adpp-ac-card__header">
+              <span class="adpp-ac-card__title">How does this differ from API-level security?</span>
+              <span class="adpp-ac-card__toggle"><span class="adpp-toggle-icon"></span></span>
+            </div>
+            <div class="adpp-ac-card__body">
+              <p>API-level security filters prompts and scans outputs at the model interface. AI data pipeline protection operates at the data layer across the entire pipeline, ensuring data is protected before it reaches any external system.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Related -->
+    <section id="section-7" class="adpp-section--body">
+      <div class="adpp-article-container">
+        <div class="adpp-section-title-icon">
+          <span class="adpp-section-title-icon__icon">
+            <svg class="adpp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+            </svg>
+          </span>
+          <span class="adpp-section-title-icon__text">Related</span>
+        </div>
+
+        <div class="adpp-card-grid">
+          <a href="product.html" class="adpp-card-dark">
+            <span class="adpp-card-dark__icon">
+              <svg class="adpp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              </svg>
+            </span>
+            <span class="adpp-card-dark__title">Product Overview</span>
+          </a>
+          <a href="architecture.html" class="adpp-card-dark">
+            <span class="adpp-card-dark__icon">
+              <svg class="adpp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </span>
+            <span class="adpp-card-dark__title">Architecture</span>
+          </a>
+          <a href="trust.html" class="adpp-card-dark">
+            <span class="adpp-card-dark__icon">
+              <svg class="adpp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </span>
+            <span class="adpp-card-dark__title">Trust &amp; Compliance</span>
+          </a>
+          <a href="request-pov.html" class="adpp-card-dark">
+            <span class="adpp-card-dark__icon">
+              <svg class="adpp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+            <span class="adpp-card-dark__title">Request a Demo</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: CTA Band -->
+    <section id="section-cta" class="adpp-cta-band">
+      <div class="adpp-cta-band__inner">
+        <h2 class="adpp-cta-title">See how <span class="adpp-text-product">LLM Capsule</span> works with your data</h2>
+        <p class="adpp-cta-desc">Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</p>
+        <div class="adpp-cta-actions">
+          <a href="request-pov.html" class="adpp-btn">Request a Demo</a>
+          <a href="architecture.html" class="adpp-btn">Talk to an Architect</a>
+        </div>
+        <p class="adpp-cta-footnote">
+          <a href="downloads.html">Download Architecture Brief</a>
+          &nbsp;&nbsp;·&nbsp;&nbsp;
+          <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener">AWS Marketplace</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

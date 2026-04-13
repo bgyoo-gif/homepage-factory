@@ -81,7 +81,7 @@ export default function Section08_CTABand({
         }
         .s8-cta-band > * { position: relative; z-index: 1; }
 
-        @media (max-width: 767px) {
+        @container (max-width: 767px) {
           .s8-cta-band { background-image: none; }
         }
 
@@ -105,14 +105,14 @@ export default function Section08_CTABand({
           margin: 0;
           text-wrap: balance;
         }
-        @media (min-width: 768px)  { .s8-cta-band { padding: 100px 32px; } }
-        @media (min-width: 1024px) { .s8-cta-band__inner { max-width: 720px; } }
-        @media (min-width: 1440px) {
+        @container (min-width: 768px)  { .s8-cta-band { padding: 100px 32px; } }
+        @container (min-width: 1024px) { .s8-cta-band__inner { max-width: 720px; } }
+        @container (min-width: 1440px) {
           .s8-cta-band { padding: 120px 120px; }
           .s8-cta-band__inner { max-width: 1080px; }
           .s8-cta-band__title { font-size: 50px; }
         }
-        @media (max-width: 767px) { .s8-cta-band__title { font-size: 36px; } }
+        @container (max-width: 767px) { .s8-cta-band__title { font-size: 36px; } }
 
         .s8-product-name {
           font-family: "Oxanium", sans-serif;
@@ -135,7 +135,7 @@ export default function Section08_CTABand({
           justify-content: center;
           gap: 16px;
         }
-        @media (max-width: 767px) {
+        @container (max-width: 767px) {
           .s8-cta-band__actions { flex-direction: column; align-items: center; }
         }
 
@@ -160,7 +160,7 @@ export default function Section08_CTABand({
           backdrop-filter: blur(8px);
         }
         .s8-btn:hover { background-color: ${PALETTE.white}; }
-        @media (max-width: 767px) {
+        @container (max-width: 767px) {
           .s8-btn { width: 100%; max-width: 320px; }
         }
 

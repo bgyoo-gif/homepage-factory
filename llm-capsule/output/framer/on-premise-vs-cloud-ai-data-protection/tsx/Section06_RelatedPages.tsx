@@ -131,7 +131,7 @@ export default function Section06_RelatedPages({
         }
         @container s6 (min-width: 768px)  { .s6-container { padding: 0 32px; } }
         @container s6 (min-width: 1024px) { .s6-container { padding: 0 32px; } }
-        @container s6 (min-width: 1440px) { .s6-container { padding: 0; } }
+        @container s6 (min-width: 1440px) { .s6-container { padding: 0 120px; max-width: 1440px; } }
 
         .s6-section-title {
           display: flex;

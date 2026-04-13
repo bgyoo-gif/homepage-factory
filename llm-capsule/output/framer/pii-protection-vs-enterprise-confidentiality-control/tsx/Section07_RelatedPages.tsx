@@ -68,10 +68,10 @@ export default function Section07_RelatedPages({
         }
         @container (min-width: 768px)  { .s7-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .s7-container { padding: 0 32px; } }
-        @container (min-width: 1440px) { .s7-container { padding: 0; } }
+        @container (min-width: 1440px) { .s7-container { padding: 0 120px; max-width: 1440px; } }
 
-        @container (min-width: 768px)  { .s7-section { padding: 48px 0 80px; } }
-        @container (min-width: 1440px) { .s7-section { padding: 64px 0 100px; } }
+        @container (min-width: 768px)  { .s7-section { padding: 60px 0 80px; } }
+        @container (min-width: 1440px) { .s7-section { padding: 60px 0 100px; } }
 
         .s7-section-title-icon {
           display: flex;
