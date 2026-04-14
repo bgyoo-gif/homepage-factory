@@ -17,7 +17,7 @@ const PALETTE = {
   overlayCtnBtnBdr: "rgba(255,255,255,0.6)",
 }
 
-const BG_PAINT_BLUE = "url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.png')"
+const BG_IMAGE = "url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-lavender-gold.png')"
 
 interface Props {
   titlePre?: string
@@ -181,7 +181,7 @@ export default function Section06_CTA({
       <section
         className="s6-section"
         id="section-cta"
-        style={{ backgroundImage: isMobile ? "none" : BG_PAINT_BLUE }}
+        style={{ backgroundImage: isMobile ? "none" : BG_IMAGE }}
       >
         <div className="s6-inner">
           <h2 className="s6-title">

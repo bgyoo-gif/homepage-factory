@@ -62,6 +62,18 @@ export default function Section01_Hero({
           box-sizing: border-box;
         }
 
+        .s1-breadcrumb {
+          display: flex; align-items: center; gap: 8px;
+          flex-wrap: wrap; margin-bottom: 24px;
+        }
+        .s1-breadcrumb__link {
+          font-size: 14px; color: ${PALETTE.brandSecondary};
+          font-weight: 500; transition: color 0.15s; text-decoration: none;
+        }
+        .s1-breadcrumb__link:hover { color: ${PALETTE.brandPrimary}; }
+        .s1-breadcrumb__sep { font-size: 14px; color: ${PALETTE.textTertiary}; }
+        .s1-breadcrumb__current { font-size: 14px; color: ${PALETTE.textTertiary}; }
+
         .s1-title {
           font-family: "DM Sans", sans-serif;
           font-size: 28px;
@@ -107,6 +119,15 @@ export default function Section01_Hero({
       <section className="s1-section" id="section-hero">
         <div className="s1-inner">
           <div className="s1-container">
+            <nav className="s1-breadcrumb" aria-label="Breadcrumb">
+              <a href="/" className="s1-breadcrumb__link">Home</a>
+              <span className="s1-breadcrumb__sep">/</span>
+              <a href="/resources" className="s1-breadcrumb__link">Resources</a>
+              <span className="s1-breadcrumb__sep">/</span>
+              <a href="/resources/glossary" className="s1-breadcrumb__link">Glossary</a>
+              <span className="s1-breadcrumb__sep">/</span>
+              <span className="s1-breadcrumb__current">Restorable Workflow</span>
+            </nav>
             <h1 className="s1-title">{title}</h1>
             <p className="s1-description">
               {description}{" "}
