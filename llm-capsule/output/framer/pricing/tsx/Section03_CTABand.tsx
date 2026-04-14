@@ -69,13 +69,16 @@ export default function Section03_CTABand({
           overflow: hidden;
           padding: 80px 16px;
           text-align: center;
-          background: ${PALETTE.gradientBrand};
+          background-color: #171719;
+          background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-navy-teal.png');
+          background-size: cover;
+          background-position: center;
         }
         .s3-band::before {
           content: '';
           position: absolute;
           inset: 0;
-          background-color: rgba(0,0,0,0.15);
+          background-color: rgba(0,0,0,0.35);
           z-index: 0;
         }
         .s3-band > * { position: relative; z-index: 1; }
