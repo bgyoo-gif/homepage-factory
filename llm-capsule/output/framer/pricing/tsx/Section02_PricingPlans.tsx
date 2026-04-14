@@ -183,7 +183,7 @@ export default function Section02_PricingPlans({
           display: grid;
           grid-template-columns: 1fr;
           gap: 24px;
-          align-items: start;
+          align-items: stretch;
         }
         @container (min-width: 768px) {
           .s2-card-grid { grid-template-columns: repeat(2, 1fr); }
