@@ -579,6 +579,7 @@
       line-height: var(--ds-leading-relaxed);
     }
     @media (max-width: 1023px) { .ds-product-split { grid-template-columns: 1fr; gap: 32px; } .ds-product-split--reverse { direction: ltr; } }
+    .ds-product-split + .ds-product-split { margin-top: var(--ds-space-3xl); }
 
     /* --- Product Split Visual Placeholder --- */
     .ds-product-split__visual-placeholder {
@@ -983,8 +984,8 @@
           </p>
         </div>
 
+        <!-- Split 1: Local Real-Time Encapsulation -->
         <div class="ds-product-split">
-          <!-- Left: Visual with background image -->
           <div class="ds-product-split__visual ds-bg--grad-deep">
             <div class="ds-product-split__visual-placeholder">
               <svg class="ds-icon ds-icon--lg ds-icon--placeholder-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -994,20 +995,10 @@
               <span class="ds-product-split__visual-placeholder-desc">Document Encapsulation — Before and after view of a contract with sensitive data replaced by tokens</span>
             </div>
           </div>
-
-          <!-- Right: Content -->
           <div class="ds-product-split__content">
             <p class="ds-product-split__lead">
               LLM Capsule encapsulates sensitive entities locally before any data leaves the enterprise environment. Only the protected capsule is sent for AI processing. This is local encapsulation at the data layer — fundamentally different from API-level filtering or prompt scanning.
             </p>
-            <p class="ds-product-split__body">
-              Most enterprise AI risk starts when raw business data is exposed outside the controlled environment. With LLM Capsule, sensitive content is transformed locally through protected outbound flow so external models never receive the raw original data. This enables secure enterprise AI workflows where the enterprise maintains complete data sovereignty.
-            </p>
-            <p class="ds-product-split__body">
-              The mapping between original and encapsulated values is stored entirely within the enterprise environment and never transmitted. Even in the event of a breach at the AI provider, no original enterprise data would be exposed because it was never transmitted.
-            </p>
-
-            <!-- Checklist -->
             <ul class="ds-bullet ds-bullet--check ds-bullet--spaced">
               <li class="ds-bullet__item">
                 <span class="ds-bullet__icon"></span>
@@ -1015,11 +1006,31 @@
               </li>
               <li class="ds-bullet__item">
                 <span class="ds-bullet__icon"></span>
-                <span class="ds-bullet__content"><strong>Protected outbound flow</strong> — Only encapsulated representations cross the trust boundary. The AI provider processes useful but opaque data.</span>
+                <span class="ds-bullet__content"><strong>Environment-bound processing</strong> — Supports controlled enterprise and regulated environments including on-premise, air-gapped, and VPC deployments.</span>
               </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Split 2: Protected Outbound Flow -->
+        <div class="ds-product-split ds-product-split--reverse">
+          <div class="ds-product-split__visual ds-bg--grad-navy">
+            <div class="ds-product-split__visual-placeholder">
+              <svg class="ds-icon ds-icon--lg ds-icon--placeholder-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span class="ds-product-split__visual-placeholder-label">Product Screenshot</span>
+              <span class="ds-product-split__visual-placeholder-desc">Protected Outbound Flow — Encapsulated data crossing trust boundary while original values remain inside</span>
+            </div>
+          </div>
+          <div class="ds-product-split__content">
+            <p class="ds-product-split__lead">
+              Most enterprise AI risk starts when raw business data is exposed outside the controlled environment. With LLM Capsule, sensitive content is transformed locally so external models never receive the raw original data. The mapping between original and encapsulated values is stored entirely within the enterprise environment and never transmitted.
+            </p>
+            <ul class="ds-bullet ds-bullet--check ds-bullet--spaced">
               <li class="ds-bullet__item">
                 <span class="ds-bullet__icon"></span>
-                <span class="ds-bullet__content"><strong>Environment-bound processing</strong> — Supports controlled enterprise and regulated environments including on-premise, air-gapped, and VPC deployments.</span>
+                <span class="ds-bullet__content"><strong>Protected outbound flow</strong> — Only encapsulated representations cross the trust boundary. The AI provider processes useful but opaque data.</span>
               </li>
               <li class="ds-bullet__item">
                 <span class="ds-bullet__icon"></span>

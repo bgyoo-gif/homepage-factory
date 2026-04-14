@@ -16,36 +16,36 @@ interface Props {
   sectionTitle?: string
   sectionTitleBrand?: string
   sectionDescription?: string
-  screenshotDesc?: string
-  lead?: string
-  body1?: string
-  body2?: string
-  check1Title?: string
-  check1Body?: string
-  check2Title?: string
-  check2Body?: string
-  check3Title?: string
-  check3Body?: string
-  check4Title?: string
-  check4Body?: string
+  split1ScreenshotDesc?: string
+  split1Lead?: string
+  split1Check1Title?: string
+  split1Check1Body?: string
+  split1Check2Title?: string
+  split1Check2Body?: string
+  split2ScreenshotDesc?: string
+  split2Lead?: string
+  split2Check1Title?: string
+  split2Check1Body?: string
+  split2Check2Title?: string
+  split2Check2Body?: string
 }
 
 export default function Section03_ZeroExposure({
   sectionTitle = "Encapsulate before outbound — raw data never",
   sectionTitleBrand = "leaves",
   sectionDescription = "LLM Capsule encapsulates sensitive entities locally before any data leaves the enterprise environment.",
-  screenshotDesc = "Document Encapsulation — Before and after view of a contract with sensitive data replaced by tokens",
-  lead = "LLM Capsule encapsulates sensitive entities locally before any data leaves the enterprise environment. Only the protected capsule is sent for AI processing. This is local encapsulation at the data layer — fundamentally different from API-level filtering or prompt scanning.",
-  body1 = "Most enterprise AI risk starts when raw business data is exposed outside the controlled environment. With LLM Capsule, sensitive content is transformed locally through protected outbound flow so external models never receive the raw original data. This enables secure enterprise AI workflows where the enterprise maintains complete data sovereignty.",
-  body2 = "The mapping between original and encapsulated values is stored entirely within the enterprise environment and never transmitted. Even in the event of a breach at the AI provider, no original enterprise data would be exposed because it was never transmitted.",
-  check1Title = "Local real-time encapsulation",
-  check1Body = "Raw data stays inside the enterprise environment. Sensitive elements are detected and replaced before any outbound transmission.",
-  check2Title = "Protected outbound flow",
-  check2Body = "Only encapsulated representations cross the trust boundary. The AI provider processes useful but opaque data.",
-  check3Title = "Environment-bound processing",
-  check3Body = "Supports controlled enterprise and regulated environments including on-premise, air-gapped, and VPC deployments.",
-  check4Title = "Audit trail",
-  check4Body = "Every encapsulation event is logged with full traceability for enterprise AI governance and compliance reporting.",
+  split1ScreenshotDesc = "Document Encapsulation — Before and after view of a contract with sensitive data replaced by tokens",
+  split1Lead = "LLM Capsule encapsulates sensitive entities locally before any data leaves the enterprise environment. Only the protected capsule is sent for AI processing. This is local encapsulation at the data layer — fundamentally different from API-level filtering or prompt scanning.",
+  split1Check1Title = "Local real-time encapsulation",
+  split1Check1Body = "Raw data stays inside the enterprise environment. Sensitive elements are detected and replaced before any outbound transmission.",
+  split1Check2Title = "Environment-bound processing",
+  split1Check2Body = "Supports controlled enterprise and regulated environments including on-premise, air-gapped, and VPC deployments.",
+  split2ScreenshotDesc = "Protected Outbound Flow — Encapsulated data crossing trust boundary while original values remain inside",
+  split2Lead = "Most enterprise AI risk starts when raw business data is exposed outside the controlled environment. With LLM Capsule, sensitive content is transformed locally so external models never receive the raw original data. The mapping between original and encapsulated values is stored entirely within the enterprise environment and never transmitted.",
+  split2Check1Title = "Protected outbound flow",
+  split2Check1Body = "Only encapsulated representations cross the trust boundary. The AI provider processes useful but opaque data.",
+  split2Check2Title = "Audit trail",
+  split2Check2Body = "Every encapsulation event is logged with full traceability for enterprise AI governance and compliance reporting.",
 }: Props) {
   return (
     <>
@@ -112,15 +112,18 @@ export default function Section03_ZeroExposure({
           gap: 64px;
           align-items: stretch;
         }
+        .s3-split--reverse { direction: rtl; }
+        .s3-split--reverse > * { direction: ltr; }
+        .s3-split + .s3-split { margin-top: 48px; }
         @container (max-width: 1023px) {
           .s3-split { grid-template-columns: 1fr; gap: 32px; }
+          .s3-split--reverse { direction: ltr; }
         }
 
         .s3-visual {
           border-radius: 40px;
           overflow: hidden;
           background-color: ${PALETTE.surfaceLight};
-          background-image: url('${IMAGE_BASE}/images/bg-gradient-deep-teal.png');
           background-size: cover;
           background-position: center;
           padding: 24px 24px 0;
@@ -130,7 +133,9 @@ export default function Section03_ZeroExposure({
           gap: 12px;
           min-height: 320px;
         }
-        @container (max-width: 767px) { .s3-visual { background-image: none; } }
+        .s3-visual--deep { background-image: url('${IMAGE_BASE}/images/bg-gradient-deep-teal.png'); }
+        .s3-visual--navy { background-image: url('${IMAGE_BASE}/images/bg-gradient-navy-teal.png'); }
+        @container (max-width: 767px) { .s3-visual { background-image: none !important; } }
 
         .s3-visual-placeholder {
           flex: 1;
@@ -179,16 +184,6 @@ export default function Section03_ZeroExposure({
           color: ${PALETTE.textPrimary};
           line-height: 1.7;
           font-weight: 500;
-          margin: 0;
-          word-break: keep-all;
-          overflow-wrap: break-word;
-          text-wrap: pretty;
-        }
-        .s3-body {
-          font-family: "DM Sans", sans-serif;
-          font-size: 14px;
-          color: ${PALETTE.textSecondary};
-          line-height: 1.7;
           margin: 0;
           word-break: keep-all;
           overflow-wrap: break-word;
@@ -247,43 +242,58 @@ export default function Section03_ZeroExposure({
               <p className="s3-header__desc">{sectionDescription}</p>
             </div>
 
+            {/* Split 1: Local Real-Time Encapsulation */}
             <div className="s3-split">
-              {/* Visual */}
-              <div className="s3-visual">
+              <div className="s3-visual s3-visual--deep">
                 <div className="s3-visual-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
                   </svg>
                   <span className="s3-visual-placeholder-label">Product Screenshot</span>
-                  <span className="s3-visual-placeholder-desc">{screenshotDesc}</span>
+                  <span className="s3-visual-placeholder-desc">{split1ScreenshotDesc}</span>
                 </div>
               </div>
-
-              {/* Content */}
               <div className="s3-content">
-                <p className="s3-lead">{lead}</p>
-                <p className="s3-body">{body1}</p>
-                <p className="s3-body">{body2}</p>
+                <p className="s3-lead">{split1Lead}</p>
                 <ul className="s3-checklist">
                   <li className="s3-check-item">
                     <span className="s3-check-icon"></span>
-                    <span className="s3-check-content"><strong>{check1Title}</strong> — {check1Body}</span>
+                    <span className="s3-check-content"><strong>{split1Check1Title}</strong> — {split1Check1Body}</span>
                   </li>
                   <li className="s3-check-item">
                     <span className="s3-check-icon"></span>
-                    <span className="s3-check-content"><strong>{check2Title}</strong> — {check2Body}</span>
-                  </li>
-                  <li className="s3-check-item">
-                    <span className="s3-check-icon"></span>
-                    <span className="s3-check-content"><strong>{check3Title}</strong> — {check3Body}</span>
-                  </li>
-                  <li className="s3-check-item">
-                    <span className="s3-check-icon"></span>
-                    <span className="s3-check-content"><strong>{check4Title}</strong> — {check4Body}</span>
+                    <span className="s3-check-content"><strong>{split1Check2Title}</strong> — {split1Check2Body}</span>
                   </li>
                 </ul>
               </div>
             </div>
+
+            {/* Split 2: Protected Outbound Flow */}
+            <div className="s3-split s3-split--reverse">
+              <div className="s3-visual s3-visual--navy">
+                <div className="s3-visual-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                  <span className="s3-visual-placeholder-label">Product Screenshot</span>
+                  <span className="s3-visual-placeholder-desc">{split2ScreenshotDesc}</span>
+                </div>
+              </div>
+              <div className="s3-content">
+                <p className="s3-lead">{split2Lead}</p>
+                <ul className="s3-checklist">
+                  <li className="s3-check-item">
+                    <span className="s3-check-icon"></span>
+                    <span className="s3-check-content"><strong>{split2Check1Title}</strong> — {split2Check1Body}</span>
+                  </li>
+                  <li className="s3-check-item">
+                    <span className="s3-check-icon"></span>
+                    <span className="s3-check-content"><strong>{split2Check2Title}</strong> — {split2Check2Body}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -292,19 +302,19 @@ export default function Section03_ZeroExposure({
 }
 
 addPropertyControls(Section03_ZeroExposure, {
-  sectionTitle:       { type: ControlType.String, title: "Title",            defaultValue: "Encapsulate before outbound — raw data never" },
-  sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)",    defaultValue: "leaves" },
-  sectionDescription: { type: ControlType.String, title: "Description",      defaultValue: "LLM Capsule encapsulates sensitive entities locally…" },
-  screenshotDesc:     { type: ControlType.String, title: "Screenshot desc",  defaultValue: "Document Encapsulation — Before and after view…" },
-  lead:               { type: ControlType.String, title: "Lead",             defaultValue: "LLM Capsule encapsulates sensitive entities locally…" },
-  body1:              { type: ControlType.String, title: "Body 1",           defaultValue: "Most enterprise AI risk starts…" },
-  body2:              { type: ControlType.String, title: "Body 2",           defaultValue: "The mapping between original and encapsulated…" },
-  check1Title:        { type: ControlType.String, title: "Check 1 Title",    defaultValue: "Local real-time encapsulation" },
-  check1Body:         { type: ControlType.String, title: "Check 1 Body",     defaultValue: "Raw data stays inside the enterprise environment…" },
-  check2Title:        { type: ControlType.String, title: "Check 2 Title",    defaultValue: "Protected outbound flow" },
-  check2Body:         { type: ControlType.String, title: "Check 2 Body",     defaultValue: "Only encapsulated representations cross the trust boundary…" },
-  check3Title:        { type: ControlType.String, title: "Check 3 Title",    defaultValue: "Environment-bound processing" },
-  check3Body:         { type: ControlType.String, title: "Check 3 Body",     defaultValue: "Supports controlled enterprise and regulated environments…" },
-  check4Title:        { type: ControlType.String, title: "Check 4 Title",    defaultValue: "Audit trail" },
-  check4Body:         { type: ControlType.String, title: "Check 4 Body",     defaultValue: "Every encapsulation event is logged…" },
+  sectionTitle:        { type: ControlType.String, title: "Title",                  defaultValue: "Encapsulate before outbound — raw data never" },
+  sectionTitleBrand:   { type: ControlType.String, title: "Title (brand)",          defaultValue: "leaves" },
+  sectionDescription:  { type: ControlType.String, title: "Description",            defaultValue: "LLM Capsule encapsulates sensitive entities locally before any data leaves the enterprise environment.", displayTextArea: true },
+  split1ScreenshotDesc:{ type: ControlType.String, title: "Split 1 Screenshot",     defaultValue: "Document Encapsulation — Before and after view of a contract with sensitive data replaced by tokens", displayTextArea: true },
+  split1Lead:          { type: ControlType.String, title: "Split 1 Lead",           defaultValue: "LLM Capsule encapsulates sensitive entities locally before any data leaves the enterprise environment. Only the protected capsule is sent for AI processing.", displayTextArea: true },
+  split1Check1Title:   { type: ControlType.String, title: "Split 1 Check 1 Title",  defaultValue: "Local real-time encapsulation" },
+  split1Check1Body:    { type: ControlType.String, title: "Split 1 Check 1 Body",   defaultValue: "Raw data stays inside the enterprise environment. Sensitive elements are detected and replaced before any outbound transmission.", displayTextArea: true },
+  split1Check2Title:   { type: ControlType.String, title: "Split 1 Check 2 Title",  defaultValue: "Environment-bound processing" },
+  split1Check2Body:    { type: ControlType.String, title: "Split 1 Check 2 Body",   defaultValue: "Supports controlled enterprise and regulated environments including on-premise, air-gapped, and VPC deployments.", displayTextArea: true },
+  split2ScreenshotDesc:{ type: ControlType.String, title: "Split 2 Screenshot",     defaultValue: "Protected Outbound Flow — Encapsulated data crossing trust boundary while original values remain inside", displayTextArea: true },
+  split2Lead:          { type: ControlType.String, title: "Split 2 Lead",           defaultValue: "Most enterprise AI risk starts when raw business data is exposed outside the controlled environment. With LLM Capsule, sensitive content is transformed locally so external models never receive the raw original data.", displayTextArea: true },
+  split2Check1Title:   { type: ControlType.String, title: "Split 2 Check 1 Title",  defaultValue: "Protected outbound flow" },
+  split2Check1Body:    { type: ControlType.String, title: "Split 2 Check 1 Body",   defaultValue: "Only encapsulated representations cross the trust boundary. The AI provider processes useful but opaque data.", displayTextArea: true },
+  split2Check2Title:   { type: ControlType.String, title: "Split 2 Check 2 Title",  defaultValue: "Audit trail" },
+  split2Check2Body:    { type: ControlType.String, title: "Split 2 Check 2 Body",   defaultValue: "Every encapsulation event is logged with full traceability for enterprise AI governance and compliance reporting.", displayTextArea: true },
 })
