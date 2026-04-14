@@ -408,8 +408,11 @@ export default function Resources({
         .res-cta-band {
           width: 100%; position: relative; overflow: hidden;
           padding: 80px 16px; text-align: center;
-          background: ${P.gradientBrand};
+          background-color: #1a1a2e;
+          background-image: url('${IMAGE_BASE}/bg-paint-sand-sky.png');
+          background-size: cover; background-position: center;
         }
+        @container (max-width: 767px) { .res-cta-band { background-image: none; } }
         .res-cta-band::before {
           content: ''; position: absolute; inset: 0;
           background-color: rgba(0,0,0,0.15); z-index: 0;
