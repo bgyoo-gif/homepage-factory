@@ -340,6 +340,11 @@
     }
     @media (min-width: 1024px) { .ds-hero__body { max-width: 720px; } }
     @media (min-width: 1440px) { .ds-hero__body { max-width: 1080px; } }
+    .ds-hero__tagline {
+      font-size: var(--ds-text-lg); color: var(--ds-color-brand-secondary);
+      line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-lg);
+      letter-spacing: var(--ds-tracking-tight);
+    }
     .ds-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
     @media (max-width: 767px) { .ds-hero__actions { flex-direction: column; } }
     .ds-hero__screenshot-frame {
@@ -843,6 +848,7 @@
           <p class="ds-hero__body">
             Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and cross-model execution means no vendor lock-in. This enables enterprise AI enablement on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.
           </p>
+          <p class="ds-hero__tagline"><strong>Enable AI. Protect data. Restore results.</strong></p>
           <div class="ds-hero__actions">
             <a href="/request-a-demo" class="ds-btn ds-btn--primary ds-btn--lg">Request a Demo</a>
             <a href="/architecture" class="ds-btn ds-btn--secondary ds-btn--md">View Architecture</a>
@@ -1025,7 +1031,7 @@
           </div>
           <div class="ds-product-split__content">
             <p class="ds-product-split__lead">
-              Most enterprise AI risk starts when raw business data is exposed outside the controlled environment. With LLM Capsule, sensitive content is transformed locally so external models never receive the raw original data. The mapping between original and encapsulated values is stored entirely within the enterprise environment and never transmitted.
+              Most enterprise AI risk starts when raw business data is exposed outside the controlled environment. With LLM Capsule, sensitive content is transformed locally through protected outbound flow so external models never receive the raw original data. This enables secure enterprise AI workflows where the enterprise maintains complete data sovereignty. The mapping between original and encapsulated values is stored entirely within the enterprise environment and never transmitted. Even in the event of a breach at the AI provider, no original enterprise data would be exposed because it was never transmitted.
             </p>
             <ul class="ds-bullet ds-bullet--check ds-bullet--spaced">
               <li class="ds-bullet__item">
@@ -1099,7 +1105,7 @@
             Control what matters to your business — beyond generic <span class="ds-text--brand">PII</span>
           </h2>
           <p class="ds-section-header__description">
-            LLM Capsule lets teams define sensitive entities beyond standard PII categories, including internal identifiers, project names, customer-specific markers, and organization-specific confidential terms.
+            LLM Capsule lets teams define sensitive entities beyond standard PII categories, including internal identifiers, project names, customer-specific markers, and organization-specific confidential terms. This is enterprise confidentiality control — not just GDPR-class personal data protection.
           </p>
         </div>
 
@@ -1196,7 +1202,7 @@
             Beyond text — keep document structure <span class="ds-text--brand">intact</span> for AI
           </h2>
           <p class="ds-section-header__description">
-            Enterprise workflows do not run on plain text alone. They rely on reports, PDFs, spreadsheets, diagrams, presentations, tables, and mixed-format documents.
+            Enterprise workflows do not run on plain text alone. They rely on reports, PDFs, spreadsheets, diagrams, presentations, tables, and mixed-format documents. LLM Capsule supports structure-preserving document processing so protected content remains useful for AI comprehension and enterprise work.
           </p>
         </div>
 
@@ -1275,7 +1281,7 @@
             Operational control for enterprise AI <span class="ds-text--brand">governance</span>
           </h2>
           <p class="ds-section-header__description">
-            Enterprise deployment requires more than transformation logic. Teams need policy control, access control, activity visibility, and auditability.
+            Enterprise deployment requires more than transformation logic. Teams need policy control, access control, activity visibility, and auditability. LLM Capsule provides AI usage controls so architecture, security, and governance stakeholders can evaluate and manage AI usage with confidence.
           </p>
         </div>
 
@@ -1389,7 +1395,7 @@
             Built to fit existing enterprise <span class="ds-text--brand">systems</span>
           </h2>
           <p class="ds-section-header__description">
-            LLM Capsule works as a deployable component through API and SDK integration patterns, making it practical to embed into existing products, portals, and internal workflows.
+            Enterprise AI integration depends on how easily an enablement layer fits into what already exists. LLM Capsule works as a deployable component through API and SDK integration patterns, making it practical to embed into existing products, portals, and internal workflows.
           </p>
         </div>
 
