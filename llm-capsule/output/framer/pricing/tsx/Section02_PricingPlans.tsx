@@ -197,6 +197,8 @@ export default function Section02_PricingPlans({
           padding: 2px;
           border-radius: 18px;
           box-shadow: ${PALETTE.shadowGradientCard};
+          display: flex;
+          flex-direction: column;
         }
         .s2-card--indigo { background: ${PALETTE.gradientCardIndigo}; }
         .s2-card--blue   { background: ${PALETTE.gradientCardBlue}; }
@@ -377,7 +379,7 @@ export default function Section02_PricingPlans({
                     ))}
                   </ul>
                   <div className="s2-card__actions">
-                    <a href={card2ButtonHref} className="s2-btn s2-btn--secondary">
+                    <a href={card2ButtonHref} className="s2-btn s2-btn--primary">
                       {card2ButtonLabel}
                     </a>
                   </div>
