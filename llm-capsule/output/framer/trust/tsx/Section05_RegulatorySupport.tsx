@@ -1,6 +1,8 @@
 import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
+  sectionTitle?: string
+  sectionTitleBrand?: string
   bannerText?: string
   item1?: string
   item2?: string
@@ -9,6 +11,8 @@ interface Props {
 }
 
 export default function Section05_RegulatorySupport({
+  sectionTitle = "Regulatory",
+  sectionTitleBrand = "Support",
   bannerText = "supports enterprise compliance with GDPR, HIPAA, SOX, and sector-specific data regulations by ensuring sensitive data never leaves the enterprise environment during AI processing. Organizations should evaluate specific compliance requirements with their legal counsel.",
   item1 = "GDPR",
   item2 = "HIPAA",
@@ -50,6 +54,25 @@ export default function Section05_RegulatorySupport({
         @container s5 (min-width: 1440px) {
           .s5-container { padding: 0 120px; max-width: 1440px; }
         }
+
+        /* Section Header */
+        .s5-header {
+          margin-bottom: 48px;
+          text-align: center;
+          padding-bottom: 24px;
+          border-bottom: 1px solid #e6e7e9;
+        }
+        @container s5 (max-width: 767px) { .s5-header { text-align: left; } }
+        .s5-header__title {
+          font-family: "DM Sans", sans-serif;
+          font-size: 20px; font-weight: 700;
+          color: #0f0f0f; line-height: 1.2;
+          letter-spacing: -0.5px; margin: 0;
+        }
+        @container s5 (min-width: 768px)  { .s5-header__title { font-size: 22px; } }
+        @container s5 (min-width: 1024px) { .s5-header__title { font-size: 24px; } }
+        @container s5 (min-width: 1440px) { .s5-header__title { font-size: 28px; } }
+        .s5-header__brand { color: #5690D4; }
 
         /* Banner */
         .s5-banner {
@@ -106,6 +129,12 @@ export default function Section05_RegulatorySupport({
       <section className="s5-section">
         <div className="s5-inner">
           <div className="s5-container">
+            <div className="s5-header">
+              <h2 className="s5-header__title">
+                {sectionTitle} <span className="s5-header__brand">{sectionTitleBrand}</span>
+              </h2>
+            </div>
+
             <div className="s5-banner">
               <p>
                 <span className="s5-product">LLM Capsule</span> {bannerText}
@@ -128,6 +157,8 @@ export default function Section05_RegulatorySupport({
 }
 
 addPropertyControls(Section05_RegulatorySupport, {
+  sectionTitle:      { type: ControlType.String, title: "Title",          defaultValue: "Regulatory" },
+  sectionTitleBrand: { type: ControlType.String, title: "Title (brand)",  defaultValue: "Support" },
   bannerText: { type: ControlType.String, title: "Banner Text", defaultValue: "supports enterprise compliance with GDPR, HIPAA, SOX, and sector-specific data regulations by ensuring sensitive data never leaves the enterprise environment during AI processing. Organizations should evaluate specific compliance requirements with their legal counsel.", displayTextArea: true },
   item1: { type: ControlType.String, title: "Item 1", defaultValue: "GDPR" },
   item2: { type: ControlType.String, title: "Item 2", defaultValue: "HIPAA" },
