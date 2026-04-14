@@ -185,9 +185,6 @@ export default function Section02_PricingPlans({
           gap: 24px;
           align-items: stretch;
         }
-        @container (min-width: 768px) {
-          .s2-card-grid { grid-template-columns: repeat(2, 1fr); }
-        }
         @container (min-width: 1024px) {
           .s2-card-grid { grid-template-columns: repeat(3, 1fr); }
         }
