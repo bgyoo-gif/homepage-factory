@@ -544,7 +544,9 @@
     .ds-step-tabs__nav {
       display: flex; gap: 0; border-bottom: 1px solid var(--ds-color-border-default);
       margin-bottom: var(--ds-space-xl); overflow-x: auto;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
     }
+    .ds-step-tabs__nav::-webkit-scrollbar { display: none; }
     .ds-step-tabs__tab {
       padding: var(--ds-space-sm) var(--ds-space-lg);
       font-size: var(--ds-text-sm); font-weight: var(--ds-weight-medium);

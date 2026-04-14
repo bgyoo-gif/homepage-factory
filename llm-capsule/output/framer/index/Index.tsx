@@ -630,7 +630,9 @@ export default function Index({
         .idx-step-tabs__nav {
           display: flex; gap: 0; border-bottom: 1px solid ${P.borderDefault};
           margin-bottom: 32px; overflow-x: auto;
+          -webkit-overflow-scrolling: touch; scrollbar-width: none;
         }
+        .idx-step-tabs__nav::-webkit-scrollbar { display: none; }
         .idx-step-tabs__tab {
           padding: 12px 24px; font-size: 14px; font-weight: 500;
           color: ${P.textSecondary}; cursor: pointer;

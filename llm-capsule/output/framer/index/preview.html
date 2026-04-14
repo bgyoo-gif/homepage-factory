@@ -224,7 +224,8 @@
     @media (max-width: 767px) { .banner-full { background-image: none !important; } }
 
     /* Step Tabs */
-    .step-tabs__nav { display: flex; border-bottom: 1px solid #e6e7e9; margin-bottom: 32px; overflow-x: auto; }
+    .step-tabs__nav { display: flex; border-bottom: 1px solid #e6e7e9; margin-bottom: 32px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .step-tabs__nav::-webkit-scrollbar { display: none; }
     .step-tabs__tab { padding: 12px 24px; font-size: 14px; font-weight: 500; color: #636363; cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; transition: color 0.2s, border-color 0.2s; }
     .step-tabs__tab--active { color: #1821E8; border-bottom-color: #1821E8; font-weight: 600; }
     .step-tabs__panel { display: none; grid-template-columns: 1fr; gap: 32px; }
