@@ -17,7 +17,7 @@ const PALETTE = {
   overlayCtnBtnBdr: "rgba(255,255,255,0.6)",
 }
 
-const BG_IMAGE = "url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-lavender-gold.png')"
+const BG_IMAGE = "url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-smoke-pink-teal.png')"
 
 interface Props {
   titlePre?: string
