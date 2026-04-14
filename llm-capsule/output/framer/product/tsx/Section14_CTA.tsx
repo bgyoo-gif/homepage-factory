@@ -199,7 +199,7 @@ export default function Section14_CTA({
 
 addPropertyControls(Section14_CTA, {
   title:          { type: ControlType.String, title: "Title",          defaultValue: "See how LLM Capsule fits your environment, documents, and controls" },
-  description:    { type: ControlType.String, title: "Description",    defaultValue: "Bring your documents, deployment constraints, and evaluation questions…" },
+  description:    { type: ControlType.String, title: "Description",    defaultValue: "Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.", displayTextArea: true },
   cta1Label:      { type: ControlType.String, title: "CTA 1 Label",    defaultValue: "Request a Demo" },
   cta1Href:       { type: ControlType.String, title: "CTA 1 URL",      defaultValue: "/request-a-demo" },
   cta2Label:      { type: ControlType.String, title: "CTA 2 Label",    defaultValue: "Talk to an Architect" },

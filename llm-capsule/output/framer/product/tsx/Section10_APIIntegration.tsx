@@ -204,6 +204,6 @@ export default function Section10_APIIntegration({
 addPropertyControls(Section10_APIIntegration, {
   sectionTitle:       { type: ControlType.String, title: "Title",         defaultValue: "Built to fit existing enterprise" },
   sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)", defaultValue: "systems" },
-  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "LLM Capsule works as a deployable component…" },
-  body:               { type: ControlType.String, title: "Body",          defaultValue: "The API provides LLM API enablement at the data layer…" },
+  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "LLM Capsule works as a deployable component through API and SDK integration patterns, making it practical to embed into existing products, portals, and internal workflows.", displayTextArea: true },
+  body:               { type: ControlType.String, title: "Body",          defaultValue: "The API provides LLM API enablement at the data layer — wrap any existing AI integration with encapsulation and restoration without rebuilding the application.", displayTextArea: true },
 })

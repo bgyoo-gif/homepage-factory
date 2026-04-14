@@ -287,6 +287,6 @@ export default function Section12_Comparison({
 addPropertyControls(Section12_Comparison, {
   sectionTitle:       { type: ControlType.String, title: "Title",         defaultValue: "How LLM Capsule differs from traditional" },
   sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)", defaultValue: "approaches" },
-  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "Not all protection approaches are designed…" },
-  bannerText:         { type: ControlType.String, title: "Banner",        defaultValue: "AI results are auto-restored through local restoration…" },
+  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "Not all protection approaches are designed for usable enterprise AI workflows. Traditional masking protects data by reducing usability. LLM Capsule protects data while preserving enterprise workflow value.", displayTextArea: true },
+  bannerText:         { type: ControlType.String, title: "Banner",        defaultValue: "AI results are auto-restored through local restoration. This is the fundamental capability that separates LLM Capsule from every other approach — enterprise AI enablement that produces usable outputs, not abstracted placeholders.", displayTextArea: true },
 })

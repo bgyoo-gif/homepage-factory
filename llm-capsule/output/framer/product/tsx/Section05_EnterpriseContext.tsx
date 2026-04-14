@@ -215,6 +215,6 @@ export default function Section05_EnterpriseContext({
 addPropertyControls(Section05_EnterpriseContext, {
   sectionTitle:       { type: ControlType.String, title: "Title",         defaultValue: "Control what matters to your business — beyond generic" },
   sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)", defaultValue: "PII" },
-  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "LLM Capsule lets teams define sensitive entities…" },
-  body:               { type: ControlType.String, title: "Body",          defaultValue: "Enterprise data protection is not limited to names…" },
+  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "LLM Capsule lets teams define sensitive entities beyond standard PII categories, including internal identifiers, project names, customer-specific markers, and organization-specific confidential terms.", displayTextArea: true },
+  body:               { type: ControlType.String, title: "Body",          defaultValue: "Enterprise data protection is not limited to names, phone numbers, or IDs. Real workflows often depend on internal project names, contract references, operational code names, and confidential business terms. Context-aware data control enables policy-based sensitivity classification that adapts to document type, department origin, and workflow context — providing enterprise AI governance controls that go far beyond standard PII regex matching.", displayTextArea: true },
 })

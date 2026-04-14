@@ -225,8 +225,8 @@ export default function Section01_Hero({
 addPropertyControls(Section01_Hero, {
   title:           { type: ControlType.String, title: "Title",           defaultValue: "The AI enablement" },
   titleBrand:      { type: ControlType.String, title: "Title (brand)",   defaultValue: "data layer and plugin" },
-  description:     { type: ControlType.String, title: "Description",     defaultValue: "LLM Capsule enables enterprise AI adoption…" },
-  body:            { type: ControlType.String, title: "Body",            defaultValue: "Most enterprise AI security tools…" },
+  description:     { type: ControlType.String, title: "Description",     defaultValue: "LLM Capsule enables enterprise AI adoption by keeping raw data inside your environment, preserving document structure and business context during AI processing, and restoring usable outputs through local restoration — so enterprise teams can safely use any LLM on real documents in production workflows.", displayTextArea: true },
+  body:            { type: ControlType.String, title: "Body",            defaultValue: "Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and cross-model execution means no vendor lock-in. This enables enterprise AI enablement on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.", displayTextArea: true },
   ctaPrimary:      { type: ControlType.String, title: "CTA Primary",     defaultValue: "Request a Demo" },
   ctaPrimaryHref:  { type: ControlType.String, title: "CTA Primary URL", defaultValue: "/request-a-demo" },
   ctaSecondary:    { type: ControlType.String, title: "CTA Secondary",   defaultValue: "View Architecture" },

@@ -281,9 +281,9 @@ export default function Section11_DeploymentReadiness({
 addPropertyControls(Section11_DeploymentReadiness, {
   sectionTitle:       { type: ControlType.String, title: "Title",          defaultValue: "Enterprise AI deployment — ready for any controlled" },
   sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)",  defaultValue: "environment" },
-  sectionDescription: { type: ControlType.String, title: "Description",    defaultValue: "Enterprise teams need deployment flexibility…" },
-  body:               { type: ControlType.String, title: "Body",           defaultValue: "Enterprise teams need deployment flexibility…" },
-  screenshotDesc:     { type: ControlType.String, title: "Screenshot desc", defaultValue: "LLM Capsule API Console…" },
+  sectionDescription: { type: ControlType.String, title: "Description",    defaultValue: "Enterprise teams need deployment flexibility without giving up control.", displayTextArea: true },
+  body:               { type: ControlType.String, title: "Body",           defaultValue: "Enterprise teams need deployment flexibility without giving up control. LLM Capsule supports on-premise deployment, air-gapped environments, cloud deployment including AWS Marketplace, hybrid configurations, and embedded integration. The same product logic runs across all deployment models while keeping local protection and local restoration at the center.", displayTextArea: true },
+  screenshotDesc:     { type: ControlType.String, title: "Screenshot desc", defaultValue: "LLM Capsule API Console — SDK integration with enterprise document management systems", displayTextArea: true },
   awsLabel:           { type: ControlType.String, title: "AWS Button",     defaultValue: "View on AWS Marketplace" },
   awsHref:            { type: ControlType.String, title: "AWS URL",        defaultValue: "https://aws.amazon.com/marketplace" },
 })

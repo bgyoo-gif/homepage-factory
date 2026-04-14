@@ -142,7 +142,7 @@ addPropertyControls(Section09_CrossModelExecution, {
   sectionTitle:       { type: ControlType.String, title: "Title",         defaultValue: "Model-agnostic — use any LLM with no vendor" },
   sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)", defaultValue: "lock-in" },
   sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "Enterprise teams do not always standardize on a single AI model." },
-  body1:              { type: ControlType.String, title: "Body 1",        defaultValue: "Enterprise teams do not always standardize…" },
-  body2:              { type: ControlType.String, title: "Body 2",        defaultValue: "Because LLM Capsule operates at the data layer…" },
-  bannerText:         { type: ControlType.String, title: "Banner",        defaultValue: "ChatGPT, Claude, Gemini, Perplexity, or any LLM API…" },
+  body1:              { type: ControlType.String, title: "Body 1",        defaultValue: "Enterprise teams do not always standardize on a single AI model. Evaluation, governance, and operational workflows may span multiple providers and multiple model choices over time. LLM Capsule fits this reality as an AI enablement data layer for cross-model enterprise AI deployment.", displayTextArea: true },
+  body2:              { type: ControlType.String, title: "Body 2",        defaultValue: "Because LLM Capsule operates at the data layer — not the model layer — protection and enablement remain stable even when model vendors change. ChatGPT, Claude, Gemini, Perplexity, or any LLM API can be used interchangeably without reconfiguring the pipeline. This is cross-model execution — enterprise AI enablement independent of any specific AI provider, eliminating vendor lock-in.", displayTextArea: true },
+  bannerText:         { type: ControlType.String, title: "Banner",        defaultValue: "ChatGPT, Claude, Gemini, Perplexity, or any LLM API — protection stays consistent regardless of which model you choose.", displayTextArea: true },
 })

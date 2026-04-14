@@ -239,11 +239,11 @@ export default function Section04_Restoration({
 addPropertyControls(Section04_Restoration, {
   sectionTitle:       { type: ControlType.String, title: "Title",              defaultValue: "Enable AI without breaking enterprise" },
   sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)",      defaultValue: "workflows" },
-  sectionDescription: { type: ControlType.String, title: "Description",        defaultValue: "LLM Capsule does more than hide data…" },
-  lead:               { type: ControlType.String, title: "Lead",               defaultValue: "Traditional masking protects data…", displayTextArea: true },
-  body:               { type: ControlType.String, title: "Body",              defaultValue: "This is the capability that makes…", displayTextArea: true },
+  sectionDescription: { type: ControlType.String, title: "Description",        defaultValue: "LLM Capsule does more than hide data. It auto-restores usable output inside the environment after AI processing so enterprise teams can actually use the result in real workflows. This is a restorable workflow — not just protection, but AI enablement with usable output.", displayTextArea: true },
+  lead:               { type: ControlType.String, title: "Lead",               defaultValue: "Traditional masking protects data by removing meaning. That may reduce risk, but it also reduces output quality and business usability. Restored outputs from LLM Capsule are directly usable in: claims documents with real policyholder data, legal reviews with real party names and clause references, regulatory reports with real customer and account data, and internal analysis with real business metrics.", displayTextArea: true },
+  body:               { type: ControlType.String, title: "Body",               defaultValue: "This is the capability that makes enterprise AI operationally viable. Secure document summarization, AI claims processing, and confidential contract review with AI all depend on the ability to restore results. Without restoration, every AI output requires manual reconstruction — eliminating the efficiency gains AI is supposed to deliver.", displayTextArea: true },
   encapsulatedLabel:  { type: ControlType.String, title: "Encapsulated Label", defaultValue: "Encapsulated" },
-  encapsulatedText:   { type: ControlType.String, title: "Encapsulated Text",  defaultValue: "[PERSON_01] submitted claim…" },
+  encapsulatedText:   { type: ControlType.String, title: "Encapsulated Text",  defaultValue: "[PERSON_01] submitted claim #[ID_04] on [DATE_02] for property at [ADDR_03]. Total assessed damage: [AMOUNT_01].", displayTextArea: true },
   restoredLabel:      { type: ControlType.String, title: "Restored Label",     defaultValue: "Restored" },
-  restoredText:       { type: ControlType.String, title: "Restored Text",      defaultValue: "James Mitchell submitted claim…" },
+  restoredText:       { type: ControlType.String, title: "Restored Text",      defaultValue: "James Mitchell submitted claim #INS-2024-0847 on March 5, 2025 for property at 42 Lincoln Ave, Chicago. Total assessed damage: $247,000.", displayTextArea: true },
 })

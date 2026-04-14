@@ -219,12 +219,12 @@ export default function Section06_StructurePreserving({
 addPropertyControls(Section06_StructurePreserving, {
   sectionTitle:       { type: ControlType.String, title: "Title",         defaultValue: "Beyond text — keep document structure" },
   sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)", defaultValue: "intact" },
-  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "Enterprise workflows do not run on plain text alone…" },
-  body:               { type: ControlType.String, title: "Body",          defaultValue: "Flat masking treats every sensitive value identically…" },
+  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "Enterprise workflows do not run on plain text alone. They rely on reports, PDFs, spreadsheets, diagrams, presentations, tables, and mixed-format documents.", displayTextArea: true },
+  body:               { type: ControlType.String, title: "Body",          defaultValue: "Flat masking treats every sensitive value identically, collapsing entity relationships and breaking table schemas. Structure-preserving processing maintains entity consistency across entire documents, preserves table column relationships for accurate extraction, and keeps cross-reference links intact. This is document-aware protection — not flat text anonymization.", displayTextArea: true },
   card1Title:         { type: ControlType.String, title: "Card 1 Title",  defaultValue: "PDF & Word Documents" },
-  card1Desc:          { type: ControlType.String, title: "Card 1 Desc",   defaultValue: "Protected processing with layout, formatting…" },
+  card1Desc:          { type: ControlType.String, title: "Card 1 Desc",   defaultValue: "Protected processing with layout, formatting, and section structure preserved. AI receives structurally complete documents.", displayTextArea: true },
   card2Title:         { type: ControlType.String, title: "Card 2 Title",  defaultValue: "Spreadsheets & Tables" },
-  card2Desc:          { type: ControlType.String, title: "Card 2 Desc",   defaultValue: "Tabular data structure maintained…" },
+  card2Desc:          { type: ControlType.String, title: "Card 2 Desc",   defaultValue: "Tabular data structure maintained through encapsulation and restoration. Column headers, row relationships, and cell references preserved.", displayTextArea: true },
   card3Title:         { type: ControlType.String, title: "Card 3 Title",  defaultValue: "Presentations & Reports" },
-  card3Desc:          { type: ControlType.String, title: "Card 3 Desc",   defaultValue: "Visual and mixed-format documents handled…" },
+  card3Desc:          { type: ControlType.String, title: "Card 3 Desc",   defaultValue: "Visual and mixed-format documents handled as structured content. Cross-references and entity relationships remain trackable.", displayTextArea: true },
 })

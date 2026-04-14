@@ -371,7 +371,7 @@ export default function Section02_CoreDifferentiation({
 addPropertyControls(Section02_CoreDifferentiation, {
   sectionTitle:       { type: ControlType.String, title: "Title",         defaultValue: "Enterprise AI enablement through five core" },
   sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)", defaultValue: "capabilities" },
-  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "LLM Capsule enables enterprise AI adoption…" },
-  screenshotDesc:     { type: ControlType.String, title: "Screenshot desc", defaultValue: "LLM Capsule Dashboard — Real-time encapsulation pipeline…" },
-  bannerText:         { type: ControlType.String, title: "Banner",        defaultValue: "These capabilities let enterprises adopt AI…" },
+  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 architecture — three core enablement capabilities plus structure-preserving processing and cross-model execution.", displayTextArea: true },
+  screenshotDesc:     { type: ControlType.String, title: "Screenshot desc", defaultValue: "LLM Capsule Dashboard — Real-time encapsulation pipeline with document processing status", displayTextArea: true },
+  bannerText:         { type: ControlType.String, title: "Banner",        defaultValue: "These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise AI enablement from traditional masking tools.", displayTextArea: true },
 })

@@ -199,6 +199,6 @@ export default function Section08_AdminGovernance({
 addPropertyControls(Section08_AdminGovernance, {
   sectionTitle:       { type: ControlType.String, title: "Title",         defaultValue: "Operational control for enterprise AI" },
   sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)", defaultValue: "governance" },
-  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "Enterprise deployment requires more than transformation logic…" },
-  body:               { type: ControlType.String, title: "Body",          defaultValue: "Enterprise AI governance requires evidence…" },
+  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "Enterprise deployment requires more than transformation logic. Teams need policy control, access control, activity visibility, and auditability.", displayTextArea: true },
+  body:               { type: ControlType.String, title: "Body",          defaultValue: "Enterprise AI governance requires evidence of data protection at every stage — what data was processed, how it was protected, which models interacted with it, and who authorized the workflow. LLM Capsule's admin capabilities provide this auditability across all AI interactions.", displayTextArea: true },
 })
