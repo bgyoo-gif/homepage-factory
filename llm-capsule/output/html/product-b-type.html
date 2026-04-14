@@ -318,6 +318,19 @@
 
     /* --- Hero --- */
     .ds-hero--text-only { max-width: 1080px; }
+
+    /* Breadcrumb */
+    .ds-breadcrumb {
+      display: flex; align-items: center; gap: var(--ds-space-xs);
+      flex-wrap: wrap; margin-bottom: var(--ds-space-lg);
+    }
+    .ds-breadcrumb__link {
+      font-size: var(--ds-text-sm); color: var(--ds-color-brand-secondary);
+      font-weight: var(--ds-weight-medium); transition: color 0.15s;
+    }
+    .ds-breadcrumb__link:hover { color: var(--ds-color-brand-primary); }
+    .ds-breadcrumb__sep { font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary); }
+    .ds-breadcrumb__current { font-size: var(--ds-text-sm); color: var(--ds-color-text-tertiary); }
     .ds-hero__title {
       font-family: var(--ds-font-base); font-size: 32px; font-weight: var(--ds-weight-bold);
       color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight);
@@ -842,6 +855,11 @@
     <section id="section-hero" class="ds-section ds-section--hero">
       <div class="ds-container">
         <div class="ds-hero--screenshot">
+          <nav class="ds-breadcrumb" aria-label="Breadcrumb">
+            <a href="/" class="ds-breadcrumb__link">Home</a>
+            <span class="ds-breadcrumb__sep">/</span>
+            <span class="ds-breadcrumb__current">Product</span>
+          </nav>
           <h1 class="ds-hero__title">
             The AI enablement <span class="ds-text--brand">data layer and plugin</span> for enterprise
           </h1>

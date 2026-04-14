@@ -103,6 +103,19 @@ export default function Section01_Hero({
         }
         .s1-hero {
         }
+        .s1-breadcrumb {
+          display: flex; align-items: center; gap: 8px;
+          flex-wrap: wrap; margin-bottom: 24px;
+        }
+        .s1-breadcrumb__link {
+          font-family: "DM Sans", sans-serif;
+          font-size: 14px; color: ${PALETTE.brandSecondary};
+          font-weight: 500; text-decoration: none;
+          transition: color 0.15s;
+        }
+        .s1-breadcrumb__link:hover { color: ${PALETTE.brandPrimary}; }
+        .s1-breadcrumb__sep { font-size: 14px; color: #9c9c9c; }
+        .s1-breadcrumb__current { font-size: 14px; color: #9c9c9c; }
         .s1-title {
           font-family: "DM Sans", sans-serif;
           font-size: 32px;
@@ -252,6 +265,11 @@ export default function Section01_Hero({
         <div className="s1-inner">
           <div className="s1-container">
             <div className="s1-hero">
+              <nav className="s1-breadcrumb" aria-label="Breadcrumb">
+                <a href="/" className="s1-breadcrumb__link">Home</a>
+                <span className="s1-breadcrumb__sep">/</span>
+                <span className="s1-breadcrumb__current">Product</span>
+              </nav>
               <h1 className="s1-title">
                 {title} <span className="s1-title-brand">{titleBrand}</span> for enterprise
               </h1>
