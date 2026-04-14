@@ -241,6 +241,10 @@ grep '860' "$FILE"
 8. **Hero bottom padding: 0** — section 기본 padding으로 충분
 9. **@media 금지** — Container Queries(@container)만 사용
 10. **screenshot/placeholder 영역 넣지 않는다** — B타입에서 이미 삭제됨
+11. **B타입 HTML 수정 시 TSX 동기화 필수** — B타입 HTML이 수정된 경우 해당 TSX와 preview.html도 반드시 같이 수정. TSX만 신규 변환하는 경우에도 최신 B타입 HTML을 기준으로 변환할 것
+12. **균등 분할 그리드**: `repeat(N, 1fr)` 금지 → `repeat(N, minmax(0, 1fr))` 사용 (Container Queries 안에서도 동일)
+13. **overflow-x: auto scrollbar 숨김 필수**: `overflow-x: auto` 사용 시 반드시 `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }` 동반
+14. **미정의 CSS 변수 참조 금지**: TSX에서는 CSS 변수 대신 PALETTE 상수를 사용하되, 이 목록에 없는 색상·배경 이미지 변수는 사용 금지
 
 ### LLM Capsule 브랜드 팔레트 (brand === 'llm-capsule' 일 때)
 

@@ -196,6 +196,12 @@ deploy (gh-pages push)
 - 이미지 WebP 우선
 - Hero Screenshot(.ds-hero--screenshot) 컨테이너에 max-width 금지 — description에만 860px 제한 가능
 - FAQ 영역(ds-faq-wrap)에 max-width 금지 — 아티클 페이지가 아닌 이상 ds-container 전폭 사용
+- HTML 수정 시 TSX 동기화 필수: 해당 TSX가 존재하면 preview.html 포함 반드시 같이 수정
+- CSS 변수 미정의 참조 금지: DS에 정의되지 않은 `var(--ds-*)` 사용 금지 — 배경 이미지는 절대 URL 또는 기정의 변수만 사용
+- 균등 분할 그리드: `repeat(N, 1fr)` 대신 `repeat(N, minmax(0, 1fr))` 필수
+- `ds-bullet--check` 아이콘 HTML 삽입 금지: `ds-bullet__icon`은 비워둘 것 (CSS `::before` 자동 생성)
+- section header description 전문 사용: 원본 단락 전문을 넣을 것, lead와 동일 문장으로 시작 금지
+- `overflow-x: auto` 사용 시 scrollbar 숨김 필수: `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }`
 
 ---
 
@@ -250,6 +256,13 @@ Low 결함만 남은 경우 CONDITIONAL PASS.
 23. **폼 필드-버튼 간격 부족** → 마지막 form-group의 margin-bottom을 0으로 하면 안 됨 → `var(--ds-space-lg)` 유지, submit 버튼은 `width: 100%` + `margin-bottom: var(--ds-space-md)`
 16. **screenshot-frame 좌우 padding 누락** → `padding: 2xl 2xl 0` 필수 (좌우 0이면 배경 이미지가 프레임으로 보이지 않음)
 17. **Hero ↔ 다음 섹션 제목/설명 중복** → Hero에 이미 있는 제목+설명을 바로 다음 섹션 헤더에서 반복 금지. 둘 중 하나만 남기기
+24. **HTML 수정 후 TSX 미동기화** → HTML 수정 시 해당 TSX(`{brand}/output/framer/`)와 preview.html이 존재하면 반드시 같이 수정
+25. **미정의 CSS 변수 참조** → `:root`에 선언되지 않은 `var(--ds-*)` 참조 → 배경 검정 등 오류 발생. DS에 없는 변수 절대 사용 금지 — 배경 이미지는 절대 URL 직접 지정 또는 이미 `:root`에 정의된 변수만 사용
+26. **grid `1fr` 불균등** → `repeat(N, 1fr)` 대신 `repeat(N, minmax(0, 1fr))` 사용 — 카드별 콘텐츠 최소 너비 차이로 불균등 발생
+27. **체크 아이콘 중복** → `ds-bullet--check` 사용 시 `ds-bullet__icon` 내부에 `&#10003;` 등 HTML 텍스트 넣으면 체크가 2개 표시됨 → `<span class="ds-bullet__icon"></span>` 비워둘 것 (CSS `::before`가 자동 생성)
+28. **section header description 잘림 + lead 중복** → header description에 원문 첫 문장만 넣고 lead에서 전문 반복 금지. header description은 원본 단락 전문 사용, lead와 동일 문장으로 시작하면 FAIL
+29. **overflow-x: auto scrollbar 미숨김** → `overflow-x: auto` 사용 시 반드시 `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }` 동반
+30. **배경 이미지 중복 사용** → 동일 `ds-bg--*` 클래스를 한 페이지에서 2회 이상 사용 금지 (CLAUDE.md 기존 규칙 재강조 — FAIL 트리거)
 
 ---
 
