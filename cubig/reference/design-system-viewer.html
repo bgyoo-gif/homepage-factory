@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>CUBIG Design System v5.1</title>
+<title>CUBIG Design System v5.2</title>
 <!-- last-updated: 20260326154009 -->
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@400;600;700&family=Fragment+Mono&display=swap" rel="stylesheet">
 <style>
@@ -365,9 +365,14 @@ body { font-family: var(--ds-font-base); color: var(--ds-color-text-primary); ba
 /* Card Grid */
 .ds-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
 .ds-card-grid .ds-card { display: flex; flex-direction: column; }
-.ds-card-grid--2col { grid-template-columns: repeat(2, 1fr); }
-.ds-card-grid--3col { grid-template-columns: repeat(3, 1fr); }
-.ds-card-grid--4col { grid-template-columns: repeat(4, 1fr); }
+.ds-card-grid--2col { }
+@media (min-width: 768px) { .ds-card-grid--2col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.ds-card-grid--3col { }
+@media (min-width: 768px)  { .ds-card-grid--3col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .ds-card-grid--3col { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.ds-card-grid--4col { }
+@media (min-width: 768px)  { .ds-card-grid--4col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .ds-card-grid--4col { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
 /* Feature Grid */
 .ds-feature-grid { background: var(--ds-color-surface-white); border: 1px solid var(--ds-color-border-default); border-radius: var(--ds-radius-xl); padding: 40px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 48px; }
@@ -1767,6 +1772,7 @@ code, .ds-code-inline {
   <a class="v-subnav__item" href="#lp-gradient-card">[V-2] Gradient Card</a>
   <a class="v-subnav__item" href="#lp-diagram">[W] Diagram</a>
   <a class="v-subnav__item" href="#lp-code-block">[15] Code Block</a>
+  <a class="v-subnav__item" href="#lp-global-rules">전역 CSS 규칙</a>
 </nav>
 
 <!-- ==================== LAYOUT PATTERNS ==================== -->
@@ -2676,6 +2682,60 @@ code, .ds-code-inline {
       <li>로그 출력, 명령어 시퀀스</li>
       <li>카드 안 기술 상세 — ds-card 내부에서도 독립 사용 가능</li>
     </ul>
+  </div></div>
+</section>
+
+<!-- 전역 CSS 규칙 -->
+<section class="v-section" id="lp-global-rules">
+  <h2 class="v-section__title">전역 CSS 규칙</h2>
+  <p class="v-section__desc">B타입 HTML 작성 시 반드시 준수해야 하는 전역 규칙 목록. design-system-core.md 기준.</p>
+  <div class="v-card"><div class="v-card__body">
+    <ol style="font-size:var(--ds-text-sm);color:var(--ds-color-text-secondary);line-height:2;padding-left:20px;margin:0">
+      <li>모든 클래스는 <code style="font-family:var(--ds-font-code);font-size:var(--ds-text-xs);background:var(--ds-color-surface-light);padding:1px 5px;border-radius:3px">.ds-</code> 접두사 필수</li>
+      <li>CSS 변수는 <code style="font-family:var(--ds-font-code);font-size:var(--ds-text-xs);background:var(--ds-color-surface-light);padding:1px 5px;border-radius:3px">:root</code>에만 선언</li>
+      <li><code style="font-family:var(--ds-font-code);font-size:var(--ds-text-xs);background:var(--ds-color-surface-light);padding:1px 5px;border-radius:3px">!important</code> 절대 사용 금지</li>
+      <li>인라인 <code style="font-family:var(--ds-font-code);font-size:var(--ds-text-xs);background:var(--ds-color-surface-light);padding:1px 5px;border-radius:3px">style</code> 사용 금지 (CSS 변수 전달 목적 제외)</li>
+      <li>색상/수치 하드코딩 금지 → CSS 변수 사용</li>
+      <li>클래스 네이밍: BEM 방식 (.ds-card__title--highlighted)</li>
+      <li>eyebrow 전면 금지: B타입 변환 시 모든 섹션에서 eyebrow 삭제</li>
+      <li>ds-card 기본 배경은 반드시 surface-white</li>
+      <li>KPI/지표 수치 색상은 text-primary</li>
+      <li>ds-banner 좌측 굵은 border 금지</li>
+      <li>CTA 밴드는 ds-container 밖에 전폭으로 배치</li>
+      <li>줄바꿈 전역 규칙: <code style="font-family:var(--ds-font-code);font-size:var(--ds-text-xs);background:var(--ds-color-surface-light);padding:1px 5px;border-radius:3px">body { word-break: keep-all; overflow-wrap: break-word; overflow-x: hidden; }</code></li>
+      <li>긴 문장 분리: 짧은 독립 문장이 마침표로 2개 이상 나열되면 <code style="font-family:var(--ds-font-code);font-size:var(--ds-text-xs);background:var(--ds-color-surface-light);padding:1px 5px;border-radius:3px">ds-bullet ds-bullet--dot</code> 불릿 리스트로 분리</li>
+      <li>폰트 색상 최소 명도: neutral-150/050/025 텍스트 사용 금지, <code style="font-family:var(--ds-font-code);font-size:var(--ds-text-xs);background:var(--ds-color-surface-light);padding:1px 5px;border-radius:3px">var(--ds-color-text-muted)</code> 텍스트 사용 금지</li>
+      <li>배너 텍스트 가운데 정렬</li>
+      <li>배너 내 링크 줄바꿈</li>
+      <li>배경 이미지 중복 금지</li>
+      <li>페이지 최상단 여백 100px 고정</li>
+      <li>배경 이미지 위 텍스트는 black 또는 white만</li>
+      <li>미색 배경(ds-section--light) 전면 금지</li>
+      <li>CSS 변수는 design-system에 정의된 것만 사용</li>
+      <li>Case Study 열 타입 혼합 금지</li>
+      <li>FAQ는 반드시 아코디언 형태</li>
+      <li>아티클형 페이지 본문 폭 860px 통일</li>
+      <li>섹션 헤더 기본 center 정렬</li>
+      <li>외부 서비스 링크는 버튼형</li>
+      <li>단계별 프로세스는 Step Tabs 사용</li>
+      <li>인증/수상 섹션은 Cert Grid 사용</li>
+      <li>도입 사례는 Case Study 카드 필수</li>
+      <li>CTA band 타이포 표준</li>
+      <li>letter-spacing 하드코딩 금지</li>
+      <li>이미지 경로는 GitHub Pages 전체 URL 사용</li>
+      <li>이미지 포맷은 WebP 우선</li>
+      <li>주황/오렌지 계열 색상 전면 금지</li>
+      <li>background shorthand 금지</li>
+      <li>screenshot-frame background-color fallback 필수</li>
+      <li>모바일 배경 이미지 처리: <code style="font-family:var(--ds-font-code);font-size:var(--ds-text-xs);background:var(--ds-color-surface-light);padding:1px 5px;border-radius:3px">@media (max-width: 767px) { background-image: none }</code></li>
+      <li>배경 이미지 적용 위치 명확화</li>
+      <li><strong>HTML 수정 시 TSX 동기화 필수</strong> — 해당 TSX와 preview.html이 존재하면 반드시 같이 수정</li>
+      <li><strong>미정의 CSS 변수 참조 금지</strong> — <code style="font-family:var(--ds-font-code);font-size:var(--ds-text-xs);background:var(--ds-color-surface-light);padding:1px 5px;border-radius:3px">:root</code>에 선언되지 않은 <code style="font-family:var(--ds-font-code);font-size:var(--ds-text-xs);background:var(--ds-color-surface-light);padding:1px 5px;border-radius:3px">var(--ds-*)</code> 사용 금지</li>
+      <li><strong>균등 분할 그리드</strong> — <code style="font-family:var(--ds-font-code);font-size:var(--ds-text-xs);background:var(--ds-color-surface-light);padding:1px 5px;border-radius:3px">repeat(N, 1fr)</code> 대신 <code style="font-family:var(--ds-font-code);font-size:var(--ds-text-xs);background:var(--ds-color-surface-light);padding:1px 5px;border-radius:3px">repeat(N, minmax(0, 1fr))</code> 필수</li>
+      <li><strong>ds-bullet--check 아이콘 HTML 삽입 금지</strong> — <code style="font-family:var(--ds-font-code);font-size:var(--ds-text-xs);background:var(--ds-color-surface-light);padding:1px 5px;border-radius:3px">ds-bullet__icon</code>은 비워둘 것 (CSS <code style="font-family:var(--ds-font-code);font-size:var(--ds-text-xs);background:var(--ds-color-surface-light);padding:1px 5px;border-radius:3px">::before</code>가 ✓ 자동 생성)</li>
+      <li><strong>section header description 전문 사용</strong> — 원본 단락 첫 문장만 넣지 않고 전문 사용. lead와 동일 문장으로 시작 금지</li>
+      <li><strong>overflow-x: auto scrollbar 숨김 필수</strong> — 반드시 <code style="font-family:var(--ds-font-code);font-size:var(--ds-text-xs);background:var(--ds-color-surface-light);padding:1px 5px;border-radius:3px">scrollbar-width: none</code> + <code style="font-family:var(--ds-font-code);font-size:var(--ds-text-xs);background:var(--ds-color-surface-light);padding:1px 5px;border-radius:3px">::-webkit-scrollbar { display: none; }</code> 동반</li>
+    </ol>
   </div></div>
 </section>
 
