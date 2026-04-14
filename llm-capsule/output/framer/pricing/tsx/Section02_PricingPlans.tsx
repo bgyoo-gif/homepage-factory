@@ -210,7 +210,7 @@ export default function Section02_PricingPlans({
           padding: 32px;
           display: flex;
           flex-direction: column;
-          height: 100%;
+          flex: 1;
           background-color: ${PALETTE.surfaceWhite};
         }
         .s2-card--indigo .s2-card__inner {
