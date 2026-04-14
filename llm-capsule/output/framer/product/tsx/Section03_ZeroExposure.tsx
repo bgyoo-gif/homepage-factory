@@ -133,8 +133,8 @@ export default function Section03_ZeroExposure({
           gap: 12px;
           min-height: 320px;
         }
-        .s3-visual--deep { background-image: url('${IMAGE_BASE}/images/bg-gradient-deep-teal.png'); }
-        .s3-visual--navy { background-image: url('${IMAGE_BASE}/images/bg-gradient-navy-teal.png'); }
+        .s3-visual--blue { background-image: url('${IMAGE_BASE}/images/bg-gradient-blue-violet.png'); }
+        .s3-visual--violet { background-image: url('${IMAGE_BASE}/images/bg-gradient-violet-teal.png'); }
         @container (max-width: 767px) { .s3-visual { background-image: none !important; } }
 
         .s3-visual-placeholder {
@@ -244,7 +244,7 @@ export default function Section03_ZeroExposure({
 
             {/* Split 1: Local Real-Time Encapsulation */}
             <div className="s3-split">
-              <div className="s3-visual s3-visual--deep">
+              <div className="s3-visual s3-visual--blue">
                 <div className="s3-visual-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
@@ -270,7 +270,7 @@ export default function Section03_ZeroExposure({
 
             {/* Split 2: Protected Outbound Flow */}
             <div className="s3-split s3-split--reverse">
-              <div className="s3-visual s3-visual--navy">
+              <div className="s3-visual s3-visual--violet">
                 <div className="s3-visual-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>

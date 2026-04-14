@@ -22,8 +22,7 @@ interface Props {
   sectionTitleBrand?: string
   sectionDescription?: string
   lead?: string
-  body1?: string
-  body2?: string
+  body?: string
   encapsulatedLabel?: string
   encapsulatedText?: string
   restoredLabel?: string
@@ -33,10 +32,9 @@ interface Props {
 export default function Section04_Restoration({
   sectionTitle = "Enable AI without breaking enterprise",
   sectionTitleBrand = "workflows",
-  sectionDescription = "LLM Capsule does more than hide data. It auto-restores usable output inside the environment after AI processing.",
-  lead = "LLM Capsule does more than hide data. It auto-restores usable output inside the environment after AI processing so enterprise teams can actually use the result in real workflows. This is a restorable workflow — not just protection, but AI enablement with usable output.",
-  body1 = "Traditional masking protects data by removing meaning. That may reduce risk, but it also reduces output quality and business usability. Restored outputs from LLM Capsule are directly usable in: claims documents with real policyholder data, legal reviews with real party names and clause references, regulatory reports with real customer and account data, and internal analysis with real business metrics.",
-  body2 = "This is the capability that makes enterprise AI operationally viable. Secure document summarization, AI claims processing, and confidential contract review with AI all depend on the ability to restore results. Without restoration, every AI output requires manual reconstruction — eliminating the efficiency gains AI is supposed to deliver.",
+  sectionDescription = "LLM Capsule does more than hide data. It auto-restores usable output inside the environment after AI processing so enterprise teams can actually use the result in real workflows. This is a restorable workflow — not just protection, but AI enablement with usable output.",
+  lead = "Traditional masking protects data by removing meaning. That may reduce risk, but it also reduces output quality and business usability. Restored outputs from LLM Capsule are directly usable in: claims documents with real policyholder data, legal reviews with real party names and clause references, regulatory reports with real customer and account data, and internal analysis with real business metrics.",
+  body = "This is the capability that makes enterprise AI operationally viable. Secure document summarization, AI claims processing, and confidential contract review with AI all depend on the ability to restore results. Without restoration, every AI output requires manual reconstruction — eliminating the efficiency gains AI is supposed to deliver.",
   encapsulatedLabel = "Encapsulated",
   encapsulatedText = "[PERSON_01] submitted claim #[ID_04] on [DATE_02] for property at [ADDR_03]. Total assessed damage: [AMOUNT_01].",
   restoredLabel = "Restored",
@@ -117,7 +115,7 @@ export default function Section04_Restoration({
           border-radius: 40px;
           overflow: hidden;
           background-color: ${PALETTE.surfaceLight};
-          background-image: url('${IMAGE_BASE}/images/bg-paint-blue-iridescent.png');
+          background-image: url('${IMAGE_BASE}/images/bg-wave-teal-blue.png');
           background-size: cover;
           background-position: center;
           padding: 24px;
@@ -208,14 +206,13 @@ export default function Section04_Restoration({
             <div className="s4-split">
               {/* Content (visually left due to reverse) */}
               <div className="s4-content">
-                <p className="s4-lead">{lead}</p>
-                <p className="s4-body" dangerouslySetInnerHTML={{
-                  __html: body1.replace(
+                <p className="s4-lead" dangerouslySetInnerHTML={{
+                  __html: lead.replace(
                     /(claims documents|legal reviews|regulatory reports|internal analysis)/g,
                     '<strong>$1</strong>'
                   )
                 }} />
-                <p className="s4-body">{body2}</p>
+                <p className="s4-body">{body}</p>
               </div>
 
               {/* Visual (visually right due to reverse) */}
@@ -243,9 +240,8 @@ addPropertyControls(Section04_Restoration, {
   sectionTitle:       { type: ControlType.String, title: "Title",              defaultValue: "Enable AI without breaking enterprise" },
   sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)",      defaultValue: "workflows" },
   sectionDescription: { type: ControlType.String, title: "Description",        defaultValue: "LLM Capsule does more than hide data…" },
-  lead:               { type: ControlType.String, title: "Lead",               defaultValue: "LLM Capsule does more than hide data…" },
-  body1:              { type: ControlType.String, title: "Body 1",             defaultValue: "Traditional masking protects data…" },
-  body2:              { type: ControlType.String, title: "Body 2",             defaultValue: "This is the capability that makes…" },
+  lead:               { type: ControlType.String, title: "Lead",               defaultValue: "Traditional masking protects data…", displayTextArea: true },
+  body:               { type: ControlType.String, title: "Body",              defaultValue: "This is the capability that makes…", displayTextArea: true },
   encapsulatedLabel:  { type: ControlType.String, title: "Encapsulated Label", defaultValue: "Encapsulated" },
   encapsulatedText:   { type: ControlType.String, title: "Encapsulated Text",  defaultValue: "[PERSON_01] submitted claim…" },
   restoredLabel:      { type: ControlType.String, title: "Restored Label",     defaultValue: "Restored" },
