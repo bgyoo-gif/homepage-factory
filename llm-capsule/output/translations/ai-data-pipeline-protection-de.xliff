@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="ai-data-pipeline-protection">
+    <body>
+      <!-- Section 01: Hero -->
+      <trans-unit id="title">
+        <source>AI Data Pipeline Protection</source>
+        <target>AI-Datenpipeline-Schutz</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Enabling enterprise AI at every stage of the processing pipeline — ingestion, encapsulation, processing, restoration, and delivery.</source>
+        <target>Unternehmens-AI in jeder Phase der Verarbeitungspipeline ermoeglichen — Erfassung, Encapsulation, Verarbeitung, Restoration und Zustellung.</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbHome">
+        <source>Home</source>
+        <target>Startseite</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbResources">
+        <source>Resources</source>
+        <target>Ressourcen</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbLearn">
+        <source>Learn</source>
+        <target>Lernen</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbCurrent">
+        <source>AI Data Pipeline Protection</source>
+        <target>AI-Datenpipeline-Schutz</target>
+      </trans-unit>
+      <!-- Section 02: Problem -->
+      <trans-unit id="sectionLabelProblem">
+        <source>Problem</source>
+        <target>Problem</target>
+      </trans-unit>
+      <trans-unit id="problemParagraph1">
+        <source>Enterprise AI pipelines move data through multiple stages and systems. Documents are ingested from internal sources, pre-processed for AI consumption, sent to language models, processed, and outputs are routed back to business systems. Each stage represents a potential exposure point.</source>
+        <target>Unternehmens-AI-Pipelines bewegen Daten durch mehrere Stufen und Systeme. Dokumente werden aus internen Quellen erfasst, fuer die AI-Verarbeitung vorverarbeitet, an Sprachmodelle gesendet, verarbeitet, und die Ergebnisse werden an Geschaeftssysteme zurueckgeleitet. Jede Stufe stellt einen potenziellen Expositionspunkt dar.</target>
+      </trans-unit>
+      <trans-unit id="problemParagraph2">
+        <source>Point solutions — API gateways that filter prompts, output scanners that check responses — address individual stages but leave gaps between them. AI data pipeline protection requires a continuous data-layer approach.</source>
+        <target>Einzelloesungen — API-Gateways, die Prompts filtern, Ausgabescanner, die Antworten pruefen — adressieren einzelne Stufen, lassen aber Luecken dazwischen. AI-Datenpipeline-Schutz erfordert einen kontinuierlichen Datenschichtansatz.</target>
+      </trans-unit>
+      <!-- Section 03: Explanation -->
+      <trans-unit id="sectionLabelExplanation">
+        <source>Explanation</source>
+        <target>Erklaerung</target>
+      </trans-unit>
+      <trans-unit id="stage1Label">
+        <source>Stage 1: Ingestion</source>
+        <target>Stufe 1: Erfassung</target>
+      </trans-unit>
+      <trans-unit id="stage1Text">
+        <source>Documents enter the pipeline from enterprise systems — document management, email, databases, RAG pipelines. LLM Capsule intercepts data at this stage and applies context-aware data control to classify sensitivity.</source>
+        <target>Dokumente gelangen aus Unternehmenssystemen in die Pipeline — Dokumentenmanagement, E-Mail, Datenbanken, RAG-Pipelines. LLM Capsule faengt die Daten in dieser Phase ab und wendet kontextbewusste Datenkontrolle zur Sensibilitaetsklassifizierung an.</target>
+      </trans-unit>
+      <trans-unit id="stage2Label">
+        <source>Stage 2: Encapsulation</source>
+        <target>Stufe 2: Encapsulation</target>
+      </trans-unit>
+      <trans-unit id="stage2Text">
+        <source>Sensitive elements are replaced with structure-preserving representations. The encapsulation occurs entirely within the enterprise environment. Mapping data is stored locally and never transmitted.</source>
+        <target>Sensible Elemente werden durch strukturerhaltende Repraesentationen ersetzt. Die Encapsulation erfolgt vollstaendig innerhalb der Unternehmensumgebung. Mapping-Daten werden lokal gespeichert und niemals uebertragen.</target>
+      </trans-unit>
+      <trans-unit id="stage3Label">
+        <source>Stage 3: AI Processing</source>
+        <target>Stufe 3: AI-Verarbeitung</target>
+      </trans-unit>
+      <trans-unit id="stage3Text">
+        <source>Encapsulated data is sent to the AI model. The model processes structurally intact documents and generates useful outputs. No original sensitive data reaches the AI provider.</source>
+        <target>Encapsulation-Daten werden an das AI-Modell gesendet. Das Modell verarbeitet strukturell intakte Dokumente und erzeugt nuetzliche Ausgaben. Keine originalen sensiblen Daten erreichen den AI-Anbieter.</target>
+      </trans-unit>
+      <trans-unit id="stage4Label">
+        <source>Stage 4: Restoration</source>
+        <target>Stufe 4: Restoration</target>
+      </trans-unit>
+      <trans-unit id="stage4Text">
+        <source>AI results are restored through local restoration. The locally stored mapping is applied to reconstruct outputs with real enterprise data.</source>
+        <target>AI-Ergebnisse werden durch lokale Restoration wiederhergestellt. Das lokal gespeicherte Mapping wird angewendet, um Ausgaben mit echten Unternehmensdaten zu rekonstruieren.</target>
+      </trans-unit>
+      <trans-unit id="stage5Label">
+        <source>Stage 5: Delivery</source>
+        <target>Stufe 5: Zustellung</target>
+      </trans-unit>
+      <trans-unit id="stage5Text">
+        <source>Restored outputs are routed to downstream business systems — compliance platforms, case management, analytics dashboards — ready for immediate use.</source>
+        <target>Wiederhergestellte Ausgaben werden an nachgelagerte Geschaeftssysteme geleitet — Compliance-Plattformen, Fallmanagement, Analyse-Dashboards — und sind sofort einsatzbereit.</target>
+      </trans-unit>
+      <trans-unit id="keyMessageHighlight">
+        <source>AI data pipeline protection</source>
+        <target>AI-Datenpipeline-Schutz</target>
+      </trans-unit>
+      <trans-unit id="keyMessage">
+        <source> is not a single checkpoint, but a continuous AI enablement data layer that protects data from ingestion to delivery, enabling enterprise AI adoption at every stage.</source>
+        <target> ist kein einzelner Checkpoint, sondern eine kontinuierliche AI-Enablement-Datenschicht, die Daten von der Erfassung bis zur Zustellung schuetzt und die KI-Einfuehrung im Unternehmen in jeder Phase ermoeglicht.</target>
+      </trans-unit>
+      <!-- Section 04: Enterprise Example -->
+      <trans-unit id="sectionLabelExample">
+        <source>Example</source>
+        <target>Beispiel</target>
+      </trans-unit>
+      <trans-unit id="exampleCardTitle">
+        <source>Telecom Customer Service Automation</source>
+        <target>Kundenservice-Automatisierung im Telekommunikationsbereich</target>
+      </trans-unit>
+      <trans-unit id="exampleCardParagraph1">
+        <source>A telecom company routes 50,000 customer support tickets per month through AI for automated categorization, priority scoring, and response drafting. Tickets contain customer account numbers, addresses, service plan details, and payment history.</source>
+        <target>Ein Telekommunikationsunternehmen verarbeitet monatlich 50.000 Kundensupport-Tickets mittels AI fuer automatische Kategorisierung, Prioritaetsbewertung und Antworterstellung. Die Tickets enthalten Kundenkontodaten, Adressen, Tarifdetails und Zahlungshistorie.</target>
+      </trans-unit>
+      <trans-unit id="exampleCardParagraph2">
+        <source>enables the entire pipeline: tickets are encapsulated at ingestion, AI processes protected tickets, responses are restored with real customer data, and formatted outputs route directly to the support platform.</source>
+        <target>ermoeglicht die gesamte Pipeline: Tickets werden bei der Erfassung encapsuliert, AI verarbeitet geschuetzte Tickets, Antworten werden mit echten Kundendaten wiederhergestellt, und formatierte Ausgaben werden direkt an die Support-Plattform geleitet.</target>
+      </trans-unit>
+      <!-- Section 05: FAQ -->
+      <trans-unit id="faqTitle">
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </trans-unit>
+      <trans-unit id="faq1Question">
+        <source>What is AI data pipeline protection?</source>
+        <target>Was ist AI-Datenpipeline-Schutz?</target>
+      </trans-unit>
+      <trans-unit id="faq1Answer">
+        <source>AI data pipeline protection secures sensitive enterprise data at every stage of the AI processing pipeline — from document ingestion through model interaction to output delivery.</source>
+        <target>AI-Datenpipeline-Schutz sichert sensible Unternehmensdaten in jeder Phase der AI-Verarbeitungspipeline — von der Dokumentenerfassung ueber die Modellinteraktion bis zur Ausgabezustellung.</target>
+      </trans-unit>
+      <trans-unit id="faq2Question">
+        <source>How does this differ from API-level security?</source>
+        <target>Wie unterscheidet sich dies von API-Level-Sicherheit?</target>
+      </trans-unit>
+      <trans-unit id="faq2Answer">
+        <source>API-level security filters prompts and scans outputs at the model interface. AI data pipeline protection operates at the data layer across the entire pipeline, ensuring data is protected before it reaches any external system.</source>
+        <target>API-Level-Sicherheit filtert Prompts und scannt Ausgaben an der Modellschnittstelle. AI-Datenpipeline-Schutz arbeitet auf der Datenschicht ueber die gesamte Pipeline hinweg und stellt sicher, dass Daten geschuetzt sind, bevor sie ein externes System erreichen.</target>
+      </trans-unit>
+      <!-- Section 06: Related Pages -->
+      <trans-unit id="sectionLabelRelated">
+        <source>Related</source>
+        <target>Verwandt</target>
+      </trans-unit>
+      <trans-unit id="link1Label">
+        <source>Product Overview</source>
+        <target>Produktuebersicht</target>
+      </trans-unit>
+      <trans-unit id="link2Label">
+        <source>Architecture</source>
+        <target>Architektur</target>
+      </trans-unit>
+      <trans-unit id="link3Label">
+        <source>Trust &amp; Compliance</source>
+        <target>Vertrauen &amp; Compliance</target>
+      </trans-unit>
+      <trans-unit id="link4Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <!-- Section 07: CTA Band -->
+      <trans-unit id="ctaTitle">
+        <source>See how</source>
+        <target>Erfahren Sie, wie</target>
+      </trans-unit>
+      <trans-unit id="ctaTitleSuffix">
+        <source>works with your data</source>
+        <target>mit Ihren Daten arbeitet</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsaechlichen Workflows.</target>
+      </trans-unit>
+      <trans-unit id="btn1Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="btn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink1Label">
+        <source>Download Architecture Brief</source>
+        <target>Architektur-Brief herunterladen</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

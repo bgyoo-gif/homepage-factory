@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="glossary">
+    <body>
+      <!-- Section01_Hero -->
+      <trans-unit id="title">
+        <source>Enterprise AI </source>
+        <target>기업 AI </target>
+      </trans-unit>
+      <trans-unit id="titleHighlight">
+        <source>Enablement</source>
+        <target>도입</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Key terms and definitions for enterprise AI enablement, LLM data privacy, and secure enterprise AI workflows.</source>
+        <target>기업 AI 도입, LLM 데이터 프라이버시, 안전한 기업 AI 워크플로우의 주요 용어 및 정의입니다.</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbHome">
+        <source>Home</source>
+        <target>홈</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbResources">
+        <source>Resources</source>
+        <target>리소스</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbCurrent">
+        <source>Glossary</source>
+        <target>용어집</target>
+      </trans-unit>
+
+      <!-- Section02_GlossaryTerms -->
+      <trans-unit id="card1Title">
+        <source>Restoration</source>
+        <target>Restoration</target>
+      </trans-unit>
+      <trans-unit id="card1LinkLabel">
+        <source>Read definition</source>
+        <target>정의 읽기</target>
+      </trans-unit>
+      <trans-unit id="card2Title">
+        <source>Zero Exposure</source>
+        <target>Zero Exposure</target>
+      </trans-unit>
+      <trans-unit id="card2LinkLabel">
+        <source>Read definition</source>
+        <target>정의 읽기</target>
+      </trans-unit>
+      <trans-unit id="card3Title">
+        <source>Enterprise Context Control</source>
+        <target>기업 컨텍스트 제어</target>
+      </trans-unit>
+      <trans-unit id="card3LinkLabel">
+        <source>Read definition</source>
+        <target>정의 읽기</target>
+      </trans-unit>
+      <trans-unit id="card4Title">
+        <source>Structure-Preserving Processing</source>
+        <target>구조 보존 처리</target>
+      </trans-unit>
+      <trans-unit id="card4LinkLabel">
+        <source>Read definition</source>
+        <target>정의 읽기</target>
+      </trans-unit>
+      <trans-unit id="card5Title">
+        <source>Restorable Workflow</source>
+        <target>Restorable 워크플로우</target>
+      </trans-unit>
+      <trans-unit id="card5LinkLabel">
+        <source>Read definition</source>
+        <target>정의 읽기</target>
+      </trans-unit>
+      <trans-unit id="card6Title">
+        <source>Secure LLM Usage</source>
+        <target>안전한 LLM 사용</target>
+      </trans-unit>
+      <trans-unit id="card6LinkLabel">
+        <source>Read definition</source>
+        <target>정의 읽기</target>
+      </trans-unit>
+
+      <!-- Section03_CTA -->
+      <trans-unit id="ctaTitle">
+        <source>See how </source>
+        <target>실제 데이터에서 </target>
+      </trans-unit>
+      <trans-unit id="ctaTitleProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>문서, 배포 조건, 평가 기준을 가져오십시오. 실제 워크플로우에서 시연합니다.</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn1Label">
+        <source>Request a Demo</source>
+        <target>데모 요청</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink1Label">
+        <source>Download Architecture Brief</source>
+        <target>아키텍처 브리프 다운로드</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink2Label">
+        <source>Available on AWS Marketplace</source>
+        <target>AWS Marketplace에서 이용 가능</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

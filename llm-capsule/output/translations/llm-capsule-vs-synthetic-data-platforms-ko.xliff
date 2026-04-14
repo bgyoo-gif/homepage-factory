@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="llm-capsule-vs-synthetic-data-platforms">
+    <body>
+      <trans-unit id="title">
+        <source>See how</source>
+        <target>직접 확인하세요</target>
+      </trans-unit>
+      <trans-unit id="titleBrand">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>문서, 배포 조건, 평가 기준을 준비해 주세요. 실제 워크플로우에서 시연합니다.</target>
+      </trans-unit>
+      <trans-unit id="sectionLabel">
+        <source>Related</source>
+        <target>관련 페이지</target>
+      </trans-unit>
+      <trans-unit id="brandName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="paragraph">
+        <source>LLM Capsule does not replace real data with synthetic data. It encapsulates real documents — preserving their specific content, structure, and relationships — while replacing only sensitive elements with reversible representations. AI processes real enterprise content and produces real enterprise outputs, restored through local restoration (restoration).</source>
+        <target>LLM Capsule은 실제 데이터를 합성 데이터로 대체하지 않습니다. 실제 문서를 Encapsulation하여 특정 콘텐츠, 구조, 관계를 보존하면서 민감한 요소만 가역적 표현으로 대체합니다. AI가 실제 기업 콘텐츠를 처리하고 실제 기업 출력을 생성하며, Restoration을 통해 복원됩니다.</target>
+      </trans-unit>
+      <trans-unit id="sectionLabelPrefix">
+        <source>Enterprise Workflow</source>
+        <target>기업 워크플로우</target>
+      </trans-unit>
+      <trans-unit id="sectionLabelBrand">
+        <source>Example</source>
+        <target>사례</target>
+      </trans-unit>
+      <trans-unit id="sectionLabelSuffix">
+        <source>Differs</source>
+        <target>차별점</target>
+      </trans-unit>
+      <trans-unit id="item1Bold">
+        <source>Not suitable for document processing.</source>
+        <target>문서 처리에 부적합.</target>
+      </trans-unit>
+      <trans-unit id="item1Text">
+        <source> Synthetic data platforms generate tabular data, not documents. They cannot create synthetic versions of contracts, medical records, or legal filings that retain their specific content and meaning.</source>
+        <target> 합성 데이터 플랫폼은 문서가 아닌 테이블형 데이터를 생성합니다. 특정 콘텐츠와 의미를 유지하는 계약서, 의료 기록, 법률 서류의 합성 버전을 생성할 수 없습니다.</target>
+      </trans-unit>
+      <trans-unit id="item2Bold">
+        <source>Loss of specificity.</source>
+        <target>구체성 손실.</target>
+      </trans-unit>
+      <trans-unit id="item2Text">
+        <source> Synthetic data preserves statistical patterns but not specific enterprise content. You cannot summarize a synthetic contract — it does not contain real terms, real parties, or real obligations.</source>
+        <target> 합성 데이터는 통계적 패턴을 보존하지만 구체적인 기업 콘텐츠는 보존하지 않습니다. 합성 계약서를 요약할 수 없습니다. 실제 조건, 실제 당사자, 실제 의무가 포함되어 있지 않습니다.</target>
+      </trans-unit>
+      <trans-unit id="item3Bold">
+        <source>No real-world output.</source>
+        <target>실제 출력 없음.</target>
+      </trans-unit>
+      <trans-unit id="item3Text">
+        <source> AI outputs based on synthetic data describe synthetic scenarios, not real enterprise situations. There is no mechanism to map synthetic outputs back to real enterprise context.</source>
+        <target> 합성 데이터 기반의 AI 출력은 실제 기업 상황이 아닌 합성 시나리오를 설명합니다. 합성 출력을 실제 기업 컨텍스트에 다시 매핑하는 메커니즘이 없습니다.</target>
+      </trans-unit>
+      <trans-unit id="bannerBold">
+        <source>AI results are restored locally.</source>
+        <target>AI 결과는 로컬에서 Restoration됩니다.</target>
+      </trans-unit>
+      <trans-unit id="bannerText">
+        <source> LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.</source>
+        <target> LLM Capsule은 민감 데이터를 보호하고 활용 가능한 출력을 유지하면서 기업 AI 도입을 지원합니다.</target>
+      </trans-unit>
+      <trans-unit id="col1Header">
+        <source>Capability</source>
+        <target>기능</target>
+      </trans-unit>
+      <trans-unit id="col2Header">
+        <source>Synthetic Data Platforms</source>
+        <target>합성 데이터 플랫폼</target>
+      </trans-unit>
+      <trans-unit id="col3Header">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="cardTitle">
+        <source>Compliance Document Analysis</source>
+        <target>컴플라이언스 문서 분석</target>
+      </trans-unit>
+      <trans-unit id="cardParagraph1">
+        <source>A compliance team needs AI to identify risk indicators in 1,000 real audit reports. Synthetic data cannot help — synthetic audit reports do not contain the real findings, real entity references, and real risk patterns the team needs to analyze.</source>
+        <target>컴플라이언스 팀이 실제 감사 보고서 1,000건에서 위험 지표를 식별하기 위해 AI가 필요합니다. 합성 데이터는 도움이 되지 않습니다. 합성 감사 보고서에는 팀이 분석해야 할 실제 발견 사항, 실제 엔티티 참조, 실제 위험 패턴이 포함되어 있지 않습니다.</target>
+      </trans-unit>
+      <trans-unit id="cardParagraph2Suffix">
+        <source>encapsulates the real audit reports, AI identifies risk patterns in the protected documents, and restoration produces an actionable risk assessment with real entity names and findings linked to real reports.</source>
+        <target>실제 감사 보고서를 Encapsulation하고, AI가 보호된 문서에서 위험 패턴을 식별하며, Restoration을 통해 실제 엔티티 이름과 실제 보고서에 연결된 발견 사항이 포함된 실행 가능한 위험 평가를 생성합니다.</target>
+      </trans-unit>
+      <trans-unit id="q1">
+        <source>When should I use synthetic data vs LLM Capsule?</source>
+        <target>합성 데이터와 LLM Capsule 중 언제 어떤 것을 사용해야 합니까?</target>
+      </trans-unit>
+      <trans-unit id="a1">
+        <source>Use synthetic data for model training and testing where statistical properties matter. Use LLM Capsule for production AI workflows where AI must process and produce outputs about real enterprise documents.</source>
+        <target>통계적 속성이 중요한 모델 학습 및 테스트에는 합성 데이터를 사용합니다. AI가 실제 기업 문서를 처리하고 관련 출력을 생성해야 하는 프로덕션 AI 워크플로우에는 LLM Capsule을 사용합니다.</target>
+      </trans-unit>
+      <trans-unit id="q2">
+        <source>Does LLM Capsule generate synthetic data?</source>
+        <target>LLM Capsule은 합성 데이터를 생성합니까?</target>
+      </trans-unit>
+      <trans-unit id="a2">
+        <source>No. LLM Capsule encapsulates real data — preserving its structure while protecting sensitive elements. It is not a synthetic data platform.</source>
+        <target>아닙니다. LLM Capsule은 민감한 요소를 보호하면서 구조를 보존하여 실제 데이터를 Encapsulation합니다. 합성 데이터 플랫폼이 아닙니다.</target>
+      </trans-unit>
+      <trans-unit id="link1Title">
+        <source>Product Overview</source>
+        <target>제품 개요</target>
+      </trans-unit>
+      <trans-unit id="link2Title">
+        <source>Architecture</source>
+        <target>아키텍처</target>
+      </trans-unit>
+      <trans-unit id="link3Title">
+        <source>Trust &amp; Compliance</source>
+        <target>신뢰 &amp; 컴플라이언스</target>
+      </trans-unit>
+      <trans-unit id="link4Title">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="link5Title">
+        <source>Learn Hub</source>
+        <target>학습 허브</target>
+      </trans-unit>
+      <trans-unit id="btn1Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="btn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnote1Label">
+        <source>Download Architecture Brief</source>
+        <target>아키텍처 브리프 다운로드</target>
+      </trans-unit>
+      <trans-unit id="footnote2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

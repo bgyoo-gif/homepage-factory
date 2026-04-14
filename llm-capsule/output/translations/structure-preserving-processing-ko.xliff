@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="structure-preserving-processing">
+    <body>
+      <!-- Section01_Hero -->
+      <trans-unit id="title">
+        <source>Structure-Preserving Processing</source>
+        <target>구조 보존 처리</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Replacing sensitive elements while maintaining document layout, entity relationships, and semantic context for accurate AI processing — a core capability of</source>
+        <target>정확한 AI 처리를 위해 문서 레이아웃, 엔티티 관계, 의미적 컨텍스트를 유지하면서 민감한 요소를 대체합니다. 다음 제품의 핵심 기능입니다:</target>
+      </trans-unit>
+      <trans-unit id="productName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+
+      <!-- Section02_Definition -->
+      <trans-unit id="bannerLabel">
+        <source>DEFINITION</source>
+        <target>정의</target>
+      </trans-unit>
+      <trans-unit id="bannerText">
+        <source>Structure-preserving processing is a data protection method that replaces sensitive elements in enterprise documents while maintaining document layout, entity relationships, table structures, cross-references, and semantic context. It ensures AI models receive structurally intact documents for accurate processing.</source>
+        <target>구조 보존 처리는 문서 레이아웃, 엔티티 관계, 테이블 구조, 상호 참조, 의미적 컨텍스트를 유지하면서 기업 문서의 민감한 요소를 대체하는 데이터 보호 방법입니다. AI 모델이 정확한 처리를 위해 구조적으로 온전한 문서를 수신하도록 보장합니다.</target>
+      </trans-unit>
+
+      <!-- Section03_Explanation -->
+      <trans-unit id="sectionHeading">
+        <source>Explanation</source>
+        <target>설명</target>
+      </trans-unit>
+      <trans-unit id="paragraph1">
+        <source>Flat masking treats every sensitive value as an independent token, replacing each with a generic placeholder. This collapses entity relationships, breaks table schemas, and removes the structural information AI models use for comprehension.</source>
+        <target>단순 마스킹은 모든 민감한 값을 독립적인 토큰으로 처리하여 각각을 범용 플레이스홀더로 대체합니다. 이로 인해 엔티티 관계가 붕괴되고, 테이블 스키마가 깨지며, AI 모델이 이해에 사용하는 구조 정보가 제거됩니다.</target>
+      </trans-unit>
+      <trans-unit id="paragraph2">
+        <source>Structure-preserving processing maintains these relationships. When the same entity appears in multiple locations, all occurrences map to the same replacement. Table column headers and row identifiers remain semantically consistent. Cross-references between document sections maintain their logical connections.</source>
+        <target>구조 보존 처리는 이러한 관계를 유지합니다. 동일한 엔티티가 여러 위치에 나타날 때 모든 항목이 동일한 대체값에 매핑됩니다. 테이블 열 헤더와 행 식별자는 의미적 일관성을 유지합니다. 문서 섹션 간 상호 참조는 논리적 연결을 유지합니다.</target>
+      </trans-unit>
+
+      <!-- Section04_Example -->
+      <trans-unit id="exampleHeading">
+        <source>Example</source>
+        <target>예시</target>
+      </trans-unit>
+      <trans-unit id="cardText">
+        <source>A contract references "Acme Corp" 47 times across 30 pages — as a party in the preamble, a signatory in the execution block, and a reference in 12 obligation clauses. Structure-preserving processing replaces all 47 instances with</source>
+        <target>계약서가 30페이지에 걸쳐 "Acme Corp"을 47회 참조합니다 — 전문의 당사자로, 서명란의 서명자로, 12개 의무 조항의 참조로. 구조 보존 처리는 47개 모든 인스턴스를 다음으로 대체합니다:</target>
+      </trans-unit>
+      <trans-unit id="codeInline">
+        <source>ENTITY_A</source>
+        <target>ENTITY_A</target>
+      </trans-unit>
+
+      <!-- Section05_RelatedTerms -->
+      <trans-unit id="relatedTermsHeading">
+        <source>Related Terms</source>
+        <target>관련 용어</target>
+      </trans-unit>
+      <trans-unit id="relatedPagesHeading">
+        <source>Related Pages</source>
+        <target>관련 페이지</target>
+      </trans-unit>
+
+      <!-- Section06_CTA -->
+      <trans-unit id="titlePrefix">
+        <source>See</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="ctaProductName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="titleSuffix">
+        <source>Structure-Preserving Processing in Action</source>
+        <target>구조 보존 처리를 직접 확인하세요</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Experience how enterprise documents retain full structural integrity throughout the encapsulation and AI processing pipeline.</source>
+        <target>Encapsulation과 AI 처리 파이프라인 전반에서 기업 문서가 완전한 구조적 무결성을 유지하는 방식을 경험하세요.</target>
+      </trans-unit>
+      <trans-unit id="primaryButtonLabel">
+        <source>Request a Demo</source>
+        <target>데모 요청</target>
+      </trans-unit>
+      <trans-unit id="secondaryButtonLabel">
+        <source>View Product</source>
+        <target>제품 보기</target>
+      </trans-unit>
+      <trans-unit id="footnote">
+        <source>Enterprise AI Enablement by CUBIG</source>
+        <target>CUBIG의 엔터프라이즈 AI 활성화</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

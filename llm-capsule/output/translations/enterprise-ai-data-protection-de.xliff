@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="enterprise-ai-data-protection">
+    <body>
+      <!-- Section 01: Hero -->
+      <trans-unit id="heroTitle">
+        <source>Enterprise AI Enablement</source>
+        <target>Enterprise AI Enablement</target>
+      </trans-unit>
+      <trans-unit id="heroDescription">
+        <source>'s AI enablement data layer uses encapsulation, zero exposure, and local restoration to enable enterprises to adopt AI without data risk.</source>
+        <target>s AI-Enablement-Datenschicht nutzt Encapsulation, Zero Exposure und lokale Restoration, um Unternehmen die AI-Einfuehrung ohne Datenrisiko zu ermoeglichen.</target>
+      </trans-unit>
+      <!-- Section 02: Problem -->
+      <trans-unit id="sectionLabelProblem">
+        <source>Problem</source>
+        <target>Problem</target>
+      </trans-unit>
+      <trans-unit id="problemParagraph1">
+        <source>Every enterprise that sends data to an external AI service creates a data exposure event. Even when AI providers offer data processing agreements and claim not to use customer data for training, the data still transits external infrastructure, is processed by external compute, and generates logs and metadata in external systems.</source>
+        <target>Jedes Unternehmen, das Daten an einen externen AI-Service sendet, erzeugt ein Datenexpositions-Ereignis. Selbst wenn AI-Anbieter Datenverarbeitungsvereinbarungen anbieten und behaupten, Kundendaten nicht fuer das Training zu verwenden, durchlaufen die Daten dennoch externe Infrastruktur, werden von externen Systemen verarbeitet und erzeugen Logs und Metadaten in externen Systemen.</target>
+      </trans-unit>
+      <trans-unit id="problemParagraph2">
+        <source>For regulated enterprises, this exposure is often non-negotiable — not because of trust issues with AI providers, but because of regulatory mandates, contractual obligations, and internal governance requirements that prohibit sensitive data from leaving controlled environments.</source>
+        <target>Fuer regulierte Unternehmen ist diese Exposition oft nicht verhandelbar — nicht wegen Vertrauensproblemen mit AI-Anbietern, sondern aufgrund regulatorischer Vorgaben, vertraglicher Pflichten und interner Governance-Anforderungen, die das Verlassen sensibler Daten aus kontrollierten Umgebungen verbieten.</target>
+      </trans-unit>
+      <!-- Section 03: Definition -->
+      <trans-unit id="sectionLabelDefinition">
+        <source>Definition</source>
+        <target>Definition</target>
+      </trans-unit>
+      <trans-unit id="definitionHighlight">
+        <source>Enterprise AI Enablement</source>
+        <target>Enterprise AI Enablement</target>
+      </trans-unit>
+      <trans-unit id="definitionText">
+        <source> operates as an AI enablement data layer and plugin — protecting sensitive information through local encapsulation, structure-preserving processing, and local restoration while enabling full AI-powered workflows across any LLM.</source>
+        <target> fungiert als AI-Enablement-Datenschicht und Plugin — schuetzt sensible Informationen durch lokale Encapsulation, strukturerhaltende Verarbeitung und lokale Restoration und ermoeglicht gleichzeitig vollstaendige AI-gestuetzte Workflows ueber jedes LLM.</target>
+      </trans-unit>
+      <!-- Section 04: Explanation -->
+      <trans-unit id="sectionLabelExplanation">
+        <source>Explanation</source>
+        <target>Erklaerung</target>
+      </trans-unit>
+      <trans-unit id="explanationIntro">
+        <source> enables enterprise AI adoption through a 3+2 architecture — three core capabilities and two extended capabilities:</source>
+        <target> ermoeglicht die KI-Einfuehrung im Unternehmen durch eine 3+2-Architektur — drei Kernfunktionen und zwei erweiterte Funktionen:</target>
+      </trans-unit>
+      <trans-unit id="core1Label">
+        <source>Core 1: Zero Exposure.</source>
+        <target>Kern 1: Zero Exposure.</target>
+      </trans-unit>
+      <trans-unit id="core1Text">
+        <source>Original sensitive data never leaves the enterprise environment. Only encapsulated representations cross the trust boundary to AI services. The AI provider processes useful data but cannot reconstruct original sensitive values.</source>
+        <target>Originale sensible Daten verlassen niemals die Unternehmensumgebung. Nur Encapsulation-Repraesentationen ueberschreiten die Vertrauensgrenze zu AI-Services. Der AI-Anbieter verarbeitet nuetzliche Daten, kann aber die originalen sensiblen Werte nicht rekonstruieren.</target>
+      </trans-unit>
+      <trans-unit id="core2Label">
+        <source>Core 2: Restoration.</source>
+        <target>Kern 2: Restoration.</target>
+      </trans-unit>
+      <trans-unit id="core2Text">
+        <source>AI results are automatically restored locally with original enterprise data. The mapping between encapsulated and original values is stored locally and applied to AI outputs within the enterprise environment. This produces enterprise-ready results without manual reconstruction.</source>
+        <target>AI-Ergebnisse werden automatisch lokal mit den originalen Unternehmensdaten wiederhergestellt. Das Mapping zwischen Encapsulation- und Originalwerten wird lokal gespeichert und innerhalb der Unternehmensumgebung auf AI-Ausgaben angewendet. Dies erzeugt unternehmensfaehige Ergebnisse ohne manuelle Rekonstruktion.</target>
+      </trans-unit>
+      <trans-unit id="core3Label">
+        <source>Core 3: Enterprise Context.</source>
+        <target>Kern 3: Unternehmenskontext.</target>
+      </trans-unit>
+      <trans-unit id="core3Text">
+        <source>Sensitive elements are identified using context-aware data control and replaced with structure-preserving representations. Unlike masking, encapsulation is reversible and policy-driven — what counts as sensitive is configurable per department, document type, and workflow.</source>
+        <target>Sensible Elemente werden mittels kontextbewusster Datenkontrolle identifiziert und durch strukturerhaltende Repraesentationen ersetzt. Anders als beim Masking ist Encapsulation reversibel und richtliniengesteuert — was als sensibel gilt, ist pro Abteilung, Dokumenttyp und Workflow konfigurierbar.</target>
+      </trans-unit>
+      <trans-unit id="ext1Label">
+        <source>+1: Structure-Preserving.</source>
+        <target>+1: Strukturerhaltend.</target>
+      </trans-unit>
+      <trans-unit id="ext1Text">
+        <source>Document layout, entity relationships, and semantic context are maintained during encapsulation. AI models receive structurally intact documents, producing high-quality outputs.</source>
+        <target>Dokumentlayout, Entitaetsbeziehungen und semantischer Kontext bleiben waehrend der Encapsulation erhalten. AI-Modelle erhalten strukturell intakte Dokumente und erzeugen hochwertige Ausgaben.</target>
+      </trans-unit>
+      <trans-unit id="ext2Label">
+        <source>+2: Cross-Model Execution.</source>
+        <target>+2: Cross-Model-Ausfuehrung.</target>
+      </trans-unit>
+      <trans-unit id="ext2Text">
+        <source>Because protection operates at the data layer before transmission, it works with any external AI service — ChatGPT, Claude, Gemini, or any LLM API — without model-specific integration.</source>
+        <target>Da der Schutz auf der Datenschicht vor der Uebertragung arbeitet, funktioniert er mit jedem externen AI-Service — ChatGPT, Claude, Gemini oder jeder LLM-API — ohne modellspezifische Integration.</target>
+      </trans-unit>
+      <trans-unit id="bannerText">
+        <source> is an AI enablement data layer and plugin. It enables AI adoption by protecting data at the data layer — not by blocking AI, but by making AI safe to use on real enterprise data.</source>
+        <target> ist eine AI-Enablement-Datenschicht und ein Plugin. Es ermoeglicht die AI-Einfuehrung durch Datenschutz auf der Datenschicht — nicht durch Blockierung von AI, sondern indem AI sicher fuer echte Unternehmensdaten nutzbar wird.</target>
+      </trans-unit>
+      <!-- Section 05: Enterprise Examples -->
+      <trans-unit id="sectionLabelExamples">
+        <source>Examples</source>
+        <target>Beispiele</target>
+      </trans-unit>
+      <trans-unit id="card1Title">
+        <source>Public Sector: Citizen Services AI</source>
+        <target>Oeffentlicher Sektor: Buergerservice-AI</target>
+      </trans-unit>
+      <trans-unit id="card1Text">
+        <source>A government agency uses AI to process citizen benefit applications. Each application contains PII, income data, and residency information. Enterprise AI data protection ensures no citizen data leaves the government environment while AI automates eligibility assessment and case routing.</source>
+        <target>Eine Regierungsbehoerde nutzt AI zur Verarbeitung von Sozialleistungsantraegen. Jeder Antrag enthaelt PII, Einkommensdaten und Aufenthaltsinformationen. Enterprise-AI-Datenschutz stellt sicher, dass keine Buergerdaten die Regierungsumgebung verlassen, waehrend AI die Anspruchspruefung und Fallzuweisung automatisiert.</target>
+      </trans-unit>
+      <trans-unit id="card2Title">
+        <source>Telecom: Network Security Intelligence</source>
+        <target>Telekommunikation: Netzwerksicherheits-Intelligence</target>
+      </trans-unit>
+      <trans-unit id="card2Text">
+        <source>A telecom operator uses AI to analyze network incident reports that contain customer data, infrastructure details, and vulnerability information. Encapsulation protects all sensitive elements while AI performs pattern analysis and threat classification.</source>
+        <target>Ein Telekommunikationsunternehmen nutzt AI zur Analyse von Netzwerk-Vorfallberichten, die Kundendaten, Infrastrukturdetails und Schwachstelleninformationen enthalten. Encapsulation schuetzt alle sensiblen Elemente, waehrend AI Musteranalyse und Bedrohungsklassifizierung durchfuehrt.</target>
+      </trans-unit>
+      <!-- Section 06: FAQ -->
+      <trans-unit id="faqTitle">
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </trans-unit>
+      <trans-unit id="faq1Question">
+        <source>What is enterprise AI data protection?</source>
+        <target>Was ist Enterprise-AI-Datenschutz?</target>
+      </trans-unit>
+      <trans-unit id="faq1Answer">
+        <source>Enterprise AI data protection is a data security discipline that prevents sensitive enterprise information from being exposed to external AI services while still enabling AI-powered workflows. It operates at the data layer through encapsulation, structure preservation, and local restoration.</source>
+        <target>Enterprise-AI-Datenschutz ist eine Datensicherheitsdisziplin, die verhindert, dass sensible Unternehmensinformationen externen AI-Services ausgesetzt werden, waehrend AI-gestuetzte Workflows weiterhin moeglich bleiben. Er arbeitet auf der Datenschicht durch Encapsulation, Strukturerhaltung und lokale Restoration.</target>
+      </trans-unit>
+      <trans-unit id="faq2Question">
+        <source>How does LLM data protection work?</source>
+        <target>Wie funktioniert LLM-Datenschutz?</target>
+      </trans-unit>
+      <trans-unit id="faq2Answer">
+        <source>LLM data protection encapsulates sensitive data locally before it reaches any language model. The AI processes structurally intact but protected documents. After processing, outputs are restored locally with original enterprise data.</source>
+        <target>LLM-Datenschutz kapselt sensible Daten lokal, bevor sie ein Sprachmodell erreichen. Die AI verarbeitet strukturell intakte, aber geschuetzte Dokumente. Nach der Verarbeitung werden die Ausgaben lokal mit den originalen Unternehmensdaten wiederhergestellt.</target>
+      </trans-unit>
+      <trans-unit id="faq3Question">
+        <source>Is LLM Capsule compliant with GDPR?</source>
+        <target>Ist LLM Capsule DSGVO-konform?</target>
+      </trans-unit>
+      <trans-unit id="faq3Answer">
+        <source> is designed to support GDPR compliance by ensuring personal data never leaves the enterprise environment during AI processing. Organizations should evaluate their specific compliance requirements with legal counsel.</source>
+        <target> wurde entwickelt, um die DSGVO-Konformitaet zu unterstuetzen, indem sichergestellt wird, dass personenbezogene Daten waehrend der AI-Verarbeitung die Unternehmensumgebung niemals verlassen. Organisationen sollten ihre spezifischen Compliance-Anforderungen mit Rechtsberatern bewerten.</target>
+      </trans-unit>
+      <!-- Section 07: Learn More -->
+      <trans-unit id="learnMoreTitle">
+        <source>Learn More</source>
+        <target>Mehr erfahren</target>
+      </trans-unit>
+      <!-- Section 08: CTA -->
+      <trans-unit id="ctaTitle">
+        <source>See how</source>
+        <target>Erfahren Sie, wie</target>
+      </trans-unit>
+      <trans-unit id="ctaTitleAfter">
+        <source>works with your data</source>
+        <target>mit Ihren Daten arbeitet</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsaechlichen Workflows.</target>
+      </trans-unit>
+      <trans-unit id="btn1Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="btn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink1Label">
+        <source>Download Architecture Brief</source>
+        <target>Architektur-Brief herunterladen</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="ai-data-pipeline-protection">
+    <body>
+      <!-- Section 01: Hero -->
+      <trans-unit id="title">
+        <source>AI Data Pipeline Protection</source>
+        <target>AI 데이터 파이프라인 보호</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Enabling enterprise AI at every stage of the processing pipeline — ingestion, encapsulation, processing, restoration, and delivery.</source>
+        <target>처리 파이프라인의 모든 단계 — 수집, Encapsulation, 처리, Restoration, 전달 — 에서 기업 AI를 지원합니다.</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbHome">
+        <source>Home</source>
+        <target>홈</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbResources">
+        <source>Resources</source>
+        <target>리소스</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbLearn">
+        <source>Learn</source>
+        <target>학습</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbCurrent">
+        <source>AI Data Pipeline Protection</source>
+        <target>AI 데이터 파이프라인 보호</target>
+      </trans-unit>
+      <!-- Section 02: Problem -->
+      <trans-unit id="sectionLabelProblem">
+        <source>Problem</source>
+        <target>문제</target>
+      </trans-unit>
+      <trans-unit id="problemParagraph1">
+        <source>Enterprise AI pipelines move data through multiple stages and systems. Documents are ingested from internal sources, pre-processed for AI consumption, sent to language models, processed, and outputs are routed back to business systems. Each stage represents a potential exposure point.</source>
+        <target>기업 AI 파이프라인은 여러 단계와 시스템을 거쳐 데이터를 이동시킵니다. 내부 소스에서 문서를 수집하고, AI 처리를 위해 전처리하며, 언어 모델로 전송하고, 처리 후 결과를 비즈니스 시스템으로 반환합니다. 각 단계가 잠재적 노출 지점입니다.</target>
+      </trans-unit>
+      <trans-unit id="problemParagraph2">
+        <source>Point solutions — API gateways that filter prompts, output scanners that check responses — address individual stages but leave gaps between them. AI data pipeline protection requires a continuous data-layer approach.</source>
+        <target>개별 솔루션 — 프롬프트를 필터링하는 API 게이트웨이, 응답을 검사하는 출력 스캐너 — 은 개별 단계를 해결하지만 그 사이에 공백을 남깁니다. AI 데이터 파이프라인 보호에는 연속적인 데이터 레이어 접근 방식이 필요합니다.</target>
+      </trans-unit>
+      <!-- Section 03: Explanation -->
+      <trans-unit id="sectionLabelExplanation">
+        <source>Explanation</source>
+        <target>설명</target>
+      </trans-unit>
+      <trans-unit id="stage1Label">
+        <source>Stage 1: Ingestion</source>
+        <target>1단계: 수집</target>
+      </trans-unit>
+      <trans-unit id="stage1Text">
+        <source>Documents enter the pipeline from enterprise systems — document management, email, databases, RAG pipelines. LLM Capsule intercepts data at this stage and applies context-aware data control to classify sensitivity.</source>
+        <target>문서 관리, 이메일, 데이터베이스, RAG 파이프라인 등 기업 시스템에서 문서가 파이프라인에 진입합니다. LLM Capsule이 이 단계에서 데이터를 인터셉트하고 컨텍스트 인식 데이터 제어를 적용하여 민감도를 분류합니다.</target>
+      </trans-unit>
+      <trans-unit id="stage2Label">
+        <source>Stage 2: Encapsulation</source>
+        <target>2단계: Encapsulation</target>
+      </trans-unit>
+      <trans-unit id="stage2Text">
+        <source>Sensitive elements are replaced with structure-preserving representations. The encapsulation occurs entirely within the enterprise environment. Mapping data is stored locally and never transmitted.</source>
+        <target>민감 요소가 구조 보존 표현으로 대체됩니다. Encapsulation은 기업 환경 내에서 완전히 수행됩니다. 매핑 데이터는 로컬에 저장되며 외부로 전송되지 않습니다.</target>
+      </trans-unit>
+      <trans-unit id="stage3Label">
+        <source>Stage 3: AI Processing</source>
+        <target>3단계: AI 처리</target>
+      </trans-unit>
+      <trans-unit id="stage3Text">
+        <source>Encapsulated data is sent to the AI model. The model processes structurally intact documents and generates useful outputs. No original sensitive data reaches the AI provider.</source>
+        <target>Encapsulation된 데이터가 AI 모델로 전송됩니다. 모델은 구조적으로 온전한 문서를 처리하여 유용한 출력을 생성합니다. 원본 민감 데이터는 AI 제공자에게 도달하지 않습니다.</target>
+      </trans-unit>
+      <trans-unit id="stage4Label">
+        <source>Stage 4: Restoration</source>
+        <target>4단계: Restoration</target>
+      </trans-unit>
+      <trans-unit id="stage4Text">
+        <source>AI results are restored through local restoration. The locally stored mapping is applied to reconstruct outputs with real enterprise data.</source>
+        <target>AI 결과가 로컬 Restoration을 통해 복원됩니다. 로컬에 저장된 매핑이 적용되어 실제 기업 데이터로 출력을 재구성합니다.</target>
+      </trans-unit>
+      <trans-unit id="stage5Label">
+        <source>Stage 5: Delivery</source>
+        <target>5단계: 전달</target>
+      </trans-unit>
+      <trans-unit id="stage5Text">
+        <source>Restored outputs are routed to downstream business systems — compliance platforms, case management, analytics dashboards — ready for immediate use.</source>
+        <target>복원된 출력이 다운스트림 비즈니스 시스템 — 컴플라이언스 플랫폼, 케이스 관리, 분석 대시보드 — 으로 전달되어 즉시 사용할 수 있습니다.</target>
+      </trans-unit>
+      <trans-unit id="keyMessageHighlight">
+        <source>AI data pipeline protection</source>
+        <target>AI 데이터 파이프라인 보호</target>
+      </trans-unit>
+      <trans-unit id="keyMessage">
+        <source> is not a single checkpoint, but a continuous AI enablement data layer that protects data from ingestion to delivery, enabling enterprise AI adoption at every stage.</source>
+        <target>는 단일 체크포인트가 아니라 수집부터 전달까지 데이터를 보호하는 연속적인 AI 활성화 데이터 레이어로, 모든 단계에서 기업 AI 도입을 지원합니다.</target>
+      </trans-unit>
+      <!-- Section 04: Enterprise Example -->
+      <trans-unit id="sectionLabelExample">
+        <source>Example</source>
+        <target>사례</target>
+      </trans-unit>
+      <trans-unit id="exampleCardTitle">
+        <source>Telecom Customer Service Automation</source>
+        <target>통신사 고객 서비스 자동화</target>
+      </trans-unit>
+      <trans-unit id="exampleCardParagraph1">
+        <source>A telecom company routes 50,000 customer support tickets per month through AI for automated categorization, priority scoring, and response drafting. Tickets contain customer account numbers, addresses, service plan details, and payment history.</source>
+        <target>한 통신사가 자동 분류, 우선순위 평가, 응답 초안 작성을 위해 월 50,000건의 고객 지원 티켓을 AI로 처리합니다. 티켓에는 고객 계좌번호, 주소, 요금제 세부 정보, 결제 내역이 포함됩니다.</target>
+      </trans-unit>
+      <trans-unit id="exampleCardParagraph2">
+        <source>enables the entire pipeline: tickets are encapsulated at ingestion, AI processes protected tickets, responses are restored with real customer data, and formatted outputs route directly to the support platform.</source>
+        <target>이 전체 파이프라인을 지원합니다: 수집 시 티켓이 Encapsulation되고, AI가 보호된 티켓을 처리하며, 실제 고객 데이터로 응답이 복원되고, 서식화된 출력이 지원 플랫폼으로 직접 전달됩니다.</target>
+      </trans-unit>
+      <!-- Section 05: FAQ -->
+      <trans-unit id="faqTitle">
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </trans-unit>
+      <trans-unit id="faq1Question">
+        <source>What is AI data pipeline protection?</source>
+        <target>AI 데이터 파이프라인 보호란 무엇입니까?</target>
+      </trans-unit>
+      <trans-unit id="faq1Answer">
+        <source>AI data pipeline protection secures sensitive enterprise data at every stage of the AI processing pipeline — from document ingestion through model interaction to output delivery.</source>
+        <target>AI 데이터 파이프라인 보호는 문서 수집부터 모델 상호작용, 출력 전달까지 AI 처리 파이프라인의 모든 단계에서 민감한 기업 데이터를 보호합니다.</target>
+      </trans-unit>
+      <trans-unit id="faq2Question">
+        <source>How does this differ from API-level security?</source>
+        <target>API 수준 보안과 어떻게 다릅니까?</target>
+      </trans-unit>
+      <trans-unit id="faq2Answer">
+        <source>API-level security filters prompts and scans outputs at the model interface. AI data pipeline protection operates at the data layer across the entire pipeline, ensuring data is protected before it reaches any external system.</source>
+        <target>API 수준 보안은 모델 인터페이스에서 프롬프트를 필터링하고 출력을 스캔합니다. AI 데이터 파이프라인 보호는 전체 파이프라인에 걸쳐 데이터 레이어에서 작동하여 데이터가 외부 시스템에 도달하기 전에 보호합니다.</target>
+      </trans-unit>
+      <!-- Section 06: Related Pages -->
+      <trans-unit id="sectionLabelRelated">
+        <source>Related</source>
+        <target>관련 페이지</target>
+      </trans-unit>
+      <trans-unit id="link1Label">
+        <source>Product Overview</source>
+        <target>제품 개요</target>
+      </trans-unit>
+      <trans-unit id="link2Label">
+        <source>Architecture</source>
+        <target>아키텍처</target>
+      </trans-unit>
+      <trans-unit id="link3Label">
+        <source>Trust &amp; Compliance</source>
+        <target>신뢰 &amp; 컴플라이언스</target>
+      </trans-unit>
+      <trans-unit id="link4Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <!-- Section 07: CTA Band -->
+      <trans-unit id="ctaTitle">
+        <source>See how</source>
+        <target>확인하세요</target>
+      </trans-unit>
+      <trans-unit id="ctaTitleSuffix">
+        <source>works with your data</source>
+        <target>이 고객 데이터에서 어떻게 작동하는지</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>문서, 배포 조건, 평가 기준을 가져오세요. 실제 워크플로우에서 직접 시연합니다.</target>
+      </trans-unit>
+      <trans-unit id="btn1Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="btn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink1Label">
+        <source>Download Architecture Brief</source>
+        <target>아키텍처 브리프 다운로드</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

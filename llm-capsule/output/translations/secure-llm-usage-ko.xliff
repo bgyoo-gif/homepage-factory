@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="secure-llm-usage">
+    <body>
+      <!-- Section01_Hero -->
+      <trans-unit id="titlePrefix">
+        <source>Secure</source>
+        <target>Secure</target>
+      </trans-unit>
+      <trans-unit id="titleMain">
+        <source> LLM Usage</source>
+        <target> LLM Usage</target>
+      </trans-unit>
+      <trans-unit id="descriptionText">
+        <source>Using large language models for enterprise tasks without exposing original sensitive data to external AI services. Enabled by</source>
+        <target>원본 민감 데이터를 외부 AI 서비스에 노출하지 않고 대규모 언어 모델을 기업 업무에 활용하는 방법입니다. 다음 제품이 이를 지원합니다:</target>
+      </trans-unit>
+      <trans-unit id="productName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+
+      <!-- Section02_Screenshot -->
+      <trans-unit id="screenshotLabel">
+        <source>Secure LLM Usage — Sensitive enterprise data encapsulated before reaching any LLM, results restored locally</source>
+        <target>Secure LLM Usage — 민감한 기업 데이터를 LLM에 전달하기 전에 Encapsulation하고, 결과를 로컬에서 Restoration합니다</target>
+      </trans-unit>
+
+      <!-- Section03_Definition -->
+      <trans-unit id="bannerLabel">
+        <source>DEFINITION</source>
+        <target>정의</target>
+      </trans-unit>
+      <trans-unit id="definitionText">
+        <source>Secure LLM usage is the practice of using large language models for enterprise tasks — summarization, extraction, classification, translation — without exposing original sensitive data to the AI provider.</source>
+        <target>Secure LLM usage는 요약, 추출, 분류, 번역 등 기업 업무에 대규모 언어 모델을 활용하되, 원본 민감 데이터를 AI 제공업체에 노출하지 않는 방식입니다.</target>
+      </trans-unit>
+
+      <!-- Section04_Explanation -->
+      <trans-unit id="sectionTitlePrefix">
+        <source>Explanation</source>
+        <target>설명</target>
+      </trans-unit>
+      <trans-unit id="paragraph1">
+        <source>Secure LLM usage is distinct from model-level security measures like prompt filtering or output scanning. Those approaches monitor the interaction with the AI model but do not prevent the data itself from being transmitted. Secure LLM usage operates at the data layer — transforming what the AI receives so that sensitive information never reaches the model.</source>
+        <target>Secure LLM usage는 프롬프트 필터링이나 출력 스캐닝과 같은 모델 수준의 보안 조치와 다릅니다. 이러한 접근 방식은 AI 모델과의 상호작용을 모니터링하지만 데이터 자체의 전송을 방지하지 않습니다. Secure LLM usage는 데이터 레이어에서 작동하여 AI가 수신하는 내용을 변환함으로써 민감 정보가 모델에 도달하지 않도록 합니다.</target>
+      </trans-unit>
+      <trans-unit id="paragraph2">
+        <source>This approach is model-agnostic. Whether the enterprise uses ChatGPT, Claude, Gemini, Perplexity, or any other LLM API, the AI enablement data layer remains consistent because it operates before the data reaches any model — enabling cross-model execution from a single AI enablement layer.</source>
+        <target>이 접근 방식은 모델에 종속되지 않습니다. 기업이 ChatGPT, Claude, Gemini, Perplexity 또는 기타 LLM API를 사용하더라도 AI 활성화 데이터 레이어는 데이터가 모델에 도달하기 전에 작동하므로 일관성을 유지하며, 단일 AI 활성화 레이어에서 다중 모델 실행이 가능합니다.</target>
+      </trans-unit>
+
+      <!-- Section05_Example -->
+      <trans-unit id="exampleTitlePrefix">
+        <source>Example</source>
+        <target>예시</target>
+      </trans-unit>
+      <trans-unit id="exampleText">
+        <source>A legal team uses Claude to analyze contract clauses across 100 vendor agreements. Each agreement contains proprietary pricing, vendor names, and internal project codes. Secure LLM usage means Claude receives structurally intact contracts with protected values — it can perform clause analysis accurately, but never receives the original vendor names or pricing figures. Outputs are restored locally for the legal team.</source>
+        <target>법무팀이 100건의 공급업체 계약서 조항을 Claude로 분석합니다. 각 계약서에는 독점 가격 정보, 공급업체명, 내부 프로젝트 코드가 포함되어 있습니다. Secure LLM usage를 적용하면 Claude는 보호된 값이 포함된 구조적으로 온전한 계약서를 수신하여 조항 분석을 정확하게 수행하지만, 원본 공급업체명이나 가격 정보는 전달받지 않습니다. 출력물은 법무팀을 위해 로컬에서 Restoration됩니다.</target>
+      </trans-unit>
+
+      <!-- Section06_RelatedTerms -->
+      <trans-unit id="sectionTitleMain">
+        <source>Related </source>
+        <target>관련 </target>
+      </trans-unit>
+      <trans-unit id="sectionTitleBrand">
+        <source>Terms</source>
+        <target>용어</target>
+      </trans-unit>
+      <trans-unit id="relatedLinksLabel">
+        <source>Related Pages</source>
+        <target>관련 페이지</target>
+      </trans-unit>
+      <trans-unit id="link1Title">
+        <source>Product Overview</source>
+        <target>제품 개요</target>
+      </trans-unit>
+      <trans-unit id="link2Title">
+        <source>Architecture</source>
+        <target>아키텍처</target>
+      </trans-unit>
+      <trans-unit id="link3Title">
+        <source>Trust &amp; Compliance</source>
+        <target>신뢰 &amp; 컴플라이언스</target>
+      </trans-unit>
+      <trans-unit id="link4Title">
+        <source>Request a Demo</source>
+        <target>데모 요청</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

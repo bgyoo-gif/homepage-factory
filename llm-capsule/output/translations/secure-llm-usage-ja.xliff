@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ja" datatype="plaintext" original="secure-llm-usage">
+    <body>
+      <!-- Section01_Hero -->
+      <trans-unit id="titlePrefix">
+        <source>Secure</source>
+        <target>Secure</target>
+      </trans-unit>
+      <trans-unit id="titleMain">
+        <source> LLM Usage</source>
+        <target> LLM Usage</target>
+      </trans-unit>
+      <trans-unit id="descriptionText">
+        <source>Using large language models for enterprise tasks without exposing original sensitive data to external AI services. Enabled by</source>
+        <target>元の機密データを外部AIサービスに公開することなく、大規模言語モデルを企業業務に活用する方法です。以下の製品が実現します：</target>
+      </trans-unit>
+      <trans-unit id="productName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+
+      <!-- Section02_Screenshot -->
+      <trans-unit id="screenshotLabel">
+        <source>Secure LLM Usage — Sensitive enterprise data encapsulated before reaching any LLM, results restored locally</source>
+        <target>Secure LLM Usage — 機密企業データをLLMに送信する前にEncapsulationし、結果をローカルでRestorationします</target>
+      </trans-unit>
+
+      <!-- Section03_Definition -->
+      <trans-unit id="bannerLabel">
+        <source>DEFINITION</source>
+        <target>定義</target>
+      </trans-unit>
+      <trans-unit id="definitionText">
+        <source>Secure LLM usage is the practice of using large language models for enterprise tasks — summarization, extraction, classification, translation — without exposing original sensitive data to the AI provider.</source>
+        <target>Secure LLM usageとは、要約・抽出・分類・翻訳などの企業業務に大規模言語モデルを活用しながら、元の機密データをAIプロバイダーに公開しない手法です。</target>
+      </trans-unit>
+
+      <!-- Section04_Explanation -->
+      <trans-unit id="sectionTitlePrefix">
+        <source>Explanation</source>
+        <target>解説</target>
+      </trans-unit>
+      <trans-unit id="paragraph1">
+        <source>Secure LLM usage is distinct from model-level security measures like prompt filtering or output scanning. Those approaches monitor the interaction with the AI model but do not prevent the data itself from being transmitted. Secure LLM usage operates at the data layer — transforming what the AI receives so that sensitive information never reaches the model.</source>
+        <target>Secure LLM usageは、プロンプトフィルタリングや出力スキャンなどのモデルレベルのセキュリティ対策とは異なります。これらのアプローチはAIモデルとのやり取りを監視しますが、データ自体の送信を防止しません。Secure LLM usageはデータレイヤーで動作し、AIが受信する内容を変換することで機密情報がモデルに到達しないようにします。</target>
+      </trans-unit>
+      <trans-unit id="paragraph2">
+        <source>This approach is model-agnostic. Whether the enterprise uses ChatGPT, Claude, Gemini, Perplexity, or any other LLM API, the AI enablement data layer remains consistent because it operates before the data reaches any model — enabling cross-model execution from a single AI enablement layer.</source>
+        <target>このアプローチはモデルに依存しません。企業がChatGPT、Claude、Gemini、Perplexity、その他のLLM APIを使用する場合でも、AIイネーブルメント・データレイヤーはデータがモデルに到達する前に動作するため一貫性を保ち、単一のAIイネーブルメント・レイヤーからクロスモデル実行を可能にします。</target>
+      </trans-unit>
+
+      <!-- Section05_Example -->
+      <trans-unit id="exampleTitlePrefix">
+        <source>Example</source>
+        <target>事例</target>
+      </trans-unit>
+      <trans-unit id="exampleText">
+        <source>A legal team uses Claude to analyze contract clauses across 100 vendor agreements. Each agreement contains proprietary pricing, vendor names, and internal project codes. Secure LLM usage means Claude receives structurally intact contracts with protected values — it can perform clause analysis accurately, but never receives the original vendor names or pricing figures. Outputs are restored locally for the legal team.</source>
+        <target>法務チームが100件のベンダー契約書の条項分析にClaudeを使用します。各契約書には独自の価格情報、ベンダー名、社内プロジェクトコードが含まれています。Secure LLM usageを適用すると、Claudeは保護された値を含む構造的に完全な契約書を受信し、条項分析を正確に実行しますが、元のベンダー名や価格情報は受け取りません。出力は法務チーム向けにローカルでRestorationされます。</target>
+      </trans-unit>
+
+      <!-- Section06_RelatedTerms -->
+      <trans-unit id="sectionTitleMain">
+        <source>Related </source>
+        <target>関連 </target>
+      </trans-unit>
+      <trans-unit id="sectionTitleBrand">
+        <source>Terms</source>
+        <target>用語</target>
+      </trans-unit>
+      <trans-unit id="relatedLinksLabel">
+        <source>Related Pages</source>
+        <target>関連ページ</target>
+      </trans-unit>
+      <trans-unit id="link1Title">
+        <source>Product Overview</source>
+        <target>製品概要</target>
+      </trans-unit>
+      <trans-unit id="link2Title">
+        <source>Architecture</source>
+        <target>アーキテクチャ</target>
+      </trans-unit>
+      <trans-unit id="link3Title">
+        <source>Trust &amp; Compliance</source>
+        <target>信頼 &amp; コンプライアンス</target>
+      </trans-unit>
+      <trans-unit id="link4Title">
+        <source>Request a Demo</source>
+        <target>デモのリクエスト</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

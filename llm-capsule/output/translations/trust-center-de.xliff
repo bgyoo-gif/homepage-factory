@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="trust-center">
+    <body>
+      <!-- Section01_Hero -->
+      <trans-unit id="Section01_Hero.title">
+        <source>Security &amp; Compliance</source>
+        <target>Sicherheit &amp; Compliance</target>
+      </trans-unit>
+      <trans-unit id="Section01_Hero.titleHighlight">
+        <source>Trust Center</source>
+        <target>Trust Center</target>
+      </trans-unit>
+      <trans-unit id="Section01_Hero.description">
+        <source>Certifications, compliance documentation, and security information for</source>
+        <target>Zertifizierungen, Compliance-Dokumentation und Sicherheitsinformationen für</target>
+      </trans-unit>
+      <trans-unit id="Section01_Hero.productName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+
+      <!-- Section02_Certifications -->
+      <trans-unit id="Section02_Certifications.sectionTitle">
+        <source>Certifications &amp;</source>
+        <target>Zertifizierungen &amp;</target>
+      </trans-unit>
+      <trans-unit id="Section02_Certifications.sectionTitleHighlight">
+        <source>Compliance</source>
+        <target>Compliance</target>
+      </trans-unit>
+      <trans-unit id="Section02_Certifications.sectionDescription">
+        <source>Information security management, AI governance, and government software quality certifications.</source>
+        <target>Zertifizierungen für Informationssicherheitsmanagement, AI-Governance und staatliche Softwarequalität.</target>
+      </trans-unit>
+
+      <!-- Section03_DataPrinciples -->
+      <trans-unit id="Section03_DataPrinciples.sectionTitle">
+        <source>Data Handling</source>
+        <target>Datenverarbeitung</target>
+      </trans-unit>
+      <trans-unit id="Section03_DataPrinciples.sectionTitleHighlight">
+        <source>Principles</source>
+        <target>Grundsätze</target>
+      </trans-unit>
+      <trans-unit id="Section03_DataPrinciples.sectionDescription">
+        <source>Zero exposure by design. Original sensitive enterprise data never leaves the enterprise environment.</source>
+        <target>Keine Datenexposition durch Design. Sensible Unternehmensdaten verlassen niemals die Unternehmensumgebung.</target>
+      </trans-unit>
+      <trans-unit id="Section03_DataPrinciples.card1Title">
+        <source>Zero Exposure by Design</source>
+        <target>Keine Datenexposition durch Design</target>
+      </trans-unit>
+      <trans-unit id="Section03_DataPrinciples.card1Description">
+        <source>Original sensitive enterprise data never leaves the enterprise environment. Only encapsulated representations cross the trust boundary to external AI services.</source>
+        <target>Sensible Unternehmensdaten verlassen niemals die Unternehmensumgebung. Nur Encapsulation-Darstellungen überschreiten die Vertrauensgrenze zu externen AI-Diensten.</target>
+      </trans-unit>
+      <trans-unit id="Section03_DataPrinciples.card2Title">
+        <source>Local-only Mapping Storage</source>
+        <target>Lokale Mapping-Speicherung</target>
+      </trans-unit>
+      <trans-unit id="Section03_DataPrinciples.card2Description">
+        <source>The mapping between original and encapsulated values is stored entirely within the enterprise environment and never transmitted externally.</source>
+        <target>Das Mapping zwischen Original- und Encapsulation-Werten wird vollständig in der Unternehmensumgebung gespeichert und niemals extern übertragen.</target>
+      </trans-unit>
+      <trans-unit id="Section03_DataPrinciples.card3Title">
+        <source>Complete Audit Trails</source>
+        <target>Vollständige Audit-Trails</target>
+      </trans-unit>
+      <trans-unit id="Section03_DataPrinciples.card3Description">
+        <source>Every encapsulation and restoration event is logged with full audit data supporting enterprise AI governance and regulatory compliance.</source>
+        <target>Jedes Encapsulation- und Restoration-Ereignis wird mit vollständigen Audit-Daten protokolliert und unterstützt AI-Governance und regulatorische Compliance im Unternehmen.</target>
+      </trans-unit>
+      <trans-unit id="Section03_DataPrinciples.card4Title">
+        <source>Model-agnostic Protection</source>
+        <target>Modellunabhängiger Schutz</target>
+      </trans-unit>
+      <trans-unit id="Section03_DataPrinciples.card4Description">
+        <source>Protection operates at the data layer, independent of any specific AI provider, ensuring consistent security regardless of which LLM is used.</source>
+        <target>Der Schutz arbeitet auf der Datenschicht, unabhängig vom AI-Anbieter, und gewährleistet konsistente Sicherheit unabhängig vom verwendeten LLM.</target>
+      </trans-unit>
+
+      <!-- Section04_EvidenceHub -->
+      <trans-unit id="Section04_EvidenceHub.sectionTitle">
+        <source>Documents &amp; Review Items for Enterprise</source>
+        <target>Dokumente &amp; Prüfpunkte für die Unternehmens</target>
+      </trans-unit>
+      <trans-unit id="Section04_EvidenceHub.sectionTitleHighlight">
+        <source>Evaluation</source>
+        <target>Evaluierung</target>
+      </trans-unit>
+      <trans-unit id="Section04_EvidenceHub.sectionDescription">
+        <source>Use this page as the operational trust hub for procurement, security review, architecture review, and compliance validation.</source>
+        <target>Nutzen Sie diese Seite als operativen Trust-Hub für Beschaffung, Sicherheitsprüfung, Architekturprüfung und Compliance-Validierung.</target>
+      </trans-unit>
+      <trans-unit id="Section04_EvidenceHub.item1Title">
+        <source>Architecture Brief</source>
+        <target>Architektur-Überblick</target>
+      </trans-unit>
+      <trans-unit id="Section04_EvidenceHub.item1Description">
+        <source>High-level architecture, trust boundary, local mapping model, and restoration flow.</source>
+        <target>Übergeordnete Architektur, Vertrauensgrenze, lokales Mapping-Modell und Restoration-Ablauf.</target>
+      </trans-unit>
+      <trans-unit id="Section04_EvidenceHub.item2Title">
+        <source>Security Review Package</source>
+        <target>Sicherheitsprüfungspaket</target>
+      </trans-unit>
+      <trans-unit id="Section04_EvidenceHub.item2Description">
+        <source>Data handling principles, audit model, deployment assumptions, and security questionnaire support.</source>
+        <target>Datenverarbeitungsgrundsätze, Audit-Modell, Deployment-Annahmen und Unterstützung für Sicherheitsfragebögen.</target>
+      </trans-unit>
+      <trans-unit id="Section04_EvidenceHub.item3Title">
+        <source>Deployment Options</source>
+        <target>Deployment-Optionen</target>
+      </trans-unit>
+      <trans-unit id="Section04_EvidenceHub.item3Description">
+        <source>On-premise, air-gapped, VPC, cloud, hybrid, and embedded deployment patterns for evaluation.</source>
+        <target>On-Premise, Air-Gap, VPC, Cloud, Hybrid und Embedded Deployment-Muster zur Evaluierung.</target>
+      </trans-unit>
+      <trans-unit id="Section04_EvidenceHub.item4Title">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="Section04_EvidenceHub.item4Description">
+        <source>Review your environment, data flow, policy requirements, and evaluation criteria with the technical team.</source>
+        <target>Besprechen Sie Ihre Umgebung, Datenflüsse, Richtlinienanforderungen und Evaluierungskriterien mit dem technischen Team.</target>
+      </trans-unit>
+      <trans-unit id="Section04_EvidenceHub.ctaPrimaryLabel">
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+      <trans-unit id="Section04_EvidenceHub.ctaSecondaryLabel">
+        <source>Download Brief</source>
+        <target>Überblick herunterladen</target>
+      </trans-unit>
+
+      <!-- Section05_CTA -->
+      <trans-unit id="Section05_CTA.title">
+        <source>See how</source>
+        <target>Erleben Sie, wie</target>
+      </trans-unit>
+      <trans-unit id="Section05_CTA.productName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="Section05_CTA.description">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Evaluierungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Workflows.</target>
+      </trans-unit>
+      <trans-unit id="Section05_CTA.btn1Label">
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+      <trans-unit id="Section05_CTA.btn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="Section05_CTA.footnote1Label">
+        <source>Download Architecture Brief</source>
+        <target>Architektur-Überblick herunterladen</target>
+      </trans-unit>
+      <trans-unit id="Section05_CTA.footnote2Label">
+        <source>Available on AWS Marketplace</source>
+        <target>Verfügbar auf AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

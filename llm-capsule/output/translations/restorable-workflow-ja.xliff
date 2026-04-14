@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ja" datatype="plaintext" original="restorable-workflow">
+    <body>
+      <!-- Section01_Hero -->
+      <trans-unit id="title">
+        <source>Restorable Workflow</source>
+        <target>Restorable Workflow</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>An AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling</source>
+        <target>AI処理前に機密企業データを可逆的かつ構造保持的な表現に置き換えるAIイネーブルメントパターンです。以下の製品がこれを実現します：</target>
+      </trans-unit>
+      <trans-unit id="productName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+
+      <!-- Section02_Definition -->
+      <trans-unit id="label">
+        <source>DEFINITION</source>
+        <target>定義</target>
+      </trans-unit>
+      <trans-unit id="bodyText">
+        <source>A restorable workflow is an AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which</source>
+        <target>Restorable workflowとは、AI処理前に機密企業データを可逆的かつ構造保持的な表現に置き換えるAIイネーブルメントパターンです。AIモデルが出力を生成した後、ローカルRestorationが自動的に元の企業データを結果に復元し、手動の後処理なしに企業向けの出力を生成します。これが以下の製品の中核メカニズムです：</target>
+      </trans-unit>
+
+      <!-- Section03_Explanation -->
+      <trans-unit id="sectionHeading">
+        <source>Explanation</source>
+        <target>解説</target>
+      </trans-unit>
+      <trans-unit id="paragraph1Pre">
+        <source>Traditional data protection workflows are</source>
+        <target>従来のデータ保護ワークフローは</target>
+      </trans-unit>
+      <trans-unit id="paragraph1Highlight">
+        <source>one-directional</source>
+        <target>一方向的</target>
+      </trans-unit>
+      <trans-unit id="paragraph1Post">
+        <source>: protect data, process it, and accept that outputs lack original context. A restorable workflow closes the loop — outputs are automatically restored with real enterprise data. This is what makes</source>
+        <target>です：データを保護し、処理し、出力に元のコンテキストがないことを受け入れます。Restorable workflowはこのループを完結させ、出力を実際の企業データで自動的に復元します。これが</target>
+      </trans-unit>
+      <trans-unit id="paragraph2">
+        <source>The key properties of a restorable workflow are: reversible encapsulation (not permanent masking), locally stored mappings (never transmitted), structure-preserving protection (AI accuracy maintained), and deterministic restoration (outputs exactly match original data).</source>
+        <target>Restorable workflowの主要な特性は次のとおりです：可逆的Encapsulation（永続的マスキングではない）、ローカル保存マッピング（送信されない）、構造保持保護（AI精度を維持）、決定的Restoration（出力が元データと完全に一致）。</target>
+      </trans-unit>
+
+      <!-- Section04_Example -->
+      <trans-unit id="exampleHeading">
+        <source>Example</source>
+        <target>事例</target>
+      </trans-unit>
+      <trans-unit id="paragraph1">
+        <source>An HR department uses AI to generate performance review summaries. Employee names, performance ratings, and salary information are encapsulated. AI produces structured summaries from protected data.</source>
+        <target>人事部門がAIを使用して業績評価の要約を生成します。従業員名、業績評価、給与情報がEncapsulationされます。AIは保護されたデータから構造化された要約を生成します。</target>
+      </trans-unit>
+      <trans-unit id="paragraph2Pre">
+        <source>Restoration restores all employee details, producing</source>
+        <target>Restorationがすべての従業員詳細を復元し、</target>
+      </trans-unit>
+      <trans-unit id="paragraph2Highlight">
+        <source>manager-ready review documents</source>
+        <target>マネージャーが即座に使用できる評価文書</target>
+      </trans-unit>
+      <trans-unit id="paragraph2Post">
+        <source>without any manual editing.</source>
+        <target>を手動編集なしで生成します。</target>
+      </trans-unit>
+
+      <!-- Section05_RelatedTerms -->
+      <trans-unit id="relatedTermsHeading">
+        <source>Related Terms</source>
+        <target>関連用語</target>
+      </trans-unit>
+      <trans-unit id="relatedPagesLabel">
+        <source>Related Pages</source>
+        <target>関連ページ</target>
+      </trans-unit>
+      <trans-unit id="link1Title">
+        <source>Product Overview</source>
+        <target>製品概要</target>
+      </trans-unit>
+      <trans-unit id="link2Title">
+        <source>Architecture</source>
+        <target>アーキテクチャ</target>
+      </trans-unit>
+      <trans-unit id="link3Title">
+        <source>Trust &amp; Compliance</source>
+        <target>信頼 &amp; コンプライアンス</target>
+      </trans-unit>
+      <trans-unit id="link4Title">
+        <source>Request a Demo</source>
+        <target>デモのリクエスト</target>
+      </trans-unit>
+
+      <!-- Section06_CTA -->
+      <trans-unit id="ctaTitlePre">
+        <source>See</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="ctaTitlePost">
+        <source>Restorable Workflow in Action</source>
+        <target>Restorable Workflowの実際の動作をご覧ください</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Experience how enterprise AI outputs are automatically restored with real business data — no manual post-processing required.</source>
+        <target>企業AIの出力が実際のビジネスデータで自動的に復元される様子を体験してください。手動の後処理は不要です。</target>
+      </trans-unit>
+      <trans-unit id="button1Label">
+        <source>Request a Demo</source>
+        <target>デモのリクエスト</target>
+      </trans-unit>
+      <trans-unit id="button2Label">
+        <source>View Product</source>
+        <target>製品を見る</target>
+      </trans-unit>
+      <trans-unit id="footnote">
+        <source>Enterprise AI Enablement by CUBIG</source>
+        <target>CUBIGによるエンタープライズAIイネーブルメント</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="trust">
+    <body>
+      <!-- Section 01: Hero -->
+      <trans-unit id="s01.title">
+        <source>Enterprise-Grade</source>
+        <target>엔터프라이즈급</target>
+      </trans-unit>
+      <trans-unit id="s01.titleHighlight">
+        <source>Security</source>
+        <target>보안</target>
+      </trans-unit>
+      <trans-unit id="s01.description">
+        <source>LLM Capsule is built for regulated enterprise environments. Certified, auditable, and designed for data sovereignty. This security foundation is what enables enterprises to adopt AI confidently on their most sensitive data.</source>
+        <target>LLM Capsule은 규제 환경의 기업을 위해 설계되었습니다. 인증을 획득하고, 감사 가능하며, 데이터 주권을 보장합니다. 이러한 보안 기반이 기업이 가장 민감한 데이터에서도 AI를 안심하고 도입할 수 있게 합니다.</target>
+      </trans-unit>
+      <trans-unit id="s01.primaryBtnText">
+        <source>Request a Demo</source>
+        <target>데모 요청</target>
+      </trans-unit>
+      <trans-unit id="s01.secondaryBtnText">
+        <source>View Architecture</source>
+        <target>아키텍처 보기</target>
+      </trans-unit>
+
+      <!-- Section 02: Certifications -->
+      <trans-unit id="s02.sectionTitle">
+        <source>Certified</source>
+        <target>인증된</target>
+      </trans-unit>
+      <trans-unit id="s02.sectionTitleHighlight">
+        <source>Trust</source>
+        <target>신뢰</target>
+      </trans-unit>
+      <trans-unit id="s02.card1Title">
+        <source>ISO 27001</source>
+        <target>ISO 27001</target>
+      </trans-unit>
+      <trans-unit id="s02.card1Description">
+        <source>Information security management system certification. Demonstrates systematic approach to managing sensitive company information.</source>
+        <target>정보보호 관리체계 인증입니다. 민감한 기업 정보를 체계적으로 관리하는 접근 방식을 입증합니다.</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Title">
+        <source>ISO 42001</source>
+        <target>ISO 42001</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Description">
+        <source>AI management system certification. Demonstrates responsible AI governance and risk management practices.</source>
+        <target>AI 관리체계 인증입니다. 책임 있는 AI 거버넌스와 리스크 관리 체계를 입증합니다.</target>
+      </trans-unit>
+      <trans-unit id="s02.card3Title">
+        <source>GS Certification</source>
+        <target>GS Certification</target>
+      </trans-unit>
+      <trans-unit id="s02.card3Description">
+        <source>Korean government software quality certification (Grade 1). Listed on 조달청 혁신장터 for public sector procurement.</source>
+        <target>대한민국 정부 소프트웨어 품질 인증(1등급)입니다. 공공 부문 조달을 위해 조달청 혁신장터에 등록되어 있습니다.</target>
+      </trans-unit>
+      <trans-unit id="s02.card4Title">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+      <trans-unit id="s02.card4Description">
+        <source>Available on AWS Marketplace for streamlined enterprise procurement, billing, and deployment within AWS environments.</source>
+        <target>AWS Marketplace에서 제공됩니다. AWS 환경 내에서 간소화된 기업 조달, 결제, 배포가 가능합니다.</target>
+      </trans-unit>
+
+      <!-- Section 03: Data Sovereignty -->
+      <trans-unit id="s03.sectionTitle">
+        <source>Data</source>
+        <target>데이터</target>
+      </trans-unit>
+      <trans-unit id="s03.sectionTitleHighlight">
+        <source>Sovereignty</source>
+        <target>주권</target>
+      </trans-unit>
+      <trans-unit id="s03.sectionDescription">
+        <source>enforces data sovereignty by design, and this enforcement is what enables AI adoption in regulated environments.</source>
+        <target>은 설계 단계부터 데이터 주권을 보장하며, 이 보장이 규제 환경에서의 AI 도입을 가능하게 합니다.</target>
+      </trans-unit>
+      <trans-unit id="s03.card1Title">
+        <source>Local Encapsulation</source>
+        <target>로컬 Encapsulation</target>
+      </trans-unit>
+      <trans-unit id="s03.card1Description">
+        <source>The encapsulation engine runs entirely within the enterprise environment. Original sensitive data never leaves the controlled boundary. Only encapsulated representations — with sensitive values replaced by structure-preserving tokens — cross to external AI services.</source>
+        <target>Encapsulation 엔진은 기업 환경 내에서 전적으로 실행됩니다. 원본 민감 데이터는 통제 경계를 벗어나지 않습니다. 민감한 값이 구조 보존 토큰으로 대체된 Encapsulation 표현만 외부 AI 서비스로 전달됩니다.</target>
+      </trans-unit>
+      <trans-unit id="s03.card2Title">
+        <source>Zero Exposure Guarantee</source>
+        <target>제로 데이터 노출 보장</target>
+      </trans-unit>
+      <trans-unit id="s03.card2Description">
+        <source>The mapping between original and encapsulated values is stored locally and never transmitted. Even in the event of a breach at the AI provider, no original enterprise data would be exposed because it was never transmitted.</source>
+        <target>원본과 Encapsulation 값 간의 매핑은 로컬에 저장되며 외부로 전송되지 않습니다. AI 제공업체에서 보안 사고가 발생하더라도 원본 기업 데이터는 노출되지 않습니다. 애초에 전송된 적이 없기 때문입니다.</target>
+      </trans-unit>
+
+      <!-- Section 04: Audit & Compliance -->
+      <trans-unit id="s04.sectionTitle">
+        <source>Audit &amp;</source>
+        <target>감사 &amp;</target>
+      </trans-unit>
+      <trans-unit id="s04.sectionTitleHighlight">
+        <source>Compliance</source>
+        <target>컴플라이언스</target>
+      </trans-unit>
+      <trans-unit id="s04.sectionDescription">
+        <source>Every encapsulation and restoration event generates a complete audit record: what data was protected, which elements were encapsulated, which AI service processed the request, and what outputs were restored. Audit logs support enterprise AI governance, regulatory compliance reporting, and internal security reviews.</source>
+        <target>모든 Encapsulation 및 Restoration 이벤트는 완전한 감사 기록을 생성합니다. 어떤 데이터가 보호되었는지, 어떤 요소가 Encapsulation되었는지, 어떤 AI 서비스가 요청을 처리했는지, 어떤 결과가 Restoration되었는지 기록됩니다. 감사 로그는 기업 AI 거버넌스, 규제 컴플라이언스 보고, 내부 보안 검토를 지원합니다.</target>
+      </trans-unit>
+      <trans-unit id="s04.feature1Title">
+        <source>Data Protection Records</source>
+        <target>데이터 보호 기록</target>
+      </trans-unit>
+      <trans-unit id="s04.feature1Description">
+        <source>What data was protected and which elements were encapsulated in each transaction.</source>
+        <target>각 트랜잭션에서 어떤 데이터가 보호되었고 어떤 요소가 Encapsulation되었는지 기록합니다.</target>
+      </trans-unit>
+      <trans-unit id="s04.feature2Title">
+        <source>AI Service Tracking</source>
+        <target>AI 서비스 추적</target>
+      </trans-unit>
+      <trans-unit id="s04.feature2Description">
+        <source>Which AI service processed the request and what outputs were restored.</source>
+        <target>어떤 AI 서비스가 요청을 처리했고 어떤 결과가 Restoration되었는지 추적합니다.</target>
+      </trans-unit>
+      <trans-unit id="s04.feature3Title">
+        <source>Governance Support</source>
+        <target>거버넌스 지원</target>
+      </trans-unit>
+      <trans-unit id="s04.feature3Description">
+        <source>Audit logs support enterprise AI governance, regulatory compliance reporting, and internal security reviews.</source>
+        <target>감사 로그는 기업 AI 거버넌스, 규제 컴플라이언스 보고, 내부 보안 검토를 지원합니다.</target>
+      </trans-unit>
+      <trans-unit id="s04.feature4Title">
+        <source>Regulatory Alignment</source>
+        <target>규제 정합성</target>
+      </trans-unit>
+      <trans-unit id="s04.feature4Description">
+        <source>Supports enterprise compliance with GDPR, HIPAA, SOX, and sector-specific data regulations.</source>
+        <target>GDPR, HIPAA, SOX 및 산업별 데이터 규제에 대한 기업 컴플라이언스를 지원합니다.</target>
+      </trans-unit>
+
+      <!-- Section 05: Regulatory Support -->
+      <trans-unit id="s05.sectionTitle">
+        <source>Regulatory</source>
+        <target>규제</target>
+      </trans-unit>
+      <trans-unit id="s05.sectionTitleBrand">
+        <source>Support</source>
+        <target>지원</target>
+      </trans-unit>
+      <trans-unit id="s05.bannerText">
+        <source>supports enterprise compliance with GDPR, HIPAA, SOX, and sector-specific data regulations by ensuring sensitive data never leaves the enterprise environment during AI processing. Organizations should evaluate specific compliance requirements with their legal counsel.</source>
+        <target>은 AI 처리 중 민감 데이터가 기업 환경을 벗어나지 않도록 보장하여 GDPR, HIPAA, SOX 및 산업별 데이터 규제에 대한 기업 컴플라이언스를 지원합니다. 구체적인 컴플라이언스 요건은 법률 자문과 함께 검토하시기 바랍니다.</target>
+      </trans-unit>
+
+      <!-- Section 06: AWS Marketplace -->
+      <trans-unit id="s06.bannerText">
+        <source>LLM Capsule is available on AWS Marketplace for streamlined enterprise procurement, billing, and deployment within AWS environments.</source>
+        <target>LLM Capsule은 AWS Marketplace에서 이용할 수 있습니다. AWS 환경 내에서 간소화된 기업 조달, 결제, 배포가 가능합니다.</target>
+      </trans-unit>
+      <trans-unit id="s06.btnText">
+        <source>View on AWS Marketplace</source>
+        <target>AWS Marketplace에서 보기</target>
+      </trans-unit>
+
+      <!-- Section 07: CTA Band -->
+      <trans-unit id="s07.title">
+        <source>See how</source>
+        <target>직접 확인하세요</target>
+      </trans-unit>
+      <trans-unit id="s07.titleProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="s07.titleSuffix">
+        <source>works with your data</source>
+        <target>이 실제 데이터에서 어떻게 작동하는지</target>
+      </trans-unit>
+      <trans-unit id="s07.description">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>문서, 배포 조건, 평가 기준을 가져오세요. 실제 워크플로우에서 직접 시연합니다.</target>
+      </trans-unit>
+      <trans-unit id="s07.btn1Text">
+        <source>Request a Demo</source>
+        <target>데모 요청</target>
+      </trans-unit>
+      <trans-unit id="s07.btn2Text">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="s07.footnote1Text">
+        <source>Download Architecture Brief</source>
+        <target>아키텍처 브리프 다운로드</target>
+      </trans-unit>
+      <trans-unit id="s07.footnote2Text">
+        <source>Available on AWS Marketplace</source>
+        <target>AWS Marketplace에서 이용 가능</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

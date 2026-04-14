@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="what-is-ai-data-capsule">
+    <body>
+      <!-- Section01_Hero -->
+      <trans-unit id="title">
+        <source>What Is an AI Data Capsule?</source>
+        <target>Was ist eine AI Data Capsule?</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Enterprise data encapsulation for secure LLM usage — how to protect sensitive data before AI processing and restore usable outputs after.</source>
+        <target>Enterprise-Daten-Encapsulation fuer sichere LLM-Nutzung — wie Sie sensible Daten vor der KI-Verarbeitung schuetzen und danach nutzbare Ergebnisse per Restoration wiederherstellen.</target>
+      </trans-unit>
+
+      <!-- Section02_Screenshot -->
+      <trans-unit id="screenshotLabel">
+        <source>Data Capsule Concept — Original document vs. encapsulated version with structure preserved</source>
+        <target>Data-Capsule-Konzept — Originaldokument vs. Encapsulation-Version mit erhaltener Struktur</target>
+      </trans-unit>
+
+      <!-- Section03_Problem -->
+      <trans-unit id="sectionLabel_problem">
+        <source>Problem</source>
+        <target>Problem</target>
+      </trans-unit>
+      <trans-unit id="problem_paragraph1">
+        <source>Enterprises need to process sensitive documents through large language models for summarization, extraction, translation, and analysis. Sending raw data to external AI services creates unacceptable exposure. Existing approaches — masking, redaction, tokenization — destroy the context AI models need to produce useful outputs.</source>
+        <target>Unternehmen muessen sensible Dokumente fuer Zusammenfassung, Extraktion, Uebersetzung und Analyse durch Large Language Models verarbeiten. Das Senden von Rohdaten an externe KI-Dienste fuehrt zu inakzeptabler Datenexposition. Bestehende Ansaetze — Masking, Schwärzung, Tokenisierung — zerstoeren den Kontext, den KI-Modelle fuer nuetzliche Ergebnisse benoetigen.</target>
+      </trans-unit>
+      <trans-unit id="problem_paragraph2">
+        <source>The result is a binary choice: expose data to use AI, or protect data and get unusable results.</source>
+        <target>Das Ergebnis ist eine binaere Wahl: Daten offenlegen, um KI zu nutzen, oder Daten schuetzen und unbrauchbare Ergebnisse erhalten.</target>
+      </trans-unit>
+
+      <!-- Section04_Definition -->
+      <trans-unit id="sectionLabel_definition">
+        <source>Definition</source>
+        <target>Definition</target>
+      </trans-unit>
+      <trans-unit id="bannerLabel">
+        <source>AI Data Capsule</source>
+        <target>AI Data Capsule</target>
+      </trans-unit>
+      <trans-unit id="bannerText">
+        <source>An AI data capsule is a locally generated AI enablement layer that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.</source>
+        <target>Eine AI Data Capsule ist eine lokal generierte AI-Enablement-Schicht, die sensible Unternehmensdaten umhuellt, bevor sie an einen externen KI-Dienst gesendet werden. Die Capsule bewahrt Dokumentstruktur und Kontext, waehrend sie sensible Elemente durch reversible Repraesentationen ersetzt. Nach der KI-Verarbeitung ermoeglicht die Capsule lokale Restoration — die Wiederherstellung von KI-Ergebnissen in ihren vollstaendigen Unternehmenskontext, ohne die Originaldaten extern preiszugeben.</target>
+      </trans-unit>
+
+      <!-- Section05_Explanation -->
+      <trans-unit id="sectionLabel_explanation">
+        <source>Explanation</source>
+        <target>Erlaeuterung</target>
+      </trans-unit>
+      <trans-unit id="introText">
+        <source>An AI data capsule operates as an AI enablement data layer through three stages within a restorable workflow:</source>
+        <target>Eine AI Data Capsule arbeitet als AI-Enablement-Datenschicht in drei Phasen innerhalb eines Restorable Workflows:</target>
+      </trans-unit>
+      <trans-unit id="bullet1_strong">
+        <source>Local Encapsulation.</source>
+        <target>Lokale Encapsulation.</target>
+      </trans-unit>
+      <trans-unit id="bullet1_text">
+        <source> Sensitive elements in enterprise documents — names, account numbers, dates, medical codes, contract terms — are detected and replaced with structure-preserving representations. The mapping between original and replaced values is stored locally, never transmitted.</source>
+        <target> Sensible Elemente in Unternehmensdokumenten — Namen, Kontonummern, Daten, medizinische Codes, Vertragsbedingungen — werden erkannt und durch strukturerhaltende Repraesentationen ersetzt. Die Zuordnung zwischen Original- und Ersatzwerten wird lokal gespeichert und nie uebertragen.</target>
+      </trans-unit>
+      <trans-unit id="bullet2_strong">
+        <source>Protected AI Processing.</source>
+        <target>Geschuetzte KI-Verarbeitung.</target>
+      </trans-unit>
+      <trans-unit id="bullet2_text">
+        <source> The encapsulated document is sent to any external LLM. Because document structure is preserved, the AI model can perform summarization, extraction, classification, and translation effectively. No original sensitive data leaves the enterprise environment.</source>
+        <target> Das per Encapsulation geschuetzte Dokument wird an ein beliebiges externes LLM gesendet. Da die Dokumentstruktur erhalten bleibt, kann das KI-Modell Zusammenfassung, Extraktion, Klassifizierung und Uebersetzung effektiv durchfuehren. Keine sensiblen Originaldaten verlassen die Unternehmensumgebung.</target>
+      </trans-unit>
+      <trans-unit id="bullet3_strong">
+        <source>Local Restoration.</source>
+        <target>Lokale Restoration.</target>
+      </trans-unit>
+      <trans-unit id="bullet3_text">
+        <source> AI results are automatically restored locally with original enterprise data. The locally stored mapping is applied to reconstruct outputs with real names, amounts, and references, producing results that are directly usable in business workflows.</source>
+        <target> KI-Ergebnisse werden automatisch lokal mit den urspruenglichen Unternehmensdaten wiederhergestellt. Die lokal gespeicherte Zuordnung wird angewendet, um Ergebnisse mit echten Namen, Betraegen und Referenzen zu rekonstruieren und direkt in Geschaeftsprozessen nutzbare Resultate zu erzeugen.</target>
+      </trans-unit>
+      <trans-unit id="explanationBannerText">
+        <source>Key concept: AI results are automatically restored locally with original enterprise data. The AI data capsule enables AI adoption by ensuring original data never leaves the enterprise environment.</source>
+        <target>Kernkonzept: KI-Ergebnisse werden automatisch lokal mit den urspruenglichen Unternehmensdaten wiederhergestellt. Die AI Data Capsule ermoeglicht die KI-Einfuehrung im Unternehmen, indem sichergestellt wird, dass Originaldaten die Unternehmensumgebung nie verlassen.</target>
+      </trans-unit>
+
+      <!-- Section06_EnterpriseExample -->
+      <trans-unit id="sectionLabel_example">
+        <source>Enterprise Example</source>
+        <target>Unternehmensbeispiel</target>
+      </trans-unit>
+      <trans-unit id="cardTitle">
+        <source>Financial Compliance Review</source>
+        <target>Finanz-Compliance-Pruefung</target>
+      </trans-unit>
+      <trans-unit id="cardParagraph1">
+        <source>A bank needs AI to summarize 500 loan applications for compliance review. Each document contains customer names, social security numbers, account balances, and income data.</source>
+        <target>Eine Bank muss mit KI 500 Kreditantraege fuer die Compliance-Pruefung zusammenfassen. Jedes Dokument enthaelt Kundennamen, Sozialversicherungsnummern, Kontosalden und Einkommensdaten.</target>
+      </trans-unit>
+      <trans-unit id="cardParagraph2">
+        <source> the bank encapsulates all documents locally. AI processes the protected versions and generates structured summaries. Local restoration restores the real customer names and account details into the summaries, producing compliance-ready outputs without ever exposing raw customer data to the AI provider.</source>
+        <target> fuehrt die Bank die Encapsulation aller Dokumente lokal durch. Die KI verarbeitet die geschuetzten Versionen und erstellt strukturierte Zusammenfassungen. Lokale Restoration stellt die echten Kundennamen und Kontodetails in den Zusammenfassungen wieder her und erzeugt compliance-faehige Ergebnisse, ohne jemals Rohkundendaten dem KI-Anbieter preiszugeben.</target>
+      </trans-unit>
+      <trans-unit id="exampleProductName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+
+      <!-- Section07_FAQ -->
+      <trans-unit id="faqLabel">
+        <source>FAQ</source>
+        <target>Haeufig gestellte Fragen</target>
+      </trans-unit>
+      <trans-unit id="faq1_question">
+        <source>What is an AI data capsule?</source>
+        <target>Was ist eine AI Data Capsule?</target>
+      </trans-unit>
+      <trans-unit id="faq1_answer">
+        <source>An AI data capsule is a locally generated AI enablement layer that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.</source>
+        <target>Eine AI Data Capsule ist eine lokal generierte AI-Enablement-Schicht, die sensible Unternehmensdaten per Encapsulation schuetzt, bevor sie an externe KI-Dienste gesendet werden. Nach der KI-Verarbeitung ermoeglicht die Capsule lokale Restoration, sodass Ergebnisse in realen Unternehmens-Workflows nutzbar bleiben.</target>
+      </trans-unit>
+      <trans-unit id="faq2_question">
+        <source>How does an AI data capsule differ from data masking?</source>
+        <target>Wie unterscheidet sich eine AI Data Capsule von Datenmasking?</target>
+      </trans-unit>
+      <trans-unit id="faq2_answer">
+        <source>Data masking permanently removes sensitive information, making AI outputs unusable for enterprise workflows. An AI data capsule preserves data structure and enables restoration, so AI results can be restored to their full enterprise context locally.</source>
+        <target>Datenmasking entfernt sensible Informationen permanent und macht KI-Ergebnisse fuer Unternehmens-Workflows unbrauchbar. Eine AI Data Capsule bewahrt die Datenstruktur und ermoeglicht Restoration, sodass KI-Ergebnisse lokal in ihrem vollstaendigen Unternehmenskontext wiederhergestellt werden koennen.</target>
+      </trans-unit>
+      <trans-unit id="faq3_question">
+        <source>Does the AI data capsule work with any LLM?</source>
+        <target>Funktioniert die AI Data Capsule mit jedem LLM?</target>
+      </trans-unit>
+      <trans-unit id="faq3_answer">
+        <source>Yes. Because the capsule operates at the data layer before transmission, it works with any external AI service — ChatGPT, Claude, Gemini, or any LLM API.</source>
+        <target>Ja. Da die Capsule auf der Datenschicht vor der Uebertragung arbeitet, funktioniert sie mit jedem externen KI-Dienst — ChatGPT, Claude, Gemini oder jeder LLM-API.</target>
+      </trans-unit>
+      <trans-unit id="faq4_question">
+        <source>Where is the mapping data stored?</source>
+        <target>Wo werden die Zuordnungsdaten gespeichert?</target>
+      </trans-unit>
+      <trans-unit id="faq4_answer">
+        <source>The mapping between original and encapsulated values is stored entirely within the enterprise environment. It is never transmitted to external services.</source>
+        <target>Die Zuordnung zwischen Original- und Encapsulation-Werten wird vollstaendig innerhalb der Unternehmensumgebung gespeichert. Sie wird nie an externe Dienste uebertragen.</target>
+      </trans-unit>
+
+      <!-- Section08_Related -->
+      <trans-unit id="relatedLabel">
+        <source>Related</source>
+        <target>Verwandte Inhalte</target>
+      </trans-unit>
+
+      <!-- Section09_CTA -->
+      <trans-unit id="ctaProductName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren an Ihren tatsaechlichen Workflows.</target>
+      </trans-unit>
+      <trans-unit id="cta1Label">
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+      <trans-unit id="cta2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink1Label">
+        <source>Download Architecture Brief</source>
+        <target>Architektur-Brief herunterladen</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

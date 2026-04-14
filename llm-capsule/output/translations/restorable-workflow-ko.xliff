@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="restorable-workflow">
+    <body>
+      <!-- Section01_Hero -->
+      <trans-unit id="title">
+        <source>Restorable Workflow</source>
+        <target>Restorable Workflow</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>An AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling</source>
+        <target>AI 처리 전에 민감한 기업 데이터를 가역적이고 구조 보존적인 표현으로 대체하는 AI 활성화 패턴으로, 다음 제품이 이를 지원합니다:</target>
+      </trans-unit>
+      <trans-unit id="productName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+
+      <!-- Section02_Definition -->
+      <trans-unit id="label">
+        <source>DEFINITION</source>
+        <target>정의</target>
+      </trans-unit>
+      <trans-unit id="bodyText">
+        <source>A restorable workflow is an AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which</source>
+        <target>Restorable workflow는 AI 처리 전에 민감한 기업 데이터를 가역적이고 구조 보존적인 표현으로 대체하는 AI 활성화 패턴입니다. AI 모델이 출력물을 생성한 후, 로컬 Restoration이 자동으로 원본 기업 데이터를 결과에 복원하여 수작업 후처리 없이 기업용 출력물을 생성합니다. 이것이 다음 제품의 핵심 메커니즘입니다:</target>
+      </trans-unit>
+
+      <!-- Section03_Explanation -->
+      <trans-unit id="sectionHeading">
+        <source>Explanation</source>
+        <target>설명</target>
+      </trans-unit>
+      <trans-unit id="paragraph1Pre">
+        <source>Traditional data protection workflows are</source>
+        <target>기존 데이터 보호 워크플로우는</target>
+      </trans-unit>
+      <trans-unit id="paragraph1Highlight">
+        <source>one-directional</source>
+        <target>단방향</target>
+      </trans-unit>
+      <trans-unit id="paragraph1Post">
+        <source>: protect data, process it, and accept that outputs lack original context. A restorable workflow closes the loop — outputs are automatically restored with real enterprise data. This is what makes</source>
+        <target>입니다: 데이터를 보호하고 처리한 후, 출력물에 원본 컨텍스트가 없다는 점을 감수합니다. Restorable workflow는 이 루프를 완성하여 출력물이 실제 기업 데이터로 자동 복원됩니다. 이것이 바로</target>
+      </trans-unit>
+      <trans-unit id="paragraph2">
+        <source>The key properties of a restorable workflow are: reversible encapsulation (not permanent masking), locally stored mappings (never transmitted), structure-preserving protection (AI accuracy maintained), and deterministic restoration (outputs exactly match original data).</source>
+        <target>Restorable workflow의 핵심 속성은 다음과 같습니다: 가역적 Encapsulation(영구 마스킹 아님), 로컬 저장 매핑(전송 안 함), 구조 보존 보호(AI 정확도 유지), 결정적 Restoration(출력물이 원본 데이터와 정확히 일치).</target>
+      </trans-unit>
+
+      <!-- Section04_Example -->
+      <trans-unit id="exampleHeading">
+        <source>Example</source>
+        <target>예시</target>
+      </trans-unit>
+      <trans-unit id="paragraph1">
+        <source>An HR department uses AI to generate performance review summaries. Employee names, performance ratings, and salary information are encapsulated. AI produces structured summaries from protected data.</source>
+        <target>인사부서가 AI를 사용하여 성과 평가 요약을 생성합니다. 직원 이름, 성과 등급, 급여 정보가 Encapsulation됩니다. AI는 보호된 데이터로 구조화된 요약을 생성합니다.</target>
+      </trans-unit>
+      <trans-unit id="paragraph2Pre">
+        <source>Restoration restores all employee details, producing</source>
+        <target>Restoration이 모든 직원 세부 정보를 복원하여</target>
+      </trans-unit>
+      <trans-unit id="paragraph2Highlight">
+        <source>manager-ready review documents</source>
+        <target>관리자가 바로 사용할 수 있는 평가 문서</target>
+      </trans-unit>
+      <trans-unit id="paragraph2Post">
+        <source>without any manual editing.</source>
+        <target>를 수작업 편집 없이 생성합니다.</target>
+      </trans-unit>
+
+      <!-- Section05_RelatedTerms -->
+      <trans-unit id="relatedTermsHeading">
+        <source>Related Terms</source>
+        <target>관련 용어</target>
+      </trans-unit>
+      <trans-unit id="relatedPagesLabel">
+        <source>Related Pages</source>
+        <target>관련 페이지</target>
+      </trans-unit>
+      <trans-unit id="link1Title">
+        <source>Product Overview</source>
+        <target>제품 개요</target>
+      </trans-unit>
+      <trans-unit id="link2Title">
+        <source>Architecture</source>
+        <target>아키텍처</target>
+      </trans-unit>
+      <trans-unit id="link3Title">
+        <source>Trust &amp; Compliance</source>
+        <target>신뢰 &amp; 컴플라이언스</target>
+      </trans-unit>
+      <trans-unit id="link4Title">
+        <source>Request a Demo</source>
+        <target>데모 요청</target>
+      </trans-unit>
+
+      <!-- Section06_CTA -->
+      <trans-unit id="ctaTitlePre">
+        <source>See</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="ctaTitlePost">
+        <source>Restorable Workflow in Action</source>
+        <target>Restorable Workflow를 직접 확인하세요</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Experience how enterprise AI outputs are automatically restored with real business data — no manual post-processing required.</source>
+        <target>기업 AI 출력물이 실제 비즈니스 데이터로 자동 복원되는 과정을 경험하세요. 수작업 후처리가 필요 없습니다.</target>
+      </trans-unit>
+      <trans-unit id="button1Label">
+        <source>Request a Demo</source>
+        <target>데모 요청</target>
+      </trans-unit>
+      <trans-unit id="button2Label">
+        <source>View Product</source>
+        <target>제품 보기</target>
+      </trans-unit>
+      <trans-unit id="footnote">
+        <source>Enterprise AI Enablement by CUBIG</source>
+        <target>CUBIG의 엔터프라이즈 AI 활성화</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

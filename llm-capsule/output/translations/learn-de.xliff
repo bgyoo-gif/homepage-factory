@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="learn">
+    <body>
+      <trans-unit id="heroTitle">
+        <source>Enterprise AI Enablement — Learn</source>
+        <target>KI-Einführung im Unternehmen — Learn</target>
+      </trans-unit>
+      <trans-unit id="heroDescription">
+        <source>In-depth technical articles on enterprise AI enablement, secure AI workflows, structure-preserving processing, and restorable workflows.</source>
+        <target>Ausführliche Fachartikel zur KI-Einführung im Unternehmen, sicheren AI-Workflows, strukturerhaltender Verarbeitung und Restorable Workflows.</target>
+      </trans-unit>
+      <trans-unit id="card01Title">
+        <source>Secure Enterprise AI Data Workflows</source>
+        <target>Sichere KI-Datenworkflows im Unternehmen</target>
+      </trans-unit>
+      <trans-unit id="card01Badge">
+        <source>Pillar</source>
+        <target>Grundlagen</target>
+      </trans-unit>
+      <trans-unit id="card02Title">
+        <source>Enterprise AI Enablement</source>
+        <target>KI-Einführung im Unternehmen</target>
+      </trans-unit>
+      <trans-unit id="card02Badge">
+        <source>Pillar</source>
+        <target>Grundlagen</target>
+      </trans-unit>
+      <trans-unit id="card03Title">
+        <source>Enterprise AI Document Processing</source>
+        <target>KI-Dokumentenverarbeitung im Unternehmen</target>
+      </trans-unit>
+      <trans-unit id="card03Badge">
+        <source>Pillar</source>
+        <target>Grundlagen</target>
+      </trans-unit>
+      <trans-unit id="card04Title">
+        <source>What Is an AI Data Capsule</source>
+        <target>Was ist eine AI Data Capsule</target>
+      </trans-unit>
+      <trans-unit id="card04Badge">
+        <source>Article</source>
+        <target>Artikel</target>
+      </trans-unit>
+      <trans-unit id="card05Title">
+        <source>How to Use AI on Sensitive Enterprise Data</source>
+        <target>Wie Sie KI auf sensible Unternehmensdaten anwenden</target>
+      </trans-unit>
+      <trans-unit id="card05Badge">
+        <source>Article</source>
+        <target>Artikel</target>
+      </trans-unit>
+      <trans-unit id="card06Title">
+        <source>Why Redaction Breaks Enterprise AI Workflows</source>
+        <target>Warum Schwärzung KI-Workflows im Unternehmen zerstört</target>
+      </trans-unit>
+      <trans-unit id="card06Badge">
+        <source>Featured</source>
+        <target>Empfohlen</target>
+      </trans-unit>
+      <trans-unit id="card07Title">
+        <source>Secure Enterprise AI Workflows</source>
+        <target>Sichere KI-Workflows im Unternehmen</target>
+      </trans-unit>
+      <trans-unit id="card07Badge">
+        <source>Article</source>
+        <target>Artikel</target>
+      </trans-unit>
+      <trans-unit id="card08Title">
+        <source>Structure-Preserving Document Processing</source>
+        <target>Strukturerhaltende Dokumentenverarbeitung</target>
+      </trans-unit>
+      <trans-unit id="card08Badge">
+        <source>Article</source>
+        <target>Artikel</target>
+      </trans-unit>
+      <trans-unit id="card09Title">
+        <source>PII Protection vs Enterprise Confidentiality Control</source>
+        <target>PII-Schutz vs. Unternehmens-Vertraulichkeitskontrolle</target>
+      </trans-unit>
+      <trans-unit id="card09Badge">
+        <source>Article</source>
+        <target>Artikel</target>
+      </trans-unit>
+      <trans-unit id="card10Title">
+        <source>On-Premise vs Cloud AI Data Protection</source>
+        <target>On-Premise vs. Cloud-KI-Datenschutz</target>
+      </trans-unit>
+      <trans-unit id="card10Badge">
+        <source>Article</source>
+        <target>Artikel</target>
+      </trans-unit>
+      <trans-unit id="card11Title">
+        <source>Local Restoration vs Anonymization</source>
+        <target>Lokale Restoration vs. Anonymisierung</target>
+      </trans-unit>
+      <trans-unit id="card11Badge">
+        <source>Article</source>
+        <target>Artikel</target>
+      </trans-unit>
+      <trans-unit id="card12Title">
+        <source>AI Data Pipeline Protection</source>
+        <target>Schutz der KI-Datenpipeline</target>
+      </trans-unit>
+      <trans-unit id="card12Badge">
+        <source>Article</source>
+        <target>Artikel</target>
+      </trans-unit>
+      <trans-unit id="cardLinkLabel">
+        <source>Read article</source>
+        <target>Artikel lesen</target>
+      </trans-unit>
+      <trans-unit id="ctaTitle">
+        <source>See how LLM Capsule works with your data</source>
+        <target>Erleben Sie, wie LLM Capsule mit Ihren Daten arbeitet</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Workflows.</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn1Label">
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="ctaSecondaryLink1Label">
+        <source>Download Architecture Brief</source>
+        <target>Architektur-Überblick herunterladen</target>
+      </trans-unit>
+      <trans-unit id="ctaSecondaryLink2Label">
+        <source>Available on AWS Marketplace</source>
+        <target>Verfügbar auf AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

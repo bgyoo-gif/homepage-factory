@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="llm-capsule-vs-masking-tools">
+    <body>
+      <trans-unit id="titleProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="title">
+        <source>See how</source>
+        <target>직접 확인하세요</target>
+      </trans-unit>
+      <trans-unit id="descriptionProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>문서, 배포 조건, 평가 기준을 준비해 주세요. 실제 워크플로우에서 시연합니다.</target>
+      </trans-unit>
+      <trans-unit id="label">
+        <source>Masking vs. Encapsulation — Side-by-side output comparison showing restored vs. redacted results</source>
+        <target>마스킹 vs. Encapsulation — Restoration 결과와 마스킹 결과의 나란히 비교</target>
+      </trans-unit>
+      <trans-unit id="heading">
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </trans-unit>
+      <trans-unit id="product">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="paragraph">
+        <source>Masking tools scan documents for sensitive patterns — names, numbers, dates — and replace them with generic tokens ([REDACTED], [NAME], ****) or remove them entirely. The replacement is permanent. There is no mechanism to restore original values after processing.</source>
+        <target>마스킹 도구는 문서에서 민감한 패턴(이름, 숫자, 날짜)을 스캔하여 일반 토큰([REDACTED], [NAME], ****)으로 대체하거나 완전히 제거합니다. 대체는 영구적이며, 처리 후 원래 값을 복원할 수 있는 메커니즘이 없습니다.</target>
+      </trans-unit>
+      <trans-unit id="headingProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="paragraphProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="bannerStrong">
+        <source>AI results are automatically restored locally with original enterprise data.</source>
+        <target>AI 결과는 원본 기업 데이터와 함께 로컬에서 자동으로 Restoration됩니다.</target>
+      </trans-unit>
+      <trans-unit id="bannerProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="bannerText">
+        <source> is an AI enablement data layer that protects sensitive data while enabling usable enterprise AI outputs.</source>
+        <target>은 민감 데이터를 보호하면서 활용 가능한 기업 AI 결과물을 제공하는 AI 활성화 데이터 레이어입니다.</target>
+      </trans-unit>
+      <trans-unit id="colHeader1">
+        <source>Capability</source>
+        <target>기능</target>
+      </trans-unit>
+      <trans-unit id="colHeader2">
+        <source>Masking Tools</source>
+        <target>마스킹 도구</target>
+      </trans-unit>
+      <trans-unit id="colHeader3Product">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="colHeader3">
+        <source>(AI Enablement Data Layer)</source>
+        <target>(AI 활성화 데이터 레이어)</target>
+      </trans-unit>
+      <trans-unit id="cardTitle">
+        <source>Contract Analysis Pipeline</source>
+        <target>계약서 분석 파이프라인</target>
+      </trans-unit>
+      <trans-unit id="withMaskingLabel">
+        <source>With masking:</source>
+        <target>마스킹 사용 시:</target>
+      </trans-unit>
+      <trans-unit id="withMaskingText">
+        <source>200 contracts masked → AI produces generic summaries with "[REDACTED]" throughout → Legal team manually restores ~40 hours of context rebuilding.</source>
+        <target>계약서 200건 마스킹 → AI가 "[REDACTED]"가 포함된 일반적 요약 생성 → 법무팀이 약 40시간에 걸쳐 수동으로 문맥을 복원합니다.</target>
+      </trans-unit>
+      <trans-unit id="withCapsuleLabel">
+        <source>With</source>
+        <target>사용 시:</target>
+      </trans-unit>
+      <trans-unit id="withCapsuleProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="withCapsuleText">
+        <source>: 200 contracts encapsulated → AI produces structured summaries → Local restoration restores all parties, amounts, and dates → Output feeds directly into contract management system.</source>
+        <target>계약서 200건 Encapsulation → AI가 구조화된 요약 생성 → Restoration으로 모든 당사자, 금액, 날짜 복원 → 결과물이 계약 관리 시스템에 직접 연동됩니다.</target>
+      </trans-unit>
+      <trans-unit id="sectionLabel">
+        <source>Related</source>
+        <target>관련 페이지</target>
+      </trans-unit>
+      <trans-unit id="primaryCTALabel">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="secondaryCTALabel">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

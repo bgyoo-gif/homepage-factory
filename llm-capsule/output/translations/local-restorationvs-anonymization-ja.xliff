@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ja" datatype="plaintext" original="local-restorationvs-anonymization">
+    <body>
+      <trans-unit id="heroTitle">
+        <source>Local Restoration vs Anonymization</source>
+        <target>Restoration vs 匿名化</target>
+      </trans-unit>
+      <trans-unit id="heroDescription">
+        <source>Compare local restoration (restoration) with anonymization for enterprise AI. Anonymization is permanent; local restoration restores real enterprise data in AI outputs automatically.</source>
+        <target>企業AIにおけるRestorationと匿名化を比較します。匿名化は永続的ですが、RestorationはAI出力で実際の企業データを自動的に復元します。</target>
+      </trans-unit>
+      <trans-unit id="overviewText">
+        <source>Anonymization and local restoration represent opposite approaches to data protection in AI workflows. Anonymization permanently removes identifying information. Local restoration temporarily protects data and restores it after AI processing — producing enterprise-ready outputs with real data.</source>
+        <target>匿名化とRestorationは、AIワークフローにおけるデータ保護の対照的なアプローチです。匿名化は識別情報を永続的に除去します。Restorationはデータを一時的に保護し、AI処理後に復元して、実データを含む企業向け出力を生成します。</target>
+      </trans-unit>
+      <trans-unit id="anonWorksText">
+        <source>Anonymization techniques — k-anonymity, differential privacy, generalization, suppression — transform data so that individual records cannot be re-identified. The transformation is designed to be irreversible. Anonymized data is considered non-personal under most regulatory frameworks.</source>
+        <target>匿名化技術（k-匿名性、差分プライバシー、一般化、抑制）は、個々のレコードを再識別できないようにデータを変換します。変換は不可逆に設計されています。匿名化されたデータは、ほとんどの規制枠組みにおいて非個人データとみなされます。</target>
+      </trans-unit>
+      <trans-unit id="limitBullet1">
+        <source>Irreversibility. Anonymization is permanent by design. Once data is anonymized, there is no automated path to recover original values. AI outputs based on anonymized data remain anonymous — they cannot reference real individuals, real accounts, or real events.</source>
+        <target>不可逆性。匿名化は設計上、永続的です。データが匿名化されると、元の値を自動的に復元する方法はありません。匿名化データに基づくAI出力は匿名のままであり、実際の個人、実際のアカウント、実際のイベントを参照できません。</target>
+      </trans-unit>
+      <trans-unit id="limitBullet2">
+        <source>Information loss. Generalization replaces specific values with ranges ("age 35" → "30-40"). Suppression removes values entirely. Both reduce AI's ability to produce precise, actionable outputs.</source>
+        <target>情報の喪失。一般化は特定の値を範囲に置き換えます（「年齢35歳」→「30-40」）。抑制は値を完全に除去します。どちらもAIが正確で実行可能な出力を生成する能力を低下させます。</target>
+      </trans-unit>
+      <trans-unit id="limitBullet3">
+        <source>Not designed for document intelligence. Anonymization techniques were developed for structured databases, not unstructured enterprise documents. Applying anonymization to contracts, reports, and correspondence produces severely degraded content.</source>
+        <target>ドキュメントインテリジェンス向けに設計されていない。匿名化技術は非構造化企業ドキュメントではなく、構造化データベース向けに開発されました。契約書、報告書、書簡に匿名化を適用すると、コンテンツが大幅に劣化します。</target>
+      </trans-unit>
+      <trans-unit id="differsText">
+        <source>Local restoration (restoration) is the process of restoring AI outputs to their full enterprise context using locally stored mappings. Data is encapsulated (not anonymized) before AI processing — sensitive values are replaced with reversible, structure-preserving representations. After AI processing, the original values are restored automatically.</source>
+        <target>Restorationは、ローカルに保存されたマッピングを使用してAI出力を完全な企業コンテキストに復元するプロセスです。AI処理前にデータがEncapsulation（匿名化ではなく）され、機密値が可逆的で構造保持型の表現に置き換えられます。AI処理後、元の値が自動的に復元されます。</target>
+      </trans-unit>
+      <trans-unit id="tableRow1">
+        <source>Reversibility|Irreversible|Fully reversible</source>
+        <target>可逆性|不可逆|完全に可逆</target>
+      </trans-unit>
+      <trans-unit id="tableRow2">
+        <source>Output usability|Anonymous, non-actionable|Enterprise-ready, actionable</source>
+        <target>出力の活用性|匿名、実行不可|企業向け、実行可能</target>
+      </trans-unit>
+      <trans-unit id="tableRow3">
+        <source>Information loss|Significant|None (structure preserved)</source>
+        <target>情報の喪失|重大|なし（構造保持）</target>
+      </trans-unit>
+      <trans-unit id="tableRow4">
+        <source>Document support|Structured data only|All document types</source>
+        <target>ドキュメント対応|構造化データのみ|全ドキュメントタイプ</target>
+      </trans-unit>
+      <trans-unit id="tableRow5">
+        <source>Post-processing required|Extensive manual work|Automatic restoration</source>
+        <target>後処理の必要性|大規模な手作業|自動Restoration</target>
+      </trans-unit>
+      <trans-unit id="tableRow6">
+        <source>Enterprise workflow fit|Analytics / research only|Full production workflows</source>
+        <target>企業ワークフロー適合性|分析・研究のみ|完全な本番ワークフロー</target>
+      </trans-unit>
+      <trans-unit id="exampleCardTitle">
+        <source>Patient Discharge Summaries</source>
+        <target>患者退院サマリー</target>
+      </trans-unit>
+      <trans-unit id="exampleCardP1">
+        <source>A hospital needs AI to generate discharge summaries from patient records. Anonymized records remove patient identifiers — but discharge summaries must reference real patient names, medications, and attending physicians to be clinically useful.</source>
+        <target>病院が患者記録から退院サマリーを生成するためにAIを必要としています。匿名化された記録は患者識別子を除去しますが、退院サマリーは臨床的に有用であるために実際の患者名、薬剤、担当医を参照する必要があります。</target>
+      </trans-unit>
+      <trans-unit id="exampleCardP2">
+        <source>LLM Capsule encapsulates patient records, AI generates structured summaries, and local restoration restores all patient identifiers into the discharge documents. The summaries are clinically ready without any manual re-identification.</source>
+        <target>LLM Capsuleが患者記録をEncapsulationし、AIが構造化されたサマリーを生成し、Restorationがすべての患者識別子を退院文書に復元します。手動での再識別なしに、臨床的にすぐ使用可能なサマリーが生成されます。</target>
+      </trans-unit>
+      <trans-unit id="faq1Question">
+        <source>What is the difference between anonymization and restoration?</source>
+        <target>匿名化とRestorationの違いは何ですか？</target>
+      </trans-unit>
+      <trans-unit id="faq1Answer">
+        <source>Anonymization permanently removes identifying data. Local restoration (restoration) temporarily protects data through reversible encapsulation and automatically restores original values in AI outputs.</source>
+        <target>匿名化は識別データを永続的に除去します。Restorationは可逆的なEncapsulationによりデータを一時的に保護し、AI出力で元の値を自動的に復元します。</target>
+      </trans-unit>
+      <trans-unit id="faq2Question">
+        <source>When should I use anonymization vs local restoration?</source>
+        <target>匿名化とRestorationはどのように使い分けますか？</target>
+      </trans-unit>
+      <trans-unit id="faq2Answer">
+        <source>Use anonymization for research datasets and analytics where individual identity is not needed. Use local restoration (LLM Capsule) for production AI workflows where outputs must reference real enterprise data.</source>
+        <target>個人の身元が不要な研究データセットや分析には匿名化を使用します。出力が実際の企業データを参照する必要がある本番AIワークフローにはRestoration（LLM Capsule）を使用します。</target>
+      </trans-unit>
+      <trans-unit id="ctaTitle">
+        <source>See how LLM Capsule works with your data</source>
+        <target>LLM Capsuleが実際のデータでどのように機能するかご確認ください</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>ドキュメント、デプロイ要件、評価基準をお持ちください。実際のワークフローでデモンストレーションいたします。</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn1Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="ctaFootnote1Label">
+        <source>Download Architecture Brief</source>
+        <target>アーキテクチャブリーフのダウンロード</target>
+      </trans-unit>
+      <trans-unit id="ctaFootnote2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="pii-protection-vs-enterprise-confidentiality-control">
+    <body>
+      <!-- Section 01: Hero -->
+      <trans-unit id="breadcrumbHome">
+        <source>Home</source>
+        <target>Startseite</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbLearn">
+        <source>Learn</source>
+        <target>Wissen</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbCurrent">
+        <source>PII Protection vs Enterprise Confidentiality Control</source>
+        <target>PII-Schutz vs Enterprise Confidentiality Control</target>
+      </trans-unit>
+      <trans-unit id="title">
+        <source>PII Protection vs Enterprise Confidentiality Control</source>
+        <target>PII-Schutz vs Enterprise Confidentiality Control</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Why protecting only personal data is insufficient for enterprise AI enablement. Business-critical information requires enterprise confidentiality control to truly enable AI adoption.</source>
+        <target>Warum der Schutz personenbezogener Daten allein fuer die KI-Einfuehrung im Unternehmen nicht ausreicht. Geschaeftskritische Informationen erfordern Enterprise Confidentiality Control, um die KI-Einfuehrung wirklich zu ermoeglichen.</target>
+      </trans-unit>
+
+      <!-- Section 02: Problem -->
+      <trans-unit id="sectionLabel_problem">
+        <source>Problem</source>
+        <target>Problem</target>
+      </trans-unit>
+      <trans-unit id="paragraph1">
+        <source>Most AI data protection solutions focus on personally identifiable information (PII) — names, social security numbers, email addresses. But true enterprise AI enablement requires protecting far more than PII. Enterprise documents contain trade secrets, acquisition targets, pricing models, internal performance metrics, strategic plans, and client relationship details — all enterprise-sensitive but not classified as PII.</source>
+        <target>Die meisten KI-Datenschutzloesungen konzentrieren sich auf personenbezogene Daten (PII) — Namen, Sozialversicherungsnummern, E-Mail-Adressen. Eine echte KI-Einfuehrung im Unternehmen erfordert jedoch weit mehr als PII-Schutz. Unternehmensdokumente enthalten Geschaeftsgeheimnisse, Akquisitionsziele, Preismodelle, interne Leistungskennzahlen, strategische Plaene und Details zu Kundenbeziehungen — alles unternehmenskritisch, aber nicht als PII klassifiziert.</target>
+      </trans-unit>
+      <trans-unit id="paragraph2">
+        <source>A legal memo about a pending acquisition contains no PII. It contains deal structure, valuation ranges, and strategic rationale — all of which would be damaging if exposed to an AI provider's training pipeline or logging system.</source>
+        <target>Ein Rechtsmemo zu einer laufenden Akquisition enthaelt keine PII. Es enthaelt Transaktionsstrukturen, Bewertungsspannen und strategische Begruendungen — alles Informationen, deren Offenlegung gegenueber der Trainingspipeline oder dem Logging-System eines KI-Anbieters schaedlich waere.</target>
+      </trans-unit>
+
+      <!-- Section 03: Definition -->
+      <trans-unit id="sectionLabel_definition">
+        <source>Definition</source>
+        <target>Definition</target>
+      </trans-unit>
+      <trans-unit id="bannerTitle">
+        <source>Enterprise Confidentiality Control</source>
+        <target>Enterprise Confidentiality Control</target>
+      </trans-unit>
+      <trans-unit id="bannerBody">
+        <source>Enterprise confidentiality control is a data protection approach for AI workflows that extends beyond PII to cover all categories of business-sensitive information. It enables policy-based classification and encapsulation of trade secrets, financial terms, strategic data, and operational details alongside personal data protection.</source>
+        <target>Enterprise Confidentiality Control ist ein Datenschutzansatz fuer KI-Workflows, der ueber PII hinausgeht und alle Kategorien geschaeftskritischer Informationen abdeckt. Es ermoeglicht die richtlinienbasierte Klassifizierung und Encapsulation von Geschaeftsgeheimnissen, Finanzkonditionen, strategischen Daten und operativen Details neben dem Schutz personenbezogener Daten.</target>
+      </trans-unit>
+
+      <!-- Section 04: Explanation -->
+      <trans-unit id="sectionLabel_explanation">
+        <source>Explanation</source>
+        <target>Erlaeuterung</target>
+      </trans-unit>
+      <trans-unit id="intro">
+        <source>Enterprise confidentiality control differs from PII protection in scope and configurability:</source>
+        <target>Enterprise Confidentiality Control unterscheidet sich von PII-Schutz in Umfang und Konfigurierbarkeit:</target>
+      </trans-unit>
+      <trans-unit id="bullet1Label">
+        <source>Scope.</source>
+        <target>Umfang.</target>
+      </trans-unit>
+      <trans-unit id="bullet1Body">
+        <source>PII protection covers regulatory-defined categories — names, identification numbers, health records. Enterprise confidentiality control covers organization-defined categories — deal terms, pricing, internal metrics, competitive analysis, and strategic plans.</source>
+        <target>PII-Schutz deckt regulatorisch definierte Kategorien ab — Namen, Identifikationsnummern, Gesundheitsakten. Enterprise Confidentiality Control deckt organisationsdefinierte Kategorien ab — Transaktionsbedingungen, Preise, interne Kennzahlen, Wettbewerbsanalysen und strategische Plaene.</target>
+      </trans-unit>
+      <trans-unit id="bullet2Label">
+        <source>Policy-driven classification.</source>
+        <target>Richtlinienbasierte Klassifizierung.</target>
+      </trans-unit>
+      <trans-unit id="bullet2Body">
+        <source>What counts as sensitive varies by department, document type, and workflow. A revenue figure is sensitive in a board presentation but routine in a published annual report. Context-aware data control enables policy-driven sensitivity classification, not just regex pattern matching.</source>
+        <target>Was als sensibel gilt, variiert je nach Abteilung, Dokumenttyp und Workflow. Eine Umsatzzahl ist in einer Vorstandspraesentation sensibel, aber in einem veroeffentlichten Jahresbericht Routine. Kontextbezogene Datenkontrolle ermoeglicht richtlinienbasierte Sensitivitaetsklassifizierung, nicht nur Regex-Musterabgleich.</target>
+      </trans-unit>
+      <trans-unit id="bullet3Label">
+        <source>Workflow integration.</source>
+        <target>Workflow-Integration.</target>
+      </trans-unit>
+      <trans-unit id="bullet3Body">
+        <source>Enterprise confidentiality control integrates with governance frameworks, audit systems, and compliance workflows — providing visibility into what data is protected, how, and by whom.</source>
+        <target>Enterprise Confidentiality Control integriert sich in Governance-Frameworks, Audit-Systeme und Compliance-Workflows — und bietet Transparenz darueber, welche Daten wie und von wem geschuetzt werden.</target>
+      </trans-unit>
+
+      <!-- Section 05: Enterprise Example -->
+      <trans-unit id="sectionLabel_example">
+        <source>Enterprise Example</source>
+        <target>Praxisbeispiel</target>
+      </trans-unit>
+      <trans-unit id="cardTitle">
+        <source>M&amp;A Due Diligence</source>
+        <target>M&amp;A Due Diligence</target>
+      </trans-unit>
+      <trans-unit id="cardParagraph1">
+        <source>An investment bank uses AI to analyze target company documents during due diligence. Documents contain no customer PII but are filled with sensitive deal terms, valuation models, and strategic assessments.</source>
+        <target>Eine Investmentbank nutzt KI zur Analyse von Zielunternehmensdokumenten waehrend der Due Diligence. Die Dokumente enthalten keine Kunden-PII, sind aber mit sensiblen Transaktionsbedingungen, Bewertungsmodellen und strategischen Einschaetzungen gefuellt.</target>
+      </trans-unit>
+      <trans-unit id="cardParagraph2">
+        <source>'s enterprise confidentiality control encapsulates deal-specific terminology, financial figures, and company identifiers. AI performs analysis on the protected documents. Local restoration restores deal context into the analysis outputs for the advisory team.</source>
+        <target>s Enterprise Confidentiality Control kapselt transaktionsspezifische Terminologie, Finanzzahlen und Unternehmenskennungen ein. Die KI fuehrt Analysen an den geschuetzten Dokumenten durch. Lokale Restoration stellt den Transaktionskontext in den Analyseergebnissen fuer das Beratungsteam wieder her.</target>
+      </trans-unit>
+      <trans-unit id="productName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+
+      <!-- Section 06: FAQ -->
+      <trans-unit id="sectionLabel_faq">
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </trans-unit>
+      <trans-unit id="faq1Question">
+        <source>What is enterprise confidentiality control?</source>
+        <target>Was ist Enterprise Confidentiality Control?</target>
+      </trans-unit>
+      <trans-unit id="faq1Answer">
+        <source>Enterprise confidentiality control is a data protection approach that goes beyond PII to cover all business-sensitive information — trade secrets, deal terms, pricing strategies, internal metrics, and competitive intelligence — during AI processing.</source>
+        <target>Enterprise Confidentiality Control ist ein Datenschutzansatz, der ueber PII hinausgeht und alle geschaeftskritischen Informationen — Geschaeftsgeheimnisse, Transaktionsbedingungen, Preisstrategien, interne Kennzahlen und Wettbewerbsinformationen — waehrend der KI-Verarbeitung schuetzt.</target>
+      </trans-unit>
+      <trans-unit id="faq2Question">
+        <source>Why is PII protection insufficient for enterprise AI?</source>
+        <target>Warum ist PII-Schutz fuer Enterprise-KI unzureichend?</target>
+      </trans-unit>
+      <trans-unit id="faq2Answer">
+        <source>Enterprise documents contain sensitive business data that is not PII. Protecting only names and IDs while exposing deal terms, financial models, and strategic plans still creates unacceptable data exposure risk.</source>
+        <target>Unternehmensdokumente enthalten sensible Geschaeftsdaten, die keine PII sind. Nur Namen und IDs zu schuetzen, waehrend Transaktionsbedingungen, Finanzmodelle und strategische Plaene offengelegt werden, erzeugt weiterhin ein inakzeptables Datenexpositionsrisiko.</target>
+      </trans-unit>
+
+      <!-- Section 07: Related -->
+      <trans-unit id="sectionLabel_related">
+        <source>Related</source>
+        <target>Verwandte Seiten</target>
+      </trans-unit>
+      <trans-unit id="card1Title">
+        <source>Product Overview</source>
+        <target>Produktuebersicht</target>
+      </trans-unit>
+      <trans-unit id="card2Title">
+        <source>Architecture</source>
+        <target>Architektur</target>
+      </trans-unit>
+      <trans-unit id="card3Title">
+        <source>Trust &amp; Compliance</source>
+        <target>Vertrauen &amp; Compliance</target>
+      </trans-unit>
+      <trans-unit id="card4Title">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+
+      <!-- Section 08: CTA Band -->
+      <trans-unit id="ctaTitle">
+        <source>See how</source>
+        <target>Erfahren Sie, wie</target>
+      </trans-unit>
+      <trans-unit id="ctaTitleSuffix">
+        <source>works with your data</source>
+        <target>mit Ihren Daten arbeitet</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsaechlichen Workflows.</target>
+      </trans-unit>
+      <trans-unit id="cta1Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="cta2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnote1Label">
+        <source>Download Architecture Brief</source>
+        <target>Architektur-Brief herunterladen</target>
+      </trans-unit>
+      <trans-unit id="footnote2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

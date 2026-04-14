@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ja" datatype="plaintext" original="glossary">
+    <body>
+      <!-- Section01_Hero -->
+      <trans-unit id="title">
+        <source>Enterprise AI </source>
+        <target>企業AI </target>
+      </trans-unit>
+      <trans-unit id="titleHighlight">
+        <source>Enablement</source>
+        <target>導入</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Key terms and definitions for enterprise AI enablement, LLM data privacy, and secure enterprise AI workflows.</source>
+        <target>企業AIの導入、LLMデータプライバシー、安全な企業AIワークフローに関する主要用語と定義です。</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbHome">
+        <source>Home</source>
+        <target>ホーム</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbResources">
+        <source>Resources</source>
+        <target>リソース</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbCurrent">
+        <source>Glossary</source>
+        <target>用語集</target>
+      </trans-unit>
+
+      <!-- Section02_GlossaryTerms -->
+      <trans-unit id="card1Title">
+        <source>Restoration</source>
+        <target>Restoration</target>
+      </trans-unit>
+      <trans-unit id="card1LinkLabel">
+        <source>Read definition</source>
+        <target>定義を読む</target>
+      </trans-unit>
+      <trans-unit id="card2Title">
+        <source>Zero Exposure</source>
+        <target>Zero Exposure</target>
+      </trans-unit>
+      <trans-unit id="card2LinkLabel">
+        <source>Read definition</source>
+        <target>定義を読む</target>
+      </trans-unit>
+      <trans-unit id="card3Title">
+        <source>Enterprise Context Control</source>
+        <target>企業コンテキスト制御</target>
+      </trans-unit>
+      <trans-unit id="card3LinkLabel">
+        <source>Read definition</source>
+        <target>定義を読む</target>
+      </trans-unit>
+      <trans-unit id="card4Title">
+        <source>Structure-Preserving Processing</source>
+        <target>構造保持処理</target>
+      </trans-unit>
+      <trans-unit id="card4LinkLabel">
+        <source>Read definition</source>
+        <target>定義を読む</target>
+      </trans-unit>
+      <trans-unit id="card5Title">
+        <source>Restorable Workflow</source>
+        <target>Restorableワークフロー</target>
+      </trans-unit>
+      <trans-unit id="card5LinkLabel">
+        <source>Read definition</source>
+        <target>定義を読む</target>
+      </trans-unit>
+      <trans-unit id="card6Title">
+        <source>Secure LLM Usage</source>
+        <target>安全なLLM利用</target>
+      </trans-unit>
+      <trans-unit id="card6LinkLabel">
+        <source>Read definition</source>
+        <target>定義を読む</target>
+      </trans-unit>
+
+      <!-- Section03_CTA -->
+      <trans-unit id="ctaTitle">
+        <source>See how </source>
+        <target>実際のデータで </target>
+      </trans-unit>
+      <trans-unit id="ctaTitleProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>ドキュメント、デプロイ条件、評価基準をお持ちください。実際のワークフローでデモを行います。</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn1Label">
+        <source>Request a Demo</source>
+        <target>デモを依頼する</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink1Label">
+        <source>Download Architecture Brief</source>
+        <target>アーキテクチャ概要をダウンロード</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink2Label">
+        <source>Available on AWS Marketplace</source>
+        <target>AWS Marketplaceで提供中</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="enterprise-ai-document-processing">
+    <body>
+      <!-- Section 01: Hero -->
+      <trans-unit id="title">
+        <source>Enterprise AI Document Processing</source>
+        <target>기업 AI 문서 처리</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>How to process sensitive enterprise documents through AI with structure-preserving protection and restorable outputs for AI document security.</source>
+        <target>AI 문서 보안을 위해 구조 보존 보호와 복원 가능한 출력으로 민감한 기업 문서를 AI로 처리하는 방법을 설명합니다.</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb1">
+        <source>Home</source>
+        <target>홈</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb2">
+        <source>Resources</source>
+        <target>리소스</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb3">
+        <source>Learn</source>
+        <target>학습</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb4">
+        <source>Enterprise AI Document Processing</source>
+        <target>기업 AI 문서 처리</target>
+      </trans-unit>
+      <!-- Section 02: Problem -->
+      <trans-unit id="sectionLabelProblem">
+        <source>Problem</source>
+        <target>문제</target>
+      </trans-unit>
+      <trans-unit id="paragraph1">
+        <source>Enterprises sit on enormous volumes of unstructured and semi-structured documents — contracts, reports, correspondence, filings, medical records, and technical documentation. AI document processing promises to unlock value through automated summarization, extraction, classification, and translation. But these documents contain the most sensitive enterprise information.</source>
+        <target>기업에는 계약서, 보고서, 서신, 서류, 의료 기록, 기술 문서 등 방대한 비정형 및 반정형 문서가 있습니다. AI 문서 처리는 자동 요약, 추출, 분류, 번역을 통해 가치를 창출할 수 있습니다. 그러나 이 문서들에는 가장 민감한 기업 정보가 포함되어 있습니다.</target>
+      </trans-unit>
+      <trans-unit id="paragraph2">
+        <source>Current AI document security approaches either restrict AI to non-sensitive documents (limiting value) or apply destructive masking that produces unusable outputs (limiting usefulness). Neither scales for enterprise document intelligence.</source>
+        <target>현재 AI 문서 보안 접근 방식은 AI를 비민감 문서로 제한하거나(가치 제한), 사용할 수 없는 출력을 생성하는 파괴적 마스킹을 적용합니다(유용성 제한). 둘 다 기업 문서 인텔리전스에 적합하지 않습니다.</target>
+      </trans-unit>
+      <!-- Section 03: Definition -->
+      <trans-unit id="sectionLabelDefinition">
+        <source>Definition</source>
+        <target>정의</target>
+      </trans-unit>
+      <trans-unit id="bannerLabel">
+        <source>Enterprise AI Document Processing</source>
+        <target>기업 AI 문서 처리</target>
+      </trans-unit>
+      <trans-unit id="bannerText">
+        <source>Enterprise AI document processing uses large language models to summarize, extract, classify, and translate enterprise documents while protecting sensitive data through local encapsulation and restoring usable outputs through local restoration. It applies structure-preserving processing to maintain document integrity during protection.</source>
+        <target>기업 AI 문서 처리는 대규모 언어 모델을 사용하여 기업 문서를 요약, 추출, 분류, 번역하면서 로컬 Encapsulation으로 민감 데이터를 보호하고 로컬 Restoration으로 사용 가능한 출력을 복원합니다. 보호 중 문서 무결성을 유지하기 위해 구조 보존 처리를 적용합니다.</target>
+      </trans-unit>
+      <!-- Section 04: Explanation -->
+      <trans-unit id="sectionLabelExplanation">
+        <source>Explanation</source>
+        <target>설명</target>
+      </trans-unit>
+      <trans-unit id="introText">
+        <source>Enterprise AI document processing addresses five core document intelligence use cases:</source>
+        <target>기업 AI 문서 처리는 5가지 핵심 문서 인텔리전스 사용 사례를 다룹니다:</target>
+      </trans-unit>
+      <trans-unit id="item1Title">
+        <source>Summarization.</source>
+        <target>요약.</target>
+      </trans-unit>
+      <trans-unit id="item1Text">
+        <source>AI generates executive summaries of long documents — contracts, reports, filings. Encapsulation protects sensitive details while preserving the structural context AI needs for accurate summarization. Restored summaries contain real names and figures.</source>
+        <target>AI가 계약서, 보고서, 서류 등 긴 문서의 요약을 생성합니다. Encapsulation이 정확한 요약에 필요한 구조적 맥락을 보존하면서 민감 세부 정보를 보호합니다. 복원된 요약에는 실제 이름과 수치가 포함됩니다.</target>
+      </trans-unit>
+      <trans-unit id="item2Title">
+        <source>Extraction.</source>
+        <target>추출.</target>
+      </trans-unit>
+      <trans-unit id="item2Text">
+        <source>AI extracts structured data from unstructured documents — key terms from contracts, diagnosis codes from medical records, entity information from legal filings. Structure-preserving processing ensures extraction accuracy by maintaining table layouts and field relationships.</source>
+        <target>AI가 비정형 문서에서 구조화된 데이터를 추출합니다 — 계약서의 핵심 조건, 의료 기록의 진단 코드, 법률 서류의 엔티티 정보. 구조 보존 처리가 테이블 레이아웃과 필드 관계를 유지하여 추출 정확도를 보장합니다.</target>
+      </trans-unit>
+      <trans-unit id="item3Title">
+        <source>Classification.</source>
+        <target>분류.</target>
+      </trans-unit>
+      <trans-unit id="item3Text">
+        <source>AI categorizes documents by type, risk level, priority, or topic. Encapsulation protects content while preserving the semantic signals AI uses for accurate classification.</source>
+        <target>AI가 유형, 위험 수준, 우선순위, 주제별로 문서를 분류합니다. Encapsulation이 정확한 분류에 AI가 사용하는 의미적 신호를 보존하면서 콘텐츠를 보호합니다.</target>
+      </trans-unit>
+      <trans-unit id="item4Title">
+        <source>Translation.</source>
+        <target>번역.</target>
+      </trans-unit>
+      <trans-unit id="item4Text">
+        <source>AI translates enterprise documents across languages. Encapsulation protects names, numbers, and proprietary terms while allowing AI to translate surrounding content accurately. Restoration restores protected elements in the translated output.</source>
+        <target>AI가 기업 문서를 다국어로 번역합니다. Encapsulation이 이름, 숫자, 고유 용어를 보호하면서 AI가 주변 콘텐츠를 정확하게 번역할 수 있도록 합니다. Restoration이 번역된 출력에서 보호된 요소를 복원합니다.</target>
+      </trans-unit>
+      <trans-unit id="item5Title">
+        <source>Q&amp;A and RAG.</source>
+        <target>Q&amp;A 및 RAG.</target>
+      </trans-unit>
+      <trans-unit id="item5Text">
+        <source>AI answers questions about enterprise document collections. Documents are encapsulated before indexing in RAG pipelines. Retrieved context is protected during generation, and responses are restored before delivery to users.</source>
+        <target>AI가 기업 문서 컬렉션에 대한 질문에 답변합니다. RAG 파이프라인에서 인덱싱 전 문서가 Encapsulation됩니다. 생성 중 검색된 컨텍스트가 보호되고, 사용자에게 전달 전 응답이 복원됩니다.</target>
+      </trans-unit>
+      <trans-unit id="explanationBanner">
+        <source>enables AI document processing by protecting data at the data layer. Structure-preserving processing with local restoration delivers both AI enablement and data protection simultaneously.</source>
+        <target>이 데이터 레이어에서 데이터를 보호하여 AI 문서 처리를 가능하게 합니다. 로컬 Restoration과 결합된 구조 보존 처리가 AI 활성화와 데이터 보호를 동시에 제공합니다.</target>
+      </trans-unit>
+      <!-- Section 05: Examples -->
+      <trans-unit id="sectionLabelExamples">
+        <source>Examples</source>
+        <target>사례</target>
+      </trans-unit>
+      <trans-unit id="cardTitle">
+        <source>Legal: Clause Extraction from Vendor Contracts</source>
+        <target>법률: 벤더 계약서 조항 추출</target>
+      </trans-unit>
+      <trans-unit id="cardText">
+        <source>A procurement team needs AI to extract liability clauses, payment terms, and termination conditions from 300 vendor contracts. Each contract contains vendor names, proprietary pricing, and internal project references.</source>
+        <target>조달팀이 300개 벤더 계약서에서 책임 조항, 결제 조건, 해지 조건을 AI로 추출해야 합니다. 각 계약서에는 벤더명, 독점 가격 정보, 내부 프로젝트 참조가 포함됩니다.</target>
+      </trans-unit>
+      <!-- Section 06: FAQ -->
+      <trans-unit id="faqTitle">
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </trans-unit>
+      <trans-unit id="faq1Question">
+        <source>What is enterprise AI document processing?</source>
+        <target>기업 AI 문서 처리란 무엇입니까?</target>
+      </trans-unit>
+      <trans-unit id="faq1Answer">
+        <source>Enterprise AI document processing uses large language models to summarize, extract, classify, and translate enterprise documents while protecting sensitive data through local encapsulation and restoring usable outputs through local restoration.</source>
+        <target>기업 AI 문서 처리는 대규모 언어 모델을 사용하여 기업 문서를 요약, 추출, 분류, 번역하면서 로컬 Encapsulation으로 민감 데이터를 보호하고 로컬 Restoration으로 사용 가능한 출력을 복원합니다.</target>
+      </trans-unit>
+      <trans-unit id="faq2Question">
+        <source>What document formats does LLM Capsule support?</source>
+        <target>LLM Capsule은 어떤 문서 형식을 지원합니까?</target>
+      </trans-unit>
+      <trans-unit id="faq2Answer">
+        <source>LLM Capsule processes common enterprise document formats including PDF, DOCX, XLSX, HTML, plain text, and structured data formats. Format-specific processing preserves layout and structure during encapsulation.</source>
+        <target>LLM Capsule은 PDF, DOCX, XLSX, HTML, 일반 텍스트, 구조화된 데이터 형식 등 일반적인 기업 문서 형식을 처리합니다. 형식별 처리가 Encapsulation 중 레이아웃과 구조를 보존합니다.</target>
+      </trans-unit>
+      <!-- Section 07: Learn More -->
+      <trans-unit id="sectionTitle">
+        <source>Learn More</source>
+        <target>더 알아보기</target>
+      </trans-unit>
+      <trans-unit id="link1Label">
+        <source>Product Overview</source>
+        <target>제품 개요</target>
+      </trans-unit>
+      <trans-unit id="link2Label">
+        <source>Architecture</source>
+        <target>아키텍처</target>
+      </trans-unit>
+      <trans-unit id="link3Label">
+        <source>Trust &amp; Compliance</source>
+        <target>신뢰 &amp; 컴플라이언스</target>
+      </trans-unit>
+      <trans-unit id="link4Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="link5Label">
+        <source>What Is an AI Data Capsule</source>
+        <target>AI 데이터 캡슐이란</target>
+      </trans-unit>
+      <trans-unit id="link6Label">
+        <source>AI on Sensitive Data</source>
+        <target>민감 데이터에서의 AI</target>
+      </trans-unit>
+      <trans-unit id="link7Label">
+        <source>Why Redaction Breaks AI</source>
+        <target>비식별화가 AI를 망치는 이유</target>
+      </trans-unit>
+      <trans-unit id="link8Label">
+        <source>Secure AI Workflows</source>
+        <target>안전한 AI 워크플로우</target>
+      </trans-unit>
+      <trans-unit id="link9Label">
+        <source>Structure-Preserving Processing</source>
+        <target>구조 보존 처리</target>
+      </trans-unit>
+      <trans-unit id="link10Label">
+        <source>PII vs Confidentiality Control</source>
+        <target>PII vs 기밀성 제어</target>
+      </trans-unit>
+      <trans-unit id="link11Label">
+        <source>On-Premise vs Cloud</source>
+        <target>On-Premise vs 클라우드</target>
+      </trans-unit>
+      <trans-unit id="link12Label">
+        <source>AI Pipeline Protection</source>
+        <target>AI 파이프라인 보호</target>
+      </trans-unit>
+      <!-- Section 08: CTA -->
+      <trans-unit id="ctaTitle">
+        <source>See how</source>
+        <target>확인하세요</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>문서, 배포 조건, 평가 기준을 가져오세요. 실제 워크플로우에서 직접 시연합니다.</target>
+      </trans-unit>
+      <trans-unit id="cta1Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="cta2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink1Label">
+        <source>Download Architecture Brief</source>
+        <target>아키텍처 브리프 다운로드</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

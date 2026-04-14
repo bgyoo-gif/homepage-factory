@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ja" datatype="plaintext" original="llm-capsule-vs-masking-tools">
+    <body>
+      <trans-unit id="titleProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="title">
+        <source>See how</source>
+        <target>ご確認ください</target>
+      </trans-unit>
+      <trans-unit id="descriptionProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>ドキュメント、デプロイ要件、評価基準をお持ちください。実際のワークフローでデモンストレーションいたします。</target>
+      </trans-unit>
+      <trans-unit id="label">
+        <source>Masking vs. Encapsulation — Side-by-side output comparison showing restored vs. redacted results</source>
+        <target>マスキング vs. Encapsulation — Restorationされた結果とマスキング結果の並列比較</target>
+      </trans-unit>
+      <trans-unit id="heading">
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </trans-unit>
+      <trans-unit id="product">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="paragraph">
+        <source>Masking tools scan documents for sensitive patterns — names, numbers, dates — and replace them with generic tokens ([REDACTED], [NAME], ****) or remove them entirely. The replacement is permanent. There is no mechanism to restore original values after processing.</source>
+        <target>マスキングツールは、ドキュメント内の機密パターン（氏名、数値、日付）をスキャンし、汎用トークン（[REDACTED]、[NAME]、****）に置換するか完全に削除します。置換は永続的であり、処理後に元の値を復元する仕組みはありません。</target>
+      </trans-unit>
+      <trans-unit id="headingProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="paragraphProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="bannerStrong">
+        <source>AI results are automatically restored locally with original enterprise data.</source>
+        <target>AI結果は元の企業データとともにローカルで自動的にRestorationされます。</target>
+      </trans-unit>
+      <trans-unit id="bannerProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="bannerText">
+        <source> is an AI enablement data layer that protects sensitive data while enabling usable enterprise AI outputs.</source>
+        <target>は、機密データを保護しながら活用可能な企業AI出力を実現するAIイネーブルメント・データレイヤーです。</target>
+      </trans-unit>
+      <trans-unit id="colHeader1">
+        <source>Capability</source>
+        <target>機能</target>
+      </trans-unit>
+      <trans-unit id="colHeader2">
+        <source>Masking Tools</source>
+        <target>マスキングツール</target>
+      </trans-unit>
+      <trans-unit id="colHeader3Product">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="colHeader3">
+        <source>(AI Enablement Data Layer)</source>
+        <target>（AIイネーブルメント・データレイヤー）</target>
+      </trans-unit>
+      <trans-unit id="cardTitle">
+        <source>Contract Analysis Pipeline</source>
+        <target>契約書分析パイプライン</target>
+      </trans-unit>
+      <trans-unit id="withMaskingLabel">
+        <source>With masking:</source>
+        <target>マスキング使用時：</target>
+      </trans-unit>
+      <trans-unit id="withMaskingText">
+        <source>200 contracts masked → AI produces generic summaries with "[REDACTED]" throughout → Legal team manually restores ~40 hours of context rebuilding.</source>
+        <target>契約書200件をマスキング → AIが「[REDACTED]」を含む汎用的な要約を生成 → 法務チームが約40時間かけて手動でコンテキストを復元します。</target>
+      </trans-unit>
+      <trans-unit id="withCapsuleLabel">
+        <source>With</source>
+        <target>使用時：</target>
+      </trans-unit>
+      <trans-unit id="withCapsuleProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="withCapsuleText">
+        <source>: 200 contracts encapsulated → AI produces structured summaries → Local restoration restores all parties, amounts, and dates → Output feeds directly into contract management system.</source>
+        <target>契約書200件をEncapsulation → AIが構造化された要約を生成 → Restorationで全当事者、金額、日付を復元 → 出力が契約管理システムに直接連携されます。</target>
+      </trans-unit>
+      <trans-unit id="sectionLabel">
+        <source>Related</source>
+        <target>関連ページ</target>
+      </trans-unit>
+      <trans-unit id="primaryCTALabel">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="secondaryCTALabel">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

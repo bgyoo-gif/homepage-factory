@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="restorable-workflow">
+    <body>
+      <!-- Section01_Hero -->
+      <trans-unit id="title">
+        <source>Restorable Workflow</source>
+        <target>Restorable Workflow</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>An AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling</source>
+        <target>Ein AI-Enablement-Muster, bei dem sensible Unternehmensdaten vor der KI-Verarbeitung durch reversible, strukturerhaltende Repraesentationen ersetzt werden. Ermoeglicht durch</target>
+      </trans-unit>
+      <trans-unit id="productName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+
+      <!-- Section02_Definition -->
+      <trans-unit id="label">
+        <source>DEFINITION</source>
+        <target>DEFINITION</target>
+      </trans-unit>
+      <trans-unit id="bodyText">
+        <source>A restorable workflow is an AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which</source>
+        <target>Ein Restorable Workflow ist ein AI-Enablement-Muster, bei dem sensible Unternehmensdaten vor der KI-Verarbeitung durch reversible, strukturerhaltende Repraesentationen ersetzt werden. Nachdem das KI-Modell Ergebnisse generiert hat, stellt die lokale Restoration automatisch die urspruenglichen Unternehmensdaten in den Ergebnissen wieder her und erzeugt unternehmensfaehige Ausgaben ohne manuelle Nachbearbeitung. Dies ist der Kernmechanismus von</target>
+      </trans-unit>
+
+      <!-- Section03_Explanation -->
+      <trans-unit id="sectionHeading">
+        <source>Explanation</source>
+        <target>Erlaeuterung</target>
+      </trans-unit>
+      <trans-unit id="paragraph1Pre">
+        <source>Traditional data protection workflows are</source>
+        <target>Herkoemmliche Datenschutz-Workflows sind</target>
+      </trans-unit>
+      <trans-unit id="paragraph1Highlight">
+        <source>one-directional</source>
+        <target>unidirektional</target>
+      </trans-unit>
+      <trans-unit id="paragraph1Post">
+        <source>: protect data, process it, and accept that outputs lack original context. A restorable workflow closes the loop — outputs are automatically restored with real enterprise data. This is what makes</source>
+        <target>: Daten schuetzen, verarbeiten und akzeptieren, dass den Ergebnissen der urspruengliche Kontext fehlt. Ein Restorable Workflow schliesst diesen Kreislauf — Ergebnisse werden automatisch mit echten Unternehmensdaten wiederhergestellt. Das ist es, was</target>
+      </trans-unit>
+      <trans-unit id="paragraph2">
+        <source>The key properties of a restorable workflow are: reversible encapsulation (not permanent masking), locally stored mappings (never transmitted), structure-preserving protection (AI accuracy maintained), and deterministic restoration (outputs exactly match original data).</source>
+        <target>Die Schluesselmerkmale eines Restorable Workflows sind: reversible Encapsulation (kein permanentes Masking), lokal gespeicherte Zuordnungen (nie uebertragen), strukturerhaltender Schutz (KI-Genauigkeit bleibt erhalten) und deterministische Restoration (Ergebnisse stimmen exakt mit den Originaldaten ueberein).</target>
+      </trans-unit>
+
+      <!-- Section04_Example -->
+      <trans-unit id="exampleHeading">
+        <source>Example</source>
+        <target>Beispiel</target>
+      </trans-unit>
+      <trans-unit id="paragraph1">
+        <source>An HR department uses AI to generate performance review summaries. Employee names, performance ratings, and salary information are encapsulated. AI produces structured summaries from protected data.</source>
+        <target>Eine Personalabteilung nutzt KI zur Erstellung von Zusammenfassungen fuer Leistungsbeurteilungen. Mitarbeiternamen, Leistungsbewertungen und Gehaltsinformationen werden per Encapsulation geschuetzt. Die KI erstellt strukturierte Zusammenfassungen aus den geschuetzten Daten.</target>
+      </trans-unit>
+      <trans-unit id="paragraph2Pre">
+        <source>Restoration restores all employee details, producing</source>
+        <target>Restoration stellt alle Mitarbeiterdaten wieder her und erzeugt</target>
+      </trans-unit>
+      <trans-unit id="paragraph2Highlight">
+        <source>manager-ready review documents</source>
+        <target>sofort einsatzbereite Beurteilungsdokumente fuer Fuehrungskraefte</target>
+      </trans-unit>
+      <trans-unit id="paragraph2Post">
+        <source>without any manual editing.</source>
+        <target>ohne jegliche manuelle Bearbeitung.</target>
+      </trans-unit>
+
+      <!-- Section05_RelatedTerms -->
+      <trans-unit id="relatedTermsHeading">
+        <source>Related Terms</source>
+        <target>Verwandte Begriffe</target>
+      </trans-unit>
+      <trans-unit id="relatedPagesLabel">
+        <source>Related Pages</source>
+        <target>Verwandte Seiten</target>
+      </trans-unit>
+      <trans-unit id="link1Title">
+        <source>Product Overview</source>
+        <target>Produktuebersicht</target>
+      </trans-unit>
+      <trans-unit id="link2Title">
+        <source>Architecture</source>
+        <target>Architektur</target>
+      </trans-unit>
+      <trans-unit id="link3Title">
+        <source>Trust &amp; Compliance</source>
+        <target>Vertrauen &amp; Compliance</target>
+      </trans-unit>
+      <trans-unit id="link4Title">
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+
+      <!-- Section06_CTA -->
+      <trans-unit id="ctaTitlePre">
+        <source>See</source>
+        <target>Erleben Sie</target>
+      </trans-unit>
+      <trans-unit id="ctaTitlePost">
+        <source>Restorable Workflow in Action</source>
+        <target>Restorable Workflow in Aktion</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Experience how enterprise AI outputs are automatically restored with real business data — no manual post-processing required.</source>
+        <target>Erleben Sie, wie KI-Ergebnisse im Unternehmen automatisch mit echten Geschaeftsdaten wiederhergestellt werden — ohne manuelle Nachbearbeitung.</target>
+      </trans-unit>
+      <trans-unit id="button1Label">
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+      <trans-unit id="button2Label">
+        <source>View Product</source>
+        <target>Produkt ansehen</target>
+      </trans-unit>
+      <trans-unit id="footnote">
+        <source>Enterprise AI Enablement by CUBIG</source>
+        <target>Enterprise AI Enablement von CUBIG</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

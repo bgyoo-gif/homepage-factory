@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="llm-capsule/output/framer/downloads" source-language="en" target-language="de" datatype="x-tsx">
+    <header>
+      <note>LLM Capsule Downloads page — German translation</note>
+    </header>
+    <body>
+
+      <!-- Section01_Hero -->
+      <trans-unit id="s01.title" resname="Section01_Hero.title">
+        <source>Documentation &amp;</source>
+        <target>Dokumentation &amp;</target>
+      </trans-unit>
+      <trans-unit id="s01.titleHighlight" resname="Section01_Hero.titleHighlight">
+        <source>Downloads</source>
+        <target>Downloads</target>
+      </trans-unit>
+      <trans-unit id="s01.description" resname="Section01_Hero.description">
+        <source>Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation.</source>
+        <target>Architektur-Kurzberichte, technische Dokumentation und Deployment-Leitfaden zur Evaluierung der KI-Einführung im Unternehmen.</target>
+      </trans-unit>
+
+      <!-- Section02_DownloadsGrid -->
+      <trans-unit id="s02.sectionTitle" resname="Section02_DownloadsGrid.sectionTitle">
+        <source>Available</source>
+        <target>Verfügbare</target>
+      </trans-unit>
+      <trans-unit id="s02.sectionTitleHighlight" resname="Section02_DownloadsGrid.sectionTitleHighlight">
+        <source>Resources</source>
+        <target>Ressourcen</target>
+      </trans-unit>
+      <trans-unit id="s02.sectionDescription" resname="Section02_DownloadsGrid.sectionDescription">
+        <source>Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation.</source>
+        <target>Architektur-Kurzberichte, technische Dokumentation und Deployment-Leitfaden zur Evaluierung der KI-Einführung im Unternehmen.</target>
+      </trans-unit>
+      <trans-unit id="s02.card1Title" resname="Section02_DownloadsGrid.card1Title">
+        <source>Architecture Brief</source>
+        <target>Architektur-Kurzübersicht</target>
+      </trans-unit>
+      <trans-unit id="s02.card1Description" resname="Section02_DownloadsGrid.card1Description">
+        <source>Technical overview of the LLM Capsule architecture -- encapsulation, trust boundary, restoration, and deployment models.</source>
+        <target>Technische Übersicht der LLM Capsule-Architektur -- Encapsulation, Trust Boundary, Restoration und Deployment-Modelle.</target>
+      </trans-unit>
+      <trans-unit id="s02.card1ButtonLabel" resname="Section02_DownloadsGrid.card1ButtonLabel">
+        <source>Download PDF (coming soon)</source>
+        <target>PDF herunterladen (in Kürze verfügbar)</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Title" resname="Section02_DownloadsGrid.card2Title">
+        <source>Product Overview</source>
+        <target>Produktübersicht</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Description" resname="Section02_DownloadsGrid.card2Description">
+        <source>Executive summary of LLM Capsule capabilities, competitive positioning, and enterprise use cases.</source>
+        <target>Management-Zusammenfassung der LLM Capsule-Funktionen, Wettbewerbspositionierung und Anwendungsfälle im Unternehmen.</target>
+      </trans-unit>
+      <trans-unit id="s02.card2ButtonLabel" resname="Section02_DownloadsGrid.card2ButtonLabel">
+        <source>Download PDF (coming soon)</source>
+        <target>PDF herunterladen (in Kürze verfügbar)</target>
+      </trans-unit>
+      <trans-unit id="s02.card3Title" resname="Section02_DownloadsGrid.card3Title">
+        <source>Integration Guide</source>
+        <target>Integrationsleitfaden</target>
+      </trans-unit>
+      <trans-unit id="s02.card3Description" resname="Section02_DownloadsGrid.card3Description">
+        <source>Technical integration documentation for enterprise deployment -- API reference, configuration, and deployment instructions.</source>
+        <target>Technische Integrationsdokumentation für das Enterprise-Deployment -- API-Referenz, Konfiguration und Deployment-Anleitung.</target>
+      </trans-unit>
+      <trans-unit id="s02.card3ButtonLabel" resname="Section02_DownloadsGrid.card3ButtonLabel">
+        <source>Download PDF (coming soon)</source>
+        <target>PDF herunterladen (in Kürze verfügbar)</target>
+      </trans-unit>
+
+      <!-- Section03_CTABand -->
+      <trans-unit id="s03.title" resname="Section03_CTABand.title">
+        <source>See how</source>
+        <target>Erleben Sie</target>
+      </trans-unit>
+      <trans-unit id="s03.titleProduct" resname="Section03_CTABand.titleProduct" translate="no">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+        <note>Product name — do not translate</note>
+      </trans-unit>
+      <trans-unit id="s03.description" resname="Section03_CTABand.description">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Evaluierungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Workflows.</target>
+      </trans-unit>
+      <trans-unit id="s03.cta1Label" resname="Section03_CTABand.cta1Label">
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+      <trans-unit id="s03.cta2Label" resname="Section03_CTABand.cta2Label" translate="no">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+        <note>CTA button label — do not translate</note>
+      </trans-unit>
+      <trans-unit id="s03.cta3Label" resname="Section03_CTABand.cta3Label">
+        <source>Available on AWS Marketplace</source>
+        <target>Verfügbar auf AWS Marketplace</target>
+        <note>AWS Marketplace is a service name — do not translate</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

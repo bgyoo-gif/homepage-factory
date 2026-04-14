@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="on-premise-vs-cloud-ai-data-protection">
+    <body>
+      <trans-unit id="title">
+        <source>See how LLM Capsule works with your data</source>
+        <target>LLM Capsule이 실제 데이터에서 어떻게 작동하는지 확인하세요</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>문서, 배포 조건, 평가 기준을 준비해 주세요. 실제 워크플로우에서 시연합니다.</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbHome">
+        <source>Home</source>
+        <target>홈</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbLearn">
+        <source>Learn</source>
+        <target>학습</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbCurrent">
+        <source>On-Premise vs Cloud AI Data Protection</source>
+        <target>온프레미스 vs 클라우드 AI 데이터 보호</target>
+      </trans-unit>
+      <trans-unit id="sectionLabel">
+        <source>Related</source>
+        <target>관련 페이지</target>
+      </trans-unit>
+      <trans-unit id="paragraph1">
+        <source>Enterprises operate in different infrastructure environments. Defense and intelligence agencies require air-gapped deployments. Financial institutions may mandate on-premise data processing. Cloud-native organizations want SaaS-based solutions. Many enterprises operate hybrid environments where different data types require different deployment models.</source>
+        <target>기업은 다양한 인프라 환경에서 운영됩니다. 국방 및 정보 기관은 망분리 배포를 요구합니다. 금융 기관은 온프레미스 데이터 처리를 의무화할 수 있습니다. 클라우드 네이티브 조직은 SaaS 기반 솔루션을 원합니다. 많은 기업이 데이터 유형에 따라 서로 다른 배포 모델이 필요한 하이브리드 환경을 운영합니다.</target>
+      </trans-unit>
+      <trans-unit id="paragraph2">
+        <source>AI data protection must adapt to the enterprise's infrastructure requirements, not force infrastructure changes.</source>
+        <target>AI 데이터 보호는 인프라 변경을 강요하는 것이 아니라, 기업의 인프라 요구사항에 맞게 적응해야 합니다.</target>
+      </trans-unit>
+      <trans-unit id="step1Title">
+        <source>On-premise deployment.</source>
+        <target>온프레미스 배포.</target>
+      </trans-unit>
+      <trans-unit id="step1Body">
+        <source>The encapsulation engine runs entirely within the enterprise data center. Sensitive data never traverses any network boundary. The AI enablement data layer operates within existing security perimeters. Only encapsulated data is sent to external AI services when needed.</source>
+        <target>Encapsulation 엔진이 기업 데이터 센터 내에서 완전히 실행됩니다. 민감 데이터는 네트워크 경계를 넘지 않습니다. AI 활성화 데이터 레이어가 기존 보안 경계 내에서 작동합니다. 필요한 경우에만 Encapsulation된 데이터가 외부 AI 서비스로 전송됩니다.</target>
+      </trans-unit>
+      <trans-unit id="step2Title">
+        <source>Air-gapped deployment.</source>
+        <target>망분리 배포.</target>
+      </trans-unit>
+      <trans-unit id="step2Body">
+        <source>For the most sensitive environments, LLM Capsule can operate within air-gapped networks. Documents are encapsulated locally, transferred to an AI-connected environment through controlled channels, processed, and results are transferred back for local restoration.</source>
+        <target>가장 민감한 환경에서 LLM Capsule은 망분리 네트워크 내에서 운영될 수 있습니다. 문서가 로컬에서 Encapsulation되고, 통제된 채널을 통해 AI 연결 환경으로 전송되어 처리된 후, 결과가 Restoration을 위해 다시 전송됩니다.</target>
+      </trans-unit>
+      <trans-unit id="step3Title">
+        <source>Cloud deployment.</source>
+        <target>클라우드 배포.</target>
+      </trans-unit>
+      <trans-unit id="step3Body">
+        <source>Available on AWS Marketplace. The encapsulation layer runs within the enterprise's cloud account or VPC. Data remains within the enterprise's cloud boundary while AI services are accessed externally.</source>
+        <target>AWS Marketplace에서 이용 가능합니다. Encapsulation 레이어가 기업의 클라우드 계정 또는 VPC 내에서 실행됩니다. AI 서비스는 외부에서 접근하면서 데이터는 기업의 클라우드 경계 내에 유지됩니다.</target>
+      </trans-unit>
+      <trans-unit id="step4Title">
+        <source>Hybrid deployment.</source>
+        <target>하이브리드 배포.</target>
+      </trans-unit>
+      <trans-unit id="step4Body">
+        <source>Different document types or sensitivity levels route through different deployment modes within a single LLM Capsule instance.</source>
+        <target>단일 LLM Capsule 인스턴스 내에서 문서 유형 또는 민감도 수준에 따라 서로 다른 배포 모드로 라우팅됩니다.</target>
+      </trans-unit>
+      <trans-unit id="step5Title">
+        <source>Embedded integration.</source>
+        <target>임베디드 통합.</target>
+      </trans-unit>
+      <trans-unit id="step5Body">
+        <source>LLM Capsule can be embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within the enterprise's own software stack.</source>
+        <target>LLM Capsule은 기존 기업 애플리케이션 및 플랫폼에 임베디드되어, 기업 자체 소프트웨어 스택 내에서 AI 활성화 데이터 레이어로 운영될 수 있습니다.</target>
+      </trans-unit>
+      <trans-unit id="sectionLabelHighlight">
+        <source>Example</source>
+        <target>사례</target>
+      </trans-unit>
+      <trans-unit id="cardTitle">
+        <source>Government Agency — Air-Gapped Deployment</source>
+        <target>정부 기관 — 망분리 배포</target>
+      </trans-unit>
+      <trans-unit id="cardParagraph1">
+        <source>A government agency needs AI to process classified briefing documents for automated summarization. The classified network has no external connectivity.</source>
+        <target>정부 기관이 기밀 브리핑 문서의 자동 요약 처리를 위해 AI가 필요합니다. 기밀 네트워크에는 외부 연결이 없습니다.</target>
+      </trans-unit>
+      <trans-unit id="cardParagraph2">
+        <source>encapsulates documents on the classified network. Encapsulated data is transferred to the AI-connected environment through an approved data diode. AI generates summaries. Results are transferred back and restored on the classified network, producing classified-ready summaries.</source>
+        <target>기밀 네트워크에서 문서를 Encapsulation합니다. Encapsulation된 데이터가 승인된 데이터 다이오드를 통해 AI 연결 환경으로 전송됩니다. AI가 요약을 생성합니다. 결과가 다시 전송되어 기밀 네트워크에서 Restoration되며, 기밀 등급에 맞는 요약서가 생성됩니다.</target>
+      </trans-unit>
+      <trans-unit id="q1Title">
+        <source>Does LLM Capsule work on-premise?</source>
+        <target>LLM Capsule은 온프레미스에서 작동합니까?</target>
+      </trans-unit>
+      <trans-unit id="q1Answer">
+        <source>Yes. LLM Capsule supports on-premise, air-gapped, cloud, hybrid, and embedded deployment models. The encapsulation engine runs entirely within your environment regardless of deployment type.</source>
+        <target>네. LLM Capsule은 온프레미스, 망분리, 클라우드, 하이브리드, 임베디드 배포 모델을 지원합니다. Encapsulation 엔진은 배포 유형에 관계없이 고객 환경 내에서 완전히 실행됩니다.</target>
+      </trans-unit>
+      <trans-unit id="q2Title">
+        <source>Is LLM Capsule available on AWS Marketplace?</source>
+        <target>LLM Capsule은 AWS Marketplace에서 이용 가능합니까?</target>
+      </trans-unit>
+      <trans-unit id="q2Answer">
+        <source>Yes. LLM Capsule is available on AWS Marketplace for cloud deployment within your AWS account.</source>
+        <target>네. LLM Capsule은 AWS 계정 내 클라우드 배포를 위해 AWS Marketplace에서 이용 가능합니다.</target>
+      </trans-unit>
+      <trans-unit id="link1Title">
+        <source>Product Overview</source>
+        <target>제품 개요</target>
+      </trans-unit>
+      <trans-unit id="link2Title">
+        <source>Architecture</source>
+        <target>아키텍처</target>
+      </trans-unit>
+      <trans-unit id="link3Title">
+        <source>Trust &amp; Compliance</source>
+        <target>신뢰 &amp; 컴플라이언스</target>
+      </trans-unit>
+      <trans-unit id="link4Title">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="btn1Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="btn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnote1Label">
+        <source>Download Architecture Brief</source>
+        <target>아키텍처 브리프 다운로드</target>
+      </trans-unit>
+      <trans-unit id="footnote2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

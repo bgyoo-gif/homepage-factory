@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="llm-capsule/output/framer/request-pov/RequestPov.tsx"
+        source-language="en" target-language="ja"
+        datatype="x-tsx">
+    <header>
+      <note>LLM Capsule — Request PoV page. Japanese translation.</note>
+    </header>
+    <body>
+
+      <!-- Hero -->
+      <trans-unit id="heroTitle" resname="heroTitle">
+        <source>Request a Proof of</source>
+        <target>Request a Proof of</target>
+        <note>Proof of Value(PoV)は翻訳禁止用語。CTAラベル原文維持。</note>
+      </trans-unit>
+      <trans-unit id="heroTitleHighlight" resname="heroTitleHighlight">
+        <source>Value</source>
+        <target>Value</target>
+        <note>Proof of Valueの一部。原文維持。</note>
+      </trans-unit>
+      <trans-unit id="heroDescription" resname="heroDescription">
+        <source>Test LLM Capsule using your own enterprise documents and workflows. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.</source>
+        <target>お客様の実際の文書とワークフローでLLM Capsuleをテストできます。実データ、お客様の環境、コンプライアンス要件に基づいて企業AIの導入を実証します。</target>
+      </trans-unit>
+
+      <!-- Process Column -->
+      <trans-unit id="processTitle" resname="processTitle">
+        <source>What to</source>
+        <target>進行</target>
+      </trans-unit>
+      <trans-unit id="processTitleHighlight" resname="processTitleHighlight">
+        <source>expect</source>
+        <target>プロセス</target>
+      </trans-unit>
+      <trans-unit id="processDescription" resname="processDescription">
+        <source>A structured 4-step process from discovery to results, designed to demonstrate real value on your actual data.</source>
+        <target>ディスカバリーから結果まで、体系的な4ステップのプロセスで、実データに基づく価値を実証します。</target>
+      </trans-unit>
+
+      <!-- Tab Labels -->
+      <trans-unit id="tab1Label" resname="tab1Label">
+        <source>Discovery Call</source>
+        <target>ディスカバリーコール</target>
+      </trans-unit>
+      <trans-unit id="tab2Label" resname="tab2Label">
+        <source>Technical Setup</source>
+        <target>技術環境構築</target>
+      </trans-unit>
+      <trans-unit id="tab3Label" resname="tab3Label">
+        <source>Document Testing</source>
+        <target>ドキュメントテスト</target>
+      </trans-unit>
+      <trans-unit id="tab4Label" resname="tab4Label">
+        <source>Results Review</source>
+        <target>結果レビュー</target>
+      </trans-unit>
+
+      <!-- Tab Content -->
+      <trans-unit id="tab1Title" resname="tab1Title">
+        <source>Discovery Call</source>
+        <target>ディスカバリーコール</target>
+      </trans-unit>
+      <trans-unit id="tab1Description" resname="tab1Description">
+        <source>We understand your document types, sensitivity requirements, deployment constraints, and AI use cases. We identify the highest-value workflow to test.</source>
+        <target>お客様の文書タイプ、機密データ要件、デプロイ制約、AIユースケースを把握します。最も価値の高いワークフローを選定します。</target>
+      </trans-unit>
+      <trans-unit id="tab2Title" resname="tab2Title">
+        <source>Technical Setup</source>
+        <target>技術環境構築</target>
+      </trans-unit>
+      <trans-unit id="tab2Description" resname="tab2Description">
+        <source>LLM Capsule is deployed in your environment (on-premise, cloud, or hybrid). We configure encapsulation policies to match your sensitivity requirements.</source>
+        <target>LLM Capsuleをお客様の環境（オンプレミス、クラウド、またはハイブリッド）にデプロイします。機密データ要件に合わせてEncapsulationポリシーを構成します。</target>
+      </trans-unit>
+      <trans-unit id="tab3Title" resname="tab3Title">
+        <source>Document Testing</source>
+        <target>ドキュメントテスト</target>
+      </trans-unit>
+      <trans-unit id="tab3Description" resname="tab3Description">
+        <source>Your real enterprise documents are processed through the full encapsulation, AI, and restoration pipeline. You evaluate output quality, protection coverage, and workflow integration.</source>
+        <target>お客様の実際の文書がEncapsulation、AI、Restorationの全パイプラインで処理されます。出力品質、保護カバレッジ、ワークフロー統合を評価いただけます。</target>
+      </trans-unit>
+      <trans-unit id="tab4Title" resname="tab4Title">
+        <source>Results Review</source>
+        <target>結果レビュー</target>
+      </trans-unit>
+      <trans-unit id="tab4Description" resname="tab4Description">
+        <source>We present detection accuracy, workflow accuracy, response similarity, and processing performance metrics measured on your specific workload.</source>
+        <target>お客様のワークロードで測定された検出精度、ワークフロー精度、応答類似度、処理パフォーマンス指標を提示します。</target>
+      </trans-unit>
+
+      <!-- Banner -->
+      <trans-unit id="bannerText" resname="bannerText">
+        <source>Typical PoV duration: 2-4 weeks. Bring your documents, deployment constraints, and evaluation criteria.</source>
+        <target>一般的なPoV所要期間：2〜4週間。文書、デプロイ制約、評価基準をご準備ください。</target>
+      </trans-unit>
+
+      <!-- Form Card -->
+      <trans-unit id="formCardTitle" resname="formCardTitle">
+        <source>Request a Demo</source>
+        <target>デモのお申し込み</target>
+      </trans-unit>
+      <trans-unit id="formNameLabel" resname="formNameLabel">
+        <source>Name</source>
+        <target>氏名</target>
+      </trans-unit>
+      <trans-unit id="formNamePlaceholder" resname="formNamePlaceholder">
+        <source>Full name</source>
+        <target>氏名</target>
+      </trans-unit>
+      <trans-unit id="formEmailLabel" resname="formEmailLabel">
+        <source>Work Email</source>
+        <target>業務用メールアドレス</target>
+      </trans-unit>
+      <trans-unit id="formEmailPlaceholder" resname="formEmailPlaceholder">
+        <source>name@company.com</source>
+        <target>name@company.com</target>
+      </trans-unit>
+      <trans-unit id="formCompanyLabel" resname="formCompanyLabel">
+        <source>Company</source>
+        <target>会社名</target>
+      </trans-unit>
+      <trans-unit id="formCompanyPlaceholder" resname="formCompanyPlaceholder">
+        <source>Company name</source>
+        <target>会社名</target>
+      </trans-unit>
+      <trans-unit id="formTitleLabel" resname="formTitleLabel">
+        <source>Job Title</source>
+        <target>役職</target>
+      </trans-unit>
+      <trans-unit id="formTitlePlaceholder" resname="formTitlePlaceholder">
+        <source>Your role</source>
+        <target>ご担当</target>
+      </trans-unit>
+      <trans-unit id="formIndustryLabel" resname="formIndustryLabel">
+        <source>Industry</source>
+        <target>業種</target>
+      </trans-unit>
+      <trans-unit id="formIndustryDefault" resname="formIndustryDefault">
+        <source>Select industry</source>
+        <target>業種を選択</target>
+      </trans-unit>
+      <trans-unit id="formUseCaseLabel" resname="formUseCaseLabel">
+        <source>Primary Use Case</source>
+        <target>主なユースケース</target>
+      </trans-unit>
+      <trans-unit id="formUseCasePlaceholder" resname="formUseCasePlaceholder">
+        <source>Describe your primary AI use case and the types of documents you need to process.</source>
+        <target>主なAIユースケースと処理対象の文書タイプをご記入ください。</target>
+      </trans-unit>
+      <trans-unit id="formSubmitLabel" resname="formSubmitLabel">
+        <source>Submit Request</source>
+        <target>申し込む</target>
+      </trans-unit>
+      <trans-unit id="formFootnote" resname="formFootnote">
+        <source>We respond to all PoV requests within 1 business day.</source>
+        <target>すべてのPoVリクエストに1営業日以内にご回答いたします。</target>
+      </trans-unit>
+
+      <!-- CTA Band -->
+      <trans-unit id="ctaTitle" resname="ctaTitle">
+        <source>See how LLM Capsule works with your data</source>
+        <target>LLM Capsuleがお客様のデータでどのように機能するかをご確認ください</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription" resname="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>文書、デプロイ制約、評価基準をご準備ください。お客様の実際のワークフローで実証します。</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn1Label" resname="ctaBtn1Label">
+        <source>Request a Demo</source>
+        <target>デモのお申し込み</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn2Label" resname="ctaBtn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+        <note>CTAボタンラベル。翻訳禁止用語。</note>
+      </trans-unit>
+      <trans-unit id="ctaFootnote1Label" resname="ctaFootnote1Label">
+        <source>Download Architecture Brief</source>
+        <target>アーキテクチャブリーフをダウンロード</target>
+      </trans-unit>
+      <trans-unit id="ctaFootnote2Label" resname="ctaFootnote2Label">
+        <source>Available on AWS Marketplace</source>
+        <target>AWS Marketplaceで利用可能</target>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="resources">
+    <body>
+      <trans-unit id="heroTitle">
+        <source>Enterprise AI Enablement</source>
+        <target>KI-Einführung im Unternehmen</target>
+      </trans-unit>
+      <trans-unit id="heroTitleBrand">
+        <source>Resources</source>
+        <target>Ressourcen</target>
+      </trans-unit>
+      <trans-unit id="heroDescription">
+        <source>Technical documentation, learning resources, glossary, and downloads for enterprise AI enablement with LLM Capsule.</source>
+        <target>Technische Dokumentation, Lernressourcen, Glossar und Downloads zur KI-Einführung im Unternehmen mit LLM Capsule.</target>
+      </trans-unit>
+      <trans-unit id="s2SectionTitle">
+        <source>Explore</source>
+        <target>Entdecken</target>
+      </trans-unit>
+      <trans-unit id="s2SectionTitleBrand">
+        <source>Resources</source>
+        <target>Ressourcen</target>
+      </trans-unit>
+      <trans-unit id="s2SectionDescription">
+        <source>Browse documentation, learning materials, key terms, and trust information.</source>
+        <target>Durchsuchen Sie Dokumentation, Lernmaterialien, Schlüsselbegriffe und Vertrauensinformationen.</target>
+      </trans-unit>
+      <trans-unit id="s2Card1Title">
+        <source>Learn</source>
+        <target>Learn</target>
+      </trans-unit>
+      <trans-unit id="s2Card1Description">
+        <source>In-depth articles on enterprise AI enablement, secure LLM usage, structure-preserving processing, and restorable workflows.</source>
+        <target>Ausführliche Artikel zur KI-Einführung im Unternehmen, sicheren LLM-Nutzung, strukturerhaltenden Verarbeitung und Restorable Workflows.</target>
+      </trans-unit>
+      <trans-unit id="s2Card1BtnLabel">
+        <source>Browse Learn →</source>
+        <target>Learn ansehen →</target>
+      </trans-unit>
+      <trans-unit id="s2Card2Title">
+        <source>Glossary</source>
+        <target>Glossar</target>
+      </trans-unit>
+      <trans-unit id="s2Card2Description">
+        <source>Definitions of key concepts — restoration, zero exposure, enterprise context control, and structure-preserving processing.</source>
+        <target>Definitionen der Schlüsselkonzepte — Restoration, Zero Exposure, Enterprise Context Control und strukturerhaltende Verarbeitung.</target>
+      </trans-unit>
+      <trans-unit id="s2Card2BtnLabel">
+        <source>Browse Glossary →</source>
+        <target>Glossar ansehen →</target>
+      </trans-unit>
+      <trans-unit id="s2Card3Title">
+        <source>Downloads</source>
+        <target>Downloads</target>
+      </trans-unit>
+      <trans-unit id="s2Card3Description">
+        <source>Architecture briefs, technical documentation, and deployment guides for enterprise evaluation.</source>
+        <target>Architektur-Überblicke, technische Dokumentation und Deployment-Leitfäden für die Unternehmensbewertung.</target>
+      </trans-unit>
+      <trans-unit id="s2Card3BtnLabel">
+        <source>Browse Downloads →</source>
+        <target>Downloads ansehen →</target>
+      </trans-unit>
+      <trans-unit id="s2Card4Title">
+        <source>Trust Center</source>
+        <target>Trust Center</target>
+      </trans-unit>
+      <trans-unit id="s2Card4Description">
+        <source>Security certifications, compliance documentation, and audit information.</source>
+        <target>Sicherheitszertifizierungen, Compliance-Dokumentation und Audit-Informationen.</target>
+      </trans-unit>
+      <trans-unit id="s2Card4BtnLabel">
+        <source>Browse Trust Center →</source>
+        <target>Trust Center ansehen →</target>
+      </trans-unit>
+      <trans-unit id="s3SectionTitle">
+        <source>Core guides for enterprise AI</source>
+        <target>Grundlegende Leitfäden für Unternehmens-KI</target>
+      </trans-unit>
+      <trans-unit id="s3SectionTitleBrand">
+        <source>enablement</source>
+        <target>Einführung</target>
+      </trans-unit>
+      <trans-unit id="s3SectionDescription">
+        <source>Start with the documents that explain the operating model, the failure of redaction-based approaches, and the architecture behind usable AI outputs.</source>
+        <target>Beginnen Sie mit den Dokumenten, die das Betriebsmodell, die Grenzen schwärzungsbasierter Ansätze und die Architektur hinter nutzbaren KI-Ausgaben erläutern.</target>
+      </trans-unit>
+      <trans-unit id="s3Guide1Title">
+        <source>Secure Enterprise AI Data Workflows</source>
+        <target>Sichere KI-Datenworkflows im Unternehmen</target>
+      </trans-unit>
+      <trans-unit id="s3Guide1Description">
+        <source>The end-to-end operating model for protecting sensitive data across AI workflows while restoring usable outputs locally.</source>
+        <target>Das End-to-End-Betriebsmodell zum Schutz sensibler Daten über KI-Workflows hinweg bei gleichzeitiger lokaler Wiederherstellung nutzbarer Ausgaben.</target>
+      </trans-unit>
+      <trans-unit id="s3Guide1BtnLabel">
+        <source>Read guide →</source>
+        <target>Leitfaden lesen →</target>
+      </trans-unit>
+      <trans-unit id="s3Guide2Title">
+        <source>What Is an AI Data Capsule?</source>
+        <target>Was ist eine AI Data Capsule?</target>
+      </trans-unit>
+      <trans-unit id="s3Guide2Description">
+        <source>The core concept behind local encapsulation, protected AI processing, and local restoration.</source>
+        <target>Das Grundkonzept hinter lokaler Encapsulation, geschützter KI-Verarbeitung und lokaler Restoration.</target>
+      </trans-unit>
+      <trans-unit id="s3Guide2BtnLabel">
+        <source>Read guide →</source>
+        <target>Leitfaden lesen →</target>
+      </trans-unit>
+      <trans-unit id="s3Guide3Title">
+        <source>Why Redaction Breaks Enterprise AI Workflows</source>
+        <target>Warum Schwärzung KI-Workflows im Unternehmen zerstört</target>
+      </trans-unit>
+      <trans-unit id="s3Guide3Description">
+        <source>Why masking and redaction tools fail in AI workflows, and what replaces them in enterprise production settings.</source>
+        <target>Warum Maskierungs- und Schwärzungswerkzeuge in KI-Workflows versagen und was sie in Produktionsumgebungen ersetzt.</target>
+      </trans-unit>
+      <trans-unit id="s3Guide3BtnLabel">
+        <source>Read guide →</source>
+        <target>Leitfaden lesen →</target>
+      </trans-unit>
+      <trans-unit id="ctaTitle">
+        <source>See how LLM Capsule works with your data</source>
+        <target>Erleben Sie, wie LLM Capsule mit Ihren Daten arbeitet</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Workflows.</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn1Label">
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="ctaSecBtn1Label">
+        <source>Download Architecture Brief</source>
+        <target>Architektur-Überblick herunterladen</target>
+      </trans-unit>
+      <trans-unit id="ctaSecBtn2Label">
+        <source>Available on AWS Marketplace</source>
+        <target>Verfügbar auf AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

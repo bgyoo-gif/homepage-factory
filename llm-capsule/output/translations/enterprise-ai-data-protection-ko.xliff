@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="enterprise-ai-data-protection">
+    <body>
+      <!-- Section 01: Hero -->
+      <trans-unit id="heroTitle">
+        <source>Enterprise AI Enablement</source>
+        <target>기업 AI 활성화</target>
+      </trans-unit>
+      <trans-unit id="heroDescription">
+        <source>'s AI enablement data layer uses encapsulation, zero exposure, and local restoration to enable enterprises to adopt AI without data risk.</source>
+        <target>의 AI 활성화 데이터 레이어는 Encapsulation, 제로 노출, 로컬 Restoration을 통해 기업이 데이터 위험 없이 AI를 도입할 수 있도록 합니다.</target>
+      </trans-unit>
+      <!-- Section 02: Problem -->
+      <trans-unit id="sectionLabelProblem">
+        <source>Problem</source>
+        <target>문제</target>
+      </trans-unit>
+      <trans-unit id="problemParagraph1">
+        <source>Every enterprise that sends data to an external AI service creates a data exposure event. Even when AI providers offer data processing agreements and claim not to use customer data for training, the data still transits external infrastructure, is processed by external compute, and generates logs and metadata in external systems.</source>
+        <target>외부 AI 서비스에 데이터를 전송하는 모든 기업은 데이터 노출 이벤트를 생성합니다. AI 제공자가 데이터 처리 계약을 제공하고 고객 데이터를 학습에 사용하지 않는다고 주장하더라도, 데이터는 여전히 외부 인프라를 경유하고 외부 컴퓨팅으로 처리되며 외부 시스템에 로그와 메타데이터를 생성합니다.</target>
+      </trans-unit>
+      <trans-unit id="problemParagraph2">
+        <source>For regulated enterprises, this exposure is often non-negotiable — not because of trust issues with AI providers, but because of regulatory mandates, contractual obligations, and internal governance requirements that prohibit sensitive data from leaving controlled environments.</source>
+        <target>규제 대상 기업에서 이 노출은 종종 타협할 수 없습니다. AI 제공자와의 신뢰 문제가 아니라, 민감 데이터의 통제된 환경 이탈을 금지하는 규제 의무, 계약상 의무, 내부 거버넌스 요구사항 때문입니다.</target>
+      </trans-unit>
+      <!-- Section 03: Definition -->
+      <trans-unit id="sectionLabelDefinition">
+        <source>Definition</source>
+        <target>정의</target>
+      </trans-unit>
+      <trans-unit id="definitionHighlight">
+        <source>Enterprise AI Enablement</source>
+        <target>기업 AI 활성화</target>
+      </trans-unit>
+      <trans-unit id="definitionText">
+        <source> operates as an AI enablement data layer and plugin — protecting sensitive information through local encapsulation, structure-preserving processing, and local restoration while enabling full AI-powered workflows across any LLM.</source>
+        <target>는 AI 활성화 데이터 레이어이자 플러그인으로 작동합니다. 로컬 Encapsulation, 구조 보존 처리, 로컬 Restoration을 통해 민감 정보를 보호하면서 모든 LLM에 걸쳐 완전한 AI 기반 워크플로우를 가능하게 합니다.</target>
+      </trans-unit>
+      <!-- Section 04: Explanation -->
+      <trans-unit id="sectionLabelExplanation">
+        <source>Explanation</source>
+        <target>설명</target>
+      </trans-unit>
+      <trans-unit id="explanationIntro">
+        <source> enables enterprise AI adoption through a 3+2 architecture — three core capabilities and two extended capabilities:</source>
+        <target>은 3+2 아키텍처 — 3개의 핵심 기능과 2개의 확장 기능 — 를 통해 기업 AI 도입을 지원합니다:</target>
+      </trans-unit>
+      <trans-unit id="core1Label">
+        <source>Core 1: Zero Exposure.</source>
+        <target>핵심 1: 제로 노출.</target>
+      </trans-unit>
+      <trans-unit id="core1Text">
+        <source>Original sensitive data never leaves the enterprise environment. Only encapsulated representations cross the trust boundary to AI services. The AI provider processes useful data but cannot reconstruct original sensitive values.</source>
+        <target>원본 민감 데이터가 기업 환경을 떠나지 않습니다. Encapsulation된 표현만 신뢰 경계를 넘어 AI 서비스로 전달됩니다. AI 제공자는 유용한 데이터를 처리하지만 원본 민감 값을 재구성할 수 없습니다.</target>
+      </trans-unit>
+      <trans-unit id="core2Label">
+        <source>Core 2: Restoration.</source>
+        <target>핵심 2: Restoration.</target>
+      </trans-unit>
+      <trans-unit id="core2Text">
+        <source>AI results are automatically restored locally with original enterprise data. The mapping between encapsulated and original values is stored locally and applied to AI outputs within the enterprise environment. This produces enterprise-ready results without manual reconstruction.</source>
+        <target>AI 결과가 원본 기업 데이터로 로컬에서 자동 복원됩니다. Encapsulation된 값과 원본 값 사이의 매핑이 로컬에 저장되고 기업 환경 내에서 AI 출력에 적용됩니다. 수동 재구성 없이 기업용 결과를 생성합니다.</target>
+      </trans-unit>
+      <trans-unit id="core3Label">
+        <source>Core 3: Enterprise Context.</source>
+        <target>핵심 3: 기업 컨텍스트.</target>
+      </trans-unit>
+      <trans-unit id="core3Text">
+        <source>Sensitive elements are identified using context-aware data control and replaced with structure-preserving representations. Unlike masking, encapsulation is reversible and policy-driven — what counts as sensitive is configurable per department, document type, and workflow.</source>
+        <target>컨텍스트 인식 데이터 제어로 민감 요소를 식별하고 구조 보존 표현으로 대체합니다. 마스킹과 달리 Encapsulation은 가역적이며 정책 기반입니다. 무엇을 민감 데이터로 간주할지 부서별, 문서 유형별, 워크플로우별로 설정할 수 있습니다.</target>
+      </trans-unit>
+      <trans-unit id="ext1Label">
+        <source>+1: Structure-Preserving.</source>
+        <target>+1: 구조 보존.</target>
+      </trans-unit>
+      <trans-unit id="ext1Text">
+        <source>Document layout, entity relationships, and semantic context are maintained during encapsulation. AI models receive structurally intact documents, producing high-quality outputs.</source>
+        <target>Encapsulation 과정에서 문서 레이아웃, 엔티티 관계, 의미적 맥락이 유지됩니다. AI 모델이 구조적으로 온전한 문서를 수신하여 고품질 출력을 생성합니다.</target>
+      </trans-unit>
+      <trans-unit id="ext2Label">
+        <source>+2: Cross-Model Execution.</source>
+        <target>+2: 크로스 모델 실행.</target>
+      </trans-unit>
+      <trans-unit id="ext2Text">
+        <source>Because protection operates at the data layer before transmission, it works with any external AI service — ChatGPT, Claude, Gemini, or any LLM API — without model-specific integration.</source>
+        <target>보호가 전송 전 데이터 레이어에서 작동하므로 모델별 통합 없이 ChatGPT, Claude, Gemini 등 모든 외부 AI 서비스 및 LLM API에서 작동합니다.</target>
+      </trans-unit>
+      <trans-unit id="bannerText">
+        <source> is an AI enablement data layer and plugin. It enables AI adoption by protecting data at the data layer — not by blocking AI, but by making AI safe to use on real enterprise data.</source>
+        <target>은 AI 활성화 데이터 레이어이자 플러그인입니다. AI를 차단하는 것이 아니라 데이터 레이어에서 데이터를 보호하여 실제 기업 데이터에서 AI를 안전하게 사용할 수 있도록 합니다.</target>
+      </trans-unit>
+      <!-- Section 05: Enterprise Examples -->
+      <trans-unit id="sectionLabelExamples">
+        <source>Examples</source>
+        <target>사례</target>
+      </trans-unit>
+      <trans-unit id="card1Title">
+        <source>Public Sector: Citizen Services AI</source>
+        <target>공공부문: 시민 서비스 AI</target>
+      </trans-unit>
+      <trans-unit id="card1Text">
+        <source>A government agency uses AI to process citizen benefit applications. Each application contains PII, income data, and residency information. Enterprise AI data protection ensures no citizen data leaves the government environment while AI automates eligibility assessment and case routing.</source>
+        <target>정부 기관이 시민 복지 신청을 AI로 처리합니다. 각 신청에는 개인식별정보, 소득 데이터, 거주 정보가 포함됩니다. 기업 AI 데이터 보호를 통해 AI가 자격 심사와 케이스 라우팅을 자동화하는 동안 시민 데이터가 정부 환경을 떠나지 않습니다.</target>
+      </trans-unit>
+      <trans-unit id="card2Title">
+        <source>Telecom: Network Security Intelligence</source>
+        <target>통신: 네트워크 보안 인텔리전스</target>
+      </trans-unit>
+      <trans-unit id="card2Text">
+        <source>A telecom operator uses AI to analyze network incident reports that contain customer data, infrastructure details, and vulnerability information. Encapsulation protects all sensitive elements while AI performs pattern analysis and threat classification.</source>
+        <target>통신사가 고객 데이터, 인프라 세부 정보, 취약점 정보를 포함하는 네트워크 사고 보고서를 AI로 분석합니다. AI가 패턴 분석과 위협 분류를 수행하는 동안 Encapsulation이 모든 민감 요소를 보호합니다.</target>
+      </trans-unit>
+      <!-- Section 06: FAQ -->
+      <trans-unit id="faqTitle">
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </trans-unit>
+      <trans-unit id="faq1Question">
+        <source>What is enterprise AI data protection?</source>
+        <target>기업 AI 데이터 보호란 무엇입니까?</target>
+      </trans-unit>
+      <trans-unit id="faq1Answer">
+        <source>Enterprise AI data protection is a data security discipline that prevents sensitive enterprise information from being exposed to external AI services while still enabling AI-powered workflows. It operates at the data layer through encapsulation, structure preservation, and local restoration.</source>
+        <target>기업 AI 데이터 보호는 AI 기반 워크플로우를 유지하면서 민감한 기업 정보가 외부 AI 서비스에 노출되는 것을 방지하는 데이터 보안 분야입니다. Encapsulation, 구조 보존, 로컬 Restoration을 통해 데이터 레이어에서 작동합니다.</target>
+      </trans-unit>
+      <trans-unit id="faq2Question">
+        <source>How does LLM data protection work?</source>
+        <target>LLM 데이터 보호는 어떻게 작동합니까?</target>
+      </trans-unit>
+      <trans-unit id="faq2Answer">
+        <source>LLM data protection encapsulates sensitive data locally before it reaches any language model. The AI processes structurally intact but protected documents. After processing, outputs are restored locally with original enterprise data.</source>
+        <target>LLM 데이터 보호는 데이터가 언어 모델에 도달하기 전에 민감 데이터를 로컬에서 Encapsulation합니다. AI는 구조적으로 온전하지만 보호된 문서를 처리합니다. 처리 후 출력이 원본 기업 데이터로 로컬에서 복원됩니다.</target>
+      </trans-unit>
+      <trans-unit id="faq3Question">
+        <source>Is LLM Capsule compliant with GDPR?</source>
+        <target>LLM Capsule은 GDPR을 준수합니까?</target>
+      </trans-unit>
+      <trans-unit id="faq3Answer">
+        <source> is designed to support GDPR compliance by ensuring personal data never leaves the enterprise environment during AI processing. Organizations should evaluate their specific compliance requirements with legal counsel.</source>
+        <target>은 AI 처리 중 개인 데이터가 기업 환경을 절대 떠나지 않도록 하여 GDPR 준수를 지원하도록 설계되었습니다. 조직은 법률 자문과 함께 자체 컴플라이언스 요구사항을 평가해야 합니다.</target>
+      </trans-unit>
+      <!-- Section 07: Learn More -->
+      <trans-unit id="learnMoreTitle">
+        <source>Learn More</source>
+        <target>더 알아보기</target>
+      </trans-unit>
+      <!-- Section 08: CTA -->
+      <trans-unit id="ctaTitle">
+        <source>See how</source>
+        <target>확인하세요</target>
+      </trans-unit>
+      <trans-unit id="ctaTitleAfter">
+        <source>works with your data</source>
+        <target>이 고객 데이터에서 어떻게 작동하는지</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>문서, 배포 조건, 평가 기준을 가져오세요. 실제 워크플로우에서 직접 시연합니다.</target>
+      </trans-unit>
+      <trans-unit id="btn1Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="btn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink1Label">
+        <source>Download Architecture Brief</source>
+        <target>아키텍처 브리프 다운로드</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

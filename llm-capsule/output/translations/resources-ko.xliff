@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="resources">
+    <body>
+      <trans-unit id="heroTitle">
+        <source>Enterprise AI Enablement</source>
+        <target>기업 AI 도입</target>
+      </trans-unit>
+      <trans-unit id="heroTitleBrand">
+        <source>Resources</source>
+        <target>리소스</target>
+      </trans-unit>
+      <trans-unit id="heroDescription">
+        <source>Technical documentation, learning resources, glossary, and downloads for enterprise AI enablement with LLM Capsule.</source>
+        <target>LLM Capsule을 활용한 기업 AI 도입을 위한 기술 문서, 학습 리소스, 용어집, 다운로드 자료입니다.</target>
+      </trans-unit>
+      <trans-unit id="s2SectionTitle">
+        <source>Explore</source>
+        <target>탐색</target>
+      </trans-unit>
+      <trans-unit id="s2SectionTitleBrand">
+        <source>Resources</source>
+        <target>리소스</target>
+      </trans-unit>
+      <trans-unit id="s2SectionDescription">
+        <source>Browse documentation, learning materials, key terms, and trust information.</source>
+        <target>문서, 학습 자료, 주요 용어, 신뢰 정보를 탐색하십시오.</target>
+      </trans-unit>
+      <trans-unit id="s2Card1Title">
+        <source>Learn</source>
+        <target>Learn</target>
+      </trans-unit>
+      <trans-unit id="s2Card1Description">
+        <source>In-depth articles on enterprise AI enablement, secure LLM usage, structure-preserving processing, and restorable workflows.</source>
+        <target>기업 AI 도입, 안전한 LLM 사용, 구조 보존 처리, Restorable 워크플로우에 관한 심층 아티클입니다.</target>
+      </trans-unit>
+      <trans-unit id="s2Card1BtnLabel">
+        <source>Browse Learn →</source>
+        <target>Learn 보기 →</target>
+      </trans-unit>
+      <trans-unit id="s2Card2Title">
+        <source>Glossary</source>
+        <target>용어집</target>
+      </trans-unit>
+      <trans-unit id="s2Card2Description">
+        <source>Definitions of key concepts — restoration, zero exposure, enterprise context control, and structure-preserving processing.</source>
+        <target>핵심 개념 정의 — Restoration, Zero Exposure, 기업 컨텍스트 제어, 구조 보존 처리.</target>
+      </trans-unit>
+      <trans-unit id="s2Card2BtnLabel">
+        <source>Browse Glossary →</source>
+        <target>용어집 보기 →</target>
+      </trans-unit>
+      <trans-unit id="s2Card3Title">
+        <source>Downloads</source>
+        <target>다운로드</target>
+      </trans-unit>
+      <trans-unit id="s2Card3Description">
+        <source>Architecture briefs, technical documentation, and deployment guides for enterprise evaluation.</source>
+        <target>기업 평가를 위한 아키텍처 브리프, 기술 문서, 배포 가이드입니다.</target>
+      </trans-unit>
+      <trans-unit id="s2Card3BtnLabel">
+        <source>Browse Downloads →</source>
+        <target>다운로드 보기 →</target>
+      </trans-unit>
+      <trans-unit id="s2Card4Title">
+        <source>Trust Center</source>
+        <target>Trust Center</target>
+      </trans-unit>
+      <trans-unit id="s2Card4Description">
+        <source>Security certifications, compliance documentation, and audit information.</source>
+        <target>보안 인증, 컴플라이언스 문서, 감사 정보입니다.</target>
+      </trans-unit>
+      <trans-unit id="s2Card4BtnLabel">
+        <source>Browse Trust Center →</source>
+        <target>Trust Center 보기 →</target>
+      </trans-unit>
+      <trans-unit id="s3SectionTitle">
+        <source>Core guides for enterprise AI</source>
+        <target>기업 AI 핵심 가이드</target>
+      </trans-unit>
+      <trans-unit id="s3SectionTitleBrand">
+        <source>enablement</source>
+        <target>도입</target>
+      </trans-unit>
+      <trans-unit id="s3SectionDescription">
+        <source>Start with the documents that explain the operating model, the failure of redaction-based approaches, and the architecture behind usable AI outputs.</source>
+        <target>운영 모델, 마스킹 기반 접근 방식의 한계, 활용 가능한 AI 출력의 아키텍처를 설명하는 문서부터 시작하십시오.</target>
+      </trans-unit>
+      <trans-unit id="s3Guide1Title">
+        <source>Secure Enterprise AI Data Workflows</source>
+        <target>안전한 기업 AI 데이터 워크플로우</target>
+      </trans-unit>
+      <trans-unit id="s3Guide1Description">
+        <source>The end-to-end operating model for protecting sensitive data across AI workflows while restoring usable outputs locally.</source>
+        <target>AI 워크플로우 전반에서 민감 데이터를 보호하면서 로컬에서 활용 가능한 출력을 복원하는 엔드투엔드 운영 모델입니다.</target>
+      </trans-unit>
+      <trans-unit id="s3Guide1BtnLabel">
+        <source>Read guide →</source>
+        <target>가이드 읽기 →</target>
+      </trans-unit>
+      <trans-unit id="s3Guide2Title">
+        <source>What Is an AI Data Capsule?</source>
+        <target>AI 데이터 캡슐이란?</target>
+      </trans-unit>
+      <trans-unit id="s3Guide2Description">
+        <source>The core concept behind local encapsulation, protected AI processing, and local restoration.</source>
+        <target>로컬 Encapsulation, 보호된 AI 처리, 로컬 Restoration의 핵심 개념입니다.</target>
+      </trans-unit>
+      <trans-unit id="s3Guide2BtnLabel">
+        <source>Read guide →</source>
+        <target>가이드 읽기 →</target>
+      </trans-unit>
+      <trans-unit id="s3Guide3Title">
+        <source>Why Redaction Breaks Enterprise AI Workflows</source>
+        <target>마스킹이 기업 AI 워크플로우를 망가뜨리는 이유</target>
+      </trans-unit>
+      <trans-unit id="s3Guide3Description">
+        <source>Why masking and redaction tools fail in AI workflows, and what replaces them in enterprise production settings.</source>
+        <target>AI 워크플로우에서 마스킹과 삭제 도구가 실패하는 이유, 그리고 기업 프로덕션 환경에서의 대안입니다.</target>
+      </trans-unit>
+      <trans-unit id="s3Guide3BtnLabel">
+        <source>Read guide →</source>
+        <target>가이드 읽기 →</target>
+      </trans-unit>
+      <trans-unit id="ctaTitle">
+        <source>See how LLM Capsule works with your data</source>
+        <target>LLM Capsule이 실제 데이터에서 어떻게 동작하는지 확인하십시오</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>문서, 배포 조건, 평가 기준을 가져오십시오. 실제 워크플로우에서 시연합니다.</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn1Label">
+        <source>Request a Demo</source>
+        <target>데모 요청</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="ctaSecBtn1Label">
+        <source>Download Architecture Brief</source>
+        <target>아키텍처 브리프 다운로드</target>
+      </trans-unit>
+      <trans-unit id="ctaSecBtn2Label">
+        <source>Available on AWS Marketplace</source>
+        <target>AWS Marketplace에서 이용 가능</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="how-to-use-ai-on-sensitive-enterprise-data">
+    <body>
+      <!-- Section 01: Hero -->
+      <trans-unit id="title_en">
+        <source>How to Use AI on Sensitive Enterprise Data</source>
+        <target>Wie Sie AI auf sensiblen Unternehmensdaten einsetzen</target>
+      </trans-unit>
+      <trans-unit id="description_en">
+        <source>Learn how to use large language models on sensitive enterprise data without exposing original documents. Encapsulate locally, process safely, restore usable outputs.</source>
+        <target>Erfahren Sie, wie Sie grosse Sprachmodelle auf sensiblen Unternehmensdaten einsetzen, ohne Originaldokumente preiszugeben. Lokal encapsulieren, sicher verarbeiten, nutzbare Ausgaben wiederherstellen.</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb_home_en">
+        <source>Home</source>
+        <target>Startseite</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb_resources_en">
+        <source>Resources</source>
+        <target>Ressourcen</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb_learn_en">
+        <source>Learn</source>
+        <target>Lernen</target>
+      </trans-unit>
+      <!-- Section 02: Screenshot Frame -->
+      <trans-unit id="label_en">
+        <source>Secure Enterprise AI — Sensitive documents encapsulated locally, processed by AI, outputs restored with original data</source>
+        <target>Sichere Enterprise-AI — Sensible Dokumente werden lokal encapsuliert, durch AI verarbeitet, Ausgaben mit Originaldaten wiederhergestellt</target>
+      </trans-unit>
+      <!-- Section 03: The Challenge -->
+      <trans-unit id="heading_pre_en">
+        <source>The</source>
+        <target>Die</target>
+      </trans-unit>
+      <trans-unit id="heading_highlight_en">
+        <source>Challenge</source>
+        <target>Herausforderung</target>
+      </trans-unit>
+      <trans-unit id="para1_en">
+        <source>Enterprises generate massive volumes of sensitive documents — contracts, financial reports, medical records, legal filings, HR communications, and internal strategy memos. These documents contain exactly the information that AI could transform: extracting key clauses, summarizing quarterly results, classifying patient records, or translating technical specifications.</source>
+        <target>Unternehmen generieren massive Mengen sensibler Dokumente — Vertraege, Finanzberichte, Krankenakten, Rechtseinreichungen, HR-Kommunikation und interne Strategiememos. Diese Dokumente enthalten genau die Informationen, die AI transformieren koennte: Schluesselklauseln extrahieren, Quartalsergebnisse zusammenfassen, Patientenakten klassifizieren oder technische Spezifikationen uebersetzen.</target>
+      </trans-unit>
+      <trans-unit id="para2_en">
+        <source>But sending this data to external AI services means exposing it. Every prompt, every document, every query transmitted to an LLM API becomes visible to the AI provider's infrastructure. For regulated industries and security-conscious organizations, this creates a fundamental conflict: the data that benefits most from AI is the data that cannot be exposed.</source>
+        <target>Aber das Senden dieser Daten an externe AI-Services bedeutet deren Exposition. Jeder Prompt, jedes Dokument, jede Anfrage an eine LLM-API wird fuer die Infrastruktur des AI-Anbieters sichtbar. Fuer regulierte Branchen und sicherheitsbewusste Organisationen entsteht ein fundamentaler Konflikt: Die Daten, die am meisten von AI profitieren, sind die Daten, die nicht exponiert werden duerfen.</target>
+      </trans-unit>
+      <!-- Section 04: Requirements -->
+      <trans-unit id="s4_heading_en">
+        <source>The Requirements for</source>
+        <target>Die Anforderungen fuer</target>
+      </trans-unit>
+      <trans-unit id="s4_heading_highlight_en">
+        <source>Secure Enterprise AI</source>
+        <target>sichere Enterprise-AI</target>
+      </trans-unit>
+      <trans-unit id="intro_en">
+        <source>Secure LLM usage on sensitive enterprise data requires three capabilities working together:</source>
+        <target>Die sichere LLM-Nutzung auf sensiblen Unternehmensdaten erfordert drei zusammenwirkende Faehigkeiten:</target>
+      </trans-unit>
+      <trans-unit id="item1_strong_en">
+        <source>1. Pre-processing protection.</source>
+        <target>1. Vorverarbeitungsschutz.</target>
+      </trans-unit>
+      <trans-unit id="item1_text_en">
+        <source> Sensitive data must be identified and replaced before it leaves the enterprise. This is not simple keyword matching — enterprise documents contain context-dependent sensitivity. A name in a contract carries different risk than the same name in a public directory. Structure-preserving processing ensures the document's semantic relationships remain intact for AI comprehension.</source>
+        <target> Sensible Daten muessen identifiziert und ersetzt werden, bevor sie das Unternehmen verlassen. Dies ist kein einfaches Keyword-Matching — Unternehmensdokumente enthalten kontextabhaengige Sensibilitaet. Ein Name in einem Vertrag birgt ein anderes Risiko als derselbe Name in einem oeffentlichen Verzeichnis. Strukturerhaltende Verarbeitung stellt sicher, dass die semantischen Beziehungen des Dokuments fuer das AI-Verstaendnis intakt bleiben.</target>
+      </trans-unit>
+      <trans-unit id="item2_strong_en">
+        <source>2. Model-agnostic processing.</source>
+        <target>2. Modellunabhaengige Verarbeitung.</target>
+      </trans-unit>
+      <trans-unit id="item2_text_en">
+        <source> The AI enablement layer must work with any LLM — not just one provider's API. Enterprises use multiple AI models for different tasks. The AI enablement data layer must operate independently of the model layer.</source>
+        <target> Die AI-Enablement-Schicht muss mit jedem LLM funktionieren — nicht nur mit der API eines einzelnen Anbieters. Unternehmen nutzen mehrere AI-Modelle fuer verschiedene Aufgaben. Die AI-Enablement-Datenschicht muss unabhaengig von der Modellschicht arbeiten.</target>
+      </trans-unit>
+      <trans-unit id="item3_strong_en">
+        <source>3. Output Restoration (Restoration).</source>
+        <target>3. Ausgabe-Restoration (Restoration).</target>
+      </trans-unit>
+      <trans-unit id="item3_text_en">
+        <source> AI results are restored locally. Without this, AI outputs are abstracted and unusable. Enterprise AI enablement requires that outputs contain real names, real account numbers, and real references — restored locally after AI processing completes.</source>
+        <target> AI-Ergebnisse werden lokal wiederhergestellt. Ohne dies sind AI-Ausgaben abstrakt und unbrauchbar. Enterprise-AI-Enablement erfordert, dass Ausgaben echte Namen, echte Kontonummern und echte Referenzen enthalten — lokal nach Abschluss der AI-Verarbeitung wiederhergestellt.</target>
+      </trans-unit>
+      <!-- Section 05: How It Works -->
+      <trans-unit id="heading_pre_s5_en">
+        <source>How</source>
+        <target>Wie</target>
+      </trans-unit>
+      <trans-unit id="heading_post_en">
+        <source>Enables This</source>
+        <target>dies ermoeglicht</target>
+      </trans-unit>
+      <trans-unit id="s5_intro_en">
+        <source>LLM Capsule operates as an AI enablement data layer between enterprise data systems and external AI services. The process follows four steps:</source>
+        <target>LLM Capsule arbeitet als AI-Enablement-Datenschicht zwischen Unternehmensdatensystemen und externen AI-Services. Der Prozess folgt vier Schritten:</target>
+      </trans-unit>
+      <trans-unit id="step1_en">
+        <source>Step 1: Sensitive Detection. LLM Capsule automatically identifies sensitive elements within enterprise documents — names, account numbers, dates, financial figures, project codes, and organization-defined entities beyond standard PII.</source>
+        <target>Schritt 1: Sensibilitaetserkennung. LLM Capsule identifiziert automatisch sensible Elemente in Unternehmensdokumenten — Namen, Kontonummern, Daten, Finanzkennzahlen, Projektcodes und organisationsdefinierte Entitaeten ueber Standard-PII hinaus.</target>
+      </trans-unit>
+      <trans-unit id="step2_en">
+        <source>Step 2: Local Encapsulation. Detected sensitive elements are replaced with structure-preserving tokens locally. The document retains its full semantic structure — tables, references, hierarchies — so AI models can process it accurately. The mapping between original values and tokens is stored locally and never transmitted.</source>
+        <target>Schritt 2: Lokale Encapsulation. Erkannte sensible Elemente werden lokal durch strukturerhaltende Token ersetzt. Das Dokument behaelt seine vollstaendige semantische Struktur — Tabellen, Referenzen, Hierarchien — sodass AI-Modelle es praezise verarbeiten koennen. Das Mapping zwischen Originalwerten und Token wird lokal gespeichert und niemals uebertragen.</target>
+      </trans-unit>
+      <trans-unit id="step3_en">
+        <source>Step 3: AI Processing. Only the encapsulated document crosses the trust boundary. The AI provider receives a structurally complete document with protected values. It can summarize, extract, classify, and analyze — but never sees the original sensitive data.</source>
+        <target>Schritt 3: AI-Verarbeitung. Nur das encapsulierte Dokument ueberschreitet die Vertrauensgrenze. Der AI-Anbieter erhaelt ein strukturell vollstaendiges Dokument mit geschuetzten Werten. Er kann zusammenfassen, extrahieren, klassifizieren und analysieren — sieht aber niemals die originalen sensiblen Daten.</target>
+      </trans-unit>
+      <trans-unit id="step4_en">
+        <source>Step 4: Local Restoration. AI outputs are restored locally using the stored mapping. Real names, figures, dates, and references return automatically. The result is a business-ready document that can be used directly in enterprise workflows without manual post-processing.</source>
+        <target>Schritt 4: Lokale Restoration. AI-Ausgaben werden lokal mithilfe des gespeicherten Mappings wiederhergestellt. Echte Namen, Zahlen, Daten und Referenzen werden automatisch zurueckgefuehrt. Das Ergebnis ist ein geschaeftsfertiges Dokument, das direkt in Unternehmensworkflows ohne manuelle Nachbearbeitung verwendet werden kann.</target>
+      </trans-unit>
+      <trans-unit id="banner_en">
+        <source>Key principle: Your data stays on-premise. Only capsules travel. Outputs come back complete.</source>
+        <target>Kernprinzip: Ihre Daten bleiben On-Premise. Nur Kapseln werden uebertragen. Ausgaben kommen vollstaendig zurueck.</target>
+      </trans-unit>
+      <!-- Section 06: Use Cases -->
+      <trans-unit id="s6_heading_en">
+        <source>Enterprise</source>
+        <target>Enterprise</target>
+      </trans-unit>
+      <trans-unit id="s6_heading_highlight_en">
+        <source>Use Cases</source>
+        <target>Anwendungsfaelle</target>
+      </trans-unit>
+      <trans-unit id="card1_title_en">
+        <source>Financial Services</source>
+        <target>Finanzdienstleistungen</target>
+      </trans-unit>
+      <trans-unit id="card1_desc_en">
+        <source>Banks and insurance companies process loan applications, claims documents, and regulatory filings through AI — with all customer PII, account numbers, and financial figures encapsulated before transmission.</source>
+        <target>Banken und Versicherungen verarbeiten Kreditantraege, Schadensdokumente und regulatorische Einreichungen mittels AI — mit allen Kunden-PII, Kontonummern und Finanzkennzahlen, die vor der Uebertragung encapsuliert werden.</target>
+      </trans-unit>
+      <trans-unit id="card2_title_en">
+        <source>Healthcare &amp; Legal</source>
+        <target>Gesundheitswesen &amp; Recht</target>
+      </trans-unit>
+      <trans-unit id="card2_desc_en">
+        <source>Hospitals and law firms use AI for medical record summarization, contract analysis, and case research — with patient identifiers, client names, and privileged information protected throughout.</source>
+        <target>Krankenhaeuser und Anwaltskanzleien nutzen AI fuer Krankenaktenzusammenfassung, Vertragsanalyse und Fallrecherche — mit durchgehend geschuetzten Patientenidentifikatoren, Mandantennamen und privilegierten Informationen.</target>
+      </trans-unit>
+      <trans-unit id="card3_title_en">
+        <source>Defense &amp; Public Sector</source>
+        <target>Verteidigung &amp; oeffentlicher Sektor</target>
+      </trans-unit>
+      <trans-unit id="card3_desc_en">
+        <source>Government agencies and defense organizations draft confidential documents using AI — with classified terms, operation names, and tactical data encapsulated in air-gapped environments.</source>
+        <target>Regierungsbehoerden und Verteidigungsorganisationen erstellen vertrauliche Dokumente mit AI — mit klassifizierten Begriffen, Operationsnamen und taktischen Daten, die in Air-Gap-Umgebungen encapsuliert werden.</target>
+      </trans-unit>
+      <trans-unit id="card4_title_en">
+        <source>Telecom &amp; Security</source>
+        <target>Telekommunikation &amp; Sicherheit</target>
+      </trans-unit>
+      <trans-unit id="card4_desc_en">
+        <source>Infrastructure companies analyze vulnerability logs and network data with AI — with sensitive IP addresses, topology details, and security findings protected from external exposure.</source>
+        <target>Infrastrukturunternehmen analysieren Schwachstellenlogs und Netzwerkdaten mit AI — mit sensiblen IP-Adressen, Topologiedetails und Sicherheitserkenntnissen, die vor externer Exposition geschuetzt sind.</target>
+      </trans-unit>
+      <!-- Section 07: FAQ -->
+      <trans-unit id="s7_heading_en">
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </trans-unit>
+      <trans-unit id="faq1_q_en">
+        <source>Can enterprises use AI on sensitive data safely?</source>
+        <target>Koennen Unternehmen AI sicher auf sensiblen Daten einsetzen?</target>
+      </trans-unit>
+      <trans-unit id="faq1_a_en">
+        <source>Yes. By encapsulating sensitive data locally before AI processing and restoring outputs afterward, enterprises can use LLMs on real documents without exposing the original data.</source>
+        <target>Ja. Durch lokale Encapsulation sensibler Daten vor der AI-Verarbeitung und anschliessende Wiederherstellung der Ausgaben koennen Unternehmen LLMs auf echten Dokumenten nutzen, ohne die Originaldaten preiszugeben.</target>
+      </trans-unit>
+      <trans-unit id="faq2_q_en">
+        <source>What types of enterprise data can LLM Capsule handle?</source>
+        <target>Welche Arten von Unternehmensdaten kann LLM Capsule verarbeiten?</target>
+      </trans-unit>
+      <trans-unit id="faq2_a_en">
+        <source>LLM Capsule handles structured and unstructured enterprise data including contracts, financial documents, medical records, legal filings, HR files, and customer communications.</source>
+        <target>LLM Capsule verarbeitet strukturierte und unstrukturierte Unternehmensdaten einschliesslich Vertraege, Finanzdokumente, Krankenakten, Rechtseinreichungen, HR-Dateien und Kundenkommunikation.</target>
+      </trans-unit>
+      <trans-unit id="faq3_q_en">
+        <source>Does LLM Capsule work with any AI model?</source>
+        <target>Funktioniert LLM Capsule mit jedem AI-Modell?</target>
+      </trans-unit>
+      <trans-unit id="faq3_a_en">
+        <source>Yes. LLM Capsule is model-agnostic. It works with ChatGPT, Claude, Gemini, Perplexity, or any LLM API because it operates at the data layer before transmission.</source>
+        <target>Ja. LLM Capsule ist modellunabhaengig. Es funktioniert mit ChatGPT, Claude, Gemini, Perplexity oder jeder LLM-API, da es auf der Datenschicht vor der Uebertragung arbeitet.</target>
+      </trans-unit>
+      <trans-unit id="faq4_q_en">
+        <source>What happens to AI outputs after processing?</source>
+        <target>Was passiert mit AI-Ausgaben nach der Verarbeitung?</target>
+      </trans-unit>
+      <trans-unit id="faq4_a_en">
+        <source>AI outputs are automatically restored locally. Original names, figures, dates, and references are mapped back into the AI results, producing business-ready documents without manual post-processing.</source>
+        <target>AI-Ausgaben werden automatisch lokal wiederhergestellt. Originalnamen, Zahlen, Daten und Referenzen werden in die AI-Ergebnisse zurueckgemappt, wodurch geschaeftsfertige Dokumente ohne manuelle Nachbearbeitung entstehen.</target>
+      </trans-unit>
+      <!-- Section 08: Related Pages -->
+      <trans-unit id="section_label_en">
+        <source>Related</source>
+        <target>Verwandt</target>
+      </trans-unit>
+      <trans-unit id="link1_title_en">
+        <source>Product Overview</source>
+        <target>Produktuebersicht</target>
+      </trans-unit>
+      <trans-unit id="link2_title_en">
+        <source>Architecture</source>
+        <target>Architektur</target>
+      </trans-unit>
+      <trans-unit id="link3_title_en">
+        <source>Trust &amp; Compliance</source>
+        <target>Vertrauen &amp; Compliance</target>
+      </trans-unit>
+      <trans-unit id="link4_title_en">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <!-- Section 09: CTA Band -->
+      <trans-unit id="title_pre_en">
+        <source>Use AI on Your Sensitive Data with</source>
+        <target>Nutzen Sie AI auf Ihren sensiblen Daten mit</target>
+      </trans-unit>
+      <trans-unit id="description_cta_en">
+        <source>Enable enterprise AI on real documents without exposing sensitive data. Encapsulate locally, process safely, restore completely.</source>
+        <target>Ermoeglichen Sie Enterprise-AI auf echten Dokumenten ohne Preisgabe sensibler Daten. Lokal encapsulieren, sicher verarbeiten, vollstaendig wiederherstellen.</target>
+      </trans-unit>
+      <trans-unit id="btn1_label_en">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="btn2_label_en">
+        <source>View Product</source>
+        <target>Produkt ansehen</target>
+      </trans-unit>
+      <trans-unit id="footnote_en">
+        <source>Enterprise AI Enablement by CUBIG</source>
+        <target>Enterprise AI Enablement von CUBIG</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

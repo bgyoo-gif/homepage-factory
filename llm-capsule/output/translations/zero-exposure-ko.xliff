@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="zero-exposure">
+    <body>
+      <!-- Section01_Hero -->
+      <trans-unit id="title">
+        <source>Zero Exposure</source>
+        <target>Zero Exposure</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Zero exposure means original sensitive enterprise data never leaves the enterprise environment during AI processing. Only encapsulated representations cross the trust boundary to external AI services. A core principle of</source>
+        <target>Zero Exposure란 AI 처리 중 원본 민감 기업 데이터가 기업 환경을 벗어나지 않음을 의미합니다. Encapsulation된 표현만이 외부 AI 서비스로의 신뢰 경계를 넘습니다. 다음 제품의 핵심 원칙입니다:</target>
+      </trans-unit>
+      <trans-unit id="productName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+
+      <!-- Section02_Definition -->
+      <trans-unit id="label">
+        <source>DEFINITION</source>
+        <target>정의</target>
+      </trans-unit>
+      <trans-unit id="definitionText">
+        <source>Zero exposure is a core capability of</source>
+        <target>Zero Exposure는 다음 제품의 핵심 기능입니다:</target>
+      </trans-unit>
+
+      <!-- Section03_Explanation -->
+      <trans-unit id="heading">
+        <source>Explanation</source>
+        <target>설명</target>
+      </trans-unit>
+      <trans-unit id="bullet1Strong">
+        <source>Zero exposure is not the same as encryption or access control.</source>
+        <target>Zero Exposure는 암호화나 접근 제어와 다릅니다.</target>
+      </trans-unit>
+      <trans-unit id="bullet1Text">
+        <source> Encrypted data cannot be processed by AI models. Access control restricts who can see data but does not prevent the data itself from leaving the environment.</source>
+        <target> 암호화된 데이터는 AI 모델이 처리할 수 없습니다. 접근 제어는 데이터를 볼 수 있는 대상을 제한하지만, 데이터 자체가 환경을 벗어나는 것을 막지 못합니다.</target>
+      </trans-unit>
+      <trans-unit id="bullet2Strong">
+        <source>Zero exposure means the AI provider receives structurally useful data with no original sensitive values.</source>
+        <target>Zero Exposure는 AI 제공자가 원본 민감 값 없이 구조적으로 유용한 데이터를 수신함을 의미합니다.</target>
+      </trans-unit>
+      <trans-unit id="bullet2Text">
+        <source> Even if the AI provider logged, stored, or trained on the received data, no original enterprise information would be exposed.</source>
+        <target> AI 제공자가 수신한 데이터를 로깅, 저장, 학습에 사용하더라도 원본 기업 정보가 노출되지 않습니다.</target>
+      </trans-unit>
+      <trans-unit id="bullet3Strong">
+        <source>This is achieved through local encapsulation.</source>
+        <target>이는 로컬 Encapsulation을 통해 실현됩니다.</target>
+      </trans-unit>
+      <trans-unit id="bullet3Text">
+        <source> Sensitive values are detected and replaced before data leaves the enterprise boundary. The replacement is structure-preserving, so AI can process the data effectively.</source>
+        <target> 데이터가 기업 경계를 벗어나기 전에 민감 값이 탐지되고 대체됩니다. 대체는 구조 보존 방식이므로 AI가 데이터를 효과적으로 처리할 수 있습니다.</target>
+      </trans-unit>
+
+      <!-- Section04_Example -->
+      <trans-unit id="exampleHeading">
+        <source>Example</source>
+        <target>예시</target>
+      </trans-unit>
+      <trans-unit id="exampleText">
+        <source>A healthcare organization sends patient records to AI for diagnostic summarization. With zero exposure, the AI provider receives records where patient names are replaced with consistent tokens, medical record numbers are replaced with synthetic identifiers, and dates are shifted — but all clinical relationships remain intact for accurate summarization.</source>
+        <target>의료 기관이 진단 요약을 위해 환자 기록을 AI에 전송합니다. Zero Exposure를 적용하면 AI 제공자는 환자 이름이 일관된 토큰으로, 의료 기록 번호가 합성 식별자로 대체되고 날짜가 변경된 기록을 수신합니다. 단, 모든 임상적 관계는 정확한 요약을 위해 그대로 유지됩니다.</target>
+      </trans-unit>
+
+      <!-- Section05_RelatedTerms -->
+      <trans-unit id="headingTerms">
+        <source>Related Terms</source>
+        <target>관련 용어</target>
+      </trans-unit>
+      <trans-unit id="term1Label">
+        <source>Restoration</source>
+        <target>Restoration</target>
+      </trans-unit>
+      <trans-unit id="term2Label">
+        <source>Enterprise Context Control</source>
+        <target>기업 컨텍스트 제어</target>
+      </trans-unit>
+      <trans-unit id="term3Label">
+        <source>Secure LLM Usage</source>
+        <target>안전한 LLM 사용</target>
+      </trans-unit>
+      <trans-unit id="headingPages">
+        <source>Related Pages</source>
+        <target>관련 페이지</target>
+      </trans-unit>
+      <trans-unit id="link1Label">
+        <source>Product Overview</source>
+        <target>제품 개요</target>
+      </trans-unit>
+      <trans-unit id="link2Label">
+        <source>Architecture</source>
+        <target>아키텍처</target>
+      </trans-unit>
+      <trans-unit id="link3Label">
+        <source>Trust &amp; Compliance</source>
+        <target>신뢰 &amp; 컴플라이언스</target>
+      </trans-unit>
+      <trans-unit id="link4Label">
+        <source>Request a Demo</source>
+        <target>데모 요청</target>
+      </trans-unit>
+
+      <!-- Section06_CTA -->
+      <trans-unit id="ctaTitlePrefix">
+        <source>See</source>
+        <target>직접 확인하십시오</target>
+      </trans-unit>
+      <trans-unit id="ctaTitleProductName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="ctaTitleSuffix">
+        <source>Zero Exposure in Action</source>
+        <target>Zero Exposure 동작</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Protect your most sensitive data while enabling full AI capabilities. Zero exposure means zero risk.</source>
+        <target>전체 AI 기능을 활용하면서 가장 민감한 데이터를 보호합니다. Zero Exposure는 위험 제로를 의미합니다.</target>
+      </trans-unit>
+      <trans-unit id="ctaLabel1">
+        <source>Request a Demo</source>
+        <target>데모 요청</target>
+      </trans-unit>
+      <trans-unit id="ctaLabel2">
+        <source>View Product</source>
+        <target>제품 보기</target>
+      </trans-unit>
+      <trans-unit id="footnote">
+        <source>Enterprise AI Enablement by CUBIG</source>
+        <target>CUBIG의 기업 AI 도입 솔루션</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ja" datatype="plaintext" original="on-premise-vs-cloud-ai-data-protection">
+    <body>
+      <trans-unit id="title">
+        <source>See how LLM Capsule works with your data</source>
+        <target>LLM Capsuleが実際のデータでどのように機能するかご確認ください</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>ドキュメント、デプロイ要件、評価基準をお持ちください。実際のワークフローでデモンストレーションいたします。</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbHome">
+        <source>Home</source>
+        <target>ホーム</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbLearn">
+        <source>Learn</source>
+        <target>学習</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbCurrent">
+        <source>On-Premise vs Cloud AI Data Protection</source>
+        <target>オンプレミス vs クラウド AI データ保護</target>
+      </trans-unit>
+      <trans-unit id="sectionLabel">
+        <source>Related</source>
+        <target>関連ページ</target>
+      </trans-unit>
+      <trans-unit id="paragraph1">
+        <source>Enterprises operate in different infrastructure environments. Defense and intelligence agencies require air-gapped deployments. Financial institutions may mandate on-premise data processing. Cloud-native organizations want SaaS-based solutions. Many enterprises operate hybrid environments where different data types require different deployment models.</source>
+        <target>企業はさまざまなインフラ環境で運営されています。国防・情報機関はエアギャップ環境でのデプロイを求めます。金融機関はオンプレミスでのデータ処理を義務付ける場合があります。クラウドネイティブ組織はSaaSベースのソリューションを望みます。多くの企業は、データの種類に応じて異なるデプロイモデルが必要なハイブリッド環境を運用しています。</target>
+      </trans-unit>
+      <trans-unit id="paragraph2">
+        <source>AI data protection must adapt to the enterprise's infrastructure requirements, not force infrastructure changes.</source>
+        <target>AIデータ保護は、インフラの変更を強いるのではなく、企業のインフラ要件に適応する必要があります。</target>
+      </trans-unit>
+      <trans-unit id="step1Title">
+        <source>On-premise deployment.</source>
+        <target>オンプレミスデプロイ。</target>
+      </trans-unit>
+      <trans-unit id="step1Body">
+        <source>The encapsulation engine runs entirely within the enterprise data center. Sensitive data never traverses any network boundary. The AI enablement data layer operates within existing security perimeters. Only encapsulated data is sent to external AI services when needed.</source>
+        <target>Encapsulationエンジンは企業データセンター内で完全に実行されます。機密データはネットワーク境界を越えることはありません。AIイネーブルメント・データレイヤーは既存のセキュリティ境界内で動作します。必要な場合のみ、Encapsulationされたデータが外部AIサービスに送信されます。</target>
+      </trans-unit>
+      <trans-unit id="step2Title">
+        <source>Air-gapped deployment.</source>
+        <target>エアギャップデプロイ。</target>
+      </trans-unit>
+      <trans-unit id="step2Body">
+        <source>For the most sensitive environments, LLM Capsule can operate within air-gapped networks. Documents are encapsulated locally, transferred to an AI-connected environment through controlled channels, processed, and results are transferred back for local restoration.</source>
+        <target>最も機密性の高い環境では、LLM Capsuleはエアギャップネットワーク内で運用できます。ドキュメントがローカルでEncapsulationされ、制御されたチャネルを通じてAI接続環境に転送され、処理後、結果がRestoration のために戻されます。</target>
+      </trans-unit>
+      <trans-unit id="step3Title">
+        <source>Cloud deployment.</source>
+        <target>クラウドデプロイ。</target>
+      </trans-unit>
+      <trans-unit id="step3Body">
+        <source>Available on AWS Marketplace. The encapsulation layer runs within the enterprise's cloud account or VPC. Data remains within the enterprise's cloud boundary while AI services are accessed externally.</source>
+        <target>AWS Marketplaceで利用可能です。Encapsulationレイヤーは企業のクラウドアカウントまたはVPC内で実行されます。AIサービスへの外部アクセスを行いながら、データは企業のクラウド境界内に維持されます。</target>
+      </trans-unit>
+      <trans-unit id="step4Title">
+        <source>Hybrid deployment.</source>
+        <target>ハイブリッドデプロイ。</target>
+      </trans-unit>
+      <trans-unit id="step4Body">
+        <source>Different document types or sensitivity levels route through different deployment modes within a single LLM Capsule instance.</source>
+        <target>単一のLLM Capsuleインスタンス内で、ドキュメントの種類や機密レベルに応じて異なるデプロイモードにルーティングされます。</target>
+      </trans-unit>
+      <trans-unit id="step5Title">
+        <source>Embedded integration.</source>
+        <target>組み込み統合。</target>
+      </trans-unit>
+      <trans-unit id="step5Body">
+        <source>LLM Capsule can be embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within the enterprise's own software stack.</source>
+        <target>LLM Capsuleは既存の企業アプリケーションやプラットフォームに組み込むことができ、企業独自のソフトウェアスタック内でAIイネーブルメント・データレイヤーとして動作します。</target>
+      </trans-unit>
+      <trans-unit id="sectionLabelHighlight">
+        <source>Example</source>
+        <target>事例</target>
+      </trans-unit>
+      <trans-unit id="cardTitle">
+        <source>Government Agency — Air-Gapped Deployment</source>
+        <target>政府機関 — エアギャップデプロイ</target>
+      </trans-unit>
+      <trans-unit id="cardParagraph1">
+        <source>A government agency needs AI to process classified briefing documents for automated summarization. The classified network has no external connectivity.</source>
+        <target>政府機関が機密ブリーフィング文書の自動要約処理にAIを必要としています。機密ネットワークには外部接続がありません。</target>
+      </trans-unit>
+      <trans-unit id="cardParagraph2">
+        <source>encapsulates documents on the classified network. Encapsulated data is transferred to the AI-connected environment through an approved data diode. AI generates summaries. Results are transferred back and restored on the classified network, producing classified-ready summaries.</source>
+        <target>機密ネットワーク上でドキュメントをEncapsulationします。Encapsulationされたデータが承認済みデータダイオードを通じてAI接続環境に転送されます。AIが要約を生成します。結果が戻され機密ネットワーク上でRestorationされ、機密対応のサマリーが生成されます。</target>
+      </trans-unit>
+      <trans-unit id="q1Title">
+        <source>Does LLM Capsule work on-premise?</source>
+        <target>LLM Capsuleはオンプレミスで動作しますか？</target>
+      </trans-unit>
+      <trans-unit id="q1Answer">
+        <source>Yes. LLM Capsule supports on-premise, air-gapped, cloud, hybrid, and embedded deployment models. The encapsulation engine runs entirely within your environment regardless of deployment type.</source>
+        <target>はい。LLM Capsuleはオンプレミス、エアギャップ、クラウド、ハイブリッド、組み込みデプロイモデルをサポートしています。Encapsulationエンジンはデプロイの種類に関係なく、お客様の環境内で完全に実行されます。</target>
+      </trans-unit>
+      <trans-unit id="q2Title">
+        <source>Is LLM Capsule available on AWS Marketplace?</source>
+        <target>LLM CapsuleはAWS Marketplaceで利用できますか？</target>
+      </trans-unit>
+      <trans-unit id="q2Answer">
+        <source>Yes. LLM Capsule is available on AWS Marketplace for cloud deployment within your AWS account.</source>
+        <target>はい。LLM CapsuleはAWSアカウント内でのクラウドデプロイ用にAWS Marketplaceで利用可能です。</target>
+      </trans-unit>
+      <trans-unit id="link1Title">
+        <source>Product Overview</source>
+        <target>製品概要</target>
+      </trans-unit>
+      <trans-unit id="link2Title">
+        <source>Architecture</source>
+        <target>アーキテクチャ</target>
+      </trans-unit>
+      <trans-unit id="link3Title">
+        <source>Trust &amp; Compliance</source>
+        <target>信頼 &amp; コンプライアンス</target>
+      </trans-unit>
+      <trans-unit id="link4Title">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="btn1Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="btn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnote1Label">
+        <source>Download Architecture Brief</source>
+        <target>アーキテクチャブリーフのダウンロード</target>
+      </trans-unit>
+      <trans-unit id="footnote2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

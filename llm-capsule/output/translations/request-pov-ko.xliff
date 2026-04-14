@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="llm-capsule/output/framer/request-pov/RequestPov.tsx"
+        source-language="en" target-language="ko"
+        datatype="x-tsx">
+    <header>
+      <note>LLM Capsule — Request PoV page. Korean translation.</note>
+    </header>
+    <body>
+
+      <!-- Hero -->
+      <trans-unit id="heroTitle" resname="heroTitle">
+        <source>Request a Proof of</source>
+        <target>Request a Proof of</target>
+        <note>Proof of Value(PoV)는 번역 금지 용어. CTA 라벨 원문 유지.</note>
+      </trans-unit>
+      <trans-unit id="heroTitleHighlight" resname="heroTitleHighlight">
+        <source>Value</source>
+        <target>Value</target>
+        <note>Proof of Value 일부. 원문 유지.</note>
+      </trans-unit>
+      <trans-unit id="heroDescription" resname="heroDescription">
+        <source>Test LLM Capsule using your own enterprise documents and workflows. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.</source>
+        <target>LLM Capsule을 귀사의 실제 문서와 워크플로우로 테스트합니다. 실제 데이터, 귀사의 환경, 컴플라이언스 요건에 맞춰 기업 AI 도입을 시연합니다.</target>
+      </trans-unit>
+
+      <!-- Process Column -->
+      <trans-unit id="processTitle" resname="processTitle">
+        <source>What to</source>
+        <target>진행</target>
+      </trans-unit>
+      <trans-unit id="processTitleHighlight" resname="processTitleHighlight">
+        <source>expect</source>
+        <target>절차</target>
+      </trans-unit>
+      <trans-unit id="processDescription" resname="processDescription">
+        <source>A structured 4-step process from discovery to results, designed to demonstrate real value on your actual data.</source>
+        <target>탐색부터 결과까지 체계적인 4단계 프로세스로, 실제 데이터를 기반으로 가치를 입증합니다.</target>
+      </trans-unit>
+
+      <!-- Tab Labels -->
+      <trans-unit id="tab1Label" resname="tab1Label">
+        <source>Discovery Call</source>
+        <target>탐색 미팅</target>
+      </trans-unit>
+      <trans-unit id="tab2Label" resname="tab2Label">
+        <source>Technical Setup</source>
+        <target>기술 환경 구성</target>
+      </trans-unit>
+      <trans-unit id="tab3Label" resname="tab3Label">
+        <source>Document Testing</source>
+        <target>문서 테스트</target>
+      </trans-unit>
+      <trans-unit id="tab4Label" resname="tab4Label">
+        <source>Results Review</source>
+        <target>결과 검토</target>
+      </trans-unit>
+
+      <!-- Tab Content -->
+      <trans-unit id="tab1Title" resname="tab1Title">
+        <source>Discovery Call</source>
+        <target>탐색 미팅</target>
+      </trans-unit>
+      <trans-unit id="tab1Description" resname="tab1Description">
+        <source>We understand your document types, sensitivity requirements, deployment constraints, and AI use cases. We identify the highest-value workflow to test.</source>
+        <target>귀사의 문서 유형, 민감 데이터 요건, 배포 제약 조건, AI 활용 사례를 파악합니다. 가장 높은 가치를 제공할 워크플로우를 선정합니다.</target>
+      </trans-unit>
+      <trans-unit id="tab2Title" resname="tab2Title">
+        <source>Technical Setup</source>
+        <target>기술 환경 구성</target>
+      </trans-unit>
+      <trans-unit id="tab2Description" resname="tab2Description">
+        <source>LLM Capsule is deployed in your environment (on-premise, cloud, or hybrid). We configure encapsulation policies to match your sensitivity requirements.</source>
+        <target>LLM Capsule을 귀사의 환경(온프레미스, 클라우드 또는 하이브리드)에 배포합니다. 민감 데이터 요건에 맞춰 Encapsulation 정책을 구성합니다.</target>
+      </trans-unit>
+      <trans-unit id="tab3Title" resname="tab3Title">
+        <source>Document Testing</source>
+        <target>문서 테스트</target>
+      </trans-unit>
+      <trans-unit id="tab3Description" resname="tab3Description">
+        <source>Your real enterprise documents are processed through the full encapsulation, AI, and restoration pipeline. You evaluate output quality, protection coverage, and workflow integration.</source>
+        <target>귀사의 실제 문서가 전체 Encapsulation, AI, Restoration 파이프라인을 통해 처리됩니다. 출력 품질, 보호 범위, 워크플로우 통합을 직접 평가합니다.</target>
+      </trans-unit>
+      <trans-unit id="tab4Title" resname="tab4Title">
+        <source>Results Review</source>
+        <target>결과 검토</target>
+      </trans-unit>
+      <trans-unit id="tab4Description" resname="tab4Description">
+        <source>We present detection accuracy, workflow accuracy, response similarity, and processing performance metrics measured on your specific workload.</source>
+        <target>귀사의 워크로드를 기준으로 측정된 탐지 정확도, 워크플로우 정확도, 응답 유사도, 처리 성능 지표를 제공합니다.</target>
+      </trans-unit>
+
+      <!-- Banner -->
+      <trans-unit id="bannerText" resname="bannerText">
+        <source>Typical PoV duration: 2-4 weeks. Bring your documents, deployment constraints, and evaluation criteria.</source>
+        <target>일반적인 PoV 소요 기간: 2-4주. 문서, 배포 제약 조건, 평가 기준을 준비해 주십시오.</target>
+      </trans-unit>
+
+      <!-- Form Card -->
+      <trans-unit id="formCardTitle" resname="formCardTitle">
+        <source>Request a Demo</source>
+        <target>데모 신청</target>
+      </trans-unit>
+      <trans-unit id="formNameLabel" resname="formNameLabel">
+        <source>Name</source>
+        <target>이름</target>
+      </trans-unit>
+      <trans-unit id="formNamePlaceholder" resname="formNamePlaceholder">
+        <source>Full name</source>
+        <target>성명</target>
+      </trans-unit>
+      <trans-unit id="formEmailLabel" resname="formEmailLabel">
+        <source>Work Email</source>
+        <target>업무용 이메일</target>
+      </trans-unit>
+      <trans-unit id="formEmailPlaceholder" resname="formEmailPlaceholder">
+        <source>name@company.com</source>
+        <target>name@company.com</target>
+      </trans-unit>
+      <trans-unit id="formCompanyLabel" resname="formCompanyLabel">
+        <source>Company</source>
+        <target>회사</target>
+      </trans-unit>
+      <trans-unit id="formCompanyPlaceholder" resname="formCompanyPlaceholder">
+        <source>Company name</source>
+        <target>회사명</target>
+      </trans-unit>
+      <trans-unit id="formTitleLabel" resname="formTitleLabel">
+        <source>Job Title</source>
+        <target>직함</target>
+      </trans-unit>
+      <trans-unit id="formTitlePlaceholder" resname="formTitlePlaceholder">
+        <source>Your role</source>
+        <target>담당 직무</target>
+      </trans-unit>
+      <trans-unit id="formIndustryLabel" resname="formIndustryLabel">
+        <source>Industry</source>
+        <target>산업</target>
+      </trans-unit>
+      <trans-unit id="formIndustryDefault" resname="formIndustryDefault">
+        <source>Select industry</source>
+        <target>산업 선택</target>
+      </trans-unit>
+      <trans-unit id="formUseCaseLabel" resname="formUseCaseLabel">
+        <source>Primary Use Case</source>
+        <target>주요 활용 사례</target>
+      </trans-unit>
+      <trans-unit id="formUseCasePlaceholder" resname="formUseCasePlaceholder">
+        <source>Describe your primary AI use case and the types of documents you need to process.</source>
+        <target>주요 AI 활용 사례와 처리해야 할 문서 유형을 설명해 주십시오.</target>
+      </trans-unit>
+      <trans-unit id="formSubmitLabel" resname="formSubmitLabel">
+        <source>Submit Request</source>
+        <target>신청하기</target>
+      </trans-unit>
+      <trans-unit id="formFootnote" resname="formFootnote">
+        <source>We respond to all PoV requests within 1 business day.</source>
+        <target>모든 PoV 신청에 대해 1 영업일 이내에 회신합니다.</target>
+      </trans-unit>
+
+      <!-- CTA Band -->
+      <trans-unit id="ctaTitle" resname="ctaTitle">
+        <source>See how LLM Capsule works with your data</source>
+        <target>LLM Capsule이 귀사의 데이터와 어떻게 동작하는지 확인하십시오</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription" resname="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>문서, 배포 제약 조건, 평가 기준을 준비해 주십시오. 귀사의 실제 워크플로우에서 시연합니다.</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn1Label" resname="ctaBtn1Label">
+        <source>Request a Demo</source>
+        <target>데모 신청</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn2Label" resname="ctaBtn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+        <note>CTA 버튼 라벨. 번역 금지 용어.</note>
+      </trans-unit>
+      <trans-unit id="ctaFootnote1Label" resname="ctaFootnote1Label">
+        <source>Download Architecture Brief</source>
+        <target>아키텍처 브리프 다운로드</target>
+      </trans-unit>
+      <trans-unit id="ctaFootnote2Label" resname="ctaFootnote2Label">
+        <source>Available on AWS Marketplace</source>
+        <target>AWS Marketplace에서 이용 가능</target>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="learn">
+    <body>
+      <trans-unit id="heroTitle">
+        <source>Enterprise AI Enablement — Learn</source>
+        <target>기업 AI 도입 — Learn</target>
+      </trans-unit>
+      <trans-unit id="heroDescription">
+        <source>In-depth technical articles on enterprise AI enablement, secure AI workflows, structure-preserving processing, and restorable workflows.</source>
+        <target>기업 AI 도입, 안전한 AI 워크플로우, 구조 보존 처리, Restorable 워크플로우에 관한 심층 기술 아티클입니다.</target>
+      </trans-unit>
+      <trans-unit id="card01Title">
+        <source>Secure Enterprise AI Data Workflows</source>
+        <target>안전한 기업 AI 데이터 워크플로우</target>
+      </trans-unit>
+      <trans-unit id="card01Badge">
+        <source>Pillar</source>
+        <target>핵심 가이드</target>
+      </trans-unit>
+      <trans-unit id="card02Title">
+        <source>Enterprise AI Enablement</source>
+        <target>기업 AI 도입</target>
+      </trans-unit>
+      <trans-unit id="card02Badge">
+        <source>Pillar</source>
+        <target>핵심 가이드</target>
+      </trans-unit>
+      <trans-unit id="card03Title">
+        <source>Enterprise AI Document Processing</source>
+        <target>기업 AI 문서 처리</target>
+      </trans-unit>
+      <trans-unit id="card03Badge">
+        <source>Pillar</source>
+        <target>핵심 가이드</target>
+      </trans-unit>
+      <trans-unit id="card04Title">
+        <source>What Is an AI Data Capsule</source>
+        <target>AI 데이터 캡슐이란</target>
+      </trans-unit>
+      <trans-unit id="card04Badge">
+        <source>Article</source>
+        <target>아티클</target>
+      </trans-unit>
+      <trans-unit id="card05Title">
+        <source>How to Use AI on Sensitive Enterprise Data</source>
+        <target>민감한 기업 데이터에 AI를 활용하는 방법</target>
+      </trans-unit>
+      <trans-unit id="card05Badge">
+        <source>Article</source>
+        <target>아티클</target>
+      </trans-unit>
+      <trans-unit id="card06Title">
+        <source>Why Redaction Breaks Enterprise AI Workflows</source>
+        <target>마스킹이 기업 AI 워크플로우를 망가뜨리는 이유</target>
+      </trans-unit>
+      <trans-unit id="card06Badge">
+        <source>Featured</source>
+        <target>추천</target>
+      </trans-unit>
+      <trans-unit id="card07Title">
+        <source>Secure Enterprise AI Workflows</source>
+        <target>안전한 기업 AI 워크플로우</target>
+      </trans-unit>
+      <trans-unit id="card07Badge">
+        <source>Article</source>
+        <target>아티클</target>
+      </trans-unit>
+      <trans-unit id="card08Title">
+        <source>Structure-Preserving Document Processing</source>
+        <target>구조 보존 문서 처리</target>
+      </trans-unit>
+      <trans-unit id="card08Badge">
+        <source>Article</source>
+        <target>아티클</target>
+      </trans-unit>
+      <trans-unit id="card09Title">
+        <source>PII Protection vs Enterprise Confidentiality Control</source>
+        <target>PII 보호 vs 기업 기밀 제어</target>
+      </trans-unit>
+      <trans-unit id="card09Badge">
+        <source>Article</source>
+        <target>아티클</target>
+      </trans-unit>
+      <trans-unit id="card10Title">
+        <source>On-Premise vs Cloud AI Data Protection</source>
+        <target>온프레미스 vs 클라우드 AI 데이터 보호</target>
+      </trans-unit>
+      <trans-unit id="card10Badge">
+        <source>Article</source>
+        <target>아티클</target>
+      </trans-unit>
+      <trans-unit id="card11Title">
+        <source>Local Restoration vs Anonymization</source>
+        <target>로컬 Restoration vs 익명화</target>
+      </trans-unit>
+      <trans-unit id="card11Badge">
+        <source>Article</source>
+        <target>아티클</target>
+      </trans-unit>
+      <trans-unit id="card12Title">
+        <source>AI Data Pipeline Protection</source>
+        <target>AI 데이터 파이프라인 보호</target>
+      </trans-unit>
+      <trans-unit id="card12Badge">
+        <source>Article</source>
+        <target>아티클</target>
+      </trans-unit>
+      <trans-unit id="cardLinkLabel">
+        <source>Read article</source>
+        <target>아티클 읽기</target>
+      </trans-unit>
+      <trans-unit id="ctaTitle">
+        <source>See how LLM Capsule works with your data</source>
+        <target>LLM Capsule이 실제 데이터에서 어떻게 동작하는지 확인하십시오</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>문서, 배포 조건, 평가 기준을 가져오십시오. 실제 워크플로우에서 시연합니다.</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn1Label">
+        <source>Request a Demo</source>
+        <target>데모 요청</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="ctaSecondaryLink1Label">
+        <source>Download Architecture Brief</source>
+        <target>아키텍처 브리프 다운로드</target>
+      </trans-unit>
+      <trans-unit id="ctaSecondaryLink2Label">
+        <source>Available on AWS Marketplace</source>
+        <target>AWS Marketplace에서 이용 가능</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ja" datatype="plaintext" original="enterprise-context-control">
+    <body>
+      <!-- Section01_Hero -->
+      <trans-unit id="title">
+        <source>Enterprise Context Control</source>
+        <target>Enterprise Context Control</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Policy-based sensitivity classification that determines what data to protect based on document type, department, and workflow context during AI processing.</source>
+        <target>AI処理時にドキュメントの種類、部門、ワークフローのコンテキストに基づいて保護すべきデータを決定するポリシーベースの機密性分類です。</target>
+      </trans-unit>
+
+      <!-- Section02_Definition -->
+      <trans-unit id="label">
+        <source>DEFINITION</source>
+        <target>定義</target>
+      </trans-unit>
+      <trans-unit id="body">
+        <source>Enterprise context control is a policy-based approach to sensitivity classification in AI workflows. Rather than applying uniform rules to all data, it determines what to protect based on document type, department origin, workflow stage, and enterprise-specific sensitivity policies. It is a core component of context-aware data control.</source>
+        <target>Enterprise context controlは、AIワークフローにおける機密性分類へのポリシーベースのアプローチです。すべてのデータに一律のルールを適用するのではなく、ドキュメントの種類、部門の出所、ワークフローの段階、企業固有の機密性ポリシーに基づいて保護対象を決定します。コンテキスト認識型データ制御の中核コンポーネントです。</target>
+      </trans-unit>
+
+      <!-- Section03_Explanation -->
+      <trans-unit id="headingBrand">
+        <source>Explanation</source>
+        <target>解説</target>
+      </trans-unit>
+      <trans-unit id="paragraph1">
+        <source>Not all data carries the same sensitivity in every context. A company name in a press release is public. The same company name in an M&amp;A target list is highly sensitive. Enterprise context control enables organizations to define protection policies that reflect these contextual differences.</source>
+        <target>すべてのデータがあらゆるコンテキストで同じ機密性を持つわけではありません。プレスリリースの企業名は公開情報です。同じ企業名がM&amp;A対象リストにあれば極めて機密性が高くなります。Enterprise context controlにより、組織はこうしたコンテキストの違いを反映した保護ポリシーを定義できます。</target>
+      </trans-unit>
+      <trans-unit id="paragraph2">
+        <source>This goes beyond PII detection. Enterprise context control covers trade secrets, financial terms, strategic data, internal metrics, and any organization-specific sensitivity category — providing true enterprise confidentiality control.</source>
+        <target>これはPII検出を超えるものです。Enterprise context controlは営業秘密、財務条件、戦略データ、社内指標、組織固有の機密カテゴリをカバーし、真の企業機密制御を提供します。</target>
+      </trans-unit>
+
+      <!-- Section04_Example -->
+      <trans-unit id="exampleHeadingBrand">
+        <source>Example</source>
+        <target>事例</target>
+      </trans-unit>
+      <trans-unit id="cardText">
+        <source>A bank defines different encapsulation policies for three document types: customer correspondence (protect PII only), internal risk assessments (protect PII plus risk scores and limit recommendations), and board presentations (protect all financial projections plus strategic commentary). Enterprise context control applies the right policy to each document automatically.</source>
+        <target>銀行が3種類のドキュメントに対して異なるEncapsulationポリシーを定義します：顧客対応文書（PIIのみ保護）、社内リスク評価（PIIに加えリスクスコアと限度額推奨を保護）、取締役会プレゼンテーション（すべての財務予測と戦略的コメントを保護）。Enterprise context controlが各ドキュメントに適切なポリシーを自動的に適用します。</target>
+      </trans-unit>
+
+      <!-- Section05_RelatedTerms -->
+      <trans-unit id="relatedHeadingPlain">
+        <source>Related</source>
+        <target>関連</target>
+      </trans-unit>
+      <trans-unit id="relatedHeadingBrand">
+        <source>Terms</source>
+        <target>用語</target>
+      </trans-unit>
+      <trans-unit id="relatedLinksHeading">
+        <source>Related Pages</source>
+        <target>関連ページ</target>
+      </trans-unit>
+
+      <!-- Section06_CTA -->
+      <trans-unit id="ctaTitlePre">
+        <source>See</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="ctaTitleProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="ctaTitlePost">
+        <source>Enterprise Context Control in Action</source>
+        <target>Enterprise Context Controlの実際の動作をご覧ください</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Experience how policy-based sensitivity classification protects enterprise data across every document type and workflow.</source>
+        <target>ポリシーベースの機密性分類がすべてのドキュメント種別とワークフローにわたって企業データを保護する様子を体験してください。</target>
+      </trans-unit>
+      <trans-unit id="cta1Label">
+        <source>Request a Demo</source>
+        <target>デモのリクエスト</target>
+      </trans-unit>
+      <trans-unit id="cta2Label">
+        <source>View Product</source>
+        <target>製品を見る</target>
+      </trans-unit>
+      <trans-unit id="footnote">
+        <source>Enterprise AI Enablement by CUBIG</source>
+        <target>CUBIGによるエンタープライズAIイネーブルメント</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

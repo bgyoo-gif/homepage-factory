@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ja" datatype="plaintext" original="what-is-ai-data-capsule">
+    <body>
+      <!-- Section01_Hero -->
+      <trans-unit id="title">
+        <source>What Is an AI Data Capsule?</source>
+        <target>AIデータカプセルとは？</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Enterprise data encapsulation for secure LLM usage — how to protect sensitive data before AI processing and restore usable outputs after.</source>
+        <target>安全なLLM使用のためのエンタープライズデータEncapsulation — AI処理前に機密データを保護し、処理後に使用可能な出力を復元する方法です。</target>
+      </trans-unit>
+
+      <!-- Section02_Screenshot -->
+      <trans-unit id="screenshotLabel">
+        <source>Data Capsule Concept — Original document vs. encapsulated version with structure preserved</source>
+        <target>データカプセルの概念 — 原本ドキュメント vs. 構造が保持されたEncapsulationバージョン</target>
+      </trans-unit>
+
+      <!-- Section03_Problem -->
+      <trans-unit id="sectionLabel_problem">
+        <source>Problem</source>
+        <target>課題</target>
+      </trans-unit>
+      <trans-unit id="problem_paragraph1">
+        <source>Enterprises need to process sensitive documents through large language models for summarization, extraction, translation, and analysis. Sending raw data to external AI services creates unacceptable exposure. Existing approaches — masking, redaction, tokenization — destroy the context AI models need to produce useful outputs.</source>
+        <target>企業は要約、抽出、翻訳、分析のために大規模言語モデルで機密ドキュメントを処理する必要があります。生データを外部AIサービスに送信すると許容できないデータ漏洩が発生します。既存のアプローチ — マスキング、墨消し、トークン化 — はAIモデルが有用な出力を生成するために必要なコンテキストを破壊します。</target>
+      </trans-unit>
+      <trans-unit id="problem_paragraph2">
+        <source>The result is a binary choice: expose data to use AI, or protect data and get unusable results.</source>
+        <target>結果として二者択一を迫られます：AIを使うためにデータを公開するか、データを保護して使用不能な結果を受け入れるか。</target>
+      </trans-unit>
+
+      <!-- Section04_Definition -->
+      <trans-unit id="sectionLabel_definition">
+        <source>Definition</source>
+        <target>定義</target>
+      </trans-unit>
+      <trans-unit id="bannerLabel">
+        <source>AI Data Capsule</source>
+        <target>AIデータカプセル</target>
+      </trans-unit>
+      <trans-unit id="bannerText">
+        <source>An AI data capsule is a locally generated AI enablement layer that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.</source>
+        <target>AIデータカプセルは、外部AIサービスに送信される前に機密エンタープライズデータを包むローカル生成のAIイネーブルメントレイヤーです。カプセルは機密要素を可逆的な表現に置き換えながらドキュメント構造とコンテキストを保持します。AI処理後、カプセルはローカルRestoration を可能にし、元のデータを外部に公開することなくAI出力を完全なエンタープライズコンテキストに復元します。</target>
+      </trans-unit>
+
+      <!-- Section05_Explanation -->
+      <trans-unit id="sectionLabel_explanation">
+        <source>Explanation</source>
+        <target>解説</target>
+      </trans-unit>
+      <trans-unit id="introText">
+        <source>An AI data capsule operates as an AI enablement data layer through three stages within a restorable workflow:</source>
+        <target>AIデータカプセルはRestorable Workflow内の3つの段階を通じてAIイネーブルメント・データレイヤーとして動作します：</target>
+      </trans-unit>
+      <trans-unit id="bullet1_strong">
+        <source>Local Encapsulation.</source>
+        <target>ローカルEncapsulation。</target>
+      </trans-unit>
+      <trans-unit id="bullet1_text">
+        <source> Sensitive elements in enterprise documents — names, account numbers, dates, medical codes, contract terms — are detected and replaced with structure-preserving representations. The mapping between original and replaced values is stored locally, never transmitted.</source>
+        <target> エンタープライズドキュメントの機密要素 — 名前、口座番号、日付、医療コード、契約条件 — が検出され、構造保持表現に置き換えられます。原本と置換値のマッピングはローカルに保存され、送信されることはありません。</target>
+      </trans-unit>
+      <trans-unit id="bullet2_strong">
+        <source>Protected AI Processing.</source>
+        <target>保護されたAI処理。</target>
+      </trans-unit>
+      <trans-unit id="bullet2_text">
+        <source> The encapsulated document is sent to any external LLM. Because document structure is preserved, the AI model can perform summarization, extraction, classification, and translation effectively. No original sensitive data leaves the enterprise environment.</source>
+        <target> Encapsulationされたドキュメントが外部LLMに送信されます。ドキュメント構造が保持されているため、AIモデルは要約、抽出、分類、翻訳を効果的に実行できます。元の機密データはエンタープライズ環境から出ることはありません。</target>
+      </trans-unit>
+      <trans-unit id="bullet3_strong">
+        <source>Local Restoration.</source>
+        <target>ローカルRestoration。</target>
+      </trans-unit>
+      <trans-unit id="bullet3_text">
+        <source> AI results are automatically restored locally with original enterprise data. The locally stored mapping is applied to reconstruct outputs with real names, amounts, and references, producing results that are directly usable in business workflows.</source>
+        <target> AI結果は元のエンタープライズデータとともにローカルで自動的に復元されます。ローカルに保存されたマッピングが適用され、実際の名前、金額、参照で出力を再構成し、ビジネスワークフローで直接使用可能な結果を生成します。</target>
+      </trans-unit>
+      <trans-unit id="explanationBannerText">
+        <source>Key concept: AI results are automatically restored locally with original enterprise data. The AI data capsule enables AI adoption by ensuring original data never leaves the enterprise environment.</source>
+        <target>重要な概念：AI結果は元のエンタープライズデータとともにローカルで自動的に復元されます。AIデータカプセルは、元のデータがエンタープライズ環境から出ないことを保証することでAIの導入を可能にします。</target>
+      </trans-unit>
+
+      <!-- Section06_EnterpriseExample -->
+      <trans-unit id="sectionLabel_example">
+        <source>Enterprise Example</source>
+        <target>エンタープライズ事例</target>
+      </trans-unit>
+      <trans-unit id="cardTitle">
+        <source>Financial Compliance Review</source>
+        <target>金融コンプライアンスレビュー</target>
+      </trans-unit>
+      <trans-unit id="cardParagraph1">
+        <source>A bank needs AI to summarize 500 loan applications for compliance review. Each document contains customer names, social security numbers, account balances, and income data.</source>
+        <target>銀行がコンプライアンスレビューのためにAIで500件のローン申請書を要約する必要があります。各ドキュメントには顧客名、社会保障番号、口座残高、所得データが含まれています。</target>
+      </trans-unit>
+      <trans-unit id="cardParagraph2">
+        <source> the bank encapsulates all documents locally. AI processes the protected versions and generates structured summaries. Local restoration restores the real customer names and account details into the summaries, producing compliance-ready outputs without ever exposing raw customer data to the AI provider.</source>
+        <target> 銀行はすべてのドキュメントをローカルでEncapsulationします。AIは保護されたバージョンを処理し、構造化された要約を生成します。ローカルRestorationが実際の顧客名と口座詳細を要約に復元し、AIプロバイダーに生の顧客データを公開することなくコンプライアンス対応の出力を生成します。</target>
+      </trans-unit>
+      <trans-unit id="exampleProductName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+
+      <!-- Section07_FAQ -->
+      <trans-unit id="faqLabel">
+        <source>FAQ</source>
+        <target>よくある質問</target>
+      </trans-unit>
+      <trans-unit id="faq1_question">
+        <source>What is an AI data capsule?</source>
+        <target>AIデータカプセルとは何ですか？</target>
+      </trans-unit>
+      <trans-unit id="faq1_answer">
+        <source>An AI data capsule is a locally generated AI enablement layer that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.</source>
+        <target>AIデータカプセルは、外部AIサービスに送信される前に機密エンタープライズデータをEncapsulationするローカル生成のAIイネーブルメントレイヤーです。AI処理後、カプセルはローカルRestorationを可能にし、出力が実際のエンタープライズワークフローで使用可能な状態を維持します。</target>
+      </trans-unit>
+      <trans-unit id="faq2_question">
+        <source>How does an AI data capsule differ from data masking?</source>
+        <target>AIデータカプセルはデータマスキングとどう違いますか？</target>
+      </trans-unit>
+      <trans-unit id="faq2_answer">
+        <source>Data masking permanently removes sensitive information, making AI outputs unusable for enterprise workflows. An AI data capsule preserves data structure and enables restoration, so AI results can be restored to their full enterprise context locally.</source>
+        <target>データマスキングは機密情報を永久に削除し、AI出力をエンタープライズワークフローで使用不能にします。AIデータカプセルはデータ構造を保持しRestorationを可能にするため、AI結果をローカルで完全なエンタープライズコンテキストに復元できます。</target>
+      </trans-unit>
+      <trans-unit id="faq3_question">
+        <source>Does the AI data capsule work with any LLM?</source>
+        <target>AIデータカプセルはすべてのLLMで動作しますか？</target>
+      </trans-unit>
+      <trans-unit id="faq3_answer">
+        <source>Yes. Because the capsule operates at the data layer before transmission, it works with any external AI service — ChatGPT, Claude, Gemini, or any LLM API.</source>
+        <target>はい。カプセルは送信前のデータレイヤーで動作するため、ChatGPT、Claude、Gemini、その他すべてのLLM APIを含む外部AIサービスで動作します。</target>
+      </trans-unit>
+      <trans-unit id="faq4_question">
+        <source>Where is the mapping data stored?</source>
+        <target>マッピングデータはどこに保存されますか？</target>
+      </trans-unit>
+      <trans-unit id="faq4_answer">
+        <source>The mapping between original and encapsulated values is stored entirely within the enterprise environment. It is never transmitted to external services.</source>
+        <target>原本とEncapsulationされた値のマッピングは、完全にエンタープライズ環境内に保存されます。外部サービスに送信されることはありません。</target>
+      </trans-unit>
+
+      <!-- Section08_Related -->
+      <trans-unit id="relatedLabel">
+        <source>Related</source>
+        <target>関連コンテンツ</target>
+      </trans-unit>
+
+      <!-- Section09_CTA -->
+      <trans-unit id="ctaProductName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>ドキュメント、デプロイメント要件、評価基準をお持ちください。実際のワークフローでデモンストレーションを行います。</target>
+      </trans-unit>
+      <trans-unit id="cta1Label">
+        <source>Request a Demo</source>
+        <target>デモのリクエスト</target>
+      </trans-unit>
+      <trans-unit id="cta2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink1Label">
+        <source>Download Architecture Brief</source>
+        <target>アーキテクチャブリーフをダウンロード</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

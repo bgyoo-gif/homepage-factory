@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="why-redaction-breaks-enterprise-ai-workflows">
+    <body>
+      <!-- Section 01: Hero -->
+      <trans-unit id="title">
+        <source>Why Redaction Breaks Enterprise AI Workflows</source>
+        <target>Warum Redaktion Enterprise-KI-Workflows zerstoert</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Masking and redaction tools destroy the data context that AI models need. Enterprise AI requires structure-preserving processing with restorable outputs.</source>
+        <target>Masking- und Redaktionstools zerstoeren den Datenkontext, den KI-Modelle benoetigen. Enterprise-KI erfordert strukturerhaltende Verarbeitung mit wiederherstellbaren Ausgaben.</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbHome">
+        <source>Home</source>
+        <target>Startseite</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbResources">
+        <source>Resources</source>
+        <target>Ressourcen</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbLearn">
+        <source>Learn</source>
+        <target>Wissen</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbCurrent">
+        <source>Why Redaction Breaks Enterprise AI Workflows</source>
+        <target>Warum Redaktion Enterprise-KI-Workflows zerstoert</target>
+      </trans-unit>
+
+      <!-- Section 02: Problem -->
+      <trans-unit id="sectionLabel_problem">
+        <source>Problem</source>
+        <target>Problem</target>
+      </trans-unit>
+
+      <!-- Section 03: How Redaction Fails -->
+      <trans-unit id="sectionHeadingPre_s3">
+        <source>How Redaction and Masking Tools</source>
+        <target>Wie Redaktions- und Masking-Tools in KI-Workflows</target>
+      </trans-unit>
+      <trans-unit id="sectionHeadingHighlight_s3">
+        <source>Fail</source>
+        <target>scheitern</target>
+      </trans-unit>
+      <trans-unit id="sectionHeadingPost_s3">
+        <source>in AI Workflows</source>
+        <target></target>
+      </trans-unit>
+
+      <!-- Section 04: Requirements -->
+      <trans-unit id="sectionHeadingPre_s4">
+        <source>What Enterprise AI Workflows Actually</source>
+        <target>Was Enterprise-KI-Workflows tatsaechlich</target>
+      </trans-unit>
+      <trans-unit id="sectionHeadingHighlight_s4">
+        <source>Require</source>
+        <target>erfordern</target>
+      </trans-unit>
+      <trans-unit id="intro_s4">
+        <source>Achieving AI document security and secure LLM usage in regulated environments demands more than pattern-based redaction. Enterprise AI data pipelines need a protection mechanism that satisfies three requirements simultaneously:</source>
+        <target>KI-Dokumentensicherheit und sichere LLM-Nutzung in regulierten Umgebungen erfordern mehr als musterbasierte Redaktion. Enterprise-KI-Datenpipelines benoetigen einen Schutzmechanismus, der drei Anforderungen gleichzeitig erfuellt:</target>
+      </trans-unit>
+      <trans-unit id="check1Strong">
+        <source>Structure-preserving processing.</source>
+        <target>Strukturerhaltende Verarbeitung.</target>
+      </trans-unit>
+      <trans-unit id="check1Rest">
+        <source> Document structure, entity relationships, and semantic context must remain intact for AI comprehension.</source>
+        <target> Dokumentstruktur, Entitaetsbeziehungen und semantischer Kontext muessen fuer das KI-Verstaendnis intakt bleiben.</target>
+      </trans-unit>
+      <trans-unit id="check2Strong">
+        <source>Zero exposure.</source>
+        <target>Null Exposition.</target>
+      </trans-unit>
+      <trans-unit id="check2Rest">
+        <source> Original sensitive data must never leave the enterprise environment.</source>
+        <target> Originale sensible Daten duerfen die Unternehmensumgebung niemals verlassen.</target>
+      </trans-unit>
+      <trans-unit id="check3Strong">
+        <source>Restorable workflow.</source>
+        <target>Wiederherstellbarer Workflow.</target>
+      </trans-unit>
+      <trans-unit id="check3Rest">
+        <source> AI results are automatically restored locally with original enterprise data. Outputs contain real names, real amounts, real dates — ready for direct use in business processes.</source>
+        <target> KI-Ergebnisse werden automatisch lokal mit originalen Unternehmensdaten wiederhergestellt. Ausgaben enthalten echte Namen, echte Betraege, echte Daten — bereit fuer den direkten Einsatz in Geschaeftsprozessen.</target>
+      </trans-unit>
+      <trans-unit id="bannerBold">
+        <source>AI results are automatically restored locally with original enterprise data.</source>
+        <target>KI-Ergebnisse werden automatisch lokal mit originalen Unternehmensdaten wiederhergestellt.</target>
+      </trans-unit>
+      <trans-unit id="bannerRest">
+        <source> as an AI enablement data layer from static redaction tools.</source>
+        <target> als AI-Enablement-Datenschicht von statischen Redaktionstools unterscheidet.</target>
+      </trans-unit>
+
+      <!-- Section 05: Comparison Table -->
+      <trans-unit id="headingVs">
+        <source>vs</source>
+        <target>vs</target>
+      </trans-unit>
+      <trans-unit id="headingTools">
+        <source>Redaction Tools</source>
+        <target>Redaktionstools</target>
+      </trans-unit>
+
+      <!-- Section 06: Enterprise Example -->
+      <trans-unit id="sectionHeadingPre_s6">
+        <source>Enterprise</source>
+        <target>Praxis</target>
+      </trans-unit>
+      <trans-unit id="sectionHeadingHighlight_s6">
+        <source>Example</source>
+        <target>beispiel</target>
+      </trans-unit>
+      <trans-unit id="cardTitle">
+        <source>Legal Contract Review</source>
+        <target>Rechtliche Vertragspruefung</target>
+      </trans-unit>
+
+      <!-- Section 07: FAQ -->
+      <trans-unit id="sectionLabel_faq">
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </trans-unit>
+
+      <!-- Section 08: Related -->
+      <trans-unit id="sectionLabel_related">
+        <source>Related</source>
+        <target>Verwandte Seiten</target>
+      </trans-unit>
+
+      <!-- Section 09: CTA Band -->
+      <trans-unit id="titlePre">
+        <source>See how</source>
+        <target>Erfahren Sie, wie</target>
+      </trans-unit>
+      <trans-unit id="titlePost">
+        <source>works with your data</source>
+        <target>mit Ihren Daten arbeitet</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsaechlichen Workflows.</target>
+      </trans-unit>
+      <trans-unit id="cta1Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="cta2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnote1Label">
+        <source>Download Architecture Brief</source>
+        <target>Architektur-Brief herunterladen</target>
+      </trans-unit>
+      <trans-unit id="footnote2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

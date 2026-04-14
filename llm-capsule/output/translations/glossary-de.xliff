@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="glossary">
+    <body>
+      <!-- Section01_Hero -->
+      <trans-unit id="title">
+        <source>Enterprise AI </source>
+        <target>Unternehmens-KI </target>
+      </trans-unit>
+      <trans-unit id="titleHighlight">
+        <source>Enablement</source>
+        <target>Einführung</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Key terms and definitions for enterprise AI enablement, LLM data privacy, and secure enterprise AI workflows.</source>
+        <target>Schlüsselbegriffe und Definitionen für die KI-Einführung im Unternehmen, LLM-Datenschutz und sichere KI-Workflows.</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbHome">
+        <source>Home</source>
+        <target>Startseite</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbResources">
+        <source>Resources</source>
+        <target>Ressourcen</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbCurrent">
+        <source>Glossary</source>
+        <target>Glossar</target>
+      </trans-unit>
+
+      <!-- Section02_GlossaryTerms -->
+      <trans-unit id="card1Title">
+        <source>Restoration</source>
+        <target>Restoration</target>
+      </trans-unit>
+      <trans-unit id="card1LinkLabel">
+        <source>Read definition</source>
+        <target>Definition lesen</target>
+      </trans-unit>
+      <trans-unit id="card2Title">
+        <source>Zero Exposure</source>
+        <target>Zero Exposure</target>
+      </trans-unit>
+      <trans-unit id="card2LinkLabel">
+        <source>Read definition</source>
+        <target>Definition lesen</target>
+      </trans-unit>
+      <trans-unit id="card3Title">
+        <source>Enterprise Context Control</source>
+        <target>Enterprise Context Control</target>
+      </trans-unit>
+      <trans-unit id="card3LinkLabel">
+        <source>Read definition</source>
+        <target>Definition lesen</target>
+      </trans-unit>
+      <trans-unit id="card4Title">
+        <source>Structure-Preserving Processing</source>
+        <target>Strukturerhaltende Verarbeitung</target>
+      </trans-unit>
+      <trans-unit id="card4LinkLabel">
+        <source>Read definition</source>
+        <target>Definition lesen</target>
+      </trans-unit>
+      <trans-unit id="card5Title">
+        <source>Restorable Workflow</source>
+        <target>Restorable Workflow</target>
+      </trans-unit>
+      <trans-unit id="card5LinkLabel">
+        <source>Read definition</source>
+        <target>Definition lesen</target>
+      </trans-unit>
+      <trans-unit id="card6Title">
+        <source>Secure LLM Usage</source>
+        <target>Sichere LLM-Nutzung</target>
+      </trans-unit>
+      <trans-unit id="card6LinkLabel">
+        <source>Read definition</source>
+        <target>Definition lesen</target>
+      </trans-unit>
+
+      <!-- Section03_CTA -->
+      <trans-unit id="ctaTitle">
+        <source>See how </source>
+        <target>Erleben Sie, wie </target>
+      </trans-unit>
+      <trans-unit id="ctaTitleProduct">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Workflows.</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn1Label">
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink1Label">
+        <source>Download Architecture Brief</source>
+        <target>Architektur-Überblick herunterladen</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink2Label">
+        <source>Available on AWS Marketplace</source>
+        <target>Verfügbar auf AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

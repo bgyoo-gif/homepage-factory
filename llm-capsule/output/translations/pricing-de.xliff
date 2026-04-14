@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="pricing">
+    <body>
+      <!-- Section01_Hero -->
+      <trans-unit id="titlePrefix">
+        <source>Enterprise</source>
+        <target>Enterprise</target>
+      </trans-unit>
+      <trans-unit id="titleBrand">
+        <source>Pricing</source>
+        <target>Preise</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>LLM Capsule is priced for enterprise deployment. Contact us for volume-based pricing tailored to your document processing workload and deployment requirements.</source>
+        <target>LLM Capsule bietet ein Preismodell für den Enterprise-Einsatz. Kontaktieren Sie uns für eine volumenbasierte Preisgestaltung, die auf Ihre Dokumentenverarbeitung und Deployment-Anforderungen zugeschnitten ist.</target>
+      </trans-unit>
+
+      <!-- Section02_PricingPlans — Card 1: Proof of Value -->
+      <trans-unit id="card1Badge">
+        <source>PROOF OF VALUE</source>
+        <target>PROOF OF VALUE</target>
+      </trans-unit>
+      <trans-unit id="card1Price">
+        <source>Custom</source>
+        <target>Individuell</target>
+      </trans-unit>
+      <trans-unit id="card1Subtitle">
+        <source>Evaluation period</source>
+        <target>Evaluierungszeitraum</target>
+      </trans-unit>
+      <trans-unit id="card1Feature1">
+        <source>Test with your own documents</source>
+        <target>Test mit Ihren eigenen Dokumenten</target>
+      </trans-unit>
+      <trans-unit id="card1Feature2">
+        <source>Full encapsulation + restoration</source>
+        <target>Vollständige Encapsulation + Restoration</target>
+      </trans-unit>
+      <trans-unit id="card1Feature3">
+        <source>Any LLM provider</source>
+        <target>Alle LLM-Anbieter</target>
+      </trans-unit>
+      <trans-unit id="card1Feature4">
+        <source>On-premise or cloud deployment</source>
+        <target>On-Premise- oder Cloud-Deployment</target>
+      </trans-unit>
+      <trans-unit id="card1Feature5">
+        <source>Dedicated technical support</source>
+        <target>Dedizierter technischer Support</target>
+      </trans-unit>
+      <trans-unit id="card1ButtonLabel">
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+
+      <!-- Section02_PricingPlans — Card 2: Enterprise -->
+      <trans-unit id="card2Badge">
+        <source>ENTERPRISE</source>
+        <target>ENTERPRISE</target>
+      </trans-unit>
+      <trans-unit id="card2Price">
+        <source>Custom</source>
+        <target>Individuell</target>
+      </trans-unit>
+      <trans-unit id="card2Subtitle">
+        <source>Annual license</source>
+        <target>Jahreslizenz</target>
+      </trans-unit>
+      <trans-unit id="card2Feature1">
+        <source>Unlimited document processing</source>
+        <target>Unbegrenzte Dokumentenverarbeitung</target>
+      </trans-unit>
+      <trans-unit id="card2Feature2">
+        <source>Full 3+2 capability set</source>
+        <target>Vollständiges 3+2 Funktionsset</target>
+      </trans-unit>
+      <trans-unit id="card2Feature3">
+        <source>Enterprise context control</source>
+        <target>Enterprise-Kontextsteuerung</target>
+      </trans-unit>
+      <trans-unit id="card2Feature4">
+        <source>Custom deployment model</source>
+        <target>Individuelles Deployment-Modell</target>
+      </trans-unit>
+      <trans-unit id="card2Feature5">
+        <source>Admin console &amp; audit</source>
+        <target>Admin-Konsole und Audit</target>
+      </trans-unit>
+      <trans-unit id="card2Feature6">
+        <source>Dedicated architecture support</source>
+        <target>Dedizierter Architektur-Support</target>
+      </trans-unit>
+      <trans-unit id="card2Feature7">
+        <source>SLA &amp; enterprise support</source>
+        <target>SLA und Enterprise-Support</target>
+      </trans-unit>
+      <trans-unit id="card2ButtonLabel">
+        <source>Contact Sales</source>
+        <target>Vertrieb kontaktieren</target>
+      </trans-unit>
+
+      <!-- Section02_PricingPlans — Card 3: AWS Marketplace -->
+      <trans-unit id="card3Badge">
+        <source>AWS MARKETPLACE</source>
+        <target>AWS MARKETPLACE</target>
+      </trans-unit>
+      <trans-unit id="card3Price">
+        <source>Listed</source>
+        <target>Gelistet</target>
+      </trans-unit>
+      <trans-unit id="card3Subtitle">
+        <source>Pay through AWS</source>
+        <target>Bezahlung über AWS</target>
+      </trans-unit>
+      <trans-unit id="card3Feature1">
+        <source>Streamlined procurement</source>
+        <target>Vereinfachter Beschaffungsprozess</target>
+      </trans-unit>
+      <trans-unit id="card3Feature2">
+        <source>AWS billing integration</source>
+        <target>AWS-Abrechnungsintegration</target>
+      </trans-unit>
+      <trans-unit id="card3Feature3">
+        <source>VPC deployment</source>
+        <target>VPC-Deployment</target>
+      </trans-unit>
+      <trans-unit id="card3Feature4">
+        <source>Standard feature set</source>
+        <target>Standard-Funktionsset</target>
+      </trans-unit>
+      <trans-unit id="card3Feature5">
+        <source>AWS support channels</source>
+        <target>AWS-Supportkanäle</target>
+      </trans-unit>
+      <trans-unit id="card3ButtonLabel">
+        <source>View on AWS Marketplace</source>
+        <target>Auf AWS Marketplace ansehen</target>
+      </trans-unit>
+
+      <!-- Section03_CTABand -->
+      <trans-unit id="title">
+        <source>See how</source>
+        <target>Erleben Sie, wie</target>
+      </trans-unit>
+      <trans-unit id="titleProductName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+      <trans-unit id="titleSuffix">
+        <source>works with your data</source>
+        <target>mit Ihren Daten arbeitet</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Workflows.</target>
+      </trans-unit>
+      <trans-unit id="btn1Label">
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+      <trans-unit id="btn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink1Label">
+        <source>Download Architecture Brief</source>
+        <target>Architektur-Brief herunterladen</target>
+      </trans-unit>
+      <trans-unit id="footnoteLink2Label">
+        <source>Available on AWS Marketplace</source>
+        <target>Verfügbar auf AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

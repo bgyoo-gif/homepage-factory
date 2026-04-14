@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="llm-capsule-vs-prompt-security-gateways">
+    <body>
+      <trans-unit id="heroTitle">
+        <source>LLM Capsule vs Prompt Security Gateways</source>
+        <target>LLM Capsule vs 프롬프트 보안 게이트웨이</target>
+      </trans-unit>
+      <trans-unit id="heroDescription">
+        <source>Compare LLM Capsule with prompt security gateways. Gateways filter at the API layer; LLM Capsule enables AI adoption at the data layer with structure-preserving encapsulation.</source>
+        <target>LLM Capsule과 프롬프트 보안 게이트웨이를 비교합니다. 게이트웨이는 API 계층에서 필터링하고, LLM Capsule은 구조 보존 Encapsulation으로 데이터 계층에서 AI 도입을 지원합니다.</target>
+      </trans-unit>
+      <trans-unit id="overviewText">
+        <source>Prompt security gateways sit between the user and the AI model, scanning prompts for sensitive content and filtering or blocking requests that contain flagged patterns. They operate at the API interaction layer. LLM Capsule operates as an AI enablement data layer — transforming the data itself before it enters any AI workflow, enabling AI adoption rather than blocking it.</source>
+        <target>프롬프트 보안 게이트웨이는 사용자와 AI 모델 사이에 위치하여 프롬프트에서 민감한 콘텐츠를 스캔하고, 플래그 패턴이 포함된 요청을 필터링하거나 차단합니다. API 상호작용 계층에서 작동합니다. LLM Capsule은 AI 활성화 데이터 레이어로서, 데이터가 AI 워크플로우에 진입하기 전에 데이터 자체를 변환하여 AI 도입을 차단하는 대신 지원합니다.</target>
+      </trans-unit>
+      <trans-unit id="gatewaysWorkTitle">
+        <source>How Prompt Security Gateways Work</source>
+        <target>프롬프트 보안 게이트웨이의 작동 방식</target>
+      </trans-unit>
+      <trans-unit id="gatewaysWorkText">
+        <source>Prompt gateways intercept API calls to LLM providers. They scan the prompt text for PII patterns, blocked topics, or compliance violations. If sensitive content is detected, the gateway either blocks the request, strips the flagged content, or alerts an administrator. Some gateways also scan AI responses for data leakage.</source>
+        <target>프롬프트 게이트웨이는 LLM 제공사로의 API 호출을 가로챕니다. 프롬프트 텍스트에서 PII 패턴, 차단된 주제, 컴플라이언스 위반을 스캔합니다. 민감한 콘텐츠가 감지되면 게이트웨이는 요청을 차단하거나, 플래그된 콘텐츠를 제거하거나, 관리자에게 알립니다. 일부 게이트웨이는 AI 응답에서 데이터 유출도 스캔합니다.</target>
+      </trans-unit>
+      <trans-unit id="limitationsTitle">
+        <source>Limitations</source>
+        <target>한계점</target>
+      </trans-unit>
+      <trans-unit id="limitationBullet1">
+        <source>Prompt-only scope. Gateways only see the final prompt, not the underlying data pipeline. Documents processed through RAG systems or batch pipelines may bypass the gateway entirely.</source>
+        <target>프롬프트 한정 범위. 게이트웨이는 최종 프롬프트만 확인하며, 기반 데이터 파이프라인은 볼 수 없습니다. RAG 시스템이나 배치 파이프라인을 통해 처리된 문서는 게이트웨이를 완전히 우회할 수 있습니다.</target>
+      </trans-unit>
+      <trans-unit id="limitationBullet2">
+        <source>Block or pass binary. Most gateways make a binary decision — block the request or pass it through. There is no mechanism to transform data while preserving usability.</source>
+        <target>차단 또는 통과의 이진 판단. 대부분의 게이트웨이는 요청을 차단하거나 통과시키는 이진 결정을 내립니다. 사용성을 유지하면서 데이터를 변환하는 메커니즘이 없습니다.</target>
+      </trans-unit>
+      <trans-unit id="limitationBullet3">
+        <source>No output restoration. If a gateway strips sensitive content from a prompt, the AI output will lack that context. There is no restoration mechanism.</source>
+        <target>출력 Restoration 불가. 게이트웨이가 프롬프트에서 민감한 콘텐츠를 제거하면 AI 출력에 해당 컨텍스트가 누락됩니다. Restoration 메커니즘이 없습니다.</target>
+      </trans-unit>
+      <trans-unit id="limitationBullet4">
+        <source>Pattern-based detection. Gateways rely on pattern matching which misses context-dependent sensitivity and generates false positives on non-sensitive content that matches PII patterns.</source>
+        <target>패턴 기반 감지. 게이트웨이는 패턴 매칭에 의존하여 문맥 의존적 민감도를 놓치고, PII 패턴과 일치하는 비민감 콘텐츠에서 오탐이 발생합니다.</target>
+      </trans-unit>
+      <trans-unit id="differsTitle">
+        <source>How LLM Capsule Differs</source>
+        <target>LLM Capsule의 차별점</target>
+      </trans-unit>
+      <trans-unit id="differsText">
+        <source>LLM Capsule operates upstream of the prompt. It encapsulates sensitive data at the document level before any AI processing occurs. The encapsulation is structure-preserving — AI receives complete, processable documents. After AI generates outputs, local restoration (restoration) restores enterprise context automatically.</source>
+        <target>LLM Capsule은 프롬프트 상위 단계에서 작동합니다. AI 처리가 시작되기 전에 문서 수준에서 민감 데이터를 Encapsulation합니다. Encapsulation은 구조 보존 방식으로, AI는 완전하고 처리 가능한 문서를 수신합니다. AI가 출력을 생성한 후, Restoration이 자동으로 기업 컨텍스트를 복원합니다.</target>
+      </trans-unit>
+      <trans-unit id="differsBannerText">
+        <source>AI results are restored locally. LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.</source>
+        <target>AI 결과는 로컬에서 Restoration됩니다. LLM Capsule은 민감 데이터를 보호하고 활용 가능한 출력을 유지하면서 기업 AI 도입을 지원합니다.</target>
+      </trans-unit>
+      <trans-unit id="comparisonTitle">
+        <source>Comparison</source>
+        <target>비교</target>
+      </trans-unit>
+      <trans-unit id="exampleTitle">
+        <source>Enterprise Workflow Example</source>
+        <target>기업 워크플로우 사례</target>
+      </trans-unit>
+      <trans-unit id="exampleCardTitle">
+        <source>RAG-Based Knowledge System</source>
+        <target>RAG 기반 지식 시스템</target>
+      </trans-unit>
+      <trans-unit id="exampleCardText1">
+        <source>An enterprise deploys a RAG system that retrieves internal documents to augment AI responses. A prompt gateway can only scan the final composed prompt — it cannot protect the 50 retrieved document chunks that feed into it.</source>
+        <target>기업이 내부 문서를 검색하여 AI 응답을 보강하는 RAG 시스템을 배포합니다. 프롬프트 게이트웨이는 최종 구성된 프롬프트만 스캔할 수 있으며, 입력되는 50개의 검색된 문서 청크는 보호할 수 없습니다.</target>
+      </trans-unit>
+      <trans-unit id="exampleCardText2">
+        <source>LLM Capsule encapsulates all documents at the data layer before they enter the RAG index. Every retrieval, every prompt composition, and every AI output operates on protected data. Restoration restores enterprise context in the final response.</source>
+        <target>LLM Capsule은 문서가 RAG 인덱스에 진입하기 전에 데이터 계층에서 모든 문서를 Encapsulation합니다. 모든 검색, 모든 프롬프트 구성, 모든 AI 출력이 보호된 데이터에서 작동합니다. Restoration이 최종 응답에서 기업 컨텍스트를 복원합니다.</target>
+      </trans-unit>
+      <trans-unit id="faqTitle">
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </trans-unit>
+      <trans-unit id="faq1Question">
+        <source>How does LLM Capsule differ from prompt gateways?</source>
+        <target>LLM Capsule은 프롬프트 게이트웨이와 어떻게 다릅니까?</target>
+      </trans-unit>
+      <trans-unit id="faq1Answer">
+        <source>Prompt gateways filter at the API level and can only block or pass requests. LLM Capsule transforms data at the source, preserving structure for AI processing and enabling output restoration.</source>
+        <target>프롬프트 게이트웨이는 API 수준에서 필터링하며 요청을 차단하거나 통과시킬 수만 있습니다. LLM Capsule은 소스에서 데이터를 변환하여 AI 처리를 위한 구조를 보존하고 출력 Restoration을 가능하게 합니다.</target>
+      </trans-unit>
+      <trans-unit id="faq2Question">
+        <source>Can I use both a gateway and LLM Capsule?</source>
+        <target>게이트웨이와 LLM Capsule을 함께 사용할 수 있습니까?</target>
+      </trans-unit>
+      <trans-unit id="faq2Answer">
+        <source>Yes. LLM Capsule provides data-layer protection while gateways provide an additional API-level monitoring layer. The two approaches are complementary.</source>
+        <target>네. LLM Capsule은 데이터 계층 보호를 제공하고, 게이트웨이는 추가적인 API 수준 모니터링 계층을 제공합니다. 두 접근 방식은 상호 보완적입니다.</target>
+      </trans-unit>
+      <trans-unit id="relatedLink1Label">
+        <source>Product Overview</source>
+        <target>제품 개요</target>
+      </trans-unit>
+      <trans-unit id="relatedLink2Label">
+        <source>Architecture</source>
+        <target>아키텍처</target>
+      </trans-unit>
+      <trans-unit id="relatedLink3Label">
+        <source>Trust &amp; Compliance</source>
+        <target>신뢰 &amp; 컴플라이언스</target>
+      </trans-unit>
+      <trans-unit id="relatedLink4Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="relatedLink5Label">
+        <source>Learn Hub</source>
+        <target>학습 허브</target>
+      </trans-unit>
+      <trans-unit id="ctaTitle">
+        <source>See how LLM Capsule works with your data</source>
+        <target>LLM Capsule이 실제 데이터에서 어떻게 작동하는지 확인하세요</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>문서, 배포 조건, 평가 기준을 준비해 주세요. 실제 워크플로우에서 시연합니다.</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn1Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="ctaFootnote1Label">
+        <source>Download Architecture Brief</source>
+        <target>아키텍처 브리프 다운로드</target>
+      </trans-unit>
+      <trans-unit id="ctaFootnote2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="solutions">
+    <body>
+      <!-- Section01_Hero -->
+      <trans-unit id="titleLine1">
+        <source>AI, Now Safe for</source>
+        <target>AI, jetzt sicher für</target>
+      </trans-unit>
+      <trans-unit id="titleHighlight">
+        <source>Every Industry</source>
+        <target>jede Branche</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Regulated and document-heavy industries can now adopt AI on real enterprise data. LLM Capsule is an AI enablement data layer and plugin that removes the data exposure barrier blocking enterprise AI adoption — enabling AI first, protecting data at the data layer.</source>
+        <target>Regulierte und dokumentenintensive Branchen können jetzt AI auf echten Unternehmensdaten einsetzen. LLM Capsule ist eine AI-Enablement-Datenschicht und ein Plugin, das die Barriere der Datenexposition beseitigt, die die KI-Einführung im Unternehmen blockiert — AI zuerst aktivieren, Daten auf der Datenschicht schützen.</target>
+      </trans-unit>
+      <trans-unit id="primaryBtnLabel">
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+      <trans-unit id="secondaryBtnLabel">
+        <source>See Product</source>
+        <target>Produkt ansehen</target>
+      </trans-unit>
+
+      <!-- Section02_IndustryUseCases -->
+      <trans-unit id="sectionTitle">
+        <source>How Each Industry Uses LLM Capsule</source>
+        <target>Wie jede Branche LLM Capsule einsetzt</target>
+      </trans-unit>
+      <trans-unit id="sectionDescription">
+        <source>Regulated industries can now adopt AI on real enterprise data. See how each industry uses LLM Capsule to enable AI while protecting sensitive information.</source>
+        <target>Regulierte Branchen können jetzt AI auf echten Unternehmensdaten einsetzen. Erfahren Sie, wie jede Branche LLM Capsule nutzt, um AI zu ermöglichen und gleichzeitig sensible Daten zu schützen.</target>
+      </trans-unit>
+      <trans-unit id="card1Title">
+        <source>Public Sector</source>
+        <target>Öffentlicher Sektor</target>
+      </trans-unit>
+      <trans-unit id="card1Description">
+        <source>Uses AI to draft operational briefings, no classified info ever reaches external servers.</source>
+        <target>Erstellt operative Briefings mit AI. Verschlusssachen erreichen niemals externe Server.</target>
+      </trans-unit>
+      <trans-unit id="card1Blocked">
+        <source>Military personnel data, classified operation details &amp; security-grade documents</source>
+        <target>Militärische Personaldaten, geheime Operationsdetails und sicherheitseingestufte Dokumente</target>
+      </trans-unit>
+      <trans-unit id="card1Enabled">
+        <source>AI-assisted intelligence reports &amp; briefing summaries — with full audit trail</source>
+        <target>AI-gestützte Geheimdienstberichte und Briefing-Zusammenfassungen — mit vollständigem Audit-Trail</target>
+      </trans-unit>
+      <trans-unit id="card1Tags">
+        <source>Ministry of National Defense (South Korea)</source>
+        <target>Verteidigungsministerium (Südkorea)</target>
+      </trans-unit>
+      <trans-unit id="card2Title">
+        <source>Finance / Insurance</source>
+        <target>Finanzen / Versicherung</target>
+      </trans-unit>
+      <trans-unit id="card2Description">
+        <source>Uses AI to streamline claim reviews, policyholder data stays fully protected.</source>
+        <target>Optimiert Schadensprüfungen mit AI. Versicherungsnehmerdaten bleiben vollständig geschützt.</target>
+      </trans-unit>
+      <trans-unit id="card2Blocked">
+        <source>Policyholder names, claim records &amp; credit information in prompts</source>
+        <target>Namen der Versicherungsnehmer, Schadensaufzeichnungen und Kreditinformationen in Prompts</target>
+      </trans-unit>
+      <trans-unit id="card2Enabled">
+        <source>AI-powered insurance claim analysis &amp; underwriting reports — no customer data leaves</source>
+        <target>AI-gestützte Schadenanalyse und Underwriting-Berichte — keine Kundendaten verlassen das System</target>
+      </trans-unit>
+      <trans-unit id="card2Tags">
+        <source>Kyobo|DB Insurance</source>
+        <target>Kyobo|DB Insurance</target>
+      </trans-unit>
+      <trans-unit id="card3Title">
+        <source>Healthcare</source>
+        <target>Gesundheitswesen</target>
+      </trans-unit>
+      <trans-unit id="card3Description">
+        <source>Uses AI to summarize patient records, PHI never touches an external server.</source>
+        <target>Fasst Patientenakten mit AI zusammen. PHI gelangt niemals auf einen externen Server.</target>
+      </trans-unit>
+      <trans-unit id="card3Blocked">
+        <source>Patient names, diagnoses &amp; medical record IDs</source>
+        <target>Patientennamen, Diagnosen und Krankenakten-IDs</target>
+      </trans-unit>
+      <trans-unit id="card3Enabled">
+        <source>AI-generated clinical summaries &amp; radiology reports — PHI stays local</source>
+        <target>AI-generierte klinische Zusammenfassungen und Radiologieberichte — PHI bleibt lokal</target>
+      </trans-unit>
+      <trans-unit id="card3Tags">
+        <source>Ewha Womans University Medical Center</source>
+        <target>Ewha Womans University Medical Center</target>
+      </trans-unit>
+      <trans-unit id="card4Title">
+        <source>Legal</source>
+        <target>Recht</target>
+      </trans-unit>
+      <trans-unit id="card4Description">
+        <source>Drafts court documents with AI, no case info leaves the firm.</source>
+        <target>Erstellt Gerichtsdokumente mit AI. Keine Falldetails verlassen die Kanzlei.</target>
+      </trans-unit>
+      <trans-unit id="card4Blocked">
+        <source>Client names, case details &amp; privileged information</source>
+        <target>Mandantennamen, Falldetails und vertrauliche Informationen</target>
+      </trans-unit>
+      <trans-unit id="card4Enabled">
+        <source>AI-drafted memos, briefs &amp; contract reviews — fully contained</source>
+        <target>AI-erstellte Memoranden, Schriftsätze und Vertragsprüfungen — vollständig isoliert</target>
+      </trans-unit>
+      <trans-unit id="card4Tags">
+        <source>Shin&amp;Kim</source>
+        <target>Shin&amp;Kim</target>
+      </trans-unit>
+      <trans-unit id="card5Title">
+        <source>Telecom</source>
+        <target>Telekommunikation</target>
+      </trans-unit>
+      <trans-unit id="card5Description">
+        <source>Leverage AI across operations, customer and network data fully de-identified.</source>
+        <target>AI im gesamten Betrieb nutzen. Kunden- und Netzwerkdaten werden vollständig de-identifiziert.</target>
+      </trans-unit>
+      <trans-unit id="card5Blocked">
+        <source>Subscriber identities, call records, IP addresses &amp; network configs</source>
+        <target>Teilnehmeridentitäten, Anrufaufzeichnungen, IP-Adressen und Netzwerkkonfigurationen</target>
+      </trans-unit>
+      <trans-unit id="card5Enabled">
+        <source>AI-driven customer analysis &amp; network operations — all data de-identified before use</source>
+        <target>AI-gestützte Kundenanalyse und Netzwerkbetrieb — alle Daten vor Nutzung de-identifiziert</target>
+      </trans-unit>
+      <trans-unit id="card5Tags">
+        <source>SK Telecom|Deutsche Telekom|T Challenge 2026 Top 12</source>
+        <target>SK Telecom|Deutsche Telekom|T Challenge 2026 Top 12</target>
+      </trans-unit>
+      <trans-unit id="card6Title">
+        <source>Network Security</source>
+        <target>Netzwerksicherheit</target>
+      </trans-unit>
+      <trans-unit id="card6Description">
+        <source>Enables industrial clients to use public AI with all sensitive operational data protected.</source>
+        <target>Ermöglicht Industriekunden die Nutzung öffentlicher AI bei vollständigem Schutz sensibler Betriebsdaten.</target>
+      </trans-unit>
+      <trans-unit id="card6Blocked">
+        <source>Internal system data, vulnerability reports &amp; infrastructure details in prompts</source>
+        <target>Interne Systemdaten, Schwachstellenberichte und Infrastrukturdetails in Prompts</target>
+      </trans-unit>
+      <trans-unit id="card6Enabled">
+        <source>Regulated industries can safely adopt public LLMs — sensitive info de-identified at the gate</source>
+        <target>Regulierte Branchen können öffentliche LLMs sicher einführen — sensible Daten werden am Gateway de-identifiziert</target>
+      </trans-unit>
+      <trans-unit id="card6Tags">
+        <source>Claroty</source>
+        <target>Claroty</target>
+      </trans-unit>
+
+      <!-- Section03_KpiProof -->
+      <trans-unit id="kpi1Label">
+        <source>Detection Accuracy</source>
+        <target>Erkennungsgenauigkeit</target>
+      </trans-unit>
+      <trans-unit id="kpi2Label">
+        <source>Workflow Accuracy</source>
+        <target>Workflow-Genauigkeit</target>
+      </trans-unit>
+      <trans-unit id="kpi3Label">
+        <source>Structured PII</source>
+        <target>Strukturierte PII</target>
+      </trans-unit>
+      <trans-unit id="kpi4Label">
+        <source>Response Similarity</source>
+        <target>Antwortähnlichkeit</target>
+      </trans-unit>
+      <trans-unit id="bannerTagline">
+        <source>Enable AI. Protect data. Restore results. Track everything.</source>
+        <target>AI aktivieren. Daten schützen. Ergebnisse wiederherstellen. Alles nachverfolgen.</target>
+      </trans-unit>
+      <trans-unit id="bannerNote">
+        <source>0.12s processing per 2,200-character document</source>
+        <target>0,12 s Verarbeitung pro 2.200-Zeichen-Dokument</target>
+      </trans-unit>
+
+      <!-- Section04_Cta -->
+      <trans-unit id="ctaTitle">
+        <source>See how your industry uses LLM Capsule</source>
+        <target>Erfahren Sie, wie Ihre Branche LLM Capsule einsetzt</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation questions. We will show how LLM Capsule fits your environment.</source>
+        <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Evaluierungsfragen mit. Wir zeigen Ihnen, wie LLM Capsule in Ihre Umgebung passt.</target>
+      </trans-unit>
+      <trans-unit id="primaryBtn1Label">
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+      <trans-unit id="primaryBtn2Label">
+        <source>See Product</source>
+        <target>Produkt ansehen</target>
+      </trans-unit>
+      <trans-unit id="primaryBtn3Label">
+        <source>View Architecture</source>
+        <target>Architektur ansehen</target>
+      </trans-unit>
+      <trans-unit id="footnoteBtn1Label">
+        <source>Download Architecture Brief</source>
+        <target>Architektur-Kurzfassung herunterladen</target>
+      </trans-unit>
+      <trans-unit id="footnoteBtn2Label">
+        <source>Available on AWS Marketplace</source>
+        <target>Verfügbar auf AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

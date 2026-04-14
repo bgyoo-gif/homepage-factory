@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="secure-enterprise-ai-workflows">
+    <body>
+      <!-- Section 01: Hero -->
+      <trans-unit id="title">
+        <source>Secure Enterprise AI Workflows</source>
+        <target>Sichere Enterprise-KI-Workflows</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>How to build AI data pipeline protection that secures sensitive enterprise data at every stage — from document intake to restored output.</source>
+        <target>So bauen Sie einen KI-Datenpipeline-Schutz auf, der sensible Unternehmensdaten in jeder Phase sichert — von der Dokumentaufnahme bis zur wiederhergestellten Ausgabe.</target>
+      </trans-unit>
+
+      <!-- Section 02: Problem -->
+      <trans-unit id="sectionLabel_problem">
+        <source>Problem</source>
+        <target>Problem</target>
+      </trans-unit>
+      <trans-unit id="paragraph1">
+        <source>Enterprise AI workflows involve multiple stages: document ingestion, pre-processing, AI model interaction, output generation, and integration into business systems. A security gap at any single stage exposes the entire pipeline. Most current approaches focus on model-level security — prompt filtering, output scanning — while leaving the data layer unprotected.</source>
+        <target>Enterprise-KI-Workflows umfassen mehrere Phasen: Dokumentaufnahme, Vorverarbeitung, KI-Modell-Interaktion, Ausgabegenerierung und Integration in Geschaeftssysteme. Eine Sicherheitsluecke in einer einzelnen Phase legt die gesamte Pipeline offen. Die meisten aktuellen Ansaetze konzentrieren sich auf Sicherheit auf Modellebene — Prompt-Filterung, Ausgabe-Scanning — waehrend die Datenschicht ungeschuetzt bleibt.</target>
+      </trans-unit>
+      <trans-unit id="paragraph2">
+        <source>Secure LLM usage requires protection that operates at the data layer, not the model layer. Enterprise data must be protected before it enters any AI pipeline stage.</source>
+        <target>Sichere LLM-Nutzung erfordert Schutz auf der Datenschicht, nicht auf der Modellebene. Unternehmensdaten muessen geschuetzt werden, bevor sie in eine KI-Pipeline-Phase eintreten.</target>
+      </trans-unit>
+
+      <!-- Section 03: Explanation -->
+      <trans-unit id="sectionLabel_explanation">
+        <source>Explanation</source>
+        <target>Erlaeuterung</target>
+      </trans-unit>
+      <trans-unit id="intro">
+        <source>A secure enterprise AI workflow has four properties:</source>
+        <target>Ein sicherer Enterprise-KI-Workflow hat vier Eigenschaften:</target>
+      </trans-unit>
+      <trans-unit id="bannerText">
+        <source>Enterprise AI enablement requires an AI-ready data layer, not model-layer security.</source>
+        <target>KI-Einfuehrung im Unternehmen erfordert eine KI-faehige Datenschicht, nicht Sicherheit auf Modellebene.</target>
+      </trans-unit>
+
+      <!-- Section 04: Enterprise Example -->
+      <trans-unit id="sectionLabel_example">
+        <source>Enterprise Example</source>
+        <target>Praxisbeispiel</target>
+      </trans-unit>
+      <trans-unit id="cardTitle">
+        <source>Insurance Claims Processing</source>
+        <target>Versicherungsschadenbearbeitung</target>
+      </trans-unit>
+      <trans-unit id="cardBody1">
+        <source>An insurance company processes 5,000 claims per month through AI for classification, damage assessment summarization, and fraud pattern detection. Each claim contains policyholder PII, medical records, and financial data.</source>
+        <target>Eine Versicherungsgesellschaft verarbeitet monatlich 5.000 Schadensfaelle mittels KI fuer Klassifizierung, Schadensbewertungszusammenfassung und Betrugsmustererkennung. Jeder Schadensfall enthaelt Versicherungsnehmer-PII, Krankenakten und Finanzdaten.</target>
+      </trans-unit>
+      <trans-unit id="cardBody2">
+        <source>encapsulates all sensitive data locally. AI classifies and summarizes protected claims. Local restoration restores policyholder details into the outputs, which feed directly into the claims management system. No manual re-linking required.</source>
+        <target>kapselt alle sensiblen Daten lokal ein. Die KI klassifiziert und fasst geschuetzte Schadensfaelle zusammen. Lokale Restoration stellt Versicherungsnehmerdetails in den Ausgaben wieder her, die direkt in das Schadenmanagementsystem einfliessen. Keine manuelle Neuverknuepfung erforderlich.</target>
+      </trans-unit>
+
+      <!-- Section 05: FAQ -->
+      <trans-unit id="sectionLabel_faq">
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </trans-unit>
+
+      <!-- Section 06: Related -->
+      <trans-unit id="sectionLabel_related">
+        <source>Related</source>
+        <target>Verwandte Seiten</target>
+      </trans-unit>
+
+      <!-- Section 07: CTA Band -->
+      <trans-unit id="ctaTitle">
+        <source>See how</source>
+        <target>Erfahren Sie, wie</target>
+      </trans-unit>
+      <trans-unit id="ctaTitlePrefix">
+        <source>works with your data</source>
+        <target>mit Ihren Daten arbeitet</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsaechlichen Workflows.</target>
+      </trans-unit>
+      <trans-unit id="primaryBtnLabel">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="secondaryBtnLabel">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnote1Label">
+        <source>Download Architecture Brief</source>
+        <target>Architektur-Brief herunterladen</target>
+      </trans-unit>
+      <trans-unit id="footnote2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

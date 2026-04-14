@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ja" datatype="plaintext" original="why-redaction-breaks-enterprise-ai-workflows">
+    <body>
+      <!-- Section 01: Hero -->
+      <trans-unit id="title">
+        <source>Why Redaction Breaks Enterprise AI Workflows</source>
+        <target>リダクションがエンタープライズAIワークフローを破壊する理由</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Masking and redaction tools destroy the data context that AI models need. Enterprise AI requires structure-preserving processing with restorable outputs.</source>
+        <target>マスキングおよびリダクションツールはAIモデルが必要とするデータコンテキストを破壊します。エンタープライズAIには復元可能な出力を伴う構造保持処理が必要です。</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbHome">
+        <source>Home</source>
+        <target>ホーム</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbResources">
+        <source>Resources</source>
+        <target>リソース</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbLearn">
+        <source>Learn</source>
+        <target>学習</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbCurrent">
+        <source>Why Redaction Breaks Enterprise AI Workflows</source>
+        <target>リダクションがエンタープライズAIワークフローを破壊する理由</target>
+      </trans-unit>
+
+      <!-- Section 02: Problem -->
+      <trans-unit id="sectionLabel_problem">
+        <source>Problem</source>
+        <target>課題</target>
+      </trans-unit>
+
+      <!-- Section 03: How Redaction Fails -->
+      <trans-unit id="sectionHeadingPre_s3">
+        <source>How Redaction and Masking Tools</source>
+        <target>リダクション・マスキングツールがAIワークフローで</target>
+      </trans-unit>
+      <trans-unit id="sectionHeadingHighlight_s3">
+        <source>Fail</source>
+        <target>失敗する</target>
+      </trans-unit>
+      <trans-unit id="sectionHeadingPost_s3">
+        <source>in AI Workflows</source>
+        <target>仕組み</target>
+      </trans-unit>
+
+      <!-- Section 04: Requirements -->
+      <trans-unit id="sectionHeadingPre_s4">
+        <source>What Enterprise AI Workflows Actually</source>
+        <target>エンタープライズAIワークフローに実際に</target>
+      </trans-unit>
+      <trans-unit id="sectionHeadingHighlight_s4">
+        <source>Require</source>
+        <target>必要なもの</target>
+      </trans-unit>
+      <trans-unit id="intro_s4">
+        <source>Achieving AI document security and secure LLM usage in regulated environments demands more than pattern-based redaction. Enterprise AI data pipelines need a protection mechanism that satisfies three requirements simultaneously:</source>
+        <target>規制環境でのAIドキュメントセキュリティと安全なLLM利用の実現には、パターンベースのリダクション以上のものが必要です。エンタープライズAIデータパイプラインには、3つの要件を同時に満たす保護メカニズムが必要です：</target>
+      </trans-unit>
+      <trans-unit id="check1Strong">
+        <source>Structure-preserving processing.</source>
+        <target>構造保持処理。</target>
+      </trans-unit>
+      <trans-unit id="check1Rest">
+        <source> Document structure, entity relationships, and semantic context must remain intact for AI comprehension.</source>
+        <target> AIの理解のために、ドキュメント構造、エンティティ関係、意味的コンテキストが維持される必要があります。</target>
+      </trans-unit>
+      <trans-unit id="check2Strong">
+        <source>Zero exposure.</source>
+        <target>ゼロエクスポージャー。</target>
+      </trans-unit>
+      <trans-unit id="check2Rest">
+        <source> Original sensitive data must never leave the enterprise environment.</source>
+        <target> 元の機密データは企業環境から決して流出してはなりません。</target>
+      </trans-unit>
+      <trans-unit id="check3Strong">
+        <source>Restorable workflow.</source>
+        <target>復元可能なワークフロー。</target>
+      </trans-unit>
+      <trans-unit id="check3Rest">
+        <source> AI results are automatically restored locally with original enterprise data. Outputs contain real names, real amounts, real dates — ready for direct use in business processes.</source>
+        <target> AI結果は元の企業データでローカルに自動復元されます。出力には実際の氏名、実際の金額、実際の日付が含まれ、ビジネスプロセスで即座に使用できます。</target>
+      </trans-unit>
+      <trans-unit id="bannerBold">
+        <source>AI results are automatically restored locally with original enterprise data.</source>
+        <target>AI結果は元の企業データでローカルに自動復元されます。</target>
+      </trans-unit>
+      <trans-unit id="bannerRest">
+        <source> as an AI enablement data layer from static redaction tools.</source>
+        <target>を静的リダクションツールと区別するAIイネーブルメント・データレイヤーとしての核心機能です。</target>
+      </trans-unit>
+
+      <!-- Section 05: Comparison Table -->
+      <trans-unit id="headingVs">
+        <source>vs</source>
+        <target>vs</target>
+      </trans-unit>
+      <trans-unit id="headingTools">
+        <source>Redaction Tools</source>
+        <target>リダクションツール</target>
+      </trans-unit>
+
+      <!-- Section 06: Enterprise Example -->
+      <trans-unit id="sectionHeadingPre_s6">
+        <source>Enterprise</source>
+        <target>企業</target>
+      </trans-unit>
+      <trans-unit id="sectionHeadingHighlight_s6">
+        <source>Example</source>
+        <target>導入事例</target>
+      </trans-unit>
+      <trans-unit id="cardTitle">
+        <source>Legal Contract Review</source>
+        <target>法務契約レビュー</target>
+      </trans-unit>
+
+      <!-- Section 07: FAQ -->
+      <trans-unit id="sectionLabel_faq">
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </trans-unit>
+
+      <!-- Section 08: Related -->
+      <trans-unit id="sectionLabel_related">
+        <source>Related</source>
+        <target>関連ページ</target>
+      </trans-unit>
+
+      <!-- Section 09: CTA Band -->
+      <trans-unit id="titlePre">
+        <source>See how</source>
+        <target>LLM Capsuleが</target>
+      </trans-unit>
+      <trans-unit id="titlePost">
+        <source>works with your data</source>
+        <target>お客様のデータでどう機能するかご覧ください</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>文書、デプロイ制約、評価基準をお持ちください。実際のワークフローでデモンストレーションします。</target>
+      </trans-unit>
+      <trans-unit id="cta1Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="cta2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnote1Label">
+        <source>Download Architecture Brief</source>
+        <target>アーキテクチャブリーフをダウンロード</target>
+      </trans-unit>
+      <trans-unit id="footnote2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

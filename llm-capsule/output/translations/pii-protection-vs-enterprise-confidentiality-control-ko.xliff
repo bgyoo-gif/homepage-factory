@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="pii-protection-vs-enterprise-confidentiality-control">
+    <body>
+      <!-- Section 01: Hero -->
+      <trans-unit id="breadcrumbHome">
+        <source>Home</source>
+        <target>홈</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbLearn">
+        <source>Learn</source>
+        <target>학습</target>
+      </trans-unit>
+      <trans-unit id="breadcrumbCurrent">
+        <source>PII Protection vs Enterprise Confidentiality Control</source>
+        <target>PII 보호 vs 기업 기밀성 제어</target>
+      </trans-unit>
+      <trans-unit id="title">
+        <source>PII Protection vs Enterprise Confidentiality Control</source>
+        <target>PII 보호 vs 기업 기밀성 제어</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Why protecting only personal data is insufficient for enterprise AI enablement. Business-critical information requires enterprise confidentiality control to truly enable AI adoption.</source>
+        <target>개인정보 보호만으로는 기업 AI 도입에 충분하지 않은 이유. 비즈니스 핵심 정보에는 진정한 AI 도입을 위한 기업 기밀성 제어가 필요합니다.</target>
+      </trans-unit>
+
+      <!-- Section 02: Problem -->
+      <trans-unit id="sectionLabel_problem">
+        <source>Problem</source>
+        <target>문제</target>
+      </trans-unit>
+      <trans-unit id="paragraph1">
+        <source>Most AI data protection solutions focus on personally identifiable information (PII) — names, social security numbers, email addresses. But true enterprise AI enablement requires protecting far more than PII. Enterprise documents contain trade secrets, acquisition targets, pricing models, internal performance metrics, strategic plans, and client relationship details — all enterprise-sensitive but not classified as PII.</source>
+        <target>대부분의 AI 데이터 보호 솔루션은 개인식별정보(PII)에 집중합니다. 이름, 주민등록번호, 이메일 주소 등이 그 대상입니다. 그러나 진정한 기업 AI 도입에는 PII 이상의 보호가 필요합니다. 기업 문서에는 영업 비밀, 인수 대상, 가격 모델, 내부 성과 지표, 전략 계획, 고객 관계 정보가 포함되어 있으며, 이 모든 것이 기업 차원에서 민감하지만 PII로 분류되지 않습니다.</target>
+      </trans-unit>
+      <trans-unit id="paragraph2">
+        <source>A legal memo about a pending acquisition contains no PII. It contains deal structure, valuation ranges, and strategic rationale — all of which would be damaging if exposed to an AI provider's training pipeline or logging system.</source>
+        <target>진행 중인 인수에 관한 법률 메모에는 PII가 없습니다. 거래 구조, 밸류에이션 범위, 전략적 근거가 포함되어 있으며, 이 모든 것이 AI 제공업체의 학습 파이프라인이나 로깅 시스템에 노출될 경우 심각한 피해를 초래할 수 있습니다.</target>
+      </trans-unit>
+
+      <!-- Section 03: Definition -->
+      <trans-unit id="sectionLabel_definition">
+        <source>Definition</source>
+        <target>정의</target>
+      </trans-unit>
+      <trans-unit id="bannerTitle">
+        <source>Enterprise Confidentiality Control</source>
+        <target>기업 기밀성 제어</target>
+      </trans-unit>
+      <trans-unit id="bannerBody">
+        <source>Enterprise confidentiality control is a data protection approach for AI workflows that extends beyond PII to cover all categories of business-sensitive information. It enables policy-based classification and encapsulation of trade secrets, financial terms, strategic data, and operational details alongside personal data protection.</source>
+        <target>기업 기밀성 제어는 PII를 넘어 모든 비즈니스 민감 정보를 보호하는 AI 워크플로우용 데이터 보호 방식입니다. 개인정보 보호와 함께 영업 비밀, 재무 조건, 전략 데이터, 운영 세부 정보의 정책 기반 분류 및 Encapsulation을 지원합니다.</target>
+      </trans-unit>
+
+      <!-- Section 04: Explanation -->
+      <trans-unit id="sectionLabel_explanation">
+        <source>Explanation</source>
+        <target>설명</target>
+      </trans-unit>
+      <trans-unit id="intro">
+        <source>Enterprise confidentiality control differs from PII protection in scope and configurability:</source>
+        <target>기업 기밀성 제어는 범위와 구성 가능성에서 PII 보호와 다릅니다:</target>
+      </trans-unit>
+      <trans-unit id="bullet1Label">
+        <source>Scope.</source>
+        <target>범위.</target>
+      </trans-unit>
+      <trans-unit id="bullet1Body">
+        <source>PII protection covers regulatory-defined categories — names, identification numbers, health records. Enterprise confidentiality control covers organization-defined categories — deal terms, pricing, internal metrics, competitive analysis, and strategic plans.</source>
+        <target>PII 보호는 규제 정의 범주인 이름, 식별 번호, 의료 기록을 다룹니다. 기업 기밀성 제어는 조직 정의 범주인 거래 조건, 가격, 내부 지표, 경쟁 분석, 전략 계획을 다룹니다.</target>
+      </trans-unit>
+      <trans-unit id="bullet2Label">
+        <source>Policy-driven classification.</source>
+        <target>정책 기반 분류.</target>
+      </trans-unit>
+      <trans-unit id="bullet2Body">
+        <source>What counts as sensitive varies by department, document type, and workflow. A revenue figure is sensitive in a board presentation but routine in a published annual report. Context-aware data control enables policy-driven sensitivity classification, not just regex pattern matching.</source>
+        <target>민감 정보의 기준은 부서, 문서 유형, 워크플로우에 따라 달라집니다. 매출 수치는 이사회 발표에서는 민감하지만 공시된 연간 보고서에서는 일상적입니다. 컨텍스트 인식 데이터 제어는 단순한 정규식 패턴 매칭이 아닌 정책 기반 민감도 분류를 지원합니다.</target>
+      </trans-unit>
+      <trans-unit id="bullet3Label">
+        <source>Workflow integration.</source>
+        <target>워크플로우 통합.</target>
+      </trans-unit>
+      <trans-unit id="bullet3Body">
+        <source>Enterprise confidentiality control integrates with governance frameworks, audit systems, and compliance workflows — providing visibility into what data is protected, how, and by whom.</source>
+        <target>기업 기밀성 제어는 거버넌스 프레임워크, 감사 시스템, 컴플라이언스 워크플로우와 통합됩니다. 어떤 데이터가, 어떻게, 누구에 의해 보호되는지에 대한 가시성을 제공합니다.</target>
+      </trans-unit>
+
+      <!-- Section 05: Enterprise Example -->
+      <trans-unit id="sectionLabel_example">
+        <source>Enterprise Example</source>
+        <target>기업 사례</target>
+      </trans-unit>
+      <trans-unit id="cardTitle">
+        <source>M&amp;A Due Diligence</source>
+        <target>M&amp;A 실사</target>
+      </trans-unit>
+      <trans-unit id="cardParagraph1">
+        <source>An investment bank uses AI to analyze target company documents during due diligence. Documents contain no customer PII but are filled with sensitive deal terms, valuation models, and strategic assessments.</source>
+        <target>투자은행이 실사 과정에서 AI를 사용하여 대상 기업 문서를 분석합니다. 문서에는 고객 PII가 없지만 민감한 거래 조건, 밸류에이션 모델, 전략적 평가가 포함되어 있습니다.</target>
+      </trans-unit>
+      <trans-unit id="cardParagraph2">
+        <source>'s enterprise confidentiality control encapsulates deal-specific terminology, financial figures, and company identifiers. AI performs analysis on the protected documents. Local restoration restores deal context into the analysis outputs for the advisory team.</source>
+        <target>의 기업 기밀성 제어가 거래별 용어, 재무 수치, 회사 식별자를 Encapsulation합니다. AI가 보호된 문서에 대한 분석을 수행합니다. 로컬 Restoration이 자문팀을 위한 분석 결과에 거래 컨텍스트를 복원합니다.</target>
+      </trans-unit>
+      <trans-unit id="productName">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </trans-unit>
+
+      <!-- Section 06: FAQ -->
+      <trans-unit id="sectionLabel_faq">
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </trans-unit>
+      <trans-unit id="faq1Question">
+        <source>What is enterprise confidentiality control?</source>
+        <target>기업 기밀성 제어란 무엇입니까?</target>
+      </trans-unit>
+      <trans-unit id="faq1Answer">
+        <source>Enterprise confidentiality control is a data protection approach that goes beyond PII to cover all business-sensitive information — trade secrets, deal terms, pricing strategies, internal metrics, and competitive intelligence — during AI processing.</source>
+        <target>기업 기밀성 제어는 AI 처리 과정에서 PII를 넘어 모든 비즈니스 민감 정보(영업 비밀, 거래 조건, 가격 전략, 내부 지표, 경쟁 정보)를 보호하는 데이터 보호 방식입니다.</target>
+      </trans-unit>
+      <trans-unit id="faq2Question">
+        <source>Why is PII protection insufficient for enterprise AI?</source>
+        <target>PII 보호만으로는 기업 AI에 충분하지 않은 이유는 무엇입니까?</target>
+      </trans-unit>
+      <trans-unit id="faq2Answer">
+        <source>Enterprise documents contain sensitive business data that is not PII. Protecting only names and IDs while exposing deal terms, financial models, and strategic plans still creates unacceptable data exposure risk.</source>
+        <target>기업 문서에는 PII가 아닌 민감한 비즈니스 데이터가 포함되어 있습니다. 이름과 ID만 보호하면서 거래 조건, 재무 모델, 전략 계획을 노출하는 것은 여전히 허용할 수 없는 데이터 노출 위험을 초래합니다.</target>
+      </trans-unit>
+
+      <!-- Section 07: Related -->
+      <trans-unit id="sectionLabel_related">
+        <source>Related</source>
+        <target>관련 페이지</target>
+      </trans-unit>
+      <trans-unit id="card1Title">
+        <source>Product Overview</source>
+        <target>제품 개요</target>
+      </trans-unit>
+      <trans-unit id="card2Title">
+        <source>Architecture</source>
+        <target>아키텍처</target>
+      </trans-unit>
+      <trans-unit id="card3Title">
+        <source>Trust &amp; Compliance</source>
+        <target>신뢰 &amp; 컴플라이언스</target>
+      </trans-unit>
+      <trans-unit id="card4Title">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+
+      <!-- Section 08: CTA Band -->
+      <trans-unit id="ctaTitle">
+        <source>See how</source>
+        <target>LLM Capsule이</target>
+      </trans-unit>
+      <trans-unit id="ctaTitleSuffix">
+        <source>works with your data</source>
+        <target>실제 데이터와 어떻게 작동하는지 확인하세요</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>문서, 배포 제약 조건, 평가 기준을 가져오세요. 실제 워크플로우에서 시연합니다.</target>
+      </trans-unit>
+      <trans-unit id="cta1Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="cta2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="footnote1Label">
+        <source>Download Architecture Brief</source>
+        <target>아키텍처 브리프 다운로드</target>
+      </trans-unit>
+      <trans-unit id="footnote2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ja" datatype="plaintext" original="resources">
+    <body>
+      <trans-unit id="heroTitle">
+        <source>Enterprise AI Enablement</source>
+        <target>企業AIの導入</target>
+      </trans-unit>
+      <trans-unit id="heroTitleBrand">
+        <source>Resources</source>
+        <target>リソース</target>
+      </trans-unit>
+      <trans-unit id="heroDescription">
+        <source>Technical documentation, learning resources, glossary, and downloads for enterprise AI enablement with LLM Capsule.</source>
+        <target>LLM Capsuleによる企業AIの導入に向けた技術ドキュメント、学習リソース、用語集、ダウンロード資料です。</target>
+      </trans-unit>
+      <trans-unit id="s2SectionTitle">
+        <source>Explore</source>
+        <target>探索</target>
+      </trans-unit>
+      <trans-unit id="s2SectionTitleBrand">
+        <source>Resources</source>
+        <target>リソース</target>
+      </trans-unit>
+      <trans-unit id="s2SectionDescription">
+        <source>Browse documentation, learning materials, key terms, and trust information.</source>
+        <target>ドキュメント、学習資料、主要用語、信頼性情報をご覧ください。</target>
+      </trans-unit>
+      <trans-unit id="s2Card1Title">
+        <source>Learn</source>
+        <target>Learn</target>
+      </trans-unit>
+      <trans-unit id="s2Card1Description">
+        <source>In-depth articles on enterprise AI enablement, secure LLM usage, structure-preserving processing, and restorable workflows.</source>
+        <target>企業AIの導入、安全なLLM利用、構造保持処理、Restorableワークフローに関する詳細記事です。</target>
+      </trans-unit>
+      <trans-unit id="s2Card1BtnLabel">
+        <source>Browse Learn →</source>
+        <target>Learnを見る →</target>
+      </trans-unit>
+      <trans-unit id="s2Card2Title">
+        <source>Glossary</source>
+        <target>用語集</target>
+      </trans-unit>
+      <trans-unit id="s2Card2Description">
+        <source>Definitions of key concepts — restoration, zero exposure, enterprise context control, and structure-preserving processing.</source>
+        <target>主要概念の定義 — Restoration、Zero Exposure、企業コンテキスト制御、構造保持処理。</target>
+      </trans-unit>
+      <trans-unit id="s2Card2BtnLabel">
+        <source>Browse Glossary →</source>
+        <target>用語集を見る →</target>
+      </trans-unit>
+      <trans-unit id="s2Card3Title">
+        <source>Downloads</source>
+        <target>ダウンロード</target>
+      </trans-unit>
+      <trans-unit id="s2Card3Description">
+        <source>Architecture briefs, technical documentation, and deployment guides for enterprise evaluation.</source>
+        <target>企業評価のためのアーキテクチャ概要、技術ドキュメント、デプロイガイドです。</target>
+      </trans-unit>
+      <trans-unit id="s2Card3BtnLabel">
+        <source>Browse Downloads →</source>
+        <target>ダウンロードを見る →</target>
+      </trans-unit>
+      <trans-unit id="s2Card4Title">
+        <source>Trust Center</source>
+        <target>Trust Center</target>
+      </trans-unit>
+      <trans-unit id="s2Card4Description">
+        <source>Security certifications, compliance documentation, and audit information.</source>
+        <target>セキュリティ認証、コンプライアンスドキュメント、監査情報です。</target>
+      </trans-unit>
+      <trans-unit id="s2Card4BtnLabel">
+        <source>Browse Trust Center →</source>
+        <target>Trust Centerを見る →</target>
+      </trans-unit>
+      <trans-unit id="s3SectionTitle">
+        <source>Core guides for enterprise AI</source>
+        <target>企業AI導入の基本ガイド</target>
+      </trans-unit>
+      <trans-unit id="s3SectionTitleBrand">
+        <source>enablement</source>
+        <target>導入</target>
+      </trans-unit>
+      <trans-unit id="s3SectionDescription">
+        <source>Start with the documents that explain the operating model, the failure of redaction-based approaches, and the architecture behind usable AI outputs.</source>
+        <target>運用モデル、マスキングベースのアプローチの限界、活用可能なAI出力を支えるアーキテクチャを説明するドキュメントからご覧ください。</target>
+      </trans-unit>
+      <trans-unit id="s3Guide1Title">
+        <source>Secure Enterprise AI Data Workflows</source>
+        <target>安全な企業AIデータワークフロー</target>
+      </trans-unit>
+      <trans-unit id="s3Guide1Description">
+        <source>The end-to-end operating model for protecting sensitive data across AI workflows while restoring usable outputs locally.</source>
+        <target>AIワークフロー全体で機密データを保護しつつ、ローカルで活用可能な出力を復元するエンドツーエンド運用モデルです。</target>
+      </trans-unit>
+      <trans-unit id="s3Guide1BtnLabel">
+        <source>Read guide →</source>
+        <target>ガイドを読む →</target>
+      </trans-unit>
+      <trans-unit id="s3Guide2Title">
+        <source>What Is an AI Data Capsule?</source>
+        <target>AIデータカプセルとは？</target>
+      </trans-unit>
+      <trans-unit id="s3Guide2Description">
+        <source>The core concept behind local encapsulation, protected AI processing, and local restoration.</source>
+        <target>ローカルEncapsulation、保護されたAI処理、ローカルRestorationの基本概念です。</target>
+      </trans-unit>
+      <trans-unit id="s3Guide2BtnLabel">
+        <source>Read guide →</source>
+        <target>ガイドを読む →</target>
+      </trans-unit>
+      <trans-unit id="s3Guide3Title">
+        <source>Why Redaction Breaks Enterprise AI Workflows</source>
+        <target>マスキングが企業AIワークフローを壊す理由</target>
+      </trans-unit>
+      <trans-unit id="s3Guide3Description">
+        <source>Why masking and redaction tools fail in AI workflows, and what replaces them in enterprise production settings.</source>
+        <target>AIワークフローでマスキングや墨消しツールが失敗する理由と、企業の本番環境における代替手段です。</target>
+      </trans-unit>
+      <trans-unit id="s3Guide3BtnLabel">
+        <source>Read guide →</source>
+        <target>ガイドを読む →</target>
+      </trans-unit>
+      <trans-unit id="ctaTitle">
+        <source>See how LLM Capsule works with your data</source>
+        <target>LLM Capsuleがお客様のデータでどのように動作するかご確認ください</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>ドキュメント、デプロイ条件、評価基準をお持ちください。実際のワークフローでデモを行います。</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn1Label">
+        <source>Request a Demo</source>
+        <target>デモを依頼する</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="ctaSecBtn1Label">
+        <source>Download Architecture Brief</source>
+        <target>アーキテクチャ概要をダウンロード</target>
+      </trans-unit>
+      <trans-unit id="ctaSecBtn2Label">
+        <source>Available on AWS Marketplace</source>
+        <target>AWS Marketplaceで提供中</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ko" datatype="plaintext" original="structure-preserving-processing-vs-flat-masking">
+    <body>
+      <!-- Hero -->
+      <trans-unit id="heroTitle">
+        <source>Structure-Preserving Processing vs Flat Masking</source>
+        <target>구조 보존 처리 vs 플랫 마스킹</target>
+      </trans-unit>
+      <trans-unit id="heroDescription">
+        <source>Compare structure-preserving processing with flat masking for enterprise AI. Flat masking collapses document structure; structure preservation maintains integrity for accurate AI outputs.</source>
+        <target>기업 AI를 위한 구조 보존 처리와 플랫 마스킹을 비교합니다. 플랫 마스킹은 문서 구조를 파괴하고, 구조 보존은 정확한 AI 출력을 위해 무결성을 유지합니다.</target>
+      </trans-unit>
+
+      <!-- Overview -->
+      <trans-unit id="overviewBody">
+        <source>Flat masking and structure-preserving processing both aim to protect sensitive data before AI processing. They differ fundamentally in how they handle document structure, entity relationships, and semantic context — and this difference determines whether AI outputs are usable.</source>
+        <target>플랫 마스킹과 구조 보존 처리는 모두 AI 처리 전 민감 데이터 보호를 목표로 합니다. 문서 구조, 엔티티 관계, 의미적 컨텍스트를 처리하는 방식에서 근본적으로 차이가 있으며, 이 차이가 AI 출력의 활용 가능성을 결정합니다.</target>
+      </trans-unit>
+
+      <!-- Flat Masking -->
+      <trans-unit id="flatMaskingBody">
+        <source>Flat masking scans documents for sensitive patterns and replaces each match with a generic token. The replacement is uniform — every name becomes [NAME], every number becomes [NUMBER], every date becomes [DATE]. The masking engine treats each sensitive value independently, without considering its role in the document's structure.</source>
+        <target>플랫 마스킹은 문서에서 민감한 패턴을 스캔하고 각 일치 항목을 일반 토큰으로 대체합니다. 대체는 일률적으로 이루어집니다. 모든 이름은 [NAME], 모든 숫자는 [NUMBER], 모든 날짜는 [DATE]가 됩니다. 마스킹 엔진은 각 민감 값을 문서 구조에서의 역할을 고려하지 않고 독립적으로 처리합니다.</target>
+      </trans-unit>
+
+      <!-- Limitations -->
+      <trans-unit id="limitBullet1">
+        <source>Entity collapse. In a multi-party contract, all party names become [NAME]. AI cannot distinguish acquirer from target, lender from borrower, plaintiff from defendant.</source>
+        <target>엔티티 병합. 다수 당사자 계약에서 모든 당사자명이 [NAME]이 됩니다. AI는 인수자와 피인수자, 대출자와 차입자, 원고와 피고를 구별할 수 없습니다.</target>
+      </trans-unit>
+      <trans-unit id="limitBullet2">
+        <source>Table destruction. Column headers masked as [FIELD] and cell values masked as [VALUE] eliminate the schema information AI needs for accurate extraction.</source>
+        <target>테이블 파괴. 열 헤더가 [FIELD]로, 셀 값이 [VALUE]로 마스킹되면 AI가 정확한 추출에 필요한 스키마 정보가 사라집니다.</target>
+      </trans-unit>
+      <trans-unit id="limitBullet3">
+        <source>Cross-reference breakage. When a document references "see Section 3.2 regarding [NAME]'s obligations," flat masking removes the entity link that gives the reference meaning.</source>
+        <target>상호 참조 단절. 문서가 "[NAME]의 의무에 관한 3.2절 참조"를 언급할 때, 플랫 마스킹은 참조에 의미를 부여하는 엔티티 링크를 제거합니다.</target>
+      </trans-unit>
+      <trans-unit id="limitBullet4">
+        <source>Inconsistent replacement. The same entity may receive different tokens in different document locations, breaking AI's ability to track entities across sections.</source>
+        <target>비일관적 대체. 동일 엔티티가 문서 내 다른 위치에서 다른 토큰을 받을 수 있어, AI의 섹션 간 엔티티 추적 능력이 손상됩니다.</target>
+      </trans-unit>
+
+      <!-- How LLM Capsule Differs -->
+      <trans-unit id="capsuleDifferBody">
+        <source>Structure-preserving processing maintains document integrity during data protection. Entity consistency is enforced across the entire document. Table structures, cross-references, and semantic relationships are preserved. AI receives a structurally complete document that supports accurate processing.</source>
+        <target>구조 보존 처리는 데이터 보호 중 문서 무결성을 유지합니다. 전체 문서에 걸쳐 엔티티 일관성이 보장됩니다. 테이블 구조, 상호 참조, 의미적 관계가 보존됩니다. AI는 정확한 처리를 지원하는 구조적으로 완전한 문서를 받습니다.</target>
+      </trans-unit>
+      <trans-unit id="capsuleDifferBanner">
+        <source>AI results are automatically restored locally with original enterprise data. LLM Capsule's AI enablement data layer protects sensitive data while preserving the document structure AI needs for accurate outputs.</source>
+        <target>AI 결과는 원본 기업 데이터로 로컬에서 자동 복원됩니다. LLM Capsule의 AI 활성화 데이터 레이어는 AI가 정확한 출력에 필요한 문서 구조를 보존하면서 민감 데이터를 보호합니다.</target>
+      </trans-unit>
+
+      <!-- Enterprise Example -->
+      <trans-unit id="exampleCardTitle">
+        <source>Multi-Party Financial Analysis</source>
+        <target>다자간 금융 분석</target>
+      </trans-unit>
+      <trans-unit id="exampleCardBody1">
+        <source>An investment bank analyzes term sheets involving three parties — lead investor, co-investor, and target company. Each term sheet contains overlapping entity names in different roles.</source>
+        <target>투자은행이 3개 당사자(리드 투자자, 공동 투자자, 대상 기업)가 포함된 텀시트를 분석합니다. 각 텀시트에는 서로 다른 역할의 중복 엔티티명이 포함되어 있습니다.</target>
+      </trans-unit>
+      <trans-unit id="exampleCardBody2">
+        <source>Flat masking turns all three parties into [NAME], making it impossible for AI to attribute terms to the correct party. Structure-preserving processing assigns consistent, distinct representations to each party, enabling accurate extraction of party-specific terms. Restoration restores real party names in the analysis output.</source>
+        <target>플랫 마스킹은 세 당사자 모두를 [NAME]으로 변환하여 AI가 조건을 올바른 당사자에게 귀속시킬 수 없게 만듭니다. 구조 보존 처리는 각 당사자에 일관되고 구별 가능한 표현을 할당하여 당사자별 조건의 정확한 추출을 지원합니다. Restoration이 분석 결과에 실제 당사자명을 복원합니다.</target>
+      </trans-unit>
+
+      <!-- FAQ -->
+      <trans-unit id="faqQ1">
+        <source>What is the main difference between flat masking and structure-preserving processing?</source>
+        <target>플랫 마스킹과 구조 보존 처리의 주요 차이점은 무엇입니까?</target>
+      </trans-unit>
+      <trans-unit id="faqA1">
+        <source>Flat masking treats every sensitive value independently, collapsing entity relationships and document structure. Structure-preserving processing maintains entity consistency, table schemas, and semantic relationships throughout the document.</source>
+        <target>플랫 마스킹은 모든 민감 값을 독립적으로 처리하여 엔티티 관계와 문서 구조를 파괴합니다. 구조 보존 처리는 문서 전체에 걸쳐 엔티티 일관성, 테이블 스키마, 의미적 관계를 유지합니다.</target>
+      </trans-unit>
+
+      <!-- CTA -->
+      <trans-unit id="ctaTitle">
+        <source>See how LLM Capsule works with your data</source>
+        <target>LLM Capsule이 실제 데이터와 어떻게 작동하는지 확인하세요</target>
+      </trans-unit>
+      <trans-unit id="ctaDescription">
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>문서, 배포 제약 조건, 평가 기준을 가져오세요. 실제 워크플로우에서 시연합니다.</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn1Label">
+        <source>Request a Demo</source>
+        <target>Request a Demo</target>
+      </trans-unit>
+      <trans-unit id="ctaBtn2Label">
+        <source>Talk to an Architect</source>
+        <target>Talk to an Architect</target>
+      </trans-unit>
+      <trans-unit id="ctaFootnote1Label">
+        <source>Download Architecture Brief</source>
+        <target>아키텍처 브리프 다운로드</target>
+      </trans-unit>
+      <trans-unit id="ctaFootnote2Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
