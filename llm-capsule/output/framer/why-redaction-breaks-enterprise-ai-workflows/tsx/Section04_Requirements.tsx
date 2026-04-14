@@ -108,7 +108,7 @@ export default function Section04_Requirements({
         .s4-bullet {
           list-style: none;
           padding: 0;
-          margin: 0 0 24px 0;
+          margin: 0 0 40px 0;
           display: flex;
           flex-direction: column;
           gap: 12px;

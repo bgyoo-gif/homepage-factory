@@ -1,6 +1,6 @@
 {
   "brand": "cubig",
-  "generated": "2026-04-07 16:37:55",
+  "generated": "2026-04-14 13:29:09",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/cubig",
   "groups": [
     {
@@ -41,12 +41,12 @@
         {
           "name": "A-cubig-llm-v3-b-type-part1.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/html/A-cubig-llm-v3-b-type-part1.html",
-          "modified": "2026-04-07"
+          "modified": "2026-04-13"
         },
         {
           "name": "A-cubig-llm-v3-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/html/A-cubig-llm-v3-b-type.html",
-          "modified": "2026-04-07"
+          "modified": "2026-04-13"
         }
       ],
       "docs": [
@@ -145,7 +145,7 @@
         {
           "name": "cubig-dts-v3-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/html/cubig-dts-v3-b-type.html",
-          "modified": "2026-04-07"
+          "modified": "2026-04-13"
         }
       ],
       "docs": [
