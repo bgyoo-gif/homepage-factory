@@ -11,8 +11,11 @@ const PALETTE = {
   white:          "#ffffff",
   borderDefault:  "#e6e7e9",
   surfaceLight:   "#f7f7f7",
+  surfaceMid:     "#f2f2f2",
   neutral150:     "#e6e7e9",
 }
+
+const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference"
 
 // ─── JSON-LD ──────────────────────────────────────────────────────────────────
 const JSON_LD_BREADCRUMB = JSON.stringify({
@@ -43,6 +46,7 @@ interface Props {
   ctaSecondaryHref?: string
   ctaGhost?: string
   ctaGhostHref?: string
+  screenshotDesc?: string
 }
 
 export default function Section01_Hero({
@@ -56,6 +60,7 @@ export default function Section01_Hero({
   ctaSecondaryHref = "/architecture",
   ctaGhost = "See comparison",
   ctaGhostHref = "#section-11",
+  screenshotDesc = "LLM Capsule Dashboard — Real-time encapsulation pipeline with document processing status",
 }: Props) {
   return (
     <>
@@ -97,7 +102,6 @@ export default function Section01_Hero({
           .s1-container { padding: 0 120px; max-width: 1440px; }
         }
         .s1-hero {
-          max-width: 1080px;
         }
         .s1-title {
           font-family: "DM Sans", sans-serif;
@@ -199,6 +203,50 @@ export default function Section01_Hero({
           color: ${PALETTE.brandPrimary};
           border: none;
         }
+        .s1-screenshot-frame {
+          margin-top: 48px;
+          border-radius: 40px 40px 0 0;
+          padding: 48px 48px 0;
+          background-color: ${PALETTE.surfaceLight};
+          background-image: url('${IMAGE_BASE}/images/bg-gradient-navy-teal.png');
+          background-size: cover;
+          background-position: center;
+          overflow: hidden;
+        }
+        @container (max-width: 767px) {
+          .s1-screenshot-frame {
+            border-radius: 24px 24px 0 0;
+            background-image: none;
+            padding: 24px 24px 0;
+          }
+        }
+        .s1-screenshot-placeholder {
+          background-color: ${PALETTE.surfaceMid};
+          border: 2px dashed ${PALETTE.borderDefault};
+          border-radius: 18px 18px 0 0;
+          padding: 80px 24px;
+          text-align: center;
+          min-height: 240px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+        }
+        .s1-placeholder-icon {
+          width: 32px; height: 32px;
+          stroke: #9c9c9c; fill: none;
+          stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+        }
+        .s1-placeholder-label {
+          font-family: "Fragment Mono", monospace;
+          font-size: 12px; color: #9c9c9c;
+          text-transform: uppercase; letter-spacing: 0.08em;
+        }
+        .s1-placeholder-desc {
+          font-family: "DM Sans", sans-serif;
+          font-size: 14px; color: #9c9c9c;
+        }
       `}</style>
       <section className="s1-section" id="section-hero">
         <div className="s1-inner">
@@ -213,6 +261,15 @@ export default function Section01_Hero({
                 <a href={ctaPrimaryHref} className="s1-btn s1-btn--primary">{ctaPrimary}</a>
                 <a href={ctaSecondaryHref} className="s1-btn s1-btn--secondary">{ctaSecondary}</a>
                 <a href={ctaGhostHref} className="s1-btn s1-btn--ghost">{ctaGhost}</a>
+              </div>
+              <div className="s1-screenshot-frame">
+                <div className="s1-screenshot-placeholder">
+                  <svg className="s1-placeholder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                  <span className="s1-placeholder-label">Product Screenshot</span>
+                  <span className="s1-placeholder-desc">{screenshotDesc}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -233,4 +290,5 @@ addPropertyControls(Section01_Hero, {
   ctaSecondaryHref:{ type: ControlType.String, title: "CTA Secondary URL", defaultValue: "/architecture" },
   ctaGhost:        { type: ControlType.String, title: "CTA Ghost",       defaultValue: "See comparison" },
   ctaGhostHref:    { type: ControlType.String, title: "CTA Ghost URL",   defaultValue: "#section-11" },
+  screenshotDesc:  { type: ControlType.String, title: "Screenshot desc", defaultValue: "LLM Capsule Dashboard — Real-time encapsulation pipeline with document processing status", displayTextArea: true },
 })
