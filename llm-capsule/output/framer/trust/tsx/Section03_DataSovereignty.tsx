@@ -13,7 +13,7 @@ interface Props {
 export default function Section03_DataSovereignty({
   sectionTitle = "Data",
   sectionTitleHighlight = "Sovereignty",
-  sectionDescription = "LLM Capsule enforces data sovereignty by design, and this enforcement is what enables AI adoption in regulated environments.",
+  sectionDescription = "enforces data sovereignty by design, and this enforcement is what enables AI adoption in regulated environments.",
   card1Title = "Local Encapsulation",
   card1Description = "The encapsulation engine runs entirely within the enterprise environment. Original sensitive data never leaves the controlled boundary. Only encapsulated representations — with sensitive values replaced by structure-preserving tokens — cross to external AI services.",
   card2Title = "Zero Exposure Guarantee",
@@ -217,7 +217,7 @@ export default function Section03_DataSovereignty({
 addPropertyControls(Section03_DataSovereignty, {
   sectionTitle: { type: ControlType.String, title: "Section Title", defaultValue: "Data" },
   sectionTitleHighlight: { type: ControlType.String, title: "Title Highlight", defaultValue: "Sovereignty" },
-  sectionDescription: { type: ControlType.String, title: "Section Description", defaultValue: "LLM Capsule enforces data sovereignty by design, and this enforcement is what enables AI adoption in regulated environments." },
+  sectionDescription: { type: ControlType.String, title: "Section Description", defaultValue: "enforces data sovereignty by design, and this enforcement is what enables AI adoption in regulated environments.", displayTextArea: true },
   card1Title: { type: ControlType.String, title: "Card 1 Title", defaultValue: "Local Encapsulation" },
   card1Description: { type: ControlType.String, title: "Card 1 Description", defaultValue: "The encapsulation engine runs entirely within the enterprise environment. Original sensitive data never leaves the controlled boundary. Only encapsulated representations — with sensitive values replaced by structure-preserving tokens — cross to external AI services." },
   card2Title: { type: ControlType.String, title: "Card 2 Title", defaultValue: "Zero Exposure Guarantee" },

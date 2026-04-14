@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function Section05_RegulatorySupport({
-  bannerText = "LLM Capsule supports enterprise compliance by ensuring sensitive data never leaves the enterprise environment during AI processing. Organizations should evaluate specific compliance requirements with their legal counsel.",
+  bannerText = "supports enterprise compliance with GDPR, HIPAA, SOX, and sector-specific data regulations by ensuring sensitive data never leaves the enterprise environment during AI processing. Organizations should evaluate specific compliance requirements with their legal counsel.",
   item1 = "GDPR",
   item2 = "HIPAA",
   item3 = "SOX",
@@ -128,7 +128,7 @@ export default function Section05_RegulatorySupport({
 }
 
 addPropertyControls(Section05_RegulatorySupport, {
-  bannerText: { type: ControlType.String, title: "Banner Text", defaultValue: "LLM Capsule supports enterprise compliance by ensuring sensitive data never leaves the enterprise environment during AI processing. Organizations should evaluate specific compliance requirements with their legal counsel." },
+  bannerText: { type: ControlType.String, title: "Banner Text", defaultValue: "supports enterprise compliance with GDPR, HIPAA, SOX, and sector-specific data regulations by ensuring sensitive data never leaves the enterprise environment during AI processing. Organizations should evaluate specific compliance requirements with their legal counsel.", displayTextArea: true },
   item1: { type: ControlType.String, title: "Item 1", defaultValue: "GDPR" },
   item2: { type: ControlType.String, title: "Item 2", defaultValue: "HIPAA" },
   item3: { type: ControlType.String, title: "Item 3", defaultValue: "SOX" },

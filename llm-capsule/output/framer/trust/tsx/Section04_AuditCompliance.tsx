@@ -19,7 +19,7 @@ interface Props {
 export default function Section04_AuditCompliance({
   sectionTitle = "Audit &",
   sectionTitleHighlight = "Compliance",
-  sectionDescription = "Every encapsulation and restoration event generates a complete audit record.",
+  sectionDescription = "Every encapsulation and restoration event generates a complete audit record: what data was protected, which elements were encapsulated, which AI service processed the request, and what outputs were restored. Audit logs support enterprise AI governance, regulatory compliance reporting, and internal security reviews.",
   feature1Title = "Data Protection Records",
   feature1Description = "What data was protected and which elements were encapsulated in each transaction.",
   feature2Title = "AI Service Tracking",
@@ -248,7 +248,7 @@ export default function Section04_AuditCompliance({
 addPropertyControls(Section04_AuditCompliance, {
   sectionTitle: { type: ControlType.String, title: "Section Title", defaultValue: "Audit &" },
   sectionTitleHighlight: { type: ControlType.String, title: "Title Highlight", defaultValue: "Compliance" },
-  sectionDescription: { type: ControlType.String, title: "Section Description", defaultValue: "Every encapsulation and restoration event generates a complete audit record." },
+  sectionDescription: { type: ControlType.String, title: "Section Description", defaultValue: "Every encapsulation and restoration event generates a complete audit record: what data was protected, which elements were encapsulated, which AI service processed the request, and what outputs were restored. Audit logs support enterprise AI governance, regulatory compliance reporting, and internal security reviews.", displayTextArea: true },
   feature1Title: { type: ControlType.String, title: "Feature 1 Title", defaultValue: "Data Protection Records" },
   feature1Description: { type: ControlType.String, title: "Feature 1 Description", defaultValue: "What data was protected and which elements were encapsulated in each transaction." },
   feature2Title: { type: ControlType.String, title: "Feature 2 Title", defaultValue: "AI Service Tracking" },
