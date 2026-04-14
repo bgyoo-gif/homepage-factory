@@ -186,7 +186,7 @@ export default function Section02_PricingPlans({
           align-items: stretch;
         }
         @container (min-width: 1024px) {
-          .s2-card-grid { grid-template-columns: repeat(3, 1fr); }
+          .s2-card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
 
         /* Gradient Card Wrapper */

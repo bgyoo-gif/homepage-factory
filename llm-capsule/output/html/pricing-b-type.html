@@ -308,7 +308,7 @@
 
     /* --- Card Grid --- */
     .ds-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-    @media (min-width: 1024px) { .ds-card-grid--3col { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .ds-card-grid--3col { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
     /* --- Card badge --- */
     .ds-card__badge {
