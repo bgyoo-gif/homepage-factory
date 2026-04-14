@@ -40,19 +40,7 @@ export default function Section04_AuditCompliance({
           box-sizing: border-box;
           padding: 60px 0;
           background-color: #ffffff;
-          background-image: url('${IMAGE_BASE}/bg-paint-blue-iridescent.png');
-          background-size: cover;
-          background-position: center;
-          position: relative;
         }
-        .s4-section::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background-color: rgba(255, 255, 255, 0.45);
-          z-index: 0;
-        }
-        .s4-section > * { position: relative; z-index: 1; }
 
         .s4-inner {
           width: 100%;

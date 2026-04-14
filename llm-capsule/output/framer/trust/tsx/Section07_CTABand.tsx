@@ -41,7 +41,10 @@ export default function Section07_CTABand({
           position: relative;
           padding: 80px 16px;
           text-align: center;
-          background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+          background-color: #171719;
+          background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png');
+          background-size: cover;
+          background-position: center;
         }
         .s7-cta-band::before {
           content: '';
