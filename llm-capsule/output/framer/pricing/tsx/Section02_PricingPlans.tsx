@@ -354,7 +354,7 @@ export default function Section02_PricingPlans({
                     ))}
                   </ul>
                   <div className="s2-card__actions">
-                    <a href={card1ButtonHref} className="s2-btn s2-btn--primary">
+                    <a href={card1ButtonHref} className="s2-btn s2-btn--secondary">
                       {card1ButtonLabel}
                     </a>
                   </div>
@@ -377,7 +377,7 @@ export default function Section02_PricingPlans({
                     ))}
                   </ul>
                   <div className="s2-card__actions">
-                    <a href={card2ButtonHref} className="s2-btn s2-btn--primary">
+                    <a href={card2ButtonHref} className="s2-btn s2-btn--secondary">
                       {card2ButtonLabel}
                     </a>
                   </div>
