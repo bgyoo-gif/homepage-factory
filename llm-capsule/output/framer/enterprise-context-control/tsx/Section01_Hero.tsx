@@ -26,6 +26,18 @@ export default function Section01_Hero({
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+        .s1-breadcrumb {
+          display: flex; align-items: center; gap: 8px;
+          flex-wrap: wrap; margin-bottom: 24px;
+        }
+        .s1-breadcrumb__link {
+          font-size: 14px; color: ${PALETTE.brandSecondary};
+          font-weight: 500; transition: color 0.15s; text-decoration: none;
+        }
+        .s1-breadcrumb__link:hover { color: ${PALETTE.brandPrimary}; }
+        .s1-breadcrumb__sep { font-size: 14px; color: ${PALETTE.textSecondary}; }
+        .s1-breadcrumb__current { font-size: 14px; color: ${PALETTE.textSecondary}; }
+
         .s1-section {
           width: 100%;
           padding: 100px 0 0;
@@ -92,6 +104,15 @@ export default function Section01_Hero({
       <section className="s1-section">
         <div className="s1-inner">
           <div className="s1-container">
+            <nav className="s1-breadcrumb" aria-label="Breadcrumb">
+              <a href="/" className="s1-breadcrumb__link">Home</a>
+              <span className="s1-breadcrumb__sep">/</span>
+              <a href="/resources" className="s1-breadcrumb__link">Resources</a>
+              <span className="s1-breadcrumb__sep">/</span>
+              <a href="/resources/glossary" className="s1-breadcrumb__link">Glossary</a>
+              <span className="s1-breadcrumb__sep">/</span>
+              <span className="s1-breadcrumb__current">Enterprise Context Control</span>
+            </nav>
             <h1 className="s1-title">{title}</h1>
             <p className="s1-description">{description}</p>
           </div>

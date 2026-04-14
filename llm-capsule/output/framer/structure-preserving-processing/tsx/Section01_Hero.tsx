@@ -20,6 +20,18 @@ export default function Section01_Hero({
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+        .s1-breadcrumb {
+          display: flex; align-items: center; gap: 8px;
+          flex-wrap: wrap; margin-bottom: 24px;
+        }
+        .s1-breadcrumb__link {
+          font-size: 14px; color: #5690D4;
+          font-weight: 500; transition: color 0.15s; text-decoration: none;
+        }
+        .s1-breadcrumb__link:hover { color: #1821E8; }
+        .s1-breadcrumb__sep { font-size: 14px; color: #9c9c9c; }
+        .s1-breadcrumb__current { font-size: 14px; color: #9c9c9c; }
+
         .s1-section {
           width: 100%;
           padding: 100px 0 0;
@@ -96,6 +108,15 @@ export default function Section01_Hero({
       <section className="s1-section">
         <div className="s1-inner">
           <div className="s1-container">
+            <nav className="s1-breadcrumb" aria-label="Breadcrumb">
+              <a href="/" className="s1-breadcrumb__link">Home</a>
+              <span className="s1-breadcrumb__sep">/</span>
+              <a href="/resources" className="s1-breadcrumb__link">Resources</a>
+              <span className="s1-breadcrumb__sep">/</span>
+              <a href="/resources/glossary" className="s1-breadcrumb__link">Glossary</a>
+              <span className="s1-breadcrumb__sep">/</span>
+              <span className="s1-breadcrumb__current">Structure-Preserving Processing</span>
+            </nav>
             <h1 className="s1-title">{title}</h1>
             <p className="s1-description">
               {description}{" "}
