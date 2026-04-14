@@ -148,18 +148,7 @@ addPropertyControls(SectionNN_Name, {
 
 **Localization 필수 — 화면에 보이는 모든 텍스트**를 Props + addPropertyControls로 노출한다. 하드코딩 텍스트 금지.
 
-**다국어 COPY 구조 (en/ko/ja/de):**
-```typescript
-const COPY = {
-  en: { title: "English", description: "..." },
-  ko: { title: "", description: "" },  // translator 에이전트가 채움
-  ja: { title: "", description: "" },
-  de: { title: "", description: "" },
-}
-```
-- `lang` prop: `addPropertyControls`에 `options: ["en", "ko", "ja", "de"]`로 노출
-- ko/ja/de 값은 빈 문자열로 두되, en 값은 필수 입력
-- 번역은 translator 에이전트가 후처리로 채운다
+**COPY 객체 방식 금지** — Framer Localization 패널이 인식하지 못함. 텍스트는 반드시 개별 Props로 노출하고, 다국어 번역은 Framer Localization 패널에서 관리한다.
 
 ### 3. 스타일 규칙
 
