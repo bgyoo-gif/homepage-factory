@@ -771,9 +771,14 @@
     .ds-bg--paint-teal  { background-image: var(--ds-bg-img-paint-teal); }
 
     /* --- Dark Link Cards --- */
+    .ds-card--dark {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--ds-space-md);
+    }
     .ds-card--dark .ds-card__arrow {
-      margin-top: auto; padding-top: var(--ds-space-md);
-      display: flex; align-items: center; gap: var(--ds-space-xs);
+      flex-shrink: 0;
       font-size: var(--ds-text-sm); color: var(--ds-color-neutral-400);
       transition: color 0.15s;
     }

@@ -281,7 +281,10 @@ export default function Section13_FAQ({
           border: 1px solid ${PALETTE.neutral700};
           padding: 24px;
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
           text-decoration: none;
           transition: opacity 0.15s;
         }
@@ -305,11 +308,7 @@ export default function Section13_FAQ({
           margin: 0;
         }
         .s13-dark-card__arrow {
-          margin-top: auto;
-          padding-top: 16px;
-          display: flex;
-          align-items: center;
-          gap: 8px;
+          flex-shrink: 0;
           font-family: "DM Sans", sans-serif;
           font-size: 14px;
           color: ${PALETTE.neutral400};
