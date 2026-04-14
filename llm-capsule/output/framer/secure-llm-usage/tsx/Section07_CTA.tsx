@@ -61,7 +61,7 @@ export default function Section07_CTA({
           padding: 80px 16px;
           text-align: center;
           background-color: ${PALETTE.neutral800};
-          background-image: url('${IMAGE_BASE}/bg-gradient-blue-violet.webp');
+          background-image: url('${IMAGE_BASE}/bg-gradient-sage-rose.png');
           background-size: cover;
           background-position: center;
           box-sizing: border-box;

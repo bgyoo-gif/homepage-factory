@@ -60,6 +60,19 @@ export default function Section01_Hero({
         @container (min-width: 768px) { .s1-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .s1-container { padding: 0 32px; } }
         @container (min-width: 1440px) { .s1-container { padding: 0 120px; max-width: 1440px; } }
+
+        .s1-breadcrumb {
+          display: flex; align-items: center; gap: 8px;
+          flex-wrap: wrap; margin-bottom: 24px;
+        }
+        .s1-breadcrumb__link {
+          font-size: 14px; color: ${PALETTE.brandSecondary};
+          font-weight: 500; transition: color 0.15s; text-decoration: none;
+        }
+        .s1-breadcrumb__link:hover { color: ${PALETTE.brandPrimary}; }
+        .s1-breadcrumb__sep { font-size: 14px; color: ${PALETTE.textTertiary}; }
+        .s1-breadcrumb__current { font-size: 14px; color: ${PALETTE.textTertiary}; }
+
         .s1-title {
           font-family: "DM Sans", sans-serif;
           font-size: 28px;
@@ -116,6 +129,15 @@ export default function Section01_Hero({
       <section className="s1-section">
         <div className="s1-inner">
           <div className="s1-container">
+            <nav className="s1-breadcrumb" aria-label="Breadcrumb">
+              <a href="/" className="s1-breadcrumb__link">Home</a>
+              <span className="s1-breadcrumb__sep">/</span>
+              <a href="/resources" className="s1-breadcrumb__link">Resources</a>
+              <span className="s1-breadcrumb__sep">/</span>
+              <a href="/resources/glossary" className="s1-breadcrumb__link">Glossary</a>
+              <span className="s1-breadcrumb__sep">/</span>
+              <span className="s1-breadcrumb__current">Secure LLM Usage</span>
+            </nav>
             <h1 className="s1-title">
               <span className="s1-title-brand">{titlePrefix}</span>
               {titleMain}

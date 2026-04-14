@@ -358,11 +358,13 @@ export default function Restoration({
         .rst-cta-band {
           width: 100%; position: relative; overflow: hidden;
           padding: 80px 16px; text-align: center;
-          background: ${P.gradientBrand};
+          background-color: ${P.neutral800};
+          background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-peach-coral.png');
+          background-size: cover; background-position: center;
         }
         .rst-cta-band::before {
           content: ''; position: absolute; inset: 0;
-          background-color: rgba(0,0,0,0.15); z-index: 0;
+          background-color: rgba(0,0,0,0.35); z-index: 0;
         }
         .rst-cta-band > * { position: relative; z-index: 1; }
         .rst-cta-band__inner {
@@ -420,11 +422,11 @@ export default function Restoration({
             <section id="section-hero" className="rst-section--hero">
               <div className="rst-article-container">
                 <nav className="rst-breadcrumb" aria-label="Breadcrumb">
-                  <a href="index.html" className="rst-breadcrumb__link">Home</a>
+                  <a href="/" className="rst-breadcrumb__link">Home</a>
                   <span className="rst-breadcrumb__sep">/</span>
-                  <a href="resources.html" className="rst-breadcrumb__link">Resources</a>
+                  <a href="/resources" className="rst-breadcrumb__link">Resources</a>
                   <span className="rst-breadcrumb__sep">/</span>
-                  <a href="glossary.html" className="rst-breadcrumb__link">Glossary</a>
+                  <a href="/resources/glossary" className="rst-breadcrumb__link">Glossary</a>
                   <span className="rst-breadcrumb__sep">/</span>
                   <span className="rst-breadcrumb__current">Restoration</span>
                 </nav>
