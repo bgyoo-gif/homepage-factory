@@ -120,6 +120,12 @@ a { text-decoration: none; color: inherit; }
 5. **CTA section 구조**: 반드시 `<section>` 태그 사용, `<main>` 내부에 배치. `<div>` 또는 `</main>` 밖 배치 금지
 6. **ds-badge--purple**: `background-color: var(--ds-color-brand-light)` — `overlay-brand-tint-light` 사용 금지
 7. **키프레임 이름**: `@keyframes ds-marquee` 사용 — `@keyframes marquee` 금지
+8. **HTML 수정 후 TSX 동기화**: B타입 HTML을 수정했으면 해당 TSX(`{brand}/output/framer/`)와 preview.html이 존재하는지 확인 후 반드시 같이 수정
+9. **미정의 CSS 변수 참조 금지**: `:root`에 선언되지 않은 `var(--ds-bg-img-*)` 등 사용 금지 → 배경 검정 오류 발생. 배경 이미지는 절대 URL 직접 지정 또는 이미 `:root`에 정의된 변수만 사용
+10. **균등 분할 그리드**: `repeat(N, 1fr)` 금지 → `repeat(N, minmax(0, 1fr))` 사용 필수
+11. **ds-bullet--check 아이콘 HTML 삽입 금지**: `<span class="ds-bullet__icon"></span>` 비워둘 것 — `&#10003;` 등 HTML 텍스트 삽입 시 체크 2개 표시
+12. **section header description 잘림 금지**: 원본 단락 전문 사용 — 첫 문장만 넣지 않는다. lead와 동일 문장으로 시작하는 중복 금지
+13. **overflow-x: auto scrollbar 숨김 필수**: `overflow-x: auto` 사용 시 반드시 `scrollbar-width: none;` + `::-webkit-scrollbar { display: none; }` 동반
 
 #### 반응형 규칙 (Mobile-first, 4단계 필수)
 ```css
@@ -184,6 +190,22 @@ grep -n 'section-header__title.*text-4xl\|section-header__title.*text-5xl\|secti
 # 10. CTA가 main 내부에 있는지 확인
 grep -n '</main>' {brand}/output/html/[파일명]-b-type.html
 grep -n 'ds-cta-band' {brand}/output/html/[파일명]-b-type.html
+
+# 11. 미정의 CSS 변수 참조 확인 (DS에 없는 변수 → 배경 검정 오류)
+grep -oP 'var\(--ds-[a-zA-Z0-9-]+\)' {brand}/output/html/[파일명]-b-type.html | sort -u
+
+# 12. 균등 그리드 1fr 사용 확인 (minmax 없이 1fr만 사용한 경우)
+grep -n 'repeat([0-9]\+, 1fr)' {brand}/output/html/[파일명]-b-type.html
+
+# 13. ds-bullet--check 아이콘 HTML 삽입 확인 (비어있어야 함)
+grep -n 'bullet__icon.*&#10003;\|bullet__icon.*✓\|bullet__icon.*checkmark' {brand}/output/html/[파일명]-b-type.html
+
+# 14. overflow-x: auto scrollbar 숨김 확인
+grep -n 'overflow-x: auto' {brand}/output/html/[파일명]-b-type.html
+grep -n 'scrollbar-width: none' {brand}/output/html/[파일명]-b-type.html
+
+# 15. TSX 동기화 대상 확인
+ls {brand}/output/framer/ 2>/dev/null
 ```
 
 → 모든 검증을 통과한 후에만 Step 6으로 진행한다.

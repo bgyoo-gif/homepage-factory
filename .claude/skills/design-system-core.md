@@ -782,16 +782,17 @@ HTML (Hero Screenshot):
 ### 4. Card Grid
 
 ```css
+/* ⚠️ 균등 분할 그리드: repeat(N, 1fr) 대신 repeat(N, minmax(0, 1fr)) 필수 — 카드별 콘텐츠 최소 너비 차이로 불균등 발생 방지 */
 .ds-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
 .ds-card-grid .ds-card { display: flex; flex-direction: column; }
 .ds-card-grid--2col { }
-@media (min-width: 768px) { .ds-card-grid--2col { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 768px) { .ds-card-grid--2col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .ds-card-grid--3col { }
-@media (min-width: 768px)  { .ds-card-grid--3col { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .ds-card-grid--3col { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 768px)  { .ds-card-grid--3col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .ds-card-grid--3col { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .ds-card-grid--4col { }
-@media (min-width: 768px)  { .ds-card-grid--4col { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .ds-card-grid--4col { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 768px)  { .ds-card-grid--4col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .ds-card-grid--4col { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 ```
 
 ### 5. Case Study Card (.ds-card--case-study)
@@ -1156,6 +1157,7 @@ document.querySelectorAll('[data-step-tabs]').forEach(function(root) {
 .ds-bullet__item { display: flex; align-items: flex-start; gap: var(--ds-space-xs); font-size: var(--ds-text-md); line-height: var(--ds-leading-normal); color: var(--ds-color-text-primary); }
 .ds-bullet__icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; }
 .ds-bullet--dot .ds-bullet__icon::before { content: "•"; color: var(--ds-color-brand-purple); font-size: var(--ds-text-xl); line-height: 1; }
+/* ⚠️ ds-bullet--check: ds-bullet__icon 내부에 HTML 텍스트(&#10003; 등) 절대 삽입 금지 — CSS ::before가 ✓ 자동 생성 */
 .ds-bullet--check .ds-bullet__icon::before { content: "✓"; color: var(--ds-color-success); font-weight: var(--ds-weight-bold); font-size: var(--ds-text-md); line-height: 1; }
 .ds-bullet--number { counter-reset: bullet; }
 .ds-bullet--number .ds-bullet__icon::before { counter-increment: bullet; content: counter(bullet); font-size: var(--ds-text-sm); font-weight: var(--ds-weight-bold); color: var(--ds-color-brand-primary); }
@@ -1457,3 +1459,9 @@ document.querySelectorAll('[data-step-tabs]').forEach(function(root) {
 36. screenshot-frame background-color fallback 필수
 37. 모바일 배경 이미지 처리
 38. 배경 이미지 적용 위치 명확화
+39. HTML 수정 시 TSX 동기화 필수 — 해당 TSX와 preview.html이 존재하면 반드시 같이 수정
+40. 미정의 CSS 변수 참조 금지 — `:root`에 선언되지 않은 `var(--ds-*)` 사용 금지. 배경 이미지는 절대 URL 직접 지정 또는 이미 `:root`에 정의된 변수만 사용
+41. 균등 분할 그리드 — `repeat(N, 1fr)` 대신 `repeat(N, minmax(0, 1fr))` 필수
+42. `ds-bullet--check` 아이콘 HTML 삽입 금지 — `ds-bullet__icon`은 비워둘 것 (CSS `::before`가 ✓ 자동 생성). 내부에 `&#10003;` 등 텍스트 삽입 시 체크 2개 표시
+43. section header description 전문 사용 — 원본 단락 첫 문장만 넣지 않고 전문 사용. lead와 동일 문장으로 시작 금지
+44. `overflow-x: auto` scrollbar 숨김 필수 — 반드시 `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }` 동반

@@ -32,6 +32,29 @@
     </thead>
     <tbody>
       <tr>
+        <td>2026-04-14</td>
+        <td><span class="badge badge--rule">규칙 추가</span></td>
+        <td>
+          반복 결함 7건 전역 규칙 전파:<br>
+          1. HTML 수정 후 TSX 미동기화 — HTML 수정 시 TSX + preview.html 동기화 필수<br>
+          2. 미정의 CSS 변수 참조 — DS에 없는 var(--ds-*) 사용 금지, 배경 이미지는 절대 URL 또는 기정의 변수만<br>
+          3. grid 1fr 불균등 — repeat(N, 1fr) → repeat(N, minmax(0, 1fr)) 필수<br>
+          4. 체크 아이콘 중복 — ds-bullet--check의 ds-bullet__icon은 비워둘 것 (CSS ::before 자동 생성)<br>
+          5. section header description 잘림 + lead 중복 — 원본 단락 전문 사용, lead와 동일 문장 시작 금지<br>
+          6. overflow-x: auto scrollbar 미숨김 — scrollbar-width: none + ::-webkit-scrollbar { display: none } 동반 필수<br>
+          7. 동일 배경 이미지 중복 사용 — ds-bg--* 한 페이지 2회 이상 금지 (기존 규칙 FAIL 트리거로 강화)
+        </td>
+        <td>
+          <span class="tag-file">CLAUDE.md</span>
+          <span class="tag-file">.claude/skills/design-system-core.md</span>
+          <span class="tag-file">.claude/agents/frontend-dev.md</span>
+          <span class="tag-file">.claude/agents/qa.md</span>
+          <span class="tag-file">.claude/agents/framer-dev.md</span>
+          <span class="tag-file">.claude/agents/product-designer.md</span>
+        </td>
+        <td>feedback-sync</td>
+      </tr>
+      <tr>
         <td>2026-04-07</td>
         <td><span class="badge badge--rule">규칙 추가</span></td>
         <td>

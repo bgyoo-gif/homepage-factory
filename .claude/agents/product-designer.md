@@ -189,6 +189,9 @@ frontend-dev 에이전트에게 구현을 위임합니다.
 - 배경 이미지 중복 금지: 한 페이지 안에 동일한 `ds-bg--*` 2번 이상 사용 금지
 - 배경 이미지 위 텍스트: black 또는 white만 사용
 - CSS 변수는 design-system 파일에 정의된 것만 사용 (임의 변수 생성 금지)
+- section header description 전문 사용: 원본 도입 단락의 첫 문장만 넣지 않고 전문을 spec에 기재. 바로 아래 본문 lead와 동일 문장으로 시작하면 안 됨 — 중복 제거 (둘 중 하나 삭제)
+- 균등 분할 그리드는 `minmax(0, 1fr)` 명시: spec에 그리드 레이아웃 명시 시 `repeat(N, minmax(0, 1fr))` 사용 지시
+- `overflow-x: auto` 사용 영역 명시 시 scrollbar 숨김 처리 지시: `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }`
 
 ## 절대 규칙
 - 원문 내용을 임의로 수정하거나 축약하지 않는다

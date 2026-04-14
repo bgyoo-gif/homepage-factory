@@ -93,6 +93,25 @@ grep -n 'section-header--left' {brand}/output/html/[파일명]-b-type.html
 grep -oP '--ds-[a-zA-Z0-9-]+' {brand}/output/html/[파일명]-b-type.html | sort -u
 ```
 
+**균등 그리드 minmax 누락 확인:**
+```bash
+grep -n "repeat([0-9]\+, 1fr)" {brand}/output/html/[파일명]-b-type.html
+```
+
+**ds-bullet--check 아이콘 HTML 삽입 확인:**
+```bash
+grep -n "bullet__icon.*&#10003;\|bullet__icon.*✓" {brand}/output/html/[파일명]-b-type.html
+```
+
+**overflow-x: auto scrollbar 숨김 누락 확인:**
+```bash
+grep -n "overflow-x: auto" {brand}/output/html/[파일명]-b-type.html
+grep -n "scrollbar-width: none" {brand}/output/html/[파일명]-b-type.html
+```
+
+**section header description vs lead 중복 확인:**
+수동 확인 — section header description의 첫 문장과 바로 아래 본문 lead의 첫 문장이 동일하면 FAIL.
+
 체크리스트:
 - [ ] CSS 변수가 :root에 선언되어 있는가
 - [ ] 색상 하드코딩이 없는가
@@ -107,6 +126,10 @@ grep -oP '--ds-[a-zA-Z0-9-]+' {brand}/output/html/[파일명]-b-type.html | sort
 - [ ] letter-spacing 하드코딩이 없는가
 - [ ] ds-section-header--left가 사용되지 않았는가
 - [ ] 모든 CSS 변수가 design-system 파일에 정의된 것만 사용됐는가
+- [ ] 균등 그리드에 `minmax(0, 1fr)` 사용됐는가 (단순 `1fr` 금지)
+- [ ] `ds-bullet--check`의 `ds-bullet__icon`이 비어 있는가 (HTML 텍스트 삽입 금지)
+- [ ] `overflow-x: auto` 사용 시 `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }` 있는가
+- [ ] section header description이 원본 단락 전문이며 lead와 동일 문장으로 시작하지 않는가
 
 **반복 결함 필수 검사 (FAIL 트리거):**
 
@@ -128,6 +151,9 @@ grep -n 'badge--purple.*overlay-brand-tint' {brand}/output/html/[파일명]-b-ty
 
 # 키프레임 이름 확인 (marquee → ds-marquee)
 grep -n '@keyframes marquee[^-]' {brand}/output/html/[파일명]-b-type.html
+
+# HTML 수정 시 TSX 동기화 대상 존재 여부 확인
+ls {brand}/output/framer/ 2>/dev/null
 ```
 
 추가 체크리스트:
@@ -139,6 +165,12 @@ grep -n '@keyframes marquee[^-]' {brand}/output/html/[파일명]-b-type.html
 - [ ] Cert Grid wreath가 포지셔닝 방식(`position: relative; width: 160px; height: 120px`)인가
 - [ ] `ds-badge--purple` 배경이 `var(--ds-color-brand-light)`인가
 - [ ] 키프레임 이름이 `ds-marquee`인가
+- [ ] 해당 TSX가 존재한다면 HTML과 동기화됐는가
+- [ ] 배경 이미지 CSS 변수가 `:root`에 정의된 것인가 (미정의 변수 사용 금지)
+- [ ] 균등 그리드에 `minmax(0, 1fr)` 사용됐는가
+- [ ] `ds-bullet--check` 아이콘이 비어있는가 (HTML 텍스트 이중 삽입 금지)
+- [ ] `overflow-x: auto` 사용 시 scrollbar 숨김 처리됐는가
+- [ ] section header description이 lead와 중복되지 않는가
 
 ### [CAT-3] 코드 품질 (Medium)
 - [ ] 시맨틱 태그를 사용했는가
@@ -207,6 +239,7 @@ grep -n "min-width: 1440px" {brand}/output/html/[파일명]-b-type.html
 - ds-text--brand 강조 미적용 (CAT-2 High)
 - 하드코딩 색상 (CAT-2 High)
 - DS에 없는 커스텀 CSS 변수 사용 (CAT-2 High)
+- 미정의 배경 이미지 CSS 변수 참조 (CAT-2 High)
 - 4단계 breakpoint 누락 (CAT-4 High)
 - eyebrow 존재 (CAT-2 High)
 - ds-section-header--left 사용 (CAT-2 High)
@@ -214,6 +247,11 @@ grep -n "min-width: 1440px" {brand}/output/html/[파일명]-b-type.html
 - 주황/오렌지 색상 사용 (CAT-2 High)
 - background shorthand 사용 (CAT-2 High)
 - ds-section--light 사용 (CAT-2 High)
+- 균등 그리드에 `1fr` 단독 사용 (CAT-2 High)
+- `ds-bullet--check` 아이콘 HTML 이중 삽입 (CAT-3 Medium)
+- `overflow-x: auto` scrollbar 미숨김 (CAT-3 Medium)
+- section header description lead 중복 (CAT-1 High)
+- 동일 `ds-bg--*` 한 페이지 2회 이상 사용 (CAT-2 High)
 
 ---
 
