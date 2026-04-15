@@ -44,7 +44,7 @@ export default function Section01_Hero({
           width: 100%;
           overflow: hidden;
           box-sizing: border-box;
-          padding: 100px 0 60px;
+          padding: 100px 0 0;
           background-color: #ffffff;
         }
         .s1-inner {
@@ -63,14 +63,30 @@ export default function Section01_Hero({
         @container (min-width: 1024px) { .s1-container { padding: 0 32px; } }
         @container (min-width: 1440px) { .s1-container { padding: 0 120px; max-width: 1440px; } }
         .s1-hero {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 32px;
-          align-items: center;
+          text-align: center;
+          margin: 0 auto;
         }
-        @container s1 (min-width: 1024px) { .s1-hero { grid-template-columns: 1fr 1fr; } }
-        .s1-hero__image { border-radius: 16px; overflow: hidden; }
-        .s1-hero__image img { width: 100%; display: block; }
+        .s1-hero .s1-description { margin-left: auto; margin-right: auto; }
+        .s1-screenshot-frame {
+          margin-top: 32px;
+          border-radius: 16px 16px 0 0;
+          padding: 24px 24px 0;
+          background-color: #ececec;
+          background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.webp');
+          background-size: cover; background-position: center;
+          overflow: hidden;
+        }
+        .s1-screenshot { overflow: hidden; background: #ffffff; }
+        .s1-screenshot img { width: 100%; display: block; }
+        .s1-actions-below {
+          display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+          margin-top: 20px; padding-bottom: 48px;
+        }
+        @container s1 (max-width: 767px) {
+          .s1-screenshot-frame { border-radius: 12px 12px 0 0; background-image: none; }
+          .s1-actions-below { flex-direction: column; align-items: center; }
+          .s1-actions-below .s1-btn { width: 100%; max-width: 320px; }
+        }
         .s1-title {
           font-family: "DM Sans", sans-serif;
           font-size: 32px;
@@ -98,12 +114,7 @@ export default function Section01_Hero({
           font-family: "Oxanium", sans-serif;
           font-weight: 700;
         }
-        .s1-actions {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 12px;
-          margin-top: 20px;
-        }
+        .s1-actions { display: none; }
         .s1-btn {
           display: inline-flex;
           align-items: center;
@@ -160,17 +171,19 @@ export default function Section01_Hero({
                 that removes the data exposure barrier blocking enterprise AI adoption &mdash; enabling AI
                 first, protecting data at the data layer.
               </p>
-              <div className="s1-actions">
-                <a href={primaryBtnHref} className="s1-btn s1-btn--primary">
-                  {primaryBtnLabel}
-                </a>
-                <a href={secondaryBtnHref} className="s1-btn s1-btn--secondary">
-                  {secondaryBtnLabel}
-                </a>
+            </div>
+            <div className="s1-screenshot-frame">
+              <div className="s1-screenshot">
+                <img src="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/solution-hero.png" alt="LLM Capsule — AI-powered document processing across regulated industries" loading="eager" />
               </div>
             </div>
-            <div className="s1-hero__image">
-              <img src="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/solution-hero.png" alt="LLM Capsule — AI-powered document processing across regulated industries" loading="eager" />
+            <div className="s1-actions-below">
+              <a href={primaryBtnHref} className="s1-btn s1-btn--primary">
+                {primaryBtnLabel}
+              </a>
+              <a href={secondaryBtnHref} className="s1-btn s1-btn--secondary">
+                {secondaryBtnLabel}
+              </a>
             </div>
           </div>
         </div>
