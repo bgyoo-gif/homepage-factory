@@ -185,6 +185,7 @@ deploy (gh-pages push)
 - 텍스트 최소 명도: `var(--ds-color-text-muted)` 사용 금지
 - 아티클형 페이지 본문 1080px 통일
 - 섹션 헤더 기본 center 정렬 (--left 금지)
+- 섹션 헤더 description 반응형: mobile 16px(var(--ds-text-md)) → 768px+ 18px(var(--ds-text-lg))
 - CTA band 타이포: 기본 40px, mobile 36px, desktop 50px
 - letter-spacing 하드코딩 금지
 - 외부 서비스 링크는 버튼형

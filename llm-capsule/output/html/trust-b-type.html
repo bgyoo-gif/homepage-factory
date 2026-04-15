@@ -282,9 +282,10 @@
       letter-spacing: var(--ds-tracking-tight); margin-bottom: var(--ds-space-md);
     }
     .ds-section-header__description {
-      font-size: var(--ds-text-lg); color: var(--ds-color-text-secondary);
+      font-size: var(--ds-text-md); color: var(--ds-color-text-secondary);
       line-height: var(--ds-leading-relaxed); max-width: 100%; margin: 0 auto;
     }
+    @media (min-width: 768px)  { .ds-section-header__description { font-size: var(--ds-text-lg); } }
     @media (min-width: 1024px) { .ds-section-header__description { max-width: 720px; } }
     @media (min-width: 1440px) { .ds-section-header__description { max-width: 1080px; } }
     .ds-section-header--underline {

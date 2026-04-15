@@ -386,7 +386,7 @@ h4, .ds-h4 { font-family: var(--ds-font-base); font-size: var(--ds-text-2xl); fo
   letter-spacing: var(--ds-tracking-tight); margin-bottom: var(--ds-space-md);
 }
 .ds-section-header__description {
-  font-size: var(--ds-text-lg); color: var(--ds-color-text-secondary);
+  font-size: var(--ds-text-md); color: var(--ds-color-text-secondary);
   line-height: var(--ds-leading-relaxed); max-width: 100%; margin: 0 auto;
   word-break: keep-all; overflow-wrap: break-word;
 }
@@ -689,6 +689,7 @@ h4, .ds-h4 { font-family: var(--ds-font-base); font-size: var(--ds-text-2xl); fo
 }
 
 /* ── 23. Responsive — sm-Desktop (1024px) ── */
+@media (min-width: 768px)  { .ds-section-header__description { font-size: var(--ds-text-lg); } }
 @media (min-width: 1024px) {
   .ds-container { padding: 0 var(--ds-container-padding-sm-desktop); }
   h1, .ds-h1, .ds-hero__title { font-size: 32px; }

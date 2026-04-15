@@ -356,7 +356,7 @@
       text-wrap: balance;
     }
     .ds-section-header__description {
-      font-size: var(--ds-text-lg);
+      font-size: var(--ds-text-md);
       color: var(--ds-color-text-secondary);
       line-height: var(--ds-leading-relaxed);
       max-width: 100%;
@@ -1050,6 +1050,7 @@
     /* ============================================================
        RESPONSIVE — sm-Desktop (1024px)
     ============================================================ */
+    @media (min-width: 768px)  { .ds-section-header__description { font-size: var(--ds-text-lg); } }
     @media (min-width: 1024px) {
       .ds-container { padding: 0 var(--ds-container-padding-sm-desktop); }
 
