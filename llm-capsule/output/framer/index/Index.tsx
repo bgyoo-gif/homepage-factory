@@ -760,7 +760,7 @@ export default function Index({
         .idx-cta-band {
           width: 100%; position: relative; overflow: hidden;
           padding: 80px 16px; text-align: center;
-          background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.png');
+          background-image: url('https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-cta.webp');
           background-color: ${P.neutral800};
           background-size: cover; background-position: center;
         }
