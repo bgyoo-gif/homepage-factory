@@ -68,15 +68,15 @@ export default function Section01_Hero({
         }
         .s1-hero .s1-description { margin-left: auto; margin-right: auto; }
         .s1-screenshot-frame {
-          margin-top: 32px;
-          padding: 24px 0 0;
+          margin-top: 16px;
+          padding: 0;
           overflow: hidden;
         }
         .s1-screenshot { overflow: hidden; background: #ffffff; }
         .s1-screenshot img { width: 100%; display: block; }
         .s1-actions-below {
           display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
-          margin-top: 20px; padding-bottom: 48px;
+          margin-top: 40px; padding-bottom: 48px;
         }
         @container s1 (max-width: 767px) {
           .s1-screenshot-frame { border-radius: 12px 12px 0 0; background-image: none; }
