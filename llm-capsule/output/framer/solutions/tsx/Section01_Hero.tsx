@@ -63,9 +63,14 @@ export default function Section01_Hero({
         @container (min-width: 1024px) { .s1-container { padding: 0 32px; } }
         @container (min-width: 1440px) { .s1-container { padding: 0 120px; max-width: 1440px; } }
         .s1-hero {
-          text-align: center;
-          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 32px;
+          align-items: center;
         }
+        @container s1 (min-width: 1024px) { .s1-hero { grid-template-columns: 1fr 1fr; } }
+        .s1-hero__image { border-radius: 16px; overflow: hidden; }
+        .s1-hero__image img { width: 100%; display: block; }
         .s1-title {
           font-family: "DM Sans", sans-serif;
           font-size: 32px;
@@ -97,7 +102,6 @@ export default function Section01_Hero({
           display: flex;
           flex-wrap: wrap;
           gap: 12px;
-          justify-content: center;
           margin-top: 20px;
         }
         .s1-btn {
@@ -134,7 +138,7 @@ export default function Section01_Hero({
         @container s1 (min-width: 1024px) {
           .s1-container { padding: 0 32px; }
           .s1-title { font-size: 48px; }
-          .s1-description { max-width: 720px; margin-left: auto; margin-right: auto; }
+          .s1-description { max-width: 720px; }
         }
         @container s1 (min-width: 1440px) {
           .s1-container { padding: 0 120px; max-width: 1440px; }
@@ -164,6 +168,9 @@ export default function Section01_Hero({
                   {secondaryBtnLabel}
                 </a>
               </div>
+            </div>
+            <div className="s1-hero__image">
+              <img src="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/solution-hero.png" alt="LLM Capsule — AI-powered document processing across regulated industries" loading="eager" />
             </div>
           </div>
         </div>
