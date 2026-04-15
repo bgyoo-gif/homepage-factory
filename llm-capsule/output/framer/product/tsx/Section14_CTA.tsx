@@ -17,10 +17,6 @@ interface Props {
   description?: string
   cta1Label?: string
   cta1Href?: string
-  cta2Label?: string
-  cta2Href?: string
-  footnote1Label?: string
-  footnote1Href?: string
   footnote2Label?: string
   footnote2Href?: string
 }
@@ -30,10 +26,6 @@ export default function Section14_CTA({
   description = "Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.",
   cta1Label   = "Request a Demo",
   cta1Href    = "/request-a-demo",
-  cta2Label   = "Talk to an Architect",
-  cta2Href    = "/architecture",
-  footnote1Label = "Download Architecture Brief",
-  footnote1Href  = "/downloads",
   footnote2Label = "View on AWS Marketplace",
   footnote2Href  = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -183,10 +175,8 @@ export default function Section14_CTA({
               <p className="s14-description">{description}</p>
               <div className="s14-actions">
                 <a href={cta1Href} className="s14-btn">{cta1Label}</a>
-                <a href={cta2Href} className="s14-btn">{cta2Label}</a>
               </div>
               <div className="s14-footnote">
-                <a href={footnote1Href} className="s14-btn-sm">{footnote1Label}</a>
                 <a href={footnote2Href} target="_blank" rel="noopener" className="s14-btn-sm">{footnote2Label}</a>
               </div>
             </div>
@@ -202,10 +192,6 @@ addPropertyControls(Section14_CTA, {
   description:    { type: ControlType.String, title: "Description",    defaultValue: "Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.", displayTextArea: true },
   cta1Label:      { type: ControlType.String, title: "CTA 1 Label",    defaultValue: "Request a Demo" },
   cta1Href:       { type: ControlType.String, title: "CTA 1 URL",      defaultValue: "/request-a-demo" },
-  cta2Label:      { type: ControlType.String, title: "CTA 2 Label",    defaultValue: "Talk to an Architect" },
-  cta2Href:       { type: ControlType.String, title: "CTA 2 URL",      defaultValue: "/architecture" },
-  footnote1Label: { type: ControlType.String, title: "Footnote 1",     defaultValue: "Download Architecture Brief" },
-  footnote1Href:  { type: ControlType.String, title: "Footnote 1 URL", defaultValue: "/downloads" },
   footnote2Label: { type: ControlType.String, title: "Footnote 2",     defaultValue: "View on AWS Marketplace" },
   footnote2Href:  { type: ControlType.String, title: "Footnote 2 URL", defaultValue: "https://aws.amazon.com/marketplace" },
 })

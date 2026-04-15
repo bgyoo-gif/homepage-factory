@@ -24,10 +24,6 @@ interface Props {
   description?: string
   btn1Label?: string
   btn1Href?: string
-  btn2Label?: string
-  btn2Href?: string
-  footnote1Label?: string
-  footnote1Href?: string
   footnote2Label?: string
   footnote2Href?: string
   lang?: "en" | "ko"
@@ -37,24 +33,18 @@ const LABELS: Record<"en" | "ko", {
   title: string
   description: string
   btn1Label: string
-  btn2Label: string
-  footnote1Label: string
   footnote2Label: string
 }> = {
   en: {
     title: "See how LLM Capsule works with your data",
     description: "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
     btn1Label: "Request a Demo",
-    btn2Label: "Talk to an Architect",
-    footnote1Label: "Download Architecture Brief",
     footnote2Label: "AWS Marketplace",
   },
   ko: {
     title: "LLM Capsule이 귀하의 데이터와 어떻게 작동하는지 확인하세요",
     description: "문서, 배포 제약, 평가 기준을 가져오세요. 실제 워크플로우에서 시연해 드립니다.",
     btn1Label: "데모 신청",
-    btn2Label: "아키텍트와 상담",
-    footnote1Label: "아키텍처 브리프 다운로드",
     footnote2Label: "AWS Marketplace",
   },
 }
@@ -64,8 +54,6 @@ export default function Section07_CTABand({
   title,
   description,
   btn1Label, btn1Href = "request-pov.html",
-  btn2Label, btn2Href = "architecture.html",
-  footnote1Label, footnote1Href = "downloads.html",
   footnote2Label, footnote2Href = "https://aws.amazon.com/marketplace",
   lang = "en",
 }: Props) {
@@ -74,8 +62,6 @@ export default function Section07_CTABand({
     title: title ?? L.title,
     description: description ?? L.description,
     btn1Label: btn1Label ?? L.btn1Label,
-    btn2Label: btn2Label ?? L.btn2Label,
-    footnote1Label: footnote1Label ?? L.footnote1Label,
     footnote2Label: footnote2Label ?? L.footnote2Label,
   }
 
@@ -221,10 +207,8 @@ export default function Section07_CTABand({
             <p className="s7-cta__description">{t.description}</p>
             <div className="s7-cta__actions">
               <a href={btn1Href} className="s7-cta__btn">{t.btn1Label}</a>
-              <a href={btn2Href} className="s7-cta__btn">{t.btn2Label}</a>
             </div>
             <div className="s7-cta__footnote">
-              <a href={footnote1Href}>{t.footnote1Label}</a>
               <a href={footnote2Href} target="_blank" rel="noopener noreferrer">{t.footnote2Label}</a>
             </div>
           </div>
@@ -256,10 +240,6 @@ addPropertyControls(Section07_CTABand, {
   },
   btn1Label: { type: ControlType.String, title: "Button 1 Label", defaultValue: "Request a Demo" },
   btn1Href:  { type: ControlType.String, title: "Button 1 URL",   defaultValue: "request-pov.html" },
-  btn2Label: { type: ControlType.String, title: "Button 2 Label", defaultValue: "Talk to an Architect" },
-  btn2Href:  { type: ControlType.String, title: "Button 2 URL",   defaultValue: "architecture.html" },
-  footnote1Label: { type: ControlType.String, title: "Footnote 1 Label", defaultValue: "Download Architecture Brief" },
-  footnote1Href:  { type: ControlType.String, title: "Footnote 1 URL",   defaultValue: "downloads.html" },
   footnote2Label: { type: ControlType.String, title: "Footnote 2 Label", defaultValue: "AWS Marketplace" },
   footnote2Href:  { type: ControlType.String, title: "Footnote 2 URL",   defaultValue: "https://aws.amazon.com/marketplace" },
 })

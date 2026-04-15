@@ -318,10 +318,6 @@ interface Props {
   ctaDescription?: string
   ctaBtn1Label?: string
   ctaBtn1Href?: string
-  ctaBtn2Label?: string
-  ctaBtn2Href?: string
-  ctaSecondaryLink1Label?: string
-  ctaSecondaryLink1Href?: string
   ctaSecondaryLink2Label?: string
   ctaSecondaryLink2Href?: string
 }
@@ -374,10 +370,6 @@ export default function Learn({
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   ctaBtn1Label = "Request a Demo",
   ctaBtn1Href = "request-pov.html",
-  ctaBtn2Label = "Talk to an Architect",
-  ctaBtn2Href = "architecture.html",
-  ctaSecondaryLink1Label = "Download Architecture Brief",
-  ctaSecondaryLink1Href = "downloads.html",
   ctaSecondaryLink2Label = "Available on AWS Marketplace",
   ctaSecondaryLink2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -668,10 +660,8 @@ export default function Learn({
                   <p className="lrn-cta-band__description">{ctaDescription}</p>
                   <div className="lrn-cta-band__actions">
                     <a href={ctaBtn1Href} className="lrn-btn">{ctaBtn1Label}</a>
-                    <a href={ctaBtn2Href} className="lrn-btn">{ctaBtn2Label}</a>
                   </div>
                   <div className="lrn-cta-band__secondary">
-                    <a href={ctaSecondaryLink1Href}>{ctaSecondaryLink1Label}</a>
                     <a href={ctaSecondaryLink2Href} target="_blank" rel="noopener">{ctaSecondaryLink2Label}</a>
                   </div>
                 </div>
@@ -779,10 +769,6 @@ addPropertyControls(Learn, {
   },
   ctaBtn1Label: { type: ControlType.String, title: "CTA Button 1 Label", defaultValue: "Request a Demo" },
   ctaBtn1Href:  { type: ControlType.String, title: "CTA Button 1 URL",   defaultValue: "request-pov.html" },
-  ctaBtn2Label: { type: ControlType.String, title: "CTA Button 2 Label", defaultValue: "Talk to an Architect" },
-  ctaBtn2Href:  { type: ControlType.String, title: "CTA Button 2 URL",   defaultValue: "architecture.html" },
-  ctaSecondaryLink1Label: { type: ControlType.String, title: "CTA Secondary Link 1 Label", defaultValue: "Download Architecture Brief" },
-  ctaSecondaryLink1Href:  { type: ControlType.String, title: "CTA Secondary Link 1 URL",   defaultValue: "downloads.html" },
   ctaSecondaryLink2Label: { type: ControlType.String, title: "CTA Secondary Link 2 Label", defaultValue: "Available on AWS Marketplace" },
   ctaSecondaryLink2Href:  { type: ControlType.String, title: "CTA Secondary Link 2 URL",   defaultValue: "https://aws.amazon.com/marketplace" },
 })

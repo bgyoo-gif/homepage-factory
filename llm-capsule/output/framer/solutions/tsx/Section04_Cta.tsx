@@ -21,8 +21,6 @@ interface Props {
   primaryBtn2Href?: string
   primaryBtn3Label?: string
   primaryBtn3Href?: string
-  footnoteBtn1Label?: string
-  footnoteBtn1Href?: string
   footnoteBtn2Label?: string
   footnoteBtn2Href?: string
 }
@@ -36,8 +34,6 @@ export default function Section04_Cta({
   primaryBtn2Href = "product.html",
   primaryBtn3Label = "View Architecture",
   primaryBtn3Href = "architecture.html",
-  footnoteBtn1Label = "Download Architecture Brief",
-  footnoteBtn1Href = "downloads.html",
   footnoteBtn2Label = "Available on AWS Marketplace",
   footnoteBtn2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -189,9 +185,6 @@ export default function Section04_Cta({
                 </a>
               </div>
               <div className="s4-cta-footnote">
-                <a href={footnoteBtn1Href} className="s4-btn s4-btn--sm">
-                  {footnoteBtn1Label}
-                </a>
                 <a
                   href={footnoteBtn2Href}
                   target="_blank"
@@ -228,16 +221,6 @@ addPropertyControls(Section04_Cta, {
   primaryBtn2Href: { type: ControlType.String, title: "CTA 2 URL", defaultValue: "product.html" },
   primaryBtn3Label: { type: ControlType.String, title: "CTA 3 Label", defaultValue: "View Architecture" },
   primaryBtn3Href: { type: ControlType.String, title: "CTA 3 URL", defaultValue: "architecture.html" },
-  footnoteBtn1Label: {
-    type: ControlType.String,
-    title: "Footnote 1 Label",
-    defaultValue: "Download Architecture Brief",
-  },
-  footnoteBtn1Href: {
-    type: ControlType.String,
-    title: "Footnote 1 URL",
-    defaultValue: "downloads.html",
-  },
   footnoteBtn2Label: {
     type: ControlType.String,
     title: "Footnote 2 Label",

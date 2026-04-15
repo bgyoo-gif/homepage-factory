@@ -128,10 +128,6 @@ interface Props {
   ctaDescription?: string
   ctaBtn1Label?: string
   ctaBtn1Href?: string
-  ctaBtn2Label?: string
-  ctaBtn2Href?: string
-  ctaSecBtn1Label?: string
-  ctaSecBtn1Href?: string
   ctaSecBtn2Label?: string
   ctaSecBtn2Href?: string
 }
@@ -193,10 +189,6 @@ export default function Resources({
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   ctaBtn1Label = "Request a Demo",
   ctaBtn1Href = "request-pov.html",
-  ctaBtn2Label = "Talk to an Architect",
-  ctaBtn2Href = "architecture.html",
-  ctaSecBtn1Label = "Download Architecture Brief",
-  ctaSecBtn1Href = "downloads.html",
   ctaSecBtn2Label = "Available on AWS Marketplace",
   ctaSecBtn2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -632,10 +624,8 @@ export default function Resources({
                 <p className="res-cta-band__description">{ctaDescription}</p>
                 <div className="res-cta-band__actions">
                   <a href={ctaBtn1Href} className="res-btn res-btn--md res-btn--cta">{ctaBtn1Label}</a>
-                  <a href={ctaBtn2Href} className="res-btn res-btn--md res-btn--cta">{ctaBtn2Label}</a>
                 </div>
                 <div className="res-cta-band__secondary">
-                  <a href={ctaSecBtn1Href} className="res-btn res-btn--sm res-btn--cta-sec">{ctaSecBtn1Label}</a>
                   <a href={ctaSecBtn2Href} className="res-btn res-btn--sm res-btn--cta-sec" target="_blank" rel="noopener">{ctaSecBtn2Label}</a>
                 </div>
               </div>
@@ -872,26 +862,6 @@ addPropertyControls(Resources, {
     type: ControlType.String,
     title: "CTA Button 1 URL",
     defaultValue: "request-pov.html",
-  },
-  ctaBtn2Label: {
-    type: ControlType.String,
-    title: "CTA Button 2 Label",
-    defaultValue: "Talk to an Architect",
-  },
-  ctaBtn2Href: {
-    type: ControlType.String,
-    title: "CTA Button 2 URL",
-    defaultValue: "architecture.html",
-  },
-  ctaSecBtn1Label: {
-    type: ControlType.String,
-    title: "CTA Secondary Button 1 Label",
-    defaultValue: "Download Architecture Brief",
-  },
-  ctaSecBtn1Href: {
-    type: ControlType.String,
-    title: "CTA Secondary Button 1 URL",
-    defaultValue: "downloads.html",
   },
   ctaSecBtn2Label: {
     type: ControlType.String,

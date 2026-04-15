@@ -7,10 +7,6 @@ interface Props {
   description?: string
   btn1Text?: string
   btn1Href?: string
-  btn2Text?: string
-  btn2Href?: string
-  footnote1Text?: string
-  footnote1Href?: string
   footnote2Text?: string
   footnote2Href?: string
 }
@@ -22,10 +18,6 @@ export default function Section07_CTABand({
   description = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   btn1Text = "Request a Demo",
   btn1Href = "/request-a-demo",
-  btn2Text = "Talk to an Architect",
-  btn2Href = "/architecture",
-  footnote1Text = "Download Architecture Brief",
-  footnote1Href = "/downloads",
   footnote2Text = "Available on AWS Marketplace",
   footnote2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -164,11 +156,8 @@ export default function Section07_CTABand({
             <p className="s7-description">{description}</p>
             <div className="s7-actions">
               <a href={btn1Href} className="s7-btn">{btn1Text}</a>
-              <a href={btn2Href} className="s7-btn">{btn2Text}</a>
             </div>
             <div className="s7-footnote">
-              <a href={footnote1Href}>{footnote1Text}</a>
-              <span>|</span>
               <a href={footnote2Href} target="_blank" rel="noopener">{footnote2Text}</a>
             </div>
           </div>
@@ -185,10 +174,6 @@ addPropertyControls(Section07_CTABand, {
   description: { type: ControlType.String, title: "Description", defaultValue: "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows." },
   btn1Text: { type: ControlType.String, title: "Button 1 Text", defaultValue: "Request a Demo" },
   btn1Href: { type: ControlType.String, title: "Button 1 URL", defaultValue: "/request-a-demo" },
-  btn2Text: { type: ControlType.String, title: "Button 2 Text", defaultValue: "Talk to an Architect" },
-  btn2Href: { type: ControlType.String, title: "Button 2 URL", defaultValue: "/architecture" },
-  footnote1Text: { type: ControlType.String, title: "Footnote 1 Text", defaultValue: "Download Architecture Brief" },
-  footnote1Href: { type: ControlType.String, title: "Footnote 1 URL", defaultValue: "/downloads" },
   footnote2Text: { type: ControlType.String, title: "Footnote 2 Text", defaultValue: "Available on AWS Marketplace" },
   footnote2Href: { type: ControlType.String, title: "Footnote 2 URL", defaultValue: "https://aws.amazon.com/marketplace" },
 })

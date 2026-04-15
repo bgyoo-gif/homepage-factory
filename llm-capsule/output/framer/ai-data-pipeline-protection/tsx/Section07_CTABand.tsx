@@ -16,10 +16,6 @@ interface Props {
   description?: string
   btn1Label?: string
   btn1Href?: string
-  btn2Label?: string
-  btn2Href?: string
-  footnoteLink1Label?: string
-  footnoteLink1Href?: string
   footnoteLink2Label?: string
   footnoteLink2Href?: string
 }
@@ -31,10 +27,6 @@ export default function Section07_CTABand({
   description = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   btn1Label = "Request a Demo",
   btn1Href = "request-pov.html",
-  btn2Label = "Talk to an Architect",
-  btn2Href = "architecture.html",
-  footnoteLink1Label = "Download Architecture Brief",
-  footnoteLink1Href = "downloads.html",
   footnoteLink2Label = "AWS Marketplace",
   footnoteLink2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -175,11 +167,8 @@ export default function Section07_CTABand({
             <p className="s7-description">{description}</p>
             <div className="s7-actions">
               <a href={btn1Href} className="s7-btn">{btn1Label}</a>
-              <a href={btn2Href} className="s7-btn">{btn2Label}</a>
             </div>
             <p className="s7-footnote">
-              <a href={footnoteLink1Href}>{footnoteLink1Label}</a>
-              &nbsp;&nbsp;·&nbsp;&nbsp;
               <a href={footnoteLink2Href} target="_blank" rel="noopener">{footnoteLink2Label}</a>
             </p>
           </div>
@@ -196,10 +185,6 @@ addPropertyControls(Section07_CTABand, {
   description: { type: ControlType.String, title: "Description", defaultValue: "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows." },
   btn1Label: { type: ControlType.String, title: "Button 1 Label", defaultValue: "Request a Demo" },
   btn1Href:  { type: ControlType.String, title: "Button 1 URL",   defaultValue: "request-pov.html" },
-  btn2Label: { type: ControlType.String, title: "Button 2 Label", defaultValue: "Talk to an Architect" },
-  btn2Href:  { type: ControlType.String, title: "Button 2 URL",   defaultValue: "architecture.html" },
-  footnoteLink1Label: { type: ControlType.String, title: "Footnote Link 1 Label", defaultValue: "Download Architecture Brief" },
-  footnoteLink1Href:  { type: ControlType.String, title: "Footnote Link 1 URL",   defaultValue: "downloads.html" },
   footnoteLink2Label: { type: ControlType.String, title: "Footnote Link 2 Label", defaultValue: "AWS Marketplace" },
   footnoteLink2Href:  { type: ControlType.String, title: "Footnote Link 2 URL",   defaultValue: "https://aws.amazon.com/marketplace" },
 })

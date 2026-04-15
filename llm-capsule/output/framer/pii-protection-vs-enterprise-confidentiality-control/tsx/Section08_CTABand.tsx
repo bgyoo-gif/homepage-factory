@@ -26,10 +26,6 @@ interface Props {
   description?: string
   cta1Label?: string
   cta1Href?: string
-  cta2Label?: string
-  cta2Href?: string
-  footnote1Label?: string
-  footnote1Href?: string
   footnote2Label?: string
   footnote2Href?: string
   locale?: "en" | "ko"
@@ -42,10 +38,6 @@ export default function Section08_CTABand({
   description  = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   cta1Label    = "Request a Demo",
   cta1Href     = "request-pov.html",
-  cta2Label    = "Talk to an Architect",
-  cta2Href     = "architecture.html",
-  footnote1Label = "Download Architecture Brief",
-  footnote1Href  = "downloads.html",
   footnote2Label = "AWS Marketplace",
   footnote2Href  = "https://aws.amazon.com/marketplace",
   locale         = "en",
@@ -188,10 +180,8 @@ export default function Section08_CTABand({
           <p className="s8-cta-band__description">{description}</p>
           <div className="s8-cta-band__actions">
             <a href={cta1Href} className="s8-btn">{cta1Label}</a>
-            <a href={cta2Href} className="s8-btn">{cta2Label}</a>
           </div>
           <div className="s8-cta-band__footnote">
-            <a href={footnote1Href}>{footnote1Label}</a>
             <a href={footnote2Href} target="_blank" rel="noopener">{footnote2Label}</a>
           </div>
         </div>
@@ -231,26 +221,6 @@ addPropertyControls(Section08_CTABand, {
     type: ControlType.String,
     title: "CTA 1 URL",
     defaultValue: "request-pov.html",
-  },
-  cta2Label: {
-    type: ControlType.String,
-    title: "CTA 2 Label",
-    defaultValue: "Talk to an Architect",
-  },
-  cta2Href: {
-    type: ControlType.String,
-    title: "CTA 2 URL",
-    defaultValue: "architecture.html",
-  },
-  footnote1Label: {
-    type: ControlType.String,
-    title: "Footnote 1 Label",
-    defaultValue: "Download Architecture Brief",
-  },
-  footnote1Href: {
-    type: ControlType.String,
-    title: "Footnote 1 URL",
-    defaultValue: "downloads.html",
   },
   footnote2Label: {
     type: ControlType.String,

@@ -124,10 +124,6 @@ interface Props {
   ctaDescription?: string
   ctaBtn1Label?: string
   ctaBtn1Href?: string
-  ctaBtn2Label?: string
-  ctaBtn2Href?: string
-  ctaFootnote1Label?: string
-  ctaFootnote1Href?: string
   ctaFootnote2Label?: string
   ctaFootnote2Href?: string
 }
@@ -190,10 +186,6 @@ export default function LlmCapsuleVsPromptSecurityGateways({
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   ctaBtn1Label = "Request a Demo",
   ctaBtn1Href = "request-pov.html",
-  ctaBtn2Label = "Talk to an Architect",
-  ctaBtn2Href = "architecture.html",
-  ctaFootnote1Label = "Download Architecture Brief",
-  ctaFootnote1Href = "downloads.html",
   ctaFootnote2Label = "AWS Marketplace",
   ctaFootnote2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -835,10 +827,8 @@ export default function LlmCapsuleVsPromptSecurityGateways({
                 <p className="vs-cta-band__description">{ctaDescription}</p>
                 <div className="vs-cta-band__actions">
                   <a href={ctaBtn1Href} className="vs-btn vs-btn--lg">{ctaBtn1Label}</a>
-                  <a href={ctaBtn2Href} className="vs-btn vs-btn--lg">{ctaBtn2Label}</a>
                 </div>
                 <div className="vs-cta-band__footnote">
-                  <a href={ctaFootnote1Href}>{ctaFootnote1Label}</a>
                   <a href={ctaFootnote2Href} target="_blank" rel="noopener">{ctaFootnote2Label}</a>
                 </div>
               </div>
@@ -1051,26 +1041,6 @@ addPropertyControls(LlmCapsuleVsPromptSecurityGateways, {
     type: ControlType.String,
     title: "CTA Button 1 URL",
     defaultValue: "request-pov.html",
-  },
-  ctaBtn2Label: {
-    type: ControlType.String,
-    title: "CTA Button 2 Label",
-    defaultValue: "Talk to an Architect",
-  },
-  ctaBtn2Href: {
-    type: ControlType.String,
-    title: "CTA Button 2 URL",
-    defaultValue: "architecture.html",
-  },
-  ctaFootnote1Label: {
-    type: ControlType.String,
-    title: "CTA Footnote 1 Label",
-    defaultValue: "Download Architecture Brief",
-  },
-  ctaFootnote1Href: {
-    type: ControlType.String,
-    title: "CTA Footnote 1 URL",
-    defaultValue: "downloads.html",
   },
   ctaFootnote2Label: {
     type: ControlType.String,

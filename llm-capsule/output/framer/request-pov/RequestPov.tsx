@@ -115,10 +115,6 @@ interface Props {
   ctaDescription?: string
   ctaBtn1Label?: string
   ctaBtn1Href?: string
-  ctaBtn2Label?: string
-  ctaBtn2Href?: string
-  ctaFootnote1Label?: string
-  ctaFootnote1Href?: string
   ctaFootnote2Label?: string
   ctaFootnote2Href?: string
 }
@@ -176,10 +172,6 @@ export default function RequestPov({
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   ctaBtn1Label = "Request a Demo",
   ctaBtn1Href = "request-pov.html",
-  ctaBtn2Label = "Talk to an Architect",
-  ctaBtn2Href = "architecture.html",
-  ctaFootnote1Label = "Download Architecture Brief",
-  ctaFootnote1Href = "downloads.html",
   ctaFootnote2Label = "Available on AWS Marketplace",
   ctaFootnote2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -705,16 +697,8 @@ export default function RequestPov({
                 <p className="rpov-cta-band__description">{ctaDescription}</p>
                 <div className="rpov-cta-band__actions">
                   <a href={ctaBtn1Href} className="rpov-btn rpov-btn--md">{ctaBtn1Label}</a>
-                  <a href={ctaBtn2Href} className="rpov-btn rpov-btn--md">{ctaBtn2Label}</a>
                 </div>
                 <div className="rpov-cta-band__footnote">
-                  <a href={ctaFootnote1Href}>
-                    <svg className="rpov-icon rpov-icon--sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
-                      <polyline points="14 2 14 8 20 8"/>
-                    </svg>
-                    {ctaFootnote1Label}
-                  </a>
                   <a href={ctaFootnote2Href} target="_blank" rel="noopener">
                     <svg className="rpov-icon rpov-icon--sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -856,10 +840,6 @@ addPropertyControls(RequestPov, {
   },
   ctaBtn1Label: { type: ControlType.String, title: "CTA Btn 1 Label", defaultValue: "Request a Demo" },
   ctaBtn1Href:  { type: ControlType.String, title: "CTA Btn 1 URL",   defaultValue: "request-pov.html" },
-  ctaBtn2Label: { type: ControlType.String, title: "CTA Btn 2 Label", defaultValue: "Talk to an Architect" },
-  ctaBtn2Href:  { type: ControlType.String, title: "CTA Btn 2 URL",   defaultValue: "architecture.html" },
-  ctaFootnote1Label: { type: ControlType.String, title: "CTA Footnote 1 Label", defaultValue: "Download Architecture Brief" },
-  ctaFootnote1Href:  { type: ControlType.String, title: "CTA Footnote 1 URL",   defaultValue: "downloads.html" },
   ctaFootnote2Label: { type: ControlType.String, title: "CTA Footnote 2 Label", defaultValue: "Available on AWS Marketplace" },
   ctaFootnote2Href:  { type: ControlType.String, title: "CTA Footnote 2 URL",   defaultValue: "https://aws.amazon.com/marketplace" },
 })

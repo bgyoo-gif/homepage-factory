@@ -19,8 +19,6 @@ interface Props {
   description?: string
   primaryCTALabel?: string
   primaryCTAHref?: string
-  secondaryCTALabel?: string
-  secondaryCTAHref?: string
   footnoteLinks?: CTALink[]
 }
 
@@ -30,10 +28,7 @@ export default function Section11_CTABand({
   description = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   primaryCTALabel = "Request a Demo",
   primaryCTAHref = "request-pov.html",
-  secondaryCTALabel = "Talk to an Architect",
-  secondaryCTAHref = "architecture.html",
   footnoteLinks = [
-    { label: "Download Architecture Brief", href: "downloads.html" },
     { label: "AWS Marketplace", href: "https://aws.amazon.com/marketplace" },
   ],
 }: Props) {
@@ -174,7 +169,6 @@ export default function Section11_CTABand({
             <p className="s11-description">{description}</p>
             <div className="s11-actions">
               <a href={primaryCTAHref} className="s11-btn">{primaryCTALabel}</a>
-              <a href={secondaryCTAHref} className="s11-btn">{secondaryCTALabel}</a>
             </div>
             <div className="s11-footnote">
               {footnoteLinks.map((link, i) => (
@@ -214,15 +208,5 @@ addPropertyControls(Section11_CTABand, {
     type: ControlType.String,
     title: "Primary CTA URL",
     defaultValue: "request-pov.html",
-  },
-  secondaryCTALabel: {
-    type: ControlType.String,
-    title: "Secondary CTA",
-    defaultValue: "Talk to an Architect",
-  },
-  secondaryCTAHref: {
-    type: ControlType.String,
-    title: "Secondary CTA URL",
-    defaultValue: "architecture.html",
   },
 })

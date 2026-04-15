@@ -126,10 +126,6 @@ interface Props {
   heroDescription?: string
   heroBtn1Label?: string
   heroBtn1Href?: string
-  heroBtn2Label?: string
-  heroBtn2Href?: string
-  heroBtn3Label?: string
-  heroBtn3Href?: string
   heroBtn4Label?: string
   heroBtn4Href?: string
 
@@ -187,10 +183,6 @@ interface Props {
   ctaDescription?: string
   ctaBtn1Label?: string
   ctaBtn1Href?: string
-  ctaBtn2Label?: string
-  ctaBtn2Href?: string
-  ctaBtn3Label?: string
-  ctaBtn3Href?: string
   ctaBtn4Label?: string
   ctaBtn4Href?: string
 
@@ -204,10 +196,6 @@ export default function Index({
   heroDescription = "Your sensitive documents go through LLM Capsule before reaching AI. Confidential names, figures, and terms are replaced locally — AI processes the safe version — then results are restored with your original data. Each organization defines what counts as sensitive.",
   heroBtn1Label = "Request a Demo",
   heroBtn1Href = "request-pov.html",
-  heroBtn2Label = "Download Architecture Brief",
-  heroBtn2Href = "downloads.html",
-  heroBtn3Label = "Talk to an Architect",
-  heroBtn3Href = "architecture.html",
   heroBtn4Label = "Available on AWS Marketplace",
   heroBtn4Href = "https://aws.amazon.com/marketplace",
 
@@ -255,10 +243,6 @@ export default function Index({
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate how the AI enablement data layer works on your actual data, in your environment, against your compliance requirements.",
   ctaBtn1Label = "Request a Demo",
   ctaBtn1Href = "request-pov.html",
-  ctaBtn2Label = "Talk to an Architect",
-  ctaBtn2Href = "architecture.html",
-  ctaBtn3Label = "Download Architecture Brief",
-  ctaBtn3Href = "downloads.html",
   ctaBtn4Label = "Available on AWS Marketplace",
   ctaBtn4Href = "https://aws.amazon.com/marketplace",
 
@@ -858,8 +842,6 @@ export default function Index({
               </div>
               <div className="idx-hero__actions">
                 <a href={heroBtn1Href} className="idx-btn idx-btn--primary idx-btn--md">{heroBtn1Label}</a>
-                <a href={heroBtn2Href} className="idx-btn idx-btn--secondary idx-btn--md">{heroBtn2Label}</a>
-                <a href={heroBtn3Href} className="idx-btn idx-btn--secondary idx-btn--md">{heroBtn3Label}</a>
                 <a href={heroBtn4Href} target="_blank" rel="noopener" className="idx-btn idx-btn--secondary idx-btn--sm">{heroBtn4Label}</a>
               </div>
             </div>
@@ -1391,8 +1373,6 @@ export default function Index({
               <p className="idx-cta-band__desc">{ctaDescription}</p>
               <div className="idx-cta-band__actions">
                 <a href={ctaBtn1Href} className="idx-btn idx-btn--md">{ctaBtn1Label}</a>
-                <a href={ctaBtn2Href} className="idx-btn idx-btn--md">{ctaBtn2Label}</a>
-                <a href={ctaBtn3Href} className="idx-btn idx-btn--md">{ctaBtn3Label}</a>
                 <a href={ctaBtn4Href} target="_blank" rel="noopener" className="idx-btn idx-btn--md">{ctaBtn4Label}</a>
               </div>
             </div>
@@ -1449,10 +1429,6 @@ addPropertyControls(Index, {
   heroDescription: { type: ControlType.String, title: "Hero Description", defaultValue: "Your sensitive documents go through LLM Capsule before reaching AI.", displayTextArea: true },
   heroBtn1Label:   { type: ControlType.String, title: "Hero Btn 1",       defaultValue: "Request a Demo" },
   heroBtn1Href:    { type: ControlType.String, title: "Hero Btn 1 URL",   defaultValue: "request-pov.html" },
-  heroBtn2Label:   { type: ControlType.String, title: "Hero Btn 2",       defaultValue: "Download Architecture Brief" },
-  heroBtn2Href:    { type: ControlType.String, title: "Hero Btn 2 URL",   defaultValue: "downloads.html" },
-  heroBtn3Label:   { type: ControlType.String, title: "Hero Btn 3",       defaultValue: "Talk to an Architect" },
-  heroBtn3Href:    { type: ControlType.String, title: "Hero Btn 3 URL",   defaultValue: "architecture.html" },
   heroBtn4Label:   { type: ControlType.String, title: "Hero Btn 4",       defaultValue: "Available on AWS Marketplace" },
   heroBtn4Href:    { type: ControlType.String, title: "Hero Btn 4 URL",   defaultValue: "https://aws.amazon.com/marketplace" },
 
@@ -1481,10 +1457,6 @@ addPropertyControls(Index, {
   ctaDescription:  { type: ControlType.String, title: "CTA Description",  defaultValue: "Bring your documents, deployment constraints, and evaluation criteria.", displayTextArea: true },
   ctaBtn1Label:    { type: ControlType.String, title: "CTA Btn 1",        defaultValue: "Request a Demo" },
   ctaBtn1Href:     { type: ControlType.String, title: "CTA Btn 1 URL",    defaultValue: "request-pov.html" },
-  ctaBtn2Label:    { type: ControlType.String, title: "CTA Btn 2",        defaultValue: "Talk to an Architect" },
-  ctaBtn2Href:     { type: ControlType.String, title: "CTA Btn 2 URL",    defaultValue: "architecture.html" },
-  ctaBtn3Label:    { type: ControlType.String, title: "CTA Btn 3",        defaultValue: "Download Architecture Brief" },
-  ctaBtn3Href:     { type: ControlType.String, title: "CTA Btn 3 URL",    defaultValue: "downloads.html" },
   ctaBtn4Label:    { type: ControlType.String, title: "CTA Btn 4",        defaultValue: "Available on AWS Marketplace" },
   ctaBtn4Href:     { type: ControlType.String, title: "CTA Btn 4 URL",    defaultValue: "https://aws.amazon.com/marketplace" },
 

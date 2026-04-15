@@ -24,10 +24,6 @@ interface Props {
   description?: string
   cta1Label?: string
   cta1Href?: string
-  cta2Label?: string
-  cta2Href?: string
-  footnote1Label?: string
-  footnote1Href?: string
   footnote2Label?: string
   footnote2Href?: string
 }
@@ -39,10 +35,6 @@ export default function Section09_CTABand({
   description = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   cta1Label = "Request a Demo",
   cta1Href = "/request-a-demo",
-  cta2Label = "Talk to an Architect",
-  cta2Href = "/architecture",
-  footnote1Label = "Download Architecture Brief",
-  footnote1Href = "/downloads",
   footnote2Label = "AWS Marketplace",
   footnote2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -183,10 +175,8 @@ export default function Section09_CTABand({
             <p className="s9-description">{description}</p>
             <div className="s9-actions">
               <a href={cta1Href} className="s9-btn">{cta1Label}</a>
-              <a href={cta2Href} className="s9-btn">{cta2Label}</a>
             </div>
             <div className="s9-footnote">
-              <a href={footnote1Href}>{footnote1Label}</a>
               <a href={footnote2Href} target="_blank" rel="noopener noreferrer">{footnote2Label}</a>
             </div>
           </div>
@@ -228,26 +218,6 @@ addPropertyControls(Section09_CTABand, {
     type: ControlType.String,
     title: "CTA 1 URL",
     defaultValue: "/request-a-demo",
-  },
-  cta2Label: {
-    type: ControlType.String,
-    title: "CTA 2 Label",
-    defaultValue: "Talk to an Architect",
-  },
-  cta2Href: {
-    type: ControlType.String,
-    title: "CTA 2 URL",
-    defaultValue: "/architecture",
-  },
-  footnote1Label: {
-    type: ControlType.String,
-    title: "Footnote 1 Label",
-    defaultValue: "Download Architecture Brief",
-  },
-  footnote1Href: {
-    type: ControlType.String,
-    title: "Footnote 1 URL",
-    defaultValue: "/downloads",
   },
   footnote2Label: {
     type: ControlType.String,

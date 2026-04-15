@@ -124,10 +124,6 @@ interface Props {
   ctaDescription?: string
   ctaBtn1Label?: string
   ctaBtn1Href?: string
-  ctaBtn2Label?: string
-  ctaBtn2Href?: string
-  ctaFootnoteLink1Label?: string
-  ctaFootnoteLink1Href?: string
   ctaFootnoteLink2Label?: string
   ctaFootnoteLink2Href?: string
 }
@@ -178,10 +174,6 @@ export default function StructurePreservingDocumentProcessing({
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   ctaBtn1Label = "Request a Demo",
   ctaBtn1Href = "request-pov.html",
-  ctaBtn2Label = "Talk to an Architect",
-  ctaBtn2Href = "architecture.html",
-  ctaFootnoteLink1Label = "Download Architecture Brief",
-  ctaFootnoteLink1Href = "downloads.html",
   ctaFootnoteLink2Label = "AWS Marketplace",
   ctaFootnoteLink2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -762,11 +754,8 @@ export default function StructurePreservingDocumentProcessing({
                 <p className="spdp-cta-band__description">{ctaDescription}</p>
                 <div className="spdp-cta-band__actions">
                   <a href={ctaBtn1Href} className="spdp-btn spdp-btn--lg">{ctaBtn1Label}</a>
-                  <a href={ctaBtn2Href} className="spdp-btn spdp-btn--lg">{ctaBtn2Label}</a>
                 </div>
                 <p className="spdp-cta-band__footnote">
-                  <a href={ctaFootnoteLink1Href} className="spdp-cta-band__footnote-link">{ctaFootnoteLink1Label}</a>
-                  &nbsp;&nbsp;·&nbsp;&nbsp;
                   <a href={ctaFootnoteLink2Href} target="_blank" rel="noopener" className="spdp-cta-band__footnote-link">{ctaFootnoteLink2Label}</a>
                 </p>
               </div>
@@ -973,26 +962,6 @@ addPropertyControls(StructurePreservingDocumentProcessing, {
     type: ControlType.String,
     title: "CTA Button 1 URL",
     defaultValue: "request-pov.html",
-  },
-  ctaBtn2Label: {
-    type: ControlType.String,
-    title: "CTA Button 2 Label",
-    defaultValue: "Talk to an Architect",
-  },
-  ctaBtn2Href: {
-    type: ControlType.String,
-    title: "CTA Button 2 URL",
-    defaultValue: "architecture.html",
-  },
-  ctaFootnoteLink1Label: {
-    type: ControlType.String,
-    title: "CTA Footnote Link 1 Label",
-    defaultValue: "Download Architecture Brief",
-  },
-  ctaFootnoteLink1Href: {
-    type: ControlType.String,
-    title: "CTA Footnote Link 1 URL",
-    defaultValue: "downloads.html",
   },
   ctaFootnoteLink2Label: {
     type: ControlType.String,

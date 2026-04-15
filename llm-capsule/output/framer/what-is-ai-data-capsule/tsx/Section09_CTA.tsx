@@ -18,10 +18,6 @@ interface Props {
   description?: string
   cta1Label?: string
   cta1Href?: string
-  cta2Label?: string
-  cta2Href?: string
-  footnoteLink1Label?: string
-  footnoteLink1Href?: string
   footnoteLink2Label?: string
   footnoteLink2Href?: string
   lang?: "en" | "ko"
@@ -35,10 +31,6 @@ const COPY = {
     description: "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
     cta1Label: "Request a Demo",
     cta1Href: "request-pov.html",
-    cta2Label: "Talk to an Architect",
-    cta2Href: "architecture.html",
-    footnoteLink1Label: "Download Architecture Brief",
-    footnoteLink1Href: "downloads.html",
     footnoteLink2Label: "AWS Marketplace",
     footnoteLink2Href: "https://aws.amazon.com/marketplace",
   },
@@ -49,10 +41,6 @@ const COPY = {
     description: "문서, 배포 제약 조건, 평가 기준을 가져오세요. 실제 워크플로우에서 시연합니다.",
     cta1Label: "데모 요청",
     cta1Href: "request-pov.html",
-    cta2Label: "아키텍트와 상담",
-    cta2Href: "architecture.html",
-    footnoteLink1Label: "아키텍처 브리프 다운로드",
-    footnoteLink1Href: "downloads.html",
     footnoteLink2Label: "AWS Marketplace",
     footnoteLink2Href: "https://aws.amazon.com/marketplace",
   },
@@ -64,10 +52,6 @@ export default function Section09_CTA({
   description,
   cta1Label,
   cta1Href,
-  cta2Label,
-  cta2Href,
-  footnoteLink1Label,
-  footnoteLink1Href,
   footnoteLink2Label,
   footnoteLink2Href,
   lang = "en",
@@ -78,10 +62,6 @@ export default function Section09_CTA({
   const displayDesc = description ?? copy.description
   const displayCta1 = cta1Label ?? copy.cta1Label
   const displayCta1Href = cta1Href ?? copy.cta1Href
-  const displayCta2 = cta2Label ?? copy.cta2Label
-  const displayCta2Href = cta2Href ?? copy.cta2Href
-  const displayFn1Label = footnoteLink1Label ?? copy.footnoteLink1Label
-  const displayFn1Href = footnoteLink1Href ?? copy.footnoteLink1Href
   const displayFn2Label = footnoteLink2Label ?? copy.footnoteLink2Label
   const displayFn2Href = footnoteLink2Href ?? copy.footnoteLink2Href
 
@@ -219,11 +199,8 @@ export default function Section09_CTA({
           <p className="s9-description">{displayDesc}</p>
           <div className="s9-actions">
             <a href={displayCta1Href} className="s9-btn">{displayCta1}</a>
-            <a href={displayCta2Href} className="s9-btn">{displayCta2}</a>
           </div>
           <div className="s9-footnote">
-            <a href={displayFn1Href}>{displayFn1Label}</a>
-            &nbsp;&nbsp;·&nbsp;&nbsp;
             <a href={displayFn2Href} target="_blank" rel="noopener">{displayFn2Label}</a>
           </div>
         </div>
@@ -253,26 +230,6 @@ addPropertyControls(Section09_CTA, {
     type: ControlType.String,
     title: "CTA 1 URL",
     defaultValue: "request-pov.html",
-  },
-  cta2Label: {
-    type: ControlType.String,
-    title: "CTA 2 Label",
-    defaultValue: "Talk to an Architect",
-  },
-  cta2Href: {
-    type: ControlType.String,
-    title: "CTA 2 URL",
-    defaultValue: "architecture.html",
-  },
-  footnoteLink1Label: {
-    type: ControlType.String,
-    title: "Footnote Link 1",
-    defaultValue: "Download Architecture Brief",
-  },
-  footnoteLink1Href: {
-    type: ControlType.String,
-    title: "Footnote Link 1 URL",
-    defaultValue: "downloads.html",
   },
   footnoteLink2Label: {
     type: ControlType.String,

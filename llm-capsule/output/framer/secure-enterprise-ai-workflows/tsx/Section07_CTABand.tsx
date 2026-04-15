@@ -15,10 +15,6 @@ interface Props {
   description?: string
   primaryBtnLabel?: string
   primaryBtnHref?: string
-  secondaryBtnLabel?: string
-  secondaryBtnHref?: string
-  footnote1Label?: string
-  footnote1Href?: string
   footnote2Label?: string
   footnote2Href?: string
 }
@@ -30,10 +26,6 @@ export default function Section07_CTABand({
   description = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   primaryBtnLabel = "Request a Demo",
   primaryBtnHref = "/request-a-demo",
-  secondaryBtnLabel = "Talk to an Architect",
-  secondaryBtnHref = "/architecture",
-  footnote1Label = "Download Architecture Brief",
-  footnote1Href = "/downloads",
   footnote2Label = "AWS Marketplace",
   footnote2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -182,10 +174,8 @@ export default function Section07_CTABand({
             <p className="s7-description">{description}</p>
             <div className="s7-actions">
               <a href={primaryBtnHref} className="s7-btn">{primaryBtnLabel}</a>
-              <a href={secondaryBtnHref} className="s7-btn">{secondaryBtnLabel}</a>
             </div>
             <div className="s7-footnote">
-              <a href={footnote1Href}>{footnote1Label}</a>
               <a href={footnote2Href} target="_blank" rel="noopener">{footnote2Label}</a>
             </div>
           </div>
@@ -226,26 +216,6 @@ addPropertyControls(Section07_CTABand, {
     type: ControlType.String,
     title: "Primary Btn Href",
     defaultValue: "/request-a-demo",
-  },
-  secondaryBtnLabel: {
-    type: ControlType.String,
-    title: "Secondary Btn",
-    defaultValue: "Talk to an Architect",
-  },
-  secondaryBtnHref: {
-    type: ControlType.String,
-    title: "Secondary Btn Href",
-    defaultValue: "/architecture",
-  },
-  footnote1Label: {
-    type: ControlType.String,
-    title: "Footnote 1",
-    defaultValue: "Download Architecture Brief",
-  },
-  footnote1Href: {
-    type: ControlType.String,
-    title: "Footnote 1 Href",
-    defaultValue: "/downloads",
   },
   footnote2Label: {
     type: ControlType.String,

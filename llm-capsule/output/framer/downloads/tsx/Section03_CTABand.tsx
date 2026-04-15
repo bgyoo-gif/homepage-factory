@@ -23,8 +23,6 @@ interface Props {
   description?: string
   cta1Label?: string
   cta1Href?: string
-  cta2Label?: string
-  cta2Href?: string
   cta3Label?: string
   cta3Href?: string
 }
@@ -35,8 +33,6 @@ export default function Section03_CTABand({
   description = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   cta1Label = "Request a Demo",
   cta1Href = "/request-a-demo",
-  cta2Label = "Talk to an Architect",
-  cta2Href = "/architecture",
   cta3Label = "Available on AWS Marketplace",
   cta3Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -189,7 +185,6 @@ export default function Section03_CTABand({
             <p className="s3-description">{description}</p>
             <div className="s3-actions">
               <a href={cta1Href} className="s3-btn s3-btn--md">{cta1Label}</a>
-              <a href={cta2Href} className="s3-btn s3-btn--md">{cta2Label}</a>
               <a href={cta3Href} target="_blank" rel="noopener" className="s3-btn s3-btn--sm">{cta3Label}</a>
             </div>
           </div>
@@ -225,16 +220,6 @@ addPropertyControls(Section03_CTABand, {
     type: ControlType.String,
     title: "CTA 1 URL",
     defaultValue: "/request-a-demo",
-  },
-  cta2Label: {
-    type: ControlType.String,
-    title: "CTA 2 Label",
-    defaultValue: "Talk to an Architect",
-  },
-  cta2Href: {
-    type: ControlType.String,
-    title: "CTA 2 URL",
-    defaultValue: "/architecture",
   },
   cta3Label: {
     type: ControlType.String,

@@ -12,8 +12,6 @@ interface Props {
   item2Description?: string
   item3Title?: string
   item3Description?: string
-  item4Title?: string
-  item4Description?: string
   ctaPrimaryLabel?: string
   ctaPrimaryHref?: string
   ctaSecondaryLabel?: string
@@ -30,8 +28,6 @@ export default function Section04_EvidenceHub({
   item2Description = "Data handling principles, audit model, deployment assumptions, and security questionnaire support.",
   item3Title = "Deployment Options",
   item3Description = "On-premise, air-gapped, VPC, cloud, hybrid, and embedded deployment patterns for evaluation.",
-  item4Title = "Talk to an Architect",
-  item4Description = "Review your environment, data flow, policy requirements, and evaluation criteria with the technical team.",
   ctaPrimaryLabel = "Request a Demo",
   ctaPrimaryHref = "/request-a-demo",
   ctaSecondaryLabel = "Download Brief",
@@ -233,16 +229,6 @@ export default function Section04_EvidenceHub({
                 <p className="s4-feature-desc">{item3Description}</p>
               </div>
 
-              <div className="s4-feature-item">
-                <span className="s4-feature-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 2.7h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.3a16 16 0 0 0 6.29 6.29l1.06-1.06a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                  </svg>
-                </span>
-                <h3 className="s4-feature-title">{item4Title}</h3>
-                <p className="s4-feature-desc">{item4Description}</p>
-              </div>
-
             </div>
 
             <div className="s4-actions">
@@ -301,16 +287,6 @@ addPropertyControls(Section04_EvidenceHub, {
     type: ControlType.String,
     title: "Item 3 Description",
     defaultValue: "On-premise, air-gapped, VPC, cloud, hybrid, and embedded deployment patterns for evaluation.",
-  },
-  item4Title: {
-    type: ControlType.String,
-    title: "Item 4 Title",
-    defaultValue: "Talk to an Architect",
-  },
-  item4Description: {
-    type: ControlType.String,
-    title: "Item 4 Description",
-    defaultValue: "Review your environment, data flow, policy requirements, and evaluation criteria with the technical team.",
   },
   ctaPrimaryLabel: {
     type: ControlType.String,

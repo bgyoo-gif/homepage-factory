@@ -22,10 +22,6 @@ interface Props {
   description?: string
   btn1Label?: string
   btn1Href?: string
-  btn2Label?: string
-  btn2Href?: string
-  footnote1Label?: string
-  footnote1Href?: string
   footnote2Label?: string
   footnote2Href?: string
 }
@@ -36,10 +32,6 @@ export default function Section10_CTA({
   description = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   btn1Label = "Request a Demo",
   btn1Href = "/request-a-demo",
-  btn2Label = "Talk to an Architect",
-  btn2Href = "/architecture",
-  footnote1Label = "Download Architecture Brief",
-  footnote1Href = "/downloads",
   footnote2Label = "AWS Marketplace",
   footnote2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -173,10 +165,8 @@ export default function Section10_CTA({
           <p className="s10-description">{description}</p>
           <div className="s10-actions">
             <a href={btn1Href} className="s10-btn">{btn1Label}</a>
-            <a href={btn2Href} className="s10-btn">{btn2Label}</a>
           </div>
           <div className="s10-footnote">
-            <a href={footnote1Href}>{footnote1Label}</a>
             <a href={footnote2Href} target="_blank" rel="noopener">{footnote2Label}</a>
           </div>
         </div>
@@ -211,26 +201,6 @@ addPropertyControls(Section10_CTA, {
     type: ControlType.String,
     title: "Button 1 URL",
     defaultValue: "/request-a-demo",
-  },
-  btn2Label: {
-    type: ControlType.String,
-    title: "Button 2 Label",
-    defaultValue: "Talk to an Architect",
-  },
-  btn2Href: {
-    type: ControlType.String,
-    title: "Button 2 URL",
-    defaultValue: "/architecture",
-  },
-  footnote1Label: {
-    type: ControlType.String,
-    title: "Footnote 1 Label",
-    defaultValue: "Download Architecture Brief",
-  },
-  footnote1Href: {
-    type: ControlType.String,
-    title: "Footnote 1 URL",
-    defaultValue: "/downloads",
   },
   footnote2Label: {
     type: ControlType.String,
