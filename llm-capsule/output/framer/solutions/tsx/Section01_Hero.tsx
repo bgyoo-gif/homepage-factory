@@ -69,11 +69,7 @@ export default function Section01_Hero({
         .s1-hero .s1-description { margin-left: auto; margin-right: auto; }
         .s1-screenshot-frame {
           margin-top: 32px;
-          border-radius: 16px 16px 0 0;
-          padding: 24px 24px 0;
-          background-color: #ececec;
-          background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.webp');
-          background-size: cover; background-position: center;
+          padding: 24px 0 0;
           overflow: hidden;
         }
         .s1-screenshot { overflow: hidden; background: #ffffff; }
