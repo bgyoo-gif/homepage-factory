@@ -80,7 +80,7 @@ export default function Section11_CTA({
           font-family: "DM Sans", sans-serif; font-size: 40px; font-weight: 700;
           color: ${P.white}; line-height: 1.2; letter-spacing: -0.5px; margin: 0;
         }
-        @container (max-width: 767px) { .idx-cta-band__title { font-size: 36px; } .idx-cta-band { background-image: none; } }
+        @container (max-width: 767px) { .idx-cta-band__title { font-size: 36px; } }
         @container (min-width: 768px) { .idx-cta-band { padding: 100px 32px; } }
         @container (min-width: 1440px) { .idx-cta-band__title { font-size: 50px; } }
         .idx-cta-band__desc { font-size: 18px; color: rgba(255,255,255,0.85); line-height: 1.7; margin: 0; }
