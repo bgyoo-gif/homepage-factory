@@ -1,139 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ja" datatype="plaintext" original="learn">
-    <body>
-      <trans-unit id="heroTitle">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ja">
+  <file id="learn">
+    <unit id="heroTitle">
+      <segment>
         <source>Enterprise AI Enablement — Learn</source>
         <target>企業AIの導入 — Learn</target>
-      </trans-unit>
-      <trans-unit id="heroDescription">
+      </segment>
+    </unit>
+    <unit id="heroDescription">
+      <segment>
         <source>In-depth technical articles on enterprise AI enablement, secure AI workflows, structure-preserving processing, and restorable workflows.</source>
         <target>企業AIの導入、安全なAIワークフロー、構造保持処理、Restorableワークフローに関する技術記事です。</target>
-      </trans-unit>
-      <trans-unit id="card01Title">
+      </segment>
+    </unit>
+    <unit id="card01Title">
+      <segment>
         <source>Secure Enterprise AI Data Workflows</source>
         <target>安全な企業AIデータワークフロー</target>
-      </trans-unit>
-      <trans-unit id="card01Badge">
+      </segment>
+    </unit>
+    <unit id="card01Badge">
+      <segment>
         <source>Pillar</source>
         <target>基本ガイド</target>
-      </trans-unit>
-      <trans-unit id="card02Title">
+      </segment>
+    </unit>
+    <unit id="card02Title">
+      <segment>
         <source>Enterprise AI Enablement</source>
         <target>企業AIの導入</target>
-      </trans-unit>
-      <trans-unit id="card02Badge">
+      </segment>
+    </unit>
+    <unit id="card02Badge">
+      <segment>
         <source>Pillar</source>
         <target>基本ガイド</target>
-      </trans-unit>
-      <trans-unit id="card03Title">
+      </segment>
+    </unit>
+    <unit id="card03Title">
+      <segment>
         <source>Enterprise AI Document Processing</source>
         <target>企業AIドキュメント処理</target>
-      </trans-unit>
-      <trans-unit id="card03Badge">
+      </segment>
+    </unit>
+    <unit id="card03Badge">
+      <segment>
         <source>Pillar</source>
         <target>基本ガイド</target>
-      </trans-unit>
-      <trans-unit id="card04Title">
+      </segment>
+    </unit>
+    <unit id="card04Title">
+      <segment>
         <source>What Is an AI Data Capsule</source>
         <target>AIデータカプセルとは</target>
-      </trans-unit>
-      <trans-unit id="card04Badge">
+      </segment>
+    </unit>
+    <unit id="card04Badge">
+      <segment>
         <source>Article</source>
         <target>記事</target>
-      </trans-unit>
-      <trans-unit id="card05Title">
+      </segment>
+    </unit>
+    <unit id="card05Title">
+      <segment>
         <source>How to Use AI on Sensitive Enterprise Data</source>
         <target>機密性の高い企業データでAIを活用する方法</target>
-      </trans-unit>
-      <trans-unit id="card05Badge">
+      </segment>
+    </unit>
+    <unit id="card05Badge">
+      <segment>
         <source>Article</source>
         <target>記事</target>
-      </trans-unit>
-      <trans-unit id="card06Title">
+      </segment>
+    </unit>
+    <unit id="card06Title">
+      <segment>
         <source>Why Redaction Breaks Enterprise AI Workflows</source>
         <target>マスキングが企業AIワークフローを壊す理由</target>
-      </trans-unit>
-      <trans-unit id="card06Badge">
+      </segment>
+    </unit>
+    <unit id="card06Badge">
+      <segment>
         <source>Featured</source>
         <target>注目</target>
-      </trans-unit>
-      <trans-unit id="card07Title">
+      </segment>
+    </unit>
+    <unit id="card07Title">
+      <segment>
         <source>Secure Enterprise AI Workflows</source>
         <target>安全な企業AIワークフロー</target>
-      </trans-unit>
-      <trans-unit id="card07Badge">
+      </segment>
+    </unit>
+    <unit id="card07Badge">
+      <segment>
         <source>Article</source>
         <target>記事</target>
-      </trans-unit>
-      <trans-unit id="card08Title">
+      </segment>
+    </unit>
+    <unit id="card08Title">
+      <segment>
         <source>Structure-Preserving Document Processing</source>
         <target>構造保持ドキュメント処理</target>
-      </trans-unit>
-      <trans-unit id="card08Badge">
+      </segment>
+    </unit>
+    <unit id="card08Badge">
+      <segment>
         <source>Article</source>
         <target>記事</target>
-      </trans-unit>
-      <trans-unit id="card09Title">
+      </segment>
+    </unit>
+    <unit id="card09Title">
+      <segment>
         <source>PII Protection vs Enterprise Confidentiality Control</source>
         <target>PII保護 vs 企業機密制御</target>
-      </trans-unit>
-      <trans-unit id="card09Badge">
+      </segment>
+    </unit>
+    <unit id="card09Badge">
+      <segment>
         <source>Article</source>
         <target>記事</target>
-      </trans-unit>
-      <trans-unit id="card10Title">
+      </segment>
+    </unit>
+    <unit id="card10Title">
+      <segment>
         <source>On-Premise vs Cloud AI Data Protection</source>
         <target>オンプレミス vs クラウドAIデータ保護</target>
-      </trans-unit>
-      <trans-unit id="card10Badge">
+      </segment>
+    </unit>
+    <unit id="card10Badge">
+      <segment>
         <source>Article</source>
         <target>記事</target>
-      </trans-unit>
-      <trans-unit id="card11Title">
+      </segment>
+    </unit>
+    <unit id="card11Title">
+      <segment>
         <source>Local Restoration vs Anonymization</source>
         <target>ローカルRestoration vs 匿名化</target>
-      </trans-unit>
-      <trans-unit id="card11Badge">
+      </segment>
+    </unit>
+    <unit id="card11Badge">
+      <segment>
         <source>Article</source>
         <target>記事</target>
-      </trans-unit>
-      <trans-unit id="card12Title">
+      </segment>
+    </unit>
+    <unit id="card12Title">
+      <segment>
         <source>AI Data Pipeline Protection</source>
         <target>AIデータパイプライン保護</target>
-      </trans-unit>
-      <trans-unit id="card12Badge">
+      </segment>
+    </unit>
+    <unit id="card12Badge">
+      <segment>
         <source>Article</source>
         <target>記事</target>
-      </trans-unit>
-      <trans-unit id="cardLinkLabel">
+      </segment>
+    </unit>
+    <unit id="cardLinkLabel">
+      <segment>
         <source>Read article</source>
         <target>記事を読む</target>
-      </trans-unit>
-      <trans-unit id="ctaTitle">
+      </segment>
+    </unit>
+    <unit id="ctaTitle">
+      <segment>
         <source>See how LLM Capsule works with your data</source>
         <target>LLM Capsuleがお客様のデータでどのように動作するかご確認ください</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>ドキュメント、デプロイ条件、評価基準をお持ちください。実際のワークフローでデモを行います。</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn1Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>デモを依頼する</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn2Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="ctaSecondaryLink1Label">
+      </segment>
+    </unit>
+    <unit id="ctaSecondaryLink1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>アーキテクチャ概要をダウンロード</target>
-      </trans-unit>
-      <trans-unit id="ctaSecondaryLink2Label">
+      </segment>
+    </unit>
+    <unit id="ctaSecondaryLink2Label">
+      <segment>
         <source>Available on AWS Marketplace</source>
         <target>AWS Marketplaceで提供中</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -1,398 +1,551 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="product">
-    <body>
-      <!-- Section 01: Hero -->
-      <trans-unit id="s01.title">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+  <file id="product">
+    <unit id="s01.title">
+      <segment>
         <source>The AI enablement</source>
         <target>Die AI-Enablement-</target>
-      </trans-unit>
-      <trans-unit id="s01.titleBrand">
+      </segment>
+    </unit>
+    <unit id="s01.titleBrand">
+      <segment>
         <source>data layer and plugin</source>
         <target>Datenschicht und Plugin</target>
-      </trans-unit>
-      <trans-unit id="s01.description">
+      </segment>
+    </unit>
+    <unit id="s01.description">
+      <segment>
         <source>LLM Capsule enables enterprise AI adoption by keeping raw data inside your environment, preserving document structure and business context during AI processing, and restoring usable outputs through local restoration — so enterprise teams can safely use any LLM on real documents in production workflows.</source>
         <target>LLM Capsule ermoeglicht die KI-Einfuehrung im Unternehmen, indem Rohdaten in Ihrer Umgebung verbleiben, Dokumentstruktur und Geschaeftskontext waehrend der AI-Verarbeitung erhalten bleiben und nutzbare Ergebnisse durch lokale Restoration wiederhergestellt werden. So koennen Unternehmensteams jedes LLM sicher mit echten Dokumenten in Produktions-Workflows nutzen.</target>
-      </trans-unit>
-      <trans-unit id="s01.body">
+      </segment>
+    </unit>
+    <unit id="s01.body">
+      <segment>
         <source>Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and cross-model execution means no vendor lock-in. This enables enterprise AI enablement on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.</source>
         <target>Die meisten KI-Sicherheitstools fuer Unternehmen blockieren entweder die AI-Nutzung vollstaendig oder entfernen durch Maskierung und Schwaerzung kritischen Kontext, wodurch Ergebnisse entstehen, die in realen Geschaeftsprozessen nicht verwendbar sind. LLM Capsule verfolgt einen anderen Ansatz: Lokale Encapsulation schuetzt sensible Elemente vor der AI-Verarbeitung, strukturerhaltende Verarbeitung bewahrt die Dokumentintegritaet fuer das AI-Verstaendnis, lokale Restoration stellt AI-Ergebnisse automatisch mit originalen Unternehmensdaten wieder her und Cross-Model-Ausfuehrung bedeutet keinen Vendor Lock-in. Dies ermoeglicht AI-Enablement fuer dokumentenintensive Workflows wie Vertraege, Schadensmeldungen, regulatorische Einreichungen, medizinische Unterlagen und interne Berichte.</target>
-      </trans-unit>
-      <trans-unit id="s01.ctaPrimary">
+      </segment>
+    </unit>
+    <unit id="s01.ctaPrimary">
+      <segment>
         <source>Request a Demo</source>
         <target>Demo anfordern</target>
-      </trans-unit>
-      <trans-unit id="s01.ctaSecondary">
+      </segment>
+    </unit>
+    <unit id="s01.ctaSecondary">
+      <segment>
         <source>View Architecture</source>
         <target>Architektur ansehen</target>
-      </trans-unit>
-      <trans-unit id="s01.ctaGhost">
+      </segment>
+    </unit>
+    <unit id="s01.ctaGhost">
+      <segment>
         <source>See comparison</source>
         <target>Vergleich ansehen</target>
-      </trans-unit>
-      <trans-unit id="s01.screenshotDesc">
+      </segment>
+    </unit>
+    <unit id="s01.screenshotDesc">
+      <segment>
         <source>LLM Capsule Dashboard — Real-time encapsulation pipeline with document processing status</source>
         <target>LLM Capsule Dashboard — Echtzeit-Encapsulation-Pipeline mit Dokumentverarbeitungsstatus</target>
-      </trans-unit>
-
-      <!-- Section 02: Core Differentiation -->
-      <trans-unit id="s02.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s02.sectionTitle">
+      <segment>
         <source>Enterprise AI enablement through five core</source>
         <target>AI-Enablement im Unternehmen durch fuenf zentrale</target>
-      </trans-unit>
-      <trans-unit id="s02.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s02.sectionTitleBrand">
+      <segment>
         <source>capabilities</source>
         <target>Faehigkeiten</target>
-      </trans-unit>
-      <trans-unit id="s02.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s02.sectionDescription">
+      <segment>
         <source>LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 architecture — three core enablement capabilities plus structure-preserving processing and cross-model execution.</source>
         <target>LLM Capsule ermoeglicht die KI-Einfuehrung im Unternehmen fuer sensible Daten durch eine 3+2-Architektur — drei Kern-Enablement-Faehigkeiten plus strukturerhaltende Verarbeitung und Cross-Model-Ausfuehrung.</target>
-      </trans-unit>
-      <trans-unit id="s02.bannerText">
+      </segment>
+    </unit>
+    <unit id="s02.bannerText">
+      <segment>
         <source>These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise AI enablement from traditional masking tools.</source>
         <target>Diese Faehigkeiten ermoeglichen es Unternehmen, AI einzufuehren, ohne Datenschutz oder Workflow-Nutzbarkeit zu opfern. Dies unterscheidet AI-Enablement im Unternehmen von herkoemmlichen Maskierungstools.</target>
-      </trans-unit>
-
-      <!-- Section 03: Zero Exposure -->
-      <trans-unit id="s03.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s03.sectionTitle">
+      <segment>
         <source>Encapsulate before outbound — raw data never</source>
         <target>Encapsulate vor dem Versand — Rohdaten verlassen</target>
-      </trans-unit>
-      <trans-unit id="s03.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s03.sectionTitleBrand">
+      <segment>
         <source>leaves</source>
         <target>nie die Umgebung</target>
-      </trans-unit>
-      <trans-unit id="s03.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s03.sectionDescription">
+      <segment>
         <source>LLM Capsule encapsulates sensitive entities locally before any data leaves the enterprise environment.</source>
         <target>LLM Capsule kapselt sensible Entitaeten lokal ein, bevor Daten die Unternehmensumgebung verlassen.</target>
-      </trans-unit>
-      <trans-unit id="s03.split1ScreenshotDesc">
+      </segment>
+    </unit>
+    <unit id="s03.split1ScreenshotDesc">
+      <segment>
         <source>Document Encapsulation — Before and after view of a contract with sensitive data replaced by tokens</source>
         <target>Dokument-Encapsulation — Vorher-Nachher-Ansicht eines Vertrags mit durch Token ersetzten sensiblen Daten</target>
-      </trans-unit>
-      <trans-unit id="s03.split1Lead">
+      </segment>
+    </unit>
+    <unit id="s03.split1Lead">
+      <segment>
         <source>LLM Capsule encapsulates sensitive entities locally before any data leaves the enterprise environment. Only the protected capsule is sent for AI processing.</source>
         <target>LLM Capsule kapselt sensible Entitaeten lokal ein, bevor Daten die Unternehmensumgebung verlassen. Nur die geschuetzte Kapsel wird zur AI-Verarbeitung gesendet.</target>
-      </trans-unit>
-      <trans-unit id="s03.split1Check1Title">
+      </segment>
+    </unit>
+    <unit id="s03.split1Check1Title">
+      <segment>
         <source>Local real-time encapsulation</source>
         <target>Lokale Echtzeit-Encapsulation</target>
-      </trans-unit>
-      <trans-unit id="s03.split1Check1Body">
+      </segment>
+    </unit>
+    <unit id="s03.split1Check1Body">
+      <segment>
         <source>Raw data stays inside the enterprise environment. Sensitive elements are detected and replaced before any outbound transmission.</source>
         <target>Rohdaten verbleiben in der Unternehmensumgebung. Sensible Elemente werden vor jeder ausgehenden Uebertragung erkannt und ersetzt.</target>
-      </trans-unit>
-      <trans-unit id="s03.split1Check2Title">
+      </segment>
+    </unit>
+    <unit id="s03.split1Check2Title">
+      <segment>
         <source>Environment-bound processing</source>
         <target>Umgebungsgebundene Verarbeitung</target>
-      </trans-unit>
-      <trans-unit id="s03.split1Check2Body">
+      </segment>
+    </unit>
+    <unit id="s03.split1Check2Body">
+      <segment>
         <source>Supports controlled enterprise and regulated environments including on-premise, air-gapped, and VPC deployments.</source>
         <target>Unterstuetzt kontrollierte Unternehmens- und regulierte Umgebungen einschliesslich On-Premise-, Air-Gap- und VPC-Deployments.</target>
-      </trans-unit>
-      <trans-unit id="s03.split2ScreenshotDesc">
+      </segment>
+    </unit>
+    <unit id="s03.split2ScreenshotDesc">
+      <segment>
         <source>Protected Outbound Flow — Encapsulated data crossing trust boundary while original values remain inside</source>
         <target>Geschuetzter ausgehender Datenfluss — Encapsulate-Daten ueberschreiten die Vertrauensgrenze, waehrend Originalwerte intern verbleiben</target>
-      </trans-unit>
-      <trans-unit id="s03.split2Lead">
+      </segment>
+    </unit>
+    <unit id="s03.split2Lead">
+      <segment>
         <source>Most enterprise AI risk starts when raw business data is exposed outside the controlled environment. With LLM Capsule, sensitive content is transformed locally so external models never receive the raw original data.</source>
         <target>Das meiste AI-Risiko in Unternehmen beginnt, wenn rohe Geschaeftsdaten ausserhalb der kontrollierten Umgebung offengelegt werden. Mit LLM Capsule werden sensible Inhalte lokal transformiert, sodass externe Modelle niemals die rohen Originaldaten erhalten.</target>
-      </trans-unit>
-      <trans-unit id="s03.split2Check1Title">
+      </segment>
+    </unit>
+    <unit id="s03.split2Check1Title">
+      <segment>
         <source>Protected outbound flow</source>
         <target>Geschuetzter ausgehender Datenfluss</target>
-      </trans-unit>
-      <trans-unit id="s03.split2Check1Body">
+      </segment>
+    </unit>
+    <unit id="s03.split2Check1Body">
+      <segment>
         <source>Only encapsulated representations cross the trust boundary. The AI provider processes useful but opaque data.</source>
         <target>Nur Encapsulate-Darstellungen ueberschreiten die Vertrauensgrenze. Der AI-Anbieter verarbeitet nuetzliche, aber undurchsichtige Daten.</target>
-      </trans-unit>
-      <trans-unit id="s03.split2Check2Title">
+      </segment>
+    </unit>
+    <unit id="s03.split2Check2Title">
+      <segment>
         <source>Audit trail</source>
         <target>Audit-Trail</target>
-      </trans-unit>
-      <trans-unit id="s03.split2Check2Body">
+      </segment>
+    </unit>
+    <unit id="s03.split2Check2Body">
+      <segment>
         <source>Every encapsulation event is logged with full traceability for enterprise AI governance and compliance reporting.</source>
         <target>Jedes Encapsulation-Ereignis wird mit vollstaendiger Nachverfolgbarkeit fuer AI-Governance und Compliance-Berichterstattung im Unternehmen protokolliert.</target>
-      </trans-unit>
-
-      <!-- Section 04: Restoration -->
-      <trans-unit id="s04.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s04.sectionTitle">
+      <segment>
         <source>Enable AI without breaking enterprise</source>
         <target>AI aktivieren, ohne Unternehmens-Workflows zu unterbrechen</target>
-      </trans-unit>
-      <trans-unit id="s04.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s04.sectionTitleBrand">
+      <segment>
         <source>workflows</source>
         <target>Workflows</target>
-      </trans-unit>
-      <trans-unit id="s04.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s04.sectionDescription">
+      <segment>
         <source>LLM Capsule does more than hide data. It auto-restores usable output inside the environment after AI processing so enterprise teams can actually use the result in real workflows. This is a restorable workflow — not just protection, but AI enablement with usable output.</source>
         <target>LLM Capsule verbirgt nicht nur Daten. Es stellt nach der AI-Verarbeitung nutzbare Ergebnisse automatisch innerhalb der Umgebung wieder her, sodass Unternehmensteams die Ergebnisse tatsaechlich in realen Workflows verwenden koennen. Dies ist ein wiederherstellbarer Workflow — nicht nur Schutz, sondern AI-Enablement mit nutzbaren Ergebnissen.</target>
-      </trans-unit>
-      <trans-unit id="s04.lead">
+      </segment>
+    </unit>
+    <unit id="s04.lead">
+      <segment>
         <source>Traditional masking protects data by removing meaning. That may reduce risk, but it also reduces output quality and business usability. Restored outputs from LLM Capsule are directly usable in: claims documents with real policyholder data, legal reviews with real party names and clause references, regulatory reports with real customer and account data, and internal analysis with real business metrics.</source>
         <target>Herkoemmliche Maskierung schuetzt Daten durch Entfernung der Bedeutung. Das kann das Risiko reduzieren, verringert aber auch die Ergebnisqualitaet und geschaeftliche Nutzbarkeit. Wiederhergestellte Ergebnisse von LLM Capsule sind direkt verwendbar in: Schadendokumenten mit echten Versicherungsnehmerdaten, Rechtspruefungen mit echten Parteinamen und Klauselreferenzen, regulatorischen Berichten mit echten Kunden- und Kontodaten sowie internen Analysen mit echten Geschaeftskennzahlen.</target>
-      </trans-unit>
-      <trans-unit id="s04.body">
+      </segment>
+    </unit>
+    <unit id="s04.body">
+      <segment>
         <source>This is the capability that makes enterprise AI operationally viable. Secure document summarization, AI claims processing, and confidential contract review with AI all depend on the ability to restore results. Without restoration, every AI output requires manual reconstruction — eliminating the efficiency gains AI is supposed to deliver.</source>
         <target>Dies ist die Faehigkeit, die AI im Unternehmen operativ realisierbar macht. Sichere Dokumentzusammenfassung, AI-Schadenbearbeitung und vertrauliche Vertragspruefung mit AI haengen alle von der Faehigkeit ab, Ergebnisse wiederherzustellen. Ohne Restoration erfordert jede AI-Ausgabe eine manuelle Rekonstruktion — was die Effizienzgewinne zunichtemacht, die AI liefern soll.</target>
-      </trans-unit>
-      <trans-unit id="s04.encapsulatedLabel">
+      </segment>
+    </unit>
+    <unit id="s04.encapsulatedLabel">
+      <segment>
         <source>Encapsulated</source>
         <target>Encapsulated</target>
-      </trans-unit>
-      <trans-unit id="s04.encapsulatedText">
+      </segment>
+    </unit>
+    <unit id="s04.encapsulatedText">
+      <segment>
         <source>[PERSON_01] submitted claim #[ID_04] on [DATE_02] for property at [ADDR_03]. Total assessed damage: [AMOUNT_01].</source>
         <target>[PERSON_01] hat am [DATE_02] Schadenmeldung #[ID_04] fuer das Objekt [ADDR_03] eingereicht. Gesamtschadenhoehe: [AMOUNT_01].</target>
-      </trans-unit>
-      <trans-unit id="s04.restoredLabel">
+      </segment>
+    </unit>
+    <unit id="s04.restoredLabel">
+      <segment>
         <source>Restored</source>
         <target>Restored</target>
-      </trans-unit>
-      <trans-unit id="s04.restoredText">
+      </segment>
+    </unit>
+    <unit id="s04.restoredText">
+      <segment>
         <source>James Mitchell submitted claim #INS-2024-0847 on March 5, 2025 for property at 42 Lincoln Ave, Chicago. Total assessed damage: $247,000.</source>
         <target>James Mitchell hat am 5. Maerz 2025 Schadenmeldung #INS-2024-0847 fuer das Objekt 42 Lincoln Ave, Chicago eingereicht. Gesamtschadenhoehe: $247.000.</target>
-      </trans-unit>
-
-      <!-- Section 05: Enterprise Context -->
-      <trans-unit id="s05.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s05.sectionTitle">
+      <segment>
         <source>Control what matters to your business — beyond generic</source>
         <target>Kontrollieren Sie, was fuer Ihr Unternehmen wichtig ist — ueber generische PII hinaus</target>
-      </trans-unit>
-      <trans-unit id="s05.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s05.sectionTitleBrand">
+      <segment>
         <source>PII</source>
         <target>PII</target>
-      </trans-unit>
-      <trans-unit id="s05.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s05.sectionDescription">
+      <segment>
         <source>LLM Capsule lets teams define sensitive entities beyond standard PII categories, including internal identifiers, project names, customer-specific markers, and organization-specific confidential terms.</source>
         <target>LLM Capsule ermoeglicht es Teams, sensible Entitaeten ueber Standard-PII-Kategorien hinaus zu definieren — einschliesslich interner Kennungen, Projektnamen, kundenspezifischer Marker und organisationsspezifischer vertraulicher Begriffe.</target>
-      </trans-unit>
-      <trans-unit id="s05.body">
+      </segment>
+    </unit>
+    <unit id="s05.body">
+      <segment>
         <source>Enterprise data protection is not limited to names, phone numbers, or IDs. Real workflows often depend on internal project names, contract references, operational code names, and confidential business terms. Context-aware data control enables policy-based sensitivity classification that adapts to document type, department origin, and workflow context — providing enterprise AI governance controls that go far beyond standard PII regex matching.</source>
         <target>Datenschutz im Unternehmen beschraenkt sich nicht auf Namen, Telefonnummern oder IDs. Reale Workflows haengen oft von internen Projektnamen, Vertragsreferenzen, operativen Codenamen und vertraulichen Geschaeftsbegriffen ab. Kontextbewusste Datenkontrolle ermoeglicht richtlinienbasierte Sensitivitaetsklassifizierung, die sich an Dokumenttyp, Abteilung und Workflow-Kontext anpasst — und bietet AI-Governance-Kontrollen fuer Unternehmen, die weit ueber Standard-PII-Regex-Matching hinausgehen.</target>
-      </trans-unit>
-
-      <!-- Section 06: Structure-Preserving -->
-      <trans-unit id="s06.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s06.sectionTitle">
+      <segment>
         <source>Beyond text — keep document structure</source>
         <target>Ueber Text hinaus — Dokumentstruktur</target>
-      </trans-unit>
-      <trans-unit id="s06.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s06.sectionTitleBrand">
+      <segment>
         <source>intact</source>
         <target>bewahren</target>
-      </trans-unit>
-      <trans-unit id="s06.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s06.sectionDescription">
+      <segment>
         <source>Enterprise workflows do not run on plain text alone. They rely on reports, PDFs, spreadsheets, diagrams, presentations, tables, and mixed-format documents.</source>
         <target>Unternehmens-Workflows laufen nicht allein mit reinem Text. Sie stuetzen sich auf Berichte, PDFs, Tabellenkalkulationen, Diagramme, Praesentationen, Tabellen und Dokumente mit gemischten Formaten.</target>
-      </trans-unit>
-      <trans-unit id="s06.body">
+      </segment>
+    </unit>
+    <unit id="s06.body">
+      <segment>
         <source>Flat masking treats every sensitive value identically, collapsing entity relationships and breaking table schemas. Structure-preserving processing maintains entity consistency across entire documents, preserves table column relationships for accurate extraction, and keeps cross-reference links intact. This is document-aware protection — not flat text anonymization.</source>
         <target>Einfache Maskierung behandelt jeden sensiblen Wert identisch, zerstoert Entitaetsbeziehungen und bricht Tabellenschemata auf. Strukturerhaltende Verarbeitung bewahrt die Entitaetskonsistenz ueber gesamte Dokumente, erhaelt Tabellenspaltenbeziehungen fuer praezise Extraktion und haelt Querverweislinks intakt. Dies ist dokumentbewusster Schutz — keine einfache Textanonymisierung.</target>
-      </trans-unit>
-      <trans-unit id="s06.card1Title">
+      </segment>
+    </unit>
+    <unit id="s06.card1Title">
+      <segment>
         <source>PDF &amp; Word Documents</source>
         <target>PDF- und Word-Dokumente</target>
-      </trans-unit>
-      <trans-unit id="s06.card1Desc">
+      </segment>
+    </unit>
+    <unit id="s06.card1Desc">
+      <segment>
         <source>Protected processing with layout, formatting, and section structure preserved. AI receives structurally complete documents.</source>
         <target>Geschuetzte Verarbeitung mit erhaltenen Layout-, Formatierungs- und Abschnittsstrukturen. AI erhaelt strukturell vollstaendige Dokumente.</target>
-      </trans-unit>
-      <trans-unit id="s06.card2Title">
+      </segment>
+    </unit>
+    <unit id="s06.card2Title">
+      <segment>
         <source>Spreadsheets &amp; Tables</source>
         <target>Tabellenkalkulationen und Tabellen</target>
-      </trans-unit>
-      <trans-unit id="s06.card2Desc">
+      </segment>
+    </unit>
+    <unit id="s06.card2Desc">
+      <segment>
         <source>Tabular data structure maintained through encapsulation and restoration. Column headers, row relationships, and cell references preserved.</source>
         <target>Tabellarische Datenstruktur wird durch Encapsulation und Restoration beibehalten. Spaltenkoepfe, Zeilenbeziehungen und Zellreferenzen bleiben erhalten.</target>
-      </trans-unit>
-      <trans-unit id="s06.card3Title">
+      </segment>
+    </unit>
+    <unit id="s06.card3Title">
+      <segment>
         <source>Presentations &amp; Reports</source>
         <target>Praesentationen und Berichte</target>
-      </trans-unit>
-      <trans-unit id="s06.card3Desc">
+      </segment>
+    </unit>
+    <unit id="s06.card3Desc">
+      <segment>
         <source>Visual and mixed-format documents handled as structured content. Cross-references and entity relationships remain trackable.</source>
         <target>Visuelle und gemischtformatige Dokumente werden als strukturierter Inhalt verarbeitet. Querverweise und Entitaetsbeziehungen bleiben nachverfolgbar.</target>
-      </trans-unit>
-
-      <!-- Section 07: KPI Band -->
-      <trans-unit id="s07.kpi1Number">
+      </segment>
+    </unit>
+    <unit id="s07.kpi1Number">
+      <segment>
         <source>3+2</source>
         <target>3+2</target>
-      </trans-unit>
-      <trans-unit id="s07.kpi1Label">
+      </segment>
+    </unit>
+    <unit id="s07.kpi1Label">
+      <segment>
         <source>Core Architecture</source>
         <target>Kernarchitektur</target>
-      </trans-unit>
-      <trans-unit id="s07.kpi2Number">
+      </segment>
+    </unit>
+    <unit id="s07.kpi2Number">
+      <segment>
         <source>Zero</source>
         <target>Zero</target>
-      </trans-unit>
-      <trans-unit id="s07.kpi2Label">
+      </segment>
+    </unit>
+    <unit id="s07.kpi2Label">
+      <segment>
         <source>Raw Data Exposure</source>
         <target>Rohdaten-Datenexposition</target>
-      </trans-unit>
-      <trans-unit id="s07.kpi3Number">
+      </segment>
+    </unit>
+    <unit id="s07.kpi3Number">
+      <segment>
         <source>100%</source>
         <target>100%</target>
-      </trans-unit>
-      <trans-unit id="s07.kpi3Label">
+      </segment>
+    </unit>
+    <unit id="s07.kpi3Label">
+      <segment>
         <source>Local Restoration</source>
         <target>Lokale Restoration</target>
-      </trans-unit>
-      <trans-unit id="s07.kpi4Number">
+      </segment>
+    </unit>
+    <unit id="s07.kpi4Number">
+      <segment>
         <source>Any</source>
         <target>Any</target>
-      </trans-unit>
-      <trans-unit id="s07.kpi4Label">
+      </segment>
+    </unit>
+    <unit id="s07.kpi4Label">
+      <segment>
         <source>LLM Model Support</source>
         <target>LLM-Modell-Unterstuetzung</target>
-      </trans-unit>
-
-      <!-- Section 08: Admin Governance -->
-      <trans-unit id="s08.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s08.sectionTitle">
+      <segment>
         <source>Operational control for enterprise AI</source>
         <target>Operative Kontrolle fuer AI-Governance im Unternehmen</target>
-      </trans-unit>
-      <trans-unit id="s08.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s08.sectionTitleBrand">
+      <segment>
         <source>governance</source>
         <target>Governance</target>
-      </trans-unit>
-      <trans-unit id="s08.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s08.sectionDescription">
+      <segment>
         <source>Enterprise deployment requires more than transformation logic. Teams need policy control, access control, activity visibility, and auditability.</source>
         <target>Enterprise-Deployment erfordert mehr als Transformationslogik. Teams benoetigen Richtlinienkontrolle, Zugriffskontrolle, Aktivitaetstransparenz und Auditierbarkeit.</target>
-      </trans-unit>
-      <trans-unit id="s08.body">
+      </segment>
+    </unit>
+    <unit id="s08.body">
+      <segment>
         <source>Enterprise AI governance requires evidence of data protection at every stage — what data was processed, how it was protected, which models interacted with it, and who authorized the workflow. LLM Capsule's admin capabilities provide this auditability across all AI interactions.</source>
         <target>AI-Governance im Unternehmen erfordert Nachweise des Datenschutzes in jeder Phase — welche Daten verarbeitet wurden, wie sie geschuetzt waren, welche Modelle damit interagiert haben und wer den Workflow autorisiert hat. Die Administrationsfunktionen von LLM Capsule bieten diese Auditierbarkeit ueber alle AI-Interaktionen hinweg.</target>
-      </trans-unit>
-
-      <!-- Section 09: Cross-Model Execution -->
-      <trans-unit id="s09.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s09.sectionTitle">
+      <segment>
         <source>Model-agnostic — use any LLM with no vendor</source>
         <target>Modellunabhaengig — jedes LLM ohne Vendor</target>
-      </trans-unit>
-      <trans-unit id="s09.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s09.sectionTitleBrand">
+      <segment>
         <source>lock-in</source>
         <target>Lock-in nutzen</target>
-      </trans-unit>
-      <trans-unit id="s09.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s09.sectionDescription">
+      <segment>
         <source>Enterprise teams do not always standardize on a single AI model.</source>
         <target>Unternehmensteams standardisieren nicht immer auf ein einziges AI-Modell.</target>
-      </trans-unit>
-      <trans-unit id="s09.body1">
+      </segment>
+    </unit>
+    <unit id="s09.body1">
+      <segment>
         <source>Enterprise teams do not always standardize on a single AI model. Evaluation, governance, and operational workflows may span multiple providers and multiple model choices over time. LLM Capsule fits this reality as an AI enablement data layer for cross-model enterprise AI deployment.</source>
         <target>Unternehmensteams standardisieren nicht immer auf ein einziges AI-Modell. Evaluierungs-, Governance- und operative Workflows koennen im Laufe der Zeit mehrere Anbieter und verschiedene Modelloptionen umfassen. LLM Capsule passt sich dieser Realitaet als AI-Enablement-Datenschicht fuer Cross-Model-Enterprise-AI-Deployment an.</target>
-      </trans-unit>
-      <trans-unit id="s09.body2">
+      </segment>
+    </unit>
+    <unit id="s09.body2">
+      <segment>
         <source>Because LLM Capsule operates at the data layer — not the model layer — protection and enablement remain stable even when model vendors change. ChatGPT, Claude, Gemini, Perplexity, or any LLM API can be used interchangeably without reconfiguring the pipeline. This is cross-model execution — enterprise AI enablement independent of any specific AI provider, eliminating vendor lock-in.</source>
         <target>Da LLM Capsule auf der Datenschicht operiert — nicht auf der Modellebene — bleiben Schutz und Enablement stabil, auch wenn sich Modellanbieter aendern. ChatGPT, Claude, Gemini, Perplexity oder jede LLM-API koennen ohne Pipeline-Neukonfiguration austauschbar verwendet werden. Dies ist Cross-Model-Ausfuehrung — AI-Enablement im Unternehmen unabhaengig von einem bestimmten AI-Anbieter, ohne Vendor Lock-in.</target>
-      </trans-unit>
-      <trans-unit id="s09.bannerText">
+      </segment>
+    </unit>
+    <unit id="s09.bannerText">
+      <segment>
         <source>ChatGPT, Claude, Gemini, Perplexity, or any LLM API — protection stays consistent regardless of which model you choose.</source>
         <target>ChatGPT, Claude, Gemini, Perplexity oder jede LLM-API — der Schutz bleibt konsistent, unabhaengig davon, welches Modell Sie waehlen.</target>
-      </trans-unit>
-
-      <!-- Section 10: API Integration -->
-      <trans-unit id="s10.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s10.sectionTitle">
+      <segment>
         <source>Built to fit existing enterprise</source>
         <target>Konzipiert fuer bestehende Unternehmens-</target>
-      </trans-unit>
-      <trans-unit id="s10.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s10.sectionTitleBrand">
+      <segment>
         <source>systems</source>
         <target>Systeme</target>
-      </trans-unit>
-      <trans-unit id="s10.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s10.sectionDescription">
+      <segment>
         <source>LLM Capsule works as a deployable component through API and SDK integration patterns, making it practical to embed into existing products, portals, and internal workflows.</source>
         <target>LLM Capsule funktioniert als deploybare Komponente ueber API- und SDK-Integrationsmuster und laesst sich praktisch in bestehende Produkte, Portale und interne Workflows einbetten.</target>
-      </trans-unit>
-      <trans-unit id="s10.body">
+      </segment>
+    </unit>
+    <unit id="s10.body">
+      <segment>
         <source>The API provides LLM API enablement at the data layer — wrap any existing AI integration with encapsulation and restoration without rebuilding the application.</source>
         <target>Die API bietet LLM-API-Enablement auf der Datenschicht — umhuellen Sie jede bestehende AI-Integration mit Encapsulation und Restoration, ohne die Anwendung neu zu erstellen.</target>
-      </trans-unit>
-
-      <!-- Section 11: Deployment Readiness -->
-      <trans-unit id="s11.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s11.sectionTitle">
+      <segment>
         <source>Enterprise AI deployment — ready for any controlled</source>
         <target>AI-Deployment im Unternehmen — bereit fuer jede kontrollierte</target>
-      </trans-unit>
-      <trans-unit id="s11.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s11.sectionTitleBrand">
+      <segment>
         <source>environment</source>
         <target>Umgebung</target>
-      </trans-unit>
-      <trans-unit id="s11.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s11.sectionDescription">
+      <segment>
         <source>Enterprise teams need deployment flexibility without giving up control.</source>
         <target>Unternehmensteams benoetigen Deployment-Flexibilitaet, ohne die Kontrolle aufzugeben.</target>
-      </trans-unit>
-      <trans-unit id="s11.body">
+      </segment>
+    </unit>
+    <unit id="s11.body">
+      <segment>
         <source>Enterprise teams need deployment flexibility without giving up control. LLM Capsule supports on-premise deployment, air-gapped environments, cloud deployment including AWS Marketplace, hybrid configurations, and embedded integration. The same product logic runs across all deployment models while keeping local protection and local restoration at the center.</source>
         <target>Unternehmensteams benoetigen Deployment-Flexibilitaet, ohne die Kontrolle aufzugeben. LLM Capsule unterstuetzt On-Premise-Deployment, Air-Gap-Umgebungen, Cloud-Deployment einschliesslich AWS Marketplace, Hybrid-Konfigurationen und eingebettete Integration. Dieselbe Produktlogik laeuft ueber alle Deployment-Modelle mit lokalem Schutz und lokaler Restoration im Mittelpunkt.</target>
-      </trans-unit>
-      <trans-unit id="s11.screenshotDesc">
+      </segment>
+    </unit>
+    <unit id="s11.screenshotDesc">
+      <segment>
         <source>LLM Capsule API Console — SDK integration with enterprise document management systems</source>
         <target>LLM Capsule API-Konsole — SDK-Integration mit Dokumentenmanagementsystemen im Unternehmen</target>
-      </trans-unit>
-      <trans-unit id="s11.awsLabel">
+      </segment>
+    </unit>
+    <unit id="s11.awsLabel">
+      <segment>
         <source>View on AWS Marketplace</source>
         <target>Auf AWS Marketplace ansehen</target>
-      </trans-unit>
-
-      <!-- Section 12: Comparison -->
-      <trans-unit id="s12.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s12.sectionTitle">
+      <segment>
         <source>How LLM Capsule differs from traditional</source>
         <target>Wie sich LLM Capsule von herkoemmlichen Ansaetzen unterscheidet</target>
-      </trans-unit>
-      <trans-unit id="s12.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s12.sectionTitleBrand">
+      <segment>
         <source>approaches</source>
         <target>Ansaetze</target>
-      </trans-unit>
-      <trans-unit id="s12.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s12.sectionDescription">
+      <segment>
         <source>Not all protection approaches are designed for usable enterprise AI workflows. Traditional masking protects data by reducing usability. LLM Capsule protects data while preserving enterprise workflow value.</source>
         <target>Nicht alle Schutzansaetze sind fuer nutzbare AI-Workflows in Unternehmen konzipiert. Herkoemmliche Maskierung schuetzt Daten durch Reduzierung der Nutzbarkeit. LLM Capsule schuetzt Daten und bewahrt gleichzeitig den Wert der Unternehmens-Workflows.</target>
-      </trans-unit>
-      <trans-unit id="s12.bannerText">
+      </segment>
+    </unit>
+    <unit id="s12.bannerText">
+      <segment>
         <source>AI results are auto-restored through local restoration. This is the fundamental capability that separates LLM Capsule from every other approach — enterprise AI enablement that produces usable outputs, not abstracted placeholders.</source>
         <target>AI-Ergebnisse werden durch lokale Restoration automatisch wiederhergestellt. Dies ist die grundlegende Faehigkeit, die LLM Capsule von jedem anderen Ansatz unterscheidet — AI-Enablement im Unternehmen, das nutzbare Ergebnisse liefert, keine abstrahierten Platzhalter.</target>
-      </trans-unit>
-
-      <!-- Section 13: FAQ -->
-      <trans-unit id="s13.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s13.sectionTitle">
+      <segment>
         <source>Common</source>
         <target>Haeufige</target>
-      </trans-unit>
-      <trans-unit id="s13.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s13.sectionTitleBrand">
+      <segment>
         <source>Questions</source>
         <target>Fragen</target>
-      </trans-unit>
-      <trans-unit id="s13.exploreHeader">
+      </segment>
+    </unit>
+    <unit id="s13.exploreHeader">
+      <segment>
         <source>Explore further</source>
         <target>Weitere Informationen</target>
-      </trans-unit>
-
-      <!-- Section 14: CTA -->
-      <trans-unit id="s14.title">
+      </segment>
+    </unit>
+    <unit id="s14.title">
+      <segment>
         <source>See how LLM Capsule fits your environment, documents, and controls</source>
         <target>Erfahren Sie, wie LLM Capsule zu Ihrer Umgebung, Ihren Dokumenten und Kontrollen passt</target>
-      </trans-unit>
-      <trans-unit id="s14.description">
+      </segment>
+    </unit>
+    <unit id="s14.description">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.</source>
         <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Evaluierungsfragen mit. Wir demonstrieren AI-Enablement im Unternehmen mit Ihren tatsaechlichen Daten, in Ihrer Umgebung, gegen Ihre Compliance-Anforderungen.</target>
-      </trans-unit>
-      <trans-unit id="s14.cta1Label">
+      </segment>
+    </unit>
+    <unit id="s14.cta1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Demo anfordern</target>
-      </trans-unit>
-      <trans-unit id="s14.cta2Label">
+      </segment>
+    </unit>
+    <unit id="s14.cta2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="s14.footnote1Label">
+      </segment>
+    </unit>
+    <unit id="s14.footnote1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>Architektur-Brief herunterladen</target>
-      </trans-unit>
-      <trans-unit id="s14.footnote2Label">
+      </segment>
+    </unit>
+    <unit id="s14.footnote2Label">
+      <segment>
         <source>View on AWS Marketplace</source>
         <target>Auf AWS Marketplace ansehen</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -1,104 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ja" datatype="plaintext" original="secure-enterprise-ai-workflows">
-    <body>
-      <!-- Section 01: Hero -->
-      <trans-unit id="title">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ja">
+  <file id="secure-enterprise-ai-workflows">
+    <unit id="title">
+      <segment>
         <source>Secure Enterprise AI Workflows</source>
         <target>セキュアなエンタープライズAIワークフロー</target>
-      </trans-unit>
-      <trans-unit id="description">
+      </segment>
+    </unit>
+    <unit id="description">
+      <segment>
         <source>How to build AI data pipeline protection that secures sensitive enterprise data at every stage — from document intake to restored output.</source>
         <target>ドキュメント取り込みから復元された出力まで、あらゆる段階で機密性の高いエンタープライズデータを保護するAIデータパイプライン保護の構築方法。</target>
-      </trans-unit>
-
-      <!-- Section 02: Problem -->
-      <trans-unit id="sectionLabel_problem">
+      </segment>
+    </unit>
+    <unit id="sectionLabel_problem">
+      <segment>
         <source>Problem</source>
         <target>課題</target>
-      </trans-unit>
-      <trans-unit id="paragraph1">
+      </segment>
+    </unit>
+    <unit id="paragraph1">
+      <segment>
         <source>Enterprise AI workflows involve multiple stages: document ingestion, pre-processing, AI model interaction, output generation, and integration into business systems. A security gap at any single stage exposes the entire pipeline. Most current approaches focus on model-level security — prompt filtering, output scanning — while leaving the data layer unprotected.</source>
         <target>エンタープライズAIワークフローはドキュメント取り込み、前処理、AIモデルとのインタラクション、出力生成、ビジネスシステムへの統合など複数の段階を含みます。どの段階でもセキュリティギャップがあればパイプライン全体が露出します。現在のほとんどのアプローチはプロンプトフィルタリングや出力スキャンなどモデルレベルのセキュリティに注力し、データレイヤーを保護していません。</target>
-      </trans-unit>
-      <trans-unit id="paragraph2">
+      </segment>
+    </unit>
+    <unit id="paragraph2">
+      <segment>
         <source>Secure LLM usage requires protection that operates at the data layer, not the model layer. Enterprise data must be protected before it enters any AI pipeline stage.</source>
         <target>安全なLLM利用には、モデルレイヤーではなくデータレイヤーで動作する保護が必要です。エンタープライズデータはAIパイプラインのどの段階に入る前にも保護されなければなりません。</target>
-      </trans-unit>
-
-      <!-- Section 03: Explanation -->
-      <trans-unit id="sectionLabel_explanation">
+      </segment>
+    </unit>
+    <unit id="sectionLabel_explanation">
+      <segment>
         <source>Explanation</source>
         <target>解説</target>
-      </trans-unit>
-      <trans-unit id="intro">
+      </segment>
+    </unit>
+    <unit id="intro">
+      <segment>
         <source>A secure enterprise AI workflow has four properties:</source>
         <target>セキュアなエンタープライズAIワークフローには4つの特性があります：</target>
-      </trans-unit>
-      <trans-unit id="bannerText">
+      </segment>
+    </unit>
+    <unit id="bannerText">
+      <segment>
         <source>Enterprise AI enablement requires an AI-ready data layer, not model-layer security.</source>
         <target>企業AIの導入には、モデルレイヤーのセキュリティではなく、AI対応のデータレイヤーが必要です。</target>
-      </trans-unit>
-
-      <!-- Section 04: Enterprise Example -->
-      <trans-unit id="sectionLabel_example">
+      </segment>
+    </unit>
+    <unit id="sectionLabel_example">
+      <segment>
         <source>Enterprise Example</source>
         <target>導入事例</target>
-      </trans-unit>
-      <trans-unit id="cardTitle">
+      </segment>
+    </unit>
+    <unit id="cardTitle">
+      <segment>
         <source>Insurance Claims Processing</source>
         <target>保険請求処理</target>
-      </trans-unit>
-      <trans-unit id="cardBody1">
+      </segment>
+    </unit>
+    <unit id="cardBody1">
+      <segment>
         <source>An insurance company processes 5,000 claims per month through AI for classification, damage assessment summarization, and fraud pattern detection. Each claim contains policyholder PII, medical records, and financial data.</source>
         <target>保険会社が分類、損害評価の要約、不正パターン検出のために毎月5,000件の請求をAIで処理します。各請求には契約者PII、医療記録、財務データが含まれます。</target>
-      </trans-unit>
-      <trans-unit id="cardBody2">
+      </segment>
+    </unit>
+    <unit id="cardBody2">
+      <segment>
         <source>encapsulates all sensitive data locally. AI classifies and summarizes protected claims. Local restoration restores policyholder details into the outputs, which feed directly into the claims management system. No manual re-linking required.</source>
         <target>がすべての機密データをローカルでEncapsulationします。AIが保護された請求を分類・要約します。ローカルRestorationが出力に契約者の詳細を復元し、請求管理システムに直接供給されます。手動での再リンクは不要です。</target>
-      </trans-unit>
-
-      <!-- Section 05: FAQ -->
-      <trans-unit id="sectionLabel_faq">
+      </segment>
+    </unit>
+    <unit id="sectionLabel_faq">
+      <segment>
         <source>FAQ</source>
         <target>FAQ</target>
-      </trans-unit>
-
-      <!-- Section 06: Related -->
-      <trans-unit id="sectionLabel_related">
+      </segment>
+    </unit>
+    <unit id="sectionLabel_related">
+      <segment>
         <source>Related</source>
         <target>関連ページ</target>
-      </trans-unit>
-
-      <!-- Section 07: CTA Band -->
-      <trans-unit id="ctaTitle">
+      </segment>
+    </unit>
+    <unit id="ctaTitle">
+      <segment>
         <source>See how</source>
         <target>LLM Capsuleが</target>
-      </trans-unit>
-      <trans-unit id="ctaTitlePrefix">
+      </segment>
+    </unit>
+    <unit id="ctaTitlePrefix">
+      <segment>
         <source>works with your data</source>
         <target>お客様のデータでどう機能するかご覧ください</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>文書、デプロイ制約、評価基準をお持ちください。実際のワークフローでデモンストレーションします。</target>
-      </trans-unit>
-      <trans-unit id="primaryBtnLabel">
+      </segment>
+    </unit>
+    <unit id="primaryBtnLabel">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="secondaryBtnLabel">
+      </segment>
+    </unit>
+    <unit id="secondaryBtnLabel">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="footnote1Label">
+      </segment>
+    </unit>
+    <unit id="footnote1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>アーキテクチャブリーフをダウンロード</target>
-      </trans-unit>
-      <trans-unit id="footnote2Label">
+      </segment>
+    </unit>
+    <unit id="footnote2Label">
+      <segment>
         <source>AWS Marketplace</source>
         <target>AWS Marketplace</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -1,180 +1,239 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ko" datatype="plaintext" original="what-is-ai-data-capsule">
-    <body>
-      <!-- Section01_Hero -->
-      <trans-unit id="title">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ko">
+  <file id="what-is-ai-data-capsule">
+    <unit id="title">
+      <segment>
         <source>What Is an AI Data Capsule?</source>
         <target>AI 데이터 캡슐이란 무엇인가요?</target>
-      </trans-unit>
-      <trans-unit id="description">
+      </segment>
+    </unit>
+    <unit id="description">
+      <segment>
         <source>Enterprise data encapsulation for secure LLM usage — how to protect sensitive data before AI processing and restore usable outputs after.</source>
         <target>안전한 LLM 사용을 위한 엔터프라이즈 데이터 Encapsulation — AI 처리 전에 민감한 데이터를 보호하고 처리 후 사용 가능한 출력물을 Restoration하는 방법입니다.</target>
-      </trans-unit>
-
-      <!-- Section02_Screenshot -->
-      <trans-unit id="screenshotLabel">
+      </segment>
+    </unit>
+    <unit id="screenshotLabel">
+      <segment>
         <source>Data Capsule Concept — Original document vs. encapsulated version with structure preserved</source>
         <target>데이터 캡슐 개념 — 원본 문서 vs. 구조가 보존된 Encapsulation 버전</target>
-      </trans-unit>
-
-      <!-- Section03_Problem -->
-      <trans-unit id="sectionLabel_problem">
+      </segment>
+    </unit>
+    <unit id="sectionLabel_problem">
+      <segment>
         <source>Problem</source>
         <target>문제</target>
-      </trans-unit>
-      <trans-unit id="problem_paragraph1">
+      </segment>
+    </unit>
+    <unit id="problem_paragraph1">
+      <segment>
         <source>Enterprises need to process sensitive documents through large language models for summarization, extraction, translation, and analysis. Sending raw data to external AI services creates unacceptable exposure. Existing approaches — masking, redaction, tokenization — destroy the context AI models need to produce useful outputs.</source>
         <target>기업은 요약, 추출, 번역, 분석을 위해 대규모 언어 모델로 민감한 문서를 처리해야 합니다. 원시 데이터를 외부 AI 서비스에 전송하면 허용할 수 없는 데이터 노출이 발생합니다. 기존 접근 방식인 마스킹, 편집, 토큰화는 AI 모델이 유용한 출력을 생성하는 데 필요한 컨텍스트를 파괴합니다.</target>
-      </trans-unit>
-      <trans-unit id="problem_paragraph2">
+      </segment>
+    </unit>
+    <unit id="problem_paragraph2">
+      <segment>
         <source>The result is a binary choice: expose data to use AI, or protect data and get unusable results.</source>
         <target>결과는 이분법적 선택입니다: AI를 사용하기 위해 데이터를 노출하거나, 데이터를 보호하고 사용 불가능한 결과를 얻거나.</target>
-      </trans-unit>
-
-      <!-- Section04_Definition -->
-      <trans-unit id="sectionLabel_definition">
+      </segment>
+    </unit>
+    <unit id="sectionLabel_definition">
+      <segment>
         <source>Definition</source>
         <target>정의</target>
-      </trans-unit>
-      <trans-unit id="bannerLabel">
+      </segment>
+    </unit>
+    <unit id="bannerLabel">
+      <segment>
         <source>AI Data Capsule</source>
         <target>AI 데이터 캡슐</target>
-      </trans-unit>
-      <trans-unit id="bannerText">
+      </segment>
+    </unit>
+    <unit id="bannerText">
+      <segment>
         <source>An AI data capsule is a locally generated AI enablement layer that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.</source>
         <target>AI 데이터 캡슐은 외부 AI 서비스에 전송되기 전에 민감한 엔터프라이즈 데이터를 감싸는 로컬 생성 AI 활성화 레이어입니다. 캡슐은 민감한 요소를 가역적 표현으로 대체하면서 문서 구조와 컨텍스트를 보존합니다. AI 처리 후 캡슐은 로컬 Restoration을 가능하게 하여 원본 데이터를 외부에 노출하지 않고 AI 출력물을 전체 엔터프라이즈 컨텍스트로 복원합니다.</target>
-      </trans-unit>
-
-      <!-- Section05_Explanation -->
-      <trans-unit id="sectionLabel_explanation">
+      </segment>
+    </unit>
+    <unit id="sectionLabel_explanation">
+      <segment>
         <source>Explanation</source>
         <target>설명</target>
-      </trans-unit>
-      <trans-unit id="introText">
+      </segment>
+    </unit>
+    <unit id="introText">
+      <segment>
         <source>An AI data capsule operates as an AI enablement data layer through three stages within a restorable workflow:</source>
         <target>AI 데이터 캡슐은 Restorable Workflow 내에서 세 단계를 통해 AI 활성화 데이터 레이어로 작동합니다:</target>
-      </trans-unit>
-      <trans-unit id="bullet1_strong">
+      </segment>
+    </unit>
+    <unit id="bullet1_strong">
+      <segment>
         <source>Local Encapsulation.</source>
         <target>로컬 Encapsulation.</target>
-      </trans-unit>
-      <trans-unit id="bullet1_text">
-        <source> Sensitive elements in enterprise documents — names, account numbers, dates, medical codes, contract terms — are detected and replaced with structure-preserving representations. The mapping between original and replaced values is stored locally, never transmitted.</source>
-        <target> 엔터프라이즈 문서의 민감한 요소 — 이름, 계좌번호, 날짜, 의료 코드, 계약 조건 — 가 감지되어 구조 보존 표현으로 대체됩니다. 원본과 대체 값 간의 매핑은 로컬에 저장되며 전송되지 않습니다.</target>
-      </trans-unit>
-      <trans-unit id="bullet2_strong">
+      </segment>
+    </unit>
+    <unit id="bullet1_text">
+      <segment>
+        <source>Sensitive elements in enterprise documents — names, account numbers, dates, medical codes, contract terms — are detected and replaced with structure-preserving representations. The mapping between original and replaced values is stored locally, never transmitted.</source>
+        <target>엔터프라이즈 문서의 민감한 요소 — 이름, 계좌번호, 날짜, 의료 코드, 계약 조건 — 가 감지되어 구조 보존 표현으로 대체됩니다. 원본과 대체 값 간의 매핑은 로컬에 저장되며 전송되지 않습니다.</target>
+      </segment>
+    </unit>
+    <unit id="bullet2_strong">
+      <segment>
         <source>Protected AI Processing.</source>
         <target>보호된 AI 처리.</target>
-      </trans-unit>
-      <trans-unit id="bullet2_text">
-        <source> The encapsulated document is sent to any external LLM. Because document structure is preserved, the AI model can perform summarization, extraction, classification, and translation effectively. No original sensitive data leaves the enterprise environment.</source>
-        <target> Encapsulation된 문서가 외부 LLM에 전송됩니다. 문서 구조가 보존되기 때문에 AI 모델은 요약, 추출, 분류, 번역을 효과적으로 수행할 수 있습니다. 원본 민감 데이터는 엔터프라이즈 환경을 벗어나지 않습니다.</target>
-      </trans-unit>
-      <trans-unit id="bullet3_strong">
+      </segment>
+    </unit>
+    <unit id="bullet2_text">
+      <segment>
+        <source>The encapsulated document is sent to any external LLM. Because document structure is preserved, the AI model can perform summarization, extraction, classification, and translation effectively. No original sensitive data leaves the enterprise environment.</source>
+        <target>Encapsulation된 문서가 외부 LLM에 전송됩니다. 문서 구조가 보존되기 때문에 AI 모델은 요약, 추출, 분류, 번역을 효과적으로 수행할 수 있습니다. 원본 민감 데이터는 엔터프라이즈 환경을 벗어나지 않습니다.</target>
+      </segment>
+    </unit>
+    <unit id="bullet3_strong">
+      <segment>
         <source>Local Restoration.</source>
         <target>로컬 Restoration.</target>
-      </trans-unit>
-      <trans-unit id="bullet3_text">
-        <source> AI results are automatically restored locally with original enterprise data. The locally stored mapping is applied to reconstruct outputs with real names, amounts, and references, producing results that are directly usable in business workflows.</source>
-        <target> AI 결과가 원본 엔터프라이즈 데이터와 함께 로컬에서 자동으로 복원됩니다. 로컬에 저장된 매핑이 적용되어 실제 이름, 금액, 참조로 출력물을 재구성하며, 비즈니스 워크플로우에서 직접 사용 가능한 결과를 생성합니다.</target>
-      </trans-unit>
-      <trans-unit id="explanationBannerText">
+      </segment>
+    </unit>
+    <unit id="bullet3_text">
+      <segment>
+        <source>AI results are automatically restored locally with original enterprise data. The locally stored mapping is applied to reconstruct outputs with real names, amounts, and references, producing results that are directly usable in business workflows.</source>
+        <target>AI 결과가 원본 엔터프라이즈 데이터와 함께 로컬에서 자동으로 복원됩니다. 로컬에 저장된 매핑이 적용되어 실제 이름, 금액, 참조로 출력물을 재구성하며, 비즈니스 워크플로우에서 직접 사용 가능한 결과를 생성합니다.</target>
+      </segment>
+    </unit>
+    <unit id="explanationBannerText">
+      <segment>
         <source>Key concept: AI results are automatically restored locally with original enterprise data. The AI data capsule enables AI adoption by ensuring original data never leaves the enterprise environment.</source>
         <target>핵심 개념: AI 결과는 원본 엔터프라이즈 데이터와 함께 로컬에서 자동으로 복원됩니다. AI 데이터 캡슐은 원본 데이터가 엔터프라이즈 환경을 벗어나지 않도록 보장하여 AI 도입을 가능하게 합니다.</target>
-      </trans-unit>
-
-      <!-- Section06_EnterpriseExample -->
-      <trans-unit id="sectionLabel_example">
+      </segment>
+    </unit>
+    <unit id="sectionLabel_example">
+      <segment>
         <source>Enterprise Example</source>
         <target>엔터프라이즈 예시</target>
-      </trans-unit>
-      <trans-unit id="cardTitle">
+      </segment>
+    </unit>
+    <unit id="cardTitle">
+      <segment>
         <source>Financial Compliance Review</source>
         <target>금융 컴플라이언스 검토</target>
-      </trans-unit>
-      <trans-unit id="cardParagraph1">
+      </segment>
+    </unit>
+    <unit id="cardParagraph1">
+      <segment>
         <source>A bank needs AI to summarize 500 loan applications for compliance review. Each document contains customer names, social security numbers, account balances, and income data.</source>
         <target>은행이 컴플라이언스 검토를 위해 AI로 500개의 대출 신청서를 요약해야 합니다. 각 문서에는 고객 이름, 주민등록번호, 계좌 잔액, 소득 데이터가 포함되어 있습니다.</target>
-      </trans-unit>
-      <trans-unit id="cardParagraph2">
-        <source> the bank encapsulates all documents locally. AI processes the protected versions and generates structured summaries. Local restoration restores the real customer names and account details into the summaries, producing compliance-ready outputs without ever exposing raw customer data to the AI provider.</source>
-        <target> 은행은 모든 문서를 로컬에서 Encapsulation합니다. AI는 보호된 버전을 처리하고 구조화된 요약을 생성합니다. 로컬 Restoration이 실제 고객 이름과 계좌 세부 정보를 요약에 복원하여, AI 제공업체에 원시 고객 데이터를 노출하지 않고 컴플라이언스 준비 출력물을 생성합니다.</target>
-      </trans-unit>
-      <trans-unit id="exampleProductName">
+      </segment>
+    </unit>
+    <unit id="cardParagraph2">
+      <segment>
+        <source>the bank encapsulates all documents locally. AI processes the protected versions and generates structured summaries. Local restoration restores the real customer names and account details into the summaries, producing compliance-ready outputs without ever exposing raw customer data to the AI provider.</source>
+        <target>은행은 모든 문서를 로컬에서 Encapsulation합니다. AI는 보호된 버전을 처리하고 구조화된 요약을 생성합니다. 로컬 Restoration이 실제 고객 이름과 계좌 세부 정보를 요약에 복원하여, AI 제공업체에 원시 고객 데이터를 노출하지 않고 컴플라이언스 준비 출력물을 생성합니다.</target>
+      </segment>
+    </unit>
+    <unit id="exampleProductName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-
-      <!-- Section07_FAQ -->
-      <trans-unit id="faqLabel">
+      </segment>
+    </unit>
+    <unit id="faqLabel">
+      <segment>
         <source>FAQ</source>
         <target>자주 묻는 질문</target>
-      </trans-unit>
-      <trans-unit id="faq1_question">
+      </segment>
+    </unit>
+    <unit id="faq1_question">
+      <segment>
         <source>What is an AI data capsule?</source>
         <target>AI 데이터 캡슐이란 무엇인가요?</target>
-      </trans-unit>
-      <trans-unit id="faq1_answer">
+      </segment>
+    </unit>
+    <unit id="faq1_answer">
+      <segment>
         <source>An AI data capsule is a locally generated AI enablement layer that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.</source>
         <target>AI 데이터 캡슐은 민감한 엔터프라이즈 데이터가 외부 AI 서비스에 전송되기 전에 Encapsulation하는 로컬 생성 AI 활성화 레이어입니다. AI 처리 후 캡슐은 로컬 Restoration을 가능하게 하여 출력물이 실제 엔터프라이즈 워크플로우에서 사용 가능하게 유지됩니다.</target>
-      </trans-unit>
-      <trans-unit id="faq2_question">
+      </segment>
+    </unit>
+    <unit id="faq2_question">
+      <segment>
         <source>How does an AI data capsule differ from data masking?</source>
         <target>AI 데이터 캡슐은 데이터 마스킹과 어떻게 다른가요?</target>
-      </trans-unit>
-      <trans-unit id="faq2_answer">
+      </segment>
+    </unit>
+    <unit id="faq2_answer">
+      <segment>
         <source>Data masking permanently removes sensitive information, making AI outputs unusable for enterprise workflows. An AI data capsule preserves data structure and enables restoration, so AI results can be restored to their full enterprise context locally.</source>
         <target>데이터 마스킹은 민감한 정보를 영구적으로 제거하여 AI 출력물을 엔터프라이즈 워크플로우에서 사용할 수 없게 만듭니다. AI 데이터 캡슐은 데이터 구조를 보존하고 Restoration을 가능하게 하여 AI 결과를 로컬에서 전체 엔터프라이즈 컨텍스트로 복원할 수 있습니다.</target>
-      </trans-unit>
-      <trans-unit id="faq3_question">
+      </segment>
+    </unit>
+    <unit id="faq3_question">
+      <segment>
         <source>Does the AI data capsule work with any LLM?</source>
         <target>AI 데이터 캡슐은 모든 LLM과 호환되나요?</target>
-      </trans-unit>
-      <trans-unit id="faq3_answer">
+      </segment>
+    </unit>
+    <unit id="faq3_answer">
+      <segment>
         <source>Yes. Because the capsule operates at the data layer before transmission, it works with any external AI service — ChatGPT, Claude, Gemini, or any LLM API.</source>
         <target>네. 캡슐이 전송 전 데이터 레이어에서 작동하기 때문에 ChatGPT, Claude, Gemini 또는 모든 LLM API를 포함한 모든 외부 AI 서비스와 호환됩니다.</target>
-      </trans-unit>
-      <trans-unit id="faq4_question">
+      </segment>
+    </unit>
+    <unit id="faq4_question">
+      <segment>
         <source>Where is the mapping data stored?</source>
         <target>매핑 데이터는 어디에 저장되나요?</target>
-      </trans-unit>
-      <trans-unit id="faq4_answer">
+      </segment>
+    </unit>
+    <unit id="faq4_answer">
+      <segment>
         <source>The mapping between original and encapsulated values is stored entirely within the enterprise environment. It is never transmitted to external services.</source>
         <target>원본과 Encapsulation된 값 간의 매핑은 전적으로 엔터프라이즈 환경 내에 저장됩니다. 외부 서비스에 전송되지 않습니다.</target>
-      </trans-unit>
-
-      <!-- Section08_Related -->
-      <trans-unit id="relatedLabel">
+      </segment>
+    </unit>
+    <unit id="relatedLabel">
+      <segment>
         <source>Related</source>
         <target>관련 콘텐츠</target>
-      </trans-unit>
-
-      <!-- Section09_CTA -->
-      <trans-unit id="ctaProductName">
+      </segment>
+    </unit>
+    <unit id="ctaProductName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>문서, 배포 제약 조건, 평가 기준을 가져오세요. 실제 워크플로우에서 시연합니다.</target>
-      </trans-unit>
-      <trans-unit id="cta1Label">
+      </segment>
+    </unit>
+    <unit id="cta1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>데모 요청</target>
-      </trans-unit>
-      <trans-unit id="cta2Label">
+      </segment>
+    </unit>
+    <unit id="cta2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="footnoteLink1Label">
+      </segment>
+    </unit>
+    <unit id="footnoteLink1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>아키텍처 브리프 다운로드</target>
-      </trans-unit>
-      <trans-unit id="footnoteLink2Label">
+      </segment>
+    </unit>
+    <unit id="footnoteLink2Label">
+      <segment>
         <source>AWS Marketplace</source>
         <target>AWS Marketplace</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

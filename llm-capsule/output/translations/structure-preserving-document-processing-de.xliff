@@ -1,139 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="structure-preserving-document-processing">
-    <body>
-      <trans-unit id="heroTitle">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+  <file id="structure-preserving-document-processing">
+    <unit id="heroTitle">
+      <segment>
         <source>Structure-Preserving Document Processing</source>
         <target>Strukturerhaltende Dokumentenverarbeitung</target>
-      </trans-unit>
-      <trans-unit id="heroDescription">
+      </segment>
+    </unit>
+    <unit id="heroDescription">
+      <segment>
         <source>Why maintaining document structure during data protection is critical for accurate AI outputs in enterprise workflows.</source>
         <target>Warum die Beibehaltung der Dokumentstruktur beim Datenschutz entscheidend fuer praezise AI-Ergebnisse in Unternehmensworkflows ist.</target>
-      </trans-unit>
-      <trans-unit id="breadcrumbHome">
+      </segment>
+    </unit>
+    <unit id="breadcrumbHome">
+      <segment>
         <source>Home</source>
         <target>Startseite</target>
-      </trans-unit>
-      <trans-unit id="breadcrumbResources">
+      </segment>
+    </unit>
+    <unit id="breadcrumbResources">
+      <segment>
         <source>Resources</source>
         <target>Ressourcen</target>
-      </trans-unit>
-      <trans-unit id="breadcrumbLearn">
+      </segment>
+    </unit>
+    <unit id="breadcrumbLearn">
+      <segment>
         <source>Learn</source>
         <target>Lernen</target>
-      </trans-unit>
-      <trans-unit id="problemParagraph1">
+      </segment>
+    </unit>
+    <unit id="problemParagraph1">
+      <segment>
         <source>Enterprise documents are not flat text. They contain tables, nested sections, cross-references, entity relationships, and formatting that carries semantic meaning. When flat masking tools process these documents, they treat every sensitive value identically — replacing it with a generic token regardless of its structural role.</source>
         <target>Unternehmensdokumente sind kein einfacher Text. Sie enthalten Tabellen, verschachtelte Abschnitte, Querverweise, Entitaetsbeziehungen und Formatierungen mit semantischer Bedeutung. Wenn Flat-Masking-Tools diese Dokumente verarbeiten, behandeln sie jeden sensiblen Wert identisch — und ersetzen ihn unabhaengig von seiner strukturellen Rolle durch ein generisches Token.</target>
-      </trans-unit>
-      <trans-unit id="problemParagraph2">
+      </segment>
+    </unit>
+    <unit id="problemParagraph2">
+      <segment>
         <source>A customer name in a table header serves a different function than the same name in a paragraph. A date in a contract preamble has different significance than a date in a payment schedule. Flat masking collapses these distinctions, degrading AI output quality.</source>
         <target>Ein Kundenname in einer Tabellenueberschrift hat eine andere Funktion als derselbe Name in einem Absatz. Ein Datum in einer Vertragspraeambel hat eine andere Bedeutung als ein Datum in einem Zahlungsplan. Flat Masking beseitigt diese Unterscheidungen und verschlechtert die AI-Ausgabequalitaet.</target>
-      </trans-unit>
-      <trans-unit id="definitionLabel">
+      </segment>
+    </unit>
+    <unit id="definitionLabel">
+      <segment>
         <source>DEFINITION — Structure-Preserving Processing</source>
         <target>DEFINITION — Strukturerhaltende Verarbeitung</target>
-      </trans-unit>
-      <trans-unit id="definitionText">
+      </segment>
+    </unit>
+    <unit id="definitionText">
+      <segment>
         <source>Structure-preserving processing is a data protection method that replaces sensitive elements while maintaining the document's layout, entity relationships, table structures, and semantic context. It ensures AI models receive structurally intact documents that support accurate summarization, extraction, and analysis.</source>
         <target>Strukturerhaltende Verarbeitung ist eine Datenschutzmethode, die sensible Elemente ersetzt und dabei das Layout, die Entitaetsbeziehungen, Tabellenstrukturen und den semantischen Kontext des Dokuments bewahrt. Sie stellt sicher, dass AI-Modelle strukturell intakte Dokumente erhalten, die praezise Zusammenfassung, Extraktion und Analyse unterstuetzen.</target>
-      </trans-unit>
-      <trans-unit id="explanationIntro">
+      </segment>
+    </unit>
+    <unit id="explanationIntro">
+      <segment>
         <source>Structure-preserving processing operates at multiple document layers:</source>
         <target>Strukturerhaltende Verarbeitung arbeitet auf mehreren Dokumentebenen:</target>
-      </trans-unit>
-      <trans-unit id="explanationBullet1">
+      </segment>
+    </unit>
+    <unit id="explanationBullet1">
+      <segment>
         <source>Layout preservation. Table structures, column headers, row relationships, and nested sections are maintained. AI models can accurately extract tabular data because the schema remains intact.</source>
         <target>Layout-Erhaltung. Tabellenstrukturen, Spaltenueberschriften, Zeilenbeziehungen und verschachtelte Abschnitte bleiben erhalten. AI-Modelle koennen Tabellendaten praezise extrahieren, da das Schema intakt bleibt.</target>
-      </trans-unit>
-      <trans-unit id="explanationBullet2">
+      </segment>
+    </unit>
+    <unit id="explanationBullet2">
+      <segment>
         <source>Entity consistency. When the same entity appears multiple times in a document, all instances are mapped to the same replacement. AI models can track entity references across sections — "the Borrower" in clause 1 refers to the same encapsulated entity in clause 7.</source>
         <target>Entitaetskonsistenz. Wenn dieselbe Entitaet mehrfach in einem Dokument erscheint, werden alle Instanzen demselben Ersatzwert zugeordnet. AI-Modelle koennen Entitaetsreferenzen abschnittuebergreifend verfolgen — der „Darlehensnehmer" in Klausel 1 verweist auf dieselbe Encapsulation-Entitaet in Klausel 7.</target>
-      </trans-unit>
-      <trans-unit id="explanationBullet3">
+      </segment>
+    </unit>
+    <unit id="explanationBullet3">
+      <segment>
         <source>Semantic context. Context-aware data control distinguishes between sensitive data that must be protected and contextual information that AI needs for comprehension. Job titles, section headers, and document type indicators remain readable.</source>
         <target>Semantischer Kontext. Kontextbewusste Datenkontrolle unterscheidet zwischen sensiblen Daten, die geschuetzt werden muessen, und Kontextinformationen, die AI fuer das Verstaendnis benoetigt. Berufsbezeichnungen, Abschnittsueberschriften und Dokumenttyp-Indikatoren bleiben lesbar.</target>
-      </trans-unit>
-      <trans-unit id="explanationBullet4">
+      </segment>
+    </unit>
+    <unit id="explanationBullet4">
+      <segment>
         <source>Cross-document consistency. When processing document sets — such as a contract and its amendments — entity mappings remain consistent across files, enabling AI to perform accurate cross-document analysis.</source>
         <target>Dokumentuebergreifende Konsistenz. Bei der Verarbeitung von Dokumentsaetzen — beispielsweise einem Vertrag und seinen Aenderungen — bleiben Entitaetszuordnungen dateiuebergreifend konsistent, sodass AI praezise dokumentuebergreifende Analysen durchfuehren kann.</target>
-      </trans-unit>
-      <trans-unit id="exampleCardTitle">
+      </segment>
+    </unit>
+    <unit id="exampleCardTitle">
+      <segment>
         <source>Financial Statement Analysis</source>
         <target>Jahresabschlussanalyse</target>
-      </trans-unit>
-      <trans-unit id="exampleCardParagraph1">
+      </segment>
+    </unit>
+    <unit id="exampleCardParagraph1">
+      <segment>
         <source>An audit firm needs AI to compare quarterly financial statements across 15 portfolio companies. Each statement contains tabular data with company names, executive names, account numbers, and financial figures.</source>
         <target>Eine Wirtschaftspruefungsgesellschaft muss AI nutzen, um Quartalsabschluesse von 15 Portfoliounternehmen zu vergleichen. Jeder Abschluss enthaelt Tabellendaten mit Firmennamen, Fuehrungskraeften, Kontonummern und Finanzkennzahlen.</target>
-      </trans-unit>
-      <trans-unit id="exampleCardParagraph2">
+      </segment>
+    </unit>
+    <unit id="exampleCardParagraph2">
+      <segment>
         <source>Structure-preserving processing maintains all table structures and entity relationships. AI performs comparative analysis across the protected statements. Local restoration restores the real company data, producing analyst-ready comparison reports.</source>
         <target>Strukturerhaltende Verarbeitung bewahrt alle Tabellenstrukturen und Entitaetsbeziehungen. AI fuehrt eine vergleichende Analyse der geschuetzten Abschluesse durch. Lokale Restoration stellt die echten Unternehmensdaten wieder her und erzeugt analysefertige Vergleichsberichte.</target>
-      </trans-unit>
-      <trans-unit id="faqTitle">
+      </segment>
+    </unit>
+    <unit id="faqTitle">
+      <segment>
         <source>FAQ</source>
         <target>FAQ</target>
-      </trans-unit>
-      <trans-unit id="faq1Question">
+      </segment>
+    </unit>
+    <unit id="faq1Question">
+      <segment>
         <source>What is structure-preserving processing?</source>
         <target>Was ist strukturerhaltende Verarbeitung?</target>
-      </trans-unit>
-      <trans-unit id="faq1Answer">
+      </segment>
+    </unit>
+    <unit id="faq1Answer">
+      <segment>
         <source>Structure-preserving processing is a data protection method that replaces sensitive elements while maintaining document layout, entity relationships, table structures, and semantic context so AI models can process the document accurately.</source>
         <target>Strukturerhaltende Verarbeitung ist eine Datenschutzmethode, die sensible Elemente ersetzt und dabei Dokumentlayout, Entitaetsbeziehungen, Tabellenstrukturen und semantischen Kontext bewahrt, damit AI-Modelle das Dokument praezise verarbeiten koennen.</target>
-      </trans-unit>
-      <trans-unit id="faq2Question">
+      </segment>
+    </unit>
+    <unit id="faq2Question">
+      <segment>
         <source>How does it differ from flat masking?</source>
         <target>Wie unterscheidet es sich von Flat Masking?</target>
-      </trans-unit>
-      <trans-unit id="faq2Answer">
+      </segment>
+    </unit>
+    <unit id="faq2Answer">
+      <segment>
         <source>Flat masking treats every sensitive value identically, replacing it with a generic token regardless of context. Structure-preserving processing maintains semantic relationships, entity consistency, and document layout during protection.</source>
         <target>Flat Masking behandelt jeden sensiblen Wert identisch und ersetzt ihn kontextunabhaengig durch ein generisches Token. Strukturerhaltende Verarbeitung bewahrt waehrend des Schutzes semantische Beziehungen, Entitaetskonsistenz und das Dokumentlayout.</target>
-      </trans-unit>
-      <trans-unit id="relatedCard1Label">
+      </segment>
+    </unit>
+    <unit id="relatedCard1Label">
+      <segment>
         <source>Product Overview</source>
         <target>Produktuebersicht</target>
-      </trans-unit>
-      <trans-unit id="relatedCard2Label">
+      </segment>
+    </unit>
+    <unit id="relatedCard2Label">
+      <segment>
         <source>Architecture</source>
         <target>Architektur</target>
-      </trans-unit>
-      <trans-unit id="relatedCard3Label">
+      </segment>
+    </unit>
+    <unit id="relatedCard3Label">
+      <segment>
         <source>Trust &amp; Compliance</source>
         <target>Vertrauen &amp; Compliance</target>
-      </trans-unit>
-      <trans-unit id="relatedCard4Label">
+      </segment>
+    </unit>
+    <unit id="relatedCard4Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="relatedCard5Label">
+      </segment>
+    </unit>
+    <unit id="relatedCard5Label">
+      <segment>
         <source>Structure-Preserving vs Flat Masking</source>
         <target>Strukturerhaltende Verarbeitung vs Flat Masking</target>
-      </trans-unit>
-      <trans-unit id="ctaTitle">
+      </segment>
+    </unit>
+    <unit id="ctaTitle">
+      <segment>
         <source>See how LLM Capsule works with your data</source>
         <target>Erfahren Sie, wie LLM Capsule mit Ihren Daten arbeitet</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsaechlichen Workflows.</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn1Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn2Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnoteLink1Label">
+      </segment>
+    </unit>
+    <unit id="ctaFootnoteLink1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>Architektur-Brief herunterladen</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnoteLink2Label">
+      </segment>
+    </unit>
+    <unit id="ctaFootnoteLink2Label">
+      <segment>
         <source>AWS Marketplace</source>
         <target>AWS Marketplace</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

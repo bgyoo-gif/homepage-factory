@@ -1,94 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="enterprise-context-control">
-    <body>
-      <!-- Section01_Hero -->
-      <trans-unit id="title">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+  <file id="enterprise-context-control">
+    <unit id="title">
+      <segment>
         <source>Enterprise Context Control</source>
         <target>Enterprise Context Control</target>
-      </trans-unit>
-      <trans-unit id="description">
+      </segment>
+    </unit>
+    <unit id="description">
+      <segment>
         <source>Policy-based sensitivity classification that determines what data to protect based on document type, department, and workflow context during AI processing.</source>
         <target>Richtlinienbasierte Sensitivitaetsklassifizierung, die anhand von Dokumenttyp, Abteilung und Workflow-Kontext bestimmt, welche Daten waehrend der KI-Verarbeitung geschuetzt werden sollen.</target>
-      </trans-unit>
-
-      <!-- Section02_Definition -->
-      <trans-unit id="label">
+      </segment>
+    </unit>
+    <unit id="label">
+      <segment>
         <source>DEFINITION</source>
         <target>DEFINITION</target>
-      </trans-unit>
-      <trans-unit id="body">
+      </segment>
+    </unit>
+    <unit id="body">
+      <segment>
         <source>Enterprise context control is a policy-based approach to sensitivity classification in AI workflows. Rather than applying uniform rules to all data, it determines what to protect based on document type, department origin, workflow stage, and enterprise-specific sensitivity policies. It is a core component of context-aware data control.</source>
         <target>Enterprise Context Control ist ein richtlinienbasierter Ansatz zur Sensitivitaetsklassifizierung in KI-Workflows. Anstatt einheitliche Regeln auf alle Daten anzuwenden, bestimmt es den Schutzbedarf basierend auf Dokumenttyp, Abteilungsherkunft, Workflow-Phase und unternehmensspezifischen Sensitivitaetsrichtlinien. Es ist eine Kernkomponente der kontextbewussten Datenkontrolle.</target>
-      </trans-unit>
-
-      <!-- Section03_Explanation -->
-      <trans-unit id="headingBrand">
+      </segment>
+    </unit>
+    <unit id="headingBrand">
+      <segment>
         <source>Explanation</source>
         <target>Erlaeuterung</target>
-      </trans-unit>
-      <trans-unit id="paragraph1">
+      </segment>
+    </unit>
+    <unit id="paragraph1">
+      <segment>
         <source>Not all data carries the same sensitivity in every context. A company name in a press release is public. The same company name in an M&amp;A target list is highly sensitive. Enterprise context control enables organizations to define protection policies that reflect these contextual differences.</source>
         <target>Nicht alle Daten haben in jedem Kontext dieselbe Sensitivitaet. Ein Firmenname in einer Pressemitteilung ist oeffentlich. Derselbe Firmenname auf einer M&amp;A-Zielliste ist hochsensibel. Enterprise Context Control ermoeglicht es Organisationen, Schutzrichtlinien zu definieren, die diese kontextuellen Unterschiede widerspiegeln.</target>
-      </trans-unit>
-      <trans-unit id="paragraph2">
+      </segment>
+    </unit>
+    <unit id="paragraph2">
+      <segment>
         <source>This goes beyond PII detection. Enterprise context control covers trade secrets, financial terms, strategic data, internal metrics, and any organization-specific sensitivity category — providing true enterprise confidentiality control.</source>
         <target>Dies geht ueber die PII-Erkennung hinaus. Enterprise Context Control umfasst Geschaeftsgeheimnisse, Finanzbedingungen, strategische Daten, interne Kennzahlen und jede organisationsspezifische Sensitivitaetskategorie und bietet damit echte Vertraulichkeitskontrolle auf Unternehmensebene.</target>
-      </trans-unit>
-
-      <!-- Section04_Example -->
-      <trans-unit id="exampleHeadingBrand">
+      </segment>
+    </unit>
+    <unit id="exampleHeadingBrand">
+      <segment>
         <source>Example</source>
         <target>Beispiel</target>
-      </trans-unit>
-      <trans-unit id="cardText">
+      </segment>
+    </unit>
+    <unit id="cardText">
+      <segment>
         <source>A bank defines different encapsulation policies for three document types: customer correspondence (protect PII only), internal risk assessments (protect PII plus risk scores and limit recommendations), and board presentations (protect all financial projections plus strategic commentary). Enterprise context control applies the right policy to each document automatically.</source>
         <target>Eine Bank definiert unterschiedliche Encapsulation-Richtlinien fuer drei Dokumenttypen: Kundenkorrespondenz (nur PII schuetzen), interne Risikobewertungen (PII sowie Risikobewertungen und Limitempfehlungen schuetzen) und Vorstandspraesentationen (alle Finanzprognosen und strategischen Kommentare schuetzen). Enterprise Context Control wendet automatisch die richtige Richtlinie auf jedes Dokument an.</target>
-      </trans-unit>
-
-      <!-- Section05_RelatedTerms -->
-      <trans-unit id="relatedHeadingPlain">
+      </segment>
+    </unit>
+    <unit id="relatedHeadingPlain">
+      <segment>
         <source>Related</source>
         <target>Verwandte</target>
-      </trans-unit>
-      <trans-unit id="relatedHeadingBrand">
+      </segment>
+    </unit>
+    <unit id="relatedHeadingBrand">
+      <segment>
         <source>Terms</source>
         <target>Begriffe</target>
-      </trans-unit>
-      <trans-unit id="relatedLinksHeading">
+      </segment>
+    </unit>
+    <unit id="relatedLinksHeading">
+      <segment>
         <source>Related Pages</source>
         <target>Verwandte Seiten</target>
-      </trans-unit>
-
-      <!-- Section06_CTA -->
-      <trans-unit id="ctaTitlePre">
+      </segment>
+    </unit>
+    <unit id="ctaTitlePre">
+      <segment>
         <source>See</source>
         <target>Erleben Sie</target>
-      </trans-unit>
-      <trans-unit id="ctaTitleProduct">
+      </segment>
+    </unit>
+    <unit id="ctaTitleProduct">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="ctaTitlePost">
+      </segment>
+    </unit>
+    <unit id="ctaTitlePost">
+      <segment>
         <source>Enterprise Context Control in Action</source>
         <target>Enterprise Context Control in Aktion</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Experience how policy-based sensitivity classification protects enterprise data across every document type and workflow.</source>
         <target>Erleben Sie, wie richtlinienbasierte Sensitivitaetsklassifizierung Unternehmensdaten ueber alle Dokumenttypen und Workflows hinweg schuetzt.</target>
-      </trans-unit>
-      <trans-unit id="cta1Label">
+      </segment>
+    </unit>
+    <unit id="cta1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Demo anfordern</target>
-      </trans-unit>
-      <trans-unit id="cta2Label">
+      </segment>
+    </unit>
+    <unit id="cta2Label">
+      <segment>
         <source>View Product</source>
         <target>Produkt ansehen</target>
-      </trans-unit>
-      <trans-unit id="footnote">
+      </segment>
+    </unit>
+    <unit id="footnote">
+      <segment>
         <source>Enterprise AI Enablement by CUBIG</source>
         <target>Enterprise AI Enablement von CUBIG</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

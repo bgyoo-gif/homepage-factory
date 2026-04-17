@@ -1,98 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="structure-preserving-processing">
-    <body>
-      <!-- Section01_Hero -->
-      <trans-unit id="title">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+  <file id="structure-preserving-processing">
+    <unit id="title">
+      <segment>
         <source>Structure-Preserving Processing</source>
         <target>Strukturerhaltende Verarbeitung</target>
-      </trans-unit>
-      <trans-unit id="description">
+      </segment>
+    </unit>
+    <unit id="description">
+      <segment>
         <source>Replacing sensitive elements while maintaining document layout, entity relationships, and semantic context for accurate AI processing — a core capability of</source>
         <target>Ersetzen sensibler Elemente unter Beibehaltung des Dokumentlayouts, der Entitaetsbeziehungen und des semantischen Kontexts fuer praezise KI-Verarbeitung — eine Kernfaehigkeit von</target>
-      </trans-unit>
-      <trans-unit id="productName">
+      </segment>
+    </unit>
+    <unit id="productName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-
-      <!-- Section02_Definition -->
-      <trans-unit id="bannerLabel">
+      </segment>
+    </unit>
+    <unit id="bannerLabel">
+      <segment>
         <source>DEFINITION</source>
         <target>DEFINITION</target>
-      </trans-unit>
-      <trans-unit id="bannerText">
+      </segment>
+    </unit>
+    <unit id="bannerText">
+      <segment>
         <source>Structure-preserving processing is a data protection method that replaces sensitive elements in enterprise documents while maintaining document layout, entity relationships, table structures, cross-references, and semantic context. It ensures AI models receive structurally intact documents for accurate processing.</source>
         <target>Strukturerhaltende Verarbeitung ist eine Datenschutzmethode, die sensible Elemente in Unternehmensdokumenten ersetzt und dabei Dokumentlayout, Entitaetsbeziehungen, Tabellenstrukturen, Querverweise und semantischen Kontext bewaehrt. Sie stellt sicher, dass KI-Modelle strukturell intakte Dokumente fuer eine praezise Verarbeitung erhalten.</target>
-      </trans-unit>
-
-      <!-- Section03_Explanation -->
-      <trans-unit id="sectionHeading">
+      </segment>
+    </unit>
+    <unit id="sectionHeading">
+      <segment>
         <source>Explanation</source>
         <target>Erlaeuterung</target>
-      </trans-unit>
-      <trans-unit id="paragraph1">
+      </segment>
+    </unit>
+    <unit id="paragraph1">
+      <segment>
         <source>Flat masking treats every sensitive value as an independent token, replacing each with a generic placeholder. This collapses entity relationships, breaks table schemas, and removes the structural information AI models use for comprehension.</source>
         <target>Flaches Masking behandelt jeden sensiblen Wert als unabhaengiges Token und ersetzt ihn durch einen generischen Platzhalter. Dies zerstoert Entitaetsbeziehungen, bricht Tabellenschemata auf und entfernt die Strukturinformationen, die KI-Modelle zum Verstaendnis benoetigen.</target>
-      </trans-unit>
-      <trans-unit id="paragraph2">
+      </segment>
+    </unit>
+    <unit id="paragraph2">
+      <segment>
         <source>Structure-preserving processing maintains these relationships. When the same entity appears in multiple locations, all occurrences map to the same replacement. Table column headers and row identifiers remain semantically consistent. Cross-references between document sections maintain their logical connections.</source>
         <target>Strukturerhaltende Verarbeitung bewahrt diese Beziehungen. Wenn dieselbe Entitaet an mehreren Stellen erscheint, werden alle Vorkommen derselben Ersetzung zugeordnet. Tabellenspaltenheader und Zeilenbezeichner bleiben semantisch konsistent. Querverweise zwischen Dokumentabschnitten behalten ihre logischen Verbindungen bei.</target>
-      </trans-unit>
-
-      <!-- Section04_Example -->
-      <trans-unit id="exampleHeading">
+      </segment>
+    </unit>
+    <unit id="exampleHeading">
+      <segment>
         <source>Example</source>
         <target>Beispiel</target>
-      </trans-unit>
-      <trans-unit id="cardText">
+      </segment>
+    </unit>
+    <unit id="cardText">
+      <segment>
         <source>A contract references "Acme Corp" 47 times across 30 pages — as a party in the preamble, a signatory in the execution block, and a reference in 12 obligation clauses. Structure-preserving processing replaces all 47 instances with</source>
         <target>Ein Vertrag verweist auf 30 Seiten 47-mal auf „Acme Corp" — als Partei in der Praeambel, als Unterzeichner im Unterschriftenblock und als Referenz in 12 Verpflichtungsklauseln. Strukturerhaltende Verarbeitung ersetzt alle 47 Instanzen durch</target>
-      </trans-unit>
-      <trans-unit id="codeInline">
+      </segment>
+    </unit>
+    <unit id="codeInline">
+      <segment>
         <source>ENTITY_A</source>
         <target>ENTITY_A</target>
-      </trans-unit>
-
-      <!-- Section05_RelatedTerms -->
-      <trans-unit id="relatedTermsHeading">
+      </segment>
+    </unit>
+    <unit id="relatedTermsHeading">
+      <segment>
         <source>Related Terms</source>
         <target>Verwandte Begriffe</target>
-      </trans-unit>
-      <trans-unit id="relatedPagesHeading">
+      </segment>
+    </unit>
+    <unit id="relatedPagesHeading">
+      <segment>
         <source>Related Pages</source>
         <target>Verwandte Seiten</target>
-      </trans-unit>
-
-      <!-- Section06_CTA -->
-      <trans-unit id="titlePrefix">
+      </segment>
+    </unit>
+    <unit id="titlePrefix">
+      <segment>
         <source>See</source>
         <target>Erleben Sie</target>
-      </trans-unit>
-      <trans-unit id="ctaProductName">
+      </segment>
+    </unit>
+    <unit id="ctaProductName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="titleSuffix">
+      </segment>
+    </unit>
+    <unit id="titleSuffix">
+      <segment>
         <source>Structure-Preserving Processing in Action</source>
         <target>Strukturerhaltende Verarbeitung in Aktion</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Experience how enterprise documents retain full structural integrity throughout the encapsulation and AI processing pipeline.</source>
         <target>Erleben Sie, wie Unternehmensdokumente waehrend der gesamten Encapsulation- und KI-Verarbeitungspipeline ihre vollstaendige strukturelle Integritaet bewahren.</target>
-      </trans-unit>
-      <trans-unit id="primaryButtonLabel">
+      </segment>
+    </unit>
+    <unit id="primaryButtonLabel">
+      <segment>
         <source>Request a Demo</source>
         <target>Demo anfordern</target>
-      </trans-unit>
-      <trans-unit id="secondaryButtonLabel">
+      </segment>
+    </unit>
+    <unit id="secondaryButtonLabel">
+      <segment>
         <source>View Product</source>
         <target>Produkt ansehen</target>
-      </trans-unit>
-      <trans-unit id="footnote">
+      </segment>
+    </unit>
+    <unit id="footnote">
+      <segment>
         <source>Enterprise AI Enablement by CUBIG</source>
         <target>Enterprise AI Enablement von CUBIG</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

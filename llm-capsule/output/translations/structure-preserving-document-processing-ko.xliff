@@ -1,139 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ko" datatype="plaintext" original="structure-preserving-document-processing">
-    <body>
-      <trans-unit id="heroTitle">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ko">
+  <file id="structure-preserving-document-processing">
+    <unit id="heroTitle">
+      <segment>
         <source>Structure-Preserving Document Processing</source>
         <target>구조 보존 문서 처리</target>
-      </trans-unit>
-      <trans-unit id="heroDescription">
+      </segment>
+    </unit>
+    <unit id="heroDescription">
+      <segment>
         <source>Why maintaining document structure during data protection is critical for accurate AI outputs in enterprise workflows.</source>
         <target>데이터 보호 과정에서 문서 구조를 유지하는 것이 기업 워크플로우의 정확한 AI 출력에 왜 중요한지 설명합니다.</target>
-      </trans-unit>
-      <trans-unit id="breadcrumbHome">
+      </segment>
+    </unit>
+    <unit id="breadcrumbHome">
+      <segment>
         <source>Home</source>
         <target>홈</target>
-      </trans-unit>
-      <trans-unit id="breadcrumbResources">
+      </segment>
+    </unit>
+    <unit id="breadcrumbResources">
+      <segment>
         <source>Resources</source>
         <target>리소스</target>
-      </trans-unit>
-      <trans-unit id="breadcrumbLearn">
+      </segment>
+    </unit>
+    <unit id="breadcrumbLearn">
+      <segment>
         <source>Learn</source>
         <target>학습</target>
-      </trans-unit>
-      <trans-unit id="problemParagraph1">
+      </segment>
+    </unit>
+    <unit id="problemParagraph1">
+      <segment>
         <source>Enterprise documents are not flat text. They contain tables, nested sections, cross-references, entity relationships, and formatting that carries semantic meaning. When flat masking tools process these documents, they treat every sensitive value identically — replacing it with a generic token regardless of its structural role.</source>
         <target>기업 문서는 단순한 텍스트가 아닙니다. 테이블, 중첩 섹션, 상호 참조, 엔티티 관계, 의미를 전달하는 서식을 포함합니다. 단순 마스킹 도구는 이러한 문서를 처리할 때 모든 민감 데이터를 동일하게 취급하여 구조적 역할과 무관하게 일괄 토큰으로 대체합니다.</target>
-      </trans-unit>
-      <trans-unit id="problemParagraph2">
+      </segment>
+    </unit>
+    <unit id="problemParagraph2">
+      <segment>
         <source>A customer name in a table header serves a different function than the same name in a paragraph. A date in a contract preamble has different significance than a date in a payment schedule. Flat masking collapses these distinctions, degrading AI output quality.</source>
         <target>테이블 헤더의 고객명은 문단 내 동일한 이름과 다른 기능을 합니다. 계약 서문의 날짜는 결제 일정의 날짜와 다른 의미를 가집니다. 단순 마스킹은 이러한 구분을 무너뜨려 AI 출력 품질을 저하시킵니다.</target>
-      </trans-unit>
-      <trans-unit id="definitionLabel">
+      </segment>
+    </unit>
+    <unit id="definitionLabel">
+      <segment>
         <source>DEFINITION — Structure-Preserving Processing</source>
         <target>정의 — 구조 보존 처리</target>
-      </trans-unit>
-      <trans-unit id="definitionText">
+      </segment>
+    </unit>
+    <unit id="definitionText">
+      <segment>
         <source>Structure-preserving processing is a data protection method that replaces sensitive elements while maintaining the document's layout, entity relationships, table structures, and semantic context. It ensures AI models receive structurally intact documents that support accurate summarization, extraction, and analysis.</source>
         <target>구조 보존 처리는 문서의 레이아웃, 엔티티 관계, 테이블 구조, 의미적 맥락을 유지하면서 민감 요소를 대체하는 데이터 보호 방법입니다. AI 모델이 구조적으로 온전한 문서를 수신하여 정확한 요약, 추출, 분석을 수행할 수 있도록 합니다.</target>
-      </trans-unit>
-      <trans-unit id="explanationIntro">
+      </segment>
+    </unit>
+    <unit id="explanationIntro">
+      <segment>
         <source>Structure-preserving processing operates at multiple document layers:</source>
         <target>구조 보존 처리는 여러 문서 레이어에서 작동합니다:</target>
-      </trans-unit>
-      <trans-unit id="explanationBullet1">
+      </segment>
+    </unit>
+    <unit id="explanationBullet1">
+      <segment>
         <source>Layout preservation. Table structures, column headers, row relationships, and nested sections are maintained. AI models can accurately extract tabular data because the schema remains intact.</source>
         <target>레이아웃 보존. 테이블 구조, 열 헤더, 행 관계, 중첩 섹션이 유지됩니다. 스키마가 온전하게 유지되므로 AI 모델이 표 데이터를 정확하게 추출할 수 있습니다.</target>
-      </trans-unit>
-      <trans-unit id="explanationBullet2">
+      </segment>
+    </unit>
+    <unit id="explanationBullet2">
+      <segment>
         <source>Entity consistency. When the same entity appears multiple times in a document, all instances are mapped to the same replacement. AI models can track entity references across sections — "the Borrower" in clause 1 refers to the same encapsulated entity in clause 7.</source>
         <target>엔티티 일관성. 동일한 엔티티가 문서 내에 여러 번 등장할 경우 모든 인스턴스가 동일한 대체값에 매핑됩니다. AI 모델이 섹션 간 엔티티 참조를 추적할 수 있어 1조의 "차입자"와 7조의 동일 Encapsulation 엔티티가 연결됩니다.</target>
-      </trans-unit>
-      <trans-unit id="explanationBullet3">
+      </segment>
+    </unit>
+    <unit id="explanationBullet3">
+      <segment>
         <source>Semantic context. Context-aware data control distinguishes between sensitive data that must be protected and contextual information that AI needs for comprehension. Job titles, section headers, and document type indicators remain readable.</source>
         <target>의미적 맥락. 컨텍스트 인식 데이터 제어는 보호해야 할 민감 데이터와 AI 이해에 필요한 맥락 정보를 구분합니다. 직책, 섹션 헤더, 문서 유형 표시는 읽기 가능한 상태로 유지됩니다.</target>
-      </trans-unit>
-      <trans-unit id="explanationBullet4">
+      </segment>
+    </unit>
+    <unit id="explanationBullet4">
+      <segment>
         <source>Cross-document consistency. When processing document sets — such as a contract and its amendments — entity mappings remain consistent across files, enabling AI to perform accurate cross-document analysis.</source>
         <target>문서 간 일관성. 계약서와 그 수정 계약 등 문서 세트를 처리할 때 엔티티 매핑이 파일 간에 일관되게 유지되어 AI가 정확한 문서 간 분석을 수행할 수 있습니다.</target>
-      </trans-unit>
-      <trans-unit id="exampleCardTitle">
+      </segment>
+    </unit>
+    <unit id="exampleCardTitle">
+      <segment>
         <source>Financial Statement Analysis</source>
         <target>재무제표 분석</target>
-      </trans-unit>
-      <trans-unit id="exampleCardParagraph1">
+      </segment>
+    </unit>
+    <unit id="exampleCardParagraph1">
+      <segment>
         <source>An audit firm needs AI to compare quarterly financial statements across 15 portfolio companies. Each statement contains tabular data with company names, executive names, account numbers, and financial figures.</source>
         <target>회계법인이 15개 포트폴리오 기업의 분기 재무제표를 AI로 비교해야 합니다. 각 재무제표에는 회사명, 임원명, 계좌번호, 재무 수치가 포함된 표 데이터가 있습니다.</target>
-      </trans-unit>
-      <trans-unit id="exampleCardParagraph2">
+      </segment>
+    </unit>
+    <unit id="exampleCardParagraph2">
+      <segment>
         <source>Structure-preserving processing maintains all table structures and entity relationships. AI performs comparative analysis across the protected statements. Local restoration restores the real company data, producing analyst-ready comparison reports.</source>
         <target>구조 보존 처리가 모든 테이블 구조와 엔티티 관계를 유지합니다. AI는 보호된 재무제표에 대해 비교 분석을 수행합니다. 로컬 Restoration으로 실제 기업 데이터가 복원되어 분석가용 비교 보고서가 생성됩니다.</target>
-      </trans-unit>
-      <trans-unit id="faqTitle">
+      </segment>
+    </unit>
+    <unit id="faqTitle">
+      <segment>
         <source>FAQ</source>
         <target>FAQ</target>
-      </trans-unit>
-      <trans-unit id="faq1Question">
+      </segment>
+    </unit>
+    <unit id="faq1Question">
+      <segment>
         <source>What is structure-preserving processing?</source>
         <target>구조 보존 처리란 무엇입니까?</target>
-      </trans-unit>
-      <trans-unit id="faq1Answer">
+      </segment>
+    </unit>
+    <unit id="faq1Answer">
+      <segment>
         <source>Structure-preserving processing is a data protection method that replaces sensitive elements while maintaining document layout, entity relationships, table structures, and semantic context so AI models can process the document accurately.</source>
         <target>구조 보존 처리는 문서 레이아웃, 엔티티 관계, 테이블 구조, 의미적 맥락을 유지하면서 민감 요소를 대체하는 데이터 보호 방법으로, AI 모델이 문서를 정확하게 처리할 수 있도록 합니다.</target>
-      </trans-unit>
-      <trans-unit id="faq2Question">
+      </segment>
+    </unit>
+    <unit id="faq2Question">
+      <segment>
         <source>How does it differ from flat masking?</source>
         <target>단순 마스킹과 어떻게 다릅니까?</target>
-      </trans-unit>
-      <trans-unit id="faq2Answer">
+      </segment>
+    </unit>
+    <unit id="faq2Answer">
+      <segment>
         <source>Flat masking treats every sensitive value identically, replacing it with a generic token regardless of context. Structure-preserving processing maintains semantic relationships, entity consistency, and document layout during protection.</source>
         <target>단순 마스킹은 모든 민감 데이터를 동일하게 취급하여 맥락과 무관하게 일괄 토큰으로 대체합니다. 구조 보존 처리는 보호 과정에서 의미적 관계, 엔티티 일관성, 문서 레이아웃을 유지합니다.</target>
-      </trans-unit>
-      <trans-unit id="relatedCard1Label">
+      </segment>
+    </unit>
+    <unit id="relatedCard1Label">
+      <segment>
         <source>Product Overview</source>
         <target>제품 개요</target>
-      </trans-unit>
-      <trans-unit id="relatedCard2Label">
+      </segment>
+    </unit>
+    <unit id="relatedCard2Label">
+      <segment>
         <source>Architecture</source>
         <target>아키텍처</target>
-      </trans-unit>
-      <trans-unit id="relatedCard3Label">
+      </segment>
+    </unit>
+    <unit id="relatedCard3Label">
+      <segment>
         <source>Trust &amp; Compliance</source>
         <target>신뢰 &amp; 컴플라이언스</target>
-      </trans-unit>
-      <trans-unit id="relatedCard4Label">
+      </segment>
+    </unit>
+    <unit id="relatedCard4Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="relatedCard5Label">
+      </segment>
+    </unit>
+    <unit id="relatedCard5Label">
+      <segment>
         <source>Structure-Preserving vs Flat Masking</source>
         <target>구조 보존 처리 vs 단순 마스킹</target>
-      </trans-unit>
-      <trans-unit id="ctaTitle">
+      </segment>
+    </unit>
+    <unit id="ctaTitle">
+      <segment>
         <source>See how LLM Capsule works with your data</source>
         <target>LLM Capsule이 고객 데이터에서 어떻게 작동하는지 확인하세요</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>문서, 배포 조건, 평가 기준을 가져오세요. 실제 워크플로우에서 직접 시연합니다.</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn1Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn2Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnoteLink1Label">
+      </segment>
+    </unit>
+    <unit id="ctaFootnoteLink1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>아키텍처 브리프 다운로드</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnoteLink2Label">
+      </segment>
+    </unit>
+    <unit id="ctaFootnoteLink2Label">
+      <segment>
         <source>AWS Marketplace</source>
         <target>AWS Marketplace</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

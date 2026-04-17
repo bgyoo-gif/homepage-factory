@@ -1,240 +1,341 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ja" datatype="plaintext" original="how-to-use-ai-on-sensitive-enterprise-data">
-    <body>
-      <!-- Section 01: Hero -->
-      <trans-unit id="title_en">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ja">
+  <file id="how-to-use-ai-on-sensitive-enterprise-data">
+    <unit id="title_en">
+      <segment>
         <source>How to Use AI on Sensitive Enterprise Data</source>
         <target>機密の企業データでAIを活用する方法</target>
-      </trans-unit>
-      <trans-unit id="description_en">
+      </segment>
+    </unit>
+    <unit id="description_en">
+      <segment>
         <source>Learn how to use large language models on sensitive enterprise data without exposing original documents. Encapsulate locally, process safely, restore usable outputs.</source>
         <target>原本ドキュメントを公開せずに機密の企業データで大規模言語モデルを活用する方法をご紹介します。ローカルでEncapsulationし、安全に処理し、使用可能な出力をRestorationします。</target>
-      </trans-unit>
-      <trans-unit id="breadcrumb_home_en">
+      </segment>
+    </unit>
+    <unit id="breadcrumb_home_en">
+      <segment>
         <source>Home</source>
         <target>ホーム</target>
-      </trans-unit>
-      <trans-unit id="breadcrumb_resources_en">
+      </segment>
+    </unit>
+    <unit id="breadcrumb_resources_en">
+      <segment>
         <source>Resources</source>
         <target>リソース</target>
-      </trans-unit>
-      <trans-unit id="breadcrumb_learn_en">
+      </segment>
+    </unit>
+    <unit id="breadcrumb_learn_en">
+      <segment>
         <source>Learn</source>
         <target>学習</target>
-      </trans-unit>
-      <!-- Section 02: Screenshot Frame -->
-      <trans-unit id="label_en">
+      </segment>
+    </unit>
+    <unit id="label_en">
+      <segment>
         <source>Secure Enterprise AI — Sensitive documents encapsulated locally, processed by AI, outputs restored with original data</source>
         <target>セキュアな企業AI — 機密ドキュメントをローカルでEncapsulationし、AIで処理し、原本データで出力をRestorationします</target>
-      </trans-unit>
-      <!-- Section 03: The Challenge -->
-      <trans-unit id="heading_pre_en">
+      </segment>
+    </unit>
+    <unit id="heading_pre_en">
+      <segment>
         <source>The</source>
         <target>その</target>
-      </trans-unit>
-      <trans-unit id="heading_highlight_en">
+      </segment>
+    </unit>
+    <unit id="heading_highlight_en">
+      <segment>
         <source>Challenge</source>
         <target>課題</target>
-      </trans-unit>
-      <trans-unit id="para1_en">
+      </segment>
+    </unit>
+    <unit id="para1_en">
+      <segment>
         <source>Enterprises generate massive volumes of sensitive documents — contracts, financial reports, medical records, legal filings, HR communications, and internal strategy memos. These documents contain exactly the information that AI could transform: extracting key clauses, summarizing quarterly results, classifying patient records, or translating technical specifications.</source>
         <target>企業は契約書、財務報告書、医療記録、法的書類、人事コミュニケーション、内部戦略メモなど、膨大な量の機密ドキュメントを生成しています。これらのドキュメントには、AIが変革できるまさにその情報が含まれています：重要条項の抽出、四半期決算の要約、患者記録の分類、技術仕様の翻訳など。</target>
-      </trans-unit>
-      <trans-unit id="para2_en">
+      </segment>
+    </unit>
+    <unit id="para2_en">
+      <segment>
         <source>But sending this data to external AI services means exposing it. Every prompt, every document, every query transmitted to an LLM API becomes visible to the AI provider's infrastructure. For regulated industries and security-conscious organizations, this creates a fundamental conflict: the data that benefits most from AI is the data that cannot be exposed.</source>
         <target>しかし、このデータを外部AIサービスに送信することは、データの漏洩を意味します。LLM APIに送信されるすべてのプロンプト、すべてのドキュメント、すべてのクエリがAIプロバイダーのインフラに公開されます。規制産業やセキュリティ重視の組織にとって、これは根本的な矛盾を生みます：AIから最も恩恵を受けるデータが、公開できないデータなのです。</target>
-      </trans-unit>
-      <!-- Section 04: Requirements -->
-      <trans-unit id="s4_heading_en">
+      </segment>
+    </unit>
+    <unit id="s4_heading_en">
+      <segment>
         <source>The Requirements for</source>
         <target>要件</target>
-      </trans-unit>
-      <trans-unit id="s4_heading_highlight_en">
+      </segment>
+    </unit>
+    <unit id="s4_heading_highlight_en">
+      <segment>
         <source>Secure Enterprise AI</source>
         <target>セキュアな企業AI</target>
-      </trans-unit>
-      <trans-unit id="intro_en">
+      </segment>
+    </unit>
+    <unit id="intro_en">
+      <segment>
         <source>Secure LLM usage on sensitive enterprise data requires three capabilities working together:</source>
         <target>機密の企業データでの安全なLLM利用には、3つの機能の連携が必要です:</target>
-      </trans-unit>
-      <trans-unit id="item1_strong_en">
+      </segment>
+    </unit>
+    <unit id="item1_strong_en">
+      <segment>
         <source>1. Pre-processing protection.</source>
         <target>1. 前処理による保護。</target>
-      </trans-unit>
-      <trans-unit id="item1_text_en">
-        <source> Sensitive data must be identified and replaced before it leaves the enterprise. This is not simple keyword matching — enterprise documents contain context-dependent sensitivity. A name in a contract carries different risk than the same name in a public directory. Structure-preserving processing ensures the document's semantic relationships remain intact for AI comprehension.</source>
-        <target> 機密データは企業を離れる前に特定し置換する必要があります。これは単純なキーワードマッチングではありません — 企業ドキュメントにはコンテキストに依存する機密性があります。契約書内の名前は公開ディレクトリ内の同じ名前とは異なるリスクを伴います。構造保持処理により、AIの理解に必要なドキュメントの意味的関係が維持されます。</target>
-      </trans-unit>
-      <trans-unit id="item2_strong_en">
+      </segment>
+    </unit>
+    <unit id="item1_text_en">
+      <segment>
+        <source>Sensitive data must be identified and replaced before it leaves the enterprise. This is not simple keyword matching — enterprise documents contain context-dependent sensitivity. A name in a contract carries different risk than the same name in a public directory. Structure-preserving processing ensures the document's semantic relationships remain intact for AI comprehension.</source>
+        <target>機密データは企業を離れる前に特定し置換する必要があります。これは単純なキーワードマッチングではありません — 企業ドキュメントにはコンテキストに依存する機密性があります。契約書内の名前は公開ディレクトリ内の同じ名前とは異なるリスクを伴います。構造保持処理により、AIの理解に必要なドキュメントの意味的関係が維持されます。</target>
+      </segment>
+    </unit>
+    <unit id="item2_strong_en">
+      <segment>
         <source>2. Model-agnostic processing.</source>
         <target>2. モデル非依存型処理。</target>
-      </trans-unit>
-      <trans-unit id="item2_text_en">
-        <source> The AI enablement layer must work with any LLM — not just one provider's API. Enterprises use multiple AI models for different tasks. The AI enablement data layer must operate independently of the model layer.</source>
-        <target> AIイネーブルメントレイヤーは特定プロバイダーのAPIだけでなく、あらゆるLLMで動作する必要があります。企業はさまざまなタスクに複数のAIモデルを使用します。AIイネーブルメント・データレイヤーはモデルレイヤーから独立して動作する必要があります。</target>
-      </trans-unit>
-      <trans-unit id="item3_strong_en">
+      </segment>
+    </unit>
+    <unit id="item2_text_en">
+      <segment>
+        <source>The AI enablement layer must work with any LLM — not just one provider's API. Enterprises use multiple AI models for different tasks. The AI enablement data layer must operate independently of the model layer.</source>
+        <target>AIイネーブルメントレイヤーは特定プロバイダーのAPIだけでなく、あらゆるLLMで動作する必要があります。企業はさまざまなタスクに複数のAIモデルを使用します。AIイネーブルメント・データレイヤーはモデルレイヤーから独立して動作する必要があります。</target>
+      </segment>
+    </unit>
+    <unit id="item3_strong_en">
+      <segment>
         <source>3. Output Restoration (Restoration).</source>
         <target>3. 出力Restoration (Restoration)。</target>
-      </trans-unit>
-      <trans-unit id="item3_text_en">
-        <source> AI results are restored locally. Without this, AI outputs are abstracted and unusable. Enterprise AI enablement requires that outputs contain real names, real account numbers, and real references — restored locally after AI processing completes.</source>
-        <target> AI結果はローカルで復元されます。これがなければ、AI出力は抽象的で使用不能です。企業AIイネーブルメントでは、出力に実名、実口座番号、実際の参照情報が含まれる必要があり、AI処理完了後にローカルで復元されます。</target>
-      </trans-unit>
-      <!-- Section 05: How It Works -->
-      <trans-unit id="heading_pre_s5_en">
+      </segment>
+    </unit>
+    <unit id="item3_text_en">
+      <segment>
+        <source>AI results are restored locally. Without this, AI outputs are abstracted and unusable. Enterprise AI enablement requires that outputs contain real names, real account numbers, and real references — restored locally after AI processing completes.</source>
+        <target>AI結果はローカルで復元されます。これがなければ、AI出力は抽象的で使用不能です。企業AIイネーブルメントでは、出力に実名、実口座番号、実際の参照情報が含まれる必要があり、AI処理完了後にローカルで復元されます。</target>
+      </segment>
+    </unit>
+    <unit id="heading_pre_s5_en">
+      <segment>
         <source>How</source>
         <target>どのように</target>
-      </trans-unit>
-      <trans-unit id="heading_post_en">
+      </segment>
+    </unit>
+    <unit id="heading_post_en">
+      <segment>
         <source>Enables This</source>
         <target>がこれを実現するか</target>
-      </trans-unit>
-      <trans-unit id="s5_intro_en">
+      </segment>
+    </unit>
+    <unit id="s5_intro_en">
+      <segment>
         <source>LLM Capsule operates as an AI enablement data layer between enterprise data systems and external AI services. The process follows four steps:</source>
         <target>LLM Capsuleは企業データシステムと外部AIサービスの間でAIイネーブルメント・データレイヤーとして動作します。プロセスは4つのステップに従います:</target>
-      </trans-unit>
-      <trans-unit id="step1_en">
+      </segment>
+    </unit>
+    <unit id="step1_en">
+      <segment>
         <source>Step 1: Sensitive Detection. LLM Capsule automatically identifies sensitive elements within enterprise documents — names, account numbers, dates, financial figures, project codes, and organization-defined entities beyond standard PII.</source>
         <target>ステップ1: 機密検出。LLM Capsuleが企業ドキュメント内の機密要素を自動的に特定します — 氏名、口座番号、日付、財務数値、プロジェクトコード、標準PIIを超えた組織定義エンティティ。</target>
-      </trans-unit>
-      <trans-unit id="step2_en">
+      </segment>
+    </unit>
+    <unit id="step2_en">
+      <segment>
         <source>Step 2: Local Encapsulation. Detected sensitive elements are replaced with structure-preserving tokens locally. The document retains its full semantic structure — tables, references, hierarchies — so AI models can process it accurately. The mapping between original values and tokens is stored locally and never transmitted.</source>
         <target>ステップ2: ローカルEncapsulation。検出された機密要素がローカルで構造保持トークンに置換されます。ドキュメントはテーブル、参照、階層などの完全な意味的構造を保持し、AIモデルが正確に処理できます。原本値とトークン間のマッピングはローカルに保存され、外部に送信されません。</target>
-      </trans-unit>
-      <trans-unit id="step3_en">
+      </segment>
+    </unit>
+    <unit id="step3_en">
+      <segment>
         <source>Step 3: AI Processing. Only the encapsulated document crosses the trust boundary. The AI provider receives a structurally complete document with protected values. It can summarize, extract, classify, and analyze — but never sees the original sensitive data.</source>
         <target>ステップ3: AI処理。Encapsulationされたドキュメントのみが信頼境界を越えます。AIプロバイダーは保護された値を含む構造的に完全なドキュメントを受け取ります。要約、抽出、分類、分析が可能ですが、元の機密データを見ることはありません。</target>
-      </trans-unit>
-      <trans-unit id="step4_en">
+      </segment>
+    </unit>
+    <unit id="step4_en">
+      <segment>
         <source>Step 4: Local Restoration. AI outputs are restored locally using the stored mapping. Real names, figures, dates, and references return automatically. The result is a business-ready document that can be used directly in enterprise workflows without manual post-processing.</source>
         <target>ステップ4: ローカルRestoration。保存されたマッピングを使用してAI出力がローカルで復元されます。実名、数値、日付、参照情報が自動的に復元されます。結果は、手動の後処理なしに企業ワークフローで直接使用できるビジネスレディなドキュメントです。</target>
-      </trans-unit>
-      <trans-unit id="banner_en">
+      </segment>
+    </unit>
+    <unit id="banner_en">
+      <segment>
         <source>Key principle: Your data stays on-premise. Only capsules travel. Outputs come back complete.</source>
         <target>基本原則: データはオンプレミスに留まります。移動するのはカプセルのみです。出力は完全な形で戻ります。</target>
-      </trans-unit>
-      <!-- Section 06: Use Cases -->
-      <trans-unit id="s6_heading_en">
+      </segment>
+    </unit>
+    <unit id="s6_heading_en">
+      <segment>
         <source>Enterprise</source>
         <target>企業の</target>
-      </trans-unit>
-      <trans-unit id="s6_heading_highlight_en">
+      </segment>
+    </unit>
+    <unit id="s6_heading_highlight_en">
+      <segment>
         <source>Use Cases</source>
         <target>ユースケース</target>
-      </trans-unit>
-      <trans-unit id="card1_title_en">
+      </segment>
+    </unit>
+    <unit id="card1_title_en">
+      <segment>
         <source>Financial Services</source>
         <target>金融サービス</target>
-      </trans-unit>
-      <trans-unit id="card1_desc_en">
+      </segment>
+    </unit>
+    <unit id="card1_desc_en">
+      <segment>
         <source>Banks and insurance companies process loan applications, claims documents, and regulatory filings through AI — with all customer PII, account numbers, and financial figures encapsulated before transmission.</source>
         <target>銀行と保険会社がローン申請、保険金請求書類、規制申告をAIで処理します — すべての顧客PII、口座番号、財務数値が送信前にEncapsulationされます。</target>
-      </trans-unit>
-      <trans-unit id="card2_title_en">
+      </segment>
+    </unit>
+    <unit id="card2_title_en">
+      <segment>
         <source>Healthcare &amp; Legal</source>
         <target>医療 &amp; 法務</target>
-      </trans-unit>
-      <trans-unit id="card2_desc_en">
+      </segment>
+    </unit>
+    <unit id="card2_desc_en">
+      <segment>
         <source>Hospitals and law firms use AI for medical record summarization, contract analysis, and case research — with patient identifiers, client names, and privileged information protected throughout.</source>
         <target>病院と法律事務所がAIで医療記録の要約、契約分析、判例調査を行います — 患者識別子、依頼人名、特権情報が全過程で保護されます。</target>
-      </trans-unit>
-      <trans-unit id="card3_title_en">
+      </segment>
+    </unit>
+    <unit id="card3_title_en">
+      <segment>
         <source>Defense &amp; Public Sector</source>
         <target>防衛 &amp; 公共セクター</target>
-      </trans-unit>
-      <trans-unit id="card3_desc_en">
+      </segment>
+    </unit>
+    <unit id="card3_desc_en">
+      <segment>
         <source>Government agencies and defense organizations draft confidential documents using AI — with classified terms, operation names, and tactical data encapsulated in air-gapped environments.</source>
         <target>政府機関と防衛組織がAIで機密文書を作成します — 機密用語、作戦名、戦術データがエアギャップ環境でEncapsulationされます。</target>
-      </trans-unit>
-      <trans-unit id="card4_title_en">
+      </segment>
+    </unit>
+    <unit id="card4_title_en">
+      <segment>
         <source>Telecom &amp; Security</source>
         <target>通信 &amp; セキュリティ</target>
-      </trans-unit>
-      <trans-unit id="card4_desc_en">
+      </segment>
+    </unit>
+    <unit id="card4_desc_en">
+      <segment>
         <source>Infrastructure companies analyze vulnerability logs and network data with AI — with sensitive IP addresses, topology details, and security findings protected from external exposure.</source>
         <target>インフラ企業がAIで脆弱性ログとネットワークデータを分析します — 機密IPアドレス、トポロジー詳細、セキュリティ調査結果が外部漏洩から保護されます。</target>
-      </trans-unit>
-      <!-- Section 07: FAQ -->
-      <trans-unit id="s7_heading_en">
+      </segment>
+    </unit>
+    <unit id="s7_heading_en">
+      <segment>
         <source>FAQ</source>
         <target>FAQ</target>
-      </trans-unit>
-      <trans-unit id="faq1_q_en">
+      </segment>
+    </unit>
+    <unit id="faq1_q_en">
+      <segment>
         <source>Can enterprises use AI on sensitive data safely?</source>
         <target>企業は機密データでAIを安全に使用できますか?</target>
-      </trans-unit>
-      <trans-unit id="faq1_a_en">
+      </segment>
+    </unit>
+    <unit id="faq1_a_en">
+      <segment>
         <source>Yes. By encapsulating sensitive data locally before AI processing and restoring outputs afterward, enterprises can use LLMs on real documents without exposing the original data.</source>
         <target>はい。AI処理前に機密データをローカルでEncapsulationし、処理後に出力を復元することで、企業は原本データを公開せずに実際のドキュメントでLLMを使用できます。</target>
-      </trans-unit>
-      <trans-unit id="faq2_q_en">
+      </segment>
+    </unit>
+    <unit id="faq2_q_en">
+      <segment>
         <source>What types of enterprise data can LLM Capsule handle?</source>
         <target>LLM Capsuleはどのような企業データを処理できますか?</target>
-      </trans-unit>
-      <trans-unit id="faq2_a_en">
+      </segment>
+    </unit>
+    <unit id="faq2_a_en">
+      <segment>
         <source>LLM Capsule handles structured and unstructured enterprise data including contracts, financial documents, medical records, legal filings, HR files, and customer communications.</source>
         <target>LLM Capsuleは契約書、財務書類、医療記録、法的書類、人事ファイル、顧客コミュニケーションを含む構造化・非構造化企業データを処理します。</target>
-      </trans-unit>
-      <trans-unit id="faq3_q_en">
+      </segment>
+    </unit>
+    <unit id="faq3_q_en">
+      <segment>
         <source>Does LLM Capsule work with any AI model?</source>
         <target>LLM CapsuleはすべてのAIモデルで動作しますか?</target>
-      </trans-unit>
-      <trans-unit id="faq3_a_en">
+      </segment>
+    </unit>
+    <unit id="faq3_a_en">
+      <segment>
         <source>Yes. LLM Capsule is model-agnostic. It works with ChatGPT, Claude, Gemini, Perplexity, or any LLM API because it operates at the data layer before transmission.</source>
         <target>はい。LLM Capsuleはモデル非依存型です。送信前のデータレイヤーで動作するため、ChatGPT、Claude、Gemini、Perplexity、その他すべてのLLM APIで動作します。</target>
-      </trans-unit>
-      <trans-unit id="faq4_q_en">
+      </segment>
+    </unit>
+    <unit id="faq4_q_en">
+      <segment>
         <source>What happens to AI outputs after processing?</source>
         <target>AI処理後の出力はどうなりますか?</target>
-      </trans-unit>
-      <trans-unit id="faq4_a_en">
+      </segment>
+    </unit>
+    <unit id="faq4_a_en">
+      <segment>
         <source>AI outputs are automatically restored locally. Original names, figures, dates, and references are mapped back into the AI results, producing business-ready documents without manual post-processing.</source>
         <target>AI出力はローカルで自動的に復元されます。原本の氏名、数値、日付、参照情報がAI結果にマッピングされ、手動の後処理なしでビジネスレディなドキュメントが生成されます。</target>
-      </trans-unit>
-      <!-- Section 08: Related Pages -->
-      <trans-unit id="section_label_en">
+      </segment>
+    </unit>
+    <unit id="section_label_en">
+      <segment>
         <source>Related</source>
         <target>関連ページ</target>
-      </trans-unit>
-      <trans-unit id="link1_title_en">
+      </segment>
+    </unit>
+    <unit id="link1_title_en">
+      <segment>
         <source>Product Overview</source>
         <target>製品概要</target>
-      </trans-unit>
-      <trans-unit id="link2_title_en">
+      </segment>
+    </unit>
+    <unit id="link2_title_en">
+      <segment>
         <source>Architecture</source>
         <target>アーキテクチャ</target>
-      </trans-unit>
-      <trans-unit id="link3_title_en">
+      </segment>
+    </unit>
+    <unit id="link3_title_en">
+      <segment>
         <source>Trust &amp; Compliance</source>
         <target>信頼 &amp; コンプライアンス</target>
-      </trans-unit>
-      <trans-unit id="link4_title_en">
+      </segment>
+    </unit>
+    <unit id="link4_title_en">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <!-- Section 09: CTA Band -->
-      <trans-unit id="title_pre_en">
+      </segment>
+    </unit>
+    <unit id="title_pre_en">
+      <segment>
         <source>Use AI on Your Sensitive Data with</source>
         <target>機密データでAIを活用</target>
-      </trans-unit>
-      <trans-unit id="description_cta_en">
+      </segment>
+    </unit>
+    <unit id="description_cta_en">
+      <segment>
         <source>Enable enterprise AI on real documents without exposing sensitive data. Encapsulate locally, process safely, restore completely.</source>
         <target>機密データを公開せずに実際のドキュメントで企業AIを実現します。ローカルでEncapsulationし、安全に処理し、完全にRestorationします。</target>
-      </trans-unit>
-      <trans-unit id="btn1_label_en">
+      </segment>
+    </unit>
+    <unit id="btn1_label_en">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="btn2_label_en">
+      </segment>
+    </unit>
+    <unit id="btn2_label_en">
+      <segment>
         <source>View Product</source>
         <target>製品を見る</target>
-      </trans-unit>
-      <trans-unit id="footnote_en">
+      </segment>
+    </unit>
+    <unit id="footnote_en">
+      <segment>
         <source>Enterprise AI Enablement by CUBIG</source>
         <target>CUBIGによる企業AIイネーブルメント</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -1,59 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="restoration">
-    <body>
-      <trans-unit id="heroTitle">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+  <file id="restoration">
+    <unit id="heroTitle">
+      <segment>
         <source>Restoration</source>
         <target>Restoration</target>
-      </trans-unit>
-      <trans-unit id="heroDescription">
+      </segment>
+    </unit>
+    <unit id="heroDescription">
+      <segment>
         <source>Restoring AI outputs to original enterprise context using locally stored mappings after AI processing. A core capability of LLM Capsule.</source>
         <target>Wiederherstellung von KI-Ausgaben im ursprünglichen Unternehmenskontext mithilfe lokal gespeicherter Zuordnungen nach der KI-Verarbeitung. Eine Kernfunktion von LLM Capsule.</target>
-      </trans-unit>
-      <trans-unit id="definitionText">
+      </segment>
+    </unit>
+    <unit id="definitionText">
+      <segment>
         <source>Restoration (also known as local restoration) is the process of restoring AI-generated outputs to their original enterprise context. After AI processes encapsulated data, the locally stored mapping between original and protected values is applied to the AI output, replacing encapsulated representations with real enterprise data. AI results are restored locally through this automated process.</source>
         <target>Restoration (auch als lokale Restoration bekannt) ist der Prozess der Wiederherstellung von KI-generierten Ausgaben in ihrem ursprünglichen Unternehmenskontext. Nachdem die KI Encapsulation-Daten verarbeitet hat, wird die lokal gespeicherte Zuordnung zwischen Original- und geschützten Werten auf die KI-Ausgabe angewandt, wobei Encapsulation-Darstellungen durch echte Unternehmensdaten ersetzt werden. KI-Ergebnisse werden durch diesen automatisierten Prozess lokal wiederhergestellt.</target>
-      </trans-unit>
-      <trans-unit id="explanationBullet1">
+      </segment>
+    </unit>
+    <unit id="explanationBullet1">
+      <segment>
         <source>When LLM Capsule encapsulates a document, it creates a local mapping table. The table records the relationship between each original sensitive value and its replacement. This mapping never leaves the enterprise environment.</source>
         <target>Wenn LLM Capsule ein Dokument kapselt, wird eine lokale Zuordnungstabelle erstellt. Die Tabelle erfasst die Beziehung zwischen jedem ursprünglichen sensiblen Wert und seinem Ersatz. Diese Zuordnung verlässt niemals die Unternehmensumgebung.</target>
-      </trans-unit>
-      <trans-unit id="explanationBullet2">
+      </segment>
+    </unit>
+    <unit id="explanationBullet2">
+      <segment>
         <source>After AI processing completes, the restoration engine applies this mapping in reverse. Encapsulated tokens are replaced with original values. The result is an AI output that contains real names, real figures, and real references, ready for enterprise use.</source>
         <target>Nach Abschluss der KI-Verarbeitung wendet die Restoration-Engine diese Zuordnung in umgekehrter Reihenfolge an. Encapsulation-Token werden durch Originalwerte ersetzt. Das Ergebnis ist eine KI-Ausgabe mit echten Namen, echten Zahlen und echten Referenzen, die sofort im Unternehmen einsetzbar ist.</target>
-      </trans-unit>
-      <trans-unit id="explanationBullet3">
+      </segment>
+    </unit>
+    <unit id="explanationBullet3">
+      <segment>
         <source>Restoration is deterministic. Every encapsulated value maps to exactly one original value. There is no ambiguity, no approximation, and no manual intervention required.</source>
         <target>Restoration ist deterministisch. Jeder Encapsulation-Wert wird genau einem Originalwert zugeordnet. Es gibt keine Mehrdeutigkeit, keine Annäherung und keinen manuellen Eingriff.</target>
-      </trans-unit>
-      <trans-unit id="exampleBefore">
+      </segment>
+    </unit>
+    <unit id="exampleBefore">
+      <segment>
         <source>AI processes an encapsulated contract and generates a summary.</source>
         <target>Die KI verarbeitet einen gekapselten Vertrag und erstellt eine Zusammenfassung.</target>
-      </trans-unit>
-      <trans-unit id="exampleAfter">
+      </segment>
+    </unit>
+    <unit id="exampleAfter">
+      <segment>
         <source>Local restoration applies the mapping and produces the original context.</source>
         <target>Die lokale Restoration wendet die Zuordnung an und stellt den ursprünglichen Kontext her.</target>
-      </trans-unit>
-      <trans-unit id="ctaTitle">
+      </segment>
+    </unit>
+    <unit id="ctaTitle">
+      <segment>
         <source>See LLM Capsule Restoration in Action</source>
         <target>Erleben Sie LLM Capsule Restoration in Aktion</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Experience how enterprise AI outputs are restored to their original context with real data.</source>
         <target>Erleben Sie, wie KI-Ausgaben im Unternehmen mit echten Daten in ihren ursprünglichen Kontext wiederhergestellt werden.</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn1Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Demo anfordern</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn2Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn2Label">
+      <segment>
         <source>View Product</source>
         <target>Produkt ansehen</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnote">
+      </segment>
+    </unit>
+    <unit id="ctaFootnote">
+      <segment>
         <source>Enterprise AI Enablement by CUBIG</source>
         <target>KI-Einführung im Unternehmen von CUBIG</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

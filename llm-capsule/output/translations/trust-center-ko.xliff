@@ -1,168 +1,233 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ko" datatype="plaintext" original="trust-center">
-    <body>
-      <!-- Section01_Hero -->
-      <trans-unit id="Section01_Hero.title">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ko">
+  <file id="trust-center">
+    <unit id="Section01_Hero.title">
+      <segment>
         <source>Security &amp; Compliance</source>
         <target>보안 &amp; 컴플라이언스</target>
-      </trans-unit>
-      <trans-unit id="Section01_Hero.titleHighlight">
+      </segment>
+    </unit>
+    <unit id="Section01_Hero.titleHighlight">
+      <segment>
         <source>Trust Center</source>
         <target>Trust Center</target>
-      </trans-unit>
-      <trans-unit id="Section01_Hero.description">
+      </segment>
+    </unit>
+    <unit id="Section01_Hero.description">
+      <segment>
         <source>Certifications, compliance documentation, and security information for</source>
         <target>인증, 컴플라이언스 문서, 보안 정보를 제공합니다.</target>
-      </trans-unit>
-      <trans-unit id="Section01_Hero.productName">
+      </segment>
+    </unit>
+    <unit id="Section01_Hero.productName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-
-      <!-- Section02_Certifications -->
-      <trans-unit id="Section02_Certifications.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="Section02_Certifications.sectionTitle">
+      <segment>
         <source>Certifications &amp;</source>
         <target>인증 &amp;</target>
-      </trans-unit>
-      <trans-unit id="Section02_Certifications.sectionTitleHighlight">
+      </segment>
+    </unit>
+    <unit id="Section02_Certifications.sectionTitleHighlight">
+      <segment>
         <source>Compliance</source>
         <target>컴플라이언스</target>
-      </trans-unit>
-      <trans-unit id="Section02_Certifications.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="Section02_Certifications.sectionDescription">
+      <segment>
         <source>Information security management, AI governance, and government software quality certifications.</source>
         <target>정보보안 관리, AI 거버넌스, 정부 소프트웨어 품질 인증을 보유하고 있습니다.</target>
-      </trans-unit>
-
-      <!-- Section03_DataPrinciples -->
-      <trans-unit id="Section03_DataPrinciples.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.sectionTitle">
+      <segment>
         <source>Data Handling</source>
         <target>데이터 처리</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.sectionTitleHighlight">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.sectionTitleHighlight">
+      <segment>
         <source>Principles</source>
         <target>원칙</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.sectionDescription">
+      <segment>
         <source>Zero exposure by design. Original sensitive enterprise data never leaves the enterprise environment.</source>
         <target>설계 단계부터 데이터 노출 제로를 보장합니다. 원본 민감 데이터는 기업 환경을 벗어나지 않습니다.</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.card1Title">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.card1Title">
+      <segment>
         <source>Zero Exposure by Design</source>
         <target>설계 기반 데이터 노출 제로</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.card1Description">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.card1Description">
+      <segment>
         <source>Original sensitive enterprise data never leaves the enterprise environment. Only encapsulated representations cross the trust boundary to external AI services.</source>
         <target>원본 민감 데이터는 기업 환경을 벗어나지 않습니다. Encapsulation된 표현만이 신뢰 경계를 넘어 외부 AI 서비스로 전달됩니다.</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.card2Title">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.card2Title">
+      <segment>
         <source>Local-only Mapping Storage</source>
         <target>로컬 전용 매핑 저장</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.card2Description">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.card2Description">
+      <segment>
         <source>The mapping between original and encapsulated values is stored entirely within the enterprise environment and never transmitted externally.</source>
         <target>원본과 Encapsulation 값 간의 매핑은 기업 환경 내에 전량 저장되며, 외부로 전송되지 않습니다.</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.card3Title">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.card3Title">
+      <segment>
         <source>Complete Audit Trails</source>
         <target>완전한 감사 추적</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.card3Description">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.card3Description">
+      <segment>
         <source>Every encapsulation and restoration event is logged with full audit data supporting enterprise AI governance and regulatory compliance.</source>
         <target>모든 Encapsulation 및 Restoration 이벤트가 전체 감사 데이터와 함께 기록되어 기업 AI 거버넌스와 규정 준수를 지원합니다.</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.card4Title">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.card4Title">
+      <segment>
         <source>Model-agnostic Protection</source>
         <target>모델 독립적 보호</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.card4Description">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.card4Description">
+      <segment>
         <source>Protection operates at the data layer, independent of any specific AI provider, ensuring consistent security regardless of which LLM is used.</source>
         <target>데이터 레이어에서 작동하는 보호 체계로, 특정 AI 제공자에 종속되지 않으며 사용하는 LLM에 관계없이 일관된 보안을 보장합니다.</target>
-      </trans-unit>
-
-      <!-- Section04_EvidenceHub -->
-      <trans-unit id="Section04_EvidenceHub.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.sectionTitle">
+      <segment>
         <source>Documents &amp; Review Items for Enterprise</source>
         <target>기업 평가를 위한 문서 &amp; 검토 항목</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.sectionTitleHighlight">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.sectionTitleHighlight">
+      <segment>
         <source>Evaluation</source>
         <target>평가</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.sectionDescription">
+      <segment>
         <source>Use this page as the operational trust hub for procurement, security review, architecture review, and compliance validation.</source>
         <target>이 페이지를 조달, 보안 검토, 아키텍처 검토, 컴플라이언스 검증을 위한 운영 신뢰 허브로 활용하십시오.</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.item1Title">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.item1Title">
+      <segment>
         <source>Architecture Brief</source>
         <target>아키텍처 브리프</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.item1Description">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.item1Description">
+      <segment>
         <source>High-level architecture, trust boundary, local mapping model, and restoration flow.</source>
         <target>상위 아키텍처, 신뢰 경계, 로컬 매핑 모델, Restoration 흐름을 안내합니다.</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.item2Title">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.item2Title">
+      <segment>
         <source>Security Review Package</source>
         <target>보안 검토 패키지</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.item2Description">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.item2Description">
+      <segment>
         <source>Data handling principles, audit model, deployment assumptions, and security questionnaire support.</source>
         <target>데이터 처리 원칙, 감사 모델, 배포 가정, 보안 질의서 지원을 포함합니다.</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.item3Title">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.item3Title">
+      <segment>
         <source>Deployment Options</source>
         <target>배포 옵션</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.item3Description">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.item3Description">
+      <segment>
         <source>On-premise, air-gapped, VPC, cloud, hybrid, and embedded deployment patterns for evaluation.</source>
         <target>온프레미스, 망분리, VPC, 클라우드, 하이브리드, 임베디드 배포 패턴을 평가할 수 있습니다.</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.item4Title">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.item4Title">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.item4Description">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.item4Description">
+      <segment>
         <source>Review your environment, data flow, policy requirements, and evaluation criteria with the technical team.</source>
         <target>기술 팀과 함께 환경, 데이터 흐름, 정책 요구사항, 평가 기준을 검토합니다.</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.ctaPrimaryLabel">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.ctaPrimaryLabel">
+      <segment>
         <source>Request a Demo</source>
         <target>데모 요청</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.ctaSecondaryLabel">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.ctaSecondaryLabel">
+      <segment>
         <source>Download Brief</source>
         <target>브리프 다운로드</target>
-      </trans-unit>
-
-      <!-- Section05_CTA -->
-      <trans-unit id="Section05_CTA.title">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.title">
+      <segment>
         <source>See how</source>
         <target>직접 확인하십시오.</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.productName">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.productName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.description">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.description">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>문서, 배포 조건, 평가 기준을 가져오십시오. 실제 워크플로우에서 시연합니다.</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.btn1Label">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.btn1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>데모 요청</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.btn2Label">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.btn2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.footnote1Label">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.footnote1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>아키텍처 브리프 다운로드</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.footnote2Label">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.footnote2Label">
+      <segment>
         <source>Available on AWS Marketplace</source>
         <target>AWS Marketplace에서 이용 가능</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

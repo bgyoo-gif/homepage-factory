@@ -1,204 +1,287 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="architecture">
-    <body>
-      <!-- Section01_Hero -->
-      <trans-unit id="Section01_Hero.title">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+  <file id="architecture">
+    <unit id="Section01_Hero.title">
+      <segment>
         <source>AI Enablement</source>
         <target>AI-Enablement</target>
-      </trans-unit>
-      <trans-unit id="Section01_Hero.titleHighlight">
+      </segment>
+    </unit>
+    <unit id="Section01_Hero.titleHighlight">
+      <segment>
         <source>Architecture</source>
         <target>Architektur</target>
-      </trans-unit>
-      <trans-unit id="Section01_Hero.description">
+      </segment>
+    </unit>
+    <unit id="Section01_Hero.description">
+      <segment>
         <source>LLM Capsule is an AI enablement data layer and plugin that enables enterprises to adopt any AI model safely. It sits between enterprise data systems and external AI services — protecting data in transit while unlocking the full power of AI across every workflow.</source>
         <target>LLM Capsule ist eine AI-Enablement-Datenschicht und ein Plugin, das Unternehmen die sichere Einführung jedes AI-Modells ermöglicht. Es befindet sich zwischen Unternehmensdatensystemen und externen AI-Diensten — schützt Daten während der Übertragung und erschließt das volle Potenzial von AI in jedem Workflow.</target>
-      </trans-unit>
-      <trans-unit id="Section01_Hero.productName">
+      </segment>
+    </unit>
+    <unit id="Section01_Hero.productName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-
-      <!-- Section02_ArchitectureOverview -->
-      <trans-unit id="Section02_ArchitectureOverview.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="Section02_ArchitectureOverview.sectionTitle">
+      <segment>
         <source>Architecture</source>
         <target>Architektur</target>
-      </trans-unit>
-      <trans-unit id="Section02_ArchitectureOverview.sectionTitleHighlight">
+      </segment>
+    </unit>
+    <unit id="Section02_ArchitectureOverview.sectionTitleHighlight">
+      <segment>
         <source>Overview</source>
         <target>Überblick</target>
-      </trans-unit>
-      <trans-unit id="Section02_ArchitectureOverview.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="Section02_ArchitectureOverview.sectionDescription">
+      <segment>
         <source>LLM Capsule operates as an AI enablement data layer that encapsulates sensitive enterprise data locally, transmits only protected representations to any external AI service, and restores AI outputs within the enterprise environment — enabling safe AI adoption at scale.</source>
         <target>LLM Capsule arbeitet als AI-Enablement-Datenschicht, die sensible Unternehmensdaten lokal per Encapsulation schützt, nur geschützte Repräsentationen an externe AI-Dienste überträgt und AI-Ausgaben innerhalb der Unternehmensumgebung per Restoration wiederherstellt — für eine sichere KI-Einführung im Unternehmen in großem Maßstab.</target>
-      </trans-unit>
-      <trans-unit id="Section02_ArchitectureOverview.productName">
+      </segment>
+    </unit>
+    <unit id="Section02_ArchitectureOverview.productName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-
-      <!-- Section03_ArchitectureComponents -->
-      <trans-unit id="Section03_ArchitectureComponents.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.sectionTitle">
+      <segment>
         <source>Architecture</source>
         <target>Architektur</target>
-      </trans-unit>
-      <trans-unit id="Section03_ArchitectureComponents.sectionTitleHighlight">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.sectionTitleHighlight">
+      <segment>
         <source>Components</source>
         <target>Komponenten</target>
-      </trans-unit>
-      <trans-unit id="Section03_ArchitectureComponents.tab1Label">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.tab1Label">
+      <segment>
         <source>Encapsulation Engine</source>
         <target>Encapsulation Engine</target>
-      </trans-unit>
-      <trans-unit id="Section03_ArchitectureComponents.tab1Title">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.tab1Title">
+      <segment>
         <source>Local Encapsulation Engine</source>
         <target>Lokale Encapsulation Engine</target>
-      </trans-unit>
-      <trans-unit id="Section03_ArchitectureComponents.tab1Description">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.tab1Description">
+      <segment>
         <source>The encapsulation engine operates entirely within the enterprise environment. It detects sensitive elements using context-aware data control, replaces them with structure-preserving representations, and stores the mapping locally. The mapping never leaves the enterprise boundary.</source>
         <target>Die Encapsulation Engine arbeitet vollständig innerhalb der Unternehmensumgebung. Sie erkennt sensible Elemente mittels kontextbewusster Datenkontrolle, ersetzt sie durch strukturerhaltende Repräsentationen und speichert das Mapping lokal. Das Mapping verlässt niemals die Unternehmensgrenze.</target>
-      </trans-unit>
-      <trans-unit id="Section03_ArchitectureComponents.tab2Label">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.tab2Label">
+      <segment>
         <source>Policy Control</source>
         <target>Richtlinienkontrolle</target>
-      </trans-unit>
-      <trans-unit id="Section03_ArchitectureComponents.tab2Title">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.tab2Title">
+      <segment>
         <source>Policy Control Layer</source>
         <target>Richtlinienkontrollschicht</target>
-      </trans-unit>
-      <trans-unit id="Section03_ArchitectureComponents.tab2Description">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.tab2Description">
+      <segment>
         <source>Enterprise context control enables organizations to define sensitivity policies beyond standard PII detection. Sensitivity classification adapts to document type, department, workflow context, and regulatory requirements. Administrators configure policies through the admin console.</source>
         <target>Die Enterprise-Kontextkontrolle ermöglicht es Organisationen, Sensibilitätsrichtlinien über die standardmäßige PII-Erkennung hinaus zu definieren. Die Sensibilitätsklassifizierung passt sich an Dokumenttyp, Abteilung, Workflow-Kontext und regulatorische Anforderungen an. Administratoren konfigurieren Richtlinien über die Verwaltungskonsole.</target>
-      </trans-unit>
-      <trans-unit id="Section03_ArchitectureComponents.tab3Label">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.tab3Label">
+      <segment>
         <source>Capsule Transmission</source>
         <target>Kapselübertragung</target>
-      </trans-unit>
-      <trans-unit id="Section03_ArchitectureComponents.tab3Title">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.tab3Title">
+      <segment>
         <source>Outbound Capsule Transmission</source>
         <target>Ausgehende Kapselübertragung</target>
-      </trans-unit>
-      <trans-unit id="Section03_ArchitectureComponents.tab3Description">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.tab3Description">
+      <segment>
         <source>Only encapsulated documents cross the trust boundary. The AI provider receives structurally complete documents with protected values — useful for AI processing but opaque to the receiving service. Zero exposure of original sensitive data.</source>
         <target>Nur per Encapsulation geschützte Dokumente überschreiten die Vertrauensgrenze. Der AI-Anbieter erhält strukturell vollständige Dokumente mit geschützten Werten — nützlich für die AI-Verarbeitung, aber für den empfangenden Dienst undurchsichtig. Null Datenexposition der ursprünglichen sensiblen Daten.</target>
-      </trans-unit>
-      <trans-unit id="Section03_ArchitectureComponents.tab4Label">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.tab4Label">
+      <segment>
         <source>Restoration Engine</source>
         <target>Restoration Engine</target>
-      </trans-unit>
-      <trans-unit id="Section03_ArchitectureComponents.tab4Title">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.tab4Title">
+      <segment>
         <source>Local Restoration Engine</source>
         <target>Lokale Restoration Engine</target>
-      </trans-unit>
-      <trans-unit id="Section03_ArchitectureComponents.tab4Description">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.tab4Description">
+      <segment>
         <source>After AI processing completes, the restoration engine applies the locally stored mapping to AI outputs. Original names, figures, dates, and references are restored automatically. Restored outputs are directly usable in enterprise workflows.</source>
         <target>Nach Abschluss der AI-Verarbeitung wendet die Restoration Engine das lokal gespeicherte Mapping auf die AI-Ausgaben an. Ursprüngliche Namen, Zahlen, Daten und Referenzen werden automatisch wiederhergestellt. Die wiederhergestellten Ausgaben sind direkt in Unternehmens-Workflows einsetzbar.</target>
-      </trans-unit>
-      <trans-unit id="Section03_ArchitectureComponents.tab5Label">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.tab5Label">
+      <segment>
         <source>Audit &amp; Compliance</source>
         <target>Audit &amp; Compliance</target>
-      </trans-unit>
-      <trans-unit id="Section03_ArchitectureComponents.tab5Title">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.tab5Title">
+      <segment>
         <source>Audit &amp; Compliance Layer</source>
         <target>Audit- &amp; Compliance-Schicht</target>
-      </trans-unit>
-      <trans-unit id="Section03_ArchitectureComponents.tab5Description">
+      </segment>
+    </unit>
+    <unit id="Section03_ArchitectureComponents.tab5Description">
+      <segment>
         <source>Every encapsulation and restoration event is logged with complete audit trails. Organizations can track what data was protected, when, by whom, and which AI services processed it. Audit data supports enterprise AI governance and regulatory compliance requirements.</source>
         <target>Jedes Encapsulation- und Restoration-Ereignis wird mit vollständigen Audit-Trails protokolliert. Organisationen können nachverfolgen, welche Daten wann, von wem geschützt und von welchen AI-Diensten verarbeitet wurden. Audit-Daten unterstützen die KI-Governance und regulatorische Compliance-Anforderungen des Unternehmens.</target>
-      </trans-unit>
-
-      <!-- Section04_DeploymentOptions -->
-      <trans-unit id="Section04_DeploymentOptions.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="Section04_DeploymentOptions.sectionTitle">
+      <segment>
         <source>Deployment</source>
         <target>Deployment</target>
-      </trans-unit>
-      <trans-unit id="Section04_DeploymentOptions.sectionTitleHighlight">
+      </segment>
+    </unit>
+    <unit id="Section04_DeploymentOptions.sectionTitleHighlight">
+      <segment>
         <source>Options</source>
         <target>Optionen</target>
-      </trans-unit>
-      <trans-unit id="Section04_DeploymentOptions.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="Section04_DeploymentOptions.sectionDescription">
+      <segment>
         <source>LLM Capsule enables AI anywhere your infrastructure runs. The encapsulation and restoration logic is identical regardless of deployment model — so you can adopt AI across every environment.</source>
         <target>LLM Capsule ermöglicht AI überall dort, wo Ihre Infrastruktur läuft. Die Encapsulation- und Restoration-Logik ist unabhängig vom Deployment-Modell identisch — so können Sie AI in jeder Umgebung einführen.</target>
-      </trans-unit>
-      <trans-unit id="Section04_DeploymentOptions.productName">
+      </segment>
+    </unit>
+    <unit id="Section04_DeploymentOptions.productName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="Section04_DeploymentOptions.card1Title">
+      </segment>
+    </unit>
+    <unit id="Section04_DeploymentOptions.card1Title">
+      <segment>
         <source>On-Premise</source>
         <target>On-Premise</target>
-      </trans-unit>
-      <trans-unit id="Section04_DeploymentOptions.card1Description">
+      </segment>
+    </unit>
+    <unit id="Section04_DeploymentOptions.card1Description">
+      <segment>
         <source>Full deployment within the enterprise data center. Sensitive data never traverses any network boundary. Operates within existing security perimeters.</source>
         <target>Vollständiges Deployment im unternehmenseigenen Rechenzentrum. Sensible Daten überschreiten keine Netzwerkgrenze. Betrieb innerhalb bestehender Sicherheitsperimeter.</target>
-      </trans-unit>
-      <trans-unit id="Section04_DeploymentOptions.card2Title">
+      </segment>
+    </unit>
+    <unit id="Section04_DeploymentOptions.card2Title">
+      <segment>
         <source>Air-Gapped</source>
         <target>Air-Gap</target>
-      </trans-unit>
-      <trans-unit id="Section04_DeploymentOptions.card2Description">
+      </segment>
+    </unit>
+    <unit id="Section04_DeploymentOptions.card2Description">
+      <segment>
         <source>For the most sensitive environments. Encapsulation on the isolated network, controlled transfer to AI-connected environment, results transferred back for local restoration.</source>
         <target>Für Umgebungen mit höchsten Sicherheitsanforderungen. Encapsulation im isolierten Netzwerk, kontrollierte Übertragung in die AI-verbundene Umgebung, Rückübertragung der Ergebnisse zur lokalen Restoration.</target>
-      </trans-unit>
-      <trans-unit id="Section04_DeploymentOptions.card3Title">
+      </segment>
+    </unit>
+    <unit id="Section04_DeploymentOptions.card3Title">
+      <segment>
         <source>Cloud (AWS Marketplace)</source>
         <target>Cloud (AWS Marketplace)</target>
-      </trans-unit>
-      <trans-unit id="Section04_DeploymentOptions.card3Description">
+      </segment>
+    </unit>
+    <unit id="Section04_DeploymentOptions.card3Description">
+      <segment>
         <source>Runs within the enterprise's AWS account or VPC. Data remains within the enterprise's cloud boundary. Available on AWS Marketplace for streamlined procurement.</source>
         <target>Läuft innerhalb des AWS-Kontos oder der VPC des Unternehmens. Daten verbleiben innerhalb der Cloud-Grenze des Unternehmens. Verfügbar auf dem AWS Marketplace für vereinfachte Beschaffung.</target>
-      </trans-unit>
-      <trans-unit id="Section04_DeploymentOptions.card3ButtonLabel">
+      </segment>
+    </unit>
+    <unit id="Section04_DeploymentOptions.card3ButtonLabel">
+      <segment>
         <source>View on AWS Marketplace</source>
         <target>Auf AWS Marketplace ansehen</target>
-      </trans-unit>
-      <trans-unit id="Section04_DeploymentOptions.card4Title">
+      </segment>
+    </unit>
+    <unit id="Section04_DeploymentOptions.card4Title">
+      <segment>
         <source>Hybrid</source>
         <target>Hybrid</target>
-      </trans-unit>
-      <trans-unit id="Section04_DeploymentOptions.card4Description">
+      </segment>
+    </unit>
+    <unit id="Section04_DeploymentOptions.card4Description">
+      <segment>
         <source>Different document types or sensitivity levels route through different deployment modes within a single LLM Capsule instance. Maximum flexibility.</source>
         <target>Verschiedene Dokumenttypen oder Sensibilitätsstufen werden innerhalb einer einzelnen LLM Capsule-Instanz über unterschiedliche Deployment-Modi geroutet. Maximale Flexibilität.</target>
-      </trans-unit>
-      <trans-unit id="Section04_DeploymentOptions.card5Title">
+      </segment>
+    </unit>
+    <unit id="Section04_DeploymentOptions.card5Title">
+      <segment>
         <source>Embedded Integration</source>
         <target>Eingebettete Integration</target>
-      </trans-unit>
-      <trans-unit id="Section04_DeploymentOptions.card5Description">
+      </segment>
+    </unit>
+    <unit id="Section04_DeploymentOptions.card5Description">
+      <segment>
         <source>LLM Capsule embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within your software stack.</source>
         <target>LLM Capsule wird in bestehende Unternehmensanwendungen und -plattformen eingebettet und arbeitet als AI-Enablement-Datenschicht innerhalb Ihres Software-Stacks.</target>
-      </trans-unit>
-
-      <!-- Section05_CTA -->
-      <trans-unit id="Section05_CTA.title">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.title">
+      <segment>
         <source>See how</source>
         <target>Erfahren Sie, wie</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.productName">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.productName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.description">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.description">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Workflows.</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.button1Label">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.button1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Demo anfordern</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.button2Label">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.button2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.footnoteLink1Label">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.footnoteLink1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>Architektur-Brief herunterladen</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.footnoteLink2Label">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.footnoteLink2Label">
+      <segment>
         <source>Available on AWS Marketplace</source>
         <target>Verfügbar auf AWS Marketplace</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

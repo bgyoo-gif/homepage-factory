@@ -1,186 +1,263 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ja" datatype="plaintext" original="ai-data-pipeline-protection">
-    <body>
-      <!-- Section 01: Hero -->
-      <trans-unit id="title">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ja">
+  <file id="ai-data-pipeline-protection">
+    <unit id="title">
+      <segment>
         <source>AI Data Pipeline Protection</source>
         <target>AIデータパイプライン保護</target>
-      </trans-unit>
-      <trans-unit id="description">
+      </segment>
+    </unit>
+    <unit id="description">
+      <segment>
         <source>Enabling enterprise AI at every stage of the processing pipeline — ingestion, encapsulation, processing, restoration, and delivery.</source>
         <target>処理パイプラインのすべての段階 — 取り込み、Encapsulation、処理、Restoration、配信 — で企業AIを実現します。</target>
-      </trans-unit>
-      <trans-unit id="breadcrumbHome">
+      </segment>
+    </unit>
+    <unit id="breadcrumbHome">
+      <segment>
         <source>Home</source>
         <target>ホーム</target>
-      </trans-unit>
-      <trans-unit id="breadcrumbResources">
+      </segment>
+    </unit>
+    <unit id="breadcrumbResources">
+      <segment>
         <source>Resources</source>
         <target>リソース</target>
-      </trans-unit>
-      <trans-unit id="breadcrumbLearn">
+      </segment>
+    </unit>
+    <unit id="breadcrumbLearn">
+      <segment>
         <source>Learn</source>
         <target>学習</target>
-      </trans-unit>
-      <trans-unit id="breadcrumbCurrent">
+      </segment>
+    </unit>
+    <unit id="breadcrumbCurrent">
+      <segment>
         <source>AI Data Pipeline Protection</source>
         <target>AIデータパイプライン保護</target>
-      </trans-unit>
-      <!-- Section 02: Problem -->
-      <trans-unit id="sectionLabelProblem">
+      </segment>
+    </unit>
+    <unit id="sectionLabelProblem">
+      <segment>
         <source>Problem</source>
         <target>課題</target>
-      </trans-unit>
-      <trans-unit id="problemParagraph1">
+      </segment>
+    </unit>
+    <unit id="problemParagraph1">
+      <segment>
         <source>Enterprise AI pipelines move data through multiple stages and systems. Documents are ingested from internal sources, pre-processed for AI consumption, sent to language models, processed, and outputs are routed back to business systems. Each stage represents a potential exposure point.</source>
         <target>企業AIパイプラインは複数の段階とシステムを通じてデータを移動させます。内部ソースからドキュメントを取り込み、AI処理用に前処理し、言語モデルに送信して処理し、出力をビジネスシステムに返送します。各段階が潜在的なデータ漏洩ポイントとなります。</target>
-      </trans-unit>
-      <trans-unit id="problemParagraph2">
+      </segment>
+    </unit>
+    <unit id="problemParagraph2">
+      <segment>
         <source>Point solutions — API gateways that filter prompts, output scanners that check responses — address individual stages but leave gaps between them. AI data pipeline protection requires a continuous data-layer approach.</source>
         <target>個別ソリューション — プロンプトをフィルタリングするAPIゲートウェイ、レスポンスを検査する出力スキャナー — は個々の段階には対応しますが、段階間にギャップを残します。AIデータパイプライン保護には、継続的なデータレイヤーアプローチが必要です。</target>
-      </trans-unit>
-      <!-- Section 03: Explanation -->
-      <trans-unit id="sectionLabelExplanation">
+      </segment>
+    </unit>
+    <unit id="sectionLabelExplanation">
+      <segment>
         <source>Explanation</source>
         <target>解説</target>
-      </trans-unit>
-      <trans-unit id="stage1Label">
+      </segment>
+    </unit>
+    <unit id="stage1Label">
+      <segment>
         <source>Stage 1: Ingestion</source>
         <target>ステージ1: 取り込み</target>
-      </trans-unit>
-      <trans-unit id="stage1Text">
+      </segment>
+    </unit>
+    <unit id="stage1Text">
+      <segment>
         <source>Documents enter the pipeline from enterprise systems — document management, email, databases, RAG pipelines. LLM Capsule intercepts data at this stage and applies context-aware data control to classify sensitivity.</source>
         <target>ドキュメント管理、メール、データベース、RAGパイプラインなどの企業システムからドキュメントがパイプラインに入ります。LLM Capsuleがこの段階でデータをインターセプトし、コンテキスト認識データ制御を適用して機密度を分類します。</target>
-      </trans-unit>
-      <trans-unit id="stage2Label">
+      </segment>
+    </unit>
+    <unit id="stage2Label">
+      <segment>
         <source>Stage 2: Encapsulation</source>
         <target>ステージ2: Encapsulation</target>
-      </trans-unit>
-      <trans-unit id="stage2Text">
+      </segment>
+    </unit>
+    <unit id="stage2Text">
+      <segment>
         <source>Sensitive elements are replaced with structure-preserving representations. The encapsulation occurs entirely within the enterprise environment. Mapping data is stored locally and never transmitted.</source>
         <target>機密要素が構造保持表現に置換されます。Encapsulationは企業環境内で完結します。マッピングデータはローカルに保存され、外部に送信されません。</target>
-      </trans-unit>
-      <trans-unit id="stage3Label">
+      </segment>
+    </unit>
+    <unit id="stage3Label">
+      <segment>
         <source>Stage 3: AI Processing</source>
         <target>ステージ3: AI処理</target>
-      </trans-unit>
-      <trans-unit id="stage3Text">
+      </segment>
+    </unit>
+    <unit id="stage3Text">
+      <segment>
         <source>Encapsulated data is sent to the AI model. The model processes structurally intact documents and generates useful outputs. No original sensitive data reaches the AI provider.</source>
         <target>EncapsulationされたデータがAIモデルに送信されます。モデルは構造的に完全なドキュメントを処理し、有用な出力を生成します。元の機密データはAIプロバイダーに到達しません。</target>
-      </trans-unit>
-      <trans-unit id="stage4Label">
+      </segment>
+    </unit>
+    <unit id="stage4Label">
+      <segment>
         <source>Stage 4: Restoration</source>
         <target>ステージ4: Restoration</target>
-      </trans-unit>
-      <trans-unit id="stage4Text">
+      </segment>
+    </unit>
+    <unit id="stage4Text">
+      <segment>
         <source>AI results are restored through local restoration. The locally stored mapping is applied to reconstruct outputs with real enterprise data.</source>
         <target>AI結果がローカルRestorationを通じて復元されます。ローカルに保存されたマッピングが適用され、実際の企業データで出力が再構成されます。</target>
-      </trans-unit>
-      <trans-unit id="stage5Label">
+      </segment>
+    </unit>
+    <unit id="stage5Label">
+      <segment>
         <source>Stage 5: Delivery</source>
         <target>ステージ5: 配信</target>
-      </trans-unit>
-      <trans-unit id="stage5Text">
+      </segment>
+    </unit>
+    <unit id="stage5Text">
+      <segment>
         <source>Restored outputs are routed to downstream business systems — compliance platforms, case management, analytics dashboards — ready for immediate use.</source>
         <target>復元された出力がダウンストリームのビジネスシステム — コンプライアンスプラットフォーム、ケース管理、分析ダッシュボード — に配信され、即座に利用可能です。</target>
-      </trans-unit>
-      <trans-unit id="keyMessageHighlight">
+      </segment>
+    </unit>
+    <unit id="keyMessageHighlight">
+      <segment>
         <source>AI data pipeline protection</source>
         <target>AIデータパイプライン保護</target>
-      </trans-unit>
-      <trans-unit id="keyMessage">
-        <source> is not a single checkpoint, but a continuous AI enablement data layer that protects data from ingestion to delivery, enabling enterprise AI adoption at every stage.</source>
+      </segment>
+    </unit>
+    <unit id="keyMessage">
+      <segment>
+        <source>is not a single checkpoint, but a continuous AI enablement data layer that protects data from ingestion to delivery, enabling enterprise AI adoption at every stage.</source>
         <target>は単一のチェックポイントではなく、取り込みから配信までデータを保護する継続的なAIイネーブルメント・データレイヤーであり、すべての段階で企業AIの導入を実現します。</target>
-      </trans-unit>
-      <!-- Section 04: Enterprise Example -->
-      <trans-unit id="sectionLabelExample">
+      </segment>
+    </unit>
+    <unit id="sectionLabelExample">
+      <segment>
         <source>Example</source>
         <target>事例</target>
-      </trans-unit>
-      <trans-unit id="exampleCardTitle">
+      </segment>
+    </unit>
+    <unit id="exampleCardTitle">
+      <segment>
         <source>Telecom Customer Service Automation</source>
         <target>通信事業者のカスタマーサービス自動化</target>
-      </trans-unit>
-      <trans-unit id="exampleCardParagraph1">
+      </segment>
+    </unit>
+    <unit id="exampleCardParagraph1">
+      <segment>
         <source>A telecom company routes 50,000 customer support tickets per month through AI for automated categorization, priority scoring, and response drafting. Tickets contain customer account numbers, addresses, service plan details, and payment history.</source>
         <target>通信事業者が月間50,000件のカスタマーサポートチケットをAIで自動分類、優先度スコアリング、レスポンス作成のために処理しています。チケットには顧客口座番号、住所、料金プランの詳細、支払い履歴が含まれます。</target>
-      </trans-unit>
-      <trans-unit id="exampleCardParagraph2">
+      </segment>
+    </unit>
+    <unit id="exampleCardParagraph2">
+      <segment>
         <source>enables the entire pipeline: tickets are encapsulated at ingestion, AI processes protected tickets, responses are restored with real customer data, and formatted outputs route directly to the support platform.</source>
         <target>がパイプライン全体を実現します: 取り込み時にチケットがEncapsulationされ、AIが保護されたチケットを処理し、実際の顧客データでレスポンスが復元され、フォーマットされた出力がサポートプラットフォームに直接配信されます。</target>
-      </trans-unit>
-      <!-- Section 05: FAQ -->
-      <trans-unit id="faqTitle">
+      </segment>
+    </unit>
+    <unit id="faqTitle">
+      <segment>
         <source>FAQ</source>
         <target>FAQ</target>
-      </trans-unit>
-      <trans-unit id="faq1Question">
+      </segment>
+    </unit>
+    <unit id="faq1Question">
+      <segment>
         <source>What is AI data pipeline protection?</source>
         <target>AIデータパイプライン保護とは何ですか?</target>
-      </trans-unit>
-      <trans-unit id="faq1Answer">
+      </segment>
+    </unit>
+    <unit id="faq1Answer">
+      <segment>
         <source>AI data pipeline protection secures sensitive enterprise data at every stage of the AI processing pipeline — from document ingestion through model interaction to output delivery.</source>
         <target>AIデータパイプライン保護は、ドキュメントの取り込みからモデルとの連携、出力配信まで、AI処理パイプラインのすべての段階で機密の企業データを保護します。</target>
-      </trans-unit>
-      <trans-unit id="faq2Question">
+      </segment>
+    </unit>
+    <unit id="faq2Question">
+      <segment>
         <source>How does this differ from API-level security?</source>
         <target>APIレベルのセキュリティとどう違いますか?</target>
-      </trans-unit>
-      <trans-unit id="faq2Answer">
+      </segment>
+    </unit>
+    <unit id="faq2Answer">
+      <segment>
         <source>API-level security filters prompts and scans outputs at the model interface. AI data pipeline protection operates at the data layer across the entire pipeline, ensuring data is protected before it reaches any external system.</source>
         <target>APIレベルのセキュリティはモデルインターフェースでプロンプトのフィルタリングと出力のスキャンを行います。AIデータパイプライン保護はパイプライン全体にわたるデータレイヤーで動作し、データが外部システムに到達する前に保護を確保します。</target>
-      </trans-unit>
-      <!-- Section 06: Related Pages -->
-      <trans-unit id="sectionLabelRelated">
+      </segment>
+    </unit>
+    <unit id="sectionLabelRelated">
+      <segment>
         <source>Related</source>
         <target>関連ページ</target>
-      </trans-unit>
-      <trans-unit id="link1Label">
+      </segment>
+    </unit>
+    <unit id="link1Label">
+      <segment>
         <source>Product Overview</source>
         <target>製品概要</target>
-      </trans-unit>
-      <trans-unit id="link2Label">
+      </segment>
+    </unit>
+    <unit id="link2Label">
+      <segment>
         <source>Architecture</source>
         <target>アーキテクチャ</target>
-      </trans-unit>
-      <trans-unit id="link3Label">
+      </segment>
+    </unit>
+    <unit id="link3Label">
+      <segment>
         <source>Trust &amp; Compliance</source>
         <target>信頼 &amp; コンプライアンス</target>
-      </trans-unit>
-      <trans-unit id="link4Label">
+      </segment>
+    </unit>
+    <unit id="link4Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <!-- Section 07: CTA Band -->
-      <trans-unit id="ctaTitle">
+      </segment>
+    </unit>
+    <unit id="ctaTitle">
+      <segment>
         <source>See how</source>
         <target>ご確認ください</target>
-      </trans-unit>
-      <trans-unit id="ctaTitleSuffix">
+      </segment>
+    </unit>
+    <unit id="ctaTitleSuffix">
+      <segment>
         <source>works with your data</source>
         <target>がお客様のデータでどのように機能するか</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>ドキュメント、デプロイ要件、評価基準をお持ちください。実際のワークフローでデモンストレーションいたします。</target>
-      </trans-unit>
-      <trans-unit id="btn1Label">
+      </segment>
+    </unit>
+    <unit id="btn1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="btn2Label">
+      </segment>
+    </unit>
+    <unit id="btn2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="footnoteLink1Label">
+      </segment>
+    </unit>
+    <unit id="footnoteLink1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>アーキテクチャブリーフをダウンロード</target>
-      </trans-unit>
-      <trans-unit id="footnoteLink2Label">
+      </segment>
+    </unit>
+    <unit id="footnoteLink2Label">
+      <segment>
         <source>AWS Marketplace</source>
         <target>AWS Marketplace</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

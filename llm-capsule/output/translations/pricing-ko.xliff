@@ -1,176 +1,245 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ko" datatype="plaintext" original="pricing">
-    <body>
-      <!-- Section01_Hero -->
-      <trans-unit id="titlePrefix">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ko">
+  <file id="pricing">
+    <unit id="titlePrefix">
+      <segment>
         <source>Enterprise</source>
         <target>엔터프라이즈</target>
-      </trans-unit>
-      <trans-unit id="titleBrand">
+      </segment>
+    </unit>
+    <unit id="titleBrand">
+      <segment>
         <source>Pricing</source>
         <target>요금제</target>
-      </trans-unit>
-      <trans-unit id="description">
+      </segment>
+    </unit>
+    <unit id="description">
+      <segment>
         <source>LLM Capsule is priced for enterprise deployment. Contact us for volume-based pricing tailored to your document processing workload and deployment requirements.</source>
         <target>LLM Capsule은 엔터프라이즈 배포에 최적화된 요금 체계를 제공합니다. 문서 처리 규모와 배포 요구사항에 맞춘 볼륨 기반 견적을 문의해 주십시오.</target>
-      </trans-unit>
-
-      <!-- Section02_PricingPlans — Card 1: Proof of Value -->
-      <trans-unit id="card1Badge">
+      </segment>
+    </unit>
+    <unit id="card1Badge">
+      <segment>
         <source>PROOF OF VALUE</source>
         <target>PROOF OF VALUE</target>
-      </trans-unit>
-      <trans-unit id="card1Price">
+      </segment>
+    </unit>
+    <unit id="card1Price">
+      <segment>
         <source>Custom</source>
         <target>맞춤 견적</target>
-      </trans-unit>
-      <trans-unit id="card1Subtitle">
+      </segment>
+    </unit>
+    <unit id="card1Subtitle">
+      <segment>
         <source>Evaluation period</source>
         <target>평가 기간</target>
-      </trans-unit>
-      <trans-unit id="card1Feature1">
+      </segment>
+    </unit>
+    <unit id="card1Feature1">
+      <segment>
         <source>Test with your own documents</source>
         <target>실제 문서로 테스트</target>
-      </trans-unit>
-      <trans-unit id="card1Feature2">
+      </segment>
+    </unit>
+    <unit id="card1Feature2">
+      <segment>
         <source>Full encapsulation + restoration</source>
         <target>Encapsulation + Restoration 전체 지원</target>
-      </trans-unit>
-      <trans-unit id="card1Feature3">
+      </segment>
+    </unit>
+    <unit id="card1Feature3">
+      <segment>
         <source>Any LLM provider</source>
         <target>모든 LLM 제공사 지원</target>
-      </trans-unit>
-      <trans-unit id="card1Feature4">
+      </segment>
+    </unit>
+    <unit id="card1Feature4">
+      <segment>
         <source>On-premise or cloud deployment</source>
         <target>온프레미스 또는 클라우드 배포</target>
-      </trans-unit>
-      <trans-unit id="card1Feature5">
+      </segment>
+    </unit>
+    <unit id="card1Feature5">
+      <segment>
         <source>Dedicated technical support</source>
         <target>전담 기술 지원</target>
-      </trans-unit>
-      <trans-unit id="card1ButtonLabel">
+      </segment>
+    </unit>
+    <unit id="card1ButtonLabel">
+      <segment>
         <source>Request a Demo</source>
         <target>데모 요청</target>
-      </trans-unit>
-
-      <!-- Section02_PricingPlans — Card 2: Enterprise -->
-      <trans-unit id="card2Badge">
+      </segment>
+    </unit>
+    <unit id="card2Badge">
+      <segment>
         <source>ENTERPRISE</source>
         <target>ENTERPRISE</target>
-      </trans-unit>
-      <trans-unit id="card2Price">
+      </segment>
+    </unit>
+    <unit id="card2Price">
+      <segment>
         <source>Custom</source>
         <target>맞춤 견적</target>
-      </trans-unit>
-      <trans-unit id="card2Subtitle">
+      </segment>
+    </unit>
+    <unit id="card2Subtitle">
+      <segment>
         <source>Annual license</source>
         <target>연간 라이선스</target>
-      </trans-unit>
-      <trans-unit id="card2Feature1">
+      </segment>
+    </unit>
+    <unit id="card2Feature1">
+      <segment>
         <source>Unlimited document processing</source>
         <target>무제한 문서 처리</target>
-      </trans-unit>
-      <trans-unit id="card2Feature2">
+      </segment>
+    </unit>
+    <unit id="card2Feature2">
+      <segment>
         <source>Full 3+2 capability set</source>
         <target>3+2 전체 기능 세트</target>
-      </trans-unit>
-      <trans-unit id="card2Feature3">
+      </segment>
+    </unit>
+    <unit id="card2Feature3">
+      <segment>
         <source>Enterprise context control</source>
         <target>엔터프라이즈 컨텍스트 제어</target>
-      </trans-unit>
-      <trans-unit id="card2Feature4">
+      </segment>
+    </unit>
+    <unit id="card2Feature4">
+      <segment>
         <source>Custom deployment model</source>
         <target>맞춤 배포 모델</target>
-      </trans-unit>
-      <trans-unit id="card2Feature5">
+      </segment>
+    </unit>
+    <unit id="card2Feature5">
+      <segment>
         <source>Admin console &amp; audit</source>
         <target>관리 콘솔 및 감사</target>
-      </trans-unit>
-      <trans-unit id="card2Feature6">
+      </segment>
+    </unit>
+    <unit id="card2Feature6">
+      <segment>
         <source>Dedicated architecture support</source>
         <target>전담 아키텍처 지원</target>
-      </trans-unit>
-      <trans-unit id="card2Feature7">
+      </segment>
+    </unit>
+    <unit id="card2Feature7">
+      <segment>
         <source>SLA &amp; enterprise support</source>
         <target>SLA 및 엔터프라이즈 지원</target>
-      </trans-unit>
-      <trans-unit id="card2ButtonLabel">
+      </segment>
+    </unit>
+    <unit id="card2ButtonLabel">
+      <segment>
         <source>Contact Sales</source>
         <target>영업팀 문의</target>
-      </trans-unit>
-
-      <!-- Section02_PricingPlans — Card 3: AWS Marketplace -->
-      <trans-unit id="card3Badge">
+      </segment>
+    </unit>
+    <unit id="card3Badge">
+      <segment>
         <source>AWS MARKETPLACE</source>
         <target>AWS MARKETPLACE</target>
-      </trans-unit>
-      <trans-unit id="card3Price">
+      </segment>
+    </unit>
+    <unit id="card3Price">
+      <segment>
         <source>Listed</source>
         <target>등록 완료</target>
-      </trans-unit>
-      <trans-unit id="card3Subtitle">
+      </segment>
+    </unit>
+    <unit id="card3Subtitle">
+      <segment>
         <source>Pay through AWS</source>
         <target>AWS 결제</target>
-      </trans-unit>
-      <trans-unit id="card3Feature1">
+      </segment>
+    </unit>
+    <unit id="card3Feature1">
+      <segment>
         <source>Streamlined procurement</source>
         <target>간소화된 조달 프로세스</target>
-      </trans-unit>
-      <trans-unit id="card3Feature2">
+      </segment>
+    </unit>
+    <unit id="card3Feature2">
+      <segment>
         <source>AWS billing integration</source>
         <target>AWS 빌링 통합</target>
-      </trans-unit>
-      <trans-unit id="card3Feature3">
+      </segment>
+    </unit>
+    <unit id="card3Feature3">
+      <segment>
         <source>VPC deployment</source>
         <target>VPC 배포</target>
-      </trans-unit>
-      <trans-unit id="card3Feature4">
+      </segment>
+    </unit>
+    <unit id="card3Feature4">
+      <segment>
         <source>Standard feature set</source>
         <target>표준 기능 세트</target>
-      </trans-unit>
-      <trans-unit id="card3Feature5">
+      </segment>
+    </unit>
+    <unit id="card3Feature5">
+      <segment>
         <source>AWS support channels</source>
         <target>AWS 지원 채널</target>
-      </trans-unit>
-      <trans-unit id="card3ButtonLabel">
+      </segment>
+    </unit>
+    <unit id="card3ButtonLabel">
+      <segment>
         <source>View on AWS Marketplace</source>
         <target>AWS Marketplace에서 보기</target>
-      </trans-unit>
-
-      <!-- Section03_CTABand -->
-      <trans-unit id="title">
+      </segment>
+    </unit>
+    <unit id="title">
+      <segment>
         <source>See how</source>
         <target>지금 확인하십시오</target>
-      </trans-unit>
-      <trans-unit id="titleProductName">
+      </segment>
+    </unit>
+    <unit id="titleProductName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="titleSuffix">
+      </segment>
+    </unit>
+    <unit id="titleSuffix">
+      <segment>
         <source>works with your data</source>
         <target>이 실제 데이터에서 어떻게 작동하는지</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>문서, 배포 조건, 평가 기준을 가져오십시오. 실제 워크플로우에서 직접 시연합니다.</target>
-      </trans-unit>
-      <trans-unit id="btn1Label">
+      </segment>
+    </unit>
+    <unit id="btn1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>데모 요청</target>
-      </trans-unit>
-      <trans-unit id="btn2Label">
+      </segment>
+    </unit>
+    <unit id="btn2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="footnoteLink1Label">
+      </segment>
+    </unit>
+    <unit id="footnoteLink1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>아키텍처 브리프 다운로드</target>
-      </trans-unit>
-      <trans-unit id="footnoteLink2Label">
+      </segment>
+    </unit>
+    <unit id="footnoteLink2Label">
+      <segment>
         <source>Available on AWS Marketplace</source>
         <target>AWS Marketplace에서 이용 가능</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

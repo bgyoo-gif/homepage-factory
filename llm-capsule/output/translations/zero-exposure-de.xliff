@@ -1,138 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="zero-exposure">
-    <body>
-      <!-- Section01_Hero -->
-      <trans-unit id="title">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+  <file id="zero-exposure">
+    <unit id="title">
+      <segment>
         <source>Zero Exposure</source>
         <target>Zero Exposure</target>
-      </trans-unit>
-      <trans-unit id="description">
+      </segment>
+    </unit>
+    <unit id="description">
+      <segment>
         <source>Zero exposure means original sensitive enterprise data never leaves the enterprise environment during AI processing. Only encapsulated representations cross the trust boundary to external AI services. A core principle of</source>
         <target>Zero Exposure bedeutet, dass originale sensible Unternehmensdaten die Unternehmensumgebung während der KI-Verarbeitung niemals verlassen. Nur Encapsulation-Darstellungen überschreiten die Vertrauensgrenze zu externen KI-Diensten. Ein Kernprinzip von</target>
-      </trans-unit>
-      <trans-unit id="productName">
+      </segment>
+    </unit>
+    <unit id="productName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-
-      <!-- Section02_Definition -->
-      <trans-unit id="label">
+      </segment>
+    </unit>
+    <unit id="label">
+      <segment>
         <source>DEFINITION</source>
         <target>DEFINITION</target>
-      </trans-unit>
-      <trans-unit id="definitionText">
+      </segment>
+    </unit>
+    <unit id="definitionText">
+      <segment>
         <source>Zero exposure is a core capability of</source>
         <target>Zero Exposure ist eine Kernfunktion von</target>
-      </trans-unit>
-
-      <!-- Section03_Explanation -->
-      <trans-unit id="heading">
+      </segment>
+    </unit>
+    <unit id="heading">
+      <segment>
         <source>Explanation</source>
         <target>Erläuterung</target>
-      </trans-unit>
-      <trans-unit id="bullet1Strong">
+      </segment>
+    </unit>
+    <unit id="bullet1Strong">
+      <segment>
         <source>Zero exposure is not the same as encryption or access control.</source>
         <target>Zero Exposure ist nicht dasselbe wie Verschlüsselung oder Zugangskontrolle.</target>
-      </trans-unit>
-      <trans-unit id="bullet1Text">
-        <source> Encrypted data cannot be processed by AI models. Access control restricts who can see data but does not prevent the data itself from leaving the environment.</source>
-        <target> Verschlüsselte Daten können von KI-Modellen nicht verarbeitet werden. Zugangskontrolle beschränkt, wer Daten einsehen kann, verhindert aber nicht, dass die Daten selbst die Umgebung verlassen.</target>
-      </trans-unit>
-      <trans-unit id="bullet2Strong">
+      </segment>
+    </unit>
+    <unit id="bullet1Text">
+      <segment>
+        <source>Encrypted data cannot be processed by AI models. Access control restricts who can see data but does not prevent the data itself from leaving the environment.</source>
+        <target>Verschlüsselte Daten können von KI-Modellen nicht verarbeitet werden. Zugangskontrolle beschränkt, wer Daten einsehen kann, verhindert aber nicht, dass die Daten selbst die Umgebung verlassen.</target>
+      </segment>
+    </unit>
+    <unit id="bullet2Strong">
+      <segment>
         <source>Zero exposure means the AI provider receives structurally useful data with no original sensitive values.</source>
         <target>Zero Exposure bedeutet, dass der KI-Anbieter strukturell nutzbare Daten ohne originale sensible Werte erhält.</target>
-      </trans-unit>
-      <trans-unit id="bullet2Text">
-        <source> Even if the AI provider logged, stored, or trained on the received data, no original enterprise information would be exposed.</source>
-        <target> Selbst wenn der KI-Anbieter die empfangenen Daten protokolliert, gespeichert oder zum Training verwendet hat, würden keine originalen Unternehmensinformationen offengelegt.</target>
-      </trans-unit>
-      <trans-unit id="bullet3Strong">
+      </segment>
+    </unit>
+    <unit id="bullet2Text">
+      <segment>
+        <source>Even if the AI provider logged, stored, or trained on the received data, no original enterprise information would be exposed.</source>
+        <target>Selbst wenn der KI-Anbieter die empfangenen Daten protokolliert, gespeichert oder zum Training verwendet hat, würden keine originalen Unternehmensinformationen offengelegt.</target>
+      </segment>
+    </unit>
+    <unit id="bullet3Strong">
+      <segment>
         <source>This is achieved through local encapsulation.</source>
         <target>Dies wird durch lokale Encapsulation erreicht.</target>
-      </trans-unit>
-      <trans-unit id="bullet3Text">
-        <source> Sensitive values are detected and replaced before data leaves the enterprise boundary. The replacement is structure-preserving, so AI can process the data effectively.</source>
-        <target> Sensible Werte werden erkannt und ersetzt, bevor Daten die Unternehmensgrenze verlassen. Die Ersetzung ist strukturerhaltend, sodass die KI die Daten effektiv verarbeiten kann.</target>
-      </trans-unit>
-
-      <!-- Section04_Example -->
-      <trans-unit id="exampleHeading">
+      </segment>
+    </unit>
+    <unit id="bullet3Text">
+      <segment>
+        <source>Sensitive values are detected and replaced before data leaves the enterprise boundary. The replacement is structure-preserving, so AI can process the data effectively.</source>
+        <target>Sensible Werte werden erkannt und ersetzt, bevor Daten die Unternehmensgrenze verlassen. Die Ersetzung ist strukturerhaltend, sodass die KI die Daten effektiv verarbeiten kann.</target>
+      </segment>
+    </unit>
+    <unit id="exampleHeading">
+      <segment>
         <source>Example</source>
         <target>Beispiel</target>
-      </trans-unit>
-      <trans-unit id="exampleText">
+      </segment>
+    </unit>
+    <unit id="exampleText">
+      <segment>
         <source>A healthcare organization sends patient records to AI for diagnostic summarization. With zero exposure, the AI provider receives records where patient names are replaced with consistent tokens, medical record numbers are replaced with synthetic identifiers, and dates are shifted — but all clinical relationships remain intact for accurate summarization.</source>
         <target>Eine Gesundheitsorganisation sendet Patientenakten zur diagnostischen Zusammenfassung an die KI. Mit Zero Exposure erhält der KI-Anbieter Akten, in denen Patientennamen durch konsistente Token ersetzt, Krankenaktennummern durch synthetische Kennungen ersetzt und Daten verschoben sind — aber alle klinischen Zusammenhänge bleiben für eine genaue Zusammenfassung erhalten.</target>
-      </trans-unit>
-
-      <!-- Section05_RelatedTerms -->
-      <trans-unit id="headingTerms">
+      </segment>
+    </unit>
+    <unit id="headingTerms">
+      <segment>
         <source>Related Terms</source>
         <target>Verwandte Begriffe</target>
-      </trans-unit>
-      <trans-unit id="term1Label">
+      </segment>
+    </unit>
+    <unit id="term1Label">
+      <segment>
         <source>Restoration</source>
         <target>Restoration</target>
-      </trans-unit>
-      <trans-unit id="term2Label">
+      </segment>
+    </unit>
+    <unit id="term2Label">
+      <segment>
         <source>Enterprise Context Control</source>
         <target>Enterprise Context Control</target>
-      </trans-unit>
-      <trans-unit id="term3Label">
+      </segment>
+    </unit>
+    <unit id="term3Label">
+      <segment>
         <source>Secure LLM Usage</source>
         <target>Sichere LLM-Nutzung</target>
-      </trans-unit>
-      <trans-unit id="headingPages">
+      </segment>
+    </unit>
+    <unit id="headingPages">
+      <segment>
         <source>Related Pages</source>
         <target>Verwandte Seiten</target>
-      </trans-unit>
-      <trans-unit id="link1Label">
+      </segment>
+    </unit>
+    <unit id="link1Label">
+      <segment>
         <source>Product Overview</source>
         <target>Produktübersicht</target>
-      </trans-unit>
-      <trans-unit id="link2Label">
+      </segment>
+    </unit>
+    <unit id="link2Label">
+      <segment>
         <source>Architecture</source>
         <target>Architektur</target>
-      </trans-unit>
-      <trans-unit id="link3Label">
+      </segment>
+    </unit>
+    <unit id="link3Label">
+      <segment>
         <source>Trust &amp; Compliance</source>
         <target>Vertrauen &amp; Compliance</target>
-      </trans-unit>
-      <trans-unit id="link4Label">
+      </segment>
+    </unit>
+    <unit id="link4Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Demo anfordern</target>
-      </trans-unit>
-
-      <!-- Section06_CTA -->
-      <trans-unit id="ctaTitlePrefix">
+      </segment>
+    </unit>
+    <unit id="ctaTitlePrefix">
+      <segment>
         <source>See</source>
         <target>Erleben Sie</target>
-      </trans-unit>
-      <trans-unit id="ctaTitleProductName">
+      </segment>
+    </unit>
+    <unit id="ctaTitleProductName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="ctaTitleSuffix">
+      </segment>
+    </unit>
+    <unit id="ctaTitleSuffix">
+      <segment>
         <source>Zero Exposure in Action</source>
         <target>Zero Exposure in Aktion</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Protect your most sensitive data while enabling full AI capabilities. Zero exposure means zero risk.</source>
         <target>Schützen Sie Ihre sensibelsten Daten bei gleichzeitiger Nutzung aller KI-Funktionen. Zero Exposure bedeutet null Risiko.</target>
-      </trans-unit>
-      <trans-unit id="ctaLabel1">
+      </segment>
+    </unit>
+    <unit id="ctaLabel1">
+      <segment>
         <source>Request a Demo</source>
         <target>Demo anfordern</target>
-      </trans-unit>
-      <trans-unit id="ctaLabel2">
+      </segment>
+    </unit>
+    <unit id="ctaLabel2">
+      <segment>
         <source>View Product</source>
         <target>Produkt ansehen</target>
-      </trans-unit>
-      <trans-unit id="footnote">
+      </segment>
+    </unit>
+    <unit id="footnote">
+      <segment>
         <source>Enterprise AI Enablement by CUBIG</source>
         <target>KI-Einführung im Unternehmen von CUBIG</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

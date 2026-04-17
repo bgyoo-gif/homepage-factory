@@ -1,98 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ja" datatype="plaintext" original="structure-preserving-processing">
-    <body>
-      <!-- Section01_Hero -->
-      <trans-unit id="title">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ja">
+  <file id="structure-preserving-processing">
+    <unit id="title">
+      <segment>
         <source>Structure-Preserving Processing</source>
         <target>構造保持処理</target>
-      </trans-unit>
-      <trans-unit id="description">
+      </segment>
+    </unit>
+    <unit id="description">
+      <segment>
         <source>Replacing sensitive elements while maintaining document layout, entity relationships, and semantic context for accurate AI processing — a core capability of</source>
         <target>正確なAI処理のためにドキュメントのレイアウト、エンティティ関係、意味的コンテキストを維持しながら機密要素を置き換えます。以下の製品の中核機能です：</target>
-      </trans-unit>
-      <trans-unit id="productName">
+      </segment>
+    </unit>
+    <unit id="productName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-
-      <!-- Section02_Definition -->
-      <trans-unit id="bannerLabel">
+      </segment>
+    </unit>
+    <unit id="bannerLabel">
+      <segment>
         <source>DEFINITION</source>
         <target>定義</target>
-      </trans-unit>
-      <trans-unit id="bannerText">
+      </segment>
+    </unit>
+    <unit id="bannerText">
+      <segment>
         <source>Structure-preserving processing is a data protection method that replaces sensitive elements in enterprise documents while maintaining document layout, entity relationships, table structures, cross-references, and semantic context. It ensures AI models receive structurally intact documents for accurate processing.</source>
         <target>構造保持処理は、ドキュメントのレイアウト、エンティティ関係、テーブル構造、相互参照、意味的コンテキストを維持しながら企業ドキュメントの機密要素を置き換えるデータ保護手法です。AIモデルが正確な処理のために構造的に完全なドキュメントを受信することを保証します。</target>
-      </trans-unit>
-
-      <!-- Section03_Explanation -->
-      <trans-unit id="sectionHeading">
+      </segment>
+    </unit>
+    <unit id="sectionHeading">
+      <segment>
         <source>Explanation</source>
         <target>解説</target>
-      </trans-unit>
-      <trans-unit id="paragraph1">
+      </segment>
+    </unit>
+    <unit id="paragraph1">
+      <segment>
         <source>Flat masking treats every sensitive value as an independent token, replacing each with a generic placeholder. This collapses entity relationships, breaks table schemas, and removes the structural information AI models use for comprehension.</source>
         <target>フラットマスキングはすべての機密値を独立したトークンとして扱い、汎用的なプレースホルダーに置き換えます。これによりエンティティ関係が崩壊し、テーブルスキーマが破壊され、AIモデルが理解に使用する構造情報が失われます。</target>
-      </trans-unit>
-      <trans-unit id="paragraph2">
+      </segment>
+    </unit>
+    <unit id="paragraph2">
+      <segment>
         <source>Structure-preserving processing maintains these relationships. When the same entity appears in multiple locations, all occurrences map to the same replacement. Table column headers and row identifiers remain semantically consistent. Cross-references between document sections maintain their logical connections.</source>
         <target>構造保持処理はこれらの関係を維持します。同じエンティティが複数の場所に出現する場合、すべての出現箇所が同じ置換値にマッピングされます。テーブルの列ヘッダーと行識別子は意味的に一貫性を保ちます。ドキュメントセクション間の相互参照は論理的な接続を維持します。</target>
-      </trans-unit>
-
-      <!-- Section04_Example -->
-      <trans-unit id="exampleHeading">
+      </segment>
+    </unit>
+    <unit id="exampleHeading">
+      <segment>
         <source>Example</source>
         <target>事例</target>
-      </trans-unit>
-      <trans-unit id="cardText">
+      </segment>
+    </unit>
+    <unit id="cardText">
+      <segment>
         <source>A contract references "Acme Corp" 47 times across 30 pages — as a party in the preamble, a signatory in the execution block, and a reference in 12 obligation clauses. Structure-preserving processing replaces all 47 instances with</source>
         <target>契約書が30ページにわたり「Acme Corp」を47回参照しています — 前文の当事者として、署名欄の署名者として、12の義務条項の参照として。構造保持処理は47のすべてのインスタンスを次に置き換えます：</target>
-      </trans-unit>
-      <trans-unit id="codeInline">
+      </segment>
+    </unit>
+    <unit id="codeInline">
+      <segment>
         <source>ENTITY_A</source>
         <target>ENTITY_A</target>
-      </trans-unit>
-
-      <!-- Section05_RelatedTerms -->
-      <trans-unit id="relatedTermsHeading">
+      </segment>
+    </unit>
+    <unit id="relatedTermsHeading">
+      <segment>
         <source>Related Terms</source>
         <target>関連用語</target>
-      </trans-unit>
-      <trans-unit id="relatedPagesHeading">
+      </segment>
+    </unit>
+    <unit id="relatedPagesHeading">
+      <segment>
         <source>Related Pages</source>
         <target>関連ページ</target>
-      </trans-unit>
-
-      <!-- Section06_CTA -->
-      <trans-unit id="titlePrefix">
+      </segment>
+    </unit>
+    <unit id="titlePrefix">
+      <segment>
         <source>See</source>
         <target></target>
-      </trans-unit>
-      <trans-unit id="ctaProductName">
+      </segment>
+    </unit>
+    <unit id="ctaProductName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="titleSuffix">
+      </segment>
+    </unit>
+    <unit id="titleSuffix">
+      <segment>
         <source>Structure-Preserving Processing in Action</source>
         <target>構造保持処理の実際の動作をご覧ください</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Experience how enterprise documents retain full structural integrity throughout the encapsulation and AI processing pipeline.</source>
         <target>EncapsulationとAI処理パイプライン全体を通じて企業ドキュメントが完全な構造的整合性を維持する様子を体験してください。</target>
-      </trans-unit>
-      <trans-unit id="primaryButtonLabel">
+      </segment>
+    </unit>
+    <unit id="primaryButtonLabel">
+      <segment>
         <source>Request a Demo</source>
         <target>デモのリクエスト</target>
-      </trans-unit>
-      <trans-unit id="secondaryButtonLabel">
+      </segment>
+    </unit>
+    <unit id="secondaryButtonLabel">
+      <segment>
         <source>View Product</source>
         <target>製品を見る</target>
-      </trans-unit>
-      <trans-unit id="footnote">
+      </segment>
+    </unit>
+    <unit id="footnote">
+      <segment>
         <source>Enterprise AI Enablement by CUBIG</source>
         <target>CUBIGによるエンタープライズAIイネーブルメント</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

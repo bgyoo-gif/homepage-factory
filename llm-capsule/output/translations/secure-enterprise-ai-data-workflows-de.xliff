@@ -1,152 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="secure-enterprise-ai-data-workflows">
-    <body>
-      <!-- Hero -->
-      <trans-unit id="heroTitle">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+  <file id="secure-enterprise-ai-data-workflows">
+    <unit id="heroTitle">
+      <segment>
         <source>Secure Enterprise AI Data Workflows</source>
         <target>Sichere Enterprise-KI-Datenworkflows</target>
-      </trans-unit>
-      <trans-unit id="heroDescription">
+      </segment>
+    </unit>
+    <unit id="heroDescription">
+      <segment>
         <source>Complete guide to enterprise AI data privacy — how to protect sensitive data throughout AI processing while producing usable, restorable enterprise outputs.</source>
         <target>Vollstaendiger Leitfaden zum Datenschutz bei Enterprise-KI — wie Sie sensible Daten waehrend der gesamten KI-Verarbeitung schuetzen und gleichzeitig nutzbare, wiederherstellbare Enterprise-Ausgaben erzeugen.</target>
-      </trans-unit>
-
-      <!-- Problem -->
-      <trans-unit id="problemPara1">
+      </segment>
+    </unit>
+    <unit id="problemPara1">
+      <segment>
         <source>Enterprise AI adoption is blocked by a fundamental tension: AI delivers value by processing real data, but enterprise data governance prohibits sending sensitive information to external AI services. This creates a stalemate that affects every regulated industry — finance, healthcare, legal, government, and telecom.</source>
         <target>Die KI-Einfuehrung im Unternehmen wird durch eine grundlegende Spannung blockiert: KI liefert Wert durch die Verarbeitung realer Daten, aber die Unternehmens-Datengovernance verbietet das Senden sensibler Informationen an externe KI-Dienste. Dies erzeugt eine Pattsituation, die jede regulierte Branche betrifft — Finanzen, Gesundheitswesen, Recht, Regierung und Telekommunikation.</target>
-      </trans-unit>
-      <trans-unit id="problemPara2">
+      </segment>
+    </unit>
+    <unit id="problemPara2">
+      <segment>
         <source>The consequence is either AI projects using only sanitized, non-sensitive data (limiting value), or data teams building complex workarounds that introduce risk and compliance gaps. Neither approach scales.</source>
         <target>Die Folge ist entweder, dass KI-Projekte nur bereinigte, nicht-sensible Daten verwenden (was den Wert einschraenkt), oder Datenteams komplexe Workarounds entwickeln, die Risiken und Compliance-Luecken einfuehren. Keiner der Ansaetze skaliert.</target>
-      </trans-unit>
-
-      <!-- Definition -->
-      <trans-unit id="definitionTitle">
+      </segment>
+    </unit>
+    <unit id="definitionTitle">
+      <segment>
         <source>Secure Enterprise AI Data Workflow</source>
         <target>Sicherer Enterprise-KI-Datenworkflow</target>
-      </trans-unit>
-      <trans-unit id="definitionBody">
+      </segment>
+    </unit>
+    <unit id="definitionBody">
+      <segment>
         <source>A secure enterprise AI data workflow is an end-to-end data processing pattern that protects sensitive information at the data layer before AI processing, preserves document structure for AI accuracy, and restores enterprise context in outputs through local restoration. It enables enterprise AI adoption without sacrificing data privacy or AI output quality.</source>
         <target>Ein sicherer Enterprise-KI-Datenworkflow ist ein End-to-End-Datenverarbeitungsmuster, das sensible Informationen auf der Datenschicht vor der KI-Verarbeitung schuetzt, die Dokumentstruktur fuer die KI-Genauigkeit bewahrt und den Enterprise-Kontext in Ausgaben durch lokale Restoration wiederherstellt. Er ermoeglicht die KI-Einfuehrung im Unternehmen ohne Einbussen bei Datenschutz oder KI-Ausgabequalitaet.</target>
-      </trans-unit>
-
-      <!-- Explanation -->
-      <trans-unit id="explanationIntro">
+      </segment>
+    </unit>
+    <unit id="explanationIntro">
+      <segment>
         <source>Building secure enterprise AI data workflows requires addressing protection at three distinct layers:</source>
         <target>Der Aufbau sicherer Enterprise-KI-Datenworkflows erfordert Schutz auf drei verschiedenen Ebenen:</target>
-      </trans-unit>
-      <trans-unit id="explanationSub1Title">
+      </segment>
+    </unit>
+    <unit id="explanationSub1Title">
+      <segment>
         <source>Data Layer Protection</source>
         <target>Datenschicht-Schutz</target>
-      </trans-unit>
-      <trans-unit id="explanationSub1Body">
+      </segment>
+    </unit>
+    <unit id="explanationSub1Body">
+      <segment>
         <source>Enterprise AI data privacy starts before data reaches any AI model. LLM Capsule applies context-aware data control at the document level — identifying and encapsulating sensitive elements based on configurable enterprise policies. This is fundamentally different from API gateway filtering, which only sees prompts, not the underlying data structures.</source>
         <target>Der Datenschutz bei Enterprise-KI beginnt, bevor Daten ein KI-Modell erreichen. LLM Capsule wendet kontextbezogene Datenkontrolle auf Dokumentebene an — sensible Elemente werden basierend auf konfigurierbaren Unternehmensrichtlinien identifiziert und eingekapselt. Dies unterscheidet sich grundlegend von API-Gateway-Filterung, die nur Prompts sieht, nicht die zugrunde liegenden Datenstrukturen.</target>
-      </trans-unit>
-      <trans-unit id="explanationSub2Title">
+      </segment>
+    </unit>
+    <unit id="explanationSub2Title">
+      <segment>
         <source>Processing Layer Integrity</source>
         <target>Integritaet der Verarbeitungsschicht</target>
-      </trans-unit>
-      <trans-unit id="explanationSub2Body">
+      </segment>
+    </unit>
+    <unit id="explanationSub2Body">
+      <segment>
         <source>Protected documents must retain enough structure for AI models to produce meaningful results. Structure-preserving processing ensures that tables, entity relationships, cross-references, and document hierarchies remain intact in the encapsulated representation. AI models process structurally complete documents, not fragmented masked text.</source>
         <target>Geschuetzte Dokumente muessen genuegend Struktur beibehalten, damit KI-Modelle aussagekraeftige Ergebnisse erzeugen koennen. Strukturerhaltende Verarbeitung stellt sicher, dass Tabellen, Entitaetsbeziehungen, Querverweise und Dokumenthierarchien in der gekapselten Darstellung intakt bleiben. KI-Modelle verarbeiten strukturell vollstaendige Dokumente, nicht fragmentierten maskierten Text.</target>
-      </trans-unit>
-      <trans-unit id="explanationSub3Title">
+      </segment>
+    </unit>
+    <unit id="explanationSub3Title">
+      <segment>
         <source>Output Layer Restoration</source>
         <target>Wiederherstellung der Ausgabeschicht</target>
-      </trans-unit>
-      <trans-unit id="explanationSub3Body">
+      </segment>
+    </unit>
+    <unit id="explanationSub3Body">
+      <segment>
         <source>AI results are restored through local restoration. The locally stored mapping between original and encapsulated values is applied to AI outputs automatically. This produces enterprise-ready outputs — with real names, real amounts, real references — that integrate directly into business systems without manual post-processing.</source>
         <target>KI-Ergebnisse werden durch lokale Restoration wiederhergestellt. Das lokal gespeicherte Mapping zwischen Original- und gekapselten Werten wird automatisch auf KI-Ausgaben angewendet. Dies erzeugt unternehmensfaehige Ausgaben — mit echten Namen, echten Betraegen, echten Referenzen — die sich ohne manuelle Nachbearbeitung direkt in Geschaeftssysteme integrieren.</target>
-      </trans-unit>
-
-      <!-- Enterprise Examples -->
-      <trans-unit id="example1Title">
+      </segment>
+    </unit>
+    <unit id="example1Title">
+      <segment>
         <source>Finance: Regulatory Reporting Automation</source>
         <target>Finanzen: Automatisierung regulatorischer Berichterstattung</target>
-      </trans-unit>
-      <trans-unit id="example1Body">
+      </segment>
+    </unit>
+    <unit id="example1Body">
+      <segment>
         <source>A bank automates quarterly regulatory report generation using AI. Source documents contain customer account data, transaction histories, and internal risk assessments. LLM Capsule encapsulates all sensitive data, AI generates structured reports from protected sources, and restoration produces regulator-ready output.</source>
         <target>Eine Bank automatisiert die vierteljährliche regulatorische Berichterstellung mit KI. Quelldokumente enthalten Kundenkontodaten, Transaktionshistorien und interne Risikobewertungen. LLM Capsule kapselt alle sensiblen Daten ein, die KI generiert strukturierte Berichte aus geschuetzten Quellen, und Restoration erzeugt regulierungskonforme Ausgaben.</target>
-      </trans-unit>
-      <trans-unit id="example2Title">
+      </segment>
+    </unit>
+    <unit id="example2Title">
+      <segment>
         <source>Healthcare: Clinical Trial Document Processing</source>
         <target>Gesundheitswesen: Verarbeitung klinischer Studiendokumente</target>
-      </trans-unit>
-      <trans-unit id="example2Body">
+      </segment>
+    </unit>
+    <unit id="example2Body">
+      <segment>
         <source>A pharmaceutical company uses AI to extract adverse event data from clinical trial reports. Documents contain patient identifiers, investigator names, and proprietary compound information. The secure workflow encapsulates all protected elements, AI extracts structured data, and restoration links extracted events to real patient identifiers in the internal safety database.</source>
         <target>Ein Pharmaunternehmen nutzt KI zur Extraktion von Nebenwirkungsdaten aus klinischen Studienberichten. Dokumente enthalten Patientenidentifikatoren, Prüfarztnamen und proprietaere Wirkstoffinformationen. Der sichere Workflow kapselt alle geschuetzten Elemente ein, die KI extrahiert strukturierte Daten, und Restoration verknuepft extrahierte Ereignisse mit echten Patientenidentifikatoren in der internen Sicherheitsdatenbank.</target>
-      </trans-unit>
-      <trans-unit id="example3Title">
+      </segment>
+    </unit>
+    <unit id="example3Title">
+      <segment>
         <source>Legal: Multi-Jurisdictional Contract Review</source>
         <target>Recht: Multi-jurisdiktionale Vertragspruefung</target>
-      </trans-unit>
-      <trans-unit id="example3Body">
+      </segment>
+    </unit>
+    <unit id="example3Body">
+      <segment>
         <source>A multinational corporation reviews employment contracts across 12 jurisdictions using AI for clause extraction and compliance checking. Each jurisdiction's contracts contain locally sensitive employee data. Enterprise confidentiality control applies jurisdiction-appropriate encapsulation policies, and restored outputs map to the appropriate HR systems.</source>
         <target>Ein multinationaler Konzern prueft Arbeitsvertraege in 12 Rechtsordnungen mittels KI zur Klauselextraktion und Compliance-Pruefung. Die Vertraege jeder Rechtsordnung enthalten lokal sensible Mitarbeiterdaten. Enterprise Confidentiality Control wendet jurisdiktionsgerechte Encapsulation-Richtlinien an, und die wiederhergestellten Ausgaben werden den entsprechenden HR-Systemen zugeordnet.</target>
-      </trans-unit>
-
-      <!-- FAQ -->
-      <trans-unit id="faq1Q">
+      </segment>
+    </unit>
+    <unit id="faq1Q">
+      <segment>
         <source>How do you build a secure enterprise AI data workflow?</source>
         <target>Wie baut man einen sicheren Enterprise-KI-Datenworkflow auf?</target>
-      </trans-unit>
-      <trans-unit id="faq1A">
+      </segment>
+    </unit>
+    <unit id="faq1A">
+      <segment>
         <source>A secure enterprise AI data workflow encapsulates sensitive data locally before AI processing, preserves document structure for AI accuracy, and restores outputs through local restoration. This requires a data-layer protection approach, not just API-level filtering.</source>
         <target>Ein sicherer Enterprise-KI-Datenworkflow kapselt sensible Daten vor der KI-Verarbeitung lokal ein, bewahrt die Dokumentstruktur fuer KI-Genauigkeit und stellt Ausgaben durch lokale Restoration wieder her. Dies erfordert einen Datenschicht-Schutzansatz, nicht nur API-Level-Filterung.</target>
-      </trans-unit>
-      <trans-unit id="faq2Q">
+      </segment>
+    </unit>
+    <unit id="faq2Q">
+      <segment>
         <source>What is a restorable workflow?</source>
         <target>Was ist ein wiederherstellbarer Workflow?</target>
-      </trans-unit>
-      <trans-unit id="faq2A">
+      </segment>
+    </unit>
+    <unit id="faq2A">
+      <segment>
         <source>A restorable workflow is an AI data processing pattern where sensitive data is replaced with reversible representations before AI processing. After processing, outputs are restored with original data locally, producing enterprise-ready results.</source>
         <target>Ein wiederherstellbarer Workflow ist ein KI-Datenverarbeitungsmuster, bei dem sensible Daten vor der KI-Verarbeitung durch reversible Repraesentationen ersetzt werden. Nach der Verarbeitung werden Ausgaben lokal mit den Originaldaten wiederhergestellt, wodurch unternehmensfaehige Ergebnisse entstehen.</target>
-      </trans-unit>
-      <trans-unit id="faq3Q">
+      </segment>
+    </unit>
+    <unit id="faq3Q">
+      <segment>
         <source>Can secure AI workflows work with RAG pipelines?</source>
         <target>Koennen sichere KI-Workflows mit RAG-Pipelines arbeiten?</target>
-      </trans-unit>
-      <trans-unit id="faq3A">
+      </segment>
+    </unit>
+    <unit id="faq3A">
+      <segment>
         <source>Yes. LLM Capsule integrates with RAG (Retrieval-Augmented Generation) pipelines by encapsulating retrieved documents before they are included in AI prompts. Retrieved context remains protected throughout the generation process.</source>
         <target>Ja. LLM Capsule integriert sich in RAG-Pipelines (Retrieval-Augmented Generation), indem abgerufene Dokumente vor ihrer Einbindung in KI-Prompts eingekapselt werden. Der abgerufene Kontext bleibt waehrend des gesamten Generierungsprozesses geschuetzt.</target>
-      </trans-unit>
-      <trans-unit id="faq4Q">
+      </segment>
+    </unit>
+    <unit id="faq4Q">
+      <segment>
         <source>What industries need secure enterprise AI data workflows?</source>
         <target>Welche Branchen benoetigen sichere Enterprise-KI-Datenworkflows?</target>
-      </trans-unit>
-      <trans-unit id="faq4A">
+      </segment>
+    </unit>
+    <unit id="faq4A">
+      <segment>
         <source>Any industry handling sensitive data — financial services, healthcare, legal, government, defense, telecom, and insurance. Any organization subject to GDPR, HIPAA, SOX, or industry-specific data regulations benefits from secure AI data workflows.</source>
         <target>Jede Branche, die sensible Daten verarbeitet — Finanzdienstleistungen, Gesundheitswesen, Recht, Regierung, Verteidigung, Telekommunikation und Versicherung. Jede Organisation, die DSGVO, HIPAA, SOX oder branchenspezifischen Datenvorschriften unterliegt, profitiert von sicheren KI-Datenworkflows.</target>
-      </trans-unit>
-
-      <!-- CTA -->
-      <trans-unit id="ctaTitle">
+      </segment>
+    </unit>
+    <unit id="ctaTitle">
+      <segment>
         <source>See how LLM Capsule works with your data</source>
         <target>Erfahren Sie, wie LLM Capsule mit Ihren Daten arbeitet</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsaechlichen Workflows.</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn1Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn2Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnote1Label">
+      </segment>
+    </unit>
+    <unit id="ctaFootnote1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>Architektur-Brief herunterladen</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnote2Label">
+      </segment>
+    </unit>
+    <unit id="ctaFootnote2Label">
+      <segment>
         <source>AWS Marketplace</source>
         <target>AWS Marketplace</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

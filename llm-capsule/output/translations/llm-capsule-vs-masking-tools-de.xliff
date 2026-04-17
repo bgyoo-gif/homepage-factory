@@ -1,111 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="llm-capsule-vs-masking-tools">
-    <body>
-      <trans-unit id="titleProduct">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+  <file id="llm-capsule-vs-masking-tools">
+    <unit id="titleProduct">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="title">
+      </segment>
+    </unit>
+    <unit id="title">
+      <segment>
         <source>See how</source>
         <target>Erleben Sie</target>
-      </trans-unit>
-      <trans-unit id="descriptionProduct">
+      </segment>
+    </unit>
+    <unit id="descriptionProduct">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="description">
+      </segment>
+    </unit>
+    <unit id="description">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Workflows.</target>
-      </trans-unit>
-      <trans-unit id="label">
+      </segment>
+    </unit>
+    <unit id="label">
+      <segment>
         <source>Masking vs. Encapsulation — Side-by-side output comparison showing restored vs. redacted results</source>
         <target>Maskierung vs. Encapsulation — Vergleich der Ergebnisse: Restoration vs. maskierte Ausgabe</target>
-      </trans-unit>
-      <trans-unit id="heading">
+      </segment>
+    </unit>
+    <unit id="heading">
+      <segment>
         <source>FAQ</source>
         <target>FAQ</target>
-      </trans-unit>
-      <trans-unit id="product">
+      </segment>
+    </unit>
+    <unit id="product">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="paragraph">
+      </segment>
+    </unit>
+    <unit id="paragraph">
+      <segment>
         <source>Masking tools scan documents for sensitive patterns — names, numbers, dates — and replace them with generic tokens ([REDACTED], [NAME], ****) or remove them entirely. The replacement is permanent. There is no mechanism to restore original values after processing.</source>
         <target>Maskierungstools scannen Dokumente nach sensiblen Mustern — Namen, Nummern, Daten — und ersetzen diese durch generische Token ([REDACTED], [NAME], ****) oder entfernen sie vollständig. Die Ersetzung ist permanent. Es gibt keinen Mechanismus zur Wiederherstellung der Originalwerte nach der Verarbeitung.</target>
-      </trans-unit>
-      <trans-unit id="headingProduct">
+      </segment>
+    </unit>
+    <unit id="headingProduct">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="paragraphProduct">
+      </segment>
+    </unit>
+    <unit id="paragraphProduct">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="bannerStrong">
+      </segment>
+    </unit>
+    <unit id="bannerStrong">
+      <segment>
         <source>AI results are automatically restored locally with original enterprise data.</source>
         <target>AI-Ergebnisse werden lokal automatisch mit den originalen Unternehmensdaten per Restoration wiederhergestellt.</target>
-      </trans-unit>
-      <trans-unit id="bannerProduct">
+      </segment>
+    </unit>
+    <unit id="bannerProduct">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="bannerText">
-        <source> is an AI enablement data layer that protects sensitive data while enabling usable enterprise AI outputs.</source>
-        <target> ist eine AI-Enablement-Datenschicht, die sensible Daten schützt und gleichzeitig nutzbare KI-Ergebnisse für Unternehmen ermöglicht.</target>
-      </trans-unit>
-      <trans-unit id="colHeader1">
+      </segment>
+    </unit>
+    <unit id="bannerText">
+      <segment>
+        <source>is an AI enablement data layer that protects sensitive data while enabling usable enterprise AI outputs.</source>
+        <target>ist eine AI-Enablement-Datenschicht, die sensible Daten schützt und gleichzeitig nutzbare KI-Ergebnisse für Unternehmen ermöglicht.</target>
+      </segment>
+    </unit>
+    <unit id="colHeader1">
+      <segment>
         <source>Capability</source>
         <target>Funktion</target>
-      </trans-unit>
-      <trans-unit id="colHeader2">
+      </segment>
+    </unit>
+    <unit id="colHeader2">
+      <segment>
         <source>Masking Tools</source>
         <target>Maskierungstools</target>
-      </trans-unit>
-      <trans-unit id="colHeader3Product">
+      </segment>
+    </unit>
+    <unit id="colHeader3Product">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="colHeader3">
+      </segment>
+    </unit>
+    <unit id="colHeader3">
+      <segment>
         <source>(AI Enablement Data Layer)</source>
         <target>(AI-Enablement-Datenschicht)</target>
-      </trans-unit>
-      <trans-unit id="cardTitle">
+      </segment>
+    </unit>
+    <unit id="cardTitle">
+      <segment>
         <source>Contract Analysis Pipeline</source>
         <target>Vertragsanalyse-Pipeline</target>
-      </trans-unit>
-      <trans-unit id="withMaskingLabel">
+      </segment>
+    </unit>
+    <unit id="withMaskingLabel">
+      <segment>
         <source>With masking:</source>
         <target>Mit Maskierung:</target>
-      </trans-unit>
-      <trans-unit id="withMaskingText">
+      </segment>
+    </unit>
+    <unit id="withMaskingText">
+      <segment>
         <source>200 contracts masked → AI produces generic summaries with "[REDACTED]" throughout → Legal team manually restores ~40 hours of context rebuilding.</source>
         <target>200 Verträge maskiert → AI erstellt generische Zusammenfassungen mit durchgängigem „[REDACTED]" → Rechtsabteilung stellt manuell ca. 40 Stunden Kontextrekonstruktion wieder her.</target>
-      </trans-unit>
-      <trans-unit id="withCapsuleLabel">
+      </segment>
+    </unit>
+    <unit id="withCapsuleLabel">
+      <segment>
         <source>With</source>
         <target>Mit</target>
-      </trans-unit>
-      <trans-unit id="withCapsuleProduct">
+      </segment>
+    </unit>
+    <unit id="withCapsuleProduct">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="withCapsuleText">
+      </segment>
+    </unit>
+    <unit id="withCapsuleText">
+      <segment>
         <source>: 200 contracts encapsulated → AI produces structured summaries → Local restoration restores all parties, amounts, and dates → Output feeds directly into contract management system.</source>
         <target>: 200 Verträge per Encapsulation geschützt → AI erstellt strukturierte Zusammenfassungen → Restoration stellt alle Parteien, Beträge und Daten wieder her → Ausgabe wird direkt in das Vertragsmanagementsystem übernommen.</target>
-      </trans-unit>
-      <trans-unit id="sectionLabel">
+      </segment>
+    </unit>
+    <unit id="sectionLabel">
+      <segment>
         <source>Related</source>
         <target>Verwandte Seiten</target>
-      </trans-unit>
-      <trans-unit id="primaryCTALabel">
+      </segment>
+    </unit>
+    <unit id="primaryCTALabel">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="secondaryCTALabel">
+      </segment>
+    </unit>
+    <unit id="secondaryCTALabel">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

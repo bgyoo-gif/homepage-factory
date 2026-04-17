@@ -1,168 +1,233 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ja" datatype="plaintext" original="trust-center">
-    <body>
-      <!-- Section01_Hero -->
-      <trans-unit id="Section01_Hero.title">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ja">
+  <file id="trust-center">
+    <unit id="Section01_Hero.title">
+      <segment>
         <source>Security &amp; Compliance</source>
         <target>セキュリティ &amp; コンプライアンス</target>
-      </trans-unit>
-      <trans-unit id="Section01_Hero.titleHighlight">
+      </segment>
+    </unit>
+    <unit id="Section01_Hero.titleHighlight">
+      <segment>
         <source>Trust Center</source>
         <target>Trust Center</target>
-      </trans-unit>
-      <trans-unit id="Section01_Hero.description">
+      </segment>
+    </unit>
+    <unit id="Section01_Hero.description">
+      <segment>
         <source>Certifications, compliance documentation, and security information for</source>
         <target>認証、コンプライアンス文書、セキュリティ情報を提供します。</target>
-      </trans-unit>
-      <trans-unit id="Section01_Hero.productName">
+      </segment>
+    </unit>
+    <unit id="Section01_Hero.productName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-
-      <!-- Section02_Certifications -->
-      <trans-unit id="Section02_Certifications.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="Section02_Certifications.sectionTitle">
+      <segment>
         <source>Certifications &amp;</source>
         <target>認証 &amp;</target>
-      </trans-unit>
-      <trans-unit id="Section02_Certifications.sectionTitleHighlight">
+      </segment>
+    </unit>
+    <unit id="Section02_Certifications.sectionTitleHighlight">
+      <segment>
         <source>Compliance</source>
         <target>コンプライアンス</target>
-      </trans-unit>
-      <trans-unit id="Section02_Certifications.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="Section02_Certifications.sectionDescription">
+      <segment>
         <source>Information security management, AI governance, and government software quality certifications.</source>
         <target>情報セキュリティ管理、AIガバナンス、政府ソフトウェア品質認証を取得しています。</target>
-      </trans-unit>
-
-      <!-- Section03_DataPrinciples -->
-      <trans-unit id="Section03_DataPrinciples.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.sectionTitle">
+      <segment>
         <source>Data Handling</source>
         <target>データ取り扱い</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.sectionTitleHighlight">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.sectionTitleHighlight">
+      <segment>
         <source>Principles</source>
         <target>原則</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.sectionDescription">
+      <segment>
         <source>Zero exposure by design. Original sensitive enterprise data never leaves the enterprise environment.</source>
         <target>設計段階からデータ漏洩ゼロを実現します。機密データが企業環境の外に出ることはありません。</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.card1Title">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.card1Title">
+      <segment>
         <source>Zero Exposure by Design</source>
         <target>設計によるデータ漏洩ゼロ</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.card1Description">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.card1Description">
+      <segment>
         <source>Original sensitive enterprise data never leaves the enterprise environment. Only encapsulated representations cross the trust boundary to external AI services.</source>
         <target>機密データは企業環境の外に出ることはありません。Encapsulationされた表現のみが信頼境界を越えて外部AIサービスに送信されます。</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.card2Title">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.card2Title">
+      <segment>
         <source>Local-only Mapping Storage</source>
         <target>ローカル専用マッピングストレージ</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.card2Description">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.card2Description">
+      <segment>
         <source>The mapping between original and encapsulated values is stored entirely within the enterprise environment and never transmitted externally.</source>
         <target>原本とEncapsulation値のマッピングは企業環境内に全量保存され、外部に送信されることはありません。</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.card3Title">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.card3Title">
+      <segment>
         <source>Complete Audit Trails</source>
         <target>完全な監査証跡</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.card3Description">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.card3Description">
+      <segment>
         <source>Every encapsulation and restoration event is logged with full audit data supporting enterprise AI governance and regulatory compliance.</source>
         <target>すべてのEncapsulationおよびRestorationイベントが完全な監査データとともに記録され、企業AIガバナンスと規制コンプライアンスを支援します。</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.card4Title">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.card4Title">
+      <segment>
         <source>Model-agnostic Protection</source>
         <target>モデル非依存の保護</target>
-      </trans-unit>
-      <trans-unit id="Section03_DataPrinciples.card4Description">
+      </segment>
+    </unit>
+    <unit id="Section03_DataPrinciples.card4Description">
+      <segment>
         <source>Protection operates at the data layer, independent of any specific AI provider, ensuring consistent security regardless of which LLM is used.</source>
         <target>データレイヤーで動作する保護機構により、特定のAIプロバイダーに依存せず、使用するLLMに関係なく一貫したセキュリティを確保します。</target>
-      </trans-unit>
-
-      <!-- Section04_EvidenceHub -->
-      <trans-unit id="Section04_EvidenceHub.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.sectionTitle">
+      <segment>
         <source>Documents &amp; Review Items for Enterprise</source>
         <target>企業評価のためのドキュメント &amp; レビュー項目</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.sectionTitleHighlight">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.sectionTitleHighlight">
+      <segment>
         <source>Evaluation</source>
         <target>評価</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.sectionDescription">
+      <segment>
         <source>Use this page as the operational trust hub for procurement, security review, architecture review, and compliance validation.</source>
         <target>このページを調達、セキュリティレビュー、アーキテクチャレビュー、コンプライアンス検証のための運用トラストハブとしてご活用ください。</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.item1Title">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.item1Title">
+      <segment>
         <source>Architecture Brief</source>
         <target>アーキテクチャブリーフ</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.item1Description">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.item1Description">
+      <segment>
         <source>High-level architecture, trust boundary, local mapping model, and restoration flow.</source>
         <target>上位アーキテクチャ、信頼境界、ローカルマッピングモデル、Restorationフローをご案内します。</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.item2Title">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.item2Title">
+      <segment>
         <source>Security Review Package</source>
         <target>セキュリティレビューパッケージ</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.item2Description">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.item2Description">
+      <segment>
         <source>Data handling principles, audit model, deployment assumptions, and security questionnaire support.</source>
         <target>データ取り扱い原則、監査モデル、デプロイメント前提条件、セキュリティ質問票サポートを含みます。</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.item3Title">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.item3Title">
+      <segment>
         <source>Deployment Options</source>
         <target>デプロイメントオプション</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.item3Description">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.item3Description">
+      <segment>
         <source>On-premise, air-gapped, VPC, cloud, hybrid, and embedded deployment patterns for evaluation.</source>
         <target>オンプレミス、エアギャップ、VPC、クラウド、ハイブリッド、組み込みのデプロイメントパターンを評価できます。</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.item4Title">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.item4Title">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.item4Description">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.item4Description">
+      <segment>
         <source>Review your environment, data flow, policy requirements, and evaluation criteria with the technical team.</source>
         <target>技術チームと環境、データフロー、ポリシー要件、評価基準をレビューします。</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.ctaPrimaryLabel">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.ctaPrimaryLabel">
+      <segment>
         <source>Request a Demo</source>
         <target>デモのリクエスト</target>
-      </trans-unit>
-      <trans-unit id="Section04_EvidenceHub.ctaSecondaryLabel">
+      </segment>
+    </unit>
+    <unit id="Section04_EvidenceHub.ctaSecondaryLabel">
+      <segment>
         <source>Download Brief</source>
         <target>ブリーフをダウンロード</target>
-      </trans-unit>
-
-      <!-- Section05_CTA -->
-      <trans-unit id="Section05_CTA.title">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.title">
+      <segment>
         <source>See how</source>
         <target>ご確認ください。</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.productName">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.productName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.description">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.description">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>ドキュメント、デプロイメント条件、評価基準をお持ちください。実際のワークフローでデモンストレーションいたします。</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.btn1Label">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.btn1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>デモのリクエスト</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.btn2Label">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.btn2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.footnote1Label">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.footnote1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>アーキテクチャブリーフをダウンロード</target>
-      </trans-unit>
-      <trans-unit id="Section05_CTA.footnote2Label">
+      </segment>
+    </unit>
+    <unit id="Section05_CTA.footnote2Label">
+      <segment>
         <source>Available on AWS Marketplace</source>
         <target>AWS Marketplaceで利用可能</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -1,94 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="secure-llm-usage">
-    <body>
-      <!-- Section01_Hero -->
-      <trans-unit id="titlePrefix">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+  <file id="secure-llm-usage">
+    <unit id="titlePrefix">
+      <segment>
         <source>Secure</source>
         <target>Secure</target>
-      </trans-unit>
-      <trans-unit id="titleMain">
-        <source> LLM Usage</source>
-        <target> LLM Usage</target>
-      </trans-unit>
-      <trans-unit id="descriptionText">
+      </segment>
+    </unit>
+    <unit id="titleMain">
+      <segment>
+        <source>LLM Usage</source>
+        <target>LLM Usage</target>
+      </segment>
+    </unit>
+    <unit id="descriptionText">
+      <segment>
         <source>Using large language models for enterprise tasks without exposing original sensitive data to external AI services. Enabled by</source>
         <target>Nutzung von Large Language Models fuer Unternehmensaufgaben, ohne sensible Originaldaten an externe KI-Dienste preiszugeben. Ermoeglicht durch</target>
-      </trans-unit>
-      <trans-unit id="productName">
+      </segment>
+    </unit>
+    <unit id="productName">
+      <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
-      </trans-unit>
-
-      <!-- Section02_Screenshot -->
-      <trans-unit id="screenshotLabel">
+      </segment>
+    </unit>
+    <unit id="screenshotLabel">
+      <segment>
         <source>Secure LLM Usage — Sensitive enterprise data encapsulated before reaching any LLM, results restored locally</source>
         <target>Secure LLM Usage — Sensible Unternehmensdaten werden vor der Uebermittlung an ein LLM per Encapsulation geschuetzt, Ergebnisse lokal per Restoration wiederhergestellt</target>
-      </trans-unit>
-
-      <!-- Section03_Definition -->
-      <trans-unit id="bannerLabel">
+      </segment>
+    </unit>
+    <unit id="bannerLabel">
+      <segment>
         <source>DEFINITION</source>
         <target>DEFINITION</target>
-      </trans-unit>
-      <trans-unit id="definitionText">
+      </segment>
+    </unit>
+    <unit id="definitionText">
+      <segment>
         <source>Secure LLM usage is the practice of using large language models for enterprise tasks — summarization, extraction, classification, translation — without exposing original sensitive data to the AI provider.</source>
         <target>Secure LLM Usage bezeichnet die Praxis, Large Language Models fuer Unternehmensaufgaben wie Zusammenfassung, Extraktion, Klassifizierung und Uebersetzung zu nutzen, ohne die sensiblen Originaldaten dem KI-Anbieter preiszugeben.</target>
-      </trans-unit>
-
-      <!-- Section04_Explanation -->
-      <trans-unit id="sectionTitlePrefix">
+      </segment>
+    </unit>
+    <unit id="sectionTitlePrefix">
+      <segment>
         <source>Explanation</source>
         <target>Erlaeuterung</target>
-      </trans-unit>
-      <trans-unit id="paragraph1">
+      </segment>
+    </unit>
+    <unit id="paragraph1">
+      <segment>
         <source>Secure LLM usage is distinct from model-level security measures like prompt filtering or output scanning. Those approaches monitor the interaction with the AI model but do not prevent the data itself from being transmitted. Secure LLM usage operates at the data layer — transforming what the AI receives so that sensitive information never reaches the model.</source>
         <target>Secure LLM Usage unterscheidet sich von Sicherheitsmassnahmen auf Modellebene wie Prompt-Filterung oder Output-Scanning. Diese Ansaetze ueberwachen die Interaktion mit dem KI-Modell, verhindern jedoch nicht die Uebertragung der Daten selbst. Secure LLM Usage arbeitet auf der Datenschicht und transformiert die Eingaben so, dass sensible Informationen das Modell nie erreichen.</target>
-      </trans-unit>
-      <trans-unit id="paragraph2">
+      </segment>
+    </unit>
+    <unit id="paragraph2">
+      <segment>
         <source>This approach is model-agnostic. Whether the enterprise uses ChatGPT, Claude, Gemini, Perplexity, or any other LLM API, the AI enablement data layer remains consistent because it operates before the data reaches any model — enabling cross-model execution from a single AI enablement layer.</source>
         <target>Dieser Ansatz ist modellunabhaengig. Unabhaengig davon, ob das Unternehmen ChatGPT, Claude, Gemini, Perplexity oder eine andere LLM-API verwendet, bleibt die AI-Enablement-Datenschicht konsistent, da sie vor der Datenuebermittlung an das Modell arbeitet und so modelluebergreifende Ausfuehrung ueber eine einzige AI-Enablement-Schicht ermoeglicht.</target>
-      </trans-unit>
-
-      <!-- Section05_Example -->
-      <trans-unit id="exampleTitlePrefix">
+      </segment>
+    </unit>
+    <unit id="exampleTitlePrefix">
+      <segment>
         <source>Example</source>
         <target>Beispiel</target>
-      </trans-unit>
-      <trans-unit id="exampleText">
+      </segment>
+    </unit>
+    <unit id="exampleText">
+      <segment>
         <source>A legal team uses Claude to analyze contract clauses across 100 vendor agreements. Each agreement contains proprietary pricing, vendor names, and internal project codes. Secure LLM usage means Claude receives structurally intact contracts with protected values — it can perform clause analysis accurately, but never receives the original vendor names or pricing figures. Outputs are restored locally for the legal team.</source>
         <target>Ein Rechtsteam nutzt Claude zur Analyse von Vertragsklauseln in 100 Lieferantenvertraegen. Jeder Vertrag enthaelt proprietaere Preisinformationen, Lieferantennamen und interne Projektcodes. Secure LLM Usage bedeutet, dass Claude strukturell intakte Vertraege mit geschuetzten Werten erhaelt — die Klauselanalyse erfolgt praezise, ohne dass die urspruenglichen Lieferantennamen oder Preiszahlen uebermittelt werden. Die Ergebnisse werden lokal fuer das Rechtsteam per Restoration wiederhergestellt.</target>
-      </trans-unit>
-
-      <!-- Section06_RelatedTerms -->
-      <trans-unit id="sectionTitleMain">
-        <source>Related </source>
-        <target>Verwandte </target>
-      </trans-unit>
-      <trans-unit id="sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="sectionTitleMain">
+      <segment>
+        <source>Related</source>
+        <target>Verwandte</target>
+      </segment>
+    </unit>
+    <unit id="sectionTitleBrand">
+      <segment>
         <source>Terms</source>
         <target>Begriffe</target>
-      </trans-unit>
-      <trans-unit id="relatedLinksLabel">
+      </segment>
+    </unit>
+    <unit id="relatedLinksLabel">
+      <segment>
         <source>Related Pages</source>
         <target>Verwandte Seiten</target>
-      </trans-unit>
-      <trans-unit id="link1Title">
+      </segment>
+    </unit>
+    <unit id="link1Title">
+      <segment>
         <source>Product Overview</source>
         <target>Produktuebersicht</target>
-      </trans-unit>
-      <trans-unit id="link2Title">
+      </segment>
+    </unit>
+    <unit id="link2Title">
+      <segment>
         <source>Architecture</source>
         <target>Architektur</target>
-      </trans-unit>
-      <trans-unit id="link3Title">
+      </segment>
+    </unit>
+    <unit id="link3Title">
+      <segment>
         <source>Trust &amp; Compliance</source>
         <target>Vertrauen &amp; Compliance</target>
-      </trans-unit>
-      <trans-unit id="link4Title">
+      </segment>
+    </unit>
+    <unit id="link4Title">
+      <segment>
         <source>Request a Demo</source>
         <target>Demo anfordern</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

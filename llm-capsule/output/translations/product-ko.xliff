@@ -1,398 +1,551 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ko" datatype="plaintext" original="product">
-    <body>
-      <!-- Section 01: Hero -->
-      <trans-unit id="s01.title">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ko">
+  <file id="product">
+    <unit id="s01.title">
+      <segment>
         <source>The AI enablement</source>
         <target>AI 활성화</target>
-      </trans-unit>
-      <trans-unit id="s01.titleBrand">
+      </segment>
+    </unit>
+    <unit id="s01.titleBrand">
+      <segment>
         <source>data layer and plugin</source>
         <target>데이터 레이어 및 플러그인</target>
-      </trans-unit>
-      <trans-unit id="s01.description">
+      </segment>
+    </unit>
+    <unit id="s01.description">
+      <segment>
         <source>LLM Capsule enables enterprise AI adoption by keeping raw data inside your environment, preserving document structure and business context during AI processing, and restoring usable outputs through local restoration — so enterprise teams can safely use any LLM on real documents in production workflows.</source>
         <target>LLM Capsule은 원본 데이터를 기업 환경 내부에 유지하고, AI 처리 과정에서 문서 구조와 비즈니스 컨텍스트를 보존하며, 로컬 Restoration을 통해 사용 가능한 결과물을 복원합니다. 기업 팀은 실제 문서를 프로덕션 워크플로우에서 안전하게 모든 LLM과 함께 활용할 수 있습니다.</target>
-      </trans-unit>
-      <trans-unit id="s01.body">
+      </segment>
+    </unit>
+    <unit id="s01.body">
+      <segment>
         <source>Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and cross-model execution means no vendor lock-in. This enables enterprise AI enablement on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.</source>
         <target>대부분의 기업 AI 보안 도구는 AI 사용을 완전히 차단하거나, 마스킹과 삭제를 통해 핵심 컨텍스트를 제거하여 실제 비즈니스 프로세스에서 사용할 수 없는 결과물을 생성합니다. LLM Capsule은 다른 접근 방식을 취합니다. 로컬 Encapsulation으로 AI 처리 전에 민감 요소를 보호하고, 구조 보존 처리로 AI가 이해할 수 있도록 문서 무결성을 유지하며, 로컬 Restoration으로 원본 기업 데이터를 자동 복원하고, 크로스 모델 실행으로 벤더 종속을 방지합니다. 계약서, 보험 청구서, 규제 서류, 의료 기록, 내부 보고서 등 문서 중심 워크플로우에서 기업 AI 활성화를 실현합니다.</target>
-      </trans-unit>
-      <trans-unit id="s01.ctaPrimary">
+      </segment>
+    </unit>
+    <unit id="s01.ctaPrimary">
+      <segment>
         <source>Request a Demo</source>
         <target>데모 요청</target>
-      </trans-unit>
-      <trans-unit id="s01.ctaSecondary">
+      </segment>
+    </unit>
+    <unit id="s01.ctaSecondary">
+      <segment>
         <source>View Architecture</source>
         <target>아키텍처 보기</target>
-      </trans-unit>
-      <trans-unit id="s01.ctaGhost">
+      </segment>
+    </unit>
+    <unit id="s01.ctaGhost">
+      <segment>
         <source>See comparison</source>
         <target>비교표 보기</target>
-      </trans-unit>
-      <trans-unit id="s01.screenshotDesc">
+      </segment>
+    </unit>
+    <unit id="s01.screenshotDesc">
+      <segment>
         <source>LLM Capsule Dashboard — Real-time encapsulation pipeline with document processing status</source>
         <target>LLM Capsule 대시보드 — 실시간 Encapsulation 파이프라인 및 문서 처리 현황</target>
-      </trans-unit>
-
-      <!-- Section 02: Core Differentiation -->
-      <trans-unit id="s02.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s02.sectionTitle">
+      <segment>
         <source>Enterprise AI enablement through five core</source>
         <target>다섯 가지 핵심 역량을 통한 기업 AI 활성화</target>
-      </trans-unit>
-      <trans-unit id="s02.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s02.sectionTitleBrand">
+      <segment>
         <source>capabilities</source>
         <target>역량</target>
-      </trans-unit>
-      <trans-unit id="s02.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s02.sectionDescription">
+      <segment>
         <source>LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 architecture — three core enablement capabilities plus structure-preserving processing and cross-model execution.</source>
         <target>LLM Capsule은 3+2 아키텍처를 통해 민감 데이터에 대한 기업 AI 도입을 지원합니다. 세 가지 핵심 활성화 역량에 구조 보존 처리와 크로스 모델 실행을 더한 구조입니다.</target>
-      </trans-unit>
-      <trans-unit id="s02.bannerText">
+      </segment>
+    </unit>
+    <unit id="s02.bannerText">
+      <segment>
         <source>These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise AI enablement from traditional masking tools.</source>
         <target>이 역량들을 통해 기업은 데이터 보호나 워크플로우 활용성을 희생하지 않고 AI를 도입할 수 있습니다. 이것이 기업 AI 활성화와 기존 마스킹 도구의 근본적인 차이입니다.</target>
-      </trans-unit>
-
-      <!-- Section 03: Zero Exposure -->
-      <trans-unit id="s03.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s03.sectionTitle">
+      <segment>
         <source>Encapsulate before outbound — raw data never</source>
         <target>외부 전송 전 Encapsulate — 원본 데이터는 절대</target>
-      </trans-unit>
-      <trans-unit id="s03.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s03.sectionTitleBrand">
+      <segment>
         <source>leaves</source>
         <target>유출되지 않습니다</target>
-      </trans-unit>
-      <trans-unit id="s03.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s03.sectionDescription">
+      <segment>
         <source>LLM Capsule encapsulates sensitive entities locally before any data leaves the enterprise environment.</source>
         <target>LLM Capsule은 데이터가 기업 환경을 벗어나기 전에 민감 요소를 로컬에서 Encapsulate합니다.</target>
-      </trans-unit>
-      <trans-unit id="s03.split1ScreenshotDesc">
+      </segment>
+    </unit>
+    <unit id="s03.split1ScreenshotDesc">
+      <segment>
         <source>Document Encapsulation — Before and after view of a contract with sensitive data replaced by tokens</source>
         <target>문서 Encapsulation — 민감 데이터가 토큰으로 대체된 계약서의 전후 비교</target>
-      </trans-unit>
-      <trans-unit id="s03.split1Lead">
+      </segment>
+    </unit>
+    <unit id="s03.split1Lead">
+      <segment>
         <source>LLM Capsule encapsulates sensitive entities locally before any data leaves the enterprise environment. Only the protected capsule is sent for AI processing.</source>
         <target>LLM Capsule은 데이터가 기업 환경을 벗어나기 전에 민감 요소를 로컬에서 Encapsulate합니다. 보호된 캡슐만 AI 처리를 위해 전송됩니다.</target>
-      </trans-unit>
-      <trans-unit id="s03.split1Check1Title">
+      </segment>
+    </unit>
+    <unit id="s03.split1Check1Title">
+      <segment>
         <source>Local real-time encapsulation</source>
         <target>로컬 실시간 Encapsulation</target>
-      </trans-unit>
-      <trans-unit id="s03.split1Check1Body">
+      </segment>
+    </unit>
+    <unit id="s03.split1Check1Body">
+      <segment>
         <source>Raw data stays inside the enterprise environment. Sensitive elements are detected and replaced before any outbound transmission.</source>
         <target>원본 데이터는 기업 환경 내부에 유지됩니다. 민감 요소는 외부 전송 전에 탐지 및 대체됩니다.</target>
-      </trans-unit>
-      <trans-unit id="s03.split1Check2Title">
+      </segment>
+    </unit>
+    <unit id="s03.split1Check2Title">
+      <segment>
         <source>Environment-bound processing</source>
         <target>환경 바운드 처리</target>
-      </trans-unit>
-      <trans-unit id="s03.split1Check2Body">
+      </segment>
+    </unit>
+    <unit id="s03.split1Check2Body">
+      <segment>
         <source>Supports controlled enterprise and regulated environments including on-premise, air-gapped, and VPC deployments.</source>
         <target>온프레미스, 망분리, VPC 배포를 포함한 통제된 기업 및 규제 환경을 지원합니다.</target>
-      </trans-unit>
-      <trans-unit id="s03.split2ScreenshotDesc">
+      </segment>
+    </unit>
+    <unit id="s03.split2ScreenshotDesc">
+      <segment>
         <source>Protected Outbound Flow — Encapsulated data crossing trust boundary while original values remain inside</source>
         <target>보호된 외부 전송 흐름 — Encapsulate된 데이터가 신뢰 경계를 넘는 동안 원본 값은 내부에 유지</target>
-      </trans-unit>
-      <trans-unit id="s03.split2Lead">
+      </segment>
+    </unit>
+    <unit id="s03.split2Lead">
+      <segment>
         <source>Most enterprise AI risk starts when raw business data is exposed outside the controlled environment. With LLM Capsule, sensitive content is transformed locally so external models never receive the raw original data.</source>
         <target>대부분의 기업 AI 리스크는 원본 비즈니스 데이터가 통제된 환경 외부에 노출될 때 시작됩니다. LLM Capsule을 사용하면 민감 콘텐츠가 로컬에서 변환되므로 외부 모델은 원본 데이터를 수신하지 않습니다.</target>
-      </trans-unit>
-      <trans-unit id="s03.split2Check1Title">
+      </segment>
+    </unit>
+    <unit id="s03.split2Check1Title">
+      <segment>
         <source>Protected outbound flow</source>
         <target>보호된 외부 전송 흐름</target>
-      </trans-unit>
-      <trans-unit id="s03.split2Check1Body">
+      </segment>
+    </unit>
+    <unit id="s03.split2Check1Body">
+      <segment>
         <source>Only encapsulated representations cross the trust boundary. The AI provider processes useful but opaque data.</source>
         <target>Encapsulate된 표현만 신뢰 경계를 넘습니다. AI 공급자는 유용하지만 불투명한 데이터를 처리합니다.</target>
-      </trans-unit>
-      <trans-unit id="s03.split2Check2Title">
+      </segment>
+    </unit>
+    <unit id="s03.split2Check2Title">
+      <segment>
         <source>Audit trail</source>
         <target>감사 추적</target>
-      </trans-unit>
-      <trans-unit id="s03.split2Check2Body">
+      </segment>
+    </unit>
+    <unit id="s03.split2Check2Body">
+      <segment>
         <source>Every encapsulation event is logged with full traceability for enterprise AI governance and compliance reporting.</source>
         <target>모든 Encapsulation 이벤트는 기업 AI 거버넌스 및 컴플라이언스 보고를 위한 완전한 추적성과 함께 기록됩니다.</target>
-      </trans-unit>
-
-      <!-- Section 04: Restoration -->
-      <trans-unit id="s04.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s04.sectionTitle">
+      <segment>
         <source>Enable AI without breaking enterprise</source>
         <target>기업 워크플로우를 깨뜨리지 않는 AI 활성화</target>
-      </trans-unit>
-      <trans-unit id="s04.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s04.sectionTitleBrand">
+      <segment>
         <source>workflows</source>
         <target>워크플로우</target>
-      </trans-unit>
-      <trans-unit id="s04.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s04.sectionDescription">
+      <segment>
         <source>LLM Capsule does more than hide data. It auto-restores usable output inside the environment after AI processing so enterprise teams can actually use the result in real workflows. This is a restorable workflow — not just protection, but AI enablement with usable output.</source>
         <target>LLM Capsule은 단순히 데이터를 숨기는 것이 아닙니다. AI 처리 후 환경 내부에서 사용 가능한 결과물을 자동 복원하여 기업 팀이 실제 워크플로우에서 결과를 바로 활용할 수 있습니다. 이것은 복원 가능한 워크플로우입니다. 단순한 보호가 아닌, 사용 가능한 결과물을 제공하는 AI 활성화입니다.</target>
-      </trans-unit>
-      <trans-unit id="s04.lead">
+      </segment>
+    </unit>
+    <unit id="s04.lead">
+      <segment>
         <source>Traditional masking protects data by removing meaning. That may reduce risk, but it also reduces output quality and business usability. Restored outputs from LLM Capsule are directly usable in: claims documents with real policyholder data, legal reviews with real party names and clause references, regulatory reports with real customer and account data, and internal analysis with real business metrics.</source>
         <target>기존 마스킹은 의미를 제거하여 데이터를 보호합니다. 이는 리스크를 줄일 수 있지만, 결과물 품질과 비즈니스 활용성도 함께 저하됩니다. LLM Capsule의 복원된 결과물은 실제 보험계약자 데이터가 포함된 청구 문서, 실제 당사자명과 조항 참조가 포함된 법률 검토, 실제 고객 및 계좌 데이터가 포함된 규제 보고서, 실제 비즈니스 지표가 포함된 내부 분석에 바로 활용할 수 있습니다.</target>
-      </trans-unit>
-      <trans-unit id="s04.body">
+      </segment>
+    </unit>
+    <unit id="s04.body">
+      <segment>
         <source>This is the capability that makes enterprise AI operationally viable. Secure document summarization, AI claims processing, and confidential contract review with AI all depend on the ability to restore results. Without restoration, every AI output requires manual reconstruction — eliminating the efficiency gains AI is supposed to deliver.</source>
         <target>이것이 기업 AI를 운영적으로 실현 가능하게 만드는 핵심 역량입니다. 안전한 문서 요약, AI 보험 청구 처리, AI 기반 기밀 계약 검토 모두 결과물 복원 역량에 의존합니다. Restoration 없이는 모든 AI 결과물을 수동으로 재구성해야 하며, 이는 AI가 제공해야 할 효율성 향상을 무력화합니다.</target>
-      </trans-unit>
-      <trans-unit id="s04.encapsulatedLabel">
+      </segment>
+    </unit>
+    <unit id="s04.encapsulatedLabel">
+      <segment>
         <source>Encapsulated</source>
         <target>Encapsulated</target>
-      </trans-unit>
-      <trans-unit id="s04.encapsulatedText">
+      </segment>
+    </unit>
+    <unit id="s04.encapsulatedText">
+      <segment>
         <source>[PERSON_01] submitted claim #[ID_04] on [DATE_02] for property at [ADDR_03]. Total assessed damage: [AMOUNT_01].</source>
         <target>[PERSON_01]이 [DATE_02]에 [ADDR_03] 소재 부동산에 대해 청구 #[ID_04]를 제출했습니다. 총 산정 피해액: [AMOUNT_01].</target>
-      </trans-unit>
-      <trans-unit id="s04.restoredLabel">
+      </segment>
+    </unit>
+    <unit id="s04.restoredLabel">
+      <segment>
         <source>Restored</source>
         <target>Restored</target>
-      </trans-unit>
-      <trans-unit id="s04.restoredText">
+      </segment>
+    </unit>
+    <unit id="s04.restoredText">
+      <segment>
         <source>James Mitchell submitted claim #INS-2024-0847 on March 5, 2025 for property at 42 Lincoln Ave, Chicago. Total assessed damage: $247,000.</source>
         <target>James Mitchell이 2025년 3월 5일에 Chicago 42 Lincoln Ave 소재 부동산에 대해 청구 #INS-2024-0847을 제출했습니다. 총 산정 피해액: $247,000.</target>
-      </trans-unit>
-
-      <!-- Section 05: Enterprise Context -->
-      <trans-unit id="s05.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s05.sectionTitle">
+      <segment>
         <source>Control what matters to your business — beyond generic</source>
         <target>비즈니스에 중요한 것을 제어 — 일반적인 PII를 넘어</target>
-      </trans-unit>
-      <trans-unit id="s05.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s05.sectionTitleBrand">
+      <segment>
         <source>PII</source>
         <target>PII</target>
-      </trans-unit>
-      <trans-unit id="s05.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s05.sectionDescription">
+      <segment>
         <source>LLM Capsule lets teams define sensitive entities beyond standard PII categories, including internal identifiers, project names, customer-specific markers, and organization-specific confidential terms.</source>
         <target>LLM Capsule은 내부 식별자, 프로젝트명, 고객별 마커, 조직 고유 기밀 용어를 포함하여 표준 PII 범주를 넘어서는 민감 항목을 팀이 직접 정의할 수 있게 합니다.</target>
-      </trans-unit>
-      <trans-unit id="s05.body">
+      </segment>
+    </unit>
+    <unit id="s05.body">
+      <segment>
         <source>Enterprise data protection is not limited to names, phone numbers, or IDs. Real workflows often depend on internal project names, contract references, operational code names, and confidential business terms. Context-aware data control enables policy-based sensitivity classification that adapts to document type, department origin, and workflow context — providing enterprise AI governance controls that go far beyond standard PII regex matching.</source>
         <target>기업 데이터 보호는 이름, 전화번호, ID에 국한되지 않습니다. 실제 워크플로우는 내부 프로젝트명, 계약 참조, 운영 코드명, 기밀 비즈니스 용어에 의존하는 경우가 많습니다. 컨텍스트 인식 데이터 제어는 문서 유형, 부서, 워크플로우 컨텍스트에 따라 적응하는 정책 기반 민감도 분류를 지원하며, 표준 PII 정규식 매칭을 훨씬 뛰어넘는 기업 AI 거버넌스 제어를 제공합니다.</target>
-      </trans-unit>
-
-      <!-- Section 06: Structure-Preserving -->
-      <trans-unit id="s06.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s06.sectionTitle">
+      <segment>
         <source>Beyond text — keep document structure</source>
         <target>텍스트를 넘어 — 문서 구조를</target>
-      </trans-unit>
-      <trans-unit id="s06.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s06.sectionTitleBrand">
+      <segment>
         <source>intact</source>
         <target>그대로 유지</target>
-      </trans-unit>
-      <trans-unit id="s06.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s06.sectionDescription">
+      <segment>
         <source>Enterprise workflows do not run on plain text alone. They rely on reports, PDFs, spreadsheets, diagrams, presentations, tables, and mixed-format documents.</source>
         <target>기업 워크플로우는 일반 텍스트만으로 운영되지 않습니다. 보고서, PDF, 스프레드시트, 다이어그램, 프레젠테이션, 테이블, 복합 형식 문서에 의존합니다.</target>
-      </trans-unit>
-      <trans-unit id="s06.body">
+      </segment>
+    </unit>
+    <unit id="s06.body">
+      <segment>
         <source>Flat masking treats every sensitive value identically, collapsing entity relationships and breaking table schemas. Structure-preserving processing maintains entity consistency across entire documents, preserves table column relationships for accurate extraction, and keeps cross-reference links intact. This is document-aware protection — not flat text anonymization.</source>
         <target>단순 마스킹은 모든 민감 값을 동일하게 처리하여 엔티티 관계를 붕괴시키고 테이블 스키마를 깨뜨립니다. 구조 보존 처리는 전체 문서에 걸쳐 엔티티 일관성을 유지하고, 정확한 추출을 위해 테이블 컬럼 관계를 보존하며, 상호 참조 링크를 온전히 유지합니다. 이것은 문서 인식 보호이며, 단순 텍스트 익명화가 아닙니다.</target>
-      </trans-unit>
-      <trans-unit id="s06.card1Title">
+      </segment>
+    </unit>
+    <unit id="s06.card1Title">
+      <segment>
         <source>PDF &amp; Word Documents</source>
         <target>PDF 및 Word 문서</target>
-      </trans-unit>
-      <trans-unit id="s06.card1Desc">
+      </segment>
+    </unit>
+    <unit id="s06.card1Desc">
+      <segment>
         <source>Protected processing with layout, formatting, and section structure preserved. AI receives structurally complete documents.</source>
         <target>레이아웃, 서식, 섹션 구조가 보존된 상태에서 보호 처리됩니다. AI는 구조적으로 완전한 문서를 수신합니다.</target>
-      </trans-unit>
-      <trans-unit id="s06.card2Title">
+      </segment>
+    </unit>
+    <unit id="s06.card2Title">
+      <segment>
         <source>Spreadsheets &amp; Tables</source>
         <target>스프레드시트 및 테이블</target>
-      </trans-unit>
-      <trans-unit id="s06.card2Desc">
+      </segment>
+    </unit>
+    <unit id="s06.card2Desc">
+      <segment>
         <source>Tabular data structure maintained through encapsulation and restoration. Column headers, row relationships, and cell references preserved.</source>
         <target>Encapsulation과 Restoration을 통해 표 형식 데이터 구조가 유지됩니다. 컬럼 헤더, 행 관계, 셀 참조가 보존됩니다.</target>
-      </trans-unit>
-      <trans-unit id="s06.card3Title">
+      </segment>
+    </unit>
+    <unit id="s06.card3Title">
+      <segment>
         <source>Presentations &amp; Reports</source>
         <target>프레젠테이션 및 보고서</target>
-      </trans-unit>
-      <trans-unit id="s06.card3Desc">
+      </segment>
+    </unit>
+    <unit id="s06.card3Desc">
+      <segment>
         <source>Visual and mixed-format documents handled as structured content. Cross-references and entity relationships remain trackable.</source>
         <target>시각적 및 복합 형식 문서가 구조화된 콘텐츠로 처리됩니다. 상호 참조와 엔티티 관계가 추적 가능한 상태로 유지됩니다.</target>
-      </trans-unit>
-
-      <!-- Section 07: KPI Band -->
-      <trans-unit id="s07.kpi1Number">
+      </segment>
+    </unit>
+    <unit id="s07.kpi1Number">
+      <segment>
         <source>3+2</source>
         <target>3+2</target>
-      </trans-unit>
-      <trans-unit id="s07.kpi1Label">
+      </segment>
+    </unit>
+    <unit id="s07.kpi1Label">
+      <segment>
         <source>Core Architecture</source>
         <target>핵심 아키텍처</target>
-      </trans-unit>
-      <trans-unit id="s07.kpi2Number">
+      </segment>
+    </unit>
+    <unit id="s07.kpi2Number">
+      <segment>
         <source>Zero</source>
         <target>Zero</target>
-      </trans-unit>
-      <trans-unit id="s07.kpi2Label">
+      </segment>
+    </unit>
+    <unit id="s07.kpi2Label">
+      <segment>
         <source>Raw Data Exposure</source>
         <target>원본 데이터 노출</target>
-      </trans-unit>
-      <trans-unit id="s07.kpi3Number">
+      </segment>
+    </unit>
+    <unit id="s07.kpi3Number">
+      <segment>
         <source>100%</source>
         <target>100%</target>
-      </trans-unit>
-      <trans-unit id="s07.kpi3Label">
+      </segment>
+    </unit>
+    <unit id="s07.kpi3Label">
+      <segment>
         <source>Local Restoration</source>
         <target>로컬 Restoration</target>
-      </trans-unit>
-      <trans-unit id="s07.kpi4Number">
+      </segment>
+    </unit>
+    <unit id="s07.kpi4Number">
+      <segment>
         <source>Any</source>
         <target>Any</target>
-      </trans-unit>
-      <trans-unit id="s07.kpi4Label">
+      </segment>
+    </unit>
+    <unit id="s07.kpi4Label">
+      <segment>
         <source>LLM Model Support</source>
         <target>LLM 모델 지원</target>
-      </trans-unit>
-
-      <!-- Section 08: Admin Governance -->
-      <trans-unit id="s08.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s08.sectionTitle">
+      <segment>
         <source>Operational control for enterprise AI</source>
         <target>기업 AI 거버넌스를 위한 운영 제어</target>
-      </trans-unit>
-      <trans-unit id="s08.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s08.sectionTitleBrand">
+      <segment>
         <source>governance</source>
         <target>거버넌스</target>
-      </trans-unit>
-      <trans-unit id="s08.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s08.sectionDescription">
+      <segment>
         <source>Enterprise deployment requires more than transformation logic. Teams need policy control, access control, activity visibility, and auditability.</source>
         <target>기업 배포에는 변환 로직 이상이 필요합니다. 팀에는 정책 제어, 접근 제어, 활동 가시성, 감사 가능성이 필요합니다.</target>
-      </trans-unit>
-      <trans-unit id="s08.body">
+      </segment>
+    </unit>
+    <unit id="s08.body">
+      <segment>
         <source>Enterprise AI governance requires evidence of data protection at every stage — what data was processed, how it was protected, which models interacted with it, and who authorized the workflow. LLM Capsule's admin capabilities provide this auditability across all AI interactions.</source>
         <target>기업 AI 거버넌스는 모든 단계에서 데이터 보호 증거를 요구합니다. 어떤 데이터가 처리되었는지, 어떻게 보호되었는지, 어떤 모델이 상호작용했는지, 누가 워크플로우를 승인했는지가 포함됩니다. LLM Capsule의 관리 기능은 모든 AI 상호작용에 대한 감사 가능성을 제공합니다.</target>
-      </trans-unit>
-
-      <!-- Section 09: Cross-Model Execution -->
-      <trans-unit id="s09.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s09.sectionTitle">
+      <segment>
         <source>Model-agnostic — use any LLM with no vendor</source>
         <target>모델 비종속 — 벤더 종속 없이 모든 LLM 사용</target>
-      </trans-unit>
-      <trans-unit id="s09.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s09.sectionTitleBrand">
+      <segment>
         <source>lock-in</source>
         <target>lock-in</target>
-      </trans-unit>
-      <trans-unit id="s09.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s09.sectionDescription">
+      <segment>
         <source>Enterprise teams do not always standardize on a single AI model.</source>
         <target>기업 팀이 단일 AI 모델로 표준화하는 것은 현실적이지 않습니다.</target>
-      </trans-unit>
-      <trans-unit id="s09.body1">
+      </segment>
+    </unit>
+    <unit id="s09.body1">
+      <segment>
         <source>Enterprise teams do not always standardize on a single AI model. Evaluation, governance, and operational workflows may span multiple providers and multiple model choices over time. LLM Capsule fits this reality as an AI enablement data layer for cross-model enterprise AI deployment.</source>
         <target>기업 팀이 단일 AI 모델로 표준화하는 것은 현실적이지 않습니다. 평가, 거버넌스, 운영 워크플로우는 시간이 지남에 따라 다수의 공급자와 다양한 모델 선택지에 걸칠 수 있습니다. LLM Capsule은 크로스 모델 기업 AI 배포를 위한 AI 활성화 데이터 레이어로서 이 현실에 부합합니다.</target>
-      </trans-unit>
-      <trans-unit id="s09.body2">
+      </segment>
+    </unit>
+    <unit id="s09.body2">
+      <segment>
         <source>Because LLM Capsule operates at the data layer — not the model layer — protection and enablement remain stable even when model vendors change. ChatGPT, Claude, Gemini, Perplexity, or any LLM API can be used interchangeably without reconfiguring the pipeline. This is cross-model execution — enterprise AI enablement independent of any specific AI provider, eliminating vendor lock-in.</source>
         <target>LLM Capsule은 모델 레이어가 아닌 데이터 레이어에서 작동하므로, 모델 벤더가 변경되어도 보호와 활성화가 안정적으로 유지됩니다. ChatGPT, Claude, Gemini, Perplexity 또는 모든 LLM API를 파이프라인 재구성 없이 상호 교환하여 사용할 수 있습니다. 이것이 크로스 모델 실행입니다. 특정 AI 공급자에 종속되지 않는 기업 AI 활성화로 벤더 lock-in을 제거합니다.</target>
-      </trans-unit>
-      <trans-unit id="s09.bannerText">
+      </segment>
+    </unit>
+    <unit id="s09.bannerText">
+      <segment>
         <source>ChatGPT, Claude, Gemini, Perplexity, or any LLM API — protection stays consistent regardless of which model you choose.</source>
         <target>ChatGPT, Claude, Gemini, Perplexity 또는 모든 LLM API — 어떤 모델을 선택하든 보호는 일관되게 유지됩니다.</target>
-      </trans-unit>
-
-      <!-- Section 10: API Integration -->
-      <trans-unit id="s10.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s10.sectionTitle">
+      <segment>
         <source>Built to fit existing enterprise</source>
         <target>기존 기업 시스템에 맞게 설계</target>
-      </trans-unit>
-      <trans-unit id="s10.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s10.sectionTitleBrand">
+      <segment>
         <source>systems</source>
         <target>시스템</target>
-      </trans-unit>
-      <trans-unit id="s10.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s10.sectionDescription">
+      <segment>
         <source>LLM Capsule works as a deployable component through API and SDK integration patterns, making it practical to embed into existing products, portals, and internal workflows.</source>
         <target>LLM Capsule은 API 및 SDK 통합 패턴을 통해 배포 가능한 컴포넌트로 작동하여, 기존 제품, 포털, 내부 워크플로우에 실용적으로 임베드할 수 있습니다.</target>
-      </trans-unit>
-      <trans-unit id="s10.body">
+      </segment>
+    </unit>
+    <unit id="s10.body">
+      <segment>
         <source>The API provides LLM API enablement at the data layer — wrap any existing AI integration with encapsulation and restoration without rebuilding the application.</source>
         <target>API는 데이터 레이어에서 LLM API 활성화를 제공합니다. 애플리케이션을 재구축하지 않고 기존 AI 통합에 Encapsulation과 Restoration을 적용할 수 있습니다.</target>
-      </trans-unit>
-
-      <!-- Section 11: Deployment Readiness -->
-      <trans-unit id="s11.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s11.sectionTitle">
+      <segment>
         <source>Enterprise AI deployment — ready for any controlled</source>
         <target>기업 AI 배포 — 모든 통제된 환경에 대응</target>
-      </trans-unit>
-      <trans-unit id="s11.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s11.sectionTitleBrand">
+      <segment>
         <source>environment</source>
         <target>환경</target>
-      </trans-unit>
-      <trans-unit id="s11.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s11.sectionDescription">
+      <segment>
         <source>Enterprise teams need deployment flexibility without giving up control.</source>
         <target>기업 팀에는 통제력을 포기하지 않으면서도 유연한 배포 옵션이 필요합니다.</target>
-      </trans-unit>
-      <trans-unit id="s11.body">
+      </segment>
+    </unit>
+    <unit id="s11.body">
+      <segment>
         <source>Enterprise teams need deployment flexibility without giving up control. LLM Capsule supports on-premise deployment, air-gapped environments, cloud deployment including AWS Marketplace, hybrid configurations, and embedded integration. The same product logic runs across all deployment models while keeping local protection and local restoration at the center.</source>
         <target>기업 팀에는 통제력을 포기하지 않으면서도 유연한 배포 옵션이 필요합니다. LLM Capsule은 온프레미스 배포, 망분리 환경, AWS Marketplace를 포함한 클라우드 배포, 하이브리드 구성, 임베디드 통합을 지원합니다. 동일한 제품 로직이 모든 배포 모델에서 실행되며, 로컬 보호와 로컬 Restoration을 중심에 둡니다.</target>
-      </trans-unit>
-      <trans-unit id="s11.screenshotDesc">
+      </segment>
+    </unit>
+    <unit id="s11.screenshotDesc">
+      <segment>
         <source>LLM Capsule API Console — SDK integration with enterprise document management systems</source>
         <target>LLM Capsule API 콘솔 — 기업 문서 관리 시스템과의 SDK 통합</target>
-      </trans-unit>
-      <trans-unit id="s11.awsLabel">
+      </segment>
+    </unit>
+    <unit id="s11.awsLabel">
+      <segment>
         <source>View on AWS Marketplace</source>
         <target>AWS Marketplace에서 보기</target>
-      </trans-unit>
-
-      <!-- Section 12: Comparison -->
-      <trans-unit id="s12.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s12.sectionTitle">
+      <segment>
         <source>How LLM Capsule differs from traditional</source>
         <target>LLM Capsule과 기존 접근 방식의 차이</target>
-      </trans-unit>
-      <trans-unit id="s12.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s12.sectionTitleBrand">
+      <segment>
         <source>approaches</source>
         <target>접근 방식</target>
-      </trans-unit>
-      <trans-unit id="s12.sectionDescription">
+      </segment>
+    </unit>
+    <unit id="s12.sectionDescription">
+      <segment>
         <source>Not all protection approaches are designed for usable enterprise AI workflows. Traditional masking protects data by reducing usability. LLM Capsule protects data while preserving enterprise workflow value.</source>
         <target>모든 보호 접근 방식이 사용 가능한 기업 AI 워크플로우를 위해 설계된 것은 아닙니다. 기존 마스킹은 활용성을 저하시켜 데이터를 보호합니다. LLM Capsule은 기업 워크플로우 가치를 보존하면서 데이터를 보호합니다.</target>
-      </trans-unit>
-      <trans-unit id="s12.bannerText">
+      </segment>
+    </unit>
+    <unit id="s12.bannerText">
+      <segment>
         <source>AI results are auto-restored through local restoration. This is the fundamental capability that separates LLM Capsule from every other approach — enterprise AI enablement that produces usable outputs, not abstracted placeholders.</source>
         <target>AI 결과물은 로컬 Restoration을 통해 자동 복원됩니다. 이것이 LLM Capsule을 다른 모든 접근 방식과 구분하는 근본적인 역량입니다. 추상화된 플레이스홀더가 아닌, 사용 가능한 결과물을 생성하는 기업 AI 활성화입니다.</target>
-      </trans-unit>
-
-      <!-- Section 13: FAQ -->
-      <trans-unit id="s13.sectionTitle">
+      </segment>
+    </unit>
+    <unit id="s13.sectionTitle">
+      <segment>
         <source>Common</source>
         <target>자주 묻는</target>
-      </trans-unit>
-      <trans-unit id="s13.sectionTitleBrand">
+      </segment>
+    </unit>
+    <unit id="s13.sectionTitleBrand">
+      <segment>
         <source>Questions</source>
         <target>질문</target>
-      </trans-unit>
-      <trans-unit id="s13.exploreHeader">
+      </segment>
+    </unit>
+    <unit id="s13.exploreHeader">
+      <segment>
         <source>Explore further</source>
         <target>더 알아보기</target>
-      </trans-unit>
-
-      <!-- Section 14: CTA -->
-      <trans-unit id="s14.title">
+      </segment>
+    </unit>
+    <unit id="s14.title">
+      <segment>
         <source>See how LLM Capsule fits your environment, documents, and controls</source>
         <target>LLM Capsule이 귀사의 환경, 문서, 제어 체계에 어떻게 적합한지 확인하십시오</target>
-      </trans-unit>
-      <trans-unit id="s14.description">
+      </segment>
+    </unit>
+    <unit id="s14.description">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.</source>
         <target>귀사의 문서, 배포 제약 조건, 평가 질문을 가져오십시오. 귀사의 실제 데이터로, 귀사의 환경에서, 귀사의 컴플라이언스 요구사항에 맞춰 기업 AI 활성화를 시연합니다.</target>
-      </trans-unit>
-      <trans-unit id="s14.cta1Label">
+      </segment>
+    </unit>
+    <unit id="s14.cta1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>데모 요청</target>
-      </trans-unit>
-      <trans-unit id="s14.cta2Label">
+      </segment>
+    </unit>
+    <unit id="s14.cta2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="s14.footnote1Label">
+      </segment>
+    </unit>
+    <unit id="s14.footnote1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>아키텍처 브리프 다운로드</target>
-      </trans-unit>
-      <trans-unit id="s14.footnote2Label">
+      </segment>
+    </unit>
+    <unit id="s14.footnote2Label">
+      <segment>
         <source>View on AWS Marketplace</source>
         <target>AWS Marketplace에서 보기</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

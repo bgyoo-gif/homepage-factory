@@ -1,223 +1,317 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="enterprise-ai-document-processing">
-    <body>
-      <!-- Section 01: Hero -->
-      <trans-unit id="title">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+  <file id="enterprise-ai-document-processing">
+    <unit id="title">
+      <segment>
         <source>Enterprise AI Document Processing</source>
         <target>Enterprise-AI-Dokumentenverarbeitung</target>
-      </trans-unit>
-      <trans-unit id="description">
+      </segment>
+    </unit>
+    <unit id="description">
+      <segment>
         <source>How to process sensitive enterprise documents through AI with structure-preserving protection and restorable outputs for AI document security.</source>
         <target>Wie Sie sensible Unternehmensdokumente mit strukturerhaltender Schutzverarbeitung und wiederherstellbaren Ausgaben fuer AI-Dokumentensicherheit durch AI verarbeiten.</target>
-      </trans-unit>
-      <trans-unit id="breadcrumb1">
+      </segment>
+    </unit>
+    <unit id="breadcrumb1">
+      <segment>
         <source>Home</source>
         <target>Startseite</target>
-      </trans-unit>
-      <trans-unit id="breadcrumb2">
+      </segment>
+    </unit>
+    <unit id="breadcrumb2">
+      <segment>
         <source>Resources</source>
         <target>Ressourcen</target>
-      </trans-unit>
-      <trans-unit id="breadcrumb3">
+      </segment>
+    </unit>
+    <unit id="breadcrumb3">
+      <segment>
         <source>Learn</source>
         <target>Lernen</target>
-      </trans-unit>
-      <trans-unit id="breadcrumb4">
+      </segment>
+    </unit>
+    <unit id="breadcrumb4">
+      <segment>
         <source>Enterprise AI Document Processing</source>
         <target>Enterprise-AI-Dokumentenverarbeitung</target>
-      </trans-unit>
-      <!-- Section 02: Problem -->
-      <trans-unit id="sectionLabelProblem">
+      </segment>
+    </unit>
+    <unit id="sectionLabelProblem">
+      <segment>
         <source>Problem</source>
         <target>Problem</target>
-      </trans-unit>
-      <trans-unit id="paragraph1">
+      </segment>
+    </unit>
+    <unit id="paragraph1">
+      <segment>
         <source>Enterprises sit on enormous volumes of unstructured and semi-structured documents — contracts, reports, correspondence, filings, medical records, and technical documentation. AI document processing promises to unlock value through automated summarization, extraction, classification, and translation. But these documents contain the most sensitive enterprise information.</source>
         <target>Unternehmen verfuegen ueber enorme Mengen unstrukturierter und halbstrukturierter Dokumente — Vertraege, Berichte, Korrespondenz, Einreichungen, Krankenakten und technische Dokumentation. AI-Dokumentenverarbeitung verspricht Wertschoepfung durch automatische Zusammenfassung, Extraktion, Klassifizierung und Uebersetzung. Doch diese Dokumente enthalten die sensibelsten Unternehmensinformationen.</target>
-      </trans-unit>
-      <trans-unit id="paragraph2">
+      </segment>
+    </unit>
+    <unit id="paragraph2">
+      <segment>
         <source>Current AI document security approaches either restrict AI to non-sensitive documents (limiting value) or apply destructive masking that produces unusable outputs (limiting usefulness). Neither scales for enterprise document intelligence.</source>
         <target>Aktuelle AI-Dokumentensicherheitsansaetze beschraenken AI entweder auf nicht-sensible Dokumente (Wertbegrenzung) oder wenden destruktives Masking an, das unbrauchbare Ausgaben erzeugt (Nutzenbegrenzung). Keiner der Ansaetze skaliert fuer Enterprise-Dokumentenintelligenz.</target>
-      </trans-unit>
-      <!-- Section 03: Definition -->
-      <trans-unit id="sectionLabelDefinition">
+      </segment>
+    </unit>
+    <unit id="sectionLabelDefinition">
+      <segment>
         <source>Definition</source>
         <target>Definition</target>
-      </trans-unit>
-      <trans-unit id="bannerLabel">
+      </segment>
+    </unit>
+    <unit id="bannerLabel">
+      <segment>
         <source>Enterprise AI Document Processing</source>
         <target>Enterprise-AI-Dokumentenverarbeitung</target>
-      </trans-unit>
-      <trans-unit id="bannerText">
+      </segment>
+    </unit>
+    <unit id="bannerText">
+      <segment>
         <source>Enterprise AI document processing uses large language models to summarize, extract, classify, and translate enterprise documents while protecting sensitive data through local encapsulation and restoring usable outputs through local restoration. It applies structure-preserving processing to maintain document integrity during protection.</source>
         <target>Enterprise-AI-Dokumentenverarbeitung nutzt grosse Sprachmodelle zur Zusammenfassung, Extraktion, Klassifizierung und Uebersetzung von Unternehmensdokumenten, waehrend sensible Daten durch lokale Encapsulation geschuetzt und nutzbare Ausgaben durch lokale Restoration wiederhergestellt werden. Strukturerhaltende Verarbeitung bewahrt die Dokumentintegritaet waehrend des Schutzes.</target>
-      </trans-unit>
-      <!-- Section 04: Explanation -->
-      <trans-unit id="sectionLabelExplanation">
+      </segment>
+    </unit>
+    <unit id="sectionLabelExplanation">
+      <segment>
         <source>Explanation</source>
         <target>Erklaerung</target>
-      </trans-unit>
-      <trans-unit id="introText">
+      </segment>
+    </unit>
+    <unit id="introText">
+      <segment>
         <source>Enterprise AI document processing addresses five core document intelligence use cases:</source>
         <target>Enterprise-AI-Dokumentenverarbeitung adressiert fuenf zentrale Dokumentenintelligenz-Anwendungsfaelle:</target>
-      </trans-unit>
-      <trans-unit id="item1Title">
+      </segment>
+    </unit>
+    <unit id="item1Title">
+      <segment>
         <source>Summarization.</source>
         <target>Zusammenfassung.</target>
-      </trans-unit>
-      <trans-unit id="item1Text">
+      </segment>
+    </unit>
+    <unit id="item1Text">
+      <segment>
         <source>AI generates executive summaries of long documents — contracts, reports, filings. Encapsulation protects sensitive details while preserving the structural context AI needs for accurate summarization. Restored summaries contain real names and figures.</source>
         <target>AI erstellt Executive Summaries langer Dokumente — Vertraege, Berichte, Einreichungen. Encapsulation schuetzt sensible Details und bewahrt den strukturellen Kontext, den AI fuer praezise Zusammenfassungen benoetigt. Wiederhergestellte Zusammenfassungen enthalten echte Namen und Zahlen.</target>
-      </trans-unit>
-      <trans-unit id="item2Title">
+      </segment>
+    </unit>
+    <unit id="item2Title">
+      <segment>
         <source>Extraction.</source>
         <target>Extraktion.</target>
-      </trans-unit>
-      <trans-unit id="item2Text">
+      </segment>
+    </unit>
+    <unit id="item2Text">
+      <segment>
         <source>AI extracts structured data from unstructured documents — key terms from contracts, diagnosis codes from medical records, entity information from legal filings. Structure-preserving processing ensures extraction accuracy by maintaining table layouts and field relationships.</source>
         <target>AI extrahiert strukturierte Daten aus unstrukturierten Dokumenten — Schluesselklauseln aus Vertraegen, Diagnosecodes aus Krankenakten, Entitaetsinformationen aus Rechtseinreichungen. Strukturerhaltende Verarbeitung sichert die Extraktionsgenauigkeit durch Beibehaltung von Tabellenlayouts und Feldbeziehungen.</target>
-      </trans-unit>
-      <trans-unit id="item3Title">
+      </segment>
+    </unit>
+    <unit id="item3Title">
+      <segment>
         <source>Classification.</source>
         <target>Klassifizierung.</target>
-      </trans-unit>
-      <trans-unit id="item3Text">
+      </segment>
+    </unit>
+    <unit id="item3Text">
+      <segment>
         <source>AI categorizes documents by type, risk level, priority, or topic. Encapsulation protects content while preserving the semantic signals AI uses for accurate classification.</source>
         <target>AI kategorisiert Dokumente nach Typ, Risikostufe, Prioritaet oder Thema. Encapsulation schuetzt den Inhalt und bewahrt die semantischen Signale, die AI fuer praezise Klassifizierung nutzt.</target>
-      </trans-unit>
-      <trans-unit id="item4Title">
+      </segment>
+    </unit>
+    <unit id="item4Title">
+      <segment>
         <source>Translation.</source>
         <target>Uebersetzung.</target>
-      </trans-unit>
-      <trans-unit id="item4Text">
+      </segment>
+    </unit>
+    <unit id="item4Text">
+      <segment>
         <source>AI translates enterprise documents across languages. Encapsulation protects names, numbers, and proprietary terms while allowing AI to translate surrounding content accurately. Restoration restores protected elements in the translated output.</source>
         <target>AI uebersetzt Unternehmensdokumente in verschiedene Sprachen. Encapsulation schuetzt Namen, Zahlen und proprietaere Begriffe, waehrend AI den umgebenden Inhalt praezise uebersetzt. Restoration stellt geschuetzte Elemente in der uebersetzten Ausgabe wieder her.</target>
-      </trans-unit>
-      <trans-unit id="item5Title">
+      </segment>
+    </unit>
+    <unit id="item5Title">
+      <segment>
         <source>Q&amp;A and RAG.</source>
         <target>Q&amp;A und RAG.</target>
-      </trans-unit>
-      <trans-unit id="item5Text">
+      </segment>
+    </unit>
+    <unit id="item5Text">
+      <segment>
         <source>AI answers questions about enterprise document collections. Documents are encapsulated before indexing in RAG pipelines. Retrieved context is protected during generation, and responses are restored before delivery to users.</source>
         <target>AI beantwortet Fragen zu Unternehmensdokumentsammlungen. Dokumente werden vor der Indexierung in RAG-Pipelines encapsuliert. Abgerufener Kontext wird waehrend der Generierung geschuetzt, und Antworten werden vor der Zustellung an Benutzer wiederhergestellt.</target>
-      </trans-unit>
-      <trans-unit id="explanationBanner">
+      </segment>
+    </unit>
+    <unit id="explanationBanner">
+      <segment>
         <source>enables AI document processing by protecting data at the data layer. Structure-preserving processing with local restoration delivers both AI enablement and data protection simultaneously.</source>
         <target>ermoeglicht AI-Dokumentenverarbeitung durch Datenschutz auf der Datenschicht. Strukturerhaltende Verarbeitung mit lokaler Restoration liefert gleichzeitig AI-Enablement und Datenschutz.</target>
-      </trans-unit>
-      <!-- Section 05: Examples -->
-      <trans-unit id="sectionLabelExamples">
+      </segment>
+    </unit>
+    <unit id="sectionLabelExamples">
+      <segment>
         <source>Examples</source>
         <target>Beispiele</target>
-      </trans-unit>
-      <trans-unit id="cardTitle">
+      </segment>
+    </unit>
+    <unit id="cardTitle">
+      <segment>
         <source>Legal: Clause Extraction from Vendor Contracts</source>
         <target>Recht: Klauselextraktion aus Lieferantenvertraegen</target>
-      </trans-unit>
-      <trans-unit id="cardText">
+      </segment>
+    </unit>
+    <unit id="cardText">
+      <segment>
         <source>A procurement team needs AI to extract liability clauses, payment terms, and termination conditions from 300 vendor contracts. Each contract contains vendor names, proprietary pricing, and internal project references.</source>
         <target>Ein Beschaffungsteam muss AI nutzen, um Haftungsklauseln, Zahlungsbedingungen und Kuendigungskonditionen aus 300 Lieferantenvertraegen zu extrahieren. Jeder Vertrag enthaelt Lieferantennamen, proprietaere Preisgestaltung und interne Projektreferenzen.</target>
-      </trans-unit>
-      <!-- Section 06: FAQ -->
-      <trans-unit id="faqTitle">
+      </segment>
+    </unit>
+    <unit id="faqTitle">
+      <segment>
         <source>FAQ</source>
         <target>FAQ</target>
-      </trans-unit>
-      <trans-unit id="faq1Question">
+      </segment>
+    </unit>
+    <unit id="faq1Question">
+      <segment>
         <source>What is enterprise AI document processing?</source>
         <target>Was ist Enterprise-AI-Dokumentenverarbeitung?</target>
-      </trans-unit>
-      <trans-unit id="faq1Answer">
+      </segment>
+    </unit>
+    <unit id="faq1Answer">
+      <segment>
         <source>Enterprise AI document processing uses large language models to summarize, extract, classify, and translate enterprise documents while protecting sensitive data through local encapsulation and restoring usable outputs through local restoration.</source>
         <target>Enterprise-AI-Dokumentenverarbeitung nutzt grosse Sprachmodelle zur Zusammenfassung, Extraktion, Klassifizierung und Uebersetzung von Unternehmensdokumenten, waehrend sensible Daten durch lokale Encapsulation geschuetzt und nutzbare Ausgaben durch lokale Restoration wiederhergestellt werden.</target>
-      </trans-unit>
-      <trans-unit id="faq2Question">
+      </segment>
+    </unit>
+    <unit id="faq2Question">
+      <segment>
         <source>What document formats does LLM Capsule support?</source>
         <target>Welche Dokumentformate unterstuetzt LLM Capsule?</target>
-      </trans-unit>
-      <trans-unit id="faq2Answer">
+      </segment>
+    </unit>
+    <unit id="faq2Answer">
+      <segment>
         <source>LLM Capsule processes common enterprise document formats including PDF, DOCX, XLSX, HTML, plain text, and structured data formats. Format-specific processing preserves layout and structure during encapsulation.</source>
         <target>LLM Capsule verarbeitet gaengige Unternehmensdokumentformate einschliesslich PDF, DOCX, XLSX, HTML, Klartext und strukturierte Datenformate. Formatspezifische Verarbeitung bewahrt Layout und Struktur waehrend der Encapsulation.</target>
-      </trans-unit>
-      <!-- Section 07: Learn More -->
-      <trans-unit id="sectionTitle">
+      </segment>
+    </unit>
+    <unit id="sectionTitle">
+      <segment>
         <source>Learn More</source>
         <target>Mehr erfahren</target>
-      </trans-unit>
-      <trans-unit id="link1Label">
+      </segment>
+    </unit>
+    <unit id="link1Label">
+      <segment>
         <source>Product Overview</source>
         <target>Produktuebersicht</target>
-      </trans-unit>
-      <trans-unit id="link2Label">
+      </segment>
+    </unit>
+    <unit id="link2Label">
+      <segment>
         <source>Architecture</source>
         <target>Architektur</target>
-      </trans-unit>
-      <trans-unit id="link3Label">
+      </segment>
+    </unit>
+    <unit id="link3Label">
+      <segment>
         <source>Trust &amp; Compliance</source>
         <target>Vertrauen &amp; Compliance</target>
-      </trans-unit>
-      <trans-unit id="link4Label">
+      </segment>
+    </unit>
+    <unit id="link4Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="link5Label">
+      </segment>
+    </unit>
+    <unit id="link5Label">
+      <segment>
         <source>What Is an AI Data Capsule</source>
         <target>Was ist eine AI-Datenkapsel</target>
-      </trans-unit>
-      <trans-unit id="link6Label">
+      </segment>
+    </unit>
+    <unit id="link6Label">
+      <segment>
         <source>AI on Sensitive Data</source>
         <target>AI auf sensiblen Daten</target>
-      </trans-unit>
-      <trans-unit id="link7Label">
+      </segment>
+    </unit>
+    <unit id="link7Label">
+      <segment>
         <source>Why Redaction Breaks AI</source>
         <target>Warum Schwärzung AI zerstoert</target>
-      </trans-unit>
-      <trans-unit id="link8Label">
+      </segment>
+    </unit>
+    <unit id="link8Label">
+      <segment>
         <source>Secure AI Workflows</source>
         <target>Sichere AI-Workflows</target>
-      </trans-unit>
-      <trans-unit id="link9Label">
+      </segment>
+    </unit>
+    <unit id="link9Label">
+      <segment>
         <source>Structure-Preserving Processing</source>
         <target>Strukturerhaltende Verarbeitung</target>
-      </trans-unit>
-      <trans-unit id="link10Label">
+      </segment>
+    </unit>
+    <unit id="link10Label">
+      <segment>
         <source>PII vs Confidentiality Control</source>
         <target>PII vs Vertraulichkeitskontrolle</target>
-      </trans-unit>
-      <trans-unit id="link11Label">
+      </segment>
+    </unit>
+    <unit id="link11Label">
+      <segment>
         <source>On-Premise vs Cloud</source>
         <target>On-Premise vs Cloud</target>
-      </trans-unit>
-      <trans-unit id="link12Label">
+      </segment>
+    </unit>
+    <unit id="link12Label">
+      <segment>
         <source>AI Pipeline Protection</source>
         <target>AI-Pipeline-Schutz</target>
-      </trans-unit>
-      <!-- Section 08: CTA -->
-      <trans-unit id="ctaTitle">
+      </segment>
+    </unit>
+    <unit id="ctaTitle">
+      <segment>
         <source>See how</source>
         <target>Erfahren Sie, wie</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsaechlichen Workflows.</target>
-      </trans-unit>
-      <trans-unit id="cta1Label">
+      </segment>
+    </unit>
+    <unit id="cta1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="cta2Label">
+      </segment>
+    </unit>
+    <unit id="cta2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="footnoteLink1Label">
+      </segment>
+    </unit>
+    <unit id="footnoteLink1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>Architektur-Brief herunterladen</target>
-      </trans-unit>
-      <trans-unit id="footnoteLink2Label">
+      </segment>
+    </unit>
+    <unit id="footnoteLink2Label">
+      <segment>
         <source>AWS Marketplace</source>
         <target>AWS Marketplace</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

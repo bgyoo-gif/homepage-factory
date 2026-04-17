@@ -1,179 +1,251 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ja" datatype="plaintext" original="enterprise-ai-data-protection">
-    <body>
-      <!-- Section 01: Hero -->
-      <trans-unit id="heroTitle">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ja">
+  <file id="enterprise-ai-data-protection">
+    <unit id="heroTitle">
+      <segment>
         <source>Enterprise AI Enablement</source>
         <target>企業AIイネーブルメント</target>
-      </trans-unit>
-      <trans-unit id="heroDescription">
+      </segment>
+    </unit>
+    <unit id="heroDescription">
+      <segment>
         <source>'s AI enablement data layer uses encapsulation, zero exposure, and local restoration to enable enterprises to adopt AI without data risk.</source>
         <target>のAIイネーブルメント・データレイヤーは、Encapsulation、ゼロエクスポージャー、ローカルRestorationにより、データリスクなしで企業のAI導入を実現します。</target>
-      </trans-unit>
-      <!-- Section 02: Problem -->
-      <trans-unit id="sectionLabelProblem">
+      </segment>
+    </unit>
+    <unit id="sectionLabelProblem">
+      <segment>
         <source>Problem</source>
         <target>課題</target>
-      </trans-unit>
-      <trans-unit id="problemParagraph1">
+      </segment>
+    </unit>
+    <unit id="problemParagraph1">
+      <segment>
         <source>Every enterprise that sends data to an external AI service creates a data exposure event. Even when AI providers offer data processing agreements and claim not to use customer data for training, the data still transits external infrastructure, is processed by external compute, and generates logs and metadata in external systems.</source>
         <target>外部AIサービスにデータを送信するすべての企業がデータ漏洩イベントを生成します。AIプロバイダーがデータ処理契約を提供し、顧客データをトレーニングに使用しないと主張しても、データは依然として外部インフラを経由し、外部コンピューティングで処理され、外部システムでログとメタデータを生成します。</target>
-      </trans-unit>
-      <trans-unit id="problemParagraph2">
+      </segment>
+    </unit>
+    <unit id="problemParagraph2">
+      <segment>
         <source>For regulated enterprises, this exposure is often non-negotiable — not because of trust issues with AI providers, but because of regulatory mandates, contractual obligations, and internal governance requirements that prohibit sensitive data from leaving controlled environments.</source>
         <target>規制対象企業にとって、このデータ漏洩は譲れない問題です。AIプロバイダーとの信頼の問題ではなく、機密データが管理環境から出ることを禁止する規制義務、契約上の義務、内部ガバナンス要件があるためです。</target>
-      </trans-unit>
-      <!-- Section 03: Definition -->
-      <trans-unit id="sectionLabelDefinition">
+      </segment>
+    </unit>
+    <unit id="sectionLabelDefinition">
+      <segment>
         <source>Definition</source>
         <target>定義</target>
-      </trans-unit>
-      <trans-unit id="definitionHighlight">
+      </segment>
+    </unit>
+    <unit id="definitionHighlight">
+      <segment>
         <source>Enterprise AI Enablement</source>
         <target>企業AIイネーブルメント</target>
-      </trans-unit>
-      <trans-unit id="definitionText">
-        <source> operates as an AI enablement data layer and plugin — protecting sensitive information through local encapsulation, structure-preserving processing, and local restoration while enabling full AI-powered workflows across any LLM.</source>
+      </segment>
+    </unit>
+    <unit id="definitionText">
+      <segment>
+        <source>operates as an AI enablement data layer and plugin — protecting sensitive information through local encapsulation, structure-preserving processing, and local restoration while enabling full AI-powered workflows across any LLM.</source>
         <target>はAIイネーブルメント・データレイヤーおよびプラグインとして機能し、ローカルEncapsulation、構造保持処理、ローカルRestorationを通じて機密情報を保護しながら、あらゆるLLMにおける完全なAIワークフローを実現します。</target>
-      </trans-unit>
-      <!-- Section 04: Explanation -->
-      <trans-unit id="sectionLabelExplanation">
+      </segment>
+    </unit>
+    <unit id="sectionLabelExplanation">
+      <segment>
         <source>Explanation</source>
         <target>解説</target>
-      </trans-unit>
-      <trans-unit id="explanationIntro">
-        <source> enables enterprise AI adoption through a 3+2 architecture — three core capabilities and two extended capabilities:</source>
+      </segment>
+    </unit>
+    <unit id="explanationIntro">
+      <segment>
+        <source>enables enterprise AI adoption through a 3+2 architecture — three core capabilities and two extended capabilities:</source>
         <target>は3+2アーキテクチャ — 3つのコア機能と2つの拡張機能 — を通じて企業AIの導入を実現します:</target>
-      </trans-unit>
-      <trans-unit id="core1Label">
+      </segment>
+    </unit>
+    <unit id="core1Label">
+      <segment>
         <source>Core 1: Zero Exposure.</source>
         <target>コア1: ゼロエクスポージャー。</target>
-      </trans-unit>
-      <trans-unit id="core1Text">
+      </segment>
+    </unit>
+    <unit id="core1Text">
+      <segment>
         <source>Original sensitive data never leaves the enterprise environment. Only encapsulated representations cross the trust boundary to AI services. The AI provider processes useful data but cannot reconstruct original sensitive values.</source>
         <target>元の機密データは企業環境を離れません。Encapsulationされた表現のみが信頼境界を越えてAIサービスに送られます。AIプロバイダーは有用なデータを処理しますが、元の機密値を再構成することはできません。</target>
-      </trans-unit>
-      <trans-unit id="core2Label">
+      </segment>
+    </unit>
+    <unit id="core2Label">
+      <segment>
         <source>Core 2: Restoration.</source>
         <target>コア2: Restoration。</target>
-      </trans-unit>
-      <trans-unit id="core2Text">
+      </segment>
+    </unit>
+    <unit id="core2Text">
+      <segment>
         <source>AI results are automatically restored locally with original enterprise data. The mapping between encapsulated and original values is stored locally and applied to AI outputs within the enterprise environment. This produces enterprise-ready results without manual reconstruction.</source>
         <target>AI結果は元の企業データでローカルに自動復元されます。Encapsulationされた値と元の値のマッピングがローカルに保存され、企業環境内でAI出力に適用されます。手動の再構成なしで企業向け結果を生成します。</target>
-      </trans-unit>
-      <trans-unit id="core3Label">
+      </segment>
+    </unit>
+    <unit id="core3Label">
+      <segment>
         <source>Core 3: Enterprise Context.</source>
         <target>コア3: 企業コンテキスト。</target>
-      </trans-unit>
-      <trans-unit id="core3Text">
+      </segment>
+    </unit>
+    <unit id="core3Text">
+      <segment>
         <source>Sensitive elements are identified using context-aware data control and replaced with structure-preserving representations. Unlike masking, encapsulation is reversible and policy-driven — what counts as sensitive is configurable per department, document type, and workflow.</source>
         <target>コンテキスト認識データ制御で機密要素を特定し、構造保持表現に置換します。マスキングとは異なり、Encapsulationは可逆的かつポリシー駆動型です。何を機密とするかは部門別、ドキュメント種別、ワークフロー別に設定可能です。</target>
-      </trans-unit>
-      <trans-unit id="ext1Label">
+      </segment>
+    </unit>
+    <unit id="ext1Label">
+      <segment>
         <source>+1: Structure-Preserving.</source>
         <target>+1: 構造保持。</target>
-      </trans-unit>
-      <trans-unit id="ext1Text">
+      </segment>
+    </unit>
+    <unit id="ext1Text">
+      <segment>
         <source>Document layout, entity relationships, and semantic context are maintained during encapsulation. AI models receive structurally intact documents, producing high-quality outputs.</source>
         <target>Encapsulation中にドキュメントのレイアウト、エンティティ関係、意味的コンテキストが維持されます。AIモデルは構造的に完全なドキュメントを受け取り、高品質な出力を生成します。</target>
-      </trans-unit>
-      <trans-unit id="ext2Label">
+      </segment>
+    </unit>
+    <unit id="ext2Label">
+      <segment>
         <source>+2: Cross-Model Execution.</source>
         <target>+2: クロスモデル実行。</target>
-      </trans-unit>
-      <trans-unit id="ext2Text">
+      </segment>
+    </unit>
+    <unit id="ext2Text">
+      <segment>
         <source>Because protection operates at the data layer before transmission, it works with any external AI service — ChatGPT, Claude, Gemini, or any LLM API — without model-specific integration.</source>
         <target>保護が送信前のデータレイヤーで動作するため、モデル固有の統合なしにChatGPT、Claude、Geminiなど、あらゆる外部AIサービスおよびLLM APIで機能します。</target>
-      </trans-unit>
-      <trans-unit id="bannerText">
-        <source> is an AI enablement data layer and plugin. It enables AI adoption by protecting data at the data layer — not by blocking AI, but by making AI safe to use on real enterprise data.</source>
+      </segment>
+    </unit>
+    <unit id="bannerText">
+      <segment>
+        <source>is an AI enablement data layer and plugin. It enables AI adoption by protecting data at the data layer — not by blocking AI, but by making AI safe to use on real enterprise data.</source>
         <target>はAIイネーブルメント・データレイヤーおよびプラグインです。AIをブロックするのではなく、データレイヤーでデータを保護することで、実際の企業データでAIを安全に使用可能にします。</target>
-      </trans-unit>
-      <!-- Section 05: Enterprise Examples -->
-      <trans-unit id="sectionLabelExamples">
+      </segment>
+    </unit>
+    <unit id="sectionLabelExamples">
+      <segment>
         <source>Examples</source>
         <target>事例</target>
-      </trans-unit>
-      <trans-unit id="card1Title">
+      </segment>
+    </unit>
+    <unit id="card1Title">
+      <segment>
         <source>Public Sector: Citizen Services AI</source>
         <target>公共セクター: 市民サービスAI</target>
-      </trans-unit>
-      <trans-unit id="card1Text">
+      </segment>
+    </unit>
+    <unit id="card1Text">
+      <segment>
         <source>A government agency uses AI to process citizen benefit applications. Each application contains PII, income data, and residency information. Enterprise AI data protection ensures no citizen data leaves the government environment while AI automates eligibility assessment and case routing.</source>
         <target>政府機関がAIで市民の給付申請を処理しています。各申請にはPII、所得データ、居住情報が含まれます。企業AIデータ保護により、AIが資格審査とケースルーティングを自動化する間、市民データが政府環境を離れることはありません。</target>
-      </trans-unit>
-      <trans-unit id="card2Title">
+      </segment>
+    </unit>
+    <unit id="card2Title">
+      <segment>
         <source>Telecom: Network Security Intelligence</source>
         <target>通信: ネットワークセキュリティインテリジェンス</target>
-      </trans-unit>
-      <trans-unit id="card2Text">
+      </segment>
+    </unit>
+    <unit id="card2Text">
+      <segment>
         <source>A telecom operator uses AI to analyze network incident reports that contain customer data, infrastructure details, and vulnerability information. Encapsulation protects all sensitive elements while AI performs pattern analysis and threat classification.</source>
         <target>通信事業者がAIで、顧客データ、インフラ詳細、脆弱性情報を含むネットワークインシデントレポートを分析しています。AIがパターン分析と脅威分類を実行する間、Encapsulationがすべての機密要素を保護します。</target>
-      </trans-unit>
-      <!-- Section 06: FAQ -->
-      <trans-unit id="faqTitle">
+      </segment>
+    </unit>
+    <unit id="faqTitle">
+      <segment>
         <source>FAQ</source>
         <target>FAQ</target>
-      </trans-unit>
-      <trans-unit id="faq1Question">
+      </segment>
+    </unit>
+    <unit id="faq1Question">
+      <segment>
         <source>What is enterprise AI data protection?</source>
         <target>企業AIデータ保護とは何ですか?</target>
-      </trans-unit>
-      <trans-unit id="faq1Answer">
+      </segment>
+    </unit>
+    <unit id="faq1Answer">
+      <segment>
         <source>Enterprise AI data protection is a data security discipline that prevents sensitive enterprise information from being exposed to external AI services while still enabling AI-powered workflows. It operates at the data layer through encapsulation, structure preservation, and local restoration.</source>
         <target>企業AIデータ保護は、AI駆動のワークフローを維持しながら、機密の企業情報が外部AIサービスに漏洩するのを防ぐデータセキュリティ分野です。Encapsulation、構造保持、ローカルRestorationによりデータレイヤーで動作します。</target>
-      </trans-unit>
-      <trans-unit id="faq2Question">
+      </segment>
+    </unit>
+    <unit id="faq2Question">
+      <segment>
         <source>How does LLM data protection work?</source>
         <target>LLMデータ保護はどのように機能しますか?</target>
-      </trans-unit>
-      <trans-unit id="faq2Answer">
+      </segment>
+    </unit>
+    <unit id="faq2Answer">
+      <segment>
         <source>LLM data protection encapsulates sensitive data locally before it reaches any language model. The AI processes structurally intact but protected documents. After processing, outputs are restored locally with original enterprise data.</source>
         <target>LLMデータ保護は、データが言語モデルに到達する前に機密データをローカルでEncapsulationします。AIは構造的に完全だが保護されたドキュメントを処理します。処理後、出力が元の企業データでローカルに復元されます。</target>
-      </trans-unit>
-      <trans-unit id="faq3Question">
+      </segment>
+    </unit>
+    <unit id="faq3Question">
+      <segment>
         <source>Is LLM Capsule compliant with GDPR?</source>
         <target>LLM CapsuleはGDPRに準拠していますか?</target>
-      </trans-unit>
-      <trans-unit id="faq3Answer">
-        <source> is designed to support GDPR compliance by ensuring personal data never leaves the enterprise environment during AI processing. Organizations should evaluate their specific compliance requirements with legal counsel.</source>
+      </segment>
+    </unit>
+    <unit id="faq3Answer">
+      <segment>
+        <source>is designed to support GDPR compliance by ensuring personal data never leaves the enterprise environment during AI processing. Organizations should evaluate their specific compliance requirements with legal counsel.</source>
         <target>はAI処理中に個人データが企業環境を離れないようにすることで、GDPRコンプライアンスを支援するように設計されています。組織は法務担当と共に自社固有のコンプライアンス要件を評価する必要があります。</target>
-      </trans-unit>
-      <!-- Section 07: Learn More -->
-      <trans-unit id="learnMoreTitle">
+      </segment>
+    </unit>
+    <unit id="learnMoreTitle">
+      <segment>
         <source>Learn More</source>
         <target>詳しく見る</target>
-      </trans-unit>
-      <!-- Section 08: CTA -->
-      <trans-unit id="ctaTitle">
+      </segment>
+    </unit>
+    <unit id="ctaTitle">
+      <segment>
         <source>See how</source>
         <target>ご確認ください</target>
-      </trans-unit>
-      <trans-unit id="ctaTitleAfter">
+      </segment>
+    </unit>
+    <unit id="ctaTitleAfter">
+      <segment>
         <source>works with your data</source>
         <target>がお客様のデータでどのように機能するか</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>ドキュメント、デプロイ要件、評価基準をお持ちください。実際のワークフローでデモンストレーションいたします。</target>
-      </trans-unit>
-      <trans-unit id="btn1Label">
+      </segment>
+    </unit>
+    <unit id="btn1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="btn2Label">
+      </segment>
+    </unit>
+    <unit id="btn2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="footnoteLink1Label">
+      </segment>
+    </unit>
+    <unit id="footnoteLink1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>アーキテクチャブリーフをダウンロード</target>
-      </trans-unit>
-      <trans-unit id="footnoteLink2Label">
+      </segment>
+    </unit>
+    <unit id="footnoteLink2Label">
+      <segment>
         <source>AWS Marketplace</source>
         <target>AWS Marketplace</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -1,115 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ko" datatype="plaintext" original="local-restorationvs-anonymization">
-    <body>
-      <trans-unit id="heroTitle">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ko">
+  <file id="local-restorationvs-anonymization">
+    <unit id="heroTitle">
+      <segment>
         <source>Local Restoration vs Anonymization</source>
         <target>Restoration vs 익명화</target>
-      </trans-unit>
-      <trans-unit id="heroDescription">
+      </segment>
+    </unit>
+    <unit id="heroDescription">
+      <segment>
         <source>Compare local restoration (restoration) with anonymization for enterprise AI. Anonymization is permanent; local restoration restores real enterprise data in AI outputs automatically.</source>
         <target>기업 AI를 위한 Restoration과 익명화를 비교합니다. 익명화는 영구적이며, Restoration은 AI 출력에서 실제 기업 데이터를 자동으로 복원합니다.</target>
-      </trans-unit>
-      <trans-unit id="overviewText">
+      </segment>
+    </unit>
+    <unit id="overviewText">
+      <segment>
         <source>Anonymization and local restoration represent opposite approaches to data protection in AI workflows. Anonymization permanently removes identifying information. Local restoration temporarily protects data and restores it after AI processing — producing enterprise-ready outputs with real data.</source>
         <target>익명화와 Restoration은 AI 워크플로우에서 데이터 보호에 대한 상반된 접근 방식입니다. 익명화는 식별 정보를 영구적으로 제거합니다. Restoration은 데이터를 일시적으로 보호하고 AI 처리 후 복원하여, 실제 데이터가 포함된 기업용 출력을 생성합니다.</target>
-      </trans-unit>
-      <trans-unit id="anonWorksText">
+      </segment>
+    </unit>
+    <unit id="anonWorksText">
+      <segment>
         <source>Anonymization techniques — k-anonymity, differential privacy, generalization, suppression — transform data so that individual records cannot be re-identified. The transformation is designed to be irreversible. Anonymized data is considered non-personal under most regulatory frameworks.</source>
         <target>익명화 기법(k-익명성, 차등 프라이버시, 일반화, 억제)은 개별 레코드를 재식별할 수 없도록 데이터를 변환합니다. 변환은 비가역적으로 설계됩니다. 익명화된 데이터는 대부분의 규제 프레임워크에서 비개인정보로 간주됩니다.</target>
-      </trans-unit>
-      <trans-unit id="limitBullet1">
+      </segment>
+    </unit>
+    <unit id="limitBullet1">
+      <segment>
         <source>Irreversibility. Anonymization is permanent by design. Once data is anonymized, there is no automated path to recover original values. AI outputs based on anonymized data remain anonymous — they cannot reference real individuals, real accounts, or real events.</source>
         <target>비가역성. 익명화는 설계상 영구적입니다. 데이터가 익명화되면 원래 값을 자동으로 복구할 수 없습니다. 익명화된 데이터 기반의 AI 출력은 익명 상태를 유지하며, 실제 개인, 실제 계정, 실제 이벤트를 참조할 수 없습니다.</target>
-      </trans-unit>
-      <trans-unit id="limitBullet2">
+      </segment>
+    </unit>
+    <unit id="limitBullet2">
+      <segment>
         <source>Information loss. Generalization replaces specific values with ranges ("age 35" → "30-40"). Suppression removes values entirely. Both reduce AI's ability to produce precise, actionable outputs.</source>
         <target>정보 손실. 일반화는 특정 값을 범위로 대체합니다("나이 35세" → "30-40"). 억제는 값을 완전히 제거합니다. 두 방식 모두 AI가 정확하고 실행 가능한 출력을 생성하는 능력을 저하시킵니다.</target>
-      </trans-unit>
-      <trans-unit id="limitBullet3">
+      </segment>
+    </unit>
+    <unit id="limitBullet3">
+      <segment>
         <source>Not designed for document intelligence. Anonymization techniques were developed for structured databases, not unstructured enterprise documents. Applying anonymization to contracts, reports, and correspondence produces severely degraded content.</source>
         <target>문서 인텔리전스용으로 설계되지 않음. 익명화 기법은 비정형 기업 문서가 아닌 정형 데이터베이스를 위해 개발되었습니다. 계약서, 보고서, 서신에 익명화를 적용하면 콘텐츠가 심각하게 열화됩니다.</target>
-      </trans-unit>
-      <trans-unit id="differsText">
+      </segment>
+    </unit>
+    <unit id="differsText">
+      <segment>
         <source>Local restoration (restoration) is the process of restoring AI outputs to their full enterprise context using locally stored mappings. Data is encapsulated (not anonymized) before AI processing — sensitive values are replaced with reversible, structure-preserving representations. After AI processing, the original values are restored automatically.</source>
         <target>Restoration은 로컬에 저장된 매핑을 사용하여 AI 출력을 전체 기업 컨텍스트로 복원하는 프로세스입니다. AI 처리 전에 데이터가 Encapsulation(익명화가 아님)되어, 민감한 값이 가역적이고 구조 보존적인 표현으로 대체됩니다. AI 처리 후 원래 값이 자동으로 복원됩니다.</target>
-      </trans-unit>
-      <trans-unit id="tableRow1">
+      </segment>
+    </unit>
+    <unit id="tableRow1">
+      <segment>
         <source>Reversibility|Irreversible|Fully reversible</source>
         <target>가역성|비가역적|완전 가역적</target>
-      </trans-unit>
-      <trans-unit id="tableRow2">
+      </segment>
+    </unit>
+    <unit id="tableRow2">
+      <segment>
         <source>Output usability|Anonymous, non-actionable|Enterprise-ready, actionable</source>
         <target>출력 활용성|익명, 실행 불가|기업용, 실행 가능</target>
-      </trans-unit>
-      <trans-unit id="tableRow3">
+      </segment>
+    </unit>
+    <unit id="tableRow3">
+      <segment>
         <source>Information loss|Significant|None (structure preserved)</source>
         <target>정보 손실|상당함|없음 (구조 보존)</target>
-      </trans-unit>
-      <trans-unit id="tableRow4">
+      </segment>
+    </unit>
+    <unit id="tableRow4">
+      <segment>
         <source>Document support|Structured data only|All document types</source>
         <target>문서 지원|정형 데이터만|모든 문서 유형</target>
-      </trans-unit>
-      <trans-unit id="tableRow5">
+      </segment>
+    </unit>
+    <unit id="tableRow5">
+      <segment>
         <source>Post-processing required|Extensive manual work|Automatic restoration</source>
         <target>후처리 필요|광범위한 수작업|자동 Restoration</target>
-      </trans-unit>
-      <trans-unit id="tableRow6">
+      </segment>
+    </unit>
+    <unit id="tableRow6">
+      <segment>
         <source>Enterprise workflow fit|Analytics / research only|Full production workflows</source>
         <target>기업 워크플로우 적합성|분석/연구 전용|전체 프로덕션 워크플로우</target>
-      </trans-unit>
-      <trans-unit id="exampleCardTitle">
+      </segment>
+    </unit>
+    <unit id="exampleCardTitle">
+      <segment>
         <source>Patient Discharge Summaries</source>
         <target>환자 퇴원 요약서</target>
-      </trans-unit>
-      <trans-unit id="exampleCardP1">
+      </segment>
+    </unit>
+    <unit id="exampleCardP1">
+      <segment>
         <source>A hospital needs AI to generate discharge summaries from patient records. Anonymized records remove patient identifiers — but discharge summaries must reference real patient names, medications, and attending physicians to be clinically useful.</source>
         <target>병원이 환자 기록에서 퇴원 요약서를 생성하기 위해 AI가 필요합니다. 익명화된 기록은 환자 식별자를 제거하지만, 퇴원 요약서는 임상적으로 유용하려면 실제 환자 이름, 약물, 담당 의사를 참조해야 합니다.</target>
-      </trans-unit>
-      <trans-unit id="exampleCardP2">
+      </segment>
+    </unit>
+    <unit id="exampleCardP2">
+      <segment>
         <source>LLM Capsule encapsulates patient records, AI generates structured summaries, and local restoration restores all patient identifiers into the discharge documents. The summaries are clinically ready without any manual re-identification.</source>
         <target>LLM Capsule이 환자 기록을 Encapsulation하고, AI가 구조화된 요약서를 생성하며, Restoration이 모든 환자 식별자를 퇴원 문서에 복원합니다. 수동 재식별 없이 임상적으로 바로 사용 가능한 요약서가 생성됩니다.</target>
-      </trans-unit>
-      <trans-unit id="faq1Question">
+      </segment>
+    </unit>
+    <unit id="faq1Question">
+      <segment>
         <source>What is the difference between anonymization and restoration?</source>
         <target>익명화와 Restoration의 차이점은 무엇입니까?</target>
-      </trans-unit>
-      <trans-unit id="faq1Answer">
+      </segment>
+    </unit>
+    <unit id="faq1Answer">
+      <segment>
         <source>Anonymization permanently removes identifying data. Local restoration (restoration) temporarily protects data through reversible encapsulation and automatically restores original values in AI outputs.</source>
         <target>익명화는 식별 데이터를 영구적으로 제거합니다. Restoration은 가역적 Encapsulation을 통해 데이터를 일시적으로 보호하고 AI 출력에서 원래 값을 자동으로 복원합니다.</target>
-      </trans-unit>
-      <trans-unit id="faq2Question">
+      </segment>
+    </unit>
+    <unit id="faq2Question">
+      <segment>
         <source>When should I use anonymization vs local restoration?</source>
         <target>익명화와 Restoration 중 언제 어떤 것을 사용해야 합니까?</target>
-      </trans-unit>
-      <trans-unit id="faq2Answer">
+      </segment>
+    </unit>
+    <unit id="faq2Answer">
+      <segment>
         <source>Use anonymization for research datasets and analytics where individual identity is not needed. Use local restoration (LLM Capsule) for production AI workflows where outputs must reference real enterprise data.</source>
         <target>개인 신원이 필요 없는 연구 데이터셋과 분석에는 익명화를 사용합니다. 출력이 실제 기업 데이터를 참조해야 하는 프로덕션 AI 워크플로우에는 Restoration(LLM Capsule)을 사용합니다.</target>
-      </trans-unit>
-      <trans-unit id="ctaTitle">
+      </segment>
+    </unit>
+    <unit id="ctaTitle">
+      <segment>
         <source>See how LLM Capsule works with your data</source>
         <target>LLM Capsule이 실제 데이터에서 어떻게 작동하는지 확인하세요</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>문서, 배포 조건, 평가 기준을 준비해 주세요. 실제 워크플로우에서 시연합니다.</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn1Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn2Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnote1Label">
+      </segment>
+    </unit>
+    <unit id="ctaFootnote1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>아키텍처 브리프 다운로드</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnote2Label">
+      </segment>
+    </unit>
+    <unit id="ctaFootnote2Label">
+      <segment>
         <source>AWS Marketplace</source>
         <target>AWS Marketplace</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

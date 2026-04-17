@@ -1,143 +1,209 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="llm-capsule-vs-prompt-security-gateways">
-    <body>
-      <trans-unit id="heroTitle">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+  <file id="llm-capsule-vs-prompt-security-gateways">
+    <unit id="heroTitle">
+      <segment>
         <source>LLM Capsule vs Prompt Security Gateways</source>
         <target>LLM Capsule vs Prompt-Sicherheits-Gateways</target>
-      </trans-unit>
-      <trans-unit id="heroDescription">
+      </segment>
+    </unit>
+    <unit id="heroDescription">
+      <segment>
         <source>Compare LLM Capsule with prompt security gateways. Gateways filter at the API layer; LLM Capsule enables AI adoption at the data layer with structure-preserving encapsulation.</source>
         <target>Vergleichen Sie LLM Capsule mit Prompt-Sicherheits-Gateways. Gateways filtern auf API-Ebene; LLM Capsule ermöglicht KI-Einführung auf der Datenschicht mit strukturerhaltender Encapsulation.</target>
-      </trans-unit>
-      <trans-unit id="overviewText">
+      </segment>
+    </unit>
+    <unit id="overviewText">
+      <segment>
         <source>Prompt security gateways sit between the user and the AI model, scanning prompts for sensitive content and filtering or blocking requests that contain flagged patterns. They operate at the API interaction layer. LLM Capsule operates as an AI enablement data layer — transforming the data itself before it enters any AI workflow, enabling AI adoption rather than blocking it.</source>
         <target>Prompt-Sicherheits-Gateways befinden sich zwischen Benutzer und KI-Modell und scannen Prompts auf sensible Inhalte, wobei Anfragen mit markierten Mustern gefiltert oder blockiert werden. Sie arbeiten auf der API-Interaktionsebene. LLM Capsule fungiert als AI-Enablement-Datenschicht — die Daten selbst werden transformiert, bevor sie in einen KI-Workflow gelangen, und ermöglichen so die KI-Einführung statt sie zu blockieren.</target>
-      </trans-unit>
-      <trans-unit id="gatewaysWorkTitle">
+      </segment>
+    </unit>
+    <unit id="gatewaysWorkTitle">
+      <segment>
         <source>How Prompt Security Gateways Work</source>
         <target>Funktionsweise von Prompt-Sicherheits-Gateways</target>
-      </trans-unit>
-      <trans-unit id="gatewaysWorkText">
+      </segment>
+    </unit>
+    <unit id="gatewaysWorkText">
+      <segment>
         <source>Prompt gateways intercept API calls to LLM providers. They scan the prompt text for PII patterns, blocked topics, or compliance violations. If sensitive content is detected, the gateway either blocks the request, strips the flagged content, or alerts an administrator. Some gateways also scan AI responses for data leakage.</source>
         <target>Prompt-Gateways fangen API-Aufrufe an LLM-Anbieter ab. Sie scannen den Prompt-Text auf PII-Muster, gesperrte Themen oder Compliance-Verstöße. Bei Erkennung sensibler Inhalte blockiert das Gateway die Anfrage, entfernt markierte Inhalte oder benachrichtigt einen Administrator. Einige Gateways scannen auch KI-Antworten auf Datenlecks.</target>
-      </trans-unit>
-      <trans-unit id="limitationsTitle">
+      </segment>
+    </unit>
+    <unit id="limitationsTitle">
+      <segment>
         <source>Limitations</source>
         <target>Einschränkungen</target>
-      </trans-unit>
-      <trans-unit id="limitationBullet1">
+      </segment>
+    </unit>
+    <unit id="limitationBullet1">
+      <segment>
         <source>Prompt-only scope. Gateways only see the final prompt, not the underlying data pipeline. Documents processed through RAG systems or batch pipelines may bypass the gateway entirely.</source>
         <target>Nur Prompt-Bereich. Gateways sehen nur den finalen Prompt, nicht die zugrunde liegende Datenpipeline. Dokumente, die über RAG-Systeme oder Batch-Pipelines verarbeitet werden, können das Gateway vollständig umgehen.</target>
-      </trans-unit>
-      <trans-unit id="limitationBullet2">
+      </segment>
+    </unit>
+    <unit id="limitationBullet2">
+      <segment>
         <source>Block or pass binary. Most gateways make a binary decision — block the request or pass it through. There is no mechanism to transform data while preserving usability.</source>
         <target>Binäre Entscheidung: Blockieren oder Durchlassen. Die meisten Gateways treffen eine binäre Entscheidung — Anfrage blockieren oder durchlassen. Es gibt keinen Mechanismus, Daten unter Beibehaltung der Nutzbarkeit zu transformieren.</target>
-      </trans-unit>
-      <trans-unit id="limitationBullet3">
+      </segment>
+    </unit>
+    <unit id="limitationBullet3">
+      <segment>
         <source>No output restoration. If a gateway strips sensitive content from a prompt, the AI output will lack that context. There is no restoration mechanism.</source>
         <target>Keine Ausgabe-Restoration. Wenn ein Gateway sensible Inhalte aus einem Prompt entfernt, fehlt dem KI-Output dieser Kontext. Ein Restoration-Mechanismus existiert nicht.</target>
-      </trans-unit>
-      <trans-unit id="limitationBullet4">
+      </segment>
+    </unit>
+    <unit id="limitationBullet4">
+      <segment>
         <source>Pattern-based detection. Gateways rely on pattern matching which misses context-dependent sensitivity and generates false positives on non-sensitive content that matches PII patterns.</source>
         <target>Musterbasierte Erkennung. Gateways verlassen sich auf Musterabgleich, der kontextabhängige Sensitivität übersieht und Fehlalarme bei nicht-sensiblen Inhalten auslöst, die PII-Mustern entsprechen.</target>
-      </trans-unit>
-      <trans-unit id="differsTitle">
+      </segment>
+    </unit>
+    <unit id="differsTitle">
+      <segment>
         <source>How LLM Capsule Differs</source>
         <target>Wie sich LLM Capsule unterscheidet</target>
-      </trans-unit>
-      <trans-unit id="differsText">
+      </segment>
+    </unit>
+    <unit id="differsText">
+      <segment>
         <source>LLM Capsule operates upstream of the prompt. It encapsulates sensitive data at the document level before any AI processing occurs. The encapsulation is structure-preserving — AI receives complete, processable documents. After AI generates outputs, local restoration (restoration) restores enterprise context automatically.</source>
         <target>LLM Capsule arbeitet vorgelagert zum Prompt. Sensible Daten werden auf Dokumentebene per Encapsulation geschützt, bevor eine KI-Verarbeitung erfolgt. Die Encapsulation ist strukturerhaltend — die KI erhält vollständige, verarbeitbare Dokumente. Nach der KI-Ausgabe stellt Restoration den Unternehmenskontext automatisch wieder her.</target>
-      </trans-unit>
-      <trans-unit id="differsBannerText">
+      </segment>
+    </unit>
+    <unit id="differsBannerText">
+      <segment>
         <source>AI results are restored locally. LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.</source>
         <target>KI-Ergebnisse werden lokal per Restoration wiederhergestellt. LLM Capsule ermöglicht die KI-Einführung im Unternehmen bei gleichzeitigem Schutz sensibler Daten und Erhalt nutzbarer Ausgaben.</target>
-      </trans-unit>
-      <trans-unit id="comparisonTitle">
+      </segment>
+    </unit>
+    <unit id="comparisonTitle">
+      <segment>
         <source>Comparison</source>
         <target>Vergleich</target>
-      </trans-unit>
-      <trans-unit id="exampleTitle">
+      </segment>
+    </unit>
+    <unit id="exampleTitle">
+      <segment>
         <source>Enterprise Workflow Example</source>
         <target>Unternehmens-Workflow-Beispiel</target>
-      </trans-unit>
-      <trans-unit id="exampleCardTitle">
+      </segment>
+    </unit>
+    <unit id="exampleCardTitle">
+      <segment>
         <source>RAG-Based Knowledge System</source>
         <target>RAG-basiertes Wissenssystem</target>
-      </trans-unit>
-      <trans-unit id="exampleCardText1">
+      </segment>
+    </unit>
+    <unit id="exampleCardText1">
+      <segment>
         <source>An enterprise deploys a RAG system that retrieves internal documents to augment AI responses. A prompt gateway can only scan the final composed prompt — it cannot protect the 50 retrieved document chunks that feed into it.</source>
         <target>Ein Unternehmen setzt ein RAG-System ein, das interne Dokumente abruft, um KI-Antworten zu ergänzen. Ein Prompt-Gateway kann nur den final zusammengesetzten Prompt scannen — die 50 abgerufenen Dokumentfragmente, die einfließen, kann es nicht schützen.</target>
-      </trans-unit>
-      <trans-unit id="exampleCardText2">
+      </segment>
+    </unit>
+    <unit id="exampleCardText2">
+      <segment>
         <source>LLM Capsule encapsulates all documents at the data layer before they enter the RAG index. Every retrieval, every prompt composition, and every AI output operates on protected data. Restoration restores enterprise context in the final response.</source>
         <target>LLM Capsule schützt alle Dokumente auf der Datenschicht per Encapsulation, bevor sie in den RAG-Index gelangen. Jeder Abruf, jede Prompt-Komposition und jede KI-Ausgabe arbeitet mit geschützten Daten. Restoration stellt den Unternehmenskontext in der finalen Antwort wieder her.</target>
-      </trans-unit>
-      <trans-unit id="faqTitle">
+      </segment>
+    </unit>
+    <unit id="faqTitle">
+      <segment>
         <source>FAQ</source>
         <target>FAQ</target>
-      </trans-unit>
-      <trans-unit id="faq1Question">
+      </segment>
+    </unit>
+    <unit id="faq1Question">
+      <segment>
         <source>How does LLM Capsule differ from prompt gateways?</source>
         <target>Wie unterscheidet sich LLM Capsule von Prompt-Gateways?</target>
-      </trans-unit>
-      <trans-unit id="faq1Answer">
+      </segment>
+    </unit>
+    <unit id="faq1Answer">
+      <segment>
         <source>Prompt gateways filter at the API level and can only block or pass requests. LLM Capsule transforms data at the source, preserving structure for AI processing and enabling output restoration.</source>
         <target>Prompt-Gateways filtern auf API-Ebene und können Anfragen nur blockieren oder durchlassen. LLM Capsule transformiert Daten an der Quelle, erhält die Struktur für die KI-Verarbeitung und ermöglicht Ausgabe-Restoration.</target>
-      </trans-unit>
-      <trans-unit id="faq2Question">
+      </segment>
+    </unit>
+    <unit id="faq2Question">
+      <segment>
         <source>Can I use both a gateway and LLM Capsule?</source>
         <target>Kann ich ein Gateway und LLM Capsule gleichzeitig nutzen?</target>
-      </trans-unit>
-      <trans-unit id="faq2Answer">
+      </segment>
+    </unit>
+    <unit id="faq2Answer">
+      <segment>
         <source>Yes. LLM Capsule provides data-layer protection while gateways provide an additional API-level monitoring layer. The two approaches are complementary.</source>
         <target>Ja. LLM Capsule bietet Datenschicht-Schutz, während Gateways eine zusätzliche API-Überwachungsebene bereitstellen. Beide Ansätze ergänzen sich.</target>
-      </trans-unit>
-      <trans-unit id="relatedLink1Label">
+      </segment>
+    </unit>
+    <unit id="relatedLink1Label">
+      <segment>
         <source>Product Overview</source>
         <target>Produktübersicht</target>
-      </trans-unit>
-      <trans-unit id="relatedLink2Label">
+      </segment>
+    </unit>
+    <unit id="relatedLink2Label">
+      <segment>
         <source>Architecture</source>
         <target>Architektur</target>
-      </trans-unit>
-      <trans-unit id="relatedLink3Label">
+      </segment>
+    </unit>
+    <unit id="relatedLink3Label">
+      <segment>
         <source>Trust &amp; Compliance</source>
         <target>Vertrauen &amp; Compliance</target>
-      </trans-unit>
-      <trans-unit id="relatedLink4Label">
+      </segment>
+    </unit>
+    <unit id="relatedLink4Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="relatedLink5Label">
+      </segment>
+    </unit>
+    <unit id="relatedLink5Label">
+      <segment>
         <source>Learn Hub</source>
         <target>Lernzentrum</target>
-      </trans-unit>
-      <trans-unit id="ctaTitle">
+      </segment>
+    </unit>
+    <unit id="ctaTitle">
+      <segment>
         <source>See how LLM Capsule works with your data</source>
         <target>Erleben Sie, wie LLM Capsule mit Ihren Daten arbeitet</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Workflows.</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn1Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn2Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnote1Label">
+      </segment>
+    </unit>
+    <unit id="ctaFootnote1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>Architektur-Brief herunterladen</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnote2Label">
+      </segment>
+    </unit>
+    <unit id="ctaFootnote2Label">
+      <segment>
         <source>AWS Marketplace</source>
         <target>AWS Marketplace</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

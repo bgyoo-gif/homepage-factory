@@ -1,164 +1,215 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ko" datatype="plaintext" original="why-redaction-breaks-enterprise-ai-workflows">
-    <body>
-      <!-- Section 01: Hero -->
-      <trans-unit id="title">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ko">
+  <file id="why-redaction-breaks-enterprise-ai-workflows">
+    <unit id="title">
+      <segment>
         <source>Why Redaction Breaks Enterprise AI Workflows</source>
         <target>편집(Redaction)이 기업 AI 워크플로우를 파괴하는 이유</target>
-      </trans-unit>
-      <trans-unit id="description">
+      </segment>
+    </unit>
+    <unit id="description">
+      <segment>
         <source>Masking and redaction tools destroy the data context that AI models need. Enterprise AI requires structure-preserving processing with restorable outputs.</source>
         <target>마스킹 및 편집 도구는 AI 모델이 필요로 하는 데이터 컨텍스트를 파괴합니다. 기업 AI는 복원 가능한 출력을 갖춘 구조 보존 처리를 필요로 합니다.</target>
-      </trans-unit>
-      <trans-unit id="breadcrumbHome">
+      </segment>
+    </unit>
+    <unit id="breadcrumbHome">
+      <segment>
         <source>Home</source>
         <target>홈</target>
-      </trans-unit>
-      <trans-unit id="breadcrumbResources">
+      </segment>
+    </unit>
+    <unit id="breadcrumbResources">
+      <segment>
         <source>Resources</source>
         <target>리소스</target>
-      </trans-unit>
-      <trans-unit id="breadcrumbLearn">
+      </segment>
+    </unit>
+    <unit id="breadcrumbLearn">
+      <segment>
         <source>Learn</source>
         <target>학습</target>
-      </trans-unit>
-      <trans-unit id="breadcrumbCurrent">
+      </segment>
+    </unit>
+    <unit id="breadcrumbCurrent">
+      <segment>
         <source>Why Redaction Breaks Enterprise AI Workflows</source>
         <target>편집(Redaction)이 기업 AI 워크플로우를 파괴하는 이유</target>
-      </trans-unit>
-
-      <!-- Section 02: Problem -->
-      <trans-unit id="sectionLabel_problem">
+      </segment>
+    </unit>
+    <unit id="sectionLabel_problem">
+      <segment>
         <source>Problem</source>
         <target>문제</target>
-      </trans-unit>
-
-      <!-- Section 03: How Redaction Fails -->
-      <trans-unit id="sectionHeadingPre_s3">
+      </segment>
+    </unit>
+    <unit id="sectionHeadingPre_s3">
+      <segment>
         <source>How Redaction and Masking Tools</source>
         <target>편집 및 마스킹 도구가 AI 워크플로우에서</target>
-      </trans-unit>
-      <trans-unit id="sectionHeadingHighlight_s3">
+      </segment>
+    </unit>
+    <unit id="sectionHeadingHighlight_s3">
+      <segment>
         <source>Fail</source>
         <target>실패하는</target>
-      </trans-unit>
-      <trans-unit id="sectionHeadingPost_s3">
+      </segment>
+    </unit>
+    <unit id="sectionHeadingPost_s3">
+      <segment>
         <source>in AI Workflows</source>
         <target>방식</target>
-      </trans-unit>
-
-      <!-- Section 04: Requirements -->
-      <trans-unit id="sectionHeadingPre_s4">
+      </segment>
+    </unit>
+    <unit id="sectionHeadingPre_s4">
+      <segment>
         <source>What Enterprise AI Workflows Actually</source>
         <target>기업 AI 워크플로우에 실제로</target>
-      </trans-unit>
-      <trans-unit id="sectionHeadingHighlight_s4">
+      </segment>
+    </unit>
+    <unit id="sectionHeadingHighlight_s4">
+      <segment>
         <source>Require</source>
         <target>필요한 것</target>
-      </trans-unit>
-      <trans-unit id="intro_s4">
+      </segment>
+    </unit>
+    <unit id="intro_s4">
+      <segment>
         <source>Achieving AI document security and secure LLM usage in regulated environments demands more than pattern-based redaction. Enterprise AI data pipelines need a protection mechanism that satisfies three requirements simultaneously:</source>
         <target>규제 환경에서 AI 문서 보안과 안전한 LLM 사용을 달성하려면 패턴 기반 편집 이상이 필요합니다. 기업 AI 데이터 파이프라인은 세 가지 요구 사항을 동시에 충족하는 보호 메커니즘이 필요합니다:</target>
-      </trans-unit>
-      <trans-unit id="check1Strong">
+      </segment>
+    </unit>
+    <unit id="check1Strong">
+      <segment>
         <source>Structure-preserving processing.</source>
         <target>구조 보존 처리.</target>
-      </trans-unit>
-      <trans-unit id="check1Rest">
-        <source> Document structure, entity relationships, and semantic context must remain intact for AI comprehension.</source>
-        <target> AI 이해를 위해 문서 구조, 엔티티 관계, 의미적 컨텍스트가 온전히 유지되어야 합니다.</target>
-      </trans-unit>
-      <trans-unit id="check2Strong">
+      </segment>
+    </unit>
+    <unit id="check1Rest">
+      <segment>
+        <source>Document structure, entity relationships, and semantic context must remain intact for AI comprehension.</source>
+        <target>AI 이해를 위해 문서 구조, 엔티티 관계, 의미적 컨텍스트가 온전히 유지되어야 합니다.</target>
+      </segment>
+    </unit>
+    <unit id="check2Strong">
+      <segment>
         <source>Zero exposure.</source>
         <target>제로 노출.</target>
-      </trans-unit>
-      <trans-unit id="check2Rest">
-        <source> Original sensitive data must never leave the enterprise environment.</source>
-        <target> 원본 민감 데이터는 기업 환경을 절대 벗어나서는 안 됩니다.</target>
-      </trans-unit>
-      <trans-unit id="check3Strong">
+      </segment>
+    </unit>
+    <unit id="check2Rest">
+      <segment>
+        <source>Original sensitive data must never leave the enterprise environment.</source>
+        <target>원본 민감 데이터는 기업 환경을 절대 벗어나서는 안 됩니다.</target>
+      </segment>
+    </unit>
+    <unit id="check3Strong">
+      <segment>
         <source>Restorable workflow.</source>
         <target>복원 가능한 워크플로우.</target>
-      </trans-unit>
-      <trans-unit id="check3Rest">
-        <source> AI results are automatically restored locally with original enterprise data. Outputs contain real names, real amounts, real dates — ready for direct use in business processes.</source>
-        <target> AI 결과는 원본 기업 데이터로 로컬에서 자동 복원됩니다. 출력에는 실제 이름, 실제 금액, 실제 날짜가 포함되어 비즈니스 프로세스에 바로 사용할 수 있습니다.</target>
-      </trans-unit>
-      <trans-unit id="bannerBold">
+      </segment>
+    </unit>
+    <unit id="check3Rest">
+      <segment>
+        <source>AI results are automatically restored locally with original enterprise data. Outputs contain real names, real amounts, real dates — ready for direct use in business processes.</source>
+        <target>AI 결과는 원본 기업 데이터로 로컬에서 자동 복원됩니다. 출력에는 실제 이름, 실제 금액, 실제 날짜가 포함되어 비즈니스 프로세스에 바로 사용할 수 있습니다.</target>
+      </segment>
+    </unit>
+    <unit id="bannerBold">
+      <segment>
         <source>AI results are automatically restored locally with original enterprise data.</source>
         <target>AI 결과는 원본 기업 데이터로 로컬에서 자동 복원됩니다.</target>
-      </trans-unit>
-      <trans-unit id="bannerRest">
-        <source> as an AI enablement data layer from static redaction tools.</source>
+      </segment>
+    </unit>
+    <unit id="bannerRest">
+      <segment>
+        <source>as an AI enablement data layer from static redaction tools.</source>
         <target>을 정적 편집 도구와 차별화하는 AI 활성화 데이터 레이어의 핵심 기능입니다.</target>
-      </trans-unit>
-
-      <!-- Section 05: Comparison Table -->
-      <trans-unit id="headingVs">
+      </segment>
+    </unit>
+    <unit id="headingVs">
+      <segment>
         <source>vs</source>
         <target>vs</target>
-      </trans-unit>
-      <trans-unit id="headingTools">
+      </segment>
+    </unit>
+    <unit id="headingTools">
+      <segment>
         <source>Redaction Tools</source>
         <target>편집 도구</target>
-      </trans-unit>
-
-      <!-- Section 06: Enterprise Example -->
-      <trans-unit id="sectionHeadingPre_s6">
+      </segment>
+    </unit>
+    <unit id="sectionHeadingPre_s6">
+      <segment>
         <source>Enterprise</source>
         <target>기업</target>
-      </trans-unit>
-      <trans-unit id="sectionHeadingHighlight_s6">
+      </segment>
+    </unit>
+    <unit id="sectionHeadingHighlight_s6">
+      <segment>
         <source>Example</source>
         <target>사례</target>
-      </trans-unit>
-      <trans-unit id="cardTitle">
+      </segment>
+    </unit>
+    <unit id="cardTitle">
+      <segment>
         <source>Legal Contract Review</source>
         <target>법률 계약 검토</target>
-      </trans-unit>
-
-      <!-- Section 07: FAQ -->
-      <trans-unit id="sectionLabel_faq">
+      </segment>
+    </unit>
+    <unit id="sectionLabel_faq">
+      <segment>
         <source>FAQ</source>
         <target>FAQ</target>
-      </trans-unit>
-
-      <!-- Section 08: Related -->
-      <trans-unit id="sectionLabel_related">
+      </segment>
+    </unit>
+    <unit id="sectionLabel_related">
+      <segment>
         <source>Related</source>
         <target>관련 페이지</target>
-      </trans-unit>
-
-      <!-- Section 09: CTA Band -->
-      <trans-unit id="titlePre">
+      </segment>
+    </unit>
+    <unit id="titlePre">
+      <segment>
         <source>See how</source>
         <target>LLM Capsule이</target>
-      </trans-unit>
-      <trans-unit id="titlePost">
+      </segment>
+    </unit>
+    <unit id="titlePost">
+      <segment>
         <source>works with your data</source>
         <target>실제 데이터와 어떻게 작동하는지 확인하세요</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>문서, 배포 제약 조건, 평가 기준을 가져오세요. 실제 워크플로우에서 시연합니다.</target>
-      </trans-unit>
-      <trans-unit id="cta1Label">
+      </segment>
+    </unit>
+    <unit id="cta1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="cta2Label">
+      </segment>
+    </unit>
+    <unit id="cta2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="footnote1Label">
+      </segment>
+    </unit>
+    <unit id="footnote1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>아키텍처 브리프 다운로드</target>
-      </trans-unit>
-      <trans-unit id="footnote2Label">
+      </segment>
+    </unit>
+    <unit id="footnote2Label">
+      <segment>
         <source>AWS Marketplace</source>
         <target>AWS Marketplace</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -1,115 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="local-restorationvs-anonymization">
-    <body>
-      <trans-unit id="heroTitle">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+  <file id="local-restorationvs-anonymization">
+    <unit id="heroTitle">
+      <segment>
         <source>Local Restoration vs Anonymization</source>
         <target>Restoration vs Anonymisierung</target>
-      </trans-unit>
-      <trans-unit id="heroDescription">
+      </segment>
+    </unit>
+    <unit id="heroDescription">
+      <segment>
         <source>Compare local restoration (restoration) with anonymization for enterprise AI. Anonymization is permanent; local restoration restores real enterprise data in AI outputs automatically.</source>
         <target>Vergleichen Sie Restoration mit Anonymisierung für Unternehmens-KI. Anonymisierung ist permanent; Restoration stellt reale Unternehmensdaten in KI-Ausgaben automatisch wieder her.</target>
-      </trans-unit>
-      <trans-unit id="overviewText">
+      </segment>
+    </unit>
+    <unit id="overviewText">
+      <segment>
         <source>Anonymization and local restoration represent opposite approaches to data protection in AI workflows. Anonymization permanently removes identifying information. Local restoration temporarily protects data and restores it after AI processing — producing enterprise-ready outputs with real data.</source>
         <target>Anonymisierung und Restoration stellen gegensätzliche Ansätze zum Datenschutz in KI-Workflows dar. Anonymisierung entfernt identifizierende Informationen permanent. Restoration schützt Daten temporär und stellt sie nach der KI-Verarbeitung wieder her — mit realen Daten in unternehmensfertigen Ausgaben.</target>
-      </trans-unit>
-      <trans-unit id="anonWorksText">
+      </segment>
+    </unit>
+    <unit id="anonWorksText">
+      <segment>
         <source>Anonymization techniques — k-anonymity, differential privacy, generalization, suppression — transform data so that individual records cannot be re-identified. The transformation is designed to be irreversible. Anonymized data is considered non-personal under most regulatory frameworks.</source>
         <target>Anonymisierungstechniken — k-Anonymität, Differential Privacy, Generalisierung, Unterdrückung — transformieren Daten so, dass einzelne Datensätze nicht re-identifiziert werden können. Die Transformation ist als irreversibel konzipiert. Anonymisierte Daten gelten in den meisten regulatorischen Rahmenwerken als nicht-personenbezogen.</target>
-      </trans-unit>
-      <trans-unit id="limitBullet1">
+      </segment>
+    </unit>
+    <unit id="limitBullet1">
+      <segment>
         <source>Irreversibility. Anonymization is permanent by design. Once data is anonymized, there is no automated path to recover original values. AI outputs based on anonymized data remain anonymous — they cannot reference real individuals, real accounts, or real events.</source>
         <target>Irreversibilität. Anonymisierung ist konstruktionsbedingt permanent. Nach der Anonymisierung gibt es keinen automatisierten Weg zur Wiederherstellung der Originalwerte. KI-Ausgaben auf Basis anonymisierter Daten bleiben anonym — sie können keine realen Personen, realen Konten oder realen Ereignisse referenzieren.</target>
-      </trans-unit>
-      <trans-unit id="limitBullet2">
+      </segment>
+    </unit>
+    <unit id="limitBullet2">
+      <segment>
         <source>Information loss. Generalization replaces specific values with ranges ("age 35" → "30-40"). Suppression removes values entirely. Both reduce AI's ability to produce precise, actionable outputs.</source>
         <target>Informationsverlust. Generalisierung ersetzt spezifische Werte durch Bereiche („Alter 35" → „30-40"). Unterdrückung entfernt Werte vollständig. Beide reduzieren die Fähigkeit der KI, präzise, handlungsrelevante Ausgaben zu erzeugen.</target>
-      </trans-unit>
-      <trans-unit id="limitBullet3">
+      </segment>
+    </unit>
+    <unit id="limitBullet3">
+      <segment>
         <source>Not designed for document intelligence. Anonymization techniques were developed for structured databases, not unstructured enterprise documents. Applying anonymization to contracts, reports, and correspondence produces severely degraded content.</source>
         <target>Nicht für Dokumentenintelligenz konzipiert. Anonymisierungstechniken wurden für strukturierte Datenbanken entwickelt, nicht für unstrukturierte Unternehmensdokumente. Die Anwendung von Anonymisierung auf Verträge, Berichte und Korrespondenz erzeugt stark degradierte Inhalte.</target>
-      </trans-unit>
-      <trans-unit id="differsText">
+      </segment>
+    </unit>
+    <unit id="differsText">
+      <segment>
         <source>Local restoration (restoration) is the process of restoring AI outputs to their full enterprise context using locally stored mappings. Data is encapsulated (not anonymized) before AI processing — sensitive values are replaced with reversible, structure-preserving representations. After AI processing, the original values are restored automatically.</source>
         <target>Restoration ist der Prozess der Wiederherstellung von KI-Ausgaben in ihren vollständigen Unternehmenskontext mithilfe lokal gespeicherter Zuordnungen. Daten werden vor der KI-Verarbeitung per Encapsulation geschützt (nicht anonymisiert) — sensible Werte werden durch reversible, strukturerhaltende Darstellungen ersetzt. Nach der KI-Verarbeitung werden die Originalwerte automatisch wiederhergestellt.</target>
-      </trans-unit>
-      <trans-unit id="tableRow1">
+      </segment>
+    </unit>
+    <unit id="tableRow1">
+      <segment>
         <source>Reversibility|Irreversible|Fully reversible</source>
         <target>Reversibilität|Irreversibel|Vollständig reversibel</target>
-      </trans-unit>
-      <trans-unit id="tableRow2">
+      </segment>
+    </unit>
+    <unit id="tableRow2">
+      <segment>
         <source>Output usability|Anonymous, non-actionable|Enterprise-ready, actionable</source>
         <target>Ausgabe-Nutzbarkeit|Anonym, nicht handlungsrelevant|Unternehmensfertig, handlungsrelevant</target>
-      </trans-unit>
-      <trans-unit id="tableRow3">
+      </segment>
+    </unit>
+    <unit id="tableRow3">
+      <segment>
         <source>Information loss|Significant|None (structure preserved)</source>
         <target>Informationsverlust|Erheblich|Keiner (Struktur erhalten)</target>
-      </trans-unit>
-      <trans-unit id="tableRow4">
+      </segment>
+    </unit>
+    <unit id="tableRow4">
+      <segment>
         <source>Document support|Structured data only|All document types</source>
         <target>Dokumentunterstützung|Nur strukturierte Daten|Alle Dokumenttypen</target>
-      </trans-unit>
-      <trans-unit id="tableRow5">
+      </segment>
+    </unit>
+    <unit id="tableRow5">
+      <segment>
         <source>Post-processing required|Extensive manual work|Automatic restoration</source>
         <target>Nachbearbeitung erforderlich|Umfangreiche manuelle Arbeit|Automatische Restoration</target>
-      </trans-unit>
-      <trans-unit id="tableRow6">
+      </segment>
+    </unit>
+    <unit id="tableRow6">
+      <segment>
         <source>Enterprise workflow fit|Analytics / research only|Full production workflows</source>
         <target>Unternehmens-Workflow-Eignung|Nur Analyse/Forschung|Vollständige Produktions-Workflows</target>
-      </trans-unit>
-      <trans-unit id="exampleCardTitle">
+      </segment>
+    </unit>
+    <unit id="exampleCardTitle">
+      <segment>
         <source>Patient Discharge Summaries</source>
         <target>Patienten-Entlassungsberichte</target>
-      </trans-unit>
-      <trans-unit id="exampleCardP1">
+      </segment>
+    </unit>
+    <unit id="exampleCardP1">
+      <segment>
         <source>A hospital needs AI to generate discharge summaries from patient records. Anonymized records remove patient identifiers — but discharge summaries must reference real patient names, medications, and attending physicians to be clinically useful.</source>
         <target>Ein Krankenhaus benötigt KI zur Erstellung von Entlassungsberichten aus Patientenakten. Anonymisierte Akten entfernen Patientenidentifikatoren — aber Entlassungsberichte müssen reale Patientennamen, Medikamente und behandelnde Ärzte referenzieren, um klinisch nützlich zu sein.</target>
-      </trans-unit>
-      <trans-unit id="exampleCardP2">
+      </segment>
+    </unit>
+    <unit id="exampleCardP2">
+      <segment>
         <source>LLM Capsule encapsulates patient records, AI generates structured summaries, and local restoration restores all patient identifiers into the discharge documents. The summaries are clinically ready without any manual re-identification.</source>
         <target>LLM Capsule schützt Patientenakten per Encapsulation, KI generiert strukturierte Zusammenfassungen, und Restoration stellt alle Patientenidentifikatoren in den Entlassungsdokumenten wieder her. Die Berichte sind ohne manuelle Re-Identifikation klinisch einsatzbereit.</target>
-      </trans-unit>
-      <trans-unit id="faq1Question">
+      </segment>
+    </unit>
+    <unit id="faq1Question">
+      <segment>
         <source>What is the difference between anonymization and restoration?</source>
         <target>Was ist der Unterschied zwischen Anonymisierung und Restoration?</target>
-      </trans-unit>
-      <trans-unit id="faq1Answer">
+      </segment>
+    </unit>
+    <unit id="faq1Answer">
+      <segment>
         <source>Anonymization permanently removes identifying data. Local restoration (restoration) temporarily protects data through reversible encapsulation and automatically restores original values in AI outputs.</source>
         <target>Anonymisierung entfernt identifizierende Daten permanent. Restoration schützt Daten temporär durch reversible Encapsulation und stellt Originalwerte in KI-Ausgaben automatisch wieder her.</target>
-      </trans-unit>
-      <trans-unit id="faq2Question">
+      </segment>
+    </unit>
+    <unit id="faq2Question">
+      <segment>
         <source>When should I use anonymization vs local restoration?</source>
         <target>Wann sollte ich Anonymisierung statt Restoration verwenden?</target>
-      </trans-unit>
-      <trans-unit id="faq2Answer">
+      </segment>
+    </unit>
+    <unit id="faq2Answer">
+      <segment>
         <source>Use anonymization for research datasets and analytics where individual identity is not needed. Use local restoration (LLM Capsule) for production AI workflows where outputs must reference real enterprise data.</source>
         <target>Verwenden Sie Anonymisierung für Forschungsdatensätze und Analysen, bei denen keine individuelle Identität benötigt wird. Verwenden Sie Restoration (LLM Capsule) für produktive KI-Workflows, bei denen Ausgaben reale Unternehmensdaten referenzieren müssen.</target>
-      </trans-unit>
-      <trans-unit id="ctaTitle">
+      </segment>
+    </unit>
+    <unit id="ctaTitle">
+      <segment>
         <source>See how LLM Capsule works with your data</source>
         <target>Erleben Sie, wie LLM Capsule mit Ihren Daten arbeitet</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Workflows.</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn1Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn2Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnote1Label">
+      </segment>
+    </unit>
+    <unit id="ctaFootnote1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>Architektur-Brief herunterladen</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnote2Label">
+      </segment>
+    </unit>
+    <unit id="ctaFootnote2Label">
+      <segment>
         <source>AWS Marketplace</source>
         <target>AWS Marketplace</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

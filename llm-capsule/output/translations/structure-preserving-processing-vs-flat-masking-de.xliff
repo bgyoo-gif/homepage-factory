@@ -1,106 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="structure-preserving-processing-vs-flat-masking">
-    <body>
-      <!-- Hero -->
-      <trans-unit id="heroTitle">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+  <file id="structure-preserving-processing-vs-flat-masking">
+    <unit id="heroTitle">
+      <segment>
         <source>Structure-Preserving Processing vs Flat Masking</source>
         <target>Strukturerhaltende Verarbeitung vs Flat Masking</target>
-      </trans-unit>
-      <trans-unit id="heroDescription">
+      </segment>
+    </unit>
+    <unit id="heroDescription">
+      <segment>
         <source>Compare structure-preserving processing with flat masking for enterprise AI. Flat masking collapses document structure; structure preservation maintains integrity for accurate AI outputs.</source>
         <target>Vergleich von strukturerhaltender Verarbeitung und Flat Masking fuer Enterprise-KI. Flat Masking zerstoert die Dokumentstruktur; Strukturerhaltung bewahrt die Integritaet fuer praezise KI-Ausgaben.</target>
-      </trans-unit>
-
-      <!-- Overview -->
-      <trans-unit id="overviewBody">
+      </segment>
+    </unit>
+    <unit id="overviewBody">
+      <segment>
         <source>Flat masking and structure-preserving processing both aim to protect sensitive data before AI processing. They differ fundamentally in how they handle document structure, entity relationships, and semantic context — and this difference determines whether AI outputs are usable.</source>
         <target>Flat Masking und strukturerhaltende Verarbeitung zielen beide darauf ab, sensible Daten vor der KI-Verarbeitung zu schuetzen. Sie unterscheiden sich grundlegend in der Handhabung von Dokumentstruktur, Entitaetsbeziehungen und semantischem Kontext — und dieser Unterschied bestimmt, ob KI-Ausgaben nutzbar sind.</target>
-      </trans-unit>
-
-      <!-- Flat Masking -->
-      <trans-unit id="flatMaskingBody">
+      </segment>
+    </unit>
+    <unit id="flatMaskingBody">
+      <segment>
         <source>Flat masking scans documents for sensitive patterns and replaces each match with a generic token. The replacement is uniform — every name becomes [NAME], every number becomes [NUMBER], every date becomes [DATE]. The masking engine treats each sensitive value independently, without considering its role in the document's structure.</source>
         <target>Flat Masking durchsucht Dokumente nach sensiblen Mustern und ersetzt jeden Treffer durch ein generisches Token. Die Ersetzung ist einheitlich — jeder Name wird zu [NAME], jede Zahl zu [NUMBER], jedes Datum zu [DATE]. Die Masking-Engine behandelt jeden sensiblen Wert unabhaengig, ohne seine Rolle in der Dokumentstruktur zu beruecksichtigen.</target>
-      </trans-unit>
-
-      <!-- Limitations -->
-      <trans-unit id="limitBullet1">
+      </segment>
+    </unit>
+    <unit id="limitBullet1">
+      <segment>
         <source>Entity collapse. In a multi-party contract, all party names become [NAME]. AI cannot distinguish acquirer from target, lender from borrower, plaintiff from defendant.</source>
         <target>Entitaetskollaps. In einem Mehrparteienvertrag werden alle Parteinamen zu [NAME]. Die KI kann Erwerber nicht von Zielunternehmen, Kreditgeber nicht von Kreditnehmer, Klaeger nicht von Beklagtem unterscheiden.</target>
-      </trans-unit>
-      <trans-unit id="limitBullet2">
+      </segment>
+    </unit>
+    <unit id="limitBullet2">
+      <segment>
         <source>Table destruction. Column headers masked as [FIELD] and cell values masked as [VALUE] eliminate the schema information AI needs for accurate extraction.</source>
         <target>Tabellenzerstoerung. Als [FIELD] maskierte Spaltenkoepfe und als [VALUE] maskierte Zellwerte eliminieren die Schemainformationen, die die KI fuer eine praezise Extraktion benoetigt.</target>
-      </trans-unit>
-      <trans-unit id="limitBullet3">
+      </segment>
+    </unit>
+    <unit id="limitBullet3">
+      <segment>
         <source>Cross-reference breakage. When a document references "see Section 3.2 regarding [NAME]'s obligations," flat masking removes the entity link that gives the reference meaning.</source>
         <target>Querverweisbruch. Wenn ein Dokument auf „siehe Abschnitt 3.2 bezueglich der Pflichten von [NAME]" verweist, entfernt Flat Masking den Entitaetslink, der dem Verweis Bedeutung verleiht.</target>
-      </trans-unit>
-      <trans-unit id="limitBullet4">
+      </segment>
+    </unit>
+    <unit id="limitBullet4">
+      <segment>
         <source>Inconsistent replacement. The same entity may receive different tokens in different document locations, breaking AI's ability to track entities across sections.</source>
         <target>Inkonsistente Ersetzung. Dieselbe Entitaet kann an verschiedenen Stellen im Dokument unterschiedliche Tokens erhalten, was die Faehigkeit der KI zur sektionsuebergreifenden Entitaetsverfolgung beeintraechtigt.</target>
-      </trans-unit>
-
-      <!-- How LLM Capsule Differs -->
-      <trans-unit id="capsuleDifferBody">
+      </segment>
+    </unit>
+    <unit id="capsuleDifferBody">
+      <segment>
         <source>Structure-preserving processing maintains document integrity during data protection. Entity consistency is enforced across the entire document. Table structures, cross-references, and semantic relationships are preserved. AI receives a structurally complete document that supports accurate processing.</source>
         <target>Strukturerhaltende Verarbeitung bewahrt die Dokumentintegritaet waehrend des Datenschutzes. Entitaetskonsistenz wird im gesamten Dokument durchgesetzt. Tabellenstrukturen, Querverweise und semantische Beziehungen bleiben erhalten. Die KI erhaelt ein strukturell vollstaendiges Dokument, das eine praezise Verarbeitung unterstuetzt.</target>
-      </trans-unit>
-      <trans-unit id="capsuleDifferBanner">
+      </segment>
+    </unit>
+    <unit id="capsuleDifferBanner">
+      <segment>
         <source>AI results are automatically restored locally with original enterprise data. LLM Capsule's AI enablement data layer protects sensitive data while preserving the document structure AI needs for accurate outputs.</source>
         <target>KI-Ergebnisse werden automatisch lokal mit den originalen Unternehmensdaten wiederhergestellt. Die AI-Enablement-Datenschicht von LLM Capsule schuetzt sensible Daten und bewahrt gleichzeitig die Dokumentstruktur, die die KI fuer praezise Ausgaben benoetigt.</target>
-      </trans-unit>
-
-      <!-- Enterprise Example -->
-      <trans-unit id="exampleCardTitle">
+      </segment>
+    </unit>
+    <unit id="exampleCardTitle">
+      <segment>
         <source>Multi-Party Financial Analysis</source>
         <target>Mehrparteien-Finanzanalyse</target>
-      </trans-unit>
-      <trans-unit id="exampleCardBody1">
+      </segment>
+    </unit>
+    <unit id="exampleCardBody1">
+      <segment>
         <source>An investment bank analyzes term sheets involving three parties — lead investor, co-investor, and target company. Each term sheet contains overlapping entity names in different roles.</source>
         <target>Eine Investmentbank analysiert Term Sheets mit drei Parteien — Lead-Investor, Co-Investor und Zielunternehmen. Jedes Term Sheet enthaelt ueberlappende Entitaetsnamen in verschiedenen Rollen.</target>
-      </trans-unit>
-      <trans-unit id="exampleCardBody2">
+      </segment>
+    </unit>
+    <unit id="exampleCardBody2">
+      <segment>
         <source>Flat masking turns all three parties into [NAME], making it impossible for AI to attribute terms to the correct party. Structure-preserving processing assigns consistent, distinct representations to each party, enabling accurate extraction of party-specific terms. Restoration restores real party names in the analysis output.</source>
         <target>Flat Masking wandelt alle drei Parteien in [NAME] um, sodass die KI Bedingungen nicht der richtigen Partei zuordnen kann. Strukturerhaltende Verarbeitung weist jeder Partei konsistente, unterscheidbare Repraesentationen zu und ermoeglicht die praezise Extraktion parteispezifischer Bedingungen. Restoration stellt die echten Parteinamen in der Analyseausgabe wieder her.</target>
-      </trans-unit>
-
-      <!-- FAQ -->
-      <trans-unit id="faqQ1">
+      </segment>
+    </unit>
+    <unit id="faqQ1">
+      <segment>
         <source>What is the main difference between flat masking and structure-preserving processing?</source>
         <target>Was ist der Hauptunterschied zwischen Flat Masking und strukturerhaltender Verarbeitung?</target>
-      </trans-unit>
-      <trans-unit id="faqA1">
+      </segment>
+    </unit>
+    <unit id="faqA1">
+      <segment>
         <source>Flat masking treats every sensitive value independently, collapsing entity relationships and document structure. Structure-preserving processing maintains entity consistency, table schemas, and semantic relationships throughout the document.</source>
         <target>Flat Masking behandelt jeden sensiblen Wert unabhaengig und zerstoert Entitaetsbeziehungen und Dokumentstruktur. Strukturerhaltende Verarbeitung bewahrt Entitaetskonsistenz, Tabellenschemata und semantische Beziehungen im gesamten Dokument.</target>
-      </trans-unit>
-
-      <!-- CTA -->
-      <trans-unit id="ctaTitle">
+      </segment>
+    </unit>
+    <unit id="ctaTitle">
+      <segment>
         <source>See how LLM Capsule works with your data</source>
         <target>Erfahren Sie, wie LLM Capsule mit Ihren Daten arbeitet</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsaechlichen Workflows.</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn1Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn2Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnote1Label">
+      </segment>
+    </unit>
+    <unit id="ctaFootnote1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>Architektur-Brief herunterladen</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnote2Label">
+      </segment>
+    </unit>
+    <unit id="ctaFootnote2Label">
+      <segment>
         <source>AWS Marketplace</source>
         <target>AWS Marketplace</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

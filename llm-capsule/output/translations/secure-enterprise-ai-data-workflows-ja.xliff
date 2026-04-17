@@ -1,152 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ja" datatype="plaintext" original="secure-enterprise-ai-data-workflows">
-    <body>
-      <!-- Hero -->
-      <trans-unit id="heroTitle">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ja">
+  <file id="secure-enterprise-ai-data-workflows">
+    <unit id="heroTitle">
+      <segment>
         <source>Secure Enterprise AI Data Workflows</source>
         <target>セキュアなエンタープライズAIデータワークフロー</target>
-      </trans-unit>
-      <trans-unit id="heroDescription">
+      </segment>
+    </unit>
+    <unit id="heroDescription">
+      <segment>
         <source>Complete guide to enterprise AI data privacy — how to protect sensitive data throughout AI processing while producing usable, restorable enterprise outputs.</source>
         <target>エンタープライズAIデータプライバシーの完全ガイド — AI処理全体を通じて機密データを保護しながら、利用可能で復元可能なエンタープライズ出力を生成する方法。</target>
-      </trans-unit>
-
-      <!-- Problem -->
-      <trans-unit id="problemPara1">
+      </segment>
+    </unit>
+    <unit id="problemPara1">
+      <segment>
         <source>Enterprise AI adoption is blocked by a fundamental tension: AI delivers value by processing real data, but enterprise data governance prohibits sending sensitive information to external AI services. This creates a stalemate that affects every regulated industry — finance, healthcare, legal, government, and telecom.</source>
         <target>企業AIの導入は根本的な緊張関係によって阻まれています。AIは実データの処理を通じて価値を提供しますが、企業のデータガバナンスは外部AIサービスへの機密情報送信を禁止しています。これは金融、医療、法律、政府、通信など、すべての規制産業に影響を与える膠着状態を生み出します。</target>
-      </trans-unit>
-      <trans-unit id="problemPara2">
+      </segment>
+    </unit>
+    <unit id="problemPara2">
+      <segment>
         <source>The consequence is either AI projects using only sanitized, non-sensitive data (limiting value), or data teams building complex workarounds that introduce risk and compliance gaps. Neither approach scales.</source>
         <target>その結果、AIプロジェクトがサニタイズされた非機密データのみを使用するか（価値の制限）、データチームがリスクとコンプライアンスギャップをもたらす複雑な回避策を構築することになります。どちらのアプローチもスケールしません。</target>
-      </trans-unit>
-
-      <!-- Definition -->
-      <trans-unit id="definitionTitle">
+      </segment>
+    </unit>
+    <unit id="definitionTitle">
+      <segment>
         <source>Secure Enterprise AI Data Workflow</source>
         <target>セキュアなエンタープライズAIデータワークフロー</target>
-      </trans-unit>
-      <trans-unit id="definitionBody">
+      </segment>
+    </unit>
+    <unit id="definitionBody">
+      <segment>
         <source>A secure enterprise AI data workflow is an end-to-end data processing pattern that protects sensitive information at the data layer before AI processing, preserves document structure for AI accuracy, and restores enterprise context in outputs through local restoration. It enables enterprise AI adoption without sacrificing data privacy or AI output quality.</source>
         <target>セキュアなエンタープライズAIデータワークフローは、AI処理前にデータレイヤーで機密情報を保護し、AI精度のためにドキュメント構造を保持し、ローカルRestorationを通じて出力にエンタープライズコンテキストを復元するエンドツーエンドのデータ処理パターンです。データプライバシーやAI出力品質を犠牲にすることなく企業AIの導入を可能にします。</target>
-      </trans-unit>
-
-      <!-- Explanation -->
-      <trans-unit id="explanationIntro">
+      </segment>
+    </unit>
+    <unit id="explanationIntro">
+      <segment>
         <source>Building secure enterprise AI data workflows requires addressing protection at three distinct layers:</source>
         <target>セキュアなエンタープライズAIデータワークフローの構築には、3つの異なるレイヤーでの保護対応が必要です：</target>
-      </trans-unit>
-      <trans-unit id="explanationSub1Title">
+      </segment>
+    </unit>
+    <unit id="explanationSub1Title">
+      <segment>
         <source>Data Layer Protection</source>
         <target>データレイヤー保護</target>
-      </trans-unit>
-      <trans-unit id="explanationSub1Body">
+      </segment>
+    </unit>
+    <unit id="explanationSub1Body">
+      <segment>
         <source>Enterprise AI data privacy starts before data reaches any AI model. LLM Capsule applies context-aware data control at the document level — identifying and encapsulating sensitive elements based on configurable enterprise policies. This is fundamentally different from API gateway filtering, which only sees prompts, not the underlying data structures.</source>
         <target>エンタープライズAIデータプライバシーは、データがAIモデルに到達する前に始まります。LLM Capsuleはドキュメントレベルでコンテキスト認識データ制御を適用し、構成可能なエンタープライズポリシーに基づいて機密要素を特定・Encapsulationします。これはプロンプトのみを確認し基盤となるデータ構造を確認できないAPIゲートウェイフィルタリングとは根本的に異なります。</target>
-      </trans-unit>
-      <trans-unit id="explanationSub2Title">
+      </segment>
+    </unit>
+    <unit id="explanationSub2Title">
+      <segment>
         <source>Processing Layer Integrity</source>
         <target>処理レイヤーの整合性</target>
-      </trans-unit>
-      <trans-unit id="explanationSub2Body">
+      </segment>
+    </unit>
+    <unit id="explanationSub2Body">
+      <segment>
         <source>Protected documents must retain enough structure for AI models to produce meaningful results. Structure-preserving processing ensures that tables, entity relationships, cross-references, and document hierarchies remain intact in the encapsulated representation. AI models process structurally complete documents, not fragmented masked text.</source>
         <target>保護されたドキュメントは、AIモデルが有意義な結果を生成できるよう十分な構造を保持する必要があります。構造保持処理により、Encapsulationされた表現においてテーブル、エンティティ関係、相互参照、ドキュメント階層が維持されます。AIモデルは断片的なマスクテキストではなく、構造的に完全なドキュメントを処理します。</target>
-      </trans-unit>
-      <trans-unit id="explanationSub3Title">
+      </segment>
+    </unit>
+    <unit id="explanationSub3Title">
+      <segment>
         <source>Output Layer Restoration</source>
         <target>出力レイヤーの復元</target>
-      </trans-unit>
-      <trans-unit id="explanationSub3Body">
+      </segment>
+    </unit>
+    <unit id="explanationSub3Body">
+      <segment>
         <source>AI results are restored through local restoration. The locally stored mapping between original and encapsulated values is applied to AI outputs automatically. This produces enterprise-ready outputs — with real names, real amounts, real references — that integrate directly into business systems without manual post-processing.</source>
         <target>AI結果はローカルRestorationを通じて復元されます。元の値とEncapsulationされた値のローカル保存されたマッピングがAI出力に自動的に適用されます。これにより、実際の氏名、実際の金額、実際の参照を含むエンタープライズ対応の出力が生成され、手動後処理なしでビジネスシステムに直接統合されます。</target>
-      </trans-unit>
-
-      <!-- Enterprise Examples -->
-      <trans-unit id="example1Title">
+      </segment>
+    </unit>
+    <unit id="example1Title">
+      <segment>
         <source>Finance: Regulatory Reporting Automation</source>
         <target>金融：規制レポート自動化</target>
-      </trans-unit>
-      <trans-unit id="example1Body">
+      </segment>
+    </unit>
+    <unit id="example1Body">
+      <segment>
         <source>A bank automates quarterly regulatory report generation using AI. Source documents contain customer account data, transaction histories, and internal risk assessments. LLM Capsule encapsulates all sensitive data, AI generates structured reports from protected sources, and restoration produces regulator-ready output.</source>
         <target>銀行がAIを使用して四半期規制レポートの生成を自動化します。ソースドキュメントには顧客口座データ、取引履歴、内部リスク評価が含まれます。LLM Capsuleがすべての機密データをEncapsulationし、AIが保護されたソースから構造化レポートを生成し、Restorationが規制当局提出用の出力を生成します。</target>
-      </trans-unit>
-      <trans-unit id="example2Title">
+      </segment>
+    </unit>
+    <unit id="example2Title">
+      <segment>
         <source>Healthcare: Clinical Trial Document Processing</source>
         <target>医療：臨床試験ドキュメント処理</target>
-      </trans-unit>
-      <trans-unit id="example2Body">
+      </segment>
+    </unit>
+    <unit id="example2Body">
+      <segment>
         <source>A pharmaceutical company uses AI to extract adverse event data from clinical trial reports. Documents contain patient identifiers, investigator names, and proprietary compound information. The secure workflow encapsulates all protected elements, AI extracts structured data, and restoration links extracted events to real patient identifiers in the internal safety database.</source>
         <target>製薬会社がAIを使用して臨床試験レポートから有害事象データを抽出します。ドキュメントには患者識別子、治験責任者名、専有化合物情報が含まれます。セキュアワークフローがすべての保護要素をEncapsulationし、AIが構造化データを抽出し、Restorationが抽出されたイベントを内部安全データベースの実際の患者識別子にリンクします。</target>
-      </trans-unit>
-      <trans-unit id="example3Title">
+      </segment>
+    </unit>
+    <unit id="example3Title">
+      <segment>
         <source>Legal: Multi-Jurisdictional Contract Review</source>
         <target>法務：多管轄契約レビュー</target>
-      </trans-unit>
-      <trans-unit id="example3Body">
+      </segment>
+    </unit>
+    <unit id="example3Body">
+      <segment>
         <source>A multinational corporation reviews employment contracts across 12 jurisdictions using AI for clause extraction and compliance checking. Each jurisdiction's contracts contain locally sensitive employee data. Enterprise confidentiality control applies jurisdiction-appropriate encapsulation policies, and restored outputs map to the appropriate HR systems.</source>
         <target>多国籍企業が12の管轄区域にわたる雇用契約を、AIによる条項抽出とコンプライアンスチェックのためにレビューします。各管轄区域の契約にはローカルで機密性の高い従業員データが含まれます。エンタープライズ機密制御が管轄区域に適したEncapsulationポリシーを適用し、復元された出力は適切なHRシステムにマッピングされます。</target>
-      </trans-unit>
-
-      <!-- FAQ -->
-      <trans-unit id="faq1Q">
+      </segment>
+    </unit>
+    <unit id="faq1Q">
+      <segment>
         <source>How do you build a secure enterprise AI data workflow?</source>
         <target>セキュアなエンタープライズAIデータワークフローはどのように構築しますか？</target>
-      </trans-unit>
-      <trans-unit id="faq1A">
+      </segment>
+    </unit>
+    <unit id="faq1A">
+      <segment>
         <source>A secure enterprise AI data workflow encapsulates sensitive data locally before AI processing, preserves document structure for AI accuracy, and restores outputs through local restoration. This requires a data-layer protection approach, not just API-level filtering.</source>
         <target>セキュアなエンタープライズAIデータワークフローは、AI処理前に機密データをローカルでEncapsulationし、AI精度のためにドキュメント構造を保持し、ローカルRestorationを通じて出力を復元します。これにはAPI レベルのフィルタリングだけでなく、データレイヤー保護アプローチが必要です。</target>
-      </trans-unit>
-      <trans-unit id="faq2Q">
+      </segment>
+    </unit>
+    <unit id="faq2Q">
+      <segment>
         <source>What is a restorable workflow?</source>
         <target>復元可能なワークフローとは何ですか？</target>
-      </trans-unit>
-      <trans-unit id="faq2A">
+      </segment>
+    </unit>
+    <unit id="faq2A">
+      <segment>
         <source>A restorable workflow is an AI data processing pattern where sensitive data is replaced with reversible representations before AI processing. After processing, outputs are restored with original data locally, producing enterprise-ready results.</source>
         <target>復元可能なワークフローは、AI処理前に機密データを可逆的な表現に置換するAIデータ処理パターンです。処理後、出力がローカルで元のデータに復元され、エンタープライズ対応の結果が生成されます。</target>
-      </trans-unit>
-      <trans-unit id="faq3Q">
+      </segment>
+    </unit>
+    <unit id="faq3Q">
+      <segment>
         <source>Can secure AI workflows work with RAG pipelines?</source>
         <target>セキュアAIワークフローはRAGパイプラインと連携できますか？</target>
-      </trans-unit>
-      <trans-unit id="faq3A">
+      </segment>
+    </unit>
+    <unit id="faq3A">
+      <segment>
         <source>Yes. LLM Capsule integrates with RAG (Retrieval-Augmented Generation) pipelines by encapsulating retrieved documents before they are included in AI prompts. Retrieved context remains protected throughout the generation process.</source>
         <target>はい。LLM Capsuleは、取得されたドキュメントをAIプロンプトに含める前にEncapsulationすることで、RAG（Retrieval-Augmented Generation）パイプラインと統合されます。取得されたコンテキストは生成プロセス全体を通じて保護されます。</target>
-      </trans-unit>
-      <trans-unit id="faq4Q">
+      </segment>
+    </unit>
+    <unit id="faq4Q">
+      <segment>
         <source>What industries need secure enterprise AI data workflows?</source>
         <target>どの産業がセキュアなエンタープライズAIデータワークフローを必要としていますか？</target>
-      </trans-unit>
-      <trans-unit id="faq4A">
+      </segment>
+    </unit>
+    <unit id="faq4A">
+      <segment>
         <source>Any industry handling sensitive data — financial services, healthcare, legal, government, defense, telecom, and insurance. Any organization subject to GDPR, HIPAA, SOX, or industry-specific data regulations benefits from secure AI data workflows.</source>
         <target>機密データを扱うすべての産業 — 金融サービス、医療、法律、政府、防衛、通信、保険。GDPR、HIPAA、SOX、または業界固有のデータ規制の対象となるすべての組織がセキュアAIデータワークフローの恩恵を受けます。</target>
-      </trans-unit>
-
-      <!-- CTA -->
-      <trans-unit id="ctaTitle">
+      </segment>
+    </unit>
+    <unit id="ctaTitle">
+      <segment>
         <source>See how LLM Capsule works with your data</source>
         <target>LLM Capsuleがお客様のデータでどう機能するかご覧ください</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
         <target>文書、デプロイ制約、評価基準をお持ちください。実際のワークフローでデモンストレーションします。</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn1Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>Request a Demo</target>
-      </trans-unit>
-      <trans-unit id="ctaBtn2Label">
+      </segment>
+    </unit>
+    <unit id="ctaBtn2Label">
+      <segment>
         <source>Talk to an Architect</source>
         <target>Talk to an Architect</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnote1Label">
+      </segment>
+    </unit>
+    <unit id="ctaFootnote1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>アーキテクチャブリーフをダウンロード</target>
-      </trans-unit>
-      <trans-unit id="ctaFootnote2Label">
+      </segment>
+    </unit>
+    <unit id="ctaFootnote2Label">
+      <segment>
         <source>AWS Marketplace</source>
         <target>AWS Marketplace</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -1,214 +1,305 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="ja" datatype="plaintext" original="solutions">
-    <body>
-      <!-- Section01_Hero -->
-      <trans-unit id="titleLine1">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ja">
+  <file id="solutions">
+    <unit id="titleLine1">
+      <segment>
         <source>AI, Now Safe for</source>
         <target>AI、すべての産業で</target>
-      </trans-unit>
-      <trans-unit id="titleHighlight">
+      </segment>
+    </unit>
+    <unit id="titleHighlight">
+      <segment>
         <source>Every Industry</source>
         <target>安全に活用</target>
-      </trans-unit>
-      <trans-unit id="description">
+      </segment>
+    </unit>
+    <unit id="description">
+      <segment>
         <source>Regulated and document-heavy industries can now adopt AI on real enterprise data. LLM Capsule is an AI enablement data layer and plugin that removes the data exposure barrier blocking enterprise AI adoption — enabling AI first, protecting data at the data layer.</source>
         <target>規制が厳しくドキュメント中心の産業でも、実際の企業データを活用したAI導入が可能になりました。LLM Capsuleは、企業AIの導入を阻むデータ漏洩の障壁を取り除くAIイネーブルメント・データレイヤーおよびプラグインです。まずAIを活用し、データレイヤーでデータを保護します。</target>
-      </trans-unit>
-      <trans-unit id="primaryBtnLabel">
+      </segment>
+    </unit>
+    <unit id="primaryBtnLabel">
+      <segment>
         <source>Request a Demo</source>
         <target>デモを依頼する</target>
-      </trans-unit>
-      <trans-unit id="secondaryBtnLabel">
+      </segment>
+    </unit>
+    <unit id="secondaryBtnLabel">
+      <segment>
         <source>See Product</source>
         <target>製品を見る</target>
-      </trans-unit>
-
-      <!-- Section02_IndustryUseCases -->
-      <trans-unit id="sectionTitle">
+      </segment>
+    </unit>
+    <unit id="sectionTitle">
+      <segment>
         <source>How Each Industry Uses LLM Capsule</source>
         <target>各産業におけるLLM Capsuleの活用事例</target>
-      </trans-unit>
-      <trans-unit id="sectionDescription">
+      </segment>
+    </unit>
+    <unit id="sectionDescription">
+      <segment>
         <source>Regulated industries can now adopt AI on real enterprise data. See how each industry uses LLM Capsule to enable AI while protecting sensitive information.</source>
         <target>規制産業でも実際の企業データを活用したAI導入が可能です。各産業がLLM Capsuleで機密データを保護しながらAIを活用する方法をご覧ください。</target>
-      </trans-unit>
-      <trans-unit id="card1Title">
+      </segment>
+    </unit>
+    <unit id="card1Title">
+      <segment>
         <source>Public Sector</source>
         <target>公共部門</target>
-      </trans-unit>
-      <trans-unit id="card1Description">
+      </segment>
+    </unit>
+    <unit id="card1Description">
+      <segment>
         <source>Uses AI to draft operational briefings, no classified info ever reaches external servers.</source>
         <target>AIで作戦ブリーフィングを作成します。機密情報が外部サーバーに送信されることはありません。</target>
-      </trans-unit>
-      <trans-unit id="card1Blocked">
+      </segment>
+    </unit>
+    <unit id="card1Blocked">
+      <segment>
         <source>Military personnel data, classified operation details &amp; security-grade documents</source>
         <target>軍人事データ、機密作戦情報およびセキュリティ等級文書</target>
-      </trans-unit>
-      <trans-unit id="card1Enabled">
+      </segment>
+    </unit>
+    <unit id="card1Enabled">
+      <segment>
         <source>AI-assisted intelligence reports &amp; briefing summaries — with full audit trail</source>
         <target>AI支援によるインテリジェンスレポートおよびブリーフィング要約 — 完全な監査証跡付き</target>
-      </trans-unit>
-      <trans-unit id="card1Tags">
+      </segment>
+    </unit>
+    <unit id="card1Tags">
+      <segment>
         <source>Ministry of National Defense (South Korea)</source>
         <target>韓国国防部</target>
-      </trans-unit>
-      <trans-unit id="card2Title">
+      </segment>
+    </unit>
+    <unit id="card2Title">
+      <segment>
         <source>Finance / Insurance</source>
         <target>金融 / 保険</target>
-      </trans-unit>
-      <trans-unit id="card2Description">
+      </segment>
+    </unit>
+    <unit id="card2Description">
+      <segment>
         <source>Uses AI to streamline claim reviews, policyholder data stays fully protected.</source>
         <target>AIで保険金請求審査を効率化します。契約者データは完全に保護されます。</target>
-      </trans-unit>
-      <trans-unit id="card2Blocked">
+      </segment>
+    </unit>
+    <unit id="card2Blocked">
+      <segment>
         <source>Policyholder names, claim records &amp; credit information in prompts</source>
         <target>プロンプト内の契約者氏名、請求記録および信用情報</target>
-      </trans-unit>
-      <trans-unit id="card2Enabled">
+      </segment>
+    </unit>
+    <unit id="card2Enabled">
+      <segment>
         <source>AI-powered insurance claim analysis &amp; underwriting reports — no customer data leaves</source>
         <target>AI活用の保険請求分析および引受レポート — 顧客データの外部流出なし</target>
-      </trans-unit>
-      <trans-unit id="card2Tags">
+      </segment>
+    </unit>
+    <unit id="card2Tags">
+      <segment>
         <source>Kyobo|DB Insurance</source>
         <target>Kyobo|DB Insurance</target>
-      </trans-unit>
-      <trans-unit id="card3Title">
+      </segment>
+    </unit>
+    <unit id="card3Title">
+      <segment>
         <source>Healthcare</source>
         <target>医療</target>
-      </trans-unit>
-      <trans-unit id="card3Description">
+      </segment>
+    </unit>
+    <unit id="card3Description">
+      <segment>
         <source>Uses AI to summarize patient records, PHI never touches an external server.</source>
         <target>AIで患者記録を要約します。PHI（保護対象医療情報）は外部サーバーに送信されません。</target>
-      </trans-unit>
-      <trans-unit id="card3Blocked">
+      </segment>
+    </unit>
+    <unit id="card3Blocked">
+      <segment>
         <source>Patient names, diagnoses &amp; medical record IDs</source>
         <target>患者氏名、診断名および医療記録ID</target>
-      </trans-unit>
-      <trans-unit id="card3Enabled">
+      </segment>
+    </unit>
+    <unit id="card3Enabled">
+      <segment>
         <source>AI-generated clinical summaries &amp; radiology reports — PHI stays local</source>
         <target>AI生成の臨床サマリーおよび放射線レポート — PHIはローカルに保持</target>
-      </trans-unit>
-      <trans-unit id="card3Tags">
+      </segment>
+    </unit>
+    <unit id="card3Tags">
+      <segment>
         <source>Ewha Womans University Medical Center</source>
         <target>梨花女子大学医療院</target>
-      </trans-unit>
-      <trans-unit id="card4Title">
+      </segment>
+    </unit>
+    <unit id="card4Title">
+      <segment>
         <source>Legal</source>
         <target>法務</target>
-      </trans-unit>
-      <trans-unit id="card4Description">
+      </segment>
+    </unit>
+    <unit id="card4Description">
+      <segment>
         <source>Drafts court documents with AI, no case info leaves the firm.</source>
         <target>AIで裁判文書を作成します。案件情報が事務所外に流出することはありません。</target>
-      </trans-unit>
-      <trans-unit id="card4Blocked">
+      </segment>
+    </unit>
+    <unit id="card4Blocked">
+      <segment>
         <source>Client names, case details &amp; privileged information</source>
         <target>依頼者氏名、案件詳細および秘匿特権情報</target>
-      </trans-unit>
-      <trans-unit id="card4Enabled">
+      </segment>
+    </unit>
+    <unit id="card4Enabled">
+      <segment>
         <source>AI-drafted memos, briefs &amp; contract reviews — fully contained</source>
         <target>AI作成のメモ、意見書および契約レビュー — 完全に隔離された環境で実行</target>
-      </trans-unit>
-      <trans-unit id="card4Tags">
+      </segment>
+    </unit>
+    <unit id="card4Tags">
+      <segment>
         <source>Shin&amp;Kim</source>
         <target>Shin&amp;Kim</target>
-      </trans-unit>
-      <trans-unit id="card5Title">
+      </segment>
+    </unit>
+    <unit id="card5Title">
+      <segment>
         <source>Telecom</source>
         <target>通信</target>
-      </trans-unit>
-      <trans-unit id="card5Description">
+      </segment>
+    </unit>
+    <unit id="card5Description">
+      <segment>
         <source>Leverage AI across operations, customer and network data fully de-identified.</source>
         <target>全社業務でAIを活用します。顧客およびネットワークデータは完全に匿名化されます。</target>
-      </trans-unit>
-      <trans-unit id="card5Blocked">
+      </segment>
+    </unit>
+    <unit id="card5Blocked">
+      <segment>
         <source>Subscriber identities, call records, IP addresses &amp; network configs</source>
         <target>加入者情報、通話記録、IPアドレスおよびネットワーク構成情報</target>
-      </trans-unit>
-      <trans-unit id="card5Enabled">
+      </segment>
+    </unit>
+    <unit id="card5Enabled">
+      <segment>
         <source>AI-driven customer analysis &amp; network operations — all data de-identified before use</source>
         <target>AI活用の顧客分析およびネットワーク運用 — 全データを事前に匿名化処理</target>
-      </trans-unit>
-      <trans-unit id="card5Tags">
+      </segment>
+    </unit>
+    <unit id="card5Tags">
+      <segment>
         <source>SK Telecom|Deutsche Telekom|T Challenge 2026 Top 12</source>
         <target>SK Telecom|Deutsche Telekom|T Challenge 2026 Top 12</target>
-      </trans-unit>
-      <trans-unit id="card6Title">
+      </segment>
+    </unit>
+    <unit id="card6Title">
+      <segment>
         <source>Network Security</source>
         <target>ネットワークセキュリティ</target>
-      </trans-unit>
-      <trans-unit id="card6Description">
+      </segment>
+    </unit>
+    <unit id="card6Description">
+      <segment>
         <source>Enables industrial clients to use public AI with all sensitive operational data protected.</source>
         <target>産業顧客が機密性の高い運用データを保護しながら、パブリックAIを利用できるようにします。</target>
-      </trans-unit>
-      <trans-unit id="card6Blocked">
+      </segment>
+    </unit>
+    <unit id="card6Blocked">
+      <segment>
         <source>Internal system data, vulnerability reports &amp; infrastructure details in prompts</source>
         <target>プロンプト内の内部システムデータ、脆弱性レポートおよびインフラ詳細情報</target>
-      </trans-unit>
-      <trans-unit id="card6Enabled">
+      </segment>
+    </unit>
+    <unit id="card6Enabled">
+      <segment>
         <source>Regulated industries can safely adopt public LLMs — sensitive info de-identified at the gate</source>
         <target>規制産業でもパブリックLLMを安全に導入 — 機密情報はゲートウェイで匿名化</target>
-      </trans-unit>
-      <trans-unit id="card6Tags">
+      </segment>
+    </unit>
+    <unit id="card6Tags">
+      <segment>
         <source>Claroty</source>
         <target>Claroty</target>
-      </trans-unit>
-
-      <!-- Section03_KpiProof -->
-      <trans-unit id="kpi1Label">
+      </segment>
+    </unit>
+    <unit id="kpi1Label">
+      <segment>
         <source>Detection Accuracy</source>
         <target>検出精度</target>
-      </trans-unit>
-      <trans-unit id="kpi2Label">
+      </segment>
+    </unit>
+    <unit id="kpi2Label">
+      <segment>
         <source>Workflow Accuracy</source>
         <target>ワークフロー精度</target>
-      </trans-unit>
-      <trans-unit id="kpi3Label">
+      </segment>
+    </unit>
+    <unit id="kpi3Label">
+      <segment>
         <source>Structured PII</source>
         <target>構造化個人情報</target>
-      </trans-unit>
-      <trans-unit id="kpi4Label">
+      </segment>
+    </unit>
+    <unit id="kpi4Label">
+      <segment>
         <source>Response Similarity</source>
         <target>応答類似度</target>
-      </trans-unit>
-      <trans-unit id="bannerTagline">
+      </segment>
+    </unit>
+    <unit id="bannerTagline">
+      <segment>
         <source>Enable AI. Protect data. Restore results. Track everything.</source>
         <target>AIを活用。データを保護。結果を復元。すべてを追跡。</target>
-      </trans-unit>
-      <trans-unit id="bannerNote">
+      </segment>
+    </unit>
+    <unit id="bannerNote">
+      <segment>
         <source>0.12s processing per 2,200-character document</source>
         <target>2,200文字のドキュメントあたり0.12秒で処理</target>
-      </trans-unit>
-
-      <!-- Section04_Cta -->
-      <trans-unit id="ctaTitle">
+      </segment>
+    </unit>
+    <unit id="ctaTitle">
+      <segment>
         <source>See how your industry uses LLM Capsule</source>
         <target>貴社の産業でのLLM Capsule活用方法をご覧ください</target>
-      </trans-unit>
-      <trans-unit id="ctaDescription">
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
         <source>Bring your documents, deployment constraints, and evaluation questions. We will show how LLM Capsule fits your environment.</source>
         <target>ドキュメント、デプロイ要件、評価項目をお持ちください。LLM Capsuleが貴社の環境にどのように適合するかをご説明します。</target>
-      </trans-unit>
-      <trans-unit id="primaryBtn1Label">
+      </segment>
+    </unit>
+    <unit id="primaryBtn1Label">
+      <segment>
         <source>Request a Demo</source>
         <target>デモを依頼する</target>
-      </trans-unit>
-      <trans-unit id="primaryBtn2Label">
+      </segment>
+    </unit>
+    <unit id="primaryBtn2Label">
+      <segment>
         <source>See Product</source>
         <target>製品を見る</target>
-      </trans-unit>
-      <trans-unit id="primaryBtn3Label">
+      </segment>
+    </unit>
+    <unit id="primaryBtn3Label">
+      <segment>
         <source>View Architecture</source>
         <target>アーキテクチャを見る</target>
-      </trans-unit>
-      <trans-unit id="footnoteBtn1Label">
+      </segment>
+    </unit>
+    <unit id="footnoteBtn1Label">
+      <segment>
         <source>Download Architecture Brief</source>
         <target>アーキテクチャ概要をダウンロード</target>
-      </trans-unit>
-      <trans-unit id="footnoteBtn2Label">
+      </segment>
+    </unit>
+    <unit id="footnoteBtn2Label">
+      <segment>
         <source>Available on AWS Marketplace</source>
         <target>AWS Marketplaceで提供中</target>
-      </trans-unit>
-    </body>
+      </segment>
+    </unit>
   </file>
 </xliff>
