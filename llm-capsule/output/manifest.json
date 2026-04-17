@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-04-17 15:31:55",
+  "generated": "2026-04-17 15:40:29",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1500,6 +1500,61 @@
         {
           "name": "Section01_Hero.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/index/tsx/Section01_Hero.tsx",
+          "modified": "2026-04-17"
+        },
+        {
+          "name": "Section02_Trust.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/index/tsx/Section02_Trust.tsx",
+          "modified": "2026-04-17"
+        },
+        {
+          "name": "Section03_FiveCapabilities.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/index/tsx/Section03_FiveCapabilities.tsx",
+          "modified": "2026-04-17"
+        },
+        {
+          "name": "Section04_IndustryProof.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/index/tsx/Section04_IndustryProof.tsx",
+          "modified": "2026-04-17"
+        },
+        {
+          "name": "Section05_StepTabs.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/index/tsx/Section05_StepTabs.tsx",
+          "modified": "2026-04-17"
+        },
+        {
+          "name": "Section06_CaseStudy.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/index/tsx/Section06_CaseStudy.tsx",
+          "modified": "2026-04-17"
+        },
+        {
+          "name": "Section07_Problem.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/index/tsx/Section07_Problem.tsx",
+          "modified": "2026-04-17"
+        },
+        {
+          "name": "Section08_BeforeAfter.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/index/tsx/Section08_BeforeAfter.tsx",
+          "modified": "2026-04-17"
+        },
+        {
+          "name": "Section09_Diagram.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/index/tsx/Section09_Diagram.tsx",
+          "modified": "2026-04-17"
+        },
+        {
+          "name": "Section10_Performance.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/index/tsx/Section10_Performance.tsx",
+          "modified": "2026-04-17"
+        },
+        {
+          "name": "Section11_CTA.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/index/tsx/Section11_CTA.tsx",
+          "modified": "2026-04-17"
+        },
+        {
+          "name": "Section12_FAQ.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/index/tsx/Section12_FAQ.tsx",
           "modified": "2026-04-17"
         },
         {
