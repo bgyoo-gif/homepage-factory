@@ -116,7 +116,7 @@ export default function Section04_IndustryProof({
         .idx-feature-item:hover { opacity: 0.7; }
         .idx-feature-item__icon { margin-bottom: 4px; color: ${P.brandSecondary}; }
         .idx-feature-item__title { font-size: 18px; font-weight: 600; color: ${P.textPrimary}; }
-        @container (max-width: 767px) { .idx-feature-grid { grid-template-columns: repeat(2, 1fr); padding: 24px; gap: 24px; } }
+        @container (max-width: 767px) { .idx-feature-grid { grid-template-columns: repeat(2, 1fr); padding: 24px; gap: 24px; border-radius: 16px; } }
 
         .idx-center-cta { text-align: center; margin-top: 32px; }
       `}</style>

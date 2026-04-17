@@ -117,7 +117,7 @@ export default function Section10_Performance({
         .idx-kpi-band__label { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.5; }
         .idx-kpi-band--4col { grid-template-columns: repeat(4, 1fr); }
         @container (max-width: 1023px) { .idx-kpi-band--4col { grid-template-columns: repeat(2, 1fr); } }
-        @container (max-width: 767px)  { .idx-kpi-band--4col { grid-template-columns: 1fr; padding: 32px 20px; background-image: none; } }
+        @container (max-width: 767px)  { .idx-kpi-band--4col { grid-template-columns: 1fr; padding: 32px 20px; background-image: none; border-radius: 16px; } }
 
         .idx-perf-banner {
           margin-top: 32px; padding: 32px 24px; text-align: center;
@@ -132,7 +132,7 @@ export default function Section10_Performance({
         .idx-perf-banner > * { position: relative; z-index: 1; }
         .idx-perf-banner p { font-size: 16px; color: ${P.textPrimary}; line-height: 1.7; max-width: 1080px; margin: 0 auto; }
         .idx-perf-banner .idx-caption { font-size: 12px; color: ${P.textSecondary}; margin-top: 8px; display: block; }
-        @container (max-width: 767px) { .idx-perf-banner { background-image: none; } }
+        @container (max-width: 767px) { .idx-perf-banner { background-image: none; border-radius: 16px; padding: 24px 16px; } }
       `}</style>
 
       <div className="idx-root">

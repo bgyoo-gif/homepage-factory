@@ -157,7 +157,7 @@ export default function Section02_Trust({
         }
         .idx-kpi-band__label { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.5; }
         @container (max-width: 767px) {
-          .idx-kpi-band { grid-template-columns: 1fr; padding: 32px 20px; background-image: none; }
+          .idx-kpi-band { grid-template-columns: 1fr; padding: 32px 20px; background-image: none; border-radius: 16px; }
         }
 
         .idx-cert-grid { width: 100%; overflow: hidden; padding: 32px 0; }

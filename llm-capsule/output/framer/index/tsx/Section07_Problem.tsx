@@ -199,7 +199,9 @@ export default function Section07_Problem({
         .idx-banner-full__actions {
           display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 24px;
         }
-        @container (max-width: 767px) { .idx-banner-full { background-image: none !important; } }
+        @container (max-width: 767px) {
+          .idx-banner-full { background-image: none !important; padding: 32px 16px; border-radius: 16px; }
+        }
       `}</style>
 
       <div className="idx-root">
