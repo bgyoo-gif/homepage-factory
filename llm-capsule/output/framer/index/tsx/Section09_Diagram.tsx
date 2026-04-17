@@ -27,12 +27,72 @@ interface Props {
   diagHeading?: string
   diagSubheading?: string
   diagImage?: string
+  diagWindowTitle?: string
+  diagColInternalTitle?: string
+  diagColFlowTitle?: string
+  diagColExternalTitle?: string
+  diagInternalItem1?: string
+  diagInternalItem2?: string
+  diagInternalItem3?: string
+  diagInternalItem4?: string
+  diagInternalItem5?: string
+  diagCapsuleLabel?: string
+  diagStep1Label?: string
+  diagStep1Text?: string
+  diagStep1Highlight?: string
+  diagStep2Label?: string
+  diagStep2Text?: string
+  diagStep2Highlight?: string
+  diagStep3Label?: string
+  diagStep3Text?: string
+  diagStep3Highlight?: string
+  diagStep4Label?: string
+  diagStep4Text?: string
+  diagStep4Highlight?: string
+  diagOutputLabel?: string
+  diagTrustBoundary?: string
+  diagExtItem1?: string
+  diagExtItem2?: string
+  diagExtItem3?: string
+  diagExtItem4?: string
+  diagExtItem5?: string
+  diagCtaLabel?: string
 }
 
 export default function Section09_Diagram({
   diagHeading = "A data layer between your enterprise and any LLM",
   diagSubheading = "LLM Capsule sits between your internal systems and external AI models. Raw data stays inside your environment — the trust boundary is never crossed by original data. AI only processes the protected version.",
   diagImage = "",
+  diagWindowTitle = "LLM Capsule Architecture",
+  diagColInternalTitle = "INTERNAL ENVIRONMENT",
+  diagColFlowTitle = "HOW DATA FLOWS THROUGH LLM CAPSULE",
+  diagColExternalTitle = "EXTERNAL AI SERVICES",
+  diagInternalItem1 = "Customer Documents",
+  diagInternalItem2 = "Internal Databases",
+  diagInternalItem3 = "RAG Pipelines",
+  diagInternalItem4 = "Admin Console",
+  diagInternalItem5 = "Policy Engine",
+  diagCapsuleLabel = "LLM Capsule — Encapsulation & Restoration",
+  diagStep1Label = "STEP 1 — LOCAL",
+  diagStep1Text = "Detection — ",
+  diagStep1Highlight = "\"Contract with Samsung...\"",
+  diagStep2Label = "STEP 2 — LOCAL",
+  diagStep2Text = "Encapsulation — ",
+  diagStep2Highlight = "\"Contract with [ORG_A]...\"",
+  diagStep3Label = "STEP 3 — EXTERNAL",
+  diagStep3Text = "LLM Processing — ",
+  diagStep3Highlight = "\"The deal with [ORG_A]...\"",
+  diagStep4Label = "STEP 4 — LOCAL",
+  diagStep4Text = "Restoration — ",
+  diagStep4Highlight = "\"The deal with Samsung...\"",
+  diagOutputLabel = "Business-Ready Output",
+  diagTrustBoundary = "TRUST BOUNDARY",
+  diagExtItem1 = "ChatGPT / OpenAI",
+  diagExtItem2 = "Claude / Anthropic",
+  diagExtItem3 = "Gemini / Google",
+  diagExtItem4 = "Perplexity",
+  diagExtItem5 = "Any LLM API",
+  diagCtaLabel = "View on AWS Marketplace",
 }: Props) {
   return (
     <>
@@ -184,7 +244,7 @@ export default function Section09_Diagram({
                   <span className="idx-diagram__dot"></span>
                   <span className="idx-diagram__dot"></span>
                   <span className="idx-diagram__dot"></span>
-                  <span className="idx-diagram__header-title">LLM Capsule Architecture</span>
+                  <span className="idx-diagram__header-title">{diagWindowTitle}</span>
                 </div>
                 <div className="idx-diagram__body">
                   <div className="idx-diagram__cols">
@@ -192,30 +252,30 @@ export default function Section09_Diagram({
                     <div>
                       <div className="idx-diagram__col-title" style={{ color: P.brandAccent }}>
                         <span className="idx-diagram__col-dot" style={{ backgroundColor: P.brandAccent }}></span>
-                        INTERNAL ENVIRONMENT
+                        {diagColInternalTitle}
                       </div>
                       <div className="idx-diagram__item idx-diagram__item--internal">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                        Customer Documents
+                        {diagInternalItem1}
                       </div>
                       <div className="idx-diagram__item idx-diagram__item--internal">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-                        Internal Databases
+                        {diagInternalItem2}
                       </div>
                       <div className="idx-diagram__item idx-diagram__item--internal">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-                        RAG Pipelines
+                        {diagInternalItem3}
                       </div>
                       <div className="idx-diagram__item idx-diagram__item--internal">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-                        Admin Console
+                        {diagInternalItem4}
                       </div>
                       <div className="idx-diagram__item idx-diagram__item--internal">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                        Policy Engine
+                        {diagInternalItem5}
                       </div>
                       <div className="idx-diagram__item idx-diagram__item--capsule" style={{ marginTop: 16 }}>
-                        <span className="idx-product">LLM Capsule</span> — Encapsulation &amp; Restoration
+                        {diagCapsuleLabel}
                       </div>
                     </div>
 
@@ -223,46 +283,46 @@ export default function Section09_Diagram({
                     <div>
                       <div className="idx-diagram__col-title" style={{ color: P.brandSecondary }}>
                         <span className="idx-diagram__col-dot" style={{ backgroundColor: P.brandSecondary }}></span>
-                        HOW DATA FLOWS THROUGH LLM CAPSULE
+                        {diagColFlowTitle}
                       </div>
-                      <div className="idx-diagram__flow-label">STEP 1 — LOCAL</div>
+                      <div className="idx-diagram__flow-label">{diagStep1Label}</div>
                       <div className="idx-diagram__flow-step idx-diagram__flow-step--local">
-                        Detection — <span className="idx-diagram__hl--red">"Contract with Samsung..."</span>
+                        {diagStep1Text}<span className="idx-diagram__hl--red">{diagStep1Highlight}</span>
                       </div>
                       <div className="idx-diagram__arrow">↓</div>
-                      <div className="idx-diagram__flow-label">STEP 2 — LOCAL</div>
+                      <div className="idx-diagram__flow-label">{diagStep2Label}</div>
                       <div className="idx-diagram__flow-step idx-diagram__flow-step--local">
-                        Encapsulation — <span className="idx-diagram__hl--brand">"Contract with [ORG_A]..."</span>
+                        {diagStep2Text}<span className="idx-diagram__hl--brand">{diagStep2Highlight}</span>
                       </div>
                       <div className="idx-diagram__arrow">- - - → External - - - →</div>
-                      <div className="idx-diagram__flow-label">STEP 3 — EXTERNAL</div>
+                      <div className="idx-diagram__flow-label">{diagStep3Label}</div>
                       <div className="idx-diagram__flow-step idx-diagram__flow-step--external">
-                        LLM Processing — <span className="idx-diagram__hl--brand">"The deal with [ORG_A]..."</span>
+                        {diagStep3Text}<span className="idx-diagram__hl--brand">{diagStep3Highlight}</span>
                       </div>
                       <div className="idx-diagram__arrow">← - - - Local - - - ←</div>
-                      <div className="idx-diagram__flow-label">STEP 4 — LOCAL</div>
+                      <div className="idx-diagram__flow-label">{diagStep4Label}</div>
                       <div className="idx-diagram__flow-step idx-diagram__flow-step--local">
-                        Restoration — <span className="idx-diagram__hl--green">"The deal with Samsung..."</span>
+                        {diagStep4Text}<span className="idx-diagram__hl--green">{diagStep4Highlight}</span>
                       </div>
                       <div className="idx-diagram__arrow">↓</div>
-                      <div className="idx-diagram__flow-step idx-diagram__flow-step--output">Business-Ready Output</div>
+                      <div className="idx-diagram__flow-step idx-diagram__flow-step--output">{diagOutputLabel}</div>
                     </div>
 
                     {/* Col 3: Trust Boundary + External */}
                     <div className="idx-diagram__boundary-col">
                       <div className="idx-diagram__trust-boundary">
-                        <span className="idx-diagram__trust-label">TRUST BOUNDARY</span>
+                        <span className="idx-diagram__trust-label">{diagTrustBoundary}</span>
                       </div>
                       <div className="idx-diagram__ext-inner">
                         <div className="idx-diagram__col-title" style={{ color: P.neutral400 }}>
                           <span className="idx-diagram__col-dot" style={{ backgroundColor: P.neutral400 }}></span>
-                          EXTERNAL AI SERVICES
+                          {diagColExternalTitle}
                         </div>
-                        <div className="idx-diagram__item idx-diagram__item--external">ChatGPT / OpenAI</div>
-                        <div className="idx-diagram__item idx-diagram__item--external">Claude / Anthropic</div>
-                        <div className="idx-diagram__item idx-diagram__item--external">Gemini / Google</div>
-                        <div className="idx-diagram__item idx-diagram__item--external">Perplexity</div>
-                        <div className="idx-diagram__item idx-diagram__item--external idx-diagram__item--dashed">Any LLM API</div>
+                        <div className="idx-diagram__item idx-diagram__item--external">{diagExtItem1}</div>
+                        <div className="idx-diagram__item idx-diagram__item--external">{diagExtItem2}</div>
+                        <div className="idx-diagram__item idx-diagram__item--external">{diagExtItem3}</div>
+                        <div className="idx-diagram__item idx-diagram__item--external">{diagExtItem4}</div>
+                        <div className="idx-diagram__item idx-diagram__item--external idx-diagram__item--dashed">{diagExtItem5}</div>
                       </div>
                     </div>
                   </div>
@@ -271,7 +331,7 @@ export default function Section09_Diagram({
               )}
 
               <div className="idx-center-cta">
-                <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" className="idx-btn idx-btn--secondary idx-btn--sm">View on AWS Marketplace</a>
+                <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" className="idx-btn idx-btn--secondary idx-btn--sm">{diagCtaLabel}</a>
               </div>
             </div>
           </section>
@@ -282,7 +342,37 @@ export default function Section09_Diagram({
 }
 
 addPropertyControls(Section09_Diagram, {
-  diagHeading:    { type: ControlType.String, title: "Diagram Heading",    defaultValue: "A data layer between your enterprise and any LLM", displayTextArea: true },
-  diagSubheading: { type: ControlType.String, title: "Diagram Subheading", defaultValue: "LLM Capsule sits between your internal systems and external AI models. Raw data stays inside your environment — the trust boundary is never crossed by original data. AI only processes the protected version.", displayTextArea: true },
-  diagImage:      { type: ControlType.Image,  title: "Diagram Image (replaces HTML diagram)" },
+  diagHeading:          { type: ControlType.String, title: "Diagram Heading",       defaultValue: "A data layer between your enterprise and any LLM", displayTextArea: true },
+  diagSubheading:       { type: ControlType.String, title: "Diagram Subheading",    defaultValue: "LLM Capsule sits between your internal systems and external AI models. Raw data stays inside your environment — the trust boundary is never crossed by original data. AI only processes the protected version.", displayTextArea: true },
+  diagImage:            { type: ControlType.Image,  title: "Diagram Image (replaces HTML diagram)" },
+  diagWindowTitle:      { type: ControlType.String, title: "Window Title",          defaultValue: "LLM Capsule Architecture" },
+  diagColInternalTitle: { type: ControlType.String, title: "Col Internal Title",    defaultValue: "INTERNAL ENVIRONMENT" },
+  diagColFlowTitle:     { type: ControlType.String, title: "Col Flow Title",        defaultValue: "HOW DATA FLOWS THROUGH LLM CAPSULE" },
+  diagColExternalTitle: { type: ControlType.String, title: "Col External Title",    defaultValue: "EXTERNAL AI SERVICES" },
+  diagInternalItem1:    { type: ControlType.String, title: "Internal Item 1",       defaultValue: "Customer Documents" },
+  diagInternalItem2:    { type: ControlType.String, title: "Internal Item 2",       defaultValue: "Internal Databases" },
+  diagInternalItem3:    { type: ControlType.String, title: "Internal Item 3",       defaultValue: "RAG Pipelines" },
+  diagInternalItem4:    { type: ControlType.String, title: "Internal Item 4",       defaultValue: "Admin Console" },
+  diagInternalItem5:    { type: ControlType.String, title: "Internal Item 5",       defaultValue: "Policy Engine" },
+  diagCapsuleLabel:     { type: ControlType.String, title: "Capsule Label",         defaultValue: "LLM Capsule — Encapsulation & Restoration" },
+  diagStep1Label:       { type: ControlType.String, title: "Step 1 Label",          defaultValue: "STEP 1 — LOCAL" },
+  diagStep1Text:        { type: ControlType.String, title: "Step 1 Text",           defaultValue: "Detection — " },
+  diagStep1Highlight:   { type: ControlType.String, title: "Step 1 Highlight",      defaultValue: "\"Contract with Samsung...\"" },
+  diagStep2Label:       { type: ControlType.String, title: "Step 2 Label",          defaultValue: "STEP 2 — LOCAL" },
+  diagStep2Text:        { type: ControlType.String, title: "Step 2 Text",           defaultValue: "Encapsulation — " },
+  diagStep2Highlight:   { type: ControlType.String, title: "Step 2 Highlight",      defaultValue: "\"Contract with [ORG_A]...\"" },
+  diagStep3Label:       { type: ControlType.String, title: "Step 3 Label",          defaultValue: "STEP 3 — EXTERNAL" },
+  diagStep3Text:        { type: ControlType.String, title: "Step 3 Text",           defaultValue: "LLM Processing — " },
+  diagStep3Highlight:   { type: ControlType.String, title: "Step 3 Highlight",      defaultValue: "\"The deal with [ORG_A]...\"" },
+  diagStep4Label:       { type: ControlType.String, title: "Step 4 Label",          defaultValue: "STEP 4 — LOCAL" },
+  diagStep4Text:        { type: ControlType.String, title: "Step 4 Text",           defaultValue: "Restoration — " },
+  diagStep4Highlight:   { type: ControlType.String, title: "Step 4 Highlight",      defaultValue: "\"The deal with Samsung...\"" },
+  diagOutputLabel:      { type: ControlType.String, title: "Output Label",          defaultValue: "Business-Ready Output" },
+  diagTrustBoundary:    { type: ControlType.String, title: "Trust Boundary Label",  defaultValue: "TRUST BOUNDARY" },
+  diagExtItem1:         { type: ControlType.String, title: "External Item 1",       defaultValue: "ChatGPT / OpenAI" },
+  diagExtItem2:         { type: ControlType.String, title: "External Item 2",       defaultValue: "Claude / Anthropic" },
+  diagExtItem3:         { type: ControlType.String, title: "External Item 3",       defaultValue: "Gemini / Google" },
+  diagExtItem4:         { type: ControlType.String, title: "External Item 4",       defaultValue: "Perplexity" },
+  diagExtItem5:         { type: ControlType.String, title: "External Item 5",       defaultValue: "Any LLM API" },
+  diagCtaLabel:         { type: ControlType.String, title: "CTA Button Label",      defaultValue: "View on AWS Marketplace" },
 })

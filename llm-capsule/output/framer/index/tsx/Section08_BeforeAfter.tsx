@@ -16,11 +16,43 @@ const P = {
 interface Props {
   baHeading?: string
   baBgImage?: string
+  withoutBadge?: string
+  withoutTitle?: string
+  withoutBullet1?: string
+  withoutBullet2?: string
+  withoutBullet3?: string
+  withoutBullet4?: string
+  withoutBullet5?: string
+  withoutBullet6?: string
+  withBadge?: string
+  withTitle?: string
+  withBullet1?: string
+  withBullet2?: string
+  withBullet3?: string
+  withBullet4?: string
+  withBullet5?: string
+  withBullet6?: string
 }
 
 export default function Section08_BeforeAfter({
   baHeading = "From blocked AI projects to enabled enterprise AI with usable outputs",
   baBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-smoke-pink.png",
+  withoutBadge = "WITHOUT LLM CAPSULE",
+  withoutTitle = "Enterprise AI is blocked or broken",
+  withoutBullet1 = "AI blocked entirely — security teams reject proposals due to data exposure risk",
+  withoutBullet2 = "Masking and redaction strip context — AI outputs are abstracted and unusable for enterprise workflows",
+  withoutBullet3 = "Manual review workflows persist — documents require human processing because AI cannot be trusted with real data",
+  withoutBullet4 = "Document structure destroyed — flat masking breaks tables, entity relationships, and cross-references",
+  withoutBullet5 = "Low-quality AI output — even when AI is permitted, outputs require extensive manual reconstruction to be usable",
+  withoutBullet6 = "Enterprise AI projects stall in pilot — no path from proof of concept to production deployment",
+  withBadge = "WITH LLM CAPSULE",
+  withTitle = "AI adoption enabled on real enterprise data",
+  withBullet1 = "AI enabled on sensitive documents — the data layer handles protection so teams can focus on AI outcomes",
+  withBullet2 = "Real documents processed with best-in-class LLMs — ChatGPT, Claude, Gemini, Perplexity, or any LLM API",
+  withBullet3 = "Compliance satisfied — zero exposure architecture meets enterprise AI governance requirements automatically",
+  withBullet4 = "Restored outputs retain original business context — real names, real figures, real references restored locally",
+  withBullet5 = "Tables, layouts, cross-references, and document hierarchy fully preserved through structure-preserving processing",
+  withBullet6 = "98% output similarity with zero data exposure — measured on real enterprise document processing workloads",
 }: Props) {
   return (
     <>
@@ -120,27 +152,27 @@ export default function Section08_BeforeAfter({
 
               <div className="idx-card-grid idx-card-grid--2col">
                 <div className="idx-card">
-                  <span className="idx-card__badge idx-card__badge--red">WITHOUT LLM CAPSULE</span>
-                  <h3 className="idx-card__title idx-card__title--sm">Enterprise AI is blocked or broken</h3>
+                  <span className="idx-card__badge idx-card__badge--red">{withoutBadge}</span>
+                  <h3 className="idx-card__title idx-card__title--sm">{withoutTitle}</h3>
                   <ul className="idx-bullet idx-bullet--dot">
-                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>AI blocked entirely — security teams reject proposals due to data exposure risk</span></li>
-                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>Masking and redaction strip context — AI outputs are abstracted and unusable for enterprise workflows</span></li>
-                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>Manual review workflows persist — documents require human processing because AI cannot be trusted with real data</span></li>
-                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>Document structure destroyed — flat masking breaks tables, entity relationships, and cross-references</span></li>
-                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>Low-quality AI output — even when AI is permitted, outputs require extensive manual reconstruction to be usable</span></li>
-                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>Enterprise AI projects stall in pilot — no path from proof of concept to production deployment</span></li>
+                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>{withoutBullet1}</span></li>
+                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>{withoutBullet2}</span></li>
+                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>{withoutBullet3}</span></li>
+                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>{withoutBullet4}</span></li>
+                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>{withoutBullet5}</span></li>
+                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>{withoutBullet6}</span></li>
                   </ul>
                 </div>
                 <div className="idx-card">
-                  <span className="idx-card__badge idx-card__badge--brand">WITH LLM CAPSULE</span>
-                  <h3 className="idx-card__title idx-card__title--sm">AI adoption enabled on real enterprise data</h3>
+                  <span className="idx-card__badge idx-card__badge--brand">{withBadge}</span>
+                  <h3 className="idx-card__title idx-card__title--sm">{withTitle}</h3>
                   <ul className="idx-bullet idx-bullet--check">
-                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>AI enabled on sensitive documents — the data layer handles protection so teams can focus on AI outcomes</span></li>
-                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>Real documents processed with best-in-class LLMs — ChatGPT, Claude, Gemini, Perplexity, or any LLM API</span></li>
-                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>Compliance satisfied — zero exposure architecture meets enterprise AI governance requirements automatically</span></li>
-                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>Restored outputs retain original business context — real names, real figures, real references restored locally</span></li>
-                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>Tables, layouts, cross-references, and document hierarchy fully preserved through structure-preserving processing</span></li>
-                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>98% output similarity with zero data exposure — measured on real enterprise document processing workloads</span></li>
+                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>{withBullet1}</span></li>
+                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>{withBullet2}</span></li>
+                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>{withBullet3}</span></li>
+                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>{withBullet4}</span></li>
+                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>{withBullet5}</span></li>
+                    <li className="idx-bullet__item"><span className="idx-bullet__icon"></span><span>{withBullet6}</span></li>
                   </ul>
                 </div>
               </div>
@@ -153,6 +185,22 @@ export default function Section08_BeforeAfter({
 }
 
 addPropertyControls(Section08_BeforeAfter, {
-  baHeading: { type: ControlType.String, title: "Before/After Heading", defaultValue: "From blocked AI projects to enabled enterprise AI with usable outputs", displayTextArea: true },
-  baBgImage: { type: ControlType.Image,  title: "Before/After BG Image" },
+  baHeading:      { type: ControlType.String, title: "Before/After Heading", defaultValue: "From blocked AI projects to enabled enterprise AI with usable outputs", displayTextArea: true },
+  baBgImage:      { type: ControlType.Image,  title: "Before/After BG Image" },
+  withoutBadge:   { type: ControlType.String, title: "Without Badge",     defaultValue: "WITHOUT LLM CAPSULE" },
+  withoutTitle:   { type: ControlType.String, title: "Without Title",     defaultValue: "Enterprise AI is blocked or broken" },
+  withoutBullet1: { type: ControlType.String, title: "Without Bullet 1",  defaultValue: "AI blocked entirely — security teams reject proposals due to data exposure risk", displayTextArea: true },
+  withoutBullet2: { type: ControlType.String, title: "Without Bullet 2",  defaultValue: "Masking and redaction strip context — AI outputs are abstracted and unusable for enterprise workflows", displayTextArea: true },
+  withoutBullet3: { type: ControlType.String, title: "Without Bullet 3",  defaultValue: "Manual review workflows persist — documents require human processing because AI cannot be trusted with real data", displayTextArea: true },
+  withoutBullet4: { type: ControlType.String, title: "Without Bullet 4",  defaultValue: "Document structure destroyed — flat masking breaks tables, entity relationships, and cross-references", displayTextArea: true },
+  withoutBullet5: { type: ControlType.String, title: "Without Bullet 5",  defaultValue: "Low-quality AI output — even when AI is permitted, outputs require extensive manual reconstruction to be usable", displayTextArea: true },
+  withoutBullet6: { type: ControlType.String, title: "Without Bullet 6",  defaultValue: "Enterprise AI projects stall in pilot — no path from proof of concept to production deployment", displayTextArea: true },
+  withBadge:      { type: ControlType.String, title: "With Badge",        defaultValue: "WITH LLM CAPSULE" },
+  withTitle:      { type: ControlType.String, title: "With Title",        defaultValue: "AI adoption enabled on real enterprise data" },
+  withBullet1:    { type: ControlType.String, title: "With Bullet 1",     defaultValue: "AI enabled on sensitive documents — the data layer handles protection so teams can focus on AI outcomes", displayTextArea: true },
+  withBullet2:    { type: ControlType.String, title: "With Bullet 2",     defaultValue: "Real documents processed with best-in-class LLMs — ChatGPT, Claude, Gemini, Perplexity, or any LLM API", displayTextArea: true },
+  withBullet3:    { type: ControlType.String, title: "With Bullet 3",     defaultValue: "Compliance satisfied — zero exposure architecture meets enterprise AI governance requirements automatically", displayTextArea: true },
+  withBullet4:    { type: ControlType.String, title: "With Bullet 4",     defaultValue: "Restored outputs retain original business context — real names, real figures, real references restored locally", displayTextArea: true },
+  withBullet5:    { type: ControlType.String, title: "With Bullet 5",     defaultValue: "Tables, layouts, cross-references, and document hierarchy fully preserved through structure-preserving processing", displayTextArea: true },
+  withBullet6:    { type: ControlType.String, title: "With Bullet 6",     defaultValue: "98% output similarity with zero data exposure — measured on real enterprise document processing workloads", displayTextArea: true },
 })

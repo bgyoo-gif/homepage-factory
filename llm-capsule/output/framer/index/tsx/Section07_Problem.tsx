@@ -14,12 +14,62 @@ const P = {
 interface Props {
   probHeading?: string
   probSubheading?: string
+  bullet1?: string
+  bullet2?: string
+  bullet3?: string
+  tableHead1?: string
+  tableHead2?: string
+  tableHead3?: string
+  tableHead4?: string
+  tableRow1Col1?: string
+  tableRow1Col2?: string
+  tableRow1Col3?: string
+  tableRow1Col4?: string
+  tableRow2Col1?: string
+  tableRow2Col2?: string
+  tableRow2Col3?: string
+  tableRow2Col4?: string
+  tableRow3Col1?: string
+  tableRow3Col2?: string
+  tableRow3Col3?: string
+  tableRow3Col4?: string
+  tableRow4Col1?: string
+  tableRow4Col2?: string
+  tableRow4Col3?: string
+  tableRow4Col4?: string
+  bannerText?: string
+  bannerBtnLabel?: string
   perfBannerBgImage?: string
 }
 
 export default function Section07_Problem({
   probHeading = "Enterprise data is never AI-ready by default",
   probSubheading = "Every enterprise document contains sensitive information that cannot be sent to external AI models. But without real data, AI outputs are generic and unusable. This is the core barrier to enterprise AI adoption.",
+  bullet1 = "Organizations cannot leverage AI capabilities without first making their data AI-ready.",
+  bullet2 = "Traditional approaches — masking, redaction, tokenization, and prompt security gateways — were not designed for AI workflows. Masking and redaction permanently remove the data context that AI models need. Prompt gateways filter at the API level but cannot handle enterprise documents end to end.",
+  bullet3 = "These tools create a fundamental adoption barrier: without a data layer that makes sensitive data AI-ready while keeping it protected, enterprise AI projects stall before they can demonstrate value.",
+  tableHead1 = "Approach",
+  tableHead2 = "Method",
+  tableHead3 = "Limitation",
+  tableHead4 = "AI Workflow Impact",
+  tableRow1Col1 = "Masking & Redaction",
+  tableRow1Col2 = "Permanently removes data",
+  tableRow1Col3 = "Destroys context AI needs",
+  tableRow1Col4 = "Unusable [REDACTED] outputs requiring manual reconstruction",
+  tableRow2Col1 = "Prompt Security Gateways",
+  tableRow2Col2 = "API-level prompt filtering",
+  tableRow2Col3 = "No document-level protection",
+  tableRow2Col4 = "No output restoration capability",
+  tableRow3Col1 = "Synthetic Data Platforms",
+  tableRow3Col2 = "Artificial data generation",
+  tableRow3Col3 = "Training/testing only",
+  tableRow3Col4 = "Cannot replace real documents in live AI workflows",
+  tableRow4Col1 = "Security Team Blocks AI",
+  tableRow4Col2 = "Manual approval gate",
+  tableRow4Col3 = "Blocks all AI projects",
+  tableRow4Col4 = "Projects never demonstrate value before being cancelled",
+  bannerText = "LLM Capsule sits between your documents and any AI model. It replaces sensitive data with safe placeholders inside your environment, lets AI process the protected version, then restores real data back into AI outputs — not at the model layer, not at the prompt layer, but at the data layer where it matters.",
+  bannerBtnLabel = "See how it works",
   perfBannerBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-lavender.png",
 }: Props) {
   return (
@@ -163,15 +213,15 @@ export default function Section07_Problem({
               <ul className="idx-bullet-list">
                 <li className="idx-bullet-item">
                   <span className="idx-bullet-dot"></span>
-                  <span>Organizations cannot leverage AI capabilities without first making their data AI-ready.</span>
+                  <span>{bullet1}</span>
                 </li>
                 <li className="idx-bullet-item">
                   <span className="idx-bullet-dot"></span>
-                  <span>Traditional approaches — masking, redaction, tokenization, and prompt security gateways — were not designed for AI workflows. Masking and redaction permanently remove the data context that AI models need. Prompt gateways filter at the API level but cannot handle enterprise documents end to end.</span>
+                  <span>{bullet2}</span>
                 </li>
                 <li className="idx-bullet-item">
                   <span className="idx-bullet-dot"></span>
-                  <span>These tools create a fundamental adoption barrier: without a data layer that makes sensitive data AI-ready while keeping it protected, enterprise AI projects stall before they can demonstrate value.</span>
+                  <span>{bullet3}</span>
                 </li>
               </ul>
 
@@ -179,45 +229,45 @@ export default function Section07_Problem({
                 <table className="idx-table">
                   <thead>
                     <tr>
-                      <th>Approach</th>
-                      <th>Method</th>
-                      <th>Limitation</th>
-                      <th>AI Workflow Impact</th>
+                      <th>{tableHead1}</th>
+                      <th>{tableHead2}</th>
+                      <th>{tableHead3}</th>
+                      <th>{tableHead4}</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Masking &amp; Redaction</td>
-                      <td>Permanently removes data</td>
-                      <td>Destroys context AI needs</td>
-                      <td>Unusable [REDACTED] outputs requiring manual reconstruction</td>
+                      <td>{tableRow1Col1}</td>
+                      <td>{tableRow1Col2}</td>
+                      <td>{tableRow1Col3}</td>
+                      <td>{tableRow1Col4}</td>
                     </tr>
                     <tr>
-                      <td>Prompt Security Gateways</td>
-                      <td>API-level prompt filtering</td>
-                      <td>No document-level protection</td>
-                      <td>No output restoration capability</td>
+                      <td>{tableRow2Col1}</td>
+                      <td>{tableRow2Col2}</td>
+                      <td>{tableRow2Col3}</td>
+                      <td>{tableRow2Col4}</td>
                     </tr>
                     <tr>
-                      <td>Synthetic Data Platforms</td>
-                      <td>Artificial data generation</td>
-                      <td>Training/testing only</td>
-                      <td>Cannot replace real documents in live AI workflows</td>
+                      <td>{tableRow3Col1}</td>
+                      <td>{tableRow3Col2}</td>
+                      <td>{tableRow3Col3}</td>
+                      <td>{tableRow3Col4}</td>
                     </tr>
                     <tr>
-                      <td>Security Team Blocks AI</td>
-                      <td>Manual approval gate</td>
-                      <td>Blocks all AI projects</td>
-                      <td>Projects never demonstrate value before being cancelled</td>
+                      <td>{tableRow4Col1}</td>
+                      <td>{tableRow4Col2}</td>
+                      <td>{tableRow4Col3}</td>
+                      <td>{tableRow4Col4}</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
               <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: `url('${perfBannerBgImage}')` }}>
-                <p><span className="idx-product">LLM Capsule</span> sits between your documents and any AI model. It replaces sensitive data with safe placeholders inside your environment, lets AI process the protected version, then restores real data back into AI outputs — not at the model layer, not at the prompt layer, but at the data layer where it matters.</p>
+                <p>{bannerText}</p>
                 <div className="idx-banner-full__actions">
-                  <a href="/architecture" className="idx-btn idx-btn--secondary idx-btn--sm">See how it works</a>
+                  <a href="/architecture" className="idx-btn idx-btn--secondary idx-btn--sm">{bannerBtnLabel}</a>
                 </div>
               </div>
             </div>
@@ -231,5 +281,30 @@ export default function Section07_Problem({
 addPropertyControls(Section07_Problem, {
   probHeading:       { type: ControlType.String, title: "Problem Heading",    defaultValue: "Enterprise data is never AI-ready by default", displayTextArea: true },
   probSubheading:    { type: ControlType.String, title: "Problem Subheading", defaultValue: "Every enterprise document contains sensitive information that cannot be sent to external AI models. But without real data, AI outputs are generic and unusable. This is the core barrier to enterprise AI adoption.", displayTextArea: true },
+  bullet1:           { type: ControlType.String, title: "Bullet 1",          defaultValue: "Organizations cannot leverage AI capabilities without first making their data AI-ready.", displayTextArea: true },
+  bullet2:           { type: ControlType.String, title: "Bullet 2",          defaultValue: "Traditional approaches — masking, redaction, tokenization, and prompt security gateways — were not designed for AI workflows. Masking and redaction permanently remove the data context that AI models need. Prompt gateways filter at the API level but cannot handle enterprise documents end to end.", displayTextArea: true },
+  bullet3:           { type: ControlType.String, title: "Bullet 3",          defaultValue: "These tools create a fundamental adoption barrier: without a data layer that makes sensitive data AI-ready while keeping it protected, enterprise AI projects stall before they can demonstrate value.", displayTextArea: true },
+  tableHead1:        { type: ControlType.String, title: "Table Head 1",      defaultValue: "Approach" },
+  tableHead2:        { type: ControlType.String, title: "Table Head 2",      defaultValue: "Method" },
+  tableHead3:        { type: ControlType.String, title: "Table Head 3",      defaultValue: "Limitation" },
+  tableHead4:        { type: ControlType.String, title: "Table Head 4",      defaultValue: "AI Workflow Impact" },
+  tableRow1Col1:     { type: ControlType.String, title: "Row 1 Col 1",       defaultValue: "Masking & Redaction" },
+  tableRow1Col2:     { type: ControlType.String, title: "Row 1 Col 2",       defaultValue: "Permanently removes data" },
+  tableRow1Col3:     { type: ControlType.String, title: "Row 1 Col 3",       defaultValue: "Destroys context AI needs" },
+  tableRow1Col4:     { type: ControlType.String, title: "Row 1 Col 4",       defaultValue: "Unusable [REDACTED] outputs requiring manual reconstruction", displayTextArea: true },
+  tableRow2Col1:     { type: ControlType.String, title: "Row 2 Col 1",       defaultValue: "Prompt Security Gateways" },
+  tableRow2Col2:     { type: ControlType.String, title: "Row 2 Col 2",       defaultValue: "API-level prompt filtering" },
+  tableRow2Col3:     { type: ControlType.String, title: "Row 2 Col 3",       defaultValue: "No document-level protection" },
+  tableRow2Col4:     { type: ControlType.String, title: "Row 2 Col 4",       defaultValue: "No output restoration capability" },
+  tableRow3Col1:     { type: ControlType.String, title: "Row 3 Col 1",       defaultValue: "Synthetic Data Platforms" },
+  tableRow3Col2:     { type: ControlType.String, title: "Row 3 Col 2",       defaultValue: "Artificial data generation" },
+  tableRow3Col3:     { type: ControlType.String, title: "Row 3 Col 3",       defaultValue: "Training/testing only" },
+  tableRow3Col4:     { type: ControlType.String, title: "Row 3 Col 4",       defaultValue: "Cannot replace real documents in live AI workflows" },
+  tableRow4Col1:     { type: ControlType.String, title: "Row 4 Col 1",       defaultValue: "Security Team Blocks AI" },
+  tableRow4Col2:     { type: ControlType.String, title: "Row 4 Col 2",       defaultValue: "Manual approval gate" },
+  tableRow4Col3:     { type: ControlType.String, title: "Row 4 Col 3",       defaultValue: "Blocks all AI projects" },
+  tableRow4Col4:     { type: ControlType.String, title: "Row 4 Col 4",       defaultValue: "Projects never demonstrate value before being cancelled", displayTextArea: true },
+  bannerText:        { type: ControlType.String, title: "Banner Text",        defaultValue: "LLM Capsule sits between your documents and any AI model. It replaces sensitive data with safe placeholders inside your environment, lets AI process the protected version, then restores real data back into AI outputs — not at the model layer, not at the prompt layer, but at the data layer where it matters.", displayTextArea: true },
+  bannerBtnLabel:    { type: ControlType.String, title: "Banner Button",      defaultValue: "See how it works" },
   perfBannerBgImage: { type: ControlType.Image,  title: "Banner BG Image" },
 })

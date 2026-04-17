@@ -16,38 +16,44 @@ const P = {
 
 interface Props {
   faqHeading?: string
+  faq1Question?: string
+  faq1Answer?: string
+  faq2Question?: string
+  faq2Answer?: string
+  faq3Question?: string
+  faq3Answer?: string
+  faq4Question?: string
+  faq4Answer?: string
+  faq5Question?: string
+  faq5Answer?: string
+  faq6Question?: string
+  faq6Answer?: string
 }
 
 export default function Section12_FAQ({
   faqHeading = "Frequently Asked Questions",
+  faq1Question = "How does LLM Capsule protect enterprise data during AI processing?",
+  faq1Answer = "LLM Capsule acts as an AI enablement data layer that encapsulates sensitive data locally before it leaves the enterprise environment. Only protected representations are sent to AI models. After processing, outputs are restored locally so they remain usable for real enterprise workflows. The original data never reaches external AI services — this is what makes it an AI enablement plugin rather than a monitoring or filtering tool.",
+  faq2Question = "How is LLM Capsule different from data masking and redaction tools?",
+  faq2Answer = "Masking and redaction permanently remove data, destroying the context AI models need to produce useful outputs. AI results from masked documents contain [REDACTED] placeholders that require manual reconstruction. LLM Capsule encapsulates data with structure-preserving processing and restores outputs after AI processing, producing enterprise-ready results automatically. This is the fundamental difference between static data anonymization tools and a restorable workflow designed for AI.",
+  faq3Question = "What is the difference between LLM Capsule and prompt security gateways?",
+  faq3Answer = "Prompt security gateways filter at the API level — they scan prompts for sensitive patterns and block or strip flagged content. They cannot protect enterprise documents processed through RAG pipelines or batch workflows, and they provide no output restoration. LLM Capsule operates as a data layer plugin, encapsulating sensitive elements before any AI processing occurs and restoring outputs afterward. The two approaches can be complementary, but only a data-layer approach provides end-to-end AI enablement on enterprise data.",
+  faq4Question = "Where can LLM Capsule be deployed?",
+  faq4Answer = "LLM Capsule supports on-premise, air-gapped, cloud (including AWS Marketplace), hybrid, and embedded deployment models. The encapsulation engine runs entirely within your environment regardless of deployment type. This flexibility is critical for enterprise AI governance — different data types and regulatory requirements may demand different deployment architectures within a single organization.",
+  faq5Question = "What is enterprise AI data protection?",
+  faq5Answer = "Enterprise AI enablement is the practice of making sensitive enterprise data AI-ready so organizations can adopt LLMs without exposing original information. LLM Capsule achieves this at the data layer through local encapsulation, structure-preserving processing, and local restoration — ensuring zero exposure of original data while enabling full AI workflow adoption. Unlike model-level approaches that block or filter, the data layer plugin transforms data itself to make enterprise AI possible.",
+  faq6Question = "What certifications does LLM Capsule hold?",
+  faq6Answer = "ISO 27001, ISO 42001, GS Certification. LLM Capsule is available on AWS Marketplace and supports deployment within enterprise compliance frameworks including GDPR, HIPAA, and sector-specific regulatory requirements.",
 }: Props) {
   const [openFaq, setOpenFaq] = useState<number | null>(0)
 
   const faqs = [
-    {
-      q: "How does LLM Capsule protect enterprise data during AI processing?",
-      a: "LLM Capsule acts as an AI enablement data layer that encapsulates sensitive data locally before it leaves the enterprise environment. Only protected representations are sent to AI models. After processing, outputs are restored locally so they remain usable for real enterprise workflows. The original data never reaches external AI services — this is what makes it an AI enablement plugin rather than a monitoring or filtering tool.",
-    },
-    {
-      q: "How is LLM Capsule different from data masking and redaction tools?",
-      a: "Masking and redaction permanently remove data, destroying the context AI models need to produce useful outputs. AI results from masked documents contain [REDACTED] placeholders that require manual reconstruction. LLM Capsule encapsulates data with structure-preserving processing and restores outputs after AI processing, producing enterprise-ready results automatically. This is the fundamental difference between static data anonymization tools and a restorable workflow designed for AI.",
-    },
-    {
-      q: "What is the difference between LLM Capsule and prompt security gateways?",
-      a: "Prompt security gateways filter at the API level — they scan prompts for sensitive patterns and block or strip flagged content. They cannot protect enterprise documents processed through RAG pipelines or batch workflows, and they provide no output restoration. LLM Capsule operates as a data layer plugin, encapsulating sensitive elements before any AI processing occurs and restoring outputs afterward. The two approaches can be complementary, but only a data-layer approach provides end-to-end AI enablement on enterprise data.",
-    },
-    {
-      q: "Where can LLM Capsule be deployed?",
-      a: "LLM Capsule supports on-premise, air-gapped, cloud (including AWS Marketplace), hybrid, and embedded deployment models. The encapsulation engine runs entirely within your environment regardless of deployment type. This flexibility is critical for enterprise AI governance — different data types and regulatory requirements may demand different deployment architectures within a single organization.",
-    },
-    {
-      q: "What is enterprise AI data protection?",
-      a: "Enterprise AI enablement is the practice of making sensitive enterprise data AI-ready so organizations can adopt LLMs without exposing original information. LLM Capsule achieves this at the data layer through local encapsulation, structure-preserving processing, and local restoration — ensuring zero exposure of original data while enabling full AI workflow adoption. Unlike model-level approaches that block or filter, the data layer plugin transforms data itself to make enterprise AI possible.",
-    },
-    {
-      q: "What certifications does LLM Capsule hold?",
-      a: "ISO 27001, ISO 42001, GS Certification. LLM Capsule is available on AWS Marketplace and supports deployment within enterprise compliance frameworks including GDPR, HIPAA, and sector-specific regulatory requirements.",
-    },
+    { q: faq1Question, a: faq1Answer },
+    { q: faq2Question, a: faq2Answer },
+    { q: faq3Question, a: faq3Answer },
+    { q: faq4Question, a: faq4Answer },
+    { q: faq5Question, a: faq5Answer },
+    { q: faq6Question, a: faq6Answer },
   ]
 
   return (
@@ -162,5 +168,17 @@ export default function Section12_FAQ({
 }
 
 addPropertyControls(Section12_FAQ, {
-  faqHeading: { type: ControlType.String, title: "FAQ Heading", defaultValue: "Frequently Asked Questions" },
+  faqHeading:   { type: ControlType.String, title: "FAQ Heading",    defaultValue: "Frequently Asked Questions" },
+  faq1Question: { type: ControlType.String, title: "FAQ 1 Question", defaultValue: "How does LLM Capsule protect enterprise data during AI processing?" },
+  faq1Answer:   { type: ControlType.String, title: "FAQ 1 Answer",   defaultValue: "LLM Capsule acts as an AI enablement data layer that encapsulates sensitive data locally before it leaves the enterprise environment. Only protected representations are sent to AI models. After processing, outputs are restored locally so they remain usable for real enterprise workflows. The original data never reaches external AI services — this is what makes it an AI enablement plugin rather than a monitoring or filtering tool.", displayTextArea: true },
+  faq2Question: { type: ControlType.String, title: "FAQ 2 Question", defaultValue: "How is LLM Capsule different from data masking and redaction tools?" },
+  faq2Answer:   { type: ControlType.String, title: "FAQ 2 Answer",   defaultValue: "Masking and redaction permanently remove data, destroying the context AI models need to produce useful outputs. AI results from masked documents contain [REDACTED] placeholders that require manual reconstruction. LLM Capsule encapsulates data with structure-preserving processing and restores outputs after AI processing, producing enterprise-ready results automatically. This is the fundamental difference between static data anonymization tools and a restorable workflow designed for AI.", displayTextArea: true },
+  faq3Question: { type: ControlType.String, title: "FAQ 3 Question", defaultValue: "What is the difference between LLM Capsule and prompt security gateways?" },
+  faq3Answer:   { type: ControlType.String, title: "FAQ 3 Answer",   defaultValue: "Prompt security gateways filter at the API level — they scan prompts for sensitive patterns and block or strip flagged content. They cannot protect enterprise documents processed through RAG pipelines or batch workflows, and they provide no output restoration. LLM Capsule operates as a data layer plugin, encapsulating sensitive elements before any AI processing occurs and restoring outputs afterward. The two approaches can be complementary, but only a data-layer approach provides end-to-end AI enablement on enterprise data.", displayTextArea: true },
+  faq4Question: { type: ControlType.String, title: "FAQ 4 Question", defaultValue: "Where can LLM Capsule be deployed?" },
+  faq4Answer:   { type: ControlType.String, title: "FAQ 4 Answer",   defaultValue: "LLM Capsule supports on-premise, air-gapped, cloud (including AWS Marketplace), hybrid, and embedded deployment models. The encapsulation engine runs entirely within your environment regardless of deployment type. This flexibility is critical for enterprise AI governance — different data types and regulatory requirements may demand different deployment architectures within a single organization.", displayTextArea: true },
+  faq5Question: { type: ControlType.String, title: "FAQ 5 Question", defaultValue: "What is enterprise AI data protection?" },
+  faq5Answer:   { type: ControlType.String, title: "FAQ 5 Answer",   defaultValue: "Enterprise AI enablement is the practice of making sensitive enterprise data AI-ready so organizations can adopt LLMs without exposing original information. LLM Capsule achieves this at the data layer through local encapsulation, structure-preserving processing, and local restoration — ensuring zero exposure of original data while enabling full AI workflow adoption. Unlike model-level approaches that block or filter, the data layer plugin transforms data itself to make enterprise AI possible.", displayTextArea: true },
+  faq6Question: { type: ControlType.String, title: "FAQ 6 Question", defaultValue: "What certifications does LLM Capsule hold?" },
+  faq6Answer:   { type: ControlType.String, title: "FAQ 6 Answer",   defaultValue: "ISO 27001, ISO 42001, GS Certification. LLM Capsule is available on AWS Marketplace and supports deployment within enterprise compliance frameworks including GDPR, HIPAA, and sector-specific regulatory requirements.", displayTextArea: true },
 })
