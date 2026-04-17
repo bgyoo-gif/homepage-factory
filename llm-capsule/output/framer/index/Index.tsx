@@ -128,6 +128,8 @@ interface Props {
   heroBtn1Href?: string
   heroBtn4Label?: string
   heroBtn4Href?: string
+  heroBgImage?: string
+  heroScreenshot?: string
 
   // Section 2 — Trust
   trustHeading?: string
@@ -198,6 +200,8 @@ export default function Index({
   heroBtn1Href = "request-pov.html",
   heroBtn4Label = "Available on AWS Marketplace",
   heroBtn4Href = "https://aws.amazon.com/marketplace",
+  heroBgImage = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-hero.webp",
+  heroScreenshot = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/screenshot-index-hero.webp",
 
   trustHeading = "Trusted by enterprises processing sensitive documents",
   trustSubheading = "across finance, insurance, legal, healthcare, and telecom",
@@ -420,7 +424,7 @@ export default function Index({
           border-radius: 40px 40px 0 0;
           padding: 48px 48px 0;
           background-color: ${P.neutral100};
-          background-image: url('https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-hero.webp');
+          background-image: url('${heroBgImage}');
           background-size: cover; background-position: center;
           overflow: hidden;
         }
@@ -834,7 +838,7 @@ export default function Index({
               <div className="idx-hero__frame">
                 <div className="idx-hero__screenshot">
                   <img
-                    src="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/screenshot-index-hero.webp"
+                    src={heroScreenshot}
                     alt="LLM Capsule Dashboard"
                     loading="eager"
                   />
@@ -1431,6 +1435,8 @@ addPropertyControls(Index, {
   heroBtn1Href:    { type: ControlType.String, title: "Hero Btn 1 URL",   defaultValue: "request-pov.html" },
   heroBtn4Label:   { type: ControlType.String, title: "Hero Btn 4",       defaultValue: "Available on AWS Marketplace" },
   heroBtn4Href:    { type: ControlType.String, title: "Hero Btn 4 URL",   defaultValue: "https://aws.amazon.com/marketplace" },
+  heroBgImage:     { type: ControlType.Image,  title: "Hero Background Image" },
+  heroScreenshot:  { type: ControlType.Image,  title: "Hero Screenshot Image" },
 
   // Section 2
   trustHeading:    { type: ControlType.String, title: "Trust Heading",    defaultValue: "Trusted by enterprises processing sensitive documents" },
