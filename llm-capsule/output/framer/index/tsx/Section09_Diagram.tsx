@@ -172,12 +172,8 @@ export default function Section09_Diagram({
           <section id="section-9" className="idx-section">
             <div className="idx-container">
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title">
-                  A <span className="idx-brand">data layer</span> between your enterprise and any LLM
-                </h2>
-                <p className="idx-section-header__desc">
-                  <span className="idx-product">LLM Capsule</span> sits between your internal systems and external AI models. Raw data stays inside your environment — the trust boundary is never crossed by original data. AI only processes the protected version.
-                </p>
+                <h2 className="idx-section-header__title">{diagHeading}</h2>
+                <p className="idx-section-header__desc">{diagSubheading}</p>
               </div>
 
               {diagImage ? (

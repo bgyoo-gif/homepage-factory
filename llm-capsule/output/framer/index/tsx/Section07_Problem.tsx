@@ -141,10 +141,8 @@ export default function Section07_Problem({
           <section id="section-7" className="idx-section">
             <div className="idx-container">
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title">
-                  Enterprise data is <span className="idx-brand">never AI-ready</span> by default
-                </h2>
-                <p className="idx-section-header__desc">Every enterprise document contains sensitive information that cannot be sent to external AI models. But without real data, AI outputs are generic and unusable. This is the core barrier to enterprise AI adoption.</p>
+                <h2 className="idx-section-header__title">{probHeading}</h2>
+                <p className="idx-section-header__desc">{probSubheading}</p>
               </div>
 
               <div className="idx-section-body idx-section-body--center">

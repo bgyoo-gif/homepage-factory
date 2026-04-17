@@ -105,12 +105,8 @@ export default function Section06_CaseStudy({
           <section id="section-6" className="idx-section">
             <div className="idx-container">
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title">
-                  AI-Enabled <span className="idx-brand">Enterprise Workflows</span>
-                </h2>
-                <p className="idx-section-header__desc">
-                  <span className="idx-product">LLM Capsule</span> plugs into the most common enterprise AI workflows — from document intake to output delivery, one data layer enables AI adoption on real documents.
-                </p>
+                <h2 className="idx-section-header__title">{csHeading}</h2>
+                <p className="idx-section-header__desc">{csSubheading}</p>
               </div>
 
               <div className="idx-card-grid idx-card-grid--2col">

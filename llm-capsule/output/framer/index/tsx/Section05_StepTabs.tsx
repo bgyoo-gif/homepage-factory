@@ -166,12 +166,8 @@ export default function Section05_StepTabs({
           <section id="section-5" className="idx-section">
             <div className="idx-container">
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title">
-                  Enterprise AI enablement through a <span className="idx-brand">3+2 architecture</span>
-                </h2>
-                <p className="idx-section-header__desc">
-                  <span className="idx-product">LLM Capsule</span> enables enterprise AI adoption on sensitive data through a 3+2 data layer architecture: three core enablement pillars plus two additional value capabilities that ensure output quality and model flexibility.
-                </p>
+                <h2 className="idx-section-header__title">{tabsHeading}</h2>
+                <p className="idx-section-header__desc">{tabsSubheading}</p>
               </div>
 
               <div className="idx-step-tabs__nav">

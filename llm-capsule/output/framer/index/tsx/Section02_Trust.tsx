@@ -206,10 +206,8 @@ export default function Section02_Trust({
             <div className="idx-container">
 
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title">
-                  <span className="idx-brand">Trusted</span> by enterprises processing sensitive documents
-                </h2>
-                <p className="idx-section-header__desc">across finance, insurance, legal, healthcare, and telecom</p>
+                <h2 className="idx-section-header__title">{trustHeading}</h2>
+                <p className="idx-section-header__desc">{trustSubheading}</p>
               </div>
 
               {/* Partner Marquee */}

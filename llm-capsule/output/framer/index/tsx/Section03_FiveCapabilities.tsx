@@ -150,12 +150,8 @@ export default function Section03_FiveCapabilities({
           <section id="section-3" className="idx-section">
             <div className="idx-container">
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title">
-                  Five capabilities that remove <span className="idx-brand">every barrier</span> to enterprise AI
-                </h2>
-                <p className="idx-section-header__desc">
-                  Other tools either block AI usage or destroy document context. <span className="idx-product">LLM Capsule</span> solves both — here's how.
-                </p>
+                <h2 className="idx-section-header__title">{capHeading}</h2>
+                <p className="idx-section-header__desc">{capSubheading}</p>
               </div>
 
               <div className="idx-card-grid idx-card-grid--3col">

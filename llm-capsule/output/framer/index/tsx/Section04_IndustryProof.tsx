@@ -111,12 +111,8 @@ export default function Section04_IndustryProof({
           <section id="section-4" className="idx-section">
             <div className="idx-container">
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title">
-                  Enabling AI adoption across <span className="idx-brand">regulated industries</span> where sensitive data was the blocker
-                </h2>
-                <p className="idx-section-header__desc">
-                  <span className="idx-product">LLM Capsule</span> unlocks AI usage on real enterprise documents across financial services, government, healthcare, and legal workflows — turning blocked projects into production deployments.
-                </p>
+                <h2 className="idx-section-header__title">{industryHeading}</h2>
+                <p className="idx-section-header__desc">{industrySubheading}</p>
               </div>
 
               <div className="idx-feature-grid">

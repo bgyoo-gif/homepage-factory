@@ -24,6 +24,8 @@ interface Props {
   perf3Label?: string
   perf4Number?: string
   perf4Label?: string
+  perfBannerText?: string
+  perfBannerCaption?: string
 }
 
 export default function Section10_Performance({
@@ -39,6 +41,8 @@ export default function Section10_Performance({
   perf3Label = "Structured PII",
   perf4Number = "98%",
   perf4Label = "Response Similarity",
+  perfBannerText = "Enable AI. Protect data. Restore results. Track everything.",
+  perfBannerCaption = "0.12s processing per 2,200-character document. Tested across finance, healthcare, legal, and public sector workflows",
 }: Props) {
   return (
     <>
@@ -135,10 +139,8 @@ export default function Section10_Performance({
           <section id="section-10" className="idx-section">
             <div className="idx-container">
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title">
-                  <span className="idx-brand">Measured performance</span> on real enterprise document processing workloads
-                </h2>
-                <p className="idx-section-header__desc">These metrics are measured on enterprise documents with 2,200+ character average length across regulated industry workflows including finance, healthcare, legal, and public sector environments.</p>
+                <h2 className="idx-section-header__title">{perfHeading}</h2>
+                <p className="idx-section-header__desc">{perfSubheading}</p>
               </div>
 
               <div
@@ -167,8 +169,8 @@ export default function Section10_Performance({
               </div>
 
               <div className="idx-perf-banner" style={{ backgroundImage: `url('${perfBannerBgImage}')` }}>
-                <p>Enable AI. Protect data. Restore results. Track everything.</p>
-                <span className="idx-caption">0.12s processing per 2,200-character document. Tested across finance, healthcare, legal, and public sector workflows</span>
+                <p>{perfBannerText}</p>
+                <span className="idx-caption">{perfBannerCaption}</span>
               </div>
             </div>
           </section>
@@ -179,6 +181,8 @@ export default function Section10_Performance({
 }
 
 addPropertyControls(Section10_Performance, {
+  perfHeading:       { type: ControlType.String, title: "Performance Heading",    defaultValue: "Measured performance on real enterprise document processing workloads", displayTextArea: true },
+  perfSubheading:    { type: ControlType.String, title: "Performance Subheading", defaultValue: "These metrics are measured on enterprise documents with 2,200+ character average length across regulated industry workflows including finance, healthcare, legal, and public sector environments.", displayTextArea: true },
   perf1Number:      { type: ControlType.String, title: "Perf 1 Number",    defaultValue: "98.1%" },
   perf1Label:       { type: ControlType.String, title: "Perf 1 Label",     defaultValue: "Detection Accuracy" },
   perf2Number:      { type: ControlType.String, title: "Perf 2 Number",    defaultValue: "99.14%" },
@@ -189,4 +193,6 @@ addPropertyControls(Section10_Performance, {
   perf4Label:       { type: ControlType.String, title: "Perf 4 Label",     defaultValue: "Response Similarity" },
   perfKpiBgImage:   { type: ControlType.Image,  title: "Performance KPI BG Image" },
   perfBannerBgImage: { type: ControlType.Image, title: "Performance Banner BG Image" },
+  perfBannerText:    { type: ControlType.String, title: "Banner Text",    defaultValue: "Enable AI. Protect data. Restore results. Track everything." },
+  perfBannerCaption: { type: ControlType.String, title: "Banner Caption", defaultValue: "0.12s processing per 2,200-character document. Tested across finance, healthcare, legal, and public sector workflows", displayTextArea: true },
 })

@@ -99,9 +99,7 @@ export default function Section11_CTA({
         <div className="idx-inner">
           <div id="section-11" className="idx-cta-band">
             <div className="idx-cta-band__inner">
-              <h2 className="idx-cta-band__title">
-                See how <span className="idx-product">LLM Capsule</span> enables AI on your enterprise documents
-              </h2>
+              <h2 className="idx-cta-band__title">{ctaTitle}</h2>
               <p className="idx-cta-band__desc">{ctaDescription}</p>
               <div className="idx-cta-band__actions">
                 <a href={ctaBtn1Href} className="idx-btn idx-btn--md">{ctaBtn1Label}</a>
