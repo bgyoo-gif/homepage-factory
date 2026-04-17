@@ -27,6 +27,7 @@ interface Props {
   encapsulatedText?: string
   restoredLabel?: string
   restoredText?: string
+  visualBgImage?: string
 }
 
 export default function Section04_Restoration({
@@ -39,6 +40,7 @@ export default function Section04_Restoration({
   encapsulatedText = "[PERSON_01] submitted claim #[ID_04] on [DATE_02] for property at [ADDR_03]. Total assessed damage: [AMOUNT_01].",
   restoredLabel = "Restored",
   restoredText = "James Mitchell submitted claim #INS-2024-0847 on March 5, 2025 for property at 42 Lincoln Ave, Chicago. Total assessed damage: $247,000.",
+  visualBgImage = `${IMAGE_BASE}/images/bg-wave-teal-blue.png`,
 }: Props) {
   return (
     <>
@@ -115,7 +117,7 @@ export default function Section04_Restoration({
           border-radius: 40px;
           overflow: hidden;
           background-color: ${PALETTE.surfaceLight};
-          background-image: url('${IMAGE_BASE}/images/bg-wave-teal-blue.png');
+          background-image: url('${visualBgImage}');
           background-size: cover;
           background-position: center;
           padding: 24px;
@@ -246,4 +248,5 @@ addPropertyControls(Section04_Restoration, {
   encapsulatedText:   { type: ControlType.String, title: "Encapsulated Text",  defaultValue: "[PERSON_01] submitted claim #[ID_04] on [DATE_02] for property at [ADDR_03]. Total assessed damage: [AMOUNT_01].", displayTextArea: true },
   restoredLabel:      { type: ControlType.String, title: "Restored Label",     defaultValue: "Restored" },
   restoredText:       { type: ControlType.String, title: "Restored Text",      defaultValue: "James Mitchell submitted claim #INS-2024-0847 on March 5, 2025 for property at 42 Lincoln Ave, Chicago. Total assessed damage: $247,000.", displayTextArea: true },
+  visualBgImage:      { type: ControlType.Image, title: "Visual Background" },
 })

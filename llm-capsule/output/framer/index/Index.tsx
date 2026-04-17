@@ -128,6 +128,8 @@ interface Props {
   heroBtn1Href?: string
   heroBtn4Label?: string
   heroBtn4Href?: string
+  heroBgImage?: string
+  heroScreenshot?: string
 
   // Section 2 — Trust
   trustHeading?: string
@@ -150,6 +152,12 @@ interface Props {
   // Section 5 — Step Tabs
   tabsHeading?: string
   tabsSubheading?: string
+  tabsBgImage?: string
+  tabCore1Image?: string
+  tabCore2Image?: string
+  tabCore3Image?: string
+  tabPlus1Image?: string
+  tabPlus2Image?: string
 
   // Section 6 — Case Study
   csHeading?: string
@@ -158,16 +166,21 @@ interface Props {
   // Section 7 — Problem
   probHeading?: string
   probSubheading?: string
+  probBannerBgImage?: string
 
   // Section 8 — Before/After
   baHeading?: string
+  baBgImage?: string
 
   // Section 9 — Diagram
   diagHeading?: string
   diagSubheading?: string
+  diagBgImage?: string
 
   // Section 10 — Performance
   perfHeading?: string
+  perfBannerBgImage?: string
+  perfKpiBgImage?: string
   perfSubheading?: string
   perf1Number?: string
   perf1Label?: string
@@ -185,6 +198,7 @@ interface Props {
   ctaBtn1Href?: string
   ctaBtn4Label?: string
   ctaBtn4Href?: string
+  ctaBgImage?: string
 
   // Section 12 — FAQ
   faqHeading?: string
@@ -198,6 +212,8 @@ export default function Index({
   heroBtn1Href = "request-pov.html",
   heroBtn4Label = "Available on AWS Marketplace",
   heroBtn4Href = "https://aws.amazon.com/marketplace",
+  heroBgImage = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-hero.webp",
+  heroScreenshot = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/screenshot-index-hero.webp",
 
   trustHeading = "Trusted by enterprises processing sensitive documents",
   trustSubheading = "across finance, insurance, legal, healthcare, and telecom",
@@ -216,19 +232,30 @@ export default function Index({
 
   tabsHeading = "Enterprise AI enablement through a 3+2 architecture",
   tabsSubheading = "LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 data layer architecture: three core enablement pillars plus two additional value capabilities that ensure output quality and model flexibility.",
+  tabsBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png",
+  tabCore1Image = "",
+  tabCore2Image = "",
+  tabCore3Image = "",
+  tabPlus1Image = "",
+  tabPlus2Image = "",
 
   csHeading = "AI-Enabled Enterprise Workflows",
   csSubheading = "LLM Capsule plugs into the most common enterprise AI workflows — from document intake to output delivery, one data layer enables AI adoption on real documents.",
 
   probHeading = "Enterprise data is never AI-ready by default",
   probSubheading = "Every enterprise document contains sensitive information that cannot be sent to external AI models. But without real data, AI outputs are generic and unusable. This is the core barrier to enterprise AI adoption.",
+  probBannerBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-sky-lavender.png",
 
   baHeading = "From blocked AI projects to enabled enterprise AI with usable outputs",
+  baBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-smoke-pink.png",
 
   diagHeading = "A data layer between your enterprise and any LLM",
   diagSubheading = "LLM Capsule sits between your internal systems and external AI models. Raw data stays inside your environment — the trust boundary is never crossed by original data. AI only processes the protected version.",
+  diagBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-wave-teal.png",
 
   perfHeading = "Measured performance on real enterprise document processing workloads",
+  perfBannerBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-lavender.png",
+  perfKpiBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-navy-teal.png",
   perfSubheading = "These metrics are measured on enterprise documents with 2,200+ character average length across regulated industry workflows including finance, healthcare, legal, and public sector environments.",
   perf1Number = "98.1%",
   perf1Label = "Detection Accuracy",
@@ -245,6 +272,7 @@ export default function Index({
   ctaBtn1Href = "request-pov.html",
   ctaBtn4Label = "Available on AWS Marketplace",
   ctaBtn4Href = "https://aws.amazon.com/marketplace",
+  ctaBgImage = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-cta.webp",
 
   faqHeading = "Frequently Asked Questions",
 }: Props) {
@@ -259,29 +287,34 @@ export default function Index({
     { id: "plus2", label: "+2 Cross-Model" },
   ]
 
-  const tabPanels: Record<string, { title: string; p1: string; p2: string }> = {
+  const tabPanels: Record<string, { title: string; p1: string; p2: string; image: string }> = {
     core1: {
       title: "Zero Exposure",
+      image: tabCore1Image,
       p1: "Sensitive data is replaced with safe placeholders (encapsulation) inside your environment before anything leaves. Original values never reach external AI services.",
       p2: "Zero exposure means the AI provider processes useful data but cannot reconstruct original sensitive values. Even if the provider logged, stored, or trained on the received data, no original enterprise information would be exposed. Encapsulation creates a data representation that is both processable by AI and opaque to the receiving service — provider logs are safe, raw data never leaves.",
     },
     core2: {
       title: "Restoration",
+      image: tabCore2Image,
       p1: "AI outputs are automatically restored locally — not abstracted, not anonymized, but fully restored with real business data for immediate use.",
       p2: "Unlike masking tools that produce generic AI outputs requiring manual reconstruction, LLM Capsule automatically restores AI results with original names, account numbers, dates, and references. Restored outputs are directly usable in enterprise workflows — regulatory reports, legal documents, claim analysis, and internal communications — without any post-processing step. This eliminates the \"manual review loop\" that kills AI ROI.",
     },
     core3: {
       title: "Enterprise Context",
+      image: tabCore3Image,
       p1: "Define and control sensitive entities beyond standard PII — project codes, internal IDs, contract terms, and strategic data specific to your organization.",
       p2: "Enterprise documents contain far more sensitivity than personally identifiable information alone. A legal memo about a pending acquisition contains no PII but is filled with deal structure, valuation ranges, and strategic rationale. Enterprise context enables policy-based sensitivity classification through context-aware data control that adapts to document type, department, and workflow context — tailored protection for your specific business logic and secrets.",
     },
     plus1: {
       title: "Structure-Preserving",
+      image: tabPlus1Image,
       p1: "Tables, diagrams, cross-references, and document hierarchy remain intact — your document layout stays readable to AI throughout the process.",
       p2: "Masking tools destroy document context. LLM Capsule keeps tables, diagrams, and entity relationships intact so AI understands the full context while sensitive values are replaced. Reference consistency, diagram preservation, and document hierarchy are all maintained.",
     },
     plus2: {
       title: "Cross-Model Execution",
+      image: tabPlus2Image,
       p1: "Works with any AI model. Switch between ChatGPT, Claude, Gemini, or any LLM API instantly — no re-engineering, no vendor lock-in.",
       p2: "LLM Capsule acts as a model-agnostic AI enablement layer for all AI models. Swap or mix models anytime — zero re-engineering, no vendor lock-in, consistent protection across every provider. Connect to any model simultaneously, including CUBIG's own SynTitan platform.",
     },
@@ -420,7 +453,7 @@ export default function Index({
           border-radius: 40px 40px 0 0;
           padding: 48px 48px 0;
           background-color: ${P.neutral100};
-          background-image: url('https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-hero.webp');
+          background-image: url('${heroBgImage}');
           background-size: cover; background-position: center;
           overflow: hidden;
         }
@@ -465,7 +498,7 @@ export default function Index({
           display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
           justify-items: center; margin: 32px 0;
           background: ${P.gradientBrand};
-          background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png');
+          background-image: url('${tabsBgImage}');
           background-size: cover; background-position: center;
           position: relative; overflow: hidden;
         }
@@ -667,7 +700,7 @@ export default function Index({
 
         /* Section 8 — bg-img overlay */
         .idx-section--bg-img {
-          background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-smoke-pink.png');
+          background-image: url('${baBgImage}');
           background-size: cover; background-position: center;
           position: relative;
         }
@@ -743,7 +776,7 @@ export default function Index({
         .idx-perf-banner {
           margin-top: 32px; padding: 32px 24px; text-align: center;
           border-radius: 40px;
-          background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-wave-teal.png');
+          background-image: url('${diagBgImage}');
           background-size: cover; background-position: center;
           position: relative; overflow: hidden;
         }
@@ -760,7 +793,7 @@ export default function Index({
         .idx-cta-band {
           width: 100%; position: relative; overflow: hidden;
           padding: 80px 16px; text-align: center;
-          background-image: url('https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-cta.webp');
+          background-image: url('${ctaBgImage}');
           background-color: ${P.neutral800};
           background-size: cover; background-position: center;
         }
@@ -834,7 +867,7 @@ export default function Index({
               <div className="idx-hero__frame">
                 <div className="idx-hero__screenshot">
                   <img
-                    src="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/screenshot-index-hero.webp"
+                    src={heroScreenshot}
                     alt="LLM Capsule Dashboard"
                     loading="eager"
                   />
@@ -964,7 +997,7 @@ export default function Index({
                 </div>
               </div>
 
-              <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: "url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-sky-lavender.png')" }}>
+              <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: `url('${probBannerBgImage}')` }}>
                 <p><span className="idx-product">LLM Capsule</span> is not a masking tool, not a prompt filter, and not a redaction layer. It is the data layer that sits between your documents and any AI — making enterprise AI adoption possible without compromise.</p>
                 <div className="idx-banner-full__actions">
                   <a href="product.html" className="idx-btn idx-btn--secondary idx-btn--md">See Product</a>
@@ -1050,7 +1083,9 @@ export default function Index({
                   <p>{panel.p1}</p>
                   <p>{panel.p2.replace("LLM Capsule", "").includes("LLM Capsule") ? panel.p2 : panel.p2}</p>
                 </div>
-                <div className="idx-step-tabs__screenshot">{panel.title}</div>
+                <div className="idx-step-tabs__screenshot">
+                  {panel.image ? <img src={panel.image} alt={panel.title} style={{ width: "100%", display: "block" }} /> : panel.title}
+                </div>
               </div>
             </div>
           </section>
@@ -1167,7 +1202,7 @@ export default function Index({
                 </table>
               </div>
 
-              <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: "url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-lavender.png')" }}>
+              <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: `url('${perfBannerBgImage}')` }}>
                 <p><span className="idx-product">LLM Capsule</span> sits between your documents and any AI model. It replaces sensitive data with safe placeholders inside your environment, lets AI process the protected version, then restores real data back into AI outputs — not at the model layer, not at the prompt layer, but at the data layer where it matters.</p>
                 <div className="idx-banner-full__actions">
                   <a href="architecture.html" className="idx-btn idx-btn--secondary idx-btn--sm">See how it works</a>
@@ -1335,7 +1370,7 @@ export default function Index({
               <div
                 className="idx-kpi-band idx-kpi-band--4col"
                 style={{
-                  backgroundImage: "url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-navy-teal.png')",
+                  backgroundImage: `url('${perfKpiBgImage}')`,
                 }}
                 aria-label="Performance metrics"
               >
@@ -1431,6 +1466,8 @@ addPropertyControls(Index, {
   heroBtn1Href:    { type: ControlType.String, title: "Hero Btn 1 URL",   defaultValue: "request-pov.html" },
   heroBtn4Label:   { type: ControlType.String, title: "Hero Btn 4",       defaultValue: "Available on AWS Marketplace" },
   heroBtn4Href:    { type: ControlType.String, title: "Hero Btn 4 URL",   defaultValue: "https://aws.amazon.com/marketplace" },
+  heroBgImage:     { type: ControlType.Image,  title: "Hero Background Image" },
+  heroScreenshot:  { type: ControlType.Image,  title: "Hero Screenshot Image" },
 
   // Section 2
   trustHeading:    { type: ControlType.String, title: "Trust Heading",    defaultValue: "Trusted by enterprises processing sensitive documents" },
@@ -1451,6 +1488,20 @@ addPropertyControls(Index, {
   perf3Label:      { type: ControlType.String, title: "Perf 3 Label",     defaultValue: "Structured PII" },
   perf4Number:     { type: ControlType.String, title: "Perf 4 Number",    defaultValue: "98%" },
   perf4Label:      { type: ControlType.String, title: "Perf 4 Label",     defaultValue: "Response Similarity" },
+
+  // Background Images
+  tabsBgImage:        { type: ControlType.Image, title: "Step Tabs BG Image" },
+  tabCore1Image:      { type: ControlType.Image, title: "Tab Core1 Image (Zero Exposure)" },
+  tabCore2Image:      { type: ControlType.Image, title: "Tab Core2 Image (Restoration)" },
+  tabCore3Image:      { type: ControlType.Image, title: "Tab Core3 Image (Enterprise Context)" },
+  tabPlus1Image:      { type: ControlType.Image, title: "Tab +1 Image (Structure-Preserving)" },
+  tabPlus2Image:      { type: ControlType.Image, title: "Tab +2 Image (Cross-Model)" },
+  probBannerBgImage:  { type: ControlType.Image, title: "Problem Banner BG Image" },
+  baBgImage:          { type: ControlType.Image, title: "Before/After BG Image" },
+  diagBgImage:        { type: ControlType.Image, title: "Diagram BG Image" },
+  perfBannerBgImage:  { type: ControlType.Image, title: "Performance Banner BG Image" },
+  perfKpiBgImage:     { type: ControlType.Image, title: "Performance KPI BG Image" },
+  ctaBgImage:         { type: ControlType.Image, title: "CTA BG Image" },
 
   // Section 11 CTA
   ctaTitle:        { type: ControlType.String, title: "CTA Title",        defaultValue: "See how LLM Capsule enables AI on your enterprise documents", displayTextArea: true },

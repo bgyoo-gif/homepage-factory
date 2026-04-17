@@ -245,6 +245,7 @@ grep '860' "$FILE"
 12. **균등 분할 그리드**: `repeat(N, 1fr)` 금지 → `repeat(N, minmax(0, 1fr))` 사용 (Container Queries 안에서도 동일)
 13. **overflow-x: auto scrollbar 숨김 필수**: `overflow-x: auto` 사용 시 반드시 `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }` 동반
 14. **미정의 CSS 변수 참조 금지**: TSX에서는 CSS 변수 대신 PALETTE 상수를 사용하되, 이 목록에 없는 색상·배경 이미지 변수는 사용 금지
+15. **모든 이미지 Props 노출 필수**: background-image, screenshot, 제품 이미지 등 모든 이미지 URL을 `ControlType.Image` Props로 노출한다. 하드코딩 URL 금지. Framer 캔버스에서 직접 교체 가능하도록.
 
 ### LLM Capsule 브랜드 팔레트 (brand === 'llm-capsule' 일 때)
 

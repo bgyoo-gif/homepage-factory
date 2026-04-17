@@ -1,6 +1,6 @@
 {
   "brand": "cubig",
-  "generated": "2026-04-14 15:57:11",
+  "generated": "2026-04-17 15:09:54",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/cubig",
   "groups": [
     {
@@ -13,7 +13,7 @@
         {
           "name": "A-cubig-learn-prompt-data-leakage-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/html/A-cubig-learn-prompt-data-leakage-b-type.html",
-          "modified": "2026-04-07"
+          "modified": "2026-04-15"
         }
       ],
       "docs": [
@@ -46,7 +46,7 @@
         {
           "name": "A-cubig-llm-v3-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/html/A-cubig-llm-v3-b-type.html",
-          "modified": "2026-04-13"
+          "modified": "2026-04-15"
         }
       ],
       "docs": [
@@ -84,7 +84,7 @@
         {
           "name": "A-cubig-proof-v3-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/html/A-cubig-proof-v3-b-type.html",
-          "modified": "2026-04-07"
+          "modified": "2026-04-15"
         }
       ],
       "docs": [
@@ -112,7 +112,7 @@
         {
           "name": "cubig-company-v3-source-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/html/cubig-company-v3-source-b-type.html",
-          "modified": "2026-04-07"
+          "modified": "2026-04-15"
         }
       ],
       "docs": [
@@ -145,7 +145,7 @@
         {
           "name": "cubig-dts-v3-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/html/cubig-dts-v3-b-type.html",
-          "modified": "2026-04-13"
+          "modified": "2026-04-15"
         }
       ],
       "docs": [
@@ -305,7 +305,7 @@
         {
           "name": "cubig-learn-execution-state-drift-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/html/cubig-learn-execution-state-drift-b-type.html",
-          "modified": "2026-04-07"
+          "modified": "2026-04-15"
         }
       ],
       "docs": [
@@ -435,7 +435,7 @@
         {
           "name": "execution-state-layer-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/html/execution-state-layer-b-type.html",
-          "modified": "2026-04-07"
+          "modified": "2026-04-15"
         }
       ],
       "docs": [
@@ -710,7 +710,7 @@
         {
           "name": "cubig-learn-pillar1-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/html/cubig-learn-pillar1-b-type.html",
-          "modified": "2026-04-07"
+          "modified": "2026-04-15"
         },
         {
           "name": "design-system-viewer.html",

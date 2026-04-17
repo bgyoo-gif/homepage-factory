@@ -20,6 +20,7 @@ interface Props {
   button1Href?: string
   footnoteLink2Label?: string
   footnoteLink2Href?: string
+  ctaBgImage?: string
 }
 
 export default function Section05_CTA({
@@ -30,6 +31,7 @@ export default function Section05_CTA({
   button1Href = "/request-a-demo",
   footnoteLink2Label = "Available on AWS Marketplace",
   footnoteLink2Href = "https://aws.amazon.com/marketplace",
+  ctaBgImage = `${IMAGE_BASE}/bg-gradient-deep-teal.png`,
 }: Props) {
   return (
     <>
@@ -44,7 +46,7 @@ export default function Section05_CTA({
           text-align: center;
           background-size: cover;
           background-position: center;
-          background-image: url('${IMAGE_BASE}/bg-gradient-deep-teal.png');
+          background-image: url('${ctaBgImage}');
           box-sizing: border-box;
         }
         .s5-section::before {
@@ -190,4 +192,8 @@ addPropertyControls(Section05_CTA, {
   button1Href: { type: ControlType.String, title: "Button 1 URL", defaultValue: "/request-a-demo" },
   footnoteLink2Label: { type: ControlType.String, title: "Footnote Link 2", defaultValue: "Available on AWS Marketplace" },
   footnoteLink2Href: { type: ControlType.String, title: "Footnote Link 2 URL", defaultValue: "https://aws.amazon.com/marketplace" },
+  ctaBgImage: {
+    type: ControlType.Image,
+    title: "CTA Background",
+  },
 })
