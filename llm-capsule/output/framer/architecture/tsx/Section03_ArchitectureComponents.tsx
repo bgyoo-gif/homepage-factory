@@ -31,6 +31,7 @@ interface TabItem {
   title: string
   description: string
   placeholderLabel: string
+  image: string
 }
 
 interface Props {
@@ -39,18 +40,23 @@ interface Props {
   tab1Label?: string
   tab1Title?: string
   tab1Description?: string
+  tab1Image?: string
   tab2Label?: string
   tab2Title?: string
   tab2Description?: string
+  tab2Image?: string
   tab3Label?: string
   tab3Title?: string
   tab3Description?: string
+  tab3Image?: string
   tab4Label?: string
   tab4Title?: string
   tab4Description?: string
+  tab4Image?: string
   tab5Label?: string
   tab5Title?: string
   tab5Description?: string
+  tab5Image?: string
 }
 
 export default function Section03_ArchitectureComponents({
@@ -59,27 +65,32 @@ export default function Section03_ArchitectureComponents({
   tab1Label = "Encapsulation Engine",
   tab1Title = "Local Encapsulation Engine",
   tab1Description = "The encapsulation engine operates entirely within the enterprise environment. It detects sensitive elements using context-aware data control, replaces them with structure-preserving representations, and stores the mapping locally. The mapping never leaves the enterprise boundary.",
+  tab1Image = "",
   tab2Label = "Policy Control",
   tab2Title = "Policy Control Layer",
   tab2Description = "Enterprise context control enables organizations to define sensitivity policies beyond standard PII detection. Sensitivity classification adapts to document type, department, workflow context, and regulatory requirements. Administrators configure policies through the admin console.",
+  tab2Image = "",
   tab3Label = "Capsule Transmission",
   tab3Title = "Outbound Capsule Transmission",
   tab3Description = "Only encapsulated documents cross the trust boundary. The AI provider receives structurally complete documents with protected values — useful for AI processing but opaque to the receiving service. Zero exposure of original sensitive data.",
+  tab3Image = "",
   tab4Label = "Restoration Engine",
   tab4Title = "Local Restoration Engine",
   tab4Description = "After AI processing completes, the restoration engine applies the locally stored mapping to AI outputs. Original names, figures, dates, and references are restored automatically. Restored outputs are directly usable in enterprise workflows.",
+  tab4Image = "",
   tab5Label = "Audit & Compliance",
   tab5Title = "Audit & Compliance Layer",
   tab5Description = "Every encapsulation and restoration event is logged with complete audit trails. Organizations can track what data was protected, when, by whom, and which AI services processed it. Audit data supports enterprise AI governance and regulatory compliance requirements.",
+  tab5Image = "",
 }: Props) {
   const [activeTab, setActiveTab] = useState(1)
 
   const tabs: TabItem[] = [
-    { number: "1", label: tab1Label, title: tab1Title, description: tab1Description, placeholderLabel: "Encapsulation Engine Interface" },
-    { number: "2", label: tab2Label, title: tab2Title, description: tab2Description, placeholderLabel: "Policy Control Interface" },
-    { number: "3", label: tab3Label, title: tab3Title, description: tab3Description, placeholderLabel: "Capsule Transmission Flow" },
-    { number: "4", label: tab4Label, title: tab4Title, description: tab4Description, placeholderLabel: "Restoration Engine Interface" },
-    { number: "5", label: tab5Label, title: tab5Title, description: tab5Description, placeholderLabel: "Audit & Compliance Dashboard" },
+    { number: "1", label: tab1Label, title: tab1Title, description: tab1Description, placeholderLabel: "Encapsulation Engine Interface", image: tab1Image },
+    { number: "2", label: tab2Label, title: tab2Title, description: tab2Description, placeholderLabel: "Policy Control Interface", image: tab2Image },
+    { number: "3", label: tab3Label, title: tab3Title, description: tab3Description, placeholderLabel: "Capsule Transmission Flow", image: tab3Image },
+    { number: "4", label: tab4Label, title: tab4Title, description: tab4Description, placeholderLabel: "Restoration Engine Interface", image: tab4Image },
+    { number: "5", label: tab5Label, title: tab5Title, description: tab5Description, placeholderLabel: "Audit & Compliance Dashboard", image: tab5Image },
   ]
 
   const tabIcons = [
@@ -321,10 +332,14 @@ export default function Section03_ArchitectureComponents({
                 <p className="s3-panel-description">{activeTabData.description}</p>
               </div>
               <div className="s3-screenshot">
-                <div className="s3-screenshot-placeholder">
-                  {tabIcons[activeTab - 1]}
-                  <span>{activeTabData.placeholderLabel}</span>
-                </div>
+                {activeTabData.image ? (
+                  <img src={activeTabData.image} alt={activeTabData.placeholderLabel} style={{ width: "100%", display: "block", borderRadius: "8px" }} />
+                ) : (
+                  <div className="s3-screenshot-placeholder">
+                    {tabIcons[activeTab - 1]}
+                    <span>{activeTabData.placeholderLabel}</span>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -361,4 +376,9 @@ addPropertyControls(Section03_ArchitectureComponents, {
   tab5Label: { type: ControlType.String, title: "Tab 5 Label", defaultValue: "Audit & Compliance" },
   tab5Title: { type: ControlType.String, title: "Tab 5 Title", defaultValue: "Audit & Compliance Layer" },
   tab5Description: { type: ControlType.String, title: "Tab 5 Description", defaultValue: "Every encapsulation and restoration event is logged with complete audit trails. Organizations can track what data was protected, when, by whom, and which AI services processed it. Audit data supports enterprise AI governance and regulatory compliance requirements.", displayTextArea: true },
+  tab1Image: { type: ControlType.Image, title: "Tab 1 Image (Encapsulation)" },
+  tab2Image: { type: ControlType.Image, title: "Tab 2 Image (Policy Control)" },
+  tab3Image: { type: ControlType.Image, title: "Tab 3 Image (Capsule Transmission)" },
+  tab4Image: { type: ControlType.Image, title: "Tab 4 Image (Restoration)" },
+  tab5Image: { type: ControlType.Image, title: "Tab 5 Image (Audit)" },
 })
