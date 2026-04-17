@@ -95,9 +95,24 @@ export default function Section07_Problem({
           color: ${P.textSecondary}; font-size: 16px; font-weight: 500;
           line-height: 1.7; max-width: 100%; margin-bottom: 24px;
         }
-        @container (min-width: 1024px) { .idx-section-body { max-width: 720px; } }
+        @container (min-width: 1024px) { .idx-section-body { max-width: 860px; } }
         @container (min-width: 1440px) { .idx-section-body { max-width: 1080px; } }
-        .idx-section-body--center { margin-left: auto; margin-right: auto; text-align: center; }
+
+        .idx-bullet-list {
+          list-style: none; padding: 0; margin: 0 0 32px;
+          display: flex; flex-direction: column; gap: 16px;
+          max-width: 100%;
+        }
+        @container (min-width: 1024px) { .idx-bullet-list { max-width: 860px; } }
+        @container (min-width: 1440px) { .idx-bullet-list { max-width: 1080px; } }
+        .idx-bullet-item {
+          display: flex; align-items: flex-start; gap: 12px;
+          font-size: 16px; color: ${P.textSecondary}; line-height: 1.7;
+        }
+        .idx-bullet-dot {
+          flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%;
+          background-color: ${P.brandSecondary}; margin-top: 10px;
+        }
 
         .idx-table-wrap { overflow-x: auto; border-radius: 24px; border: 1px solid ${P.borderDefault}; }
         .idx-table { width: 100%; border-collapse: collapse; font-size: 14px; }
@@ -145,15 +160,20 @@ export default function Section07_Problem({
                 <p className="idx-section-header__desc">{probSubheading}</p>
               </div>
 
-              <div className="idx-section-body idx-section-body--center">
-                <p>Organizations cannot leverage AI capabilities without first making their data AI-ready.</p>
-              </div>
-              <div className="idx-section-body idx-section-body--center">
-                <p>Traditional approaches — masking, redaction, tokenization, and prompt security gateways — were not designed for AI workflows. Masking and redaction permanently remove the data context that AI models need. Prompt gateways filter at the API level but cannot handle enterprise documents end to end. The result is either blocked AI projects or degraded outputs that require extensive manual reconstruction.</p>
-              </div>
-              <div className="idx-section-body idx-section-body--center">
-                <p>These tools create a fundamental adoption barrier: without a data layer that makes sensitive data AI-ready while keeping it protected, enterprise AI projects stall before they can demonstrate value.</p>
-              </div>
+              <ul className="idx-bullet-list">
+                <li className="idx-bullet-item">
+                  <span className="idx-bullet-dot"></span>
+                  <span>Organizations cannot leverage AI capabilities without first making their data AI-ready.</span>
+                </li>
+                <li className="idx-bullet-item">
+                  <span className="idx-bullet-dot"></span>
+                  <span>Traditional approaches — masking, redaction, tokenization, and prompt security gateways — were not designed for AI workflows. Masking and redaction permanently remove the data context that AI models need. Prompt gateways filter at the API level but cannot handle enterprise documents end to end.</span>
+                </li>
+                <li className="idx-bullet-item">
+                  <span className="idx-bullet-dot"></span>
+                  <span>These tools create a fundamental adoption barrier: without a data layer that makes sensitive data AI-ready while keeping it protected, enterprise AI projects stall before they can demonstrate value.</span>
+                </li>
+              </ul>
 
               <div className="idx-table-wrap">
                 <table className="idx-table">
