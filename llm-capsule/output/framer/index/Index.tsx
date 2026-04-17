@@ -176,6 +176,7 @@ interface Props {
   diagHeading?: string
   diagSubheading?: string
   diagBgImage?: string
+  diagImage?: string
 
   // Section 10 — Performance
   perfHeading?: string
@@ -252,6 +253,7 @@ export default function Index({
   diagHeading = "A data layer between your enterprise and any LLM",
   diagSubheading = "LLM Capsule sits between your internal systems and external AI models. Raw data stays inside your environment — the trust boundary is never crossed by original data. AI only processes the protected version.",
   diagBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-wave-teal.png",
+  diagImage = "",
 
   perfHeading = "Measured performance on real enterprise document processing workloads",
   perfBannerBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-lavender.png",
@@ -1261,6 +1263,9 @@ export default function Index({
                 </p>
               </div>
 
+              {diagImage ? (
+                <img src={diagImage} alt="LLM Capsule Architecture Diagram" style={{ width: "100%", display: "block", borderRadius: "16px" }} />
+              ) : (
               <div className="idx-diagram__window">
                 <div className="idx-diagram__header">
                   <span className="idx-diagram__dot"></span>
@@ -1350,6 +1355,7 @@ export default function Index({
                   </div>
                 </div>
               </div>
+              )}
 
               <div className="idx-center-cta">
                 <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" className="idx-btn idx-btn--secondary idx-btn--sm">View on AWS Marketplace</a>
@@ -1499,6 +1505,7 @@ addPropertyControls(Index, {
   probBannerBgImage:  { type: ControlType.Image, title: "Problem Banner BG Image" },
   baBgImage:          { type: ControlType.Image, title: "Before/After BG Image" },
   diagBgImage:        { type: ControlType.Image, title: "Diagram BG Image" },
+  diagImage:          { type: ControlType.Image, title: "Diagram Image (replaces HTML diagram)" },
   perfBannerBgImage:  { type: ControlType.Image, title: "Performance Banner BG Image" },
   perfKpiBgImage:     { type: ControlType.Image, title: "Performance KPI BG Image" },
   ctaBgImage:         { type: ControlType.Image, title: "CTA BG Image" },
