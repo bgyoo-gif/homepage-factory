@@ -25,8 +25,10 @@ export default function Section11_CTA({
   ctaBtn1Href = "/request-a-demo",
   ctaBtn4Label = "Available on AWS Marketplace",
   ctaBtn4Href = "https://aws.amazon.com/marketplace",
-  ctaBgImage = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-cta.webp",
+  ctaBgImage = "",
 }: Props) {
+  const DEFAULT_CTA_BG = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-cta.webp"
+  const resolvedCtaBg = ctaBgImage || DEFAULT_CTA_BG
   return (
     <>
       <style>{`
@@ -63,7 +65,7 @@ export default function Section11_CTA({
         .idx-cta-band {
           width: 100%; position: relative; overflow: hidden;
           padding: 80px 16px; text-align: center;
-          background-image: url('${ctaBgImage}');
+          background-image: url('${resolvedCtaBg}');
           background-color: ${P.neutral800};
           background-size: cover; background-position: center;
         }
