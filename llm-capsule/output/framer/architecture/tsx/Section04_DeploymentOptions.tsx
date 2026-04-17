@@ -39,6 +39,8 @@ interface Props {
   card4Description?: string
   card5Title?: string
   card5Description?: string
+  card6Title?: string
+  card6Description?: string
 }
 
 export default function Section04_DeploymentOptions({
@@ -58,6 +60,8 @@ export default function Section04_DeploymentOptions({
   card4Description = "Different document types or sensitivity levels route through different deployment modes within a single LLM Capsule instance. Maximum flexibility.",
   card5Title = "Embedded Integration",
   card5Description = "LLM Capsule embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within your software stack.",
+  card6Title = "Slack App",
+  card6Description = "Use LLM Capsule directly within Slack. Encapsulate sensitive messages and documents before sending to AI assistants, with results restored in-channel.",
 }: Props) {
   return (
     <>
@@ -311,6 +315,17 @@ export default function Section04_DeploymentOptions({
                   </p>
                 </div>
               </div>
+
+              {/* Card 6: Slack App */}
+              <div className="s4-card s4-card--green">
+                <div className="s4-card__inner">
+                  <span className="s4-card__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="3" height="8" x="13" y="2" rx="1.5"/><path d="M19 8.5V10h1.5A1.5 1.5 0 1 0 19 8.5"/><rect width="3" height="8" x="8" y="14" rx="1.5"/><path d="M5 15.5V14H3.5A1.5 1.5 0 1 0 5 15.5"/><rect width="8" height="3" x="14" y="13" rx="1.5"/><path d="M15.5 19H14v1.5a1.5 1.5 0 1 0 1.5-1.5"/><rect width="8" height="3" x="2" y="8" rx="1.5"/><path d="M8.5 5H10V3.5A1.5 1.5 0 1 0 8.5 5"/></svg>
+                  </span>
+                  <h3 className="s4-card__title">{card6Title}</h3>
+                  <p className="s4-card__description">{card6Description}</p>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -337,4 +352,6 @@ addPropertyControls(Section04_DeploymentOptions, {
   card4Description: { type: ControlType.String, title: "Card 4 Description", defaultValue: "Different document types or sensitivity levels route through different deployment modes within a single LLM Capsule instance. Maximum flexibility.", displayTextArea: true },
   card5Title: { type: ControlType.String, title: "Card 5 Title", defaultValue: "Embedded Integration" },
   card5Description: { type: ControlType.String, title: "Card 5 Description", defaultValue: "LLM Capsule embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within your software stack.", displayTextArea: true },
+  card6Title: { type: ControlType.String, title: "Card 6 Title", defaultValue: "Slack App" },
+  card6Description: { type: ControlType.String, title: "Card 6 Description", defaultValue: "Use LLM Capsule directly within Slack. Encapsulate sensitive messages and documents before sending to AI assistants, with results restored in-channel.", displayTextArea: true },
 })
