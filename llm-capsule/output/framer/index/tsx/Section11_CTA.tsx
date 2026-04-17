@@ -46,7 +46,8 @@ export default function Section11_CTA({
         .idx-root p { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
         .idx-root h2 { text-wrap: balance; }
 
-        .idx-inner { width: 100%; container-type: inline-size; }
+        .idx-root { width: 100%; container-type: inline-size; }
+        .idx-inner { width: 100%; }
 
         .idx-product { font-family: "Oxanium", sans-serif; font-weight: 700; }
 

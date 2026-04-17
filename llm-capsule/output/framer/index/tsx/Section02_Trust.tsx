@@ -82,7 +82,8 @@ export default function Section02_Trust({
         .idx-root a { text-decoration: none; color: inherit; }
         .idx-root img { max-width: 100%; display: block; }
 
-        .idx-inner { width: 100%; container-type: inline-size; }
+        .idx-root { width: 100%; container-type: inline-size; }
+        .idx-inner { width: 100%; }
 
         .idx-container {
           width: 100%; margin: 0 auto; padding: 0 16px;

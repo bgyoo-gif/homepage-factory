@@ -74,7 +74,8 @@ export default function Section12_FAQ({
         .idx-root p { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
         .idx-root h2 { text-wrap: balance; }
 
-        .idx-inner { width: 100%; container-type: inline-size; }
+        .idx-root { width: 100%; container-type: inline-size; }
+        .idx-inner { width: 100%; }
 
         .idx-container {
           width: 100%; margin: 0 auto; padding: 0 16px;
