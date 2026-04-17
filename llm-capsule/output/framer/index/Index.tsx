@@ -859,12 +859,8 @@ export default function Index({
           <section id="section-1" className="idx-hero-section">
             <div className="idx-container">
               <div className="idx-hero">
-                <h1 className="idx-hero__title">
-                  Use any AI on your real documents — <span className="idx-brand">without exposing</span> a single line
-                </h1>
-                <p className="idx-hero__desc">
-                  Your sensitive documents go through <span className="idx-product">LLM Capsule</span> before reaching AI. Confidential names, figures, and terms are replaced locally — AI processes the safe version — then results are restored with your original data. Each organization defines what counts as sensitive.
-                </p>
+                <h1 className="idx-hero__title">{heroTitle}</h1>
+                <p className="idx-hero__desc">{heroDescription}</p>
               </div>
               <div className="idx-hero__frame">
                 <div className="idx-hero__screenshot">
