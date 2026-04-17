@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-04-17 16:09:54",
+  "generated": "2026-04-17 17:05:10",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1275,12 +1275,12 @@
         {
           "name": "Section06_RelatedPages.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/ai-data-pipeline-protection/tsx/Section06_RelatedPages.tsx",
-          "modified": "2026-04-13"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section07_CTABand.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/ai-data-pipeline-protection/tsx/Section07_CTABand.tsx",
-          "modified": "2026-04-15"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section01_Hero.tsx",
@@ -1485,12 +1485,12 @@
         {
           "name": "Section08_RelatedPages.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/how-to-use-ai-on-sensitive-enterprise-data/tsx/Section08_RelatedPages.tsx",
-          "modified": "2026-04-13"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section09_CTABand.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/how-to-use-ai-on-sensitive-enterprise-data/tsx/Section09_CTABand.tsx",
-          "modified": "2026-04-13"
+          "modified": "2026-04-17"
         },
         {
           "name": "Index.tsx",
@@ -1560,7 +1560,7 @@
         {
           "name": "Learn.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/Learn.tsx",
-          "modified": "2026-04-15"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section01_Hero.tsx",
@@ -1610,17 +1610,17 @@
         {
           "name": "Section10_RelatedPages.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/llm-capsule-vs-masking-tools/tsx/Section10_RelatedPages.tsx",
-          "modified": "2026-04-13"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section11_CTABand.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/llm-capsule-vs-masking-tools/tsx/Section11_CTABand.tsx",
-          "modified": "2026-04-15"
+          "modified": "2026-04-17"
         },
         {
           "name": "LlmCapsuleVsPromptSecurityGateways.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/llm-capsule-vs-prompt-security-gateways/LlmCapsuleVsPromptSecurityGateways.tsx",
-          "modified": "2026-04-15"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section01_Hero.tsx",
@@ -1675,7 +1675,7 @@
         {
           "name": "LocalRestorationVsAnonymization.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/local-restorationvs-anonymization/LocalRestorationVsAnonymization.tsx",
-          "modified": "2026-04-15"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section01_Hero.tsx",
@@ -1705,12 +1705,12 @@
         {
           "name": "Section06_RelatedPages.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/on-premise-vs-cloud-ai-data-protection/tsx/Section06_RelatedPages.tsx",
-          "modified": "2026-04-14"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section07_CTABand.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/on-premise-vs-cloud-ai-data-protection/tsx/Section07_CTABand.tsx",
-          "modified": "2026-04-15"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section01_Hero.tsx",
@@ -1745,12 +1745,12 @@
         {
           "name": "Section07_RelatedPages.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/pii-protection-vs-enterprise-confidentiality-control/tsx/Section07_RelatedPages.tsx",
-          "modified": "2026-04-14"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section08_CTABand.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/pii-protection-vs-enterprise-confidentiality-control/tsx/Section08_CTABand.tsx",
-          "modified": "2026-04-15"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section01_Hero.tsx",
@@ -1840,7 +1840,7 @@
         {
           "name": "RequestPov.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/request-pov/RequestPov.tsx",
-          "modified": "2026-04-15"
+          "modified": "2026-04-17"
         },
         {
           "name": "Resources.tsx",
@@ -1880,12 +1880,12 @@
         {
           "name": "Restoration.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/restoration/Restoration.tsx",
-          "modified": "2026-04-14"
+          "modified": "2026-04-17"
         },
         {
           "name": "SecureEnterpriseAiDataWorkflows.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/secure-enterprise-ai-data-workflows/tsx/SecureEnterpriseAiDataWorkflows.tsx",
-          "modified": "2026-04-15"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section01_Hero.tsx",
@@ -1950,17 +1950,17 @@
         {
           "name": "Section06_RelatedTerms.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/secure-llm-usage/tsx/Section06_RelatedTerms.tsx",
-          "modified": "2026-04-13"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section07_CTA.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/secure-llm-usage/tsx/Section07_CTA.tsx",
-          "modified": "2026-04-14"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section01_Hero.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/solutions/tsx/Section01_Hero.tsx",
-          "modified": "2026-04-15"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section02_IndustryUseCases.tsx",
@@ -1975,12 +1975,12 @@
         {
           "name": "Section04_Cta.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/solutions/tsx/Section04_Cta.tsx",
-          "modified": "2026-04-15"
+          "modified": "2026-04-17"
         },
         {
           "name": "StructurePreservingDocumentProcessing.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/structure-preserving-document-processing/StructurePreservingDocumentProcessing.tsx",
-          "modified": "2026-04-15"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section01_Hero.tsx",
@@ -2015,7 +2015,7 @@
         {
           "name": "StructurePreservingProcessingVsFlatMasking.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/structure-preserving-processing-vs-flat-masking/StructurePreservingProcessingVsFlatMasking.tsx",
-          "modified": "2026-04-15"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section01_Hero.tsx",
@@ -2070,7 +2070,7 @@
         {
           "name": "Section04_EvidenceHub.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/trust-center/tsx/Section04_EvidenceHub.tsx",
-          "modified": "2026-04-15"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section05_CTA.tsx",
@@ -2120,12 +2120,12 @@
         {
           "name": "Section08_Related.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/what-is-ai-data-capsule/tsx/Section08_Related.tsx",
-          "modified": "2026-04-13"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section09_CTA.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/what-is-ai-data-capsule/tsx/Section09_CTA.tsx",
-          "modified": "2026-04-15"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section01_Hero.tsx",
