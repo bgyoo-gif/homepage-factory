@@ -134,13 +134,13 @@ export default function Section01_Hero({
         }
         .idx-btn--sm  { padding: 8px 16px;  font-size: 14px; }
         .idx-btn--md  { padding: 12px 32px; font-size: 16px; }
-        .idx-btn--primary { background: ${P.gradientBrand}; color: ${P.white}; }
-        .idx-btn--primary:hover { opacity: 0.88; }
-        .idx-btn--secondary {
+        .idx-root .idx-btn--primary { background: ${P.gradientBrand}; color: ${P.white}; }
+        .idx-root .idx-btn--primary:hover { opacity: 0.88; }
+        .idx-root .idx-btn--secondary {
           background-color: transparent; color: ${P.textPrimary};
           border: 1px solid ${P.borderDefault};
         }
-        .idx-btn--secondary:hover { background-color: ${P.surfaceLight}; }
+        .idx-root .idx-btn--secondary:hover { background-color: ${P.surfaceLight}; }
 
         .idx-brand { color: ${P.brandSecondary}; }
         .idx-product { font-family: "Oxanium", sans-serif; font-weight: 700; }

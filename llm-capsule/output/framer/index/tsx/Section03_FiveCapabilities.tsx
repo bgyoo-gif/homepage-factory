@@ -69,11 +69,13 @@ export default function Section03_FiveCapabilities({
         }
         .idx-btn--sm  { padding: 8px 16px;  font-size: 14px; }
         .idx-btn--md  { padding: 12px 32px; font-size: 16px; }
-        .idx-btn--secondary {
+        .idx-root .idx-btn--primary { background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%); color: ${P.white}; }
+        .idx-root .idx-btn--primary:hover { opacity: 0.88; }
+        .idx-root .idx-btn--secondary {
           background-color: transparent; color: ${P.textPrimary};
           border: 1px solid ${P.borderDefault};
         }
-        .idx-btn--secondary:hover { background-color: ${P.surfaceLight}; }
+        .idx-root .idx-btn--secondary:hover { background-color: ${P.surfaceLight}; }
 
         .idx-section-header { margin-bottom: 48px; text-align: center; }
         .idx-section-header--underline {
@@ -96,9 +98,9 @@ export default function Section03_FiveCapabilities({
         @container (min-width: 1440px) { .idx-section-header__desc { max-width: 1080px; } }
 
         .idx-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-        @container (min-width: 768px)  { .idx-card-grid--2col { grid-template-columns: repeat(2, 1fr); } }
-        @container (min-width: 768px)  { .idx-card-grid--3col { grid-template-columns: repeat(2, 1fr); } }
-        @container (min-width: 1024px) { .idx-card-grid--3col { grid-template-columns: repeat(3, 1fr); } }
+        @container (min-width: 768px)  { .idx-card-grid--2col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @container (min-width: 768px)  { .idx-card-grid--3col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @container (min-width: 1024px) { .idx-card-grid--3col { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
         .idx-spaced-top { margin-top: 24px; }
 
         .idx-card {

@@ -63,11 +63,13 @@ export default function Section07_Problem({
           white-space: nowrap; text-decoration: none;
         }
         .idx-btn--sm  { padding: 8px 16px;  font-size: 14px; }
-        .idx-btn--secondary {
+        .idx-root .idx-btn--primary { background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%); color: ${P.white}; }
+        .idx-root .idx-btn--primary:hover { opacity: 0.88; }
+        .idx-root .idx-btn--secondary {
           background-color: transparent; color: ${P.textPrimary};
           border: 1px solid ${P.borderDefault};
         }
-        .idx-btn--secondary:hover { background-color: ${P.surfaceLight}; }
+        .idx-root .idx-btn--secondary:hover { background-color: ${P.surfaceLight}; }
 
         .idx-section-header { margin-bottom: 48px; text-align: center; }
         .idx-section-header--underline {
