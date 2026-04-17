@@ -14,8 +14,6 @@ interface Props {
   item3Description?: string
   ctaPrimaryLabel?: string
   ctaPrimaryHref?: string
-  ctaSecondaryLabel?: string
-  ctaSecondaryHref?: string
 }
 
 export default function Section04_EvidenceHub({
@@ -30,8 +28,6 @@ export default function Section04_EvidenceHub({
   item3Description = "On-premise, air-gapped, VPC, cloud, hybrid, and embedded deployment patterns for evaluation.",
   ctaPrimaryLabel = "Request a Demo",
   ctaPrimaryHref = "/request-a-demo",
-  ctaSecondaryLabel = "Download Brief",
-  ctaSecondaryHref = "/downloads",
 }: Props) {
   return (
     <>
@@ -233,7 +229,6 @@ export default function Section04_EvidenceHub({
 
             <div className="s4-actions">
               <a href={ctaPrimaryHref} className="s4-btn s4-btn-primary">{ctaPrimaryLabel}</a>
-              <a href={ctaSecondaryHref} className="s4-btn s4-btn-secondary">{ctaSecondaryLabel}</a>
             </div>
           </div>
         </div>
@@ -297,15 +292,5 @@ addPropertyControls(Section04_EvidenceHub, {
     type: ControlType.String,
     title: "CTA Primary Href",
     defaultValue: "/request-a-demo",
-  },
-  ctaSecondaryLabel: {
-    type: ControlType.String,
-    title: "CTA Secondary Label",
-    defaultValue: "Download Brief",
-  },
-  ctaSecondaryHref: {
-    type: ControlType.String,
-    title: "CTA Secondary Href",
-    defaultValue: "/downloads",
   },
 })
