@@ -21,6 +21,7 @@ interface Props {
   sectionDescription?: string
   body?: string
   screenshotDesc?: string
+  screenshotImage?: string
   awsLabel?: string
   awsHref?: string
 }
@@ -31,6 +32,7 @@ export default function Section11_DeploymentReadiness({
   sectionDescription = "Enterprise teams need deployment flexibility without giving up control.",
   body = "Enterprise teams need deployment flexibility without giving up control. LLM Capsule supports on-premise deployment, air-gapped environments, cloud deployment including AWS Marketplace, hybrid configurations, and embedded integration. The same product logic runs across all deployment models while keeping local protection and local restoration at the center.",
   screenshotDesc = "LLM Capsule API Console — SDK integration with enterprise document management systems",
+  screenshotImage = "",
   awsLabel = "View on AWS Marketplace",
   awsHref = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -248,12 +250,18 @@ export default function Section11_DeploymentReadiness({
             <p className="s11-body">{body}</p>
 
             <div className="s11-screenshot">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-              <span className="s11-screenshot-label">Product Screenshot</span>
-              <span className="s11-screenshot-desc">{screenshotDesc}</span>
+              {screenshotImage ? (
+                <img src={screenshotImage} alt={screenshotDesc} style={{ width: "100%", display: "block", borderRadius: "8px" }} />
+              ) : (
+                <>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                  <span className="s11-screenshot-label">Product Screenshot</span>
+                  <span className="s11-screenshot-desc">{screenshotDesc}</span>
+                </>
+              )}
             </div>
 
             <div className="s11-grid">
@@ -284,6 +292,7 @@ addPropertyControls(Section11_DeploymentReadiness, {
   sectionDescription: { type: ControlType.String, title: "Description",    defaultValue: "Enterprise teams need deployment flexibility without giving up control.", displayTextArea: true },
   body:               { type: ControlType.String, title: "Body",           defaultValue: "Enterprise teams need deployment flexibility without giving up control. LLM Capsule supports on-premise deployment, air-gapped environments, cloud deployment including AWS Marketplace, hybrid configurations, and embedded integration. The same product logic runs across all deployment models while keeping local protection and local restoration at the center.", displayTextArea: true },
   screenshotDesc:     { type: ControlType.String, title: "Screenshot desc", defaultValue: "LLM Capsule API Console — SDK integration with enterprise document management systems", displayTextArea: true },
+  screenshotImage:    { type: ControlType.Image,  title: "Screenshot Image" },
   awsLabel:           { type: ControlType.String, title: "AWS Button",     defaultValue: "View on AWS Marketplace" },
   awsHref:            { type: ControlType.String, title: "AWS URL",        defaultValue: "https://aws.amazon.com/marketplace" },
 })
