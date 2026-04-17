@@ -420,7 +420,7 @@ export default function Index({
           border-radius: 40px 40px 0 0;
           padding: 48px 48px 0;
           background-color: ${P.neutral100};
-          background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-blue-iridescent.png');
+          background-image: url('https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-hero.webp');
           background-size: cover; background-position: center;
           overflow: hidden;
         }
@@ -834,7 +834,7 @@ export default function Index({
               <div className="idx-hero__frame">
                 <div className="idx-hero__screenshot">
                   <img
-                    src={`${IMG}/screenshot-llmcapsule.webp`}
+                    src="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/screenshot-index-hero.webp"
                     alt="LLM Capsule Dashboard"
                     loading="eager"
                   />
