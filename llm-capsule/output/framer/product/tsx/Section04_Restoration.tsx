@@ -220,9 +220,9 @@ export default function Section04_Restoration({
               </div>
 
               {/* Visual (visually right due to reverse) */}
-              <div className="s4-visual">
+              <div className="s4-visual" style={visualImage ? { backgroundImage: "none", backgroundColor: "transparent", padding: 0, minHeight: "auto", display: "block" } : undefined}>
                 {visualImage ? (
-                  <img src={visualImage} alt="Restoration visual" style={{ width: "100%", display: "block", borderRadius: "16px" }} />
+                  <img src={visualImage} alt="Restoration visual" style={{ width: "100%", display: "block" }} />
                 ) : (
                   <div className="s4-code-panels">
                     <div className="s4-code-block">
