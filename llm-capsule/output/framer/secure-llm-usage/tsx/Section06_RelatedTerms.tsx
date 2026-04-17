@@ -35,16 +35,16 @@ export default function Section06_RelatedTerms({
   sectionTitleMain = "Related ",
   sectionTitleBrand = "Terms",
   relatedTerms = ["Zero Exposure", "Restoration", "Restorable Workflow"],
-  relatedTermHrefs = ["zero-exposure.html", "restoration.html", "restorable-workflow.html"],
+  relatedTermHrefs = ["/resources/glossary/zero-exposure", "/resources/glossary/restoration", "/resources/glossary/restorable-workflow"],
   relatedLinksLabel = "Related Pages",
   link1Title = "Product Overview",
-  link1Href = "product.html",
+  link1Href = "/product",
   link2Title = "Architecture",
-  link2Href = "architecture.html",
+  link2Href = "/architecture",
   link3Title = "Trust & Compliance",
-  link3Href = "trust.html",
+  link3Href = "/trust",
   link4Title = "Request a Demo",
-  link4Href = "request-pov.html",
+  link4Href = "/request-a-demo",
 }: Props) {
   return (
     <>
@@ -298,7 +298,7 @@ addPropertyControls(Section06_RelatedTerms, {
   link1Href: {
     type: ControlType.String,
     title: "Link 1 URL",
-    defaultValue: "product.html",
+    defaultValue: "/product",
   },
   link2Title: {
     type: ControlType.String,
@@ -308,7 +308,7 @@ addPropertyControls(Section06_RelatedTerms, {
   link2Href: {
     type: ControlType.String,
     title: "Link 2 URL",
-    defaultValue: "architecture.html",
+    defaultValue: "/architecture",
   },
   link3Title: {
     type: ControlType.String,
@@ -318,7 +318,7 @@ addPropertyControls(Section06_RelatedTerms, {
   link3Href: {
     type: ControlType.String,
     title: "Link 3 URL",
-    defaultValue: "trust.html",
+    defaultValue: "/trust",
   },
   link4Title: {
     type: ControlType.String,
@@ -328,6 +328,6 @@ addPropertyControls(Section06_RelatedTerms, {
   link4Href: {
     type: ControlType.String,
     title: "Link 4 URL",
-    defaultValue: "request-pov.html",
+    defaultValue: "/request-a-demo",
   },
 })

@@ -69,84 +69,84 @@ interface ArticleCard {
 
 const DEFAULT_CARDS: ArticleCard[] = [
   {
-    href: "secure-enterprise-ai-data-workflows.html",
+    href: "/resources/learn/secure-enterprise-ai-data-workflows",
     badgeType: "brand",
     badgeLabel: "Pillar",
     title: "Secure Enterprise AI Data Workflows",
     iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
   },
   {
-    href: "enterprise-ai-data-protection.html",
+    href: "/resources/learn/enterprise-ai-data-protection",
     badgeType: "brand",
     badgeLabel: "Pillar",
     title: "Enterprise AI Enablement",
     iconPath: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z",
   },
   {
-    href: "enterprise-ai-document-processing.html",
+    href: "/resources/learn/enterprise-ai-document-processing",
     badgeType: "brand",
     badgeLabel: "Pillar",
     title: "Enterprise AI Document Processing",
     iconPath: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z",
   },
   {
-    href: "what-is-ai-data-capsule.html",
+    href: "/resources/learn/what-is-ai-data-capsule",
     badgeType: "neutral",
     badgeLabel: "Article",
     title: "What Is an AI Data Capsule",
     iconPath: "M12 22c1-1 8-4 8-10V5l-8-3-8 3v7c0 6 7 9 8 10z",
   },
   {
-    href: "how-to-use-ai-on-sensitive-enterprise-data.html",
+    href: "/resources/learn/how-to-use-ai-on-sensitive-enterprise-data",
     badgeType: "neutral",
     badgeLabel: "Article",
     title: "How to Use AI on Sensitive Enterprise Data",
     iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
   },
   {
-    href: "why-redaction-breaks-enterprise-ai-workflows.html",
+    href: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
     badgeType: "brand",
     badgeLabel: "Featured",
     title: "Why Redaction Breaks Enterprise AI Workflows",
     iconPath: "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z",
   },
   {
-    href: "secure-enterprise-ai-workflows.html",
+    href: "/resources/learn/secure-enterprise-ai-workflows",
     badgeType: "neutral",
     badgeLabel: "Article",
     title: "Secure Enterprise AI Workflows",
     iconPath: "M19 11H5m14 0a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2m14 0V9a2 2 0 0 0-2-2M5 11V9a2 2 0 0 1 2-2m0 0V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2M7 7h10",
   },
   {
-    href: "structure-preserving-document-processing.html",
+    href: "/resources/learn/structure-preserving-document-processing",
     badgeType: "neutral",
     badgeLabel: "Article",
     title: "Structure-Preserving Document Processing",
     iconPath: "M22 12h-4l-3 9L9 3l-3 9H2",
   },
   {
-    href: "pii-protection-vs-enterprise-confidentiality-control.html",
+    href: "/resources/comparison/pii-protection-vs-enterprise-confidentiality-control",
     badgeType: "neutral",
     badgeLabel: "Article",
     title: "PII Protection vs Enterprise Confidentiality Control",
     iconPath: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2",
   },
   {
-    href: "on-premise-vs-cloud-ai-data-protection.html",
+    href: "/resources/comparison/on-premise-vs-cloud-ai-data-protection",
     badgeType: "neutral",
     badgeLabel: "Article",
     title: "On-Premise vs Cloud AI Data Protection",
     iconPath: "M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z",
   },
   {
-    href: "local-restorationvs-anonymization.html",
+    href: "/resources/comparison/local-restoration-vs-anonymization",
     badgeType: "neutral",
     badgeLabel: "Article",
     title: "Local Restoration vs Anonymization",
     iconPath: "M1 4v6h6",
   },
   {
-    href: "ai-data-pipeline-protection.html",
+    href: "/resources/learn/ai-data-pipeline-protection",
     badgeType: "neutral",
     badgeLabel: "Article",
     title: "AI Data Pipeline Protection",
@@ -329,47 +329,47 @@ export default function Learn({
 
   card01Title = "Secure Enterprise AI Data Workflows",
   card01Badge = "Pillar",
-  card01Href = "secure-enterprise-ai-data-workflows.html",
+  card01Href = "/resources/learn/secure-enterprise-ai-data-workflows",
   card02Title = "Enterprise AI Enablement",
   card02Badge = "Pillar",
-  card02Href = "enterprise-ai-data-protection.html",
+  card02Href = "/resources/learn/enterprise-ai-data-protection",
   card03Title = "Enterprise AI Document Processing",
   card03Badge = "Pillar",
-  card03Href = "enterprise-ai-document-processing.html",
+  card03Href = "/resources/learn/enterprise-ai-document-processing",
   card04Title = "What Is an AI Data Capsule",
   card04Badge = "Article",
-  card04Href = "what-is-ai-data-capsule.html",
+  card04Href = "/resources/learn/what-is-ai-data-capsule",
   card05Title = "How to Use AI on Sensitive Enterprise Data",
   card05Badge = "Article",
-  card05Href = "how-to-use-ai-on-sensitive-enterprise-data.html",
+  card05Href = "/resources/learn/how-to-use-ai-on-sensitive-enterprise-data",
   card06Title = "Why Redaction Breaks Enterprise AI Workflows",
   card06Badge = "Featured",
-  card06Href = "why-redaction-breaks-enterprise-ai-workflows.html",
+  card06Href = "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
   card07Title = "Secure Enterprise AI Workflows",
   card07Badge = "Article",
-  card07Href = "secure-enterprise-ai-workflows.html",
+  card07Href = "/resources/learn/secure-enterprise-ai-workflows",
   card08Title = "Structure-Preserving Document Processing",
   card08Badge = "Article",
-  card08Href = "structure-preserving-document-processing.html",
+  card08Href = "/resources/learn/structure-preserving-document-processing",
   card09Title = "PII Protection vs Enterprise Confidentiality Control",
   card09Badge = "Article",
-  card09Href = "pii-protection-vs-enterprise-confidentiality-control.html",
+  card09Href = "/resources/comparison/pii-protection-vs-enterprise-confidentiality-control",
   card10Title = "On-Premise vs Cloud AI Data Protection",
   card10Badge = "Article",
-  card10Href = "on-premise-vs-cloud-ai-data-protection.html",
+  card10Href = "/resources/comparison/on-premise-vs-cloud-ai-data-protection",
   card11Title = "Local Restoration vs Anonymization",
   card11Badge = "Article",
-  card11Href = "local-restorationvs-anonymization.html",
+  card11Href = "/resources/comparison/local-restoration-vs-anonymization",
   card12Title = "AI Data Pipeline Protection",
   card12Badge = "Article",
-  card12Href = "ai-data-pipeline-protection.html",
+  card12Href = "/resources/learn/ai-data-pipeline-protection",
 
   cardLinkLabel = "Read article",
 
   ctaTitle = "See how LLM Capsule works with your data",
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   ctaBtn1Label = "Request a Demo",
-  ctaBtn1Href = "request-pov.html",
+  ctaBtn1Href = "/request-a-demo",
   ctaSecondaryLink2Label = "Available on AWS Marketplace",
   ctaSecondaryLink2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -692,62 +692,62 @@ addPropertyControls(Learn, {
   // Card 1
   card01Title: { type: ControlType.String, title: "Card 01 Title", defaultValue: "Secure Enterprise AI Data Workflows" },
   card01Badge: { type: ControlType.String, title: "Card 01 Badge", defaultValue: "Pillar" },
-  card01Href:  { type: ControlType.String, title: "Card 01 URL",   defaultValue: "secure-enterprise-ai-data-workflows.html" },
+  card01Href:  { type: ControlType.String, title: "Card 01 URL",   defaultValue: "/resources/learn/secure-enterprise-ai-data-workflows" },
 
   // Card 2
   card02Title: { type: ControlType.String, title: "Card 02 Title", defaultValue: "Enterprise AI Enablement" },
   card02Badge: { type: ControlType.String, title: "Card 02 Badge", defaultValue: "Pillar" },
-  card02Href:  { type: ControlType.String, title: "Card 02 URL",   defaultValue: "enterprise-ai-data-protection.html" },
+  card02Href:  { type: ControlType.String, title: "Card 02 URL",   defaultValue: "/resources/learn/enterprise-ai-data-protection" },
 
   // Card 3
   card03Title: { type: ControlType.String, title: "Card 03 Title", defaultValue: "Enterprise AI Document Processing" },
   card03Badge: { type: ControlType.String, title: "Card 03 Badge", defaultValue: "Pillar" },
-  card03Href:  { type: ControlType.String, title: "Card 03 URL",   defaultValue: "enterprise-ai-document-processing.html" },
+  card03Href:  { type: ControlType.String, title: "Card 03 URL",   defaultValue: "/resources/learn/enterprise-ai-document-processing" },
 
   // Card 4
   card04Title: { type: ControlType.String, title: "Card 04 Title", defaultValue: "What Is an AI Data Capsule" },
   card04Badge: { type: ControlType.String, title: "Card 04 Badge", defaultValue: "Article" },
-  card04Href:  { type: ControlType.String, title: "Card 04 URL",   defaultValue: "what-is-ai-data-capsule.html" },
+  card04Href:  { type: ControlType.String, title: "Card 04 URL",   defaultValue: "/resources/learn/what-is-ai-data-capsule" },
 
   // Card 5
   card05Title: { type: ControlType.String, title: "Card 05 Title", defaultValue: "How to Use AI on Sensitive Enterprise Data" },
   card05Badge: { type: ControlType.String, title: "Card 05 Badge", defaultValue: "Article" },
-  card05Href:  { type: ControlType.String, title: "Card 05 URL",   defaultValue: "how-to-use-ai-on-sensitive-enterprise-data.html" },
+  card05Href:  { type: ControlType.String, title: "Card 05 URL",   defaultValue: "/resources/learn/how-to-use-ai-on-sensitive-enterprise-data" },
 
   // Card 6
   card06Title: { type: ControlType.String, title: "Card 06 Title", defaultValue: "Why Redaction Breaks Enterprise AI Workflows" },
   card06Badge: { type: ControlType.String, title: "Card 06 Badge", defaultValue: "Featured" },
-  card06Href:  { type: ControlType.String, title: "Card 06 URL",   defaultValue: "why-redaction-breaks-enterprise-ai-workflows.html" },
+  card06Href:  { type: ControlType.String, title: "Card 06 URL",   defaultValue: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows" },
 
   // Card 7
   card07Title: { type: ControlType.String, title: "Card 07 Title", defaultValue: "Secure Enterprise AI Workflows" },
   card07Badge: { type: ControlType.String, title: "Card 07 Badge", defaultValue: "Article" },
-  card07Href:  { type: ControlType.String, title: "Card 07 URL",   defaultValue: "secure-enterprise-ai-workflows.html" },
+  card07Href:  { type: ControlType.String, title: "Card 07 URL",   defaultValue: "/resources/learn/secure-enterprise-ai-workflows" },
 
   // Card 8
   card08Title: { type: ControlType.String, title: "Card 08 Title", defaultValue: "Structure-Preserving Document Processing" },
   card08Badge: { type: ControlType.String, title: "Card 08 Badge", defaultValue: "Article" },
-  card08Href:  { type: ControlType.String, title: "Card 08 URL",   defaultValue: "structure-preserving-document-processing.html" },
+  card08Href:  { type: ControlType.String, title: "Card 08 URL",   defaultValue: "/resources/learn/structure-preserving-document-processing" },
 
   // Card 9
   card09Title: { type: ControlType.String, title: "Card 09 Title", defaultValue: "PII Protection vs Enterprise Confidentiality Control" },
   card09Badge: { type: ControlType.String, title: "Card 09 Badge", defaultValue: "Article" },
-  card09Href:  { type: ControlType.String, title: "Card 09 URL",   defaultValue: "pii-protection-vs-enterprise-confidentiality-control.html" },
+  card09Href:  { type: ControlType.String, title: "Card 09 URL",   defaultValue: "/resources/comparison/pii-protection-vs-enterprise-confidentiality-control" },
 
   // Card 10
   card10Title: { type: ControlType.String, title: "Card 10 Title", defaultValue: "On-Premise vs Cloud AI Data Protection" },
   card10Badge: { type: ControlType.String, title: "Card 10 Badge", defaultValue: "Article" },
-  card10Href:  { type: ControlType.String, title: "Card 10 URL",   defaultValue: "on-premise-vs-cloud-ai-data-protection.html" },
+  card10Href:  { type: ControlType.String, title: "Card 10 URL",   defaultValue: "/resources/comparison/on-premise-vs-cloud-ai-data-protection" },
 
   // Card 11
   card11Title: { type: ControlType.String, title: "Card 11 Title", defaultValue: "Local Restoration vs Anonymization" },
   card11Badge: { type: ControlType.String, title: "Card 11 Badge", defaultValue: "Article" },
-  card11Href:  { type: ControlType.String, title: "Card 11 URL",   defaultValue: "local-restorationvs-anonymization.html" },
+  card11Href:  { type: ControlType.String, title: "Card 11 URL",   defaultValue: "/resources/comparison/local-restoration-vs-anonymization" },
 
   // Card 12
   card12Title: { type: ControlType.String, title: "Card 12 Title", defaultValue: "AI Data Pipeline Protection" },
   card12Badge: { type: ControlType.String, title: "Card 12 Badge", defaultValue: "Article" },
-  card12Href:  { type: ControlType.String, title: "Card 12 URL",   defaultValue: "ai-data-pipeline-protection.html" },
+  card12Href:  { type: ControlType.String, title: "Card 12 URL",   defaultValue: "/resources/learn/ai-data-pipeline-protection" },
 
   cardLinkLabel: {
     type: ControlType.String,
@@ -768,7 +768,7 @@ addPropertyControls(Learn, {
     displayTextArea: true,
   },
   ctaBtn1Label: { type: ControlType.String, title: "CTA Button 1 Label", defaultValue: "Request a Demo" },
-  ctaBtn1Href:  { type: ControlType.String, title: "CTA Button 1 URL",   defaultValue: "request-pov.html" },
+  ctaBtn1Href:  { type: ControlType.String, title: "CTA Button 1 URL",   defaultValue: "/request-a-demo" },
   ctaSecondaryLink2Label: { type: ControlType.String, title: "CTA Secondary Link 2 Label", defaultValue: "Available on AWS Marketplace" },
   ctaSecondaryLink2Href:  { type: ControlType.String, title: "CTA Secondary Link 2 URL",   defaultValue: "https://aws.amazon.com/marketplace" },
 })

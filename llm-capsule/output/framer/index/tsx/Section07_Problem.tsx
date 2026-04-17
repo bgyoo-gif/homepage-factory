@@ -199,7 +199,7 @@ export default function Section07_Problem({
               <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: `url('${perfBannerBgImage}')` }}>
                 <p><span className="idx-product">LLM Capsule</span> sits between your documents and any AI model. It replaces sensitive data with safe placeholders inside your environment, lets AI process the protected version, then restores real data back into AI outputs — not at the model layer, not at the prompt layer, but at the data layer where it matters.</p>
                 <div className="idx-banner-full__actions">
-                  <a href="architecture.html" className="idx-btn idx-btn--secondary idx-btn--sm">See how it works</a>
+                  <a href="/architecture" className="idx-btn idx-btn--secondary idx-btn--sm">See how it works</a>
                 </div>
               </div>
             </div>

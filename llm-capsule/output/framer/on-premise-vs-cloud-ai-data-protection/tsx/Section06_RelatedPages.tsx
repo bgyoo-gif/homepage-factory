@@ -83,10 +83,10 @@ const IconLink = () => (
 // ─── Component ─────────────────────────────────────────────────────────────
 export default function Section06_RelatedPages({
   sectionLabel,
-  link1Title, link1Href = "product.html",
-  link2Title, link2Href = "architecture.html",
-  link3Title, link3Href = "trust.html",
-  link4Title, link4Href = "request-pov.html",
+  link1Title, link1Href = "/product",
+  link2Title, link2Href = "/architecture",
+  link3Title, link3Href = "/trust",
+  link4Title, link4Href = "/request-a-demo",
   lang = "en",
 }: Props) {
   const L = LABELS[lang]
@@ -215,11 +215,11 @@ addPropertyControls(Section06_RelatedPages, {
     defaultValue: "Related",
   },
   link1Title: { type: ControlType.String, title: "Link 1 Title", defaultValue: "Product Overview" },
-  link1Href:  { type: ControlType.String, title: "Link 1 URL",   defaultValue: "product.html" },
+  link1Href:  { type: ControlType.String, title: "Link 1 URL",   defaultValue: "/product" },
   link2Title: { type: ControlType.String, title: "Link 2 Title", defaultValue: "Architecture" },
-  link2Href:  { type: ControlType.String, title: "Link 2 URL",   defaultValue: "architecture.html" },
+  link2Href:  { type: ControlType.String, title: "Link 2 URL",   defaultValue: "/architecture" },
   link3Title: { type: ControlType.String, title: "Link 3 Title", defaultValue: "Trust & Compliance" },
-  link3Href:  { type: ControlType.String, title: "Link 3 URL",   defaultValue: "trust.html" },
+  link3Href:  { type: ControlType.String, title: "Link 3 URL",   defaultValue: "/trust" },
   link4Title: { type: ControlType.String, title: "Link 4 Title", defaultValue: "Request a Demo" },
-  link4Href:  { type: ControlType.String, title: "Link 4 URL",   defaultValue: "request-pov.html" },
+  link4Href:  { type: ControlType.String, title: "Link 4 URL",   defaultValue: "/request-a-demo" },
 })

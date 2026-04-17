@@ -210,7 +210,7 @@ export default function Index({
   heroTitle = "Use any AI on your real documents — without exposing a single line",
   heroDescription = "Your sensitive documents go through LLM Capsule before reaching AI. Confidential names, figures, and terms are replaced locally — AI processes the safe version — then results are restored with your original data. Each organization defines what counts as sensitive.",
   heroBtn1Label = "Request a Demo",
-  heroBtn1Href = "request-pov.html",
+  heroBtn1Href = "/request-a-demo",
   heroBtn4Label = "Available on AWS Marketplace",
   heroBtn4Href = "https://aws.amazon.com/marketplace",
   heroBgImage = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-hero.webp",
@@ -271,7 +271,7 @@ export default function Index({
   ctaTitle = "See how LLM Capsule enables AI on your enterprise documents",
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate how the AI enablement data layer works on your actual data, in your environment, against your compliance requirements.",
   ctaBtn1Label = "Request a Demo",
-  ctaBtn1Href = "request-pov.html",
+  ctaBtn1Href = "/request-a-demo",
   ctaBtn4Label = "Available on AWS Marketplace",
   ctaBtn4Href = "https://aws.amazon.com/marketplace",
   ctaBgImage = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-cta.webp",
@@ -1002,9 +1002,9 @@ export default function Index({
               <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: `url('${probBannerBgImage}')` }}>
                 <p><span className="idx-product">LLM Capsule</span> is not a masking tool, not a prompt filter, and not a redaction layer. It is the data layer that sits between your documents and any AI — making enterprise AI adoption possible without compromise.</p>
                 <div className="idx-banner-full__actions">
-                  <a href="product.html" className="idx-btn idx-btn--secondary idx-btn--md">See Product</a>
-                  <a href="architecture.html" className="idx-btn idx-btn--secondary idx-btn--md">View Architecture</a>
-                  <a href="what-is-ai-data-capsule.html" className="idx-btn idx-btn--secondary idx-btn--sm">Read the capsule model</a>
+                  <a href="/product" className="idx-btn idx-btn--secondary idx-btn--md">See Product</a>
+                  <a href="/architecture" className="idx-btn idx-btn--secondary idx-btn--md">View Architecture</a>
+                  <a href="/resources/learn/what-is-ai-data-capsule" className="idx-btn idx-btn--secondary idx-btn--sm">Read the capsule model</a>
                 </div>
               </div>
             </div>
@@ -1023,34 +1023,34 @@ export default function Index({
               </div>
 
               <div className="idx-feature-grid">
-                <a href="solutions.html" className="idx-feature-item">
+                <a href="/solutions" className="idx-feature-item">
                   <div className="idx-feature-item__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
                   <span className="idx-feature-item__title">Public Sector</span>
                 </a>
-                <a href="solutions.html" className="idx-feature-item">
+                <a href="/solutions" className="idx-feature-item">
                   <div className="idx-feature-item__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></div>
                   <span className="idx-feature-item__title">Finance &amp; Insurance</span>
                 </a>
-                <a href="solutions.html" className="idx-feature-item">
+                <a href="/solutions" className="idx-feature-item">
                   <div className="idx-feature-item__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19.5 12.572l-7.5 7.428l-7.5-7.428A5 5 0 0 1 12 6.006a5 5 0 0 1 7.5 6.572"/><path d="M12 6V2"/><path d="M8 2h8"/></svg></div>
                   <span className="idx-feature-item__title">Healthcare</span>
                 </a>
-                <a href="solutions.html" className="idx-feature-item">
+                <a href="/solutions" className="idx-feature-item">
                   <div className="idx-feature-item__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></div>
                   <span className="idx-feature-item__title">Legal</span>
                 </a>
-                <a href="solutions.html" className="idx-feature-item">
+                <a href="/solutions" className="idx-feature-item">
                   <div className="idx-feature-item__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.4"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.4"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg></div>
                   <span className="idx-feature-item__title">Telecom</span>
                 </a>
-                <a href="solutions.html" className="idx-feature-item">
+                <a href="/solutions" className="idx-feature-item">
                   <div className="idx-feature-item__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
                   <span className="idx-feature-item__title">Network Security</span>
                 </a>
               </div>
 
               <div className="idx-center-cta">
-                <a href="solutions.html" className="idx-btn idx-btn--secondary idx-btn--md">See industry solutions</a>
+                <a href="/solutions" className="idx-btn idx-btn--secondary idx-btn--md">See industry solutions</a>
               </div>
             </div>
           </section>
@@ -1207,7 +1207,7 @@ export default function Index({
               <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: `url('${perfBannerBgImage}')` }}>
                 <p><span className="idx-product">LLM Capsule</span> sits between your documents and any AI model. It replaces sensitive data with safe placeholders inside your environment, lets AI process the protected version, then restores real data back into AI outputs — not at the model layer, not at the prompt layer, but at the data layer where it matters.</p>
                 <div className="idx-banner-full__actions">
-                  <a href="architecture.html" className="idx-btn idx-btn--secondary idx-btn--sm">See how it works</a>
+                  <a href="/architecture" className="idx-btn idx-btn--secondary idx-btn--sm">See how it works</a>
                 </div>
               </div>
             </div>
@@ -1469,7 +1469,7 @@ addPropertyControls(Index, {
   heroTitle:       { type: ControlType.String, title: "Hero Title",       defaultValue: "Use any AI on your real documents — without exposing a single line", displayTextArea: true },
   heroDescription: { type: ControlType.String, title: "Hero Description", defaultValue: "Your sensitive documents go through LLM Capsule before reaching AI.", displayTextArea: true },
   heroBtn1Label:   { type: ControlType.String, title: "Hero Btn 1",       defaultValue: "Request a Demo" },
-  heroBtn1Href:    { type: ControlType.String, title: "Hero Btn 1 URL",   defaultValue: "request-pov.html" },
+  heroBtn1Href:    { type: ControlType.String, title: "Hero Btn 1 URL",   defaultValue: "/request-a-demo" },
   heroBtn4Label:   { type: ControlType.String, title: "Hero Btn 4",       defaultValue: "Available on AWS Marketplace" },
   heroBtn4Href:    { type: ControlType.String, title: "Hero Btn 4 URL",   defaultValue: "https://aws.amazon.com/marketplace" },
   heroBgImage:     { type: ControlType.Image,  title: "Hero Background Image" },
@@ -1514,7 +1514,7 @@ addPropertyControls(Index, {
   ctaTitle:        { type: ControlType.String, title: "CTA Title",        defaultValue: "See how LLM Capsule enables AI on your enterprise documents", displayTextArea: true },
   ctaDescription:  { type: ControlType.String, title: "CTA Description",  defaultValue: "Bring your documents, deployment constraints, and evaluation criteria.", displayTextArea: true },
   ctaBtn1Label:    { type: ControlType.String, title: "CTA Btn 1",        defaultValue: "Request a Demo" },
-  ctaBtn1Href:     { type: ControlType.String, title: "CTA Btn 1 URL",    defaultValue: "request-pov.html" },
+  ctaBtn1Href:     { type: ControlType.String, title: "CTA Btn 1 URL",    defaultValue: "/request-a-demo" },
   ctaBtn4Label:    { type: ControlType.String, title: "CTA Btn 4",        defaultValue: "Available on AWS Marketplace" },
   ctaBtn4Href:     { type: ControlType.String, title: "CTA Btn 4 URL",    defaultValue: "https://aws.amazon.com/marketplace" },
 

@@ -23,12 +23,12 @@ interface Props {
 }
 
 const DEFAULT_LINKS: RelatedLink[] = [
-  { title: "Product Overview", href: "product.html", iconType: "product" },
-  { title: "Architecture", href: "architecture.html", iconType: "architecture" },
-  { title: "Trust & Compliance", href: "trust.html", iconType: "trust" },
-  { title: "Request a Demo", href: "request-pov.html", iconType: "arrow" },
-  { title: "Learn Hub", href: "learn.html", iconType: "book" },
-  { title: "Why Redaction Breaks AI", href: "why-redaction-breaks-enterprise-ai-workflows.html", iconType: "file" },
+  { title: "Product Overview", href: "/product", iconType: "product" },
+  { title: "Architecture", href: "/architecture", iconType: "architecture" },
+  { title: "Trust & Compliance", href: "/trust", iconType: "trust" },
+  { title: "Request a Demo", href: "/request-a-demo", iconType: "arrow" },
+  { title: "Learn Hub", href: "/resources/learn", iconType: "book" },
+  { title: "Why Redaction Breaks AI", href: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows", iconType: "file" },
 ]
 
 function IconSVG({ type }: { type: string }) {

@@ -26,7 +26,7 @@ export default function Section07_CTABand({
   titleSuffix = "works with your data",
   description = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   btn1Label = "Request a Demo",
-  btn1Href = "request-pov.html",
+  btn1Href = "/request-a-demo",
   footnoteLink2Label = "AWS Marketplace",
   footnoteLink2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -184,7 +184,7 @@ addPropertyControls(Section07_CTABand, {
   titleSuffix: { type: ControlType.String, title: "Title Suffix", defaultValue: "works with your data" },
   description: { type: ControlType.String, title: "Description", defaultValue: "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows." },
   btn1Label: { type: ControlType.String, title: "Button 1 Label", defaultValue: "Request a Demo" },
-  btn1Href:  { type: ControlType.String, title: "Button 1 URL",   defaultValue: "request-pov.html" },
+  btn1Href:  { type: ControlType.String, title: "Button 1 URL",   defaultValue: "/request-a-demo" },
   footnoteLink2Label: { type: ControlType.String, title: "Footnote Link 2 Label", defaultValue: "AWS Marketplace" },
   footnoteLink2Href:  { type: ControlType.String, title: "Footnote Link 2 URL",   defaultValue: "https://aws.amazon.com/marketplace" },
 })

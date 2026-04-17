@@ -171,21 +171,21 @@ export default function LlmCapsuleVsPromptSecurityGateways({
 
   // Related
   relatedLink1Label = "Product Overview",
-  relatedLink1Href = "product.html",
+  relatedLink1Href = "/product",
   relatedLink2Label = "Architecture",
-  relatedLink2Href = "architecture.html",
+  relatedLink2Href = "/architecture",
   relatedLink3Label = "Trust & Compliance",
-  relatedLink3Href = "trust.html",
+  relatedLink3Href = "/trust",
   relatedLink4Label = "Request a Demo",
-  relatedLink4Href = "request-pov.html",
+  relatedLink4Href = "/request-a-demo",
   relatedLink5Label = "Learn Hub",
-  relatedLink5Href = "learn.html",
+  relatedLink5Href = "/resources/learn",
 
   // CTA
   ctaTitle = "See how LLM Capsule works with your data",
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   ctaBtn1Label = "Request a Demo",
-  ctaBtn1Href = "request-pov.html",
+  ctaBtn1Href = "/request-a-demo",
   ctaFootnote2Label = "AWS Marketplace",
   ctaFootnote2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -979,7 +979,7 @@ addPropertyControls(LlmCapsuleVsPromptSecurityGateways, {
   relatedLink1Href: {
     type: ControlType.String,
     title: "Related Link 1 URL",
-    defaultValue: "product.html",
+    defaultValue: "/product",
   },
   relatedLink2Label: {
     type: ControlType.String,
@@ -989,7 +989,7 @@ addPropertyControls(LlmCapsuleVsPromptSecurityGateways, {
   relatedLink2Href: {
     type: ControlType.String,
     title: "Related Link 2 URL",
-    defaultValue: "architecture.html",
+    defaultValue: "/architecture",
   },
   relatedLink3Label: {
     type: ControlType.String,
@@ -999,7 +999,7 @@ addPropertyControls(LlmCapsuleVsPromptSecurityGateways, {
   relatedLink3Href: {
     type: ControlType.String,
     title: "Related Link 3 URL",
-    defaultValue: "trust.html",
+    defaultValue: "/trust",
   },
   relatedLink4Label: {
     type: ControlType.String,
@@ -1009,7 +1009,7 @@ addPropertyControls(LlmCapsuleVsPromptSecurityGateways, {
   relatedLink4Href: {
     type: ControlType.String,
     title: "Related Link 4 URL",
-    defaultValue: "request-pov.html",
+    defaultValue: "/request-a-demo",
   },
   relatedLink5Label: {
     type: ControlType.String,
@@ -1019,7 +1019,7 @@ addPropertyControls(LlmCapsuleVsPromptSecurityGateways, {
   relatedLink5Href: {
     type: ControlType.String,
     title: "Related Link 5 URL",
-    defaultValue: "learn.html",
+    defaultValue: "/resources/learn",
   },
   ctaTitle: {
     type: ControlType.String,
@@ -1040,7 +1040,7 @@ addPropertyControls(LlmCapsuleVsPromptSecurityGateways, {
   ctaBtn1Href: {
     type: ControlType.String,
     title: "CTA Button 1 URL",
-    defaultValue: "request-pov.html",
+    defaultValue: "/request-a-demo",
   },
   ctaFootnote2Label: {
     type: ControlType.String,

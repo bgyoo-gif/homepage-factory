@@ -30,7 +30,7 @@ const COPY = {
     titleSuffix: "works with your data",
     description: "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
     cta1Label: "Request a Demo",
-    cta1Href: "request-pov.html",
+    cta1Href: "/request-a-demo",
     footnoteLink2Label: "AWS Marketplace",
     footnoteLink2Href: "https://aws.amazon.com/marketplace",
   },
@@ -40,7 +40,7 @@ const COPY = {
     titleSuffix: "이 귀사의 데이터와 어떻게 동작하는지 확인하세요",
     description: "문서, 배포 제약 조건, 평가 기준을 가져오세요. 실제 워크플로우에서 시연합니다.",
     cta1Label: "데모 요청",
-    cta1Href: "request-pov.html",
+    cta1Href: "/request-a-demo",
     footnoteLink2Label: "AWS Marketplace",
     footnoteLink2Href: "https://aws.amazon.com/marketplace",
   },
@@ -229,7 +229,7 @@ addPropertyControls(Section09_CTA, {
   cta1Href: {
     type: ControlType.String,
     title: "CTA 1 URL",
-    defaultValue: "request-pov.html",
+    defaultValue: "/request-a-demo",
   },
   footnoteLink2Label: {
     type: ControlType.String,

@@ -142,17 +142,17 @@ export default function Resources({
   s2Card1Title = "Learn",
   s2Card1Description = "In-depth articles on enterprise AI enablement, secure LLM usage, structure-preserving processing, and restorable workflows.",
   s2Card1BtnLabel = "Browse Learn →",
-  s2Card1Href = "learn.html",
+  s2Card1Href = "/resources/learn",
 
   s2Card2Title = "Glossary",
   s2Card2Description = "Definitions of key concepts — restoration, zero exposure, enterprise context control, and structure-preserving processing.",
   s2Card2BtnLabel = "Browse Glossary →",
-  s2Card2Href = "glossary.html",
+  s2Card2Href = "/resources/glossary",
 
   s2Card3Title = "Trust Center",
   s2Card3Description = "Security certifications, compliance documentation, and audit information.",
   s2Card3BtnLabel = "Browse Trust Center →",
-  s2Card3Href = "trust-center.html",
+  s2Card3Href = "/trust-center",
 
   // Section 3 — Core Guides
   s3SectionTitle = "Core guides for enterprise AI",
@@ -162,23 +162,23 @@ export default function Resources({
   s3Guide1Title = "Secure Enterprise AI Data Workflows",
   s3Guide1Description = "The end-to-end operating model for protecting sensitive data across AI workflows while restoring usable outputs locally.",
   s3Guide1BtnLabel = "Read guide →",
-  s3Guide1Href = "secure-enterprise-ai-data-workflows.html",
+  s3Guide1Href = "/resources/learn/secure-enterprise-ai-data-workflows",
 
   s3Guide2Title = "What Is an AI Data Capsule?",
   s3Guide2Description = "The core concept behind local encapsulation, protected AI processing, and local restoration.",
   s3Guide2BtnLabel = "Read guide →",
-  s3Guide2Href = "what-is-ai-data-capsule.html",
+  s3Guide2Href = "/resources/learn/what-is-ai-data-capsule",
 
   s3Guide3Title = "Why Redaction Breaks Enterprise AI Workflows",
   s3Guide3Description = "Why masking and redaction tools fail in AI workflows, and what replaces them in enterprise production settings.",
   s3Guide3BtnLabel = "Read guide →",
-  s3Guide3Href = "why-redaction-breaks-enterprise-ai-workflows.html",
+  s3Guide3Href = "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
 
   // Section 4 — CTA Band
   ctaTitle = "See how LLM Capsule works with your data",
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   ctaBtn1Label = "Request a Demo",
-  ctaBtn1Href = "request-pov.html",
+  ctaBtn1Href = "/request-a-demo",
   ctaSecBtn2Label = "Available on AWS Marketplace",
   ctaSecBtn2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -666,7 +666,7 @@ addPropertyControls(Resources, {
   s2Card1Href: {
     type: ControlType.String,
     title: "S2 Card 1 URL",
-    defaultValue: "learn.html",
+    defaultValue: "/resources/learn",
   },
   s2Card2Title: {
     type: ControlType.String,
@@ -687,7 +687,7 @@ addPropertyControls(Resources, {
   s2Card2Href: {
     type: ControlType.String,
     title: "S2 Card 2 URL",
-    defaultValue: "glossary.html",
+    defaultValue: "/resources/glossary",
   },
   s2Card3Title: {
     type: ControlType.String,
@@ -708,7 +708,7 @@ addPropertyControls(Resources, {
   s2Card3Href: {
     type: ControlType.String,
     title: "S2 Card 3 URL",
-    defaultValue: "trust-center.html",
+    defaultValue: "/trust-center",
   },
 
   // Section 3 — Core Guides
@@ -747,7 +747,7 @@ addPropertyControls(Resources, {
   s3Guide1Href: {
     type: ControlType.String,
     title: "S3 Guide 1 URL",
-    defaultValue: "secure-enterprise-ai-data-workflows.html",
+    defaultValue: "/resources/learn/secure-enterprise-ai-data-workflows",
   },
   s3Guide2Title: {
     type: ControlType.String,
@@ -768,7 +768,7 @@ addPropertyControls(Resources, {
   s3Guide2Href: {
     type: ControlType.String,
     title: "S3 Guide 2 URL",
-    defaultValue: "what-is-ai-data-capsule.html",
+    defaultValue: "/resources/learn/what-is-ai-data-capsule",
   },
   s3Guide3Title: {
     type: ControlType.String,
@@ -789,7 +789,7 @@ addPropertyControls(Resources, {
   s3Guide3Href: {
     type: ControlType.String,
     title: "S3 Guide 3 URL",
-    defaultValue: "why-redaction-breaks-enterprise-ai-workflows.html",
+    defaultValue: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
   },
 
   // Section 4 — CTA Band
@@ -812,7 +812,7 @@ addPropertyControls(Resources, {
   ctaBtn1Href: {
     type: ControlType.String,
     title: "CTA Button 1 URL",
-    defaultValue: "request-pov.html",
+    defaultValue: "/request-a-demo",
   },
   ctaSecBtn2Label: {
     type: ControlType.String,

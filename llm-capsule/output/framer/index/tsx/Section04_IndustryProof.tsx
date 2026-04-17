@@ -120,34 +120,34 @@ export default function Section04_IndustryProof({
               </div>
 
               <div className="idx-feature-grid">
-                <a href="solutions.html" className="idx-feature-item">
+                <a href="/solutions" className="idx-feature-item">
                   <div className="idx-feature-item__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
                   <span className="idx-feature-item__title">Public Sector</span>
                 </a>
-                <a href="solutions.html" className="idx-feature-item">
+                <a href="/solutions" className="idx-feature-item">
                   <div className="idx-feature-item__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></div>
                   <span className="idx-feature-item__title">Finance &amp; Insurance</span>
                 </a>
-                <a href="solutions.html" className="idx-feature-item">
+                <a href="/solutions" className="idx-feature-item">
                   <div className="idx-feature-item__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19.5 12.572l-7.5 7.428l-7.5-7.428A5 5 0 0 1 12 6.006a5 5 0 0 1 7.5 6.572"/><path d="M12 6V2"/><path d="M8 2h8"/></svg></div>
                   <span className="idx-feature-item__title">Healthcare</span>
                 </a>
-                <a href="solutions.html" className="idx-feature-item">
+                <a href="/solutions" className="idx-feature-item">
                   <div className="idx-feature-item__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></div>
                   <span className="idx-feature-item__title">Legal</span>
                 </a>
-                <a href="solutions.html" className="idx-feature-item">
+                <a href="/solutions" className="idx-feature-item">
                   <div className="idx-feature-item__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.4"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.4"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg></div>
                   <span className="idx-feature-item__title">Telecom</span>
                 </a>
-                <a href="solutions.html" className="idx-feature-item">
+                <a href="/solutions" className="idx-feature-item">
                   <div className="idx-feature-item__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
                   <span className="idx-feature-item__title">Network Security</span>
                 </a>
               </div>
 
               <div className="idx-center-cta">
-                <a href="solutions.html" className="idx-btn idx-btn--secondary idx-btn--md">See industry solutions</a>
+                <a href="/solutions" className="idx-btn idx-btn--secondary idx-btn--md">See industry solutions</a>
               </div>
             </div>
           </section>

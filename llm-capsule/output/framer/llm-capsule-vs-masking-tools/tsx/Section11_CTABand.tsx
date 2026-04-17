@@ -27,7 +27,7 @@ export default function Section11_CTABand({
   titleProduct = "LLM Capsule",
   description = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   primaryCTALabel = "Request a Demo",
-  primaryCTAHref = "request-pov.html",
+  primaryCTAHref = "/request-a-demo",
   footnoteLinks = [
     { label: "AWS Marketplace", href: "https://aws.amazon.com/marketplace" },
   ],
@@ -207,6 +207,6 @@ addPropertyControls(Section11_CTABand, {
   primaryCTAHref: {
     type: ControlType.String,
     title: "Primary CTA URL",
-    defaultValue: "request-pov.html",
+    defaultValue: "/request-a-demo",
   },
 })

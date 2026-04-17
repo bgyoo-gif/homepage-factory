@@ -26,27 +26,27 @@ interface Props {
 const DEFAULT_ITEMS_EN: RelatedItem[] = [
   {
     title: "Product Overview",
-    href: "product.html",
+    href: "/product",
     iconPath: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z",
   },
   {
     title: "Architecture",
-    href: "architecture.html",
+    href: "/architecture",
     iconPath: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
   },
   {
     title: "Trust & Compliance",
-    href: "trust.html",
+    href: "/trust",
     iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zm-3-7l2 2 4-4",
   },
   {
     title: "Request a Demo",
-    href: "request-pov.html",
+    href: "/request-a-demo",
     iconPath: "M5 12h14M12 5l7 7-7 7",
   },
   {
     title: "Why Redaction Breaks AI",
-    href: "why-redaction-breaks-enterprise-ai-workflows.html",
+    href: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
     iconPath: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H9H8",
   },
 ]
@@ -54,27 +54,27 @@ const DEFAULT_ITEMS_EN: RelatedItem[] = [
 const DEFAULT_ITEMS_KO: RelatedItem[] = [
   {
     title: "제품 개요",
-    href: "product.html",
+    href: "/product",
     iconPath: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z",
   },
   {
     title: "아키텍처",
-    href: "architecture.html",
+    href: "/architecture",
     iconPath: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
   },
   {
     title: "신뢰 & 컴플라이언스",
-    href: "trust.html",
+    href: "/trust",
     iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zm-3-7l2 2 4-4",
   },
   {
     title: "데모 요청",
-    href: "request-pov.html",
+    href: "/request-a-demo",
     iconPath: "M5 12h14M12 5l7 7-7 7",
   },
   {
     title: "왜 편집이 AI를 망치는가",
-    href: "why-redaction-breaks-enterprise-ai-workflows.html",
+    href: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
     iconPath: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H9H8",
   },
 ]

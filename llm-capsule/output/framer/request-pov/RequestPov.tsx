@@ -171,7 +171,7 @@ export default function RequestPov({
   ctaTitle = "See how LLM Capsule works with your data",
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   ctaBtn1Label = "Request a Demo",
-  ctaBtn1Href = "request-pov.html",
+  ctaBtn1Href = "/request-a-demo",
   ctaFootnote2Label = "Available on AWS Marketplace",
   ctaFootnote2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -839,7 +839,7 @@ addPropertyControls(RequestPov, {
     displayTextArea: true,
   },
   ctaBtn1Label: { type: ControlType.String, title: "CTA Btn 1 Label", defaultValue: "Request a Demo" },
-  ctaBtn1Href:  { type: ControlType.String, title: "CTA Btn 1 URL",   defaultValue: "request-pov.html" },
+  ctaBtn1Href:  { type: ControlType.String, title: "CTA Btn 1 URL",   defaultValue: "/request-a-demo" },
   ctaFootnote2Label: { type: ControlType.String, title: "CTA Footnote 2 Label", defaultValue: "Available on AWS Marketplace" },
   ctaFootnote2Href:  { type: ControlType.String, title: "CTA Footnote 2 URL",   defaultValue: "https://aws.amazon.com/marketplace" },
 })

@@ -30,13 +30,13 @@ interface Props {
 export default function Section07_RelatedPages({
   sectionLabel = "Related",
   card1Title   = "Product Overview",
-  card1Href    = "product.html",
+  card1Href    = "/product",
   card2Title   = "Architecture",
-  card2Href    = "architecture.html",
+  card2Href    = "/architecture",
   card3Title   = "Trust & Compliance",
-  card3Href    = "trust.html",
+  card3Href    = "/trust",
   card4Title   = "Request a Demo",
-  card4Href    = "request-pov.html",
+  card4Href    = "/request-a-demo",
   locale       = "en",
 }: Props) {
   return (
@@ -208,7 +208,7 @@ addPropertyControls(Section07_RelatedPages, {
   card1Href: {
     type: ControlType.String,
     title: "Card 1 URL",
-    defaultValue: "product.html",
+    defaultValue: "/product",
   },
   card2Title: {
     type: ControlType.String,
@@ -218,7 +218,7 @@ addPropertyControls(Section07_RelatedPages, {
   card2Href: {
     type: ControlType.String,
     title: "Card 2 URL",
-    defaultValue: "architecture.html",
+    defaultValue: "/architecture",
   },
   card3Title: {
     type: ControlType.String,
@@ -228,7 +228,7 @@ addPropertyControls(Section07_RelatedPages, {
   card3Href: {
     type: ControlType.String,
     title: "Card 3 URL",
-    defaultValue: "trust.html",
+    defaultValue: "/trust",
   },
   card4Title: {
     type: ControlType.String,
@@ -238,7 +238,7 @@ addPropertyControls(Section07_RelatedPages, {
   card4Href: {
     type: ControlType.String,
     title: "Card 4 URL",
-    defaultValue: "request-pov.html",
+    defaultValue: "/request-a-demo",
   },
   locale: {
     type: ControlType.Enum,

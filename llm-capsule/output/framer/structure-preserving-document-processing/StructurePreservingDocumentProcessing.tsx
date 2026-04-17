@@ -160,20 +160,20 @@ export default function StructurePreservingDocumentProcessing({
   faq2Answer = "Flat masking treats every sensitive value identically, replacing it with a generic token regardless of context. Structure-preserving processing maintains semantic relationships, entity consistency, and document layout during protection.",
 
   relatedCard1Label = "Product Overview",
-  relatedCard1Href = "product.html",
+  relatedCard1Href = "/product",
   relatedCard2Label = "Architecture",
-  relatedCard2Href = "architecture.html",
+  relatedCard2Href = "/architecture",
   relatedCard3Label = "Trust & Compliance",
-  relatedCard3Href = "trust.html",
+  relatedCard3Href = "/trust",
   relatedCard4Label = "Request a Demo",
-  relatedCard4Href = "request-pov.html",
+  relatedCard4Href = "/request-a-demo",
   relatedCard5Label = "Structure-Preserving vs Flat Masking",
-  relatedCard5Href = "structure-preserving-processing-vs-flat-masking.html",
+  relatedCard5Href = "/resources/comparison/structure-preserving-processing-vs-flat-masking",
 
   ctaTitle = "See how LLM Capsule works with your data",
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   ctaBtn1Label = "Request a Demo",
-  ctaBtn1Href = "request-pov.html",
+  ctaBtn1Href = "/request-a-demo",
   ctaFootnoteLink2Label = "AWS Marketplace",
   ctaFootnoteLink2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -528,11 +528,11 @@ export default function StructurePreservingDocumentProcessing({
             <section id="section-hero" className="spdp-section--hero">
               <div className="spdp-article-container">
                 <nav className="spdp-breadcrumb" aria-label="Breadcrumb">
-                  <a href="index.html" className="spdp-breadcrumb__link">{breadcrumbHome}</a>
+                  <a href="/" className="spdp-breadcrumb__link">{breadcrumbHome}</a>
                   <span className="spdp-breadcrumb__sep">/</span>
-                  <a href="resources.html" className="spdp-breadcrumb__link">{breadcrumbResources}</a>
+                  <a href="/resources" className="spdp-breadcrumb__link">{breadcrumbResources}</a>
                   <span className="spdp-breadcrumb__sep">/</span>
-                  <a href="learn.html" className="spdp-breadcrumb__link">{breadcrumbLearn}</a>
+                  <a href="/resources/learn" className="spdp-breadcrumb__link">{breadcrumbLearn}</a>
                   <span className="spdp-breadcrumb__sep">/</span>
                   <span className="spdp-breadcrumb__current">{heroTitle}</span>
                 </nav>
@@ -900,7 +900,7 @@ addPropertyControls(StructurePreservingDocumentProcessing, {
   relatedCard1Href: {
     type: ControlType.String,
     title: "Related Card 1 URL",
-    defaultValue: "product.html",
+    defaultValue: "/product",
   },
   relatedCard2Label: {
     type: ControlType.String,
@@ -910,7 +910,7 @@ addPropertyControls(StructurePreservingDocumentProcessing, {
   relatedCard2Href: {
     type: ControlType.String,
     title: "Related Card 2 URL",
-    defaultValue: "architecture.html",
+    defaultValue: "/architecture",
   },
   relatedCard3Label: {
     type: ControlType.String,
@@ -920,7 +920,7 @@ addPropertyControls(StructurePreservingDocumentProcessing, {
   relatedCard3Href: {
     type: ControlType.String,
     title: "Related Card 3 URL",
-    defaultValue: "trust.html",
+    defaultValue: "/trust",
   },
   relatedCard4Label: {
     type: ControlType.String,
@@ -930,7 +930,7 @@ addPropertyControls(StructurePreservingDocumentProcessing, {
   relatedCard4Href: {
     type: ControlType.String,
     title: "Related Card 4 URL",
-    defaultValue: "request-pov.html",
+    defaultValue: "/request-a-demo",
   },
   relatedCard5Label: {
     type: ControlType.String,
@@ -940,7 +940,7 @@ addPropertyControls(StructurePreservingDocumentProcessing, {
   relatedCard5Href: {
     type: ControlType.String,
     title: "Related Card 5 URL",
-    defaultValue: "structure-preserving-processing-vs-flat-masking.html",
+    defaultValue: "/resources/comparison/structure-preserving-processing-vs-flat-masking",
   },
   ctaTitle: {
     type: ControlType.String,
@@ -961,7 +961,7 @@ addPropertyControls(StructurePreservingDocumentProcessing, {
   ctaBtn1Href: {
     type: ControlType.String,
     title: "CTA Button 1 URL",
-    defaultValue: "request-pov.html",
+    defaultValue: "/request-a-demo",
   },
   ctaFootnoteLink2Label: {
     type: ControlType.String,

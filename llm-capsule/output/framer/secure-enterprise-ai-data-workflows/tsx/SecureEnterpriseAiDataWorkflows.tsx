@@ -238,7 +238,7 @@ export default function SecureEnterpriseAiDataWorkflows({
   ctaTitle = "See how LLM Capsule works with your data",
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   ctaBtn1Label = "Request a Demo",
-  ctaBtn1Href = "request-pov.html",
+  ctaBtn1Href = "/request-a-demo",
   ctaFootnote2Label = "AWS Marketplace",
   ctaFootnote2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -522,11 +522,11 @@ export default function SecureEnterpriseAiDataWorkflows({
             <section id="section-hero" className="seadw-section--hero">
               <div className="seadw-article-container">
                 <nav className="seadw-breadcrumb" aria-label="Breadcrumb">
-                  <a href="index.html" className="seadw-breadcrumb__link">Home</a>
+                  <a href="/" className="seadw-breadcrumb__link">Home</a>
                   <span className="seadw-breadcrumb__sep">/</span>
-                  <a href="resources.html" className="seadw-breadcrumb__link">Resources</a>
+                  <a href="/resources" className="seadw-breadcrumb__link">Resources</a>
                   <span className="seadw-breadcrumb__sep">/</span>
-                  <a href="learn.html" className="seadw-breadcrumb__link">Learn</a>
+                  <a href="/resources/learn" className="seadw-breadcrumb__link">Learn</a>
                   <span className="seadw-breadcrumb__sep">/</span>
                   <span className="seadw-breadcrumb__current">Secure Enterprise AI Data Workflows</span>
                 </nav>
@@ -634,7 +634,7 @@ export default function SecureEnterpriseAiDataWorkflows({
                 </div>
 
                 <div className="seadw-card-grid seadw-card-grid--2col">
-                  <a href="product.html" className="seadw-card--dark">
+                  <a href="/product" className="seadw-card--dark">
                     <span className="seadw-card--dark__icon">
                       <svg className="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
@@ -642,7 +642,7 @@ export default function SecureEnterpriseAiDataWorkflows({
                     </span>
                     <span className="seadw-card--dark__title">Product Overview</span>
                   </a>
-                  <a href="architecture.html" className="seadw-card--dark">
+                  <a href="/architecture" className="seadw-card--dark">
                     <span className="seadw-card--dark__icon">
                       <svg className="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -652,7 +652,7 @@ export default function SecureEnterpriseAiDataWorkflows({
                     </span>
                     <span className="seadw-card--dark__title">Architecture</span>
                   </a>
-                  <a href="trust.html" className="seadw-card--dark">
+                  <a href="/trust" className="seadw-card--dark">
                     <span className="seadw-card--dark__icon">
                       <svg className="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -661,7 +661,7 @@ export default function SecureEnterpriseAiDataWorkflows({
                     </span>
                     <span className="seadw-card--dark__title">Trust &amp; Compliance</span>
                   </a>
-                  <a href="request-pov.html" className="seadw-card--dark">
+                  <a href="/request-a-demo" className="seadw-card--dark">
                     <span className="seadw-card--dark__icon">
                       <svg className="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <line x1="5" y1="12" x2="19" y2="12" />
@@ -670,7 +670,7 @@ export default function SecureEnterpriseAiDataWorkflows({
                     </span>
                     <span className="seadw-card--dark__title">Request a Demo</span>
                   </a>
-                  <a href="what-is-ai-data-capsule.html" className="seadw-card--dark">
+                  <a href="/resources/learn/what-is-ai-data-capsule" className="seadw-card--dark">
                     <span className="seadw-card--dark__icon">
                       <svg className="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -679,7 +679,7 @@ export default function SecureEnterpriseAiDataWorkflows({
                     </span>
                     <span className="seadw-card--dark__title">What Is an AI Data Capsule</span>
                   </a>
-                  <a href="how-to-use-ai-on-sensitive-enterprise-data.html" className="seadw-card--dark">
+                  <a href="/resources/learn/how-to-use-ai-on-sensitive-enterprise-data" className="seadw-card--dark">
                     <span className="seadw-card--dark__icon">
                       <svg className="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <circle cx="12" cy="12" r="10" />
@@ -689,7 +689,7 @@ export default function SecureEnterpriseAiDataWorkflows({
                     </span>
                     <span className="seadw-card--dark__title">AI on Sensitive Data</span>
                   </a>
-                  <a href="why-redaction-breaks-enterprise-ai-workflows.html" className="seadw-card--dark">
+                  <a href="/resources/learn/why-redaction-breaks-enterprise-ai-workflows" className="seadw-card--dark">
                     <span className="seadw-card--dark__icon">
                       <svg className="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <circle cx="12" cy="12" r="10" />
@@ -698,7 +698,7 @@ export default function SecureEnterpriseAiDataWorkflows({
                     </span>
                     <span className="seadw-card--dark__title">Why Redaction Breaks AI</span>
                   </a>
-                  <a href="secure-enterprise-ai-workflows.html" className="seadw-card--dark">
+                  <a href="/resources/learn/secure-enterprise-ai-workflows" className="seadw-card--dark">
                     <span className="seadw-card--dark__icon">
                       <svg className="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -706,7 +706,7 @@ export default function SecureEnterpriseAiDataWorkflows({
                     </span>
                     <span className="seadw-card--dark__title">Secure AI Workflows</span>
                   </a>
-                  <a href="structure-preserving-document-processing.html" className="seadw-card--dark">
+                  <a href="/resources/learn/structure-preserving-document-processing" className="seadw-card--dark">
                     <span className="seadw-card--dark__icon">
                       <svg className="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
@@ -717,7 +717,7 @@ export default function SecureEnterpriseAiDataWorkflows({
                     </span>
                     <span className="seadw-card--dark__title">Structure-Preserving Processing</span>
                   </a>
-                  <a href="pii-protection-vs-enterprise-confidentiality-control.html" className="seadw-card--dark">
+                  <a href="/resources/comparison/pii-protection-vs-enterprise-confidentiality-control" className="seadw-card--dark">
                     <span className="seadw-card--dark__icon">
                       <svg className="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
@@ -726,7 +726,7 @@ export default function SecureEnterpriseAiDataWorkflows({
                     </span>
                     <span className="seadw-card--dark__title">PII vs Confidentiality Control</span>
                   </a>
-                  <a href="on-premise-vs-cloud-ai-data-protection.html" className="seadw-card--dark">
+                  <a href="/resources/comparison/on-premise-vs-cloud-ai-data-protection" className="seadw-card--dark">
                     <span className="seadw-card--dark__icon">
                       <svg className="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <polyline points="17 1 21 5 17 9" />
@@ -737,7 +737,7 @@ export default function SecureEnterpriseAiDataWorkflows({
                     </span>
                     <span className="seadw-card--dark__title">On-Premise vs Cloud</span>
                   </a>
-                  <a href="ai-data-pipeline-protection.html" className="seadw-card--dark">
+                  <a href="/resources/learn/ai-data-pipeline-protection" className="seadw-card--dark">
                     <span className="seadw-card--dark__icon">
                       <svg className="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -942,7 +942,7 @@ addPropertyControls(SecureEnterpriseAiDataWorkflows, {
   ctaBtn1Href: {
     type: ControlType.String,
     title: "CTA Button 1 URL",
-    defaultValue: "request-pov.html",
+    defaultValue: "/request-a-demo",
   },
   ctaFootnote2Label: {
     type: ControlType.String,

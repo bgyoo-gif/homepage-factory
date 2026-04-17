@@ -37,7 +37,7 @@ export default function Section08_CTABand({
   titleSuffix  = "works with your data",
   description  = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   cta1Label    = "Request a Demo",
-  cta1Href     = "request-pov.html",
+  cta1Href     = "/request-a-demo",
   footnote2Label = "AWS Marketplace",
   footnote2Href  = "https://aws.amazon.com/marketplace",
   locale         = "en",
@@ -220,7 +220,7 @@ addPropertyControls(Section08_CTABand, {
   cta1Href: {
     type: ControlType.String,
     title: "CTA 1 URL",
-    defaultValue: "request-pov.html",
+    defaultValue: "/request-a-demo",
   },
   footnote2Label: {
     type: ControlType.String,

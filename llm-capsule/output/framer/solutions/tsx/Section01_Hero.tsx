@@ -27,9 +27,9 @@ export default function Section01_Hero({
   titleHighlight = "Every Industry",
   description = "Regulated and document-heavy industries can now adopt AI on real enterprise data. LLM Capsule is an AI enablement data layer and plugin that removes the data exposure barrier blocking enterprise AI adoption — enabling AI first, protecting data at the data layer.",
   primaryBtnLabel = "Request a Demo",
-  primaryBtnHref = "request-pov.html",
+  primaryBtnHref = "/request-a-demo",
   secondaryBtnLabel = "See Product",
-  secondaryBtnHref = "product.html",
+  secondaryBtnHref = "/product",
 }: Props) {
   return (
     <>
@@ -214,7 +214,7 @@ addPropertyControls(Section01_Hero, {
   primaryBtnHref: {
     type: ControlType.String,
     title: "Primary CTA URL",
-    defaultValue: "request-pov.html",
+    defaultValue: "/request-a-demo",
   },
   secondaryBtnLabel: {
     type: ControlType.String,
@@ -224,6 +224,6 @@ addPropertyControls(Section01_Hero, {
   secondaryBtnHref: {
     type: ControlType.String,
     title: "Secondary CTA URL",
-    defaultValue: "product.html",
+    defaultValue: "/product",
   },
 })

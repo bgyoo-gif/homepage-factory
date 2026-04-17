@@ -207,9 +207,9 @@ export default function Section03_FiveCapabilities({
               <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: `url('${probBannerBgImage}')` }}>
                 <p><span className="idx-product">LLM Capsule</span> is not a masking tool, not a prompt filter, and not a redaction layer. It is the data layer that sits between your documents and any AI — making enterprise AI adoption possible without compromise.</p>
                 <div className="idx-banner-full__actions">
-                  <a href="product.html" className="idx-btn idx-btn--secondary idx-btn--md">See Product</a>
-                  <a href="architecture.html" className="idx-btn idx-btn--secondary idx-btn--md">View Architecture</a>
-                  <a href="what-is-ai-data-capsule.html" className="idx-btn idx-btn--secondary idx-btn--sm">Read the capsule model</a>
+                  <a href="/product" className="idx-btn idx-btn--secondary idx-btn--md">See Product</a>
+                  <a href="/architecture" className="idx-btn idx-btn--secondary idx-btn--md">View Architecture</a>
+                  <a href="/resources/learn/what-is-ai-data-capsule" className="idx-btn idx-btn--secondary idx-btn--sm">Read the capsule model</a>
                 </div>
               </div>
             </div>

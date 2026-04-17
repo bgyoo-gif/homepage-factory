@@ -162,7 +162,7 @@ export default function LocalRestorationVsAnonymization({
   ctaTitle = "See how LLM Capsule works with your data",
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   ctaBtn1Label = "Request a Demo",
-  ctaBtn1Href = "request-pov.html",
+  ctaBtn1Href = "/request-a-demo",
   ctaFootnote2Label = "AWS Marketplace",
   ctaFootnote2Href = "https://aws.amazon.com/marketplace",
 }: Props) {
@@ -545,11 +545,11 @@ export default function LocalRestorationVsAnonymization({
             <section id="section-hero" className="lrva-section--hero">
               <div className="lrva-article-container">
                 <nav className="lrva-breadcrumb" aria-label="Breadcrumb">
-                  <a href="index.html" className="lrva-breadcrumb__link">Home</a>
+                  <a href="/" className="lrva-breadcrumb__link">Home</a>
                   <span className="lrva-breadcrumb__sep">/</span>
-                  <a href="resources.html" className="lrva-breadcrumb__link">Resources</a>
+                  <a href="/resources" className="lrva-breadcrumb__link">Resources</a>
                   <span className="lrva-breadcrumb__sep">/</span>
-                  <a href="comparison.html" className="lrva-breadcrumb__link">Comparison</a>
+                  <a href="/resources/comparison" className="lrva-breadcrumb__link">Comparison</a>
                   <span className="lrva-breadcrumb__sep">/</span>
                   <span className="lrva-breadcrumb__current">Local Restoration vs Anonymization</span>
                 </nav>
@@ -728,7 +728,7 @@ export default function LocalRestorationVsAnonymization({
                   <span className="lrva-section-title-icon__text">Related</span>
                 </div>
                 <div className="lrva-card-grid lrva-card-grid--2col">
-                  <a href="product.html" className="lrva-card--dark">
+                  <a href="/product" className="lrva-card--dark">
                     <span className="lrva-card--dark__icon">
                       <svg className="lrva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
@@ -736,7 +736,7 @@ export default function LocalRestorationVsAnonymization({
                     </span>
                     <span className="lrva-card--dark__title">Product Overview</span>
                   </a>
-                  <a href="architecture.html" className="lrva-card--dark">
+                  <a href="/architecture" className="lrva-card--dark">
                     <span className="lrva-card--dark__icon">
                       <svg className="lrva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -746,7 +746,7 @@ export default function LocalRestorationVsAnonymization({
                     </span>
                     <span className="lrva-card--dark__title">Architecture</span>
                   </a>
-                  <a href="trust.html" className="lrva-card--dark">
+                  <a href="/trust" className="lrva-card--dark">
                     <span className="lrva-card--dark__icon">
                       <svg className="lrva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -755,7 +755,7 @@ export default function LocalRestorationVsAnonymization({
                     </span>
                     <span className="lrva-card--dark__title">Trust &amp; Compliance</span>
                   </a>
-                  <a href="request-pov.html" className="lrva-card--dark">
+                  <a href="/request-a-demo" className="lrva-card--dark">
                     <span className="lrva-card--dark__icon">
                       <svg className="lrva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <line x1="5" y1="12" x2="19" y2="12" />
@@ -764,7 +764,7 @@ export default function LocalRestorationVsAnonymization({
                     </span>
                     <span className="lrva-card--dark__title">Request a Demo</span>
                   </a>
-                  <a href="learn.html" className="lrva-card--dark">
+                  <a href="/resources/learn" className="lrva-card--dark">
                     <span className="lrva-card--dark__icon">
                       <svg className="lrva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
@@ -937,7 +937,7 @@ addPropertyControls(LocalRestorationVsAnonymization, {
   ctaBtn1Href: {
     type: ControlType.String,
     title: "CTA Button 1 URL",
-    defaultValue: "request-pov.html",
+    defaultValue: "/request-a-demo",
   },
   ctaFootnote2Label: {
     type: ControlType.String,

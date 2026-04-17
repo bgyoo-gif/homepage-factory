@@ -112,9 +112,9 @@ export default function Restoration({
   ctaTitle = "See LLM Capsule Restoration in Action",
   ctaDescription = "Experience how enterprise AI outputs are restored to their original context with real data.",
   ctaBtn1Label = "Request a Demo",
-  ctaBtn1Href = "request-pov.html",
+  ctaBtn1Href = "/request-a-demo",
   ctaBtn2Label = "View Product",
-  ctaBtn2Href = "product.html",
+  ctaBtn2Href = "/product",
   ctaFootnote = "Enterprise AI Enablement by CUBIG",
 
 }: Props) {
@@ -514,10 +514,10 @@ export default function Restoration({
                 </div>
 
                 <div className="rst-related-terms">
-                  <a href="zero-exposure.html" className="rst-btn rst-btn--secondary rst-btn--sm">Zero Exposure</a>
-                  <a href="restorable-workflow.html" className="rst-btn rst-btn--secondary rst-btn--sm">Restorable Workflow</a>
-                  <a href="structure-preserving-processing.html" className="rst-btn rst-btn--secondary rst-btn--sm">Structure-Preserving Processing</a>
-                  <a href="enterprise-context-control.html" className="rst-btn rst-btn--secondary rst-btn--sm">Enterprise Context Control</a>
+                  <a href="/resources/glossary/zero-exposure" className="rst-btn rst-btn--secondary rst-btn--sm">Zero Exposure</a>
+                  <a href="/resources/glossary/restorable-workflow" className="rst-btn rst-btn--secondary rst-btn--sm">Restorable Workflow</a>
+                  <a href="/resources/glossary/structure-preserving-processing" className="rst-btn rst-btn--secondary rst-btn--sm">Structure-Preserving Processing</a>
+                  <a href="/resources/glossary/enterprise-context-control" className="rst-btn rst-btn--secondary rst-btn--sm">Enterprise Context Control</a>
                 </div>
 
                 <div className="rst-section-title-icon">
@@ -531,7 +531,7 @@ export default function Restoration({
                 </div>
 
                 <div className="rst-card-grid rst-card-grid--2col">
-                  <a href="product.html" className="rst-card--dark">
+                  <a href="/product" className="rst-card--dark">
                     <span className="rst-card--dark__icon">
                       <svg className="rst-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
@@ -539,7 +539,7 @@ export default function Restoration({
                     </span>
                     <span className="rst-card--dark__title">Product Overview</span>
                   </a>
-                  <a href="architecture.html" className="rst-card--dark">
+                  <a href="/architecture" className="rst-card--dark">
                     <span className="rst-card--dark__icon">
                       <svg className="rst-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -549,7 +549,7 @@ export default function Restoration({
                     </span>
                     <span className="rst-card--dark__title">Architecture</span>
                   </a>
-                  <a href="trust.html" className="rst-card--dark">
+                  <a href="/trust" className="rst-card--dark">
                     <span className="rst-card--dark__icon">
                       <svg className="rst-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -558,7 +558,7 @@ export default function Restoration({
                     </span>
                     <span className="rst-card--dark__title">Trust &amp; Compliance</span>
                   </a>
-                  <a href="request-pov.html" className="rst-card--dark">
+                  <a href="/request-a-demo" className="rst-card--dark">
                     <span className="rst-card--dark__icon">
                       <svg className="rst-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <line x1="5" y1="12" x2="19" y2="12" />
@@ -668,7 +668,7 @@ addPropertyControls(Restoration, {
   ctaBtn1Href: {
     type: ControlType.String,
     title: "CTA Button 1 URL",
-    defaultValue: "request-pov.html",
+    defaultValue: "/request-a-demo",
   },
   ctaBtn2Label: {
     type: ControlType.String,
@@ -678,7 +678,7 @@ addPropertyControls(Restoration, {
   ctaBtn2Href: {
     type: ControlType.String,
     title: "CTA Button 2 URL",
-    defaultValue: "product.html",
+    defaultValue: "/product",
   },
   ctaFootnote: {
     type: ControlType.String,

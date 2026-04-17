@@ -43,9 +43,9 @@ export default function Section07_CTA({
   titleSuffix = " for Your Enterprise",
   description = "Process sensitive data through any LLM without exposure. Experience the AI enablement data layer.",
   cta1Label = "Request a Demo",
-  cta1Href = "request-pov.html",
+  cta1Href = "/request-a-demo",
   cta2Label = "View Product",
-  cta2Href = "product.html",
+  cta2Href = "/product",
   footnote = "Enterprise AI Enablement by CUBIG",
   jsonLd = DEFAULT_JSON_LD,
 }: Props) {
@@ -214,7 +214,7 @@ addPropertyControls(Section07_CTA, {
   cta1Href: {
     type: ControlType.String,
     title: "CTA 1 URL",
-    defaultValue: "request-pov.html",
+    defaultValue: "/request-a-demo",
   },
   cta2Label: {
     type: ControlType.String,
@@ -224,7 +224,7 @@ addPropertyControls(Section07_CTA, {
   cta2Href: {
     type: ControlType.String,
     title: "CTA 2 URL",
-    defaultValue: "product.html",
+    defaultValue: "/product",
   },
   footnote: {
     type: ControlType.String,
