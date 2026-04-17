@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-04-17 15:48:32",
+  "generated": "2026-04-17 15:58:44",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1765,7 +1765,7 @@
         {
           "name": "Section03_CTABand.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/pricing/tsx/Section03_CTABand.tsx",
-          "modified": "2026-04-15"
+          "modified": "2026-04-17"
         },
         {
           "name": "Section01_Hero.tsx",
