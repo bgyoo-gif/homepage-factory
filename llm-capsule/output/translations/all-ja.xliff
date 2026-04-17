@@ -4953,7 +4953,7 @@
     </unit>
     <unit id="heroDescription">
       <segment>
-        <source>Technical documentation, learning resources, glossary, and downloads for enterprise AI enablement with LLM Capsule.</source>
+        <source>Technical documentation, learning resources, glossary, and trust information for enterprise AI enablement with LLM Capsule.</source>
         <target>LLM Capsuleによる企業AIの導入に向けた技術ドキュメント、学習リソース、用語集、ダウンロード資料です。</target>
       </segment>
     </unit>
@@ -5011,37 +5011,19 @@
         <target>用語集を見る →</target>
       </segment>
     </unit>
-    <unit id="s2Card3Title">
-      <segment>
-        <source>Downloads</source>
-        <target>ダウンロード</target>
-      </segment>
-    </unit>
-    <unit id="s2Card3Description">
-      <segment>
-        <source>Architecture briefs, technical documentation, and deployment guides for enterprise evaluation.</source>
-        <target>企業評価のためのアーキテクチャ概要、技術ドキュメント、デプロイガイドです。</target>
-      </segment>
-    </unit>
-    <unit id="s2Card3BtnLabel">
-      <segment>
-        <source>Browse Downloads →</source>
-        <target>ダウンロードを見る →</target>
-      </segment>
-    </unit>
-    <unit id="s2Card4Title">
+<unit id="s2Card3Title">
       <segment>
         <source>Trust Center</source>
         <target>Trust Center</target>
       </segment>
     </unit>
-    <unit id="s2Card4Description">
+    <unit id="s2Card3Description">
       <segment>
         <source>Security certifications, compliance documentation, and audit information.</source>
         <target>セキュリティ認証、コンプライアンスドキュメント、監査情報です。</target>
       </segment>
     </unit>
-    <unit id="s2Card4BtnLabel">
+    <unit id="s2Card3BtnLabel">
       <segment>
         <source>Browse Trust Center →</source>
         <target>Trust Centerを見る →</target>

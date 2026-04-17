@@ -4953,8 +4953,8 @@
     </unit>
     <unit id="heroDescription">
       <segment>
-        <source>Technical documentation, learning resources, glossary, and downloads for enterprise AI enablement with LLM Capsule.</source>
-        <target>Technische Dokumentation, Lernressourcen, Glossar und Downloads zur KI-Einführung im Unternehmen mit LLM Capsule.</target>
+        <source>Technical documentation, learning resources, glossary, and trust information for enterprise AI enablement with LLM Capsule.</source>
+        <target>Technische Dokumentation, Lernressourcen, Glossar und Vertrauensinformationen zur KI-Einführung im Unternehmen mit LLM Capsule.</target>
       </segment>
     </unit>
     <unit id="s2SectionTitle">
@@ -5011,37 +5011,19 @@
         <target>Glossar ansehen →</target>
       </segment>
     </unit>
-    <unit id="s2Card3Title">
-      <segment>
-        <source>Downloads</source>
-        <target>Downloads</target>
-      </segment>
-    </unit>
-    <unit id="s2Card3Description">
-      <segment>
-        <source>Architecture briefs, technical documentation, and deployment guides for enterprise evaluation.</source>
-        <target>Architektur-Überblicke, technische Dokumentation und Deployment-Leitfäden für die Unternehmensbewertung.</target>
-      </segment>
-    </unit>
-    <unit id="s2Card3BtnLabel">
-      <segment>
-        <source>Browse Downloads →</source>
-        <target>Downloads ansehen →</target>
-      </segment>
-    </unit>
-    <unit id="s2Card4Title">
+<unit id="s2Card3Title">
       <segment>
         <source>Trust Center</source>
         <target>Trust Center</target>
       </segment>
     </unit>
-    <unit id="s2Card4Description">
+    <unit id="s2Card3Description">
       <segment>
         <source>Security certifications, compliance documentation, and audit information.</source>
         <target>Sicherheitszertifizierungen, Compliance-Dokumentation und Audit-Informationen.</target>
       </segment>
     </unit>
-    <unit id="s2Card4BtnLabel">
+    <unit id="s2Card3BtnLabel">
       <segment>
         <source>Browse Trust Center →</source>
         <target>Trust Center ansehen →</target>

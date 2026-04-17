@@ -4953,8 +4953,8 @@
     </unit>
     <unit id="heroDescription">
       <segment>
-        <source>Technical documentation, learning resources, glossary, and downloads for enterprise AI enablement with LLM Capsule.</source>
-        <target>LLM Capsule을 활용한 기업 AI 도입을 위한 기술 문서, 학습 리소스, 용어집, 다운로드 자료입니다.</target>
+        <source>Technical documentation, learning resources, glossary, and trust information for enterprise AI enablement with LLM Capsule.</source>
+        <target>LLM Capsule을 활용한 기업 AI 도입을 위한 기술 문서, 학습 리소스, 용어집, 신뢰 정보입니다.</target>
       </segment>
     </unit>
     <unit id="s2SectionTitle">
@@ -5011,37 +5011,19 @@
         <target>용어집 보기 →</target>
       </segment>
     </unit>
-    <unit id="s2Card3Title">
-      <segment>
-        <source>Downloads</source>
-        <target>다운로드</target>
-      </segment>
-    </unit>
-    <unit id="s2Card3Description">
-      <segment>
-        <source>Architecture briefs, technical documentation, and deployment guides for enterprise evaluation.</source>
-        <target>기업 평가를 위한 아키텍처 브리프, 기술 문서, 배포 가이드입니다.</target>
-      </segment>
-    </unit>
-    <unit id="s2Card3BtnLabel">
-      <segment>
-        <source>Browse Downloads →</source>
-        <target>다운로드 보기 →</target>
-      </segment>
-    </unit>
-    <unit id="s2Card4Title">
+<unit id="s2Card3Title">
       <segment>
         <source>Trust Center</source>
         <target>Trust Center</target>
       </segment>
     </unit>
-    <unit id="s2Card4Description">
+    <unit id="s2Card3Description">
       <segment>
         <source>Security certifications, compliance documentation, and audit information.</source>
         <target>보안 인증, 컴플라이언스 문서, 감사 정보입니다.</target>
       </segment>
     </unit>
-    <unit id="s2Card4BtnLabel">
+    <unit id="s2Card3BtnLabel">
       <segment>
         <source>Browse Trust Center →</source>
         <target>Trust Center 보기 →</target>
