@@ -48,6 +48,7 @@ interface Props {
   ctaGhostHref?: string
   screenshotDesc?: string
   screenshotFrameBg?: string
+  screenshotImage?: string
 }
 
 export default function Section01_Hero({
@@ -63,6 +64,7 @@ export default function Section01_Hero({
   ctaGhostHref = "#section-11",
   screenshotDesc = "LLM Capsule Dashboard — Real-time encapsulation pipeline with document processing status",
   screenshotFrameBg = `${IMAGE_BASE}/images/bg-gradient-navy-teal.png`,
+  screenshotImage = "",
 }: Props) {
   return (
     <>
@@ -283,13 +285,17 @@ export default function Section01_Hero({
                 <a href={ctaGhostHref} className="s1-btn s1-btn--ghost">{ctaGhost}</a>
               </div>
               <div className="s1-screenshot-frame">
-                <div className="s1-screenshot-placeholder">
-                  <svg className="s1-placeholder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
-                  </svg>
-                  <span className="s1-placeholder-label">Product Screenshot</span>
-                  <span className="s1-placeholder-desc">{screenshotDesc}</span>
-                </div>
+                {screenshotImage ? (
+                  <img src={screenshotImage} alt={screenshotDesc} style={{ width: "100%", display: "block" }} />
+                ) : (
+                  <div className="s1-screenshot-placeholder">
+                    <svg className="s1-placeholder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+                    </svg>
+                    <span className="s1-placeholder-label">Product Screenshot</span>
+                    <span className="s1-placeholder-desc">{screenshotDesc}</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -312,4 +318,5 @@ addPropertyControls(Section01_Hero, {
   ctaGhostHref:    { type: ControlType.String, title: "CTA Ghost URL",   defaultValue: "#section-11" },
   screenshotDesc:  { type: ControlType.String, title: "Screenshot desc", defaultValue: "LLM Capsule Dashboard — Real-time encapsulation pipeline with document processing status", displayTextArea: true },
   screenshotFrameBg: { type: ControlType.Image, title: "Screenshot Frame BG" },
+  screenshotImage:   { type: ControlType.Image, title: "Screenshot Image" },
 })
