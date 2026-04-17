@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-04-17 15:09:54",
+  "generated": "2026-04-17 15:21:12",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1239,6 +1239,11 @@
           "name": "zero-exposure-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/zero-exposure-spec.md",
           "modified": "2026-04-09"
+        },
+        {
+          "name": "translations.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/resources/translations.md",
+          "modified": "2026-04-17"
         }
       ],
       "tsx": [

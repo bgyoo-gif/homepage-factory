@@ -28,6 +28,7 @@ interface Props {
   restoredLabel?: string
   restoredText?: string
   visualBgImage?: string
+  visualImage?: string
 }
 
 export default function Section04_Restoration({
@@ -41,6 +42,7 @@ export default function Section04_Restoration({
   restoredLabel = "Restored",
   restoredText = "James Mitchell submitted claim #INS-2024-0847 on March 5, 2025 for property at 42 Lincoln Ave, Chicago. Total assessed damage: $247,000.",
   visualBgImage = `${IMAGE_BASE}/images/bg-wave-teal-blue.png`,
+  visualImage = "",
 }: Props) {
   return (
     <>
