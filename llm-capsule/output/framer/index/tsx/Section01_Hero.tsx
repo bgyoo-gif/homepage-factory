@@ -88,9 +88,14 @@ export default function Section01_Hero({
   heroBtn1Href = "/request-a-demo",
   heroBtn4Label = "Available on AWS Marketplace",
   heroBtn4Href = "https://aws.amazon.com/marketplace",
-  heroBgImage = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-hero.webp",
-  heroScreenshot = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/screenshot-index-hero.webp",
+  heroBgImage = "",
+  heroScreenshot = "",
 }: Props) {
+  const DEFAULT_HERO_BG = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-hero.webp"
+  const DEFAULT_HERO_SCREENSHOT = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/screenshot-index-hero.webp"
+  const resolvedHeroBg = heroBgImage || DEFAULT_HERO_BG
+  const resolvedHeroScreenshot = heroScreenshot || DEFAULT_HERO_SCREENSHOT
+
   return (
     <>
       {/* JSON-LD */}
@@ -166,7 +171,7 @@ export default function Section01_Hero({
           border-radius: 40px 40px 0 0;
           padding: 48px 48px 0;
           background-color: ${P.neutral100};
-          background-image: url('${heroBgImage}');
+          background-image: url('${resolvedHeroBg}');
           background-size: cover; background-position: center;
           overflow: hidden;
         }
@@ -201,7 +206,7 @@ export default function Section01_Hero({
               <div className="idx-hero__frame">
                 <div className="idx-hero__screenshot">
                   <img
-                    src={heroScreenshot}
+                    src={resolvedHeroScreenshot}
                     alt="LLM Capsule Dashboard"
                     loading="eager"
                   />

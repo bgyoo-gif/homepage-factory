@@ -62,8 +62,11 @@ export default function Section02_Trust({
   kpi2Label = "Restoration Rate",
   kpi3Number = "98%",
   kpi3Label = "Output Similarity",
-  kpiBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png",
+  kpiBgImage = "",
 }: Props) {
+  const DEFAULT_KPI_BG = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png"
+  const resolvedKpiBg = kpiBgImage || DEFAULT_KPI_BG
+
   return (
     <>
       <style>{`
@@ -141,7 +144,7 @@ export default function Section02_Trust({
           display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
           justify-items: center; margin: 32px 0;
           background: ${P.gradientBrand};
-          background-image: url('${kpiBgImage}');
+          background-image: url('${resolvedKpiBg}');
           background-size: cover; background-position: center;
           position: relative; overflow: hidden;
         }

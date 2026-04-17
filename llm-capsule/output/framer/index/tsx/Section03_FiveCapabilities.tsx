@@ -62,8 +62,11 @@ export default function Section03_FiveCapabilities({
   bannerBtn1Label = "See Product",
   bannerBtn2Label = "View Architecture",
   bannerBtn3Label = "Read the capsule model",
-  probBannerBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-sky-lavender.png",
+  probBannerBgImage = "",
 }: Props) {
+  const DEFAULT_BANNER_BG = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-sky-lavender.png"
+  const resolvedBannerBg = probBannerBgImage || DEFAULT_BANNER_BG
+
   return (
     <>
       <style>{`
@@ -241,7 +244,7 @@ export default function Section03_FiveCapabilities({
                 </div>
               </div>
 
-              <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: `url('${probBannerBgImage}')` }}>
+              <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: `url('${resolvedBannerBg}')` }}>
                 <p>{bannerText}</p>
                 <div className="idx-banner-full__actions">
                   <a href="/product" className="idx-btn idx-btn--secondary idx-btn--md">{bannerBtn1Label}</a>

@@ -36,7 +36,7 @@ interface Props {
 
 export default function Section08_BeforeAfter({
   baHeading = "From blocked AI projects to enabled enterprise AI with usable outputs",
-  baBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-smoke-pink.png",
+  baBgImage = "",
   withoutBadge = "WITHOUT LLM CAPSULE",
   withoutTitle = "Enterprise AI is blocked or broken",
   withoutBullet1 = "AI blocked entirely — security teams reject proposals due to data exposure risk",
@@ -54,6 +54,9 @@ export default function Section08_BeforeAfter({
   withBullet5 = "Tables, layouts, cross-references, and document hierarchy fully preserved through structure-preserving processing",
   withBullet6 = "98% output similarity with zero data exposure — measured on real enterprise document processing workloads",
 }: Props) {
+  const DEFAULT_BA_BG = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-smoke-pink.png"
+  const resolvedBaBg = baBgImage || DEFAULT_BA_BG
+
   return (
     <>
       <style>{`
@@ -131,7 +134,7 @@ export default function Section08_BeforeAfter({
         .idx-bullet--check .idx-bullet__icon::before { content: "\\2713"; color: ${P.success}; font-weight: 700; font-size: 16px; line-height: 1; }
 
         .idx-section--bg-img {
-          background-image: url('${baBgImage}');
+          background-image: url('${resolvedBaBg}');
           background-size: cover; background-position: center;
           position: relative;
         }

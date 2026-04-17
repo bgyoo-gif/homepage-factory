@@ -31,8 +31,8 @@ interface Props {
 export default function Section10_Performance({
   perfHeading = "Measured performance on real enterprise document processing workloads",
   perfSubheading = "These metrics are measured on enterprise documents with 2,200+ character average length across regulated industry workflows including finance, healthcare, legal, and public sector environments.",
-  perfKpiBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-navy-teal.png",
-  perfBannerBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-wave-teal.png",
+  perfKpiBgImage = "",
+  perfBannerBgImage = "",
   perf1Number = "98.1%",
   perf1Label = "Detection Accuracy",
   perf2Number = "99.14%",
@@ -44,6 +44,11 @@ export default function Section10_Performance({
   perfBannerText = "Enable AI. Protect data. Restore results. Track everything.",
   perfBannerCaption = "0.12s processing per 2,200-character document. Tested across finance, healthcare, legal, and public sector workflows",
 }: Props) {
+  const DEFAULT_KPI_BG = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-navy-teal.png"
+  const DEFAULT_BANNER_BG = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-wave-teal.png"
+  const resolvedKpiBg = perfKpiBgImage || DEFAULT_KPI_BG
+  const resolvedBannerBg = perfBannerBgImage || DEFAULT_BANNER_BG
+
   return (
     <>
       <style>{`
@@ -147,7 +152,7 @@ export default function Section10_Performance({
               <div
                 className="idx-kpi-band idx-kpi-band--4col"
                 style={{
-                  backgroundImage: `url('${perfKpiBgImage}')`,
+                  backgroundImage: `url('${resolvedKpiBg}')`,
                 }}
                 aria-label="Performance metrics"
               >
@@ -169,7 +174,7 @@ export default function Section10_Performance({
                 </div>
               </div>
 
-              <div className="idx-perf-banner" style={{ backgroundImage: `url('${perfBannerBgImage}')` }}>
+              <div className="idx-perf-banner" style={{ backgroundImage: `url('${resolvedBannerBg}')` }}>
                 <p>{perfBannerText}</p>
                 <span className="idx-caption">{perfBannerCaption}</span>
               </div>

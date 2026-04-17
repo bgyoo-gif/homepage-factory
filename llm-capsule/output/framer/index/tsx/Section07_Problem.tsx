@@ -70,8 +70,11 @@ export default function Section07_Problem({
   tableRow4Col4 = "Projects never demonstrate value before being cancelled",
   bannerText = "LLM Capsule sits between your documents and any AI model. It replaces sensitive data with safe placeholders inside your environment, lets AI process the protected version, then restores real data back into AI outputs — not at the model layer, not at the prompt layer, but at the data layer where it matters.",
   bannerBtnLabel = "See how it works",
-  perfBannerBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-lavender.png",
+  perfBannerBgImage = "",
 }: Props) {
+  const DEFAULT_BANNER_BG = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-lavender.png"
+  const resolvedBannerBg = perfBannerBgImage || DEFAULT_BANNER_BG
+
   return (
     <>
       <style>{`
@@ -267,7 +270,7 @@ export default function Section07_Problem({
                 </table>
               </div>
 
-              <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: `url('${perfBannerBgImage}')` }}>
+              <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: `url('${resolvedBannerBg}')` }}>
                 <p>{bannerText}</p>
                 <div className="idx-banner-full__actions">
                   <a href="/architecture" className="idx-btn idx-btn--secondary idx-btn--sm">{bannerBtnLabel}</a>
