@@ -246,6 +246,13 @@ grep '860' "$FILE"
 13. **overflow-x: auto scrollbar 숨김 필수**: `overflow-x: auto` 사용 시 반드시 `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }` 동반
 14. **미정의 CSS 변수 참조 금지**: TSX에서는 CSS 변수 대신 PALETTE 상수를 사용하되, 이 목록에 없는 색상·배경 이미지 변수는 사용 금지
 15. **모든 이미지 Props 노출 필수**: background-image, screenshot, 제품 이미지 등 모든 이미지 URL을 `ControlType.Image` Props로 노출한다. 하드코딩 URL 금지. Framer 캔버스에서 직접 교체 가능하도록.
+16. **모바일 이미지 처리 규칙 (max-width: 767px)**:
+    - 배경 이미지 프레임: `background-image: none; background-color: transparent; padding: 16px 16px 0; border-radius: 16px 16px 0 0;`
+    - 배경 이미지 섹션: `background-image: none;` (fallback background-color 필수)
+    - 스크린샷/제품 이미지: `width: 100%; display: block;` (img 태그 기본)
+    - 이미지 프레임 padding: desktop 48px → mobile 16px
+    - CTA/KPI 배경: `background-image: none;` + 단색 배경 fallback
+17. **모든 텍스트 Props 연결 필수**: JSX 내 하드코딩 텍스트 금지. heading, description, 카드 제목/설명, bullet, 테이블 내용, FAQ Q&A 등 모든 가시 텍스트는 Props + addPropertyControls로 노출.
 
 ### LLM Capsule 브랜드 팔레트 (brand === 'llm-capsule' 일 때)
 

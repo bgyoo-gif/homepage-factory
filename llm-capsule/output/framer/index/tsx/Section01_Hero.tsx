@@ -171,7 +171,12 @@ export default function Section01_Hero({
           overflow: hidden;
         }
         @container (max-width: 767px) {
-          .idx-hero__frame { border-radius: 24px 24px 0 0; background-image: none; }
+          .idx-hero__frame {
+            border-radius: 16px 16px 0 0;
+            padding: 16px 16px 0;
+            background-image: none;
+            background-color: transparent;
+          }
         }
         .idx-hero__screenshot { overflow: hidden; background: ${P.surfaceWhite}; }
         .idx-hero__screenshot img { width: 100%; display: block; }
