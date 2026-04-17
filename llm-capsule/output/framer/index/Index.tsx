@@ -152,6 +152,7 @@ interface Props {
   // Section 5 — Step Tabs
   tabsHeading?: string
   tabsSubheading?: string
+  tabsBgImage?: string
 
   // Section 6 — Case Study
   csHeading?: string
@@ -160,16 +161,21 @@ interface Props {
   // Section 7 — Problem
   probHeading?: string
   probSubheading?: string
+  probBannerBgImage?: string
 
   // Section 8 — Before/After
   baHeading?: string
+  baBgImage?: string
 
   // Section 9 — Diagram
   diagHeading?: string
   diagSubheading?: string
+  diagBgImage?: string
 
   // Section 10 — Performance
   perfHeading?: string
+  perfBannerBgImage?: string
+  perfKpiBgImage?: string
   perfSubheading?: string
   perf1Number?: string
   perf1Label?: string
@@ -187,6 +193,7 @@ interface Props {
   ctaBtn1Href?: string
   ctaBtn4Label?: string
   ctaBtn4Href?: string
+  ctaBgImage?: string
 
   // Section 12 — FAQ
   faqHeading?: string
@@ -220,19 +227,25 @@ export default function Index({
 
   tabsHeading = "Enterprise AI enablement through a 3+2 architecture",
   tabsSubheading = "LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 data layer architecture: three core enablement pillars plus two additional value capabilities that ensure output quality and model flexibility.",
+  tabsBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png",
 
   csHeading = "AI-Enabled Enterprise Workflows",
   csSubheading = "LLM Capsule plugs into the most common enterprise AI workflows — from document intake to output delivery, one data layer enables AI adoption on real documents.",
 
   probHeading = "Enterprise data is never AI-ready by default",
   probSubheading = "Every enterprise document contains sensitive information that cannot be sent to external AI models. But without real data, AI outputs are generic and unusable. This is the core barrier to enterprise AI adoption.",
+  probBannerBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-sky-lavender.png",
 
   baHeading = "From blocked AI projects to enabled enterprise AI with usable outputs",
+  baBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-smoke-pink.png",
 
   diagHeading = "A data layer between your enterprise and any LLM",
   diagSubheading = "LLM Capsule sits between your internal systems and external AI models. Raw data stays inside your environment — the trust boundary is never crossed by original data. AI only processes the protected version.",
+  diagBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-wave-teal.png",
 
   perfHeading = "Measured performance on real enterprise document processing workloads",
+  perfBannerBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-lavender.png",
+  perfKpiBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-navy-teal.png",
   perfSubheading = "These metrics are measured on enterprise documents with 2,200+ character average length across regulated industry workflows including finance, healthcare, legal, and public sector environments.",
   perf1Number = "98.1%",
   perf1Label = "Detection Accuracy",
@@ -249,6 +262,7 @@ export default function Index({
   ctaBtn1Href = "request-pov.html",
   ctaBtn4Label = "Available on AWS Marketplace",
   ctaBtn4Href = "https://aws.amazon.com/marketplace",
+  ctaBgImage = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-cta.webp",
 
   faqHeading = "Frequently Asked Questions",
 }: Props) {
@@ -469,7 +483,7 @@ export default function Index({
           display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
           justify-items: center; margin: 32px 0;
           background: ${P.gradientBrand};
-          background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png');
+          background-image: url('${tabsBgImage}');
           background-size: cover; background-position: center;
           position: relative; overflow: hidden;
         }
@@ -671,7 +685,7 @@ export default function Index({
 
         /* Section 8 — bg-img overlay */
         .idx-section--bg-img {
-          background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-smoke-pink.png');
+          background-image: url('${baBgImage}');
           background-size: cover; background-position: center;
           position: relative;
         }
@@ -747,7 +761,7 @@ export default function Index({
         .idx-perf-banner {
           margin-top: 32px; padding: 32px 24px; text-align: center;
           border-radius: 40px;
-          background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-wave-teal.png');
+          background-image: url('${diagBgImage}');
           background-size: cover; background-position: center;
           position: relative; overflow: hidden;
         }
@@ -764,7 +778,7 @@ export default function Index({
         .idx-cta-band {
           width: 100%; position: relative; overflow: hidden;
           padding: 80px 16px; text-align: center;
-          background-image: url('https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-cta.webp');
+          background-image: url('${ctaBgImage}');
           background-color: ${P.neutral800};
           background-size: cover; background-position: center;
         }
@@ -968,7 +982,7 @@ export default function Index({
                 </div>
               </div>
 
-              <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: "url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-sky-lavender.png')" }}>
+              <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: `url('${probBannerBgImage}')` }}>
                 <p><span className="idx-product">LLM Capsule</span> is not a masking tool, not a prompt filter, and not a redaction layer. It is the data layer that sits between your documents and any AI — making enterprise AI adoption possible without compromise.</p>
                 <div className="idx-banner-full__actions">
                   <a href="product.html" className="idx-btn idx-btn--secondary idx-btn--md">See Product</a>
@@ -1171,7 +1185,7 @@ export default function Index({
                 </table>
               </div>
 
-              <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: "url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-lavender.png')" }}>
+              <div className="idx-banner-full idx-spaced-top" style={{ backgroundImage: `url('${perfBannerBgImage}')` }}>
                 <p><span className="idx-product">LLM Capsule</span> sits between your documents and any AI model. It replaces sensitive data with safe placeholders inside your environment, lets AI process the protected version, then restores real data back into AI outputs — not at the model layer, not at the prompt layer, but at the data layer where it matters.</p>
                 <div className="idx-banner-full__actions">
                   <a href="architecture.html" className="idx-btn idx-btn--secondary idx-btn--sm">See how it works</a>
@@ -1339,7 +1353,7 @@ export default function Index({
               <div
                 className="idx-kpi-band idx-kpi-band--4col"
                 style={{
-                  backgroundImage: "url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-navy-teal.png')",
+                  backgroundImage: `url('${perfKpiBgImage}')`,
                 }}
                 aria-label="Performance metrics"
               >
@@ -1457,6 +1471,15 @@ addPropertyControls(Index, {
   perf3Label:      { type: ControlType.String, title: "Perf 3 Label",     defaultValue: "Structured PII" },
   perf4Number:     { type: ControlType.String, title: "Perf 4 Number",    defaultValue: "98%" },
   perf4Label:      { type: ControlType.String, title: "Perf 4 Label",     defaultValue: "Response Similarity" },
+
+  // Background Images
+  tabsBgImage:        { type: ControlType.Image, title: "Step Tabs BG Image" },
+  probBannerBgImage:  { type: ControlType.Image, title: "Problem Banner BG Image" },
+  baBgImage:          { type: ControlType.Image, title: "Before/After BG Image" },
+  diagBgImage:        { type: ControlType.Image, title: "Diagram BG Image" },
+  perfBannerBgImage:  { type: ControlType.Image, title: "Performance Banner BG Image" },
+  perfKpiBgImage:     { type: ControlType.Image, title: "Performance KPI BG Image" },
+  ctaBgImage:         { type: ControlType.Image, title: "CTA BG Image" },
 
   // Section 11 CTA
   ctaTitle:        { type: ControlType.String, title: "CTA Title",        defaultValue: "See how LLM Capsule enables AI on your enterprise documents", displayTextArea: true },
