@@ -35,6 +35,7 @@ interface Props {
   sectionDescription?: string
   productName?: string
   sectionBgImage?: string
+  diagramImage?: string
 }
 
 export default function Section02_ArchitectureOverview({
@@ -43,6 +44,7 @@ export default function Section02_ArchitectureOverview({
   sectionDescription = "LLM Capsule operates as an AI enablement data layer that encapsulates sensitive enterprise data locally, transmits only protected representations to any external AI service, and restores AI outputs within the enterprise environment — enabling safe AI adoption at scale.",
   productName = "LLM Capsule",
   sectionBgImage = `${IMAGE_BASE}/bg-gradient-blue-violet.png`,
+  diagramImage = "",
 }: Props) {
   return (
     <>
@@ -348,6 +350,9 @@ export default function Section02_ArchitectureOverview({
             </div>
 
             {/* Architecture Diagram */}
+            {diagramImage ? (
+              <img src={diagramImage} alt="Architecture Overview Diagram" style={{ width: "100%", display: "block", borderRadius: "16px" }} />
+            ) : (
             <div className="s2-diagram-window">
               <div className="s2-diagram-titlebar">
                 <div className="s2-titlebar-dot s2-titlebar-dot--close"></div>
@@ -456,6 +461,7 @@ export default function Section02_ArchitectureOverview({
                 </div>
               </div>
             </div>
+            )}
 
           </div>
         </div>
@@ -489,5 +495,9 @@ addPropertyControls(Section02_ArchitectureOverview, {
   sectionBgImage: {
     type: ControlType.Image,
     title: "Section Background",
+  },
+  diagramImage: {
+    type: ControlType.Image,
+    title: "Diagram Image (replaces HTML diagram)",
   },
 })
