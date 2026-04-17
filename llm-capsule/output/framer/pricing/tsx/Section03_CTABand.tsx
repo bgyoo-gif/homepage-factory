@@ -21,6 +21,7 @@ interface Props {
   btn1Href?: string
   footnoteLink2Label?: string
   footnoteLink2Href?: string
+  ctaBgImage?: string
 }
 
 // ─── JSON-LD ─────────────────────────────────────────────────────────────────
@@ -43,6 +44,7 @@ export default function Section03_CTABand({
   btn1Href           = "/request-a-demo",
   footnoteLink2Label = "Available on AWS Marketplace",
   footnoteLink2Href  = "https://aws.amazon.com/marketplace",
+  ctaBgImage         = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-navy-teal.png",
 }: Props) {
   return (
     <>
@@ -62,7 +64,7 @@ export default function Section03_CTABand({
           padding: 80px 16px;
           text-align: center;
           background-color: #171719;
-          background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-navy-teal.png');
+          background-image: url('${ctaBgImage}');
           background-size: cover;
           background-position: center;
         }
@@ -223,4 +225,5 @@ addPropertyControls(Section03_CTABand, {
   btn1Href:           { type: ControlType.String, title: "Button 1 URL",      defaultValue: "/request-a-demo" },
   footnoteLink2Label: { type: ControlType.String, title: "Footnote Link 2",   defaultValue: "Available on AWS Marketplace" },
   footnoteLink2Href:  { type: ControlType.String, title: "Footnote URL 2",    defaultValue: "https://aws.amazon.com/marketplace" },
+  ctaBgImage:         { type: ControlType.Image,  title: "CTA BG Image" },
 })
