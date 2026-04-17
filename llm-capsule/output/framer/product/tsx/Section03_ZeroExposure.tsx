@@ -29,7 +29,9 @@ interface Props {
   split2Check2Title?: string
   split2Check2Body?: string
   split1BgImage?: string
+  split1Image?: string
   split2BgImage?: string
+  split2Image?: string
 }
 
 export default function Section03_ZeroExposure({
@@ -49,7 +51,9 @@ export default function Section03_ZeroExposure({
   split2Check2Title = "Audit trail",
   split2Check2Body = "Every encapsulation event is logged with full traceability for enterprise AI governance and compliance reporting.",
   split1BgImage = `${IMAGE_BASE}/images/bg-gradient-blue-violet.png`,
+  split1Image = "",
   split2BgImage = `${IMAGE_BASE}/images/bg-gradient-violet-teal.png`,
+  split2Image = "",
 }: Props) {
   return (
     <>
@@ -249,13 +253,9 @@ export default function Section03_ZeroExposure({
             {/* Split 1: Local Real-Time Encapsulation */}
             <div className="s3-split">
               <div className="s3-visual s3-visual--blue">
-                <div className="s3-visual-placeholder">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
-                  </svg>
-                  <span className="s3-visual-placeholder-label">Product Screenshot</span>
-                  <span className="s3-visual-placeholder-desc">{split1ScreenshotDesc}</span>
-                </div>
+                {split1Image && (
+                  <img src={split1Image} alt={split1ScreenshotDesc} style={{ width: "100%", display: "block", borderRadius: "16px" }} />
+                )}
               </div>
               <div className="s3-content">
                 <p className="s3-lead">{split1Lead}</p>
@@ -275,13 +275,9 @@ export default function Section03_ZeroExposure({
             {/* Split 2: Protected Outbound Flow */}
             <div className="s3-split s3-split--reverse">
               <div className="s3-visual s3-visual--violet">
-                <div className="s3-visual-placeholder">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
-                  </svg>
-                  <span className="s3-visual-placeholder-label">Product Screenshot</span>
-                  <span className="s3-visual-placeholder-desc">{split2ScreenshotDesc}</span>
-                </div>
+                {split2Image && (
+                  <img src={split2Image} alt={split2ScreenshotDesc} style={{ width: "100%", display: "block", borderRadius: "16px" }} />
+                )}
               </div>
               <div className="s3-content">
                 <p className="s3-lead">{split2Lead}</p>
@@ -322,5 +318,7 @@ addPropertyControls(Section03_ZeroExposure, {
   split2Check2Title:   { type: ControlType.String, title: "Split 2 Check 2 Title",  defaultValue: "Audit trail" },
   split2Check2Body:    { type: ControlType.String, title: "Split 2 Check 2 Body",   defaultValue: "Every encapsulation event is logged with full traceability for enterprise AI governance and compliance reporting.", displayTextArea: true },
   split1BgImage:       { type: ControlType.Image, title: "Split 1 Background" },
+  split1Image:         { type: ControlType.Image, title: "Split 1 Screenshot" },
   split2BgImage:       { type: ControlType.Image, title: "Split 2 Background" },
+  split2Image:         { type: ControlType.Image, title: "Split 2 Screenshot" },
 })

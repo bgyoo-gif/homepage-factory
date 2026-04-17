@@ -250,17 +250,8 @@ export default function Section11_DeploymentReadiness({
             <p className="s11-body">{body}</p>
 
             <div className="s11-screenshot">
-              {screenshotImage ? (
+              {screenshotImage && (
                 <img src={screenshotImage} alt={screenshotDesc} style={{ width: "100%", display: "block", borderRadius: "8px" }} />
-              ) : (
-                <>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-                    <polyline points="21 15 16 10 5 21"/>
-                  </svg>
-                  <span className="s11-screenshot-label">Product Screenshot</span>
-                  <span className="s11-screenshot-desc">{screenshotDesc}</span>
-                </>
               )}
             </div>
 
