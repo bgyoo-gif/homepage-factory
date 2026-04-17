@@ -19,6 +19,7 @@ interface Props {
   cta1Href?: string
   footnote2Label?: string
   footnote2Href?: string
+  ctaBgImage?: string
 }
 
 export default function Section14_CTA({
@@ -28,6 +29,7 @@ export default function Section14_CTA({
   cta1Href    = "/request-a-demo",
   footnote2Label = "View on AWS Marketplace",
   footnote2Href  = "https://aws.amazon.com/marketplace",
+  ctaBgImage     = `${IMAGE_BASE}/images/bg-gradient-violet-teal.png`,
 }: Props) {
   return (
     <>
@@ -48,7 +50,7 @@ export default function Section14_CTA({
           padding: 80px 16px;
           text-align: center;
           background-color: #171719;
-          background-image: url('${IMAGE_BASE}/images/bg-gradient-violet-teal.png');
+          background-image: url('${ctaBgImage}');
           background-size: cover;
           background-position: center;
         }
@@ -194,4 +196,5 @@ addPropertyControls(Section14_CTA, {
   cta1Href:       { type: ControlType.String, title: "CTA 1 URL",      defaultValue: "/request-a-demo" },
   footnote2Label: { type: ControlType.String, title: "Footnote 2",     defaultValue: "View on AWS Marketplace" },
   footnote2Href:  { type: ControlType.String, title: "Footnote 2 URL", defaultValue: "https://aws.amazon.com/marketplace" },
+  ctaBgImage:     { type: ControlType.Image, title: "CTA Background" },
 })

@@ -47,6 +47,7 @@ interface Props {
   ctaGhost?: string
   ctaGhostHref?: string
   screenshotDesc?: string
+  screenshotFrameBg?: string
 }
 
 export default function Section01_Hero({
@@ -61,6 +62,7 @@ export default function Section01_Hero({
   ctaGhost = "See comparison",
   ctaGhostHref = "#section-11",
   screenshotDesc = "LLM Capsule Dashboard — Real-time encapsulation pipeline with document processing status",
+  screenshotFrameBg = `${IMAGE_BASE}/images/bg-gradient-navy-teal.png`,
 }: Props) {
   return (
     <>
@@ -221,7 +223,7 @@ export default function Section01_Hero({
           border-radius: 40px 40px 0 0;
           padding: 48px 48px 0;
           background-color: ${PALETTE.surfaceLight};
-          background-image: url('${IMAGE_BASE}/images/bg-gradient-navy-teal.png');
+          background-image: url('${screenshotFrameBg}');
           background-size: cover;
           background-position: center;
           overflow: hidden;
@@ -309,4 +311,5 @@ addPropertyControls(Section01_Hero, {
   ctaGhost:        { type: ControlType.String, title: "CTA Ghost",       defaultValue: "See comparison" },
   ctaGhostHref:    { type: ControlType.String, title: "CTA Ghost URL",   defaultValue: "#section-11" },
   screenshotDesc:  { type: ControlType.String, title: "Screenshot desc", defaultValue: "LLM Capsule Dashboard — Real-time encapsulation pipeline with document processing status", displayTextArea: true },
+  screenshotFrameBg: { type: ControlType.Image, title: "Screenshot Frame BG" },
 })

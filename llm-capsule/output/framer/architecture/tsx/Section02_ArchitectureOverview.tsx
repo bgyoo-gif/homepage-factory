@@ -34,6 +34,7 @@ interface Props {
   sectionTitleHighlight?: string
   sectionDescription?: string
   productName?: string
+  sectionBgImage?: string
 }
 
 export default function Section02_ArchitectureOverview({
@@ -41,6 +42,7 @@ export default function Section02_ArchitectureOverview({
   sectionTitleHighlight = "Overview",
   sectionDescription = "LLM Capsule operates as an AI enablement data layer that encapsulates sensitive enterprise data locally, transmits only protected representations to any external AI service, and restores AI outputs within the enterprise environment — enabling safe AI adoption at scale.",
   productName = "LLM Capsule",
+  sectionBgImage = `${IMAGE_BASE}/bg-gradient-blue-violet.png`,
 }: Props) {
   return (
     <>
@@ -55,7 +57,7 @@ export default function Section02_ArchitectureOverview({
           position: relative;
           background-size: cover;
           background-position: center;
-          background-image: url('${IMAGE_BASE}/bg-gradient-blue-violet.png');
+          background-image: url('${sectionBgImage}');
         }
         .s2-section::before {
           content: '';
@@ -483,5 +485,9 @@ addPropertyControls(Section02_ArchitectureOverview, {
     type: ControlType.String,
     title: "Product Name",
     defaultValue: "LLM Capsule",
+  },
+  sectionBgImage: {
+    type: ControlType.Image,
+    title: "Section Background",
   },
 })

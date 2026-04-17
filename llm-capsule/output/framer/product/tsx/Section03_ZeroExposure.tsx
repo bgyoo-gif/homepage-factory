@@ -28,6 +28,8 @@ interface Props {
   split2Check1Body?: string
   split2Check2Title?: string
   split2Check2Body?: string
+  split1BgImage?: string
+  split2BgImage?: string
 }
 
 export default function Section03_ZeroExposure({
@@ -46,6 +48,8 @@ export default function Section03_ZeroExposure({
   split2Check1Body = "Only encapsulated representations cross the trust boundary. The AI provider processes useful but opaque data.",
   split2Check2Title = "Audit trail",
   split2Check2Body = "Every encapsulation event is logged with full traceability for enterprise AI governance and compliance reporting.",
+  split1BgImage = `${IMAGE_BASE}/images/bg-gradient-blue-violet.png`,
+  split2BgImage = `${IMAGE_BASE}/images/bg-gradient-violet-teal.png`,
 }: Props) {
   return (
     <>
@@ -133,8 +137,8 @@ export default function Section03_ZeroExposure({
           gap: 12px;
           min-height: 320px;
         }
-        .s3-visual--blue { background-image: url('${IMAGE_BASE}/images/bg-gradient-blue-violet.png'); }
-        .s3-visual--violet { background-image: url('${IMAGE_BASE}/images/bg-gradient-violet-teal.png'); }
+        .s3-visual--blue { background-image: url('${split1BgImage}'); }
+        .s3-visual--violet { background-image: url('${split2BgImage}'); }
         @container (max-width: 767px) { .s3-visual { background-image: none !important; } }
 
         .s3-visual-placeholder {
@@ -317,4 +321,6 @@ addPropertyControls(Section03_ZeroExposure, {
   split2Check1Body:    { type: ControlType.String, title: "Split 2 Check 1 Body",   defaultValue: "Only encapsulated representations cross the trust boundary. The AI provider processes useful but opaque data.", displayTextArea: true },
   split2Check2Title:   { type: ControlType.String, title: "Split 2 Check 2 Title",  defaultValue: "Audit trail" },
   split2Check2Body:    { type: ControlType.String, title: "Split 2 Check 2 Body",   defaultValue: "Every encapsulation event is logged with full traceability for enterprise AI governance and compliance reporting.", displayTextArea: true },
+  split1BgImage:       { type: ControlType.Image, title: "Split 1 Background" },
+  split2BgImage:       { type: ControlType.Image, title: "Split 2 Background" },
 })

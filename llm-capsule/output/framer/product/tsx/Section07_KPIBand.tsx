@@ -18,6 +18,7 @@ interface Props {
   kpi3Label?: string
   kpi4Number?: string
   kpi4Label?: string
+  bandBgImage?: string
 }
 
 export default function Section07_KPIBand({
@@ -29,6 +30,7 @@ export default function Section07_KPIBand({
   kpi3Label  = "Local Restoration",
   kpi4Number = "Any",
   kpi4Label  = "LLM Model Support",
+  bandBgImage = `${IMAGE_BASE}/images/bg-gradient-navy-teal.png`,
 }: Props) {
   return (
     <>
@@ -61,7 +63,7 @@ export default function Section07_KPIBand({
           gap: 32px;
           justify-items: center;
           background-color: #171719;
-          background-image: url('${IMAGE_BASE}/images/bg-gradient-navy-teal.png');
+          background-image: url('${bandBgImage}');
           background-size: cover;
           background-position: center;
           position: relative;
@@ -139,4 +141,5 @@ addPropertyControls(Section07_KPIBand, {
   kpi3Label:  { type: ControlType.String, title: "KPI 3 Label",  defaultValue: "Local Restoration" },
   kpi4Number: { type: ControlType.String, title: "KPI 4 Number", defaultValue: "Any" },
   kpi4Label:  { type: ControlType.String, title: "KPI 4 Label",  defaultValue: "LLM Model Support" },
+  bandBgImage: { type: ControlType.Image, title: "Band Background" },
 })
