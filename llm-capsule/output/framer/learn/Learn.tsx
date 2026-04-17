@@ -152,6 +152,48 @@ const DEFAULT_CARDS: ArticleCard[] = [
     title: "AI Data Pipeline Protection",
     iconPath: "M16 4l-8 16",
   },
+  {
+    href: "/resources/glossary/restorable-workflow",
+    badgeType: "neutral",
+    badgeLabel: "Glossary",
+    title: "Restorable Workflow",
+    iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
+  },
+  {
+    href: "/resources/glossary/enterprise-context-control",
+    badgeType: "neutral",
+    badgeLabel: "Glossary",
+    title: "Enterprise Context Control",
+    iconPath: "M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z",
+  },
+  {
+    href: "/resources/comparison/llm-capsule-vs-masking-tools",
+    badgeType: "neutral",
+    badgeLabel: "Comparison",
+    title: "LLM Capsule vs Masking Tools",
+    iconPath: "M3 3v18h18",
+  },
+  {
+    href: "/resources/comparison/llm-capsule-vs-prompt-security-gateways",
+    badgeType: "neutral",
+    badgeLabel: "Comparison",
+    title: "LLM Capsule vs Prompt Security Gateways",
+    iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
+  },
+  {
+    href: "/resources/comparison/llm-capsule-vs-synthetic-data-platforms",
+    badgeType: "neutral",
+    badgeLabel: "Comparison",
+    title: "LLM Capsule vs Synthetic Data Platforms",
+    iconPath: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z",
+  },
+  {
+    href: "/resources/comparison/structure-preserving-processing-vs-flat-masking",
+    badgeType: "neutral",
+    badgeLabel: "Comparison",
+    title: "Structure-Preserving Processing vs Flat Masking",
+    iconPath: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z",
+  },
 ]
 
 // ─── SVG Icons per card ────────────────────────────────────────────────────────
@@ -363,6 +405,24 @@ export default function Learn({
   card12Title = "AI Data Pipeline Protection",
   card12Badge = "Article",
   card12Href = "/resources/learn/ai-data-pipeline-protection",
+  card13Title = "Restorable Workflow",
+  card13Badge = "Glossary",
+  card13Href = "/resources/glossary/restorable-workflow",
+  card14Title = "Enterprise Context Control",
+  card14Badge = "Glossary",
+  card14Href = "/resources/glossary/enterprise-context-control",
+  card15Title = "LLM Capsule vs Masking Tools",
+  card15Badge = "Comparison",
+  card15Href = "/resources/comparison/llm-capsule-vs-masking-tools",
+  card16Title = "LLM Capsule vs Prompt Security Gateways",
+  card16Badge = "Comparison",
+  card16Href = "/resources/comparison/llm-capsule-vs-prompt-security-gateways",
+  card17Title = "LLM Capsule vs Synthetic Data Platforms",
+  card17Badge = "Comparison",
+  card17Href = "/resources/comparison/llm-capsule-vs-synthetic-data-platforms",
+  card18Title = "Structure-Preserving Processing vs Flat Masking",
+  card18Badge = "Comparison",
+  card18Href = "/resources/comparison/structure-preserving-processing-vs-flat-masking",
 
   cardLinkLabel = "Read article",
 
@@ -387,6 +447,12 @@ export default function Learn({
     { title: card10Title, badge: card10Badge, href: card10Href },
     { title: card11Title, badge: card11Badge, href: card11Href },
     { title: card12Title, badge: card12Badge, href: card12Href },
+    { title: card13Title, badge: card13Badge, href: card13Href },
+    { title: card14Title, badge: card14Badge, href: card14Href },
+    { title: card15Title, badge: card15Badge, href: card15Href },
+    { title: card16Title, badge: card16Badge, href: card16Href },
+    { title: card17Title, badge: card17Badge, href: card17Href },
+    { title: card18Title, badge: card18Badge, href: card18Href },
   ]
 
   // Badge style resolver
