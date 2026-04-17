@@ -98,11 +98,6 @@ interface Props {
   s2Card3BtnLabel?: string
   s2Card3Href?: string
 
-  s2Card4Title?: string
-  s2Card4Description?: string
-  s2Card4BtnLabel?: string
-  s2Card4Href?: string
-
   // Section 3 — Core Guides
   s3SectionTitle?: string
   s3SectionTitleBrand?: string
@@ -137,7 +132,7 @@ export default function Resources({
   // Section 1 — Hero
   heroTitle = "Enterprise AI Enablement",
   heroTitleBrand = "Resources",
-  heroDescription = "Technical documentation, learning resources, glossary, and downloads for enterprise AI enablement with LLM Capsule.",
+  heroDescription = "Technical documentation, learning resources, glossary, and trust information for enterprise AI enablement with LLM Capsule.",
 
   // Section 2 — Resource Hub
   s2SectionTitle = "Explore",
@@ -154,15 +149,10 @@ export default function Resources({
   s2Card2BtnLabel = "Browse Glossary →",
   s2Card2Href = "glossary.html",
 
-  s2Card3Title = "Downloads",
-  s2Card3Description = "Architecture briefs, technical documentation, and deployment guides for enterprise evaluation.",
-  s2Card3BtnLabel = "Browse Downloads →",
-  s2Card3Href = "downloads.html",
-
-  s2Card4Title = "Trust Center",
-  s2Card4Description = "Security certifications, compliance documentation, and audit information.",
-  s2Card4BtnLabel = "Browse Trust Center →",
-  s2Card4Href = "trust-center.html",
+  s2Card3Title = "Trust Center",
+  s2Card3Description = "Security certifications, compliance documentation, and audit information.",
+  s2Card3BtnLabel = "Browse Trust Center →",
+  s2Card3Href = "trust-center.html",
 
   // Section 3 — Core Guides
   s3SectionTitle = "Core guides for enterprise AI",
@@ -476,7 +466,7 @@ export default function Resources({
                   <p className="res-section-header__description">{s2SectionDescription}</p>
                 </div>
 
-                <div className="res-card-grid res-card-grid--4col">
+                <div className="res-card-grid res-card-grid--3col">
 
                   {/* Card 1: Learn */}
                   <a href={s2Card1Href} className="res-card--gradient res-card--gradient-indigo">
@@ -514,26 +504,8 @@ export default function Resources({
                     </div>
                   </a>
 
-                  {/* Card 3: Downloads */}
-                  <a href={s2Card3Href} className="res-card--gradient res-card--gradient-green">
-                    <div className="res-card--gradient__inner">
-                      <div className="res-card--gradient__icon">
-                        <svg className="res-icon res-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                          <polyline points="7 10 12 15 17 10" />
-                          <line x1="12" y1="15" x2="12" y2="3" />
-                        </svg>
-                      </div>
-                      <h3 className="res-card--gradient__title">{s2Card3Title}</h3>
-                      <p className="res-card--gradient__description">{s2Card3Description}</p>
-                      <div className="res-card--gradient__button">
-                        <span className="res-btn res-btn--ghost">{s2Card3BtnLabel}</span>
-                      </div>
-                    </div>
-                  </a>
-
-                  {/* Card 4: Trust Center */}
-                  <a href={s2Card4Href} className="res-card--gradient res-card--gradient-silver">
+                  {/* Card 3: Trust Center */}
+                  <a href={s2Card3Href} className="res-card--gradient res-card--gradient-silver">
                     <div className="res-card--gradient__inner">
                       <div className="res-card--gradient__icon">
                         <svg className="res-icon res-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -541,10 +513,10 @@ export default function Resources({
                           <path d="m9 12 2 2 4-4" />
                         </svg>
                       </div>
-                      <h3 className="res-card--gradient__title">{s2Card4Title}</h3>
-                      <p className="res-card--gradient__description">{s2Card4Description}</p>
+                      <h3 className="res-card--gradient__title">{s2Card3Title}</h3>
+                      <p className="res-card--gradient__description">{s2Card3Description}</p>
                       <div className="res-card--gradient__button">
-                        <span className="res-btn res-btn--ghost">{s2Card4BtnLabel}</span>
+                        <span className="res-btn res-btn--ghost">{s2Card3BtnLabel}</span>
                       </div>
                     </div>
                   </a>
@@ -720,43 +692,22 @@ addPropertyControls(Resources, {
   s2Card3Title: {
     type: ControlType.String,
     title: "S2 Card 3 Title",
-    defaultValue: "Downloads",
+    defaultValue: "Trust Center",
   },
   s2Card3Description: {
     type: ControlType.String,
     title: "S2 Card 3 Description",
-    defaultValue: "Architecture briefs, technical documentation, and deployment guides for enterprise evaluation.",
+    defaultValue: "Security certifications, compliance documentation, and audit information.",
     displayTextArea: true,
   },
   s2Card3BtnLabel: {
     type: ControlType.String,
     title: "S2 Card 3 Button",
-    defaultValue: "Browse Downloads →",
+    defaultValue: "Browse Trust Center →",
   },
   s2Card3Href: {
     type: ControlType.String,
     title: "S2 Card 3 URL",
-    defaultValue: "downloads.html",
-  },
-  s2Card4Title: {
-    type: ControlType.String,
-    title: "S2 Card 4 Title",
-    defaultValue: "Trust Center",
-  },
-  s2Card4Description: {
-    type: ControlType.String,
-    title: "S2 Card 4 Description",
-    defaultValue: "Security certifications, compliance documentation, and audit information.",
-    displayTextArea: true,
-  },
-  s2Card4BtnLabel: {
-    type: ControlType.String,
-    title: "S2 Card 4 Button",
-    defaultValue: "Browse Trust Center →",
-  },
-  s2Card4Href: {
-    type: ControlType.String,
-    title: "S2 Card 4 URL",
     defaultValue: "trust-center.html",
   },
 
