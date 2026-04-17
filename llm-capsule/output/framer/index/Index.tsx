@@ -153,6 +153,11 @@ interface Props {
   tabsHeading?: string
   tabsSubheading?: string
   tabsBgImage?: string
+  tabCore1Image?: string
+  tabCore2Image?: string
+  tabCore3Image?: string
+  tabPlus1Image?: string
+  tabPlus2Image?: string
 
   // Section 6 — Case Study
   csHeading?: string
@@ -228,6 +233,11 @@ export default function Index({
   tabsHeading = "Enterprise AI enablement through a 3+2 architecture",
   tabsSubheading = "LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 data layer architecture: three core enablement pillars plus two additional value capabilities that ensure output quality and model flexibility.",
   tabsBgImage = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png",
+  tabCore1Image = "",
+  tabCore2Image = "",
+  tabCore3Image = "",
+  tabPlus1Image = "",
+  tabPlus2Image = "",
 
   csHeading = "AI-Enabled Enterprise Workflows",
   csSubheading = "LLM Capsule plugs into the most common enterprise AI workflows — from document intake to output delivery, one data layer enables AI adoption on real documents.",
@@ -277,29 +287,34 @@ export default function Index({
     { id: "plus2", label: "+2 Cross-Model" },
   ]
 
-  const tabPanels: Record<string, { title: string; p1: string; p2: string }> = {
+  const tabPanels: Record<string, { title: string; p1: string; p2: string; image: string }> = {
     core1: {
       title: "Zero Exposure",
+      image: tabCore1Image,
       p1: "Sensitive data is replaced with safe placeholders (encapsulation) inside your environment before anything leaves. Original values never reach external AI services.",
       p2: "Zero exposure means the AI provider processes useful data but cannot reconstruct original sensitive values. Even if the provider logged, stored, or trained on the received data, no original enterprise information would be exposed. Encapsulation creates a data representation that is both processable by AI and opaque to the receiving service — provider logs are safe, raw data never leaves.",
     },
     core2: {
       title: "Restoration",
+      image: tabCore2Image,
       p1: "AI outputs are automatically restored locally — not abstracted, not anonymized, but fully restored with real business data for immediate use.",
       p2: "Unlike masking tools that produce generic AI outputs requiring manual reconstruction, LLM Capsule automatically restores AI results with original names, account numbers, dates, and references. Restored outputs are directly usable in enterprise workflows — regulatory reports, legal documents, claim analysis, and internal communications — without any post-processing step. This eliminates the \"manual review loop\" that kills AI ROI.",
     },
     core3: {
       title: "Enterprise Context",
+      image: tabCore3Image,
       p1: "Define and control sensitive entities beyond standard PII — project codes, internal IDs, contract terms, and strategic data specific to your organization.",
       p2: "Enterprise documents contain far more sensitivity than personally identifiable information alone. A legal memo about a pending acquisition contains no PII but is filled with deal structure, valuation ranges, and strategic rationale. Enterprise context enables policy-based sensitivity classification through context-aware data control that adapts to document type, department, and workflow context — tailored protection for your specific business logic and secrets.",
     },
     plus1: {
       title: "Structure-Preserving",
+      image: tabPlus1Image,
       p1: "Tables, diagrams, cross-references, and document hierarchy remain intact — your document layout stays readable to AI throughout the process.",
       p2: "Masking tools destroy document context. LLM Capsule keeps tables, diagrams, and entity relationships intact so AI understands the full context while sensitive values are replaced. Reference consistency, diagram preservation, and document hierarchy are all maintained.",
     },
     plus2: {
       title: "Cross-Model Execution",
+      image: tabPlus2Image,
       p1: "Works with any AI model. Switch between ChatGPT, Claude, Gemini, or any LLM API instantly — no re-engineering, no vendor lock-in.",
       p2: "LLM Capsule acts as a model-agnostic AI enablement layer for all AI models. Swap or mix models anytime — zero re-engineering, no vendor lock-in, consistent protection across every provider. Connect to any model simultaneously, including CUBIG's own SynTitan platform.",
     },
@@ -1068,7 +1083,9 @@ export default function Index({
                   <p>{panel.p1}</p>
                   <p>{panel.p2.replace("LLM Capsule", "").includes("LLM Capsule") ? panel.p2 : panel.p2}</p>
                 </div>
-                <div className="idx-step-tabs__screenshot">{panel.title}</div>
+                <div className="idx-step-tabs__screenshot">
+                  {panel.image ? <img src={panel.image} alt={panel.title} style={{ width: "100%", display: "block" }} /> : panel.title}
+                </div>
               </div>
             </div>
           </section>
@@ -1474,6 +1491,11 @@ addPropertyControls(Index, {
 
   // Background Images
   tabsBgImage:        { type: ControlType.Image, title: "Step Tabs BG Image" },
+  tabCore1Image:      { type: ControlType.Image, title: "Tab Core1 Image (Zero Exposure)" },
+  tabCore2Image:      { type: ControlType.Image, title: "Tab Core2 Image (Restoration)" },
+  tabCore3Image:      { type: ControlType.Image, title: "Tab Core3 Image (Enterprise Context)" },
+  tabPlus1Image:      { type: ControlType.Image, title: "Tab +1 Image (Structure-Preserving)" },
+  tabPlus2Image:      { type: ControlType.Image, title: "Tab +2 Image (Cross-Model)" },
   probBannerBgImage:  { type: ControlType.Image, title: "Problem Banner BG Image" },
   baBgImage:          { type: ControlType.Image, title: "Before/After BG Image" },
   diagBgImage:        { type: ControlType.Image, title: "Diagram BG Image" },
