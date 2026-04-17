@@ -221,16 +221,20 @@ export default function Section04_Restoration({
 
               {/* Visual (visually right due to reverse) */}
               <div className="s4-visual">
-                <div className="s4-code-panels">
-                  <div className="s4-code-block">
-                    <span className="s4-code-label">{encapsulatedLabel}</span>
-                    <span>{encapsulatedText}</span>
+                {visualImage ? (
+                  <img src={visualImage} alt="Restoration visual" style={{ width: "100%", display: "block", borderRadius: "16px" }} />
+                ) : (
+                  <div className="s4-code-panels">
+                    <div className="s4-code-block">
+                      <span className="s4-code-label">{encapsulatedLabel}</span>
+                      <span>{encapsulatedText}</span>
+                    </div>
+                    <div className="s4-code-block s4-code-block--restored">
+                      <span className="s4-code-label">{restoredLabel}</span>
+                      <span>{restoredText}</span>
+                    </div>
                   </div>
-                  <div className="s4-code-block s4-code-block--restored">
-                    <span className="s4-code-label">{restoredLabel}</span>
-                    <span>{restoredText}</span>
-                  </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
@@ -251,4 +255,5 @@ addPropertyControls(Section04_Restoration, {
   restoredLabel:      { type: ControlType.String, title: "Restored Label",     defaultValue: "Restored" },
   restoredText:       { type: ControlType.String, title: "Restored Text",      defaultValue: "James Mitchell submitted claim #INS-2024-0847 on March 5, 2025 for property at 42 Lincoln Ave, Chicago. Total assessed damage: $247,000.", displayTextArea: true },
   visualBgImage:      { type: ControlType.Image, title: "Visual Background" },
+  visualImage:        { type: ControlType.Image, title: "Visual Image (replaces code panels)" },
 })
