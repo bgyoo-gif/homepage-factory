@@ -111,13 +111,6 @@ const DEFAULT_CARDS: ArticleCard[] = [
     iconPath: "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z",
   },
   {
-    href: "/resources/learn/secure-enterprise-ai-workflows",
-    badgeType: "neutral",
-    badgeLabel: "Article",
-    title: "Secure Enterprise AI Workflows",
-    iconPath: "M19 11H5m14 0a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2m14 0V9a2 2 0 0 0-2-2M5 11V9a2 2 0 0 1 2-2m0 0V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2M7 7h10",
-  },
-  {
     href: "/resources/learn/structure-preserving-document-processing",
     badgeType: "neutral",
     badgeLabel: "Article",
@@ -333,9 +326,6 @@ interface Props {
   card06Title?: string
   card06Badge?: string
   card06Href?: string
-  card07Title?: string
-  card07Badge?: string
-  card07Href?: string
   card08Title?: string
   card08Badge?: string
   card08Href?: string
@@ -405,9 +395,6 @@ export default function Learn({
   card06Title = "Why Redaction Breaks Enterprise AI Workflows",
   card06Badge = "Featured",
   card06Href = "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
-  card07Title = "Secure Enterprise AI Workflows",
-  card07Badge = "Article",
-  card07Href = "/resources/learn/secure-enterprise-ai-workflows",
   card08Title = "Structure-Preserving Document Processing",
   card08Badge = "Article",
   card08Href = "/resources/learn/structure-preserving-document-processing",
@@ -459,7 +446,6 @@ export default function Learn({
     { title: card04Title, badge: card04Badge, href: card04Href },
     { title: card05Title, badge: card05Badge, href: card05Href },
     { title: card06Title, badge: card06Badge, href: card06Href },
-    { title: card07Title, badge: card07Badge, href: card07Href },
     { title: card08Title, badge: card08Badge, href: card08Href },
     { title: card09Title, badge: card09Badge, href: card09Href },
     { title: card10Title, badge: card10Badge, href: card10Href },
@@ -802,11 +788,6 @@ addPropertyControls(Learn, {
   card06Title: { type: ControlType.String, title: "Card 06 Title", defaultValue: "Why Redaction Breaks Enterprise AI Workflows" },
   card06Badge: { type: ControlType.String, title: "Card 06 Badge", defaultValue: "Featured" },
   card06Href:  { type: ControlType.String, title: "Card 06 URL",   defaultValue: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows" },
-
-  // Card 7
-  card07Title: { type: ControlType.String, title: "Card 07 Title", defaultValue: "Secure Enterprise AI Workflows" },
-  card07Badge: { type: ControlType.String, title: "Card 07 Badge", defaultValue: "Article" },
-  card07Href:  { type: ControlType.String, title: "Card 07 URL",   defaultValue: "/resources/learn/secure-enterprise-ai-workflows" },
 
   // Card 8
   card08Title: { type: ControlType.String, title: "Card 08 Title", defaultValue: "Structure-Preserving Document Processing" },
