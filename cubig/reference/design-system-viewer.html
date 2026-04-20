@@ -3461,11 +3461,15 @@ function renderStaticTable() {
     html += '<th style="' + thStyle + '">Input File</th>';
     html += '<th style="' + thStyle + '">' + typeBadge('html') + '</th>';
     html += '<th style="' + thStyle + '">' + typeBadge('tsx') + '</th>';
+    html += '<th style="' + thStyle + '"><span style="font-size:10px;font-weight:600;color:#0e824c;background:rgba(14,130,76,0.08);padding:2px 8px;border-radius:4px;">KO 번역</span></th>';
     html += '</tr></thead><tbody>';
 
     groups.forEach(function(group) {
       var htmlDocs = group.outputs.filter(function(o) { return o.type === 'html' || o.type === 'md'; });
       var tsxFiles = group.outputs.filter(function(o) { return o.type === 'tsx'; });
+      var baseName = group.input.replace('.html', '');
+      var koFile = baseName + '-ko-lines.md';
+      var koPath = brandBase + 'output/translations/' + koFile;
 
       html += '<tr style="border-bottom:1px solid var(--ds-color-surface-light);">';
       html += '<td style="padding:12px;font-weight:600;">' + group.input + '</td>';
@@ -3480,6 +3484,8 @@ function renderStaticTable() {
         html += '<div><span class="v-ot-link" onclick="openDetail(\'' + fpath + '\',\'' + f.name + '\')" style="font-size:12px;">' + f.name + '</span></div>';
       });
       if (tsxFiles.length === 0) html += '<span style="color:var(--ds-color-text-tertiary);">—</span>';
+      html += '</td><td style="padding:12px;">';
+      html += '<span class="v-ot-link" onclick="openDetail(\'' + koPath + '\',\'' + koFile + '\')" style="font-size:12px;color:#0e824c;">' + koFile + '</span>';
       html += '</td></tr>';
     });
     html += '</tbody></table>';
@@ -3881,11 +3887,14 @@ function renderStaticTable() {
   html += '<th style="' + thStyle + '">Updated</th>';
   html += '<th style="' + thStyle + '">' + typeBadge('html') + '</th>';
   html += '<th style="' + thStyle + '">' + typeBadge('tsx') + '</th>';
+  html += '<th style="' + thStyle + '"><span style="font-size:10px;font-weight:600;color:#0e824c;background:rgba(14,130,76,0.08);padding:2px 8px;border-radius:4px;">KO 번역</span></th>';
   html += '</tr></thead><tbody>';
 
   data.forEach(function(group) {
     var htmlFiles = group.outputs.filter(function(o) { return o.type === 'html' || o.type === 'md'; });
     var tsxFiles = group.outputs.filter(function(o) { return o.type === 'tsx'; });
+    var baseName = group.input.replace('.html', '');
+    var koFile = baseName + '-ko-lines.md';
 
     var inputLink = group.ipath ? '<span class="v-ot-link" onclick="openDetail(\'' + group.ipath + '\',\'' + group.input + '\')" style="color:var(--ds-color-text-primary);font-weight:600;">' + group.input + '</span>' : '<span style="color:var(--ds-color-text-tertiary);">' + group.input + '</span>';
 
@@ -3909,6 +3918,13 @@ function renderStaticTable() {
       html += '<div><span class="v-ot-link" onclick="openDetail(\'' + fpath + '\',\'' + f.name + '\')" style="font-size:12px;">' + f.name + '</span></div>';
     });
     if (tsxFiles.length === 0) html += '<span style="color:var(--ds-color-text-tertiary);">—</span>';
+    html += '</td>';
+
+    // KO Translation column
+    var ghBase = 'https://bgyoo-gif.github.io/homepage-factory/';
+    var koPath = ghBase + currentBrand + '/output/translations/' + koFile;
+    html += '<td style="padding:10px 12px;vertical-align:top;">';
+    html += '<span class="v-ot-link" onclick="openDetail(\'' + koPath + '\',\'' + koFile + '\')" style="font-size:12px;color:#0e824c;">' + koFile + '</span>';
     html += '</td>';
 
     html += '</tr>';
