@@ -549,7 +549,7 @@ export default function LocalRestorationVsAnonymization({
                   <span className="lrva-breadcrumb__sep">/</span>
                   <a href="/resources" className="lrva-breadcrumb__link">Resources</a>
                   <span className="lrva-breadcrumb__sep">/</span>
-                  <a href="/resources/learn" className="lrva-breadcrumb__link">Comparison</a>
+                  <a href="/resources/learn" className="lrva-breadcrumb__link">Learn</a>
                   <span className="lrva-breadcrumb__sep">/</span>
                   <span className="lrva-breadcrumb__current">Local Restoration vs Anonymization</span>
                 </nav>

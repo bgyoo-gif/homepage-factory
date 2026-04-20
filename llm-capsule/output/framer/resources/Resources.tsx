@@ -152,7 +152,7 @@ export default function Resources({
   s2Card3Title = "Trust Center",
   s2Card3Description = "Security certifications, compliance documentation, and audit information.",
   s2Card3BtnLabel = "Browse Trust Center →",
-  s2Card3Href = "/trust-center",
+  s2Card3Href = "/trust",
 
   // Section 3 — Core Guides
   s3SectionTitle = "Core guides for enterprise AI",
@@ -708,7 +708,7 @@ addPropertyControls(Resources, {
   s2Card3Href: {
     type: ControlType.String,
     title: "S2 Card 3 URL",
-    defaultValue: "/trust-center",
+    defaultValue: "/trust",
   },
 
   // Section 3 — Core Guides

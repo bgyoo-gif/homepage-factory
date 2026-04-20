@@ -520,7 +520,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
                   <span className="spp-breadcrumb__sep">/</span>
                   <a href="/resources" className="spp-breadcrumb__link">Resources</a>
                   <span className="spp-breadcrumb__sep">/</span>
-                  <a href="/resources/learn" className="spp-breadcrumb__link">Comparison</a>
+                  <a href="/resources/learn" className="spp-breadcrumb__link">Learn</a>
                   <span className="spp-breadcrumb__sep">/</span>
                   <span className="spp-breadcrumb__current">Structure-Preserving Processing vs Flat Masking</span>
                 </nav>
