@@ -33,7 +33,7 @@ interface Props {
 
 export default function Section01_Hero({
   heroTitle = "Enterprise AI Enablement",
-  heroDescription = "'s AI enablement data layer uses encapsulation, zero exposure, and local restoration to enable enterprises to adopt AI without data risk.",
+  heroDescription = "LLM Capsule's AI enablement data layer uses encapsulation, zero exposure, and local restoration to enable enterprises to adopt AI without data risk.",
   productName = "LLM Capsule",
 }: Props) {
   return (
@@ -119,8 +119,8 @@ addPropertyControls(Section01_Hero, {
   },
   heroDescription: {
     type: ControlType.String,
-    title: "Hero Description (after product name)",
-    defaultValue: "'s AI enablement data layer uses encapsulation, zero exposure, and local restoration to enable enterprises to adopt AI without data risk.",
+    title: "Hero Description",
+    defaultValue: "LLM Capsule's AI enablement data layer uses encapsulation, zero exposure, and local restoration to enable enterprises to adopt AI without data risk.",
     displayTextArea: true,
   },
   productName: {
