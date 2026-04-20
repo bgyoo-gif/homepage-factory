@@ -103,11 +103,7 @@ export default function Section01_Hero({
         <div className="s1-inner">
           <div className="s1-container">
             <h1 className="s1-title">{heroTitle}</h1>
-            <p className="s1-description">
-              Comprehensive guide to enterprise AI enablement — how{" "}
-              <span className="s1-product-name">{productName}</span>
-              {heroDescription}
-            </p>
+            <p className="s1-description">{heroDescription}</p>
           </div>
         </div>
       </section>

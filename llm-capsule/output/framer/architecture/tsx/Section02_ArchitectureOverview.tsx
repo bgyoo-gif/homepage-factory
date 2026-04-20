@@ -343,10 +343,7 @@ export default function Section02_ArchitectureOverview({
                 {sectionTitle}{" "}
                 <span className="s2-text--brand">{sectionTitleHighlight}</span>
               </h2>
-              <p className="s2-section-header__description">
-                <span className="s2-product-name">{productName}</span>{" "}
-                {sectionDescription}
-              </p>
+              <p className="s2-section-header__description">{sectionDescription}</p>
             </div>
 
             {/* Architecture Diagram */}

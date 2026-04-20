@@ -243,10 +243,7 @@ export default function Section04_DeploymentOptions({
                 {sectionTitle}{" "}
                 <span className="s4-text--brand">{sectionTitleHighlight}</span>
               </h2>
-              <p className="s4-section-header__description">
-                <span className="s4-product-name">{productName}</span>{" "}
-                {sectionDescription}
-              </p>
+              <p className="s4-section-header__description">{sectionDescription}</p>
             </div>
 
             <div className="s4-card-grid">
