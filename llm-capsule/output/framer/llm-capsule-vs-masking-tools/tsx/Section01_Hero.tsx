@@ -87,6 +87,16 @@ export default function Section01_Hero({
           .s1-container { padding: 0; max-width: 1080px; }
           .s1-title { font-size: 52px; }
         }
+
+        .s1-breadcrumb {
+          display: flex; align-items: center; gap: 8px;
+          flex-wrap: wrap; margin-bottom: 24px;
+          font-size: 13px; color: #9c9c9c;
+        }
+        .s1-breadcrumb__link { color: #9c9c9c; text-decoration: none; }
+        .s1-breadcrumb__link:hover { color: #636363; }
+        .s1-breadcrumb__sep { color: #bababa; }
+        .s1-breadcrumb__current { color: #636363; }
       `}</style>
       <script
         type="application/ld+json"
@@ -103,6 +113,13 @@ export default function Section01_Hero({
       <section className="s1-section" id="section-hero">
         <div className="s1-inner">
           <div className="s1-container">
+            <nav className="s1-breadcrumb" aria-label="Breadcrumb">
+              <a href="/" className="s1-breadcrumb__link">Home</a>
+              <span className="s1-breadcrumb__sep">/</span>
+              <a href="/resources/learn" className="s1-breadcrumb__link">Learn</a>
+              <span className="s1-breadcrumb__sep">/</span>
+              <span className="s1-breadcrumb__current">LLM Capsule vs Masking Tools</span>
+            </nav>
             <h1 className="s1-title">
               <span className="s1-product">{titleProduct}</span> {title}
             </h1>

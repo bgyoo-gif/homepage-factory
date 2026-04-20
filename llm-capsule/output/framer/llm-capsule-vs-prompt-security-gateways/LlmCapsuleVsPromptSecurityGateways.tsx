@@ -288,6 +288,16 @@ export default function LlmCapsuleVsPromptSecurityGateways({
           line-height: 1.7; max-width: 100%;
         }
 
+        .vs-breadcrumb {
+          display: flex; align-items: center; gap: 8px;
+          flex-wrap: wrap; margin-bottom: 24px;
+          font-size: 13px; color: #9c9c9c;
+        }
+        .vs-breadcrumb__link { color: #9c9c9c; text-decoration: none; }
+        .vs-breadcrumb__link:hover { color: #636363; }
+        .vs-breadcrumb__sep { color: #bababa; }
+        .vs-breadcrumb__current { color: #636363; }
+
         /* ── Article Body Section ─────────────────────────────────── */
         .vs-section--article-body {
           padding: 32px 0;
@@ -566,6 +576,13 @@ export default function LlmCapsuleVsPromptSecurityGateways({
             {/* ── Section 1: Hero ──────────────────────────────────────── */}
             <section id="section-hero" className="vs-section--hero">
               <div className="vs-article-container">
+                <nav className="vs-breadcrumb" aria-label="Breadcrumb">
+                  <a href="/" className="vs-breadcrumb__link">Home</a>
+                  <span className="vs-breadcrumb__sep">/</span>
+                  <a href="/resources/learn" className="vs-breadcrumb__link">Learn</a>
+                  <span className="vs-breadcrumb__sep">/</span>
+                  <span className="vs-breadcrumb__current">LLM Capsule vs Prompt Security Gateways</span>
+                </nav>
                 <h1 className="vs-article-hero__title">
                   <span className="vs-text--product">LLM Capsule</span> vs Prompt Security Gateways
                 </h1>

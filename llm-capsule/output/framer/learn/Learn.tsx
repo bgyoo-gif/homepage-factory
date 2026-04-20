@@ -351,6 +351,24 @@ interface Props {
   card12Title?: string
   card12Badge?: string
   card12Href?: string
+  card13Title?: string
+  card13Badge?: string
+  card13Href?: string
+  card14Title?: string
+  card14Badge?: string
+  card14Href?: string
+  card15Title?: string
+  card15Badge?: string
+  card15Href?: string
+  card16Title?: string
+  card16Badge?: string
+  card16Href?: string
+  card17Title?: string
+  card17Badge?: string
+  card17Href?: string
+  card18Title?: string
+  card18Badge?: string
+  card18Href?: string
 
   // Card link label (shared)
   cardLinkLabel?: string
@@ -814,6 +832,36 @@ addPropertyControls(Learn, {
   card12Title: { type: ControlType.String, title: "Card 12 Title", defaultValue: "AI Data Pipeline Protection" },
   card12Badge: { type: ControlType.String, title: "Card 12 Badge", defaultValue: "Article" },
   card12Href:  { type: ControlType.String, title: "Card 12 URL",   defaultValue: "/resources/learn/ai-data-pipeline-protection" },
+
+  // Card 13
+  card13Title: { type: ControlType.String, title: "Card 13 Title", defaultValue: "Restorable Workflow" },
+  card13Badge: { type: ControlType.String, title: "Card 13 Badge", defaultValue: "Glossary" },
+  card13Href:  { type: ControlType.String, title: "Card 13 URL",   defaultValue: "/resources/glossary/restorable-workflow" },
+
+  // Card 14
+  card14Title: { type: ControlType.String, title: "Card 14 Title", defaultValue: "Enterprise Context Control" },
+  card14Badge: { type: ControlType.String, title: "Card 14 Badge", defaultValue: "Glossary" },
+  card14Href:  { type: ControlType.String, title: "Card 14 URL",   defaultValue: "/resources/glossary/enterprise-context-control" },
+
+  // Card 15
+  card15Title: { type: ControlType.String, title: "Card 15 Title", defaultValue: "LLM Capsule vs Masking Tools" },
+  card15Badge: { type: ControlType.String, title: "Card 15 Badge", defaultValue: "Comparison" },
+  card15Href:  { type: ControlType.String, title: "Card 15 URL",   defaultValue: "/resources/learn/llm-capsule-vs-masking-tools" },
+
+  // Card 16
+  card16Title: { type: ControlType.String, title: "Card 16 Title", defaultValue: "LLM Capsule vs Prompt Security Gateways" },
+  card16Badge: { type: ControlType.String, title: "Card 16 Badge", defaultValue: "Comparison" },
+  card16Href:  { type: ControlType.String, title: "Card 16 URL",   defaultValue: "/resources/learn/llm-capsule-vs-prompt-security-gateways" },
+
+  // Card 17
+  card17Title: { type: ControlType.String, title: "Card 17 Title", defaultValue: "LLM Capsule vs Synthetic Data Platforms" },
+  card17Badge: { type: ControlType.String, title: "Card 17 Badge", defaultValue: "Comparison" },
+  card17Href:  { type: ControlType.String, title: "Card 17 URL",   defaultValue: "/resources/learn/llm-capsule-vs-synthetic-data-platforms" },
+
+  // Card 18
+  card18Title: { type: ControlType.String, title: "Card 18 Title", defaultValue: "Structure-Preserving Processing vs Flat Masking" },
+  card18Badge: { type: ControlType.String, title: "Card 18 Badge", defaultValue: "Comparison" },
+  card18Href:  { type: ControlType.String, title: "Card 18 URL",   defaultValue: "/resources/learn/structure-preserving-processing-vs-flat-masking" },
 
   cardLinkLabel: {
     type: ControlType.String,
