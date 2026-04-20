@@ -180,7 +180,7 @@ export default function Resources({
   ctaBtn1Label = "Request a Demo",
   ctaBtn1Href = "/request-a-demo",
   ctaSecBtn2Label = "Available on AWS Marketplace",
-  ctaSecBtn2Href = "https://aws.amazon.com/marketplace",
+  ctaSecBtn2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
 }: Props) {
   return (
     <>
@@ -822,6 +822,6 @@ addPropertyControls(Resources, {
   ctaSecBtn2Href: {
     type: ControlType.String,
     title: "CTA Secondary Button 2 URL",
-    defaultValue: "https://aws.amazon.com/marketplace",
+    defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
   },
 })

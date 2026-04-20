@@ -33,7 +33,7 @@ export default function Section10_CTA({
   btn1Label = "Request a Demo",
   btn1Href = "/request-a-demo",
   footnote2Label = "AWS Marketplace",
-  footnote2Href = "https://aws.amazon.com/marketplace",
+  footnote2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
 }: Props) {
   return (
     <>
@@ -210,6 +210,6 @@ addPropertyControls(Section10_CTA, {
   footnote2Href: {
     type: ControlType.String,
     title: "Footnote 2 URL",
-    defaultValue: "https://aws.amazon.com/marketplace",
+    defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
   },
 })

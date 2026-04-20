@@ -332,7 +332,7 @@ export default function Section09_Diagram({
               )}
 
               <div className="idx-center-cta">
-                <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener" className="idx-btn idx-btn--secondary idx-btn--sm">{diagCtaLabel}</a>
+                <a href="https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" target="_blank" rel="noopener" className="idx-btn idx-btn--secondary idx-btn--sm">{diagCtaLabel}</a>
               </div>
             </div>
           </section>

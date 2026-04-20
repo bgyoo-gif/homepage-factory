@@ -87,7 +87,7 @@ export default function Section01_Hero({
   heroBtn1Label = "Request a Demo",
   heroBtn1Href = "/request-a-demo",
   heroBtn4Label = "Available on AWS Marketplace",
-  heroBtn4Href = "https://aws.amazon.com/marketplace",
+  heroBtn4Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
   heroBgImage = "",
   heroScreenshot = "",
 }: Props) {
@@ -230,7 +230,7 @@ addPropertyControls(Section01_Hero, {
   heroBtn1Label:   { type: ControlType.String, title: "Hero Btn 1",       defaultValue: "Request a Demo" },
   heroBtn1Href:    { type: ControlType.String, title: "Hero Btn 1 URL",   defaultValue: "/request-a-demo" },
   heroBtn4Label:   { type: ControlType.String, title: "Hero Btn 4",       defaultValue: "Available on AWS Marketplace" },
-  heroBtn4Href:    { type: ControlType.String, title: "Hero Btn 4 URL",   defaultValue: "https://aws.amazon.com/marketplace" },
+  heroBtn4Href:    { type: ControlType.String, title: "Hero Btn 4 URL",   defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
   heroBgImage:     { type: ControlType.Image,  title: "Hero Background Image" },
   heroScreenshot:  { type: ControlType.Image,  title: "Hero Screenshot Image" },
 })

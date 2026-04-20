@@ -175,7 +175,7 @@ export default function StructurePreservingDocumentProcessing({
   ctaBtn1Label = "Request a Demo",
   ctaBtn1Href = "/request-a-demo",
   ctaFootnoteLink2Label = "AWS Marketplace",
-  ctaFootnoteLink2Href = "https://aws.amazon.com/marketplace",
+  ctaFootnoteLink2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
 }: Props) {
   // ── FAQ accordion state ──────────────────────────────────────────────────────
   const [openFaq, setOpenFaq] = useState<number | null>(null)
@@ -971,6 +971,6 @@ addPropertyControls(StructurePreservingDocumentProcessing, {
   ctaFootnoteLink2Href: {
     type: ControlType.String,
     title: "CTA Footnote Link 2 URL",
-    defaultValue: "https://aws.amazon.com/marketplace",
+    defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
   },
 })

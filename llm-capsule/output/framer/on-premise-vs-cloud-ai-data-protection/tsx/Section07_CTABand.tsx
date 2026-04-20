@@ -54,7 +54,7 @@ export default function Section07_CTABand({
   title,
   description,
   btn1Label, btn1Href = "/request-a-demo",
-  footnote2Label, footnote2Href = "https://aws.amazon.com/marketplace",
+  footnote2Label, footnote2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
   lang = "en",
 }: Props) {
   const L = LABELS[lang]
@@ -241,5 +241,5 @@ addPropertyControls(Section07_CTABand, {
   btn1Label: { type: ControlType.String, title: "Button 1 Label", defaultValue: "Request a Demo" },
   btn1Href:  { type: ControlType.String, title: "Button 1 URL",   defaultValue: "/request-a-demo" },
   footnote2Label: { type: ControlType.String, title: "Footnote 2 Label", defaultValue: "AWS Marketplace" },
-  footnote2Href:  { type: ControlType.String, title: "Footnote 2 URL",   defaultValue: "https://aws.amazon.com/marketplace" },
+  footnote2Href:  { type: ControlType.String, title: "Footnote 2 URL",   defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
 })

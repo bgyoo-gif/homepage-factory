@@ -28,7 +28,7 @@ export default function Section14_CTA({
   cta1Label   = "Request a Demo",
   cta1Href    = "/request-a-demo",
   footnote2Label = "View on AWS Marketplace",
-  footnote2Href  = "https://aws.amazon.com/marketplace",
+  footnote2Href  = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
   ctaBgImage     = `${IMAGE_BASE}/images/bg-gradient-violet-teal.png`,
 }: Props) {
   return (
@@ -195,6 +195,6 @@ addPropertyControls(Section14_CTA, {
   cta1Label:      { type: ControlType.String, title: "CTA 1 Label",    defaultValue: "Request a Demo" },
   cta1Href:       { type: ControlType.String, title: "CTA 1 URL",      defaultValue: "/request-a-demo" },
   footnote2Label: { type: ControlType.String, title: "Footnote 2",     defaultValue: "View on AWS Marketplace" },
-  footnote2Href:  { type: ControlType.String, title: "Footnote 2 URL", defaultValue: "https://aws.amazon.com/marketplace" },
+  footnote2Href:  { type: ControlType.String, title: "Footnote 2 URL", defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
   ctaBgImage:     { type: ControlType.Image, title: "CTA Background" },
 })

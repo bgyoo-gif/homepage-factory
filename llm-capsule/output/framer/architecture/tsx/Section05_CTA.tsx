@@ -30,7 +30,7 @@ export default function Section05_CTA({
   button1Label = "Request a Demo",
   button1Href = "/request-a-demo",
   footnoteLink2Label = "Available on AWS Marketplace",
-  footnoteLink2Href = "https://aws.amazon.com/marketplace",
+  footnoteLink2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
   ctaBgImage = `${IMAGE_BASE}/bg-gradient-deep-teal.png`,
 }: Props) {
   return (
@@ -191,7 +191,7 @@ addPropertyControls(Section05_CTA, {
   button1Label: { type: ControlType.String, title: "Button 1 Label", defaultValue: "Request a Demo" },
   button1Href: { type: ControlType.String, title: "Button 1 URL", defaultValue: "/request-a-demo" },
   footnoteLink2Label: { type: ControlType.String, title: "Footnote Link 2", defaultValue: "Available on AWS Marketplace" },
-  footnoteLink2Href: { type: ControlType.String, title: "Footnote Link 2 URL", defaultValue: "https://aws.amazon.com/marketplace" },
+  footnoteLink2Href: { type: ControlType.String, title: "Footnote Link 2 URL", defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
   ctaBgImage: {
     type: ControlType.Image,
     title: "CTA Background",

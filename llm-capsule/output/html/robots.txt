@@ -1,0 +1,13 @@
+# robots.txt — LLM Capsule (llmcapsule.ai)
+
+User-agent: *
+Allow: /
+
+Sitemap: https://llmcapsule.ai/sitemap.xml
+
+# Disallow internal/dev assets
+Disallow: /reference/
+Disallow: /output/docs/
+Disallow: /output/framer/
+Disallow: /output/translations/
+Disallow: /input/

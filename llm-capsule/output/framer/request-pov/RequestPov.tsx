@@ -173,7 +173,7 @@ export default function RequestPov({
   ctaBtn1Label = "Request a Demo",
   ctaBtn1Href = "/request-a-demo",
   ctaFootnote2Label = "Available on AWS Marketplace",
-  ctaFootnote2Href = "https://aws.amazon.com/marketplace",
+  ctaFootnote2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
 }: Props) {
   const [activeTab, setActiveTab] = useState(1)
 
@@ -841,5 +841,5 @@ addPropertyControls(RequestPov, {
   ctaBtn1Label: { type: ControlType.String, title: "CTA Btn 1 Label", defaultValue: "Request a Demo" },
   ctaBtn1Href:  { type: ControlType.String, title: "CTA Btn 1 URL",   defaultValue: "/request-a-demo" },
   ctaFootnote2Label: { type: ControlType.String, title: "CTA Footnote 2 Label", defaultValue: "Available on AWS Marketplace" },
-  ctaFootnote2Href:  { type: ControlType.String, title: "CTA Footnote 2 URL",   defaultValue: "https://aws.amazon.com/marketplace" },
+  ctaFootnote2Href:  { type: ControlType.String, title: "CTA Footnote 2 URL",   defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
 })

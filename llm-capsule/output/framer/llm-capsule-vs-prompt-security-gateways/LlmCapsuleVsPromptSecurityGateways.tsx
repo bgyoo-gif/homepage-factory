@@ -187,7 +187,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
   ctaBtn1Label = "Request a Demo",
   ctaBtn1Href = "/request-a-demo",
   ctaFootnote2Label = "AWS Marketplace",
-  ctaFootnote2Href = "https://aws.amazon.com/marketplace",
+  ctaFootnote2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
 }: Props) {
 
   // ── FAQ accordion state ────────────────────────────────────────────────────
@@ -1067,6 +1067,6 @@ addPropertyControls(LlmCapsuleVsPromptSecurityGateways, {
   ctaFootnote2Href: {
     type: ControlType.String,
     title: "CTA Footnote 2 URL",
-    defaultValue: "https://aws.amazon.com/marketplace",
+    defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
   },
 })

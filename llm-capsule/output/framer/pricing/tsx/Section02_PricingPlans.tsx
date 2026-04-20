@@ -143,7 +143,7 @@ export default function Section02_PricingPlans({
   card3Feature4    = "Standard feature set",
   card3Feature5    = "AWS support channels",
   card3ButtonLabel = "View on AWS Marketplace",
-  card3ButtonHref  = "https://aws.amazon.com/marketplace",
+  card3ButtonHref  = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
 }: Props) {
   return (
     <>
@@ -454,5 +454,5 @@ addPropertyControls(Section02_PricingPlans, {
   card3Feature4:    { type: ControlType.String, title: "Card3 Feature 4",  defaultValue: "Standard feature set" },
   card3Feature5:    { type: ControlType.String, title: "Card3 Feature 5",  defaultValue: "AWS support channels" },
   card3ButtonLabel: { type: ControlType.String, title: "Card3 Button",     defaultValue: "View on AWS Marketplace" },
-  card3ButtonHref:  { type: ControlType.String, title: "Card3 Button URL", defaultValue: "https://aws.amazon.com/marketplace" },
+  card3ButtonHref:  { type: ControlType.String, title: "Card3 Button URL", defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
 })

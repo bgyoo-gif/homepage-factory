@@ -164,7 +164,7 @@ export default function LocalRestorationVsAnonymization({
   ctaBtn1Label = "Request a Demo",
   ctaBtn1Href = "/request-a-demo",
   ctaFootnote2Label = "AWS Marketplace",
-  ctaFootnote2Href = "https://aws.amazon.com/marketplace",
+  ctaFootnote2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
 }: Props) {
   const [faq1Open, setFaq1Open] = useState(true)
   const [faq2Open, setFaq2Open] = useState(false)
@@ -947,6 +947,6 @@ addPropertyControls(LocalRestorationVsAnonymization, {
   ctaFootnote2Href: {
     type: ControlType.String,
     title: "Footnote 2 URL",
-    defaultValue: "https://aws.amazon.com/marketplace",
+    defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
   },
 })

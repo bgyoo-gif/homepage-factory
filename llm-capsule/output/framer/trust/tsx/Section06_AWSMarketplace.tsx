@@ -11,7 +11,7 @@ interface Props {
 export default function Section06_AWSMarketplace({
   bannerText = "LLM Capsule is available on AWS Marketplace for streamlined enterprise procurement, billing, and deployment within AWS environments.",
   btnText = "View on AWS Marketplace",
-  btnHref = "https://aws.amazon.com/marketplace",
+  btnHref = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
 }: Props) {
   return (
     <>
@@ -135,5 +135,5 @@ export default function Section06_AWSMarketplace({
 addPropertyControls(Section06_AWSMarketplace, {
   bannerText: { type: ControlType.String, title: "Banner Text", defaultValue: "LLM Capsule is available on AWS Marketplace for streamlined enterprise procurement, billing, and deployment within AWS environments." },
   btnText: { type: ControlType.String, title: "Button Text", defaultValue: "View on AWS Marketplace" },
-  btnHref: { type: ControlType.String, title: "Button URL", defaultValue: "https://aws.amazon.com/marketplace" },
+  btnHref: { type: ControlType.String, title: "Button URL", defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
 })

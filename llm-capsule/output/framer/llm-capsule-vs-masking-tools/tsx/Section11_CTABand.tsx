@@ -29,7 +29,7 @@ export default function Section11_CTABand({
   primaryCTALabel = "Request a Demo",
   primaryCTAHref = "/request-a-demo",
   footnoteLinks = [
-    { label: "AWS Marketplace", href: "https://aws.amazon.com/marketplace" },
+    { label: "AWS Marketplace", href: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
   ],
 }: Props) {
   return (

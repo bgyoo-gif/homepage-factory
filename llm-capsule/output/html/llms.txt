@@ -1,0 +1,68 @@
+# LLM Capsule — llms.txt
+
+> LLM Capsule is an AI enablement data layer and plugin for enterprise. It enables organizations to use any LLM on sensitive documents without exposing original data — through local encapsulation, structure-preserving processing, and local restoration.
+
+## Company
+- Brand: LLM Capsule (by CUBIG)
+- Domain: llmcapsule.ai
+- Category: Enterprise AI Data Security / AI Enablement
+
+## Core Capabilities (3+2 Architecture)
+- **Zero Exposure**: Sensitive data is encapsulated locally before leaving the enterprise environment. Raw data never reaches external AI services.
+- **Restoration**: AI outputs are auto-restored locally with original enterprise data — producing usable results, not redacted placeholders.
+- **Enterprise Context Control**: Organizations define their own sensitivity rules beyond standard PII — project names, contract references, financial terms, strategic data.
+- **Structure-Preserving Processing** (+1): Document layout, table schemas, entity relationships, and cross-references remain intact during encapsulation.
+- **Cross-Model Execution** (+2): Model-agnostic — works with ChatGPT, Claude, Gemini, Perplexity, or any LLM API without vendor lock-in.
+
+## Pages
+
+### Main
+- [Home](https://llmcapsule.ai/): AI enablement data layer for sensitive enterprise documents. Define your own confidentiality rules, process with any LLM, restore outputs.
+- [Product](https://llmcapsule.ai/product): Five core capabilities — zero exposure, restoration, enterprise context control, structure-preserving processing, and cross-model execution.
+- [Architecture](https://llmcapsule.ai/architecture): Local encapsulation, cross-model execution, and restoration. On-premise, air-gapped, cloud, and hybrid deployment models.
+- [Solutions](https://llmcapsule.ai/solutions): AI enablement across public sector, finance, healthcare, legal, and telecom industries.
+- [Pricing](https://llmcapsule.ai/pricing): Proof of Value, annual enterprise license, and AWS Marketplace options.
+- [Trust & Compliance](https://llmcapsule.ai/trust): ISO 27001, ISO 42001, GS Certification. Enterprise-grade security with full audit trail.
+- [Trust Center](https://llmcapsule.ai/trust-center): Security certifications, compliance documentation, and data handling principles.
+- [Downloads](https://llmcapsule.ai/downloads): Architecture briefs, product overviews, and integration guides.
+- [Resources](https://llmcapsule.ai/resources): Technical documentation, learning resources, glossary, and trust information.
+- [Request Proof of Value](https://llmcapsule.ai/request-pov): Test LLM Capsule with your own enterprise documents.
+
+### Learn Hub
+- [Secure Enterprise AI Data Workflows](https://llmcapsule.ai/resources/learn/secure-enterprise-ai-data-workflows): End-to-end operating model for protecting sensitive data across AI workflows while restoring usable outputs.
+- [Secure Enterprise AI Workflows](https://llmcapsule.ai/resources/learn/secure-enterprise-ai-workflows): Business-specific sensitivity controls across the AI pipeline.
+- [Enterprise AI Data Protection](https://llmcapsule.ai/resources/learn/enterprise-ai-data-protection): Comprehensive guide to enabling AI on enterprise data with zero exposure.
+- [Enterprise AI Document Processing](https://llmcapsule.ai/resources/learn/enterprise-ai-document-processing): Secure document intelligence with structure preservation and local restoration.
+- [AI Data Pipeline Protection](https://llmcapsule.ai/resources/learn/ai-data-pipeline-protection): Enabling enterprise AI at every stage — ingestion, encapsulation, processing, restoration, and delivery.
+- [How to Use AI on Sensitive Enterprise Data](https://llmcapsule.ai/resources/learn/how-to-use-ai-on-sensitive-enterprise-data): Practical guide to using LLMs on sensitive data without exposing documents.
+- [Why Redaction Breaks Enterprise AI Workflows](https://llmcapsule.ai/resources/learn/why-redaction-breaks-enterprise-ai-workflows): Why masking and redaction tools fail in AI workflows, and what replaces them.
+- [Structure-Preserving Document Processing](https://llmcapsule.ai/resources/learn/structure-preserving-document-processing): Maintaining document layout and entity relationships during AI enablement.
+- [On-Premise vs Cloud AI Data Protection](https://llmcapsule.ai/resources/learn/on-premise-vs-cloud-ai-data-protection): Comparing deployment models — on-premise, air-gapped, cloud, and hybrid.
+- [PII Protection vs Enterprise Confidentiality Control](https://llmcapsule.ai/resources/learn/pii-protection-vs-enterprise-confidentiality-control): Beyond personal data — protecting trade secrets, deal terms, and strategic data.
+
+### Comparisons
+- [LLM Capsule vs Masking Tools](https://llmcapsule.ai/resources/learn/llm-capsule-vs-masking-tools): Masking applies generic PII rules. Capsule lets you define business-specific sensitivity and restores outputs.
+- [LLM Capsule vs Prompt Security Gateways](https://llmcapsule.ai/resources/learn/llm-capsule-vs-prompt-security-gateways): Gateways filter at the API layer. Capsule enables AI at the data layer with encapsulation and restoration.
+- [LLM Capsule vs Synthetic Data Platforms](https://llmcapsule.ai/resources/learn/llm-capsule-vs-synthetic-data-platforms): Synthetic data replaces real data. Capsule preserves and restores real enterprise data after AI processing.
+
+### Glossary
+- [What Is an AI Data Capsule?](https://llmcapsule.ai/resources/glossary/what-is-ai-data-capsule): Encapsulates sensitive data before AI processing and restores it after.
+- [Zero Exposure](https://llmcapsule.ai/resources/glossary/zero-exposure): Original sensitive data never leaves the enterprise environment during AI processing.
+- [Restoration](https://llmcapsule.ai/resources/glossary/restoration): Restoring AI outputs to original enterprise context using locally stored mappings.
+- [Restorable Workflow](https://llmcapsule.ai/resources/glossary/restorable-workflow): AI processing pattern with reversible data protection.
+- [Secure LLM Usage](https://llmcapsule.ai/resources/glossary/secure-llm-usage): Using large language models without data exposure.
+- [Enterprise Context Control](https://llmcapsule.ai/resources/glossary/enterprise-context-control): Policy-based sensitivity classification beyond standard PII.
+- [Structure-Preserving Processing](https://llmcapsule.ai/resources/glossary/structure-preserving-processing): Maintaining document integrity during data protection.
+- [Structure-Preserving Processing vs Flat Masking](https://llmcapsule.ai/resources/glossary/structure-preserving-processing-vs-flat-masking): Flat masking collapses structure. Structure preservation maintains document integrity.
+- [Local Restoration vs Anonymization](https://llmcapsule.ai/resources/glossary/local-restorationvs-anonymization): Anonymization is permanent. Restoration automatically restores real enterprise data after AI processing.
+
+## Deployment Options
+- On-premise (customer-controlled infrastructure)
+- Air-gapped environments
+- Cloud & AWS Marketplace (VPC deployment)
+- Hybrid & embedded
+
+## Certifications
+- ISO 27001 (Information Security Management)
+- ISO 42001 (AI Management System)
+- GS Certification (Good Software)

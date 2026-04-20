@@ -34,7 +34,7 @@ export default function Section11_DeploymentReadiness({
   screenshotDesc = "LLM Capsule API Console — SDK integration with enterprise document management systems",
   screenshotImage = "",
   awsLabel = "View on AWS Marketplace",
-  awsHref = "https://aws.amazon.com/marketplace",
+  awsHref = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
 }: Props) {
   const cards = [
     {
@@ -285,5 +285,5 @@ addPropertyControls(Section11_DeploymentReadiness, {
   screenshotDesc:     { type: ControlType.String, title: "Screenshot desc", defaultValue: "LLM Capsule API Console — SDK integration with enterprise document management systems", displayTextArea: true },
   screenshotImage:    { type: ControlType.Image,  title: "Screenshot Image" },
   awsLabel:           { type: ControlType.String, title: "AWS Button",     defaultValue: "View on AWS Marketplace" },
-  awsHref:            { type: ControlType.String, title: "AWS URL",        defaultValue: "https://aws.amazon.com/marketplace" },
+  awsHref:            { type: ControlType.String, title: "AWS URL",        defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
 })

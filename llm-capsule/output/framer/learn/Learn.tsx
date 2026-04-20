@@ -449,7 +449,7 @@ export default function Learn({
   ctaBtn1Label = "Request a Demo",
   ctaBtn1Href = "/request-a-demo",
   ctaSecondaryLink2Label = "Available on AWS Marketplace",
-  ctaSecondaryLink2Href = "https://aws.amazon.com/marketplace",
+  ctaSecondaryLink2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
 }: Props) {
   // Resolved card data from props
   const cards = [
@@ -884,5 +884,5 @@ addPropertyControls(Learn, {
   ctaBtn1Label: { type: ControlType.String, title: "CTA Button 1 Label", defaultValue: "Request a Demo" },
   ctaBtn1Href:  { type: ControlType.String, title: "CTA Button 1 URL",   defaultValue: "/request-a-demo" },
   ctaSecondaryLink2Label: { type: ControlType.String, title: "CTA Secondary Link 2 Label", defaultValue: "Available on AWS Marketplace" },
-  ctaSecondaryLink2Href:  { type: ControlType.String, title: "CTA Secondary Link 2 URL",   defaultValue: "https://aws.amazon.com/marketplace" },
+  ctaSecondaryLink2Href:  { type: ControlType.String, title: "CTA Secondary Link 2 URL",   defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
 })

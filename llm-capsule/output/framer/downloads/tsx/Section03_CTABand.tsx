@@ -34,7 +34,7 @@ export default function Section03_CTABand({
   cta1Label = "Request a Demo",
   cta1Href = "/request-a-demo",
   cta3Label = "Available on AWS Marketplace",
-  cta3Href = "https://aws.amazon.com/marketplace",
+  cta3Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
 }: Props) {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -229,6 +229,6 @@ addPropertyControls(Section03_CTABand, {
   cta3Href: {
     type: ControlType.String,
     title: "CTA 3 URL",
-    defaultValue: "https://aws.amazon.com/marketplace",
+    defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
   },
 })

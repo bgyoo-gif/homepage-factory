@@ -24,7 +24,7 @@ export default function Section11_CTA({
   ctaBtn1Label = "Request a Demo",
   ctaBtn1Href = "/request-a-demo",
   ctaBtn4Label = "Available on AWS Marketplace",
-  ctaBtn4Href = "https://aws.amazon.com/marketplace",
+  ctaBtn4Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
   ctaBgImage = "",
 }: Props) {
   const DEFAULT_CTA_BG = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/bg-index-cta.webp"
@@ -122,6 +122,6 @@ addPropertyControls(Section11_CTA, {
   ctaBtn1Label:    { type: ControlType.String, title: "CTA Btn 1",        defaultValue: "Request a Demo" },
   ctaBtn1Href:     { type: ControlType.String, title: "CTA Btn 1 URL",    defaultValue: "/request-a-demo" },
   ctaBtn4Label:    { type: ControlType.String, title: "CTA Btn 4",        defaultValue: "Available on AWS Marketplace" },
-  ctaBtn4Href:     { type: ControlType.String, title: "CTA Btn 4 URL",    defaultValue: "https://aws.amazon.com/marketplace" },
+  ctaBtn4Href:     { type: ControlType.String, title: "CTA Btn 4 URL",    defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
   ctaBgImage:      { type: ControlType.Image,  title: "CTA BG Image" },
 })
