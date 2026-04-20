@@ -76,7 +76,7 @@ const DEFAULT_CARDS: ArticleCard[] = [
     iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
   },
   {
-    href: "/resources/learn/enterprise-ai-enablement",
+    href: "/resources/learn/enterprise-ai-data-protection",
     badgeType: "brand",
     badgeLabel: "Pillar",
     title: "Enterprise AI Enablement",
@@ -374,7 +374,7 @@ export default function Learn({
   card01Href = "/resources/learn/secure-enterprise-ai-data-workflows",
   card02Title = "Enterprise AI Enablement",
   card02Badge = "Pillar",
-  card02Href = "/resources/learn/enterprise-ai-enablement",
+  card02Href = "/resources/learn/enterprise-ai-data-protection",
   card03Title = "Enterprise AI Document Processing",
   card03Badge = "Pillar",
   card03Href = "/resources/learn/enterprise-ai-document-processing",
@@ -763,7 +763,7 @@ addPropertyControls(Learn, {
   // Card 2
   card02Title: { type: ControlType.String, title: "Card 02 Title", defaultValue: "Enterprise AI Enablement" },
   card02Badge: { type: ControlType.String, title: "Card 02 Badge", defaultValue: "Pillar" },
-  card02Href:  { type: ControlType.String, title: "Card 02 URL",   defaultValue: "/resources/learn/enterprise-ai-enablement" },
+  card02Href:  { type: ControlType.String, title: "Card 02 URL",   defaultValue: "/resources/learn/enterprise-ai-data-protection" },
 
   // Card 3
   card03Title: { type: ControlType.String, title: "Card 03 Title", defaultValue: "Enterprise AI Document Processing" },
