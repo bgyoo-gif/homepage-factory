@@ -109,9 +109,9 @@ const EXPLORE_LINKS = [
   { href: "/resources/learn",                                                 icon: <><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></>, title: "Learn Hub" },
   { href: "/resources/glossary",                                              icon: <><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></>,         title: "Glossary" },
   { href: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",   icon: <><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></>,          title: "Why Redaction Breaks AI" },
-  { href: "/resources/comparison/llm-capsule-vs-masking-tools",              icon: <><line x1="3" y1="12" x2="21" y2="12"/><polyline points="12 3 3 12 12 21"/></>,                                            title: "vs Masking Tools" },
-  { href: "/resources/comparison/llm-capsule-vs-prompt-security-gateways",   icon: <><line x1="3" y1="12" x2="21" y2="12"/><polyline points="12 3 3 12 12 21"/></>,                                            title: "vs Prompt Gateways" },
-  { href: "/resources/comparison/llm-capsule-vs-synthetic-data-platforms",   icon: <><line x1="3" y1="12" x2="21" y2="12"/><polyline points="12 3 3 12 12 21"/></>,                                            title: "vs Synthetic Data" },
+  { href: "/resources/learn/llm-capsule-vs-masking-tools",              icon: <><line x1="3" y1="12" x2="21" y2="12"/><polyline points="12 3 3 12 12 21"/></>,                                            title: "vs Masking Tools" },
+  { href: "/resources/learn/llm-capsule-vs-prompt-security-gateways",   icon: <><line x1="3" y1="12" x2="21" y2="12"/><polyline points="12 3 3 12 12 21"/></>,                                            title: "vs Prompt Gateways" },
+  { href: "/resources/learn/llm-capsule-vs-synthetic-data-platforms",   icon: <><line x1="3" y1="12" x2="21" y2="12"/><polyline points="12 3 3 12 12 21"/></>,                                            title: "vs Synthetic Data" },
   { href: "/resources/glossary/restoration",                                  icon: <><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></>,         title: "Restoration" },
 ]
 

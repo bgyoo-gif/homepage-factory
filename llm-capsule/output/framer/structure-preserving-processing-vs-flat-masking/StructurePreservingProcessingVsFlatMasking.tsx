@@ -48,8 +48,8 @@ const JSONLD_BREADCRUMB = JSON.stringify({
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home",       "item": "https://llmcapsule.ai/" },
     { "@type": "ListItem", "position": 2, "name": "Resources",  "item": "https://llmcapsule.ai/resources" },
-    { "@type": "ListItem", "position": 3, "name": "Comparison", "item": "https://llmcapsule.ai/resources/comparison" },
-    { "@type": "ListItem", "position": 4, "name": "Structure-Preserving Processing vs Flat Masking", "item": "https://llmcapsule.ai/resources/comparison/structure-preserving-processing-vs-flat-masking" },
+    { "@type": "ListItem", "position": 3, "name": "Comparison", "item": "https://llmcapsule.ai/resources/learn" },
+    { "@type": "ListItem", "position": 4, "name": "Structure-Preserving Processing vs Flat Masking", "item": "https://llmcapsule.ai/resources/learn/structure-preserving-processing-vs-flat-masking" },
   ],
 })
 
@@ -58,7 +58,7 @@ const JSONLD_ARTICLE = JSON.stringify({
   "@type": "Article",
   "name": "Structure-Preserving Processing vs Flat Masking",
   "description": "Compare structure-preserving processing with flat masking for enterprise AI. Flat masking collapses document structure; structure preservation maintains integrity for accurate AI outputs.",
-  "url": "https://llmcapsule.ai/resources/comparison/structure-preserving-processing-vs-flat-masking",
+  "url": "https://llmcapsule.ai/resources/learn/structure-preserving-processing-vs-flat-masking",
   "publisher": {
     "@type": "Organization",
     "name": "LLM Capsule",
@@ -520,7 +520,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
                   <span className="spp-breadcrumb__sep">/</span>
                   <a href="/resources" className="spp-breadcrumb__link">Resources</a>
                   <span className="spp-breadcrumb__sep">/</span>
-                  <a href="/resources/comparison" className="spp-breadcrumb__link">Comparison</a>
+                  <a href="/resources/learn" className="spp-breadcrumb__link">Comparison</a>
                   <span className="spp-breadcrumb__sep">/</span>
                   <span className="spp-breadcrumb__current">Structure-Preserving Processing vs Flat Masking</span>
                 </nav>

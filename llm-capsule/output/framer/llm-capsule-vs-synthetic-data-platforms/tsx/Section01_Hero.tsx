@@ -103,8 +103,8 @@ export default function Section01_Hero({
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://llmcapsule.ai/" },
           { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://llmcapsule.ai/resources" },
-          { "@type": "ListItem", "position": 3, "name": "Comparison", "item": "https://llmcapsule.ai/resources/comparison" },
-          { "@type": "ListItem", "position": 4, "name": "LLM Capsule vs Synthetic Data Platforms", "item": "https://llmcapsule.ai/resources/comparison/llm-capsule-vs-synthetic-data-platforms" }
+          { "@type": "ListItem", "position": 3, "name": "Comparison", "item": "https://llmcapsule.ai/resources/learn" },
+          { "@type": "ListItem", "position": 4, "name": "LLM Capsule vs Synthetic Data Platforms", "item": "https://llmcapsule.ai/resources/learn/llm-capsule-vs-synthetic-data-platforms" }
         ]
       })}} />
 

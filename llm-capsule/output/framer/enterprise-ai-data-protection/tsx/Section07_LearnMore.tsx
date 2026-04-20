@@ -31,8 +31,8 @@ const defaultCards: LinkCard[] = [
   { href: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows", title: "Why Redaction Breaks AI" },
   { href: "/resources/learn/secure-enterprise-ai-workflows", title: "Secure AI Workflows" },
   { href: "/resources/learn/structure-preserving-document-processing", title: "Structure-Preserving Processing" },
-  { href: "/resources/comparison/pii-protection-vs-enterprise-confidentiality-control", title: "PII vs Confidentiality Control" },
-  { href: "/resources/comparison/on-premise-vs-cloud-ai-data-protection", title: "On-Premise vs Cloud" },
+  { href: "/resources/learn/pii-protection-vs-enterprise-confidentiality-control", title: "PII vs Confidentiality Control" },
+  { href: "/resources/learn/on-premise-vs-cloud-ai-data-protection", title: "On-Premise vs Cloud" },
   { href: "/resources/learn/ai-data-pipeline-protection", title: "AI Pipeline Protection" },
 ]
 

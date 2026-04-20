@@ -54,9 +54,9 @@ export default function Section07_LearnMore({
   link9Label = "Structure-Preserving Processing",
   link9Href = "/resources/learn/structure-preserving-document-processing",
   link10Label = "PII vs Confidentiality Control",
-  link10Href = "/resources/comparison/pii-protection-vs-enterprise-confidentiality-control",
+  link10Href = "/resources/learn/pii-protection-vs-enterprise-confidentiality-control",
   link11Label = "On-Premise vs Cloud",
-  link11Href = "/resources/comparison/on-premise-vs-cloud-ai-data-protection",
+  link11Href = "/resources/learn/on-premise-vs-cloud-ai-data-protection",
   link12Label = "AI Pipeline Protection",
   link12Href = "/resources/learn/ai-data-pipeline-protection",
 }: Props) {
@@ -212,9 +212,9 @@ addPropertyControls(Section07_LearnMore, {
   link9Label: { type: ControlType.String, title: "Link 9 Label", defaultValue: "Structure-Preserving Processing" },
   link9Href: { type: ControlType.String, title: "Link 9 URL", defaultValue: "/resources/learn/structure-preserving-document-processing" },
   link10Label: { type: ControlType.String, title: "Link 10 Label", defaultValue: "PII vs Confidentiality Control" },
-  link10Href: { type: ControlType.String, title: "Link 10 URL", defaultValue: "/resources/comparison/pii-protection-vs-enterprise-confidentiality-control" },
+  link10Href: { type: ControlType.String, title: "Link 10 URL", defaultValue: "/resources/learn/pii-protection-vs-enterprise-confidentiality-control" },
   link11Label: { type: ControlType.String, title: "Link 11 Label", defaultValue: "On-Premise vs Cloud" },
-  link11Href: { type: ControlType.String, title: "Link 11 URL", defaultValue: "/resources/comparison/on-premise-vs-cloud-ai-data-protection" },
+  link11Href: { type: ControlType.String, title: "Link 11 URL", defaultValue: "/resources/learn/on-premise-vs-cloud-ai-data-protection" },
   link12Label: { type: ControlType.String, title: "Link 12 Label", defaultValue: "AI Pipeline Protection" },
   link12Href: { type: ControlType.String, title: "Link 12 URL", defaultValue: "/resources/learn/ai-data-pipeline-protection" },
 })

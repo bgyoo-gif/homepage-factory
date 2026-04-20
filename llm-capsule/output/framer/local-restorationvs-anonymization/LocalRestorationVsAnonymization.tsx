@@ -44,8 +44,8 @@ const JSONLD_BREADCRUMB = JSON.stringify({
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home",       "item": "https://llmcapsule.ai/" },
     { "@type": "ListItem", "position": 2, "name": "Resources",  "item": "https://llmcapsule.ai/resources" },
-    { "@type": "ListItem", "position": 3, "name": "Comparison", "item": "https://llmcapsule.ai/resources/comparison" },
-    { "@type": "ListItem", "position": 4, "name": "Local Restoration vs Anonymization", "item": "https://llmcapsule.ai/resources/comparison/local-restoration-vs-anonymization" },
+    { "@type": "ListItem", "position": 3, "name": "Comparison", "item": "https://llmcapsule.ai/resources/learn" },
+    { "@type": "ListItem", "position": 4, "name": "Local Restoration vs Anonymization", "item": "https://llmcapsule.ai/resources/learn/local-restoration-vs-anonymization" },
   ],
 })
 
@@ -549,7 +549,7 @@ export default function LocalRestorationVsAnonymization({
                   <span className="lrva-breadcrumb__sep">/</span>
                   <a href="/resources" className="lrva-breadcrumb__link">Resources</a>
                   <span className="lrva-breadcrumb__sep">/</span>
-                  <a href="/resources/comparison" className="lrva-breadcrumb__link">Comparison</a>
+                  <a href="/resources/learn" className="lrva-breadcrumb__link">Comparison</a>
                   <span className="lrva-breadcrumb__sep">/</span>
                   <span className="lrva-breadcrumb__current">Local Restoration vs Anonymization</span>
                 </nav>

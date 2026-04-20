@@ -60,7 +60,7 @@ const RELATED_LINKS = [
     hasProduct: false,
   },
   {
-    href: "/resources/comparison/llm-capsule-vs-masking-tools",
+    href: "/resources/learn/llm-capsule-vs-masking-tools",
     titleParts: [{ product: true }, { text: " vs Masking Tools" }],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -83,7 +83,7 @@ const RELATED_LINKS = [
     hasProduct: false,
   },
   {
-    href: "/resources/comparison/pii-protection-vs-enterprise-confidentiality-control",
+    href: "/resources/learn/pii-protection-vs-enterprise-confidentiality-control",
     title: "PII Protection vs Confidentiality Control",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

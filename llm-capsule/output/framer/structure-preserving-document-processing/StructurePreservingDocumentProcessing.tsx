@@ -168,7 +168,7 @@ export default function StructurePreservingDocumentProcessing({
   relatedCard4Label = "Request a Demo",
   relatedCard4Href = "/request-a-demo",
   relatedCard5Label = "Structure-Preserving vs Flat Masking",
-  relatedCard5Href = "/resources/comparison/structure-preserving-processing-vs-flat-masking",
+  relatedCard5Href = "/resources/learn/structure-preserving-processing-vs-flat-masking",
 
   ctaTitle = "See how LLM Capsule works with your data",
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
@@ -940,7 +940,7 @@ addPropertyControls(StructurePreservingDocumentProcessing, {
   relatedCard5Href: {
     type: ControlType.String,
     title: "Related Card 5 URL",
-    defaultValue: "/resources/comparison/structure-preserving-processing-vs-flat-masking",
+    defaultValue: "/resources/learn/structure-preserving-processing-vs-flat-masking",
   },
   ctaTitle: {
     type: ControlType.String,

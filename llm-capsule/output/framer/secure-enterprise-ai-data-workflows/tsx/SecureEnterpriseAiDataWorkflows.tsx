@@ -717,7 +717,7 @@ export default function SecureEnterpriseAiDataWorkflows({
                     </span>
                     <span className="seadw-card--dark__title">Structure-Preserving Processing</span>
                   </a>
-                  <a href="/resources/comparison/pii-protection-vs-enterprise-confidentiality-control" className="seadw-card--dark">
+                  <a href="/resources/learn/pii-protection-vs-enterprise-confidentiality-control" className="seadw-card--dark">
                     <span className="seadw-card--dark__icon">
                       <svg className="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
@@ -726,7 +726,7 @@ export default function SecureEnterpriseAiDataWorkflows({
                     </span>
                     <span className="seadw-card--dark__title">PII vs Confidentiality Control</span>
                   </a>
-                  <a href="/resources/comparison/on-premise-vs-cloud-ai-data-protection" className="seadw-card--dark">
+                  <a href="/resources/learn/on-premise-vs-cloud-ai-data-protection" className="seadw-card--dark">
                     <span className="seadw-card--dark__icon">
                       <svg className="seadw-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <polyline points="17 1 21 5 17 9" />

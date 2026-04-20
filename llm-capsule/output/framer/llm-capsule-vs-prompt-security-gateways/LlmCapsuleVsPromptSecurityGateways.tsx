@@ -48,8 +48,8 @@ const JSONLD_BREADCRUMB = JSON.stringify({
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home",       "item": "https://llmcapsule.ai/" },
     { "@type": "ListItem", "position": 2, "name": "Resources",  "item": "https://llmcapsule.ai/resources" },
-    { "@type": "ListItem", "position": 3, "name": "Comparison", "item": "https://llmcapsule.ai/resources/comparison" },
-    { "@type": "ListItem", "position": 4, "name": "LLM Capsule vs Prompt Security Gateways", "item": "https://llmcapsule.ai/resources/comparison/llm-capsule-vs-prompt-security-gateways" },
+    { "@type": "ListItem", "position": 3, "name": "Comparison", "item": "https://llmcapsule.ai/resources/learn" },
+    { "@type": "ListItem", "position": 4, "name": "LLM Capsule vs Prompt Security Gateways", "item": "https://llmcapsule.ai/resources/learn/llm-capsule-vs-prompt-security-gateways" },
   ],
 })
 
@@ -58,7 +58,7 @@ const JSONLD_ARTICLE = JSON.stringify({
   "@type": "Article",
   "headline": "LLM Capsule vs Prompt Security Gateways",
   "description": "Compare LLM Capsule with prompt security gateways. Gateways filter at the API layer; LLM Capsule protects at the data layer with structure-preserving encapsulation.",
-  "url": "https://llmcapsule.ai/resources/comparison/llm-capsule-vs-prompt-security-gateways",
+  "url": "https://llmcapsule.ai/resources/learn/llm-capsule-vs-prompt-security-gateways",
   "publisher": {
     "@type": "Organization",
     "name": "LLM Capsule",
