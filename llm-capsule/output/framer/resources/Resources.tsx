@@ -119,6 +119,7 @@ interface Props {
   s3Guide3Href?: string
 
   // Section 4 — CTA Band
+  ctaBgImage?: string
   ctaTitle?: string
   ctaDescription?: string
   ctaBtn1Label?: string
@@ -175,6 +176,7 @@ export default function Resources({
   s3Guide3Href = "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
 
   // Section 4 — CTA Band
+  ctaBgImage = "",
   ctaTitle = "See how LLM Capsule works with your data",
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   ctaBtn1Label = "Request a Demo",
@@ -182,6 +184,9 @@ export default function Resources({
   ctaSecBtn2Label = "Available on AWS Marketplace",
   ctaSecBtn2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
 }: Props) {
+  const DEFAULT_CTA_BG = `${IMAGE_BASE}/bg-paint-sand-sky.png`
+  const resolvedCtaBg = ctaBgImage || DEFAULT_CTA_BG
+
   return (
     <>
       {/* JSON-LD */}
@@ -391,7 +396,7 @@ export default function Resources({
           width: 100%; position: relative; overflow: hidden;
           padding: 80px 16px; text-align: center;
           background-color: #1a1a2e;
-          background-image: url('${IMAGE_BASE}/bg-paint-sand-sky.png');
+          background-image: url('${resolvedCtaBg}');
           background-size: cover; background-position: center;
         }
         @container (max-width: 767px) { .res-cta-band { background-image: none; } }
@@ -793,6 +798,7 @@ addPropertyControls(Resources, {
   },
 
   // Section 4 — CTA Band
+  ctaBgImage: { type: ControlType.Image, title: "CTA BG Image" },
   ctaTitle: {
     type: ControlType.String,
     title: "CTA Title",
