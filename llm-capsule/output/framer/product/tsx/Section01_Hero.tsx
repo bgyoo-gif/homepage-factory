@@ -29,7 +29,7 @@ const JSON_LD_BREADCRUMB = JSON.stringify({
 
 const JSON_LD_PRODUCT = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "SoftwareApplication",
   "name": "LLM Capsule",
   "description": "AI enablement data layer and plugin. Zero exposure, local restoration, enterprise context control, structure-preserving processing, and cross-model execution for secure enterprise LLM usage.",
   "brand": { "@type": "Brand", "name": "CUBIG" }

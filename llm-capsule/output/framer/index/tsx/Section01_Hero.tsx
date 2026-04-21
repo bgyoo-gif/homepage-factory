@@ -27,7 +27,7 @@ const JSONLD_ORG = JSON.stringify({
 
 const JSONLD_PRODUCT = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "SoftwareApplication",
   "name": "LLM Capsule",
   "description": "Enterprise AI enablement data layer and plugin. Enable AI. Protect data. Restore results.",
   "brand": { "@type": "Brand", "name": "CUBIG" },

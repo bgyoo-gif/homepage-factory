@@ -3462,6 +3462,7 @@ function renderStaticTable() {
     html += '<th style="' + thStyle + '">' + typeBadge('html') + '</th>';
     html += '<th style="' + thStyle + '">' + typeBadge('tsx') + '</th>';
     html += '<th style="' + thStyle + '"><span style="font-size:10px;font-weight:600;color:#0e824c;background:rgba(14,130,76,0.08);padding:2px 8px;border-radius:4px;">KO 번역</span></th>';
+    html += '<th style="' + thStyle + '"><span style="font-size:10px;font-weight:600;color:#1821E8;background:rgba(24,33,232,0.08);padding:2px 8px;border-radius:4px;">DE 번역</span></th>';
     html += '</tr></thead><tbody>';
 
     groups.forEach(function(group) {
@@ -3470,6 +3471,8 @@ function renderStaticTable() {
       var baseName = group.input.replace('.html', '');
       var koFile = baseName + '-ko-lines.md';
       var koPath = brandBase + 'output/translations/' + koFile;
+      var deFile = baseName + '-de-lines.md';
+      var dePath = brandBase + 'output/translations/' + deFile;
 
       html += '<tr style="border-bottom:1px solid var(--ds-color-surface-light);">';
       html += '<td style="padding:12px;font-weight:600;">' + group.input + '</td>';
