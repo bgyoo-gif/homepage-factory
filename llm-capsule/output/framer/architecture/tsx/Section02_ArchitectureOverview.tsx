@@ -339,7 +339,7 @@ export default function Section02_ArchitectureOverview({
         <div className="s2-inner">
           <div className="s2-container">
             <div className="s2-section-header">
-              <h2 className="s2-section-header__title" style={{ wordBreak: "keep-all" }}>
+              <h2 className="s2-section-header__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {sectionTitle}{" "}
                 <span className="s2-text--brand">{sectionTitleHighlight}</span>
               </h2>

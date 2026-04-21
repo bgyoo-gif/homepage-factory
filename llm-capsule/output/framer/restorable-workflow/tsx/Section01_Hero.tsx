@@ -128,7 +128,7 @@ export default function Section01_Hero({
               <span className="s1-breadcrumb__sep">/</span>
               <span className="s1-breadcrumb__current">Restorable Workflow</span>
             </nav>
-            <h1 className="s1-title" style={{ wordBreak: "keep-all" }}>{title}</h1>
+            <h1 className="s1-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{title}</h1>
             <p className="s1-description">
               {description}{" "}
               <span className="s1-product-name">{productName}</span>

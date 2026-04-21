@@ -208,7 +208,7 @@ export default function Section02_CoreDifferentiation({
         <div className="s2-inner">
           <div className="s2-container">
             <div className="s2-header">
-              <h2 className="s2-header__title" style={{ wordBreak: "keep-all" }}>
+              <h2 className="s2-header__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {sectionTitle} <span className="s2-header__brand">{sectionTitleBrand}</span>
               </h2>
               <p className="s2-header__desc">{sectionDescription}</p>

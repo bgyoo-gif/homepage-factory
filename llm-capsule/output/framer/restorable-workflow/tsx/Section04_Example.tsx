@@ -139,7 +139,7 @@ export default function Section04_Example({
         <div className="s4-inner">
           <div className="s4-container">
             <div className="s4-section-header">
-              <h2 style={{ wordBreak: "keep-all" }}><span className="s4-brand">{sectionHeading}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s4-brand">{sectionHeading}</span></h2>
             </div>
             <div className="s4-card">
               <p className="s4-paragraph">{paragraph1}</p>

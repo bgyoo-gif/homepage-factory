@@ -185,7 +185,7 @@ export default function Section09_CTA({
       `}</style>
       <section className="s9-cta">
         <div className="s9-inner">
-          <h2 className="s9-title" style={{ wordBreak: "keep-all" }}>
+          <h2 className="s9-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
             {lang === "en" ? (
               <>
                 {title}

@@ -150,7 +150,7 @@ export default function Section04_EnterpriseExample({
         <div className="s4-inner">
           <div className="s4-container">
             <div className="s4-header">
-              <h2 style={{ wordBreak: "keep-all" }}>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {t.sectionLabel}<span className="s4-brand">{t.sectionLabelHighlight}</span>
               </h2>
             </div>

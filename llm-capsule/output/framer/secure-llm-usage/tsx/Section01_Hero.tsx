@@ -138,7 +138,7 @@ export default function Section01_Hero({
               <span className="s1-breadcrumb__sep">/</span>
               <span className="s1-breadcrumb__current">Secure LLM Usage</span>
             </nav>
-            <h1 className="s1-title" style={{ wordBreak: "keep-all" }}>
+            <h1 className="s1-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
               <span className="s1-title-brand">{titlePrefix}</span>
               {titleMain}
             </h1>

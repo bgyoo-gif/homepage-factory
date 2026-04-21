@@ -177,7 +177,7 @@ export default function Section03_Explanation({
         <div className="s3-inner">
           <div className="s3-container">
             <div className="s3-section-header">
-              <h2 style={{ wordBreak: "keep-all" }}><span className="s3-brand-text">{sectionLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s3-brand-text">{sectionLabel}</span></h2>
             </div>
             <p className="s3-intro">{intro}</p>
             <ul className="s3-bullet-list">

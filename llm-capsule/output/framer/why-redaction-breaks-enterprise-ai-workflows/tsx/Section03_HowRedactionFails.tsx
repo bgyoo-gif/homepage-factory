@@ -139,7 +139,7 @@ export default function Section03_HowRedactionFails({
         <div className="s3-inner">
           <div className="s3-container">
             <div className="s3-section-header">
-              <h2 style={{ wordBreak: "keep-all" }}>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {sectionHeadingPre}{" "}
                 <span className="s3-brand">{sectionHeadingHighlight}</span>{" "}
                 {sectionHeadingPost}

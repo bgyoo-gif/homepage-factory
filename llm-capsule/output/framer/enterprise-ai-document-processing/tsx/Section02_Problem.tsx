@@ -83,7 +83,7 @@ export default function Section02_Problem({
         <div className="s2-inner">
           <div className="s2-container">
             <div className="s2-section-header">
-              <h2 style={{ wordBreak: "keep-all" }}><span className="s2-brand">{sectionLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s2-brand">{sectionLabel}</span></h2>
             </div>
             <p className="s2-paragraph">{paragraph1}</p>
             <p className="s2-paragraph">{paragraph2}</p>

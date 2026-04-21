@@ -126,7 +126,7 @@ export default function Section05_HowCapsuleDiffers({
         <div className="s5-inner">
           <div className="s5-container">
             <div className="s5-section-header">
-              <h2 style={{ wordBreak: "keep-all" }}>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {sectionLabelPrefix} <span className="s5-brand-name">{sectionLabelBrand}</span> <span className="s5-brand-text">{sectionLabelSuffix}</span>
               </h2>
             </div>

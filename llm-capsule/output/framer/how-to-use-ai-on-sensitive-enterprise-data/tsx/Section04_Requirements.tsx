@@ -196,7 +196,7 @@ export default function Section04_Requirements({
         <div className="s4-inner">
           <div className="s4-container">
             <div className="s4-header">
-              <h2 style={{ wordBreak: "keep-all" }}>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {t.heading} <span className="s4-highlight">{t.headingHighlight}</span>
               </h2>
             </div>

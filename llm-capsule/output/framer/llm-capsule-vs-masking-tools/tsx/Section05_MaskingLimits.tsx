@@ -137,7 +137,7 @@ export default function Section05_MaskingLimits({
         <div className="s5-inner">
           <div className="s5-container">
             <div className="s5-header">
-              <h2 style={{ wordBreak: "keep-all" }}>{heading}</h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{heading}</h2>
             </div>
             <ul className="s5-list">
               {items.map((item, i) => (

@@ -119,7 +119,7 @@ export default function Section05_EnterpriseExamples({
         <div className="s5-inner">
           <div className="s5-container">
             <div className="s5-section-header">
-              <h2 style={{ wordBreak: "keep-all" }}>Enterprise <span className="s5-brand-text">{sectionLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>Enterprise <span className="s5-brand-text">{sectionLabel}</span></h2>
             </div>
             <div className="s5-cards">
               <div className="s5-card">

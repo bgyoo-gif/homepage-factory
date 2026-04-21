@@ -131,7 +131,7 @@ export default function Section12_FAQ({
           <section id="section-12" className="idx-section">
             <div className="idx-container">
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title" style={{ wordBreak: "keep-all" }}>{faqHeading}</h2>
+                <h2 className="idx-section-header__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{faqHeading}</h2>
               </div>
 
               <div className="idx-faq-wrap">

@@ -212,7 +212,7 @@ export default function Section07_Problem({
           <section id="section-7" className="idx-section">
             <div className="idx-container">
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title" style={{ wordBreak: "keep-all" }}>{probHeading}</h2>
+                <h2 className="idx-section-header__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{probHeading}</h2>
                 <p className="idx-section-header__desc">{probSubheading}</p>
               </div>
 

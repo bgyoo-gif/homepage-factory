@@ -535,7 +535,7 @@ export default function RequestPov({
             <section id="section-hero" className="rpov-section--hero">
               <div className="rpov-container">
                 <div className="rpov-hero-text-only">
-                  <h1 className="rpov-hero__title" style={{ wordBreak: "keep-all" }}>
+                  <h1 className="rpov-hero__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                     {heroTitle} <span className="rpov-text--brand">{heroTitleHighlight}</span>
                   </h1>
                   <p className="rpov-hero__description">{heroDescription}</p>
@@ -551,7 +551,7 @@ export default function RequestPov({
                   {/* Left: Process Steps */}
                   <div className="rpov-process">
                     <div className="rpov-process__header">
-                      <h2 style={{ wordBreak: "keep-all" }}>
+                      <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                         {processTitle} <span className="rpov-text--brand">{processTitleHighlight}</span>
                       </h2>
                       <p>{processDescription}</p>
@@ -600,7 +600,7 @@ export default function RequestPov({
 
                   {/* Right: Request Form */}
                   <div className="rpov-form-card">
-                    <h2 className="rpov-form-card__title" style={{ wordBreak: "keep-all" }}>{formCardTitle}</h2>
+                    <h2 className="rpov-form-card__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{formCardTitle}</h2>
                     <form className="rpov-form-fields" noValidate>
 
                       <div className="rpov-form-group">
@@ -688,7 +688,7 @@ export default function RequestPov({
             {/* ─── Section 3: CTA Band ─────────────────────────────────── */}
             <section id="section-cta" className="rpov-cta-band" aria-label="Call to action">
               <div className="rpov-cta-band__inner">
-                <h2 className="rpov-cta-band__title" style={{ wordBreak: "keep-all" }}>
+                <h2 className="rpov-cta-band__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                   {ctaTitle}
                 </h2>
                 <p className="rpov-cta-band__description">{ctaDescription}</p>

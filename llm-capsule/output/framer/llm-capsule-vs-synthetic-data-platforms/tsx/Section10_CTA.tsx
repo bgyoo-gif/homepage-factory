@@ -159,7 +159,7 @@ export default function Section10_CTA({
 
       <section className="s10-section">
         <div className="s10-inner">
-          <h2 className="s10-title" style={{ wordBreak: "keep-all" }}>
+          <h2 className="s10-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
             {title}
           </h2>
           <p className="s10-description">{description}</p>

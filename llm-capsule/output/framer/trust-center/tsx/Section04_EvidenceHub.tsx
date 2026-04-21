@@ -180,7 +180,7 @@ export default function Section04_EvidenceHub({
         <div className="s4-inner">
           <div className="s4-container">
             <div className="s4-section-header">
-              <h2 className="s4-section-title" id="s4-evidence-title" style={{ wordBreak: "keep-all" }}>
+              <h2 className="s4-section-title" id="s4-evidence-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {sectionTitle} <span className="s4-title-highlight">{sectionTitleHighlight}</span>
               </h2>
               <p className="s4-section-desc">{sectionDescription}</p>

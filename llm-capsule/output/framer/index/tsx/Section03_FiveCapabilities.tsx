@@ -194,7 +194,7 @@ export default function Section03_FiveCapabilities({
           <section id="section-3" className="idx-section">
             <div className="idx-container">
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title" style={{ wordBreak: "keep-all" }}>{capHeading}</h2>
+                <h2 className="idx-section-header__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{capHeading}</h2>
                 <p className="idx-section-header__desc">{capSubheading}</p>
               </div>
 

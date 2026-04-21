@@ -444,7 +444,7 @@ export default function Resources({
             <section id="section-1" className="res-section res-section--hero">
               <div className="res-container">
                 <div className="res-hero">
-                  <h1 className="res-hero__title" style={{ wordBreak: "keep-all" }}>
+                  <h1 className="res-hero__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                     {heroTitle} <span className="res-text--brand">{heroTitleBrand}</span>
                   </h1>
                   <p className="res-hero__description">
@@ -460,7 +460,7 @@ export default function Resources({
               <div className="res-container">
 
                 <div className="res-section-header res-section-header--underline">
-                  <h2 className="res-section-header__title" style={{ wordBreak: "keep-all" }}>
+                  <h2 className="res-section-header__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                     {s2SectionTitle} <span className="res-text--brand">{s2SectionTitleBrand}</span>
                   </h2>
                   <p className="res-section-header__description">{s2SectionDescription}</p>
@@ -530,7 +530,7 @@ export default function Resources({
               <div className="res-container">
 
                 <div className="res-section-header res-section-header--underline">
-                  <h2 className="res-section-header__title" style={{ wordBreak: "keep-all" }}>
+                  <h2 className="res-section-header__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                     {s3SectionTitle} <span className="res-text--brand">{s3SectionTitleBrand}</span>
                   </h2>
                   <p className="res-section-header__description">{s3SectionDescription}</p>
@@ -590,7 +590,7 @@ export default function Resources({
             {/* ── Section 4: CTA Band ──────────────────────────────────── */}
             <section id="section-4" className="res-cta-band" aria-label="Call to action">
               <div className="res-cta-band__inner">
-                <h2 className="res-cta-band__title" style={{ wordBreak: "keep-all" }}>
+                <h2 className="res-cta-band__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                   {ctaTitle}
                 </h2>
                 <p className="res-cta-band__description">{ctaDescription}</p>

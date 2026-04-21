@@ -210,7 +210,7 @@ export default function Section02_Trust({
             <div className="idx-container">
 
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title" style={{ wordBreak: "keep-all" }}>{trustHeading}</h2>
+                <h2 className="idx-section-header__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{trustHeading}</h2>
                 <p className="idx-section-header__desc">{trustSubheading}</p>
               </div>
 

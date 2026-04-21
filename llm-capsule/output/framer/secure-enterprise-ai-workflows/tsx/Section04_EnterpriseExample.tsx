@@ -125,7 +125,7 @@ export default function Section04_EnterpriseExample({
         <div className="s4-inner">
           <div className="s4-container">
             <div className="s4-section-header">
-              <h2 style={{ wordBreak: "keep-all" }}>Enterprise <span className="s4-brand-text">{sectionLabel.replace("Enterprise ", "")}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>Enterprise <span className="s4-brand-text">{sectionLabel.replace("Enterprise ", "")}</span></h2>
             </div>
             <div className="s4-card">
               <h4 className="s4-card-title">{cardTitle}</h4>

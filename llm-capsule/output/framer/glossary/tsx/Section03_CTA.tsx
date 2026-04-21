@@ -186,7 +186,7 @@ export default function Section03_CTA({
         <div className="s3-inner-wrap">
           <div className="s3-cta-band" role="region" aria-label="Call to action">
             <div className="s3-inner">
-              <h2 className="s3-title" style={{ wordBreak: "keep-all" }}>
+              <h2 className="s3-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {title}
               </h2>
               <p className="s3-description">

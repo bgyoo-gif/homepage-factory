@@ -153,7 +153,7 @@ export default function Section01_Hero({
               <span className="s1-breadcrumb__sep">/</span>
               <span className="s1-breadcrumb__current">{breadcrumbCurrent}</span>
             </nav>
-            <h1 className="s1-title" style={{ wordBreak: "keep-all" }}>{title}</h1>
+            <h1 className="s1-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{title}</h1>
             <p className="s1-description">{description}</p>
           </div>
         </div>

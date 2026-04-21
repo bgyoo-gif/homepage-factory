@@ -105,7 +105,7 @@ export default function Section02_Overview({
         <div className="s2-inner">
           <div className="s2-container">
             <div className="s2-section-header">
-              <h2 style={{ wordBreak: "keep-all" }}><span className="s2-brand-text">{sectionLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s2-brand-text">{sectionLabel}</span></h2>
             </div>
             <p className="s2-paragraph">
               Synthetic data platforms generate artificial datasets that mimic the statistical properties of real data. They are used for model training, testing, and analytics where real data cannot be used. <span className="s2-brand-name">{brandName}</span> addresses a different problem: it is an AI enablement data layer that enables AI processing on real enterprise documents while protecting sensitive elements and restoring usable outputs.

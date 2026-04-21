@@ -173,7 +173,7 @@ export default function Section14_CTA({
         <div className="s14-inner">
           <div className="s14-cta-band">
             <div className="s14-inner-content">
-              <h2 className="s14-title" style={{ wordBreak: "keep-all" }}>{title}</h2>
+              <h2 className="s14-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{title}</h2>
               <p className="s14-description">{description}</p>
               <div className="s14-actions">
                 <a href={cta1Href} className="s14-btn">{cta1Label}</a>

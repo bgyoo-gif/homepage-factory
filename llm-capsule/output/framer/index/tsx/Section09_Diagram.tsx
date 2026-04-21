@@ -233,7 +233,7 @@ export default function Section09_Diagram({
           <section id="section-9" className="idx-section">
             <div className="idx-container">
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title" style={{ wordBreak: "keep-all" }}>{diagHeading}</h2>
+                <h2 className="idx-section-header__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{diagHeading}</h2>
                 <p className="idx-section-header__desc">{diagSubheading}</p>
               </div>
 

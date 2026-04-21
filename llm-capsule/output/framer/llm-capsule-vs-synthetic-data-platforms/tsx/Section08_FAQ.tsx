@@ -215,7 +215,7 @@ export default function Section08_FAQ({
         <div className="s8-inner">
           <div className="s8-container">
             <div className="s8-section-header">
-              <h2 style={{ wordBreak: "keep-all" }}><span className="s8-brand-text">{sectionLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s8-brand-text">{sectionLabel}</span></h2>
             </div>
             <div className="s8-ac-list">
               {faqs.map((faq, idx) => (

@@ -174,7 +174,7 @@ export default function Section08_CTABand({
 
       <section className="s8-cta-band" id="section-cta" lang={locale}>
         <div className="s8-cta-band__inner">
-          <h2 className="s8-cta-band__title" style={{ wordBreak: "keep-all" }}>
+          <h2 className="s8-cta-band__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
             {title} <span className="s8-product-name">{productName}</span> {titleSuffix}
           </h2>
           <p className="s8-cta-band__description">{description}</p>

@@ -190,7 +190,7 @@ export default function Section03_CTABand({
       <div className="s3-outer">
         <section className="s3-band" id="section-3" aria-label="Get started">
           <div className="s3-inner">
-            <h2 className="s3-title" style={{ wordBreak: "keep-all" }}>
+            <h2 className="s3-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
               {title}{" "}
               <span className="s3-title__product">{titleProductName}</span>{" "}
               {titleSuffix}

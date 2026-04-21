@@ -536,7 +536,7 @@ export default function StructurePreservingDocumentProcessing({
                   <span className="spdp-breadcrumb__sep">/</span>
                   <span className="spdp-breadcrumb__current">{heroTitle}</span>
                 </nav>
-                <h1 className="spdp-article-hero__title" style={{ wordBreak: "keep-all" }}>{heroTitle}</h1>
+                <h1 className="spdp-article-hero__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{heroTitle}</h1>
                 <p className="spdp-article-hero__description">{heroDescription}</p>
               </div>
             </section>
@@ -545,7 +545,7 @@ export default function StructurePreservingDocumentProcessing({
             <section id="section-3" className="spdp-section--article-body">
               <div className="spdp-article-container">
                 <div className="spdp-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all" }}><span className="spdp-text--brand">Problem</span></h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="spdp-text--brand">Problem</span></h2>
                 </div>
                 <p className="spdp-body-paragraph">{problemParagraph1}</p>
                 <p className="spdp-body-paragraph">{problemParagraph2}</p>
@@ -566,7 +566,7 @@ export default function StructurePreservingDocumentProcessing({
             <section id="section-5" className="spdp-section--article-body">
               <div className="spdp-article-container">
                 <div className="spdp-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all" }}><span className="spdp-text--brand">Explanation</span></h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="spdp-text--brand">Explanation</span></h2>
                 </div>
                 <p className="spdp-body-paragraph">{explanationIntro}</p>
                 <ul className="spdp-bullet spdp-bullet--dot">
@@ -606,7 +606,7 @@ export default function StructurePreservingDocumentProcessing({
             <section id="section-6" className="spdp-section--article-body">
               <div className="spdp-article-container">
                 <div className="spdp-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all" }}><span className="spdp-text--brand">Enterprise Example</span></h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="spdp-text--brand">Enterprise Example</span></h2>
                 </div>
                 <div className="spdp-card">
                   <h3 className="spdp-article-card__title">{exampleCardTitle}</h3>
@@ -621,7 +621,7 @@ export default function StructurePreservingDocumentProcessing({
             <section id="section-7" className="spdp-section--article-body">
               <div className="spdp-article-container">
                 <div className="spdp-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all" }}>{faqTitle}</h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{faqTitle}</h2>
                 </div>
                 <div className="spdp-ac-list" role="list">
 
@@ -748,7 +748,7 @@ export default function StructurePreservingDocumentProcessing({
             {/* ── Section CTA: CTA Band ────────────────────────────────── */}
             <section id="section-cta" className="spdp-cta-band">
               <div className="spdp-cta-band__inner">
-                <h2 className="spdp-cta-band__title" style={{ wordBreak: "keep-all" }}>
+                <h2 className="spdp-cta-band__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                   {ctaTitle}
                 </h2>
                 <p className="spdp-cta-band__description">{ctaDescription}</p>

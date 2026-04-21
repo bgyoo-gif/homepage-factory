@@ -239,7 +239,7 @@ export default function Section04_DeploymentOptions({
         <div className="s4-inner">
           <div className="s4-container">
             <div className="s4-section-header">
-              <h2 className="s4-section-header__title" style={{ wordBreak: "keep-all" }}>
+              <h2 className="s4-section-header__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {sectionTitle}{" "}
                 <span className="s4-text--brand">{sectionTitleHighlight}</span>
               </h2>

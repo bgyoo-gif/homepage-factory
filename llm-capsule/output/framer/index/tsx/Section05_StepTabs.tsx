@@ -207,7 +207,7 @@ export default function Section05_StepTabs({
           <section id="section-5" className="idx-section">
             <div className="idx-container">
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title" style={{ wordBreak: "keep-all" }}>{tabsHeading}</h2>
+                <h2 className="idx-section-header__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{tabsHeading}</h2>
                 <p className="idx-section-header__desc">{tabsSubheading}</p>
               </div>
 

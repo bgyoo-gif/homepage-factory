@@ -119,7 +119,7 @@ export default function Section03_Explanation({
         <div className="s3-inner">
           <div className="s3-container">
             <div className="s3-section-header">
-              <h2 style={{ wordBreak: "keep-all" }}>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 <span className="s3-text--brand">{headingBrand}</span>
                 {headingPlain && ` ${headingPlain}`}
               </h2>

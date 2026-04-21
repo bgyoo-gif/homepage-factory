@@ -128,7 +128,7 @@ export default function Section01_Hero({
               <span className="s1-breadcrumb__sep">/</span>
               <span className="s1-breadcrumb__current">LLM Capsule vs Synthetic Data Platforms</span>
             </nav>
-            <h1 className="s1-title" style={{ wordBreak: "keep-all" }}>
+            <h1 className="s1-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
               <span className="s1-brand">{titleBrand}</span> {title}
             </h1>
             <p className="s1-description">

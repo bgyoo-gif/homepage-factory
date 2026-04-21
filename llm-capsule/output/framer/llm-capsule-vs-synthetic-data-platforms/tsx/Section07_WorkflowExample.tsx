@@ -131,7 +131,7 @@ export default function Section07_WorkflowExample({
         <div className="s7-inner">
           <div className="s7-container">
             <div className="s7-section-header">
-              <h2 style={{ wordBreak: "keep-all" }}>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {sectionLabelPrefix} <span className="s7-brand-text">{sectionLabelBrand}</span>
               </h2>
             </div>

@@ -159,7 +159,7 @@ export default function Section05_CTA({
         <div className="s5-inner">
           <div className="s5-cta-band">
             <div className="s5-cta-inner">
-              <h2 className="s5-cta-title" id="s5-cta-title" style={{ wordBreak: "keep-all" }}>
+              <h2 className="s5-cta-title" id="s5-cta-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {title}
               </h2>
               <p className="s5-cta-desc">{description}</p>

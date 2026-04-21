@@ -146,7 +146,7 @@ export default function Section04_Explanation({
         <div className="s4-inner">
           <div className="s4-container">
             <div className="s4-section-header">
-              <h2 style={{ wordBreak: "keep-all" }}><span className="s4-text--brand">{sectionLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s4-text--brand">{sectionLabel}</span></h2>
             </div>
             <p className="s4-paragraph">{intro}</p>
             <ul className="s4-bullet">

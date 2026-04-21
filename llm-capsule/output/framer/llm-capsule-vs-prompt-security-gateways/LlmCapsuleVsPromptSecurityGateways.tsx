@@ -583,7 +583,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
                   <span className="vs-breadcrumb__sep">/</span>
                   <span className="vs-breadcrumb__current">LLM Capsule vs Prompt Security Gateways</span>
                 </nav>
-                <h1 className="vs-article-hero__title" style={{ wordBreak: "keep-all" }}>
+                <h1 className="vs-article-hero__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                   <span className="vs-text--product">LLM Capsule</span> vs Prompt Security Gateways
                 </h1>
                 <p className="vs-article-hero__description">
@@ -596,7 +596,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
             <section id="section-3" className="vs-section--article-body">
               <div className="vs-article-container">
                 <div className="vs-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all" }}>Overview</h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>Overview</h2>
                 </div>
                 <p className="vs-article-body__paragraph">
                   Prompt security gateways sit between the user and the AI model, scanning prompts for sensitive content and filtering or blocking requests that contain flagged patterns. They operate at the API interaction layer. <span className="vs-text--product">LLM Capsule</span> operates as an AI enablement data layer — transforming the data itself before it enters any AI workflow, enabling AI adoption rather than blocking it.
@@ -608,7 +608,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
             <section id="section-4" className="vs-section--article-body">
               <div className="vs-article-container">
                 <div className="vs-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all" }}>{gatewaysWorkTitle}</h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{gatewaysWorkTitle}</h2>
                 </div>
                 <p className="vs-article-body__paragraph">{gatewaysWorkText}</p>
               </div>
@@ -618,7 +618,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
             <section id="section-5" className="vs-section--article-body">
               <div className="vs-article-container">
                 <div className="vs-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all" }}>{limitationsTitle}</h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{limitationsTitle}</h2>
                 </div>
                 <ul className="vs-bullet vs-bullet--dot">
                   <li className="vs-bullet__item">
@@ -645,7 +645,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
             <section id="section-6" className="vs-section--article-body">
               <div className="vs-article-container">
                 <div className="vs-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all" }}>How <span className="vs-text--product">LLM Capsule</span> Differs</h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>How <span className="vs-text--product">LLM Capsule</span> Differs</h2>
                 </div>
                 <p className="vs-article-body__paragraph">
                   <span className="vs-text--product">LLM Capsule</span> operates upstream of the prompt. It encapsulates sensitive data at the document level before any AI processing occurs. The encapsulation is structure-preserving — AI receives complete, processable documents. After AI generates outputs, local restoration (restoration) restores enterprise context automatically.
@@ -660,7 +660,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
             <section id="section-7" className="vs-section--article-body">
               <div className="vs-article-container">
                 <div className="vs-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all" }}>{comparisonTitle}</h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{comparisonTitle}</h2>
                 </div>
                 <div className="vs-table-wrap">
                   <table className="vs-table">
@@ -717,7 +717,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
             <section id="section-8" className="vs-section--article-body">
               <div className="vs-article-container">
                 <div className="vs-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all" }}>{exampleTitle}</h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{exampleTitle}</h2>
                 </div>
                 <div className="vs-card">
                   <h4 className="vs-card__title">{exampleCardTitle}</h4>
@@ -731,7 +731,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
             <section id="section-9" className="vs-section--article-body">
               <div className="vs-article-container">
                 <div className="vs-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all" }}>{faqTitle}</h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{faqTitle}</h2>
                 </div>
                 <div className="vs-ac-list">
 
@@ -838,7 +838,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
             {/* ── Section 11: CTA Band ─────────────────────────────────── */}
             <section id="section-cta" className="vs-cta-band">
               <div className="vs-cta-band__inner">
-                <h2 className="vs-cta-band__title" style={{ wordBreak: "keep-all" }}>
+                <h2 className="vs-cta-band__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                   {ctaTitle}
                 </h2>
                 <p className="vs-cta-band__description">{ctaDescription}</p>

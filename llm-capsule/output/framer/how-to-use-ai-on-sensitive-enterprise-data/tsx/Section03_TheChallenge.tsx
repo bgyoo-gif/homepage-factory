@@ -132,7 +132,7 @@ export default function Section03_TheChallenge({
         <div className="s3-inner">
           <div className="s3-container">
             <div className="s3-section-header">
-              <h2 style={{ wordBreak: "keep-all" }}>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {t.headingPre} <span className="s3-highlight">{t.headingHighlight}</span>
               </h2>
             </div>

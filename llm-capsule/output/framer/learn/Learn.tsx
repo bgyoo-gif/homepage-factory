@@ -680,7 +680,7 @@ export default function Learn({
             {/* ── Section 1: Hero ───────────────────────────────────────── */}
             <section id="section-1" className="lrn-section lrn-section--hero">
               <div className="lrn-container">
-                <h1 className="lrn-hero__title" style={{ wordBreak: "keep-all" }}>{heroTitle}</h1>
+                <h1 className="lrn-hero__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{heroTitle}</h1>
                 <p className="lrn-hero__description">{heroDescription}</p>
               </div>
             </section>
@@ -724,7 +724,7 @@ export default function Learn({
             <section id="section-3" aria-label="Call to action">
               <div className="lrn-cta-band">
                 <div className="lrn-cta-band__inner">
-                  <h2 className="lrn-cta-band__title" style={{ wordBreak: "keep-all" }}>
+                  <h2 className="lrn-cta-band__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                     {ctaTitle}
                   </h2>
                   <p className="lrn-cta-band__description">{ctaDescription}</p>

@@ -194,7 +194,7 @@ export default function Section08_AdminGovernance({
         <div className="s8-inner">
           <div className="s8-container">
             <div className="s8-header">
-              <h2 className="s8-header__title" style={{ wordBreak: "keep-all" }}>
+              <h2 className="s8-header__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {sectionTitle} <span className="s8-header__brand">{sectionTitleBrand}</span>
               </h2>
               <p className="s8-header__desc">{sectionDescription}</p>

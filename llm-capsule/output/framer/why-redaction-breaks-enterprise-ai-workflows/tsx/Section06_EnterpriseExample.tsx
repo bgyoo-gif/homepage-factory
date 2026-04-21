@@ -165,7 +165,7 @@ export default function Section06_EnterpriseExample({
         <div className="s6-inner">
           <div className="s6-container">
             <div className="s6-section-header">
-              <h2 style={{ wordBreak: "keep-all" }}>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {sectionHeadingPre}{" "}
                 <span className="s6-brand">{sectionHeadingHighlight}</span>
               </h2>

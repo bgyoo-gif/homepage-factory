@@ -257,7 +257,7 @@ export default function Section11_DeploymentReadiness({
         <div className="s11-inner">
           <div className="s11-container">
             <div className="s11-header">
-              <h2 className="s11-header__title" style={{ wordBreak: "keep-all" }}>
+              <h2 className="s11-header__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {sectionTitle} <span className="s11-header__brand">{sectionTitleBrand}</span>
               </h2>
               <p className="s11-header__desc">{sectionDescription}</p>

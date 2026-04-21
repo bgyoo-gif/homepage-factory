@@ -269,7 +269,7 @@ export default function Section07_FAQ({
         <div className="s7-inner">
           <div className="s7-container">
             <div className="s7-header">
-              <h2 style={{ wordBreak: "keep-all" }}>{heading}</h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{heading}</h2>
             </div>
             <div className="s7-ac-list">
               {faqs.map((faq, i) => {

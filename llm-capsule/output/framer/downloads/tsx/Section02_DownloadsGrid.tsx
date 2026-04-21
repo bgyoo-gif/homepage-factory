@@ -275,7 +275,7 @@ export default function Section02_DownloadsGrid({
         <div className="s2-inner">
           <div className="s2-container">
             <header className="s2-header">
-              <h2 className="s2-header-title" style={{ wordBreak: "keep-all" }}>
+              <h2 className="s2-header-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {sectionTitle} <span className="s2-header-highlight">{sectionTitleHighlight}</span>
               </h2>
               <p className="s2-header-description">{sectionDescription}</p>

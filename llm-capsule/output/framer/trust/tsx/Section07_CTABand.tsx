@@ -150,7 +150,7 @@ export default function Section07_CTABand({
       <div className="s7-cta-band">
         <div className="s7-inner">
           <div className="s7-band-inner">
-            <h2 className="s7-title" style={{ wordBreak: "keep-all" }}>
+            <h2 className="s7-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
               {title} <span className="s7-product">{titleProduct}</span> {titleSuffix}
             </h2>
             <p className="s7-description">{description}</p>

@@ -313,7 +313,7 @@ export default function Section12_Comparison({
         <div className="s12-inner">
           <div className="s12-container">
             <div className="s12-header">
-              <h2 className="s12-header__title" style={{ wordBreak: "keep-all" }}>
+              <h2 className="s12-header__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {sectionTitle} <span className="s12-header__brand">{sectionTitleBrand}</span>
               </h2>
               <p className="s12-header__desc">{sectionDescription}</p>

@@ -255,7 +255,7 @@ export default function Section05_FAQ({
         <div className="s5-inner">
           <div className="s5-container">
             <div className="s5-header">
-              <h2 style={{ wordBreak: "keep-all" }}><span className="s5-brand">{t.sectionLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s5-brand">{t.sectionLabel}</span></h2>
             </div>
             <div className="s5-ac-list">
               <AcCard title={t.q1Title} answer={t.q1Answer} defaultOpen={true} />

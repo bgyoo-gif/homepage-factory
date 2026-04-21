@@ -303,7 +303,7 @@ export default function Section03_ArchitectureComponents({
         <div className="s3-inner">
           <div className="s3-container">
             <div className="s3-section-header">
-              <h2 className="s3-section-header__title" style={{ wordBreak: "keep-all" }}>
+              <h2 className="s3-section-header__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {sectionTitle}{" "}
                 <span className="s3-text--brand">{sectionTitleHighlight}</span>
               </h2>

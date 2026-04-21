@@ -164,7 +164,7 @@ export default function Section06_CTA({
 
       <section className="s6-section">
         <div className="s6-inner">
-          <h2 className="s6-title" style={{ wordBreak: "keep-all" }}>
+          <h2 className="s6-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
             {titlePre}{" "}
             <span className="s6-product">{titleProduct}</span>{" "}
             {titlePost}

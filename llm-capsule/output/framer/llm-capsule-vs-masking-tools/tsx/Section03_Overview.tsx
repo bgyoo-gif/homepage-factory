@@ -95,7 +95,7 @@ export default function Section03_Overview({
         <div className="s3-inner">
           <div className="s3-container">
             <div className="s3-header">
-              <h2 style={{ wordBreak: "keep-all" }}>{heading}</h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{heading}</h2>
             </div>
             <p className="s3-paragraph">
               Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. <span className="s3-product">{product}</span> takes a fundamentally different approach as an AI enablement data layer and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.

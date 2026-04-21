@@ -165,7 +165,7 @@ export default function Section05_CTA({
       <div className="s5-wrap">
         <section className="s5-section" id="section-5">
           <div className="s5-inner">
-            <h2 className="s5-title" style={{ wordBreak: "keep-all" }}>{title}</h2>
+            <h2 className="s5-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{title}</h2>
             <p className="s5-description">{description}</p>
             <div className="s5-actions">
               <a href={button1Href} className="s5-btn">{button1Label}</a>

@@ -180,7 +180,7 @@ export default function Section05_HowItWorks({
         <div className="s5-inner">
           <div className="s5-container">
             <div className="s5-header">
-              <h2 style={{ wordBreak: "keep-all" }}>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {t.headingPre} <span className="s5-brand">{t.headingBrand}</span> {t.headingPost}
               </h2>
             </div>

@@ -89,7 +89,7 @@ export default function Section05_RegulatorySupport({
         <div className="s5-inner">
           <div className="s5-container">
             <div className="s5-header">
-              <h2 className="s5-header__title" style={{ wordBreak: "keep-all" }}>
+              <h2 className="s5-header__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {sectionTitle} <span className="s5-header__brand">{sectionTitleBrand}</span>
               </h2>
             </div>

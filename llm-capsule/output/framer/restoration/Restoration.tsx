@@ -430,7 +430,7 @@ export default function Restoration({
                   <span className="rst-breadcrumb__sep">/</span>
                   <span className="rst-breadcrumb__current">Restoration</span>
                 </nav>
-                <h1 className="rst-article-hero__title" style={{ wordBreak: "keep-all" }}>{heroTitle}</h1>
+                <h1 className="rst-article-hero__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{heroTitle}</h1>
                 <p className="rst-article-hero__description">
                   Restoring AI outputs to original enterprise context using locally stored mappings after AI processing. A core capability of{" "}
                   <span className="rst-text--product">LLM Capsule</span>.
@@ -452,7 +452,7 @@ export default function Restoration({
             <section id="section-4" className="rst-section--article-body">
               <div className="rst-article-container">
                 <div className="rst-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all" }}><span className="rst-text--brand">Explanation</span></h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="rst-text--brand">Explanation</span></h2>
                 </div>
                 <ul className="rst-bullet rst-bullet--dot">
                   <li className="rst-bullet__item">
@@ -484,7 +484,7 @@ export default function Restoration({
             <section id="section-5" className="rst-section--article-body">
               <div className="rst-article-container">
                 <div className="rst-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all" }}><span className="rst-text--brand">Example</span></h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="rst-text--brand">Example</span></h2>
                 </div>
                 <div className="rst-card">
                   <p className="rst-body-paragraph">
@@ -510,7 +510,7 @@ export default function Restoration({
             <section id="section-6" className="rst-section--article-body">
               <div className="rst-article-container">
                 <div className="rst-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all" }}>Related <span className="rst-text--brand">Terms</span></h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>Related <span className="rst-text--brand">Terms</span></h2>
                 </div>
 
                 <div className="rst-related-terms">
@@ -574,7 +574,7 @@ export default function Restoration({
             {/* ── Section 7: CTA Band ────────────────────────────────────── */}
             <section id="section-cta" className="rst-cta-band">
               <div className="rst-cta-band__inner">
-                <h2 className="rst-cta-band__title" style={{ wordBreak: "keep-all" }}>
+                <h2 className="rst-cta-band__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                   {ctaTitle.replace("LLM Capsule", "").trim() ? (
                     <>
                       See <span className="rst-text--product">LLM Capsule</span> Restoration in Action

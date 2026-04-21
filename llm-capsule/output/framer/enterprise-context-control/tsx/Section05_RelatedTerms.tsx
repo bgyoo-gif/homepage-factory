@@ -284,7 +284,7 @@ export default function Section05_RelatedTerms({
         <div className="s5-inner">
           <div className="s5-container">
             <div className="s5-section-header">
-              <h2 style={{ wordBreak: "keep-all" }}>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                 {headingPlain && `${headingPlain} `}
                 <span className="s5-text--brand">{headingBrand}</span>
               </h2>

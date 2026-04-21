@@ -114,7 +114,7 @@ export default function Section03_Problem({
         <div className="s3-inner">
           <div className="s3-container">
             <div className="s3-section-header">
-              <h2 style={{ wordBreak: "keep-all" }}><span className="s3-label-brand">{displayLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s3-label-brand">{displayLabel}</span></h2>
             </div>
             <p className="s3-paragraph">{displayP1}</p>
             <p className="s3-paragraph">{displayP2}</p>
