@@ -148,7 +148,7 @@ export default function Section08_CTA({
       <div className="s8-outer">
         <section className="s8-section" id="section-cta">
           <div className="s8-inner">
-            <h2 className="s8-title">{title} <span className="s8-product">{productName}</span> works with your data</h2>
+            <h2 className="s8-title">{title}</h2>
             <p className="s8-description">{description}</p>
             <div className="s8-actions">
               <a href={cta1Href} className="s8-btn">{cta1Label}</a>

@@ -164,7 +164,7 @@ export default function Section11_CTABand({
         <div className="s11-inner">
           <div className="s11-container">
             <h2 className="s11-title">
-              {title} <span className="s11-product">{titleProduct}</span> works with your data
+              {title}
             </h2>
             <p className="s11-description">{description}</p>
             <div className="s11-actions">

@@ -160,7 +160,7 @@ export default function Section05_CTA({
           <div className="s5-cta-band">
             <div className="s5-cta-inner">
               <h2 className="s5-cta-title" id="s5-cta-title">
-                {title} <span className="s5-product-name">{productName}</span> works with your data
+                {title}
               </h2>
               <p className="s5-cta-desc">{description}</p>
               <div className="s5-cta-actions">

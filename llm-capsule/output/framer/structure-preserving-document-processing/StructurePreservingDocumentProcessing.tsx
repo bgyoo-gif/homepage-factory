@@ -749,7 +749,7 @@ export default function StructurePreservingDocumentProcessing({
             <section id="section-cta" className="spdp-cta-band">
               <div className="spdp-cta-band__inner">
                 <h2 className="spdp-cta-band__title">
-                  See how <span className="spdp-text--product">LLM Capsule</span> works with your data
+                  {ctaTitle}
                 </h2>
                 <p className="spdp-cta-band__description">{ctaDescription}</p>
                 <div className="spdp-cta-band__actions">

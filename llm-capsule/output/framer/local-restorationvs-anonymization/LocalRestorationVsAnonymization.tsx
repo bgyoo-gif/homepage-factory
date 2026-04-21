@@ -781,7 +781,7 @@ export default function LocalRestorationVsAnonymization({
             <section id="section-cta" className="lrva-cta-band">
               <div className="lrva-cta-band__inner">
                 <h2 className="lrva-cta-band__title">
-                  See how <span className="lrva-text--product">LLM Capsule</span> works with your data
+                  {ctaTitle}
                 </h2>
                 <p className="lrva-cta-band__description">{ctaDescription}</p>
                 <div className="lrva-cta-band__actions">

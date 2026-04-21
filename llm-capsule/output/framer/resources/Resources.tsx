@@ -591,7 +591,7 @@ export default function Resources({
             <section id="section-4" className="res-cta-band" aria-label="Call to action">
               <div className="res-cta-band__inner">
                 <h2 className="res-cta-band__title">
-                  See how <span className="res-text--product">LLM Capsule</span> works with your data
+                  {ctaTitle}
                 </h2>
                 <p className="res-cta-band__description">{ctaDescription}</p>
                 <div className="res-cta-band__actions">

@@ -168,10 +168,7 @@ export default function Section04_Cta({
         <div className="s4-inner">
           <div className="s4-cta-band">
             <div className="s4-cta-inner">
-              <h2 className="s4-cta-title">
-                See how your industry uses{" "}
-                <span className="s4-title-product">LLM Capsule</span>
-              </h2>
+              <h2 className="s4-cta-title">{title}</h2>
               <p className="s4-cta-desc">{description}</p>
               <div className="s4-cta-actions">
                 <a href={primaryBtn1Href} className="s4-btn s4-btn--md">

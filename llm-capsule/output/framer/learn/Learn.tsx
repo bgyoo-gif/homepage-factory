@@ -725,7 +725,7 @@ export default function Learn({
               <div className="lrn-cta-band">
                 <div className="lrn-cta-band__inner">
                   <h2 className="lrn-cta-band__title">
-                    See how <span className="lrn-text--product">LLM Capsule</span> works with your data
+                    {ctaTitle}
                   </h2>
                   <p className="lrn-cta-band__description">{ctaDescription}</p>
                   <div className="lrn-cta-band__actions">

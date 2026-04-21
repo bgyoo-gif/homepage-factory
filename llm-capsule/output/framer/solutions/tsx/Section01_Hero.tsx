@@ -16,6 +16,8 @@ interface Props {
   titleLine1?: string
   titleHighlight?: string
   description?: string
+  heroImageSrc?: string
+  heroImageAlt?: string
   primaryBtnLabel?: string
   primaryBtnHref?: string
   secondaryBtnLabel?: string
@@ -26,6 +28,8 @@ export default function Section01_Hero({
   titleLine1 = "AI, Now Safe for",
   titleHighlight = "Every Industry",
   description = "Regulated and document-heavy industries can now adopt AI on real enterprise data. LLM Capsule is an AI enablement data layer and plugin that removes the data exposure barrier blocking enterprise AI adoption — enabling AI first, protecting data at the data layer.",
+  heroImageSrc = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/solution-hero.png",
+  heroImageAlt = "LLM Capsule — AI-powered document processing across regulated industries",
   primaryBtnLabel = "Request a Demo",
   primaryBtnHref = "/request-a-demo",
   secondaryBtnLabel = "See Product",
@@ -161,16 +165,11 @@ export default function Section01_Hero({
                 {titleLine1}{" "}
                 <span className="s1-title-highlight">{titleHighlight}</span>
               </h1>
-              <p className="s1-description">
-                Regulated and document-heavy industries can now adopt AI on real enterprise data.{" "}
-                <span className="s1-product">LLM Capsule</span> is an AI enablement data layer and plugin
-                that removes the data exposure barrier blocking enterprise AI adoption &mdash; enabling AI
-                first, protecting data at the data layer.
-              </p>
+              <p className="s1-description">{description}</p>
             </div>
             <div className="s1-screenshot-frame">
               <div className="s1-screenshot">
-                <img src="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/solution-hero.png" alt="LLM Capsule — AI-powered document processing across regulated industries" loading="eager" />
+                <img src={heroImageSrc} alt={heroImageAlt} loading="eager" />
               </div>
             </div>
             <div className="s1-actions-below">
@@ -205,6 +204,16 @@ addPropertyControls(Section01_Hero, {
     defaultValue:
       "Regulated and document-heavy industries can now adopt AI on real enterprise data. LLM Capsule is an AI enablement data layer and plugin that removes the data exposure barrier blocking enterprise AI adoption — enabling AI first, protecting data at the data layer.",
     displayTextArea: true,
+  },
+  heroImageSrc: {
+    type: ControlType.String,
+    title: "Hero Image URL",
+    defaultValue: "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/solution-hero.png",
+  },
+  heroImageAlt: {
+    type: ControlType.String,
+    title: "Hero Image Alt",
+    defaultValue: "LLM Capsule — AI-powered document processing across regulated industries",
   },
   primaryBtnLabel: {
     type: ControlType.String,

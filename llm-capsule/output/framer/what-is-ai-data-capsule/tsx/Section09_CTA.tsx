@@ -188,7 +188,7 @@ export default function Section09_CTA({
           <h2 className="s9-title">
             {lang === "en" ? (
               <>
-                See how <span className="s9-product-name">{displayProductName}</span> works with your data
+                {title}
               </>
             ) : (
               <>

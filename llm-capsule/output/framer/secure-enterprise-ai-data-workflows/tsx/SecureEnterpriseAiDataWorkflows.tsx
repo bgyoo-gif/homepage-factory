@@ -753,7 +753,7 @@ export default function SecureEnterpriseAiDataWorkflows({
             <section id="section-cta" className="seadw-cta-band">
               <div className="seadw-cta-band__inner">
                 <h2 className="seadw-cta-band__title">
-                  See how <span className="seadw-text--product">LLM Capsule</span> works with your data
+                  {ctaTitle}
                 </h2>
                 <p className="seadw-cta-band__description">{ctaDescription}</p>
                 <div className="seadw-cta-band__actions">

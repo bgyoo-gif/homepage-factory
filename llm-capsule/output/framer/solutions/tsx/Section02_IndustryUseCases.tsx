@@ -12,6 +12,8 @@ interface IndustryCard {
 interface Props {
   sectionTitle?: string
   sectionDescription?: string
+  blockedLabel?: string
+  enabledLabel?: string
   card1Title?: string
   card1Description?: string
   card1Blocked?: string
@@ -46,6 +48,8 @@ interface Props {
 
 export default function Section02_IndustryUseCases({
   sectionTitle = "How Each Industry Uses LLM Capsule",
+  blockedLabel = "Blocked",
+  enabledLabel = "Enabled",
   sectionDescription = "Regulated industries can now adopt AI on real enterprise data. See how each industry uses LLM Capsule to enable AI while protecting sensitive information.",
   card1Title = "Public Sector",
   card1Description = "Uses AI to draft operational briefings, no classified info ever reaches external servers.",
@@ -357,12 +361,7 @@ export default function Section02_IndustryUseCases({
         <div className="s2-inner">
           <div className="s2-container">
             <div className="s2-section-header">
-              <h2 className="s2-section-title">
-                How Each Industry Uses{" "}
-                <span className="s2-title-brand">
-                  <span className="s2-title-product">LLM Capsule</span>
-                </span>
-              </h2>
+              <h2 className="s2-section-title">{sectionTitle}</h2>
               <p className="s2-section-desc">{sectionDescription}</p>
             </div>
 
@@ -379,11 +378,11 @@ export default function Section02_IndustryUseCases({
                   <hr className="s2-divider" />
                   <div className="s2-states">
                     <div className="s2-state s2-state--blocked">
-                      <span className="s2-badge s2-badge--error">Blocked</span>
+                      <span className="s2-badge s2-badge--error">{blockedLabel}</span>
                       <span>{card.blocked}</span>
                     </div>
                     <div className="s2-state s2-state--enabled">
-                      <span className="s2-badge s2-badge--success">Enabled</span>
+                      <span className="s2-badge s2-badge--success">{enabledLabel}</span>
                       <span>{card.enabled}</span>
                     </div>
                   </div>
@@ -407,6 +406,16 @@ addPropertyControls(Section02_IndustryUseCases, {
     type: ControlType.String,
     title: "Section Title",
     defaultValue: "How Each Industry Uses LLM Capsule",
+  },
+  blockedLabel: {
+    type: ControlType.String,
+    title: "Blocked Label",
+    defaultValue: "Blocked",
+  },
+  enabledLabel: {
+    type: ControlType.String,
+    title: "Enabled Label",
+    defaultValue: "Enabled",
   },
   sectionDescription: {
     type: ControlType.String,

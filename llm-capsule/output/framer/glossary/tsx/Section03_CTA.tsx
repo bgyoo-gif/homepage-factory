@@ -187,7 +187,7 @@ export default function Section03_CTA({
           <div className="s3-cta-band" role="region" aria-label="Call to action">
             <div className="s3-inner">
               <h2 className="s3-title">
-                {title}<span className="s3-title__product">{titleProduct}</span> works with your data
+                {title}
               </h2>
               <p className="s3-description">
                 {description}

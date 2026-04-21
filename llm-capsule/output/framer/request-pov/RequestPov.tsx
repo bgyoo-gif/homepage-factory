@@ -689,7 +689,7 @@ export default function RequestPov({
             <section id="section-cta" className="rpov-cta-band" aria-label="Call to action">
               <div className="rpov-cta-band__inner">
                 <h2 className="rpov-cta-band__title">
-                  See how <span className="rpov-text--product">LLM Capsule</span> works with your data
+                  {ctaTitle}
                 </h2>
                 <p className="rpov-cta-band__description">{ctaDescription}</p>
                 <div className="rpov-cta-band__actions">

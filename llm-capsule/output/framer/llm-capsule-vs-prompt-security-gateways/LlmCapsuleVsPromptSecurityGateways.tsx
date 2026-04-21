@@ -839,7 +839,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
             <section id="section-cta" className="vs-cta-band">
               <div className="vs-cta-band__inner">
                 <h2 className="vs-cta-band__title">
-                  See how <span className="vs-text--product">LLM Capsule</span> works with your data
+                  {ctaTitle}
                 </h2>
                 <p className="vs-cta-band__description">{ctaDescription}</p>
                 <div className="vs-cta-band__actions">

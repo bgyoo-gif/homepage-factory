@@ -202,7 +202,7 @@ export default function Section07_CTABand({
         <section className="s7-cta">
           <div className="s7-cta__inner">
             <h2 className="s7-cta__title">
-              See how <span className="s7-product">LLM Capsule</span> works with your data
+              {title}
             </h2>
             <p className="s7-cta__description">{t.description}</p>
             <div className="s7-cta__actions">

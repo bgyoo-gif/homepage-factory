@@ -180,7 +180,7 @@ export default function Section03_CTABand({
         <section className="s3-section" id="section-3" aria-labelledby="s3-cta-title">
           <div className="s3-inner">
             <h2 className="s3-title" id="s3-cta-title">
-              {title} <span className="s3-title-product">{titleProduct}</span> works with your data
+              {title}
             </h2>
             <p className="s3-description">{description}</p>
             <div className="s3-actions">

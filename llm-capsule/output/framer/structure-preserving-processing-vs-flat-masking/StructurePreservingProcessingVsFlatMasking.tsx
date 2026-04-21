@@ -753,7 +753,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
             <section id="section-cta" className="spp-cta-band">
               <div className="spp-cta-band__inner">
                 <h2 className="spp-cta-band__title">
-                  See how <span className="spp-text--product">LLM Capsule</span> works with your data
+                  {ctaTitle}
                 </h2>
                 <p className="spp-cta-band__description">{ctaDescription}</p>
                 <div className="spp-cta-band__actions">
