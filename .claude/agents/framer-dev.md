@@ -253,6 +253,16 @@ grep '860' "$FILE"
     - 이미지 프레임 padding: desktop 48px → mobile 16px
     - CTA/KPI 배경: `background-image: none;` + 단색 배경 fallback
 17. **모든 텍스트 Props 연결 필수**: JSX 내 하드코딩 텍스트 금지. heading, description, 카드 제목/설명, bullet, 테이블 내용, FAQ Q&A 등 모든 가시 텍스트는 Props + addPropertyControls로 노출.
+18. **const 배열 안 텍스트도 Props 필수**: `const CARDS = [{ title: "..." }]` 같은 배열 안 텍스트도 반드시 Props로 전환. 배열은 function 내부에서 Props 변수로 재구성.
+19. **`.replace()` 패턴 금지**: JSX에서 `{prop.replace("LLM Capsule", "")}` 같은 문자열 조작 금지. 다국어 입력 시 매칭 실패로 깨짐. Props 값을 그대로 `{prop}`으로 렌더링.
+20. **`<span>ProductName</span> {description}` 패턴 금지**: productName을 description 앞에 별도 렌더링하면 중복 발생. description 기본값에 제품명을 포함하고 `{description}`만 렌더링.
+21. **ControlType.Image fallback 필수**: `ControlType.Image`는 Framer에서 미업로드 시 빈 문자열 전달. 반드시 `const resolved = prop || DEFAULT_URL` 패턴 적용. 빈 값이 CSS `url('')`이 되면 이미지 안 나옴.
+22. **placeholder 스타일 조건부 제거**: 이미지 Props 지정 시 placeholder CSS(dashed border, 큰 padding, 회색 배경)를 인라인 style로 무효화. `style={prop ? { background: "none", border: "none", padding: 0 } : undefined}`
+23. **CSS 클래스명 충돌 방지**: 같은 페이지에 배치되는 섹션 간 동일 클래스명(`idx-kpi-band` 등) 사용 시 CSS가 충돌. 각 섹션별 고유 접두사(`s1-`, `s2-`, ...) 필수.
+24. **container-type은 최상위 요소**: `container-type: inline-size`는 `.idx-root`(최상위 div)에 적용. `.idx-inner` 같은 중간 요소에 넣으면 Framer에서 너비 인식 실패.
+25. **내부 링크는 Framer 라우팅 경로**: `.html` 확장자 금지, `/resources/comparison/` 금지. 실제 Framer 페이지 slug 사용 (`/product`, `/resources/learn/...`, `/resources/glossary/...`).
+26. **`/trust-center` → `/trust`**: trust-center 페이지 삭제됨. `/trust`만 사용.
+27. **번역 후 반드시 native-reviewer 리뷰**: translator 완료 후 native-reviewer 에이전트로 품질 검수. 직역투, 톤 불일치, 용어 오용 수정.
 
 ### LLM Capsule 브랜드 팔레트 (brand === 'llm-capsule' 일 때)
 

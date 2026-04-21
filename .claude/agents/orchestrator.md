@@ -140,3 +140,25 @@ Style Converter에서 업로드 시 `server/jobs/[job_id].json`이 생성된다.
 - [ ] HTML + TSX + preview 모두 확인
 
 **TSX 수정 시 반드시 `bash server/verify-tsx.sh` 실행** — FAIL이면 커밋하지 않는다.
+
+## TSX Props 완전성 검증 (반복 결함 방지)
+
+**TSX 생성/수정 후 반드시 아래 검증 실행:**
+
+1. **하드코딩 텍스트 잔여 확인** — JSX 내 `>텍스트</` 패턴 중 Props 미참조 확인
+2. **const 배열 안 텍스트** — `const CARDS = [{ title: "..." }]` 같은 배열 안 문자열도 Props 전환 확인
+3. **`.replace()` 패턴 없음** — JSX에서 `.replace("영문", "")` 패턴 금지 (다국어 깨짐)
+4. **`<span>ProductName</span> {desc}` 중복 없음** — productName + description 이중 렌더링 금지
+5. **ControlType.Image fallback** — 모든 Image Props에 `const resolved = prop || DEFAULT` 패턴 확인
+6. **CSS background-image 연결** — Props fallback 변수가 CSS에서 실제 참조되는지 확인
+7. **내부 링크** — `.html` 확장자 0건, `/resources/comparison/` 0건, `/trust-center` 0건
+
+## 번역 워크플로우
+
+```
+translator → native-reviewer → 수정 반영 → 번역 md 파일 생성
+```
+- translator: 원문 → ko 번역 (라인 바이 라인 md)
+- native-reviewer: 직역투/톤 불일치/용어 오용 검수
+- 번역 파일은 `{brand}/output/translations/[페이지명]-ko-lines.md`
+- Props 추가/변경 시 번역 파일도 반드시 재생성

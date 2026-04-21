@@ -261,6 +261,12 @@ Low 결함만 남은 경우 CONDITIONAL PASS.
 25. **미정의 CSS 변수 참조** → `:root`에 선언되지 않은 `var(--ds-*)` 참조 → 배경 검정 등 오류 발생. DS에 없는 변수 절대 사용 금지 — 배경 이미지는 절대 URL 직접 지정 또는 이미 `:root`에 정의된 변수만 사용
 26. **grid `1fr` 불균등** → `repeat(N, 1fr)` 대신 `repeat(N, minmax(0, 1fr))` 사용 — 카드별 콘텐츠 최소 너비 차이로 불균등 발생
 27. **체크 아이콘 중복** → `ds-bullet--check` 사용 시 `ds-bullet__icon` 내부에 `&#10003;` 등 HTML 텍스트 넣으면 체크가 2개 표시됨 → `<span class="ds-bullet__icon"></span>` 비워둘 것 (CSS `::before`가 자동 생성)
+28. **TSX const 배열 하드코딩** → `const CARDS = [{ title: "..." }]` 배열 안 텍스트도 Props 전환 필수. heading만 Props로 만들고 배열은 방치하면 Framer에서 수정 불가
+29. **TSX `.replace()` 패턴** → `{desc.replace("LLM Capsule", "")}` 같은 문자열 조작 금지. 다국어 입력 시 매칭 실패. `{desc}`만 사용
+30. **TSX productName 중복 렌더링** → `<span>{productName}</span> {description}` 패턴 금지. description 기본값에 제품명 포함
+31. **ControlType.Image 빈 값** → Framer 미업로드 시 빈 문자열. `url('')`이 되어 이미지 안 나옴. `const resolved = prop || DEFAULT_URL` fallback 필수
+32. **TSX CSS 클래스명 충돌** → 같은 페이지 내 섹션 간 동일 클래스명 사용 시 스타일 충돌. 섹션별 접두사(`s1-`, `s2-`) 사용
+33. **번역 파일 Props 동기화** → Props 추가/변경 시 번역 md 파일 재생성 필수. 이전 번역 파일은 신규 Props가 빠짐
 28. **section header description 잘림 + lead 중복** → header description에 원문 첫 문장만 넣고 lead에서 전문 반복 금지. header description은 원본 단락 전문 사용, lead와 동일 문장으로 시작하면 FAIL
 29. **overflow-x: auto scrollbar 미숨김** → `overflow-x: auto` 사용 시 반드시 `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }` 동반
 30. **배경 이미지 중복 사용** → 동일 `ds-bg--*` 클래스를 한 페이지에서 2회 이상 사용 금지 (CLAUDE.md 기존 규칙 재강조 — FAIL 트리거)
