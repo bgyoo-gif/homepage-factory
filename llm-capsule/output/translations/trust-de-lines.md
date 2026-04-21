@@ -1,26 +1,29 @@
-# Trust — Deutsche Ubersetzung
+# Trust — Deutsche Übersetzung
 
-## Section 01: Hero
+
+## Section01_Hero
+
 
 Enterprise-Grade
-Unternehmenstaugliche
+Unternehmenstauglich
 
 Security and Compliance
 Sicherheit und Compliance
 
 LLM Capsule is built for regulated enterprise environments. Certified, auditable, and designed for data sovereignty. This security foundation is what enables enterprises to adopt AI confidently on their most sensitive data.
-LLM Capsule ist fur regulierte Unternehmensumgebungen konzipiert. Zertifiziert, prufbar und fur Datensouveranitat entwickelt. Diese Sicherheitsgrundlage ermoglicht es Unternehmen, KI vertrauensvoll auf ihren sensibelsten Daten einzusetzen.
+LLM Capsule ist für regulierte Unternehmensumgebungen konzipiert. Zertifiziert, prüfbar und für Datensouveränität ausgelegt. Dieses Sicherheitsfundament ermöglicht es Unternehmen, KI für ihre sensibelsten Daten vertrauensvoll einzusetzen.
 
 Request a Demo
 Demo anfordern
 
 View Architecture
-Architektur ansehen
+Zur Architektur
 
-## Section 02: Certifications
+## Section02_Certifications
+
 
 Certified
-Zertifiziertes
+Zertifiziert
 
 Trust
 Vertrauen
@@ -29,149 +32,121 @@ ISO 27001
 ISO 27001
 
 Information security management system certification. Demonstrates systematic approach to managing sensitive company information.
-Zertifizierung des Informationssicherheits-Managementsystems. Belegt einen systematischen Ansatz zur Verwaltung sensibler Unternehmensinformationen.
+Zertifizierung des Managementsystems für Informationssicherheit. Nachweis eines systematischen Ansatzes für die Verwaltung sensibler Unternehmensinformationen.
 
 ISO 42001
 ISO 42001
 
 AI management system certification. Demonstrates responsible AI governance and risk management practices.
-Zertifizierung des KI-Managementsystems. Belegt verantwortungsvolle KI-Governance und Risikomanagementpraktiken.
+Zertifizierung des KI-Managementsystems. Demonstriert verantwortungsvolle KI-Governance und Risikomanagementpraktiken.
 
 GS Certification
 GS-Zertifizierung
 
 Korean government software quality certification (Grade 1). Listed on 조달청 혁신장터 for public sector procurement.
-Koreanische staatliche Softwarequalitats-Zertifizierung (Stufe 1). Gelistet auf 조달청 혁신장터 fur die offentliche Beschaffung.
+Software-Qualitätszertifikat der koreanischen Regierung (Grad 1). Gelistet auf 조달청 혁신장터 für die öffentliche Beschaffung.
 
 AWS Marketplace
 AWS Marketplace
 
 Available on AWS Marketplace for streamlined enterprise procurement, billing, and deployment within AWS environments.
-Auf dem AWS Marketplace fur vereinfachte Unternehmensbeschaffung, Abrechnung und Bereitstellung innerhalb von AWS-Umgebungen verfugbar.
+Verfügbar auf dem AWS Marketplace für eine optimierte Beschaffung, Abrechnung und Bereitstellung in AWS-Umgebungen.
 
-Information Security Fast Track
-Information Security Fast Track
+## Section03_DataSovereignty
 
-GS Certification
-GS-Zertifizierung
-
-ISO/IEC 27001
-ISO/IEC 27001
-
-ISO/IEC 42001
-ISO/IEC 42001
-
-Security Innovation Award
-Security Innovation Award
-
-Startup World Cup
-Startup World Cup
-
-Next Rise Global Innovator
-Next Rise Global Innovator
-
-T Challenge 2026
-T Challenge 2026
-
-AI Medical Innovation
-AI Medical Innovation
-
-Emerging AI+X Top 100
-Emerging AI+X Top 100
-
-Gartner Vendor
-Gartner Vendor
-
-## Section 03: Data Sovereignty
-
-Data
-Daten-
 
 Sovereignty
-Souveranitat
+Souveränität
 
 enforces data sovereignty by design, and this enforcement is what enables AI adoption in regulated environments.
-erzwingt Datensouveranitat durch Design, und diese Durchsetzung ermoglicht die KI-Einfuhrung in regulierten Umgebungen.
+setzt die Datenhoheit von vornherein durch, und diese Durchsetzung ist es, die die Einführung von KI in regulierten Umgebungen ermöglicht.
 
 Local Encapsulation
 Lokale Kapselung
 
 The encapsulation engine runs entirely within the enterprise environment. Original sensitive data never leaves the controlled boundary. Only encapsulated representations — with sensitive values replaced by structure-preserving tokens — cross to external AI services.
-Die Kapselungs-Engine lauft vollstandig innerhalb der Unternehmensumgebung. Originale sensible Daten verlassen niemals die kontrollierte Grenze. Nur gekapselte Darstellungen — mit durch strukturerhaltende Token ersetzten sensiblen Werten — werden an externe KI-Dienste ubertragen.
+Das Kapselungsmodul läuft vollständig innerhalb der Unternehmensumgebung. Die sensiblen Originaldaten verlassen niemals die kontrollierte Grenze. Nur gekapselte Darstellungen - mit sensiblen Werten, die durch strukturerhaltende Token ersetzt werden - gelangen zu externen KI-Diensten.
 
 Zero Exposure Guarantee
-Zero Exposure Garantie
+Zero-Exposure-Garantie
 
 The mapping between original and encapsulated values is stored locally and never transmitted. Even in the event of a breach at the AI provider, no original enterprise data would be exposed because it was never transmitted.
-Die Zuordnung zwischen Original- und gekapselten Werten wird lokal gespeichert und niemals ubertragen. Selbst im Falle eines Sicherheitsverstosses beim KI-Anbieter wurden keine originalen Unternehmensdaten offengelegt, da sie niemals ubertragen wurden.
+Die Zuordnung zwischen den ursprünglichen und den gekapselten Werten wird lokal gespeichert und niemals übertragen. Selbst im Falle einer Sicherheitsverletzung beim KI-Anbieter würden keine ursprünglichen Unternehmensdaten offengelegt, da sie nie übertragen wurden.
 
-## Section 04: Audit & Compliance
+## Section04_AuditCompliance
+
 
 Audit &
-Prufung und
+Audit &
 
 Compliance
 Compliance
 
 Every encapsulation and restoration event generates a complete audit record: what data was protected, which elements were encapsulated, which AI service processed the request, and what outputs were restored. Audit logs support enterprise AI governance, regulatory compliance reporting, and internal security reviews.
-Jedes Kapselungs- und Wiederherstellungsereignis erzeugt einen vollstandigen Prufnachweis: welche Daten geschutzt wurden, welche Elemente gekapselt wurden, welcher KI-Dienst die Anfrage verarbeitet hat und welche Ergebnisse wiederhergestellt wurden. Prufprotokolle unterstutzen KI-Governance im Unternehmen, regulatorische Compliance-Berichterstattung und interne Sicherheitsuberprufungen.
+Jedes Kapselungs- und Wiederherstellungsereignis erzeugt einen vollständigen Audit-Datensatz: Welche Daten wurden geschützt, welche Elemente wurden gekapselt, welcher KI-Dienst hat die Anfrage verarbeitet und welche Ausgaben wurden wiederhergestellt. Audit-Protokolle unterstützen die KI-Governance im Unternehmen, die Compliance-Berichterstattung und interne Sicherheitsüberprüfungen.
 
 Data Protection Records
-Datenschutznachweise
+Datensätze zum Datenschutz
 
 What data was protected and which elements were encapsulated in each transaction.
-Welche Daten geschutzt wurden und welche Elemente in jeder Transaktion gekapselt wurden.
+Welche Daten geschützt wurden und welche Elemente in jeder Transaktion gekapselt wurden.
 
 AI Service Tracking
-KI-Dienst-Nachverfolgung
+KI-Serviceverfolgung
 
 Which AI service processed the request and what outputs were restored.
-Welcher KI-Dienst die Anfrage verarbeitet hat und welche Ergebnisse wiederhergestellt wurden.
+Welcher KI-Dienst die Anfrage bearbeitet hat und welche Ausgaben wiederhergestellt wurden.
 
 Governance Support
-Governance-Unterstutzung
+Governance-Unterstützung
 
 Audit logs support enterprise AI governance, regulatory compliance reporting, and internal security reviews.
-Prufprotokolle unterstutzen KI-Governance im Unternehmen, regulatorische Compliance-Berichterstattung und interne Sicherheitsuberprufungen.
+Audit-Protokolle unterstützen die KI-Governance im Unternehmen, die Berichterstattung über die Einhaltung von Vorschriften und interne Sicherheitsüberprüfungen.
 
 Regulatory Alignment
-Regulatorische Konformitat
+Regulatorische Konformität
 
-Supports enterprise compliance with GDPR, HIPAA, SOX, and sector-specific data regulations.
-Unterstutzt die Unternehmens-Compliance mit DSGVO, HIPAA, SOX und branchenspezifischen Datenvorschriften.
+Supports enterprise compliance with DSGVO, HIPAA, SOX, and sector-specific data regulations.
+Unterstützt die Einhaltung von DSGVO-, HIPAA-, SOX- und branchenspezifischen Datenvorschriften durch das Unternehmen.
 
-## Section 05: Regulatory Support
+## Section05_RegulatorySupport
+
 
 Regulatory
 Regulatorische
 
 Support
-Unterstutzung
+Unterstützung
 
-supports enterprise compliance with GDPR, HIPAA, SOX, and sector-specific data regulations by ensuring sensitive data never leaves the enterprise environment during AI processing. Organizations should evaluate specific compliance requirements with their legal counsel.
-unterstutzt die Unternehmens-Compliance mit DSGVO, HIPAA, SOX und branchenspezifischen Datenvorschriften, indem sichergestellt wird, dass sensible Daten wahrend der KI-Verarbeitung niemals die Unternehmensumgebung verlassen. Organisationen sollten spezifische Compliance-Anforderungen mit ihrer Rechtsabteilung evaluieren.
+supports enterprise compliance with DSGVO, HIPAA, SOX, and sector-specific data regulations by ensuring sensitive data never leaves the enterprise environment during AI processing. Organizations should evaluate specific compliance requirements with their legal counsel.
+unterstützt Unternehmen bei der Einhaltung von DSGVO-, HIPAA-, SOX- und branchenspezifischen Datenvorschriften, indem es sicherstellt, dass sensible Daten während der KI-Verarbeitung niemals die Unternehmensumgebung verlassen. Unternehmen sollten die spezifischen Compliance-Anforderungen mit ihren Rechtsberatern abklären.
 
-## Section 06: AWS Marketplace
+## Section06_AWSMarketplace
+
 
 LLM Capsule is available on AWS Marketplace for streamlined enterprise procurement, billing, and deployment within AWS environments.
-LLM Capsule ist auf dem AWS Marketplace fur vereinfachte Unternehmensbeschaffung, Abrechnung und Bereitstellung innerhalb von AWS-Umgebungen verfugbar.
+LLM Capsule ist auf dem AWS Marketplace verfügbar, um die Beschaffung, Abrechnung und Bereitstellung in AWS-Umgebungen für Unternehmen zu optimieren.
 
 View on AWS Marketplace
-Auf AWS Marketplace ansehen
+Zum AWS Marketplace
 
-## Section 07: CTA Band
+## Section07_CTABand
+
 
 See how
 Erfahren Sie, wie
 
+LLM Capsule
+LLM Capsule
+
 works with your data
-mit Ihren Daten funktioniert
+arbeitet mit Ihren Daten
 
 Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.
-Bringen Sie Ihre Dokumente, Bereitstellungsanforderungen und Evaluierungskriterien mit. Wir demonstrieren anhand Ihrer tatsachlichen Workflows.
+Bringen Sie Ihre Dokumente, Einsatzbeschränkungen und Bewertungskriterien mit. Wir demonstrieren an Ihren tatsächlichen Arbeitsabläufen.
 
 Request a Demo
 Demo anfordern
 
 Available on AWS Marketplace
-Auf AWS Marketplace verfugbar
+Verfügbar auf AWS Marketplace
