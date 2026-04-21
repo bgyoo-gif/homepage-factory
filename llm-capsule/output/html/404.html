@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — LLM Capsule</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand-primary:   #1821E8;
+      --brand-secondary: #5690D4;
+      --brand-accent:    #55B45D;
+      --text-primary:    #0f0f0f;
+      --text-secondary:  #636363;
+      --text-tertiary:   #9c9c9c;
+      --surface-white:   #ffffff;
+      --surface-light:   #f7f7f7;
+      --border-default:  #e6e7e9;
+      --neutral-800:     #171719;
+      --gradient-brand:  linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text-primary);
+      background-color: var(--surface-white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .error-wrap {
+      max-width: 560px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    /* 404 Number — gradient text */
+    .error-code {
+      font-family: "Oxanium", sans-serif;
+      font-size: 120px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -4px;
+      background: var(--gradient-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    @media (min-width: 768px) { .error-code { font-size: 160px; } }
+
+    /* Capsule animation */
+    .capsule-visual {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--gradient-brand);
+      opacity: 0.12;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.12; }
+      50% { transform: scale(1.15); opacity: 0.2; }
+    }
+
+    .error-content {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .error-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+    }
+    @media (min-width: 768px) { .error-title { font-size: 28px; } }
+
+    .error-description {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Encapsulated/Restored demo */
+    .error-demo {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: var(--surface-light);
+      border: 1px solid var(--border-default);
+      text-align: left;
+    }
+    .error-demo__line {
+      font-family: "Fragment Mono", monospace;
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--text-tertiary);
+    }
+    .error-demo__line--restored {
+      color: var(--brand-secondary);
+      font-weight: 500;
+    }
+    .error-demo__label {
+      font-family: "Fragment Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 4px;
+    }
+    .error-demo__label--restored {
+      color: var(--brand-accent);
+    }
+
+    /* Actions */
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: opacity 0.2s, background-color 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .btn--primary {
+      padding: 12px 28px;
+      background: var(--gradient-brand);
+      color: #ffffff;
+    }
+    .btn--primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn--secondary {
+      padding: 12px 28px;
+      background-color: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border-default);
+    }
+    .btn--secondary:hover { background-color: var(--surface-light); }
+
+    /* Footer hint */
+    .error-footer {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+    .error-footer a {
+      color: var(--brand-secondary);
+      text-decoration: none;
+    }
+    .error-footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="error-wrap">
+
+    <div class="capsule-visual"></div>
+
+    <div class="error-code">404</div>
+
+    <div class="error-content">
+      <h1 class="error-title">This page has been encapsulated</h1>
+      <p class="error-description">The page you're looking for doesn't exist, has been moved, or was never transmitted outside the environment.</p>
+    </div>
+
+    <!-- Encapsulated/Restored Easter Egg -->
+    <div class="error-demo">
+      <span class="error-demo__label">Encapsulated</span>
+      <span class="error-demo__line">[PAGE_01] was requested at [URL_02] on [DATE_03].</span>
+      <span class="error-demo__label error-demo__label--restored">Restored</span>
+      <span class="error-demo__line error-demo__line--restored">The page you wanted was not found at this URL just now.</span>
+    </div>
+
+    <div class="error-actions">
+      <a href="/" class="btn btn--primary">Go to Homepage</a>
+      <a href="/product" class="btn btn--secondary">See Product</a>
+    </div>
+
+    <p class="error-footer">
+      Or explore: <a href="/resources">Resources</a> · <a href="/architecture">Architecture</a> · <a href="/pricing">Pricing</a>
+    </p>
+
+  </div>
+
+</body>
+</html>
