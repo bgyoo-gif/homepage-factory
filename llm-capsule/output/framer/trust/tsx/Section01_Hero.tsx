@@ -14,7 +14,7 @@ interface Props {
 
 export default function Section01_Hero({
   title = "Enterprise-Grade",
-  titleHighlight = "Security",
+  titleHighlight = "Security and Compliance",
   description = "LLM Capsule is built for regulated enterprise environments. Certified, auditable, and designed for data sovereignty. This security foundation is what enables enterprises to adopt AI confidently on their most sensitive data.",
   primaryBtnText = "Request a Demo",
   primaryBtnHref = "/request-a-demo",
@@ -144,12 +144,8 @@ export default function Section01_Hero({
         <div className="s1-inner">
           <div className="s1-container">
             <div className="s1-hero">
-              <h1 className="s1-title">
-                {title} <span className="s1-title-highlight">{titleHighlight}</span> and Compliance
-              </h1>
-              <p className="s1-description">
-                <span className="s1-product">LLM Capsule</span> {description}
-              </p>
+              <h1 className="s1-title">{title} <span className="s1-title-highlight">{titleHighlight}</span></h1>
+              <p className="s1-description">{description}</p>
               <div className="s1-actions">
                 <a href={primaryBtnHref} className="s1-btn s1-btn--primary">{primaryBtnText}</a>
                 <a href={secondaryBtnHref} className="s1-btn s1-btn--secondary">{secondaryBtnText}</a>
@@ -172,7 +168,7 @@ export default function Section01_Hero({
 
 addPropertyControls(Section01_Hero, {
   title: { type: ControlType.String, title: "Title", defaultValue: "Enterprise-Grade" },
-  titleHighlight: { type: ControlType.String, title: "Title Highlight", defaultValue: "Security" },
+  titleHighlight: { type: ControlType.String, title: "Title Highlight", defaultValue: "Security and Compliance" },
   description: { type: ControlType.String, title: "Description", defaultValue: "LLM Capsule is built for regulated enterprise environments. Certified, auditable, and designed for data sovereignty. This security foundation is what enables enterprises to adopt AI confidently on their most sensitive data." },
   primaryBtnText: { type: ControlType.String, title: "Primary Button", defaultValue: "Request a Demo" },
   primaryBtnHref: { type: ControlType.String, title: "Primary Button URL", defaultValue: "/request-a-demo" },
