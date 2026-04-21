@@ -1,18 +1,17 @@
 # Glossary — Deutsche Übersetzung
 
-## Section 01: Hero
+
+## Section01_Hero
+
 
 Enterprise AI 
-Enterprise-KI-
+Unternehmens-KI
 
 Enablement
 Enablement
 
 Key terms and definitions for enterprise AI enablement, LLM data privacy, and secure enterprise AI workflows.
-Schlüsselbegriffe und Definitionen für Enterprise AI Enablement, LLM-Datenschutz und sichere Enterprise-KI-Workflows.
-
-Startseite
-Startseite
+Wichtige Begriffe und Definitionen für KI-Befähigung im Unternehmen, LLM-Datenschutz und sichere KI-Workflows im Unternehmen.
 
 Resources
 Ressourcen
@@ -20,7 +19,8 @@ Ressourcen
 Glossary
 Glossar
 
-## Section 02: Glossary Terms
+## Section02_GlossaryTerms
+
 
 Restoration
 Wiederherstellung
@@ -31,28 +31,44 @@ Definition lesen
 Zero Exposure
 Zero Exposure
 
+Read definition
+Definition lesen
+
 Enterprise Context Control
 Enterprise Context Control
+
+Read definition
+Definition lesen
 
 Structure-Preserving Processing
 Strukturerhaltende Verarbeitung
 
+Read definition
+Definition lesen
+
 Restorable Workflow
 Wiederherstellbarer Workflow
+
+Read definition
+Definition lesen
 
 Secure LLM Usage
 Sichere LLM-Nutzung
 
-## Section 03: CTA
+Read definition
+Definition lesen
+
+## Section03_CTA
+
 
 See how 
-Erfahren Sie, wie 
+Erfahren Sie, wie
 
 LLM Capsule
 LLM Capsule
 
 Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.
-Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Arbeitsabläufe.
+Bringen Sie Ihre Dokumente, Einsatzbeschränkungen und Bewertungskriterien mit. Wir demonstrieren an Ihren tatsächlichen Arbeitsabläufen.
 
 Request a Demo
 Demo anfordern
