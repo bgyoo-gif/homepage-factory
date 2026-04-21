@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-04-21 14:31:13",
+  "generated": "2026-04-21 14:55:30",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -936,6 +936,11 @@
         {
           "name": "_preview_section06.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/zero-exposure/html/_preview_section06.html",
+          "modified": "2026-04-21"
+        },
+        {
+          "name": "404.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/404.html",
           "modified": "2026-04-21"
         },
         {
