@@ -1,114 +1,128 @@
-# Enterprise AI Document Processing — Deutsche Übersetzung
+# Enterprise KI Document Processing — Deutsche Übersetzung
 
-## Section 01: Hero
+
+## Section01_Hero
+
 
 Enterprise AI Document Processing
-KI-Dokumentenverarbeitung für Unternehmen
+Enterprise AI Dokumentenverarbeitung
 
 How to process sensitive enterprise documents through AI with structure-preserving protection and restorable outputs for AI document security.
-Wie Sie sensible Unternehmensdokumente mit strukturerhaltenden Schutzmaßnahmen und wiederherstellbaren Ausgaben für die KI-Dokumentensicherheit durch KI verarbeiten.
-
-Home
-Startseite
+Wie man sensible Unternehmensdokumente durch KI mit strukturerhaltendem Schutz und wiederherstellbaren Ausgaben für KI-Dokumentensicherheit verarbeitet.
 
 Resources
 Ressourcen
 
 Learn
-Lernen
+Lernen Sie
 
-## Section 02: Problem
+Enterprise AI Document Processing
+Enterprise AI Dokumentenverarbeitung
+
+## Section02_Problem
+
 
 Problem
 Problem
 
 Enterprises sit on enormous volumes of unstructured and semi-structured documents — contracts, reports, correspondence, filings, medical records, and technical documentation. AI document processing promises to unlock value through automated summarization, extraction, classification, and translation. But these documents contain the most sensitive enterprise information.
-Unternehmen verfügen über enorme Mengen unstrukturierter und halbstrukturierter Dokumente — Verträge, Berichte, Korrespondenz, Einreichungen, Patientenakten und technische Dokumentation. Die KI-Dokumentenverarbeitung verspricht, durch automatisierte Zusammenfassung, Extraktion, Klassifizierung und Übersetzung Mehrwert zu schaffen. Aber diese Dokumente enthalten die sensibelsten Unternehmensinformationen.
+Unternehmen verfügen über enorme Mengen an unstrukturierten und halbstrukturierten Dokumenten - Verträge, Berichte, Korrespondenz, Akten, medizinische Unterlagen und technische Dokumentation. Die KI-Dokumentenverarbeitung verspricht, durch automatische Zusammenfassung, Extraktion, Klassifizierung und Übersetzung einen Mehrwert zu schaffen. Doch diese Dokumente enthalten die sensibelsten Unternehmensinformationen.
 
 Current AI document security approaches either restrict AI to non-sensitive documents (limiting value) or apply destructive masking that produces unusable outputs (limiting usefulness). Neither scales for enterprise document intelligence.
-Aktuelle Ansätze zur KI-Dokumentensicherheit beschränken KI entweder auf nicht-sensible Dokumente (was den Nutzen einschränkt) oder wenden destruktive Maskierung an, die unbrauchbare Ausgaben erzeugt (was die Nützlichkeit einschränkt). Keiner der Ansätze ist für unternehmensweite Dokumentenintelligenz skalierbar.
+Die derzeitigen Ansätze zur Sicherheit von KI-Dokumenten beschränken entweder die KI auf nicht sensible Dokumente (was den Wert einschränkt) oder wenden destruktive Maskierungen an, die unbrauchbare Ergebnisse produzieren (was den Nutzen einschränkt). Beides ist für Enterprise Document Intelligence nicht geeignet.
 
-## Section 03: Definition
+## Section03_Definition
+
 
 Definition
 Definition
 
 Enterprise AI Document Processing
-KI-Dokumentenverarbeitung für Unternehmen
+Enterprise AI Dokumentenverarbeitung
 
 Enterprise AI document processing uses large language models to summarize, extract, classify, and translate enterprise documents while protecting sensitive data through local encapsulation and restoring usable outputs through local restoration. It applies structure-preserving processing to maintain document integrity during protection.
-Die KI-Dokumentenverarbeitung für Unternehmen nutzt große Sprachmodelle zum Zusammenfassen, Extrahieren, Klassifizieren und Übersetzen von Unternehmensdokumenten und schützt dabei sensible Daten durch lokale Kapselung und stellt nutzbare Ausgaben durch lokale Wiederherstellung wieder her. Sie wendet strukturerhaltende Verarbeitung an, um die Dokumentintegrität während des Schutzes zu bewahren.
+Die KI-Dokumentenverarbeitung für Unternehmen verwendet große Sprachmodelle, um Unternehmensdokumente zusammenzufassen, zu extrahieren, zu klassifizieren und zu übersetzen, wobei sensible Daten durch lokale Kapselung geschützt und verwendbare Ergebnisse durch lokale Wiederherstellung wiederhergestellt werden. Sie wendet strukturerhaltende Verarbeitung an, um die Integrität der Dokumente während des Schutzes zu wahren.
 
-## Section 04: Explanation
+## Section04_Explanation
+
 
 Explanation
-Erklärung
+Erläuterung
 
 Enterprise AI document processing addresses five core document intelligence use cases:
-Die KI-Dokumentenverarbeitung für Unternehmen adressiert fünf Kernanwendungsfälle der Dokumentenintelligenz:
+Die KI-Dokumentenverarbeitung für Unternehmen deckt fünf zentrale Anwendungsfälle von Dokumentenintelligenz ab:
 
 Summarization.
 Zusammenfassung.
 
 AI generates executive summaries of long documents — contracts, reports, filings. Encapsulation protects sensitive details while preserving the structural context AI needs for accurate summarization. Restored summaries contain real names and figures.
-KI generiert Executive Summaries langer Dokumente — Verträge, Berichte, Einreichungen. Die Kapselung schützt sensible Details und bewahrt gleichzeitig den strukturellen Kontext, den KI für eine genaue Zusammenfassung benötigt. Wiederhergestellte Zusammenfassungen enthalten echte Namen und Zahlen.
+KI generiert Zusammenfassungen langer Dokumente - Verträge, Berichte, Aktenordner. Die Kapselung schützt sensible Details, während der strukturelle Kontext, den die KI für eine genaue Zusammenfassung benötigt, erhalten bleibt. Wiederhergestellte Zusammenfassungen enthalten echte Namen und Zahlen.
 
 Extraction.
 Extraktion.
 
 AI extracts structured data from unstructured documents — key terms from contracts, diagnosis codes from medical records, entity information from legal filings. Structure-preserving processing ensures extraction accuracy by maintaining table layouts and field relationships.
-KI extrahiert strukturierte Daten aus unstrukturierten Dokumenten — Schlüsselbegriffe aus Verträgen, Diagnosecodes aus Patientenakten, Entitätsinformationen aus juristischen Einreichungen. Strukturerhaltende Verarbeitung gewährleistet die Extraktionsgenauigkeit durch Beibehaltung von Tabellenlayouts und Feldbeziehungen.
+KI extrahiert strukturierte Daten aus unstrukturierten Dokumenten - Schlüsselbegriffe aus Verträgen, Diagnoseschlüssel aus Krankenakten, Informationen über juristische Personen aus Gerichtsakten. Die strukturerhaltende Verarbeitung gewährleistet die Genauigkeit der Extraktion, indem Tabellenlayouts und Feldbeziehungen beibehalten werden.
 
 Classification.
 Klassifizierung.
 
 AI categorizes documents by type, risk level, priority, or topic. Encapsulation protects content while preserving the semantic signals AI uses for accurate classification.
-KI kategorisiert Dokumente nach Typ, Risikostufe, Priorität oder Thema. Die Kapselung schützt den Inhalt und bewahrt gleichzeitig die semantischen Signale, die KI für eine genaue Klassifizierung verwendet.
+Die KI kategorisiert Dokumente nach Typ, Risikostufe, Priorität oder Thema. Die Kapselung schützt den Inhalt und bewahrt gleichzeitig die semantischen Signale, die die KI für eine genaue Klassifizierung verwendet.
 
 Translation.
 Übersetzung.
 
 AI translates enterprise documents across languages. Encapsulation protects names, numbers, and proprietary terms while allowing AI to translate surrounding content accurately. Restoration restores protected elements in the translated output.
-KI übersetzt Unternehmensdokumente in verschiedene Sprachen. Die Kapselung schützt Namen, Zahlen und proprietäre Begriffe, während KI den umgebenden Inhalt genau übersetzen kann. Die Wiederherstellung stellt geschützte Elemente in der übersetzten Ausgabe wieder her.
+KI übersetzt Unternehmensdokumente in verschiedene Sprachen. Durch die Kapselung werden Namen, Zahlen und geschützte Begriffe geschützt, während die KI die umliegenden Inhalte präzise übersetzen kann. Die Wiederherstellung stellt geschützte Elemente in der übersetzten Ausgabe wieder her.
 
 Q&A and RAG.
 Q&A und RAG.
 
 AI answers questions about enterprise document collections. Documents are encapsulated before indexing in RAG pipelines. Retrieved context is protected during generation, and responses are restored before delivery to users.
-KI beantwortet Fragen zu Dokumentensammlungen von Unternehmen. Dokumente werden vor der Indizierung in RAG-Pipelines gekapselt. Der abgerufene Kontext wird während der Generierung geschützt, und Antworten werden vor der Zustellung an Benutzer wiederhergestellt.
+KI beantwortet Fragen zu Dokumentensammlungen in Unternehmen. Die Dokumente werden vor der Indizierung in RAG-Pipelines gekapselt. Der abgerufene Kontext wird während der Generierung geschützt, und die Antworten werden vor der Bereitstellung an die Benutzer wiederhergestellt.
 
 enables AI document processing by protecting data at the data layer. Structure-preserving processing with local restoration delivers both AI enablement and data protection simultaneously.
-ermöglicht die KI-Dokumentenverarbeitung durch den Schutz von Daten auf der Datenebene. Strukturerhaltende Verarbeitung mit lokaler Wiederherstellung liefert sowohl KI-Aktivierung als auch Datenschutz gleichzeitig.
+ermöglicht die Verarbeitung von KI-Dokumenten durch den Schutz von Daten auf der Datenebene. Die strukturerhaltende Verarbeitung mit lokaler Wiederherstellung bietet gleichzeitig AI Enablement und Datenschutz.
 
-## Section 05: Enterprise Examples
+LLM Capsule
+LLM Capsule
+
+## Section05_Examples
+
 
 Examples
 Beispiele
 
 Legal: Clause Extraction from Vendor Contracts
-Recht: Klauselextraktion aus Lieferantenverträgen
+Rechtliches: Extraktion von Klauseln aus Lieferantenverträgen
 
 A procurement team needs AI to extract liability clauses, payment terms, and termination conditions from 300 vendor contracts. Each contract contains vendor names, proprietary pricing, and internal project references.
-Ein Beschaffungsteam benötigt KI zur Extraktion von Haftungsklauseln, Zahlungsbedingungen und Kündigungskonditionen aus 300 Lieferantenverträgen. Jeder Vertrag enthält Lieferantennamen, proprietäre Preise und interne Projektreferenzen.
+Ein Beschaffungsteam benötigt KI, um Haftungsklauseln, Zahlungsbedingungen und Kündigungsbedingungen aus 300 Lieferantenverträgen zu extrahieren. Jeder Vertrag enthält Anbieternamen, geschützte Preise und interne Projektreferenzen.
 
-encapsulates all sensitive elements, AI performs structured extraction, and restoration produces a vendor-by-vendor comparison ready for procurement review.
-kapselt alle sensiblen Elemente, KI führt eine strukturierte Extraktion durch, und die Wiederherstellung erzeugt einen Lieferantenvergleich, der für die Beschaffungsprüfung bereit ist.
+LLM Capsule
+LLM Capsule
 
-## Section 06: FAQ
+## Section06_FAQ
+
 
 What is enterprise AI document processing?
-Was ist KI-Dokumentenverarbeitung für Unternehmen?
+Was bedeutet KI-Dokumentenverarbeitung für Unternehmen?
 
 Enterprise AI document processing uses large language models to summarize, extract, classify, and translate enterprise documents while protecting sensitive data through local encapsulation and restoring usable outputs through local restoration.
-Die KI-Dokumentenverarbeitung für Unternehmen nutzt große Sprachmodelle zum Zusammenfassen, Extrahieren, Klassifizieren und Übersetzen von Unternehmensdokumenten und schützt dabei sensible Daten durch lokale Kapselung und stellt nutzbare Ausgaben durch lokale Wiederherstellung wieder her.
+Bei der KI-Dokumentenverarbeitung für Unternehmen werden große Sprachmodelle verwendet, um Unternehmensdokumente zusammenzufassen, zu extrahieren, zu klassifizieren und zu übersetzen, wobei sensible Daten durch lokale Kapselung geschützt und brauchbare Ergebnisse durch lokale Wiederherstellung wiederhergestellt werden.
 
 What document formats does LLM Capsule support?
-Welche Dokumentformate unterstützt LLM Capsule?
+Welche Dokumentenformate werden von LLM Capsule unterstützt?
 
 LLM Capsule processes common enterprise document formats including PDF, DOCX, XLSX, HTML, plain text, and structured data formats. Format-specific processing preserves layout and structure during encapsulation.
-LLM Capsule verarbeitet gängige Unternehmensdokumentformate einschließlich PDF, DOCX, XLSX, HTML, Klartext und strukturierte Datenformate. Formatspezifische Verarbeitung bewahrt Layout und Struktur während der Kapselung.
+LLM Capsule verarbeitet gängige Unternehmensdokumentformate wie PDF, DOCX, XLSX, HTML, einfachen Text und strukturierte Datenformate. Bei der formatspezifischen Verarbeitung bleiben Layout und Struktur während der Kapselung erhalten.
 
-## Section 07: Learn More
+LLM Capsule
+LLM Capsule
+
+## Section07_LearnMore
+
 
 Learn More
 Mehr erfahren
@@ -120,19 +134,19 @@ Architecture
 Architektur
 
 Trust & Compliance
-Vertrauen & Compliance
+Vertrauen und Compliance
 
 Request a Demo
 Demo anfordern
 
 What Is an AI Data Capsule
-Was ist eine KI-Datenkapsel
+Was ist eine KI-Datenkapsel?
 
 AI on Sensitive Data
 KI bei sensiblen Daten
 
 Why Redaction Breaks AI
-Warum Schwärzung KI beeinträchtigt
+Warum Redigieren die KI stört
 
 Secure AI Workflows
 Sichere KI-Workflows
@@ -144,18 +158,22 @@ PII vs Confidentiality Control
 PII vs. Vertraulichkeitskontrolle
 
 On-Premise vs Cloud
-On-Premise vs. Cloud
+Vor-Ort vs. Cloud
 
 AI Pipeline Protection
 KI-Pipeline-Schutz
 
-## Section 08: CTA Band
+## Section08_CTA
+
 
 See how
 Erfahren Sie, wie
 
+LLM Capsule
+LLM Capsule
+
 Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.
-Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Workflows.
+Bringen Sie Ihre Dokumente, Einsatzbeschränkungen und Bewertungskriterien mit. Wir demonstrieren an Ihren tatsächlichen Arbeitsabläufen.
 
 Request a Demo
 Demo anfordern
