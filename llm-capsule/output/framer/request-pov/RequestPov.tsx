@@ -538,10 +538,7 @@ export default function RequestPov({
                   <h1 className="rpov-hero__title">
                     {heroTitle} <span className="rpov-text--brand">{heroTitleHighlight}</span>
                   </h1>
-                  <p className="rpov-hero__description">
-                    Test <span className="rpov-text--product">LLM Capsule</span>{" "}
-                    {heroDescription.replace("Test LLM Capsule", "").replace(/^[\s]+/, "")}
-                  </p>
+                  <p className="rpov-hero__description">{heroDescription}</p>
                 </div>
               </div>
             </section>
