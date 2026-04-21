@@ -1,78 +1,77 @@
-# LLM Capsule vs Masking Tools — Deutsche Übersetzung
+# Llm Capsule Vs Masking Tools — Deutsche Übersetzung
 
-## Section 01: Hero
+
+## Section01_Hero
+
 
 vs Masking Tools
-vs Maskierungstools
+vs Maskierungswerkzeuge
 
-How LLM Capsule's structure-preserving encapsulation compares to traditional masking and redaction tools for enterprise AI workflows.
-Wie sich die strukturerhaltende Kapselung von LLM Capsule im Vergleich zu traditionellen Maskierungs- und Schwärzungstools für KI-Workflows in Unternehmen verhält.
+LLM Capsule
+LLM Capsule
 
-## Section 02: Screenshot
+How {product}'s structure-preserving encapsulation compares to traditional masking and redaction tools for enterprise AI workflows.
+Wie die strukturerhaltende Kapselung von {product} im Vergleich zu herkömmlichen Maskierungs- und Redigierungstools für KI-Workflows in Unternehmen abschneidet.
+
+LLM Capsule
+LLM Capsule
+
+## Section02_Screenshot
+
 
 Masking vs. Encapsulation — Side-by-side output comparison showing restored vs. redacted results
-Maskierung vs. Kapselung — Ausgabevergleich nebeneinander, der wiederhergestellte vs. geschwärzte Ergebnisse zeigt
+Maskierung vs. Kapselung - Seite-an-Seite-Vergleich der wiederhergestellten und der geschwärzten Ergebnisse
 
-## Section 03: Overview
+## Section03_Overview
+
 
 Overview
-Überblick
+Übersicht
 
-Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. LLM Capsule takes a fundamentally different approach as an AI enablement data layer and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.
-Maskierungstools (Schwärzungs-Engines, Tokenisierungs-Utilities, PII-Stripper) wurden für Compliance-Berichterstattung und statische Datenanonymisierung entwickelt. Sie schützen Daten durch permanentes Entfernen oder Ersetzen sensibler Werte. LLM Capsule verfolgt einen grundlegend anderen Ansatz als KI-Enablement-Datenschicht und Plugin — es ermöglicht die KI-Einführung durch Datenschutz mittels Kapselung und lokaler Wiederherstellung und bewahrt nutzbare KI-Ausgaben für Unternehmen.
+LLM Capsule
+LLM Capsule
 
-## Section 04: How Traditional Masking Works
+Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. {product} takes a fundamentally different approach as an AI enablement data layer and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.
+Maskierungstools (Redaction Engines, Tokenization Utilities, PII-Stripper) wurden für die Compliance-Berichterstattung und die statische Anonymisierung von Daten entwickelt. Sie schützen Daten durch permanentes Entfernen oder Ersetzen sensibler Werte. {product} verfolgt als Datenschicht und Plugin für KI einen grundlegend anderen Ansatz: Es ermöglicht die Einführung von KI, indem es Daten durch Kapselung und lokale Wiederherstellung schützt und so brauchbare KI-Ergebnisse für Unternehmen bewahrt.
+
+## Section04_MaskingWorks
+
 
 How Traditional Masking Works
-Wie traditionelle Maskierung funktioniert
+So funktioniert die traditionelle Maskierung
 
 Masking tools scan documents for sensitive patterns — names, numbers, dates — and replace them with generic tokens ([REDACTED], [NAME], ****) or remove them entirely. The replacement is permanent. There is no mechanism to restore original values after processing.
-Maskierungstools durchsuchen Dokumente nach sensiblen Mustern — Namen, Nummern, Daten — und ersetzen sie durch generische Token ([REDACTED], [NAME], ****) oder entfernen sie vollständig. Die Ersetzung ist permanent. Es gibt keinen Mechanismus zur Wiederherstellung der Originalwerte nach der Verarbeitung.
+Maskierungstools scannen Dokumente nach sensiblen Mustern - Namen, Zahlen, Daten - und ersetzen sie durch allgemeine Token ([REDACTED], [NAME], ****) oder entfernen sie ganz. Die Ersetzung ist dauerhaft. Es gibt keinen Mechanismus zur Wiederherstellung der ursprünglichen Werte nach der Verarbeitung.
 
-## Section 05: Limitations of Masking for AI
+## Section05_MaskingLimits
+
 
 Limitations of Masking for AI
-Einschränkungen der Maskierung für KI
+Beschränkungen der Maskierung für KI
 
-Context destruction.
-Kontextzerstörung.
+## Section06_HowDiffers
 
-AI models lose entity relationships when all names become "[NAME]." Multi-party documents become indistinguishable.
-KI-Modelle verlieren Entitätsbeziehungen, wenn alle Namen zu „[NAME]" werden. Dokumente mit mehreren Parteien werden ununterscheidbar.
 
-Output unusability.
-Ausgabe-Unbrauchbarkeit.
+LLM Capsule
+LLM Capsule
 
-AI outputs inherit the masking. Summaries contain "[REDACTED]" placeholders instead of real data, requiring manual reconstruction.
-KI-Ausgaben übernehmen die Maskierung. Zusammenfassungen enthalten „[REDACTED]"-Platzhalter anstelle von echten Daten und erfordern manuelle Rekonstruktion.
+{product} replaces masking with encapsulation — a reversible, structure-preserving protection that maintains document integrity for AI processing and enables automated output restoration.
+{product} ersetzt Maskierung durch Kapselung - ein reversibler, strukturerhaltender Schutz, der die Integrität des Dokuments für die KI-Verarbeitung bewahrt und eine automatische Wiederherstellung der Ausgabe ermöglicht.
 
-Structural damage.
-Strukturschäden.
-
-Flat masking breaks table schemas, cross-references, and nested document structures.
-Flache Maskierung zerstört Tabellenschemata, Querverweise und verschachtelte Dokumentstrukturen.
-
-No automation path.
-Kein Automatisierungsweg.
-
-Every masked AI output requires human intervention to restore context, eliminating efficiency gains.
-Jede maskierte KI-Ausgabe erfordert menschliches Eingreifen zur Kontextwiederherstellung, wodurch Effizienzgewinne zunichte gemacht werden.
-
-## Section 06: How LLM Capsule Differs
-
-How LLM Capsule Differs
-Wie sich LLM Capsule unterscheidet
-
-LLM Capsule replaces masking with encapsulation — a reversible, structure-preserving protection that maintains document integrity for AI processing and enables automated output restoration.
-LLM Capsule ersetzt Maskierung durch Kapselung — einen reversiblen, strukturerhaltenden Schutz, der die Dokumentenintegrität für die KI-Verarbeitung bewahrt und eine automatisierte Ausgabe-Wiederherstellung ermöglicht.
+LLM Capsule
+LLM Capsule
 
 AI results are automatically restored locally with original enterprise data.
-KI-Ergebnisse werden automatisch lokal mit originalen Unternehmensdaten wiederhergestellt.
+AI-Ergebnisse werden automatisch lokal mit den ursprünglichen Unternehmensdaten wiederhergestellt.
 
-LLM Capsule is an AI enablement data layer that protects sensitive data while enabling usable enterprise AI outputs.
-LLM Capsule ist eine KI-Enablement-Datenschicht, die sensible Daten schützt und gleichzeitig nutzbare KI-Ausgaben für Unternehmen ermöglicht.
+LLM Capsule
+LLM Capsule
 
-## Section 07: Comparison Table
+ is an AI enablement data layer that protects sensitive data while enabling usable enterprise AI outputs.
+ ist eine KI-fähige Datenschicht, die sensible Daten schützt und gleichzeitig brauchbare KI-Ergebnisse für Unternehmen ermöglicht.
+
+## Section07_ComparisonTable
+
 
 Comparison
 Vergleich
@@ -81,75 +80,19 @@ Capability
 Fähigkeit
 
 Masking Tools
-Maskierungstools
+Maskierungswerkzeuge
 
 (AI Enablement Data Layer)
-(KI-Enablement-Datenschicht)
+(AI Enablement Data Layer)
 
-Protection method
-Schutzmethode
+LLM Capsule
+LLM Capsule
 
-Permanent removal / replacement
-Permanente Entfernung / Ersetzung
+## Section08_WorkflowExample
 
-Reversible encapsulation
-Reversible Kapselung
-
-Document structure
-Dokumentenstruktur
-
-Destroyed
-Zerstört
-
-Preserved
-Erhalten
-
-Entity relationships
-Entitätsbeziehungen
-
-Collapsed
-Zusammengefallen
-
-Maintained
-Beibehalten
-
-AI output quality
-KI-Ausgabequalität
-
-Degraded
-Verschlechtert
-
-Full quality
-Volle Qualität
-
-Output restoration
-Ausgabe-Wiederherstellung
-
-Manual
-Manuell
-
-Automatic restoration
-Automatische Wiederherstellung
-
-Enterprise context control
-Unternehmens-Kontextkontrolle
-
-Audit trail
-Prüfpfad
-
-Limited
-Begrenzt
-
-Complete
-Vollständig
-
-Designed for AI workflows
-Für KI-Workflows konzipiert
-
-## Section 08: Enterprise Workflow Example
 
 Enterprise Workflow Example
-Unternehmens-Workflow-Beispiel
+Beispiel für einen Unternehmens-Workflow
 
 Contract Analysis Pipeline
 Vertragsanalyse-Pipeline
@@ -157,62 +100,32 @@ Vertragsanalyse-Pipeline
 With masking:
 Mit Maskierung:
 
-200 contracts masked → AI produces generic summaries with "[REDACTED]" throughout → Legal team manually restores ~40 hours of context rebuilding.
-200 Verträge maskiert → KI erstellt generische Zusammenfassungen mit durchgängigem „[REDACTED]" → Rechtsteam stellt manuell ~40 Stunden Kontextrekonstruktion wieder her.
+200 contracts masked → AI produces generic summaries with \
+200 maskierte Verträge → KI erstellt allgemeine Zusammenfassungen mit \
 
-200 contracts encapsulated → AI produces structured summaries → Local restoration restores all parties, amounts, and dates → Output feeds directly into contract management system.
-200 Verträge gekapselt → KI erstellt strukturierte Zusammenfassungen → Lokale Wiederherstellung stellt alle Parteien, Beträge und Daten wieder her → Ausgabe fließt direkt in das Vertragsmanagementsystem.
+LLM Capsule
+LLM Capsule
 
-## Section 09: FAQ
+: 200 contracts encapsulated → AI produces structured summaries → Local restoration restores all parties, amounts, and dates → Output feeds directly into contract management system.
+200 Verträge gekapselt → KI erstellt strukturierte Zusammenfassungen → Lokale Wiederherstellung stellt alle Parteien, Beträge und Daten wieder her → Ausgabe fließt direkt in das Vertragsmanagementsystem ein.
 
-How does LLM Capsule differ from masking tools?
-Wie unterscheidet sich LLM Capsule von Maskierungstools?
+## Section10_RelatedPages
 
-Masking tools permanently remove sensitive data, destroying context AI models need. LLM Capsule encapsulates data with structure-preserving processing and enables local restoration of AI outputs, producing enterprise-ready results automatically.
-Maskierungstools entfernen sensible Daten permanent und zerstören den Kontext, den KI-Modelle benötigen. LLM Capsule kapselt Daten mit strukturerhaltender Verarbeitung und ermöglicht die lokale Wiederherstellung von KI-Ausgaben, wobei unternehmensfertige Ergebnisse automatisch erzeugt werden.
-
-Can masking tools be used for AI workflows?
-Können Maskierungstools für KI-Workflows verwendet werden?
-
-Traditional masking tools were not designed for AI workflows. They produce unusable AI outputs that require manual reconstruction. LLM Capsule's restorable workflow produces enterprise-ready outputs automatically.
-Traditionelle Maskierungstools wurden nicht für KI-Workflows entwickelt. Sie erzeugen unbrauchbare KI-Ausgaben, die eine manuelle Rekonstruktion erfordern. Der wiederherstellbare Workflow von LLM Capsule erzeugt automatisch unternehmensfertige Ausgaben.
-
-Does LLM Capsule replace existing masking tools?
-Ersetzt LLM Capsule bestehende Maskierungstools?
-
-LLM Capsule can complement existing masking infrastructure for non-AI use cases. For AI workflows specifically, it replaces masking with encapsulation-based protection designed for restorable workflows.
-LLM Capsule kann bestehende Maskierungsinfrastruktur für Nicht-KI-Anwendungsfälle ergänzen. Speziell für KI-Workflows ersetzt es Maskierung durch kapselungsbasierten Schutz, der für wiederherstellbare Workflows konzipiert ist.
-
-## Section 10: Related Pages
 
 Related
 Verwandte Seiten
 
-Product Overview
-Produktübersicht
+## Section11_CTABand
 
-Architecture
-Architektur
 
-Trust & Compliance
-Vertrauen & Compliance
+See how
+Erfahren Sie, wie
 
-Request a Demo
-Demo anfordern
-
-Learn Hub
-Lernzentrum
-
-Why Redaction Breaks AI
-Warum Schwärzung KI zerstört
-
-## Section 11: CTA Band
-
-See how LLM Capsule works with your data
-Erleben Sie, wie LLM Capsule mit Ihren Daten arbeitet
+LLM Capsule
+LLM Capsule
 
 Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.
-Bringen Sie Ihre Dokumente, Bereitstellungsanforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Workflows.
+Bringen Sie Ihre Dokumente, Einsatzbeschränkungen und Bewertungskriterien mit. Wir demonstrieren an Ihren tatsächlichen Arbeitsabläufen.
 
 Request a Demo
 Demo anfordern
