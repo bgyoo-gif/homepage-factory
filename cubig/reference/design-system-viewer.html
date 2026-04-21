@@ -3489,6 +3489,8 @@ function renderStaticTable() {
       if (tsxFiles.length === 0) html += '<span style="color:var(--ds-color-text-tertiary);">—</span>';
       html += '</td><td style="padding:12px;">';
       html += '<span class="v-ot-link" onclick="openDetail(\'' + koPath + '\',\'' + koFile + '\')" style="font-size:12px;color:#0e824c;">' + koFile + '</span>';
+      html += '</td><td style="padding:12px;">';
+      html += '<span class="v-ot-link" onclick="openDetail(\'' + dePath + '\',\'' + deFile + '\')" style="font-size:12px;color:#1821E8;">' + deFile + '</span>';
       html += '</td></tr>';
     });
     html += '</tbody></table>';
@@ -3895,6 +3897,7 @@ function renderStaticTable() {
   html += '<th style="' + thStyle + '">' + typeBadge('html') + '</th>';
   html += '<th style="' + thStyle + '">' + typeBadge('tsx') + '</th>';
   html += '<th style="' + thStyle + '"><span style="font-size:10px;font-weight:600;color:#0e824c;background:rgba(14,130,76,0.08);padding:2px 8px;border-radius:4px;">KO 번역</span></th>';
+  html += '<th style="' + thStyle + '"><span style="font-size:10px;font-weight:600;color:#1821E8;background:rgba(24,33,232,0.08);padding:2px 8px;border-radius:4px;">DE 번역</span></th>';
   html += '</tr></thead><tbody>';
 
   data.forEach(function(group) {
@@ -3902,6 +3905,7 @@ function renderStaticTable() {
     var tsxFiles = group.outputs.filter(function(o) { return o.type === 'tsx'; });
     var baseName = group.input.replace('.html', '');
     var koFile = baseName + '-ko-lines.md';
+    var deFile = baseName + '-de-lines.md';
 
     var inputLink = group.ipath ? '<span class="v-ot-link" onclick="openDetail(\'' + group.ipath + '\',\'' + group.input + '\')" style="color:var(--ds-color-text-primary);font-weight:600;">' + group.input + '</span>' : '<span style="color:var(--ds-color-text-tertiary);">' + group.input + '</span>';
 
@@ -3932,6 +3936,12 @@ function renderStaticTable() {
     var koPath = ghBase + currentBrand + '/output/translations/' + koFile;
     html += '<td style="padding:10px 12px;vertical-align:top;">';
     html += '<span class="v-ot-link" onclick="openDetail(\'' + koPath + '\',\'' + koFile + '\')" style="font-size:12px;color:#0e824c;">' + koFile + '</span>';
+    html += '</td>';
+
+    // DE Translation column
+    var dePath = ghBase + currentBrand + '/output/translations/' + deFile;
+    html += '<td style="padding:10px 12px;vertical-align:top;">';
+    html += '<span class="v-ot-link" onclick="openDetail(\'' + dePath + '\',\'' + deFile + '\')" style="font-size:12px;color:#1821E8;">' + deFile + '</span>';
     html += '</td>';
 
     html += '</tr>';
