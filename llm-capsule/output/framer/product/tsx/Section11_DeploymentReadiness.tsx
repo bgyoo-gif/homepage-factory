@@ -265,9 +265,9 @@ export default function Section11_DeploymentReadiness({
 
             <p className="s11-body">{body}</p>
 
-            <div className="s11-screenshot">
+            <div className="s11-screenshot" style={screenshotImage ? { background: "none", border: "none", padding: 0 } : undefined}>
               {screenshotImage && (
-                <img src={screenshotImage} alt={screenshotDesc} style={{ width: "100%", display: "block", borderRadius: "8px" }} />
+                <img src={screenshotImage} alt={screenshotDesc} style={{ width: "100%", display: "block", borderRadius: "16px" }} />
               )}
             </div>
 
