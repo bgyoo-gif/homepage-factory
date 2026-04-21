@@ -13,6 +13,20 @@ interface Props {
   sectionTitleBrand?: string
   sectionDescription?: string
   body?: string
+  card1Title?: string
+  card1Desc?: string
+  card2Title?: string
+  card2Desc?: string
+  card3Title?: string
+  card3Desc?: string
+  card4Title?: string
+  card4Desc?: string
+  card5Title?: string
+  card5Desc?: string
+  card6Title?: string
+  card6Desc?: string
+  card7Title?: string
+  card7Desc?: string
 }
 
 export default function Section05_EnterpriseContext({
@@ -20,42 +34,56 @@ export default function Section05_EnterpriseContext({
   sectionTitleBrand = "PII",
   sectionDescription = "LLM Capsule lets teams define sensitive entities beyond standard PII categories, including internal identifiers, project names, customer-specific markers, and organization-specific confidential terms.",
   body = "Enterprise data protection is not limited to names, phone numbers, or IDs. Real workflows often depend on internal project names, contract references, operational code names, and confidential business terms. Context-aware data control enables policy-based sensitivity classification that adapts to document type, department origin, and workflow context — providing enterprise AI governance controls that go far beyond standard PII regex matching.",
+  card1Title = "Internal code names",
+  card1Desc = "Project names and operational identifiers",
+  card2Title = "Customer identifiers",
+  card2Desc = "Customer-specific account codes and references",
+  card3Title = "Contract references",
+  card3Desc = "Deal terms, agreement numbers, clause identifiers",
+  card4Title = "Financial terms",
+  card4Desc = "Pricing models, valuation ranges, internal metrics",
+  card5Title = "Vulnerability labels",
+  card5Desc = "Security findings, CVE references, risk assessments",
+  card6Title = "Strategic data",
+  card6Desc = "M&A targets, competitive intelligence, board-level data",
+  card7Title = "Custom markers",
+  card7Desc = "Business-specific confidential markers defined by your team",
 }: Props) {
   const features = [
     {
       icon: <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>,
-      title: "Internal code names",
-      desc: "Project names and operational identifiers",
+      title: card1Title,
+      desc: card1Desc,
     },
     {
       icon: <><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></>,
-      title: "Customer identifiers",
-      desc: "Customer-specific account codes and references",
+      title: card2Title,
+      desc: card2Desc,
     },
     {
       icon: <><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></>,
-      title: "Contract references",
-      desc: "Deal terms, agreement numbers, clause identifiers",
+      title: card3Title,
+      desc: card3Desc,
     },
     {
       icon: <><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></>,
-      title: "Financial terms",
-      desc: "Pricing models, valuation ranges, internal metrics",
+      title: card4Title,
+      desc: card4Desc,
     },
     {
       icon: <><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></>,
-      title: "Vulnerability labels",
-      desc: "Security findings, CVE references, risk assessments",
+      title: card5Title,
+      desc: card5Desc,
     },
     {
       icon: <><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2"/></>,
-      title: "Strategic data",
-      desc: "M&A targets, competitive intelligence, board-level data",
+      title: card6Title,
+      desc: card6Desc,
     },
     {
       icon: <><path d="M15 4V2"/><path d="M15 16v-2"/><path d="M8 9h2"/><path d="M20 9h2"/><path d="M17.8 11.8 19 13"/><path d="M15 9h.01"/><path d="M17.8 6.2 19 5"/><path d="m3 21 9-9"/><path d="M12.2 6.2 11 5"/></>,
-      title: "Custom markers",
-      desc: "Business-specific confidential markers defined by your team",
+      title: card7Title,
+      desc: card7Desc,
     },
   ]
 
@@ -217,4 +245,18 @@ addPropertyControls(Section05_EnterpriseContext, {
   sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)", defaultValue: "PII" },
   sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "LLM Capsule lets teams define sensitive entities beyond standard PII categories, including internal identifiers, project names, customer-specific markers, and organization-specific confidential terms.", displayTextArea: true },
   body:               { type: ControlType.String, title: "Body",          defaultValue: "Enterprise data protection is not limited to names, phone numbers, or IDs. Real workflows often depend on internal project names, contract references, operational code names, and confidential business terms. Context-aware data control enables policy-based sensitivity classification that adapts to document type, department origin, and workflow context — providing enterprise AI governance controls that go far beyond standard PII regex matching.", displayTextArea: true },
+  card1Title:         { type: ControlType.String, title: "Card 1 Title",  defaultValue: "Internal code names" },
+  card1Desc:          { type: ControlType.String, title: "Card 1 Desc",   defaultValue: "Project names and operational identifiers", displayTextArea: true },
+  card2Title:         { type: ControlType.String, title: "Card 2 Title",  defaultValue: "Customer identifiers" },
+  card2Desc:          { type: ControlType.String, title: "Card 2 Desc",   defaultValue: "Customer-specific account codes and references", displayTextArea: true },
+  card3Title:         { type: ControlType.String, title: "Card 3 Title",  defaultValue: "Contract references" },
+  card3Desc:          { type: ControlType.String, title: "Card 3 Desc",   defaultValue: "Deal terms, agreement numbers, clause identifiers", displayTextArea: true },
+  card4Title:         { type: ControlType.String, title: "Card 4 Title",  defaultValue: "Financial terms" },
+  card4Desc:          { type: ControlType.String, title: "Card 4 Desc",   defaultValue: "Pricing models, valuation ranges, internal metrics", displayTextArea: true },
+  card5Title:         { type: ControlType.String, title: "Card 5 Title",  defaultValue: "Vulnerability labels" },
+  card5Desc:          { type: ControlType.String, title: "Card 5 Desc",   defaultValue: "Security findings, CVE references, risk assessments", displayTextArea: true },
+  card6Title:         { type: ControlType.String, title: "Card 6 Title",  defaultValue: "Strategic data" },
+  card6Desc:          { type: ControlType.String, title: "Card 6 Desc",   defaultValue: "M&A targets, competitive intelligence, board-level data", displayTextArea: true },
+  card7Title:         { type: ControlType.String, title: "Card 7 Title",  defaultValue: "Custom markers" },
+  card7Desc:          { type: ControlType.String, title: "Card 7 Desc",   defaultValue: "Business-specific confidential markers defined by your team", displayTextArea: true },
 })

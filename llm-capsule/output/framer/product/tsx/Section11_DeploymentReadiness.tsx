@@ -24,6 +24,14 @@ interface Props {
   screenshotImage?: string
   awsLabel?: string
   awsHref?: string
+  deploy1Title?: string
+  deploy1Desc?: string
+  deploy2Title?: string
+  deploy2Desc?: string
+  deploy3Title?: string
+  deploy3Desc?: string
+  deploy4Title?: string
+  deploy4Desc?: string
 }
 
 export default function Section11_DeploymentReadiness({
@@ -35,27 +43,35 @@ export default function Section11_DeploymentReadiness({
   screenshotImage = "",
   awsLabel = "View on AWS Marketplace",
   awsHref = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
+  deploy1Title = "On-premise",
+  deploy1Desc = "Fully inside customer-controlled infrastructure. The encapsulation engine runs within the enterprise data center.",
+  deploy2Title = "Air-gapped environments",
+  deploy2Desc = "Restricted and isolated environments. Encapsulation on the isolated network, controlled transfer for AI processing.",
+  deploy3Title = "Cloud & AWS Marketplace",
+  deploy3Desc = "AWS Marketplace deployment for streamlined procurement. Runs within the enterprise's cloud account or VPC.",
+  deploy4Title = "Hybrid & Embedded",
+  deploy4Desc = "Different sensitivity levels route through different deployment modes. Embeddable into existing applications and partner products.",
 }: Props) {
   const cards = [
     {
       icon: <><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></>,
-      title: "On-premise",
-      desc: "Fully inside customer-controlled infrastructure. The encapsulation engine runs within the enterprise data center.",
+      title: deploy1Title,
+      desc: deploy1Desc,
     },
     {
       icon: <><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></>,
-      title: "Air-gapped environments",
-      desc: "Restricted and isolated environments. Encapsulation on the isolated network, controlled transfer for AI processing.",
+      title: deploy2Title,
+      desc: deploy2Desc,
     },
     {
       icon: <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>,
-      title: "Cloud & AWS Marketplace",
-      desc: "AWS Marketplace deployment for streamlined procurement. Runs within the enterprise's cloud account or VPC.",
+      title: deploy3Title,
+      desc: deploy3Desc,
     },
     {
       icon: <><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></>,
-      title: "Hybrid & Embedded",
-      desc: "Different sensitivity levels route through different deployment modes. Embeddable into existing applications and partner products.",
+      title: deploy4Title,
+      desc: deploy4Desc,
     },
   ]
 
@@ -278,12 +294,20 @@ export default function Section11_DeploymentReadiness({
 }
 
 addPropertyControls(Section11_DeploymentReadiness, {
-  sectionTitle:       { type: ControlType.String, title: "Title",          defaultValue: "Enterprise AI deployment — ready for any controlled" },
-  sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)",  defaultValue: "environment" },
-  sectionDescription: { type: ControlType.String, title: "Description",    defaultValue: "Enterprise teams need deployment flexibility without giving up control.", displayTextArea: true },
-  body:               { type: ControlType.String, title: "Body",           defaultValue: "Enterprise teams need deployment flexibility without giving up control. LLM Capsule supports on-premise deployment, air-gapped environments, cloud deployment including AWS Marketplace, hybrid configurations, and embedded integration. The same product logic runs across all deployment models while keeping local protection and local restoration at the center.", displayTextArea: true },
+  sectionTitle:       { type: ControlType.String, title: "Title",           defaultValue: "Enterprise AI deployment — ready for any controlled" },
+  sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)",   defaultValue: "environment" },
+  sectionDescription: { type: ControlType.String, title: "Description",     defaultValue: "Enterprise teams need deployment flexibility without giving up control.", displayTextArea: true },
+  body:               { type: ControlType.String, title: "Body",            defaultValue: "Enterprise teams need deployment flexibility without giving up control. LLM Capsule supports on-premise deployment, air-gapped environments, cloud deployment including AWS Marketplace, hybrid configurations, and embedded integration. The same product logic runs across all deployment models while keeping local protection and local restoration at the center.", displayTextArea: true },
   screenshotDesc:     { type: ControlType.String, title: "Screenshot desc", defaultValue: "LLM Capsule API Console — SDK integration with enterprise document management systems", displayTextArea: true },
   screenshotImage:    { type: ControlType.Image,  title: "Screenshot Image" },
-  awsLabel:           { type: ControlType.String, title: "AWS Button",     defaultValue: "View on AWS Marketplace" },
-  awsHref:            { type: ControlType.String, title: "AWS URL",        defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
+  awsLabel:           { type: ControlType.String, title: "AWS Button",      defaultValue: "View on AWS Marketplace" },
+  awsHref:            { type: ControlType.String, title: "AWS URL",         defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
+  deploy1Title:       { type: ControlType.String, title: "Deploy 1 Title",  defaultValue: "On-premise" },
+  deploy1Desc:        { type: ControlType.String, title: "Deploy 1 Desc",   defaultValue: "Fully inside customer-controlled infrastructure. The encapsulation engine runs within the enterprise data center.", displayTextArea: true },
+  deploy2Title:       { type: ControlType.String, title: "Deploy 2 Title",  defaultValue: "Air-gapped environments" },
+  deploy2Desc:        { type: ControlType.String, title: "Deploy 2 Desc",   defaultValue: "Restricted and isolated environments. Encapsulation on the isolated network, controlled transfer for AI processing.", displayTextArea: true },
+  deploy3Title:       { type: ControlType.String, title: "Deploy 3 Title",  defaultValue: "Cloud & AWS Marketplace" },
+  deploy3Desc:        { type: ControlType.String, title: "Deploy 3 Desc",   defaultValue: "AWS Marketplace deployment for streamlined procurement. Runs within the enterprise's cloud account or VPC.", displayTextArea: true },
+  deploy4Title:       { type: ControlType.String, title: "Deploy 4 Title",  defaultValue: "Hybrid & Embedded" },
+  deploy4Desc:        { type: ControlType.String, title: "Deploy 4 Desc",   defaultValue: "Different sensitivity levels route through different deployment modes. Embeddable into existing applications and partner products.", displayTextArea: true },
 })

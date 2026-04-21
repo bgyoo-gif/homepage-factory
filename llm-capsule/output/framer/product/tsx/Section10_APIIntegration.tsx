@@ -15,6 +15,16 @@ interface Props {
   sectionTitleBrand?: string
   sectionDescription?: string
   body?: string
+  card1Title?: string
+  card1Desc?: string
+  card2Title?: string
+  card2Desc?: string
+  card3Title?: string
+  card3Desc?: string
+  card4Title?: string
+  card4Desc?: string
+  card5Title?: string
+  card5Desc?: string
 }
 
 export default function Section10_APIIntegration({
@@ -22,32 +32,42 @@ export default function Section10_APIIntegration({
   sectionTitleBrand = "systems",
   sectionDescription = "LLM Capsule works as a deployable component through API and SDK integration patterns, making it practical to embed into existing products, portals, and internal workflows.",
   body = "The API provides LLM API enablement at the data layer — wrap any existing AI integration with encapsulation and restoration without rebuilding the application.",
+  card1Title = "Internal enterprise portals",
+  card1Desc = "Embed protection into existing employee-facing AI tools and knowledge systems.",
+  card2Title = "Partner backends",
+  card2Desc = "Integrate into partner platforms and B2B workflows with API-based encapsulation.",
+  card3Title = "Secure document workflows",
+  card3Desc = "Add protection to existing document processing, review, and approval pipelines.",
+  card4Title = "AI-assisted analysis tools",
+  card4Desc = "Wrap analysis and extraction tools with data protection at the API layer.",
+  card5Title = "Customer-facing AI features",
+  card5Desc = "Enable customer-facing AI capabilities without exposing internal data to external models.",
 }: Props) {
   const cards = [
     {
       icon: <><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></>,
-      title: "Internal enterprise portals",
-      desc: "Embed protection into existing employee-facing AI tools and knowledge systems.",
+      title: card1Title,
+      desc: card1Desc,
     },
     {
       icon: <><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></>,
-      title: "Partner backends",
-      desc: "Integrate into partner platforms and B2B workflows with API-based encapsulation.",
+      title: card2Title,
+      desc: card2Desc,
     },
     {
       icon: <><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></>,
-      title: "Secure document workflows",
-      desc: "Add protection to existing document processing, review, and approval pipelines.",
+      title: card3Title,
+      desc: card3Desc,
     },
     {
       icon: <><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2"/></>,
-      title: "AI-assisted analysis tools",
-      desc: "Wrap analysis and extraction tools with data protection at the API layer.",
+      title: card4Title,
+      desc: card4Desc,
     },
     {
       icon: <><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></>,
-      title: "Customer-facing AI features",
-      desc: "Enable customer-facing AI capabilities without exposing internal data to external models.",
+      title: card5Title,
+      desc: card5Desc,
     },
   ]
 
@@ -206,4 +226,14 @@ addPropertyControls(Section10_APIIntegration, {
   sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)", defaultValue: "systems" },
   sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "LLM Capsule works as a deployable component through API and SDK integration patterns, making it practical to embed into existing products, portals, and internal workflows.", displayTextArea: true },
   body:               { type: ControlType.String, title: "Body",          defaultValue: "The API provides LLM API enablement at the data layer — wrap any existing AI integration with encapsulation and restoration without rebuilding the application.", displayTextArea: true },
+  card1Title:         { type: ControlType.String, title: "Card 1 Title",  defaultValue: "Internal enterprise portals" },
+  card1Desc:          { type: ControlType.String, title: "Card 1 Desc",   defaultValue: "Embed protection into existing employee-facing AI tools and knowledge systems.", displayTextArea: true },
+  card2Title:         { type: ControlType.String, title: "Card 2 Title",  defaultValue: "Partner backends" },
+  card2Desc:          { type: ControlType.String, title: "Card 2 Desc",   defaultValue: "Integrate into partner platforms and B2B workflows with API-based encapsulation.", displayTextArea: true },
+  card3Title:         { type: ControlType.String, title: "Card 3 Title",  defaultValue: "Secure document workflows" },
+  card3Desc:          { type: ControlType.String, title: "Card 3 Desc",   defaultValue: "Add protection to existing document processing, review, and approval pipelines.", displayTextArea: true },
+  card4Title:         { type: ControlType.String, title: "Card 4 Title",  defaultValue: "AI-assisted analysis tools" },
+  card4Desc:          { type: ControlType.String, title: "Card 4 Desc",   defaultValue: "Wrap analysis and extraction tools with data protection at the API layer.", displayTextArea: true },
+  card5Title:         { type: ControlType.String, title: "Card 5 Title",  defaultValue: "Customer-facing AI features" },
+  card5Desc:          { type: ControlType.String, title: "Card 5 Desc",   defaultValue: "Enable customer-facing AI capabilities without exposing internal data to external models.", displayTextArea: true },
 })

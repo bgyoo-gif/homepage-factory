@@ -101,31 +101,75 @@ const FAQ_DATA = [
   },
 ]
 
-const EXPLORE_LINKS = [
-  { href: "/architecture",                                                    icon: <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/>,                                                           title: "Architecture" },
-  { href: "/trust",                                                           icon: <polyline points="20 6 9 17 4 12"/>,                                                                                         title: "Trust & Compliance" },
-  { href: "/pricing",                                                         icon: <><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></>,               title: "Pricing" },
-  { href: "/request-a-demo",                                                  icon: <><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></>,                                           title: "Request a Demo" },
-  { href: "/resources/learn",                                                 icon: <><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></>, title: "Learn Hub" },
-  { href: "/resources/glossary",                                              icon: <><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></>,         title: "Glossary" },
-  { href: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",   icon: <><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></>,          title: "Why Redaction Breaks AI" },
-  { href: "/resources/learn/llm-capsule-vs-masking-tools",              icon: <><line x1="3" y1="12" x2="21" y2="12"/><polyline points="12 3 3 12 12 21"/></>,                                            title: "vs Masking Tools" },
-  { href: "/resources/learn/llm-capsule-vs-prompt-security-gateways",   icon: <><line x1="3" y1="12" x2="21" y2="12"/><polyline points="12 3 3 12 12 21"/></>,                                            title: "vs Prompt Gateways" },
-  { href: "/resources/learn/llm-capsule-vs-synthetic-data-platforms",   icon: <><line x1="3" y1="12" x2="21" y2="12"/><polyline points="12 3 3 12 12 21"/></>,                                            title: "vs Synthetic Data" },
-  { href: "/resources/glossary/restoration",                                  icon: <><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></>,         title: "Restoration" },
+const EXPLORE_ICONS = [
+  <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/>,
+  <polyline points="20 6 9 17 4 12"/>,
+  <><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></>,
+  <><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></>,
+  <><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></>,
+  <><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></>,
+  <><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></>,
+  <><line x1="3" y1="12" x2="21" y2="12"/><polyline points="12 3 3 12 12 21"/></>,
+  <><line x1="3" y1="12" x2="21" y2="12"/><polyline points="12 3 3 12 12 21"/></>,
+  <><line x1="3" y1="12" x2="21" y2="12"/><polyline points="12 3 3 12 12 21"/></>,
+  <><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></>,
+]
+
+const EXPLORE_HREFS = [
+  "/architecture",
+  "/trust",
+  "/pricing",
+  "/request-a-demo",
+  "/resources/learn",
+  "/resources/glossary",
+  "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
+  "/resources/learn/llm-capsule-vs-masking-tools",
+  "/resources/learn/llm-capsule-vs-prompt-security-gateways",
+  "/resources/learn/llm-capsule-vs-synthetic-data-platforms",
+  "/resources/glossary/restoration",
 ]
 
 interface Props {
   sectionTitle?: string
   sectionTitleBrand?: string
   exploreHeader?: string
+  link1Title?: string
+  link2Title?: string
+  link3Title?: string
+  link4Title?: string
+  link5Title?: string
+  link6Title?: string
+  link7Title?: string
+  link8Title?: string
 }
 
 export default function Section13_FAQ({
   sectionTitle = "Common",
   sectionTitleBrand = "Questions",
   exploreHeader = "Explore further",
+  link1Title = "Architecture",
+  link2Title = "Trust & Compliance",
+  link3Title = "Request a Demo",
+  link4Title = "Why Redaction Breaks AI",
+  link5Title = "vs Masking Tools",
+  link6Title = "vs Prompt Gateways",
+  link7Title = "vs Synthetic Data",
+  link8Title = "Restoration",
 }: Props) {
+  const exploreLinks = [
+    { href: EXPLORE_HREFS[0],  icon: EXPLORE_ICONS[0],  title: link1Title },
+    { href: EXPLORE_HREFS[1],  icon: EXPLORE_ICONS[1],  title: link2Title },
+    { href: EXPLORE_HREFS[2],  icon: EXPLORE_ICONS[2],  title: "Pricing" },
+    { href: EXPLORE_HREFS[3],  icon: EXPLORE_ICONS[3],  title: link3Title },
+    { href: EXPLORE_HREFS[4],  icon: EXPLORE_ICONS[4],  title: "Learn Hub" },
+    { href: EXPLORE_HREFS[5],  icon: EXPLORE_ICONS[5],  title: "Glossary" },
+    { href: EXPLORE_HREFS[6],  icon: EXPLORE_ICONS[6],  title: link4Title },
+    { href: EXPLORE_HREFS[7],  icon: EXPLORE_ICONS[7],  title: link5Title },
+    { href: EXPLORE_HREFS[8],  icon: EXPLORE_ICONS[8],  title: link6Title },
+    { href: EXPLORE_HREFS[9],  icon: EXPLORE_ICONS[9],  title: link7Title },
+    { href: EXPLORE_HREFS[10], icon: EXPLORE_ICONS[10], title: link8Title },
+  ]
+
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const toggle = (i: number) => {
@@ -346,7 +390,7 @@ export default function Section13_FAQ({
             {/* Explore Further */}
             <h3 className="s13-explore-header">{exploreHeader}</h3>
             <div className="s13-explore-grid">
-              {EXPLORE_LINKS.map((link, i) => (
+              {exploreLinks.map((link, i) => (
                 <a key={i} href={link.href} className="s13-dark-card">
                   <div className="s13-dark-card__header">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">{link.icon}</svg>
@@ -364,7 +408,15 @@ export default function Section13_FAQ({
 }
 
 addPropertyControls(Section13_FAQ, {
-  sectionTitle:      { type: ControlType.String, title: "Title",          defaultValue: "Common" },
-  sectionTitleBrand: { type: ControlType.String, title: "Title (brand)", defaultValue: "Questions" },
-  exploreHeader:     { type: ControlType.String, title: "Explore Header", defaultValue: "Explore further" },
+  sectionTitle:      { type: ControlType.String, title: "Title",           defaultValue: "Common" },
+  sectionTitleBrand: { type: ControlType.String, title: "Title (brand)",  defaultValue: "Questions" },
+  exploreHeader:     { type: ControlType.String, title: "Explore Header",  defaultValue: "Explore further" },
+  link1Title:        { type: ControlType.String, title: "Link 1 Title",    defaultValue: "Architecture" },
+  link2Title:        { type: ControlType.String, title: "Link 2 Title",    defaultValue: "Trust & Compliance" },
+  link3Title:        { type: ControlType.String, title: "Link 3 Title",    defaultValue: "Request a Demo" },
+  link4Title:        { type: ControlType.String, title: "Link 4 Title",    defaultValue: "Why Redaction Breaks AI" },
+  link5Title:        { type: ControlType.String, title: "Link 5 Title",    defaultValue: "vs Masking Tools" },
+  link6Title:        { type: ControlType.String, title: "Link 6 Title",    defaultValue: "vs Prompt Gateways" },
+  link7Title:        { type: ControlType.String, title: "Link 7 Title",    defaultValue: "vs Synthetic Data" },
+  link8Title:        { type: ControlType.String, title: "Link 8 Title",    defaultValue: "Restoration" },
 })

@@ -20,6 +20,9 @@ interface Props {
   sectionTitleBrand?: string
   sectionDescription?: string
   bannerText?: string
+  row1Title?: string
+  row2Title?: string
+  row3Title?: string
 }
 
 export default function Section12_Comparison({
@@ -27,6 +30,9 @@ export default function Section12_Comparison({
   sectionTitleBrand = "approaches",
   sectionDescription = "Not all protection approaches are designed for usable enterprise AI workflows. Traditional masking protects data by reducing usability. LLM Capsule protects data while preserving enterprise workflow value.",
   bannerText = "AI results are auto-restored through local restoration. This is the fundamental capability that separates LLM Capsule from every other approach — enterprise AI enablement that produces usable outputs, not abstracted placeholders.",
+  row1Title = "Traditional Masking / Redaction",
+  row2Title = "Prompt Security Gateways",
+  row3Title = "LLM Capsule",
 }: Props) {
   const rows = [
     {
@@ -246,9 +252,9 @@ export default function Section12_Comparison({
                 <thead>
                   <tr>
                     <th>Dimension</th>
-                    <th>Traditional Masking / Redaction</th>
-                    <th>Prompt Security Gateways</th>
-                    <th className="s12-col-highlight">LLM Capsule</th>
+                    <th>{row1Title}</th>
+                    <th>{row2Title}</th>
+                    <th className="s12-col-highlight">{row3Title}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -289,4 +295,7 @@ addPropertyControls(Section12_Comparison, {
   sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)", defaultValue: "approaches" },
   sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "Not all protection approaches are designed for usable enterprise AI workflows. Traditional masking protects data by reducing usability. LLM Capsule protects data while preserving enterprise workflow value.", displayTextArea: true },
   bannerText:         { type: ControlType.String, title: "Banner",        defaultValue: "AI results are auto-restored through local restoration. This is the fundamental capability that separates LLM Capsule from every other approach — enterprise AI enablement that produces usable outputs, not abstracted placeholders.", displayTextArea: true },
+  row1Title:          { type: ControlType.String, title: "Col 1 Header",  defaultValue: "Traditional Masking / Redaction" },
+  row2Title:          { type: ControlType.String, title: "Col 2 Header",  defaultValue: "Prompt Security Gateways" },
+  row3Title:          { type: ControlType.String, title: "Col 3 Header",  defaultValue: "LLM Capsule" },
 })

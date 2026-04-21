@@ -13,6 +13,18 @@ interface Props {
   sectionTitleBrand?: string
   sectionDescription?: string
   body?: string
+  feature1Title?: string
+  feature1Desc?: string
+  feature2Title?: string
+  feature2Desc?: string
+  feature3Title?: string
+  feature3Desc?: string
+  feature4Title?: string
+  feature4Desc?: string
+  feature5Title?: string
+  feature5Desc?: string
+  feature6Title?: string
+  feature6Desc?: string
 }
 
 export default function Section08_AdminGovernance({
@@ -20,37 +32,49 @@ export default function Section08_AdminGovernance({
   sectionTitleBrand = "governance",
   sectionDescription = "Enterprise deployment requires more than transformation logic. Teams need policy control, access control, activity visibility, and auditability.",
   body = "Enterprise AI governance requires evidence of data protection at every stage — what data was processed, how it was protected, which models interacted with it, and who authorized the workflow. LLM Capsule's admin capabilities provide this auditability across all AI interactions.",
+  feature1Title = "RBAC",
+  feature1Desc = "Role-based access control for teams and workflows. Define who can configure policies, process documents, and view audit records.",
+  feature2Title = "Policy Management",
+  feature2Desc = "Define and enforce encapsulation policies per team, data type, document classification, or workflow context.",
+  feature3Title = "Audit Logs",
+  feature3Desc = "Full traceability of every encapsulation, AI processing, and restoration event. Supports compliance reporting and regulatory review.",
+  feature4Title = "Token Usage Visibility",
+  feature4Desc = "Monitor token consumption and cost across all AI model interactions. Optimize usage and track spending by team or workflow.",
+  feature5Title = "Detection Logs",
+  feature5Desc = "Visibility into what was detected as sensitive, how it was classified, and how the protection policy was applied.",
+  feature6Title = "Operational Monitoring",
+  feature6Desc = "Compare and monitor processing across multiple AI models. Centralized visibility into system health and throughput.",
 }: Props) {
   const features = [
     {
       icon: <><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></>,
-      title: "RBAC",
-      desc: "Role-based access control for teams and workflows. Define who can configure policies, process documents, and view audit records.",
+      title: feature1Title,
+      desc: feature1Desc,
     },
     {
       icon: <><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></>,
-      title: "Policy Management",
-      desc: "Define and enforce encapsulation policies per team, data type, document classification, or workflow context.",
+      title: feature2Title,
+      desc: feature2Desc,
     },
     {
       icon: <><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></>,
-      title: "Audit Logs",
-      desc: "Full traceability of every encapsulation, AI processing, and restoration event. Supports compliance reporting and regulatory review.",
+      title: feature3Title,
+      desc: feature3Desc,
     },
     {
       icon: <><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></>,
-      title: "Token Usage Visibility",
-      desc: "Monitor token consumption and cost across all AI model interactions. Optimize usage and track spending by team or workflow.",
+      title: feature4Title,
+      desc: feature4Desc,
     },
     {
       icon: <><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="7" width="10" height="10" rx="1"/></>,
-      title: "Detection Logs",
-      desc: "Visibility into what was detected as sensitive, how it was classified, and how the protection policy was applied.",
+      title: feature5Title,
+      desc: feature5Desc,
     },
     {
       icon: <><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></>,
-      title: "Operational Monitoring",
-      desc: "Compare and monitor processing across multiple AI models. Centralized visibility into system health and throughput.",
+      title: feature6Title,
+      desc: feature6Desc,
     },
   ]
 
@@ -197,8 +221,20 @@ export default function Section08_AdminGovernance({
 }
 
 addPropertyControls(Section08_AdminGovernance, {
-  sectionTitle:       { type: ControlType.String, title: "Title",         defaultValue: "Operational control for enterprise AI" },
-  sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)", defaultValue: "governance" },
-  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "Enterprise deployment requires more than transformation logic. Teams need policy control, access control, activity visibility, and auditability.", displayTextArea: true },
-  body:               { type: ControlType.String, title: "Body",          defaultValue: "Enterprise AI governance requires evidence of data protection at every stage — what data was processed, how it was protected, which models interacted with it, and who authorized the workflow. LLM Capsule's admin capabilities provide this auditability across all AI interactions.", displayTextArea: true },
+  sectionTitle:       { type: ControlType.String, title: "Title",            defaultValue: "Operational control for enterprise AI" },
+  sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)",    defaultValue: "governance" },
+  sectionDescription: { type: ControlType.String, title: "Description",      defaultValue: "Enterprise deployment requires more than transformation logic. Teams need policy control, access control, activity visibility, and auditability.", displayTextArea: true },
+  body:               { type: ControlType.String, title: "Body",             defaultValue: "Enterprise AI governance requires evidence of data protection at every stage — what data was processed, how it was protected, which models interacted with it, and who authorized the workflow. LLM Capsule's admin capabilities provide this auditability across all AI interactions.", displayTextArea: true },
+  feature1Title:      { type: ControlType.String, title: "Feature 1 Title",  defaultValue: "RBAC" },
+  feature1Desc:       { type: ControlType.String, title: "Feature 1 Desc",   defaultValue: "Role-based access control for teams and workflows. Define who can configure policies, process documents, and view audit records.", displayTextArea: true },
+  feature2Title:      { type: ControlType.String, title: "Feature 2 Title",  defaultValue: "Policy Management" },
+  feature2Desc:       { type: ControlType.String, title: "Feature 2 Desc",   defaultValue: "Define and enforce encapsulation policies per team, data type, document classification, or workflow context.", displayTextArea: true },
+  feature3Title:      { type: ControlType.String, title: "Feature 3 Title",  defaultValue: "Audit Logs" },
+  feature3Desc:       { type: ControlType.String, title: "Feature 3 Desc",   defaultValue: "Full traceability of every encapsulation, AI processing, and restoration event. Supports compliance reporting and regulatory review.", displayTextArea: true },
+  feature4Title:      { type: ControlType.String, title: "Feature 4 Title",  defaultValue: "Token Usage Visibility" },
+  feature4Desc:       { type: ControlType.String, title: "Feature 4 Desc",   defaultValue: "Monitor token consumption and cost across all AI model interactions. Optimize usage and track spending by team or workflow.", displayTextArea: true },
+  feature5Title:      { type: ControlType.String, title: "Feature 5 Title",  defaultValue: "Detection Logs" },
+  feature5Desc:       { type: ControlType.String, title: "Feature 5 Desc",   defaultValue: "Visibility into what was detected as sensitive, how it was classified, and how the protection policy was applied.", displayTextArea: true },
+  feature6Title:      { type: ControlType.String, title: "Feature 6 Title",  defaultValue: "Operational Monitoring" },
+  feature6Desc:       { type: ControlType.String, title: "Feature 6 Desc",   defaultValue: "Compare and monitor processing across multiple AI models. Centralized visibility into system health and throughput.", displayTextArea: true },
 })
