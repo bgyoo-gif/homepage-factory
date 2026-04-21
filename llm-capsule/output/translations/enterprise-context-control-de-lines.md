@@ -1,76 +1,68 @@
 # Enterprise Context Control — Deutsche Übersetzung
 
-## Section 01: Hero
+
+## Section01_Hero
+
 
 Enterprise Context Control
-Unternehmens-Kontextkontrolle
+Enterprise Context Control
 
 Policy-based sensitivity classification that determines what data to protect based on document type, department, and workflow context during AI processing.
-Richtlinienbasierte Sensitivitätsklassifizierung, die bestimmt, welche Daten basierend auf Dokumententyp, Abteilung und Workflow-Kontext während der KI-Verarbeitung geschützt werden sollen.
+Richtlinienbasierte Empfindlichkeitsklassifizierung, die auf der Grundlage von Dokumententyp, Abteilung und Workflow-Kontext während der KI-Verarbeitung bestimmt, welche Daten zu schützen sind.
 
-## Section 02: Definition
+## Section02_Definition
+
 
 DEFINITION
 DEFINITION
 
 Enterprise context control is a policy-based approach to sensitivity classification in AI workflows. Rather than applying uniform rules to all data, it determines what to protect based on document type, department origin, workflow stage, and enterprise-specific sensitivity policies. It is a core component of context-aware data control.
-Unternehmens-Kontextkontrolle ist ein richtlinienbasierter Ansatz zur Sensitivitätsklassifizierung in KI-Workflows. Anstatt einheitliche Regeln auf alle Daten anzuwenden, bestimmt sie, was zu schützen ist, basierend auf Dokumententyp, Abteilungsherkunft, Workflow-Phase und unternehmensspezifischen Sensitivitätsrichtlinien. Sie ist eine Kernkomponente der kontextbewussten Datenkontrolle.
+Enterprise Context Control ist ein richtlinienbasierter Ansatz für die Einstufung der Empfindlichkeit in KI-Workflows. Anstatt einheitliche Regeln auf alle Daten anzuwenden, wird anhand von Dokumententyp, Abteilungsherkunft, Workflow-Stufe und unternehmensspezifischen Sensibilitätsrichtlinien bestimmt, was zu schützen ist. Sie ist eine Kernkomponente der kontextabhängigen Datenkontrolle.
 
-## Section 03: Explanation
+## Section03_Explanation
+
 
 Explanation
-Erklärung
+Erläuterung
 
 Not all data carries the same sensitivity in every context. A company name in a press release is public. The same company name in an M&A target list is highly sensitive. Enterprise context control enables organizations to define protection policies that reflect these contextual differences.
-Nicht alle Daten tragen in jedem Kontext dieselbe Sensitivität. Ein Unternehmensname in einer Pressemitteilung ist öffentlich. Derselbe Unternehmensname in einer M&A-Zielliste ist hochsensibel. Unternehmens-Kontextkontrolle ermöglicht es Organisationen, Schutzrichtlinien zu definieren, die diese kontextuellen Unterschiede widerspiegeln.
+Nicht alle Daten sind in jedem Zusammenhang gleich sensibel. Ein Firmenname in einer Pressemitteilung ist öffentlich. Derselbe Firmenname in einer Liste mit Fusions- und Übernahmezielen ist hochsensibel. Mit Enterprise Context Control können Unternehmen Schutzrichtlinien definieren, die diese kontextabhängigen Unterschiede widerspiegeln.
 
 This goes beyond PII detection. Enterprise context control covers trade secrets, financial terms, strategic data, internal metrics, and any organization-specific sensitivity category — providing true enterprise confidentiality control.
-Dies geht über PII-Erkennung hinaus. Unternehmens-Kontextkontrolle umfasst Geschäftsgeheimnisse, Finanzbedingungen, strategische Daten, interne Kennzahlen und jede organisationsspezifische Sensitivitätskategorie — und bietet echte Unternehmens-Vertraulichkeitskontrolle.
+Dies geht über die Erkennung von PII hinaus. Enterprise Context Control deckt Geschäftsgeheimnisse, finanzielle Bedingungen, strategische Daten, interne Kennzahlen und jede unternehmensspezifische Sensibilitätskategorie ab und bietet so eine echte Vertraulichkeitskontrolle für Unternehmen.
 
-## Section 04: Example
+## Section04_Example
+
 
 Example
 Beispiel
 
 A bank defines different encapsulation policies for three document types: customer correspondence (protect PII only), internal risk assessments (protect PII plus risk scores and limit recommendations), and board presentations (protect all financial projections plus strategic commentary). Enterprise context control applies the right policy to each document automatically.
-Eine Bank definiert verschiedene Kapselungsrichtlinien für drei Dokumententypen: Kundenkorrespondenz (nur PII schützen), interne Risikobewertungen (PII plus Risikobewertungen und Limitempfehlungen schützen) und Vorstandspräsentationen (alle Finanzprognosen plus strategische Kommentare schützen). Unternehmens-Kontextkontrolle wendet automatisch die richtige Richtlinie auf jeden Dokumententyp an.
+Eine Bank definiert unterschiedliche Kapselungsrichtlinien für drei Dokumenttypen: Kundenkorrespondenz (nur Schutz von personenbezogenen Daten), interne Risikobewertungen (Schutz von personenbezogenen Daten plus Risikobewertungen und Limitempfehlungen) und Vorstandspräsentationen (Schutz aller Finanzprognosen plus strategische Kommentare). Enterprise Context Control wendet automatisch die richtige Richtlinie auf jedes Dokument an.
 
-## Section 05: Related Terms
+## Section05_RelatedTerms
 
-Related Terms
-Verwandte Begriffe
 
-Zero Exposure
-Zero Exposure
+Related
+Verwandte Seiten
 
-Structure-Preserving Processing
-Strukturerhaltende Verarbeitung
-
-Restorable Workflow
-Wiederherstellbarer Workflow
+Terms
+Bedingungen
 
 Related Pages
 Verwandte Seiten
 
-Product Overview
-Produktübersicht
+## Section06_CTA
 
-Architecture
-Architektur
 
-Trust & Compliance
-Vertrauen & Compliance
-
-Request a Demo
-Demo anfordern
-
-## Section 06: CTA Band
+LLM Capsule
+LLM Capsule
 
 Enterprise Context Control in Action
-Unternehmens-Kontextkontrolle in Aktion
+Enterprise Context Control in Aktion
 
 Experience how policy-based sensitivity classification protects enterprise data across every document type and workflow.
-Erleben Sie, wie richtlinienbasierte Sensitivitätsklassifizierung Unternehmensdaten über jeden Dokumententyp und Workflow hinweg schützt.
+Erleben Sie, wie richtlinienbasierte Sensibilitätsklassifizierung Unternehmensdaten über alle Dokumenttypen und Arbeitsabläufe hinweg schützt.
 
 Request a Demo
 Demo anfordern
@@ -79,4 +71,4 @@ View Product
 Produkt ansehen
 
 Enterprise AI Enablement by CUBIG
-Enterprise KI-Enablement von CUBIG
+Enterprise AI Enablement by CUBIG

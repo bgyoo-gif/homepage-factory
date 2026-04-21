@@ -1,76 +1,71 @@
-# Structure-Preserving Processing — Deutsche Übersetzung
+# Structure Preserving Processing — Deutsche Übersetzung
 
-## Section 01: Hero
+
+## Section01_Hero
+
 
 Structure-Preserving Processing
 Strukturerhaltende Verarbeitung
 
-Replacing sensitive elements while maintaining document layout, entity relationships, and semantic context for accurate AI processing — a core capability of LLM Capsule.
-Ersetzung sensibler Elemente bei gleichzeitiger Beibehaltung von Dokumentenlayout, Entitätsbeziehungen und semantischem Kontext für genaue KI-Verarbeitung — eine Kernfähigkeit von LLM Capsule.
+Replacing sensitive elements while maintaining document layout, entity relationships, and semantic context for accurate AI processing — a core capability of
+Ersetzen sensibler Elemente unter Beibehaltung des Dokumentenlayouts, der Entitätsbeziehungen und des semantischen Kontexts für eine präzise KI-Verarbeitung - eine Kernfunktion von
 
-## Section 02: Definition
+LLM Capsule
+LLM Capsule
+
+## Section02_Definition
+
 
 DEFINITION
 DEFINITION
 
 Structure-preserving processing is a data protection method that replaces sensitive elements in enterprise documents while maintaining document layout, entity relationships, table structures, cross-references, and semantic context. It ensures AI models receive structurally intact documents for accurate processing.
-Strukturerhaltende Verarbeitung ist eine Datenschutzmethode, die sensible Elemente in Unternehmensdokumenten ersetzt und gleichzeitig Dokumentenlayout, Entitätsbeziehungen, Tabellenstrukturen, Querverweise und semantischen Kontext beibehält. Sie stellt sicher, dass KI-Modelle strukturell intakte Dokumente für eine genaue Verarbeitung erhalten.
+Die strukturerhaltende Verarbeitung ist eine Datenschutzmethode, die sensible Elemente in Unternehmensdokumenten ersetzt und dabei das Dokumentenlayout, Entitätsbeziehungen, Tabellenstrukturen, Querverweise und den semantischen Kontext beibehält. Sie stellt sicher, dass KI-Modelle strukturell intakte Dokumente für eine genaue Verarbeitung erhalten.
 
-## Section 03: Explanation
+## Section03_Explanation
+
 
 Explanation
-Erklärung
+Erläuterung
 
 Flat masking treats every sensitive value as an independent token, replacing each with a generic placeholder. This collapses entity relationships, breaks table schemas, and removes the structural information AI models use for comprehension.
-Flache Maskierung behandelt jeden sensiblen Wert als unabhängiges Token und ersetzt jeden durch einen generischen Platzhalter. Dies zerstört Entitätsbeziehungen, bricht Tabellenschemata und entfernt die strukturellen Informationen, die KI-Modelle für das Verständnis nutzen.
+Bei der flachen Maskierung wird jeder sensible Wert als unabhängiges Token behandelt und durch einen generischen Platzhalter ersetzt. Dadurch werden Beziehungen zwischen Entitäten aufgelöst, Tabellenschemata zerstört und die strukturellen Informationen entfernt, die KI-Modelle für das Verständnis benötigen.
 
 Structure-preserving processing maintains these relationships. When the same entity appears in multiple locations, all occurrences map to the same replacement. Table column headers and row identifiers remain semantically consistent. Cross-references between document sections maintain their logical connections.
-Strukturerhaltende Verarbeitung bewahrt diese Beziehungen. Wenn dieselbe Entität an mehreren Stellen erscheint, werden alle Vorkommen derselben Ersetzung zugeordnet. Tabellenspaltenüberschriften und Zeilenidentifikatoren bleiben semantisch konsistent. Querverweise zwischen Dokumentabschnitten behalten ihre logischen Verbindungen bei.
+Die strukturerhaltende Verarbeitung erhält diese Beziehungen aufrecht. Wenn ein und dieselbe Entität an mehreren Stellen auftaucht, werden alle Vorkommen der gleichen Ersetzung zugeordnet. Die Spaltenüberschriften und Zeilenbezeichner von Tabellen bleiben semantisch konsistent. Querverweise zwischen Dokumentabschnitten behalten ihre logischen Verbindungen bei.
 
-## Section 04: Example
+## Section04_Example
+
 
 Example
 Beispiel
 
-A contract references "Acme Corp" 47 times across 30 pages — as a party in the preamble, a signatory in the execution block, and a reference in 12 obligation clauses. Structure-preserving processing replaces all 47 instances with ENTITY_A.
-Ein Vertrag referenziert „Acme Corp" 47-mal auf 30 Seiten — als Partei in der Präambel, als Unterzeichner im Vollzugsblock und als Referenz in 12 Verpflichtungsklauseln. Strukturerhaltende Verarbeitung ersetzt alle 47 Instanzen durch ENTITY_A.
+A contract references \
+Ein Vertrag verweist auf \
 
-## Section 05: Related Terms
+ENTITY_A
+ENTITY_A
+
+## Section05_RelatedTerms
+
 
 Related Terms
 Verwandte Begriffe
 
-Restoration
-Wiederherstellung
-
-Enterprise Context Control
-Unternehmens-Kontextkontrolle
-
-Zero Exposure
-Zero Exposure
-
 Related Pages
 Verwandte Seiten
 
-Product Overview
-Produktübersicht
+## Section06_CTA
 
-Architecture
-Architektur
 
-Trust & Compliance
-Vertrauen & Compliance
-
-Request a Demo
-Demo anfordern
-
-## Section 06: CTA Band
+LLM Capsule
+LLM Capsule
 
 Structure-Preserving Processing in Action
 Strukturerhaltende Verarbeitung in Aktion
 
 Experience how enterprise documents retain full structural integrity throughout the encapsulation and AI processing pipeline.
-Erleben Sie, wie Unternehmensdokumente die vollständige strukturelle Integrität während der gesamten Kapselungs- und KI-Verarbeitungspipeline beibehalten.
+Erleben Sie, wie Unternehmensdokumente während der gesamten Kapselung und der KI-Verarbeitungspipeline ihre strukturelle Integrität bewahren.
 
 Request a Demo
 Demo anfordern
@@ -79,4 +74,4 @@ View Product
 Produkt ansehen
 
 Enterprise AI Enablement by CUBIG
-Enterprise KI-Enablement von CUBIG
+Enterprise AI Enablement by CUBIG
