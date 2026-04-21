@@ -201,7 +201,7 @@ export default function Section04_Restoration({
         <div className="s4-inner">
           <div className="s4-container">
             <div className="s4-header">
-              <h2 className="s4-header__title">
+              <h2 className="s4-header__title" style={{ wordBreak: "keep-all" }}>
                 {sectionTitle} <span className="s4-header__brand">{sectionTitleBrand}</span>
               </h2>
               <p className="s4-header__desc">{sectionDescription}</p>

@@ -101,7 +101,7 @@ export default function Section03_Explanation({
         <div className="s3-inner">
           <div className="s3-container">
             <div className="s3-section-header">
-              <h2><span className="s3-text--brand">{sectionHeading}</span></h2>
+              <h2 style={{ wordBreak: "keep-all" }}><span className="s3-text--brand">{sectionHeading}</span></h2>
             </div>
             <p className="s3-paragraph">{paragraph1}</p>
             <p className="s3-paragraph">{paragraph2}</p>

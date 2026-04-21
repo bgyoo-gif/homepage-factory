@@ -163,7 +163,7 @@ export default function Section11_CTABand({
       <section className="s11-section" id="section-cta">
         <div className="s11-inner">
           <div className="s11-container">
-            <h2 className="s11-title">
+            <h2 className="s11-title" style={{ wordBreak: "keep-all" }}>
               {title}
             </h2>
             <p className="s11-description">{description}</p>

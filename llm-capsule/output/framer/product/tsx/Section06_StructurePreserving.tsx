@@ -168,7 +168,7 @@ export default function Section06_StructurePreserving({
         <div className="s6-inner">
           <div className="s6-container">
             <div className="s6-header">
-              <h2 className="s6-header__title">
+              <h2 className="s6-header__title" style={{ wordBreak: "keep-all" }}>
                 {sectionTitle} <span className="s6-header__brand">{sectionTitleBrand}</span> for AI
               </h2>
               <p className="s6-header__desc">{sectionDescription}</p>

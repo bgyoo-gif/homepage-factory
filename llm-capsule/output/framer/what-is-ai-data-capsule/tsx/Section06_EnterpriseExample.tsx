@@ -144,7 +144,7 @@ export default function Section06_EnterpriseExample({
         <div className="s6-inner">
           <div className="s6-container">
             <div className="s6-section-header">
-              <h2><span className="s6-label-brand">{displayLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all" }}><span className="s6-label-brand">{displayLabel}</span></h2>
             </div>
             <div className="s6-card">
               <h4 className="s6-card-title">{displayTitle}</h4>

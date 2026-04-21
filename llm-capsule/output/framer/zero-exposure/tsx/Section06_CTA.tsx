@@ -169,7 +169,7 @@ export default function Section06_CTA({
       <div className="s6-outer">
         <section className="s6-cta-band" id="section-cta">
           <div className="s6-inner">
-            <h2 className="s6-title">
+            <h2 className="s6-title" style={{ wordBreak: "keep-all" }}>
               {title}{" "}
               <span className="s6-product-name">{titleProductName}</span>{" "}
               {titleSuffix}

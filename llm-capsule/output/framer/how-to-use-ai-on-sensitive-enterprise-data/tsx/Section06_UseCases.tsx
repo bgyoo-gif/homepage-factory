@@ -234,7 +234,7 @@ export default function Section06_UseCases({
         <div className="s6-inner">
           <div className="s6-container">
             <div className="s6-header">
-              <h2>
+              <h2 style={{ wordBreak: "keep-all" }}>
                 {t.heading} <span className="s6-highlight">{t.highlight}</span>
               </h2>
             </div>

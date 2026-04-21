@@ -210,7 +210,7 @@ export default function Section02_Certifications({
         <div className="s2-inner">
           <div className="s2-container">
             <div className="s2-section-header">
-              <h2 className="s2-section-title" id="s2-cert-title">
+              <h2 className="s2-section-title" id="s2-cert-title" style={{ wordBreak: "keep-all" }}>
                 {sectionTitle} <span className="s2-title-highlight">{sectionTitleHighlight}</span>
               </h2>
               <p className="s2-section-desc">{sectionDescription}</p>

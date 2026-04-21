@@ -168,7 +168,7 @@ export default function Section07_CTA({
 
       <section className="s7-section">
         <div className="s7-inner">
-          <h2 className="s7-title">
+          <h2 className="s7-title" style={{ wordBreak: "keep-all" }}>
             {titlePrefix}
             <span className="s7-product-name">{productName}</span>
             {titleSuffix}

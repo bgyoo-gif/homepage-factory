@@ -148,7 +148,7 @@ export default function Section08_CTA({
       <div className="s8-cta-wrap">
       <section className="s8-cta" id="section-cta">
         <div className="s8-cta__inner">
-          <h2 className="s8-cta__title">
+          <h2 className="s8-cta__title" style={{ wordBreak: "keep-all" }}>
             {ctaTitle} <span className="s8-product-name">{productName}</span> {ctaTitleAfter}
           </h2>
           <p className="s8-cta__description">{ctaDescription}</p>

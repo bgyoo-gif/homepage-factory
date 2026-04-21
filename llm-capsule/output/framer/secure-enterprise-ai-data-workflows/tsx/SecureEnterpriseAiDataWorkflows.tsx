@@ -530,7 +530,7 @@ export default function SecureEnterpriseAiDataWorkflows({
                   <span className="seadw-breadcrumb__sep">/</span>
                   <span className="seadw-breadcrumb__current">Secure Enterprise AI Data Workflows</span>
                 </nav>
-                <h1 className="seadw-article-hero__title">{heroTitle}</h1>
+                <h1 className="seadw-article-hero__title" style={{ wordBreak: "keep-all" }}>{heroTitle}</h1>
                 <p className="seadw-article-hero__description">{heroDescription}</p>
               </div>
             </section>
@@ -539,7 +539,7 @@ export default function SecureEnterpriseAiDataWorkflows({
             <section id="section-2" className="seadw-section--article-body">
               <div className="seadw-article-container">
                 <div className="seadw-article-section-header">
-                  <h2>Problem</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>Problem</h2>
                 </div>
                 <p className="seadw-body-paragraph">{problemPara1}</p>
                 <p className="seadw-body-paragraph">{problemPara2}</p>
@@ -550,7 +550,7 @@ export default function SecureEnterpriseAiDataWorkflows({
             <section id="section-3" className="seadw-section--article-body">
               <div className="seadw-article-container">
                 <div className="seadw-article-section-header">
-                  <h2>Definition</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>Definition</h2>
                 </div>
                 <div className="seadw-banner">
                   <p><strong>{definitionTitle}</strong></p>
@@ -563,7 +563,7 @@ export default function SecureEnterpriseAiDataWorkflows({
             <section id="section-4" className="seadw-section--article-body">
               <div className="seadw-article-container">
                 <div className="seadw-article-section-header">
-                  <h2>Explanation</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>Explanation</h2>
                 </div>
                 <p className="seadw-body-paragraph">{explanationIntro}</p>
 
@@ -588,7 +588,7 @@ export default function SecureEnterpriseAiDataWorkflows({
             <section id="section-5" className="seadw-section--article-body">
               <div className="seadw-article-container">
                 <div className="seadw-article-section-header">
-                  <h2>Enterprise Examples</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>Enterprise Examples</h2>
                 </div>
                 <div className="seadw-card">
                   <h4 className="seadw-card__title">{example1Title}</h4>
@@ -609,7 +609,7 @@ export default function SecureEnterpriseAiDataWorkflows({
             <section id="section-6" className="seadw-section--article-body">
               <div className="seadw-article-container">
                 <div className="seadw-article-section-header">
-                  <h2>FAQ</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>FAQ</h2>
                 </div>
                 <div className="seadw-ac-list">
                   <AcCard question={faq1Q} answer={faq1A} defaultOpen={true} />
@@ -752,7 +752,7 @@ export default function SecureEnterpriseAiDataWorkflows({
             {/* ── Section CTA ──────────────────────────────────────────── */}
             <section id="section-cta" className="seadw-cta-band">
               <div className="seadw-cta-band__inner">
-                <h2 className="seadw-cta-band__title">
+                <h2 className="seadw-cta-band__title" style={{ wordBreak: "keep-all" }}>
                   {ctaTitle}
                 </h2>
                 <p className="seadw-cta-band__description">{ctaDescription}</p>

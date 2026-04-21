@@ -144,7 +144,7 @@ export default function Section05_ComparisonTable({
         <div className="s5-inner">
           <div className="s5-container">
             <div className="s5-section-header">
-              <h2>
+              <h2 style={{ wordBreak: "keep-all" }}>
                 <span className="s5-product">{headingProduct}</span>{" "}
                 {headingVs}{" "}
                 <span className="s5-brand">{headingTools}</span>

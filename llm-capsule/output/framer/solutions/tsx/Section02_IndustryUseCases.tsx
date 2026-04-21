@@ -361,7 +361,7 @@ export default function Section02_IndustryUseCases({
         <div className="s2-inner">
           <div className="s2-container">
             <div className="s2-section-header">
-              <h2 className="s2-section-title">{sectionTitle}</h2>
+              <h2 className="s2-section-title" style={{ wordBreak: "keep-all" }}>{sectionTitle}</h2>
               <p className="s2-section-desc">{sectionDescription}</p>
             </div>
 

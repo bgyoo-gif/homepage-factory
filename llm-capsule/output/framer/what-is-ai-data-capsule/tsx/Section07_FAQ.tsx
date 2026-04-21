@@ -240,7 +240,7 @@ export default function Section07_FAQ({
         <div className="s7-inner">
           <div className="s7-container">
             <div className="s7-section-header">
-              <h2>{displayLabel}</h2>
+              <h2 style={{ wordBreak: "keep-all" }}>{displayLabel}</h2>
             </div>
             <div className="s7-ac-list">
               {displayItems.map((item, i) => (

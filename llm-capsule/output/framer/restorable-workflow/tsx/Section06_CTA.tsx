@@ -184,7 +184,7 @@ export default function Section06_CTA({
         style={{ backgroundImage: isMobile ? "none" : BG_IMAGE }}
       >
         <div className="s6-inner">
-          <h2 className="s6-title">
+          <h2 className="s6-title" style={{ wordBreak: "keep-all" }}>
             {titlePre} <span className="s6-product-name">{productName}</span> {titlePost}
           </h2>
           <p className="s6-description">{description}</p>

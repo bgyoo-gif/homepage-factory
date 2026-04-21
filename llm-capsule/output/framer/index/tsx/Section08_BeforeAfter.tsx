@@ -151,7 +151,7 @@ export default function Section08_BeforeAfter({
           <section id="section-8" className="idx-section idx-section--bg-img">
             <div className="idx-container">
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title">{baHeading}</h2>
+                <h2 className="idx-section-header__title" style={{ wordBreak: "keep-all" }}>{baHeading}</h2>
               </div>
 
               <div className="idx-card-grid idx-card-grid--2col">

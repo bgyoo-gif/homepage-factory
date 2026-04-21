@@ -105,7 +105,7 @@ export default function Section01_Hero({
         <div className="s1-inner">
           <div className="s1-container">
             <div className="s1-hero">
-              <h1 className="s1-hero__title">
+              <h1 className="s1-hero__title" style={{ wordBreak: "keep-all" }}>
                 {titlePrefix}{" "}
                 <span className="s1-hero__title-brand">{titleBrand}</span>
               </h1>

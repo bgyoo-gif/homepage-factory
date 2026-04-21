@@ -206,7 +206,7 @@ export default function Section09_FAQ({
         <div className="s9-inner">
           <div className="s9-container">
             <div className="s9-header">
-              <h2>{heading}</h2>
+              <h2 style={{ wordBreak: "keep-all" }}>{heading}</h2>
             </div>
             <div className="s9-list">
               {items.map((item, i) => (

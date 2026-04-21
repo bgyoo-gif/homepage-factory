@@ -117,7 +117,7 @@ export default function Section01_Hero({
       <section className="s1-section">
         <div className="s1-inner">
           <div className="s1-container">
-            <h1 className="s1-title">{displayTitle}</h1>
+            <h1 className="s1-title" style={{ wordBreak: "keep-all" }}>{displayTitle}</h1>
             <p className="s1-description">{displayDesc}</p>
           </div>
         </div>

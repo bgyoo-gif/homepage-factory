@@ -196,7 +196,7 @@ export default function Section03_Explanation({
         <div className="s3-inner">
           <div className="s3-container">
             <div className="s3-header">
-              <h2><span className="s3-brand">{sectionLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all" }}><span className="s3-brand">{sectionLabel}</span></h2>
             </div>
 
             <div className="s3-stages">

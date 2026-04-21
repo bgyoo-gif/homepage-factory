@@ -126,7 +126,7 @@ export default function Section04_IndustryProof({
           <section id="section-4" className="idx-section">
             <div className="idx-container">
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title">{industryHeading}</h2>
+                <h2 className="idx-section-header__title" style={{ wordBreak: "keep-all" }}>{industryHeading}</h2>
                 <p className="idx-section-header__desc">{industrySubheading}</p>
               </div>
 

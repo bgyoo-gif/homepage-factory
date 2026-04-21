@@ -195,7 +195,7 @@ export default function Section10_APIIntegration({
         <div className="s10-inner">
           <div className="s10-container">
             <div className="s10-header">
-              <h2 className="s10-header__title">
+              <h2 className="s10-header__title" style={{ wordBreak: "keep-all" }}>
                 {sectionTitle} <span className="s10-header__brand">{sectionTitleBrand}</span>
               </h2>
               <p className="s10-header__desc">{sectionDescription}</p>

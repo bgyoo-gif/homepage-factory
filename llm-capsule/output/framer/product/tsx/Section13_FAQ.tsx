@@ -378,7 +378,7 @@ export default function Section13_FAQ({
         <div className="s13-inner">
           <div className="s13-container">
             <div className="s13-header">
-              <h2 className="s13-header__title">
+              <h2 className="s13-header__title" style={{ wordBreak: "keep-all" }}>
                 {sectionTitle} <span className="s13-header__brand">{sectionTitleBrand}</span> about <span className="s13-header__product">LLM Capsule</span>
               </h2>
             </div>

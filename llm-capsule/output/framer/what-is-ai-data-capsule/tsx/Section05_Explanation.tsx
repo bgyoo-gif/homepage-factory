@@ -203,7 +203,7 @@ export default function Section05_Explanation({
         <div className="s5-inner">
           <div className="s5-container">
             <div className="s5-section-header">
-              <h2><span className="s5-label-brand">{displayLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all" }}><span className="s5-label-brand">{displayLabel}</span></h2>
             </div>
             <p className="s5-intro">{displayIntro}</p>
             <ul className="s5-bullet-list">

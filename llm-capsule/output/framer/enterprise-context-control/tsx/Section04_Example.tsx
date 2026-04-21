@@ -131,7 +131,7 @@ export default function Section04_Example({
         <div className="s4-inner">
           <div className="s4-container">
             <div className="s4-section-header">
-              <h2>
+              <h2 style={{ wordBreak: "keep-all" }}>
                 <span className="s4-text--brand">{headingBrand}</span>
                 {headingPlain && ` ${headingPlain}`}
               </h2>

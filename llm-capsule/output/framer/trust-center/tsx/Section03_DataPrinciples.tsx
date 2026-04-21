@@ -158,7 +158,7 @@ export default function Section03_DataPrinciples({
         <div className="s3-inner">
           <div className="s3-container">
             <div className="s3-section-header">
-              <h2 className="s3-section-title" id="s3-data-principles-title">
+              <h2 className="s3-section-title" id="s3-data-principles-title" style={{ wordBreak: "keep-all" }}>
                 {sectionTitle} <span className="s3-title-highlight">{sectionTitleHighlight}</span>
               </h2>
               <p className="s3-section-desc">{sectionDescription}</p>

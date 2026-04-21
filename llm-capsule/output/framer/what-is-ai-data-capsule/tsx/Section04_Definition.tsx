@@ -133,7 +133,7 @@ export default function Section04_Definition({
         <div className="s4-inner">
           <div className="s4-container">
             <div className="s4-section-header">
-              <h2><span className="s4-label-brand">{displayLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all" }}><span className="s4-label-brand">{displayLabel}</span></h2>
             </div>
             <div className="s4-banner">
               <span className="s4-banner-label">{displayBannerLabel}</span>

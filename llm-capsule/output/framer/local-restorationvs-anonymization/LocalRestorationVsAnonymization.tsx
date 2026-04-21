@@ -553,7 +553,7 @@ export default function LocalRestorationVsAnonymization({
                   <span className="lrva-breadcrumb__sep">/</span>
                   <span className="lrva-breadcrumb__current">Local Restoration vs Anonymization</span>
                 </nav>
-                <h1 className="lrva-article-hero__title">{heroTitle}</h1>
+                <h1 className="lrva-article-hero__title" style={{ wordBreak: "keep-all" }}>{heroTitle}</h1>
                 <p className="lrva-article-hero__description">{heroDescription}</p>
               </div>
             </section>
@@ -562,7 +562,7 @@ export default function LocalRestorationVsAnonymization({
             <section id="section-2" className="lrva-section--article-body">
               <div className="lrva-article-container">
                 <div className="lrva-article-section-header">
-                  <h2>Overview</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>Overview</h2>
                 </div>
                 <p className="lrva-body-paragraph">{overviewText}</p>
               </div>
@@ -572,7 +572,7 @@ export default function LocalRestorationVsAnonymization({
             <section id="section-3" className="lrva-section--article-body">
               <div className="lrva-article-container">
                 <div className="lrva-article-section-header">
-                  <h2>How Anonymization Works</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>How Anonymization Works</h2>
                 </div>
                 <p className="lrva-body-paragraph">{anonWorksText}</p>
               </div>
@@ -582,7 +582,7 @@ export default function LocalRestorationVsAnonymization({
             <section id="section-4" className="lrva-section--article-body">
               <div className="lrva-article-container">
                 <div className="lrva-article-section-header">
-                  <h2>Limitations</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>Limitations</h2>
                 </div>
                 <ul className="lrva-bullet lrva-bullet--dot">
                   {[limitBullet1, limitBullet2, limitBullet3].map((raw, i) => {
@@ -605,7 +605,7 @@ export default function LocalRestorationVsAnonymization({
             <section id="section-5" className="lrva-section--article-body">
               <div className="lrva-article-container">
                 <div className="lrva-article-section-header">
-                  <h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>
                     How <span className="lrva-text--product">LLM Capsule</span> Differs
                   </h2>
                 </div>
@@ -623,7 +623,7 @@ export default function LocalRestorationVsAnonymization({
             <section id="section-6" className="lrva-section--article-body">
               <div className="lrva-article-container">
                 <div className="lrva-article-section-header">
-                  <h2>Comparison</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>Comparison</h2>
                 </div>
                 <div className="lrva-table-wrap">
                   <table className="lrva-table">
@@ -654,7 +654,7 @@ export default function LocalRestorationVsAnonymization({
             <section id="section-7" className="lrva-section--article-body">
               <div className="lrva-article-container">
                 <div className="lrva-article-section-header">
-                  <h2>Enterprise Workflow Example</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>Enterprise Workflow Example</h2>
                 </div>
                 <div className="lrva-card">
                   <h4>{exampleCardTitle}</h4>
@@ -671,7 +671,7 @@ export default function LocalRestorationVsAnonymization({
             <section id="section-8" className="lrva-section--article-body">
               <div className="lrva-article-container">
                 <div className="lrva-article-section-header">
-                  <h2>FAQ</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>FAQ</h2>
                 </div>
                 <div className="lrva-ac-list">
                   {/* FAQ 1 */}
@@ -780,7 +780,7 @@ export default function LocalRestorationVsAnonymization({
             {/* ── Section 10: CTA Band ──────────────────────────────────── */}
             <section id="section-cta" className="lrva-cta-band">
               <div className="lrva-cta-band__inner">
-                <h2 className="lrva-cta-band__title">
+                <h2 className="lrva-cta-band__title" style={{ wordBreak: "keep-all" }}>
                   {ctaTitle}
                 </h2>
                 <p className="lrva-cta-band__description">{ctaDescription}</p>

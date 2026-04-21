@@ -167,7 +167,7 @@ export default function Section09_CTABand({
       <section className="s9-section">
         <div className="s9-inner">
           <div className="s9-band-inner">
-            <h2 className="s9-title">
+            <h2 className="s9-title" style={{ wordBreak: "keep-all" }}>
               {titlePre}{" "}
               <span className="s9-product">{productName}</span>{" "}
               {titlePost}

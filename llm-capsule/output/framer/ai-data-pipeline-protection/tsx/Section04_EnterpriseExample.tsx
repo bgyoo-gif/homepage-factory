@@ -120,7 +120,7 @@ export default function Section04_EnterpriseExample({
         <div className="s4-inner">
           <div className="s4-container">
             <div className="s4-header">
-              <h2>
+              <h2 style={{ wordBreak: "keep-all" }}>
                 Enterprise <span className="s4-brand">{sectionLabelHighlight}</span>
               </h2>
             </div>

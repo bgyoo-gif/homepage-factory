@@ -111,7 +111,7 @@ function GlossaryCard({ title, href, linkLabel, iconKey }: CardProps) {
       <div className="s2-card__icon-wrap">
         <Icon />
       </div>
-      <h2 className="s2-card__title">{title}</h2>
+      <h2 className="s2-card__title" style={{ wordBreak: "keep-all" }}>{title}</h2>
       <div className="s2-card__footer">
         <span className="s2-card__link">{linkLabel} &rarr;</span>
       </div>

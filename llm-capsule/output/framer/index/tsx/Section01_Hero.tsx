@@ -200,7 +200,7 @@ export default function Section01_Hero({
           <section id="section-1" className="idx-hero-section">
             <div className="idx-container">
               <div className="idx-hero">
-                <h1 className="idx-hero__title">{heroTitle}</h1>
+                <h1 className="idx-hero__title" style={{ wordBreak: "keep-all" }}>{heroTitle}</h1>
                 <p className="idx-hero__desc">{heroDescription}</p>
               </div>
               <div className="idx-hero__frame">

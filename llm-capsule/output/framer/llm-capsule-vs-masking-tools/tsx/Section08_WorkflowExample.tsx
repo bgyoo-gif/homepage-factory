@@ -118,7 +118,7 @@ export default function Section08_WorkflowExample({
         <div className="s8-inner">
           <div className="s8-container">
             <div className="s8-header">
-              <h2>{heading}</h2>
+              <h2 style={{ wordBreak: "keep-all" }}>{heading}</h2>
             </div>
             <div className="s8-card">
               <h4 className="s8-card-title">{cardTitle}</h4>

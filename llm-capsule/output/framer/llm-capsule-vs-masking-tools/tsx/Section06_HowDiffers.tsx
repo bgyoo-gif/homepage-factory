@@ -117,7 +117,7 @@ export default function Section06_HowDiffers({
         <div className="s6-inner">
           <div className="s6-container">
             <div className="s6-header">
-              <h2>
+              <h2 style={{ wordBreak: "keep-all" }}>
                 {heading} <span className="s6-product">{headingProduct}</span> Differs
               </h2>
             </div>

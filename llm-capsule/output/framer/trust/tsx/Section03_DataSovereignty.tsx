@@ -171,7 +171,7 @@ export default function Section03_DataSovereignty({
         <div className="s3-inner">
           <div className="s3-container">
             <div className="s3-section-header">
-              <h2 className="s3-section-header__title">
+              <h2 className="s3-section-header__title" style={{ wordBreak: "keep-all" }}>
                 {sectionTitle} <span className="s3-title-highlight">{sectionTitleHighlight}</span>
               </h2>
               <p className="s3-section-header__description">

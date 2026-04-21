@@ -120,7 +120,7 @@ export default function Section01_Hero({
               <span className="s1-breadcrumb__sep">/</span>
               <span className="s1-breadcrumb__current">LLM Capsule vs Masking Tools</span>
             </nav>
-            <h1 className="s1-title">
+            <h1 className="s1-title" style={{ wordBreak: "keep-all" }}>
               <span className="s1-product">{titleProduct}</span> {title}
             </h1>
             <p className="s1-description">

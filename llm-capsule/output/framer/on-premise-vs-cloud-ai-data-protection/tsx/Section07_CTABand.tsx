@@ -201,7 +201,7 @@ export default function Section07_CTABand({
       <div className="s7-inner">
         <section className="s7-cta">
           <div className="s7-cta__inner">
-            <h2 className="s7-cta__title">
+            <h2 className="s7-cta__title" style={{ wordBreak: "keep-all" }}>
               {title}
             </h2>
             <p className="s7-cta__description">{t.description}</p>

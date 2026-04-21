@@ -244,7 +244,7 @@ export default function Section03_ZeroExposure({
         <div className="s3-inner">
           <div className="s3-container">
             <div className="s3-header">
-              <h2 className="s3-header__title">
+              <h2 className="s3-header__title" style={{ wordBreak: "keep-all" }}>
                 {sectionTitle} <span className="s3-header__brand">{sectionTitleBrand}</span>
               </h2>
               <p className="s3-header__desc">{sectionDescription}</p>

@@ -207,7 +207,7 @@ export default function Section05_FAQ({
         <div className="s5-inner">
           <div className="s5-container">
             <div className="s5-header">
-              <h2>{sectionLabel}</h2>
+              <h2 style={{ wordBreak: "keep-all" }}>{sectionLabel}</h2>
             </div>
 
             <div className="s5-ac-list">

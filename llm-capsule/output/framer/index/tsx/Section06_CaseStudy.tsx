@@ -138,7 +138,7 @@ export default function Section06_CaseStudy({
           <section id="section-6" className="idx-section">
             <div className="idx-container">
               <div className="idx-section-header idx-section-header--underline">
-                <h2 className="idx-section-header__title">{csHeading}</h2>
+                <h2 className="idx-section-header__title" style={{ wordBreak: "keep-all" }}>{csHeading}</h2>
                 <p className="idx-section-header__desc">{csSubheading}</p>
               </div>
 

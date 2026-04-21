@@ -121,7 +121,7 @@ export default function Section09_CrossModelExecution({
         <div className="s9-inner">
           <div className="s9-container">
             <div className="s9-header">
-              <h2 className="s9-header__title">
+              <h2 className="s9-header__title" style={{ wordBreak: "keep-all" }}>
                 {sectionTitle} <span className="s9-header__brand">{sectionTitleBrand}</span>
               </h2>
               <p className="s9-header__desc">{sectionDescription}</p>

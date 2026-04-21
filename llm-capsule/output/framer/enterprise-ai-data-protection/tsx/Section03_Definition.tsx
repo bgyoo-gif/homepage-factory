@@ -119,7 +119,7 @@ export default function Section03_Definition({
         <div className="s3-inner">
           <div className="s3-container">
             <div className="s3-section-header">
-              <h2><span className="s3-brand-text">{sectionLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all" }}><span className="s3-brand-text">{sectionLabel}</span></h2>
             </div>
             <div className="s3-banner">
               <span className="s3-banner-label">{bannerLabel}</span>

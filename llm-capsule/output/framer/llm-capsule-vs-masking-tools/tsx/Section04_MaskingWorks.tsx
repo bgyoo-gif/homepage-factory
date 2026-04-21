@@ -86,7 +86,7 @@ export default function Section04_MaskingWorks({
         <div className="s4-inner">
           <div className="s4-container">
             <div className="s4-header">
-              <h2>{heading}</h2>
+              <h2 style={{ wordBreak: "keep-all" }}>{heading}</h2>
             </div>
             <p className="s4-paragraph">{paragraph}</p>
           </div>

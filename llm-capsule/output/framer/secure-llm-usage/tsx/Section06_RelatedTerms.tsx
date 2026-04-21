@@ -205,7 +205,7 @@ export default function Section06_RelatedTerms({
         <div className="s6-inner">
           <div className="s6-container">
             <div className="s6-section-header">
-              <h2 className="s6-section-title">
+              <h2 className="s6-section-title" style={{ wordBreak: "keep-all" }}>
                 {sectionTitleMain}
                 <span className="s6-title-brand">{sectionTitleBrand}</span>
               </h2>

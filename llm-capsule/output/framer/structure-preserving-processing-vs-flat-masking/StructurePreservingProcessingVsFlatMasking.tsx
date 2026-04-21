@@ -524,7 +524,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
                   <span className="spp-breadcrumb__sep">/</span>
                   <span className="spp-breadcrumb__current">Structure-Preserving Processing vs Flat Masking</span>
                 </nav>
-                <h1 className="spp-article-hero__title">{heroTitle}</h1>
+                <h1 className="spp-article-hero__title" style={{ wordBreak: "keep-all" }}>{heroTitle}</h1>
                 <p className="spp-article-hero__description">{heroDescription}</p>
               </div>
             </section>
@@ -533,7 +533,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
             <section id="section-3" className="spp-section--article-body">
               <div className="spp-article-container">
                 <div className="spp-article-section-header">
-                  <h2>Overview</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>Overview</h2>
                 </div>
                 <p className="spp-body-paragraph">{overviewBody}</p>
               </div>
@@ -543,7 +543,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
             <section id="section-4" className="spp-section--article-body">
               <div className="spp-article-container">
                 <div className="spp-article-section-header">
-                  <h2>How Flat Masking Works</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>How Flat Masking Works</h2>
                 </div>
                 <p className="spp-body-paragraph">{flatMaskingBody}</p>
               </div>
@@ -553,7 +553,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
             <section id="section-5" className="spp-section--article-body">
               <div className="spp-article-container">
                 <div className="spp-article-section-header">
-                  <h2>Limitations</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>Limitations</h2>
                 </div>
                 <ul className="spp-bullet spp-bullet--dot">
                   <li className="spp-bullet__item">
@@ -580,7 +580,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
             <section id="section-6" className="spp-section--article-body">
               <div className="spp-article-container">
                 <div className="spp-article-section-header">
-                  <h2>How <span className="spp-text--product">LLM Capsule</span> Differs</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>How <span className="spp-text--product">LLM Capsule</span> Differs</h2>
                 </div>
                 <p className="spp-body-paragraph">{capsuleDifferBody}</p>
                 <div className="spp-banner">
@@ -596,7 +596,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
             <section id="section-7" className="spp-section--article-body">
               <div className="spp-article-container">
                 <div className="spp-article-section-header">
-                  <h2>Comparison</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>Comparison</h2>
                 </div>
                 <div className="spp-table-wrap">
                   <table className="spp-table">
@@ -650,7 +650,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
             <section id="section-8" className="spp-section--article-body">
               <div className="spp-article-container">
                 <div className="spp-article-section-header">
-                  <h2>Enterprise Workflow Example</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>Enterprise Workflow Example</h2>
                 </div>
                 <div className="spp-card">
                   <h4 className="spp-card__title">{exampleCardTitle}</h4>
@@ -664,7 +664,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
             <section id="section-9" className="spp-section--article-body">
               <div className="spp-article-container">
                 <div className="spp-article-section-header">
-                  <h2>FAQ</h2>
+                  <h2 style={{ wordBreak: "keep-all" }}>FAQ</h2>
                 </div>
                 <div className="spp-ac-list">
                   <div className="spp-ac-card">
@@ -752,7 +752,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
             {/* ── Section 11: CTA Band ──────────────────────────────────── */}
             <section id="section-cta" className="spp-cta-band">
               <div className="spp-cta-band__inner">
-                <h2 className="spp-cta-band__title">
+                <h2 className="spp-cta-band__title" style={{ wordBreak: "keep-all" }}>
                   {ctaTitle}
                 </h2>
                 <p className="spp-cta-band__description">{ctaDescription}</p>
