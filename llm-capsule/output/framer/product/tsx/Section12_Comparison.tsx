@@ -23,6 +23,42 @@ interface Props {
   row1Title?: string
   row2Title?: string
   row3Title?: string
+  row1Dim?: string
+  row1Masking?: string
+  row1Gateway?: string
+  row1Capsule?: string
+  row2Dim?: string
+  row2Masking?: string
+  row2Gateway?: string
+  row2Capsule?: string
+  row3Dim?: string
+  row3Masking?: string
+  row3Gateway?: string
+  row3Capsule?: string
+  row4Dim?: string
+  row4Masking?: string
+  row4Gateway?: string
+  row4Capsule?: string
+  row5Dim?: string
+  row5Masking?: string
+  row5Gateway?: string
+  row5Capsule?: string
+  row6Dim?: string
+  row6Masking?: string
+  row6Gateway?: string
+  row6Capsule?: string
+  row7Dim?: string
+  row7Masking?: string
+  row7Gateway?: string
+  row7Capsule?: string
+  row8Dim?: string
+  row8Masking?: string
+  row8Gateway?: string
+  row8Capsule?: string
+  row9Dim?: string
+  row9Masking?: string
+  row9Gateway?: string
+  row9Capsule?: string
 }
 
 export default function Section12_Comparison({
@@ -33,71 +69,107 @@ export default function Section12_Comparison({
   row1Title = "Traditional Masking / Redaction",
   row2Title = "Prompt Security Gateways",
   row3Title = "LLM Capsule",
+  row1Dim = "AI enablement layer",
+  row1Masking = "Pre-processing data removal",
+  row1Gateway = "API-level prompt filtering",
+  row1Capsule = "Data-layer encapsulation",
+  row2Dim = "Local processing",
+  row2Masking = "Often does not preserve full workflow boundary",
+  row2Gateway = "Cloud-based filtering, not local",
+  row2Capsule = "Sensitive entities encapsulated locally before outbound",
+  row3Dim = "Restoration",
+  row3Masking = "One-way, no restored usability",
+  row3Gateway = "No output restoration",
+  row3Capsule = "Outputs auto-restored locally for usable workflows",
+  row4Dim = "Business-specific entity control",
+  row4Masking = "Generic PII categories only",
+  row4Gateway = "Pattern-based PII detection",
+  row4Capsule = "Enterprise context control beyond PII",
+  row5Dim = "Structure preservation",
+  row5Masking = "Optimized for flat text only",
+  row5Gateway = "N/A — operates on prompts",
+  row5Capsule = "Tables, diagrams, layouts preserved",
+  row6Dim = "RAG pipeline support",
+  row6Masking = "Partial",
+  row6Gateway = "Limited — only sees final prompt",
+  row6Capsule = "Full data pipeline protection",
+  row7Dim = "Deployment flexibility",
+  row7Masking = "Varies",
+  row7Gateway = "Cloud / SaaS only",
+  row7Capsule = "On-premise, air-gapped, cloud, hybrid, embedded",
+  row8Dim = "Workflow usability",
+  row8Masking = "Protects data while reducing output value",
+  row8Gateway = "Blocks or passes, no transformation",
+  row8Capsule = "Built for usable AI outputs",
+  row9Dim = "Audit & governance",
+  row9Masking = "Limited traceability",
+  row9Gateway = "Prompt-level logging",
+  row9Capsule = "Complete audit trail",
 }: Props) {
   const rows = [
     {
-      dim: "AI enablement layer",
-      masking: "Pre-processing data removal",
-      gateway: "API-level prompt filtering",
-      capsule: "Data-layer encapsulation",
+      dim: row1Dim,
+      masking: row1Masking,
+      gateway: row1Gateway,
+      capsule: row1Capsule,
       capsuleCheck: false,
     },
     {
-      dim: "Local processing",
-      masking: "Often does not preserve full workflow boundary",
-      gateway: "Cloud-based filtering, not local",
-      capsule: "Sensitive entities encapsulated locally before outbound",
+      dim: row2Dim,
+      masking: row2Masking,
+      gateway: row2Gateway,
+      capsule: row2Capsule,
       capsuleCheck: false,
     },
     {
-      dim: "Restoration",
-      masking: "One-way, no restored usability",
-      gateway: "No output restoration",
-      capsule: "Outputs auto-restored locally for usable workflows",
+      dim: row3Dim,
+      masking: row3Masking,
+      gateway: row3Gateway,
+      capsule: row3Capsule,
       maskingX: true,
       gatewayX: true,
       capsuleCheck: true,
     },
     {
-      dim: "Business-specific entity control",
-      masking: "Generic PII categories only",
-      gateway: "Pattern-based PII detection",
-      capsule: "Enterprise context control beyond PII",
+      dim: row4Dim,
+      masking: row4Masking,
+      gateway: row4Gateway,
+      capsule: row4Capsule,
       capsuleCheck: true,
     },
     {
-      dim: "Structure preservation",
-      masking: "Optimized for flat text only",
-      gateway: "N/A — operates on prompts",
-      capsule: "Tables, diagrams, layouts preserved",
+      dim: row5Dim,
+      masking: row5Masking,
+      gateway: row5Gateway,
+      capsule: row5Capsule,
       capsuleCheck: true,
     },
     {
-      dim: "RAG pipeline support",
-      masking: "Partial",
-      gateway: "Limited — only sees final prompt",
-      capsule: "Full data pipeline protection",
+      dim: row6Dim,
+      masking: row6Masking,
+      gateway: row6Gateway,
+      capsule: row6Capsule,
       capsuleCheck: true,
     },
     {
-      dim: "Deployment flexibility",
-      masking: "Varies",
-      gateway: "Cloud / SaaS only",
-      capsule: "On-premise, air-gapped, cloud, hybrid, embedded",
+      dim: row7Dim,
+      masking: row7Masking,
+      gateway: row7Gateway,
+      capsule: row7Capsule,
       capsuleCheck: true,
     },
     {
-      dim: "Workflow usability",
-      masking: "Protects data while reducing output value",
-      gateway: "Blocks or passes, no transformation",
-      capsule: "Built for usable AI outputs",
+      dim: row8Dim,
+      masking: row8Masking,
+      gateway: row8Gateway,
+      capsule: row8Capsule,
       capsuleCheck: true,
     },
     {
-      dim: "Audit & governance",
-      masking: "Limited traceability",
-      gateway: "Prompt-level logging",
-      capsule: "Complete audit trail",
+      dim: row9Dim,
+      masking: row9Masking,
+      gateway: row9Gateway,
+      capsule: row9Capsule,
       capsuleCheck: true,
     },
   ]
@@ -297,4 +369,40 @@ addPropertyControls(Section12_Comparison, {
   row1Title:          { type: ControlType.String, title: "Col 1 Header",  defaultValue: "Traditional Masking / Redaction" },
   row2Title:          { type: ControlType.String, title: "Col 2 Header",  defaultValue: "Prompt Security Gateways" },
   row3Title:          { type: ControlType.String, title: "Col 3 Header",  defaultValue: "LLM Capsule" },
+  row1Dim:            { type: ControlType.String, title: "R1 Dimension",  defaultValue: "AI enablement layer" },
+  row1Masking:        { type: ControlType.String, title: "R1 Masking",    defaultValue: "Pre-processing data removal" },
+  row1Gateway:        { type: ControlType.String, title: "R1 Gateway",    defaultValue: "API-level prompt filtering" },
+  row1Capsule:        { type: ControlType.String, title: "R1 Capsule",    defaultValue: "Data-layer encapsulation" },
+  row2Dim:            { type: ControlType.String, title: "R2 Dimension",  defaultValue: "Local processing" },
+  row2Masking:        { type: ControlType.String, title: "R2 Masking",    defaultValue: "Often does not preserve full workflow boundary", displayTextArea: true },
+  row2Gateway:        { type: ControlType.String, title: "R2 Gateway",    defaultValue: "Cloud-based filtering, not local" },
+  row2Capsule:        { type: ControlType.String, title: "R2 Capsule",    defaultValue: "Sensitive entities encapsulated locally before outbound", displayTextArea: true },
+  row3Dim:            { type: ControlType.String, title: "R3 Dimension",  defaultValue: "Restoration" },
+  row3Masking:        { type: ControlType.String, title: "R3 Masking",    defaultValue: "One-way, no restored usability" },
+  row3Gateway:        { type: ControlType.String, title: "R3 Gateway",    defaultValue: "No output restoration" },
+  row3Capsule:        { type: ControlType.String, title: "R3 Capsule",    defaultValue: "Outputs auto-restored locally for usable workflows", displayTextArea: true },
+  row4Dim:            { type: ControlType.String, title: "R4 Dimension",  defaultValue: "Business-specific entity control" },
+  row4Masking:        { type: ControlType.String, title: "R4 Masking",    defaultValue: "Generic PII categories only" },
+  row4Gateway:        { type: ControlType.String, title: "R4 Gateway",    defaultValue: "Pattern-based PII detection" },
+  row4Capsule:        { type: ControlType.String, title: "R4 Capsule",    defaultValue: "Enterprise context control beyond PII" },
+  row5Dim:            { type: ControlType.String, title: "R5 Dimension",  defaultValue: "Structure preservation" },
+  row5Masking:        { type: ControlType.String, title: "R5 Masking",    defaultValue: "Optimized for flat text only" },
+  row5Gateway:        { type: ControlType.String, title: "R5 Gateway",    defaultValue: "N/A — operates on prompts" },
+  row5Capsule:        { type: ControlType.String, title: "R5 Capsule",    defaultValue: "Tables, diagrams, layouts preserved" },
+  row6Dim:            { type: ControlType.String, title: "R6 Dimension",  defaultValue: "RAG pipeline support" },
+  row6Masking:        { type: ControlType.String, title: "R6 Masking",    defaultValue: "Partial" },
+  row6Gateway:        { type: ControlType.String, title: "R6 Gateway",    defaultValue: "Limited — only sees final prompt" },
+  row6Capsule:        { type: ControlType.String, title: "R6 Capsule",    defaultValue: "Full data pipeline protection" },
+  row7Dim:            { type: ControlType.String, title: "R7 Dimension",  defaultValue: "Deployment flexibility" },
+  row7Masking:        { type: ControlType.String, title: "R7 Masking",    defaultValue: "Varies" },
+  row7Gateway:        { type: ControlType.String, title: "R7 Gateway",    defaultValue: "Cloud / SaaS only" },
+  row7Capsule:        { type: ControlType.String, title: "R7 Capsule",    defaultValue: "On-premise, air-gapped, cloud, hybrid, embedded" },
+  row8Dim:            { type: ControlType.String, title: "R8 Dimension",  defaultValue: "Workflow usability" },
+  row8Masking:        { type: ControlType.String, title: "R8 Masking",    defaultValue: "Protects data while reducing output value" },
+  row8Gateway:        { type: ControlType.String, title: "R8 Gateway",    defaultValue: "Blocks or passes, no transformation" },
+  row8Capsule:        { type: ControlType.String, title: "R8 Capsule",    defaultValue: "Built for usable AI outputs" },
+  row9Dim:            { type: ControlType.String, title: "R9 Dimension",  defaultValue: "Audit & governance" },
+  row9Masking:        { type: ControlType.String, title: "R9 Masking",    defaultValue: "Limited traceability" },
+  row9Gateway:        { type: ControlType.String, title: "R9 Gateway",    defaultValue: "Prompt-level logging" },
+  row9Capsule:        { type: ControlType.String, title: "R9 Capsule",    defaultValue: "Complete audit trail" },
 })

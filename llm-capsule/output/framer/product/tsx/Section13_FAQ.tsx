@@ -66,41 +66,6 @@ const PALETTE = {
   neutral350:     "#adadad",
 }
 
-const FAQ_DATA = [
-  {
-    q: "Does raw data ever leave the environment?",
-    a: "No. LLM Capsule encapsulates sensitive entities locally before any data leaves the enterprise environment. The external AI model processes only the protected capsule — raw original data never crosses the trust boundary. The mapping between original and encapsulated values is stored entirely within your environment and never transmitted externally.",
-  },
-  {
-    q: "Where does restoration happen?",
-    a: "Restoration happens entirely inside the customer-controlled environment after AI processing completes. The locally stored mapping is applied to AI outputs automatically, restoring original names, figures, dates, and references into the results. This produces enterprise-ready outputs that are directly usable in business workflows — no manual reconstruction required.",
-  },
-  {
-    q: "Can we define our own sensitive entities?",
-    a: "Yes. LLM Capsule supports enterprise context control so teams can define business-specific confidential markers beyond standard PII categories. This includes internal identifiers, project names, customer-specific terms, contract references, financial figures, vulnerability labels, and any organization-specific sensitivity category.",
-  },
-  {
-    q: "Does it support document-heavy workflows?",
-    a: "Yes. LLM Capsule supports structure-preserving processing across enterprise document types including PDFs, Word documents, spreadsheets, tables, presentations, reports, and mixed-format business content. Document structure, entity relationships, and cross-references are maintained during encapsulation.",
-  },
-  {
-    q: "Can it fit existing enterprise systems?",
-    a: "Yes. LLM Capsule is built as a deployable component and supports API and SDK-based integration into existing enterprise portals, partner backends, customer-facing applications, and internal workflow platforms. It wraps existing AI integrations with encapsulation and restoration at the data layer.",
-  },
-  {
-    q: "Is AWS Marketplace deployment available?",
-    a: "Yes. LLM Capsule is available on AWS Marketplace for streamlined enterprise procurement, billing, and VPC deployment. This enables rapid deployment within existing AWS environments with standard enterprise procurement workflows.",
-  },
-  {
-    q: "Can it run in air-gapped or on-premise environments?",
-    a: "Yes. LLM Capsule supports on-premise, air-gapped, cloud, hybrid, and embedded deployment models. For air-gapped environments, documents are encapsulated on the isolated network, transferred through controlled channels for AI processing, and results are transferred back for local restoration.",
-  },
-  {
-    q: "What AI models does LLM Capsule support?",
-    a: "LLM Capsule is model-agnostic. Because it operates at the data layer — not the model layer — it works with any external AI service including ChatGPT, Claude, Gemini, Perplexity, or any LLM API. Protection remains stable even when model vendors change.",
-  },
-]
-
 const EXPLORE_ICONS = [
   <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/>,
   <polyline points="20 6 9 17 4 12"/>,
@@ -141,6 +106,25 @@ interface Props {
   link6Title?: string
   link7Title?: string
   link8Title?: string
+  link9Title?: string
+  link10Title?: string
+  link11Title?: string
+  faq1Q?: string
+  faq1A?: string
+  faq2Q?: string
+  faq2A?: string
+  faq3Q?: string
+  faq3A?: string
+  faq4Q?: string
+  faq4A?: string
+  faq5Q?: string
+  faq5A?: string
+  faq6Q?: string
+  faq6A?: string
+  faq7Q?: string
+  faq7A?: string
+  faq8Q?: string
+  faq8A?: string
 }
 
 export default function Section13_FAQ({
@@ -155,14 +139,44 @@ export default function Section13_FAQ({
   link6Title = "vs Prompt Gateways",
   link7Title = "vs Synthetic Data",
   link8Title = "Restoration",
+  link9Title = "Pricing",
+  link10Title = "Learn Hub",
+  link11Title = "Glossary",
+  faq1Q = "Does raw data ever leave the environment?",
+  faq1A = "No. LLM Capsule encapsulates sensitive entities locally before any data leaves the enterprise environment. The external AI model processes only the protected capsule — raw original data never crosses the trust boundary. The mapping between original and encapsulated values is stored entirely within your environment and never transmitted externally.",
+  faq2Q = "Where does restoration happen?",
+  faq2A = "Restoration happens entirely inside the customer-controlled environment after AI processing completes. The locally stored mapping is applied to AI outputs automatically, restoring original names, figures, dates, and references into the results. This produces enterprise-ready outputs that are directly usable in business workflows — no manual reconstruction required.",
+  faq3Q = "Can we define our own sensitive entities?",
+  faq3A = "Yes. LLM Capsule supports enterprise context control so teams can define business-specific confidential markers beyond standard PII categories. This includes internal identifiers, project names, customer-specific terms, contract references, financial figures, vulnerability labels, and any organization-specific sensitivity category.",
+  faq4Q = "Does it support document-heavy workflows?",
+  faq4A = "Yes. LLM Capsule supports structure-preserving processing across enterprise document types including PDFs, Word documents, spreadsheets, tables, presentations, reports, and mixed-format business content. Document structure, entity relationships, and cross-references are maintained during encapsulation.",
+  faq5Q = "Can it fit existing enterprise systems?",
+  faq5A = "Yes. LLM Capsule is built as a deployable component and supports API and SDK-based integration into existing enterprise portals, partner backends, customer-facing applications, and internal workflow platforms. It wraps existing AI integrations with encapsulation and restoration at the data layer.",
+  faq6Q = "Is AWS Marketplace deployment available?",
+  faq6A = "Yes. LLM Capsule is available on AWS Marketplace for streamlined enterprise procurement, billing, and VPC deployment. This enables rapid deployment within existing AWS environments with standard enterprise procurement workflows.",
+  faq7Q = "Can it run in air-gapped or on-premise environments?",
+  faq7A = "Yes. LLM Capsule supports on-premise, air-gapped, cloud, hybrid, and embedded deployment models. For air-gapped environments, documents are encapsulated on the isolated network, transferred through controlled channels for AI processing, and results are transferred back for local restoration.",
+  faq8Q = "What AI models does LLM Capsule support?",
+  faq8A = "LLM Capsule is model-agnostic. Because it operates at the data layer — not the model layer — it works with any external AI service including ChatGPT, Claude, Gemini, Perplexity, or any LLM API. Protection remains stable even when model vendors change.",
 }: Props) {
+  const faqData = [
+    { q: faq1Q, a: faq1A },
+    { q: faq2Q, a: faq2A },
+    { q: faq3Q, a: faq3A },
+    { q: faq4Q, a: faq4A },
+    { q: faq5Q, a: faq5A },
+    { q: faq6Q, a: faq6A },
+    { q: faq7Q, a: faq7A },
+    { q: faq8Q, a: faq8A },
+  ]
+
   const exploreLinks = [
     { href: EXPLORE_HREFS[0],  icon: EXPLORE_ICONS[0],  title: link1Title },
     { href: EXPLORE_HREFS[1],  icon: EXPLORE_ICONS[1],  title: link2Title },
-    { href: EXPLORE_HREFS[2],  icon: EXPLORE_ICONS[2],  title: "Pricing" },
+    { href: EXPLORE_HREFS[2],  icon: EXPLORE_ICONS[2],  title: link9Title },
     { href: EXPLORE_HREFS[3],  icon: EXPLORE_ICONS[3],  title: link3Title },
-    { href: EXPLORE_HREFS[4],  icon: EXPLORE_ICONS[4],  title: "Learn Hub" },
-    { href: EXPLORE_HREFS[5],  icon: EXPLORE_ICONS[5],  title: "Glossary" },
+    { href: EXPLORE_HREFS[4],  icon: EXPLORE_ICONS[4],  title: link10Title },
+    { href: EXPLORE_HREFS[5],  icon: EXPLORE_ICONS[5],  title: link11Title },
     { href: EXPLORE_HREFS[6],  icon: EXPLORE_ICONS[6],  title: link4Title },
     { href: EXPLORE_HREFS[7],  icon: EXPLORE_ICONS[7],  title: link5Title },
     { href: EXPLORE_HREFS[8],  icon: EXPLORE_ICONS[8],  title: link6Title },
@@ -370,7 +384,7 @@ export default function Section13_FAQ({
             </div>
 
             <div className="s13-ac-list" role="list">
-              {FAQ_DATA.map((item, i) => (
+              {faqData.map((item, i) => (
                 <div key={i} className="s13-ac-card" role="listitem">
                   <button
                     className="s13-ac-header"
@@ -419,4 +433,23 @@ addPropertyControls(Section13_FAQ, {
   link6Title:        { type: ControlType.String, title: "Link 6 Title",    defaultValue: "vs Prompt Gateways" },
   link7Title:        { type: ControlType.String, title: "Link 7 Title",    defaultValue: "vs Synthetic Data" },
   link8Title:        { type: ControlType.String, title: "Link 8 Title",    defaultValue: "Restoration" },
+  link9Title:        { type: ControlType.String, title: "Link 9 Title",    defaultValue: "Pricing" },
+  link10Title:       { type: ControlType.String, title: "Link 10 Title",   defaultValue: "Learn Hub" },
+  link11Title:       { type: ControlType.String, title: "Link 11 Title",   defaultValue: "Glossary" },
+  faq1Q:             { type: ControlType.String, title: "FAQ 1 Question",  defaultValue: "Does raw data ever leave the environment?" },
+  faq1A:             { type: ControlType.String, title: "FAQ 1 Answer",    defaultValue: "No. LLM Capsule encapsulates sensitive entities locally before any data leaves the enterprise environment. The external AI model processes only the protected capsule — raw original data never crosses the trust boundary. The mapping between original and encapsulated values is stored entirely within your environment and never transmitted externally.", displayTextArea: true },
+  faq2Q:             { type: ControlType.String, title: "FAQ 2 Question",  defaultValue: "Where does restoration happen?" },
+  faq2A:             { type: ControlType.String, title: "FAQ 2 Answer",    defaultValue: "Restoration happens entirely inside the customer-controlled environment after AI processing completes. The locally stored mapping is applied to AI outputs automatically, restoring original names, figures, dates, and references into the results. This produces enterprise-ready outputs that are directly usable in business workflows — no manual reconstruction required.", displayTextArea: true },
+  faq3Q:             { type: ControlType.String, title: "FAQ 3 Question",  defaultValue: "Can we define our own sensitive entities?" },
+  faq3A:             { type: ControlType.String, title: "FAQ 3 Answer",    defaultValue: "Yes. LLM Capsule supports enterprise context control so teams can define business-specific confidential markers beyond standard PII categories. This includes internal identifiers, project names, customer-specific terms, contract references, financial figures, vulnerability labels, and any organization-specific sensitivity category.", displayTextArea: true },
+  faq4Q:             { type: ControlType.String, title: "FAQ 4 Question",  defaultValue: "Does it support document-heavy workflows?" },
+  faq4A:             { type: ControlType.String, title: "FAQ 4 Answer",    defaultValue: "Yes. LLM Capsule supports structure-preserving processing across enterprise document types including PDFs, Word documents, spreadsheets, tables, presentations, reports, and mixed-format business content. Document structure, entity relationships, and cross-references are maintained during encapsulation.", displayTextArea: true },
+  faq5Q:             { type: ControlType.String, title: "FAQ 5 Question",  defaultValue: "Can it fit existing enterprise systems?" },
+  faq5A:             { type: ControlType.String, title: "FAQ 5 Answer",    defaultValue: "Yes. LLM Capsule is built as a deployable component and supports API and SDK-based integration into existing enterprise portals, partner backends, customer-facing applications, and internal workflow platforms. It wraps existing AI integrations with encapsulation and restoration at the data layer.", displayTextArea: true },
+  faq6Q:             { type: ControlType.String, title: "FAQ 6 Question",  defaultValue: "Is AWS Marketplace deployment available?" },
+  faq6A:             { type: ControlType.String, title: "FAQ 6 Answer",    defaultValue: "Yes. LLM Capsule is available on AWS Marketplace for streamlined enterprise procurement, billing, and VPC deployment. This enables rapid deployment within existing AWS environments with standard enterprise procurement workflows.", displayTextArea: true },
+  faq7Q:             { type: ControlType.String, title: "FAQ 7 Question",  defaultValue: "Can it run in air-gapped or on-premise environments?" },
+  faq7A:             { type: ControlType.String, title: "FAQ 7 Answer",    defaultValue: "Yes. LLM Capsule supports on-premise, air-gapped, cloud, hybrid, and embedded deployment models. For air-gapped environments, documents are encapsulated on the isolated network, transferred through controlled channels for AI processing, and results are transferred back for local restoration.", displayTextArea: true },
+  faq8Q:             { type: ControlType.String, title: "FAQ 8 Question",  defaultValue: "What AI models does LLM Capsule support?" },
+  faq8A:             { type: ControlType.String, title: "FAQ 8 Answer",    defaultValue: "LLM Capsule is model-agnostic. Because it operates at the data layer — not the model layer — it works with any external AI service including ChatGPT, Claude, Gemini, Perplexity, or any LLM API. Protection remains stable even when model vendors change.", displayTextArea: true },
 })
