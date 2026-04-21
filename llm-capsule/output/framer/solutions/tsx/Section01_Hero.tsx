@@ -95,7 +95,7 @@ export default function Section01_Hero({
           letter-spacing: -0.5px;
           color: #0f0f0f;
           margin-bottom: 12px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s1-title-highlight {
           color: #5690D4;

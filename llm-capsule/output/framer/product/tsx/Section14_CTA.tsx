@@ -91,7 +91,7 @@ export default function Section14_CTA({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (max-width: 767px) { .s14-title { font-size: 36px; } }
         @container (min-width: 1440px) { .s14-title { font-size: 50px; } }

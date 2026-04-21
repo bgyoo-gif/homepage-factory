@@ -212,7 +212,7 @@ export default function StructurePreservingDocumentProcessing({
         .spdp-root a { text-decoration: none; color: inherit; }
         .spdp-root img { max-width: 100%; display: block; }
         .spdp-root p, .spdp-root li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
-        .spdp-root h1, .spdp-root h2, .spdp-root h3 { text-wrap: balance; }
+        .spdp-root h1, .spdp-root h2, .spdp-root h3 { text-wrap: pretty; }
 
         /* ── Container Query wrapper ─────────────────────────────── */
         .spdp-inner { width: 100%; container-type: inline-size; }

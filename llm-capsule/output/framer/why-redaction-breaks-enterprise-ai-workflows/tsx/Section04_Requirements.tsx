@@ -88,7 +88,7 @@ export default function Section04_Requirements({
           color: ${C.textPrimary};
           line-height: 1.2;
           letter-spacing: ${C.trackingTight};
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s4-brand { color: ${C.brandSecondary}; }
         .s4-product {

@@ -81,7 +81,7 @@ export default function Section01_Hero({
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
           margin-bottom: 12px;
         }
         @container (min-width: 768px) {

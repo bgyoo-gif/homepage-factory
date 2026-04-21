@@ -151,7 +151,7 @@ export default function Section02_DownloadsGrid({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0 0 16px;
-          text-wrap: balance;
+          text-wrap: pretty;
           word-break: keep-all;
         }
         .s2-header-highlight {
@@ -216,7 +216,7 @@ export default function Section02_DownloadsGrid({
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
           word-break: keep-all;
         }
         .s2-card-description {

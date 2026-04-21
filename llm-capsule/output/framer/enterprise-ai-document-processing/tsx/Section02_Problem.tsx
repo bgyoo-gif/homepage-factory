@@ -49,7 +49,7 @@ export default function Section02_Problem({
           color: #0f0f0f;
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s2-brand { color: #5690D4; }
 

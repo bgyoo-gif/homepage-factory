@@ -87,7 +87,7 @@ export default function Section06_FAQ({
           color: #0f0f0f;
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s6-brand { color: #5690D4; }
         .s6-product {

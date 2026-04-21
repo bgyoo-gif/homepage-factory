@@ -155,7 +155,7 @@ export default function Section03_ArchitectureComponents({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin-bottom: 16px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s3-text--brand { color: ${PALETTE.brandSecondary}; }
 

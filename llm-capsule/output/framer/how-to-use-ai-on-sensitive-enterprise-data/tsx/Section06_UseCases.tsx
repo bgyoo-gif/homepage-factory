@@ -161,7 +161,7 @@ export default function Section06_UseCases({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s6-highlight { color: ${P.brandSecondary}; }
 

@@ -151,7 +151,7 @@ export default function Section05_RelatedTerms({
           color: #0f0f0f;
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
 
         @container s5 (min-width: 768px) {

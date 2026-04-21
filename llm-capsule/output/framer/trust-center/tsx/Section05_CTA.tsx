@@ -80,7 +80,7 @@ export default function Section05_CTA({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (max-width: 767px) { .s5-cta-title { font-size: 36px; } }
         @container (min-width: 1440px) { .s5-cta-title { font-size: 50px; } }

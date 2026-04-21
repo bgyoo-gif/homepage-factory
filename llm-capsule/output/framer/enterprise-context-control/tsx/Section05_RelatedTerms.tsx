@@ -167,7 +167,7 @@ export default function Section05_RelatedTerms({
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
 
         @container (min-width: 768px) {

@@ -80,7 +80,7 @@ export default function Section03_Explanation({
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
 
         @container (min-width: 768px) {

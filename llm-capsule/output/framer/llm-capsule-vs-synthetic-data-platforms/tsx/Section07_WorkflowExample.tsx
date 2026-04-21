@@ -74,7 +74,7 @@ export default function Section07_WorkflowExample({
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s7-brand-text {
           color: ${PALETTE.brandSecondary};

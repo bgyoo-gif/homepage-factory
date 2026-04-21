@@ -78,7 +78,7 @@ export default function Section02_Problem({
           line-height: 1.2;
           letter-spacing: -0.5px;
           font-family: "DM Sans", sans-serif;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s2-section-header h2 { font-size: 22px; } }
         @container (min-width: 1024px) { .s2-section-header h2 { font-size: 24px; } }

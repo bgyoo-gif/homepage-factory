@@ -497,7 +497,7 @@ export default function Learn({
         .lrn-root a { text-decoration: none; color: inherit; }
         .lrn-root img { max-width: 100%; display: block; }
         .lrn-root p, .lrn-root li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
-        .lrn-root h1, .lrn-root h2 { text-wrap: balance; }
+        .lrn-root h1, .lrn-root h2 { text-wrap: pretty; }
 
         /* ── Container Query wrapper ─────────────────────────────── */
         .lrn-inner { width: 100%; container-type: inline-size; }

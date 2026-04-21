@@ -85,7 +85,7 @@ export default function Section06_FAQ({
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s6-brand-text { color: ${PALETTE.brandSecondary}; }
         .s6-product-name {

@@ -83,7 +83,7 @@ export default function Section04_Definition({
           line-height: 1.2;
           letter-spacing: -0.5px;
           color: ${PALETTE.textPrimary};
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s4-label-brand {
           color: ${PALETTE.brandSecondary};

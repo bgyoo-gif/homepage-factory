@@ -62,7 +62,7 @@ export default function Section04_EnterpriseExample({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s4-brand-text {
           color: ${PALETTE.brandSecondary};

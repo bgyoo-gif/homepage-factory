@@ -126,7 +126,7 @@ export default function Section04_Requirements({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s4-highlight { color: ${P.brandSecondary}; }
 

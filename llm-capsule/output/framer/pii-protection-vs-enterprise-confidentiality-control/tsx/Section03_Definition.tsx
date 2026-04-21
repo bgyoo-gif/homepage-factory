@@ -76,7 +76,7 @@ export default function Section03_Definition({
           line-height: 1.2;
           letter-spacing: -0.5px;
           font-family: "DM Sans", sans-serif;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s3-section-header h2 { font-size: 22px; } }
         @container (min-width: 1024px) { .s3-section-header h2 { font-size: 24px; } }

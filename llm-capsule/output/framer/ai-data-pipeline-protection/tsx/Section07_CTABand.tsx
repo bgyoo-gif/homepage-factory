@@ -88,7 +88,7 @@ export default function Section07_CTABand({
           margin: 0;
           word-break: keep-all;
           overflow-wrap: break-word;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (max-width: 767px) { .s7-title { font-size: 36px; } }
         @container (min-width: 1440px) { .s7-title { font-size: 50px; } }

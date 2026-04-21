@@ -79,7 +79,7 @@ export default function Section03_Problem({
           line-height: 1.2;
           letter-spacing: -0.5px;
           color: ${PALETTE.textPrimary};
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s3-label-brand {
           color: ${PALETTE.brandSecondary};

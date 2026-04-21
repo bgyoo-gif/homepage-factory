@@ -77,7 +77,7 @@ export default function Section05_EnterpriseExample({
           line-height: 1.2;
           letter-spacing: -0.5px;
           font-family: "DM Sans", sans-serif;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s5-section-header h2 { font-size: 22px; } }
         @container (min-width: 1024px) { .s5-section-header h2 { font-size: 24px; } }
@@ -100,7 +100,7 @@ export default function Section05_EnterpriseExample({
           font-weight: 600;
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s5-card p {
           font-size: 16px;

@@ -266,7 +266,7 @@ export default function SecureEnterpriseAiDataWorkflows({
         .seadw-root a { text-decoration: none; color: inherit; }
         .seadw-root img { max-width: 100%; display: block; }
         .seadw-root p, .seadw-root li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
-        .seadw-root h1, .seadw-root h2, .seadw-root h3, .seadw-root h4 { text-wrap: balance; }
+        .seadw-root h1, .seadw-root h2, .seadw-root h3, .seadw-root h4 { text-wrap: pretty; }
 
         /* ── Container Query wrapper ────────────────────────────── */
         .seadw-inner { width: 100%; container-type: inline-size; }

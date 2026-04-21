@@ -73,7 +73,7 @@ export default function Section02_Problem({
           color: ${C.textPrimary};
           line-height: 1.2;
           letter-spacing: ${C.trackingTight};
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s2-brand { color: ${C.brandSecondary}; }
         .s2-bullet {

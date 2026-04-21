@@ -116,7 +116,7 @@ export default function Section08_AdminGovernance({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0 0 16px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s8-header__title { font-size: 22px; } }
         @container (min-width: 1024px) { .s8-header__title { font-size: 24px; } }

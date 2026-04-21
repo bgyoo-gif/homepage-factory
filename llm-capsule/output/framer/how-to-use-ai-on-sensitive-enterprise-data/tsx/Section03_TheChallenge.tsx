@@ -96,7 +96,7 @@ export default function Section03_TheChallenge({
           margin: 0;
           word-break: keep-all;
           overflow-wrap: break-word;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s3-highlight {
           color: ${P.brandSecondary};

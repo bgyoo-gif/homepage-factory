@@ -78,7 +78,7 @@ export default function Section05_ComparisonTable({
           color: ${C.textPrimary};
           line-height: 1.2;
           letter-spacing: ${C.trackingTight};
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s5-product {
           font-family: "${C.brandFont}", sans-serif;

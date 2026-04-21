@@ -299,7 +299,7 @@ export default function Section07_FAQ({
           color: ${C.textPrimary};
           line-height: 1.2;
           letter-spacing: ${C.trackingTight};
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s7-brand { color: ${C.brandSecondary}; }
         .s7-ac-list {

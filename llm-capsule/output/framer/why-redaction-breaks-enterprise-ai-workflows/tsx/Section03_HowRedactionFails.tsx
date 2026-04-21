@@ -78,7 +78,7 @@ export default function Section03_HowRedactionFails({
           color: ${C.textPrimary};
           line-height: 1.2;
           letter-spacing: ${C.trackingTight};
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s3-brand { color: ${C.brandSecondary}; }
         .s3-bullet {

@@ -65,7 +65,7 @@ export default function Section10_Performance({
           overflow-wrap: break-word;
         }
         .idx-root p { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
-        .idx-root h2 { text-wrap: balance; }
+        .idx-root h2 { text-wrap: pretty; }
 
         .idx-root { width: 100%; container-type: inline-size; }
         .idx-inner { width: 100%; }

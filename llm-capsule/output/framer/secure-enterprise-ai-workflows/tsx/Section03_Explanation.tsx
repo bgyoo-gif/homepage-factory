@@ -87,7 +87,7 @@ export default function Section03_Explanation({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s3-brand-text {
           color: ${PALETTE.brandSecondary};

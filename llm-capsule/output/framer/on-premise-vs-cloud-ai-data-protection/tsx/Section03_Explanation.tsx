@@ -146,7 +146,7 @@ export default function Section03_Explanation({
           color: ${C.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container s3 (min-width: 768px)  { .s3-header h2 { font-size: 22px; } }
         @container s3 (min-width: 1024px) { .s3-header h2 { font-size: 24px; } }

@@ -65,7 +65,7 @@ export default function Section03_Explanation({
           color: #0f0f0f;
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
 
         @container s3 (min-width: 768px) {

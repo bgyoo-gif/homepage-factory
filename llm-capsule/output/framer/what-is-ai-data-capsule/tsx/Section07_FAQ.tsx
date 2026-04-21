@@ -200,7 +200,7 @@ export default function Section07_FAQ({
           line-height: 1.2;
           letter-spacing: -0.5px;
           color: ${PALETTE.textPrimary};
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s7-ac-list {
           display: flex;

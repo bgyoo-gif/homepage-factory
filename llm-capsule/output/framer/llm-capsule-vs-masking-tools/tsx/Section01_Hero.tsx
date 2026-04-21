@@ -59,7 +59,7 @@ export default function Section01_Hero({
           letter-spacing: -0.5px;
           color: ${PALETTE.textPrimary};
           margin: 0 0 16px 0;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s1-product {
           font-family: "Oxanium", sans-serif;

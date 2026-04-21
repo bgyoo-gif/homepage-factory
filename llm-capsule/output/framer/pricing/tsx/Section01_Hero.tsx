@@ -67,7 +67,7 @@ export default function Section01_Hero({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin-bottom: 12px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s1-hero__title-brand {
           color: ${PALETTE.brandSecondary};

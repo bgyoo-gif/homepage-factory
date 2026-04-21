@@ -93,7 +93,7 @@ export default function Section08_FAQ({
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s8-brand-text { color: ${PALETTE.brandSecondary}; }
         .s8-brand-name { font-family: "Oxanium", sans-serif; font-weight: 700; }

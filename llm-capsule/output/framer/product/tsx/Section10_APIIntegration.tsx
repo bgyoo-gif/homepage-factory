@@ -109,7 +109,7 @@ export default function Section10_APIIntegration({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0 0 16px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s10-header__title { font-size: 22px; } }
         @container (min-width: 1024px) { .s10-header__title { font-size: 24px; } }
@@ -177,7 +177,7 @@ export default function Section10_APIIntegration({
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
           margin: 0 0 12px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s10-card-desc {
           font-family: "DM Sans", sans-serif;

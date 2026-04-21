@@ -54,7 +54,7 @@ export default function Section04_Example({
           color: ${BRAND.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s4-brand-color {
           color: ${BRAND.brandSecondary};

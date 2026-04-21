@@ -107,7 +107,7 @@ export default function Section01_Hero({
           margin-bottom: 16px;
           word-break: keep-all;
           overflow-wrap: break-word;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s1-title { font-size: 36px; } }
         @container (min-width: 1024px) { .s1-title { font-size: 44px; } }

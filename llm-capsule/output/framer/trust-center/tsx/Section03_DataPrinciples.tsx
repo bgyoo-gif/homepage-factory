@@ -83,7 +83,7 @@ export default function Section03_DataPrinciples({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin-bottom: 16px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (min-width: 768px) { .s3-section-title { font-size: 22px; } }
         @container (min-width: 1024px) { .s3-section-title { font-size: 24px; } }

@@ -77,7 +77,7 @@ export default function Section03_Explanation({
           color: ${BRAND.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s3-brand-color {
           color: ${BRAND.brandSecondary};

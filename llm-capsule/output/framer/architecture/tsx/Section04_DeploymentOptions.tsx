@@ -110,7 +110,7 @@ export default function Section04_DeploymentOptions({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin-bottom: 16px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s4-section-header__description {
           font-family: "DM Sans", sans-serif;

@@ -138,7 +138,7 @@ export default function Section05_RelatedTerms({
           color: ${BRAND.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s5-brand-color { color: ${BRAND.brandSecondary}; }
 

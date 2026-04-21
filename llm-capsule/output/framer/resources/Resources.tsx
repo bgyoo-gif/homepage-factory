@@ -211,7 +211,7 @@ export default function Resources({
         .res-root a { text-decoration: none; color: inherit; }
         .res-root img { max-width: 100%; display: block; }
         .res-root p, .res-root li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
-        .res-root h1, .res-root h2, .res-root h3 { text-wrap: balance; }
+        .res-root h1, .res-root h2, .res-root h3 { text-wrap: pretty; }
 
         /* ── Container Query wrapper ─────────────────────────────── */
         .res-inner { width: 100%; container-type: inline-size; }

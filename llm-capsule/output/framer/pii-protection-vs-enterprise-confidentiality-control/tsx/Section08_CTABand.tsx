@@ -95,7 +95,7 @@ export default function Section08_CTABand({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s8-cta-band { padding: 100px 32px; } }
         @container (min-width: 1024px) { .s8-cta-band__inner { max-width: 720px; } }

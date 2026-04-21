@@ -101,7 +101,7 @@ export default function Section04_Limitations({
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s4-brand-text {
           color: ${PALETTE.brandSecondary};

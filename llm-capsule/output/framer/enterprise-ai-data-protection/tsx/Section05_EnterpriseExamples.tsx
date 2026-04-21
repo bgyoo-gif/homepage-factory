@@ -60,7 +60,7 @@ export default function Section05_EnterpriseExamples({
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s5-brand-text { color: ${PALETTE.brandSecondary}; }
         .s5-cards {
@@ -84,7 +84,7 @@ export default function Section05_EnterpriseExamples({
           font-weight: 600;
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s5-card-description {
           font-family: "DM Sans", sans-serif;

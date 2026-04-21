@@ -113,7 +113,7 @@ export default function Section11_DeploymentReadiness({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0 0 16px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s11-header__title { font-size: 22px; } }
         @container (min-width: 1024px) { .s11-header__title { font-size: 24px; } }
@@ -213,7 +213,7 @@ export default function Section11_DeploymentReadiness({
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
           margin: 0 0 12px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s11-card-desc {
           font-family: "DM Sans", sans-serif;

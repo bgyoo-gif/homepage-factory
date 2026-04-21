@@ -211,7 +211,7 @@ export default function Section02_IndustryUseCases({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin-bottom: 16px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s2-title-brand {
           color: #5690D4;

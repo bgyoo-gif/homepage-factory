@@ -70,7 +70,7 @@ export default function Section01_Hero({
           margin-bottom: 16px;
           word-break: keep-all;
           overflow-wrap: break-word;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s1-description {
           font-family: "DM Sans", sans-serif;

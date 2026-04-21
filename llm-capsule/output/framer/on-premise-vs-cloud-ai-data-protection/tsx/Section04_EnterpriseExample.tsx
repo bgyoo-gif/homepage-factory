@@ -104,7 +104,7 @@ export default function Section04_EnterpriseExample({
           color: ${C.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container s4 (min-width: 768px)  { .s4-header h2 { font-size: 22px; } }
         @container s4 (min-width: 1024px) { .s4-header h2 { font-size: 24px; } }
@@ -132,7 +132,7 @@ export default function Section04_EnterpriseExample({
           font-weight: 600;
           color: ${C.textPrimary};
           line-height: 1.2;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s4-card p {
           font-family: "DM Sans", sans-serif;

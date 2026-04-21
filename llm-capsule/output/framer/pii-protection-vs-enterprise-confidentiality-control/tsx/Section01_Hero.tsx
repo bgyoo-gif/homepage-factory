@@ -116,7 +116,7 @@ export default function Section01_Hero({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin-bottom: 16px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s1-title { font-size: 40px; } }
         @container (min-width: 1024px) { .s1-title { font-size: 48px; } }

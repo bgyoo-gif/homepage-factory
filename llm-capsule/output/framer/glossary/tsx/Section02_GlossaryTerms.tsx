@@ -217,7 +217,7 @@ export default function Section02_GlossaryTerms({
           color: #0f0f0f;
           line-height: 1.2;
           margin-bottom: 12px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
 
         .s2-card__footer {

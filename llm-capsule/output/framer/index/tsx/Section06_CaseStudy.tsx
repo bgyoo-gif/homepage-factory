@@ -70,7 +70,7 @@ export default function Section06_CaseStudy({
         }
         .idx-root a { text-decoration: none; color: inherit; }
         .idx-root p, .idx-root li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
-        .idx-root h1, .idx-root h2, .idx-root h3 { text-wrap: balance; }
+        .idx-root h1, .idx-root h2, .idx-root h3 { text-wrap: pretty; }
 
         .idx-root { width: 100%; container-type: inline-size; }
         .idx-inner { width: 100%; }

@@ -56,7 +56,7 @@ export default function Section02_Problem({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s2-brand-text {
           color: ${PALETTE.brandSecondary};

@@ -154,7 +154,7 @@ export default function Section05_FAQ({
           color: ${C.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container s5 (min-width: 768px)  { .s5-header h2 { font-size: 22px; } }
         @container s5 (min-width: 1024px) { .s5-header h2 { font-size: 24px; } }

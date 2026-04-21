@@ -224,7 +224,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
         .vs-root a { text-decoration: none; color: inherit; }
         .vs-root img { max-width: 100%; display: block; }
         .vs-root p, .vs-root li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
-        .vs-root h1, .vs-root h2, .vs-root h3, .vs-root h4 { text-wrap: balance; }
+        .vs-root h1, .vs-root h2, .vs-root h3, .vs-root h4 { text-wrap: pretty; }
 
         /* ── Container Query wrapper ──────────────────────────────── */
         .vs-inner { width: 100%; container-type: inline-size; }

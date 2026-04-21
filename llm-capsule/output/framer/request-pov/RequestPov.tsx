@@ -245,7 +245,7 @@ export default function RequestPov({
         .rpov-root a { text-decoration: none; color: inherit; }
         .rpov-root img { max-width: 100%; display: block; }
         .rpov-root p, .rpov-root li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
-        .rpov-root h1, .rpov-root h2, .rpov-root h3 { text-wrap: balance; }
+        .rpov-root h1, .rpov-root h2, .rpov-root h3 { text-wrap: pretty; }
 
         /* ── Container Query wrapper ──────────────────────────────── */
         .rpov-inner { width: 100%; container-type: inline-size; }

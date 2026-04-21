@@ -106,7 +106,7 @@ export default function Section06_FAQ({
           line-height: 1.2;
           letter-spacing: -0.5px;
           font-family: "DM Sans", sans-serif;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s6-section-header h2 { font-size: 22px; } }
         @container (min-width: 1024px) { .s6-section-header h2 { font-size: 24px; } }

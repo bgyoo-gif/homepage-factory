@@ -75,7 +75,7 @@ export default function Section01_Hero({
           margin: 0 0 16px;
           word-break: keep-all;
           overflow-wrap: break-word;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s1-title-highlight {
           color: ${PALETTE.brandSecondary};

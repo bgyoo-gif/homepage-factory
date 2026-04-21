@@ -112,7 +112,7 @@ export default function Section09_CTA({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
           word-break: keep-all;
         }
         .s9-product-name {

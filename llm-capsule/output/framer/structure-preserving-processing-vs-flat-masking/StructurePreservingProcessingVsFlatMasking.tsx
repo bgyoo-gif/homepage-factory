@@ -169,7 +169,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
         .spp-root a { text-decoration: none; color: inherit; }
         .spp-root img { max-width: 100%; display: block; }
         .spp-root p, .spp-root li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
-        .spp-root h1, .spp-root h2, .spp-root h3 { text-wrap: balance; }
+        .spp-root h1, .spp-root h2, .spp-root h3 { text-wrap: pretty; }
 
         /* ── Container Query wrapper ─────────────────────────────── */
         .spp-inner { width: 100%; container-type: inline-size; }

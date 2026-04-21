@@ -93,7 +93,7 @@ export default function Section03_ZeroExposure({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0 0 16px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s3-header__title { font-size: 22px; } }
         @container (min-width: 1024px) { .s3-header__title { font-size: 24px; } }

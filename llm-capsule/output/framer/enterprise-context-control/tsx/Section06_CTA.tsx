@@ -91,7 +91,7 @@ export default function Section06_CTA({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
 
         @container (min-width: 768px) {

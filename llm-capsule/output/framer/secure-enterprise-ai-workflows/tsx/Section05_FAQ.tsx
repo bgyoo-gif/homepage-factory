@@ -100,7 +100,7 @@ export default function Section05_FAQ({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s5-brand-text {
           color: ${PALETTE.brandSecondary};

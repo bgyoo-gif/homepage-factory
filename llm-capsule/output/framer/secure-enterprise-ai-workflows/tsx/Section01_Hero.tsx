@@ -51,7 +51,7 @@ export default function Section01_Hero({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0 0 16px 0;
-          text-wrap: balance;
+          text-wrap: pretty;
           word-break: keep-all;
           overflow-wrap: break-word;
         }

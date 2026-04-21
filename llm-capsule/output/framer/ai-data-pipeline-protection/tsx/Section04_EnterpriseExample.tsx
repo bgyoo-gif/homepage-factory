@@ -96,7 +96,7 @@ export default function Section04_EnterpriseExample({
           font-weight: 600;
           color: ${P.textPrimary};
           line-height: 1.2;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
 
         .s4-card__description {

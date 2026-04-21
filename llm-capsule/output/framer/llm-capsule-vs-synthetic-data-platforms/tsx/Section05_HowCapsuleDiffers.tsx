@@ -78,7 +78,7 @@ export default function Section05_HowCapsuleDiffers({
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s5-brand-text {
           color: ${PALETTE.brandSecondary};

@@ -91,7 +91,7 @@ export default function Section06_EnterpriseExample({
           line-height: 1.2;
           letter-spacing: -0.5px;
           color: ${PALETTE.textPrimary};
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s6-label-brand { color: ${PALETTE.brandSecondary}; }
         .s6-card {
@@ -110,7 +110,7 @@ export default function Section06_EnterpriseExample({
           font-weight: 600;
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s6-card-p {
           font-family: "DM Sans", sans-serif;

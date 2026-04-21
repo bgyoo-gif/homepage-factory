@@ -49,7 +49,7 @@ export default function Section03_Definition({
           color: #0f0f0f;
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s3-brand { color: #5690D4; }
 

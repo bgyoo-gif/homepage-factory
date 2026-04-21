@@ -51,7 +51,7 @@ export default function Section05_Examples({
           color: #0f0f0f;
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s5-brand { color: #5690D4; }
         .s5-product {
@@ -75,7 +75,7 @@ export default function Section05_Examples({
           font-weight: 600;
           color: #0f0f0f;
           line-height: 1.2;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s5-card__description {
           font-family: "DM Sans", sans-serif;

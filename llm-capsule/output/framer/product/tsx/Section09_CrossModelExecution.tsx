@@ -65,7 +65,7 @@ export default function Section09_CrossModelExecution({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0 0 16px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s9-header__title { font-size: 22px; } }
         @container (min-width: 1024px) { .s9-header__title { font-size: 24px; } }

@@ -99,7 +99,7 @@ export default function Section02_CoreDifferentiation({
           font-size: 20px; font-weight: 700;
           color: ${PALETTE.textPrimary};
           line-height: 1.2; letter-spacing: -0.5px;
-          margin: 0 0 16px; text-wrap: balance;
+          margin: 0 0 16px; text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s2-header__title { font-size: 22px; } }
         @container (min-width: 1024px) { .s2-header__title { font-size: 24px; } }

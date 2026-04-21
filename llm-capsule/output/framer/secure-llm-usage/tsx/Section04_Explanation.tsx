@@ -61,7 +61,7 @@ export default function Section04_Explanation({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s4-title-brand {
           color: ${PALETTE.brandSecondary};

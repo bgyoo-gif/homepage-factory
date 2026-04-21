@@ -94,7 +94,7 @@ export default function Section03_CTABand({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s3-title__product {
           font-family: "Oxanium", sans-serif;

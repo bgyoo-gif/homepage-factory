@@ -78,7 +78,7 @@ export default function Section11_CTABand({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s11-product {
           font-family: "Oxanium", sans-serif;

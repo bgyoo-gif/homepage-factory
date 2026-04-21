@@ -147,7 +147,7 @@ export default function Restoration({
         .rst-root a { text-decoration: none; color: inherit; }
         .rst-root img { max-width: 100%; display: block; }
         .rst-root p, .rst-root li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
-        .rst-root h1, .rst-root h2, .rst-root h3 { text-wrap: balance; }
+        .rst-root h1, .rst-root h2, .rst-root h3 { text-wrap: pretty; }
 
         /* ── Container Query wrapper ─────────────────────────────── */
         .rst-inner { width: 100%; container-type: inline-size; }

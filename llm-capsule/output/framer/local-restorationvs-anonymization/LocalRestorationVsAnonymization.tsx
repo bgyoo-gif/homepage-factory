@@ -201,7 +201,7 @@ export default function LocalRestorationVsAnonymization({
         .lrva-root a { text-decoration: none; color: inherit; }
         .lrva-root img { max-width: 100%; display: block; }
         .lrva-root p, .lrva-root li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
-        .lrva-root h1, .lrva-root h2, .lrva-root h3, .lrva-root h4 { text-wrap: balance; }
+        .lrva-root h1, .lrva-root h2, .lrva-root h3, .lrva-root h4 { text-wrap: pretty; }
 
         /* ── Container Query wrapper ────────────────────────────────── */
         .lrva-inner { width: 100%; container-type: inline-size; }

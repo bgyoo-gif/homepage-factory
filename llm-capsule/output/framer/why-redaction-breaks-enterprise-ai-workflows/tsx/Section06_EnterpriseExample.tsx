@@ -82,7 +82,7 @@ export default function Section06_EnterpriseExample({
           color: ${C.textPrimary};
           line-height: 1.2;
           letter-spacing: ${C.trackingTight};
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s6-brand { color: ${C.brandSecondary}; }
         .s6-product {

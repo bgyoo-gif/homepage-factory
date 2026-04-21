@@ -68,7 +68,7 @@ export default function Section02_Overview({
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s2-brand-text {
           color: ${PALETTE.brandSecondary};

@@ -232,7 +232,7 @@ export default function Section13_FAQ({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s13-header__title { font-size: 22px; } }
         @container (min-width: 1024px) { .s13-header__title { font-size: 24px; } }

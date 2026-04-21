@@ -87,7 +87,7 @@ export default function Section10_CTA({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
           word-break: keep-all;
         }
         .s10-brand-name {

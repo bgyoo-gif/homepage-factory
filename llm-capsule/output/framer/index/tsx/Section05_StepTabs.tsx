@@ -135,7 +135,7 @@ export default function Section05_StepTabs({
         }
         .idx-root img { max-width: 100%; display: block; }
         .idx-root p, .idx-root li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
-        .idx-root h1, .idx-root h2, .idx-root h3 { text-wrap: balance; }
+        .idx-root h1, .idx-root h2, .idx-root h3 { text-wrap: pretty; }
 
         .idx-root { width: 100%; container-type: inline-size; }
         .idx-inner { width: 100%; }

@@ -72,7 +72,7 @@ export default function Section08_CTA({
           line-height: 1.2;
           letter-spacing: -0.5px;
           margin: 0;
-          text-wrap: balance;
+          text-wrap: pretty;
         }
         .s8-product-name {
           font-family: "Oxanium", sans-serif;
