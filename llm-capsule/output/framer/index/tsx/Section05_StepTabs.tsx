@@ -56,7 +56,7 @@ export default function Section05_StepTabs({
   tab2Label = "Core 2 — Restoration",
   tab3Label = "Core 3 — Enterprise Context",
   tab4Label = "+1 Structure-Preserving",
-  tab5Label = "+2 Cross-Model",
+  tab5Label = "+2 Enterprise Environment",
   tab1Title = "Zero Exposure",
   tab1P1 = "Sensitive data is replaced with safe placeholders (encapsulation) inside your environment before anything leaves. Original values never reach external AI services.",
   tab1P2 = "Zero exposure means the AI provider processes useful data but cannot reconstruct original sensitive values. Even if the provider logged, stored, or trained on the received data, no original enterprise information would be exposed. Encapsulation creates a data representation that is both processable by AI and opaque to the receiving service — provider logs are safe, raw data never leaves.",
@@ -69,9 +69,9 @@ export default function Section05_StepTabs({
   tab4Title = "Structure-Preserving",
   tab4P1 = "Tables, diagrams, cross-references, and document hierarchy remain intact — your document layout stays readable to AI throughout the process.",
   tab4P2 = "Masking tools destroy document context. LLM Capsule keeps tables, diagrams, and entity relationships intact so AI understands the full context while sensitive values are replaced. Reference consistency, diagram preservation, and document hierarchy are all maintained.",
-  tab5Title = "Cross-Model Execution",
-  tab5P1 = "Works with any AI model. Switch between ChatGPT, Claude, Gemini, or any LLM API instantly — no re-engineering, no vendor lock-in.",
-  tab5P2 = "LLM Capsule acts as a model-agnostic AI enablement layer for all AI models. Swap or mix models anytime — zero re-engineering, no vendor lock-in, consistent protection across every provider. Connect to any model simultaneously, including CUBIG's own SynTitan platform.",
+  tab5Title = "Enterprise Environment Execution",
+  tab5P1 = "Runs inside your existing infrastructure. Air-gapped networks, on-premise servers, custom data systems — no architectural changes required.",
+  tab5P2 = "Most AI solutions demand standardized environments. LLM Capsule deploys within your enterprise as-is — air-gapped networks, telecom-grade platforms, custom data pipelines, and restricted environments. Your existing workflows, security policies, and system configurations stay intact.",
 }: Props) {
   const [activeTab, setActiveTab] = useState("core1")
 
@@ -264,9 +264,9 @@ addPropertyControls(Section05_StepTabs, {
   tab4P1:         { type: ControlType.String, title: "Tab 4 Para 1",    defaultValue: "Tables, diagrams, cross-references, and document hierarchy remain intact — your document layout stays readable to AI throughout the process.", displayTextArea: true },
   tab4P2:         { type: ControlType.String, title: "Tab 4 Para 2",    defaultValue: "Masking tools destroy document context. LLM Capsule keeps tables, diagrams, and entity relationships intact so AI understands the full context while sensitive values are replaced. Reference consistency, diagram preservation, and document hierarchy are all maintained.", displayTextArea: true },
   tabPlus1Image:  { type: ControlType.Image,  title: "Tab +1 Image (Structure-Preserving)" },
-  tab5Label:      { type: ControlType.String, title: "Tab 5 Label",     defaultValue: "+2 Cross-Model" },
-  tab5Title:      { type: ControlType.String, title: "Tab 5 Title",     defaultValue: "Cross-Model Execution" },
-  tab5P1:         { type: ControlType.String, title: "Tab 5 Para 1",    defaultValue: "Works with any AI model. Switch between ChatGPT, Claude, Gemini, or any LLM API instantly — no re-engineering, no vendor lock-in.", displayTextArea: true },
-  tab5P2:         { type: ControlType.String, title: "Tab 5 Para 2",    defaultValue: "LLM Capsule acts as a model-agnostic AI enablement layer for all AI models. Swap or mix models anytime — zero re-engineering, no vendor lock-in, consistent protection across every provider. Connect to any model simultaneously, including CUBIG's own SynTitan platform.", displayTextArea: true },
-  tabPlus2Image:  { type: ControlType.Image,  title: "Tab +2 Image (Cross-Model)" },
+  tab5Label:      { type: ControlType.String, title: "Tab 5 Label",     defaultValue: "+2 Enterprise Environment" },
+  tab5Title:      { type: ControlType.String, title: "Tab 5 Title",     defaultValue: "Enterprise Environment Execution" },
+  tab5P1:         { type: ControlType.String, title: "Tab 5 Para 1",    defaultValue: "Runs inside your existing infrastructure. Air-gapped networks, on-premise servers, custom data systems — no architectural changes required.", displayTextArea: true },
+  tab5P2:         { type: ControlType.String, title: "Tab 5 Para 2",    defaultValue: "Most AI solutions demand standardized environments. LLM Capsule deploys within your enterprise as-is — air-gapped networks, telecom-grade platforms, custom data pipelines, and restricted environments. Your existing workflows, security policies, and system configurations stay intact.", displayTextArea: true },
+  tabPlus2Image:  { type: ControlType.Image,  title: "Tab +2 Image (Enterprise Environment)" },
 })

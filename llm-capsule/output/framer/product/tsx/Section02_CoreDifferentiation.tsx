@@ -46,7 +46,7 @@ interface Props {
 export default function Section02_CoreDifferentiation({
   sectionTitle = "Enterprise AI enablement through five core",
   sectionTitleBrand = "capabilities",
-  sectionDescription = "LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 architecture — three core enablement capabilities plus structure-preserving processing and cross-model execution.",
+  sectionDescription = "LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 architecture — three core enablement capabilities plus structure-preserving processing and enterprise environment execution.",
   bannerText = "These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise AI enablement from traditional masking tools.",
   card1Category = "Core 1",
   card1Title = "Zero Exposure",
@@ -61,8 +61,8 @@ export default function Section02_CoreDifferentiation({
   card4Title = "Structure-Preserving",
   card4Desc = "Tables, diagrams, cross-references, and document layouts remain intact during encapsulation. AI receives structurally complete documents that enable accurate extraction and analysis.",
   card5Category = "+2",
-  card5Title = "Cross-Model Execution",
-  card5Desc = "Model-agnostic by design. Use any LLM — ChatGPT, Claude, Gemini, Perplexity, or any API — without vendor lock-in. Protection stays consistent regardless of which model you choose.",
+  card5Title = "Enterprise Environment Execution",
+  card5Desc = "Runs inside your existing infrastructure. Air-gapped networks, on-premise servers, custom data systems — no architectural changes required.",
 }: Props) {
   return (
     <>
@@ -249,7 +249,7 @@ export default function Section02_CoreDifferentiation({
 addPropertyControls(Section02_CoreDifferentiation, {
   sectionTitle:       { type: ControlType.String, title: "Title",         defaultValue: "Enterprise AI enablement through five core" },
   sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)", defaultValue: "capabilities" },
-  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 architecture — three core enablement capabilities plus structure-preserving processing and cross-model execution.", displayTextArea: true },
+  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 architecture — three core enablement capabilities plus structure-preserving processing and enterprise environment execution.", displayTextArea: true },
   bannerText:         { type: ControlType.String, title: "Banner",        defaultValue: "These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise AI enablement from traditional masking tools.", displayTextArea: true },
   card1Category: { type: ControlType.String, title: "Card 1 Category", defaultValue: "Core 1" },
   card1Title:    { type: ControlType.String, title: "Card 1 Title",    defaultValue: "Zero Exposure" },
@@ -264,6 +264,6 @@ addPropertyControls(Section02_CoreDifferentiation, {
   card4Title:    { type: ControlType.String, title: "Card 4 Title",    defaultValue: "Structure-Preserving" },
   card4Desc:     { type: ControlType.String, title: "Card 4 Desc",     defaultValue: "Tables, diagrams, cross-references, and document layouts remain intact during encapsulation. AI receives structurally complete documents that enable accurate extraction and analysis.", displayTextArea: true },
   card5Category: { type: ControlType.String, title: "Card 5 Category", defaultValue: "+2" },
-  card5Title:    { type: ControlType.String, title: "Card 5 Title",    defaultValue: "Cross-Model Execution" },
-  card5Desc:     { type: ControlType.String, title: "Card 5 Desc",     defaultValue: "Model-agnostic by design. Use any LLM — ChatGPT, Claude, Gemini, Perplexity, or any API — without vendor lock-in. Protection stays consistent regardless of which model you choose.", displayTextArea: true },
+  card5Title:    { type: ControlType.String, title: "Card 5 Title",    defaultValue: "Enterprise Environment Execution" },
+  card5Desc:     { type: ControlType.String, title: "Card 5 Desc",     defaultValue: "Runs inside your existing infrastructure. Air-gapped networks, on-premise servers, custom data systems — no architectural changes required.", displayTextArea: true },
 })

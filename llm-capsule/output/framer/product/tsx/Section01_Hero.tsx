@@ -31,7 +31,7 @@ const JSON_LD_PRODUCT = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "LLM Capsule",
-  "description": "AI enablement data layer and plugin. Zero exposure, local restoration, enterprise context control, structure-preserving processing, and cross-model execution for secure enterprise LLM usage.",
+  "description": "AI enablement data layer and plugin. Zero exposure, local restoration, enterprise context control, structure-preserving processing, and enterprise environment execution for secure enterprise LLM usage.",
   "brand": { "@type": "Brand", "name": "CUBIG" }
 })
 
@@ -55,7 +55,7 @@ export default function Section01_Hero({
   title = "The AI enablement",
   titleBrand = "data layer and plugin for enterprise",
   description = "LLM Capsule enables enterprise AI adoption by keeping raw data inside your environment, preserving document structure and business context during AI processing, and restoring usable outputs through local restoration — so enterprise teams can safely use any LLM on real documents in production workflows.",
-  body = "Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and cross-model execution means no vendor lock-in. This enables enterprise AI enablement on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.",
+  body = "Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and enterprise environment execution means no vendor lock-in. This enables enterprise AI enablement on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.",
   ctaPrimary = "Request a Demo",
   ctaPrimaryHref = "/request-a-demo",
   ctaSecondary = "View Architecture",
@@ -301,7 +301,7 @@ addPropertyControls(Section01_Hero, {
   title:           { type: ControlType.String, title: "Title",           defaultValue: "The AI enablement" },
   titleBrand:      { type: ControlType.String, title: "Title (brand)",   defaultValue: "data layer and plugin for enterprise" },
   description:     { type: ControlType.String, title: "Description",     defaultValue: "LLM Capsule enables enterprise AI adoption by keeping raw data inside your environment, preserving document structure and business context during AI processing, and restoring usable outputs through local restoration — so enterprise teams can safely use any LLM on real documents in production workflows.", displayTextArea: true },
-  body:            { type: ControlType.String, title: "Body",            defaultValue: "Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and cross-model execution means no vendor lock-in. This enables enterprise AI enablement on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.", displayTextArea: true },
+  body:            { type: ControlType.String, title: "Body",            defaultValue: "Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and enterprise environment execution means no vendor lock-in. This enables enterprise AI enablement on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.", displayTextArea: true },
   ctaPrimary:      { type: ControlType.String, title: "CTA Primary",     defaultValue: "Request a Demo" },
   ctaPrimaryHref:  { type: ControlType.String, title: "CTA Primary URL", defaultValue: "/request-a-demo" },
   ctaSecondary:    { type: ControlType.String, title: "CTA Secondary",   defaultValue: "View Architecture" },

@@ -20,12 +20,12 @@ interface Props {
 }
 
 export default function Section09_CrossModelExecution({
-  sectionTitle = "Model-agnostic — use any LLM with no vendor",
-  sectionTitleBrand = "lock-in",
-  sectionDescription = "Enterprise teams do not always standardize on a single AI model.",
-  body1 = "Enterprise teams do not always standardize on a single AI model. Evaluation, governance, and operational workflows may span multiple providers and multiple model choices over time. LLM Capsule fits this reality as an AI enablement data layer for cross-model enterprise AI deployment.",
-  body2 = "Because LLM Capsule operates at the data layer — not the model layer — protection and enablement remain stable even when model vendors change. ChatGPT, Claude, Gemini, Perplexity, or any LLM API can be used interchangeably without reconfiguring the pipeline. This is cross-model execution — enterprise AI enablement independent of any specific AI provider, eliminating vendor lock-in.",
-  bannerText = "ChatGPT, Claude, Gemini, Perplexity, or any LLM API — protection stays consistent regardless of which model you choose.",
+  sectionTitle = "Runs inside your existing",
+  sectionTitleBrand = "infrastructure",
+  sectionDescription = "Runs inside your existing infrastructure. Air-gapped networks, on-premise servers, custom data systems — no architectural changes required.",
+  body1 = "Most AI solutions demand standardized environments. LLM Capsule deploys within your enterprise as-is — air-gapped networks, telecom-grade platforms, custom data pipelines, and restricted environments. Your existing workflows, security policies, and system configurations stay intact.",
+  body2 = "",
+  bannerText = "Air-gapped networks, on-premise servers, custom data systems — no architectural changes required.",
 }: Props) {
   return (
     <>
@@ -139,10 +139,10 @@ export default function Section09_CrossModelExecution({
 }
 
 addPropertyControls(Section09_CrossModelExecution, {
-  sectionTitle:       { type: ControlType.String, title: "Title",         defaultValue: "Model-agnostic — use any LLM with no vendor" },
-  sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)", defaultValue: "lock-in" },
-  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "Enterprise teams do not always standardize on a single AI model." },
-  body1:              { type: ControlType.String, title: "Body 1",        defaultValue: "Enterprise teams do not always standardize on a single AI model. Evaluation, governance, and operational workflows may span multiple providers and multiple model choices over time. LLM Capsule fits this reality as an AI enablement data layer for cross-model enterprise AI deployment.", displayTextArea: true },
-  body2:              { type: ControlType.String, title: "Body 2",        defaultValue: "Because LLM Capsule operates at the data layer — not the model layer — protection and enablement remain stable even when model vendors change. ChatGPT, Claude, Gemini, Perplexity, or any LLM API can be used interchangeably without reconfiguring the pipeline. This is cross-model execution — enterprise AI enablement independent of any specific AI provider, eliminating vendor lock-in.", displayTextArea: true },
-  bannerText:         { type: ControlType.String, title: "Banner",        defaultValue: "ChatGPT, Claude, Gemini, Perplexity, or any LLM API — protection stays consistent regardless of which model you choose.", displayTextArea: true },
+  sectionTitle:       { type: ControlType.String, title: "Title",         defaultValue: "Runs inside your existing" },
+  sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)", defaultValue: "infrastructure" },
+  sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "Runs inside your existing infrastructure. Air-gapped networks, on-premise servers, custom data systems — no architectural changes required.", displayTextArea: true },
+  body1:              { type: ControlType.String, title: "Body 1",        defaultValue: "Most AI solutions demand standardized environments. LLM Capsule deploys within your enterprise as-is — air-gapped networks, telecom-grade platforms, custom data pipelines, and restricted environments. Your existing workflows, security policies, and system configurations stay intact.", displayTextArea: true },
+  body2:              { type: ControlType.String, title: "Body 2",        defaultValue: "" },
+  bannerText:         { type: ControlType.String, title: "Banner",        defaultValue: "Air-gapped networks, on-premise servers, custom data systems — no architectural changes required.", displayTextArea: true },
 })
