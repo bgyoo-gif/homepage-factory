@@ -242,7 +242,7 @@ export default function Section12_Comparison({
           <div className="s12-container">
             <div className="s12-header">
               <h2 className="s12-header__title">
-                How <span className="s12-product">LLM Capsule</span> differs from traditional <span className="s12-header__brand">{sectionTitleBrand}</span>
+                {sectionTitle} <span className="s12-header__brand">{sectionTitleBrand}</span>
               </h2>
               <p className="s12-header__desc">{sectionDescription}</p>
             </div>
@@ -280,8 +280,7 @@ export default function Section12_Comparison({
             </div>
 
             <div className="s12-banner">
-              <strong>AI results are auto-restored through local restoration.</strong>{" "}
-              {bannerText.replace("AI results are auto-restored through local restoration. ", "")}
+              {bannerText}
             </div>
           </div>
         </div>
