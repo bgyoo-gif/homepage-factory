@@ -13,42 +13,12 @@ const PALETTE = {
   shadowCard:      "0px 24px 40px rgba(0, 0, 0, 0.04)",
 }
 
-const CARDS = [
-  {
-    category: "Core 1",
-    leftTitle: "Zero Exposure",
-    title: "Zero Exposure",
-    desc: "Sensitive data is encapsulated locally before leaving the environment. Raw data never reaches external AI services. Even if the provider logged or stored the data, no enterprise information would be exposed.",
-    icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>,
-  },
-  {
-    category: "Core 2",
-    leftTitle: "Restoration",
-    title: "Restoration",
-    desc: "AI outputs are auto-restored locally with real data into usable enterprise documents after processing. Restored outputs work directly in reports, claims documents, legal reviews, and internal analysis — no manual reconstruction required.",
-    icon: <><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></>,
-  },
-  {
-    category: "Core 3",
-    leftTitle: "Enterprise Context",
-    title: "Enterprise Context",
-    desc: "Organizations can define sensitive entities beyond standard PII — project names, internal identifiers, customer-specific confidential markers, and contract references. Context-aware data control adapts to your business.",
-    icon: <><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></>,
-  },
-  {
-    category: "+1",
-    leftTitle: "Structure-Preserving",
-    title: "Structure-Preserving",
-    desc: "Tables, diagrams, cross-references, and document layouts remain intact during encapsulation. AI receives structurally complete documents that enable accurate extraction and analysis.",
-    icon: <><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></>,
-  },
-  {
-    category: "+2",
-    leftTitle: "Cross-Model",
-    title: "Cross-Model Execution",
-    desc: "Model-agnostic by design. Use any LLM — ChatGPT, Claude, Gemini, Perplexity, or any API — without vendor lock-in. Protection stays consistent regardless of which model you choose.",
-    icon: <><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></>,
-  },
+const CARD_ICONS = [
+  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>,
+  <><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></>,
+  <><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></>,
+  <><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></>,
+  <><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></>,
 ]
 
 interface Props {
@@ -56,6 +26,21 @@ interface Props {
   sectionTitleBrand?: string
   sectionDescription?: string
   bannerText?: string
+  card1Category?: string
+  card1Title?: string
+  card1Desc?: string
+  card2Category?: string
+  card2Title?: string
+  card2Desc?: string
+  card3Category?: string
+  card3Title?: string
+  card3Desc?: string
+  card4Category?: string
+  card4Title?: string
+  card4Desc?: string
+  card5Category?: string
+  card5Title?: string
+  card5Desc?: string
 }
 
 export default function Section02_CoreDifferentiation({
@@ -63,6 +48,21 @@ export default function Section02_CoreDifferentiation({
   sectionTitleBrand = "capabilities",
   sectionDescription = "LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 architecture — three core enablement capabilities plus structure-preserving processing and cross-model execution.",
   bannerText = "These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise AI enablement from traditional masking tools.",
+  card1Category = "Core 1",
+  card1Title = "Zero Exposure",
+  card1Desc = "Sensitive data is encapsulated locally before leaving the environment. Raw data never reaches external AI services. Even if the provider logged or stored the data, no enterprise information would be exposed.",
+  card2Category = "Core 2",
+  card2Title = "Restoration",
+  card2Desc = "AI outputs are auto-restored locally with real data into usable enterprise documents after processing. Restored outputs work directly in reports, claims documents, legal reviews, and internal analysis — no manual reconstruction required.",
+  card3Category = "Core 3",
+  card3Title = "Enterprise Context",
+  card3Desc = "Organizations can define sensitive entities beyond standard PII — project names, internal identifiers, customer-specific confidential markers, and contract references. Context-aware data control adapts to your business.",
+  card4Category = "+1",
+  card4Title = "Structure-Preserving",
+  card4Desc = "Tables, diagrams, cross-references, and document layouts remain intact during encapsulation. AI receives structurally complete documents that enable accurate extraction and analysis.",
+  card5Category = "+2",
+  card5Title = "Cross-Model Execution",
+  card5Desc = "Model-agnostic by design. Use any LLM — ChatGPT, Claude, Gemini, Perplexity, or any API — without vendor lock-in. Protection stays consistent regardless of which model you choose.",
 }: Props) {
   return (
     <>
@@ -215,14 +215,20 @@ export default function Section02_CoreDifferentiation({
             </div>
 
             <div className="s2-grid">
-              {CARDS.map((card, i) => (
+              {[
+                { category: card1Category, title: card1Title, desc: card1Desc, icon: CARD_ICONS[0] },
+                { category: card2Category, title: card2Title, desc: card2Desc, icon: CARD_ICONS[1] },
+                { category: card3Category, title: card3Title, desc: card3Desc, icon: CARD_ICONS[2] },
+                { category: card4Category, title: card4Title, desc: card4Desc, icon: CARD_ICONS[3] },
+                { category: card5Category, title: card5Title, desc: card5Desc, icon: CARD_ICONS[4] },
+              ].map((card, i) => (
                 <article key={i} className="s2-cs-card">
                   <div className="s2-cs-card__left">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                       {card.icon}
                     </svg>
                     <span className="s2-cs-card__left-category">{card.category}</span>
-                    <span className="s2-cs-card__left-title">{card.leftTitle}</span>
+                    <span className="s2-cs-card__left-title">{card.title}</span>
                   </div>
                   <div className="s2-cs-card__right">
                     <h3 className="s2-cs-card__title">{card.title}</h3>
@@ -245,4 +251,19 @@ addPropertyControls(Section02_CoreDifferentiation, {
   sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)", defaultValue: "capabilities" },
   sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 architecture — three core enablement capabilities plus structure-preserving processing and cross-model execution.", displayTextArea: true },
   bannerText:         { type: ControlType.String, title: "Banner",        defaultValue: "These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise AI enablement from traditional masking tools.", displayTextArea: true },
+  card1Category: { type: ControlType.String, title: "Card 1 Category", defaultValue: "Core 1" },
+  card1Title:    { type: ControlType.String, title: "Card 1 Title",    defaultValue: "Zero Exposure" },
+  card1Desc:     { type: ControlType.String, title: "Card 1 Desc",     defaultValue: "Sensitive data is encapsulated locally before leaving the environment. Raw data never reaches external AI services. Even if the provider logged or stored the data, no enterprise information would be exposed.", displayTextArea: true },
+  card2Category: { type: ControlType.String, title: "Card 2 Category", defaultValue: "Core 2" },
+  card2Title:    { type: ControlType.String, title: "Card 2 Title",    defaultValue: "Restoration" },
+  card2Desc:     { type: ControlType.String, title: "Card 2 Desc",     defaultValue: "AI outputs are auto-restored locally with real data into usable enterprise documents after processing. Restored outputs work directly in reports, claims documents, legal reviews, and internal analysis — no manual reconstruction required.", displayTextArea: true },
+  card3Category: { type: ControlType.String, title: "Card 3 Category", defaultValue: "Core 3" },
+  card3Title:    { type: ControlType.String, title: "Card 3 Title",    defaultValue: "Enterprise Context" },
+  card3Desc:     { type: ControlType.String, title: "Card 3 Desc",     defaultValue: "Organizations can define sensitive entities beyond standard PII — project names, internal identifiers, customer-specific confidential markers, and contract references. Context-aware data control adapts to your business.", displayTextArea: true },
+  card4Category: { type: ControlType.String, title: "Card 4 Category", defaultValue: "+1" },
+  card4Title:    { type: ControlType.String, title: "Card 4 Title",    defaultValue: "Structure-Preserving" },
+  card4Desc:     { type: ControlType.String, title: "Card 4 Desc",     defaultValue: "Tables, diagrams, cross-references, and document layouts remain intact during encapsulation. AI receives structurally complete documents that enable accurate extraction and analysis.", displayTextArea: true },
+  card5Category: { type: ControlType.String, title: "Card 5 Category", defaultValue: "+2" },
+  card5Title:    { type: ControlType.String, title: "Card 5 Title",    defaultValue: "Cross-Model Execution" },
+  card5Desc:     { type: ControlType.String, title: "Card 5 Desc",     defaultValue: "Model-agnostic by design. Use any LLM — ChatGPT, Claude, Gemini, Perplexity, or any API — without vendor lock-in. Protection stays consistent regardless of which model you choose.", displayTextArea: true },
 })
