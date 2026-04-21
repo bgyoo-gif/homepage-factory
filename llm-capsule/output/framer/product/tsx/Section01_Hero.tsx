@@ -53,7 +53,7 @@ interface Props {
 
 export default function Section01_Hero({
   title = "The AI enablement",
-  titleBrand = "data layer and plugin",
+  titleBrand = "data layer and plugin for enterprise",
   description = "LLM Capsule enables enterprise AI adoption by keeping raw data inside your environment, preserving document structure and business context during AI processing, and restoring usable outputs through local restoration — so enterprise teams can safely use any LLM on real documents in production workflows.",
   body = "Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and cross-model execution means no vendor lock-in. This enables enterprise AI enablement on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.",
   ctaPrimary = "Request a Demo",
@@ -275,7 +275,7 @@ export default function Section01_Hero({
                 <span className="s1-breadcrumb__current">Product</span>
               </nav>
               <h1 className="s1-title">
-                {title} <span className="s1-title-brand">{titleBrand}</span> for enterprise
+                {title} <span className="s1-title-brand">{titleBrand}</span>
               </h1>
               <p className="s1-description">{description}</p>
               <p className="s1-body">{body}</p>
@@ -299,7 +299,7 @@ export default function Section01_Hero({
 
 addPropertyControls(Section01_Hero, {
   title:           { type: ControlType.String, title: "Title",           defaultValue: "The AI enablement" },
-  titleBrand:      { type: ControlType.String, title: "Title (brand)",   defaultValue: "data layer and plugin" },
+  titleBrand:      { type: ControlType.String, title: "Title (brand)",   defaultValue: "data layer and plugin for enterprise" },
   description:     { type: ControlType.String, title: "Description",     defaultValue: "LLM Capsule enables enterprise AI adoption by keeping raw data inside your environment, preserving document structure and business context during AI processing, and restoring usable outputs through local restoration — so enterprise teams can safely use any LLM on real documents in production workflows.", displayTextArea: true },
   body:            { type: ControlType.String, title: "Body",            defaultValue: "Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and cross-model execution means no vendor lock-in. This enables enterprise AI enablement on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.", displayTextArea: true },
   ctaPrimary:      { type: ControlType.String, title: "CTA Primary",     defaultValue: "Request a Demo" },
