@@ -293,10 +293,7 @@ export default function Section04_DeploymentOptions({
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
                   </span>
                   <h3 className="s4-card__title">{card4Title}</h3>
-                  <p className="s4-card__description">
-                    Different document types or sensitivity levels route through different deployment modes within a single{" "}
-                    <span className="s4-product-name">{productName}</span> instance. Maximum flexibility.
-                  </p>
+                  <p className="s4-card__description">{card4Description}</p>
                 </div>
               </div>
 
@@ -307,9 +304,7 @@ export default function Section04_DeploymentOptions({
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="7" height="7" x="14" y="3" rx="1"/><path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3"/></svg>
                   </span>
                   <h3 className="s4-card__title">{card5Title}</h3>
-                  <p className="s4-card__description">
-                    <span className="s4-product-name">{productName}</span> embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within your software stack.
-                  </p>
+                  <p className="s4-card__description">{card5Description}</p>
                 </div>
               </div>
 

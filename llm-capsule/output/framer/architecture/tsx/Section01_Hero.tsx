@@ -24,6 +24,7 @@ const PALETTE = {
 interface Props {
   title?: string
   titleHighlight?: string
+  titleSuffix?: string
   description?: string
   productName?: string
 }
@@ -31,6 +32,7 @@ interface Props {
 export default function Section01_Hero({
   title = "AI Enablement",
   titleHighlight = "Architecture",
+  titleSuffix = "for Enterprise AI",
   description = "LLM Capsule is an AI enablement data layer and plugin that enables enterprises to adopt any AI model safely. It sits between enterprise data systems and external AI services — protecting data in transit while unlocking the full power of AI across every workflow.",
   productName = "LLM Capsule",
 }: Props) {
@@ -141,7 +143,7 @@ export default function Section01_Hero({
               <h1 className="s1-title">
                 {title}{" "}
                 <span className="s1-title-highlight">{titleHighlight}</span>
-                {" "}for Enterprise AI
+                {" "}{titleSuffix}
               </h1>
               <p className="s1-description">
                 <span className="s1-product-name">{productName}</span>{" "}
@@ -165,6 +167,11 @@ addPropertyControls(Section01_Hero, {
     type: ControlType.String,
     title: "Title Highlight",
     defaultValue: "Architecture",
+  },
+  titleSuffix: {
+    type: ControlType.String,
+    title: "Title Suffix",
+    defaultValue: "for Enterprise AI",
   },
   description: {
     type: ControlType.String,
