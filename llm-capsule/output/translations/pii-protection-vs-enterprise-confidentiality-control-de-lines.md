@@ -1,93 +1,107 @@
-# PII Protection vs Enterprise Confidentiality Control — Deutsche Übersetzung
+# Pii Protection Vs Enterprise Confidentiality Control — Deutsche Übersetzung
 
-## Section 01: Hero
 
-PII Protection vs Enterprise Confidentiality Control
-PII-Schutz vs Unternehmens-Vertraulichkeitskontrolle
+## Section01_Hero
 
-Why protecting only personal data is insufficient for enterprise AI enablement. Business-critical information requires enterprise confidentiality control to truly enable AI adoption.
-Warum der Schutz nur personenbezogener Daten für das KI-Enablement in Unternehmen unzureichend ist. Geschäftskritische Informationen erfordern eine Unternehmens-Vertraulichkeitskontrolle, um die KI-Einführung wirklich zu ermöglichen.
 
 Learn
-Lernen
+Lernen Sie
 
-## Section 02: Problem
+PII Protection vs Enterprise Confidentiality Control
+PII-Schutz vs. Vertraulichkeitskontrolle im Unternehmen
+
+PII Protection vs Enterprise Confidentiality Control
+PII-Schutz vs. Vertraulichkeitskontrolle im Unternehmen
+
+Why protecting only personal data is insufficient for enterprise AI enablement. Business-critical information requires enterprise confidentiality control to truly enable AI adoption.
+Warum der Schutz personenbezogener Daten allein für die Einführung von KI in Unternehmen nicht ausreicht. Geschäftskritische Informationen erfordern eine unternehmensweite Kontrolle der Vertraulichkeit, um die Einführung von KI wirklich zu ermöglichen.
+
+## Section02_Problem
+
 
 Problem
 Problem
 
 Most AI data protection solutions focus on personally identifiable information (PII) — names, social security numbers, email addresses. But true enterprise AI enablement requires protecting far more than PII. Enterprise documents contain trade secrets, acquisition targets, pricing models, internal performance metrics, strategic plans, and client relationship details — all enterprise-sensitive but not classified as PII.
-Die meisten KI-Datenschutzlösungen konzentrieren sich auf personenbezogene Daten (PII) — Namen, Sozialversicherungsnummern, E-Mail-Adressen. Aber echtes KI-Enablement für Unternehmen erfordert den Schutz von weit mehr als PII. Unternehmensdokumente enthalten Geschäftsgeheimnisse, Übernahmeziele, Preismodelle, interne Leistungskennzahlen, strategische Pläne und Details zu Kundenbeziehungen — alles unternehmensrelevant, aber nicht als PII klassifiziert.
+Die meisten KI-Datenschutzlösungen konzentrieren sich auf persönlich identifizierbare Informationen (PII) - Namen, Sozialversicherungsnummern, E-Mail-Adressen. Doch für eine echte KI-Fähigkeit von Unternehmen muss weit mehr als personenbezogene Daten geschützt werden. Unternehmensdokumente enthalten Geschäftsgeheimnisse, Akquisitionsziele, Preismodelle, interne Leistungskennzahlen, strategische Pläne und Details zu Kundenbeziehungen - allesamt unternehmenssensibel, aber nicht als personenbezogene Daten eingestuft.
 
 A legal memo about a pending acquisition contains no PII. It contains deal structure, valuation ranges, and strategic rationale — all of which would be damaging if exposed to an AI provider's training pipeline or logging system.
-Ein juristisches Memo über eine bevorstehende Übernahme enthält keine PII. Es enthält Transaktionsstruktur, Bewertungsspannen und strategische Begründungen — all dies wäre schädlich, wenn es der Trainings-Pipeline oder dem Protokollierungssystem eines KI-Anbieters ausgesetzt würde.
+Ein juristischer Vermerk über eine anstehende Übernahme enthält keine personenbezogenen Daten. Es enthält die Struktur des Geschäfts, Bewertungsspannen und strategische Überlegungen - all das wäre schädlich, wenn es in die Schulungspipeline oder das Protokollierungssystem eines KI-Anbieters gelangen würde.
 
-## Section 03: Definition
+## Section03_Definition
+
 
 Definition
 Definition
 
 Enterprise Confidentiality Control
-Unternehmens-Vertraulichkeitskontrolle
+Vertraulichkeitskontrolle im Unternehmen
 
 Enterprise confidentiality control is a data protection approach for AI workflows that extends beyond PII to cover all categories of business-sensitive information. It enables policy-based classification and encapsulation of trade secrets, financial terms, strategic data, and operational details alongside personal data protection.
-Unternehmens-Vertraulichkeitskontrolle ist ein Datenschutzansatz für KI-Workflows, der über PII hinausgeht und alle Kategorien geschäftssensibler Informationen abdeckt. Er ermöglicht richtlinienbasierte Klassifizierung und Kapselung von Geschäftsgeheimnissen, Finanzbedingungen, strategischen Daten und operativen Details neben dem Schutz personenbezogener Daten.
+Die Vertraulichkeitskontrolle für Unternehmen ist ein Datenschutzansatz für KI-Workflows, der über personenbezogene Daten hinausgeht und alle Kategorien von geschäftskritischen Informationen abdeckt. Er ermöglicht die richtlinienbasierte Klassifizierung und Kapselung von Geschäftsgeheimnissen, finanziellen Bedingungen, strategischen Daten und betrieblichen Details neben dem Schutz personenbezogener Daten.
 
-## Section 04: Explanation
+## Section04_Explanation
+
 
 Explanation
-Erklärung
+Erläuterung
 
 Enterprise confidentiality control differs from PII protection in scope and configurability:
-Unternehmens-Vertraulichkeitskontrolle unterscheidet sich vom PII-Schutz in Umfang und Konfigurierbarkeit:
+Die Vertraulichkeitskontrolle für Unternehmen unterscheidet sich vom Schutz personenbezogener Daten durch ihren Umfang und ihre Konfigurierbarkeit:
 
 Scope.
 Umfang.
 
 PII protection covers regulatory-defined categories — names, identification numbers, health records. Enterprise confidentiality control covers organization-defined categories — deal terms, pricing, internal metrics, competitive analysis, and strategic plans.
-PII-Schutz umfasst regulatorisch definierte Kategorien — Namen, Identifikationsnummern, Gesundheitsdaten. Unternehmens-Vertraulichkeitskontrolle umfasst organisationsdefinierte Kategorien — Transaktionsbedingungen, Preise, interne Kennzahlen, Wettbewerbsanalysen und strategische Pläne.
+Der Schutz personenbezogener Daten umfasst gesetzlich festgelegte Kategorien - Namen, Identifikationsnummern, Gesundheitsdaten. Die Vertraulichkeitskontrolle für Unternehmen deckt unternehmensdefinierte Kategorien ab - Vertragsbedingungen, Preisgestaltung, interne Kennzahlen, Wettbewerbsanalysen und strategische Pläne.
 
 Policy-driven classification.
 Richtliniengesteuerte Klassifizierung.
 
 What counts as sensitive varies by department, document type, and workflow. A revenue figure is sensitive in a board presentation but routine in a published annual report. Context-aware data control enables policy-driven sensitivity classification, not just regex pattern matching.
-Was als sensibel gilt, variiert je nach Abteilung, Dokumententyp und Workflow. Eine Umsatzzahl ist sensibel in einer Vorstandspräsentation, aber routinemäßig in einem veröffentlichten Jahresbericht. Kontextbewusste Datenkontrolle ermöglicht richtliniengesteuerte Sensitivitätsklassifizierung, nicht nur Regex-Mustererkennung.
+Was als sensibel gilt, ist je nach Abteilung, Dokumententyp und Arbeitsablauf unterschiedlich. Eine Umsatzzahl ist in einer Vorstandspräsentation sensibel, in einem veröffentlichten Geschäftsbericht jedoch Routine. Eine kontextbezogene Datenkontrolle ermöglicht eine richtliniengesteuerte Sensibilitätsklassifizierung und nicht nur einen Regex-Musterabgleich.
 
 Workflow integration.
 Workflow-Integration.
 
 Enterprise confidentiality control integrates with governance frameworks, audit systems, and compliance workflows — providing visibility into what data is protected, how, and by whom.
-Unternehmens-Vertraulichkeitskontrolle integriert sich in Governance-Frameworks, Prüfsysteme und Compliance-Workflows — und bietet Transparenz darüber, welche Daten geschützt werden, wie und von wem.
+Die Vertraulichkeitskontrolle im Unternehmen lässt sich in Governance-Frameworks, Auditsysteme und Compliance-Workflows integrieren und bietet einen Überblick darüber, welche Daten wie und von wem geschützt werden.
 
-## Section 05: Enterprise Example
+## Section05_EnterpriseExample
+
 
 Enterprise Example
-Unternehmensbeispiel
+Beispiel Unternehmen
 
 M&A Due Diligence
 M&A Due Diligence
 
 An investment bank uses AI to analyze target company documents during due diligence. Documents contain no customer PII but are filled with sensitive deal terms, valuation models, and strategic assessments.
-Eine Investmentbank nutzt KI zur Analyse von Zielunternehmensdokumenten während der Due Diligence. Die Dokumente enthalten keine Kunden-PII, sind aber mit sensiblen Transaktionsbedingungen, Bewertungsmodellen und strategischen Einschätzungen gefüllt.
+Eine Investmentbank setzt KI ein, um Dokumente von Zielunternehmen während der Due-Diligence-Prüfung zu analysieren. Die Dokumente enthalten keine personenbezogenen Daten der Kunden, sind aber mit sensiblen Vertragsbedingungen, Bewertungsmodellen und strategischen Einschätzungen gefüllt.
 
-LLM Capsule's enterprise confidentiality control encapsulates deal-specific terminology, financial figures, and company identifiers. AI performs analysis on the protected documents. Local restoration restores deal context into the analysis outputs for the advisory team.
-Die Unternehmens-Vertraulichkeitskontrolle von LLM Capsule kapselt transaktionsspezifische Terminologie, Finanzzahlen und Unternehmensidentifikatoren. Die KI führt Analysen auf den geschützten Dokumenten durch. Die lokale Wiederherstellung stellt den Transaktionskontext in den Analyseausgaben für das Beratungsteam wieder her.
+'s enterprise confidentiality control encapsulates deal-specific terminology, financial figures, and company identifiers. AI performs analysis on the protected documents. Local restoration restores deal context into the analysis outputs for the advisory team.
+Die Vertraulichkeitskontrolle des Unternehmens kapselt geschäftsspezifische Terminologie, Finanzzahlen und Unternehmenskennzeichen. KI führt die Analyse der geschützten Dokumente durch. Die lokale Wiederherstellung stellt den Kontext des Geschäfts in den Analyseergebnissen für das Beratungsteam wieder her.
 
-## Section 06: FAQ
+LLM Capsule
+LLM Capsule
+
+## Section06_FAQ
+
 
 What is enterprise confidentiality control?
-Was ist Unternehmens-Vertraulichkeitskontrolle?
+Was bedeutet Vertraulichkeitskontrolle in Unternehmen?
 
 Enterprise confidentiality control is a data protection approach that goes beyond PII to cover all business-sensitive information — trade secrets, deal terms, pricing strategies, internal metrics, and competitive intelligence — during AI processing.
-Unternehmens-Vertraulichkeitskontrolle ist ein Datenschutzansatz, der über PII hinausgeht und alle geschäftssensiblen Informationen abdeckt — Geschäftsgeheimnisse, Transaktionsbedingungen, Preisstrategien, interne Kennzahlen und Wettbewerbsinformationen — während der KI-Verarbeitung.
+Die Vertraulichkeitskontrolle für Unternehmen ist ein Datenschutzkonzept, das über personenbezogene Daten hinausgeht und alle unternehmenssensiblen Informationen - Geschäftsgeheimnisse, Geschäftsbedingungen, Preisstrategien, interne Kennzahlen und Wettbewerbsinformationen - während der KI-Verarbeitung abdeckt.
 
 Why is PII protection insufficient for enterprise AI?
-Warum ist PII-Schutz unzureichend für Unternehmens-KI?
+Warum ist der Schutz personenbezogener Daten für KI in Unternehmen unzureichend?
 
 Enterprise documents contain sensitive business data that is not PII. Protecting only names and IDs while exposing deal terms, financial models, and strategic plans still creates unacceptable data exposure risk.
-Unternehmensdokumente enthalten sensible Geschäftsdaten, die keine PII sind. Nur Namen und IDs zu schützen, während Transaktionsbedingungen, Finanzmodelle und strategische Pläne offengelegt werden, erzeugt weiterhin ein inakzeptables Datenexpositionsrisiko.
+Unternehmensdokumente enthalten sensible Geschäftsdaten, die keine personenbezogenen Daten sind. Der Schutz von Namen und IDs bei gleichzeitiger Offenlegung von Geschäftsbedingungen, Finanzmodellen und strategischen Plänen birgt immer noch ein inakzeptables Datenrisiko.
 
-## Section 07: Related Pages
+## Section07_RelatedPages
+
 
 Related
 Verwandte Seiten
@@ -99,18 +113,25 @@ Architecture
 Architektur
 
 Trust & Compliance
-Vertrauen & Compliance
+Vertrauen und Einhaltung
 
 Request a Demo
 Demo anfordern
 
-## Section 08: CTA Band
+## Section08_CTABand
 
-See how LLM Capsule works with your data
-Erleben Sie, wie LLM Capsule mit Ihren Daten arbeitet
+
+See how
+Erfahren Sie, wie
+
+LLM Capsule
+LLM Capsule
+
+works with your data
+arbeitet mit Ihren Daten
 
 Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.
-Bringen Sie Ihre Dokumente, Bereitstellungsanforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Workflows.
+Bringen Sie Ihre Dokumente, Einsatzbeschränkungen und Bewertungskriterien mit. Wir demonstrieren an Ihren tatsächlichen Arbeitsabläufen.
 
 Request a Demo
 Demo anfordern
