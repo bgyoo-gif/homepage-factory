@@ -70,7 +70,7 @@ export default function Section08_CTA({
         }
 
         @container (min-width: 1440px) {
-          .s8-cta-band { padding: 120px 120px; max-width: 1440px; margin: 0 auto; }
+          .s8-cta-band { padding: 120px 120px; }
         }
 
         @container (max-width: 767px) {
