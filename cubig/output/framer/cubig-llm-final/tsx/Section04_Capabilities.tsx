@@ -33,6 +33,7 @@ interface Props {
   card5Badge?: string
   card5Title?: string
   card5Description?: string
+  sectionBgImage?: string
 }
 
 export default function Section04_Capabilities({
@@ -54,7 +55,10 @@ export default function Section04_Capabilities({
   card5Badge = "+2",
   card5Title = "Enterprise Environment Execution",
   card5Description = "Runs inside your existing infrastructure. Air-gapped networks, on-premise servers, custom data systems — no architectural changes required.",
+  sectionBgImage = "",
 }: Props) {
+  const DEFAULT_BG = `${IMAGE_BASE}/bg-gradient-cream-jade.png`
+  const resolvedBg = sectionBgImage || DEFAULT_BG
   return (
     <>
       <style>{`
@@ -76,7 +80,7 @@ export default function Section04_Capabilities({
           background-position: center;
           overflow: hidden;
           box-sizing: border-box;
-          background-image: ${P.bgImgGradCream};
+          background-image: url('${resolvedBg}');
         }
 
         .s4-section::before {
@@ -353,4 +357,5 @@ addPropertyControls(Section04_Capabilities, {
   card5Badge: { type: ControlType.String, title: "Card 5 Badge", defaultValue: "+2" },
   card5Title: { type: ControlType.String, title: "Card 5 Title", defaultValue: "Enterprise Environment Execution" },
   card5Description: { type: ControlType.String, title: "Card 5 Description", defaultValue: "Runs inside your existing infrastructure. Air-gapped networks, on-premise servers, custom data systems — no architectural changes required." },
+  sectionBgImage: { type: ControlType.Image, title: "Section BG Image" },
 })

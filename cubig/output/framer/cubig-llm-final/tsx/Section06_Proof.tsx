@@ -36,6 +36,7 @@ interface Props {
   kpi2Label?: string
   kpi3Number?: string
   kpi3Label?: string
+  kpiBgImage?: string
   kpi4Number?: string
   kpi4Label?: string
   actionLink1Label?: string
@@ -65,6 +66,7 @@ export default function Section06_Proof({
   kpi2Label = "Restoration Accuracy",
   kpi3Number = "<0.12s",
   kpi3Label = "Per Page",
+  kpiBgImage = "",
   kpi4Number = "Any",
   kpi4Label = "LLM / Model",
   actionLink1Label = "See all production cases",
@@ -72,6 +74,8 @@ export default function Section06_Proof({
   actionLink2Label = "Solutions by industry at llmcapsule.ai",
   actionLink2Href = "https://llmcapsule.ai/solutions",
 }: Props) {
+  const DEFAULT_KPI_BG = `${IMAGE_BASE}/bg-gradient-navy-teal.png`
+  const resolvedKpiBg = kpiBgImage || DEFAULT_KPI_BG
   const CERTS = [
     { text: "GS Certification", org: "TTA", year: "2025", logo: `${IMAGE_BASE}/graphics/cert-gs.png`, logoAlt: "GS Certification logo" },
     { text: "ISO/IEC 27001", org: "ISO", year: "2026", logo: `${IMAGE_BASE}/graphics/cert-iso.png`, logoAlt: "ISO 27001 logo" },
@@ -318,7 +322,9 @@ export default function Section06_Proof({
           justify-items: center;
           position: relative;
           overflow: hidden;
-          background: linear-gradient(135deg, #1a6fe8, #0ea5a0);
+          background-color: #1a6fe8;
+          background-image: url('${resolvedKpiBg}');
+          background-size: cover; background-position: center;
         }
 
         @container (max-width: 1023px) {
@@ -583,4 +589,5 @@ addPropertyControls(Section06_Proof, {
   actionLink1Href: { type: ControlType.String, title: "Action 1 Href", defaultValue: "/proof" },
   actionLink2Label: { type: ControlType.String, title: "Action 2 Label", defaultValue: "Solutions by industry at llmcapsule.ai" },
   actionLink2Href: { type: ControlType.String, title: "Action 2 Href", defaultValue: "https://llmcapsule.ai/solutions" },
+  kpiBgImage: { type: ControlType.Image, title: "KPI Band BG Image" },
 })

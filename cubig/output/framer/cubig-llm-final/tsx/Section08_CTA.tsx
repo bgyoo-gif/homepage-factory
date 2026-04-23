@@ -19,6 +19,7 @@ interface Props {
   btn2Href?: string
   btn3Label?: string
   btn3Href?: string
+  ctaBgImage?: string
 }
 
 export default function Section08_CTA({
@@ -30,7 +31,10 @@ export default function Section08_CTA({
   btn2Href = "https://llmcapsule.ai",
   btn3Label = "Production cases",
   btn3Href = "/proof",
+  ctaBgImage = "",
 }: Props) {
+  const DEFAULT_CTA_BG = `${IMAGE_BASE}/bg-gradient-blue-violet.png`
+  const resolvedCtaBg = ctaBgImage || DEFAULT_CTA_BG
   return (
     <>
       <style>{`
@@ -51,7 +55,7 @@ export default function Section08_CTA({
           text-align: center;
           background-size: cover;
           background-position: center;
-          background-image: ${P.bgImgGradBlue};
+          background-image: url('${resolvedCtaBg}');
           box-sizing: border-box;
         }
 
@@ -195,4 +199,5 @@ addPropertyControls(Section08_CTA, {
   btn2Href: { type: ControlType.String, title: "Button 2 Href", defaultValue: "https://llmcapsule.ai" },
   btn3Label: { type: ControlType.String, title: "Button 3 Label", defaultValue: "Production cases" },
   btn3Href: { type: ControlType.String, title: "Button 3 Href", defaultValue: "/proof" },
+  ctaBgImage: { type: ControlType.Image, title: "CTA BG Image" },
 })
