@@ -29,6 +29,9 @@ interface Props {
   case3Category?: string
   case3Name?: string
   case3Bullet?: string
+  case1Image?: string
+  case2Image?: string
+  case3Image?: string
   case3Tag?: string
   kpi1Number?: string
   kpi1Label?: string
@@ -59,6 +62,9 @@ export default function Section06_Proof({
   case3Category = "FINANCE · HEALTH · LEGAL",
   case3Name = "DB Insurance · EUMC · Shin&Kim",
   case3Bullet = "Claim, clinical, and contract data encapsulated and restored during AI-assisted document workflows across Korean financial services, medical research, and legal practice.",
+  case1Image = "",
+  case2Image = "",
+  case3Image = "",
   case3Tag = "Finance · Health · Legal",
   kpi1Number = "98.1%",
   kpi1Label = "Detection Accuracy",
@@ -87,9 +93,16 @@ export default function Section06_Proof({
     { text: "Info Security Fast Track", org: "KISA", year: "2024", logo: `${IMAGE_BASE}/graphics/cert-kisa.png`, logoAlt: "KISA logo" },
   ]
 
+  const DEFAULT_CASE1_IMG = `${IMAGE_BASE}/graphics/illustration-security.png`
+  const DEFAULT_CASE2_IMG = `${IMAGE_BASE}/graphics/illustration-security.png`
+  const DEFAULT_CASE3_IMG = `${IMAGE_BASE}/graphics/illustration-insurance.png`
+  const resolvedCase1Img = case1Image || DEFAULT_CASE1_IMG
+  const resolvedCase2Img = case2Image || DEFAULT_CASE2_IMG
+  const resolvedCase3Img = case3Image || DEFAULT_CASE3_IMG
+
   const cases = [
     {
-      img: `${IMAGE_BASE}/graphics/graphic-telecom.png`,
+      img: resolvedCase1Img,
       imgAlt: "Deutsche Telekom — Global Telco",
       category: case1Category,
       name: case1Name,
@@ -98,7 +111,7 @@ export default function Section06_Proof({
       tagType: "success",
     },
     {
-      img: `${IMAGE_BASE}/graphics/illustration-security.png`,
+      img: resolvedCase2Img,
       imgAlt: "Claroty — Global OT Security",
       category: case2Category,
       name: case2Name,
@@ -107,7 +120,7 @@ export default function Section06_Proof({
       tagType: "purple",
     },
     {
-      img: `${IMAGE_BASE}/graphics/illustration-insurance.png`,
+      img: resolvedCase3Img,
       imgAlt: "DB Insurance, EUMC, Shin&Kim — Finance, Health, Legal",
       category: case3Category,
       name: case3Name,
@@ -223,10 +236,10 @@ export default function Section06_Proof({
         }
 
         .s6-case-left-image {
-          width: 48px;
-          height: 48px;
+          width: 72px;
+          height: 72px;
           object-fit: contain;
-          border-radius: 8px;
+          border-radius: 12px;
           flex-shrink: 0;
         }
 
@@ -497,7 +510,7 @@ export default function Section06_Proof({
               {cases.map((c, i) => (
                 <article key={i} className="s6-case-card">
                   <div className="s6-case-left">
-                    <img src={c.img} alt={c.imgAlt} className="s6-case-left-image" width={48} height={48} />
+                    <img src={c.img} alt={c.imgAlt} className="s6-case-left-image" width={72} height={72} />
                     <div className="s6-case-left-text">
                       <span className="s6-case-category">{c.category}</span>
                       <strong className="s6-case-name">{c.name}</strong>
@@ -566,14 +579,17 @@ addPropertyControls(Section06_Proof, {
   case1Category: { type: ControlType.String, title: "Case 1 Category", defaultValue: "GLOBAL TELCO" },
   case1Name: { type: ControlType.String, title: "Case 1 Name", defaultValue: "Deutsche Telekom" },
   case1Bullet: { type: ControlType.String, title: "Case 1 Bullet", defaultValue: "Top 12 finalist in T Challenge 2026. Evaluated for enterprise AI data protection across customer care, network ops, and billing workflows at telco scale." },
+  case1Image: { type: ControlType.Image, title: "Case 1 Image" },
   case1Tag: { type: ControlType.String, title: "Case 1 Tag", defaultValue: "T Challenge 2026 — Top 12" },
   case2Category: { type: ControlType.String, title: "Case 2 Category", defaultValue: "GLOBAL OT SECURITY" },
   case2Name: { type: ControlType.String, title: "Case 2 Name", defaultValue: "Claroty" },
   case2Bullet: { type: ControlType.String, title: "Case 2 Bullet", defaultValue: "OT infrastructure AI with sensitive operational data encapsulated at the data layer. AI processes tasks without exposure of raw OT identifiers." },
+  case2Image: { type: ControlType.Image, title: "Case 2 Image" },
   case2Tag: { type: ControlType.String, title: "Case 2 Tag", defaultValue: "OT Infrastructure AI" },
   case3Category: { type: ControlType.String, title: "Case 3 Category", defaultValue: "FINANCE · HEALTH · LEGAL" },
   case3Name: { type: ControlType.String, title: "Case 3 Name", defaultValue: "DB Insurance · EUMC · Shin&Kim" },
   case3Bullet: { type: ControlType.String, title: "Case 3 Bullet", defaultValue: "Claim, clinical, and contract data encapsulated and restored during AI-assisted document workflows across Korean financial services, medical research, and legal practice." },
+  case3Image: { type: ControlType.Image, title: "Case 3 Image" },
   case3Tag: { type: ControlType.String, title: "Case 3 Tag", defaultValue: "Finance · Health · Legal" },
   kpi1Number: { type: ControlType.String, title: "KPI 1 Number", defaultValue: "98.1%" },
   kpi1Label: { type: ControlType.String, title: "KPI 1 Label", defaultValue: "Detection Accuracy" },
