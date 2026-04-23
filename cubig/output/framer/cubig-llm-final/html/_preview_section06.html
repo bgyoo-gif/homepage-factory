@@ -8,9 +8,9 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: "DM Sans", sans-serif; background: #f7f7f7; }
-    .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .case-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
     .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
-    @media (max-width: 1023px) { .case-grid { grid-template-columns: repeat(2, 1fr); } .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 1023px) { .case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 767px) { .case-grid, .kpi-grid { grid-template-columns: 1fr; } }
     @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   </style>
@@ -28,16 +28,18 @@
 
     <!-- Case Studies -->
     <div class="case-grid">
-      <article style="background:#fff; border-radius:18px; border:1px solid #e6e7e9; box-shadow:0 24px 40px rgba(0,0,0,0.04); display:grid; grid-template-columns:100px 1fr; overflow:hidden;">
-        <div style="background:transparent; border-right:1px solid #e6e7e9; padding:12px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; text-align:center; gap:8px; padding-top:24px;">
-          <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/graphic-telecom.png" alt="Deutsche Telekom" style="width:72px; height:60px; object-fit:contain; border-radius:8px;">
-          <span style="font-size:10px; color:#636363; letter-spacing:0.08em; text-transform:uppercase;">GLOBAL TELCO</span>
-          <strong style="font-size:12px; font-weight:700; color:#0f0f0f; line-height:1.2;">Deutsche Telekom</strong>
+      <article style="background:#fff; border-radius:18px; border:1px solid #e6e7e9; box-shadow:0 24px 40px rgba(0,0,0,0.04); display:flex; flex-direction:column; overflow:hidden;">
+        <div style="padding:24px 24px 16px; display:flex; align-items:center; gap:16px; border-bottom:1px solid #e6e7e9;">
+          <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/graphic-telecom.png" alt="Deutsche Telekom" style="width:48px; height:48px; object-fit:contain; border-radius:8px; flex-shrink:0;">
+          <div style="display:flex; flex-direction:column; gap:2px;">
+            <span style="font-size:11px; color:#636363; letter-spacing:0.08em; text-transform:uppercase;">GLOBAL TELCO</span>
+            <strong style="font-size:16px; font-weight:700; color:#0f0f0f; line-height:1.3;">Deutsche Telekom</strong>
+          </div>
         </div>
-        <div style="padding:16px; display:flex; flex-direction:column; gap:12px;">
+        <div style="padding:20px 24px 24px; display:flex; flex-direction:column; gap:16px;">
           <ul style="list-style:none; padding:0; margin:0;">
             <li style="display:flex; align-items:flex-start; gap:8px; font-size:14px; line-height:1.5; color:#0f0f0f;">
-              <span style="color:#725bea; font-size:20px; line-height:1; flex-shrink:0;">•</span>
+              <span style="color:#725bea; font-size:20px; line-height:1; flex-shrink:0;">&#8226;</span>
               Top 12 finalist in T Challenge 2026. Evaluated for enterprise AI data protection across customer care, network ops, and billing workflows at telco scale.
             </li>
           </ul>
@@ -47,16 +49,18 @@
         </div>
       </article>
 
-      <article style="background:#fff; border-radius:18px; border:1px solid #e6e7e9; box-shadow:0 24px 40px rgba(0,0,0,0.04); display:grid; grid-template-columns:100px 1fr; overflow:hidden;">
-        <div style="background:transparent; border-right:1px solid #e6e7e9; padding:12px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; text-align:center; gap:8px; padding-top:24px;">
-          <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/illustration-security.png" alt="Claroty" style="width:72px; height:60px; object-fit:contain; border-radius:8px;">
-          <span style="font-size:10px; color:#636363; letter-spacing:0.08em; text-transform:uppercase;">GLOBAL OT SECURITY</span>
-          <strong style="font-size:12px; font-weight:700; color:#0f0f0f; line-height:1.2;">Claroty</strong>
+      <article style="background:#fff; border-radius:18px; border:1px solid #e6e7e9; box-shadow:0 24px 40px rgba(0,0,0,0.04); display:flex; flex-direction:column; overflow:hidden;">
+        <div style="padding:24px 24px 16px; display:flex; align-items:center; gap:16px; border-bottom:1px solid #e6e7e9;">
+          <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/illustration-security.png" alt="Claroty" style="width:48px; height:48px; object-fit:contain; border-radius:8px; flex-shrink:0;">
+          <div style="display:flex; flex-direction:column; gap:2px;">
+            <span style="font-size:11px; color:#636363; letter-spacing:0.08em; text-transform:uppercase;">GLOBAL OT SECURITY</span>
+            <strong style="font-size:16px; font-weight:700; color:#0f0f0f; line-height:1.3;">Claroty</strong>
+          </div>
         </div>
-        <div style="padding:16px; display:flex; flex-direction:column; gap:12px;">
+        <div style="padding:20px 24px 24px; display:flex; flex-direction:column; gap:16px;">
           <ul style="list-style:none; padding:0; margin:0;">
             <li style="display:flex; align-items:flex-start; gap:8px; font-size:14px; line-height:1.5; color:#0f0f0f;">
-              <span style="color:#725bea; font-size:20px; line-height:1; flex-shrink:0;">•</span>
+              <span style="color:#725bea; font-size:20px; line-height:1; flex-shrink:0;">&#8226;</span>
               OT infrastructure AI with sensitive operational data encapsulated at the data layer. AI processes tasks without exposure of raw OT identifiers.
             </li>
           </ul>
@@ -66,21 +70,23 @@
         </div>
       </article>
 
-      <article style="background:#fff; border-radius:18px; border:1px solid #e6e7e9; box-shadow:0 24px 40px rgba(0,0,0,0.04); display:grid; grid-template-columns:100px 1fr; overflow:hidden;">
-        <div style="background:transparent; border-right:1px solid #e6e7e9; padding:12px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; text-align:center; gap:8px; padding-top:24px;">
-          <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/illustration-insurance.png" alt="DB Insurance, EUMC, Shin&Kim" style="width:72px; height:60px; object-fit:contain; border-radius:8px;">
-          <span style="font-size:10px; color:#636363; letter-spacing:0.08em; text-transform:uppercase;">FINANCE · HEALTH · LEGAL</span>
-          <strong style="font-size:12px; font-weight:700; color:#0f0f0f; line-height:1.2;">DB Insurance · EUMC · Shin&amp;Kim</strong>
+      <article style="background:#fff; border-radius:18px; border:1px solid #e6e7e9; box-shadow:0 24px 40px rgba(0,0,0,0.04); display:flex; flex-direction:column; overflow:hidden;">
+        <div style="padding:24px 24px 16px; display:flex; align-items:center; gap:16px; border-bottom:1px solid #e6e7e9;">
+          <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/illustration-insurance.png" alt="DB Insurance, EUMC, Shin&amp;Kim" style="width:48px; height:48px; object-fit:contain; border-radius:8px; flex-shrink:0;">
+          <div style="display:flex; flex-direction:column; gap:2px;">
+            <span style="font-size:11px; color:#636363; letter-spacing:0.08em; text-transform:uppercase;">FINANCE &middot; HEALTH &middot; LEGAL</span>
+            <strong style="font-size:16px; font-weight:700; color:#0f0f0f; line-height:1.3;">DB Insurance &middot; EUMC &middot; Shin&amp;Kim</strong>
+          </div>
         </div>
-        <div style="padding:16px; display:flex; flex-direction:column; gap:12px;">
+        <div style="padding:20px 24px 24px; display:flex; flex-direction:column; gap:16px;">
           <ul style="list-style:none; padding:0; margin:0;">
             <li style="display:flex; align-items:flex-start; gap:8px; font-size:14px; line-height:1.5; color:#0f0f0f;">
-              <span style="color:#725bea; font-size:20px; line-height:1; flex-shrink:0;">•</span>
+              <span style="color:#725bea; font-size:20px; line-height:1; flex-shrink:0;">&#8226;</span>
               Claim, clinical, and contract data encapsulated and restored during AI-assisted document workflows across Korean financial services, medical research, and legal practice.
             </li>
           </ul>
           <div>
-            <span style="display:inline-flex; padding:4px 8px; border-radius:9999px; font-size:12px; font-weight:500; background:rgba(14,130,76,0.12); color:#0e824c;">Finance · Health · Legal</span>
+            <span style="display:inline-flex; padding:4px 8px; border-radius:9999px; font-size:12px; font-weight:500; background:rgba(14,130,76,0.12); color:#0e824c;">Finance &middot; Health &middot; Legal</span>
           </div>
         </div>
       </article>
@@ -88,7 +94,7 @@
 
     <!-- KPI Band -->
     <div style="margin-top:48px;">
-      <div style="border-radius:40px; padding:48px 32px; background:linear-gradient(135deg,#1a6fe8,#0ea5a0);">
+      <div style="border-radius:40px; padding:48px 32px; background-color:#1a6fe8; background-image:url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/bg-gradient-navy-teal.png'); background-size:cover; background-position:center;">
         <div class="kpi-grid">
           <div style="text-align:center;">
             <div style="font-size:50px; font-weight:700; color:#fff; line-height:1;">98.1%</div>
