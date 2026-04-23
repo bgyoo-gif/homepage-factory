@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section 03 — Why Different</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f7f7f7; }
+    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 1023px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 767px) { .card-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<section style="width:100%; padding:80px 0; background:#ffffff; overflow:hidden;">
+  <div style="width:100%; padding:0 clamp(16px,4vw,120px); max-width:1440px; margin:0 auto;">
+
+    <div style="margin-bottom:48px; text-align:center; padding-bottom:24px; border-bottom:1px solid #e6e7e9;">
+      <h2 style="font-size:clamp(20px,3vw,40px); font-weight:700; color:#0f0f0f; line-height:1.2; margin-bottom:16px;">
+        Not masking. Not a gateway. A data layer that produces <span style="color:#725bea;">usable AI output.</span>
+      </h2>
+      <p style="font-size:18px; color:#636363; line-height:1.7; max-width:720px; margin:0 auto;">
+        Enterprise teams evaluate three approaches to using AI on sensitive data. Only one produces outputs that go directly into workflows.
+      </p>
+    </div>
+
+    <div class="card-grid">
+      <!-- Card 1 -->
+      <article style="background:#fff; border-radius:18px; border:1px solid #e6e7e9; padding:24px; display:flex; flex-direction:column; box-shadow:0 24px 40px rgba(0,0,0,0.04);">
+        <span style="display:inline-flex; width:fit-content; padding:4px 12px; border-radius:9999px; font-size:12px; font-weight:500; font-family:'Fragment Mono',monospace; text-transform:uppercase; letter-spacing:0.08em; border:1px solid #ff3030; color:#ff3030; margin-bottom:16px;">DATA MASKING</span>
+        <h3 style="font-size:24px; font-weight:700; color:#0f0f0f; line-height:1.2; margin-bottom:12px;">Permanently removes data</h3>
+        <p style="font-size:14px; color:#636363; line-height:1.7; flex:1;">Masking strips sensitive fields. AI receives incomplete input and returns outputs with [REDACTED] gaps. Manual reconstruction required. Structure broken. Usable output: no.</p>
+        <div style="margin-top:16px;">
+          <span style="display:inline-flex; padding:4px 8px; border-radius:9999px; font-size:12px; font-weight:500; background:rgba(255,48,48,0.12); color:#ff3030;">Protects data · Destroys output</span>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article style="background:#fff; border-radius:18px; border:1px solid #e6e7e9; padding:24px; display:flex; flex-direction:column; box-shadow:0 24px 40px rgba(0,0,0,0.04);">
+        <span style="display:inline-flex; width:fit-content; padding:4px 12px; border-radius:9999px; font-size:12px; font-weight:500; font-family:'Fragment Mono',monospace; text-transform:uppercase; letter-spacing:0.08em; border:1px solid #e6e7e9; color:#9c9c9c; margin-bottom:16px;">PROMPT GATEWAY</span>
+        <h3 style="font-size:24px; font-weight:700; color:#0f0f0f; line-height:1.2; margin-bottom:12px;">Filters at the API level</h3>
+        <p style="font-size:14px; color:#636363; line-height:1.7; flex:1;">Gateways scan prompts and block or strip flagged content. No document-level protection, no RAG/batch coverage, no output restoration. A filter, not a data layer.</p>
+        <div style="margin-top:16px;">
+          <span style="display:inline-flex; padding:4px 8px; border-radius:9999px; font-size:12px; font-weight:500; background:#e6e7e9; color:#636363;">Filters prompts · No restoration</span>
+        </div>
+      </article>
+
+      <!-- Card 3 highlighted -->
+      <article style="background:#fff; border-radius:18px; border:1px solid #725bea; padding:24px; display:flex; flex-direction:column; box-shadow:0 24px 40px rgba(0,0,0,0.04);">
+        <span style="display:inline-flex; width:fit-content; padding:4px 12px; border-radius:9999px; font-size:12px; font-weight:500; font-family:'Fragment Mono',monospace; text-transform:uppercase; letter-spacing:0.08em; border:1px solid #725bea; color:#725bea; margin-bottom:16px;">LLM CAPSULE</span>
+        <h3 style="font-size:24px; font-weight:700; color:#0f0f0f; line-height:1.2; margin-bottom:12px;">Encapsulates, processes, restores</h3>
+        <p style="font-size:14px; color:#636363; line-height:1.7; flex:1;">Operates at the data layer. Encapsulates sensitive entities with structure-preserving tokens. AI receives complete documents. Outputs restored with original data automatically. Enterprise-ready results.</p>
+        <div style="margin-top:16px;">
+          <span style="display:inline-flex; padding:4px 8px; border-radius:9999px; font-size:12px; font-weight:500; background:rgba(14,130,76,0.12); color:#0e824c;">Protects data · Produces usable output</span>
+        </div>
+      </article>
+    </div>
+
+    <div style="padding:16px 24px; border-top:1px solid #e6e7e9; border-bottom:1px solid #e6e7e9; background:rgba(166,23,255,0.06); font-size:14px; line-height:1.7; text-align:center; margin-top:48px;">
+      <strong>Why restoration matters:</strong> Without it, an AI summary that says '[PERSON_01] filed [ID_04] on [DATE_02]' cannot go into a report, a claim, or a legal review. Restoration maps original names, figures, and references back into AI output — making it enterprise-ready without manual work.
+      <a href="https://llmcapsule.ai/product" style="display:block; margin-top:12px; display:inline-flex; padding:8px 16px; border-radius:9999px; border:1px solid #e6e7e9; font-size:14px; font-weight:500; color:#0f0f0f; text-decoration:none;">Learn more about restoration</a>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

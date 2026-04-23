@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Section 05 — Stack</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #f7f7f7; }
+    .product-split { display: grid; grid-template-columns: 4fr 6fr; gap: 64px; align-items: stretch; margin-top: 64px; }
+    .product-split:first-of-type { margin-top: 0; }
+    .product-split-reverse { direction: rtl; }
+    .product-split-reverse > * { direction: ltr; }
+    @media (max-width: 1023px) {
+      .product-split { grid-template-columns: 1fr; gap: 32px; direction: ltr; margin-top: 32px; }
+      .product-split > * { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+<section style="width:100%; padding:80px 0; background:#ffffff; overflow:hidden;">
+  <div style="width:100%; padding:0 clamp(16px,4vw,120px); max-width:1440px; margin:0 auto;">
+
+    <div style="margin-bottom:48px; text-align:center; padding-bottom:24px; border-bottom:1px solid #e6e7e9;">
+      <h2 style="font-size:clamp(20px,3vw,40px); font-weight:700; color:#0f0f0f; line-height:1.2; margin-bottom:16px;">
+        Three products. Three blockers to <span style="color:#725bea;">enterprise AI.</span>
+      </h2>
+      <p style="font-size:18px; color:#636363; line-height:1.7; max-width:720px; margin:0 auto;">
+        Enterprise AI fails for three distinct reasons. CUBIG built a product for each one. LLM Capsule works standalone or together with DTS and SynTitan.
+      </p>
+    </div>
+
+    <!-- Product 1 -->
+    <div class="product-split">
+      <div style="border-radius:40px; overflow:hidden; background:#ececec; border:1px solid #e6e7e9; min-height:280px; display:flex; align-items:center; justify-content:center;">
+        <div style="width:100%; min-height:280px; display:flex; align-items:center; justify-content:center; color:#9c9c9c; font-size:14px; font-family:'Fragment Mono',monospace; padding:24px; text-align:center;">LLM Capsule image</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px; justify-content:center;">
+        <span style="display:inline-flex; width:fit-content; padding:4px 12px; border-radius:9999px; font-size:12px; font-weight:500; font-family:'Fragment Mono',monospace; text-transform:uppercase; letter-spacing:0.08em; border:1px solid #725bea; color:#725bea;">AI ENABLEMENT DATA LAYER</span>
+        <h3 style="font-size:24px; font-weight:700; color:#0f0f0f; line-height:1.2;"><span style="font-family:'Oxanium',sans-serif;">LLM Capsule</span></h3>
+        <p style="font-size:16px; color:#0f0f0f; line-height:1.7; font-weight:500;">Restricted Data → AI-Ready Data</p>
+        <p style="font-size:14px; color:#636363; line-height:1.7;">Sensitive enterprise data that can't be exposed to external AI. PII, regulated fields, internal identifiers, confidential content. <span style="font-family:'Oxanium',sans-serif;">LLM Capsule</span> encapsulates it locally, enables AI processing, and restores outputs. Works standalone or within <span style="font-family:'Oxanium',sans-serif;">SynTitan</span> workflows with full Release State traceability.</p>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-split product-split-reverse">
+      <div style="border-radius:40px; overflow:hidden; background:#ececec; border:1px solid #e6e7e9; min-height:280px; display:flex; align-items:center; justify-content:center;">
+        <div style="width:100%; min-height:280px; display:flex; align-items:center; justify-content:center; color:#9c9c9c; font-size:14px; font-family:'Fragment Mono',monospace; padding:24px; text-align:center;">DTS image</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px; justify-content:center;">
+        <span style="display:inline-flex; width:fit-content; padding:4px 12px; border-radius:9999px; font-size:12px; font-weight:500; font-family:'Fragment Mono',monospace; text-transform:uppercase; letter-spacing:0.08em; border:1px solid #e6e7e9; color:#9c9c9c;">SYNTHETIC DATA ENGINE</span>
+        <h3 style="font-size:24px; font-weight:700; color:#0f0f0f; line-height:1.2;"><span style="font-family:'Oxanium',sans-serif;">DTS</span></h3>
+        <p style="font-size:16px; color:#0f0f0f; line-height:1.7; font-weight:500;">Unusable Data → Privacy-Safe Datasets</p>
+        <p style="font-size:14px; color:#636363; line-height:1.7;">Insufficient, biased, or privacy-locked training data. <span style="font-family:'Oxanium',sans-serif;">DTS</span> generates privacy-safe synthetic datasets at the dataset layer for AI training and validation.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:8px;">
+          <a href="/dts" style="display:inline-flex; align-items:center; padding:8px 16px; border-radius:9999px; border:1px solid #e6e7e9; font-size:14px; font-weight:500; color:#0f0f0f; text-decoration:none; background:transparent;">Explore DTS</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-split">
+      <div style="border-radius:40px; overflow:hidden; background:#ececec; border:1px solid #e6e7e9; min-height:280px; display:flex; align-items:center; justify-content:center;">
+        <div style="width:100%; min-height:280px; display:flex; align-items:center; justify-content:center; color:#9c9c9c; font-size:14px; font-family:'Fragment Mono',monospace; padding:24px; text-align:center;">SynTitan image</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px; justify-content:center;">
+        <span style="display:inline-flex; width:fit-content; padding:4px 12px; border-radius:9999px; font-size:12px; font-weight:500; font-family:'Fragment Mono',monospace; text-transform:uppercase; letter-spacing:0.08em; border:1px solid #e6e7e9; color:#9c9c9c;">AI-READY DATA OS</span>
+        <h3 style="font-size:24px; font-weight:700; color:#0f0f0f; line-height:1.2;"><span style="font-family:'Oxanium',sans-serif;">SynTitan</span></h3>
+        <p style="font-size:16px; color:#0f0f0f; line-height:1.7; font-weight:500;">Unstable Execution → Production Stability</p>
+        <p style="font-size:14px; color:#636363; line-height:1.7;">Production AI pipelines that break when data changes. <span style="font-family:'Oxanium',sans-serif;">SynTitan</span> binds every run to a Release State — reproducible, auditable, compliant.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:8px;">
+          <a href="/syntitan" style="display:inline-flex; align-items:center; padding:8px 16px; border-radius:9999px; border:1px solid #e6e7e9; font-size:14px; font-weight:500; color:#0f0f0f; text-decoration:none; background:transparent;">Explore SynTitan</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
