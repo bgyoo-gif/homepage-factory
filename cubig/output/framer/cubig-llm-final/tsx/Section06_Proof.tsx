@@ -208,57 +208,53 @@ export default function Section06_Proof({
           border-radius: 18px;
           border: 1px solid ${P.borderDefault};
           box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
-          display: grid;
-          grid-template-columns: 100px 1fr;
-          gap: 0;
+          display: flex;
+          flex-direction: column;
           padding: 0;
           overflow: hidden;
         }
 
-        @container (max-width: 767px) {
-          .s6-case-card { grid-template-columns: 1fr; }
-          .s6-case-left { border-right: none; border-bottom: 1px solid ${P.borderDefault}; }
-        }
-
         .s6-case-left {
-          background-color: transparent;
-          border-right: 1px solid ${P.borderDefault};
-          padding: 12px;
+          padding: 24px 24px 16px;
           display: flex;
-          flex-direction: column;
           align-items: center;
-          justify-content: flex-start;
-          text-align: center;
-          gap: 8px;
-          padding-top: 24px;
+          gap: 16px;
+          border-bottom: 1px solid ${P.borderDefault};
         }
 
         .s6-case-left-image {
-          width: 72px;
-          height: 60px;
+          width: 48px;
+          height: 48px;
           object-fit: contain;
           border-radius: 8px;
+          flex-shrink: 0;
+        }
+
+        .s6-case-left-text {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
         }
 
         .s6-case-category {
-          font-size: 10px;
+          font-size: 11px;
           color: ${P.textSecondary};
           letter-spacing: 0.08em;
           text-transform: uppercase;
         }
 
         .s6-case-name {
-          font-size: 12px;
+          font-size: 16px;
           font-weight: 700;
           color: ${P.textPrimary};
-          line-height: 1.2;
+          line-height: 1.3;
         }
 
         .s6-case-right {
-          padding: 16px;
+          padding: 20px 24px 24px;
           display: flex;
           flex-direction: column;
-          gap: 12px;
+          gap: 16px;
         }
 
         .s6-bullet {
@@ -501,9 +497,11 @@ export default function Section06_Proof({
               {cases.map((c, i) => (
                 <article key={i} className="s6-case-card">
                   <div className="s6-case-left">
-                    <img src={c.img} alt={c.imgAlt} className="s6-case-left-image" width={72} height={60} />
-                    <span className="s6-case-category">{c.category}</span>
-                    <strong className="s6-case-name">{c.name}</strong>
+                    <img src={c.img} alt={c.imgAlt} className="s6-case-left-image" width={48} height={48} />
+                    <div className="s6-case-left-text">
+                      <span className="s6-case-category">{c.category}</span>
+                      <strong className="s6-case-name">{c.name}</strong>
+                    </div>
                   </div>
                   <div className="s6-case-right">
                     <ul className="s6-bullet">
