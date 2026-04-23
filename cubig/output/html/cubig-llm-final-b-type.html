@@ -228,7 +228,6 @@
       --ds-gradient-card-purple: linear-gradient(109deg, #FCD6FF 0%, #fff 17%, #FFEDFA 38%, #D48AFF 51%, #fff 73%, #FCD6FF 100%);
       --ds-gradient-card-blue:   linear-gradient(109deg, #BFE1FB 0%, #fff 17%, #FFEDFA 38%, #81B8FB 51%, #E2E3F0 73%, #BFE1FB 100%);
       --ds-gradient-card-green:  linear-gradient(109deg, #01CA51 0%, #FFEFF5 17%, #9AE6AD 43%, #C9FFE1 65%, #01CA51 84%, #01CA51 100%);
-      --ds-gradient-card-silver: linear-gradient(109deg, #898989 0%, #fff 17%, #D5D5D5 63%, #F6F5F6 84%, #898989 100%);
 
       /* Gradient Card Inner Background */
       --ds-gradient-inner-purple: linear-gradient(99deg, #F8EDFF 0%, #FCFCFE 58%, #fff 100%);
@@ -378,7 +377,7 @@
     @media (min-width: 1440px) { .ds-container { padding: 0 var(--ds-container-padding-desktop); max-width: 1440px; } }
 
     .ds-section { width: 100%; padding: var(--ds-space-4xl) 0; background-color: var(--ds-color-surface-white); }
-    .ds-section--hero { padding: 100px 0 var(--ds-space-5xl); }
+    .ds-section--hero { padding: 100px 0 var(--ds-space-5xl); background-color: var(--ds-color-surface-white); }
     .ds-section--bg-img { position: relative; background-size: cover; background-position: center; overflow: hidden; }
     .ds-section--bg-img::before { content: ''; position: absolute; inset: 0; background-color: rgba(255,255,255,0.45); z-index: 0; }
     .ds-section--bg-img > * { position: relative; z-index: 1; }
@@ -442,10 +441,10 @@
     }
 
     /* ========================================================
-       7. Hero
+       7. Hero — Screenshot [A-2]
     ======================================================== */
     .ds-hero { display: grid; grid-template-columns: 1fr; gap: var(--ds-space-lg); align-items: center; }
-    .ds-hero--text-only { max-width: 860px; }
+    .ds-hero--screenshot { text-align: center; margin: 0 auto; }
     .ds-hero__title {
       font-family: var(--ds-font-base);
       font-size: var(--ds-text-5xl);
@@ -464,13 +463,60 @@
       color: var(--ds-color-text-secondary);
       line-height: var(--ds-leading-relaxed);
       max-width: 100%;
-      margin-bottom: var(--ds-space-xl);
+      margin: 0 auto var(--ds-space-xl);
     }
     @media (min-width: 1024px) { .ds-hero__description { max-width: 720px; } }
     @media (min-width: 1440px) { .ds-hero__description { max-width: 860px; } }
-    .ds-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: var(--ds-space-lg); }
-    @media (max-width: 767px) { .ds-hero__actions { flex-direction: column; } }
-    .ds-hero__badges { display: flex; flex-wrap: wrap; gap: var(--ds-space-xs); margin-bottom: var(--ds-space-lg); }
+    .ds-hero__actions {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      justify-content: center; margin-bottom: var(--ds-space-lg);
+    }
+    @media (max-width: 767px) { .ds-hero__actions { flex-direction: column; align-items: center; } }
+    .ds-hero__badges { display: flex; flex-wrap: wrap; gap: var(--ds-space-xs); margin-bottom: var(--ds-space-lg); justify-content: center; }
+
+    /* Hero Screenshot Frame */
+    .ds-hero__screenshot-frame {
+      margin-top: var(--ds-space-2xl);
+      border-radius: var(--ds-radius-xl) var(--ds-radius-xl) 0 0;
+      padding: var(--ds-space-2xl) var(--ds-space-2xl) 0;
+      background-color: var(--ds-color-neutral-100);
+      overflow: hidden;
+    }
+    .ds-hero__screenshot {
+      overflow: hidden;
+      border-radius: var(--ds-radius-md) var(--ds-radius-md) 0 0;
+      background-color: var(--ds-color-surface-white);
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ds-hero__screenshot img { width: 100%; display: block; }
+    .ds-hero__screenshot-placeholder {
+      width: 100%;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ds-color-text-tertiary);
+      font-size: var(--ds-text-sm);
+      font-family: var(--ds-font-code);
+    }
+    @media (max-width: 767px) {
+      .ds-hero__screenshot-frame { border-radius: var(--ds-radius-lg) var(--ds-radius-lg) 0 0; padding: var(--ds-space-lg) var(--ds-space-lg) 0; }
+      .ds-hero__screenshot { min-height: 180px; }
+      .ds-hero__screenshot-placeholder { min-height: 180px; }
+    }
+    @media (min-width: 1024px) {
+      .ds-hero__screenshot { min-height: 420px; }
+      .ds-hero__screenshot-placeholder { min-height: 420px; }
+    }
+
+    /* Hero-screenshot section banner (above screenshot) */
+    .ds-hero-banner {
+      margin-top: 0;
+      margin-bottom: var(--ds-space-xl);
+    }
 
     /* ========================================================
        8. Buttons
@@ -590,7 +636,10 @@
     .ds-card--case-study .ds-card__right .ds-bullet { gap: var(--ds-space-2xs); }
     .ds-card--case-study .ds-card__right .ds-bullet__item { font-size: var(--ds-text-sm); }
     .ds-card--case-study .ds-card__tags { display: flex; flex-wrap: wrap; gap: var(--ds-space-xs); margin-top: auto; }
-    @media (max-width: 767px) { .ds-card--case-study { grid-template-columns: 1fr; } .ds-card--case-study .ds-card__left { border-right: none; border-bottom: 1px solid var(--ds-color-border-default); } }
+    @media (max-width: 767px) {
+      .ds-card--case-study { grid-template-columns: 1fr; }
+      .ds-card--case-study .ds-card__left { border-right: none; border-bottom: 1px solid var(--ds-color-border-default); }
+    }
 
     /* ========================================================
        13. Bullet List
@@ -780,6 +829,33 @@
       .ds-step-tabs__panel--active { gap: var(--ds-space-lg); }
     }
 
+    /* Step Tab Image Panel */
+    .ds-step-tabs__image-frame {
+      border-radius: var(--ds-radius-md);
+      overflow: hidden;
+      background-color: var(--ds-color-neutral-100);
+      border: 1px solid var(--ds-color-border-default);
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ds-step-tabs__image-frame img { width: 100%; display: block; }
+    .ds-step-tabs__image-placeholder {
+      width: 100%;
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ds-color-text-tertiary);
+      font-size: var(--ds-text-sm);
+      font-family: var(--ds-font-code);
+    }
+    @media (min-width: 1024px) {
+      .ds-step-tabs__image-frame { min-height: 340px; }
+      .ds-step-tabs__image-placeholder { min-height: 340px; }
+    }
+
     /* ========================================================
        18. Code Block
     ======================================================== */
@@ -823,15 +899,82 @@
     .ds-card--gradient .ds-card__description { font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary); line-height: var(--ds-leading-relaxed); margin-bottom: var(--ds-space-lg); }
     .ds-card--gradient .ds-card__button { margin-top: auto; }
 
-    .ds-card-grid--gradient { display: grid; grid-template-columns: 1fr; gap: 24px; }
-    .ds-card-grid--row2 { margin-top: var(--ds-space-lg); }
-    .ds-proof-kpi-wrap { margin-top: var(--ds-space-2xl); }
-    .ds-proof-cert-wrap { margin-top: var(--ds-space-2xl); }
-    .ds-ac-body-link { margin-top: var(--ds-space-sm); }
-    .ds-hero-banner { margin-top: 0; margin-bottom: var(--ds-space-xl); }
+    /* ========================================================
+       20. Product Split [C]
+    ======================================================== */
+    .ds-product-split {
+      display: grid;
+      grid-template-columns: 4fr 6fr;
+      gap: 64px;
+      align-items: stretch;
+    }
+    .ds-product-split--reverse { direction: rtl; }
+    .ds-product-split--reverse > * { direction: ltr; }
+    .ds-product-split__visual {
+      border-radius: var(--ds-radius-xl);
+      overflow: hidden;
+      background-color: var(--ds-color-neutral-100);
+      border: 1px solid var(--ds-color-border-default);
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ds-product-split__visual img { width: 100%; display: block; }
+    .ds-product-split__visual-placeholder {
+      width: 100%;
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ds-color-text-tertiary);
+      font-size: var(--ds-text-sm);
+      font-family: var(--ds-font-code);
+      padding: var(--ds-space-lg);
+      text-align: center;
+    }
+    .ds-product-split__content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: center;
+    }
+    .ds-product-split__badge {
+      display: inline-flex; align-items: center; width: fit-content;
+      padding: 4px 12px; border-radius: var(--ds-radius-pill);
+      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-medium);
+      font-family: var(--ds-font-code); text-transform: uppercase;
+      letter-spacing: var(--ds-tracking-wide);
+      border: 1px solid currentColor;
+    }
+    .ds-product-split__badge--brand { color: var(--ds-color-brand-purple); border-color: var(--ds-color-brand-purple); }
+    .ds-product-split__badge--gray  { color: var(--ds-color-text-tertiary); border-color: var(--ds-color-border-default); }
+    .ds-product-split__title {
+      font-family: var(--ds-font-base); font-size: var(--ds-text-2xl); font-weight: var(--ds-weight-bold);
+      color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight);
+    }
+    .ds-product-split__lead {
+      font-size: var(--ds-text-md); color: var(--ds-color-text-primary);
+      line-height: var(--ds-leading-relaxed); font-weight: var(--ds-weight-medium);
+      word-break: keep-all; overflow-wrap: break-word;
+    }
+    .ds-product-split__body {
+      font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary);
+      line-height: var(--ds-leading-relaxed);
+      word-break: keep-all; overflow-wrap: break-word;
+    }
+    .ds-product-split__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: var(--ds-space-sm); }
+    .ds-product-split + .ds-product-split { margin-top: var(--ds-space-3xl); }
+
+    @media (max-width: 1023px) {
+      .ds-product-split { grid-template-columns: 1fr; gap: 32px; }
+      .ds-product-split--reverse { direction: ltr; }
+      .ds-product-split__visual { min-height: 200px; }
+      .ds-product-split__visual-placeholder { min-height: 200px; }
+    }
 
     /* ========================================================
-       20. CTA Band
+       21. CTA Band
     ======================================================== */
     .ds-cta-band {
       width: 100%; position: relative; overflow: hidden;
@@ -865,7 +1008,7 @@
     .ds-cta-band__actions .ds-btn { background-color: rgba(255,255,255,0.92); color: var(--ds-color-text-primary); border: 1px solid rgba(255,255,255,0.6); backdrop-filter: blur(8px); }
     .ds-cta-band__actions .ds-btn:hover { background-color: var(--ds-color-white); }
     @media (min-width: 768px)  { .ds-cta-band { padding: 100px var(--ds-container-padding-tablet); } }
-    @media (min-width: 1440px) { .ds-cta-band { padding: 120px var(--ds-container-padding-desktop); max-width: 1440px; margin: 0 auto; .ds-cta-band__title { font-size: var(--ds-text-6xl); } } }
+    @media (min-width: 1440px) { .ds-cta-band { padding: 120px var(--ds-container-padding-desktop); max-width: 1440px; margin: 0 auto; } }
     @media (max-width: 767px) {
       .ds-cta-band__title { font-size: var(--ds-text-4xl); }
       .ds-cta-band__actions { flex-direction: column; align-items: center; }
@@ -874,14 +1017,11 @@
     @media (min-width: 1440px) { .ds-cta-band__title { font-size: var(--ds-text-6xl); } }
 
     /* ========================================================
-       21. Section-specific: KPI band actions
+       22. Section-specific helpers
     ======================================================== */
     .ds-kpi-band-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--ds-space-sm); margin-top: var(--ds-space-xl); }
     @media (max-width: 767px) { .ds-kpi-band-actions { flex-direction: column; align-items: center; } }
 
-    /* ========================================================
-       22. Section 4 — icon wrapper for capability cards
-    ======================================================== */
     .ds-card__icon-wrap {
       width: 40px; height: 40px; border-radius: var(--ds-radius-sm);
       background-color: var(--ds-color-surface-light);
@@ -890,6 +1030,11 @@
       margin-bottom: var(--ds-space-sm); flex-shrink: 0;
     }
 
+    .ds-card-grid--row2 { margin-top: var(--ds-space-lg); }
+    .ds-proof-kpi-wrap { margin-top: var(--ds-space-2xl); }
+    .ds-proof-cert-wrap { margin-top: var(--ds-space-2xl); }
+    .ds-ac-body-link { margin-top: var(--ds-space-sm); }
+
     /* ========================================================
        23. Mobile bg image suppression
     ======================================================== */
@@ -897,7 +1042,6 @@
       .ds-section--bg-img { background-image: none; }
       .ds-section--bg-img::before { display: none; }
     }
-
   </style>
 </head>
 <body>
@@ -921,11 +1065,11 @@
   <main>
 
     <!-- ====================================================
-         SECTION 1: Hero — Text-only [A]
+         SECTION 1: Hero — Screenshot [A-2]
     ===================================================== -->
     <section class="ds-section ds-section--hero" id="section-hero">
       <div class="ds-container">
-        <div class="ds-hero ds-hero--text-only">
+        <div class="ds-hero ds-hero--screenshot">
           <h1 class="ds-hero__title">
             Use any AI on sensitive enterprise data. Get <span class="ds-text--brand">usable results back.</span>
           </h1>
@@ -945,6 +1089,13 @@
             <span class="ds-badge ds-badge--success">ISO 42001</span>
             <span class="ds-badge ds-badge--success">GDPR / HIPAA</span>
             <span class="ds-badge ds-badge--purple">AWS Marketplace</span>
+          </div>
+        </div>
+
+        <!-- Screenshot Frame -->
+        <div class="ds-hero__screenshot-frame">
+          <div class="ds-hero__screenshot">
+            <img src="" alt="LLM Capsule product screenshot" width="1200" height="700" aria-label="Product screenshot placeholder — image to be added">
           </div>
         </div>
       </div>
@@ -984,10 +1135,8 @@
               <h3 class="ds-step-tabs__title">Original data</h3>
               <p class="ds-step-tabs__description">Enterprise documents contain sensitive data — names, IDs, dates, regulated fields — that cannot be exposed to external AI services.</p>
             </div>
-            <div>
-              <div class="ds-code-block" aria-label="Original document with sensitive PII">
-                <pre><code>Summarize the claim by <span class="ds-code--remove">John Martinez</span> (ID: <span class="ds-code--remove">P-8847211</span>) on <span class="ds-code--remove">March 3, 2025</span>.</code></pre>
-              </div>
+            <div class="ds-step-tabs__image-frame" aria-label="Step 1 — Your Document">
+              <img src="" alt="Step 1: Original document with sensitive PII" width="700" height="340">
             </div>
           </div>
 
@@ -997,10 +1146,8 @@
               <h3 class="ds-step-tabs__title">Encapsulated</h3>
               <p class="ds-step-tabs__description">Sensitive entities replaced with structure-preserving tokens. Document structure intact. Raw data never leaves your environment.</p>
             </div>
-            <div>
-              <div class="ds-code-block" aria-label="Encapsulated document with tokens">
-                <pre><code>Summarize the claim by <span class="ds-code--brand">[PERSON_01]</span> (ID: <span class="ds-code--brand">[ID_01]</span>) on <span class="ds-code--brand">[DATE_01]</span>.</code></pre>
-              </div>
+            <div class="ds-step-tabs__image-frame" aria-label="Step 2 — Encapsulated">
+              <img src="" alt="Step 2: Encapsulated document with structure-preserving tokens" width="700" height="340">
             </div>
           </div>
 
@@ -1010,10 +1157,8 @@
               <h3 class="ds-step-tabs__title">Restored</h3>
               <p class="ds-step-tabs__description">AI output restored with original names, figures, dates. Goes directly into reports, claims, legal reviews — no manual reconstruction.</p>
             </div>
-            <div>
-              <div class="ds-code-block" aria-label="Restored output with original data">
-                <pre><code>The claim by <span class="ds-code--add">John Martinez</span> on <span class="ds-code--add">March 3, 2025</span> relates to a respiratory condition. Pending review.</code></pre>
-              </div>
+            <div class="ds-step-tabs__image-frame" aria-label="Step 3 — Usable Output">
+              <img src="" alt="Step 3: Restored output with original data mapped back" width="700" height="340">
             </div>
           </div>
         </div>
@@ -1081,7 +1226,7 @@
           <h2 class="ds-section-header__title">
             Five capabilities for <span class="ds-text--brand">enterprise AI enablement.</span>
           </h2>
-          <p class="ds-section-header__description">Three core enablement capabilities, plus structure-preserving processing and cross-model execution.</p>
+          <p class="ds-section-header__description">Three core enablement capabilities, plus structure-preserving processing and enterprise environment execution.</p>
         </div>
 
         <!-- Row 1: 3col -->
@@ -1090,7 +1235,7 @@
           <article class="ds-card">
             <span class="ds-card__badge ds-card__badge--brand">CORE 1</span>
             <div class="ds-card__icon-wrap" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 <polyline points="9 12 11 14 15 10"/>
               </svg>
@@ -1103,7 +1248,7 @@
           <article class="ds-card">
             <span class="ds-card__badge ds-card__badge--brand">CORE 2</span>
             <div class="ds-card__icon-wrap" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="23 4 23 10 17 10"/>
                 <polyline points="1 20 1 14 7 14"/>
                 <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
@@ -1117,7 +1262,7 @@
           <article class="ds-card">
             <span class="ds-card__badge ds-card__badge--brand">CORE 3</span>
             <div class="ds-card__icon-wrap" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="3"/>
                 <path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M19.07 19.07l-1.41-1.41M4.93 19.07l1.41-1.41M12 2v2M12 20v2M2 12h2M20 12h2"/>
               </svg>
@@ -1133,7 +1278,7 @@
           <article class="ds-card">
             <span class="ds-card__badge ds-card__badge--gray">+1</span>
             <div class="ds-card__icon-wrap" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="2 3 22 3 22 8 2 8 2 3"/>
                 <polygon points="2 9 22 9 22 14 2 14 2 9"/>
                 <polygon points="2 15 22 15 22 20 2 20 2 15"/>
@@ -1143,26 +1288,26 @@
             <p class="ds-card__description">Tables, cross-references, document layouts stay intact through encapsulation. AI receives structurally complete input across PDFs, Word documents, spreadsheets, and mixed formats.</p>
           </article>
 
-          <!-- Card 5 -->
+          <!-- Card 5 — Enterprise Environment Execution (updated) -->
           <article class="ds-card">
             <span class="ds-card__badge ds-card__badge--gray">+2</span>
             <div class="ds-card__icon-wrap" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="16 3 21 3 21 8"/>
-                <line x1="4" y1="20" x2="21" y2="3"/>
-                <polyline points="21 16 21 21 16 21"/>
-                <line x1="15" y1="15" x2="21" y2="21"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                <line x1="6" y1="6" x2="6.01" y2="6"/>
+                <line x1="6" y1="18" x2="6.01" y2="18"/>
               </svg>
             </div>
-            <h3 class="ds-card__title">Cross-Model Execution</h3>
-            <p class="ds-card__description">Model-agnostic. ChatGPT, Claude, Gemini, Perplexity, or any API. Protection stays consistent regardless of which model or provider you choose. No vendor lock-in.</p>
+            <h3 class="ds-card__title">Enterprise Environment Execution</h3>
+            <p class="ds-card__description">Runs inside your existing infrastructure. Air-gapped networks, on-premise servers, custom data systems — no architectural changes required.</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- ====================================================
-         SECTION 5: CUBIG Stack Positioning — Gradient Cards [V-2]
+         SECTION 5: CUBIG Stack Positioning — Product Split [C]
     ===================================================== -->
     <section class="ds-section" id="section-stack">
       <div class="ds-container">
@@ -1173,40 +1318,47 @@
           <p class="ds-section-header__description">Enterprise AI fails for three distinct reasons. CUBIG built a product for each one. LLM Capsule works standalone or together with DTS and SynTitan.</p>
         </div>
 
-        <div class="ds-card-grid--gradient">
-          <!-- Card 1: LLM Capsule -->
-          <div class="ds-card--gradient ds-card--gradient-purple">
-            <div class="ds-card--gradient__inner">
-              <span class="ds-card__badge ds-card__badge--brand">AI ENABLEMENT DATA LAYER</span>
-              <h3 class="ds-card__title"><span class="ds-text--product">LLM Capsule</span></h3>
-              <p class="ds-card__subtitle">Restricted Data → AI-Ready Data</p>
-              <p class="ds-card__description">Sensitive enterprise data that can't be exposed to external AI. PII, regulated fields, internal identifiers, confidential content. <span class="ds-text--product">LLM Capsule</span> encapsulates it locally, enables AI processing, and restores outputs. Works standalone or within <span class="ds-text--product">SynTitan</span> workflows with full Release State traceability.</p>
+        <!-- Product 1: LLM Capsule -->
+        <div class="ds-product-split">
+          <div class="ds-product-split__visual">
+            <img src="" alt="LLM Capsule product visual" width="480" height="340">
+          </div>
+          <div class="ds-product-split__content">
+            <span class="ds-product-split__badge ds-product-split__badge--brand">AI ENABLEMENT DATA LAYER</span>
+            <h3 class="ds-product-split__title"><span class="ds-text--product">LLM Capsule</span></h3>
+            <p class="ds-product-split__lead">Restricted Data → AI-Ready Data</p>
+            <p class="ds-product-split__body">Sensitive enterprise data that can't be exposed to external AI. PII, regulated fields, internal identifiers, confidential content. <span class="ds-text--product">LLM Capsule</span> encapsulates it locally, enables AI processing, and restores outputs. Works standalone or within <span class="ds-text--product">SynTitan</span> workflows with full Release State traceability.</p>
+          </div>
+        </div>
+
+        <!-- Product 2: DTS -->
+        <div class="ds-product-split ds-product-split--reverse">
+          <div class="ds-product-split__visual">
+            <img src="" alt="DTS product visual" width="480" height="340">
+          </div>
+          <div class="ds-product-split__content">
+            <span class="ds-product-split__badge ds-product-split__badge--gray">SYNTHETIC DATA ENGINE</span>
+            <h3 class="ds-product-split__title"><span class="ds-text--product">DTS</span></h3>
+            <p class="ds-product-split__lead">Unusable Data → Privacy-Safe Datasets</p>
+            <p class="ds-product-split__body">Insufficient, biased, or privacy-locked training data. <span class="ds-text--product">DTS</span> generates privacy-safe synthetic datasets at the dataset layer for AI training and validation.</p>
+            <div class="ds-product-split__actions">
+              <a href="/dts" class="ds-btn ds-btn--secondary ds-btn--sm">Explore DTS</a>
             </div>
           </div>
+        </div>
 
-          <!-- Card 2: DTS -->
-          <div class="ds-card--gradient ds-card--gradient-green">
-            <div class="ds-card--gradient__inner">
-              <span class="ds-card__badge ds-card__badge--gray">SYNTHETIC DATA ENGINE</span>
-              <h3 class="ds-card__title"><span class="ds-text--product">DTS</span></h3>
-              <p class="ds-card__subtitle">Unusable Data → Privacy-Safe Datasets</p>
-              <p class="ds-card__description">Insufficient, biased, or privacy-locked training data. <span class="ds-text--product">DTS</span> generates privacy-safe synthetic datasets at the dataset layer for AI training and validation.</p>
-              <div class="ds-card__button">
-                <a href="/dts" class="ds-btn ds-btn--secondary ds-btn--sm">Explore DTS</a>
-              </div>
-            </div>
+        <!-- Product 3: SynTitan -->
+        <div class="ds-product-split">
+          <div class="ds-product-split__visual">
+            <img src="" alt="SynTitan product visual" width="480" height="340">
           </div>
-
-          <!-- Card 3: SynTitan -->
-          <div class="ds-card--gradient ds-card--gradient-blue">
-            <div class="ds-card--gradient__inner">
-              <span class="ds-card__badge ds-card__badge--gray">AI-READY DATA OS</span>
-              <h3 class="ds-card__title"><span class="ds-text--product">SynTitan</span></h3>
-              <p class="ds-card__subtitle">Unstable Execution → Production Stability</p>
-              <p class="ds-card__description">Production AI pipelines that break when data changes. <span class="ds-text--product">SynTitan</span> binds every run to a Release State — reproducible, auditable, compliant.</p>
-              <div class="ds-card__button">
-                <a href="/syntitan" class="ds-btn ds-btn--secondary ds-btn--sm">Explore SynTitan</a>
-              </div>
+          <div class="ds-product-split__content">
+            <span class="ds-product-split__badge ds-product-split__badge--gray">AI-READY DATA OS</span>
+            <h3 class="ds-product-split__title"><span class="ds-text--product">SynTitan</span></h3>
+            <p class="ds-product-split__lead">Unstable Execution → Production Stability</p>
+            <p class="ds-product-split__body">Production AI pipelines that break when data changes. <span class="ds-text--product">SynTitan</span> binds every run to a Release State — reproducible, auditable, compliant.</p>
+            <div class="ds-product-split__actions">
+              <a href="/syntitan" class="ds-btn ds-btn--secondary ds-btn--sm">Explore SynTitan</a>
             </div>
           </div>
         </div>
@@ -1252,7 +1404,7 @@
           <!-- Case 2: Claroty -->
           <article class="ds-card ds-card--case-study">
             <div class="ds-card__left">
-              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/graphic-security.png"
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/illustration-security.png"
                    alt="Claroty — Global OT Security"
                    class="ds-card__left-image"
                    width="72" height="60">
@@ -1275,8 +1427,8 @@
           <!-- Case 3: DB Insurance · EUMC · Shin&Kim -->
           <article class="ds-card ds-card--case-study">
             <div class="ds-card__left">
-              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/graphic-insurance.png"
-                   alt="DB Insurance, EUMC, Shin&Kim — Finance, Health, Legal"
+              <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/illustration-insurance.png"
+                   alt="DB Insurance, EUMC, Shin&amp;Kim — Finance, Health, Legal"
                    class="ds-card__left-image"
                    width="72" height="60">
               <span class="ds-card__left-category">FINANCE · HEALTH · LEGAL</span>
@@ -1380,7 +1532,7 @@
                 <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/cert-kisa.png" alt="KISA logo" class="ds-cert-card__logo" width="60" height="60">
               </div>
 
-              <!-- Duplicate for infinite scroll -->
+              <!-- Duplicate set for infinite scroll -->
               <div class="ds-cert-card">
                 <span class="ds-cert-card__group">Certifications</span>
                 <div class="ds-cert-card__wreath">
