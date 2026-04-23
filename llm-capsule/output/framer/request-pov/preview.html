@@ -219,61 +219,6 @@
       font-size: 12px; font-weight: 500; line-height: 1.5;
     }
 
-    /* ─────────────────────────────────────────────────────────
-       Section 3: CTA Band
-    ───────────────────────────────────────────────────────── */
-    .rpov-cta-band {
-      width: 100%; position: relative; overflow: hidden;
-      padding: 80px 16px; text-align: center;
-      background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
-    }
-    .rpov-cta-band::before {
-      content: ''; position: absolute; inset: 0;
-      background-color: rgba(0,0,0,0.15); z-index: 0;
-    }
-    .rpov-cta-band > * { position: relative; z-index: 1; }
-    @media (min-width: 768px)  { .rpov-cta-band { padding: 100px 32px; } }
-    @media (min-width: 1440px) { .rpov-cta-band { padding: 120px 120px; } }
-
-    .rpov-cta-band__inner {
-      max-width: 100%; margin: 0 auto;
-      display: flex; flex-direction: column; align-items: center; gap: 24px;
-    }
-    @media (min-width: 1024px) { .rpov-cta-band__inner { max-width: 720px; } }
-    @media (min-width: 1440px) { .rpov-cta-band__inner { max-width: 1080px; } }
-
-    .rpov-cta-band__title {
-      font-size: 40px; font-weight: 700;
-      color: #ffffff; line-height: 1.2;
-      letter-spacing: -0.5px; margin: 0;
-    }
-    @media (max-width: 767px) { .rpov-cta-band__title { font-size: 36px; } }
-    @media (min-width: 1440px) { .rpov-cta-band__title { font-size: 50px; } }
-
-    .rpov-cta-band__description {
-      font-size: 18px; color: rgba(255,255,255,0.85);
-      line-height: 1.7; margin: 0;
-    }
-    .rpov-cta-band__actions {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
-    }
-    .rpov-cta-band__actions .rpov-btn {
-      background-color: rgba(255,255,255,0.92);
-      color: #0f0f0f;
-      border: 1px solid rgba(255,255,255,0.6);
-      backdrop-filter: blur(8px);
-      width: auto;
-    }
-    .rpov-cta-band__actions .rpov-btn:hover { background-color: #ffffff; }
-    .rpov-cta-band__footnote {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 32px;
-      font-size: 14px;
-    }
-    .rpov-cta-band__footnote a {
-      color: rgba(255,255,255,0.85); transition: color 0.2s;
-      display: inline-flex; align-items: center; gap: 8px;
-    }
-    .rpov-cta-band__footnote a:hover { color: #ffffff; }
   </style>
 </head>
 <body>
@@ -429,31 +374,6 @@
           </form>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       Section 3: CTA Band
-  ============================================================ -->
-  <section id="section-cta" class="rpov-cta-band" aria-label="Call to action">
-    <div class="rpov-cta-band__inner">
-      <h2 class="rpov-cta-band__title">
-        See how <span class="rpov-text--product">LLM Capsule</span> works with your data
-      </h2>
-      <p class="rpov-cta-band__description">Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</p>
-      <div class="rpov-cta-band__actions">
-        <a href="request-pov.html" class="rpov-btn rpov-btn--md">Request a Demo</a>
-      </div>
-      <div class="rpov-cta-band__footnote">
-        <a href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener">
-          <svg class="rpov-icon rpov-icon--sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-            <polyline points="15 3 21 3 21 9"/>
-            <line x1="10" y1="14" x2="21" y2="3"/>
-          </svg>
-          Available on AWS Marketplace
-        </a>
       </div>
     </div>
   </section>

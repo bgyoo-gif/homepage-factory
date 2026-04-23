@@ -109,14 +109,6 @@ interface Props {
   formUseCasePlaceholder?: string
   formSubmitLabel?: string
   formFootnote?: string
-
-  // CTA Band
-  ctaTitle?: string
-  ctaDescription?: string
-  ctaBtn1Label?: string
-  ctaBtn1Href?: string
-  ctaFootnote2Label?: string
-  ctaFootnote2Href?: string
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────────
@@ -166,14 +158,6 @@ export default function RequestPov({
   formUseCasePlaceholder = "Describe your primary AI use case and the types of documents you need to process.",
   formSubmitLabel = "Submit Request",
   formFootnote = "We respond to all PoV requests within 1 business day.",
-
-  // CTA Band
-  ctaTitle = "See how LLM Capsule works with your data",
-  ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
-  ctaBtn1Label = "Request a Demo",
-  ctaBtn1Href = "/request-a-demo",
-  ctaFootnote2Label = "Available on AWS Marketplace",
-  ctaFootnote2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
 }: Props) {
   const [activeTab, setActiveTab] = useState(1)
 
@@ -469,62 +453,6 @@ export default function RequestPov({
           line-height: 1.5;
         }
 
-        /* ─────────────────────────────────────────────────────────
-           Section 3: CTA Band
-        ───────────────────────────────────────────────────────── */
-        .rpov-cta-band {
-          width: 100%; position: relative; overflow: hidden;
-          padding: 80px 16px; text-align: center;
-          background: ${P.gradientBrand};
-        }
-        .rpov-cta-band::before {
-          content: ''; position: absolute; inset: 0;
-          background-color: rgba(0,0,0,0.15); z-index: 0;
-        }
-        .rpov-cta-band > * { position: relative; z-index: 1; }
-        @container (min-width: 768px)  { .rpov-cta-band { padding: 100px 32px; } }
-        @container (min-width: 1440px) { .rpov-cta-band { padding: 120px 120px; } }
-
-        .rpov-cta-band__inner {
-          max-width: 100%; margin: 0 auto;
-          display: flex; flex-direction: column; align-items: center; gap: 24px;
-        }
-        @container (min-width: 1024px) { .rpov-cta-band__inner { max-width: 720px; } }
-        @container (min-width: 1440px) { .rpov-cta-band__inner { max-width: 1080px; } }
-
-        .rpov-cta-band__title {
-          font-family: "DM Sans", sans-serif;
-          font-size: 40px; font-weight: 700;
-          color: ${P.white}; line-height: 1.2;
-          letter-spacing: -0.5px; margin: 0;
-        }
-        @container (max-width: 767px) { .rpov-cta-band__title { font-size: 36px; } }
-        @container (min-width: 1440px) { .rpov-cta-band__title { font-size: 50px; } }
-
-        .rpov-cta-band__description {
-          font-size: 18px; color: rgba(255,255,255,0.85);
-          line-height: 1.7; margin: 0;
-        }
-        .rpov-cta-band__actions {
-          display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
-        }
-        .rpov-cta-band__actions .rpov-btn {
-          background-color: rgba(255,255,255,0.92);
-          color: ${P.textPrimary};
-          border: 1px solid rgba(255,255,255,0.6);
-          backdrop-filter: blur(8px);
-          width: auto;
-        }
-        .rpov-cta-band__actions .rpov-btn:hover { background-color: ${P.white}; }
-        .rpov-cta-band__footnote {
-          display: flex; flex-wrap: wrap; justify-content: center; gap: 32px;
-          font-size: 14px;
-        }
-        .rpov-cta-band__footnote a {
-          color: rgba(255,255,255,0.85); transition: color 0.2s;
-          display: inline-flex; align-items: center; gap: 8px;
-        }
-        .rpov-cta-band__footnote a:hover { color: ${P.white}; }
       `}</style>
 
       <div className="rpov-root">
@@ -685,29 +613,6 @@ export default function RequestPov({
               </div>
             </section>
 
-            {/* ─── Section 3: CTA Band ─────────────────────────────────── */}
-            <section id="section-cta" className="rpov-cta-band" aria-label="Call to action">
-              <div className="rpov-cta-band__inner">
-                <h2 className="rpov-cta-band__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
-                  {ctaTitle}
-                </h2>
-                <p className="rpov-cta-band__description">{ctaDescription}</p>
-                <div className="rpov-cta-band__actions">
-                  <a href={ctaBtn1Href} className="rpov-btn rpov-btn--md">{ctaBtn1Label}</a>
-                </div>
-                <div className="rpov-cta-band__footnote">
-                  <a href={ctaFootnote2Href} target="_blank" rel="noopener">
-                    <svg className="rpov-icon rpov-icon--sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                      <polyline points="15 3 21 3 21 9"/>
-                      <line x1="10" y1="14" x2="21" y2="3"/>
-                    </svg>
-                    {ctaFootnote2Label}
-                  </a>
-                </div>
-              </div>
-            </section>
-
           </main>
         </div>
       </div>
@@ -822,21 +727,4 @@ addPropertyControls(RequestPov, {
     title: "Form Footnote",
     defaultValue: "We respond to all PoV requests within 1 business day.",
   },
-
-  // CTA Band
-  ctaTitle: {
-    type: ControlType.String,
-    title: "CTA Title",
-    defaultValue: "See how LLM Capsule works with your data",
-  },
-  ctaDescription: {
-    type: ControlType.String,
-    title: "CTA Description",
-    defaultValue: "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
-    displayTextArea: true,
-  },
-  ctaBtn1Label: { type: ControlType.String, title: "CTA Btn 1 Label", defaultValue: "Request a Demo" },
-  ctaBtn1Href:  { type: ControlType.String, title: "CTA Btn 1 URL",   defaultValue: "/request-a-demo" },
-  ctaFootnote2Label: { type: ControlType.String, title: "CTA Footnote 2 Label", defaultValue: "Available on AWS Marketplace" },
-  ctaFootnote2Href:  { type: ControlType.String, title: "CTA Footnote 2 URL",   defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
 })
