@@ -201,19 +201,11 @@ export default function Section06_Proof({
 
         .s6-brand { color: ${P.brandPurple}; }
 
-        /* Case Study Grid */
+        /* Case Study List (1-col) */
         .s6-case-grid {
-          display: grid;
-          grid-template-columns: 1fr;
+          display: flex;
+          flex-direction: column;
           gap: 24px;
-        }
-
-        @container (min-width: 768px) {
-          .s6-case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        }
-
-        @container (min-width: 1024px) {
-          .s6-case-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
 
         .s6-case-card {
@@ -222,17 +214,32 @@ export default function Section06_Proof({
           border: 1px solid ${P.borderDefault};
           box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           padding: 0;
           overflow: hidden;
         }
 
+        @container (max-width: 767px) {
+          .s6-case-card { flex-direction: column; }
+        }
+
         .s6-case-left {
-          padding: 24px 24px 16px;
+          padding: 32px;
           display: flex;
           align-items: center;
-          gap: 16px;
-          border-bottom: 1px solid ${P.borderDefault};
+          gap: 20px;
+          border-right: 1px solid ${P.borderDefault};
+          flex-shrink: 0;
+          min-width: 280px;
+        }
+
+        @container (max-width: 767px) {
+          .s6-case-left {
+            border-right: none;
+            border-bottom: 1px solid ${P.borderDefault};
+            min-width: 0;
+            padding: 24px;
+          }
         }
 
         .s6-case-left-image {
@@ -246,7 +253,7 @@ export default function Section06_Proof({
         .s6-case-left-text {
           display: flex;
           flex-direction: column;
-          gap: 2px;
+          gap: 4px;
         }
 
         .s6-case-category {
@@ -257,17 +264,23 @@ export default function Section06_Proof({
         }
 
         .s6-case-name {
-          font-size: 16px;
+          font-size: 18px;
           font-weight: 700;
           color: ${P.textPrimary};
           line-height: 1.3;
         }
 
         .s6-case-right {
-          padding: 20px 24px 24px;
+          padding: 32px;
           display: flex;
           flex-direction: column;
           gap: 16px;
+          flex: 1;
+          justify-content: center;
+        }
+
+        @container (max-width: 767px) {
+          .s6-case-right { padding: 24px; }
         }
 
         .s6-bullet {

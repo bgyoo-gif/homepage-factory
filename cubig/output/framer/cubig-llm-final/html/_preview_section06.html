@@ -8,10 +8,11 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: "DM Sans", sans-serif; background: #f7f7f7; }
-    .case-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    .case-grid { display: flex; flex-direction: column; gap: 24px; }
+    .case-card { display: flex; flex-direction: row; }
     .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
-    @media (max-width: 1023px) { .case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 767px) { .case-grid, .kpi-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 1023px) { .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 767px) { .case-card { flex-direction: column; } .kpi-grid { grid-template-columns: 1fr; } }
     @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   </style>
 </head>
@@ -26,17 +27,17 @@
       </h2>
     </div>
 
-    <!-- Case Studies -->
+    <!-- Case Studies (1-col) -->
     <div class="case-grid">
-      <article style="background:#fff; border-radius:18px; border:1px solid #e6e7e9; box-shadow:0 24px 40px rgba(0,0,0,0.04); display:flex; flex-direction:column; overflow:hidden;">
-        <div style="padding:24px 24px 16px; display:flex; align-items:center; gap:16px; border-bottom:1px solid #e6e7e9;">
+      <article class="case-card" style="background:#fff; border-radius:18px; border:1px solid #e6e7e9; box-shadow:0 24px 40px rgba(0,0,0,0.04); overflow:hidden;">
+        <div style="padding:32px; display:flex; align-items:center; gap:20px; border-right:1px solid #e6e7e9; flex-shrink:0; min-width:280px;">
           <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/illustration-security.png" alt="Deutsche Telekom" style="width:72px; height:72px; object-fit:contain; border-radius:12px; flex-shrink:0;">
-          <div style="display:flex; flex-direction:column; gap:2px;">
+          <div style="display:flex; flex-direction:column; gap:4px;">
             <span style="font-size:11px; color:#636363; letter-spacing:0.08em; text-transform:uppercase;">GLOBAL TELCO</span>
-            <strong style="font-size:16px; font-weight:700; color:#0f0f0f; line-height:1.3;">Deutsche Telekom</strong>
+            <strong style="font-size:18px; font-weight:700; color:#0f0f0f; line-height:1.3;">Deutsche Telekom</strong>
           </div>
         </div>
-        <div style="padding:20px 24px 24px; display:flex; flex-direction:column; gap:16px;">
+        <div style="padding:32px; display:flex; flex-direction:column; gap:16px; flex:1; justify-content:center;">
           <ul style="list-style:none; padding:0; margin:0;">
             <li style="display:flex; align-items:flex-start; gap:8px; font-size:14px; line-height:1.5; color:#0f0f0f;">
               <span style="color:#725bea; font-size:20px; line-height:1; flex-shrink:0;">&#8226;</span>
@@ -49,15 +50,15 @@
         </div>
       </article>
 
-      <article style="background:#fff; border-radius:18px; border:1px solid #e6e7e9; box-shadow:0 24px 40px rgba(0,0,0,0.04); display:flex; flex-direction:column; overflow:hidden;">
-        <div style="padding:24px 24px 16px; display:flex; align-items:center; gap:16px; border-bottom:1px solid #e6e7e9;">
+      <article class="case-card" style="background:#fff; border-radius:18px; border:1px solid #e6e7e9; box-shadow:0 24px 40px rgba(0,0,0,0.04); overflow:hidden;">
+        <div style="padding:32px; display:flex; align-items:center; gap:20px; border-right:1px solid #e6e7e9; flex-shrink:0; min-width:280px;">
           <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/illustration-security.png" alt="Claroty" style="width:72px; height:72px; object-fit:contain; border-radius:12px; flex-shrink:0;">
-          <div style="display:flex; flex-direction:column; gap:2px;">
+          <div style="display:flex; flex-direction:column; gap:4px;">
             <span style="font-size:11px; color:#636363; letter-spacing:0.08em; text-transform:uppercase;">GLOBAL OT SECURITY</span>
-            <strong style="font-size:16px; font-weight:700; color:#0f0f0f; line-height:1.3;">Claroty</strong>
+            <strong style="font-size:18px; font-weight:700; color:#0f0f0f; line-height:1.3;">Claroty</strong>
           </div>
         </div>
-        <div style="padding:20px 24px 24px; display:flex; flex-direction:column; gap:16px;">
+        <div style="padding:32px; display:flex; flex-direction:column; gap:16px; flex:1; justify-content:center;">
           <ul style="list-style:none; padding:0; margin:0;">
             <li style="display:flex; align-items:flex-start; gap:8px; font-size:14px; line-height:1.5; color:#0f0f0f;">
               <span style="color:#725bea; font-size:20px; line-height:1; flex-shrink:0;">&#8226;</span>
@@ -70,15 +71,15 @@
         </div>
       </article>
 
-      <article style="background:#fff; border-radius:18px; border:1px solid #e6e7e9; box-shadow:0 24px 40px rgba(0,0,0,0.04); display:flex; flex-direction:column; overflow:hidden;">
-        <div style="padding:24px 24px 16px; display:flex; align-items:center; gap:16px; border-bottom:1px solid #e6e7e9;">
+      <article class="case-card" style="background:#fff; border-radius:18px; border:1px solid #e6e7e9; box-shadow:0 24px 40px rgba(0,0,0,0.04); overflow:hidden;">
+        <div style="padding:32px; display:flex; align-items:center; gap:20px; border-right:1px solid #e6e7e9; flex-shrink:0; min-width:280px;">
           <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/graphics/illustration-insurance.png" alt="DB Insurance, EUMC, Shin&amp;Kim" style="width:72px; height:72px; object-fit:contain; border-radius:12px; flex-shrink:0;">
-          <div style="display:flex; flex-direction:column; gap:2px;">
+          <div style="display:flex; flex-direction:column; gap:4px;">
             <span style="font-size:11px; color:#636363; letter-spacing:0.08em; text-transform:uppercase;">FINANCE &middot; HEALTH &middot; LEGAL</span>
-            <strong style="font-size:16px; font-weight:700; color:#0f0f0f; line-height:1.3;">DB Insurance &middot; EUMC &middot; Shin&amp;Kim</strong>
+            <strong style="font-size:18px; font-weight:700; color:#0f0f0f; line-height:1.3;">DB Insurance &middot; EUMC &middot; Shin&amp;Kim</strong>
           </div>
         </div>
-        <div style="padding:20px 24px 24px; display:flex; flex-direction:column; gap:16px;">
+        <div style="padding:32px; display:flex; flex-direction:column; gap:16px; flex:1; justify-content:center;">
           <ul style="list-style:none; padding:0; margin:0;">
             <li style="display:flex; align-items:flex-start; gap:8px; font-size:14px; line-height:1.5; color:#0f0f0f;">
               <span style="color:#725bea; font-size:20px; line-height:1; flex-shrink:0;">&#8226;</span>
