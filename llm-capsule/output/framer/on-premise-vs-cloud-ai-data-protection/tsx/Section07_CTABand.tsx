@@ -17,6 +17,7 @@ const C = {
 }
 
 const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images"
+const DEFAULT_CTA_BG = `${IMAGE_BASE}/bg-gradient-blue-violet.png`
 
 // ─── Props ─────────────────────────────────────────────────────────────────
 interface Props {
@@ -26,44 +27,20 @@ interface Props {
   btn1Href?: string
   footnote2Label?: string
   footnote2Href?: string
-  lang?: "en" | "ko"
-}
-
-const LABELS: Record<"en" | "ko", {
-  title: string
-  description: string
-  btn1Label: string
-  footnote2Label: string
-}> = {
-  en: {
-    title: "See how LLM Capsule works with your data",
-    description: "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
-    btn1Label: "Request a Demo",
-    footnote2Label: "AWS Marketplace",
-  },
-  ko: {
-    title: "LLM Capsule이 귀하의 데이터와 어떻게 작동하는지 확인하세요",
-    description: "문서, 배포 제약, 평가 기준을 가져오세요. 실제 워크플로우에서 시연해 드립니다.",
-    btn1Label: "데모 신청",
-    footnote2Label: "AWS Marketplace",
-  },
+  ctaBgImage?: string
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────
 export default function Section07_CTABand({
-  title,
-  description,
-  btn1Label, btn1Href = "/request-a-demo",
-  footnote2Label, footnote2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
-  lang = "en",
+  title = "See how LLM Capsule works with your data",
+  description = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
+  btn1Label = "Request a Demo",
+  btn1Href = "/request-a-demo",
+  footnote2Label = "AWS Marketplace",
+  footnote2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
+  ctaBgImage,
 }: Props) {
-  const L = LABELS[lang]
-  const t = {
-    title: title ?? L.title,
-    description: description ?? L.description,
-    btn1Label: btn1Label ?? L.btn1Label,
-    footnote2Label: footnote2Label ?? L.footnote2Label,
-  }
+  const resolvedCtaBg = ctaBgImage || DEFAULT_CTA_BG
 
   return (
     <>
@@ -77,7 +54,7 @@ export default function Section07_CTABand({
           padding: 80px 16px;
           text-align: center;
           background-color: ${C.neutral800};
-          background-image: url('${IMAGE_BASE}/bg-gradient-blue-violet.png');
+          background-image: url('${resolvedCtaBg}');
           background-size: cover;
           background-position: center;
           box-sizing: border-box;
@@ -204,12 +181,12 @@ export default function Section07_CTABand({
             <h2 className="s7-cta__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
               {title}
             </h2>
-            <p className="s7-cta__description">{t.description}</p>
+            <p className="s7-cta__description">{description}</p>
             <div className="s7-cta__actions">
-              <a href={btn1Href} className="s7-cta__btn">{t.btn1Label}</a>
+              <a href={btn1Href} className="s7-cta__btn">{btn1Label}</a>
             </div>
             <div className="s7-cta__footnote">
-              <a href={footnote2Href} target="_blank" rel="noopener noreferrer">{t.footnote2Label}</a>
+              <a href={footnote2Href} target="_blank" rel="noopener noreferrer">{footnote2Label}</a>
             </div>
           </div>
         </section>
@@ -219,13 +196,6 @@ export default function Section07_CTABand({
 }
 
 addPropertyControls(Section07_CTABand, {
-  lang: {
-    type: ControlType.Enum,
-    title: "Language",
-    options: ["en", "ko"],
-    optionTitles: ["English", "Korean"],
-    defaultValue: "en",
-  },
   title: {
     type: ControlType.String,
     title: "Title",
@@ -242,4 +212,8 @@ addPropertyControls(Section07_CTABand, {
   btn1Href:  { type: ControlType.String, title: "Button 1 URL",   defaultValue: "/request-a-demo" },
   footnote2Label: { type: ControlType.String, title: "Footnote 2 Label", defaultValue: "AWS Marketplace" },
   footnote2Href:  { type: ControlType.String, title: "Footnote 2 URL",   defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
+  ctaBgImage: {
+    type: ControlType.Image,
+    title: "CTA Background Image",
+  },
 })

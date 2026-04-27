@@ -15,40 +15,14 @@ interface Props {
   sectionLabel?: string
   paragraph1?: string
   paragraph2?: string
-  lang?: "en" | "ko"
-}
-
-const LABELS: Record<"en" | "ko", {
-  sectionLabel: string
-  paragraph1: string
-  paragraph2: string
-}> = {
-  en: {
-    sectionLabel: "Problem",
-    paragraph1: "Enterprises operate in different infrastructure environments. Defense and intelligence agencies require air-gapped deployments. Financial institutions may mandate on-premise data processing. Cloud-native organizations want SaaS-based solutions. Many enterprises operate hybrid environments where different data types require different deployment models.",
-    paragraph2: "AI data protection must adapt to the enterprise's infrastructure requirements, not force infrastructure changes.",
-  },
-  ko: {
-    sectionLabel: "문제",
-    paragraph1: "기업은 다양한 인프라 환경에서 운영됩니다. 국방 및 정보기관은 에어갭 배포를 요구합니다. 금융 기관은 온프레미스 데이터 처리를 의무화할 수 있습니다. 클라우드 네이티브 조직은 SaaS 기반 솔루션을 원합니다. 많은 기업이 서로 다른 데이터 유형에 다른 배포 모델이 필요한 하이브리드 환경에서 운영합니다.",
-    paragraph2: "AI 데이터 보호는 인프라 변경을 강요하지 않고 기업의 인프라 요구사항에 적응해야 합니다.",
-  },
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────
 export default function Section02_Problem({
-  sectionLabel,
-  paragraph1,
-  paragraph2,
-  lang = "en",
+  sectionLabel = "Problem",
+  paragraph1 = "Enterprises operate in different infrastructure environments. Defense and intelligence agencies require air-gapped deployments. Financial institutions may mandate on-premise data processing. Cloud-native organizations want SaaS-based solutions. Many enterprises operate hybrid environments where different data types require different deployment models.",
+  paragraph2 = "AI data protection must adapt to the enterprise's infrastructure requirements, not force infrastructure changes.",
 }: Props) {
-  const L = LABELS[lang]
-  const t = {
-    sectionLabel: sectionLabel ?? L.sectionLabel,
-    paragraph1: paragraph1 ?? L.paragraph1,
-    paragraph2: paragraph2 ?? L.paragraph2,
-  }
-
   return (
     <>
       <style>{`
@@ -116,10 +90,10 @@ export default function Section02_Problem({
         <div className="s2-inner">
           <div className="s2-container">
             <div className="s2-header">
-              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s2-brand">{t.sectionLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s2-brand">{sectionLabel}</span></h2>
             </div>
-            <p className="s2-paragraph">{t.paragraph1}</p>
-            <p className="s2-paragraph">{t.paragraph2}</p>
+            <p className="s2-paragraph">{paragraph1}</p>
+            <p className="s2-paragraph">{paragraph2}</p>
           </div>
         </div>
       </section>
@@ -128,13 +102,6 @@ export default function Section02_Problem({
 }
 
 addPropertyControls(Section02_Problem, {
-  lang: {
-    type: ControlType.Enum,
-    title: "Language",
-    options: ["en", "ko"],
-    optionTitles: ["English", "Korean"],
-    defaultValue: "en",
-  },
   sectionLabel: {
     type: ControlType.String,
     title: "Section Label",

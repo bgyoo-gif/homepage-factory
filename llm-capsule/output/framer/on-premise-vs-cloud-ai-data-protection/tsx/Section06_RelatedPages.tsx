@@ -25,27 +25,6 @@ interface Props {
   link3Href?: string
   link4Title?: string
   link4Href?: string
-  lang?: "en" | "ko"
-}
-
-const LABELS: Record<"en" | "ko", {
-  sectionLabel: string
-  link1Title: string; link2Title: string; link3Title: string; link4Title: string
-}> = {
-  en: {
-    sectionLabel: "Related",
-    link1Title: "Product Overview",
-    link2Title: "Architecture",
-    link3Title: "Trust & Compliance",
-    link4Title: "Request a Demo",
-  },
-  ko: {
-    sectionLabel: "관련 페이지",
-    link1Title: "제품 개요",
-    link2Title: "아키텍처",
-    link3Title: "신뢰 및 컴플라이언스",
-    link4Title: "데모 신청",
-  },
 }
 
 // ─── SVG Icons ──────────────────────────────────────────────────────────────
@@ -82,27 +61,21 @@ const IconLink = () => (
 
 // ─── Component ─────────────────────────────────────────────────────────────
 export default function Section06_RelatedPages({
-  sectionLabel,
-  link1Title, link1Href = "/product",
-  link2Title, link2Href = "/architecture",
-  link3Title, link3Href = "/trust",
-  link4Title, link4Href = "/request-a-demo",
-  lang = "en",
+  sectionLabel = "Related",
+  link1Title = "Product Overview",
+  link1Href = "/product",
+  link2Title = "Architecture",
+  link2Href = "/architecture",
+  link3Title = "Trust & Compliance",
+  link3Href = "/trust",
+  link4Title = "Request a Demo",
+  link4Href = "/request-a-demo",
 }: Props) {
-  const L = LABELS[lang]
-  const t = {
-    sectionLabel: sectionLabel ?? L.sectionLabel,
-    link1Title: link1Title ?? L.link1Title,
-    link2Title: link2Title ?? L.link2Title,
-    link3Title: link3Title ?? L.link3Title,
-    link4Title: link4Title ?? L.link4Title,
-  }
-
   const links = [
-    { title: t.link1Title, href: link1Href, icon: <IconProduct /> },
-    { title: t.link2Title, href: link2Href, icon: <IconArch /> },
-    { title: t.link3Title, href: link3Href, icon: <IconTrust /> },
-    { title: t.link4Title, href: link4Href, icon: <IconArrow /> },
+    { title: link1Title, href: link1Href, icon: <IconProduct /> },
+    { title: link2Title, href: link2Href, icon: <IconArch /> },
+    { title: link3Title, href: link3Href, icon: <IconTrust /> },
+    { title: link4Title, href: link4Href, icon: <IconArrow /> },
   ]
 
   return (
@@ -153,7 +126,7 @@ export default function Section06_RelatedPages({
           grid-template-columns: 1fr;
           gap: 24px;
         }
-        @container s6 (min-width: 768px) { .s6-grid { grid-template-columns: repeat(2, 1fr); } }
+        @container s6 (min-width: 768px) { .s6-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
         .s6-card {
           background-color: ${C.neutral850};
@@ -184,7 +157,7 @@ export default function Section06_RelatedPages({
               <span className="s6-section-title__icon">
                 <IconLink />
               </span>
-              <span className="s6-section-title__text">{t.sectionLabel}</span>
+              <span className="s6-section-title__text">{sectionLabel}</span>
             </div>
             <div className="s6-grid">
               {links.map((link, i) => (
@@ -202,13 +175,6 @@ export default function Section06_RelatedPages({
 }
 
 addPropertyControls(Section06_RelatedPages, {
-  lang: {
-    type: ControlType.Enum,
-    title: "Language",
-    options: ["en", "ko"],
-    optionTitles: ["English", "Korean"],
-    defaultValue: "en",
-  },
   sectionLabel: {
     type: ControlType.String,
     title: "Section Label",

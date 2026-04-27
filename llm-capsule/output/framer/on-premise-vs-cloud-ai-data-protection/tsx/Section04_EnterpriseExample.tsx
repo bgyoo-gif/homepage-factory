@@ -19,50 +19,16 @@ interface Props {
   cardTitle?: string
   cardParagraph1?: string
   cardParagraph2?: string
-  lang?: "en" | "ko"
-}
-
-const LABELS: Record<"en" | "ko", {
-  sectionLabel: string
-  sectionLabelHighlight: string
-  cardTitle: string
-  cardParagraph1: string
-  cardParagraph2: string
-}> = {
-  en: {
-    sectionLabel: "Enterprise ",
-    sectionLabelHighlight: "Example",
-    cardTitle: "Government Agency — Air-Gapped Deployment",
-    cardParagraph1: "A government agency needs AI to process classified briefing documents for automated summarization. The classified network has no external connectivity.",
-    cardParagraph2: "LLM Capsule encapsulates documents on the classified network. Encapsulated data is transferred to the AI-connected environment through an approved data diode. AI generates summaries. Results are transferred back and restored on the classified network, producing classified-ready summaries.",
-  },
-  ko: {
-    sectionLabel: "엔터프라이즈 ",
-    sectionLabelHighlight: "사례",
-    cardTitle: "정부 기관 — 에어갭 배포",
-    cardParagraph1: "정부 기관은 분류된 브리핑 문서를 자동 요약하기 위해 AI가 필요합니다. 분류된 네트워크는 외부 연결이 없습니다.",
-    cardParagraph2: "LLM Capsule은 분류된 네트워크에서 문서를 캡슐화합니다. 캡슐화된 데이터는 승인된 데이터 다이오드를 통해 AI 연결 환경으로 전송됩니다. AI가 요약을 생성합니다. 결과는 분류된 네트워크로 다시 전송되어 복원되어 분류 준비된 요약이 생성됩니다.",
-  },
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────
 export default function Section04_EnterpriseExample({
-  sectionLabel,
-  sectionLabelHighlight,
-  cardTitle,
-  cardParagraph1,
-  cardParagraph2,
-  lang = "en",
+  sectionLabel = "Enterprise ",
+  sectionLabelHighlight = "Example",
+  cardTitle = "Government Agency — Air-Gapped Deployment",
+  cardParagraph1 = "A government agency needs AI to process classified briefing documents for automated summarization. The classified network has no external connectivity.",
+  cardParagraph2 = "LLM Capsule encapsulates documents on the classified network. Encapsulated data is transferred to the AI-connected environment through an approved data diode. AI generates summaries. Results are transferred back and restored on the classified network, producing classified-ready summaries.",
 }: Props) {
-  const L = LABELS[lang]
-  const t = {
-    sectionLabel: sectionLabel ?? L.sectionLabel,
-    sectionLabelHighlight: sectionLabelHighlight ?? L.sectionLabelHighlight,
-    cardTitle: cardTitle ?? L.cardTitle,
-    cardParagraph1: cardParagraph1 ?? L.cardParagraph1,
-    cardParagraph2: cardParagraph2 ?? L.cardParagraph2,
-  }
-
   return (
     <>
       <style>{`
@@ -112,7 +78,6 @@ export default function Section04_EnterpriseExample({
         @container s4 (max-width: 767px)  { .s4-header { text-align: left; } }
 
         .s4-brand { color: ${C.brandSecondary}; }
-        .s4-product { font-family: "Oxanium", sans-serif; font-weight: 700; }
 
         .s4-card {
           background-color: ${C.surfaceWhite};
@@ -151,16 +116,13 @@ export default function Section04_EnterpriseExample({
           <div className="s4-container">
             <div className="s4-header">
               <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
-                {t.sectionLabel}<span className="s4-brand">{t.sectionLabelHighlight}</span>
+                {sectionLabel}<span className="s4-brand">{sectionLabelHighlight}</span>
               </h2>
             </div>
             <div className="s4-card">
-              <h4 className="s4-card__title">{t.cardTitle}</h4>
-              <p>{t.cardParagraph1}</p>
-              <p>
-                <span className="s4-product">LLM Capsule</span>{" "}
-                {t.cardParagraph2}
-              </p>
+              <h4 className="s4-card__title">{cardTitle}</h4>
+              <p>{cardParagraph1}</p>
+              <p>{cardParagraph2}</p>
             </div>
           </div>
         </div>
@@ -170,13 +132,6 @@ export default function Section04_EnterpriseExample({
 }
 
 addPropertyControls(Section04_EnterpriseExample, {
-  lang: {
-    type: ControlType.Enum,
-    title: "Language",
-    options: ["en", "ko"],
-    optionTitles: ["English", "Korean"],
-    defaultValue: "en",
-  },
   sectionLabel: {
     type: ControlType.String,
     title: "Section Label",
@@ -201,7 +156,7 @@ addPropertyControls(Section04_EnterpriseExample, {
   cardParagraph2: {
     type: ControlType.String,
     title: "Card Paragraph 2",
-    defaultValue: "encapsulates documents on the classified network. Encapsulated data is transferred to the AI-connected environment through an approved data diode. AI generates summaries. Results are transferred back and restored on the classified network, producing classified-ready summaries.",
+    defaultValue: "LLM Capsule encapsulates documents on the classified network. Encapsulated data is transferred to the AI-connected environment through an approved data diode. AI generates summaries. Results are transferred back and restored on the classified network, producing classified-ready summaries.",
     displayTextArea: true,
   },
 })

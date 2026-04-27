@@ -45,28 +45,6 @@ interface Props {
   q1Answer?: string
   q2Title?: string
   q2Answer?: string
-  lang?: "en" | "ko"
-}
-
-const LABELS: Record<"en" | "ko", {
-  sectionLabel: string
-  q1Title: string; q1Answer: string
-  q2Title: string; q2Answer: string
-}> = {
-  en: {
-    sectionLabel: "FAQ",
-    q1Title: "Does LLM Capsule work on-premise?",
-    q1Answer: "Yes. LLM Capsule supports on-premise, air-gapped, cloud, hybrid, and embedded deployment models. The encapsulation engine runs entirely within your environment regardless of deployment type.",
-    q2Title: "Is LLM Capsule available on AWS Marketplace?",
-    q2Answer: "Yes. LLM Capsule is available on AWS Marketplace for cloud deployment within your AWS account.",
-  },
-  ko: {
-    sectionLabel: "FAQ",
-    q1Title: "LLM Capsule은 온프레미스에서 작동하나요?",
-    q1Answer: "예. LLM Capsule은 온프레미스, 에어갭, 클라우드, 하이브리드, 임베디드 배포 모델을 지원합니다. 캡슐화 엔진은 배포 유형에 관계없이 완전히 귀하의 환경 내에서 실행됩니다.",
-    q2Title: "LLM Capsule은 AWS Marketplace에서 사용 가능한가요?",
-    q2Answer: "예. LLM Capsule은 귀하의 AWS 계정 내 클라우드 배포를 위해 AWS Marketplace에서 사용 가능합니다.",
-  },
 }
 
 // ─── AcCard Component ───────────────────────────────────────────────────────
@@ -95,20 +73,12 @@ function AcCard({ title, answer, defaultOpen = false }: { title: string; answer:
 
 // ─── Component ─────────────────────────────────────────────────────────────
 export default function Section05_FAQ({
-  sectionLabel,
-  q1Title, q1Answer,
-  q2Title, q2Answer,
-  lang = "en",
+  sectionLabel = "FAQ",
+  q1Title = "Does LLM Capsule work on-premise?",
+  q1Answer = "Yes. LLM Capsule supports on-premise, air-gapped, cloud, hybrid, and embedded deployment models. The encapsulation engine runs entirely within your environment regardless of deployment type.",
+  q2Title = "Is LLM Capsule available on AWS Marketplace?",
+  q2Answer = "Yes. LLM Capsule is available on AWS Marketplace for cloud deployment within your AWS account.",
 }: Props) {
-  const L = LABELS[lang]
-  const t = {
-    sectionLabel: sectionLabel ?? L.sectionLabel,
-    q1Title: q1Title ?? L.q1Title,
-    q1Answer: q1Answer ?? L.q1Answer,
-    q2Title: q2Title ?? L.q2Title,
-    q2Answer: q2Answer ?? L.q2Answer,
-  }
-
   return (
     <>
       <script
@@ -255,11 +225,11 @@ export default function Section05_FAQ({
         <div className="s5-inner">
           <div className="s5-container">
             <div className="s5-header">
-              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s5-brand">{t.sectionLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s5-brand">{sectionLabel}</span></h2>
             </div>
             <div className="s5-ac-list">
-              <AcCard title={t.q1Title} answer={t.q1Answer} defaultOpen={true} />
-              <AcCard title={t.q2Title} answer={t.q2Answer} defaultOpen={false} />
+              <AcCard title={q1Title} answer={q1Answer} defaultOpen={true} />
+              <AcCard title={q2Title} answer={q2Answer} defaultOpen={false} />
             </div>
           </div>
         </div>
@@ -269,13 +239,6 @@ export default function Section05_FAQ({
 }
 
 addPropertyControls(Section05_FAQ, {
-  lang: {
-    type: ControlType.Enum,
-    title: "Language",
-    options: ["en", "ko"],
-    optionTitles: ["English", "Korean"],
-    defaultValue: "en",
-  },
   sectionLabel: {
     type: ControlType.String,
     title: "Section Label",

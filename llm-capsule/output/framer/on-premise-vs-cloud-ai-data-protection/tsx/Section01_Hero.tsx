@@ -32,30 +32,6 @@ interface Props {
   breadcrumbHome?: string
   breadcrumbLearn?: string
   breadcrumbCurrent?: string
-  lang?: "en" | "ko"
-}
-
-const LABELS: Record<"en" | "ko", {
-  breadcrumbHome: string
-  breadcrumbLearn: string
-  breadcrumbCurrent: string
-  title: string
-  description: string
-}> = {
-  en: {
-    breadcrumbHome: "Home",
-    breadcrumbLearn: "Learn",
-    breadcrumbCurrent: "On-Premise vs Cloud AI Data Protection",
-    title: "On-Premise vs Cloud AI Data Protection",
-    description: "Comparing deployment models for enterprise AI data protection — on-premise, air-gapped, cloud, hybrid, and embedded options.",
-  },
-  ko: {
-    breadcrumbHome: "홈",
-    breadcrumbLearn: "학습",
-    breadcrumbCurrent: "온프레미스 vs 클라우드 AI 데이터 보호",
-    title: "온프레미스 vs 클라우드 AI 데이터 보호",
-    description: "온프레미스, 에어갭, 클라우드, 하이브리드, 임베디드 등 엔터프라이즈 AI 데이터 보호 배포 모델 비교.",
-  },
 }
 
 const JSON_LD = JSON.stringify({
@@ -71,22 +47,12 @@ const JSON_LD = JSON.stringify({
 
 // ─── Component ─────────────────────────────────────────────────────────────
 export default function Section01_Hero({
-  title,
-  description,
-  breadcrumbHome,
-  breadcrumbLearn,
-  breadcrumbCurrent,
-  lang = "en",
+  title = "On-Premise vs Cloud AI Data Protection",
+  description = "Comparing deployment models for enterprise AI data protection — on-premise, air-gapped, cloud, hybrid, and embedded options.",
+  breadcrumbHome = "Home",
+  breadcrumbLearn = "Learn",
+  breadcrumbCurrent = "On-Premise vs Cloud AI Data Protection",
 }: Props) {
-  const L = LABELS[lang]
-  const t = {
-    home: breadcrumbHome ?? L.breadcrumbHome,
-    learn: breadcrumbLearn ?? L.breadcrumbLearn,
-    current: breadcrumbCurrent ?? L.breadcrumbCurrent,
-    title: title ?? L.title,
-    description: description ?? L.description,
-  }
-
   return (
     <>
       <script
@@ -177,14 +143,14 @@ export default function Section01_Hero({
         <div className="s1-inner">
           <div className="s1-container">
             <nav className="s1-breadcrumb" aria-label="breadcrumb">
-              <a href="https://llmcapsule.ai/" className="s1-breadcrumb__link">{t.home}</a>
+              <a href="https://llmcapsule.ai/" className="s1-breadcrumb__link">{breadcrumbHome}</a>
               <span className="s1-breadcrumb__sep">/</span>
-              <a href="https://llmcapsule.ai/resources/learn" className="s1-breadcrumb__link">{t.learn}</a>
+              <a href="https://llmcapsule.ai/resources/learn" className="s1-breadcrumb__link">{breadcrumbLearn}</a>
               <span className="s1-breadcrumb__sep">/</span>
-              <span className="s1-breadcrumb__current">{t.current}</span>
+              <span className="s1-breadcrumb__current">{breadcrumbCurrent}</span>
             </nav>
-            <h1 className="s1-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{t.title}</h1>
-            <p className="s1-description">{t.description}</p>
+            <h1 className="s1-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{title}</h1>
+            <p className="s1-description">{description}</p>
           </div>
         </div>
       </section>
@@ -193,13 +159,6 @@ export default function Section01_Hero({
 }
 
 addPropertyControls(Section01_Hero, {
-  lang: {
-    type: ControlType.Enum,
-    title: "Language",
-    options: ["en", "ko"],
-    optionTitles: ["English", "Korean"],
-    defaultValue: "en",
-  },
   title: {
     type: ControlType.String,
     title: "Title",

@@ -27,81 +27,29 @@ interface Props {
   step5Title?: string
   step5Body?: string
   bannerText?: string
-  lang?: "en" | "ko"
-}
-
-const LABELS: Record<"en" | "ko", {
-  sectionLabel: string
-  step1Title: string; step1Body: string
-  step2Title: string; step2Body: string
-  step3Title: string; step3Body: string
-  step4Title: string; step4Body: string
-  step5Title: string; step5Body: string
-  bannerText: string
-}> = {
-  en: {
-    sectionLabel: "Explanation",
-    step1Title: "On-premise deployment.",
-    step1Body: "The encapsulation engine runs entirely within the enterprise data center. Sensitive data never traverses any network boundary. The AI enablement data layer operates within existing security perimeters. Only encapsulated data is sent to external AI services when needed.",
-    step2Title: "Air-gapped deployment.",
-    step2Body: "For the most sensitive environments, LLM Capsule can operate within air-gapped networks. Documents are encapsulated locally, transferred to an AI-connected environment through controlled channels, processed, and results are transferred back for local restoration.",
-    step3Title: "Cloud deployment.",
-    step3Body: "Available on AWS Marketplace. The encapsulation layer runs within the enterprise's cloud account or VPC. Data remains within the enterprise's cloud boundary while AI services are accessed externally.",
-    step4Title: "Hybrid deployment.",
-    step4Body: "Different document types or sensitivity levels route through different deployment modes within a single LLM Capsule instance.",
-    step5Title: "Embedded integration.",
-    step5Body: "LLM Capsule can be embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within the enterprise's own software stack.",
-    bannerText: "One enablement model, any deployment. The encapsulation and restoration logic is identical regardless of where LLM Capsule runs. AI results are restored locally in every deployment scenario.",
-  },
-  ko: {
-    sectionLabel: "설명",
-    step1Title: "온프레미스 배포.",
-    step1Body: "캡슐화 엔진은 완전히 기업 데이터 센터 내에서 실행됩니다. 민감한 데이터는 어떤 네트워크 경계도 통과하지 않습니다. AI 지원 데이터 레이어는 기존 보안 경계 내에서 작동합니다. 필요 시 캡슐화된 데이터만 외부 AI 서비스로 전송됩니다.",
-    step2Title: "에어갭 배포.",
-    step2Body: "가장 민감한 환경을 위해 LLM Capsule은 에어갭 네트워크 내에서 작동할 수 있습니다. 문서는 로컬에서 캡슐화되고, 제어된 채널을 통해 AI 연결 환경으로 전송되어 처리된 후, 결과가 로컬 복원을 위해 다시 전송됩니다.",
-    step3Title: "클라우드 배포.",
-    step3Body: "AWS Marketplace에서 사용 가능합니다. 캡슐화 레이어는 기업의 클라우드 계정 또는 VPC 내에서 실행됩니다. AI 서비스에 외부에서 접근하는 동안 데이터는 기업의 클라우드 경계 내에 유지됩니다.",
-    step4Title: "하이브리드 배포.",
-    step4Body: "단일 LLM Capsule 인스턴스 내에서 서로 다른 문서 유형 또는 민감도 수준이 다른 배포 모드를 통해 라우팅됩니다.",
-    step5Title: "임베디드 통합.",
-    step5Body: "LLM Capsule은 기존 엔터프라이즈 애플리케이션과 플랫폼에 임베드되어 기업 자체 소프트웨어 스택 내에서 AI 지원 데이터 레이어로 작동할 수 있습니다.",
-    bannerText: "하나의 지원 모델, 모든 배포. 캡슐화 및 복원 논리는 LLM Capsule이 실행되는 위치에 관계없이 동일합니다. AI 결과는 모든 배포 시나리오에서 로컬에서 복원됩니다.",
-  },
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────
 export default function Section03_Explanation({
-  sectionLabel,
-  step1Title, step1Body,
-  step2Title, step2Body,
-  step3Title, step3Body,
-  step4Title, step4Body,
-  step5Title, step5Body,
-  bannerText,
-  lang = "en",
+  sectionLabel = "Explanation",
+  step1Title = "On-premise deployment.",
+  step1Body = "The encapsulation engine runs entirely within the enterprise data center. Sensitive data never traverses any network boundary. The AI enablement data layer operates within existing security perimeters. Only encapsulated data is sent to external AI services when needed.",
+  step2Title = "Air-gapped deployment.",
+  step2Body = "For the most sensitive environments, LLM Capsule can operate within air-gapped networks. Documents are encapsulated locally, transferred to an AI-connected environment through controlled channels, processed, and results are transferred back for local restoration.",
+  step3Title = "Cloud deployment.",
+  step3Body = "Available on AWS Marketplace. The encapsulation layer runs within the enterprise's cloud account or VPC. Data remains within the enterprise's cloud boundary while AI services are accessed externally.",
+  step4Title = "Hybrid deployment.",
+  step4Body = "Different document types or sensitivity levels route through different deployment modes within a single LLM Capsule instance.",
+  step5Title = "Embedded integration.",
+  step5Body = "LLM Capsule can be embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within the enterprise's own software stack.",
+  bannerText = "One enablement model, any deployment. The encapsulation and restoration logic is identical regardless of where LLM Capsule runs. AI results are restored locally in every deployment scenario.",
 }: Props) {
-  const L = LABELS[lang]
-  const t = {
-    sectionLabel: sectionLabel ?? L.sectionLabel,
-    step1Title: step1Title ?? L.step1Title,
-    step1Body: step1Body ?? L.step1Body,
-    step2Title: step2Title ?? L.step2Title,
-    step2Body: step2Body ?? L.step2Body,
-    step3Title: step3Title ?? L.step3Title,
-    step3Body: step3Body ?? L.step3Body,
-    step4Title: step4Title ?? L.step4Title,
-    step4Body: step4Body ?? L.step4Body,
-    step5Title: step5Title ?? L.step5Title,
-    step5Body: step5Body ?? L.step5Body,
-    bannerText: bannerText ?? L.bannerText,
-  }
-
   const steps = [
-    { title: t.step1Title, body: t.step1Body },
-    { title: t.step2Title, body: t.step2Body },
-    { title: t.step3Title, body: t.step3Body },
-    { title: t.step4Title, body: t.step4Body },
-    { title: t.step5Title, body: t.step5Body },
+    { title: step1Title, body: step1Body },
+    { title: step2Title, body: step2Body },
+    { title: step3Title, body: step3Body },
+    { title: step4Title, body: step4Body },
+    { title: step5Title, body: step5Body },
   ]
 
   return (
@@ -130,7 +78,6 @@ export default function Section03_Explanation({
         }
         @container s3 (min-width: 768px)  { .s3-container { padding: 0 32px; } }
         @container s3 (min-width: 1024px) { .s3-container { padding: 0 32px; } }
-        @container s3 (min-width: 1440px) { .s3-container { padding: 0 120px; max-width: 1440px; } }
         @container s3 (min-width: 1440px) { .s3-container { padding: 0 120px; max-width: 1440px; } }
 
         .s3-header {
@@ -233,7 +180,7 @@ export default function Section03_Explanation({
         <div className="s3-inner">
           <div className="s3-container">
             <div className="s3-header">
-              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s3-brand">{t.sectionLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s3-brand">{sectionLabel}</span></h2>
             </div>
             <ul className="s3-bullet">
               {steps.map((step, i) => (
@@ -241,23 +188,13 @@ export default function Section03_Explanation({
                   <span className="s3-bullet__icon" aria-hidden="true" />
                   <span>
                     <strong>{step.title}</strong>{" "}
-                    {/* Split body to allow product name styling if needed */}
                     {step.body}
                   </span>
                 </li>
               ))}
             </ul>
             <div className="s3-banner">
-              <strong>One enablement model, any deployment.</strong>{" "}
-              {lang === "en"
-                ? "The encapsulation and restoration logic is identical regardless of where "
-                : "캡슐화 및 복원 논리는 "
-              }
-              <span className="s3-product">LLM Capsule</span>
-              {lang === "en"
-                ? " runs. AI results are restored locally in every deployment scenario."
-                : "이 실행되는 위치에 관계없이 동일합니다. AI 결과는 모든 배포 시나리오에서 로컬에서 복원됩니다."
-              }
+              {bannerText}
             </div>
           </div>
         </div>
@@ -267,13 +204,6 @@ export default function Section03_Explanation({
 }
 
 addPropertyControls(Section03_Explanation, {
-  lang: {
-    type: ControlType.Enum,
-    title: "Language",
-    options: ["en", "ko"],
-    optionTitles: ["English", "Korean"],
-    defaultValue: "en",
-  },
   sectionLabel: {
     type: ControlType.String,
     title: "Section Label",
@@ -289,4 +219,5 @@ addPropertyControls(Section03_Explanation, {
   step4Body: { type: ControlType.String, title: "Step 4 Body", defaultValue: "Different document types or sensitivity levels route through different deployment modes within a single LLM Capsule instance.", displayTextArea: true },
   step5Title: { type: ControlType.String, title: "Step 5 Title", defaultValue: "Embedded integration." },
   step5Body: { type: ControlType.String, title: "Step 5 Body", defaultValue: "LLM Capsule can be embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within the enterprise's own software stack.", displayTextArea: true },
+  bannerText: { type: ControlType.String, title: "Banner Text", defaultValue: "One enablement model, any deployment. The encapsulation and restoration logic is identical regardless of where LLM Capsule runs. AI results are restored locally in every deployment scenario.", displayTextArea: true },
 })
