@@ -339,7 +339,7 @@ export default function Section06_Proof({
           border-radius: 40px;
           padding: 48px 32px;
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(4, minmax(0, 1fr));
           gap: 32px;
           justify-items: center;
           position: relative;
@@ -350,7 +350,7 @@ export default function Section06_Proof({
         }
 
         @container (max-width: 1023px) {
-          .s6-kpi-band { grid-template-columns: repeat(2, 1fr); }
+          .s6-kpi-band { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
 
         @container (max-width: 767px) {
