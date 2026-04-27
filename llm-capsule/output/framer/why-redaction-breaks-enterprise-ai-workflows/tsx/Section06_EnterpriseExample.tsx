@@ -17,34 +17,21 @@ interface Props {
   sectionHeadingPre?: string
   sectionHeadingHighlight?: string
   cardTitle?: string
-  productName?: string
+  bullet1?: string
+  bullet2?: string
+  bullet3?: string
 }
-
-const BULLETS = [
-  {
-    strong: "A law firm needs AI to review 200 acquisition agreements.",
-    rest: " Extract key terms — parties, obligations, termination clauses, governing law. Each agreement contains names of real companies, executives, and financial figures.",
-    product: null,
-  },
-  {
-    strong: "With redaction:",
-    rest: ' Party names become "[REDACTED]," making it impossible to distinguish acquirer from target. Financial terms become "[AMOUNT]," preventing comparison across agreements. The AI produces generic extraction that requires 200 rounds of manual restoration.',
-    product: null,
-  },
-  {
-    strong: null,
-    rest: " Sensitive elements are encapsulated locally with structure-preserving processing. AI processes the protected documents and produces structured extractions. Local restoration restores all real party names, amounts, and clause references. The extraction output is directly usable in the firm's deal management system.",
-    product: "LLM Capsule",
-    withLabel: "With",
-  },
-]
 
 export default function Section06_EnterpriseExample({
   sectionHeadingPre = "Enterprise",
   sectionHeadingHighlight = "Example",
   cardTitle = "Legal Contract Review",
-  productName = "LLM Capsule",
+  bullet1 = "A law firm needs AI to review 200 acquisition agreements. Extract key terms — parties, obligations, termination clauses, governing law. Each agreement contains names of real companies, executives, and financial figures.",
+  bullet2 = "With redaction: Party names become \"[REDACTED],\" making it impossible to distinguish acquirer from target. Financial terms become \"[AMOUNT],\" preventing comparison across agreements. The AI produces generic extraction that requires 200 rounds of manual restoration.",
+  bullet3 = "With LLM Capsule: Sensitive elements are encapsulated locally with structure-preserving processing. AI processes the protected documents and produces structured extractions. Local restoration restores all real party names, amounts, and clause references. The extraction output is directly usable in the firm's deal management system.",
 }: Props) {
+  const bullets = [bullet1, bullet2, bullet3]
+
   return (
     <>
       <style>{`
@@ -85,10 +72,6 @@ export default function Section06_EnterpriseExample({
           text-wrap: pretty;
         }
         .s6-brand { color: ${C.brandSecondary}; }
-        .s6-product {
-          font-family: "${C.brandFont}", sans-serif;
-          font-weight: 700;
-        }
         .s6-card {
           background-color: ${C.surfaceWhite};
           border-radius: 18px;
@@ -173,27 +156,12 @@ export default function Section06_EnterpriseExample({
             <div className="s6-card">
               <h4 className="s6-card__title">{cardTitle}</h4>
               <ul className="s6-bullet">
-                <li className="s6-bullet__item">
-                  <span className="s6-bullet__icon" aria-hidden="true"></span>
-                  <span>
-                    <strong>A law firm needs AI to review 200 acquisition agreements.</strong>{" "}
-                    Extract key terms — parties, obligations, termination clauses, governing law. Each agreement contains names of real companies, executives, and financial figures.
-                  </span>
-                </li>
-                <li className="s6-bullet__item">
-                  <span className="s6-bullet__icon" aria-hidden="true"></span>
-                  <span>
-                    <strong>With redaction:</strong>{" "}
-                    Party names become "[REDACTED]," making it impossible to distinguish acquirer from target. Financial terms become "[AMOUNT]," preventing comparison across agreements. The AI produces generic extraction that requires 200 rounds of manual restoration.
-                  </span>
-                </li>
-                <li className="s6-bullet__item">
-                  <span className="s6-bullet__icon" aria-hidden="true"></span>
-                  <span>
-                    <strong>With <span className="s6-product">{productName}</span>:</strong>{" "}
-                    Sensitive elements are encapsulated locally with structure-preserving processing. AI processes the protected documents and produces structured extractions. Local restoration restores all real party names, amounts, and clause references. The extraction output is directly usable in the firm's deal management system.
-                  </span>
-                </li>
+                {bullets.map((b, i) => (
+                  <li key={i} className="s6-bullet__item">
+                    <span className="s6-bullet__icon" aria-hidden="true"></span>
+                    <span>{b}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -204,24 +172,10 @@ export default function Section06_EnterpriseExample({
 }
 
 addPropertyControls(Section06_EnterpriseExample, {
-  sectionHeadingPre: {
-    type: ControlType.String,
-    title: "Heading (Pre)",
-    defaultValue: "Enterprise",
-  },
-  sectionHeadingHighlight: {
-    type: ControlType.String,
-    title: "Heading (Highlight)",
-    defaultValue: "Example",
-  },
-  cardTitle: {
-    type: ControlType.String,
-    title: "Card Title",
-    defaultValue: "Legal Contract Review",
-  },
-  productName: {
-    type: ControlType.String,
-    title: "Product Name",
-    defaultValue: "LLM Capsule",
-  },
+  sectionHeadingPre: { type: ControlType.String, title: "Heading (Pre)", defaultValue: "Enterprise" },
+  sectionHeadingHighlight: { type: ControlType.String, title: "Heading (Highlight)", defaultValue: "Example" },
+  cardTitle: { type: ControlType.String, title: "Card Title", defaultValue: "Legal Contract Review" },
+  bullet1: { type: ControlType.String, title: "Bullet 1", defaultValue: "A law firm needs AI to review 200 acquisition agreements. Extract key terms — parties, obligations, termination clauses, governing law. Each agreement contains names of real companies, executives, and financial figures." },
+  bullet2: { type: ControlType.String, title: "Bullet 2", defaultValue: "With redaction: Party names become \"[REDACTED],\" making it impossible to distinguish acquirer from target. Financial terms become \"[AMOUNT],\" preventing comparison across agreements. The AI produces generic extraction that requires 200 rounds of manual restoration." },
+  bullet3: { type: ControlType.String, title: "Bullet 3", defaultValue: "With LLM Capsule: Sensitive elements are encapsulated locally with structure-preserving processing. AI processes the protected documents and produces structured extractions. Local restoration restores all real party names, amounts, and clause references. The extraction output is directly usable in the firm's deal management system." },
 })

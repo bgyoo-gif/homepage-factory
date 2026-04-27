@@ -15,32 +15,23 @@ interface Props {
   sectionHeadingPre?: string
   sectionHeadingHighlight?: string
   sectionHeadingPost?: string
+  bullet1?: string
+  bullet2?: string
+  bullet3?: string
+  bullet4?: string
 }
-
-const BULLETS = [
-  {
-    strong: "Context Destruction",
-    rest: " Masking tools replace sensitive values with generic tokens — [NAME], [ACCOUNT], [DATE]. AI models lose the ability to distinguish between entities. In a multi-party contract, all parties become \"[NAME],\" collapsing the semantic relationships the AI needs to produce meaningful analysis.",
-  },
-  {
-    strong: "Output Unusability",
-    rest: " When AI processes a redacted document, its outputs inherit the redaction. A summary of a masked contract produces statements like \"The agreement between [NAME] and [NAME] covers [AMOUNT].\" This output cannot be filed, forwarded, or used in any business workflow without manual restoration.",
-  },
-  {
-    strong: "Structural Damage",
-    rest: " Enterprise documents contain structured data — tables, nested references, cross-document citations. Flat masking breaks these structures. A table column header masked as \"[FIELD]\" destroys the schema information AI needs for accurate extraction.",
-  },
-  {
-    strong: "No Restoration Path",
-    rest: " Redaction is a one-way operation. Once data is removed, there is no automated mechanism to restore AI outputs to their original context. Every document processed through a redaction-then-AI pipeline requires manual post-processing, eliminating the efficiency gains AI is supposed to deliver.",
-  },
-]
 
 export default function Section03_HowRedactionFails({
   sectionHeadingPre = "How Redaction and Masking Tools",
   sectionHeadingHighlight = "Fail",
   sectionHeadingPost = "in AI Workflows",
+  bullet1 = "Context Destruction — Masking tools replace sensitive values with generic tokens — [NAME], [ACCOUNT], [DATE]. AI models lose the ability to distinguish between entities. In a multi-party contract, all parties become \"[NAME],\" collapsing the semantic relationships the AI needs to produce meaningful analysis.",
+  bullet2 = "Output Unusability — When AI processes a redacted document, its outputs inherit the redaction. A summary of a masked contract produces statements like \"The agreement between [NAME] and [NAME] covers [AMOUNT].\" This output cannot be filed, forwarded, or used in any business workflow without manual restoration.",
+  bullet3 = "Structural Damage — Enterprise documents contain structured data — tables, nested references, cross-document citations. Flat masking breaks these structures. A table column header masked as \"[FIELD]\" destroys the schema information AI needs for accurate extraction.",
+  bullet4 = "No Restoration Path — Redaction is a one-way operation. Once data is removed, there is no automated mechanism to restore AI outputs to their original context. Every document processed through a redaction-then-AI pipeline requires manual post-processing, eliminating the efficiency gains AI is supposed to deliver.",
 }: Props) {
+  const bullets = [bullet1, bullet2, bullet3, bullet4]
+
   return (
     <>
       <style>{`
@@ -146,10 +137,10 @@ export default function Section03_HowRedactionFails({
               </h2>
             </div>
             <ul className="s3-bullet">
-              {BULLETS.map((b, i) => (
+              {bullets.map((b, i) => (
                 <li key={i} className="s3-bullet__item">
                   <span className="s3-bullet__icon" aria-hidden="true"></span>
-                  <span><strong>{b.strong}</strong>{b.rest}</span>
+                  <span>{b}</span>
                 </li>
               ))}
             </ul>
@@ -161,19 +152,11 @@ export default function Section03_HowRedactionFails({
 }
 
 addPropertyControls(Section03_HowRedactionFails, {
-  sectionHeadingPre: {
-    type: ControlType.String,
-    title: "Heading (Pre)",
-    defaultValue: "How Redaction and Masking Tools",
-  },
-  sectionHeadingHighlight: {
-    type: ControlType.String,
-    title: "Heading (Highlight)",
-    defaultValue: "Fail",
-  },
-  sectionHeadingPost: {
-    type: ControlType.String,
-    title: "Heading (Post)",
-    defaultValue: "in AI Workflows",
-  },
+  sectionHeadingPre: { type: ControlType.String, title: "Heading (Pre)", defaultValue: "How Redaction and Masking Tools" },
+  sectionHeadingHighlight: { type: ControlType.String, title: "Heading (Highlight)", defaultValue: "Fail" },
+  sectionHeadingPost: { type: ControlType.String, title: "Heading (Post)", defaultValue: "in AI Workflows" },
+  bullet1: { type: ControlType.String, title: "Bullet 1", defaultValue: "Context Destruction — Masking tools replace sensitive values with generic tokens — [NAME], [ACCOUNT], [DATE]. AI models lose the ability to distinguish between entities. In a multi-party contract, all parties become \"[NAME],\" collapsing the semantic relationships the AI needs to produce meaningful analysis." },
+  bullet2: { type: ControlType.String, title: "Bullet 2", defaultValue: "Output Unusability — When AI processes a redacted document, its outputs inherit the redaction. A summary of a masked contract produces statements like \"The agreement between [NAME] and [NAME] covers [AMOUNT].\" This output cannot be filed, forwarded, or used in any business workflow without manual restoration." },
+  bullet3: { type: ControlType.String, title: "Bullet 3", defaultValue: "Structural Damage — Enterprise documents contain structured data — tables, nested references, cross-document citations. Flat masking breaks these structures. A table column header masked as \"[FIELD]\" destroys the schema information AI needs for accurate extraction." },
+  bullet4: { type: ControlType.String, title: "Bullet 4", defaultValue: "No Restoration Path — Redaction is a one-way operation. Once data is removed, there is no automated mechanism to restore AI outputs to their original context. Every document processed through a redaction-then-AI pipeline requires manual post-processing, eliminating the efficiency gains AI is supposed to deliver." },
 })
