@@ -182,6 +182,7 @@ export default function Section01_Hero({
 
         .s1-screenshot img {
           width: 100%;
+          height: auto;
           display: block;
         }
 

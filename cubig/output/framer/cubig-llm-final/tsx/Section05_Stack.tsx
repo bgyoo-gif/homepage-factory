@@ -193,7 +193,7 @@ export default function Section05_Stack({
           .s5-visual { min-height: 200px; border-radius: 24px; }
         }
 
-        .s5-visual img { width: 100%; display: block; }
+        .s5-visual img { width: 100%; height: auto; display: block; }
 
         .s5-visual-placeholder {
           width: 100%;

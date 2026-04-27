@@ -285,18 +285,11 @@ export default function Section02_HowItWorks({
           overflow: hidden;
           background-color: ${P.neutral100};
           border: 1px solid ${P.borderDefault};
-          min-height: 260px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        @container (min-width: 1024px) {
-          .s2-image-frame { min-height: 340px; }
         }
 
         .s2-image-frame img {
           width: 100%;
+          height: auto;
           display: block;
         }
 
