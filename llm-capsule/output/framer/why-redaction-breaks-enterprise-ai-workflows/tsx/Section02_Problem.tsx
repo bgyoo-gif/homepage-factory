@@ -30,11 +30,7 @@ export default function Section02_Problem({
   bullet2 = 'When a redaction tool removes a customer name from a contract, the AI model receives "[REDACTED]" in its place. The model cannot determine who the contract party is, which clauses reference that party, or how to structure outputs around the original entity relationships. The result is abstracted, generic AI output that requires extensive manual reconstruction before it can be used in any enterprise process.',
   bullet3 = "Redaction protects data by destroying it. Enterprise AI requires data that is protected and preserved simultaneously. Any approach to enterprise AI data privacy and AI data pipeline protection must solve this without sacrificing AI output quality.",
 }: Props) {
-  const bullets = [
-    { strong: "Enterprise teams adopt PII protection tools.", rest: " Redaction engines, masking utilities, tokenization layers — to protect sensitive data before AI processing. These tools were designed for compliance reporting and static data anonymization. They were never designed for AI workflows." },
-    { strong: 'When a redaction tool removes a customer name from a contract, the AI model receives "[REDACTED]" in its place.', rest: " The model cannot determine who the contract party is, which clauses reference that party, or how to structure outputs around the original entity relationships. The result is abstracted, generic AI output that requires extensive manual reconstruction before it can be used in any enterprise process." },
-    { strong: "Redaction protects data by destroying it.", rest: " Enterprise AI requires data that is protected and preserved simultaneously. Any approach to enterprise AI data privacy and AI data pipeline protection must solve this without sacrificing AI output quality." },
-  ]
+  const bullets = [bullet1, bullet2, bullet3]
 
   return (
     <>
@@ -140,7 +136,7 @@ export default function Section02_Problem({
               {bullets.map((b, i) => (
                 <li key={i} className="s2-bullet__item">
                   <span className="s2-bullet__icon" aria-hidden="true"></span>
-                  <span><strong>{b.strong}</strong>{b.rest}</span>
+                  <span>{b}</span>
                 </li>
               ))}
             </ul>
@@ -152,9 +148,8 @@ export default function Section02_Problem({
 }
 
 addPropertyControls(Section02_Problem, {
-  sectionLabel: {
-    type: ControlType.String,
-    title: "Section Label",
-    defaultValue: "Problem",
-  },
+  sectionLabel: { type: ControlType.String, title: "Section Label", defaultValue: "Problem" },
+  bullet1: { type: ControlType.String, title: "Bullet 1", defaultValue: "Enterprise teams adopt PII protection tools. Redaction engines, masking utilities, tokenization layers — to protect sensitive data before AI processing. These tools were designed for compliance reporting and static data anonymization. They were never designed for AI workflows." },
+  bullet2: { type: ControlType.String, title: "Bullet 2", defaultValue: 'When a redaction tool removes a customer name from a contract, the AI model receives "[REDACTED]" in its place. The model cannot determine who the contract party is, which clauses reference that party, or how to structure outputs around the original entity relationships. The result is abstracted, generic AI output that requires extensive manual reconstruction before it can be used in any enterprise process.' },
+  bullet3: { type: ControlType.String, title: "Bullet 3", defaultValue: "Redaction protects data by destroying it. Enterprise AI requires data that is protected and preserved simultaneously. Any approach to enterprise AI data privacy and AI data pipeline protection must solve this without sacrificing AI output quality." },
 })

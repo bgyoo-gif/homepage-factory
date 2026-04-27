@@ -21,26 +21,46 @@ interface Props {
   headingProduct?: string
   headingVs?: string
   headingTools?: string
-  col3Label?: string
+  thCapability?: string
+  thCol2?: string
+  thCol3?: string
+  row1Cap?: string; row1Col2?: string; row1Col3?: string
+  row2Cap?: string; row2Col2?: string; row2Col3?: string
+  row3Cap?: string; row3Col2?: string; row3Col3?: string
+  row4Cap?: string; row4Col2?: string; row4Col3?: string
+  row5Cap?: string; row5Col2?: string; row5Col3?: string
+  row6Cap?: string; row6Col2?: string; row6Col3?: string
+  row7Cap?: string; row7Col2?: string; row7Col3?: string
+  row8Cap?: string; row8Col2?: string; row8Col3?: string
 }
-
-const TABLE_ROWS = [
-  { capability: "Data protection",              col2: "Permanent removal",           col3: "Reversible encapsulation" },
-  { capability: "Document structure",           col2: "Destroyed",                   col3: "Preserved" },
-  { capability: "Entity relationships",         col2: "Collapsed",                   col3: "Maintained" },
-  { capability: "AI output usability",          col2: "Abstracted, generic",         col3: "Restored, enterprise-ready" },
-  { capability: "Output restoration",           col2: "✗ None",                      col3: "✓ Local restoration", col2Cross: true, col3Check: true },
-  { capability: "Workflow automation",          col2: "Requires manual post-processing", col3: "End-to-end automated" },
-  { capability: "Context-aware data control",   col2: "✗",                           col3: "✓", col2Cross: true, col3Check: true },
-  { capability: "Enterprise confidentiality control", col2: "Partial",              col3: "Complete" },
-]
 
 export default function Section05_ComparisonTable({
   headingProduct = "LLM Capsule",
   headingVs = "vs",
   headingTools = "Redaction Tools",
-  col3Label = "LLM Capsule (AI Enablement Data Layer)",
+  thCapability = "Capability",
+  thCol2 = "Redaction / Masking Tools",
+  thCol3 = "LLM Capsule (AI Enablement Data Layer)",
+  row1Cap = "Data protection", row1Col2 = "Permanent removal", row1Col3 = "Reversible encapsulation",
+  row2Cap = "Document structure", row2Col2 = "Destroyed", row2Col3 = "Preserved",
+  row3Cap = "Entity relationships", row3Col2 = "Collapsed", row3Col3 = "Maintained",
+  row4Cap = "AI output usability", row4Col2 = "Abstracted, generic", row4Col3 = "Restored, enterprise-ready",
+  row5Cap = "Output restoration", row5Col2 = "None", row5Col3 = "Local restoration",
+  row6Cap = "Workflow automation", row6Col2 = "Requires manual post-processing", row6Col3 = "End-to-end automated",
+  row7Cap = "Context-aware data control", row7Col2 = "No", row7Col3 = "Yes",
+  row8Cap = "Enterprise confidentiality control", row8Col2 = "Partial", row8Col3 = "Complete",
 }: Props) {
+  const rows = [
+    { cap: row1Cap, col2: row1Col2, col3: row1Col3, col2Cross: false, col3Check: false },
+    { cap: row2Cap, col2: row2Col2, col3: row2Col3, col2Cross: false, col3Check: false },
+    { cap: row3Cap, col2: row3Col2, col3: row3Col3, col2Cross: false, col3Check: false },
+    { cap: row4Cap, col2: row4Col2, col3: row4Col3, col2Cross: false, col3Check: false },
+    { cap: row5Cap, col2: row5Col2, col3: row5Col3, col2Cross: true, col3Check: true },
+    { cap: row6Cap, col2: row6Col2, col3: row6Col3, col2Cross: false, col3Check: false },
+    { cap: row7Cap, col2: row7Col2, col3: row7Col3, col2Cross: true, col3Check: true },
+    { cap: row8Cap, col2: row8Col2, col3: row8Col3, col2Cross: false, col3Check: false },
+  ]
+
   return (
     <>
       <style>{`
@@ -88,8 +108,10 @@ export default function Section05_ComparisonTable({
         .s5-table-wrap {
           overflow-x: auto;
           -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
           margin: 24px 0;
         }
+        .s5-table-wrap::-webkit-scrollbar { display: none; }
         .s5-table {
           width: 100%;
           border-collapse: collapse;
@@ -154,44 +176,22 @@ export default function Section05_ComparisonTable({
               <table className="s5-table">
                 <thead>
                   <tr>
-                    <th>Capability</th>
-                    <th>Redaction / Masking Tools</th>
-                    <th className="highlight">
-                      <span className="s5-product">{headingProduct}</span> (AI Enablement Data Layer)
-                    </th>
+                    <th>{thCapability}</th>
+                    <th>{thCol2}</th>
+                    <th className="highlight">{thCol3}</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {TABLE_ROWS.map((row, i) => (
+                  {rows.map((row, i) => (
                     <tr key={i}>
-                      <td>{row.capability}</td>
+                      <td>{row.cap}</td>
                       <td>
-                        {row.col2Cross ? (
-                          <>
-                            <span className="s5-cross">
-                              {row.col2.startsWith("✗") ? "✗" : ""}
-                            </span>
-                            {row.col2.replace("✗", "").trim()
-                              ? " " + row.col2.replace("✗", "").trim()
-                              : ""}
-                          </>
-                        ) : (
-                          row.col2
-                        )}
+                        {row.col2Cross && <span className="s5-cross">{"✗ "}</span>}
+                        {row.col2}
                       </td>
                       <td className="highlight">
-                        {row.col3Check ? (
-                          <>
-                            <span className="s5-check">
-                              {row.col3.startsWith("✓") ? "✓" : ""}
-                            </span>
-                            {row.col3.replace("✓", "").trim()
-                              ? " " + row.col3.replace("✓", "").trim()
-                              : ""}
-                          </>
-                        ) : (
-                          row.col3
-                        )}
+                        {row.col3Check && <span className="s5-check">{"✓ "}</span>}
+                        {row.col3}
                       </td>
                     </tr>
                   ))}
@@ -206,24 +206,34 @@ export default function Section05_ComparisonTable({
 }
 
 addPropertyControls(Section05_ComparisonTable, {
-  headingProduct: {
-    type: ControlType.String,
-    title: "Product Name",
-    defaultValue: "LLM Capsule",
-  },
-  headingVs: {
-    type: ControlType.String,
-    title: "vs Text",
-    defaultValue: "vs",
-  },
-  headingTools: {
-    type: ControlType.String,
-    title: "Competitor Label",
-    defaultValue: "Redaction Tools",
-  },
-  col3Label: {
-    type: ControlType.String,
-    title: "Col 3 Header Label",
-    defaultValue: "LLM Capsule (AI Enablement Data Layer)",
-  },
+  headingProduct: { type: ControlType.String, title: "Product Name", defaultValue: "LLM Capsule" },
+  headingVs: { type: ControlType.String, title: "vs Text", defaultValue: "vs" },
+  headingTools: { type: ControlType.String, title: "Competitor Label", defaultValue: "Redaction Tools" },
+  thCapability: { type: ControlType.String, title: "TH: Capability", defaultValue: "Capability" },
+  thCol2: { type: ControlType.String, title: "TH: Col 2", defaultValue: "Redaction / Masking Tools" },
+  thCol3: { type: ControlType.String, title: "TH: Col 3", defaultValue: "LLM Capsule (AI Enablement Data Layer)" },
+  row1Cap: { type: ControlType.String, title: "Row 1 Capability", defaultValue: "Data protection" },
+  row1Col2: { type: ControlType.String, title: "Row 1 Col 2", defaultValue: "Permanent removal" },
+  row1Col3: { type: ControlType.String, title: "Row 1 Col 3", defaultValue: "Reversible encapsulation" },
+  row2Cap: { type: ControlType.String, title: "Row 2 Capability", defaultValue: "Document structure" },
+  row2Col2: { type: ControlType.String, title: "Row 2 Col 2", defaultValue: "Destroyed" },
+  row2Col3: { type: ControlType.String, title: "Row 2 Col 3", defaultValue: "Preserved" },
+  row3Cap: { type: ControlType.String, title: "Row 3 Capability", defaultValue: "Entity relationships" },
+  row3Col2: { type: ControlType.String, title: "Row 3 Col 2", defaultValue: "Collapsed" },
+  row3Col3: { type: ControlType.String, title: "Row 3 Col 3", defaultValue: "Maintained" },
+  row4Cap: { type: ControlType.String, title: "Row 4 Capability", defaultValue: "AI output usability" },
+  row4Col2: { type: ControlType.String, title: "Row 4 Col 2", defaultValue: "Abstracted, generic" },
+  row4Col3: { type: ControlType.String, title: "Row 4 Col 3", defaultValue: "Restored, enterprise-ready" },
+  row5Cap: { type: ControlType.String, title: "Row 5 Capability", defaultValue: "Output restoration" },
+  row5Col2: { type: ControlType.String, title: "Row 5 Col 2", defaultValue: "None" },
+  row5Col3: { type: ControlType.String, title: "Row 5 Col 3", defaultValue: "Local restoration" },
+  row6Cap: { type: ControlType.String, title: "Row 6 Capability", defaultValue: "Workflow automation" },
+  row6Col2: { type: ControlType.String, title: "Row 6 Col 2", defaultValue: "Requires manual post-processing" },
+  row6Col3: { type: ControlType.String, title: "Row 6 Col 3", defaultValue: "End-to-end automated" },
+  row7Cap: { type: ControlType.String, title: "Row 7 Capability", defaultValue: "Context-aware data control" },
+  row7Col2: { type: ControlType.String, title: "Row 7 Col 2", defaultValue: "No" },
+  row7Col3: { type: ControlType.String, title: "Row 7 Col 3", defaultValue: "Yes" },
+  row8Cap: { type: ControlType.String, title: "Row 8 Capability", defaultValue: "Enterprise confidentiality control" },
+  row8Col2: { type: ControlType.String, title: "Row 8 Col 2", defaultValue: "Partial" },
+  row8Col3: { type: ControlType.String, title: "Row 8 Col 3", defaultValue: "Complete" },
 })

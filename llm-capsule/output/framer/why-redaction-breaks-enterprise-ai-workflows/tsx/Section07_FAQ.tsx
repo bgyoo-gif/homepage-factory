@@ -14,105 +14,17 @@ const C = {
   trackingTight:  "-0.5px",
 }
 
-// ─── JSON-LD ────────────────────────────────────────────────────────────────
-const jsonLdFaq = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Why does redaction break enterprise AI workflows?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Redaction permanently removes sensitive data from documents. When AI processes redacted documents, it cannot reference the removed information. This produces incomplete, abstracted outputs that cannot be used in real enterprise workflows without manual reconstruction.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the difference between redaction and encapsulation?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Redaction permanently destroys data. Encapsulation replaces sensitive elements with reversible, structure-preserving representations. After AI processing, encapsulated data is restored through local restoration, producing usable enterprise outputs.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can masking tools be used for enterprise AI?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Traditional masking tools were designed for static data protection, not AI workflows. They remove the context AI models need and do not support output restoration. Restorable workflows like LLM Capsule are designed specifically for enterprise AI data pipelines.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How does LLM Capsule restore AI outputs?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "AI results are automatically restored locally with original enterprise data. The locally stored mapping between original and encapsulated values is applied to AI outputs, restoring real names, accounts, and references in the enterprise environment.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is encapsulation the same as encryption?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. Encryption scrambles data so it cannot be read at all. Encapsulation replaces sensitive elements with structure-preserving representations that AI can still process meaningfully. The AI model works with protected but structurally intact documents.",
-      },
-    },
-  ],
-})
-
-// ─── Static FAQ data ─────────────────────────────────────────────────────────
-const FAQ_ITEMS = [
-  {
-    question: "Why does redaction break enterprise AI workflows?",
-    answer: "Redaction permanently removes sensitive data from documents. When AI processes redacted documents, it cannot reference the removed information. This produces incomplete, abstracted outputs that cannot be used in real enterprise workflows without manual reconstruction.",
-    hasProduct: false,
-  },
-  {
-    question: "What is the difference between redaction and encapsulation?",
-    answer: "Redaction permanently destroys data. Encapsulation replaces sensitive elements with reversible, structure-preserving representations. After AI processing, encapsulated data is restored through local restoration, producing usable enterprise outputs.",
-    hasProduct: false,
-  },
-  {
-    question: "Can masking tools be used for enterprise AI?",
-    answer: null,
-    answerParts: [
-      { text: "Traditional masking tools were designed for static data protection, not AI workflows. They remove the context AI models need and do not support output restoration. Restorable workflows like " },
-      { product: "LLM Capsule" },
-      { text: " are designed specifically for enterprise AI data pipelines." },
-    ],
-    hasProduct: true,
-  },
-  {
-    question: null,
-    questionParts: [
-      { text: "How does " },
-      { product: "LLM Capsule" },
-      { text: " restore AI outputs?" },
-    ],
-    answer: "AI results are automatically restored locally with original enterprise data. The locally stored mapping between original and encapsulated values is applied to AI outputs, restoring real names, accounts, and references in the enterprise environment.",
-    hasProduct: false,
-    questionHasProduct: true,
-  },
-  {
-    question: "Is encapsulation the same as encryption?",
-    answer: "No. Encryption scrambles data so it cannot be read at all. Encapsulation replaces sensitive elements with structure-preserving representations that AI can still process meaningfully. The AI model works with protected but structurally intact documents.",
-    hasProduct: false,
-  },
-]
-
 // ─── Accordion Item ───────────────────────────────────────────────────────────
 function AccordionItem({
-  item,
+  question,
+  answer,
   isOpen,
   onToggle,
-  productName,
 }: {
-  item: typeof FAQ_ITEMS[number]
+  question: string
+  answer: string
   isOpen: boolean
   onToggle: () => void
-  productName: string
 }) {
   return (
     <div
@@ -152,27 +64,7 @@ function AccordionItem({
             overflowWrap: "break-word",
           }}
         >
-          {"question" in item && item.question ? (
-            item.question
-          ) : "questionParts" in item && item.questionParts ? (
-            <>
-              {item.questionParts.map((p, i) =>
-                "product" in p ? (
-                  <span
-                    key={i}
-                    style={{
-                      fontFamily: `"${C.brandFont}", sans-serif`,
-                      fontWeight: 700,
-                    }}
-                  >
-                    {productName}
-                  </span>
-                ) : (
-                  <span key={i}>{p.text}</span>
-                )
-              )}
-            </>
-          ) : null}
+          {question}
         </span>
         <span
           style={{
@@ -214,27 +106,7 @@ function AccordionItem({
               textWrap: "pretty" as any,
             }}
           >
-            {"answer" in item && item.answer ? (
-              item.answer
-            ) : "answerParts" in item && item.answerParts ? (
-              <>
-                {item.answerParts.map((p, i) =>
-                  "product" in p ? (
-                    <span
-                      key={i}
-                      style={{
-                        fontFamily: `"${C.brandFont}", sans-serif`,
-                        fontWeight: 700,
-                      }}
-                    >
-                      {productName}
-                    </span>
-                  ) : (
-                    <span key={i}>{p.text}</span>
-                  )
-                )}
-              </>
-            ) : null}
+            {answer}
           </p>
         </div>
       )}
@@ -246,13 +118,54 @@ function AccordionItem({
 interface Props {
   sectionLabel?: string
   productName?: string
+  faq1Q?: string
+  faq1A?: string
+  faq2Q?: string
+  faq2A?: string
+  faq3Q?: string
+  faq3A?: string
+  faq4Q?: string
+  faq4A?: string
+  faq5Q?: string
+  faq5A?: string
 }
 
 export default function Section07_FAQ({
   sectionLabel = "FAQ",
   productName = "LLM Capsule",
+  faq1Q = "Why does redaction break enterprise AI workflows?",
+  faq1A = "Redaction permanently removes sensitive data from documents. When AI processes redacted documents, it cannot reference the removed information. This produces incomplete, abstracted outputs that cannot be used in real enterprise workflows without manual reconstruction.",
+  faq2Q = "What is the difference between redaction and encapsulation?",
+  faq2A = "Redaction permanently destroys data. Encapsulation replaces sensitive elements with reversible, structure-preserving representations. After AI processing, encapsulated data is restored through local restoration, producing usable enterprise outputs.",
+  faq3Q = "Can masking tools be used for enterprise AI?",
+  faq3A = "Traditional masking tools were designed for static data protection, not AI workflows. They remove the context AI models need and do not support output restoration. Restorable workflows like LLM Capsule are designed specifically for enterprise AI data pipelines.",
+  faq4Q = "How does LLM Capsule restore AI outputs?",
+  faq4A = "AI results are automatically restored locally with original enterprise data. The locally stored mapping between original and encapsulated values is applied to AI outputs, restoring real names, accounts, and references in the enterprise environment.",
+  faq5Q = "Is encapsulation the same as encryption?",
+  faq5A = "No. Encryption scrambles data so it cannot be read at all. Encapsulation replaces sensitive elements with structure-preserving representations that AI can still process meaningfully. The AI model works with protected but structurally intact documents.",
 }: Props) {
   const [openIndex, setOpenIndex] = useState<number>(0)
+
+  const FAQ_ITEMS = [
+    { question: faq1Q, answer: faq1A },
+    { question: faq2Q, answer: faq2A },
+    { question: faq3Q, answer: faq3A },
+    { question: faq4Q, answer: faq4A },
+    { question: faq5Q, answer: faq5A },
+  ]
+
+  const jsonLdFaq = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQ_ITEMS.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  })
 
   const handleToggle = (i: number) => {
     setOpenIndex(openIndex === i ? -1 : i)
@@ -335,10 +248,10 @@ export default function Section07_FAQ({
               {FAQ_ITEMS.map((item, i) => (
                 <AccordionItem
                   key={i}
-                  item={item}
+                  question={item.question}
+                  answer={item.answer}
                   isOpen={openIndex === i}
                   onToggle={() => handleToggle(i)}
-                  productName={productName}
                 />
               ))}
             </div>
@@ -359,5 +272,55 @@ addPropertyControls(Section07_FAQ, {
     type: ControlType.String,
     title: "Product Name",
     defaultValue: "LLM Capsule",
+  },
+  faq1Q: {
+    type: ControlType.String,
+    title: "FAQ 1 Question",
+    defaultValue: "Why does redaction break enterprise AI workflows?",
+  },
+  faq1A: {
+    type: ControlType.String,
+    title: "FAQ 1 Answer",
+    defaultValue: "Redaction permanently removes sensitive data from documents. When AI processes redacted documents, it cannot reference the removed information. This produces incomplete, abstracted outputs that cannot be used in real enterprise workflows without manual reconstruction.",
+  },
+  faq2Q: {
+    type: ControlType.String,
+    title: "FAQ 2 Question",
+    defaultValue: "What is the difference between redaction and encapsulation?",
+  },
+  faq2A: {
+    type: ControlType.String,
+    title: "FAQ 2 Answer",
+    defaultValue: "Redaction permanently destroys data. Encapsulation replaces sensitive elements with reversible, structure-preserving representations. After AI processing, encapsulated data is restored through local restoration, producing usable enterprise outputs.",
+  },
+  faq3Q: {
+    type: ControlType.String,
+    title: "FAQ 3 Question",
+    defaultValue: "Can masking tools be used for enterprise AI?",
+  },
+  faq3A: {
+    type: ControlType.String,
+    title: "FAQ 3 Answer",
+    defaultValue: "Traditional masking tools were designed for static data protection, not AI workflows. They remove the context AI models need and do not support output restoration. Restorable workflows like LLM Capsule are designed specifically for enterprise AI data pipelines.",
+  },
+  faq4Q: {
+    type: ControlType.String,
+    title: "FAQ 4 Question",
+    defaultValue: "How does LLM Capsule restore AI outputs?",
+  },
+  faq4A: {
+    type: ControlType.String,
+    title: "FAQ 4 Answer",
+    defaultValue: "AI results are automatically restored locally with original enterprise data. The locally stored mapping between original and encapsulated values is applied to AI outputs, restoring real names, accounts, and references in the enterprise environment.",
+  },
+  faq5Q: {
+    type: ControlType.String,
+    title: "FAQ 5 Question",
+    defaultValue: "Is encapsulation the same as encryption?",
+  },
+  faq5A: {
+    type: ControlType.String,
+    title: "FAQ 5 Answer",
+    defaultValue: "No. Encryption scrambles data so it cannot be read at all. Encapsulation replaces sensitive elements with structure-preserving representations that AI can still process meaningfully. The AI model works with protected but structurally intact documents.",
   },
 })
