@@ -26,6 +26,7 @@ interface Props {
   cta1Href?: string
   footnote2Label?: string
   footnote2Href?: string
+  ctaBgImage?: string
 }
 
 export default function Section09_CTABand({
@@ -37,7 +38,10 @@ export default function Section09_CTABand({
   cta1Href = "/request-a-demo",
   footnote2Label = "AWS Marketplace",
   footnote2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
+  ctaBgImage = "",
 }: Props) {
+  const DEFAULT_CTA_BG = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-navy-teal.png"
+  const resolvedCtaBg = ctaBgImage || DEFAULT_CTA_BG
   return (
     <>
       <style>{`
@@ -50,7 +54,7 @@ export default function Section09_CTABand({
           padding: 80px 16px;
           text-align: center;
           background-color: ${C.neutral800};
-          background-image: ${C.bgImgNavy};
+          background-image: url('${resolvedCtaBg}');
           background-size: cover;
           background-position: center;
           box-sizing: border-box;
@@ -148,6 +152,9 @@ export default function Section09_CTABand({
         }
         .s9-footnote a:hover { color: ${C.white}; }
 
+        @container s9 (max-width: 767px) {
+          .s9-section { background-image: none; }
+        }
         @container s9 (min-width: 768px) {
           .s9-section { padding: 100px 32px; }
           .s9-title { font-size: 40px; }
@@ -158,7 +165,7 @@ export default function Section09_CTABand({
           .s9-band-inner { max-width: 720px; }
         }
         @container s9 (min-width: 1440px) {
-          .s9-section { padding: 120px 120px; background-image: ${C.bgImgNavy}; }
+          .s9-section { padding: 120px 120px; }
           .s9-band-inner { max-width: 1080px; }
           .s9-title { font-size: 50px; }
         }
@@ -229,4 +236,5 @@ addPropertyControls(Section09_CTABand, {
     title: "Footnote 2 URL",
     defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
   },
+  ctaBgImage: { type: ControlType.Image, title: "CTA Background Image" },
 })
