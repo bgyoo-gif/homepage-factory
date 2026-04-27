@@ -628,7 +628,7 @@
     .ds-card--case-study .ds-card__left {
       background-color: transparent; border-right: 1px solid var(--ds-color-border-default);
       padding: var(--ds-space-xl); display: flex; flex-direction: row;
-      align-items: center; flex-shrink: 0; min-width: 280px;
+      align-items: center; flex-shrink: 0; width: 320px;
       gap: var(--ds-space-lg);
     }
     .ds-card--case-study .ds-card__left-image { width: 72px; height: 72px; object-fit: contain; border-radius: var(--ds-radius-md); flex-shrink: 0; }
@@ -641,7 +641,7 @@
     .ds-card--case-study .ds-card__tags { display: flex; flex-wrap: wrap; gap: var(--ds-space-xs); margin-top: auto; }
     @media (max-width: 767px) {
       .ds-card--case-study { flex-direction: column; }
-      .ds-card--case-study .ds-card__left { border-right: none; border-bottom: 1px solid var(--ds-color-border-default); min-width: 0; padding: var(--ds-space-lg); }
+      .ds-card--case-study .ds-card__left { border-right: none; border-bottom: 1px solid var(--ds-color-border-default); width: auto; padding: var(--ds-space-lg); }
       .ds-card--case-study .ds-card__right { padding: var(--ds-space-lg); }
     }
 

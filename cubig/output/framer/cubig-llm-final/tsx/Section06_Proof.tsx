@@ -230,14 +230,14 @@ export default function Section06_Proof({
           gap: 20px;
           border-right: 1px solid ${P.borderDefault};
           flex-shrink: 0;
-          min-width: 280px;
+          width: 320px;
         }
 
         @container (max-width: 767px) {
           .s6-case-left {
             border-right: none;
             border-bottom: 1px solid ${P.borderDefault};
-            min-width: 0;
+            width: auto;
             padding: 24px;
           }
         }
