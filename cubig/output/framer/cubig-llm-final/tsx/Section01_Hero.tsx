@@ -154,11 +154,6 @@ export default function Section01_Hero({
           .s1-description { max-width: 860px; }
         }
 
-        .s1-product-name {
-          font-family: "Oxanium", sans-serif;
-          font-weight: 700;
-        }
-
         .s1-screenshot-frame {
           margin-top: 48px;
           border-radius: 40px 40px 0 0;
@@ -322,7 +317,6 @@ export default function Section01_Hero({
                 {heroTitle} <span className="s1-title-highlight">{heroTitleHighlight}</span>
               </h1>
               <p className="s1-description">
-                <span className="s1-product-name">LLM Capsule</span>{" "}
                 {heroDescription}
               </p>
             </div>
