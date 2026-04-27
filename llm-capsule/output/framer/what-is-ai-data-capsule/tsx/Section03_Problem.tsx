@@ -12,33 +12,13 @@ interface Props {
   sectionLabel?: string
   paragraph1?: string
   paragraph2?: string
-  lang?: "en" | "ko"
-}
-
-const COPY = {
-  en: {
-    sectionLabel: "Problem",
-    paragraph1: "Enterprises need to process sensitive documents through large language models for summarization, extraction, translation, and analysis. Sending raw data to external AI services creates unacceptable exposure. Existing approaches — masking, redaction, tokenization — destroy the context AI models need to produce useful outputs.",
-    paragraph2: "The result is a binary choice: expose data to use AI, or protect data and get unusable results.",
-  },
-  ko: {
-    sectionLabel: "문제",
-    paragraph1: "기업은 요약, 추출, 번역, 분석을 위해 민감한 문서를 대규모 언어 모델로 처리해야 합니다. 원시 데이터를 외부 AI 서비스에 전송하면 허용할 수 없는 노출이 발생합니다. 기존 방식 — 마스킹, 편집, 토큰화 — 은 AI 모델이 유용한 출력을 생성하는 데 필요한 컨텍스트를 파괴합니다.",
-    paragraph2: "결과는 이분법적 선택입니다: AI를 사용하기 위해 데이터를 노출하거나, 데이터를 보호하고 사용 불가능한 결과를 얻거나.",
-  },
 }
 
 export default function Section03_Problem({
-  sectionLabel,
-  paragraph1,
-  paragraph2,
-  lang = "en",
+  sectionLabel = "Problem",
+  paragraph1 = "Enterprises need to process sensitive documents through large language models for summarization, extraction, translation, and analysis. Sending raw data to external AI services creates unacceptable exposure. Existing approaches — masking, redaction, tokenization — destroy the context AI models need to produce useful outputs.",
+  paragraph2 = "The result is a binary choice: expose data to use AI, or protect data and get unusable results.",
 }: Props) {
-  const copy = COPY[lang]
-  const displayLabel = sectionLabel ?? copy.sectionLabel
-  const displayP1 = paragraph1 ?? copy.paragraph1
-  const displayP2 = paragraph2 ?? copy.paragraph2
-
   return (
     <>
       <style>{`
@@ -114,10 +94,10 @@ export default function Section03_Problem({
         <div className="s3-inner">
           <div className="s3-container">
             <div className="s3-section-header">
-              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s3-label-brand">{displayLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s3-label-brand">{sectionLabel}</span></h2>
             </div>
-            <p className="s3-paragraph">{displayP1}</p>
-            <p className="s3-paragraph">{displayP2}</p>
+            <p className="s3-paragraph">{paragraph1}</p>
+            <p className="s3-paragraph">{paragraph2}</p>
           </div>
         </div>
       </section>
@@ -142,12 +122,5 @@ addPropertyControls(Section03_Problem, {
     title: "Paragraph 2",
     defaultValue: "The result is a binary choice: expose data to use AI, or protect data and get unusable results.",
     displayTextArea: true,
-  },
-  lang: {
-    type: ControlType.Enum,
-    title: "Language",
-    options: ["en", "ko"],
-    optionTitles: ["English", "Korean"],
-    defaultValue: "en",
   },
 })

@@ -11,93 +11,49 @@ const PALETTE = {
   borderDefault:  "#e6e7e9",
 }
 
-interface RelatedItem {
-  title: string
-  href: string
-  iconPath: string
-}
+// Icons are kept as a const array — they don't need to be editable Props
+const ICONS = [
+  "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z",
+  "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
+  "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zm-3-7l2 2 4-4",
+  "M5 12h14M12 5l7 7-7 7",
+  "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H9H8",
+]
 
 interface Props {
-  sectionLabel?: string
-  relatedItems?: RelatedItem[]
-  lang?: "en" | "ko"
-}
-
-const DEFAULT_ITEMS_EN: RelatedItem[] = [
-  {
-    title: "Product Overview",
-    href: "/product",
-    iconPath: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z",
-  },
-  {
-    title: "Architecture",
-    href: "/architecture",
-    iconPath: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
-  },
-  {
-    title: "Trust & Compliance",
-    href: "/trust",
-    iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zm-3-7l2 2 4-4",
-  },
-  {
-    title: "Request a Demo",
-    href: "/request-a-demo",
-    iconPath: "M5 12h14M12 5l7 7-7 7",
-  },
-  {
-    title: "Why Redaction Breaks AI",
-    href: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
-    iconPath: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H9H8",
-  },
-]
-
-const DEFAULT_ITEMS_KO: RelatedItem[] = [
-  {
-    title: "제품 개요",
-    href: "/product",
-    iconPath: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z",
-  },
-  {
-    title: "아키텍처",
-    href: "/architecture",
-    iconPath: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
-  },
-  {
-    title: "신뢰 & 컴플라이언스",
-    href: "/trust",
-    iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zm-3-7l2 2 4-4",
-  },
-  {
-    title: "데모 요청",
-    href: "/request-a-demo",
-    iconPath: "M5 12h14M12 5l7 7-7 7",
-  },
-  {
-    title: "왜 편집이 AI를 망치는가",
-    href: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
-    iconPath: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H9H8",
-  },
-]
-
-const COPY = {
-  en: {
-    sectionLabel: "Related",
-    items: DEFAULT_ITEMS_EN,
-  },
-  ko: {
-    sectionLabel: "관련 콘텐츠",
-    items: DEFAULT_ITEMS_KO,
-  },
+  relatedLabel?: string
+  related1Title?: string
+  related1Href?: string
+  related2Title?: string
+  related2Href?: string
+  related3Title?: string
+  related3Href?: string
+  related4Title?: string
+  related4Href?: string
+  related5Title?: string
+  related5Href?: string
 }
 
 export default function Section08_Related({
-  sectionLabel,
-  relatedItems,
-  lang = "en",
+  relatedLabel = "Related",
+  related1Title = "Product Overview",
+  related1Href = "/product",
+  related2Title = "Architecture",
+  related2Href = "/architecture",
+  related3Title = "Trust & Compliance",
+  related3Href = "/trust",
+  related4Title = "Request a Demo",
+  related4Href = "/request-a-demo",
+  related5Title = "Why Redaction Breaks AI",
+  related5Href = "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
 }: Props) {
-  const copy = COPY[lang]
-  const displayLabel = sectionLabel ?? copy.sectionLabel
-  const displayItems = relatedItems ?? copy.items
+  const items = [
+    { title: related1Title, href: related1Href, iconPath: ICONS[0] },
+    { title: related2Title, href: related2Href, iconPath: ICONS[1] },
+    { title: related3Title, href: related3Href, iconPath: ICONS[2] },
+    { title: related4Title, href: related4Href, iconPath: ICONS[3] },
+    { title: related5Title, href: related5Href, iconPath: ICONS[4] },
+  ]
 
   return (
     <>
@@ -176,13 +132,13 @@ export default function Section08_Related({
 
         @container (min-width: 768px) {
           .s8-container { padding: 0 32px; }
-          .s8-grid { grid-template-columns: repeat(2, 1fr); }
+          .s8-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
         @container (min-width: 1024px) {
           .s8-container { padding: 0 32px; }
         }
         @container (min-width: 1440px) { .s8-container { padding: 0 120px; max-width: 1440px; } }
-        
+
       `}</style>
       <section className="s8-section">
         <div className="s8-inner">
@@ -194,10 +150,10 @@ export default function Section08_Related({
                   <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
                 </svg>
               </span>
-              <span className="s8-title-text">{displayLabel}</span>
+              <span className="s8-title-text">{relatedLabel}</span>
             </div>
             <div className="s8-grid">
-              {displayItems.map((item, i) => (
+              {items.map((item, i) => (
                 <a key={i} href={item.href} className="s8-card">
                   <span className="s8-card-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -216,16 +172,59 @@ export default function Section08_Related({
 }
 
 addPropertyControls(Section08_Related, {
-  sectionLabel: {
+  relatedLabel: {
     type: ControlType.String,
     title: "Section Label",
     defaultValue: "Related",
   },
-  lang: {
-    type: ControlType.Enum,
-    title: "Language",
-    options: ["en", "ko"],
-    optionTitles: ["English", "Korean"],
-    defaultValue: "en",
+  related1Title: {
+    type: ControlType.String,
+    title: "Link 1 Title",
+    defaultValue: "Product Overview",
+  },
+  related1Href: {
+    type: ControlType.String,
+    title: "Link 1 URL",
+    defaultValue: "/product",
+  },
+  related2Title: {
+    type: ControlType.String,
+    title: "Link 2 Title",
+    defaultValue: "Architecture",
+  },
+  related2Href: {
+    type: ControlType.String,
+    title: "Link 2 URL",
+    defaultValue: "/architecture",
+  },
+  related3Title: {
+    type: ControlType.String,
+    title: "Link 3 Title",
+    defaultValue: "Trust & Compliance",
+  },
+  related3Href: {
+    type: ControlType.String,
+    title: "Link 3 URL",
+    defaultValue: "/trust",
+  },
+  related4Title: {
+    type: ControlType.String,
+    title: "Link 4 Title",
+    defaultValue: "Request a Demo",
+  },
+  related4Href: {
+    type: ControlType.String,
+    title: "Link 4 URL",
+    defaultValue: "/request-a-demo",
+  },
+  related5Title: {
+    type: ControlType.String,
+    title: "Link 5 Title",
+    defaultValue: "Why Redaction Breaks AI",
+  },
+  related5Href: {
+    type: ControlType.String,
+    title: "Link 5 URL",
+    defaultValue: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
   },
 })

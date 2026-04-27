@@ -14,60 +14,24 @@ const PALETTE = {
 
 interface Props {
   title?: string
-  titleProductName?: string
   description?: string
   cta1Label?: string
   cta1Href?: string
   footnoteLink2Label?: string
   footnoteLink2Href?: string
-  lang?: "en" | "ko"
-}
-
-const COPY = {
-  en: {
-    title: "See how",
-    titleProductName: "LLM Capsule",
-    titleSuffix: "works with your data",
-    description: "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
-    cta1Label: "Request a Demo",
-    cta1Href: "/request-a-demo",
-    footnoteLink2Label: "AWS Marketplace",
-    footnoteLink2Href: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
-  },
-  ko: {
-    title: "",
-    titleProductName: "LLM Capsule",
-    titleSuffix: "이 귀사의 데이터와 어떻게 동작하는지 확인하세요",
-    description: "문서, 배포 제약 조건, 평가 기준을 가져오세요. 실제 워크플로우에서 시연합니다.",
-    cta1Label: "데모 요청",
-    cta1Href: "/request-a-demo",
-    footnoteLink2Label: "AWS Marketplace",
-    footnoteLink2Href: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
-  },
+  ctaBgImage?: string
 }
 
 export default function Section09_CTA({
-  title,
-  titleProductName,
-  description,
-  cta1Label,
-  cta1Href,
-  footnoteLink2Label,
-  footnoteLink2Href,
-  lang = "en",
+  title = "See how LLM Capsule works with your data",
+  description = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
+  cta1Label = "Request a Demo",
+  cta1Href = "/request-a-demo",
+  footnoteLink2Label = "AWS Marketplace",
+  footnoteLink2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
+  ctaBgImage,
 }: Props) {
-  const copy = COPY[lang]
-
-  const displayProductName = titleProductName ?? copy.titleProductName
-  const displayDesc = description ?? copy.description
-  const displayCta1 = cta1Label ?? copy.cta1Label
-  const displayCta1Href = cta1Href ?? copy.cta1Href
-  const displayFn2Label = footnoteLink2Label ?? copy.footnoteLink2Label
-  const displayFn2Href = footnoteLink2Href ?? copy.footnoteLink2Href
-
-  const titleText = lang === "en"
-    ? `See how ${displayProductName} works with your data`
-    : `${displayProductName}${copy.titleSuffix}`
+  const resolvedCtaBg = ctaBgImage || `${IMAGE_BASE}/bg-gradient-deep-teal.png`
 
   return (
     <>
@@ -83,7 +47,7 @@ export default function Section09_CTA({
           padding: 80px 16px;
           text-align: center;
           background-color: ${PALETTE.neutral800};
-          background-image: url('${IMAGE_BASE}/bg-gradient-deep-teal.png');
+          background-image: url('${resolvedCtaBg}');
           background-size: cover;
           background-position: center;
         }
@@ -174,6 +138,9 @@ export default function Section09_CTA({
         @container (min-width: 768px) {
           .s9-cta { padding: 100px 32px; }
         }
+        @container (max-width: 767px) {
+          .s9-cta { background-image: none; }
+        }
         @container (min-width: 1024px) {
           .s9-inner { max-width: 720px; }
         }
@@ -186,22 +153,14 @@ export default function Section09_CTA({
       <section className="s9-cta">
         <div className="s9-inner">
           <h2 className="s9-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
-            {lang === "en" ? (
-              <>
-                {title}
-              </>
-            ) : (
-              <>
-                <span className="s9-product-name">{displayProductName}</span>{copy.titleSuffix}
-              </>
-            )}
+            {title}
           </h2>
-          <p className="s9-description">{displayDesc}</p>
+          <p className="s9-description">{description}</p>
           <div className="s9-actions">
-            <a href={displayCta1Href} className="s9-btn">{displayCta1}</a>
+            <a href={cta1Href} className="s9-btn">{cta1Label}</a>
           </div>
           <div className="s9-footnote">
-            <a href={displayFn2Href} target="_blank" rel="noopener">{displayFn2Label}</a>
+            <a href={footnoteLink2Href} target="_blank" rel="noopener">{footnoteLink2Label}</a>
           </div>
         </div>
       </section>
@@ -210,10 +169,11 @@ export default function Section09_CTA({
 }
 
 addPropertyControls(Section09_CTA, {
-  titleProductName: {
+  title: {
     type: ControlType.String,
-    title: "Product Name",
-    defaultValue: "LLM Capsule",
+    title: "Title",
+    defaultValue: "See how LLM Capsule works with your data",
+    displayTextArea: true,
   },
   description: {
     type: ControlType.String,
@@ -241,11 +201,8 @@ addPropertyControls(Section09_CTA, {
     title: "Footnote Link 2 URL",
     defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
   },
-  lang: {
-    type: ControlType.Enum,
-    title: "Language",
-    options: ["en", "ko"],
-    optionTitles: ["English", "Korean"],
-    defaultValue: "en",
+  ctaBgImage: {
+    type: ControlType.Image,
+    title: "Background Image",
   },
 })

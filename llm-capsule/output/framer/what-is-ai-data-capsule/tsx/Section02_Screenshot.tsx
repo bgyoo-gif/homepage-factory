@@ -10,25 +10,11 @@ const PALETTE = {
 
 interface Props {
   screenshotLabel?: string
-  lang?: "en" | "ko"
-}
-
-const COPY = {
-  en: {
-    screenshotLabel: "Data Capsule Concept — Original document vs. encapsulated version with structure preserved",
-  },
-  ko: {
-    screenshotLabel: "데이터 캡슐 개념 — 원본 문서 vs. 구조가 보존된 캡슐화 버전",
-  },
 }
 
 export default function Section02_Screenshot({
-  screenshotLabel,
-  lang = "en",
+  screenshotLabel = "Data Capsule Concept — Original document vs. encapsulated version with structure preserved",
 }: Props) {
-  const copy = COPY[lang]
-  const displayLabel = screenshotLabel ?? copy.screenshotLabel
-
   return (
     <>
       <style>{`
@@ -90,14 +76,14 @@ export default function Section02_Screenshot({
           .s2-container { padding: 0 32px; }
         }
         @container (min-width: 1440px) { .s2-container { padding: 0 120px; max-width: 1440px; } }
-        
+
       `}</style>
       <section className="s2-section">
         <div className="s2-inner">
           <div className="s2-container">
             <div className="s2-frame">
               <div className="s2-screenshot">
-                <p className="s2-label">{displayLabel}</p>
+                <p className="s2-label">{screenshotLabel}</p>
               </div>
             </div>
           </div>
@@ -113,12 +99,5 @@ addPropertyControls(Section02_Screenshot, {
     title: "Screenshot Label",
     defaultValue: "Data Capsule Concept — Original document vs. encapsulated version with structure preserved",
     displayTextArea: true,
-  },
-  lang: {
-    type: ControlType.Enum,
-    title: "Language",
-    options: ["en", "ko"],
-    optionTitles: ["English", "Korean"],
-    defaultValue: "en",
   },
 })

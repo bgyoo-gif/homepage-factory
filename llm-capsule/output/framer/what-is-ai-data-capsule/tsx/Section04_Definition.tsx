@@ -16,33 +16,13 @@ interface Props {
   sectionLabel?: string
   bannerLabel?: string
   bannerText?: string
-  lang?: "en" | "ko"
-}
-
-const COPY = {
-  en: {
-    sectionLabel: "Definition",
-    bannerLabel: "AI Data Capsule",
-    bannerText: "An AI data capsule is a locally generated AI enablement layer that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.",
-  },
-  ko: {
-    sectionLabel: "정의",
-    bannerLabel: "AI 데이터 캡슐",
-    bannerText: "AI 데이터 캡슐은 외부 AI 서비스에 전송되기 전에 민감한 엔터프라이즈 데이터를 감싸는 로컬 생성 AI 활성화 레이어입니다. 캡슐은 민감한 요소를 가역적 표현으로 대체하면서 문서 구조와 컨텍스트를 보존합니다. AI 처리 후 캡슐은 로컬 복원을 가능하게 하여 원본 데이터를 외부에 노출하지 않고 AI 출력물을 전체 엔터프라이즈 컨텍스트로 복원합니다.",
-  },
 }
 
 export default function Section04_Definition({
-  sectionLabel,
-  bannerLabel,
-  bannerText,
-  lang = "en",
+  sectionLabel = "Definition",
+  bannerLabel = "AI Data Capsule",
+  bannerText = "An AI data capsule is a locally generated AI enablement layer that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.",
 }: Props) {
-  const copy = COPY[lang]
-  const displayLabel = sectionLabel ?? copy.sectionLabel
-  const displayBannerLabel = bannerLabel ?? copy.bannerLabel
-  const displayBannerText = bannerText ?? copy.bannerText
-
   return (
     <>
       <style>{`
@@ -133,11 +113,11 @@ export default function Section04_Definition({
         <div className="s4-inner">
           <div className="s4-container">
             <div className="s4-section-header">
-              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s4-label-brand">{displayLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s4-label-brand">{sectionLabel}</span></h2>
             </div>
             <div className="s4-banner">
-              <span className="s4-banner-label">{displayBannerLabel}</span>
-              <p className="s4-banner-text">{displayBannerText}</p>
+              <span className="s4-banner-label">{bannerLabel}</span>
+              <p className="s4-banner-text">{bannerText}</p>
             </div>
           </div>
         </div>
@@ -162,12 +142,5 @@ addPropertyControls(Section04_Definition, {
     title: "Banner Text",
     defaultValue: "An AI data capsule is a locally generated AI enablement layer that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.",
     displayTextArea: true,
-  },
-  lang: {
-    type: ControlType.Enum,
-    title: "Language",
-    options: ["en", "ko"],
-    optionTitles: ["English", "Korean"],
-    defaultValue: "en",
   },
 })

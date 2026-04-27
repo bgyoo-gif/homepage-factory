@@ -16,41 +16,15 @@ interface Props {
   cardParagraph1?: string
   cardParagraph2?: string
   productName?: string
-  lang?: "en" | "ko"
-}
-
-const COPY = {
-  en: {
-    sectionLabel: "Enterprise Example",
-    cardTitle: "Financial Compliance Review",
-    cardParagraph1: "A bank needs AI to summarize 500 loan applications for compliance review. Each document contains customer names, social security numbers, account balances, and income data.",
-    cardParagraph2: " the bank encapsulates all documents locally. AI processes the protected versions and generates structured summaries. Local restoration restores the real customer names and account details into the summaries, producing compliance-ready outputs without ever exposing raw customer data to the AI provider.",
-    productName: "LLM Capsule",
-  },
-  ko: {
-    sectionLabel: "엔터프라이즈 예시",
-    cardTitle: "금융 컴플라이언스 검토",
-    cardParagraph1: "은행은 컴플라이언스 검토를 위해 AI로 500개의 대출 신청서를 요약해야 합니다. 각 문서에는 고객 이름, 주민등록번호, 계좌 잔액, 소득 데이터가 포함되어 있습니다.",
-    cardParagraph2: "를 사용하면 은행은 모든 문서를 로컬에서 캡슐화합니다. AI는 보호된 버전을 처리하고 구조화된 요약을 생성합니다. 로컬 복원은 실제 고객 이름과 계좌 세부 정보를 요약에 복원하여 AI 제공업체에 원시 고객 데이터를 노출하지 않고 컴플라이언스 준비 출력물을 생성합니다.",
-    productName: "LLM Capsule",
-  },
 }
 
 export default function Section06_EnterpriseExample({
-  sectionLabel,
-  cardTitle,
-  cardParagraph1,
-  cardParagraph2,
-  productName,
-  lang = "en",
+  sectionLabel = "Enterprise Example",
+  cardTitle = "Financial Compliance Review",
+  cardParagraph1 = "A bank needs AI to summarize 500 loan applications for compliance review. Each document contains customer names, social security numbers, account balances, and income data.",
+  cardParagraph2 = " the bank encapsulates all documents locally. AI processes the protected versions and generates structured summaries. Local restoration restores the real customer names and account details into the summaries, producing compliance-ready outputs without ever exposing raw customer data to the AI provider.",
+  productName = "LLM Capsule",
 }: Props) {
-  const copy = COPY[lang]
-  const displayLabel = sectionLabel ?? copy.sectionLabel
-  const displayTitle = cardTitle ?? copy.cardTitle
-  const displayP1 = cardParagraph1 ?? copy.cardParagraph1
-  const displayP2 = cardParagraph2 ?? copy.cardParagraph2
-  const displayProduct = productName ?? copy.productName
-
   return (
     <>
       <style>{`
@@ -144,13 +118,13 @@ export default function Section06_EnterpriseExample({
         <div className="s6-inner">
           <div className="s6-container">
             <div className="s6-section-header">
-              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s6-label-brand">{displayLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s6-label-brand">{sectionLabel}</span></h2>
             </div>
             <div className="s6-card">
-              <h4 className="s6-card-title">{displayTitle}</h4>
-              <p className="s6-card-p">{displayP1}</p>
+              <h4 className="s6-card-title">{cardTitle}</h4>
+              <p className="s6-card-p">{cardParagraph1}</p>
               <p className="s6-card-p">
-                With <span className="s6-product-name">{displayProduct}</span>,{displayP2}
+                With <span className="s6-product-name">{productName}</span>,{cardParagraph2}
               </p>
             </div>
           </div>
@@ -187,12 +161,5 @@ addPropertyControls(Section06_EnterpriseExample, {
     type: ControlType.String,
     title: "Product Name",
     defaultValue: "LLM Capsule",
-  },
-  lang: {
-    type: ControlType.Enum,
-    title: "Language",
-    options: ["en", "ko"],
-    optionTitles: ["English", "Korean"],
-    defaultValue: "en",
   },
 })

@@ -10,76 +10,24 @@ const PALETTE = {
   borderDefault:  "#e6e7e9",
 }
 
-interface BulletItem {
-  strong: string
-  text: string
-}
-
 interface Props {
   sectionLabel?: string
   introText?: string
-  bullets?: BulletItem[]
+  bullet1?: string
+  bullet2?: string
+  bullet3?: string
   bannerText?: string
-  lang?: "en" | "ko"
-}
-
-const DEFAULT_BULLETS_EN: BulletItem[] = [
-  {
-    strong: "Local Encapsulation.",
-    text: " Sensitive elements in enterprise documents — names, account numbers, dates, medical codes, contract terms — are detected and replaced with structure-preserving representations. The mapping between original and replaced values is stored locally, never transmitted.",
-  },
-  {
-    strong: "Protected AI Processing.",
-    text: " The encapsulated document is sent to any external LLM. Because document structure is preserved, the AI model can perform summarization, extraction, classification, and translation effectively. No original sensitive data leaves the enterprise environment.",
-  },
-  {
-    strong: "Local Restoration.",
-    text: " AI results are automatically restored locally with original enterprise data. The locally stored mapping is applied to reconstruct outputs with real names, amounts, and references, producing results that are directly usable in business workflows.",
-  },
-]
-
-const DEFAULT_BULLETS_KO: BulletItem[] = [
-  {
-    strong: "로컬 캡슐화.",
-    text: " 엔터프라이즈 문서의 민감한 요소 — 이름, 계좌번호, 날짜, 의료 코드, 계약 조건 — 가 감지되어 구조 보존 표현으로 대체됩니다. 원본과 대체 값 간의 매핑은 로컬에 저장되며 절대 전송되지 않습니다.",
-  },
-  {
-    strong: "보호된 AI 처리.",
-    text: " 캡슐화된 문서는 모든 외부 LLM에 전송됩니다. 문서 구조가 보존되기 때문에 AI 모델은 요약, 추출, 분류 및 번역을 효과적으로 수행할 수 있습니다. 어떤 원본 민감 데이터도 엔터프라이즈 환경을 벗어나지 않습니다.",
-  },
-  {
-    strong: "로컬 복원.",
-    text: " AI 결과는 원본 엔터프라이즈 데이터와 함께 로컬에서 자동으로 복원됩니다. 로컬에 저장된 매핑이 적용되어 실제 이름, 금액 및 참조로 출력물을 재구성하며, 비즈니스 워크플로우에서 직접 사용 가능한 결과를 생성합니다.",
-  },
-]
-
-const COPY = {
-  en: {
-    sectionLabel: "Explanation",
-    introText: "An AI data capsule operates as an AI enablement data layer through three stages within a restorable workflow:",
-    bannerText: "Key concept: AI results are automatically restored locally with original enterprise data. The AI data capsule enables AI adoption by ensuring original data never leaves the enterprise environment.",
-    bullets: DEFAULT_BULLETS_EN,
-  },
-  ko: {
-    sectionLabel: "설명",
-    introText: "AI 데이터 캡슐은 복원 가능한 워크플로우 내에서 세 단계를 통해 AI 활성화 데이터 레이어로 작동합니다:",
-    bannerText: "핵심 개념: AI 결과는 원본 엔터프라이즈 데이터와 함께 로컬에서 자동으로 복원됩니다. AI 데이터 캡슐은 원본 데이터가 절대 엔터프라이즈 환경을 벗어나지 않도록 보장하여 AI 도입을 가능하게 합니다.",
-    bullets: DEFAULT_BULLETS_KO,
-  },
 }
 
 export default function Section05_Explanation({
-  sectionLabel,
-  introText,
-  bullets,
-  bannerText,
-  lang = "en",
+  sectionLabel = "Explanation",
+  introText = "An AI data capsule operates as an AI enablement data layer through three stages within a restorable workflow:",
+  bullet1 = "Local Encapsulation. Sensitive elements in enterprise documents — names, account numbers, dates, medical codes, contract terms — are detected and replaced with structure-preserving representations. The mapping between original and replaced values is stored locally, never transmitted.",
+  bullet2 = "Protected AI Processing. The encapsulated document is sent to any external LLM. Because document structure is preserved, the AI model can perform summarization, extraction, classification, and translation effectively. No original sensitive data leaves the enterprise environment.",
+  bullet3 = "Local Restoration. AI results are automatically restored locally with original enterprise data. The locally stored mapping is applied to reconstruct outputs with real names, amounts, and references, producing results that are directly usable in business workflows.",
+  bannerText = "Key concept: AI results are automatically restored locally with original enterprise data. The AI data capsule enables AI adoption by ensuring original data never leaves the enterprise environment.",
 }: Props) {
-  const copy = COPY[lang]
-  const displayLabel = sectionLabel ?? copy.sectionLabel
-  const displayIntro = introText ?? copy.introText
-  const displayBullets = bullets ?? copy.bullets
-  const displayBanner = bannerText ?? copy.bannerText
+  const bullets = [bullet1, bullet2, bullet3]
 
   return (
     <>
@@ -203,19 +151,19 @@ export default function Section05_Explanation({
         <div className="s5-inner">
           <div className="s5-container">
             <div className="s5-section-header">
-              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s5-label-brand">{displayLabel}</span></h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s5-label-brand">{sectionLabel}</span></h2>
             </div>
-            <p className="s5-intro">{displayIntro}</p>
+            <p className="s5-intro">{introText}</p>
             <ul className="s5-bullet-list">
-              {displayBullets.map((item, i) => (
+              {bullets.map((text, i) => (
                 <li key={i} className="s5-bullet-item">
                   <span className="s5-bullet-icon" />
-                  <span><strong>{item.strong}</strong>{item.text}</span>
+                  <span>{text}</span>
                 </li>
               ))}
             </ul>
             <div className="s5-banner">
-              {displayBanner}
+              {bannerText}
             </div>
           </div>
         </div>
@@ -236,17 +184,28 @@ addPropertyControls(Section05_Explanation, {
     defaultValue: "An AI data capsule operates as an AI enablement data layer through three stages within a restorable workflow:",
     displayTextArea: true,
   },
+  bullet1: {
+    type: ControlType.String,
+    title: "Bullet 1",
+    defaultValue: "Local Encapsulation. Sensitive elements in enterprise documents — names, account numbers, dates, medical codes, contract terms — are detected and replaced with structure-preserving representations. The mapping between original and replaced values is stored locally, never transmitted.",
+    displayTextArea: true,
+  },
+  bullet2: {
+    type: ControlType.String,
+    title: "Bullet 2",
+    defaultValue: "Protected AI Processing. The encapsulated document is sent to any external LLM. Because document structure is preserved, the AI model can perform summarization, extraction, classification, and translation effectively. No original sensitive data leaves the enterprise environment.",
+    displayTextArea: true,
+  },
+  bullet3: {
+    type: ControlType.String,
+    title: "Bullet 3",
+    defaultValue: "Local Restoration. AI results are automatically restored locally with original enterprise data. The locally stored mapping is applied to reconstruct outputs with real names, amounts, and references, producing results that are directly usable in business workflows.",
+    displayTextArea: true,
+  },
   bannerText: {
     type: ControlType.String,
     title: "Banner Text",
     defaultValue: "Key concept: AI results are automatically restored locally with original enterprise data. The AI data capsule enables AI adoption by ensuring original data never leaves the enterprise environment.",
     displayTextArea: true,
-  },
-  lang: {
-    type: ControlType.Enum,
-    title: "Language",
-    options: ["en", "ko"],
-    optionTitles: ["English", "Korean"],
-    defaultValue: "en",
   },
 })

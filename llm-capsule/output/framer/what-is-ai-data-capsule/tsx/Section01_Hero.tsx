@@ -17,29 +17,12 @@ const PALETTE = {
 interface Props {
   title?: string
   description?: string
-  lang?: "en" | "ko"
-}
-
-const COPY = {
-  en: {
-    title: "What Is an AI Data Capsule?",
-    description: "Enterprise data encapsulation for secure LLM usage — how to protect sensitive data before AI processing and restore usable outputs after.",
-  },
-  ko: {
-    title: "AI 데이터 캡슐이란 무엇인가요?",
-    description: "안전한 LLM 사용을 위한 엔터프라이즈 데이터 캡슐화 — AI 처리 전에 민감한 데이터를 보호하고 사용 가능한 출력물을 복원하는 방법.",
-  },
 }
 
 export default function Section01_Hero({
-  title,
-  description,
-  lang = "en",
+  title = "What Is an AI Data Capsule?",
+  description = "Enterprise data encapsulation for secure LLM usage — how to protect sensitive data before AI processing and restore usable outputs after.",
 }: Props) {
-  const copy = COPY[lang]
-  const displayTitle = title ?? copy.title
-  const displayDesc = description ?? copy.description
-
   return (
     <>
       <style>{`
@@ -117,8 +100,8 @@ export default function Section01_Hero({
       <section className="s1-section">
         <div className="s1-inner">
           <div className="s1-container">
-            <h1 className="s1-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{displayTitle}</h1>
-            <p className="s1-description">{displayDesc}</p>
+            <h1 className="s1-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{title}</h1>
+            <p className="s1-description">{description}</p>
           </div>
         </div>
       </section>
@@ -137,12 +120,5 @@ addPropertyControls(Section01_Hero, {
     title: "Description",
     defaultValue: "Enterprise data encapsulation for secure LLM usage — how to protect sensitive data before AI processing and restore usable outputs after.",
     displayTextArea: true,
-  },
-  lang: {
-    type: ControlType.Enum,
-    title: "Language",
-    options: ["en", "ko"],
-    optionTitles: ["English", "Korean"],
-    defaultValue: "en",
   },
 })

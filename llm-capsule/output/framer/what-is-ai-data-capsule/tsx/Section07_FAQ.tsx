@@ -12,64 +12,16 @@ const PALETTE = {
   borderDefault:  "#e6e7e9",
 }
 
-interface FAQItem {
-  question: string
-  answer: string
-}
-
 interface Props {
   sectionLabel?: string
-  faqItems?: FAQItem[]
-  lang?: "en" | "ko"
-}
-
-const DEFAULT_FAQ_EN: FAQItem[] = [
-  {
-    question: "What is an AI data capsule?",
-    answer: "An AI data capsule is a locally generated AI enablement layer that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.",
-  },
-  {
-    question: "How does an AI data capsule differ from data masking?",
-    answer: "Data masking permanently removes sensitive information, making AI outputs unusable for enterprise workflows. An AI data capsule preserves data structure and enables restoration, so AI results can be restored to their full enterprise context locally.",
-  },
-  {
-    question: "Does the AI data capsule work with any LLM?",
-    answer: "Yes. Because the capsule operates at the data layer before transmission, it works with any external AI service — ChatGPT, Claude, Gemini, or any LLM API.",
-  },
-  {
-    question: "Where is the mapping data stored?",
-    answer: "The mapping between original and encapsulated values is stored entirely within the enterprise environment. It is never transmitted to external services.",
-  },
-]
-
-const DEFAULT_FAQ_KO: FAQItem[] = [
-  {
-    question: "AI 데이터 캡슐이란 무엇인가요?",
-    answer: "AI 데이터 캡슐은 민감한 엔터프라이즈 데이터가 외부 AI 서비스에 전송되기 전에 캡슐화하는 로컬 생성 AI 활성화 레이어입니다. AI 처리 후 캡슐은 로컬 복원을 가능하게 하여 출력물이 실제 엔터프라이즈 워크플로우에서 사용 가능하게 유지됩니다.",
-  },
-  {
-    question: "AI 데이터 캡슐은 데이터 마스킹과 어떻게 다른가요?",
-    answer: "데이터 마스킹은 민감한 정보를 영구적으로 제거하여 AI 출력물을 엔터프라이즈 워크플로우에서 사용할 수 없게 만듭니다. AI 데이터 캡슐은 데이터 구조를 보존하고 복원을 가능하게 하여 AI 결과를 로컬에서 전체 엔터프라이즈 컨텍스트로 복원할 수 있습니다.",
-  },
-  {
-    question: "AI 데이터 캡슐은 모든 LLM과 호환되나요?",
-    answer: "예. 캡슐이 전송 전 데이터 레이어에서 작동하기 때문에 모든 외부 AI 서비스 — ChatGPT, Claude, Gemini 또는 모든 LLM API — 와 호환됩니다.",
-  },
-  {
-    question: "매핑 데이터는 어디에 저장되나요?",
-    answer: "원본과 캡슐화된 값 간의 매핑은 전적으로 엔터프라이즈 환경 내에 저장됩니다. 외부 서비스에 절대 전송되지 않습니다.",
-  },
-]
-
-const COPY = {
-  en: {
-    sectionLabel: "FAQ",
-    faqItems: DEFAULT_FAQ_EN,
-  },
-  ko: {
-    sectionLabel: "자주 묻는 질문",
-    faqItems: DEFAULT_FAQ_KO,
-  },
+  faq1Q?: string
+  faq1A?: string
+  faq2Q?: string
+  faq2A?: string
+  faq3Q?: string
+  faq3A?: string
+  faq4Q?: string
+  faq4A?: string
 }
 
 function AccordionCard({ question, answer, defaultOpen = false }: { question: string; answer: string; defaultOpen?: boolean }) {
@@ -152,13 +104,22 @@ function AccordionCard({ question, answer, defaultOpen = false }: { question: st
 }
 
 export default function Section07_FAQ({
-  sectionLabel,
-  faqItems,
-  lang = "en",
+  sectionLabel = "FAQ",
+  faq1Q = "What is an AI data capsule?",
+  faq1A = "An AI data capsule is a locally generated AI enablement layer that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.",
+  faq2Q = "How does an AI data capsule differ from data masking?",
+  faq2A = "Data masking permanently removes sensitive information, making AI outputs unusable for enterprise workflows. An AI data capsule preserves data structure and enables restoration, so AI results can be restored to their full enterprise context locally.",
+  faq3Q = "Does the AI data capsule work with any LLM?",
+  faq3A = "Yes. Because the capsule operates at the data layer before transmission, it works with any external AI service — ChatGPT, Claude, Gemini, or any LLM API.",
+  faq4Q = "Where is the mapping data stored?",
+  faq4A = "The mapping between original and encapsulated values is stored entirely within the enterprise environment. It is never transmitted to external services.",
 }: Props) {
-  const copy = COPY[lang]
-  const displayLabel = sectionLabel ?? copy.sectionLabel
-  const displayItems = faqItems ?? copy.faqItems
+  const faqs = [
+    { question: faq1Q, answer: faq1A },
+    { question: faq2Q, answer: faq2A },
+    { question: faq3Q, answer: faq3A },
+    { question: faq4Q, answer: faq4A },
+  ]
 
   return (
     <>
@@ -226,7 +187,7 @@ export default function Section07_FAQ({
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          "mainEntity": displayItems.map((item) => ({
+          "mainEntity": faqs.map((item) => ({
             "@type": "Question",
             "name": item.question,
             "acceptedAnswer": {
@@ -240,10 +201,10 @@ export default function Section07_FAQ({
         <div className="s7-inner">
           <div className="s7-container">
             <div className="s7-section-header">
-              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{displayLabel}</h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{sectionLabel}</h2>
             </div>
             <div className="s7-ac-list">
-              {displayItems.map((item, i) => (
+              {faqs.map((item, i) => (
                 <AccordionCard
                   key={i}
                   question={item.question}
@@ -265,11 +226,52 @@ addPropertyControls(Section07_FAQ, {
     title: "Section Label",
     defaultValue: "FAQ",
   },
-  lang: {
-    type: ControlType.Enum,
-    title: "Language",
-    options: ["en", "ko"],
-    optionTitles: ["English", "Korean"],
-    defaultValue: "en",
+  faq1Q: {
+    type: ControlType.String,
+    title: "FAQ 1 Question",
+    defaultValue: "What is an AI data capsule?",
+    displayTextArea: true,
+  },
+  faq1A: {
+    type: ControlType.String,
+    title: "FAQ 1 Answer",
+    defaultValue: "An AI data capsule is a locally generated AI enablement layer that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.",
+    displayTextArea: true,
+  },
+  faq2Q: {
+    type: ControlType.String,
+    title: "FAQ 2 Question",
+    defaultValue: "How does an AI data capsule differ from data masking?",
+    displayTextArea: true,
+  },
+  faq2A: {
+    type: ControlType.String,
+    title: "FAQ 2 Answer",
+    defaultValue: "Data masking permanently removes sensitive information, making AI outputs unusable for enterprise workflows. An AI data capsule preserves data structure and enables restoration, so AI results can be restored to their full enterprise context locally.",
+    displayTextArea: true,
+  },
+  faq3Q: {
+    type: ControlType.String,
+    title: "FAQ 3 Question",
+    defaultValue: "Does the AI data capsule work with any LLM?",
+    displayTextArea: true,
+  },
+  faq3A: {
+    type: ControlType.String,
+    title: "FAQ 3 Answer",
+    defaultValue: "Yes. Because the capsule operates at the data layer before transmission, it works with any external AI service — ChatGPT, Claude, Gemini, or any LLM API.",
+    displayTextArea: true,
+  },
+  faq4Q: {
+    type: ControlType.String,
+    title: "FAQ 4 Question",
+    defaultValue: "Where is the mapping data stored?",
+    displayTextArea: true,
+  },
+  faq4A: {
+    type: ControlType.String,
+    title: "FAQ 4 Answer",
+    defaultValue: "The mapping between original and encapsulated values is stored entirely within the enterprise environment. It is never transmitted to external services.",
+    displayTextArea: true,
   },
 })
