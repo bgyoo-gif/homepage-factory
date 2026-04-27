@@ -89,9 +89,22 @@ interface Props {
   limitBullet2?: string
   limitBullet3?: string
 
+  // Section headings
+  heading2?: string
+  heading3?: string
+  heading4?: string
+  heading5?: string
+  heading6?: string
+  heading7?: string
+  heading8?: string
+
   // Section 5 – How LLM Capsule Differs
   differsText?: string
   differsBannerText?: string
+
+  // Section 6 – Comparison Table headers
+  thCapability?: string
+  thAnonymization?: string
 
   // Section 6 – Comparison Table (row cells, pipe-separated: label|anon|capsule)
   tableRow1?: string
@@ -112,6 +125,19 @@ interface Props {
   faq2Question?: string
   faq2Answer?: string
 
+  // Section 9 – Related
+  relatedTitle?: string
+  related1Title?: string
+  related1Href?: string
+  related2Title?: string
+  related2Href?: string
+  related3Title?: string
+  related3Href?: string
+  related4Title?: string
+  related4Href?: string
+  related5Title?: string
+  related5Href?: string
+
   // CTA Band
   ctaTitle?: string
   ctaDescription?: string
@@ -119,6 +145,7 @@ interface Props {
   ctaBtn1Href?: string
   ctaFootnote2Label?: string
   ctaFootnote2Href?: string
+  ctaBgImage?: string
 }
 
 // ─── Helper: parse pipe-separated row string ───────────────────────────────────
@@ -132,6 +159,14 @@ export default function LocalRestorationVsAnonymization({
   heroTitle = "Local Restoration vs Anonymization",
   heroDescription = "Compare local restoration (restoration) with anonymization for enterprise AI. Anonymization is permanent; local restoration restores real enterprise data in AI outputs automatically.",
 
+  heading2 = "Overview",
+  heading3 = "How Anonymization Works",
+  heading4 = "Limitations",
+  heading5 = "How LLM Capsule Differs",
+  heading6 = "Comparison",
+  heading7 = "Enterprise Workflow Example",
+  heading8 = "FAQ",
+
   overviewText = "Anonymization and local restoration represent opposite approaches to data protection in AI workflows. Anonymization permanently removes identifying information. Local restoration temporarily protects data and restores it after AI processing — producing enterprise-ready outputs with real data.",
 
   anonWorksText = "Anonymization techniques — k-anonymity, differential privacy, generalization, suppression — transform data so that individual records cannot be re-identified. The transformation is designed to be irreversible. Anonymized data is considered non-personal under most regulatory frameworks.",
@@ -142,6 +177,9 @@ export default function LocalRestorationVsAnonymization({
 
   differsText = "Local restoration (restoration) is the process of restoring AI outputs to their full enterprise context using locally stored mappings. Data is encapsulated (not anonymized) before AI processing — sensitive values are replaced with reversible, structure-preserving representations. After AI processing, the original values are restored automatically.",
   differsBannerText = "AI results are restored locally. LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.",
+
+  thCapability = "Capability",
+  thAnonymization = "Anonymization",
 
   tableRow1 = "Reversibility|Irreversible|Fully reversible",
   tableRow2 = "Output usability|Anonymous, non-actionable|Enterprise-ready, actionable",
@@ -159,15 +197,30 @@ export default function LocalRestorationVsAnonymization({
   faq2Question = "When should I use anonymization vs local restoration?",
   faq2Answer = "Use anonymization for research datasets and analytics where individual identity is not needed. Use local restoration (LLM Capsule) for production AI workflows where outputs must reference real enterprise data.",
 
+  relatedTitle = "Related",
+  related1Title = "Product Overview",
+  related1Href = "/product",
+  related2Title = "Architecture",
+  related2Href = "/architecture",
+  related3Title = "Trust & Compliance",
+  related3Href = "/trust",
+  related4Title = "Request a Demo",
+  related4Href = "/request-a-demo",
+  related5Title = "Learn Hub",
+  related5Href = "/resources/learn",
+
   ctaTitle = "See how LLM Capsule works with your data",
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   ctaBtn1Label = "Request a Demo",
   ctaBtn1Href = "/request-a-demo",
   ctaFootnote2Label = "AWS Marketplace",
   ctaFootnote2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
+  ctaBgImage,
 }: Props) {
   const [faq1Open, setFaq1Open] = useState(true)
   const [faq2Open, setFaq2Open] = useState(false)
+
+  const resolvedCtaBg = ctaBgImage || "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-navy-teal.png"
 
   const rows = [tableRow1, tableRow2, tableRow3, tableRow4, tableRow5, tableRow6].map(parseRow)
 
@@ -333,7 +386,9 @@ export default function LocalRestorationVsAnonymization({
         /* ── Table ──────────────────────────────────────────────────── */
         .lrva-table-wrap {
           overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0;
+          scrollbar-width: none;
         }
+        .lrva-table-wrap::-webkit-scrollbar { display: none; }
         .lrva-table {
           width: 100%; border-collapse: collapse; font-size: 14px;
         }
@@ -435,7 +490,7 @@ export default function LocalRestorationVsAnonymization({
 
         /* ── Card Grid ──────────────────────────────────────────────── */
         .lrva-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-        @container (min-width: 768px) { .lrva-card-grid--2col { grid-template-columns: repeat(2, 1fr); } }
+        @container (min-width: 768px) { .lrva-card-grid--2col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
         /* ── Icon ───────────────────────────────────────────────────── */
         .lrva-icon {
@@ -485,8 +540,11 @@ export default function LocalRestorationVsAnonymization({
         .lrva-cta-band {
           width: 100%; position: relative; overflow: hidden;
           padding: 80px 16px; text-align: center;
-          background: ${P.gradientBrand};
+          background-color: ${P.neutral900};
+          background-image: url('${resolvedCtaBg}');
+          background-size: cover; background-position: center;
         }
+        @container (max-width: 767px) { .lrva-cta-band { background-image: none; } }
         .lrva-cta-band::before {
           content: ''; position: absolute; inset: 0;
           background-color: rgba(0,0,0,0.15); z-index: 0;
@@ -562,7 +620,7 @@ export default function LocalRestorationVsAnonymization({
             <section id="section-2" className="lrva-section--article-body">
               <div className="lrva-article-container">
                 <div className="lrva-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>Overview</h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{heading2}</h2>
                 </div>
                 <p className="lrva-body-paragraph">{overviewText}</p>
               </div>
@@ -572,7 +630,7 @@ export default function LocalRestorationVsAnonymization({
             <section id="section-3" className="lrva-section--article-body">
               <div className="lrva-article-container">
                 <div className="lrva-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>How Anonymization Works</h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{heading3}</h2>
                 </div>
                 <p className="lrva-body-paragraph">{anonWorksText}</p>
               </div>
@@ -582,7 +640,7 @@ export default function LocalRestorationVsAnonymization({
             <section id="section-4" className="lrva-section--article-body">
               <div className="lrva-article-container">
                 <div className="lrva-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>Limitations</h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{heading4}</h2>
                 </div>
                 <ul className="lrva-bullet lrva-bullet--dot">
                   {[limitBullet1, limitBullet2, limitBullet3].map((raw, i) => {
@@ -605,16 +663,11 @@ export default function LocalRestorationVsAnonymization({
             <section id="section-5" className="lrva-section--article-body">
               <div className="lrva-article-container">
                 <div className="lrva-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
-                    How <span className="lrva-text--product">LLM Capsule</span> Differs
-                  </h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{heading5}</h2>
                 </div>
                 <p className="lrva-body-paragraph">{differsText}</p>
                 <div className="lrva-banner">
-                  <p>
-                    <strong>AI results are restored locally.</strong>{" "}
-                    <span className="lrva-text--product">LLM Capsule</span> enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.
-                  </p>
+                  <p>{differsBannerText}</p>
                 </div>
               </div>
             </section>
@@ -623,14 +676,14 @@ export default function LocalRestorationVsAnonymization({
             <section id="section-6" className="lrva-section--article-body">
               <div className="lrva-article-container">
                 <div className="lrva-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>Comparison</h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{heading6}</h2>
                 </div>
                 <div className="lrva-table-wrap">
                   <table className="lrva-table">
                     <thead>
                       <tr>
-                        <th>Capability</th>
-                        <th>Anonymization</th>
+                        <th>{thCapability}</th>
+                        <th>{thAnonymization}</th>
                         <th className="lrva-table__th--highlight">
                           <span className="lrva-text--product">LLM Capsule</span>
                         </th>
@@ -654,15 +707,12 @@ export default function LocalRestorationVsAnonymization({
             <section id="section-7" className="lrva-section--article-body">
               <div className="lrva-article-container">
                 <div className="lrva-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>Enterprise Workflow Example</h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{heading7}</h2>
                 </div>
                 <div className="lrva-card">
                   <h4>{exampleCardTitle}</h4>
                   <p>{exampleCardP1}</p>
-                  <p>
-                    <span className="lrva-text--product">LLM Capsule</span>{" "}
-                    {exampleCardP2.replace(/^LLM Capsule\s*/i, "")}
-                  </p>
+                  <p>{exampleCardP2}</p>
                 </div>
               </div>
             </section>
@@ -671,7 +721,7 @@ export default function LocalRestorationVsAnonymization({
             <section id="section-8" className="lrva-section--article-body">
               <div className="lrva-article-container">
                 <div className="lrva-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>FAQ</h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{heading8}</h2>
                 </div>
                 <div className="lrva-ac-list">
                   {/* FAQ 1 */}
@@ -704,10 +754,7 @@ export default function LocalRestorationVsAnonymization({
                     </div>
                     {faq2Open && (
                       <div className="lrva-ac-card__body">
-                        <p>
-                          Use anonymization for research datasets and analytics where individual identity is not needed. Use local restoration (
-                          <span className="lrva-text--product">LLM Capsule</span>) for production AI workflows where outputs must reference real enterprise data.
-                        </p>
+                        <p>{faq2Answer}</p>
                       </div>
                     )}
                   </div>
@@ -725,18 +772,18 @@ export default function LocalRestorationVsAnonymization({
                       <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
                     </svg>
                   </span>
-                  <span className="lrva-section-title-icon__text">Related</span>
+                  <span className="lrva-section-title-icon__text">{relatedTitle}</span>
                 </div>
                 <div className="lrva-card-grid lrva-card-grid--2col">
-                  <a href="/product" className="lrva-card--dark">
+                  <a href={related1Href} className="lrva-card--dark">
                     <span className="lrva-card--dark__icon">
                       <svg className="lrva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
                       </svg>
                     </span>
-                    <span className="lrva-card--dark__title">Product Overview</span>
+                    <span className="lrva-card--dark__title">{related1Title}</span>
                   </a>
-                  <a href="/architecture" className="lrva-card--dark">
+                  <a href={related2Href} className="lrva-card--dark">
                     <span className="lrva-card--dark__icon">
                       <svg className="lrva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -744,34 +791,34 @@ export default function LocalRestorationVsAnonymization({
                         <path d="M2 12l10 5 10-5" />
                       </svg>
                     </span>
-                    <span className="lrva-card--dark__title">Architecture</span>
+                    <span className="lrva-card--dark__title">{related2Title}</span>
                   </a>
-                  <a href="/trust" className="lrva-card--dark">
+                  <a href={related3Href} className="lrva-card--dark">
                     <span className="lrva-card--dark__icon">
                       <svg className="lrva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                         <path d="m9 12 2 2 4-4" />
                       </svg>
                     </span>
-                    <span className="lrva-card--dark__title">Trust &amp; Compliance</span>
+                    <span className="lrva-card--dark__title">{related3Title}</span>
                   </a>
-                  <a href="/request-a-demo" className="lrva-card--dark">
+                  <a href={related4Href} className="lrva-card--dark">
                     <span className="lrva-card--dark__icon">
                       <svg className="lrva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <line x1="5" y1="12" x2="19" y2="12" />
                         <polyline points="12 5 19 12 12 19" />
                       </svg>
                     </span>
-                    <span className="lrva-card--dark__title">Request a Demo</span>
+                    <span className="lrva-card--dark__title">{related4Title}</span>
                   </a>
-                  <a href="/resources/learn" className="lrva-card--dark">
+                  <a href={related5Href} className="lrva-card--dark">
                     <span className="lrva-card--dark__icon">
                       <svg className="lrva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
                         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
                       </svg>
                     </span>
-                    <span className="lrva-card--dark__title">Learn Hub</span>
+                    <span className="lrva-card--dark__title">{related5Title}</span>
                   </a>
                 </div>
               </div>
@@ -813,6 +860,41 @@ addPropertyControls(LocalRestorationVsAnonymization, {
     defaultValue: "Compare local restoration (restoration) with anonymization for enterprise AI. Anonymization is permanent; local restoration restores real enterprise data in AI outputs automatically.",
     displayTextArea: true,
   },
+  heading2: {
+    type: ControlType.String,
+    title: "Heading: Overview",
+    defaultValue: "Overview",
+  },
+  heading3: {
+    type: ControlType.String,
+    title: "Heading: How Anonymization Works",
+    defaultValue: "How Anonymization Works",
+  },
+  heading4: {
+    type: ControlType.String,
+    title: "Heading: Limitations",
+    defaultValue: "Limitations",
+  },
+  heading5: {
+    type: ControlType.String,
+    title: "Heading: How LLM Capsule Differs",
+    defaultValue: "How LLM Capsule Differs",
+  },
+  heading6: {
+    type: ControlType.String,
+    title: "Heading: Comparison",
+    defaultValue: "Comparison",
+  },
+  heading7: {
+    type: ControlType.String,
+    title: "Heading: Enterprise Workflow Example",
+    defaultValue: "Enterprise Workflow Example",
+  },
+  heading8: {
+    type: ControlType.String,
+    title: "Heading: FAQ",
+    defaultValue: "FAQ",
+  },
   overviewText: {
     type: ControlType.String,
     title: "Overview",
@@ -848,6 +930,22 @@ addPropertyControls(LocalRestorationVsAnonymization, {
     title: "How LLM Capsule Differs",
     defaultValue: "Local restoration (restoration) is the process of restoring AI outputs to their full enterprise context using locally stored mappings. Data is encapsulated (not anonymized) before AI processing — sensitive values are replaced with reversible, structure-preserving representations. After AI processing, the original values are restored automatically.",
     displayTextArea: true,
+  },
+  differsBannerText: {
+    type: ControlType.String,
+    title: "Differs Banner Text",
+    defaultValue: "AI results are restored locally. LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.",
+    displayTextArea: true,
+  },
+  thCapability: {
+    type: ControlType.String,
+    title: "Table Header: Capability",
+    defaultValue: "Capability",
+  },
+  thAnonymization: {
+    type: ControlType.String,
+    title: "Table Header: Anonymization",
+    defaultValue: "Anonymization",
   },
   tableRow1: {
     type: ControlType.String,
@@ -918,6 +1016,61 @@ addPropertyControls(LocalRestorationVsAnonymization, {
     defaultValue: "Use anonymization for research datasets and analytics where individual identity is not needed. Use local restoration (LLM Capsule) for production AI workflows where outputs must reference real enterprise data.",
     displayTextArea: true,
   },
+  relatedTitle: {
+    type: ControlType.String,
+    title: "Related Section Title",
+    defaultValue: "Related",
+  },
+  related1Title: {
+    type: ControlType.String,
+    title: "Related 1 Title",
+    defaultValue: "Product Overview",
+  },
+  related1Href: {
+    type: ControlType.String,
+    title: "Related 1 URL",
+    defaultValue: "/product",
+  },
+  related2Title: {
+    type: ControlType.String,
+    title: "Related 2 Title",
+    defaultValue: "Architecture",
+  },
+  related2Href: {
+    type: ControlType.String,
+    title: "Related 2 URL",
+    defaultValue: "/architecture",
+  },
+  related3Title: {
+    type: ControlType.String,
+    title: "Related 3 Title",
+    defaultValue: "Trust & Compliance",
+  },
+  related3Href: {
+    type: ControlType.String,
+    title: "Related 3 URL",
+    defaultValue: "/trust",
+  },
+  related4Title: {
+    type: ControlType.String,
+    title: "Related 4 Title",
+    defaultValue: "Request a Demo",
+  },
+  related4Href: {
+    type: ControlType.String,
+    title: "Related 4 URL",
+    defaultValue: "/request-a-demo",
+  },
+  related5Title: {
+    type: ControlType.String,
+    title: "Related 5 Title",
+    defaultValue: "Learn Hub",
+  },
+  related5Href: {
+    type: ControlType.String,
+    title: "Related 5 URL",
+    defaultValue: "/resources/learn",
+  },
   ctaTitle: {
     type: ControlType.String,
     title: "CTA Title",
@@ -948,5 +1101,9 @@ addPropertyControls(LocalRestorationVsAnonymization, {
     type: ControlType.String,
     title: "Footnote 2 URL",
     defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
+  },
+  ctaBgImage: {
+    type: ControlType.Image,
+    title: "CTA Background Image",
   },
 })
