@@ -150,7 +150,8 @@ export default function Section02_CoreDifferentiation({
           padding: 32px;
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
+          align-items: center;
+          text-align: center;
           gap: 16px;
           flex-shrink: 0;
           width: 240px;
@@ -166,15 +167,15 @@ export default function Section02_CoreDifferentiation({
           border: 1px solid ${PALETTE.brandSecondary};
         }
         .s2-cs-card__left-icon {
-          width: 48px; height: 48px;
-          border-radius: 12px;
+          width: 64px; height: 64px;
+          border-radius: 16px;
           background-color: ${PALETTE.surfaceLight};
           display: flex;
           align-items: center;
           justify-content: center;
         }
         .s2-cs-card__left-icon svg {
-          width: 24px; height: 24px;
+          width: 32px; height: 32px;
           stroke: ${PALETTE.brandSecondary}; fill: none;
           stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
         }
