@@ -114,14 +114,11 @@ export default function Section02_CoreDifferentiation({
         @container (min-width: 1024px) { .s2-header__desc { max-width: 720px; } }
         @container (min-width: 1440px) { .s2-header__desc { max-width: 1080px; } }
 
-        /* Case Study Card Grid */
+        /* Case Study Card Grid — 1col to support long-word languages (DE/JA) */
         .s2-grid {
-          display: grid;
-          grid-template-columns: 1fr;
+          display: flex;
+          flex-direction: column;
           gap: 24px;
-        }
-        @container (min-width: 768px) {
-          .s2-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         /* Case Study Card */
@@ -130,53 +127,61 @@ export default function Section02_CoreDifferentiation({
           border-radius: 18px;
           border: 1px solid ${PALETTE.borderDefault};
           box-shadow: ${PALETTE.shadowCard};
-          display: grid;
-          grid-template-columns: 100px 1fr;
-          gap: 0;
+          display: flex;
+          flex-direction: row;
           padding: 0;
           overflow: hidden;
         }
         @container (max-width: 767px) {
-          .s2-cs-card { grid-template-columns: 1fr; }
+          .s2-cs-card { flex-direction: column; }
           .s2-cs-card__left {
-            border-right: none !important;
+            border-right: none;
             border-bottom: 1px solid ${PALETTE.borderDefault};
-            flex-direction: row !important;
-            justify-content: flex-start !important;
-            padding: 16px !important;
+            min-width: 0;
+            padding: 24px;
           }
         }
         .s2-cs-card__left {
           background: transparent;
           border-right: 1px solid ${PALETTE.borderDefault};
-          padding: 12px;
+          padding: 32px;
           display: flex;
-          flex-direction: column;
           align-items: center;
-          justify-content: center;
-          text-align: center;
-          gap: 8px;
+          gap: 16px;
+          flex-shrink: 0;
+          width: 280px;
         }
         .s2-cs-card__left svg {
           width: 32px; height: 32px;
           stroke: ${PALETTE.textPrimary}; fill: none;
           stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+          flex-shrink: 0;
+        }
+        .s2-cs-card__left-text {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
         }
         .s2-cs-card__left-category {
           font-family: "DM Sans", sans-serif;
-          font-size: 10px; color: ${PALETTE.textSecondary};
+          font-size: 11px; color: ${PALETTE.textSecondary};
           letter-spacing: 0.08em; text-transform: uppercase;
         }
         .s2-cs-card__left-title {
           font-family: "DM Sans", sans-serif;
-          font-size: 12px; font-weight: 700;
-          color: ${PALETTE.textPrimary}; line-height: 1.2;
+          font-size: 16px; font-weight: 700;
+          color: ${PALETTE.textPrimary}; line-height: 1.3;
         }
         .s2-cs-card__right {
-          padding: 16px;
+          padding: 32px;
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 12px;
+          flex: 1;
+          justify-content: center;
+        }
+        @container (max-width: 767px) {
+          .s2-cs-card__right { padding: 24px; }
         }
         .s2-cs-card__title {
           font-family: "DM Sans", sans-serif;
@@ -227,8 +232,10 @@ export default function Section02_CoreDifferentiation({
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                       {card.icon}
                     </svg>
-                    <span className="s2-cs-card__left-category">{card.category}</span>
-                    <span className="s2-cs-card__left-title">{card.title}</span>
+                    <div className="s2-cs-card__left-text">
+                      <span className="s2-cs-card__left-category">{card.category}</span>
+                      <span className="s2-cs-card__left-title">{card.title}</span>
+                    </div>
                   </div>
                   <div className="s2-cs-card__right">
                     <h3 className="s2-cs-card__title">{card.title}</h3>
