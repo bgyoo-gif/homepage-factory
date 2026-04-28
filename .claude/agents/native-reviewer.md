@@ -6,6 +6,7 @@ description: >
 tools: Read, Write, Edit, Bash
 model: sonnet
 skills:
+  - master-glossary
   - translation-guide
   - localization-brief-de
 ---
