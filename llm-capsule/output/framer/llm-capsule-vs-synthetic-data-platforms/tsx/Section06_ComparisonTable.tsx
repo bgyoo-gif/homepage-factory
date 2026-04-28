@@ -17,26 +17,36 @@ const PALETTE = {
 
 interface Props {
   sectionLabel?: string
-  brandName?: string
   col1Header?: string
   col2Header?: string
   col3Header?: string
+  row1Col1?: string; row1Col2?: string; row1Col3?: string
+  row2Col1?: string; row2Col2?: string; row2Col3?: string
+  row3Col1?: string; row3Col2?: string; row3Col3?: string
+  row4Col1?: string; row4Col2?: string; row4Col3?: string
+  row5Col1?: string; row5Col2?: string; row5Col3?: string
+  row6Col1?: string; row6Col2?: string; row6Col3?: string
 }
 
 export default function Section06_ComparisonTable({
   sectionLabel = "Comparison",
-  brandName = "LLM Capsule",
   col1Header = "Capability",
   col2Header = "Synthetic Data Platforms",
   col3Header = "LLM Capsule",
+  row1Col1 = "Input data", row1Col2 = "Artificially generated", row1Col3 = "Real enterprise documents",
+  row2Col1 = "Document support", row2Col2 = "Tabular data only", row2Col3 = "All document types",
+  row3Col1 = "Content specificity", row3Col2 = "Statistical patterns only", row3Col3 = "Actual enterprise content",
+  row4Col1 = "Output usability", row4Col2 = "Synthetic context", row4Col3 = "Real enterprise context",
+  row5Col1 = "Output restoration", row5Col2 = "✗", row5Col3 = "✓ Local restoration",
+  row6Col1 = "Use case", row6Col2 = "Model training, testing", row6Col3 = "Production AI workflows",
 }: Props) {
   const rows = [
-    { capability: "Input data", synthetic: "Artificially generated", capsule: "Real enterprise documents" },
-    { capability: "Document support", synthetic: "Tabular data only", capsule: "All document types" },
-    { capability: "Content specificity", synthetic: "Statistical patterns only", capsule: "Actual enterprise content" },
-    { capability: "Output usability", synthetic: "Synthetic context", capsule: "Real enterprise context" },
-    { capability: "Output restoration", synthetic: null, capsule: "Local restoration", syntheticCross: true, capsuleCheck: true },
-    { capability: "Use case", synthetic: "Model training, testing", capsule: "Production AI workflows" },
+    { capability: row1Col1, synthetic: row1Col2, capsule: row1Col3 },
+    { capability: row2Col1, synthetic: row2Col2, capsule: row2Col3 },
+    { capability: row3Col1, synthetic: row3Col2, capsule: row3Col3 },
+    { capability: row4Col1, synthetic: row4Col2, capsule: row4Col3 },
+    { capability: row5Col1, synthetic: row5Col2, capsule: row5Col3 },
+    { capability: row6Col1, synthetic: row6Col2, capsule: row6Col3 },
   ]
 
   return (
@@ -164,36 +174,13 @@ export default function Section06_ComparisonTable({
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Input data</td>
-                    <td>Artificially generated</td>
-                    <td className="s6-td--highlight">Real enterprise documents</td>
-                  </tr>
-                  <tr>
-                    <td>Document support</td>
-                    <td>Tabular data only</td>
-                    <td className="s6-td--highlight">All document types</td>
-                  </tr>
-                  <tr>
-                    <td>Content specificity</td>
-                    <td>Statistical patterns only</td>
-                    <td className="s6-td--highlight">Actual enterprise content</td>
-                  </tr>
-                  <tr>
-                    <td>Output usability</td>
-                    <td>Synthetic context</td>
-                    <td className="s6-td--highlight">Real enterprise context</td>
-                  </tr>
-                  <tr>
-                    <td>Output restoration</td>
-                    <td><span className="s6-cross">✗</span> N/A</td>
-                    <td className="s6-td--highlight"><span className="s6-check">✓</span> Local restoration</td>
-                  </tr>
-                  <tr>
-                    <td>Use case</td>
-                    <td>Model training, testing</td>
-                    <td className="s6-td--highlight">Production AI workflows</td>
-                  </tr>
+                  {rows.map((r, i) => (
+                    <tr key={i}>
+                      <td>{r.capability}</td>
+                      <td>{r.synthetic}</td>
+                      <td className="s6-td--highlight">{r.capsule}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -210,24 +197,25 @@ addPropertyControls(Section06_ComparisonTable, {
     title: "Section Label",
     defaultValue: "Comparison",
   },
-  brandName: {
-    type: ControlType.String,
-    title: "Brand Name",
-    defaultValue: "LLM Capsule",
-  },
-  col1Header: {
-    type: ControlType.String,
-    title: "Col 1 Header",
-    defaultValue: "Capability",
-  },
-  col2Header: {
-    type: ControlType.String,
-    title: "Col 2 Header",
-    defaultValue: "Synthetic Data Platforms",
-  },
-  col3Header: {
-    type: ControlType.String,
-    title: "Col 3 Header",
-    defaultValue: "LLM Capsule",
-  },
+  col1Header: { type: ControlType.String, title: "Col 1 Header", defaultValue: "Capability" },
+  col2Header: { type: ControlType.String, title: "Col 2 Header", defaultValue: "Synthetic Data Platforms" },
+  col3Header: { type: ControlType.String, title: "Col 3 Header", defaultValue: "LLM Capsule" },
+  row1Col1: { type: ControlType.String, title: "Row 1 Col 1", defaultValue: "Input data" },
+  row1Col2: { type: ControlType.String, title: "Row 1 Col 2", defaultValue: "Artificially generated" },
+  row1Col3: { type: ControlType.String, title: "Row 1 Col 3", defaultValue: "Real enterprise documents" },
+  row2Col1: { type: ControlType.String, title: "Row 2 Col 1", defaultValue: "Document support" },
+  row2Col2: { type: ControlType.String, title: "Row 2 Col 2", defaultValue: "Tabular data only" },
+  row2Col3: { type: ControlType.String, title: "Row 2 Col 3", defaultValue: "All document types" },
+  row3Col1: { type: ControlType.String, title: "Row 3 Col 1", defaultValue: "Content specificity" },
+  row3Col2: { type: ControlType.String, title: "Row 3 Col 2", defaultValue: "Statistical patterns only" },
+  row3Col3: { type: ControlType.String, title: "Row 3 Col 3", defaultValue: "Actual enterprise content" },
+  row4Col1: { type: ControlType.String, title: "Row 4 Col 1", defaultValue: "Output usability" },
+  row4Col2: { type: ControlType.String, title: "Row 4 Col 2", defaultValue: "Synthetic context" },
+  row4Col3: { type: ControlType.String, title: "Row 4 Col 3", defaultValue: "Real enterprise context" },
+  row5Col1: { type: ControlType.String, title: "Row 5 Col 1", defaultValue: "Output restoration" },
+  row5Col2: { type: ControlType.String, title: "Row 5 Col 2", defaultValue: "✗" },
+  row5Col3: { type: ControlType.String, title: "Row 5 Col 3", defaultValue: "✓ Local restoration" },
+  row6Col1: { type: ControlType.String, title: "Row 6 Col 1", defaultValue: "Use case" },
+  row6Col2: { type: ControlType.String, title: "Row 6 Col 2", defaultValue: "Model training, testing" },
+  row6Col3: { type: ControlType.String, title: "Row 6 Col 3", defaultValue: "Production AI workflows" },
 })

@@ -126,13 +126,13 @@ export default function Section01_Hero({
               <span className="s1-breadcrumb__sep">/</span>
               <a href="/resources/learn" className="s1-breadcrumb__link">Learn</a>
               <span className="s1-breadcrumb__sep">/</span>
-              <span className="s1-breadcrumb__current">LLM Capsule vs Synthetic Data Platforms</span>
+              <span className="s1-breadcrumb__current">{titleBrand} {title}</span>
             </nav>
             <h1 className="s1-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
               <span className="s1-brand">{titleBrand}</span> {title}
             </h1>
             <p className="s1-description">
-              Compare <span className="s1-brand">{titleBrand}</span> with synthetic data platforms for enterprise AI. {description.replace(/^Compare.*?enterprise AI\. /, "")}
+              {description}
             </p>
           </div>
         </div>

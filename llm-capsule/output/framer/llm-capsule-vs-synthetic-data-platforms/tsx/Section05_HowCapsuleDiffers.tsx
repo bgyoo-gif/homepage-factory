@@ -12,23 +12,15 @@ const PALETTE = {
 }
 
 interface Props {
-  sectionLabelPrefix?: string
-  sectionLabelBrand?: string
-  sectionLabelSuffix?: string
-  brandName?: string
+  sectionTitle?: string
   paragraph?: string
-  bannerBold?: string
   bannerText?: string
 }
 
 export default function Section05_HowCapsuleDiffers({
-  sectionLabelPrefix = "How",
-  sectionLabelBrand = "LLM Capsule",
-  sectionLabelSuffix = "Differs",
-  brandName = "LLM Capsule",
+  sectionTitle = "How LLM Capsule Differs",
   paragraph = "LLM Capsule does not replace real data with synthetic data. It encapsulates real documents — preserving their specific content, structure, and relationships — while replacing only sensitive elements with reversible representations. AI processes real enterprise content and produces real enterprise outputs, restored through local restoration (restoration).",
-  bannerBold = "AI results are restored locally.",
-  bannerText = " LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.",
+  bannerText = "AI results are restored locally. LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.",
 }: Props) {
   return (
     <>
@@ -126,16 +118,10 @@ export default function Section05_HowCapsuleDiffers({
         <div className="s5-inner">
           <div className="s5-container">
             <div className="s5-section-header">
-              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
-                {sectionLabelPrefix} <span className="s5-brand-name">{sectionLabelBrand}</span> <span className="s5-brand-text">{sectionLabelSuffix}</span>
-              </h2>
+              <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{sectionTitle}</h2>
             </div>
-            <p className="s5-paragraph">
-              <span className="s5-brand-name">{brandName}</span> does not replace real data with synthetic data. It encapsulates real documents — preserving their specific content, structure, and relationships — while replacing only sensitive elements with reversible representations. AI processes real enterprise content and produces real enterprise outputs, restored through local restoration (restoration).
-            </p>
-            <div className="s5-banner">
-              <strong>{bannerBold}</strong> <span className="s5-brand-name">{brandName}</span>{bannerText}
-            </div>
+            <p className="s5-paragraph">{paragraph}</p>
+            <div className="s5-banner">{bannerText}</div>
           </div>
         </div>
       </section>
@@ -144,25 +130,10 @@ export default function Section05_HowCapsuleDiffers({
 }
 
 addPropertyControls(Section05_HowCapsuleDiffers, {
-  sectionLabelPrefix: {
+  sectionTitle: {
     type: ControlType.String,
-    title: "Heading Prefix",
-    defaultValue: "How",
-  },
-  sectionLabelBrand: {
-    type: ControlType.String,
-    title: "Heading Brand",
-    defaultValue: "LLM Capsule",
-  },
-  sectionLabelSuffix: {
-    type: ControlType.String,
-    title: "Heading Suffix",
-    defaultValue: "Differs",
-  },
-  brandName: {
-    type: ControlType.String,
-    title: "Brand Name",
-    defaultValue: "LLM Capsule",
+    title: "Section Title",
+    defaultValue: "How LLM Capsule Differs",
   },
   paragraph: {
     type: ControlType.String,
@@ -170,15 +141,10 @@ addPropertyControls(Section05_HowCapsuleDiffers, {
     defaultValue: "LLM Capsule does not replace real data with synthetic data. It encapsulates real documents — preserving their specific content, structure, and relationships — while replacing only sensitive elements with reversible representations. AI processes real enterprise content and produces real enterprise outputs, restored through local restoration (restoration).",
     displayTextArea: true,
   },
-  bannerBold: {
-    type: ControlType.String,
-    title: "Banner Bold",
-    defaultValue: "AI results are restored locally.",
-  },
   bannerText: {
     type: ControlType.String,
     title: "Banner Text",
-    defaultValue: " LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.",
+    defaultValue: "AI results are restored locally. LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.",
     displayTextArea: true,
   },
 })

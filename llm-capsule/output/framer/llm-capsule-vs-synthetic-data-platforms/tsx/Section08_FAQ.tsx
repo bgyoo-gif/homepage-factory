@@ -221,20 +221,14 @@ export default function Section08_FAQ({
               {faqs.map((faq, idx) => (
                 <div key={idx} className="s8-ac-card" onClick={() => toggle(idx)}>
                   <div className="s8-ac-card__header">
-                    <span className="s8-ac-card__title">
-                      {idx === 0 && <>When should I use synthetic data vs <span className="s8-brand-name">{brandName}</span>?</>}
-                      {idx === 1 && <>Does <span className="s8-brand-name">{brandName}</span> generate synthetic data?</>}
-                    </span>
+                    <span className="s8-ac-card__title">{faq.question}</span>
                     <span className="s8-ac-card__toggle">
                       <span className={`s8-toggle-icon${openIdx === idx ? " s8-toggle-icon--open" : ""}`}></span>
                     </span>
                   </div>
                   {openIdx === idx && (
                     <div className="s8-ac-card__body">
-                      <p>
-                        {idx === 0 && <>Use synthetic data for model training and testing where statistical properties matter. Use <span className="s8-brand-name">{brandName}</span> for production AI workflows where AI must process and produce outputs about real enterprise documents.</>}
-                        {idx === 1 && <>No. <span className="s8-brand-name">{brandName}</span> encapsulates real data — preserving its structure while protecting sensitive elements. It is not a synthetic data platform.</>}
-                      </p>
+                      <p>{faq.answer}</p>
                     </div>
                   )}
                 </div>
