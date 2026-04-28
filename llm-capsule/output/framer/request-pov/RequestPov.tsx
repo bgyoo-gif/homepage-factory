@@ -45,16 +45,16 @@ const JSONLD_BREADCRUMB = JSON.stringify({
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home",           "item": "https://llmcapsule.ai/" },
-    { "@type": "ListItem", "position": 2, "name": "Request a Demo", "item": "https://llmcapsule.ai/request-pov" },
+    { "@type": "ListItem", "position": 2, "name": "Request a Demo", "item": "https://llmcapsule.ai/request-a-demo" },
   ],
 })
 
 const JSONLD_WEBPAGE = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Request Proof of Value — LLM Capsule Enterprise AI Enablement",
+  "name": "Request a Demo — LLM Capsule Enterprise AI Enablement",
   "description": "Test LLM Capsule with your own enterprise documents. Demonstrate AI enablement on real data, in your environment, against your compliance requirements.",
-  "url": "https://llmcapsule.ai/request-pov",
+  "url": "https://llmcapsule.ai/request-a-demo",
   "isPartOf": {
     "@type": "WebSite",
     "name": "LLM Capsule",
@@ -114,8 +114,8 @@ interface Props {
 // ─── Component ─────────────────────────────────────────────────────────────────
 export default function RequestPov({
   // Hero
-  heroTitle = "Request a Proof of",
-  heroTitleHighlight = "Value",
+  heroTitle = "Request a",
+  heroTitleHighlight = "Demo",
   heroDescription = "Test LLM Capsule using your own enterprise documents and workflows. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.",
 
   // Process Column
@@ -140,7 +140,7 @@ export default function RequestPov({
   tab4Description = "We present detection accuracy, workflow accuracy, response similarity, and processing performance metrics measured on your specific workload.",
 
   // Banner
-  bannerText = "Typical PoV duration: 2-4 weeks. Bring your documents, deployment constraints, and evaluation criteria.",
+  bannerText = "Schedule a live demo with your documents, deployment constraints, and evaluation criteria.",
 
   // Form Card
   formCardTitle = "Request a Demo",
@@ -157,7 +157,7 @@ export default function RequestPov({
   formUseCaseLabel = "Primary Use Case",
   formUseCasePlaceholder = "Describe your primary AI use case and the types of documents you need to process.",
   formSubmitLabel = "Submit Request",
-  formFootnote = "We respond to all PoV requests within 1 business day.",
+  formFootnote = "We respond to all demo requests within 1 business day.",
 }: Props) {
   const [activeTab, setActiveTab] = useState(1)
 
@@ -487,7 +487,7 @@ export default function RequestPov({
 
                     {/* Step Tabs */}
                     <div>
-                      <div className="rpov-step-tabs__nav" role="tablist" aria-label="PoV Process Steps">
+                      <div className="rpov-step-tabs__nav" role="tablist" aria-label="Demo Process Steps">
                         {tabs.map((tab) => (
                           <button
                             key={tab.id}
@@ -626,12 +626,12 @@ addPropertyControls(RequestPov, {
   heroTitle: {
     type: ControlType.String,
     title: "Hero Title",
-    defaultValue: "Request a Proof of",
+    defaultValue: "Request a",
   },
   heroTitleHighlight: {
     type: ControlType.String,
     title: "Hero Title Highlight",
-    defaultValue: "Value",
+    defaultValue: "Demo",
   },
   heroDescription: {
     type: ControlType.String,
@@ -698,7 +698,7 @@ addPropertyControls(RequestPov, {
   bannerText: {
     type: ControlType.String,
     title: "Banner Text",
-    defaultValue: "Typical PoV duration: 2-4 weeks. Bring your documents, deployment constraints, and evaluation criteria.",
+    defaultValue: "Schedule a live demo with your documents, deployment constraints, and evaluation criteria.",
     displayTextArea: true,
   },
 
@@ -725,6 +725,6 @@ addPropertyControls(RequestPov, {
   formFootnote: {
     type: ControlType.String,
     title: "Form Footnote",
-    defaultValue: "We respond to all PoV requests within 1 business day.",
+    defaultValue: "We respond to all demo requests within 1 business day.",
   },
 })

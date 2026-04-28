@@ -111,8 +111,8 @@
     </unit>
     <unit id="bannerText">
       <segment>
-        <source>Typical PoV duration: 2-4 weeks. Bring your documents, deployment constraints, and evaluation criteria.</source>
-        <target>一般的なPoV所要期間：2〜4週間。文書、デプロイ制約、評価基準をご準備ください。</target>
+        <source>Schedule a live demo with your documents, deployment constraints, and evaluation criteria.</source>
+        <target>実際の文書、デプロイ条件、評価基準をお持ちください。ライブデモを実施いたします。</target>
       </segment>
     </unit>
     <unit id="formCardTitle">
@@ -201,8 +201,8 @@
     </unit>
     <unit id="formFootnote">
       <segment>
-        <source>We respond to all PoV requests within 1 business day.</source>
-        <target>すべてのPoVリクエストに1営業日以内にご回答いたします。</target>
+        <source>We respond to all demo requests within 1 business day.</source>
+        <target>すべてのデモリクエストに1営業日以内にご返信いたします。</target>
       </segment>
     </unit>
     <unit id="ctaTitle">

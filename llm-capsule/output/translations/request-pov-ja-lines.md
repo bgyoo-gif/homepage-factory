@@ -1,8 +1,8 @@
-# Request PoV Page — 日本語翻訳
+# Request a Demo Page — 日本語翻訳
 
 ## Section 01: Hero
 
-Request a Proof of
+Request a
 Proof of
 
 Value
@@ -48,8 +48,8 @@ We present detection accuracy, workflow accuracy, response similarity, and proce
 
 ## Section 03: Banner
 
-Typical PoV duration: 2-4 weeks. Bring your documents, deployment constraints, and evaluation criteria.
-一般的なPoV期間：2〜4週間。実際の文書、デプロイ条件、評価基準をご準備ください。
+Schedule a live demo with your documents, deployment constraints, and evaluation criteria.
+実際の文書、デプロイ条件、評価基準をお持ちください。ライブデモを実施いたします。
 
 ## Section 04: Form
 
@@ -104,8 +104,8 @@ Describe your primary AI use case and the types of documents you need to process
 Submit Request
 リクエスト送信
 
-We respond to all PoV requests within 1 business day.
-すべてのPoVリクエストに1営業日以内にご返信いたします。
+We respond to all demo requests within 1 business day.
+すべてのデモリクエストに1営業日以内にご返信いたします。
 
 ## Section 05: CTA Band
 

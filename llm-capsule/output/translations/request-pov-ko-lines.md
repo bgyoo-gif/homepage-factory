@@ -1,12 +1,12 @@
-# Request PoV Page — 한국어 번역
+# Request a Demo Page — 한국어 번역
 
 ## Section 01: Hero
 
-Request a Proof of
+Request a
 Proof of
 
-Value
-Value 요청
+Demo
+Demo 요청
 
 Test LLM Capsule using your own enterprise documents and workflows. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.
 실제 기업 문서와 워크플로우로 LLM Capsule을 직접 테스트하세요. 실제 데이터, 실제 환경, 실제 컴플라이언스 요건에서 기업 AI 도입을 시연합니다.
@@ -48,8 +48,8 @@ We present detection accuracy, workflow accuracy, response similarity, and proce
 
 ## Section 03: Banner
 
-Typical PoV duration: 2-4 weeks. Bring your documents, deployment constraints, and evaluation criteria.
-일반적인 PoV 기간: 2~4주. 실제 문서, 배포 조건, 평가 기준을 준비하세요.
+Schedule a live demo with your documents, deployment constraints, and evaluation criteria.
+실제 문서, 배포 조건, 평가 기준을 가져오세요. 라이브 데모를 진행합니다.
 
 ## Section 04: Form
 
@@ -104,8 +104,8 @@ Describe your primary AI use case and the types of documents you need to process
 Submit Request
 요청 제출
 
-We respond to all PoV requests within 1 business day.
-모든 PoV 요청에 1영업일 이내 회신합니다.
+We respond to all demo requests within 1 business day.
+모든 데모 요청에 1영업일 이내 회신합니다.
 
 ## Section 05: CTA Band
 

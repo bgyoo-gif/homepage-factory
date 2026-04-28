@@ -4,7 +4,7 @@
 ## RequestPov
 
 
-Request a Proof of
+Request a
 Proof of
 
 Value
@@ -58,8 +58,8 @@ Ergebnisauswertung
 We present detection accuracy, workflow accuracy, response similarity, and processing performance metrics measured on your specific workload.
 Wir präsentieren die Erkennungsgenauigkeit, Workflow-Genauigkeit, Antwortähnlichkeit und Verarbeitungsleistung — gemessen an Ihrer spezifischen Arbeitslast.
 
-Typical PoV duration: 2-4 weeks. Bring your documents, deployment constraints, and evaluation criteria.
-Typische PoV-Dauer: 2 bis 4 Wochen. Bringen Sie Ihre Dokumente, Bereitstellungsvorgaben und Bewertungskriterien mit.
+Schedule a live demo with your documents, deployment constraints, and evaluation criteria.
+Vereinbaren Sie eine Live-Demo mit Ihren Dokumenten, Bereitstellungsvorgaben und Bewertungskriterien.
 
 Request a Demo
 Demo anfordern
@@ -100,8 +100,8 @@ Beschreiben Sie Ihren primären KI-Anwendungsfall und die Dokumenttypen, die ver
 Submit Request
 Anfrage absenden
 
-We respond to all PoV requests within 1 business day.
-Wir beantworten alle PoV-Anfragen innerhalb eines Werktags.
+We respond to all demo requests within 1 business day.
+Wir beantworten alle Demo-Anfragen innerhalb eines Werktags.
 
 See how LLM Capsule works with your data
 Wir analysieren Ihre Anforderungen und demonstrieren LLM Capsule anhand Ihrer eigenen Daten

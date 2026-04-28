@@ -111,8 +111,8 @@
     </unit>
     <unit id="bannerText">
       <segment>
-        <source>Typical PoV duration: 2-4 weeks. Bring your documents, deployment constraints, and evaluation criteria.</source>
-        <target>Typische PoV-Dauer: 2-4 Wochen. Bringen Sie Ihre Dokumente, Deployment-Einschränkungen und Bewertungskriterien mit.</target>
+        <source>Schedule a live demo with your documents, deployment constraints, and evaluation criteria.</source>
+        <target>Vereinbaren Sie eine Live-Demo mit Ihren Dokumenten, Bereitstellungsvorgaben und Bewertungskriterien.</target>
       </segment>
     </unit>
     <unit id="formCardTitle">
@@ -201,8 +201,8 @@
     </unit>
     <unit id="formFootnote">
       <segment>
-        <source>We respond to all PoV requests within 1 business day.</source>
-        <target>Wir beantworten alle PoV-Anfragen innerhalb von 1 Werktag.</target>
+        <source>We respond to all demo requests within 1 business day.</source>
+        <target>Wir beantworten alle Demo-Anfragen innerhalb eines Werktags.</target>
       </segment>
     </unit>
     <unit id="ctaTitle">

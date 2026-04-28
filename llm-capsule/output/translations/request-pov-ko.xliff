@@ -111,8 +111,8 @@
     </unit>
     <unit id="bannerText">
       <segment>
-        <source>Typical PoV duration: 2-4 weeks. Bring your documents, deployment constraints, and evaluation criteria.</source>
-        <target>일반적인 PoV 소요 기간: 2-4주. 문서, 배포 제약 조건, 평가 기준을 준비해 주십시오.</target>
+        <source>Schedule a live demo with your documents, deployment constraints, and evaluation criteria.</source>
+        <target>실제 문서, 배포 조건, 평가 기준을 가져오세요. 라이브 데모를 진행합니다.</target>
       </segment>
     </unit>
     <unit id="formCardTitle">
@@ -201,8 +201,8 @@
     </unit>
     <unit id="formFootnote">
       <segment>
-        <source>We respond to all PoV requests within 1 business day.</source>
-        <target>모든 PoV 신청에 대해 1 영업일 이내에 회신합니다.</target>
+        <source>We respond to all demo requests within 1 business day.</source>
+        <target>모든 데모 요청에 1영업일 이내 회신합니다.</target>
       </segment>
     </unit>
     <unit id="ctaTitle">
