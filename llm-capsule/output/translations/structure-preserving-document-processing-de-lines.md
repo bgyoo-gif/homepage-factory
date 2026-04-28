@@ -34,8 +34,8 @@ Die strukturerhaltende Verarbeitung erfolgt auf mehreren Dokumentebenen:
 Layout preservation. Table structures, column headers, row relationships, and nested sections are maintained. AI models can accurately extract tabular data because the schema remains intact.
 Layouterhaltung. Tabellenstrukturen, Spaltenüberschriften, Zeilenbeziehungen und verschachtelte Abschnitte werden beibehalten. KI-Modelle können tabellarische Daten korrekt extrahieren, da das Schema intakt bleibt.
 
-Entity consistency. When the same entity appears multiple times in a document, all instances are mapped to the same replacement. AI models can track entity references across sections — \
-Entitätskonsistenz. Wenn dieselbe Entität mehrfach in einem Dokument vorkommt, werden alle Instanzen derselben Ersetzung zugeordnet. KI-Modelle können Entitätsverweise abschnittsübergreifend verfolgen — \
+Entity consistency. When the same entity appears multiple times in a document, all instances are mapped to the same replacement. AI models can track entity references across sections — "the Borrower" in clause 1 refers to the same encapsulated entity in clause 7.
+Entitätskonsistenz. Wenn dieselbe Entität mehrfach in einem Dokument vorkommt, werden alle Instanzen derselben Ersetzung zugeordnet. KI-Modelle können Entitätsverweise abschnittsübergreifend verfolgen — "der Kreditnehmer" in Klausel 1 verweist auf dieselbe kapsulierte Entität in Klausel 7.
 
 Semantic context. Context-aware data control distinguishes between sensitive data that must be protected and contextual information that AI needs for comprehension. Job titles, section headers, and document type indicators remain readable.
 Semantischer Kontext. Die kontextbezogene Datenkontrolle unterscheidet zwischen sensiblen Daten, die geschützt werden müssen, und Kontextinformationen, die die KI zum Verständnis benötigt. Berufsbezeichnungen, Abschnittsüberschriften und Dokumenttypkennzeichen bleiben lesbar.

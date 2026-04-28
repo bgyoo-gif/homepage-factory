@@ -40,11 +40,8 @@ Strukturerhaltende Verarbeitung erhält diese Beziehungen. Wenn dieselbe Entitä
 Example
 Beispiel
 
-A contract references \
-Ein Vertrag verweist auf \
-
-ENTITY_A
-ENTITY_A
+A contract references "Acme Corp" 47 times across 30 pages — as a party in the preamble, a signatory in the execution block, and a reference in 12 obligation clauses. Structure-preserving processing replaces all 47 instances with the same token, maintaining entity consistency throughout.
+Ein Vertrag verweist 47 Mal auf 30 Seiten auf "Acme Corp" — als Partei in der Präambel, als Unterzeichner im Vollzugsabschnitt und als Referenz in 12 Verpflichtungsklauseln. Die strukturerhaltende Verarbeitung ersetzt alle 47 Instanzen durch denselben Token und wahrt so die Entitätskonsistenz im gesamten Dokument.
 
 ## Section05_RelatedTerms
 

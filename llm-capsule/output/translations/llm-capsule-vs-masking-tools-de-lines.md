@@ -100,8 +100,8 @@ Vertragsanalyse-Pipeline
 With masking:
 Mit Maskierung:
 
-200 contracts masked → AI produces generic summaries with \
-200 Verträge maskiert → KI erzeugt generische Zusammenfassungen mit \
+200 contracts masked → AI produces generic summaries with "[REDACTED]" throughout → Legal team manually restores ~40 hours of context rebuilding.
+200 Verträge maskiert → KI erzeugt generische Zusammenfassungen mit durchgängigen "[REDACTED]"-Platzhaltern → Das Rechtsteam benötigt ca. 40 Stunden für die manuelle Kontextrekonstruktion.
 
 LLM Capsule
 LLM Capsule

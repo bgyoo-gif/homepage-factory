@@ -19,8 +19,8 @@ Anonymisierungstechniken wie k-Anonymity, Differential Privacy, Generalisierung 
 Irreversibility. Anonymization is permanent by design. Once data is anonymized, there is no automated path to recover original values. AI outputs based on anonymized data remain anonymous — they cannot reference real individuals, real accounts, or real events.
 Unumkehrbarkeit. Anonymisierung ist konstruktionsbedingt dauerhaft. Sobald Daten anonymisiert sind, gibt es keinen automatisierten Weg, die Originalwerte wiederherzustellen. KI-Ergebnisse auf Basis anonymisierter Daten bleiben anonym — sie können sich nicht auf reale Personen, Konten oder Ereignisse beziehen.
 
-Information loss. Generalization replaces specific values with ranges (\
-Informationsverlust. Generalisierung ersetzt spezifische Werte durch Bereiche (\
+Information loss. Generalization replaces specific values with ranges ("age 35" → "30-40"). Suppression removes values entirely. Both reduce AI's ability to produce precise, actionable outputs.
+Informationsverlust. Generalisierung ersetzt spezifische Werte durch Bereiche ("Alter 35" → "30–40"). Suppression entfernt Werte vollständig. Beide Verfahren verringern die Fähigkeit der KI, präzise und verwertbare Ergebnisse zu liefern.
 
 Not designed for document intelligence. Anonymization techniques were developed for structured databases, not unstructured enterprise documents. Applying anonymization to contracts, reports, and correspondence produces severely degraded content.
 Nicht für Dokumentenverarbeitung konzipiert. Anonymisierungstechniken wurden für strukturierte Datenbanken entwickelt, nicht für unstrukturierte Unternehmensdokumente. Die Anonymisierung von Verträgen, Berichten und Korrespondenz führt zu erheblichem Qualitätsverlust.

@@ -22,8 +22,8 @@ Entitätsverlust. In einem Mehrparteienvertrag werden alle Parteinamen zu [NAME]
 Table destruction. Column headers masked as [FIELD] and cell values masked as [VALUE] eliminate the schema information AI needs for accurate extraction.
 Tabellenzerstörung. Als [FIELD] maskierte Spaltenüberschriften und als [VALUE] maskierte Zellenwerte beseitigen die Schemainformationen, die KI für eine korrekte Extraktion benötigt.
 
-Cross-reference breakage. When a document references \
-Querverweisbruch. Wenn ein Dokument auf \
+Cross-reference breakage. When a document references "see Section 3.2 regarding [NAME]'s obligations," flat masking removes the entity link that gives the reference meaning.
+Querverweisbruch. Wenn ein Dokument auf "siehe Abschnitt 3.2 zu den Verpflichtungen von [NAME]" verweist, entfernt die einfache Maskierung die Entitätsverknüpfung, die dem Verweis seine Bedeutung gibt.
 
 Inconsistent replacement. The same entity may receive different tokens in different document locations, breaking AI's ability to track entities across sections.
 Inkonsistente Ersetzung. Dieselbe Entität kann an verschiedenen Stellen im Dokument unterschiedliche Token erhalten. Damit verliert die KI die Fähigkeit, Entitäten abschnittsübergreifend zu verfolgen.
