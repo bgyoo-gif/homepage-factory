@@ -71,7 +71,7 @@ Tables, cross-references, and layouts survive the process intact. AI understands
 Tabellen, Querverweise und Layouts bleiben während der Verarbeitung vollständig intakt. Die KI erfasst den gesamten Dokumentenkontext und arbeitet nicht mit unbrauchbaren Fragmenten.
 
 Enterprise Environment Execution
-Betrieb in bestehender IT-Umgebung
+Ausführung in der Unternehmensumgebung
 
 ChatGPT today, Claude tomorrow, on-premise LLM next month. Switch freely — no re-engineering, no vendor lock-in. Protection stays consistent across every model.
 ChatGPT, Claude oder ein On-Premise-Modell – wechseln Sie jederzeit ohne Umbau und ohne Anbieterbindung. Der Schutz bleibt über alle Modelle hinweg konsistent.
@@ -179,7 +179,7 @@ Masking tools destroy document context. LLM Capsule keeps tables, diagrams, and 
 Maskierungswerkzeuge zerstören den Dokumentenkontext. LLM Capsule erhält Tabellen, Diagramme und Entitätsbeziehungen, sodass die KI den vollständigen Kontext erfasst, während sensible Werte ersetzt werden. Referenzkonsistenz, Diagrammstruktur und Dokumenthierarchie bleiben gewahrt.
 
 Enterprise Environment Execution
-Betrieb in bestehender Infrastruktur
+Ausführung in der bestehenden Infrastruktur
 
 Runs inside your existing infrastructure. Air-gapped networks, on-premise servers, custom data systems — no architectural changes required.
 LLM Capsule läuft innerhalb Ihrer bestehenden Infrastruktur. Air-Gapped-Netzwerke, On-Premise-Server und proprietäre Datensysteme werden unterstützt – ohne architektonische Anpassungen.

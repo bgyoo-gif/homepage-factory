@@ -47,6 +47,11 @@
 | trust boundary | Vertrauensgrenze | Vertrauensgrenze | - |
 | structure-preserving | strukturerhaltend | Erhalt der Dokumentstruktur | kontextgerechte Verarbeitung |
 | zero exposure | Zero Exposure | keine Offenlegung | kein Datenaustritt |
+| enterprise environment execution | Ausführung in der Unternehmensumgebung | Ausführung in der Unternehmensumgebung | Ausführung in der bestehenden Infrastruktur |
+| Schaden* (보험 합성어) | Schaden- (Fugen-s 없음) | Schadenbearbeitung, Schadenmeldung, Schadendokument | - |
+| workflow boundary | Workflow-Schutz | den gesamten Workflow schützen | - |
+| LLM API enablement | abgesicherter LLM-Zugriff | abgesicherter LLM-Zugriff auf der Datenebene | - |
+| Why Redaction Breaks AI | Warum Schwärzung KI-Workflows unbrauchbar macht | - | - |
 
 ### 번역 금지 (EN 유지)
 - LLM Capsule, CUBIG, DTS, SynTitan, Zero Exposure

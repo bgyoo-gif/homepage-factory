@@ -5,16 +5,16 @@
 
 
 The AI enablement
-Die KI-Enablement-
+Die Datenschicht und das Plugin
 
 data layer and plugin for enterprise
-Datenschicht und Plugin für Unternehmen
+für KI-Enablement im Unternehmen
 
 LLM Capsule enables enterprise AI adoption by keeping raw data inside your environment, preserving document structure and business context during AI processing, and restoring usable outputs through local restoration — so enterprise teams can safely use any LLM on real documents in production workflows.
 LLM Capsule ermöglicht den produktiven KI-Einsatz im Unternehmen. Rohdaten verbleiben in der eigenen Umgebung, Dokumentstruktur und Fachkontext bleiben während der KI-Verarbeitung erhalten. Die lokale Wiederherstellung liefert direkt einsetzbare Ergebnisse. So lässt sich jedes beliebige LLM sicher auf echten Dokumenten in Produktiv-Workflows nutzen.
 
 Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and enterprise environment execution means no vendor lock-in. This enables enterprise AI enablement on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.
-Herkömmliche KI-Sicherheitslösungen blockieren die KI-Nutzung vollständig oder entfernen durch Maskierung und Schwärzung den fachlichen Kontext. Die Ergebnisse sind dann in der Praxis nicht verwendbar. LLM Capsule verfolgt einen anderen Ansatz: Sensible Elemente werden vor der KI-Verarbeitung lokal geschützt. Die strukturerhaltende Verarbeitung bewahrt die Dokumentintegrität für das KI-Verständnis. Die lokale Wiederherstellung reichert KI-Ergebnisse automatisch mit den Originaldaten an. Die Ausführung erfolgt in der eigenen Infrastruktur ohne Herstellerbindung. Damit eignet sich LLM Capsule für dokumentenlastige Workflows wie Verträge, Schadensmeldungen, behördliche Anträge, Krankenakten und interne Berichte.
+Herkömmliche KI-Sicherheitslösungen blockieren die KI-Nutzung vollständig oder entfernen durch Maskierung und Schwärzung den fachlichen Kontext. Die Ergebnisse sind dann in der Praxis nicht verwendbar. LLM Capsule verfolgt einen anderen Ansatz: Sensible Elemente werden vor der KI-Verarbeitung lokal geschützt. Die strukturerhaltende Verarbeitung bewahrt die Dokumentintegrität für das KI-Verständnis. Die lokale Wiederherstellung reichert KI-Ergebnisse automatisch mit den Originaldaten an. Die Ausführung erfolgt in der eigenen Infrastruktur ohne Herstellerbindung. Damit eignet sich LLM Capsule für dokumentenlastige Workflows wie Verträge, Schadenmeldungen, behördliche Anträge, Krankenakten und interne Berichte.
 
 Request a Demo
 Demo anfordern
@@ -59,7 +59,7 @@ Restoration
 Wiederherstellung
 
 AI outputs are auto-restored locally with real data into usable enterprise documents after processing. Restored outputs work directly in reports, claims documents, legal reviews, and internal analysis — no manual reconstruction required.
-KI-Ergebnisse werden nach der Verarbeitung automatisch lokal mit den Originaldaten angereichert. Die wiederhergestellten Ergebnisse lassen sich direkt in Berichten, Schadensdokumenten, rechtlichen Prüfungen und internen Analysen verwenden. Eine manuelle Nachbearbeitung entfällt.
+KI-Ergebnisse werden nach der Verarbeitung automatisch lokal mit den Originaldaten angereichert. Die wiederhergestellten Ergebnisse lassen sich direkt in Berichten, Schadendokumenten, rechtlichen Prüfungen und internen Analysen verwenden. Eine manuelle Nachbearbeitung entfällt.
 
 Core 3
 Kern 3
@@ -143,22 +143,22 @@ LLM Capsule does more than hide data. It auto-restores usable output inside the 
 LLM Capsule geht über reine Datenverschleierung hinaus. Nach der KI-Verarbeitung werden die Ergebnisse automatisch innerhalb der Unternehmensumgebung mit den Originaldaten angereichert. Fachteams können die Ergebnisse direkt in ihren Workflows verwenden. Das ist kein reiner Schutz, sondern KI-Enablement mit direkt einsetzbaren Ergebnissen.
 
 Traditional masking protects data by removing meaning. That may reduce risk, but it also reduces output quality and business usability. Restored outputs from LLM Capsule are directly usable in: claims documents with real policyholder data, legal reviews with real party names and clause references, regulatory reports with real customer and account data, and internal analysis with real business metrics.
-Herkömmliche Maskierung schützt Daten, indem sie den fachlichen Inhalt entfernt. Das mindert zwar das Risiko, reduziert aber auch die Ergebnisqualität und den Nutzen für den Geschäftsbetrieb. Die wiederhergestellten Ergebnisse von LLM Capsule sind direkt einsetzbar: in Schadensdokumenten mit echten Versicherungsnehmerdaten, in rechtlichen Prüfungen mit echten Parteinamen und Klauselverweisen, in regulatorischen Berichten mit echten Kunden- und Kontodaten sowie in internen Analysen mit echten Geschäftskennzahlen.
+Herkömmliche Maskierung schützt Daten, indem sie den fachlichen Inhalt entfernt. Das mindert zwar das Risiko, reduziert aber auch die Ergebnisqualität und den Nutzen für den Geschäftsbetrieb. Die wiederhergestellten Ergebnisse von LLM Capsule sind direkt einsetzbar: in Schadendokumenten mit echten Versicherungsnehmerdaten, in rechtlichen Prüfungen mit echten Parteinamen und Klauselverweisen, in regulatorischen Berichten mit echten Kunden- und Kontodaten sowie in internen Analysen mit echten Geschäftskennzahlen.
 
 This is the capability that makes enterprise AI operationally viable. Secure document summarization, AI claims processing, and confidential contract review with AI all depend on the ability to restore results. Without restoration, every AI output requires manual reconstruction — eliminating the efficiency gains AI is supposed to deliver.
-Genau diese Funktion macht KI im Unternehmen operativ nutzbar. Sichere Dokumentenzusammenfassung, KI-gestützte Schadensbearbeitung und vertrauliche Vertragsprüfung mit KI setzen alle voraus, dass Ergebnisse wiederhergestellt werden können. Ohne Wiederherstellung erfordert jede KI-Ausgabe eine manuelle Rekonstruktion — die erwarteten Effizienzgewinne entfallen.
+Genau diese Funktion macht KI im Unternehmen operativ nutzbar. Sichere Dokumentenzusammenfassung, KI-gestützte Schadenbearbeitung und vertrauliche Vertragsprüfung mit KI setzen alle voraus, dass Ergebnisse wiederhergestellt werden können. Ohne Wiederherstellung erfordert jede KI-Ausgabe eine manuelle Rekonstruktion — die erwarteten Effizienzgewinne entfallen.
 
 Encapsulated
 Kapsuliert
 
 [PERSON_01] submitted claim #[ID_04] on [DATE_02] for property at [ADDR_03]. Total assessed damage: [AMOUNT_01].
-[PERSON_01] reichte am [DATUM_02] den Schadenantrag Nr. [ID_04] für das Objekt in [ADR_03] ein. Festgestellter Gesamtschaden: [AMOUNT_01].
+[PERSON_01] reichte den Schadenantrag Nr. [ID_04] am [DATE_02] für das Objekt [ADDR_03] ein. Festgestellter Gesamtschaden: [AMOUNT_01].
 
 Restored
 Wiederhergestellt
 
 James Mitchell submitted claim #INS-2024-0847 on March 5, 2025 for property at 42 Lincoln Ave, Chicago. Total assessed damage: $247,000.
-James Mitchell reichte am 5. März 2025 den Antrag Nr. INS-2024-0847 für das Objekt 42 Lincoln Ave, Chicago ein. Festgestellter Gesamtschaden: 247.000 $.
+James Mitchell reichte am 5. März 2025 den Antrag Nr. INS-2024-0847 für das Objekt 42 Lincoln Ave, Chicago ein. Festgestellter Gesamtschaden: 247.000 USD.
 
 ## Section05_EnterpriseContext
 
@@ -250,14 +250,26 @@ Visuelle Dokumente und Mischformate werden als strukturierte Inhalte verarbeitet
 ## Section07_KPIBand
 
 
+3+2
+3+2
+
 Core Architecture
 Kernarchitektur
+
+Zero
+Zero
 
 Raw Data Exposure
 Offenlegung von Rohdaten
 
+100%
+100 %
+
 Local Restoration
 Lokale Wiederherstellung
+
+Any
+Beliebig
 
 LLM Model Support
 LLM-Modellunterstützung
@@ -276,6 +288,9 @@ Der KI-Einsatz im Unternehmen erfordert mehr als Transformationslogik. Fachteams
 
 Enterprise AI governance requires evidence of data protection at every stage — what data was processed, how it was protected, which models interacted with it, and who authorized the workflow. LLM Capsule's admin capabilities provide this auditability across all AI interactions.
 KI-Governance erfordert den Nachweis des Datenschutzes in jeder Phase: welche Daten verarbeitet wurden, wie sie geschützt waren, welche Modelle darauf zugriffen und wer den Workflow autorisiert hat. Die Administrationsfunktionen von LLM Capsule stellen diese Nachvollziehbarkeit für alle KI-Interaktionen sicher.
+
+RBAC
+Zugriffskontrolle
 
 Role-based access control for teams and workflows. Define who can configure policies, process documents, and view audit records.
 Rollenbasierte Zugriffskontrolle für Teams und Workflows. Sie legen fest, wer Richtlinien konfigurieren, Dokumente verarbeiten und Audit-Datensätze einsehen darf.
@@ -341,7 +356,7 @@ LLM Capsule works as a deployable component through API and SDK integration patt
 LLM Capsule lässt sich als Komponente über API- und SDK-Integration in bestehende Produkte, Portale und interne Workflows einbetten.
 
 The API provides LLM API enablement at the data layer — wrap any existing AI integration with encapsulation and restoration without rebuilding the application.
-Die API bietet LLM-API-Enablement auf der Datenebene: Jede bestehende KI-Integration lässt sich mit Kapsulierung und Wiederherstellung ergänzen, ohne die Anwendung neu zu entwickeln.
+Die API ermöglicht den abgesicherten LLM-Zugriff auf der Datenebene: Jede bestehende KI-Integration lässt sich mit Kapsulierung und Wiederherstellung ergänzen, ohne die Anwendung neu zu entwickeln.
 
 Internal enterprise portals
 Interne Unternehmensportale
@@ -458,7 +473,7 @@ Local processing
 Lokale Verarbeitung
 
 Often does not preserve full workflow boundary
-Bewahrt häufig nicht die vollständige Workflow-Grenze
+Schützt häufig nicht den gesamten Workflow
 
 Cloud-based filtering, not local
 Cloud-basierte Filterung, nicht lokal
@@ -572,7 +587,7 @@ Request a Demo
 Demo anfordern
 
 Why Redaction Breaks AI
-Warum Schwärzung die KI-Nutzung einschränkt
+Warum Schwärzung KI-Workflows unbrauchbar macht
 
 vs Masking Tools
 vs. Maskierungswerkzeuge
