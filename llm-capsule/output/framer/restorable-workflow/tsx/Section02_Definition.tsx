@@ -21,15 +21,12 @@ const PALETTE = {
 interface Props {
   label?: string
   bodyText?: string
-  productName?: string
 }
 
 export default function Section02_Definition({
   label = "DEFINITION",
-  bodyText = "A restorable workflow is an AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which",
-  productName = "LLM Capsule",
+  bodyText = "A restorable workflow is an AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which LLM Capsule enables AI adoption on sensitive data.",
 }: Props) {
-  const bodySuffix = " enables AI adoption on sensitive data."
 
   return (
     <>
@@ -115,11 +112,7 @@ export default function Section02_Definition({
           <div className="s2-container">
             <div className="s2-banner">
               <span className="s2-banner__label">{label}</span>
-              <p className="s2-banner__text">
-                {bodyText}{" "}
-                <span className="s2-product-name">{productName}</span>
-                {bodySuffix}
-              </p>
+              <p className="s2-banner__text">{bodyText}</p>
             </div>
           </div>
         </div>
@@ -137,12 +130,7 @@ addPropertyControls(Section02_Definition, {
   bodyText: {
     type: ControlType.String,
     title: "Body Text",
-    defaultValue: "A restorable workflow is an AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which",
+    defaultValue: "A restorable workflow is an AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which LLM Capsule enables AI adoption on sensitive data.",
     displayTextArea: true,
-  },
-  productName: {
-    type: ControlType.String,
-    title: "Product Name",
-    defaultValue: "LLM Capsule",
   },
 })

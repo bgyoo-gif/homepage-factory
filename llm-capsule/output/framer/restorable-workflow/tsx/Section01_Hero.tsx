@@ -25,15 +25,12 @@ const PALETTE = {
 interface Props {
   title?: string
   description?: string
-  productName?: string
 }
 
 export default function Section01_Hero({
   title = "Restorable Workflow",
-  description = "An AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling",
-  productName = "LLM Capsule",
+  description = "An AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling LLM Capsule to automatically restore original enterprise data into AI outputs.",
 }: Props) {
-  const descriptionSuffix = " to automatically restore original enterprise data into AI outputs."
 
   return (
     <>
@@ -129,11 +126,7 @@ export default function Section01_Hero({
               <span className="s1-breadcrumb__current">Restorable Workflow</span>
             </nav>
             <h1 className="s1-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{title}</h1>
-            <p className="s1-description">
-              {description}{" "}
-              <span className="s1-product-name">{productName}</span>
-              {descriptionSuffix}
-            </p>
+            <p className="s1-description">{description}</p>
           </div>
         </div>
       </section>
@@ -166,12 +159,7 @@ addPropertyControls(Section01_Hero, {
   description: {
     type: ControlType.String,
     title: "Description",
-    defaultValue: "An AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling",
+    defaultValue: "An AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling LLM Capsule to automatically restore original enterprise data into AI outputs.",
     displayTextArea: true,
-  },
-  productName: {
-    type: ControlType.String,
-    title: "Product Name",
-    defaultValue: "LLM Capsule",
   },
 })

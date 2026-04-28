@@ -18,22 +18,15 @@ const PALETTE = {
 
 interface Props {
   sectionHeading?: string
-  paragraph1Pre?: string
-  paragraph1Highlight?: string
-  paragraph1Post?: string
-  productName?: string
+  paragraph1?: string
   paragraph2?: string
 }
 
 export default function Section03_Explanation({
   sectionHeading = "Explanation",
-  paragraph1Pre = "Traditional data protection workflows are",
-  paragraph1Highlight = "one-directional",
-  paragraph1Post = ": protect data, process it, and accept that outputs lack original context. A restorable workflow closes the loop — outputs are automatically restored with real enterprise data. This is what makes",
-  productName = "LLM Capsule",
+  paragraph1 = "Traditional data protection workflows are one-directional: protect data, process it, and accept that outputs lack original context. A restorable workflow closes the loop — outputs are automatically restored with real enterprise data. This is what makes LLM Capsule an AI enabler rather than just a data protector.",
   paragraph2 = "The key properties of a restorable workflow are: reversible encapsulation (not permanent masking), locally stored mappings (never transmitted), structure-preserving protection (AI accuracy maintained), and deterministic restoration (outputs exactly match original data).",
 }: Props) {
-  const paragraph1Suffix = " an AI enabler rather than just a data protector."
 
   return (
     <>
@@ -130,13 +123,7 @@ export default function Section03_Explanation({
             <div className="s3-section-header">
               <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}><span className="s3-brand">{sectionHeading}</span></h2>
             </div>
-            <p className="s3-paragraph">
-              {paragraph1Pre}{" "}
-              <span className="s3-brand">{paragraph1Highlight}</span>
-              {paragraph1Post}{" "}
-              <span className="s3-product-name">{productName}</span>
-              {paragraph1Suffix}
-            </p>
+            <p className="s3-paragraph">{paragraph1}</p>
             <p className="s3-paragraph s3-paragraph--strong">
               {paragraph2}
             </p>
@@ -153,27 +140,11 @@ addPropertyControls(Section03_Explanation, {
     title: "Section Heading",
     defaultValue: "Explanation",
   },
-  paragraph1Pre: {
+  paragraph1: {
     type: ControlType.String,
-    title: "Paragraph 1 (Pre-highlight)",
-    defaultValue: "Traditional data protection workflows are",
+    title: "Paragraph 1",
+    defaultValue: "Traditional data protection workflows are one-directional: protect data, process it, and accept that outputs lack original context. A restorable workflow closes the loop — outputs are automatically restored with real enterprise data. This is what makes LLM Capsule an AI enabler rather than just a data protector.",
     displayTextArea: true,
-  },
-  paragraph1Highlight: {
-    type: ControlType.String,
-    title: "Paragraph 1 Highlight",
-    defaultValue: "one-directional",
-  },
-  paragraph1Post: {
-    type: ControlType.String,
-    title: "Paragraph 1 (Post-highlight)",
-    defaultValue: ": protect data, process it, and accept that outputs lack original context. A restorable workflow closes the loop — outputs are automatically restored with real enterprise data. This is what makes",
-    displayTextArea: true,
-  },
-  productName: {
-    type: ControlType.String,
-    title: "Product Name",
-    defaultValue: "LLM Capsule",
   },
   paragraph2: {
     type: ControlType.String,

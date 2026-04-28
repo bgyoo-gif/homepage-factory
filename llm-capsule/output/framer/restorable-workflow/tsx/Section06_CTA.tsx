@@ -20,9 +20,7 @@ const PALETTE = {
 const BG_IMAGE = "url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-smoke-pink-teal.png')"
 
 interface Props {
-  titlePre?: string
-  productName?: string
-  titlePost?: string
+  title?: string
   description?: string
   button1Label?: string
   button1Href?: string
@@ -32,9 +30,7 @@ interface Props {
 }
 
 export default function Section06_CTA({
-  titlePre = "See",
-  productName = "LLM Capsule",
-  titlePost = "Restorable Workflow in Action",
+  title = "See LLM Capsule Restorable Workflow in Action",
   description = "Experience how enterprise AI outputs are automatically restored with real business data — no manual post-processing required.",
   button1Label = "Request a Demo",
   button1Href = "/request-a-demo",
@@ -185,7 +181,7 @@ export default function Section06_CTA({
       >
         <div className="s6-inner">
           <h2 className="s6-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
-            {titlePre} <span className="s6-product-name">{productName}</span> {titlePost}
+            {title}
           </h2>
           <p className="s6-description">{description}</p>
           <div className="s6-actions">
@@ -200,20 +196,10 @@ export default function Section06_CTA({
 }
 
 addPropertyControls(Section06_CTA, {
-  titlePre: {
+  title: {
     type: ControlType.String,
-    title: "Title (Pre)",
-    defaultValue: "See",
-  },
-  productName: {
-    type: ControlType.String,
-    title: "Product Name",
-    defaultValue: "LLM Capsule",
-  },
-  titlePost: {
-    type: ControlType.String,
-    title: "Title (Post)",
-    defaultValue: "Restorable Workflow in Action",
+    title: "Title",
+    defaultValue: "See LLM Capsule Restorable Workflow in Action",
   },
   description: {
     type: ControlType.String,
