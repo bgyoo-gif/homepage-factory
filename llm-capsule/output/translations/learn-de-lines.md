@@ -5,28 +5,28 @@
 
 
 Enterprise AI Enablement — Learn
-Enterprise AI Enablement - Lernen
+Enterprise AI Enablement — Wissensbereich
 
 In-depth technical articles on enterprise AI enablement, secure AI workflows, structure-preserving processing, and restorable workflows.
-Ausführliche technische Artikel über KI-Enablement für Unternehmen, sichere KI-Workflows, strukturerhaltende Verarbeitung und wiederherstellbare Workflows.
+Technische Fachartikel zu KI-Enablement im Unternehmen, sicheren KI-Workflows, strukturerhaltendem Dokumentenschutz und wiederherstellbaren Verarbeitungsprozessen.
 
 Secure Enterprise AI Data Workflows
-Sichere KI-Daten-Workflows für Unternehmen
+Sichere KI-Datenverarbeitung im Unternehmen
 
 Pillar
-Säule
+Leitartikel
 
 Enterprise AI Enablement
 Enterprise AI Enablement
 
 Pillar
-Säule
+Leitartikel
 
 Enterprise AI Document Processing
-Enterprise AI Dokumentenverarbeitung
+KI-gestützte Dokumentenverarbeitung im Unternehmen
 
 Pillar
-Säule
+Leitartikel
 
 What Is an AI Data Capsule
 Was ist eine KI-Datenkapsel?
@@ -35,16 +35,16 @@ Article
 Artikel
 
 How to Use AI on Sensitive Enterprise Data
-Wie man KI für sensible Unternehmensdaten einsetzt
+KI-Einsatz bei vertraulichen Unternehmensdaten
 
 Article
 Artikel
 
 Why Redaction Breaks Enterprise AI Workflows
-Warum Redigieren KI-Workflows in Unternehmen unterbricht
+Warum Schwärzung KI-Workflows im Unternehmen beeinträchtigt
 
 Featured
-Ausgewählt
+Empfohlen
 
 Structure-Preserving Document Processing
 Strukturerhaltende Dokumentenverarbeitung
@@ -53,25 +53,25 @@ Article
 Artikel
 
 PII Protection vs Enterprise Confidentiality Control
-PII-Schutz vs. Vertraulichkeitskontrolle im Unternehmen
+PII-Schutz im Vergleich zur Vertraulichkeitskontrolle im Unternehmen
 
 Article
 Artikel
 
 On-Premise vs Cloud AI Data Protection
-On-Premise vs. Cloud AI-Datenschutz
+On-Premise- und Cloud-basierter KI-Datenschutz im Vergleich
 
 Article
 Artikel
 
 Local Restoration vs Anonymization
-Lokale Wiederherstellung vs. Anonymisierung
+Lokale Wiederherstellung im Vergleich zur Anonymisierung
 
 Article
 Artikel
 
 AI Data Pipeline Protection
-Schutz von KI-Datenpipelines
+Schutz der KI-Datenpipeline
 
 Article
 Artikel
@@ -83,31 +83,31 @@ Glossary
 Glossar
 
 Enterprise Context Control
-Steuerung des Unternehmenskontextes
+Kontextkontrolle im Unternehmen
 
 Glossary
 Glossar
 
 LLM Capsule vs Masking Tools
-LLM Capsule vs. Maskierungswerkzeuge
+LLM Capsule im Vergleich zu Maskierungswerkzeugen
 
 Comparison
 Vergleich
 
 LLM Capsule vs Prompt Security Gateways
-LLM Capsule vs. Prompt Security Gateways
+LLM Capsule im Vergleich zu Prompt Security Gateways
 
 Comparison
 Vergleich
 
 LLM Capsule vs Synthetic Data Platforms
-LLM Capsule vs. Plattformen für synthetische Daten
+LLM Capsule im Vergleich zu Plattformen fuer synthetische Daten
 
 Comparison
 Vergleich
 
 Structure-Preserving Processing vs Flat Masking
-Strukturerhaltende Verarbeitung vs. flache Maskierung
+Strukturerhaltende Verarbeitung im Vergleich zu einfacher Maskierung
 
 Comparison
 Vergleich
@@ -116,10 +116,10 @@ Read article
 Artikel lesen
 
 See how LLM Capsule works with your data
-Erfahren Sie, wie LLM Capsule mit Ihren Daten arbeitet
+Wir analysieren Ihre Anforderungen und demonstrieren LLM Capsule anhand Ihrer eigenen Daten.
 
 Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.
-Bringen Sie Ihre Dokumente, Einsatzbeschränkungen und Bewertungskriterien mit. Wir demonstrieren an Ihren tatsächlichen Arbeitsabläufen.
+Senden Sie uns Ihre Dokumente, Einsatzanforderungen und Bewertungskriterien. Wir demonstrieren die Verarbeitung anhand Ihrer realen Workflows.
 
 Request a Demo
 Demo anfordern

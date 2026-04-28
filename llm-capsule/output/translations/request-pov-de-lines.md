@@ -5,61 +5,61 @@
 
 
 Request a Proof of
-Anforderung eines Proof of
+Proof of
 
 Value
-Wert
+Value anfordern
 
 Test LLM Capsule using your own enterprise documents and workflows. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.
-Testen Sie LLM Capsule anhand Ihrer eigenen Unternehmensdokumente und Arbeitsabläufe. Wir demonstrieren AI Enablement anhand Ihrer tatsächlichen Daten, in Ihrer Umgebung und unter Berücksichtigung Ihrer Compliance-Anforderungen.
+Testen Sie LLM Capsule mit Ihren eigenen Unternehmensdokumenten und Workflows. Wir demonstrieren KI-Enablement anhand Ihrer tatsächlichen Daten, in Ihrer Umgebung und unter Berücksichtigung Ihrer Compliance-Anforderungen gemäss DSGVO (GDPR).
 
 What to
-Was zu
+Was Sie
 
 expect
-erwarten
+erwartet
 
 A structured 4-step process from discovery to results, designed to demonstrate real value on your actual data.
-Ein strukturierter 4-stufiger Prozess von der Entdeckung bis zu den Ergebnissen, der entwickelt wurde, um einen echten Wert für Ihre tatsächlichen Daten zu demonstrieren.
+Ein strukturierter Prozess in vier Schritten — vom Erstgespräch bis zu den Ergebnissen. Ziel ist es, den konkreten Nutzen anhand Ihrer Daten nachzuweisen.
 
 Discovery Call
-Entdeckungsaufruf
+Erstgespräch
 
 Technical Setup
 Technische Einrichtung
 
 Document Testing
-Dokumentenprüfung
+Dokumententest
 
 Results Review
-Überprüfung der Ergebnisse
+Ergebnisauswertung
 
 Discovery Call
-Entdeckungsaufruf
+Erstgespräch
 
 We understand your document types, sensitivity requirements, deployment constraints, and AI use cases. We identify the highest-value workflow to test.
-Wir kennen Ihre Dokumenttypen, Empfindlichkeitsanforderungen, Einsatzbeschränkungen und KI-Anwendungsfälle. Wir ermitteln den zu testenden Workflow mit dem höchsten Wert.
+Wir erfassen Ihre Dokumenttypen, Sensibilitätsanforderungen, Bereitstellungsvorgaben und KI-Anwendungsfälle. Gemeinsam identifizieren wir den Workflow mit dem grössten Nutzen für den Test.
 
 Technical Setup
 Technische Einrichtung
 
 LLM Capsule is deployed in your environment (on-premise, cloud, or hybrid). We configure encapsulation policies to match your sensitivity requirements.
-LLM Capsule wird in Ihrer Umgebung (vor Ort, in der Cloud oder als Hybrid) bereitgestellt. Wir konfigurieren Kapselungsrichtlinien, die Ihren Empfindlichkeitsanforderungen entsprechen.
+LLM Capsule wird in Ihrer Umgebung bereitgestellt (On-Premise, Cloud oder Hybrid). Wir konfigurieren die Kapsulierungsrichtlinien passend zu Ihren Sensibilitätsanforderungen.
 
 Document Testing
-Dokumentenprüfung
+Dokumententest
 
 Your real enterprise documents are processed through the full encapsulation, AI, and restoration pipeline. You evaluate output quality, protection coverage, and workflow integration.
-Ihre echten Unternehmensdokumente durchlaufen die gesamte Pipeline für Kapselung, KI und Wiederherstellung. Sie bewerten die Ausgabequalität, den Schutzumfang und die Workflow-Integration.
+Ihre echten Unternehmensdokumente durchlaufen die vollständige Pipeline: Kapsulierung, KI-Verarbeitung und Wiederherstellung. Sie bewerten die Ergebnisqualität, den Schutzumfang und die Workflow-Integration.
 
 Results Review
-Überprüfung der Ergebnisse
+Ergebnisauswertung
 
 We present detection accuracy, workflow accuracy, response similarity, and processing performance metrics measured on your specific workload.
-Wir präsentieren Erkennungsgenauigkeit, Workflow-Genauigkeit, Antwortähnlichkeit und Verarbeitungsleistungsmetriken, gemessen an Ihrer spezifischen Arbeitslast.
+Wir präsentieren die Erkennungsgenauigkeit, Workflow-Genauigkeit, Antwortähnlichkeit und Verarbeitungsleistung — gemessen an Ihrer spezifischen Arbeitslast.
 
 Typical PoV duration: 2-4 weeks. Bring your documents, deployment constraints, and evaluation criteria.
-Typische PoV-Dauer: 2-4 Wochen. Bringen Sie Ihre Unterlagen, Einsatzbedingungen und Bewertungskriterien mit.
+Typische PoV-Dauer: 2 bis 4 Wochen. Bringen Sie Ihre Dokumente, Bereitstellungsvorgaben und Bewertungskriterien mit.
 
 Request a Demo
 Demo anfordern
@@ -68,49 +68,49 @@ Full name
 Vollständiger Name
 
 Work Email
-Arbeit E-Mail
+Geschäftliche E-Mail-Adresse
 
 name@company.com
-name@company.com
+name@unternehmen.de
 
 Company
 Unternehmen
 
 Company name
-Name des Unternehmens
+Unternehmensname
 
 Job Title
-Berufsbezeichnung
+Position
 
 Your role
-Ihre Rolle
+Ihre Position
 
 Industry
-Industrie
+Branche
 
 Select industry
-Branche wählen
+Branche auswählen
 
 Primary Use Case
 Primärer Anwendungsfall
 
 Describe your primary AI use case and the types of documents you need to process.
-Beschreiben Sie Ihren primären KI-Anwendungsfall und die Arten von Dokumenten, die Sie verarbeiten müssen.
+Beschreiben Sie Ihren primären KI-Anwendungsfall und die Dokumenttypen, die verarbeitet werden sollen.
 
 Submit Request
-Antrag einreichen
+Anfrage absenden
 
 We respond to all PoV requests within 1 business day.
-Wir antworten auf alle PoV-Anfragen innerhalb von 1 Werktag.
+Wir beantworten alle PoV-Anfragen innerhalb eines Werktags.
 
 See how LLM Capsule works with your data
-Erfahren Sie, wie LLM Capsule mit Ihren Daten arbeitet
+Wir analysieren Ihre Anforderungen und demonstrieren LLM Capsule anhand Ihrer eigenen Daten
 
 Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.
-Bringen Sie Ihre Dokumente, Einsatzbeschränkungen und Bewertungskriterien mit. Wir demonstrieren an Ihren tatsächlichen Arbeitsabläufen.
+Bringen Sie Ihre Dokumente, Bereitstellungsanforderungen und Bewertungskriterien mit. Wir demonstrieren LLM Capsule anhand Ihrer tatsächlichen Workflows.
 
 Request a Demo
 Demo anfordern
 
 Available on AWS Marketplace
-Verfügbar auf AWS Marketplace
+Verfügbar auf dem AWS Marketplace

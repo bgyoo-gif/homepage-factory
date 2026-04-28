@@ -11,34 +11,34 @@ Resources
 Ressourcen
 
 Technical documentation, learning resources, glossary, and trust information for enterprise AI enablement with LLM Capsule.
-Technische Dokumentation, Lernressourcen, Glossar und Vertrauensinformationen für AI Enablement im Unternehmen mit LLM Capsule.
+Technische Dokumentation, Fachartikel, Glossar und Informationen zu Sicherheitszertifizierungen fuer das KI-Enablement im Unternehmen mit LLM Capsule.
 
 Explore
-Erkunden Sie
+Entdecken
 
 Resources
 Ressourcen
 
 Browse documentation, learning materials, key terms, and trust information.
-Stöbern Sie in der Dokumentation, in Lernmaterialien, Schlüsselbegriffen und Vertrauensinformationen.
+Dokumentation, Fachartikel, zentrale Begriffe und Informationen zu Zertifizierungen im Ueberblick.
 
 Learn
-Lernen Sie
+Lernen
 
 In-depth articles on enterprise AI enablement, secure LLM usage, structure-preserving processing, and restorable workflows.
-Ausführliche Artikel über AI Enablement im Unternehmen, sichere LLM-Nutzung, strukturerhaltende Verarbeitung und wiederherstellbare Workflows.
+Fachartikel zu KI-Enablement im Unternehmen, sicherer LLM-Nutzung, strukturerhaltendem Dokumentenschutz und wiederherstellbaren Verarbeitungsprozessen.
 
 Browse Learn →
-Zum Lernen →
+Alle Artikel ansehen →
 
 Glossary
 Glossar
 
 Definitions of key concepts — restoration, zero exposure, enterprise context control, and structure-preserving processing.
-Definitionen von Schlüsselkonzepten — Wiederherstellung, Zero Exposure, Enterprise Context Control und strukturerhaltende Verarbeitung.
+Definitionen zentraler Konzepte: Wiederherstellung, Zero Exposure, Kontextkontrolle im Unternehmen und strukturerhaltende Verarbeitung.
 
 Browse Glossary →
-Glossar durchsuchen →
+Glossar ansehen →
 
 Trust Center
 Trust Center
@@ -47,49 +47,49 @@ Security certifications, compliance documentation, and audit information.
 Sicherheitszertifizierungen, Compliance-Dokumentation und Audit-Informationen.
 
 Browse Trust Center →
-Zum Trust Center →
+Trust Center ansehen →
 
 Core guides for enterprise AI
-Wichtige Leitfäden für Enterprise
+Zentrale Leitfaeden fuer das
 
 enablement
-AI Enablement
+KI-Enablement im Unternehmen
 
 Start with the documents that explain the operating model, the failure of redaction-based approaches, and the architecture behind usable AI outputs.
-Beginnen Sie mit den Dokumenten, die das Betriebsmodell, das Scheitern von auf Redigierung basierenden Ansätzen und die Architektur hinter brauchbaren KI-Ergebnissen erklären.
+Diese Leitfaeden erlaeutern das Betriebsmodell, die Grenzen von Schwärzungsverfahren und die Architektur fuer fachlich nutzbare KI-Ergebnisse.
 
 Secure Enterprise AI Data Workflows
-Sichere KI-Daten-Workflows für Unternehmen
+Sichere KI-Datenverarbeitung im Unternehmen
 
 The end-to-end operating model for protecting sensitive data across AI workflows while restoring usable outputs locally.
-Das End-to-End-Betriebsmodell zum Schutz sensibler Daten in KI-Workflows bei gleichzeitiger lokaler Wiederherstellung nutzbarer Ergebnisse.
+Das durchgaengige Betriebsmodell zum Schutz vertraulicher Daten in KI-Workflows mit lokaler Wiederherstellung verwertbarer Ergebnisse.
 
 Read guide →
-Zum Leitfaden →
+Leitfaden lesen →
 
 What Is an AI Data Capsule?
 Was ist eine KI-Datenkapsel?
 
 The core concept behind local encapsulation, protected AI processing, and local restoration.
-Das Kernkonzept der lokalen Kapselung, der geschützten KI-Verarbeitung und der lokalen Wiederherstellung.
+Das Grundkonzept hinter lokaler Kapsulierung, geschuetzter KI-Verarbeitung und lokaler Wiederherstellung.
 
 Read guide →
-Zum Leitfaden →
+Leitfaden lesen →
 
 Why Redaction Breaks Enterprise AI Workflows
-Warum Redigieren KI-Workflows in Unternehmen unterbricht
+Warum Schwärzung KI-Workflows im Unternehmen beeinträchtigt
 
 Why masking and redaction tools fail in AI workflows, and what replaces them in enterprise production settings.
-Warum Maskierungs- und Schwärzungstools in KI-Workflows versagen und was sie in Produktionsumgebungen von Unternehmen ersetzen kann.
+Warum Maskierungs- und Schwärzungswerkzeuge in KI-Workflows scheitern und welche Alternativen in Produktionsumgebungen zum Einsatz kommen.
 
 Read guide →
-Zum Leitfaden →
+Leitfaden lesen →
 
 See how LLM Capsule works with your data
-Erfahren Sie, wie LLM Capsule mit Ihren Daten arbeitet
+Wir analysieren Ihre Anforderungen und demonstrieren LLM Capsule anhand Ihrer eigenen Daten.
 
 Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.
-Bringen Sie Ihre Dokumente, Einsatzbeschränkungen und Bewertungskriterien mit. Wir demonstrieren an Ihren tatsächlichen Arbeitsabläufen.
+Senden Sie uns Ihre Dokumente, Einsatzanforderungen und Bewertungskriterien. Wir demonstrieren die Verarbeitung anhand Ihrer realen Workflows.
 
 Request a Demo
 Demo anfordern

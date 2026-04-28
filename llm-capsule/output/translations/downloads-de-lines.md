@@ -5,67 +5,67 @@
 
 
 Documentation &
-Dokumentation &
+Dokumentation und
 
 Downloads
-Herunterladen
+Downloads
 
 Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation.
-Architektur-Briefe, technische Dokumentation und Implementierungsleitfäden zur Bewertung von AI Enablement in Unternehmen.
+Architekturübersichten, technische Dokumentation und Bereitstellungsleitfäden für die Evaluierung von KI-Enablement im Unternehmen.
 
 ## Section02_DownloadsGrid
 
 
 Available
-Verfügbar
+Verfügbare
 
 Resources
 Ressourcen
 
 Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation.
-Architektur-Briefe, technische Dokumentation und Implementierungsleitfäden zur Bewertung von AI Enablement in Unternehmen.
+Architekturübersichten, technische Dokumentation und Bereitstellungsleitfäden für die Evaluierung von KI-Enablement im Unternehmen.
 
 Architecture Brief
-Architektur Brief
+Architekturübersicht
 
 Technical overview of the LLM Capsule architecture -- encapsulation, trust boundary, restoration, and deployment models.
-Technischer Überblick über die LLM Capsule-Architektur - Kapselung, Vertrauensgrenze, Wiederherstellung und Einsatzmodelle.
+Technische Übersicht der LLM Capsule-Architektur: Kapsulierung, Vertrauensgrenze, Wiederherstellung und Bereitstellungsmodelle.
 
 Download PDF (coming soon)
-PDF herunterladen (in Kürze)
+PDF herunterladen (in Kürze verfügbar)
 
 Product Overview
 Produktübersicht
 
 Executive summary of LLM Capsule capabilities, competitive positioning, and enterprise use cases.
-Zusammenfassung der Fähigkeiten von LLM Capsule, der Wettbewerbsposition und der Anwendungsfälle in Unternehmen.
+Management-Zusammenfassung der LLM Capsule-Funktionen, Marktpositionierung und Anwendungsfälle im Unternehmen.
 
 Download PDF (coming soon)
-PDF herunterladen (in Kürze)
+PDF herunterladen (in Kürze verfügbar)
 
 Integration Guide
 Integrationsleitfaden
 
 Technical integration documentation for enterprise deployment -- API reference, configuration, and deployment instructions.
-Technische Integrationsdokumentation für den Einsatz in Unternehmen - API-Referenz, Konfigurations- und Einsatzanweisungen.
+Technische Integrationsdokumentation für den Unternehmenseinsatz: API-Referenz, Konfiguration und Bereitstellungsanweisungen.
 
 Download PDF (coming soon)
-PDF herunterladen (in Kürze)
+PDF herunterladen (in Kürze verfügbar)
 
 ## Section03_CTABand
 
 
 See how
-Erfahren Sie, wie
+Wir analysieren Ihre Anforderungen und demonstrieren
 
 LLM Capsule
 LLM Capsule
 
 Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.
-Bringen Sie Ihre Dokumente, Einsatzbeschränkungen und Bewertungskriterien mit. Wir demonstrieren an Ihren tatsächlichen Arbeitsabläufen.
+anhand Ihrer eigenen Dokumente, Bereitstellungsanforderungen und Bewertungskriterien.
 
 Request a Demo
 Demo anfordern
 
 Available on AWS Marketplace
-Verfügbar auf AWS Marketplace
+Verfügbar auf dem AWS Marketplace

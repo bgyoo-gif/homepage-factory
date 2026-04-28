@@ -5,40 +5,40 @@
 
 
 Enterprise
-Unternehmen
+Unternehmens-
 
 Pricing
-Preisgestaltung
+preise
 
 LLM Capsule is priced for enterprise deployment. Contact us for volume-based pricing tailored to your document processing workload and deployment requirements.
-LLM Capsule ist für den Einsatz in Unternehmen konzipiert. Setzen Sie sich mit uns in Verbindung, um volumenbasierte Preise zu erhalten, die auf Ihr Dokumentenverarbeitungsvolumen und Ihre Bereitstellungsanforderungen zugeschnitten sind.
+LLM Capsule wird für den Unternehmenseinsatz lizenziert. Kontaktieren Sie uns für eine volumenbasierte Preisgestaltung, abgestimmt auf Ihr Dokumentenverarbeitungsvolumen und Ihre Bereitstellungsanforderungen.
 
 ## Section02_PricingPlans
 
 
 PROOF OF VALUE
-BEWEIS DES WERTES
+PROOF OF VALUE
 
 Custom
-Benutzerdefiniert
+Individuell
 
 Evaluation period
-Bewertungszeitraum
+Evaluierungszeitraum
 
 Test with your own documents
-Testen Sie mit Ihren eigenen Dokumenten
+Test mit eigenen Dokumenten
 
 Full encapsulation + restoration
-Vollständige Kapselung + Wiederherstellung
+Vollständige Kapsulierung und Wiederherstellung
 
 Any LLM provider
-Jeder LLM-Anbieter
+Beliebiger LLM-Anbieter
 
 On-premise or cloud deployment
-Einsatz vor Ort oder in der Cloud
+On-Premise- oder Cloud-Betrieb
 
 Dedicated technical support
-Engagierte technische Unterstützung
+Dedizierter technischer Support
 
 Request a Demo
 Demo anfordern
@@ -47,31 +47,31 @@ ENTERPRISE
 ENTERPRISE
 
 Custom
-Benutzerdefiniert
+Individuell
 
 Annual license
-Jährliche Lizenz
+Jahreslizenz
 
 Unlimited document processing
 Unbegrenzte Dokumentenverarbeitung
 
 Full 3+2 capability set
-Vollständiger 3+2-Fähigkeitssatz
+Vollständiger 3+2-Funktionsumfang
 
 Enterprise context control
-Kontrolle des Unternehmenskontextes
+Unternehmenskontextkontrolle
 
 Custom deployment model
-Benutzerdefiniertes Bereitstellungsmodell
+Individuelles Bereitstellungsmodell
 
 Admin console & audit
-Verwaltungskonsole und Prüfung
+Verwaltungskonsole und Audit
 
 Dedicated architecture support
-Dedizierte Architekturunterstützung
+Dedizierter Architektur-Support
 
 SLA & enterprise support
-SLA & Unternehmensunterstützung
+SLA und Enterprise-Support
 
 Contact Sales
 Vertrieb kontaktieren
@@ -80,13 +80,13 @@ AWS MARKETPLACE
 AWS MARKETPLACE
 
 Listed
-Aufgeführt
+Gelistet
 
 Pay through AWS
-Bezahlen über AWS
+Bezahlung über AWS
 
 Streamlined procurement
-Rationalisierte Beschaffung
+Vereinfachte Beschaffung
 
 AWS billing integration
 AWS-Abrechnungsintegration
@@ -95,31 +95,31 @@ VPC deployment
 VPC-Bereitstellung
 
 Standard feature set
-Standardfunktionen
+Standardfunktionsumfang
 
 AWS support channels
 AWS-Support-Kanäle
 
 View on AWS Marketplace
-Zum AWS Marketplace
+Auf dem AWS Marketplace ansehen
 
 ## Section03_CTABand
 
 
 See how
-So arbeitet
+Wir analysieren Ihre Anforderungen und demonstrieren
 
 LLM Capsule
 LLM Capsule
 
 works with your data
-mit Ihren Daten
+anhand Ihrer eigenen Daten
 
 Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.
-Bringen Sie Ihre Dokumente, Einsatzbeschränkungen und Bewertungskriterien mit. Wir demonstrieren an Ihren tatsächlichen Arbeitsabläufen.
+Bringen Sie Ihre Dokumente, Bereitstellungsanforderungen und Bewertungskriterien mit. Wir demonstrieren LLM Capsule anhand Ihrer tatsächlichen Workflows.
 
 Request a Demo
 Demo anfordern
 
 Available on AWS Marketplace
-Verfügbar auf AWS Marketplace
+Verfügbar auf dem AWS Marketplace

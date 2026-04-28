@@ -5,13 +5,13 @@
 
 
 Enterprise AI 
-Unternehmens-KI
+KI-Enablement im
 
 Enablement
-Enablement
+Unternehmen
 
 Key terms and definitions for enterprise AI enablement, LLM data privacy, and secure enterprise AI workflows.
-Wichtige Begriffe und Definitionen für KI-Befähigung im Unternehmen, LLM-Datenschutz und sichere KI-Workflows im Unternehmen.
+Zentrale Begriffe und Definitionen zu KI-Enablement im Unternehmen, LLM-Datenschutz und sicheren KI-Workflows.
 
 Resources
 Ressourcen
@@ -35,7 +35,7 @@ Read definition
 Definition lesen
 
 Enterprise Context Control
-Enterprise Context Control
+Kontextkontrolle im Unternehmen
 
 Read definition
 Definition lesen
@@ -62,13 +62,13 @@ Definition lesen
 
 
 See how 
-Erfahren Sie, wie
+Wir analysieren Ihre Anforderungen und demonstrieren
 
 LLM Capsule
 LLM Capsule
 
 Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.
-Bringen Sie Ihre Dokumente, Einsatzbeschränkungen und Bewertungskriterien mit. Wir demonstrieren an Ihren tatsächlichen Arbeitsabläufen.
+Senden Sie uns Ihre Dokumente, Einsatzanforderungen und Bewertungskriterien. Wir demonstrieren die Verarbeitung anhand Ihrer realen Workflows.
 
 Request a Demo
 Demo anfordern

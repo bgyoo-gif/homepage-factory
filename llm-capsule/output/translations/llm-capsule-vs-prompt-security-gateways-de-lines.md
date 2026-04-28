@@ -8,67 +8,67 @@ LLM Capsule vs Prompt Security Gateways
 LLM Capsule vs. Prompt Security Gateways
 
 Compare LLM Capsule with prompt security gateways. Gateways filter at the API layer; LLM Capsule enables AI adoption at the data layer with structure-preserving encapsulation.
-Vergleichen Sie LLM Capsule mit prompten Sicherheits-Gateways. Gateways filtern auf der API-Ebene; LLM Capsule ermöglicht die Übernahme von KI auf der Datenebene mit strukturerhaltender Kapselung.
+Vergleich von LLM Capsule mit Prompt Security Gateways. Gateways filtern auf der API-Ebene. LLM Capsule schützt Daten bereits auf der Datenebene durch strukturerhaltende Kapsulierung und ermöglicht so den produktiven KI-Einsatz.
 
 Prompt security gateways sit between the user and the AI model, scanning prompts for sensitive content and filtering or blocking requests that contain flagged patterns. They operate at the API interaction layer. LLM Capsule operates as an AI enablement data layer — transforming the data itself before it enters any AI workflow, enabling AI adoption rather than blocking it.
-Prompt-Sicherheits-Gateways sitzen zwischen dem Benutzer und dem KI-Modell, scannen Prompts auf sensible Inhalte und filtern oder blockieren Anfragen, die markierte Muster enthalten. Sie arbeiten auf der API-Interaktionsebene. LLM Capsule fungiert als KI-Befähigungsdatenschicht - es wandelt die Daten selbst um, bevor sie in einen KI-Workflow gelangen, und ermöglicht so die KI-Übernahme, anstatt sie zu blockieren.
+Prompt Security Gateways sind zwischen Anwender und KI-Modell geschaltet. Sie prüfen Eingaben auf sensible Inhalte und filtern oder blockieren Anfragen mit auffälligen Mustern. Ihr Wirkungsbereich ist die API-Interaktionsebene. LLM Capsule hingegen arbeitet als KI-fähige Datenschicht: Vertrauliche Daten werden bereits vor dem Eintritt in einen KI-Workflow lokal identifiziert und ersetzt. Das ermöglicht den KI-Einsatz, statt ihn zu blockieren.
 
 How Prompt Security Gateways Work
-So funktionieren Prompt Security Gateways
+Funktionsweise von Prompt Security Gateways
 
 Prompt gateways intercept API calls to LLM providers. They scan the prompt text for PII patterns, blocked topics, or compliance violations. If sensitive content is detected, the gateway either blocks the request, strips the flagged content, or alerts an administrator. Some gateways also scan AI responses for data leakage.
-Prompt-Gateways fangen API-Aufrufe an LLM-Anbieter ab. Sie scannen den Aufforderungstext auf PII-Muster, gesperrte Themen oder Verstöße gegen die Compliance. Wenn sensible Inhalte erkannt werden, blockiert das Gateway entweder die Anfrage, entfernt die markierten Inhalte oder alarmiert einen Administrator. Einige Gateways scannen auch KI-Antworten auf Datenlecks.
+Prompt Gateways fangen API-Aufrufe an LLM-Anbieter ab und prüfen den Prompt-Text auf PII-Muster, gesperrte Themen oder Compliance-Verstöße. Bei erkannten sensiblen Inhalten blockiert das Gateway die Anfrage, entfernt die betroffenen Passagen oder benachrichtigt einen Administrator. Einige Gateways prüfen zusätzlich KI-Antworten auf Datenabflüsse.
 
 Limitations
-Beschränkungen
+Einschränkungen
 
 Prompt-only scope. Gateways only see the final prompt, not the underlying data pipeline. Documents processed through RAG systems or batch pipelines may bypass the gateway entirely.
-Nur-Prompt-Bereich. Gateways sehen nur die endgültige Eingabeaufforderung, nicht die zugrunde liegende Datenpipeline. Über RAG-Systeme oder Batch-Pipelines verarbeitete Dokumente können das Gateway vollständig umgehen.
+Begrenzter Wirkungsbereich. Gateways sehen ausschließlich den finalen Prompt, nicht die zugrunde liegende Datenpipeline. Dokumente, die über RAG-Systeme oder Batch-Pipelines verarbeitet werden, können das Gateway vollständig umgehen.
 
 Block or pass binary. Most gateways make a binary decision — block the request or pass it through. There is no mechanism to transform data while preserving usability.
-Binär blockieren oder durchlassen. Die meisten Gateways treffen eine binäre Entscheidung - blockieren oder durchlassen. Es gibt keinen Mechanismus zur Umwandlung von Daten unter Beibehaltung der Nutzbarkeit.
+Binäre Entscheidung. Die meisten Gateways entscheiden binär: blockieren oder durchlassen. Ein Mechanismus zur Datentransformation unter Erhalt der Nutzbarkeit fehlt.
 
 No output restoration. If a gateway strips sensitive content from a prompt, the AI output will lack that context. There is no restoration mechanism.
-Keine Wiederherstellung der Ausgabe. Wenn ein Gateway sensible Inhalte aus einem Prompt entfernt, fehlt dieser Kontext in der KI-Ausgabe. Es gibt keinen Mechanismus zur Wiederherstellung.
+Keine Wiederherstellung der Ausgabe. Entfernt ein Gateway sensible Inhalte aus einem Prompt, fehlt dieser Kontext in der KI-Antwort. Ein Mechanismus zur nachträglichen Anreicherung existiert nicht.
 
 Pattern-based detection. Gateways rely on pattern matching which misses context-dependent sensitivity and generates false positives on non-sensitive content that matches PII patterns.
-Musterbasierte Erkennung. Gateways verlassen sich auf einen Musterabgleich, der die kontextabhängige Sensibilität außer Acht lässt und bei nicht sensiblen Inhalten, die mit PII-Mustern übereinstimmen, falsch positive Ergebnisse erzeugt.
+Musterbasierte Erkennung. Gateways arbeiten mit Musterabgleich, der kontextabhängige Sensibilität nicht erfasst. Nicht-sensible Inhalte, die PII-Mustern ähneln, erzeugen Fehlalarme.
 
 How LLM Capsule Differs
-Wie sich LLM Capsule unterscheidet
+Abgrenzung zu LLM Capsule
 
 LLM Capsule operates upstream of the prompt. It encapsulates sensitive data at the document level before any AI processing occurs. The encapsulation is structure-preserving — AI receives complete, processable documents. After AI generates outputs, local restoration (restoration) restores enterprise context automatically.
-LLM Capsule ist der Eingabeaufforderung vorgeschaltet. Sie kapselt sensible Daten auf Dokumentenebene ein, bevor eine KI-Verarbeitung stattfindet. Die Kapselung ist strukturerhaltend - die KI erhält vollständige, verarbeitungsfähige Dokumente. Nachdem KI Ausgaben generiert hat, wird der Unternehmenskontext durch lokale Wiederherstellung (Restoration) automatisch wiederhergestellt.
+LLM Capsule setzt vor der Prompt-Erstellung an. Sensible Daten werden auf Dokumentebene kapsuliert, bevor eine KI-Verarbeitung stattfindet. Die Kapsulierung ist strukturerhaltend — die KI erhält vollständige, verarbeitungsfähige Dokumente. Nach der KI-Verarbeitung werden die Originaldaten durch lokale Wiederherstellung automatisch in die Ergebnisse zurückgeführt.
 
 AI results are restored locally. LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.
-KI-Ergebnisse werden lokal wiederhergestellt. LLM Capsule ermöglicht die Einführung von KI in Unternehmen und schützt dabei sensible Daten und bewahrt verwertbare Ergebnisse.
+KI-Ergebnisse werden lokal mit Originaldaten angereichert. LLM Capsule ermöglicht den produktiven KI-Einsatz im Unternehmen bei gleichzeitigem Schutz vertraulicher Informationen.
 
 Comparison
 Vergleich
 
 Enterprise Workflow Example
-Beispiel für einen Unternehmens-Workflow
+Praxisbeispiel aus dem Unternehmenseinsatz
 
 RAG-Based Knowledge System
 RAG-basiertes Wissenssystem
 
 An enterprise deploys a RAG system that retrieves internal documents to augment AI responses. A prompt gateway can only scan the final composed prompt — it cannot protect the 50 retrieved document chunks that feed into it.
-Ein Unternehmen setzt ein RAG-System ein, das interne Dokumente abruft, um die KI-Antworten zu ergänzen. Ein Prompt-Gateway kann nur die endgültige Eingabeaufforderung scannen - es kann nicht die 50 abgerufenen Dokumententeile schützen, die in das System eingespeist werden.
+Ein Unternehmen setzt ein RAG-System ein, das interne Dokumente zur Anreicherung von KI-Antworten abruft. Ein Prompt Gateway kann nur den final zusammengesetzten Prompt prüfen — die 50 abgerufenen Dokumentfragmente, die einfließen, bleiben ungeschützt.
 
 LLM Capsule encapsulates all documents at the data layer before they enter the RAG index. Every retrieval, every prompt composition, and every AI output operates on protected data. Restoration restores enterprise context in the final response.
-LLM Capsule kapselt alle Dokumente auf der Datenebene, bevor sie in den RAG-Index gelangen. Jeder Abruf, jede Eingabeaufforderung und jede KI-Ausgabe arbeitet mit geschützten Daten. Die Wiederherstellung stellt den Unternehmenskontext in der endgültigen Antwort wieder her.
+LLM Capsule kapsuliert alle Dokumente auf der Datenebene, bevor sie in den RAG-Index gelangen. Jeder Abruf, jede Prompt-Komposition und jede KI-Ausgabe arbeitet mit geschützten Daten. Die Wiederherstellung führt den Unternehmenskontext in der finalen Antwort automatisch zusammen.
 
 How does LLM Capsule differ from prompt gateways?
-Wie unterscheidet sich LLM Capsule von Prompt-Gateways?
+Wie unterscheidet sich LLM Capsule von Prompt Gateways?
 
 Prompt gateways filter at the API level and can only block or pass requests. LLM Capsule transforms data at the source, preserving structure for AI processing and enabling output restoration.
-Prompt-Gateways filtern auf der API-Ebene und können Anfragen nur blockieren oder weiterleiten. LLM Capsule wandelt Daten an der Quelle um, erhält die Struktur für die KI-Verarbeitung und ermöglicht die Wiederherstellung der Ausgabe.
+Prompt Gateways filtern auf der API-Ebene und können Anfragen nur blockieren oder weiterleiten. LLM Capsule transformiert Daten bereits an der Quelle, erhält die Dokumentstruktur für die KI-Verarbeitung und ermöglicht die nachträgliche Wiederherstellung der Ergebnisse.
 
 Can I use both a gateway and LLM Capsule?
-Kann ich sowohl ein Gateway als auch eine LLM Capsule verwenden?
+Lassen sich ein Gateway und LLM Capsule parallel einsetzen?
 
 Yes. LLM Capsule provides data-layer protection while gateways provide an additional API-level monitoring layer. The two approaches are complementary.
-Ja. LLM Capsule bietet Schutz auf der Datenebene, während Gateways eine zusätzliche Überwachungsebene auf API-Ebene bieten. Die beiden Ansätze ergänzen sich.
+Ja. LLM Capsule bietet Schutz auf der Datenebene, während Gateways eine ergänzende Überwachungsschicht auf API-Ebene bereitstellen. Beide Ansätze sind komplementär.
 
 Product Overview
 Produktübersicht
@@ -77,19 +77,19 @@ Architecture
 Architektur
 
 Trust & Compliance
-Vertrauen und Einhaltung
+Vertrauen und Compliance
 
 Request a Demo
 Demo anfordern
 
 Learn Hub
-Hub erfahren
+Learn Hub
 
 See how LLM Capsule works with your data
 Erfahren Sie, wie LLM Capsule mit Ihren Daten arbeitet
 
 Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.
-Bringen Sie Ihre Dokumente, Einsatzbeschränkungen und Bewertungskriterien mit. Wir demonstrieren an Ihren tatsächlichen Arbeitsabläufen.
+Wir analysieren Ihre Anforderungen und demonstrieren LLM Capsule anhand Ihrer eigenen Dokumente und Infrastruktur.
 
 Request a Demo
 Demo anfordern

@@ -5,46 +5,46 @@
 
 
 AI, Now Safe for
-AI, jetzt sicher für
+KI, jetzt sicher für
 
 Every Industry
-Jede Branche
+jede Branche
 
 Regulated and document-heavy industries can now adopt AI on real enterprise data. LLM Capsule is an AI enablement data layer and plugin that removes the data exposure barrier blocking enterprise AI adoption — enabling AI first, protecting data at the data layer.
-Regulierte und dokumentenlastige Branchen können jetzt KI auf echten Unternehmensdaten einsetzen. LLM Capsule ist eine AI Enablement-Datenschicht und ein Plugin, das die Barriere der Datenexposition beseitigt, die die Einführung von KI in Unternehmen blockiert — KI wird zuerst ermöglicht, Daten werden auf der Datenschicht geschützt.
+Regulierte und dokumentenlastige Branchen können jetzt KI auf echten Unternehmensdaten einsetzen. LLM Capsule ist ein AI Enablement Data Layer und Plugin, das die Barriere der Datenoffenlegung beseitigt. Der KI-Einsatz wird ermöglicht, der Datenschutz auf der Datenebene sichergestellt.
 
 Request a Demo
 Demo anfordern
 
 See Product
-Zum Produkt
+Produkt ansehen
 
 ## Section02_IndustryUseCases
 
 
 How Each Industry Uses LLM Capsule
-Wie jede Branche die LLM Capsule nutzt
+Wie jede Branche LLM Capsule einsetzt
 
 Blocked
 Blockiert
 
 Enabled
-Aktiviert
+Ermöglicht
 
 Regulated industries can now adopt AI on real enterprise data. See how each industry uses LLM Capsule to enable AI while protecting sensitive information.
-Regulierte Branchen können jetzt KI auf echte Unternehmensdaten anwenden. Sehen Sie, wie jede Branche LLM Capsule nutzt, um KI zu ermöglichen und gleichzeitig sensible Daten zu schützen.
+Regulierte Branchen können jetzt KI auf echten Unternehmensdaten einsetzen. So nutzt jede Branche LLM Capsule, um KI zu ermöglichen und gleichzeitig vertrauliche Informationen zu schützen.
 
 Public Sector
 Öffentlicher Sektor
 
 Uses AI to draft operational briefings, no classified info ever reaches external servers.
-Verwendet KI für die Erstellung von Einsatzbesprechungen; keine geheimen Informationen gelangen jemals auf externe Server.
+Einsatz von KI zur Erstellung operativer Lageberichte. Verschlusssachen erreichen zu keinem Zeitpunkt externe Server.
 
 Military personnel data, classified operation details & security-grade documents
-Militärische Personaldaten, Verschlusssachen und Dokumente mit Sicherheitsstatus
+Militärische Personaldaten, Verschlusssachen und sicherheitsrelevante Dokumente
 
 AI-assisted intelligence reports & briefing summaries — with full audit trail
-KI-gestützte Intelligence-Berichte und Briefing-Zusammenfassungen - mit vollständigem Audit-Trail
+KI-gestützte Lageberichte und Briefing-Zusammenfassungen — mit lückenlosem Prüfpfad
 
 Ministry of National Defense (South Korea)
 Ministerium für nationale Verteidigung (Südkorea)
@@ -53,43 +53,43 @@ Finance / Insurance
 Finanzen / Versicherung
 
 Uses AI to streamline claim reviews, policyholder data stays fully protected.
-Nutzt KI zur Optimierung der Schadenprüfung, die Daten der Versicherungsnehmer bleiben vollständig geschützt.
+KI-gestützte Schadensbearbeitung. Versicherungsnehmerdaten bleiben vollständig geschützt.
 
 Policyholder names, claim records & credit information in prompts
-Namen von Versicherungsnehmern, Schadendatensätze und Kreditinformationen in Prompts
+Versicherungsnehmernamen, Schadensdaten und Bonitätsinformationen in Prompts
 
 AI-powered insurance claim analysis & underwriting reports — no customer data leaves
-KI-gestützte Analyse von Versicherungsansprüchen und Underwriting-Berichte — keine Kundendaten verlassen das Unternehmen
+KI-gestützte Schadensanalyse und Underwriting-Berichte — keine Kundendaten verlassen das Unternehmen
 
 Kyobo|DB Insurance
-Kyobo|DB Versicherung
+Kyobo|DB Insurance
 
 Healthcare
 Gesundheitswesen
 
 Uses AI to summarize patient records, PHI never touches an external server.
-Verwendet KI, um Patientendaten zusammenzufassen, PHI kommt nie mit einem externen Server in Berührung.
+KI-gestützte Zusammenfassung von Patientenakten. PHI gelangt zu keinem Zeitpunkt auf einen externen Server.
 
 Patient names, diagnoses & medical record IDs
 Patientennamen, Diagnosen und Krankenakten-IDs
 
 AI-generated clinical summaries & radiology reports — PHI stays local
-KI-generierte klinische Zusammenfassungen und Radiologieberichte - PHI bleibt lokal
+KI-generierte klinische Zusammenfassungen und Radiologieberichte — PHI verbleibt lokal
 
 Ewha Womans University Medical Center
-Medizinisches Zentrum der Ewha Womans Universität
+Ewha Womans University Medical Center
 
 Legal
 Rechtswesen
 
 Drafts court documents with AI, no case info leaves the firm.
-Entwirft Gerichtsdokumente mit KI, keine Fallinformationen verlassen die Kanzlei.
+Erstellung von Gerichtsdokumenten mit KI. Keine Fallinformationen verlassen die Kanzlei.
 
 Client names, case details & privileged information
-Kundennamen, Falldetails und vertrauliche Informationen
+Mandantennamen, Falldetails und anwaltlich geschützte Informationen
 
 AI-drafted memos, briefs & contract reviews — fully contained
-Von KI erstellte Memos, Schriftsätze und Vertragsprüfungen - vollständig enthalten
+KI-erstellte Memos, Schriftsätze und Vertragsprüfungen — vollständig intern
 
 Shin&Kim
 Shin&Kim
@@ -98,13 +98,13 @@ Telecom
 Telekommunikation
 
 Leverage AI across operations, customer and network data fully de-identified.
-Nutzen Sie KI für Betriebs-, Kunden- und Netzwerkdaten, die vollständig de-identifiziert sind.
+KI-Einsatz im gesamten Betrieb. Kunden- und Netzwerkdaten werden vollständig pseudonymisiert.
 
 Subscriber identities, call records, IP addresses & network configs
-Teilnehmeridentitäten, Anrufaufzeichnungen, IP-Adressen und Netzwerkkonfigurationen
+Teilnehmeridentitäten, Verbindungsdaten, IP-Adressen und Netzwerkkonfigurationen
 
 AI-driven customer analysis & network operations — all data de-identified before use
-KI-gesteuerte Kundenanalyse und Netzbetrieb - alle Daten werden vor der Verwendung de-identifiziert
+KI-gestützte Kundenanalyse und Netzbetrieb — alle Daten werden vor der Verarbeitung pseudonymisiert
 
 SK Telecom|Deutsche Telekom|T Challenge 2026 Top 12
 SK Telecom|Deutsche Telekom|T Challenge 2026 Top 12
@@ -113,13 +113,13 @@ Network Security
 Netzwerksicherheit
 
 Enables industrial clients to use public AI with all sensitive operational data protected.
-Ermöglicht es Industriekunden, öffentliche KI zu nutzen, wobei alle sensiblen Betriebsdaten geschützt sind.
+Industriekunden können öffentliche KI nutzen, während alle sensiblen Betriebsdaten geschützt bleiben.
 
 Internal system data, vulnerability reports & infrastructure details in prompts
 Interne Systemdaten, Schwachstellenberichte und Infrastrukturdetails in Prompts
 
 Regulated industries can safely adopt public LLMs — sensitive info de-identified at the gate
-Regulierte Branchen können öffentliche LLMs sicher übernehmen - sensible Daten werden am Eingangstor de-identifiziert
+Regulierte Branchen setzen öffentliche LLMs sicher ein — sensible Daten werden vor der Übertragung pseudonymisiert
 
 Claroty
 Claroty
@@ -128,13 +128,13 @@ Claroty
 
 
 98.1%
-98.1%
+98,1 %
 
 Detection Accuracy
 Erkennungsgenauigkeit
 
 99.14%
-99.14%
+99,14 %
 
 Workflow Accuracy
 Workflow-Genauigkeit
@@ -143,31 +143,31 @@ Structured PII
 Strukturierte PII
 
 Response Similarity
-Ähnlichkeit der Antwort
+Antwortähnlichkeit
 
 Enable AI. Protect data. Restore results. Track everything.
-KI ermöglichen. Daten schützen. Ergebnisse wiederherstellen. Alles nachverfolgen.
+KI nutzen. Daten schützen. Ergebnisse wiederherstellen. Alles nachvollziehen.
 
 0.12s processing per 2,200-character document
-0,12s Verarbeitung pro 2.200-Zeichen-Dokument
+0,12 s Verarbeitung pro Dokument mit 2.200 Zeichen
 
 ## Section04_Cta
 
 
 See how your industry uses LLM Capsule
-Sehen Sie, wie Ihre Branche LLM Capsule nutzt
+Wir zeigen, wie Ihre Branche LLM Capsule einsetzt
 
 Bring your documents, deployment constraints, and evaluation questions. We will show how LLM Capsule fits your environment.
-Bringen Sie Ihre Dokumente, Einsatzbeschränkungen und Bewertungsfragen mit. Wir werden Ihnen zeigen, wie LLM Capsule in Ihre Umgebung passt.
+Wir analysieren Ihre Dokumente, Bereitstellungsanforderungen und offenen Fragen und demonstrieren, wie LLM Capsule in Ihre Umgebung passt.
 
 Request a Demo
 Demo anfordern
 
 See Product
-Zum Produkt
+Produkt ansehen
 
 View Architecture
-Zur Architektur
+Architektur ansehen
 
 Available on AWS Marketplace
-Verfügbar auf AWS Marketplace
+Verfügbar auf dem AWS Marketplace
