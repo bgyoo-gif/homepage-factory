@@ -176,7 +176,7 @@ Finanzdienstleistungen
 금융 서비스
 
 Banks and insurance companies process loan applications, claims documents, and regulatory filings through AI — with all customer PII, account numbers, and financial figures encapsulated before transmission.
-Banken und Versicherungen verarbeiten Kreditanträge, Schadensmeldungen und regulatorische Eingaben mit KI. Sämtliche personenbezogenen Daten, Kontonummern und Finanzkennzahlen werden vor der Übertragung gekapselt.
+Banken und Versicherungen verarbeiten Kreditanträge, Schadenmeldungen und regulatorische Eingaben mit KI. Sämtliche personenbezogenen Daten, Kontonummern und Finanzkennzahlen werden vor der Übertragung gekapselt.
 
 은행과 보험사들은 대출 신청서, 청구 문서, 규제 서류를 AI를 통해 처리합니다 — 모든 고객 PII, 계좌 번호, 재무 수치를 전송 전에 캡슐화합니다.
 은행과 보험사들은 대출 신청서, 청구 문서, 규제 서류를 AI를 통해 처리합니다 - 모든 고객 PII, 계좌 번호, 재무 수치를 전송 전에 캡슐화합니다.

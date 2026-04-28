@@ -53,13 +53,13 @@ Finance / Insurance
 Finanzen / Versicherung
 
 Uses AI to streamline claim reviews, policyholder data stays fully protected.
-KI-gestützte Schadensbearbeitung. Versicherungsnehmerdaten bleiben vollständig geschützt.
+KI-gestützte Schadenbearbeitung. Versicherungsnehmerdaten bleiben vollständig geschützt.
 
 Policyholder names, claim records & credit information in prompts
-Versicherungsnehmernamen, Schadensdaten und Bonitätsinformationen in Prompts
+Versicherungsnehmernamen, Schadendaten und Bonitätsinformationen in Prompts
 
 AI-powered insurance claim analysis & underwriting reports — no customer data leaves
-KI-gestützte Schadensanalyse und Underwriting-Berichte — keine Kundendaten verlassen das Unternehmen
+KI-gestützte Schadenanalyse und Underwriting-Berichte — keine Kundendaten verlassen das Unternehmen
 
 Kyobo|DB Insurance
 Kyobo|DB Insurance

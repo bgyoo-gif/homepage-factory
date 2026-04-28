@@ -121,7 +121,7 @@ Beim LLM-Datenschutz werden sensible Daten lokal identifiziert und ersetzt, bevo
 Is LLM Capsule compliant with GDPR?
 Ist LLM Capsule DSGVO-konform?
 
- is designed to support GDPR compliance by ensuring personal data never leaves the enterprise environment during AI processing. Organizations should evaluate their specific compliance requirements with legal counsel.
+ is designed to support DSGVO (GDPR)-Konformität by ensuring personal data never leaves the enterprise environment during AI processing. Organizations should evaluate their specific compliance requirements with legal counsel.
  wurde zur Unterstützung der DSGVO (GDPR)-Konformität konzipiert: Personenbezogene Daten verlassen während der KI-Verarbeitung nicht die Unternehmensumgebung. Darüber hinaus unterstützt die Architektur Anforderungen aus BSI C5 und ISO 27001. Organisationen sollten ihre spezifischen Compliance-Anforderungen mit ihrer Rechtsabteilung bewerten.
 
 LLM Capsule

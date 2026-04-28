@@ -47,10 +47,10 @@ Insurance Claims Processing
 Bearbeitung von Versicherungsanspruechen
 
 An insurance company processes 5,000 claims per month through AI for classification, damage assessment summarization, and fraud pattern detection. Each claim contains policyholder PII, medical records, and financial data.
-Ein Versicherungsunternehmen verarbeitet monatlich 5.000 Schadensfaelle mithilfe von KI zur Klassifizierung, Zusammenfassung der Schadensbewertung und Erkennung von Betrugsmustern. Jeder Schadensfall enthaelt personenbezogene Daten des Versicherungsnehmers, medizinische Unterlagen und Finanzdaten.
+Ein Versicherungsunternehmen verarbeitet monatlich 5.000 Schadenfälle mithilfe von KI zur Klassifizierung, Zusammenfassung der Schadenbewertung und Erkennung von Betrugsmustern. Jeder Schadenfall enthaelt personenbezogene Daten des Versicherungsnehmers, medizinische Unterlagen und Finanzdaten.
 
 encapsulates all sensitive data locally. AI classifies and summarizes protected claims. Local restoration restores policyholder details into the outputs, which feed directly into the claims management system. No manual re-linking required.
-kapselt alle sensiblen Daten lokal. Die KI klassifiziert und fasst die geschuetzten Schadensfaelle zusammen. Die lokale Wiederherstellung fuegt die Versicherungsnehmer-Details in die Ergebnisse ein, die direkt in das Schadenmanagementsystem einfliessen. Manuelles Zuordnen entfaellt.
+kapselt alle sensiblen Daten lokal. Die KI klassifiziert und fasst die geschuetzten Schadenfälle zusammen. Die lokale Wiederherstellung fuegt die Versicherungsnehmer-Details in die Ergebnisse ein, die direkt in das Schadenmanagementsystem einfliessen. Manuelles Zuordnen entfaellt.
 
 LLM Capsule
 LLM Capsule
