@@ -137,8 +137,11 @@ export default function Section02_CoreDifferentiation({
           .s2-cs-card__left {
             border-right: none;
             border-bottom: 1px solid ${PALETTE.borderDefault};
-            min-width: 0;
+            width: auto;
             padding: 24px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
           }
         }
         .s2-cs-card__left {
@@ -146,54 +149,73 @@ export default function Section02_CoreDifferentiation({
           border-right: 1px solid ${PALETTE.borderDefault};
           padding: 32px;
           display: flex;
-          align-items: center;
+          flex-direction: column;
+          align-items: flex-start;
           gap: 16px;
           flex-shrink: 0;
-          width: 280px;
-        }
-        .s2-cs-card__left svg {
-          width: 32px; height: 32px;
-          stroke: ${PALETTE.textPrimary}; fill: none;
-          stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
-          flex-shrink: 0;
-        }
-        .s2-cs-card__left-text {
-          display: flex;
-          flex-direction: column;
-          gap: 4px;
+          width: 240px;
         }
         .s2-cs-card__left-category {
-          font-family: "DM Sans", sans-serif;
-          font-size: 11px; color: ${PALETTE.textSecondary};
+          font-family: "Fragment Mono", monospace;
+          font-size: 11px; color: ${PALETTE.brandSecondary};
           letter-spacing: 0.08em; text-transform: uppercase;
+          display: inline-flex;
+          align-items: center;
+          padding: 4px 10px;
+          border-radius: 9999px;
+          border: 1px solid ${PALETTE.brandSecondary};
+        }
+        .s2-cs-card__left-icon {
+          width: 48px; height: 48px;
+          border-radius: 12px;
+          background-color: ${PALETTE.surfaceLight};
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .s2-cs-card__left-icon svg {
+          width: 24px; height: 24px;
+          stroke: ${PALETTE.brandSecondary}; fill: none;
+          stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
         }
         .s2-cs-card__left-title {
           font-family: "DM Sans", sans-serif;
-          font-size: 16px; font-weight: 700;
-          color: ${PALETTE.textPrimary}; line-height: 1.3;
+          font-size: 20px; font-weight: 700;
+          color: ${PALETTE.textPrimary}; line-height: 1.2;
         }
         .s2-cs-card__right {
           padding: 32px;
           display: flex;
           flex-direction: column;
-          gap: 12px;
+          gap: 0;
           flex: 1;
           justify-content: center;
         }
         @container (max-width: 767px) {
           .s2-cs-card__right { padding: 24px; }
         }
-        .s2-cs-card__title {
-          font-family: "DM Sans", sans-serif;
-          font-size: 20px; font-weight: 700;
-          color: ${PALETTE.textPrimary}; line-height: 1.2;
-          margin: 0;
+        .s2-cs-card__bullet {
+          list-style: none;
+          padding: 0; margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
         }
-        .s2-cs-card__desc {
+        .s2-cs-card__bullet li {
+          display: flex;
+          align-items: flex-start;
+          gap: 8px;
           font-family: "DM Sans", sans-serif;
           font-size: 14px; color: ${PALETTE.textSecondary};
-          line-height: 1.7; margin: 0;
-          word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty;
+          line-height: 1.7;
+          word-break: keep-all; overflow-wrap: break-word;
+        }
+        .s2-cs-card__bullet li::before {
+          content: "•";
+          color: ${PALETTE.brandSecondary};
+          font-size: 18px;
+          line-height: 1.4;
+          flex-shrink: 0;
         }
 
         /* Banner */
@@ -229,17 +251,20 @@ export default function Section02_CoreDifferentiation({
               ].map((card, i) => (
                 <article key={i} className="s2-cs-card">
                   <div className="s2-cs-card__left">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      {card.icon}
-                    </svg>
-                    <div className="s2-cs-card__left-text">
-                      <span className="s2-cs-card__left-category">{card.category}</span>
-                      <span className="s2-cs-card__left-title">{card.title}</span>
+                    <span className="s2-cs-card__left-category">{card.category}</span>
+                    <div className="s2-cs-card__left-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        {card.icon}
+                      </svg>
                     </div>
+                    <span className="s2-cs-card__left-title">{card.title}</span>
                   </div>
                   <div className="s2-cs-card__right">
-                    <h3 className="s2-cs-card__title">{card.title}</h3>
-                    <p className="s2-cs-card__desc">{card.desc}</p>
+                    <ul className="s2-cs-card__bullet">
+                      {card.desc.split(". ").filter(Boolean).map((sentence: string, j: number) => (
+                        <li key={j}>{sentence.endsWith(".") ? sentence : sentence + "."}</li>
+                      ))}
+                    </ul>
                   </div>
                 </article>
               ))}
