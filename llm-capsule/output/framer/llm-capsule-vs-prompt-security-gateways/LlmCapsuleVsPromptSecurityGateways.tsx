@@ -93,6 +93,30 @@ interface Props {
 
   // Section 7: Comparison Table
   comparisonTitle?: string
+  thCapability?: string
+  thGateways?: string
+  thCapsule?: string
+  row1Cap?: string
+  row1Col2?: string
+  row1Col3?: string
+  row2Cap?: string
+  row2Col2?: string
+  row2Col3?: string
+  row3Cap?: string
+  row3Col2?: string
+  row3Col3?: string
+  row4Cap?: string
+  row4Col2?: string
+  row4Col3?: string
+  row5Cap?: string
+  row5Col2?: string
+  row5Col3?: string
+  row6Cap?: string
+  row6Col2?: string
+  row6Col3?: string
+  row7Cap?: string
+  row7Col2?: string
+  row7Col3?: string
 
   // Section 8: Enterprise Workflow Example
   exampleTitle?: string
@@ -120,6 +144,7 @@ interface Props {
   relatedLink5Href?: string
 
   // Section 11: CTA Band
+  ctaBgImage?: string
   ctaTitle?: string
   ctaDescription?: string
   ctaBtn1Label?: string
@@ -155,6 +180,30 @@ export default function LlmCapsuleVsPromptSecurityGateways({
 
   // Comparison
   comparisonTitle = "Comparison",
+  thCapability = "Capability",
+  thGateways = "Prompt Security Gateways",
+  thCapsule = "LLM Capsule",
+  row1Cap = "Operating layer",
+  row1Col2 = "API / prompt level",
+  row1Col3 = "AI enablement data layer",
+  row2Cap = "Scope",
+  row2Col2 = "Prompt text only",
+  row2Col3 = "Full data pipeline",
+  row3Cap = "Protection method",
+  row3Col2 = "Block or strip",
+  row3Col3 = "Structure-preserving encapsulation",
+  row4Cap = "Output restoration",
+  row4Col2 = "✗",
+  row4Col3 = "✓ Local restoration",
+  row5Cap = "Context-aware data control",
+  row5Col2 = "Limited pattern matching",
+  row5Col3 = "Policy-based classification",
+  row6Cap = "RAG pipeline support",
+  row6Col2 = "Partial",
+  row6Col3 = "Full integration",
+  row7Cap = "Model independence",
+  row7Col2 = "Provider-specific",
+  row7Col3 = "Works with any LLM",
 
   // Example
   exampleTitle = "Enterprise Workflow Example",
@@ -182,6 +231,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
   relatedLink5Href = "/resources/learn",
 
   // CTA
+  ctaBgImage = "",
   ctaTitle = "See how LLM Capsule works with your data",
   ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   ctaBtn1Label = "Request a Demo",
@@ -189,6 +239,10 @@ export default function LlmCapsuleVsPromptSecurityGateways({
   ctaFootnote2Label = "AWS Marketplace",
   ctaFootnote2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
 }: Props) {
+
+  // ── CTA background image fallback ─────────────────────────────────────────
+  const DEFAULT_CTA_BG = `${IMAGE_BASE}/bg-gradient-deep-teal.png`
+  const resolvedCtaBg = ctaBgImage || DEFAULT_CTA_BG
 
   // ── FAQ accordion state ────────────────────────────────────────────────────
   const [faqOpen, setFaqOpen] = useState<Record<number, boolean>>({ 0: true, 1: false })
@@ -388,7 +442,9 @@ export default function LlmCapsuleVsPromptSecurityGateways({
         .vs-table-wrap {
           overflow-x: auto; -webkit-overflow-scrolling: touch;
           margin: 16px 0;
+          scrollbar-width: none;
         }
+        .vs-table-wrap::-webkit-scrollbar { display: none; }
         .vs-table {
           width: 100%; border-collapse: collapse;
           font-size: 14px;
@@ -486,7 +542,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
 
         /* ── Card Grid ────────────────────────────────────────────── */
         .vs-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-        @container (min-width: 768px) { .vs-card-grid--2col { grid-template-columns: repeat(2, 1fr); } }
+        @container (min-width: 768px) { .vs-card-grid--2col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
         /* ── Dark Card ────────────────────────────────────────────── */
         .vs-card--dark {
@@ -515,7 +571,6 @@ export default function LlmCapsuleVsPromptSecurityGateways({
           width: 100%; position: relative; overflow: hidden;
           padding: 80px 16px; text-align: center;
           background-color: ${P.neutral800};
-          background-image: url('${IMAGE_BASE}/bg-gradient-deep-teal.png');
           background-size: cover; background-position: center;
         }
         .vs-cta-band::before {
@@ -623,19 +678,19 @@ export default function LlmCapsuleVsPromptSecurityGateways({
                 <ul className="vs-bullet vs-bullet--dot">
                   <li className="vs-bullet__item">
                     <span className="vs-bullet__icon" />
-                    <span><strong>Prompt-only scope.</strong> Gateways only see the final prompt, not the underlying data pipeline. Documents processed through RAG systems or batch pipelines may bypass the gateway entirely.</span>
+                    <span>{limitationBullet1}</span>
                   </li>
                   <li className="vs-bullet__item">
                     <span className="vs-bullet__icon" />
-                    <span><strong>Block or pass binary.</strong> Most gateways make a binary decision — block the request or pass it through. There is no mechanism to transform data while preserving usability.</span>
+                    <span>{limitationBullet2}</span>
                   </li>
                   <li className="vs-bullet__item">
                     <span className="vs-bullet__icon" />
-                    <span><strong>No output restoration.</strong> If a gateway strips sensitive content from a prompt, the AI output will lack that context. There is no restoration mechanism.</span>
+                    <span>{limitationBullet3}</span>
                   </li>
                   <li className="vs-bullet__item">
                     <span className="vs-bullet__icon" />
-                    <span><strong>Pattern-based detection.</strong> Gateways rely on pattern matching which misses context-dependent sensitivity and generates false positives on non-sensitive content that matches PII patterns.</span>
+                    <span>{limitationBullet4}</span>
                   </li>
                 </ul>
               </div>
@@ -645,13 +700,11 @@ export default function LlmCapsuleVsPromptSecurityGateways({
             <section id="section-6" className="vs-section--article-body">
               <div className="vs-article-container">
                 <div className="vs-article-section-header">
-                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>How <span className="vs-text--product">LLM Capsule</span> Differs</h2>
+                  <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{differsTitle}</h2>
                 </div>
-                <p className="vs-article-body__paragraph">
-                  <span className="vs-text--product">LLM Capsule</span> operates upstream of the prompt. It encapsulates sensitive data at the document level before any AI processing occurs. The encapsulation is structure-preserving — AI receives complete, processable documents. After AI generates outputs, local restoration (restoration) restores enterprise context automatically.
-                </p>
+                <p className="vs-article-body__paragraph">{differsText}</p>
                 <div className="vs-banner vs-banner--brand">
-                  <p><strong>AI results are restored locally.</strong> <span className="vs-text--product">LLM Capsule</span> enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.</p>
+                  <p>{differsBannerText}</p>
                 </div>
               </div>
             </section>
@@ -666,46 +719,46 @@ export default function LlmCapsuleVsPromptSecurityGateways({
                   <table className="vs-table">
                     <thead>
                       <tr>
-                        <th>Capability</th>
-                        <th>Prompt Security Gateways</th>
-                        <th className="vs-table__th--highlight"><span className="vs-text--product">LLM Capsule</span></th>
+                        <th>{thCapability}</th>
+                        <th>{thGateways}</th>
+                        <th className="vs-table__th--highlight">{thCapsule}</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Operating layer</td>
-                        <td>API / prompt level</td>
-                        <td className="vs-table__td--highlight">AI enablement data layer</td>
+                        <td>{row1Cap}</td>
+                        <td>{row1Col2}</td>
+                        <td className="vs-table__td--highlight">{row1Col3}</td>
                       </tr>
                       <tr>
-                        <td>Scope</td>
-                        <td>Prompt text only</td>
-                        <td className="vs-table__td--highlight">Full data pipeline</td>
+                        <td>{row2Cap}</td>
+                        <td>{row2Col2}</td>
+                        <td className="vs-table__td--highlight">{row2Col3}</td>
                       </tr>
                       <tr>
-                        <td>Protection method</td>
-                        <td>Block or strip</td>
-                        <td className="vs-table__td--highlight">Structure-preserving encapsulation</td>
+                        <td>{row3Cap}</td>
+                        <td>{row3Col2}</td>
+                        <td className="vs-table__td--highlight">{row3Col3}</td>
                       </tr>
                       <tr>
-                        <td>Output restoration</td>
-                        <td><span className="vs-table__cross">✗</span></td>
-                        <td className="vs-table__td--highlight"><span className="vs-table__check">✓</span> Local restoration</td>
+                        <td>{row4Cap}</td>
+                        <td>{row4Col2}</td>
+                        <td className="vs-table__td--highlight">{row4Col3}</td>
                       </tr>
                       <tr>
-                        <td>Context-aware data control</td>
-                        <td>Limited pattern matching</td>
-                        <td className="vs-table__td--highlight">Policy-based classification</td>
+                        <td>{row5Cap}</td>
+                        <td>{row5Col2}</td>
+                        <td className="vs-table__td--highlight">{row5Col3}</td>
                       </tr>
                       <tr>
-                        <td>RAG pipeline support</td>
-                        <td>Partial</td>
-                        <td className="vs-table__td--highlight">Full integration</td>
+                        <td>{row6Cap}</td>
+                        <td>{row6Col2}</td>
+                        <td className="vs-table__td--highlight">{row6Col3}</td>
                       </tr>
                       <tr>
-                        <td>Model independence</td>
-                        <td>Provider-specific</td>
-                        <td className="vs-table__td--highlight">Works with any LLM</td>
+                        <td>{row7Cap}</td>
+                        <td>{row7Col2}</td>
+                        <td className="vs-table__td--highlight">{row7Col3}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -722,7 +775,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
                 <div className="vs-card">
                   <h4 className="vs-card__title">{exampleCardTitle}</h4>
                   <p>{exampleCardText1}</p>
-                  <p><span className="vs-text--product">LLM Capsule</span> encapsulates all documents at the data layer before they enter the RAG index. Every retrieval, every prompt composition, and every AI output operates on protected data. Restoration restores enterprise context in the final response.</p>
+                  <p>{exampleCardText2}</p>
                 </div>
               </div>
             </section>
@@ -738,16 +791,14 @@ export default function LlmCapsuleVsPromptSecurityGateways({
                   {/* FAQ 1 */}
                   <div className="vs-ac-card" onClick={() => toggleFaq(0)}>
                     <div className="vs-ac-card__header">
-                      <span className="vs-ac-card__title">
-                        How does <span className="vs-text--product">LLM Capsule</span> differ from prompt gateways?
-                      </span>
+                      <span className="vs-ac-card__title">{faq1Question}</span>
                       <span className="vs-ac-card__toggle">
                         <span className={`vs-ac-card__toggle-icon vs-ac-card__toggle-icon--${faqOpen[0] ? "open" : "closed"}`} />
                       </span>
                     </div>
                     {faqOpen[0] && (
                       <div className="vs-ac-card__body">
-                        <p>Prompt gateways filter at the API level and can only block or pass requests. <span className="vs-text--product">LLM Capsule</span> transforms data at the source, preserving structure for AI processing and enabling output restoration.</p>
+                        <p>{faq1Answer}</p>
                       </div>
                     )}
                   </div>
@@ -755,16 +806,14 @@ export default function LlmCapsuleVsPromptSecurityGateways({
                   {/* FAQ 2 */}
                   <div className="vs-ac-card" onClick={() => toggleFaq(1)}>
                     <div className="vs-ac-card__header">
-                      <span className="vs-ac-card__title">
-                        Can I use both a gateway and <span className="vs-text--product">LLM Capsule</span>?
-                      </span>
+                      <span className="vs-ac-card__title">{faq2Question}</span>
                       <span className="vs-ac-card__toggle">
                         <span className={`vs-ac-card__toggle-icon vs-ac-card__toggle-icon--${faqOpen[1] ? "open" : "closed"}`} />
                       </span>
                     </div>
                     {faqOpen[1] && (
                       <div className="vs-ac-card__body">
-                        <p>Yes. <span className="vs-text--product">LLM Capsule</span> provides data-layer protection while gateways provide an additional API-level monitoring layer. The two approaches are complementary.</p>
+                        <p>{faq2Answer}</p>
                       </div>
                     )}
                   </div>
@@ -836,7 +885,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
             </section>
 
             {/* ── Section 11: CTA Band ─────────────────────────────────── */}
-            <section id="section-cta" className="vs-cta-band">
+            <section id="section-cta" className="vs-cta-band" style={{ backgroundImage: `url('${resolvedCtaBg}')` }}>
               <div className="vs-cta-band__inner">
                 <h2 className="vs-cta-band__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
                   {ctaTitle}
@@ -939,6 +988,126 @@ addPropertyControls(LlmCapsuleVsPromptSecurityGateways, {
     title: "Comparison Title",
     defaultValue: "Comparison",
   },
+  thCapability: {
+    type: ControlType.String,
+    title: "Table Header: Capability",
+    defaultValue: "Capability",
+  },
+  thGateways: {
+    type: ControlType.String,
+    title: "Table Header: Gateways",
+    defaultValue: "Prompt Security Gateways",
+  },
+  thCapsule: {
+    type: ControlType.String,
+    title: "Table Header: Capsule",
+    defaultValue: "LLM Capsule",
+  },
+  row1Cap: {
+    type: ControlType.String,
+    title: "Row 1: Capability",
+    defaultValue: "Operating layer",
+  },
+  row1Col2: {
+    type: ControlType.String,
+    title: "Row 1: Gateways",
+    defaultValue: "API / prompt level",
+  },
+  row1Col3: {
+    type: ControlType.String,
+    title: "Row 1: Capsule",
+    defaultValue: "AI enablement data layer",
+  },
+  row2Cap: {
+    type: ControlType.String,
+    title: "Row 2: Capability",
+    defaultValue: "Scope",
+  },
+  row2Col2: {
+    type: ControlType.String,
+    title: "Row 2: Gateways",
+    defaultValue: "Prompt text only",
+  },
+  row2Col3: {
+    type: ControlType.String,
+    title: "Row 2: Capsule",
+    defaultValue: "Full data pipeline",
+  },
+  row3Cap: {
+    type: ControlType.String,
+    title: "Row 3: Capability",
+    defaultValue: "Protection method",
+  },
+  row3Col2: {
+    type: ControlType.String,
+    title: "Row 3: Gateways",
+    defaultValue: "Block or strip",
+  },
+  row3Col3: {
+    type: ControlType.String,
+    title: "Row 3: Capsule",
+    defaultValue: "Structure-preserving encapsulation",
+  },
+  row4Cap: {
+    type: ControlType.String,
+    title: "Row 4: Capability",
+    defaultValue: "Output restoration",
+  },
+  row4Col2: {
+    type: ControlType.String,
+    title: "Row 4: Gateways",
+    defaultValue: "✗",
+  },
+  row4Col3: {
+    type: ControlType.String,
+    title: "Row 4: Capsule",
+    defaultValue: "✓ Local restoration",
+  },
+  row5Cap: {
+    type: ControlType.String,
+    title: "Row 5: Capability",
+    defaultValue: "Context-aware data control",
+  },
+  row5Col2: {
+    type: ControlType.String,
+    title: "Row 5: Gateways",
+    defaultValue: "Limited pattern matching",
+  },
+  row5Col3: {
+    type: ControlType.String,
+    title: "Row 5: Capsule",
+    defaultValue: "Policy-based classification",
+  },
+  row6Cap: {
+    type: ControlType.String,
+    title: "Row 6: Capability",
+    defaultValue: "RAG pipeline support",
+  },
+  row6Col2: {
+    type: ControlType.String,
+    title: "Row 6: Gateways",
+    defaultValue: "Partial",
+  },
+  row6Col3: {
+    type: ControlType.String,
+    title: "Row 6: Capsule",
+    defaultValue: "Full integration",
+  },
+  row7Cap: {
+    type: ControlType.String,
+    title: "Row 7: Capability",
+    defaultValue: "Model independence",
+  },
+  row7Col2: {
+    type: ControlType.String,
+    title: "Row 7: Gateways",
+    defaultValue: "Provider-specific",
+  },
+  row7Col3: {
+    type: ControlType.String,
+    title: "Row 7: Capsule",
+    defaultValue: "Works with any LLM",
+  },
   exampleTitle: {
     type: ControlType.String,
     title: "Example Title",
@@ -1037,6 +1206,10 @@ addPropertyControls(LlmCapsuleVsPromptSecurityGateways, {
     type: ControlType.String,
     title: "Related Link 5 URL",
     defaultValue: "/resources/learn",
+  },
+  ctaBgImage: {
+    type: ControlType.Image,
+    title: "CTA Background Image",
   },
   ctaTitle: {
     type: ControlType.String,
