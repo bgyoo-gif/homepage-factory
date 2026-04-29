@@ -160,6 +160,7 @@ export default function RequestPov({
   formFootnote = "We respond to all demo requests within 1 business day.",
 }: Props) {
   const [activeTab, setActiveTab] = useState(1)
+  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
 
   const tabs = [
     { id: 1, label: tab1Label, title: tab1Title, description: tab1Description,
@@ -529,7 +530,47 @@ export default function RequestPov({
                   {/* Right: Request Form */}
                   <div className="rpov-form-card">
                     <h2 className="rpov-form-card__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{formCardTitle}</h2>
-                    <form className="rpov-form-fields" noValidate>
+                    <form
+                      className="rpov-form-fields"
+                      noValidate
+                      onSubmit={async (e) => {
+                        e.preventDefault()
+                        setFormStatus("submitting")
+                        const form = e.currentTarget
+                        const data = new FormData(form)
+                        try {
+                          const res = await fetch(
+                            "https://api.hsforms.com/submissions/v3/integration/submit/244718287/5156eb97-45fd-468e-91c2-16971c3d0252",
+                            {
+                              method: "POST",
+                              headers: { "Content-Type": "application/json" },
+                              body: JSON.stringify({
+                                fields: [
+                                  { name: "firstname", value: data.get("name") || "" },
+                                  { name: "email", value: data.get("email") || "" },
+                                  { name: "company", value: data.get("company") || "" },
+                                  { name: "jobtitle", value: data.get("job_title") || "" },
+                                  { name: "industry", value: data.get("industry") || "" },
+                                  { name: "message", value: data.get("use_case") || "" },
+                                ],
+                                context: {
+                                  pageUri: typeof window !== "undefined" ? window.location.href : "",
+                                  pageName: "Request a Demo",
+                                },
+                              }),
+                            }
+                          )
+                          if (res.ok) {
+                            setFormStatus("success")
+                            form.reset()
+                          } else {
+                            setFormStatus("error")
+                          }
+                        } catch {
+                          setFormStatus("error")
+                        }
+                      }}
+                    >
 
                       <div className="rpov-form-group">
                         <label htmlFor="rpov-name">{formNameLabel}</label>
@@ -539,6 +580,7 @@ export default function RequestPov({
                           name="name"
                           placeholder={formNamePlaceholder}
                           autoComplete="name"
+                          required
                         />
                       </div>
 
@@ -550,6 +592,7 @@ export default function RequestPov({
                           name="email"
                           placeholder={formEmailPlaceholder}
                           autoComplete="email"
+                          required
                         />
                       </div>
 
@@ -601,11 +644,24 @@ export default function RequestPov({
                       <button
                         type="submit"
                         className="rpov-btn rpov-btn--primary rpov-btn--lg rpov-form__submit"
+                        disabled={formStatus === "submitting"}
                       >
-                        {formSubmitLabel}
+                        {formStatus === "submitting" ? "Submitting..." : formSubmitLabel}
                       </button>
 
-                      <p className="rpov-form__footnote">{formFootnote}</p>
+                      {formStatus === "success" && (
+                        <p className="rpov-form__footnote" style={{ color: "#0e824c" }}>
+                          Thank you! We will be in touch within 1 business day.
+                        </p>
+                      )}
+                      {formStatus === "error" && (
+                        <p className="rpov-form__footnote" style={{ color: "#ff3030" }}>
+                          Something went wrong. Please try again or email contact@cubig.ai.
+                        </p>
+                      )}
+                      {formStatus === "idle" && (
+                        <p className="rpov-form__footnote">{formFootnote}</p>
+                      )}
                     </form>
                   </div>
 
