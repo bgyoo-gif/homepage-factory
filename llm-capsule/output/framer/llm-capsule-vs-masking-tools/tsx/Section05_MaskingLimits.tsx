@@ -8,39 +8,36 @@ const PALETTE = {
   borderDefault:  "#e6e7e9",
 }
 
-interface BulletItem {
-  strong: string
-  text: string
-}
-
 interface Props {
   heading?: string
-  items?: BulletItem[]
+  bullet1Strong?: string
+  bullet1Text?: string
+  bullet2Strong?: string
+  bullet2Text?: string
+  bullet3Strong?: string
+  bullet3Text?: string
+  bullet4Strong?: string
+  bullet4Text?: string
 }
-
-const DEFAULT_ITEMS: BulletItem[] = [
-  {
-    strong: "Context destruction.",
-    text: ' AI models lose entity relationships when all names become "[NAME]." Multi-party documents become indistinguishable.',
-  },
-  {
-    strong: "Output unusability.",
-    text: ' AI outputs inherit the masking. Summaries contain "[REDACTED]" placeholders instead of real data, requiring manual reconstruction.',
-  },
-  {
-    strong: "Structural damage.",
-    text: " Flat masking breaks table schemas, cross-references, and nested document structures.",
-  },
-  {
-    strong: "No automation path.",
-    text: " Every masked AI output requires human intervention to restore context, eliminating efficiency gains.",
-  },
-]
 
 export default function Section05_MaskingLimits({
   heading = "Limitations of Masking for AI",
-  items = DEFAULT_ITEMS,
+  bullet1Strong = "Context destruction.",
+  bullet1Text = ' AI models lose entity relationships when all names become "[NAME]." Multi-party documents become indistinguishable.',
+  bullet2Strong = "Output unusability.",
+  bullet2Text = ' AI outputs inherit the masking. Summaries contain "[REDACTED]" placeholders instead of real data, requiring manual reconstruction.',
+  bullet3Strong = "Structural damage.",
+  bullet3Text = " Flat masking breaks table schemas, cross-references, and nested document structures.",
+  bullet4Strong = "No automation path.",
+  bullet4Text = " Every masked AI output requires human intervention to restore context, eliminating efficiency gains.",
 }: Props) {
+  const bullets = [
+    { strong: bullet1Strong, text: bullet1Text },
+    { strong: bullet2Strong, text: bullet2Text },
+    { strong: bullet3Strong, text: bullet3Text },
+    { strong: bullet4Strong, text: bullet4Text },
+  ]
+
   return (
     <>
       <style>{`
@@ -140,7 +137,7 @@ export default function Section05_MaskingLimits({
               <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{heading}</h2>
             </div>
             <ul className="s5-list">
-              {items.map((item, i) => (
+              {bullets.map((item, i) => (
                 <li key={i} className="s5-item">
                   <span className="s5-bullet" aria-hidden="true"></span>
                   <span>
@@ -162,5 +159,49 @@ addPropertyControls(Section05_MaskingLimits, {
     type: ControlType.String,
     title: "Heading",
     defaultValue: "Limitations of Masking for AI",
+  },
+  bullet1Strong: {
+    type: ControlType.String,
+    title: "Bullet 1 Label",
+    defaultValue: "Context destruction.",
+  },
+  bullet1Text: {
+    type: ControlType.String,
+    title: "Bullet 1 Text",
+    defaultValue: ' AI models lose entity relationships when all names become "[NAME]." Multi-party documents become indistinguishable.',
+    displayTextArea: true,
+  },
+  bullet2Strong: {
+    type: ControlType.String,
+    title: "Bullet 2 Label",
+    defaultValue: "Output unusability.",
+  },
+  bullet2Text: {
+    type: ControlType.String,
+    title: "Bullet 2 Text",
+    defaultValue: ' AI outputs inherit the masking. Summaries contain "[REDACTED]" placeholders instead of real data, requiring manual reconstruction.',
+    displayTextArea: true,
+  },
+  bullet3Strong: {
+    type: ControlType.String,
+    title: "Bullet 3 Label",
+    defaultValue: "Structural damage.",
+  },
+  bullet3Text: {
+    type: ControlType.String,
+    title: "Bullet 3 Text",
+    defaultValue: " Flat masking breaks table schemas, cross-references, and nested document structures.",
+    displayTextArea: true,
+  },
+  bullet4Strong: {
+    type: ControlType.String,
+    title: "Bullet 4 Label",
+    defaultValue: "No automation path.",
+  },
+  bullet4Text: {
+    type: ControlType.String,
+    title: "Bullet 4 Text",
+    defaultValue: " Every masked AI output requires human intervention to restore context, eliminating efficiency gains.",
+    displayTextArea: true,
   },
 })

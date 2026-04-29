@@ -10,17 +10,13 @@ const PALETTE = {
 
 interface Props {
   heading?: string
-  product?: string
   paragraph?: string
 }
 
 export default function Section03_Overview({
   heading = "Overview",
-  product = "LLM Capsule",
-  paragraph = "Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. {product} takes a fundamentally different approach as an AI enablement data layer and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.",
+  paragraph = "Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. LLM Capsule takes a fundamentally different approach as an AI enablement data layer and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.",
 }: Props) {
-  const paragraphText = paragraph.replace("{product}", product)
-
   return (
     <>
       <style>{`
@@ -72,10 +68,6 @@ export default function Section03_Overview({
           overflow-wrap: break-word;
           text-wrap: pretty;
         }
-        .s3-product {
-          font-family: "Oxanium", sans-serif;
-          font-weight: 700;
-        }
 
         @container (min-width: 768px) {
           .s3-container { padding: 0 32px; }
@@ -97,9 +89,7 @@ export default function Section03_Overview({
             <div className="s3-header">
               <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{heading}</h2>
             </div>
-            <p className="s3-paragraph">
-              Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. <span className="s3-product">{product}</span> takes a fundamentally different approach as an AI enablement data layer and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.
-            </p>
+            <p className="s3-paragraph">{paragraph}</p>
           </div>
         </div>
       </section>
@@ -113,15 +103,10 @@ addPropertyControls(Section03_Overview, {
     title: "Heading",
     defaultValue: "Overview",
   },
-  product: {
-    type: ControlType.String,
-    title: "Product Name",
-    defaultValue: "LLM Capsule",
-  },
   paragraph: {
     type: ControlType.String,
     title: "Paragraph",
-    defaultValue: "Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. {product} takes a fundamentally different approach as an AI enablement data layer and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.",
+    defaultValue: "Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. LLM Capsule takes a fundamentally different approach as an AI enablement data layer and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.",
     displayTextArea: true,
   },
 })

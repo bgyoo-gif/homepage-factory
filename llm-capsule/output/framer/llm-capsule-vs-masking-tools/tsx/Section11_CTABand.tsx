@@ -1,6 +1,7 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images"
+const DEFAULT_BG_IMAGE = `${IMAGE_BASE}/bg-paint-blue-iridescent.png`
 
 const PALETTE = {
   neutral800:  "#171719",
@@ -8,35 +9,36 @@ const PALETTE = {
   textPrimary: "#0f0f0f",
 }
 
-interface CTALink {
-  label: string
-  href: string
-}
-
 interface Props {
   title?: string
-  titleProduct?: string
   description?: string
   primaryCTALabel?: string
   primaryCTAHref?: string
-  footnoteLinks?: CTALink[]
+  footnoteLabel?: string
+  footnoteHref?: string
+  ctaBgImage?: string
 }
 
 export default function Section11_CTABand({
-  title = "See how",
-  titleProduct = "LLM Capsule",
+  title = "See how LLM Capsule works on your documents",
   description = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   primaryCTALabel = "Request a Demo",
   primaryCTAHref = "/request-a-demo",
-  footnoteLinks = [
-    { label: "AWS Marketplace", href: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
-  ],
+  footnoteLabel = "AWS Marketplace",
+  footnoteHref = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
+  ctaBgImage = "",
 }: Props) {
+  const resolvedBg = ctaBgImage || DEFAULT_BG_IMAGE
+
   return (
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
 
+        .s11-wrap {
+          width: 100%;
+          container-type: inline-size;
+        }
         .s11-section {
           width: 100%;
           position: relative;
@@ -45,7 +47,7 @@ export default function Section11_CTABand({
           padding: 80px 16px;
           text-align: center;
           background-color: ${PALETTE.neutral800};
-          background-image: url('${IMAGE_BASE}/bg-paint-blue-iridescent.png');
+          background-image: url('${resolvedBg}');
           background-size: cover;
           background-position: center;
         }
@@ -60,7 +62,6 @@ export default function Section11_CTABand({
           position: relative;
           z-index: 1;
           width: 100%;
-          container-type: inline-size;
         }
         .s11-container {
           max-width: 100%;
@@ -79,10 +80,6 @@ export default function Section11_CTABand({
           letter-spacing: -0.5px;
           margin: 0;
           text-wrap: pretty;
-        }
-        .s11-product {
-          font-family: "Oxanium", sans-serif;
-          font-weight: 700;
         }
         .s11-description {
           font-family: "DM Sans", sans-serif;
@@ -144,6 +141,9 @@ export default function Section11_CTABand({
           color: ${PALETTE.white};
         }
 
+        @container (max-width: 767px) {
+          .s11-section { background-image: none; }
+        }
         @container (min-width: 768px) {
           .s11-section { padding: 100px 32px; }
           .s11-title { font-size: 40px; }
@@ -153,31 +153,30 @@ export default function Section11_CTABand({
         @container (min-width: 1024px) {
           .s11-container { max-width: 720px; }
         }
-        @container (min-width: 1440px) { .s11-container { padding: 0 120px; max-width: 1440px; } }
         @container (min-width: 1440px) {
           .s11-section { padding: 120px 120px; }
           .s11-container { max-width: 1080px; }
           .s11-title { font-size: 50px; }
         }
       `}</style>
-      <section className="s11-section" id="section-cta">
-        <div className="s11-inner">
-          <div className="s11-container">
-            <h2 className="s11-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
-              {title}
-            </h2>
-            <p className="s11-description">{description}</p>
-            <div className="s11-actions">
-              <a href={primaryCTAHref} className="s11-btn">{primaryCTALabel}</a>
-            </div>
-            <div className="s11-footnote">
-              {footnoteLinks.map((link, i) => (
-                <a key={i} href={link.href}>{link.label}</a>
-              ))}
+      <div className="s11-wrap">
+        <section className="s11-section" id="section-cta">
+          <div className="s11-inner">
+            <div className="s11-container">
+              <h2 className="s11-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
+                {title}
+              </h2>
+              <p className="s11-description">{description}</p>
+              <div className="s11-actions">
+                <a href={primaryCTAHref} className="s11-btn">{primaryCTALabel}</a>
+              </div>
+              <div className="s11-footnote">
+                <a href={footnoteHref}>{footnoteLabel}</a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   )
 }
@@ -186,12 +185,8 @@ addPropertyControls(Section11_CTABand, {
   title: {
     type: ControlType.String,
     title: "Title",
-    defaultValue: "See how",
-  },
-  titleProduct: {
-    type: ControlType.String,
-    title: "Title Product",
-    defaultValue: "LLM Capsule",
+    defaultValue: "See how LLM Capsule works on your documents",
+    displayTextArea: true,
   },
   description: {
     type: ControlType.String,
@@ -208,5 +203,19 @@ addPropertyControls(Section11_CTABand, {
     type: ControlType.String,
     title: "Primary CTA URL",
     defaultValue: "/request-a-demo",
+  },
+  footnoteLabel: {
+    type: ControlType.String,
+    title: "Footnote Label",
+    defaultValue: "AWS Marketplace",
+  },
+  footnoteHref: {
+    type: ControlType.String,
+    title: "Footnote URL",
+    defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
+  },
+  ctaBgImage: {
+    type: ControlType.Image,
+    title: "BG Image",
   },
 })

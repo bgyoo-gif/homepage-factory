@@ -11,36 +11,32 @@ const PALETTE = {
   borderDefault: "#e6e7e9",
 }
 
-interface FAQItem {
-  question: string
-  answer: string
-}
-
 interface Props {
   heading?: string
-  items?: FAQItem[]
+  faq1Q?: string
+  faq1A?: string
+  faq2Q?: string
+  faq2A?: string
+  faq3Q?: string
+  faq3A?: string
 }
-
-const DEFAULT_ITEMS: FAQItem[] = [
-  {
-    question: "How does LLM Capsule differ from masking tools?",
-    answer: "Masking tools permanently remove sensitive data, destroying context AI models need. LLM Capsule encapsulates data with structure-preserving processing and enables local restoration of AI outputs, producing enterprise-ready results automatically.",
-  },
-  {
-    question: "Can masking tools be used for AI workflows?",
-    answer: "Traditional masking tools were not designed for AI workflows. They produce unusable AI outputs that require manual reconstruction. LLM Capsule's restorable workflow produces enterprise-ready outputs automatically.",
-  },
-  {
-    question: "Does LLM Capsule replace existing masking tools?",
-    answer: "LLM Capsule can complement existing masking infrastructure for non-AI use cases. For AI workflows specifically, it replaces masking with encapsulation-based protection designed for restorable workflows.",
-  },
-]
 
 export default function Section09_FAQ({
   heading = "FAQ",
-  items = DEFAULT_ITEMS,
+  faq1Q = "How does LLM Capsule differ from masking tools?",
+  faq1A = "Masking tools permanently remove sensitive data, destroying context AI models need. LLM Capsule encapsulates data with structure-preserving processing and enables local restoration of AI outputs, producing enterprise-ready results automatically.",
+  faq2Q = "Can masking tools be used for AI workflows?",
+  faq2A = "Traditional masking tools were not designed for AI workflows. They produce unusable AI outputs that require manual reconstruction. LLM Capsule's restorable workflow produces enterprise-ready outputs automatically.",
+  faq3Q = "Does LLM Capsule replace existing masking tools?",
+  faq3A = "LLM Capsule can complement existing masking infrastructure for non-AI use cases. For AI workflows specifically, it replaces masking with encapsulation-based protection designed for restorable workflows.",
 }: Props) {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
+
+  const items = [
+    { question: faq1Q, answer: faq1A },
+    { question: faq2Q, answer: faq2A },
+    { question: faq3Q, answer: faq3A },
+  ]
 
   const toggle = (i: number) => {
     setOpenIndex(openIndex === i ? null : i)
@@ -168,10 +164,6 @@ export default function Section09_FAQ({
           overflow-wrap: break-word;
           text-wrap: pretty;
         }
-        .s9-product {
-          font-family: "Oxanium", sans-serif;
-          font-weight: 700;
-        }
 
         @container (min-width: 768px) {
           .s9-container { padding: 0 32px; }
@@ -245,5 +237,41 @@ addPropertyControls(Section09_FAQ, {
     type: ControlType.String,
     title: "Heading",
     defaultValue: "FAQ",
+  },
+  faq1Q: {
+    type: ControlType.String,
+    title: "FAQ 1 Question",
+    defaultValue: "How does LLM Capsule differ from masking tools?",
+    displayTextArea: true,
+  },
+  faq1A: {
+    type: ControlType.String,
+    title: "FAQ 1 Answer",
+    defaultValue: "Masking tools permanently remove sensitive data, destroying context AI models need. LLM Capsule encapsulates data with structure-preserving processing and enables local restoration of AI outputs, producing enterprise-ready results automatically.",
+    displayTextArea: true,
+  },
+  faq2Q: {
+    type: ControlType.String,
+    title: "FAQ 2 Question",
+    defaultValue: "Can masking tools be used for AI workflows?",
+    displayTextArea: true,
+  },
+  faq2A: {
+    type: ControlType.String,
+    title: "FAQ 2 Answer",
+    defaultValue: "Traditional masking tools were not designed for AI workflows. They produce unusable AI outputs that require manual reconstruction. LLM Capsule's restorable workflow produces enterprise-ready outputs automatically.",
+    displayTextArea: true,
+  },
+  faq3Q: {
+    type: ControlType.String,
+    title: "FAQ 3 Question",
+    defaultValue: "Does LLM Capsule replace existing masking tools?",
+    displayTextArea: true,
+  },
+  faq3A: {
+    type: ControlType.String,
+    title: "FAQ 3 Answer",
+    defaultValue: "LLM Capsule can complement existing masking infrastructure for non-AI use cases. For AI workflows specifically, it replaces masking with encapsulation-based protection designed for restorable workflows.",
+    displayTextArea: true,
   },
 })

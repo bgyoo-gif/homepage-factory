@@ -12,41 +12,60 @@ const PALETTE = {
   error:          "#ff3030",
 }
 
-interface TableRow {
-  capability: string
-  masking: string
-  capsule: string
-  capsuleCheck?: "check" | "cross" | "none"
-  maskingCheck?: "check" | "cross" | "none"
-}
-
 interface Props {
   heading?: string
   colHeader1?: string
   colHeader2?: string
-  colHeader3?: string
   colHeader3Product?: string
-  rows?: TableRow[]
+  colHeader3?: string
+  row1Cap?: string
+  row1Masking?: string
+  row1Capsule?: string
+  row2Cap?: string
+  row2Masking?: string
+  row2Capsule?: string
+  row3Cap?: string
+  row3Masking?: string
+  row3Capsule?: string
+  row4Cap?: string
+  row4Masking?: string
+  row4Capsule?: string
+  row5Cap?: string
+  row5Masking?: string
+  row5Capsule?: string
+  row6Cap?: string
+  row7Cap?: string
+  row7Masking?: string
+  row7Capsule?: string
+  row8Cap?: string
 }
-
-const DEFAULT_ROWS: TableRow[] = [
-  { capability: "Protection method", masking: "Permanent removal / replacement", capsule: "Reversible encapsulation", capsuleCheck: "none", maskingCheck: "none" },
-  { capability: "Document structure", masking: "Destroyed", capsule: "Preserved", capsuleCheck: "none", maskingCheck: "none" },
-  { capability: "Entity relationships", masking: "Collapsed", capsule: "Maintained", capsuleCheck: "none", maskingCheck: "none" },
-  { capability: "AI output quality", masking: "Degraded", capsule: "Full quality", capsuleCheck: "none", maskingCheck: "none" },
-  { capability: "Output restoration", masking: "Manual", capsule: "Automatic restoration", capsuleCheck: "check", maskingCheck: "cross" },
-  { capability: "Enterprise context control", masking: "", capsule: "", capsuleCheck: "check", maskingCheck: "cross" },
-  { capability: "Audit trail", masking: "Limited", capsule: "Complete", capsuleCheck: "none", maskingCheck: "none" },
-  { capability: "Designed for AI workflows", masking: "", capsule: "", capsuleCheck: "check", maskingCheck: "cross" },
-]
 
 export default function Section07_ComparisonTable({
   heading = "Comparison",
   colHeader1 = "Capability",
   colHeader2 = "Masking Tools",
-  colHeader3 = "(AI Enablement Data Layer)",
   colHeader3Product = "LLM Capsule",
-  rows = DEFAULT_ROWS,
+  colHeader3 = "(AI Enablement Data Layer)",
+  row1Cap = "Protection method",
+  row1Masking = "Permanent removal / replacement",
+  row1Capsule = "Reversible encapsulation",
+  row2Cap = "Document structure",
+  row2Masking = "Destroyed",
+  row2Capsule = "Preserved",
+  row3Cap = "Entity relationships",
+  row3Masking = "Collapsed",
+  row3Capsule = "Maintained",
+  row4Cap = "AI output quality",
+  row4Masking = "Degraded",
+  row4Capsule = "Full quality",
+  row5Cap = "Output restoration",
+  row5Masking = "Manual",
+  row5Capsule = "Automatic restoration",
+  row6Cap = "Enterprise context control",
+  row7Cap = "Audit trail",
+  row7Masking = "Limited",
+  row7Capsule = "Complete",
+  row8Cap = "Designed for AI workflows",
 }: Props) {
   return (
     <>
@@ -93,7 +112,9 @@ export default function Section07_ComparisonTable({
           overflow-x: auto;
           -webkit-overflow-scrolling: touch;
           margin: 24px 0;
+          scrollbar-width: none;
         }
+        .s7-table-wrap::-webkit-scrollbar { display: none; }
         .s7-table {
           width: 100%;
           border-collapse: collapse;
@@ -173,42 +194,42 @@ export default function Section07_ComparisonTable({
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Protection method</td>
-                    <td>Permanent removal / replacement</td>
-                    <td className="s7-td-highlight">Reversible encapsulation</td>
+                    <td>{row1Cap}</td>
+                    <td>{row1Masking}</td>
+                    <td className="s7-td-highlight">{row1Capsule}</td>
                   </tr>
                   <tr>
-                    <td>Document structure</td>
-                    <td>Destroyed</td>
-                    <td className="s7-td-highlight">Preserved</td>
+                    <td>{row2Cap}</td>
+                    <td>{row2Masking}</td>
+                    <td className="s7-td-highlight">{row2Capsule}</td>
                   </tr>
                   <tr>
-                    <td>Entity relationships</td>
-                    <td>Collapsed</td>
-                    <td className="s7-td-highlight">Maintained</td>
+                    <td>{row3Cap}</td>
+                    <td>{row3Masking}</td>
+                    <td className="s7-td-highlight">{row3Capsule}</td>
                   </tr>
                   <tr>
-                    <td>AI output quality</td>
-                    <td>Degraded</td>
-                    <td className="s7-td-highlight">Full quality</td>
+                    <td>{row4Cap}</td>
+                    <td>{row4Masking}</td>
+                    <td className="s7-td-highlight">{row4Capsule}</td>
                   </tr>
                   <tr>
-                    <td>Output restoration</td>
-                    <td><span className="s7-cross">&#x2717;</span> Manual</td>
-                    <td className="s7-td-highlight"><span className="s7-check">&#x2713;</span> Automatic restoration</td>
+                    <td>{row5Cap}</td>
+                    <td><span className="s7-cross">&#x2717;</span> {row5Masking}</td>
+                    <td className="s7-td-highlight"><span className="s7-check">&#x2713;</span> {row5Capsule}</td>
                   </tr>
                   <tr>
-                    <td>Enterprise context control</td>
+                    <td>{row6Cap}</td>
                     <td><span className="s7-cross">&#x2717;</span></td>
                     <td className="s7-td-highlight"><span className="s7-check">&#x2713;</span></td>
                   </tr>
                   <tr>
-                    <td>Audit trail</td>
-                    <td>Limited</td>
-                    <td className="s7-td-highlight">Complete</td>
+                    <td>{row7Cap}</td>
+                    <td>{row7Masking}</td>
+                    <td className="s7-td-highlight">{row7Capsule}</td>
                   </tr>
                   <tr>
-                    <td>Designed for AI workflows</td>
+                    <td>{row8Cap}</td>
                     <td><span className="s7-cross">&#x2717;</span></td>
                     <td className="s7-td-highlight"><span className="s7-check">&#x2713;</span></td>
                   </tr>
@@ -247,5 +268,105 @@ addPropertyControls(Section07_ComparisonTable, {
     type: ControlType.String,
     title: "Col 3 Subtitle",
     defaultValue: "(AI Enablement Data Layer)",
+  },
+  row1Cap: {
+    type: ControlType.String,
+    title: "Row 1 Capability",
+    defaultValue: "Protection method",
+  },
+  row1Masking: {
+    type: ControlType.String,
+    title: "Row 1 Masking",
+    defaultValue: "Permanent removal / replacement",
+  },
+  row1Capsule: {
+    type: ControlType.String,
+    title: "Row 1 Capsule",
+    defaultValue: "Reversible encapsulation",
+  },
+  row2Cap: {
+    type: ControlType.String,
+    title: "Row 2 Capability",
+    defaultValue: "Document structure",
+  },
+  row2Masking: {
+    type: ControlType.String,
+    title: "Row 2 Masking",
+    defaultValue: "Destroyed",
+  },
+  row2Capsule: {
+    type: ControlType.String,
+    title: "Row 2 Capsule",
+    defaultValue: "Preserved",
+  },
+  row3Cap: {
+    type: ControlType.String,
+    title: "Row 3 Capability",
+    defaultValue: "Entity relationships",
+  },
+  row3Masking: {
+    type: ControlType.String,
+    title: "Row 3 Masking",
+    defaultValue: "Collapsed",
+  },
+  row3Capsule: {
+    type: ControlType.String,
+    title: "Row 3 Capsule",
+    defaultValue: "Maintained",
+  },
+  row4Cap: {
+    type: ControlType.String,
+    title: "Row 4 Capability",
+    defaultValue: "AI output quality",
+  },
+  row4Masking: {
+    type: ControlType.String,
+    title: "Row 4 Masking",
+    defaultValue: "Degraded",
+  },
+  row4Capsule: {
+    type: ControlType.String,
+    title: "Row 4 Capsule",
+    defaultValue: "Full quality",
+  },
+  row5Cap: {
+    type: ControlType.String,
+    title: "Row 5 Capability",
+    defaultValue: "Output restoration",
+  },
+  row5Masking: {
+    type: ControlType.String,
+    title: "Row 5 Masking",
+    defaultValue: "Manual",
+  },
+  row5Capsule: {
+    type: ControlType.String,
+    title: "Row 5 Capsule",
+    defaultValue: "Automatic restoration",
+  },
+  row6Cap: {
+    type: ControlType.String,
+    title: "Row 6 Capability",
+    defaultValue: "Enterprise context control",
+  },
+  row7Cap: {
+    type: ControlType.String,
+    title: "Row 7 Capability",
+    defaultValue: "Audit trail",
+  },
+  row7Masking: {
+    type: ControlType.String,
+    title: "Row 7 Masking",
+    defaultValue: "Limited",
+  },
+  row7Capsule: {
+    type: ControlType.String,
+    title: "Row 7 Capsule",
+    defaultValue: "Complete",
+  },
+  row8Cap: {
+    type: ControlType.String,
+    title: "Row 8 Capability",
+    defaultValue: "Designed for AI workflows",
   },
 })

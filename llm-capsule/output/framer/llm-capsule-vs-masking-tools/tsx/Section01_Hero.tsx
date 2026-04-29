@@ -11,20 +11,16 @@ const PALETTE = {
 }
 
 interface Props {
-  title?: string
   titleProduct?: string
+  title?: string
   description?: string
-  descriptionProduct?: string
 }
 
 export default function Section01_Hero({
-  title = "vs Masking Tools",
   titleProduct = "LLM Capsule",
-  description = "How {product}'s structure-preserving encapsulation compares to traditional masking and redaction tools for enterprise AI workflows.",
-  descriptionProduct = "LLM Capsule",
+  title = "vs Masking Tools",
+  description = "How LLM Capsule's structure-preserving encapsulation compares to traditional masking and redaction tools for enterprise AI workflows.",
 }: Props) {
-  const descriptionText = description.replace("{product}", descriptionProduct)
-
   return (
     <>
       <style>{`
@@ -50,7 +46,7 @@ export default function Section01_Hero({
         }
         @container (min-width: 768px) { .s1-container { padding: 0 32px; } }
         @container (min-width: 1024px) { .s1-container { padding: 0 32px; } }
-        @container (min-width: 1440px) { .s1-container { padding: 0 120px; max-width: 1440px; } }
+        @container (min-width: 1440px) { .s1-container { padding: 0; max-width: 1080px; } }
         .s1-title {
           font-family: "DM Sans", sans-serif;
           font-size: 28px;
@@ -123,9 +119,7 @@ export default function Section01_Hero({
             <h1 className="s1-title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
               <span className="s1-product">{titleProduct}</span> {title}
             </h1>
-            <p className="s1-description">
-              How <span className="s1-product">{descriptionProduct}</span>'s structure-preserving encapsulation compares to traditional masking and redaction tools for enterprise AI workflows.
-            </p>
+            <p className="s1-description">{description}</p>
           </div>
         </div>
       </section>
@@ -144,15 +138,10 @@ addPropertyControls(Section01_Hero, {
     title: "Title",
     defaultValue: "vs Masking Tools",
   },
-  descriptionProduct: {
-    type: ControlType.String,
-    title: "Desc Product",
-    defaultValue: "LLM Capsule",
-  },
   description: {
     type: ControlType.String,
     title: "Description",
-    defaultValue: "How {product}'s structure-preserving encapsulation compares to traditional masking and redaction tools for enterprise AI workflows.",
+    defaultValue: "How LLM Capsule's structure-preserving encapsulation compares to traditional masking and redaction tools for enterprise AI workflows.",
     displayTextArea: true,
   },
 })

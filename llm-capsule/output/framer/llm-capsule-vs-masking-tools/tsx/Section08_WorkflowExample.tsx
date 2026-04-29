@@ -12,7 +12,6 @@ interface Props {
   cardTitle?: string
   withMaskingLabel?: string
   withMaskingText?: string
-  withCapsuleLabel?: string
   withCapsuleProduct?: string
   withCapsuleText?: string
 }
@@ -22,9 +21,8 @@ export default function Section08_WorkflowExample({
   cardTitle = "Contract Analysis Pipeline",
   withMaskingLabel = "With masking:",
   withMaskingText = "200 contracts masked → AI produces generic summaries with \"[REDACTED]\" throughout → Legal team manually restores ~40 hours of context rebuilding.",
-  withCapsuleLabel = "With",
   withCapsuleProduct = "LLM Capsule",
-  withCapsuleText = ": 200 contracts encapsulated → AI produces structured summaries → Local restoration restores all parties, amounts, and dates → Output feeds directly into contract management system.",
+  withCapsuleText = "200 contracts encapsulated → AI produces structured summaries → Local restoration restores all parties, amounts, and dates → Output feeds directly into contract management system.",
 }: Props) {
   return (
     <>
@@ -126,7 +124,7 @@ export default function Section08_WorkflowExample({
                 <strong>{withMaskingLabel}</strong> {withMaskingText}
               </p>
               <p>
-                <strong>{withCapsuleLabel} <span className="s8-product">{withCapsuleProduct}</span>:</strong>{withCapsuleText}
+                <strong>With <span className="s8-product">{withCapsuleProduct}</span>:</strong> {withCapsuleText}
               </p>
             </div>
           </div>
@@ -158,20 +156,15 @@ addPropertyControls(Section08_WorkflowExample, {
     defaultValue: "200 contracts masked → AI produces generic summaries with \"[REDACTED]\" throughout → Legal team manually restores ~40 hours of context rebuilding.",
     displayTextArea: true,
   },
-  withCapsuleLabel: {
-    type: ControlType.String,
-    title: "Capsule Label",
-    defaultValue: "With",
-  },
   withCapsuleProduct: {
     type: ControlType.String,
-    title: "Capsule Product",
+    title: "Capsule Product Name",
     defaultValue: "LLM Capsule",
   },
   withCapsuleText: {
     type: ControlType.String,
     title: "Capsule Text",
-    defaultValue: ": 200 contracts encapsulated → AI produces structured summaries → Local restoration restores all parties, amounts, and dates → Output feeds directly into contract management system.",
+    defaultValue: "200 contracts encapsulated → AI produces structured summaries → Local restoration restores all parties, amounts, and dates → Output feeds directly into contract management system.",
     displayTextArea: true,
   },
 })

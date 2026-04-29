@@ -11,25 +11,29 @@ const PALETTE = {
   borderDefault:  "#e6e7e9",
 }
 
-interface RelatedLink {
-  title: string
-  href: string
-  iconType: "product" | "architecture" | "trust" | "arrow" | "book" | "file"
-}
+type IconType = "product" | "architecture" | "trust" | "arrow" | "book" | "file"
 
 interface Props {
   sectionLabel?: string
-  links?: RelatedLink[]
+  link1Title?: string
+  link1Href?: string
+  link1Icon?: IconType
+  link2Title?: string
+  link2Href?: string
+  link2Icon?: IconType
+  link3Title?: string
+  link3Href?: string
+  link3Icon?: IconType
+  link4Title?: string
+  link4Href?: string
+  link4Icon?: IconType
+  link5Title?: string
+  link5Href?: string
+  link5Icon?: IconType
+  link6Title?: string
+  link6Href?: string
+  link6Icon?: IconType
 }
-
-const DEFAULT_LINKS: RelatedLink[] = [
-  { title: "Product Overview", href: "/product", iconType: "product" },
-  { title: "Architecture", href: "/architecture", iconType: "architecture" },
-  { title: "Trust & Compliance", href: "/trust", iconType: "trust" },
-  { title: "Request a Demo", href: "/request-a-demo", iconType: "arrow" },
-  { title: "Learn Hub", href: "/resources/learn", iconType: "book" },
-  { title: "Why Redaction Breaks AI", href: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows", iconType: "file" },
-]
 
 function IconSVG({ type }: { type: string }) {
   const common = {
@@ -55,8 +59,34 @@ function IconSVG({ type }: { type: string }) {
 
 export default function Section10_RelatedPages({
   sectionLabel = "Related",
-  links = DEFAULT_LINKS,
+  link1Title = "Product Overview",
+  link1Href = "/product",
+  link1Icon = "product",
+  link2Title = "Architecture",
+  link2Href = "/architecture",
+  link2Icon = "architecture",
+  link3Title = "Trust & Compliance",
+  link3Href = "/trust",
+  link3Icon = "trust",
+  link4Title = "Request a Demo",
+  link4Href = "/request-a-demo",
+  link4Icon = "arrow",
+  link5Title = "Learn Hub",
+  link5Href = "/resources/learn",
+  link5Icon = "book",
+  link6Title = "Why Redaction Breaks AI",
+  link6Href = "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
+  link6Icon = "file",
 }: Props) {
+  const links = [
+    { title: link1Title, href: link1Href, iconType: link1Icon },
+    { title: link2Title, href: link2Href, iconType: link2Icon },
+    { title: link3Title, href: link3Href, iconType: link3Icon },
+    { title: link4Title, href: link4Href, iconType: link4Icon },
+    { title: link5Title, href: link5Href, iconType: link5Icon },
+    { title: link6Title, href: link6Href, iconType: link6Icon },
+  ]
+
   return (
     <>
       <style>{`
@@ -133,12 +163,11 @@ export default function Section10_RelatedPages({
 
         @container (min-width: 768px) {
           .s10-container { padding: 0 32px; }
-          .s10-grid { grid-template-columns: repeat(2, 1fr); }
+          .s10-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
         @container (min-width: 1024px) {
           .s10-container { padding: 0 32px; }
         }
-        @container (min-width: 1440px) { .s10-container { padding: 0 120px; max-width: 1440px; } }
         @container (min-width: 1440px) {
           .s10-container { padding: 0; max-width: 1080px; }
           .s10-section { padding: 32px 0 80px; }
@@ -178,5 +207,65 @@ addPropertyControls(Section10_RelatedPages, {
     type: ControlType.String,
     title: "Section Label",
     defaultValue: "Related",
+  },
+  link1Title: {
+    type: ControlType.String,
+    title: "Link 1 Title",
+    defaultValue: "Product Overview",
+  },
+  link1Href: {
+    type: ControlType.String,
+    title: "Link 1 URL",
+    defaultValue: "/product",
+  },
+  link2Title: {
+    type: ControlType.String,
+    title: "Link 2 Title",
+    defaultValue: "Architecture",
+  },
+  link2Href: {
+    type: ControlType.String,
+    title: "Link 2 URL",
+    defaultValue: "/architecture",
+  },
+  link3Title: {
+    type: ControlType.String,
+    title: "Link 3 Title",
+    defaultValue: "Trust & Compliance",
+  },
+  link3Href: {
+    type: ControlType.String,
+    title: "Link 3 URL",
+    defaultValue: "/trust",
+  },
+  link4Title: {
+    type: ControlType.String,
+    title: "Link 4 Title",
+    defaultValue: "Request a Demo",
+  },
+  link4Href: {
+    type: ControlType.String,
+    title: "Link 4 URL",
+    defaultValue: "/request-a-demo",
+  },
+  link5Title: {
+    type: ControlType.String,
+    title: "Link 5 Title",
+    defaultValue: "Learn Hub",
+  },
+  link5Href: {
+    type: ControlType.String,
+    title: "Link 5 URL",
+    defaultValue: "/resources/learn",
+  },
+  link6Title: {
+    type: ControlType.String,
+    title: "Link 6 Title",
+    defaultValue: "Why Redaction Breaks AI",
+  },
+  link6Href: {
+    type: ControlType.String,
+    title: "Link 6 URL",
+    defaultValue: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
   },
 })
