@@ -546,16 +546,18 @@ export default function RequestPov({
                           { name: "industry", value: String(data.get("industry") ?? "") },
                           { name: "message", value: String(data.get("use_case") ?? "") },
                         ]
+                        const hutk = typeof document !== "undefined"
+                          ? document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*=\s*([^;]*).*$)|^.*$/, "$1")
+                          : ""
+                        const context: Record<string, string> = {
+                          pageUri: typeof window !== "undefined" ? window.location.href : "",
+                          pageName: "Request a Demo",
+                        }
+                        if (hutk) context.hutk = hutk
                         const payload = {
                           submittedAt: Date.now(),
                           fields,
-                          context: {
-                            hutk: typeof document !== "undefined"
-                              ? document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*=\s*([^;]*).*$)|^.*$/, "$1")
-                              : "",
-                            pageUri: typeof window !== "undefined" ? window.location.href : "",
-                            pageName: "Request a Demo",
-                          },
+                          context,
                         }
                         try {
                           const res = await fetch(
