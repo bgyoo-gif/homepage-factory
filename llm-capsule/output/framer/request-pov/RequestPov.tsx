@@ -538,31 +538,39 @@ export default function RequestPov({
                         setFormStatus("submitting")
                         const form = e.currentTarget
                         const data = new FormData(form)
+                        const fields = [
+                          { name: "firstname", value: String(data.get("name") ?? "") },
+                          { name: "email", value: String(data.get("email") ?? "") },
+                          { name: "company", value: String(data.get("company") ?? "") },
+                          { name: "jobtitle", value: String(data.get("job_title") ?? "") },
+                          { name: "industry", value: String(data.get("industry") ?? "") },
+                          { name: "message", value: String(data.get("use_case") ?? "") },
+                        ]
+                        const payload = {
+                          submittedAt: Date.now(),
+                          fields,
+                          context: {
+                            hutk: typeof document !== "undefined"
+                              ? document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*=\s*([^;]*).*$)|^.*$/, "$1")
+                              : "",
+                            pageUri: typeof window !== "undefined" ? window.location.href : "",
+                            pageName: "Request a Demo",
+                          },
+                        }
                         try {
                           const res = await fetch(
                             "https://api.hsforms.com/submissions/v3/integration/submit/244718287/5156eb97-45fd-468e-91c2-16971c3d0252",
                             {
                               method: "POST",
                               headers: { "Content-Type": "application/json" },
-                              body: JSON.stringify({
-                                fields: [
-                                  { name: "firstname", value: data.get("name") || "" },
-                                  { name: "email", value: data.get("email") || "" },
-                                  { name: "company", value: data.get("company") || "" },
-                                  { name: "jobtitle", value: data.get("job_title") || "" },
-                                  { name: "industry", value: data.get("industry") || "" },
-                                  { name: "message", value: data.get("use_case") || "" },
-                                ],
-                                context: {
-                                  pageUri: typeof window !== "undefined" ? window.location.href : "",
-                                  pageName: "Request a Demo",
-                                },
-                              }),
+                              body: JSON.stringify(payload),
                             }
                           )
                           if (res.ok) {
-                            setFormStatus("success")
                             form.reset()
+                            if (typeof window !== "undefined") {
+                              window.location.href = "/request-received"
+                            }
                           } else {
                             setFormStatus("error")
                           }
