@@ -636,13 +636,13 @@ export default function LlmCapsuleVsPromptSecurityGateways({
                   <span className="vs-breadcrumb__sep">/</span>
                   <a href="/resources/learn" className="vs-breadcrumb__link">Learn</a>
                   <span className="vs-breadcrumb__sep">/</span>
-                  <span className="vs-breadcrumb__current">LLM Capsule vs Prompt Security Gateways</span>
+                  <span className="vs-breadcrumb__current">{heroTitle}</span>
                 </nav>
                 <h1 className="vs-article-hero__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
-                  <span className="vs-text--product">LLM Capsule</span> vs Prompt Security Gateways
+                  {heroTitle}
                 </h1>
                 <p className="vs-article-hero__description">
-                  Compare <span className="vs-text--product">LLM Capsule</span> with prompt security gateways. Gateways filter at the API layer; <span className="vs-text--product">LLM Capsule</span> enables AI adoption at the data layer with structure-preserving encapsulation.
+                  {heroDescription}
                 </p>
               </div>
             </section>
@@ -654,7 +654,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
                   <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>Overview</h2>
                 </div>
                 <p className="vs-article-body__paragraph">
-                  Prompt security gateways sit between the user and the AI model, scanning prompts for sensitive content and filtering or blocking requests that contain flagged patterns. They operate at the API interaction layer. <span className="vs-text--product">LLM Capsule</span> operates as an AI enablement data layer — transforming the data itself before it enters any AI workflow, enabling AI adoption rather than blocking it.
+                  {overviewText}
                 </p>
               </div>
             </section>
