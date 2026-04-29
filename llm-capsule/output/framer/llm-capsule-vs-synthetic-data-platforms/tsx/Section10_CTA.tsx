@@ -18,23 +18,25 @@ const PALETTE = {
 
 interface Props {
   title?: string
-  titleBrand?: string
   description?: string
   btn1Label?: string
   btn1Href?: string
   footnote2Label?: string
   footnote2Href?: string
+  ctaBgImage?: string
 }
 
 export default function Section10_CTA({
-  title = "See how",
-  titleBrand = "LLM Capsule",
+  title = "See how LLM Capsule works with your data",
   description = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
   btn1Label = "Request a Demo",
   btn1Href = "/request-a-demo",
   footnote2Label = "AWS Marketplace",
   footnote2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
+  ctaBgImage = "",
 }: Props) {
+  const DEFAULT_CTA_BG = `${IMAGE_BASE}/bg-gradient-deep-teal.png`
+  const resolvedCtaBg = ctaBgImage || DEFAULT_CTA_BG
   return (
     <>
       <style>{`
@@ -49,7 +51,7 @@ export default function Section10_CTA({
           padding: 80px 16px;
           text-align: center;
           background-color: ${PALETTE.neutral800};
-          background-image: url('${IMAGE_BASE}/bg-gradient-deep-teal.png');
+          background-image: url('${resolvedCtaBg}');
           background-size: cover;
           background-position: center;
         }
@@ -148,6 +150,9 @@ export default function Section10_CTA({
         }
         .s10-footnote a:hover { color: ${PALETTE.white}; }
 
+        @container (max-width: 767px) {
+          .s10-section { background-image: none; }
+        }
         @container (min-width: 768px) {
           .s10-section { padding: 100px 32px; }
         }
@@ -178,13 +183,8 @@ export default function Section10_CTA({
 addPropertyControls(Section10_CTA, {
   title: {
     type: ControlType.String,
-    title: "Title Prefix",
-    defaultValue: "See how",
-  },
-  titleBrand: {
-    type: ControlType.String,
-    title: "Brand Name",
-    defaultValue: "LLM Capsule",
+    title: "Title",
+    defaultValue: "See how LLM Capsule works with your data",
   },
   description: {
     type: ControlType.String,
@@ -212,4 +212,5 @@ addPropertyControls(Section10_CTA, {
     title: "Footnote 2 URL",
     defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
   },
+  ctaBgImage: { type: ControlType.Image, title: "CTA Background Image" },
 })

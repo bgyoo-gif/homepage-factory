@@ -24,7 +24,7 @@ export default function Section07_WorkflowExample({
   brandName = "LLM Capsule",
   cardTitle = "Compliance Document Analysis",
   cardParagraph1 = "A compliance team needs AI to identify risk indicators in 1,000 real audit reports. Synthetic data cannot help — synthetic audit reports do not contain the real findings, real entity references, and real risk patterns the team needs to analyze.",
-  cardParagraph2Suffix = "encapsulates the real audit reports, AI identifies risk patterns in the protected documents, and restoration produces an actionable risk assessment with real entity names and findings linked to real reports.",
+  cardParagraph2Suffix = "LLM Capsule encapsulates the real audit reports, AI identifies risk patterns in the protected documents, and restoration produces an actionable risk assessment with real entity names and findings linked to real reports.",
 }: Props) {
   return (
     <>
@@ -138,7 +138,7 @@ export default function Section07_WorkflowExample({
             <div className="s7-card">
               <h4 className="s7-card__title">{cardTitle}</h4>
               <p>{cardParagraph1}</p>
-              <p><span className="s7-brand-name">{brandName}</span> {cardParagraph2Suffix}</p>
+              <p>{cardParagraph2Suffix}</p>
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@ addPropertyControls(Section07_WorkflowExample, {
   cardParagraph2Suffix: {
     type: ControlType.String,
     title: "Card Paragraph 2 (after brand)",
-    defaultValue: "encapsulates the real audit reports, AI identifies risk patterns in the protected documents, and restoration produces an actionable risk assessment with real entity names and findings linked to real reports.",
+    defaultValue: "LLM Capsule encapsulates the real audit reports, AI identifies risk patterns in the protected documents, and restoration produces an actionable risk assessment with real entity names and findings linked to real reports.",
     displayTextArea: true,
   },
 })

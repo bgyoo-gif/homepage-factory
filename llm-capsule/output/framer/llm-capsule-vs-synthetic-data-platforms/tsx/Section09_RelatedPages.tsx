@@ -154,7 +154,7 @@ export default function Section09_RelatedPages({
         }
 
         @container (min-width: 768px) {
-          .s9-card-grid { grid-template-columns: repeat(2, 1fr); }
+          .s9-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
 
         .s9-card-dark {
