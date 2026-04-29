@@ -574,6 +574,8 @@ export default function RequestPov({
                               window.location.href = "/request-received"
                             }
                           } else {
+                            const errBody = await res.text()
+                            console.error("HubSpot error:", res.status, errBody)
                             setFormStatus("error")
                           }
                         } catch {
