@@ -538,12 +538,17 @@ export default function RequestPov({
                         setFormStatus("submitting")
                         const form = e.currentTarget
                         const data = new FormData(form)
+                        const fullName = String(data.get("name") ?? "")
+                        const nameParts = fullName.trim().split(/\s+/)
+                        const firstName = nameParts[0] || ""
+                        const lastName = nameParts.slice(1).join(" ") || ""
                         const fields = [
-                          { name: "firstname", value: String(data.get("name") ?? "") },
+                          { name: "firstname", value: firstName },
+                          { name: "lastname", value: lastName },
                           { name: "email", value: String(data.get("email") ?? "") },
                           { name: "company", value: String(data.get("company") ?? "") },
                           { name: "jobtitle", value: String(data.get("job_title") ?? "") },
-                          { name: "industry", value: String(data.get("industry") ?? "") },
+                          { name: "industry_type", value: String(data.get("industry") ?? "") },
                           { name: "message", value: String(data.get("use_case") ?? "") },
                         ]
                         const hutk = typeof document !== "undefined"
