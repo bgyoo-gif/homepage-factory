@@ -5,61 +5,67 @@
 vs Synthetic Data Platforms
 vs 合成データプラットフォーム
 
+LLM Capsule
+LLM Capsule
+
 Compare LLM Capsule with synthetic data platforms for enterprise AI. Synthetic data replaces real data entirely; LLM Capsule preserves and restores real enterprise data.
-エンタープライズAI向けにLLM Capsuleと合成データプラットフォームを比較します。合成データは実データを完全に置き換えますが、LLM Capsuleは実際のエンタープライズデータを保存し復元します。
+エンタープライズAI向けにLLM Capsuleと合成データプラットフォームを比較します。合成データは実データを完全に置換しますが、LLM Capsuleは実際のエンタープライズデータを保存し復元します。
 
 ## Section 02: Overview
 
 Overview
 概要
 
+LLM Capsule
+LLM Capsule
+
 Synthetic data platforms generate artificial datasets that mimic the statistical properties of real data. They are used for model training, testing, and analytics where real data cannot be used. LLM Capsule addresses a different problem: it is an AI enablement data layer that enables AI processing on real enterprise documents while protecting sensitive elements and restoring usable outputs.
-合成データプラットフォームは、実データの統計的特性を模倣する人工データセットを生成します。実データを使用できないモデルトレーニング、テスト、分析に使用されます。LLM Capsuleは異なる課題を解決します — 機密要素を保護しながら実際のエンタープライズ文書に対するAI処理を可能にし、利用可能な出力を復元するAI活用データレイヤーです。
+合成データプラットフォームは、実データの統計的特性を模倣する人工データセットを生成します。実データを使用できないモデルトレーニング、テスト、分析に使用されます。LLM Capsuleは異なる課題に対応します。機密要素を保護し使用可能な出力を復元しながら、実際のエンタープライズドキュメントに対するAI処理を可能にするAI活用データレイヤーです。
 
 ## Section 03: How Synthetic Data Platforms Work
 
-How Synthetic Data Platforms Works
-合成データプラットフォームの仕組み
+How Synthetic Data Platforms
+合成データプラットフォームの
+
+Works
+仕組み
 
 Synthetic data platforms analyze real datasets and generate new, artificial data that preserves statistical distributions, correlations, and patterns. The synthetic data contains no real individuals or entities. It is used for model training, development environments, and analytics workloads.
-合成データプラットフォームは実データセットを分析し、統計的分布、相関関係、パターンを保持する新しい人工データを生成します。合成データには実在の個人やエンティティは含まれていません。モデルトレーニング、開発環境、分析ワークロードに使用されます。
+合成データプラットフォームは実データセットを分析し、統計的分布、相関関係、パターンを保持する新しい人工データを生成します。合成データには実際の個人やエンティティは含まれません。モデルトレーニング、開発環境、分析ワークロードに使用されます。
 
 ## Section 04: Limitations
 
 Limitations
-限界
+制限事項
 
 Not suitable for document processing.
-文書処理には不向き。
+ドキュメント処理に不適。
 
-Synthetic data platforms generate tabular data, not documents. They cannot create synthetic versions of contracts, medical records, or legal filings that retain their specific content and meaning.
-合成データプラットフォームは文書ではなく表形式データを生成します。特定のコンテンツと意味を保持する契約書、医療記録、法的書類の合成バージョンを作成することはできません。
+ Synthetic data platforms generate tabular data, not documents. They cannot create synthetic versions of contracts, medical records, or legal filings that retain their specific content and meaning.
+合成データプラットフォームは表形式データを生成し、ドキュメントは生成しません。契約書、医療記録、法的申請書の具体的な内容と意味を保持する合成バージョンを作成することはできません。
 
 Loss of specificity.
 具体性の喪失。
 
-Synthetic data preserves statistical patterns but not specific enterprise content. You cannot summarize a synthetic contract — it does not contain real terms, real parties, or real obligations.
-合成データは統計的パターンを保持しますが、特定のエンタープライズコンテンツは保持しません。合成契約書を要約することはできません — 実際の条件、実際の当事者、実際の義務が含まれていないためです。
+ Synthetic data preserves statistical patterns but not specific enterprise content. You cannot summarize a synthetic contract — it does not contain real terms, real parties, or real obligations.
+合成データは統計的パターンを保持しますが、具体的なエンタープライズコンテンツは保持しません。合成契約書を要約することはできません — 実際の条件、実際の当事者、実際の義務が含まれていないためです。
 
 No real-world output.
 実世界の出力なし。
 
-AI outputs based on synthetic data describe synthetic scenarios, not real enterprise situations. There is no mechanism to map synthetic outputs back to real enterprise context.
-合成データに基づくAI出力は、実際のエンタープライズ状況ではなく合成シナリオを記述します。合成出力を実際のエンタープライズコンテキストにマッピングし直すメカニズムはありません。
+ AI outputs based on synthetic data describe synthetic scenarios, not real enterprise situations. There is no mechanism to map synthetic outputs back to real enterprise context.
+合成データに基づくAI出力は、実際のエンタープライズの状況ではなく、合成シナリオを記述します。合成出力を実際のエンタープライズコンテキストにマッピングするメカニズムはありません。
 
 ## Section 05: How LLM Capsule Differs
 
-Differs
-差別化ポイント
+How LLM Capsule Differs
+LLM Capsuleの違い
 
 LLM Capsule does not replace real data with synthetic data. It encapsulates real documents — preserving their specific content, structure, and relationships — while replacing only sensitive elements with reversible representations. AI processes real enterprise content and produces real enterprise outputs, restored through local restoration (restoration).
-LLM Capsuleは実データを合成データに置き換えません。機密要素のみを可逆的な表現に置換しながら、実際の文書をカプセル化します — 特定のコンテンツ、構造、関係を保存します。AIは実際のエンタープライズコンテンツを処理し、ローカル復元を通じて実際のエンタープライズ出力を生成します。
+LLM Capsuleは実データを合成データに置換しません。実際のドキュメントをカプセル化し、具体的なコンテンツ、構造、関係性を保持しながら、機密要素のみを可逆的な表現に置換します。AIは実際のエンタープライズコンテンツを処理し、ローカル復元（復元）を通じて復元された実際のエンタープライズ出力を生成します。
 
-AI results are restored locally.
-AI結果はローカルで復元されます。
-
-LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.
-LLM Capsuleは、機密データを保護し利用可能な出力を維持しながら、エンタープライズAI導入を可能にします。
+AI results are restored locally. LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.
+AI結果はローカルで復元されます。LLM Capsuleは機密データを保護し、使用可能な出力を維持しながら、エンタープライズAI導入を可能にします。
 
 ## Section 06: Comparison Table
 
@@ -72,6 +78,9 @@ Capability
 Synthetic Data Platforms
 合成データプラットフォーム
 
+LLM Capsule
+LLM Capsule
+
 Input data
 入力データ
 
@@ -79,16 +88,16 @@ Artificially generated
 人工的に生成
 
 Real enterprise documents
-実際のエンタープライズ文書
+実際のエンタープライズドキュメント
 
 Document support
-文書サポート
+ドキュメントサポート
 
 Tabular data only
 表形式データのみ
 
 All document types
-すべての文書タイプ
+すべてのドキュメントタイプ
 
 Content specificity
 コンテンツの具体性
@@ -109,13 +118,16 @@ Real enterprise context
 実際のエンタープライズコンテキスト
 
 Output restoration
-出力復元
+出力の復元
 
-Local restoration
-ローカル復元
+✗
+✗
+
+✓ Local restoration
+✓ ローカル復元
 
 Use case
-ユースケース
+使用ケース
 
 Model training, testing
 モデルトレーニング、テスト
@@ -125,31 +137,43 @@ Production AI workflows
 
 ## Section 07: Workflow Example
 
-Enterprise Workflow Example
-エンタープライズワークフロー例
+Enterprise Workflow
+エンタープライズワークフロー
+
+Example
+例
+
+LLM Capsule
+LLM Capsule
 
 Compliance Document Analysis
-コンプライアンス文書分析
+コンプライアンスドキュメント分析
 
 A compliance team needs AI to identify risk indicators in 1,000 real audit reports. Synthetic data cannot help — synthetic audit reports do not contain the real findings, real entity references, and real risk patterns the team needs to analyze.
-コンプライアンスチームが1,000件の実際の監査報告書でリスク指標を特定するためにAIを必要としています。合成データでは対応できません — 合成監査報告書には、チームが分析すべき実際の調査結果、実際のエンティティ参照、実際のリスクパターンが含まれていません。
+コンプライアンスチームは、1,000件の実際の監査レポートにおけるリスク指標をAIで特定する必要があります。合成データでは対応できません — 合成監査レポートには、チームが分析に必要とする実際の発見事項、実際のエンティティ参照、実際のリスクパターンが含まれていません。
 
-encapsulates the real audit reports, AI identifies risk patterns in the protected documents, and restoration produces an actionable risk assessment with real entity names and findings linked to real reports.
-LLM Capsuleが実際の監査報告書をカプセル化し、AIが保護された文書内のリスクパターンを特定し、復元により実際のエンティティ名と実際の報告書に紐づいた調査結果を含む実行可能なリスク評価を生成します。
+LLM Capsule encapsulates the real audit reports, AI identifies risk patterns in the protected documents, and restoration produces an actionable risk assessment with real entity names and findings linked to real reports.
+LLM Capsuleは実際の監査レポートをカプセル化し、AIが保護されたドキュメント内のリスクパターンを特定し、復元により実際のエンティティ名と実際のレポートに紐付けられた発見事項を含む実行可能なリスク評価が生成されます。
 
 ## Section 08: FAQ
 
+FAQ
+FAQ
+
+LLM Capsule
+LLM Capsule
+
 When should I use synthetic data vs LLM Capsule?
-合成データとLLM Capsuleはどのように使い分けるべきですか？
+合成データとLLM Capsuleのどちらを使用すべきですか？
 
 Use synthetic data for model training and testing where statistical properties matter. Use LLM Capsule for production AI workflows where AI must process and produce outputs about real enterprise documents.
-統計的特性が重要なモデルトレーニングとテストには合成データを使用します。AIが実際のエンタープライズ文書を処理し出力を生成する必要がある本番AIワークフローにはLLM Capsuleを使用します。
+統計的特性が重要なモデルトレーニングとテストには合成データを使用してください。AIが実際のエンタープライズドキュメントを処理し、それに関する出力を生成する必要がある本番AIワークフローにはLLM Capsuleを使用してください。
 
 Does LLM Capsule generate synthetic data?
 LLM Capsuleは合成データを生成しますか？
 
 No. LLM Capsule encapsulates real data — preserving its structure while protecting sensitive elements. It is not a synthetic data platform.
-いいえ。LLM Capsuleは機密要素を保護しながら構造を保存して実データをカプセル化します。合成データプラットフォームではありません。
+いいえ。LLM Capsuleは実データをカプセル化し、機密要素を保護しながら構造を保持します。合成データプラットフォームではありません。
 
 ## Section 09: Related Pages
 
@@ -163,24 +187,24 @@ Architecture
 アーキテクチャ
 
 Trust & Compliance
-信頼性とコンプライアンス
+トラスト＆コンプライアンス
 
 Request a Demo
-デモのご依頼
+デモをリクエスト
 
 Learn Hub
-ラーニングハブ
+ラーンハブ
 
-## Section 10: CTA
+## Section 10: CTA Band
 
-See how
-今すぐご確認ください
+See how LLM Capsule works with your data
+LLM Capsuleがお客様のデータでどのように機能するかをご覧ください
 
 Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.
-文書、デプロイ要件、評価基準をお持ちください。お客様の実際のワークフローでデモンストレーションいたします。
+お客様のドキュメント、デプロイ要件、評価基準をお持ちください。実際のワークフローでデモンストレーションいたします。
 
 Request a Demo
-デモのご依頼
+デモをリクエスト
 
 AWS Marketplace
 AWS Marketplace
