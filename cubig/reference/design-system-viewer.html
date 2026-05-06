@@ -3573,14 +3573,14 @@ function renderStaticTable() {
     ],
     'llm-capsule': [
       // ── v6.2 (2026-05-06) ──
-      { input: '01_home.html', ipath: '../input/llmcapsule_260506/01_home.html', idate: '2026-05-06', version: 'v6.2', outputs: [] },
-      { input: '02_product.html', ipath: '../input/llmcapsule_260506/02_product.html', idate: '2026-05-06', version: 'v6.2', outputs: [] },
-      { input: '03_architecture.html', ipath: '../input/llmcapsule_260506/03_architecture.html', idate: '2026-05-06', version: 'v6.2', outputs: [] },
-      { input: '04_solutions.html', ipath: '../input/llmcapsule_260506/04_solutions.html', idate: '2026-05-06', version: 'v6.2', outputs: [] },
-      { input: '05_pricing.html', ipath: '../input/llmcapsule_260506/05_pricing.html', idate: '2026-05-06', version: 'v6.2', outputs: [] },
-      { input: '06_trust.html', ipath: '../input/llmcapsule_260506/06_trust.html', idate: '2026-05-06', version: 'v6.2', outputs: [] },
-      { input: '07_resources.html', ipath: '../input/llmcapsule_260506/07_resources.html', idate: '2026-05-06', version: 'v6.2', outputs: [] },
-      { input: 'architecture-diagram-v8.html', ipath: '../input/llmcapsule_260506/architecture-diagram-v8.html', idate: '2026-05-06', version: 'v6.2', outputs: [] },
+      { input: '01_home.html', ipath: '../input/llmcapsule_260506/01_home.html', idate: '2026-05-06', version: 'llmcapsule_260506', outputs: [] },
+      { input: '02_product.html', ipath: '../input/llmcapsule_260506/02_product.html', idate: '2026-05-06', version: 'llmcapsule_260506', outputs: [] },
+      { input: '03_architecture.html', ipath: '../input/llmcapsule_260506/03_architecture.html', idate: '2026-05-06', version: 'llmcapsule_260506', outputs: [] },
+      { input: '04_solutions.html', ipath: '../input/llmcapsule_260506/04_solutions.html', idate: '2026-05-06', version: 'llmcapsule_260506', outputs: [] },
+      { input: '05_pricing.html', ipath: '../input/llmcapsule_260506/05_pricing.html', idate: '2026-05-06', version: 'llmcapsule_260506', outputs: [] },
+      { input: '06_trust.html', ipath: '../input/llmcapsule_260506/06_trust.html', idate: '2026-05-06', version: 'llmcapsule_260506', outputs: [] },
+      { input: '07_resources.html', ipath: '../input/llmcapsule_260506/07_resources.html', idate: '2026-05-06', version: 'llmcapsule_260506', outputs: [] },
+      { input: 'architecture-diagram-v8.html', ipath: '../input/llmcapsule_260506/architecture-diagram-v8.html', idate: '2026-05-06', version: 'llmcapsule_260506', outputs: [] },
       // ── v6.1 (이전 작업) ──
       { input: 'ai-data-pipeline-protection.html', idate: '2026-04-14', version: 'v6.1', outputs: [
         { type: 'html', name: 'ai-data-pipeline-protection-b-type.html', date: '2026-04-14' },
@@ -3933,7 +3933,7 @@ function renderStaticTable() {
     // Version separator row
     var ver = group.version || '—';
     if (ver !== lastVersion) {
-      var verColor = ver.indexOf('v6.2') >= 0 ? '#5b4fe9' : ver.indexOf('v6.1') >= 0 ? '#0ea5a4' : '#6b7280';
+      var verColor = ver.indexOf('260506') >= 0 ? '#5b4fe9' : ver.indexOf('v6.1') >= 0 ? '#0ea5a4' : '#6b7280';
       html += '<tr><td colspan="7" style="padding:12px;background:' + verColor + '10;border-left:4px solid ' + verColor + ';font-size:13px;font-weight:700;color:' + verColor + ';">' + ver + '</td></tr>';
       lastVersion = ver;
     }
