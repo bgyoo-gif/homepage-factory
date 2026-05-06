@@ -1,6 +1,6 @@
 {
   "brand": "cubig",
-  "generated": "2026-04-21 14:55:30",
+  "generated": "2026-05-06 17:53:01",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/cubig",
   "groups": [
     {
@@ -563,6 +563,46 @@
           "modified": "2026-04-07"
         },
         {
+          "name": "_preview_section01.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/cubig-llm-final/html/_preview_section01.html",
+          "modified": "2026-04-23"
+        },
+        {
+          "name": "_preview_section02.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/cubig-llm-final/html/_preview_section02.html",
+          "modified": "2026-04-23"
+        },
+        {
+          "name": "_preview_section03.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/cubig-llm-final/html/_preview_section03.html",
+          "modified": "2026-04-23"
+        },
+        {
+          "name": "_preview_section04.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/cubig-llm-final/html/_preview_section04.html",
+          "modified": "2026-04-23"
+        },
+        {
+          "name": "_preview_section05.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/cubig-llm-final/html/_preview_section05.html",
+          "modified": "2026-04-23"
+        },
+        {
+          "name": "_preview_section06.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/cubig-llm-final/html/_preview_section06.html",
+          "modified": "2026-04-27"
+        },
+        {
+          "name": "_preview_section07.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/cubig-llm-final/html/_preview_section07.html",
+          "modified": "2026-04-23"
+        },
+        {
+          "name": "_preview_section08.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/cubig-llm-final/html/_preview_section08.html",
+          "modified": "2026-04-23"
+        },
+        {
           "name": "Section06_DifferentialPrivacy_preview.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/dts/html/Section06_DifferentialPrivacy_preview.html",
           "modified": "2026-04-21"
@@ -713,6 +753,11 @@
           "modified": "2026-04-21"
         },
         {
+          "name": "cubig-llm-final-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/html/cubig-llm-final-b-type.html",
+          "modified": "2026-04-27"
+        },
+        {
           "name": "design-system-viewer.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/html/design-system-viewer.html",
           "modified": "2026-04-07"
@@ -775,6 +820,16 @@
           "modified": "2026-04-07"
         },
         {
+          "name": "cubig-llm-final-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/docs/cubig-llm-final-qa-report.md",
+          "modified": "2026-04-23"
+        },
+        {
+          "name": "cubig-llm-final-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/docs/cubig-llm-final-spec.md",
+          "modified": "2026-04-23"
+        },
+        {
           "name": "design-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/docs/design-spec.md",
           "modified": "2026-04-07"
@@ -793,9 +848,54 @@
           "name": "viewer-qa-report.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/docs/viewer-qa-report.md",
           "modified": "2026-04-07"
+        },
+        {
+          "name": "cubig-llm-final-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/translations/cubig-llm-final-ko-lines.md",
+          "modified": "2026-04-27"
         }
       ],
       "tsx": [
+        {
+          "name": "Section01_Hero.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/cubig-llm-final/tsx/Section01_Hero.tsx",
+          "modified": "2026-04-27"
+        },
+        {
+          "name": "Section02_HowItWorks.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/cubig-llm-final/tsx/Section02_HowItWorks.tsx",
+          "modified": "2026-04-27"
+        },
+        {
+          "name": "Section03_WhyDifferent.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/cubig-llm-final/tsx/Section03_WhyDifferent.tsx",
+          "modified": "2026-04-23"
+        },
+        {
+          "name": "Section04_Capabilities.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/cubig-llm-final/tsx/Section04_Capabilities.tsx",
+          "modified": "2026-04-23"
+        },
+        {
+          "name": "Section05_Stack.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/cubig-llm-final/tsx/Section05_Stack.tsx",
+          "modified": "2026-04-27"
+        },
+        {
+          "name": "Section06_Proof.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/cubig-llm-final/tsx/Section06_Proof.tsx",
+          "modified": "2026-04-27"
+        },
+        {
+          "name": "Section07_FAQ.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/cubig-llm-final/tsx/Section07_FAQ.tsx",
+          "modified": "2026-04-23"
+        },
+        {
+          "name": "Section08_CTA.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/cubig-llm-final/tsx/Section08_CTA.tsx",
+          "modified": "2026-04-23"
+        },
         {
           "name": "Section01_Hero.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/cubig/output/framer/dts/tsx/Section01_Hero.tsx",
