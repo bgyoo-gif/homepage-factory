@@ -216,12 +216,13 @@ export default function Section02_PricingTiers({
         }
 
         .s2-price {
-          font-size: 36px;
+          font-size: clamp(24px, 3vw, 36px);
           font-weight: 800;
           color: var(--c-ink, #0f1130);
           line-height: 1;
           letter-spacing: -0.02em;
           margin-bottom: 4px;
+          white-space: nowrap;
         }
 
         .s2-period {

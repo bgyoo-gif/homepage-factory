@@ -243,6 +243,7 @@ export default function Section03_FeatureMatrix({
           border-collapse: collapse;
           background-color: var(--c-bg, #ffffff);
           min-width: 640px;
+          table-layout: fixed;
         }
 
         .s3-table th,
@@ -251,6 +252,8 @@ export default function Section03_FeatureMatrix({
           text-align: left;
           font-size: 13px;
           border-bottom: 1px solid var(--c-rule, #e5e7eb);
+          word-break: keep-all;
+          overflow-wrap: break-word;
         }
 
         .s3-table th {
@@ -270,8 +273,10 @@ export default function Section03_FeatureMatrix({
         .s3-td-feature {
           font-weight: 600;
           color: var(--c-ink, #0f1130);
-          width: 30%;
+          width: 25%;
           background-color: var(--c-bg-soft, #f7f8fb);
+          word-break: keep-all;
+          overflow-wrap: break-word;
         }
 
         .s3-td-yes {
