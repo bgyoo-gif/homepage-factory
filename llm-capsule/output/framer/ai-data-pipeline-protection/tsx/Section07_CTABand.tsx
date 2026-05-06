@@ -2,7 +2,7 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const P = {
-  neutral800:  "#171719",
+  neutral800:  "#0f1130",
   white:       "#ffffff",
   textInverse: "#ffffff",
 }
@@ -33,7 +33,7 @@ export default function Section07_CTABand({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -79,7 +79,7 @@ export default function Section07_CTABand({
         @container (min-width: 1440px) { .s7-section { padding: 120px 120px; } }
 
         .s7-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 40px;
           font-weight: 700;
           color: ${P.textInverse};
@@ -94,12 +94,12 @@ export default function Section07_CTABand({
         @container (min-width: 1440px) { .s7-title { font-size: 50px; } }
 
         .s7-product {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 
         .s7-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: rgba(255, 255, 255, 0.85);
           line-height: 1.7;
@@ -122,7 +122,7 @@ export default function Section07_CTABand({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           font-size: 18px;
           padding: 16px 48px;
@@ -139,7 +139,7 @@ export default function Section07_CTABand({
         .s7-btn:hover { background-color: ${P.white}; }
 
         .s7-footnote {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 12px;
           color: rgba(255, 255, 255, 0.70);
           margin-top: 8px;

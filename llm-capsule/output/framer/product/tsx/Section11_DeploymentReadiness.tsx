@@ -1,18 +1,18 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandSecondary: "#5690D4",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
-  textTertiary:   "#9c9c9c",
+  brandSecondary: "#0ea5a4",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
+  textTertiary:   "#6b7280",
   white:          "#ffffff",
-  borderDefault:  "#e6e7e9",
+  borderDefault:  "#e5e7eb",
   surfaceWhite:   "#ffffff",
-  surfaceMid:     "#f2f2f2",
+  surfaceMid:     "#f7f8fb",
   shadowCard:     "0px 24px 40px rgba(0, 0, 0, 0.04)",
-  gradientBrand:  "linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%)",
-  neutral800:     "#171719",
-  neutral700:     "#303135",
+  gradientBrand:  "linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%)",
+  neutral800:     "#0f1130",
+  neutral700:     "#1b1d4a",
 }
 
 interface Props {
@@ -78,7 +78,7 @@ export default function Section11_DeploymentReadiness({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s11-section {
           width: 100%;
@@ -106,7 +106,7 @@ export default function Section11_DeploymentReadiness({
         }
         @container (max-width: 767px) { .s11-header { text-align: left; } }
         .s11-header__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -120,7 +120,7 @@ export default function Section11_DeploymentReadiness({
         @container (min-width: 1440px) { .s11-header__title { font-size: 28px; } }
         .s11-header__brand { color: ${PALETTE.brandSecondary}; }
         .s11-header__desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -134,7 +134,7 @@ export default function Section11_DeploymentReadiness({
         @container (min-width: 1440px) { .s11-header__desc { max-width: 1080px; } }
 
         .s11-body {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 500;
           color: ${PALETTE.textSecondary};
@@ -168,14 +168,14 @@ export default function Section11_DeploymentReadiness({
           stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
         }
         .s11-screenshot-label {
-          font-family: "Fragment Mono", monospace;
+          font-family: var(--f-mono, 'JetBrains Mono'), monospace;
           font-size: 12px;
           color: ${PALETTE.textTertiary};
           text-transform: uppercase;
           letter-spacing: 0.08em;
         }
         .s11-screenshot-desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${PALETTE.textTertiary};
         }
@@ -207,7 +207,7 @@ export default function Section11_DeploymentReadiness({
           stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
         }
         .s11-card-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 24px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -216,7 +216,7 @@ export default function Section11_DeploymentReadiness({
           text-wrap: pretty;
         }
         .s11-card-desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -238,7 +238,7 @@ export default function Section11_DeploymentReadiness({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 500;
           cursor: pointer;

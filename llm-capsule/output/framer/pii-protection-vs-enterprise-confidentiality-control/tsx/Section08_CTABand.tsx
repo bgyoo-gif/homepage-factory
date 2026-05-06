@@ -2,7 +2,7 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ────────────────────────────────────────────────────────────────
 const PALETTE = {
-  neutral800: "#171719",
+  neutral800: "#0f1130",
   white:      "#ffffff",
   // rgba(255,255,255,0.85)
   white85:    "rgba(255,255,255,0.85)",
@@ -14,7 +14,7 @@ const PALETTE = {
   white60:    "rgba(255,255,255,0.6)",
   // rgba(0,0,0,0.15)
   dark15:     "rgba(0,0,0,0.15)",
-  textPrimary: "#0f0f0f",
+  textPrimary: "#0f1130",
   bgImage:    "url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-violet-teal.png')",
 }
 
@@ -45,7 +45,7 @@ export default function Section08_CTABand({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -59,7 +59,7 @@ export default function Section08_CTABand({
           background-image: ${PALETTE.bgImage};
           background-size: cover;
           background-position: center;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           -webkit-font-smoothing: antialiased;
           word-break: keep-all;
           overflow-wrap: break-word;
@@ -88,7 +88,7 @@ export default function Section08_CTABand({
         }
 
         .s8-cta-band__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 36px;
           font-weight: 700;
           color: ${PALETTE.white};
@@ -107,7 +107,7 @@ export default function Section08_CTABand({
         @container (max-width: 767px) { .s8-cta-band__title { font-size: 36px; } }
 
         .s8-product-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 
@@ -137,7 +137,7 @@ export default function Section08_CTABand({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           border: none;

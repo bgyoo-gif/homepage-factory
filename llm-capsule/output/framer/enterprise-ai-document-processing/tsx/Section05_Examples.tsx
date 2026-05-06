@@ -16,7 +16,7 @@ export default function Section05_Examples({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -45,7 +45,7 @@ export default function Section05_Examples({
           text-align: center;
         }
         .s5-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: #0f0f0f;
@@ -53,9 +53,9 @@ export default function Section05_Examples({
           letter-spacing: -0.5px;
           text-wrap: pretty;
         }
-        .s5-brand { color: #5690D4; }
+        .s5-brand { color: #5b4fe9; }
         .s5-product {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 
@@ -70,7 +70,7 @@ export default function Section05_Examples({
           gap: 12px;
         }
         .s5-card__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: #0f0f0f;
@@ -78,7 +78,7 @@ export default function Section05_Examples({
           text-wrap: pretty;
         }
         .s5-card__description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.7;
           color: #636363;

@@ -2,36 +2,36 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────────────────────────
 const P = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  brandLight:     "#B8D4EE",
-  neutral900: "#0f0f0f",
-  neutral850: "#141414",
-  neutral800: "#171719",
-  neutral700: "#303135",
-  neutral500: "#636363",
-  neutral400: "#9c9c9c",
-  neutral350: "#adadad",
-  neutral300: "#bababa",
-  neutral200: "#e0e0e0",
-  neutral150: "#e6e7e9",
-  neutral100: "#ececec",
-  neutral050: "#f2f2f2",
-  neutral025: "#f7f7f7",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  brandLight:     "#eeebfe",
+  neutral900: "#0f1130",
+  neutral850: "#0f1130",
+  neutral800: "#0f1130",
+  neutral700: "#1b1d4a",
+  neutral500: "#3a3d5e",
+  neutral400: "#6b7280",
+  neutral350: "#6b7280",
+  neutral300: "#6b7280",
+  neutral200: "#e5e7eb",
+  neutral150: "#e5e7eb",
+  neutral100: "#f7f8fb",
+  neutral050: "#f7f8fb",
+  neutral025: "#f7f8fb",
   white:      "#ffffff",
-  black:      "#000000",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
-  textTertiary:  "#9c9c9c",
+  black:      "#0f1130",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
+  textTertiary:  "#6b7280",
   textInverse:   "#ffffff",
-  borderDefault: "#e6e7e9",
-  borderStrong:  "#171719",
-  surfaceDark:  "#171719",
-  surfaceMid:   "#f2f2f2",
-  surfaceLight: "#f7f7f7",
+  borderDefault: "#e5e7eb",
+  borderStrong:  "#0f1130",
+  surfaceDark:  "#0f1130",
+  surfaceMid:   "#f7f8fb",
+  surfaceLight: "#f7f8fb",
   surfaceWhite: "#ffffff",
-  gradientBrand: "linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%)",
+  gradientBrand: "linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%)",
 }
 
 // ─── JSON-LD ───────────────────────────────────────────────────────────────────
@@ -481,12 +481,12 @@ export default function Learn({
       />
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         /* ── Reset ───────────────────────────────────────────────── */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         .lrn-root {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           color: ${P.textPrimary};
           background-color: ${P.surfaceWhite};
           -webkit-font-smoothing: antialiased;
@@ -523,7 +523,7 @@ export default function Learn({
 
         /* ── Hero ────────────────────────────────────────────────── */
         .lrn-hero__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 32px; font-weight: 700;
           color: ${P.textPrimary};
           line-height: 1.2; letter-spacing: -0.5px;
@@ -624,12 +624,12 @@ export default function Learn({
         @container (min-width: 1440px) { .lrn-cta-band__inner { max-width: 1080px; } }
 
         .lrn-cta-band__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 40px; font-weight: 700;
           color: ${P.white}; line-height: 1.2;
           letter-spacing: -0.5px; margin: 0;
         }
-        .lrn-text--product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+        .lrn-text--product { font-family: var(--f-display, 'Inter'), sans-serif; font-weight: 700; }
         @container (max-width: 767px) { .lrn-cta-band__title { font-size: 36px; } }
         @container (min-width: 1440px) {
           .lrn-cta-band { padding: 120px 120px; }
@@ -647,7 +647,7 @@ export default function Learn({
 
         .lrn-btn {
           display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-          border-radius: 9999px; font-family: "DM Sans", sans-serif;
+          border-radius: 9999px; font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500; cursor: pointer; border: none;
           transition: opacity 0.2s, background-color 0.2s;
           white-space: nowrap; text-decoration: none;

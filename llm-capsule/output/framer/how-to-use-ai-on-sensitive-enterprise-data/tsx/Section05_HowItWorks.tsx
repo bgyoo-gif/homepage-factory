@@ -2,12 +2,12 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const P = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
-  borderDefault:  "#e6e7e9",
-  surfaceLight:   "#f7f7f7",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
+  borderDefault:  "#e5e7eb",
+  surfaceLight:   "#f7f8fb",
   white:          "#ffffff",
 }
 
@@ -80,7 +80,7 @@ export default function Section05_HowItWorks({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s5-section {
           width: 100%;
@@ -120,7 +120,7 @@ export default function Section05_HowItWorks({
           text-align: center;
         }
         .s5-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${P.textPrimary};
@@ -130,12 +130,12 @@ export default function Section05_HowItWorks({
           text-wrap: pretty;
         }
         .s5-brand {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 
         .s5-paragraph {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${P.textSecondary};
           line-height: 1.7;
@@ -152,7 +152,7 @@ export default function Section05_HowItWorks({
           border-top: 1px solid ${P.borderDefault};
           border-bottom: 1px solid ${P.borderDefault};
           background-color: ${BANNER_BG};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.7;
           text-align: center;

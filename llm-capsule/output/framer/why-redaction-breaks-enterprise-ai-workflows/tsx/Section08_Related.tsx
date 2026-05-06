@@ -2,14 +2,14 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ────────────────────────────────────────────────────────────────
 const C = {
-  brandSecondary: "#5690D4",
-  brandFont:      "Oxanium",
-  textPrimary:    "#0f0f0f",
+  brandSecondary: "#0ea5a4",
+  brandFont:      var(--f-display, 'Inter'),
+  textPrimary:    "#0f1130",
   textInverse:    "#ffffff",
-  neutral850:     "#141414",
-  neutral800:     "#171719",
-  neutral700:     "#303135",
-  borderDefault:  "#e6e7e9",
+  neutral850:     "#0f1130",
+  neutral800:     "#0f1130",
+  neutral700:     "#1b1d4a",
+  borderDefault:  "#e5e7eb",
   trackingTight:  "-0.5px",
 }
 
@@ -58,7 +58,7 @@ export default function Section08_Related({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s8-section {
           width: 100%;
@@ -87,7 +87,7 @@ export default function Section08_Related({
         }
         .s8-title-icon__icon { color: ${C.brandSecondary}; flex-shrink: 0; }
         .s8-title-icon__text {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 600;
           color: ${C.textPrimary};
@@ -113,7 +113,7 @@ export default function Section08_Related({
         .s8-card:hover { background-color: ${C.neutral800}; }
         .s8-card__icon { flex-shrink: 0; color: ${C.brandSecondary}; }
         .s8-card__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: ${C.textInverse};

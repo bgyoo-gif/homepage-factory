@@ -173,7 +173,7 @@ export default function Section02_IndustryUseCases({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s2-section {
           width: 100%;
@@ -204,7 +204,7 @@ export default function Section02_IndustryUseCases({
           border-bottom: 1px solid #e6e7e9;
         }
         .s2-section-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: #0f0f0f;
@@ -214,14 +214,14 @@ export default function Section02_IndustryUseCases({
           text-wrap: pretty;
         }
         .s2-title-brand {
-          color: #5690D4;
+          color: #5b4fe9;
         }
         .s2-title-product {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
         .s2-section-desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: #636363;
           line-height: 1.7;
@@ -247,7 +247,7 @@ export default function Section02_IndustryUseCases({
         }
         .s2-card-icon-wrap {
           margin-bottom: 12px;
-          color: #5690D4;
+          color: #5b4fe9;
         }
         .s2-card-icon {
           width: 32px;
@@ -259,7 +259,7 @@ export default function Section02_IndustryUseCases({
           stroke-linejoin: round;
         }
         .s2-card-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           font-weight: 600;
           color: #0f0f0f;
@@ -267,7 +267,7 @@ export default function Section02_IndustryUseCases({
           margin-bottom: 12px;
         }
         .s2-card-desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: #636363;
           line-height: 1.7;
@@ -291,7 +291,7 @@ export default function Section02_IndustryUseCases({
           gap: 8px;
           padding: 12px;
           border-radius: 5px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           line-height: 1.5;
         }
@@ -307,7 +307,7 @@ export default function Section02_IndustryUseCases({
           display: inline-flex;
           align-items: center;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           font-size: 10px;
           padding: 2px 6px;
@@ -331,7 +331,7 @@ export default function Section02_IndustryUseCases({
           margin-top: 16px;
         }
         .s2-tag {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 12px;
           color: #9c9c9c;
           background-color: #f2f2f2;

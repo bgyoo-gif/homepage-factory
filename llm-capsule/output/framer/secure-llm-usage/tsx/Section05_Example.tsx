@@ -1,11 +1,11 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandSecondary: "#5690D4",
-  neutral150: "#e6e7e9",
-  neutral050: "#f2f2f2",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
+  brandSecondary: "#0ea5a4",
+  neutral150: "#e5e7eb",
+  neutral050: "#f7f8fb",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
   surfaceWhite: "#ffffff",
   shadowCard: "0px 24px 40px rgba(0, 0, 0, 0.04)",
 }
@@ -24,7 +24,7 @@ export default function Section05_Example({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s5-section {
           width: 100%;
@@ -54,7 +54,7 @@ export default function Section05_Example({
           text-align: center;
         }
         .s5-section-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -76,7 +76,7 @@ export default function Section05_Example({
           flex-direction: column;
         }
         .s5-card-text {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;

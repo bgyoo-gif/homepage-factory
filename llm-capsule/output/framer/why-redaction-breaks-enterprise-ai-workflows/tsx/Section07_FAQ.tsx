@@ -3,14 +3,14 @@ import { useState } from "react"
 
 // ─── Palette ────────────────────────────────────────────────────────────────
 const C = {
-  brandSecondary: "#5690D4",
-  brandFont:      "Oxanium",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
-  textTertiary:   "#9c9c9c",
+  brandSecondary: "#0ea5a4",
+  brandFont:      var(--f-display, 'Inter'),
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
+  textTertiary:   "#6b7280",
   surfaceWhite:   "#ffffff",
-  surfaceLight:   "#f7f7f7",
-  borderDefault:  "#e6e7e9",
+  surfaceLight:   "#f7f8fb",
+  borderDefault:  "#e5e7eb",
   trackingTight:  "-0.5px",
 }
 
@@ -55,7 +55,7 @@ function AccordionItem({
       >
         <span
           style={{
-            fontFamily: '"DM Sans", sans-serif',
+            fontFamily: 'var(--f-display, 'Inter'), sans-serif',
             fontSize: 18,
             fontWeight: 500,
             lineHeight: 1.2,
@@ -96,7 +96,7 @@ function AccordionItem({
         >
           <p
             style={{
-              fontFamily: '"DM Sans", sans-serif',
+              fontFamily: 'var(--f-display, 'Inter'), sans-serif',
               fontSize: 14,
               color: C.textSecondary,
               lineHeight: 1.7,
@@ -178,7 +178,7 @@ export default function Section07_FAQ({
         dangerouslySetInnerHTML={{ __html: jsonLdFaq }}
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s7-section {
           width: 100%;
@@ -206,7 +206,7 @@ export default function Section07_FAQ({
           text-align: center;
         }
         .s7-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${C.textPrimary};

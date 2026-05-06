@@ -3,13 +3,13 @@ import { addPropertyControls, ControlType } from "framer"
 const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference"
 
 const BRAND = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  neutral800:    "#171719",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  neutral800:    "#0f1130",
   textInverse:   "#ffffff",
   white:         "#ffffff",
-  gradientBrand: "linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%)",
+  gradientBrand: "linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%)",
 }
 
 interface Props {
@@ -38,7 +38,7 @@ export default function Section06_CTA({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -70,7 +70,7 @@ export default function Section06_CTA({
           gap: 24px;
         }
         .s6-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 36px;
           font-weight: 700;
           color: ${BRAND.white};
@@ -80,7 +80,7 @@ export default function Section06_CTA({
           text-wrap: pretty;
         }
         .s6-product-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
         .s6-description {
@@ -104,7 +104,7 @@ export default function Section06_CTA({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           transition: background-color 0.2s;

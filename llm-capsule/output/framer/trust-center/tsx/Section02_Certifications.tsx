@@ -57,7 +57,7 @@ export default function Section02_Certifications({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s2-section {
           width: 100%;
@@ -94,7 +94,7 @@ export default function Section02_Certifications({
           border-bottom: 1px solid #e6e7e9;
         }
         .s2-section-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: #0f0f0f;
@@ -106,9 +106,9 @@ export default function Section02_Certifications({
         @container (min-width: 768px) { .s2-section-title { font-size: 22px; } }
         @container (min-width: 1024px) { .s2-section-title { font-size: 24px; } }
         @container (min-width: 1440px) { .s2-section-title { font-size: 28px; } }
-        .s2-title-highlight { color: #5690D4; }
+        .s2-title-highlight { color: #5b4fe9; }
         .s2-section-desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: #636363;
           line-height: 1.7;
@@ -156,12 +156,12 @@ export default function Section02_Certifications({
           width: 200px;
         }
         .s2-cert-card-group {
-          font-family: "Fragment Mono", monospace;
+          font-family: var(--f-mono, 'JetBrains Mono'), monospace;
           font-size: 10px;
           font-weight: 500;
           text-transform: uppercase;
           letter-spacing: 0.08em;
-          color: #5690D4;
+          color: #5b4fe9;
           margin-bottom: 4px;
         }
         .s2-cert-card-wreath {
@@ -185,7 +185,7 @@ export default function Section02_Certifications({
         .s2-cert-wreath-text {
           position: relative;
           z-index: 1;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           font-weight: 700;
           color: #0f0f0f;
@@ -194,7 +194,7 @@ export default function Section02_Certifications({
           max-width: 90px;
         }
         .s2-cert-card-org {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 12px;
           color: #636363;
         }

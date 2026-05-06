@@ -2,17 +2,17 @@ import { addPropertyControls, ControlType } from "framer"
 
 // LLM Capsule Brand Palette
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  neutral900: "#0f0f0f",
-  neutral500: "#636363",
-  neutral400: "#9c9c9c",
-  neutral150: "#e6e7e9",
-  neutral100: "#ececec",
-  neutral025: "#f7f7f7",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  neutral900: "#0f1130",
+  neutral500: "#3a3d5e",
+  neutral400: "#6b7280",
+  neutral150: "#e5e7eb",
+  neutral100: "#f7f8fb",
+  neutral025: "#f7f8fb",
   white:      "#ffffff",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
   surfaceWhite: "#ffffff",
 }
 
@@ -31,7 +31,7 @@ export default function Section03_Explanation({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -63,7 +63,7 @@ export default function Section03_Explanation({
         }
 
         .s3-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -77,7 +77,7 @@ export default function Section03_Explanation({
         }
 
         .s3-paragraph {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -96,7 +96,7 @@ export default function Section03_Explanation({
         }
 
         .s3-product-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 

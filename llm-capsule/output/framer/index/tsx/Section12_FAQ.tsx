@@ -3,15 +3,15 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ─────────────────────────────────────────────────────────────────
 const P = {
-  brandSecondary: "#5690D4",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
-  textTertiary:   "#9c9c9c",
+  brandSecondary: "#0ea5a4",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
+  textTertiary:   "#6b7280",
   white:          "#ffffff",
-  neutral025:     "#f7f7f7",
-  borderDefault:  "#e6e7e9",
+  neutral025:     "#f7f8fb",
+  borderDefault:  "#e5e7eb",
   surfaceWhite:   "#ffffff",
-  surfaceLight:   "#f7f7f7",
+  surfaceLight:   "#f7f8fb",
 }
 
 interface Props {
@@ -63,7 +63,7 @@ export default function Section12_FAQ({
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         .idx-root {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           color: ${P.textPrimary};
           background-color: ${P.surfaceWhite};
           -webkit-font-smoothing: antialiased;

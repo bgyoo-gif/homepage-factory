@@ -2,14 +2,14 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const C = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  neutral850:     "#141414",
-  neutral800:     "#171719",
-  neutral700:     "#303135",
-  neutral150:     "#e6e7e9",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  neutral850:     "#0f1130",
+  neutral800:     "#0f1130",
+  neutral700:     "#1b1d4a",
+  neutral150:     "#e5e7eb",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   textInverse:    "#ffffff",
   surfaceWhite:   "#ffffff",
 }
@@ -114,7 +114,7 @@ export default function Section06_RelatedPages({
         }
         .s6-section-title__icon { color: ${C.brandSecondary}; flex-shrink: 0; }
         .s6-section-title__text {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 600;
           color: ${C.textPrimary};
@@ -143,7 +143,7 @@ export default function Section06_RelatedPages({
         .s6-card:hover { background-color: ${C.neutral800}; }
         .s6-card__icon { flex-shrink: 0; color: ${C.brandSecondary}; }
         .s6-card__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: ${C.textInverse};

@@ -1,13 +1,13 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandSecondary: "#5690D4",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandSecondary: "#0ea5a4",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   white:          "#ffffff",
-  borderDefault:  "#e6e7e9",
-  surfaceLight:   "#f7f7f7",
-  success:        "#0e824c",
+  borderDefault:  "#e5e7eb",
+  surfaceLight:   "#f7f8fb",
+  success:        "#0ea5a4",
 }
 
 const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference"
@@ -58,7 +58,7 @@ export default function Section03_ZeroExposure({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s3-section {
           width: 100%;
@@ -86,7 +86,7 @@ export default function Section03_ZeroExposure({
         }
         @container (max-width: 767px) { .s3-header { text-align: left; } }
         .s3-header__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -100,7 +100,7 @@ export default function Section03_ZeroExposure({
         @container (min-width: 1440px) { .s3-header__title { font-size: 28px; } }
         .s3-header__brand { color: ${PALETTE.brandSecondary}; }
         .s3-header__desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -169,14 +169,14 @@ export default function Section03_ZeroExposure({
           stroke-linejoin: round;
         }
         .s3-visual-placeholder-label {
-          font-family: "Fragment Mono", monospace;
+          font-family: var(--f-mono, 'JetBrains Mono'), monospace;
           font-size: 12px;
           color: rgba(255,255,255,0.7);
           text-transform: uppercase;
           letter-spacing: 0.08em;
         }
         .s3-visual-placeholder-desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: rgba(255,255,255,0.55);
         }
@@ -187,7 +187,7 @@ export default function Section03_ZeroExposure({
           gap: 16px;
         }
         .s3-lead {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${PALETTE.textPrimary};
           line-height: 1.7;
@@ -211,7 +211,7 @@ export default function Section03_ZeroExposure({
           display: flex;
           align-items: flex-start;
           gap: 8px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.5;
           color: ${PALETTE.textPrimary};

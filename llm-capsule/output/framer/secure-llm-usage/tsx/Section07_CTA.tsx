@@ -3,7 +3,7 @@ import { addPropertyControls, ControlType } from "framer"
 const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images"
 
 const PALETTE = {
-  neutral800: "#171719",
+  neutral800: "#0f1130",
   white:      "#ffffff",
   textInverse: "#ffffff",
   overlayDarkLight: "rgba(0,0,0,0.15)",
@@ -52,7 +52,7 @@ export default function Section07_CTA({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s7-section {
           width: 100%;
@@ -85,7 +85,7 @@ export default function Section07_CTA({
           container-type: inline-size;
         }
         .s7-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 36px;
           font-weight: 700;
           color: ${PALETTE.textInverse};
@@ -95,11 +95,11 @@ export default function Section07_CTA({
           text-wrap: pretty;
         }
         .s7-product-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
         .s7-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.overlayWhite85};
           line-height: 1.7;
@@ -119,7 +119,7 @@ export default function Section07_CTA({
           align-items: center;
           justify-content: center;
           padding: 16px 48px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           font-weight: 500;
           background-color: ${PALETTE.overlayNavBg};
@@ -136,7 +136,7 @@ export default function Section07_CTA({
           background-color: ${PALETTE.white};
         }
         .s7-footnote {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 12px;
           color: ${PALETTE.overlayWhite70};
           margin-top: 8px;

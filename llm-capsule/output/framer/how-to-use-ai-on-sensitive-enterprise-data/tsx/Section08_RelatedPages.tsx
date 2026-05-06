@@ -2,12 +2,12 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const P = {
-  brandSecondary: "#5690D4",
-  neutral850:     "#141414",
-  neutral800:     "#171719",
-  neutral700:     "#303135",
+  brandSecondary: "#0ea5a4",
+  neutral850:     "#0f1130",
+  neutral800:     "#0f1130",
+  neutral700:     "#1b1d4a",
   textInverse:    "#ffffff",
-  borderDefault:  "#e6e7e9",
+  borderDefault:  "#e5e7eb",
   white:          "#ffffff",
 }
 
@@ -147,7 +147,7 @@ export default function Section08_RelatedPages({
         }
         .s8-section-title__icon { color: ${P.brandSecondary}; flex-shrink: 0; }
         .s8-section-title__text {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 600;
           color: #0f0f0f;
@@ -184,7 +184,7 @@ export default function Section08_RelatedPages({
           color: ${P.brandSecondary};
         }
         .s8-dark-card__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: ${P.textInverse};

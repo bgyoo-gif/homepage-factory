@@ -3,7 +3,7 @@ import { addPropertyControls, ControlType } from "framer"
 const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images"
 
 const PALETTE = {
-  neutral800:  "#171719",
+  neutral800:  "#0f1130",
   white:       "#ffffff",
   textInverse: "#ffffff",
   // overlay white 85%: rgba(255,255,255,0.85)
@@ -36,7 +36,7 @@ export default function Section09_CTA({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -69,7 +69,7 @@ export default function Section09_CTA({
           container-type: inline-size;
         }
         .s9-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 40px;
           font-weight: 700;
           color: ${PALETTE.white};
@@ -80,11 +80,11 @@ export default function Section09_CTA({
           word-break: keep-all;
         }
         .s9-product-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
         .s9-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: rgba(255,255,255,0.85);
           line-height: 1.7;
@@ -105,7 +105,7 @@ export default function Section09_CTA({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           border: 1px solid rgba(255,255,255,0.6);
@@ -122,7 +122,7 @@ export default function Section09_CTA({
           background-color: ${PALETTE.white};
         }
         .s9-footnote {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 12px;
           color: rgba(255,255,255,0.70);
           margin-top: 8px;

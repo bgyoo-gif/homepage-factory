@@ -50,20 +50,20 @@ const JSON_LD_FAQ = JSON.stringify({
 })
 
 const PALETTE = {
-  brandSecondary: "#5690D4",
-  brandFont:      "Oxanium",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
-  textTertiary:   "#9c9c9c",
+  brandSecondary: "#0ea5a4",
+  brandFont:      var(--f-display, 'Inter'),
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
+  textTertiary:   "#6b7280",
   white:          "#ffffff",
-  borderDefault:  "#e6e7e9",
-  surfaceLight:   "#f7f7f7",
-  neutral025:     "#f7f7f7",
-  neutral400:     "#9c9c9c",
-  neutral850:     "#141414",
-  neutral700:     "#303135",
-  neutral800:     "#171719",
-  neutral350:     "#adadad",
+  borderDefault:  "#e5e7eb",
+  surfaceLight:   "#f7f8fb",
+  neutral025:     "#f7f8fb",
+  neutral400:     "#6b7280",
+  neutral850:     "#0f1130",
+  neutral700:     "#1b1d4a",
+  neutral800:     "#0f1130",
+  neutral350:     "#6b7280",
 }
 
 const EXPLORE_ICONS = [
@@ -197,7 +197,7 @@ export default function Section13_FAQ({
         dangerouslySetInnerHTML={{ __html: JSON_LD_FAQ }}
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s13-section {
           width: 100%;
@@ -225,7 +225,7 @@ export default function Section13_FAQ({
         }
         @container (max-width: 767px) { .s13-header { text-align: left; } }
         .s13-header__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -238,7 +238,7 @@ export default function Section13_FAQ({
         @container (min-width: 1024px) { .s13-header__title { font-size: 24px; } }
         @container (min-width: 1440px) { .s13-header__title { font-size: 28px; } }
         .s13-header__brand   { color: ${PALETTE.brandSecondary}; }
-        .s13-header__product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+        .s13-header__product { font-family: var(--f-display, 'Inter'), sans-serif; font-weight: 700; }
 
         /* Accordion */
         .s13-ac-list {
@@ -268,7 +268,7 @@ export default function Section13_FAQ({
           text-align: left;
         }
         .s13-ac-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           font-weight: 500;
           line-height: 1.2;
@@ -305,7 +305,7 @@ export default function Section13_FAQ({
           padding: 24px;
           border-top: 1px solid ${PALETTE.borderDefault};
           background-color: ${PALETTE.surfaceLight};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -316,7 +316,7 @@ export default function Section13_FAQ({
 
         /* Explore Further */
         .s13-explore-header {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 600;
           color: ${PALETTE.textPrimary};
@@ -359,7 +359,7 @@ export default function Section13_FAQ({
           flex-shrink: 0;
         }
         .s13-dark-card__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: ${PALETTE.white};
@@ -367,7 +367,7 @@ export default function Section13_FAQ({
         }
         .s13-dark-card__arrow {
           flex-shrink: 0;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${PALETTE.neutral400};
           transition: color 0.15s;

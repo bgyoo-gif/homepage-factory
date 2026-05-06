@@ -1,13 +1,13 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
-  borderDefault: "#e6e7e9",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
+  borderDefault: "#e5e7eb",
   surfaceWhite: "#ffffff",
-  surfaceLight: "#f7f7f7",
+  surfaceLight: "#f7f8fb",
   bannerBrandTint: "rgba(24, 33, 232, 0.06)",
 }
 
@@ -25,7 +25,7 @@ export default function Section05_HowCapsuleDiffers({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -64,7 +64,7 @@ export default function Section05_HowCapsuleDiffers({
           text-align: center;
         }
         .s5-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -76,11 +76,11 @@ export default function Section05_HowCapsuleDiffers({
           color: ${PALETTE.brandSecondary};
         }
         .s5-brand-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
         .s5-paragraph {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -95,7 +95,7 @@ export default function Section05_HowCapsuleDiffers({
           border-top: 1px solid ${PALETTE.borderDefault};
           border-bottom: 1px solid ${PALETTE.borderDefault};
           background-color: ${PALETTE.bannerBrandTint};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.7;
           word-break: keep-all;

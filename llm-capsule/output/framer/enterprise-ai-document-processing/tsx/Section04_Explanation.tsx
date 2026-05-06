@@ -44,7 +44,7 @@ export default function Section04_Explanation({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -73,7 +73,7 @@ export default function Section04_Explanation({
           text-align: center;
         }
         .s4-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: #0f0f0f;
@@ -81,14 +81,14 @@ export default function Section04_Explanation({
           letter-spacing: -0.5px;
           text-wrap: pretty;
         }
-        .s4-brand { color: #5690D4; }
+        .s4-brand { color: #5b4fe9; }
         .s4-product {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 
         .s4-intro {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: #636363;
           line-height: 1.7;
@@ -110,7 +110,7 @@ export default function Section04_Explanation({
           display: flex;
           align-items: flex-start;
           gap: 8px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.5;
           color: #0f0f0f;
@@ -129,7 +129,7 @@ export default function Section04_Explanation({
         }
         .s4-bullet__icon::before {
           content: "•";
-          color: #5690D4;
+          color: #5b4fe9;
           font-weight: 700;
           font-size: 18px;
           line-height: 1;
@@ -141,7 +141,7 @@ export default function Section04_Explanation({
           border-top: 1px solid #e6e7e9;
           border-bottom: 1px solid #e6e7e9;
           background-color: rgba(24, 33, 232, 0.06);
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.7;
           color: #0f0f0f;

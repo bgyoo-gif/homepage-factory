@@ -4,8 +4,8 @@ const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const P = {
-  neutral050:     "#f2f2f2",
-  textTertiary:   "#9c9c9c",
+  neutral050:     "#f7f8fb",
+  textTertiary:   "#6b7280",
   white:          "#ffffff",
 }
 
@@ -76,7 +76,7 @@ export default function Section02_ScreenshotFrame({
           padding: 48px 24px;
         }
         .s2-screenshot__label {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${P.textTertiary};
           text-align: center;

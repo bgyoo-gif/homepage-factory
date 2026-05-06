@@ -1,12 +1,12 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
   surfaceWhite:   "#ffffff",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
-  borderDefault:  "#e6e7e9",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
+  borderDefault:  "#e5e7eb",
   shadowCard:     "0px 24px 40px rgba(0, 0, 0, 0.04)",
 }
 
@@ -28,7 +28,7 @@ export default function Section06_EnterpriseExample({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -59,7 +59,7 @@ export default function Section06_EnterpriseExample({
           text-align: center;
         }
         .s6-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           line-height: 1.2;
@@ -79,7 +79,7 @@ export default function Section06_EnterpriseExample({
           gap: 12px;
         }
         .s6-card-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           font-weight: 600;
           color: ${PALETTE.textPrimary};
@@ -87,7 +87,7 @@ export default function Section06_EnterpriseExample({
           text-wrap: pretty;
         }
         .s6-card-p {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -96,7 +96,7 @@ export default function Section06_EnterpriseExample({
           text-wrap: pretty;
         }
         .s6-product-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 

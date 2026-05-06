@@ -2,14 +2,14 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ─────────────────────────────────────────────────────────────────
 const P = {
-  brandSecondary: "#5690D4",
-  success:        "#0e824c",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandSecondary: "#0ea5a4",
+  success:        "#0ea5a4",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   white:          "#ffffff",
-  borderDefault:  "#e6e7e9",
+  borderDefault:  "#e5e7eb",
   surfaceWhite:   "#ffffff",
-  surfaceLight:   "#f7f7f7",
+  surfaceLight:   "#f7f8fb",
 }
 
 interface Props {
@@ -56,11 +56,11 @@ export default function Section06_CaseStudy({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         .idx-root {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           color: ${P.textPrimary};
           background-color: ${P.surfaceWhite};
           -webkit-font-smoothing: antialiased;
@@ -85,7 +85,7 @@ export default function Section06_CaseStudy({
         .idx-section { width: 100%; padding: 60px 0; background-color: ${P.surfaceWhite}; }
 
         .idx-brand { color: ${P.brandSecondary}; }
-        .idx-product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+        .idx-product { font-family: var(--f-display, 'Inter'), sans-serif; font-weight: 700; }
 
         .idx-section-header { margin-bottom: 48px; text-align: center; }
         .idx-section-header--underline {

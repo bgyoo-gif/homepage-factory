@@ -2,12 +2,12 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ─────────────────────────────────────────────────────────────────
 const P = {
-  brandSecondary: "#5690D4",
-  gradientBrand:  "linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%)",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandSecondary: "#0ea5a4",
+  gradientBrand:  "linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%)",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   white:          "#ffffff",
-  borderDefault:  "#e6e7e9",
+  borderDefault:  "#e5e7eb",
   surfaceWhite:   "#ffffff",
 }
 
@@ -56,7 +56,7 @@ export default function Section10_Performance({
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         .idx-root {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           color: ${P.textPrimary};
           background-color: ${P.surfaceWhite};
           -webkit-font-smoothing: antialiased;
@@ -116,7 +116,7 @@ export default function Section10_Performance({
         .idx-kpi-band > * { position: relative; z-index: 1; }
         .idx-kpi-band__item { display: flex; flex-direction: column; gap: 12px; text-align: center; }
         .idx-kpi-band__number {
-          font-family: "DM Sans", sans-serif; font-size: 50px;
+          font-family: var(--f-display, 'Inter'), sans-serif; font-size: 50px;
           font-weight: 700; line-height: 1; color: ${P.white};
         }
         .idx-kpi-band__label { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.5; }

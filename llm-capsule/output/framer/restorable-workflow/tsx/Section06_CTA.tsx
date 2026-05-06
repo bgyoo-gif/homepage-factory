@@ -3,13 +3,13 @@ import { useState, useEffect } from "react"
 
 // LLM Capsule Brand Palette
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  neutral900: "#0f0f0f",
-  neutral800: "#171719",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  neutral900: "#0f1130",
+  neutral800: "#0f1130",
   white:      "#ffffff",
-  textPrimary:   "#0f0f0f",
+  textPrimary:   "#0f1130",
   overlayNavBg:     "rgba(255,255,255,0.92)",
   overlayDarkLight: "rgba(0,0,0,0.15)",
   overlayWhite85:   "rgba(255,255,255,0.85)",
@@ -50,7 +50,7 @@ export default function Section06_CTA({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -89,7 +89,7 @@ export default function Section06_CTA({
         }
 
         .s6-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 36px;
           font-weight: 700;
           color: ${PALETTE.white};
@@ -100,12 +100,12 @@ export default function Section06_CTA({
         }
 
         .s6-product-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 
         .s6-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.overlayWhite85};
           line-height: 1.7;
@@ -130,7 +130,7 @@ export default function Section06_CTA({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           border: 1px solid ${PALETTE.overlayCtnBtnBdr};
@@ -151,7 +151,7 @@ export default function Section06_CTA({
         }
 
         .s6-footnote {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 12px;
           color: ${PALETTE.overlayWhite70};
           margin-top: 8px;

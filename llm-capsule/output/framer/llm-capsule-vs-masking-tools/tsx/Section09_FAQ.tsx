@@ -2,13 +2,13 @@ import { addPropertyControls, ControlType } from "framer"
 import { useState } from "react"
 
 const PALETTE = {
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
-  textTertiary:  "#9c9c9c",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
+  textTertiary:  "#6b7280",
   surfaceWhite:  "#ffffff",
-  surfaceLight:  "#f7f7f7",
-  neutral025:    "#f7f7f7",
-  borderDefault: "#e6e7e9",
+  surfaceLight:  "#f7f8fb",
+  neutral025:    "#f7f8fb",
+  borderDefault: "#e5e7eb",
 }
 
 interface Props {
@@ -45,7 +45,7 @@ export default function Section09_FAQ({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s9-section {
           width: 100%;
@@ -75,7 +75,7 @@ export default function Section09_FAQ({
           text-align: center;
         }
         .s9-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -108,7 +108,7 @@ export default function Section09_FAQ({
           user-select: none;
         }
         .s9-card-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           font-weight: 500;
           line-height: 1.2;
@@ -156,7 +156,7 @@ export default function Section09_FAQ({
           padding: 24px;
           border-top: 1px solid ${PALETTE.borderDefault};
           background-color: ${PALETTE.surfaceLight};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;

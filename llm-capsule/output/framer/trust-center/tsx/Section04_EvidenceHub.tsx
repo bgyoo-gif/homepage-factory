@@ -32,7 +32,7 @@ export default function Section04_EvidenceHub({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s4-section {
           width: 100%;
@@ -63,7 +63,7 @@ export default function Section04_EvidenceHub({
           border-bottom: 1px solid #e6e7e9;
         }
         .s4-section-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: #0f0f0f;
@@ -75,9 +75,9 @@ export default function Section04_EvidenceHub({
         @container (min-width: 768px) { .s4-section-title { font-size: 22px; } }
         @container (min-width: 1024px) { .s4-section-title { font-size: 24px; } }
         @container (min-width: 1440px) { .s4-section-title { font-size: 28px; } }
-        .s4-title-highlight { color: #5690D4; }
+        .s4-title-highlight { color: #5b4fe9; }
         .s4-section-desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: #636363;
           line-height: 1.7;
@@ -109,7 +109,7 @@ export default function Section04_EvidenceHub({
           gap: 8px;
         }
         .s4-feature-icon {
-          color: #5690D4;
+          color: #5b4fe9;
           margin-bottom: 4px;
         }
         .s4-feature-icon svg {
@@ -122,13 +122,13 @@ export default function Section04_EvidenceHub({
           stroke-linejoin: round;
         }
         .s4-feature-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           font-weight: 600;
           color: #0f0f0f;
         }
         .s4-feature-desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: #636363;
           line-height: 1.7;
@@ -154,7 +154,7 @@ export default function Section04_EvidenceHub({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           border: none;
@@ -165,7 +165,7 @@ export default function Section04_EvidenceHub({
           font-size: 16px;
         }
         .s4-btn-primary {
-          background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+          background: linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%);
           color: #ffffff;
         }
         .s4-btn-primary:hover { opacity: 0.88; }

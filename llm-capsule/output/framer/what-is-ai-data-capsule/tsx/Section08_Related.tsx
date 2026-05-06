@@ -1,14 +1,14 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandSecondary: "#5690D4",
-  neutral850:     "#141414",
-  neutral800:     "#171719",
-  neutral700:     "#303135",
+  brandSecondary: "#0ea5a4",
+  neutral850:     "#0f1130",
+  neutral800:     "#0f1130",
+  neutral700:     "#1b1d4a",
   surfaceWhite:   "#ffffff",
-  textPrimary:    "#0f0f0f",
+  textPrimary:    "#0f1130",
   textInverse:    "#ffffff",
-  borderDefault:  "#e6e7e9",
+  borderDefault:  "#e5e7eb",
 }
 
 // Icons are kept as a const array — they don't need to be editable Props
@@ -91,7 +91,7 @@ export default function Section08_Related({
           flex-shrink: 0;
         }
         .s8-title-text {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 600;
           color: ${PALETTE.textPrimary};
@@ -124,7 +124,7 @@ export default function Section08_Related({
           color: ${PALETTE.brandSecondary};
         }
         .s8-card-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: ${PALETTE.textInverse};

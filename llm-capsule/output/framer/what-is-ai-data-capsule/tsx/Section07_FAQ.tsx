@@ -2,14 +2,14 @@ import { addPropertyControls, ControlType } from "framer"
 import { useState } from "react"
 
 const PALETTE = {
-  brandSecondary: "#5690D4",
+  brandSecondary: "#0ea5a4",
   surfaceWhite:   "#ffffff",
-  surfaceLight:   "#f7f7f7",
-  neutral025:     "#f7f7f7",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
-  textTertiary:   "#9c9c9c",
-  borderDefault:  "#e6e7e9",
+  surfaceLight:   "#f7f8fb",
+  neutral025:     "#f7f8fb",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
+  textTertiary:   "#6b7280",
+  borderDefault:  "#e5e7eb",
 }
 
 interface Props {
@@ -51,7 +51,7 @@ function AccordionCard({ question, answer, defaultOpen = false }: { question: st
       >
         <span
           style={{
-            fontFamily: '"DM Sans", sans-serif',
+            fontFamily: 'var(--f-display, 'Inter'), sans-serif',
             fontSize: "18px",
             fontWeight: 500,
             lineHeight: 1.2,
@@ -88,7 +88,7 @@ function AccordionCard({ question, answer, defaultOpen = false }: { question: st
             padding: "24px",
             borderTop: `1px solid ${PALETTE.borderDefault}`,
             backgroundColor: PALETTE.surfaceLight,
-            fontFamily: '"DM Sans", sans-serif',
+            fontFamily: 'var(--f-display, 'Inter'), sans-serif',
             fontSize: "14px",
             color: PALETTE.textSecondary,
             lineHeight: 1.7,
@@ -155,7 +155,7 @@ export default function Section07_FAQ({
           text-align: center;
         }
         .s7-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           line-height: 1.2;

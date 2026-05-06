@@ -1,12 +1,12 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandSecondary:  "#5690D4",
-  textPrimary:     "#0f0f0f",
-  textSecondary:   "#636363",
+  brandSecondary:  "#0ea5a4",
+  textPrimary:     "#0f1130",
+  textSecondary:   "#3a3d5e",
   white:           "#ffffff",
-  borderDefault:   "#e6e7e9",
-  surfaceLight:    "#f7f7f7",
+  borderDefault:   "#e5e7eb",
+  surfaceLight:    "#f7f8fb",
   infoTint:        "rgba(21, 94, 160, 0.06)",
 }
 
@@ -30,7 +30,7 @@ export default function Section09_CrossModelExecution({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s9-section {
           width: 100%;
@@ -58,7 +58,7 @@ export default function Section09_CrossModelExecution({
         }
         @container (max-width: 767px) { .s9-header { text-align: left; } }
         .s9-header__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -72,7 +72,7 @@ export default function Section09_CrossModelExecution({
         @container (min-width: 1440px) { .s9-header__title { font-size: 28px; } }
         .s9-header__brand { color: ${PALETTE.brandSecondary}; }
         .s9-header__desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -86,7 +86,7 @@ export default function Section09_CrossModelExecution({
         @container (min-width: 1440px) { .s9-header__desc { max-width: 1080px; } }
 
         .s9-body {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 500;
           color: ${PALETTE.textSecondary};
@@ -107,7 +107,7 @@ export default function Section09_CrossModelExecution({
           border-top: 1px solid ${PALETTE.borderDefault};
           border-bottom: 1px solid ${PALETTE.borderDefault};
           background-color: ${PALETTE.infoTint};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           line-height: 1.7;
           text-align: center;

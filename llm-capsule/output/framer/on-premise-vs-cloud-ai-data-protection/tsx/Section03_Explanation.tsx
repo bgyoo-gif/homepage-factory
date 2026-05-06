@@ -2,12 +2,12 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const C = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  neutral150:     "#e6e7e9",
-  neutral025:     "#f7f7f7",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  neutral150:     "#e5e7eb",
+  neutral025:     "#f7f8fb",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   white:          "#ffffff",
   surfaceWhite:   "#ffffff",
   brandTint:      "rgba(24,33,232,0.06)",
@@ -55,7 +55,7 @@ export default function Section03_Explanation({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s3-section {
           width: 100%;
@@ -87,7 +87,7 @@ export default function Section03_Explanation({
           text-align: center;
         }
         .s3-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${C.textPrimary};
@@ -101,7 +101,7 @@ export default function Section03_Explanation({
         @container s3 (max-width: 767px)  { .s3-header { text-align: left; } }
 
         .s3-brand { color: ${C.brandSecondary}; }
-        .s3-product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+        .s3-product { font-family: var(--f-display, 'Inter'), sans-serif; font-weight: 700; }
 
         /* Number bullet list — CSS counter, no hardcoded numbers */
         .s3-bullet {
@@ -117,7 +117,7 @@ export default function Section03_Explanation({
           display: flex;
           align-items: flex-start;
           gap: 8px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.5;
           color: ${C.textPrimary};
@@ -138,7 +138,7 @@ export default function Section03_Explanation({
         }
         .s3-bullet__icon::before {
           content: counter(s3-bullet);
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 12px;
           font-weight: 700;
           color: ${C.white};
@@ -162,7 +162,7 @@ export default function Section03_Explanation({
           border-top: 1px solid ${C.neutral150};
           border-bottom: 1px solid ${C.neutral150};
           background-color: ${C.brandTint};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.7;
           word-break: keep-all;

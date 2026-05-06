@@ -52,7 +52,7 @@ export default function Section06_FAQ({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -81,7 +81,7 @@ export default function Section06_FAQ({
           text-align: center;
         }
         .s6-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: #0f0f0f;
@@ -89,9 +89,9 @@ export default function Section06_FAQ({
           letter-spacing: -0.5px;
           text-wrap: pretty;
         }
-        .s6-brand { color: #5690D4; }
+        .s6-brand { color: #5b4fe9; }
         .s6-product {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 
@@ -118,7 +118,7 @@ export default function Section06_FAQ({
           user-select: none;
         }
         .s6-ac-card__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           font-weight: 500;
           line-height: 1.2;
@@ -173,7 +173,7 @@ export default function Section06_FAQ({
           padding: 24px;
           border-top: 1px solid #e6e7e9;
           background-color: #f7f7f7;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: #636363;
           line-height: 1.7;

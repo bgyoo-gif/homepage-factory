@@ -2,14 +2,14 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const P = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandLight:     "#B8D4EE",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandLight:     "#eeebfe",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
   textInverse:   "#ffffff",
-  borderDefault: "#e6e7e9",
-  surfaceDark:   "#171719",
+  borderDefault: "#e5e7eb",
+  surfaceDark:   "#0f1130",
   surfaceWhite:  "#ffffff",
   white: "#ffffff",
 }
@@ -65,7 +65,7 @@ export default function Section03_Explanation({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -102,7 +102,7 @@ export default function Section03_Explanation({
           text-align: center;
         }
         .s3-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${P.textPrimary};
@@ -139,7 +139,7 @@ export default function Section03_Explanation({
           border-radius: 9999px;
           background-color: ${P.brandPrimary};
           color: ${P.white};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           font-weight: 700;
           display: flex;
@@ -150,7 +150,7 @@ export default function Section03_Explanation({
         .s3-stage__content { flex: 1; }
 
         .s3-stage__label {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           font-weight: 600;
           color: ${P.brandSecondary};
@@ -158,7 +158,7 @@ export default function Section03_Explanation({
         }
 
         .s3-stage__text {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${P.textSecondary};
           line-height: 1.7;
@@ -168,7 +168,7 @@ export default function Section03_Explanation({
         }
 
         .s3-product {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 
@@ -177,7 +177,7 @@ export default function Section03_Explanation({
           border-radius: 18px;
           background-color: ${P.surfaceDark};
           color: ${P.textInverse};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 500;
           line-height: 1.7;

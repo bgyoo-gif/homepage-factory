@@ -2,14 +2,14 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ────────────────────────────────────────────────────────────────
 const PALETTE = {
-  brandSecondary: "#5690D4",
-  neutral850:     "#141414",
-  neutral800:     "#171719",
-  neutral700:     "#303135",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandSecondary: "#0ea5a4",
+  neutral850:     "#0f1130",
+  neutral800:     "#0f1130",
+  neutral700:     "#1b1d4a",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   textInverse:    "#ffffff",
-  borderDefault:  "#e6e7e9",
+  borderDefault:  "#e5e7eb",
   surfaceWhite:   "#ffffff",
 }
 
@@ -50,7 +50,7 @@ export default function Section07_RelatedPages({
           width: 100%;
           padding: 32px 0 64px;
           background-color: ${PALETTE.surfaceWhite};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           -webkit-font-smoothing: antialiased;
           word-break: keep-all;
           overflow-wrap: break-word;
@@ -84,7 +84,7 @@ export default function Section07_RelatedPages({
           flex-shrink: 0;
         }
         .s7-section-title-icon__text {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 600;
           color: ${PALETTE.textPrimary};

@@ -2,12 +2,12 @@ import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
   white:           "#ffffff",
-  textPrimary:     "#0f0f0f",
+  textPrimary:     "#0f1130",
   overlayWhite85:  "rgba(255,255,255,0.85)",
   overlayNavBg:    "rgba(255,255,255,0.92)",
   overlayCtaBdr:   "rgba(255,255,255,0.6)",
   overlayDarkLight: "rgba(0,0,0,0.15)",
-  borderDefault:   "#e6e7e9",
+  borderDefault:   "#e5e7eb",
 }
 
 const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference"
@@ -34,7 +34,7 @@ export default function Section14_CTA({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s14-section {
           width: 100%;
@@ -84,7 +84,7 @@ export default function Section14_CTA({
         @container (min-width: 1440px) { .s14-inner-content { max-width: 1080px; } }
 
         .s14-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 40px;
           font-weight: 700;
           color: ${PALETTE.white};
@@ -97,7 +97,7 @@ export default function Section14_CTA({
         @container (min-width: 1440px) { .s14-title { font-size: 50px; } }
 
         .s14-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.overlayWhite85};
           line-height: 1.7;
@@ -124,7 +124,7 @@ export default function Section14_CTA({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           text-decoration: none;
@@ -152,7 +152,7 @@ export default function Section14_CTA({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           font-weight: 500;
           cursor: pointer;

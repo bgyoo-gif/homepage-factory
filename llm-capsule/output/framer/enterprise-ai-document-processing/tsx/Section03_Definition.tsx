@@ -14,7 +14,7 @@ export default function Section03_Definition({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -43,7 +43,7 @@ export default function Section03_Definition({
           text-align: center;
         }
         .s3-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: #0f0f0f;
@@ -51,7 +51,7 @@ export default function Section03_Definition({
           letter-spacing: -0.5px;
           text-wrap: pretty;
         }
-        .s3-brand { color: #5690D4; }
+        .s3-brand { color: #5b4fe9; }
 
         .s3-banner {
           padding: 24px 32px;
@@ -59,7 +59,7 @@ export default function Section03_Definition({
           border-top: 1px solid #e6e7e9;
           border-bottom: 1px solid #e6e7e9;
           background-color: rgba(24, 33, 232, 0.06);
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.7;
           text-align: left;
@@ -67,7 +67,7 @@ export default function Section03_Definition({
           overflow-wrap: break-word;
         }
         .s3-banner__label {
-          font-family: "Fragment Mono", "Geist Mono", monospace;
+          font-family: var(--f-mono, 'JetBrains Mono'), "Geist Mono", monospace;
           font-size: 12px;
           text-transform: uppercase;
           letter-spacing: 0.08em;

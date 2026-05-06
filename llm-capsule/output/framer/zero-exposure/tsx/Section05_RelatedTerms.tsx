@@ -1,17 +1,17 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const BRAND = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
-  textTertiary:  "#9c9c9c",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
+  textTertiary:  "#6b7280",
   textInverse:   "#ffffff",
-  neutral850:    "#141414",
-  neutral800:    "#171719",
-  neutral700:    "#303135",
-  neutral150:    "#e6e7e9",
-  surfaceLight:  "#f7f7f7",
+  neutral850:    "#0f1130",
+  neutral800:    "#0f1130",
+  neutral700:    "#1b1d4a",
+  neutral150:    "#e5e7eb",
+  surfaceLight:  "#f7f8fb",
   surfaceWhite:  "#ffffff",
 }
 
@@ -104,7 +104,7 @@ export default function Section05_RelatedTerms({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -132,7 +132,7 @@ export default function Section05_RelatedTerms({
           text-align: center;
         }
         .s5-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${BRAND.textPrimary};
@@ -155,7 +155,7 @@ export default function Section05_RelatedTerms({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           transition: background-color 0.2s;
@@ -183,7 +183,7 @@ export default function Section05_RelatedTerms({
           height: 24px;
         }
         .s5-section-title-icon__text {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 600;
           color: ${BRAND.textPrimary};
@@ -217,7 +217,7 @@ export default function Section05_RelatedTerms({
           height: 24px;
         }
         .s5-card-dark__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: ${BRAND.textInverse};

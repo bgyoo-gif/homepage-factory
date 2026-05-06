@@ -1,16 +1,16 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandSecondary:   "#5690D4",
-  textPrimary:      "#0f0f0f",
-  textSecondary:    "#636363",
+  brandSecondary:   "#0ea5a4",
+  textPrimary:      "#0f1130",
+  textSecondary:    "#3a3d5e",
   white:            "#ffffff",
-  borderDefault:    "#e6e7e9",
-  surfaceLight:     "#f7f7f7",
-  neutral900:       "#0f0f0f",
-  neutral300:       "#bababa",
-  neutral400:       "#9c9c9c",
-  success:          "#0e824c",
+  borderDefault:    "#e5e7eb",
+  surfaceLight:     "#f7f8fb",
+  neutral900:       "#0f1130",
+  neutral300:       "#6b7280",
+  neutral400:       "#6b7280",
+  success:          "#0ea5a4",
   successTint:      "rgba(14,130,76,0.08)",
   successBdr:       "rgba(20,130,76,0.2)",
 }
@@ -47,7 +47,7 @@ export default function Section04_Restoration({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s4-section {
           width: 100%;
@@ -75,7 +75,7 @@ export default function Section04_Restoration({
         }
         @container (max-width: 767px) { .s4-header { text-align: left; } }
         .s4-header__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -89,7 +89,7 @@ export default function Section04_Restoration({
         @container (min-width: 1440px) { .s4-header__title { font-size: 28px; } }
         .s4-header__brand { color: ${PALETTE.brandSecondary}; }
         .s4-header__desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -144,7 +144,7 @@ export default function Section04_Restoration({
           border: none;
           border-radius: 8px;
           padding: 16px;
-          font-family: "Fragment Mono", monospace;
+          font-family: var(--f-mono, 'JetBrains Mono'), monospace;
           font-size: 14px;
           line-height: 1.9;
           color: ${PALETTE.neutral300};
@@ -156,7 +156,7 @@ export default function Section04_Restoration({
           color: ${PALETTE.textPrimary};
         }
         .s4-code-label {
-          font-family: "Fragment Mono", monospace;
+          font-family: var(--f-mono, 'JetBrains Mono'), monospace;
           font-size: 12px;
           text-transform: uppercase;
           letter-spacing: 0.08em;
@@ -172,7 +172,7 @@ export default function Section04_Restoration({
           gap: 16px;
         }
         .s4-lead {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${PALETTE.textPrimary};
           line-height: 1.7;
@@ -183,7 +183,7 @@ export default function Section04_Restoration({
           text-wrap: pretty;
         }
         .s4-body {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;

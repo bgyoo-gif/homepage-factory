@@ -2,17 +2,17 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ─────────────────────────────────────────────────────────────────
 const P = {
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  success:        "#0e824c",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  success:        "#0ea5a4",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   white:          "#ffffff",
-  neutral025:     "#f7f7f7",
-  neutral200:     "#e0e0e0",
-  borderDefault:  "#e6e7e9",
+  neutral025:     "#f7f8fb",
+  neutral200:     "#e5e7eb",
+  borderDefault:  "#e5e7eb",
   surfaceWhite:   "#ffffff",
-  surfaceLight:   "#f7f7f7",
+  surfaceLight:   "#f7f8fb",
 }
 
 interface Props {
@@ -70,11 +70,11 @@ export default function Section03_FiveCapabilities({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         .idx-root {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           color: ${P.textPrimary};
           background-color: ${P.surfaceWhite};
           -webkit-font-smoothing: antialiased;
@@ -100,18 +100,18 @@ export default function Section03_FiveCapabilities({
         .idx-section { width: 100%; padding: 60px 0; background-color: ${P.surfaceWhite}; }
 
         .idx-brand { color: ${P.brandSecondary}; }
-        .idx-product { font-family: "Oxanium", sans-serif; font-weight: 700; }
+        .idx-product { font-family: var(--f-display, 'Inter'), sans-serif; font-weight: 700; }
 
         .idx-btn {
           display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-          border-radius: 9999px; font-family: "DM Sans", sans-serif;
+          border-radius: 9999px; font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500; cursor: pointer; border: none;
           transition: opacity 0.2s, background-color 0.2s;
           white-space: nowrap; text-decoration: none;
         }
         .idx-btn--sm  { padding: 8px 16px;  font-size: 14px; }
         .idx-btn--md  { padding: 12px 32px; font-size: 16px; }
-        .idx-root .idx-btn--primary { background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%); color: ${P.white}; }
+        .idx-root .idx-btn--primary { background: linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%); color: ${P.white}; }
         .idx-root .idx-btn--primary:hover { opacity: 0.88; }
         .idx-root .idx-btn--secondary {
           background-color: transparent; color: ${P.textPrimary};

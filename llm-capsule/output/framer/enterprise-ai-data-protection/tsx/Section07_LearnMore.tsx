@@ -1,13 +1,13 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandSecondary: "#5690D4",
-  neutral850:     "#141414",
-  neutral800:     "#171719",
-  neutral700:     "#303135",
-  textPrimary:   "#0f0f0f",
+  brandSecondary: "#0ea5a4",
+  neutral850:     "#0f1130",
+  neutral800:     "#0f1130",
+  neutral700:     "#1b1d4a",
+  textPrimary:   "#0f1130",
   textInverse:   "#ffffff",
-  borderDefault: "#e6e7e9",
+  borderDefault: "#e5e7eb",
   surfaceWhite:  "#ffffff",
 }
 
@@ -108,7 +108,7 @@ export default function Section07_LearnMore({
         }
         .s7-title-icon__icon { color: ${PALETTE.brandSecondary}; flex-shrink: 0; }
         .s7-title-icon__text {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 600;
           color: ${PALETTE.textPrimary};
@@ -135,7 +135,7 @@ export default function Section07_LearnMore({
         .s7-card-dark:hover { background-color: ${PALETTE.neutral800}; }
         .s7-card-dark__icon { flex-shrink: 0; color: ${PALETTE.brandSecondary}; }
         .s7-card-dark__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: ${PALETTE.textInverse};

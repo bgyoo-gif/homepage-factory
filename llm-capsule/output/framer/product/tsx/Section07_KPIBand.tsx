@@ -35,7 +35,7 @@ export default function Section07_KPIBand({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s7-section {
           width: 100%;
@@ -91,14 +91,14 @@ export default function Section07_KPIBand({
           text-align: center;
         }
         .s7-kpi-number {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 50px;
           font-weight: 700;
           line-height: 1;
           color: ${PALETTE.white};
         }
         .s7-kpi-label {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${PALETTE.overlayWhite85};
           line-height: 1.5;

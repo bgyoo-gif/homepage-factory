@@ -1,15 +1,15 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   white:          "#ffffff",
-  borderDefault:  "#e6e7e9",
-  surfaceLight:   "#f7f7f7",
-  success:        "#0e824c",
-  error:          "#ff3030",
+  borderDefault:  "#e5e7eb",
+  surfaceLight:   "#f7f8fb",
+  success:        "#0ea5a4",
+  error:          "#ef5350",
   brandTintLight: "rgba(24, 33, 232, 0.06)",
   brandTint:      "rgba(24, 33, 232, 0.04)",
   brandTintMd:    "rgba(24, 33, 232, 0.08)",
@@ -189,7 +189,7 @@ export default function Section12_Comparison({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s12-section {
           width: 100%;
@@ -217,7 +217,7 @@ export default function Section12_Comparison({
         }
         @container (max-width: 767px) { .s12-header { text-align: left; } }
         .s12-header__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -230,9 +230,9 @@ export default function Section12_Comparison({
         @container (min-width: 1024px) { .s12-header__title { font-size: 24px; } }
         @container (min-width: 1440px) { .s12-header__title { font-size: 28px; } }
         .s12-header__brand { color: ${PALETTE.brandSecondary}; }
-        .s12-product     { font-family: "Oxanium", sans-serif; font-weight: 700; }
+        .s12-product     { font-family: var(--f-display, 'Inter'), sans-serif; font-weight: 700; }
         .s12-header__desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -254,11 +254,11 @@ export default function Section12_Comparison({
         .s12-table {
           width: 100%;
           border-collapse: collapse;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
         }
         .s12-table thead th {
-          font-family: "Fragment Mono", monospace;
+          font-family: var(--f-mono, 'JetBrains Mono'), monospace;
           font-size: 11px;
           text-transform: uppercase;
           letter-spacing: 0.08em;
@@ -298,7 +298,7 @@ export default function Section12_Comparison({
           border-top: 1px solid ${PALETTE.borderDefault};
           border-bottom: 1px solid ${PALETTE.borderDefault};
           background-color: ${PALETTE.brandTintLight};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           line-height: 1.7;
           text-align: center;

@@ -16,7 +16,7 @@ export default function Section01_Hero({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -25,10 +25,10 @@ export default function Section01_Hero({
           flex-wrap: wrap; margin-bottom: 24px;
         }
         .s1-breadcrumb__link {
-          font-size: 14px; color: #5690D4;
+          font-size: 14px; color: #5b4fe9;
           font-weight: 500; transition: color 0.15s; text-decoration: none;
         }
-        .s1-breadcrumb__link:hover { color: #1821E8; }
+        .s1-breadcrumb__link:hover { color: #5b4fe9; }
         .s1-breadcrumb__sep { font-size: 14px; color: #9c9c9c; }
         .s1-breadcrumb__current { font-size: 14px; color: #9c9c9c; }
 
@@ -66,7 +66,7 @@ export default function Section01_Hero({
         }
 
         .s1-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 28px;
           font-weight: 700;
           color: #0f0f0f;
@@ -91,7 +91,7 @@ export default function Section01_Hero({
         }
 
         .s1-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: #636363;
           line-height: 1.7;
@@ -101,7 +101,7 @@ export default function Section01_Hero({
         }
 
         .s1-product-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
       `}</style>

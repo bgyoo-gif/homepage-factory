@@ -2,11 +2,11 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const P = {
-  brandSecondary: "#5690D4",
-  success:        "#0e824c",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
-  borderDefault:  "#e6e7e9",
+  brandSecondary: "#0ea5a4",
+  success:        "#0ea5a4",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
+  borderDefault:  "#e5e7eb",
   white:          "#ffffff",
 }
 
@@ -119,7 +119,7 @@ export default function Section04_Requirements({
           text-align: center;
         }
         .s4-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${P.textPrimary};
@@ -131,7 +131,7 @@ export default function Section04_Requirements({
         .s4-highlight { color: ${P.brandSecondary}; }
 
         .s4-intro {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${P.textSecondary};
           line-height: 1.7;
@@ -153,7 +153,7 @@ export default function Section04_Requirements({
           display: flex;
           align-items: flex-start;
           gap: 8px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.5;
           color: ${P.textPrimary};

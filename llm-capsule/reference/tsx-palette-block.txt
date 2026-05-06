@@ -1,0 +1,35 @@
+// ── Auto-generated from tokens.json — DO NOT EDIT ──
+const C = {
+  bg: "#ffffff",
+  bgSoft: "#f7f8fb",
+  bgDark: "#0f1130",
+  bgDark2: "#1b1d4a",
+  ink: "#0f1130",
+  inkSoft: "#3a3d5e",
+  muted: "#6b7280",
+  rule: "#e5e7eb",
+  primary: "#5b4fe9",
+  primaryDark: "#3b2fbf",
+  primarySoft: "#eeebfe",
+  teal: "#0ea5a4",
+  tealDark: "#0b7f7e",
+  tealSoft: "#e6f7f6",
+  coral: "#ef5350",
+  coralDark: "#c73e3a",
+  coralSoft: "#fce9e8",
+  amber: "#f59e0b",
+  amberDark: "#b7790c",
+  amberSoft: "#fef3c7",
+} as const
+
+const Font = {
+  display: "'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
+  mono: "'JetBrains Mono', 'SF Mono', 'Consolas', monospace",
+} as const
+
+const Radius = {
+  sm: "6px",
+  md: "10px",
+  lg: "16px",
+} as const
+// ── End auto-generated ──

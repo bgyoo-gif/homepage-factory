@@ -2,12 +2,12 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ────────────────────────────────────────────────────────────────
 const C = {
-  brandSecondary: "#5690D4",
-  brandFont:      "Oxanium",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandSecondary: "#0ea5a4",
+  brandFont:      var(--f-display, 'Inter'),
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   surfaceWhite:   "#ffffff",
-  borderDefault:  "#e6e7e9",
+  borderDefault:  "#e5e7eb",
   shadowCard:     "0px 24px 40px rgba(0,0,0,0.04)",
   trackingTight:  "-0.5px",
 }
@@ -35,7 +35,7 @@ export default function Section06_EnterpriseExample({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s6-section {
           width: 100%;
@@ -63,7 +63,7 @@ export default function Section06_EnterpriseExample({
           text-align: center;
         }
         .s6-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${C.textPrimary};
@@ -83,7 +83,7 @@ export default function Section06_EnterpriseExample({
           gap: 12px;
         }
         .s6-card__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: ${C.textPrimary};
@@ -101,7 +101,7 @@ export default function Section06_EnterpriseExample({
           display: flex;
           align-items: flex-start;
           gap: 8px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.5;
           color: ${C.textPrimary};

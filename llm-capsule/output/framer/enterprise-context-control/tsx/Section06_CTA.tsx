@@ -3,7 +3,7 @@ import { addPropertyControls, ControlType } from "framer"
 // ─── Palette ───────────────────────────────────────────────
 const PALETTE = {
   white:         "#ffffff",
-  neutral800:    "#171719",
+  neutral800:    "#0f1130",
   overlayLight:  "rgba(0,0,0,0.15)",
   overlayWhite85:"rgba(255,255,255,0.85)",
   overlayWhite70:"rgba(255,255,255,0.70)",
@@ -39,7 +39,7 @@ export default function Section06_CTA({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -84,7 +84,7 @@ export default function Section06_CTA({
         }
 
         .s6-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 36px;
           font-weight: 700;
           color: ${PALETTE.white};
@@ -103,12 +103,12 @@ export default function Section06_CTA({
         }
 
         .s6-product {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 
         .s6-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.overlayWhite85};
           line-height: 1.7;
@@ -131,7 +131,7 @@ export default function Section06_CTA({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           text-decoration: none;
@@ -148,7 +148,7 @@ export default function Section06_CTA({
         .s6-btn:hover { background-color: ${PALETTE.white}; }
 
         .s6-footnote {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 12px;
           color: ${PALETTE.overlayWhite70};
           margin-top: 8px;

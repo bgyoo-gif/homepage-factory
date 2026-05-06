@@ -20,7 +20,7 @@ export default function Section01_Hero({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -61,7 +61,7 @@ export default function Section01_Hero({
           display: flex;
           align-items: center;
           gap: 8px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: #9c9c9c;
           margin-bottom: 24px;
@@ -70,13 +70,13 @@ export default function Section01_Hero({
         }
 
         .s1-breadcrumb__link {
-          color: #5690D4;
+          color: #5b4fe9;
           text-decoration: none;
           transition: color 0.15s;
         }
 
         .s1-breadcrumb__link:hover {
-          color: #1821E8;
+          color: #5b4fe9;
         }
 
         .s1-breadcrumb__sep {
@@ -84,7 +84,7 @@ export default function Section01_Hero({
         }
 
         .s1-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 32px;
           font-weight: 700;
           color: #0f0f0f;
@@ -105,11 +105,11 @@ export default function Section01_Hero({
         }
 
         .s1-title__highlight {
-          color: #5690D4;
+          color: #5b4fe9;
         }
 
         .s1-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: #636363;
           line-height: 1.7;

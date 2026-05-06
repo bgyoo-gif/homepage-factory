@@ -15,7 +15,7 @@ export default function Section05_RegulatorySupport({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s5-section {
           width: 100%;
@@ -55,7 +55,7 @@ export default function Section05_RegulatorySupport({
         }
         @container s5 (max-width: 767px) { .s5-header { text-align: left; } }
         .s5-header__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px; font-weight: 700;
           color: #0f0f0f; line-height: 1.2;
           letter-spacing: -0.5px; margin: 0;
@@ -63,11 +63,11 @@ export default function Section05_RegulatorySupport({
         @container s5 (min-width: 768px)  { .s5-header__title { font-size: 22px; } }
         @container s5 (min-width: 1024px) { .s5-header__title { font-size: 24px; } }
         @container s5 (min-width: 1440px) { .s5-header__title { font-size: 28px; } }
-        .s5-header__brand { color: #5690D4; }
+        .s5-header__brand { color: #5b4fe9; }
 
         /* Body */
         .s5-body {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: #636363;
           line-height: 1.7;
@@ -81,7 +81,7 @@ export default function Section05_RegulatorySupport({
         @container s5 (min-width: 1024px) { .s5-body { max-width: 720px; } }
         @container s5 (min-width: 1440px) { .s5-body { max-width: 1080px; } }
         .s5-product {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
       `}</style>

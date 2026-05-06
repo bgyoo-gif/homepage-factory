@@ -3,12 +3,12 @@ import { addPropertyControls, ControlType } from "framer"
 const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images"
 
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  neutral800: "#171719",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  neutral800: "#0f1130",
   white:      "#ffffff",
-  gradientBrand: "linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%)",
+  gradientBrand: "linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%)",
   overlayDarkLight: "rgba(0,0,0,0.15)",
   overlayNavBg: "rgba(255,255,255,0.92)",
   overlayWhite85: "rgba(255,255,255,0.85)",
@@ -40,7 +40,7 @@ export default function Section10_CTA({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -82,7 +82,7 @@ export default function Section10_CTA({
         }
 
         .s10-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 36px;
           font-weight: 700;
           color: ${PALETTE.white};
@@ -93,11 +93,11 @@ export default function Section10_CTA({
           word-break: keep-all;
         }
         .s10-brand-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
         .s10-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.overlayWhite85};
           line-height: 1.7;
@@ -118,7 +118,7 @@ export default function Section10_CTA({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           font-size: 18px;
           padding: 16px 48px;
@@ -142,7 +142,7 @@ export default function Section10_CTA({
           margin-top: 8px;
         }
         .s10-footnote a {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${PALETTE.overlayWhite70};
           transition: color 0.2s;

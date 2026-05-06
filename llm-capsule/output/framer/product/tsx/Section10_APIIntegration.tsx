@@ -1,11 +1,11 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandSecondary: "#5690D4",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandSecondary: "#0ea5a4",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   white:          "#ffffff",
-  borderDefault:  "#e6e7e9",
+  borderDefault:  "#e5e7eb",
   surfaceWhite:   "#ffffff",
   shadowCard:     "0px 24px 40px rgba(0, 0, 0, 0.04)",
 }
@@ -74,7 +74,7 @@ export default function Section10_APIIntegration({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s10-section {
           width: 100%;
@@ -102,7 +102,7 @@ export default function Section10_APIIntegration({
         }
         @container (max-width: 767px) { .s10-header { text-align: left; } }
         .s10-header__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -116,7 +116,7 @@ export default function Section10_APIIntegration({
         @container (min-width: 1440px) { .s10-header__title { font-size: 28px; } }
         .s10-header__brand { color: ${PALETTE.brandSecondary}; }
         .s10-header__desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -130,7 +130,7 @@ export default function Section10_APIIntegration({
         @container (min-width: 1440px) { .s10-header__desc { max-width: 1080px; } }
 
         .s10-body {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 500;
           color: ${PALETTE.textSecondary};
@@ -171,7 +171,7 @@ export default function Section10_APIIntegration({
           stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
         }
         .s10-card-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 24px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -180,7 +180,7 @@ export default function Section10_APIIntegration({
           text-wrap: pretty;
         }
         .s10-card-desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;

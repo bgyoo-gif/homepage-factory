@@ -1,146 +1,161 @@
 ---
 name: design-system-capsule
 description: >
-  LLM Capsule 브랜드 전용 Color/Gradient 토큰.
+  LLM Capsule 브랜드 전용 Design Tokens v6.1.
+  tokens.json에서 자동 생성되는 부분 포함.
   design-system-core.md와 함께 로드해야 완전한 DS가 된다.
 ---
 
-# LLM Capsule Brand Tokens
+# LLM Capsule Brand Tokens v6.1
 
-> core + 이 파일을 함께 적용
+> **Single Source of Truth:** `llm-capsule/reference/tokens.json`
+> 토큰 변경 시 `python3 scripts/build-tokens.py` 실행 → 모든 출력 자동 갱신.
 
 ---
 
-## Brand Color System
+## Token Architecture
 
-```css
-:root {
-  /* Primary / Brand — LLM Capsule 고유 색상 */
-  --ds-color-brand-primary:   #1821E8;   /* 딥 인디고 — 메인 CTA, 번호 불릿 배경 */
-  --ds-color-brand-secondary: #5690D4;   /* 미디엄 블루 — 텍스트 강조, 배지 */
-  --ds-color-brand-accent:    #55B45D;   /* 그린 — 보조 강조, accent 카드 */
-  --ds-color-brand-light:     #B8D4EE;   /* secondary의 밝은 버전 — 배지 배경 */
-
-  /* Border — brand accent */
-  --ds-color-border-brand: #5690D4;
-
-  /* Gradient — brand CTA */
-  --ds-gradient-brand: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
-
-  /* Gradient Card Border — 109deg shimmer */
-  --ds-gradient-card-indigo: linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #E8F0FF 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%);
-  --ds-gradient-card-blue:   linear-gradient(109deg, #BFD8F4 0%, #fff 17%, #E8F0FF 38%, #5690D4 51%, #E2EBF5 73%, #BFD8F4 100%);
-  --ds-gradient-card-green:  linear-gradient(109deg, #55B45D 0%, #F0FFF2 17%, #9AE6AD 43%, #C9FFE1 65%, #55B45D 84%, #55B45D 100%);
-  --ds-gradient-card-silver: linear-gradient(109deg, #898989 0%, #fff 17%, #D5D5D5 63%, #F6F5F6 84%, #898989 100%);
-
-  /* Gradient Card Inner Background — 99deg tint-to-white */
-  --ds-gradient-inner-indigo: linear-gradient(99deg, #ECEEFF 0%, #FCFCFE 58%, #fff 100%);
-  --ds-gradient-inner-blue:   linear-gradient(99deg, #EAF0F9 0%, #FCFCFE 58%, #fff 100%);
-  --ds-gradient-inner-green:  linear-gradient(99deg, #F0FDF5 0%, #FCFCFE 58%, #fff 100%);
-
-  /* Diagram Architecture header */
-  --ds-gradient-arch-header: linear-gradient(115deg, #5670E8 0%, #5690D4 50%, #55B45D 100%);
-}
+```
+tokens.json (편집 대상)
+    ↓ python3 scripts/build-tokens.py
+    ├── tokens.css           → B타입 HTML :root 변수
+    ├── viewer-tokens.css    → Viewer 참조
+    ├── TokenProvider.tsx     → Framer Layout에 1개 배치 → 전 페이지 :root 주입
+    └── tsx-palette-block.txt → TSX fallback 참조용
 ```
 
+**TSX에서는 CSS 변수를 직접 사용:**
+```css
+.s1-title { color: var(--c-ink, #0f1130); }
+.s1-brand { color: var(--c-primary, #5b4fe9); }
+```
+
+**const C = {} 하드코딩 방식은 폐기.** TokenProvider가 :root 변수를 주입하므로 각 TSX에서 색상을 재정의할 필요 없음.
+
 ---
 
-## Brand Component Overrides
+## Brand Color System (v6.1)
 
-브랜드 컬러를 참조하는 컴포넌트 토큰:
+### 3-Color Hierarchy
+
+| Role | CSS Variable | Value | 용도 |
+|------|-------------|-------|------|
+| **Primary** | `--c-primary` | `#5b4fe9` | Purple — CTA, 강조, 배지, 링크 |
+| Primary Dark | `--c-primary-dark` | `#3b2fbf` | Hover 상태 |
+| Primary Soft | `--c-primary-soft` | `#eeebfe` | 배지/배너 배경 tint |
+| **Teal** | `--c-teal` | `#0ea5a4` | 차별화 포인트, 성공 상태 |
+| Teal Dark | `--c-teal-dark` | `#0b7f7e` | Hover |
+| Teal Soft | `--c-teal-soft` | `#e6f7f6` | Tint |
+| **Coral** | `--c-coral` | `#ef5350` | 문제/경고, 삭제 상태 |
+| Coral Dark | `--c-coral-dark` | `#c73e3a` | Hover |
+| Coral Soft | `--c-coral-soft` | `#fce9e8` | Tint |
+| Amber | `--c-amber` | `#f59e0b` | 주의/caution |
+
+### Neutrals
+
+| CSS Variable | Value | 용도 |
+|-------------|-------|------|
+| `--c-bg` | `#ffffff` | Background white |
+| `--c-bg-soft` | `#f7f8fb` | Surface light |
+| `--c-bg-dark` | `#0f1130` | Dark section (navy) |
+| `--c-bg-dark-2` | `#1b1d4a` | Dark card |
+| `--c-ink` | `#0f1130` | Text primary (navy tint) |
+| `--c-ink-soft` | `#3a3d5e` | Text secondary |
+| `--c-muted` | `#6b7280` | Text tertiary |
+| `--c-rule` | `#e5e7eb` | Border / divider |
+
+---
+
+## Typography (v6.1)
+
+| CSS Variable | Value | 용도 |
+|-------------|-------|------|
+| `--f-display` | `'Inter', -apple-system, system-ui, sans-serif` | Base font (이전: DM Sans) |
+| `--f-mono` | `'JetBrains Mono', 'SF Mono', monospace` | Code font (이전: Fragment Mono) |
+
+**Brand 폰트(Oxanium) 폐기** — 제품명도 Inter 사용.
+
+### Typography Scale
+
+| Element | Size | Weight | Leading |
+|---------|------|--------|---------|
+| h1 | `clamp(36px, 5vw, 64px)` | 700 | 1.15 |
+| h2 | `clamp(28px, 3.5vw, 44px)` | 700 | 1.15 |
+| h3 | `clamp(18px, 1.6vw, 22px)` | 700 | 1.15 |
+| h4 | `16px` | 700 | 1.15 |
+| body | inherit | 400 | 1.55 |
+| letter-spacing | `-0.02em` (headings) | | |
+
+---
+
+## Spacing & Layout (v6.1)
+
+| CSS Variable | Value | 용도 |
+|-------------|-------|------|
+| `--s-page` | `clamp(20px, 4vw, 80px)` | Container padding |
+| `--s-section` | `clamp(64px, 8vw, 128px)` | Section vertical padding |
+| `--r-sm` | `6px` | Small radius |
+| `--r-md` | `10px` | Medium radius (cards, buttons) |
+| `--r-lg` | `16px` | Large radius (sections) |
+| `--container-max` | `1280px` | Container max width (이전: 1440px) |
+
+---
+
+## Button Styles (v6.1)
+
+| Class | Style | 이전과 차이 |
+|-------|-------|------------|
+| `.btn--primary` | `background: var(--c-ink)`, hover → `var(--c-primary)` | 이전: gradient |
+| `.btn--ghost` | `border: var(--c-rule)`, hover → `border: var(--c-ink)` | 유사 |
+| `.btn--invert` | white bg, ink text | 다크 섹션용 |
+
+---
+
+## Component Overrides
 
 ```css
 /* 텍스트 강조 */
-.ds-text--brand       { color: var(--ds-color-brand-secondary); }
-.ds-text--brand-light { color: var(--ds-color-brand-light); }
+.ds-text--brand { color: var(--c-primary); }
 
-/* 불릿 dot: 블루 */
-.ds-bullet--dot .ds-bullet__icon::before { color: var(--ds-color-brand-secondary); }
+/* 불릿 dot */
+.ds-bullet--dot .ds-bullet__icon::before { color: var(--c-primary); }
 
-/* 불릿 number: 인디고 배경 */
-.ds-bullet--number .ds-bullet__icon::before { color: var(--ds-color-brand-primary); }
-
-/* 카드 배지 brand */
-.ds-card__badge--brand { color: var(--ds-color-brand-secondary); border-color: var(--ds-color-brand-secondary); }
+/* 배지 */
+.ds-badge--primary { background-color: var(--c-primary); color: var(--c-bg); }
+.ds-badge--teal    { background-color: var(--c-teal-soft); color: var(--c-teal); }
+.ds-badge--coral   { background-color: var(--c-coral-soft); color: var(--c-coral); }
 
 /* 배너 brand tint */
-.ds-banner--brand { --ds-banner-bg: rgba(24, 33, 232, 0.06); }
+.ds-banner--brand { background-color: var(--c-primary-soft); }
 
-/* 배지 brand */
-.ds-badge--primary { background-color: var(--ds-color-brand-primary); }
-.ds-badge--purple  { background-color: var(--ds-color-brand-light); color: var(--ds-color-brand-secondary); }
+/* 버튼 primary */
+.ds-btn--primary { background: var(--c-ink); color: var(--c-bg); }
+.ds-btn--primary:hover { background: var(--c-primary); }
 
-/* 버튼 primary gradient */
-.ds-btn--primary { background: var(--ds-gradient-brand); }
+/* CTA band */
+.ds-cta-band { background: var(--c-bg-dark); }
 
-/* Section header eyebrow */
-.ds-section-header__eyebrow { color: var(--ds-color-brand-secondary); }
-
-/* Cert card group label */
-.ds-cert-card__group { color: var(--ds-color-brand-secondary); }
-
-/* Gradient Card variants — Capsule는 purple 대신 indigo 사용 */
-.ds-card--gradient-indigo { background: var(--ds-gradient-card-indigo); }
-.ds-card--gradient-blue   { background: var(--ds-gradient-card-blue); }
-.ds-card--gradient-green  { background: var(--ds-gradient-card-green); }
-.ds-card--gradient-silver { background: var(--ds-gradient-card-silver); }
-.ds-card--gradient-brand  { background: var(--ds-gradient-brand); }
-
-.ds-card--gradient-indigo .ds-card--gradient__inner { background: var(--ds-gradient-inner-indigo); }
-.ds-card--gradient-blue .ds-card--gradient__inner   { background: var(--ds-gradient-inner-blue); }
-.ds-card--gradient-green .ds-card--gradient__inner   { background: var(--ds-gradient-inner-green); }
-
-/* Gradient Card 사용 시점 (LLM Capsule) */
-/* indigo: 핵심 기능 강조, blue: 보조 기능, green: 결과/성과 */
-/* brand: 최종 CTA 강조 카드, silver: 일반 정보 카드 */
-
-/* CTA band fallback gradient */
-.ds-cta-band:not([class*="ds-bg--"]) {
-  background: linear-gradient(135deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
-}
-
-/* KPI band fallback gradient */
-.ds-kpi-band:not([class*="ds-bg--"]) {
-  background: linear-gradient(135deg, #1821E8, #55B45D);
-}
+/* Dark section text */
+.section--dark p { color: #c8c4f7; }
 ```
 
 ---
 
-## 제품명 (Oxanium 폰트 대상)
+## 인증/수상 데이터 (Cert Grid 전용 — CUBIG 공유)
 
-`.ds-text--product` 적용 대상 제품명:
-- **LLM Capsule** — LLM 보안/운영 플랫폼 (메인 제품)
+(이전과 동일 — cubig/reference/graphics/ 경로 유지)
 
-> LLM Capsule 홈페이지는 단일 제품 사이트이므로 "LLM Capsule"만 Oxanium 적용.
-> CUBIG, SynTitan 등 타사/타제품명은 일반 폰트(DM Sans) 사용.
+| 그룹 | 인증/수상명 | 기관명 | 연도 |
+|------|------------|--------|------|
+| Certifications | Information Security Fast Track | KISA | 2024 |
+| Certifications | GS Certification | TTA | 2025 |
+| Certifications | ISO/IEC 27001 (ISMS) | ISO | 2026 |
+| Certifications | ISO/IEC 42001 (AIMS) | ISO | 2026 |
+| Awards | T Challenge 2026 — Finalist | Deutsche Telekom | 2026 |
 
 ---
 
-## 인증/수상 데이터 (Cert Grid 전용 — CUBIG 회사 레벨 공유)
-
-CUBIG 회사 인증/수상을 LLM Capsule에서도 동일하게 사용한다.
-
-| 그룹 | 인증/수상명 | 기관명 | 연도 | 로고 파일 |
-|------|------------|--------|------|-----------|
-| Certifications | Information Security Fast Track | KISA | 2024 | cert-kisa.png |
-| Certifications | GS Certification | TTA | 2025 | cert-gs.png |
-| Certifications | ISO/IEC 27001 (ISMS) | ISO | 2026 | cert-iso.png |
-| Certifications | ISO/IEC 42001 (AIMS) | ISO | 2026 | cert-iso.png |
-| Awards | Information Security Innovation Award | Ministry of Science & ICT | 2024 | awards-ministry-of-science-and-ict.jpg |
-| Awards | Startup World Cup — Finalist | Startup World Cup | 2025 | cert-startupworldcup.png |
-| Awards | Next Rise — Global Innovator | Next Rise | 2025 | — (이모지 🏆 대체) |
-| Awards | T Challenge 2026 — Finalist | Deutsche Telekom | 2026 | partner-deutsche-telekom.avif |
-| Awards | AI Medical Innovation Award | AI EXPO KOREA | 2025 | awards-koreaia.png |
-| Recognition | Emerging AI+X Top 100 | — | 2026 | — (이모지 🌟 대체) |
-| Recognition | Representative Vendor, Hyper-Synthetic Data | Gartner | 2025 | cert-gartner.svg.png |
-
-> **AWS Marketplace는 인증이 아니므로 cert grid에 넣지 않는다.**
-
-로고 경로: `cubig/reference/graphics/`
-월계수: `cubig/reference/graphics/cert-left.png`, `cubig/reference/graphics/cert-right.png`
-
-## 파트너 데이터 (Partner Grid 전용 — 로고 이미지 있는 것만 사용)
+## 파트너 데이터 (Partner Grid 전용)
 
 | 파트너명 | 로고 파일 |
 |----------|-----------|
@@ -150,26 +165,11 @@ CUBIG 회사 인증/수상을 LLM Capsule에서도 동일하게 사용한다.
 | EUMC | partner-eumc.avif |
 | Naver Cloud | partner-navercloud.avif |
 
-> **로고 이미지가 없는 파트너(IBK, DB손해보험, Shin&Kim)는 partner grid에 넣지 않는다.** 텍스트 대체 금지.
-
-로고 경로: `cubig/reference/images/`
-
----
-
-## 제품 로고
-
-| 파일명 | 용도 |
-|--------|------|
-| logo-llmcapsule.avif | LLM Capsule 로고 (Nav, Hero 등) |
-
-경로: `llm-capsule/reference/images/`
-
 ---
 
 ## 톤 & 매너
 
-- **CUBIG**: 기업 신뢰, B2B, 데이터 인프라 전문성
-- **LLM Capsule**: 제품 중심, 기술적 디테일, 개발자/ML 엔지니어 타겟
-  - 더 기술적이고 직관적인 카피
-  - 데모/코드 예시 강조
-  - "보안", "모니터링", "거버넌스" 키워드 중심
+- **LLM Capsule**: 제품 중심, 기술적 디테일, B2B 엔터프라이즈
+- Inter 폰트로 모던하고 클린한 인상
+- 3-color hierarchy: Purple(primary), Teal(differentiator), Coral(problem)
+- 다크 섹션: navy(#0f1130), 이전 검정(#171719) 대비 브랜드감 강화

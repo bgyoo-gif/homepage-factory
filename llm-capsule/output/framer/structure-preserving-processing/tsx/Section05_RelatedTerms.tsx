@@ -100,7 +100,7 @@ export default function Section05_RelatedTerms({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -145,7 +145,7 @@ export default function Section05_RelatedTerms({
         }
 
         .s5-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: #0f0f0f;
@@ -167,7 +167,7 @@ export default function Section05_RelatedTerms({
         }
 
         .s5-text--brand {
-          color: #5690D4;
+          color: #5b4fe9;
         }
 
         .s5-related-terms {
@@ -183,7 +183,7 @@ export default function Section05_RelatedTerms({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           border: 1px solid #e6e7e9;
@@ -208,14 +208,14 @@ export default function Section05_RelatedTerms({
         }
 
         .s5-section-title-icon__icon {
-          color: #5690D4;
+          color: #5b4fe9;
           flex-shrink: 0;
           width: 24px;
           height: 24px;
         }
 
         .s5-section-title-icon__text {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 600;
           color: #0f0f0f;
@@ -252,13 +252,13 @@ export default function Section05_RelatedTerms({
 
         .s5-card--dark__icon {
           flex-shrink: 0;
-          color: #5690D4;
+          color: #5b4fe9;
           width: 24px;
           height: 24px;
         }
 
         .s5-card--dark__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: #ffffff;

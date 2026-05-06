@@ -1,17 +1,17 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const P = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
-  textTertiary:   "#9c9c9c",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
+  textTertiary:   "#6b7280",
   white:          "#ffffff",
-  surfaceLight:   "#f7f7f7",
-  borderDefault:  "#e6e7e9",
-  neutral800:     "#171719",
-  gradientBrand:  "linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%)",
+  surfaceLight:   "#f7f8fb",
+  borderDefault:  "#e5e7eb",
+  neutral800:     "#0f1130",
+  gradientBrand:  "linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%)",
 }
 
 interface Props {
@@ -67,7 +67,7 @@ export default function NotFound({
           justify-content: center;
           padding: 32px 24px;
           text-align: center;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           color: ${P.textPrimary};
           background-color: ${P.white};
           -webkit-font-smoothing: antialiased;
@@ -95,7 +95,7 @@ export default function NotFound({
           50% { transform: scale(1.15); opacity: 0.2; }
         }
         .nf-code {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 120px;
           font-weight: 700;
           line-height: 1;
@@ -138,7 +138,7 @@ export default function NotFound({
           text-align: left;
         }
         .nf-demo__label {
-          font-family: "Fragment Mono", monospace;
+          font-family: var(--f-mono, 'JetBrains Mono'), monospace;
           font-size: 11px;
           letter-spacing: 0.08em;
           text-transform: uppercase;
@@ -147,7 +147,7 @@ export default function NotFound({
         }
         .nf-demo__label--restored { color: ${P.brandAccent}; }
         .nf-demo__line {
-          font-family: "Fragment Mono", monospace;
+          font-family: var(--f-mono, 'JetBrains Mono'), monospace;
           font-size: 13px;
           line-height: 1.8;
           color: ${P.textTertiary};
@@ -167,7 +167,7 @@ export default function NotFound({
           align-items: center;
           justify-content: center;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           font-size: 15px;
           cursor: pointer;

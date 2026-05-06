@@ -1,10 +1,10 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandSecondary: "#5690D4",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
-  borderDefault: "#e6e7e9",
+  brandSecondary: "#0ea5a4",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
+  borderDefault: "#e5e7eb",
   surfaceWhite:  "#ffffff",
 }
 
@@ -54,7 +54,7 @@ export default function Section05_EnterpriseExamples({
           text-align: center;
         }
         .s5-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -79,7 +79,7 @@ export default function Section05_EnterpriseExamples({
           gap: 12px;
         }
         .s5-card-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: ${PALETTE.textPrimary};
@@ -87,7 +87,7 @@ export default function Section05_EnterpriseExamples({
           text-wrap: pretty;
         }
         .s5-card-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;

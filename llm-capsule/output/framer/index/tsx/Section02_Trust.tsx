@@ -2,18 +2,18 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ─────────────────────────────────────────────────────────────────
 const P = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  gradientBrand:  "linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%)",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
-  textTertiary:   "#9c9c9c",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  gradientBrand:  "linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%)",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
+  textTertiary:   "#6b7280",
   white:          "#ffffff",
-  neutral200:     "#e0e0e0",
-  borderDefault:  "#e6e7e9",
+  neutral200:     "#e5e7eb",
+  borderDefault:  "#e5e7eb",
   surfaceWhite:   "#ffffff",
-  surfaceLight:   "#f7f7f7",
+  surfaceLight:   "#f7f8fb",
 }
 
 const IMG = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images"
@@ -70,11 +70,11 @@ export default function Section02_Trust({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         .idx-root {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           color: ${P.textPrimary};
           background-color: ${P.surfaceWhite};
           -webkit-font-smoothing: antialiased;
@@ -155,7 +155,7 @@ export default function Section02_Trust({
         .idx-kpi-band > * { position: relative; z-index: 1; }
         .idx-kpi-band__item { display: flex; flex-direction: column; gap: 12px; text-align: center; }
         .idx-kpi-band__number {
-          font-family: "DM Sans", sans-serif; font-size: 50px;
+          font-family: var(--f-display, 'Inter'), sans-serif; font-size: 50px;
           font-weight: 700; line-height: 1; color: ${P.white};
         }
         .idx-kpi-band__label { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.5; }
@@ -176,7 +176,7 @@ export default function Section02_Trust({
           gap: 8px; flex-shrink: 0; width: 200px;
         }
         .idx-cert-card__group {
-          font-family: "Fragment Mono", monospace; font-size: 10px; font-weight: 500;
+          font-family: var(--f-mono, 'JetBrains Mono'), monospace; font-size: 10px; font-weight: 500;
           text-transform: uppercase; letter-spacing: 0.08em; color: ${P.brandSecondary};
           margin-bottom: 4px;
         }

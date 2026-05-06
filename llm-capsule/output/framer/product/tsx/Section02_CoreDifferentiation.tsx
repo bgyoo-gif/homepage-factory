@@ -1,13 +1,13 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandPrimary:    "#1821E8",
-  brandSecondary:  "#5690D4",
-  textPrimary:     "#0f0f0f",
-  textSecondary:   "#636363",
-  textTertiary:    "#9c9c9c",
+  brandPrimary:    "#5b4fe9",
+  brandSecondary:  "#0ea5a4",
+  textPrimary:     "#0f1130",
+  textSecondary:   "#3a3d5e",
+  textTertiary:    "#6b7280",
   white:           "#ffffff",
-  borderDefault:   "#e6e7e9",
+  borderDefault:   "#e5e7eb",
   surfaceWhite:    "#ffffff",
   brandTintLight:  "rgba(24, 33, 232, 0.06)",
   shadowCard:      "0px 24px 40px rgba(0, 0, 0, 0.04)",
@@ -67,7 +67,7 @@ export default function Section02_CoreDifferentiation({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s2-section {
           width: 100%;
@@ -95,7 +95,7 @@ export default function Section02_CoreDifferentiation({
         }
         @container (max-width: 767px) { .s2-header { text-align: left; } }
         .s2-header__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px; font-weight: 700;
           color: ${PALETTE.textPrimary};
           line-height: 1.2; letter-spacing: -0.5px;
@@ -106,7 +106,7 @@ export default function Section02_CoreDifferentiation({
         @container (min-width: 1440px) { .s2-header__title { font-size: 28px; } }
         .s2-header__brand { color: ${PALETTE.brandSecondary}; }
         .s2-header__desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px; color: ${PALETTE.textSecondary};
           line-height: 1.7; max-width: 100%; margin: 0 auto;
           word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty;
@@ -157,7 +157,7 @@ export default function Section02_CoreDifferentiation({
           width: 240px;
         }
         .s2-cs-card__left-category {
-          font-family: "Fragment Mono", monospace;
+          font-family: var(--f-mono, 'JetBrains Mono'), monospace;
           font-size: 11px; color: ${PALETTE.brandSecondary};
           letter-spacing: 0.08em; text-transform: uppercase;
           display: inline-flex;
@@ -180,7 +180,7 @@ export default function Section02_CoreDifferentiation({
           stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
         }
         .s2-cs-card__left-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px; font-weight: 700;
           color: ${PALETTE.textPrimary}; line-height: 1.2;
         }
@@ -206,7 +206,7 @@ export default function Section02_CoreDifferentiation({
           display: flex;
           align-items: flex-start;
           gap: 8px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px; color: ${PALETTE.textSecondary};
           line-height: 1.7;
           word-break: keep-all; overflow-wrap: break-word;
@@ -226,7 +226,7 @@ export default function Section02_CoreDifferentiation({
           border-top: 1px solid ${PALETTE.borderDefault};
           border-bottom: 1px solid ${PALETTE.borderDefault};
           background-color: ${PALETTE.brandTintLight};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px; line-height: 1.7;
           text-align: center; color: ${PALETTE.textSecondary};
           word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty;

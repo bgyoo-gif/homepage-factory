@@ -1,10 +1,10 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
   surfaceWhite:  "#ffffff",
-  borderDefault: "#e6e7e9",
+  borderDefault: "#e5e7eb",
 }
 
 interface Props {
@@ -19,7 +19,7 @@ export default function Section04_MaskingWorks({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s4-section {
           width: 100%;
@@ -49,7 +49,7 @@ export default function Section04_MaskingWorks({
           text-align: center;
         }
         .s4-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -58,7 +58,7 @@ export default function Section04_MaskingWorks({
           margin: 0;
         }
         .s4-paragraph {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;

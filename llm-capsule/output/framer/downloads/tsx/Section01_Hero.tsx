@@ -2,16 +2,16 @@ import { addPropertyControls, ControlType } from "framer"
 
 // LLM Capsule Palette
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  neutral900: "#0f0f0f",
-  neutral800: "#171719",
-  neutral500: "#636363",
-  neutral400: "#9c9c9c",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  neutral900: "#0f1130",
+  neutral800: "#0f1130",
+  neutral500: "#3a3d5e",
+  neutral400: "#6b7280",
   white:      "#ffffff",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
   surfaceWhite: "#ffffff",
 }
 
@@ -41,7 +41,7 @@ export default function Section01_Hero({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s1-section {
           width: 100%;
@@ -66,7 +66,7 @@ export default function Section01_Hero({
           margin: 0 auto;
         }
         .s1-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 32px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -81,7 +81,7 @@ export default function Section01_Hero({
           color: ${PALETTE.brandSecondary};
         }
         .s1-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;

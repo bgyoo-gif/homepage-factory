@@ -2,10 +2,10 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const P = {
-  brandSecondary: "#5690D4",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
-  borderDefault:  "#e6e7e9",
+  brandSecondary: "#0ea5a4",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
+  borderDefault:  "#e5e7eb",
   white:          "#ffffff",
 }
 
@@ -87,7 +87,7 @@ export default function Section03_TheChallenge({
           text-align: center;
         }
         .s3-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${P.textPrimary};
@@ -102,7 +102,7 @@ export default function Section03_TheChallenge({
           color: ${P.brandSecondary};
         }
         .s3-paragraph {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${P.textSecondary};
           line-height: 1.7;

@@ -2,17 +2,17 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ─────────────────────────────────────────────────────────────────
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  gradientBrand:  "linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%)",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  gradientBrand:  "linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%)",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   white:          "#ffffff",
-  borderDefault:  "#e6e7e9",
-  surfaceLight:   "#f7f7f7",
-  surfaceMid:     "#f2f2f2",
-  neutral150:     "#e6e7e9",
+  borderDefault:  "#e5e7eb",
+  surfaceLight:   "#f7f8fb",
+  surfaceMid:     "#f7f8fb",
+  neutral150:     "#e5e7eb",
 }
 
 const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference"
@@ -77,7 +77,7 @@ export default function Section01_Hero({
         dangerouslySetInnerHTML={{ __html: JSON_LD_PRODUCT }}
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s1-section {
           width: 100%;
@@ -112,7 +112,7 @@ export default function Section01_Hero({
           flex-wrap: wrap; margin-bottom: 24px;
         }
         .s1-breadcrumb__link {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px; color: ${PALETTE.brandSecondary};
           font-weight: 500; text-decoration: none;
           transition: color 0.15s;
@@ -121,7 +121,7 @@ export default function Section01_Hero({
         .s1-breadcrumb__sep { font-size: 14px; color: #9c9c9c; }
         .s1-breadcrumb__current { font-size: 14px; color: #9c9c9c; }
         .s1-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 32px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -142,7 +142,7 @@ export default function Section01_Hero({
           color: ${PALETTE.brandSecondary};
         }
         .s1-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -159,7 +159,7 @@ export default function Section01_Hero({
           .s1-description { max-width: 1080px; }
         }
         .s1-body {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -189,7 +189,7 @@ export default function Section01_Hero({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           border: none;
@@ -256,12 +256,12 @@ export default function Section01_Hero({
           stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
         }
         .s1-placeholder-label {
-          font-family: "Fragment Mono", monospace;
+          font-family: var(--f-mono, 'JetBrains Mono'), monospace;
           font-size: 12px; color: #9c9c9c;
           text-transform: uppercase; letter-spacing: 0.08em;
         }
         .s1-placeholder-desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px; color: #9c9c9c;
         }
       `}</style>

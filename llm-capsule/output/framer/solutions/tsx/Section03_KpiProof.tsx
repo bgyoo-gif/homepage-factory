@@ -30,7 +30,7 @@ export default function Section03_KpiProof({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s3-section {
           width: 100%;
@@ -83,14 +83,14 @@ export default function Section03_KpiProof({
           text-align: center;
         }
         .s3-kpi-number {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 50px;
           font-weight: 700;
           line-height: 1;
           color: #ffffff;
         }
         .s3-kpi-label {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: rgba(255,255,255,0.85);
           line-height: 1.5;
@@ -107,14 +107,14 @@ export default function Section03_KpiProof({
           border-radius: 0;
         }
         .s3-banner-tagline {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: #0f0f0f;
           margin-bottom: 8px;
         }
         .s3-banner-note {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: #636363;
         }

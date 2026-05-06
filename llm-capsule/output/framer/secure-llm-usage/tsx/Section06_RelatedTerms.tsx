@@ -1,16 +1,16 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  neutral850: "#141414",
-  neutral800: "#171719",
-  neutral700: "#303135",
-  neutral150: "#e6e7e9",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  neutral850: "#0f1130",
+  neutral800: "#0f1130",
+  neutral700: "#1b1d4a",
+  neutral150: "#e5e7eb",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
   textInverse:   "#ffffff",
-  surfaceLight: "#f7f7f7",
+  surfaceLight: "#f7f8fb",
   surfaceWhite: "#ffffff",
   shadowCard: "0px 24px 40px rgba(0, 0, 0, 0.04)",
 }
@@ -49,7 +49,7 @@ export default function Section06_RelatedTerms({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s6-section {
           width: 100%;
@@ -79,7 +79,7 @@ export default function Section06_RelatedTerms({
           text-align: center;
         }
         .s6-section-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -102,7 +102,7 @@ export default function Section06_RelatedTerms({
           align-items: center;
           justify-content: center;
           padding: 8px 16px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           font-weight: 500;
           color: ${PALETTE.textPrimary};
@@ -137,7 +137,7 @@ export default function Section06_RelatedTerms({
           stroke-linejoin: round;
         }
         .s6-subtitle-text {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 600;
           color: ${PALETTE.textPrimary};
@@ -178,7 +178,7 @@ export default function Section06_RelatedTerms({
           stroke-linejoin: round;
         }
         .s6-link-card-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: ${PALETTE.textInverse};

@@ -1,14 +1,14 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  neutral100: "#ececec",
-  neutral150: "#e6e7e9",
-  neutral025: "#f7f7f7",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
-  textTertiary:  "#9c9c9c",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  neutral100: "#f7f8fb",
+  neutral150: "#e5e7eb",
+  neutral025: "#f7f8fb",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
+  textTertiary:  "#6b7280",
   surfaceWhite: "#ffffff",
   overlayBrandTintLight: "rgba(24,33,232,0.06)",
 }
@@ -27,7 +27,7 @@ export default function Section03_Definition({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s3-section {
           width: 100%;
@@ -53,7 +53,7 @@ export default function Section03_Definition({
           border-top: 1px solid ${PALETTE.neutral150};
           border-bottom: 1px solid ${PALETTE.neutral150};
           background-color: ${PALETTE.overlayBrandTintLight};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.7;
           text-align: center;
@@ -61,7 +61,7 @@ export default function Section03_Definition({
           overflow-wrap: break-word;
         }
         .s3-banner-label {
-          font-family: "Fragment Mono", "Geist Mono", monospace;
+          font-family: var(--f-mono, 'JetBrains Mono'), "Geist Mono", monospace;
           font-size: 12px;
           text-transform: uppercase;
           letter-spacing: 0.08em;
@@ -79,7 +79,7 @@ export default function Section03_Definition({
           text-wrap: pretty;
         }
         .s3-product-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
         .s3-enables-text {

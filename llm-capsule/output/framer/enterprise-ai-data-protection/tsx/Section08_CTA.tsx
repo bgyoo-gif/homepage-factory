@@ -1,9 +1,9 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  neutral800:  "#171719",
+  neutral800:  "#0f1130",
   white:       "#ffffff",
-  textPrimary: "#0f0f0f",
+  textPrimary: "#0f1130",
 }
 
 const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images"
@@ -33,7 +33,7 @@ export default function Section08_CTA({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -65,7 +65,7 @@ export default function Section08_CTA({
           gap: 24px;
         }
         .s8-cta__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 36px;
           font-weight: 700;
           color: ${PALETTE.white};
@@ -75,7 +75,7 @@ export default function Section08_CTA({
           text-wrap: pretty;
         }
         .s8-product-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
         .s8-cta__description {
@@ -99,7 +99,7 @@ export default function Section08_CTA({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           border: 1px solid rgba(255,255,255,0.6);

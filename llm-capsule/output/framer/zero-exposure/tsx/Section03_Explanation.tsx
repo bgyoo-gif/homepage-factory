@@ -1,10 +1,10 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const BRAND = {
-  brandSecondary: "#5690D4",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
-  neutral150:    "#e6e7e9",
+  brandSecondary: "#0ea5a4",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
+  neutral150:    "#e5e7eb",
   surfaceWhite:  "#ffffff",
 }
 
@@ -43,7 +43,7 @@ export default function Section03_Explanation({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -71,7 +71,7 @@ export default function Section03_Explanation({
           text-align: center;
         }
         .s3-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${BRAND.textPrimary};
@@ -94,7 +94,7 @@ export default function Section03_Explanation({
           display: flex;
           align-items: flex-start;
           gap: 8px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.5;
           color: ${BRAND.textPrimary};

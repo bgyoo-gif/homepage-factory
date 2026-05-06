@@ -3,15 +3,15 @@ import { useState } from "react"
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const C = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  neutral150:     "#e6e7e9",
-  neutral025:     "#f7f7f7",
-  neutral400:     "#9c9c9c",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  neutral150:     "#e5e7eb",
+  neutral025:     "#f7f8fb",
+  neutral400:     "#6b7280",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   surfaceWhite:   "#ffffff",
-  surfaceLight:   "#f7f7f7",
+  surfaceLight:   "#f7f8fb",
 }
 
 // ─── JSON-LD ────────────────────────────────────────────────────────────────
@@ -118,7 +118,7 @@ export default function Section05_FAQ({
           text-align: center;
         }
         .s5-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${C.textPrimary};
@@ -155,7 +155,7 @@ export default function Section05_FAQ({
           user-select: none;
         }
         .s5-ac-card__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           font-weight: 500;
           line-height: 1.2;
@@ -209,7 +209,7 @@ export default function Section05_FAQ({
           padding: 24px;
           border-top: 1px solid ${C.neutral150};
           background-color: ${C.surfaceLight};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${C.textSecondary};
           line-height: 1.7;

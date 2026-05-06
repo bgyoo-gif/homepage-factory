@@ -2,20 +2,20 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ────────────────────────────────────────────────────────────────
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   textInverse:    "#ffffff",
-  neutral200:     "#e0e0e0",
-  neutral025:     "#f7f7f7",
-  neutral150:     "#e6e7e9",
+  neutral200:     "#e5e7eb",
+  neutral025:     "#f7f8fb",
+  neutral150:     "#e5e7eb",
   surfaceWhite:   "#ffffff",
-  success:        "#0e824c",
-  gradientBrand:  "linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%)",
-  gradientCardIndigo: "linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #E8F0FF 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%)",
-  gradientCardBlue:   "linear-gradient(109deg, #BFD8F4 0%, #fff 17%, #E8F0FF 38%, #5690D4 51%, #E2EBF5 73%, #BFD8F4 100%)",
+  success:        "#0ea5a4",
+  gradientBrand:  "linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%)",
+  gradientCardIndigo: "linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #eeebfe 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%)",
+  gradientCardBlue:   "linear-gradient(109deg, #eeebfe 0%, #fff 17%, #eeebfe 38%, #5b4fe9 51%, #eeebfe 73%, #eeebfe 100%)",
   gradientCardSilver: "linear-gradient(109deg, #898989 0%, #fff 17%, #D5D5D5 63%, #F6F5F6 84%, #898989 100%)",
   gradientInnerIndigo: "linear-gradient(99deg, #ECEEFF 0%, #FCFCFE 58%, #fff 100%)",
   gradientInnerBlue:   "linear-gradient(99deg, #EAF0F9 0%, #FCFCFE 58%, #fff 100%)",
@@ -148,7 +148,7 @@ export default function Section02_PricingPlans({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -224,7 +224,7 @@ export default function Section02_PricingPlans({
           gap: 4px;
           padding: 4px 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 12px;
           font-weight: 600;
           line-height: 1;
@@ -246,7 +246,7 @@ export default function Section02_PricingPlans({
 
         /* Price Title */
         .s2-price {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 30px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -257,7 +257,7 @@ export default function Section02_PricingPlans({
 
         /* Subtitle */
         .s2-subtitle {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${PALETTE.textSecondary};
           margin-bottom: 16px;
@@ -284,7 +284,7 @@ export default function Section02_PricingPlans({
           display: flex;
           align-items: flex-start;
           gap: 8px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.5;
           color: ${PALETTE.textPrimary};
@@ -306,7 +306,7 @@ export default function Section02_PricingPlans({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           border: none;

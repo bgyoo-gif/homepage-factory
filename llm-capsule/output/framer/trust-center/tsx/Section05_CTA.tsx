@@ -24,7 +24,7 @@ export default function Section05_CTA({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s5-section {
           width: 100%;
@@ -44,7 +44,7 @@ export default function Section05_CTA({
           overflow: hidden;
           padding: 80px 16px;
           text-align: center;
-          background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+          background: linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%);
         }
         @container (min-width: 768px) {
           .s5-cta-band { padding: 100px 32px; }
@@ -73,7 +73,7 @@ export default function Section05_CTA({
         @container (min-width: 1440px) { .s5-cta-inner { max-width: 1080px; } }
 
         .s5-cta-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 40px;
           font-weight: 700;
           color: #ffffff;
@@ -86,11 +86,11 @@ export default function Section05_CTA({
         @container (min-width: 1440px) { .s5-cta-title { font-size: 50px; } }
 
         .s5-product-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
         .s5-cta-desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: rgba(255,255,255,0.85);
           line-height: 1.7;
@@ -126,7 +126,7 @@ export default function Section05_CTA({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           transition: opacity 0.2s, background-color 0.2s;

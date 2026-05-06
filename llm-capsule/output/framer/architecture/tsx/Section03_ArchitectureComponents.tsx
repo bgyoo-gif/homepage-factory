@@ -3,25 +3,25 @@ import { useState } from "react"
 
 // LLM Capsule Brand Palette
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  neutral900: "#0f0f0f",
-  neutral800: "#171719",
-  neutral700: "#303135",
-  neutral500: "#636363",
-  neutral400: "#9c9c9c",
-  neutral200: "#e0e0e0",
-  neutral150: "#e6e7e9",
-  neutral100: "#ececec",
-  neutral050: "#f2f2f2",
-  neutral025: "#f7f7f7",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  neutral900: "#0f1130",
+  neutral800: "#0f1130",
+  neutral700: "#1b1d4a",
+  neutral500: "#3a3d5e",
+  neutral400: "#6b7280",
+  neutral200: "#e5e7eb",
+  neutral150: "#e5e7eb",
+  neutral100: "#f7f8fb",
+  neutral050: "#f7f8fb",
+  neutral025: "#f7f8fb",
   white:      "#ffffff",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
-  textTertiary:  "#9c9c9c",
-  borderDefault: "#e6e7e9",
-  surfaceLight: "#f7f7f7",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
+  textTertiary:  "#6b7280",
+  borderDefault: "#e5e7eb",
+  surfaceLight: "#f7f8fb",
   surfaceWhite: "#ffffff",
 }
 
@@ -111,7 +111,7 @@ export default function Section03_ArchitectureComponents({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s3-section {
           width: 100%;
@@ -148,7 +148,7 @@ export default function Section03_ArchitectureComponents({
           border-bottom: 1px solid ${PALETTE.borderDefault};
         }
         .s3-section-header__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 40px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -175,7 +175,7 @@ export default function Section03_ArchitectureComponents({
           border-radius: 9999px;
           border: 1px solid ${PALETTE.borderDefault};
           background-color: ${PALETTE.surfaceWhite};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           font-weight: 500;
           color: ${PALETTE.textSecondary};
@@ -240,7 +240,7 @@ export default function Section03_ArchitectureComponents({
           gap: 24px;
         }
         .s3-panel-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 30px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -250,7 +250,7 @@ export default function Section03_ArchitectureComponents({
           .s3-panel-title { font-size: 36px; }
         }
         .s3-panel-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -279,7 +279,7 @@ export default function Section03_ArchitectureComponents({
         }
         .s3-screenshot-placeholder svg { color: ${PALETTE.neutral400}; }
         .s3-screenshot-placeholder span {
-          font-family: "Fragment Mono", monospace;
+          font-family: var(--f-mono, 'JetBrains Mono'), monospace;
           font-size: 12px;
           text-transform: uppercase;
           letter-spacing: 0.08em;

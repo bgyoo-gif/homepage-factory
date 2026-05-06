@@ -22,7 +22,7 @@ export default function Section03_DataSovereignty({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s3-section {
           width: 100%;
@@ -61,7 +61,7 @@ export default function Section03_DataSovereignty({
           border-bottom: 1px solid #e6e7e9;
         }
         .s3-section-header__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: #0f0f0f;
@@ -79,7 +79,7 @@ export default function Section03_DataSovereignty({
           .s3-section-header__title { font-size: 28px; }
         }
         .s3-section-header__description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: #636363;
           line-height: 1.7;
@@ -94,9 +94,9 @@ export default function Section03_DataSovereignty({
         @container s3 (min-width: 1440px) {
           .s3-section-header__description { max-width: 1080px; }
         }
-        .s3-title-highlight { color: #5690D4; }
+        .s3-title-highlight { color: #5b4fe9; }
         .s3-product {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 
@@ -118,10 +118,10 @@ export default function Section03_DataSovereignty({
           box-sizing: border-box;
         }
         .s3-card--gradient-indigo {
-          background: linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #E8F0FF 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%);
+          background: linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #eeebfe 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%);
         }
         .s3-card--gradient-blue {
-          background: linear-gradient(109deg, #BFD8F4 0%, #fff 17%, #E8F0FF 38%, #5690D4 51%, #E2EBF5 73%, #BFD8F4 100%);
+          background: linear-gradient(109deg, #eeebfe 0%, #fff 17%, #eeebfe 38%, #5b4fe9 51%, #eeebfe 73%, #eeebfe 100%);
         }
         .s3-card--gradient__inner {
           border-radius: 16px;
@@ -139,7 +139,7 @@ export default function Section03_DataSovereignty({
           background: linear-gradient(99deg, #EAF0F9 0%, #FCFCFE 58%, #fff 100%);
         }
         .s3-card--gradient__icon {
-          color: #5690D4;
+          color: #5b4fe9;
           margin-bottom: 4px;
         }
         .s3-card--gradient__icon svg {
@@ -152,14 +152,14 @@ export default function Section03_DataSovereignty({
           stroke-linejoin: round;
         }
         .s3-card--gradient__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 600;
           color: #0f0f0f;
           line-height: 1.2;
         }
         .s3-card--gradient__description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: #636363;
           line-height: 1.7;

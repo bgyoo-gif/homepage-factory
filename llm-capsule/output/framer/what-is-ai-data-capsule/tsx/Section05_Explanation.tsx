@@ -1,13 +1,13 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
   surfaceWhite:   "#ffffff",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
-  textTertiary:   "#9c9c9c",
-  borderDefault:  "#e6e7e9",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
+  textTertiary:   "#6b7280",
+  borderDefault:  "#e5e7eb",
 }
 
 interface Props {
@@ -32,7 +32,7 @@ export default function Section05_Explanation({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -63,7 +63,7 @@ export default function Section05_Explanation({
           text-align: center;
         }
         .s5-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           line-height: 1.2;
@@ -73,7 +73,7 @@ export default function Section05_Explanation({
         }
         .s5-label-brand { color: ${PALETTE.brandSecondary}; }
         .s5-intro {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -94,7 +94,7 @@ export default function Section05_Explanation({
           display: flex;
           align-items: flex-start;
           gap: 8px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.5;
           color: ${PALETTE.textPrimary};
@@ -125,7 +125,7 @@ export default function Section05_Explanation({
           border-bottom: 1px solid ${PALETTE.borderDefault};
           background-color: rgba(24, 33, 232, 0.06);
           margin-top: 32px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${PALETTE.textPrimary};
           line-height: 1.7;

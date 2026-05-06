@@ -1,10 +1,10 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandSecondary: "#5690D4",
-  neutral150: "#e6e7e9",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
+  brandSecondary: "#0ea5a4",
+  neutral150: "#e5e7eb",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
   surfaceWhite: "#ffffff",
 }
 
@@ -24,7 +24,7 @@ export default function Section04_Explanation({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s4-section {
           width: 100%;
@@ -54,7 +54,7 @@ export default function Section04_Explanation({
           text-align: center;
         }
         .s4-section-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -67,7 +67,7 @@ export default function Section04_Explanation({
           color: ${PALETTE.brandSecondary};
         }
         .s4-paragraph {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;

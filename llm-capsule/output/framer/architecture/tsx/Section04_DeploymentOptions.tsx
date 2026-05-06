@@ -2,23 +2,23 @@ import { addPropertyControls, ControlType } from "framer"
 
 // LLM Capsule Brand Palette
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  neutral900: "#0f0f0f",
-  neutral800: "#171719",
-  neutral700: "#303135",
-  neutral500: "#636363",
-  neutral400: "#9c9c9c",
-  neutral200: "#e0e0e0",
-  neutral150: "#e6e7e9",
-  neutral100: "#ececec",
-  neutral050: "#f2f2f2",
-  neutral025: "#f7f7f7",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  neutral900: "#0f1130",
+  neutral800: "#0f1130",
+  neutral700: "#1b1d4a",
+  neutral500: "#3a3d5e",
+  neutral400: "#6b7280",
+  neutral200: "#e5e7eb",
+  neutral150: "#e5e7eb",
+  neutral100: "#f7f8fb",
+  neutral050: "#f7f8fb",
+  neutral025: "#f7f8fb",
   white:      "#ffffff",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
-  borderDefault: "#e6e7e9",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
+  borderDefault: "#e5e7eb",
   surfaceWhite: "#ffffff",
 }
 
@@ -66,7 +66,7 @@ export default function Section04_DeploymentOptions({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s4-section {
           width: 100%;
@@ -103,7 +103,7 @@ export default function Section04_DeploymentOptions({
           border-bottom: 1px solid ${PALETTE.borderDefault};
         }
         .s4-section-header__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 40px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -113,7 +113,7 @@ export default function Section04_DeploymentOptions({
           text-wrap: pretty;
         }
         .s4-section-header__description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -130,7 +130,7 @@ export default function Section04_DeploymentOptions({
         }
         .s4-text--brand { color: ${PALETTE.brandSecondary}; }
         .s4-product-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 
@@ -157,13 +157,13 @@ export default function Section04_DeploymentOptions({
           flex-direction: column;
         }
         .s4-card--indigo {
-          background-image: linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #E8F0FF 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%);
+          background-image: linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #eeebfe 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%);
         }
         .s4-card--blue {
-          background-image: linear-gradient(109deg, #BFD8F4 0%, #fff 17%, #E8F0FF 38%, #5690D4 51%, #E2EBF5 73%, #BFD8F4 100%);
+          background-image: linear-gradient(109deg, #eeebfe 0%, #fff 17%, #eeebfe 38%, #5b4fe9 51%, #eeebfe 73%, #eeebfe 100%);
         }
         .s4-card--green {
-          background-image: linear-gradient(109deg, #55B45D 0%, #F0FFF2 17%, #9AE6AD 43%, #C9FFE1 65%, #55B45D 84%, #55B45D 100%);
+          background-image: linear-gradient(109deg, #0ea5a4 0%, #e6f7f6 17%, #e6f7f6 43%, #e6f7f6 65%, #0ea5a4 84%, #0ea5a4 100%);
         }
         .s4-card--silver {
           background-image: linear-gradient(109deg, #898989 0%, #fff 17%, #D5D5D5 63%, #F6F5F6 84%, #898989 100%);
@@ -193,7 +193,7 @@ export default function Section04_DeploymentOptions({
           color: ${PALETTE.textPrimary};
         }
         .s4-card__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           font-weight: 600;
           color: ${PALETTE.textPrimary};
@@ -201,7 +201,7 @@ export default function Section04_DeploymentOptions({
           margin-bottom: 12px;
         }
         .s4-card__description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -219,7 +219,7 @@ export default function Section04_DeploymentOptions({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           font-size: 14px;
           cursor: pointer;

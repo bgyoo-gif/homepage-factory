@@ -4,12 +4,12 @@ const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference
 
 // LLM Capsule Brand Palette
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  neutral900: "#0f0f0f",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  neutral900: "#0f1130",
   white:      "#ffffff",
-  textPrimary:   "#0f0f0f",
+  textPrimary:   "#0f1130",
 }
 
 interface Props {
@@ -36,7 +36,7 @@ export default function Section05_CTA({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s5-section {
           width: 100%;
@@ -82,7 +82,7 @@ export default function Section05_CTA({
         }
 
         .s5-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 40px;
           font-weight: 700;
           color: #ffffff;
@@ -95,15 +95,15 @@ export default function Section05_CTA({
         }
         @container (max-width: 767px) {
           .s5-title { font-size: 36px; }
-          .s5-section { background-image: none; background-color: #1821E8; }
+          .s5-section { background-image: none; background-color: #5b4fe9; }
         }
 
         .s5-product-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
         .s5-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: rgba(255,255,255,0.85);
           line-height: 1.7;
@@ -128,7 +128,7 @@ export default function Section05_CTA({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           font-size: 16px;
           cursor: pointer;
@@ -152,7 +152,7 @@ export default function Section05_CTA({
         .s5-footnote {
           font-size: 12px;
           color: rgba(255,255,255,0.6);
-          font-family: "Fragment Mono", monospace;
+          font-family: var(--f-mono, 'JetBrains Mono'), monospace;
           letter-spacing: 0.08em;
         }
         .s5-footnote a {

@@ -16,7 +16,7 @@ export default function Section06_AWSMarketplace({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s6-section {
           width: 100%;
@@ -69,7 +69,7 @@ export default function Section06_AWSMarketplace({
         }
         .s6-banner--full > * { position: relative; z-index: 1; }
         .s6-banner--full p {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: #0f0f0f;
           line-height: 1.7;
@@ -79,7 +79,7 @@ export default function Section06_AWSMarketplace({
           overflow-wrap: break-word;
         }
         .s6-product {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
         .s6-banner__actions {
@@ -97,7 +97,7 @@ export default function Section06_AWSMarketplace({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           transition: opacity 0.2s, background-color 0.2s;

@@ -2,10 +2,10 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const P = {
-  brandSecondary: "#5690D4",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
-  borderDefault:  "#e6e7e9",
+  brandSecondary: "#0ea5a4",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
+  borderDefault:  "#e5e7eb",
   surfaceWhite:   "#ffffff",
   shadowCard:     "0px 24px 40px rgba(0, 0, 0, 0.04)",
   white:          "#ffffff",
@@ -154,7 +154,7 @@ export default function Section06_UseCases({
           text-align: center;
         }
         .s6-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${P.textPrimary};
@@ -199,14 +199,14 @@ export default function Section06_UseCases({
           flex-shrink: 0;
         }
         .s6-card-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 600;
           color: ${P.textPrimary};
           line-height: 1.2;
         }
         .s6-card-desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${P.textSecondary};
           line-height: 1.7;

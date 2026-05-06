@@ -40,71 +40,45 @@ B타입 HTML 파일을 Framer에서 바로 사용할 수 있는 TSX 컴포넌트
 
 ---
 
-## ★ 컬러 팔레트 (필수 참조)
+## ★ 토큰 시스템 (v6.1)
 
-TSX에서는 CSS 변수 대신 실제 값을 사용하되, **반드시 아래 팔레트 안에서만** 선택한다.
-이 목록에 없는 색상(예: green 계열, orange 등)을 임의로 사용하면 결함.
+**TSX에서는 CSS 변수 `var(--c-*, fallback)` 를 사용한다.**
+TokenProvider.tsx가 Framer Layout에서 `:root` 변수를 주입하므로, 각 TSX에서 색상을 const로 재정의하지 않는다.
 
-```typescript
-const PALETTE = {
-  // Brand
-  brandPrimary:   "#3061f2",
-  brandPurple:    "#725bea",
-  brandPurpleLt:  "#c6c5fa",
-  brandPurpleMd:  "#ab2eff",
+```css
+/* 사용 예시 */
+.s1-title { color: var(--c-ink, #0f1130); }
+.s1-brand { color: var(--c-primary, #5b4fe9); }
+.s1-btn   { background: var(--c-ink, #0f1130); }
+.s1-card  { border: 1px solid var(--c-rule, #e5e7eb); border-radius: var(--r-md, 10px); }
+```
 
-  // Neutral
-  neutral900: "#0f0f0f",
-  neutral850: "#141414",
-  neutral800: "#171719",
-  neutral700: "#303135",
-  neutral500: "#636363",
-  neutral400: "#9c9c9c",
-  neutral350: "#adadad",
-  neutral300: "#bababa",
-  neutral250: "#c4c4c4",
-  neutral200: "#e0e0e0",
-  neutral150: "#e6e7e9",
-  neutral100: "#ececec",
-  neutral050: "#f2f2f2",
-  neutral025: "#f7f7f7",
-  white:      "#ffffff",
-  black:      "#000000",
+**CSS 변수 + fallback hex 참조:**
 
-  // Text
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
-  textTertiary:  "#9c9c9c",
-  textInverse:   "#ffffff",
-  textMuted:     "#cacccf",
-
-  // Functional
-  success: "#0e824c",
-  error:   "#ff3030",
-  info:    "#155ea0",
-  warn:    "#f59e0b",
-
-  // Functional — Dark bg variants
-  successLight: "#34d399",
-  errorLight:   "#ff6b6b",
-  infoLight:    "#60a5fa",
-  warnLight:    "#fbbf24",
-
-  // Border
-  borderDefault: "#e6e7e9",
-  borderStrong:  "#171719",
-  borderBrand:   "#725bea",
-
-  // Surface
-  surfaceDark:  "#171719",
-  surfaceMid:   "#f2f2f2",
-  surfaceLight: "#f7f7f7",
-  surfaceWhite: "#ffffff",
-
-  // Gradient
-  gradientBrand: "linear-gradient(130deg, #6C54A0, #b44fcc 50%, #ff266a)",
-  gradientDark:  "linear-gradient(180deg, #0f0f0f 0%, #171719 100%)",
-}
+| Variable | Hex | 용도 |
+|----------|-----|------|
+| `--c-primary` | `#5b4fe9` | Purple — CTA, 강조 |
+| `--c-primary-dark` | `#3b2fbf` | Hover |
+| `--c-primary-soft` | `#eeebfe` | Badge/banner bg |
+| `--c-teal` | `#0ea5a4` | Differentiator, success |
+| `--c-teal-soft` | `#e6f7f6` | Teal tint |
+| `--c-coral` | `#ef5350` | Problem/warning |
+| `--c-coral-soft` | `#fce9e8` | Coral tint |
+| `--c-amber` | `#f59e0b` | Caution |
+| `--c-ink` | `#0f1130` | Text primary |
+| `--c-ink-soft` | `#3a3d5e` | Text secondary |
+| `--c-muted` | `#6b7280` | Text tertiary |
+| `--c-bg` | `#ffffff` | White |
+| `--c-bg-soft` | `#f7f8fb` | Surface light |
+| `--c-bg-dark` | `#0f1130` | Dark section |
+| `--c-bg-dark-2` | `#1b1d4a` | Dark card |
+| `--c-rule` | `#e5e7eb` | Border |
+| `--f-display` | `Inter` | Base font |
+| `--f-mono` | `JetBrains Mono` | Code font |
+| `--r-sm` | `6px` | Small radius |
+| `--r-md` | `10px` | Medium radius |
+| `--r-lg` | `16px` | Large radius |
+| `--container-max` | `1280px` | Container max |
 ```
 
 ---
@@ -264,18 +238,11 @@ grep '860' "$FILE"
 26. **`/trust-center` → `/trust`**: trust-center 페이지 삭제됨. `/trust`만 사용.
 27. **번역 후 반드시 native-reviewer 리뷰**: translator 완료 후 native-reviewer 에이전트로 품질 검수. 직역투, 톤 불일치, 용어 오용 수정.
 
-### LLM Capsule 브랜드 팔레트 (brand === 'llm-capsule' 일 때)
+### LLM Capsule 토큰 (brand === 'llm-capsule' 일 때)
 
-```typescript
-const P = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  brandLight:     "#B8D4EE",
-  gradientBrand: "linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%)",
-  // ... neutral/text/surface 값은 core와 동일
-}
-```
+**v6.1부터 CSS 변수 사용.** `const P/C/PALETTE = {}` 하드코딩 폐기.
+TSX에서 `var(--c-primary, #5b4fe9)` 형태로 직접 참조.
+TokenProvider.tsx가 `:root` 변수를 주입.
 
 ### 출력 경로 (단일 파일 구조 — 페이지 하나당 TSX 1개)
 

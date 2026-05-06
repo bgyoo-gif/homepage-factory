@@ -2,11 +2,11 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ────────────────────────────────────────────────────────────────
 const PALETTE = {
-  brandSecondary: "#5690D4",
-  neutral025: "#f7f7f7",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
-  borderDefault: "#e6e7e9",
+  brandSecondary: "#0ea5a4",
+  neutral025: "#f7f8fb",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
+  borderDefault: "#e5e7eb",
   surfaceWhite:  "#ffffff",
 }
 
@@ -35,7 +35,7 @@ export default function Section02_Problem({
           width: 100%;
           padding: 32px 0;
           background-color: ${PALETTE.surfaceWhite};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           -webkit-font-smoothing: antialiased;
           word-break: keep-all;
           overflow-wrap: break-word;
@@ -77,7 +77,7 @@ export default function Section02_Problem({
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s2-section-header h2 { font-size: 22px; } }

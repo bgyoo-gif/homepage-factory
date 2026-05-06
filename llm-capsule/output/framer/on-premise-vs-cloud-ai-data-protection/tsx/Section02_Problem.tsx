@@ -2,11 +2,11 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const C = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  neutral150:     "#e6e7e9",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  neutral150:     "#e5e7eb",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   surfaceWhite:   "#ffffff",
 }
 
@@ -58,7 +58,7 @@ export default function Section02_Problem({
           text-align: center;
         }
         .s2-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${C.textPrimary};
@@ -74,7 +74,7 @@ export default function Section02_Problem({
         .s2-brand { color: ${C.brandSecondary}; }
 
         .s2-paragraph {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${C.textSecondary};
           line-height: 1.7;

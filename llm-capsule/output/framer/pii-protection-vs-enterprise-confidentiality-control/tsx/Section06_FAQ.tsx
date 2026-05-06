@@ -3,14 +3,14 @@ import { useState } from "react"
 
 // ─── Palette ────────────────────────────────────────────────────────────────
 const PALETTE = {
-  brandSecondary: "#5690D4",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
-  textTertiary:   "#9c9c9c",
-  borderDefault:  "#e6e7e9",
+  brandSecondary: "#0ea5a4",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
+  textTertiary:   "#6b7280",
+  borderDefault:  "#e5e7eb",
   surfaceWhite:   "#ffffff",
-  surfaceLight:   "#f7f7f7",
-  neutral025:     "#f7f7f7",
+  surfaceLight:   "#f7f8fb",
+  neutral025:     "#f7f8fb",
 }
 
 // ─── JSON-LD ─────────────────────────────────────────────────────────────────
@@ -69,7 +69,7 @@ export default function Section06_FAQ({
           width: 100%;
           padding: 32px 0;
           background-color: ${PALETTE.surfaceWhite};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           -webkit-font-smoothing: antialiased;
           word-break: keep-all;
           overflow-wrap: break-word;
@@ -105,7 +105,7 @@ export default function Section06_FAQ({
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s6-section-header h2 { font-size: 22px; } }
@@ -137,7 +137,7 @@ export default function Section06_FAQ({
           user-select: none;
         }
         .s6-ac-card__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           font-weight: 500;
           line-height: 1.2;

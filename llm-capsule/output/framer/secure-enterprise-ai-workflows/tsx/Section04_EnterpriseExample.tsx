@@ -1,12 +1,12 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandSecondary: "#5690D4",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandSecondary: "#0ea5a4",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   surfaceWhite:   "#ffffff",
-  surfaceLight:   "#f7f7f7",
-  borderDefault:  "#e6e7e9",
+  surfaceLight:   "#f7f8fb",
+  borderDefault:  "#e5e7eb",
   shadowCard:     "0px 24px 40px rgba(0, 0, 0, 0.04)",
 }
 
@@ -28,7 +28,7 @@ export default function Section04_EnterpriseExample({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s4-section {
           width: 100%;
@@ -55,7 +55,7 @@ export default function Section04_EnterpriseExample({
           text-align: center;
         }
         .s4-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -68,7 +68,7 @@ export default function Section04_EnterpriseExample({
           color: ${PALETTE.brandSecondary};
         }
         .s4-product-text {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
         .s4-card {
@@ -82,7 +82,7 @@ export default function Section04_EnterpriseExample({
           gap: 12px;
         }
         .s4-card-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: ${PALETTE.textPrimary};
@@ -90,7 +90,7 @@ export default function Section04_EnterpriseExample({
           margin: 0;
         }
         .s4-card-body {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.7;
           color: ${PALETTE.textSecondary};

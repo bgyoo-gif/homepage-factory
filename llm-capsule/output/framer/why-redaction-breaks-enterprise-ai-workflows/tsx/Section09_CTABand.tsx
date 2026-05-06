@@ -2,16 +2,16 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ────────────────────────────────────────────────────────────────
 const C = {
-  brandFont:      "Oxanium",
+  brandFont:      var(--f-display, 'Inter'),
   textInverse:    "#ffffff",
-  neutral800:     "#171719",
+  neutral800:     "#0f1130",
   white:          "#ffffff",
   overlayDarkLt:  "rgba(0,0,0,0.15)",
   overlayNavBg:   "rgba(255,255,255,0.92)",
   overlayWhite85: "rgba(255,255,255,0.85)",
   overlayWhite70: "rgba(255,255,255,0.70)",
   overlayBtnBdr:  "rgba(255,255,255,0.6)",
-  textPrimary:    "#0f0f0f",
+  textPrimary:    "#0f1130",
   trackingTight:  "-0.5px",
   bgImgNavy:      "url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-navy-teal.png')",
 }
@@ -45,7 +45,7 @@ export default function Section09_CTABand({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s9-section {
           width: 100%;
@@ -82,7 +82,7 @@ export default function Section09_CTABand({
           gap: 24px;
         }
         .s9-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 36px;
           font-weight: 700;
           color: ${C.white};
@@ -98,7 +98,7 @@ export default function Section09_CTABand({
           font-weight: 700;
         }
         .s9-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${C.overlayWhite85};
           line-height: 1.7;
@@ -120,7 +120,7 @@ export default function Section09_CTABand({
           align-items: center;
           justify-content: center;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           text-decoration: none;
@@ -144,7 +144,7 @@ export default function Section09_CTABand({
           margin-top: 8px;
         }
         .s9-footnote a {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${C.overlayWhite70};
           text-decoration: none;

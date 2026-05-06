@@ -2,14 +2,14 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const P = {
-  brandSecondary: "#5690D4",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
+  brandSecondary: "#0ea5a4",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
   textInverse:   "#ffffff",
-  neutral850:    "#141414",
-  neutral800:    "#171719",
-  neutral700:    "#303135",
-  borderDefault: "#e6e7e9",
+  neutral850:    "#0f1130",
+  neutral800:    "#0f1130",
+  neutral700:    "#1b1d4a",
+  borderDefault: "#e5e7eb",
   surfaceWhite:  "#ffffff",
 }
 
@@ -39,7 +39,7 @@ export default function Section06_RelatedPages({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -80,7 +80,7 @@ export default function Section06_RelatedPages({
           flex-shrink: 0;
         }
         .s6-title-icon__text {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 600;
           color: ${P.textPrimary};
@@ -117,7 +117,7 @@ export default function Section06_RelatedPages({
         }
 
         .s6-card__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: ${P.textInverse};

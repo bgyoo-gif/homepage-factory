@@ -2,12 +2,12 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  textPrimary:    "#0f0f0f",
-  textTertiary:   "#9c9c9c",
+  brandPrimary:   "#5b4fe9",
+  textPrimary:    "#0f1130",
+  textTertiary:   "#6b7280",
   surfaceWhite:   "#ffffff",
-  surfaceLight:   "#f7f7f7",
-  borderDefault:  "#e6e7e9",
+  surfaceLight:   "#f7f8fb",
+  borderDefault:  "#e5e7eb",
   brandTint:      "rgba(24, 33, 232, 0.06)",
 }
 
@@ -23,7 +23,7 @@ export default function Section02_Definition({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -78,7 +78,7 @@ export default function Section02_Definition({
         }
 
         .s2-banner__label {
-          font-family: "Fragment Mono", "Geist Mono", monospace;
+          font-family: var(--f-mono, 'JetBrains Mono'), "Geist Mono", monospace;
           font-size: 12px;
           text-transform: uppercase;
           letter-spacing: 0.08em;
@@ -88,7 +88,7 @@ export default function Section02_Definition({
         }
 
         .s2-banner__body {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${PALETTE.textPrimary};
           line-height: 1.7;

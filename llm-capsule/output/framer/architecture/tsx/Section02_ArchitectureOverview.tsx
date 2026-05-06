@@ -4,28 +4,28 @@ const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference
 
 // LLM Capsule Brand Palette
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  neutral900: "#0f0f0f",
-  neutral800: "#171719",
-  neutral700: "#303135",
-  neutral500: "#636363",
-  neutral400: "#9c9c9c",
-  neutral350: "#adadad",
-  neutral200: "#e0e0e0",
-  neutral150: "#e6e7e9",
-  neutral100: "#ececec",
-  neutral050: "#f2f2f2",
-  neutral025: "#f7f7f7",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  neutral900: "#0f1130",
+  neutral800: "#0f1130",
+  neutral700: "#1b1d4a",
+  neutral500: "#3a3d5e",
+  neutral400: "#6b7280",
+  neutral350: "#6b7280",
+  neutral200: "#e5e7eb",
+  neutral150: "#e5e7eb",
+  neutral100: "#f7f8fb",
+  neutral050: "#f7f8fb",
+  neutral025: "#f7f8fb",
   white:      "#ffffff",
-  black:      "#000000",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
-  success: "#0e824c",
-  info:    "#155ea0",
-  borderDefault: "#e6e7e9",
-  surfaceLight: "#f7f7f7",
+  black:      "#0f1130",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
+  success: "#0ea5a4",
+  info:    "#5b4fe9",
+  borderDefault: "#e5e7eb",
+  surfaceLight: "#f7f8fb",
   surfaceWhite: "#ffffff",
 }
 
@@ -49,7 +49,7 @@ export default function Section02_ArchitectureOverview({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s2-section {
           width: 100%;
@@ -101,7 +101,7 @@ export default function Section02_ArchitectureOverview({
           border-bottom: 1px solid ${PALETTE.borderDefault};
         }
         .s2-section-header__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 40px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -120,7 +120,7 @@ export default function Section02_ArchitectureOverview({
           .s2-section-header__title { font-size: 40px; }
         }
         .s2-section-header__description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -137,7 +137,7 @@ export default function Section02_ArchitectureOverview({
         }
         .s2-text--brand { color: ${PALETTE.brandSecondary}; }
         .s2-product-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 
@@ -147,7 +147,7 @@ export default function Section02_ArchitectureOverview({
           border-radius: 18px;
           box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10);
           overflow: hidden;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
         }
         .s2-diagram-titlebar {
           background-image: linear-gradient(180deg, #e8e8e8 0%, #d8d8d8 100%);
@@ -190,7 +190,7 @@ export default function Section02_ArchitectureOverview({
         }
         .s2-zone-header {
           padding: 12px 16px;
-          font-family: "Fragment Mono", monospace;
+          font-family: var(--f-mono, 'JetBrains Mono'), monospace;
           font-size: 11px;
           font-weight: 600;
           letter-spacing: 0.08em;
@@ -198,7 +198,7 @@ export default function Section02_ArchitectureOverview({
           text-align: center;
         }
         .s2-zone-header--internal {
-          background-image: linear-gradient(115deg, #5670E8 0%, #5690D4 50%, #55B45D 100%);
+          background-image: linear-gradient(115deg, #5670E8 0%, #5b4fe9 50%, #0ea5a4 100%);
           color: ${PALETTE.white};
         }
         .s2-zone-header--flow {
@@ -228,7 +228,7 @@ export default function Section02_ArchitectureOverview({
           background-color: ${PALETTE.surfaceWhite};
         }
         .s2-zone-item--capsule {
-          background-image: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+          background-image: linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%);
           color: ${PALETTE.white};
           font-weight: 700;
           border: none;

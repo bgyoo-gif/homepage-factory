@@ -3,7 +3,7 @@ import { addPropertyControls, ControlType } from "framer"
 const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images"
 
 const PALETTE = {
-  neutral800:   "#171719",
+  neutral800:   "#0f1130",
   white:        "#ffffff",
   textInverse:  "#ffffff",
 }
@@ -32,7 +32,7 @@ export default function Section07_CTABand({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s7-cta-band {
           width: 100%;
@@ -70,7 +70,7 @@ export default function Section07_CTABand({
           gap: 24px;
         }
         .s7-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 40px;
           font-weight: 700;
           color: ${PALETTE.white};
@@ -82,12 +82,12 @@ export default function Section07_CTABand({
           overflow-wrap: break-word;
         }
         .s7-product-text {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
           color: ${PALETTE.white};
         }
         .s7-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: rgba(255, 255, 255, 0.85);
           line-height: 1.7;
@@ -108,7 +108,7 @@ export default function Section07_CTABand({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           font-size: 18px;
           padding: 16px 48px;
@@ -134,7 +134,7 @@ export default function Section07_CTABand({
           margin-top: 8px;
         }
         .s7-footnote a {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: rgba(255, 255, 255, 0.70);
           text-decoration: none;

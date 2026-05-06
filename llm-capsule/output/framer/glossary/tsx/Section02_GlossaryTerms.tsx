@@ -102,7 +102,7 @@ function GlossaryCard({ title, href, linkLabel, iconKey }: CardProps) {
       href={href}
       className="s2-card"
       style={{
-        borderColor: hovered ? "#5690D4" : "#e6e7e9",
+        borderColor: hovered ? "#5b4fe9" : "#e6e7e9",
         transform: hovered ? "translateY(-2px)" : "translateY(0)",
       }}
       onMouseEnter={() => setHovered(true)}
@@ -207,11 +207,11 @@ export default function Section02_GlossaryTerms({
 
         .s2-card__icon-wrap {
           margin-bottom: 12px;
-          color: #5690D4;
+          color: #5b4fe9;
         }
 
         .s2-card__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           font-weight: 700;
           color: #0f0f0f;
@@ -226,7 +226,7 @@ export default function Section02_GlossaryTerms({
         }
 
         .s2-card__link {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           font-weight: 500;
           color: #636363;

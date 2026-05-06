@@ -1,11 +1,11 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandSecondary: "#5690D4",
+  brandSecondary: "#0ea5a4",
   surfaceWhite:   "#ffffff",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
-  borderDefault:  "#e6e7e9",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
+  borderDefault:  "#e5e7eb",
 }
 
 interface Props {
@@ -53,7 +53,7 @@ export default function Section03_Problem({
           text-align: center;
         }
         .s3-section-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           line-height: 1.2;
@@ -65,7 +65,7 @@ export default function Section03_Problem({
           color: ${PALETTE.brandSecondary};
         }
         .s3-paragraph {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;

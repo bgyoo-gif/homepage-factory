@@ -24,7 +24,7 @@ export default function Section01_Hero({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s1-section {
           width: 100%;
@@ -61,7 +61,7 @@ export default function Section01_Hero({
           box-sizing: border-box;
         }
         .s1-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 32px;
           font-weight: 700;
           color: #0f0f0f;
@@ -80,11 +80,11 @@ export default function Section01_Hero({
         }
 
         .s1-title-highlight {
-          color: #5690D4;
+          color: #5b4fe9;
         }
 
         .s1-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: #636363;
           line-height: 1.7;
@@ -101,7 +101,7 @@ export default function Section01_Hero({
         }
 
         .s1-product {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 
@@ -117,7 +117,7 @@ export default function Section01_Hero({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           border: none;
@@ -129,7 +129,7 @@ export default function Section01_Hero({
           box-sizing: border-box;
         }
         .s1-btn--primary {
-          background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+          background: linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%);
           color: #ffffff;
         }
         .s1-btn--primary:hover { opacity: 0.88; }

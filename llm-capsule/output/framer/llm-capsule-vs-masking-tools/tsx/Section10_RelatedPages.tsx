@@ -1,14 +1,14 @@
 import { addPropertyControls, ControlType } from "framer"
 
 const PALETTE = {
-  brandSecondary: "#5690D4",
-  textPrimary:    "#0f0f0f",
+  brandSecondary: "#0ea5a4",
+  textPrimary:    "#0f1130",
   textInverse:    "#ffffff",
-  neutral700:     "#303135",
-  neutral800:     "#171719",
-  neutral850:     "#141414",
+  neutral700:     "#1b1d4a",
+  neutral800:     "#0f1130",
+  neutral850:     "#0f1130",
   surfaceWhite:   "#ffffff",
-  borderDefault:  "#e6e7e9",
+  borderDefault:  "#e5e7eb",
 }
 
 type IconType = "product" | "architecture" | "trust" | "arrow" | "book" | "file"
@@ -90,7 +90,7 @@ export default function Section10_RelatedPages({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s10-section {
           width: 100%;
@@ -123,7 +123,7 @@ export default function Section10_RelatedPages({
           align-items: center;
         }
         .s10-title-icon__text {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 600;
           color: ${PALETTE.textPrimary};
@@ -155,7 +155,7 @@ export default function Section10_RelatedPages({
           color: ${PALETTE.brandSecondary};
         }
         .s10-card-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: ${PALETTE.textInverse};

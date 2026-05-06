@@ -32,7 +32,7 @@ export default function Section03_DataPrinciples({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s3-section {
           width: 100%;
@@ -76,7 +76,7 @@ export default function Section03_DataPrinciples({
           border-bottom: 1px solid #e6e7e9;
         }
         .s3-section-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: #0f0f0f;
@@ -88,9 +88,9 @@ export default function Section03_DataPrinciples({
         @container (min-width: 768px) { .s3-section-title { font-size: 22px; } }
         @container (min-width: 1024px) { .s3-section-title { font-size: 24px; } }
         @container (min-width: 1440px) { .s3-section-title { font-size: 28px; } }
-        .s3-title-highlight { color: #5690D4; }
+        .s3-title-highlight { color: #5b4fe9; }
         .s3-section-desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: #636363;
           line-height: 1.7;
@@ -126,7 +126,7 @@ export default function Section03_DataPrinciples({
         .s3-card-icon {
           display: block;
           margin-bottom: 12px;
-          color: #5690D4;
+          color: #5b4fe9;
         }
         .s3-card-icon svg {
           width: 32px;
@@ -138,14 +138,14 @@ export default function Section03_DataPrinciples({
           stroke-linejoin: round;
         }
         .s3-card-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           font-weight: 600;
           color: #0f0f0f;
           line-height: 1.2;
         }
         .s3-card-desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: #636363;
           line-height: 1.7;

@@ -2,24 +2,24 @@ import { addPropertyControls, ControlType } from "framer"
 
 // LLM Capsule Palette
 const PALETTE = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  neutral900: "#0f0f0f",
-  neutral800: "#171719",
-  neutral500: "#636363",
-  neutral400: "#9c9c9c",
-  neutral200: "#e0e0e0",
-  neutral150: "#e6e7e9",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  neutral900: "#0f1130",
+  neutral800: "#0f1130",
+  neutral500: "#3a3d5e",
+  neutral400: "#6b7280",
+  neutral200: "#e5e7eb",
+  neutral150: "#e5e7eb",
   white:      "#ffffff",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
   surfaceWhite: "#ffffff",
-  borderDefault: "#e6e7e9",
+  borderDefault: "#e5e7eb",
 
-  gradientCardIndigo: "linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #E8F0FF 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%)",
-  gradientCardBlue:   "linear-gradient(109deg, #BFD8F4 0%, #fff 17%, #E8F0FF 38%, #5690D4 51%, #E2EBF5 73%, #BFD8F4 100%)",
-  gradientCardGreen:  "linear-gradient(109deg, #55B45D 0%, #F0FFF2 17%, #9AE6AD 43%, #C9FFE1 65%, #55B45D 84%, #55B45D 100%)",
+  gradientCardIndigo: "linear-gradient(109deg, #C5CCFF 0%, #fff 17%, #eeebfe 38%, #6B7BF0 51%, #E0E8F8 73%, #C5CCFF 100%)",
+  gradientCardBlue:   "linear-gradient(109deg, #eeebfe 0%, #fff 17%, #eeebfe 38%, #5b4fe9 51%, #eeebfe 73%, #eeebfe 100%)",
+  gradientCardGreen:  "linear-gradient(109deg, #0ea5a4 0%, #e6f7f6 17%, #e6f7f6 43%, #e6f7f6 65%, #0ea5a4 84%, #0ea5a4 100%)",
   gradientInnerIndigo: "linear-gradient(99deg, #ECEEFF 0%, #FCFCFE 58%, #fff 100%)",
   gradientInnerBlue:   "linear-gradient(99deg, #EAF0F9 0%, #FCFCFE 58%, #fff 100%)",
   gradientInnerGreen:  "linear-gradient(99deg, #F0FDF5 0%, #FCFCFE 58%, #fff 100%)",
@@ -115,7 +115,7 @@ export default function Section02_DownloadsGrid({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s2-section {
           width: 100%;
@@ -144,7 +144,7 @@ export default function Section02_DownloadsGrid({
           margin-bottom: 32px;
         }
         .s2-header-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -158,7 +158,7 @@ export default function Section02_DownloadsGrid({
           color: ${PALETTE.brandSecondary};
         }
         .s2-header-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -210,7 +210,7 @@ export default function Section02_DownloadsGrid({
         .s2-card-icon--green  { color: ${PALETTE.brandAccent}; }
 
         .s2-card-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${PALETTE.textPrimary};
@@ -220,7 +220,7 @@ export default function Section02_DownloadsGrid({
           word-break: keep-all;
         }
         .s2-card-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${PALETTE.textSecondary};
           line-height: 1.7;
@@ -240,7 +240,7 @@ export default function Section02_DownloadsGrid({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: default;
           border: 1px solid ${PALETTE.borderDefault};

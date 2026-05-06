@@ -4,9 +4,9 @@ const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference
 const DEFAULT_BG_IMAGE = `${IMAGE_BASE}/bg-paint-blue-iridescent.png`
 
 const PALETTE = {
-  neutral800:  "#171719",
+  neutral800:  "#0f1130",
   white:       "#ffffff",
-  textPrimary: "#0f0f0f",
+  textPrimary: "#0f1130",
 }
 
 interface Props {
@@ -33,7 +33,7 @@ export default function Section11_CTABand({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s11-wrap {
           width: 100%;
@@ -72,7 +72,7 @@ export default function Section11_CTABand({
           gap: 24px;
         }
         .s11-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 36px;
           font-weight: 700;
           color: ${PALETTE.white};
@@ -82,7 +82,7 @@ export default function Section11_CTABand({
           text-wrap: pretty;
         }
         .s11-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: rgba(255, 255, 255, 0.85);
           line-height: 1.7;
@@ -105,7 +105,7 @@ export default function Section11_CTABand({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           border: 1px solid rgba(255, 255, 255, 0.6);
@@ -131,7 +131,7 @@ export default function Section11_CTABand({
           margin-top: 8px;
         }
         .s11-footnote a {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: rgba(255, 255, 255, 0.7);
           text-decoration: none;

@@ -4,14 +4,14 @@ const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const P = {
-  neutral800:  "#171719",
+  neutral800:  "#0f1130",
   white:       "#ffffff",
   whiteAlpha85: "rgba(255,255,255,0.85)",
   whiteAlpha70: "rgba(255,255,255,0.70)",
   whiteAlpha92: "rgba(255,255,255,0.92)",
   whiteAlpha60: "rgba(255,255,255,0.6)",
   overlayDarkLight: "rgba(0,0,0,0.15)",
-  textPrimary: "#0f0f0f",
+  textPrimary: "#0f1130",
 }
 
 // ─── Props ─────────────────────────────────────────────────────────────────
@@ -71,7 +71,7 @@ export default function Section09_CTABand({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s9-section {
           width: 100%;
@@ -104,7 +104,7 @@ export default function Section09_CTABand({
         }
 
         .s9-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 40px;
           font-weight: 700;
           color: ${P.white};
@@ -116,11 +116,11 @@ export default function Section09_CTABand({
           overflow-wrap: break-word;
         }
         .s9-brand {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
         .s9-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${P.whiteAlpha85};
           line-height: 1.7;
@@ -141,7 +141,7 @@ export default function Section09_CTABand({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           border: 1px solid ${P.whiteAlpha60};
@@ -156,7 +156,7 @@ export default function Section09_CTABand({
         }
         .s9-btn:hover { background-color: ${P.white}; }
         .s9-footnote {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 12px;
           color: ${P.whiteAlpha70};
           margin-top: 8px;

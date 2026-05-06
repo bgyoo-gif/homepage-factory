@@ -2,12 +2,12 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const C = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  neutral150:     "#e6e7e9",
-  neutral200:     "#e0e0e0",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  neutral150:     "#e5e7eb",
+  neutral200:     "#e5e7eb",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   surfaceWhite:   "#ffffff",
   shadowCard:     "0px 24px 40px rgba(0,0,0,0.04)",
 }
@@ -32,7 +32,7 @@ export default function Section04_EnterpriseExample({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s4-section {
           width: 100%;
@@ -64,7 +64,7 @@ export default function Section04_EnterpriseExample({
           text-align: center;
         }
         .s4-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${C.textPrimary};
@@ -92,7 +92,7 @@ export default function Section04_EnterpriseExample({
         @container s4 (min-width: 1440px) { .s4-card { padding: 32px; } }
 
         .s4-card__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: ${C.textPrimary};
@@ -100,7 +100,7 @@ export default function Section04_EnterpriseExample({
           text-wrap: pretty;
         }
         .s4-card p {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           line-height: 1.7;
           color: ${C.textSecondary};

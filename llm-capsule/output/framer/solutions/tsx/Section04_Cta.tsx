@@ -44,7 +44,7 @@ export default function Section04_Cta({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s4-section {
           width: 100%;
@@ -85,7 +85,7 @@ export default function Section04_Cta({
           gap: 24px;
         }
         .s4-cta-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 36px;
           font-weight: 700;
           color: #ffffff;
@@ -95,11 +95,11 @@ export default function Section04_Cta({
           text-wrap: pretty;
         }
         .s4-title-product {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
         .s4-cta-desc {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: rgba(255,255,255,0.85);
           line-height: 1.7;
@@ -118,7 +118,7 @@ export default function Section04_Cta({
           align-items: center;
           justify-content: center;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           border: none;

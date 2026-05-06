@@ -3,9 +3,9 @@ import { addPropertyControls, ControlType } from "framer"
 const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images"
 
 const PALETTE = {
-  neutral050:    "#f2f2f2",
+  neutral050:    "#f7f8fb",
   surfaceWhite:  "#ffffff",
-  textTertiary:  "#9c9c9c",
+  textTertiary:  "#6b7280",
 }
 
 interface Props {
@@ -18,7 +18,7 @@ export default function Section02_Screenshot({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -59,7 +59,7 @@ export default function Section02_Screenshot({
           padding: 48px 24px;
         }
         .s2-label {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${PALETTE.textTertiary};
           text-align: center;

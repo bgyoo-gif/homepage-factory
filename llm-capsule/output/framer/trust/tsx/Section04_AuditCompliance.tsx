@@ -32,7 +32,7 @@ export default function Section04_AuditCompliance({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s4-section {
           width: 100%;
@@ -74,7 +74,7 @@ export default function Section04_AuditCompliance({
           border-bottom: 1px solid #e6e7e9;
         }
         .s4-section-header__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: #0f0f0f;
@@ -92,7 +92,7 @@ export default function Section04_AuditCompliance({
           .s4-section-header__title { font-size: 28px; }
         }
         .s4-section-header__description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: #636363;
           line-height: 1.7;
@@ -107,7 +107,7 @@ export default function Section04_AuditCompliance({
         @container s4 (min-width: 1440px) {
           .s4-section-header__description { max-width: 1080px; }
         }
-        .s4-title-highlight { color: #5690D4; }
+        .s4-title-highlight { color: #5b4fe9; }
 
         /* Feature Grid */
         .s4-feature-grid {
@@ -134,7 +134,7 @@ export default function Section04_AuditCompliance({
           gap: 8px;
         }
         .s4-feature-item__icon {
-          color: #5690D4;
+          color: #5b4fe9;
           margin-bottom: 4px;
         }
         .s4-feature-item__icon svg {
@@ -147,13 +147,13 @@ export default function Section04_AuditCompliance({
           stroke-linejoin: round;
         }
         .s4-feature-item__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           font-weight: 600;
           color: #0f0f0f;
         }
         .s4-feature-item__description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: #636363;
           line-height: 1.7;

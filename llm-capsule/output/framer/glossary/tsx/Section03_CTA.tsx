@@ -22,7 +22,7 @@ export default function Section03_CTA({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -37,7 +37,7 @@ export default function Section03_CTA({
           overflow: hidden;
           padding: 80px 16px;
           text-align: center;
-          background: linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%);
+          background: linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%);
         }
 
         .s3-cta-band::before {
@@ -79,7 +79,7 @@ export default function Section03_CTA({
         }
 
         .s3-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 36px;
           font-weight: 700;
           color: #ffffff;
@@ -98,12 +98,12 @@ export default function Section03_CTA({
         }
 
         .s3-title__product {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 
         .s3-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: rgba(255, 255, 255, 0.85);
           line-height: 1.7;
@@ -126,7 +126,7 @@ export default function Section03_CTA({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           font-size: 16px;
           padding: 12px 32px;

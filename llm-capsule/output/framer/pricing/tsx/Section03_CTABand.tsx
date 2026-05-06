@@ -3,7 +3,7 @@ import { addPropertyControls, ControlType } from "framer"
 // ─── Palette ────────────────────────────────────────────────────────────────
 const PALETTE = {
   textInverse:    "#ffffff",
-  gradientBrand:  "linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%)",
+  gradientBrand:  "linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%)",
   overlayNavBg:   "rgba(255,255,255,0.92)",
   overlayWhite85: "rgba(255,255,255,0.85)",
   overlayWhite70: "rgba(255,255,255,0.70)",
@@ -53,7 +53,7 @@ export default function Section03_CTABand({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -87,7 +87,7 @@ export default function Section03_CTABand({
         }
 
         .s3-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 40px;
           font-weight: 700;
           color: ${PALETTE.textInverse};
@@ -97,12 +97,12 @@ export default function Section03_CTABand({
           text-wrap: pretty;
         }
         .s3-title__product {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 
         .s3-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${PALETTE.overlayWhite85};
           line-height: 1.7;
@@ -125,7 +125,7 @@ export default function Section03_CTABand({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           cursor: pointer;
           border: none;
@@ -142,7 +142,7 @@ export default function Section03_CTABand({
         .s3-btn:hover { background-color: #ffffff; }
 
         .s3-footnote {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${PALETTE.overlayWhite70};
           display: flex;

@@ -2,18 +2,18 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const C = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  neutral800:     "#171719",
-  textPrimary:    "#0f0f0f",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  neutral800:     "#0f1130",
+  textPrimary:    "#0f1130",
   white:          "#ffffff",
   overlayNavBg:   "rgba(255,255,255,0.92)",
   overlayDark:    "rgba(0,0,0,0.15)",
   overlayWhite85: "rgba(255,255,255,0.85)",
   overlayWhite70: "rgba(255,255,255,0.70)",
   overlayCTABdr:  "rgba(255,255,255,0.6)",
-  gradientBrand:  "linear-gradient(130deg, #1821E8 0%, #5690D4 50%, #55B45D 100%)",
+  gradientBrand:  "linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%)",
 }
 
 const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images"
@@ -45,7 +45,7 @@ export default function Section07_CTABand({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s7-cta {
           width: 100%;
@@ -79,7 +79,7 @@ export default function Section07_CTABand({
         }
 
         .s7-cta__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 36px;
           font-weight: 700;
           color: ${C.white};
@@ -91,12 +91,12 @@ export default function Section07_CTABand({
           overflow-wrap: break-word;
         }
         .s7-cta__title .s7-product {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
 
         .s7-cta__description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${C.overlayWhite85};
           line-height: 1.7;
@@ -117,7 +117,7 @@ export default function Section07_CTABand({
           justify-content: center;
           gap: 8px;
           border-radius: 9999px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 500;
           font-size: 18px;
           padding: 16px 48px;
@@ -140,7 +140,7 @@ export default function Section07_CTABand({
           margin-top: 8px;
         }
         .s7-cta__footnote a {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${C.overlayWhite70};
           text-decoration: none;

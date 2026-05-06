@@ -2,10 +2,10 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ────────────────────────────────────────────────────────────────
 const PALETTE = {
-  brandSecondary: "#5690D4",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
-  borderDefault:  "#e6e7e9",
+  brandSecondary: "#0ea5a4",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
+  borderDefault:  "#e5e7eb",
   surfaceWhite:   "#ffffff",
   shadowCard:     "0px 24px 40px rgba(0,0,0,0.04)",
   radiusMd:       "18px",
@@ -32,7 +32,7 @@ export default function Section05_EnterpriseExample({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -40,7 +40,7 @@ export default function Section05_EnterpriseExample({
           width: 100%;
           padding: 32px 0;
           background-color: ${PALETTE.surfaceWhite};
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           -webkit-font-smoothing: antialiased;
           word-break: keep-all;
           overflow-wrap: break-word;
@@ -76,7 +76,7 @@ export default function Section05_EnterpriseExample({
           color: ${PALETTE.textPrimary};
           line-height: 1.2;
           letter-spacing: -0.5px;
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           text-wrap: pretty;
         }
         @container (min-width: 768px)  { .s5-section-header h2 { font-size: 22px; } }
@@ -114,7 +114,7 @@ export default function Section05_EnterpriseExample({
         .s5-card p + p { margin-top: 12px; }
 
         .s5-product-name {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
         }
       `}</style>

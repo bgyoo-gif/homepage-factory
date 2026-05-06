@@ -2,10 +2,10 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const P = {
-  brandSecondary: "#5690D4",
-  textPrimary:   "#0f0f0f",
-  textSecondary: "#636363",
-  borderDefault: "#e6e7e9",
+  brandSecondary: "#0ea5a4",
+  textPrimary:   "#0f1130",
+  textSecondary: "#3a3d5e",
+  borderDefault: "#e5e7eb",
   surfaceWhite:  "#ffffff",
 }
 
@@ -28,7 +28,7 @@ export default function Section04_EnterpriseExample({
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -65,7 +65,7 @@ export default function Section04_EnterpriseExample({
           text-align: center;
         }
         .s4-header h2 {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 20px;
           font-weight: 700;
           color: ${P.textPrimary};
@@ -91,7 +91,7 @@ export default function Section04_EnterpriseExample({
         @container (min-width: 1440px) { .s4-card { padding: 32px; } }
 
         .s4-card__title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           font-weight: 600;
           color: ${P.textPrimary};
@@ -100,7 +100,7 @@ export default function Section04_EnterpriseExample({
         }
 
         .s4-card__description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 16px;
           color: ${P.textSecondary};
           line-height: 1.7;
@@ -110,7 +110,7 @@ export default function Section04_EnterpriseExample({
         }
 
         .s4-product {
-          font-family: "Oxanium", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-weight: 700;
           color: ${P.textPrimary};
         }

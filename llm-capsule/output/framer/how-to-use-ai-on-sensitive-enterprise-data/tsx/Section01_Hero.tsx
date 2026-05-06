@@ -2,13 +2,13 @@ import { addPropertyControls, ControlType } from "framer"
 
 // ─── Palette ───────────────────────────────────────────────────────────────
 const P = {
-  brandPrimary:   "#1821E8",
-  brandSecondary: "#5690D4",
-  brandAccent:    "#55B45D",
-  neutral800:     "#171719",
-  neutral050:     "#f2f2f2",
-  textPrimary:    "#0f0f0f",
-  textSecondary:  "#636363",
+  brandPrimary:   "#5b4fe9",
+  brandSecondary: "#0ea5a4",
+  brandAccent:    "#0ea5a4",
+  neutral800:     "#0f1130",
+  neutral050:     "#f7f8fb",
+  textPrimary:    "#0f1130",
+  textSecondary:  "#3a3d5e",
   white:          "#ffffff",
 }
 
@@ -74,7 +74,7 @@ export default function Section01_Hero({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         .s1-section {
           width: 100%;
@@ -112,7 +112,7 @@ export default function Section01_Hero({
           margin-bottom: 24px;
         }
         .s1-breadcrumb__link {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: ${P.brandSecondary};
           font-weight: 500;
@@ -122,18 +122,18 @@ export default function Section01_Hero({
         }
         .s1-breadcrumb__link:hover { color: ${P.brandPrimary}; }
         .s1-breadcrumb__sep {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: #9c9c9c;
         }
         .s1-breadcrumb__current {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 14px;
           color: #9c9c9c;
         }
 
         .s1-title {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 28px;
           font-weight: 700;
           color: ${P.textPrimary};
@@ -145,7 +145,7 @@ export default function Section01_Hero({
           text-wrap: pretty;
         }
         .s1-description {
-          font-family: "DM Sans", sans-serif;
+          font-family: var(--f-display, 'Inter'), sans-serif;
           font-size: 18px;
           color: ${P.textSecondary};
           line-height: 1.7;
