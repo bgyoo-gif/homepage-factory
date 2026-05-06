@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLM Capsule | The AI Enablement Data Layer for Regulated Operations</title>
+  <meta name="description" content="Make sensitive workflows run with AI. LLM Capsule is the AI enablement data layer for regulated enterprise operations — moving AI projects from pilot to production on real documents. Runs inside your environment (on-prem / air-gapped / hybrid). Encapsulate locally, process with any LLM, restore inside your environment. Validated at Deutsche Telekom T Challenge 2026, deployed at SK Telecom, Kyobo, DB Insurance, EUMC, Shin&amp;Kim, Ministry of National Defense. Gartner Vendor.">
+  <meta name="keywords" content="AI enablement, AI enablement data layer, AI enablement platform, enterprise AI adoption, AI-ready data, AI for regulated industries, differential privacy, on-premise LLM, sovereign AI, telecom AI, AI for NOC, hospital AI deployment, mission AI, regulated operations, pilot to production AI, shadow AI">
+  <meta property="og:title" content="LLM Capsule | The AI Enablement Data Layer for Regulated Operations">
+  <meta property="og:description" content="Make sensitive workflows run with AI. From pilot to production — on real enterprise data, inside your environment.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://llmcapsule.ai/">
+  <link rel="canonical" href="https://llmcapsule.ai/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "@id": "https://llmcapsule.ai/#organization", "name": "CUBIG", "url": "https://cubig.ai", "logo": "https://llmcapsule.ai/logo.png" },
+      { "@type": "WebSite", "@id": "https://llmcapsule.ai/#website", "url": "https://llmcapsule.ai/", "name": "LLM Capsule", "publisher": { "@id": "https://llmcapsule.ai/#organization" } },
+      { "@type": "SoftwareApplication", "@id": "https://llmcapsule.ai/#product",
+        "name": "LLM Capsule",
+        "applicationCategory": "AI Enablement Data Layer",
+        "operatingSystem": "On-premise, Air-gapped, Hybrid, Cloud (AWS Marketplace), Embedded SDK, Slack App",
+        "description": "LLM Capsule is the AI enablement data layer for regulated enterprise operations. It runs inside the customer's environment — on-premise, air-gapped, or hybrid — and encapsulates sensitive data locally with structure-preserving, differential-privacy-based encapsulation, executes the AI workflow with any LLM (external approved or on-prem local), and restores results back to the originating workflow. Integration interfaces (REST / gRPC / JDBC / Graph API / on-prem API / SDK / Slack App) let existing enterprise systems invoke Capsule from inside the environment. Customer-defined confidentiality markers, policy versioning, and full governance.",
+        "offers": { "@type": "Offer", "url": "https://llmcapsule.ai/pricing" },
+        "publisher": { "@id": "https://llmcapsule.ai/#organization" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "27" }
+      },
+      { "@type": "FAQPage", "mainEntity": [
+        { "@type": "Question", "name": "What is an AI enablement data layer?", "acceptedAnswer": { "@type": "Answer", "text": "An AI enablement data layer sits between the existing regulated enterprise environment (NOC, ticket, OSS/BSS, OT consoles, EHR, mission systems, document portals) and large language models. It turns operational data into AI-ready context using structure-preserving, differential-privacy-based encapsulation, executes the AI workflow inside the enterprise environment, and restores results back into the originating workflow. It moves AI projects from pilot to production on real enterprise data — without exposing raw operational data to external LLMs." } },
+        { "@type": "Question", "name": "How is LLM Capsule different from PII guardrails or AI security tools?", "acceptedAnswer": { "@type": "Answer", "text": "PII guardrails detect and mask personal identifiers at the API or prompt level. AI security tools focus on prompt injection and runtime threats. LLM Capsule operates one layer deeper — at the AI enablement data layer. It transforms structured operational data (network logs, configurations, OT manifests, clinical workflows, mission context) using structure-preserving, differential-privacy-based encapsulation, supports both external LLM and on-prem local execution paths, and provides two-way restoration via state vault. It plugs into legacy enterprise systems with no architectural change required." } },
+        { "@type": "Question", "name": "Can our team define what counts as sensitive?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. LLM Capsule's context-aware data control lets your team define, add, remove, and version confidentiality markers as your operations and regulatory landscape evolve. Standard PII categories are not enough — define project codes, deal terms, internal IDs, network identifiers, asset references, mission references, and any business-specific marker. Yesterday's sensitive data isn't tomorrow's; the policy adapts." } },
+        { "@type": "Question", "name": "Can LLM Capsule run on-premise or air-gapped?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Six deployment modes: on-premise, air-gapped, hybrid, cloud (AWS Marketplace), embedded SDK, and Slack App. Two execution paths: external approved LLM with capsule data only (no raw operational data exposure) or on-prem local lightweight model (zero external transmission). Path selection is policy-driven per workflow. Capsule runs inside the customer environment in every mode — integration interfaces (REST / gRPC / JDBC / Graph API / on-prem API / SDK / Slack App) let existing enterprise systems invoke it from inside the environment." } },
+        { "@type": "Question", "name": "Which industries and customers use LLM Capsule?", "acceptedAnswer": { "@type": "Answer", "text": "Telecom (Deutsche Telekom T Challenge 2026 Top 12 in Data Security and Governance, SK Telecom), industrial cybersecurity and OT (partner: Claroty), healthcare (Ewha Womans University Medical Center), finance and insurance (Kyobo, DB Insurance, IBK), legal (Shin and Kim), public sector / defense (Ministry of National Defense, South Korea), and cloud sovereignty (NAVER Cloud). Recognized as a Gartner Vendor and listed on AWS Marketplace." } },
+        { "@type": "Question", "name": "What compliance frameworks does LLM Capsule support?", "acceptedAnswer": { "@type": "Answer", "text": "LLM Capsule supports enterprise compliance with GDPR, HIPAA, SOX, and sector-specific regulations by ensuring sensitive data never leaves the enterprise environment during AI processing. Certifications include ISO/IEC 27001 (information security management) and ISO/IEC 42001 (AI management system). Korean certifications include KISA Information Security Fast Track, GS Certification, and TTA." } }
+      ]}
+    ]
+  }
+  </script>
+
+  <!-- Fonts: Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Design Tokens -->
+  <link rel="stylesheet" href="../../reference/tokens.css">
+
+  <style>
+    /* ============================================================
+       1. CSS Reset + Global
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--f-display);
+      color: var(--c-ink);
+      background-color: var(--c-bg);
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img, video { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ============================================================
+       2. Container
+    ============================================================ */
+    .ds-container {
+      max-width: var(--container-max, 1280px);
+      margin: 0 auto;
+      padding: 0 var(--s-page);
+    }
+
+    /* ============================================================
+       3. Buttons
+    ============================================================ */
+    .ds-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--r-md);
+      font-family: var(--f-display);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1;
+      cursor: pointer;
+      border: none;
+      transition: background 0.18s, color 0.18s, border-color 0.18s;
+      text-decoration: none;
+    }
+
+    .ds-btn--primary {
+      background: var(--c-ink);
+      color: var(--c-bg);
+    }
+    .ds-btn--primary:hover {
+      background: var(--c-primary);
+    }
+
+    .ds-btn--ghost {
+      background: transparent;
+      color: var(--c-ink);
+      border: 1.5px solid var(--c-rule);
+    }
+    .ds-btn--ghost:hover {
+      border-color: var(--c-primary);
+      color: var(--c-primary);
+    }
+
+    .ds-btn--invert {
+      background: var(--c-bg);
+      color: var(--c-ink);
+    }
+    .ds-btn--invert:hover {
+      background: var(--c-primary-soft);
+      color: var(--c-primary-dark);
+    }
+
+    .ds-btn--invert-ghost {
+      background: transparent;
+      color: var(--c-bg);
+      border: 1.5px solid rgba(255,255,255,0.4);
+    }
+    .ds-btn--invert-ghost:hover {
+      border-color: rgba(255,255,255,0.8);
+    }
+
+    /* ============================================================
+       4. Eyebrow
+    ============================================================ */
+    .ds-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--c-primary);
+      margin-bottom: 12px;
+    }
+
+    /* ============================================================
+       5. Section Header (centered by default)
+    ============================================================ */
+    .ds-section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .ds-section-header h2 {
+      font-size: clamp(24px, 2.8vw, 38px);
+      font-weight: 700;
+      color: var(--c-ink);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .ds-section-header p {
+      font-size: clamp(16px, 1.4vw, 18px);
+      color: var(--c-ink-soft);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .ds-text--brand {
+      color: var(--c-primary);
+    }
+
+    /* ============================================================
+       6. Sections
+    ============================================================ */
+    .ds-section {
+      padding: var(--s-section) 0;
+    }
+    .ds-section--soft {
+      background-color: var(--c-bg-soft);
+    }
+
+    /* ============================================================
+       SECTION 1: Hero
+    ============================================================ */
+    .ds-hero {
+      background: linear-gradient(180deg, #fafbff 0%, #ffffff 100%);
+      padding-top: clamp(80px, 10vw, 140px);
+      padding-bottom: clamp(64px, 8vw, 96px);
+      border-bottom: 1px solid var(--c-rule);
+    }
+
+    .ds-hero__grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .ds-hero__h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--c-ink);
+      margin-bottom: 20px;
+    }
+
+    .ds-hero__h1 strong {
+      color: var(--c-primary);
+      font-weight: 800;
+    }
+
+    .ds-hero__sub {
+      font-size: clamp(16px, 1.4vw, 19px);
+      color: var(--c-ink-soft);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .ds-hero__tag {
+      display: inline-block;
+      padding: 6px 14px;
+      background-color: var(--c-primary-soft);
+      color: var(--c-primary-dark);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+
+    .ds-hero__cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .ds-hero__metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--c-rule);
+    }
+
+    .ds-metric__num {
+      font-size: clamp(22px, 2.4vw, 30px);
+      font-weight: 800;
+      color: var(--c-primary);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .ds-metric__label {
+      font-size: 11px;
+      color: var(--c-muted);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .ds-hero__visual {
+      background-color: var(--c-bg);
+      border: 1px solid var(--c-rule);
+      border-radius: var(--r-lg);
+      padding: 24px;
+      box-shadow: 0 12px 48px rgba(15,17,48,0.06);
+    }
+
+    .ds-hv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 0.85fr;
+      gap: 12px;
+    }
+
+    .ds-hv-tool {
+      background-color: var(--c-bg);
+      border: 1px solid var(--c-rule);
+      border-radius: var(--r-sm);
+      padding: 12px;
+      min-height: 88px;
+    }
+
+    .ds-hv-tool__name {
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--c-rule);
+    }
+
+    .ds-hv-tool__line {
+      font-family: var(--f-mono);
+      font-size: 10px;
+      color: var(--c-ink-soft);
+      margin-bottom: 4px;
+    }
+
+    .ds-hv-capsule {
+      grid-column: 3;
+      grid-row: 1 / 3;
+      background-color: var(--c-bg-dark);
+      color: var(--c-bg);
+      border-radius: var(--r-sm);
+      padding: 14px;
+    }
+
+    .ds-hv-capsule__h {
+      font-size: 12px;
+      font-weight: 700;
+      color: #9d95f5;
+      margin-bottom: 4px;
+    }
+
+    .ds-hv-capsule__sub {
+      font-size: 10px;
+      color: #c8c4f7;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #3b2fbf;
+    }
+
+    .ds-hv-capsule__step {
+      font-size: 11px;
+      color: #e8e6fb;
+      margin-bottom: 6px;
+    }
+
+    /* ============================================================
+       SECTION 2: Proof Strip
+    ============================================================ */
+    .ds-proof {
+      padding: 40px 0;
+      background-color: var(--c-bg-soft);
+      border-bottom: 1px solid var(--c-rule);
+    }
+
+    .ds-proof__lead {
+      text-align: center;
+      font-size: 13px;
+      color: var(--c-muted);
+      margin-bottom: 24px;
+    }
+
+    .ds-proof__lead strong {
+      color: var(--c-ink);
+    }
+
+    .ds-proof__track-wrap {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      overflow: hidden;
+    }
+
+    .ds-proof__track {
+      display: flex;
+      gap: 32px;
+      width: max-content;
+      animation: ds-marquee 30s linear infinite;
+    }
+
+    .ds-proof__track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes ds-marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .ds-proof__logo {
+      flex-shrink: 0;
+      font-family: var(--f-mono);
+      font-size: 11px;
+      color: var(--c-muted);
+      padding: 6px 12px;
+      border: 1px dashed var(--c-rule);
+      border-radius: 4px;
+      filter: grayscale(1);
+      opacity: 0.75;
+      transition: filter 0.2s, opacity 0.2s;
+      white-space: nowrap;
+    }
+
+    .ds-proof__logo:hover {
+      filter: grayscale(0);
+      opacity: 1;
+    }
+
+    .ds-proof__logo--star {
+      border: 1px solid var(--c-primary);
+      color: var(--c-primary-dark);
+    }
+
+    /* ============================================================
+       SECTION 3: Why Storyline
+    ============================================================ */
+    .ds-why-flow {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .ds-why-storyline {
+      background-color: var(--c-bg);
+      border: 1px solid var(--c-rule);
+      border-radius: var(--r-md);
+      padding: clamp(28px, 4vw, 48px);
+      margin-bottom: 24px;
+      
+    }
+
+    .ds-why-storyline__row {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .ds-why-storyline__step {
+      font-family: var(--f-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--c-bg);
+      background-color: var(--c-coral-dark);
+      border-radius: 999px;
+      height: 32px;
+      width: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ds-why-storyline__text {
+      font-size: clamp(15px, 1.3vw, 17px);
+      color: var(--c-ink);
+      line-height: 1.7;
+      padding-top: 4px;
+    }
+
+    .ds-why-storyline__text strong {
+      color: var(--c-ink);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1.05em;
+    }
+
+    .ds-why-storyline__bridge {
+      font-family: var(--f-mono);
+      font-size: 11px;
+      color: var(--c-coral-dark);
+      margin: 14px 0 14px 16px;
+      padding-left: 24px;
+      border-left: 2px dashed var(--c-coral);
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      height: 28px;
+      display: flex;
+      align-items: center;
+    }
+
+    .ds-why-result {
+      background-color: var(--c-primary-dark);
+      color: var(--c-bg);
+      border-radius: var(--r-md);
+      padding: 32px 36px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .ds-why-result__badge {
+      font-family: var(--f-mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: #c8c4f7;
+      padding: 6px 14px;
+      border: 1px solid #6358e8;
+      border-radius: 999px;
+      text-transform: uppercase;
+      align-self: start;
+      white-space: nowrap;
+    }
+
+    .ds-why-result__title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--c-bg);
+      line-height: 1.3;
+    }
+
+    .ds-why-result__detail {
+      font-size: 14px;
+      color: #d8d3f5;
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       SECTION 4: 6 Capabilities
+    ============================================================ */
+    .ds-cap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .ds-cap-card {
+      background-color: var(--c-bg);
+      border: 1px solid var(--c-rule);
+      border-radius: var(--r-md);
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ds-cap-card--1 { --cap-color: var(--c-primary); }
+    .ds-cap-card--2 { --cap-color: var(--c-teal); }
+    .ds-cap-card--3 { --cap-color: var(--c-amber); }
+    .ds-cap-card--4 { --cap-color: var(--c-coral); }
+    .ds-cap-card--5 { --cap-color: var(--c-bg-dark); }
+    .ds-cap-card--6 {
+      --cap-color: var(--c-primary-dark);
+      background-color: var(--c-primary-soft);
+      border-color: var(--c-primary);
+    }
+
+    .ds-cap-card__icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background-color: var(--cap-color);
+      color: var(--c-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      font-family: var(--f-mono);
+      flex-shrink: 0;
+    }
+
+    .ds-cap-card__title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .ds-cap-card__desc {
+      font-size: 12px;
+      color: var(--c-ink-soft);
+      line-height: 1.55;
+    }
+
+    .ds-cap-card__ref {
+      font-family: var(--f-mono);
+      font-size: 10px;
+      color: var(--c-muted);
+      border-top: 1px dashed var(--c-rule);
+      padding-top: 10px;
+      margin-top: auto;
+      letter-spacing: 0.05em;
+    }
+
+    /* ============================================================
+       SECTION 5: AI-Enabled Workflows
+    ============================================================ */
+    .ds-wf-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .ds-wf-card {
+      background-color: var(--c-bg);
+      border: 1px solid var(--c-rule);
+      border-radius: var(--r-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ds-wf-card__icon {
+      width: 40px;
+      height: 40px;
+      color: var(--c-primary);
+      margin-bottom: 12px;
+    }
+
+    .ds-wf-card__title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .ds-wf-card__desc {
+      font-size: 13px;
+      color: var(--c-ink-soft);
+      line-height: 1.55;
+      margin-bottom: 12px;
+      flex: 1;
+    }
+
+    .ds-wf-card__footer {
+      font-size: 12px;
+      color: var(--c-primary-dark);
+      font-weight: 600;
+      padding-top: 12px;
+      border-top: 1px dashed var(--c-rule);
+    }
+
+    /* ============================================================
+       SECTION 6: Without / With
+    ============================================================ */
+    .ds-ww {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .ds-ww__col {
+      padding: 32px;
+      border-radius: var(--r-md);
+    }
+
+    .ds-ww__col--without {
+      background-color: var(--c-coral-soft);
+      border: 1px solid var(--c-coral);
+    }
+
+    .ds-ww__col--with {
+      background-color: var(--c-primary-soft);
+      border: 1px solid var(--c-primary);
+    }
+
+    .ds-ww__label {
+      font-family: var(--f-mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .ds-ww__col--without .ds-ww__label { color: var(--c-coral-dark); }
+    .ds-ww__col--with .ds-ww__label { color: var(--c-primary-dark); }
+
+    .ds-ww__heading {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      line-height: 1.3;
+    }
+
+    .ds-ww__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .ds-ww__list li {
+      font-size: 14px;
+      line-height: 1.55;
+      padding: 10px 0 10px 26px;
+      position: relative;
+      border-bottom: 1px solid var(--c-rule);
+      color: var(--c-ink-soft);
+    }
+
+    .ds-ww__list li:last-child { border-bottom: none; }
+
+    .ds-ww__list li::before {
+      position: absolute;
+      left: 0;
+      top: 10px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .ds-ww__col--without .ds-ww__list li::before {
+      content: '\2717';
+      color: var(--c-coral-dark);
+    }
+
+    .ds-ww__col--with .ds-ww__list li::before {
+      content: '\2713';
+      color: var(--c-primary-dark);
+    }
+
+    /* ============================================================
+       SECTION 7: 4-way Comparison Table
+    ============================================================ */
+    .ds-compare-wrap {
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .ds-compare-wrap::-webkit-scrollbar { display: none; }
+
+    .ds-compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: var(--c-bg);
+      border-radius: var(--r-md);
+      overflow: hidden;
+      border: 1px solid var(--c-rule);
+    }
+
+    .ds-compare-table th,
+    .ds-compare-table td {
+      padding: 14px 16px;
+      text-align: left;
+      font-size: 13px;
+      border-bottom: 1px solid var(--c-rule);
+      vertical-align: top;
+    }
+
+    .ds-compare-table th {
+      background-color: var(--c-bg-dark);
+      color: var(--c-bg);
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .ds-compare-table th.ds-compare-table__us-th {
+      background-color: var(--c-primary-dark);
+    }
+
+    .ds-compare-table td:first-child {
+      font-weight: 600;
+      color: var(--c-ink);
+      width: 22%;
+      background-color: var(--c-bg-soft);
+      font-size: 12px;
+    }
+
+    .ds-compare-table__us-cell {
+      background-color: var(--c-primary-soft);
+      color: var(--c-ink);
+      font-weight: 500;
+    }
+
+    /* ============================================================
+       SECTION 8: Industry Use Cases
+    ============================================================ */
+    .ds-uc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .ds-uc-card {
+      background-color: var(--c-bg);
+      border: 1px solid var(--c-rule);
+      border-radius: var(--r-md);
+      border-left: 4px solid var(--uc-color, var(--c-primary));
+      padding: 28px;
+    }
+
+    .ds-uc-card--telecom  { --uc-color: var(--c-primary); }
+    .ds-uc-card--ot       { --uc-color: var(--c-teal); }
+    .ds-uc-card--healthcare { --uc-color: var(--c-amber); }
+    .ds-uc-card--defense  { --uc-color: var(--c-coral); }
+
+    .ds-uc-card__num {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--uc-color);
+      margin-bottom: 6px;
+    }
+
+    .ds-uc-card__title {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .ds-uc-card__row {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 12px;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .ds-uc-card__label {
+      font-weight: 700;
+      color: var(--c-muted);
+    }
+
+    .ds-uc-card__val {
+      color: var(--c-ink);
+    }
+
+    .ds-uc-card__proof {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--c-rule);
+      font-size: 12px;
+      font-style: italic;
+      color: var(--uc-color);
+      font-weight: 600;
+    }
+
+    .ds-uc-cta {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    /* ============================================================
+       SECTION 9: FAQ
+    ============================================================ */
+    .ds-faq {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .ds-faq details {
+      border-bottom: 1px solid var(--c-rule);
+      padding: 20px 0;
+    }
+
+    .ds-faq summary {
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--c-ink);
+    }
+
+    .ds-faq summary::-webkit-details-marker { display: none; }
+
+    .ds-faq summary::after {
+      content: '+';
+      font-size: 24px;
+      color: var(--c-muted);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+
+    .ds-faq details[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    .ds-faq details > div {
+      margin-top: 12px;
+      color: var(--c-ink-soft);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       SECTION 10: CTA Strip
+    ============================================================ */
+    .ds-cta-strip {
+      background-color: var(--c-bg-dark);
+      color: var(--c-bg);
+      padding: 64px var(--s-page);
+      text-align: center;
+    }
+
+    .ds-cta-strip h2 {
+      color: var(--c-bg);
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .ds-cta-strip p {
+      color: #c8c4f7;
+      max-width: 640px;
+      margin: 0 auto 32px;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .ds-cta-strip__buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================================
+       Responsive — Tablet (768px+)
+    ============================================================ */
+    @media (min-width: 768px) {
+      .ds-section-header p {
+        font-size: 18px;
+      }
+    }
+
+    /* ============================================================
+       Responsive — sm-Desktop (1024px+)
+    ============================================================ */
+    @media (min-width: 1024px) {
+      /* no changes needed beyond 768 defaults */
+    }
+
+    /* ============================================================
+       Responsive — Desktop (1280px+)
+    ============================================================ */
+    @media (min-width: 1280px) {
+      .ds-container {
+        max-width: var(--container-max, 1280px);
+        margin: 0 auto;
+      }
+    }
+
+    /* ============================================================
+       Responsive — Mobile overrides (max-width breakpoints)
+    ============================================================ */
+    @media (max-width: 900px) {
+      .ds-hero__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .ds-hero {
+        background-image: none;
+      }
+
+      .ds-hero__metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .ds-why-result {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .ds-ww {
+        grid-template-columns: 1fr;
+      }
+
+      .ds-uc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 1300px) {
+      .ds-cap-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .ds-cap-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ds-cap-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .ds-wf-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .ds-wf-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .ds-uc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     SECTION 1: Hero
+============================================================ -->
+<section id="section-1" class="ds-hero">
+  <div class="ds-container">
+    <div class="ds-hero__grid">
+
+      <!-- Text column -->
+      <div>
+        <span class="ds-eyebrow">AI ENABLEMENT DATA LAYER</span>
+        <h1 class="ds-hero__h1">Make <strong>sensitive workflows</strong> run with AI.</h1>
+        <p class="ds-hero__sub">From blocked workflows to operational AI — without breaking documents, systems, or context. LLM Capsule is the AI enablement data layer for regulated enterprise operations. It plugs into the systems you already run — on-premise, air-gapped, or hybrid — and AI receives the operational structure it needs. Sensitive data stays inside your environment. Outputs return business-ready, in the originating workflow.</p>
+        <div class="ds-hero__tag">The AI enablement data layer for regulated operations.</div>
+        <div class="ds-hero__cta">
+          <a class="ds-btn ds-btn--primary" href="/request-a-demo">Request a Demo</a>
+          <a class="ds-btn ds-btn--ghost" href="/architecture">See the Architecture</a>
+        </div>
+
+        <div class="ds-hero__metrics">
+          <div>
+            <div class="ds-metric__num">0.12s</div>
+            <div class="ds-metric__label">Per Page Processing</div>
+          </div>
+          <div>
+            <div class="ds-metric__num">100%</div>
+            <div class="ds-metric__label">Restoration Rate</div>
+          </div>
+          <div>
+            <div class="ds-metric__num">98%</div>
+            <div class="ds-metric__label">Output Similarity</div>
+          </div>
+          <div>
+            <div class="ds-metric__num">99.14%</div>
+            <div class="ds-metric__label">Workflow Accuracy</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual mock (right column) -->
+      <div class="ds-hero__visual" data-replace="hero-visual">
+        <!-- [IMAGE_SPEC] Hero visual
+             Asset: Custom illustration (SVG preferred)
+             Subject: CUBIG Workspace product UI inside a clearly-marked enterprise environment boundary
+             (sidebar project tree, document area with Business Request Form.pdf, chat query, Original/De-identified tabs)
+             LLM model selector at bottom.
+             Reuse priority: P0 — reuse existing live llmcapsule.ai/ hero asset.
+             Replace: this .ds-hero__visual div — designer to deliver SVG.
+        -->
+        <div class="ds-hv-grid">
+          <div class="ds-hv-tool">
+            <div class="ds-hv-tool__name">NOC Console</div>
+            <div class="ds-hv-tool__line">[ALARM] R-472 latency</div>
+            <div class="ds-hv-tool__line">[INCIDENT] INC-24091</div>
+            <div class="ds-hv-tool__line">SLA risk: enterprise</div>
+          </div>
+          <div class="ds-hv-tool">
+            <div class="ds-hv-tool__name">Ticket System</div>
+            <div class="ds-hv-tool__line">INC-24091  packet loss</div>
+            <div class="ds-hv-tool__line">Site: SEO-18</div>
+            <div class="ds-hv-tool__line">Status: escalated</div>
+          </div>
+          <div class="ds-hv-capsule">
+            <div class="ds-hv-capsule__h">LLM Capsule</div>
+            <div class="ds-hv-capsule__sub">in-environment data layer</div>
+            <div class="ds-hv-capsule__step">&#9658; Encapsulate</div>
+            <div class="ds-hv-capsule__step">&#9658; DP transform</div>
+            <div class="ds-hv-capsule__step">&#9658; Send to AI</div>
+            <div class="ds-hv-capsule__step">&#9658; Restore</div>
+            <div class="ds-hv-capsule__step">&#9658; Insert here</div>
+          </div>
+          <div class="ds-hv-tool">
+            <div class="ds-hv-tool__name">Log Viewer</div>
+            <div class="ds-hv-tool__line">03:21 R-472 spike</div>
+            <div class="ds-hv-tool__line">03:24 SEO-18 loss</div>
+            <div class="ds-hv-tool__line">03:26 escalated</div>
+          </div>
+          <div class="ds-hv-tool">
+            <div class="ds-hv-tool__name">Runbook</div>
+            <div class="ds-hv-tool__line">1. Check device R-472</div>
+            <div class="ds-hv-tool__line">2. Validate config</div>
+            <div class="ds-hv-tool__line">3. Rollback if drift</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 2: Proof Strip
+============================================================ -->
+<section id="section-2" class="ds-proof">
+  <div class="ds-container">
+    <p class="ds-proof__lead"><strong>Trusted by enterprises moving regulated AI from pilot to production</strong> &middot; Telecom &middot; Industrial cybersecurity &middot; Healthcare &middot; Finance &middot; Public sector &middot; Legal</p>
+  </div>
+  <!-- Marquee: full viewport width -->
+  <div class="ds-proof__track-wrap">
+    <div class="ds-proof__track">
+      <!-- Set 1 -->
+      <div class="ds-proof__logo ds-proof__logo--star" data-replace="logo">Gartner Vendor</div>
+      <div class="ds-proof__logo" data-replace="logo">Deutsche Telekom T Challenge 2026 — Top 12</div>
+      <div class="ds-proof__logo" data-replace="logo">SK Telecom</div>
+      <div class="ds-proof__logo" data-replace="logo">Claroty</div>
+      <div class="ds-proof__logo" data-replace="logo">EUMC</div>
+      <div class="ds-proof__logo" data-replace="logo">Kyobo</div>
+      <div class="ds-proof__logo" data-replace="logo">DB Insurance</div>
+      <div class="ds-proof__logo" data-replace="logo">IBK</div>
+      <div class="ds-proof__logo" data-replace="logo">NAVER Cloud</div>
+      <div class="ds-proof__logo" data-replace="logo">Shin&amp;Kim</div>
+      <div class="ds-proof__logo" data-replace="logo">Ministry of National Defense (KR)</div>
+      <div class="ds-proof__logo" data-replace="logo">ISO/IEC 27001</div>
+      <div class="ds-proof__logo" data-replace="logo">ISO/IEC 42001</div>
+      <div class="ds-proof__logo" data-replace="logo">KISA Fast Track</div>
+      <div class="ds-proof__logo" data-replace="logo">AWS Marketplace</div>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="ds-proof__logo ds-proof__logo--star" data-replace="logo">Gartner Vendor</div>
+      <div class="ds-proof__logo" data-replace="logo">Deutsche Telekom T Challenge 2026 — Top 12</div>
+      <div class="ds-proof__logo" data-replace="logo">SK Telecom</div>
+      <div class="ds-proof__logo" data-replace="logo">Claroty</div>
+      <div class="ds-proof__logo" data-replace="logo">EUMC</div>
+      <div class="ds-proof__logo" data-replace="logo">Kyobo</div>
+      <div class="ds-proof__logo" data-replace="logo">DB Insurance</div>
+      <div class="ds-proof__logo" data-replace="logo">IBK</div>
+      <div class="ds-proof__logo" data-replace="logo">NAVER Cloud</div>
+      <div class="ds-proof__logo" data-replace="logo">Shin&amp;Kim</div>
+      <div class="ds-proof__logo" data-replace="logo">Ministry of National Defense (KR)</div>
+      <div class="ds-proof__logo" data-replace="logo">ISO/IEC 27001</div>
+      <div class="ds-proof__logo" data-replace="logo">ISO/IEC 42001</div>
+      <div class="ds-proof__logo" data-replace="logo">KISA Fast Track</div>
+      <div class="ds-proof__logo" data-replace="logo">AWS Marketplace</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 3: Why Storyline
+============================================================ -->
+<section id="section-3" class="ds-section">
+  <div class="ds-container">
+    <header class="ds-section-header">
+      <span class="ds-eyebrow">WHY AN AI ENABLEMENT DATA LAYER</span>
+      <h2>The data AI needs is the data your business can't <span class="ds-text--brand">expose</span>.</h2>
+      <p>Not four separate problems. One storyline — read it through.</p>
+    </header>
+
+    <div class="ds-why-flow">
+      <div class="ds-why-storyline">
+
+        <div class="ds-why-storyline__row">
+          <span class="ds-why-storyline__step">01</span>
+          <p class="ds-why-storyline__text">
+            <strong>External LLMs raise enterprise ROI.</strong>
+            Approved external LLMs measurably improve productivity, processing speed, and automation ROI — when they can actually reach the work. Every regulated enterprise wants in.
+          </p>
+        </div>
+
+        <div class="ds-why-storyline__bridge">BUT —</div>
+
+        <div class="ds-why-storyline__row">
+          <span class="ds-why-storyline__step">02</span>
+          <p class="ds-why-storyline__text">
+            <strong>PII guardrails alone aren't enough.</strong>
+            They detect names, IDs, financial fields. They were built for individual identifiers — not for the structured ticket data, network configs, OT manifests, clinical workflows, and mission context that real regulated workflows actually run on. Operational data slips right through.
+          </p>
+        </div>
+
+        <div class="ds-why-storyline__bridge">AND —</div>
+
+        <div class="ds-why-storyline__row">
+          <span class="ds-why-storyline__step">03</span>
+          <p class="ds-why-storyline__text">
+            <strong>DMZ and legacy operational data is complex and unstructured.</strong>
+            Mixed free text, network identifiers, system logs, user context, incident records, configurations. Sensitivity leaks through structure, sequence, and aggregate pattern — not just through field names. Field-level filtering doesn't see it.
+          </p>
+        </div>
+
+        <div class="ds-why-storyline__bridge">AND THE RESIDUAL RISK —</div>
+
+        <div class="ds-why-storyline__row">
+          <span class="ds-why-storyline__step">04</span>
+          <p class="ds-why-storyline__text">
+            <strong>Filtering alone leaves regulated risk standing.</strong>
+            GDPR, HIPAA, SOX, sector regulators, audit obligations, sovereignty constraints — the risk of differential analysis, re-identification, and inference exposure that simple filtering cannot close. Pilots stall. Shadow AI emerges. Production never ships.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="ds-why-result">
+        <div class="ds-why-result__badge">&#8594; Result</div>
+        <div>
+          <h3 class="ds-why-result__title">LLM Capsule turns blocked workflows into running AI workflows.</h3>
+          <p class="ds-why-result__detail">Structure-preserving capsule + differential-privacy-based protection + in-environment execution alongside existing legacy systems + restoration into the originating workflow + two execution paths (external approved LLM or on-prem local) + customer-defined markers that change with your business. The AI enablement data layer for regulated operations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 4: 6 Capabilities
+============================================================ -->
+<section id="section-4" class="ds-section">
+  <div class="ds-container">
+    <header class="ds-section-header">
+      <span class="ds-eyebrow">CORE CAPABILITIES</span>
+      <h2>Six reasons Capsule works inside real enterprise <span class="ds-text--brand">workflows</span></h2>
+      <p>Other tools either block AI usage or destroy document context. LLM Capsule solves both — and adapts to whatever your business protects next.</p>
+    </header>
+
+    <div class="ds-cap-grid">
+      <article class="ds-cap-card ds-cap-card--1">
+        <div class="ds-cap-card__icon">01</div>
+        <h3 class="ds-cap-card__title">Plug into legacy systems without changing the workflow</h3>
+        <p class="ds-cap-card__desc">Air-gapped networks, on-premise servers, telecom-grade platforms, custom data pipelines, ServiceNow / SharePoint / Jira / OT historians — LLM Capsule deploys inside your enterprise as-is. Single API-call addition. No system migration. Your existing workflows, security policies, and configurations stay intact.</p>
+        <div class="ds-cap-card__ref">Internal: Enterprise Env Execution</div>
+      </article>
+
+      <article class="ds-cap-card ds-cap-card--2">
+        <div class="ds-cap-card__icon">02</div>
+        <h3 class="ds-cap-card__title">Tables, tickets, logs, and runbooks stay readable to AI</h3>
+        <p class="ds-cap-card__desc">Tables, cross-references, configurations, topology graphs, ticket fields, runbook steps, and document hierarchies survive the process intact. AI receives the full operational structure — not broken fragments that produce useless outputs.</p>
+        <div class="ds-cap-card__ref">Internal: Structure-Preserving</div>
+      </article>
+
+      <article class="ds-cap-card ds-cap-card--3">
+        <div class="ds-cap-card__icon">03</div>
+        <h3 class="ds-cap-card__title">Get real results back</h3>
+        <p class="ds-cap-card__desc">AI outputs auto-restore with your original names, figures, and references — ready for reports, legal reviews, claims documents, and client deliverables. No manual reconstruction. Token maps live only locally.</p>
+        <div class="ds-cap-card__ref">Internal: Restoration</div>
+      </article>
+
+      <article class="ds-cap-card ds-cap-card--4">
+        <div class="ds-cap-card__icon">04</div>
+        <h3 class="ds-cap-card__title">You define what's sensitive</h3>
+        <p class="ds-cap-card__desc">Standard PII categories aren't enough. Define project codes, deal terms, internal IDs, network identifiers, asset references, mission references — any business-specific marker. Context-aware data control adapts to document type, department, and workflow.</p>
+        <div class="ds-cap-card__ref">Internal: Enterprise Context</div>
+      </article>
+
+      <article class="ds-cap-card ds-cap-card--5">
+        <div class="ds-cap-card__icon">05</div>
+        <h3 class="ds-cap-card__title">Your workflow runs where your data already lives</h3>
+        <p class="ds-cap-card__desc">Sensitive data stays inside your environment. External AI sees only safe placeholders; tokenization plus differential-privacy-based protection make original values practically non-recoverable from outside your boundary. Restoration happens only inside the organization.</p>
+        <div class="ds-cap-card__ref">Internal: Zero Exposure</div>
+      </article>
+
+      <article class="ds-cap-card ds-cap-card--6">
+        <div class="ds-cap-card__icon">06</div>
+        <h3 class="ds-cap-card__title">You can change the policy tomorrow</h3>
+        <p class="ds-cap-card__desc">Yesterday it was network logs. Today it's M&amp;A code names. Next quarter it's a new regulator's spec. Define, version, and time-shift confidentiality markers as your business and regulatory landscape evolve — with full audit trail of which marker was protected when.</p>
+        <div class="ds-cap-card__ref">Internal: Time-Shifting Policy</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 5: AI-Enabled Workflows
+============================================================ -->
+<section id="section-5" class="ds-section ds-section--soft">
+  <div class="ds-container">
+    <header class="ds-section-header">
+      <span class="ds-eyebrow">AI-ENABLED ENTERPRISE WORKFLOWS</span>
+      <h2>The workflows that move from pilot to <span class="ds-text--brand">production</span></h2>
+      <p>LLM Capsule plugs into the most common enterprise AI workflows — protected before AI processing, restored to be directly usable in business.</p>
+    </header>
+
+    <div class="ds-wf-grid">
+      <article class="ds-wf-card">
+        <!-- Lucide: file-text icon -->
+        <svg class="ds-wf-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
+        </svg>
+        <h3 class="ds-wf-card__title">Secure Document Summarization</h3>
+        <p class="ds-wf-card__desc">Contracts, reports, regulatory filings — protected before AI processing. AI generates summaries with real names, dates, and figures ready for business use.</p>
+        <div class="ds-wf-card__footer">Real names, dates, figures restored in output</div>
+      </article>
+
+      <article class="ds-wf-card">
+        <!-- Lucide: clipboard-list icon -->
+        <svg class="ds-wf-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="9" y="2" width="6" height="4" rx="1"/>
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+          <line x1="9" y1="12" x2="15" y2="12"/>
+          <line x1="9" y1="16" x2="13" y2="16"/>
+        </svg>
+        <h3 class="ds-wf-card__title">AI Claims Processing</h3>
+        <p class="ds-wf-card__desc">Insurance and financial claims through LLM Capsule before AI-powered classification, damage assessment, and fraud detection. Restored outputs feed directly into claims management systems.</p>
+        <div class="ds-wf-card__footer">Direct integration with claims systems</div>
+      </article>
+
+      <article class="ds-wf-card">
+        <!-- Lucide: shield-check icon -->
+        <svg class="ds-wf-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <polyline points="9 12 11 14 15 10"/>
+        </svg>
+        <h3 class="ds-wf-card__title">Confidential Contract Review</h3>
+        <p class="ds-wf-card__desc">AI extracts key terms, obligations, and risk clauses from protected contracts. Restored outputs include real party names, amounts, and clause references — ready for deal management systems.</p>
+        <div class="ds-wf-card__footer">Real party names, amounts, references restored</div>
+      </article>
+
+      <article class="ds-wf-card">
+        <!-- Lucide: bar-chart icon -->
+        <svg class="ds-wf-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="20" x2="18" y2="10"/>
+          <line x1="12" y1="20" x2="12" y2="4"/>
+          <line x1="6" y1="20" x2="6" y2="14"/>
+        </svg>
+        <h3 class="ds-wf-card__title">Internal Report Generation</h3>
+        <p class="ds-wf-card__desc">AI drafts internal reports from protected data sources — performance reviews, audit findings, compliance summaries. Restored reports flow directly into governance workflows.</p>
+        <div class="ds-wf-card__footer">Restored reports flow into governance</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 6: Without / With
+============================================================ -->
+<section id="section-6" class="ds-section">
+  <div class="ds-container">
+    <header class="ds-section-header">
+      <span class="ds-eyebrow">PILOT TO PRODUCTION</span>
+      <h2>Without LLM Capsule. With <span class="ds-text--brand">LLM Capsule</span>.</h2>
+      <p>What changes when the data layer can finally handle the work.</p>
+    </header>
+
+    <div class="ds-ww">
+      <div class="ds-ww__col ds-ww__col--without">
+        <div class="ds-ww__label">WITHOUT LLM CAPSULE</div>
+        <h3 class="ds-ww__heading">Enterprise AI projects stall at pilot</h3>
+        <ul class="ds-ww__list">
+          <li>Manual review workflows persist — humans process documents AI can't be trusted with</li>
+          <li>Document structure destroyed — flat masking breaks tables and cross-references</li>
+          <li>Low-quality AI output — even when AI is permitted, results need extensive manual reconstruction</li>
+          <li>Security teams block AI adoption — projects never demonstrate value before being cancelled</li>
+          <li>Shadow AI emerges — employees route around the controls because the controls block real work</li>
+          <li>Regulated workflows excluded — telecom, healthcare, defense, finance left out of the AI gains</li>
+        </ul>
+      </div>
+
+      <div class="ds-ww__col ds-ww__col--with">
+        <div class="ds-ww__label">WITH LLM CAPSULE</div>
+        <h3 class="ds-ww__heading">Enterprise AI ships on real data</h3>
+        <ul class="ds-ww__list">
+          <li>AI runs on sensitive documents — the data layer handles protection, teams focus on outcomes</li>
+          <li>Real documents processed with any LLM — ChatGPT, Claude, Gemini, Perplexity, or on-prem local</li>
+          <li>Compliance satisfied — zero raw exposure architecture meets GDPR, HIPAA, SOX governance</li>
+          <li>Restored outputs retain business context — real names, real figures, real references</li>
+          <li>Tables, layouts, cross-references preserved through structure-preserving encapsulation</li>
+          <li>Regulated industries adopt AI on production data — pilots become production</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 7: 4-way Comparison Table
+============================================================ -->
+<section id="section-7" class="ds-section ds-section--soft">
+  <div class="ds-container">
+    <header class="ds-section-header">
+      <span class="ds-eyebrow">WHERE IT SITS</span>
+      <h2>Not masking. Not a prompt gateway. Not <span class="ds-text--brand">synthetic data</span>.</h2>
+      <p>An AI enablement data layer for regulated workflows.</p>
+    </header>
+
+    <div class="ds-compare-wrap">
+      <table class="ds-compare-table">
+        <thead>
+          <tr>
+            <th>Approach</th>
+            <th>Method</th>
+            <th>Limitation</th>
+            <th class="ds-compare-table__us-th">vs LLM Capsule</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PII Guardrails &amp; AI Security Suites</td>
+            <td>API-level protection and policy enforcement</td>
+            <td>Optimized for risk control, not workflow restoration</td>
+            <td class="ds-compare-table__us-cell">Capsule preserves operational structure, runs inside existing systems, and restores business-ready output</td>
+          </tr>
+          <tr>
+            <td>Masking &amp; Redaction</td>
+            <td>Permanently removes data</td>
+            <td>Destroys the context AI needs to produce useful output</td>
+            <td class="ds-compare-table__us-cell">Capsule encapsulates locally and restores tokens to original values inside your environment</td>
+          </tr>
+          <tr>
+            <td>Synthetic Data Platforms</td>
+            <td>Artificial data generation</td>
+            <td>Training / testing only — not live operational workflows</td>
+            <td class="ds-compare-table__us-cell">Capsule runs on real documents in production workflows</td>
+          </tr>
+          <tr>
+            <td>Security Team Blocks AI</td>
+            <td>Manual approval gate</td>
+            <td>Blocks AI projects — pilot never reaches production</td>
+            <td class="ds-compare-table__us-cell">Capsule enables AI under existing enterprise governance</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 8: Industry Use Cases
+============================================================ -->
+<section id="section-8" class="ds-section">
+  <div class="ds-container">
+    <header class="ds-section-header">
+      <span class="ds-eyebrow">BUILT FOR REGULATED OPERATIONS</span>
+      <h2>From telecom NOC to <span class="ds-text--brand">mission operations</span></h2>
+      <p>Each industry below shows the operational data LLM Capsule transforms — not just PII — and where it's already deployed.</p>
+    </header>
+
+    <div class="ds-uc-grid">
+      <article class="ds-uc-card ds-uc-card--telecom">
+        <div class="ds-uc-card__num">01</div>
+        <h3 class="ds-uc-card__title">Network Operations &amp; Incident Analysis</h3>
+        <div class="ds-uc-card__row">
+          <span class="ds-uc-card__label">Input</span>
+          <span class="ds-uc-card__val">NOC logs &middot; alarm sequences &middot; device / site / circuit IDs &middot; SLA risk &middot; NOC response history &middot; subscriber identities &middot; network configs</span>
+        </div>
+        <div class="ds-uc-card__row">
+          <span class="ds-uc-card__label">Flow</span>
+          <span class="ds-uc-card__val">Capsule &#8594; AI generates RCA + customer-impact analysis &#8594; restored into ticket / runbook</span>
+        </div>
+        <div class="ds-uc-card__proof">SK Telecom &middot; Deutsche Telekom T Challenge 2026 — Top 12, Data Security &amp; Governance.</div>
+      </article>
+
+      <article class="ds-uc-card ds-uc-card--ot">
+        <div class="ds-uc-card__num">02</div>
+        <h3 class="ds-uc-card__title">OT / Industrial Asset &amp; Vulnerability Operations</h3>
+        <div class="ds-uc-card__row">
+          <span class="ds-uc-card__label">Input</span>
+          <span class="ds-uc-card__val">asset ID &middot; PLC / ICS alerts &middot; vulnerability records &middot; plant operation &middot; patch constraint &middot; vendor / device info &middot; infrastructure details</span>
+        </div>
+        <div class="ds-uc-card__row">
+          <span class="ds-uc-card__label">Flow</span>
+          <span class="ds-uc-card__val">Capsule &#8594; AI reviews + recommends remediation &#8594; security ops workflow</span>
+        </div>
+        <div class="ds-uc-card__proof">Partner: Claroty (industrial cybersecurity).</div>
+      </article>
+
+      <article class="ds-uc-card ds-uc-card--healthcare">
+        <div class="ds-uc-card__num">03</div>
+        <h3 class="ds-uc-card__title">Healthcare Clinical &amp; Hospital Operational Workflow</h3>
+        <div class="ds-uc-card__row">
+          <span class="ds-uc-card__label">Input</span>
+          <span class="ds-uc-card__val">clinical workflow &middot; lab results &middot; prescription flow &middot; patient names &middot; diagnoses &middot; medical record IDs &middot; hospital operation &middot; claim review context</span>
+        </div>
+        <div class="ds-uc-card__row">
+          <span class="ds-uc-card__label">Flow</span>
+          <span class="ds-uc-card__val">Capsule &#8594; AI summarizes + drafts clinical notes / radiology reports &#8594; restored into EHR workflow</span>
+        </div>
+        <div class="ds-uc-card__proof">Deployed at Ewha Womans University Medical Center (EUMC).</div>
+      </article>
+
+      <article class="ds-uc-card ds-uc-card--defense">
+        <div class="ds-uc-card__num">04</div>
+        <h3 class="ds-uc-card__title">Public Sector / Defense — Mission &amp; Classified Workflow</h3>
+        <div class="ds-uc-card__row">
+          <span class="ds-uc-card__label">Input</span>
+          <span class="ds-uc-card__val">military personnel data &middot; classified operation details &middot; security-grade documents &middot; mission log &middot; operation brief &middot; access-controlled context &middot; command workflow</span>
+        </div>
+        <div class="ds-uc-card__row">
+          <span class="ds-uc-card__label">Flow</span>
+          <span class="ds-uc-card__val">Capsule (local execution) &#8594; AI drafts intelligence reports + briefing summaries &#8594; restored under command control with full audit trail</span>
+        </div>
+        <div class="ds-uc-card__proof">Deployed at Ministry of National Defense (South Korea). On-prem / local execution path required.</div>
+      </article>
+    </div>
+
+    <div class="ds-uc-cta">
+      <a class="ds-btn ds-btn--ghost" href="/solutions">See all six industries &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 9: FAQ
+============================================================ -->
+<section id="section-9" class="ds-section ds-section--soft">
+  <div class="ds-container">
+    <header class="ds-section-header">
+      <span class="ds-eyebrow">FAQ</span>
+      <h2>Frequently Asked <span class="ds-text--brand">Questions</span></h2>
+    </header>
+
+    <div class="ds-faq">
+      <details>
+        <summary>What is an AI enablement data layer?</summary>
+        <div>An AI enablement data layer sits between the existing regulated enterprise environment (NOC, ticket, OSS/BSS, OT consoles, EHR, mission systems, document portals) and large language models. It turns operational data into AI-ready context using structure-preserving, differential-privacy-based encapsulation, executes the AI workflow inside the enterprise environment, and restores results back into the originating workflow. It moves AI projects from pilot to production on real enterprise data.</div>
+      </details>
+      <details>
+        <summary>How is LLM Capsule different from PII guardrails or AI security tools?</summary>
+        <div>PII guardrails detect and mask personal identifiers at the API or prompt level. AI security tools focus on prompt injection and runtime threats. LLM Capsule operates one layer deeper — at the AI enablement data layer. It transforms structured operational data using structure-preserving, differential-privacy-based encapsulation, supports both external LLM and on-prem local execution paths, and provides two-way restoration via state vault. It plugs into legacy enterprise systems with no architectural change required.</div>
+      </details>
+      <details>
+        <summary>Can our team define what counts as sensitive?</summary>
+        <div>Yes. Context-aware data control lets your team define, add, remove, and version confidentiality markers as your operations and regulatory landscape evolve. Standard PII categories are not enough — define project codes, deal terms, internal IDs, network identifiers, asset references, mission references, and any business-specific marker. Yesterday's sensitive data isn't tomorrow's; the policy adapts.</div>
+      </details>
+      <details>
+        <summary>Can LLM Capsule run on-premise or air-gapped?</summary>
+        <div>Yes. Six deployment modes: on-premise, air-gapped, hybrid, cloud (AWS Marketplace), embedded SDK, and Slack App. Two execution paths: external approved LLM with capsule data only (no raw operational data exposure) or on-prem local lightweight model (zero external transmission). Path selection is policy-driven per workflow. Capsule runs inside the customer environment in every mode — integration interfaces (REST / gRPC / JDBC / Graph API / on-prem API / SDK / Slack App) let existing enterprise systems invoke it from inside the environment.</div>
+      </details>
+      <details>
+        <summary>Which industries and customers use LLM Capsule?</summary>
+        <div>Telecom (Deutsche Telekom T Challenge 2026 Top 12 in Data Security &amp; Governance, SK Telecom), industrial cybersecurity and OT (partner: Claroty), healthcare (EUMC), finance and insurance (Kyobo, DB Insurance, IBK), legal (Shin&amp;Kim), public sector / defense (Ministry of National Defense, South Korea), and cloud sovereignty (NAVER Cloud). Recognized as a Gartner Vendor and listed on AWS Marketplace.</div>
+      </details>
+      <details>
+        <summary>What compliance frameworks does LLM Capsule support?</summary>
+        <div>LLM Capsule supports enterprise compliance with GDPR, HIPAA, SOX, and sector-specific regulations by ensuring sensitive data never leaves the enterprise environment during AI processing. Certifications include ISO/IEC 27001 (information security management) and ISO/IEC 42001 (AI management system). Korean certifications include KISA Information Security Fast Track, GS Certification, and TTA.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 10: CTA Strip
+============================================================ -->
+<section id="section-10" class="ds-cta-strip">
+  <h2>From blocked AI workflows to operational AI.</h2>
+  <p>See how LLM Capsule plugs into your existing enterprise environment in 30 minutes. Bring your documents, deployment constraints, and evaluation questions.</p>
+  <div class="ds-cta-strip__buttons">
+    <a class="ds-btn ds-btn--invert" href="/request-a-demo">Request a Demo</a>
+    <a class="ds-btn ds-btn--invert-ghost" href="/architecture">See the Architecture</a>
+    <a class="ds-btn ds-btn--invert-ghost" href="/pricing">View Pricing</a>
+  </div>
+</section>
+
+</body>
+</html>

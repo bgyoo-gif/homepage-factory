@@ -133,6 +133,28 @@ tokens.json (편집 대상)
 
 ---
 
+## Card Style Overrides (v6.2)
+
+```css
+/* LLM Capsule 카드: flat 스타일, shadow 제거, radius 축소 */
+.ds-card {
+  border-radius: var(--r-md, 10px);  /* 이전: 18px */
+  box-shadow: none;                   /* 이전: 0px 24px 40px rgba(0,0,0,0.04) */
+}
+
+/* 상단 컬러 라인(border-top colored) 금지 — AI 클리셰 */
+/* 색상 분기는 badge color 또는 icon color로 은은하게 처리 */
+
+/* Capability 카드 색상은 icon/badge로만 표현 */
+.cap-icon--primary { background: var(--c-primary); }
+.cap-icon--teal    { background: var(--c-teal); }
+.cap-icon--amber   { background: var(--c-amber); }
+.cap-icon--coral   { background: var(--c-coral); }
+.cap-icon--dark    { background: var(--c-bg-dark); }
+```
+
+---
+
 ## Component Overrides
 
 ```css
