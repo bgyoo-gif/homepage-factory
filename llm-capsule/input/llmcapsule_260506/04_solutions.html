@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Solutions | AI for Telecom, Healthcare, Finance, Defense, OT, Legal — LLM Capsule</title>
+<meta name="description" content="LLM Capsule enables AI on real production data across regulated industries — telecom NOC, healthcare clinical workflows, finance claims, defense mission, OT operations, legal matter management. Real customers: SK Telecom, Deutsche Telekom T Challenge Top 12, Claroty, EUMC, Kyobo, DB Insurance, IBK, Shin&Kim, Ministry of National Defense.">
+<meta name="keywords" content="AI for telecom, AI for healthcare, AI for finance, AI for defense, AI for OT, AI for legal, AI for regulated industries, sovereign AI, enterprise AI adoption">
+<meta property="og:title" content="LLM Capsule Solutions — AI Now Safe for Every Regulated Industry">
+<meta property="og:description" content="6 industries. Real customers. Real production workflows.">
+<link rel="canonical" href="https://llmcapsule.ai/solutions">
+
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "WebPage",
+  "name": "LLM Capsule Solutions",
+  "description": "AI enablement across telecom, healthcare, finance, defense, OT, legal — under one governance framework."
+}
+</script>
+
+<link rel="stylesheet" href="design-tokens.css">
+<style>
+.page-hero { padding: clamp(80px, 10vw, 140px) 0 clamp(48px, 6vw, 80px); background: linear-gradient(180deg, #fafbff 0%, #ffffff 100%); border-bottom: 1px solid var(--c-rule); text-align: center; }
+.page-hero h1 { max-width: 920px; margin: 0 auto 20px; }
+.page-hero h1 strong { color: var(--c-primary); }
+.page-hero__sub { font-size: 19px; color: var(--c-ink-soft); max-width: 760px; line-height: 1.6; margin: 0 auto 32px; }
+
+.image-spec { background: rgba(245, 158, 11, 0.08); border-left: 3px solid var(--c-amber); padding: 12px 16px; margin: 16px 0; font-family: var(--f-mono); font-size: 11px; color: var(--c-amber-dark); line-height: 1.55; border-radius: 0 4px 4px 0; }
+.image-spec strong { color: var(--c-amber-dark); display: block; margin-bottom: 4px; letter-spacing: 0.05em; text-transform: uppercase; font-size: 10px; }
+
+/* ===== HERO PROOF BAND ===== */
+.proof-band { background: var(--c-bg-soft); padding: 32px 0; border-bottom: 1px solid var(--c-rule); }
+.proof-band__h { font-size: 14px; text-align: center; color: var(--c-muted); font-weight: 600; margin-bottom: 18px; }
+.proof-band__logos { display: flex; gap: 32px; flex-wrap: wrap; justify-content: center; align-items: center; opacity: 0.6; }
+.proof-band__logo { font-family: var(--f-mono); font-size: 11px; color: var(--c-ink); padding: 6px 14px; border: 1px solid var(--c-rule); border-radius: 999px; background: #fff; letter-spacing: 0.05em; }
+
+/* ===== HERO PRODUCT SCREENSHOT (live asset reuse) ===== */
+.hero-shot { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1100px; margin: 48px auto 0; }
+@media (max-width: 800px) { .hero-shot { grid-template-columns: 1fr; } }
+.hero-shot__panel { background: linear-gradient(135deg, #c9d8f5 0%, #e6edf8 100%); border-radius: var(--r-lg); padding: 32px; min-height: 360px; position: relative; overflow: hidden; box-shadow: 0 12px 48px rgba(15,17,48,0.08); }
+.hero-shot__doc { background: #fff; border-radius: 8px; padding: 20px; font-family: var(--f-mono); font-size: 11px; line-height: 1.7; color: var(--c-ink); box-shadow: 0 4px 16px rgba(15,17,48,0.06); }
+.hero-shot__doc strong { display: inline; color: var(--c-coral-dark); background: rgba(239,83,80,0.1); padding: 1px 4px; border-radius: 3px; font-weight: 600; }
+.hero-shot__chip { display: inline-block; padding: 4px 10px; background: #fff; border-radius: 4px; font-family: var(--f-mono); font-size: 10px; margin-top: 14px; color: var(--c-ink-soft); border: 1px solid var(--c-rule); }
+.hero-shot__tabs { display: flex; gap: 6px; margin-bottom: 14px; }
+.hero-shot__tab { font-family: var(--f-mono); font-size: 10px; padding: 4px 10px; border-radius: 4px; color: var(--c-muted); cursor: pointer; }
+.hero-shot__tab--active { background: var(--c-primary); color: #fff; }
+.hero-shot__list { font-size: 11px; line-height: 1.85; color: var(--c-ink); padding-left: 16px; }
+.hero-shot__list li { padding: 1px 0; }
+.hero-shot__title { font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--c-ink); }
+
+/* ===== INDUSTRY FULL SECTIONS ===== */
+.industry-section { padding: clamp(64px, 8vw, 120px) 0; border-bottom: 1px solid var(--c-rule); }
+.industry-section:nth-child(even) { background: var(--c-bg-soft); }
+.industry-section--telecom { --ind-color: var(--c-primary); }
+.industry-section--healthcare { --ind-color: var(--c-teal); }
+.industry-section--finance { --ind-color: var(--c-amber); }
+.industry-section--defense { --ind-color: var(--c-bg-dark); }
+.industry-section--ot { --ind-color: var(--c-coral); }
+.industry-section--legal { --ind-color: var(--c-primary-dark); }
+.industry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+@media (max-width: 1000px) { .industry-grid { grid-template-columns: 1fr; gap: 32px; } }
+.industry-tag { font-family: var(--f-mono); font-size: 12px; font-weight: 700; color: var(--ind-color); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px; padding: 4px 12px; background: #fff; border: 1px solid var(--ind-color); border-radius: 999px; display: inline-block; }
+.industry-h { font-size: clamp(26px, 2.8vw, 36px); margin-bottom: 16px; line-height: 1.2; font-weight: 700; }
+.industry-lead { font-size: 17px; color: var(--c-ink-soft); line-height: 1.65; margin-bottom: 24px; }
+
+.industry-states { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+@media (max-width: 700px) { .industry-states { grid-template-columns: 1fr; } }
+.industry-state { padding: 18px 20px; border-radius: var(--r-md); }
+.industry-state--blocked { background: rgba(239,83,80,0.06); border: 1px solid var(--c-coral); }
+.industry-state--enabled { background: rgba(91,79,233,0.05); border: 1px solid var(--c-primary); }
+.industry-state__label { font-family: var(--f-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.industry-state--blocked .industry-state__label { color: var(--c-coral-dark); }
+.industry-state--enabled .industry-state__label { color: var(--c-primary-dark); }
+.industry-state__h { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.industry-state__d { font-size: 12px; color: var(--c-ink-soft); line-height: 1.5; }
+
+.industry-workflows { background: #fff; border: 1px solid var(--c-rule); border-radius: var(--r-md); padding: 22px 24px; margin-bottom: 24px; }
+.industry-workflows__h { font-family: var(--f-mono); font-size: 11px; font-weight: 700; color: var(--ind-color); margin-bottom: 12px; letter-spacing: 0.1em; }
+.industry-workflows__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.industry-workflows__list li { font-size: 13px; color: var(--c-ink-soft); line-height: 1.5; padding: 10px 0 10px 24px; position: relative; border-bottom: 1px dashed var(--c-rule); }
+.industry-workflows__list li:last-child { border-bottom: 0; }
+.industry-workflows__list li::before { content: '▸'; position: absolute; left: 0; color: var(--ind-color); font-weight: 700; }
+.industry-workflows__list li strong { color: var(--c-ink); display: block; margin-bottom: 2px; font-size: 13px; font-weight: 700; }
+
+.industry-customer { background: var(--c-bg-dark); color: #fff; border-radius: var(--r-md); padding: 24px 28px; }
+.industry-customer__label { font-family: var(--f-mono); font-size: 11px; color: #c8c4f7; letter-spacing: 0.15em; font-weight: 700; margin-bottom: 8px; }
+.industry-customer__name { font-size: 18px; font-weight: 700; margin-bottom: 6px; color: #fff; }
+.industry-customer__detail { font-size: 13px; color: #c8c4f7; line-height: 1.55; }
+
+.industry-link { margin-top: 20px; }
+.industry-link a { font-size: 13px; color: var(--ind-color); font-weight: 600; text-decoration: none; padding-bottom: 2px; border-bottom: 1px solid var(--ind-color); }
+
+.industry-visual { background: linear-gradient(135deg, #ebf0ff 0%, #f7fafc 100%); border-radius: var(--r-lg); padding: 32px; min-height: 420px; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 48px rgba(15,17,48,0.06); }
+.mock-screen { background: #fff; border-radius: 8px; padding: 18px; width: 100%; max-width: 460px; box-shadow: 0 8px 24px rgba(15,17,48,0.1); font-family: var(--f-mono); font-size: 11px; }
+.mock-screen__title { font-size: 13px; font-weight: 700; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--c-rule); color: var(--c-ink); }
+.mock-screen__row { padding: 4px 0; color: var(--c-ink-soft); line-height: 1.6; }
+.mock-screen__row strong { color: var(--c-coral-dark); background: rgba(239,83,80,0.1); padding: 1px 4px; border-radius: 3px; font-weight: 600; display: inline; }
+.mock-screen__row em { color: var(--c-primary-dark); background: rgba(91,79,233,0.1); padding: 1px 4px; border-radius: 3px; font-weight: 600; font-style: normal; display: inline; }
+.mock-screen__tabs { display: flex; gap: 4px; margin-bottom: 8px; }
+.mock-screen__tab { font-size: 9px; padding: 3px 8px; border-radius: 3px; color: var(--c-muted); }
+.mock-screen__tab--on { background: var(--c-primary); color: #fff; }
+
+.cta-strip { background: var(--c-bg-dark); color: #fff; padding: 64px var(--s-page); text-align: center; }
+.cta-strip h2 { color: #fff; margin-bottom: 24px; }
+.cta-strip p { color: #c8c4f7; max-width: 640px; margin: 0 auto 32px; font-size: 17px; }
+</style>
+</head>
+<body>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow">Solutions</div>
+    <h1>Make regulated workflows <strong>usable with AI</strong></h1>
+    <p class="page-hero__sub">
+      Six industries. Real production workflows. Real customers. One AI enablement data layer that removes the data exposure barrier blocking enterprise AI adoption — so AI runs on real data, inside your environment, under your governance.
+    </p>
+
+    <!-- Hero product screenshot — live asset reuse -->
+    <div class="hero-shot">
+      <div class="hero-shot__panel" data-replace="solutions-hero-original">
+        <div class="hero-shot__title">Vehicle Accident Property Damage Insurance Claim Case</div>
+        <div class="hero-shot__doc">
+          He stated, "Digital technologies are evolving so quickly that it's hard for the older.<br>
+          Date of admission <strong>[Date A]</strong> Insured person's name <strong>[Name AO]</strong> (<strong>[Email address AO]</strong>),<br>
+          <strong>[Policy number AO]</strong>, <strong>[Resident registration number AO]</strong>)<br>
+          Vehicle number <strong>[Car number AO]</strong>, <strong>[Date B]</strong>, Rear-end collision occurred on the Olympic Highway merge section. Claim Number <strong>[Claim Number AO]</strong> and Loss Adjustment Number <strong>[Loss Adjustment Number AO]</strong> have been duly noted. The estimated repair cost is <strong>[Amount A]</strong>.
+        </div>
+        <span class="hero-shot__chip">📄 Vehicle Accident, Property Damage Insurance Claim Case · Data Hide</span>
+      </div>
+      <div class="hero-shot__panel" data-replace="solutions-hero-restored">
+        <div class="hero-shot__tabs">
+          <span class="hero-shot__tab">AI Response</span>
+          <span class="hero-shot__tab hero-shot__tab--active">✓ Uncapsuled Response</span>
+        </div>
+        <div class="hero-shot__title">Organize the case</div>
+        <ul class="hero-shot__list">
+          <li>Inquiry Date: 2025-10-12</li>
+          <li>Accident Date: 2025-10-09</li>
+          <li>Insured: Kim Cubig (900123-4567890)</li>
+          <li>Policy Number: PA-2023-118211</li>
+          <li>Email: cubig.kim@cubig.ai</li>
+          <li>Vehicle Number: 12허1234</li>
+          <li>Accident Details: Rear-end collision at Olympic Highway merge point</li>
+          <li>Claim Number: CLM-99231</li>
+          <li>Loss Adjustment Number: ADJ-55172</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="image-spec">
+      <strong>[IMAGE_SPEC] Solutions hero product screenshot pair</strong>
+      Asset: Reuse the existing live llmcapsule.ai/solutions product screenshot pair (Vehicle Accident Property Damage Insurance Claim + Organize the case) — two side-by-side panels showing original document with [Date A], [Name AO], [Policy number AO] tokens (left) and the restored AI output with real values "Kim Cubig", "PA-2023-118211", etc. (right).
+      Aspect: 1:0.7 each panel · ~480x340px each · light blue gradient background
+      Style: light theme matching design-tokens.css (current live asset already matches)
+      Replace: <code>data-replace="solutions-hero-original"</code> and <code>data-replace="solutions-hero-restored"</code> mock panels
+      Source: existing asset on live llmcapsule.ai/solutions page
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROOF BAND ===== -->
+<section class="proof-band">
+  <div class="container">
+    <div class="proof-band__h">Real production deployments — across telecom, healthcare, finance, defense, OT, and legal</div>
+    <div class="proof-band__logos">
+      <div class="proof-band__logo">SK Telecom</div>
+      <div class="proof-band__logo">Deutsche Telekom T Challenge 2026 — Top 12</div>
+      <div class="proof-band__logo">Claroty</div>
+      <div class="proof-band__logo">EUMC</div>
+      <div class="proof-band__logo">Kyobo</div>
+      <div class="proof-band__logo">DB Insurance</div>
+      <div class="proof-band__logo">IBK</div>
+      <div class="proof-band__logo">Shin&amp;Kim</div>
+      <div class="proof-band__logo">Ministry of National Defense (KR)</div>
+      <div class="proof-band__logo">NAVER Cloud</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TELECOM ===== -->
+<section class="industry-section industry-section--telecom">
+  <div class="container">
+    <div class="industry-grid">
+      <div>
+        <span class="industry-tag">Telecom</span>
+        <h2 class="industry-h">AI in the NOC, OSS/BSS, and customer ops — without exposing subscribers</h2>
+        <p class="industry-lead">Network operations carry subscriber identities, device IDs, circuit IDs, IP ranges, and configurations. PII guardrails miss this; sovereign data rules block raw transmission. LLM Capsule encapsulates locally and routes capsules to approved external LLMs (Path A) or on-prem models (Path B for stricter workflows).</p>
+
+        <div class="industry-states">
+          <div class="industry-state industry-state--blocked">
+            <div class="industry-state__label">Without Capsule</div>
+            <div class="industry-state__h">NOC AI pilot stalls</div>
+            <div class="industry-state__d">Subscriber IDs, device configs, alarm sequences cannot reach external LLM. Pilot demos on synthetic data, then dies in security review.</div>
+          </div>
+          <div class="industry-state industry-state--enabled">
+            <div class="industry-state__label">With Capsule</div>
+            <div class="industry-state__h">RCA + recommendation auto-inserted</div>
+            <div class="industry-state__d">Capsule travels; AI generates RCA on protected data; output restored into the original ticket with real subscriber/device/circuit IDs.</div>
+          </div>
+        </div>
+
+        <div class="industry-workflows">
+          <div class="industry-workflows__h">PRODUCTION WORKFLOWS</div>
+          <ul class="industry-workflows__list">
+            <li><strong>Incident RCA generation</strong>Real-time root cause analysis on production NOC tickets</li>
+            <li><strong>Customer impact analysis</strong>SLA risk and enterprise customer impact summarization</li>
+            <li><strong>Configuration change drafting</strong>Network config diff explanation and approval drafts</li>
+            <li><strong>Runbook generation</strong>Auto-drafting incident-specific runbooks from history</li>
+          </ul>
+        </div>
+
+        <div class="industry-customer">
+          <div class="industry-customer__label">CUSTOMER PROOF</div>
+          <div class="industry-customer__name">SK Telecom · Deutsche Telekom T Challenge 2026 — Top 12</div>
+          <div class="industry-customer__detail">Recognized in Data Security &amp; Governance category. NOC RCA generation and customer-impact analysis on real subscriber, network, and configuration data — all encapsulated locally before any LLM call.</div>
+        </div>
+
+        <div class="industry-link">
+          <a href="/learn/telecom-noc-ai-deployment">Read: How to deploy AI in a telecom NOC →</a>
+        </div>
+      </div>
+
+      <div class="industry-visual" data-replace="telecom-mock">
+        <div class="mock-screen">
+          <div class="mock-screen__title">NOC · INC-24091</div>
+          <div class="mock-screen__row">Subscriber: <strong>[SUBSCRIBER_ID]</strong></div>
+          <div class="mock-screen__row">Device: <strong>[DEVICE_ID]</strong> · Circuit: <strong>[CIRCUIT_ID]</strong></div>
+          <div class="mock-screen__row">Site: <strong>[SITE_ID]</strong> · Latency anomaly</div>
+          <div class="mock-screen__tabs">
+            <span class="mock-screen__tab">Capsule</span>
+            <span class="mock-screen__tab mock-screen__tab--on">Restored</span>
+          </div>
+          <div class="mock-screen__row">Subscriber: <em>42810-A</em></div>
+          <div class="mock-screen__row">Device: <em>R-472</em> · Circuit: <em>SEO-18-C</em></div>
+          <div class="mock-screen__row">RCA: rollback config R-472 (drift since 03:21)</div>
+          <div class="mock-screen__row">Recommendation: SLA-impacting · escalate</div>
+        </div>
+      </div>
+    </div>
+    <div class="image-spec" style="margin-top: 16px;">
+      <strong>[IMAGE_SPEC] Telecom industry visual</strong>
+      Asset: Real product screenshot of NOC ticket with capsule → restored states (PNG)
+      Subject: Two-state ticket UI showing same NOC ticket with capsule tokens (top half) and restored real values (bottom half), AI-generated RCA + recommendation visible
+      Aspect: 16:10 · ~640x400px
+      Replace: <code>data-replace="telecom-mock"</code>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HEALTHCARE ===== -->
+<section class="industry-section industry-section--healthcare">
+  <div class="container">
+    <div class="industry-grid">
+      <div class="industry-visual" data-replace="healthcare-mock">
+        <div class="mock-screen">
+          <div class="mock-screen__title">EHR · Radiology Report Draft</div>
+          <div class="mock-screen__row">Patient: <strong>[PATIENT_NAME]</strong> · MRN <strong>[MRN]</strong></div>
+          <div class="mock-screen__row">Date: 2025-10-09 · Modality: MR Brain</div>
+          <div class="mock-screen__tabs">
+            <span class="mock-screen__tab">Capsule</span>
+            <span class="mock-screen__tab mock-screen__tab--on">Restored</span>
+          </div>
+          <div class="mock-screen__row">Patient: <em>이명진</em> · MRN <em>EUMC-3782451</em></div>
+          <div class="mock-screen__row">AI summary: bilateral periventricular FLAIR hyperintensities consistent with chronic small vessel ischemic disease; no acute infarct or hemorrhage detected.</div>
+          <div class="mock-screen__row">✓ Restored locally · HIPAA-aligned audit logged</div>
+        </div>
+      </div>
+
+      <div>
+        <span class="industry-tag">Healthcare</span>
+        <h2 class="industry-h">AI for clinical workflows — PHI never leaves the hospital network</h2>
+        <p class="industry-lead">Clinical AI promises 30-50% reduction in documentation burden. But PHI cannot leave the hospital under HIPAA, GDPR, or K-PIPA. PII guardrails miss workflow context, lab sequences, and free-text clinical notes. LLM Capsule encapsulates patient identifiers, MRN, diagnoses, and clinical context locally; restoration happens inside the EHR.</p>
+
+        <div class="industry-states">
+          <div class="industry-state industry-state--blocked">
+            <div class="industry-state__label">Without Capsule</div>
+            <div class="industry-state__h">Documentation pilot blocked</div>
+            <div class="industry-state__d">Privacy officer blocks deployment. Physicians use shadow AI on personal devices; productivity tasted in pilot disappears.</div>
+          </div>
+          <div class="industry-state industry-state--enabled">
+            <div class="industry-state__label">With Capsule</div>
+            <div class="industry-state__h">AI drafts inside Epic / Cerner / HIS</div>
+            <div class="industry-state__d">PHI encapsulated; AI drafts radiology summaries and discharge notes; outputs auto-restore in the EHR. Audit feeds the privacy office.</div>
+          </div>
+        </div>
+
+        <div class="industry-workflows">
+          <div class="industry-workflows__h">PRODUCTION WORKFLOWS</div>
+          <ul class="industry-workflows__list">
+            <li><strong>Radiology report drafting</strong>AI-drafted impressions from imaging studies + clinical history</li>
+            <li><strong>Discharge summary drafting</strong>Multi-source summarization across admission, treatment, and follow-up</li>
+            <li><strong>Clinical coding assist</strong>ICD-10 / CPT code suggestion with audit trail</li>
+            <li><strong>Care coordination notes</strong>Multi-disciplinary handoff drafts with PHI protected</li>
+          </ul>
+        </div>
+
+        <div class="industry-customer">
+          <div class="industry-customer__label">CUSTOMER PROOF</div>
+          <div class="industry-customer__name">Ewha Womans University Medical Center (EUMC)</div>
+          <div class="industry-customer__detail">Clinical workflow summarization with PHI never traversing the EUMC boundary in raw form. Local restoration ensures only authorized hospital systems see original patient identifiers. HIPAA-aligned compliance reporting.</div>
+        </div>
+
+        <div class="industry-link">
+          <a href="/learn/hospital-ai-deployment-phi-protection">Read: How to deploy AI in a hospital →</a>
+        </div>
+      </div>
+    </div>
+    <div class="image-spec" style="margin-top: 16px;">
+      <strong>[IMAGE_SPEC] Healthcare industry visual</strong>
+      Asset: Real product screenshot of EHR radiology report drafting (PNG)
+      Subject: EHR module showing AI-drafted clinical summary with patient name + MRN restored locally; capsule/restored toggle visible; audit badge "HIPAA-aligned policy"
+      Aspect: 16:10 · ~640x400px · Light theme
+      Replace: <code>data-replace="healthcare-mock"</code>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINANCE / INSURANCE ===== -->
+<section class="industry-section industry-section--finance">
+  <div class="container">
+    <div class="industry-grid">
+      <div>
+        <span class="industry-tag">Finance / Insurance</span>
+        <h2 class="industry-h">AI on real claim, policy, and customer data — under bank-grade governance</h2>
+        <p class="industry-lead">Insurance and banking workflows are document-heavy and customer-data-heavy: claim narratives, policy details, KYC records, transaction patterns. Sector regulators (FSC, FSS, BaFin, ACPR) increasingly require demonstrable data governance for AI workflows. LLM Capsule keeps customer data inside while AI processes safe capsules.</p>
+
+        <div class="industry-states">
+          <div class="industry-state industry-state--blocked">
+            <div class="industry-state__label">Without Capsule</div>
+            <div class="industry-state__h">Claims AI never reaches production</div>
+            <div class="industry-state__d">Customer name, policy ID, claim narrative cannot reach external LLM. AI drafts on synthetic data; production deployment fails risk review.</div>
+          </div>
+          <div class="industry-state industry-state--enabled">
+            <div class="industry-state__label">With Capsule</div>
+            <div class="industry-state__h">AI processes claims at production volume</div>
+            <div class="industry-state__d">Capsule + restoration enables real-volume claim classification, fraud signal generation, and underwriting drafts inside the insurer's existing systems.</div>
+          </div>
+        </div>
+
+        <div class="industry-workflows">
+          <div class="industry-workflows__h">PRODUCTION WORKFLOWS</div>
+          <ul class="industry-workflows__list">
+            <li><strong>Claim classification &amp; triage</strong>AI-powered intake, severity scoring, fraud signaling</li>
+            <li><strong>Damage assessment</strong>Multi-document assessment with vehicle/property data restored</li>
+            <li><strong>Underwriting draft</strong>Risk evaluation and premium recommendation drafts</li>
+            <li><strong>Regulatory submission</strong>Filing draft and compliance review assist</li>
+          </ul>
+        </div>
+
+        <div class="industry-customer">
+          <div class="industry-customer__label">CUSTOMER PROOF</div>
+          <div class="industry-customer__name">Kyobo · DB Insurance · IBK</div>
+          <div class="industry-customer__detail">AI-powered claim and policy workflows on real customer data. No customer data leaves the institution's environment in raw form. Aligned with sector regulator expectations and SOX where applicable.</div>
+        </div>
+
+        <div class="industry-link">
+          <a href="/learn/pilot-to-production-enterprise-ai">Read: Pilot to production for regulated AI →</a>
+        </div>
+      </div>
+
+      <div class="industry-visual" data-replace="finance-mock">
+        <div class="mock-screen">
+          <div class="mock-screen__title">Claim · CLM-77241</div>
+          <div class="mock-screen__row">Insured: <strong>[POLICYHOLDER]</strong> · Policy <strong>[POLICY_ID]</strong></div>
+          <div class="mock-screen__row">Vehicle: <strong>[VEHICLE]</strong> · Damage: <strong>[AMOUNT]</strong></div>
+          <div class="mock-screen__tabs">
+            <span class="mock-screen__tab">Capsule</span>
+            <span class="mock-screen__tab mock-screen__tab--on">Restored</span>
+          </div>
+          <div class="mock-screen__row">Insured: <em>Kim Cubig</em> · Policy <em>PA-2023-118211</em></div>
+          <div class="mock-screen__row">Vehicle: <em>12허1234</em> · Damage: <em>4.2M KRW</em></div>
+          <div class="mock-screen__row">AI fraud signal: <em>low</em> · approve</div>
+          <div class="mock-screen__row">Adjustment Number: ADJ-55172</div>
+        </div>
+      </div>
+    </div>
+    <div class="image-spec" style="margin-top: 16px;">
+      <strong>[IMAGE_SPEC] Finance industry visual</strong>
+      Asset: Reuse the live llmcapsule.ai/solutions claim form screenshots (Vehicle Accident Property Damage Insurance Claim + Organize the case) — same as hero
+      Aspect: 16:10 · ~640x400px
+      Replace: <code>data-replace="finance-mock"</code>
+      Note: live asset already exists for this exact use case
+    </div>
+  </div>
+</section>
+
+<!-- ===== DEFENSE / PUBLIC SECTOR ===== -->
+<section class="industry-section industry-section--defense">
+  <div class="container">
+    <div class="industry-grid">
+      <div class="industry-visual" data-replace="defense-mock" style="background: linear-gradient(135deg, #0d1130 0%, #1b1d4a 100%);">
+        <div class="mock-screen" style="background: var(--c-bg-dark); color: #c8c4f7;">
+          <div class="mock-screen__title" style="color: #fff; border-color: var(--c-bg-dark-2);">Mission Brief · ⟨MR_xxxx⟩</div>
+          <div class="mock-screen__row" style="color: #c8c4f7;">Path B · On-prem local model only</div>
+          <div class="mock-screen__row" style="color: #c8c4f7;">Mission ref: <strong style="background: rgba(239,83,80,0.2); color: #ff8a8a;">[MISSION_REF]</strong></div>
+          <div class="mock-screen__row" style="color: #c8c4f7;">Geo zone: <strong style="background: rgba(239,83,80,0.2); color: #ff8a8a;">[GEO_REDACTED]</strong></div>
+          <div class="mock-screen__row" style="color: #c8c4f7;">AI brief: drafted &amp; logged · audit feed → command</div>
+          <div class="mock-screen__row" style="color: #c8c4f7;">✓ Zero external transmission · air-gapped</div>
+        </div>
+      </div>
+
+      <div>
+        <span class="industry-tag">Public Sector / Defense</span>
+        <h2 class="industry-h">AI on classified mission workflows — fully on-prem, zero external transmission</h2>
+        <p class="industry-lead">Defense, intelligence, and public-sector workflows demand zero external transmission. No external LLM endpoint is acceptable. LLM Capsule's Path B (on-prem local lightweight model) runs entirely inside the command's network — same Capsule instance, same audit framework, no external reach.</p>
+
+        <div class="industry-states">
+          <div class="industry-state industry-state--blocked">
+            <div class="industry-state__label">Without Capsule</div>
+            <div class="industry-state__h">AI categorically excluded</div>
+            <div class="industry-state__d">External LLM use is not permitted. Mission workflows continue without AI support; productivity gap persists.</div>
+          </div>
+          <div class="industry-state industry-state--enabled">
+            <div class="industry-state__label">With Capsule</div>
+            <div class="industry-state__h">AI inside command boundary</div>
+            <div class="industry-state__d">Quantized on-prem model + Capsule encapsulation + local audit. AI drafts mission briefs, intelligence summaries, and operational reports — entirely within the command.</div>
+          </div>
+        </div>
+
+        <div class="industry-workflows">
+          <div class="industry-workflows__h">PRODUCTION WORKFLOWS</div>
+          <ul class="industry-workflows__list">
+            <li><strong>Mission brief drafting</strong>AI-drafted operational briefs from multi-source intelligence</li>
+            <li><strong>Operational report summarization</strong>Multi-format report consolidation and impact synthesis</li>
+            <li><strong>Doctrine reference assist</strong>Doctrine and procedure lookup with classification protection</li>
+            <li><strong>After-action review draft</strong>Post-operation review with mission identifiers protected</li>
+          </ul>
+        </div>
+
+        <div class="industry-customer">
+          <div class="industry-customer__label">CUSTOMER PROOF</div>
+          <div class="industry-customer__name">Ministry of National Defense (Korea)</div>
+          <div class="industry-customer__detail">Mission-grade workflows on Path B (on-prem local) with full audit feed to command-level governance. Mission references, geographic identifiers, and unit data encapsulated; restoration tightly scoped under RBAC.</div>
+        </div>
+
+        <div class="industry-link">
+          <a href="/learn/sovereign-ai-european-enterprises">Read: Sovereign AI architecture →</a>
+        </div>
+      </div>
+    </div>
+    <div class="image-spec" style="margin-top: 16px;">
+      <strong>[IMAGE_SPEC] Defense industry visual</strong>
+      Asset: Mission brief mockup (PNG) — heavily redacted, dark theme to feel classified
+      Subject: Dark UI showing AI-drafted brief with mission references shown as ⟨MR_xxxx⟩ tokens (intentionally not restored in screenshot for op-sec); Path B + audit badges visible
+      Aspect: 16:10 · ~640x400px · Dark theme
+      Replace: <code>data-replace="defense-mock"</code>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OT / INDUSTRIAL CYBER ===== -->
+<section class="industry-section industry-section--ot">
+  <div class="container">
+    <div class="industry-grid">
+      <div>
+        <span class="industry-tag">OT / Industrial Cyber</span>
+        <h2 class="industry-h">AI in OT environments — without exposing asset identifiers or process data</h2>
+        <p class="industry-lead">OT (operational technology) workflows protect mission-critical industrial assets — power, manufacturing, oil &amp; gas, water. PLCs, SCADA tags, asset IDs, and process variables can't leak. LLM Capsule encapsulates OT identifiers locally; AI assists with anomaly explanation, runbook drafting, and incident response.</p>
+
+        <div class="industry-states">
+          <div class="industry-state industry-state--blocked">
+            <div class="industry-state__label">Without Capsule</div>
+            <div class="industry-state__h">OT teams blocked from AI</div>
+            <div class="industry-state__d">Asset IDs, process variables, vendor configurations cannot reach external LLM. OT operators have no AI support for incident analysis.</div>
+          </div>
+          <div class="industry-state industry-state--enabled">
+            <div class="industry-state__label">With Capsule</div>
+            <div class="industry-state__h">AI assist for OT incident response</div>
+            <div class="industry-state__d">OT identifiers encapsulated. AI drafts incident analysis, anomaly explanation, and recommended runbook on protected capsule; restored locally for OT operators.</div>
+          </div>
+        </div>
+
+        <div class="industry-workflows">
+          <div class="industry-workflows__h">PRODUCTION WORKFLOWS</div>
+          <ul class="industry-workflows__list">
+            <li><strong>Anomaly explanation</strong>AI-generated explanation of detected OT anomalies</li>
+            <li><strong>Asset documentation</strong>Auto-drafting asset and process documentation</li>
+            <li><strong>Vulnerability triage</strong>Vulnerability impact analysis on protected asset data</li>
+            <li><strong>Vendor advisory parsing</strong>Vendor security advisory parsing and impact mapping</li>
+          </ul>
+        </div>
+
+        <div class="industry-customer">
+          <div class="industry-customer__label">CUSTOMER PROOF</div>
+          <div class="industry-customer__name">Claroty</div>
+          <div class="industry-customer__detail">Industrial cybersecurity workflows with OT asset identifiers and process variables encapsulated locally. AI assists analysts without exposing customer infrastructure data.</div>
+        </div>
+
+        <div class="industry-link">
+          <a href="/learn/ai-on-network-operations-data">Read: AI on network &amp; operations data →</a>
+        </div>
+      </div>
+
+      <div class="industry-visual" data-replace="ot-mock">
+        <div class="mock-screen">
+          <div class="mock-screen__title">OT Console · Anomaly ANM-3091</div>
+          <div class="mock-screen__row">Asset: <strong>[ASSET_ID]</strong></div>
+          <div class="mock-screen__row">Process: <strong>[PROCESS_VAR]</strong> · Tag <strong>[TAG]</strong></div>
+          <div class="mock-screen__tabs">
+            <span class="mock-screen__tab">Capsule</span>
+            <span class="mock-screen__tab mock-screen__tab--on">Restored</span>
+          </div>
+          <div class="mock-screen__row">Asset: <em>PLC-Line-3-A</em></div>
+          <div class="mock-screen__row">Process: <em>FLOW.LINE3.PV</em> · Tag <em>FT-302</em></div>
+          <div class="mock-screen__row">AI: pressure drift +12% over baseline; check valve V-302 wear</div>
+          <div class="mock-screen__row">Recommendation: dispatch maintenance · medium urgency</div>
+        </div>
+      </div>
+    </div>
+    <div class="image-spec" style="margin-top: 16px;">
+      <strong>[IMAGE_SPEC] OT industry visual</strong>
+      Asset: OT console mockup (PNG)
+      Subject: Industrial monitoring UI showing anomaly with asset ID + process variable tokens (top) and restored real values + AI explanation (bottom)
+      Aspect: 16:10 · ~640x400px
+      Replace: <code>data-replace="ot-mock"</code>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEGAL ===== -->
+<section class="industry-section industry-section--legal">
+  <div class="container">
+    <div class="industry-grid">
+      <div class="industry-visual" data-replace="legal-mock">
+        <div class="mock-screen">
+          <div class="mock-screen__title">Matter · M-9183 · Confidential Contract Review</div>
+          <div class="mock-screen__row">Parties: <strong>[PARTY_A]</strong>, <strong>[PARTY_B]</strong></div>
+          <div class="mock-screen__row">Deal value: <strong>[DEAL_VALUE]</strong> · Effective <strong>[DATE]</strong></div>
+          <div class="mock-screen__tabs">
+            <span class="mock-screen__tab">Capsule</span>
+            <span class="mock-screen__tab mock-screen__tab--on">Restored</span>
+          </div>
+          <div class="mock-screen__row">Parties: <em>Acme Corp</em>, <em>BetaTech Inc</em></div>
+          <div class="mock-screen__row">Deal value: <em>$12.4M</em> · Effective <em>2025-11-01</em></div>
+          <div class="mock-screen__row">AI summary: 5 key risks · indemnification cap, IP carve-out, MAC clause</div>
+          <div class="mock-screen__row">✓ Privilege preserved · audit logged</div>
+        </div>
+      </div>
+
+      <div>
+        <span class="industry-tag">Legal</span>
+        <h2 class="industry-h">AI for matter management — privilege preserved, deal terms protected</h2>
+        <p class="industry-lead">Legal workflows process privileged material — contracts, deal terms, M&amp;A code names, litigation strategy, regulatory filings. Privilege preservation is non-negotiable. LLM Capsule encapsulates parties, deal terms, and privileged content locally; AI summarizes and analyzes the protected capsule; restoration happens inside the firm's matter management system.</p>
+
+        <div class="industry-states">
+          <div class="industry-state industry-state--blocked">
+            <div class="industry-state__label">Without Capsule</div>
+            <div class="industry-state__h">Outside-counsel AI blocked</div>
+            <div class="industry-state__d">Deal terms, party names, code names cannot reach external LLM. Associates fall back to manual review; AI value never materializes.</div>
+          </div>
+          <div class="industry-state industry-state--enabled">
+            <div class="industry-state__label">With Capsule</div>
+            <div class="industry-state__h">AI assist inside privileged workflow</div>
+            <div class="industry-state__d">Parties + terms encapsulated; AI drafts summaries, risk analyses, and clause comparisons; outputs restored in matter management with privilege preserved.</div>
+          </div>
+        </div>
+
+        <div class="industry-workflows">
+          <div class="industry-workflows__h">PRODUCTION WORKFLOWS</div>
+          <ul class="industry-workflows__list">
+            <li><strong>Confidential contract review</strong>AI-drafted risk summary across long-form contracts</li>
+            <li><strong>Due diligence summarization</strong>Multi-document M&amp;A diligence with deal data protected</li>
+            <li><strong>Regulatory filing draft</strong>Filing draft and compliance check with sensitive content masked</li>
+            <li><strong>Matter triage</strong>Initial matter intake and routing with privileged data inside</li>
+          </ul>
+        </div>
+
+        <div class="industry-customer">
+          <div class="industry-customer__label">CUSTOMER PROOF</div>
+          <div class="industry-customer__name">Shin&amp;Kim</div>
+          <div class="industry-customer__detail">One of Korea's largest law firms. AI assist on privileged matter workflows with parties, deal terms, and code names encapsulated. Privilege preservation under firm governance.</div>
+        </div>
+
+        <div class="industry-link">
+          <a href="/glossary/ai-enablement-data-layer">Read: AI enablement data layer (definition) →</a>
+        </div>
+      </div>
+    </div>
+    <div class="image-spec" style="margin-top: 16px;">
+      <strong>[IMAGE_SPEC] Legal industry visual</strong>
+      Asset: Matter management UI mockup (PNG)
+      Subject: Contract review UI showing capsule tokens (parties, deal terms) and restored real values with AI risk summary; "Privilege preserved" badge
+      Aspect: 16:10 · ~640x400px
+      Replace: <code>data-replace="legal-mock"</code>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <h2>Bring your industry, your workflow, your data.</h2>
+  <p>We deploy LLM Capsule on a sample workflow in your environment within 30 minutes — and produce an evaluation report on detection accuracy, restoration rate, and policy fit for your industry's regulatory profile.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a class="btn btn--invert" href="/request-a-demo">Request an Industry Demo</a>
+    <a class="btn btn--invert-ghost" href="/architecture" style="color:#fff;">View Architecture</a>
+    <a class="btn btn--invert-ghost" href="/trust" style="color:#fff;">View Trust &amp; Compliance</a>
+  </div>
+</section>
+
+</body>
+</html>

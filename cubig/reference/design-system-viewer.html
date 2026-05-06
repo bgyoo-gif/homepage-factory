@@ -3572,7 +3572,17 @@ function renderStaticTable() {
     ]},
     ],
     'llm-capsule': [
-      { input: 'ai-data-pipeline-protection.html', idate: '2026-04-14', outputs: [
+      // ── v6.2 (2026-05-06) ──
+      { input: '01_home.html', ipath: '../input/llmcapsule_260506/01_home.html', idate: '2026-05-06', version: 'v6.2', outputs: [] },
+      { input: '02_product.html', ipath: '../input/llmcapsule_260506/02_product.html', idate: '2026-05-06', version: 'v6.2', outputs: [] },
+      { input: '03_architecture.html', ipath: '../input/llmcapsule_260506/03_architecture.html', idate: '2026-05-06', version: 'v6.2', outputs: [] },
+      { input: '04_solutions.html', ipath: '../input/llmcapsule_260506/04_solutions.html', idate: '2026-05-06', version: 'v6.2', outputs: [] },
+      { input: '05_pricing.html', ipath: '../input/llmcapsule_260506/05_pricing.html', idate: '2026-05-06', version: 'v6.2', outputs: [] },
+      { input: '06_trust.html', ipath: '../input/llmcapsule_260506/06_trust.html', idate: '2026-05-06', version: 'v6.2', outputs: [] },
+      { input: '07_resources.html', ipath: '../input/llmcapsule_260506/07_resources.html', idate: '2026-05-06', version: 'v6.2', outputs: [] },
+      { input: 'architecture-diagram-v8.html', ipath: '../input/llmcapsule_260506/architecture-diagram-v8.html', idate: '2026-05-06', version: 'v6.2', outputs: [] },
+      // ── v6.1 (이전 작업) ──
+      { input: 'ai-data-pipeline-protection.html', idate: '2026-04-14', version: 'v6.1', outputs: [
         { type: 'html', name: 'ai-data-pipeline-protection-b-type.html', date: '2026-04-14' },
         { type: 'tsx', name: 'Section01_Hero.tsx', date: '2026-04-14', dir: 'ai-data-pipeline-protection/tsx' },
         { type: 'tsx', name: 'Section02_Problem.tsx', date: '2026-04-14', dir: 'ai-data-pipeline-protection/tsx' },
@@ -3903,10 +3913,14 @@ function renderStaticTable() {
 
   var data = STATIC_DATA[currentBrand] || [];
 
+  // Sort by date descending (newest first)
+  data.sort(function(a, b) { return (b.idate || '').localeCompare(a.idate || ''); });
+
   var thStyle = 'padding:10px 12px;font-size:11px;font-weight:600;color:var(--ds-color-text-tertiary);letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;';
   var html = '<table style="width:100%;border-collapse:collapse;font-size:13px;">';
   html += '<thead><tr style="border-bottom:2px solid var(--ds-color-border-default);text-align:left;">';
   html += '<th style="' + thStyle + '">Input File</th>';
+  html += '<th style="' + thStyle + '">Version</th>';
   html += '<th style="' + thStyle + '">Updated</th>';
   html += '<th style="' + thStyle + '">' + typeBadge('html') + '</th>';
   html += '<th style="' + thStyle + '">' + typeBadge('tsx') + '</th>';
@@ -3914,7 +3928,15 @@ function renderStaticTable() {
   html += '<th style="' + thStyle + '"><span style="font-size:10px;font-weight:600;color:#1821E8;background:rgba(24,33,232,0.08);padding:2px 8px;border-radius:4px;">DE 번역</span></th>';
   html += '</tr></thead><tbody>';
 
+  var lastVersion = '';
   data.forEach(function(group) {
+    // Version separator row
+    var ver = group.version || '—';
+    if (ver !== lastVersion) {
+      var verColor = ver.indexOf('v6.2') >= 0 ? '#5b4fe9' : ver.indexOf('v6.1') >= 0 ? '#0ea5a4' : '#6b7280';
+      html += '<tr><td colspan="7" style="padding:12px;background:' + verColor + '10;border-left:4px solid ' + verColor + ';font-size:13px;font-weight:700;color:' + verColor + ';">' + ver + '</td></tr>';
+      lastVersion = ver;
+    }
     var htmlFiles = group.outputs.filter(function(o) { return o.type === 'html' || o.type === 'md'; });
     var tsxFiles = group.outputs.filter(function(o) { return o.type === 'tsx'; });
     var baseName = group.input.replace('.html', '');
@@ -3925,6 +3947,7 @@ function renderStaticTable() {
 
     html += '<tr style="border-bottom:1px solid var(--ds-color-surface-light);">';
     html += '<td style="padding:10px 12px;font-weight:500;vertical-align:top;white-space:nowrap;">' + inputLink + '</td>';
+    html += '<td style="padding:10px 12px;font-family:var(--ds-font-code);font-size:11px;color:var(--ds-color-text-tertiary);vertical-align:top;white-space:nowrap;">' + (group.version || '—') + '</td>';
     html += '<td style="padding:10px 12px;font-family:var(--ds-font-code);font-size:12px;color:var(--ds-color-text-tertiary);vertical-align:top;white-space:nowrap;">' + group.idate + '</td>';
 
     // HTML + Docs column

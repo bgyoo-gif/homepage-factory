@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pricing | LLM Capsule — Enterprise AI Enablement Pricing</title>
+<meta name="description" content="Pricing for secure AI workflow deployment. Workflow Proof of Value, Enterprise (annual license), AWS Marketplace. Volume-based, tailored to document processing workload, deployment, and regulatory profile.">
+<meta name="keywords" content="LLM Capsule pricing, enterprise AI pricing, AI data layer pricing, AWS Marketplace AI">
+<link rel="canonical" href="https://llmcapsule.ai/pricing">
+
+<link rel="stylesheet" href="design-tokens.css">
+<style>
+.page-hero { padding: clamp(80px, 10vw, 140px) 0 clamp(48px, 6vw, 80px); background: linear-gradient(180deg, #fafbff 0%, #ffffff 100%); border-bottom: 1px solid var(--c-rule); text-align: center; }
+.page-hero h1 { max-width: 920px; margin: 0 auto 20px; }
+.page-hero h1 strong { color: var(--c-primary); }
+.page-hero__sub { font-size: 19px; color: var(--c-ink-soft); max-width: 760px; line-height: 1.6; margin: 0 auto; }
+
+.image-spec { background: rgba(245, 158, 11, 0.08); border-left: 3px solid var(--c-amber); padding: 12px 16px; margin: 16px 0; font-family: var(--f-mono); font-size: 11px; color: var(--c-amber-dark); line-height: 1.55; border-radius: 0 4px 4px 0; }
+.image-spec strong { color: var(--c-amber-dark); display: block; margin-bottom: 4px; letter-spacing: 0.05em; text-transform: uppercase; font-size: 10px; }
+
+.tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 900px) { .tiers { grid-template-columns: 1fr; } }
+.tier { background: #fff; border: 1px solid var(--c-rule); border-radius: var(--r-lg); padding: 32px; display: flex; flex-direction: column; gap: 14px; }
+.tier--featured { border-color: var(--c-primary); background: linear-gradient(180deg, var(--c-primary-soft) 0%, #fff 30%); position: relative; }
+.tier--featured::before { content: 'MOST COMMON'; position: absolute; top: -12px; left: 32px; background: var(--c-primary); color: #fff; font-family: var(--f-mono); font-size: 10px; font-weight: 700; padding: 4px 12px; border-radius: 999px; letter-spacing: 0.1em; }
+.tier__label { font-family: var(--f-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; padding: 4px 10px; background: var(--c-bg-soft); color: var(--c-muted); border-radius: 999px; align-self: flex-start; text-transform: uppercase; }
+.tier__h { font-size: 28px; font-weight: 700; }
+.tier__price { font-size: 36px; font-weight: 800; color: var(--c-ink); line-height: 1; }
+.tier__period { font-size: 13px; color: var(--c-muted); margin-top: 4px; }
+.tier__list { list-style: none; padding: 16px 0; margin: 0; border-top: 1px solid var(--c-rule); flex: 1; }
+.tier__list li { font-size: 14px; padding: 8px 0 8px 24px; position: relative; color: var(--c-ink-soft); line-height: 1.5; }
+.tier__list li::before { content: '✓'; position: absolute; left: 0; color: var(--c-primary); font-weight: 700; }
+.tier__cta { padding: 14px 24px; border-radius: 999px; text-align: center; font-size: 14px; font-weight: 600; text-decoration: none; }
+.tier--featured .tier__cta { background: var(--c-primary); color: #fff; }
+.tier__cta--ghost { background: #fff; color: var(--c-ink); border: 1px solid var(--c-rule); }
+
+/* Feature comparison matrix */
+.matrix { width: 100%; border-collapse: collapse; background: #fff; border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--c-rule); }
+.matrix th, .matrix td { padding: 14px 16px; text-align: left; font-size: 13px; border-bottom: 1px solid var(--c-rule); }
+.matrix th { background: var(--c-bg-soft); font-size: 12px; color: var(--c-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+.matrix th.featured { background: var(--c-primary-dark); color: #fff; }
+.matrix td:first-child { font-weight: 600; color: var(--c-ink); width: 30%; background: #fafbff; font-size: 13px; }
+.matrix td.yes { color: var(--c-primary-dark); font-weight: 700; }
+.matrix td.no { color: var(--c-muted); }
+.matrix td.featured { background: var(--c-primary-soft); }
+.matrix td small { color: var(--c-muted); font-weight: 400; display: block; margin-top: 2px; font-size: 11px; }
+
+/* Volume calculator */
+.calc { background: var(--c-bg-dark); color: #fff; border-radius: var(--r-lg); padding: 40px; }
+.calc__h { color: #fff; font-size: 24px; margin-bottom: 8px; }
+.calc__d { color: #c8c4f7; font-size: 14px; margin-bottom: 28px; }
+.calc__slider-wrap { margin-bottom: 28px; }
+.calc__slider-label { display: flex; justify-content: space-between; font-family: var(--f-mono); font-size: 12px; color: #c8c4f7; margin-bottom: 8px; }
+.calc__slider-value { color: #fff; font-weight: 700; font-size: 18px; }
+.calc__slider-range { font-family: var(--f-mono); font-size: 11px; color: #6b7280; }
+.calc__slider { width: 100%; appearance: none; height: 6px; background: var(--c-bg-dark-2); border-radius: 999px; outline: none; }
+.calc__slider::-webkit-slider-thumb { appearance: none; width: 20px; height: 20px; background: var(--c-primary); border-radius: 50%; cursor: pointer; box-shadow: 0 0 0 4px rgba(91,79,233,0.3); }
+.calc__result { background: rgba(255,255,255,0.04); border-radius: var(--r-md); padding: 24px; border: 1px solid rgba(255,255,255,0.1); }
+.calc__rec-label { font-family: var(--f-mono); font-size: 11px; color: #9d95f5; letter-spacing: 0.1em; margin-bottom: 6px; font-weight: 700; }
+.calc__rec-tier { font-size: 22px; color: #fff; font-weight: 700; margin-bottom: 8px; }
+.calc__rec-d { font-size: 13px; color: #c8c4f7; line-height: 1.55; }
+
+.faq { max-width: 880px; margin: 0 auto; }
+.faq details { border-bottom: 1px solid var(--c-rule); padding: 20px 0; }
+.faq summary { font-size: 17px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; font-size: 24px; color: var(--c-muted); transition: transform 0.2s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details > div { margin-top: 12px; color: var(--c-ink-soft); font-size: 15px; line-height: 1.7; }
+
+.cta-strip { background: var(--c-bg-dark); color: #fff; padding: 64px var(--s-page); text-align: center; }
+.cta-strip h2 { color: #fff; margin-bottom: 24px; }
+.cta-strip p { color: #c8c4f7; max-width: 640px; margin: 0 auto 32px; font-size: 17px; }
+</style>
+</head>
+<body>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow">Pricing</div>
+    <h1>Pricing for <strong>secure AI workflow deployment</strong></h1>
+    <p class="page-hero__sub">Volume-based pricing tailored to your document processing workload, deployment requirements, and regulatory profile.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="tiers">
+
+      <article class="tier">
+        <div class="tier__label">Workflow Proof of Value</div>
+        <h3 class="tier__h">Proof of Value</h3>
+        <div class="tier__price">Custom</div>
+        <div class="tier__period">Evaluation period · 4-8 weeks</div>
+        <ul class="tier__list">
+          <li>Test with your own documents</li>
+          <li>Full encapsulation + restoration</li>
+          <li>Path A or Path B execution</li>
+          <li>11 starter markers + custom</li>
+          <li>Audit dashboard</li>
+          <li>Evaluation report on detection / restoration / workflow</li>
+        </ul>
+        <a class="tier__cta tier__cta--ghost" href="/request-a-demo">Start a Workflow Proof of Value →</a>
+      </article>
+
+      <article class="tier tier--featured">
+        <div class="tier__label">Enterprise</div>
+        <h3 class="tier__h">Custom</h3>
+        <div class="tier__price">Custom</div>
+        <div class="tier__period">Annual license · production-grade</div>
+        <ul class="tier__list">
+          <li>Unlimited document processing</li>
+          <li>Full 6 capability set including time-shifting policy</li>
+          <li>Both execution paths (A + B) under one governance</li>
+          <li>Custom marker definition + policy versioning</li>
+          <li>RBAC + per-team scope</li>
+          <li>SLA-backed support, dedicated CSM</li>
+          <li>GDPR / HIPAA / SOX-aligned audit</li>
+          <li>On-prem, hybrid, VPC, embedded SDK, Slack App</li>
+        </ul>
+        <a class="tier__cta" href="/request-a-demo">Talk to Sales →</a>
+      </article>
+
+      <article class="tier">
+        <div class="tier__label">AWS Marketplace</div>
+        <h3 class="tier__h">Listed</h3>
+        <div class="tier__price">Pay through AWS</div>
+        <div class="tier__period">Streamlined procurement</div>
+        <ul class="tier__list">
+          <li>Streamlined AWS procurement</li>
+          <li>AWS billing integration</li>
+          <li>VPC deployment</li>
+          <li>Same capability set as Enterprise</li>
+          <li>EDP / private offer eligible</li>
+        </ul>
+        <a class="tier__cta tier__cta--ghost" href="https://aws.amazon.com/marketplace">View on AWS →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Feature comparison matrix -->
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Feature comparison</div>
+      <h2>What's included in each tier</h2>
+      <p>All three tiers include the full capability set. Differences are in scope, support, and procurement path.</p>
+    </div>
+
+    <table class="matrix">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Proof of Value</th>
+          <th class="featured">Enterprise</th>
+          <th>AWS Marketplace</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Document volume</td><td>Evaluation scope</td><td class="featured yes">Unlimited</td><td>Per AWS contract</td></tr>
+        <tr><td>Execution paths (A external + B on-prem)</td><td class="yes">Both</td><td class="featured yes">Both</td><td class="yes">Both</td></tr>
+        <tr><td>6 capability set including time-shifting policy</td><td class="yes">Full</td><td class="featured yes">Full</td><td class="yes">Full</td></tr>
+        <tr><td>Custom marker definition</td><td class="yes">Up to 25</td><td class="featured yes">Unlimited</td><td class="yes">Unlimited</td></tr>
+        <tr><td>Policy versioning + audit</td><td class="yes">90-day retention</td><td class="featured yes">7-year retention</td><td class="yes">7-year retention</td></tr>
+        <tr><td>RBAC + per-team scope</td><td class="yes">Standard</td><td class="featured yes">Advanced (LDAP / SAML / SCIM)</td><td class="yes">Advanced</td></tr>
+        <tr><td>Deployment modes</td><td>On-prem / VPC</td><td class="featured yes">All 6 modes</td><td>VPC (AWS)</td></tr>
+        <tr><td>Connector library</td><td>Standard 12</td><td class="featured yes">Standard + custom</td><td>Standard 12</td></tr>
+        <tr><td>Compliance frameworks</td><td>GDPR / HIPAA</td><td class="featured yes">GDPR / HIPAA / SOX / EU AI Act</td><td>GDPR / HIPAA / SOX</td></tr>
+        <tr><td>SLA</td><td>Best-effort</td><td class="featured yes">99.9% uptime, defined response time</td><td>Per AWS contract</td></tr>
+        <tr><td>Support</td><td>Email / Slack</td><td class="featured yes">Dedicated CSM, 24/7 P1 channel</td><td>Email / Slack + AWS</td></tr>
+        <tr><td>DPA + Vendor Security Questionnaire</td><td class="yes">Provided</td><td class="featured yes">Provided + executed</td><td class="yes">AWS standard</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Volume calculator -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Quick estimate</div>
+      <h2>Find your tier</h2>
+      <p>Estimate your monthly document processing volume to find the right tier.</p>
+    </div>
+
+    <div class="calc">
+      <h3 class="calc__h">Monthly document processing volume</h3>
+      <p class="calc__d">Drag the slider to your expected volume. We'll suggest the most common tier match.</p>
+
+      <div class="calc__slider-wrap">
+        <div class="calc__slider-label">
+          <span class="calc__slider-value" id="calc-volume">5,000</span>
+          <span class="calc__slider-range">100 ↔ 1,000,000+</span>
+        </div>
+        <input type="range" min="100" max="1000000" step="100" value="5000" class="calc__slider" id="calc-input" oninput="document.getElementById('calc-volume').textContent = parseInt(this.value).toLocaleString(); var rec = this.value < 5000 ? ['Workflow Proof of Value','Evaluation scope — best for first 4-8 weeks, one production workflow','Proof of Value'] : this.value < 100000 ? ['Enterprise','Production-grade with full SLA, custom markers, both execution paths','Enterprise'] : ['Enterprise + AWS Marketplace','High-volume production. AWS Marketplace eligible for streamlined procurement','Enterprise + AWS']; document.getElementById('calc-rec').textContent = rec[0]; document.getElementById('calc-rec-d').textContent = rec[1];" />
+      </div>
+
+      <div class="calc__result">
+        <div class="calc__rec-label">RECOMMENDED TIER</div>
+        <div class="calc__rec-tier" id="calc-rec">Enterprise</div>
+        <p class="calc__rec-d" id="calc-rec-d">Production-grade with full SLA, custom markers, both execution paths</p>
+      </div>
+    </div>
+
+    <div class="image-spec" style="margin-top: 24px;">
+      <strong>[IMAGE_SPEC] Volume calculator</strong>
+      Note: this calculator works as a static HTML/JS slider. In Framer, replace with a Framer Variable + interactive component, or keep as Custom Code embed. Slider drives recommendation text below; no API call.
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Pricing FAQ</div>
+      <h2>Common questions</h2>
+    </div>
+
+    <div class="faq">
+      <details>
+        <summary>How is pricing calculated?</summary>
+        <div>Volume-based on monthly document processing throughput, with adjustments for deployment mode (air-gapped on-prem typically has different cost structure than cloud), regulatory profile (additional compliance audit hours), and connector library scope. Workflow Proof of Value is a fixed-fee, one-workflow evaluation; Enterprise is annual license; AWS Marketplace is listed pay-as-you-go with EDP / private offer eligibility for committed volume.</div>
+      </details>
+      <details>
+        <summary>Can we start with a Workflow Proof of Value and convert to Enterprise?</summary>
+        <div>Yes. Workflow Proof of Value is designed as a 4-8 week evaluation on one real production workflow that produces a deployment fit report. PoV contracts include a conversion path to Enterprise with credit applied; most customers convert in 6-12 weeks after PoV kickoff.</div>
+      </details>
+      <details>
+        <summary>Do you support custom on-prem deployments?</summary>
+        <div>Yes. Air-gapped on-prem and on-prem hybrid (Capsule on-prem + approved external LLM) are first-class deployment modes. Telecom-grade and OT-grade environments are supported. Validated at SK Telecom (telecom NOC), EUMC (hospital), and Ministry of National Defense (mission workflows).</div>
+      </details>
+      <details>
+        <summary>What about EU sovereign data and GDPR?</summary>
+        <div>Path A supports in-region EU LLM endpoints (EU-hosted Anthropic, OpenAI EU, Mistral EU). Path B supports fully on-prem inside the EU. Both paths feed audit logs that align with GDPR Articles 5, 17, 30, 32. Standard DPA + SCC are provided as part of Enterprise contract. Recognized at Deutsche Telekom T Challenge 2026 — Top 12 in Data Security &amp; Governance.</div>
+      </details>
+      <details>
+        <summary>Where can LLM Capsule be deployed?</summary>
+        <div>Six deployment modes: on-premise, air-gapped, hybrid, VPC / private cloud, AWS Marketplace, embedded SDK, and Slack App. Telecom-grade (NFV / container / multi-region) is offered as a deployment variant for operator infrastructure. See the <a href="/architecture">Architecture</a> page for details.</div>
+      </details>
+      <details>
+        <summary>What certifications does LLM Capsule hold?</summary>
+        <div>ISO/IEC 27001, ISO/IEC 42001, KISA Fast Track, GS Certification, plus awards and recognition from MSIT Security Innovation, Deutsche Telekom T Challenge, AI Medical Innovation, Startup World Cup, Next Rise, Gartner, and Emerging AI+X. See the <a href="/trust">Trust Center</a> for full list.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <h2>Ready to start?</h2>
+  <p>Bring your industry, your workload estimate, and your deployment constraints. We'll propose a deployment fit and pricing within one business day.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a class="btn btn--invert" href="/request-a-demo">Request a Quote</a>
+    <a class="btn btn--invert-ghost" href="https://aws.amazon.com/marketplace" style="color:#fff;">View on AWS Marketplace</a>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LLM Capsule Product | Watch It Run on Real Enterprise Workflows</title>
+<meta name="description" content="See LLM Capsule running on real enterprise workflows — telecom NOC, hospital clinical, finance claims, defense mission. 2-minute demo, interactive product tour, real customer screenshots, admin console walkthrough. The AI enablement data layer for regulated operations.">
+<meta name="keywords" content="LLM Capsule demo, AI enablement product, enterprise AI demo, on-premise LLM, AI-ready data, telecom AI deployment, hospital AI deployment, AI for regulated industries">
+<meta property="og:title" content="LLM Capsule Product — Watch It Run">
+<meta property="og:description" content="2-minute demo. Interactive tour. Real customer workflows. Admin console.">
+<link rel="canonical" href="https://llmcapsule.ai/product">
+
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "VideoObject",
+  "name": "LLM Capsule 2-minute Demo",
+  "description": "See LLM Capsule encapsulate a real enterprise document, route it through an LLM, and restore the output back into the originating workflow — in two minutes.",
+  "thumbnailUrl": "https://llmcapsule.ai/og-product-demo.png",
+  "uploadDate": "2025-04-01",
+  "publisher": { "@type": "Organization", "name": "CUBIG" }
+}
+</script>
+
+<link rel="stylesheet" href="design-tokens.css">
+<style>
+.page-hero { padding: clamp(80px, 10vw, 140px) 0 clamp(48px, 6vw, 80px); background: linear-gradient(180deg, #fafbff 0%, #ffffff 100%); border-bottom: 1px solid var(--c-rule); }
+.page-hero h1 { max-width: 920px; margin-bottom: 20px; }
+.page-hero h1 strong { color: var(--c-primary); }
+.page-hero__sub { font-size: 19px; color: var(--c-ink-soft); max-width: 760px; line-height: 1.6; margin-bottom: 32px; }
+.page-hero__cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ===== HERO DEMO VIDEO ===== */
+.demo-video { background: #fff; border: 1px solid var(--c-rule); border-radius: var(--r-lg); overflow: hidden; box-shadow: 0 24px 80px rgba(15,17,48,0.08); position: relative; max-width: 1100px; margin: 0 auto; }
+.demo-video__player { aspect-ratio: 16 / 9; background: linear-gradient(135deg, var(--c-bg-dark) 0%, var(--c-bg-dark-2) 100%); position: relative; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.demo-video__placeholder-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px; }
+.demo-video__play { width: 80px; height: 80px; border-radius: 50%; background: var(--c-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 28px; cursor: pointer; transition: transform 0.2s; box-shadow: 0 8px 32px rgba(91,79,233,0.4); }
+.demo-video__play:hover { transform: scale(1.08); }
+.demo-video__label { color: #fff; font-size: 16px; font-weight: 600; }
+.demo-video__meta { font-family: var(--f-mono); font-size: 12px; color: #9d95f5; letter-spacing: 0.1em; }
+.demo-video__caption { padding: 24px 32px; background: #fff; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; border-top: 1px solid var(--c-rule); }
+@media (max-width: 700px) { .demo-video__caption { grid-template-columns: 1fr; } }
+.demo-video__caption-text { font-size: 14px; color: var(--c-ink-soft); line-height: 1.5; }
+.demo-video__caption-text strong { color: var(--c-ink); }
+
+.image-spec { background: rgba(245, 158, 11, 0.08); border-left: 3px solid var(--c-amber); padding: 12px 16px; margin-top: 12px; font-family: var(--f-mono); font-size: 11px; color: var(--c-amber-dark); line-height: 1.55; border-radius: 0 4px 4px 0; }
+.image-spec strong { color: var(--c-amber-dark); display: block; margin-bottom: 4px; letter-spacing: 0.05em; text-transform: uppercase; font-size: 10px; }
+
+/* ===== INTERACTIVE TOUR ===== */
+.tour-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+@media (max-width: 800px) { .tour-intro { grid-template-columns: 1fr; } }
+.tour-intro__h { font-size: clamp(24px, 2.6vw, 32px); margin-bottom: 12px; }
+.tour-intro__d { font-size: 15px; color: var(--c-ink-soft); line-height: 1.6; }
+
+.tour-steps { display: flex; flex-direction: column; gap: 24px; margin-top: 48px; }
+.tour-step { background: #fff; border: 1px solid var(--c-rule); border-radius: var(--r-lg); padding: 0; overflow: hidden; display: grid; grid-template-columns: 1fr 1.3fr; gap: 0; }
+@media (max-width: 900px) { .tour-step { grid-template-columns: 1fr; } }
+.tour-step:nth-child(even) { grid-template-columns: 1.3fr 1fr; }
+.tour-step:nth-child(even) .tour-step__text { order: 2; }
+.tour-step:nth-child(even) .tour-step__visual { order: 1; }
+@media (max-width: 900px) { .tour-step:nth-child(even) { grid-template-columns: 1fr; } .tour-step:nth-child(even) .tour-step__text { order: 1; } .tour-step:nth-child(even) .tour-step__visual { order: 2; } }
+.tour-step__text { padding: 36px; }
+.tour-step__num { font-family: var(--f-mono); font-size: 12px; color: var(--c-primary-dark); font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 10px; }
+.tour-step__h { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+.tour-step__d { font-size: 14px; color: var(--c-ink-soft); line-height: 1.65; margin-bottom: 14px; }
+.tour-step__chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.tour-step__chip { font-family: var(--f-mono); font-size: 11px; padding: 4px 10px; background: var(--c-bg-soft); border-radius: 4px; color: var(--c-ink-soft); border: 1px solid var(--c-rule); }
+.tour-step__visual { background: var(--c-bg-soft); display: flex; align-items: center; justify-content: center; padding: 28px; min-height: 280px; }
+.screenshot-mock { width: 100%; max-width: 480px; background: #fff; border: 1px solid var(--c-rule); border-radius: 8px; box-shadow: 0 8px 32px rgba(15,17,48,0.1); aspect-ratio: 16/10; padding: 16px; font-family: var(--f-mono); font-size: 11px; color: var(--c-ink-soft); position: relative; overflow: hidden; }
+.screenshot-mock__bar { display: flex; gap: 6px; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--c-rule); }
+.screenshot-mock__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--c-rule); }
+.screenshot-mock__title { font-size: 12px; font-weight: 700; color: var(--c-ink); margin-bottom: 8px; }
+.screenshot-mock__row { padding: 4px 0; font-size: 10px; }
+.screenshot-mock__row--active { color: var(--c-primary-dark); font-weight: 700; }
+.screenshot-mock__chip { display: inline-block; padding: 2px 6px; background: var(--c-primary-soft); color: var(--c-primary-dark); border-radius: 3px; font-size: 9px; margin-right: 4px; }
+.screenshot-mock--dark { background: var(--c-bg-dark); border-color: var(--c-bg-dark-2); color: #c8c4f7; }
+.screenshot-mock--dark .screenshot-mock__title { color: #fff; }
+.screenshot-mock--dark .screenshot-mock__bar { border-color: var(--c-bg-dark-2); }
+.screenshot-mock--dark .screenshot-mock__chip { background: var(--c-bg-dark-2); color: #9d95f5; }
+
+/* ===== WORKFLOW GALLERY ===== */
+.gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (max-width: 800px) { .gallery-grid { grid-template-columns: 1fr; } }
+.gallery-card { background: #fff; border: 1px solid var(--c-rule); border-radius: var(--r-md); overflow: hidden; }
+.gallery-card__image { aspect-ratio: 16/10; background: var(--c-bg-soft); display: flex; align-items: center; justify-content: center; padding: 24px; border-bottom: 1px solid var(--c-rule); }
+.gallery-card__body { padding: 24px; }
+.gallery-card__industry { font-family: var(--f-mono); font-size: 11px; color: var(--c-primary-dark); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.gallery-card__h { font-size: 17px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+.gallery-card__d { font-size: 13px; color: var(--c-ink-soft); line-height: 1.55; margin-bottom: 12px; }
+.gallery-card__customer { font-size: 12px; padding-top: 12px; border-top: 1px dashed var(--c-rule); color: var(--c-ink); font-weight: 600; }
+.gallery-card__customer span { color: var(--c-muted); font-weight: 400; }
+
+/* ===== METRICS NARRATIVE ===== */
+.metrics-narr { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; align-items: start; }
+@media (max-width: 900px) { .metrics-narr { grid-template-columns: 1fr; } }
+.metric-bigblock { background: var(--c-bg-dark); color: #fff; border-radius: var(--r-lg); padding: 36px; }
+.metric-bigblock__num { font-size: 64px; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em; }
+.metric-bigblock__label { font-size: 14px; color: #c8c4f7; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--c-bg-dark-2); }
+.metric-bigblock__rest { font-size: 13px; color: #c8c4f7; line-height: 1.6; }
+.metric-bigblock__rest strong { color: #fff; }
+.metric-bullets { display: flex; flex-direction: column; gap: 12px; }
+.metric-bullet { background: #fff; border: 1px solid var(--c-rule); border-radius: var(--r-md); padding: 18px 22px; display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; }
+.metric-bullet__num { font-size: 28px; font-weight: 800; color: var(--c-primary); line-height: 1; min-width: 80px; }
+.metric-bullet__text { font-size: 13px; color: var(--c-ink-soft); line-height: 1.5; }
+.metric-bullet__text strong { color: var(--c-ink); display: block; margin-bottom: 2px; font-size: 14px; }
+
+/* ===== ADMIN CONSOLE WALKTHROUGH ===== */
+.console-walk { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
+@media (max-width: 900px) { .console-walk { grid-template-columns: 1fr; } }
+.console-mock { background: var(--c-bg-dark); border-radius: var(--r-lg); padding: 24px; box-shadow: 0 12px 48px rgba(15,17,48,0.2); }
+.console-mock__tabs { display: flex; gap: 4px; padding-bottom: 12px; border-bottom: 1px solid var(--c-bg-dark-2); margin-bottom: 16px; }
+.console-mock__tab { font-family: var(--f-mono); font-size: 11px; padding: 6px 12px; border-radius: 4px; color: #9d95f5; cursor: pointer; }
+.console-mock__tab--active { background: var(--c-primary); color: #fff; }
+.console-mock__row { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--c-bg-dark-2); font-family: var(--f-mono); font-size: 11px; color: #c8c4f7; }
+.console-mock__row:last-child { border-bottom: 0; }
+.console-mock__row span:nth-child(2) { color: #fff; }
+.console-mock__badge { padding: 2px 8px; background: var(--c-teal-dark); color: #fff; border-radius: 3px; font-size: 9px; }
+.console-mock__badge--warn { background: var(--c-amber-dark); }
+.console-walk__text h3 { font-size: 22px; margin-bottom: 12px; }
+.console-walk__text p { font-size: 14px; color: var(--c-ink-soft); line-height: 1.6; margin-bottom: 14px; }
+.console-walk__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.console-walk__list li { font-size: 13px; padding-left: 24px; position: relative; color: var(--c-ink-soft); line-height: 1.5; }
+.console-walk__list li::before { content: '✓'; position: absolute; left: 0; color: var(--c-primary); font-weight: 700; }
+
+/* ===== DIY DEEP DIVE (유지 — Capability 06 deep dive) ===== */
+.diy { background: linear-gradient(135deg, var(--c-primary-soft) 0%, var(--c-bg-soft) 100%); border-radius: var(--r-lg); padding: 48px; border: 1px solid var(--c-primary); }
+.diy__badge { display: inline-block; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; padding: 6px 14px; border: 1px solid var(--c-primary-dark); color: var(--c-primary-dark); border-radius: 999px; margin-bottom: 20px; font-weight: 700; }
+.diy__h { font-size: clamp(24px, 2.6vw, 32px); margin-bottom: 16px; line-height: 1.2; }
+.diy__h strong { color: var(--c-primary); }
+.diy__lead { font-size: 17px; color: var(--c-ink-soft); margin-bottom: 32px; max-width: 800px; line-height: 1.6; }
+.diy__caps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 900px) { .diy__caps { grid-template-columns: 1fr; } }
+.diy__cap { background: #fff; border: 1px solid var(--c-rule); border-radius: var(--r-md); padding: 24px; }
+.diy__cap__num { font-family: var(--f-mono); font-size: 11px; color: var(--c-primary-dark); font-weight: 700; margin-bottom: 6px; letter-spacing: 0.1em; }
+.diy__cap__h { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.diy__cap__d { font-size: 13px; color: var(--c-ink-soft); line-height: 1.55; }
+
+.cta-strip { background: var(--c-bg-dark); color: #fff; padding: 64px var(--s-page); text-align: center; }
+.cta-strip h2 { color: #fff; margin-bottom: 24px; }
+.cta-strip p { color: #c8c4f7; max-width: 640px; margin: 0 auto 32px; font-size: 17px; }
+</style>
+</head>
+<body>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow">Product</div>
+    <h1>Watch <strong>LLM Capsule</strong> run on a real enterprise workflow</h1>
+    <p class="page-hero__sub">
+      Two minutes — see a real document encapsulated, sent to an external LLM, and restored
+      back into the originating workflow. No marketing words. The actual product.
+    </p>
+    <div class="page-hero__cta">
+      <a class="btn btn--primary" href="/request-a-demo">Request a Live Demo</a>
+      <a class="btn btn--ghost" href="/architecture">View Architecture</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DEMO VIDEO ===== -->
+<section class="section">
+  <div class="container">
+    <div class="demo-video" data-replace="demo-video">
+      <div class="demo-video__player">
+        <div class="demo-video__placeholder-overlay">
+          <div class="demo-video__meta">2:14 · LLM CAPSULE LIVE WALKTHROUGH</div>
+          <div class="demo-video__play" aria-label="Play demo">▶</div>
+          <div class="demo-video__label">Watch the 2-minute product demo</div>
+        </div>
+      </div>
+      <div class="demo-video__caption">
+        <div class="demo-video__caption-text">
+          <strong>What you'll see:</strong> A telecom NOC ticket flows through LLM Capsule —
+          device IDs, circuit IDs, site references, alarm sequences, and SLA-impact references are encapsulated locally — subscriber identifiers included; the protected
+          capsule reaches an external LLM; the AI's RCA recommendation is auto-restored back
+          into the original ticket. End-to-end, in production.
+        </div>
+        <a class="btn btn--primary" href="#tour">Take the Interactive Tour</a>
+      </div>
+    </div>
+
+    <div class="image-spec">
+      <strong>[IMAGE_SPEC] Demo Video</strong>
+      Asset: 2:14 product demo video (MP4 + WebM).
+      Subject: Real product screen recording — left panel shows a NOC ticket with raw operational data (device IDs, circuit IDs, site references, alarm sequences, and subscriber identifiers); middle panel shows LLM Capsule encapsulating the data with visible token replacements; right panel shows external LLM (Claude/ChatGPT) processing the safe capsule and returning a recommendation; final frame shows the recommendation auto-restored in the original ticket with real values.
+      Aspect: 16:9 · Resolution: 1920x1080 · Length: 2:14
+      Style: Clean screen capture · Soft cursor highlights · Sub-titled with timestamp callouts
+      Thumbnail: og-product-demo.png (still frame at 0:32, showing the encapsulation step)
+      Replace: <code>data-replace="demo-video"</code> div in this section.
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTERACTIVE TOUR ===== -->
+<section class="section section--soft" id="tour">
+  <div class="container">
+    <div class="tour-intro">
+      <div>
+        <div class="eyebrow">Interactive product tour</div>
+        <h2 class="tour-intro__h">Five steps. One real document. Real output.</h2>
+        <p class="tour-intro__d">
+          The same capsule mechanism runs across telecom, healthcare, finance, defense, legal,
+          and OT. Below: a contract review workflow. The raw document never leaves your environment.
+        </p>
+      </div>
+      <div>
+        <div class="image-spec">
+          <strong>[IMAGE_SPEC] Tour Intro Visual (right column)</strong>
+          Asset: Animated GIF or short looping MP4 (8-12s)
+          Subject: Document being encapsulated — visible original text on left fades to capsule tokens on right, with arrows showing data flow
+          Aspect: 4:3 · ~600x450px · Loop seamlessly · No audio
+        </div>
+      </div>
+    </div>
+
+    <div class="tour-steps">
+
+      <article class="tour-step">
+        <div class="tour-step__text">
+          <div class="tour-step__num">Step 01 — Point at the source</div>
+          <h3 class="tour-step__h">Reads the document where it already lives</h3>
+          <p class="tour-step__d">
+            LLM Capsule runs inside your environment and reads documents from the systems
+            already there — SharePoint, Jira / ServiceNow, Salesforce, Oracle ERP, internal
+            NOC console, or your own portal. No data migration. No external pipe. No
+            architectural change.
+          </p>
+          <p class="tour-step__d" style="font-size: 13px; color: var(--c-muted); margin-top: 8px;">
+            Existing systems invoke Capsule from inside the environment via REST / gRPC /
+            JDBC / Graph API / on-prem API / embedded SDK / Slack App.
+          </p>
+          <div class="tour-step__chips">
+            <span class="tour-step__chip">In-environment</span>
+            <span class="tour-step__chip">No data egress</span>
+            <span class="tour-step__chip">Existing sources</span>
+          </div>
+        </div>
+        <div class="tour-step__visual" data-replace="tour-step-01">
+          <div class="screenshot-mock">
+            <div class="screenshot-mock__bar"><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span></div>
+            <div class="screenshot-mock__title">LLM Capsule · Source registration</div>
+            <div class="screenshot-mock__row"><span class="screenshot-mock__chip">●</span> ServiceNow Production</div>
+            <div class="screenshot-mock__row"><span class="screenshot-mock__chip">●</span> SharePoint DMS</div>
+            <div class="screenshot-mock__row screenshot-mock__row--active"><span class="screenshot-mock__chip">▶</span> NOC Console</div>
+            <div class="screenshot-mock__row">+ Register new source</div>
+          </div>
+        </div>
+      </article>
+
+      <div class="image-spec" style="margin: -8px 0 0 0;">
+        <strong>[IMAGE_SPEC] Step 01 — Source registration screen</strong>
+        Asset: Real product screenshot (PNG)
+        Subject: LLM Capsule admin UI — "Source registration" panel showing 3-4 registered enterprise document sources (ServiceNow, SharePoint, NOC Console) with status indicators (green dots), one in "configuring" state. Right side shows policy assignment dropdown. Frame this as "in-environment source registration" — no API endpoint URLs, no auth tokens visible, no SaaS connector marketplace styling.
+        Aspect: 16:10 · ~960x600px · Light theme matching design tokens
+        Replace: <code>data-replace="tour-step-01"</code> screenshot mock.
+      </div>
+
+      <article class="tour-step">
+        <div class="tour-step__text">
+          <div class="tour-step__num">Step 02 — Define policy</div>
+          <h3 class="tour-step__h">Pick the markers your business cares about</h3>
+          <p class="tour-step__d">
+            Pick from the starter pack — project codes, contract refs, network IDs, mission refs, financial
+            terms, vulnerability labels — or write your own. Markers can be added, removed, and time-shifted
+            tomorrow without redeploying. Every policy version is logged.
+          </p>
+          <div class="tour-step__chips">
+            <span class="tour-step__chip">11 starter markers</span>
+            <span class="tour-step__chip">Custom regex</span>
+            <span class="tour-step__chip">Policy versions</span>
+            <span class="tour-step__chip">RBAC scope</span>
+          </div>
+        </div>
+        <div class="tour-step__visual" data-replace="tour-step-02">
+          <div class="screenshot-mock">
+            <div class="screenshot-mock__bar"><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span></div>
+            <div class="screenshot-mock__title">Policy: NOC-team-v2 · Active</div>
+            <div class="screenshot-mock__row screenshot-mock__row--active">SUBSCRIBER_ID — encapsulate</div>
+            <div class="screenshot-mock__row screenshot-mock__row--active">DEVICE_ID — encapsulate + DP noise</div>
+            <div class="screenshot-mock__row screenshot-mock__row--active">CIRCUIT_ID — encapsulate</div>
+            <div class="screenshot-mock__row">SLA_RISK — pass-through</div>
+            <div class="screenshot-mock__row">+ Add custom marker</div>
+          </div>
+        </div>
+      </article>
+
+      <div class="image-spec" style="margin: -8px 0 0 0;">
+        <strong>[IMAGE_SPEC] Step 02 — Policy editor screen</strong>
+        Asset: Real product screenshot (PNG)
+        Subject: Policy editor with an active policy named "NOC-team-v2" — showing 5-6 marker rows, each with marker type, action (encapsulate / DP noise / pass-through), and scope. "+ Add custom marker" call to action visible. Right side shows policy version history.
+        Aspect: 16:10 · ~960x600px
+        Replace: <code>data-replace="tour-step-02"</code> screenshot mock.
+      </div>
+
+      <article class="tour-step">
+        <div class="tour-step__text">
+          <div class="tour-step__num">Step 03 — Encapsulate</div>
+          <h3 class="tour-step__h">Sensitive elements replaced. Structure preserved.</h3>
+          <p class="tour-step__d">
+            Inside the DMZ — Demilitarized Zone (Zone 2 of the four-zone architecture), sensitive
+            elements are replaced with structure-preserving placeholders by the Enhanced Encapsulation
+            Layer. Differential-privacy-based protection (epsilon-DP, Laplace noise, k-anonymity,
+            NER masking) reduces re-identification risk. Tables, cross-references, and document
+            hierarchy survive intact. <a href="/architecture" style="text-decoration: underline;">See the four-zone architecture →</a>
+          </p>
+          <div class="tour-step__chips">
+            <span class="tour-step__chip">epsilon-DP</span>
+            <span class="tour-step__chip">Laplace noise</span>
+            <span class="tour-step__chip">NER masking</span>
+            <span class="tour-step__chip">Structure preserved</span>
+          </div>
+        </div>
+        <div class="tour-step__visual" data-replace="tour-step-03">
+          <div class="screenshot-mock screenshot-mock--dark">
+            <div class="screenshot-mock__bar"><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span></div>
+            <div class="screenshot-mock__title">DMZ — Demilitarized Zone · Enhanced Encapsulation Layer</div>
+            <div class="screenshot-mock__row">Original: device_NX-47B · Circuit C-19023 · Site SEO-18</div>
+            <div class="screenshot-mock__row screenshot-mock__row--active">→ Capsule: ⟨S_a3f2⟩ · ⟨L_kp19⟩</div>
+            <div class="screenshot-mock__row"><span class="screenshot-mock__chip">DP-active</span> ε=0.8 · k=5</div>
+          </div>
+        </div>
+      </article>
+
+      <div class="image-spec" style="margin: -8px 0 0 0;">
+        <strong>[IMAGE_SPEC] Step 03 — Encapsulation in progress</strong>
+        Asset: Animated GIF or screenshot showing before/after comparison
+        Subject: Split view — left side raw document with sensitive elements highlighted; right side capsule with ⟨tokens⟩ in place, with DP indicator showing epsilon and k values. Bottom shows "Tables preserved · Cross-refs preserved" badges.
+        Aspect: 16:10 · ~960x600px · Dark theme
+        Replace: <code>data-replace="tour-step-03"</code> screenshot mock.
+      </div>
+
+      <article class="tour-step">
+        <div class="tour-step__text">
+          <div class="tour-step__num">Step 04 — Process</div>
+          <h3 class="tour-step__h">Any LLM. Path A or Path B.</h3>
+          <p class="tour-step__d">
+            The capsule (only the capsule — never the original) is routed through your approved
+            external LLM (ChatGPT, Claude, Gemini, Perplexity) or to an on-prem local lightweight
+            model for air-gapped workflows. Path is policy-driven per workflow.
+          </p>
+          <div class="tour-step__chips">
+            <span class="tour-step__chip">Path A · External</span>
+            <span class="tour-step__chip">Path B · On-prem</span>
+            <span class="tour-step__chip">Policy-routed</span>
+          </div>
+        </div>
+        <div class="tour-step__visual" data-replace="tour-step-04">
+          <div class="screenshot-mock">
+            <div class="screenshot-mock__bar"><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span></div>
+            <div class="screenshot-mock__title">Routing · NOC-team-v2</div>
+            <div class="screenshot-mock__row screenshot-mock__row--active">▶ Path A · External (Claude Sonnet)</div>
+            <div class="screenshot-mock__row">○ Path B · Local 8B (air-gapped)</div>
+            <div class="screenshot-mock__row">Latency: 1.2s · Tokens: 2,840</div>
+          </div>
+        </div>
+      </article>
+
+      <div class="image-spec" style="margin: -8px 0 0 0;">
+        <strong>[IMAGE_SPEC] Step 04 — LLM routing screen</strong>
+        Asset: Real product screenshot (PNG)
+        Subject: Routing UI showing two execution paths (External / On-prem), with Path A selected and showing model name, latency, token count. Path B available but inactive. Bottom shows policy decision rationale ("Standard NOC workflow → Path A approved").
+        Aspect: 16:10 · ~960x600px
+        Replace: <code>data-replace="tour-step-04"</code> screenshot mock.
+      </div>
+
+      <article class="tour-step">
+        <div class="tour-step__text">
+          <div class="tour-step__num">Step 05 — Restore</div>
+          <h3 class="tour-step__h">AI output comes back business-ready</h3>
+          <p class="tour-step__d">
+            The AI's response is auto-restored locally — token map lookup, original value substitution,
+            context re-binding, output validation. Real names, real figures, real references appear in
+            the original ticket. Token map never leaves the enterprise. End user sees a finished,
+            production-ready output.
+          </p>
+          <div class="tour-step__chips">
+            <span class="tour-step__chip">Local restore</span>
+            <span class="tour-step__chip">Context re-binding</span>
+            <span class="tour-step__chip">Output validation</span>
+            <span class="tour-step__chip">Audit logged</span>
+          </div>
+        </div>
+        <div class="tour-step__visual" data-replace="tour-step-05">
+          <div class="screenshot-mock">
+            <div class="screenshot-mock__bar"><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span></div>
+            <div class="screenshot-mock__title">INC-24091 · RCA Auto-Inserted</div>
+            <div class="screenshot-mock__row">RCA: Subscriber 42810 affected by latency...</div>
+            <div class="screenshot-mock__row">Recommendation: rollback config R-472</div>
+            <div class="screenshot-mock__row screenshot-mock__row--active"><span class="screenshot-mock__chip">✓</span> Restored · 100% match</div>
+          </div>
+        </div>
+      </article>
+
+      <div class="image-spec" style="margin: -8px 0 0 0;">
+        <strong>[IMAGE_SPEC] Step 05 — Restored output in originating workflow</strong>
+        Asset: Real product screenshot (PNG)
+        Subject: The original NOC ticket (ServiceNow-style UI) with AI-generated RCA + recommendation auto-inserted, showing real device IDs, circuit IDs, site references, alarm sequences, SLA-impact lines, and subscriber identifiers (not tokens). Top-right shows audit badge "Restored · LLM Capsule · Policy NOC-team-v2".
+        Aspect: 16:10 · ~960x600px
+        Replace: <code>data-replace="tour-step-05"</code> screenshot mock.
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== METRICS NARRATIVE ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Performance — measured on real enterprise documents</div>
+      <h2>The numbers behind the demo</h2>
+      <p>2,200-character document benchmark. Tested across finance, healthcare, legal, and public sector workflows.</p>
+    </div>
+
+    <div class="metrics-narr">
+      <div class="metric-bigblock">
+        <div class="metric-bigblock__num">0.12s</div>
+        <div class="metric-bigblock__label">Per-page processing latency</div>
+        <p class="metric-bigblock__rest">
+          That's <strong>120 milliseconds</strong> from raw document to encapsulated capsule —
+          fast enough to plug into real-time NOC alerting, claims intake, and clinical
+          workflows without breaking SLA. Most enterprise AI pilots stall on latency. We don't.
+        </p>
+      </div>
+
+      <div class="metric-bullets">
+        <div class="metric-bullet">
+          <div class="metric-bullet__num">100%</div>
+          <div class="metric-bullet__text"><strong>Restoration rate</strong>Every encapsulation has a reversible local mapping. No ambiguity, no manual reconstruction.</div>
+        </div>
+        <div class="metric-bullet">
+          <div class="metric-bullet__num">98%</div>
+          <div class="metric-bullet__text"><strong>Output similarity</strong>Compared to AI processing the original document. Restoration preserves business meaning.</div>
+        </div>
+        <div class="metric-bullet">
+          <div class="metric-bullet__num">98.1%</div>
+          <div class="metric-bullet__text"><strong>Detection accuracy</strong>Sensitive entity detection across structured and free-text fields, including custom markers.</div>
+        </div>
+        <div class="metric-bullet">
+          <div class="metric-bullet__num">99.14%</div>
+          <div class="metric-bullet__text"><strong>Workflow accuracy</strong>End-to-end correctness — from raw input to restored output in production workflows.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-spec" style="margin-top: 24px;">
+      <strong>[IMAGE_SPEC] Performance benchmark visualization (optional addition)</strong>
+      Asset: Recharts/D3 chart (HTML/SVG, embedded)
+      Subject: Comparison chart showing LLM Capsule vs. baseline (raw LLM call) vs. masking-based competitor — three bars per metric (latency, similarity, restoration rate, workflow accuracy). LLM Capsule bars in primary purple, baseline in muted, competitor in coral.
+      Aspect: 16:9 · ~960x540px
+      Position: insert between metric-narr and CTA strip
+      Note: optional polish — current bullets cover the same ground.
+    </div>
+  </div>
+</section>
+
+<!-- ===== WORKFLOW GALLERY ===== -->
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Workflow gallery</div>
+      <h2>Same product. Six industries. Real customers.</h2>
+      <p>Each card below is a real workflow LLM Capsule runs in production. Click for the full case story.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <article class="gallery-card">
+        <div class="gallery-card__image" data-replace="gallery-telecom">
+          <div class="screenshot-mock">
+            <div class="screenshot-mock__bar"><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span></div>
+            <div class="screenshot-mock__title">NOC · INC-24091</div>
+            <div class="screenshot-mock__row">Latency anomaly · SEO-18</div>
+            <div class="screenshot-mock__row screenshot-mock__row--active">AI RCA: rollback config R-472</div>
+          </div>
+        </div>
+        <div class="gallery-card__body">
+          <div class="gallery-card__industry">Telecom</div>
+          <h3 class="gallery-card__h">NOC incident analysis on production traffic</h3>
+          <p class="gallery-card__d">RCA generation on live ticket data with device IDs, circuit IDs, site references, alarm sequences, SLA-impact references, and subscriber identifiers encapsulated locally. No raw operational data exposure to external LLMs.</p>
+          <div class="gallery-card__customer">SK Telecom · <span>Deutsche Telekom T Challenge 2026 — Top 12</span></div>
+        </div>
+      </article>
+      <div class="image-spec" style="margin: -16px 0 0 0;">
+        <strong>[IMAGE_SPEC] Telecom gallery card image</strong>
+        Asset: Screenshot mockup (PNG) of NOC workflow
+        Subject: A real ServiceNow-style NOC ticket showing latency incident with AI-generated RCA and recommendation already inserted; device, circuit, site, alarm, SLA, and subscriber identifiers visible (real values restored).
+        Aspect: 16:10 · ~640x400px
+        Replace: <code>data-replace="gallery-telecom"</code> screenshot mock
+      </div>
+
+      <article class="gallery-card">
+        <div class="gallery-card__image" data-replace="gallery-healthcare">
+          <div class="screenshot-mock">
+            <div class="screenshot-mock__bar"><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span></div>
+            <div class="screenshot-mock__title">EHR · Radiology Report Draft</div>
+            <div class="screenshot-mock__row">Patient · MRN ⟨P_xxxx⟩ → restored</div>
+            <div class="screenshot-mock__row screenshot-mock__row--active">AI summary: bilateral findings...</div>
+          </div>
+        </div>
+        <div class="gallery-card__body">
+          <div class="gallery-card__industry">Healthcare</div>
+          <h3 class="gallery-card__h">Radiology report drafting with PHI never leaving</h3>
+          <p class="gallery-card__d">AI drafts radiology summaries from real clinical workflows. PHI encapsulated locally; restoration happens inside the hospital network. HIPAA-aligned.</p>
+          <div class="gallery-card__customer">Ewha Womans University Medical Center (EUMC)</div>
+        </div>
+      </article>
+      <div class="image-spec" style="margin: -16px 0 0 0;">
+        <strong>[IMAGE_SPEC] Healthcare gallery card image</strong>
+        Asset: Screenshot mockup (PNG) of EHR radiology report
+        Subject: EHR radiology module with AI-drafted clinical summary, MRN/patient name visible (restored), with audit badge "Restored · HIPAA-aligned policy".
+        Aspect: 16:10 · ~640x400px
+        Replace: <code>data-replace="gallery-healthcare"</code>
+      </div>
+
+      <article class="gallery-card">
+        <div class="gallery-card__image" data-replace="gallery-finance">
+          <div class="screenshot-mock">
+            <div class="screenshot-mock__bar"><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span></div>
+            <div class="screenshot-mock__title">Claim · CLM-77241</div>
+            <div class="screenshot-mock__row">Damage assessment running</div>
+            <div class="screenshot-mock__row screenshot-mock__row--active">AI fraud signal: low · approve</div>
+          </div>
+        </div>
+        <div class="gallery-card__body">
+          <div class="gallery-card__industry">Finance / Insurance</div>
+          <h3 class="gallery-card__h">AI claims processing with real customer data</h3>
+          <p class="gallery-card__d">AI-powered claim classification, damage assessment, and fraud detection on real policyholder data. No customer data leaves the insurer's environment.</p>
+          <div class="gallery-card__customer">Kyobo · <span>DB Insurance · IBK</span></div>
+        </div>
+      </article>
+      <div class="image-spec" style="margin: -16px 0 0 0;">
+        <strong>[IMAGE_SPEC] Finance gallery card image</strong>
+        Asset: Screenshot mockup (PNG) of claims management UI
+        Subject: Insurance claims dashboard showing AI-generated classification and fraud signal on a real claim, policyholder name and claim ID visible (restored).
+        Aspect: 16:10 · ~640x400px
+        Replace: <code>data-replace="gallery-finance"</code>
+      </div>
+
+      <article class="gallery-card">
+        <div class="gallery-card__image" data-replace="gallery-defense">
+          <div class="screenshot-mock screenshot-mock--dark">
+            <div class="screenshot-mock__bar"><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span><span class="screenshot-mock__dot"></span></div>
+            <div class="screenshot-mock__title">Mission Brief · ⟨MR_xxxx⟩</div>
+            <div class="screenshot-mock__row">Path B · On-prem local model</div>
+            <div class="screenshot-mock__row screenshot-mock__row--active">AI brief draft generated</div>
+          </div>
+        </div>
+        <div class="gallery-card__body">
+          <div class="gallery-card__industry">Public Sector / Defense</div>
+          <h3 class="gallery-card__h">Mission brief drafting on classified workflows</h3>
+          <p class="gallery-card__d">AI drafts intelligence briefs and operational summaries on classified data. On-prem local execution path — zero external transmission. Full audit trail under command control.</p>
+          <div class="gallery-card__customer">Ministry of National Defense (South Korea)</div>
+        </div>
+      </article>
+      <div class="image-spec" style="margin: -16px 0 0 0;">
+        <strong>[IMAGE_SPEC] Defense gallery card image</strong>
+        Asset: Screenshot mockup (PNG) of mission brief draft (heavily redacted to feel classified)
+        Subject: Dark-themed mission console with AI-drafted brief; mission references shown as ⟨MR_xxxx⟩ tokens (intentionally not restored in screenshot for privacy); badge "Path B · On-prem · Audit logged".
+        Aspect: 16:10 · ~640x400px · Dark theme
+        Replace: <code>data-replace="gallery-defense"</code>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== ADMIN CONSOLE WALKTHROUGH ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Operational governance</div>
+      <h2>Admin console — every event, every policy, every model</h2>
+      <p>Enterprise AI governance is not a marketing claim. It's a console your audit team logs into.</p>
+    </div>
+
+    <div class="console-walk">
+      <div class="console-mock" data-replace="admin-console">
+        <div class="console-mock__tabs">
+          <span class="console-mock__tab console-mock__tab--active">Audit</span>
+          <span class="console-mock__tab">Policies</span>
+          <span class="console-mock__tab">Tokens</span>
+          <span class="console-mock__tab">Detection</span>
+          <span class="console-mock__tab">Models</span>
+        </div>
+        <div class="console-mock__row"><span>10:24:18</span><span>INC-24091 · NOC-team-v2 · Path A</span><span class="console-mock__badge">restored</span></div>
+        <div class="console-mock__row"><span>10:24:11</span><span>CLM-77241 · finance-v3 · Path A</span><span class="console-mock__badge">restored</span></div>
+        <div class="console-mock__row"><span>10:23:58</span><span>MR-440-Z · defense-v1 · Path B</span><span class="console-mock__badge">restored</span></div>
+        <div class="console-mock__row"><span>10:23:42</span><span>Policy NOC-team updated to v2</span><span class="console-mock__badge console-mock__badge--warn">policy</span></div>
+        <div class="console-mock__row"><span>10:23:30</span><span>Detection · custom marker added</span><span class="console-mock__badge">policy</span></div>
+      </div>
+
+      <div class="console-walk__text">
+        <h3>One pane. Five tabs. Full chain of custody.</h3>
+        <p>Every encapsulation, processing, and restoration event lands here. Audit teams can replay any event end-to-end — what was protected, which policy version was active, which model processed it, what was restored.</p>
+        <ul class="console-walk__list">
+          <li><strong>Audit</strong> — every event with timestamps and policy version</li>
+          <li><strong>Policies</strong> — version history, scope, and RBAC</li>
+          <li><strong>Tokens</strong> — model usage, cost, and per-team breakdown</li>
+          <li><strong>Detection</strong> — what was classified as sensitive, and how</li>
+          <li><strong>Models</strong> — health, throughput, comparative output quality</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="image-spec" style="margin-top: 24px;">
+      <strong>[IMAGE_SPEC] Admin console screenshot</strong>
+      Asset: Real product screenshot (PNG) — replace the dark console-mock div
+      Subject: LLM Capsule admin UI · Audit tab active. Show 8-12 event rows with timestamps, workflow IDs, policies, paths, and status badges. Side panel shows event detail of selected row (encapsulation steps, model, restoration result).
+      Aspect: 16:10 · ~1100x700px · Dark theme matching design tokens
+      Replace: <code>data-replace="admin-console"</code> div.
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAPABILITY 06 DEEP DIVE (kept — unique to product page) ===== -->
+<section class="section section--soft">
+  <div class="container">
+    <div class="diy">
+      <div class="diy__badge">Capability 06 · Deep dive</div>
+      <h2 class="diy__h">You define what's sensitive — <strong>and you can change it tomorrow.</strong></h2>
+      <p class="diy__lead">
+        Yesterday it was network logs. Today it's M&amp;A code names. Next quarter it's a new
+        regulator's spec. Standard PII categories don't move; your business does. LLM Capsule
+        lets your team <strong>define, add, remove, and version</strong> confidentiality markers
+        as your operations and regulatory landscape evolve — with full audit trail of which marker
+        was protected when.
+      </p>
+
+      <div class="diy__caps">
+        <div class="diy__cap">
+          <div class="diy__cap__num">DEFINE</div>
+          <h3 class="diy__cap__h">Beyond generic PII</h3>
+          <p class="diy__cap__d">Project codes, deal terms, internal IDs, contract references, network identifiers, OT asset IDs, mission refs. Your team defines the markers — not a vendor's fixed list.</p>
+        </div>
+        <div class="diy__cap">
+          <div class="diy__cap__num">VERSION</div>
+          <h3 class="diy__cap__h">Time-shift the policy</h3>
+          <p class="diy__cap__d">Add a new marker today, retire one next quarter. Policy versioning + immediate enforcement. Audit log records exactly which marker was active for every encapsulation event.</p>
+        </div>
+        <div class="diy__cap">
+          <div class="diy__cap__num">SCOPE</div>
+          <h3 class="diy__cap__h">Per workflow, team, data type</h3>
+          <p class="diy__cap__d">NOC team, oncology unit, OT operations, M&amp;A — different policies, same governance. RBAC + scoped enforcement + per-policy audit. One LLM Capsule, many policies.</p>
+        </div>
+      </div>
+
+      <div class="image-spec" style="margin-top: 24px;">
+        <strong>[IMAGE_SPEC] Policy diff illustration (optional)</strong>
+        Asset: SVG diagram showing policy versioning timeline
+        Subject: Horizontal timeline showing 3-4 policy versions (v1 → v2 → v3) with markers added/removed at each version, with date stamps. Bottom shows "Audit log entries: 1,247" counter.
+        Aspect: 16:6 · ~1000x375px · Light theme
+        Position: optional addition below the diy__caps grid.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <h2>See it on your own documents.</h2>
+  <p>Bring your real workflow. We'll set up Capsule on a sample document in your environment within 30 minutes.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a class="btn btn--invert" href="/request-a-demo">Request a Live Demo</a>
+    <a class="btn btn--invert-ghost" href="/architecture" style="color:#fff;">View Architecture</a>
+    <a class="btn btn--invert-ghost" href="/pricing" style="color:#fff;">View Pricing</a>
+  </div>
+</section>
+
+</body>
+</html>

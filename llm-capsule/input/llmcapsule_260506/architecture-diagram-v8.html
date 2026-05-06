@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Secure AI Architecture Diagram</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #21262d;
+    --border: #30363d;
+    --red: #ff4d4f;
+    --red-soft: rgba(255,77,79,0.12);
+    --red-mid: rgba(255,77,79,0.25);
+    --green: #3fb950;
+    --green-soft: rgba(63,185,80,0.12);
+    --green-mid: rgba(63,185,80,0.25);
+    --blue: #58a6ff;
+    --blue-soft: rgba(88,166,255,0.12);
+    --yellow: #d29922;
+    --yellow-soft: rgba(210,153,34,0.12);
+    --orange: #f78166;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --text-dim: #484f58;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Noto Sans KR', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    font-family: var(--sans);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 32px 20px;
+  }
+
+  .page-title {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .page-title h1 {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .page-title p {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 4px;
+    font-family: var(--mono);
+  }
+
+  .diagram {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* ── ZONE WRAPPER ── */
+  .zone {
+    position: relative;
+    border-radius: 12px;
+    padding: 20px 24px 24px;
+    margin-bottom: 0;
+  }
+  .zone-label {
+    position: absolute;
+    top: -11px;
+    left: 20px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 2px 10px;
+    border-radius: 4px;
+  }
+
+  /* CORPORATE ZONE */
+  .zone-corp {
+    border: 2px solid rgba(255,77,79,0.4);
+    background: rgba(255,77,79,0.04);
+  }
+  .zone-corp .zone-label {
+    background: var(--bg);
+    color: var(--red);
+    border: 1px solid rgba(255,77,79,0.4);
+  }
+
+  /* DMZ ZONE */
+  .zone-dmz {
+    border: 2px dashed rgba(210,153,34,0.5);
+    background: rgba(210,153,34,0.04);
+    margin-top: -2px;
+  }
+  .zone-dmz .zone-label {
+    background: var(--bg);
+    color: var(--yellow);
+    border: 1px solid rgba(210,153,34,0.5);
+  }
+
+  /* AI ZONE */
+  .zone-ai {
+    border: 2px solid rgba(63,185,80,0.4);
+    background: rgba(63,185,80,0.04);
+    margin-top: -2px;
+  }
+  .zone-ai .zone-label {
+    background: var(--bg);
+    color: var(--green);
+    border: 1px solid rgba(63,185,80,0.4);
+  }
+
+  /* EU ZONE */
+  .zone-eu {
+    border: 2px solid rgba(88,166,255,0.4);
+    background: rgba(88,166,255,0.04);
+    margin-top: -2px;
+  }
+  .zone-eu .zone-label {
+    background: var(--bg);
+    color: var(--blue);
+    border: 1px solid rgba(88,166,255,0.4);
+  }
+
+  /* ── BOX ── */
+  .box {
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    border: 1.5px solid;
+    position: relative;
+  }
+  .box-label {
+    font-size: 10px;
+    font-weight: 400;
+    opacity: 0.7;
+    font-family: var(--sans);
+    letter-spacing: 0;
+    margin-top: 2px;
+  }
+
+  .box-red {
+    background: var(--red-soft);
+    border-color: rgba(255,77,79,0.5);
+    color: #ff7875;
+  }
+  .box-green {
+    background: var(--green-soft);
+    border-color: rgba(63,185,80,0.5);
+    color: #85e89d;
+  }
+  .box-blue {
+    background: var(--blue-soft);
+    border-color: rgba(88,166,255,0.5);
+    color: #79c0ff;
+  }
+  .box-yellow {
+    background: var(--yellow-soft);
+    border-color: rgba(210,153,34,0.5);
+    color: #e3b341;
+  }
+  .box-orange {
+    background: rgba(247,129,102,0.12);
+    border-color: rgba(247,129,102,0.5);
+    color: #ffa07a;
+  }
+
+  /* ── DB GROUP ── */
+  .db-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .db-card {
+    background: var(--red-soft);
+    border: 1.5px solid rgba(255,77,79,0.4);
+    border-radius: 10px;
+    padding: 12px 16px;
+    min-width: 120px;
+    position: relative;
+  }
+  .db-card-title {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: #ff7875;
+    margin-bottom: 6px;
+  }
+  .db-card-sub {
+    font-size: 10px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  .db-icon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 6px;
+  }
+  .db-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* DB cylinder shape */
+  .cyl {
+    display: inline-block;
+    width: 36px;
+    height: 44px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .cyl::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 10px;
+    background: rgba(255,77,79,0.3);
+    border: 1.5px solid rgba(255,77,79,0.6);
+    border-radius: 50%;
+  }
+  .cyl::after {
+    content: '';
+    position: absolute;
+    top: 5px; left: 0; right: 0; bottom: 0;
+    background: rgba(255,77,79,0.15);
+    border: 1.5px solid rgba(255,77,79,0.4);
+    border-radius: 0 0 4px 4px;
+    border-top: none;
+  }
+
+  /* ── ARROW ── */
+  .arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    position: relative;
+  }
+  .arrow-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .arrow-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    white-space: nowrap;
+  }
+
+  /* ── BLOCK ARROW SVG ── */
+  .arr-svg { display: block; }
+
+  /* ── GUARDRAIL BANNER ── */
+  .guardrail-banner {
+    background: rgba(255,77,79,0.08);
+    border: 1.5px solid rgba(255,77,79,0.35);
+    border-radius: 8px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #ff7875;
+    font-family: var(--mono);
+  }
+  .guardrail-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .guardrail-text { line-height: 1.5; }
+  .guardrail-text strong { display: block; font-size: 11px; margin-bottom: 2px; }
+  .guardrail-text span { font-size: 10px; color: var(--text-muted); }
+
+  /* ── BLOCKED MARK ── */
+  .blocked-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--red);
+    color: var(--red);
+    font-size: 13px;
+    font-weight: 900;
+    background: var(--red-soft);
+    flex-shrink: 0;
+  }
+  .allowed-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--green);
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 900;
+    background: var(--green-soft);
+    flex-shrink: 0;
+  }
+
+  /* ── LAYOUT HELPERS ── */
+  .row { display: flex; align-items: stretch; gap: 16px; flex-wrap: wrap; }
+  .col { display: flex; flex-direction: column; gap: 12px; }
+  .spacer { flex: 1; }
+
+  /* ── DATA FIELDS ── */
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .field-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .field-row .fname {
+    min-width: 70px;
+    color: #ff7875;
+  }
+  .field-box {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--surface2);
+    padding: 3px 8px;
+    min-width: 90px;
+    font-size: 11px;
+    color: var(--text);
+  }
+  .field-box.masked {
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    background: rgba(255,77,79,0.07);
+    border-color: rgba(255,77,79,0.3);
+  }
+  .field-box.blocked-field {
+    background: rgba(255,77,79,0.12);
+    border-color: rgba(255,77,79,0.5);
+    color: var(--red);
+    position: relative;
+  }
+
+  /* ── SECTION HEADER ── */
+  .sec-header {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+  }
+
+  /* ── DIFF PRIVACY BADGE ── */
+  .dp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(210,153,34,0.12);
+    border: 1.5px solid rgba(210,153,34,0.5);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: #e3b341;
+    font-weight: 600;
+  }
+  .dp-badge .dp-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #e3b341;
+    animation: pulse-dot 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+
+  /* ── NOISE LAYER on DMZ ── */
+  .noise-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(210,153,34,0.04) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(210,153,34,0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* ── GEMINI BOX ── */
+  .gemini-box {
+    background: linear-gradient(135deg, rgba(88,166,255,0.12), rgba(63,185,80,0.08));
+    border: 1.5px solid rgba(88,166,255,0.5);
+    border-radius: 10px;
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 130px;
+  }
+  .gemini-brand {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: 0.08em;
+  }
+  .gemini-sub {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 3px;
+    font-family: var(--sans);
+  }
+
+  /* ── AIFC BOX ── */
+  .aifc-box {
+    background: linear-gradient(135deg, rgba(255,77,79,0.1), rgba(255,77,79,0.05));
+    border: 2px solid rgba(255,77,79,0.5);
+    border-radius: 10px;
+    padding: 14px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .aifc-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 60%, rgba(255,77,79,0.05));
+  }
+
+  /* ── AIFC CORP SUB-ZONE WRAPPER ── */
+  .aifc-corp-zone {
+    display: inline-block;
+    border: 1.5px dashed rgba(255,77,79,0.45);
+    border-radius: 12px;
+    padding: 18px 16px 12px;
+    background: rgba(255,77,79,0.04);
+    position: relative;
+  }
+  .aifc-corp-zone-label {
+    position: absolute;
+    top: -9px;
+    left: 12px;
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--bg);
+    padding: 0 6px;
+    color: rgba(255,120,117,0.8);
+    border: 1px solid rgba(255,77,79,0.3);
+    border-radius: 3px;
+  }
+  .aifc-name {
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff7875;
+    letter-spacing: 0.12em;
+  }
+  .aifc-sub {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-family: var(--sans);
+  }
+
+  /* ── STEP INDICATOR ── */
+  .step-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .step-1 { background: rgba(255,77,79,0.15); color: #ff7875; border: 1px solid rgba(255,77,79,0.3); }
+  .step-2 { background: rgba(210,153,34,0.15); color: #e3b341; border: 1px solid rgba(210,153,34,0.3); }
+  .step-3 { background: rgba(63,185,80,0.15); color: #85e89d; border: 1px solid rgba(63,185,80,0.3); }
+  .step-4 { background: rgba(88,166,255,0.15); color: #79c0ff; border: 1px solid rgba(88,166,255,0.3); }
+
+  /* ── CONNECTOR ARROWS ── */
+  .connector-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 0;
+    position: relative;
+    z-index: 1;
+  }
+  .conn-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+  }
+
+  /* ── CAPSULE VISUAL ── */
+  .capsule-visual {
+    background: rgba(210,153,34,0.06);
+    border: 1.5px dashed rgba(210,153,34,0.4);
+    border-radius: 12px;
+    padding: 12px 16px;
+    position: relative;
+  }
+  .capsule-label {
+    position: absolute;
+    top: -9px; right: 14px;
+    font-family: var(--mono);
+    font-size: 9px;
+    background: var(--bg);
+    padding: 0 6px;
+    color: var(--yellow);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── PDESC / ISOLA ── */
+  .pdesc-box {
+    background: var(--green-soft);
+    border: 1.5px solid rgba(63,185,80,0.4);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+  .pdesc-title {
+    color: #85e89d;
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+  .pdesc-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-bottom: 3px;
+  }
+
+  /* ── TOOLTIP TAG ── */
+  .tag {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .tag-red { background: rgba(255,77,79,0.2); color: #ff7875; }
+  .tag-green { background: rgba(63,185,80,0.2); color: #85e89d; }
+  .tag-yellow { background: rgba(210,153,34,0.2); color: #e3b341; }
+  .tag-blue { background: rgba(88,166,255,0.2); color: #79c0ff; }
+
+  /* ── UNSTRUCTURED DATA BADGE ── */
+  .unstructured-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--orange);
+    padding: 2px 7px;
+    border: 1px solid rgba(247,129,102,0.3);
+    border-radius: 4px;
+    background: rgba(247,129,102,0.08);
+    margin-top: 6px;
+  }
+
+  hr.div-line {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 6px 0;
+  }
+
+  .info-note {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-family: var(--sans);
+    line-height: 1.5;
+    padding: 6px 10px;
+    border-left: 2px solid var(--border);
+  }
+
+  .eu-region-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--blue);
+    padding: 4px 10px;
+    background: rgba(88,166,255,0.1);
+    border: 1.5px solid rgba(88,166,255,0.4);
+    border-radius: 6px;
+  }
+  .germany-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: #79c0ff;
+    padding: 3px 8px;
+    background: rgba(88,166,255,0.07);
+    border: 1px solid rgba(88,166,255,0.25);
+    border-radius: 4px;
+    margin-top: 4px;
+  }
+
+  /* ── API PLUGIN SECTION ── */
+  .api-plugin-zone {
+    border: 2px dashed rgba(88,166,255,0.3);
+    background: rgba(88,166,255,0.03);
+    border-radius: 12px;
+    padding: 20px 24px 18px;
+    margin-bottom: 0;
+    position: relative;
+  }
+  .api-plugin-zone-label {
+    position: absolute;
+    top: -11px; left: 20px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 2px 10px;
+    border-radius: 4px;
+    background: var(--bg);
+    color: var(--blue);
+    border: 1px solid rgba(88,166,255,0.4);
+  }
+
+  .sys-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .sys-card {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .sys-card:hover { border-color: rgba(88,166,255,0.5); }
+
+  .sys-card-icon {
+    width: 28px; height: 28px;
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .sys-card-name {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .sys-card-sub {
+    font-size: 9px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+  .sys-card-api {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--mono);
+    font-size: 8px;
+    color: #79c0ff;
+    background: rgba(88,166,255,0.1);
+    border: 1px solid rgba(88,166,255,0.25);
+    border-radius: 3px;
+    padding: 2px 5px;
+    margin-top: 2px;
+    width: fit-content;
+  }
+  .sys-card-api::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: #58a6ff;
+    animation: pulse-dot 1.8s ease-in-out infinite;
+  }
+
+  /* central AIFC hub */
+  .api-hub-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-top: 4px;
+  }
+  .api-lines-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+    padding-right: 12px;
+  }
+  .api-line-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--text-muted);
+  }
+  .api-line-item .api-method {
+    background: rgba(88,166,255,0.15);
+    border: 1px solid rgba(88,166,255,0.3);
+    color: #79c0ff;
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-size: 8px;
+    font-weight: 700;
+  }
+  .api-line-item .api-method.post { background: rgba(63,185,80,0.15); border-color: rgba(63,185,80,0.3); color: #85e89d; }
+  .api-line-item .api-method.get  { background: rgba(88,166,255,0.15); border-color: rgba(88,166,255,0.3); color: #79c0ff; }
+  .api-line-item .api-endpoint {
+    font-size: 9px;
+    color: var(--text-muted);
+    font-family: var(--mono);
+  }
+
+  .aifc-hub {
+    background: linear-gradient(135deg, rgba(255,77,79,0.15), rgba(255,77,79,0.05));
+    border: 2.5px solid rgba(255,77,79,0.6);
+    border-radius: 14px;
+    padding: 16px 22px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 24px rgba(255,77,79,0.15);
+    flex-shrink: 0;
+    min-width: 140px;
+  }
+  .aifc-hub-name {
+    font-family: var(--mono);
+    font-size: 18px;
+    font-weight: 700;
+    color: #ff7875;
+    letter-spacing: 0.12em;
+  }
+  .aifc-hub-sub {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-family: var(--sans);
+  }
+  .aifc-hub-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+    font-family: var(--mono);
+    font-size: 8px;
+    color: #85e89d;
+    background: rgba(63,185,80,0.1);
+    border: 1px solid rgba(63,185,80,0.3);
+    border-radius: 4px;
+    padding: 2px 7px;
+  }
+  .pulse-ring {
+    position: absolute;
+    inset: -6px;
+    border-radius: 18px;
+    border: 1.5px solid rgba(255,77,79,0.2);
+    animation: ring-pulse 2.4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes ring-pulse {
+    0%,100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 0; transform: scale(1.04); }
+  }
+
+  .api-arrow-svg { display: block; flex-shrink: 0; }
+
+  .no-change-banner {
+    background: rgba(63,185,80,0.07);
+    border: 1.5px solid rgba(63,185,80,0.3);
+    border-radius: 8px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .no-change-icon {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--green);
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 900;
+    background: var(--green-soft);
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* ── KEYWORD BADGES ── */
+  .kw-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .kw {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 3px 9px;
+    border-radius: 20px;
+    border: 1.5px solid;
+    white-space: nowrap;
+  }
+  .kw-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    font-size: 8px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  /* ── KEYWORD BADGE SYSTEM ─────────────────────────────
+     Core 1 — Zero Exposure         (red/crimson)
+     Core 2 — Restoration           (green)
+     Core 3 — Enterprise Context    (orange)
+     +1     — Structure-Preserving  (yellow/amber, softer)
+     +2     — Enterprise Env Exec   (blue, softer)
+  ──────────────────────────────────────────────────── */
+  .kw-1 { background: rgba(255,77,79,0.13); border-color: rgba(255,77,79,0.5); color: #ff7875; }
+  .kw-1 .kw-num { background: rgba(255,77,79,0.35); color: #fff; }
+  .kw-2 { background: rgba(63,185,80,0.13); border-color: rgba(63,185,80,0.5); color: #85e89d; }
+  .kw-2 .kw-num { background: rgba(63,185,80,0.35); color: #fff; }
+  .kw-3 { background: rgba(247,129,102,0.13); border-color: rgba(247,129,102,0.5); color: #ffa07a; }
+  .kw-3 .kw-num { background: rgba(247,129,102,0.35); color: #fff; }
+  /* +1 +2: softer, smaller feel */
+  .kw-4 { background: rgba(210,153,34,0.1); border-color: rgba(210,153,34,0.35); color: #c9a227; border-style: dashed; }
+  .kw-4 .kw-num { background: rgba(210,153,34,0.25); color: #e3b341; }
+  .kw-5 { background: rgba(88,166,255,0.1); border-color: rgba(88,166,255,0.35); color: #6ba3d6; border-style: dashed; }
+  .kw-5 .kw-num { background: rgba(88,166,255,0.25); color: #79c0ff; }
+</style>
+</head>
+<body>
+
+<div class="page-title">
+  <h1>Secure AI Data Flow Architecture</h1>
+  <p>Corporate Internal DB  --  DMZ (Differential Privacy)  --  AI Team (EU Region)</p>
+</div>
+
+<div class="diagram">
+
+  <!-- ===== ZONE 1: CORPORATE INTERNAL NETWORK ===== -->
+  <div class="zone zone-corp">
+    <div class="zone-label">Corporate Internal Network</div>
+
+    <div class="step-pill step-1">STEP 1 — Source Data</div>
+    <div class="kw-row">
+      <span class="kw kw-5"><span class="kw-num">+2</span>Enterprise Env Execution</span>
+    </div>
+    <div class="row" style="align-items:flex-start; margin-bottom:16px;">
+
+      <!-- DB1 -->
+      <div class="db-card">
+        <div class="db-stack">
+          <div style="width:40px;height:48px;position:relative;margin-bottom:8px;">
+            <svg width="40" height="48" viewBox="0 0 40 48">
+              <ellipse cx="20" cy="8" rx="18" ry="6" fill="rgba(255,77,79,0.25)" stroke="rgba(255,77,79,0.7)" stroke-width="1.5"/>
+              <rect x="2" y="8" width="36" height="32" fill="rgba(255,77,79,0.15)" stroke="rgba(255,77,79,0.5)" stroke-width="1.5"/>
+              <ellipse cx="20" cy="40" rx="18" ry="6" fill="rgba(255,77,79,0.2)" stroke="rgba(255,77,79,0.5)" stroke-width="1.5"/>
+              <ellipse cx="20" cy="19" rx="18" ry="4" fill="none" stroke="rgba(255,77,79,0.3)" stroke-width="1" stroke-dasharray="3 2"/>
+              <ellipse cx="20" cy="29" rx="18" ry="4" fill="none" stroke="rgba(255,77,79,0.3)" stroke-width="1" stroke-dasharray="3 2"/>
+            </svg>
+          </div>
+          <div class="db-card-title">DB1</div>
+          <div class="db-card-sub">Customer Data<br/>고객 식별 정보</div>
+          <div class="unstructured-badge">
+            <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3.5" fill="none" stroke="#f78166" stroke-width="1.5"/><line x1="4" y1="2" x2="4" y2="4.5" stroke="#f78166" stroke-width="1.5"/><circle cx="4" cy="6" r="0.8" fill="#f78166"/></svg>
+            Unstructured
+          </div>
+        </div>
+      </div>
+
+      <!-- DB2 -->
+      <div class="db-card">
+        <div class="db-stack">
+          <div style="width:40px;height:48px;position:relative;margin-bottom:8px;">
+            <svg width="40" height="48" viewBox="0 0 40 48">
+              <ellipse cx="20" cy="8" rx="18" ry="6" fill="rgba(255,77,79,0.25)" stroke="rgba(255,77,79,0.7)" stroke-width="1.5"/>
+              <rect x="2" y="8" width="36" height="32" fill="rgba(255,77,79,0.15)" stroke="rgba(255,77,79,0.5)" stroke-width="1.5"/>
+              <ellipse cx="20" cy="40" rx="18" ry="6" fill="rgba(255,77,79,0.2)" stroke="rgba(255,77,79,0.5)" stroke-width="1.5"/>
+              <ellipse cx="20" cy="19" rx="18" ry="4" fill="none" stroke="rgba(255,77,79,0.3)" stroke-width="1" stroke-dasharray="3 2"/>
+              <ellipse cx="20" cy="29" rx="18" ry="4" fill="none" stroke="rgba(255,77,79,0.3)" stroke-width="1" stroke-dasharray="3 2"/>
+            </svg>
+          </div>
+          <div class="db-card-title">DB2</div>
+          <div class="db-card-sub">Ticket Data<br/>CS 티켓 / 상태</div>
+          <div class="unstructured-badge">
+            <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3.5" fill="none" stroke="#f78166" stroke-width="1.5"/><line x1="4" y1="2" x2="4" y2="4.5" stroke="#f78166" stroke-width="1.5"/><circle cx="4" cy="6" r="0.8" fill="#f78166"/></svg>
+            Unstructured
+          </div>
+        </div>
+      </div>
+
+      <!-- DB3 -->
+      <div class="db-card">
+        <div class="db-stack">
+          <div style="width:40px;height:48px;position:relative;margin-bottom:8px;">
+            <svg width="40" height="48" viewBox="0 0 40 48">
+              <ellipse cx="20" cy="8" rx="18" ry="6" fill="rgba(255,77,79,0.25)" stroke="rgba(255,77,79,0.7)" stroke-width="1.5"/>
+              <rect x="2" y="8" width="36" height="32" fill="rgba(255,77,79,0.15)" stroke="rgba(255,77,79,0.5)" stroke-width="1.5"/>
+              <ellipse cx="20" cy="40" rx="18" ry="6" fill="rgba(255,77,79,0.2)" stroke="rgba(255,77,79,0.5)" stroke-width="1.5"/>
+              <ellipse cx="20" cy="19" rx="18" ry="4" fill="none" stroke="rgba(255,77,79,0.3)" stroke-width="1" stroke-dasharray="3 2"/>
+              <ellipse cx="20" cy="29" rx="18" ry="4" fill="none" stroke="rgba(255,77,79,0.3)" stroke-width="1" stroke-dasharray="3 2"/>
+            </svg>
+          </div>
+          <div class="db-card-title">DB3</div>
+          <div class="db-card-sub">Detail Data<br/>비정형 클레임 텍스트</div>
+          <div class="unstructured-badge">
+            <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3.5" fill="none" stroke="#f78166" stroke-width="1.5"/><line x1="4" y1="2" x2="4" y2="4.5" stroke="#f78166" stroke-width="1.5"/><circle cx="4" cy="6" r="0.8" fill="#f78166"/></svg>
+            Unstructured
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <!-- INPUT FIELDS (ID, CD, BD) -->
+      <div style="min-width:200px;">
+        <div class="sec-header">Raw Input Fields</div>
+        <div class="field-group">
+          <div class="field-row">
+            <span style="width:10px;height:10px;border-radius:50%;background:#ff4d4f;flex-shrink:0;display:inline-block;"></span>
+            <span class="fname">Customer :</span>
+            <div class="field-box blocked-field">David Lawson</div>
+            <span class="tag tag-red">ID</span>
+          </div>
+          <div class="field-row">
+            <span style="width:10px;height:10px;border-radius:50%;background:#ff4d4f;flex-shrink:0;display:inline-block;"></span>
+            <span class="fname">Ticket :</span>
+            <div class="field-box blocked-field">CS-4203</div>
+            <span class="tag tag-red">CD</span>
+          </div>
+          <div class="field-row">
+            <span style="width:10px;height:10px;border-radius:50%;background:#f78166;flex-shrink:0;display:inline-block;"></span>
+            <span class="fname">Free Text :</span>
+            <div class="field-box blocked-field" style="font-size:9px;">Shipping delayed 5 days, no response...</div>
+            <span class="tag tag-red">BD</span>
+          </div>
+        </div>
+        <div class="info-note" style="margin-top:8px;">
+          CS 티켓 내 고객명·연락처 혼재<br/>직접 PII 처리 불가
+        </div>
+      </div>
+    </div>
+
+    <!-- PII Guardrail Banner -->
+    <div class="guardrail-banner">
+      <div class="blocked-mark">X</div>
+      <div class="guardrail-text">
+        <strong>PII Guardrail -- AI Team 직접 전달 차단</strong>
+        <span>같은 기업 내부라도 CS 티켓의 Details 필드처럼 고객명·연락처·클레임 내용이 비구조적으로 혼재된 자유 텍스트는 단순 PII 가드레일로 안전하게 처리할 수 없습니다.</span>
+      </div>
+    </div>
+
+    <!-- API PLUGIN ZONE inside Corporate: Enterprise Systems -->
+    <div class="api-plugin-zone" style="margin-top:18px;">
+      <div class="api-plugin-zone-label">Enterprise Systems — Plug-in via API</div>
+
+      <div class="kw-row" style="margin-top:4px;">
+        <span class="kw kw-5"><span class="kw-num">+2</span>Enterprise Env Execution</span>
+        <span class="kw kw-3"><span class="kw-num">Core 3</span>Enterprise Context</span>
+      </div>
+      <div class="sys-grid">
+        <div class="sys-card">
+          <div class="sys-card-icon" style="background:rgba(88,166,255,0.1);">🏢</div>
+          <div class="sys-card-name">ERP System</div>
+          <div class="sys-card-sub">SAP / Oracle<br/>재무·인사·구매</div>
+          <div class="sys-card-api">REST API</div>
+        </div>
+        <div class="sys-card">
+          <div class="sys-card-icon" style="background:rgba(63,185,80,0.1);">👥</div>
+          <div class="sys-card-name">CRM</div>
+          <div class="sys-card-sub">Salesforce<br/>고객 데이터</div>
+          <div class="sys-card-api">REST API</div>
+        </div>
+        <div class="sys-card">
+          <div class="sys-card-icon" style="background:rgba(210,153,34,0.1);">🔍</div>
+          <div class="sys-card-name">RAG Pipeline</div>
+          <div class="sys-card-sub">Vector DB<br/>문서 검색</div>
+          <div class="sys-card-api">gRPC / REST</div>
+        </div>
+        <div class="sys-card">
+          <div class="sys-card-icon" style="background:rgba(247,129,102,0.1);">🗄️</div>
+          <div class="sys-card-name">Legacy DB</div>
+          <div class="sys-card-sub">Oracle / MSSQL<br/>기간계 시스템</div>
+          <div class="sys-card-api">JDBC → API</div>
+        </div>
+        <div class="sys-card">
+          <div class="sys-card-icon" style="background:rgba(88,166,255,0.1);">📋</div>
+          <div class="sys-card-name">Ticketing</div>
+          <div class="sys-card-sub">Jira / ServiceNow<br/>이슈 트래킹</div>
+          <div class="sys-card-api">REST API</div>
+        </div>
+        <div class="sys-card">
+          <div class="sys-card-icon" style="background:rgba(255,77,79,0.1);">📁</div>
+          <div class="sys-card-name">DMS / ECM</div>
+          <div class="sys-card-sub">SharePoint<br/>문서 관리</div>
+          <div class="sys-card-api">Graph API</div>
+        </div>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 20px;">
+        <div style="font-family:var(--mono);font-size:9px;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;">API Integration — No System Modification Required</div>
+        <div class="api-hub-row">
+          <div class="api-lines-left">
+            <div class="api-line-item">
+              <span class="api-method post">POST</span>
+              <span class="api-endpoint">/v1/encapsulate</span>
+              <svg width="40" height="10" viewBox="0 0 50 10"><line x1="0" y1="5" x2="38" y2="5" stroke="rgba(88,166,255,0.5)" stroke-width="1.5" stroke-dasharray="4 2"/><polygon points="50,5 38,1 38,9" fill="rgba(88,166,255,0.5)"/></svg>
+            </div>
+            <div class="api-line-item">
+              <span class="api-method get">GET</span>
+              <span class="api-endpoint">/v1/token/resolve</span>
+              <svg width="40" height="10" viewBox="0 0 50 10"><line x1="0" y1="5" x2="38" y2="5" stroke="rgba(88,166,255,0.5)" stroke-width="1.5" stroke-dasharray="4 2"/><polygon points="50,5 38,1 38,9" fill="rgba(88,166,255,0.5)"/></svg>
+            </div>
+            <div class="api-line-item">
+              <span class="api-method post">POST</span>
+              <span class="api-endpoint">/v1/pipeline/run</span>
+              <svg width="40" height="10" viewBox="0 0 50 10"><line x1="0" y1="5" x2="38" y2="5" stroke="rgba(88,166,255,0.5)" stroke-width="1.5" stroke-dasharray="4 2"/><polygon points="50,5 38,1 38,9" fill="rgba(88,166,255,0.5)"/></svg>
+            </div>
+            <div class="api-line-item">
+              <span class="api-method get">GET</span>
+              <span class="api-endpoint">/v1/policy/check</span>
+              <svg width="40" height="10" viewBox="0 0 50 10"><line x1="0" y1="5" x2="38" y2="5" stroke="rgba(88,166,255,0.5)" stroke-width="1.5" stroke-dasharray="4 2"/><polygon points="50,5 38,1 38,9" fill="rgba(88,166,255,0.5)"/></svg>
+            </div>
+          </div>
+          <div class="aifc-hub">
+            <div class="pulse-ring"></div>
+            <div class="aifc-hub-name" style="font-size:13px;letter-spacing:0.02em;line-height:1.3;">AI를 사용하고<br/>싶은 팀</div>
+            <div class="aifc-hub-sub">AI Feature Connector</div>
+            <div class="aifc-hub-badge">
+              <svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#3fb950"/></svg>
+              API Gateway
+            </div>
+          </div>
+          <div style="flex:1;padding-left:16px;display:flex;flex-direction:column;gap:8px;">
+            <div style="font-family:var(--mono);font-size:9px;color:var(--text-muted);margin-bottom:4px;">Response (200 OK)</div>
+            <div style="background:rgba(63,185,80,0.08);border:1px solid rgba(63,185,80,0.3);border-radius:6px;padding:8px 10px;font-family:var(--mono);font-size:9px;color:#85e89d;line-height:1.7;">
+              {<br/>
+              &nbsp;&nbsp;"status": "encapsulated",<br/>
+              &nbsp;&nbsp;"token": "TKN-a92f...",<br/>
+              &nbsp;&nbsp;"dp_epsilon": 0.1,<br/>
+              &nbsp;&nbsp;"pii_removed": true<br/>
+              }
+            </div>
+            <div style="font-size:9px;color:var(--text-muted);font-family:var(--sans);line-height:1.5;border-left:2px solid rgba(63,185,80,0.3);padding-left:8px;">
+              기존 시스템 코드 변경 없이<br/>
+              API 호출만으로 즉시 통합
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="no-change-banner">
+        <div class="no-change-icon">✓</div>
+        <div>
+          <div style="font-family:var(--mono);font-size:11px;font-weight:700;color:#85e89d;margin-bottom:4px;">Zero System Modification — Plug-in Architecture</div>
+          <div style="font-size:10px;color:var(--text-muted);font-family:var(--sans);line-height:1.7;">
+            ERP · CRM · RAG · Legacy DB 등 <strong style="color:#85e89d;">기존 기업 시스템을 전혀 수정하지 않고</strong>,
+            단순 <strong style="color:#85e89d;">API 호출(REST / gRPC)</strong> 한 줄 추가만으로 연결됩니다.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONNECTOR: Corp -> DMZ -->
+  <div class="connector-section">
+    <div class="conn-inner">
+      <svg width="24" height="16" viewBox="0 0 24 16" class="arr-svg">
+        <line x1="12" y1="0" x2="12" y2="12" stroke="rgba(210,153,34,0.6)" stroke-width="2"/>
+        <polygon points="12,16 6,8 18,8" fill="rgba(210,153,34,0.6)"/>
+      </svg>
+      <span style="font-family:var(--mono);font-size:9px;color:var(--text-dim);">Unstructured Data In</span>
+    </div>
+  </div>
+
+  <!-- ===== ZONE 2: DMZ ===== -->
+  <div class="zone zone-dmz" style="position:relative;">
+    <div class="noise-overlay"></div>
+    <div class="zone-label">DMZ -- Demilitarized Zone</div>
+
+    <div class="step-pill step-2">STEP 2 — Differential Privacy Encapsulation</div>
+    <div class="kw-row">
+      <span class="kw kw-1"><span class="kw-num">Core 1</span>Zero Exposure</span>
+      <span class="kw kw-4"><span class="kw-num">+1</span>Structure-Preserving</span>
+    </div>
+    <div class="capsule-visual" style="margin-bottom:14px;">
+      <div class="capsule-label">Enhanced Encapsulation Layer</div>
+      <div class="row" style="align-items:center; gap:20px; flex-wrap:wrap;">
+
+        <!-- Left: incoming raw -->
+        <div style="flex:1; min-width:160px;">
+          <div class="sec-header">비정형 데이터 (Raw)</div>
+          <div class="field-group">
+            <div class="field-row">
+              <span class="fname">Customer :</span>
+              <div class="field-box blocked-field">David Lawson</div>
+            </div>
+            <div class="field-row">
+              <span class="fname">Ticket :</span>
+              <div class="field-box blocked-field">CS-4203</div>
+            </div>
+            <div class="field-row">
+              <span class="fname">Free Text :</span>
+              <div class="field-box blocked-field" style="font-size:9px;max-width:140px;">Shipping delayed 5 days, no response to inquiry sent 2 days ago</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow + DP Engine -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <svg width="80" height="20" viewBox="0 0 80 20">
+            <line x1="0" y1="10" x2="68" y2="10" stroke="rgba(210,153,34,0.7)" stroke-width="2" stroke-dasharray="4 2"/>
+            <polygon points="80,10 65,4 65,16" fill="rgba(210,153,34,0.7)"/>
+          </svg>
+          <div style="background:rgba(210,153,34,0.12);border:1.5px solid rgba(210,153,34,0.5);border-radius:8px;padding:10px 14px;text-align:center;min-width:150px;">
+            <div style="font-family:var(--mono);font-size:11px;font-weight:700;color:#e3b341;margin-bottom:6px;">Differential Privacy Engine</div>
+            <div class="dp-badge" style="margin-bottom:6px;width:100%;justify-content:center;">
+              <div class="dp-dot"></div>
+              epsilon-DP Active
+            </div>
+            <div style="font-size:9px;color:var(--text-muted);line-height:1.6;text-align:left;">
+              - Noise Injection (Laplace)<br/>
+              - k-Anonymity Enforcement<br/>
+              - Semantic Tokenization<br/>
+              - Free-Text NER Masking
+            </div>
+            <div style="margin-top:8px;padding-top:6px;border-top:1px solid rgba(210,153,34,0.2);font-family:var(--mono);font-size:9px;color:#e3b341;">
+              단순 캡슐링 이상의 보호 보장
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <svg width="60" height="20" viewBox="0 0 60 20">
+            <line x1="0" y1="10" x2="48" y2="10" stroke="rgba(63,185,80,0.7)" stroke-width="2"/>
+            <polygon points="60,10 45,4 45,16" fill="rgba(63,185,80,0.7)"/>
+          </svg>
+          <span class="tag tag-green" style="font-size:8px;">Protected</span>
+        </div>
+
+        <!-- Right: protected output -->
+        <div style="flex:1; min-width:160px;">
+          <div class="sec-header">보호된 데이터 (Protected)</div>
+          <div class="field-group">
+            <div class="field-row">
+              <span class="fname">Name :</span>
+              <div class="field-box masked">* * * * * * * *</div>
+              <div class="allowed-mark">v</div>
+            </div>
+            <div class="field-row">
+              <span class="fname">Champ Id :</span>
+              <div class="field-box masked">C S - * * * *</div>
+              <div class="allowed-mark">v</div>
+            </div>
+            <div class="field-row">
+              <span class="fname">Free Text :</span>
+              <div class="field-box" style="font-size:9px;color:#85e89d;background:var(--green-soft);border-color:rgba(63,185,80,0.3);">[tokenized...]</div>
+              <div class="allowed-mark">v</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DP Guarantee Note -->
+    <div style="background:rgba(210,153,34,0.07);border:1px solid rgba(210,153,34,0.25);border-radius:8px;padding:10px 16px;display:flex;align-items:flex-start;gap:10px;">
+      <svg width="16" height="16" viewBox="0 0 16 16" style="flex-shrink:0;margin-top:2px;">
+        <path d="M8 1L10.2 5.8L15.5 6.6L11.75 10.2L12.7 15.5L8 13L3.3 15.5L4.25 10.2L0.5 6.6L5.8 5.8Z" fill="rgba(210,153,34,0.3)" stroke="#e3b341" stroke-width="1"/>
+      </svg>
+      <div>
+        <div style="font-family:var(--mono);font-size:11px;font-weight:700;color:#e3b341;margin-bottom:4px;">핵심 보안 원칙 (DMZ Guarantee)</div>
+        <div style="font-size:10px;color:var(--text-muted);line-height:1.7;font-family:var(--sans);">
+          DMZ 내부의 비정형 데이터를 <strong style="color:#e3b341;">단순 캡슐링을 넘어</strong>, 
+          <strong style="color:#e3b341;">차등정보보호 기술(Differential Privacy)</strong>을 탑재하여 
+          데이터 노출 시에도 원본 개인정보가 수학적으로 복원 불가능하도록 보장합니다.
+          노이즈 주입 + NER 마스킹 + k-익명성 조합으로 <strong style="color:#e3b341;">노출 위험도를 극한으로 최소화</strong>합니다.
+        </div>
+      </div>
+    </div>
+
+    <!-- AI를 사용하고 싶은 팀 Box inside DMZ — wrapped in Corporate sub-zone -->
+    <div style="margin-top:14px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <div class="aifc-corp-zone">
+        <div class="aifc-corp-zone-label">Corporate Internal &#8212; Same Org</div>
+        <div class="aifc-box">
+          <div class="aifc-name" style="font-size:13px;letter-spacing:0.02em;line-height:1.3;">AI를 사용하고<br/>싶은 팀</div>
+          <div class="aifc-sub">AI Feature Connector</div>
+          <div style="margin-top:8px;font-size:9px;color:var(--text-muted);font-family:var(--mono);">Domestic Region (i.e., EU Region)</div>
+          <div class="germany-tag" style="margin-top:4px;font-size:9px;">
+            <svg width="12" height="8" viewBox="0 0 12 8">
+              <rect width="12" height="2.6" fill="#222"/>
+              <rect y="2.6" width="12" height="2.7" fill="#c00"/>
+              <rect y="5.3" width="12" height="2.7" fill="#f90"/>
+            </svg>
+            e.g., Germany 소재
+          </div>
+        </div>
+      </div>
+      <div style="flex:1;min-width:200px;">
+        <div style="font-size:10px;color:var(--text-muted);font-family:var(--sans);line-height:1.7;">
+          AI를 사용하고 싶은 팀은 <strong style="color:rgba(255,120,117,0.85);">같은 조직 내</strong> DMZ에서 차등보호된 데이터를 수집·집계하여<br/>
+          외부 AI로 안전하게 전달하는 중간 커넥터 역할을 합니다.<br/>
+          <span style="color:#e3b341;">Domestic Region 소재 (e.g., Germany) / EU 규정 준수(GDPR)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONNECTOR: DMZ -> AI 사용팀 -->
+  <div class="connector-section">
+    <div class="conn-inner">
+      <span style="font-family:var(--mono);font-size:9px;color:var(--text-dim);">Protected Data Out</span>
+      <svg width="24" height="16" viewBox="0 0 24 16" class="arr-svg">
+        <line x1="12" y1="0" x2="12" y2="12" stroke="rgba(63,185,80,0.6)" stroke-width="2"/>
+        <polygon points="12,16 6,8 18,8" fill="rgba(63,185,80,0.6)"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ===== ZONE 3: AI 사용팀 ===== -->
+  <div class="zone zone-ai">
+    <div class="zone-label">In-House Team</div>
+
+    <div class="step-pill step-3">STEP 3 — AI Processing</div>
+    <div class="kw-row">
+      <span class="kw kw-1"><span class="kw-num">Core 1</span>Zero Exposure</span>
+      <span class="kw kw-4"><span class="kw-num">+1</span>Structure-Preserving</span>
+    </div>
+
+    <div class="row" style="align-items:flex-start;gap:20px;flex-wrap:wrap;">
+
+      <!-- LLM Proxy + Multi-LLM -->
+      <div style="flex:1;min-width:220px;">
+        <div class="sec-header">LLM Pipeline</div>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <div style="background:rgba(255,77,79,0.08);border:1.5px solid rgba(255,77,79,0.3);border-radius:8px;padding:10px 14px;text-align:center;">
+            <div style="font-family:var(--mono);font-size:11px;font-weight:700;color:#ff7875;">LLM-a-Proxy</div>
+            <div style="font-size:9px;color:var(--text-muted);margin-top:3px;">Anonymized Routing</div>
+          </div>
+          <svg width="30" height="12" viewBox="0 0 30 12">
+            <line x1="0" y1="6" x2="22" y2="6" stroke="rgba(88,166,255,0.6)" stroke-width="1.5"/>
+            <polygon points="30,6 20,2 20,10" fill="rgba(88,166,255,0.6)"/>
+          </svg>
+          <!-- Multi-LLM list -->
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:7px 12px;min-width:160px;">
+              <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7.5" fill="#10a37f"/><path d="M4.5 8.5c0-2 1.5-3.5 3.5-3.5s3.5 1.5 3.5 3.5-1.5 3.5-3.5 3.5" fill="none" stroke="white" stroke-width="1.4"/><circle cx="8" cy="8" r="1.5" fill="white"/></svg>
+              <span style="font-family:var(--mono);font-size:11px;font-weight:600;color:var(--text);">ChatGPT / OpenAI</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:7px 12px;min-width:160px;">
+              <svg width="16" height="16" viewBox="0 0 16 16"><polygon points="8,1 15,5.5 15,10.5 8,15 1,10.5 1,5.5" fill="none" stroke="#d4570d" stroke-width="1.5"/><polygon points="8,4 12,6.5 12,9.5 8,12 4,9.5 4,6.5" fill="rgba(212,87,13,0.2)" stroke="#d4570d" stroke-width="1"/></svg>
+              <span style="font-family:var(--mono);font-size:11px;font-weight:600;color:var(--text);">Claude / Anthropic</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:7px 12px;min-width:160px;">
+              <svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 2l2 4 4 .6-3 2.8.7 4L8 11.3l-3.7 2.1.7-4L2 6.6 6 6z" fill="none" stroke="#4285f4" stroke-width="1.3"/><circle cx="8" cy="8" r="2" fill="rgba(52,168,83,0.4)"/></svg>
+              <span style="font-family:var(--mono);font-size:11px;font-weight:600;color:var(--text);">Gemini / Google</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:7px 12px;min-width:160px;">
+              <svg width="16" height="16" viewBox="0 0 16 16"><line x1="8" y1="1" x2="8" y2="15" stroke="#6366f1" stroke-width="1.5"/><line x1="1" y1="8" x2="15" y2="8" stroke="#6366f1" stroke-width="1.5"/><line x1="3" y1="3" x2="13" y2="13" stroke="#6366f1" stroke-width="1"/><line x1="13" y1="3" x2="3" y2="13" stroke="#6366f1" stroke-width="1"/></svg>
+              <span style="font-family:var(--mono);font-size:11px;font-weight:600;color:var(--text);">Perplexity</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1.5px dashed var(--border);border-radius:8px;padding:7px 12px;min-width:160px;">
+              <span style="font-family:var(--mono);font-size:13px;font-weight:700;color:var(--text-muted);">···</span>
+              <span style="font-family:var(--mono);font-size:11px;font-weight:600;color:var(--text-muted);">Any LLM API</span>
+            </div>
+          </div>
+        </div>
+        <div class="info-note" style="margin-top:8px;">
+          AI 사용팀은 원본 DB 데이터에 직접 접근하지 않으며,<br/>
+          차등정보보호 처리된 데이터만 수신합니다.
+        </div>
+      </div>
+
+      <!-- PDESC / ISOLA -->
+      <div style="flex:1;min-width:200px;">
+        <div class="sec-header">Privacy Isolation Module</div>
+        <div class="pdesc-box">
+          <div class="pdesc-title">PDESC / ISOLA</div>
+          <div class="pdesc-row">
+            <div class="allowed-mark" style="width:16px;height:16px;font-size:10px;">v</div>
+            <span>Privacy Descriptor</span>
+          </div>
+          <div class="pdesc-row">
+            <div class="allowed-mark" style="width:16px;height:16px;font-size:10px;">v</div>
+            <span>Isolated Computation Zone</span>
+          </div>
+          <div class="pdesc-row">
+            <div class="allowed-mark" style="width:16px;height:16px;font-size:10px;">v</div>
+            <span>Output De-identification</span>
+          </div>
+          <hr class="div-line"/>
+          <div style="font-size:9px;color:var(--text-muted);">원본 복원 시도 차단 / 출력 검증</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONNECTOR: AI Team -> Local Reconstruction -->
+  <div class="connector-section">
+    <div class="conn-inner">
+      <span style="font-family:var(--mono);font-size:9px;color:var(--text-dim);">AI Response (tokenized)</span>
+      <svg width="24" height="16" viewBox="0 0 24 16" class="arr-svg">
+        <line x1="12" y1="0" x2="12" y2="12" stroke="rgba(63,185,80,0.6)" stroke-width="2"/>
+        <polygon points="12,16 6,8 18,8" fill="rgba(63,185,80,0.6)"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ===== ZONE 4: LOCAL AUTO RECONSTRUCTION ===== -->
+  <div class="zone zone-eu">
+    <div class="zone-label">Local — Auto Reconstruction</div>
+    <div class="step-pill step-4">STEP 4 — Local Auto Reconstruction</div>
+    <div class="kw-row">
+      <span class="kw kw-2"><span class="kw-num">Core 2</span>Restoration</span>
+      <span class="kw kw-3"><span class="kw-num">Core 3</span>Enterprise Context</span>
+    </div>
+
+    <div class="row" style="align-items:flex-start;gap:20px;flex-wrap:wrap;">
+
+      <!-- Reconstruction flow -->
+      <div style="flex:2;min-width:280px;">
+        <div class="sec-header">Token → Original Value 복원 흐름</div>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+          <!-- Input: tokenized response -->
+          <div style="flex:1;min-width:130px;">
+            <div style="font-size:9px;color:var(--d-text-muted);font-family:var(--mono);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.08em;">AI 응답 (tokenized)</div>
+            <div class="field-group">
+              <div class="field-row">
+                <span class="fname">Customer :</span>
+                <div class="field-box masked">TKN-a92f</div>
+              </div>
+              <div class="field-row">
+                <span class="fname">Ticket :</span>
+                <div class="field-box masked">TKN-b31c</div>
+              </div>
+              <div class="field-row">
+                <span class="fname">Details :</span>
+                <div class="field-box masked" style="font-size:8px;">TKN-detail-7f2a...</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Arrow + Engine -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <svg width="60" height="16" viewBox="0 0 80 20">
+              <line x1="0" y1="10" x2="66" y2="10" stroke="rgba(63,185,80,0.7)" stroke-width="2"/>
+              <polygon points="80,10 65,4 65,16" fill="rgba(63,185,80,0.7)"/>
+            </svg>
+            <div style="background:rgba(63,185,80,0.1);border:1.5px solid rgba(63,185,80,0.4);border-radius:7px;padding:8px 12px;text-align:center;min-width:130px;">
+              <div style="font-family:var(--mono);font-size:10px;font-weight:700;color:#85e89d;margin-bottom:5px;">Auto Reconstruction</div>
+              <div style="font-size:8px;color:var(--text-muted);line-height:1.6;text-align:left;">
+                — Token Map Lookup<br/>
+                — Original Value Restore<br/>
+                — Context Re-binding<br/>
+                — Output Validation
+              </div>
+              <div style="margin-top:6px;padding-top:5px;border-top:1px solid rgba(63,185,80,0.2);font-family:var(--mono);font-size:8px;color:#85e89d;">
+                완전 로컬 처리 · 외부 전송 없음
+              </div>
+            </div>
+          </div>
+
+          <!-- Arrow -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
+            <svg width="44" height="16" viewBox="0 0 60 20">
+              <line x1="0" y1="10" x2="46" y2="10" stroke="rgba(63,185,80,0.7)" stroke-width="2"/>
+              <polygon points="60,10 45,4 45,16" fill="rgba(63,185,80,0.7)"/>
+            </svg>
+            <span class="tag tag-green" style="font-size:7px;">Restored</span>
+          </div>
+
+          <!-- Output: original values -->
+          <div style="flex:1;min-width:130px;">
+            <div style="font-size:9px;color:#85e89d;font-family:var(--mono);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.08em;">복원된 최종 출력</div>
+            <div class="field-group">
+              <div class="field-row">
+                <span class="fname">Customer :</span>
+                <div class="field-box" style="color:#85e89d;background:var(--green-soft);border-color:rgba(63,185,80,0.3);">David Lawson</div>
+                <div class="allowed-mark">v</div>
+              </div>
+              <div class="field-row">
+                <span class="fname">Ticket :</span>
+                <div class="field-box" style="color:#85e89d;background:var(--green-soft);border-color:rgba(63,185,80,0.3);">CS-4203</div>
+                <div class="allowed-mark">v</div>
+              </div>
+              <div class="field-row">
+                <span class="fname">Details :</span>
+                <div class="field-box" style="font-size:8px;color:#85e89d;background:var(--green-soft);border-color:rgba(63,185,80,0.3);">Shipping delayed 5 days, no response to inquiry sent 2 days ago</div>
+                <div class="allowed-mark">v</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guarantee note -->
+        <div style="background:rgba(63,185,80,0.07);border:1px solid rgba(63,185,80,0.25);border-radius:7px;padding:9px 14px;font-size:9px;color:var(--text-muted);font-family:var(--sans);line-height:1.7;">
+          ✓ <strong style="color:#85e89d;">복원은 오직 내부에서만 발생</strong> — 토큰 맵은 로컬 저장소에만 존재하며, 외부 AI는 절대 원본에 접근하지 못합니다.<br/>
+          ✓ AI 응답의 토큰을 원본 값으로 자동 치환하여 <strong style="color:#85e89d;">Business-Ready 출력</strong>을 즉시 제공합니다.
+        </div>
+      </div>
+
+      <!-- Right: tags only, no GDPR -->
+      <div style="flex:1;min-width:160px;display:flex;flex-direction:column;gap:10px;">
+        <div class="sec-header">Output Properties</div>
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <div style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:7px 10px;">
+            <div class="allowed-mark" style="width:16px;height:16px;font-size:9px;">v</div>
+            <span style="font-size:10px;font-family:var(--mono);">Original Values Restored</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:7px 10px;">
+            <div class="allowed-mark" style="width:16px;height:16px;font-size:9px;">v</div>
+            <span style="font-size:10px;font-family:var(--mono);">Zero External Exposure</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:7px 10px;">
+            <div class="allowed-mark" style="width:16px;height:16px;font-size:9px;">v</div>
+            <span style="font-size:10px;font-family:var(--mono);">Context Fully Preserved</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:7px 10px;">
+            <div class="allowed-mark" style="width:16px;height:16px;font-size:9px;">v</div>
+            <span style="font-size:10px;font-family:var(--mono);">Business-Ready Output</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;">
+          <span class="tag tag-green">Auto Restore</span>
+          <span class="tag tag-green">Local Only</span>
+          <span class="tag tag-blue">Data Residency</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── KEYWORD LEGEND ── -->
+<div style="max-width:1100px;margin:16px auto 0;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 20px;">
+  <div style="font-family:var(--mono);font-size:9px;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;">Core Capabilities</div>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;">
+    <div style="display:flex;align-items:flex-start;gap:8px;flex:1;min-width:180px;">
+      <span class="kw kw-1" style="flex-shrink:0;"><span class="kw-num">Core 1</span>Zero Exposure</span>
+      <span style="font-size:9px;color:var(--text-muted);font-family:var(--sans);line-height:1.5;">외부 AI에 원본 데이터가 절대 노출되지 않음. 토큰화 + DP 처리로 수학적 복원 불가.</span>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:8px;flex:1;min-width:180px;">
+      <span class="kw kw-2" style="flex-shrink:0;"><span class="kw-num">Core 2</span>Restoration</span>
+      <span style="font-size:9px;color:var(--text-muted);font-family:var(--sans);line-height:1.5;">AI 응답의 토큰을 내부에서만 원본 값으로 자동 복원. 외부로 나간 데이터는 복원 불가.</span>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:8px;flex:1;min-width:180px;">
+      <span class="kw kw-3" style="flex-shrink:0;"><span class="kw-num">Core 3</span>Enterprise Context</span>
+      <span style="font-size:9px;color:var(--text-muted);font-family:var(--sans);line-height:1.5;">기업 내부 환경(온프레미스/프라이빗)에서 실행. 데이터가 조직 경계를 벗어나지 않음.</span>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:8px;flex:1;min-width:180px;">
+      <span class="kw kw-4" style="flex-shrink:0;"><span class="kw-num">+1</span>Structure-Preserving</span>
+      <span style="font-size:9px;color:var(--text-muted);font-family:var(--sans);line-height:1.5;">토큰화 후에도 데이터 구조·형식·의미 맥락을 유지. AI 처리 품질 손상 없음.</span>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:8px;flex:1;min-width:180px;">
+      <span class="kw kw-5" style="flex-shrink:0;"><span class="kw-num">+2</span>Enterprise Env Execution</span>
+      <span style="font-size:9px;color:var(--text-muted);font-family:var(--sans);line-height:1.5;">조직 정책·권한·도메인 컨텍스트가 AI 처리 전반을 제어. 거버넌스 완전 유지.</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

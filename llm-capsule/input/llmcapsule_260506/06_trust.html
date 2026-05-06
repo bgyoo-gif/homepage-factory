@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trust &amp; Compliance | LLM Capsule — Enterprise-Grade Security</title>
+<meta name="description" content="LLM Capsule trust center. ISO 27001, ISO 42001, KISA Fast Track, GS Cert. GDPR / HIPAA / SOX / EU AI Act compliance mapping. DPA template, vendor security questionnaire, audit framework. Built for regulated enterprise environments.">
+<meta name="keywords" content="LLM Capsule trust, AI compliance, GDPR AI, HIPAA AI, SOX AI, EU AI Act, ISO 27001 AI, ISO 42001 AI, AI governance">
+<link rel="canonical" href="https://llmcapsule.ai/trust">
+
+<link rel="stylesheet" href="design-tokens.css">
+<style>
+.page-hero { padding: clamp(80px, 10vw, 140px) 0 clamp(48px, 6vw, 80px); background: linear-gradient(180deg, #fafbff 0%, #ffffff 100%); border-bottom: 1px solid var(--c-rule); }
+.page-hero h1 { max-width: 920px; margin-bottom: 20px; }
+.page-hero h1 strong { color: var(--c-primary); }
+.page-hero__sub { font-size: 19px; color: var(--c-ink-soft); max-width: 760px; line-height: 1.6; margin-bottom: 32px; }
+
+.image-spec { background: rgba(245, 158, 11, 0.08); border-left: 3px solid var(--c-amber); padding: 12px 16px; margin: 16px 0; font-family: var(--f-mono); font-size: 11px; color: var(--c-amber-dark); line-height: 1.55; border-radius: 0 4px 4px 0; }
+.image-spec strong { color: var(--c-amber-dark); display: block; margin-bottom: 4px; letter-spacing: 0.05em; text-transform: uppercase; font-size: 10px; }
+
+/* Cred grid */
+.cred-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+@media (max-width: 1100px) { .cred-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 700px) { .cred-grid { grid-template-columns: repeat(2, 1fr); } }
+.cred { background: #fff; border: 1px solid var(--c-rule); border-radius: var(--r-md); padding: 24px 18px; text-align: center; min-height: 160px; display: flex; flex-direction: column; justify-content: center; gap: 6px; }
+.cred__type { font-family: var(--f-mono); font-size: 10px; color: var(--c-muted); letter-spacing: 0.1em; font-weight: 700; text-transform: uppercase; }
+.cred__name { font-size: 13px; font-weight: 700; line-height: 1.3; }
+.cred__d { font-size: 11px; color: var(--c-ink-soft); line-height: 1.4; }
+
+/* Compliance matrix */
+.comp-matrix { width: 100%; border-collapse: collapse; background: #fff; border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--c-rule); }
+.comp-matrix th, .comp-matrix td { padding: 14px 16px; text-align: left; font-size: 13px; border-bottom: 1px solid var(--c-rule); vertical-align: top; }
+.comp-matrix th { background: var(--c-bg-soft); font-size: 11px; color: var(--c-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+.comp-matrix td:first-child { font-weight: 700; color: var(--c-ink); width: 22%; background: #fafbff; }
+.comp-matrix td small { color: var(--c-muted); font-weight: 400; display: block; margin-top: 4px; font-size: 11px; }
+
+/* Audit cards */
+.audit-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+@media (max-width: 1100px) { .audit-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .audit-grid { grid-template-columns: 1fr; } }
+.audit-card { background: #fff; border: 1px solid var(--c-rule); border-radius: var(--r-md); padding: 22px; border-top: 3px solid var(--audit-color, var(--c-primary)); }
+.audit-card--1 { --audit-color: var(--c-primary); }
+.audit-card--2 { --audit-color: var(--c-teal); }
+.audit-card--3 { --audit-color: var(--c-amber); }
+.audit-card--4 { --audit-color: var(--c-coral); }
+.audit-card--5 { --audit-color: var(--c-bg-dark); }
+.audit-card__h { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.audit-card__d { font-size: 12px; color: var(--c-ink-soft); line-height: 1.55; }
+
+/* Downloads */
+.dl-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 700px) { .dl-grid { grid-template-columns: 1fr; } }
+.dl-card { background: #fff; border: 1px solid var(--c-rule); border-radius: var(--r-md); padding: 28px; display: flex; flex-direction: column; gap: 12px; }
+.dl-card__icon { font-size: 32px; }
+.dl-card__h { font-size: 17px; font-weight: 700; }
+.dl-card__d { font-size: 13px; color: var(--c-ink-soft); line-height: 1.55; flex: 1; }
+.dl-card__chip { font-family: var(--f-mono); font-size: 10px; padding: 4px 10px; background: var(--c-amber-soft); color: var(--c-amber-dark); border-radius: 999px; align-self: flex-start; letter-spacing: 0.05em; font-weight: 700; }
+.dl-card__cta { padding: 10px 18px; background: var(--c-primary); color: #fff; border-radius: 999px; text-decoration: none; font-size: 13px; font-weight: 600; align-self: flex-start; }
+
+.admin-shot { background: var(--c-bg-dark); border-radius: var(--r-lg); padding: 40px; min-height: 360px; display: flex; align-items: center; justify-content: center; color: #c8c4f7; font-family: var(--f-mono); font-size: 12px; line-height: 1.7; text-align: center; border: 1px dashed rgba(255,255,255,0.1); }
+
+.cta-strip { background: var(--c-bg-dark); color: #fff; padding: 64px var(--s-page); text-align: center; }
+.cta-strip h2 { color: #fff; margin-bottom: 24px; }
+.cta-strip p { color: #c8c4f7; max-width: 640px; margin: 0 auto 32px; font-size: 17px; }
+</style>
+</head>
+<body>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow">Trust &amp; Compliance</div>
+    <h1>Enterprise-grade <strong>architecture</strong> for security and compliance review</h1>
+    <p class="page-hero__sub">LLM Capsule is built for regulated enterprise environments. Certified, auditable, and designed for data sovereignty. This page is for security, compliance, and procurement teams evaluating how the architecture maps to your review framework.</p>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+      <a class="btn btn--primary" href="/request-a-demo">Request a Demo</a>
+      <a class="btn btn--ghost" href="/architecture">View Architecture</a>
+    </div>
+  </div>
+</section>
+
+<!-- Cred grid: 12 certifications -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Certifications &amp; recognition</div>
+      <h2>12 certifications, awards, and global recognitions</h2>
+      <p>From international standards (ISO/IEC) to national certifications (KISA, GS) and category recognition (Gartner, Deutsche Telekom, AWS).</p>
+    </div>
+
+    <div class="cred-grid">
+      <article class="cred" data-replace="cred-iso27001">
+        <div class="cred__type">ISO</div>
+        <div class="cred__name">ISO/IEC 27001</div>
+        <div class="cred__d">Information Security Management</div>
+      </article>
+      <article class="cred" data-replace="cred-iso42001">
+        <div class="cred__type">ISO</div>
+        <div class="cred__name">ISO/IEC 42001</div>
+        <div class="cred__d">AI Management System</div>
+      </article>
+      <article class="cred" data-replace="cred-kisa">
+        <div class="cred__type">KISA</div>
+        <div class="cred__name">KISA Fast Track</div>
+        <div class="cred__d">Korea Information Security</div>
+      </article>
+      <article class="cred" data-replace="cred-gs">
+        <div class="cred__type">GS</div>
+        <div class="cred__name">GS Certification</div>
+        <div class="cred__d">Good Software (Korea)</div>
+      </article>
+      <article class="cred" data-replace="cred-msit">
+        <div class="cred__type">AWARD</div>
+        <div class="cred__name">Security Innovation Award</div>
+        <div class="cred__d">MSIT (Korea)</div>
+      </article>
+      <article class="cred" data-replace="cred-tchallenge">
+        <div class="cred__type">RECOGNITION</div>
+        <div class="cred__name">T Challenge 2026 — Top 12</div>
+        <div class="cred__d">Deutsche Telekom · Data Security &amp; Governance</div>
+      </article>
+      <article class="cred" data-replace="cred-medical">
+        <div class="cred__type">AWARD</div>
+        <div class="cred__name">AI Medical Innovation</div>
+        <div class="cred__d">Healthcare AI category</div>
+      </article>
+      <article class="cred" data-replace="cred-swc">
+        <div class="cred__type">RECOGNITION</div>
+        <div class="cred__name">Startup World Cup</div>
+        <div class="cred__d">Global recognition</div>
+      </article>
+      <article class="cred" data-replace="cred-nextrise">
+        <div class="cred__type">RECOGNITION</div>
+        <div class="cred__name">Next Rise Global Innovator</div>
+        <div class="cred__d">Korea-Global innovation showcase</div>
+      </article>
+      <article class="cred" data-replace="cred-gartner">
+        <div class="cred__type">VENDOR</div>
+        <div class="cred__name">Gartner Vendor</div>
+        <div class="cred__d">AI / data category recognition</div>
+      </article>
+      <article class="cred" data-replace="cred-aix">
+        <div class="cred__type">RECOGNITION</div>
+        <div class="cred__name">Emerging AI+X Top 100</div>
+        <div class="cred__d">Korea AI excellence</div>
+      </article>
+      <article class="cred" data-replace="cred-aws">
+        <div class="cred__type">MARKETPLACE</div>
+        <div class="cred__name">AWS Marketplace</div>
+        <div class="cred__d">Listed and procurable</div>
+      </article>
+    </div>
+
+    <div class="image-spec">
+      <strong>[IMAGE_SPEC] Cred logo grid (12 items)</strong>
+      Asset: 12 individual logo PNGs / SVGs (one per cred card)
+      Subject: Reuse the existing live llmcapsule.ai/trust cred logo grid assets (KISA, GS, ISO 27001, ISO 42001 + award icons + recognition logos). Live site already has visual treatment with laurel framing for AWARD / RECOGNITION categories.
+      Aspect: 1:1 each · ~120x120px each
+      Replace: <code>data-replace="cred-{id}"</code> on each card
+      Source: existing assets on live llmcapsule.ai/trust page
+    </div>
+  </div>
+</section>
+
+<!-- Compliance mapping matrix -->
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Compliance frameworks</div>
+      <h2>How LLM Capsule capabilities map to GDPR / HIPAA / SOX / EU AI Act review workflows</h2>
+      <p>LLM Capsule provides architectural controls that support GDPR, HIPAA, SOX, and EU AI Act review workflows. The matrix below maps each capability to the relevant article or section so compliance, security, and procurement teams have a starting reference. This is not a compliance certification — final compliance determination is the customer's, in their own deployment context.</p>
+    </div>
+
+    <table class="comp-matrix">
+      <thead>
+        <tr>
+          <th>LLM Capsule capability</th>
+          <th>GDPR</th>
+          <th>HIPAA</th>
+          <th>SOX</th>
+          <th>EU AI Act</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Local encapsulation (data never leaves)</td>
+          <td>Art. 5 (lawfulness), Art. 32 (security of processing) <small>Pseudonymization before transmission</small></td>
+          <td>164.502(d), 164.514(b) <small>De-identification methodology</small></td>
+          <td>Section 404 <small>Internal control over data flow</small></td>
+          <td>Art. 10 (data governance), Art. 15 (cybersecurity) <small>Data quality and protection requirements</small></td>
+        </tr>
+        <tr>
+          <td>Local restoration (token vault)</td>
+          <td>Art. 32 <small>Pseudonymization is reversible only inside controlled environment</small></td>
+          <td>164.514(c) <small>Re-identification key separation</small></td>
+          <td>Section 404 <small>Authorized re-identification only</small></td>
+          <td>Art. 10 <small>Reversibility for legitimate use only</small></td>
+        </tr>
+        <tr>
+          <td>Audit logs (every event)</td>
+          <td>Art. 30 <small>Records of processing activities</small></td>
+          <td>164.312(b) <small>Audit controls</small></td>
+          <td>Section 404, 802 <small>Internal control + record retention</small></td>
+          <td>Art. 12, 13, 19 <small>Logging, transparency, conformity</small></td>
+        </tr>
+        <tr>
+          <td>Policy versioning + time-shifting</td>
+          <td>Art. 5(2), 24 <small>Accountability principle</small></td>
+          <td>164.316 <small>Policies and procedures</small></td>
+          <td>Section 302, 404 <small>Internal control over policy changes</small></td>
+          <td>Art. 17, 18 <small>Quality and risk management system</small></td>
+        </tr>
+        <tr>
+          <td>RBAC + scope</td>
+          <td>Art. 32 <small>Access control</small></td>
+          <td>164.308(a)(4), 164.312(a) <small>Workforce security + access control</small></td>
+          <td>Section 404 <small>Segregation of duties</small></td>
+          <td>Art. 14 <small>Human oversight</small></td>
+        </tr>
+        <tr>
+          <td>On-prem / Path B execution</td>
+          <td>Art. 44, Chapter V <small>International transfer restriction (avoidance)</small></td>
+          <td>164.308(a)(8) <small>Contingency plan, environment control</small></td>
+          <td>Section 404 <small>Environment control</small></td>
+          <td>Art. 25 <small>Conformity assessment when high-risk</small></td>
+        </tr>
+        <tr>
+          <td>DPA, SCCs, Vendor Security</td>
+          <td>Art. 28 <small>Processor obligations</small></td>
+          <td>BAA equivalent <small>Business associate framework</small></td>
+          <td>Auditor reliance <small>Vendor management</small></td>
+          <td>Art. 28 <small>Provider obligations</small></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Audit features -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Audit framework</div>
+      <h2>What the audit log captures</h2>
+      <p>Every event in the LLM Capsule lifecycle is logged with structured metadata — ready for review by privacy, security, and compliance teams.</p>
+    </div>
+
+    <div class="audit-grid">
+      <article class="audit-card audit-card--1">
+        <h3 class="audit-card__h">Detection events</h3>
+        <p class="audit-card__d">Every detection: which marker, which document, which version, confidence, timestamp. Reproducible across policy versions.</p>
+      </article>
+      <article class="audit-card audit-card--2">
+        <h3 class="audit-card__h">Policy versions</h3>
+        <p class="audit-card__d">Yesterday's policy archived, today's enforced. Diff visible. Time-shifting markers — query historical decisions under historical policy.</p>
+      </article>
+      <article class="audit-card audit-card--3">
+        <h3 class="audit-card__h">Token mappings</h3>
+        <p class="audit-card__d">Local token vault never leaves. Token issuance + retrieval logged with workflow ID and user identity. Vault encrypted at rest.</p>
+      </article>
+      <article class="audit-card audit-card--4">
+        <h3 class="audit-card__h">Detection accuracy</h3>
+        <p class="audit-card__d">98.1% baseline detection rate measured on industry benchmarks. Per-deployment evaluation against your own document corpus.</p>
+      </article>
+      <article class="audit-card audit-card--5">
+        <h3 class="audit-card__h">Model + path routing</h3>
+        <p class="audit-card__d">Which workflow routed to which model on which path (A external / B on-prem). Full per-event traceability for regulator review.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Admin console screenshot -->
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Admin console</div>
+      <h2>The control surface for security and compliance teams</h2>
+      <p>One console for policies, audit, detection accuracy, and deployment health.</p>
+    </div>
+
+    <div class="admin-shot" data-replace="admin-console">
+      Admin Console screenshot · same asset as 02_product page
+      <br><br>
+      Tabs: Audit · Policies · Tokens · Detection · Models<br>
+      Live event stream + policy version diff + detection accuracy chart
+    </div>
+    <div class="image-spec">
+      <strong>[IMAGE_SPEC] Admin console</strong>
+      Asset: PNG screenshot of LLM Capsule admin console
+      Subject: Same admin console asset used on 02_product page (Audit/Policies/Tokens/Detection/Models tabs visible, live event stream)
+      Aspect: 16:9 · ~960x540px
+      Replace: <code>data-replace="admin-console"</code>
+      Note: reuse of 02_product asset
+    </div>
+  </div>
+</section>
+
+<!-- Downloads (gated) -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Compliance downloads</div>
+      <h2>Documentation for procurement and compliance</h2>
+      <p>The documents your legal, security, and procurement teams need to move forward. Form-gated to coordinate with Sales / Customer Success on questions.</p>
+    </div>
+
+    <div class="dl-grid">
+      <article class="dl-card">
+        <div class="dl-card__icon">📄</div>
+        <span class="dl-card__chip">FORM-GATED · 1 BUSINESS DAY</span>
+        <h3 class="dl-card__h">Data Processing Agreement (DPA) Template</h3>
+        <p class="dl-card__d">CUBIG's standard DPA template aligned with GDPR Article 28 obligations. Includes Standard Contractual Clauses (SCCs) for international transfers. Customizable for sector-specific requirements.</p>
+        <a class="dl-card__cta" href="/request-dpa">Request DPA →</a>
+      </article>
+      <article class="dl-card">
+        <div class="dl-card__icon">📋</div>
+        <span class="dl-card__chip">FORM-GATED · 1 BUSINESS DAY</span>
+        <h3 class="dl-card__h">Vendor Security Questionnaire</h3>
+        <p class="dl-card__d">Pre-filled CUBIG responses to standard SIG, CAIQ, and SOC2 vendor security questionnaires. For procurement and security review teams. Includes architectural diagrams and audit framework details.</p>
+        <a class="dl-card__cta" href="/request-vendor-questionnaire">Request Questionnaire →</a>
+      </article>
+    </div>
+    <div class="image-spec">
+      <strong>Note on form-gating</strong>
+      Both downloads are form-gated. The form captures: name, email, company, role, intended use case (POC / vendor evaluation / RFP / regulatory review). Sales / Customer Success follows up within one business day with the document and an offer to schedule a deployment-fit call.
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <h2>Compliance, security, and procurement teams welcome.</h2>
+  <p>Bring your regulatory profile, your standard vendor security questionnaire, and your DPA template. We respond inside one business day.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a class="btn btn--invert" href="/request-a-demo">Request a Live Demo</a>
+    <a class="btn btn--invert-ghost" href="/architecture" style="color:#fff;">View Architecture</a>
+    <a class="btn btn--invert-ghost" href="/resources" style="color:#fff;">Browse Resources</a>
+  </div>
+</section>
+
+</body>
+</html>
