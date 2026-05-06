@@ -214,17 +214,7 @@ export default function Section03_InteractiveTour({
           grid-template-columns: 1fr 1.3fr;
         }
 
-        .s3-step--even {
-          grid-template-columns: 1.3fr 1fr;
-        }
-
-        .s3-step--even .s3-step__text {
-          order: 2;
-        }
-
-        .s3-step--even .s3-step__visual {
-          order: 1;
-        }
+        /* 모든 step: text 좌측, screenshot 우측 (교차 레이아웃 제거) */
 
         .s3-step__text {
           padding: 36px;
@@ -312,15 +302,8 @@ export default function Section03_InteractiveTour({
         }
 
         @container (max-width: 700px) {
-          .s3-step,
-          .s3-step--even {
+          .s3-step {
             grid-template-columns: 1fr;
-          }
-          .s3-step--even .s3-step__text {
-            order: 1;
-          }
-          .s3-step--even .s3-step__visual {
-            order: 2;
           }
           .s3-step__text {
             padding: 24px;
@@ -352,7 +335,7 @@ export default function Section03_InteractiveTour({
                 return (
                   <article
                     key={i}
-                    className={`s3-step${isEven ? " s3-step--even" : ""}`}
+                    className="s3-step"
                   >
                     <div className="s3-step__text">
                       <div className="s3-step__num">{step.number}</div>

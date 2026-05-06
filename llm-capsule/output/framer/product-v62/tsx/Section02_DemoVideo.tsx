@@ -1,6 +1,7 @@
 import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
+  videoUrl?: string
   videoDuration?: string
   videoLabel?: string
   watchLabel?: string
@@ -13,7 +14,14 @@ interface Props {
 
 const DEFAULT_POSTER = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png"
 
+function toEmbedUrl(url: string): string {
+  if (!url) return ""
+  const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/)
+  return m ? `https://www.youtube.com/embed/${m[1]}?rel=0&modestbranding=1` : url
+}
+
 export default function Section02_DemoVideo({
+  videoUrl = "",
   videoDuration = "2:14 · LLM CAPSULE LIVE WALKTHROUGH",
   videoLabel = "Watch the 2-minute product demo",
   watchLabel = "Play demo",
@@ -67,6 +75,14 @@ export default function Section02_DemoVideo({
           justify-content: center;
           cursor: pointer;
           overflow: hidden;
+        }
+
+        .s2-iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+          position: absolute;
+          inset: 0;
         }
 
         .s2-player-bg {
@@ -182,19 +198,31 @@ export default function Section02_DemoVideo({
           <div className="s2-container">
             <div className="s2-video">
               <div className="s2-player">
-                <img
-                  className="s2-player-bg"
-                  src={resolvedPoster}
-                  alt=""
-                  role="presentation"
-                />
-                <div className="s2-overlay">
-                  <span className="s2-meta">{videoDuration}</span>
-                  <button className="s2-play" aria-label={watchLabel}>
-                    &#9654;
-                  </button>
-                  <span className="s2-watch-label">{videoLabel}</span>
-                </div>
+                {videoUrl ? (
+                  <iframe
+                    className="s2-iframe"
+                    src={toEmbedUrl(videoUrl)}
+                    title={videoLabel}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : (
+                  <>
+                    <img
+                      className="s2-player-bg"
+                      src={resolvedPoster}
+                      alt=""
+                      role="presentation"
+                    />
+                    <div className="s2-overlay">
+                      <span className="s2-meta">{videoDuration}</span>
+                      <button className="s2-play" aria-label={watchLabel}>
+                        &#9654;
+                      </button>
+                      <span className="s2-watch-label">{videoLabel}</span>
+                    </div>
+                  </>
+                )}
               </div>
               <div className="s2-caption">
                 <p className="s2-caption-text">
@@ -213,6 +241,12 @@ export default function Section02_DemoVideo({
 }
 
 addPropertyControls(Section02_DemoVideo, {
+  videoUrl: {
+    type: ControlType.String,
+    title: "YouTube URL",
+    defaultValue: "",
+    placeholder: "https://youtube.com/watch?v=...",
+  },
   videoDuration: {
     type: ControlType.String,
     title: "Video Duration Label",
