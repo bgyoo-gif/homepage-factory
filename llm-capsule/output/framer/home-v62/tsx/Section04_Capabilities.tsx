@@ -153,11 +153,17 @@ export default function Section04_Capabilities({
 
         .s4-grid {
           display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-template-columns: 1fr;
           gap: 20px;
         }
 
-        @container (min-width: 700px) {
+        @container (min-width: 500px) {
+          .s4-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+
+        @container (min-width: 900px) {
           .s4-grid {
             grid-template-columns: repeat(3, minmax(0, 1fr));
           }
