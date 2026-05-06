@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LLM Capsule Product | Watch It Run on Real Enterprise Workflows</title>
+  <meta name="description" content="See LLM Capsule running on real enterprise workflows — telecom NOC, hospital clinical, finance claims, defense mission. 2-minute demo, interactive product tour, real customer screenshots, admin console walkthrough. The AI enablement data layer for regulated operations.">
+  <meta name="keywords" content="LLM Capsule demo, AI enablement product, enterprise AI demo, on-premise LLM, AI-ready data, telecom AI deployment, hospital AI deployment, AI for regulated industries">
+  <meta property="og:title" content="LLM Capsule Product — Watch It Run">
+  <meta property="og:description" content="2-minute demo. Interactive tour. Real customer workflows. Admin console.">
+  <link rel="canonical" href="https://llmcapsule.ai/product">
+
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "VideoObject",
+    "name": "LLM Capsule 2-minute Demo",
+    "description": "See LLM Capsule encapsulate a real enterprise document, route it through an LLM, and restore the output back into the originating workflow — in two minutes.",
+    "thumbnailUrl": "https://llmcapsule.ai/og-product-demo.png",
+    "uploadDate": "2025-04-01",
+    "publisher": { "@type": "Organization", "name": "CUBIG" }
+  }
+  </script>
+
+  <!-- Fonts: Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Design Tokens -->
+  <link rel="stylesheet" href="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/tokens.css">
+
+  <style>
+    /* ============================================================
+       Reset + Global
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--f-display, 'Inter', -apple-system, system-ui, sans-serif);
+      color: var(--c-ink, #0f1130);
+      background-color: var(--c-bg, #ffffff);
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      line-height: 1.55;
+    }
+
+    img, video { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    h1, h2, h3, h4 {
+      font-family: var(--f-display, 'Inter', -apple-system, system-ui, sans-serif);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--c-ink, #0f1130);
+    }
+
+    h1 { font-size: clamp(36px, 5vw, 64px); font-weight: 700; }
+    h2 { font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; }
+    h3 { font-size: clamp(18px, 1.6vw, 22px); font-weight: 700; }
+
+    /* ============================================================
+       Container
+    ============================================================ */
+    .ds-container {
+      max-width: var(--container-max, 1280px);
+      margin: 0 auto;
+      padding: 0 var(--s-page, clamp(20px, 4vw, 80px));
+    }
+
+    /* ============================================================
+       Buttons
+    ============================================================ */
+    .ds-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--r-md, 10px);
+      font-family: var(--f-display, 'Inter', -apple-system, system-ui, sans-serif);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1;
+      cursor: pointer;
+      border: none;
+      transition: background 0.18s, color 0.18s, border-color 0.18s;
+      text-decoration: none;
+    }
+
+    .ds-btn--primary {
+      background-color: var(--c-ink, #0f1130);
+      color: var(--c-bg, #ffffff);
+    }
+    .ds-btn--primary:hover {
+      background-color: var(--c-primary, #5b4fe9);
+    }
+
+    .ds-btn--ghost {
+      background-color: transparent;
+      color: var(--c-ink, #0f1130);
+      border: 1.5px solid var(--c-rule, #e5e7eb);
+    }
+    .ds-btn--ghost:hover {
+      border-color: var(--c-primary, #5b4fe9);
+      color: var(--c-primary, #5b4fe9);
+    }
+
+    .ds-btn--invert {
+      background-color: var(--c-bg, #ffffff);
+      color: var(--c-ink, #0f1130);
+    }
+    .ds-btn--invert:hover {
+      background-color: var(--c-primary-soft, #eeebfe);
+      color: var(--c-primary-dark, #3b2fbf);
+    }
+
+    .ds-btn--invert-ghost {
+      background-color: transparent;
+      color: var(--c-bg, #ffffff);
+      border: 1.5px solid rgba(255,255,255,0.4);
+    }
+    .ds-btn--invert-ghost:hover {
+      border-color: rgba(255,255,255,0.8);
+    }
+
+    /* ============================================================
+       Eyebrow
+    ============================================================ */
+    .ds-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--c-primary, #5b4fe9);
+      margin-bottom: 12px;
+    }
+
+    /* ============================================================
+       Section Header
+    ============================================================ */
+    .ds-section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .ds-section-header h2 {
+      font-size: clamp(24px, 2.8vw, 38px);
+      font-weight: 700;
+      color: var(--c-ink, #0f1130);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .ds-section-header p {
+      font-size: clamp(16px, 1.4vw, 18px);
+      color: var(--c-ink-soft, #3a3d5e);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .ds-text--brand {
+      color: var(--c-primary, #5b4fe9);
+    }
+
+    /* ============================================================
+       Sections
+    ============================================================ */
+    .ds-section {
+      padding: var(--s-section, clamp(64px, 8vw, 128px)) 0;
+    }
+    .ds-section--soft {
+      background-color: var(--c-bg-soft, #f7f8fb);
+    }
+
+    /* ============================================================
+       SECTION 1: Hero
+    ============================================================ */
+    .s1-hero {
+      background: linear-gradient(180deg, #fafbff 0%, var(--c-bg, #ffffff) 100%);
+      padding-top: clamp(80px, 10vw, 140px);
+      padding-bottom: clamp(48px, 6vw, 80px);
+      border-bottom: 1px solid var(--c-rule, #e5e7eb);
+    }
+
+    .s1-hero h1 {
+      max-width: 920px;
+      margin-bottom: 20px;
+    }
+
+    .s1-hero h1 strong {
+      color: var(--c-primary, #5b4fe9);
+      font-weight: 700;
+    }
+
+    .s1-sub {
+      font-size: clamp(16px, 1.4vw, 19px);
+      color: var(--c-ink-soft, #3a3d5e);
+      max-width: 760px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .s1-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================================
+       SECTION 2: Demo Video
+    ============================================================ */
+    .s2-video {
+      background-color: var(--c-bg, #ffffff);
+      border: 1px solid var(--c-rule, #e5e7eb);
+      border-radius: var(--r-lg, 16px);
+      overflow: hidden;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .s2-player {
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, var(--c-bg-dark, #0f1130) 0%, var(--c-bg-dark-2, #1b1d4a) 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .s2-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .s2-play {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: var(--c-primary, #5b4fe9);
+      color: var(--c-bg, #ffffff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .s2-play:hover { transform: scale(1.08); }
+
+    .s2-label {
+      color: var(--c-bg, #ffffff);
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .s2-meta {
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 12px;
+      color: #9d95f5;
+      letter-spacing: 0.1em;
+    }
+
+    .s2-caption {
+      padding: 24px 32px;
+      background-color: var(--c-bg, #ffffff);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      border-top: 1px solid var(--c-rule, #e5e7eb);
+    }
+
+    .s2-caption-text {
+      font-size: 14px;
+      color: var(--c-ink-soft, #3a3d5e);
+      line-height: 1.5;
+    }
+
+    .s2-caption-text strong {
+      color: var(--c-ink, #0f1130);
+    }
+
+    @media (max-width: 700px) {
+      .s2-caption { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       SECTION 3: Interactive Tour
+    ============================================================ */
+    .s3-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 48px;
+    }
+
+    .s3-intro h2 {
+      font-size: clamp(24px, 2.6vw, 32px);
+      margin-bottom: 12px;
+    }
+
+    .s3-intro-desc {
+      font-size: 15px;
+      color: var(--c-ink-soft, #3a3d5e);
+      line-height: 1.6;
+    }
+
+    .s3-intro-visual {
+      background-color: var(--c-bg, #ffffff);
+      border: 1px solid var(--c-rule, #e5e7eb);
+      border-radius: var(--r-md, 10px);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--c-muted, #6b7280);
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 12px;
+    }
+
+    @media (max-width: 800px) {
+      .s3-intro { grid-template-columns: 1fr; }
+    }
+
+    .s3-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .s3-step {
+      background-color: var(--c-bg, #ffffff);
+      border: 1px solid var(--c-rule, #e5e7eb);
+      border-radius: var(--r-lg, 16px);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 0;
+    }
+
+    .s3-step:nth-child(even) {
+      grid-template-columns: 1.3fr 1fr;
+    }
+    .s3-step:nth-child(even) .s3-step__text { order: 2; }
+    .s3-step:nth-child(even) .s3-step__visual { order: 1; }
+
+    @media (max-width: 900px) {
+      .s3-step,
+      .s3-step:nth-child(even) { grid-template-columns: 1fr; }
+      .s3-step:nth-child(even) .s3-step__text { order: 1; }
+      .s3-step:nth-child(even) .s3-step__visual { order: 2; }
+    }
+
+    .s3-step__text {
+      padding: 36px;
+    }
+
+    .s3-step__num {
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 12px;
+      color: var(--c-primary-dark, #3b2fbf);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .s3-step__h {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .s3-step__d {
+      font-size: 14px;
+      color: var(--c-ink-soft, #3a3d5e);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .s3-step__d a {
+      text-decoration: underline;
+      color: var(--c-primary, #5b4fe9);
+    }
+
+    .s3-step__sub {
+      font-size: 13px;
+      color: var(--c-muted, #6b7280);
+      line-height: 1.55;
+      margin-top: 8px;
+    }
+
+    .s3-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .s3-chip {
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 11px;
+      padding: 4px 10px;
+      background-color: var(--c-bg-soft, #f7f8fb);
+      border-radius: 4px;
+      color: var(--c-ink-soft, #3a3d5e);
+      border: 1px solid var(--c-rule, #e5e7eb);
+    }
+
+    .s3-step__visual {
+      background-color: var(--c-bg-soft, #f7f8fb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      min-height: 280px;
+    }
+
+    /* Screenshot mocks */
+    .s3-mock {
+      width: 100%;
+      max-width: 480px;
+      background-color: var(--c-bg, #ffffff);
+      border: 1px solid var(--c-rule, #e5e7eb);
+      border-radius: 8px;
+      aspect-ratio: 16/10;
+      padding: 16px;
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 11px;
+      color: var(--c-ink-soft, #3a3d5e);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .s3-mock--dark {
+      background-color: var(--c-bg-dark, #0f1130);
+      border-color: var(--c-bg-dark-2, #1b1d4a);
+      color: #c8c4f7;
+    }
+
+    .s3-mock__bar {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--c-rule, #e5e7eb);
+    }
+
+    .s3-mock--dark .s3-mock__bar {
+      border-bottom-color: var(--c-bg-dark-2, #1b1d4a);
+    }
+
+    .s3-mock__dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--c-rule, #e5e7eb);
+    }
+
+    .s3-mock__title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--c-ink, #0f1130);
+      margin-bottom: 8px;
+    }
+
+    .s3-mock--dark .s3-mock__title {
+      color: var(--c-bg, #ffffff);
+    }
+
+    .s3-mock__row {
+      padding: 4px 0;
+      font-size: 10px;
+    }
+
+    .s3-mock__row--active {
+      color: var(--c-primary-dark, #3b2fbf);
+      font-weight: 700;
+    }
+
+    .s3-mock--dark .s3-mock__row--active {
+      color: #9d95f5;
+    }
+
+    .s3-mock__chip {
+      display: inline-block;
+      padding: 2px 6px;
+      background-color: var(--c-primary-soft, #eeebfe);
+      color: var(--c-primary-dark, #3b2fbf);
+      border-radius: 3px;
+      font-size: 9px;
+      margin-right: 4px;
+    }
+
+    .s3-mock--dark .s3-mock__chip {
+      background-color: var(--c-bg-dark-2, #1b1d4a);
+      color: #9d95f5;
+    }
+
+    /* ============================================================
+       SECTION 4: Metrics Narrative
+    ============================================================ */
+    .s4-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .s4-grid { grid-template-columns: 1fr; }
+    }
+
+    .s4-bigblock {
+      background-color: var(--c-bg-dark, #0f1130);
+      color: var(--c-bg, #ffffff);
+      border-radius: var(--r-lg, 16px);
+      padding: 36px;
+    }
+
+    .s4-bigblock__num {
+      font-size: 64px;
+      font-weight: 800;
+      color: var(--c-bg, #ffffff);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .s4-bigblock__label {
+      font-size: 14px;
+      color: #c8c4f7;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--c-bg-dark-2, #1b1d4a);
+    }
+
+    .s4-bigblock__rest {
+      font-size: 13px;
+      color: #c8c4f7;
+      line-height: 1.6;
+    }
+
+    .s4-bigblock__rest strong {
+      color: var(--c-bg, #ffffff);
+    }
+
+    .s4-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .s4-bullet {
+      background-color: var(--c-bg, #ffffff);
+      border: 1px solid var(--c-rule, #e5e7eb);
+      border-radius: var(--r-md, 10px);
+      padding: 18px 22px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .s4-bullet__num {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--c-primary, #5b4fe9);
+      line-height: 1;
+      min-width: 80px;
+    }
+
+    .s4-bullet__text {
+      font-size: 13px;
+      color: var(--c-ink-soft, #3a3d5e);
+      line-height: 1.5;
+    }
+
+    .s4-bullet__text strong {
+      color: var(--c-ink, #0f1130);
+      display: block;
+      margin-bottom: 2px;
+      font-size: 14px;
+    }
+
+    /* ============================================================
+       SECTION 5: Workflow Gallery
+    ============================================================ */
+    .s5-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    @media (max-width: 800px) {
+      .s5-grid { grid-template-columns: 1fr; }
+    }
+
+    .s5-card {
+      background-color: var(--c-bg, #ffffff);
+      border: 1px solid var(--c-rule, #e5e7eb);
+      border-radius: var(--r-md, 10px);
+      overflow: hidden;
+    }
+
+    .s5-card__image {
+      aspect-ratio: 16/10;
+      background-color: var(--c-bg-soft, #f7f8fb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      border-bottom: 1px solid var(--c-rule, #e5e7eb);
+    }
+
+    .s5-card__body {
+      padding: 24px;
+    }
+
+    .s5-card__industry {
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 11px;
+      color: var(--c-primary-dark, #3b2fbf);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .s5-card__h {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .s5-card__d {
+      font-size: 13px;
+      color: var(--c-ink-soft, #3a3d5e);
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+
+    .s5-card__customer {
+      font-size: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--c-rule, #e5e7eb);
+      color: var(--c-ink, #0f1130);
+      font-weight: 600;
+    }
+
+    .s5-card__customer span {
+      color: var(--c-muted, #6b7280);
+      font-weight: 400;
+    }
+
+    /* ============================================================
+       SECTION 6: Admin Console
+    ============================================================ */
+    .s6-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .s6-grid { grid-template-columns: 1fr; }
+    }
+
+    .s6-console {
+      background-color: var(--c-bg-dark, #0f1130);
+      border-radius: var(--r-lg, 16px);
+      padding: 24px;
+    }
+
+    .s6-tabs {
+      display: flex;
+      gap: 4px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--c-bg-dark-2, #1b1d4a);
+      margin-bottom: 16px;
+    }
+
+    .s6-tab {
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 11px;
+      padding: 6px 12px;
+      border-radius: 4px;
+      color: #9d95f5;
+      cursor: pointer;
+    }
+
+    .s6-tab--active {
+      background-color: var(--c-primary, #5b4fe9);
+      color: var(--c-bg, #ffffff);
+    }
+
+    .s6-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--c-bg-dark-2, #1b1d4a);
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 11px;
+      color: #c8c4f7;
+    }
+
+    .s6-row:last-child { border-bottom: 0; }
+    .s6-row span:nth-child(2) { color: var(--c-bg, #ffffff); }
+
+    .s6-badge {
+      padding: 2px 8px;
+      background-color: var(--c-teal-dark, #0b7f7e);
+      color: var(--c-bg, #ffffff);
+      border-radius: 3px;
+      font-size: 9px;
+    }
+
+    .s6-badge--warn {
+      background-color: var(--c-amber-dark, #b7790c);
+    }
+
+    .s6-text h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .s6-text p {
+      font-size: 14px;
+      color: var(--c-ink-soft, #3a3d5e);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .s6-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .s6-list li {
+      font-size: 13px;
+      padding-left: 24px;
+      position: relative;
+      color: var(--c-ink-soft, #3a3d5e);
+      line-height: 1.5;
+    }
+
+    .s6-list li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: var(--c-primary, #5b4fe9);
+      font-weight: 700;
+    }
+
+    /* ============================================================
+       SECTION 7: Deep Dive
+    ============================================================ */
+    .s7-card {
+      background: linear-gradient(135deg, var(--c-primary-soft, #eeebfe) 0%, var(--c-bg-soft, #f7f8fb) 100%);
+      border-radius: var(--r-lg, 16px);
+      padding: 48px;
+      border: 1px solid var(--c-primary, #5b4fe9);
+    }
+
+    .s7-badge {
+      display: inline-block;
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border: 1px solid var(--c-primary-dark, #3b2fbf);
+      color: var(--c-primary-dark, #3b2fbf);
+      border-radius: 999px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .s7-card h2 {
+      font-size: clamp(24px, 2.6vw, 32px);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .s7-card h2 strong {
+      color: var(--c-primary, #5b4fe9);
+    }
+
+    .s7-lead {
+      font-size: 17px;
+      color: var(--c-ink-soft, #3a3d5e);
+      margin-bottom: 32px;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+
+    .s7-caps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .s7-caps { grid-template-columns: 1fr; }
+    }
+
+    .s7-cap {
+      background-color: var(--c-bg, #ffffff);
+      border: 1px solid var(--c-rule, #e5e7eb);
+      border-radius: var(--r-md, 10px);
+      padding: 24px;
+    }
+
+    .s7-cap__num {
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 11px;
+      color: var(--c-primary-dark, #3b2fbf);
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: 0.1em;
+    }
+
+    .s7-cap__h {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .s7-cap__d {
+      font-size: 13px;
+      color: var(--c-ink-soft, #3a3d5e);
+      line-height: 1.55;
+    }
+
+    /* ============================================================
+       SECTION 8: CTA Strip
+    ============================================================ */
+    .s8-cta {
+      background-color: var(--c-bg-dark, #0f1130);
+      color: var(--c-bg, #ffffff);
+      padding: 64px var(--s-page, clamp(20px, 4vw, 80px));
+      text-align: center;
+    }
+
+    .s8-cta h2 {
+      color: var(--c-bg, #ffffff);
+      margin-bottom: 24px;
+    }
+
+    .s8-cta p {
+      color: #c8c4f7;
+      max-width: 640px;
+      margin: 0 auto 32px;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .s8-cta__btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================================
+       Responsive: 768px
+    ============================================================ */
+    @media (max-width: 768px) {
+      .s3-step__text { padding: 24px; }
+      .s7-card { padding: 28px; }
+      .s4-bigblock__num { font-size: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+
+    <!-- ===== SECTION 1: Hero ===== -->
+    <section id="section-1" class="s1-hero">
+      <div class="ds-container">
+        <div class="ds-eyebrow">Product</div>
+        <h1>Watch <strong>LLM Capsule</strong> run on a real enterprise workflow</h1>
+        <p class="s1-sub">
+          Two minutes — see a real document encapsulated, sent to an external LLM, and restored
+          back into the originating workflow. No marketing words. The actual product.
+        </p>
+        <div class="s1-cta">
+          <a class="ds-btn ds-btn--primary" href="/request-a-demo">Request a Live Demo</a>
+          <a class="ds-btn ds-btn--ghost" href="/architecture">View Architecture</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 2: Demo Video ===== -->
+    <section id="section-2" class="ds-section">
+      <div class="ds-container">
+        <div class="s2-video" data-replace="demo-video">
+          <div class="s2-player">
+            <div class="s2-overlay">
+              <div class="s2-meta">2:14 &middot; LLM CAPSULE LIVE WALKTHROUGH</div>
+              <div class="s2-play" aria-label="Play demo">&#9654;</div>
+              <div class="s2-label">Watch the 2-minute product demo</div>
+            </div>
+          </div>
+          <div class="s2-caption">
+            <div class="s2-caption-text">
+              <strong>What you'll see:</strong> A telecom NOC ticket flows through LLM Capsule —
+              device IDs, circuit IDs, site references, alarm sequences, and SLA-impact references are encapsulated locally — subscriber identifiers included; the protected
+              capsule reaches an external LLM; the AI's RCA recommendation is auto-restored back
+              into the original ticket. End-to-end, in production.
+            </div>
+            <a class="ds-btn ds-btn--primary" href="#tour">Take the Interactive Tour</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 3: Interactive Tour ===== -->
+    <section id="section-3" class="ds-section ds-section--soft">
+      <div class="ds-container" id="tour">
+
+        <div class="s3-intro">
+          <div>
+            <div class="ds-eyebrow">Interactive product tour</div>
+            <h2>Five steps. One real document. Real output.</h2>
+            <p class="s3-intro-desc">
+              The same capsule mechanism runs across telecom, healthcare, finance, defense, legal,
+              and OT. Below: a contract review workflow. The raw document never leaves your environment.
+            </p>
+          </div>
+          <div class="s3-intro-visual" data-replace="tour-intro-visual">
+            [Tour intro visual placeholder]
+          </div>
+        </div>
+
+        <div class="s3-steps">
+
+          <!-- Step 01 -->
+          <article class="s3-step">
+            <div class="s3-step__text">
+              <div class="s3-step__num">Step 01 — Point at the source</div>
+              <h3 class="s3-step__h">Reads the document where it already lives</h3>
+              <p class="s3-step__d">
+                LLM Capsule runs inside your environment and reads documents from the systems
+                already there — SharePoint, Jira / ServiceNow, Salesforce, Oracle ERP, internal
+                NOC console, or your own portal. No data migration. No external pipe. No
+                architectural change.
+              </p>
+              <p class="s3-step__sub">
+                Existing systems invoke Capsule from inside the environment via REST / gRPC /
+                JDBC / Graph API / on-prem API / embedded SDK / Slack App.
+              </p>
+              <div class="s3-chips">
+                <span class="s3-chip">In-environment</span>
+                <span class="s3-chip">No data egress</span>
+                <span class="s3-chip">Existing sources</span>
+              </div>
+            </div>
+            <div class="s3-step__visual" data-replace="tour-step-01">
+              <div class="s3-mock">
+                <div class="s3-mock__bar"><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span></div>
+                <div class="s3-mock__title">LLM Capsule &middot; Source registration</div>
+                <div class="s3-mock__row"><span class="s3-mock__chip">&#9679;</span> ServiceNow Production</div>
+                <div class="s3-mock__row"><span class="s3-mock__chip">&#9679;</span> SharePoint DMS</div>
+                <div class="s3-mock__row s3-mock__row--active"><span class="s3-mock__chip">&#9654;</span> NOC Console</div>
+                <div class="s3-mock__row">+ Register new source</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Step 02 -->
+          <article class="s3-step">
+            <div class="s3-step__text">
+              <div class="s3-step__num">Step 02 — Define policy</div>
+              <h3 class="s3-step__h">Pick the markers your business cares about</h3>
+              <p class="s3-step__d">
+                Pick from the starter pack — project codes, contract refs, network IDs, mission refs, financial
+                terms, vulnerability labels — or write your own. Markers can be added, removed, and time-shifted
+                tomorrow without redeploying. Every policy version is logged.
+              </p>
+              <div class="s3-chips">
+                <span class="s3-chip">11 starter markers</span>
+                <span class="s3-chip">Custom regex</span>
+                <span class="s3-chip">Policy versions</span>
+                <span class="s3-chip">RBAC scope</span>
+              </div>
+            </div>
+            <div class="s3-step__visual" data-replace="tour-step-02">
+              <div class="s3-mock">
+                <div class="s3-mock__bar"><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span></div>
+                <div class="s3-mock__title">Policy: NOC-team-v2 &middot; Active</div>
+                <div class="s3-mock__row s3-mock__row--active">SUBSCRIBER_ID — encapsulate</div>
+                <div class="s3-mock__row s3-mock__row--active">DEVICE_ID — encapsulate + DP noise</div>
+                <div class="s3-mock__row s3-mock__row--active">CIRCUIT_ID — encapsulate</div>
+                <div class="s3-mock__row">SLA_RISK — pass-through</div>
+                <div class="s3-mock__row">+ Add custom marker</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Step 03 -->
+          <article class="s3-step">
+            <div class="s3-step__text">
+              <div class="s3-step__num">Step 03 — Encapsulate</div>
+              <h3 class="s3-step__h">Sensitive elements replaced. Structure preserved.</h3>
+              <p class="s3-step__d">
+                Inside the DMZ — Demilitarized Zone (Zone 2 of the four-zone architecture), sensitive
+                elements are replaced with structure-preserving placeholders by the Enhanced Encapsulation
+                Layer. Differential-privacy-based protection (epsilon-DP, Laplace noise, k-anonymity,
+                NER masking) reduces re-identification risk. Tables, cross-references, and document
+                hierarchy survive intact. <a href="/architecture">See the four-zone architecture &rarr;</a>
+              </p>
+              <div class="s3-chips">
+                <span class="s3-chip">epsilon-DP</span>
+                <span class="s3-chip">Laplace noise</span>
+                <span class="s3-chip">NER masking</span>
+                <span class="s3-chip">Structure preserved</span>
+              </div>
+            </div>
+            <div class="s3-step__visual" data-replace="tour-step-03">
+              <div class="s3-mock s3-mock--dark">
+                <div class="s3-mock__bar"><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span></div>
+                <div class="s3-mock__title">DMZ — Demilitarized Zone &middot; Enhanced Encapsulation Layer</div>
+                <div class="s3-mock__row">Original: device_NX-47B &middot; Circuit C-19023 &middot; Site SEO-18</div>
+                <div class="s3-mock__row s3-mock__row--active">&rarr; Capsule: &#10216;S_a3f2&#10217; &middot; &#10216;L_kp19&#10217;</div>
+                <div class="s3-mock__row"><span class="s3-mock__chip">DP-active</span> &epsilon;=0.8 &middot; k=5</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Step 04 -->
+          <article class="s3-step">
+            <div class="s3-step__text">
+              <div class="s3-step__num">Step 04 — Process</div>
+              <h3 class="s3-step__h">Any LLM. Path A or Path B.</h3>
+              <p class="s3-step__d">
+                The capsule (only the capsule — never the original) is routed through your approved
+                external LLM (ChatGPT, Claude, Gemini, Perplexity) or to an on-prem local lightweight
+                model for air-gapped workflows. Path is policy-driven per workflow.
+              </p>
+              <div class="s3-chips">
+                <span class="s3-chip">Path A &middot; External</span>
+                <span class="s3-chip">Path B &middot; On-prem</span>
+                <span class="s3-chip">Policy-routed</span>
+              </div>
+            </div>
+            <div class="s3-step__visual" data-replace="tour-step-04">
+              <div class="s3-mock">
+                <div class="s3-mock__bar"><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span></div>
+                <div class="s3-mock__title">Routing &middot; NOC-team-v2</div>
+                <div class="s3-mock__row s3-mock__row--active">&#9654; Path A &middot; External (Claude Sonnet)</div>
+                <div class="s3-mock__row">&#9675; Path B &middot; Local 8B (air-gapped)</div>
+                <div class="s3-mock__row">Latency: 1.2s &middot; Tokens: 2,840</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Step 05 -->
+          <article class="s3-step">
+            <div class="s3-step__text">
+              <div class="s3-step__num">Step 05 — Restore</div>
+              <h3 class="s3-step__h">AI output comes back business-ready</h3>
+              <p class="s3-step__d">
+                The AI's response is auto-restored locally — token map lookup, original value substitution,
+                context re-binding, output validation. Real names, real figures, real references appear in
+                the original ticket. Token map never leaves the enterprise. End user sees a finished,
+                production-ready output.
+              </p>
+              <div class="s3-chips">
+                <span class="s3-chip">Local restore</span>
+                <span class="s3-chip">Context re-binding</span>
+                <span class="s3-chip">Output validation</span>
+                <span class="s3-chip">Audit logged</span>
+              </div>
+            </div>
+            <div class="s3-step__visual" data-replace="tour-step-05">
+              <div class="s3-mock">
+                <div class="s3-mock__bar"><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span></div>
+                <div class="s3-mock__title">INC-24091 &middot; RCA Auto-Inserted</div>
+                <div class="s3-mock__row">RCA: Subscriber 42810 affected by latency...</div>
+                <div class="s3-mock__row">Recommendation: rollback config R-472</div>
+                <div class="s3-mock__row s3-mock__row--active"><span class="s3-mock__chip">&#10003;</span> Restored &middot; 100% match</div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 4: Metrics Narrative ===== -->
+    <section id="section-4" class="ds-section">
+      <div class="ds-container">
+        <div class="ds-section-header">
+          <div class="ds-eyebrow">Performance — measured on real enterprise documents</div>
+          <h2>The numbers behind the demo</h2>
+          <p>2,200-character document benchmark. Tested across finance, healthcare, legal, and public sector workflows.</p>
+        </div>
+
+        <div class="s4-grid">
+          <div class="s4-bigblock">
+            <div class="s4-bigblock__num">0.12s</div>
+            <div class="s4-bigblock__label">Per-page processing latency</div>
+            <p class="s4-bigblock__rest">
+              That's <strong>120 milliseconds</strong> from raw document to encapsulated capsule —
+              fast enough to plug into real-time NOC alerting, claims intake, and clinical
+              workflows without breaking SLA. Most enterprise AI pilots stall on latency. We don't.
+            </p>
+          </div>
+
+          <div class="s4-bullets">
+            <div class="s4-bullet">
+              <div class="s4-bullet__num">100%</div>
+              <div class="s4-bullet__text"><strong>Restoration rate</strong>Every encapsulation has a reversible local mapping. No ambiguity, no manual reconstruction.</div>
+            </div>
+            <div class="s4-bullet">
+              <div class="s4-bullet__num">98%</div>
+              <div class="s4-bullet__text"><strong>Output similarity</strong>Compared to AI processing the original document. Restoration preserves business meaning.</div>
+            </div>
+            <div class="s4-bullet">
+              <div class="s4-bullet__num">98.1%</div>
+              <div class="s4-bullet__text"><strong>Detection accuracy</strong>Sensitive entity detection across structured and free-text fields, including custom markers.</div>
+            </div>
+            <div class="s4-bullet">
+              <div class="s4-bullet__num">99.14%</div>
+              <div class="s4-bullet__text"><strong>Workflow accuracy</strong>End-to-end correctness — from raw input to restored output in production workflows.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 5: Workflow Gallery ===== -->
+    <section id="section-5" class="ds-section ds-section--soft">
+      <div class="ds-container">
+        <div class="ds-section-header">
+          <div class="ds-eyebrow">Workflow gallery</div>
+          <h2>Same product. Six industries. Real customers.</h2>
+          <p>Each card below is a real workflow LLM Capsule runs in production. Click for the full case story.</p>
+        </div>
+
+        <div class="s5-grid">
+
+          <!-- Telecom -->
+          <article class="s5-card">
+            <div class="s5-card__image" data-replace="gallery-telecom">
+              <div class="s3-mock">
+                <div class="s3-mock__bar"><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span></div>
+                <div class="s3-mock__title">NOC &middot; INC-24091</div>
+                <div class="s3-mock__row">Latency anomaly &middot; SEO-18</div>
+                <div class="s3-mock__row s3-mock__row--active">AI RCA: rollback config R-472</div>
+              </div>
+            </div>
+            <div class="s5-card__body">
+              <div class="s5-card__industry">Telecom</div>
+              <h3 class="s5-card__h">NOC incident analysis on production traffic</h3>
+              <p class="s5-card__d">RCA generation on live ticket data with device IDs, circuit IDs, site references, alarm sequences, SLA-impact references, and subscriber identifiers encapsulated locally. No raw operational data exposure to external LLMs.</p>
+              <div class="s5-card__customer">SK Telecom &middot; <span>Deutsche Telekom T Challenge 2026 — Top 12</span></div>
+            </div>
+          </article>
+
+          <!-- Healthcare -->
+          <article class="s5-card">
+            <div class="s5-card__image" data-replace="gallery-healthcare">
+              <div class="s3-mock">
+                <div class="s3-mock__bar"><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span></div>
+                <div class="s3-mock__title">EHR &middot; Radiology Report Draft</div>
+                <div class="s3-mock__row">Patient &middot; MRN &#10216;P_xxxx&#10217; &rarr; restored</div>
+                <div class="s3-mock__row s3-mock__row--active">AI summary: bilateral findings...</div>
+              </div>
+            </div>
+            <div class="s5-card__body">
+              <div class="s5-card__industry">Healthcare</div>
+              <h3 class="s5-card__h">Radiology report drafting with PHI never leaving</h3>
+              <p class="s5-card__d">AI drafts radiology summaries from real clinical workflows. PHI encapsulated locally; restoration happens inside the hospital network. HIPAA-aligned.</p>
+              <div class="s5-card__customer">Ewha Womans University Medical Center (EUMC)</div>
+            </div>
+          </article>
+
+          <!-- Finance -->
+          <article class="s5-card">
+            <div class="s5-card__image" data-replace="gallery-finance">
+              <div class="s3-mock">
+                <div class="s3-mock__bar"><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span></div>
+                <div class="s3-mock__title">Claim &middot; CLM-77241</div>
+                <div class="s3-mock__row">Damage assessment running</div>
+                <div class="s3-mock__row s3-mock__row--active">AI fraud signal: low &middot; approve</div>
+              </div>
+            </div>
+            <div class="s5-card__body">
+              <div class="s5-card__industry">Finance / Insurance</div>
+              <h3 class="s5-card__h">AI claims processing with real customer data</h3>
+              <p class="s5-card__d">AI-powered claim classification, damage assessment, and fraud detection on real policyholder data. No customer data leaves the insurer's environment.</p>
+              <div class="s5-card__customer">Kyobo &middot; <span>DB Insurance &middot; IBK</span></div>
+            </div>
+          </article>
+
+          <!-- Defense -->
+          <article class="s5-card">
+            <div class="s5-card__image" data-replace="gallery-defense">
+              <div class="s3-mock s3-mock--dark">
+                <div class="s3-mock__bar"><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span><span class="s3-mock__dot"></span></div>
+                <div class="s3-mock__title">Mission Brief &middot; &#10216;MR_xxxx&#10217;</div>
+                <div class="s3-mock__row">Path B &middot; On-prem local model</div>
+                <div class="s3-mock__row s3-mock__row--active">AI brief draft generated</div>
+              </div>
+            </div>
+            <div class="s5-card__body">
+              <div class="s5-card__industry">Public Sector / Defense</div>
+              <h3 class="s5-card__h">Mission brief drafting on classified workflows</h3>
+              <p class="s5-card__d">AI drafts intelligence briefs and operational summaries on classified data. On-prem local execution path — zero external transmission. Full audit trail under command control.</p>
+              <div class="s5-card__customer">Ministry of National Defense (South Korea)</div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 6: Admin Console ===== -->
+    <section id="section-6" class="ds-section">
+      <div class="ds-container">
+        <div class="ds-section-header">
+          <div class="ds-eyebrow">Operational governance</div>
+          <h2>Admin console — every event, every policy, every model</h2>
+          <p>Enterprise AI governance is not a marketing claim. It's a console your audit team logs into.</p>
+        </div>
+
+        <div class="s6-grid">
+          <div class="s6-console" data-replace="admin-console">
+            <div class="s6-tabs">
+              <span class="s6-tab s6-tab--active">Audit</span>
+              <span class="s6-tab">Policies</span>
+              <span class="s6-tab">Tokens</span>
+              <span class="s6-tab">Detection</span>
+              <span class="s6-tab">Models</span>
+            </div>
+            <div class="s6-row"><span>10:24:18</span><span>INC-24091 &middot; NOC-team-v2 &middot; Path A</span><span class="s6-badge">restored</span></div>
+            <div class="s6-row"><span>10:24:11</span><span>CLM-77241 &middot; finance-v3 &middot; Path A</span><span class="s6-badge">restored</span></div>
+            <div class="s6-row"><span>10:23:58</span><span>MR-440-Z &middot; defense-v1 &middot; Path B</span><span class="s6-badge">restored</span></div>
+            <div class="s6-row"><span>10:23:42</span><span>Policy NOC-team updated to v2</span><span class="s6-badge s6-badge--warn">policy</span></div>
+            <div class="s6-row"><span>10:23:30</span><span>Detection &middot; custom marker added</span><span class="s6-badge">policy</span></div>
+          </div>
+
+          <div class="s6-text">
+            <h3>One pane. Five tabs. Full chain of custody.</h3>
+            <p>Every encapsulation, processing, and restoration event lands here. Audit teams can replay any event end-to-end — what was protected, which policy version was active, which model processed it, what was restored.</p>
+            <ul class="s6-list">
+              <li><strong>Audit</strong> — every event with timestamps and policy version</li>
+              <li><strong>Policies</strong> — version history, scope, and RBAC</li>
+              <li><strong>Tokens</strong> — model usage, cost, and per-team breakdown</li>
+              <li><strong>Detection</strong> — what was classified as sensitive, and how</li>
+              <li><strong>Models</strong> — health, throughput, comparative output quality</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 7: Capability 06 Deep Dive ===== -->
+    <section id="section-7" class="ds-section ds-section--soft">
+      <div class="ds-container">
+        <div class="s7-card">
+          <div class="s7-badge">Capability 06 &middot; Deep dive</div>
+          <h2>You define what's sensitive — <strong>and you can change it tomorrow.</strong></h2>
+          <p class="s7-lead">
+            Yesterday it was network logs. Today it's M&amp;A code names. Next quarter it's a new
+            regulator's spec. Standard PII categories don't move; your business does. LLM Capsule
+            lets your team <strong>define, add, remove, and version</strong> confidentiality markers
+            as your operations and regulatory landscape evolve — with full audit trail of which marker
+            was protected when.
+          </p>
+
+          <div class="s7-caps">
+            <div class="s7-cap">
+              <div class="s7-cap__num">DEFINE</div>
+              <h3 class="s7-cap__h">Beyond generic PII</h3>
+              <p class="s7-cap__d">Project codes, deal terms, internal IDs, contract references, network identifiers, OT asset IDs, mission refs. Your team defines the markers — not a vendor's fixed list.</p>
+            </div>
+            <div class="s7-cap">
+              <div class="s7-cap__num">VERSION</div>
+              <h3 class="s7-cap__h">Time-shift the policy</h3>
+              <p class="s7-cap__d">Add a new marker today, retire one next quarter. Policy versioning + immediate enforcement. Audit log records exactly which marker was active for every encapsulation event.</p>
+            </div>
+            <div class="s7-cap">
+              <div class="s7-cap__num">SCOPE</div>
+              <h3 class="s7-cap__h">Per workflow, team, data type</h3>
+              <p class="s7-cap__d">NOC team, oncology unit, OT operations, M&amp;A — different policies, same governance. RBAC + scoped enforcement + per-policy audit. One LLM Capsule, many policies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 8: CTA Strip ===== -->
+    <section id="section-8" class="s8-cta">
+      <h2>See it on your own documents.</h2>
+      <p>Bring your real workflow. We'll set up Capsule on a sample document in your environment within 30 minutes.</p>
+      <div class="s8-cta__btns">
+        <a class="ds-btn ds-btn--invert" href="/request-a-demo">Request a Live Demo</a>
+        <a class="ds-btn ds-btn--invert-ghost" href="/architecture">View Architecture</a>
+        <a class="ds-btn ds-btn--invert-ghost" href="/pricing">View Pricing</a>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
