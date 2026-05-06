@@ -101,13 +101,35 @@ tokens.json (편집 대상)
 
 ---
 
-## Button Styles (v6.1)
+## Button Styles (v6.2)
 
-| Class | Style | 이전과 차이 |
-|-------|-------|------------|
-| `.btn--primary` | `background: var(--c-ink)`, hover → `var(--c-primary)` | 이전: gradient |
-| `.btn--ghost` | `border: var(--c-rule)`, hover → `border: var(--c-ink)` | 유사 |
-| `.btn--invert` | white bg, ink text | 다크 섹션용 |
+```css
+/* Primary: solid ink → hover primary. gradient 폐기. */
+.btn--primary { background: var(--c-ink); color: #fff; border-radius: var(--r-md); }
+.btn--primary:hover { background: var(--c-primary); }
+
+/* Ghost: white + border */
+.btn--ghost { background: var(--c-bg); color: var(--c-ink); border: 1px solid var(--c-rule); }
+.btn--ghost:hover { border-color: var(--c-ink); }
+
+/* Invert: dark section용 */
+.btn--invert { background: #fff; color: var(--c-ink); }
+.btn--invert-ghost { background: transparent; border: 1px solid #9d95f5; color: #fff; }
+```
+
+---
+
+## Eyebrow (v6.2 — LLM Capsule only)
+
+```css
+.eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--c-primary);
+  margin-bottom: 16px; display: inline-block;
+}
+```
+
+> cubig 브랜드에서는 여전히 eyebrow 금지.
 
 ---
 

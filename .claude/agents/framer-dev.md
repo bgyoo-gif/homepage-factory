@@ -18,46 +18,26 @@ B타입 HTML 파일을 Framer에서 바로 사용할 수 있는 TSX 컴포넌트
 - 파일 경로는 `{brand}/input/`, `{brand}/output/`, `{brand}/reference/`를 사용한다
 - brand 미지정 시 사용자에게 확인한다
 
-## 핵심 역할
-{brand}/output/[파일명]-b-type.html의 각 섹션을 개별 Framer Code Component(.tsx)로 변환하고,
-각 섹션별 프리뷰 HTML 파일도 함께 생성합니다.
-
----
-
-## 출력 구조
-
-```
-{brand}/output/framer/[페이지명]/
-  ├── tsx/
-  │   ├── Section01_Hero.tsx
-  │   ├── Section02_Overview.tsx
-  │   └── ...
-  └── html/
-      ├── _preview_section01.html
-      ├── _preview_section02.html
-      └── ...
-```
-
 ---
 
 ## ★ 토큰 시스템 (v6.1)
 
 **TSX에서는 CSS 변수 `var(--c-*, fallback)` 를 사용한다.**
-TokenProvider.tsx가 Framer Layout에서 `:root` 변수를 주입하므로, 각 TSX에서 색상을 const로 재정의하지 않는다.
+Framer Site Settings → Custom CSS에 토큰이 주입되므로, 각 TSX에서 색상을 const로 재정의하지 않는다.
 
 ```css
 /* 사용 예시 */
 .s1-title { color: var(--c-ink, #0f1130); }
 .s1-brand { color: var(--c-primary, #5b4fe9); }
-.s1-btn   { background: var(--c-ink, #0f1130); }
+.s1-btn   { background: var(--c-ink, #0f1130); color: var(--c-bg, #fff); }
 .s1-card  { border: 1px solid var(--c-rule, #e5e7eb); border-radius: var(--r-md, 10px); }
 ```
 
-**CSS 변수 + fallback hex 참조:**
+**CSS 변수 + fallback hex:**
 
 | Variable | Hex | 용도 |
 |----------|-----|------|
-| `--c-primary` | `#5b4fe9` | Purple — CTA, 강조 |
+| `--c-primary` | `#5b4fe9` | Purple — 강조, 링크 |
 | `--c-primary-dark` | `#3b2fbf` | Hover |
 | `--c-primary-soft` | `#eeebfe` | Badge/banner bg |
 | `--c-teal` | `#0ea5a4` | Differentiator, success |
@@ -79,6 +59,123 @@ TokenProvider.tsx가 Framer Layout에서 `:root` 변수를 주입하므로, 각 
 | `--r-md` | `10px` | Medium radius |
 | `--r-lg` | `16px` | Large radius |
 | `--container-max` | `1280px` | Container max |
+
+---
+
+## ★ Button 스타일 (v6.2)
+
+```css
+/* Primary: solid ink, hover → primary */
+.btn--primary { background: var(--c-ink, #0f1130); color: #fff; }
+.btn--primary:hover { background: var(--c-primary, #5b4fe9); }
+
+/* Ghost: white bg, border */
+.btn--ghost { background: var(--c-bg, #fff); color: var(--c-ink, #0f1130); border: 1px solid var(--c-rule, #e5e7eb); }
+.btn--ghost:hover { border-color: var(--c-ink, #0f1130); }
+
+/* Invert: for dark sections */
+.btn--invert { background: #fff; color: var(--c-ink, #0f1130); }
+.btn--invert-ghost { background: transparent; border: 1px solid #9d95f5; color: #fff; }
+```
+
+**gradient 버튼 폐기.** `background: var(--ds-gradient-brand)` 사용 금지.
+
+---
+
+## ★ Eyebrow 규칙 (v6.2)
+
+**LLM Capsule 브랜드에서 eyebrow 허용.**
+
+```css
+.eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--c-primary, #5b4fe9);
+  margin-bottom: 16px; display: inline-block;
+}
+```
+
+> cubig 브랜드에서는 여전히 eyebrow 금지.
+
+---
+
+## ★ Reusable TSX Component (v6.2)
+
+### 원칙
+- **같은 UI 패턴은 1개 TSX로 만들고 여러 페이지에서 재사용**
+- 페이지별 섹션 TSX에서 Reusable Component를 import하지 않음 (Framer 제한)
+- 대신 **동일 TSX를 여러 페이지에 배치하고 Props만 다르게** 입력
+- Reusable TSX는 `{brand}/output/framer/_shared/` 디렉토리에 배치
+
+### Reusable Component 목록
+
+| TSX | CMS Collection | Props | 사용 페이지 |
+|-----|---------------|-------|------------|
+| `FAQAccordion.tsx` | FAQs | question, answer (×N) | home, pricing, learn articles |
+| `CTAStrip.tsx` | — | title, subtitle, primaryCta, secondaryCta | 모든 페이지 footer 전 |
+| `CapabilityCard.tsx` | Capabilities | number, title, description, internalName, colorVariant | home, product |
+| `IndustryCard.tsx` | Industries | industryTag, title, lead, blockedText, enabledText, dataItems, customerProof | solutions, home |
+| `CredentialCard.tsx` | Certifications | type, title, org, logoSvg | trust |
+| `MetricBlock.tsx` | — | value, label, description | home, product, solutions |
+| `LogoStrip.tsx` | Customers | logos[] | home |
+| `WorkflowCard.tsx` | Workflows | icon, title, description, restoreBenefit | home |
+| `ArticleCard.tsx` | LearnArticles | category, title, description, slug | resources, learn |
+| `GlossaryTermCard.tsx` | Glossary | term, definition | resources, glossary |
+
+### CMS 스키마 일치 Props 규칙
+
+**Props 이름은 Framer CMS Collection 필드명과 동일하게 설정한다.**
+향후 CMS 전환 시 Props→CMS 바인딩이 이름만으로 연결되도록.
+
+```tsx
+// ✅ CMS 스키마 일치
+interface Props {
+  industryTag?: string    // CMS: Industries.tag
+  title?: string          // CMS: Industries.title
+  lead?: string           // CMS: Industries.lead
+  blockedText?: string    // CMS: Industries.blocked
+  enabledText?: string    // CMS: Industries.enabled
+  customerProof?: string  // CMS: Industries.customerProof
+  colorVariant?: string   // CMS: Industries.colorVariant
+}
+
+// ❌ 임의 Props명
+interface Props {
+  sectionLabel?: string   // CMS에 없는 이름
+  cardTitle?: string      // "title"이면 되는데 "cardTitle"
+}
+```
+
+**CMS Collections 스키마 참조:**
+
+| Collection | Fields |
+|-----------|--------|
+| Capabilities | number, externalTitle, description, internalName, colorVariant, chips[] |
+| Industries | tag, title, lead, blocked, enabled, dataItems[], customerProof, colorVariant |
+| Workflows | icon, title, description, restoreBenefit |
+| Customers | name, industry, logoSvg, featured, proofText |
+| Certifications | type, title, org, logoSvg |
+| LearnArticles | slug, title, description, category, industry, body, seoKeywords[] |
+| Glossary | term, slug, definition, relatedTerms[] |
+| FAQs | question, answer, page |
+
+---
+
+## 출력 구조
+
+```
+{brand}/output/framer/
+  ├── _shared/              ← Reusable Components
+  │   ├── FAQAccordion.tsx
+  │   ├── CTAStrip.tsx
+  │   ├── CapabilityCard.tsx
+  │   └── ...
+  ├── [페이지명]/           ← Page-specific sections
+  │   ├── tsx/
+  │   │   ├── Section01_Hero.tsx
+  │   │   └── ...
+  │   └── html/
+  │       └── _preview_*.html
+  └── ...
 ```
 
 ---
@@ -90,107 +187,64 @@ TokenProvider.tsx가 Framer Layout에서 `:root` 변수를 주입하므로, 각 
 ```tsx
 import { addPropertyControls, ControlType } from "framer"
 
-const IMAGE_BASE = "https://cubig.ai/assets"
-
 interface Props {
   title?: string
   description?: string
 }
 
 export default function SectionNN_Name({
-  title = "기본값",
-  description = "기본값",
+  title = "Default title",
+  description = "Default description",
 }: Props) {
   return (
     <>
-      <style>{\`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Oxanium:wght@700&family=Fragment+Mono&display=swap');
-      \`}</style>
-      <section className="sN-section">
-        {/* 내용 */}
-      </section>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+        .sN-root { width: 100%; container-type: inline-size; }
+        .sN-section { width: 100%; padding: var(--s-section, clamp(64px, 8vw, 128px)) 0; }
+        .sN-container { max-width: var(--container-max, 1280px); margin: 0 auto; padding: 0 var(--s-page, clamp(20px, 4vw, 80px)); }
+      `}</style>
+
+      <div className="sN-root">
+        <section className="sN-section">
+          <div className="sN-container">
+            {/* content */}
+          </div>
+        </section>
+      </div>
     </>
   )
 }
 
 addPropertyControls(SectionNN_Name, {
-  title: { type: ControlType.String, title: "Title", defaultValue: "..." },
+  title: { type: ControlType.String, title: "Title", defaultValue: "Default title" },
 })
 ```
 
 ### 2. addPropertyControls (필수)
 
-**Localization 필수 — 화면에 보이는 모든 텍스트**를 Props + addPropertyControls로 노출한다. 하드코딩 텍스트 금지.
-
-**COPY 객체 방식 금지** — Framer Localization 패널이 인식하지 못함. 텍스트는 반드시 개별 Props로 노출하고, 다국어 번역은 Framer Localization 패널에서 관리한다.
+**모든 가시 텍스트** → Props + addPropertyControls 노출. 하드코딩 텍스트 금지.
+**COPY 객체/lang prop 금지** — 개별 Props만 사용.
 
 ### 3. 스타일 규칙
 
-**CSS는 `<style>` 태그 안에 내장** (외부 CSS 없음).
-**클래스명 규칙:** 전역 충돌 방지를 위해 섹션별 접두사: `s1-`, `s2-`, ... `sN-`
-
-**Framer 반응형 — Container Query 필수 (media query 금지):**
-
-```css
-.sN-section { width: 100%; overflow: hidden; box-sizing: border-box; padding: 80px 0; }
-.sN-inner { width: 100%; container-type: inline-size; }
-.sN-container { width: 100%; padding: 0 16px; max-width: 100%; margin: 0 auto; box-sizing: border-box; }
-
-@container (min-width: 768px)  { .sN-container { padding: 0 32px; } }
-@container (min-width: 1024px) { .sN-container { padding: 0 32px; } }
-@container (min-width: 1440px) { .sN-container { padding: 0 120px; max-width: 1440px; } }
-```
+**CSS는 `<style>` 태그 안에 내장.**
+**클래스명:** 섹션별 접두사 `s1-`, `s2-`, ... `sN-` (Reusable은 `faq-`, `cta-`, `cap-` 등)
+**반응형:** Container Query 필수 (`@media` 금지)
+**spacing/radius/font:** CSS 변수 `var()` 사용 (hex fallback 포함)
 
 ---
 
 ## 작업 순서
 
 ### Step 1: B타입 HTML 분석
-1. {brand}/output/[파일명]-b-type.html을 읽는다
-2. 각 `<section>` 경계를 파악한다
-3. 섹션별 역할을 식별한다
-
-### Step 2: 섹션별 TSX 변환
-1. 각 섹션을 개별 TSX 파일로 변환
-2. HTML → JSX (class→className, self-closing 등)
-3. CSS 변수 → 팔레트 상수 값으로 치환
-4. JS 인터랙션 → useState 훅
-5. 모든 편집 가능 콘텐츠 → Props + addPropertyControls
-
-### Step 3: 프리뷰 HTML 생성
-1. 각 섹션의 HTML 프리뷰 생성
-2. 이미지 경로를 상대경로로 변환
-
-### Step 4: 자가 검증 (건너뛰기 금지)
-
-TSX 저장 후 아래 bash를 **모두 실행**하고, 1건이라도 위반 시 수정 후 재검증:
-
-```bash
-FILE="[생성한 TSX 파일 경로]"
-
-# 1. @media 사용 금지 (Container Queries만)
-grep -c '@media' "$FILE"
-
-# 2. CTA band에 max-width 1440 없어야 함
-grep 'cta.*band.*max-width.*1440\|cta.*band.*1440.*max-width' "$FILE"
-
-# 3. article container max-width가 1080px인지
-grep 'max-width.*860\|860.*max-width' "$FILE"
-
-# 4. section padding이 60px인지 (64/48/80 금지)
-grep 'padding: 64px\|padding: 48px\|padding: 80px' "$FILE"
-
-# 5. hero title 반응형 (32/40/48/64px 이외 금지)
-grep 'hero.*title.*font-size' "$FILE" | grep -v '32px\|40px\|48px\|64px'
-
-# 6. nav/footer 없어야 함
-grep -c 'nav\b.*role\|<footer\|<nav ' "$FILE"
-
-# 7. 860px 잔여 (주석 포함)
-grep '860' "$FILE"
-```
-
-→ 모든 검증을 통과한 후에만 커밋 + viewer 업데이트로 진행.
+### Step 2: Reusable Component 식별
+- FAQ, CTA, Card 패턴이 `_shared/`에 이미 있으면 재사용
+- 없으면 새로 생성하고 `_shared/`에 배치
+### Step 3: 섹션별 TSX 변환
+### Step 4: 프리뷰 HTML 생성
+### Step 5: 자가 검증 (건너뛰기 금지)
 
 ---
 
@@ -198,58 +252,36 @@ grep '860' "$FILE"
 - 원문 텍스트를 단 한 글자도 바꾸지 않는다
 - 이미지 경로는 반드시 `IMAGE_BASE` 상수 경유
 - 각 섹션 컴포넌트는 독립적으로 동작해야 한다 (다른 섹션에 의존 금지)
-- JSON-LD 필수: Hero(Section01)에 BreadcrumbList, FAQ 섹션에 FAQPage 스키마를 `dangerouslySetInnerHTML`로 삽입
-- TSX 변환 완료 후 반드시 `cubig/reference/design-system-viewer.html`의 STATIC_DATA에 TSX 항목 추가 (단, `]},` 닫힘 균형 반드시 확인)
+- JSON-LD 필수: Hero에 BreadcrumbList, FAQ에 FAQPage 스키마
 
 ---
 
 ## 반복 결함 방지 (절대 위반 금지)
 
-1. **nav/footer 넣지 않는다** — B타입 HTML에서 이미 삭제됨
-2. **body padding-top 없음** — nav가 없으므로 불필요
-3. **CTA band에 max-width 넣지 않는다** — 전폭(full-bleed). `__inner`에만 max-width 적용
-4. **container max-width: 1440px** — `@container (min-width: 1440px) { padding: 0 120px; max-width: 1440px; }`
-5. **Hero title 반응형: 32/40/48/64px** — 다른 사이즈 사용 금지
-6. **Section header title: 20/22/24/28px** — h2 기본 반응형
-7. **Section padding: 60px 0** — 반응형으로 키우지 않음
-8. **Hero bottom padding: 0** — section 기본 padding으로 충분
-9. **@media 금지** — Container Queries(@container)만 사용
-10. **screenshot/placeholder 영역 넣지 않는다** — B타입에서 이미 삭제됨
-11. **B타입 HTML 수정 시 TSX 동기화 필수** — B타입 HTML이 수정된 경우 해당 TSX와 preview.html도 반드시 같이 수정. TSX만 신규 변환하는 경우에도 최신 B타입 HTML을 기준으로 변환할 것
-12. **균등 분할 그리드**: `repeat(N, 1fr)` 금지 → `repeat(N, minmax(0, 1fr))` 사용 (Container Queries 안에서도 동일)
-13. **overflow-x: auto scrollbar 숨김 필수**: `overflow-x: auto` 사용 시 반드시 `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }` 동반
-14. **미정의 CSS 변수 참조 금지**: TSX에서는 CSS 변수 대신 PALETTE 상수를 사용하되, 이 목록에 없는 색상·배경 이미지 변수는 사용 금지
-15. **모든 이미지 Props 노출 필수**: background-image, screenshot, 제품 이미지 등 모든 이미지 URL을 `ControlType.Image` Props로 노출한다. 하드코딩 URL 금지. Framer 캔버스에서 직접 교체 가능하도록.
-16. **모바일 이미지 처리 규칙 (max-width: 767px)**:
-    - 배경 이미지 프레임: `background-image: none; background-color: transparent; padding: 16px 16px 0; border-radius: 16px 16px 0 0;`
-    - 배경 이미지 섹션: `background-image: none;` (fallback background-color 필수)
-    - 스크린샷/제품 이미지: `width: 100%; display: block;` (img 태그 기본)
-    - 이미지 프레임 padding: desktop 48px → mobile 16px
-    - CTA/KPI 배경: `background-image: none;` + 단색 배경 fallback
-17. **모든 텍스트 Props 연결 필수**: JSX 내 하드코딩 텍스트 금지. heading, description, 카드 제목/설명, bullet, 테이블 내용, FAQ Q&A 등 모든 가시 텍스트는 Props + addPropertyControls로 노출.
-18. **const 배열 안 텍스트도 Props 필수**: `const CARDS = [{ title: "..." }]` 같은 배열 안 텍스트도 반드시 Props로 전환. 배열은 function 내부에서 Props 변수로 재구성.
-19. **`.replace()` 패턴 금지**: JSX에서 `{prop.replace("LLM Capsule", "")}` 같은 문자열 조작 금지. 다국어 입력 시 매칭 실패로 깨짐. Props 값을 그대로 `{prop}`으로 렌더링.
-20. **`<span>ProductName</span> {description}` 패턴 금지**: productName을 description 앞에 별도 렌더링하면 중복 발생. description 기본값에 제품명을 포함하고 `{description}`만 렌더링.
-21. **ControlType.Image fallback 필수**: `ControlType.Image`는 Framer에서 미업로드 시 빈 문자열 전달. 반드시 `const resolved = prop || DEFAULT_URL` 패턴 적용. 빈 값이 CSS `url('')`이 되면 이미지 안 나옴.
-22. **placeholder 스타일 조건부 제거**: 이미지 Props 지정 시 placeholder CSS(dashed border, 큰 padding, 회색 배경)를 인라인 style로 무효화. `style={prop ? { background: "none", border: "none", padding: 0 } : undefined}`
-23. **CSS 클래스명 충돌 방지**: 같은 페이지에 배치되는 섹션 간 동일 클래스명(`idx-kpi-band` 등) 사용 시 CSS가 충돌. 각 섹션별 고유 접두사(`s1-`, `s2-`, ...) 필수.
-24. **container-type은 최상위 요소**: `container-type: inline-size`는 `.idx-root`(최상위 div)에 적용. `.idx-inner` 같은 중간 요소에 넣으면 Framer에서 너비 인식 실패.
-25. **내부 링크는 Framer 라우팅 경로**: `.html` 확장자 금지, `/resources/comparison/` 금지. 실제 Framer 페이지 slug 사용 (`/product`, `/resources/learn/...`, `/resources/glossary/...`).
-26. **`/trust-center` → `/trust`**: trust-center 페이지 삭제됨. `/trust`만 사용.
-27. **번역 후 반드시 native-reviewer 리뷰**: translator 완료 후 native-reviewer 에이전트로 품질 검수. 직역투, 톤 불일치, 용어 오용 수정.
+1. **nav/footer 넣지 않는다**
+2. **CTA band에 max-width 넣지 않는다** — 전폭. `__inner`에만 max-width
+3. **container max-width: var(--container-max, 1280px)** — 이전 1440px 폐기
+4. **Hero title 반응형: clamp(36px, 5vw, 64px)** — v6.2 typography
+5. **Section header h2: clamp(28px, 3.5vw, 44px)** — v6.2 typography
+6. **Section padding: var(--s-section)** — clamp(64px, 8vw, 128px)
+7. **@media 금지** — Container Queries만
+8. **균등 분할 그리드**: `repeat(N, minmax(0, 1fr))`
+9. **overflow-x: auto scrollbar 숨김 필수**
+10. **모든 텍스트 Props 연결 필수**: JSX 하드코딩 금지
+11. **const 배열 안 텍스트도 Props 필수**
+12. **`.replace()` 패턴 금지**
+13. **`<span>ProductName</span> {desc}` 패턴 금지**: description에 제품명 포함
+14. **ControlType.Image fallback 필수**: `const resolved = prop || DEFAULT`
+15. **CSS 클래스명 충돌 방지**: 섹션별 고유 접두사
+16. **container-type은 최상위 요소** (`.sN-root`)
+17. **내부 링크는 Framer 라우팅 경로**: `.html` 금지
+18. **gradient 버튼 금지**: solid ink + hover primary (v6.2)
+19. **모바일 배경 이미지: none + fallback color**
+20. **모든 이미지 Props 노출**: ControlType.Image
+21. **번역 후 native-reviewer 필수**
 
-### LLM Capsule 토큰 (brand === 'llm-capsule' 일 때)
+### LLM Capsule (brand === 'llm-capsule')
 
-**v6.1부터 CSS 변수 사용.** `const P/C/PALETTE = {}` 하드코딩 폐기.
-TSX에서 `var(--c-primary, #5b4fe9)` 형태로 직접 참조.
-TokenProvider.tsx가 `:root` 변수를 주입.
-
-### 출력 경로 (단일 파일 구조 — 페이지 하나당 TSX 1개)
-
-```
-{brand}/output/framer/[페이지명]/
-  ├── [ComponentName].tsx
-  └── preview.html
-```
-
-> 기존 섹션별 분할(tsx/ 디렉토리) 대신 **페이지 전체를 단일 TSX**로 변환한다.
+**v6.1+ CSS 변수 사용.** `const P/C/PALETTE = {}` 하드코딩 폐기.
+`var(--c-primary, #5b4fe9)` 형태로 참조.
+Eyebrow 허용. Brand font(Oxanium) 폐기 → Inter 통일.

@@ -161,8 +161,8 @@ deploy (gh-pages push)
 - `!important` 금지, 인라인 `style` 금지 (CSS 변수 전달 목적 제외)
 - 반응형 4단계 필수: mobile(375) / tablet(768) / sm-desktop(1024) / desktop(1440)
 - 컨테이너 좌우 padding: 16 / 32 / 32 / 120px
-- 컨테이너 max-width: 1440px (desktop 이상에서 중앙 정렬)
-- Brand 폰트(Oxanium): 해당 브랜드의 제품명에만 사용 (`.ds-text--product`)
+- 컨테이너 max-width: cubig 1440px / **llm-capsule 1280px** (v6.2). desktop 이상에서 중앙 정렬
+- Brand 폰트(Oxanium): cubig 브랜드에서만 제품명에 사용. **llm-capsule 브랜드에서는 Oxanium 폐기 → Inter 통일** (v6.2)
 - h1·h2·데이터 숫자 등 일반 텍스트는 모두 `var(--ds-font-base)` (DM Sans)
 - 줄바꿈: `body { word-break: keep-all; overflow-wrap: break-word; }` 전역 적용
 - 긴 문장 분리: 짧은 독립 문장 2개+ → `ds-bullet--dot` 불릿 리스트
@@ -172,13 +172,14 @@ deploy (gh-pages push)
 - 페이지 최상단 여백: `ds-section--hero` padding-top 100px 고정
 - 배경 이미지 위 텍스트: black 또는 white만 사용
 - 미색 배경(ds-section--light) 전면 금지 — 섹션 배경은 항상 white
-- 주황/오렌지 계열 색상 전면 금지
+- 주황/오렌지 계열: cubig 브랜드에서 금지. **llm-capsule 브랜드에서는 amber(`#f59e0b`) 허용** (v6.2, caution 용도 한정)
 - background shorthand 금지 (background-color만 사용)
+- **llm-capsule 버튼 스타일 (v6.2)**: primary 버튼은 solid ink(`--c-ink`) + hover primary(`--c-primary`). **gradient 버튼 폐기**
 - screenshot-frame/bg-wrap 배경색 fallback 필수
 - 모바일 배경 이미지: `@media (max-width: 767px)` background-image: none
 - CSS 변수는 design-system에 정의된 것만 사용
 - Case Study 열 타입 혼합 금지
-- eyebrow 전면 금지
+- eyebrow: cubig 브랜드에서 금지. **llm-capsule 브랜드에서는 허용** (v6.2, 12px uppercase primary color)
 - 코드블록 다크 테마: border: none, background: neutral-900
 - 카드 내 코드블록 앞 divider 금지
 - description max-width 반응형: mobile 100% → 1024px 720px → 1440px 860px
