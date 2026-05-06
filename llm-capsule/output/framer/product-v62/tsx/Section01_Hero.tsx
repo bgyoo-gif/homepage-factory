@@ -10,10 +10,7 @@ interface Props {
   ctaPrimaryHref?: string
   ctaSecondaryLabel?: string
   ctaSecondaryHref?: string
-  heroImage?: string
 }
-
-const DEFAULT_HERO_IMAGE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png"
 
 export default function Section01_Hero({
   eyebrow = "Product",
@@ -25,9 +22,7 @@ export default function Section01_Hero({
   ctaPrimaryHref = "/request-a-demo",
   ctaSecondaryLabel = "View Architecture",
   ctaSecondaryHref = "/architecture",
-  heroImage = "",
 }: Props) {
-  const resolvedHeroImage = heroImage || DEFAULT_HERO_IMAGE
 
   return (
     <>
@@ -134,22 +129,9 @@ export default function Section01_Hero({
           color: var(--c-primary, #5b4fe9);
         }
 
-        .s1-hero-visual {
-          margin-top: 48px;
-          border-radius: var(--r-lg, 16px);
-          overflow: hidden;
-          border: 1px solid var(--c-rule, #e5e7eb);
-          width: 100%;
-          aspect-ratio: 16 / 7;
-          background-color: var(--c-bg-soft, #f7f8fb);
-          object-fit: cover;
-          display: block;
-        }
-
         @container (max-width: 500px) {
           .s1-cta { flex-direction: column; }
           .s1-btn { width: 100%; justify-content: center; }
-          .s1-hero-visual { aspect-ratio: 4 / 3; }
         }
       `}</style>
 
@@ -171,12 +153,6 @@ export default function Section01_Hero({
                 {ctaSecondaryLabel}
               </a>
             </div>
-            <img
-              className="s1-hero-visual"
-              src={resolvedHeroImage}
-              alt=""
-              role="presentation"
-            />
           </div>
         </section>
       </div>
@@ -230,9 +206,5 @@ addPropertyControls(Section01_Hero, {
     type: ControlType.String,
     title: "CTA Secondary URL",
     defaultValue: "/architecture",
-  },
-  heroImage: {
-    type: ControlType.Image,
-    title: "Hero Visual",
   },
 })
