@@ -24,6 +24,46 @@ interface Props {
   card12Type?: string; card12Title?: string; card12Org?: string
 }
 
+const CERT_TYPES = new Set(["ISO", "KISA", "GS"])
+const AWARD_TYPES = new Set(["AWARD"])
+
+function CredIcon({ type }: { type: string }) {
+  const t = type.toUpperCase()
+
+  // Shield-check: certifications (ISO, KISA, GS)
+  if (CERT_TYPES.has(t)) {
+    return (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" />
+        <polyline points="9 12 11 14 15 10" />
+      </svg>
+    )
+  }
+
+  // Trophy: awards
+  if (AWARD_TYPES.has(t)) {
+    return (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 9H4a2 2 0 0 1-2-2V5h4" />
+        <path d="M18 9h2a2 2 0 0 0 2-2V5h-4" />
+        <path d="M12 17v4" />
+        <path d="M8 21h8" />
+        <rect x="6" y="2" width="12" height="13" rx="2" />
+      </svg>
+    )
+  }
+
+  // Star: recognition / vendor / marketplace / fallback
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+    </svg>
+  )
+}
+
 export default function Section02_CredentialGrid({
   eyebrow = "Certifications & recognition",
   heading = "12 certifications, awards, and global recognitions",
@@ -134,8 +174,22 @@ export default function Section02_CredentialGrid({
           min-height: 160px;
           display: flex;
           flex-direction: column;
+          align-items: center;
           justify-content: center;
           gap: 6px;
+        }
+
+        .s2-card__icon-wrap {
+          width: 40px;
+          height: 40px;
+          border-radius: var(--r-sm, 6px);
+          background: var(--c-bg-soft, #f7f8fb);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--c-primary, #5b4fe9);
+          margin-bottom: 12px;
+          flex-shrink: 0;
         }
 
         .s2-card__type {
@@ -175,6 +229,9 @@ export default function Section02_CredentialGrid({
             <div className="s2-grid">
               {cards.map((card, i) => (
                 <article key={i} className="s2-card">
+                  <div className="s2-card__icon-wrap">
+                    <CredIcon type={card.type} />
+                  </div>
                   <span className="s2-card__type">{card.type}</span>
                   <div className="s2-card__name">{card.title}</div>
                   <div className="s2-card__detail">{card.org}</div>

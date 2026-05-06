@@ -18,6 +18,34 @@ interface Props {
   card2CtaHref?: string
 }
 
+// File-text icon — DPA template
+function IconFileText() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+      <polyline points="14 2 14 8 20 8" />
+      <line x1="16" y1="13" x2="8" y2="13" />
+      <line x1="16" y1="17" x2="8" y2="17" />
+      <polyline points="10 9 9 9 8 9" />
+    </svg>
+  )
+}
+
+// Clipboard-check icon — Vendor Security Questionnaire
+function IconClipboardCheck() {
+  return (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+      <rect x="9" y="3" width="6" height="4" rx="1" ry="1" />
+      <polyline points="9 12 11 14 15 10" />
+    </svg>
+  )
+}
+
+const CARD_ICONS = [IconFileText, IconClipboardCheck]
+
 export default function Section06_Downloads({
   eyebrow = "Compliance downloads",
   heading = "Documentation for procurement and compliance",
@@ -115,8 +143,17 @@ export default function Section06_Downloads({
           gap: 12px;
         }
 
-        .s6-card__icon {
-          font-size: 32px;
+        .s6-card__icon-wrap {
+          width: 40px;
+          height: 40px;
+          border-radius: var(--r-sm, 6px);
+          background: var(--c-bg-soft, #f7f8fb);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--c-primary, #5b4fe9);
+          margin-bottom: 4px;
+          flex-shrink: 0;
         }
 
         .s6-card__chip {
@@ -181,15 +218,20 @@ export default function Section06_Downloads({
             </div>
 
             <div className="s6-grid">
-              {cards.map((card, i) => (
-                <article key={i} className="s6-card">
-                  <div className="s6-card__icon">{card.icon}</div>
-                  <span className="s6-card__chip">{card.chip}</span>
-                  <h3 className="s6-card__title">{card.title}</h3>
-                  <p className="s6-card__desc">{card.desc}</p>
-                  <a className="s6-btn" href={card.ctaHref}>{card.ctaText}</a>
-                </article>
-              ))}
+              {cards.map((card, i) => {
+                const Icon = CARD_ICONS[i] || IconFileText
+                return (
+                  <article key={i} className="s6-card">
+                    <div className="s6-card__icon-wrap">
+                      <Icon />
+                    </div>
+                    <span className="s6-card__chip">{card.chip}</span>
+                    <h3 className="s6-card__title">{card.title}</h3>
+                    <p className="s6-card__desc">{card.desc}</p>
+                    <a className="s6-btn" href={card.ctaHref}>{card.ctaText}</a>
+                  </article>
+                )
+              })}
             </div>
           </div>
         </section>

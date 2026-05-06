@@ -11,13 +11,66 @@ interface Props {
   card5Title?: string; card5Desc?: string; card5Color?: string
 }
 
-const ACCENT_COLORS: Record<string, string> = {
-  primary: "var(--c-primary, #5b4fe9)",
-  teal:    "var(--c-teal, #0ea5a4)",
-  amber:   "var(--c-amber, #f59e0b)",
-  coral:   "var(--c-coral, #ef5350)",
-  dark:    "var(--c-bg-dark, #0f1130)",
+// Search / magnifying glass — Detection events
+function IconSearch() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="11" cy="11" r="8" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+  )
 }
+
+// Git-branch — Policy versions
+function IconGitBranch() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="6" y1="3" x2="6" y2="15" />
+      <circle cx="18" cy="6" r="3" />
+      <circle cx="6" cy="18" r="3" />
+      <path d="M18 9a9 9 0 0 1-9 9" />
+    </svg>
+  )
+}
+
+// Lock — Token mappings (encapsulation)
+function IconLock() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+    </svg>
+  )
+}
+
+// Refresh-cw — Detection accuracy (restoration/tracking)
+function IconRefreshCw() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="23 4 23 10 17 10" />
+      <polyline points="1 20 1 14 7 14" />
+      <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+    </svg>
+  )
+}
+
+// Bar-chart — Model + path routing (dashboard/governance)
+function IconBarChart() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="18" y1="20" x2="18" y2="10" />
+      <line x1="12" y1="20" x2="12" y2="4" />
+      <line x1="6" y1="20" x2="6" y2="14" />
+    </svg>
+  )
+}
+
+const CARD_ICONS = [IconSearch, IconGitBranch, IconLock, IconRefreshCw, IconBarChart]
 
 export default function Section04_AuditFeatures({
   eyebrow = "Audit framework",
@@ -126,10 +179,16 @@ export default function Section04_AuditFeatures({
           gap: 10px;
         }
 
-        .s4-card__accent {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
+        .s4-card__icon-wrap {
+          width: 40px;
+          height: 40px;
+          border-radius: var(--r-sm, 6px);
+          background: var(--c-bg-soft, #f7f8fb);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--c-primary, #5b4fe9);
+          margin-bottom: 12px;
           flex-shrink: 0;
         }
 
@@ -159,16 +218,18 @@ export default function Section04_AuditFeatures({
             </div>
 
             <div className="s4-grid">
-              {cards.map((card, i) => (
-                <article key={i} className="s4-card">
-                  <span
-                    className="s4-card__accent"
-                    style={{ backgroundColor: ACCENT_COLORS[card.color] || ACCENT_COLORS.primary }}
-                  />
-                  <h3 className="s4-card__title">{card.title}</h3>
-                  <p className="s4-card__desc">{card.desc}</p>
-                </article>
-              ))}
+              {cards.map((card, i) => {
+                const Icon = CARD_ICONS[i] || IconSearch
+                return (
+                  <article key={i} className="s4-card">
+                    <div className="s4-card__icon-wrap">
+                      <Icon />
+                    </div>
+                    <h3 className="s4-card__title">{card.title}</h3>
+                    <p className="s4-card__desc">{card.desc}</p>
+                  </article>
+                )
+              })}
             </div>
           </div>
         </section>
