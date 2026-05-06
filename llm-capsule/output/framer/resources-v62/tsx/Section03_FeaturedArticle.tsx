@@ -6,11 +6,10 @@ interface Props {
   description?: string
   ctaLabel?: string
   ctaHref?: string
-  visualLine1?: string
-  visualLine2?: string
-  visualLine3?: string
-  visualLine4?: string
+  featuredImage?: string
 }
+
+const DEFAULT_FEATURED_IMG = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png"
 
 export default function Section03_FeaturedArticle({
   label = "FEATURED · MOST READ",
@@ -18,11 +17,9 @@ export default function Section03_FeaturedArticle({
   description = "80% of enterprise AI pilots never ship to production. The reasons are predictable: data exposure barriers, broken document context, residual compliance risk, shadow AI emergence. Here's the diagnostic and the architectural pattern that gets pilots to production.",
   ctaLabel = "Read the article →",
   ctaHref = "/learn/pilot-to-production-enterprise-ai",
-  visualLine1 = "TL;DR · 4-stage diagnosis · architectural pattern",
-  visualLine2 = "↓",
-  visualLine3 = "Most pilots fail not at AI, but at the data layer.",
-  visualLine4 = "— 10 min read",
+  featuredImage = "",
 }: Props) {
+  const resolvedImg = featuredImage || DEFAULT_FEATURED_IMG
   return (
     <>
       <style>{`
@@ -117,6 +114,13 @@ export default function Section03_FeaturedArticle({
           color: var(--c-primary-dark, #3b2fbf);
         }
 
+        .s3-visual img {
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: var(--r-md, 10px);
+        }
+
         .s3-visual {
           background-color: var(--c-bg-dark-2, #1b1d4a);
           border-radius: var(--r-md, 10px);
@@ -153,12 +157,7 @@ export default function Section03_FeaturedArticle({
                 <a className="s3-btn" href={ctaHref}>{ctaLabel}</a>
               </div>
               <div className="s3-visual">
-                <div className="s3-visual-inner">
-                  <span>{visualLine1}</span>
-                  <span>{visualLine2}</span>
-                  <span>{visualLine3}</span>
-                  <span>{visualLine4}</span>
-                </div>
+                <img src={resolvedImg} alt={title} loading="lazy" />
               </div>
             </div>
           </div>
@@ -173,9 +172,6 @@ addPropertyControls(Section03_FeaturedArticle, {
   title:       { type: ControlType.String, title: "Title",        defaultValue: "Why enterprise AI pilots stall — and how they get to production" },
   description: { type: ControlType.String, title: "Description",  defaultValue: "80% of enterprise AI pilots never ship to production. The reasons are predictable: data exposure barriers, broken document context, residual compliance risk, shadow AI emergence. Here's the diagnostic and the architectural pattern that gets pilots to production.", displayTextArea: true },
   ctaLabel:    { type: ControlType.String, title: "CTA Label",    defaultValue: "Read the article →" },
-  ctaHref:     { type: ControlType.String, title: "CTA Href",     defaultValue: "/learn/pilot-to-production-enterprise-ai" },
-  visualLine1: { type: ControlType.String, title: "Visual Line 1", defaultValue: "TL;DR · 4-stage diagnosis · architectural pattern" },
-  visualLine2: { type: ControlType.String, title: "Visual Line 2", defaultValue: "↓" },
-  visualLine3: { type: ControlType.String, title: "Visual Line 3", defaultValue: "Most pilots fail not at AI, but at the data layer." },
-  visualLine4: { type: ControlType.String, title: "Visual Line 4", defaultValue: "— 10 min read" },
+  ctaHref:       { type: ControlType.String, title: "CTA Href",       defaultValue: "/learn/pilot-to-production-enterprise-ai" },
+  featuredImage: { type: ControlType.Image,  title: "Featured Image" },
 })
