@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions v6.2 — Preview</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Design Tokens (simulating Framer Site Settings injection) */
+    :root {
+      --c-primary:      #5b4fe9;
+      --c-primary-dark: #3b2fbf;
+      --c-primary-soft: #eeebfe;
+      --c-teal:         #0ea5a4;
+      --c-teal-dark:    #0b7f7e;
+      --c-teal-soft:    #e6f7f6;
+      --c-coral:        #ef5350;
+      --c-coral-dark:   #c73e3a;
+      --c-coral-soft:   #fce9e8;
+      --c-amber:        #f59e0b;
+      --c-amber-dark:   #b7790c;
+      --c-amber-soft:   #fef3c7;
+      --c-ink:          #0f1130;
+      --c-ink-soft:     #3a3d5e;
+      --c-muted:        #6b7280;
+      --c-bg:           #ffffff;
+      --c-bg-soft:      #f7f8fb;
+      --c-bg-dark:      #0f1130;
+      --c-bg-dark-2:    #1b1d4a;
+      --c-rule:         #e5e7eb;
+      --f-display:      'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --f-mono:         'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+      --s-page:         clamp(20px, 4vw, 80px);
+      --s-section:      clamp(64px, 8vw, 128px);
+      --r-sm:           6px;
+      --r-md:           10px;
+      --r-lg:           16px;
+      --container-max:  1280px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--f-display);
+      color: var(--c-ink);
+      background: var(--c-bg);
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    img, video { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Preview nav */
+    .preview-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--c-bg-dark); color: #fff;
+      padding: 10px 24px;
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      font-family: var(--f-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .preview-nav__title { color: #c8c4f7; margin-right: 8px; }
+    .preview-nav a { color: rgba(255,255,255,0.7); transition: color 0.15s; }
+    .preview-nav a:hover { color: #fff; }
+
+    /* Component wrappers — simulate Framer container queries */
+    .framer-component { width: 100%; container-type: inline-size; }
+
+    /* =====================================================
+       SECTION 1: Hero
+    ===================================================== */
+    .s1-root { width: 100%; container-type: inline-size; font-family: var(--f-display, 'Inter', sans-serif); -webkit-font-smoothing: antialiased; }
+    .s1-section { padding-top: clamp(80px, 10cqi, 140px); padding-bottom: clamp(48px, 6cqi, 80px); border-bottom: 1px solid var(--c-rule, #e5e7eb); text-align: center; background-color: var(--c-bg, #ffffff); }
+    .s1-container { max-width: var(--container-max, 1280px); margin: 0 auto; padding: 0 var(--s-page, clamp(20px, 4cqi, 80px)); }
+    .s1-eyebrow { display: inline-block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--c-primary, #5b4fe9); margin-bottom: 16px; }
+    .s1-h1 { font-size: clamp(36px, 5cqi, 64px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: var(--c-ink, #0f1130); max-width: 860px; margin: 0 auto 20px; word-break: keep-all; overflow-wrap: break-word; }
+    .s1-highlight { color: var(--c-primary, #5b4fe9); }
+    .s1-desc { font-size: clamp(16px, 1.4cqi, 19px); color: var(--c-ink-soft, #3a3d5e); max-width: 760px; line-height: 1.6; margin: 0 auto 40px; word-break: keep-all; overflow-wrap: break-word; }
+    .s1-stats { display: flex; justify-content: center; gap: clamp(24px, 4cqi, 64px); flex-wrap: wrap; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--c-rule, #e5e7eb); }
+    .s1-stat { text-align: center; }
+    .s1-stat-num { font-size: clamp(28px, 3cqi, 40px); font-weight: 800; color: var(--c-primary, #5b4fe9); letter-spacing: -0.02em; line-height: 1; margin-bottom: 6px; }
+    .s1-stat-label { font-size: 13px; color: var(--c-muted, #6b7280); font-weight: 500; }
+
+    /* =====================================================
+       SECTION 2: Proof Band
+    ===================================================== */
+    .s2-root { width: 100%; container-type: inline-size; font-family: var(--f-display, 'Inter', sans-serif); }
+    .s2-section { padding: 32px 0; background-color: var(--c-bg-soft, #f7f8fb); border-bottom: 1px solid var(--c-rule, #e5e7eb); overflow: hidden; }
+    .s2-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--c-muted, #6b7280); text-align: center; margin-bottom: 20px; padding: 0 var(--s-page, clamp(20px, 4cqi, 80px)); }
+    .s2-track-wrap { overflow: hidden; scrollbar-width: none; }
+    .s2-track-wrap::-webkit-scrollbar { display: none; }
+    .s2-track { display: flex; gap: 24px; animation: s2-marquee 32s linear infinite; width: max-content; }
+    .s2-track:hover { animation-play-state: paused; }
+    @keyframes s2-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .s2-logo { flex-shrink: 0; width: 120px; height: 64px; background-color: var(--c-bg, #ffffff); border: 1px solid var(--c-rule, #e5e7eb); border-radius: var(--r-sm, 6px); display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 12px 16px; }
+    .s2-logo img { max-width: 100%; max-height: 36px; object-fit: contain; filter: grayscale(1) opacity(0.65); transition: filter 0.2s; }
+    .s2-logo:hover img { filter: grayscale(0) opacity(1); }
+    .s2-logo-text { font-family: var(--f-mono, 'JetBrains Mono', monospace); font-size: 10px; font-weight: 700; color: var(--c-ink-soft, #3a3d5e); letter-spacing: 0.05em; text-align: center; opacity: 0.65; }
+
+    /* =====================================================
+       INDUSTRY SECTIONS (shared patterns, per-section prefix)
+    ===================================================== */
+
+    /* Reusable structure for s3–s8 */
+    .ind-section { padding: var(--s-section) 0; border-bottom: 1px solid var(--c-rule, #e5e7eb); background-color: var(--c-bg, #ffffff); }
+    .ind-section--alt { background-color: var(--c-bg-soft, #f7f8fb); }
+    .ind-container { max-width: var(--container-max, 1280px); margin: 0 auto; padding: 0 var(--s-page, clamp(20px, 4vw, 80px)); }
+    .ind-header { margin-bottom: 32px; }
+    .ind-h2 { font-size: clamp(22px, 2.8vw, 36px); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; color: var(--c-ink, #0f1130); margin-bottom: 14px; word-break: keep-all; overflow-wrap: break-word; }
+    .ind-lead { font-size: clamp(15px, 1.3vw, 17px); color: var(--c-ink-soft, #3a3d5e); line-height: 1.65; max-width: 800px; word-break: keep-all; overflow-wrap: break-word; }
+    .ind-tag { display: inline-block; font-family: var(--f-mono); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; padding: 4px 12px; border-radius: 999px; margin-bottom: 16px; }
+    .ind-tag--telecom  { color: var(--c-primary, #5b4fe9); background: var(--c-primary-soft, #eeebfe); }
+    .ind-tag--health   { color: var(--c-teal, #0ea5a4); background: var(--c-teal-soft, #e6f7f6); }
+    .ind-tag--finance  { color: var(--c-amber, #f59e0b); background: var(--c-amber-soft, #fef3c7); }
+    .ind-tag--defense  { color: var(--c-ink, #0f1130); background: var(--c-bg-soft, #f7f8fb); border: 1px solid var(--c-rule, #e5e7eb); }
+    .ind-tag--ot       { color: var(--c-coral, #ef5350); background: var(--c-coral-soft, #fce9e8); }
+    .ind-tag--legal    { color: var(--c-primary-dark, #3b2fbf); background: var(--c-primary-soft, #eeebfe); }
+    .ind-states { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-bottom: 28px; }
+    .ind-state { padding: 18px 20px; border-radius: var(--r-md, 10px); background-color: var(--c-bg, #ffffff); border: 1px solid var(--c-rule, #e5e7eb); }
+    .ind-state--blocked { background-color: var(--c-coral-soft, #fce9e8); border-color: transparent; }
+    .ind-state--enabled-primary  { background-color: var(--c-primary-soft, #eeebfe); border-color: transparent; }
+    .ind-state--enabled-teal     { background-color: var(--c-teal-soft, #e6f7f6); border-color: transparent; }
+    .ind-state--enabled-amber    { background-color: var(--c-amber-soft, #fef3c7); border-color: transparent; }
+    .ind-state--enabled-soft     { background-color: var(--c-bg-soft, #f7f8fb); border-color: var(--c-rule, #e5e7eb); }
+    .ind-state--enabled-coral    { background-color: var(--c-coral-soft, #fce9e8); border-color: transparent; }
+    .ind-state__label { font-family: var(--f-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+    .ind-label--blocked  { color: var(--c-coral-dark, #c73e3a); }
+    .ind-label--primary  { color: var(--c-primary-dark, #3b2fbf); }
+    .ind-label--teal     { color: var(--c-teal-dark, #0b7f7e); }
+    .ind-label--amber    { color: var(--c-amber-dark, #b7790c); }
+    .ind-label--ink      { color: var(--c-ink-soft, #3a3d5e); }
+    .ind-label--coral    { color: var(--c-coral, #ef5350); }
+    .ind-state__h { font-size: 14px; font-weight: 700; color: var(--c-ink, #0f1130); margin-bottom: 6px; line-height: 1.3; }
+    .ind-state__d { font-size: 13px; color: var(--c-ink-soft, #3a3d5e); line-height: 1.55; word-break: keep-all; overflow-wrap: break-word; }
+    .ind-wf { margin-bottom: 28px; }
+    .ind-wf__h { font-family: var(--f-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+    .ind-wf__h--primary { color: var(--c-primary, #5b4fe9); }
+    .ind-wf__h--teal    { color: var(--c-teal, #0ea5a4); }
+    .ind-wf__h--amber   { color: var(--c-amber, #f59e0b); }
+    .ind-wf__h--ink     { color: var(--c-ink, #0f1130); }
+    .ind-wf__h--coral   { color: var(--c-coral, #ef5350); }
+    .ind-wf__h--prim-dk { color: var(--c-primary-dark, #3b2fbf); }
+    .ind-wf__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; }
+    .ind-wf__list li { font-size: 14px; color: var(--c-ink-soft, #3a3d5e); line-height: 1.55; padding: 10px 0 10px 24px; position: relative; border-bottom: 1px solid var(--c-rule, #e5e7eb); word-break: keep-all; overflow-wrap: break-word; }
+    .ind-wf__list li:last-child { border-bottom: none; }
+    .ind-wf__list li::before { content: '▸'; position: absolute; left: 0; top: 10px; font-size: 12px; font-weight: 700; }
+    .ind-wf__list--primary li::before { color: var(--c-primary, #5b4fe9); }
+    .ind-wf__list--teal li::before    { color: var(--c-teal, #0ea5a4); }
+    .ind-wf__list--amber li::before   { color: var(--c-amber, #f59e0b); }
+    .ind-wf__list--ink li::before     { color: var(--c-ink, #0f1130); }
+    .ind-wf__list--coral li::before   { color: var(--c-coral, #ef5350); }
+    .ind-wf__list--prim-dk li::before { color: var(--c-primary-dark, #3b2fbf); }
+    .ind-wf__list li strong { color: var(--c-ink, #0f1130); font-weight: 700; display: block; margin-bottom: 2px; }
+    .ind-customer { background-color: var(--c-bg-dark, #0f1130); color: var(--c-bg, #ffffff); border-radius: var(--r-md, 10px); padding: 20px 24px; margin-bottom: 20px; }
+    .ind-customer__label { font-family: var(--f-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #c8c4f7; margin-bottom: 6px; }
+    .ind-customer__name { font-size: 16px; font-weight: 700; color: var(--c-bg, #ffffff); margin-bottom: 6px; line-height: 1.3; }
+    .ind-customer__detail { font-size: 13px; color: #c8c4f7; line-height: 1.55; word-break: keep-all; overflow-wrap: break-word; }
+    .ind-screenshot { margin-top: 28px; border-radius: var(--r-lg, 16px); overflow: hidden; background-color: var(--c-bg-soft, #f7f8fb); border: 1px solid var(--c-rule, #e5e7eb); min-height: 240px; display: flex; align-items: center; justify-content: center; }
+    .ind-screenshot--dark { background-color: var(--c-bg-dark, #0f1130); border-color: var(--c-bg-dark-2, #1b1d4a); }
+    .ind-placeholder { text-align: center; padding: 32px; }
+    .ind-placeholder__icon { font-size: 32px; margin-bottom: 12px; opacity: 0.3; }
+    .ind-placeholder__label { font-family: var(--f-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-muted, #6b7280); margin-bottom: 4px; }
+    .ind-placeholder__label--dark { color: #c8c4f7; opacity: 0.6; }
+    .ind-placeholder__spec { font-size: 12px; color: var(--c-muted, #6b7280); opacity: 0.8; }
+    .ind-placeholder__spec--dark { color: #c8c4f7; opacity: 0.4; }
+    .ind-footer { margin-top: 20px; }
+    .ind-read-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; text-decoration: none; padding-bottom: 2px; border-bottom: 1px solid transparent; transition: border-color 0.15s; }
+    .ind-read-link--primary { color: var(--c-primary, #5b4fe9); }
+    .ind-read-link--primary:hover { border-bottom-color: var(--c-primary, #5b4fe9); }
+    .ind-read-link--teal    { color: var(--c-teal, #0ea5a4); }
+    .ind-read-link--teal:hover    { border-bottom-color: var(--c-teal, #0ea5a4); }
+    .ind-read-link--amber   { color: var(--c-amber, #f59e0b); }
+    .ind-read-link--amber:hover   { border-bottom-color: var(--c-amber, #f59e0b); }
+    .ind-read-link--ink     { color: var(--c-ink, #0f1130); }
+    .ind-read-link--ink:hover     { border-bottom-color: var(--c-ink, #0f1130); }
+    .ind-read-link--coral   { color: var(--c-coral, #ef5350); }
+    .ind-read-link--coral:hover   { border-bottom-color: var(--c-coral, #ef5350); }
+    .ind-read-link--prim-dk { color: var(--c-primary-dark, #3b2fbf); }
+    .ind-read-link--prim-dk:hover { border-bottom-color: var(--c-primary-dark, #3b2fbf); }
+
+    /* =====================================================
+       SECTION 9: CTA
+    ===================================================== */
+    .s9-section { background-color: var(--c-bg-dark, #0f1130); color: var(--c-bg, #ffffff); padding: clamp(64px, 8vw, 100px) var(--s-page, clamp(20px, 4vw, 80px)); text-align: center; }
+    .s9-inner { max-width: var(--container-max, 1280px); margin: 0 auto; }
+    .s9-title { font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: var(--c-bg, #ffffff); margin-bottom: 20px; word-break: keep-all; overflow-wrap: break-word; }
+    .s9-desc { font-size: clamp(16px, 1.4vw, 17px); color: #c8c4f7; max-width: 640px; margin: 0 auto 36px; line-height: 1.6; word-break: keep-all; overflow-wrap: break-word; }
+    .s9-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .s9-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: var(--r-md, 10px); font-weight: 600; font-size: 15px; cursor: pointer; text-decoration: none; transition: all 0.18s; border: 1.5px solid transparent; font-family: var(--f-display); }
+    .s9-btn--invert { background: var(--c-bg, #ffffff); color: var(--c-ink, #0f1130); }
+    .s9-btn--invert:hover { background: var(--c-primary-soft, #eeebfe); color: var(--c-primary-dark, #3b2fbf); }
+    .s9-btn--ghost { background: transparent; color: var(--c-bg, #ffffff); border-color: rgba(255,255,255,0.4); }
+    .s9-btn--ghost:hover { border-color: rgba(255,255,255,0.8); }
+
+    @media (max-width: 599px) {
+      .ind-states { grid-template-columns: 1fr; }
+      .s9-actions { flex-direction: column; align-items: center; }
+      .s9-btn { width: 100%; max-width: 320px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Preview Nav -->
+<nav class="preview-nav">
+  <span class="preview-nav__title">Solutions v6.2</span>
+  <a href="#s1">1. Hero</a>
+  <a href="#s2">2. Proof Band</a>
+  <a href="#s3">3. Telecom</a>
+  <a href="#s4">4. Healthcare</a>
+  <a href="#s5">5. Finance</a>
+  <a href="#s6">6. Defense</a>
+  <a href="#s7">7. OT</a>
+  <a href="#s8">8. Legal</a>
+  <a href="#s9">9. CTA</a>
+</nav>
+
+<!-- SECTION 1: Hero -->
+<div id="s1" class="s1-root">
+  <section class="s1-section">
+    <div class="s1-container">
+      <span class="s1-eyebrow">Solutions</span>
+      <h1 class="s1-h1">Make regulated workflows <span class="s1-highlight">usable with AI</span></h1>
+      <p class="s1-desc">Six industries. Real production workflows. Real customers. One AI enablement data layer that removes the data exposure barrier blocking enterprise AI adoption — so AI runs on real data, inside your environment, under your governance.</p>
+      <div class="s1-stats">
+        <div class="s1-stat">
+          <div class="s1-stat-num">6</div>
+          <div class="s1-stat-label">Regulated industries</div>
+        </div>
+        <div class="s1-stat">
+          <div class="s1-stat-num">10+</div>
+          <div class="s1-stat-label">Production customers</div>
+        </div>
+        <div class="s1-stat">
+          <div class="s1-stat-num">30 min</div>
+          <div class="s1-stat-label">Time to first evaluation</div>
+        </div>
+        <div class="s1-stat">
+          <div class="s1-stat-num">0</div>
+          <div class="s1-stat-label">Raw data to external LLM</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 2: Proof Band -->
+<div id="s2" class="s2-root">
+  <section class="s2-section">
+    <div class="s2-label">Real production deployments — across telecom, healthcare, finance, defense, OT, and legal</div>
+    <div class="s2-track-wrap">
+      <div class="s2-track">
+        <div class="s2-logo"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-sktelecom.avif" alt="SK Telecom" loading="lazy"></div>
+        <div class="s2-logo"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-deutsche-telekom.avif" alt="Deutsche Telekom" loading="lazy"></div>
+        <div class="s2-logo"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-claroty.png" alt="Claroty" loading="lazy"></div>
+        <div class="s2-logo"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-eumc.avif" alt="EUMC" loading="lazy"></div>
+        <div class="s2-logo"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-kyobo.avif" alt="Kyobo" loading="lazy"></div>
+        <div class="s2-logo"><span class="s2-logo-text">DB Insurance</span></div>
+        <div class="s2-logo"><span class="s2-logo-text">IBK</span></div>
+        <div class="s2-logo"><span class="s2-logo-text">Shin&amp;Kim</span></div>
+        <div class="s2-logo"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-korea army.avif" alt="Ministry of National Defense (KR)" loading="lazy"></div>
+        <div class="s2-logo"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-navercloud.avif" alt="NAVER Cloud" loading="lazy"></div>
+        <!-- Duplicate set -->
+        <div class="s2-logo"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-sktelecom.avif" alt="SK Telecom" loading="lazy"></div>
+        <div class="s2-logo"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-deutsche-telekom.avif" alt="Deutsche Telekom" loading="lazy"></div>
+        <div class="s2-logo"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-claroty.png" alt="Claroty" loading="lazy"></div>
+        <div class="s2-logo"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-eumc.avif" alt="EUMC" loading="lazy"></div>
+        <div class="s2-logo"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-kyobo.avif" alt="Kyobo" loading="lazy"></div>
+        <div class="s2-logo"><span class="s2-logo-text">DB Insurance</span></div>
+        <div class="s2-logo"><span class="s2-logo-text">IBK</span></div>
+        <div class="s2-logo"><span class="s2-logo-text">Shin&amp;Kim</span></div>
+        <div class="s2-logo"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-korea army.avif" alt="Ministry of National Defense (KR)" loading="lazy"></div>
+        <div class="s2-logo"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-navercloud.avif" alt="NAVER Cloud" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 3: Telecom -->
+<div id="s3">
+  <section class="ind-section">
+    <div class="ind-container">
+      <div class="ind-header">
+        <span class="ind-tag ind-tag--telecom">Telecom</span>
+        <h2 class="ind-h2">AI in the NOC, OSS/BSS, and customer ops — without exposing subscribers</h2>
+        <p class="ind-lead">Network operations carry subscriber identities, device IDs, circuit IDs, IP ranges, and configurations. PII guardrails miss this; sovereign data rules block raw transmission. LLM Capsule encapsulates locally and routes capsules to approved external LLMs (Path A) or on-prem models (Path B for stricter workflows).</p>
+      </div>
+      <div class="ind-states">
+        <div class="ind-state ind-state--blocked">
+          <div class="ind-state__label ind-label--blocked">Without Capsule</div>
+          <div class="ind-state__h">NOC AI pilot stalls</div>
+          <div class="ind-state__d">Subscriber IDs, device configs, alarm sequences cannot reach external LLM. Pilot demos on synthetic data, then dies in security review.</div>
+        </div>
+        <div class="ind-state ind-state--enabled-primary">
+          <div class="ind-state__label ind-label--primary">With Capsule</div>
+          <div class="ind-state__h">RCA + recommendation auto-inserted</div>
+          <div class="ind-state__d">Capsule travels; AI generates RCA on protected data; output restored into the original ticket with real subscriber/device/circuit IDs.</div>
+        </div>
+      </div>
+      <div class="ind-wf">
+        <div class="ind-wf__h ind-wf__h--primary">Production Workflows</div>
+        <ul class="ind-wf__list ind-wf__list--primary">
+          <li><strong>Incident RCA generation</strong>Real-time root cause analysis on production NOC tickets</li>
+          <li><strong>Customer impact analysis</strong>SLA risk and enterprise customer impact summarization</li>
+          <li><strong>Configuration change drafting</strong>Network config diff explanation and approval drafts</li>
+          <li><strong>Runbook generation</strong>Auto-drafting incident-specific runbooks from history</li>
+        </ul>
+      </div>
+      <div class="ind-customer">
+        <div class="ind-customer__label">Customer Proof</div>
+        <div class="ind-customer__name">SK Telecom · Deutsche Telekom T Challenge 2026 — Top 12</div>
+        <div class="ind-customer__detail">Recognized in Data Security &amp; Governance category. NOC RCA generation and customer-impact analysis on real subscriber, network, and configuration data — all encapsulated locally before any LLM call.</div>
+      </div>
+      <div class="ind-screenshot">
+        <div class="ind-placeholder">
+          <div class="ind-placeholder__icon">📺</div>
+          <div class="ind-placeholder__label">Telecom Industry Visual</div>
+          <div class="ind-placeholder__spec">NOC ticket · capsule → restored states · 16:10 · ~640×400px</div>
+        </div>
+      </div>
+      <div class="ind-footer">
+        <a class="ind-read-link ind-read-link--primary" href="/learn/telecom-noc-ai-deployment">Read: How to deploy AI in a telecom NOC →</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 4: Healthcare -->
+<div id="s4">
+  <section class="ind-section ind-section--alt">
+    <div class="ind-container">
+      <div class="ind-header">
+        <span class="ind-tag ind-tag--health">Healthcare</span>
+        <h2 class="ind-h2">AI for clinical workflows — PHI never leaves the hospital network</h2>
+        <p class="ind-lead">Clinical AI promises 30-50% reduction in documentation burden. But PHI cannot leave the hospital under HIPAA, GDPR, or K-PIPA. PII guardrails miss workflow context, lab sequences, and free-text clinical notes. LLM Capsule encapsulates patient identifiers, MRN, diagnoses, and clinical context locally; restoration happens inside the EHR.</p>
+      </div>
+      <div class="ind-states">
+        <div class="ind-state ind-state--blocked">
+          <div class="ind-state__label ind-label--blocked">Without Capsule</div>
+          <div class="ind-state__h">Documentation pilot blocked</div>
+          <div class="ind-state__d">Privacy officer blocks deployment. Physicians use shadow AI on personal devices; productivity tasted in pilot disappears.</div>
+        </div>
+        <div class="ind-state ind-state--enabled-teal">
+          <div class="ind-state__label ind-label--teal">With Capsule</div>
+          <div class="ind-state__h">AI drafts inside Epic / Cerner / HIS</div>
+          <div class="ind-state__d">PHI encapsulated; AI drafts radiology summaries and discharge notes; outputs auto-restore in the EHR. Audit feeds the privacy office.</div>
+        </div>
+      </div>
+      <div class="ind-wf">
+        <div class="ind-wf__h ind-wf__h--teal">Production Workflows</div>
+        <ul class="ind-wf__list ind-wf__list--teal">
+          <li><strong>Radiology report drafting</strong>AI-drafted impressions from imaging studies + clinical history</li>
+          <li><strong>Discharge summary drafting</strong>Multi-source summarization across admission, treatment, and follow-up</li>
+          <li><strong>Clinical coding assist</strong>ICD-10 / CPT code suggestion with audit trail</li>
+          <li><strong>Care coordination notes</strong>Multi-disciplinary handoff drafts with PHI protected</li>
+        </ul>
+      </div>
+      <div class="ind-customer">
+        <div class="ind-customer__label">Customer Proof</div>
+        <div class="ind-customer__name">Ewha Womans University Medical Center (EUMC)</div>
+        <div class="ind-customer__detail">Clinical workflow summarization with PHI never traversing the EUMC boundary in raw form. Local restoration ensures only authorized hospital systems see original patient identifiers. HIPAA-aligned compliance reporting.</div>
+      </div>
+      <div class="ind-screenshot">
+        <div class="ind-placeholder">
+          <div class="ind-placeholder__icon">🏥</div>
+          <div class="ind-placeholder__label">Healthcare Industry Visual</div>
+          <div class="ind-placeholder__spec">EHR radiology report drafting · light theme · 16:10 · ~640×400px</div>
+        </div>
+      </div>
+      <div class="ind-footer">
+        <a class="ind-read-link ind-read-link--teal" href="/learn/hospital-ai-deployment-phi-protection">Read: How to deploy AI in a hospital →</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 5: Finance -->
+<div id="s5">
+  <section class="ind-section">
+    <div class="ind-container">
+      <div class="ind-header">
+        <span class="ind-tag ind-tag--finance">Finance / Insurance</span>
+        <h2 class="ind-h2">AI on real claim, policy, and customer data — under bank-grade governance</h2>
+        <p class="ind-lead">Insurance and banking workflows are document-heavy and customer-data-heavy: claim narratives, policy details, KYC records, transaction patterns. Sector regulators (FSC, FSS, BaFin, ACPR) increasingly require demonstrable data governance for AI workflows. LLM Capsule keeps customer data inside while AI processes safe capsules.</p>
+      </div>
+      <div class="ind-states">
+        <div class="ind-state ind-state--blocked">
+          <div class="ind-state__label ind-label--blocked">Without Capsule</div>
+          <div class="ind-state__h">Claims AI never reaches production</div>
+          <div class="ind-state__d">Customer name, policy ID, claim narrative cannot reach external LLM. AI drafts on synthetic data; production deployment fails risk review.</div>
+        </div>
+        <div class="ind-state ind-state--enabled-amber">
+          <div class="ind-state__label ind-label--amber">With Capsule</div>
+          <div class="ind-state__h">AI processes claims at production volume</div>
+          <div class="ind-state__d">Capsule + restoration enables real-volume claim classification, fraud signal generation, and underwriting drafts inside the insurer's existing systems.</div>
+        </div>
+      </div>
+      <div class="ind-wf">
+        <div class="ind-wf__h ind-wf__h--amber">Production Workflows</div>
+        <ul class="ind-wf__list ind-wf__list--amber">
+          <li><strong>Claim classification &amp; triage</strong>AI-powered intake, severity scoring, fraud signaling</li>
+          <li><strong>Damage assessment</strong>Multi-document assessment with vehicle/property data restored</li>
+          <li><strong>Underwriting draft</strong>Risk evaluation and premium recommendation drafts</li>
+          <li><strong>Regulatory submission</strong>Filing draft and compliance review assist</li>
+        </ul>
+      </div>
+      <div class="ind-customer">
+        <div class="ind-customer__label">Customer Proof</div>
+        <div class="ind-customer__name">Kyobo · DB Insurance · IBK</div>
+        <div class="ind-customer__detail">AI-powered claim and policy workflows on real customer data. No customer data leaves the institution's environment in raw form. Aligned with sector regulator expectations and SOX where applicable.</div>
+      </div>
+      <div class="ind-screenshot">
+        <div class="ind-placeholder">
+          <div class="ind-placeholder__icon">💰</div>
+          <div class="ind-placeholder__label">Finance Industry Visual</div>
+          <div class="ind-placeholder__spec">Claim form · capsule → restored · 16:10 · ~640×400px</div>
+        </div>
+      </div>
+      <div class="ind-footer">
+        <a class="ind-read-link ind-read-link--amber" href="/learn/pilot-to-production-enterprise-ai">Read: Pilot to production for regulated AI →</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 6: Defense -->
+<div id="s6">
+  <section class="ind-section ind-section--alt">
+    <div class="ind-container">
+      <div class="ind-header">
+        <span class="ind-tag ind-tag--defense">Public Sector / Defense</span>
+        <h2 class="ind-h2">AI on classified mission workflows — fully on-prem, zero external transmission</h2>
+        <p class="ind-lead">Defense, intelligence, and public-sector workflows demand zero external transmission. No external LLM endpoint is acceptable. LLM Capsule's Path B (on-prem local lightweight model) runs entirely inside the command's network — same Capsule instance, same audit framework, no external reach.</p>
+      </div>
+      <div class="ind-states">
+        <div class="ind-state ind-state--blocked">
+          <div class="ind-state__label ind-label--blocked">Without Capsule</div>
+          <div class="ind-state__h">AI categorically excluded</div>
+          <div class="ind-state__d">External LLM use is not permitted. Mission workflows continue without AI support; productivity gap persists.</div>
+        </div>
+        <div class="ind-state ind-state--enabled-soft">
+          <div class="ind-state__label ind-label--ink">With Capsule</div>
+          <div class="ind-state__h">AI inside command boundary</div>
+          <div class="ind-state__d">Quantized on-prem model + Capsule encapsulation + local audit. AI drafts mission briefs, intelligence summaries, and operational reports — entirely within the command.</div>
+        </div>
+      </div>
+      <div class="ind-wf">
+        <div class="ind-wf__h ind-wf__h--ink">Production Workflows</div>
+        <ul class="ind-wf__list ind-wf__list--ink">
+          <li><strong>Mission brief drafting</strong>AI-drafted operational briefs from multi-source intelligence</li>
+          <li><strong>Operational report summarization</strong>Multi-format report consolidation and impact synthesis</li>
+          <li><strong>Doctrine reference assist</strong>Doctrine and procedure lookup with classification protection</li>
+          <li><strong>After-action review draft</strong>Post-operation review with mission identifiers protected</li>
+        </ul>
+      </div>
+      <div class="ind-customer">
+        <div class="ind-customer__label">Customer Proof</div>
+        <div class="ind-customer__name">Ministry of National Defense (Korea)</div>
+        <div class="ind-customer__detail">Mission-grade workflows on Path B (on-prem local) with full audit feed to command-level governance. Mission references, geographic identifiers, and unit data encapsulated; restoration tightly scoped under RBAC.</div>
+      </div>
+      <div class="ind-screenshot ind-screenshot--dark">
+        <div class="ind-placeholder">
+          <div class="ind-placeholder__icon">🛡️</div>
+          <div class="ind-placeholder__label ind-placeholder__label--dark">Defense Industry Visual</div>
+          <div class="ind-placeholder__spec ind-placeholder__spec--dark">Mission brief · dark theme · Path B + audit badges · 16:10 · ~640×400px</div>
+        </div>
+      </div>
+      <div class="ind-footer">
+        <a class="ind-read-link ind-read-link--ink" href="/learn/sovereign-ai-european-enterprises">Read: Sovereign AI architecture →</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 7: OT -->
+<div id="s7">
+  <section class="ind-section">
+    <div class="ind-container">
+      <div class="ind-header">
+        <span class="ind-tag ind-tag--ot">OT / Industrial Cyber</span>
+        <h2 class="ind-h2">AI in OT environments — without exposing asset identifiers or process data</h2>
+        <p class="ind-lead">OT (operational technology) workflows protect mission-critical industrial assets — power, manufacturing, oil &amp; gas, water. PLCs, SCADA tags, asset IDs, and process variables can't leak. LLM Capsule encapsulates OT identifiers locally; AI assists with anomaly explanation, runbook drafting, and incident response.</p>
+      </div>
+      <div class="ind-states">
+        <div class="ind-state ind-state--blocked">
+          <div class="ind-state__label ind-label--blocked">Without Capsule</div>
+          <div class="ind-state__h">OT teams blocked from AI</div>
+          <div class="ind-state__d">Asset IDs, process variables, vendor configurations cannot reach external LLM. OT operators have no AI support for incident analysis.</div>
+        </div>
+        <div class="ind-state ind-state--enabled-coral">
+          <div class="ind-state__label ind-label--coral">With Capsule</div>
+          <div class="ind-state__h">AI assist for OT incident response</div>
+          <div class="ind-state__d">OT identifiers encapsulated. AI drafts incident analysis, anomaly explanation, and recommended runbook on protected capsule; restored locally for OT operators.</div>
+        </div>
+      </div>
+      <div class="ind-wf">
+        <div class="ind-wf__h ind-wf__h--coral">Production Workflows</div>
+        <ul class="ind-wf__list ind-wf__list--coral">
+          <li><strong>Anomaly explanation</strong>AI-generated explanation of detected OT anomalies</li>
+          <li><strong>Asset documentation</strong>Auto-drafting asset and process documentation</li>
+          <li><strong>Vulnerability triage</strong>Vulnerability impact analysis on protected asset data</li>
+          <li><strong>Vendor advisory parsing</strong>Vendor security advisory parsing and impact mapping</li>
+        </ul>
+      </div>
+      <div class="ind-customer">
+        <div class="ind-customer__label">Customer Proof</div>
+        <div class="ind-customer__name">Claroty</div>
+        <div class="ind-customer__detail">Industrial cybersecurity workflows with OT asset identifiers and process variables encapsulated locally. AI assists analysts without exposing customer infrastructure data.</div>
+      </div>
+      <div class="ind-screenshot">
+        <div class="ind-placeholder">
+          <div class="ind-placeholder__icon">⚙️</div>
+          <div class="ind-placeholder__label">OT Industry Visual</div>
+          <div class="ind-placeholder__spec">Industrial monitoring console · anomaly + AI explanation · 16:10 · ~640×400px</div>
+        </div>
+      </div>
+      <div class="ind-footer">
+        <a class="ind-read-link ind-read-link--coral" href="/learn/ai-on-network-operations-data">Read: AI on network &amp; operations data →</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 8: Legal -->
+<div id="s8">
+  <section class="ind-section ind-section--alt">
+    <div class="ind-container">
+      <div class="ind-header">
+        <span class="ind-tag ind-tag--legal">Legal</span>
+        <h2 class="ind-h2">AI for matter management — privilege preserved, deal terms protected</h2>
+        <p class="ind-lead">Legal workflows process privileged material — contracts, deal terms, M&amp;A code names, litigation strategy, regulatory filings. Privilege preservation is non-negotiable. LLM Capsule encapsulates parties, deal terms, and privileged content locally; AI summarizes and analyzes the protected capsule; restoration happens inside the firm's matter management system.</p>
+      </div>
+      <div class="ind-states">
+        <div class="ind-state ind-state--blocked">
+          <div class="ind-state__label ind-label--blocked">Without Capsule</div>
+          <div class="ind-state__h">Outside-counsel AI blocked</div>
+          <div class="ind-state__d">Deal terms, party names, code names cannot reach external LLM. Associates fall back to manual review; AI value never materializes.</div>
+        </div>
+        <div class="ind-state ind-state--enabled-primary">
+          <div class="ind-state__label ind-label--primary">With Capsule</div>
+          <div class="ind-state__h">AI assist inside privileged workflow</div>
+          <div class="ind-state__d">Parties + terms encapsulated; AI drafts summaries, risk analyses, and clause comparisons; outputs restored in matter management with privilege preserved.</div>
+        </div>
+      </div>
+      <div class="ind-wf">
+        <div class="ind-wf__h ind-wf__h--prim-dk">Production Workflows</div>
+        <ul class="ind-wf__list ind-wf__list--prim-dk">
+          <li><strong>Confidential contract review</strong>AI-drafted risk summary across long-form contracts</li>
+          <li><strong>Due diligence summarization</strong>Multi-document M&amp;A diligence with deal data protected</li>
+          <li><strong>Regulatory filing draft</strong>Filing draft and compliance check with sensitive content masked</li>
+          <li><strong>Matter triage</strong>Initial matter intake and routing with privileged data inside</li>
+        </ul>
+      </div>
+      <div class="ind-customer">
+        <div class="ind-customer__label">Customer Proof</div>
+        <div class="ind-customer__name">Shin&amp;Kim</div>
+        <div class="ind-customer__detail">One of Korea's largest law firms. AI assist on privileged matter workflows with parties, deal terms, and code names encapsulated. Privilege preservation under firm governance.</div>
+      </div>
+      <div class="ind-screenshot">
+        <div class="ind-placeholder">
+          <div class="ind-placeholder__icon">⚖️</div>
+          <div class="ind-placeholder__label">Legal Industry Visual</div>
+          <div class="ind-placeholder__spec">Contract review · privilege preserved badge · 16:10 · ~640×400px</div>
+        </div>
+      </div>
+      <div class="ind-footer">
+        <a class="ind-read-link ind-read-link--prim-dk" href="/glossary/ai-enablement-data-layer">Read: AI enablement data layer (definition) →</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SECTION 9: CTA -->
+<div id="s9">
+  <section class="s9-section">
+    <div class="s9-inner">
+      <h2 class="s9-title">Bring your industry, your workflow, your data.</h2>
+      <p class="s9-desc">We deploy LLM Capsule on a sample workflow in your environment within 30 minutes — and produce an evaluation report on detection accuracy, restoration rate, and policy fit for your industry's regulatory profile.</p>
+      <div class="s9-actions">
+        <a class="s9-btn s9-btn--invert" href="/request-a-demo">Request an Industry Demo</a>
+        <a class="s9-btn s9-btn--ghost" href="/architecture">View Architecture</a>
+        <a class="s9-btn s9-btn--ghost" href="/trust">View Trust &amp; Compliance</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
