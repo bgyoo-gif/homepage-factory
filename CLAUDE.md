@@ -271,6 +271,8 @@ Low 결함만 남은 경우 CONDITIONAL PASS.
 28. **section header description 잘림 + lead 중복** → header description에 원문 첫 문장만 넣고 lead에서 전문 반복 금지. header description은 원본 단락 전문 사용, lead와 동일 문장으로 시작하면 FAIL
 29. **overflow-x: auto scrollbar 미숨김** → `overflow-x: auto` 사용 시 반드시 `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }` 동반
 30. **배경 이미지 중복 사용** → 동일 `ds-bg--*` 클래스를 한 페이지에서 2회 이상 사용 금지 (CLAUDE.md 기존 규칙 재강조 — FAIL 트리거)
+31. **컬러 라인 꾸밈 금지 (AI 클리셰)** → `border-top: Npx solid colored`, `border-left: Npx solid colored` 카드 꾸밈 금지. 색상 분기는 icon/badge/number 색상으로만 처리
+32. **내부 링크 Framer 상대경로 필수** → `/request-a-demo`, `/architecture`, `/product`, `/pricing`, `/trust`, `/solutions`, `/resources/learn/...` 형태. 절대 URL(`https://llmcapsule.ai/...`) 금지, `.html` 확장자 금지. 외부 링크(AWS Marketplace 등)만 절대 URL 허용
 
 ---
 

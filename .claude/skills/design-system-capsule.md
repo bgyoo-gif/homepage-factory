@@ -142,8 +142,9 @@ tokens.json (편집 대상)
   box-shadow: none;                   /* 이전: 0px 24px 40px rgba(0,0,0,0.04) */
 }
 
-/* 상단 컬러 라인(border-top colored) 금지 — AI 클리셰 */
-/* 색상 분기는 badge color 또는 icon color로 은은하게 처리 */
+/* 컬러 라인 꾸밈 전면 금지 — AI 클리셰 */
+/* border-top colored, border-left colored 모두 금지 */
+/* 카드 색상 분기는 badge color, icon color, number color로 은은하게 처리 */
 
 /* Capability 카드 색상은 icon/badge로만 표현 */
 .cap-icon--primary { background: var(--c-primary); }
