@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions | AI for Telecom, Healthcare, Finance, Defense, OT, Legal — LLM Capsule</title>
+  <meta name="description" content="LLM Capsule enables AI on real production data across regulated industries — telecom NOC, healthcare clinical workflows, finance claims, defense mission, OT operations, legal matter management. Real customers: SK Telecom, Deutsche Telekom T Challenge Top 12, Claroty, EUMC, Kyobo, DB Insurance, IBK, Shin&Kim, Ministry of National Defense.">
+  <meta name="keywords" content="AI for telecom, AI for healthcare, AI for finance, AI for defense, AI for OT, AI for legal, AI for regulated industries, sovereign AI, enterprise AI adoption">
+  <meta property="og:title" content="LLM Capsule Solutions — AI Now Safe for Every Regulated Industry">
+  <meta property="og:description" content="6 industries. Real customers. Real production workflows.">
+  <link rel="canonical" href="https://llmcapsule.ai/solutions">
+
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "WebPage",
+    "name": "LLM Capsule Solutions",
+    "description": "AI enablement across telecom, healthcare, finance, defense, OT, legal — under one governance framework."
+  }
+  </script>
+
+  <!-- Fonts: Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Design Tokens -->
+  <link rel="stylesheet" href="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/tokens.css">
+
+  <style>
+    /* ============================================================
+       1. CSS Reset + Global
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--f-display, 'Inter', sans-serif);
+      color: var(--c-ink, #0f1130);
+      background-color: var(--c-bg, #ffffff);
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img, video { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ============================================================
+       2. Container
+    ============================================================ */
+    .ds-container {
+      max-width: var(--container-max, 1280px);
+      margin: 0 auto;
+      padding: 0 var(--s-page, clamp(20px, 4vw, 80px));
+    }
+
+    /* ============================================================
+       3. Buttons
+    ============================================================ */
+    .ds-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--r-md, 10px);
+      font-family: var(--f-display, 'Inter', sans-serif);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1;
+      cursor: pointer;
+      border: none;
+      transition: background 0.18s, color 0.18s, border-color 0.18s;
+      text-decoration: none;
+    }
+
+    .ds-btn--primary {
+      background: var(--c-ink, #0f1130);
+      color: var(--c-bg, #ffffff);
+    }
+    .ds-btn--primary:hover {
+      background: var(--c-primary, #5b4fe9);
+    }
+
+    .ds-btn--invert {
+      background: var(--c-bg, #ffffff);
+      color: var(--c-ink, #0f1130);
+    }
+    .ds-btn--invert:hover {
+      background: var(--c-primary-soft, #eeebfe);
+      color: var(--c-primary-dark, #3b2fbf);
+    }
+
+    .ds-btn--invert-ghost {
+      background: transparent;
+      color: var(--c-bg, #ffffff);
+      border: 1.5px solid rgba(255,255,255,0.4);
+    }
+    .ds-btn--invert-ghost:hover {
+      border-color: rgba(255,255,255,0.8);
+    }
+
+    /* ============================================================
+       4. Eyebrow (LLM Capsule allowed)
+    ============================================================ */
+    .ds-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--c-primary, #5b4fe9);
+      margin-bottom: 12px;
+    }
+
+    /* ============================================================
+       5. Typography
+    ============================================================ */
+    h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--c-ink, #0f1130);
+    }
+
+    h2 {
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--c-ink, #0f1130);
+    }
+
+    h3 {
+      font-size: clamp(18px, 1.6vw, 22px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--c-ink, #0f1130);
+    }
+
+    .ds-text--brand { color: var(--c-primary, #5b4fe9); }
+
+    /* ============================================================
+       6. Sections
+    ============================================================ */
+    .ds-section {
+      padding: var(--s-section, clamp(64px, 8vw, 128px)) 0;
+      border-bottom: 1px solid var(--c-rule, #e5e7eb);
+    }
+
+    .ds-section--soft {
+      background-color: var(--c-bg-soft, #f7f8fb);
+    }
+
+    /* ============================================================
+       SECTION 1: Hero
+    ============================================================ */
+    .sol-hero {
+      padding-top: clamp(80px, 10vw, 140px);
+      padding-bottom: clamp(48px, 6vw, 80px);
+      border-bottom: 1px solid var(--c-rule, #e5e7eb);
+      text-align: center;
+      background-color: var(--c-bg, #ffffff);
+    }
+
+    .sol-hero__eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--c-primary, #5b4fe9);
+      margin-bottom: 16px;
+    }
+
+    .sol-hero h1 {
+      max-width: 860px;
+      margin: 0 auto 20px;
+    }
+
+    .sol-hero__sub {
+      font-size: clamp(16px, 1.4vw, 19px);
+      color: var(--c-ink-soft, #3a3d5e);
+      max-width: 760px;
+      line-height: 1.6;
+      margin: 0 auto 40px;
+    }
+
+    .sol-hero__stats {
+      display: flex;
+      justify-content: center;
+      gap: clamp(24px, 4vw, 64px);
+      flex-wrap: wrap;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--c-rule, #e5e7eb);
+    }
+
+    .sol-hero__stat {
+      text-align: center;
+    }
+
+    .sol-hero__stat-num {
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 800;
+      color: var(--c-primary, #5b4fe9);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .sol-hero__stat-label {
+      font-size: 13px;
+      color: var(--c-muted, #6b7280);
+      font-weight: 500;
+    }
+
+    /* ============================================================
+       SECTION 2: Proof Band (logo marquee)
+    ============================================================ */
+    .sol-proof {
+      padding: 32px 0;
+      background-color: var(--c-bg-soft, #f7f8fb);
+      border-bottom: 1px solid var(--c-rule, #e5e7eb);
+      overflow: hidden;
+    }
+
+    .sol-proof__label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--c-muted, #6b7280);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sol-proof__track-wrap {
+      overflow: hidden;
+      scrollbar-width: none;
+    }
+
+    .sol-proof__track-wrap::-webkit-scrollbar { display: none; }
+
+    .sol-proof__track {
+      display: flex;
+      gap: 24px;
+      animation: sol-marquee 32s linear infinite;
+      width: max-content;
+    }
+
+    .sol-proof__track:hover { animation-play-state: paused; }
+
+    @keyframes sol-marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .sol-proof__logo {
+      flex-shrink: 0;
+      width: 120px;
+      height: 64px;
+      background-color: var(--c-bg, #ffffff);
+      border: 1px solid var(--c-rule, #e5e7eb);
+      border-radius: var(--r-sm, 6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 12px 16px;
+    }
+
+    .sol-proof__logo img {
+      max-width: 100%;
+      max-height: 36px;
+      object-fit: contain;
+      filter: grayscale(1) opacity(0.65);
+      transition: filter 0.2s;
+    }
+
+    .sol-proof__logo:hover img {
+      filter: grayscale(0) opacity(1);
+    }
+
+    /* Text fallback for logos without images */
+    .sol-proof__logo-text {
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--c-ink-soft, #3a3d5e);
+      letter-spacing: 0.05em;
+      text-align: center;
+      opacity: 0.65;
+    }
+
+    /* ============================================================
+       SECTION 3-8: Industry Sections
+    ============================================================ */
+
+    /* Industry color vars per section */
+    .sol-ind--telecom    { --ind: var(--c-primary, #5b4fe9); --ind-soft: var(--c-primary-soft, #eeebfe); }
+    .sol-ind--healthcare { --ind: var(--c-teal, #0ea5a4);    --ind-soft: var(--c-teal-soft, #e6f7f6); }
+    .sol-ind--finance    { --ind: var(--c-amber, #f59e0b);   --ind-soft: var(--c-amber-soft, #fef3c7); }
+    .sol-ind--defense    { --ind: var(--c-ink, #0f1130);     --ind-soft: var(--c-bg-soft, #f7f8fb); }
+    .sol-ind--ot         { --ind: var(--c-coral, #ef5350);   --ind-soft: var(--c-coral-soft, #fce9e8); }
+    .sol-ind--legal      { --ind: var(--c-primary-dark, #3b2fbf); --ind-soft: var(--c-primary-soft, #eeebfe); }
+
+    .sol-industry {
+      padding: var(--s-section, clamp(64px, 8vw, 128px)) 0;
+      border-bottom: 1px solid var(--c-rule, #e5e7eb);
+      background-color: var(--c-bg, #ffffff);
+    }
+
+    .sol-industry--alt {
+      background-color: var(--c-bg-soft, #f7f8fb);
+    }
+
+    /* Tag pill */
+    .sol-tag {
+      display: inline-block;
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--ind, var(--c-primary, #5b4fe9));
+      background-color: var(--ind-soft, var(--c-primary-soft, #eeebfe));
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    /* Industry header */
+    .sol-industry__header {
+      margin-bottom: 32px;
+    }
+
+    .sol-industry__h {
+      font-size: clamp(22px, 2.8vw, 36px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--c-ink, #0f1130);
+      margin-bottom: 14px;
+    }
+
+    .sol-industry__lead {
+      font-size: clamp(15px, 1.3vw, 17px);
+      color: var(--c-ink-soft, #3a3d5e);
+      line-height: 1.65;
+      max-width: 800px;
+    }
+
+    /* Without / With 2-col cards */
+    .sol-states {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .sol-state {
+      padding: 18px 20px;
+      border-radius: var(--r-md, 10px);
+      background-color: var(--c-bg, #ffffff);
+      border: 1px solid var(--c-rule, #e5e7eb);
+    }
+
+    .sol-state--blocked {
+      background-color: var(--c-coral-soft, #fce9e8);
+      border-color: transparent;
+    }
+
+    .sol-state--enabled {
+      background-color: var(--c-primary-soft, #eeebfe);
+      border-color: transparent;
+    }
+
+    .sol-state__label {
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .sol-state--blocked .sol-state__label { color: var(--c-coral-dark, #c73e3a); }
+    .sol-state--enabled .sol-state__label { color: var(--c-primary-dark, #3b2fbf); }
+
+    .sol-state__h {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--c-ink, #0f1130);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .sol-state__d {
+      font-size: 13px;
+      color: var(--c-ink-soft, #3a3d5e);
+      line-height: 1.55;
+    }
+
+    /* Workflow bullet list */
+    .sol-workflows {
+      margin-bottom: 28px;
+    }
+
+    .sol-workflows__h {
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ind, var(--c-primary, #5b4fe9));
+      margin-bottom: 14px;
+    }
+
+    .sol-workflows__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .sol-workflows__list li {
+      font-size: 14px;
+      color: var(--c-ink-soft, #3a3d5e);
+      line-height: 1.55;
+      padding: 10px 0 10px 24px;
+      position: relative;
+      border-bottom: 1px solid var(--c-rule, #e5e7eb);
+    }
+
+    .sol-workflows__list li:last-child { border-bottom: none; }
+
+    .sol-workflows__list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      color: var(--ind, var(--c-primary, #5b4fe9));
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .sol-workflows__list li strong {
+      color: var(--c-ink, #0f1130);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* Customer proof card */
+    .sol-customer {
+      background-color: var(--c-bg-dark, #0f1130);
+      color: var(--c-bg, #ffffff);
+      border-radius: var(--r-md, 10px);
+      padding: 20px 24px;
+      margin-bottom: 20px;
+    }
+
+    .sol-customer__label {
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #c8c4f7;
+      margin-bottom: 6px;
+    }
+
+    .sol-customer__name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--c-bg, #ffffff);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .sol-customer__detail {
+      font-size: 13px;
+      color: #c8c4f7;
+      line-height: 1.55;
+    }
+
+    /* Screenshot placeholder */
+    .sol-screenshot {
+      margin-top: 28px;
+      border-radius: var(--r-lg, 16px);
+      overflow: hidden;
+      background-color: var(--c-bg-soft, #f7f8fb);
+      border: 1px solid var(--c-rule, #e5e7eb);
+      min-height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sol-screenshot--dark {
+      background-color: var(--c-bg-dark, #0f1130);
+      border-color: var(--c-bg-dark-2, #1b1d4a);
+    }
+
+    .sol-screenshot__placeholder {
+      text-align: center;
+      padding: 32px;
+    }
+
+    .sol-screenshot__placeholder-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+      opacity: 0.3;
+    }
+
+    .sol-screenshot__placeholder-label {
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-muted, #6b7280);
+      margin-bottom: 4px;
+    }
+
+    .sol-screenshot--dark .sol-screenshot__placeholder-label {
+      color: #c8c4f7;
+      opacity: 0.6;
+    }
+
+    .sol-screenshot__placeholder-spec {
+      font-size: 12px;
+      color: var(--c-muted, #6b7280);
+      opacity: 0.8;
+    }
+
+    .sol-screenshot--dark .sol-screenshot__placeholder-spec {
+      color: #c8c4f7;
+      opacity: 0.4;
+    }
+
+    /* Industry footer */
+    .sol-industry__footer {
+      margin-top: 20px;
+    }
+
+    /* Read article link */
+    .sol-read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ind, var(--c-primary, #5b4fe9));
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .sol-read-link:hover {
+      border-bottom-color: var(--ind, var(--c-primary, #5b4fe9));
+    }
+
+    /* ============================================================
+       SECTION 9: CTA Strip
+    ============================================================ */
+    .sol-cta {
+      background-color: var(--c-bg-dark, #0f1130);
+      color: var(--c-bg, #ffffff);
+      padding: clamp(64px, 8vw, 100px) 0;
+      text-align: center;
+    }
+
+    .sol-cta h2 {
+      color: var(--c-bg, #ffffff);
+      margin-bottom: 20px;
+    }
+
+    .sol-cta__desc {
+      font-size: clamp(16px, 1.4vw, 17px);
+      color: #c8c4f7;
+      max-width: 640px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    .sol-cta__actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================================
+       Responsive
+    ============================================================ */
+    @media (max-width: 599px) {
+      .sol-states {
+        grid-template-columns: 1fr;
+      }
+
+      .sol-hero__stats {
+        gap: 24px;
+      }
+
+      .sol-proof__logo {
+        width: 100px;
+        height: 56px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .sol-states {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .sol-screenshot {
+        min-height: 300px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .sol-screenshot {
+        min-height: 360px;
+      }
+    }
+
+    @media (min-width: 1440px) {
+      .ds-container {
+        padding: 0 var(--s-page, 80px);
+        max-width: var(--container-max, 1280px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     SECTION 1: Hero
+============================================================ -->
+<section id="section-1" class="sol-hero">
+  <div class="ds-container">
+    <span class="sol-hero__eyebrow">Solutions</span>
+    <h1>Make regulated workflows <span class="ds-text--brand">usable with AI</span></h1>
+    <p class="sol-hero__sub">
+      Six industries. Real production workflows. Real customers. One AI enablement data layer that removes the data exposure barrier blocking enterprise AI adoption — so AI runs on real data, inside your environment, under your governance.
+    </p>
+    <div class="sol-hero__stats">
+      <div class="sol-hero__stat">
+        <div class="sol-hero__stat-num">6</div>
+        <div class="sol-hero__stat-label">Regulated industries</div>
+      </div>
+      <div class="sol-hero__stat">
+        <div class="sol-hero__stat-num">10+</div>
+        <div class="sol-hero__stat-label">Production customers</div>
+      </div>
+      <div class="sol-hero__stat">
+        <div class="sol-hero__stat-num">30 min</div>
+        <div class="sol-hero__stat-label">Time to first evaluation</div>
+      </div>
+      <div class="sol-hero__stat">
+        <div class="sol-hero__stat-num">0</div>
+        <div class="sol-hero__stat-label">Raw data to external LLM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 2: Proof Band
+============================================================ -->
+<section id="section-2" class="sol-proof">
+  <div class="sol-proof__label">Real production deployments — across telecom, healthcare, finance, defense, OT, and legal</div>
+  <div class="sol-proof__track-wrap">
+    <div class="sol-proof__track">
+      <!-- Set 1 -->
+      <div class="sol-proof__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-sktelecom.avif" alt="SK Telecom" loading="lazy">
+      </div>
+      <div class="sol-proof__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-deutsche-telekom.avif" alt="Deutsche Telekom" loading="lazy">
+      </div>
+      <div class="sol-proof__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-claroty.png" alt="Claroty" loading="lazy">
+      </div>
+      <div class="sol-proof__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-eumc.avif" alt="EUMC" loading="lazy">
+      </div>
+      <div class="sol-proof__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-kyobo.avif" alt="Kyobo" loading="lazy">
+      </div>
+      <div class="sol-proof__logo">
+        <span class="sol-proof__logo-text">DB Insurance</span>
+      </div>
+      <div class="sol-proof__logo">
+        <span class="sol-proof__logo-text">IBK</span>
+      </div>
+      <div class="sol-proof__logo">
+        <span class="sol-proof__logo-text">Shin&amp;Kim</span>
+      </div>
+      <div class="sol-proof__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-korea army.avif" alt="Ministry of National Defense (KR)" loading="lazy">
+      </div>
+      <div class="sol-proof__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-navercloud.avif" alt="NAVER Cloud" loading="lazy">
+      </div>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="sol-proof__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-sktelecom.avif" alt="SK Telecom" loading="lazy">
+      </div>
+      <div class="sol-proof__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-deutsche-telekom.avif" alt="Deutsche Telekom" loading="lazy">
+      </div>
+      <div class="sol-proof__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-claroty.png" alt="Claroty" loading="lazy">
+      </div>
+      <div class="sol-proof__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-eumc.avif" alt="EUMC" loading="lazy">
+      </div>
+      <div class="sol-proof__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-kyobo.avif" alt="Kyobo" loading="lazy">
+      </div>
+      <div class="sol-proof__logo">
+        <span class="sol-proof__logo-text">DB Insurance</span>
+      </div>
+      <div class="sol-proof__logo">
+        <span class="sol-proof__logo-text">IBK</span>
+      </div>
+      <div class="sol-proof__logo">
+        <span class="sol-proof__logo-text">Shin&amp;Kim</span>
+      </div>
+      <div class="sol-proof__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-korea army.avif" alt="Ministry of National Defense (KR)" loading="lazy">
+      </div>
+      <div class="sol-proof__logo">
+        <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-navercloud.avif" alt="NAVER Cloud" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<!-- ============================================================
+     SECTION 3: Telecom
+============================================================ -->
+<section id="section-3" class="sol-industry sol-ind--telecom">
+  <div class="ds-container">
+
+    <div class="sol-industry__header">
+      <span class="sol-tag">Telecom</span>
+      <h2 class="sol-industry__h">AI in the NOC, OSS/BSS, and customer ops — without exposing subscribers</h2>
+      <p class="sol-industry__lead">Network operations carry subscriber identities, device IDs, circuit IDs, IP ranges, and configurations. PII guardrails miss this; sovereign data rules block raw transmission. LLM Capsule encapsulates locally and routes capsules to approved external LLMs (Path A) or on-prem models (Path B for stricter workflows).</p>
+    </div>
+
+    <div class="sol-states">
+      <div class="sol-state sol-state--blocked">
+        <div class="sol-state__label">Without Capsule</div>
+        <div class="sol-state__h">NOC AI pilot stalls</div>
+        <div class="sol-state__d">Subscriber IDs, device configs, alarm sequences cannot reach external LLM. Pilot demos on synthetic data, then dies in security review.</div>
+      </div>
+      <div class="sol-state sol-state--enabled">
+        <div class="sol-state__label">With Capsule</div>
+        <div class="sol-state__h">RCA + recommendation auto-inserted</div>
+        <div class="sol-state__d">Capsule travels; AI generates RCA on protected data; output restored into the original ticket with real subscriber/device/circuit IDs.</div>
+      </div>
+    </div>
+
+    <div class="sol-workflows">
+      <div class="sol-workflows__h">Production Workflows</div>
+      <ul class="sol-workflows__list">
+        <li><strong>Incident RCA generation</strong>Real-time root cause analysis on production NOC tickets</li>
+        <li><strong>Customer impact analysis</strong>SLA risk and enterprise customer impact summarization</li>
+        <li><strong>Configuration change drafting</strong>Network config diff explanation and approval drafts</li>
+        <li><strong>Runbook generation</strong>Auto-drafting incident-specific runbooks from history</li>
+      </ul>
+    </div>
+
+    <div class="sol-customer">
+      <div class="sol-customer__label">Customer Proof</div>
+      <div class="sol-customer__name">SK Telecom · Deutsche Telekom T Challenge 2026 — Top 12</div>
+      <div class="sol-customer__detail">Recognized in Data Security &amp; Governance category. NOC RCA generation and customer-impact analysis on real subscriber, network, and configuration data — all encapsulated locally before any LLM call.</div>
+    </div>
+
+    <div class="sol-screenshot" data-replace="telecom-mock">
+      <div class="sol-screenshot__placeholder">
+        <div class="sol-screenshot__placeholder-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="8" fill="#e5e7eb"/><rect x="8" y="10" width="24" height="16" rx="2" stroke="#9ca3af" stroke-width="1.5"/><path d="M14 30h12" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/><path d="M20 26v4" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="sol-screenshot__placeholder-label">Telecom Industry Visual</div>
+        <div class="sol-screenshot__placeholder-spec">NOC ticket · capsule → restored states · 16:10 · ~640×400px</div>
+      </div>
+    </div>
+
+    <div class="sol-industry__footer">
+      <a class="sol-read-link" href="/learn/telecom-noc-ai-deployment">Read: How to deploy AI in a telecom NOC →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 4: Healthcare
+============================================================ -->
+<section id="section-4" class="sol-industry sol-industry--alt sol-ind--healthcare">
+  <div class="ds-container">
+
+    <div class="sol-industry__header">
+      <span class="sol-tag">Healthcare</span>
+      <h2 class="sol-industry__h">AI for clinical workflows — PHI never leaves the hospital network</h2>
+      <p class="sol-industry__lead">Clinical AI promises 30-50% reduction in documentation burden. But PHI cannot leave the hospital under HIPAA, GDPR, or K-PIPA. PII guardrails miss workflow context, lab sequences, and free-text clinical notes. LLM Capsule encapsulates patient identifiers, MRN, diagnoses, and clinical context locally; restoration happens inside the EHR.</p>
+    </div>
+
+    <div class="sol-states">
+      <div class="sol-state sol-state--blocked">
+        <div class="sol-state__label">Without Capsule</div>
+        <div class="sol-state__h">Documentation pilot blocked</div>
+        <div class="sol-state__d">Privacy officer blocks deployment. Physicians use shadow AI on personal devices; productivity tasted in pilot disappears.</div>
+      </div>
+      <div class="sol-state sol-state--enabled">
+        <div class="sol-state__label">With Capsule</div>
+        <div class="sol-state__h">AI drafts inside Epic / Cerner / HIS</div>
+        <div class="sol-state__d">PHI encapsulated; AI drafts radiology summaries and discharge notes; outputs auto-restore in the EHR. Audit feeds the privacy office.</div>
+      </div>
+    </div>
+
+    <div class="sol-workflows">
+      <div class="sol-workflows__h">Production Workflows</div>
+      <ul class="sol-workflows__list">
+        <li><strong>Radiology report drafting</strong>AI-drafted impressions from imaging studies + clinical history</li>
+        <li><strong>Discharge summary drafting</strong>Multi-source summarization across admission, treatment, and follow-up</li>
+        <li><strong>Clinical coding assist</strong>ICD-10 / CPT code suggestion with audit trail</li>
+        <li><strong>Care coordination notes</strong>Multi-disciplinary handoff drafts with PHI protected</li>
+      </ul>
+    </div>
+
+    <div class="sol-customer">
+      <div class="sol-customer__label">Customer Proof</div>
+      <div class="sol-customer__name">Ewha Womans University Medical Center (EUMC)</div>
+      <div class="sol-customer__detail">Clinical workflow summarization with PHI never traversing the EUMC boundary in raw form. Local restoration ensures only authorized hospital systems see original patient identifiers. HIPAA-aligned compliance reporting.</div>
+    </div>
+
+    <div class="sol-screenshot" data-replace="healthcare-mock">
+      <div class="sol-screenshot__placeholder">
+        <div class="sol-screenshot__placeholder-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="8" fill="#e6f7f6"/><rect x="8" y="10" width="24" height="16" rx="2" stroke="#0ea5a4" stroke-width="1.5"/><path d="M14 30h12" stroke="#0ea5a4" stroke-width="1.5" stroke-linecap="round"/><path d="M20 26v4" stroke="#0ea5a4" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="sol-screenshot__placeholder-label">Healthcare Industry Visual</div>
+        <div class="sol-screenshot__placeholder-spec">EHR radiology report drafting · light theme · 16:10 · ~640×400px</div>
+      </div>
+    </div>
+
+    <div class="sol-industry__footer">
+      <a class="sol-read-link" href="/learn/hospital-ai-deployment-phi-protection">Read: How to deploy AI in a hospital →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 5: Finance / Insurance
+============================================================ -->
+<section id="section-5" class="sol-industry sol-ind--finance">
+  <div class="ds-container">
+
+    <div class="sol-industry__header">
+      <span class="sol-tag">Finance / Insurance</span>
+      <h2 class="sol-industry__h">AI on real claim, policy, and customer data — under bank-grade governance</h2>
+      <p class="sol-industry__lead">Insurance and banking workflows are document-heavy and customer-data-heavy: claim narratives, policy details, KYC records, transaction patterns. Sector regulators (FSC, FSS, BaFin, ACPR) increasingly require demonstrable data governance for AI workflows. LLM Capsule keeps customer data inside while AI processes safe capsules.</p>
+    </div>
+
+    <div class="sol-states">
+      <div class="sol-state sol-state--blocked">
+        <div class="sol-state__label">Without Capsule</div>
+        <div class="sol-state__h">Claims AI never reaches production</div>
+        <div class="sol-state__d">Customer name, policy ID, claim narrative cannot reach external LLM. AI drafts on synthetic data; production deployment fails risk review.</div>
+      </div>
+      <div class="sol-state sol-state--enabled">
+        <div class="sol-state__label">With Capsule</div>
+        <div class="sol-state__h">AI processes claims at production volume</div>
+        <div class="sol-state__d">Capsule + restoration enables real-volume claim classification, fraud signal generation, and underwriting drafts inside the insurer's existing systems.</div>
+      </div>
+    </div>
+
+    <div class="sol-workflows">
+      <div class="sol-workflows__h">Production Workflows</div>
+      <ul class="sol-workflows__list">
+        <li><strong>Claim classification &amp; triage</strong>AI-powered intake, severity scoring, fraud signaling</li>
+        <li><strong>Damage assessment</strong>Multi-document assessment with vehicle/property data restored</li>
+        <li><strong>Underwriting draft</strong>Risk evaluation and premium recommendation drafts</li>
+        <li><strong>Regulatory submission</strong>Filing draft and compliance review assist</li>
+      </ul>
+    </div>
+
+    <div class="sol-customer">
+      <div class="sol-customer__label">Customer Proof</div>
+      <div class="sol-customer__name">Kyobo · DB Insurance · IBK</div>
+      <div class="sol-customer__detail">AI-powered claim and policy workflows on real customer data. No customer data leaves the institution's environment in raw form. Aligned with sector regulator expectations and SOX where applicable.</div>
+    </div>
+
+    <div class="sol-screenshot" data-replace="finance-mock">
+      <div class="sol-screenshot__placeholder">
+        <div class="sol-screenshot__placeholder-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="8" fill="#fef3c7"/><rect x="8" y="10" width="24" height="16" rx="2" stroke="#f59e0b" stroke-width="1.5"/><path d="M14 30h12" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/><path d="M20 26v4" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="sol-screenshot__placeholder-label">Finance Industry Visual</div>
+        <div class="sol-screenshot__placeholder-spec">Claim form · capsule → restored · 16:10 · ~640×400px</div>
+      </div>
+    </div>
+
+    <div class="sol-industry__footer">
+      <a class="sol-read-link" href="/learn/pilot-to-production-enterprise-ai">Read: Pilot to production for regulated AI →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 6: Defense / Public Sector
+============================================================ -->
+<section id="section-6" class="sol-industry sol-industry--alt sol-ind--defense">
+  <div class="ds-container">
+
+    <div class="sol-industry__header">
+      <span class="sol-tag">Public Sector / Defense</span>
+      <h2 class="sol-industry__h">AI on classified mission workflows — fully on-prem, zero external transmission</h2>
+      <p class="sol-industry__lead">Defense, intelligence, and public-sector workflows demand zero external transmission. No external LLM endpoint is acceptable. LLM Capsule's Path B (on-prem local lightweight model) runs entirely inside the command's network — same Capsule instance, same audit framework, no external reach.</p>
+    </div>
+
+    <div class="sol-states">
+      <div class="sol-state sol-state--blocked">
+        <div class="sol-state__label">Without Capsule</div>
+        <div class="sol-state__h">AI categorically excluded</div>
+        <div class="sol-state__d">External LLM use is not permitted. Mission workflows continue without AI support; productivity gap persists.</div>
+      </div>
+      <div class="sol-state sol-state--enabled">
+        <div class="sol-state__label">With Capsule</div>
+        <div class="sol-state__h">AI inside command boundary</div>
+        <div class="sol-state__d">Quantized on-prem model + Capsule encapsulation + local audit. AI drafts mission briefs, intelligence summaries, and operational reports — entirely within the command.</div>
+      </div>
+    </div>
+
+    <div class="sol-workflows">
+      <div class="sol-workflows__h">Production Workflows</div>
+      <ul class="sol-workflows__list">
+        <li><strong>Mission brief drafting</strong>AI-drafted operational briefs from multi-source intelligence</li>
+        <li><strong>Operational report summarization</strong>Multi-format report consolidation and impact synthesis</li>
+        <li><strong>Doctrine reference assist</strong>Doctrine and procedure lookup with classification protection</li>
+        <li><strong>After-action review draft</strong>Post-operation review with mission identifiers protected</li>
+      </ul>
+    </div>
+
+    <div class="sol-customer">
+      <div class="sol-customer__label">Customer Proof</div>
+      <div class="sol-customer__name">Ministry of National Defense (Korea)</div>
+      <div class="sol-customer__detail">Mission-grade workflows on Path B (on-prem local) with full audit feed to command-level governance. Mission references, geographic identifiers, and unit data encapsulated; restoration tightly scoped under RBAC.</div>
+    </div>
+
+    <div class="sol-screenshot sol-screenshot--dark" data-replace="defense-mock">
+      <div class="sol-screenshot__placeholder">
+        <div class="sol-screenshot__placeholder-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="8" fill="#1b1d4a"/><rect x="8" y="10" width="24" height="16" rx="2" stroke="#c8c4f7" stroke-width="1.5"/><path d="M14 30h12" stroke="#c8c4f7" stroke-width="1.5" stroke-linecap="round"/><path d="M20 26v4" stroke="#c8c4f7" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="sol-screenshot__placeholder-label">Defense Industry Visual</div>
+        <div class="sol-screenshot__placeholder-spec">Mission brief · dark theme · Path B + audit badges · 16:10 · ~640×400px</div>
+      </div>
+    </div>
+
+    <div class="sol-industry__footer">
+      <a class="sol-read-link" href="/learn/sovereign-ai-european-enterprises">Read: Sovereign AI architecture →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 7: OT / Industrial Cyber
+============================================================ -->
+<section id="section-7" class="sol-industry sol-ind--ot">
+  <div class="ds-container">
+
+    <div class="sol-industry__header">
+      <span class="sol-tag">OT / Industrial Cyber</span>
+      <h2 class="sol-industry__h">AI in OT environments — without exposing asset identifiers or process data</h2>
+      <p class="sol-industry__lead">OT (operational technology) workflows protect mission-critical industrial assets — power, manufacturing, oil &amp; gas, water. PLCs, SCADA tags, asset IDs, and process variables can't leak. LLM Capsule encapsulates OT identifiers locally; AI assists with anomaly explanation, runbook drafting, and incident response.</p>
+    </div>
+
+    <div class="sol-states">
+      <div class="sol-state sol-state--blocked">
+        <div class="sol-state__label">Without Capsule</div>
+        <div class="sol-state__h">OT teams blocked from AI</div>
+        <div class="sol-state__d">Asset IDs, process variables, vendor configurations cannot reach external LLM. OT operators have no AI support for incident analysis.</div>
+      </div>
+      <div class="sol-state sol-state--enabled">
+        <div class="sol-state__label">With Capsule</div>
+        <div class="sol-state__h">AI assist for OT incident response</div>
+        <div class="sol-state__d">OT identifiers encapsulated. AI drafts incident analysis, anomaly explanation, and recommended runbook on protected capsule; restored locally for OT operators.</div>
+      </div>
+    </div>
+
+    <div class="sol-workflows">
+      <div class="sol-workflows__h">Production Workflows</div>
+      <ul class="sol-workflows__list">
+        <li><strong>Anomaly explanation</strong>AI-generated explanation of detected OT anomalies</li>
+        <li><strong>Asset documentation</strong>Auto-drafting asset and process documentation</li>
+        <li><strong>Vulnerability triage</strong>Vulnerability impact analysis on protected asset data</li>
+        <li><strong>Vendor advisory parsing</strong>Vendor security advisory parsing and impact mapping</li>
+      </ul>
+    </div>
+
+    <div class="sol-customer">
+      <div class="sol-customer__label">Customer Proof</div>
+      <div class="sol-customer__name">Claroty</div>
+      <div class="sol-customer__detail">Industrial cybersecurity workflows with OT asset identifiers and process variables encapsulated locally. AI assists analysts without exposing customer infrastructure data.</div>
+    </div>
+
+    <div class="sol-screenshot" data-replace="ot-mock">
+      <div class="sol-screenshot__placeholder">
+        <div class="sol-screenshot__placeholder-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="8" fill="#fce9e8"/><rect x="8" y="10" width="24" height="16" rx="2" stroke="#ef5350" stroke-width="1.5"/><path d="M14 30h12" stroke="#ef5350" stroke-width="1.5" stroke-linecap="round"/><path d="M20 26v4" stroke="#ef5350" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="sol-screenshot__placeholder-label">OT Industry Visual</div>
+        <div class="sol-screenshot__placeholder-spec">Industrial monitoring console · anomaly + AI explanation · 16:10 · ~640×400px</div>
+      </div>
+    </div>
+
+    <div class="sol-industry__footer">
+      <a class="sol-read-link" href="/learn/ai-on-network-operations-data">Read: AI on network &amp; operations data →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 8: Legal
+============================================================ -->
+<section id="section-8" class="sol-industry sol-industry--alt sol-ind--legal">
+  <div class="ds-container">
+
+    <div class="sol-industry__header">
+      <span class="sol-tag">Legal</span>
+      <h2 class="sol-industry__h">AI for matter management — privilege preserved, deal terms protected</h2>
+      <p class="sol-industry__lead">Legal workflows process privileged material — contracts, deal terms, M&amp;A code names, litigation strategy, regulatory filings. Privilege preservation is non-negotiable. LLM Capsule encapsulates parties, deal terms, and privileged content locally; AI summarizes and analyzes the protected capsule; restoration happens inside the firm's matter management system.</p>
+    </div>
+
+    <div class="sol-states">
+      <div class="sol-state sol-state--blocked">
+        <div class="sol-state__label">Without Capsule</div>
+        <div class="sol-state__h">Outside-counsel AI blocked</div>
+        <div class="sol-state__d">Deal terms, party names, code names cannot reach external LLM. Associates fall back to manual review; AI value never materializes.</div>
+      </div>
+      <div class="sol-state sol-state--enabled">
+        <div class="sol-state__label">With Capsule</div>
+        <div class="sol-state__h">AI assist inside privileged workflow</div>
+        <div class="sol-state__d">Parties + terms encapsulated; AI drafts summaries, risk analyses, and clause comparisons; outputs restored in matter management with privilege preserved.</div>
+      </div>
+    </div>
+
+    <div class="sol-workflows">
+      <div class="sol-workflows__h">Production Workflows</div>
+      <ul class="sol-workflows__list">
+        <li><strong>Confidential contract review</strong>AI-drafted risk summary across long-form contracts</li>
+        <li><strong>Due diligence summarization</strong>Multi-document M&amp;A diligence with deal data protected</li>
+        <li><strong>Regulatory filing draft</strong>Filing draft and compliance check with sensitive content masked</li>
+        <li><strong>Matter triage</strong>Initial matter intake and routing with privileged data inside</li>
+      </ul>
+    </div>
+
+    <div class="sol-customer">
+      <div class="sol-customer__label">Customer Proof</div>
+      <div class="sol-customer__name">Shin&amp;Kim</div>
+      <div class="sol-customer__detail">One of Korea's largest law firms. AI assist on privileged matter workflows with parties, deal terms, and code names encapsulated. Privilege preservation under firm governance.</div>
+    </div>
+
+    <div class="sol-screenshot" data-replace="legal-mock">
+      <div class="sol-screenshot__placeholder">
+        <div class="sol-screenshot__placeholder-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="8" fill="#eeebfe"/><rect x="8" y="10" width="24" height="16" rx="2" stroke="#3b2fbf" stroke-width="1.5"/><path d="M14 30h12" stroke="#3b2fbf" stroke-width="1.5" stroke-linecap="round"/><path d="M20 26v4" stroke="#3b2fbf" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="sol-screenshot__placeholder-label">Legal Industry Visual</div>
+        <div class="sol-screenshot__placeholder-spec">Contract review · privilege preserved badge · 16:10 · ~640×400px</div>
+      </div>
+    </div>
+
+    <div class="sol-industry__footer">
+      <a class="sol-read-link" href="/glossary/ai-enablement-data-layer">Read: AI enablement data layer (definition) →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 9: CTA Strip
+============================================================ -->
+<section id="section-9" class="sol-cta">
+  <div class="ds-container">
+    <h2>Bring your industry, your workflow, your data.</h2>
+    <p class="sol-cta__desc">We deploy LLM Capsule on a sample workflow in your environment within 30 minutes — and produce an evaluation report on detection accuracy, restoration rate, and policy fit for your industry's regulatory profile.</p>
+    <div class="sol-cta__actions">
+      <a class="ds-btn ds-btn--invert" href="/request-a-demo">Request an Industry Demo</a>
+      <a class="ds-btn ds-btn--invert-ghost" href="/architecture">View Architecture</a>
+      <a class="ds-btn ds-btn--invert-ghost" href="/trust">View Trust &amp; Compliance</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+</body>
+</html>
