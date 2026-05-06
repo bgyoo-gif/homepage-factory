@@ -1,31 +1,39 @@
-# index — 한국어 번역
+# index (Home v6.2) — 한국어 번역
 
 ## Section 01: Hero
 
-Use any AI on your real documents — without exposing a single line
-실제 문서에 어떤 AI든 사용하세요 — 단 한 줄도 외부로 나가지 않습니다
+AI ENABLEMENT DATA LAYER
+AI 데이터 레이어
 
-Your sensitive documents go through LLM Capsule before reaching AI. Confidential names, figures, and terms are replaced locally — AI processes the safe version — then results are restored with your original data. Each organization defines what counts as sensitive.
-민감 문서는 AI에 전달되기 전에 LLM Capsule을 거칩니다. 기밀 이름·수치·용어가 로컬에서 대체되고, AI는 안전한 버전을 처리합니다. 결과는 원본 데이터로 복원됩니다. 민감 정보의 기준은 각 조직이 직접 정의합니다.
+Make 
+민감 워크플로우를
+
+sensitive workflows
+(강조 — 위 문장과 연결)
+
+ run with AI.
+AI로 가동합니다.
+
+From blocked workflows to operational AI — without breaking documents, systems, or context. LLM Capsule is the AI enablement data layer for regulated enterprise operations. It plugs into the systems you already run — on-premise, air-gapped, or hybrid — and AI receives the operational structure it needs. Sensitive data stays inside your environment. Outputs return business-ready, in the originating workflow.
+막혔던 워크플로우를, AI가 실제로 가동합니다 — 문서 구조, 시스템, 문맥을 그대로 유지한 채. LLM Capsule은 규제 산업 엔터프라이즈를 위한 데이터 레이어입니다. 온프레미스, 망분리, 하이브리드 등 현재 운영 중인 시스템에 바로 연결되며, AI는 필요한 운영 구조를 그대로 전달받습니다. 민감 데이터는 내부 환경 안에 머무르고, 결과물은 비즈니스에 바로 사용 가능한 형태로 원래 워크플로우에 복원됩니다.
+
+The AI enablement data layer for regulated operations.
+규제 산업 운영을 위한 데이터 레이어.
 
 Request a Demo
 데모 요청
 
-Available on AWS Marketplace
-AWS Marketplace에서 이용 가능
+/request-a-demo
+/request-a-demo
 
----
+See the Architecture
+아키텍처 보기
 
-## Section 02: Trust
-
-Trusted by enterprises processing sensitive documents
-민감 문서를 처리하는 기업들이 신뢰합니다
-
-across finance, insurance, legal, healthcare, and telecom
-금융·보험·법률·헬스케어·통신 분야에서
+/architecture
+/architecture
 
 0.12s
-0.12s
+0.12초
 
 Per Page Processing
 페이지당 처리 시간
@@ -40,288 +48,475 @@ Restoration Rate
 98%
 
 Output Similarity
-출력 유사도
+응답 유사도
+
+99.14%
+99.14%
+
+Workflow Accuracy
+워크플로우 정확도
+
+NOC Console
+NOC Console
+
+[ALARM] R-472 latency
+[ALARM] R-472 latency
+
+[INCIDENT] INC-24091
+[INCIDENT] INC-24091
+
+SLA risk: enterprise
+SLA risk: enterprise
+
+Ticket System
+Ticket System
+
+INC-24091  packet loss
+INC-24091  packet loss
+
+Site: SEO-18
+Site: SEO-18
+
+Status: escalated
+Status: escalated
+
+Log Viewer
+Log Viewer
+
+03:21 R-472 spike
+03:21 R-472 spike
+
+03:24 SEO-18 loss
+03:24 SEO-18 loss
+
+03:26 escalated
+03:26 escalated
+
+Runbook
+Runbook
+
+1. Check device R-472
+1. Check device R-472
+
+2. Validate config
+2. Validate config
+
+3. Rollback if drift
+3. Rollback if drift
+
+LLM Capsule
+LLM Capsule
+
+in-environment data layer
+내부 환경 데이터 레이어
+
+▶ Encapsulate
+▶ 캡슐화
+
+▶ DP transform
+▶ DP 변환
+
+▶ Send to AI
+▶ AI 전송
+
+▶ Restore
+▶ 복원
+
+▶ Insert here
+▶ 결과 삽입
 
 ---
 
-## Section 03: Five Capabilities
+## Section 02: ProofStrip
 
-Five capabilities that remove every barrier to enterprise AI
-기업 AI 도입의 모든 장벽을 제거하는 다섯 가지 역량
+Trusted by enterprises moving regulated AI from pilot to production
+규제 산업 AI를 파일럿에서 실제 운영으로 전환한 기업들이 신뢰합니다
 
-Other tools either block AI usage or destroy document context. LLM Capsule solves both — here's how.
-기존 도구는 AI 사용을 차단하거나 문서 맥락을 파괴합니다. LLM Capsule은 두 문제를 동시에 해결합니다.
+Telecom · Industrial cybersecurity · Healthcare · Finance · Public sector · Legal
+통신 · 산업 사이버보안 · 의료 · 금융 · 공공 · 법률
 
-CORE
-CORE
+Gartner Vendor
+Gartner Vendor
 
-Your data never leaves
-데이터는 절대 외부로 나가지 않습니다
+Deutsche Telekom
+Deutsche Telekom
 
-Security team blocking AI adoption? With zero exposure, AI only sees safe placeholders. Even if the LLM provider logs everything, zero enterprise data is exposed.
-보안팀이 AI 도입을 막고 있습니까? Zero Exposure 방식으로 AI는 안전한 대체값만 봅니다. LLM 공급자가 모든 것을 기록하더라도 기업 데이터는 일절 노출되지 않습니다.
+SK Telecom
+SK Telecom
 
-CORE
-CORE
+Claroty
+Claroty
+
+EUMC
+EUMC
+
+Kyobo
+Kyobo
+
+DB Insurance
+DB Insurance
+
+IBK
+IBK
+
+NAVER Cloud
+NAVER Cloud
+
+Shin&Kim
+Shin&Kim
+
+Ministry of National Defense
+Ministry of National Defense
+
+ISO/IEC 27001
+ISO/IEC 27001
+
+ISO/IEC 42001
+ISO/IEC 42001
+
+KISA Fast Track
+KISA Fast Track
+
+AWS Marketplace
+AWS Marketplace
+
+---
+
+## Section 03: WhyStoryline
+
+WHY AN AI ENABLEMENT DATA LAYER
+왜 AI 데이터 레이어가 필요한가
+
+The data AI needs is the data your business can't 
+AI에 필요한 데이터가 바로 우리 기업이
+
+expose
+노출할 수 없는 데이터
+
+Not four separate problems. One storyline — read it through.
+네 가지 별개의 문제가 아닙니다. 하나의 흐름입니다 — 처음부터 끝까지 읽어보세요.
+
+01
+01
+
+External LLMs raise enterprise ROI.
+외부 LLM은 기업 ROI를 실질적으로 높입니다.
+
+Approved external LLMs measurably improve productivity, processing speed, and automation ROI — when they can actually reach the work. Every regulated enterprise wants in.
+승인된 외부 LLM은 생산성, 처리 속도, 자동화 ROI를 측정 가능한 수준으로 높입니다 — 실제 업무 데이터에 접근할 수 있을 때. 모든 규제 산업 기업이 도입을 원합니다.
+
+BUT —
+하지만 —
+
+02
+02
+
+PII guardrails alone aren't enough.
+PII 가드레일만으로는 충분하지 않습니다.
+
+They detect names, IDs, financial fields. They were built for individual identifiers — not for the structured ticket data, network configs, OT manifests, clinical workflows, and mission context that real regulated workflows actually run on. Operational data slips right through.
+이름, ID, 금융 필드는 감지합니다. 하지만 개인 식별자 탐지용으로 설계된 도구입니다 — 티켓 구조 데이터, 네트워크 설정, OT 매니페스트, 임상 워크플로우, 미션 컨텍스트처럼 실제 규제 워크플로우가 실행되는 데이터는 그대로 빠져나갑니다. 운영 데이터는 필터를 통과합니다.
+
+AND —
+그리고 —
+
+03
+03
+
+DMZ and legacy operational data is complex and unstructured.
+DMZ 및 레거시 운영 데이터는 복잡하고 비정형입니다.
+
+Mixed free text, network identifiers, system logs, user context, incident records, configurations. Sensitivity leaks through structure, sequence, and aggregate pattern — not just through field names. Field-level filtering doesn't see it.
+자유형 텍스트, 네트워크 식별자, 시스템 로그, 사용자 컨텍스트, 인시던트 기록, 설정값이 혼재합니다. 민감도는 필드명만이 아니라 구조, 순서, 집계 패턴을 통해 유출됩니다. 필드 단위 필터링은 이를 포착하지 못합니다.
+
+AND THE RESIDUAL RISK —
+그리고 남은 위험 —
+
+04
+04
+
+Filtering alone leaves regulated risk standing.
+필터링만으로는 규제 리스크가 여전히 남습니다.
+
+GDPR, HIPAA, SOX, sector regulators, audit obligations, sovereignty constraints — the risk of differential analysis, re-identification, and inference exposure that simple filtering cannot close. Pilots stall. Shadow AI emerges. Production never ships.
+GDPR, HIPAA, SOX, 산업별 규제, 감사 의무, 데이터 주권 제약 — 단순 필터링으로는 차단할 수 없는 차분 분석, 재식별, 추론 노출 리스크가 남습니다. 파일럿은 멈추고, 섀도우 AI가 등장하며, 실제 운영은 시작조차 못 합니다.
+
+→ Result
+→ 결과
+
+LLM Capsule turns blocked workflows into running AI workflows.
+LLM Capsule은 막혔던 워크플로우를 실제 AI 워크플로우로 전환합니다.
+
+Structure-preserving capsule + differential-privacy-based protection + in-environment execution alongside existing legacy systems + restoration into the originating workflow + two execution paths (external approved LLM or on-prem local) + customer-defined markers that change with your business. The AI enablement data layer for regulated operations.
+문서 구조 보존 캡슐화 + 차분 프라이버시 기반 보호 + 기존 레거시 시스템과 함께하는 내부 환경 실행 + 원래 워크플로우로의 복원 + 두 가지 실행 경로(외부 승인 LLM 또는 온프레미스 로컬) + 비즈니스에 맞게 변경 가능한 고객 정의 마커. 규제 산업 운영을 위한 데이터 레이어.
+
+---
+
+## Section 04: Capabilities
+
+CORE CAPABILITIES
+핵심 기능
+
+Six reasons Capsule works inside real enterprise 
+Capsule이 실제 기업 환경에서 작동하는 6가지 이유
+
+workflows
+워크플로우
+
+Other tools either block AI usage or destroy document context. LLM Capsule solves both — and adapts to whatever your business protects next.
+다른 도구들은 AI 사용을 막거나 문서 구조를 파괴합니다. LLM Capsule은 두 문제를 모두 해결합니다 — 비즈니스가 앞으로 보호해야 할 데이터에도 적응합니다.
+
+01
+01
+
+Plug into legacy systems without changing the workflow
+워크플로우를 변경하지 않고 레거시 시스템에 바로 연결합니다
+
+Air-gapped networks, on-premise servers, telecom-grade platforms, custom data pipelines, ServiceNow / SharePoint / Jira / OT historians — LLM Capsule deploys inside your enterprise as-is. Single API-call addition. No system migration. Your existing workflows, security policies, and configurations stay intact.
+망분리 네트워크, 온프레미스 서버, 통신급 플랫폼, 커스텀 데이터 파이프라인, ServiceNow / SharePoint / Jira / OT 히스토리언 — LLM Capsule은 현재 환경 그대로 배포됩니다. API 호출 하나 추가로 완료. 시스템 마이그레이션 없음. 기존 워크플로우, 보안 정책, 설정은 그대로 유지됩니다.
+
+Enterprise Env Execution
+Enterprise Env Execution
+
+02
+02
+
+Tables, tickets, logs, and runbooks stay readable to AI
+테이블, 티켓, 로그, 런북이 AI에게 읽히는 구조 그대로 전달됩니다
+
+Tables, cross-references, configurations, topology graphs, ticket fields, runbook steps, and document hierarchies survive the process intact. AI receives the full operational structure — not broken fragments that produce useless outputs.
+테이블, 상호 참조, 설정값, 토폴로지 그래프, 티켓 필드, 런북 단계, 문서 계층 구조가 처리 후에도 그대로 유지됩니다. AI는 파편화된 조각이 아닌, 완전한 운영 구조를 전달받습니다.
+
+Structure-Preserving
+Structure-Preserving
+
+03
+03
 
 Get real results back
 실제 결과물을 그대로 돌려받습니다
 
-AI outputs auto-restore with your original names, figures, and references — ready for reports, legal reviews, and client deliverables. No manual reconstruction.
-AI 출력은 원본 이름·수치·참조로 자동 복원됩니다. 보고서, 법률 검토, 고객 납품물에 바로 사용할 수 있습니다. 수작업 재구성이 필요 없습니다.
-
-CORE
-CORE
-
-You define what's sensitive
-민감 정보 기준을 직접 정의합니다
-
-Standard PII categories aren't enough. Define project codes, deal terms, internal IDs, and any business-specific confidential markers — tailored to your organization.
-표준 PII 범주만으로는 부족합니다. 프로젝트 코드, 거래 조건, 내부 ID, 기업 고유 기밀 마커를 직접 정의하세요. 조직에 맞게 맞춤 설정됩니다.
-
-+1
-+1
-
-Documents stay readable to AI
-문서 구조, AI가 읽을 수 있게 그대로 유지됩니다
-
-Tables, cross-references, and layouts survive the process intact. AI understands full document context — not broken fragments that produce useless outputs.
-테이블·상호 참조·레이아웃이 처리 과정에서 온전히 보존됩니다. AI는 깨진 조각이 아닌 문서 전체 맥락을 이해합니다.
-
-+2
-+2
-
-Enterprise Environment Execution
-기존 인프라 그대로 실행됩니다
-
-ChatGPT today, Claude tomorrow, on-premise LLM next month. Switch freely — no re-engineering, no vendor lock-in. Protection stays consistent across every model.
-오늘은 ChatGPT, 내일은 Claude, 다음 달에는 온프레미스 LLM. 자유롭게 전환하세요. 재설계도, 벤더 종속도 없습니다. 어떤 모델에서든 보호는 일관되게 유지됩니다.
-
-LLM Capsule is not a masking tool, not a prompt filter, and not a redaction layer. It is the data layer that sits between your documents and any AI — making enterprise AI adoption possible without compromise.
-LLM Capsule은 마스킹 툴이 아닙니다. 프롬프트 필터도, 삭제 레이어도 아닙니다. 문서와 모든 AI 사이에 위치하는 데이터 레이어로, 타협 없는 기업 AI 도입을 가능하게 합니다.
-
-See Product
-제품 보기
-
-View Architecture
-아키텍처 보기
-
-Read the capsule model
-캡슐 모델 살펴보기
-
----
-
-## Section 04: Industry Proof
-
-Enabling AI adoption across regulated industries where sensitive data was the blocker
-민감 데이터가 장벽이었던 규제 산업 전반에서 AI 도입을 지원합니다
-
-LLM Capsule unlocks AI usage on real enterprise documents across financial services, government, healthcare, and legal workflows — turning blocked projects into production deployments.
-LLM Capsule은 금융·공공·헬스케어·법률 워크플로에서 실제 기업 문서에 대한 AI 활용을 가능하게 합니다. 중단된 프로젝트를 프로덕션 배포로 전환합니다.
-
-Public Sector
-공공 부문
-
-Finance & Insurance
-금융 및 보험
-
-Healthcare
-헬스케어
-
-Legal
-법률
-
-Telecom
-통신
-
-Network Security
-네트워크 보안
-
-See industry solutions
-산업별 솔루션 보기
-
----
-
-## Section 05: Step Tabs
-
-Enterprise AI enablement through a 3+2 architecture
-3+2 아키텍처를 통한 기업 AI 활성화
-
-LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 data layer architecture: three core enablement pillars plus two additional value capabilities that ensure output quality and model flexibility.
-LLM Capsule은 3+2 데이터 레이어 아키텍처로 민감 데이터에 대한 기업 AI 도입을 지원합니다. 세 가지 핵심 활성화 기둥과, 출력 품질·모델 유연성을 보장하는 두 가지 추가 역량으로 구성됩니다.
-
-Core 1 — Zero Exposure
-Core 1 — Zero Exposure
-
-Zero Exposure
-Zero Exposure
-
-Sensitive data is replaced with safe placeholders (encapsulation) inside your environment before anything leaves. Original values never reach external AI services.
-민감 데이터는 외부로 나가기 전 환경 내에서 안전한 대체값(캡슐화)으로 치환됩니다. 원본 값은 외부 AI 서비스에 절대 도달하지 않습니다.
-
-Zero exposure means the AI provider processes useful data but cannot reconstruct original sensitive values. Even if the provider logged, stored, or trained on the received data, no original enterprise information would be exposed. Encapsulation creates a data representation that is both processable by AI and opaque to the receiving service — provider logs are safe, raw data never leaves.
-Zero Exposure란 AI 공급자가 유용한 데이터를 처리하면서도 원본 민감 값을 재구성할 수 없다는 의미입니다. 공급자가 수신 데이터를 기록·저장·학습에 사용하더라도 원본 기업 정보는 노출되지 않습니다. 캡슐화는 AI가 처리할 수 있으면서도 수신 서비스에게는 불투명한 데이터 표현을 생성합니다. 공급자 로그는 안전하며, 원시 데이터는 외부로 나가지 않습니다.
-
-Core 2 — Restoration
-Core 2 — 복원
+AI outputs auto-restore with your original names, figures, and references — ready for reports, legal reviews, claims documents, and client deliverables. No manual reconstruction. Token maps live only locally.
+AI 출력물이 원본 이름, 수치, 참조값으로 자동 복원됩니다 — 보고서, 법률 검토, 보험금 청구 서류, 고객 납품물에 바로 사용 가능합니다. 수동 재구성 없음. 토큰 맵은 내부에만 존재합니다.
 
 Restoration
-복원
+Restoration
 
-AI outputs are automatically restored locally — not abstracted, not anonymized, but fully restored with real business data for immediate use.
-AI 출력은 로컬에서 자동 복원됩니다. 추상화나 익명화가 아닌, 실제 비즈니스 데이터로 완전히 복원되어 즉시 사용할 수 있습니다.
+04
+04
 
-Unlike masking tools that produce generic AI outputs requiring manual reconstruction, LLM Capsule automatically restores AI results with original names, account numbers, dates, and references. Restored outputs are directly usable in enterprise workflows — regulatory reports, legal documents, claim analysis, and internal communications — without any post-processing step. This eliminates the "manual review loop" that kills AI ROI.
-수작업 재구성이 필요한 일반적인 AI 출력을 생성하는 마스킹 도구와 달리, LLM Capsule은 원본 이름·계좌 번호·날짜·참조로 AI 결과를 자동 복원합니다. 복원된 출력은 규제 보고서, 법률 문서, 청구 분석, 내부 커뮤니케이션 등 기업 워크플로에서 후처리 없이 바로 사용할 수 있습니다. AI ROI를 저해하는 "수동 검토 루프"를 제거합니다.
+You define what's sensitive
+민감정보 기준, 직접 정의합니다
 
-Core 3 — Enterprise Context
-Core 3 — 엔터프라이즈 컨텍스트
+Standard PII categories aren't enough. Define project codes, deal terms, internal IDs, network identifiers, asset references, mission references — any business-specific marker. Context-aware data control adapts to document type, department, and workflow.
+표준 PII 카테고리만으로는 부족합니다. 프로젝트 코드, 계약 조건, 내부 ID, 네트워크 식별자, 자산 참조, 미션 참조 등 비즈니스 고유 마커를 직접 정의하세요. 컨텍스트 인식 데이터 제어는 문서 유형, 부서, 워크플로우에 맞게 적응합니다.
 
 Enterprise Context
-엔터프라이즈 컨텍스트
+Enterprise Context
 
-Define and control sensitive entities beyond standard PII — project codes, internal IDs, contract terms, and strategic data specific to your organization.
-표준 PII를 넘어 민감 엔티티를 정의하고 제어합니다. 프로젝트 코드, 내부 ID, 계약 조건, 조직 고유의 전략 데이터까지 포함됩니다.
+05
+05
 
-Enterprise documents contain far more sensitivity than personally identifiable information alone. A legal memo about a pending acquisition contains no PII but is filled with deal structure, valuation ranges, and strategic rationale. Enterprise context enables policy-based sensitivity classification through context-aware data control that adapts to document type, department, and workflow context — tailored protection for your specific business logic and secrets.
-기업 문서에는 개인 식별 정보 이상의 민감 내용이 담겨 있습니다. 인수 관련 법률 메모에는 PII가 없지만 거래 구조·밸류에이션 범위·전략적 근거로 가득합니다. 엔터프라이즈 컨텍스트는 문서 유형·부서·워크플로 맥락에 적응하는 컨텍스트 인지 데이터 제어를 통해 정책 기반 민감도 분류를 지원합니다. 조직의 비즈니스 로직과 기밀에 맞춘 보호를 제공합니다.
+Your workflow runs where your data already lives
+데이터가 있는 곳에서 워크플로우가 실행됩니다
 
-+1 Structure-Preserving
-+1 문서 구조 보존
+Sensitive data stays inside your environment. External AI sees only safe placeholders; tokenization plus differential-privacy-based protection make original values practically non-recoverable from outside your boundary. Restoration happens only inside the organization.
+민감 데이터는 내부 환경 안에 머무릅니다. 외부 AI에는 안전한 플레이스홀더만 전달되며, 토큰화와 차분 프라이버시 기반 보호로 인해 원본 값은 외부에서 사실상 복원이 불가능합니다. 복원은 조직 내부에서만 이루어집니다.
 
-Structure-Preserving
-문서 구조 보존
+Zero Exposure
+Zero Exposure
 
-Tables, diagrams, cross-references, and document hierarchy remain intact — your document layout stays readable to AI throughout the process.
-테이블·다이어그램·상호 참조·문서 계층 구조가 온전히 유지됩니다. 처리 과정 전체에서 문서 레이아웃이 AI가 읽을 수 있는 상태로 유지됩니다.
+06
+06
 
-Masking tools destroy document context. LLM Capsule keeps tables, diagrams, and entity relationships intact so AI understands the full context while sensitive values are replaced. Reference consistency, diagram preservation, and document hierarchy are all maintained.
-마스킹 도구는 문서 맥락을 파괴합니다. LLM Capsule은 테이블·다이어그램·엔티티 관계를 보존하여 민감 값이 대체되는 동안에도 AI가 전체 맥락을 이해할 수 있게 합니다. 참조 일관성, 다이어그램 보존, 문서 계층 구조가 모두 유지됩니다.
+You can change the policy tomorrow
+내일 당장 정책을 바꿀 수 있습니다
 
-+2 Enterprise Environment
-+2 엔터프라이즈 환경 실행
+Yesterday it was network logs. Today it's M&A code names. Next quarter it's a new regulator's spec. Define, version, and time-shift confidentiality markers as your business and regulatory landscape evolve — with full audit trail of which marker was protected when.
+어제는 네트워크 로그였고, 오늘은 M&A 코드명입니다. 다음 분기에는 새로운 규제 사양이 추가될 수 있습니다. 비즈니스와 규제 환경이 변화함에 따라 기밀 마커를 정의하고, 버전을 관리하며, 시점을 이동시킬 수 있습니다 — 어떤 마커가 언제 보호되었는지 전체 감사 이력과 함께.
 
-Enterprise Environment Execution
-엔터프라이즈 환경 실행
-
-Runs inside your existing infrastructure. Air-gapped networks, on-premise servers, custom data systems — no architectural changes required.
-기존 인프라 안에서 바로 실행됩니다. 망분리 네트워크, 온프레미스 서버, 맞춤형 데이터 시스템 — 아키텍처 변경이 필요 없습니다.
-
-Most AI solutions demand standardized environments. LLM Capsule deploys within your enterprise as-is — air-gapped networks, telecom-grade platforms, custom data pipelines, and restricted environments. Your existing workflows, security policies, and system configurations stay intact.
-대부분의 AI 솔루션은 표준화된 환경을 요구합니다. LLM Capsule은 현재 상태 그대로 기업 내에 배포됩니다. 망분리 네트워크, 통신 수준 플랫폼, 맞춤형 데이터 파이프라인, 제한된 환경 모두 지원합니다. 기존 워크플로·보안 정책·시스템 구성이 그대로 유지됩니다.
+Time-Shifting Policy
+Time-Shifting Policy
 
 ---
 
-## Section 06: Case Study
+## Section 05: Workflows
 
-AI-Enabled Enterprise Workflows
-AI 기반 기업 워크플로
+AI-ENABLED ENTERPRISE WORKFLOWS
+AI 적용 엔터프라이즈 워크플로우
 
-LLM Capsule plugs into the most common enterprise AI workflows — from document intake to output delivery, one data layer enables AI adoption on real documents.
-LLM Capsule은 가장 일반적인 기업 AI 워크플로에 통합됩니다. 문서 수집부터 출력 전달까지, 하나의 데이터 레이어가 실제 문서에 대한 AI 도입을 가능하게 합니다.
+The workflows that move from pilot to 
+파일럿에서 실제 운영으로 전환되는
+
+production
+워크플로우
+
+LLM Capsule plugs into the most common enterprise AI workflows — protected before AI processing, restored to be directly usable in business.
+LLM Capsule은 기업의 가장 일반적인 AI 워크플로우에 연결됩니다 — AI 처리 전 보호되고, 비즈니스에 바로 사용 가능한 형태로 복원됩니다.
+
+(wf1Icon — SVG path, 번역 불필요)
+(wf1Icon — SVG path, 번역 불필요)
 
 Secure Document Summarization
-보안 문서 요약
+기밀 문서 요약
 
-AI generates executive summaries of sensitive documents — contracts, reports, filings — while all confidential elements are replaced with safe placeholders. Restored summaries contain real names, dates, and figures ready for business use.
-AI가 민감 문서(계약서·보고서·신고서)의 경영진 요약을 생성하며, 모든 기밀 요소는 안전한 대체값으로 치환됩니다. 복원된 요약에는 실제 이름·날짜·수치가 포함되어 업무에 바로 사용할 수 있습니다.
+Contracts, reports, regulatory filings — protected before AI processing. AI generates summaries with real names, dates, and figures ready for business use.
+계약서, 보고서, 규제 서류 — AI 처리 전에 보호됩니다. AI는 실제 이름, 날짜, 수치가 담긴 요약본을 생성하고, 바로 업무에 사용할 수 있습니다.
 
-Contracts, reports, and filings protected
-계약서·보고서·신고서 보호
+Real names, dates, figures restored in output
+출력물에 실제 이름·날짜·수치 복원
 
-Real names, dates, and figures restored in output
-출력에 실제 이름·날짜·수치 복원
+(wf2Icon — SVG path, 번역 불필요)
+(wf2Icon — SVG path, 번역 불필요)
 
 AI Claims Processing
-AI 청구 처리
+AI 보험금 청구 처리
 
-Insurance and financial claims go through LLM Capsule before AI-powered classification, damage assessment, and fraud detection. Restored outputs feed directly into claims management systems with real policyholder data.
-보험·금융 청구가 AI 기반 분류·피해 평가·사기 탐지 전에 LLM Capsule을 거칩니다. 복원된 출력은 실제 보험 가입자 데이터와 함께 청구 관리 시스템에 직접 연동됩니다.
+Insurance and financial claims through LLM Capsule before AI-powered classification, damage assessment, and fraud detection. Restored outputs feed directly into claims management systems.
+보험·금융 청구 데이터가 AI 기반 분류, 손해 평가, 이상 탐지를 거치기 전에 LLM Capsule을 통과합니다. 복원된 결과물은 청구 관리 시스템에 직접 연결됩니다.
 
-Classification, damage assessment, fraud detection enabled
-분류·피해 평가·사기 탐지 활성화
+Direct integration with claims systems
+청구 시스템에 직접 연동
 
-Restored outputs feed directly into claims systems
-복원된 출력이 청구 시스템에 직접 연동
+(wf3Icon — SVG path, 번역 불필요)
+(wf3Icon — SVG path, 번역 불필요)
 
 Confidential Contract Review
-기밀 계약 검토
+기밀 계약서 검토
 
-AI extracts key terms, obligations, and risk clauses from protected contracts. Restored outputs include real party names, amounts, and clause references — ready for direct integration into deal management systems.
-AI가 보호된 계약서에서 핵심 조건·의무·위험 조항을 추출합니다. 복원된 출력에는 실제 당사자명·금액·조항 참조가 포함되어 딜 관리 시스템에 바로 통합할 수 있습니다.
+AI extracts key terms, obligations, and risk clauses from protected contracts. Restored outputs include real party names, amounts, and clause references — ready for deal management systems.
+AI가 보호된 계약서에서 핵심 조건, 의무, 위험 조항을 추출합니다. 복원된 결과물에는 실제 당사자명, 금액, 조항 참조가 포함되어 딜 관리 시스템에 바로 연결됩니다.
 
-Key terms, obligations, and risk clauses extracted
-핵심 조건·의무·위험 조항 추출
-
-Real party names, amounts, and references restored
+Real party names, amounts, references restored
 실제 당사자명·금액·참조 복원
 
+(wf4Icon — SVG path, 번역 불필요)
+(wf4Icon — SVG path, 번역 불필요)
+
 Internal Report Generation
-내부 보고서 생성
+내부 보고서 자동 생성
 
-AI drafts internal reports from protected data sources — performance reviews, audit findings, compliance summaries. Restored reports contain real employee names, department data, and metric values.
-AI가 보호된 데이터 소스에서 내부 보고서(성과 리뷰·감사 결과·컴플라이언스 요약)를 작성합니다. 복원된 보고서에는 실제 직원명·부서 데이터·지표 값이 포함됩니다.
+AI drafts internal reports from protected data sources — performance reviews, audit findings, compliance summaries. Restored reports flow directly into governance workflows.
+AI가 보호된 데이터 소스에서 내부 보고서를 초안으로 작성합니다 — 성과 평가, 감사 결과, 컴플라이언스 요약. 복원된 보고서는 거버넌스 워크플로우에 직접 연결됩니다.
 
-Performance reviews, audit findings, compliance summaries
-성과 리뷰·감사 결과·컴플라이언스 요약
-
-Real employee names, department data, and metrics restored
-실제 직원명·부서 데이터·지표 복원
+Restored reports flow into governance
+복원된 보고서가 거버넌스 워크플로우로 연결
 
 ---
 
-## Section 07: Problem
+## Section 06: WithoutWith
 
-Enterprise data is never AI-ready by default
-기업 데이터는 기본적으로 AI에 사용할 수 없습니다
+PILOT TO PRODUCTION
+파일럿에서 운영으로
 
-Every enterprise document contains sensitive information that cannot be sent to external AI models. But without real data, AI outputs are generic and unusable. This is the core barrier to enterprise AI adoption.
-모든 기업 문서에는 외부 AI 모델에 전송할 수 없는 민감 정보가 포함되어 있습니다. 하지만 실제 데이터 없이는 AI 출력이 일반적이고 사용할 수 없습니다. 이것이 기업 AI 도입의 핵심 장벽입니다.
+Without LLM Capsule. With 
+LLM Capsule 없이. LLM Capsule과
 
-Organizations cannot leverage AI capabilities without first making their data AI-ready.
-조직은 데이터를 AI에 사용할 수 있도록 만들지 않고서는 AI 역량을 활용할 수 없습니다.
+LLM Capsule
+LLM Capsule
 
-Traditional approaches — masking, redaction, tokenization, and prompt security gateways — were not designed for AI workflows. Masking and redaction permanently remove the data context that AI models need. Prompt gateways filter at the API level but cannot handle enterprise documents end to end.
-기존 접근 방식(마스킹·삭제·토큰화·프롬프트 보안 게이트웨이)은 AI 워크플로를 위해 설계되지 않았습니다. 마스킹과 삭제는 AI 모델에 필요한 데이터 맥락을 영구적으로 제거합니다. 프롬프트 게이트웨이는 API 수준에서 필터링하지만 기업 문서를 엔드투엔드로 처리할 수 없습니다.
+What changes when the data layer can finally handle the work.
+데이터 레이어가 실제 업무를 처리할 수 있게 되면 무엇이 달라집니다.
 
-These tools create a fundamental adoption barrier: without a data layer that makes sensitive data AI-ready while keeping it protected, enterprise AI projects stall before they can demonstrate value.
-이러한 도구는 근본적인 도입 장벽을 만듭니다. 민감 데이터를 보호하면서 AI에 사용할 수 있게 만드는 데이터 레이어 없이는 기업 AI 프로젝트가 가치를 입증하기 전에 정체됩니다.
+WITHOUT LLM CAPSULE
+LLM CAPSULE 없이
+
+Enterprise AI projects stall at pilot
+기업 AI 프로젝트, 파일럿에서 막힙니다
+
+Manual review workflows persist — humans process documents AI can't be trusted with
+수동 검토 워크플로우 지속 — AI를 신뢰할 수 없는 문서를 사람이 직접 처리합니다
+
+Document structure destroyed — flat masking breaks tables and cross-references
+문서 구조 파괴 — 단순 마스킹이 테이블과 상호 참조를 망가뜨립니다
+
+Low-quality AI output — even when AI is permitted, results need extensive manual reconstruction
+낮은 품질의 AI 결과물 — AI 사용이 허가된 경우에도 결과물에 광범위한 수동 재구성이 필요합니다
+
+Security teams block AI adoption — projects never demonstrate value before being cancelled
+보안팀의 AI 도입 차단 — 프로젝트가 가치를 증명하기도 전에 취소됩니다
+
+Shadow AI emerges — employees route around the controls because the controls block real work
+섀도우 AI 등장 — 통제가 실제 업무를 막기 때문에 직원들이 우회합니다
+
+Regulated workflows excluded — telecom, healthcare, defense, finance left out of the AI gains
+규제 워크플로우 제외 — 통신·의료·국방·금융이 AI 혜택에서 배제됩니다
+
+WITH LLM CAPSULE
+LLM CAPSULE과 함께
+
+Enterprise AI ships on real data
+실제 데이터 위에서 기업 AI가 작동합니다
+
+AI runs on sensitive documents — the data layer handles protection, teams focus on outcomes
+AI가 민감 문서 위에서 실행됩니다 — 데이터 레이어가 보호를 담당하고, 팀은 성과에 집중합니다
+
+Real documents processed with any LLM — ChatGPT, Claude, Gemini, Perplexity, or on-prem local
+어떤 LLM으로도 실제 문서를 처리할 수 있습니다 — ChatGPT, Claude, Gemini, Perplexity, 또는 온프레미스 로컬
+
+Compliance satisfied — zero raw exposure architecture meets GDPR, HIPAA, SOX governance
+컴플라이언스 충족 — 원시 데이터 Zero Exposure 아키텍처가 GDPR, HIPAA, SOX 거버넌스를 만족합니다
+
+Restored outputs retain business context — real names, real figures, real references
+복원된 결과물이 비즈니스 컨텍스트를 유지합니다 — 실제 이름, 실제 수치, 실제 참조값 그대로
+
+Tables, layouts, cross-references preserved through structure-preserving encapsulation
+문서 구조 보존 캡슐화를 통해 테이블, 레이아웃, 상호 참조가 유지됩니다
+
+Regulated industries adopt AI on production data — pilots become production
+규제 산업이 실제 운영 데이터로 AI를 도입합니다 — 파일럿이 운영이 됩니다
+
+---
+
+## Section 07: ComparisonTable
+
+WHERE IT SITS
+포지셔닝
+
+Not masking. Not a prompt gateway. Not 
+마스킹 도구가 아닙니다. 프롬프트 게이트웨이도, 합성 데이터도
+
+synthetic data
+아닙니다
+
+An AI enablement data layer for regulated workflows.
+규제 워크플로우를 위한 데이터 레이어.
 
 Approach
-접근 방식
+접근
 
 Method
 방법
 
 Limitation
-한계
+제약
 
-AI Workflow Impact
-AI 워크플로 영향
+vs LLM Capsule
+vs LLM Capsule
+
+PII Guardrails & AI Security Suites
+PII 가드레일 및 AI 보안 스위트
+
+API-level protection and policy enforcement
+API 수준 보호 및 정책 적용
+
+Optimized for risk control, not workflow restoration
+리스크 제어에 최적화 — 워크플로우 복원은 아님
+
+Capsule preserves operational structure, runs inside existing systems, and restores business-ready output
+Capsule은 운영 구조를 보존하고, 기존 시스템 내부에서 실행되며, 비즈니스 바로 사용 가능한 결과물을 복원합니다
 
 Masking & Redaction
-마스킹 및 삭제
+마스킹과 삭제
 
 Permanently removes data
-데이터를 영구 제거
+데이터 영구 삭제
 
-Destroys context AI needs
-AI에 필요한 맥락 파괴
+Destroys the context AI needs to produce useful output
+AI가 유용한 결과물을 생성하는 데 필요한 컨텍스트를 파괴합니다
 
-Unusable [REDACTED] outputs requiring manual reconstruction
-수작업 재구성이 필요한 사용 불가 [REDACTED] 출력
-
-Prompt Security Gateways
-프롬프트 보안 게이트웨이
-
-API-level prompt filtering
-API 수준 프롬프트 필터링
-
-No document-level protection
-문서 수준 보호 없음
-
-No output restoration capability
-출력 복원 기능 없음
+Capsule encapsulates locally and restores tokens to original values inside your environment
+Capsule은 로컬에서 캡슐화하고, 내부 환경 안에서 토큰을 원본 값으로 복원합니다
 
 Synthetic Data Platforms
 합성 데이터 플랫폼
@@ -329,280 +524,203 @@ Synthetic Data Platforms
 Artificial data generation
 인공 데이터 생성
 
-Training/testing only
-학습/테스트 전용
+Training / testing only — not live operational workflows
+학습·테스트용 — 실시간 운영 워크플로우에는 적용 불가
 
-Cannot replace real documents in live AI workflows
-실시간 AI 워크플로에서 실제 문서를 대체할 수 없음
+Capsule runs on real documents in production workflows
+Capsule은 실제 운영 워크플로우에서 실제 문서 위에서 실행됩니다
 
 Security Team Blocks AI
-보안팀 AI 차단
+보안팀의 AI 차단
 
 Manual approval gate
 수동 승인 게이트
 
-Blocks all AI projects
-모든 AI 프로젝트 차단
+Blocks AI projects — pilot never reaches production
+AI 프로젝트 차단 — 파일럿이 운영에 도달하지 못합니다
 
-Projects never demonstrate value before being cancelled
-프로젝트가 취소되기 전에 가치를 입증하지 못함
-
-LLM Capsule sits between your documents and any AI model. It replaces sensitive data with safe placeholders inside your environment, lets AI process the protected version, then restores real data back into AI outputs — not at the model layer, not at the prompt layer, but at the data layer where it matters.
-LLM Capsule은 문서와 모든 AI 모델 사이에 위치합니다. 환경 내부에서 민감 데이터를 안전한 대체값으로 치환하고, AI가 보호된 버전을 처리한 뒤, 실제 데이터를 AI 출력에 복원합니다. 모델 레이어도, 프롬프트 레이어도 아닌, 중요한 데이터 레이어에서 작동합니다.
-
-See how it works
-자세히 살펴보기
+Capsule enables AI under existing enterprise governance
+Capsule은 기존 기업 거버넌스 안에서 AI를 가능하게 합니다
 
 ---
 
-## Section 08: Before / After
+## Section 08: UseCases
 
-From blocked AI projects to enabled enterprise AI with usable outputs
-막혔던 AI 프로젝트에서 사용 가능한 출력이 있는 기업 AI 활성화로
+BUILT FOR REGULATED OPERATIONS
+규제 산업 운영을 위해 설계되었습니다
 
-WITHOUT LLM CAPSULE
-LLM CAPSULE 없이
+From telecom NOC to 
+통신 NOC부터
 
-Enterprise AI is blocked or broken
-기업 AI, 막히거나 망가진 상태입니다
+mission operations
+미션 운영까지
 
-AI blocked entirely — security teams reject proposals due to data exposure risk
-AI가 완전히 차단됨 — 보안팀이 데이터 노출 위험으로 제안을 거부
+Each industry below shows the operational data LLM Capsule transforms — not just PII — and where it's already deployed.
+아래 각 산업에서는 LLM Capsule이 변환하는 운영 데이터를 보여줍니다 — PII만이 아닌 — 그리고 이미 배포된 현장을 확인할 수 있습니다.
 
-Masking and redaction strip context — AI outputs are abstracted and unusable for enterprise workflows
-마스킹과 삭제가 맥락을 제거 — AI 출력이 추상화되어 기업 워크플로에 사용 불가
+See all six industries →
+6개 산업 전체 보기 →
 
-Manual review workflows persist — documents require human processing because AI cannot be trusted with real data
-수동 검토 워크플로 지속 — AI에 실제 데이터를 맡길 수 없어 문서가 사람의 처리를 요구
+/solutions
+/solutions
 
-Document structure destroyed — flat masking breaks tables, entity relationships, and cross-references
-문서 구조 파괴 — 단순 마스킹이 테이블·엔티티 관계·상호 참조를 손상
+01
+01
 
-Low-quality AI output — even when AI is permitted, outputs require extensive manual reconstruction to be usable
-저품질 AI 출력 — AI가 허용되더라도 출력을 사용하려면 대규모 수작업 재구성이 필요
+Network Operations & Incident Analysis
+네트워크 운영 및 인시던트 분석
 
-Enterprise AI projects stall in pilot — no path from proof of concept to production deployment
-기업 AI 프로젝트가 파일럿 단계에서 정체 — PoC에서 프로덕션 배포까지의 경로 없음
+Input
+입력
 
-WITH LLM CAPSULE
-LLM CAPSULE 사용
+NOC logs · alarm sequences · device / site / circuit IDs · SLA risk · NOC response history · subscriber identities · network configs
+NOC 로그 · 알람 시퀀스 · 장치 / 사이트 / 회선 ID · SLA 위험 · NOC 대응 이력 · 가입자 식별정보 · 네트워크 설정
 
-AI adoption enabled on real enterprise data
-실제 기업 데이터 위에서, AI가 작동합니다
+Flow
+흐름
 
-AI enabled on sensitive documents — the data layer handles protection so teams can focus on AI outcomes
-민감 문서에 AI 활성화 — 데이터 레이어가 보호를 처리하여 팀은 AI 성과에 집중
+Capsule → AI generates RCA + customer-impact analysis → restored into ticket / runbook
+Capsule → AI가 근본 원인 분석 + 고객 영향 분석 생성 → 티켓 / 런북에 복원
 
-Real documents processed with best-in-class LLMs — ChatGPT, Claude, Gemini, Perplexity, or any LLM API
-최고 수준의 LLM으로 실제 문서 처리 — ChatGPT, Claude, Gemini, Perplexity 또는 모든 LLM API
+SK Telecom · Deutsche Telekom T Challenge 2026 — Top 12, Data Security & Governance.
+SK Telecom · Deutsche Telekom T Challenge 2026 — Top 12, Data Security & Governance.
 
-Compliance satisfied — zero exposure architecture meets enterprise AI governance requirements automatically
-규제 대응 완료 — Zero Exposure 아키텍처가 기업 AI 거버넌스 요구사항을 자동으로 충족
+02
+02
 
-Restored outputs retain original business context — real names, real figures, real references restored locally
-복원된 출력이 원본 비즈니스 맥락 유지 — 실제 이름·수치·참조가 로컬에서 복원
+OT / Industrial Asset & Vulnerability Operations
+OT / 산업 자산 및 취약점 운영
 
-Tables, layouts, cross-references, and document hierarchy fully preserved through structure-preserving processing
-문서 구조 보존 처리를 통해 테이블·레이아웃·상호 참조·계층 구조 완전 보존
+Input
+입력
 
-98% output similarity with zero data exposure — measured on real enterprise document processing workloads
-제로 데이터 노출로 98% 출력 유사도 — 실제 기업 문서 처리 워크로드에서 측정
+asset ID · PLC / ICS alerts · vulnerability records · plant operation · patch constraint · vendor / device info · infrastructure details
+자산 ID · PLC / ICS 알람 · 취약점 기록 · 설비 운영 · 패치 제약 · 벤더 / 장치 정보 · 인프라 상세
 
----
+Flow
+흐름
 
-## Section 09: Diagram
+Capsule → AI reviews + recommends remediation → security ops workflow
+Capsule → AI가 검토 + 조치 권고 → 보안 운영 워크플로우
 
-A data layer between your enterprise and any LLM
-기업과 모든 LLM 사이의 데이터 레이어
+Partner: Claroty (industrial cybersecurity).
+Partner: Claroty (industrial cybersecurity).
 
-LLM Capsule sits between your internal systems and external AI models. Raw data stays inside your environment — the trust boundary is never crossed by original data. AI only processes the protected version.
-LLM Capsule은 내부 시스템과 외부 AI 모델 사이에 위치합니다. 원시 데이터는 환경 내부에 머무르며, 신뢰 경계를 원본 데이터가 절대 넘지 않습니다. AI는 보호된 버전만 처리합니다.
+03
+03
 
-LLM Capsule Architecture
-LLM Capsule 아키텍처
+Healthcare Clinical & Hospital Operational Workflow
+의료 임상 및 병원 운영 워크플로우
 
-INTERNAL ENVIRONMENT
-내부 환경
+Input
+입력
 
-HOW DATA FLOWS THROUGH LLM CAPSULE
-LLM CAPSULE을 통한 데이터 흐름
+clinical workflow · lab results · prescription flow · patient names · diagnoses · medical record IDs · hospital operation · claim review context
+임상 워크플로우 · 검사 결과 · 처방 흐름 · 환자명 · 진단명 · 의무기록 ID · 병원 운영 · 청구 검토 컨텍스트
 
-EXTERNAL AI SERVICES
-외부 AI 서비스
+Flow
+흐름
 
-Customer Documents
-고객 문서
+Capsule → AI summarizes + drafts clinical notes / radiology reports → restored into EHR workflow
+Capsule → AI가 임상 노트 / 방사선 보고서 요약 및 초안 작성 → EHR 워크플로우에 복원
 
-Internal Databases
-내부 데이터베이스
+Deployed at Ewha Womans University Medical Center (EUMC).
+Deployed at Ewha Womans University Medical Center (EUMC).
 
-RAG Pipelines
-RAG 파이프라인
+04
+04
 
-Admin Console
-관리 콘솔
+Public Sector / Defense — Mission & Classified Workflow
+공공 / 국방 — 미션 및 기밀 워크플로우
 
-Policy Engine
-정책 엔진
+Input
+입력
 
-LLM Capsule — Encapsulation & Restoration
-LLM Capsule — 캡슐화 & 복원
+military personnel data · classified operation details · security-grade documents · mission log · operation brief · access-controlled context · command workflow
+군 인사 데이터 · 기밀 작전 상세 · 보안 등급 문서 · 미션 로그 · 작전 브리핑 · 접근 제어 컨텍스트 · 지휘 워크플로우
 
-STEP 1 — LOCAL
-STEP 1 — 로컬
+Flow
+흐름
 
-Detection — 
-탐지 — 
+Capsule (local execution) → AI drafts intelligence reports + briefing summaries → restored under command control with full audit trail
+Capsule (로컬 실행) → AI가 정보 보고서 + 브리핑 요약 초안 작성 → 지휘 통제 하에 전체 감사 이력과 함께 복원
 
-"Contract with Samsung..."
-"삼성과의 계약..."
-
-STEP 2 — LOCAL
-STEP 2 — 로컬
-
-Encapsulation — 
-캡슐화 — 
-
-"Contract with [ORG_A]..."
-"[ORG_A]와의 계약..."
-
-STEP 3 — EXTERNAL
-STEP 3 — 외부
-
-LLM Processing — 
-LLM 처리 — 
-
-"The deal with [ORG_A]..."
-"[ORG_A]와의 거래..."
-
-STEP 4 — LOCAL
-STEP 4 — 로컬
-
-Restoration — 
-복원 — 
-
-"The deal with Samsung..."
-"삼성과의 거래..."
-
-Business-Ready Output
-업무용 출력
-
-TRUST BOUNDARY
-신뢰 경계
-
-ChatGPT / OpenAI
-ChatGPT / OpenAI
-
-Claude / Anthropic
-Claude / Anthropic
-
-Gemini / Google
-Gemini / Google
-
-Perplexity
-Perplexity
-
-Any LLM API
-모든 LLM API
-
-View on AWS Marketplace
-AWS Marketplace에서 보기
+Deployed at Ministry of National Defense (South Korea). On-prem / local execution path required.
+Deployed at Ministry of National Defense (South Korea). On-prem / local execution path required.
 
 ---
 
-## Section 10: Performance
+## Section 09: FAQ
 
-Measured performance on real enterprise document processing workloads
-실제 기업 문서 처리 워크로드에서 측정된 성능
+FAQ
+FAQ
 
-These metrics are measured on enterprise documents with 2,200+ character average length across regulated industry workflows including finance, healthcare, legal, and public sector environments.
-이 지표는 금융·헬스케어·법률·공공 부문 환경을 포함한 규제 산업 워크플로에서 평균 2,200자 이상의 기업 문서를 대상으로 측정되었습니다.
+Frequently Asked 
+자주 묻는
 
-98.1%
-98.1%
+Questions
+질문
 
-Detection Accuracy
-탐지 정확도
+What is an AI enablement data layer?
+AI 데이터 레이어란 무엇인가요?
 
-99.14%
-99.14%
+An AI enablement data layer sits between the existing regulated enterprise environment (NOC, ticket, OSS/BSS, OT consoles, EHR, mission systems, document portals) and large language models. It turns operational data into AI-ready context using structure-preserving, differential-privacy-based encapsulation, executes the AI workflow inside the enterprise environment, and restores results back into the originating workflow. It moves AI projects from pilot to production on real enterprise data.
+AI 데이터 레이어는 기존 규제 기업 환경(NOC, 티켓, OSS/BSS, OT 콘솔, EHR, 미션 시스템, 문서 포털)과 대형 언어 모델 사이에 위치합니다. 문서 구조 보존 및 차분 프라이버시 기반 캡슐화를 통해 운영 데이터를 AI 처리 가능한 컨텍스트로 변환하고, 기업 환경 내에서 AI 워크플로우를 실행하며, 결과를 원래 워크플로우에 복원합니다. 실제 기업 데이터 위에서 AI 프로젝트를 파일럿에서 운영으로 전환합니다.
 
-Workflow Accuracy
-워크플로 정확도
+How is LLM Capsule different from PII guardrails or AI security tools?
+LLM Capsule은 PII 가드레일이나 AI 보안 도구와 어떻게 다른가요?
 
-100%
-100%
+PII guardrails detect and mask personal identifiers at the API or prompt level. AI security tools focus on prompt injection and runtime threats. LLM Capsule operates one layer deeper — at the AI enablement data layer. It transforms structured operational data using structure-preserving, differential-privacy-based encapsulation, supports both external LLM and on-prem local execution paths, and provides two-way restoration via state vault. It plugs into legacy enterprise systems with no architectural change required.
+PII 가드레일은 API 또는 프롬프트 수준에서 개인 식별자를 탐지하고 마스킹합니다. AI 보안 도구는 프롬프트 인젝션과 런타임 위협에 초점을 맞춥니다. LLM Capsule은 한 단계 더 깊은 곳에서 작동합니다 — 데이터 레이어에서. 문서 구조 보존 및 차분 프라이버시 기반 캡슐화로 구조화된 운영 데이터를 변환하고, 외부 LLM과 온프레미스 로컬 실행 경로를 모두 지원하며, 스테이트 볼트를 통한 양방향 복원을 제공합니다. 아키텍처 변경 없이 레거시 기업 시스템에 연결됩니다.
 
-Structured PII
-정형 PII
+Can our team define what counts as sensitive?
+우리 팀이 민감정보 기준을 직접 정의할 수 있나요?
 
-98%
-98%
+Yes. Context-aware data control lets your team define, add, remove, and version confidentiality markers as your operations and regulatory landscape evolve. Standard PII categories are not enough — define project codes, deal terms, internal IDs, network identifiers, asset references, mission references, and any business-specific marker. Yesterday's sensitive data isn't tomorrow's; the policy adapts.
+가능합니다. 컨텍스트 인식 데이터 제어를 통해 팀이 운영 및 규제 환경의 변화에 맞춰 기밀 마커를 직접 정의하고, 추가·삭제·버전 관리할 수 있습니다. 표준 PII 카테고리만으로는 부족합니다 — 프로젝트 코드, 계약 조건, 내부 ID, 네트워크 식별자, 자산 참조, 미션 참조 등 비즈니스 고유 마커를 직접 정의하세요. 어제의 민감정보가 내일의 민감정보는 아닙니다. 정책은 적응합니다.
 
-Response Similarity
-응답 유사도
+Can LLM Capsule run on-premise or air-gapped?
+LLM Capsule은 온프레미스나 망분리 환경에서 실행할 수 있나요?
 
-Enable AI. Protect data. Restore results. Track everything.
-AI를 활성화합니다. 데이터를 보호합니다. 결과를 복원합니다. 모든 것을 추적합니다.
+Yes. Six deployment modes: on-premise, air-gapped, hybrid, cloud (AWS Marketplace), embedded SDK, and Slack App. Two execution paths: external approved LLM with capsule data only (no raw operational data exposure) or on-prem local lightweight model (zero external transmission). Path selection is policy-driven per workflow. Capsule runs inside the customer environment in every mode — integration interfaces (REST / gRPC / JDBC / Graph API / on-prem API / SDK / Slack App) let existing enterprise systems invoke it from inside the environment.
+가능합니다. 6가지 배포 모드: 온프레미스, 망분리, 하이브리드, 클라우드(AWS Marketplace), 임베디드 SDK, Slack App. 두 가지 실행 경로: 캡슐 데이터만 사용하는 외부 승인 LLM(원시 운영 데이터 노출 없음) 또는 온프레미스 로컬 경량 모델(외부 전송 없음). 경로 선택은 워크플로우별 정책에 따라 결정됩니다. Capsule은 모든 모드에서 고객 환경 내부에서 실행됩니다 — 연동 인터페이스(REST / gRPC / JDBC / Graph API / on-prem API / SDK / Slack App)를 통해 기존 기업 시스템이 내부 환경에서 직접 호출합니다.
 
-0.12s processing per 2,200-character document. Tested across finance, healthcare, legal, and public sector workflows
-2,200자 문서당 0.12초 처리. 금융·헬스케어·법률·공공 부문 워크플로에서 테스트 완료
+Which industries and customers use LLM Capsule?
+어떤 산업과 고객이 LLM Capsule을 사용하나요?
+
+Telecom (Deutsche Telekom T Challenge 2026 Top 12 in Data Security & Governance, SK Telecom), industrial cybersecurity and OT (partner: Claroty), healthcare (EUMC), finance and insurance (Kyobo, DB Insurance, IBK), legal (Shin&Kim), public sector / defense (Ministry of National Defense, South Korea), and cloud sovereignty (NAVER Cloud). Recognized as a Gartner Vendor and listed on AWS Marketplace.
+통신(Deutsche Telekom T Challenge 2026 Top 12 in Data Security & Governance, SK Telecom), 산업 사이버보안 및 OT(파트너: Claroty), 의료(EUMC), 금융 및 보험(교보, DB손해보험, IBK), 법률(Shin&Kim), 공공/국방(대한민국 국방부), 클라우드 주권(NAVER Cloud). Gartner Vendor로 인정받고 AWS Marketplace에 등재되어 있습니다.
+
+What compliance frameworks does LLM Capsule support?
+LLM Capsule은 어떤 컴플라이언스 프레임워크를 지원하나요?
+
+LLM Capsule supports enterprise compliance with GDPR, HIPAA, SOX, and sector-specific regulations by ensuring sensitive data never leaves the enterprise environment during AI processing. Certifications include ISO/IEC 27001 (information security management) and ISO/IEC 42001 (AI management system). Korean certifications include KISA Information Security Fast Track, GS Certification, and TTA.
+LLM Capsule은 AI 처리 중 민감 데이터가 기업 환경을 절대 벗어나지 않도록 보장함으로써 GDPR, HIPAA, SOX 및 산업별 규제 대응을 지원합니다. 인증으로는 ISO/IEC 27001(정보보안 관리체계)과 ISO/IEC 42001(AI 관리체계)이 포함됩니다. 국내 인증으로는 KISA 정보보안 패스트트랙, GS 인증, TTA가 있습니다.
 
 ---
 
-## Section 11: CTA
+## Section 10: CTAStrip
 
-See how LLM Capsule enables AI on your enterprise documents
-LLM Capsule이 기업 문서에서 AI를 어떻게 활성화하는지 확인하세요
+From blocked AI workflows to operational AI.
+막혔던 AI 워크플로우를, 실제로 가동합니다.
 
-Bring your documents, deployment constraints, and evaluation criteria. We demonstrate how the AI enablement data layer works on your actual data, in your environment, against your compliance requirements.
-문서, 배포 제약 조건, 평가 기준을 가져오세요. 데이터 레이어가 실제 데이터로, 귀사의 환경에서, 컴플라이언스 요구사항에 맞춰 어떻게 작동하는지 직접 시연합니다.
+See how LLM Capsule plugs into your existing enterprise environment in 30 minutes. Bring your documents, deployment constraints, and evaluation questions.
+30분 안에 LLM Capsule이 기존 기업 환경에 어떻게 연결되는지 직접 확인하세요. 문서, 배포 제약, 평가 질문을 그대로 가져오세요.
 
 Request a Demo
 데모 요청
 
-Available on AWS Marketplace
-AWS Marketplace에서 이용 가능
+/request-a-demo
+/request-a-demo
 
----
+See the Architecture
+아키텍처 보기
 
-## Section 12: FAQ
+/architecture
+/architecture
 
-Frequently Asked Questions
-자주 묻는 질문
+View Pricing
+가격 보기
 
-How does LLM Capsule protect enterprise data during AI processing?
-LLM Capsule은 AI 처리 중 기업 데이터를 어떻게 보호합니까?
-
-LLM Capsule acts as an AI enablement data layer that encapsulates sensitive data locally before it leaves the enterprise environment. Only protected representations are sent to AI models. After processing, outputs are restored locally so they remain usable for real enterprise workflows. The original data never reaches external AI services — this is what makes it an AI enablement plugin rather than a monitoring or filtering tool.
-LLM Capsule은 데이터 레이어로, 기업 환경을 떠나기 전에 민감 데이터를 로컬에서 캡슐화합니다. 보호된 표현만 AI 모델에 전송됩니다. 처리 후 출력은 로컬에서 복원되어 실제 기업 워크플로에 바로 사용할 수 있습니다. 원본 데이터는 외부 AI 서비스에 절대 도달하지 않습니다. 이것이 모니터링이나 필터링 도구가 아닌 AI 활성화 플러그인인 이유입니다.
-
-How is LLM Capsule different from data masking and redaction tools?
-LLM Capsule은 데이터 마스킹 및 삭제 도구와 어떻게 다릅니까?
-
-Masking and redaction permanently remove data, destroying the context AI models need to produce useful outputs. AI results from masked documents contain [REDACTED] placeholders that require manual reconstruction. LLM Capsule encapsulates data with structure-preserving processing and restores outputs after AI processing, producing enterprise-ready results automatically. This is the fundamental difference between static data anonymization tools and a restorable workflow designed for AI.
-마스킹과 삭제는 데이터를 영구적으로 제거하여 AI 모델이 유용한 출력을 생성하는 데 필요한 맥락을 파괴합니다. 마스킹된 문서의 AI 결과에는 수작업 재구성이 필요한 [REDACTED] 자리 표시자가 포함됩니다. LLM Capsule은 문서 구조 보존 처리로 데이터를 캡슐화하고 AI 처리 후 출력을 복원하여 업무에 바로 사용할 수 있는 결과를 자동으로 생성합니다. 이것이 정적 데이터 익명화 도구와 AI를 위해 설계된 복원 가능 워크플로의 근본적인 차이입니다.
-
-What is the difference between LLM Capsule and prompt security gateways?
-LLM Capsule과 프롬프트 보안 게이트웨이의 차이점은 무엇입니까?
-
-Prompt security gateways filter at the API level — they scan prompts for sensitive patterns and block or strip flagged content. They cannot protect enterprise documents processed through RAG pipelines or batch workflows, and they provide no output restoration. LLM Capsule operates as a data layer plugin, encapsulating sensitive elements before any AI processing occurs and restoring outputs afterward. The two approaches can be complementary, but only a data-layer approach provides end-to-end AI enablement on enterprise data.
-프롬프트 보안 게이트웨이는 API 수준에서 필터링합니다. 프롬프트에서 민감한 패턴을 스캔하고 플래그된 콘텐츠를 차단하거나 제거합니다. RAG 파이프라인이나 배치 워크플로를 통해 처리되는 기업 문서를 보호할 수 없으며, 출력 복원 기능도 없습니다. LLM Capsule은 데이터 레이어 플러그인으로 작동하여 AI 처리 전에 민감 요소를 캡슐화하고 처리 후 출력을 복원합니다. 두 접근 방식은 상호 보완적일 수 있지만, 데이터 레이어 접근 방식만이 기업 데이터에 대한 엔드투엔드 AI 활성화를 제공합니다.
-
-Where can LLM Capsule be deployed?
-LLM Capsule은 어디에 배포할 수 있습니까?
-
-LLM Capsule supports on-premise, air-gapped, cloud (including AWS Marketplace), hybrid, and embedded deployment models. The encapsulation engine runs entirely within your environment regardless of deployment type. This flexibility is critical for enterprise AI governance — different data types and regulatory requirements may demand different deployment architectures within a single organization.
-LLM Capsule은 온프레미스, 망분리, 클라우드(AWS Marketplace 포함), 하이브리드, 임베디드 배포 모델을 지원합니다. 캡슐화 엔진은 배포 유형과 관계없이 전적으로 귀사의 환경 내에서 실행됩니다. 이러한 유연성은 기업 AI 거버넌스에 매우 중요합니다. 단일 조직 내에서도 데이터 유형과 규제 요구사항에 따라 서로 다른 배포 아키텍처가 필요할 수 있습니다.
-
-What is enterprise AI data protection?
-기업 AI 데이터 보호란 무엇입니까?
-
-Enterprise AI enablement is the practice of making sensitive enterprise data AI-ready so organizations can adopt LLMs without exposing original information. LLM Capsule achieves this at the data layer through local encapsulation, structure-preserving processing, and local restoration — ensuring zero exposure of original data while enabling full AI workflow adoption. Unlike model-level approaches that block or filter, the data layer plugin transforms data itself to make enterprise AI possible.
-기업 AI 활성화는 민감한 기업 데이터를 AI에 사용할 수 있게 만들어 조직이 원본 정보를 노출하지 않고 LLM을 도입할 수 있게 하는 방법론입니다. LLM Capsule은 로컬 캡슐화, 문서 구조 보존 처리, 로컬 복원을 통해 데이터 레이어에서 이를 달성합니다. 원본 데이터의 제로 노출을 보장하면서 전체 AI 워크플로 도입을 가능하게 합니다. 차단하거나 필터링하는 모델 수준 접근 방식과 달리, 데이터 레이어 플러그인은 데이터 자체를 변환하여 기업 AI를 가능하게 합니다.
-
-What certifications does LLM Capsule hold?
-LLM Capsule은 어떤 인증을 보유하고 있습니까?
-
-ISO 27001, ISO 42001, GS Certification. LLM Capsule is available on AWS Marketplace and supports deployment within enterprise compliance frameworks including GDPR, HIPAA, and sector-specific regulatory requirements.
-ISO 27001, ISO 42001, GS Certification을 보유하고 있습니다. LLM Capsule은 AWS Marketplace에서 이용 가능하며, GDPR, HIPAA 및 산업별 규제 요구사항을 포함한 기업 컴플라이언스 프레임워크 내 배포를 지원합니다.
+/pricing
+/pricing

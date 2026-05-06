@@ -1,291 +1,498 @@
-# index — Deutsche Übersetzung (localize mode)
+# index (Home v6.2) — Deutsche Übersetzung (localize mode)
 
 ## Section 01: Hero
 
-Use any AI on your real documents — without exposing a single line
-KI auf Ihren realen Dokumenten einsetzen — ohne Offenlegung vertraulicher Daten
+AI ENABLEMENT DATA LAYER
+KI-AKTIVIERUNGSSCHICHT FÜR UNTERNEHMENSDATEN
 
-Your sensitive documents go through LLM Capsule before reaching AI. Confidential names, figures, and terms are replaced locally — AI processes the safe version — then results are restored with your original data. Each organization defines what counts as sensitive.
-Sensible Dokumente durchlaufen LLM Capsule, bevor sie eine KI erreichen. Vertrauliche Informationen werden lokal identifiziert und durch sichere Platzhalter ersetzt. Die KI verarbeitet ausschließlich die geschützte Version. Anschließend werden die Ergebnisse lokal mit Ihren Originaldaten zusammengeführt. Was als vertraulich gilt, definiert Ihre Organisation selbst.
+Make
+
+
+sensitive workflows
+Sensible Arbeitsabläufe
+
+ run with AI.
+ mit KI betreiben.
+
+From blocked workflows to operational AI — without breaking documents, systems, or context. LLM Capsule is the AI enablement data layer for regulated enterprise operations. It plugs into the systems you already run — on-premise, air-gapped, or hybrid — and AI receives the operational structure it needs. Sensitive data stays inside your environment. Outputs return business-ready, in the originating workflow.
+LLM Capsule ist die Datenschicht, die sensible Unternehmensabläufe KI-fähig macht — ohne Dokumentstruktur, Systemarchitektur oder Kontext zu beschädigen. Die Lösung integriert sich in Ihre bestehende Infrastruktur — On-Premise, Air-Gapped oder hybrid. Die KI erhält die operativen Strukturen, die sie benötigt. Sensible Daten verbleiben in Ihrer Umgebung. Die Ergebnisse kehren fachlich nutzbar in den ursprünglichen Arbeitsablauf zurück.
+
+The AI enablement data layer for regulated operations.
+Die Datenschicht für regulierte Unternehmensabläufe mit KI.
 
 Request a Demo
 Demo anfordern
 
-Available on AWS Marketplace
-Verfügbar auf AWS Marketplace
-
----
-
-## Section 02: Trust
-
-Trusted by enterprises processing sensitive documents
-Eingesetzt von Unternehmen mit hohen Anforderungen an Datensicherheit
-
-across finance, insurance, legal, healthcare, and telecom
-in den Bereichen Finanzdienstleistungen, Versicherung, Recht, Gesundheitswesen und Telekommunikation
+See the Architecture
+Architektur ansehen
 
 0.12s
-0,12s
+0,12 s
 
 Per Page Processing
 Verarbeitungszeit pro Seite
 
 100%
-100%
+100 %
 
 Restoration Rate
 Wiederherstellungsrate
 
 98%
-98%
+98 %
 
 Output Similarity
-Ausgabe-Ähnlichkeit
+Ausgabeähnlichkeit
+
+99.14%
+99,14 %
+
+Workflow Accuracy
+Workflow-Genauigkeit
+
+NOC Console
+NOC Console
+
+[ALARM] R-472 latency
+[ALARM] R-472 latency
+
+[INCIDENT] INC-24091
+[INCIDENT] INC-24091
+
+SLA risk: enterprise
+SLA risk: enterprise
+
+Ticket System
+Ticket System
+
+INC-24091  packet loss
+INC-24091  packet loss
+
+Site: SEO-18
+Site: SEO-18
+
+Status: escalated
+Status: escalated
+
+Log Viewer
+Log Viewer
+
+03:21 R-472 spike
+03:21 R-472 spike
+
+03:24 SEO-18 loss
+03:24 SEO-18 loss
+
+03:26 escalated
+03:26 escalated
+
+Runbook
+Runbook
+
+1. Check device R-472
+1. Check device R-472
+
+2. Validate config
+2. Validate config
+
+3. Rollback if drift
+3. Rollback if drift
+
+LLM Capsule
+LLM Capsule
+
+in-environment data layer
+Datenschicht in der Unternehmensumgebung
+
+▶ Encapsulate
+▶ Kapsulieren
+
+▶ DP transform
+▶ DP-Transformation
+
+▶ Send to AI
+▶ An KI senden
+
+▶ Restore
+▶ Wiederherstellen
+
+▶ Insert here
+▶ Hier einfügen
 
 ---
 
-## Section 03: Five Capabilities
+## Section 02: ProofStrip
 
-Five capabilities that remove every barrier to enterprise AI
-Fünf technische Fähigkeiten für den KI-Einsatz im Unternehmen
+Trusted by enterprises moving regulated AI from pilot to production
+Unternehmen aus regulierten Branchen setzen LLM Capsule im Produktivbetrieb ein
 
-Other tools either block AI usage or destroy document context. LLM Capsule solves both — here's how.
-Bestehende Lösungen blockieren entweder den KI-Einsatz oder zerstören den Dokumentenkontext. LLM Capsule löst beide Probleme auf der Datenschicht.
+Telecom · Industrial cybersecurity · Healthcare · Finance · Public sector · Legal
+Telekommunikation · Industrielle Cybersicherheit · Gesundheitswesen · Finanzwesen · Öffentlicher Sektor · Rechtsberatung
 
-CORE
-CORE
+Gartner Vendor
+Gartner Vendor
 
-Your data never leaves
-Keine Offenlegung gegenüber KI-Anbietern
+Deutsche Telekom
+Deutsche Telekom
 
-Security team blocking AI adoption? With zero exposure, AI only sees safe placeholders. Even if the LLM provider logs everything, zero enterprise data is exposed.
-Zero Exposure bedeutet: Die KI verarbeitet ausschließlich sichere Platzhalter. Selbst wenn der LLM-Anbieter alle Anfragen protokolliert oder für das Training verwendet, gelangen keine Unternehmensdaten nach außen. Die IT-Sicherheitsabteilung kann dem KI-Einsatz zustimmen.
+SK Telecom
+SK Telecom
 
-CORE
-CORE
+Claroty
+Claroty
 
-Get real results back
-Verwertbare Ergebnisse ohne Nachbearbeitung
+EUMC
+EUMC
 
-AI outputs auto-restore with your original names, figures, and references — ready for reports, legal reviews, and client deliverables. No manual reconstruction.
-KI-Ausgaben werden lokal automatisch mit Originalnamen, Zahlen und Referenzen angereichert. Die Ergebnisse sind direkt einsetzbar — für Berichte, rechtliche Prüfungen und Kundenlieferungen. Kein manueller Rekonstruktionsaufwand.
+Kyobo
+Kyobo
 
-CORE
-CORE
+DB Insurance
+DB Insurance
 
-You define what's sensitive
-Schutzumfang nach Ihren Richtlinien
+IBK
+IBK
 
-Standard PII categories aren't enough. Define project codes, deal terms, internal IDs, and any business-specific confidential markers — tailored to your organization.
-Standard-PII-Kategorien decken nicht alle vertraulichen Inhalte ab. Projektcodes, Vertragsbedingungen, interne Kennzahlen und organisationsspezifische Schutzmerkmale lassen sich individuell konfigurieren — entsprechend Ihren internen Richtlinien.
+NAVER Cloud
+NAVER Cloud
 
-+1
-+1
+Shin&Kim
+Shin&Kim
 
-Documents stay readable to AI
-Erhalt der Dokumentstruktur
+Ministry of National Defense
+Ministry of National Defense
 
-Tables, cross-references, and layouts survive the process intact. AI understands full document context — not broken fragments that produce useless outputs.
-Tabellen, Querverweise und Dokumentlayouts bleiben während der gesamten Verarbeitung erhalten. Die KI versteht den vollständigen Dokumentenkontext und liefert fachlich nutzbare Ergebnisse statt unbrauchbarer Fragmente.
+ISO/IEC 27001
+ISO/IEC 27001
 
-+2
-+2
+ISO/IEC 42001
+ISO/IEC 42001
 
-Enterprise Environment Execution
-Ausführung in der bestehenden Infrastruktur
+KISA Fast Track
+KISA Fast Track
 
-ChatGPT today, Claude tomorrow, on-premise LLM next month. Switch freely — no re-engineering, no vendor lock-in. Protection stays consistent across every model.
-LLM Capsule wird innerhalb Ihrer bestehenden IT-Umgebung betrieben — On-Premise, Air-Gapped oder in der Cloud. Ein Wechsel zwischen KI-Modellen erfordert keine Systemänderungen. Der Datenschutz bleibt modellunabhängig konsistent.
-
-LLM Capsule is not a masking tool, not a prompt filter, and not a redaction layer. It is the data layer that sits between your documents and any AI — making enterprise AI adoption possible without compromise.
-LLM Capsule ist kein Maskierungswerkzeug, kein Prompt-Filter und keine Schwärzungslösung. Es ist die Datenschicht zwischen Ihren Dokumenten und jeder KI — und ermöglicht den KI-Einsatz im Unternehmen ohne Abstriche beim Datenschutz.
-
-See Product
-Produkt ansehen
-
-View Architecture
-Architektur ansehen
-
-Read the capsule model
-Kapselmodell lesen
+AWS Marketplace
+AWS Marketplace
 
 ---
 
-## Section 04: Industry Proof
+## Section 03: WhyStoryline
 
-Enabling AI adoption across regulated industries where sensitive data was the blocker
-KI-Einsatz in regulierten Branchen — dort, wo sensible Daten bisher ein Hindernis waren
+WHY AN AI ENABLEMENT DATA LAYER
+WARUM EINE KI-AKTIVIERUNGSSCHICHT
 
-LLM Capsule unlocks AI usage on real enterprise documents across financial services, government, healthcare, and legal workflows — turning blocked projects into production deployments.
-LLM Capsule ermöglicht den KI-Einsatz auf realen Unternehmensdokumenten in Finanzdienstleistungen, öffentlicher Verwaltung, Gesundheitswesen und Rechtsabteilungen. Bisher blockierte Projekte werden zu produktiven Deployments.
+The data AI needs is the data your business can't
+Die Daten, die KI benötigt, sind die Daten, die Ihr Unternehmen nicht
 
-Public Sector
-Öffentliche Verwaltung
+expose
+offenlegen kann
 
-Finance & Insurance
-Finanzdienstleistungen & Versicherung
+Not four separate problems. One storyline — read it through.
+Keine vier getrennten Probleme. Ein zusammenhängender Sachverhalt — von Anfang bis Ende.
 
-Healthcare
-Gesundheitswesen
+01
+01
 
-Legal
-Recht & Compliance
+External LLMs raise enterprise ROI.
+Externe Large Language Models steigern den Unternehmens-ROI.
 
-Telecom
-Telekommunikation
+Approved external LLMs measurably improve productivity, processing speed, and automation ROI — when they can actually reach the work. Every regulated enterprise wants in.
+Zugelassene externe Large Language Models verbessern messbar Produktivität, Verarbeitungsgeschwindigkeit und Automatisierungseffizienz — sofern sie Zugang zu den relevanten Daten erhalten. Jedes regulierte Unternehmen möchte davon profitieren.
 
-Network Security
-Netzwerksicherheit
+BUT —
+ABER —
 
-See industry solutions
-Branchenlösungen ansehen
+02
+02
+
+PII guardrails alone aren't enough.
+PII-Schutzmaßnahmen allein reichen nicht aus.
+
+They detect names, IDs, financial fields. They were built for individual identifiers — not for the structured ticket data, network configs, OT manifests, clinical workflows, and mission context that real regulated workflows actually run on. Operational data slips right through.
+Sie erkennen Namen, Kennungen und Finanzfelder. Sie wurden für personenbezogene Einzeldaten entwickelt — nicht für strukturierte Ticketdaten, Netzwerkkonfigurationen, OT-Manifeste, klinische Abläufe und Einsatzkontexte, auf denen regulierte Workflows tatsächlich basieren. Operative Daten passieren diese Schutzmaßnahmen ungehindert.
+
+AND —
+UND —
+
+03
+03
+
+DMZ and legacy operational data is complex and unstructured.
+DMZ- und Legacy-Betriebsdaten sind komplex und unstrukturiert.
+
+Mixed free text, network identifiers, system logs, user context, incident records, configurations. Sensitivity leaks through structure, sequence, and aggregate pattern — not just through field names. Field-level filtering doesn't see it.
+Freitext, Netzwerkkennungen, Systemprotokolle, Benutzerkontext, Vorfallsaufzeichnungen und Konfigurationen vermischen sich. Schutzbedürftigkeit ergibt sich aus Struktur, Sequenz und aggregierten Mustern — nicht allein aus Feldnamen. Feldbasierte Filterung ist dafür nicht ausreichend.
+
+AND THE RESIDUAL RISK —
+UND DAS VERBLEIBENDE RISIKO —
+
+04
+04
+
+Filtering alone leaves regulated risk standing.
+Filterung allein beseitigt das regulatorische Risiko nicht.
+
+GDPR, HIPAA, SOX, sector regulators, audit obligations, sovereignty constraints — the risk of differential analysis, re-identification, and inference exposure that simple filtering cannot close. Pilots stall. Shadow AI emerges. Production never ships.
+DSGVO (GDPR), HIPAA, SOX, branchenspezifische Aufsichtsbehörden, Prüfpflichten und Datensouveränitätsanforderungen — das Risiko von Differenzialanalysen, Re-Identifikation und Inferenzangriffen lässt sich durch einfache Filterung nicht schließen. Pilotprojekte stagnieren. Schatten-KI entsteht. Der Produktivbetrieb kommt nie zustande.
+
+→ Result
+→ Ergebnis
+
+LLM Capsule turns blocked workflows into running AI workflows.
+LLM Capsule macht blockierte Unternehmensabläufe KI-fähig.
+
+Structure-preserving capsule + differential-privacy-based protection + in-environment execution alongside existing legacy systems + restoration into the originating workflow + two execution paths (external approved LLM or on-prem local) + customer-defined markers that change with your business. The AI enablement data layer for regulated operations.
+Strukturerhaltende Kapsulierung, Schutz auf Basis von Differential Privacy, Ausführung in der bestehenden Infrastruktur ohne Systemwechsel, Wiederherstellung in den ursprünglichen Workflow, zwei Ausführungspfade (zugelassenes externes Large Language Model oder lokales On-Premise-Modell) sowie organisationsdefinierte Marker, die sich mit Ihrem Unternehmen weiterentwickeln. Die Datenschicht für regulierte KI-Abläufe.
 
 ---
 
-## Section 05: Step Tabs
+## Section 04: Capabilities
 
-Enterprise AI enablement through a 3+2 architecture
-KI-Einsatz im Unternehmen durch eine 3+2-Datenschichtarchitektur
+CORE CAPABILITIES
+KERNFUNKTIONEN
 
-LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 data layer architecture: three core enablement pillars plus two additional value capabilities that ensure output quality and model flexibility.
-LLM Capsule strukturiert den Datenschutz in einer 3+2-Architektur: drei Kernfunktionen für den sicheren KI-Einsatz auf sensiblen Daten, ergänzt durch zwei Zusatzfunktionen für Ausgabequalität und Modellflexibilität.
+Six reasons Capsule works inside real enterprise
+Sechs Gründe, warum Capsule in realen Unternehmens-
 
-Core 1 — Zero Exposure
-Core 1 — Zero Exposure
+workflows
+Workflows funktioniert
 
-Zero Exposure
-Zero Exposure
+Other tools either block AI usage or destroy document context. LLM Capsule solves both — and adapts to whatever your business protects next.
+Andere Lösungen blockieren entweder den KI-Einsatz oder zerstören den Dokumentkontext. LLM Capsule löst beides — und passt sich an, was Ihr Unternehmen als Nächstes schützen muss.
 
-Sensitive data is replaced with safe placeholders (encapsulation) inside your environment before anything leaves. Original values never reach external AI services.
-Sensible Daten werden innerhalb Ihrer Umgebung durch sichere Platzhalter ersetzt (Kapsulierung), bevor Daten die Systemgrenzen verlassen. Originalwerte erreichen externe KI-Dienste zu keinem Zeitpunkt.
+01
+01
 
-Zero exposure means the AI provider processes useful data but cannot reconstruct original sensitive values. Even if the provider logged, stored, or trained on the received data, no original enterprise information would be exposed. Encapsulation creates a data representation that is both processable by AI and opaque to the receiving service — provider logs are safe, raw data never leaves.
-Zero Exposure bedeutet: Der KI-Anbieter verarbeitet strukturell nützliche Daten, kann jedoch keine ursprünglichen sensiblen Werte rekonstruieren. Auch wenn der Anbieter empfangene Daten protokolliert, speichert oder für das Modelltraining nutzt, werden keine Unternehmensinformationen offengelegt. Die Kapsulierung erzeugt eine Datenrepräsentation, die für die KI verarbeitbar und für den empfangenden Dienst undurchsichtig ist. Anbieter-Logs sind unbedenklich — Rohdaten verlassen die Unternehmensumgebung nicht.
+Plug into legacy systems without changing the workflow
+Integration in bestehende Systeme ohne Änderung des Workflows
 
-Core 2 — Restoration
-Core 2 — Restoration
+Air-gapped networks, on-premise servers, telecom-grade platforms, custom data pipelines, ServiceNow / SharePoint / Jira / OT historians — LLM Capsule deploys inside your enterprise as-is. Single API-call addition. No system migration. Your existing workflows, security policies, and configurations stay intact.
+Air-Gapped-Netzwerke, On-Premise-Server, Telekommunikationsplattformen, individuelle Datenpipelines, ServiceNow / SharePoint / Jira / OT-Historian-Systeme — LLM Capsule wird innerhalb Ihrer bestehenden Unternehmensumgebung bereitgestellt. Ein einziger API-Aufruf genügt. Keine Systemmigration erforderlich. Bestehende Workflows, Sicherheitsrichtlinien und Konfigurationen bleiben unverändert.
 
-Restoration
-Restoration
+Enterprise Env Execution
+Enterprise Env Execution
 
-AI outputs are automatically restored locally — not abstracted, not anonymized, but fully restored with real business data for immediate use.
-KI-Ausgaben werden lokal automatisch mit den Originaldaten angereichert — nicht abstrahiert, nicht anonymisiert, sondern vollständig wiederhergestellt und sofort einsatzbereit.
+primary
+primary
 
-Unlike masking tools that produce generic AI outputs requiring manual reconstruction, LLM Capsule automatically restores AI results with original names, account numbers, dates, and references. Restored outputs are directly usable in enterprise workflows — regulatory reports, legal documents, claim analysis, and internal communications — without any post-processing step. This eliminates the "manual review loop" that kills AI ROI.
-Im Gegensatz zu Maskierungswerkzeugen, die generische KI-Ausgaben mit manuellem Rekonstruktionsaufwand erzeugen, stellt LLM Capsule Ergebnisse automatisch mit Originalnamen, Kontonummern, Datumsangaben und Referenzen wieder her. Die Ausgaben sind direkt in Unternehmensworkflows verwendbar — für regulatorische Berichte, Rechtsdokumente, Schadenanalysen und interne Kommunikation. Der manuelle Überprüfungszyklus, der den KI-ROI mindert, entfällt vollständig.
+02
+02
 
-Core 3 — Enterprise Context
-Core 3 — Enterprise Context
+Tables, tickets, logs, and runbooks stay readable to AI
+Tabellen, Tickets, Protokolle und Runbooks bleiben für die KI lesbar
 
-Enterprise Context
-Enterprise Context
-
-Define and control sensitive entities beyond standard PII — project codes, internal IDs, contract terms, and strategic data specific to your organization.
-Schutzdefinitionen gehen über Standard-PII hinaus: Projektcodes, interne Kennungen, Vertragsbedingungen und organisationsspezifische strategische Daten lassen sich präzise konfigurieren.
-
-Enterprise documents contain far more sensitivity than personally identifiable information alone. A legal memo about a pending acquisition contains no PII but is filled with deal structure, valuation ranges, and strategic rationale. Enterprise context enables policy-based sensitivity classification through context-aware data control that adapts to document type, department, and workflow context — tailored protection for your specific business logic and secrets.
-Unternehmensdokumente enthalten weit mehr schutzwürdige Inhalte als personenbezogene Daten allein. Ein Rechtsmemo zu einer bevorstehenden Unternehmenstransaktion enthält keine PII, ist jedoch mit Deal-Strukturen, Bewertungsspannen und strategischen Begründungen gefüllt. Enterprise Context ermöglicht eine richtlinienbasierte Klassifizierung — individuell angepasst an Dokumenttyp, Abteilung, Workflowkontext sowie die spezifische Geschäftslogik Ihrer Organisation.
-
-+1 Structure-Preserving
-+1 Strukturerhaltend
+Tables, cross-references, configurations, topology graphs, ticket fields, runbook steps, and document hierarchies survive the process intact. AI receives the full operational structure — not broken fragments that produce useless outputs.
+Tabellen, Querverweise, Konfigurationen, Topologiegraphen, Ticketfelder, Runbook-Schritte und Dokumenthierarchien bleiben vollständig erhalten. Die KI erhält die vollständige operative Struktur — keine fragmentierten Daten, die zu unbrauchbaren Ergebnissen führen.
 
 Structure-Preserving
-Strukturerhaltende Verarbeitung
+Structure-Preserving
 
-Tables, diagrams, cross-references, and document hierarchy remain intact — your document layout stays readable to AI throughout the process.
-Tabellen, Diagramme, Querverweise und Dokumenthierarchie bleiben während der gesamten Verarbeitung erhalten. Das Dokumentlayout bleibt für die KI vollständig lesbar.
+teal
+teal
 
-Masking tools destroy document context. LLM Capsule keeps tables, diagrams, and entity relationships intact so AI understands the full context while sensitive values are replaced. Reference consistency, diagram preservation, and document hierarchy are all maintained.
-Maskierungswerkzeuge zerstören den Dokumentenkontext. LLM Capsule bewahrt Tabellen, Diagramme und Entitätsbeziehungen, sodass die KI den vollständigen Kontext versteht, während sensible Werte ersetzt werden. Referenzkonsistenz, Diagrammerhalt und Dokumenthierarchie bleiben vollständig erhalten.
+03
+03
 
-+2 Enterprise Environment
-+2 Unternehmensumgebung
+Get real results back
+Fachlich nutzbare Ergebnisse zurückerhalten
 
-Enterprise Environment Execution
-Ausführung in der Unternehmensumgebung
+AI outputs auto-restore with your original names, figures, and references — ready for reports, legal reviews, claims documents, and client deliverables. No manual reconstruction. Token maps live only locally.
+KI-Ausgaben werden automatisch mit Ihren Originalnamen, Zahlen und Referenzen angereichert — einsatzbereit für Berichte, rechtliche Prüfungen, Schadendokumente und Kundenpräsentationen. Keine manuelle Nachbearbeitung. Zuordnungstabellen verbleiben ausschließlich lokal.
 
-Runs inside your existing infrastructure. Air-gapped networks, on-premise servers, custom data systems — no architectural changes required.
-LLM Capsule wird innerhalb Ihrer bestehenden Infrastruktur betrieben. Air-Gapped-Netzwerke, On-Premise-Server und individuelle Datensysteme werden unterstützt — ohne Änderungen an der bestehenden Architektur.
+Restoration
+Restoration
 
-Most AI solutions demand standardized environments. LLM Capsule deploys within your enterprise as-is — air-gapped networks, telecom-grade platforms, custom data pipelines, and restricted environments. Your existing workflows, security policies, and system configurations stay intact.
-Die meisten KI-Lösungen setzen standardisierte Umgebungen voraus. LLM Capsule wird in Ihrer bestehenden Infrastruktur betrieben — in Air-Gapped-Netzwerken, Telekommunikationsplattformen, individuellen Datenpipelines und eingeschränkten Umgebungen. Bestehende Workflows, Sicherheitsrichtlinien und Systemkonfigurationen bleiben unverändert.
+amber
+amber
+
+04
+04
+
+You define what's sensitive
+Sie bestimmen, was als vertraulich gilt
+
+Standard PII categories aren't enough. Define project codes, deal terms, internal IDs, network identifiers, asset references, mission references — any business-specific marker. Context-aware data control adapts to document type, department, and workflow.
+Standard-PII-Kategorien reichen nicht aus. Definieren Sie Projektkennungen, Vertragsbedingungen, interne IDs, Netzwerkkennungen, Asset-Referenzen und beliebige weitere unternehmensspezifische Marker. Die kontextbezogene Datenkontrolle passt sich an Dokumenttyp, Abteilung und Workflow an.
+
+Enterprise Context
+Enterprise Context
+
+coral
+coral
+
+05
+05
+
+Your workflow runs where your data already lives
+Ihr Workflow läuft dort, wo Ihre Daten bereits liegen
+
+Sensitive data stays inside your environment. External AI sees only safe placeholders; tokenization plus differential-privacy-based protection make original values practically non-recoverable from outside your boundary. Restoration happens only inside the organization.
+Sensible Daten verbleiben in Ihrer Umgebung. Externe KI-Systeme erhalten ausschließlich sichere Platzhalter. Tokenisierung in Kombination mit Differential-Privacy-basiertem Schutz macht Originalwerte von außerhalb Ihrer Vertrauensgrenze praktisch nicht wiederherstellbar. Die Zusammenführung erfolgt ausschließlich innerhalb der Organisation.
+
+Zero Exposure
+Zero Exposure
+
+dark
+dark
+
+06
+06
+
+You can change the policy tomorrow
+Richtlinien lassen sich jederzeit anpassen
+
+Yesterday it was network logs. Today it's M&A code names. Next quarter it's a new regulator's spec. Define, version, and time-shift confidentiality markers as your business and regulatory landscape evolve — with full audit trail of which marker was protected when.
+Gestern waren es Netzwerkprotokolle, heute M&A-Codenamen, nächstes Quartal die Vorgaben einer neuen Aufsichtsbehörde. Vertraulichkeitsmarker lassen sich definieren, versionieren und zeitlich verschieben — mit vollständigem Prüfpfad, welcher Marker wann geschützt war.
+
+Time-Shifting Policy
+Time-Shifting Policy
+
+primary-dark
+primary-dark
 
 ---
 
-## Section 06: Case Study
+## Section 05: Workflows
 
-AI-Enabled Enterprise Workflows
-KI-gestützte Unternehmensworkflows
+AI-ENABLED ENTERPRISE WORKFLOWS
+KI-GESTÜTZTE UNTERNEHMENSABLÄUFE
 
-LLM Capsule plugs into the most common enterprise AI workflows — from document intake to output delivery, one data layer enables AI adoption on real documents.
-LLM Capsule lässt sich in gängige KI-Workflows integrieren — von der Dokumentenaufnahme bis zur Ausgabelieferung schützt eine Datenschicht den gesamten Prozess auf realen Unternehmensdokumenten.
+The workflows that move from pilot to
+Die Workflows, die vom Pilotbetrieb in den
+
+production
+Produktivbetrieb überführt werden
+
+LLM Capsule plugs into the most common enterprise AI workflows — protected before AI processing, restored to be directly usable in business.
+LLM Capsule integriert sich in die häufigsten KI-Workflows von Unternehmen — mit Schutz vor der KI-Verarbeitung und Wiederherstellung zu direkt verwertbaren Ergebnissen.
+
+[SVG icon path — unverändert beibehalten]
+[SVG icon path — unverändert beibehalten]
 
 Secure Document Summarization
 Sichere Dokumentenzusammenfassung
 
-AI generates executive summaries of sensitive documents — contracts, reports, filings — while all confidential elements are replaced with safe placeholders. Restored summaries contain real names, dates, and figures ready for business use.
-KI erstellt Zusammenfassungen sensibler Dokumente — Verträge, Berichte, Einreichungen — während alle vertraulichen Elemente durch sichere Platzhalter ersetzt sind. Die wiederhergestellten Zusammenfassungen enthalten Originalnamen, Datumsangaben und Kennzahlen und sind direkt geschäftlich einsetzbar.
+Contracts, reports, regulatory filings — protected before AI processing. AI generates summaries with real names, dates, and figures ready for business use.
+Verträge, Berichte und regulatorische Einreichungen werden vor der KI-Verarbeitung geschützt. Die KI erstellt Zusammenfassungen mit Originalnamen, Daten und Zahlen — direkt für den Geschäftseinsatz nutzbar.
 
-Contracts, reports, and filings protected
-Verträge, Berichte und Einreichungen geschützt
-
-Real names, dates, and figures restored in output
+Real names, dates, figures restored in output
 Originalnamen, Datumsangaben und Zahlen in der Ausgabe wiederhergestellt
+
+[SVG icon path — unverändert beibehalten]
+[SVG icon path — unverändert beibehalten]
 
 AI Claims Processing
 KI-gestützte Schadenbearbeitung
 
-Insurance and financial claims go through LLM Capsule before AI-powered classification, damage assessment, and fraud detection. Restored outputs feed directly into claims management systems with real policyholder data.
-Versicherungs- und Finanzansprüche werden über LLM Capsule geleitet, bevor die KI Klassifizierung, Schadenbewertung und Betrugserkennung durchführt. Wiederhergestellte Ausgaben fließen direkt mit echten Versicherungsnehmerdaten in Schadenmanagementsysteme ein.
+Insurance and financial claims through LLM Capsule before AI-powered classification, damage assessment, and fraud detection. Restored outputs feed directly into claims management systems.
+Versicherungs- und Finanzforderungen durchlaufen LLM Capsule vor der KI-gestützten Klassifizierung, Schadenbewertung und Betrugserkennung. Wiederhergestellte Ergebnisse fließen direkt in Schadenmanagementsysteme ein.
 
-Classification, damage assessment, fraud detection enabled
-Klassifizierung, Schadenbewertung und Betrugserkennung aktiviert
+Direct integration with claims systems
+Direkte Integration in Schadenmanagementsysteme
 
-Restored outputs feed directly into claims systems
-Wiederhergestellte Ausgaben direkt in Schadenmanagementsysteme integriert
+[SVG icon path — unverändert beibehalten]
+[SVG icon path — unverändert beibehalten]
 
 Confidential Contract Review
-Vertrauliche Vertragsprüfung
+Vertrauliche Vertragsanalyse
 
-AI extracts key terms, obligations, and risk clauses from protected contracts. Restored outputs include real party names, amounts, and clause references — ready for direct integration into deal management systems.
-KI extrahiert Schlüsselbedingungen, Verpflichtungen und Risikoklauseln aus geschützten Verträgen. Wiederhergestellte Ausgaben enthalten Parteinamen, Beträge und Klauselverweise — bereit für die direkte Integration in Vertragsmanagementsysteme.
+AI extracts key terms, obligations, and risk clauses from protected contracts. Restored outputs include real party names, amounts, and clause references — ready for deal management systems.
+Die KI extrahiert wesentliche Bedingungen, Verpflichtungen und Risikoklauseln aus geschützten Verträgen. Wiederhergestellte Ergebnisse enthalten Originalnamen der Vertragsparteien, Beträge und Klauselreferenzen — einsatzbereit für Deal-Management-Systeme.
 
-Key terms, obligations, and risk clauses extracted
-Schlüsselbedingungen, Verpflichtungen und Risikoklauseln extrahiert
+Real party names, amounts, references restored
+Originale Vertragsparteinamen, Beträge und Referenzen wiederhergestellt
 
-Real party names, amounts, and references restored
-Parteinamen, Beträge und Referenzen wiederhergestellt
+[SVG icon path — unverändert beibehalten]
+[SVG icon path — unverändert beibehalten]
 
 Internal Report Generation
 Interne Berichtserstellung
 
-AI drafts internal reports from protected data sources — performance reviews, audit findings, compliance summaries. Restored reports contain real employee names, department data, and metric values.
-KI erstellt interne Berichte aus geschützten Datenquellen — Leistungsbeurteilungen, Prüfungsergebnisse, Compliance-Zusammenfassungen. Wiederhergestellte Berichte enthalten Mitarbeiternamen, Abteilungsdaten und Kennzahlen.
+AI drafts internal reports from protected data sources — performance reviews, audit findings, compliance summaries. Restored reports flow directly into governance workflows.
+Die KI erstellt interne Berichte aus geschützten Datenquellen — Leistungsbeurteilungen, Prüfungsergebnisse, Compliance-Zusammenfassungen. Wiederhergestellte Berichte fließen direkt in Governance-Workflows ein.
 
-Performance reviews, audit findings, compliance summaries
-Leistungsbeurteilungen, Prüfungsergebnisse, Compliance-Zusammenfassungen
-
-Real employee names, department data, and metrics restored
-Mitarbeiternamen, Abteilungsdaten und Kennzahlen wiederhergestellt
+Restored reports flow into governance
+Wiederhergestellte Berichte fließen in Governance-Prozesse ein
 
 ---
 
-## Section 07: Problem
+## Section 06: WithoutWith
 
-Enterprise data is never AI-ready by default
-Unternehmensdaten sind standardmäßig nicht KI-tauglich
+PILOT TO PRODUCTION
+VOM PILOTBETRIEB IN DEN PRODUKTIVBETRIEB
 
-Every enterprise document contains sensitive information that cannot be sent to external AI models. But without real data, AI outputs are generic and unusable. This is the core barrier to enterprise AI adoption.
-Jedes Unternehmensdokument enthält sensible Informationen, die nicht an externe KI-Modelle übermittelt werden dürfen. Ohne Originaldaten liefert die KI jedoch generische und unbrauchbare Ergebnisse. Dies ist die zentrale technische Hürde beim KI-Einsatz in regulierten Unternehmensumgebungen.
+Without LLM Capsule. With
+Ohne LLM Capsule. Mit
 
-Organizations cannot leverage AI capabilities without first making their data AI-ready.
-Organisationen können KI-Potenziale erst nutzen, wenn ihre Daten für den KI-Einsatz aufbereitet und abgesichert sind.
+LLM Capsule
+LLM Capsule
 
-Traditional approaches — masking, redaction, tokenization, and prompt security gateways — were not designed for AI workflows. Masking and redaction permanently remove the data context that AI models need. Prompt gateways filter at the API level but cannot handle enterprise documents end to end.
-Herkömmliche Ansätze — Maskierung, Schwärzung, Tokenisierung und Prompt-Security-Gateways — wurden nicht für KI-Workflows konzipiert. Maskierung und Schwärzung entfernen dauerhaft den Kontext, den KI-Modelle für präzise Ergebnisse benötigen. Prompt-Gateways filtern auf API-Ebene, können jedoch Unternehmensdokumente nicht durchgängig schützen.
+What changes when the data layer can finally handle the work.
+Was sich ändert, wenn die Datenschicht die Aufgabe tatsächlich erfüllen kann.
 
-These tools create a fundamental adoption barrier: without a data layer that makes sensitive data AI-ready while keeping it protected, enterprise AI projects stall before they can demonstrate value.
-Diese Werkzeuge schaffen eine grundlegende Einführungshürde: Ohne eine Datenschicht, die sensible Daten für die KI-Verarbeitung aufbereitet und gleichzeitig schützt, scheitern KI-Projekte, bevor sie ihren Mehrwert demonstrieren können.
+WITHOUT LLM CAPSULE
+OHNE LLM CAPSULE
+
+Enterprise AI projects stall at pilot
+KI-Projekte im Unternehmen stagnieren im Pilotbetrieb
+
+Manual review workflows persist — humans process documents AI can't be trusted with
+Manuelle Prüfprozesse bleiben bestehen — Mitarbeitende verarbeiten Dokumente, die der KI nicht anvertraut werden können
+
+Document structure destroyed — flat masking breaks tables and cross-references
+Dokumentstruktur wird zerstört — flaches Schwärzen beschädigt Tabellen und Querverweise
+
+Low-quality AI output — even when AI is permitted, results need extensive manual reconstruction
+Niedrige KI-Ausgabequalität — selbst wenn der KI-Einsatz genehmigt ist, erfordern Ergebnisse aufwändige manuelle Nachbearbeitung
+
+Security teams block AI adoption — projects never demonstrate value before being cancelled
+IT-Sicherheitsteams blockieren den KI-Einsatz — Projekte zeigen keinen Mehrwert, bevor sie eingestellt werden
+
+Shadow AI emerges — employees route around the controls because the controls block real work
+Schatten-KI entsteht — Mitarbeitende umgehen Kontrollmechanismen, weil diese die eigentliche Arbeit blockieren
+
+Regulated workflows excluded — telecom, healthcare, defense, finance left out of the AI gains
+Regulierte Branchen bleiben ausgeschlossen — Telekommunikation, Gesundheitswesen, Verteidigung und Finanzwesen profitieren nicht von KI
+
+WITH LLM CAPSULE
+MIT LLM CAPSULE
+
+Enterprise AI ships on real data
+KI im Unternehmen arbeitet auf realen Produktionsdaten
+
+AI runs on sensitive documents — the data layer handles protection, teams focus on outcomes
+KI verarbeitet sensible Dokumente — die Datenschicht übernimmt den Schutz, Teams konzentrieren sich auf Ergebnisse
+
+Real documents processed with any LLM — ChatGPT, Claude, Gemini, Perplexity, or on-prem local
+Reale Dokumente werden mit beliebigen Large Language Models verarbeitet — ChatGPT, Claude, Gemini, Perplexity oder lokale On-Premise-Modelle
+
+Compliance satisfied — zero raw exposure architecture meets GDPR, HIPAA, SOX governance
+Regulatorische Anforderungen erfüllt — Zero Exposure-Architektur entspricht DSGVO (GDPR), HIPAA und SOX
+
+Restored outputs retain business context — real names, real figures, real references
+Wiederhergestellte Ergebnisse behalten den Geschäftskontext — Originalnamen, Originalzahlen, Originalreferenzen
+
+Tables, layouts, cross-references preserved through structure-preserving encapsulation
+Tabellen, Layouts und Querverweise bleiben durch strukturerhaltende Kapsulierung erhalten
+
+Regulated industries adopt AI on production data — pilots become production
+Regulierte Branchen setzen KI auf Produktionsdaten ein — Pilotprojekte werden zu Produktivbetrieb
+
+---
+
+## Section 07: ComparisonTable
+
+WHERE IT SITS
+POSITIONIERUNG
+
+Not masking. Not a prompt gateway. Not
+Kein Schwärzen. Kein Prompt-Gateway. Keine
+
+synthetic data
+synthetischen Daten
+
+An AI enablement data layer for regulated workflows.
+Eine Datenschicht, die regulierte Workflows KI-fähig macht.
 
 Approach
 Ansatz
@@ -296,313 +503,248 @@ Methode
 Limitation
 Einschränkung
 
-AI Workflow Impact
-Auswirkung auf KI-Workflows
+vs LLM Capsule
+vs. LLM Capsule
+
+PII Guardrails & AI Security Suites
+PII-Schutzmaßnahmen & KI-Sicherheitslösungen
+
+API-level protection and policy enforcement
+API-seitiger Schutz und Richtliniendurchsetzung
+
+Optimized for risk control, not workflow restoration
+Auf Risikokontrolle ausgelegt, nicht auf Workflow-Wiederherstellung
+
+Capsule preserves operational structure, runs inside existing systems, and restores business-ready output
+Capsule erhält die operative Struktur, läuft innerhalb bestehender Systeme und stellt fachlich nutzbare Ergebnisse wieder her
 
 Masking & Redaction
-Maskierung & Schwärzung
+Schwärzung & Löschung
 
 Permanently removes data
 Entfernt Daten dauerhaft
 
-Destroys context AI needs
-Zerstört den für die KI notwendigen Kontext
+Destroys the context AI needs to produce useful output
+Zerstört den Kontext, den die KI für verwertbare Ergebnisse benötigt
 
-Unusable [REDACTED] outputs requiring manual reconstruction
-Unbrauchbare [REDACTED]-Ausgaben mit manuellem Rekonstruktionsaufwand
-
-Prompt Security Gateways
-Prompt-Security-Gateways
-
-API-level prompt filtering
-Prompt-Filterung auf API-Ebene
-
-No document-level protection
-Kein Schutz auf Dokumentenebene
-
-No output restoration capability
-Keine Wiederherstellungsfunktion für Ausgaben
+Capsule encapsulates locally and restores tokens to original values inside your environment
+Capsule kapsuliert lokal und stellt Token innerhalb Ihrer Umgebung auf Originalwerte zurück
 
 Synthetic Data Platforms
 Synthetische Datenplattformen
 
 Artificial data generation
-Künstliche Datengenerierung
+Generierung künstlicher Daten
 
-Training/testing only
-Ausschließlich für Training und Tests geeignet
+Training / testing only — not live operational workflows
+Nur für Training und Tests — nicht für operative Produktionsabläufe
 
-Cannot replace real documents in live AI workflows
-Kein Ersatz für Originaldokumente in produktiven KI-Workflows
+Capsule runs on real documents in production workflows
+Capsule arbeitet mit realen Dokumenten in Produktionsworkflows
 
 Security Team Blocks AI
-IT-Sicherheit blockiert KI
+IT-Sicherheitsteam blockiert KI
 
 Manual approval gate
-Manuelle Freigabeprozesse
+Manueller Freigabeprozess
 
-Blocks all AI projects
-Blockiert alle KI-Vorhaben
+Blocks AI projects — pilot never reaches production
+Blockiert KI-Projekte — Pilotbetrieb erreicht nie den Produktivbetrieb
 
-Projects never demonstrate value before being cancelled
-Projekte werden eingestellt, bevor sie Mehrwert nachweisen können
-
-LLM Capsule sits between your documents and any AI model. It replaces sensitive data with safe placeholders inside your environment, lets AI process the protected version, then restores real data back into AI outputs — not at the model layer, not at the prompt layer, but at the data layer where it matters.
-LLM Capsule ist zwischen Ihren Dokumenten und jedem KI-Modell positioniert. Es ersetzt sensible Daten innerhalb Ihrer Umgebung durch sichere Platzhalter, lässt die KI die geschützte Version verarbeiten und führt anschließend die Originaldaten lokal mit den KI-Ausgaben zusammen — nicht auf Modellebene, nicht auf Prompt-Ebene, sondern auf der Datenschicht.
-
-See how it works
-Funktionsweise ansehen
+Capsule enables AI under existing enterprise governance
+Capsule ermöglicht KI-Einsatz im Rahmen bestehender Unternehmens-Governance
 
 ---
 
-## Section 08: Before / After
+## Section 08: UseCases
 
-From blocked AI projects to enabled enterprise AI with usable outputs
-Von blockierten KI-Projekten zu produktiven KI-Deployments mit verwertbaren Ergebnissen
+BUILT FOR REGULATED OPERATIONS
+FÜR REGULIERTE BETRIEBSABLÄUFE ENTWICKELT
 
-WITHOUT LLM CAPSULE
-OHNE LLM CAPSULE
+From telecom NOC to
+Vom Telekommunikations-NOC bis zu
 
-Enterprise AI is blocked or broken
-KI im Unternehmen ist blockiert oder liefert unbrauchbare Ergebnisse
+mission operations
+Einsatzoperationen
 
-AI blocked entirely — security teams reject proposals due to data exposure risk
-KI vollständig blockiert — IT-Sicherheitsteams lehnen Vorhaben wegen Datenschutzrisiken ab
+Each industry below shows the operational data LLM Capsule transforms — not just PII — and where it's already deployed.
+Jede der folgenden Branchen zeigt, welche operativen Daten LLM Capsule transformiert — nicht nur personenbezogene Daten — und wo die Lösung bereits im Einsatz ist.
 
-Masking and redaction strip context — AI outputs are abstracted and unusable for enterprise workflows
-Maskierung und Schwärzung entfernen den Kontext — KI-Ausgaben sind abstrahiert und für Unternehmensworkflows unbrauchbar
+See all six industries →
+Alle sechs Branchen ansehen →
 
-Manual review workflows persist — documents require human processing because AI cannot be trusted with real data
-Manuelle Prüfprozesse bleiben bestehen — Dokumente erfordern menschliche Bearbeitung, da der KI keine Originaldaten übergeben werden können
+/solutions
+/solutions
 
-Document structure destroyed — flat masking breaks tables, entity relationships, and cross-references
-Dokumentstruktur zerstört — einfache Maskierung beschädigt Tabellen, Entitätsbeziehungen und Querverweise
+01
+01
 
-Low-quality AI output — even when AI is permitted, outputs require extensive manual reconstruction to be usable
-Geringe KI-Ausgabequalität — selbst wenn KI zugelassen wird, erfordern Ausgaben umfangreiche manuelle Nachbearbeitung
+Network Operations & Incident Analysis
+Netzwerkbetrieb & Vorfallsanalyse
 
-Enterprise AI projects stall in pilot — no path from proof of concept to production deployment
-KI-Projekte verharren in der Pilotphase — kein Weg vom Proof-of-Concept zum produktiven Deployment
+Input
+Eingabe
 
-WITH LLM CAPSULE
-MIT LLM CAPSULE
+NOC logs · alarm sequences · device / site / circuit IDs · SLA risk · NOC response history · subscriber identities · network configs
+NOC-Protokolle · Alarmsequenzen · Geräte- / Standort- / Leitungs-IDs · SLA-Risiko · NOC-Verlaufsdaten · Teilnehmerkennungen · Netzwerkkonfigurationen
 
-AI adoption enabled on real enterprise data
-KI-Einsatz auf realen Unternehmensdaten ermöglicht
+Flow
+Ablauf
 
-AI enabled on sensitive documents — the data layer handles protection so teams can focus on AI outcomes
-KI auf sensiblen Dokumenten aktiviert — die Datenschicht übernimmt den Schutz, sodass sich Teams auf KI-Ergebnisse konzentrieren können
+Capsule → AI generates RCA + customer-impact analysis → restored into ticket / runbook
+Capsule → KI erstellt RCA + Kundenauswirkungsanalyse → wiederhergestellt in Ticket / Runbook
 
-Real documents processed with best-in-class LLMs — ChatGPT, Claude, Gemini, Perplexity, or any LLM API
-Originaldokumente werden mit führenden LLMs verarbeitet — ChatGPT, Claude, Gemini, Perplexity oder jede LLM-API
+SK Telecom · Deutsche Telekom T Challenge 2026 — Top 12, Data Security & Governance.
+SK Telecom · Deutsche Telekom T Challenge 2026 — Top 12, Data Security & Governance.
 
-Compliance satisfied — zero exposure architecture meets enterprise AI governance requirements automatically
-Regulatorische Anforderungen erfüllt — Zero-Exposure-Architektur entspricht DSGVO- und unternehmensinternen KI-Governance-Vorgaben
+primary
+primary
 
-Restored outputs retain original business context — real names, real figures, real references restored locally
-Wiederhergestellte Ausgaben behalten den Geschäftskontext — Originalnamen, Zahlen und Referenzen werden lokal zusammengeführt
+02
+02
 
-Tables, layouts, cross-references, and document hierarchy fully preserved through structure-preserving processing
-Tabellen, Layouts, Querverweise und Dokumenthierarchie durch strukturerhaltende Verarbeitung vollständig bewahrt
+OT / Industrial Asset & Vulnerability Operations
+OT / Industrielle Asset- & Schwachstellenoperationen
 
-98% output similarity with zero data exposure — measured on real enterprise document processing workloads
-98% Ausgabe-Ähnlichkeit bei vollständigem Datenschutz — gemessen an realen Dokumentenverarbeitungs-Workloads in Unternehmen
+Input
+Eingabe
 
----
+asset ID · PLC / ICS alerts · vulnerability records · plant operation · patch constraint · vendor / device info · infrastructure details
+Asset-ID · SPS / ICS-Alarme · Schwachstellenaufzeichnungen · Anlagenbetrieb · Patch-Einschränkungen · Hersteller- / Geräteinformationen · Infrastrukturdetails
 
-## Section 09: Diagram
+Flow
+Ablauf
 
-A data layer between your enterprise and any LLM
-Eine Datenschicht zwischen Ihrer Organisation und jedem LLM
+Capsule → AI reviews + recommends remediation → security ops workflow
+Capsule → KI prüft + empfiehlt Maßnahmen → Security-Operations-Workflow
 
-LLM Capsule sits between your internal systems and external AI models. Raw data stays inside your environment — the trust boundary is never crossed by original data. AI only processes the protected version.
-LLM Capsule ist zwischen Ihren internen Systemen und externen KI-Modellen positioniert. Rohdaten verbleiben in Ihrer Umgebung — die Vertrauensgrenze wird von Originaldaten zu keinem Zeitpunkt überschritten. Die KI verarbeitet ausschließlich die geschützte Version.
+Partner: Claroty (industrial cybersecurity).
+Partner: Claroty (industrielle Cybersicherheit).
 
-LLM Capsule Architecture
-LLM Capsule Architektur
+teal
+teal
 
-INTERNAL ENVIRONMENT
-INTERNE UMGEBUNG
+03
+03
 
-HOW DATA FLOWS THROUGH LLM CAPSULE
-DATENFLUSS DURCH LLM CAPSULE
+Healthcare Clinical & Hospital Operational Workflow
+Klinischer & Krankenhausbetrieblicher Workflow im Gesundheitswesen
 
-EXTERNAL AI SERVICES
-EXTERNE KI-DIENSTE
+Input
+Eingabe
 
-Customer Documents
-Kundendokumente
+clinical workflow · lab results · prescription flow · patient names · diagnoses · medical record IDs · hospital operation · claim review context
+Klinischer Workflow · Laborergebnisse · Verschreibungsablauf · Patientennamen · Diagnosen · Krankenakten-IDs · Krankenhausbetrieb · Kontext der Leistungsabrechnung
 
-Internal Databases
-Interne Datenbanken
+Flow
+Ablauf
 
-RAG Pipelines
-RAG-Pipelines
+Capsule → AI summarizes + drafts clinical notes / radiology reports → restored into EHR workflow
+Capsule → KI fasst zusammen + entwirft klinische Notizen / Radiologieberichte → wiederhergestellt in EHR-Workflow
 
-Admin Console
-Admin-Konsole
+Deployed at Ewha Womans University Medical Center (EUMC).
+Im Einsatz am Ewha Womans University Medical Center (EUMC).
 
-Policy Engine
-Policy Engine
+amber
+amber
 
-LLM Capsule — Encapsulation & Restoration
-LLM Capsule — Kapsulierung & Wiederherstellung
+04
+04
 
-STEP 1 — LOCAL
-SCHRITT 1 — LOKAL
+Public Sector / Defense — Mission & Classified Workflow
+Öffentlicher Sektor / Verteidigung — Einsatz- & Verschlusssachenworkflow
 
-Detection — 
-Erkennung — 
+Input
+Eingabe
 
-"Contract with Samsung..."
-„Vertrag mit Samsung..."
+military personnel data · classified operation details · security-grade documents · mission log · operation brief · access-controlled context · command workflow
+Personaldaten des Militärs · klassifizierte Einsatzdetails · Dokumente mit Sicherheitseinstufung · Einsatzprotokoll · Lagebesprechung · zugangskontrollierter Kontext · Führungsworkflow
 
-STEP 2 — LOCAL
-SCHRITT 2 — LOKAL
+Flow
+Ablauf
 
-Encapsulation — 
-Kapsulierung — 
+Capsule (local execution) → AI drafts intelligence reports + briefing summaries → restored under command control with full audit trail
+Capsule (lokale Ausführung) → KI entwirft Lageberichte + Briefing-Zusammenfassungen → wiederhergestellt unter Führungskontrolle mit vollständigem Prüfpfad
 
-"Contract with [ORG_A]..."
-„Vertrag mit [ORG_A]..."
+Deployed at Ministry of National Defense (South Korea). On-prem / local execution path required.
+Im Einsatz beim Verteidigungsministerium (Südkorea). On-Premise- / lokaler Ausführungspfad erforderlich.
 
-STEP 3 — EXTERNAL
-SCHRITT 3 — EXTERN
-
-LLM Processing — 
-LLM-Verarbeitung — 
-
-"The deal with [ORG_A]..."
-„Das Geschäft mit [ORG_A]..."
-
-STEP 4 — LOCAL
-SCHRITT 4 — LOKAL
-
-Restoration — 
-Wiederherstellung — 
-
-"The deal with Samsung..."
-„Das Geschäft mit Samsung..."
-
-Business-Ready Output
-Direkt einsetzbare Ausgabe
-
-TRUST BOUNDARY
-VERTRAUENSGRENZE
-
-ChatGPT / OpenAI
-ChatGPT / OpenAI
-
-Claude / Anthropic
-Claude / Anthropic
-
-Gemini / Google
-Gemini / Google
-
-Perplexity
-Perplexity
-
-Any LLM API
-Jede LLM-API
-
-View on AWS Marketplace
-Auf AWS Marketplace ansehen
+coral
+coral
 
 ---
 
-## Section 10: Performance
+## Section 09: FAQ
 
-Measured performance on real enterprise document processing workloads
-Gemessene Leistungswerte bei realen Dokumentenverarbeitungs-Workloads
+FAQ
+FAQ
 
-These metrics are measured on enterprise documents with 2,200+ character average length across regulated industry workflows including finance, healthcare, legal, and public sector environments.
-Diese Kennzahlen wurden an Unternehmensdokumenten mit durchschnittlich über 2.200 Zeichen ermittelt — in regulierten Branchen-Workflows aus Finanzdienstleistungen, Gesundheitswesen, Recht und öffentlicher Verwaltung.
+Frequently Asked
+Häufig gestellte
 
-98.1%
-98,1%
+Questions
+Fragen
 
-Detection Accuracy
-Erkennungsgenauigkeit
+What is an AI enablement data layer?
+Was ist eine KI-Aktivierungsschicht für Unternehmensdaten?
 
-99.14%
-99,14%
+An AI enablement data layer sits between the existing regulated enterprise environment (NOC, ticket, OSS/BSS, OT consoles, EHR, mission systems, document portals) and large language models. It turns operational data into AI-ready context using structure-preserving, differential-privacy-based encapsulation, executes the AI workflow inside the enterprise environment, and restores results back into the originating workflow. It moves AI projects from pilot to production on real enterprise data.
+Eine KI-Aktivierungsschicht positioniert sich zwischen der bestehenden regulierten Unternehmensumgebung — NOC, Ticketsysteme, OSS/BSS, OT-Konsolen, EHR, Einsatzsysteme, Dokumentenportale — und Large Language Models. Sie wandelt operative Daten mithilfe strukturerhaltender, Differential-Privacy-basierter Kapsulierung in KI-geeigneten Kontext um, führt den KI-Workflow innerhalb der Unternehmensumgebung aus und stellt Ergebnisse in den ursprünglichen Workflow zurück. So werden KI-Projekte auf realen Unternehmensdaten vom Pilotbetrieb in den Produktivbetrieb überführt.
 
-Workflow Accuracy
-Workflow-Genauigkeit
+How is LLM Capsule different from PII guardrails or AI security tools?
+Worin unterscheidet sich LLM Capsule von PII-Schutzmaßnahmen oder KI-Sicherheitslösungen?
 
-100%
-100%
+PII guardrails detect and mask personal identifiers at the API or prompt level. AI security tools focus on prompt injection and runtime threats. LLM Capsule operates one layer deeper — at the AI enablement data layer. It transforms structured operational data using structure-preserving, differential-privacy-based encapsulation, supports both external LLM and on-prem local execution paths, and provides two-way restoration via state vault. It plugs into legacy enterprise systems with no architectural change required.
+PII-Schutzmaßnahmen erkennen und maskieren personenbezogene Kennungen auf API- oder Prompt-Ebene. KI-Sicherheitslösungen konzentrieren sich auf Prompt-Injection und Laufzeitbedrohungen. LLM Capsule arbeitet eine Ebene tiefer — auf der Datenschicht. Es transformiert strukturierte operative Daten mithilfe strukturerhaltender, Differential-Privacy-basierter Kapsulierung, unterstützt externe Large-Language-Model- und lokale On-Premise-Ausführungspfade und ermöglicht bidirektionale Wiederherstellung über einen State Vault. Die Integration in bestehende Legacy-Systeme erfordert keine Architekturänderungen.
 
-Structured PII
-Strukturierte PII
+Can our team define what counts as sensitive?
+Kann unser Team selbst festlegen, was als vertraulich gilt?
 
-98%
-98%
+Yes. Context-aware data control lets your team define, add, remove, and version confidentiality markers as your operations and regulatory landscape evolve. Standard PII categories are not enough — define project codes, deal terms, internal IDs, network identifiers, asset references, mission references, and any business-specific marker. Yesterday's sensitive data isn't tomorrow's; the policy adapts.
+Ja. Die kontextbezogene Datenkontrolle ermöglicht es Ihrem Team, Vertraulichkeitsmarker zu definieren, hinzuzufügen, zu entfernen und zu versionieren — entsprechend der Entwicklung Ihrer Abläufe und des regulatorischen Umfelds. Standard-PII-Kategorien reichen nicht aus. Definieren Sie Projektkennungen, Vertragsbedingungen, interne IDs, Netzwerkkennungen, Asset-Referenzen, Einsatzreferenzen und beliebige unternehmensspezifische Marker. Was heute als vertraulich gilt, muss es morgen nicht mehr sein — die Richtlinie passt sich an.
 
-Response Similarity
-Antwort-Ähnlichkeit
+Can LLM Capsule run on-premise or air-gapped?
+Kann LLM Capsule On-Premise oder in Air-Gapped-Umgebungen betrieben werden?
 
-Enable AI. Protect data. Restore results. Track everything.
-KI aktivieren. Daten schützen. Ergebnisse wiederherstellen. Alles nachvollziehbar dokumentieren.
+Yes. Six deployment modes: on-premise, air-gapped, hybrid, cloud (AWS Marketplace), embedded SDK, and Slack App. Two execution paths: external approved LLM with capsule data only (no raw operational data exposure) or on-prem local lightweight model (zero external transmission). Path selection is policy-driven per workflow. Capsule runs inside the customer environment in every mode — integration interfaces (REST / gRPC / JDBC / Graph API / on-prem API / SDK / Slack App) let existing enterprise systems invoke it from inside the environment.
+Ja. LLM Capsule unterstützt sechs Bereitstellungsmodi: On-Premise, Air-Gapped, hybrid, Cloud (AWS Marketplace), eingebettetes SDK und Slack App. Es stehen zwei Ausführungspfade zur Verfügung: ein zugelassenes externes Large Language Model, das ausschließlich kapsulierte Daten erhält, sowie ein lokales, schlankes On-Premise-Modell ohne externe Datenübertragung. Die Pfadauswahl erfolgt richtliniengesteuert je Workflow. In jedem Modus läuft Capsule innerhalb der Kundenumgebung. Integrationsschnittstellen (REST / gRPC / JDBC / Graph API / On-Premise-API / SDK / Slack App) ermöglichen die Einbindung in bestehende Unternehmenssysteme.
 
-0.12s processing per 2,200-character document. Tested across finance, healthcare, legal, and public sector workflows
-0,12s Verarbeitungszeit pro Dokument mit 2.200 Zeichen. Getestet in Workflows aus Finanzdienstleistungen, Gesundheitswesen, Recht und öffentlicher Verwaltung
+Which industries and customers use LLM Capsule?
+Welche Branchen und Kunden setzen LLM Capsule ein?
+
+Telecom (Deutsche Telekom T Challenge 2026 Top 12 in Data Security & Governance, SK Telecom), industrial cybersecurity and OT (partner: Claroty), healthcare (EUMC), finance and insurance (Kyobo, DB Insurance, IBK), legal (Shin&Kim), public sector / defense (Ministry of National Defense, South Korea), and cloud sovereignty (NAVER Cloud). Recognized as a Gartner Vendor and listed on AWS Marketplace.
+Telekommunikation (Deutsche Telekom T Challenge 2026 Top 12 in Data Security & Governance, SK Telecom), industrielle Cybersicherheit und OT (Partner: Claroty), Gesundheitswesen (EUMC), Finanz- und Versicherungswesen (Kyobo, DB Insurance, IBK), Rechtsberatung (Shin&Kim), öffentlicher Sektor und Verteidigung (Verteidigungsministerium Südkorea) sowie Cloud-Souveränität (NAVER Cloud). Anerkannt als Gartner Vendor und auf AWS Marketplace gelistet.
+
+What compliance frameworks does LLM Capsule support?
+Welche regulatorischen Anforderungen unterstützt LLM Capsule?
+
+LLM Capsule supports enterprise compliance with GDPR, HIPAA, SOX, and sector-specific regulations by ensuring sensitive data never leaves the enterprise environment during AI processing. Certifications include ISO/IEC 27001 (information security management) and ISO/IEC 42001 (AI management system). Korean certifications include KISA Information Security Fast Track, GS Certification, and TTA.
+LLM Capsule unterstützt die Einhaltung von DSGVO (GDPR), HIPAA, SOX sowie branchenspezifischen Vorschriften, indem sensible Daten während der KI-Verarbeitung die Unternehmensumgebung nicht verlassen. Zertifizierungen umfassen ISO/IEC 27001 (Informationssicherheitsmanagement) und ISO/IEC 42001 (KI-Managementsystem). Koreanische Zertifizierungen: KISA Information Security Fast Track, GS Certification und TTA.
 
 ---
 
-## Section 11: CTA
+## Section 10: CTAStrip
 
-See how LLM Capsule enables AI on your enterprise documents
-Wir analysieren Ihre Anforderungen und demonstrieren LLM Capsule anhand Ihrer eigenen Daten
+From blocked AI workflows to operational AI.
+Von blockierten KI-Workflows zum produktiven KI-Einsatz.
 
-Bring your documents, deployment constraints, and evaluation criteria. We demonstrate how the AI enablement data layer works on your actual data, in your environment, against your compliance requirements.
-Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir zeigen, wie die Datenschicht in Ihrer Umgebung funktioniert — auf Ihren realen Daten und im Einklang mit Ihren DSGVO- und Compliance-Vorgaben.
+See how LLM Capsule plugs into your existing enterprise environment in 30 minutes. Bring your documents, deployment constraints, and evaluation questions.
+Wir analysieren Ihre Anforderungen und demonstrieren LLM Capsule anhand Ihrer eigenen Daten und Deployment-Rahmenbedingungen — in 30 Minuten.
 
 Request a Demo
 Demo anfordern
 
-Available on AWS Marketplace
-Verfügbar auf AWS Marketplace
+/request-a-demo
+/request-a-demo
 
----
+See the Architecture
+Architektur ansehen
 
-## Section 12: FAQ
+/architecture
+/architecture
 
-Frequently Asked Questions
-Häufig gestellte Fragen
+View Pricing
+Preise ansehen
 
-How does LLM Capsule protect enterprise data during AI processing?
-Wie schützt LLM Capsule Unternehmensdaten während der KI-Verarbeitung?
-
-LLM Capsule acts as an AI enablement data layer that encapsulates sensitive data locally before it leaves the enterprise environment. Only protected representations are sent to AI models. After processing, outputs are restored locally so they remain usable for real enterprise workflows. The original data never reaches external AI services — this is what makes it an AI enablement plugin rather than a monitoring or filtering tool.
-LLM Capsule ist eine Datenschicht, die sensible Inhalte lokal kapsuliert, bevor sie die Unternehmensumgebung verlassen. An KI-Modelle werden ausschließlich geschützte Repräsentationen übermittelt. Nach der Verarbeitung werden Ausgaben lokal mit den Originaldaten zusammengeführt. Originaldaten erreichen externe KI-Dienste zu keinem Zeitpunkt — dies unterscheidet LLM Capsule grundlegend von Überwachungs- oder Filterlösungen.
-
-How is LLM Capsule different from data masking and redaction tools?
-Wie unterscheidet sich LLM Capsule von Datenmaskierungs- und Schwärzungswerkzeugen?
-
-Masking and redaction permanently remove data, destroying the context AI models need to produce useful outputs. AI results from masked documents contain [REDACTED] placeholders that require manual reconstruction. LLM Capsule encapsulates data with structure-preserving processing and restores outputs after AI processing, producing enterprise-ready results automatically. This is the fundamental difference between static data anonymization tools and a restorable workflow designed for AI.
-Maskierung und Schwärzung entfernen Daten dauerhaft und zerstören den Kontext, den KI-Modelle für präzise Ergebnisse benötigen. Ausgaben aus maskierten Dokumenten enthalten [REDACTED]-Platzhalter und erfordern manuelle Nachbearbeitung. LLM Capsule kapsuliert Daten unter Erhalt der Dokumentstruktur und stellt Ausgaben nach der KI-Verarbeitung automatisch wieder her. Dies ist der grundlegende Unterschied zwischen statischen Anonymisierungswerkzeugen und einem für KI-Workflows konzipierten Wiederherstellungsverfahren.
-
-What is the difference between LLM Capsule and prompt security gateways?
-Welchen Unterschied gibt es zwischen LLM Capsule und Prompt-Security-Gateways?
-
-Prompt security gateways filter at the API level — they scan prompts for sensitive patterns and block or strip flagged content. They cannot protect enterprise documents processed through RAG pipelines or batch workflows, and they provide no output restoration. LLM Capsule operates as a data layer plugin, encapsulating sensitive elements before any AI processing occurs and restoring outputs afterward. The two approaches can be complementary, but only a data-layer approach provides end-to-end AI enablement on enterprise data.
-Prompt-Security-Gateways filtern auf API-Ebene: Sie scannen Prompts nach sensiblen Mustern und blockieren oder entfernen markierte Inhalte. Unternehmensdokumente in RAG-Pipelines oder Batch-Workflows können sie nicht schützen, und eine Ausgabewiederherstellung ist nicht vorgesehen. LLM Capsule kapsuliert sensible Inhalte auf Datenebene vor der KI-Verarbeitung und stellt Ausgaben danach wieder her. Beide Ansätze können sich ergänzen — End-to-End-KI-Enablement auf Unternehmensdaten bietet jedoch nur der Datenschicht-Ansatz.
-
-Where can LLM Capsule be deployed?
-Welche Deployment-Modelle unterstützt LLM Capsule?
-
-LLM Capsule supports on-premise, air-gapped, cloud (including AWS Marketplace), hybrid, and embedded deployment models. The encapsulation engine runs entirely within your environment regardless of deployment type. This flexibility is critical for enterprise AI governance — different data types and regulatory requirements may demand different deployment architectures within a single organization.
-LLM Capsule unterstützt On-Premise-, Air-Gapped-, Cloud- (einschließlich AWS Marketplace), Hybrid- und eingebettete Deployment-Modelle. Die Kapsulierungskomponente läuft vollständig innerhalb Ihrer Umgebung — unabhängig vom gewählten Deployment-Typ. Diese Flexibilität ist für die KI-Governance in Unternehmen entscheidend: Unterschiedliche Datentypen und regulatorische Anforderungen — etwa DSGVO oder BSI C5 — können unterschiedliche Architekturen innerhalb einer Organisation erfordern.
-
-What is enterprise AI data protection?
-Was versteht man unter Enterprise AI Data Protection?
-
-Enterprise AI enablement is the practice of making sensitive enterprise data AI-ready so organizations can adopt LLMs without exposing original information. LLM Capsule achieves this at the data layer through local encapsulation, structure-preserving processing, and local restoration — ensuring zero exposure of original data while enabling full AI workflow adoption. Unlike model-level approaches that block or filter, the data layer plugin transforms data itself to make enterprise AI possible.
-Enterprise AI Enablement bezeichnet die technische Aufbereitung sensibler Unternehmensdaten für den KI-Einsatz, ohne Originalinformationen offenzulegen. LLM Capsule realisiert dies auf der Datenschicht durch lokale Kapsulierung, strukturerhaltende Verarbeitung und lokale Wiederherstellung — vollständiger Schutz der Originaldaten bei gleichzeitiger Nutzung des gesamten KI-Workflow-Potenzials. Im Gegensatz zu Ansätzen auf Modellebene, die blockieren oder filtern, transformiert das Datenschicht-Plugin die Daten selbst und macht den KI-Einsatz im Unternehmen möglich.
-
-What certifications does LLM Capsule hold?
-Über welche Zertifizierungen verfügt LLM Capsule?
-
-ISO 27001, ISO 42001, GS Certification. LLM Capsule is available on AWS Marketplace and supports deployment within enterprise compliance frameworks including GDPR, HIPAA, and sector-specific regulatory requirements.
-ISO 27001, ISO 42001, GS Certification. LLM Capsule ist auf AWS Marketplace verfügbar und unterstützt Deployments innerhalb von Compliance-Frameworks — darunter DSGVO (GDPR), HIPAA und branchenspezifische regulatorische Anforderungen wie BSI C5.
+/pricing
+/pricing
