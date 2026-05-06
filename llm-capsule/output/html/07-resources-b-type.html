@@ -318,20 +318,18 @@
     }
 
     .s3-featured__visual {
-      background-color: var(--c-bg-dark-2, #1b1d4a);
       border-radius: var(--r-md, 10px);
-      padding: 32px;
-      min-height: 220px;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--f-mono, 'JetBrains Mono', monospace);
-      font-size: 13px;
-      color: var(--c-primary-soft, #eeebfe);
-      line-height: 1.8;
-      text-align: center;
-      border: 1px solid rgba(255,255,255,0.08);
-      opacity: 0.9;
+    }
+
+    .s3-featured__visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--r-md, 10px);
     }
 
     /* ============================================================
@@ -602,11 +600,8 @@
           <p class="s3-featured__desc">80% of enterprise AI pilots never ship to production. The reasons are predictable: data exposure barriers, broken document context, residual compliance risk, shadow AI emergence. Here's the diagnostic and the architectural pattern that gets pilots to production.</p>
           <a class="ds-btn ds-btn--invert" href="/learn/pilot-to-production-enterprise-ai">Read the article →</a>
         </div>
-        <div class="s3-featured__visual">
-          TL;DR · 4-stage diagnosis · architectural pattern<br><br>
-          ↓<br><br>
-          Most pilots fail not at AI, but at the data layer.<br><br>
-          — 10 min read
+        <div class="s3-featured__visual" data-replace="featured-visual">
+          <img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png" alt="Why enterprise AI pilots stall" loading="lazy">
         </div>
       </div>
     </div>
