@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing v6.2 — TSX Component Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/tokens.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --f-display: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --f-mono: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+      --c-bg: #ffffff;
+      --c-bg-soft: #f7f8fb;
+      --c-bg-dark: #0f1130;
+      --c-bg-dark-2: #1b1d4a;
+      --c-ink: #0f1130;
+      --c-ink-soft: #3a3d5e;
+      --c-muted: #6b7280;
+      --c-rule: #e5e7eb;
+      --c-primary: #5b4fe9;
+      --c-primary-dark: #3b2fbf;
+      --c-primary-soft: #eeebfe;
+      --c-teal: #0ea5a4;
+      --c-teal-soft: #e6f7f6;
+      --c-dark-text-soft: #c8c4f7;
+      --c-dark-accent: #9d95f5;
+      --r-sm: 6px;
+      --r-md: 10px;
+      --r-lg: 16px;
+      --s-page: clamp(20px, 4vw, 80px);
+      --s-section: clamp(64px, 8vw, 128px);
+      --container-max: 1280px;
+    }
+    body {
+      font-family: var(--f-display);
+      color: var(--c-ink);
+      background-color: var(--c-bg);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img, video { max-width: 100%; display: block; }
+    h1, h2, h3, h4 { letter-spacing: -0.02em; line-height: 1.15; }
+
+    /* Preview banner */
+    .preview-banner {
+      background-color: var(--c-primary-soft);
+      border-bottom: 1px solid var(--c-rule);
+      padding: 10px var(--s-page);
+      font-family: var(--f-mono);
+      font-size: 11px;
+      color: var(--c-primary-dark);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ── Section 1: Hero ── */
+    .s1-hero {
+      padding-top: clamp(80px, 10vw, 140px);
+      padding-bottom: clamp(48px, 6vw, 80px);
+      border-bottom: 1px solid var(--c-rule);
+      background-color: var(--c-bg-soft);
+      text-align: center;
+      padding-left: var(--s-page);
+      padding-right: var(--s-page);
+    }
+    .s1-container { max-width: 880px; margin: 0 auto; }
+    .s1-eyebrow {
+      display: inline-block;
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--c-primary); margin-bottom: 16px;
+    }
+    .s1-h1 { font-size: clamp(36px, 5vw, 64px); font-weight: 700; color: var(--c-ink); margin-bottom: 20px; word-break: keep-all; }
+    .s1-h1 strong { color: var(--c-primary); }
+    .s1-description { font-size: clamp(17px, 1.5vw, 19px); color: var(--c-ink-soft); max-width: 760px; margin: 0 auto; line-height: 1.6; }
+
+    /* ── Section 2: Pricing Tiers ── */
+    .s2-section { padding: var(--s-section) 0; }
+    .lc-container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--s-page); }
+    .s2-grid { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: stretch; }
+    @media (min-width: 768px) { .s2-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .s2-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .s2-card { background-color: var(--c-bg); border: 1px solid var(--c-rule); border-radius: var(--r-lg); padding: 32px; display: flex; flex-direction: column; position: relative; }
+    .s2-card--featured { border-color: var(--c-primary); }
+    .s2-featured-badge { position: absolute; top: -14px; left: 32px; background: var(--c-primary); color: #fff; font-family: var(--f-mono); font-size: 10px; font-weight: 700; padding: 4px 12px; border-radius: 999px; letter-spacing: 0.1em; text-transform: uppercase; }
+    .s2-label { display: inline-block; font-family: var(--f-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; padding: 4px 10px; background-color: var(--c-bg-soft); color: var(--c-muted); border-radius: 999px; text-transform: uppercase; margin-bottom: 14px; }
+    .s2-card--featured .s2-label { background-color: var(--c-primary-soft); color: var(--c-primary-dark); }
+    .s2-tier-name { font-size: 28px; font-weight: 700; color: var(--c-ink); margin-bottom: 6px; }
+    .s2-price { font-size: 36px; font-weight: 800; color: var(--c-ink); line-height: 1; margin-bottom: 4px; }
+    .s2-period { font-size: 13px; color: var(--c-muted); line-height: 1.4; }
+    .s2-features { list-style: none; padding: 16px 0; margin: 14px 0 0 0; border-top: 1px solid var(--c-rule); flex: 1; }
+    .s2-feature-item { font-size: 14px; padding: 8px 0 8px 26px; position: relative; color: var(--c-ink-soft); line-height: 1.5; word-break: keep-all; }
+    .s2-feature-item::before { content: '✓'; position: absolute; left: 0; color: var(--c-primary); font-weight: 700; }
+    .s2-cta-wrap { margin-top: auto; padding-top: 8px; }
+    .s2-btn { display: flex; align-items: center; justify-content: center; padding: 13px 24px; border-radius: var(--r-md); font-size: 15px; font-weight: 600; cursor: pointer; transition: background 0.18s, color 0.18s, border-color 0.18s; text-decoration: none; width: 100%; text-align: center; border: none; }
+    .s2-btn--primary { background: var(--c-ink); color: #fff; }
+    .s2-btn--primary:hover { background: var(--c-primary); }
+    .s2-btn--ghost { background: transparent; color: var(--c-ink); border: 1.5px solid var(--c-rule); }
+    .s2-btn--ghost:hover { border-color: var(--c-primary); color: var(--c-primary); }
+
+    /* ── Section 3: Feature Matrix ── */
+    .s3-section { padding: var(--s-section) 0; background-color: var(--c-bg-soft); }
+    .lc-section-header { text-align: center; margin-bottom: 48px; }
+    .lc-eyebrow { display: inline-block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--c-primary); margin-bottom: 16px; }
+    .lc-section-header h2 { font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; color: var(--c-ink); margin-bottom: 16px; }
+    .lc-section-header p { font-size: clamp(16px, 1.4vw, 18px); color: var(--c-ink-soft); max-width: 720px; margin: 0 auto; line-height: 1.6; }
+    .s3-table-wrap { overflow-x: auto; scrollbar-width: none; border-radius: var(--r-md); border: 1px solid var(--c-rule); }
+    .s3-table-wrap::-webkit-scrollbar { display: none; }
+    .s3-table { width: 100%; border-collapse: collapse; background-color: var(--c-bg); min-width: 640px; }
+    .s3-table th, .s3-table td { padding: 14px 16px; text-align: left; font-size: 13px; border-bottom: 1px solid var(--c-rule); }
+    .s3-table th { background-color: var(--c-bg-soft); font-size: 12px; color: var(--c-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+    .s3-th-featured { background-color: var(--c-bg-dark); color: #fff; }
+    .s3-td-feature { font-weight: 600; color: var(--c-ink); width: 30%; background-color: var(--c-bg-soft); }
+    .s3-td-yes { color: var(--c-primary-dark); font-weight: 700; }
+    .s3-td-featured { background-color: var(--c-primary-soft); }
+    .s3-td-featured.s3-td-yes { color: var(--c-primary-dark); font-weight: 700; }
+    .s3-table tbody tr:last-child td { border-bottom: none; }
+
+    /* ── Section 4: Volume Calculator ── */
+    .s4-section { padding: var(--s-section) 0; }
+    .s4-calc { background-color: var(--c-bg-dark); border-radius: var(--r-lg); padding: clamp(28px, 4vw, 48px); }
+    .s4-calc-title { font-size: clamp(20px, 2vw, 26px); font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .s4-calc-desc { font-size: 14px; color: var(--c-dark-text-soft); margin-bottom: 32px; line-height: 1.6; }
+    .s4-slider-wrap { margin-bottom: 28px; }
+    .s4-slider-label { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--f-mono); font-size: 12px; color: var(--c-dark-text-soft); margin-bottom: 10px; }
+    .s4-slider-value { color: #fff; font-weight: 700; font-size: 20px; font-family: var(--f-mono); }
+    .s4-slider-range { font-size: 11px; color: var(--c-muted); }
+    .s4-slider { width: 100%; appearance: none; -webkit-appearance: none; height: 6px; background-color: var(--c-bg-dark-2); border-radius: 999px; outline: none; cursor: pointer; }
+    .s4-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; background-color: var(--c-primary); border-radius: 50%; cursor: pointer; box-shadow: 0 0 0 4px rgba(91,79,233,0.3); }
+    .s4-slider::-moz-range-thumb { width: 22px; height: 22px; background-color: var(--c-primary); border-radius: 50%; cursor: pointer; border: none; }
+    .s4-result { background-color: rgba(255,255,255,0.05); border-radius: var(--r-md); padding: 24px; border: 1px solid rgba(255,255,255,0.1); }
+    .s4-rec-label { font-family: var(--f-mono); font-size: 11px; color: var(--c-dark-accent); letter-spacing: 0.1em; margin-bottom: 8px; font-weight: 700; text-transform: uppercase; }
+    .s4-rec-tier { font-size: 22px; color: #fff; font-weight: 700; margin-bottom: 8px; }
+    .s4-rec-desc { font-size: 13px; color: var(--c-dark-text-soft); line-height: 1.6; }
+
+    /* ── Section 5: FAQ ── */
+    .s5-section { padding: var(--s-section) 0; background-color: var(--c-bg-soft); }
+    .s5-faq-wrap { max-width: 880px; margin: 0 auto; }
+    .s5-faq-item { border-bottom: 1px solid var(--c-rule); }
+    .s5-faq-item:first-child { border-top: 1px solid var(--c-rule); }
+    .s5-faq details { padding: 0; }
+    .s5-faq summary { font-size: 17px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; color: var(--c-ink); }
+    .s5-faq summary::-webkit-details-marker { display: none; }
+    .s5-faq summary::after { content: '+'; font-size: 24px; color: var(--c-muted); transition: transform 0.2s; flex-shrink: 0; }
+    .s5-faq details[open] summary::after { transform: rotate(45deg); }
+    .s5-faq-body { border-top: 1px solid var(--c-rule); background-color: var(--c-bg-soft); padding: 16px 0 20px; }
+    .s5-faq-body p { font-size: 15px; color: var(--c-ink-soft); line-height: 1.7; word-break: keep-all; }
+    .s5-faq-body a { color: var(--c-primary); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ── Section 6: CTA Strip ── */
+    .s6-section { background-color: var(--c-bg-dark); padding: var(--s-section) var(--s-page); text-align: center; }
+    .s6-inner { max-width: 640px; margin: 0 auto; }
+    .s6-h2 { font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; color: #fff; margin-bottom: 20px; word-break: keep-all; }
+    .s6-subtitle { font-size: 17px; color: var(--c-dark-text-soft); line-height: 1.6; margin-bottom: 32px; word-break: keep-all; }
+    .s6-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .s6-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 24px; border-radius: var(--r-md); font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.18s; text-decoration: none; border: none; }
+    .s6-btn--invert { background: #fff; color: var(--c-ink); }
+    .s6-btn--invert:hover { background: var(--c-primary-soft); color: var(--c-primary-dark); }
+    .s6-btn--invert-ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.35); }
+    .s6-btn--invert-ghost:hover { border-color: rgba(255,255,255,0.7); }
+    @media (max-width: 599px) {
+      .s6-actions { flex-direction: column; align-items: center; }
+      .s6-btn { width: 100%; max-width: 320px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="preview-banner">Preview — pricing-v62 TSX Components · LLM Capsule v6.2</div>
+
+<!-- Section 1: Hero -->
+<section id="section-1" class="s1-hero">
+  <div class="s1-container">
+    <span class="s1-eyebrow">Pricing</span>
+    <h1 class="s1-h1">Pricing for <strong>secure AI workflow deployment</strong></h1>
+    <p class="s1-description">Volume-based pricing tailored to your document processing workload, deployment requirements, and regulatory profile.</p>
+  </div>
+</section>
+
+<!-- Section 2: Pricing Tiers -->
+<section id="section-2" class="s2-section">
+  <div class="lc-container">
+    <div class="s2-grid">
+
+      <article class="s2-card">
+        <span class="s2-label">Workflow Proof of Value</span>
+        <h3 class="s2-tier-name">Proof of Value</h3>
+        <div class="s2-price">Custom</div>
+        <p class="s2-period">Evaluation period · 4-8 weeks</p>
+        <ul class="s2-features">
+          <li class="s2-feature-item">Test with your own documents</li>
+          <li class="s2-feature-item">Full encapsulation + restoration</li>
+          <li class="s2-feature-item">Path A or Path B execution</li>
+          <li class="s2-feature-item">11 starter markers + custom</li>
+          <li class="s2-feature-item">Audit dashboard</li>
+          <li class="s2-feature-item">Evaluation report on detection / restoration / workflow</li>
+        </ul>
+        <div class="s2-cta-wrap">
+          <a class="s2-btn s2-btn--ghost" href="/request-a-demo">Start a Workflow Proof of Value →</a>
+        </div>
+      </article>
+
+      <article class="s2-card s2-card--featured">
+        <span class="s2-featured-badge">MOST COMMON</span>
+        <span class="s2-label">Enterprise</span>
+        <h3 class="s2-tier-name">Custom</h3>
+        <div class="s2-price">Custom</div>
+        <p class="s2-period">Annual license · production-grade</p>
+        <ul class="s2-features">
+          <li class="s2-feature-item">Unlimited document processing</li>
+          <li class="s2-feature-item">Full 6 capability set including time-shifting policy</li>
+          <li class="s2-feature-item">Both execution paths (A + B) under one governance</li>
+          <li class="s2-feature-item">Custom marker definition + policy versioning</li>
+          <li class="s2-feature-item">RBAC + per-team scope</li>
+          <li class="s2-feature-item">SLA-backed support, dedicated CSM</li>
+          <li class="s2-feature-item">GDPR / HIPAA / SOX-aligned audit</li>
+          <li class="s2-feature-item">On-prem, hybrid, VPC, embedded SDK, Slack App</li>
+        </ul>
+        <div class="s2-cta-wrap">
+          <a class="s2-btn s2-btn--primary" href="/request-a-demo">Talk to Sales →</a>
+        </div>
+      </article>
+
+      <article class="s2-card">
+        <span class="s2-label">AWS Marketplace</span>
+        <h3 class="s2-tier-name">Listed</h3>
+        <div class="s2-price">Pay through AWS</div>
+        <p class="s2-period">Streamlined procurement</p>
+        <ul class="s2-features">
+          <li class="s2-feature-item">Streamlined AWS procurement</li>
+          <li class="s2-feature-item">AWS billing integration</li>
+          <li class="s2-feature-item">VPC deployment</li>
+          <li class="s2-feature-item">Same capability set as Enterprise</li>
+          <li class="s2-feature-item">EDP / private offer eligible</li>
+        </ul>
+        <div class="s2-cta-wrap">
+          <a class="s2-btn s2-btn--ghost" href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener noreferrer">View on AWS →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Section 3: Feature Matrix -->
+<section id="section-3" class="s3-section">
+  <div class="lc-container">
+    <div class="lc-section-header">
+      <span class="lc-eyebrow">Feature comparison</span>
+      <h2>What's included in each tier</h2>
+      <p>All three tiers include the full capability set. Differences are in scope, support, and procurement path.</p>
+    </div>
+    <div class="s3-table-wrap">
+      <table class="s3-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Proof of Value</th>
+            <th class="s3-th-featured">Enterprise</th>
+            <th>AWS Marketplace</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="s3-td-feature">Document volume</td><td>Evaluation scope</td><td class="s3-td-featured s3-td-yes">Unlimited</td><td>Per AWS contract</td></tr>
+          <tr><td class="s3-td-feature">Execution paths (A external + B on-prem)</td><td class="s3-td-yes">Both</td><td class="s3-td-featured s3-td-yes">Both</td><td class="s3-td-yes">Both</td></tr>
+          <tr><td class="s3-td-feature">6 capability set including time-shifting policy</td><td class="s3-td-yes">Full</td><td class="s3-td-featured s3-td-yes">Full</td><td class="s3-td-yes">Full</td></tr>
+          <tr><td class="s3-td-feature">Custom marker definition</td><td class="s3-td-yes">Up to 25</td><td class="s3-td-featured s3-td-yes">Unlimited</td><td class="s3-td-yes">Unlimited</td></tr>
+          <tr><td class="s3-td-feature">Policy versioning + audit</td><td class="s3-td-yes">90-day retention</td><td class="s3-td-featured s3-td-yes">7-year retention</td><td class="s3-td-yes">7-year retention</td></tr>
+          <tr><td class="s3-td-feature">RBAC + per-team scope</td><td class="s3-td-yes">Standard</td><td class="s3-td-featured s3-td-yes">Advanced (LDAP / SAML / SCIM)</td><td class="s3-td-yes">Advanced</td></tr>
+          <tr><td class="s3-td-feature">Deployment modes</td><td>On-prem / VPC</td><td class="s3-td-featured s3-td-yes">All 6 modes</td><td>VPC (AWS)</td></tr>
+          <tr><td class="s3-td-feature">Connector library</td><td>Standard 12</td><td class="s3-td-featured s3-td-yes">Standard + custom</td><td>Standard 12</td></tr>
+          <tr><td class="s3-td-feature">Compliance frameworks</td><td>GDPR / HIPAA</td><td class="s3-td-featured s3-td-yes">GDPR / HIPAA / SOX / EU AI Act</td><td>GDPR / HIPAA / SOX</td></tr>
+          <tr><td class="s3-td-feature">SLA</td><td>Best-effort</td><td class="s3-td-featured s3-td-yes">99.9% uptime, defined response time</td><td>Per AWS contract</td></tr>
+          <tr><td class="s3-td-feature">Support</td><td>Email / Slack</td><td class="s3-td-featured s3-td-yes">Dedicated CSM, 24/7 P1 channel</td><td>Email / Slack + AWS</td></tr>
+          <tr><td class="s3-td-feature">DPA + Vendor Security Questionnaire</td><td class="s3-td-yes">Provided</td><td class="s3-td-featured s3-td-yes">Provided + executed</td><td class="s3-td-yes">AWS standard</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: Volume Calculator -->
+<section id="section-4" class="s4-section">
+  <div class="lc-container">
+    <div class="lc-section-header">
+      <span class="lc-eyebrow">Quick estimate</span>
+      <h2>Find your tier</h2>
+      <p>Estimate your monthly document processing volume to find the right tier.</p>
+    </div>
+    <div class="s4-calc">
+      <h3 class="s4-calc-title">Monthly document processing volume</h3>
+      <p class="s4-calc-desc">Drag the slider to your expected volume. We'll suggest the most common tier match.</p>
+      <div class="s4-slider-wrap">
+        <div class="s4-slider-label">
+          <span class="s4-slider-value" id="calc-volume">5,000</span>
+          <span class="s4-slider-range">100 ↔ 1,000,000+</span>
+        </div>
+        <input type="range" min="100" max="1000000" step="100" value="5000" class="s4-slider" id="calc-input" aria-label="Monthly document processing volume"
+          oninput="(function(v){
+            var n = parseInt(v);
+            document.getElementById('calc-volume').textContent = n.toLocaleString();
+            var tier, desc;
+            if (n < 5000) { tier = 'Workflow Proof of Value'; desc = 'Evaluation scope — best for first 4-8 weeks, one production workflow'; }
+            else if (n < 100000) { tier = 'Enterprise'; desc = 'Production-grade with full SLA, custom markers, both execution paths'; }
+            else { tier = 'Enterprise + AWS Marketplace'; desc = 'High-volume production. AWS Marketplace eligible for streamlined procurement'; }
+            document.getElementById('calc-rec').textContent = tier;
+            document.getElementById('calc-rec-d').textContent = desc;
+          })(this.value)"
+        />
+      </div>
+      <div class="s4-result">
+        <div class="s4-rec-label">RECOMMENDED TIER</div>
+        <div class="s4-rec-tier" id="calc-rec">Enterprise</div>
+        <p class="s4-rec-desc" id="calc-rec-d">Production-grade with full SLA, custom markers, both execution paths</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 5: FAQ -->
+<section id="section-5" class="s5-section">
+  <div class="lc-container">
+    <div class="lc-section-header">
+      <span class="lc-eyebrow">Pricing FAQ</span>
+      <h2>Common questions</h2>
+    </div>
+    <div class="s5-faq-wrap">
+      <div class="s5-faq">
+        <details>
+          <summary>How is pricing calculated?</summary>
+          <div class="s5-faq-body"><p>Volume-based on monthly document processing throughput, with adjustments for deployment mode (air-gapped on-prem typically has different cost structure than cloud), regulatory profile (additional compliance audit hours), and connector library scope. Workflow Proof of Value is a fixed-fee, one-workflow evaluation; Enterprise is annual license; AWS Marketplace is listed pay-as-you-go with EDP / private offer eligibility for committed volume.</p></div>
+        </details>
+        <details>
+          <summary>Can we start with a Workflow Proof of Value and convert to Enterprise?</summary>
+          <div class="s5-faq-body"><p>Yes. Workflow Proof of Value is designed as a 4-8 week evaluation on one real production workflow that produces a deployment fit report. PoV contracts include a conversion path to Enterprise with credit applied; most customers convert in 6-12 weeks after PoV kickoff.</p></div>
+        </details>
+        <details>
+          <summary>Do you support custom on-prem deployments?</summary>
+          <div class="s5-faq-body"><p>Yes. Air-gapped on-prem and on-prem hybrid (Capsule on-prem + approved external LLM) are first-class deployment modes. Telecom-grade and OT-grade environments are supported. Validated at SK Telecom (telecom NOC), EUMC (hospital), and Ministry of National Defense (mission workflows).</p></div>
+        </details>
+        <details>
+          <summary>What about EU sovereign data and GDPR?</summary>
+          <div class="s5-faq-body"><p>Path A supports in-region EU LLM endpoints (EU-hosted Anthropic, OpenAI EU, Mistral EU). Path B supports fully on-prem inside the EU. Both paths feed audit logs that align with GDPR Articles 5, 17, 30, 32. Standard DPA + SCC are provided as part of Enterprise contract. Recognized at Deutsche Telekom T Challenge 2026 — Top 12 in Data Security &amp; Governance.</p></div>
+        </details>
+        <details>
+          <summary>Where can LLM Capsule be deployed?</summary>
+          <div class="s5-faq-body"><p>Six deployment modes: on-premise, air-gapped, hybrid, VPC / private cloud, AWS Marketplace, embedded SDK, and Slack App. Telecom-grade (NFV / container / multi-region) is offered as a deployment variant for operator infrastructure. See the <a href="/architecture">Architecture</a> page for details.</p></div>
+        </details>
+        <details>
+          <summary>What certifications does LLM Capsule hold?</summary>
+          <div class="s5-faq-body"><p>ISO/IEC 27001, ISO/IEC 42001, KISA Fast Track, GS Certification, plus awards and recognition from MSIT Security Innovation, Deutsche Telekom T Challenge, AI Medical Innovation, Startup World Cup, Next Rise, Gartner, and Emerging AI+X. See the <a href="/trust">Trust Center</a> for full list.</p></div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 6: CTA Strip -->
+<section id="section-6" class="s6-section">
+  <div class="s6-inner">
+    <h2 class="s6-h2">Ready to start?</h2>
+    <p class="s6-subtitle">Bring your industry, your workload estimate, and your deployment constraints. We'll propose a deployment fit and pricing within one business day.</p>
+    <div class="s6-actions">
+      <a class="s6-btn s6-btn--invert" href="/request-a-demo">Request a Quote</a>
+      <a class="s6-btn s6-btn--invert-ghost" href="https://aws.amazon.com/marketplace" target="_blank" rel="noopener noreferrer">View on AWS Marketplace</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
