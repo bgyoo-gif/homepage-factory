@@ -348,17 +348,10 @@
       gap: 0;
     }
 
-    .s3-step:nth-child(even) {
-      grid-template-columns: 1.3fr 1fr;
-    }
-    .s3-step:nth-child(even) .s3-step__text { order: 2; }
-    .s3-step:nth-child(even) .s3-step__visual { order: 1; }
+    /* 모든 step: text 좌측, screenshot 우측 (교차 레이아웃 제거) */
 
     @media (max-width: 900px) {
-      .s3-step,
-      .s3-step:nth-child(even) { grid-template-columns: 1fr; }
-      .s3-step:nth-child(even) .s3-step__text { order: 1; }
-      .s3-step:nth-child(even) .s3-step__visual { order: 2; }
+      .s3-step { grid-template-columns: 1fr; }
     }
 
     .s3-step__text {
