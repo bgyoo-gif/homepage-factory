@@ -3599,7 +3599,19 @@ function renderStaticTable() {
         { type: 'tsx', name: 'Section07_Capability06.tsx', date: '2026-05-06', dir: 'product-v62/tsx' },
         { type: 'tsx', name: 'Section08_CTAStrip.tsx', date: '2026-05-06', dir: 'product-v62/tsx' },
       ]},
-      { input: '03_architecture.html', ipath: '../input/llmcapsule_260506/03_architecture.html', idate: '2026-05-06', version: 'llmcapsule_260506', outputs: [] },
+      { input: '03_architecture.html', ipath: '../input/llmcapsule_260506/03_architecture.html', idate: '2026-05-06', version: 'llmcapsule_260506', outputs: [
+        { type: 'md', name: '03-architecture-spec.md', date: '2026-05-06' },
+        { type: 'html', name: '03-architecture-b-type.html', date: '2026-05-06' },
+        { type: 'tsx', name: 'Section01_Hero.tsx', date: '2026-05-06', dir: 'architecture-v62/tsx' },
+        { type: 'tsx', name: 'Section02_ZoneOverview.tsx', date: '2026-05-06', dir: 'architecture-v62/tsx' },
+        { type: 'tsx', name: 'Section03_TechnicalDiagram.tsx', date: '2026-05-06', dir: 'architecture-v62/tsx' },
+        { type: 'tsx', name: 'Section04_Pillars.tsx', date: '2026-05-06', dir: 'architecture-v62/tsx' },
+        { type: 'tsx', name: 'Section05_Components.tsx', date: '2026-05-06', dir: 'architecture-v62/tsx' },
+        { type: 'tsx', name: 'Section06_ExecutionPaths.tsx', date: '2026-05-06', dir: 'architecture-v62/tsx' },
+        { type: 'tsx', name: 'Section07_Integration.tsx', date: '2026-05-06', dir: 'architecture-v62/tsx' },
+        { type: 'tsx', name: 'Section08_DeploymentModes.tsx', date: '2026-05-06', dir: 'architecture-v62/tsx' },
+        { type: 'tsx', name: 'Section09_CTAStrip.tsx', date: '2026-05-06', dir: 'architecture-v62/tsx' },
+      ]},
       { input: '04_solutions.html', ipath: '../input/llmcapsule_260506/04_solutions.html', idate: '2026-05-06', version: 'llmcapsule_260506', outputs: [
         { type: 'html', name: '04-solutions-b-type.html', date: '2026-05-06' },
         { type: 'tsx', name: 'Section01_Hero.tsx', date: '2026-05-06', dir: 'solutions-v62/tsx' },
@@ -3993,8 +4005,8 @@ function renderStaticTable() {
     var htmlFiles = group.outputs.filter(function(o) { return o.type === 'html' || o.type === 'md'; });
     var tsxFiles = group.outputs.filter(function(o) { return o.type === 'tsx'; });
     var baseName = group.input.replace('.html', '');
-    var koFile = baseName + '-ko-lines.md';
-    var deFile = baseName + '-de-lines.md';
+    var koFile = group.koFile || (baseName + '-ko-lines.md');
+    var deFile = group.deFile || (baseName + '-de-lines.md');
 
     var inputLink = group.ipath ? '<span class="v-ot-link" onclick="openDetail(\'' + group.ipath + '\',\'' + group.input + '\')" style="color:var(--ds-color-text-primary);font-weight:600;">' + group.input + '</span>' : '<span style="color:var(--ds-color-text-tertiary);">' + group.input + '</span>';
 

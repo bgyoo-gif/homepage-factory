@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture v6.2 — TSX Preview | LLM Capsule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/tokens.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--f-display, 'Inter', sans-serif);
+      color: var(--c-ink, #0f1130);
+      background-color: var(--c-bg, #ffffff);
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, video { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ---- Tokens (mirrors tokens.css fallback) ---- */
+
+    /* ---- Container ---- */
+    .preview-container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 80px); }
+
+    /* ---- Shared styles ---- */
+    .ds-section { padding: clamp(64px, 8vw, 128px) 0; }
+    .ds-section--soft { background-color: var(--c-bg-soft, #f7f8fb); }
+    .ds-section--dark { background-color: var(--c-bg-dark, #0f1130); }
+
+    .ds-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--c-primary, #5b4fe9);
+      margin-bottom: 12px;
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+    }
+
+    .ds-section-header { text-align: center; margin-bottom: 48px; }
+    .ds-section-header h2 {
+      font-size: clamp(24px, 2.8vw, 38px);
+      font-weight: 700;
+      color: var(--c-ink, #0f1130);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .ds-section-header p {
+      font-size: clamp(16px, 1.4vw, 18px);
+      color: var(--c-ink-soft, #3a3d5e);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ---- S1: Hero ---- */
+    .s1-hero {
+      background-color: #fafbff;
+      background-image: linear-gradient(180deg, #fafbff 0%, #ffffff 100%);
+      padding-top: clamp(80px, 10vw, 140px);
+      padding-bottom: clamp(64px, 8vw, 96px);
+      border-bottom: 1px solid var(--c-rule, #e5e7eb);
+    }
+    .s1-hero h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--c-ink, #0f1130);
+      margin-bottom: 20px;
+      max-width: 920px;
+    }
+    .s1-hero__sub {
+      font-size: 19px;
+      color: var(--c-ink-soft, #3a3d5e);
+      max-width: 760px;
+      line-height: 1.6;
+    }
+
+    /* ---- S2: Zones ---- */
+    .s2-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .s2-zone {
+      background-color: var(--c-bg, #ffffff);
+      border: 1px solid var(--c-rule, #e5e7eb);
+      border-radius: var(--r-md, 10px);
+      padding: 22px;
+    }
+    .s2-zone__label {
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      color: var(--c-muted, #6b7280);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      display: block;
+    }
+    .s2-zone--corp .s2-zone__label { color: var(--c-coral-dark, #c73e3a); }
+    .s2-zone--cap .s2-zone__label { color: var(--c-primary, #5b4fe9); }
+    .s2-zone--ai .s2-zone__label { color: var(--c-teal, #0ea5a4); }
+    .s2-zone--local .s2-zone__label { color: var(--c-amber, #f59e0b); }
+    .s2-zone__h { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .s2-zone__d { font-size: 13px; color: var(--c-ink-soft, #3a3d5e); line-height: 1.55; margin-bottom: 14px; }
+    .s2-zone__list { list-style: none; padding: 0; }
+    .s2-zone__list li {
+      font-size: 12px; padding: 4px 0 4px 16px; position: relative;
+      color: var(--c-ink-soft, #3a3d5e); line-height: 1.4;
+    }
+    .s2-zone__list li::before { content: '·'; position: absolute; left: 4px; color: var(--c-primary, #5b4fe9); font-weight: 700; }
+    .s2-zone__badge {
+      display: inline-block; margin-top: 12px;
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 10px; padding: 4px 10px;
+      border: 1px dashed var(--c-coral, #ef5350);
+      color: var(--c-coral-dark, #c73e3a);
+      border-radius: var(--r-sm, 6px); letter-spacing: 0.05em;
+    }
+
+    /* ---- S3: Diagram ---- */
+    .s3-diagram-wrap {
+      background-color: #0d1117;
+      border-radius: var(--r-lg, 16px);
+      overflow: hidden;
+      position: relative;
+    }
+    .s3-diagram-wrap__label {
+      position: absolute; top: 16px; left: 24px;
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 10px; color: #8b949e;
+      letter-spacing: 0.15em; font-weight: 700;
+      z-index: 2; pointer-events: none;
+    }
+    .s3-diagram-wrap iframe { width: 100%; min-height: 1400px; border: 0; display: block; }
+    .s3-annotations {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px; margin-top: 32px;
+    }
+    .s3-annotation {
+      background-color: var(--c-bg, #ffffff);
+      border: 1px solid var(--c-rule, #e5e7eb);
+      border-radius: var(--r-md, 10px); padding: 22px;
+    }
+    .s3-annotation__num {
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 11px; font-weight: 700;
+      color: var(--c-primary, #5b4fe9);
+      letter-spacing: 0.1em; margin-bottom: 6px; display: block;
+    }
+    .s3-annotation__h { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .s3-annotation__d { font-size: 13px; color: var(--c-ink-soft, #3a3d5e); line-height: 1.55; }
+
+    /* ---- S4: Pillars ---- */
+    .s4-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .s4-pillar {
+      background-color: var(--c-bg, #ffffff);
+      border: 1px solid var(--c-rule, #e5e7eb);
+      border-radius: var(--r-md, 10px); padding: 22px 24px;
+    }
+    .s4-pillar__num {
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 11px; letter-spacing: 0.12em; font-weight: 700;
+      color: var(--c-primary, #5b4fe9); margin-bottom: 8px;
+      text-transform: uppercase; display: block;
+    }
+    .s4-pillar__h { font-size: 17px; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
+    .s4-pillar__d { font-size: 14px; line-height: 1.6; color: var(--c-ink-soft, #3a3d5e); }
+    .s4-note {
+      margin-top: 32px; font-size: 14px; color: var(--c-muted, #6b7280);
+      text-align: center; max-width: 720px;
+      margin-left: auto; margin-right: auto; line-height: 1.6;
+    }
+
+    /* ---- S5: Components ---- */
+    .s5-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 14px;
+    }
+    .s5-comp {
+      background-color: var(--c-bg, #ffffff);
+      border: 1px solid var(--c-rule, #e5e7eb);
+      border-radius: var(--r-md, 10px); padding: 22px;
+    }
+    .s5-comp__num {
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 11px; font-weight: 700; margin-bottom: 6px;
+      letter-spacing: 0.1em; text-transform: uppercase; display: block;
+    }
+    .s5-comp--1 .s5-comp__num { color: var(--c-primary, #5b4fe9); }
+    .s5-comp--2 .s5-comp__num { color: var(--c-teal, #0ea5a4); }
+    .s5-comp--3 .s5-comp__num { color: var(--c-amber, #f59e0b); }
+    .s5-comp--4 .s5-comp__num { color: var(--c-coral, #ef5350); }
+    .s5-comp--5 .s5-comp__num { color: var(--c-bg-dark, #0f1130); }
+    .s5-comp__h { font-size: 15px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+    .s5-comp__d { font-size: 12px; color: var(--c-ink-soft, #3a3d5e); line-height: 1.55; }
+
+    /* ---- S6: Paths ---- */
+    .s6-paths {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .s6-path {
+      background-color: var(--c-bg, #ffffff);
+      border-radius: var(--r-lg, 16px); padding: 32px;
+      border: 1px solid var(--c-rule, #e5e7eb);
+    }
+    .s6-path__label {
+      font-family: var(--f-mono, 'JetBrains Mono', monospace);
+      font-size: 11px; letter-spacing: 0.15em; font-weight: 700;
+      padding: 4px 10px; border-radius: var(--r-sm, 6px);
+      display: inline-block; margin-bottom: 12px;
+    }
+    .s6-path--a .s6-path__label { background-color: var(--c-primary-soft, #eeebfe); color: var(--c-primary-dark, #3b2fbf); }
+    .s6-path--b .s6-path__label { background-color: var(--c-bg-dark, #0f1130); color: var(--c-bg, #ffffff); }
+    .s6-path__h { font-size: 22px; font-weight: 700; margin-bottom: 12px; line-height: 1.3; letter-spacing: -0.02em; }
+    .s6-path__d { font-size: 14px; color: var(--c-ink-soft, #3a3d5e); line-height: 1.6; margin-bottom: 16px; }
+    .s6-path__list { list-style: none; padding: 0; }
+    .s6-path__list li {
+      font-size: 13px; padding: 8px 0 8px 22px; position: relative;
+      color: var(--c-ink-soft, #3a3d5e); line-height: 1.5;
+      border-bottom: 1px solid var(--c-rule, #e5e7eb);
+    }
+    .s6-path__list li:last-child { border-bottom: 0; }
+    .s6-path__list li::before { content: '✓'; position: absolute; left: 0; color: var(--c-primary, #5b4fe9); font-weight: 700; }
+
+    /* ---- S7: Integration ---- */
+    .s7-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .s7-card {
+      background-color: var(--c-bg, #ffffff);
+      border: 1px solid var(--c-rule, #e5e7eb);
+      border-radius: var(--r-md, 10px); padding: 14px 16px;
+    }
+    .s7-card__name { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .s7-card__desc { font-size: 11px; color: var(--c-muted, #6b7280); line-height: 1.5; font-family: var(--f-mono, 'JetBrains Mono', monospace); }
+    .s7-card__desc--body { font-family: inherit; font-size: 12px; color: var(--c-ink-soft, #3a3d5e); }
+    .s7-note { margin-top: 24px; font-size: 14px; color: var(--c-muted, #6b7280); text-align: center; line-height: 1.6; }
+    .s7-sub-header { margin: 56px 0 24px; }
+    .s7-sub-header h3 { font-size: 20px; font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .s7-sub-header p { font-size: 15px; color: var(--c-ink-soft, #3a3d5e); line-height: 1.6; max-width: 720px; }
+
+    /* ---- S8: Deployment ---- */
+    .s8-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .s8-card {
+      background-color: var(--c-bg, #ffffff);
+      border: 1px solid var(--c-rule, #e5e7eb);
+      border-radius: var(--r-md, 10px); padding: 20px;
+    }
+    .s8-card__h { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .s8-card__d { font-size: 12px; color: var(--c-ink-soft, #3a3d5e); line-height: 1.5; }
+    .s8-note {
+      margin-top: 24px; font-size: 14px; color: var(--c-muted, #6b7280);
+      text-align: center; line-height: 1.6;
+      max-width: 760px; margin-left: auto; margin-right: auto;
+    }
+
+    /* ---- S9: CTA ---- */
+    .s9-cta {
+      background-color: var(--c-bg-dark, #0f1130);
+      padding: clamp(64px, 8vw, 128px) clamp(20px, 4vw, 80px);
+      text-align: center;
+    }
+    .s9-inner { max-width: 1280px; margin: 0 auto; }
+    .s9-title { color: var(--c-bg, #ffffff); font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 24px; }
+    .s9-desc { color: #c8c4f7; max-width: 640px; margin: 0 auto 32px; font-size: 17px; line-height: 1.6; }
+    .s9-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .s9-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px; border-radius: var(--r-md, 10px);
+      font-size: 15px; font-weight: 600; line-height: 1;
+      cursor: pointer; text-decoration: none; border: none;
+      transition: background 0.18s, color 0.18s, border-color 0.18s;
+    }
+    .s9-btn--invert { background-color: var(--c-bg, #ffffff); color: var(--c-ink, #0f1130); }
+    .s9-btn--invert:hover { background-color: var(--c-primary-soft, #eeebfe); color: var(--c-primary-dark, #3b2fbf); }
+    .s9-btn--ghost { background: transparent; color: var(--c-bg, #ffffff); border: 1.5px solid #9d95f5; }
+    .s9-btn--ghost:hover { border-color: var(--c-bg, #ffffff); }
+  </style>
+</head>
+<body>
+
+<!-- S1: Hero -->
+<header>
+  <div class="s1-hero">
+    <div class="preview-container">
+      <div class="ds-eyebrow">Architecture</div>
+      <h1>How LLM Capsule plugs AI into the systems you already run</h1>
+      <p class="s1-hero__sub">Three zones. Four steps. Five components. Two execution paths. One governance framework. The AI enablement data layer for regulated operations — at the architectural level.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- S2: Zone Overview -->
+<section class="ds-section">
+  <div class="preview-container">
+    <header class="ds-section-header">
+      <div class="ds-eyebrow">Zone overview</div>
+      <h2>One layer between your existing systems and AI</h2>
+      <p>LLM Capsule sits inside your environment, reads from existing systems, preserves operational structure, and restores AI output back into the originating workflow. The architecture maps to four zones — Corporate Internal Network, DMZ, In-House Team, and Local Auto Reconstruction — and the trust boundary holds: raw operational data stays inside the corporate environment; only the protected capsule traverses zones; restored output is reconstructed locally inside the in-house team's environment.</p>
+    </header>
+    <div class="s2-grid">
+      <article class="s2-zone s2-zone--corp">
+        <span class="s2-zone__label">Zone 1</span>
+        <h3 class="s2-zone__h">Corporate Internal Network</h3>
+        <p class="s2-zone__d">Where the operational systems and the data they hold already live. LLM Capsule reads from these systems where they already are — without modification, with a single API-call addition.</p>
+        <ul class="s2-zone__list">
+          <li>ERP System (SAP / Oracle) — REST API</li>
+          <li>CRM (Salesforce) — REST API</li>
+          <li>Ticketing (Jira / ServiceNow) — REST API</li>
+          <li>DMS / ECM (SharePoint) — Graph API</li>
+          <li>Legacy DB (Oracle / MSSQL) — JDBC → API</li>
+          <li>RAG Pipeline (Vector DB) — gRPC / REST</li>
+        </ul>
+      </article>
+      <article class="s2-zone s2-zone--cap">
+        <span class="s2-zone__label">Zone 2</span>
+        <h3 class="s2-zone__h">DMZ — Demilitarized Zone</h3>
+        <p class="s2-zone__d">Where the Enhanced Encapsulation Layer operates. Detection identifies sensitive elements, encapsulation replaces them with safe tokens using structure-preserving, differential-privacy-based protection, and only the capsule leaves this zone toward an external AI.</p>
+        <ul class="s2-zone__list">
+          <li>Detection — PII + customer-defined markers</li>
+          <li>Enhanced Encapsulation Layer — DP-based, structure-preserving</li>
+          <li>Capsule transmission — capsule only, never raw data</li>
+          <li>Token map stays local</li>
+          <li>Audit trail of every encapsulation event</li>
+        </ul>
+        <div class="s2-zone__badge">↑ Trust boundary — original operational data never crosses</div>
+      </article>
+      <article class="s2-zone s2-zone--ai">
+        <span class="s2-zone__label">Zone 3</span>
+        <h3 class="s2-zone__h">In-House Team</h3>
+        <p class="s2-zone__d">Where governance, policy, and the AI workflow itself are operated. Organizational policy, permissions, and domain context drive how the encapsulated request is routed — to an approved external LLM or to an on-prem local model — with full audit retained inside the organization.</p>
+        <ul class="s2-zone__list">
+          <li>Organizational policy &amp; permissions</li>
+          <li>Domain context applied to AI processing</li>
+          <li>Routing — external approved LLM (Path A) or on-prem local (Path B)</li>
+          <li>Approved external LLMs: ChatGPT · Claude · Gemini · Perplexity · any LLM API</li>
+          <li>Governance fully retained</li>
+        </ul>
+      </article>
+      <article class="s2-zone s2-zone--local">
+        <span class="s2-zone__label">Zone 4</span>
+        <h3 class="s2-zone__h">Local — Auto Reconstruction</h3>
+        <p class="s2-zone__d">Where the AI response is automatically reconstructed back into Business-Ready output. Tokens are restored to original values inside the organization only — data that left the boundary cannot be reconstructed externally.</p>
+        <ul class="s2-zone__list">
+          <li>Token-by-token restoration from local token vault</li>
+          <li>Restoration happens only inside the organization</li>
+          <li>Externally-leaked data is not restorable outside</li>
+          <li>Business-Ready output delivered to the originating workflow</li>
+          <li>Restoration audit alongside encapsulation audit</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- S3: Technical Diagram -->
+<section class="ds-section ds-section--soft">
+  <div class="preview-container">
+    <header class="ds-section-header">
+      <div class="ds-eyebrow">Technical view · zone-based architecture</div>
+      <h2>The same architecture, in technical detail</h2>
+      <p>For architects and security reviewers — the full zone-based view of how operational data, encapsulation, and external AI interact.</p>
+    </header>
+    <div class="s3-diagram-wrap">
+      <div class="s3-diagram-wrap__label">TECHNICAL VIEW · ZONE-BASED ARCHITECTURE</div>
+      <iframe src="../../../../../../llm-capsule/input/llmcapsule_260506/architecture-diagram-v8.html" title="LLM Capsule technical architecture diagram" loading="lazy"></iframe>
+    </div>
+    <div class="s3-annotations">
+      <article class="s3-annotation">
+        <span class="s3-annotation__num">Zone 1 · Corporate Internal Network</span>
+        <h3 class="s3-annotation__h">Where the operational systems already live</h3>
+        <p class="s3-annotation__d">Existing enterprise systems — ERP, CRM, Ticketing, DMS / ECM, Legacy DB, RAG Pipeline — stay in place. Nothing migrates. Capsule reads from them via REST, gRPC, JDBC, or Graph API depending on the source.</p>
+      </article>
+      <article class="s3-annotation">
+        <span class="s3-annotation__num">Zone 2 · DMZ — Demilitarized Zone</span>
+        <h3 class="s3-annotation__h">Where encapsulation happens</h3>
+        <p class="s3-annotation__d">The Enhanced Encapsulation Layer detects sensitive elements, replaces them with safe tokens using structure-preserving, differential-privacy-based protection, and hands the capsule to the routing decision. Original values stay behind, retained in the local token map.</p>
+      </article>
+      <article class="s3-annotation">
+        <span class="s3-annotation__num">Zone 3 · In-House Team</span>
+        <h3 class="s3-annotation__h">Where governance and routing happen</h3>
+        <p class="s3-annotation__d">Organizational policy, permissions, and domain context decide where the capsule is processed — an approved external LLM (Path A) or an on-prem local model (Path B). The decision is policy-driven per workflow, with full audit retained inside the organization.</p>
+      </article>
+      <article class="s3-annotation">
+        <span class="s3-annotation__num">Zone 4 · Local — Auto Reconstruction</span>
+        <h3 class="s3-annotation__h">Where the AI response becomes Business-Ready output</h3>
+        <p class="s3-annotation__d">The AI response is automatically reconstructed from token to original value inside the organization only. Data that left the trust boundary cannot be reconstructed externally. The restored output is delivered back into the originating workflow.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- S4: Pillars -->
+<section class="ds-section">
+  <div class="preview-container">
+    <header class="ds-section-header">
+      <div class="ds-eyebrow">Six architectural pillars</div>
+      <h2>What this architecture protects against — and how</h2>
+      <p>The pillars below are the technical commitments encoded into the four-zone architecture above. Each maps to a specific failure mode of conventional approaches.</p>
+    </header>
+    <div class="s4-grid">
+      <article class="s4-pillar"><span class="s4-pillar__num">Pillar 01</span><h3 class="s4-pillar__h">Beyond simple PII guardrails</h3><p class="s4-pillar__d">Even inside the same enterprise, free-text fields like a CS ticket Details column mix customer names, contact information, and claim narrative in unstructured form. Simple PII guardrails cannot safely process this. Detection in Capsule operates on free-text and structured fields together — semantic and context-aware, not pattern-matching alone.</p></article>
+      <article class="s4-pillar"><span class="s4-pillar__num">Pillar 02</span><h3 class="s4-pillar__h">No modification of existing systems</h3><p class="s4-pillar__d">Existing enterprise systems are not refactored. Connection is a single API-call addition (REST / gRPC) — the operations team continues using their existing tools, the Capsule layer handles encapsulation and restoration alongside.</p></article>
+      <article class="s4-pillar"><span class="s4-pillar__num">Pillar 03</span><h3 class="s4-pillar__h">Beyond simple encapsulation — differential privacy</h3><p class="s4-pillar__d">The Enhanced Encapsulation Layer goes beyond simple tokenization. Differential privacy (epsilon-DP, Laplace noise, k-anonymity, NER masking) is applied to minimize re-identification risk on the capsule itself, providing stronger protection than tokenization alone.</p></article>
+      <article class="s4-pillar"><span class="s4-pillar__num">Pillar 04</span><h3 class="s4-pillar__h">No raw exposure to external AI</h3><p class="s4-pillar__d">External AI services see only the capsule. Original operational data does not cross the trust boundary. Tokenization combined with DP processing means a leak from the external AI side does not yield reconstructable original values.</p></article>
+      <article class="s4-pillar"><span class="s4-pillar__num">Pillar 05</span><h3 class="s4-pillar__h">In-environment auto-restoration</h3><p class="s4-pillar__d">AI response tokens are automatically restored to their original values inside the organization only. Data that left the trust boundary cannot be reconstructed externally — only the in-house token vault can perform restoration.</p></article>
+      <article class="s4-pillar"><span class="s4-pillar__num">Pillar 06</span><h3 class="s4-pillar__h">Governance, policy &amp; domain context retained</h3><p class="s4-pillar__d">Organizational policy, permissions, and domain context drive the entire AI processing path — what gets encapsulated, where it is routed (Path A external or Path B on-prem), and how restoration is audited. Governance stays inside the organization end-to-end.</p></article>
+    </div>
+    <p class="s4-note">These pillars are derived from the diagram_v8 architecture reference. Each pillar maps to a specific failure mode of conventional approaches — masking and redaction, prompt security gateways, and synthetic data platforms — that the four-zone architecture is designed to address.</p>
+  </div>
+</section>
+
+<!-- S5: Components -->
+<section class="ds-section">
+  <div class="preview-container">
+    <header class="ds-section-header">
+      <div class="ds-eyebrow">Five components</div>
+      <h2>What's inside the LLM Capsule</h2>
+      <p>The five architectural components that implement the data layer. Each is independently configurable and audit-loggable.</p>
+    </header>
+    <div class="s5-grid">
+      <article class="s5-comp s5-comp--1"><span class="s5-comp__num">Component 01</span><h3 class="s5-comp__h">Detection Engine</h3><p class="s5-comp__d">Detects PII + customer-defined markers across structured fields and free text. Beyond regex — semantic + context-aware. 98.1% detection accuracy.</p></article>
+      <article class="s5-comp s5-comp--2"><span class="s5-comp__num">Component 02</span><h3 class="s5-comp__h">Encapsulation Engine</h3><p class="s5-comp__d">Differential-privacy-based replacement (epsilon-DP, Laplace noise, k-anonymity, NER masking). Structure-preserving — tables, hierarchies, references survive.</p></article>
+      <article class="s5-comp s5-comp--3"><span class="s5-comp__num">Component 03</span><h3 class="s5-comp__h">Policy Control</h3><p class="s5-comp__d">Versioned, scoped, RBAC'd policies. Time-shifting markers — yesterday's policy archived, today's enforced. Per-team, per-workflow scope.</p></article>
+      <article class="s5-comp s5-comp--4"><span class="s5-comp__num">Component 04</span><h3 class="s5-comp__h">Restoration Engine</h3><p class="s5-comp__d">Local token vault lookup + context re-binding + output validation. 100% restoration rate. AI output comes back business-ready, in the originating tool.</p></article>
+      <article class="s5-comp s5-comp--5"><span class="s5-comp__num">Component 05</span><h3 class="s5-comp__h">Audit &amp; Compliance</h3><p class="s5-comp__d">Every detection, encapsulation, processing, and restoration logged with policy version, model, latency, and outcome. GDPR / HIPAA / SOX-aligned.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- S6: Two Execution Paths -->
+<section class="ds-section ds-section--soft">
+  <div class="preview-container">
+    <header class="ds-section-header">
+      <div class="ds-eyebrow">Two execution paths</div>
+      <h2>One architecture. Two paths. Policy-driven per workflow.</h2>
+      <p>The same LLM Capsule instance can route different workflows through different paths — under one governance framework.</p>
+    </header>
+    <div class="s6-paths">
+      <article class="s6-path s6-path--a">
+        <div class="s6-path__label">PATH A · External</div>
+        <h3 class="s6-path__h">Approved external LLM, capsule data only</h3>
+        <p class="s6-path__d">For workflows where the regulatory profile permits transmission of differentially-private capsules with appropriate contractual safeguards (DPA, SCCs).</p>
+        <ul class="s6-path__list">
+          <li>Routes to ChatGPT, Claude, Gemini, Perplexity, or any LLM API</li>
+          <li>Capsule travels — original data never does</li>
+          <li>In-region endpoints supported (EU-hosted for sovereign AI)</li>
+          <li>Best for: NOC RCA, claims classification, summarization</li>
+        </ul>
+      </article>
+      <article class="s6-path s6-path--b">
+        <div class="s6-path__label">PATH B · On-prem</div>
+        <h3 class="s6-path__h">On-prem local lightweight model</h3>
+        <p class="s6-path__d">For workflows where any external endpoint is unacceptable — classified data, lawful intercept segments, OT operations, regulated mental health / pediatric data.</p>
+        <ul class="s6-path__list">
+          <li>Quantized model on internal GPU (vLLM-served)</li>
+          <li>Zero external transmission — fully air-gapped option</li>
+          <li>Same Capsule instance, same audit, same policy framework</li>
+          <li>Best for: defense, classified workflows, strict sovereign AI</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- S7: Integration -->
+<section class="ds-section">
+  <div class="preview-container">
+    <header class="ds-section-header">
+      <div class="ds-eyebrow">In-environment integration</div>
+      <h2>Reads the systems you already run — without modifying them</h2>
+      <p>LLM Capsule is not a SaaS API you call from outside. It runs inside your environment and reads from the operational systems already in place. Existing systems are not modified — a single API-call addition is what connects them to the encapsulation layer.</p>
+    </header>
+    <div class="s7-grid">
+      <div class="s7-card"><div class="s7-card__name">ERP System</div><div class="s7-card__desc">SAP / Oracle — REST API</div></div>
+      <div class="s7-card"><div class="s7-card__name">CRM</div><div class="s7-card__desc">Salesforce — REST API</div></div>
+      <div class="s7-card"><div class="s7-card__name">Ticketing</div><div class="s7-card__desc">Jira / ServiceNow — REST API</div></div>
+      <div class="s7-card"><div class="s7-card__name">DMS / ECM</div><div class="s7-card__desc">SharePoint — Graph API</div></div>
+      <div class="s7-card"><div class="s7-card__name">Legacy DB</div><div class="s7-card__desc">Oracle / MSSQL — JDBC → API</div></div>
+      <div class="s7-card"><div class="s7-card__name">RAG Pipeline</div><div class="s7-card__desc">Vector DB — gRPC / REST</div></div>
+    </div>
+    <p class="s7-note">These six are the source-system identities mapped in the diagram_v8 reference. Existing enterprise systems are not modified — connection is a single API-call addition. Raw operational data does not leave the environment to reach Capsule; the Capsule sits next to these systems, on-prem or in your VPC.</p>
+    <div class="s7-sub-header">
+      <div class="ds-eyebrow">Integration interfaces</div>
+      <h3>How existing systems invoke Capsule from inside the environment</h3>
+      <p>Once Capsule is deployed inside the environment, existing enterprise systems invoke it through whichever interface fits their stack. All interfaces stay inside the customer network — none of them route raw operational data through an external SaaS endpoint.</p>
+    </div>
+    <div class="s7-grid">
+      <div class="s7-card"><div class="s7-card__name">REST / gRPC</div><div class="s7-card__desc s7-card__desc--body">For modern operations tools, RAG pipelines, and custom orchestrators inside the environment.</div></div>
+      <div class="s7-card"><div class="s7-card__name">JDBC / ODBC</div><div class="s7-card__desc s7-card__desc--body">For legacy database systems (Oracle, MSSQL, DB2) that need Capsule invocation as a stored procedure or job step.</div></div>
+      <div class="s7-card"><div class="s7-card__name">Graph API</div><div class="s7-card__desc s7-card__desc--body">For DMS / ECM systems (e.g. SharePoint) where document events trigger Capsule processing.</div></div>
+      <div class="s7-card"><div class="s7-card__name">On-prem API</div><div class="s7-card__desc s7-card__desc--body">Capsule's own on-prem callable surface. Same contract whether you're air-gapped, hybrid, or VPC.</div></div>
+      <div class="s7-card"><div class="s7-card__name">Embedded SDK</div><div class="s7-card__desc s7-card__desc--body">Library-level integration for ISVs and platform vendors who ship Capsule inside their own product.</div></div>
+      <div class="s7-card"><div class="s7-card__name">Slack App</div><div class="s7-card__desc s7-card__desc--body">For teams using Slack as the operations UI. The runtime still lives in the customer environment; the Slack App is the invocation surface.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- S8: Deployment Modes -->
+<section class="ds-section ds-section--soft">
+  <div class="preview-container">
+    <header class="ds-section-header">
+      <div class="ds-eyebrow">Deployment modes</div>
+      <h2>Six deployment modes — match your environment exactly</h2>
+      <p>Capsule runs inside the customer environment in every mode. Path A and Path B execution choices apply across all six.</p>
+    </header>
+    <div class="s8-grid">
+      <article class="s8-card"><h3 class="s8-card__h">Air-gapped on-prem</h3><p class="s8-card__d">Fully internal. No external network. Path B only. Defense, classified, OT.</p></article>
+      <article class="s8-card"><h3 class="s8-card__h">On-prem hybrid</h3><p class="s8-card__d">Internal Capsule + approved external LLM. Path A for most workflows, Path B for sensitive subset.</p></article>
+      <article class="s8-card"><h3 class="s8-card__h">VPC / private cloud</h3><p class="s8-card__d">Customer's cloud VPC. Capsule + token vault stay in tenant; LLM call to in-region endpoint.</p></article>
+      <article class="s8-card"><h3 class="s8-card__h">AWS Marketplace</h3><p class="s8-card__d">Listed and procurable through AWS Marketplace. VPC deployment, AWS billing integration.</p></article>
+      <article class="s8-card"><h3 class="s8-card__h">Embedded SDK</h3><p class="s8-card__d">For ISVs and platform vendors building Capsule into their own product. Library-level integration that ships inside the host application.</p></article>
+      <article class="s8-card"><h3 class="s8-card__h">Slack App</h3><p class="s8-card__d">For teams using Slack as the operations UI. Capsule runtime stays in the customer environment; the Slack App is the surface that invokes it.</p></article>
+    </div>
+    <p class="s8-note">Note: a separate "Telecom-grade" topology (NFV / container / multi-region) is offered as a deployment variant for operator infrastructure — validated at SK Telecom, recognized at Deutsche Telekom T Challenge 2026. It composes with the modes above rather than replacing them.</p>
+  </div>
+</section>
+
+<!-- S9: CTA Strip -->
+<section>
+  <div class="s9-cta">
+    <div class="s9-inner">
+      <h2 class="s9-title">See the architecture run on your environment.</h2>
+      <p class="s9-desc">Bring your deployment constraints, regulatory profile, and one real workflow. We demonstrate the data layer in your environment within 30 minutes.</p>
+      <div class="s9-btns">
+        <a class="s9-btn s9-btn--invert" href="/request-a-demo">Request a Live Demo</a>
+        <a class="s9-btn s9-btn--ghost" href="/product">View Product</a>
+        <a class="s9-btn s9-btn--ghost" href="/trust">View Trust &amp; Compliance</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+</body>
+</html>
