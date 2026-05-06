@@ -24,8 +24,13 @@ interface Props {
   card3LinkHref?: string
 }
 
+const CARD_SVGS = [
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>,
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>,
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>,
+]
+
 export default function Section02_ResourceCards({
-  card1Icon = "📖",
   card1Count = "8 articles · GEO-optimized",
   card1Title = "Learn",
   card1Desc = "In-depth articles on enterprise AI enablement — architecture patterns, industry deployment guides (telecom, healthcare, finance, defense), pilot-to-production playbooks, sovereign AI under GDPR / EU AI Act.",
@@ -46,7 +51,7 @@ export default function Section02_ResourceCards({
 }: Props) {
   const cards = [
     {
-      icon: card1Icon,
+      icon: CARD_SVGS[0],
       count: card1Count,
       title: card1Title,
       desc: card1Desc,
@@ -55,7 +60,7 @@ export default function Section02_ResourceCards({
       iconVariant: "primary",
     },
     {
-      icon: card2Icon,
+      icon: CARD_SVGS[1],
       count: card2Count,
       title: card2Title,
       desc: card2Desc,
@@ -64,7 +69,7 @@ export default function Section02_ResourceCards({
       iconVariant: "teal",
     },
     {
-      icon: card3Icon,
+      icon: CARD_SVGS[2],
       count: card3Count,
       title: card3Title,
       desc: card3Desc,
@@ -132,9 +137,9 @@ export default function Section02_ResourceCards({
           flex-shrink: 0;
         }
 
-        .s2-icon-wrap--primary { background-color: var(--c-primary-soft, #eeebfe); }
-        .s2-icon-wrap--teal    { background-color: var(--c-teal-soft, #e6f7f6); }
-        .s2-icon-wrap--muted   { background-color: var(--c-bg-soft, #f7f8fb); }
+        .s2-icon-wrap--primary { background-color: var(--c-primary-soft, #eeebfe); color: var(--c-primary, #5b4fe9); }
+        .s2-icon-wrap--teal    { background-color: var(--c-teal-soft, #e6f7f6); color: var(--c-teal, #0ea5a4); }
+        .s2-icon-wrap--muted   { background-color: var(--c-bg-soft, #f7f8fb); color: var(--c-muted, #6b7280); }
 
         .s2-count {
           font-family: var(--f-mono, 'JetBrains Mono', monospace);
