@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-07 14:17:21",
+  "generated": "2026-05-07 14:24:59",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1494,7 +1494,7 @@
         {
           "name": "enterprise-context-control-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/enterprise-context-control-de-lines.md",
-          "modified": "2026-04-28"
+          "modified": "2026-05-07"
         },
         {
           "name": "enterprise-context-control-ja-lines.md",
@@ -1504,7 +1504,7 @@
         {
           "name": "enterprise-context-control-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/enterprise-context-control-ko-lines.md",
-          "modified": "2026-04-20"
+          "modified": "2026-05-07"
         },
         {
           "name": "glossary-de-lines.md",
