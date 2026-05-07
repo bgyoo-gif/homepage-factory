@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview — Two Execution Paths | Glossary | LLM Capsule</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Two Execution Paths",
+  "description": "Two execution paths in the AI enablement data layer. Path A sends capsule data to an external approved LLM with no raw operational data exposure. Path B runs a small private lightweight model entirely inside the enterprise environment with zero external transmission. Selection is policy-driven per workflow.",
+  "inDefinedTermSet": "https://llmcapsule.ai/glossary",
+  "url": "https://llmcapsule.ai/resources/glossary/two-execution-paths"
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --c-primary: #5b4fe9;
+    --c-primary-dark: #3b2fbf;
+    --c-primary-soft: #eeebfe;
+    --c-ink: #0f1130;
+    --c-ink-soft: #3a3d5e;
+    --c-muted: #6b7280;
+    --c-bg: #ffffff;
+    --c-bg-soft: #f7f8fb;
+    --c-bg-dark: #0f1130;
+    --c-rule: #e5e7eb;
+    --f-display: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --f-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+    --r-sm: 6px;
+    --r-md: 10px;
+    --r-lg: 16px;
+    --container-max: 1280px;
+    --s-page: clamp(20px, 4vw, 80px);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--f-display);
+    color: var(--c-ink);
+    background-color: var(--c-bg);
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  /* ── Root ─────────────────────────────────────────── */
+  .tep-root {
+    width: 100%;
+    container-type: inline-size;
+  }
+
+  /* ── Container ────────────────────────────────────── */
+  .tep-container {
+    max-width: var(--container-max, 1280px);
+    margin: 0 auto;
+    padding: 0 var(--s-page, clamp(20px, 4vw, 80px));
+  }
+
+  /* ── 1. Hero ──────────────────────────────────────── */
+  .tep-hero {
+    padding: clamp(60px, 8vw, 100px) 0 clamp(40px, 5vw, 64px);
+    border-bottom: 1px solid var(--c-rule, #e5e7eb);
+  }
+
+  .tep-hero__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--c-primary, #5b4fe9);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    margin-bottom: 28px;
+    transition: color 0.15s;
+  }
+  .tep-hero__back:hover { color: var(--c-primary-dark, #3b2fbf); }
+
+  .tep-hero__title {
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--c-ink, #0f1130);
+    margin: 0 0 20px;
+    max-width: 860px;
+  }
+
+  .tep-hero__lead {
+    font-size: clamp(16px, 1.4vw, 19px);
+    line-height: 1.65;
+    color: var(--c-ink-soft, #3a3d5e);
+    margin: 0 0 28px;
+    max-width: 760px;
+  }
+
+  .tep-hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+  }
+
+  .tep-meta__chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background-color: var(--c-primary-soft, #eeebfe);
+    color: var(--c-primary, #5b4fe9);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ── 2. Definition block ──────────────────────────── */
+  .tep-def-wrap {
+    padding: clamp(40px, 5vw, 72px) 0;
+    border-bottom: 1px solid var(--c-rule, #e5e7eb);
+  }
+
+  .tep-def {
+    max-width: 880px;
+    background-color: var(--c-bg-dark, #0f1130);
+    border-radius: var(--r-lg, 16px);
+    padding: 32px 36px;
+  }
+
+  .tep-def__label {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--c-primary, #5b4fe9);
+    margin-bottom: 14px;
+  }
+
+  .tep-def__body {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0;
+  }
+
+  .tep-def__body strong {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  /* ── 3. Article Body ──────────────────────────────── */
+  .tep-body-wrap {
+    padding: clamp(48px, 6vw, 96px) 0;
+    border-bottom: 1px solid var(--c-rule, #e5e7eb);
+  }
+
+  .tep-body {
+    max-width: 760px;
+  }
+
+  .tep-body h2 {
+    font-size: clamp(22px, 2.2vw, 28px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--c-ink, #0f1130);
+    margin: 0 0 18px;
+    padding-top: 40px;
+    border-top: 2px solid var(--c-rule, #e5e7eb);
+  }
+
+  .tep-body h2:first-child {
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .tep-body h3 {
+    font-size: clamp(17px, 1.5vw, 20px);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--c-ink, #0f1130);
+    margin: 32px 0 10px;
+  }
+
+  .tep-body p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--c-ink-soft, #3a3d5e);
+    margin: 0 0 18px;
+  }
+
+  .tep-body p:last-child { margin-bottom: 0; }
+
+  .tep-body p strong {
+    color: var(--c-ink, #0f1130);
+    font-weight: 700;
+  }
+
+  .tep-body ul,
+  .tep-body ol {
+    margin: 0 0 24px 0;
+    padding-left: 24px;
+  }
+
+  .tep-body li {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--c-ink-soft, #3a3d5e);
+    margin-bottom: 10px;
+  }
+
+  .tep-body li strong {
+    color: var(--c-ink, #0f1130);
+    font-weight: 700;
+  }
+
+  .tep-body li:last-child { margin-bottom: 0; }
+
+  .tep-body blockquote {
+    margin: 28px 0;
+    padding: 20px 24px;
+    border-left: 3px solid var(--c-primary, #5b4fe9);
+    background-color: var(--c-primary-soft, #eeebfe);
+    border-radius: 0 var(--r-sm, 6px) var(--r-sm, 6px) 0;
+  }
+
+  .tep-body blockquote p {
+    margin: 0;
+    color: var(--c-ink, #0f1130);
+    font-style: italic;
+  }
+
+  .tep-body code {
+    font-family: var(--f-mono);
+    font-size: 14px;
+    background-color: var(--c-bg-soft, #f7f8fb);
+    border: 1px solid var(--c-rule, #e5e7eb);
+    border-radius: var(--r-sm, 6px);
+    padding: 2px 7px;
+    color: var(--c-ink, #0f1130);
+  }
+
+  .tep-body pre {
+    background-color: var(--c-bg-dark, #0f1130);
+    border-radius: var(--r-md, 10px);
+    padding: 24px;
+    margin: 24px 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tep-body pre::-webkit-scrollbar { display: none; }
+
+  .tep-body pre code {
+    font-family: var(--f-mono);
+    font-size: 14px;
+    background: none;
+    border: none;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.65;
+  }
+
+  .tep-body a {
+    color: var(--c-primary, #5b4fe9);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .tep-body a:hover {
+    color: var(--c-primary-dark, #3b2fbf);
+    border-bottom-color: var(--c-primary-dark, #3b2fbf);
+  }
+
+  /* ── Table inside body ────────────────────────────── */
+  .tep-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 28px;
+    font-size: 15px;
+    overflow-x: auto;
+    display: block;
+    scrollbar-width: none;
+  }
+  .tep-body table::-webkit-scrollbar { display: none; }
+
+  .tep-body thead tr {
+    background-color: var(--c-bg-soft, #f7f8fb);
+  }
+
+  .tep-body th {
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: left;
+    color: var(--c-ink, #0f1130);
+    border-bottom: 2px solid var(--c-rule, #e5e7eb);
+    white-space: nowrap;
+  }
+
+  .tep-body th.tep-th-highlight {
+    background-color: var(--c-primary-soft, #eeebfe);
+    color: var(--c-primary, #5b4fe9);
+  }
+
+  .tep-body td {
+    padding: 12px 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--c-ink-soft, #3a3d5e);
+    border-bottom: 1px solid var(--c-rule, #e5e7eb);
+    vertical-align: top;
+  }
+
+  .tep-body td.tep-td-highlight {
+    background-color: var(--c-primary-soft, #eeebfe);
+    color: var(--c-ink, #0f1130);
+    font-weight: 600;
+  }
+
+  .tep-body tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* ── 4. Related Terms ─────────────────────────────── */
+  .tep-related {
+    padding: clamp(48px, 6vw, 80px) 0;
+    background-color: var(--c-bg-soft, #f7f8fb);
+  }
+
+  .tep-related__label {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--c-muted, #6b7280);
+    margin-bottom: 20px;
+  }
+
+  .tep-related__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .tep-related__item {
+    border-top: 1px solid var(--c-rule, #e5e7eb);
+  }
+
+  .tep-related__item:last-child {
+    border-bottom: 1px solid var(--c-rule, #e5e7eb);
+  }
+
+  .tep-related__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 4px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--c-ink, #0f1130);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .tep-related__link:hover {
+    color: var(--c-primary, #5b4fe9);
+  }
+
+  .tep-related__link-arrow {
+    font-size: 16px;
+    color: var(--c-primary, #5b4fe9);
+    flex-shrink: 0;
+    transition: transform 0.15s;
+  }
+
+  .tep-related__link:hover .tep-related__link-arrow {
+    transform: translateX(3px);
+  }
+
+  /* ── Responsive ───────────────────────────────────── */
+  @container (max-width: 767px) {
+    .tep-hero { padding-top: 48px; }
+    .tep-hero__title { font-size: 28px; }
+    .tep-hero__lead { font-size: 16px; }
+    .tep-def { padding: 24px 20px; border-radius: var(--r-md, 10px); }
+    .tep-body p,
+    .tep-body li { font-size: 16px; }
+    .tep-body h2 { padding-top: 28px; }
+    .tep-body th,
+    .tep-body td { padding: 10px 12px; font-size: 14px; }
+  }
+
+  @media (max-width: 767px) {
+    .tep-hero { padding-top: 48px; }
+    .tep-hero__title { font-size: 28px; }
+    .tep-hero__lead { font-size: 16px; }
+    .tep-def { padding: 24px 20px; border-radius: 10px; }
+    .tep-body p,
+    .tep-body li { font-size: 16px; }
+    .tep-body h2 { padding-top: 28px; }
+    .tep-body th,
+    .tep-body td { padding: 10px 12px; font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="tep-root">
+
+  <!-- 1. Hero -->
+  <section class="tep-hero">
+    <div class="tep-container">
+      <a href="/glossary" class="tep-hero__back">← Glossary</a>
+      <h1 class="tep-hero__title">Two Execution Paths</h1>
+      <p class="tep-hero__lead">External approved LLM — or on-prem local lightweight model. Policy decides per workflow.</p>
+      <div class="tep-hero__meta">
+        <span class="tep-meta__chip">GLOSSARY</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Definition block -->
+  <div class="tep-def-wrap">
+    <div class="tep-container">
+      <div class="tep-def">
+        <div class="tep-def__label">Definition</div>
+        <p class="tep-def__body">Two execution paths in the AI enablement data layer. Path A sends capsule data to an external approved LLM with no raw operational data exposure. Path B runs a small private lightweight model entirely inside the enterprise environment with zero external transmission. Selection is policy-driven per workflow.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Article Body -->
+  <div class="tep-body-wrap">
+    <div class="tep-container">
+      <article class="tep-body">
+
+        <h2>Definition</h2>
+        <p>The AI enablement data layer supports <strong>two execution paths</strong> for the model step inside the workflow:</p>
+        <ul>
+          <li><strong>Path A — external approved LLM with capsule data only.</strong> The capsule is transmitted to an approved external endpoint (ChatGPT, Claude, Gemini, Perplexity, or any LLM API). Raw operational data does not leave the enterprise.</li>
+          <li><strong>Path B — on-prem local lightweight model.</strong> A small private model runs entirely inside the enterprise environment. Zero external transmission.</li>
+        </ul>
+
+        <h2>When to use each</h2>
+        <table>
+          <thead>
+            <tr><th>Factor</th><th>Path A</th><th class="tep-th-highlight">Path B</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>External transmission allowed</td><td>Yes (capsule only)</td><td class="tep-td-highlight">No</td></tr>
+            <tr><td>Air-gapped network</td><td>—</td><td class="tep-td-highlight">Required</td></tr>
+            <tr><td>Frontier model capability</td><td>Yes</td><td class="tep-td-highlight">Bounded by local model</td></tr>
+            <tr><td>Compliance posture</td><td>"No raw data exposure"</td><td class="tep-td-highlight">"Zero external exposure"</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Path selection</h2>
+        <p>Policy-driven per workflow. Different workflows in the same enterprise can use different paths. Governance records the path applied per request, per workflow, per policy.</p>
+
+        <h2>Why two and not one</h2>
+        <p>A single path forces a single regulatory floor. Carriers, hospitals, OT operators, and defense contractors typically run multiple regulatory profiles within the same organization. Two paths let governance match the path to the workflow.</p>
+
+        <h2>Reference statement</h2>
+        <blockquote><p>The model is not a single decision; it is two paths under a single governance. That is what makes the AI enablement data layer fit regulated organizations without forcing them to one regulatory floor.</p></blockquote>
+
+      </article>
+    </div>
+  </div>
+
+  <!-- 4. Related Terms -->
+  <div class="tep-related">
+    <div class="tep-container">
+      <div class="tep-related__label">Related terms</div>
+      <ul class="tep-related__list">
+        <li class="tep-related__item">
+          <a href="/resources/learn/on-prem-llm-execution-path" class="tep-related__link">
+            <span>Pillar guide: On-prem LLM execution path</span>
+            <span class="tep-related__link-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="tep-related__item">
+          <a href="/resources/glossary/state-vault-for-restoration" class="tep-related__link">
+            <span>State vault for restoration</span>
+            <span class="tep-related__link-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="tep-related__item">
+          <a href="/resources/glossary/ai-ready-operational-layer" class="tep-related__link">
+            <span>AI enablement data layer</span>
+            <span class="tep-related__link-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

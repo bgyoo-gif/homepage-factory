@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file
+    source-language="en"
+    target-language="de-DE"
+    datatype="plaintext"
+    original="GlossaryPage_TwoExecutionPaths.tsx"
+  >
+    <header>
+      <note>LLM Capsule — Glossary: Two Execution Paths — DE localize mode</note>
+    </header>
+    <body>
+
+      <!-- ── Hero ─────────────────────────────────────────── -->
+
+      <trans-unit id="backLabel">
+        <source>← Glossary</source>
+        <target>← Glossar</target>
+        <note>Back navigation label</note>
+      </trans-unit>
+
+      <trans-unit id="backHref">
+        <source>/glossary</source>
+        <target>/glossary</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="term">
+        <source>Two Execution Paths</source>
+        <target>Zwei Ausführungspfade</target>
+        <note>Technical term — translated per DE glossary convention (consistent with state-vault-for-restoration-de.xliff related4Label)</note>
+      </trans-unit>
+
+      <trans-unit id="lead">
+        <source>External approved LLM — or on-prem local lightweight model. Policy decides per workflow.</source>
+        <target>Externes zugelassenes LLM oder lokales On-Premise-Leichtgewichtsmodell. Welcher Pfad zum Einsatz kommt, legt die Richtlinie je Workflow fest.</target>
+        <note>Hero lead — localize: EN dash list split into two independent DE sentences. Functional register, no marketing language.</note>
+      </trans-unit>
+
+      <trans-unit id="category">
+        <source>GLOSSARY</source>
+        <target>GLOSSAR</target>
+        <note>Category chip label</note>
+      </trans-unit>
+
+      <!-- ── Definition block ──────────────────────────────── -->
+
+      <trans-unit id="definitionLabel">
+        <source>Definition</source>
+        <target>Definition</target>
+        <note>Section label</note>
+      </trans-unit>
+
+      <trans-unit id="definitionBody">
+        <source>Two execution paths in the AI enablement data layer. Path A sends capsule data to an external approved LLM with no raw operational data exposure. Path B runs a small private lightweight model entirely inside the enterprise environment with zero external transmission. Selection is policy-driven per workflow.</source>
+        <target>Die AI enablement data layer unterstützt zwei Ausführungspfade. Pfad A übermittelt ausschließlich Capsule-Daten an ein externes, zugelassenes LLM — operative Rohdaten verlassen das Unternehmen nicht. Pfad B führt ein kompaktes privates Modell vollständig innerhalb der eigenen Unternehmensumgebung aus, ohne jegliche externe Datenübertragung. Die Pfadauswahl erfolgt richtliniengesteuert je Workflow.</target>
+        <note>Definition block body — technical register. EN "Path A/B" → DE "Pfad A/Pfad B". EN long compound sentence split into three DE sentences. "AI enablement data layer" retained as EN product term.</note>
+      </trans-unit>
+
+      <!-- ── Body HTML ─────────────────────────────────────── -->
+
+      <trans-unit id="bodyHtml">
+        <source><![CDATA[
+<h2>Definition</h2>
+<p>The AI enablement data layer supports <strong>two execution paths</strong> for the model step inside the workflow:</p>
+<ul>
+  <li><strong>Path A — external approved LLM with capsule data only.</strong> The capsule is transmitted to an approved external endpoint (ChatGPT, Claude, Gemini, Perplexity, or any LLM API). Raw operational data does not leave the enterprise.</li>
+  <li><strong>Path B — on-prem local lightweight model.</strong> A small private model runs entirely inside the enterprise environment. Zero external transmission.</li>
+</ul>
+
+<h2>When to use each</h2>
+<table>
+  <thead>
+    <tr><th>Factor</th><th>Path A</th><th class="tep-th-highlight">Path B</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>External transmission allowed</td><td>Yes (capsule only)</td><td class="tep-td-highlight">No</td></tr>
+    <tr><td>Air-gapped network</td><td>—</td><td class="tep-td-highlight">Required</td></tr>
+    <tr><td>Frontier model capability</td><td>Yes</td><td class="tep-td-highlight">Bounded by local model</td></tr>
+    <tr><td>Compliance posture</td><td>"No raw data exposure"</td><td class="tep-td-highlight">"Zero external exposure"</td></tr>
+  </tbody>
+</table>
+
+<h2>Path selection</h2>
+<p>Policy-driven per workflow. Different workflows in the same enterprise can use different paths. Governance records the path applied per request, per workflow, per policy.</p>
+
+<h2>Why two and not one</h2>
+<p>A single path forces a single regulatory floor. Carriers, hospitals, OT operators, and defense contractors typically run multiple regulatory profiles within the same organization. Two paths let governance match the path to the workflow.</p>
+
+<h2>Reference statement</h2>
+<blockquote><p>The model is not a single decision; it is two paths under a single governance. That is what makes the AI enablement data layer fit regulated organizations without forcing them to one regulatory floor.</p></blockquote>
+]]></source>
+        <target><![CDATA[
+<h2>Definition</h2>
+<p>Die AI enablement data layer unterstützt <strong>zwei Ausführungspfade</strong> für den Modellschritt im Workflow:</p>
+<ul>
+  <li><strong>Pfad A — externes zugelassenes LLM, ausschließlich mit Capsule-Daten.</strong> Die Kapsel wird an einen zugelassenen externen Endpunkt übermittelt (ChatGPT, Claude, Gemini, Perplexity oder eine beliebige LLM API). Operative Rohdaten verlassen das Unternehmen nicht.</li>
+  <li><strong>Pfad B — lokales On-Premise-Leichtgewichtsmodell.</strong> Ein kompaktes privates Modell wird vollständig innerhalb der Unternehmensumgebung ausgeführt. Keine externe Datenübertragung.</li>
+</ul>
+
+<h2>Einsatzkriterien</h2>
+<table>
+  <thead>
+    <tr><th>Kriterium</th><th>Pfad A</th><th class="tep-th-highlight">Pfad B</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Externe Übertragung zulässig</td><td>Ja (nur Kapsel)</td><td class="tep-td-highlight">Nein</td></tr>
+    <tr><td>Air-Gapped-Netzwerk</td><td>—</td><td class="tep-td-highlight">Erforderlich</td></tr>
+    <tr><td>Frontier-Modell-Kapazität</td><td>Ja</td><td class="tep-td-highlight">Durch lokales Modell begrenzt</td></tr>
+    <tr><td>Compliance-Profil</td><td>„Keine Rohdaten-Offenlegung"</td><td class="tep-td-highlight">„Zero Exposure"</td></tr>
+  </tbody>
+</table>
+
+<h2>Pfadauswahl</h2>
+<p>Die Auswahl erfolgt richtliniengesteuert je Workflow. Verschiedene Workflows desselben Unternehmens können unterschiedliche Pfade verwenden. Das Governance-System protokolliert den angewendeten Pfad je Anfrage, je Workflow und je Richtlinie.</p>
+
+<h2>Warum zwei Pfade notwendig sind</h2>
+<p>Ein einzelner Pfad erzwingt eine einheitliche regulatorische Mindestanforderung. Versicherungsträger, Krankenhäuser, OT-Betreiber und Rüstungsunternehmen verwalten innerhalb derselben Organisation typischerweise mehrere regulatorische Profile. Zwei Pfade ermöglichen es dem Governance-System, den jeweils passenden Pfad dem entsprechenden Workflow zuzuweisen.</p>
+
+<h2>Leitsatz</h2>
+<blockquote><p>Das Modell ist keine einheitliche Entscheidung — es sind zwei Pfade unter einer gemeinsamen Governance. Das ist es, was die AI enablement data layer für regulierte Organisationen geeignet macht, ohne sie auf eine einzige regulatorische Ebene festzulegen.</p></blockquote>
+]]></target>
+        <note>Rich HTML body — all HTML tags and CSS classes (tep-th-highlight, tep-td-highlight) preserved. h2 translated: "When to use each" → "Einsatzkriterien" (concise DE noun form); "Why two and not one" → "Warum zwei Pfade notwendig sind" (sachlich register, avoids colloquial "statt einem"); "Reference statement" → "Leitsatz" (consistent with state-vault convention). Table headers and cells localized. "Compliance posture" → "Compliance-Profil" (posture = profile/stance, not Einstufung/classification). "Frontier model capability" → "Frontier-Modell-Kapazität" (-Kapazität preferred over -Leistung for technical breadth). "Zero external exposure" → "Zero Exposure" in table cell (brand term retained). EN semicolon in blockquote → DE em-dash for natural flow. "Carriers" → "Versicherungsträger" (DE insurance-sector term). "Air-Gapped" capitalized per brief convention.</note>
+      </trans-unit>
+
+      <!-- ── Related Terms ─────────────────────────────────── -->
+
+      <trans-unit id="related1Label">
+        <source>Pillar guide: On-prem LLM execution path</source>
+        <target>Pillar Guide: On-Premise-LLM-Ausführungspfad</target>
+        <note>Article type label retained; "On-prem" expanded to "On-Premise" per DE convention; compound hyphenated</note>
+      </trans-unit>
+
+      <trans-unit id="related1Href">
+        <source>/resources/learn/on-prem-llm-execution-path</source>
+        <target>/resources/learn/on-prem-llm-execution-path</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related2Label">
+        <source>State vault for restoration</source>
+        <target>State Vault for Restoration</target>
+        <note>Product-specific technical term — retained as EN per translation guide pattern (proper noun treatment)</note>
+      </trans-unit>
+
+      <trans-unit id="related2Href">
+        <source>/resources/glossary/state-vault-for-restoration</source>
+        <target>/resources/glossary/state-vault-for-restoration</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related3Label">
+        <source>AI enablement data layer</source>
+        <target>AI enablement data layer</target>
+        <note>Technical product layer name — retained as EN per translation guide</note>
+      </trans-unit>
+
+      <trans-unit id="related3Href">
+        <source>/resources/glossary/ai-ready-operational-layer</source>
+        <target>/resources/glossary/ai-ready-operational-layer</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related4Label">
+        <source></source>
+        <target></target>
+        <note>Empty — no related term 4</note>
+      </trans-unit>
+
+      <trans-unit id="related4Href">
+        <source></source>
+        <target></target>
+        <note>Empty — no related term 4</note>
+      </trans-unit>
+
+      <trans-unit id="related5Label">
+        <source></source>
+        <target></target>
+        <note>Empty — no related term 5</note>
+      </trans-unit>
+
+      <trans-unit id="related5Href">
+        <source></source>
+        <target></target>
+        <note>Empty — no related term 5</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

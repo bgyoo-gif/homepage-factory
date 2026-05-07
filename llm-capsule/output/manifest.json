@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-07 18:17:00",
+  "generated": "2026-05-07 18:30:19",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -362,6 +362,16 @@
         {
           "name": "_preview_state-vault-for-restoration.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/state-vault-for-restoration/_preview_state-vault-for-restoration.html",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "_preview_GlossaryPage_StructurePreservingEncapsulation.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/structure-preserving-encapsulation/_preview_GlossaryPage_StructurePreservingEncapsulation.html",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "_preview_GlossaryPage_TwoExecutionPaths.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/two-execution-paths/_preview_GlossaryPage_TwoExecutionPaths.html",
           "modified": "2026-05-07"
         },
         {
@@ -1717,6 +1727,26 @@
           "modified": "2026-05-07"
         },
         {
+          "name": "glossary-structure-preserving-encapsulation-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-structure-preserving-encapsulation-de-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "glossary-structure-preserving-encapsulation-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-structure-preserving-encapsulation-ko-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "glossary-two-execution-paths-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-two-execution-paths-de-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "glossary-two-execution-paths-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-two-execution-paths-ko-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
           "name": "hospital-ai-deployment-phi-protection-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/hospital-ai-deployment-phi-protection-de-lines.md",
           "modified": "2026-05-07"
@@ -2529,6 +2559,11 @@
           "modified": "2026-05-07"
         },
         {
+          "name": "GlossaryPage_StructurePreservingEncapsulation.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/structure-preserving-encapsulation/GlossaryPage_StructurePreservingEncapsulation.tsx",
+          "modified": "2026-05-07"
+        },
+        {
           "name": "Section01_Hero.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/tsx/Section01_Hero.tsx",
           "modified": "2026-05-06"
@@ -2542,6 +2577,11 @@
           "name": "Section03_CTA.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/tsx/Section03_CTA.tsx",
           "modified": "2026-05-06"
+        },
+        {
+          "name": "GlossaryPage_TwoExecutionPaths.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/two-execution-paths/GlossaryPage_TwoExecutionPaths.tsx",
+          "modified": "2026-05-07"
         },
         {
           "name": "Section01_Hero.tsx",
