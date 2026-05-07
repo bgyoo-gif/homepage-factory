@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file
+    original="llm-capsule/output/framer/glossary/ai-enablement-data-layer/GlossaryPage_AiEnablementDataLayer.tsx"
+    source-language="en"
+    target-language="de-DE"
+    datatype="plaintext"
+    tool-id="homepage-factory-translator"
+  >
+    <header>
+      <note>mode: localize | page: glossary/ai-enablement-data-layer | brand: llm-capsule</note>
+    </header>
+    <body>
+
+      <!-- ── Hero ── -->
+
+      <trans-unit id="backLabel">
+        <source>← Glossary</source>
+        <target>← Glossar</target>
+        <note>Navigation back link</note>
+      </trans-unit>
+
+      <trans-unit id="backHref">
+        <source>/glossary</source>
+        <target>/glossary</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="term">
+        <source>AI enablement data layer</source>
+        <target>AI enablement data layer</target>
+        <note>Product/technical term — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="lead">
+        <source>The architectural component that makes regulated enterprise AI workflows actually work — between operational systems and large language models.</source>
+        <target>Die Architekturkomponente, die regulierte KI-Workflows im Unternehmen praxistauglich macht — zwischen operativen Systemen und großen Sprachmodellen.</target>
+        <note>Hero lead sentence</note>
+      </trans-unit>
+
+      <trans-unit id="category">
+        <source>P0 · Category definition</source>
+        <target>P0 · Kategoriebeschreibung</target>
+        <note>Category chip label</note>
+      </trans-unit>
+
+      <!-- ── Definition block ── -->
+
+      <trans-unit id="definitionLabel">
+        <source>Definition</source>
+        <target>Definition</target>
+        <note>Section label — same in German</note>
+      </trans-unit>
+
+      <trans-unit id="definitionBody">
+        <source>An AI enablement data layer is the architectural component that sits between regulated enterprise systems (NOC consoles, EHR, claim platforms, mission systems, legacy DBs) and large language models. It turns operational data into AI-ready capsules using structure-preserving, differential-privacy-based encapsulation, executes AI workflows on the protected capsule, and restores outputs back into the originating system. It supports two execution paths — external approved LLM with capsule data only, or on-prem local lightweight model — under a single governance framework.</source>
+        <target>Der AI enablement data layer ist die Architekturkomponente, die zwischen regulierten Unternehmenssystemen (NOC-Konsolen, EHR, Schadenplattformen, Missionssysteme, Legacy-Datenbanken) und großen Sprachmodellen angesiedelt ist. Er überführt operative Daten mittels strukturerhaltender, Differential-Privacy-basierter Kapsulierung in KI-geeignete Kapseln, führt KI-Workflows auf der geschützten Kapsel aus und stellt die Ergebnisse in das ursprüngliche System zurück. Das System unterstützt zwei Ausführungspfade — ein externes zugelassenes LLM mit ausschließlich Kapseldaten oder ein lokales On-Premise-Leichtgewichtmodell — unter einem einheitlichen Governance-Rahmen.</target>
+        <note>Main definition text in dark card</note>
+      </trans-unit>
+
+      <!-- ── Body HTML ── -->
+
+      <trans-unit id="bodyHtml">
+        <source><![CDATA[
+<h2>What it does (in three lines)</h2>
+<p>1. <strong>Reads</strong> operational data from existing enterprise systems via REST/gRPC/JDBC connectors.<br>
+2. <strong>Encapsulates</strong> sensitive elements locally with structure-preserving + DP-based protection.<br>
+3. <strong>Restores</strong> AI outputs back into the originating workflow inside the enterprise environment.</p>
+
+<h2>What it is NOT</h2>
+<ul>
+<li><strong>Not a PII guardrail</strong>. PII guardrails detect individual identifiers at the API boundary. The data layer transforms structured operational data — ticket sequences, network configs, OT manifests, clinical workflows.</li>
+<li><strong>Not an AI / LLM security gateway</strong>. Security gateways focus on prompt injection, runtime threats, and API-level filtering. The data layer operates one layer deeper, on the data itself.</li>
+<li><strong>Not a synthetic data platform</strong>. Synthetic data generates artificial records for training and testing. The data layer runs on real production documents in live workflows.</li>
+<li><strong>Not a CISO / SOC tool</strong>. The buyer is the AI team, the CDO/CAIO, or the business unit that needs AI in production. Security is necessary infrastructure, not the product purpose.</li>
+</ul>
+
+<h2>The five components</h2>
+<ol>
+<li><strong>Encapsulation Engine</strong> — local detection + replacement, mapping stays inside.</li>
+<li><strong>Policy Control</strong> — versioned, scoped, RBAC'd policy.</li>
+<li><strong>Capsule Transmission</strong> — only protected capsules cross the trust boundary.</li>
+<li><strong>Restoration Engine</strong> — local token vault, output validation, context re-binding.</li>
+<li><strong>Audit &amp; Compliance</strong> — every event logged for GDPR/HIPAA/SOX governance.</li>
+</ol>
+
+<h2>The four-zone architecture (diagram_v8 reference)</h2>
+<p>The architecture maps to four zones: <strong>Corporate Internal Network</strong> (where existing source systems — ERP / CRM / Ticketing / DMS — live, read in place via REST / gRPC / JDBC / Graph API) → <strong>DMZ — Demilitarized Zone</strong> (where the Enhanced Encapsulation Layer applies structure-preserving, differential-privacy-based protection) → <strong>In-House Team</strong> (where governance, policy, and routing decide Path A or Path B) → <strong>Local — Auto Reconstruction</strong> (where the AI response is restored to original values inside the organization, delivering Business-Ready output back to the originating workflow). Raw operational data never crosses the trust boundary; only the protected capsule does.</p>
+
+<h2>Six architectural pillars</h2>
+<ol>
+  <li><strong>Beyond simple PII guardrails</strong> — free-text fields like CS ticket Details columns can't be safely processed by simple PII guardrails alone</li>
+  <li><strong>No modification of existing systems</strong> — connection is a single API-call addition (REST / gRPC), legacy systems are not refactored</li>
+  <li><strong>Beyond simple encapsulation — differential privacy</strong> — DP applied on top of tokenization to reduce re-identification risk</li>
+  <li><strong>No raw exposure to external AI</strong> — only the capsule crosses the trust boundary; DP processing means a leak doesn't yield reconstructable original values</li>
+  <li><strong>In-environment auto-restoration</strong> — restoration happens only inside the organization; data that left the boundary cannot be reconstructed externally</li>
+  <li><strong>Governance, policy &amp; domain context retained</strong> — organizational policy drives encapsulation, routing, and audit end-to-end</li>
+</ol>
+
+<h2>The two execution paths</h2>
+<ul>
+<li><strong>Path A</strong> — external approved LLM (ChatGPT, Claude, Gemini, in-region EU LLMs) with capsule data only. No raw operational data exposure.</li>
+<li><strong>Path B</strong> — on-prem local lightweight model. Zero external transmission. For air-gapped, classified, OT, and strictly regulated workflows.</li>
+</ul>
+
+<h2>When to use it</h2>
+<p>Whenever a regulated enterprise wants to use AI on real production data — not synthetic, not anonymized snippets — without exposing the raw data to external LLMs and without rebuilding the existing legacy systems. Telecom NOC, hospital clinical workflows, finance claims, defense mission, OT operations, legal matter management.</p>
+
+<h2>Validated deployments</h2>
+<p>SK Telecom (telecom NOC), Deutsche Telekom T Challenge 2026 Top 12 in Data Security &amp; Governance, Claroty (industrial cybersecurity), EUMC (hospital clinical), Kyobo / DB Insurance / IBK (finance), Shin&amp;Kim (legal), Ministry of National Defense Korea (mission workflows). Recognized as Gartner Vendor.</p>
+]]></source>
+        <target><![CDATA[
+<h2>Funktionsweise (in drei Schritten)</h2>
+<p>1. <strong>Liest</strong> operative Daten aus bestehenden Unternehmenssystemen über REST/gRPC/JDBC-Konnektoren.<br>
+2. <strong>Kapsuliert</strong> sensible Inhalte lokal mit strukturerhaltender und Differential-Privacy-basierter Schutzschicht.<br>
+3. <strong>Stellt</strong> KI-Ausgaben innerhalb der Unternehmensumgebung in den ursprünglichen Workflow zurück.</p>
+
+<h2>Was er nicht ist</h2>
+<ul>
+<li><strong>Keine PII-Schutzmaßnahme.</strong> PII-Schutzmaßnahmen erkennen individuelle Kennungen an der API-Grenze. Der AI enablement data layer verarbeitet strukturierte operative Daten — Ticket-Sequenzen, Netzwerkkonfigurationen, OT-Manifeste, klinische Workflows.</li>
+<li><strong>Kein KI/LLM-Sicherheits-Gateway.</strong> Sicherheits-Gateways konzentrieren sich auf Prompt-Injection, Laufzeitbedrohungen und Filterung auf API-Ebene. Der AI enablement data layer operiert eine Schicht tiefer — auf den Daten selbst.</li>
+<li><strong>Keine Plattform für synthetische Daten.</strong> Synthetische Daten erzeugen künstliche Datensätze für Training und Tests. Der AI enablement data layer arbeitet mit echten Produktionsdokumenten in Live-Workflows.</li>
+<li><strong>Kein CISO/SOC-Werkzeug.</strong> Zielgruppe sind KI-Teams, CDO/CAIO oder Geschäftsbereiche, die KI produktiv einsetzen möchten. Sicherheit ist notwendige Infrastruktur — nicht der primäre Produktzweck.</li>
+</ul>
+
+<h2>Die fünf Komponenten</h2>
+<ol>
+<li><strong>Encapsulation Engine</strong> — lokale Erkennung und Ersetzung, das Mapping verbleibt intern.</li>
+<li><strong>Policy Control</strong> — versionierte, bereichsbezogene, rollenbasiert gesteuerte Richtlinien.</li>
+<li><strong>Capsule Transmission</strong> — ausschließlich geschützte Kapseln überschreiten die Vertrauensgrenze.</li>
+<li><strong>Restoration Engine</strong> — lokaler Token Vault, Ausgabevalidierung, Kontext-Rückbindung.</li>
+<li><strong>Audit &amp; Compliance</strong> — jedes Ereignis wird für die DSGVO (GDPR) / HIPAA / SOX-Governance protokolliert.</li>
+</ol>
+
+<h2>Die Vier-Zonen-Architektur (Referenz: diagram_v8)</h2>
+<p>Die Architektur gliedert sich in vier Zonen: <strong>Corporate Internal Network</strong> (bestehende Quellsysteme — ERP / CRM / Ticketing / DMS — werden vor Ort über REST / gRPC / JDBC / Graph API eingelesen) → <strong>DMZ — Demilitarisierte Zone</strong> (die Enhanced Encapsulation Layer wendet strukturerhaltenden, Differential-Privacy-basierten Schutz an) → <strong>In-House Team</strong> (Governance, Richtlinien und Routing entscheiden über Pfad A oder Pfad B) → <strong>Local — Auto Reconstruction</strong> (die KI-Antwort wird innerhalb der Organisation mit Originalwerten angereichert und als praxistaugliches Ergebnis in den ursprünglichen Workflow zurückgeführt). Operative Rohdaten überschreiten die Vertrauensgrenze nie — ausschließlich die geschützte Kapsel tut dies.</p>
+
+<h2>Sechs Architekturpfeiler</h2>
+<ol>
+  <li><strong>Über einfache PII-Schutzmaßnahmen hinaus</strong> — Freitextfelder wie Detailspalten in CS-Tickets lassen sich mit einfachen PII-Schutzmaßnahmen allein nicht sicher verarbeiten.</li>
+  <li><strong>Keine Änderung bestehender Systeme</strong> — die Anbindung erfolgt durch einen einzigen API-Aufruf (REST / gRPC), Legacy-Systeme werden nicht umgebaut.</li>
+  <li><strong>Über einfache Kapsulierung hinaus — Differential Privacy</strong> — DP wird zusätzlich zur Tokenisierung angewendet, um das Re-Identifikationsrisiko zu reduzieren.</li>
+  <li><strong>Keine Offenlegung von Rohdaten gegenüber externen KI-Systemen</strong> — nur die Kapsel überschreitet die Vertrauensgrenze; durch DP-Verarbeitung lassen sich bei einem Datenaustritt keine Originalwerte rekonstruieren.</li>
+  <li><strong>Automatische Wiederherstellung innerhalb der Unternehmensumgebung</strong> — die Wiederherstellung erfolgt ausschließlich intern; Daten, die die Grenze verlassen haben, lassen sich extern nicht rekonstruieren.</li>
+  <li><strong>Governance, Richtlinien und fachlicher Kontext bleiben erhalten</strong> — die Unternehmensrichtlinie steuert Kapsulierung, Routing und Audit durchgehend.</li>
+</ol>
+
+<h2>Die zwei Ausführungspfade</h2>
+<ul>
+<li><strong>Pfad A</strong> — externes zugelassenes LLM (ChatGPT, Claude, Gemini, EU-regionale LLMs) — ausschließlich mit Kapseldaten. Keine Offenlegung operativer Rohdaten.</li>
+<li><strong>Pfad B</strong> — lokales On-Premise-Leichtgewichtmodell. Keine externe Datenübertragung. Für Air-Gapped-, klassifizierte, OT- und streng regulierte Workflows.</li>
+</ul>
+
+<h2>Anwendungsszenarien</h2>
+<p>Immer wenn ein reguliertes Unternehmen KI auf echten Produktionsdaten einsetzen möchte — nicht auf synthetischen oder anonymisierten Datenauszügen — ohne Rohdaten an externe LLMs zu übermitteln und ohne bestehende Legacy-Systeme umzubauen. Anwendungsbereiche: Telekommunikations-NOC, klinische Workflows im Krankenhaus, Schadenbearbeitung in der Finanzbranche, Verteidigungsmissionen, OT-Betrieb, rechtliches Fallmanagement.</p>
+
+<h2>Bestätigte Deployments</h2>
+<p>SK Telecom (Telekommunikations-NOC), Deutsche Telekom T Challenge 2026 — Top 12 in Data Security &amp; Governance, Claroty (industrielle Cybersicherheit), EUMC (klinischer Krankenhausbetrieb), Kyobo / DB Insurance / IBK (Finanzwesen), Shin&amp;Kim (Rechtsberatung), Südkoreanisches Verteidigungsministerium (Missions-Workflows). Als Gartner Vendor anerkannt.</p>
+]]></target>
+        <note>Rich HTML body — HTML tags preserved, text content translated</note>
+      </trans-unit>
+
+      <!-- ── Related terms ── -->
+
+      <trans-unit id="related1Label">
+        <source>AI enablement data layer</source>
+        <target>AI enablement data layer</target>
+        <note>Technical term — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related1Href">
+        <source>/glossary/ai-ready-operational-layer</source>
+        <target>/glossary/ai-ready-operational-layer</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related2Label">
+        <source>Structure-preserving encapsulation</source>
+        <target>Strukturerhaltende Kapsulierung</target>
+        <note>Technical term</note>
+      </trans-unit>
+
+      <trans-unit id="related2Href">
+        <source>/glossary/structure-preserving-encapsulation</source>
+        <target>/glossary/structure-preserving-encapsulation</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related3Label">
+        <source>Differential privacy</source>
+        <target>Differential Privacy</target>
+        <note>Technical term — capitalized in German as proper noun</note>
+      </trans-unit>
+
+      <trans-unit id="related3Href">
+        <source>/glossary/differential-privacy</source>
+        <target>/glossary/differential-privacy</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related4Label">
+        <source>Two execution paths</source>
+        <target>Zwei Ausführungspfade</target>
+        <note>Technical concept label</note>
+      </trans-unit>
+
+      <trans-unit id="related4Href">
+        <source>/glossary/two-execution-paths</source>
+        <target>/glossary/two-execution-paths</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related5Label">
+        <source>Operational data</source>
+        <target>Operative Daten</target>
+        <note>Technical concept label</note>
+      </trans-unit>
+
+      <trans-unit id="related5Href">
+        <source>/glossary/operational-data</source>
+        <target>/glossary/operational-data</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>
