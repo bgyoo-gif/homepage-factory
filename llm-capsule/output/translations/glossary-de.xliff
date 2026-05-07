@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
-  <file id="glossary">
+  <file id="Section01_Hero">
     <unit id="title">
       <segment>
-        <source>Enterprise AI</source>
-        <target>Unternehmens-KI</target>
+        <source>Enterprise AI </source>
+        <target>KI-Grundbegriffe </target>
       </segment>
     </unit>
     <unit id="titleHighlight">
       <segment>
         <source>Enablement</source>
-        <target>Einführung</target>
+        <target>für Unternehmen</target>
       </segment>
     </unit>
     <unit id="description">
       <segment>
         <source>Key terms and definitions for enterprise AI enablement, LLM data privacy, and secure enterprise AI workflows.</source>
-        <target>Schlüsselbegriffe und Definitionen für die KI-Einführung im Unternehmen, LLM-Datenschutz und sichere KI-Workflows.</target>
+        <target>Fachbegriffe und Definitionen zu KI-Einsatz im Unternehmen, LLM-Datenschutz und sicheren KI-Workflows.</target>
       </segment>
     </unit>
     <unit id="breadcrumbHome">
@@ -37,10 +37,18 @@
         <target>Glossar</target>
       </segment>
     </unit>
+  </file>
+  <file id="Section02_GlossaryTerms">
     <unit id="card1Title">
       <segment>
         <source>Restoration</source>
-        <target>Restoration</target>
+        <target>Wiederherstellung</target>
+      </segment>
+    </unit>
+    <unit id="card1Href">
+      <segment>
+        <source>/resources/glossary/restoration</source>
+        <target>/resources/glossary/restoration</target>
       </segment>
     </unit>
     <unit id="card1LinkLabel">
@@ -55,6 +63,12 @@
         <target>Zero Exposure</target>
       </segment>
     </unit>
+    <unit id="card2Href">
+      <segment>
+        <source>/resources/glossary/zero-exposure</source>
+        <target>/resources/glossary/zero-exposure</target>
+      </segment>
+    </unit>
     <unit id="card2LinkLabel">
       <segment>
         <source>Read definition</source>
@@ -64,7 +78,13 @@
     <unit id="card3Title">
       <segment>
         <source>Enterprise Context Control</source>
-        <target>Enterprise Context Control</target>
+        <target>Kontextsteuerung im Unternehmen</target>
+      </segment>
+    </unit>
+    <unit id="card3Href">
+      <segment>
+        <source>/resources/glossary/enterprise-context-control</source>
+        <target>/resources/glossary/enterprise-context-control</target>
       </segment>
     </unit>
     <unit id="card3LinkLabel">
@@ -79,6 +99,12 @@
         <target>Strukturerhaltende Verarbeitung</target>
       </segment>
     </unit>
+    <unit id="card4Href">
+      <segment>
+        <source>/resources/glossary/structure-preserving-processing</source>
+        <target>/resources/glossary/structure-preserving-processing</target>
+      </segment>
+    </unit>
     <unit id="card4LinkLabel">
       <segment>
         <source>Read definition</source>
@@ -88,7 +114,13 @@
     <unit id="card5Title">
       <segment>
         <source>Restorable Workflow</source>
-        <target>Restorable Workflow</target>
+        <target>Wiederherstellbarer Workflow</target>
+      </segment>
+    </unit>
+    <unit id="card5Href">
+      <segment>
+        <source>/resources/glossary/restorable-workflow</source>
+        <target>/resources/glossary/restorable-workflow</target>
       </segment>
     </unit>
     <unit id="card5LinkLabel">
@@ -100,7 +132,13 @@
     <unit id="card6Title">
       <segment>
         <source>Secure LLM Usage</source>
-        <target>Sichere LLM-Nutzung</target>
+        <target>Abgesicherter LLM-Einsatz</target>
+      </segment>
+    </unit>
+    <unit id="card6Href">
+      <segment>
+        <source>/resources/glossary/secure-llm-usage</source>
+        <target>/resources/glossary/secure-llm-usage</target>
       </segment>
     </unit>
     <unit id="card6LinkLabel">
@@ -109,46 +147,48 @@
         <target>Definition lesen</target>
       </segment>
     </unit>
-    <unit id="ctaTitle">
+  </file>
+  <file id="Section03_CTA">
+    <unit id="title">
       <segment>
-        <source>See how</source>
-        <target>Erleben Sie, wie</target>
+        <source>See how </source>
+        <target>Wir analysieren Ihre Anforderungen und demonstrieren LLM Capsule.</target>
       </segment>
     </unit>
-    <unit id="ctaTitleProduct">
+    <unit id="titleProduct">
       <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
       </segment>
     </unit>
-    <unit id="ctaDescription">
+    <unit id="description">
       <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
-        <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Workflows.</target>
+        <target>Bringen Sie Ihre Dokumente, Einsatzbedingungen und Evaluierungskriterien mit. Wir demonstrieren LLM Capsule anhand Ihrer konkreten Workflows.</target>
       </segment>
     </unit>
-    <unit id="ctaBtn1Label">
+    <unit id="btn1Label">
       <segment>
         <source>Request a Demo</source>
         <target>Demo anfordern</target>
       </segment>
     </unit>
-    <unit id="ctaBtn2Label">
+    <unit id="btn1Href">
       <segment>
-        <source>Talk to an Architect</source>
-        <target>Talk to an Architect</target>
-      </segment>
-    </unit>
-    <unit id="footnoteLink1Label">
-      <segment>
-        <source>Download Architecture Brief</source>
-        <target>Architektur-Überblick herunterladen</target>
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
       </segment>
     </unit>
     <unit id="footnoteLink2Label">
       <segment>
         <source>Available on AWS Marketplace</source>
         <target>Verfügbar auf AWS Marketplace</target>
+      </segment>
+    </unit>
+    <unit id="footnoteLink2Href">
+      <segment>
+        <source>https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&amp;ref_=beagle&amp;applicationId=AWSMPContessa</source>
+        <target>https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&amp;ref_=beagle&amp;applicationId=AWSMPContessa</target>
       </segment>
     </unit>
   </file>

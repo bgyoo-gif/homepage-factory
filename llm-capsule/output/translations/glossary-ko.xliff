@@ -1,155 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ko">
   <file id="glossary">
-    <unit id="title">
+
+    <!-- Section 01: Hero -->
+    <unit id="s01_title">
       <segment>
-        <source>Enterprise AI</source>
-        <target>기업 AI</target>
+        <source>Enterprise AI </source>
+        <target>기업 AI </target>
       </segment>
     </unit>
-    <unit id="titleHighlight">
+    <unit id="s01_titleHighlight">
       <segment>
         <source>Enablement</source>
         <target>도입</target>
       </segment>
     </unit>
-    <unit id="description">
+    <unit id="s01_description">
       <segment>
         <source>Key terms and definitions for enterprise AI enablement, LLM data privacy, and secure enterprise AI workflows.</source>
-        <target>기업 AI 도입, LLM 데이터 프라이버시, 안전한 기업 AI 워크플로우의 주요 용어 및 정의입니다.</target>
+        <target>기업 AI 도입, LLM 데이터 프라이버시, 안전한 기업 AI 워크플로우의 핵심 용어와 정의를 제공합니다.</target>
       </segment>
     </unit>
-    <unit id="breadcrumbHome">
+    <unit id="s01_breadcrumbHome">
       <segment>
         <source>Home</source>
         <target>홈</target>
       </segment>
     </unit>
-    <unit id="breadcrumbResources">
+    <unit id="s01_breadcrumbResources">
       <segment>
         <source>Resources</source>
         <target>리소스</target>
       </segment>
     </unit>
-    <unit id="breadcrumbCurrent">
+    <unit id="s01_breadcrumbCurrent">
       <segment>
         <source>Glossary</source>
-        <target>용어집</target>
+        <target>용어 사전</target>
       </segment>
     </unit>
-    <unit id="card1Title">
+
+    <!-- Section 02: GlossaryTerms -->
+    <unit id="s02_card1Title">
       <segment>
         <source>Restoration</source>
-        <target>Restoration</target>
+        <target>복원</target>
       </segment>
     </unit>
-    <unit id="card1LinkLabel">
+    <unit id="s02_card1LinkLabel">
       <segment>
         <source>Read definition</source>
-        <target>정의 읽기</target>
+        <target>정의 보기</target>
       </segment>
     </unit>
-    <unit id="card2Title">
+    <unit id="s02_card2Title">
       <segment>
         <source>Zero Exposure</source>
         <target>Zero Exposure</target>
       </segment>
     </unit>
-    <unit id="card2LinkLabel">
+    <unit id="s02_card2LinkLabel">
       <segment>
         <source>Read definition</source>
-        <target>정의 읽기</target>
+        <target>정의 보기</target>
       </segment>
     </unit>
-    <unit id="card3Title">
+    <unit id="s02_card3Title">
       <segment>
         <source>Enterprise Context Control</source>
-        <target>기업 컨텍스트 제어</target>
+        <target>조직 정의 민감정보</target>
       </segment>
     </unit>
-    <unit id="card3LinkLabel">
+    <unit id="s02_card3LinkLabel">
       <segment>
         <source>Read definition</source>
-        <target>정의 읽기</target>
+        <target>정의 보기</target>
       </segment>
     </unit>
-    <unit id="card4Title">
+    <unit id="s02_card4Title">
       <segment>
         <source>Structure-Preserving Processing</source>
-        <target>구조 보존 처리</target>
+        <target>문서 구조 보존 처리</target>
       </segment>
     </unit>
-    <unit id="card4LinkLabel">
+    <unit id="s02_card4LinkLabel">
       <segment>
         <source>Read definition</source>
-        <target>정의 읽기</target>
+        <target>정의 보기</target>
       </segment>
     </unit>
-    <unit id="card5Title">
+    <unit id="s02_card5Title">
       <segment>
         <source>Restorable Workflow</source>
-        <target>Restorable 워크플로우</target>
+        <target>복원 가능 워크플로우</target>
       </segment>
     </unit>
-    <unit id="card5LinkLabel">
+    <unit id="s02_card5LinkLabel">
       <segment>
         <source>Read definition</source>
-        <target>정의 읽기</target>
+        <target>정의 보기</target>
       </segment>
     </unit>
-    <unit id="card6Title">
+    <unit id="s02_card6Title">
       <segment>
         <source>Secure LLM Usage</source>
-        <target>안전한 LLM 사용</target>
+        <target>보안 LLM 활용</target>
       </segment>
     </unit>
-    <unit id="card6LinkLabel">
+    <unit id="s02_card6LinkLabel">
       <segment>
         <source>Read definition</source>
-        <target>정의 읽기</target>
+        <target>정의 보기</target>
       </segment>
     </unit>
-    <unit id="ctaTitle">
+
+    <!-- Section 03: CTA -->
+    <unit id="s03_title">
       <segment>
-        <source>See how</source>
-        <target>실제 데이터에서</target>
+        <source>See how </source>
+        <target>직접 확인하세요. </target>
       </segment>
     </unit>
-    <unit id="ctaTitleProduct">
+    <unit id="s03_titleProduct">
       <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
       </segment>
     </unit>
-    <unit id="ctaDescription">
+    <unit id="s03_description">
       <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
-        <target>문서, 배포 조건, 평가 기준을 가져오십시오. 실제 워크플로우에서 시연합니다.</target>
+        <target>실제 문서, 배포 조건, 평가 기준을 가져오세요. 실제 워크플로우에서 직접 시연합니다.</target>
       </segment>
     </unit>
-    <unit id="ctaBtn1Label">
+    <unit id="s03_btn1Label">
       <segment>
         <source>Request a Demo</source>
         <target>데모 요청</target>
       </segment>
     </unit>
-    <unit id="ctaBtn2Label">
+    <unit id="s03_btn1Href">
       <segment>
-        <source>Talk to an Architect</source>
-        <target>Talk to an Architect</target>
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
       </segment>
     </unit>
-    <unit id="footnoteLink1Label">
-      <segment>
-        <source>Download Architecture Brief</source>
-        <target>아키텍처 브리프 다운로드</target>
-      </segment>
-    </unit>
-    <unit id="footnoteLink2Label">
+    <unit id="s03_footnoteLink2Label">
       <segment>
         <source>Available on AWS Marketplace</source>
-        <target>AWS Marketplace에서 이용 가능</target>
+        <target>AWS 마켓플레이스에서 보기</target>
       </segment>
     </unit>
+    <unit id="s03_footnoteLink2Href">
+      <segment>
+        <source>https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&amp;ref_=beagle&amp;applicationId=AWSMPContessa</source>
+        <target>https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&amp;ref_=beagle&amp;applicationId=AWSMPContessa</target>
+      </segment>
+    </unit>
+
   </file>
 </xliff>
