@@ -1,32 +1,28 @@
-# Enterprise Ai Data Protection — Deutsche Übersetzung
+# enterprise-ai-data-protection — Deutsche Übersetzung
 
-
-## Section01_Hero
-
+## Section 01: Hero
 
 Enterprise AI Enablement
-KI-Einsatz im Unternehmen sicher gestalten
+KI im Unternehmen sicher einsetzen
 
 LLM Capsule's AI enablement data layer uses encapsulation, zero exposure, and local restoration to enable enterprises to adopt AI without data risk.
-Die AI Enablement Data Layer von LLM Capsule schützt vertrauliche Daten durch lokale Kapsulierung, Zero Exposure und automatische Wiederherstellung. Unternehmen setzen KI ein, ohne sensible Informationen an externe Dienste zu übermitteln.
+Die AI Enablement Data Layer von LLM Capsule schützt vertrauliche Unternehmensdaten durch lokale Kapsulierung, Zero Exposure und automatische Wiederherstellung. Unternehmen nutzen KI-Dienste, ohne sensible Informationen an externe Systeme zu übermitteln.
 
 LLM Capsule
 LLM Capsule
 
-## Section02_Problem
-
+## Section 02: Problem
 
 Problem
 Problem
 
 Every enterprise that sends data to an external AI service creates a data exposure event. Even when AI providers offer data processing agreements and claim not to use customer data for training, the data still transits external infrastructure, is processed by external compute, and generates logs and metadata in external systems.
-Jede Übermittlung von Unternehmensdaten an einen externen KI-Dienst erzeugt ein Offenlegungsereignis. Auch wenn KI-Anbieter Auftragsverarbeitungsverträge anbieten und zusichern, Kundendaten nicht für das Training zu verwenden, durchlaufen die Daten externe Infrastruktur. Sie werden auf fremden Systemen verarbeitet und erzeugen Protokolle und Metadaten ausserhalb der eigenen Kontrolle.
+Jede Übermittlung von Unternehmensdaten an einen externen KI-Dienst stellt ein Offenlegungsereignis dar. Auch wenn Anbieter Auftragsverarbeitungsverträge vorweisen und zusichern, Daten nicht für das Modelltraining zu verwenden, durchlaufen diese dennoch externe Infrastruktur. Die Daten werden auf fremden Systemen verarbeitet und erzeugen Protokoll- und Metadateneinträge außerhalb der eigenen Kontrolle.
 
 For regulated enterprises, this exposure is often non-negotiable — not because of trust issues with AI providers, but because of regulatory mandates, contractual obligations, and internal governance requirements that prohibit sensitive data from leaving controlled environments.
-Für regulierte Organisationen ist dieses Risiko nicht verhandelbar. Der Grund liegt nicht in mangelndem Vertrauen gegenüber KI-Anbietern, sondern in regulatorischen Vorgaben wie der DSGVO (GDPR), vertraglichen Verpflichtungen und internen Governance-Anforderungen, die eine Weitergabe sensibler Daten aus kontrollierten Umgebungen untersagen.
+Für regulierte Organisationen ist dieses Risiko nicht verhandelbar. Der Grund liegt nicht in fehlendem Vertrauen gegenüber KI-Anbietern, sondern in regulatorischen Vorgaben sowie in vertraglichen Verpflichtungen und internen Governance-Anforderungen, die eine Weitergabe vertraulicher Daten aus kontrollierten Umgebungen untersagen.
 
-## Section03_Definition
-
+## Section 03: Definition
 
 Definition
 Definition
@@ -35,13 +31,12 @@ Enterprise AI Enablement
 KI-Einsatz im Unternehmen
 
  operates as an AI enablement data layer and plugin — protecting sensitive information through local encapsulation, structure-preserving processing, and local restoration while enabling full AI-powered workflows across any LLM.
- fungiert als Datenschicht und Plugin für den KI-Einsatz. Vertrauliche Informationen werden lokal identifiziert und durch geschützte Datenrepräsentationen ersetzt. Nach der KI-Verarbeitung erfolgt die Anreicherung mit Originaldaten automatisch. So lassen sich vollständige KI-Workflows über jedes beliebige LLM betreiben.
+ fungiert als Datenschicht und Plugin für den sicheren KI-Einsatz im Unternehmen. Vertrauliche Informationen werden lokal identifiziert und durch geschützte Datenrepräsentationen ersetzt. Nach der Verarbeitung durch das KI-Modell erfolgt die Anreicherung mit Originaldaten automatisch — innerhalb der eigenen Infrastruktur. KI-Workflows lassen sich so über jedes beliebige LLM betreiben.
 
 LLM Capsule
 LLM Capsule
 
-## Section04_Explanation
-
+## Section 04: Explanation
 
 Explanation
 Erläuterung
@@ -62,19 +57,19 @@ Core 2: Restoration.
 Kern 2: Wiederherstellung.
 
 AI results are automatically restored locally with original enterprise data. The mapping between encapsulated and original values is stored locally and applied to AI outputs within the enterprise environment. This produces enterprise-ready results without manual reconstruction.
-KI-Ergebnisse werden lokal automatisch mit den Originaldaten angereichert. Die Zuordnung zwischen geschützten und ursprünglichen Werten wird ausschliesslich lokal gespeichert und auf die KI-Ausgaben angewendet. Das Ergebnis sind fachlich nutzbare Dokumente ohne manuelle Nachbearbeitung.
+KI-Ergebnisse werden lokal automatisch mit den Originaldaten angereichert. Die Zuordnung zwischen geschützten und ursprünglichen Werten wird ausschließlich lokal gespeichert und auf die KI-Ausgaben angewendet. Das Ergebnis sind fachlich nutzbare Dokumente ohne manuelle Nachbearbeitung.
 
 Core 3: Enterprise Context.
 Kern 3: Unternehmenskontext.
 
 Sensitive elements are identified using context-aware data control and replaced with structure-preserving representations. Unlike masking, encapsulation is reversible and policy-driven — what counts as sensitive is configurable per department, document type, and workflow.
-Sensible Elemente werden mithilfe kontextbezogener Datenkontrolle identifiziert und durch strukturerhaltende Repräsentationen ersetzt. Anders als bei der Maskierung ist die Kapsulierung reversibel und richtliniengesteuert. Was als sensibel gilt, lässt sich je nach Abteilung, Dokumententyp und Workflow konfigurieren.
+Sensible Elemente werden durch kontextbezogene Datenkontrolle identifiziert und durch strukturerhaltende Repräsentationen ersetzt. Anders als bei der Maskierung ist die Kapsulierung reversibel und richtliniengesteuert. Was als vertraulich gilt, lässt sich je nach Abteilung, Dokumenttyp und Workflow konfigurieren.
 
 +1: Structure-Preserving.
 +1: Strukturerhaltend.
 
 Document layout, entity relationships, and semantic context are maintained during encapsulation. AI models receive structurally intact documents, producing high-quality outputs.
-Dokumentenlayout, Entitätsbeziehungen und semantischer Kontext bleiben bei der Kapsulierung erhalten. KI-Modelle erhalten strukturell vollständige Dokumente und liefern qualitativ hochwertige Ergebnisse.
+Dokumentenlayout, Entitätsbeziehungen und semantischer Kontext bleiben bei der Kapsulierung vollständig erhalten. KI-Modelle erhalten strukturell intakte Dokumente und liefern qualitativ hochwertige Ergebnisse.
 
 +2: Cross-Model Execution.
 +2: Modellübergreifende Ausführung.
@@ -83,10 +78,9 @@ Because protection operates at the data layer before transmission, it works with
 Da der Schutz auf der Datenebene vor der Übertragung greift, funktioniert er mit jedem externen KI-Dienst — ChatGPT, Claude, Gemini oder jeder LLM-API — ohne modellspezifische Integration.
 
  is an AI enablement data layer and plugin. It enables AI adoption by protecting data at the data layer — not by blocking AI, but by making AI safe to use on real enterprise data.
- ist eine Datenschicht und ein Plugin für den sicheren KI-Einsatz. Das Produkt ermöglicht die KI-Nutzung, indem es Daten auf der Datenebene schützt — nicht durch Blockade von KI, sondern durch den sicheren Umgang mit echten Unternehmensdaten.
+ ist eine Datenschicht und ein Plugin für den sicheren KI-Einsatz. Das Produkt schützt Daten auf der Datenebene und ermöglicht so die KI-Nutzung — nicht durch Blockade von KI-Diensten, sondern durch den sicheren Umgang mit echten Unternehmensdaten.
 
-## Section05_EnterpriseExamples
-
+## Section 05: Enterprise Examples
 
 Examples
 Beispiele
@@ -95,46 +89,46 @@ Public Sector: Citizen Services AI
 Öffentlicher Sektor: KI-gestützte Bürgerdienste
 
 A government agency uses AI to process citizen benefit applications. Each application contains PII, income data, and residency information. Enterprise AI data protection ensures no citizen data leaves the government environment while AI automates eligibility assessment and case routing.
-Eine Behörde setzt KI zur Bearbeitung von Bürgeranträgen ein. Jeder Antrag enthält personenbezogene Daten, Einkommensinformationen und Angaben zum Wohnsitz. Durch die lokale Kapsulierung verlassen keine Bürgerdaten die Behördenumgebung, während die KI Anspruchsprüfung und Fallweiterleitung automatisiert.
+Eine Behörde setzt KI zur Bearbeitung von Bürgeranträgen ein. Jeder Antrag enthält personenbezogene Daten, Einkommensinformationen und Angaben zum Wohnsitz. Durch die lokale Kapsulierung verlassen keine Bürgerdaten die Behördenumgebung, während KI Anspruchsprüfung und Fallweiterleitung automatisiert.
 
 Telecom: Network Security Intelligence
 Telekommunikation: Netzwerksicherheitsanalyse
 
 A telecom operator uses AI to analyze network incident reports that contain customer data, infrastructure details, and vulnerability information. Encapsulation protects all sensitive elements while AI performs pattern analysis and threat classification.
-Ein Telekommunikationsunternehmen analysiert mit KI Berichte über Netzwerkvorfälle, die Kundendaten, Infrastrukturdetails und Schwachstelleninformationen enthalten. Die geschützte Datenrepräsentation sichert alle sensiblen Elemente, während die KI Musteranalyse und Bedrohungsklassifizierung durchführt.
+Ein Telekommunikationsunternehmen analysiert mit KI Berichte über Netzwerkvorfälle, die Kundendaten, Infrastrukturdetails und Informationen zu Schwachstellen enthalten. Die geschützte Datenrepräsentation sichert alle vertraulichen Elemente, während KI Musteranalyse und Bedrohungsklassifizierung durchführt.
 
-## Section06_FAQ
+## Section 06: FAQ
 
+FAQ
+FAQ
 
 What is enterprise AI data protection?
-Was versteht man unter Datenschutz für KI im Unternehmen?
+Was versteht man unter KI-Datenschutz im Unternehmen?
 
 Enterprise AI data protection is a data security discipline that prevents sensitive enterprise information from being exposed to external AI services while still enabling AI-powered workflows. It operates at the data layer through encapsulation, structure preservation, and local restoration.
-Datenschutz für KI im Unternehmen bezeichnet eine Datensicherheitsdisziplin, die verhindert, dass vertrauliche Unternehmensdaten an externe KI-Dienste offengelegt werden. Gleichzeitig bleiben KI-gestützte Workflows nutzbar. Der Schutz erfolgt auf der Datenebene durch Kapsulierung, Erhalt der Dokumentstruktur und lokale Wiederherstellung.
+KI-Datenschutz im Unternehmen bezeichnet eine Datensicherheitsdisziplin, die verhindert, dass vertrauliche Informationen an externe KI-Dienste offengelegt werden. KI-gestützte Workflows bleiben dabei nutzbar. Der Schutz erfolgt auf der Datenebene durch Kapsulierung, Erhalt der Dokumentstruktur und lokale Wiederherstellung.
 
 How does LLM data protection work?
-Wie funktioniert der LLM-Datenschutz?
+Wie funktioniert der Datenschutz für Sprachmodelle?
 
 LLM data protection encapsulates sensitive data locally before it reaches any language model. The AI processes structurally intact but protected documents. After processing, outputs are restored locally with original enterprise data.
-Beim LLM-Datenschutz werden sensible Daten lokal identifiziert und ersetzt, bevor sie ein Sprachmodell erreichen. Die KI verarbeitet strukturell intakte, aber geschützte Dokumente. Nach der Verarbeitung werden die Ergebnisse lokal mit den Originaldaten angereichert.
+Sensible Daten werden lokal identifiziert und ersetzt, bevor sie ein Sprachmodell erreichen. Das KI-Modell verarbeitet strukturell intakte, aber geschützte Dokumente. Nach der Verarbeitung werden die Ergebnisse lokal mit den Originaldaten angereichert.
 
 Is LLM Capsule compliant with GDPR?
 Ist LLM Capsule DSGVO-konform?
 
-LLM Capsule is designed to support GDPR compliance by ensuring personal data never leaves the enterprise environment during AI processing. Organizations should evaluate their specific compliance requirements with legal counsel.
- wurde zur Unterstützung der DSGVO (GDPR)-Konformität konzipiert: Personenbezogene Daten verlassen während der KI-Verarbeitung nicht die Unternehmensumgebung. Darüber hinaus unterstützt die Architektur Anforderungen aus BSI C5 und ISO 27001. Organisationen sollten ihre spezifischen Compliance-Anforderungen mit ihrer Rechtsabteilung bewerten.
+ is designed to support GDPR compliance by ensuring personal data never leaves the enterprise environment during AI processing. Organizations should evaluate their specific compliance requirements with legal counsel.
+ wurde zur Unterstützung der DSGVO (GDPR)-Konformität konzipiert: Personenbezogene Daten verlassen während der KI-Verarbeitung nicht die Unternehmensumgebung. Organisationen sollten ihre spezifischen Compliance-Anforderungen mit ihrer Rechtsabteilung prüfen.
 
 LLM Capsule
 LLM Capsule
 
-## Section07_LearnMore
-
+## Section 07: Learn More
 
 Learn More
 Mehr erfahren
 
-## Section08_CTA
-
+## Section 08: CTA
 
 See how
 Erfahren Sie, wie
