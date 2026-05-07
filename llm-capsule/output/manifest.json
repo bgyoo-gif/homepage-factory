@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-07 13:27:22",
+  "generated": "2026-05-07 13:33:07",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1725,6 +1725,16 @@
           "name": "resources-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/resources-ko-lines.md",
           "modified": "2026-04-20"
+        },
+        {
+          "name": "resources-v62-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/resources-v62-de-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "resources-v62-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/resources-v62-ko-lines.md",
+          "modified": "2026-05-07"
         },
         {
           "name": "restorable-workflow-de-lines.md",

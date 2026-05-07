@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="resources-v62" source-language="en" target-language="de-DE" datatype="plaintext">
+    <header>
+      <note>resources-v62 — Deutsche Übersetzung (v6.2, localize mode)</note>
+    </header>
+    <body>
+
+      <!-- Section01_Hero -->
+      <trans-unit id="s01.eyebrow">
+        <source>Resources</source>
+        <target>Ressourcen</target>
+      </trans-unit>
+      <trans-unit id="s01.title">
+        <source>Enterprise AI enablement</source>
+        <target>KI-Einsatz im Unternehmen</target>
+      </trans-unit>
+      <trans-unit id="s01.titleHighlight">
+        <source>resources</source>
+        <target>Ressourcen</target>
+      </trans-unit>
+      <trans-unit id="s01.subtitle">
+        <source>Technical documentation, learning articles, glossary, and trust resources — for architects, CDOs, CISOs, privacy officers, and industry buyers building regulated AI workflows.</source>
+        <target>Technische Dokumentation, Fachartikel, Glossar und Trust-Center-Inhalte — für Architekten, CDOs, CISOs, Datenschutzbeauftragte und Entscheider, die regulierte KI-Workflows aufbauen.</target>
+      </trans-unit>
+
+      <!-- Section02_ResourceCards -->
+      <trans-unit id="s02.card1Count">
+        <source>8 articles · GEO-optimized</source>
+        <target>8 Artikel · GEO-optimiert</target>
+      </trans-unit>
+      <trans-unit id="s02.card1Title">
+        <source>Learn</source>
+        <target>Wissen</target>
+      </trans-unit>
+      <trans-unit id="s02.card1Desc">
+        <source>In-depth articles on enterprise AI enablement — architecture patterns, industry deployment guides (telecom, healthcare, finance, defense), pilot-to-production playbooks, sovereign AI under GDPR / EU AI Act.</source>
+        <target>Technische Fachartikel zum KI-Einsatz im Unternehmen: Architekturmuster, branchenspezifische Deployment-Leitfäden (Telekommunikation, Gesundheitswesen, Finanzwesen, Verteidigung), Pilot-to-Production-Playbooks sowie Sovereign-AI-Strategien unter DSGVO (GDPR) und EU AI Act.</target>
+      </trans-unit>
+      <trans-unit id="s02.card1LinkLabel">
+        <source>Browse Learn articles →</source>
+        <target>Alle Artikel ansehen →</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Count">
+        <source>11 terms · Schema.org</source>
+        <target>11 Begriffe · Schema.org</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Title">
+        <source>Glossary</source>
+        <target>Glossar</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Desc">
+        <source>Definitions of category and architectural concepts — AI enablement data layer, structure-preserving encapsulation, two execution paths, sovereign AI, shadow AI, differential privacy. Each term with definition and cross-links.</source>
+        <target>Definitionen zentraler Kategorie- und Architekturkonzepte: AI Enablement Data Layer, strukturerhaltende Kapsulierung, zwei Ausführungspfade, Sovereign AI, Shadow AI, Differential Privacy. Jeder Begriff mit Erläuterung und Querverweisen.</target>
+      </trans-unit>
+      <trans-unit id="s02.card2LinkLabel">
+        <source>Browse Glossary terms →</source>
+        <target>Alle Glossareinträge ansehen →</target>
+      </trans-unit>
+      <trans-unit id="s02.card3Count">
+        <source>12 certifications · Compliance</source>
+        <target>12 Zertifizierungen · Compliance</target>
+      </trans-unit>
+      <trans-unit id="s02.card3Title">
+        <source>Trust Center</source>
+        <target>Trust Center</target>
+      </trans-unit>
+      <trans-unit id="s02.card3Desc">
+        <source>Security certifications, compliance frameworks (GDPR / HIPAA / SOX / EU AI Act), audit documentation, DPA template, vendor security questionnaire. Everything compliance and security teams need for evaluation.</source>
+        <target>Sicherheitszertifizierungen, regulatorische Konformitätsnachweise (DSGVO (GDPR) / HIPAA / SOX / EU AI Act), Prüfdokumentation, DPA-Vorlage sowie ein Fragebogen zur Lieferantensicherheit. Alle Unterlagen, die Compliance- und Sicherheitsteams für die Evaluierung benötigen.</target>
+      </trans-unit>
+      <trans-unit id="s02.card3LinkLabel">
+        <source>Visit Trust Center →</source>
+        <target>Trust Center aufrufen →</target>
+      </trans-unit>
+
+      <!-- Section03_FeaturedArticle -->
+      <trans-unit id="s03.label">
+        <source>FEATURED · MOST READ</source>
+        <target>EMPFOHLEN · MEISTGELESEN</target>
+      </trans-unit>
+      <trans-unit id="s03.title">
+        <source>Why enterprise AI pilots stall — and how they get to production</source>
+        <target>Warum KI-Pilotprojekte im Unternehmen scheitern — und wie der Weg in die Produktion gelingt</target>
+      </trans-unit>
+      <trans-unit id="s03.description">
+        <source>80% of enterprise AI pilots never ship to production. The reasons are predictable: data exposure barriers, broken document context, residual compliance risk, shadow AI emergence. Here's the diagnostic and the architectural pattern that gets pilots to production.</source>
+        <target>80 % der KI-Pilotprojekte in Unternehmen erreichen nie den Produktionsbetrieb. Die Ursachen sind bekannt: Datenschutzbarrieren, fehlender Dokumentenkontext, offene Compliance-Risiken und unkontrollierte KI-Nutzung durch Mitarbeitende. Dieser Artikel beschreibt die Diagnose und das Architekturmuster, das den Übergang in die Produktion ermöglicht.</target>
+      </trans-unit>
+      <trans-unit id="s03.ctaLabel">
+        <source>Read the article →</source>
+        <target>Artikel lesen →</target>
+      </trans-unit>
+
+      <!-- Section04_ArticlesByCategory — header -->
+      <trans-unit id="s04.eyebrow">
+        <source>Learn articles</source>
+        <target>Fachartikel</target>
+      </trans-unit>
+      <trans-unit id="s04.heading">
+        <source>By category</source>
+        <target>Nach Kategorie</target>
+      </trans-unit>
+      <trans-unit id="s04.subheading">
+        <source>Industry deployment guides, architecture deep-dives, comparison frameworks, and strategy playbooks.</source>
+        <target>Branchenspezifische Deployment-Leitfäden, technische Architekturanalysen, Vergleichsrahmen und strategische Playbooks.</target>
+      </trans-unit>
+      <trans-unit id="s04.tab1Label">
+        <source>All</source>
+        <target>Alle</target>
+      </trans-unit>
+      <trans-unit id="s04.tab2Label">
+        <source>Industry</source>
+        <target>Branche</target>
+      </trans-unit>
+      <trans-unit id="s04.tab3Label">
+        <source>Architecture</source>
+        <target>Architektur</target>
+      </trans-unit>
+      <trans-unit id="s04.tab4Label">
+        <source>Strategy</source>
+        <target>Strategie</target>
+      </trans-unit>
+      <trans-unit id="s04.tab5Label">
+        <source>Comparison</source>
+        <target>Vergleich</target>
+      </trans-unit>
+
+      <!-- Section04 — Article 1 -->
+      <trans-unit id="s04.a1Category">
+        <source>INDUSTRY · TELECOM</source>
+        <target>BRANCHE · TELEKOMMUNIKATION</target>
+      </trans-unit>
+      <trans-unit id="s04.a1Title">
+        <source>How to deploy AI in a telecom NOC without exposing network data</source>
+        <target>KI im Telekommunikations-NOC einsetzen — ohne Offenlegung von Netzdaten</target>
+      </trans-unit>
+      <trans-unit id="s04.a1Description">
+        <source>Step-by-step deployment guide. Validated at SK Telecom and Deutsche Telekom T Challenge 2026 Top 12.</source>
+        <target>Schritt-für-Schritt-Leitfaden für den Produktionseinsatz. Validiert bei SK Telecom und als Top-12-Finalist des Deutsche Telekom T Challenge 2026.</target>
+      </trans-unit>
+
+      <!-- Section04 — Article 2 -->
+      <trans-unit id="s04.a2Category">
+        <source>INDUSTRY · HEALTHCARE</source>
+        <target>BRANCHE · GESUNDHEITSWESEN</target>
+      </trans-unit>
+      <trans-unit id="s04.a2Title">
+        <source>How to deploy AI in a hospital without exposing PHI</source>
+        <target>KI im Krankenhaus einsetzen — ohne Offenlegung personenbezogener Gesundheitsdaten</target>
+      </trans-unit>
+      <trans-unit id="s04.a2Description">
+        <source>HIPAA-aligned playbook for hospital CIOs and clinical informatics. Deployed at EUMC.</source>
+        <target>HIPAA-konformes Playbook für Krankenhaus-CIOs und klinische Informatik. Im Einsatz am EUMC.</target>
+      </trans-unit>
+
+      <!-- Section04 — Article 3 -->
+      <trans-unit id="s04.a3Category">
+        <source>ARCHITECTURE · SOVEREIGN AI</source>
+        <target>ARCHITEKTUR · SOVEREIGN AI</target>
+      </trans-unit>
+      <trans-unit id="s04.a3Title">
+        <source>Sovereign AI for European enterprises — practical architecture</source>
+        <target>Sovereign AI für europäische Unternehmen — ein praxisorientiertes Architekturmodell</target>
+      </trans-unit>
+      <trans-unit id="s04.a3Description">
+        <source>GDPR + EU AI Act + national data residency. Two execution paths under one governance framework.</source>
+        <target>DSGVO (GDPR), EU AI Act und nationale Datenspeicherungsanforderungen. Zwei Ausführungspfade unter einem einheitlichen Governance-Rahmen.</target>
+      </trans-unit>
+
+      <!-- Section04 — Article 4 -->
+      <trans-unit id="s04.a4Category">
+        <source>STRATEGY · PILOT TO PRODUCTION</source>
+        <target>STRATEGIE · VOM PILOT IN DIE PRODUKTION</target>
+      </trans-unit>
+      <trans-unit id="s04.a4Title">
+        <source>Why enterprise AI pilots stall — and how they get to production</source>
+        <target>Warum KI-Pilotprojekte im Unternehmen scheitern — und wie der Weg in die Produktion gelingt</target>
+      </trans-unit>
+      <trans-unit id="s04.a4Description">
+        <source>Diagnostic for executives running an AI program. The pattern that ships to production.</source>
+        <target>Diagnoserahmen für Führungskräfte mit laufenden KI-Programmen. Das Architekturmuster, das den Produktionsbetrieb ermöglicht.</target>
+      </trans-unit>
+
+      <!-- Section04 — Article 5 -->
+      <trans-unit id="s04.a5Category">
+        <source>ARCHITECTURE · ON-PREM</source>
+        <target>ARCHITEKTUR · ON-PREMISE</target>
+      </trans-unit>
+      <trans-unit id="s04.a5Title">
+        <source>On-premise LLM execution path</source>
+        <target>On-Premise-Ausführungspfad für LLMs</target>
+      </trans-unit>
+      <trans-unit id="s04.a5Description">
+        <source>Path B architecture deep-dive: quantized model, internal GPU, vLLM, full air-gap.</source>
+        <target>Detailanalyse des Ausführungspfads B: quantisiertes Modell, interne GPU, vLLM, vollständige Air-Gap-Isolation.</target>
+      </trans-unit>
+
+      <!-- Section04 — Article 6 -->
+      <trans-unit id="s04.a6Category">
+        <source>ARCHITECTURE · DIFFERENTIAL PRIVACY</source>
+        <target>ARCHITEKTUR · DIFFERENTIAL PRIVACY</target>
+      </trans-unit>
+      <trans-unit id="s04.a6Title">
+        <source>Differential privacy for enterprise LLM</source>
+        <target>Differential Privacy für den LLM-Einsatz im Unternehmen</target>
+      </trans-unit>
+      <trans-unit id="s04.a6Description">
+        <source>Epsilon-DP, Laplace noise, k-anonymity, NER masking — what each adds and why combination matters.</source>
+        <target>Epsilon-DP, Laplace-Rauschen, k-Anonymität, NER-Maskierung — Wirkungsweise der einzelnen Verfahren und Bedeutung ihrer Kombination.</target>
+      </trans-unit>
+
+      <!-- Section04 — Article 7 -->
+      <trans-unit id="s04.a7Category">
+        <source>COMPARISON · GUARDRAILS</source>
+        <target>VERGLEICH · GUARDRAILS</target>
+      </trans-unit>
+      <trans-unit id="s04.a7Title">
+        <source>PII guardrails vs. operational data protection</source>
+        <target>PII-Guardrails vs. operativer Datenschutz</target>
+      </trans-unit>
+      <trans-unit id="s04.a7Description">
+        <source>Why PII detection alone leaves operational data exposed. Where guardrails end and the data layer begins.</source>
+        <target>Warum reine PII-Erkennung operative Daten ungeschützt lässt. Wo Guardrails enden und die Datenschicht beginnt.</target>
+      </trans-unit>
+
+      <!-- Section04 — Article 8 -->
+      <trans-unit id="s04.a8Category">
+        <source>INDUSTRY · NETWORK / OT</source>
+        <target>BRANCHE · NETZWERK / OT</target>
+      </trans-unit>
+      <trans-unit id="s04.a8Title">
+        <source>AI on network operations data</source>
+        <target>KI-Einsatz auf Netzwerkbetriebsdaten</target>
+      </trans-unit>
+      <trans-unit id="s04.a8Description">
+        <source>Network configurations, topology, alarm sequences — how the data layer protects operational identifiers.</source>
+        <target>Netzwerkkonfigurationen, Topologiedaten, Alarmsequenzen — wie die Datenschicht operative Identifikatoren schützt.</target>
+      </trans-unit>
+
+      <!-- Section05_GlossaryGrid — header -->
+      <trans-unit id="s05.eyebrow">
+        <source>Glossary</source>
+        <target>Glossar</target>
+      </trans-unit>
+      <trans-unit id="s05.heading">
+        <source>Category and architectural terms</source>
+        <target>Kategorie- und Architekturkonzepte</target>
+      </trans-unit>
+      <trans-unit id="s05.subheading">
+        <source>11 definitions for buyers, architects, and security teams. Each term with Schema.org DefinedTerm markup.</source>
+        <target>11 Definitionen für Einkäufer, Architekten und Sicherheitsteams. Jeder Begriff mit Schema.org DefinedTerm-Auszeichnung.</target>
+      </trans-unit>
+
+      <!-- Section05 — Terms -->
+      <trans-unit id="s05.t1Term">
+        <source>AI enablement data layer</source>
+        <target>AI Enablement Data Layer</target>
+      </trans-unit>
+      <trans-unit id="s05.t1Definition">
+        <source>The category. Architectural component between regulated systems and LLMs.</source>
+        <target>Die Kategorie. Architekturkomponente zwischen regulierten Systemen und LLMs.</target>
+      </trans-unit>
+      <trans-unit id="s05.t2Term">
+        <source>AI-ready operational layer</source>
+        <target>KI-bereite operative Schicht</target>
+      </trans-unit>
+      <trans-unit id="s05.t2Definition">
+        <source>Operational data made AI-consumable while sensitive elements are protected.</source>
+        <target>Operative Daten werden KI-verarbeitbar gemacht, während sensible Inhalte geschützt bleiben.</target>
+      </trans-unit>
+      <trans-unit id="s05.t3Term">
+        <source>Structure-preserving encapsulation</source>
+        <target>Strukturerhaltende Kapsulierung</target>
+      </trans-unit>
+      <trans-unit id="s05.t3Definition">
+        <source>Replacing sensitive elements while keeping document structure intact.</source>
+        <target>Sensible Elemente werden ersetzt, die Dokumentstruktur bleibt vollständig erhalten.</target>
+      </trans-unit>
+      <trans-unit id="s05.t4Term">
+        <source>Differential privacy</source>
+        <target>Differential Privacy</target>
+      </trans-unit>
+      <trans-unit id="s05.t4Definition">
+        <source>Mathematical framework for privacy-preserving data transformation with bounded risk.</source>
+        <target>Mathematisches Verfahren zur datenschutzkonformen Transformation mit messbarem Restrisiko.</target>
+      </trans-unit>
+      <trans-unit id="s05.t5Term">
+        <source>Two execution paths</source>
+        <target>Zwei Ausführungspfade</target>
+      </trans-unit>
+      <trans-unit id="s05.t5Definition">
+        <source>Path A (external LLM with capsule) and Path B (on-prem local model) under one governance.</source>
+        <target>Pfad A (externer LLM mit Kapsulierung) und Pfad B (lokales On-Premise-Modell) unter einem gemeinsamen Governance-Rahmen.</target>
+      </trans-unit>
+      <trans-unit id="s05.t6Term">
+        <source>Operational data</source>
+        <target>Operative Daten</target>
+      </trans-unit>
+      <trans-unit id="s05.t6Definition">
+        <source>Workflow data — tickets, configs, clinical notes, claims — that real AI work runs on.</source>
+        <target>Betriebliche Arbeitsdaten — Tickets, Konfigurationen, klinische Notizen, Schadenmeldungen — auf denen produktiver KI-Einsatz beruht.</target>
+      </trans-unit>
+      <trans-unit id="s05.t7Term">
+        <source>Sovereign AI</source>
+        <target>Sovereign AI</target>
+      </trans-unit>
+      <trans-unit id="s05.t7Definition">
+        <source>AI workflows where data, processing, and audit stay inside a defined boundary.</source>
+        <target>KI-Workflows, bei denen Daten, Verarbeitung und Audit innerhalb einer definierten Vertrauensgrenze verbleiben.</target>
+      </trans-unit>
+      <trans-unit id="s05.t8Term">
+        <source>Shadow AI</source>
+        <target>Shadow AI</target>
+      </trans-unit>
+      <trans-unit id="s05.t8Definition">
+        <source>Unsanctioned external LLM use; symptom of missing AI enablement data layer.</source>
+        <target>Nicht autorisierte Nutzung externer LLMs; Symptom einer fehlenden AI Enablement Data Layer.</target>
+      </trans-unit>
+      <trans-unit id="s05.t9Term">
+        <source>Blocked AI workflow</source>
+        <target>Blockierter KI-Workflow</target>
+      </trans-unit>
+      <trans-unit id="s05.t9Definition">
+        <source>A workflow where AI value is real but data exposure rules block deployment.</source>
+        <target>Ein Workflow, dessen KI-Mehrwert belegt ist, dessen Einsatz jedoch durch Datenschutzvorgaben verhindert wird.</target>
+      </trans-unit>
+      <trans-unit id="s05.t10Term">
+        <source>Connector lane</source>
+        <target>Connector Lane</target>
+      </trans-unit>
+      <trans-unit id="s05.t10Definition">
+        <source>How Capsule reads document, ticket, and operational sources that already live inside the customer environment — without moving raw data outside that environment.</source>
+        <target>Wie Capsule Dokumente, Tickets und operative Datenquellen aus der bestehenden Unternehmensumgebung liest — ohne Rohdaten aus dieser Umgebung herauszubewegen.</target>
+      </trans-unit>
+      <trans-unit id="s05.t11Term">
+        <source>State vault for restoration</source>
+        <target>State Vault für die Wiederherstellung</target>
+      </trans-unit>
+      <trans-unit id="s05.t11Definition">
+        <source>Local key-value store mapping capsule tokens back to original values for restoration.</source>
+        <target>Lokaler Key-Value-Speicher, der Capsule-Token den Originalwerten zuordnet und die Wiederherstellung ermöglicht.</target>
+      </trans-unit>
+
+      <!-- Section06_CTAStrip -->
+      <trans-unit id="s06.title">
+        <source>Have a deployment question?</source>
+        <target>Haben Sie Fragen zum Deployment?</target>
+      </trans-unit>
+      <trans-unit id="s06.subtitle">
+        <source>Bring your industry, your regulatory profile, and your data. We respond within one business day.</source>
+        <target>Schildern Sie uns Ihre Branche, Ihr regulatorisches Umfeld und Ihre Datenanforderungen. Wir antworten innerhalb eines Werktags.</target>
+      </trans-unit>
+      <trans-unit id="s06.ctaLabel">
+        <source>Request a Live Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

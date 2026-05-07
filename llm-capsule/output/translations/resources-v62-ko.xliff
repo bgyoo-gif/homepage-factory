@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="resources-v62" source-language="en" target-language="ko" datatype="plaintext">
+    <header>
+      <note>LLM Capsule — resources-v62 한국어 번역 (literal mode, v6.2)</note>
+    </header>
+    <body>
+
+      <!-- Section01_Hero -->
+      <trans-unit id="s01.eyebrow">
+        <source>Resources</source>
+        <target>리소스</target>
+      </trans-unit>
+      <trans-unit id="s01.title">
+        <source>Enterprise AI enablement</source>
+        <target>엔터프라이즈 AI 도입</target>
+      </trans-unit>
+      <trans-unit id="s01.titleHighlight">
+        <source>resources</source>
+        <target>리소스</target>
+      </trans-unit>
+      <trans-unit id="s01.subtitle">
+        <source>Technical documentation, learning articles, glossary, and trust resources — for architects, CDOs, CISOs, privacy officers, and industry buyers building regulated AI workflows.</source>
+        <target>기술 문서, 학습 아티클, 용어집, 트러스트 리소스 — 규제 환경에서 AI 워크플로우를 구축하는 아키텍트, CDO, CISO, 개인정보보호 담당자, 산업 구매자를 위한 자료입니다.</target>
+      </trans-unit>
+
+      <!-- Section02_ResourceCards — Card 1 -->
+      <trans-unit id="s02.card1Count">
+        <source>8 articles · GEO-optimized</source>
+        <target>아티클 8편 · GEO 최적화</target>
+      </trans-unit>
+      <trans-unit id="s02.card1Title">
+        <source>Learn</source>
+        <target>학습 자료</target>
+      </trans-unit>
+      <trans-unit id="s02.card1Desc">
+        <source>In-depth articles on enterprise AI enablement — architecture patterns, industry deployment guides (telecom, healthcare, finance, defense), pilot-to-production playbooks, sovereign AI under GDPR / EU AI Act.</source>
+        <target>엔터프라이즈 AI 도입에 관한 심층 아티클 — 아키텍처 패턴, 산업별 배포 가이드(통신·의료·금융·국방), 파일럿-투-프로덕션 플레이북, GDPR/EU AI Act 기반 Sovereign AI.</target>
+      </trans-unit>
+      <trans-unit id="s02.card1LinkLabel">
+        <source>Browse Learn articles →</source>
+        <target>학습 아티클 둘러보기 →</target>
+      </trans-unit>
+      <trans-unit id="s02.card1LinkHref">
+        <source>#articles</source>
+        <target>#articles</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <!-- Section02_ResourceCards — Card 2 -->
+      <trans-unit id="s02.card2Count">
+        <source>11 terms · Schema.org</source>
+        <target>용어 11개 · Schema.org</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Title">
+        <source>Glossary</source>
+        <target>용어집</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Desc">
+        <source>Definitions of category and architectural concepts — AI enablement data layer, structure-preserving encapsulation, two execution paths, sovereign AI, shadow AI, differential privacy. Each term with definition and cross-links.</source>
+        <target>카테고리 및 아키텍처 개념 정의 — 데이터 레이어, 문서 구조 보존 캡슐화, 두 가지 실행 경로, Sovereign AI, Shadow AI, 차등 프라이버시. 각 용어에 정의와 연관 링크 포함.</target>
+      </trans-unit>
+      <trans-unit id="s02.card2LinkLabel">
+        <source>Browse Glossary terms →</source>
+        <target>용어집 둘러보기 →</target>
+      </trans-unit>
+      <trans-unit id="s02.card2LinkHref">
+        <source>#glossary</source>
+        <target>#glossary</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <!-- Section02_ResourceCards — Card 3 -->
+      <trans-unit id="s02.card3Count">
+        <source>12 certifications · Compliance</source>
+        <target>인증 12개 · 컴플라이언스</target>
+      </trans-unit>
+      <trans-unit id="s02.card3Title">
+        <source>Trust Center</source>
+        <target>트러스트 센터</target>
+      </trans-unit>
+      <trans-unit id="s02.card3Desc">
+        <source>Security certifications, compliance frameworks (GDPR / HIPAA / SOX / EU AI Act), audit documentation, DPA template, vendor security questionnaire. Everything compliance and security teams need for evaluation.</source>
+        <target>보안 인증, 컴플라이언스 프레임워크(GDPR / HIPAA / SOX / EU AI Act), 감사 문서, DPA 템플릿, 벤더 보안 질문지. 컴플라이언스·보안 팀의 평가에 필요한 모든 자료를 제공합니다.</target>
+      </trans-unit>
+      <trans-unit id="s02.card3LinkLabel">
+        <source>Visit Trust Center →</source>
+        <target>트러스트 센터 방문하기 →</target>
+      </trans-unit>
+      <trans-unit id="s02.card3LinkHref">
+        <source>/trust</source>
+        <target>/trust</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <!-- Section03_FeaturedArticle -->
+      <trans-unit id="s03.label">
+        <source>FEATURED · MOST READ</source>
+        <target>추천 · 최다 열람</target>
+      </trans-unit>
+      <trans-unit id="s03.title">
+        <source>Why enterprise AI pilots stall — and how they get to production</source>
+        <target>엔터프라이즈 AI 파일럿이 멈추는 이유 — 그리고 프로덕션에 도달하는 방법</target>
+      </trans-unit>
+      <trans-unit id="s03.description">
+        <source>80% of enterprise AI pilots never ship to production. The reasons are predictable: data exposure barriers, broken document context, residual compliance risk, shadow AI emergence. Here's the diagnostic and the architectural pattern that gets pilots to production.</source>
+        <target>엔터프라이즈 AI 파일럿의 80%는 프로덕션에 도달하지 못합니다. 원인은 명확합니다. 데이터 노출 장벽, 문서 컨텍스트 붕괴, 잔존 규제 리스크, Shadow AI 확산. 파일럿을 프로덕션으로 끌어올리는 진단과 아키텍처 패턴을 제시합니다.</target>
+      </trans-unit>
+      <trans-unit id="s03.ctaLabel">
+        <source>Read the article →</source>
+        <target>아티클 읽기 →</target>
+      </trans-unit>
+      <trans-unit id="s03.ctaHref">
+        <source>/learn/pilot-to-production-enterprise-ai</source>
+        <target>/learn/pilot-to-production-enterprise-ai</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <!-- Section04_ArticlesByCategory — Header -->
+      <trans-unit id="s04.eyebrow">
+        <source>Learn articles</source>
+        <target>학습 아티클</target>
+      </trans-unit>
+      <trans-unit id="s04.heading">
+        <source>By category</source>
+        <target>카테고리별 보기</target>
+      </trans-unit>
+      <trans-unit id="s04.subheading">
+        <source>Industry deployment guides, architecture deep-dives, comparison frameworks, and strategy playbooks.</source>
+        <target>산업별 배포 가이드, 아키텍처 심층 분석, 비교 프레임워크, 전략 플레이북.</target>
+      </trans-unit>
+
+      <!-- Section04 — Tabs -->
+      <trans-unit id="s04.tab1Label">
+        <source>All</source>
+        <target>전체</target>
+      </trans-unit>
+      <trans-unit id="s04.tab2Label">
+        <source>Industry</source>
+        <target>산업별</target>
+      </trans-unit>
+      <trans-unit id="s04.tab3Label">
+        <source>Architecture</source>
+        <target>아키텍처</target>
+      </trans-unit>
+      <trans-unit id="s04.tab4Label">
+        <source>Strategy</source>
+        <target>전략</target>
+      </trans-unit>
+      <trans-unit id="s04.tab5Label">
+        <source>Comparison</source>
+        <target>비교</target>
+      </trans-unit>
+
+      <!-- Section04 — Article 1 -->
+      <trans-unit id="s04.a1Category">
+        <source>INDUSTRY · TELECOM</source>
+        <target>산업 · 통신</target>
+      </trans-unit>
+      <trans-unit id="s04.a1Title">
+        <source>How to deploy AI in a telecom NOC without exposing network data</source>
+        <target>네트워크 데이터 노출 없이 통신사 NOC에 AI를 배포하는 방법</target>
+      </trans-unit>
+      <trans-unit id="s04.a1Description">
+        <source>Step-by-step deployment guide. Validated at SK Telecom and Deutsche Telekom T Challenge 2026 Top 12.</source>
+        <target>단계별 배포 가이드. SK텔레콤 및 도이체 텔레콤 T Challenge 2026 Top 12에서 검증.</target>
+      </trans-unit>
+      <trans-unit id="s04.a1Slug">
+        <source>/learn/telecom-noc-ai-deployment</source>
+        <target>/learn/telecom-noc-ai-deployment</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <!-- Section04 — Article 2 -->
+      <trans-unit id="s04.a2Category">
+        <source>INDUSTRY · HEALTHCARE</source>
+        <target>산업 · 의료</target>
+      </trans-unit>
+      <trans-unit id="s04.a2Title">
+        <source>How to deploy AI in a hospital without exposing PHI</source>
+        <target>PHI 노출 없이 병원에 AI를 배포하는 방법</target>
+      </trans-unit>
+      <trans-unit id="s04.a2Description">
+        <source>HIPAA-aligned playbook for hospital CIOs and clinical informatics. Deployed at EUMC.</source>
+        <target>병원 CIO 및 임상 정보팀을 위한 HIPAA 준수 플레이북. EUMC 배포 완료.</target>
+      </trans-unit>
+      <trans-unit id="s04.a2Slug">
+        <source>/learn/hospital-ai-deployment-phi-protection</source>
+        <target>/learn/hospital-ai-deployment-phi-protection</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <!-- Section04 — Article 3 -->
+      <trans-unit id="s04.a3Category">
+        <source>ARCHITECTURE · SOVEREIGN AI</source>
+        <target>아키텍처 · Sovereign AI</target>
+      </trans-unit>
+      <trans-unit id="s04.a3Title">
+        <source>Sovereign AI for European enterprises — practical architecture</source>
+        <target>유럽 기업을 위한 Sovereign AI — 실용 아키텍처</target>
+      </trans-unit>
+      <trans-unit id="s04.a3Description">
+        <source>GDPR + EU AI Act + national data residency. Two execution paths under one governance framework.</source>
+        <target>GDPR + EU AI Act + 국가 데이터 잔류 요건. 단일 거버넌스 프레임워크 아래 두 가지 실행 경로.</target>
+      </trans-unit>
+      <trans-unit id="s04.a3Slug">
+        <source>/learn/sovereign-ai-european-enterprises</source>
+        <target>/learn/sovereign-ai-european-enterprises</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <!-- Section04 — Article 4 -->
+      <trans-unit id="s04.a4Category">
+        <source>STRATEGY · PILOT TO PRODUCTION</source>
+        <target>전략 · 파일럿-투-프로덕션</target>
+      </trans-unit>
+      <trans-unit id="s04.a4Title">
+        <source>Why enterprise AI pilots stall — and how they get to production</source>
+        <target>엔터프라이즈 AI 파일럿이 멈추는 이유 — 그리고 프로덕션에 도달하는 방법</target>
+      </trans-unit>
+      <trans-unit id="s04.a4Description">
+        <source>Diagnostic for executives running an AI program. The pattern that ships to production.</source>
+        <target>AI 프로그램을 운영하는 임원을 위한 진단 가이드. 프로덕션에 도달하는 패턴을 제시합니다.</target>
+      </trans-unit>
+      <trans-unit id="s04.a4Slug">
+        <source>/learn/pilot-to-production-enterprise-ai</source>
+        <target>/learn/pilot-to-production-enterprise-ai</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <!-- Section04 — Article 5 -->
+      <trans-unit id="s04.a5Category">
+        <source>ARCHITECTURE · ON-PREM</source>
+        <target>아키텍처 · 온프레미스</target>
+      </trans-unit>
+      <trans-unit id="s04.a5Title">
+        <source>On-premise LLM execution path</source>
+        <target>온프레미스 LLM 실행 경로</target>
+      </trans-unit>
+      <trans-unit id="s04.a5Description">
+        <source>Path B architecture deep-dive: quantized model, internal GPU, vLLM, full air-gap.</source>
+        <target>Path B 아키텍처 심층 분석: 양자화 모델, 내부 GPU, vLLM, 완전 망분리.</target>
+      </trans-unit>
+      <trans-unit id="s04.a5Slug">
+        <source>/learn/on-prem-llm-execution-path</source>
+        <target>/learn/on-prem-llm-execution-path</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <!-- Section04 — Article 6 -->
+      <trans-unit id="s04.a6Category">
+        <source>ARCHITECTURE · DIFFERENTIAL PRIVACY</source>
+        <target>아키텍처 · 차등 프라이버시</target>
+      </trans-unit>
+      <trans-unit id="s04.a6Title">
+        <source>Differential privacy for enterprise LLM</source>
+        <target>엔터프라이즈 LLM을 위한 차등 프라이버시</target>
+      </trans-unit>
+      <trans-unit id="s04.a6Description">
+        <source>Epsilon-DP, Laplace noise, k-anonymity, NER masking — what each adds and why combination matters.</source>
+        <target>Epsilon-DP, 라플라스 노이즈, k-익명성, NER 마스킹 — 각 기법의 역할과 조합의 중요성.</target>
+      </trans-unit>
+      <trans-unit id="s04.a6Slug">
+        <source>/learn/differential-privacy-for-enterprise-llm</source>
+        <target>/learn/differential-privacy-for-enterprise-llm</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <!-- Section04 — Article 7 -->
+      <trans-unit id="s04.a7Category">
+        <source>COMPARISON · GUARDRAILS</source>
+        <target>비교 · 가드레일</target>
+      </trans-unit>
+      <trans-unit id="s04.a7Title">
+        <source>PII guardrails vs. operational data protection</source>
+        <target>PII 가드레일 vs. 운영 데이터 보호</target>
+      </trans-unit>
+      <trans-unit id="s04.a7Description">
+        <source>Why PII detection alone leaves operational data exposed. Where guardrails end and the data layer begins.</source>
+        <target>PII 탐지만으로는 운영 데이터가 그대로 노출되는 이유. 가드레일이 끝나는 곳에서 데이터 레이어가 시작됩니다.</target>
+      </trans-unit>
+      <trans-unit id="s04.a7Slug">
+        <source>/learn/pii-guardrails-vs-operational-data-protection</source>
+        <target>/learn/pii-guardrails-vs-operational-data-protection</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <!-- Section04 — Article 8 -->
+      <trans-unit id="s04.a8Category">
+        <source>INDUSTRY · NETWORK / OT</source>
+        <target>산업 · 네트워크 / OT</target>
+      </trans-unit>
+      <trans-unit id="s04.a8Title">
+        <source>AI on network operations data</source>
+        <target>네트워크 운영 데이터 위의 AI</target>
+      </trans-unit>
+      <trans-unit id="s04.a8Description">
+        <source>Network configurations, topology, alarm sequences — how the data layer protects operational identifiers.</source>
+        <target>네트워크 설정, 토폴로지, 알람 시퀀스 — 데이터 레이어가 운영 식별자를 보호하는 방식.</target>
+      </trans-unit>
+      <trans-unit id="s04.a8Slug">
+        <source>/learn/ai-on-network-operations-data</source>
+        <target>/learn/ai-on-network-operations-data</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <!-- Section05_GlossaryGrid — Header -->
+      <trans-unit id="s05.eyebrow">
+        <source>Glossary</source>
+        <target>용어집</target>
+      </trans-unit>
+      <trans-unit id="s05.heading">
+        <source>Category and architectural terms</source>
+        <target>카테고리 및 아키텍처 용어</target>
+      </trans-unit>
+      <trans-unit id="s05.subheading">
+        <source>11 definitions for buyers, architects, and security teams. Each term with Schema.org DefinedTerm markup.</source>
+        <target>구매 담당자, 아키텍트, 보안 팀을 위한 정의 11개. 각 용어에 Schema.org DefinedTerm 마크업 포함.</target>
+      </trans-unit>
+
+      <!-- Section05 — Terms -->
+      <trans-unit id="s05.t1Term">
+        <source>AI enablement data layer</source>
+        <target>AI 활성화 데이터 레이어</target>
+      </trans-unit>
+      <trans-unit id="s05.t1Definition">
+        <source>The category. Architectural component between regulated systems and LLMs.</source>
+        <target>카테고리 명칭. 규제 시스템과 LLM 사이의 아키텍처 구성 요소.</target>
+      </trans-unit>
+      <trans-unit id="s05.t1Slug">
+        <source>/glossary/ai-enablement-data-layer</source>
+        <target>/glossary/ai-enablement-data-layer</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <trans-unit id="s05.t2Term">
+        <source>AI-ready operational layer</source>
+        <target>AI 준비 완료 운영 레이어</target>
+      </trans-unit>
+      <trans-unit id="s05.t2Definition">
+        <source>Operational data made AI-consumable while sensitive elements are protected.</source>
+        <target>민감 요소를 보호하면서 운영 데이터를 AI가 처리할 수 있는 형태로 변환.</target>
+      </trans-unit>
+      <trans-unit id="s05.t2Slug">
+        <source>/glossary/ai-ready-operational-layer</source>
+        <target>/glossary/ai-ready-operational-layer</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <trans-unit id="s05.t3Term">
+        <source>Structure-preserving encapsulation</source>
+        <target>문서 구조 보존 캡슐화</target>
+      </trans-unit>
+      <trans-unit id="s05.t3Definition">
+        <source>Replacing sensitive elements while keeping document structure intact.</source>
+        <target>민감 요소를 대체하면서 문서 구조를 그대로 유지.</target>
+      </trans-unit>
+      <trans-unit id="s05.t3Slug">
+        <source>/glossary/structure-preserving-encapsulation</source>
+        <target>/glossary/structure-preserving-encapsulation</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <trans-unit id="s05.t4Term">
+        <source>Differential privacy</source>
+        <target>차등 프라이버시</target>
+      </trans-unit>
+      <trans-unit id="s05.t4Definition">
+        <source>Mathematical framework for privacy-preserving data transformation with bounded risk.</source>
+        <target>경계 있는 리스크 내에서 프라이버시를 보존하는 데이터 변환을 위한 수학적 프레임워크.</target>
+      </trans-unit>
+      <trans-unit id="s05.t4Slug">
+        <source>/glossary/differential-privacy</source>
+        <target>/glossary/differential-privacy</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <trans-unit id="s05.t5Term">
+        <source>Two execution paths</source>
+        <target>두 가지 실행 경로</target>
+      </trans-unit>
+      <trans-unit id="s05.t5Definition">
+        <source>Path A (external LLM with capsule) and Path B (on-prem local model) under one governance.</source>
+        <target>Path A(캡슐 적용 외부 LLM)와 Path B(온프레미스 로컬 모델)를 단일 거버넌스 아래 운영.</target>
+      </trans-unit>
+      <trans-unit id="s05.t5Slug">
+        <source>/glossary/two-execution-paths</source>
+        <target>/glossary/two-execution-paths</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <trans-unit id="s05.t6Term">
+        <source>Operational data</source>
+        <target>운영 데이터</target>
+      </trans-unit>
+      <trans-unit id="s05.t6Definition">
+        <source>Workflow data — tickets, configs, clinical notes, claims — that real AI work runs on.</source>
+        <target>실제 AI 업무가 처리하는 워크플로우 데이터 — 티켓, 설정, 임상 노트, 청구 데이터.</target>
+      </trans-unit>
+      <trans-unit id="s05.t6Slug">
+        <source>/glossary/operational-data</source>
+        <target>/glossary/operational-data</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <trans-unit id="s05.t7Term">
+        <source>Sovereign AI</source>
+        <target>Sovereign AI</target>
+        <note>번역 금지 — 브랜드 키워드</note>
+      </trans-unit>
+      <trans-unit id="s05.t7Definition">
+        <source>AI workflows where data, processing, and audit stay inside a defined boundary.</source>
+        <target>데이터, 처리, 감사 이력이 정해진 경계 안에 머무르는 AI 워크플로우.</target>
+      </trans-unit>
+      <trans-unit id="s05.t7Slug">
+        <source>/glossary/sovereign-ai</source>
+        <target>/glossary/sovereign-ai</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <trans-unit id="s05.t8Term">
+        <source>Shadow AI</source>
+        <target>Shadow AI</target>
+        <note>번역 금지 — 기술 고유명사</note>
+      </trans-unit>
+      <trans-unit id="s05.t8Definition">
+        <source>Unsanctioned external LLM use; symptom of missing AI enablement data layer.</source>
+        <target>비공인 외부 LLM 사용. AI 활성화 데이터 레이어 부재의 징후.</target>
+      </trans-unit>
+      <trans-unit id="s05.t8Slug">
+        <source>/glossary/shadow-ai</source>
+        <target>/glossary/shadow-ai</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <trans-unit id="s05.t9Term">
+        <source>Blocked AI workflow</source>
+        <target>차단된 AI 워크플로우</target>
+      </trans-unit>
+      <trans-unit id="s05.t9Definition">
+        <source>A workflow where AI value is real but data exposure rules block deployment.</source>
+        <target>AI 가치는 분명하지만 데이터 노출 규정으로 인해 배포가 차단된 워크플로우.</target>
+      </trans-unit>
+      <trans-unit id="s05.t9Slug">
+        <source>/glossary/blocked-ai-workflow</source>
+        <target>/glossary/blocked-ai-workflow</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <trans-unit id="s05.t10Term">
+        <source>Connector lane</source>
+        <target>커넥터 레인</target>
+      </trans-unit>
+      <trans-unit id="s05.t10Definition">
+        <source>How Capsule reads document, ticket, and operational sources that already live inside the customer environment — without moving raw data outside that environment.</source>
+        <target>LLM Capsule이 고객 환경 내에 이미 존재하는 문서, 티켓, 운영 소스를 읽는 방식 — 원본 데이터를 환경 밖으로 이동시키지 않습니다.</target>
+      </trans-unit>
+      <trans-unit id="s05.t10Slug">
+        <source>/glossary/connector-lane</source>
+        <target>/glossary/connector-lane</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <trans-unit id="s05.t11Term">
+        <source>State vault for restoration</source>
+        <target>복원용 상태 저장소</target>
+      </trans-unit>
+      <trans-unit id="s05.t11Definition">
+        <source>Local key-value store mapping capsule tokens back to original values for restoration.</source>
+        <target>캡슐 토큰을 원본 값으로 복원하기 위한 로컬 키-밸류 저장소.</target>
+      </trans-unit>
+      <trans-unit id="s05.t11Slug">
+        <source>/glossary/state-vault-for-restoration</source>
+        <target>/glossary/state-vault-for-restoration</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <!-- Section06_CTAStrip -->
+      <trans-unit id="s06.title">
+        <source>Have a deployment question?</source>
+        <target>배포에 관해 질문이 있으십니까?</target>
+      </trans-unit>
+      <trans-unit id="s06.subtitle">
+        <source>Bring your industry, your regulatory profile, and your data. We respond within one business day.</source>
+        <target>산업 특성, 규제 환경, 데이터를 가져오십시오. 영업일 기준 1일 이내에 답변드립니다.</target>
+      </trans-unit>
+      <trans-unit id="s06.ctaLabel">
+        <source>Request a Live Demo</source>
+        <target>라이브 데모 요청</target>
+      </trans-unit>
+      <trans-unit id="s06.ctaHref">
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>
