@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-07 16:54:25",
+  "generated": "2026-05-07 17:11:40",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -402,6 +402,11 @@
         {
           "name": "_preview.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/sovereign-ai-european-enterprises/_preview.html",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "_preview_LearnArticle_TelecomNocAiDeployment.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/telecom-noc-ai-deployment/_preview_LearnArticle_TelecomNocAiDeployment.html",
           "modified": "2026-05-07"
         },
         {
@@ -2007,6 +2012,16 @@
           "modified": "2026-04-20"
         },
         {
+          "name": "telecom-noc-ai-deployment-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/telecom-noc-ai-deployment-de-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "telecom-noc-ai-deployment-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/telecom-noc-ai-deployment-ko-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
           "name": "trust-center-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/trust-center-de-lines.md",
           "modified": "2026-04-28"
@@ -2491,6 +2506,11 @@
         {
           "name": "LearnArticle_SovereignAiEuropeanEnterprises.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/sovereign-ai-european-enterprises/LearnArticle_SovereignAiEuropeanEnterprises.tsx",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "LearnArticle_TelecomNocAiDeployment.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/telecom-noc-ai-deployment/LearnArticle_TelecomNocAiDeployment.tsx",
           "modified": "2026-05-07"
         },
         {
