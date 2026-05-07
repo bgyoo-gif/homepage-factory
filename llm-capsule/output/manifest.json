@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-07 16:38:08",
+  "generated": "2026-05-07 16:54:25",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -398,6 +398,11 @@
           "name": "preview.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/preview.html",
           "modified": "2026-04-21"
+        },
+        {
+          "name": "_preview.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/sovereign-ai-european-enterprises/_preview.html",
+          "modified": "2026-05-07"
         },
         {
           "name": "_preview_section01.html",
@@ -1947,6 +1952,16 @@
           "modified": "2026-05-07"
         },
         {
+          "name": "sovereign-ai-european-enterprises-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/sovereign-ai-european-enterprises-de-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "sovereign-ai-european-enterprises-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/sovereign-ai-european-enterprises-ko-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
           "name": "structure-preserving-document-processing-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/structure-preserving-document-processing-de-lines.md",
           "modified": "2026-04-28"
@@ -2471,6 +2486,11 @@
         {
           "name": "LearnArticle_PilotToProductionEnterpriseAi.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/pilot-to-production-enterprise-ai/LearnArticle_PilotToProductionEnterpriseAi.tsx",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "LearnArticle_SovereignAiEuropeanEnterprises.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/sovereign-ai-european-enterprises/LearnArticle_SovereignAiEuropeanEnterprises.tsx",
           "modified": "2026-05-07"
         },
         {

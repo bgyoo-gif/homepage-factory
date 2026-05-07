@@ -1,0 +1,811 @@
+import { addPropertyControls, ControlType } from "framer"
+
+// LearnArticle — Sovereign AI for European Enterprises
+// Article page: /learn/sovereign-ai-european-enterprises
+// Uses the LearnArticle shared template structure (Hero → TL;DR → Body → Related)
+// All text is Props-controlled for Framer CMS compatibility.
+
+interface Props {
+  // Hero
+  backLabel?: string
+  backHref?: string
+  title?: string
+  lead?: string
+  category?: string
+  readTime?: string
+  dateUpdated?: string
+
+  // TL;DR
+  tldrLabel?: string
+  tldrBody?: string
+
+  // Body — rich HTML string rendered with dangerouslySetInnerHTML
+  bodyHtml?: string
+
+  // SEO / JSON-LD
+  canonicalUrl?: string
+  datePublished?: string
+
+  // Related links
+  relatedSectionLabel?: string
+  related1Title?: string
+  related1Href?: string
+  related2Title?: string
+  related2Href?: string
+  related3Title?: string
+  related3Href?: string
+  related4Title?: string
+  related4Href?: string
+  related5Title?: string
+  related5Href?: string
+
+  // CTA strip
+  ctaTitle?: string
+  ctaDescription?: string
+  ctaLabel?: string
+  ctaHref?: string
+}
+
+const DEFAULT_BODY_HTML = `
+<h2>Why sovereign AI matters now</h2>
+<p>The European regulatory landscape has tightened. GDPR enforcement actions have crossed €4 billion in cumulative fines. The EU AI Act (entered into force August 2024) requires high-risk AI systems — including those used in regulated sectors — to maintain demonstrable transparency, audit trails, and data governance. National regulators (BaFin in Germany, ACPR in France) increasingly expect financial institutions to demonstrate AI data sovereignty. Public sector and defense workflows have always required it.</p>
+<p>For European enterprises, this means: AI productivity gains are real, but the architecture has to support sovereignty by design. Sending raw enterprise data to a US-hosted LLM endpoint is no longer acceptable in most regulated workflows. At the same time, completely avoiding LLMs is not acceptable either — the productivity gap is too large.</p>
+
+<h2>The two-path architecture</h2>
+<p>The pragmatic architecture supports two execution paths under one governance framework:</p>
+
+<h3>Path A — In-region approved LLM with capsule data only</h3>
+<p>The capsule (structure-preserving, differential-privacy-protected) is transmitted to an approved external LLM endpoint hosted in-region (EU-hosted Anthropic, OpenAI EU, Mistral EU, or equivalent). Raw enterprise data does not leave the enterprise environment. Best for workflows where the regulatory profile allows external transmission of differentially-private capsules with appropriate contractual safeguards (DPA, SCCs, etc.).</p>
+
+<h3>Path B — On-prem local lightweight model</h3>
+<p>A small private lightweight model runs entirely inside the enterprise environment — Hugging Face quantized model on internal GPU, vLLM-served, or vendor-provided lightweight model. Zero external transmission. Used for workflows where any external endpoint is unacceptable: classified defense workflows, certain financial sector workflows under national regulator requirement, mental health / substance abuse healthcare data.</p>
+
+<p>Path selection is policy-driven per workflow, not per deployment. A single AI enablement data layer instance can route different ticket types, document classes, or business units through different paths.</p>
+
+<h2>GDPR alignment in practice</h2>
+<p>The data layer supports GDPR compliance through:</p>
+<ul>
+  <li><strong>Data residency</strong> — encapsulation happens inside the enterprise EU environment; the capsule routes to in-region LLM endpoints; restoration happens locally.</li>
+  <li><strong>Right to erasure</strong> — local token vault deletion ensures personal data references can be removed in alignment with Article 17.</li>
+  <li><strong>Data minimization (Article 5)</strong> — only the protected capsule reaches the LLM, not the raw personal data.</li>
+  <li><strong>Audit trail</strong> — every encapsulation, processing, and restoration event is logged with policy version, model used, latency, and detection summary.</li>
+</ul>
+<p>Note: this is a technical architecture pattern, not legal guidance. Each enterprise must validate its specific GDPR posture with its own DPO and legal counsel.</p>
+
+<h2>EU AI Act alignment</h2>
+<p>The EU AI Act categorizes AI systems by risk. Many enterprise workflows in regulated sectors (banking, insurance, healthcare, public services, employment) fall in the high-risk category, requiring conformity assessment, transparency, human oversight, and data governance. The data layer architecture supports these obligations:</p>
+<ul>
+  <li><strong>Transparency</strong> — restored outputs carry an audit badge identifying the policy and model used.</li>
+  <li><strong>Human oversight</strong> — the data layer does not act autonomously; it supports human-in-the-loop AI workflows.</li>
+  <li><strong>Data governance</strong> — markers, policies, and audit trail provide demonstrable governance for the input data.</li>
+</ul>
+
+<h2>Validation: Deutsche Telekom T Challenge 2026</h2>
+<p>LLM Capsule was recognized in <strong>Deutsche Telekom T Challenge 2026 — Top 12 in Data Security &amp; Governance</strong>. The T Challenge specifically evaluates AI enablement under sovereign data and EU regulatory constraints. The evaluation criteria include data sovereignty architecture, audit governance, integration with operator-grade infrastructure, and on-premise deployability — all areas where the AI enablement data layer pattern matches the regulatory expectation.</p>
+
+<h2>Three deployment archetypes for European enterprises</h2>
+
+<h3>Archetype 1 — Tier-1 Telecom (Path A primary, Path B for sensitive workflows)</h3>
+<p>NOC, customer ops, and BSS workflows use Path A with EU-hosted LLM. Lawful intercept, regulator-restricted segments, and certain enterprise customer workflows use Path B.</p>
+
+<h3>Archetype 2 — Federal / national bank (Path B primary, Path A for low-sensitivity)</h3>
+<p>Risk review, transaction monitoring, and regulatory reporting use Path B (on-prem). Internal communications drafting and general document summarization may use Path A under DPA.</p>
+
+<h3>Archetype 3 — Defense / classified (Path B only)</h3>
+<p>All workflows on Path B. The data layer routes nothing to external endpoints. Audit feeds the command-level governance system.</p>
+
+<h2>Common pitfalls</h2>
+<ul>
+  <li><strong>Treating sovereign AI as binary.</strong> The two-path architecture lets a single enterprise be pragmatic per workflow. Don't lock the whole enterprise into one path.</li>
+  <li><strong>Confusing data residency with sovereignty.</strong> EU-hosted LLM endpoint helps, but doesn't substitute for capsule encapsulation. Raw data inside an EU LLM is still raw data.</li>
+  <li><strong>Skipping the DPO conversation.</strong> Sovereign AI architecture decisions should be reviewed with the DPO + privacy / legal team early, not at the end.</li>
+  <li><strong>Ignoring audit.</strong> Regulators will ask for chain of custody. The audit log must be live from day 1.</li>
+</ul>
+
+<h2>Getting started</h2>
+<p>Bring one regulated workflow (NOC ticket, claim record, clinical note, regulatory submission) and your enterprise's data residency / sovereignty constraints. LLM Capsule deploys on a sample workflow within 30 minutes and demonstrates Path A and Path B in your environment.</p>
+<p><a href="/request-a-demo" class="la-btn la-btn--primary">Request a sovereign AI demo</a></p>
+`
+
+export default function LearnArticle_SovereignAiEuropeanEnterprises({
+  backLabel = "← Learn",
+  backHref = "/learn",
+  title = "Sovereign AI for European enterprises — a practical architecture",
+  lead = "Bring AI into regulated European workflows under GDPR, EU AI Act, and national data residency — without choosing between productivity and compliance.",
+  category = "ARCHITECTURE · Sovereign AI",
+  readTime = "14 min read",
+  dateUpdated = "Updated April 2025",
+  tldrLabel = "TL;DR — Definition",
+  tldrBody = "Sovereign AI means enterprise AI workflows where data, processing, and audit remain inside a defined regulatory and geographic boundary. For European enterprises, this typically means GDPR-compliant data handling, in-region LLM endpoints (EU-hosted LLM providers, or on-prem local models), and a full audit trail for regulator review. An AI enablement data layer like LLM Capsule provides two execution paths — in-region external LLM with capsule data only, or on-prem local lightweight model — so a single enterprise can adopt sovereign AI without giving up the productivity of best-in-class LLMs.",
+  bodyHtml = DEFAULT_BODY_HTML,
+  canonicalUrl = "https://llmcapsule.ai/learn/sovereign-ai-european-enterprises",
+  datePublished = "2025-04-15",
+  relatedSectionLabel = "Continue reading",
+  related1Title = "On-premise LLM execution path",
+  related1Href = "/learn/on-prem-llm-execution-path",
+  related2Title = "Differential privacy for enterprise LLM",
+  related2Href = "/learn/differential-privacy-for-enterprise-llm",
+  related3Title = "Telecom NOC AI deployment",
+  related3Href = "/learn/telecom-noc-ai-deployment",
+  related4Title = "Glossary: Two execution paths",
+  related4Href = "/glossary/two-execution-paths",
+  related5Title = "Trust: GDPR / HIPAA / SOX compliance",
+  related5Href = "/trust",
+  ctaTitle = "Sovereign AI in your regulated European environment.",
+  ctaDescription = "30-minute deployment on a sample workflow. Bring your data residency constraints — we'll demonstrate Path A and Path B in your environment.",
+  ctaLabel = "Request a sovereign AI demo",
+  ctaHref = "/request-a-demo",
+}: Props) {
+  const relatedItems = [
+    { title: related1Title, href: related1Href },
+    { title: related2Title, href: related2Href },
+    { title: related3Title, href: related3Href },
+    { title: related4Title, href: related4Href },
+    { title: related5Title, href: related5Href },
+  ].filter((r) => r.title && r.href)
+
+  const jsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": title,
+    "description": lead,
+    "author": { "@type": "Organization", "name": "CUBIG" },
+    "publisher": { "@type": "Organization", "name": "CUBIG" },
+    "datePublished": datePublished,
+    "dateModified": "2025-04-15",
+    "mainEntityOfPage": canonicalUrl,
+    "wordCount": 1800,
+  })
+
+  const faqJsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is sovereign AI for European enterprises?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sovereign AI means enterprise AI workflows where data, processing, and audit remain inside a defined regulatory and geographic boundary. For European enterprises, this means GDPR-compliant data handling, in-region LLM endpoints, and a full audit trail for regulator review.",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "What are the two execution paths in sovereign AI architecture?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Path A routes a structure-preserving, differentially-private capsule to an approved in-region external LLM endpoint — raw enterprise data never leaves the enterprise. Path B runs a lightweight model entirely on-prem with zero external transmission, used for classified defense, certain financial sector workflows, and sensitive healthcare data.",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "How does LLM Capsule support GDPR compliance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The data layer supports GDPR through data residency (encapsulation inside EU environment), right to erasure (local token vault deletion aligned with Article 17), data minimization (only the protected capsule reaches the LLM), and a full audit trail of every encapsulation, processing, and restoration event.",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "Has LLM Capsule been validated in a European enterprise context?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. LLM Capsule was recognized in Deutsche Telekom T Challenge 2026 — Top 12 in Data Security & Governance. The evaluation criteria include data sovereignty architecture, audit governance, integration with operator-grade infrastructure, and on-premise deployability.",
+        },
+      },
+    ],
+  })
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+        /* ── Root ─────────────────────────────────────────── */
+        .saee-root {
+          width: 100%;
+          container-type: inline-size;
+          font-family: var(--f-display, 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif);
+          color: var(--c-ink, #0f1130);
+          background-color: var(--c-bg, #ffffff);
+          -webkit-font-smoothing: antialiased;
+          word-break: keep-all;
+          overflow-wrap: break-word;
+        }
+
+        /* ── Container ────────────────────────────────────── */
+        .saee-container {
+          max-width: var(--container-max, 1280px);
+          margin: 0 auto;
+          padding: 0 var(--s-page, clamp(20px, 4vw, 80px));
+        }
+
+        /* ── 1. Article Hero ──────────────────────────────── */
+        .saee-hero {
+          padding: clamp(60px, 8vw, 100px) 0 clamp(40px, 5vw, 64px);
+          border-bottom: 1px solid var(--c-rule, #e5e7eb);
+        }
+
+        .saee-hero__back {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--c-primary, #5b4fe9);
+          text-decoration: none;
+          letter-spacing: 0.01em;
+          margin-bottom: 28px;
+          transition: color 0.15s;
+        }
+        .saee-hero__back:hover { color: var(--c-primary-dark, #3b2fbf); }
+
+        .saee-hero__title {
+          font-size: clamp(32px, 4.5vw, 56px);
+          font-weight: 700;
+          line-height: 1.12;
+          letter-spacing: -0.02em;
+          color: var(--c-ink, #0f1130);
+          margin: 0 0 20px;
+          max-width: 860px;
+        }
+
+        .saee-hero__lead {
+          font-size: clamp(16px, 1.4vw, 19px);
+          line-height: 1.65;
+          color: var(--c-ink-soft, #3a3d5e);
+          margin: 0 0 28px;
+          max-width: 760px;
+        }
+
+        .saee-hero__meta {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 10px 16px;
+          max-width: 760px;
+        }
+
+        .saee-meta__chip {
+          display: inline-flex;
+          align-items: center;
+          padding: 4px 12px;
+          border-radius: 999px;
+          background-color: var(--c-primary-soft, #eeebfe);
+          color: var(--c-primary, #5b4fe9);
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+        }
+
+        .saee-meta__sep {
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: var(--c-rule, #e5e7eb);
+          flex-shrink: 0;
+        }
+
+        .saee-meta__time,
+        .saee-meta__date {
+          font-size: 13px;
+          color: var(--c-muted, #6b7280);
+          font-weight: 500;
+        }
+
+        /* ── 2. TL;DR block ───────────────────────────────── */
+        .saee-tldr-wrap {
+          padding: clamp(40px, 5vw, 72px) 0;
+          border-bottom: 1px solid var(--c-rule, #e5e7eb);
+        }
+
+        .saee-tldr {
+          max-width: 880px;
+          margin: 0 auto;
+          background-color: var(--c-bg-dark, #0f1130);
+          border-radius: var(--r-lg, 16px);
+          padding: 32px 36px;
+        }
+
+        .saee-tldr__label {
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: var(--c-primary, #5b4fe9);
+          margin-bottom: 14px;
+        }
+
+        .saee-tldr__body {
+          font-size: 16px;
+          line-height: 1.7;
+          color: rgba(255, 255, 255, 0.88);
+          margin: 0;
+        }
+
+        .saee-tldr__body strong {
+          color: #ffffff;
+          font-weight: 700;
+        }
+
+        /* ── 3. Article Body ──────────────────────────────── */
+        .saee-body-wrap {
+          padding: clamp(48px, 6vw, 96px) 0;
+          border-bottom: 1px solid var(--c-rule, #e5e7eb);
+        }
+
+        .saee-body {
+          max-width: 760px;
+          margin: 0 auto;
+        }
+
+        /* Headings inside body */
+        .saee-body h2 {
+          font-size: clamp(22px, 2.2vw, 28px);
+          font-weight: 700;
+          line-height: 1.2;
+          letter-spacing: -0.02em;
+          color: var(--c-ink, #0f1130);
+          margin: 0 0 18px;
+          padding-top: 40px;
+          border-top: 2px solid var(--c-rule, #e5e7eb);
+        }
+
+        .saee-body h2:first-child {
+          padding-top: 0;
+          border-top: none;
+        }
+
+        .saee-body h3 {
+          font-size: clamp(17px, 1.5vw, 20px);
+          font-weight: 700;
+          line-height: 1.25;
+          letter-spacing: -0.01em;
+          color: var(--c-ink, #0f1130);
+          margin: 32px 0 10px;
+        }
+
+        /* Paragraphs */
+        .saee-body p {
+          font-size: 17px;
+          line-height: 1.75;
+          color: var(--c-ink-soft, #3a3d5e);
+          margin: 0 0 18px;
+        }
+
+        .saee-body p:last-child { margin-bottom: 0; }
+
+        .saee-body p strong {
+          color: var(--c-ink, #0f1130);
+          font-weight: 700;
+        }
+
+        /* Lists */
+        .saee-body ul,
+        .saee-body ol {
+          margin: 0 0 24px 0;
+          padding-left: 24px;
+        }
+
+        .saee-body li {
+          font-size: 17px;
+          line-height: 1.7;
+          color: var(--c-ink-soft, #3a3d5e);
+          margin-bottom: 10px;
+        }
+
+        .saee-body li strong {
+          color: var(--c-ink, #0f1130);
+          font-weight: 700;
+        }
+
+        .saee-body li:last-child { margin-bottom: 0; }
+
+        /* Blockquote */
+        .saee-body blockquote {
+          margin: 28px 0;
+          padding: 20px 24px;
+          border-left: 3px solid var(--c-primary, #5b4fe9);
+          background-color: var(--c-primary-soft, #eeebfe);
+          border-radius: 0 var(--r-sm, 6px) var(--r-sm, 6px) 0;
+        }
+
+        .saee-body blockquote p {
+          margin: 0;
+          color: var(--c-ink, #0f1130);
+          font-style: italic;
+        }
+
+        /* Inline code */
+        .saee-body code {
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 14px;
+          background-color: var(--c-bg-soft, #f7f8fb);
+          border: 1px solid var(--c-rule, #e5e7eb);
+          border-radius: var(--r-sm, 6px);
+          padding: 2px 7px;
+          color: var(--c-ink, #0f1130);
+        }
+
+        /* Code block (pre) */
+        .saee-body pre {
+          background-color: var(--c-bg-dark, #0f1130);
+          border-radius: var(--r-md, 10px);
+          padding: 24px;
+          margin: 24px 0;
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+        .saee-body pre::-webkit-scrollbar { display: none; }
+
+        .saee-body pre code {
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 14px;
+          background: none;
+          border: none;
+          padding: 0;
+          color: rgba(255, 255, 255, 0.9);
+          line-height: 1.65;
+        }
+
+        /* Table */
+        .saee-body table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 28px 0;
+          font-size: 15px;
+        }
+
+        .saee-body th,
+        .saee-body td {
+          padding: 12px 16px;
+          text-align: left;
+          border-bottom: 1px solid var(--c-rule, #e5e7eb);
+          line-height: 1.5;
+          color: var(--c-ink-soft, #3a3d5e);
+        }
+
+        .saee-body th {
+          font-weight: 700;
+          color: var(--c-ink, #0f1130);
+          background-color: var(--c-bg-soft, #f7f8fb);
+        }
+
+        .saee-body tr:last-child td { border-bottom: none; }
+
+        /* Callout (amber) */
+        .saee-body .callout {
+          display: flex;
+          gap: 14px;
+          padding: 20px 24px;
+          background-color: var(--c-amber-soft, #fef3c7);
+          border-left: 3px solid var(--c-amber, #f59e0b);
+          border-radius: 0 var(--r-sm, 6px) var(--r-sm, 6px) 0;
+          margin: 28px 0;
+        }
+
+        .saee-body .callout__body {
+          font-size: 15px;
+          line-height: 1.65;
+          color: var(--c-ink, #0f1130);
+          margin: 0;
+        }
+
+        /* Takeaways box */
+        .saee-body .takeaways {
+          background-color: var(--c-bg-soft, #f7f8fb);
+          border: 1px solid var(--c-rule, #e5e7eb);
+          border-radius: var(--r-md, 10px);
+          padding: 24px 28px;
+          margin: 28px 0;
+        }
+
+        .saee-body .takeaways__label {
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: var(--c-muted, #6b7280);
+          margin-bottom: 12px;
+        }
+
+        .saee-body .takeaways ul {
+          margin: 0;
+          padding-left: 20px;
+        }
+
+        .saee-body .takeaways li {
+          font-size: 15px;
+        }
+
+        /* Inline links inside body */
+        .saee-body a {
+          color: var(--c-primary, #5b4fe9);
+          text-decoration: none;
+          border-bottom: 1px solid transparent;
+          transition: border-color 0.15s, color 0.15s;
+        }
+        .saee-body a:hover {
+          color: var(--c-primary-dark, #3b2fbf);
+          border-bottom-color: var(--c-primary-dark, #3b2fbf);
+        }
+
+        /* Button inside body */
+        .saee-body .la-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 13px 22px;
+          border-radius: var(--r-md, 10px);
+          font-weight: 600;
+          font-size: 15px;
+          cursor: pointer;
+          text-decoration: none;
+          border: 1px solid transparent;
+          transition: background-color 0.2s, color 0.2s;
+          border-bottom: none;
+        }
+        .saee-body .la-btn:hover { border-bottom: none; }
+
+        .saee-body .la-btn--primary {
+          background-color: var(--c-ink, #0f1130);
+          color: #ffffff;
+        }
+        .saee-body .la-btn--primary:hover {
+          background-color: var(--c-primary, #5b4fe9);
+          color: #ffffff;
+        }
+
+        /* ── 4. Related Links ─────────────────────────────── */
+        .saee-related {
+          padding: clamp(48px, 6vw, 80px) 0;
+          background-color: var(--c-bg-soft, #f7f8fb);
+        }
+
+        .saee-related__label {
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: var(--c-muted, #6b7280);
+          margin-bottom: 20px;
+        }
+
+        .saee-related__grid {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 16px;
+        }
+
+        @container (max-width: 767px) {
+          .saee-related__grid {
+            grid-template-columns: minmax(0, 1fr);
+          }
+        }
+
+        @container (min-width: 768px) and (max-width: 1023px) {
+          .saee-related__grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+
+        .saee-related__card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 16px;
+          padding: 20px 22px;
+          background-color: var(--c-bg, #ffffff);
+          border: 1px solid var(--c-rule, #e5e7eb);
+          border-radius: var(--r-md, 10px);
+          text-decoration: none;
+          color: var(--c-ink, #0f1130);
+          transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        .saee-related__card:hover {
+          border-color: var(--c-primary, #5b4fe9);
+          box-shadow: 0 4px 16px rgba(91, 79, 233, 0.08);
+        }
+
+        .saee-related__card-title {
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 1.4;
+          color: var(--c-ink, #0f1130);
+        }
+
+        .saee-related__card-arrow {
+          font-size: 18px;
+          color: var(--c-primary, #5b4fe9);
+          line-height: 1;
+          align-self: flex-end;
+        }
+
+        /* ── 5. CTA Strip ─────────────────────────────────── */
+        .saee-cta {
+          padding: clamp(56px, 7vw, 96px) 0;
+          background-color: var(--c-bg-dark, #0f1130);
+        }
+
+        .saee-cta__inner {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 12px;
+        }
+
+        .saee-cta__title {
+          font-size: clamp(26px, 3vw, 38px);
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -0.02em;
+          color: #ffffff;
+          margin: 0;
+          max-width: 640px;
+        }
+
+        .saee-cta__desc {
+          font-size: clamp(15px, 1.2vw, 17px);
+          line-height: 1.65;
+          color: rgba(255, 255, 255, 0.72);
+          margin: 0 0 8px;
+          max-width: 560px;
+        }
+
+        .saee-cta__btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 14px 28px;
+          border-radius: var(--r-md, 10px);
+          font-weight: 600;
+          font-size: 15px;
+          cursor: pointer;
+          text-decoration: none;
+          background-color: var(--c-bg, #ffffff);
+          color: var(--c-ink, #0f1130);
+          border: none;
+          transition: background-color 0.2s, color 0.2s;
+        }
+        .saee-cta__btn:hover {
+          background-color: var(--c-primary-soft, #eeebfe);
+          color: var(--c-primary, #5b4fe9);
+        }
+
+        /* ── Container query: mobile adjustments ─────────── */
+        @container (max-width: 767px) {
+          .saee-hero { padding-top: 48px; }
+          .saee-hero__title { font-size: 28px; }
+          .saee-hero__lead { font-size: 16px; }
+          .saee-tldr { padding: 24px 20px; border-radius: var(--r-md, 10px); }
+          .saee-body p,
+          .saee-body li { font-size: 16px; }
+          .saee-body h2 { padding-top: 28px; }
+          .saee-body table { font-size: 14px; display: block; overflow-x: auto; scrollbar-width: none; }
+          .saee-body table::-webkit-scrollbar { display: none; }
+          .saee-cta__inner { gap: 10px; }
+          .saee-cta__title { font-size: 24px; }
+          .saee-cta__desc { font-size: 15px; }
+        }
+      `}</style>
+
+      <div className="saee-root">
+
+        {/* ── 1. Article Hero ── */}
+        <section className="saee-hero">
+          <div className="saee-container">
+            <a href={backHref} className="saee-hero__back">{backLabel}</a>
+            <h1 className="saee-hero__title">{title}</h1>
+            <p className="saee-hero__lead">{lead}</p>
+            <div className="saee-hero__meta">
+              <span className="saee-meta__chip">{category}</span>
+              <span className="saee-meta__sep" aria-hidden="true" />
+              <span className="saee-meta__time">{readTime}</span>
+              <span className="saee-meta__sep" aria-hidden="true" />
+              <span className="saee-meta__date">{dateUpdated}</span>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 2. TL;DR ── */}
+        <div className="saee-tldr-wrap">
+          <div className="saee-container">
+            <div className="saee-tldr">
+              <div className="saee-tldr__label">{tldrLabel}</div>
+              <p className="saee-tldr__body">{tldrBody}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* ── 3. Article Body ── */}
+        <div className="saee-body-wrap">
+          <div className="saee-container">
+            <article
+              className="saee-body"
+              dangerouslySetInnerHTML={{ __html: bodyHtml }}
+            />
+          </div>
+        </div>
+
+        {/* ── 4. Related Links ── */}
+        {relatedItems.length > 0 && (
+          <div className="saee-related">
+            <div className="saee-container">
+              <div className="saee-related__label">{relatedSectionLabel}</div>
+              <div className="saee-related__grid">
+                {relatedItems.map((item, i) => (
+                  <a key={i} href={item.href} className="saee-related__card">
+                    <span className="saee-related__card-title">{item.title}</span>
+                    <span className="saee-related__card-arrow" aria-hidden="true">→</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── 5. CTA Strip ── */}
+        <div className="saee-cta">
+          <div className="saee-container">
+            <div className="saee-cta__inner">
+              <h2 className="saee-cta__title">{ctaTitle}</h2>
+              {ctaDescription && (
+                <p className="saee-cta__desc">{ctaDescription}</p>
+              )}
+              <a href={ctaHref} className="saee-cta__btn">{ctaLabel}</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </>
+  )
+}
+
+addPropertyControls(LearnArticle_SovereignAiEuropeanEnterprises, {
+  // Hero
+  backLabel:   { type: ControlType.String, title: "Back Label",    defaultValue: "← Learn" },
+  backHref:    { type: ControlType.String, title: "Back URL",      defaultValue: "/learn" },
+  title:       { type: ControlType.String, title: "Title",         defaultValue: "Sovereign AI for European enterprises — a practical architecture" },
+  lead:        { type: ControlType.String, title: "Lead",          defaultValue: "Bring AI into regulated European workflows under GDPR, EU AI Act, and national data residency — without choosing between productivity and compliance.", displayTextArea: true },
+  category:    { type: ControlType.String, title: "Category",      defaultValue: "ARCHITECTURE · Sovereign AI" },
+  readTime:    { type: ControlType.String, title: "Read Time",     defaultValue: "14 min read" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated",  defaultValue: "Updated April 2025" },
+
+  // TL;DR
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR — Definition" },
+  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "Sovereign AI means enterprise AI workflows where data, processing, and audit remain inside a defined regulatory and geographic boundary. For European enterprises, this typically means GDPR-compliant data handling, in-region LLM endpoints (EU-hosted LLM providers, or on-prem local models), and a full audit trail for regulator review. An AI enablement data layer like LLM Capsule provides two execution paths — in-region external LLM with capsule data only, or on-prem local lightweight model — so a single enterprise can adopt sovereign AI without giving up the productivity of best-in-class LLMs.", displayTextArea: true },
+
+  // Body HTML
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: DEFAULT_BODY_HTML, displayTextArea: true },
+
+  // SEO
+  canonicalUrl:  { type: ControlType.String, title: "Canonical URL",   defaultValue: "https://llmcapsule.ai/learn/sovereign-ai-european-enterprises" },
+  datePublished: { type: ControlType.String, title: "Date Published",  defaultValue: "2025-04-15" },
+
+  // Related links
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "Continue reading" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "On-premise LLM execution path" },
+  related1Href:  { type: ControlType.String, title: "Related 1 URL",   defaultValue: "/learn/on-prem-llm-execution-path" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "Differential privacy for enterprise LLM" },
+  related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/learn/differential-privacy-for-enterprise-llm" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "Telecom NOC AI deployment" },
+  related3Href:  { type: ControlType.String, title: "Related 3 URL",   defaultValue: "/learn/telecom-noc-ai-deployment" },
+  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "Glossary: Two execution paths" },
+  related4Href:  { type: ControlType.String, title: "Related 4 URL",   defaultValue: "/glossary/two-execution-paths" },
+  related5Title: { type: ControlType.String, title: "Related 5 Title", defaultValue: "Trust: GDPR / HIPAA / SOX compliance" },
+  related5Href:  { type: ControlType.String, title: "Related 5 URL",   defaultValue: "/trust" },
+
+  // CTA strip
+  ctaTitle:       { type: ControlType.String, title: "CTA Title",        defaultValue: "Sovereign AI in your regulated European environment." },
+  ctaDescription: { type: ControlType.String, title: "CTA Description",  defaultValue: "30-minute deployment on a sample workflow. Bring your data residency constraints — we'll demonstrate Path A and Path B in your environment.", displayTextArea: true },
+  ctaLabel:       { type: ControlType.String, title: "CTA Button Label", defaultValue: "Request a sovereign AI demo" },
+  ctaHref:        { type: ControlType.String, title: "CTA Button URL",   defaultValue: "/request-a-demo" },
+})
