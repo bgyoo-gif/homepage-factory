@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+  <file id="pilot-to-production-enterprise-ai">
+
+    <!-- ── Hero ── -->
+    <unit id="backLabel">
+      <segment>
+        <source>← Learn</source>
+        <target>← Learn</target>
+      </segment>
+    </unit>
+    <unit id="backHref">
+      <segment>
+        <source>/learn</source>
+        <target>/learn</target>
+      </segment>
+    </unit>
+    <unit id="title">
+      <segment>
+        <source>Why enterprise AI pilots stall — and how they get to production</source>
+        <target>Warum KI-Pilotprojekte im Unternehmen ins Stocken geraten — und wie sie dennoch den Produktionsbetrieb erreichen</target>
+      </segment>
+    </unit>
+    <unit id="lead">
+      <segment>
+        <source>A diagnostic for executives, CDOs, CAIOs, and CIOs whose AI pilot has run for months without reaching production.</source>
+        <target>Eine Analyse für Führungskräfte, CDOs, CAIOs und CIOs, deren KI-Pilotprojekt seit Monaten läuft, aber den Produktionsbetrieb nicht erreicht.</target>
+      </segment>
+    </unit>
+    <unit id="category">
+      <segment>
+        <source>Strategy · Pilot to production</source>
+        <target>Strategie · Vom Pilotprojekt in die Produktion</target>
+      </segment>
+    </unit>
+    <unit id="readTime">
+      <segment>
+        <source>10 min read</source>
+        <target>10 Min. Lesezeit</target>
+      </segment>
+    </unit>
+    <unit id="dateUpdated">
+      <segment>
+        <source>Updated April 2025</source>
+        <target>Aktualisiert April 2025</target>
+      </segment>
+    </unit>
+
+    <!-- ── TL;DR ── -->
+    <unit id="tldrLabel">
+      <segment>
+        <source>TL;DR — Diagnosis</source>
+        <target>TL;DR — Diagnose</target>
+      </segment>
+    </unit>
+    <unit id="tldrBody">
+      <segment>
+        <source>Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without an AI enablement data layer, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.</source>
+        <target>Die meisten KI-Pilotprojekte in Unternehmen scheitern nicht an der Qualität der KI. Sie scheitern, weil die Datenschicht zwischen der KI und den operativen Systemen fehlt. Ohne eine KI-Datenschicht können regulierte Unternehmen die Daten, die die KI benötigt, nicht bereitstellen, ohne dabei Daten offenzulegen, die das Unternehmen nicht freigeben darf. Pilotprojekte bestehen ihre Tests auf Basis synthetischer oder anonymisierter Daten — und geraten ins Stocken, sobald die Sicherheits-, Datenschutz- und Compliance-Prüfung beginnt. Das Muster, das den Produktionsbetrieb erreicht: strukturerhaltende Kapsulierung + Differential-Privacy-basierter Schutz + Plug-in-Ausführung + Wiederherstellung + zwei Ausführungspfade.</target>
+      </segment>
+    </unit>
+
+    <!-- ── Body HTML ── -->
+    <unit id="bodyHtml">
+      <segment>
+        <source><![CDATA[
+<h2>The standard pilot trajectory</h2>
+<p>Months 0-2: leadership selects a use case (NOC RCA, clinical summarization, claim review, contract review). A vendor demos on a sanitized dataset. Excitement.</p>
+<p>Months 2-4: the team integrates with the LLM provider, runs the workflow on synthetic data, gets impressive metrics. The pilot is "ready to go to production."</p>
+<p>Months 4-6: security review opens. The CISO's team asks the obvious question: are we actually sending raw operational data — subscriber IDs, patient records, claim details — to the LLM? Sometimes the answer is "no, we'll use anonymization." The anonymization breaks the data; output quality drops 30-50%. Sometimes the answer is "yes, with a contract." That contract triggers DPO, regulator, and board-level review.</p>
+<p>Months 6-12: the pilot is renamed, rescoped, paused, or quietly killed. Shadow AI emerges — engineers paste anonymized snippets into ChatGPT on personal devices to keep the productivity gains they tasted in the pilot.</p>
+
+<h2>The four-part diagnosis</h2>
+<p>Why does this happen, repeatedly, across every regulated industry?</p>
+
+<h3>Reason 1 — External LLMs raise enterprise ROI</h3>
+<p>Approved external LLMs measurably improve productivity, processing speed, and automation ROI. Every regulated enterprise wants in. The pilot exists because the executive team genuinely sees the upside.</p>
+
+<h3>Reason 2 — PII guardrails alone are not enough</h3>
+<p>The standard answer (PII detection at the API boundary) was built for individual identifiers — names, emails, phone numbers. Real regulated workflows run on structured operational data: ticket sequences, network configs, OT manifests, clinical workflows, claim records, mission context. PII guardrails don't see this. The data slips right through.</p>
+
+<h3>Reason 3 — DMZ and legacy operational data is complex and unstructured</h3>
+<p>Mixed free text, network identifiers, system logs, user context, incident records, configurations. Sensitivity leaks through structure, sequence, and aggregate pattern — not just through field names. Field-level filtering misses entire categories of risk.</p>
+
+<h3>Reason 4 — Filtering alone leaves regulated risk standing</h3>
+<p>GDPR, HIPAA, SOX, sector regulators, audit obligations, sovereignty constraints. Even if every field is masked, the residual risk of differential analysis, re-identification through context, and inference exposure is what regulators evaluate. Simple filtering cannot close that.</p>
+
+<p><strong>Result:</strong> the pilot demonstrated value on synthetic data; the production deployment requires real data; the gap between them is the AI enablement data layer that wasn't there.</p>
+
+<h2>The pattern that gets pilots to production</h2>
+<p>Pilots that ship to production typically have these architectural features in place:</p>
+<ol>
+<li><strong>An AI enablement data layer between systems and AI.</strong> Not a guardrail. Not a gateway. A layer that transforms operational data into AI-ready capsules locally, executes the AI workflow, and restores results into the originating system.</li>
+<li><strong>Structure-preserving capsule.</strong> Tables, cross-references, configurations, document hierarchies survive intact. AI receives full context — not broken fragments.</li>
+<li><strong>Differential-privacy-based protection.</strong> Beyond field masking — DP noise, k-anonymity, semantic tokenization — to address inference and aggregate-pattern risk that simple filtering can't close.</li>
+<li><strong>Plug-in execution into existing legacy systems.</strong> No migration. The data layer reads where the document already lives.</li>
+<li><strong>Restoration into the originating workflow.</strong> The end-user works in their familiar tool with real values restored. AI doesn't create a new workflow; it lives inside the existing one.</li>
+<li><strong>Two execution paths under one governance framework.</strong> External approved LLM with capsule data only, or on-prem local lightweight model. Path is policy-driven per workflow.</li>
+<li><strong>Customer-defined markers + time-shifting policy.</strong> What's sensitive today isn't what's sensitive tomorrow. Define, version, time-shift.</li>
+</ol>
+
+<h2>What changes for the executive</h2>
+<p>For the CDO / CAIO / CIO running an AI program:</p>
+<ul>
+<li>The conversation shifts from "AI vs. security" to "AI through the data layer."</li>
+<li>The pilot exit criteria change from "demo on sanitized data" to "demo on real data with audit trail."</li>
+<li>Shadow AI risk falls — the productivity people tasted in the pilot becomes available in the official tooling.</li>
+<li>Procurement simplifies — one data layer covers multiple AI use cases across multiple LLM providers.</li>
+<li>Regulator conversations have evidence — chain of custody, policy versioning, restoration audit.</li>
+</ul>
+
+<h2>How long does it take to get to production?</h2>
+<p>With the data layer in place, regulated workflows typically reach production in 8-12 weeks (vs. 6-12 months stalled in the standard pattern). The gating items are usually internal — DPO sign-off, regulator notification (where required), security review of the policy. The technical integration is days, not months.</p>
+
+<h2>Getting started</h2>
+<p>If you have an AI pilot that has stalled in security or compliance review, the diagnosis is usually a missing data layer. Bring one stalled use case and one regulatory constraint. We deploy LLM Capsule on a sample workflow within 30 minutes and produce an evaluation report on what changes when the data layer is in place.</p>
+<p><a href="/request-a-demo" class="ptpa-btn ptpa-btn--primary">Request an evaluation</a></p>
+]]></source>
+        <target><![CDATA[
+<h2>Der typische Verlauf eines Pilotprojekts</h2>
+<p>Monate 0–2: Die Geschäftsführung wählt einen Anwendungsfall aus — NOC-Root-Cause-Analyse, klinische Zusammenfassung, Schadenbearbeitung, Vertragsanalyse. Ein Anbieter demonstriert das System anhand bereinigter Datensätze. Die Erwartungen sind hoch.</p>
+<p>Monate 2–4: Das Team integriert den LLM-Anbieter, führt den Workflow auf synthetischen Daten aus und erzielt beeindruckende Kennzahlen. Das Pilotprojekt gilt als produktionsreif.</p>
+<p>Monate 4–6: Die Sicherheitsprüfung beginnt. Das CISO-Team stellt die naheliegende Frage: Übermitteln wir tatsächlich rohe operative Daten — Teilnehmer-IDs, Patientenakten, Schadendetails — an das LLM? Lautet die Antwort „Nein, wir anonymisieren", verschlechtert sich die Ausgabequalität um 30–50 %. Lautet die Antwort „Ja, vertraglich geregelt", zieht das eine Prüfung durch den Datenschutzbeauftragten, die Aufsichtsbehörde und den Vorstand nach sich.</p>
+<p>Monate 6–12: Das Pilotprojekt wird umbenannt, neu ausgerichtet, pausiert oder stillschweigend eingestellt. Shadow-KI entsteht — Entwickler übertragen anonymisierte Ausschnitte in ChatGPT auf privaten Geräten, um die Produktivitätsgewinne aus dem Pilotprojekt zu erhalten.</p>
+
+<h2>Viergliedrige Diagnose</h2>
+<p>Warum wiederholt sich dieses Muster branchenübergreifend in allen regulierten Branchen?</p>
+
+<h3>Grund 1 — Externe LLMs steigern den ROI im Unternehmen</h3>
+<p>Zugelassene externe LLMs verbessern Produktivität, Verarbeitungsgeschwindigkeit und Automatisierungsrendite nachweislich. Regulierte Unternehmen wollen dieses Potenzial nutzen. Das Pilotprojekt entsteht, weil die Unternehmensführung den Mehrwert klar erkennt.</p>
+
+<h3>Grund 2 — PII-Guardrails allein reichen nicht aus</h3>
+<p>Die gängige Antwort — PII-Erkennung an der API-Grenze — wurde für individuelle Identifikatoren konzipiert: Namen, E-Mail-Adressen, Telefonnummern. Reale regulierte Workflows basieren auf strukturierten operativen Daten: Ticket-Sequenzen, Netzwerkkonfigurationen, OT-Manifeste, klinische Workflows, Schadenakten, Missionskontext. PII-Guardrails erfassen diese Datentypen nicht. Sie passieren die Prüfung ungehindert.</p>
+
+<h3>Grund 3 — DMZ- und Legacy-Betriebsdaten sind komplex und unstrukturiert</h3>
+<p>Freier Text, Netzwerkidentifikatoren, Systemprotokolle, Nutzerkontext, Incident-Records, Konfigurationen — alles vermischt. Vertraulichkeit geht durch Struktur, Sequenz und aggregierte Muster verloren, nicht nur durch einzelne Feldnamen. Filterung auf Feldebene übersieht ganze Risikokategorien.</p>
+
+<h3>Grund 4 — Filtern allein schließt das regulatorische Restrisiko nicht</h3>
+<p>DSGVO (GDPR), HIPAA, SOX, sektorale Aufsichtsbehörden, Prüfpflichten, Datensouveränität. Selbst wenn alle Felder maskiert sind, bewertet die Aufsicht das Restrisiko aus differentieller Analyse, kontextbasierter Re-Identifikation und Inferenz-Exposition. Einfaches Filtern schließt diese Lücke nicht.</p>
+
+<p><strong>Ergebnis:</strong> Das Pilotprojekt bewies seinen Wert auf synthetischen Daten. Der Produktionsbetrieb erfordert echte Daten. Die Lücke zwischen beiden ist die fehlende KI-Datenschicht.</p>
+
+<h2>Das Muster, das Pilotprojekte in die Produktion bringt</h2>
+<p>Pilotprojekte, die den Produktionsbetrieb erreichen, verfügen typischerweise über folgende architektonische Merkmale:</p>
+<ol>
+<li><strong>Eine KI-Datenschicht zwischen operativen Systemen und der KI.</strong> Kein Guardrail. Kein Gateway. Eine Schicht, die operative Daten lokal in KI-verarbeitbare Kapseln transformiert, den KI-Workflow ausführt und Ergebnisse in das Ausgangssystem zurückführt.</li>
+<li><strong>Strukturerhaltende Kapsel.</strong> Tabellen, Querverweise, Konfigurationen und Dokumenthierarchien bleiben vollständig erhalten. Die KI erhält vollständigen Kontext — keine fragmentierten Ausschnitte.</li>
+<li><strong>Differential-Privacy-basierter Schutz.</strong> Über Feldmaskierung hinaus — DP-Rauschen, k-Anonymität, semantische Tokenisierung — um Inferenz- und Aggregatmusterrisiken zu begegnen, die einfaches Filtern nicht schließen kann.</li>
+<li><strong>Plug-in-Ausführung in bestehenden Legacy-Systemen.</strong> Keine Migration erforderlich. Die Datenschicht liest die Daten dort, wo sie bereits gespeichert sind.</li>
+<li><strong>Wiederherstellung in den ursprünglichen Workflow.</strong> Der Endnutzer arbeitet im gewohnten Werkzeug mit wiederhergestellten Originalwerten. Die KI schafft keinen neuen Workflow — sie integriert sich in den bestehenden.</li>
+<li><strong>Zwei Ausführungspfade unter einem einheitlichen Governance-Rahmen.</strong> Externer zugelassener LLM mit ausschließlich Kapseldaten oder lokales On-Premise-Modell. Die Pfadwahl erfolgt richtliniengesteuert je Workflow.</li>
+<li><strong>Kundendefinierte Marker und zeitgesteuerte Richtlinien.</strong> Was heute als sensibel gilt, muss es morgen nicht mehr sein. Definieren, versionieren, zeitlich steuern.</li>
+</ol>
+
+<h2>Was sich für Führungskräfte ändert</h2>
+<p>Für CDOs, CAIOs und CIOs, die ein KI-Programm verantworten:</p>
+<ul>
+<li>Die Diskussion wechselt von „KI versus Sicherheit" zu „KI durch die Datenschicht".</li>
+<li>Die Abnahmekriterien verschieben sich von „Demo mit bereinigten Daten" zu „Demo mit Echtdaten und Prüfprotokoll".</li>
+<li>Das Shadow-KI-Risiko sinkt — die im Pilotprojekt erlebten Produktivitätsgewinne werden in den offiziellen Werkzeugen verfügbar.</li>
+<li>Die Beschaffung vereinfacht sich — eine Datenschicht deckt mehrere KI-Anwendungsfälle bei mehreren LLM-Anbietern ab.</li>
+<li>Gespräche mit Aufsichtsbehörden werden durch Belege gestützt — Datenkette, Richtlinienversionierung, Wiederherstellungsprotokoll.</li>
+</ul>
+
+<h2>Wie lange dauert der Weg in die Produktion?</h2>
+<p>Mit vorhandener Datenschicht erreichen regulierte Workflows den Produktionsbetrieb typischerweise in 8–12 Wochen — gegenüber 6–12 Monaten im Standardmuster. Die hemmenden Faktoren sind meist intern: Freigabe durch den Datenschutzbeauftragten, behördliche Meldung (soweit erforderlich), Sicherheitsüberprüfung der Richtlinien. Die technische Integration dauert Tage, nicht Monate.</p>
+
+<h2>Nächste Schritte</h2>
+<p>Wenn Ihr KI-Pilotprojekt in der Sicherheits- oder Compliance-Prüfung feststeckt, liegt die Ursache in der Regel in einer fehlenden Datenschicht. Bringen Sie einen blockierten Anwendungsfall und eine regulatorische Anforderung mit. Wir setzen LLM Capsule innerhalb von 30 Minuten auf einem Beispiel-Workflow auf und erstellen einen Evaluierungsbericht, der zeigt, was sich mit der Datenschicht ändert.</p>
+<p><a href="/request-a-demo" class="ptpa-btn ptpa-btn--primary">Evaluierung anfordern</a></p>
+]]></target>
+      </segment>
+    </unit>
+
+    <!-- ── SEO ── -->
+    <unit id="canonicalUrl">
+      <segment>
+        <source>https://llmcapsule.ai/learn/pilot-to-production-enterprise-ai</source>
+        <target>https://llmcapsule.ai/learn/pilot-to-production-enterprise-ai</target>
+      </segment>
+    </unit>
+    <unit id="datePublished">
+      <segment>
+        <source>2025-04-15</source>
+        <target>2025-04-15</target>
+      </segment>
+    </unit>
+
+    <!-- ── Related Links ── -->
+    <unit id="relatedSectionLabel">
+      <segment>
+        <source>Related</source>
+        <target>Weiterführende Artikel</target>
+      </segment>
+    </unit>
+    <unit id="related1Title">
+      <segment>
+        <source>PII guardrails vs. operational data protection</source>
+        <target>PII-Guardrails vs. operativer Datenschutz</target>
+      </segment>
+    </unit>
+    <unit id="related1Href">
+      <segment>
+        <source>/learn/pii-guardrails-vs-operational-data-protection</source>
+        <target>/learn/pii-guardrails-vs-operational-data-protection</target>
+      </segment>
+    </unit>
+    <unit id="related2Title">
+      <segment>
+        <source>Sovereign AI for European enterprises</source>
+        <target>Sovereign KI für europäische Unternehmen</target>
+      </segment>
+    </unit>
+    <unit id="related2Href">
+      <segment>
+        <source>/learn/sovereign-ai-european-enterprises</source>
+        <target>/learn/sovereign-ai-european-enterprises</target>
+      </segment>
+    </unit>
+    <unit id="related3Title">
+      <segment>
+        <source>Glossary: Blocked AI workflow</source>
+        <target>Glossar: Blockierter KI-Workflow</target>
+      </segment>
+    </unit>
+    <unit id="related3Href">
+      <segment>
+        <source>/glossary/blocked-ai-workflow</source>
+        <target>/glossary/blocked-ai-workflow</target>
+      </segment>
+    </unit>
+    <unit id="related4Title">
+      <segment>
+        <source>Glossary: AI enablement data layer</source>
+        <target>Glossar: KI-Datenschicht</target>
+      </segment>
+    </unit>
+    <unit id="related4Href">
+      <segment>
+        <source>/glossary/ai-enablement-data-layer</source>
+        <target>/glossary/ai-enablement-data-layer</target>
+      </segment>
+    </unit>
+
+    <!-- ── CTA Strip ── -->
+    <unit id="ctaTitle">
+      <segment>
+        <source>Your pilot stalled. Let's unblock it.</source>
+        <target>Ihr Pilotprojekt stagniert. Wir analysieren die Ursache.</target>
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
+        <source>Bring one stalled use case and one regulatory constraint. We deploy LLM Capsule on a sample workflow within 30 minutes.</source>
+        <target>Bringen Sie einen blockierten Anwendungsfall und eine regulatorische Anforderung mit. Wir setzen LLM Capsule innerhalb von 30 Minuten auf einem Beispiel-Workflow auf.</target>
+      </segment>
+    </unit>
+    <unit id="ctaLabel">
+      <segment>
+        <source>Request an evaluation</source>
+        <target>Evaluierung anfordern</target>
+      </segment>
+    </unit>
+    <unit id="ctaHref">
+      <segment>
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
+      </segment>
+    </unit>
+
+  </file>
+</xliff>

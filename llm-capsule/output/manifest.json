@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-07 16:23:16",
+  "generated": "2026-05-07 16:38:08",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -387,6 +387,11 @@
         {
           "name": "_preview.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/pii-guardrails-vs-operational-data-protection/_preview.html",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "_preview_LearnArticle_PilotToProductionEnterpriseAi.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/pilot-to-production-enterprise-ai/_preview_LearnArticle_PilotToProductionEnterpriseAi.html",
           "modified": "2026-05-07"
         },
         {
@@ -1732,6 +1737,16 @@
           "modified": "2026-04-20"
         },
         {
+          "name": "pilot-to-production-enterprise-ai-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/pilot-to-production-enterprise-ai-de-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "pilot-to-production-enterprise-ai-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/pilot-to-production-enterprise-ai-ko-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
           "name": "pricing-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/pricing-de-lines.md",
           "modified": "2026-04-28"
@@ -2451,6 +2466,11 @@
         {
           "name": "LearnArticle_PiiGuardrailsVsOperationalDataProtection.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/pii-guardrails-vs-operational-data-protection/LearnArticle_PiiGuardrailsVsOperationalDataProtection.tsx",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "LearnArticle_PilotToProductionEnterpriseAi.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/pilot-to-production-enterprise-ai/LearnArticle_PilotToProductionEnterpriseAi.tsx",
           "modified": "2026-05-07"
         },
         {
