@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file
+    original="llm-capsule/output/framer/glossary/blocked-ai-workflow/GlossaryPage_BlockedAiWorkflow.tsx"
+    source-language="en"
+    target-language="de-DE"
+    datatype="plaintext"
+    tool-id="homepage-factory-translator"
+  >
+    <header>
+      <note>mode: localize | page: glossary/blocked-ai-workflow | brand: llm-capsule</note>
+    </header>
+    <body>
+
+      <!-- ── Hero ── -->
+
+      <trans-unit id="backLabel">
+        <source>← Glossary</source>
+        <target>← Glossar</target>
+        <note>Navigation back link</note>
+      </trans-unit>
+
+      <trans-unit id="backHref">
+        <source>/glossary</source>
+        <target>/glossary</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="term">
+        <source>Blocked AI Workflow</source>
+        <target>Blockierter KI-Workflow</target>
+        <note>Glossary term title — AI→KI per DE localization rules</note>
+      </trans-unit>
+
+      <trans-unit id="lead">
+        <source>The workflow exists. The data exists. The model exists. The integration is blocked because the data cannot leave.</source>
+        <target>Der Prozess ist vorhanden, die Daten sind vorhanden, das Modell ist vorhanden. Die Integration scheitert daran, dass die operativen Daten die regulierte Umgebung nicht verlassen dürfen.</target>
+        <note>Hero lead — EN three-part dash enumeration rewritten as two DE sentences per localize rules</note>
+      </trans-unit>
+
+      <trans-unit id="category">
+        <source>GLOSSARY</source>
+        <target>GLOSSAR</target>
+        <note>Category chip label</note>
+      </trans-unit>
+
+      <!-- ── Definition block ── -->
+
+      <trans-unit id="definitionLabel">
+        <source>Definition</source>
+        <target>Definition</target>
+        <note>Section label — same in German</note>
+      </trans-unit>
+
+      <trans-unit id="definitionBody">
+        <source>A blocked AI workflow is a business process that would benefit from AI but cannot be deployed because the operational data involved cannot be sent to an LLM under the regulatory or sovereignty profile of the workflow. The blocking is operational and regulatory, not capability.</source>
+        <target>Ein blockierter KI-Workflow ist ein Geschäftsprozess, der vom KI-Einsatz profitieren würde, jedoch nicht produktiv betrieben werden kann, weil die betreffenden operativen Daten unter den regulatorischen Anforderungen oder Datensouveränitätsvorgaben des Workflows nicht an ein LLM übermittelt werden dürfen. Die Blockierung ist operativer und regulatorischer Natur — nicht technologischer.</target>
+        <note>Main definition text in dark card — complex EN sentence split into two DE sentences</note>
+      </trans-unit>
+
+      <!-- ── Body HTML ── -->
+
+      <trans-unit id="bodyHtml">
+        <source><![CDATA[
+<h2>Why it matters as a buying frame</h2>
+<p>Most enterprise AI conversations start with capability ("can the model do X?"). For regulated operations, the binding constraint is rarely capability — it is the inability to bring the relevant operational data into the model. That is the blocked AI workflow. Naming it cleanly turns the buying conversation toward the layer that actually unblocks it.</p>
+
+<h2>Common patterns</h2>
+<ul>
+<li>NOC RCA workflows blocked because network logs cannot leave the regulated jurisdiction</li>
+<li>OT vulnerability triage blocked because asset references and plant zones cannot reach an external endpoint</li>
+<li>Clinical workflow assistance blocked because PHI plus operational pattern is not safely handled by PII filtering</li>
+<li>Mission summary drafting blocked because air-gapped environments forbid any external transmission</li>
+<li>Regulated finance review blocked because compliance posture forbids transmission of audit-trail content</li>
+</ul>
+
+<h2>From blocked workflow to operational AI</h2>
+<p>The unblock pattern is consistent across industries:</p>
+<ol>
+<li>Identify the operational data category that is blocking the workflow.</li>
+<li>Apply <a href="/resources/glossary/structure-preserving-encapsulation">structure-preserving encapsulation</a> with <a href="/resources/glossary/differential-privacy">differential-privacy-based protection</a>.</li>
+<li>Route through one of <a href="/resources/glossary/two-execution-paths">two execution paths</a> per policy.</li>
+<li>Restore via state vault back into the originating workflow.</li>
+</ol>
+
+<h2>Reference statement</h2>
+<blockquote><p>Most enterprise AI projects do not fail at the model. They fail at the data the model cannot reach. Naming that as a blocked AI workflow — and unblocking it through an AI enablement data layer — is the entry point for regulated operations.</p></blockquote>
+]]></source>
+        <target><![CDATA[
+<h2>Relevanz als Entscheidungsrahmen</h2>
+<p>Die meisten KI-Gespräche in Unternehmen beginnen mit der Frage nach Fähigkeiten: Kann das Modell X? In regulierten Betrieben ist die eigentliche Einschränkung selten die Modellkompetenz — sie liegt darin, dass die relevanten operativen Daten das Modell nicht erreichen dürfen. Das ist der blockierte KI-Workflow. Wer dieses Problem präzise benennt, lenkt die Beschaffungsdiskussion auf die Schicht, die die Blockierung tatsächlich aufhebt.</p>
+
+<h2>Typische Muster</h2>
+<ul>
+<li>NOC-RCA-Workflows blockiert, weil Netzwerkprotokolle die regulierte Jurisdiction nicht verlassen dürfen</li>
+<li>OT-Schwachstellentriage blockiert, weil Asset-Referenzen und Anlagenbereiche keinen externen Endpunkt erreichen dürfen</li>
+<li>Klinische Workflow-Unterstützung blockiert, weil PHI kombiniert mit operativen Mustern durch PII-Filterung allein nicht sicher verarbeitet werden kann</li>
+<li>Erstellung von Missionszusammenfassungen blockiert, weil Air-Gapped-Umgebungen jede externe Übertragung untersagen</li>
+<li>Regulierte Finanzprüfungen blockiert, weil die Compliance-Anforderungen die Übermittlung von Audit-Trail-Inhalten verbieten</li>
+</ul>
+
+<h2>Vom blockierten Workflow zum produktiven KI-Einsatz</h2>
+<p>Das Muster zur Aufhebung der Blockierung ist branchenübergreifend konsistent:</p>
+<ol>
+<li>Die operative Datenkategorie identifizieren, die den Workflow blockiert.</li>
+<li><a href="/resources/glossary/structure-preserving-encapsulation">Strukturerhaltende Kapsulierung</a> mit <a href="/resources/glossary/differential-privacy">Differential-Privacy-basiertem Schutz</a> anwenden.</li>
+<li>Entsprechend der Richtlinie über einen der <a href="/resources/glossary/two-execution-paths">zwei Ausführungspfade</a> weiterleiten.</li>
+<li>Über den State Vault in den ursprünglichen Workflow zurückführen.</li>
+</ol>
+
+<h2>Kernaussage</h2>
+<blockquote><p>Die meisten KI-Projekte in Unternehmen scheitern nicht am Modell. Sie scheitern an den Daten, die das Modell nicht erreichen kann. Dieses Problem als blockierten KI-Workflow zu benennen — und die Blockierung über einen AI enablement data layer aufzuheben — ist der Einstiegspunkt für regulierte Betriebe.</p></blockquote>
+]]></target>
+        <note>Rich HTML body — HTML tags preserved, text content translated. "AI" in "AI enablement data layer" retained as brand term. "Air-Gapped" retained per DE style guide.</note>
+      </trans-unit>
+
+      <!-- ── Related terms ── -->
+
+      <trans-unit id="related1Label">
+        <source>AI enablement data layer</source>
+        <target>AI enablement data layer</target>
+        <note>Technical brand term — do not translate per translation guide</note>
+      </trans-unit>
+
+      <trans-unit id="related1Href">
+        <source>/glossary/ai-enablement-data-layer</source>
+        <target>/glossary/ai-enablement-data-layer</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related2Label">
+        <source>Structure-preserving encapsulation</source>
+        <target>Strukturerhaltende Kapsulierung</target>
+        <note>Technical concept label — consistent with existing DE glossary</note>
+      </trans-unit>
+
+      <trans-unit id="related2Href">
+        <source>/glossary/structure-preserving-encapsulation</source>
+        <target>/glossary/structure-preserving-encapsulation</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related3Label">
+        <source>Differential privacy</source>
+        <target>Differential Privacy</target>
+        <note>Technical term — capitalized in German as proper noun, consistent with existing DE glossary</note>
+      </trans-unit>
+
+      <trans-unit id="related3Href">
+        <source>/glossary/differential-privacy</source>
+        <target>/glossary/differential-privacy</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related4Label">
+        <source>Two execution paths</source>
+        <target>Zwei Ausführungspfade</target>
+        <note>Technical concept label — consistent with existing DE glossary</note>
+      </trans-unit>
+
+      <trans-unit id="related4Href">
+        <source>/glossary/two-execution-paths</source>
+        <target>/glossary/two-execution-paths</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related5Label">
+        <source>Operational data</source>
+        <target>Operative Daten</target>
+        <note>Technical concept label — consistent with existing DE glossary</note>
+      </trans-unit>
+
+      <trans-unit id="related5Href">
+        <source>/glossary/operational-data</source>
+        <target>/glossary/operational-data</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

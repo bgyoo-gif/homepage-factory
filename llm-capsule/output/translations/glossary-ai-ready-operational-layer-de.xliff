@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file
+    original="llm-capsule/output/framer/glossary/ai-ready-operational-layer/GlossaryPage_AiReadyOperationalLayer.tsx"
+    source-language="en"
+    target-language="de-DE"
+    datatype="plaintext"
+    tool-id="homepage-factory-translator"
+  >
+    <header>
+      <note>mode: localize | page: glossary/ai-ready-operational-layer | brand: llm-capsule</note>
+    </header>
+    <body>
+
+      <!-- ── Hero ── -->
+
+      <trans-unit id="backLabel">
+        <source>← Glossary</source>
+        <target>← Glossar</target>
+        <note>Navigation back link</note>
+      </trans-unit>
+
+      <trans-unit id="backHref">
+        <source>/glossary</source>
+        <target>/glossary</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="term">
+        <source>AI-Ready Operational Layer</source>
+        <target>AI-Ready Operational Layer</target>
+        <note>Technical term / product category — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="lead">
+        <source>An earlier name for the same category. The current locked category is AI enablement data layer for regulated operations. This page is retained as a synonym definition for readers arriving via earlier collateral.</source>
+        <target>Diese Bezeichnung wurde in früheren Strategiepräsentationen und Partnerunterlagen verwendet. Die aktuelle Kategorie lautet AI enablement data layer for regulated operations. Diese Seite dient als Synonymdefinition für Leser, die über ältere Materialien auf diese URL gelangen.</target>
+        <note>Hero lead — localized: removed "locked category" marketing phrasing, restructured as factual DE sentences</note>
+      </trans-unit>
+
+      <trans-unit id="category">
+        <source>GLOSSARY · ALIAS / SYNONYM</source>
+        <target>GLOSSAR · ALIAS / SYNONYM</target>
+        <note>Category chip label</note>
+      </trans-unit>
+
+      <!-- ── Definition block ── -->
+
+      <trans-unit id="definitionLabel">
+        <source>Definition</source>
+        <target>Definition</target>
+        <note>Section label — same in German</note>
+      </trans-unit>
+
+      <trans-unit id="definitionBody">
+        <source>AI-ready operational layer is a synonym for AI enablement data layer. The runtime layer between the regulated enterprise environment (NOC, ticket, OT consoles, EHR, mission systems) and large language models. Turns operational data into AI-ready context using structure-preserving, differential-privacy-based encapsulation; executes the AI workflow inside the enterprise environment via two execution paths; restores results back to the originating workflow via state vault. The current locked category for the LLM Capsule site is 'AI enablement data layer for regulated operations'.</source>
+        <target>AI-Ready Operational Layer ist ein Synonym für AI enablement data layer. Die Laufzeitschicht positioniert sich zwischen der regulierten Unternehmensumgebung — NOC-Konsolen, Ticket-Systeme, OT-Konsolen, EHR, Missionssysteme — und großen Sprachmodellen. Operative Daten werden mittels strukturerhaltender, Differential-Privacy-basierter Kapsulierung in KI-geeigneten Kontext überführt. KI-Workflows werden über zwei Ausführungspfade innerhalb der Unternehmensumgebung ausgeführt. Die Ergebnisse werden über den State Vault in den ursprünglichen Workflow zurückgeführt. Die aktuelle Kategoriebezeichnung auf der LLM Capsule-Website lautet: AI enablement data layer for regulated operations.</target>
+        <note>Definition body in dark card — EN run-on sentences split into DE independent sentences per brief</note>
+      </trans-unit>
+
+      <!-- ── Body HTML ── -->
+
+      <trans-unit id="bodyHtml">
+        <source><![CDATA[
+<div class="garol-callout">
+<strong>Note on terminology.</strong> "AI-ready operational layer" and "AI enablement data layer" describe the same product category. The site's locked category as of v6.1 is <strong>AI enablement data layer for regulated operations</strong>. Both terms are retained because they appear in earlier collateral, partner conversations, and external references; readers arriving via the older term land here and are routed to the canonical definition.
+</div>
+
+<h2>Definition (synonym)</h2>
+<p>An <strong>AI enablement data layer</strong> (historically called an <strong>AI-ready operational layer</strong>) is a runtime layer between the existing regulated enterprise environment (NOC, ticket, OT consoles, EHR, mission systems) and large language models. It turns operational data — network logs, incident records, configurations, clinical workflows, mission context — into AI-ready context using structure-preserving, differential-privacy-based encapsulation; executes the AI workflow inside the enterprise environment via two execution paths (external approved LLM with capsule data, or on-prem local lightweight model); and restores results back to the originating workflow via state vault. Distinct from PII guardrails and AI security suites in scope, layer, and execution model.</p>
+
+<h2>Why two terms exist</h2>
+<p>"AI-ready operational layer" was used in earlier strategy decks, partner pitches, and Deutsche Telekom T Challenge 2026 materials, with the emphasis on <em>operational data readiness</em>. "AI enablement data layer for regulated operations" was adopted in v6.1 of the customer-facing site, with the emphasis on <em>AI enablement</em> at the data layer for the <em>regulated operations</em> buyer. The product is the same — the marketing language shifted to be more buyer-anchored.</p>
+
+<h2>Canonical category page</h2>
+<p>For the full v6.1 definition, customer proof, the four-zone architecture (Corporate Internal Network · DMZ — Demilitarized Zone · In-House Team · Local — Auto Reconstruction), and the six architectural pillars, see <a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> and the <a href="/architecture">Architecture</a> page.</p>
+
+<h2>Related</h2>
+<ul>
+<li><a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> — canonical category page</li>
+<li><a href="/glossary/operational-data">Operational data</a></li>
+<li><a href="/glossary/two-execution-paths">Two execution paths</a></li>
+<li><a href="/glossary/structure-preserving-encapsulation">Structure-preserving encapsulation</a></li>
+<li><a href="/glossary/differential-privacy">Differential privacy</a></li>
+<li><a href="/glossary/state-vault-for-restoration">State vault for restoration</a></li>
+</ul>
+]]></source>
+        <target><![CDATA[
+<div class="garol-callout">
+<strong>Hinweis zur Terminologie.</strong> „AI-ready operational layer" und „AI enablement data layer" bezeichnen dieselbe Produktkategorie. Die aktuelle Kategoriebezeichnung ab v6.1 lautet <strong>AI enablement data layer for regulated operations</strong>. Beide Begriffe sind auffindbar, da sie in früheren Unterlagen, Partnergesprächen und externen Referenzen verwendet wurden. Leser, die über den älteren Begriff auf diese Seite gelangen, werden zur kanonischen Definition weitergeleitet.
+</div>
+
+<h2>Definition (Synonym)</h2>
+<p>Der <strong>AI enablement data layer</strong> (früher als <strong>AI-ready operational layer</strong> bezeichnet) ist eine Laufzeitschicht zwischen der regulierten Unternehmensumgebung — NOC-Konsolen, Ticket-Systeme, OT-Konsolen, EHR, Missionssysteme — und großen Sprachmodellen. Operative Daten — Netzwerkprotokolle, Incident-Datensätze, Konfigurationen, klinische Workflows, Missionskontext — werden mittels strukturerhaltender, Differential-Privacy-basierter Kapsulierung in KI-geeigneten Kontext überführt. KI-Workflows werden innerhalb der Unternehmensumgebung über zwei Ausführungspfade ausgeführt: ein externes freigegebenes LLM mit ausschließlich Kapseldaten oder ein lokales On-Premise-Leichtgewichtmodell. Ergebnisse werden über den State Vault in den ursprünglichen Workflow zurückgeführt. Der AI enablement data layer unterscheidet sich von PII-Schutzmaßnahmen und KI-Sicherheitslösungen in Umfang, Schicht und Ausführungsmodell.</p>
+
+<h2>Warum zwei Bezeichnungen existieren</h2>
+<p>„AI-ready operational layer" wurde in früheren Strategiepräsentationen, Partnerpräsentationen und Materialien des Deutsche Telekom T Challenge 2026 verwendet — mit dem Schwerpunkt auf <em>operativer Datenbereitschaft</em>. „AI enablement data layer for regulated operations" wurde mit v6.1 der kundenseitigen Website eingeführt, mit dem Schwerpunkt auf <em>KI-Aktivierung</em> auf Datenebene für Käufer aus regulierten Branchen. Das Produkt ist identisch — die Marketingsprache wurde stärker am Käufer ausgerichtet.</p>
+
+<h2>Kanonische Kategorieseite</h2>
+<p>Die vollständige v6.1-Definition, Kundenreferenzen, die Vier-Zonen-Architektur (Corporate Internal Network · DMZ — Demilitarisierte Zone · In-House Team · Local — Auto Reconstruction) sowie die sechs Architekturpfeiler finden Sie unter <a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> und auf der Seite <a href="/architecture">Architecture</a>.</p>
+
+<h2>Verwandte Begriffe</h2>
+<ul>
+<li><a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> — kanonische Kategorieseite</li>
+<li><a href="/glossary/operational-data">Operative Daten</a></li>
+<li><a href="/glossary/two-execution-paths">Zwei Ausführungspfade</a></li>
+<li><a href="/glossary/structure-preserving-encapsulation">Strukturerhaltende Kapsulierung</a></li>
+<li><a href="/glossary/differential-privacy">Differential Privacy</a></li>
+<li><a href="/glossary/state-vault-for-restoration">State Vault für die Wiederherstellung</a></li>
+</ul>
+]]></target>
+        <note>Rich HTML body — HTML tags preserved, text content translated. Callout restructured for DE clarity. EN dash lists split into independent DE sentences per brief.</note>
+      </trans-unit>
+
+      <!-- ── Related terms ── -->
+
+      <trans-unit id="related1Label">
+        <source>AI enablement data layer</source>
+        <target>AI enablement data layer</target>
+        <note>Technical term / product category — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related1Href">
+        <source>/glossary/ai-enablement-data-layer</source>
+        <target>/glossary/ai-enablement-data-layer</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related2Label">
+        <source>Operational data</source>
+        <target>Operative Daten</target>
+        <note>Technical concept label</note>
+      </trans-unit>
+
+      <trans-unit id="related2Href">
+        <source>/glossary/operational-data</source>
+        <target>/glossary/operational-data</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related3Label">
+        <source>Two execution paths</source>
+        <target>Zwei Ausführungspfade</target>
+        <note>Technical concept label</note>
+      </trans-unit>
+
+      <trans-unit id="related3Href">
+        <source>/glossary/two-execution-paths</source>
+        <target>/glossary/two-execution-paths</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related4Label">
+        <source>Structure-preserving encapsulation</source>
+        <target>Strukturerhaltende Kapsulierung</target>
+        <note>Technical concept label</note>
+      </trans-unit>
+
+      <trans-unit id="related4Href">
+        <source>/glossary/structure-preserving-encapsulation</source>
+        <target>/glossary/structure-preserving-encapsulation</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related5Label">
+        <source>Differential privacy</source>
+        <target>Differential Privacy</target>
+        <note>Technical term — capitalized in German as proper noun</note>
+      </trans-unit>
+
+      <trans-unit id="related5Href">
+        <source>/glossary/differential-privacy</source>
+        <target>/glossary/differential-privacy</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>
