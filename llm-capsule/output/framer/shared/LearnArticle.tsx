@@ -22,6 +22,10 @@ interface Props {
   // Body — rich HTML string rendered with dangerouslySetInnerHTML
   bodyHtml?: string
 
+  // SEO / JSON-LD
+  canonicalUrl?: string
+  datePublished?: string
+
   // Related links
   relatedSectionLabel?: string
   related1Title?: string
@@ -99,6 +103,8 @@ export default function LearnArticle({
   tldrLabel = "TL;DR — Diagnosis",
   tldrBody = "Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without an AI enablement data layer, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.",
   bodyHtml = DEFAULT_BODY_HTML,
+  canonicalUrl = "https://llmcapsule.ai/resources/learn/pilot-to-production-enterprise-ai",
+  datePublished = "2025-04-15",
   relatedSectionLabel = "Related articles",
   related1Title = "PII guardrails vs. operational data protection",
   related1Href = "/learn/pii-guardrails-vs-operational-data-protection",
@@ -116,8 +122,20 @@ export default function LearnArticle({
     { title: related4Title, href: related4Href },
   ].filter((r) => r.title && r.href)
 
+  const jsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": title,
+    "description": lead,
+    "author": { "@type": "Organization", "name": "CUBIG" },
+    "publisher": { "@type": "Organization", "name": "CUBIG" },
+    "datePublished": datePublished,
+    "mainEntityOfPage": canonicalUrl,
+  })
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
@@ -651,6 +669,10 @@ addPropertyControls(LearnArticle, {
 
   // Body HTML
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: DEFAULT_BODY_HTML, displayTextArea: true },
+
+  // SEO
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/pilot-to-production-enterprise-ai" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2025-04-15" },
 
   // Related links
   relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "Related articles" },
