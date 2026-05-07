@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-07 14:55:02",
+  "generated": "2026-05-07 15:19:41",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -363,6 +363,11 @@
           "name": "_preview_section09.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/how-to-use-ai-on-sensitive-enterprise-data/html/_preview_section09.html",
           "modified": "2026-04-21"
+        },
+        {
+          "name": "_preview.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/ai-on-network-operations-data/_preview.html",
+          "modified": "2026-05-07"
         },
         {
           "name": "preview.html",
@@ -1422,6 +1427,16 @@
           "modified": "2026-04-23"
         },
         {
+          "name": "ai-on-network-operations-data-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/ai-on-network-operations-data-de-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "ai-on-network-operations-data-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/ai-on-network-operations-data-ko-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
           "name": "architecture-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/architecture-de-lines.md",
           "modified": "2026-04-28"
@@ -1584,7 +1599,7 @@
         {
           "name": "llm-capsule-vs-prompt-security-gateways-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/llm-capsule-vs-prompt-security-gateways-de-lines.md",
-          "modified": "2026-04-29"
+          "modified": "2026-05-07"
         },
         {
           "name": "llm-capsule-vs-prompt-security-gateways-ja-lines.md",
@@ -1594,7 +1609,7 @@
         {
           "name": "llm-capsule-vs-prompt-security-gateways-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/llm-capsule-vs-prompt-security-gateways-ko-lines.md",
-          "modified": "2026-04-29"
+          "modified": "2026-05-07"
         },
         {
           "name": "llm-capsule-vs-synthetic-data-platforms-de-lines.md",
@@ -2352,6 +2367,11 @@
           "name": "Learn.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/Learn.tsx",
           "modified": "2026-05-06"
+        },
+        {
+          "name": "LearnArticle_AiOnNetworkOperationsData.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/ai-on-network-operations-data/LearnArticle_AiOnNetworkOperationsData.tsx",
+          "modified": "2026-05-07"
         },
         {
           "name": "Section01_Hero.tsx",
