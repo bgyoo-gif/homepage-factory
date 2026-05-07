@@ -1,221 +1,452 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="ko">
   <file id="llm-capsule-vs-synthetic-data-platforms">
-    <unit id="title">
+
+    <!-- Section 01: Hero -->
+    <unit id="s01_title">
       <segment>
-        <source>See how</source>
-        <target>직접 확인하세요</target>
+        <source>vs Synthetic Data Platforms</source>
+        <target>vs 합성 데이터 플랫폼</target>
       </segment>
     </unit>
-    <unit id="titleBrand">
-      <segment>
-        <source>LLM Capsule</source>
-        <target>LLM Capsule</target>
-      </segment>
-    </unit>
-    <unit id="description">
-      <segment>
-        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
-        <target>문서, 배포 조건, 평가 기준을 준비해 주세요. 실제 워크플로우에서 시연합니다.</target>
-      </segment>
-    </unit>
-    <unit id="sectionLabel">
-      <segment>
-        <source>Related</source>
-        <target>관련 페이지</target>
-      </segment>
-    </unit>
-    <unit id="brandName">
+    <unit id="s01_titleBrand">
       <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
       </segment>
     </unit>
-    <unit id="paragraph">
+    <unit id="s01_description">
       <segment>
-        <source>LLM Capsule does not replace real data with synthetic data. It encapsulates real documents — preserving their specific content, structure, and relationships — while replacing only sensitive elements with reversible representations. AI processes real enterprise content and produces real enterprise outputs, restored through local restoration (restoration).</source>
-        <target>LLM Capsule은 실제 데이터를 합성 데이터로 대체하지 않습니다. 실제 문서를 Encapsulation하여 특정 콘텐츠, 구조, 관계를 보존하면서 민감한 요소만 가역적 표현으로 대체합니다. AI가 실제 기업 콘텐츠를 처리하고 실제 기업 출력을 생성하며, Restoration을 통해 복원됩니다.</target>
+        <source>Compare LLM Capsule with synthetic data platforms for enterprise AI. Synthetic data replaces real data entirely; LLM Capsule preserves and restores real enterprise data.</source>
+        <target>기업 AI를 위한 LLM Capsule과 합성 데이터 플랫폼을 비교합니다. 합성 데이터는 실제 데이터를 완전히 대체합니다. LLM Capsule은 실제 기업 데이터를 보존하고 복원합니다.</target>
       </segment>
     </unit>
-    <unit id="sectionLabelPrefix">
+
+    <!-- Section 02: Overview -->
+    <unit id="s02_sectionLabel">
       <segment>
-        <source>Enterprise Workflow</source>
-        <target>기업 워크플로우</target>
+        <source>Overview</source>
+        <target>개요</target>
       </segment>
     </unit>
-    <unit id="sectionLabelBrand">
+    <unit id="s02_brandName">
       <segment>
-        <source>Example</source>
-        <target>사례</target>
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
       </segment>
     </unit>
-    <unit id="sectionLabelSuffix">
+    <unit id="s02_paragraph">
       <segment>
-        <source>Differs</source>
-        <target>차별점</target>
+        <source>Synthetic data platforms generate artificial datasets that mimic the statistical properties of real data. They are used for model training, testing, and analytics where real data cannot be used. LLM Capsule addresses a different problem: it is an AI enablement data layer that enables AI processing on real enterprise documents while protecting sensitive elements and restoring usable outputs.</source>
+        <target>합성 데이터 플랫폼은 실제 데이터의 통계적 특성을 모방한 인공 데이터셋을 생성합니다. 실제 데이터를 사용할 수 없는 모델 훈련, 테스트, 분석 워크로드에 활용됩니다. LLM Capsule은 다른 문제를 해결합니다. 민감 요소를 보호하면서 실제 기업 문서에 대한 AI 처리를 가능하게 하고, 사용 가능한 결과물을 복원하는 데이터 레이어입니다.</target>
       </segment>
     </unit>
-    <unit id="item1Bold">
+
+    <!-- Section 03: How Synthetic Data Platforms Work -->
+    <unit id="s03_sectionLabelPrefix">
+      <segment>
+        <source>How Synthetic Data Platforms</source>
+        <target>합성 데이터 플랫폼의</target>
+      </segment>
+    </unit>
+    <unit id="s03_sectionLabelBrand">
+      <segment>
+        <source>Works</source>
+        <target>작동 방식</target>
+      </segment>
+    </unit>
+    <unit id="s03_sectionLabelSuffix">
+      <segment>
+        <source></source>
+        <target></target>
+      </segment>
+    </unit>
+    <unit id="s03_paragraph">
+      <segment>
+        <source>Synthetic data platforms analyze real datasets and generate new, artificial data that preserves statistical distributions, correlations, and patterns. The synthetic data contains no real individuals or entities. It is used for model training, development environments, and analytics workloads.</source>
+        <target>합성 데이터 플랫폼은 실제 데이터셋을 분석하여 통계적 분포, 상관관계, 패턴을 유지하는 인공 데이터를 새로 생성합니다. 합성 데이터에는 실제 개인이나 기업 정보가 포함되지 않습니다. 모델 훈련, 개발 환경, 분석 워크로드에 사용됩니다.</target>
+      </segment>
+    </unit>
+
+    <!-- Section 04: Limitations -->
+    <unit id="s04_sectionLabel">
+      <segment>
+        <source>Limitations</source>
+        <target>한계</target>
+      </segment>
+    </unit>
+    <unit id="s04_item1Bold">
       <segment>
         <source>Not suitable for document processing.</source>
-        <target>문서 처리에 부적합.</target>
+        <target>문서 처리에는 적합하지 않습니다.</target>
       </segment>
     </unit>
-    <unit id="item1Text">
+    <unit id="s04_item1Text">
       <segment>
-        <source>Synthetic data platforms generate tabular data, not documents. They cannot create synthetic versions of contracts, medical records, or legal filings that retain their specific content and meaning.</source>
-        <target>합성 데이터 플랫폼은 문서가 아닌 테이블형 데이터를 생성합니다. 특정 콘텐츠와 의미를 유지하는 계약서, 의료 기록, 법률 서류의 합성 버전을 생성할 수 없습니다.</target>
+        <source> Synthetic data platforms generate tabular data, not documents. They cannot create synthetic versions of contracts, medical records, or legal filings that retain their specific content and meaning.</source>
+        <target> 합성 데이터 플랫폼은 문서가 아닌 표 형식 데이터를 생성합니다. 계약서, 의료 기록, 법률 서류의 고유한 내용과 의미를 유지하는 합성 버전은 만들 수 없습니다.</target>
       </segment>
     </unit>
-    <unit id="item2Bold">
+    <unit id="s04_item2Bold">
       <segment>
         <source>Loss of specificity.</source>
         <target>구체성 손실.</target>
       </segment>
     </unit>
-    <unit id="item2Text">
+    <unit id="s04_item2Text">
       <segment>
-        <source>Synthetic data preserves statistical patterns but not specific enterprise content. You cannot summarize a synthetic contract — it does not contain real terms, real parties, or real obligations.</source>
-        <target>합성 데이터는 통계적 패턴을 보존하지만 구체적인 기업 콘텐츠는 보존하지 않습니다. 합성 계약서를 요약할 수 없습니다. 실제 조건, 실제 당사자, 실제 의무가 포함되어 있지 않습니다.</target>
+        <source> Synthetic data preserves statistical patterns but not specific enterprise content. You cannot summarize a synthetic contract — it does not contain real terms, real parties, or real obligations.</source>
+        <target> 합성 데이터는 통계적 패턴을 보존하지만 구체적인 기업 콘텐츠는 보존하지 못합니다. 합성 계약서는 요약할 수 없습니다. 실제 조건, 실제 당사자, 실제 의무가 포함되어 있지 않습니다.</target>
       </segment>
     </unit>
-    <unit id="item3Bold">
+    <unit id="s04_item3Bold">
       <segment>
         <source>No real-world output.</source>
-        <target>실제 출력 없음.</target>
+        <target>실제 결과물 없음.</target>
       </segment>
     </unit>
-    <unit id="item3Text">
+    <unit id="s04_item3Text">
       <segment>
-        <source>AI outputs based on synthetic data describe synthetic scenarios, not real enterprise situations. There is no mechanism to map synthetic outputs back to real enterprise context.</source>
-        <target>합성 데이터 기반의 AI 출력은 실제 기업 상황이 아닌 합성 시나리오를 설명합니다. 합성 출력을 실제 기업 컨텍스트에 다시 매핑하는 메커니즘이 없습니다.</target>
+        <source> AI outputs based on synthetic data describe synthetic scenarios, not real enterprise situations. There is no mechanism to map synthetic outputs back to real enterprise context.</source>
+        <target> 합성 데이터 기반 AI 결과물은 합성 시나리오를 설명할 뿐, 실제 기업 상황을 반영하지 않습니다. 합성 결과물을 실제 기업 맥락으로 되돌릴 수단이 없습니다.</target>
       </segment>
     </unit>
-    <unit id="bannerBold">
+
+    <!-- Section 05: How LLM Capsule Differs -->
+    <unit id="s05_sectionTitle">
       <segment>
-        <source>AI results are restored locally.</source>
-        <target>AI 결과는 로컬에서 Restoration됩니다.</target>
+        <source>How LLM Capsule Differs</source>
+        <target>LLM Capsule의 차별점</target>
       </segment>
     </unit>
-    <unit id="bannerText">
+    <unit id="s05_paragraph">
       <segment>
-        <source>LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.</source>
-        <target>LLM Capsule은 민감 데이터를 보호하고 활용 가능한 출력을 유지하면서 기업 AI 도입을 지원합니다.</target>
+        <source>LLM Capsule does not replace real data with synthetic data. It encapsulates real documents — preserving their specific content, structure, and relationships — while replacing only sensitive elements with reversible representations. AI processes real enterprise content and produces real enterprise outputs, restored through local restoration (restoration).</source>
+        <target>LLM Capsule은 실제 데이터를 합성 데이터로 대체하지 않습니다. 실제 문서를 캡슐화하여 고유한 내용, 구조, 관계를 그대로 보존하면서, 민감 요소만 복원 가능한 형태로 치환합니다. AI는 실제 기업 콘텐츠를 처리하고, 로컬 복원을 통해 실제 기업 결과물을 그대로 돌려줍니다.</target>
       </segment>
     </unit>
-    <unit id="col1Header">
+    <unit id="s05_bannerText">
+      <segment>
+        <source>AI results are restored locally. LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.</source>
+        <target>AI 결과물은 로컬에서 복원됩니다. LLM Capsule은 민감 데이터를 보호하고 사용 가능한 결과물을 유지하면서 기업 AI 도입을 가능하게 합니다.</target>
+      </segment>
+    </unit>
+
+    <!-- Section 06: Comparison Table -->
+    <unit id="s06_sectionLabel">
+      <segment>
+        <source>Comparison</source>
+        <target>비교</target>
+      </segment>
+    </unit>
+    <unit id="s06_col1Header">
       <segment>
         <source>Capability</source>
         <target>기능</target>
       </segment>
     </unit>
-    <unit id="col2Header">
+    <unit id="s06_col2Header">
       <segment>
         <source>Synthetic Data Platforms</source>
         <target>합성 데이터 플랫폼</target>
       </segment>
     </unit>
-    <unit id="col3Header">
+    <unit id="s06_col3Header">
       <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
       </segment>
     </unit>
-    <unit id="cardTitle">
+    <unit id="s06_row1Col1">
+      <segment>
+        <source>Input data</source>
+        <target>입력 데이터</target>
+      </segment>
+    </unit>
+    <unit id="s06_row1Col2">
+      <segment>
+        <source>Artificially generated</source>
+        <target>인공 생성</target>
+      </segment>
+    </unit>
+    <unit id="s06_row1Col3">
+      <segment>
+        <source>Real enterprise documents</source>
+        <target>실제 기업 문서</target>
+      </segment>
+    </unit>
+    <unit id="s06_row2Col1">
+      <segment>
+        <source>Document support</source>
+        <target>문서 지원</target>
+      </segment>
+    </unit>
+    <unit id="s06_row2Col2">
+      <segment>
+        <source>Tabular data only</source>
+        <target>표 형식 데이터만</target>
+      </segment>
+    </unit>
+    <unit id="s06_row2Col3">
+      <segment>
+        <source>All document types</source>
+        <target>모든 문서 유형</target>
+      </segment>
+    </unit>
+    <unit id="s06_row3Col1">
+      <segment>
+        <source>Content specificity</source>
+        <target>내용 구체성</target>
+      </segment>
+    </unit>
+    <unit id="s06_row3Col2">
+      <segment>
+        <source>Statistical patterns only</source>
+        <target>통계적 패턴만</target>
+      </segment>
+    </unit>
+    <unit id="s06_row3Col3">
+      <segment>
+        <source>Actual enterprise content</source>
+        <target>실제 기업 콘텐츠</target>
+      </segment>
+    </unit>
+    <unit id="s06_row4Col1">
+      <segment>
+        <source>Output usability</source>
+        <target>결과물 활용성</target>
+      </segment>
+    </unit>
+    <unit id="s06_row4Col2">
+      <segment>
+        <source>Synthetic context</source>
+        <target>합성 맥락</target>
+      </segment>
+    </unit>
+    <unit id="s06_row4Col3">
+      <segment>
+        <source>Real enterprise context</source>
+        <target>실제 기업 맥락</target>
+      </segment>
+    </unit>
+    <unit id="s06_row5Col1">
+      <segment>
+        <source>Output restoration</source>
+        <target>결과물 복원</target>
+      </segment>
+    </unit>
+    <unit id="s06_row5Col2">
+      <segment>
+        <source>✗</source>
+        <target>✗</target>
+      </segment>
+    </unit>
+    <unit id="s06_row5Col3">
+      <segment>
+        <source>✓ Local restoration</source>
+        <target>✓ 로컬 복원</target>
+      </segment>
+    </unit>
+    <unit id="s06_row6Col1">
+      <segment>
+        <source>Use case</source>
+        <target>활용 사례</target>
+      </segment>
+    </unit>
+    <unit id="s06_row6Col2">
+      <segment>
+        <source>Model training, testing</source>
+        <target>모델 훈련·테스트</target>
+      </segment>
+    </unit>
+    <unit id="s06_row6Col3">
+      <segment>
+        <source>Production AI workflows</source>
+        <target>프로덕션 AI 워크플로우</target>
+      </segment>
+    </unit>
+
+    <!-- Section 07: Enterprise Workflow Example -->
+    <unit id="s07_sectionLabelPrefix">
+      <segment>
+        <source>Enterprise Workflow</source>
+        <target>기업 워크플로우</target>
+      </segment>
+    </unit>
+    <unit id="s07_sectionLabelBrand">
+      <segment>
+        <source>Example</source>
+        <target>사례</target>
+      </segment>
+    </unit>
+    <unit id="s07_brandName">
+      <segment>
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </segment>
+    </unit>
+    <unit id="s07_cardTitle">
       <segment>
         <source>Compliance Document Analysis</source>
         <target>컴플라이언스 문서 분석</target>
       </segment>
     </unit>
-    <unit id="cardParagraph1">
+    <unit id="s07_cardParagraph1">
       <segment>
         <source>A compliance team needs AI to identify risk indicators in 1,000 real audit reports. Synthetic data cannot help — synthetic audit reports do not contain the real findings, real entity references, and real risk patterns the team needs to analyze.</source>
-        <target>컴플라이언스 팀이 실제 감사 보고서 1,000건에서 위험 지표를 식별하기 위해 AI가 필요합니다. 합성 데이터는 도움이 되지 않습니다. 합성 감사 보고서에는 팀이 분석해야 할 실제 발견 사항, 실제 엔티티 참조, 실제 위험 패턴이 포함되어 있지 않습니다.</target>
+        <target>컴플라이언스 팀이 1,000건의 실제 감사 보고서에서 리스크 지표를 AI로 식별해야 합니다. 합성 데이터로는 해결할 수 없습니다. 합성 감사 보고서에는 팀이 분석해야 할 실제 결과, 실제 기업 참조, 실제 리스크 패턴이 없습니다.</target>
       </segment>
     </unit>
-    <unit id="cardParagraph2Suffix">
+    <unit id="s07_cardParagraph2Suffix">
       <segment>
-        <source>encapsulates the real audit reports, AI identifies risk patterns in the protected documents, and restoration produces an actionable risk assessment with real entity names and findings linked to real reports.</source>
-        <target>실제 감사 보고서를 Encapsulation하고, AI가 보호된 문서에서 위험 패턴을 식별하며, Restoration을 통해 실제 엔티티 이름과 실제 보고서에 연결된 발견 사항이 포함된 실행 가능한 위험 평가를 생성합니다.</target>
+        <source>LLM Capsule encapsulates the real audit reports, AI identifies risk patterns in the protected documents, and restoration produces an actionable risk assessment with real entity names and findings linked to real reports.</source>
+        <target>LLM Capsule이 실제 감사 보고서를 캡슐화하면, AI가 보호된 문서에서 리스크 패턴을 식별합니다. 복원을 통해 실제 기업명과 실제 보고서에 연결된 실행 가능한 리스크 평가서가 생성됩니다.</target>
       </segment>
     </unit>
-    <unit id="q1">
+
+    <!-- Section 08: FAQ -->
+    <unit id="s08_sectionLabel">
+      <segment>
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </segment>
+    </unit>
+    <unit id="s08_brandName">
+      <segment>
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </segment>
+    </unit>
+    <unit id="s08_q1">
       <segment>
         <source>When should I use synthetic data vs LLM Capsule?</source>
-        <target>합성 데이터와 LLM Capsule 중 언제 어떤 것을 사용해야 합니까?</target>
+        <target>합성 데이터와 LLM Capsule 중 언제 무엇을 사용해야 합니까?</target>
       </segment>
     </unit>
-    <unit id="a1">
+    <unit id="s08_a1">
       <segment>
         <source>Use synthetic data for model training and testing where statistical properties matter. Use LLM Capsule for production AI workflows where AI must process and produce outputs about real enterprise documents.</source>
-        <target>통계적 속성이 중요한 모델 학습 및 테스트에는 합성 데이터를 사용합니다. AI가 실제 기업 문서를 처리하고 관련 출력을 생성해야 하는 프로덕션 AI 워크플로우에는 LLM Capsule을 사용합니다.</target>
+        <target>통계적 특성이 중요한 모델 훈련과 테스트에는 합성 데이터를 사용합니다. AI가 실제 기업 문서를 처리하고 결과물을 생성해야 하는 프로덕션 AI 워크플로우에는 LLM Capsule을 사용합니다.</target>
       </segment>
     </unit>
-    <unit id="q2">
+    <unit id="s08_q2">
       <segment>
         <source>Does LLM Capsule generate synthetic data?</source>
         <target>LLM Capsule은 합성 데이터를 생성합니까?</target>
       </segment>
     </unit>
-    <unit id="a2">
+    <unit id="s08_a2">
       <segment>
         <source>No. LLM Capsule encapsulates real data — preserving its structure while protecting sensitive elements. It is not a synthetic data platform.</source>
-        <target>아닙니다. LLM Capsule은 민감한 요소를 보호하면서 구조를 보존하여 실제 데이터를 Encapsulation합니다. 합성 데이터 플랫폼이 아닙니다.</target>
+        <target>아닙니다. LLM Capsule은 실제 데이터를 캡슐화합니다. 구조를 보존하면서 민감 요소를 보호합니다. 합성 데이터 플랫폼이 아닙니다.</target>
       </segment>
     </unit>
-    <unit id="link1Title">
+
+    <!-- Section 09: Related Pages -->
+    <unit id="s09_sectionLabel">
+      <segment>
+        <source>Related</source>
+        <target>관련 페이지</target>
+      </segment>
+    </unit>
+    <unit id="s09_link1Title">
       <segment>
         <source>Product Overview</source>
         <target>제품 개요</target>
       </segment>
     </unit>
-    <unit id="link2Title">
+    <unit id="s09_link1Href">
+      <segment>
+        <source>/product</source>
+        <target>/product</target>
+      </segment>
+    </unit>
+    <unit id="s09_link2Title">
       <segment>
         <source>Architecture</source>
         <target>아키텍처</target>
       </segment>
     </unit>
-    <unit id="link3Title">
+    <unit id="s09_link2Href">
+      <segment>
+        <source>/architecture</source>
+        <target>/architecture</target>
+      </segment>
+    </unit>
+    <unit id="s09_link3Title">
       <segment>
         <source>Trust &amp; Compliance</source>
-        <target>신뢰 &amp; 컴플라이언스</target>
+        <target>신뢰 및 규제 대응</target>
       </segment>
     </unit>
-    <unit id="link4Title">
+    <unit id="s09_link3Href">
+      <segment>
+        <source>/trust</source>
+        <target>/trust</target>
+      </segment>
+    </unit>
+    <unit id="s09_link4Title">
       <segment>
         <source>Request a Demo</source>
-        <target>Request a Demo</target>
+        <target>데모 요청</target>
       </segment>
     </unit>
-    <unit id="link5Title">
+    <unit id="s09_link4Href">
+      <segment>
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
+      </segment>
+    </unit>
+    <unit id="s09_link5Title">
       <segment>
         <source>Learn Hub</source>
         <target>학습 허브</target>
       </segment>
     </unit>
-    <unit id="btn1Label">
+    <unit id="s09_link5Href">
+      <segment>
+        <source>/resources/learn</source>
+        <target>/resources/learn</target>
+      </segment>
+    </unit>
+
+    <!-- Section 10: CTA -->
+    <unit id="s10_title">
+      <segment>
+        <source>See how LLM Capsule works with your data</source>
+        <target>LLM Capsule이 내 데이터에서 어떻게 작동하는지 직접 확인합니다.</target>
+      </segment>
+    </unit>
+    <unit id="s10_description">
+      <segment>
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>보유한 문서, 배포 제약 조건, 평가 기준을 가져오십시오. 실제 워크플로우 기반으로 시연합니다.</target>
+      </segment>
+    </unit>
+    <unit id="s10_btn1Label">
       <segment>
         <source>Request a Demo</source>
-        <target>Request a Demo</target>
+        <target>데모 요청</target>
       </segment>
     </unit>
-    <unit id="btn2Label">
+    <unit id="s10_btn1Href">
       <segment>
-        <source>Talk to an Architect</source>
-        <target>Talk to an Architect</target>
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
       </segment>
     </unit>
-    <unit id="footnote1Label">
-      <segment>
-        <source>Download Architecture Brief</source>
-        <target>아키텍처 브리프 다운로드</target>
-      </segment>
-    </unit>
-    <unit id="footnote2Label">
+    <unit id="s10_footnote2Label">
       <segment>
         <source>AWS Marketplace</source>
         <target>AWS Marketplace</target>
       </segment>
     </unit>
+    <unit id="s10_footnote2Href">
+      <segment>
+        <source>https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&amp;ref_=beagle&amp;applicationId=AWSMPContessa</source>
+        <target>https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&amp;ref_=beagle&amp;applicationId=AWSMPContessa</target>
+      </segment>
+    </unit>
+
   </file>
 </xliff>

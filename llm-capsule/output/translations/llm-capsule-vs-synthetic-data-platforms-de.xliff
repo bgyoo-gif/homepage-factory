@@ -1,221 +1,452 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
   <file id="llm-capsule-vs-synthetic-data-platforms">
-    <unit id="title">
-      <segment>
-        <source>See how</source>
-        <target>Erleben Sie</target>
-      </segment>
-    </unit>
-    <unit id="titleBrand">
+
+    <!-- Section01_Hero -->
+    <unit id="s01.titleBrand">
       <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
       </segment>
     </unit>
-    <unit id="description">
+    <unit id="s01.title">
       <segment>
-        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
-        <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Workflows.</target>
+        <source>vs Synthetic Data Platforms</source>
+        <target>vs. Synthetische Datenplattformen</target>
       </segment>
     </unit>
-    <unit id="sectionLabel">
+    <unit id="s01.description">
       <segment>
-        <source>Related</source>
-        <target>Verwandte Seiten</target>
+        <source>Compare LLM Capsule with synthetic data platforms for enterprise AI. Synthetic data replaces real data entirely; LLM Capsule preserves and restores real enterprise data.</source>
+        <target>Synthetische Datenplattformen ersetzen echte Daten vollständig durch künstlich generierte Datensätze. LLM Capsule verfolgt einen anderen Ansatz — echte Unternehmensdaten bleiben erhalten und werden nach der KI-Verarbeitung lokal wiederhergestellt.</target>
       </segment>
     </unit>
-    <unit id="brandName">
+
+    <!-- Section02_Overview -->
+    <unit id="s02.sectionLabel">
+      <segment>
+        <source>Overview</source>
+        <target>Übersicht</target>
+      </segment>
+    </unit>
+    <unit id="s02.brandName">
       <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
       </segment>
     </unit>
-    <unit id="paragraph">
+    <unit id="s02.paragraph">
       <segment>
-        <source>LLM Capsule does not replace real data with synthetic data. It encapsulates real documents — preserving their specific content, structure, and relationships — while replacing only sensitive elements with reversible representations. AI processes real enterprise content and produces real enterprise outputs, restored through local restoration (restoration).</source>
-        <target>LLM Capsule ersetzt keine realen Daten durch synthetische Daten. Es schützt reale Dokumente per Encapsulation — unter Beibehaltung ihres spezifischen Inhalts, ihrer Struktur und Beziehungen — wobei nur sensible Elemente durch reversible Darstellungen ersetzt werden. KI verarbeitet reale Unternehmensinhalte und erzeugt reale Unternehmensausgaben, die durch Restoration wiederhergestellt werden.</target>
+        <source>Synthetic data platforms generate artificial datasets that mimic the statistical properties of real data. They are used for model training, testing, and analytics where real data cannot be used. LLM Capsule addresses a different problem: it is an AI enablement data layer that enables AI processing on real enterprise documents while protecting sensitive elements and restoring usable outputs.</source>
+        <target>Synthetische Datenplattformen erzeugen künstliche Datensätze, die statistische Eigenschaften realer Daten nachbilden. Sie werden für Modelltraining, Tests und Analysen eingesetzt, wo echte Daten nicht verwendet werden dürfen. LLM Capsule löst eine grundlegend andere Aufgabe: Als KI-Enablement-Datenschicht ermöglicht es die KI-Verarbeitung echter Unternehmensdokumente — sensible Inhalte werden geschützt, die Ausgaben lokal wiederhergestellt.</target>
       </segment>
     </unit>
-    <unit id="sectionLabelPrefix">
+
+    <!-- Section03_HowItWorks -->
+    <unit id="s03.sectionLabelPrefix">
       <segment>
-        <source>Enterprise Workflow</source>
-        <target>Unternehmens-Workflow</target>
+        <source>How Synthetic Data Platforms</source>
+        <target>Wie synthetische Datenplattformen</target>
       </segment>
     </unit>
-    <unit id="sectionLabelBrand">
+    <unit id="s03.sectionLabelBrand">
       <segment>
-        <source>Example</source>
-        <target>Beispiel</target>
+        <source>Works</source>
+        <target>funktionieren</target>
       </segment>
     </unit>
-    <unit id="sectionLabelSuffix">
+    <unit id="s03.sectionLabelSuffix">
       <segment>
-        <source>Differs</source>
-        <target>Unterschiede</target>
+        <source></source>
+        <target></target>
       </segment>
     </unit>
-    <unit id="item1Bold">
+    <unit id="s03.paragraph">
+      <segment>
+        <source>Synthetic data platforms analyze real datasets and generate new, artificial data that preserves statistical distributions, correlations, and patterns. The synthetic data contains no real individuals or entities. It is used for model training, development environments, and analytics workloads.</source>
+        <target>Synthetische Datenplattformen analysieren reale Datensätze und erzeugen daraus neue, künstliche Daten, die statistische Verteilungen, Korrelationen und Muster erhalten. Die synthetischen Daten enthalten keine realen Personen oder Entitäten. Sie werden für Modelltraining, Entwicklungsumgebungen und Analyseworkloads eingesetzt.</target>
+      </segment>
+    </unit>
+
+    <!-- Section04_Limitations -->
+    <unit id="s04.sectionLabel">
+      <segment>
+        <source>Limitations</source>
+        <target>Grenzen</target>
+      </segment>
+    </unit>
+    <unit id="s04.item1Bold">
       <segment>
         <source>Not suitable for document processing.</source>
-        <target>Für Dokumentenverarbeitung ungeeignet.</target>
+        <target>Nicht geeignet für die Dokumentenverarbeitung.</target>
       </segment>
     </unit>
-    <unit id="item1Text">
+    <unit id="s04.item1Text">
       <segment>
-        <source>Synthetic data platforms generate tabular data, not documents. They cannot create synthetic versions of contracts, medical records, or legal filings that retain their specific content and meaning.</source>
-        <target>Plattformen für synthetische Daten generieren Tabellendaten, keine Dokumente. Sie können keine synthetischen Versionen von Verträgen, Krankenakten oder Rechtsschriften erstellen, die ihren spezifischen Inhalt und ihre Bedeutung beibehalten.</target>
+        <source> Synthetic data platforms generate tabular data, not documents. They cannot create synthetic versions of contracts, medical records, or legal filings that retain their specific content and meaning.</source>
+        <target> Synthetische Datenplattformen erzeugen tabellarische Daten, keine Dokumente. Synthetische Versionen von Verträgen, Patientenakten oder Schriftsätzen, die den spezifischen Inhalt und die Bedeutung erhalten, lassen sich damit nicht erstellen.</target>
       </segment>
     </unit>
-    <unit id="item2Bold">
+    <unit id="s04.item2Bold">
       <segment>
         <source>Loss of specificity.</source>
-        <target>Verlust der Spezifität.</target>
+        <target>Verlust inhaltlicher Spezifität.</target>
       </segment>
     </unit>
-    <unit id="item2Text">
+    <unit id="s04.item2Text">
       <segment>
-        <source>Synthetic data preserves statistical patterns but not specific enterprise content. You cannot summarize a synthetic contract — it does not contain real terms, real parties, or real obligations.</source>
-        <target>Synthetische Daten bewahren statistische Muster, aber nicht spezifische Unternehmensinhalte. Ein synthetischer Vertrag lässt sich nicht zusammenfassen — er enthält keine realen Bedingungen, realen Parteien oder realen Verpflichtungen.</target>
+        <source> Synthetic data preserves statistical patterns but not specific enterprise content. You cannot summarize a synthetic contract — it does not contain real terms, real parties, or real obligations.</source>
+        <target> Synthetische Daten bewahren statistische Muster, jedoch keine spezifischen Unternehmensinhalte. Eine Zusammenfassung eines synthetischen Vertrags ist nicht möglich — er enthält weder reale Klauseln noch Vertragsparteien oder Verpflichtungen.</target>
       </segment>
     </unit>
-    <unit id="item3Bold">
+    <unit id="s04.item3Bold">
       <segment>
         <source>No real-world output.</source>
-        <target>Keine realen Ausgaben.</target>
+        <target>Keine praxistauglichen Ausgaben.</target>
       </segment>
     </unit>
-    <unit id="item3Text">
+    <unit id="s04.item3Text">
       <segment>
-        <source>AI outputs based on synthetic data describe synthetic scenarios, not real enterprise situations. There is no mechanism to map synthetic outputs back to real enterprise context.</source>
-        <target>KI-Ausgaben auf Basis synthetischer Daten beschreiben synthetische Szenarien, nicht reale Unternehmenssituationen. Es gibt keinen Mechanismus, synthetische Ausgaben auf den realen Unternehmenskontext zurückzuführen.</target>
+        <source> AI outputs based on synthetic data describe synthetic scenarios, not real enterprise situations. There is no mechanism to map synthetic outputs back to real enterprise context.</source>
+        <target> KI-Ausgaben auf Basis synthetischer Daten beschreiben künstliche Szenarien, keine realen Unternehmenssituationen. Eine Rückführung synthetischer Ergebnisse in den realen Unternehmenskontext ist nicht möglich.</target>
       </segment>
     </unit>
-    <unit id="bannerBold">
+
+    <!-- Section05_HowCapsuleDiffers -->
+    <unit id="s05.sectionTitle">
       <segment>
-        <source>AI results are restored locally.</source>
-        <target>KI-Ergebnisse werden lokal per Restoration wiederhergestellt.</target>
+        <source>How LLM Capsule Differs</source>
+        <target>Wie sich LLM Capsule unterscheidet</target>
       </segment>
     </unit>
-    <unit id="bannerText">
+    <unit id="s05.paragraph">
       <segment>
-        <source>LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.</source>
-        <target>LLM Capsule ermöglicht die KI-Einführung im Unternehmen bei gleichzeitigem Schutz sensibler Daten und Erhalt nutzbarer Ausgaben.</target>
+        <source>LLM Capsule does not replace real data with synthetic data. It encapsulates real documents — preserving their specific content, structure, and relationships — while replacing only sensitive elements with reversible representations. AI processes real enterprise content and produces real enterprise outputs, restored through local restoration (restoration).</source>
+        <target>LLM Capsule ersetzt echte Daten nicht durch synthetische. Echte Dokumente werden kapsuliert — Inhalt, Struktur und Bezüge bleiben vollständig erhalten. Nur sensible Elemente werden durch reversible Repräsentationen ersetzt. Die KI verarbeitet reale Unternehmensinhalte und erzeugt Ergebnisse, die über die lokale Wiederherstellung (Restoration) mit den Originaldaten zusammengeführt werden.</target>
       </segment>
     </unit>
-    <unit id="col1Header">
+    <unit id="s05.bannerText">
+      <segment>
+        <source>AI results are restored locally. LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.</source>
+        <target>KI-Ergebnisse werden lokal wiederhergestellt. LLM Capsule ermöglicht den KI-Einsatz im Unternehmen — vertrauliche Daten bleiben geschützt, die Ausgaben bleiben fachlich nutzbar.</target>
+      </segment>
+    </unit>
+
+    <!-- Section06_ComparisonTable -->
+    <unit id="s06.sectionLabel">
+      <segment>
+        <source>Comparison</source>
+        <target>Vergleich</target>
+      </segment>
+    </unit>
+    <unit id="s06.col1Header">
       <segment>
         <source>Capability</source>
         <target>Funktion</target>
       </segment>
     </unit>
-    <unit id="col2Header">
+    <unit id="s06.col2Header">
       <segment>
         <source>Synthetic Data Platforms</source>
-        <target>Plattformen für synthetische Daten</target>
+        <target>Synthetische Datenplattformen</target>
       </segment>
     </unit>
-    <unit id="col3Header">
+    <unit id="s06.col3Header">
       <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
       </segment>
     </unit>
-    <unit id="cardTitle">
+    <unit id="s06.row1Col1">
+      <segment>
+        <source>Input data</source>
+        <target>Eingabedaten</target>
+      </segment>
+    </unit>
+    <unit id="s06.row1Col2">
+      <segment>
+        <source>Artificially generated</source>
+        <target>Künstlich generiert</target>
+      </segment>
+    </unit>
+    <unit id="s06.row1Col3">
+      <segment>
+        <source>Real enterprise documents</source>
+        <target>Echte Unternehmensdokumente</target>
+      </segment>
+    </unit>
+    <unit id="s06.row2Col1">
+      <segment>
+        <source>Document support</source>
+        <target>Dokumentenunterstützung</target>
+      </segment>
+    </unit>
+    <unit id="s06.row2Col2">
+      <segment>
+        <source>Tabular data only</source>
+        <target>Nur tabellarische Daten</target>
+      </segment>
+    </unit>
+    <unit id="s06.row2Col3">
+      <segment>
+        <source>All document types</source>
+        <target>Alle Dokumenttypen</target>
+      </segment>
+    </unit>
+    <unit id="s06.row3Col1">
+      <segment>
+        <source>Content specificity</source>
+        <target>Inhaltliche Spezifität</target>
+      </segment>
+    </unit>
+    <unit id="s06.row3Col2">
+      <segment>
+        <source>Statistical patterns only</source>
+        <target>Nur statistische Muster</target>
+      </segment>
+    </unit>
+    <unit id="s06.row3Col3">
+      <segment>
+        <source>Actual enterprise content</source>
+        <target>Tatsächliche Unternehmensinhalte</target>
+      </segment>
+    </unit>
+    <unit id="s06.row4Col1">
+      <segment>
+        <source>Output usability</source>
+        <target>Nutzbarkeit der Ausgabe</target>
+      </segment>
+    </unit>
+    <unit id="s06.row4Col2">
+      <segment>
+        <source>Synthetic context</source>
+        <target>Synthetischer Kontext</target>
+      </segment>
+    </unit>
+    <unit id="s06.row4Col3">
+      <segment>
+        <source>Real enterprise context</source>
+        <target>Realer Unternehmenskontext</target>
+      </segment>
+    </unit>
+    <unit id="s06.row5Col1">
+      <segment>
+        <source>Output restoration</source>
+        <target>Wiederherstellung der Ausgabe</target>
+      </segment>
+    </unit>
+    <unit id="s06.row5Col2">
+      <segment>
+        <source>✗</source>
+        <target>✗</target>
+      </segment>
+    </unit>
+    <unit id="s06.row5Col3">
+      <segment>
+        <source>✓ Local restoration</source>
+        <target>✓ Lokale Wiederherstellung</target>
+      </segment>
+    </unit>
+    <unit id="s06.row6Col1">
+      <segment>
+        <source>Use case</source>
+        <target>Anwendungsfall</target>
+      </segment>
+    </unit>
+    <unit id="s06.row6Col2">
+      <segment>
+        <source>Model training, testing</source>
+        <target>Modelltraining, Tests</target>
+      </segment>
+    </unit>
+    <unit id="s06.row6Col3">
+      <segment>
+        <source>Production AI workflows</source>
+        <target>Produktive KI-Workflows</target>
+      </segment>
+    </unit>
+
+    <!-- Section07_WorkflowExample -->
+    <unit id="s07.sectionLabelPrefix">
+      <segment>
+        <source>Enterprise Workflow</source>
+        <target>Praxisbeispiel</target>
+      </segment>
+    </unit>
+    <unit id="s07.sectionLabelBrand">
+      <segment>
+        <source>Example</source>
+        <target>Unternehmenseinsatz</target>
+      </segment>
+    </unit>
+    <unit id="s07.brandName">
+      <segment>
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </segment>
+    </unit>
+    <unit id="s07.cardTitle">
       <segment>
         <source>Compliance Document Analysis</source>
-        <target>Compliance-Dokumentenanalyse</target>
+        <target>Analyse von Compliance-Dokumenten</target>
       </segment>
     </unit>
-    <unit id="cardParagraph1">
+    <unit id="s07.cardParagraph1">
       <segment>
         <source>A compliance team needs AI to identify risk indicators in 1,000 real audit reports. Synthetic data cannot help — synthetic audit reports do not contain the real findings, real entity references, and real risk patterns the team needs to analyze.</source>
-        <target>Ein Compliance-Team benötigt KI zur Identifizierung von Risikoindikatoren in 1.000 realen Prüfberichten. Synthetische Daten helfen nicht — synthetische Prüfberichte enthalten nicht die realen Erkenntnisse, realen Entitätsverweise und realen Risikomuster, die das Team analysieren muss.</target>
+        <target>Ein Compliance-Team benötigt KI zur Identifikation von Risikoindikatoren in 1.000 echten Prüfberichten. Synthetische Daten sind dabei nicht hilfreich — synthetische Prüfberichte enthalten weder die realen Befunde noch die tatsächlichen Entitätsbezüge und Risikomuster, die für die Analyse erforderlich sind.</target>
       </segment>
     </unit>
-    <unit id="cardParagraph2Suffix">
+    <unit id="s07.cardParagraph2Suffix">
       <segment>
-        <source>encapsulates the real audit reports, AI identifies risk patterns in the protected documents, and restoration produces an actionable risk assessment with real entity names and findings linked to real reports.</source>
-        <target>schützt die realen Prüfberichte per Encapsulation, KI identifiziert Risikomuster in den geschützten Dokumenten, und Restoration erzeugt eine handlungsfähige Risikobewertung mit realen Entitätsnamen und Erkenntnissen, verknüpft mit realen Berichten.</target>
+        <source>LLM Capsule encapsulates the real audit reports, AI identifies risk patterns in the protected documents, and restoration produces an actionable risk assessment with real entity names and findings linked to real reports.</source>
+        <target>LLM Capsule kapsuliert die echten Prüfberichte. Die KI identifiziert Risikomuster in den geschützten Dokumenten. Die lokale Wiederherstellung erzeugt eine verwertbare Risikobewertung mit realen Entitätsnamen und Befunden, die auf die tatsächlichen Berichte verweisen.</target>
       </segment>
     </unit>
-    <unit id="q1">
+
+    <!-- Section08_FAQ -->
+    <unit id="s08.sectionLabel">
+      <segment>
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </segment>
+    </unit>
+    <unit id="s08.brandName">
+      <segment>
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </segment>
+    </unit>
+    <unit id="s08.q1">
       <segment>
         <source>When should I use synthetic data vs LLM Capsule?</source>
-        <target>Wann sollte ich synthetische Daten statt LLM Capsule verwenden?</target>
+        <target>Wann empfiehlt sich synthetische Daten — wann LLM Capsule?</target>
       </segment>
     </unit>
-    <unit id="a1">
+    <unit id="s08.a1">
       <segment>
         <source>Use synthetic data for model training and testing where statistical properties matter. Use LLM Capsule for production AI workflows where AI must process and produce outputs about real enterprise documents.</source>
-        <target>Verwenden Sie synthetische Daten für Modelltraining und Tests, bei denen statistische Eigenschaften wichtig sind. Verwenden Sie LLM Capsule für produktive KI-Workflows, in denen KI reale Unternehmensdokumente verarbeiten und Ausgaben erzeugen muss.</target>
+        <target>Synthetische Daten eignen sich für Modelltraining und Tests, bei denen statistische Eigenschaften im Vordergrund stehen. LLM Capsule ist für produktive KI-Workflows vorgesehen, in denen die KI echte Unternehmensdokumente verarbeiten und direkt einsetzbare Ausgaben erzeugen soll.</target>
       </segment>
     </unit>
-    <unit id="q2">
+    <unit id="s08.q2">
       <segment>
         <source>Does LLM Capsule generate synthetic data?</source>
-        <target>Generiert LLM Capsule synthetische Daten?</target>
+        <target>Erzeugt LLM Capsule synthetische Daten?</target>
       </segment>
     </unit>
-    <unit id="a2">
+    <unit id="s08.a2">
       <segment>
         <source>No. LLM Capsule encapsulates real data — preserving its structure while protecting sensitive elements. It is not a synthetic data platform.</source>
-        <target>Nein. LLM Capsule schützt reale Daten per Encapsulation — unter Beibehaltung der Struktur bei gleichzeitigem Schutz sensibler Elemente. Es ist keine Plattform für synthetische Daten.</target>
+        <target>Nein. LLM Capsule kapsuliert echte Daten — die Dokumentstruktur bleibt erhalten, sensible Inhalte werden geschützt. LLM Capsule ist keine synthetische Datenplattform.</target>
       </segment>
     </unit>
-    <unit id="link1Title">
+
+    <!-- Section09_RelatedPages -->
+    <unit id="s09.sectionLabel">
+      <segment>
+        <source>Related</source>
+        <target>Weiterführende Seiten</target>
+      </segment>
+    </unit>
+    <unit id="s09.link1Title">
       <segment>
         <source>Product Overview</source>
         <target>Produktübersicht</target>
       </segment>
     </unit>
-    <unit id="link2Title">
+    <unit id="s09.link1Href">
+      <segment>
+        <source>/product</source>
+        <target>/product</target>
+      </segment>
+    </unit>
+    <unit id="s09.link2Title">
       <segment>
         <source>Architecture</source>
         <target>Architektur</target>
       </segment>
     </unit>
-    <unit id="link3Title">
+    <unit id="s09.link2Href">
+      <segment>
+        <source>/architecture</source>
+        <target>/architecture</target>
+      </segment>
+    </unit>
+    <unit id="s09.link3Title">
       <segment>
         <source>Trust &amp; Compliance</source>
-        <target>Vertrauen &amp; Compliance</target>
+        <target>Vertrauen &amp; Konformität</target>
       </segment>
     </unit>
-    <unit id="link4Title">
+    <unit id="s09.link3Href">
+      <segment>
+        <source>/trust</source>
+        <target>/trust</target>
+      </segment>
+    </unit>
+    <unit id="s09.link4Title">
       <segment>
         <source>Request a Demo</source>
-        <target>Request a Demo</target>
+        <target>Demo anfordern</target>
       </segment>
     </unit>
-    <unit id="link5Title">
+    <unit id="s09.link4Href">
+      <segment>
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
+      </segment>
+    </unit>
+    <unit id="s09.link5Title">
       <segment>
         <source>Learn Hub</source>
-        <target>Lernzentrum</target>
+        <target>Wissensbereich</target>
       </segment>
     </unit>
-    <unit id="btn1Label">
+    <unit id="s09.link5Href">
+      <segment>
+        <source>/resources/learn</source>
+        <target>/resources/learn</target>
+      </segment>
+    </unit>
+
+    <!-- Section10_CTA -->
+    <unit id="s10.title">
+      <segment>
+        <source>See how LLM Capsule works with your data</source>
+        <target>Wir analysieren Ihre Anforderungen und demonstrieren LLM Capsule anhand Ihrer eigenen Daten.</target>
+      </segment>
+    </unit>
+    <unit id="s10.description">
+      <segment>
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>Bringen Sie Ihre Dokumente, Infrastrukturvorgaben und Bewertungskriterien mit. Wir demonstrieren LLM Capsule auf Basis Ihrer tatsächlichen Workflows.</target>
+      </segment>
+    </unit>
+    <unit id="s10.btn1Label">
       <segment>
         <source>Request a Demo</source>
-        <target>Request a Demo</target>
+        <target>Demo anfordern</target>
       </segment>
     </unit>
-    <unit id="btn2Label">
+    <unit id="s10.btn1Href">
       <segment>
-        <source>Talk to an Architect</source>
-        <target>Talk to an Architect</target>
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
       </segment>
     </unit>
-    <unit id="footnote1Label">
-      <segment>
-        <source>Download Architecture Brief</source>
-        <target>Architektur-Brief herunterladen</target>
-      </segment>
-    </unit>
-    <unit id="footnote2Label">
+    <unit id="s10.footnote2Label">
       <segment>
         <source>AWS Marketplace</source>
-        <target>AWS Marketplace</target>
+        <target>Verfügbar auf AWS Marketplace</target>
       </segment>
     </unit>
+    <unit id="s10.footnote2Href">
+      <segment>
+        <source>https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&amp;ref_=beagle&amp;applicationId=AWSMPContessa</source>
+        <target>https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&amp;ref_=beagle&amp;applicationId=AWSMPContessa</target>
+      </segment>
+    </unit>
+
   </file>
 </xliff>
