@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-07 14:24:59",
+  "generated": "2026-05-07 14:35:40",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1524,7 +1524,7 @@
         {
           "name": "how-to-use-ai-on-sensitive-enterprise-data-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/how-to-use-ai-on-sensitive-enterprise-data-de-lines.md",
-          "modified": "2026-04-28"
+          "modified": "2026-05-07"
         },
         {
           "name": "how-to-use-ai-on-sensitive-enterprise-data-ja-lines.md",
@@ -1534,7 +1534,7 @@
         {
           "name": "how-to-use-ai-on-sensitive-enterprise-data-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/how-to-use-ai-on-sensitive-enterprise-data-ko-lines.md",
-          "modified": "2026-04-20"
+          "modified": "2026-05-07"
         },
         {
           "name": "index-de-lines.md",
