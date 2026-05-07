@@ -164,6 +164,8 @@ export default function LearnArticle({
           font-size: clamp(32px, 4.5vw, 56px);
           font-weight: 700;
           line-height: 1.12;
+          margin-left: auto;
+          margin-right: auto;
           letter-spacing: -0.02em;
           color: var(--c-ink, #0f1130);
           margin: 0 0 20px;
@@ -174,7 +176,7 @@ export default function LearnArticle({
           font-size: clamp(16px, 1.4vw, 19px);
           line-height: 1.65;
           color: var(--c-ink-soft, #3a3d5e);
-          margin: 0 0 28px;
+          margin: 0 auto 28px;
           max-width: 760px;
         }
 
@@ -183,6 +185,8 @@ export default function LearnArticle({
           flex-wrap: wrap;
           align-items: center;
           gap: 10px 16px;
+          max-width: 760px;
+          margin: 0 auto;
         }
 
         .la-meta__chip {
@@ -221,6 +225,7 @@ export default function LearnArticle({
 
         .la-tldr {
           max-width: 880px;
+          margin: 0 auto;
           background-color: var(--c-bg-dark, #0f1130);
           border-radius: var(--r-lg, 16px);
           padding: 32px 36px;
@@ -256,6 +261,7 @@ export default function LearnArticle({
 
         .la-body {
           max-width: 760px;
+          margin: 0 auto;
         }
 
         /* Headings inside body */
