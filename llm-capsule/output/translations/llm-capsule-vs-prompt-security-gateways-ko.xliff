@@ -10,13 +10,13 @@
     <unit id="heroDescription">
       <segment>
         <source>Compare LLM Capsule with prompt security gateways. Gateways filter at the API layer; LLM Capsule enables AI adoption at the data layer with structure-preserving encapsulation.</source>
-        <target>LLM Capsule과 프롬프트 보안 게이트웨이를 비교합니다. 게이트웨이는 API 계층에서 필터링하고, LLM Capsule은 구조 보존 Encapsulation으로 데이터 계층에서 AI 도입을 지원합니다.</target>
+        <target>LLM Capsule과 프롬프트 보안 게이트웨이를 비교합니다. 게이트웨이는 API 계층에서 필터링하고, LLM Capsule은 구조 보존 캡슐화로 데이터 계층에서 AI 도입을 지원합니다.</target>
       </segment>
     </unit>
     <unit id="overviewText">
       <segment>
         <source>Prompt security gateways sit between the user and the AI model, scanning prompts for sensitive content and filtering or blocking requests that contain flagged patterns. They operate at the API interaction layer. LLM Capsule operates as an AI enablement data layer — transforming the data itself before it enters any AI workflow, enabling AI adoption rather than blocking it.</source>
-        <target>프롬프트 보안 게이트웨이는 사용자와 AI 모델 사이에 위치하여 프롬프트에서 민감한 콘텐츠를 스캔하고, 플래그 패턴이 포함된 요청을 필터링하거나 차단합니다. API 상호작용 계층에서 작동합니다. LLM Capsule은 AI 활성화 데이터 레이어로서, 데이터가 AI 워크플로우에 진입하기 전에 데이터 자체를 변환하여 AI 도입을 차단하는 대신 지원합니다.</target>
+        <target>프롬프트 보안 게이트웨이는 사용자와 AI 모델 사이에 위치하여 프롬프트에서 민감 콘텐츠를 스캔하고, 플래그 패턴이 포함된 요청을 필터링하거나 차단합니다. API 상호작용 계층에서 작동합니다. LLM Capsule은 AI 활성화 데이터 레이어로서 데이터가 AI 워크플로우에 진입하기 전에 데이터 자체를 변환하여, AI 도입을 차단하는 대신 지원합니다.</target>
       </segment>
     </unit>
     <unit id="gatewaysWorkTitle">
@@ -28,7 +28,7 @@
     <unit id="gatewaysWorkText">
       <segment>
         <source>Prompt gateways intercept API calls to LLM providers. They scan the prompt text for PII patterns, blocked topics, or compliance violations. If sensitive content is detected, the gateway either blocks the request, strips the flagged content, or alerts an administrator. Some gateways also scan AI responses for data leakage.</source>
-        <target>프롬프트 게이트웨이는 LLM 제공사로의 API 호출을 가로챕니다. 프롬프트 텍스트에서 PII 패턴, 차단된 주제, 컴플라이언스 위반을 스캔합니다. 민감한 콘텐츠가 감지되면 게이트웨이는 요청을 차단하거나, 플래그된 콘텐츠를 제거하거나, 관리자에게 알립니다. 일부 게이트웨이는 AI 응답에서 데이터 유출도 스캔합니다.</target>
+        <target>프롬프트 게이트웨이는 LLM 제공사로의 API 호출을 가로챕니다. 프롬프트 텍스트에서 PII 패턴, 차단 주제, 컴플라이언스 위반을 스캔합니다. 민감 콘텐츠가 감지되면 게이트웨이는 요청을 차단하거나, 플래그된 콘텐츠를 제거하거나, 관리자에게 알립니다. 일부 게이트웨이는 AI 응답에서 데이터 유출도 스캔합니다.</target>
       </segment>
     </unit>
     <unit id="limitationsTitle">
@@ -52,7 +52,7 @@
     <unit id="limitationBullet3">
       <segment>
         <source>No output restoration. If a gateway strips sensitive content from a prompt, the AI output will lack that context. There is no restoration mechanism.</source>
-        <target>출력 Restoration 불가. 게이트웨이가 프롬프트에서 민감한 콘텐츠를 제거하면 AI 출력에 해당 컨텍스트가 누락됩니다. Restoration 메커니즘이 없습니다.</target>
+        <target>출력 복원 불가. 게이트웨이가 프롬프트에서 민감 콘텐츠를 제거하면 AI 출력에 해당 컨텍스트가 누락됩니다. 복원 메커니즘이 없습니다.</target>
       </segment>
     </unit>
     <unit id="limitationBullet4">
@@ -70,19 +70,163 @@
     <unit id="differsText">
       <segment>
         <source>LLM Capsule operates upstream of the prompt. It encapsulates sensitive data at the document level before any AI processing occurs. The encapsulation is structure-preserving — AI receives complete, processable documents. After AI generates outputs, local restoration (restoration) restores enterprise context automatically.</source>
-        <target>LLM Capsule은 프롬프트 상위 단계에서 작동합니다. AI 처리가 시작되기 전에 문서 수준에서 민감 데이터를 Encapsulation합니다. Encapsulation은 구조 보존 방식으로, AI는 완전하고 처리 가능한 문서를 수신합니다. AI가 출력을 생성한 후, Restoration이 자동으로 기업 컨텍스트를 복원합니다.</target>
+        <target>LLM Capsule은 프롬프트 상위 단계에서 작동합니다. AI 처리가 시작되기 전에 문서 수준에서 민감 데이터를 캡슐화합니다. 캡슐화는 구조 보존 방식으로, AI는 완전하고 처리 가능한 문서를 수신합니다. AI가 출력을 생성한 후, 로컬 복원이 자동으로 기업 컨텍스트를 복원합니다.</target>
       </segment>
     </unit>
     <unit id="differsBannerText">
       <segment>
         <source>AI results are restored locally. LLM Capsule enables enterprise AI adoption while protecting sensitive data and preserving usable outputs.</source>
-        <target>AI 결과는 로컬에서 Restoration됩니다. LLM Capsule은 민감 데이터를 보호하고 활용 가능한 출력을 유지하면서 기업 AI 도입을 지원합니다.</target>
+        <target>AI 결과는 로컬에서 복원됩니다. LLM Capsule은 민감 데이터를 보호하고 활용 가능한 출력을 유지하면서 기업 AI 도입을 지원합니다.</target>
       </segment>
     </unit>
     <unit id="comparisonTitle">
       <segment>
         <source>Comparison</source>
         <target>비교</target>
+      </segment>
+    </unit>
+    <unit id="thCapability">
+      <segment>
+        <source>Capability</source>
+        <target>기능</target>
+      </segment>
+    </unit>
+    <unit id="thGateways">
+      <segment>
+        <source>Prompt Security Gateways</source>
+        <target>프롬프트 보안 게이트웨이</target>
+      </segment>
+    </unit>
+    <unit id="thCapsule">
+      <segment>
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+      </segment>
+    </unit>
+    <unit id="row1Cap">
+      <segment>
+        <source>Operating layer</source>
+        <target>작동 계층</target>
+      </segment>
+    </unit>
+    <unit id="row1Col2">
+      <segment>
+        <source>API / prompt level</source>
+        <target>API / 프롬프트 계층</target>
+      </segment>
+    </unit>
+    <unit id="row1Col3">
+      <segment>
+        <source>AI enablement data layer</source>
+        <target>AI 활성화 데이터 레이어</target>
+      </segment>
+    </unit>
+    <unit id="row2Cap">
+      <segment>
+        <source>Scope</source>
+        <target>범위</target>
+      </segment>
+    </unit>
+    <unit id="row2Col2">
+      <segment>
+        <source>Prompt text only</source>
+        <target>프롬프트 텍스트 한정</target>
+      </segment>
+    </unit>
+    <unit id="row2Col3">
+      <segment>
+        <source>Full data pipeline</source>
+        <target>전체 데이터 파이프라인</target>
+      </segment>
+    </unit>
+    <unit id="row3Cap">
+      <segment>
+        <source>Protection method</source>
+        <target>보호 방식</target>
+      </segment>
+    </unit>
+    <unit id="row3Col2">
+      <segment>
+        <source>Block or strip</source>
+        <target>차단 또는 삭제</target>
+      </segment>
+    </unit>
+    <unit id="row3Col3">
+      <segment>
+        <source>Structure-preserving encapsulation</source>
+        <target>구조 보존 캡슐화</target>
+      </segment>
+    </unit>
+    <unit id="row4Cap">
+      <segment>
+        <source>Output restoration</source>
+        <target>출력 복원</target>
+      </segment>
+    </unit>
+    <unit id="row4Col2">
+      <segment>
+        <source>✗</source>
+        <target>✗</target>
+      </segment>
+    </unit>
+    <unit id="row4Col3">
+      <segment>
+        <source>✓ Local restoration</source>
+        <target>✓ 로컬 복원</target>
+      </segment>
+    </unit>
+    <unit id="row5Cap">
+      <segment>
+        <source>Context-aware data control</source>
+        <target>문맥 인식 데이터 제어</target>
+      </segment>
+    </unit>
+    <unit id="row5Col2">
+      <segment>
+        <source>Limited pattern matching</source>
+        <target>제한적 패턴 매칭</target>
+      </segment>
+    </unit>
+    <unit id="row5Col3">
+      <segment>
+        <source>Policy-based classification</source>
+        <target>정책 기반 분류</target>
+      </segment>
+    </unit>
+    <unit id="row6Cap">
+      <segment>
+        <source>RAG pipeline support</source>
+        <target>RAG 파이프라인 지원</target>
+      </segment>
+    </unit>
+    <unit id="row6Col2">
+      <segment>
+        <source>Partial</source>
+        <target>부분적</target>
+      </segment>
+    </unit>
+    <unit id="row6Col3">
+      <segment>
+        <source>Full integration</source>
+        <target>완전 통합</target>
+      </segment>
+    </unit>
+    <unit id="row7Cap">
+      <segment>
+        <source>Model independence</source>
+        <target>모델 독립성</target>
+      </segment>
+    </unit>
+    <unit id="row7Col2">
+      <segment>
+        <source>Provider-specific</source>
+        <target>제공사 종속</target>
+      </segment>
+    </unit>
+    <unit id="row7Col3">
+      <segment>
+        <source>Works with any LLM</source>
+        <target>모든 LLM과 호환</target>
       </segment>
     </unit>
     <unit id="exampleTitle">
@@ -106,7 +250,7 @@
     <unit id="exampleCardText2">
       <segment>
         <source>LLM Capsule encapsulates all documents at the data layer before they enter the RAG index. Every retrieval, every prompt composition, and every AI output operates on protected data. Restoration restores enterprise context in the final response.</source>
-        <target>LLM Capsule은 문서가 RAG 인덱스에 진입하기 전에 데이터 계층에서 모든 문서를 Encapsulation합니다. 모든 검색, 모든 프롬프트 구성, 모든 AI 출력이 보호된 데이터에서 작동합니다. Restoration이 최종 응답에서 기업 컨텍스트를 복원합니다.</target>
+        <target>LLM Capsule은 문서가 RAG 인덱스에 진입하기 전에 데이터 계층에서 모든 문서를 캡슐화합니다. 모든 검색, 모든 프롬프트 구성, 모든 AI 출력이 보호된 데이터에서 작동합니다. 복원이 최종 응답에서 기업 컨텍스트를 복원합니다.</target>
       </segment>
     </unit>
     <unit id="faqTitle">
@@ -124,7 +268,7 @@
     <unit id="faq1Answer">
       <segment>
         <source>Prompt gateways filter at the API level and can only block or pass requests. LLM Capsule transforms data at the source, preserving structure for AI processing and enabling output restoration.</source>
-        <target>프롬프트 게이트웨이는 API 수준에서 필터링하며 요청을 차단하거나 통과시킬 수만 있습니다. LLM Capsule은 소스에서 데이터를 변환하여 AI 처리를 위한 구조를 보존하고 출력 Restoration을 가능하게 합니다.</target>
+        <target>프롬프트 게이트웨이는 API 수준에서 필터링하며 요청을 차단하거나 통과시킬 수만 있습니다. LLM Capsule은 소스에서 데이터를 변환하여 AI 처리를 위한 구조를 보존하고, 출력 복원을 가능하게 합니다.</target>
       </segment>
     </unit>
     <unit id="faq2Question">
@@ -160,7 +304,7 @@
     <unit id="relatedLink4Label">
       <segment>
         <source>Request a Demo</source>
-        <target>Request a Demo</target>
+        <target>데모 요청</target>
       </segment>
     </unit>
     <unit id="relatedLink5Label">
@@ -178,25 +322,13 @@
     <unit id="ctaDescription">
       <segment>
         <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
-        <target>문서, 배포 조건, 평가 기준을 준비해 주세요. 실제 워크플로우에서 시연합니다.</target>
+        <target>문서, 배포 조건, 평가 기준을 준비해 주세요. 실제 워크플로우에서 직접 시연합니다.</target>
       </segment>
     </unit>
     <unit id="ctaBtn1Label">
       <segment>
         <source>Request a Demo</source>
-        <target>Request a Demo</target>
-      </segment>
-    </unit>
-    <unit id="ctaBtn2Label">
-      <segment>
-        <source>Talk to an Architect</source>
-        <target>Talk to an Architect</target>
-      </segment>
-    </unit>
-    <unit id="ctaFootnote1Label">
-      <segment>
-        <source>Download Architecture Brief</source>
-        <target>아키텍처 브리프 다운로드</target>
+        <target>데모 요청</target>
       </segment>
     </unit>
     <unit id="ctaFootnote2Label">

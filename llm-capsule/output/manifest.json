@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-07 15:19:41",
+  "generated": "2026-05-07 15:36:56",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -367,6 +367,11 @@
         {
           "name": "_preview.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/ai-on-network-operations-data/_preview.html",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "_preview.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/differential-privacy-for-enterprise-llm/_preview.html",
           "modified": "2026-05-07"
         },
         {
@@ -1462,6 +1467,16 @@
           "modified": "2026-05-07"
         },
         {
+          "name": "differential-privacy-for-enterprise-llm-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/differential-privacy-for-enterprise-llm-de-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "differential-privacy-for-enterprise-llm-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/differential-privacy-for-enterprise-llm-ko-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
           "name": "downloads-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/downloads-de-lines.md",
           "modified": "2026-04-28"
@@ -2371,6 +2386,11 @@
         {
           "name": "LearnArticle_AiOnNetworkOperationsData.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/ai-on-network-operations-data/LearnArticle_AiOnNetworkOperationsData.tsx",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "LearnArticle_DifferentialPrivacyForEnterpriseLlm.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/differential-privacy-for-enterprise-llm/LearnArticle_DifferentialPrivacyForEnterpriseLlm.tsx",
           "modified": "2026-05-07"
         },
         {
