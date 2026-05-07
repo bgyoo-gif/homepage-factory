@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
+  <file id="pii-guardrails-vs-operational-data-protection">
+
+    <!-- ── Hero ── -->
+    <unit id="backLabel">
+      <segment>
+        <source>← Learn</source>
+        <target>← Learn</target>
+      </segment>
+    </unit>
+    <unit id="backHref">
+      <segment>
+        <source>/learn</source>
+        <target>/learn</target>
+      </segment>
+    </unit>
+    <unit id="title">
+      <segment>
+        <source>Why PII Guardrails Don't Make Enterprise AI Work</source>
+        <target>Warum PII-Guardrails allein den KI-Einsatz im Unternehmen nicht ermöglichen</target>
+      </segment>
+    </unit>
+    <unit id="lead">
+      <segment>
+        <source>PII guardrails, AI security suites, prompt security gateways — they all do something important. They do not all do the same thing. Here is a direct comparison and a clear answer to where each fits in enterprise AI adoption.</source>
+        <target>PII-Guardrails, KI-Sicherheitssuiten, Prompt-Security-Gateways — sie alle erfüllen spezifische Aufgaben. Keine davon ist mit den anderen austauschbar. Dieser Artikel vergleicht die Kategorien direkt und zeigt, wo jede im KI-Einsatz des Unternehmens ihren Platz hat.</target>
+      </segment>
+    </unit>
+    <unit id="category">
+      <segment>
+        <source>COMPARISON · Categories</source>
+        <target>VERGLEICH · Kategorien</target>
+      </segment>
+    </unit>
+    <unit id="readTime">
+      <segment>
+        <source>11 min read</source>
+        <target>11 Min. Lesezeit</target>
+      </segment>
+    </unit>
+    <unit id="dateUpdated">
+      <segment>
+        <source>Updated May 2025</source>
+        <target>Aktualisiert Mai 2025</target>
+      </segment>
+    </unit>
+
+    <!-- ── TL;DR ── -->
+    <unit id="tldrLabel">
+      <segment>
+        <source>Definition · TL;DR</source>
+        <target>Definition · TL;DR</target>
+      </segment>
+    </unit>
+    <unit id="tldrBody">
+      <segment>
+        <source>PII guardrails protect identifiable fields at the API or prompt layer. The AI enablement data layer protects structured enterprise data — network logs, configurations, incident records, OT and mission context — using structure-preserving, differential-privacy-based encapsulation. They address adjacent but different layers of the enterprise AI pipeline.</source>
+        <target>PII-Guardrails schützen identifizierbare Felder auf API- oder Prompt-Ebene. Die KI-Datenschicht schützt strukturierte Unternehmensdaten — Netzwerkprotokolle, Konfigurationen, Incident-Records, OT- und Missionskontext — durch strukturerhaltende Kapsulierung auf Basis von Differential Privacy. Beide decken unterschiedliche Ebenen der KI-Pipeline im Unternehmen ab.</target>
+      </segment>
+    </unit>
+
+    <!-- ── Body HTML ── -->
+    <unit id="bodyHtml">
+      <segment>
+        <source><![CDATA[
+<h2>Why this comparison matters</h2>
+<p>Buyers evaluating enterprise AI routinely encounter four kinds of products in the same shortlist: PII guardrails, prompt security gateways, AI security suites, and the AI enablement data layer. They are not equivalent. Treating them as interchangeable leads to deployments that pass the PII filter but still expose the sensitive part of the workflow.</p>
+<p>This article puts them on the same page. It defines what each category does, where it fits in the pipeline, what it covers, and what it leaves uncovered.</p>
+
+<h2>The four categories</h2>
+
+<h3>1. PII guardrails (API-level field detection)</h3>
+<p>Developer-facing toolkits that wrap LLM API calls with detection and replacement of personal identifiers, content moderation, and safety filters. They are fast, easy to integrate, and well-suited to consumer or low-regulation enterprise workflows.</p>
+<p><strong>Layer:</strong> API call wrapper. <strong>Scope:</strong> field-level. <strong>Strength:</strong> speed of integration. <strong>Limitation:</strong> blind to structural and aggregate patterns in operational data.</p>
+
+<h3>2. AI security and prompt-level products (PII guardrails, prompt security gateways, AI security suites)</h3>
+<p>Focused on prompt injection, jailbreak resistance, output policy enforcement, and runtime threat detection. Often include PII detection as a secondary feature. Sit at the prompt or API gateway.</p>
+<p><strong>Layer:</strong> prompt / API gateway. <strong>Scope:</strong> prompt-level threats + PII. <strong>Strength:</strong> prompt injection defense. <strong>Limitation:</strong> not designed for transforming structured operational data before it reaches the model.</p>
+
+<h3>3. Synthetic data platforms</h3>
+<p>Generate synthetic versions of training or evaluation datasets that approximate the statistical properties of the original. Used for AI training pipelines and analytics, not for runtime protection of live operational data.</p>
+<p><strong>Layer:</strong> data pipeline (offline). <strong>Scope:</strong> dataset generation. <strong>Strength:</strong> training data for ML. <strong>Limitation:</strong> does not run in the live workflow.</p>
+
+<h3>4. AI Enablement Data Layer (LLM Capsule)</h3>
+<p>Sits between the existing enterprise environment (NOC, ticket, OT, EHR, mission systems) and the LLM. Transforms regulated operational data into AI-ready context using structure-preserving, differential-privacy-based encapsulation. Routes through one of two execution paths (external approved LLM or on-prem local model). Restores results back to the workflow via state vault.</p>
+<p><strong>Layer:</strong> AI enablement data layer. <strong>Scope:</strong> operational data + governance. <strong>Strength:</strong> structured operational data, two execution paths, plug-in to legacy systems. <strong>Limitation:</strong> is not a prompt injection defense or a synthetic data generator.</p>
+
+<h2>Direct comparison table</h2>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>PII guardrails</th>
+      <th>AI security / prompt</th>
+      <th>LLM Capsule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Layer</td><td>API wrapper</td><td>Prompt / gateway</td><td>AI enablement data layer</td></tr>
+    <tr><td>Scope</td><td>Names, IDs, fields</td><td>Prompt threats + PII</td><td>Operational data + governance</td></tr>
+    <tr><td>Method</td><td>Detect &amp; mask</td><td>Filter / sanitize prompts</td><td>Structure-preserving + DP-based encapsulation</td></tr>
+    <tr><td>Plug into legacy systems</td><td>No</td><td>No</td><td>Yes (NOC, Ticket, OT, EHR, Mission)</td></tr>
+    <tr><td>On-prem local execution</td><td>No</td><td>Limited</td><td>Yes (Path B)</td></tr>
+    <tr><td>Restoration</td><td>One-way</td><td>One-way</td><td>Two-way via state vault</td></tr>
+    <tr><td>Governance</td><td>Detection logs</td><td>Threat logs</td><td>Policy · audit · access · compliance</td></tr>
+  </tbody>
+</table>
+
+<h2>What each is best at</h2>
+<p><strong>PII guardrails</strong> are the right starting point for developers building AI features on top of an LLM API where the sensitive content is mostly individual identifiers.</p>
+<p><strong>AI security / prompt-level products</strong> are the right addition when the threat model includes prompt injection, jailbreak attempts, or behavioral abuse.</p>
+<p><strong>Synthetic data platforms</strong> are the right tool when the goal is to train models or enable analytics on representative-but-non-original datasets. They do not run live workflows.</p>
+<p><strong>LLM Capsule</strong> is the right layer when the data going to the LLM is regulated operational data — and the workflow runs inside a legacy enterprise environment that the AI must plug into rather than replace.</p>
+
+<h2>Two failure cases that illustrate the gap</h2>
+
+<h3>Case 1 · Telecom incident analysis</h3>
+<p>A carrier wants to use an external LLM to draft RCAs from NOC logs. A PII guardrail removes customer names from incident descriptions. The remaining log still contains device IDs, site references, alarm sequences, and topology paths that uniquely identify the impacted segment of the network. PII guardrail passes. Operational confidentiality is breached.</p>
+<p><strong>What LLM Capsule does differently:</strong> structure-preserving encapsulation tokenizes device IDs, site references, and topology paths while preserving sequence relationships so the LLM can still reason. Differential-privacy-based protection bounds inference risk on the aggregate. The capsule is routed to Path A (external approved LLM) with no raw operational data exposure, or to Path B (on-prem local model) for stricter regulatory profiles.</p>
+
+<h3>Case 2 · OT vulnerability review</h3>
+<p>An industrial operator wants AI-assisted vulnerability triage across PLC alerts. A PII guardrail has nothing to remove — there are no customer names. The data passes untouched to the external LLM. Plant zones, asset references, and patch constraints are visible to a third-party model.</p>
+<p><strong>What LLM Capsule does differently:</strong> the OT/asset reference markers (PLC tag, plant zone, asset inventory ref) are detected and encapsulated. The execution path is policy-driven — for OT, Path B (on-prem local) is typical, providing zero external transmission.</p>
+
+<h2>How they compose in practice</h2>
+<p>PII guardrails, prompt security, synthetic data platforms, and the AI enablement data layer are not mutually exclusive. A mature enterprise stack often runs all four in different parts of the AI pipeline:</p>
+<ul>
+  <li>PII guardrails — at the API call layer for low-regulation features</li>
+  <li>AI security / prompt protection — at the gateway for prompt threat defense</li>
+  <li>Synthetic data — in the offline training pipeline</li>
+  <li>LLM Capsule — at the AI enablement data layer for regulated operational data</li>
+</ul>
+<p>The mistake is treating the first as if it were the fourth. Field-level masking is not a substitute for distributional protection on operational data.</p>
+
+<div class="callout"><strong>Buyer test.</strong> When the AI pipeline involves NOC logs, incident records, OT manifests, configuration trees, clinical workflows, or mission context — the AI enablement data layer is the right place to evaluate. PII guardrails are necessary but not sufficient.</div>
+
+<h2>Where to verify</h2>
+<p>LLM Capsule is validated in regulated operational settings:</p>
+<ul>
+  <li><strong>Telecom</strong> — Deutsche Telekom T Challenge 2026, Top 12 in Data Security &amp; Governance</li>
+  <li><strong>Industrial cybersecurity / OT</strong> — partnership with Claroty</li>
+  <li><strong>Healthcare</strong> — deployed at EUMC (Ewha Womans University Medical Center)</li>
+  <li><strong>Finance &amp; insurance</strong> — deployed at IBK, Kyobo, DB Insurance</li>
+  <li><strong>Certifications</strong> — ISO/IEC 27001, ISO/IEC 42001</li>
+</ul>
+
+<div class="takeaways">
+  <div class="takeaways__label">Key takeaways</div>
+  <ul>
+    <li>PII guardrails and the AI enablement data layer address different layers of the enterprise AI pipeline.</li>
+    <li>PII guardrails, AI security suites, and prompt security gateways — each is strong in its own scope (risk control, policy enforcement, prompt-level protection). None of them transforms structured operational data with differential-privacy-based encapsulation.</li>
+    <li>The buyer test: if the sensitive content is structural (logs, configs, OT, clinical, mission), you need an AI enablement data layer, not just a guardrail.</li>
+    <li>The categories compose. The mistake is treating PII guardrails as if they covered operational data.</li>
+    <li>LLM Capsule provides plug-in to legacy systems, two execution paths, two-way restoration, and full governance — alongside, not instead of, PII guardrails where they are needed.</li>
+  </ul>
+</div>
+]]></source>
+        <target><![CDATA[
+<h2>Warum dieser Vergleich relevant ist</h2>
+<p>Bei der Evaluierung von KI-Lösungen für Unternehmen begegnen Entscheider regelmäßig vier Produktkategorien auf derselben Shortlist: PII-Guardrails, Prompt-Security-Gateways, KI-Sicherheitssuiten und die KI-Datenschicht. Diese Kategorien sind nicht gleichwertig. Wer sie als austauschbar behandelt, riskiert Deployments, die den PII-Filter passieren, aber die sensiblen Teile des Workflows weiterhin exponieren.</p>
+<p>Dieser Artikel stellt alle vier Kategorien nebeneinander: mit Definition, Einordnung in die Pipeline, Abdeckungsbereich und Grenzen.</p>
+
+<h2>Die vier Kategorien</h2>
+
+<h3>1. PII-Guardrails (Felderkennung auf API-Ebene)</h3>
+<p>Entwicklerorientierte Toolkits, die LLM-API-Aufrufe mit Erkennung und Ersetzung personenbezogener Identifikatoren, Inhaltsmoderation und Sicherheitsfiltern umhüllen. Sie sind schnell integriert und eignen sich für Workflows mit geringen Regulierungsanforderungen.</p>
+<p><strong>Ebene:</strong> API-Wrapper. <strong>Umfang:</strong> Feldebene. <strong>Stärke:</strong> schnelle Integration. <strong>Einschränkung:</strong> keine Erkennung struktureller und aggregierter Muster in operativen Daten.</p>
+
+<h3>2. KI-Sicherheits- und Prompt-Level-Produkte (PII-Guardrails, Prompt-Security-Gateways, KI-Sicherheitssuiten)</h3>
+<p>Diese Produkte behandeln Prompt-Injection, Jailbreak-Resistenz, Output-Richtliniendurchsetzung und Bedrohungserkennung zur Laufzeit. PII-Erkennung ist häufig eine sekundäre Funktion. Sie sind auf Prompt- oder API-Gateway-Ebene positioniert.</p>
+<p><strong>Ebene:</strong> Prompt- / API-Gateway. <strong>Umfang:</strong> Prompt-Bedrohungen und PII. <strong>Stärke:</strong> Schutz vor Prompt-Injection. <strong>Einschränkung:</strong> nicht für die Transformation strukturierter operativer Daten vor der Modellverarbeitung konzipiert.</p>
+
+<h3>3. Synthetische Datenplattformen</h3>
+<p>Diese Plattformen erzeugen synthetische Versionen von Trainings- oder Evaluierungsdatensätzen, die die statistischen Eigenschaften der Originaldaten annähern. Sie werden in KI-Trainingspipelines und für Analysen eingesetzt, nicht zum Laufzeitschutz produktiver operativer Daten.</p>
+<p><strong>Ebene:</strong> Datenpipeline (offline). <strong>Umfang:</strong> Datensatzgenerierung. <strong>Stärke:</strong> Trainingsdaten für ML. <strong>Einschränkung:</strong> kein Einsatz im Live-Workflow.</p>
+
+<h3>4. KI-Datenschicht — AI Enablement Data Layer (LLM Capsule)</h3>
+<p>Die KI-Datenschicht ist zwischen der bestehenden Unternehmensumgebung (NOC, Ticketsysteme, OT, EHR, Missionssysteme) und dem LLM positioniert. Sie transformiert regulierte operative Daten in KI-verarbeitbaren Kontext durch strukturerhaltende Kapsulierung auf Basis von Differential Privacy. Die Ausführung erfolgt über einen von zwei Pfaden — externer zugelassener LLM oder On-Premise-Modell. Ergebnisse werden über den State Vault in den Workflow zurückgeführt.</p>
+<p><strong>Ebene:</strong> KI-Datenschicht. <strong>Umfang:</strong> operative Daten und Governance. <strong>Stärke:</strong> strukturierte operative Daten, zwei Ausführungspfade, Integration in bestehende Systeme. <strong>Einschränkung:</strong> kein Schutz vor Prompt-Injection, keine Generierung synthetischer Daten.</p>
+
+<h2>Direkter Vergleich</h2>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>PII-Guardrails</th>
+      <th>KI-Sicherheit / Prompt</th>
+      <th>LLM Capsule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Ebene</td><td>API-Wrapper</td><td>Prompt- / Gateway-Ebene</td><td>KI-Datenschicht</td></tr>
+    <tr><td>Umfang</td><td>Namen, IDs, Felder</td><td>Prompt-Bedrohungen und PII</td><td>Operative Daten und Governance</td></tr>
+    <tr><td>Methode</td><td>Erkennen und maskieren</td><td>Prompts filtern und bereinigen</td><td>Strukturerhaltende Kapsulierung auf Basis von Differential Privacy</td></tr>
+    <tr><td>Integration in Bestandssysteme</td><td>Nein</td><td>Nein</td><td>Ja (NOC, Ticket, OT, EHR, Mission)</td></tr>
+    <tr><td>On-Premise-Ausführung</td><td>Nein</td><td>Eingeschränkt</td><td>Ja (Pfad B)</td></tr>
+    <tr><td>Wiederherstellung</td><td>Einseitig</td><td>Einseitig</td><td>Bidirektional über State Vault</td></tr>
+    <tr><td>Governance</td><td>Erkennungsprotokolle</td><td>Bedrohungsprotokolle</td><td>Richtlinien · Audit · Zugriff · Compliance</td></tr>
+  </tbody>
+</table>
+
+<h2>Einsatzbereiche der einzelnen Kategorien</h2>
+<p><strong>PII-Guardrails</strong> sind der richtige Ausgangspunkt für Entwickler, die KI-Funktionen auf Basis einer LLM-API erstellen, bei denen der sensible Inhalt überwiegend aus individuellen Identifikatoren besteht.</p>
+<p><strong>KI-Sicherheits- und Prompt-Level-Produkte</strong> sind die richtige Ergänzung, wenn das Bedrohungsmodell Prompt-Injection, Jailbreak-Versuche oder verhaltensbasierte Angriffe umfasst.</p>
+<p><strong>Synthetische Datenplattformen</strong> sind das richtige Werkzeug, wenn das Ziel das Modelltraining oder Analysen auf repräsentativen, aber nicht originalen Datensätzen ist. Sie laufen nicht in Live-Workflows.</p>
+<p><strong>LLM Capsule</strong> ist die richtige Schicht, wenn die Daten, die an das LLM übermittelt werden, regulierte operative Daten sind — und der Workflow in einer bestehenden Unternehmensumgebung läuft, in die sich die KI integrieren muss, anstatt sie zu ersetzen.</p>
+
+<h2>Zwei Szenarien, die die Lücke verdeutlichen</h2>
+
+<h3>Szenario 1 · Telekommunikation: Incident-Analyse</h3>
+<p>Ein Telekommunikationsanbieter möchte ein externes LLM einsetzen, um Root-Cause-Analysen aus NOC-Protokollen zu erstellen. Ein PII-Guardrail entfernt Kundennamen aus den Incident-Beschreibungen. Das verbleibende Protokoll enthält jedoch weiterhin Geräte-IDs, Standortverweise, Alarmsequenzen und Topologiepfade, die das betroffene Netzsegment eindeutig identifizieren. Der PII-Filter meldet keine Verletzung. Die operative Vertraulichkeit ist dennoch gefährdet.</p>
+<p><strong>Was LLM Capsule anders macht:</strong> Die strukturerhaltende Kapsulierung tokenisiert Geräte-IDs, Standortverweise und Topologiepfade und bewahrt dabei die Sequenzbeziehungen, damit das LLM weiterhin schlussfolgern kann. Der Differential-Privacy-basierte Schutz begrenzt das Inferenzrisiko auf aggregierter Ebene. Die Kapsel wird über Pfad A (externer zugelassener LLM) ohne Offenlegung operativer Rohdaten geleitet — oder über Pfad B (On-Premise-Modell) bei strengeren regulatorischen Anforderungen.</p>
+
+<h3>Szenario 2 · OT: Schwachstellenanalyse</h3>
+<p>Ein Industriebetreiber möchte KI-gestützte Schwachstellentriage für SPS-Alarmmeldungen einsetzen. Ein PII-Guardrail hat nichts zu entfernen — es gibt keine Kundennamen. Die Daten werden unverändert an das externe LLM übermittelt. Anlagenzonen, Asset-Referenzen und Patch-Beschränkungen sind für ein Drittanbietermodell sichtbar.</p>
+<p><strong>Was LLM Capsule anders macht:</strong> Die OT/Asset-Referenzmarker (SPS-Tag, Anlagenzone, Asset-Inventarreferenz) werden erkannt und kapsuliert. Der Ausführungspfad ist richtliniengesteuert — für OT ist Pfad B (On-Premise-lokal) typisch, bei dem keine Daten extern übertragen werden.</p>
+
+<h2>Zusammenspiel in der Praxis</h2>
+<p>PII-Guardrails, Prompt-Security, synthetische Datenplattformen und die KI-Datenschicht schließen sich nicht gegenseitig aus. Ein ausgereifter Unternehmens-Stack betreibt häufig alle vier in unterschiedlichen Teilen der KI-Pipeline:</p>
+<ul>
+  <li>PII-Guardrails — auf der API-Aufrufebene für Funktionen mit geringen Regulierungsanforderungen</li>
+  <li>KI-Sicherheit / Prompt-Schutz — am Gateway für den Schutz vor Prompt-Bedrohungen</li>
+  <li>Synthetische Daten — in der Offline-Trainingspipeline</li>
+  <li>LLM Capsule — auf der KI-Datenschicht für regulierte operative Daten</li>
+</ul>
+<p>Der Fehler liegt darin, die erste Kategorie so zu behandeln, als wäre sie die vierte. Feldebenenmaskierung ist kein Ersatz für aggregierten Schutz auf Verteilungsebene bei operativen Daten.</p>
+
+<div class="callout"><strong>Praxistest.</strong> Wenn die KI-Pipeline NOC-Protokolle, Incident-Records, OT-Manifeste, Konfigurationsbäume, klinische Workflows oder Missionskontext verarbeitet, ist die KI-Datenschicht der richtige Evaluierungspunkt. PII-Guardrails sind notwendig, aber nicht hinreichend.</div>
+
+<h2>Referenzen und Validierung</h2>
+<p>LLM Capsule ist in regulierten operativen Umgebungen validiert:</p>
+<ul>
+  <li><strong>Telekommunikation</strong> — Deutsche Telekom T Challenge 2026, Top 12 in Data Security &amp; Governance</li>
+  <li><strong>Industrielle Cybersicherheit / OT</strong> — Partnerschaft mit Claroty</li>
+  <li><strong>Gesundheitswesen</strong> — im Einsatz am EUMC (Ewha Womans University Medical Center)</li>
+  <li><strong>Finanz- und Versicherungsbranche</strong> — im Einsatz bei IBK, Kyobo, DB Insurance</li>
+  <li><strong>Zertifizierungen</strong> — ISO/IEC 27001, ISO/IEC 42001</li>
+</ul>
+
+<div class="takeaways">
+  <div class="takeaways__label">Kernaussagen</div>
+  <ul>
+    <li>PII-Guardrails und die KI-Datenschicht decken unterschiedliche Ebenen der KI-Pipeline im Unternehmen ab.</li>
+    <li>PII-Guardrails, KI-Sicherheitssuiten und Prompt-Security-Gateways — jede Kategorie ist in ihrem eigenen Bereich leistungsstark (Risikokontrolle, Richtliniendurchsetzung, Prompt-Schutz). Keine davon transformiert strukturierte operative Daten mit Differential-Privacy-basierter Kapsulierung.</li>
+    <li>Zur Orientierung: Wenn der sensible Inhalt struktureller Natur ist — Protokolle, Konfigurationen, OT, klinische Daten, Missionskontext — wird eine KI-Datenschicht benötigt, nicht nur ein Guardrail.</li>
+    <li>Die Kategorien ergänzen sich. Der Fehler liegt darin, PII-Guardrails so zu behandeln, als deckten sie operative Daten ab.</li>
+    <li>LLM Capsule bietet Integration in Bestandssysteme, zwei Ausführungspfade, bidirektionale Wiederherstellung und vollständige Governance — ergänzend zu PII-Guardrails, nicht als Ersatz, wo diese benötigt werden.</li>
+  </ul>
+</div>
+]]></target>
+      </segment>
+    </unit>
+
+    <!-- ── SEO ── -->
+    <unit id="canonicalUrl">
+      <segment>
+        <source>https://llmcapsule.ai/resources/learn/pii-guardrails-vs-operational-data-protection</source>
+        <target>https://llmcapsule.ai/resources/learn/pii-guardrails-vs-operational-data-protection</target>
+      </segment>
+    </unit>
+    <unit id="datePublished">
+      <segment>
+        <source>2025-05-01</source>
+        <target>2025-05-01</target>
+      </segment>
+    </unit>
+
+    <!-- ── Related Links ── -->
+    <unit id="relatedSectionLabel">
+      <segment>
+        <source>Continue reading</source>
+        <target>Weiterführende Artikel</target>
+      </segment>
+    </unit>
+    <unit id="relatedHeading">
+      <segment>
+        <source>Related guides</source>
+        <target>Verwandte Leitfäden</target>
+      </segment>
+    </unit>
+    <unit id="related1Tag">
+      <segment>
+        <source>Pillar</source>
+        <target>Grundlagenartikel</target>
+      </segment>
+    </unit>
+    <unit id="related1Title">
+      <segment>
+        <source>Differential privacy for enterprise AI</source>
+        <target>Differential Privacy für den KI-Einsatz im Unternehmen</target>
+      </segment>
+    </unit>
+    <unit id="related1Href">
+      <segment>
+        <source>/resources/learn/differential-privacy-for-enterprise-llm</source>
+        <target>/resources/learn/differential-privacy-for-enterprise-llm</target>
+      </segment>
+    </unit>
+    <unit id="related2Tag">
+      <segment>
+        <source>Use case</source>
+        <target>Anwendungsfall</target>
+      </segment>
+    </unit>
+    <unit id="related2Title">
+      <segment>
+        <source>AI on network operations data</source>
+        <target>KI-Einsatz im Netzwerkbetrieb</target>
+      </segment>
+    </unit>
+    <unit id="related2Href">
+      <segment>
+        <source>/resources/learn/ai-on-network-operations-data</source>
+        <target>/resources/learn/ai-on-network-operations-data</target>
+      </segment>
+    </unit>
+    <unit id="related3Tag">
+      <segment>
+        <source>Architecture</source>
+        <target>Architektur</target>
+      </segment>
+    </unit>
+    <unit id="related3Title">
+      <segment>
+        <source>On-prem LLM execution path</source>
+        <target>On-Premise-Ausführungspfad für LLMs</target>
+      </segment>
+    </unit>
+    <unit id="related3Href">
+      <segment>
+        <source>/resources/learn/on-prem-llm-execution-path</source>
+        <target>/resources/learn/on-prem-llm-execution-path</target>
+      </segment>
+    </unit>
+
+    <!-- ── CTA Strip ── -->
+    <unit id="ctaTitle">
+      <segment>
+        <source>Map your stack against the categories.</source>
+        <target>Ordnen Sie Ihren Stack den Kategorien zu.</target>
+      </segment>
+    </unit>
+    <unit id="ctaDescription">
+      <segment>
+        <source>30-minute review of where PII guardrails, prompt security, and the AI enablement data layer fit in your AI pipeline.</source>
+        <target>In einem 30-minütigen Gespräch analysieren wir, wo PII-Guardrails, Prompt-Security und die KI-Datenschicht in Ihre KI-Pipeline passen.</target>
+      </segment>
+    </unit>
+    <unit id="ctaLabel">
+      <segment>
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </segment>
+    </unit>
+    <unit id="ctaHref">
+      <segment>
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
+      </segment>
+    </unit>
+
+  </file>
+</xliff>
