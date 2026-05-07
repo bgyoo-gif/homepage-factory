@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="product-v62" source-language="en" target-language="de-DE" datatype="plaintext">
+    <header>
+      <note>product-v62 — Deutsche Übersetzung (v6.2, localize mode)</note>
+    </header>
+    <body>
+
+      <!-- Section 01: Hero -->
+      <trans-unit id="s01.eyebrow">
+        <source>Product</source>
+        <target>Produkt</target>
+      </trans-unit>
+      <trans-unit id="s01.title">
+        <source>Watch </source>
+        <target>Sehen Sie </target>
+      </trans-unit>
+      <trans-unit id="s01.titleBrand">
+        <source>LLM Capsule</source>
+        <target>LLM Capsule</target>
+        <note>Brand name — do not translate</note>
+      </trans-unit>
+      <trans-unit id="s01.titleSuffix">
+        <source> run on a real enterprise workflow</source>
+        <target> im Einsatz — an einem realen Unternehmens-Workflow.</target>
+      </trans-unit>
+      <trans-unit id="s01.description">
+        <source>Two minutes — see a real document encapsulated, sent to an external LLM, and restored back into the originating workflow. No marketing words. The actual product.</source>
+        <target>Zwei Minuten: Ein reales Dokument wird lokal gekapselt, an ein externes LLM übermittelt und anschließend im Ausgangssystem wiederhergestellt. Keine Marketingversprechen — das Produkt selbst.</target>
+      </trans-unit>
+      <trans-unit id="s01.ctaPrimaryLabel">
+        <source>Request a Live Demo</source>
+        <target>Live-Demo anfordern</target>
+      </trans-unit>
+      <trans-unit id="s01.ctaSecondaryLabel">
+        <source>View Architecture</source>
+        <target>Architektur ansehen</target>
+      </trans-unit>
+
+      <!-- Section 02: Demo Video -->
+      <trans-unit id="s02.videoDuration">
+        <source>2:14 · LLM CAPSULE LIVE WALKTHROUGH</source>
+        <target>2:14 · LLM CAPSULE LIVE WALKTHROUGH</target>
+        <note>Brand label — keep as-is</note>
+      </trans-unit>
+      <trans-unit id="s02.videoLabel">
+        <source>Watch the 2-minute product demo</source>
+        <target>2-Minuten-Produktdemonstration ansehen</target>
+      </trans-unit>
+      <trans-unit id="s02.watchLabel">
+        <source>Play demo</source>
+        <target>Demo abspielen</target>
+      </trans-unit>
+      <trans-unit id="s02.captionStrong">
+        <source>What you'll see:</source>
+        <target>Was Sie sehen:</target>
+      </trans-unit>
+      <trans-unit id="s02.captionText">
+        <source>A telecom NOC ticket flows through LLM Capsule — device IDs, circuit IDs, site references, alarm sequences, and SLA-impact references are encapsulated locally — subscriber identifiers included; the protected capsule reaches an external LLM; the AI's RCA recommendation is auto-restored back into the original ticket. End-to-end, in production.</source>
+        <target>Ein NOC-Ticket eines Telekommunikationsunternehmens durchläuft LLM Capsule: Geräte-IDs, Leitungs-IDs, Standortreferenzen, Alarmsequenzen, SLA-relevante Angaben und Teilnehmerkennungen werden lokal kapsuliert. Die geschützte Kapsel erreicht ein externes LLM. Die KI-Empfehlung zur Ursachenanalyse wird automatisch in das ursprüngliche Ticket zurückgeführt. Ende-zu-Ende, im Produktionsbetrieb.</target>
+      </trans-unit>
+      <trans-unit id="s02.ctaLabel">
+        <source>Take the Interactive Tour</source>
+        <target>Interaktive Tour starten</target>
+      </trans-unit>
+
+      <!-- Section 03: Interactive Tour -->
+      <trans-unit id="s03.eyebrow">
+        <source>Interactive product tour</source>
+        <target>Interaktive Produktführung</target>
+      </trans-unit>
+      <trans-unit id="s03.sectionTitle">
+        <source>Five steps. One real document. Real output.</source>
+        <target>Fünf Schritte. Ein reales Dokument. Verwertbare Ergebnisse.</target>
+      </trans-unit>
+      <trans-unit id="s03.sectionDesc">
+        <source>The same capsule mechanism runs across telecom, healthcare, finance, defense, legal, and OT. Below: a contract review workflow. The raw document never leaves your environment.</source>
+        <target>Derselbe Kapsulierungsmechanismus wird in Telekommunikation, Gesundheitswesen, Finanzwesen, Verteidigung, Recht und OT eingesetzt. Im folgenden Beispiel: ein Vertragsüberprüfungs-Workflow. Das Originaldokument verlässt zu keinem Zeitpunkt Ihre Umgebung.</target>
+      </trans-unit>
+      <trans-unit id="s03.step1Number">
+        <source>Step 01 — Point at the source</source>
+        <target>Schritt 01 — Quelle verbinden</target>
+      </trans-unit>
+      <trans-unit id="s03.step1Title">
+        <source>Reads the document where it already lives</source>
+        <target>Zugriff auf vorhandene Systeme — ohne Datenmigration</target>
+      </trans-unit>
+      <trans-unit id="s03.step1Desc">
+        <source>LLM Capsule runs inside your environment and reads documents from the systems already there — SharePoint, Jira / ServiceNow, Salesforce, Oracle ERP, internal NOC console, or your own portal. No data migration. No external pipe. No architectural change.</source>
+        <target>LLM Capsule wird innerhalb Ihrer Umgebung betrieben und liest Dokumente direkt aus bestehenden Systemen: SharePoint, Jira / ServiceNow, Salesforce, Oracle ERP, interne NOC-Konsolen oder eigene Portale. Es ist keine Datenmigration, keine externe Verbindung und keine Anpassung der Systemarchitektur erforderlich.</target>
+      </trans-unit>
+      <trans-unit id="s03.step1Sub">
+        <source>Existing systems invoke Capsule from inside the environment via REST / gRPC / JDBC / Graph API / on-prem API / embedded SDK / Slack App.</source>
+        <target>Bestehende Systeme rufen LLM Capsule innerhalb der Umgebung auf: REST / gRPC / JDBC / Graph API / On-Premise-API / eingebettetes SDK / Slack App.</target>
+      </trans-unit>
+      <trans-unit id="s03.step1Chips">
+        <source>In-environment | No data egress | Existing sources</source>
+        <target>In-environment | Kein Datenaustritt | Bestehende Quellen</target>
+      </trans-unit>
+      <trans-unit id="s03.step2Number">
+        <source>Step 02 — Define policy</source>
+        <target>Schritt 02 — Richtlinie festlegen</target>
+      </trans-unit>
+      <trans-unit id="s03.step2Title">
+        <source>Pick the markers your business cares about</source>
+        <target>Vertraulichkeitsmerkmale nach Ihren Anforderungen definieren</target>
+      </trans-unit>
+      <trans-unit id="s03.step2Desc">
+        <source>Pick from the starter pack — project codes, contract refs, network IDs, mission refs, financial terms, vulnerability labels — or write your own. Markers can be added, removed, and time-shifted tomorrow without redeploying. Every policy version is logged.</source>
+        <target>Wählen Sie aus dem Starter-Paket: Projektnummern, Vertragsreferenzen, Netzwerk-IDs, Missionsreferenzen, Finanzbegriffe, Schwachstellenkennzeichnungen. Oder definieren Sie eigene Merkmale. Merkmale lassen sich jederzeit hinzufügen, entfernen oder zeitlich befristet aktivieren — ohne erneuten Deployment-Vorgang. Jede Richtlinienversion wird protokolliert.</target>
+      </trans-unit>
+      <trans-unit id="s03.step2Chips">
+        <source>11 starter markers | Custom regex | Policy versions | RBAC scope</source>
+        <target>11 Starter-Merkmale | Eigene Regex | Richtlinienversionen | RBAC-Gültigkeitsbereich</target>
+      </trans-unit>
+      <trans-unit id="s03.step3Number">
+        <source>Step 03 — Encapsulate</source>
+        <target>Schritt 03 — Kapsulieren</target>
+      </trans-unit>
+      <trans-unit id="s03.step3Title">
+        <source>Sensitive elements replaced. Structure preserved.</source>
+        <target>Vertrauliche Inhalte ersetzt. Dokumentstruktur erhalten.</target>
+      </trans-unit>
+      <trans-unit id="s03.step3Desc">
+        <source>Inside the DMZ — Demilitarized Zone (Zone 2 of the four-zone architecture), sensitive elements are replaced with structure-preserving placeholders by the Enhanced Encapsulation Layer. Differential-privacy-based protection (epsilon-DP, Laplace noise, k-anonymity, NER masking) reduces re-identification risk. Tables, cross-references, and document hierarchy survive intact. See the four-zone architecture →</source>
+        <target>In der DMZ (Demilitarisierte Zone, Zone 2 der Vier-Zonen-Architektur) ersetzt das Enhanced Encapsulation Layer vertrauliche Inhalte durch strukturerhaltende Platzhalter. Der Schutz basiert auf Differential Privacy (epsilon-DP, Laplace-Rauschen, k-Anonymität, NER-Maskierung) und reduziert das Risiko einer Re-Identifizierung. Tabellen, Querverweise und die Dokumenthierarchie bleiben unverändert erhalten. Zur Vier-Zonen-Architektur →</target>
+      </trans-unit>
+      <trans-unit id="s03.step3Chips">
+        <source>epsilon-DP | Laplace noise | NER masking | Structure preserved</source>
+        <target>epsilon-DP | Laplace-Rauschen | NER-Maskierung | Struktur erhalten</target>
+      </trans-unit>
+      <trans-unit id="s03.step4Number">
+        <source>Step 04 — Process</source>
+        <target>Schritt 04 — Verarbeiten</target>
+      </trans-unit>
+      <trans-unit id="s03.step4Title">
+        <source>Any LLM. Path A or Path B.</source>
+        <target>Beliebiges LLM. Pfad A oder Pfad B.</target>
+      </trans-unit>
+      <trans-unit id="s03.step4Desc">
+        <source>The capsule (only the capsule — never the original) is routed through your approved external LLM (ChatGPT, Claude, Gemini, Perplexity) or to an on-prem local lightweight model for air-gapped workflows. Path is policy-driven per workflow.</source>
+        <target>Ausschließlich die Kapsel — niemals das Originaldokument — wird an das freigegebene externe LLM (ChatGPT, Claude, Gemini, Perplexity) oder an ein On-Premise-Modell für Air-Gapped-Workflows übermittelt. Die Pfadauswahl erfolgt richtliniengesteuert pro Workflow.</target>
+      </trans-unit>
+      <trans-unit id="s03.step4Chips">
+        <source>Path A · External | Path B · On-prem | Policy-routed</source>
+        <target>Pfad A · Extern | Pfad B · On-Premise | Richtliniengesteuert</target>
+      </trans-unit>
+      <trans-unit id="s03.step5Number">
+        <source>Step 05 — Restore</source>
+        <target>Schritt 05 — Wiederherstellen</target>
+      </trans-unit>
+      <trans-unit id="s03.step5Title">
+        <source>AI output comes back business-ready</source>
+        <target>KI-Ausgabe: direkt einsatzbereit im Ausgangssystem</target>
+      </trans-unit>
+      <trans-unit id="s03.step5Desc">
+        <source>The AI's response is auto-restored locally — token map lookup, original value substitution, context re-binding, output validation. Real names, real figures, real references appear in the original ticket. Token map never leaves the enterprise. End user sees a finished, production-ready output.</source>
+        <target>Die KI-Antwort wird lokal automatisch wiederhergestellt: Token-Map-Abgleich, Ersetzung durch Originalwerte, Kontextbindung, Ausgabevalidierung. Reale Bezeichnungen, Zahlen und Referenzen erscheinen im Originalticket. Die Token-Map verlässt die Unternehmensumgebung zu keinem Zeitpunkt. Das Ergebnis ist produktionsreif und ohne Nachbearbeitung verwendbar.</target>
+      </trans-unit>
+      <trans-unit id="s03.step5Chips">
+        <source>Local restore | Context re-binding | Output validation | Audit logged</source>
+        <target>Lokale Wiederherstellung | Kontextbindung | Ausgabevalidierung | Audit-Protokoll</target>
+      </trans-unit>
+
+      <!-- Section 04: Metrics Narrative -->
+      <trans-unit id="s04.eyebrow">
+        <source>Performance — measured on real enterprise documents</source>
+        <target>Leistungswerte — gemessen an realen Unternehmensdokumenten</target>
+      </trans-unit>
+      <trans-unit id="s04.sectionTitle">
+        <source>The numbers behind the demo</source>
+        <target>Die Kennzahlen hinter der Demonstration</target>
+      </trans-unit>
+      <trans-unit id="s04.sectionDesc">
+        <source>2,200-character document benchmark. Tested across finance, healthcare, legal, and public sector workflows.</source>
+        <target>Benchmark auf Basis eines 2.200-Zeichen-Dokuments. Getestet in Workflows aus Finanzwesen, Gesundheitswesen, Recht und öffentlichem Sektor.</target>
+      </trans-unit>
+      <trans-unit id="s04.bigValue">
+        <source>0.12s</source>
+        <target>0,12 s</target>
+        <note>Decimal comma for DE; space before unit</note>
+      </trans-unit>
+      <trans-unit id="s04.bigLabel">
+        <source>Per-page processing latency</source>
+        <target>Verarbeitungslatenz pro Seite</target>
+      </trans-unit>
+      <trans-unit id="s04.bigNarrativePrefix">
+        <source>That's </source>
+        <target>Das sind </target>
+      </trans-unit>
+      <trans-unit id="s04.bigNarrativeBold">
+        <source>120 milliseconds</source>
+        <target>120 Millisekunden</target>
+      </trans-unit>
+      <trans-unit id="s04.bigNarrativeSuffix">
+        <source> from raw document to encapsulated capsule — fast enough to plug into real-time NOC alerting, claims intake, and clinical workflows without breaking SLA. Most enterprise AI pilots stall on latency. We don't.</source>
+        <target> vom Rohdokument zur fertig kapsulierten Ausgabe. Damit ist LLM Capsule schnell genug für Echtzeit-NOC-Alarmierung, Schadenmeldungseingang und klinische Workflows — ohne SLA-Verletzung. Viele KI-Pilotprojekte im Unternehmen scheitern an der Latenz. LLM Capsule nicht.</target>
+      </trans-unit>
+      <trans-unit id="s04.metric1Value">
+        <source>100%</source>
+        <target>100 %</target>
+      </trans-unit>
+      <trans-unit id="s04.metric1Label">
+        <source>Restoration rate</source>
+        <target>Wiederherstellungsrate</target>
+      </trans-unit>
+      <trans-unit id="s04.metric1Desc">
+        <source>Every encapsulation has a reversible local mapping. No ambiguity, no manual reconstruction.</source>
+        <target>Jede Kapsulierung verfügt über eine lokal gespeicherte, umkehrbare Zuordnung. Keine Mehrdeutigkeit, keine manuelle Rekonstruktion.</target>
+      </trans-unit>
+      <trans-unit id="s04.metric2Value">
+        <source>98%</source>
+        <target>98 %</target>
+      </trans-unit>
+      <trans-unit id="s04.metric2Label">
+        <source>Output similarity</source>
+        <target>Ausgabeähnlichkeit</target>
+      </trans-unit>
+      <trans-unit id="s04.metric2Desc">
+        <source>Compared to AI processing the original document. Restoration preserves business meaning.</source>
+        <target>Im Vergleich zur KI-Verarbeitung des Originaldokuments. Die Wiederherstellung erhält die fachliche Bedeutung vollständig.</target>
+      </trans-unit>
+      <trans-unit id="s04.metric3Value">
+        <source>98.1%</source>
+        <target>98,1 %</target>
+        <note>Decimal comma for DE</note>
+      </trans-unit>
+      <trans-unit id="s04.metric3Label">
+        <source>Detection accuracy</source>
+        <target>Erkennungsgenauigkeit</target>
+      </trans-unit>
+      <trans-unit id="s04.metric3Desc">
+        <source>Sensitive entity detection across structured and free-text fields, including custom markers.</source>
+        <target>Erkennung vertraulicher Entitäten in strukturierten und Freitextfeldern, einschließlich benutzerdefinierter Merkmale.</target>
+      </trans-unit>
+      <trans-unit id="s04.metric4Value">
+        <source>99.14%</source>
+        <target>99,14 %</target>
+        <note>Decimal comma for DE</note>
+      </trans-unit>
+      <trans-unit id="s04.metric4Label">
+        <source>Workflow accuracy</source>
+        <target>Workflow-Genauigkeit</target>
+      </trans-unit>
+      <trans-unit id="s04.metric4Desc">
+        <source>End-to-end correctness — from raw input to restored output in production workflows.</source>
+        <target>Ende-zu-Ende-Korrektheit vom Rohdokument bis zur wiederhergestellten Ausgabe in Produktions-Workflows.</target>
+      </trans-unit>
+
+      <!-- Section 05: Workflow Gallery -->
+      <trans-unit id="s05.eyebrow">
+        <source>Workflow gallery</source>
+        <target>Workflow-Referenzen</target>
+      </trans-unit>
+      <trans-unit id="s05.heading">
+        <source>Same product. Six industries. Real customers.</source>
+        <target>Dasselbe Produkt. Sechs Branchen. Reale Kunden.</target>
+      </trans-unit>
+      <trans-unit id="s05.subheading">
+        <source>Each card below is a real workflow LLM Capsule runs in production. Click for the full case story.</source>
+        <target>Jede Karte zeigt einen realen Workflow, den LLM Capsule im Produktionsbetrieb ausführt.</target>
+      </trans-unit>
+      <trans-unit id="s05.card1IndustryTag">
+        <source>Telecom</source>
+        <target>Telekommunikation</target>
+      </trans-unit>
+      <trans-unit id="s05.card1Title">
+        <source>NOC incident analysis on production traffic</source>
+        <target>NOC-Störungsanalyse auf produktivem Datenverkehr</target>
+      </trans-unit>
+      <trans-unit id="s05.card1Description">
+        <source>RCA generation on live ticket data with device IDs, circuit IDs, site references, alarm sequences, SLA-impact references, and subscriber identifiers encapsulated locally. No raw operational data exposure to external LLMs.</source>
+        <target>Ursachenanalyse auf Live-Ticketdaten: Geräte-IDs, Leitungs-IDs, Standortreferenzen, Alarmsequenzen, SLA-relevante Angaben und Teilnehmerkennungen werden lokal kapsuliert. Operative Rohdaten gelangen nicht zu externen LLMs.</target>
+      </trans-unit>
+      <trans-unit id="s05.card1CustomerName">
+        <source>SK Telecom · Deutsche Telekom T Challenge 2026 — Top 12</source>
+        <target>SK Telecom · Deutsche Telekom T Challenge 2026 — Top 12</target>
+        <note>Customer name — keep as-is</note>
+      </trans-unit>
+      <trans-unit id="s05.card2IndustryTag">
+        <source>Healthcare</source>
+        <target>Gesundheitswesen</target>
+      </trans-unit>
+      <trans-unit id="s05.card2Title">
+        <source>Radiology report drafting with PHI never leaving</source>
+        <target>Radiologiebefund-Erstellung ohne Weitergabe von Patientendaten</target>
+      </trans-unit>
+      <trans-unit id="s05.card2Description">
+        <source>AI drafts radiology summaries from real clinical workflows. PHI encapsulated locally; restoration happens inside the hospital network. HIPAA-aligned.</source>
+        <target>Die KI erstellt Radiologiezusammenfassungen auf Basis realer klinischer Daten. Patientenbezogene Daten werden lokal kapsuliert; die Wiederherstellung erfolgt innerhalb des Krankenhausnetzwerks. HIPAA-konform.</target>
+      </trans-unit>
+      <trans-unit id="s05.card2CustomerName">
+        <source>Ewha Womans University Medical Center (EUMC)</source>
+        <target>Ewha Womans University Medical Center (EUMC)</target>
+        <note>Customer name — keep as-is</note>
+      </trans-unit>
+      <trans-unit id="s05.card3IndustryTag">
+        <source>Finance / Insurance</source>
+        <target>Finanzwesen / Versicherung</target>
+      </trans-unit>
+      <trans-unit id="s05.card3Title">
+        <source>AI claims processing with real customer data</source>
+        <target>KI-gestützte Schadenbearbeitung mit realen Kundendaten</target>
+      </trans-unit>
+      <trans-unit id="s05.card3Description">
+        <source>AI-powered claim classification, damage assessment, and fraud detection on real policyholder data. No customer data leaves the insurer's environment.</source>
+        <target>KI-basierte Schadenklassifizierung, Schadenbewertung und Betrugserkennung auf realen Versicherungsnehmerdaten. Kundendaten verlassen die Systemumgebung des Versicherers nicht.</target>
+      </trans-unit>
+      <trans-unit id="s05.card3CustomerName">
+        <source>Kyobo · DB Insurance · IBK</source>
+        <target>Kyobo · DB Insurance · IBK</target>
+        <note>Customer name — keep as-is</note>
+      </trans-unit>
+      <trans-unit id="s05.card4IndustryTag">
+        <source>Public Sector / Defense</source>
+        <target>Öffentlicher Sektor / Verteidigung</target>
+      </trans-unit>
+      <trans-unit id="s05.card4Title">
+        <source>Mission brief drafting on classified workflows</source>
+        <target>Erstellung von Einsatzdokumenten in klassifizierten Workflows</target>
+      </trans-unit>
+      <trans-unit id="s05.card4Description">
+        <source>AI drafts intelligence briefs and operational summaries on classified data. On-prem local execution path — zero external transmission. Full audit trail under command control.</source>
+        <target>Die KI erstellt Lageberichte und operative Zusammenfassungen auf Basis klassifizierter Daten. Ausführung ausschließlich auf On-Premise-Systemen — keine externe Datenübertragung. Vollständiges Audit-Protokoll unter Führungskontrolle.</target>
+      </trans-unit>
+      <trans-unit id="s05.card4CustomerName">
+        <source>Ministry of National Defense (South Korea)</source>
+        <target>Verteidigungsministerium (Südkorea)</target>
+      </trans-unit>
+
+      <!-- Section 06: Admin Console -->
+      <trans-unit id="s06.eyebrow">
+        <source>Operational governance</source>
+        <target>Betriebliche Governance</target>
+      </trans-unit>
+      <trans-unit id="s06.heading">
+        <source>Admin console — every event, every policy, every model</source>
+        <target>Admin-Konsole — jedes Ereignis, jede Richtlinie, jedes Modell</target>
+      </trans-unit>
+      <trans-unit id="s06.subheading">
+        <source>Enterprise AI governance is not a marketing claim. It's a console your audit team logs into.</source>
+        <target>KI-Governance im Unternehmen ist kein Marketingversprechen. Es ist eine Konsole, auf die Ihr Audit-Team direkt zugreift.</target>
+      </trans-unit>
+      <trans-unit id="s06.tab1">
+        <source>Audit</source>
+        <target>Audit</target>
+      </trans-unit>
+      <trans-unit id="s06.tab2">
+        <source>Policies</source>
+        <target>Richtlinien</target>
+      </trans-unit>
+      <trans-unit id="s06.tab3">
+        <source>Tokens</source>
+        <target>Tokens</target>
+      </trans-unit>
+      <trans-unit id="s06.tab4">
+        <source>Detection</source>
+        <target>Erkennung</target>
+      </trans-unit>
+      <trans-unit id="s06.tab5">
+        <source>Models</source>
+        <target>Modelle</target>
+      </trans-unit>
+      <trans-unit id="s06.row1Badge">
+        <source>restored</source>
+        <target>wiederhergestellt</target>
+      </trans-unit>
+      <trans-unit id="s06.row2Badge">
+        <source>restored</source>
+        <target>wiederhergestellt</target>
+      </trans-unit>
+      <trans-unit id="s06.row3Badge">
+        <source>restored</source>
+        <target>wiederhergestellt</target>
+      </trans-unit>
+      <trans-unit id="s06.row4Badge">
+        <source>policy</source>
+        <target>Richtlinie</target>
+      </trans-unit>
+      <trans-unit id="s06.row5Badge">
+        <source>policy</source>
+        <target>Richtlinie</target>
+      </trans-unit>
+      <trans-unit id="s06.textHeading">
+        <source>One pane. Five tabs. Full chain of custody.</source>
+        <target>Eine Oberfläche. Fünf Tabs. Lückenlose Nachvollziehbarkeit.</target>
+      </trans-unit>
+      <trans-unit id="s06.textPara1">
+        <source>Every encapsulation, processing, and restoration event lands here. Audit teams can replay any event end-to-end — what was protected, which policy version was active, which model processed it, what was restored.</source>
+        <target>Jedes Kapsulierungs-, Verarbeitungs- und Wiederherstellungsereignis wird hier erfasst. Audit-Teams können jeden Vorgang lückenlos nachvollziehen: was geschützt wurde, welche Richtlinienversion aktiv war, welches Modell die Verarbeitung übernahm und was wiederhergestellt wurde.</target>
+      </trans-unit>
+      <trans-unit id="s06.feature1Label">
+        <source>Audit</source>
+        <target>Audit</target>
+      </trans-unit>
+      <trans-unit id="s06.feature1Desc">
+        <source>every event with timestamps and policy version</source>
+        <target>jedes Ereignis mit Zeitstempel und Richtlinienversion</target>
+      </trans-unit>
+      <trans-unit id="s06.feature2Label">
+        <source>Policies</source>
+        <target>Richtlinien</target>
+      </trans-unit>
+      <trans-unit id="s06.feature2Desc">
+        <source>version history, scope, and RBAC</source>
+        <target>Versionshistorie, Gültigkeitsbereich und RBAC</target>
+      </trans-unit>
+      <trans-unit id="s06.feature3Label">
+        <source>Tokens</source>
+        <target>Tokens</target>
+      </trans-unit>
+      <trans-unit id="s06.feature3Desc">
+        <source>model usage, cost, and per-team breakdown</source>
+        <target>Modellnutzung, Kosten und teamweise Aufschlüsselung</target>
+      </trans-unit>
+      <trans-unit id="s06.feature4Label">
+        <source>Detection</source>
+        <target>Erkennung</target>
+      </trans-unit>
+      <trans-unit id="s06.feature4Desc">
+        <source>what was classified as sensitive, and how</source>
+        <target>was als vertraulich klassifiziert wurde und nach welchem Kriterium</target>
+      </trans-unit>
+      <trans-unit id="s06.feature5Label">
+        <source>Models</source>
+        <target>Modelle</target>
+      </trans-unit>
+      <trans-unit id="s06.feature5Desc">
+        <source>health, throughput, comparative output quality</source>
+        <target>Betriebsstatus, Durchsatz und vergleichende Ausgabequalität</target>
+      </trans-unit>
+
+      <!-- Section 07: Capability 06 -->
+      <trans-unit id="s07.badge">
+        <source>Capability 06 · Deep dive</source>
+        <target>Capability 06 · Vertiefung</target>
+      </trans-unit>
+      <trans-unit id="s07.heading">
+        <source>You define what's sensitive —</source>
+        <target>Sie definieren, was vertraulich ist —</target>
+      </trans-unit>
+      <trans-unit id="s07.headingEmphasis">
+        <source>and you can change it tomorrow.</source>
+        <target>und können es jederzeit anpassen.</target>
+      </trans-unit>
+      <trans-unit id="s07.lead">
+        <source>Yesterday it was network logs. Today it's M&amp;A code names. Next quarter it's a new regulator's spec. Standard PII categories don't move; your business does. LLM Capsule lets your team define, add, remove, and version confidentiality markers as your operations and regulatory landscape evolve — with full audit trail of which marker was protected when.</source>
+        <target>Was gestern Netzwerkprotokolle waren, sind heute M&amp;A-Codenamen — und im nächsten Quartal neue regulatorische Vorgaben. Standardmäßige Datenschutzkategorien sind starr; Ihr Geschäftsbetrieb nicht. Ihr Team kann Vertraulichkeitsmerkmale jederzeit definieren, hinzufügen, entfernen und versionieren — im Einklang mit operativen und regulatorischen Anforderungen. Jede Änderung wird vollständig protokolliert.</target>
+      </trans-unit>
+      <trans-unit id="s07.cap1Num">
+        <source>DEFINE</source>
+        <target>DEFINIEREN</target>
+      </trans-unit>
+      <trans-unit id="s07.cap1Title">
+        <source>Beyond generic PII</source>
+        <target>Über generische Datenschutzkategorien hinaus</target>
+      </trans-unit>
+      <trans-unit id="s07.cap1Description">
+        <source>Project codes, deal terms, internal IDs, contract references, network identifiers, OT asset IDs, mission refs. Your team defines the markers — not a vendor's fixed list.</source>
+        <target>Projektnummern, Vertragsbegriffe, interne Kennungen, Netzwerkidentifikatoren, OT-Asset-IDs, Missionsreferenzen. Ihr Team legt die Merkmale fest — nicht eine herstellerseitig fixierte Liste.</target>
+      </trans-unit>
+      <trans-unit id="s07.cap2Num">
+        <source>VERSION</source>
+        <target>VERSIONIEREN</target>
+      </trans-unit>
+      <trans-unit id="s07.cap2Title">
+        <source>Time-shift the policy</source>
+        <target>Richtlinien zeitlich steuern</target>
+      </trans-unit>
+      <trans-unit id="s07.cap2Description">
+        <source>Add a new marker today, retire one next quarter. Policy versioning + immediate enforcement. Audit log records exactly which marker was active for every encapsulation event.</source>
+        <target>Heute ein neues Merkmal hinzufügen, im nächsten Quartal ein bestehendes deaktivieren. Richtlinienversionen werden unmittelbar wirksam. Das Audit-Protokoll erfasst für jedes Kapsulierungsereignis, welches Merkmal zum jeweiligen Zeitpunkt aktiv war.</target>
+      </trans-unit>
+      <trans-unit id="s07.cap3Num">
+        <source>SCOPE</source>
+        <target>GÜLTIGKEITSBEREICH</target>
+      </trans-unit>
+      <trans-unit id="s07.cap3Title">
+        <source>Per workflow, team, data type</source>
+        <target>Pro Workflow, Team und Datentyp</target>
+      </trans-unit>
+      <trans-unit id="s07.cap3Description">
+        <source>NOC team, oncology unit, OT operations, M&amp;A — different policies, same governance. RBAC + scoped enforcement + per-policy audit. One LLM Capsule, many policies.</source>
+        <target>NOC-Team, Onkologieeinheit, OT-Betrieb, M&amp;A — unterschiedliche Richtlinien, einheitliche Governance. RBAC, gültigkeitsbereichsbezogene Durchsetzung und richtlinienbezogenes Audit. Ein LLM Capsule, viele Richtlinien.</target>
+      </trans-unit>
+
+      <!-- Section 08: CTA Strip -->
+      <trans-unit id="s08.heading">
+        <source>See it on your own documents.</source>
+        <target>LLM Capsule auf Ihren eigenen Dokumenten.</target>
+      </trans-unit>
+      <trans-unit id="s08.description">
+        <source>Bring your real workflow. We'll set up Capsule on a sample document in your environment within 30 minutes.</source>
+        <target>Wir analysieren Ihre Anforderungen und demonstrieren LLM Capsule anhand eines Beispieldokuments aus Ihrer Umgebung — in 30 Minuten einsatzbereit.</target>
+      </trans-unit>
+      <trans-unit id="s08.btn1Label">
+        <source>Request a Live Demo</source>
+        <target>Live-Demo anfordern</target>
+      </trans-unit>
+      <trans-unit id="s08.btn2Label">
+        <source>View Architecture</source>
+        <target>Architektur ansehen</target>
+      </trans-unit>
+      <trans-unit id="s08.btn3Label">
+        <source>View Pricing</source>
+        <target>Preise ansehen</target>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="architecture-v62" source-language="en" target-language="de-DE" datatype="plaintext">
+    <header>
+      <note>architecture-v62 — Deutsche Übersetzung (v6.2, localize mode)</note>
+    </header>
+    <body>
+
+      <!-- Section 01: Hero -->
+      <trans-unit id="s01.eyebrow">
+        <source>Architecture</source>
+        <target>Architektur</target>
+      </trans-unit>
+      <trans-unit id="s01.title">
+        <source>How LLM Capsule plugs AI into the systems you already run</source>
+        <target>Wie LLM Capsule KI in Ihre bestehenden Systeme integriert</target>
+      </trans-unit>
+      <trans-unit id="s01.subtitle">
+        <source>Three zones. Four steps. Five components. Two execution paths. One governance framework. The AI enablement data layer for regulated operations — at the architectural level.</source>
+        <target>Drei Zonen. Vier Schritte. Fünf Komponenten. Zwei Ausführungspfade. Ein Governance-Rahmen. LLM Capsule bildet die Datenschicht für den KI-Einsatz in regulierten Umgebungen — dargestellt auf Architekturebene.</target>
+      </trans-unit>
+
+      <!-- Section 02: Zone Overview -->
+      <trans-unit id="s02.eyebrow">
+        <source>Zone overview</source>
+        <target>Zonenübersicht</target>
+      </trans-unit>
+      <trans-unit id="s02.title">
+        <source>One layer between your existing systems and AI</source>
+        <target>Eine Schicht zwischen Ihren bestehenden Systemen und der KI</target>
+      </trans-unit>
+      <trans-unit id="s02.description">
+        <source>LLM Capsule sits inside your environment, reads from existing systems, preserves operational structure, and restores AI output back into the originating workflow. The architecture maps to four zones — Corporate Internal Network, DMZ, In-House Team, and Local Auto Reconstruction — and the trust boundary holds: raw operational data stays inside the corporate environment; only the protected capsule traverses zones; restored output is reconstructed locally inside the in-house team's environment.</source>
+        <target>LLM Capsule wird innerhalb Ihrer Umgebung betrieben. Es liest aus bestehenden Systemen, erhält die operative Datenstruktur und führt die KI-Ausgabe automatisch in den ursprünglichen Workflow zurück. Die Architektur gliedert sich in vier Zonen: Corporate Internal Network, DMZ, In-House Team und Local Auto Reconstruction. Die Vertrauensgrenze bleibt dabei durchgehend gewahrt: Rohe Betriebsdaten verbleiben im Unternehmensnetzwerk. Nur die geschützte Kapsel durchquert die Zonengrenzen. Die Wiederherstellung erfolgt ausschließlich lokal in der Unternehmensumgebung.</target>
+      </trans-unit>
+      <trans-unit id="s02.z1Label">
+        <source>Zone 1</source>
+        <target>Zone 1</target>
+      </trans-unit>
+      <trans-unit id="s02.z1Name">
+        <source>Corporate Internal Network</source>
+        <target>Corporate Internal Network</target>
+      </trans-unit>
+      <trans-unit id="s02.z1Desc">
+        <source>Where the operational systems and the data they hold already live. LLM Capsule reads from these systems where they already are — without modification, with a single API-call addition.</source>
+        <target>Hier befinden sich die operativen Systeme und die darin gespeicherten Daten. LLM Capsule liest direkt aus diesen Systemen — ohne Systemänderung, über einen einzigen zusätzlichen API-Aufruf.</target>
+      </trans-unit>
+      <trans-unit id="s02.z1Item1">
+        <source>ERP System (SAP / Oracle) — REST API</source>
+        <target>ERP-System (SAP / Oracle) — REST API</target>
+      </trans-unit>
+      <trans-unit id="s02.z1Item2">
+        <source>CRM (Salesforce) — REST API</source>
+        <target>CRM (Salesforce) — REST API</target>
+      </trans-unit>
+      <trans-unit id="s02.z1Item3">
+        <source>Ticketing (Jira / ServiceNow) — REST API</source>
+        <target>Ticketing (Jira / ServiceNow) — REST API</target>
+      </trans-unit>
+      <trans-unit id="s02.z1Item4">
+        <source>DMS / ECM (SharePoint) — Graph API</source>
+        <target>DMS / ECM (SharePoint) — Graph API</target>
+      </trans-unit>
+      <trans-unit id="s02.z1Item5">
+        <source>Legacy DB (Oracle / MSSQL) — JDBC → API</source>
+        <target>Legacy-DB (Oracle / MSSQL) — JDBC → API</target>
+      </trans-unit>
+      <trans-unit id="s02.z1Item6">
+        <source>RAG Pipeline (Vector DB) — gRPC / REST</source>
+        <target>RAG-Pipeline (Vector DB) — gRPC / REST</target>
+      </trans-unit>
+      <trans-unit id="s02.z2Label">
+        <source>Zone 2</source>
+        <target>Zone 2</target>
+      </trans-unit>
+      <trans-unit id="s02.z2Name">
+        <source>DMZ — Demilitarized Zone</source>
+        <target>DMZ — Demilitarisierte Zone</target>
+      </trans-unit>
+      <trans-unit id="s02.z2Desc">
+        <source>Where the Enhanced Encapsulation Layer operates. Detection identifies sensitive elements, encapsulation replaces them with safe tokens using structure-preserving, differential-privacy-based protection, and only the capsule leaves this zone toward an external AI.</source>
+        <target>In dieser Zone wird die Enhanced Encapsulation Layer ausgeführt. Sensible Inhalte werden erkannt und durch sichere Token ersetzt — strukturerhaltend, auf Basis von Differential Privacy. Nur die Kapsel verlässt diese Zone in Richtung externer KI.</target>
+      </trans-unit>
+      <trans-unit id="s02.z2Item1">
+        <source>Detection — PII + customer-defined markers</source>
+        <target>Erkennung — personenbezogene Daten und kundendefinierte Marker</target>
+      </trans-unit>
+      <trans-unit id="s02.z2Item2">
+        <source>Enhanced Encapsulation Layer — DP-based, structure-preserving</source>
+        <target>Enhanced Encapsulation Layer — Differential-Privacy-basiert, strukturerhaltend</target>
+      </trans-unit>
+      <trans-unit id="s02.z2Item3">
+        <source>Capsule transmission — capsule only, never raw data</source>
+        <target>Kapselübertragung — ausschließlich die Kapsel, niemals Rohdaten</target>
+      </trans-unit>
+      <trans-unit id="s02.z2Item4">
+        <source>Token map stays local</source>
+        <target>Token-Map verbleibt lokal</target>
+      </trans-unit>
+      <trans-unit id="s02.z2Item5">
+        <source>Audit trail of every encapsulation event</source>
+        <target>Vollständiger Audit-Trail jedes Kapsulierungsvorgangs</target>
+      </trans-unit>
+      <trans-unit id="s02.z2Badge">
+        <source>↑ Trust boundary — original operational data never crosses</source>
+        <target>↑ Vertrauensgrenze — ursprüngliche Betriebsdaten überschreiten diese Grenze nicht</target>
+      </trans-unit>
+      <trans-unit id="s02.z3Label">
+        <source>Zone 3</source>
+        <target>Zone 3</target>
+      </trans-unit>
+      <trans-unit id="s02.z3Name">
+        <source>In-House Team</source>
+        <target>In-House Team</target>
+      </trans-unit>
+      <trans-unit id="s02.z3Desc">
+        <source>Where governance, policy, and the AI workflow itself are operated. Organizational policy, permissions, and domain context drive how the encapsulated request is routed — to an approved external LLM or to an on-prem local model — with full audit retained inside the organization.</source>
+        <target>Governance, Richtlinien und der KI-Workflow selbst werden in dieser Zone gesteuert. Organisationsrichtlinien, Zugriffsberechtigungen und fachlicher Kontext bestimmen, wie die Kapselanfrage weitergeleitet wird — an einen zugelassenen externen LLM (Pfad A) oder an ein On-Premise-Modell (Pfad B). Der vollständige Audit-Trail verbleibt in der Organisation.</target>
+      </trans-unit>
+      <trans-unit id="s02.z3Item1">
+        <source>Organizational policy &amp; permissions</source>
+        <target>Organisationsrichtlinien und Zugriffsberechtigungen</target>
+      </trans-unit>
+      <trans-unit id="s02.z3Item2">
+        <source>Domain context applied to AI processing</source>
+        <target>Fachlicher Kontext für die KI-Verarbeitung</target>
+      </trans-unit>
+      <trans-unit id="s02.z3Item3">
+        <source>Routing — external approved LLM (Path A) or on-prem local (Path B)</source>
+        <target>Routing — zugelassener externer LLM (Pfad A) oder lokales On-Premise-Modell (Pfad B)</target>
+      </trans-unit>
+      <trans-unit id="s02.z3Item4">
+        <source>Approved external LLMs: ChatGPT · Claude · Gemini · Perplexity · any LLM API</source>
+        <target>Zugelassene externe LLMs: ChatGPT · Claude · Gemini · Perplexity · beliebige LLM-API</target>
+      </trans-unit>
+      <trans-unit id="s02.z3Item5">
+        <source>Governance fully retained</source>
+        <target>Governance verbleibt vollständig in der Organisation</target>
+      </trans-unit>
+      <trans-unit id="s02.z4Label">
+        <source>Zone 4</source>
+        <target>Zone 4</target>
+      </trans-unit>
+      <trans-unit id="s02.z4Name">
+        <source>Local — Auto Reconstruction</source>
+        <target>Lokal — Automatische Rekonstruktion</target>
+      </trans-unit>
+      <trans-unit id="s02.z4Desc">
+        <source>Where the AI response is automatically reconstructed back into Business-Ready output. Tokens are restored to original values inside the organization only — data that left the boundary cannot be reconstructed externally.</source>
+        <target>In dieser Zone wird die KI-Antwort automatisch in ein fachlich nutzbares Ergebnis überführt. Die Token werden ausschließlich innerhalb der Organisation mit den Originalwerten angereichert. Daten, die die Vertrauensgrenze verlassen haben, können extern nicht rekonstruiert werden.</target>
+      </trans-unit>
+      <trans-unit id="s02.z4Item1">
+        <source>Token-by-token restoration from local token vault</source>
+        <target>Token-für-Token-Wiederherstellung aus dem lokalen Token-Tresor</target>
+      </trans-unit>
+      <trans-unit id="s02.z4Item2">
+        <source>Restoration happens only inside the organization</source>
+        <target>Wiederherstellung erfolgt ausschließlich innerhalb der Organisation</target>
+      </trans-unit>
+      <trans-unit id="s02.z4Item3">
+        <source>Externally-leaked data is not restorable outside</source>
+        <target>Extern abgeflossene Daten sind außerhalb nicht wiederherstellbar</target>
+      </trans-unit>
+      <trans-unit id="s02.z4Item4">
+        <source>Business-Ready output delivered to the originating workflow</source>
+        <target>Fachlich nutzbare Ergebnisse werden in den ursprünglichen Workflow zurückgeführt</target>
+      </trans-unit>
+      <trans-unit id="s02.z4Item5">
+        <source>Restoration audit alongside encapsulation audit</source>
+        <target>Wiederherstellungs-Audit parallel zum Kapsulierungs-Audit</target>
+      </trans-unit>
+
+      <!-- Section 03: Technical Diagram -->
+      <trans-unit id="s03.eyebrow">
+        <source>Technical view · zone-based architecture</source>
+        <target>Technische Ansicht · Zonenbasierte Architektur</target>
+      </trans-unit>
+      <trans-unit id="s03.title">
+        <source>The same architecture, in technical detail</source>
+        <target>Dieselbe Architektur — in technischer Detailtiefe</target>
+      </trans-unit>
+      <trans-unit id="s03.description">
+        <source>For architects and security reviewers — the full zone-based view of how operational data, encapsulation, and external AI interact.</source>
+        <target>Für Systemarchitekten und Sicherheitsverantwortliche: die vollständige zonenbasierte Darstellung des Zusammenspiels von Betriebsdaten, Kapsulierung und externer KI.</target>
+      </trans-unit>
+      <trans-unit id="s03.diagramLabel">
+        <source>TECHNICAL VIEW · ZONE-BASED ARCHITECTURE</source>
+        <target>TECHNISCHE ANSICHT · ZONENBASIERTE ARCHITEKTUR</target>
+      </trans-unit>
+      <trans-unit id="s03.a1Num">
+        <source>Zone 1 · Corporate Internal Network</source>
+        <target>Zone 1 · Corporate Internal Network</target>
+      </trans-unit>
+      <trans-unit id="s03.a1Title">
+        <source>Where the operational systems already live</source>
+        <target>Wo die operativen Systeme bereits betrieben werden</target>
+      </trans-unit>
+      <trans-unit id="s03.a1Desc">
+        <source>Existing enterprise systems — ERP, CRM, Ticketing, DMS / ECM, Legacy DB, RAG Pipeline — stay in place. Nothing migrates. Capsule reads from them via REST, gRPC, JDBC, or Graph API depending on the source.</source>
+        <target>Die bestehenden Unternehmenssysteme — ERP, CRM, Ticketing, DMS / ECM, Legacy-DB, RAG-Pipeline — verbleiben unverändert am vorhandenen Ort. Es findet keine Migration statt. LLM Capsule liest über REST, gRPC, JDBC oder Graph API aus diesen Systemen — je nach Quellsystem.</target>
+      </trans-unit>
+      <trans-unit id="s03.a2Num">
+        <source>Zone 2 · DMZ — Demilitarized Zone</source>
+        <target>Zone 2 · DMZ — Demilitarisierte Zone</target>
+      </trans-unit>
+      <trans-unit id="s03.a2Title">
+        <source>Where encapsulation happens</source>
+        <target>Wo die Kapsulierung stattfindet</target>
+      </trans-unit>
+      <trans-unit id="s03.a2Desc">
+        <source>The Enhanced Encapsulation Layer detects sensitive elements, replaces them with safe tokens using structure-preserving, differential-privacy-based protection, and hands the capsule to the routing decision. Original values stay behind, retained in the local token map.</source>
+        <target>Die Enhanced Encapsulation Layer erkennt sensible Inhalte und ersetzt sie durch sichere Token — strukturerhaltend, auf Basis von Differential Privacy. Die Originalwerte verbleiben lokal in der Token-Map. Die Kapsel wird anschließend an die Routing-Entscheidung übergeben.</target>
+      </trans-unit>
+      <trans-unit id="s03.a3Num">
+        <source>Zone 3 · In-House Team</source>
+        <target>Zone 3 · In-House Team</target>
+      </trans-unit>
+      <trans-unit id="s03.a3Title">
+        <source>Where governance and routing happen</source>
+        <target>Wo Governance und Routing gesteuert werden</target>
+      </trans-unit>
+      <trans-unit id="s03.a3Desc">
+        <source>Organizational policy, permissions, and domain context decide where the capsule is processed — an approved external LLM (Path A) or an on-prem local model (Path B). The decision is policy-driven per workflow, with full audit retained inside the organization.</source>
+        <target>Organisationsrichtlinien, Zugriffsberechtigungen und fachlicher Kontext bestimmen, wo die Kapsel verarbeitet wird — über einen zugelassenen externen LLM (Pfad A) oder ein lokales On-Premise-Modell (Pfad B). Die Entscheidung erfolgt richtliniengesteuert, je Workflow. Der vollständige Audit-Trail verbleibt in der Organisation.</target>
+      </trans-unit>
+      <trans-unit id="s03.a4Num">
+        <source>Zone 4 · Local — Auto Reconstruction</source>
+        <target>Zone 4 · Lokal — Automatische Rekonstruktion</target>
+      </trans-unit>
+      <trans-unit id="s03.a4Title">
+        <source>Where the AI response becomes Business-Ready output</source>
+        <target>Wo die KI-Antwort in ein fachlich nutzbares Ergebnis überführt wird</target>
+      </trans-unit>
+      <trans-unit id="s03.a4Desc">
+        <source>The AI response is automatically reconstructed from token to original value inside the organization only. Data that left the trust boundary cannot be reconstructed externally. The restored output is delivered back into the originating workflow.</source>
+        <target>Die KI-Antwort wird ausschließlich innerhalb der Organisation automatisch von Token auf Originalwerte zurückgeführt. Daten, die die Vertrauensgrenze verlassen haben, sind extern nicht rekonstruierbar. Das wiederhergestellte Ergebnis wird in den ursprünglichen Workflow zurückgegeben.</target>
+      </trans-unit>
+
+      <!-- Section 04: Pillars -->
+      <trans-unit id="s04.eyebrow">
+        <source>Six architectural pillars</source>
+        <target>Sechs architektonische Grundprinzipien</target>
+      </trans-unit>
+      <trans-unit id="s04.title">
+        <source>What this architecture protects against — and how</source>
+        <target>Wovor diese Architektur schützt — und wie</target>
+      </trans-unit>
+      <trans-unit id="s04.description">
+        <source>The pillars below are the technical commitments encoded into the four-zone architecture above. Each maps to a specific failure mode of conventional approaches.</source>
+        <target>Die folgenden Grundprinzipien beschreiben die technischen Eigenschaften der Vier-Zonen-Architektur. Jedes Prinzip adressiert einen spezifischen Schwachpunkt konventioneller Ansätze.</target>
+      </trans-unit>
+      <trans-unit id="s04.p1Num">
+        <source>Pillar 01</source>
+        <target>Grundprinzip 01</target>
+      </trans-unit>
+      <trans-unit id="s04.p1Title">
+        <source>Beyond simple PII guardrails</source>
+        <target>Über einfache PII-Schutzmaßnahmen hinaus</target>
+      </trans-unit>
+      <trans-unit id="s04.p1Desc">
+        <source>Even inside the same enterprise, free-text fields like a CS ticket Details column mix customer names, contact information, and claim narrative in unstructured form. Simple PII guardrails cannot safely process this. Detection in Capsule operates on free-text and structured fields together — semantic and context-aware, not pattern-matching alone.</source>
+        <target>In Freitextfeldern — etwa der Detailspalte eines Support-Tickets — vermischen sich Kundennamen, Kontaktdaten und Schadenberichte in unstrukturierter Form. Einfache PII-Schutzmaßnahmen sind dafür nicht ausreichend. Die Erkennung in LLM Capsule arbeitet auf Freitext- und strukturierten Feldern gemeinsam: semantisch und kontextbewusst, nicht allein auf Basis von Mustern.</target>
+      </trans-unit>
+      <trans-unit id="s04.p2Num">
+        <source>Pillar 02</source>
+        <target>Grundprinzip 02</target>
+      </trans-unit>
+      <trans-unit id="s04.p2Title">
+        <source>No modification of existing systems</source>
+        <target>Keine Änderung bestehender Systeme</target>
+      </trans-unit>
+      <trans-unit id="s04.p2Desc">
+        <source>Existing enterprise systems are not refactored. Connection is a single API-call addition (REST / gRPC) — the operations team continues using their existing tools, the Capsule layer handles encapsulation and restoration alongside.</source>
+        <target>Bestehende Unternehmenssysteme werden nicht umgebaut. Die Anbindung erfolgt über einen einzigen zusätzlichen API-Aufruf (REST / gRPC). Das Betriebsteam arbeitet weiterhin mit seinen vorhandenen Werkzeugen. LLM Capsule übernimmt Kapsulierung und Wiederherstellung parallel dazu.</target>
+      </trans-unit>
+      <trans-unit id="s04.p3Num">
+        <source>Pillar 03</source>
+        <target>Grundprinzip 03</target>
+      </trans-unit>
+      <trans-unit id="s04.p3Title">
+        <source>Beyond simple encapsulation — differential privacy</source>
+        <target>Über einfache Kapsulierung hinaus — Differential Privacy</target>
+      </trans-unit>
+      <trans-unit id="s04.p3Desc">
+        <source>The Enhanced Encapsulation Layer goes beyond simple tokenization. Differential privacy (epsilon-DP, Laplace noise, k-anonymity, NER masking) is applied to minimize re-identification risk on the capsule itself, providing stronger protection than tokenization alone.</source>
+        <target>Die Enhanced Encapsulation Layer geht über einfache Tokenisierung hinaus. Differential Privacy (epsilon-DP, Laplace-Rauschen, k-Anonymität, NER-Maskierung) wird angewendet, um das Wiedererkennungsrisiko der Kapsel selbst zu minimieren. Der Schutz ist damit stärker als bei reiner Tokenisierung.</target>
+      </trans-unit>
+      <trans-unit id="s04.p4Num">
+        <source>Pillar 04</source>
+        <target>Grundprinzip 04</target>
+      </trans-unit>
+      <trans-unit id="s04.p4Title">
+        <source>No raw exposure to external AI</source>
+        <target>Keine Offenlegung von Rohdaten gegenüber externer KI</target>
+      </trans-unit>
+      <trans-unit id="s04.p4Desc">
+        <source>External AI services see only the capsule. Original operational data does not cross the trust boundary. Tokenization combined with DP processing means a leak from the external AI side does not yield reconstructable original values.</source>
+        <target>Externe KI-Dienste erhalten ausschließlich die Kapsel. Die ursprünglichen Betriebsdaten überschreiten die Vertrauensgrenze nicht. Die Kombination aus Tokenisierung und Differential-Privacy-Verarbeitung stellt sicher, dass ein Datenaustritt auf der externen KI-Seite keine rekonstruierbaren Originalwerte liefert.</target>
+      </trans-unit>
+      <trans-unit id="s04.p5Num">
+        <source>Pillar 05</source>
+        <target>Grundprinzip 05</target>
+      </trans-unit>
+      <trans-unit id="s04.p5Title">
+        <source>In-environment auto-restoration</source>
+        <target>Automatische Wiederherstellung in der Unternehmensumgebung</target>
+      </trans-unit>
+      <trans-unit id="s04.p5Desc">
+        <source>AI response tokens are automatically restored to their original values inside the organization only. Data that left the trust boundary cannot be reconstructed externally — only the in-house token vault can perform restoration.</source>
+        <target>KI-Antwort-Token werden ausschließlich innerhalb der Organisation automatisch auf ihre Originalwerte zurückgeführt. Daten, die die Vertrauensgrenze verlassen haben, sind extern nicht rekonstruierbar. Nur der interne Token-Tresor kann die Wiederherstellung durchführen.</target>
+      </trans-unit>
+      <trans-unit id="s04.p6Num">
+        <source>Pillar 06</source>
+        <target>Grundprinzip 06</target>
+      </trans-unit>
+      <trans-unit id="s04.p6Title">
+        <source>Governance, policy &amp; domain context retained</source>
+        <target>Governance, Richtlinien und fachlicher Kontext bleiben erhalten</target>
+      </trans-unit>
+      <trans-unit id="s04.p6Desc">
+        <source>Organizational policy, permissions, and domain context drive the entire AI processing path — what gets encapsulated, where it is routed (Path A external or Path B on-prem), and how restoration is audited. Governance stays inside the organization end-to-end.</source>
+        <target>Organisationsrichtlinien, Zugriffsberechtigungen und fachlicher Kontext steuern den gesamten KI-Verarbeitungspfad: was kapsuliert wird, wohin geroutet wird (Pfad A extern oder Pfad B On-Premise) und wie die Wiederherstellung auditiert wird. Governance verbleibt durchgängig innerhalb der Organisation.</target>
+      </trans-unit>
+      <trans-unit id="s04.footnote">
+        <source>These pillars are derived from the diagram_v8 architecture reference. Each pillar maps to a specific failure mode of conventional approaches — masking and redaction, prompt security gateways, and synthetic data platforms — that the four-zone architecture is designed to address.</source>
+        <target>Diese Grundprinzipien basieren auf der Architektur-Referenz diagram_v8. Jedes Prinzip adressiert einen spezifischen Schwachpunkt konventioneller Ansätze — Maskierung und Schwärzung, Prompt-Sicherheitsgateways sowie Plattformen für synthetische Daten — den die Vier-Zonen-Architektur gezielt behebt.</target>
+      </trans-unit>
+
+      <!-- Section 05: Components -->
+      <trans-unit id="s05.eyebrow">
+        <source>Five components</source>
+        <target>Fünf Komponenten</target>
+      </trans-unit>
+      <trans-unit id="s05.title">
+        <source>What's inside the LLM Capsule</source>
+        <target>Was LLM Capsule im Inneren ausmacht</target>
+      </trans-unit>
+      <trans-unit id="s05.description">
+        <source>The five architectural components that implement the data layer. Each is independently configurable and audit-loggable.</source>
+        <target>Die fünf Architekturkomponenten, die die Datenschicht umsetzen. Jede Komponente ist unabhängig konfigurierbar und vollständig auditierbar.</target>
+      </trans-unit>
+      <trans-unit id="s05.c1Num">
+        <source>Component 01</source>
+        <target>Komponente 01</target>
+      </trans-unit>
+      <trans-unit id="s05.c1Title">
+        <source>Detection Engine</source>
+        <target>Detection Engine</target>
+      </trans-unit>
+      <trans-unit id="s05.c1Desc">
+        <source>Detects PII + customer-defined markers across structured fields and free text. Beyond regex — semantic + context-aware. 98.1% detection accuracy.</source>
+        <target>Erkennt personenbezogene Daten und kundendefinierte Marker in strukturierten Feldern und Freitext. Über reine Regex-Erkennung hinaus — semantisch und kontextbewusst. Erkennungsgenauigkeit: 98,1 %.</target>
+      </trans-unit>
+      <trans-unit id="s05.c2Num">
+        <source>Component 02</source>
+        <target>Komponente 02</target>
+      </trans-unit>
+      <trans-unit id="s05.c2Title">
+        <source>Encapsulation Engine</source>
+        <target>Encapsulation Engine</target>
+      </trans-unit>
+      <trans-unit id="s05.c2Desc">
+        <source>Differential-privacy-based replacement (epsilon-DP, Laplace noise, k-anonymity, NER masking). Structure-preserving — tables, hierarchies, references survive.</source>
+        <target>Differential-Privacy-basierter Ersatz (epsilon-DP, Laplace-Rauschen, k-Anonymität, NER-Maskierung). Strukturerhaltend — Tabellen, Hierarchien und Referenzen bleiben erhalten.</target>
+      </trans-unit>
+      <trans-unit id="s05.c3Num">
+        <source>Component 03</source>
+        <target>Komponente 03</target>
+      </trans-unit>
+      <trans-unit id="s05.c3Title">
+        <source>Policy Control</source>
+        <target>Policy Control</target>
+      </trans-unit>
+      <trans-unit id="s05.c3Desc">
+        <source>Versioned, scoped, RBAC'd policies. Time-shifting markers — yesterday's policy archived, today's enforced. Per-team, per-workflow scope.</source>
+        <target>Versionierte, bereichsbezogene, RBAC-gestützte Richtlinien. Zeitgesteuerte Marker — gestrige Richtlinien werden archiviert, heutige werden durchgesetzt. Geltungsbereich je Team und je Workflow konfigurierbar.</target>
+      </trans-unit>
+      <trans-unit id="s05.c4Num">
+        <source>Component 04</source>
+        <target>Komponente 04</target>
+      </trans-unit>
+      <trans-unit id="s05.c4Title">
+        <source>Restoration Engine</source>
+        <target>Restoration Engine</target>
+      </trans-unit>
+      <trans-unit id="s05.c4Desc">
+        <source>Local token vault lookup + context re-binding + output validation. 100% restoration rate. AI output comes back business-ready, in the originating tool.</source>
+        <target>Lokale Token-Tresor-Abfrage, Kontextwiederherstellung und Ausgabevalidierung. Wiederherstellungsrate: 100 %. Die KI-Ausgabe wird fachlich nutzbar in das ursprüngliche Werkzeug zurückgeführt.</target>
+      </trans-unit>
+      <trans-unit id="s05.c5Num">
+        <source>Component 05</source>
+        <target>Komponente 05</target>
+      </trans-unit>
+      <trans-unit id="s05.c5Title">
+        <source>Audit &amp; Compliance</source>
+        <target>Audit &amp; Compliance</target>
+      </trans-unit>
+      <trans-unit id="s05.c5Desc">
+        <source>Every detection, encapsulation, processing, and restoration logged with policy version, model, latency, and outcome. GDPR / HIPAA / SOX-aligned.</source>
+        <target>Jeder Erkennungs-, Kapsulierungs-, Verarbeitungs- und Wiederherstellungsvorgang wird mit Richtlinienversion, Modell, Latenz und Ergebnis protokolliert. DSGVO (GDPR)-, HIPAA- und SOX-konform.</target>
+      </trans-unit>
+
+      <!-- Section 06: Execution Paths -->
+      <trans-unit id="s06.eyebrow">
+        <source>Two execution paths</source>
+        <target>Zwei Ausführungspfade</target>
+      </trans-unit>
+      <trans-unit id="s06.title">
+        <source>One architecture. Two paths. Policy-driven per workflow.</source>
+        <target>Eine Architektur. Zwei Pfade. Richtliniengesteuert je Workflow.</target>
+      </trans-unit>
+      <trans-unit id="s06.description">
+        <source>The same LLM Capsule instance can route different workflows through different paths — under one governance framework.</source>
+        <target>Eine einzige LLM Capsule-Instanz kann verschiedene Workflows über unterschiedliche Pfade leiten — unter einem einheitlichen Governance-Rahmen.</target>
+      </trans-unit>
+      <trans-unit id="s06.paLabel">
+        <source>PATH A · External</source>
+        <target>PFAD A · Extern</target>
+      </trans-unit>
+      <trans-unit id="s06.paTitle">
+        <source>Approved external LLM, capsule data only</source>
+        <target>Zugelassener externer LLM — ausschließlich Kapseldaten</target>
+      </trans-unit>
+      <trans-unit id="s06.paDesc">
+        <source>For workflows where the regulatory profile permits transmission of differentially-private capsules with appropriate contractual safeguards (DPA, SCCs).</source>
+        <target>Für Workflows, bei denen das regulatorische Profil die Übertragung von Differential-Privacy-Kapseln mit angemessenen vertraglichen Schutzmaßnahmen (AVV, SCCs) erlaubt.</target>
+      </trans-unit>
+      <trans-unit id="s06.paItem1">
+        <source>Routes to ChatGPT, Claude, Gemini, Perplexity, or any LLM API</source>
+        <target>Weiterleitung an ChatGPT, Claude, Gemini, Perplexity oder eine beliebige LLM-API</target>
+      </trans-unit>
+      <trans-unit id="s06.paItem2">
+        <source>Capsule travels — original data never does</source>
+        <target>Die Kapsel wird übertragen — Rohdaten niemals</target>
+      </trans-unit>
+      <trans-unit id="s06.paItem3">
+        <source>In-region endpoints supported (EU-hosted for sovereign AI)</source>
+        <target>In-Region-Endpunkte werden unterstützt (EU-gehostet für Sovereign AI)</target>
+      </trans-unit>
+      <trans-unit id="s06.paItem4">
+        <source>Best for: NOC RCA, claims classification, summarization</source>
+        <target>Geeignet für: NOC-Ursachenanalyse, Schadeneinstufung, Zusammenfassung</target>
+      </trans-unit>
+      <trans-unit id="s06.pbLabel">
+        <source>PATH B · On-prem</source>
+        <target>PFAD B · On-Premise</target>
+      </trans-unit>
+      <trans-unit id="s06.pbTitle">
+        <source>On-prem local lightweight model</source>
+        <target>Lokales On-Premise-Modell</target>
+      </trans-unit>
+      <trans-unit id="s06.pbDesc">
+        <source>For workflows where any external endpoint is unacceptable — classified data, lawful intercept segments, OT operations, regulated mental health / pediatric data.</source>
+        <target>Für Workflows, bei denen jede externe Übertragung ausgeschlossen ist — klassifizierte Daten, Bereiche mit gesetzlicher Überwachungspflicht, OT-Betrieb, regulierte Gesundheitsdaten.</target>
+      </trans-unit>
+      <trans-unit id="s06.pbItem1">
+        <source>Quantized model on internal GPU (vLLM-served)</source>
+        <target>Quantisiertes Modell auf internem GPU-Server (vLLM-betrieben)</target>
+      </trans-unit>
+      <trans-unit id="s06.pbItem2">
+        <source>Zero external transmission — fully air-gapped option</source>
+        <target>Keine externe Übertragung — vollständig Air-Gapped-Option verfügbar</target>
+      </trans-unit>
+      <trans-unit id="s06.pbItem3">
+        <source>Same Capsule instance, same audit, same policy framework</source>
+        <target>Gleiche LLM Capsule-Instanz, gleicher Audit, gleicher Richtlinienrahmen</target>
+      </trans-unit>
+      <trans-unit id="s06.pbItem4">
+        <source>Best for: defense, classified workflows, strict sovereign AI</source>
+        <target>Geeignet für: Verteidigung, klassifizierte Workflows, strikte Sovereign-AI-Anforderungen</target>
+      </trans-unit>
+
+      <!-- Section 07: Integration -->
+      <trans-unit id="s07.eyebrow">
+        <source>In-environment integration</source>
+        <target>Integration in der Unternehmensumgebung</target>
+      </trans-unit>
+      <trans-unit id="s07.title">
+        <source>Reads the systems you already run — without modifying them</source>
+        <target>Liest aus Ihren bestehenden Systemen — ohne diese zu verändern</target>
+      </trans-unit>
+      <trans-unit id="s07.description">
+        <source>LLM Capsule is not a SaaS API you call from outside. It runs inside your environment and reads from the operational systems already in place. Existing systems are not modified — a single API-call addition is what connects them to the encapsulation layer.</source>
+        <target>LLM Capsule ist keine externe SaaS-API. Die Lösung wird innerhalb Ihrer Umgebung betrieben und liest direkt aus den vorhandenen operativen Systemen. Bestehende Systeme werden nicht verändert — ein einziger zusätzlicher API-Aufruf verbindet sie mit der Kapsulierungsschicht.</target>
+      </trans-unit>
+      <trans-unit id="s07.ss1Name">
+        <source>ERP System</source>
+        <target>ERP-System</target>
+      </trans-unit>
+      <trans-unit id="s07.ss1Conn">
+        <source>SAP / Oracle — REST API</source>
+        <target>SAP / Oracle — REST API</target>
+      </trans-unit>
+      <trans-unit id="s07.ss2Name">
+        <source>CRM</source>
+        <target>CRM</target>
+      </trans-unit>
+      <trans-unit id="s07.ss2Conn">
+        <source>Salesforce — REST API</source>
+        <target>Salesforce — REST API</target>
+      </trans-unit>
+      <trans-unit id="s07.ss3Name">
+        <source>Ticketing</source>
+        <target>Ticketing</target>
+      </trans-unit>
+      <trans-unit id="s07.ss3Conn">
+        <source>Jira / ServiceNow — REST API</source>
+        <target>Jira / ServiceNow — REST API</target>
+      </trans-unit>
+      <trans-unit id="s07.ss4Name">
+        <source>DMS / ECM</source>
+        <target>DMS / ECM</target>
+      </trans-unit>
+      <trans-unit id="s07.ss4Conn">
+        <source>SharePoint — Graph API</source>
+        <target>SharePoint — Graph API</target>
+      </trans-unit>
+      <trans-unit id="s07.ss5Name">
+        <source>Legacy DB</source>
+        <target>Legacy-DB</target>
+      </trans-unit>
+      <trans-unit id="s07.ss5Conn">
+        <source>Oracle / MSSQL — JDBC → API</source>
+        <target>Oracle / MSSQL — JDBC → API</target>
+      </trans-unit>
+      <trans-unit id="s07.ss6Name">
+        <source>RAG Pipeline</source>
+        <target>RAG-Pipeline</target>
+      </trans-unit>
+      <trans-unit id="s07.ss6Conn">
+        <source>Vector DB — gRPC / REST</source>
+        <target>Vector DB — gRPC / REST</target>
+      </trans-unit>
+      <trans-unit id="s07.sourceNote">
+        <source>These six are the source-system identities mapped in the diagram_v8 reference. Existing enterprise systems are not modified — connection is a single API-call addition. Raw operational data does not leave the environment to reach Capsule; the Capsule sits next to these systems, on-prem or in your VPC.</source>
+        <target>Diese sechs Systeme entsprechen den im Architektur-Referenzdokument diagram_v8 abgebildeten Quellsystemen. Bestehende Unternehmenssysteme werden nicht verändert — die Anbindung erfolgt über einen einzigen zusätzlichen API-Aufruf. Rohe Betriebsdaten verlassen die Umgebung nicht, um LLM Capsule zu erreichen. Capsule wird direkt neben diesen Systemen betrieben — On-Premise oder in Ihrer VPC.</target>
+      </trans-unit>
+      <trans-unit id="s07.ifaceEyebrow">
+        <source>Integration interfaces</source>
+        <target>Integrations-Schnittstellen</target>
+      </trans-unit>
+      <trans-unit id="s07.ifaceTitle">
+        <source>How existing systems invoke Capsule from inside the environment</source>
+        <target>Wie bestehende Systeme Capsule innerhalb der Umgebung aufrufen</target>
+      </trans-unit>
+      <trans-unit id="s07.ifaceDesc">
+        <source>Once Capsule is deployed inside the environment, existing enterprise systems invoke it through whichever interface fits their stack. All interfaces stay inside the customer network — none of them route raw operational data through an external SaaS endpoint.</source>
+        <target>Nach der Bereitstellung von LLM Capsule in der Unternehmensumgebung rufen bestehende Systeme es über die jeweils passende Schnittstelle auf. Alle Schnittstellen verbleiben innerhalb des Kundennetzwerks — keine von ihnen leitet Rohdaten über einen externen SaaS-Endpunkt.</target>
+      </trans-unit>
+      <trans-unit id="s07.if1Name">
+        <source>REST / gRPC</source>
+        <target>REST / gRPC</target>
+      </trans-unit>
+      <trans-unit id="s07.if1Desc">
+        <source>For modern operations tools, RAG pipelines, and custom orchestrators inside the environment.</source>
+        <target>Für moderne Betriebswerkzeuge, RAG-Pipelines und benutzerdefinierte Orchestratoren innerhalb der Umgebung.</target>
+      </trans-unit>
+      <trans-unit id="s07.if2Name">
+        <source>JDBC / ODBC</source>
+        <target>JDBC / ODBC</target>
+      </trans-unit>
+      <trans-unit id="s07.if2Desc">
+        <source>For legacy database systems (Oracle, MSSQL, DB2) that need Capsule invocation as a stored procedure or job step.</source>
+        <target>Für Legacy-Datenbanksysteme (Oracle, MSSQL, DB2), die Capsule als Stored Procedure oder Job-Schritt einbinden müssen.</target>
+      </trans-unit>
+      <trans-unit id="s07.if3Name">
+        <source>Graph API</source>
+        <target>Graph API</target>
+      </trans-unit>
+      <trans-unit id="s07.if3Desc">
+        <source>For DMS / ECM systems (e.g. SharePoint) where document events trigger Capsule processing.</source>
+        <target>Für DMS-/ECM-Systeme (z. B. SharePoint), bei denen Dokumentereignisse die Capsule-Verarbeitung auslösen.</target>
+      </trans-unit>
+      <trans-unit id="s07.if4Name">
+        <source>On-prem API</source>
+        <target>On-Premise-API</target>
+      </trans-unit>
+      <trans-unit id="s07.if4Desc">
+        <source>Capsule's own on-prem callable surface. Same contract whether you're air-gapped, hybrid, or VPC.</source>
+        <target>Die eigene On-Premise-Aufrufschnittstelle von Capsule. Einheitlicher Vertrag — unabhängig davon, ob Air-Gapped, Hybrid oder VPC.</target>
+      </trans-unit>
+      <trans-unit id="s07.if5Name">
+        <source>Embedded SDK</source>
+        <target>Embedded SDK</target>
+      </trans-unit>
+      <trans-unit id="s07.if5Desc">
+        <source>Library-level integration for ISVs and platform vendors who ship Capsule inside their own product.</source>
+        <target>Integration auf Bibliotheksebene für ISVs und Plattformanbieter, die Capsule in ihr eigenes Produkt einbetten.</target>
+      </trans-unit>
+      <trans-unit id="s07.if6Name">
+        <source>Slack App</source>
+        <target>Slack App</target>
+      </trans-unit>
+      <trans-unit id="s07.if6Desc">
+        <source>For teams using Slack as the operations UI. The runtime still lives in the customer environment; the Slack App is the invocation surface.</source>
+        <target>Für Teams, die Slack als operative Benutzeroberfläche nutzen. Die Laufzeitumgebung verbleibt in der Unternehmensumgebung. Die Slack App ist lediglich die Aufrufoberfläche.</target>
+      </trans-unit>
+
+      <!-- Section 08: Deployment Modes -->
+      <trans-unit id="s08.eyebrow">
+        <source>Deployment modes</source>
+        <target>Betriebsmodi</target>
+      </trans-unit>
+      <trans-unit id="s08.title">
+        <source>Six deployment modes — match your environment exactly</source>
+        <target>Sechs Betriebsmodi — passend für jede Infrastruktur</target>
+      </trans-unit>
+      <trans-unit id="s08.description">
+        <source>Capsule runs inside the customer environment in every mode. Path A and Path B execution choices apply across all six.</source>
+        <target>LLM Capsule wird in jedem Modus innerhalb der Kundenumgebung betrieben. Die Ausführungspfade A und B stehen in allen sechs Modi zur Verfügung.</target>
+      </trans-unit>
+      <trans-unit id="s08.d1Title">
+        <source>Air-gapped on-prem</source>
+        <target>Air-Gapped On-Premise</target>
+      </trans-unit>
+      <trans-unit id="s08.d1Desc">
+        <source>Fully internal. No external network. Path B only. Defense, classified, OT.</source>
+        <target>Vollständig intern. Keine externe Netzwerkverbindung. Ausschließlich Pfad B. Geeignet für Verteidigung, klassifizierte Umgebungen und OT.</target>
+      </trans-unit>
+      <trans-unit id="s08.d2Title">
+        <source>On-prem hybrid</source>
+        <target>On-Premise Hybrid</target>
+      </trans-unit>
+      <trans-unit id="s08.d2Desc">
+        <source>Internal Capsule + approved external LLM. Path A for most workflows, Path B for sensitive subset.</source>
+        <target>Internes Capsule kombiniert mit zugelassenem externem LLM. Pfad A für den Großteil der Workflows, Pfad B für besonders sensible Teilbereiche.</target>
+      </trans-unit>
+      <trans-unit id="s08.d3Title">
+        <source>VPC / private cloud</source>
+        <target>VPC / Private Cloud</target>
+      </trans-unit>
+      <trans-unit id="s08.d3Desc">
+        <source>Customer's cloud VPC. Capsule + token vault stay in tenant; LLM call to in-region endpoint.</source>
+        <target>Kundeneigene Cloud-VPC. Capsule und Token-Tresor verbleiben im Tenant. LLM-Aufrufe erfolgen über regionale Endpunkte.</target>
+      </trans-unit>
+      <trans-unit id="s08.d4Title">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+      </trans-unit>
+      <trans-unit id="s08.d4Desc">
+        <source>Listed and procurable through AWS Marketplace. VPC deployment, AWS billing integration.</source>
+        <target>Verfügbar und beziehbar über AWS Marketplace. VPC-Bereitstellung mit AWS-Abrechnungsintegration.</target>
+      </trans-unit>
+      <trans-unit id="s08.d5Title">
+        <source>Embedded SDK</source>
+        <target>Embedded SDK</target>
+      </trans-unit>
+      <trans-unit id="s08.d5Desc">
+        <source>For ISVs and platform vendors building Capsule into their own product. Library-level integration that ships inside the host application.</source>
+        <target>Für ISVs und Plattformanbieter, die Capsule in ihr eigenes Produkt integrieren. Integration auf Bibliotheksebene, die innerhalb der Hostanwendung ausgeliefert wird.</target>
+      </trans-unit>
+      <trans-unit id="s08.d6Title">
+        <source>Slack App</source>
+        <target>Slack App</target>
+      </trans-unit>
+      <trans-unit id="s08.d6Desc">
+        <source>For teams using Slack as the operations UI. Capsule runtime stays in the customer environment; the Slack App is the surface that invokes it.</source>
+        <target>Für Teams, die Slack als operative Benutzeroberfläche nutzen. Die Capsule-Laufzeitumgebung verbleibt in der Kundenumgebung. Die Slack App dient als Aufrufoberfläche.</target>
+      </trans-unit>
+      <trans-unit id="s08.footnote">
+        <source>Note: a separate "Telecom-grade" topology (NFV / container / multi-region) is offered as a deployment variant for operator infrastructure — validated at SK Telecom, recognized at Deutsche Telekom T Challenge 2026. It composes with the modes above rather than replacing them.</source>
+        <target>Hinweis: Eine gesonderte Topologie auf Telekommunikationsniveau (NFV / Container / Multi-Region) wird als Deployment-Variante für Betreiber-Infrastrukturen angeboten — validiert bei SK Telecom, ausgezeichnet beim Deutsche Telekom T Challenge 2026. Sie ergänzt die oben genannten Modi, ohne sie zu ersetzen.</target>
+      </trans-unit>
+
+      <!-- Section 09: CTA Strip -->
+      <trans-unit id="s09.title">
+        <source>See the architecture run on your environment.</source>
+        <target>Die Architektur in Ihrer Umgebung — live demonstriert.</target>
+      </trans-unit>
+      <trans-unit id="s09.description">
+        <source>Bring your deployment constraints, regulatory profile, and one real workflow. We demonstrate the data layer in your environment within 30 minutes.</source>
+        <target>Wir analysieren Ihre Anforderungen und demonstrieren LLM Capsule anhand eines realen Workflows aus Ihrer Umgebung — in 30 Minuten.</target>
+      </trans-unit>
+      <trans-unit id="s09.cta1Label">
+        <source>Request a Live Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+      <trans-unit id="s09.cta2Label">
+        <source>View Product</source>
+        <target>Produkt ansehen</target>
+      </trans-unit>
+      <trans-unit id="s09.cta3Label">
+        <source>View Trust &amp; Compliance</source>
+        <target>Vertrauen &amp; Compliance ansehen</target>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

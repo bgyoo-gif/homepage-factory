@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="pricing-v62" source-language="en" target-language="de-DE" datatype="plaintext">
+    <header>
+      <note>pricing-v62 — DE localize mode (v6.2). TSX Props 1:1 mapping. Native review required.</note>
+    </header>
+    <body>
+
+      <!-- Section 01: Hero -->
+      <trans-unit id="s01.eyebrow">
+        <source>Pricing</source>
+        <target>Preise</target>
+      </trans-unit>
+      <trans-unit id="s01.title">
+        <source>Pricing for</source>
+        <target>Preise für</target>
+      </trans-unit>
+      <trans-unit id="s01.titleStrong">
+        <source>secure AI workflow deployment</source>
+        <target>den sicheren KI-Einsatz im Unternehmen</target>
+      </trans-unit>
+      <trans-unit id="s01.description">
+        <source>Volume-based pricing tailored to your document processing workload, deployment requirements, and regulatory profile.</source>
+        <target>Volumenbasierte Preismodelle — abgestimmt auf Ihr Dokumentenvolumen, Ihre Deployment-Anforderungen und Ihr regulatorisches Profil.</target>
+      </trans-unit>
+
+      <!-- Section 02: Pricing Tiers — Card 1 (Proof of Value) -->
+      <trans-unit id="s02.card1Label">
+        <source>Workflow Proof of Value</source>
+        <target>Workflow Proof of Value</target>
+      </trans-unit>
+      <trans-unit id="s02.card1TierName">
+        <source>Proof of Value</source>
+        <target>Proof of Value</target>
+      </trans-unit>
+      <trans-unit id="s02.card1Price">
+        <source>Custom</source>
+        <target>Individuell</target>
+      </trans-unit>
+      <trans-unit id="s02.card1Period">
+        <source>Evaluation period · 4-8 weeks</source>
+        <target>Evaluationszeitraum · 4–8 Wochen</target>
+      </trans-unit>
+      <trans-unit id="s02.card1Feature1">
+        <source>Test with your own documents</source>
+        <target>Test mit Ihren eigenen Dokumenten</target>
+      </trans-unit>
+      <trans-unit id="s02.card1Feature2">
+        <source>Full encapsulation + restoration</source>
+        <target>Vollständige Kapsulierung und Wiederherstellung</target>
+      </trans-unit>
+      <trans-unit id="s02.card1Feature3">
+        <source>Path A or Path B execution</source>
+        <target>Ausführung über Pfad A oder Pfad B</target>
+      </trans-unit>
+      <trans-unit id="s02.card1Feature4">
+        <source>11 starter markers + custom</source>
+        <target>11 Starter-Marker und benutzerdefinierte Marker</target>
+      </trans-unit>
+      <trans-unit id="s02.card1Feature5">
+        <source>Audit dashboard</source>
+        <target>Audit-Dashboard</target>
+      </trans-unit>
+      <trans-unit id="s02.card1Feature6">
+        <source>Evaluation report on detection / restoration / workflow</source>
+        <target>Evaluierungsbericht zu Erkennung, Wiederherstellung und Workflow</target>
+      </trans-unit>
+      <trans-unit id="s02.card1CtaText">
+        <source>Start a Workflow Proof of Value →</source>
+        <target>Workflow Proof of Value starten →</target>
+      </trans-unit>
+      <trans-unit id="s02.card1CtaLink">
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <!-- Section 02: Pricing Tiers — Card 2 (Enterprise) -->
+      <trans-unit id="s02.card2Label">
+        <source>Enterprise</source>
+        <target>Enterprise</target>
+      </trans-unit>
+      <trans-unit id="s02.card2TierName">
+        <source>Custom</source>
+        <target>Individuell</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Price">
+        <source>Custom</source>
+        <target>Individuell</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Period">
+        <source>Annual license · production-grade</source>
+        <target>Jahreslizenz · produktionsreif</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Feature1">
+        <source>Unlimited document processing</source>
+        <target>Unbegrenzte Dokumentenverarbeitung</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Feature2">
+        <source>Full 6 capability set including time-shifting policy</source>
+        <target>Vollständiges 6-Funktions-Set einschließlich Time-Shifting-Policy</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Feature3">
+        <source>Both execution paths (A + B) under one governance</source>
+        <target>Beide Ausführungspfade (A + B) unter einheitlicher Governance</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Feature4">
+        <source>Custom marker definition + policy versioning</source>
+        <target>Benutzerdefinierte Marker-Definition und Policy-Versionierung</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Feature5">
+        <source>RBAC + per-team scope</source>
+        <target>RBAC und teamspezifischer Geltungsbereich</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Feature6">
+        <source>SLA-backed support, dedicated CSM</source>
+        <target>SLA-gesicherter Support mit dediziertem CSM</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Feature7">
+        <source>GDPR / HIPAA / SOX-aligned audit</source>
+        <target>DSGVO (GDPR) / HIPAA / SOX-konformes Audit</target>
+      </trans-unit>
+      <trans-unit id="s02.card2Feature8">
+        <source>On-prem, hybrid, VPC, embedded SDK, Slack App</source>
+        <target>On-Premise, Hybrid, VPC, eingebettetes SDK, Slack App</target>
+      </trans-unit>
+      <trans-unit id="s02.card2CtaText">
+        <source>Talk to Sales →</source>
+        <target>Vertrieb kontaktieren →</target>
+      </trans-unit>
+      <trans-unit id="s02.card2CtaLink">
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+      <trans-unit id="s02.card2FeaturedBadge">
+        <source>MOST COMMON</source>
+        <target>MEISTGEWÄHLT</target>
+      </trans-unit>
+
+      <!-- Section 02: Pricing Tiers — Card 3 (AWS Marketplace) -->
+      <trans-unit id="s02.card3Label">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+        <note>Brand name — do not translate</note>
+      </trans-unit>
+      <trans-unit id="s02.card3TierName">
+        <source>Listed</source>
+        <target>Gelistet</target>
+      </trans-unit>
+      <trans-unit id="s02.card3Price">
+        <source>Pay through AWS</source>
+        <target>Abrechnung über AWS</target>
+      </trans-unit>
+      <trans-unit id="s02.card3Period">
+        <source>Streamlined procurement</source>
+        <target>Vereinfachte Beschaffung</target>
+      </trans-unit>
+      <trans-unit id="s02.card3Feature1">
+        <source>Streamlined AWS procurement</source>
+        <target>Vereinfachte Beschaffung über AWS</target>
+      </trans-unit>
+      <trans-unit id="s02.card3Feature2">
+        <source>AWS billing integration</source>
+        <target>AWS-Abrechnungsintegration</target>
+      </trans-unit>
+      <trans-unit id="s02.card3Feature3">
+        <source>VPC deployment</source>
+        <target>VPC-Deployment</target>
+      </trans-unit>
+      <trans-unit id="s02.card3Feature4">
+        <source>Same capability set as Enterprise</source>
+        <target>Identisches Funktions-Set wie Enterprise</target>
+      </trans-unit>
+      <trans-unit id="s02.card3Feature5">
+        <source>EDP / private offer eligible</source>
+        <target>EDP- und Private-Offer-berechtigt</target>
+      </trans-unit>
+      <trans-unit id="s02.card3CtaText">
+        <source>View on AWS →</source>
+        <target>Auf AWS ansehen →</target>
+      </trans-unit>
+      <trans-unit id="s02.card3CtaLink">
+        <source>https://aws.amazon.com/marketplace</source>
+        <target>https://aws.amazon.com/marketplace</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <!-- Section 03: Feature Matrix — Header -->
+      <trans-unit id="s03.sectionEyebrow">
+        <source>Feature comparison</source>
+        <target>Funktionsvergleich</target>
+      </trans-unit>
+      <trans-unit id="s03.sectionTitle">
+        <source>What's included in each tier</source>
+        <target>Leistungsumfang pro Stufe</target>
+      </trans-unit>
+      <trans-unit id="s03.sectionDesc">
+        <source>All three tiers include the full capability set. Differences are in scope, support, and procurement path.</source>
+        <target>Alle drei Stufen umfassen das vollständige Funktions-Set. Unterschiede bestehen im Umfang, im Support-Level und im Beschaffungsweg.</target>
+      </trans-unit>
+
+      <!-- Section 03: Feature Matrix — Column Headers -->
+      <trans-unit id="s03.colFeature">
+        <source>Feature</source>
+        <target>Funktion</target>
+      </trans-unit>
+      <trans-unit id="s03.colPov">
+        <source>Proof of Value</source>
+        <target>Proof of Value</target>
+      </trans-unit>
+      <trans-unit id="s03.colEnt">
+        <source>Enterprise</source>
+        <target>Enterprise</target>
+      </trans-unit>
+      <trans-unit id="s03.colAws">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+        <note>Brand name — do not translate</note>
+      </trans-unit>
+
+      <!-- Section 03: Feature Matrix — Rows -->
+      <trans-unit id="s03.r1Feature">
+        <source>Document volume</source>
+        <target>Dokumentenvolumen</target>
+      </trans-unit>
+      <trans-unit id="s03.r1Pov">
+        <source>Evaluation scope</source>
+        <target>Evaluierungsumfang</target>
+      </trans-unit>
+      <trans-unit id="s03.r1Ent">
+        <source>Unlimited</source>
+        <target>Unbegrenzt</target>
+      </trans-unit>
+      <trans-unit id="s03.r1Aws">
+        <source>Per AWS contract</source>
+        <target>Gemäß AWS-Vertrag</target>
+      </trans-unit>
+
+      <trans-unit id="s03.r2Feature">
+        <source>Execution paths (A external + B on-prem)</source>
+        <target>Ausführungspfade (A extern + B On-Premise)</target>
+      </trans-unit>
+      <trans-unit id="s03.r2Pov">
+        <source>Both</source>
+        <target>Beide</target>
+      </trans-unit>
+      <trans-unit id="s03.r2Ent">
+        <source>Both</source>
+        <target>Beide</target>
+      </trans-unit>
+      <trans-unit id="s03.r2Aws">
+        <source>Both</source>
+        <target>Beide</target>
+      </trans-unit>
+
+      <trans-unit id="s03.r3Feature">
+        <source>6 capability set including time-shifting policy</source>
+        <target>6-Funktions-Set einschließlich Time-Shifting-Policy</target>
+      </trans-unit>
+      <trans-unit id="s03.r3Pov">
+        <source>Full</source>
+        <target>Vollständig</target>
+      </trans-unit>
+      <trans-unit id="s03.r3Ent">
+        <source>Full</source>
+        <target>Vollständig</target>
+      </trans-unit>
+      <trans-unit id="s03.r3Aws">
+        <source>Full</source>
+        <target>Vollständig</target>
+      </trans-unit>
+
+      <trans-unit id="s03.r4Feature">
+        <source>Custom marker definition</source>
+        <target>Benutzerdefinierte Marker-Definition</target>
+      </trans-unit>
+      <trans-unit id="s03.r4Pov">
+        <source>Up to 25</source>
+        <target>Bis zu 25</target>
+      </trans-unit>
+      <trans-unit id="s03.r4Ent">
+        <source>Unlimited</source>
+        <target>Unbegrenzt</target>
+      </trans-unit>
+      <trans-unit id="s03.r4Aws">
+        <source>Unlimited</source>
+        <target>Unbegrenzt</target>
+      </trans-unit>
+
+      <trans-unit id="s03.r5Feature">
+        <source>Policy versioning + audit</source>
+        <target>Policy-Versionierung und Audit</target>
+      </trans-unit>
+      <trans-unit id="s03.r5Pov">
+        <source>90-day retention</source>
+        <target>90-Tage-Aufbewahrung</target>
+      </trans-unit>
+      <trans-unit id="s03.r5Ent">
+        <source>7-year retention</source>
+        <target>7 Jahre Aufbewahrung</target>
+      </trans-unit>
+      <trans-unit id="s03.r5Aws">
+        <source>7-year retention</source>
+        <target>7 Jahre Aufbewahrung</target>
+      </trans-unit>
+
+      <trans-unit id="s03.r6Feature">
+        <source>RBAC + per-team scope</source>
+        <target>RBAC und teamspezifischer Geltungsbereich</target>
+      </trans-unit>
+      <trans-unit id="s03.r6Pov">
+        <source>Standard</source>
+        <target>Standard</target>
+      </trans-unit>
+      <trans-unit id="s03.r6Ent">
+        <source>Advanced (LDAP / SAML / SCIM)</source>
+        <target>Erweitert (LDAP / SAML / SCIM)</target>
+      </trans-unit>
+      <trans-unit id="s03.r6Aws">
+        <source>Advanced</source>
+        <target>Erweitert</target>
+      </trans-unit>
+
+      <trans-unit id="s03.r7Feature">
+        <source>Deployment modes</source>
+        <target>Deployment-Modi</target>
+      </trans-unit>
+      <trans-unit id="s03.r7Pov">
+        <source>On-prem / VPC</source>
+        <target>On-Premise / VPC</target>
+      </trans-unit>
+      <trans-unit id="s03.r7Ent">
+        <source>All 6 modes</source>
+        <target>Alle 6 Modi</target>
+      </trans-unit>
+      <trans-unit id="s03.r7Aws">
+        <source>VPC (AWS)</source>
+        <target>VPC (AWS)</target>
+      </trans-unit>
+
+      <trans-unit id="s03.r8Feature">
+        <source>Connector library</source>
+        <target>Connector-Bibliothek</target>
+      </trans-unit>
+      <trans-unit id="s03.r8Pov">
+        <source>Standard 12</source>
+        <target>Standard 12</target>
+      </trans-unit>
+      <trans-unit id="s03.r8Ent">
+        <source>Standard + custom</source>
+        <target>Standard + individuell</target>
+      </trans-unit>
+      <trans-unit id="s03.r8Aws">
+        <source>Standard 12</source>
+        <target>Standard 12</target>
+      </trans-unit>
+
+      <trans-unit id="s03.r9Feature">
+        <source>Compliance frameworks</source>
+        <target>Compliance-Frameworks</target>
+      </trans-unit>
+      <trans-unit id="s03.r9Pov">
+        <source>GDPR / HIPAA</source>
+        <target>DSGVO (GDPR) / HIPAA</target>
+      </trans-unit>
+      <trans-unit id="s03.r9Ent">
+        <source>GDPR / HIPAA / SOX / EU AI Act</source>
+        <target>DSGVO (GDPR) / HIPAA / SOX / EU AI Act</target>
+      </trans-unit>
+      <trans-unit id="s03.r9Aws">
+        <source>GDPR / HIPAA / SOX</source>
+        <target>DSGVO (GDPR) / HIPAA / SOX</target>
+      </trans-unit>
+
+      <trans-unit id="s03.r10Feature">
+        <source>SLA</source>
+        <target>SLA</target>
+      </trans-unit>
+      <trans-unit id="s03.r10Pov">
+        <source>Best-effort</source>
+        <target>Best-Effort</target>
+      </trans-unit>
+      <trans-unit id="s03.r10Ent">
+        <source>99.9% uptime, defined response time</source>
+        <target>99,9 % Verfügbarkeit, definierte Reaktionszeiten</target>
+      </trans-unit>
+      <trans-unit id="s03.r10Aws">
+        <source>Per AWS contract</source>
+        <target>Gemäß AWS-Vertrag</target>
+      </trans-unit>
+
+      <trans-unit id="s03.r11Feature">
+        <source>Support</source>
+        <target>Support</target>
+      </trans-unit>
+      <trans-unit id="s03.r11Pov">
+        <source>Email / Slack</source>
+        <target>E-Mail / Slack</target>
+      </trans-unit>
+      <trans-unit id="s03.r11Ent">
+        <source>Dedicated CSM, 24/7 P1 channel</source>
+        <target>Dedizierter CSM, 24/7-P1-Kanal</target>
+      </trans-unit>
+      <trans-unit id="s03.r11Aws">
+        <source>Email / Slack + AWS</source>
+        <target>E-Mail / Slack + AWS</target>
+      </trans-unit>
+
+      <trans-unit id="s03.r12Feature">
+        <source>DPA + Vendor Security Questionnaire</source>
+        <target>DPA + Vendor Security Questionnaire</target>
+      </trans-unit>
+      <trans-unit id="s03.r12Pov">
+        <source>Provided</source>
+        <target>Bereitgestellt</target>
+      </trans-unit>
+      <trans-unit id="s03.r12Ent">
+        <source>Provided + executed</source>
+        <target>Bereitgestellt und ausgeführt</target>
+      </trans-unit>
+      <trans-unit id="s03.r12Aws">
+        <source>AWS standard</source>
+        <target>AWS-Standard</target>
+      </trans-unit>
+
+      <!-- Section 04: Volume Calculator -->
+      <trans-unit id="s04.sectionEyebrow">
+        <source>Quick estimate</source>
+        <target>Schnellschätzung</target>
+      </trans-unit>
+      <trans-unit id="s04.sectionTitle">
+        <source>Find your tier</source>
+        <target>Die passende Stufe ermitteln</target>
+      </trans-unit>
+      <trans-unit id="s04.sectionDesc">
+        <source>Estimate your monthly document processing volume to find the right tier.</source>
+        <target>Schätzen Sie Ihr monatliches Dokumentenvolumen, um die passende Stufe zu ermitteln.</target>
+      </trans-unit>
+      <trans-unit id="s04.calcTitle">
+        <source>Monthly document processing volume</source>
+        <target>Monatliches Dokumentenverarbeitungsvolumen</target>
+      </trans-unit>
+      <trans-unit id="s04.calcDesc">
+        <source>Drag the slider to your expected volume. We'll suggest the most common tier match.</source>
+        <target>Verschieben Sie den Regler auf Ihr erwartetes Volumen. Wir zeigen Ihnen die empfohlene Stufe.</target>
+      </trans-unit>
+      <trans-unit id="s04.rangeLabel">
+        <source>100 ↔ 1,000,000+</source>
+        <target>100 ↔ 1.000.000+</target>
+        <note>DE decimal separator: period for thousands</note>
+      </trans-unit>
+      <trans-unit id="s04.recLabel">
+        <source>RECOMMENDED TIER</source>
+        <target>EMPFOHLENE STUFE</target>
+      </trans-unit>
+      <trans-unit id="s04.tier1Name">
+        <source>Workflow Proof of Value</source>
+        <target>Workflow Proof of Value</target>
+      </trans-unit>
+      <trans-unit id="s04.tier1Desc">
+        <source>Evaluation scope — best for first 4-8 weeks, one production workflow</source>
+        <target>Evaluierungsumfang — geeignet für die ersten 4–8 Wochen mit einem produktiven Workflow.</target>
+      </trans-unit>
+      <trans-unit id="s04.tier2Name">
+        <source>Enterprise</source>
+        <target>Enterprise</target>
+      </trans-unit>
+      <trans-unit id="s04.tier2Desc">
+        <source>Production-grade with full SLA, custom markers, both execution paths</source>
+        <target>Produktionsreif mit vollständigem SLA, benutzerdefinierten Markern und beiden Ausführungspfaden.</target>
+      </trans-unit>
+      <trans-unit id="s04.tier3Name">
+        <source>Enterprise + AWS Marketplace</source>
+        <target>Enterprise + AWS Marketplace</target>
+      </trans-unit>
+      <trans-unit id="s04.tier3Desc">
+        <source>High-volume production. AWS Marketplace eligible for streamlined procurement</source>
+        <target>Hochvolumen-Produktion. AWS Marketplace-berechtigt für vereinfachten Beschaffungsprozess.</target>
+      </trans-unit>
+
+      <!-- Section 05: FAQ -->
+      <trans-unit id="s05.sectionEyebrow">
+        <source>Pricing FAQ</source>
+        <target>Preise — Häufige Fragen</target>
+      </trans-unit>
+      <trans-unit id="s05.sectionTitle">
+        <source>Common questions</source>
+        <target>Häufig gestellte Fragen</target>
+      </trans-unit>
+      <trans-unit id="s05.question1">
+        <source>How is pricing calculated?</source>
+        <target>Wie wird der Preis berechnet?</target>
+      </trans-unit>
+      <trans-unit id="s05.answer1">
+        <source>Volume-based on monthly document processing throughput, with adjustments for deployment mode (air-gapped on-prem typically has different cost structure than cloud), regulatory profile (additional compliance audit hours), and connector library scope. Workflow Proof of Value is a fixed-fee, one-workflow evaluation; Enterprise is annual license; AWS Marketplace is listed pay-as-you-go with EDP / private offer eligibility for committed volume.</source>
+        <target>Die Preisberechnung basiert auf dem monatlichen Dokumentendurchsatz. Anpassungen erfolgen nach Deployment-Modus (Air-Gapped On-Premise hat eine andere Kostenstruktur als Cloud-Deployments), regulatorischem Profil (zusätzliche Compliance-Auditstunden) und Umfang der Connector-Bibliothek. Workflow Proof of Value ist eine Festpreis-Evaluierung für einen Workflow. Enterprise wird als Jahreslizenz abgerechnet. AWS Marketplace ist als Pay-as-you-go gelistet mit EDP- und Private-Offer-Berechtigung bei verbindlichem Volumen.</target>
+      </trans-unit>
+      <trans-unit id="s05.question2">
+        <source>Can we start with a Workflow Proof of Value and convert to Enterprise?</source>
+        <target>Können wir mit einem Workflow Proof of Value starten und später zu Enterprise wechseln?</target>
+      </trans-unit>
+      <trans-unit id="s05.answer2">
+        <source>Yes. Workflow Proof of Value is designed as a 4-8 week evaluation on one real production workflow that produces a deployment fit report. PoV contracts include a conversion path to Enterprise with credit applied; most customers convert in 6-12 weeks after PoV kickoff.</source>
+        <target>Ja. Der Workflow Proof of Value ist als 4- bis 8-wöchige Evaluierung auf einem realen Produktions-Workflow ausgelegt und schließt mit einem Deployment-Fit-Bericht ab. PoV-Verträge enthalten einen Wechselpfad zu Enterprise mit Anrechnung der bereits geleisteten Zahlung. Die meisten Kunden wechseln innerhalb von 6 bis 12 Wochen nach dem PoV-Kickoff.</target>
+      </trans-unit>
+      <trans-unit id="s05.question3">
+        <source>Do you support custom on-prem deployments?</source>
+        <target>Werden individuelle On-Premise-Deployments unterstützt?</target>
+      </trans-unit>
+      <trans-unit id="s05.answer3">
+        <source>Yes. Air-gapped on-prem and on-prem hybrid (Capsule on-prem + approved external LLM) are first-class deployment modes. Telecom-grade and OT-grade environments are supported. Validated at SK Telecom (telecom NOC), EUMC (hospital), and Ministry of National Defense (mission workflows).</source>
+        <target>Ja. Air-Gapped On-Premise sowie On-Premise Hybrid (Capsule On-Premise mit zugelassenem externem LLM) sind vollwertige Deployment-Modi. Telekommunikations- und OT-Umgebungen werden unterstützt. Validiert bei SK Telecom (Telekommunikations-NOC), EUMC (Krankenhaus) und dem Verteidigungsministerium (Missions-Workflows).</target>
+      </trans-unit>
+      <trans-unit id="s05.question4">
+        <source>What about EU sovereign data and GDPR?</source>
+        <target>Wie werden EU-Datensouveränität und DSGVO berücksichtigt?</target>
+      </trans-unit>
+      <trans-unit id="s05.answer4">
+        <source>Path A supports in-region EU LLM endpoints (EU-hosted Anthropic, OpenAI EU, Mistral EU). Path B supports fully on-prem inside the EU. Both paths feed audit logs that align with GDPR Articles 5, 17, 30, 32. Standard DPA + SCC are provided as part of Enterprise contract. Recognized at Deutsche Telekom T Challenge 2026 — Top 12 in Data Security &amp; Governance.</source>
+        <target>Pfad A unterstützt EU-regionale LLM-Endpunkte (EU-gehostete Anthropic-, OpenAI EU- und Mistral EU-Dienste). Pfad B ermöglicht vollständig On-Premise-Betrieb innerhalb der EU. Beide Pfade erzeugen Audit-Logs, die den DSGVO-Artikeln 5, 17, 30 und 32 entsprechen. Standard-DPA und SCC (Standardvertragsklauseln) werden als Teil des Enterprise-Vertrags bereitgestellt. Ausgezeichnet beim Deutsche Telekom T Challenge 2026 — Top 12 in Data Security &amp; Governance.</target>
+      </trans-unit>
+      <trans-unit id="s05.question5">
+        <source>Where can LLM Capsule be deployed?</source>
+        <target>Welche Deployment-Optionen stehen für LLM Capsule zur Verfügung?</target>
+      </trans-unit>
+      <trans-unit id="s05.answer5">
+        <source>Six deployment modes: on-premise, air-gapped, hybrid, VPC / private cloud, AWS Marketplace, embedded SDK, and Slack App. Telecom-grade (NFV / container / multi-region) is offered as a deployment variant for operator infrastructure. See the Architecture page for details.</source>
+        <target>LLM Capsule unterstützt sechs Deployment-Modi: On-Premise, Air-Gapped, Hybrid, VPC / Private Cloud, AWS Marketplace, eingebettetes SDK und Slack App. Für Betreiberinfrastrukturen steht eine Telekommunikations-Variante (NFV / Container / Multi-Region) zur Verfügung. Details finden Sie auf der Architekturseite.</target>
+      </trans-unit>
+      <trans-unit id="s05.question6">
+        <source>What certifications does LLM Capsule hold?</source>
+        <target>Welche Zertifizierungen besitzt LLM Capsule?</target>
+      </trans-unit>
+      <trans-unit id="s05.answer6">
+        <source>ISO/IEC 27001, ISO/IEC 42001, KISA Fast Track, GS Certification, plus awards and recognition from MSIT Security Innovation, Deutsche Telekom T Challenge, AI Medical Innovation, Startup World Cup, Next Rise, Gartner, and Emerging AI+X. See the Trust Center for full list.</source>
+        <target>LLM Capsule verfügt über die Zertifizierungen ISO/IEC 27001, ISO/IEC 42001, KISA Fast Track und GS Certification sowie über Auszeichnungen von MSIT Security Innovation, Deutsche Telekom T Challenge, AI Medical Innovation, Startup World Cup, Next Rise, Gartner und Emerging AI+X. Die vollständige Liste finden Sie im Trust Center.</target>
+      </trans-unit>
+
+      <!-- Section 06: CTA Strip -->
+      <trans-unit id="s06.title">
+        <source>Ready to start?</source>
+        <target>Bereit für den nächsten Schritt?</target>
+      </trans-unit>
+      <trans-unit id="s06.subtitle">
+        <source>Bring your industry, your workload estimate, and your deployment constraints. We'll propose a deployment fit and pricing within one business day.</source>
+        <target>Teilen Sie uns Ihre Branche, Ihr Dokumentenvolumen und Ihre Deployment-Anforderungen mit. Wir unterbreiten Ihnen innerhalb eines Werktages einen konkreten Deployment-Vorschlag inklusive Preisindikation.</target>
+      </trans-unit>
+      <trans-unit id="s06.primaryCtaLabel">
+        <source>Request a Quote</source>
+        <target>Angebot anfordern</target>
+      </trans-unit>
+      <trans-unit id="s06.primaryCtaHref">
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+      <trans-unit id="s06.secondaryCtaLabel">
+        <source>View on AWS Marketplace</source>
+        <target>Auf AWS Marketplace ansehen</target>
+      </trans-unit>
+      <trans-unit id="s06.secondaryCtaHref">
+        <source>https://aws.amazon.com/marketplace</source>
+        <target>https://aws.amazon.com/marketplace</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

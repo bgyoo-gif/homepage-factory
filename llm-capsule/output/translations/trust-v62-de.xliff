@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="trust-v62" source-language="en" target-language="de-DE" datatype="plaintext">
+    <header>
+      <note>trust-v62 — Deutsche Übersetzung (v6.2, localize mode)</note>
+    </header>
+    <body>
+
+      <!-- ==================== Section 01: Hero ==================== -->
+      <trans-unit id="s01.eyebrow">
+        <source>Trust &amp; Compliance</source>
+        <target>Trust &amp; Compliance</target>
+        <note>번역 금지 — eyebrow, 브랜드 섹션 레이블</note>
+      </trans-unit>
+      <trans-unit id="s01.title">
+        <source>Enterprise-grade</source>
+        <target>Unternehmenstaugliche</target>
+      </trans-unit>
+      <trans-unit id="s01.titleEmphasis">
+        <source>architecture</source>
+        <target>Systemarchitektur</target>
+      </trans-unit>
+      <trans-unit id="s01.description">
+        <source>LLM Capsule is built for regulated enterprise environments. Certified, auditable, and designed for data sovereignty. This page is for security, compliance, and procurement teams evaluating how the architecture maps to your review framework.</source>
+        <target>LLM Capsule ist für regulierte Unternehmensumgebungen konzipiert — zertifiziert, auditierbar und auf Datensouveränität ausgelegt. Diese Seite richtet sich an Sicherheits-, Compliance- und Beschaffungsteams, die prüfen möchten, wie die Systemarchitektur Ihren Prüfrahmen erfüllt.</target>
+      </trans-unit>
+      <trans-unit id="s01.primaryCtaText">
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+      <trans-unit id="s01.primaryCtaHref">
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+      <trans-unit id="s01.secondaryCtaText">
+        <source>View Architecture</source>
+        <target>Architektur ansehen</target>
+      </trans-unit>
+      <trans-unit id="s01.secondaryCtaHref">
+        <source>/architecture</source>
+        <target>/architecture</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <!-- ==================== Section 02: CredentialGrid ==================== -->
+      <trans-unit id="s02.eyebrow">
+        <source>Certifications &amp; recognition</source>
+        <target>Zertifizierungen &amp; Auszeichnungen</target>
+      </trans-unit>
+      <trans-unit id="s02.heading">
+        <source>12 certifications, awards, and global recognitions</source>
+        <target>12 Zertifizierungen, Auszeichnungen und internationale Anerkennungen</target>
+      </trans-unit>
+      <trans-unit id="s02.description">
+        <source>From international standards (ISO/IEC) to national certifications (KISA, GS) and category recognition (Gartner, Deutsche Telekom, AWS).</source>
+        <target>Von internationalen Standards (ISO/IEC) über nationale Zertifizierungen (KISA, GS) bis hin zu Kategorieauszeichnungen von Gartner, Deutsche Telekom und AWS.</target>
+      </trans-unit>
+      <trans-unit id="s02.card01Type">
+        <source>ISO</source>
+        <target>ISO</target>
+        <note>번역 금지 — 인증 유형 레이블</note>
+      </trans-unit>
+      <trans-unit id="s02.card01Title">
+        <source>ISO/IEC 27001</source>
+        <target>ISO/IEC 27001</target>
+        <note>번역 금지 — 인증명</note>
+      </trans-unit>
+      <trans-unit id="s02.card01Org">
+        <source>Information Security Management</source>
+        <target>Informationssicherheitsmanagement</target>
+      </trans-unit>
+      <trans-unit id="s02.card02Type">
+        <source>ISO</source>
+        <target>ISO</target>
+        <note>번역 금지 — 인증 유형 레이블</note>
+      </trans-unit>
+      <trans-unit id="s02.card02Title">
+        <source>ISO/IEC 42001</source>
+        <target>ISO/IEC 42001</target>
+        <note>번역 금지 — 인증명</note>
+      </trans-unit>
+      <trans-unit id="s02.card02Org">
+        <source>AI Management System</source>
+        <target>KI-Managementsystem</target>
+      </trans-unit>
+      <trans-unit id="s02.card03Type">
+        <source>KISA</source>
+        <target>KISA</target>
+        <note>번역 금지 — 기관명</note>
+      </trans-unit>
+      <trans-unit id="s02.card03Title">
+        <source>KISA Fast Track</source>
+        <target>KISA Fast Track</target>
+        <note>번역 금지 — 인증명</note>
+      </trans-unit>
+      <trans-unit id="s02.card03Org">
+        <source>Korea Information Security</source>
+        <target>Koreanische Informationssicherheit</target>
+      </trans-unit>
+      <trans-unit id="s02.card04Type">
+        <source>GS</source>
+        <target>GS</target>
+        <note>번역 금지 — 인증 유형 레이블</note>
+      </trans-unit>
+      <trans-unit id="s02.card04Title">
+        <source>GS Certification</source>
+        <target>GS Certification</target>
+        <note>번역 금지 — 인증명</note>
+      </trans-unit>
+      <trans-unit id="s02.card04Org">
+        <source>Good Software (Korea)</source>
+        <target>Gütesiegel für Software (Korea)</target>
+      </trans-unit>
+      <trans-unit id="s02.card05Type">
+        <source>AWARD</source>
+        <target>AWARD</target>
+      </trans-unit>
+      <trans-unit id="s02.card05Title">
+        <source>Security Innovation Award</source>
+        <target>Security Innovation Award</target>
+      </trans-unit>
+      <trans-unit id="s02.card05Org">
+        <source>MSIT (Korea)</source>
+        <target>MSIT (Korea)</target>
+        <note>기관명 — 원문 유지</note>
+      </trans-unit>
+      <trans-unit id="s02.card06Type">
+        <source>RECOGNITION</source>
+        <target>RECOGNITION</target>
+      </trans-unit>
+      <trans-unit id="s02.card06Title">
+        <source>T Challenge 2026 — Top 12</source>
+        <target>T Challenge 2026 — Top 12</target>
+        <note>번역 금지 — Deutsche Telekom 프로그램명</note>
+      </trans-unit>
+      <trans-unit id="s02.card06Org">
+        <source>Deutsche Telekom · Data Security &amp; Governance</source>
+        <target>Deutsche Telekom · Data Security &amp; Governance</target>
+        <note>번역 금지 — 기관명 + 카테고리명</note>
+      </trans-unit>
+      <trans-unit id="s02.card07Type">
+        <source>AWARD</source>
+        <target>AWARD</target>
+      </trans-unit>
+      <trans-unit id="s02.card07Title">
+        <source>AI Medical Innovation</source>
+        <target>KI-Innovation im Gesundheitswesen</target>
+      </trans-unit>
+      <trans-unit id="s02.card07Org">
+        <source>Healthcare AI category</source>
+        <target>Kategorie: KI im Gesundheitswesen</target>
+      </trans-unit>
+      <trans-unit id="s02.card08Type">
+        <source>RECOGNITION</source>
+        <target>RECOGNITION</target>
+      </trans-unit>
+      <trans-unit id="s02.card08Title">
+        <source>Startup World Cup</source>
+        <target>Startup World Cup</target>
+        <note>고유 대회명 — 원문 유지</note>
+      </trans-unit>
+      <trans-unit id="s02.card08Org">
+        <source>Global recognition</source>
+        <target>Internationale Auszeichnung</target>
+      </trans-unit>
+      <trans-unit id="s02.card09Type">
+        <source>RECOGNITION</source>
+        <target>RECOGNITION</target>
+      </trans-unit>
+      <trans-unit id="s02.card09Title">
+        <source>Next Rise Global Innovator</source>
+        <target>Next Rise Global Innovator</target>
+        <note>고유 프로그램명 — 원문 유지</note>
+      </trans-unit>
+      <trans-unit id="s02.card09Org">
+        <source>Korea-Global innovation showcase</source>
+        <target>Koreanisch-globale Innovationsplattform</target>
+      </trans-unit>
+      <trans-unit id="s02.card10Type">
+        <source>VENDOR</source>
+        <target>VENDOR</target>
+      </trans-unit>
+      <trans-unit id="s02.card10Title">
+        <source>Gartner Vendor</source>
+        <target>Gartner Vendor</target>
+        <note>번역 금지 — Gartner 기관명 포함</note>
+      </trans-unit>
+      <trans-unit id="s02.card10Org">
+        <source>AI / data category recognition</source>
+        <target>Anerkennung in der KI-/Datenkategorie</target>
+      </trans-unit>
+      <trans-unit id="s02.card11Type">
+        <source>RECOGNITION</source>
+        <target>RECOGNITION</target>
+      </trans-unit>
+      <trans-unit id="s02.card11Title">
+        <source>Emerging AI+X Top 100</source>
+        <target>Emerging AI+X Top 100</target>
+        <note>고유 프로그램명 — 원문 유지</note>
+      </trans-unit>
+      <trans-unit id="s02.card11Org">
+        <source>Korea AI excellence</source>
+        <target>Exzellenz im Bereich KI (Korea)</target>
+      </trans-unit>
+      <trans-unit id="s02.card12Type">
+        <source>MARKETPLACE</source>
+        <target>MARKETPLACE</target>
+      </trans-unit>
+      <trans-unit id="s02.card12Title">
+        <source>AWS Marketplace</source>
+        <target>AWS Marketplace</target>
+        <note>번역 금지 — 서비스명</note>
+      </trans-unit>
+      <trans-unit id="s02.card12Org">
+        <source>Listed and procurable</source>
+        <target>Gelistet und beschaffbar</target>
+      </trans-unit>
+
+      <!-- ==================== Section 03: ComplianceMatrix ==================== -->
+      <trans-unit id="s03.eyebrow">
+        <source>Compliance frameworks</source>
+        <target>Regulatorische Rahmenwerke</target>
+      </trans-unit>
+      <trans-unit id="s03.heading">
+        <source>How LLM Capsule capabilities map to GDPR / HIPAA / SOX / EU AI Act review workflows</source>
+        <target>Zuordnung der LLM Capsule-Funktionen zu DSGVO (GDPR) / HIPAA / SOX / EU AI Act</target>
+      </trans-unit>
+      <trans-unit id="s03.description">
+        <source>LLM Capsule provides architectural controls that support GDPR, HIPAA, SOX, and EU AI Act review workflows. The matrix below maps each capability to the relevant article or section so compliance, security, and procurement teams have a starting reference. This is not a compliance certification — final compliance determination is the customer's, in their own deployment context.</source>
+        <target>LLM Capsule stellt architektonische Steuerungsmechanismen bereit, die DSGVO (GDPR)-, HIPAA-, SOX- und EU AI Act-Prüfprozesse unterstützen. Die nachfolgende Matrix ordnet jede Funktion dem relevanten Artikel oder Abschnitt zu. Sie dient Compliance-, Sicherheits- und Beschaffungsteams als Ausgangspunkt. Diese Zuordnung stellt keine Konformitätszertifizierung dar — die abschließende Compliance-Bewertung liegt beim Kunden, bezogen auf die eigene Einsatzumgebung.</target>
+      </trans-unit>
+      <trans-unit id="s03.thCap">
+        <source>LLM Capsule capability</source>
+        <target>LLM Capsule-Funktion</target>
+      </trans-unit>
+      <trans-unit id="s03.thGdpr">
+        <source>GDPR</source>
+        <target>DSGVO (GDPR)</target>
+      </trans-unit>
+      <trans-unit id="s03.thHipaa">
+        <source>HIPAA</source>
+        <target>HIPAA</target>
+        <note>규제명 — 원문 유지</note>
+      </trans-unit>
+      <trans-unit id="s03.thSox">
+        <source>SOX</source>
+        <target>SOX</target>
+        <note>규제명 — 원문 유지</note>
+      </trans-unit>
+      <trans-unit id="s03.thEu">
+        <source>EU AI Act</source>
+        <target>EU AI Act</target>
+        <note>규제명 — 원문 유지</note>
+      </trans-unit>
+      <!-- Row 1 -->
+      <trans-unit id="s03.r1cap">
+        <source>Local encapsulation (data never leaves)</source>
+        <target>Lokale Kapsulierung (Daten verlassen die Umgebung nicht)</target>
+      </trans-unit>
+      <trans-unit id="s03.r1gdpr">
+        <source>Art. 5 (lawfulness), Art. 32 (security of processing)</source>
+        <target>Art. 5 (Rechtmäßigkeit), Art. 32 (Sicherheit der Verarbeitung)</target>
+      </trans-unit>
+      <trans-unit id="s03.r1gdprNote">
+        <source>Pseudonymization before transmission</source>
+        <target>Pseudonymisierung vor der Übertragung</target>
+      </trans-unit>
+      <trans-unit id="s03.r1hipaa">
+        <source>164.502(d), 164.514(b)</source>
+        <target>164.502(d), 164.514(b)</target>
+        <note>규제 조항 번호 — 원문 유지</note>
+      </trans-unit>
+      <trans-unit id="s03.r1hipaaNote">
+        <source>De-identification methodology</source>
+        <target>Methodik zur De-Identifikation</target>
+      </trans-unit>
+      <trans-unit id="s03.r1sox">
+        <source>Section 404</source>
+        <target>Section 404</target>
+        <note>규제 조항 번호 — 원문 유지</note>
+      </trans-unit>
+      <trans-unit id="s03.r1soxNote">
+        <source>Internal control over data flow</source>
+        <target>Interne Kontrolle des Datenflusses</target>
+      </trans-unit>
+      <trans-unit id="s03.r1eu">
+        <source>Art. 10 (data governance), Art. 15 (cybersecurity)</source>
+        <target>Art. 10 (Daten-Governance), Art. 15 (Cybersicherheit)</target>
+      </trans-unit>
+      <trans-unit id="s03.r1euNote">
+        <source>Data quality and protection requirements</source>
+        <target>Anforderungen an Datenqualität und -schutz</target>
+      </trans-unit>
+      <!-- Row 2 -->
+      <trans-unit id="s03.r2cap">
+        <source>Local restoration (token vault)</source>
+        <target>Lokale Wiederherstellung (Token-Tresor)</target>
+      </trans-unit>
+      <trans-unit id="s03.r2gdpr">
+        <source>Art. 32</source>
+        <target>Art. 32</target>
+      </trans-unit>
+      <trans-unit id="s03.r2gdprNote">
+        <source>Pseudonymization is reversible only inside controlled environment</source>
+        <target>Pseudonymisierung ist ausschließlich innerhalb der kontrollierten Umgebung umkehrbar</target>
+      </trans-unit>
+      <trans-unit id="s03.r2hipaa">
+        <source>164.514(c)</source>
+        <target>164.514(c)</target>
+        <note>규제 조항 번호 — 원문 유지</note>
+      </trans-unit>
+      <trans-unit id="s03.r2hipaaNote">
+        <source>Re-identification key separation</source>
+        <target>Trennung des Re-Identifikationsschlüssels</target>
+      </trans-unit>
+      <trans-unit id="s03.r2sox">
+        <source>Section 404</source>
+        <target>Section 404</target>
+      </trans-unit>
+      <trans-unit id="s03.r2soxNote">
+        <source>Authorized re-identification only</source>
+        <target>Ausschließlich autorisierte Re-Identifikation</target>
+      </trans-unit>
+      <trans-unit id="s03.r2eu">
+        <source>Art. 10</source>
+        <target>Art. 10</target>
+      </trans-unit>
+      <trans-unit id="s03.r2euNote">
+        <source>Reversibility for legitimate use only</source>
+        <target>Umkehrbarkeit nur für legitime Zwecke</target>
+      </trans-unit>
+      <!-- Row 3 -->
+      <trans-unit id="s03.r3cap">
+        <source>Audit logs (every event)</source>
+        <target>Audit-Protokolle (jedes Ereignis)</target>
+      </trans-unit>
+      <trans-unit id="s03.r3gdpr">
+        <source>Art. 30</source>
+        <target>Art. 30</target>
+      </trans-unit>
+      <trans-unit id="s03.r3gdprNote">
+        <source>Records of processing activities</source>
+        <target>Verzeichnis der Verarbeitungstätigkeiten</target>
+      </trans-unit>
+      <trans-unit id="s03.r3hipaa">
+        <source>164.312(b)</source>
+        <target>164.312(b)</target>
+      </trans-unit>
+      <trans-unit id="s03.r3hipaaNote">
+        <source>Audit controls</source>
+        <target>Audit-Kontrollen</target>
+      </trans-unit>
+      <trans-unit id="s03.r3sox">
+        <source>Section 404, 802</source>
+        <target>Section 404, 802</target>
+      </trans-unit>
+      <trans-unit id="s03.r3soxNote">
+        <source>Internal control + record retention</source>
+        <target>Interne Kontrolle und Aufbewahrungspflicht</target>
+      </trans-unit>
+      <trans-unit id="s03.r3eu">
+        <source>Art. 12, 13, 19</source>
+        <target>Art. 12, 13, 19</target>
+      </trans-unit>
+      <trans-unit id="s03.r3euNote">
+        <source>Logging, transparency, conformity</source>
+        <target>Protokollierung, Transparenz, Konformität</target>
+      </trans-unit>
+      <!-- Row 4 -->
+      <trans-unit id="s03.r4cap">
+        <source>Policy versioning + time-shifting</source>
+        <target>Richtlinien-Versionierung und Zeitverschiebung</target>
+      </trans-unit>
+      <trans-unit id="s03.r4gdpr">
+        <source>Art. 5(2), 24</source>
+        <target>Art. 5(2), 24</target>
+      </trans-unit>
+      <trans-unit id="s03.r4gdprNote">
+        <source>Accountability principle</source>
+        <target>Rechenschaftspflicht</target>
+      </trans-unit>
+      <trans-unit id="s03.r4hipaa">
+        <source>164.316</source>
+        <target>164.316</target>
+      </trans-unit>
+      <trans-unit id="s03.r4hipaaNote">
+        <source>Policies and procedures</source>
+        <target>Richtlinien und Verfahren</target>
+      </trans-unit>
+      <trans-unit id="s03.r4sox">
+        <source>Section 302, 404</source>
+        <target>Section 302, 404</target>
+      </trans-unit>
+      <trans-unit id="s03.r4soxNote">
+        <source>Internal control over policy changes</source>
+        <target>Interne Kontrolle bei Richtlinienänderungen</target>
+      </trans-unit>
+      <trans-unit id="s03.r4eu">
+        <source>Art. 17, 18</source>
+        <target>Art. 17, 18</target>
+      </trans-unit>
+      <trans-unit id="s03.r4euNote">
+        <source>Quality and risk management system</source>
+        <target>Qualitäts- und Risikomanagement</target>
+      </trans-unit>
+      <!-- Row 5 -->
+      <trans-unit id="s03.r5cap">
+        <source>RBAC + scope</source>
+        <target>RBAC und Geltungsbereich</target>
+        <note>RBAC (Role-Based Access Control) — 약어 유지</note>
+      </trans-unit>
+      <trans-unit id="s03.r5gdpr">
+        <source>Art. 32</source>
+        <target>Art. 32</target>
+      </trans-unit>
+      <trans-unit id="s03.r5gdprNote">
+        <source>Access control</source>
+        <target>Zugriffskontrolle</target>
+      </trans-unit>
+      <trans-unit id="s03.r5hipaa">
+        <source>164.308(a)(4), 164.312(a)</source>
+        <target>164.308(a)(4), 164.312(a)</target>
+      </trans-unit>
+      <trans-unit id="s03.r5hipaaNote">
+        <source>Workforce security + access control</source>
+        <target>Mitarbeitersicherheit und Zugriffskontrolle</target>
+      </trans-unit>
+      <trans-unit id="s03.r5sox">
+        <source>Section 404</source>
+        <target>Section 404</target>
+      </trans-unit>
+      <trans-unit id="s03.r5soxNote">
+        <source>Segregation of duties</source>
+        <target>Aufgabentrennung</target>
+      </trans-unit>
+      <trans-unit id="s03.r5eu">
+        <source>Art. 14</source>
+        <target>Art. 14</target>
+      </trans-unit>
+      <trans-unit id="s03.r5euNote">
+        <source>Human oversight</source>
+        <target>Menschliche Aufsicht</target>
+      </trans-unit>
+      <!-- Row 6 -->
+      <trans-unit id="s03.r6cap">
+        <source>On-prem / Path B execution</source>
+        <target>On-Premise / Path-B-Ausführung</target>
+      </trans-unit>
+      <trans-unit id="s03.r6gdpr">
+        <source>Art. 44, Chapter V</source>
+        <target>Art. 44, Kapitel V</target>
+      </trans-unit>
+      <trans-unit id="s03.r6gdprNote">
+        <source>International transfer restriction (avoidance)</source>
+        <target>Einschränkung internationaler Datentransfers (Vermeidung)</target>
+      </trans-unit>
+      <trans-unit id="s03.r6hipaa">
+        <source>164.308(a)(8)</source>
+        <target>164.308(a)(8)</target>
+      </trans-unit>
+      <trans-unit id="s03.r6hipaaNote">
+        <source>Contingency plan, environment control</source>
+        <target>Notfallplan, Umgebungskontrolle</target>
+      </trans-unit>
+      <trans-unit id="s03.r6sox">
+        <source>Section 404</source>
+        <target>Section 404</target>
+      </trans-unit>
+      <trans-unit id="s03.r6soxNote">
+        <source>Environment control</source>
+        <target>Umgebungskontrolle</target>
+      </trans-unit>
+      <trans-unit id="s03.r6eu">
+        <source>Art. 25</source>
+        <target>Art. 25</target>
+      </trans-unit>
+      <trans-unit id="s03.r6euNote">
+        <source>Conformity assessment when high-risk</source>
+        <target>Konformitätsbewertung bei Hochrisikosystemen</target>
+      </trans-unit>
+      <!-- Row 7 -->
+      <trans-unit id="s03.r7cap">
+        <source>DPA, SCCs, Vendor Security</source>
+        <target>DPA, SCCs, Anbietersicherheit</target>
+        <note>DPA/SCCs — 국제 계약 약어, 원문 유지</note>
+      </trans-unit>
+      <trans-unit id="s03.r7gdpr">
+        <source>Art. 28</source>
+        <target>Art. 28</target>
+      </trans-unit>
+      <trans-unit id="s03.r7gdprNote">
+        <source>Processor obligations</source>
+        <target>Pflichten des Auftragsverarbeiters</target>
+      </trans-unit>
+      <trans-unit id="s03.r7hipaa">
+        <source>BAA equivalent</source>
+        <target>BAA-Äquivalent</target>
+        <note>BAA (Business Associate Agreement) — 약어 유지</note>
+      </trans-unit>
+      <trans-unit id="s03.r7hipaaNote">
+        <source>Business associate framework</source>
+        <target>Regelwerk für Geschäftspartner</target>
+      </trans-unit>
+      <trans-unit id="s03.r7sox">
+        <source>Auditor reliance</source>
+        <target>Prüfer-Beauftragung</target>
+      </trans-unit>
+      <trans-unit id="s03.r7soxNote">
+        <source>Vendor management</source>
+        <target>Lieferantenmanagement</target>
+      </trans-unit>
+      <trans-unit id="s03.r7eu">
+        <source>Art. 28</source>
+        <target>Art. 28</target>
+      </trans-unit>
+      <trans-unit id="s03.r7euNote">
+        <source>Provider obligations</source>
+        <target>Pflichten des Anbieters</target>
+      </trans-unit>
+
+      <!-- ==================== Section 04: AuditFeatures ==================== -->
+      <trans-unit id="s04.eyebrow">
+        <source>Audit framework</source>
+        <target>Audit-Rahmenwerk</target>
+      </trans-unit>
+      <trans-unit id="s04.heading">
+        <source>What the audit log captures</source>
+        <target>Inhalt des Audit-Protokolls</target>
+      </trans-unit>
+      <trans-unit id="s04.description">
+        <source>Every event in the LLM Capsule lifecycle is logged with structured metadata — ready for review by privacy, security, and compliance teams.</source>
+        <target>Jedes Ereignis im LLM Capsule-Lebenszyklus wird mit strukturierten Metadaten protokolliert. Die Aufzeichnungen stehen Datenschutz-, Sicherheits- und Compliance-Teams zur Prüfung bereit.</target>
+      </trans-unit>
+      <trans-unit id="s04.card1Title">
+        <source>Detection events</source>
+        <target>Erkennungsereignisse</target>
+      </trans-unit>
+      <trans-unit id="s04.card1Desc">
+        <source>Every detection: which marker, which document, which version, confidence, timestamp. Reproducible across policy versions.</source>
+        <target>Jede Erkennung wird erfasst: welcher Marker, welches Dokument, welche Version, Konfidenzwert, Zeitstempel. Die Ergebnisse sind über alle Richtlinienversionen reproduzierbar.</target>
+      </trans-unit>
+      <trans-unit id="s04.card1Color">
+        <source>primary</source>
+        <target>primary</target>
+        <note>색상 값 — 번역 금지</note>
+      </trans-unit>
+      <trans-unit id="s04.card2Title">
+        <source>Policy versions</source>
+        <target>Richtlinienversionen</target>
+      </trans-unit>
+      <trans-unit id="s04.card2Desc">
+        <source>Yesterday's policy archived, today's enforced. Diff visible. Time-shifting markers — query historical decisions under historical policy.</source>
+        <target>Vergangene Richtlinien werden archiviert, die aktuelle wird durchgesetzt. Änderungen sind als Diff einsehbar. Zeitverschiebung ermöglicht die Abfrage historischer Entscheidungen unter der damals gültigen Richtlinie.</target>
+      </trans-unit>
+      <trans-unit id="s04.card2Color">
+        <source>teal</source>
+        <target>teal</target>
+        <note>색상 값 — 번역 금지</note>
+      </trans-unit>
+      <trans-unit id="s04.card3Title">
+        <source>Token mappings</source>
+        <target>Token-Zuordnungen</target>
+      </trans-unit>
+      <trans-unit id="s04.card3Desc">
+        <source>Local token vault never leaves. Token issuance + retrieval logged with workflow ID and user identity. Vault encrypted at rest.</source>
+        <target>Der lokale Token-Tresor verlässt die Umgebung nicht. Ausstellung und Abruf von Tokens werden mit Workflow-ID und Benutzeridentität protokolliert. Der Tresor ist im Ruhezustand verschlüsselt.</target>
+      </trans-unit>
+      <trans-unit id="s04.card3Color">
+        <source>amber</source>
+        <target>amber</target>
+        <note>색상 값 — 번역 금지</note>
+      </trans-unit>
+      <trans-unit id="s04.card4Title">
+        <source>Detection accuracy</source>
+        <target>Erkennungsgenauigkeit</target>
+      </trans-unit>
+      <trans-unit id="s04.card4Desc">
+        <source>98.1% baseline detection rate measured on industry benchmarks. Per-deployment evaluation against your own document corpus.</source>
+        <target>Die Basis-Erkennungsrate beträgt 98,1 % gemessen an Branchen-Benchmarks. Eine einsatzspezifische Auswertung gegenüber Ihrem eigenen Dokumentenkorpus ist möglich.</target>
+        <note>소수점 98.1% → 98,1 % (독일어 소수점 쉼표)</note>
+      </trans-unit>
+      <trans-unit id="s04.card4Color">
+        <source>coral</source>
+        <target>coral</target>
+        <note>색상 값 — 번역 금지</note>
+      </trans-unit>
+      <trans-unit id="s04.card5Title">
+        <source>Model + path routing</source>
+        <target>Modell- und Pfad-Routing</target>
+      </trans-unit>
+      <trans-unit id="s04.card5Desc">
+        <source>Which workflow routed to which model on which path (A external / B on-prem). Full per-event traceability for regulator review.</source>
+        <target>Protokolliert: Workflow, Zielmodell und Pfad (A extern / B On-Premise). Jedes Ereignis ist vollständig nachvollziehbar — für behördliche Prüfungen.</target>
+      </trans-unit>
+      <trans-unit id="s04.card5Color">
+        <source>dark</source>
+        <target>dark</target>
+        <note>색상 값 — 번역 금지</note>
+      </trans-unit>
+
+      <!-- ==================== Section 05: AdminConsole ==================== -->
+      <trans-unit id="s05.eyebrow">
+        <source>Admin console</source>
+        <target>Admin-Konsole</target>
+      </trans-unit>
+      <trans-unit id="s05.heading">
+        <source>The control surface for security and compliance teams</source>
+        <target>Die Steuerungsoberfläche für Sicherheits- und Compliance-Teams</target>
+      </trans-unit>
+      <trans-unit id="s05.description">
+        <source>One console for policies, audit, detection accuracy, and deployment health.</source>
+        <target>Eine Konsole für Richtlinien, Audit, Erkennungsgenauigkeit und den Betriebszustand der Instanz.</target>
+      </trans-unit>
+      <trans-unit id="s05.placeholderLine1">
+        <source>Admin Console screenshot · same asset as 02_product page</source>
+        <target>Admin-Konsole Screenshot · identisches Asset wie 02_product page</target>
+        <note>플레이스홀더 텍스트 (편집자용)</note>
+      </trans-unit>
+      <trans-unit id="s05.placeholderLine2">
+        <source>Tabs: Audit · Policies · Tokens · Detection · Models</source>
+        <target>Tabs: Audit · Richtlinien · Tokens · Erkennung · Modelle</target>
+      </trans-unit>
+      <trans-unit id="s05.placeholderLine3">
+        <source>Live event stream + policy version diff + detection accuracy chart</source>
+        <target>Live-Ereignisstrom + Richtlinienversions-Diff + Erkennungsgenauigkeitsdiagramm</target>
+      </trans-unit>
+
+      <!-- ==================== Section 06: Downloads ==================== -->
+      <trans-unit id="s06.eyebrow">
+        <source>Compliance downloads</source>
+        <target>Compliance-Dokumente</target>
+      </trans-unit>
+      <trans-unit id="s06.heading">
+        <source>Documentation for procurement and compliance</source>
+        <target>Unterlagen für Beschaffung und Compliance</target>
+      </trans-unit>
+      <trans-unit id="s06.description">
+        <source>The documents your legal, security, and procurement teams need to move forward. Form-gated to coordinate with Sales / Customer Success on questions.</source>
+        <target>Diese Unterlagen ermöglichen Ihren Rechts-, Sicherheits- und Beschaffungsteams die weitere Prüfung. Der Zugang erfolgt über ein Formular, damit das Sales- und Customer-Success-Team Rückfragen koordinieren kann.</target>
+      </trans-unit>
+      <trans-unit id="s06.card1Icon">
+        <source>📄</source>
+        <target>📄</target>
+        <note>아이콘 이모지 — 번역 금지</note>
+      </trans-unit>
+      <trans-unit id="s06.card1Chip">
+        <source>FORM-GATED · 1 BUSINESS DAY</source>
+        <target>FORMULAR ERFORDERLICH · 1 WERKTAG</target>
+      </trans-unit>
+      <trans-unit id="s06.card1Title">
+        <source>Data Processing Agreement (DPA) Template</source>
+        <target>Auftragsverarbeitungsvertrag (AVV) — Mustervorlage</target>
+        <note>DPA = AVV (Auftragsverarbeitungsvertrag) — DSGVO 독일어 명칭</note>
+      </trans-unit>
+      <trans-unit id="s06.card1Desc">
+        <source>CUBIG's standard DPA template aligned with GDPR Article 28 obligations. Includes Standard Contractual Clauses (SCCs) for international transfers. Customizable for sector-specific requirements.</source>
+        <target>CUBIGs Standardvorlage für den Auftragsverarbeitungsvertrag gemäß DSGVO (GDPR) Art. 28. Enthält Standardvertragsklauseln (SCCs) für internationale Datentransfers. Für branchenspezifische Anforderungen anpassbar.</target>
+        <note>원문에 "GDPR Article 28" 명시 → DSGVO (GDPR) Art. 28로 DE 구체화 허용</note>
+      </trans-unit>
+      <trans-unit id="s06.card1CtaText">
+        <source>Request DPA →</source>
+        <target>AVV anfordern →</target>
+      </trans-unit>
+      <trans-unit id="s06.card1CtaHref">
+        <source>/request-dpa</source>
+        <target>/request-dpa</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+      <trans-unit id="s06.card2Icon">
+        <source>📋</source>
+        <target>📋</target>
+        <note>아이콘 이모지 — 번역 금지</note>
+      </trans-unit>
+      <trans-unit id="s06.card2Chip">
+        <source>FORM-GATED · 1 BUSINESS DAY</source>
+        <target>FORMULAR ERFORDERLICH · 1 WERKTAG</target>
+      </trans-unit>
+      <trans-unit id="s06.card2Title">
+        <source>Vendor Security Questionnaire</source>
+        <target>Sicherheitsfragebogen für Anbieter</target>
+      </trans-unit>
+      <trans-unit id="s06.card2Desc">
+        <source>Pre-filled CUBIG responses to standard SIG, CAIQ, and SOC2 vendor security questionnaires. For procurement and security review teams. Includes architectural diagrams and audit framework details.</source>
+        <target>Vorausgefüllte CUBIG-Antworten auf standardisierte SIG-, CAIQ- und SOC2-Sicherheitsfragebögen. Gerichtet an Beschaffungs- und Sicherheitsprüfungsteams. Enthält Architekturdiagramme und Details zum Audit-Rahmenwerk.</target>
+        <note>SIG/CAIQ/SOC2 — 국제 표준 약어, 원문 유지</note>
+      </trans-unit>
+      <trans-unit id="s06.card2CtaText">
+        <source>Request Questionnaire →</source>
+        <target>Fragebogen anfordern →</target>
+      </trans-unit>
+      <trans-unit id="s06.card2CtaHref">
+        <source>/request-vendor-questionnaire</source>
+        <target>/request-vendor-questionnaire</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+      <!-- ==================== Section 07: CTAStrip ==================== -->
+      <trans-unit id="s07.heading">
+        <source>Compliance, security, and procurement teams welcome.</source>
+        <target>Compliance-, Sicherheits- und Beschaffungsteams sind willkommen.</target>
+      </trans-unit>
+      <trans-unit id="s07.description">
+        <source>Bring your regulatory profile, your standard vendor security questionnaire, and your DPA template. We respond inside one business day.</source>
+        <target>Bringen Sie Ihr regulatorisches Profil, Ihren Sicherheitsfragebogen und Ihre AVV-Vorlage mit. Wir analysieren Ihre Anforderungen und antworten innerhalb eines Werktages.</target>
+        <note>brief CTA 패턴 적용: "We respond" → 가치 제안형 "Wir analysieren Ihre Anforderungen und antworten..."</note>
+      </trans-unit>
+      <trans-unit id="s07.primaryCtaText">
+        <source>Request a Live Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+      <trans-unit id="s07.primaryCtaHref">
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+      <trans-unit id="s07.secondaryCtaText">
+        <source>View Architecture</source>
+        <target>Architektur ansehen</target>
+      </trans-unit>
+      <trans-unit id="s07.secondaryCtaHref">
+        <source>/architecture</source>
+        <target>/architecture</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+      <trans-unit id="s07.tertiaryCtaText">
+        <source>Browse Resources</source>
+        <target>Ressourcen ansehen</target>
+      </trans-unit>
+      <trans-unit id="s07.tertiaryCtaHref">
+        <source>/resources</source>
+        <target>/resources</target>
+        <note>URL — 번역 금지</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

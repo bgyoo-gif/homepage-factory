@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="solutions-v62" source-language="en" target-language="de-DE" datatype="plaintext">
+    <header>
+      <note>solutions-v62 — Deutsche Übersetzung (v6.2, localize mode)</note>
+    </header>
+    <body>
+
+      <!-- Section 01: Hero -->
+      <trans-unit id="s01.eyebrow">
+        <source>Solutions</source>
+        <target>Lösungen</target>
+      </trans-unit>
+      <trans-unit id="s01.h1Plain">
+        <source>Make regulated workflows </source>
+        <target>KI-gestützte Workflows in regulierten Branchen — </target>
+      </trans-unit>
+      <trans-unit id="s01.h1Highlight">
+        <source>usable with AI</source>
+        <target>ohne Offenlegung vertraulicher Daten</target>
+      </trans-unit>
+      <trans-unit id="s01.description">
+        <source>Six industries. Real production workflows. Real customers. One AI enablement data layer that removes the data exposure barrier blocking enterprise AI adoption — so AI runs on real data, inside your environment, under your governance.</source>
+        <target>Sechs regulierte Branchen. Reale Produktivworkflows. Nachgewiesene Kundeneinsätze. Eine Datenschicht, die verhindert, dass vertrauliche Daten bei der KI-Verarbeitung nach außen gelangen — KI läuft auf echten Daten, in Ihrer Umgebung, unter Ihrer Kontrolle.</target>
+      </trans-unit>
+      <trans-unit id="s01.stat1Num">
+        <source>6</source>
+        <target>6</target>
+      </trans-unit>
+      <trans-unit id="s01.stat1Label">
+        <source>Regulated industries</source>
+        <target>Regulierte Branchen</target>
+      </trans-unit>
+      <trans-unit id="s01.stat2Num">
+        <source>10+</source>
+        <target>10+</target>
+      </trans-unit>
+      <trans-unit id="s01.stat2Label">
+        <source>Production customers</source>
+        <target>Produktivkunden</target>
+      </trans-unit>
+      <trans-unit id="s01.stat3Num">
+        <source>30 min</source>
+        <target>30 Min.</target>
+      </trans-unit>
+      <trans-unit id="s01.stat3Label">
+        <source>Time to first evaluation</source>
+        <target>Zeit bis zur ersten Evaluierung</target>
+      </trans-unit>
+      <trans-unit id="s01.stat4Num">
+        <source>0</source>
+        <target>0</target>
+      </trans-unit>
+      <trans-unit id="s01.stat4Label">
+        <source>Raw data to external LLM</source>
+        <target>Rohdaten an externe LLMs</target>
+      </trans-unit>
+
+      <!-- Section 02: ProofBand -->
+      <trans-unit id="s02.label">
+        <source>Real production deployments — across telecom, healthcare, finance, defense, OT, and legal</source>
+        <target>Produktiveinsätze in Telekommunikation, Gesundheitswesen, Finanzwesen, Verteidigung, OT und Rechtsbranche</target>
+      </trans-unit>
+      <trans-unit id="s02.logo1Alt">
+        <source>SK Telecom</source>
+        <target>SK Telecom</target>
+      </trans-unit>
+      <trans-unit id="s02.logo2Alt">
+        <source>Deutsche Telekom</source>
+        <target>Deutsche Telekom</target>
+      </trans-unit>
+      <trans-unit id="s02.logo3Alt">
+        <source>Claroty</source>
+        <target>Claroty</target>
+      </trans-unit>
+      <trans-unit id="s02.logo4Alt">
+        <source>EUMC</source>
+        <target>EUMC</target>
+      </trans-unit>
+      <trans-unit id="s02.logo5Alt">
+        <source>Kyobo</source>
+        <target>Kyobo</target>
+      </trans-unit>
+      <trans-unit id="s02.logo6Text">
+        <source>DB Insurance</source>
+        <target>DB Insurance</target>
+      </trans-unit>
+      <trans-unit id="s02.logo7Text">
+        <source>IBK</source>
+        <target>IBK</target>
+      </trans-unit>
+      <trans-unit id="s02.logo8Text">
+        <source>Shin&amp;Kim</source>
+        <target>Shin&amp;Kim</target>
+      </trans-unit>
+      <trans-unit id="s02.logo9Alt">
+        <source>Ministry of National Defense (KR)</source>
+        <target>Verteidigungsministerium (KR)</target>
+      </trans-unit>
+      <trans-unit id="s02.logo10Alt">
+        <source>NAVER Cloud</source>
+        <target>NAVER Cloud</target>
+      </trans-unit>
+
+      <!-- Section 03: Telecom -->
+      <trans-unit id="s03.tag">
+        <source>Telecom</source>
+        <target>Telekommunikation</target>
+      </trans-unit>
+      <trans-unit id="s03.title">
+        <source>AI in the NOC, OSS/BSS, and customer ops — without exposing subscribers</source>
+        <target>KI im NOC, OSS/BSS und Kundenbetrieb — ohne Offenlegung von Teilnehmerdaten</target>
+      </trans-unit>
+      <trans-unit id="s03.lead">
+        <source>Network operations carry subscriber identities, device IDs, circuit IDs, IP ranges, and configurations. PII guardrails miss this; sovereign data rules block raw transmission. LLM Capsule encapsulates locally and routes capsules to approved external LLMs (Path A) or on-prem models (Path B for stricter workflows).</source>
+        <target>Netzwerkbetrieb umfasst Teilnehmeridentitäten, Geräte-IDs, Circuit-IDs, IP-Bereiche und Konfigurationsdaten. Klassische PII-Schutzmaßnahmen greifen hier nicht; datenschutzrechtliche Anforderungen blockieren die ungeschützte Übertragung. LLM Capsule kapsuliert die Daten lokal und leitet Kapsel-Darstellungen an zugelassene externe LLMs (Pfad A) oder On-Premise-Modelle (Pfad B für strengere Workflows) weiter.</target>
+      </trans-unit>
+      <trans-unit id="s03.blockedLabel">
+        <source>Without Capsule</source>
+        <target>Ohne Capsule</target>
+      </trans-unit>
+      <trans-unit id="s03.blockedH">
+        <source>NOC AI pilot stalls</source>
+        <target>KI-Pilot im NOC stagniert</target>
+      </trans-unit>
+      <trans-unit id="s03.blocked">
+        <source>Subscriber IDs, device configs, alarm sequences cannot reach external LLM. Pilot demos on synthetic data, then dies in security review.</source>
+        <target>Teilnehmer-IDs, Gerätekonfigurationen und Alarmsequenzen dürfen das externe LLM nicht erreichen. Der Pilot läuft auf synthetischen Daten und scheitert anschließend an der Sicherheitsprüfung.</target>
+      </trans-unit>
+      <trans-unit id="s03.enabledLabel">
+        <source>With Capsule</source>
+        <target>Mit Capsule</target>
+      </trans-unit>
+      <trans-unit id="s03.enabledH">
+        <source>RCA + recommendation auto-inserted</source>
+        <target>RCA und Handlungsempfehlung automatisch eingefügt</target>
+      </trans-unit>
+      <trans-unit id="s03.enabled">
+        <source>Capsule travels; AI generates RCA on protected data; output restored into the original ticket with real subscriber/device/circuit IDs.</source>
+        <target>Die Kapsel wird übertragen. Die KI erstellt eine Ursachenanalyse auf Basis der geschützten Daten. Das Ergebnis wird mit den tatsächlichen Teilnehmer-, Geräte- und Circuit-IDs im Originalticket wiederhergestellt.</target>
+      </trans-unit>
+      <trans-unit id="s03.workflowsHeading">
+        <source>Production Workflows</source>
+        <target>Produktivworkflows</target>
+      </trans-unit>
+      <trans-unit id="s03.wf1Title">
+        <source>Incident RCA generation</source>
+        <target>Automatische Ursachenanalyse bei Incidents</target>
+      </trans-unit>
+      <trans-unit id="s03.wf1Desc">
+        <source>Real-time root cause analysis on production NOC tickets</source>
+        <target>Echtzeit-Ursachenanalyse auf produktiven NOC-Tickets</target>
+      </trans-unit>
+      <trans-unit id="s03.wf2Title">
+        <source>Customer impact analysis</source>
+        <target>Analyse der Kundenauswirkung</target>
+      </trans-unit>
+      <trans-unit id="s03.wf2Desc">
+        <source>SLA risk and enterprise customer impact summarization</source>
+        <target>Zusammenfassung von SLA-Risiken und Auswirkungen auf Geschäftskunden</target>
+      </trans-unit>
+      <trans-unit id="s03.wf3Title">
+        <source>Configuration change drafting</source>
+        <target>Entwurf von Konfigurationsänderungen</target>
+      </trans-unit>
+      <trans-unit id="s03.wf3Desc">
+        <source>Network config diff explanation and approval drafts</source>
+        <target>Erläuterung von Konfigurationsunterschieden und Entwurf von Freigabedokumenten</target>
+      </trans-unit>
+      <trans-unit id="s03.wf4Title">
+        <source>Runbook generation</source>
+        <target>Runbook-Erstellung</target>
+      </trans-unit>
+      <trans-unit id="s03.wf4Desc">
+        <source>Auto-drafting incident-specific runbooks from history</source>
+        <target>Automatische Erstellung einsatzspezifischer Runbooks auf Basis historischer Daten</target>
+      </trans-unit>
+      <trans-unit id="s03.customerLabel">
+        <source>Customer Proof</source>
+        <target>Kundenreferenz</target>
+      </trans-unit>
+      <trans-unit id="s03.customerName">
+        <source>SK Telecom · Deutsche Telekom T Challenge 2026 — Top 12</source>
+        <target>SK Telecom · Deutsche Telekom T Challenge 2026 — Top 12</target>
+      </trans-unit>
+      <trans-unit id="s03.customerDetail">
+        <source>Recognized in Data Security &amp; Governance category. NOC RCA generation and customer-impact analysis on real subscriber, network, and configuration data — all encapsulated locally before any LLM call.</source>
+        <target>Ausgezeichnet in der Kategorie Data Security &amp; Governance. NOC-Ursachenanalyse und Auswirkungsanalyse auf Geschäftskunden auf Basis realer Teilnehmer-, Netzwerk- und Konfigurationsdaten — vollständig lokal kapsuliert, bevor ein LLM-Aufruf erfolgt.</target>
+      </trans-unit>
+      <trans-unit id="s03.screenshotAlt">
+        <source>Telecom Industry Visual</source>
+        <target>Telekommunikation — Branchenvisualisierung</target>
+      </trans-unit>
+      <trans-unit id="s03.readLabel">
+        <source>Read: How to deploy AI in a telecom NOC →</source>
+        <target>Lesen: KI-Einsatz im Telekommunikations-NOC →</target>
+      </trans-unit>
+
+      <!-- Section 04: Healthcare -->
+      <trans-unit id="s04.tag">
+        <source>Healthcare</source>
+        <target>Gesundheitswesen</target>
+      </trans-unit>
+      <trans-unit id="s04.title">
+        <source>AI for clinical workflows — PHI never leaves the hospital network</source>
+        <target>KI für klinische Workflows — Patientendaten verlassen das Krankenhausnetz nicht</target>
+      </trans-unit>
+      <trans-unit id="s04.lead">
+        <source>Clinical AI promises 30-50% reduction in documentation burden. But PHI cannot leave the hospital under HIPAA, GDPR, or K-PIPA. PII guardrails miss workflow context, lab sequences, and free-text clinical notes. LLM Capsule encapsulates patient identifiers, MRN, diagnoses, and clinical context locally; restoration happens inside the EHR.</source>
+        <target>KI verspricht eine Reduktion des Dokumentationsaufwands um 30 bis 50 Prozent. Patientendaten dürfen das Krankenhaus jedoch gemäß DSGVO (GDPR), HIPAA und vergleichbaren Regelungen nicht verlassen. Herkömmliche PII-Schutzmechanismen erfassen keinen Workflow-Kontext, keine Laborsequenzen und keine Freitextnotizen. LLM Capsule kapsuliert Patientenkennungen, MRN, Diagnosen und klinischen Kontext lokal; die Wiederherstellung erfolgt innerhalb des Krankenhausinformationssystems.</target>
+      </trans-unit>
+      <trans-unit id="s04.blockedLabel">
+        <source>Without Capsule</source>
+        <target>Ohne Capsule</target>
+      </trans-unit>
+      <trans-unit id="s04.blockedH">
+        <source>Documentation pilot blocked</source>
+        <target>Dokumentationspilot blockiert</target>
+      </trans-unit>
+      <trans-unit id="s04.blocked">
+        <source>Privacy officer blocks deployment. Physicians use shadow AI on personal devices; productivity tasted in pilot disappears.</source>
+        <target>Der Datenschutzbeauftragte blockiert die Einführung. Kliniker weichen auf private Geräte und nicht freigegebene KI-Tools aus; die im Pilot gewonnene Produktivität ist verloren.</target>
+      </trans-unit>
+      <trans-unit id="s04.enabledLabel">
+        <source>With Capsule</source>
+        <target>Mit Capsule</target>
+      </trans-unit>
+      <trans-unit id="s04.enabledH">
+        <source>AI drafts inside Epic / Cerner / HIS</source>
+        <target>KI erstellt Entwürfe direkt in Epic / Cerner / HIS</target>
+      </trans-unit>
+      <trans-unit id="s04.enabled">
+        <source>PHI encapsulated; AI drafts radiology summaries and discharge notes; outputs auto-restore in the EHR. Audit feeds the privacy office.</source>
+        <target>Patientendaten werden kapsuliert. Die KI erstellt Radiologiezusammenfassungen und Entlassungsbriefe. Die Ergebnisse werden automatisch im Krankenhausinformationssystem wiederhergestellt. Prüfprotokolle werden dem Datenschutzbeauftragten bereitgestellt.</target>
+      </trans-unit>
+      <trans-unit id="s04.workflowsHeading">
+        <source>Production Workflows</source>
+        <target>Produktivworkflows</target>
+      </trans-unit>
+      <trans-unit id="s04.wf1Title">
+        <source>Radiology report drafting</source>
+        <target>Erstellung von Radiologieberichten</target>
+      </trans-unit>
+      <trans-unit id="s04.wf1Desc">
+        <source>AI-drafted impressions from imaging studies + clinical history</source>
+        <target>KI-gestützte Befundformulierung auf Basis von Bildgebung und klinischer Vorgeschichte</target>
+      </trans-unit>
+      <trans-unit id="s04.wf2Title">
+        <source>Discharge summary drafting</source>
+        <target>Erstellung von Entlassungsbriefen</target>
+      </trans-unit>
+      <trans-unit id="s04.wf2Desc">
+        <source>Multi-source summarization across admission, treatment, and follow-up</source>
+        <target>Mehrstufige Zusammenfassung aus Aufnahme, Behandlung und Nachsorge</target>
+      </trans-unit>
+      <trans-unit id="s04.wf3Title">
+        <source>Clinical coding assist</source>
+        <target>Unterstützung bei der klinischen Kodierung</target>
+      </trans-unit>
+      <trans-unit id="s04.wf3Desc">
+        <source>ICD-10 / CPT code suggestion with audit trail</source>
+        <target>Vorschläge für ICD-10- und CPT-Codes mit nachvollziehbarem Prüfpfad</target>
+      </trans-unit>
+      <trans-unit id="s04.wf4Title">
+        <source>Care coordination notes</source>
+        <target>Koordinationsnotizen im Behandlungsteam</target>
+      </trans-unit>
+      <trans-unit id="s04.wf4Desc">
+        <source>Multi-disciplinary handoff drafts with PHI protected</source>
+        <target>Interdisziplinäre Übergabeentwürfe mit geschützten Patientendaten</target>
+      </trans-unit>
+      <trans-unit id="s04.customerLabel">
+        <source>Customer Proof</source>
+        <target>Kundenreferenz</target>
+      </trans-unit>
+      <trans-unit id="s04.customerName">
+        <source>Ewha Womans University Medical Center (EUMC)</source>
+        <target>Ewha Womans University Medical Center (EUMC)</target>
+      </trans-unit>
+      <trans-unit id="s04.customerDetail">
+        <source>Clinical workflow summarization with PHI never traversing the EUMC boundary in raw form. Local restoration ensures only authorized hospital systems see original patient identifiers. HIPAA-aligned compliance reporting.</source>
+        <target>Klinische Workflow-Zusammenfassung, ohne dass Patientendaten die EUMC-Infrastruktur in Rohform verlassen. Die lokale Wiederherstellung stellt sicher, dass nur autorisierte Systeme die ursprünglichen Patientenkennungen einsehen. Compliance-Reporting ist auf HIPAA-Anforderungen ausgerichtet.</target>
+      </trans-unit>
+      <trans-unit id="s04.screenshotAlt">
+        <source>Healthcare Industry Visual</source>
+        <target>Gesundheitswesen — Branchenvisualisierung</target>
+      </trans-unit>
+      <trans-unit id="s04.readLabel">
+        <source>Read: How to deploy AI in a hospital →</source>
+        <target>Lesen: KI-Einsatz im Krankenhaus →</target>
+      </trans-unit>
+
+      <!-- Section 05: Finance -->
+      <trans-unit id="s05.tag">
+        <source>Finance / Insurance</source>
+        <target>Finanzwesen / Versicherung</target>
+      </trans-unit>
+      <trans-unit id="s05.title">
+        <source>AI on real claim, policy, and customer data — under bank-grade governance</source>
+        <target>KI auf echten Schadenakten, Policendaten und Kundendaten — unter bankenkonformer Governance</target>
+      </trans-unit>
+      <trans-unit id="s05.lead">
+        <source>Insurance and banking workflows are document-heavy and customer-data-heavy: claim narratives, policy details, KYC records, transaction patterns. Sector regulators (FSC, FSS, BaFin, ACPR) increasingly require demonstrable data governance for AI workflows. LLM Capsule keeps customer data inside while AI processes safe capsules.</source>
+        <target>Versicherungs- und Bankworkflows sind dokumenten- und kundendatenintensiv: Schadenmeldungen, Policendetails, KYC-Unterlagen, Transaktionsmuster. Aufsichtsbehörden wie BaFin, FSC, FSS und ACPR fordern zunehmend nachweisbare Datenschutzmaßnahmen beim KI-Einsatz. LLM Capsule hält Kundendaten innerhalb der eigenen Infrastruktur, während die KI geschützte Kapseln verarbeitet.</target>
+      </trans-unit>
+      <trans-unit id="s05.blockedLabel">
+        <source>Without Capsule</source>
+        <target>Ohne Capsule</target>
+      </trans-unit>
+      <trans-unit id="s05.blockedH">
+        <source>Claims AI never reaches production</source>
+        <target>Schadenbearbeitungs-KI gelangt nicht in den Produktivbetrieb</target>
+      </trans-unit>
+      <trans-unit id="s05.blocked">
+        <source>Customer name, policy ID, claim narrative cannot reach external LLM. AI drafts on synthetic data; production deployment fails risk review.</source>
+        <target>Kundenname, Policen-ID und Schadenbeschreibung dürfen das externe LLM nicht erreichen. KI-Entwürfe auf synthetischen Daten scheitern anschließend an der Risikoprüfung.</target>
+      </trans-unit>
+      <trans-unit id="s05.enabledLabel">
+        <source>With Capsule</source>
+        <target>Mit Capsule</target>
+      </trans-unit>
+      <trans-unit id="s05.enabledH">
+        <source>AI processes claims at production volume</source>
+        <target>KI verarbeitet Schadenakten im Produktivbetrieb</target>
+      </trans-unit>
+      <trans-unit id="s05.enabled">
+        <source>Capsule + restoration enables real-volume claim classification, fraud signal generation, and underwriting drafts inside the insurer's existing systems.</source>
+        <target>Kapsulierung und Wiederherstellung ermöglichen Schadenklassifizierung, Betrugssignalermittlung und Zeichnungsentwürfe in den bestehenden Systemen des Versicherers — im tatsächlichen Produktionsvolumen.</target>
+      </trans-unit>
+      <trans-unit id="s05.workflowsHeading">
+        <source>Production Workflows</source>
+        <target>Produktivworkflows</target>
+      </trans-unit>
+      <trans-unit id="s05.wf1Title">
+        <source>Claim classification &amp; triage</source>
+        <target>Schadenklassifizierung und Triage</target>
+      </trans-unit>
+      <trans-unit id="s05.wf1Desc">
+        <source>AI-powered intake, severity scoring, fraud signaling</source>
+        <target>KI-gestützte Erfassung, Schweregradbewertung und Betrugserkennung</target>
+      </trans-unit>
+      <trans-unit id="s05.wf2Title">
+        <source>Damage assessment</source>
+        <target>Schadenbewertung</target>
+      </trans-unit>
+      <trans-unit id="s05.wf2Desc">
+        <source>Multi-document assessment with vehicle/property data restored</source>
+        <target>Mehrdokumentenbewertung mit wiederhergestellten Fahrzeug- und Objektdaten</target>
+      </trans-unit>
+      <trans-unit id="s05.wf3Title">
+        <source>Underwriting draft</source>
+        <target>Zeichnungsentwurf</target>
+      </trans-unit>
+      <trans-unit id="s05.wf3Desc">
+        <source>Risk evaluation and premium recommendation drafts</source>
+        <target>Risikobeurteilung und Entwurf von Prämienempfehlungen</target>
+      </trans-unit>
+      <trans-unit id="s05.wf4Title">
+        <source>Regulatory submission</source>
+        <target>Aufsichtsrechtliche Einreichung</target>
+      </trans-unit>
+      <trans-unit id="s05.wf4Desc">
+        <source>Filing draft and compliance review assist</source>
+        <target>Entwurf von Meldungen und Unterstützung bei der Compliance-Prüfung</target>
+      </trans-unit>
+      <trans-unit id="s05.customerLabel">
+        <source>Customer Proof</source>
+        <target>Kundenreferenz</target>
+      </trans-unit>
+      <trans-unit id="s05.customerName">
+        <source>Kyobo · DB Insurance · IBK</source>
+        <target>Kyobo · DB Insurance · IBK</target>
+      </trans-unit>
+      <trans-unit id="s05.customerDetail">
+        <source>AI-powered claim and policy workflows on real customer data. No customer data leaves the institution's environment in raw form. Aligned with sector regulator expectations and SOX where applicable.</source>
+        <target>KI-gestützte Schaden- und Policenworkflows auf realen Kundendaten. Kundendaten verlassen die Unternehmensumgebung nicht in Rohform. Anforderungen der Finanzaufsicht sowie SOX werden berücksichtigt.</target>
+      </trans-unit>
+      <trans-unit id="s05.screenshotAlt">
+        <source>Finance Industry Visual</source>
+        <target>Finanzwesen — Branchenvisualisierung</target>
+      </trans-unit>
+      <trans-unit id="s05.readLabel">
+        <source>Read: Pilot to production for regulated AI →</source>
+        <target>Lesen: Vom Pilot zum Produktivbetrieb bei regulierter KI →</target>
+      </trans-unit>
+
+      <!-- Section 06: Defense -->
+      <trans-unit id="s06.tag">
+        <source>Public Sector / Defense</source>
+        <target>Öffentlicher Sektor / Verteidigung</target>
+      </trans-unit>
+      <trans-unit id="s06.title">
+        <source>AI on classified mission workflows — fully on-prem, zero external transmission</source>
+        <target>KI für klassifizierte Einsatzworkflows — vollständig On-Premise, keine externe Datenübertragung</target>
+      </trans-unit>
+      <trans-unit id="s06.lead">
+        <source>Defense, intelligence, and public-sector workflows demand zero external transmission. No external LLM endpoint is acceptable. LLM Capsule's Path B (on-prem local lightweight model) runs entirely inside the command's network — same Capsule instance, same audit framework, no external reach.</source>
+        <target>Verteidigungs-, Nachrichten- und Behördenworkflows erfordern den vollständigen Verzicht auf externe Datenübertragung. Der Einsatz externer LLM-Endpunkte ist nicht zulässig. Pfad B von LLM Capsule (lokales On-Premise-Modell) läuft vollständig im internen Netz — dieselbe Capsule-Instanz, dasselbe Audit-Framework, keine externe Verbindung.</target>
+      </trans-unit>
+      <trans-unit id="s06.blockedLabel">
+        <source>Without Capsule</source>
+        <target>Ohne Capsule</target>
+      </trans-unit>
+      <trans-unit id="s06.blockedH">
+        <source>AI categorically excluded</source>
+        <target>KI grundsätzlich ausgeschlossen</target>
+      </trans-unit>
+      <trans-unit id="s06.blocked">
+        <source>External LLM use is not permitted. Mission workflows continue without AI support; productivity gap persists.</source>
+        <target>Externe LLM-Dienste sind nicht erlaubt. Einsatzworkflows werden ohne KI-Unterstützung durchgeführt; Produktivitätsnachteile bleiben bestehen.</target>
+      </trans-unit>
+      <trans-unit id="s06.enabledLabel">
+        <source>With Capsule</source>
+        <target>Mit Capsule</target>
+      </trans-unit>
+      <trans-unit id="s06.enabledH">
+        <source>AI inside command boundary</source>
+        <target>KI innerhalb des Kommandonetzes</target>
+      </trans-unit>
+      <trans-unit id="s06.enabled">
+        <source>Quantized on-prem model + Capsule encapsulation + local audit. AI drafts mission briefs, intelligence summaries, and operational reports — entirely within the command.</source>
+        <target>Quantisiertes On-Premise-Modell, Capsule-Kapsulierung und lokale Auditierung. Die KI erstellt Lageberichte, Erkenntniszusammenfassungen und Einsatzberichte — vollständig innerhalb des Kommandos.</target>
+      </trans-unit>
+      <trans-unit id="s06.workflowsHeading">
+        <source>Production Workflows</source>
+        <target>Produktivworkflows</target>
+      </trans-unit>
+      <trans-unit id="s06.wf1Title">
+        <source>Mission brief drafting</source>
+        <target>Erstellung von Lageberichten</target>
+      </trans-unit>
+      <trans-unit id="s06.wf1Desc">
+        <source>AI-drafted operational briefs from multi-source intelligence</source>
+        <target>KI-gestützte Lageberichte aus mehreren Quellen</target>
+      </trans-unit>
+      <trans-unit id="s06.wf2Title">
+        <source>Operational report summarization</source>
+        <target>Zusammenfassung von Einsatzberichten</target>
+      </trans-unit>
+      <trans-unit id="s06.wf2Desc">
+        <source>Multi-format report consolidation and impact synthesis</source>
+        <target>Konsolidierung mehrstufiger Berichte und Auswirkungsanalyse</target>
+      </trans-unit>
+      <trans-unit id="s06.wf3Title">
+        <source>Doctrine reference assist</source>
+        <target>Unterstützung bei Doktrinreferenzen</target>
+      </trans-unit>
+      <trans-unit id="s06.wf3Desc">
+        <source>Doctrine and procedure lookup with classification protection</source>
+        <target>Abfrage von Doktrin- und Verfahrensdokumenten mit Klassifizierungsschutz</target>
+      </trans-unit>
+      <trans-unit id="s06.wf4Title">
+        <source>After-action review draft</source>
+        <target>Entwurf der Nachbetrachtung</target>
+      </trans-unit>
+      <trans-unit id="s06.wf4Desc">
+        <source>Post-operation review with mission identifiers protected</source>
+        <target>Einsatznachbereitung mit geschützten Einsatzkennungen</target>
+      </trans-unit>
+      <trans-unit id="s06.customerLabel">
+        <source>Customer Proof</source>
+        <target>Kundenreferenz</target>
+      </trans-unit>
+      <trans-unit id="s06.customerName">
+        <source>Ministry of National Defense (Korea)</source>
+        <target>Verteidigungsministerium (Korea)</target>
+      </trans-unit>
+      <trans-unit id="s06.customerDetail">
+        <source>Mission-grade workflows on Path B (on-prem local) with full audit feed to command-level governance. Mission references, geographic identifiers, and unit data encapsulated; restoration tightly scoped under RBAC.</source>
+        <target>Einsatzworkflows der höchsten Schutzklasse auf Pfad B (lokal, On-Premise) mit vollständigem Audit-Feed für die Governance auf Kommandobene. Einsatzbezüge, geografische Kennungen und Einheitsdaten werden kapsuliert; die Wiederherstellung ist strikt per RBAC eingeschränkt.</target>
+      </trans-unit>
+      <trans-unit id="s06.screenshotAlt">
+        <source>Defense Industry Visual</source>
+        <target>Verteidigung — Branchenvisualisierung</target>
+      </trans-unit>
+      <trans-unit id="s06.readLabel">
+        <source>Read: Sovereign AI architecture →</source>
+        <target>Lesen: Souveräne KI-Architektur →</target>
+      </trans-unit>
+
+      <!-- Section 07: OT -->
+      <trans-unit id="s07.tag">
+        <source>OT / Industrial Cyber</source>
+        <target>OT / Industrielle Cybersicherheit</target>
+      </trans-unit>
+      <trans-unit id="s07.title">
+        <source>AI in OT environments — without exposing asset identifiers or process data</source>
+        <target>KI in OT-Umgebungen — ohne Offenlegung von Asset-Kennungen oder Prozessdaten</target>
+      </trans-unit>
+      <trans-unit id="s07.lead">
+        <source>OT (operational technology) workflows protect mission-critical industrial assets — power, manufacturing, oil &amp; gas, water. PLCs, SCADA tags, asset IDs, and process variables can't leak. LLM Capsule encapsulates OT identifiers locally; AI assists with anomaly explanation, runbook drafting, and incident response.</source>
+        <target>OT-Workflows schützen betriebskritische Industrieanlagen in den Bereichen Energie, Fertigung, Öl und Gas sowie Wasserversorgung. SPS-Kennungen, SCADA-Tags, Asset-IDs und Prozessvariablen dürfen nicht nach außen gelangen. LLM Capsule kapsuliert OT-Kennungen lokal; die KI unterstützt bei Anomalieerklärungen, Runbook-Entwürfen und der Incident-Response.</target>
+      </trans-unit>
+      <trans-unit id="s07.blockedLabel">
+        <source>Without Capsule</source>
+        <target>Ohne Capsule</target>
+      </trans-unit>
+      <trans-unit id="s07.blockedH">
+        <source>OT teams blocked from AI</source>
+        <target>OT-Teams ohne KI-Unterstützung</target>
+      </trans-unit>
+      <trans-unit id="s07.blocked">
+        <source>Asset IDs, process variables, vendor configurations cannot reach external LLM. OT operators have no AI support for incident analysis.</source>
+        <target>Asset-IDs, Prozessvariablen und Herstellerkonfigurationen dürfen das externe LLM nicht erreichen. OT-Betreiber haben keine KI-Unterstützung bei der Störungsanalyse.</target>
+      </trans-unit>
+      <trans-unit id="s07.enabledLabel">
+        <source>With Capsule</source>
+        <target>Mit Capsule</target>
+      </trans-unit>
+      <trans-unit id="s07.enabledH">
+        <source>AI assist for OT incident response</source>
+        <target>KI-Unterstützung bei OT-Störungsbearbeitung</target>
+      </trans-unit>
+      <trans-unit id="s07.enabled">
+        <source>OT identifiers encapsulated. AI drafts incident analysis, anomaly explanation, and recommended runbook on protected capsule; restored locally for OT operators.</source>
+        <target>OT-Kennungen werden kapsuliert. Die KI erstellt Störungsanalysen, Anomalieerklärungen und Runbook-Empfehlungen auf Basis der geschützten Kapsel; die Wiederherstellung erfolgt lokal für die OT-Betreiber.</target>
+      </trans-unit>
+      <trans-unit id="s07.workflowsHeading">
+        <source>Production Workflows</source>
+        <target>Produktivworkflows</target>
+      </trans-unit>
+      <trans-unit id="s07.wf1Title">
+        <source>Anomaly explanation</source>
+        <target>Anomalieerklärung</target>
+      </trans-unit>
+      <trans-unit id="s07.wf1Desc">
+        <source>AI-generated explanation of detected OT anomalies</source>
+        <target>KI-generierte Erläuterung erkannter OT-Anomalien</target>
+      </trans-unit>
+      <trans-unit id="s07.wf2Title">
+        <source>Asset documentation</source>
+        <target>Asset-Dokumentation</target>
+      </trans-unit>
+      <trans-unit id="s07.wf2Desc">
+        <source>Auto-drafting asset and process documentation</source>
+        <target>Automatische Erstellung von Asset- und Prozessdokumentation</target>
+      </trans-unit>
+      <trans-unit id="s07.wf3Title">
+        <source>Vulnerability triage</source>
+        <target>Schwachstellentriage</target>
+      </trans-unit>
+      <trans-unit id="s07.wf3Desc">
+        <source>Vulnerability impact analysis on protected asset data</source>
+        <target>Auswirkungsanalyse von Schwachstellen auf Basis geschützter Asset-Daten</target>
+      </trans-unit>
+      <trans-unit id="s07.wf4Title">
+        <source>Vendor advisory parsing</source>
+        <target>Auswertung von Herstelleradvisories</target>
+      </trans-unit>
+      <trans-unit id="s07.wf4Desc">
+        <source>Vendor security advisory parsing and impact mapping</source>
+        <target>Analyse sicherheitsbezogener Herstelleradvisories und Auswirkungszuordnung</target>
+      </trans-unit>
+      <trans-unit id="s07.customerLabel">
+        <source>Customer Proof</source>
+        <target>Kundenreferenz</target>
+      </trans-unit>
+      <trans-unit id="s07.customerName">
+        <source>Claroty</source>
+        <target>Claroty</target>
+      </trans-unit>
+      <trans-unit id="s07.customerDetail">
+        <source>Industrial cybersecurity workflows with OT asset identifiers and process variables encapsulated locally. AI assists analysts without exposing customer infrastructure data.</source>
+        <target>Industrielle Cybersicherheitsworkflows mit lokal kapsulierten OT-Asset-Kennungen und Prozessvariablen. Die KI unterstützt Analysten, ohne Infrastrukturdaten der Kunden offenzulegen.</target>
+      </trans-unit>
+      <trans-unit id="s07.screenshotAlt">
+        <source>OT Industry Visual</source>
+        <target>OT — Branchenvisualisierung</target>
+      </trans-unit>
+      <trans-unit id="s07.readLabel">
+        <source>Read: AI on network &amp; operations data →</source>
+        <target>Lesen: KI auf Netzwerk- und Betriebsdaten →</target>
+      </trans-unit>
+
+      <!-- Section 08: Legal -->
+      <trans-unit id="s08.tag">
+        <source>Legal</source>
+        <target>Rechtsbranche</target>
+      </trans-unit>
+      <trans-unit id="s08.title">
+        <source>AI for matter management — privilege preserved, deal terms protected</source>
+        <target>KI für das Matter Management — Mandatsgeheimnis gewahrt, Vertragsdaten geschützt</target>
+      </trans-unit>
+      <trans-unit id="s08.lead">
+        <source>Legal workflows process privileged material — contracts, deal terms, M&amp;A code names, litigation strategy, regulatory filings. Privilege preservation is non-negotiable. LLM Capsule encapsulates parties, deal terms, and privileged content locally; AI summarizes and analyzes the protected capsule; restoration happens inside the firm's matter management system.</source>
+        <target>Rechtliche Workflows verarbeiten vertrauliches Material: Verträge, Transaktionsbedingungen, M&amp;A-Projektnamen, Prozessstrategie und behördliche Einreichungen. Die Wahrung des Mandatsgeheimnisses ist nicht verhandelbar. LLM Capsule kapsuliert Parteien, Vertragsbedingungen und privilegierte Inhalte lokal; die KI analysiert und fasst die geschützte Kapsel zusammen; die Wiederherstellung erfolgt im Matter-Management-System der Kanzlei.</target>
+      </trans-unit>
+      <trans-unit id="s08.blockedLabel">
+        <source>Without Capsule</source>
+        <target>Ohne Capsule</target>
+      </trans-unit>
+      <trans-unit id="s08.blockedH">
+        <source>Outside-counsel AI blocked</source>
+        <target>KI-Einsatz in der Kanzlei blockiert</target>
+      </trans-unit>
+      <trans-unit id="s08.blocked">
+        <source>Deal terms, party names, code names cannot reach external LLM. Associates fall back to manual review; AI value never materializes.</source>
+        <target>Transaktionsbedingungen, Parteinamen und Projektkennungen dürfen das externe LLM nicht erreichen. Associates kehren zur manuellen Prüfung zurück; der Mehrwert von KI bleibt unrealisiert.</target>
+      </trans-unit>
+      <trans-unit id="s08.enabledLabel">
+        <source>With Capsule</source>
+        <target>Mit Capsule</target>
+      </trans-unit>
+      <trans-unit id="s08.enabledH">
+        <source>AI assist inside privileged workflow</source>
+        <target>KI-Unterstützung im mandatsgeschützten Workflow</target>
+      </trans-unit>
+      <trans-unit id="s08.enabled">
+        <source>Parties + terms encapsulated; AI drafts summaries, risk analyses, and clause comparisons; outputs restored in matter management with privilege preserved.</source>
+        <target>Parteien und Bedingungen werden kapsuliert. Die KI erstellt Zusammenfassungen, Risikoanalysen und Klauselvergleiche. Die Ergebnisse werden im Matter Management unter Wahrung des Mandatsgeheimnisses wiederhergestellt.</target>
+      </trans-unit>
+      <trans-unit id="s08.workflowsHeading">
+        <source>Production Workflows</source>
+        <target>Produktivworkflows</target>
+      </trans-unit>
+      <trans-unit id="s08.wf1Title">
+        <source>Confidential contract review</source>
+        <target>Vertrauliche Vertragsprüfung</target>
+      </trans-unit>
+      <trans-unit id="s08.wf1Desc">
+        <source>AI-drafted risk summary across long-form contracts</source>
+        <target>KI-gestützte Risikozusammenfassung langer Vertragswerke</target>
+      </trans-unit>
+      <trans-unit id="s08.wf2Title">
+        <source>Due diligence summarization</source>
+        <target>Due-Diligence-Zusammenfassung</target>
+      </trans-unit>
+      <trans-unit id="s08.wf2Desc">
+        <source>Multi-document M&amp;A diligence with deal data protected</source>
+        <target>Mehrdokumentenbezogene M&amp;A-Due-Diligence mit geschützten Transaktionsdaten</target>
+      </trans-unit>
+      <trans-unit id="s08.wf3Title">
+        <source>Regulatory filing draft</source>
+        <target>Entwurf behördlicher Einreichungen</target>
+      </trans-unit>
+      <trans-unit id="s08.wf3Desc">
+        <source>Filing draft and compliance check with sensitive content masked</source>
+        <target>Einreichungsentwurf und Compliance-Prüfung mit kapsulierten sensiblen Inhalten</target>
+      </trans-unit>
+      <trans-unit id="s08.wf4Title">
+        <source>Matter triage</source>
+        <target>Matter-Triage</target>
+      </trans-unit>
+      <trans-unit id="s08.wf4Desc">
+        <source>Initial matter intake and routing with privileged data inside</source>
+        <target>Ersterfassung und Weiterleitung von Mandaten mit geschützten Informationen</target>
+      </trans-unit>
+      <trans-unit id="s08.customerLabel">
+        <source>Customer Proof</source>
+        <target>Kundenreferenz</target>
+      </trans-unit>
+      <trans-unit id="s08.customerName">
+        <source>Shin&amp;Kim</source>
+        <target>Shin&amp;Kim</target>
+      </trans-unit>
+      <trans-unit id="s08.customerDetail">
+        <source>One of Korea's largest law firms. AI assist on privileged matter workflows with parties, deal terms, and code names encapsulated. Privilege preservation under firm governance.</source>
+        <target>Eine der größten Anwaltskanzleien Koreas. KI-Unterstützung bei privilegierten Matter-Workflows mit kapsulierten Parteien, Transaktionsbedingungen und Projektkennungen. Wahrung des Mandatsgeheimnisses unter der Governance der Kanzlei.</target>
+      </trans-unit>
+      <trans-unit id="s08.screenshotAlt">
+        <source>Legal Industry Visual</source>
+        <target>Rechtsbranche — Branchenvisualisierung</target>
+      </trans-unit>
+      <trans-unit id="s08.readLabel">
+        <source>Read: AI enablement data layer (definition) →</source>
+        <target>Lesen: KI-Aktivierungsdatenschicht (Definition) →</target>
+      </trans-unit>
+
+      <!-- Section 09: CTA -->
+      <trans-unit id="s09.title">
+        <source>Bring your industry, your workflow, your data.</source>
+        <target>Bringen Sie Ihre Branche, Ihre Workflows und Ihre Daten mit.</target>
+      </trans-unit>
+      <trans-unit id="s09.description">
+        <source>We deploy LLM Capsule on a sample workflow in your environment within 30 minutes — and produce an evaluation report on detection accuracy, restoration rate, and policy fit for your industry's regulatory profile.</source>
+        <target>Wir setzen LLM Capsule innerhalb von 30 Minuten auf einem Beispielworkflow in Ihrer Umgebung auf und erstellen einen Evaluierungsbericht zu Erkennungsgenauigkeit, Wiederherstellungsrate und regulatorischer Eignung für Ihre Branche.</target>
+      </trans-unit>
+      <trans-unit id="s09.cta1Label">
+        <source>Request an Industry Demo</source>
+        <target>Demo für Ihre Branche anfordern</target>
+      </trans-unit>
+      <trans-unit id="s09.cta2Label">
+        <source>View Architecture</source>
+        <target>Architektur ansehen</target>
+      </trans-unit>
+      <trans-unit id="s09.cta3Label">
+        <source>View Trust &amp; Compliance</source>
+        <target>Trust &amp; Compliance ansehen</target>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

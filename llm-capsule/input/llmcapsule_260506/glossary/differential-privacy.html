@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Differential Privacy | Glossary | LLM Capsule</title>
+<meta name="description" content="Differential privacy: a mathematical framework that bounds the influence any single record can have on a derived output. In the AI enablement data layer, applied during encapsulation to reduce re-identification, inference, and sensitive context exposure risks. Definition, scope, and what it is not.">
+<meta name="keywords" content="differential privacy, AI enablement data layer, AI for regulated industries, enterprise AI adoption, on-premise LLM, privacy-preserving LLM">
+<link rel="canonical" href="https://llmcapsule.ai/resources/glossary/differential-privacy">
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "DefinedTerm",
+  "name": "Differential Privacy",
+  "description": "Differential privacy is a mathematical framework that bounds how much any single record can influence a derived output. In the AI enablement data layer, it is applied during encapsulation to reduce re-identification, inference, and sensitive context exposure risks. Calibrated against a privacy budget (epsilon). It is a technical protection layer with a defined risk-reduction scope, not a legal guarantee.",
+  "url": "https://llmcapsule.ai/resources/glossary/differential-privacy" }
+</script>
+<link rel="stylesheet" href="design-tokens.css">
+<link rel="stylesheet" href="../learn-article.css">
+</head>
+<body>
+<section class="article-hero"><div class="container">
+  <span class="article-meta__chip">GLOSSARY</span>
+  <h1>Differential Privacy</h1>
+  <p class="article-hero__lead">A mathematical framework that bounds the contribution of any single record to a derived output.</p>
+</div></section>
+<article class="article-body">
+<h2>Definition</h2>
+<p><strong>Differential privacy (DP)</strong> is a mathematical framework for protecting individual records when computing on a dataset. Introduced by Cynthia Dwork and colleagues in 2006, it formalizes the intuition that an analysis is private if its outcome would be almost the same whether or not any single record were included. The "almost" is parameterized by epsilon — smaller epsilon, stronger privacy, lower utility.</p>
+
+<h2>Mechanism</h2>
+<p>Implemented by adding calibrated noise (commonly Laplace or Gaussian) to outputs, queries, or transformations. Noise scale is determined by the sensitivity of the function and the privacy budget. The result is a quantitative bound on what an attacker could learn about any individual record from the output.</p>
+
+<h2>Application in the AI enablement data layer</h2>
+<p>In LLM Capsule, differential-privacy-based protection is applied during the structure-preserving encapsulation step. The capsule (AI-ready context) carries the differential-privacy guarantee on top of field-level tokenization. This addresses inference risks that field-level masking alone cannot bound — particularly for operational data where structure, sequence, and aggregate patterns themselves carry sensitive information.</p>
+
+<h2>What it is not</h2>
+<ul>
+  <li>Not a legal or compliance guarantee. It is a technical framework with a tunable parameter.</li>
+  <li>Not a yes/no guarantee. Privacy and utility trade off via the privacy budget.</li>
+  <li>Not a substitute for governance, audit, or policy.</li>
+</ul>
+
+<h2>Why it matters here</h2>
+<p>Operational data — network logs, configurations, OT manifests, clinical workflows — leaks through patterns, not just identifiers. Differential privacy is the framework that lets enterprise governance reason quantitatively about that leakage risk and enforce a budget per workflow.</p>
+
+<h2>Acceptable claims</h2>
+<ul>
+  <li>"Privacy-preserving with a defined risk-reduction scope"</li>
+  <li>"Bounded inference risk under the policy's privacy budget"</li>
+  <li>"Differential-privacy-based encapsulation"</li>
+</ul>
+
+<h2>Claims to avoid</h2>
+<ul>
+  <li>"Mathematically impossible to reconstruct"</li>
+  <li>"100% safe"</li>
+  <li>"GDPR guaranteed"</li>
+  <li>"Zero risk"</li>
+</ul>
+
+<h2>Related</h2>
+<ul>
+  <li><a href="/resources/learn/differential-privacy-for-enterprise-llm">Pillar guide: Differential privacy for enterprise AI</a></li>
+  <li><a href="/resources/glossary/structure-preserving-encapsulation">Structure-preserving encapsulation</a></li>
+  <li><a href="/resources/glossary/ai-ready-operational-layer">AI enablement data layer</a></li>
+</ul>
+</article>
+</body>
+</html>

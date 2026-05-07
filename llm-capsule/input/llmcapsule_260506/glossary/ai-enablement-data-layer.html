@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Enablement Data Layer — Definition | LLM Capsule Glossary</title>
+<meta name="description" content="An AI enablement data layer is the architectural component that turns regulated operational data into AI-ready capsules locally, executes AI workflows on the protected capsule, and restores outputs back into the originating system. Definition, scope, and how it differs from PII guardrails, prompt gateways, and synthetic data.">
+<meta name="keywords" content="AI enablement data layer, AI enablement, AI-ready data, enterprise AI data layer, AI for regulated industries, definition, glossary">
+<link rel="canonical" href="https://llmcapsule.ai/glossary/ai-enablement-data-layer">
+
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "DefinedTerm",
+  "name": "AI enablement data layer",
+  "description": "Architectural component that turns regulated operational data into AI-ready capsules locally, executes AI workflows on the protected capsule, and restores outputs back into the originating system.",
+  "inDefinedTermSet": "https://llmcapsule.ai/glossary"
+}
+</script>
+
+<link rel="stylesheet" href="../design-tokens.css">
+<link rel="stylesheet" href="../learn-article.css">
+</head>
+<body>
+
+<section class="article-hero">
+  <div class="container">
+    <a href="/glossary" class="back-link">← Glossary</a>
+    <h1>AI enablement data layer</h1>
+    <p class="article-hero__lead">The architectural component that makes regulated enterprise AI workflows actually work — between operational systems and large language models.</p>
+    <div class="article-meta">
+      <span class="article-meta__chip">P0 · Category definition</span>
+    </div>
+  </div>
+</section>
+
+<div class="tldr">
+  <div class="tldr__label">Definition</div>
+  <p class="tldr__body">An <strong>AI enablement data layer</strong> is the architectural component that sits between regulated enterprise systems (NOC consoles, EHR, claim platforms, mission systems, legacy DBs) and large language models. It turns operational data into AI-ready capsules using <strong>structure-preserving, differential-privacy-based encapsulation</strong>, executes AI workflows on the protected capsule, and restores outputs back into the originating system. It supports two execution paths — external approved LLM with capsule data only, or on-prem local lightweight model — under a single governance framework.</p>
+</div>
+
+<article class="article-body">
+
+<h2>What it does (in three lines)</h2>
+<p>1. <strong>Reads</strong> operational data from existing enterprise systems via REST/gRPC/JDBC connectors.<br>
+2. <strong>Encapsulates</strong> sensitive elements locally with structure-preserving + DP-based protection.<br>
+3. <strong>Restores</strong> AI outputs back into the originating workflow inside the enterprise environment.</p>
+
+<h2>What it is NOT</h2>
+<ul>
+<li><strong>Not a PII guardrail</strong>. PII guardrails detect individual identifiers at the API boundary. The data layer transforms structured operational data — ticket sequences, network configs, OT manifests, clinical workflows.</li>
+<li><strong>Not an AI / LLM security gateway</strong>. Security gateways focus on prompt injection, runtime threats, and API-level filtering. The data layer operates one layer deeper, on the data itself.</li>
+<li><strong>Not a synthetic data platform</strong>. Synthetic data generates artificial records for training and testing. The data layer runs on real production documents in live workflows.</li>
+<li><strong>Not a CISO / SOC tool</strong>. The buyer is the AI team, the CDO/CAIO, or the business unit that needs AI in production. Security is necessary infrastructure, not the product purpose.</li>
+</ul>
+
+<h2>The five components</h2>
+<ol>
+<li><strong>Encapsulation Engine</strong> — local detection + replacement, mapping stays inside.</li>
+<li><strong>Policy Control</strong> — versioned, scoped, RBAC'd policy.</li>
+<li><strong>Capsule Transmission</strong> — only protected capsules cross the trust boundary.</li>
+<li><strong>Restoration Engine</strong> — local token vault, output validation, context re-binding.</li>
+<li><strong>Audit &amp; Compliance</strong> — every event logged for GDPR/HIPAA/SOX governance.</li>
+</ol>
+
+<h2>The four-zone architecture (diagram_v8 reference)</h2>
+<p>The architecture maps to four zones: <strong>Corporate Internal Network</strong> (where existing source systems — ERP / CRM / Ticketing / DMS — live, read in place via REST / gRPC / JDBC / Graph API) → <strong>DMZ — Demilitarized Zone</strong> (where the Enhanced Encapsulation Layer applies structure-preserving, differential-privacy-based protection) → <strong>In-House Team</strong> (where governance, policy, and routing decide Path A or Path B) → <strong>Local — Auto Reconstruction</strong> (where the AI response is restored to original values inside the organization, delivering Business-Ready output back to the originating workflow). Raw operational data never crosses the trust boundary; only the protected capsule does.</p>
+
+<h2>Six architectural pillars</h2>
+<ol>
+  <li><strong>Beyond simple PII guardrails</strong> — free-text fields like CS ticket Details columns can't be safely processed by simple PII guardrails alone</li>
+  <li><strong>No modification of existing systems</strong> — connection is a single API-call addition (REST / gRPC), legacy systems are not refactored</li>
+  <li><strong>Beyond simple encapsulation — differential privacy</strong> — DP applied on top of tokenization to reduce re-identification risk</li>
+  <li><strong>No raw exposure to external AI</strong> — only the capsule crosses the trust boundary; DP processing means a leak doesn't yield reconstructable original values</li>
+  <li><strong>In-environment auto-restoration</strong> — restoration happens only inside the organization; data that left the boundary cannot be reconstructed externally</li>
+  <li><strong>Governance, policy &amp; domain context retained</strong> — organizational policy drives encapsulation, routing, and audit end-to-end</li>
+</ol>
+
+<h2>The two execution paths</h2>
+<ul>
+<li><strong>Path A</strong> — external approved LLM (ChatGPT, Claude, Gemini, in-region EU LLMs) with capsule data only. No raw operational data exposure.</li>
+<li><strong>Path B</strong> — on-prem local lightweight model. Zero external transmission. For air-gapped, classified, OT, and strictly regulated workflows.</li>
+</ul>
+
+<h2>When to use it</h2>
+<p>Whenever a regulated enterprise wants to use AI on real production data — not synthetic, not anonymized snippets — without exposing the raw data to external LLMs and without rebuilding the existing legacy systems. Telecom NOC, hospital clinical workflows, finance claims, defense mission, OT operations, legal matter management.</p>
+
+<h2>Validated deployments</h2>
+<p>SK Telecom (telecom NOC), Deutsche Telekom T Challenge 2026 Top 12 in Data Security &amp; Governance, Claroty (industrial cybersecurity), EUMC (hospital clinical), Kyobo / DB Insurance / IBK (finance), Shin&amp;Kim (legal), Ministry of National Defense Korea (mission workflows). Recognized as Gartner Vendor.</p>
+
+<h2>Related terms</h2>
+<ul>
+<li><a href="/glossary/ai-ready-operational-layer">AI enablement data layer</a></li>
+<li><a href="/glossary/structure-preserving-encapsulation">Structure-preserving encapsulation</a></li>
+<li><a href="/glossary/differential-privacy">Differential privacy</a></li>
+<li><a href="/glossary/two-execution-paths">Two execution paths</a></li>
+<li><a href="/glossary/operational-data">Operational data</a></li>
+</ul>
+
+</article>
+
+</body>
+</html>
