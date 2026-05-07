@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file
+    source-language="en"
+    target-language="de-DE"
+    datatype="plaintext"
+    original="GlossaryPage_StateVaultForRestoration.tsx"
+  >
+    <header>
+      <note>LLM Capsule — Glossary: State Vault for Restoration — DE localize mode</note>
+    </header>
+    <body>
+
+      <!-- ── Hero ─────────────────────────────────────────── -->
+
+      <trans-unit id="backLabel">
+        <source>← Glossary</source>
+        <target>← Glossar</target>
+        <note>Back navigation label</note>
+      </trans-unit>
+
+      <trans-unit id="backHref">
+        <source>/glossary</source>
+        <target>/glossary</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="term">
+        <source>State Vault for Restoration</source>
+        <target>State Vault for Restoration</target>
+        <note>Product-specific technical term — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="lead">
+        <source>The local-only store that turns AI output back into business-ready output.</source>
+        <target>Der lokal betriebene Datenspeicher, der KI-Ausgaben in direkt nutzbare Arbeitsergebnisse überführt.</target>
+        <note>Hero lead — localize: functional description, no marketing hype</note>
+      </trans-unit>
+
+      <trans-unit id="category">
+        <source>GLOSSARY</source>
+        <target>GLOSSAR</target>
+        <note>Category chip label</note>
+      </trans-unit>
+
+      <!-- ── Definition block ──────────────────────────────── -->
+
+      <trans-unit id="definitionLabel">
+        <source>Definition</source>
+        <target>Definition</target>
+        <note>Section label</note>
+      </trans-unit>
+
+      <trans-unit id="definitionBody">
+        <source>The state vault is the local-only store that holds the token map between original operational identifiers and capsule tokens. It enables AI outputs to be restored back into the originating workflow with original identifiers — inside the enterprise — without the external LLM ever seeing the originals.</source>
+        <target>Der State Vault ist ein ausschließlich lokal betriebener Datenspeicher, der das Token-Mapping zwischen den ursprünglichen operativen Kennzeichnern und den Capsule-Tokens verwaltet. Er ermöglicht die Wiederherstellung von KI-Ausgaben in den ursprünglichen Workflow mit den Originalkennzeichnern — innerhalb der Unternehmensinfrastruktur — ohne dass das externe LLM die Originaldaten jemals einsehen kann.</target>
+        <note>Definition block body — technical register, Sie form not needed in definitions. "zu Gesicht bekommt" (umgangssprachlich) → "einsehen kann" (Fachsprache).</note>
+      </trans-unit>
+
+      <!-- ── Body HTML ─────────────────────────────────────── -->
+
+      <trans-unit id="bodyHtml">
+        <source><![CDATA[
+<h2>What it stores</h2>
+<ul>
+<li>Token map: capsule tokens ↔ original operational identifiers</li>
+<li>Workflow context: which capsule belongs to which incident, ticket, or runbook</li>
+<li>Policy reference: which marker policy applied to this capsule</li>
+<li>Privacy budget reference: how much of the workflow's DP budget this capsule consumed</li>
+</ul>
+
+<h2>Where it lives</h2>
+<p>Always local. The token map never traverses the external boundary. In Path A (external approved LLM), the LLM sees only capsule tokens; the state vault rehydrates after the response returns. In Path B (on-prem local lightweight model), everything is local end to end.</p>
+
+<h2>Why it matters</h2>
+<p>Without restoration, AI outputs are stuck as token salad. The operations team needs the result as a usable artifact in the originating workflow — a ticket update with real device IDs, a runbook step referencing the actual site, an RCA pointing to the actual incident reference. The state vault is what makes that possible while keeping the originals out of the model.</p>
+
+<h2>Outputs the state vault produces</h2>
+<ul>
+<li>Restored RCA inserted into the ticket system</li>
+<li>Restored runbook step inserted into the runbook</li>
+<li>Restored summary inserted into the EHR or hospital portal</li>
+<li>Restored mission summary inserted into the command system (Path B only)</li>
+<li>Restored compliance review draft inserted into the review workflow</li>
+</ul>
+
+<h2>Auditability</h2>
+<p>Every restoration is logged. The audit trail records the capsule, the policy applied, the path used, the token map operations, and the destination of the restored output. Compliance teams can trace any restored field back to its capsule and policy.</p>
+
+<h2>Reference statement</h2>
+<blockquote><p>The capsule is what the AI sees. The state vault is what the business sees. The boundary between them is the operational guarantee.</p></blockquote>
+]]></source>
+        <target><![CDATA[
+<h2>Gespeicherte Inhalte</h2>
+<ul>
+<li>Token-Mapping: Capsule-Tokens ↔ ursprüngliche operative Kennzeichner</li>
+<li>Workflow-Kontext: Zuordnung jeder Kapsel zu einem Vorfall, Ticket oder Runbook</li>
+<li>Policy-Referenz: welche Markierungsrichtlinie auf diese Kapsel angewendet wurde</li>
+<li>Privacy-Budget-Referenz: welchen Anteil des DP-Budgets dieses Workflows die Kapsel verbraucht hat</li>
+</ul>
+
+<h2>Betriebsort</h2>
+<p>Der State Vault verbleibt ausnahmslos in der lokalen Unternehmensinfrastruktur. Das Token-Mapping überschreitet zu keinem Zeitpunkt die externe Grenze. In Pfad A (externes, zugelassenes LLM) erhält das Modell ausschließlich Capsule-Tokens; die Wiederherstellung erfolgt durch den State Vault erst nach Rückgabe der Antwort. In Pfad B (lokales On-Premise-Leichtgewichtsmodell) verbleibt die gesamte Verarbeitung Ende-zu-Ende innerhalb der eigenen Infrastruktur.</p>
+
+<h2>Relevanz im Betrieb</h2>
+<p>Ohne Wiederherstellung liefert das KI-System lediglich unverwertbare Token-Ausgaben. Das Operations-Team benötigt das Ergebnis als verwertbares Artefakt im ursprünglichen Workflow: eine Ticket-Aktualisierung mit echten Geräte-IDs, einen Runbook-Schritt mit dem tatsächlichen Standortverweis, eine RCA mit dem konkreten Vorfallsbezug. Der State Vault ist die Komponente, die dies ermöglicht — ohne dass die Originaldaten das Modell jemals erreichen.</p>
+
+<h2>Ausgaben des State Vault</h2>
+<ul>
+<li>Wiederhergestellte RCA, eingefügt in das Ticket-System</li>
+<li>Wiederhergestellter Runbook-Schritt, eingefügt in das Runbook</li>
+<li>Wiederhergestellte Zusammenfassung, eingefügt in das KIS oder Krankenhausportal</li>
+<li>Wiederhergestellte Einsatzzusammenfassung, eingefügt in das Einsatzsystem (nur Pfad B)</li>
+<li>Wiederhergestellter Compliance-Prüfentwurf, eingefügt in den Prüfworkflow</li>
+</ul>
+
+<h2>Nachvollziehbarkeit</h2>
+<p>Jede Wiederherstellung wird protokolliert. Das Revisionsprotokoll erfasst die Kapsel, die angewendete Richtlinie, den genutzten Ausführungspfad, die Token-Mapping-Operationen sowie das Ziel der wiederhergestellten Ausgabe. Compliance-Verantwortliche können jedes wiederhergestellte Feld lückenlos auf seine Kapsel und die zugehörige Richtlinie zurückverfolgen.</p>
+
+<h2>Leitsatz</h2>
+<blockquote><p>Die Kapsel ist das, was das KI-Modell verarbeitet. Der State Vault ist das, was der Fachbereich erhält. Die Grenze zwischen beiden ist die operative Gewährleistung.</p></blockquote>
+]]></target>
+        <note>Rich HTML body — all HTML tags preserved. h2 translated, li/p text localized, blockquote text rewritten in DE. "EHR" expanded as "KIS" (Krankenhausinformationssystem) for DE market clarity. Corrections applied by native reviewer: "externe Vertrauensgrenze" → "externe Grenze" (EN source says "external boundary", not "trust boundary" — no concept insertion); "bedeutungslose Abfolge von Tokens" → "unverwertbare Token-Ausgaben" (Redundanz reduction); "Audit-Trail" → "Revisionsprotokoll" (DE Fachsprache, consistent with G8 Audit-Kette pattern); "operative Sicherheitsgarantie" → "operative Gewährleistung" ("Sicherheits-" added concept not in EN "operational guarantee").</note>
+      </trans-unit>
+
+      <!-- ── Related Terms ─────────────────────────────────── -->
+
+      <trans-unit id="related1Label">
+        <source>AI enablement data layer</source>
+        <target>AI enablement data layer</target>
+        <note>Technical term — retained as EN per translation guide</note>
+      </trans-unit>
+
+      <trans-unit id="related1Href">
+        <source>/glossary/ai-enablement-data-layer</source>
+        <target>/glossary/ai-enablement-data-layer</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related2Label">
+        <source>Structure-preserving encapsulation</source>
+        <target>Strukturerhaltende Kapsulierung</target>
+        <note>Technical term — translated per glossary DE convention</note>
+      </trans-unit>
+
+      <trans-unit id="related2Href">
+        <source>/glossary/structure-preserving-encapsulation</source>
+        <target>/glossary/structure-preserving-encapsulation</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related3Label">
+        <source>Capsule token</source>
+        <target>Capsule-Token</target>
+        <note>Technical term — hyphenated compound per DE convention</note>
+      </trans-unit>
+
+      <trans-unit id="related3Href">
+        <source>/glossary/capsule-token</source>
+        <target>/glossary/capsule-token</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related4Label">
+        <source>Two execution paths</source>
+        <target>Zwei Ausführungspfade</target>
+        <note>Technical term translated</note>
+      </trans-unit>
+
+      <trans-unit id="related4Href">
+        <source>/glossary/two-execution-paths</source>
+        <target>/glossary/two-execution-paths</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related5Label">
+        <source>Differential privacy</source>
+        <target>Differential Privacy</target>
+        <note>Mathematical framework name — EN retained per existing glossary-differential-privacy-de convention</note>
+      </trans-unit>
+
+      <trans-unit id="related5Href">
+        <source>/glossary/differential-privacy</source>
+        <target>/glossary/differential-privacy</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

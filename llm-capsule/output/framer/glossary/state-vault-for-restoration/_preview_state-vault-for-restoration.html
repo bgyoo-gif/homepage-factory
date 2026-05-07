@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview: State Vault for Restoration | LLM Capsule Glossary</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "State Vault for Restoration",
+  "description": "The state vault is the local-only store that holds the token map between original operational identifiers and capsule tokens. It enables AI outputs to be restored back into the originating workflow with original identifiers — inside the enterprise — without the external LLM ever seeing the originals.",
+  "inDefinedTermSet": "https://llmcapsule.ai/glossary",
+  "url": "https://llmcapsule.ai/resources/glossary/state-vault-for-restoration"
+}
+</script>
+<style>
+  /* ── Design tokens (v6.2) ──────────────────────────── */
+  :root {
+    --c-primary:      #5b4fe9;
+    --c-primary-dark: #3b2fbf;
+    --c-primary-soft: #eeebfe;
+    --c-ink:          #0f1130;
+    --c-ink-soft:     #3a3d5e;
+    --c-muted:        #6b7280;
+    --c-bg:           #ffffff;
+    --c-bg-soft:      #f7f8fb;
+    --c-bg-dark:      #0f1130;
+    --c-rule:         #e5e7eb;
+    --f-display:      'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --f-mono:         'JetBrains Mono', 'SF Mono', Consolas, monospace;
+    --r-sm:           6px;
+    --r-md:           10px;
+    --r-lg:           16px;
+    --container-max:  1280px;
+    --s-page:         clamp(20px, 4vw, 80px);
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--f-display);
+    color: var(--c-ink);
+    background-color: var(--c-bg);
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  /* ── Root ─────────────────────────────────────────── */
+  .svfr-root {
+    width: 100%;
+    container-type: inline-size;
+    font-family: var(--f-display);
+    color: var(--c-ink);
+    background-color: var(--c-bg);
+  }
+
+  /* ── Container ────────────────────────────────────── */
+  .svfr-container {
+    max-width: var(--container-max, 1280px);
+    margin: 0 auto;
+    padding: 0 var(--s-page);
+  }
+
+  /* ── 1. Hero ──────────────────────────────────────── */
+  .svfr-hero {
+    padding: clamp(60px, 8vw, 100px) 0 clamp(40px, 5vw, 64px);
+    border-bottom: 1px solid var(--c-rule);
+  }
+
+  .svfr-hero__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--c-primary);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    margin-bottom: 28px;
+    transition: color 0.15s;
+  }
+  .svfr-hero__back:hover { color: var(--c-primary-dark); }
+
+  .svfr-hero__title {
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--c-ink);
+    margin: 0 0 20px;
+    max-width: 860px;
+  }
+
+  .svfr-hero__lead {
+    font-size: clamp(16px, 1.4vw, 19px);
+    line-height: 1.65;
+    color: var(--c-ink-soft);
+    margin: 0 0 28px;
+    max-width: 760px;
+  }
+
+  .svfr-hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+  }
+
+  .svfr-meta__chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background-color: var(--c-primary-soft);
+    color: var(--c-primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ── 2. Definition block ──────────────────────────── */
+  .svfr-def-wrap {
+    padding: clamp(40px, 5vw, 72px) 0;
+    border-bottom: 1px solid var(--c-rule);
+  }
+
+  .svfr-def {
+    max-width: 880px;
+    background-color: var(--c-bg-dark);
+    border-radius: var(--r-lg);
+    padding: 32px 36px;
+  }
+
+  .svfr-def__label {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--c-primary);
+    margin-bottom: 14px;
+  }
+
+  .svfr-def__body {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0;
+  }
+
+  .svfr-def__body strong {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  /* ── 3. Article Body ──────────────────────────────── */
+  .svfr-body-wrap {
+    padding: clamp(48px, 6vw, 96px) 0;
+    border-bottom: 1px solid var(--c-rule);
+  }
+
+  .svfr-body {
+    max-width: 760px;
+  }
+
+  .svfr-body h2 {
+    font-size: clamp(22px, 2.2vw, 28px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--c-ink);
+    margin: 0 0 18px;
+    padding-top: 40px;
+    border-top: 2px solid var(--c-rule);
+  }
+
+  .svfr-body h2:first-child {
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .svfr-body h3 {
+    font-size: clamp(17px, 1.5vw, 20px);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--c-ink);
+    margin: 32px 0 10px;
+  }
+
+  .svfr-body p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--c-ink-soft);
+    margin: 0 0 18px;
+  }
+
+  .svfr-body p:last-child { margin-bottom: 0; }
+
+  .svfr-body p strong {
+    color: var(--c-ink);
+    font-weight: 700;
+  }
+
+  .svfr-body ul,
+  .svfr-body ol {
+    margin: 0 0 24px 0;
+    padding-left: 24px;
+  }
+
+  .svfr-body li {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--c-ink-soft);
+    margin-bottom: 10px;
+  }
+
+  .svfr-body li strong {
+    color: var(--c-ink);
+    font-weight: 700;
+  }
+
+  .svfr-body li:last-child { margin-bottom: 0; }
+
+  .svfr-body blockquote {
+    margin: 28px 0;
+    padding: 20px 24px;
+    border-left: 3px solid var(--c-primary);
+    background-color: var(--c-primary-soft);
+    border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  }
+
+  .svfr-body blockquote p {
+    margin: 0;
+    color: var(--c-ink);
+    font-style: italic;
+  }
+
+  .svfr-body code {
+    font-family: var(--f-mono);
+    font-size: 14px;
+    background-color: var(--c-bg-soft);
+    border: 1px solid var(--c-rule);
+    border-radius: var(--r-sm);
+    padding: 2px 7px;
+    color: var(--c-ink);
+  }
+
+  .svfr-body pre {
+    background-color: var(--c-bg-dark);
+    border-radius: var(--r-md);
+    padding: 24px;
+    margin: 24px 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .svfr-body pre::-webkit-scrollbar { display: none; }
+
+  .svfr-body pre code {
+    font-family: var(--f-mono);
+    font-size: 14px;
+    background: none;
+    border: none;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.65;
+  }
+
+  .svfr-body a {
+    color: var(--c-primary);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .svfr-body a:hover {
+    color: var(--c-primary-dark);
+    border-bottom-color: var(--c-primary-dark);
+  }
+
+  /* ── 4. Related Terms ─────────────────────────────── */
+  .svfr-related {
+    padding: clamp(48px, 6vw, 80px) 0;
+    background-color: var(--c-bg-soft);
+  }
+
+  .svfr-related__label {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--c-muted);
+    margin-bottom: 20px;
+  }
+
+  .svfr-related__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .svfr-related__item {
+    border-top: 1px solid var(--c-rule);
+  }
+
+  .svfr-related__item:last-child {
+    border-bottom: 1px solid var(--c-rule);
+  }
+
+  .svfr-related__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 4px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--c-ink);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .svfr-related__link:hover {
+    color: var(--c-primary);
+  }
+
+  .svfr-related__link-arrow {
+    font-size: 16px;
+    color: var(--c-primary);
+    flex-shrink: 0;
+    transition: transform 0.15s;
+  }
+
+  .svfr-related__link:hover .svfr-related__link-arrow {
+    transform: translateX(3px);
+  }
+
+  /* ── Container queries ────────────────────────────── */
+  @container (max-width: 767px) {
+    .svfr-hero { padding-top: 48px; }
+    .svfr-hero__title { font-size: 28px; }
+    .svfr-hero__lead { font-size: 16px; }
+    .svfr-def { padding: 24px 20px; border-radius: var(--r-md); }
+    .svfr-body p,
+    .svfr-body li { font-size: 16px; }
+    .svfr-body h2 { padding-top: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="svfr-root">
+
+  <!-- 1. Hero -->
+  <section class="svfr-hero">
+    <div class="svfr-container">
+      <a href="/glossary" class="svfr-hero__back">← Glossary</a>
+      <h1 class="svfr-hero__title">State Vault for Restoration</h1>
+      <p class="svfr-hero__lead">The local-only store that turns AI output back into business-ready output.</p>
+      <div class="svfr-hero__meta">
+        <span class="svfr-meta__chip">GLOSSARY</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Definition block -->
+  <div class="svfr-def-wrap">
+    <div class="svfr-container">
+      <div class="svfr-def">
+        <div class="svfr-def__label">Definition</div>
+        <p class="svfr-def__body">The <strong>state vault</strong> is the local-only store that holds the token map between original operational identifiers and capsule tokens. It enables AI outputs to be restored back into the originating workflow with original identifiers — <em>inside the enterprise</em> — without the external LLM ever seeing the originals.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Article Body -->
+  <div class="svfr-body-wrap">
+    <div class="svfr-container">
+      <article class="svfr-body">
+
+        <h2>What it stores</h2>
+        <ul>
+          <li>Token map: capsule tokens ↔ original operational identifiers</li>
+          <li>Workflow context: which capsule belongs to which incident, ticket, or runbook</li>
+          <li>Policy reference: which marker policy applied to this capsule</li>
+          <li>Privacy budget reference: how much of the workflow's DP budget this capsule consumed</li>
+        </ul>
+
+        <h2>Where it lives</h2>
+        <p>Always local. The token map never traverses the external boundary. In Path A (external approved LLM), the LLM sees only capsule tokens; the state vault rehydrates after the response returns. In Path B (on-prem local lightweight model), everything is local end to end.</p>
+
+        <h2>Why it matters</h2>
+        <p>Without restoration, AI outputs are stuck as token salad. The operations team needs the result as a usable artifact in the originating workflow — a ticket update with real device IDs, a runbook step referencing the actual site, an RCA pointing to the actual incident reference. The state vault is what makes that possible while keeping the originals out of the model.</p>
+
+        <h2>Outputs the state vault produces</h2>
+        <ul>
+          <li>Restored RCA inserted into the ticket system</li>
+          <li>Restored runbook step inserted into the runbook</li>
+          <li>Restored summary inserted into the EHR or hospital portal</li>
+          <li>Restored mission summary inserted into the command system (Path B only)</li>
+          <li>Restored compliance review draft inserted into the review workflow</li>
+        </ul>
+
+        <h2>Auditability</h2>
+        <p>Every restoration is logged. The audit trail records the capsule, the policy applied, the path used, the token map operations, and the destination of the restored output. Compliance teams can trace any restored field back to its capsule and policy.</p>
+
+        <h2>Reference statement</h2>
+        <blockquote>
+          <p>The capsule is what the AI sees. The state vault is what the business sees. The boundary between them is the operational guarantee.</p>
+        </blockquote>
+
+      </article>
+    </div>
+  </div>
+
+  <!-- 4. Related Terms -->
+  <div class="svfr-related">
+    <div class="svfr-container">
+      <div class="svfr-related__label">Related terms</div>
+      <ul class="svfr-related__list">
+        <li class="svfr-related__item">
+          <a href="/glossary/ai-enablement-data-layer" class="svfr-related__link">
+            <span>AI enablement data layer</span>
+            <span class="svfr-related__link-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="svfr-related__item">
+          <a href="/glossary/structure-preserving-encapsulation" class="svfr-related__link">
+            <span>Structure-preserving encapsulation</span>
+            <span class="svfr-related__link-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="svfr-related__item">
+          <a href="/glossary/capsule-token" class="svfr-related__link">
+            <span>Capsule token</span>
+            <span class="svfr-related__link-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="svfr-related__item">
+          <a href="/glossary/two-execution-paths" class="svfr-related__link">
+            <span>Two execution paths</span>
+            <span class="svfr-related__link-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="svfr-related__item">
+          <a href="/glossary/differential-privacy" class="svfr-related__link">
+            <span>Differential privacy</span>
+            <span class="svfr-related__link-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
