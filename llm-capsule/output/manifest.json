@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-07 15:36:56",
+  "generated": "2026-05-07 15:52:02",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -372,6 +372,11 @@
         {
           "name": "_preview.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/differential-privacy-for-enterprise-llm/_preview.html",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "_preview_LearnArticle_HospitalAiDeploymentPhiProtection.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/hospital-ai-deployment-phi-protection/_preview_LearnArticle_HospitalAiDeploymentPhiProtection.html",
           "modified": "2026-05-07"
         },
         {
@@ -1552,6 +1557,16 @@
           "modified": "2026-05-07"
         },
         {
+          "name": "hospital-ai-deployment-phi-protection-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/hospital-ai-deployment-phi-protection-de-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "hospital-ai-deployment-phi-protection-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/hospital-ai-deployment-phi-protection-ko-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
           "name": "how-to-use-ai-on-sensitive-enterprise-data-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/how-to-use-ai-on-sensitive-enterprise-data-de-lines.md",
           "modified": "2026-05-07"
@@ -2391,6 +2406,11 @@
         {
           "name": "LearnArticle_DifferentialPrivacyForEnterpriseLlm.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/differential-privacy-for-enterprise-llm/LearnArticle_DifferentialPrivacyForEnterpriseLlm.tsx",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "LearnArticle_HospitalAiDeploymentPhiProtection.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/hospital-ai-deployment-phi-protection/LearnArticle_HospitalAiDeploymentPhiProtection.tsx",
           "modified": "2026-05-07"
         },
         {
