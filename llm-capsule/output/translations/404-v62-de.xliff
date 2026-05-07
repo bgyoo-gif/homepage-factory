@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file
+    source-language="en"
+    target-language="de"
+    datatype="plaintext"
+    original="llm-capsule/output/framer/404-v62/tsx/NotFound.tsx"
+  >
+    <body>
+
+      <!-- errorCode: 번역 없음 (숫자 코드) -->
+      <trans-unit id="errorCode">
+        <source>404</source>
+        <target>404</target>
+        <note>Error code — numeric, no translation needed</note>
+      </trans-unit>
+
+      <!-- title: localize — "encapsulated"를 기술적 용어로 → "kapsuliert" (DE 기술 문맥 기본값) -->
+      <trans-unit id="title">
+        <source>This page has been encapsulated</source>
+        <target>Diese Seite wurde kapsuliert</target>
+        <note>localize: 브랜드 메타포를 기술 동사(kapsulieren)로 자연스럽게 전달</note>
+      </trans-unit>
+
+      <!-- description: localize — EN 1문장(or, or 나열) → DE 2문장으로 분리. 감성적 "never transmitted" → 사실적 서술 -->
+      <trans-unit id="description">
+        <source>The page you're looking for doesn't exist, has been moved, or was never transmitted outside the environment.</source>
+        <target>Die aufgerufene Seite existiert nicht oder wurde verschoben. Diese Seite wurde nie außerhalb der gesicherten Umgebung übertragen.</target>
+        <note>localize: EN 1문장 → DE 2문장 분리. "outside the environment" → "gesicherten Umgebung"으로 기능 맥락 유지</note>
+      </trans-unit>
+
+      <!-- demoEncLabel: 기술 라벨 → DE 기술 문맥 기본값 "Kapsuliert" -->
+      <trans-unit id="demoEncLabel">
+        <source>Encapsulated</source>
+        <target>Kapsuliert</target>
+        <note>localize: 기술 로그 레이블 — "Kapsuliert" (kapsulieren 과거분사)</note>
+      </trans-unit>
+
+      <!-- demoEncText: 플레이스홀더 원문 유지, 독일어 어순(날짜 앞) 적용 -->
+      <trans-unit id="demoEncText">
+        <source>[PAGE_01] was requested at [URL_02] on [DATE_03].</source>
+        <target>[PAGE_01] wurde am [DATE_03] unter [URL_02] angefragt.</target>
+        <note>Placeholders [PAGE_01], [URL_02], [DATE_03] must remain unchanged. DE 어순: am [DATE] unter [URL]</note>
+      </trans-unit>
+
+      <!-- demoResLabel: "Restored" → DE 기술 문맥 → "Wiederhergestellt" -->
+      <trans-unit id="demoResLabel">
+        <source>Restored</source>
+        <target>Wiederhergestellt</target>
+        <note>localize: 기술 로그 레이블 — Wiederherstellung 과거분사</note>
+      </trans-unit>
+
+      <trans-unit id="demoResText">
+        <source>The page you wanted was not found at this URL just now.</source>
+        <target>Die gesuchte Seite konnte unter dieser URL nicht gefunden werden.</target>
+        <note>localize: "just now" 생략 — DE에서 불필요한 시간 부사 제거. Passiv 허용</note>
+      </trans-unit>
+
+      <!-- btn1Label: brief CTA 패턴에 없는 항목 — 직관적 DE 표현 사용 -->
+      <trans-unit id="btn1Label">
+        <source>Go to Homepage</source>
+        <target>Zur Startseite</target>
+        <note>localize: "Go to" 명령형 대신 방향 전치사 구문 (Zur Startseite) — DE 관용 표현</note>
+      </trans-unit>
+
+      <!-- btn1Href: URL, 번역 없음 -->
+      <trans-unit id="btn1Href">
+        <source>/</source>
+        <target>/</target>
+        <note>URL — no translation</note>
+      </trans-unit>
+
+      <!-- btn2Label: brief CTA 패턴 직접 적용 -->
+      <trans-unit id="btn2Label">
+        <source>See Product</source>
+        <target>Produkt ansehen</target>
+        <note>brief CTA 패턴: See Product → Produkt ansehen</note>
+      </trans-unit>
+
+      <!-- btn2Href: URL, 번역 없음 -->
+      <trans-unit id="btn2Href">
+        <source>/product</source>
+        <target>/product</target>
+        <note>URL — no translation</note>
+      </trans-unit>
+
+      <trans-unit id="footerLink1Label">
+        <source>Resources</source>
+        <target>Ressourcen</target>
+      </trans-unit>
+
+      <!-- footerLink1Href: URL, 번역 없음 -->
+      <trans-unit id="footerLink1Href">
+        <source>/resources</source>
+        <target>/resources</target>
+        <note>URL — no translation</note>
+      </trans-unit>
+
+      <trans-unit id="footerLink2Label">
+        <source>Architecture</source>
+        <target>Architektur</target>
+      </trans-unit>
+
+      <!-- footerLink2Href: URL, 번역 없음 -->
+      <trans-unit id="footerLink2Href">
+        <source>/architecture</source>
+        <target>/architecture</target>
+        <note>URL — no translation</note>
+      </trans-unit>
+
+      <trans-unit id="footerLink3Label">
+        <source>Pricing</source>
+        <target>Preise</target>
+        <note>localize: "Pricing" → "Preise" (복수형, DE 관용)</note>
+      </trans-unit>
+
+      <!-- footerLink3Href: URL, 번역 없음 -->
+      <trans-unit id="footerLink3Href">
+        <source>/pricing</source>
+        <target>/pricing</target>
+        <note>URL — no translation</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

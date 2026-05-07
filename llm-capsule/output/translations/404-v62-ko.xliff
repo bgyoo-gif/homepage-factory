@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file
+    source-language="en"
+    target-language="ko"
+    datatype="plaintext"
+    original="llm-capsule/output/framer/404-v62/tsx/NotFound.tsx"
+  >
+    <body>
+
+      <!-- errorCode: 번역 없음 (숫자 코드) -->
+      <trans-unit id="errorCode">
+        <source>404</source>
+        <target>404</target>
+        <note>Error code — numeric, no translation needed</note>
+      </trans-unit>
+
+      <trans-unit id="title">
+        <source>This page has been encapsulated</source>
+        <target>이 페이지는 캡슐화되었습니다</target>
+      </trans-unit>
+
+      <trans-unit id="description">
+        <source>The page you're looking for doesn't exist, has been moved, or was never transmitted outside the environment.</source>
+        <target>찾으시는 페이지가 존재하지 않거나, 이동되었거나, 환경 외부로 전송된 적이 없습니다.</target>
+      </trans-unit>
+
+      <trans-unit id="demoEncLabel">
+        <source>Encapsulated</source>
+        <target>캡슐화됨</target>
+      </trans-unit>
+
+      <!-- demoEncText: [PAGE_01], [URL_02], [DATE_03] 플레이스홀더 원문 유지, 어순만 조정 -->
+      <trans-unit id="demoEncText">
+        <source>[PAGE_01] was requested at [URL_02] on [DATE_03].</source>
+        <target>[PAGE_01]은(는) [DATE_03]에 [URL_02]에서 요청되었습니다.</target>
+        <note>Placeholders [PAGE_01], [URL_02], [DATE_03] must remain unchanged</note>
+      </trans-unit>
+
+      <trans-unit id="demoResLabel">
+        <source>Restored</source>
+        <target>복원됨</target>
+      </trans-unit>
+
+      <trans-unit id="demoResText">
+        <source>The page you wanted was not found at this URL just now.</source>
+        <target>요청하신 페이지를 이 URL에서 찾을 수 없습니다.</target>
+      </trans-unit>
+
+      <trans-unit id="btn1Label">
+        <source>Go to Homepage</source>
+        <target>홈으로 돌아가기</target>
+      </trans-unit>
+
+      <!-- btn1Href: URL, 번역 없음 -->
+      <trans-unit id="btn1Href">
+        <source>/</source>
+        <target>/</target>
+        <note>URL — no translation</note>
+      </trans-unit>
+
+      <trans-unit id="btn2Label">
+        <source>See Product</source>
+        <target>제품 보기</target>
+      </trans-unit>
+
+      <!-- btn2Href: URL, 번역 없음 -->
+      <trans-unit id="btn2Href">
+        <source>/product</source>
+        <target>/product</target>
+        <note>URL — no translation</note>
+      </trans-unit>
+
+      <trans-unit id="footerLink1Label">
+        <source>Resources</source>
+        <target>리소스</target>
+      </trans-unit>
+
+      <!-- footerLink1Href: URL, 번역 없음 -->
+      <trans-unit id="footerLink1Href">
+        <source>/resources</source>
+        <target>/resources</target>
+        <note>URL — no translation</note>
+      </trans-unit>
+
+      <trans-unit id="footerLink2Label">
+        <source>Architecture</source>
+        <target>아키텍처</target>
+      </trans-unit>
+
+      <!-- footerLink2Href: URL, 번역 없음 -->
+      <trans-unit id="footerLink2Href">
+        <source>/architecture</source>
+        <target>/architecture</target>
+        <note>URL — no translation</note>
+      </trans-unit>
+
+      <trans-unit id="footerLink3Label">
+        <source>Pricing</source>
+        <target>가격 안내</target>
+      </trans-unit>
+
+      <!-- footerLink3Href: URL, 번역 없음 -->
+      <trans-unit id="footerLink3Href">
+        <source>/pricing</source>
+        <target>/pricing</target>
+        <note>URL — no translation</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>
