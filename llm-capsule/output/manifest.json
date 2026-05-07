@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-07 14:35:40",
+  "generated": "2026-05-07 14:44:50",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1569,7 +1569,7 @@
         {
           "name": "llm-capsule-vs-masking-tools-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/llm-capsule-vs-masking-tools-de-lines.md",
-          "modified": "2026-04-29"
+          "modified": "2026-05-07"
         },
         {
           "name": "llm-capsule-vs-masking-tools-ja-lines.md",
@@ -1579,7 +1579,7 @@
         {
           "name": "llm-capsule-vs-masking-tools-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/llm-capsule-vs-masking-tools-ko-lines.md",
-          "modified": "2026-04-29"
+          "modified": "2026-05-07"
         },
         {
           "name": "llm-capsule-vs-prompt-security-gateways-de-lines.md",
@@ -2381,7 +2381,7 @@
         {
           "name": "Section06_HowDiffers.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/llm-capsule-vs-masking-tools/tsx/Section06_HowDiffers.tsx",
-          "modified": "2026-05-06"
+          "modified": "2026-05-07"
         },
         {
           "name": "Section07_ComparisonTable.tsx",

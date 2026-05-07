@@ -13,6 +13,7 @@ const PALETTE = {
 interface Props {
   heading?: string
   headingProduct?: string
+  headingSuffix?: string
   paragraph?: string
   paragraphProduct?: string
   bannerStrong?: string
@@ -23,7 +24,8 @@ interface Props {
 export default function Section06_HowDiffers({
   heading = "How",
   headingProduct = "LLM Capsule",
-  paragraph = "{product} replaces masking with encapsulation — a reversible, structure-preserving protection that maintains document integrity for AI processing and enables automated output restoration.",
+  headingSuffix = "Differs",
+  paragraph = "replaces masking with encapsulation — a reversible, structure-preserving protection that maintains document integrity for AI processing and enables automated output restoration.",
   paragraphProduct = "LLM Capsule",
   bannerStrong = "AI results are automatically restored locally with original enterprise data.",
   bannerProduct = "LLM Capsule",
@@ -118,11 +120,11 @@ export default function Section06_HowDiffers({
           <div className="s6-container">
             <div className="s6-header">
               <h2 style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
-                {heading} <span className="s6-product">{headingProduct}</span> Differs
+                {heading} <span className="s6-product">{headingProduct}</span>{headingSuffix ? ` ${headingSuffix}` : ""}
               </h2>
             </div>
             <p className="s6-paragraph">
-              <span className="s6-product">{paragraphProduct}</span> replaces masking with encapsulation — a reversible, structure-preserving protection that maintains document integrity for AI processing and enables automated output restoration.
+              <span className="s6-product">{paragraphProduct}</span> {paragraph}
             </p>
             <div className="s6-banner">
               <strong>{bannerStrong}</strong> <span className="s6-product">{bannerProduct}</span>{bannerText}
@@ -144,6 +146,17 @@ addPropertyControls(Section06_HowDiffers, {
     type: ControlType.String,
     title: "Heading Product",
     defaultValue: "LLM Capsule",
+  },
+  headingSuffix: {
+    type: ControlType.String,
+    title: "Heading Suffix",
+    defaultValue: "Differs",
+  },
+  paragraph: {
+    type: ControlType.String,
+    title: "Paragraph",
+    defaultValue: "replaces masking with encapsulation — a reversible, structure-preserving protection that maintains document integrity for AI processing and enables automated output restoration.",
+    displayTextArea: true,
   },
   paragraphProduct: {
     type: ControlType.String,

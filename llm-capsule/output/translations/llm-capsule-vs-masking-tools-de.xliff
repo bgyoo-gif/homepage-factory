@@ -1,161 +1,520 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="de">
   <file id="llm-capsule-vs-masking-tools">
-    <unit id="titleProduct">
+
+    <!-- Section01_Hero -->
+    <unit id="s01.titleProduct">
       <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
       </segment>
     </unit>
-    <unit id="title">
+    <unit id="s01.title">
       <segment>
-        <source>See how</source>
-        <target>Erleben Sie</target>
+        <source>vs Masking Tools</source>
+        <target>vs. Maskierungstools</target>
       </segment>
     </unit>
-    <unit id="descriptionProduct">
+    <unit id="s01.description">
       <segment>
-        <source>LLM Capsule</source>
-        <target>LLM Capsule</target>
+        <source>How LLM Capsule's structure-preserving encapsulation compares to traditional masking and redaction tools for enterprise AI workflows.</source>
+        <target>Ein struktureller Vergleich: LLM Capsule schützt Daten durch reversible Kapsulierung — herkömmliche Maskierungs- und Schwärzungswerkzeuge entfernen sie dauerhaft. Was das für KI-Workflows im Unternehmen bedeutet, zeigt diese Seite.</target>
       </segment>
     </unit>
-    <unit id="description">
-      <segment>
-        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
-        <target>Bringen Sie Ihre Dokumente, Deployment-Anforderungen und Bewertungskriterien mit. Wir demonstrieren anhand Ihrer tatsächlichen Workflows.</target>
-      </segment>
-    </unit>
-    <unit id="label">
+
+    <!-- Section02_Screenshot -->
+    <unit id="s02.label">
       <segment>
         <source>Masking vs. Encapsulation — Side-by-side output comparison showing restored vs. redacted results</source>
-        <target>Maskierung vs. Encapsulation — Vergleich der Ergebnisse: Restoration vs. maskierte Ausgabe</target>
+        <target>Maskierung vs. Kapsulierung — Gegenüberstellung: wiederhergestellte Ausgabe links, geschwärzte Ausgabe rechts</target>
       </segment>
     </unit>
-    <unit id="heading">
+
+    <!-- Section03_Overview -->
+    <unit id="s03.heading">
       <segment>
-        <source>FAQ</source>
-        <target>FAQ</target>
+        <source>Overview</source>
+        <target>Übersicht</target>
       </segment>
     </unit>
-    <unit id="product">
+    <unit id="s03.paragraph">
       <segment>
-        <source>LLM Capsule</source>
-        <target>LLM Capsule</target>
+        <source>Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. LLM Capsule takes a fundamentally different approach as an AI enablement data layer and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.</source>
+        <target>Maskierungstools — Schwärzungssysteme, Tokenisierungsdienste, PII-Filter — wurden für Compliance-Berichte und die statische Anonymisierung von Daten entwickelt. Sie schützen vertrauliche Informationen durch dauerhafte Entfernung oder Ersetzung. LLM Capsule verfolgt als KI-Enablement-Datenschicht einen grundlegend anderen Ansatz: Daten werden kapsuliert und lokal wiederhergestellt, sodass KI-Ergebnisse im Unternehmen direkt einsetzbar bleiben.</target>
       </segment>
     </unit>
-    <unit id="paragraph">
+
+    <!-- Section04_MaskingWorks -->
+    <unit id="s04.heading">
+      <segment>
+        <source>How Traditional Masking Works</source>
+        <target>Wie herkömmliche Maskierung funktioniert</target>
+      </segment>
+    </unit>
+    <unit id="s04.paragraph">
       <segment>
         <source>Masking tools scan documents for sensitive patterns — names, numbers, dates — and replace them with generic tokens ([REDACTED], [NAME], ****) or remove them entirely. The replacement is permanent. There is no mechanism to restore original values after processing.</source>
-        <target>Maskierungstools scannen Dokumente nach sensiblen Mustern — Namen, Nummern, Daten — und ersetzen diese durch generische Token ([REDACTED], [NAME], ****) oder entfernen sie vollständig. Die Ersetzung ist permanent. Es gibt keinen Mechanismus zur Wiederherstellung der Originalwerte nach der Verarbeitung.</target>
+        <target>Maskierungstools durchsuchen Dokumente nach sensiblen Mustern — Namen, Nummern, Datumsangaben — und ersetzen diese durch generische Platzhalter ([REDACTED], [NAME], ****) oder entfernen sie vollständig. Die Ersetzung ist dauerhaft. Nach der Verarbeitung lassen sich Originalwerte nicht wiederherstellen.</target>
       </segment>
     </unit>
-    <unit id="headingProduct">
+
+    <!-- Section05_MaskingLimits -->
+    <unit id="s05.heading">
+      <segment>
+        <source>Limitations of Masking for AI</source>
+        <target>Grenzen der Maskierung im KI-Einsatz</target>
+      </segment>
+    </unit>
+    <unit id="s05.bullet1Strong">
+      <segment>
+        <source>Context destruction.</source>
+        <target>Kontextverlust.</target>
+      </segment>
+    </unit>
+    <unit id="s05.bullet1Text">
+      <segment>
+        <source> AI models lose entity relationships when all names become "[NAME]." Multi-party documents become indistinguishable.</source>
+        <target> KI-Modelle verlieren Entitätsbeziehungen, sobald alle Namen zu "[NAME]" werden. Dokumente mit mehreren Beteiligten sind nicht mehr unterscheidbar.</target>
+      </segment>
+    </unit>
+    <unit id="s05.bullet2Strong">
+      <segment>
+        <source>Output unusability.</source>
+        <target>Unbrauchbare KI-Ausgaben.</target>
+      </segment>
+    </unit>
+    <unit id="s05.bullet2Text">
+      <segment>
+        <source> AI outputs inherit the masking. Summaries contain "[REDACTED]" placeholders instead of real data, requiring manual reconstruction.</source>
+        <target> KI-Ausgaben übernehmen die Maskierung. Zusammenfassungen enthalten "[REDACTED]"-Platzhalter statt realer Daten. Die Rekonstruktion des Kontexts erfordert manuelle Nacharbeit.</target>
+      </segment>
+    </unit>
+    <unit id="s05.bullet3Strong">
+      <segment>
+        <source>Structural damage.</source>
+        <target>Strukturverlust.</target>
+      </segment>
+    </unit>
+    <unit id="s05.bullet3Text">
+      <segment>
+        <source> Flat masking breaks table schemas, cross-references, and nested document structures.</source>
+        <target> Flache Maskierung zerstört Tabellenschemata, Querverweise und verschachtelte Dokumentstrukturen.</target>
+      </segment>
+    </unit>
+    <unit id="s05.bullet4Strong">
+      <segment>
+        <source>No automation path.</source>
+        <target>Kein Automatisierungspotenzial.</target>
+      </segment>
+    </unit>
+    <unit id="s05.bullet4Text">
+      <segment>
+        <source> Every masked AI output requires human intervention to restore context, eliminating efficiency gains.</source>
+        <target> Jede maskierte KI-Ausgabe erfordert manuellen Eingriff zur Kontextwiederherstellung. Effizienzgewinne durch KI-Einsatz werden dadurch aufgehoben.</target>
+      </segment>
+    </unit>
+
+    <!-- Section06_HowDiffers -->
+    <unit id="s06.heading">
+      <segment>
+        <source>How</source>
+        <target>Wie sich</target>
+      </segment>
+    </unit>
+    <unit id="s06.headingProduct">
       <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
       </segment>
     </unit>
-    <unit id="paragraphProduct">
+    <unit id="s06.headingSuffix">
+      <segment>
+        <source>Differs</source>
+        <target>von Maskierungstools unterscheidet</target>
+      </segment>
+    </unit>
+    <unit id="s06.paragraph">
+      <segment>
+        <source>replaces masking with encapsulation — a reversible, structure-preserving protection that maintains document integrity for AI processing and enables automated output restoration.</source>
+        <target>ersetzt Maskierung durch Kapsulierung — eine reversible, strukturerhaltende Schutzmaßnahme, die die Dokumentintegrität für die KI-Verarbeitung bewahrt und die automatische Wiederherstellung von Ausgaben ermöglicht.</target>
+      </segment>
+    </unit>
+    <unit id="s06.paragraphProduct">
       <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
       </segment>
     </unit>
-    <unit id="bannerStrong">
+    <unit id="s06.bannerStrong">
       <segment>
         <source>AI results are automatically restored locally with original enterprise data.</source>
-        <target>AI-Ergebnisse werden lokal automatisch mit den originalen Unternehmensdaten per Restoration wiederhergestellt.</target>
+        <target>KI-Ergebnisse werden lokal automatisch mit den originalen Unternehmensdaten zusammengeführt.</target>
       </segment>
     </unit>
-    <unit id="bannerProduct">
+    <unit id="s06.bannerProduct">
       <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
       </segment>
     </unit>
-    <unit id="bannerText">
+    <unit id="s06.bannerText">
       <segment>
-        <source>is an AI enablement data layer that protects sensitive data while enabling usable enterprise AI outputs.</source>
-        <target>ist eine AI-Enablement-Datenschicht, die sensible Daten schützt und gleichzeitig nutzbare KI-Ergebnisse für Unternehmen ermöglicht.</target>
+        <source> is an AI enablement data layer that protects sensitive data while enabling usable enterprise AI outputs.</source>
+        <target> ist eine KI-Enablement-Datenschicht, die vertrauliche Informationen schützt und gleichzeitig fachlich nutzbare KI-Ergebnisse ermöglicht.</target>
       </segment>
     </unit>
-    <unit id="colHeader1">
+
+    <!-- Section07_ComparisonTable -->
+    <unit id="s07.heading">
+      <segment>
+        <source>Comparison</source>
+        <target>Vergleich</target>
+      </segment>
+    </unit>
+    <unit id="s07.colHeader1">
       <segment>
         <source>Capability</source>
         <target>Funktion</target>
       </segment>
     </unit>
-    <unit id="colHeader2">
+    <unit id="s07.colHeader2">
       <segment>
         <source>Masking Tools</source>
         <target>Maskierungstools</target>
       </segment>
     </unit>
-    <unit id="colHeader3Product">
+    <unit id="s07.colHeader3Product">
       <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
       </segment>
     </unit>
-    <unit id="colHeader3">
+    <unit id="s07.colHeader3">
       <segment>
         <source>(AI Enablement Data Layer)</source>
-        <target>(AI-Enablement-Datenschicht)</target>
+        <target>(AI Enablement Data Layer)</target>
       </segment>
     </unit>
-    <unit id="cardTitle">
+    <unit id="s07.row1Cap">
+      <segment>
+        <source>Protection method</source>
+        <target>Schutzmethode</target>
+      </segment>
+    </unit>
+    <unit id="s07.row1Masking">
+      <segment>
+        <source>Permanent removal / replacement</source>
+        <target>Dauerhafte Entfernung / Ersetzung</target>
+      </segment>
+    </unit>
+    <unit id="s07.row1Capsule">
+      <segment>
+        <source>Reversible encapsulation</source>
+        <target>Reversible Kapsulierung</target>
+      </segment>
+    </unit>
+    <unit id="s07.row2Cap">
+      <segment>
+        <source>Document structure</source>
+        <target>Dokumentstruktur</target>
+      </segment>
+    </unit>
+    <unit id="s07.row2Masking">
+      <segment>
+        <source>Destroyed</source>
+        <target>Zerstört</target>
+      </segment>
+    </unit>
+    <unit id="s07.row2Capsule">
+      <segment>
+        <source>Preserved</source>
+        <target>Erhalten</target>
+      </segment>
+    </unit>
+    <unit id="s07.row3Cap">
+      <segment>
+        <source>Entity relationships</source>
+        <target>Entitätsbeziehungen</target>
+      </segment>
+    </unit>
+    <unit id="s07.row3Masking">
+      <segment>
+        <source>Collapsed</source>
+        <target>Aufgelöst</target>
+      </segment>
+    </unit>
+    <unit id="s07.row3Capsule">
+      <segment>
+        <source>Maintained</source>
+        <target>Erhalten</target>
+      </segment>
+    </unit>
+    <unit id="s07.row4Cap">
+      <segment>
+        <source>AI output quality</source>
+        <target>Qualität der KI-Ausgabe</target>
+      </segment>
+    </unit>
+    <unit id="s07.row4Masking">
+      <segment>
+        <source>Degraded</source>
+        <target>Beeinträchtigt</target>
+      </segment>
+    </unit>
+    <unit id="s07.row4Capsule">
+      <segment>
+        <source>Full quality</source>
+        <target>Volle Qualität</target>
+      </segment>
+    </unit>
+    <unit id="s07.row5Cap">
+      <segment>
+        <source>Output restoration</source>
+        <target>Wiederherstellung der Ausgabe</target>
+      </segment>
+    </unit>
+    <unit id="s07.row5Masking">
+      <segment>
+        <source>Manual</source>
+        <target>Manuell</target>
+      </segment>
+    </unit>
+    <unit id="s07.row5Capsule">
+      <segment>
+        <source>Automatic restoration</source>
+        <target>Automatische Wiederherstellung</target>
+      </segment>
+    </unit>
+    <unit id="s07.row6Cap">
+      <segment>
+        <source>Enterprise context control</source>
+        <target>Kontextkontrolle im Unternehmen</target>
+      </segment>
+    </unit>
+    <unit id="s07.row7Cap">
+      <segment>
+        <source>Audit trail</source>
+        <target>Audit-Trail</target>
+      </segment>
+    </unit>
+    <unit id="s07.row7Masking">
+      <segment>
+        <source>Limited</source>
+        <target>Eingeschränkt</target>
+      </segment>
+    </unit>
+    <unit id="s07.row7Capsule">
+      <segment>
+        <source>Complete</source>
+        <target>Vollständig</target>
+      </segment>
+    </unit>
+    <unit id="s07.row8Cap">
+      <segment>
+        <source>Designed for AI workflows</source>
+        <target>Konzipiert für KI-Workflows</target>
+      </segment>
+    </unit>
+
+    <!-- Section08_WorkflowExample -->
+    <unit id="s08.heading">
+      <segment>
+        <source>Enterprise Workflow Example</source>
+        <target>Praxisbeispiel: Unternehmenseinsatz</target>
+      </segment>
+    </unit>
+    <unit id="s08.cardTitle">
       <segment>
         <source>Contract Analysis Pipeline</source>
         <target>Vertragsanalyse-Pipeline</target>
       </segment>
     </unit>
-    <unit id="withMaskingLabel">
+    <unit id="s08.withMaskingLabel">
       <segment>
         <source>With masking:</source>
         <target>Mit Maskierung:</target>
       </segment>
     </unit>
-    <unit id="withMaskingText">
+    <unit id="s08.withMaskingText">
       <segment>
         <source>200 contracts masked → AI produces generic summaries with "[REDACTED]" throughout → Legal team manually restores ~40 hours of context rebuilding.</source>
-        <target>200 Verträge maskiert → AI erstellt generische Zusammenfassungen mit durchgängigem „[REDACTED]" → Rechtsabteilung stellt manuell ca. 40 Stunden Kontextrekonstruktion wieder her.</target>
+        <target>200 Verträge maskiert → KI erzeugt generische Zusammenfassungen mit durchgängigen "[REDACTED]"-Platzhaltern → Die Rechtsabteilung benötigt ca. 40 Stunden für die manuelle Kontextrekonstruktion.</target>
       </segment>
     </unit>
-    <unit id="withCapsuleLabel">
-      <segment>
-        <source>With</source>
-        <target>Mit</target>
-      </segment>
-    </unit>
-    <unit id="withCapsuleProduct">
+    <unit id="s08.withCapsuleProduct">
       <segment>
         <source>LLM Capsule</source>
         <target>LLM Capsule</target>
       </segment>
     </unit>
-    <unit id="withCapsuleText">
+    <unit id="s08.withCapsuleText">
       <segment>
-        <source>: 200 contracts encapsulated → AI produces structured summaries → Local restoration restores all parties, amounts, and dates → Output feeds directly into contract management system.</source>
-        <target>: 200 Verträge per Encapsulation geschützt → AI erstellt strukturierte Zusammenfassungen → Restoration stellt alle Parteien, Beträge und Daten wieder her → Ausgabe wird direkt in das Vertragsmanagementsystem übernommen.</target>
+        <source>200 contracts encapsulated → AI produces structured summaries → Local restoration restores all parties, amounts, and dates → Output feeds directly into contract management system.</source>
+        <target>200 Verträge kapsuliert → KI erstellt strukturierte Zusammenfassungen → Lokale Wiederherstellung übernimmt alle Vertragsparteien, Beträge und Fristen → Ergebnisse fließen direkt in das Vertragsmanagementsystem ein.</target>
       </segment>
     </unit>
-    <unit id="sectionLabel">
+
+    <!-- Section09_FAQ -->
+    <unit id="s09.heading">
+      <segment>
+        <source>FAQ</source>
+        <target>FAQ</target>
+      </segment>
+    </unit>
+    <unit id="s09.faq1Q">
+      <segment>
+        <source>How does LLM Capsule differ from masking tools?</source>
+        <target>Wie unterscheidet sich LLM Capsule von Maskierungstools?</target>
+      </segment>
+    </unit>
+    <unit id="s09.faq1A">
+      <segment>
+        <source>Masking tools permanently remove sensitive data, destroying context AI models need. LLM Capsule encapsulates data with structure-preserving processing and enables local restoration of AI outputs, producing enterprise-ready results automatically.</source>
+        <target>Maskierungstools entfernen vertrauliche Daten dauerhaft und zerstören dabei den Kontext, den KI-Modelle für präzise Ergebnisse benötigen. LLM Capsule kapsuliert Daten mit strukturerhaltender Verarbeitung und ermöglicht die lokale Wiederherstellung von KI-Ausgaben. Direkt einsetzbare Ergebnisse entstehen automatisch — ohne manuelle Nacharbeit.</target>
+      </segment>
+    </unit>
+    <unit id="s09.faq2Q">
+      <segment>
+        <source>Can masking tools be used for AI workflows?</source>
+        <target>Eignen sich Maskierungstools für KI-Workflows?</target>
+      </segment>
+    </unit>
+    <unit id="s09.faq2A">
+      <segment>
+        <source>Traditional masking tools were not designed for AI workflows. They produce unusable AI outputs that require manual reconstruction. LLM Capsule's restorable workflow produces enterprise-ready outputs automatically.</source>
+        <target>Herkömmliche Maskierungstools wurden nicht für KI-Workflows konzipiert. Sie erzeugen unbrauchbare Ausgaben, die manuelle Rekonstruktion erfordern. Der wiederherstellbare Workflow von LLM Capsule liefert fachlich einsetzbare Ergebnisse automatisch.</target>
+      </segment>
+    </unit>
+    <unit id="s09.faq3Q">
+      <segment>
+        <source>Does LLM Capsule replace existing masking tools?</source>
+        <target>Ersetzt LLM Capsule bestehende Maskierungstools?</target>
+      </segment>
+    </unit>
+    <unit id="s09.faq3A">
+      <segment>
+        <source>LLM Capsule can complement existing masking infrastructure for non-AI use cases. For AI workflows specifically, it replaces masking with encapsulation-based protection designed for restorable workflows.</source>
+        <target>LLM Capsule kann bestehende Maskierungsinfrastruktur für Anwendungsfälle ohne KI-Bezug ergänzen. Speziell für KI-Workflows ersetzt LLM Capsule die Maskierung durch eine Kapsulierung, die auf wiederherstellbare Workflows ausgelegt ist.</target>
+      </segment>
+    </unit>
+
+    <!-- Section10_RelatedPages -->
+    <unit id="s10.sectionLabel">
       <segment>
         <source>Related</source>
-        <target>Verwandte Seiten</target>
+        <target>Weiterführende Seiten</target>
       </segment>
     </unit>
-    <unit id="primaryCTALabel">
+    <unit id="s10.link1Title">
+      <segment>
+        <source>Product Overview</source>
+        <target>Produktübersicht</target>
+      </segment>
+    </unit>
+    <unit id="s10.link1Href">
+      <segment>
+        <source>/product</source>
+        <target>/product</target>
+      </segment>
+    </unit>
+    <unit id="s10.link2Title">
+      <segment>
+        <source>Architecture</source>
+        <target>Architektur</target>
+      </segment>
+    </unit>
+    <unit id="s10.link2Href">
+      <segment>
+        <source>/architecture</source>
+        <target>/architecture</target>
+      </segment>
+    </unit>
+    <unit id="s10.link3Title">
+      <segment>
+        <source>Trust &amp; Compliance</source>
+        <target>Vertrauen &amp; Konformität</target>
+      </segment>
+    </unit>
+    <unit id="s10.link3Href">
+      <segment>
+        <source>/trust</source>
+        <target>/trust</target>
+      </segment>
+    </unit>
+    <unit id="s10.link4Title">
       <segment>
         <source>Request a Demo</source>
-        <target>Request a Demo</target>
+        <target>Demo anfordern</target>
       </segment>
     </unit>
-    <unit id="secondaryCTALabel">
+    <unit id="s10.link4Href">
       <segment>
-        <source>Talk to an Architect</source>
-        <target>Talk to an Architect</target>
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
       </segment>
     </unit>
+    <unit id="s10.link5Title">
+      <segment>
+        <source>Learn Hub</source>
+        <target>Wissensbereich</target>
+      </segment>
+    </unit>
+    <unit id="s10.link5Href">
+      <segment>
+        <source>/resources/learn</source>
+        <target>/resources/learn</target>
+      </segment>
+    </unit>
+    <unit id="s10.link6Title">
+      <segment>
+        <source>Why Redaction Breaks AI</source>
+        <target>Warum Schwärzung KI-Workflows unbrauchbar macht</target>
+      </segment>
+    </unit>
+    <unit id="s10.link6Href">
+      <segment>
+        <source>/resources/learn/why-redaction-breaks-enterprise-ai-workflows</source>
+        <target>/resources/learn/why-redaction-breaks-enterprise-ai-workflows</target>
+      </segment>
+    </unit>
+
+    <!-- Section11_CTABand -->
+    <unit id="s11.title">
+      <segment>
+        <source>See how LLM Capsule works on your documents</source>
+        <target>Wir analysieren Ihre Anforderungen und demonstrieren LLM Capsule anhand Ihrer eigenen Dokumente.</target>
+      </segment>
+    </unit>
+    <unit id="s11.description">
+      <segment>
+        <source>Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.</source>
+        <target>Bringen Sie Ihre Dokumente, Infrastrukturvorgaben und Bewertungskriterien mit. Wir demonstrieren LLM Capsule auf Basis Ihrer tatsächlichen Workflows.</target>
+      </segment>
+    </unit>
+    <unit id="s11.primaryCTALabel">
+      <segment>
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </segment>
+    </unit>
+    <unit id="s11.primaryCTAHref">
+      <segment>
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
+      </segment>
+    </unit>
+    <unit id="s11.footnoteLabel">
+      <segment>
+        <source>AWS Marketplace</source>
+        <target>Verfügbar auf AWS Marketplace</target>
+      </segment>
+    </unit>
+    <unit id="s11.footnoteHref">
+      <segment>
+        <source>https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&amp;ref_=beagle&amp;applicationId=AWSMPContessa</source>
+        <target>https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&amp;ref_=beagle&amp;applicationId=AWSMPContessa</target>
+      </segment>
+    </unit>
+
   </file>
 </xliff>
