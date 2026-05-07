@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file
+    source-language="en"
+    target-language="de-DE"
+    datatype="plaintext"
+    original="LearnArticle_OnPremLlmExecutionPath.tsx"
+    product-name="LLM Capsule"
+    build-num="llmcapsule_260506"
+  >
+    <body>
+
+      <!-- ── Hero ─────────────────────────────────────────── -->
+
+      <trans-unit id="backLabel">
+        <source>← Learn</source>
+        <target>← Zurück</target>
+      </trans-unit>
+
+      <trans-unit id="backHref">
+        <source>/learn</source>
+        <target>/learn</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="title">
+        <source>On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations</source>
+        <target>On-Premise-Ausführungspfad für LLMs: Air-Gapped-, Hybrid- und regionsspezifische KI für regulierte Betriebsumgebungen</target>
+      </trans-unit>
+
+      <trans-unit id="lead">
+        <source>Two execution paths inside a single AI enablement data layer. When external transmission is not an option, the on-prem local lightweight model handles the workflow inside your boundary — zero external exposure, full restoration.</source>
+        <target>LLM Capsule bietet zwei Ausführungspfade innerhalb einer einzigen KI-Datenschicht. Wenn externe Übertragung regulatorisch ausgeschlossen ist, übernimmt das lokale On-Premise-Modell den gesamten Workflow innerhalb Ihrer Infrastruktur — ohne externe Datenübertragung, mit vollständiger Wiederherstellung.</target>
+      </trans-unit>
+
+      <trans-unit id="category">
+        <source>ARCHITECTURE · Execution Path</source>
+        <target>ARCHITEKTUR · Ausführungspfad</target>
+      </trans-unit>
+
+      <trans-unit id="readTime">
+        <source>11 min read</source>
+        <target>11 Min. Lesezeit</target>
+      </trans-unit>
+
+      <trans-unit id="dateUpdated">
+        <source>Updated May 2025</source>
+        <target>Aktualisiert Mai 2025</target>
+      </trans-unit>
+
+      <!-- ── TL;DR ─────────────────────────────────────────── -->
+
+      <trans-unit id="tldrLabel">
+        <source>Definition · TL;DR</source>
+        <target>Definition · Kurzfassung</target>
+      </trans-unit>
+
+      <trans-unit id="tldrBody">
+        <source>LLM Capsule supports two execution paths. Path A sends capsule data to an external approved LLM — no raw operational data exposure. Path B runs a small private lightweight model entirely inside your enterprise environment — zero external transmission. Selection is policy-driven per workflow.</source>
+        <target>LLM Capsule unterstützt zwei Ausführungspfade. Pfad A überträgt Kapseldaten an ein zugelassenes externes LLM — operative Rohdaten verlassen die Unternehmensumgebung nicht. Pfad B führt ein kleines lokales Modell vollständig innerhalb Ihrer Infrastruktur aus — ohne jede externe Datenübertragung. Die Pfadauswahl erfolgt richtliniengesteuert, je nach Workflow.</target>
+      </trans-unit>
+
+      <!-- ── Body HTML ──────────────────────────────────────── -->
+
+      <trans-unit id="bodyHtml">
+        <source><![CDATA[
+<h2>Why two paths instead of one</h2>
+<p>Enterprises rarely have one regulatory profile. A telecom carrier might run NOC analytics on Path A and mission-critical incident workflows on Path B. A hospital might use Path A for routine documentation and Path B for clinical decision support. A defense contractor might use Path B exclusively. Forcing a single path forces a single regulatory floor; offering two lets governance match the path to the workflow.</p>
+
+<h2>Path A — external approved LLM with capsule data only</h2>
+<p>The capsule (structure-preserving, differential-privacy-protected) is transmitted to an approved external LLM endpoint — ChatGPT, Claude, Gemini, Perplexity, or any LLM API. <strong>Raw operational data does not leave the enterprise environment.</strong> Only the capsule does. The LLM processes the capsule and returns a tokenized response. The state vault restores the response inside the enterprise.</p>
+<ul>
+  <li><strong>Best for:</strong> workflows with regulatory profiles that allow external transmission of differentially-private capsules</li>
+  <li><strong>Strength:</strong> access to frontier model capability</li>
+  <li><strong>Constraint:</strong> requires approved external LLM endpoint and policy alignment</li>
+</ul>
+
+<h2>Path B — on-prem local lightweight model</h2>
+<p>A small private lightweight model runs entirely inside the enterprise environment. The capsule is processed locally. <strong>Zero external transmission.</strong> Used for air-gapped, classified, OT, and strictly regulated operations where any external endpoint is unacceptable.</p>
+<ul>
+  <li><strong>Best for:</strong> air-gapped networks, classified operations, OT environments, strict data sovereignty</li>
+  <li><strong>Strength:</strong> zero external exposure, full data residency</li>
+  <li><strong>Constraint:</strong> model capability is bounded by the local lightweight model footprint</li>
+</ul>
+<div class="callout"><strong>Internal naming.</strong> The internal team sometimes refers to "10G" — public documentation uses <em>lightweight on-prem model</em>, <em>small private model</em>, <em>local inference path</em>, or <em>on-prem/local execution path</em>. The exact size is a deployment decision based on hardware and workflow.</div>
+
+<h2>Path selection: a decision framework</h2>
+<table class="compare-table">
+  <thead><tr><th>Factor</th><th>Path A</th><th>Path B</th></tr></thead>
+  <tbody>
+    <tr><td>External transmission allowed</td><td>Yes (capsule only)</td><td>No</td></tr>
+    <tr><td>Air-gapped network</td><td>Not applicable</td><td>Required</td></tr>
+    <tr><td>Frontier model capability needed</td><td>Yes</td><td>Bounded by local model</td></tr>
+    <tr><td>Latency profile</td><td>Variable (network)</td><td>Local, predictable</td></tr>
+    <tr><td>Compliance posture</td><td>"No raw data exposure"</td><td>"Zero external exposure"</td></tr>
+  </tbody>
+</table>
+
+<h2>Deployment topologies</h2>
+
+<h3>On-premise</h3>
+<p>Capsule Runtime + on-prem local lightweight model deployed inside the enterprise data center. Path B is the default. Path A is available only if a separate approved external endpoint is whitelisted by policy.</p>
+
+<h3>Air-gapped</h3>
+<p>Capsule Runtime + on-prem local lightweight model deployed in a fully isolated network. Path A is unavailable by design. Path B handles all workflows. Common for classified operations, defense, and high-regulation OT.</p>
+
+<h3>Hybrid</h3>
+<p>Capsule Runtime on-prem; both paths active. Policy routes individual workflows. Common for telecom and finance where some workflows tolerate external endpoints and others require local execution.</p>
+
+<h3>In-region (data sovereignty)</h3>
+<p>Capsule Runtime + lightweight model deployed in a specific region (e.g., EU for GDPR-bound workloads). Path A may also be allowed only to in-region external endpoints. Common for multinationals with regional data residency obligations.</p>
+
+<h3>Cloud (AWS Marketplace)</h3>
+<p>Capsule Runtime deployed via AWS Marketplace, with the customer's cloud account hosting both the runtime and the local lightweight model. Path A optional based on policy.</p>
+
+<h3>Embedded integration</h3>
+<p>Capsule SDK embedded into an existing application (NOC console, ticket system, hospital portal, mission system). Both paths supported; the embedded application chooses per workflow.</p>
+
+<h3>Slack App</h3>
+<p>Capsule plug-in for Slack workflows. Path A typical for general-purpose teams; Path B for regulated teams routing through Slack as a UI layer over an on-prem runtime.</p>
+
+<h2>What happens technically inside Path B</h2>
+<ol>
+  <li>Connector lane delivers operational data into the Capsule Runtime (REST, webhook, log tap, SDK).</li>
+  <li>Structure-preserving encapsulation tokenizes operational identifiers while preserving sequence and structure.</li>
+  <li>Differential-privacy-based protection bounds inference risk on the capsule.</li>
+  <li>The capsule is dispatched to the local lightweight model running inside the same network.</li>
+  <li>The model produces a tokenized output.</li>
+  <li>The state vault rehydrates original operational identifiers in the output.</li>
+  <li>The result is inserted back into the originating workflow (ticket, runbook, EHR field, mission summary).</li>
+  <li>Governance records the path applied, the policy invoked, and the audit trail.</li>
+</ol>
+<p><strong>No step in Path B reaches outside the enterprise boundary.</strong></p>
+
+<h2>The Zero Exposure claim — scoped correctly</h2>
+<p>"Zero Exposure" is a claim that needs a scope to be defensible. The scoped versions LLM Capsule uses:</p>
+<ul>
+  <li><strong>Path A:</strong> "No raw operational data exposure to external LLMs."</li>
+  <li><strong>Path B:</strong> "Zero external exposure in the on-prem / local execution path."</li>
+</ul>
+<p>Avoid unbounded "Zero Exposure" as a top-level slogan. The technical guarantee is path-specific and policy-conditional.</p>
+
+<h2>What buyers should evaluate</h2>
+<ol>
+  <li><strong>Path coverage.</strong> Are both paths supported, or only one?</li>
+  <li><strong>Path policy granularity.</strong> Can different workflows use different paths under the same governance?</li>
+  <li><strong>Local model footprint.</strong> What hardware does the on-prem lightweight model require?</li>
+  <li><strong>Air-gap support.</strong> Is the runtime fully operable without external connectivity?</li>
+  <li><strong>State vault locality.</strong> Does the state vault stay local in Path A as well?</li>
+  <li><strong>Audit per path.</strong> Is the path applied recorded per request, per workflow, per policy?</li>
+</ol>
+
+<div class="takeaways">
+  <div class="takeaways__h">Key takeaways</div>
+  <ul>
+    <li>Two execution paths in one AI enablement data layer: external approved LLM with capsule (Path A) or on-prem local lightweight model (Path B).</li>
+    <li>Path B handles air-gapped, classified, OT, and strictly regulated operations with zero external transmission.</li>
+    <li>Selection is policy-driven per workflow; governance records the path applied.</li>
+    <li>Six deployment topologies: on-premise, air-gapped, hybrid, in-region, cloud, embedded, Slack App.</li>
+    <li>The "Zero Exposure" claim is scoped to the path: "no raw data exposure to external LLMs" (Path A) or "zero external exposure" (Path B).</li>
+  </ul>
+</div>
+        ]]></source>
+        <target><![CDATA[
+<h2>Warum zwei Ausführungspfade notwendig sind</h2>
+<p>Unternehmen verfügen selten über ein einheitliches regulatorisches Profil. Ein Telekommunikationsanbieter kann NOC-Analysen über Pfad A und sicherheitskritische Incident-Workflows über Pfad B abwickeln. Ein Krankenhaus kann Pfad A für Routinedokumentation und Pfad B für die klinische Entscheidungsunterstützung nutzen. Ein Rüstungsunternehmen kann ausschließlich Pfad B einsetzen. Ein einziger Ausführungspfad erzwingt einen einzigen regulatorischen Mindeststandard. Zwei Pfade ermöglichen es der Governance, den Pfad dem Workflow anzupassen.</p>
+
+<h2>Pfad A — externes zugelassenes LLM, ausschließlich mit Kapseldaten</h2>
+<p>Die Kapsel (strukturerhaltend, Differential-Privacy-geschützt) wird an einen zugelassenen externen LLM-Endpunkt übertragen — ChatGPT, Claude, Gemini, Perplexity oder eine beliebige LLM API. <strong>Operative Rohdaten verlassen die Unternehmensumgebung nicht.</strong> Nur die Kapsel wird übertragen. Das LLM verarbeitet die Kapsel und liefert eine tokenisierte Antwort zurück. Der State Vault stellt die Antwort innerhalb der Unternehmensumgebung wieder her.</p>
+<ul>
+  <li><strong>Geeignet für:</strong> Workflows mit regulatorischen Profilen, die die externe Übertragung durch Differential Privacy geschützter Kapseln erlauben</li>
+  <li><strong>Stärke:</strong> Zugang zu leistungsfähigen Frontier-Modellen</li>
+  <li><strong>Einschränkung:</strong> Erfordert einen zugelassenen externen LLM-Endpunkt und richtlinienkonforme Freigabe</li>
+</ul>
+
+<h2>Pfad B — lokales On-Premise-Leichtgewichtmodell</h2>
+<p>Ein kleines, privates Leichtgewichtmodell läuft vollständig innerhalb der Unternehmensumgebung. Die Kapsel wird lokal verarbeitet. <strong>Keine externe Datenübertragung.</strong> Einsatz bei Air-Gapped-Netzwerken, klassifizierten Betriebsumgebungen, OT-Umgebungen und streng regulierten Bereichen, in denen jeder externe Endpunkt ausgeschlossen ist.</p>
+<ul>
+  <li><strong>Geeignet für:</strong> Air-Gapped-Netzwerke, klassifizierte Operationen, OT-Umgebungen, strikte Datensouveränitätsanforderungen</li>
+  <li><strong>Stärke:</strong> Keine externe Datenübertragung, vollständige Datenresidenz</li>
+  <li><strong>Einschränkung:</strong> Modellleistung ist durch den lokalen Modell-Footprint begrenzt</li>
+</ul>
+<div class="callout"><strong>Interne Bezeichnung.</strong> Das interne Team verwendet gelegentlich den Begriff „10G" — in der öffentlichen Dokumentation werden die Begriffe <em>lokales On-Premise-Modell</em>, <em>kleines privates Modell</em>, <em>lokaler Inferenzpfad</em> oder <em>On-Premise-/lokaler Ausführungspfad</em> verwendet. Die genaue Modellgröße ist eine Deployment-Entscheidung, die von Hardware und Workflow abhängt.</div>
+
+<h2>Pfadauswahl: ein Entscheidungsrahmen</h2>
+<table class="compare-table">
+  <thead><tr><th>Faktor</th><th>Pfad A</th><th>Pfad B</th></tr></thead>
+  <tbody>
+    <tr><td>Externe Übertragung zulässig</td><td>Ja (nur Kapsel)</td><td>Nein</td></tr>
+    <tr><td>Air-Gapped-Netzwerk</td><td>Nicht anwendbar</td><td>Erforderlich</td></tr>
+    <tr><td>Frontier-Modellleistung benötigt</td><td>Ja</td><td>Begrenzt durch lokales Modell</td></tr>
+    <tr><td>Latenzprofil</td><td>Variabel (netzwerkabhängig)</td><td>Lokal, vorhersehbar</td></tr>
+    <tr><td>Compliance-Posture</td><td>„Keine Offenlegung von Rohdaten"</td><td>„Keine externe Datenübertragung"</td></tr>
+  </tbody>
+</table>
+
+<h2>Deployment-Topologien</h2>
+
+<h3>On-Premise</h3>
+<p>Capsule Runtime und lokales On-Premise-Leichtgewichtmodell werden innerhalb des unternehmenseigenen Rechenzentrums bereitgestellt. Pfad B ist der Standard. Pfad A ist nur verfügbar, wenn ein zugelassener externer Endpunkt durch Richtlinie freigegeben wurde.</p>
+
+<h3>Air-Gapped</h3>
+<p>Capsule Runtime und lokales On-Premise-Leichtgewichtmodell werden in einem vollständig isolierten Netzwerk betrieben. Pfad A ist konstruktionsbedingt nicht verfügbar. Pfad B übernimmt alle Workflows. Typisch für klassifizierte Operationen, Verteidigung und streng regulierte OT-Umgebungen.</p>
+
+<h3>Hybrid</h3>
+<p>Capsule Runtime On-Premise; beide Pfade aktiv. Richtlinien steuern die Zuordnung einzelner Workflows. Typisch für Telekommunikation und Finanzwesen, wo einige Workflows externe Endpunkte tolerieren und andere lokale Ausführung erfordern.</p>
+
+<h3>In-Region (Datensouveränität)</h3>
+<p>Capsule Runtime und Leichtgewichtmodell werden in einer bestimmten Region bereitgestellt (z. B. EU für DSGVO (GDPR)-pflichtige Workloads). Pfad A kann ebenfalls auf in-regionsspezifische externe Endpunkte beschränkt werden. Typisch für multinationale Unternehmen mit regionalen Datenhaltungspflichten.</p>
+
+<h3>Cloud (AWS Marketplace)</h3>
+<p>Capsule Runtime wird über den AWS Marketplace bereitgestellt. Das Cloud-Konto des Kunden hostet sowohl die Runtime als auch das lokale Leichtgewichtmodell. Pfad A optional, abhängig von der Richtlinie.</p>
+
+<h3>Embedded Integration</h3>
+<p>Capsule SDK wird in eine bestehende Anwendung eingebettet (NOC-Konsole, Ticket-System, Krankenhausportal, Missionssystem). Beide Pfade werden unterstützt; die eingebettete Anwendung wählt den Pfad je Workflow.</p>
+
+<h3>Slack App</h3>
+<p>Capsule-Plug-in für Slack-Workflows. Pfad A typisch für allgemeine Teams; Pfad B für regulierte Teams, die Slack als UI-Schicht über einer On-Premise-Runtime nutzen.</p>
+
+<h2>Technischer Ablauf innerhalb von Pfad B</h2>
+<ol>
+  <li>Connector Lane — Operative Daten gelangen in die Capsule Runtime (REST, Webhook, Log-Tap, SDK).</li>
+  <li>Strukturerhaltende Kapsulierung — Operative Kennungen werden tokenisiert, Sequenz und Struktur bleiben erhalten.</li>
+  <li>Differential-Privacy-Schutz — Das Inferenzrisiko auf der Kapsel wird durch kalibrierten Schutz begrenzt.</li>
+  <li>Lokale Weiterleitung — Die Kapsel wird an das lokale Leichtgewichtmodell im selben Netzwerk übermittelt.</li>
+  <li>Modellausgabe — Das Modell erzeugt eine tokenisierte Ausgabe.</li>
+  <li>State Vault — Originale operative Kennungen werden in der Ausgabe wiederhergestellt.</li>
+  <li>Rückführung in den Workflow — Das Ergebnis wird in den ursprünglichen Workflow eingebettet (Ticket, Runbook, EHR-Feld, Missionsübersicht).</li>
+  <li>Governance-Protokollierung — Pfad, angewandte Richtlinie und Prüfpfad werden aufgezeichnet.</li>
+</ol>
+<p><strong>Kein Schritt in Pfad B verlässt die Unternehmensgrenze.</strong></p>
+
+<h2>Die Zero Exposure-Aussage — korrekt abgegrenzt</h2>
+<p>„Zero Exposure" ist eine Aussage, die eines definierten Geltungsbereichs bedarf, um belastbar zu sein. Die von LLM Capsule verwendeten abgegrenzten Formulierungen:</p>
+<ul>
+  <li><strong>Pfad A:</strong> „Keine Offenlegung operativer Rohdaten gegenüber externen LLMs."</li>
+  <li><strong>Pfad B:</strong> „Keine externe Datenübertragung beim On-Premise-/lokalen Ausführungspfad."</li>
+</ul>
+<p>Die Verwendung von „Zero Exposure" als übergeordnetem Slogan ohne Geltungsbereich ist zu vermeiden. Die technische Garantie ist pfadspezifisch und richtlinienabhängig.</p>
+
+<h2>Bewertungskriterien für Einkäufer</h2>
+<ol>
+  <li><strong>Pfadabdeckung.</strong> Werden beide Pfade unterstützt oder nur einer?</li>
+  <li><strong>Granularität der Pfadzuweisung.</strong> Können verschiedene Workflows unter derselben Governance unterschiedliche Pfade nutzen?</li>
+  <li><strong>Lokaler Modell-Footprint.</strong> Welche Hardware-Anforderungen stellt das On-Premise-Leichtgewichtmodell?</li>
+  <li><strong>Air-Gapped-Unterstützung.</strong> Ist die Runtime ohne externe Konnektivität vollständig betriebsfähig?</li>
+  <li><strong>State Vault-Lokalität.</strong> Verbleibt der State Vault auch in Pfad A lokal?</li>
+  <li><strong>Pfad-Audit.</strong> Wird der angewandte Pfad je Anfrage, je Workflow und je Richtlinie protokolliert?</li>
+</ol>
+
+<div class="takeaways">
+  <div class="takeaways__h">Kernaussagen</div>
+  <ul>
+    <li>Zwei Ausführungspfade in einer KI-Datenschicht: externes zugelassenes LLM mit Kapsel (Pfad A) oder lokales On-Premise-Leichtgewichtmodell (Pfad B).</li>
+    <li>Pfad B bewältigt Air-Gapped-, klassifizierte, OT- und streng regulierte Betriebsumgebungen ohne externe Datenübertragung.</li>
+    <li>Die Pfadauswahl erfolgt richtliniengesteuert je Workflow; die Governance protokolliert den angewandten Pfad.</li>
+    <li>Sechs Deployment-Topologien: On-Premise, Air-Gapped, Hybrid, In-Region, Cloud, Embedded Integration, Slack App.</li>
+    <li>Die Zero Exposure-Aussage ist pfadgebunden: „Keine Offenlegung von Rohdaten gegenüber externen LLMs" (Pfad A) oder „Keine externe Datenübertragung" (Pfad B).</li>
+  </ul>
+</div>
+        ]]></target>
+        <note>HTML tags preserved. Text content localized to de-DE. "AI" rendered as "KI" throughout. Path A/B rendered as Pfad A/Pfad B. Zero Exposure retained as brand term. GDPR rendered as DSGVO where contextually referenced (In-Region section). Schaden* compounds not present in this article.</note>
+      </trans-unit>
+
+      <!-- ── SEO (no translation needed) ──────────────────── -->
+
+      <trans-unit id="canonicalUrl" translate="no">
+        <source>https://llmcapsule.ai/resources/learn/on-prem-llm-execution-path</source>
+        <target>https://llmcapsule.ai/resources/learn/on-prem-llm-execution-path</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="datePublished" translate="no">
+        <source>2025-05-01</source>
+        <target>2025-05-01</target>
+        <note>ISO date — do not translate</note>
+      </trans-unit>
+
+      <!-- ── Related Links ─────────────────────────────────── -->
+
+      <trans-unit id="relatedSectionLabel">
+        <source>Continue reading</source>
+        <target>Weitere Artikel</target>
+      </trans-unit>
+
+      <trans-unit id="related1Tag">
+        <source>Pillar</source>
+        <target>Grundlage</target>
+      </trans-unit>
+
+      <trans-unit id="related1Title">
+        <source>Differential privacy for enterprise AI</source>
+        <target>Differential Privacy für den KI-Einsatz im Unternehmen</target>
+      </trans-unit>
+
+      <trans-unit id="related1Href" translate="no">
+        <source>/resources/learn/differential-privacy-for-enterprise-llm</source>
+        <target>/resources/learn/differential-privacy-for-enterprise-llm</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related2Tag">
+        <source>Use case</source>
+        <target>Anwendungsfall</target>
+      </trans-unit>
+
+      <trans-unit id="related2Title">
+        <source>AI on network operations data</source>
+        <target>KI für Netzwerkbetriebsdaten</target>
+      </trans-unit>
+
+      <trans-unit id="related2Href" translate="no">
+        <source>/resources/learn/ai-on-network-operations-data</source>
+        <target>/resources/learn/ai-on-network-operations-data</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related3Tag">
+        <source>Comparison</source>
+        <target>Vergleich</target>
+      </trans-unit>
+
+      <trans-unit id="related3Title">
+        <source>PII guardrails vs operational data protection</source>
+        <target>PII-Schutzmaßnahmen vs. Schutz operativer Daten</target>
+      </trans-unit>
+
+      <trans-unit id="related3Href" translate="no">
+        <source>/resources/learn/pii-guardrails-vs-operational-data-protection</source>
+        <target>/resources/learn/pii-guardrails-vs-operational-data-protection</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <!-- ── CTA Strip ──────────────────────────────────────── -->
+
+      <trans-unit id="ctaTitle">
+        <source>Air-gapped, hybrid, or external — your policy decides.</source>
+        <target>Air-Gapped, Hybrid oder extern — Ihre Richtlinie entscheidet.</target>
+      </trans-unit>
+
+      <trans-unit id="ctaDescription">
+        <source>30-minute review of your regulatory profile and a path-by-path recommendation per workflow.</source>
+        <target>Wir analysieren Ihr regulatorisches Profil und erarbeiten eine pfadspezifische Empfehlung für jeden Workflow — in 30 Minuten.</target>
+      </trans-unit>
+
+      <trans-unit id="ctaLabel">
+        <source>Request a Demo</source>
+        <target>Demo anfordern</target>
+      </trans-unit>
+
+      <trans-unit id="ctaHref" translate="no">
+        <source>/request-a-demo</source>
+        <target>/request-a-demo</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

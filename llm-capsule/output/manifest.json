@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-07 15:52:02",
+  "generated": "2026-05-07 16:06:26",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -377,6 +377,11 @@
         {
           "name": "_preview_LearnArticle_HospitalAiDeploymentPhiProtection.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/hospital-ai-deployment-phi-protection/_preview_LearnArticle_HospitalAiDeploymentPhiProtection.html",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "_preview_LearnArticle_OnPremLlmExecutionPath.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/on-prem-llm-execution-path/_preview_LearnArticle_OnPremLlmExecutionPath.html",
           "modified": "2026-05-07"
         },
         {
@@ -1672,6 +1677,16 @@
           "modified": "2026-04-29"
         },
         {
+          "name": "on-prem-llm-execution-path-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/on-prem-llm-execution-path-de-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "on-prem-llm-execution-path-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/on-prem-llm-execution-path-ko-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
           "name": "on-premise-vs-cloud-ai-data-protection-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/on-premise-vs-cloud-ai-data-protection-de-lines.md",
           "modified": "2026-04-29"
@@ -2411,6 +2426,11 @@
         {
           "name": "LearnArticle_HospitalAiDeploymentPhiProtection.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/hospital-ai-deployment-phi-protection/LearnArticle_HospitalAiDeploymentPhiProtection.tsx",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "LearnArticle_OnPremLlmExecutionPath.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/on-prem-llm-execution-path/LearnArticle_OnPremLlmExecutionPath.tsx",
           "modified": "2026-05-07"
         },
         {

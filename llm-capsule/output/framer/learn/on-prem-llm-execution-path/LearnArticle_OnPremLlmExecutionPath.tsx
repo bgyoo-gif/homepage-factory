@@ -1,0 +1,837 @@
+import { addPropertyControls, ControlType } from "framer"
+
+// LearnArticle — On-Prem LLM Execution Path
+// Article page: /resources/learn/on-prem-llm-execution-path
+// Uses the LearnArticle shared template structure (Hero → TL;DR → Body → Related → CTA)
+// All text is Props-controlled for Framer CMS compatibility.
+// CSS prefix: olep- (On-prem LLM Execution Path)
+
+interface Props {
+  // Hero
+  backLabel?: string
+  backHref?: string
+  title?: string
+  lead?: string
+  category?: string
+  readTime?: string
+  dateUpdated?: string
+
+  // TL;DR
+  tldrLabel?: string
+  tldrBody?: string
+
+  // Body — rich HTML string rendered with dangerouslySetInnerHTML
+  bodyHtml?: string
+
+  // SEO / JSON-LD
+  canonicalUrl?: string
+  datePublished?: string
+
+  // Related links
+  relatedSectionLabel?: string
+  related1Tag?: string
+  related1Title?: string
+  related1Href?: string
+  related2Tag?: string
+  related2Title?: string
+  related2Href?: string
+  related3Tag?: string
+  related3Title?: string
+  related3Href?: string
+
+  // CTA strip
+  ctaTitle?: string
+  ctaDescription?: string
+  ctaLabel?: string
+  ctaHref?: string
+}
+
+const DEFAULT_BODY_HTML = `
+<h2>Why two paths instead of one</h2>
+<p>Enterprises rarely have one regulatory profile. A telecom carrier might run NOC analytics on Path A and mission-critical incident workflows on Path B. A hospital might use Path A for routine documentation and Path B for clinical decision support. A defense contractor might use Path B exclusively. Forcing a single path forces a single regulatory floor; offering two lets governance match the path to the workflow.</p>
+
+<h2>Path A — external approved LLM with capsule data only</h2>
+<p>The capsule (structure-preserving, differential-privacy-protected) is transmitted to an approved external LLM endpoint — ChatGPT, Claude, Gemini, Perplexity, or any LLM API. <strong>Raw operational data does not leave the enterprise environment.</strong> Only the capsule does. The LLM processes the capsule and returns a tokenized response. The state vault restores the response inside the enterprise.</p>
+<ul>
+  <li><strong>Best for:</strong> workflows with regulatory profiles that allow external transmission of differentially-private capsules</li>
+  <li><strong>Strength:</strong> access to frontier model capability</li>
+  <li><strong>Constraint:</strong> requires approved external LLM endpoint and policy alignment</li>
+</ul>
+
+<h2>Path B — on-prem local lightweight model</h2>
+<p>A small private lightweight model runs entirely inside the enterprise environment. The capsule is processed locally. <strong>Zero external transmission.</strong> Used for air-gapped, classified, OT, and strictly regulated operations where any external endpoint is unacceptable.</p>
+<ul>
+  <li><strong>Best for:</strong> air-gapped networks, classified operations, OT environments, strict data sovereignty</li>
+  <li><strong>Strength:</strong> zero external exposure, full data residency</li>
+  <li><strong>Constraint:</strong> model capability is bounded by the local lightweight model footprint</li>
+</ul>
+<div class="callout"><strong>Internal naming.</strong> The internal team sometimes refers to "10G" — public documentation uses <em>lightweight on-prem model</em>, <em>small private model</em>, <em>local inference path</em>, or <em>on-prem/local execution path</em>. The exact size is a deployment decision based on hardware and workflow.</div>
+
+<h2>Path selection: a decision framework</h2>
+<table class="compare-table">
+  <thead><tr><th>Factor</th><th>Path A</th><th>Path B</th></tr></thead>
+  <tbody>
+    <tr><td>External transmission allowed</td><td>Yes (capsule only)</td><td>No</td></tr>
+    <tr><td>Air-gapped network</td><td>Not applicable</td><td>Required</td></tr>
+    <tr><td>Frontier model capability needed</td><td>Yes</td><td>Bounded by local model</td></tr>
+    <tr><td>Latency profile</td><td>Variable (network)</td><td>Local, predictable</td></tr>
+    <tr><td>Compliance posture</td><td>"No raw data exposure"</td><td>"Zero external exposure"</td></tr>
+  </tbody>
+</table>
+
+<h2>Deployment topologies</h2>
+
+<h3>On-premise</h3>
+<p>Capsule Runtime + on-prem local lightweight model deployed inside the enterprise data center. Path B is the default. Path A is available only if a separate approved external endpoint is whitelisted by policy.</p>
+
+<h3>Air-gapped</h3>
+<p>Capsule Runtime + on-prem local lightweight model deployed in a fully isolated network. Path A is unavailable by design. Path B handles all workflows. Common for classified operations, defense, and high-regulation OT.</p>
+
+<h3>Hybrid</h3>
+<p>Capsule Runtime on-prem; both paths active. Policy routes individual workflows. Common for telecom and finance where some workflows tolerate external endpoints and others require local execution.</p>
+
+<h3>In-region (data sovereignty)</h3>
+<p>Capsule Runtime + lightweight model deployed in a specific region (e.g., EU for GDPR-bound workloads). Path A may also be allowed only to in-region external endpoints. Common for multinationals with regional data residency obligations.</p>
+
+<h3>Cloud (AWS Marketplace)</h3>
+<p>Capsule Runtime deployed via AWS Marketplace, with the customer's cloud account hosting both the runtime and the local lightweight model. Path A optional based on policy.</p>
+
+<h3>Embedded integration</h3>
+<p>Capsule SDK embedded into an existing application (NOC console, ticket system, hospital portal, mission system). Both paths supported; the embedded application chooses per workflow.</p>
+
+<h3>Slack App</h3>
+<p>Capsule plug-in for Slack workflows. Path A typical for general-purpose teams; Path B for regulated teams routing through Slack as a UI layer over an on-prem runtime.</p>
+
+<h2>What happens technically inside Path B</h2>
+<ol>
+  <li>Connector lane delivers operational data into the Capsule Runtime (REST, webhook, log tap, SDK).</li>
+  <li>Structure-preserving encapsulation tokenizes operational identifiers while preserving sequence and structure.</li>
+  <li>Differential-privacy-based protection bounds inference risk on the capsule.</li>
+  <li>The capsule is dispatched to the local lightweight model running inside the same network.</li>
+  <li>The model produces a tokenized output.</li>
+  <li>The state vault rehydrates original operational identifiers in the output.</li>
+  <li>The result is inserted back into the originating workflow (ticket, runbook, EHR field, mission summary).</li>
+  <li>Governance records the path applied, the policy invoked, and the audit trail.</li>
+</ol>
+<p><strong>No step in Path B reaches outside the enterprise boundary.</strong></p>
+
+<h2>The Zero Exposure claim — scoped correctly</h2>
+<p>"Zero Exposure" is a claim that needs a scope to be defensible. The scoped versions LLM Capsule uses:</p>
+<ul>
+  <li><strong>Path A:</strong> "No raw operational data exposure to external LLMs."</li>
+  <li><strong>Path B:</strong> "Zero external exposure in the on-prem / local execution path."</li>
+</ul>
+<p>Avoid unbounded "Zero Exposure" as a top-level slogan. The technical guarantee is path-specific and policy-conditional.</p>
+
+<h2>What buyers should evaluate</h2>
+<ol>
+  <li><strong>Path coverage.</strong> Are both paths supported, or only one?</li>
+  <li><strong>Path policy granularity.</strong> Can different workflows use different paths under the same governance?</li>
+  <li><strong>Local model footprint.</strong> What hardware does the on-prem lightweight model require?</li>
+  <li><strong>Air-gap support.</strong> Is the runtime fully operable without external connectivity?</li>
+  <li><strong>State vault locality.</strong> Does the state vault stay local in Path A as well?</li>
+  <li><strong>Audit per path.</strong> Is the path applied recorded per request, per workflow, per policy?</li>
+</ol>
+
+<div class="takeaways">
+  <div class="takeaways__h">Key takeaways</div>
+  <ul>
+    <li>Two execution paths in one AI enablement data layer: external approved LLM with capsule (Path A) or on-prem local lightweight model (Path B).</li>
+    <li>Path B handles air-gapped, classified, OT, and strictly regulated operations with zero external transmission.</li>
+    <li>Selection is policy-driven per workflow; governance records the path applied.</li>
+    <li>Six deployment topologies: on-premise, air-gapped, hybrid, in-region, cloud, embedded, Slack App.</li>
+    <li>The "Zero Exposure" claim is scoped to the path: "no raw data exposure to external LLMs" (Path A) or "zero external exposure" (Path B).</li>
+  </ul>
+</div>
+`
+
+export default function LearnArticle_OnPremLlmExecutionPath({
+  backLabel = "← Learn",
+  backHref = "/learn",
+  title = "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations",
+  lead = "Two execution paths inside a single AI enablement data layer. When external transmission is not an option, the on-prem local lightweight model handles the workflow inside your boundary — zero external exposure, full restoration.",
+  category = "ARCHITECTURE · Execution Path",
+  readTime = "11 min read",
+  dateUpdated = "Updated May 2025",
+  tldrLabel = "Definition · TL;DR",
+  tldrBody = "LLM Capsule supports two execution paths. Path A sends capsule data to an external approved LLM — no raw operational data exposure. Path B runs a small private lightweight model entirely inside your enterprise environment — zero external transmission. Selection is policy-driven per workflow.",
+  bodyHtml = DEFAULT_BODY_HTML,
+  canonicalUrl = "https://llmcapsule.ai/resources/learn/on-prem-llm-execution-path",
+  datePublished = "2025-05-01",
+  relatedSectionLabel = "Continue reading",
+  related1Tag = "Pillar",
+  related1Title = "Differential privacy for enterprise AI",
+  related1Href = "/resources/learn/differential-privacy-for-enterprise-llm",
+  related2Tag = "Use case",
+  related2Title = "AI on network operations data",
+  related2Href = "/resources/learn/ai-on-network-operations-data",
+  related3Tag = "Comparison",
+  related3Title = "PII guardrails vs operational data protection",
+  related3Href = "/resources/learn/pii-guardrails-vs-operational-data-protection",
+  ctaTitle = "Air-gapped, hybrid, or external — your policy decides.",
+  ctaDescription = "30-minute review of your regulatory profile and a path-by-path recommendation per workflow.",
+  ctaLabel = "Request a Demo",
+  ctaHref = "/request-a-demo",
+}: Props) {
+  const relatedItems = [
+    { tag: related1Tag, title: related1Title, href: related1Href },
+    { tag: related2Tag, title: related2Title, href: related2Href },
+    { tag: related3Tag, title: related3Title, href: related3Href },
+  ].filter((r) => r.title && r.href)
+
+  const jsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": title,
+    "description": lead,
+    "author": { "@type": "Organization", "name": "CUBIG" },
+    "publisher": { "@type": "Organization", "name": "CUBIG" },
+    "datePublished": datePublished,
+    "dateModified": "2025-05-05",
+    "mainEntityOfPage": canonicalUrl,
+    "wordCount": 2500,
+  })
+
+  const faqJsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the on-prem LLM execution path?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The on-prem LLM execution path (Path B) runs a small private lightweight model entirely inside the enterprise environment. No raw operational data and no capsule data leaves the boundary. It is used for air-gapped, classified, or strictly regulated operations where any external transmission is unacceptable.",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "When should I use Path A vs Path B?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Path A (external approved LLM with capsule data only) is appropriate when the workflow's regulatory profile allows transmission of differentially-private capsule data to an approved external endpoint. Path B (on-prem local lightweight model) is required when no external transmission is allowed — air-gapped networks, classified operations, OT environments, or strict regulated industries with data sovereignty constraints.",
+        },
+      },
+      {
+        "@type": "Question",
+        "name": "Can I switch between paths per workflow?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Path selection is policy-driven. Different workflows in the same enterprise can route to different paths based on regulatory profile, data sensitivity, and customer commitments. Governance records the path applied per workflow.",
+        },
+      },
+    ],
+  })
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+        /* ── Root ─────────────────────────────────────────── */
+        .olep-root {
+          width: 100%;
+          container-type: inline-size;
+          font-family: var(--f-display, 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif);
+          color: var(--c-ink, #0f1130);
+          background-color: var(--c-bg, #ffffff);
+          -webkit-font-smoothing: antialiased;
+          word-break: keep-all;
+          overflow-wrap: break-word;
+        }
+
+        /* ── Container ────────────────────────────────────── */
+        .olep-container {
+          max-width: var(--container-max, 1280px);
+          margin: 0 auto;
+          padding: 0 var(--s-page, clamp(20px, 4vw, 80px));
+        }
+
+        /* ── 1. Article Hero ──────────────────────────────── */
+        .olep-hero {
+          padding: clamp(60px, 8vw, 100px) 0 clamp(40px, 5vw, 64px);
+          border-bottom: 1px solid var(--c-rule, #e5e7eb);
+        }
+
+        .olep-hero__back {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--c-primary, #5b4fe9);
+          text-decoration: none;
+          letter-spacing: 0.01em;
+          margin-bottom: 28px;
+          transition: color 0.15s;
+        }
+        .olep-hero__back:hover { color: var(--c-primary-dark, #3b2fbf); }
+
+        .olep-hero__title {
+          font-size: clamp(32px, 4.5vw, 56px);
+          font-weight: 700;
+          line-height: 1.12;
+          letter-spacing: -0.02em;
+          color: var(--c-ink, #0f1130);
+          margin: 0 0 20px;
+          max-width: 860px;
+        }
+
+        .olep-hero__lead {
+          font-size: clamp(16px, 1.4vw, 19px);
+          line-height: 1.65;
+          color: var(--c-ink-soft, #3a3d5e);
+          margin: 0 0 28px;
+          max-width: 760px;
+        }
+
+        .olep-hero__meta {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 10px 16px;
+          max-width: 760px;
+        }
+
+        .olep-meta__chip {
+          display: inline-flex;
+          align-items: center;
+          padding: 4px 12px;
+          border-radius: 999px;
+          background-color: var(--c-primary-soft, #eeebfe);
+          color: var(--c-primary, #5b4fe9);
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+        }
+
+        .olep-meta__sep {
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: var(--c-rule, #e5e7eb);
+          flex-shrink: 0;
+        }
+
+        .olep-meta__time,
+        .olep-meta__date {
+          font-size: 13px;
+          color: var(--c-muted, #6b7280);
+          font-weight: 500;
+        }
+
+        /* ── 2. TL;DR block ───────────────────────────────── */
+        .olep-tldr-wrap {
+          padding: clamp(40px, 5vw, 72px) 0;
+          border-bottom: 1px solid var(--c-rule, #e5e7eb);
+        }
+
+        .olep-tldr {
+          max-width: 880px;
+          margin: 0 auto;
+          background-color: var(--c-bg-dark, #0f1130);
+          border-radius: var(--r-lg, 16px);
+          padding: 32px 36px;
+        }
+
+        .olep-tldr__label {
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: var(--c-primary, #5b4fe9);
+          margin-bottom: 14px;
+        }
+
+        .olep-tldr__body {
+          font-size: 16px;
+          line-height: 1.7;
+          color: rgba(255, 255, 255, 0.88);
+          margin: 0;
+        }
+
+        .olep-tldr__body strong {
+          color: #ffffff;
+          font-weight: 700;
+        }
+
+        /* ── 3. Article Body ──────────────────────────────── */
+        .olep-body-wrap {
+          padding: clamp(48px, 6vw, 96px) 0;
+          border-bottom: 1px solid var(--c-rule, #e5e7eb);
+        }
+
+        .olep-body {
+          max-width: 760px;
+          margin: 0 auto;
+        }
+
+        /* Headings inside body */
+        .olep-body h2 {
+          font-size: clamp(22px, 2.2vw, 28px);
+          font-weight: 700;
+          line-height: 1.2;
+          letter-spacing: -0.02em;
+          color: var(--c-ink, #0f1130);
+          margin: 0 0 18px;
+          padding-top: 40px;
+          border-top: 2px solid var(--c-rule, #e5e7eb);
+        }
+
+        .olep-body h2:first-child {
+          padding-top: 0;
+          border-top: none;
+        }
+
+        .olep-body h3 {
+          font-size: clamp(17px, 1.5vw, 20px);
+          font-weight: 700;
+          line-height: 1.25;
+          letter-spacing: -0.01em;
+          color: var(--c-ink, #0f1130);
+          margin: 32px 0 10px;
+        }
+
+        /* Paragraphs */
+        .olep-body p {
+          font-size: 17px;
+          line-height: 1.75;
+          color: var(--c-ink-soft, #3a3d5e);
+          margin: 0 0 18px;
+        }
+
+        .olep-body p:last-child { margin-bottom: 0; }
+
+        .olep-body p strong {
+          color: var(--c-ink, #0f1130);
+          font-weight: 700;
+        }
+
+        /* Lists */
+        .olep-body ul,
+        .olep-body ol {
+          margin: 0 0 24px 0;
+          padding-left: 24px;
+        }
+
+        .olep-body li {
+          font-size: 17px;
+          line-height: 1.7;
+          color: var(--c-ink-soft, #3a3d5e);
+          margin-bottom: 10px;
+        }
+
+        .olep-body li strong {
+          color: var(--c-ink, #0f1130);
+          font-weight: 700;
+        }
+
+        .olep-body li:last-child { margin-bottom: 0; }
+
+        /* Blockquote */
+        .olep-body blockquote {
+          margin: 28px 0;
+          padding: 20px 24px;
+          border-left: 3px solid var(--c-primary, #5b4fe9);
+          background-color: var(--c-primary-soft, #eeebfe);
+          border-radius: 0 var(--r-sm, 6px) var(--r-sm, 6px) 0;
+        }
+
+        .olep-body blockquote p {
+          margin: 0;
+          color: var(--c-ink, #0f1130);
+          font-style: italic;
+        }
+
+        /* Inline code */
+        .olep-body code {
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 14px;
+          background-color: var(--c-bg-soft, #f7f8fb);
+          border: 1px solid var(--c-rule, #e5e7eb);
+          border-radius: var(--r-sm, 6px);
+          padding: 2px 7px;
+          color: var(--c-ink, #0f1130);
+        }
+
+        /* Code block (pre) */
+        .olep-body pre {
+          background-color: var(--c-bg-dark, #0f1130);
+          border-radius: var(--r-md, 10px);
+          padding: 24px;
+          margin: 24px 0;
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+        .olep-body pre::-webkit-scrollbar { display: none; }
+
+        .olep-body pre code {
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 14px;
+          background: none;
+          border: none;
+          padding: 0;
+          color: rgba(255, 255, 255, 0.9);
+          line-height: 1.65;
+        }
+
+        /* Table */
+        .olep-body table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 28px 0;
+          font-size: 15px;
+        }
+
+        .olep-body th,
+        .olep-body td {
+          padding: 12px 16px;
+          text-align: left;
+          border-bottom: 1px solid var(--c-rule, #e5e7eb);
+          line-height: 1.5;
+          color: var(--c-ink-soft, #3a3d5e);
+        }
+
+        .olep-body th {
+          font-weight: 700;
+          color: var(--c-ink, #0f1130);
+          background-color: var(--c-bg-soft, #f7f8fb);
+        }
+
+        .olep-body tr:last-child td { border-bottom: none; }
+
+        /* Callout (amber) */
+        .olep-body .callout {
+          display: flex;
+          gap: 14px;
+          padding: 20px 24px;
+          background-color: var(--c-amber-soft, #fef3c7);
+          border-left: 3px solid var(--c-amber, #f59e0b);
+          border-radius: 0 var(--r-sm, 6px) var(--r-sm, 6px) 0;
+          margin: 28px 0;
+        }
+
+        .olep-body .callout strong {
+          color: var(--c-ink, #0f1130);
+          font-weight: 700;
+        }
+
+        .olep-body .callout em {
+          font-style: italic;
+          color: var(--c-ink-soft, #3a3d5e);
+        }
+
+        /* Takeaways box */
+        .olep-body .takeaways {
+          background-color: var(--c-bg-soft, #f7f8fb);
+          border: 1px solid var(--c-rule, #e5e7eb);
+          border-radius: var(--r-md, 10px);
+          padding: 24px 28px;
+          margin: 28px 0;
+        }
+
+        .olep-body .takeaways__h {
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: var(--c-muted, #6b7280);
+          margin-bottom: 12px;
+        }
+
+        .olep-body .takeaways ul {
+          margin: 0;
+          padding-left: 20px;
+        }
+
+        .olep-body .takeaways li {
+          font-size: 15px;
+        }
+
+        /* Inline links inside body */
+        .olep-body a {
+          color: var(--c-primary, #5b4fe9);
+          text-decoration: none;
+          border-bottom: 1px solid transparent;
+          transition: border-color 0.15s, color 0.15s;
+        }
+        .olep-body a:hover {
+          color: var(--c-primary-dark, #3b2fbf);
+          border-bottom-color: var(--c-primary-dark, #3b2fbf);
+        }
+
+        /* ── 4. Related Links ─────────────────────────────── */
+        .olep-related {
+          padding: clamp(48px, 6vw, 80px) 0;
+          background-color: var(--c-bg-soft, #f7f8fb);
+        }
+
+        .olep-related__eyebrow {
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: var(--c-primary, #5b4fe9);
+          margin-bottom: 8px;
+          display: block;
+        }
+
+        .olep-related__heading {
+          font-size: clamp(22px, 2.2vw, 28px);
+          font-weight: 700;
+          line-height: 1.2;
+          letter-spacing: -0.02em;
+          color: var(--c-ink, #0f1130);
+          margin: 0 0 28px;
+        }
+
+        .olep-related__grid {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 16px;
+        }
+
+        @container (max-width: 767px) {
+          .olep-related__grid {
+            grid-template-columns: minmax(0, 1fr);
+          }
+        }
+
+        @container (min-width: 768px) and (max-width: 1023px) {
+          .olep-related__grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+
+        .olep-related__card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 16px;
+          padding: 20px 22px;
+          background-color: var(--c-bg, #ffffff);
+          border: 1px solid var(--c-rule, #e5e7eb);
+          border-radius: var(--r-md, 10px);
+          text-decoration: none;
+          color: var(--c-ink, #0f1130);
+          transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        .olep-related__card:hover {
+          border-color: var(--c-primary, #5b4fe9);
+          box-shadow: 0 4px 16px rgba(91, 79, 233, 0.08);
+        }
+
+        .olep-related__card-tag {
+          display: inline-block;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          color: var(--c-muted, #6b7280);
+        }
+
+        .olep-related__card-title {
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 1.4;
+          color: var(--c-ink, #0f1130);
+          flex: 1;
+        }
+
+        .olep-related__card-arrow {
+          font-size: 18px;
+          color: var(--c-primary, #5b4fe9);
+          line-height: 1;
+          align-self: flex-end;
+        }
+
+        /* ── 5. CTA Strip ─────────────────────────────────── */
+        .olep-cta {
+          padding: clamp(56px, 7vw, 96px) 0;
+          background-color: var(--c-bg-dark, #0f1130);
+        }
+
+        .olep-cta__inner {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 12px;
+        }
+
+        .olep-cta__title {
+          font-size: clamp(26px, 3vw, 38px);
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -0.02em;
+          color: #ffffff;
+          margin: 0;
+          max-width: 640px;
+        }
+
+        .olep-cta__desc {
+          font-size: clamp(15px, 1.2vw, 17px);
+          line-height: 1.65;
+          color: rgba(255, 255, 255, 0.72);
+          margin: 0 0 8px;
+          max-width: 560px;
+        }
+
+        .olep-cta__btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 14px 28px;
+          border-radius: var(--r-md, 10px);
+          font-weight: 600;
+          font-size: 15px;
+          cursor: pointer;
+          text-decoration: none;
+          background-color: var(--c-bg, #ffffff);
+          color: var(--c-ink, #0f1130);
+          border: none;
+          transition: background-color 0.2s, color 0.2s;
+        }
+        .olep-cta__btn:hover {
+          background-color: var(--c-primary-soft, #eeebfe);
+          color: var(--c-primary, #5b4fe9);
+        }
+
+        /* ── Container query: mobile adjustments ─────────── */
+        @container (max-width: 767px) {
+          .olep-hero { padding-top: 48px; }
+          .olep-hero__title { font-size: 28px; }
+          .olep-hero__lead { font-size: 16px; }
+          .olep-tldr { padding: 24px 20px; border-radius: var(--r-md, 10px); }
+          .olep-body p,
+          .olep-body li { font-size: 16px; }
+          .olep-body h2 { padding-top: 28px; }
+          .olep-body table { font-size: 14px; display: block; overflow-x: auto; scrollbar-width: none; }
+          .olep-body table::-webkit-scrollbar { display: none; }
+          .olep-cta__inner { gap: 10px; }
+          .olep-cta__title { font-size: 24px; }
+          .olep-cta__desc { font-size: 15px; }
+        }
+      `}</style>
+
+      <div className="olep-root">
+
+        {/* ── 1. Article Hero ── */}
+        <section className="olep-hero">
+          <div className="olep-container">
+            <a href={backHref} className="olep-hero__back">{backLabel}</a>
+            <h1 className="olep-hero__title">{title}</h1>
+            <p className="olep-hero__lead">{lead}</p>
+            <div className="olep-hero__meta">
+              <span className="olep-meta__chip">{category}</span>
+              <span className="olep-meta__sep" aria-hidden="true" />
+              <span className="olep-meta__time">{readTime}</span>
+              <span className="olep-meta__sep" aria-hidden="true" />
+              <span className="olep-meta__date">{dateUpdated}</span>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 2. TL;DR ── */}
+        <div className="olep-tldr-wrap">
+          <div className="olep-container">
+            <div className="olep-tldr">
+              <div className="olep-tldr__label">{tldrLabel}</div>
+              <p className="olep-tldr__body">{tldrBody}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* ── 3. Article Body ── */}
+        <div className="olep-body-wrap">
+          <div className="olep-container">
+            <article
+              className="olep-body"
+              dangerouslySetInnerHTML={{ __html: bodyHtml }}
+            />
+          </div>
+        </div>
+
+        {/* ── 4. Related Links ── */}
+        {relatedItems.length > 0 && (
+          <div className="olep-related">
+            <div className="olep-container">
+              <span className="olep-related__eyebrow">{relatedSectionLabel}</span>
+              <h2 className="olep-related__heading">Related guides</h2>
+              <div className="olep-related__grid">
+                {relatedItems.map((item, i) => (
+                  <a key={i} href={item.href} className="olep-related__card">
+                    {item.tag && (
+                      <span className="olep-related__card-tag">{item.tag}</span>
+                    )}
+                    <span className="olep-related__card-title">{item.title}</span>
+                    <span className="olep-related__card-arrow" aria-hidden="true">→</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── 5. CTA Strip ── */}
+        <div className="olep-cta">
+          <div className="olep-container">
+            <div className="olep-cta__inner">
+              <h2 className="olep-cta__title">{ctaTitle}</h2>
+              {ctaDescription && (
+                <p className="olep-cta__desc">{ctaDescription}</p>
+              )}
+              <a href={ctaHref} className="olep-cta__btn">{ctaLabel}</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </>
+  )
+}
+
+addPropertyControls(LearnArticle_OnPremLlmExecutionPath, {
+  // Hero
+  backLabel:   { type: ControlType.String, title: "Back Label",    defaultValue: "← Learn" },
+  backHref:    { type: ControlType.String, title: "Back URL",      defaultValue: "/learn" },
+  title:       { type: ControlType.String, title: "Title",         defaultValue: "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations" },
+  lead:        { type: ControlType.String, title: "Lead",          defaultValue: "Two execution paths inside a single AI enablement data layer. When external transmission is not an option, the on-prem local lightweight model handles the workflow inside your boundary — zero external exposure, full restoration.", displayTextArea: true },
+  category:    { type: ControlType.String, title: "Category",      defaultValue: "ARCHITECTURE · Execution Path" },
+  readTime:    { type: ControlType.String, title: "Read Time",     defaultValue: "11 min read" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated",  defaultValue: "Updated May 2025" },
+
+  // TL;DR
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "Definition · TL;DR" },
+  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "LLM Capsule supports two execution paths. Path A sends capsule data to an external approved LLM — no raw operational data exposure. Path B runs a small private lightweight model entirely inside your enterprise environment — zero external transmission. Selection is policy-driven per workflow.", displayTextArea: true },
+
+  // Body HTML
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: DEFAULT_BODY_HTML, displayTextArea: true },
+
+  // SEO
+  canonicalUrl:  { type: ControlType.String, title: "Canonical URL",   defaultValue: "https://llmcapsule.ai/resources/learn/on-prem-llm-execution-path" },
+  datePublished: { type: ControlType.String, title: "Date Published",  defaultValue: "2025-05-01" },
+
+  // Related links
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "Continue reading" },
+  related1Tag:   { type: ControlType.String, title: "Related 1 Tag",   defaultValue: "Pillar" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "Differential privacy for enterprise AI" },
+  related1Href:  { type: ControlType.String, title: "Related 1 URL",   defaultValue: "/resources/learn/differential-privacy-for-enterprise-llm" },
+  related2Tag:   { type: ControlType.String, title: "Related 2 Tag",   defaultValue: "Use case" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "AI on network operations data" },
+  related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/resources/learn/ai-on-network-operations-data" },
+  related3Tag:   { type: ControlType.String, title: "Related 3 Tag",   defaultValue: "Comparison" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "PII guardrails vs operational data protection" },
+  related3Href:  { type: ControlType.String, title: "Related 3 URL",   defaultValue: "/resources/learn/pii-guardrails-vs-operational-data-protection" },
+
+  // CTA strip
+  ctaTitle:       { type: ControlType.String, title: "CTA Title",        defaultValue: "Air-gapped, hybrid, or external — your policy decides." },
+  ctaDescription: { type: ControlType.String, title: "CTA Description",  defaultValue: "30-minute review of your regulatory profile and a path-by-path recommendation per workflow.", displayTextArea: true },
+  ctaLabel:       { type: ControlType.String, title: "CTA Button Label", defaultValue: "Request a Demo" },
+  ctaHref:        { type: ControlType.String, title: "CTA Button URL",   defaultValue: "/request-a-demo" },
+})
