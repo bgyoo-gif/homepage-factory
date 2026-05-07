@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file
+    original="llm-capsule/output/framer/glossary/connector-lane/GlossaryPage_ConnectorLane.tsx"
+    source-language="en"
+    target-language="de-DE"
+    datatype="plaintext"
+    tool-id="homepage-factory-translator"
+  >
+    <header>
+      <note>mode: localize | page: glossary/connector-lane | brand: llm-capsule</note>
+    </header>
+    <body>
+
+      <!-- ── Hero ── -->
+
+      <trans-unit id="backLabel">
+        <source>← Glossary</source>
+        <target>← Glossar</target>
+        <note>Navigation back link</note>
+      </trans-unit>
+
+      <trans-unit id="backHref">
+        <source>/glossary</source>
+        <target>/glossary</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="term">
+        <source>Connector Lane</source>
+        <target>Connector Lane</target>
+        <note>Technical brand term — retained in English as product-specific concept</note>
+      </trans-unit>
+
+      <trans-unit id="lead">
+        <source>How LLM Capsule reads the document, ticket, and operational sources that already live inside the customer environment — without moving raw data outside that environment.</source>
+        <target>LLM Capsule liest Dokumente, Tickets und operative Datenquellen direkt in der Kundenumgebung — On-Premise, Air-Gapped oder in der VPC. Rohdaten verlassen die Umgebung zu keinem Zeitpunkt.</target>
+        <note>Hero lead — EN dash enumeration restructured into two DE sentences. "without moving raw data" made explicit as standalone sentence per DE localize rules.</note>
+      </trans-unit>
+
+      <trans-unit id="category">
+        <source>GLOSSARY</source>
+        <target>GLOSSAR</target>
+        <note>Category chip label</note>
+      </trans-unit>
+
+      <!-- ── Definition block ── -->
+
+      <trans-unit id="definitionLabel">
+        <source>Definition</source>
+        <target>Definition</target>
+        <note>Section label — same in German</note>
+      </trans-unit>
+
+      <trans-unit id="definitionBody">
+        <source>The connector lane describes how LLM Capsule, running inside the customer's environment (on-prem, air-gapped, or VPC), reads from the document, ticket, and operational systems that already live in that environment. It is not a SaaS integration platform that calls into customer systems from the outside, and it is not an API marketplace.</source>
+        <target>Der Connector Lane beschreibt, wie LLM Capsule — betrieben innerhalb der Kundenumgebung (On-Premise, Air-Gapped oder VPC) — auf die dort bereits vorhandenen Dokument-, Ticket- und operativen Systeme zugreift. LLM Capsule ist keine externe SaaS-Integrationsplattform und kein API-Marktplatz, der von außen auf Kundensysteme zugreift.</target>
+        <note>Main definition text — EN two-sentence structure preserved, German article "Der" used for Connector Lane as technical noun. Repetition of "from the outside" and "not an API marketplace" consolidated into one clarifying sentence.</note>
+      </trans-unit>
+
+      <!-- ── Body HTML ── -->
+
+      <trans-unit id="bodyHtml">
+        <source><![CDATA[
+<h2>What it is — and what it isn't</h2>
+<p>The connector lane is the in-environment reading surface. Capsule sits next to existing systems on the customer's network, reads the document or record where it already is, encapsulates it locally, and returns the restored output to the originating workflow. Raw operational data does not traverse a public network or an external SaaS endpoint to reach Capsule.</p>
+<p>This is the opposite of how a typical "integration platform" works. Capsule is not an external service that pulls data out of customer systems — it is a layer running inside the environment those systems already trust.</p>
+
+<h2>What it reads</h2>
+<ul>
+<li><strong>Document and record systems</strong> — SharePoint, internal DMS, S3 / blob storage in the customer's VPC, file repositories</li>
+<li><strong>Ticket and ITSM systems</strong> — ServiceNow, Jira, Remedy, in-house ticketing</li>
+<li><strong>CRM / ERP</strong> — Salesforce, Dynamics, Oracle, SAP, in-house systems</li>
+<li><strong>Healthcare records</strong> — hospital information systems, clinical record stores, imaging metadata, all read inside the hospital network</li>
+<li><strong>Operational systems</strong> — NOC consoles, OSS / BSS, OT historians, log platforms read in DMZ and processed in environment</li>
+<li><strong>Custom and legacy systems</strong> — internal databases, file drops, queues, in-house tooling — Capsule adapts to what the customer already runs</li>
+</ul>
+
+<h2>Why this distinction matters</h2>
+<p>For regulated buyers — defense, healthcare, finance, telecom — "integration" usually means "data leaves my environment to reach a vendor." That is exactly the failure mode that blocks AI adoption on operational data. The connector lane is the opposite contract: Capsule comes to the data, the data does not go to Capsule.</p>
+
+<h2>Integration interfaces — how existing systems invoke Capsule</h2>
+<p>Once Capsule is deployed inside the environment, existing systems invoke it through whichever interface fits their stack:</p>
+<ul>
+<li><strong>REST / gRPC</strong> — for modern operations tools, RAG pipelines, and custom orchestrators inside the environment</li>
+<li><strong>JDBC / ODBC</strong> — for legacy database systems (Oracle, MSSQL, DB2) that need Capsule invocation as a stored procedure or job step</li>
+<li><strong>Graph API</strong> — for DMS / ECM systems (SharePoint, etc.) where document events trigger Capsule processing</li>
+<li><strong>Webhook / log tap</strong> — for incident- and event-driven workflows from NOC, ticket, OT, and SIEM-adjacent systems</li>
+<li><strong>On-prem API</strong> — Capsule's own on-prem callable surface; same contract whether you're air-gapped, hybrid, or VPC</li>
+<li><strong>Embedded SDK</strong> — library-level integration for ISVs and platform vendors who ship Capsule inside their own product</li>
+<li><strong>Slack App</strong> — for teams using Slack as the operations UI; the runtime stays in the customer environment, the Slack App is the invocation surface</li>
+</ul>
+<p>All of these interfaces stay inside the customer network. None of them route raw operational data through an external SaaS endpoint to reach Capsule.</p>
+
+<h2>Reference statement</h2>
+<blockquote><p>The connector lane is what makes regulated AI deployment an integration instead of a data egress decision. Capsule reads existing systems where they already are. Raw operational data does not leave the environment.</p></blockquote>
+]]></source>
+        <target><![CDATA[
+<h2>Was der Connector Lane ist — und was er nicht ist</h2>
+<p>Der Connector Lane ist die lesende Schicht innerhalb der Kundenumgebung. LLM Capsule wird neben den bestehenden Systemen im Kundennetzwerk betrieben, liest Dokumente und Datensätze an ihrem vorhandenen Speicherort, kapsuliert sie lokal und gibt die wiederhergestellte Ausgabe an den ursprünglichen Workflow zurück. Operative Rohdaten durchqueren zu keinem Zeitpunkt ein öffentliches Netzwerk oder einen externen SaaS-Endpunkt.</p>
+<p>Das ist das Gegenteil einer typischen Integrationsplattform. LLM Capsule ist kein externer Dienst, der Daten aus Kundensystemen herauszieht — sondern eine Schicht, die innerhalb der Umgebung läuft, der diese Systeme bereits vertrauen.</p>
+
+<h2>Welche Systeme der Connector Lane liest</h2>
+<ul>
+<li><strong>Dokument- und Datensatzsysteme</strong> — SharePoint, internes DMS, S3 / Blob-Speicher in der VPC des Kunden, Dateiablagen</li>
+<li><strong>Ticket- und ITSM-Systeme</strong> — ServiceNow, Jira, Remedy, interne Ticketlösungen</li>
+<li><strong>CRM / ERP</strong> — Salesforce, Dynamics, Oracle, SAP, interne Systeme</li>
+<li><strong>Patientendaten im Gesundheitswesen</strong> — Krankenhausinformationssysteme, klinische Datenspeicher, Bildgebungsmetadaten — alles innerhalb des Krankenhausnetzwerks verarbeitet</li>
+<li><strong>Operative Systeme</strong> — NOC-Konsolen, OSS / BSS, OT-Prozessdatenarchive, Protokollplattformen in der DMZ, Verarbeitung in der Umgebung</li>
+<li><strong>Individual- und Altsysteme</strong> — interne Datenbanken, Dateiablagen, Warteschlangen, eigenentwickelte Werkzeuge — LLM Capsule passt sich der bestehenden Systemlandschaft des Kunden an</li>
+</ul>
+
+<h2>Warum diese Unterscheidung entscheidend ist</h2>
+<p>Für regulierte Abnehmer — Verteidigung, Gesundheitswesen, Finanzwesen, Telekommunikation — bedeutet „Integration" häufig: Daten verlassen die eigene Umgebung, um einen Anbieter zu erreichen. Genau das blockiert den KI-Einsatz auf operativen Daten. Der Connector Lane kehrt dieses Verhältnis um: LLM Capsule kommt zu den Daten — die Daten gehen nicht zu LLM Capsule.</p>
+
+<h2>Integrationsschnittstellen — wie bestehende Systeme LLM Capsule aufrufen</h2>
+<p>Nach der Bereitstellung in der Umgebung rufen bestehende Systeme LLM Capsule über die jeweils passende Schnittstelle auf:</p>
+<ul>
+<li><strong>REST / gRPC</strong> — für moderne Betriebswerkzeuge, RAG-Pipelines und individuelle Orchestratoren innerhalb der Umgebung</li>
+<li><strong>JDBC / ODBC</strong> — für Legacy-Datenbanksysteme (Oracle, MSSQL, DB2), die LLM Capsule als Stored Procedure oder Job-Schritt einbinden</li>
+<li><strong>Graph API</strong> — für DMS- / ECM-Systeme (SharePoint u. a.), bei denen Dokumentereignisse die Verarbeitung durch LLM Capsule auslösen</li>
+<li><strong>Webhook / Log Tap</strong> — für ereignisgesteuerte Workflows aus NOC-, Ticket-, OT- und SIEM-nahen Systemen</li>
+<li><strong>On-Prem API</strong> — die eigene aufrufbare Oberfläche von LLM Capsule; einheitliches Vertragsmodell für Air-Gapped-, Hybrid- und VPC-Umgebungen</li>
+<li><strong>Embedded SDK</strong> — Bibliotheksintegration für ISVs und Plattformanbieter, die LLM Capsule in ihr eigenes Produkt einbetten</li>
+<li><strong>Slack App</strong> — für Teams, die Slack als Betriebsoberfläche nutzen; die Laufzeit verbleibt in der Kundenumgebung, die Slack App dient als Aufrufoberfläche</li>
+</ul>
+<p>Alle diese Schnittstellen verbleiben im Kundennetzwerk. Keine von ihnen leitet operative Rohdaten über einen externen SaaS-Endpunkt weiter.</p>
+
+<h2>Kernaussage</h2>
+<blockquote><p>Der Connector Lane macht den regulierten KI-Einsatz zu einer Integrationsentscheidung — nicht zu einer Frage des Datenabflusses. LLM Capsule liest bestehende Systeme dort, wo sie sich befinden. Operative Rohdaten verlassen die Umgebung nicht.</p></blockquote>
+]]></target>
+        <note>Rich HTML body — all HTML tags preserved. "AI" → "KI" in body text. "Capsule" expanded to "LLM Capsule" on first mention per DE clarity standards. "air-gapped" → "Air-Gapped" as compound noun. Healthcare section references in-network processing without adding DSGVO (not present in EN source). Schaden* compounds not applicable here. [native-review] "Betriebssysteme" → "Operative Systeme" (Betriebssysteme = OS in DE, false cognate); "OT-Historiker" → "OT-Prozessdatenarchive" (Historiker = person, technical term requires archive/process-data framing).</note>
+      </trans-unit>
+
+      <!-- ── Related terms ── -->
+
+      <trans-unit id="related1Label">
+        <source>AI enablement data layer</source>
+        <target>AI enablement data layer</target>
+        <note>Technical brand term — do not translate per translation guide</note>
+      </trans-unit>
+
+      <trans-unit id="related1Href">
+        <source>/glossary/ai-enablement-data-layer</source>
+        <target>/glossary/ai-enablement-data-layer</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related2Label">
+        <source>Structure-preserving encapsulation</source>
+        <target>Strukturerhaltende Kapsulierung</target>
+        <note>Technical concept label — consistent with existing DE glossary</note>
+      </trans-unit>
+
+      <trans-unit id="related2Href">
+        <source>/glossary/structure-preserving-encapsulation</source>
+        <target>/glossary/structure-preserving-encapsulation</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related3Label">
+        <source>Two execution paths</source>
+        <target>Zwei Ausführungspfade</target>
+        <note>Technical concept label — consistent with existing DE glossary</note>
+      </trans-unit>
+
+      <trans-unit id="related3Href">
+        <source>/glossary/two-execution-paths</source>
+        <target>/glossary/two-execution-paths</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related4Label">
+        <source>Operational data</source>
+        <target>Operative Daten</target>
+        <note>Technical concept label — consistent with existing DE glossary</note>
+      </trans-unit>
+
+      <trans-unit id="related4Href">
+        <source>/glossary/operational-data</source>
+        <target>/glossary/operational-data</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related5Label">
+        <source>In-environment deployment</source>
+        <target>Bereitstellung in der Umgebung</target>
+        <note>Technical concept label — "In-environment" rendered as descriptive German phrase</note>
+      </trans-unit>
+
+      <trans-unit id="related5Href">
+        <source>/glossary/in-environment-deployment</source>
+        <target>/glossary/in-environment-deployment</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file
+    original="llm-capsule/output/framer/glossary/differential-privacy/GlossaryPage_DifferentialPrivacy.tsx"
+    source-language="en"
+    target-language="de-DE"
+    datatype="plaintext"
+    tool-id="homepage-factory-translator"
+  >
+    <header>
+      <note>mode: localize | page: glossary/differential-privacy | brand: llm-capsule</note>
+    </header>
+    <body>
+
+      <!-- ── Hero ── -->
+
+      <trans-unit id="backLabel">
+        <source>← Glossary</source>
+        <target>← Glossar</target>
+        <note>Navigation back link</note>
+      </trans-unit>
+
+      <trans-unit id="backHref">
+        <source>/glossary</source>
+        <target>/glossary</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="term">
+        <source>Differential Privacy</source>
+        <target>Differential Privacy</target>
+        <note>Mathematical/CS proper noun — retained in English as established international term, capitalized as noun per German grammar</note>
+      </trans-unit>
+
+      <trans-unit id="lead">
+        <source>A mathematical framework that bounds the contribution of any single record to a derived output.</source>
+        <target>Ein mathematisches Rahmenwerk, das den Einfluss einzelner Datensätze auf abgeleitete Ausgaben quantitativ begrenzt.</target>
+        <note>Hero lead — concise functional description, "bounds" rendered as "quantitativ begrenzt" for precision</note>
+      </trans-unit>
+
+      <trans-unit id="category">
+        <source>GLOSSARY</source>
+        <target>GLOSSAR</target>
+        <note>Category chip label</note>
+      </trans-unit>
+
+      <!-- ── Definition block ── -->
+
+      <trans-unit id="definitionLabel">
+        <source>Definition</source>
+        <target>Definition</target>
+        <note>Section label — identical in German</note>
+      </trans-unit>
+
+      <trans-unit id="definitionBody">
+        <source>Differential privacy (DP) is a mathematical framework for protecting individual records when computing on a dataset. Introduced by Cynthia Dwork and colleagues in 2006, it formalizes the intuition that an analysis is private if its outcome would be almost the same whether or not any single record were included. The "almost" is parameterized by epsilon — smaller epsilon, stronger privacy, lower utility.</source>
+        <target>Differential Privacy (DP) ist ein mathematisches Rahmenwerk zum Schutz einzelner Datensätze bei der Auswertung von Datensätzen. Das Konzept wurde 2006 von Cynthia Dwork und Kollegen eingeführt und formalisiert die Anforderung, dass eine Analyse als privat gilt, wenn ihr Ergebnis nahezu unabhängig davon ist, ob ein bestimmter Datensatz enthalten ist oder nicht. Das "nahezu" wird durch den Parameter Epsilon gesteuert — ein kleinerer Epsilon-Wert bedeutet stärkeren Datenschutz bei geringerer Datennutzbarkeit.</target>
+        <note>Main definition in dark card — EN long sentence split into three DE sentences per localize rules; "epsilon" retained as mathematical symbol; Cynthia Dwork name unchanged</note>
+      </trans-unit>
+
+      <!-- ── Body HTML ── -->
+
+      <trans-unit id="bodyHtml">
+        <source><![CDATA[
+<h2>Mechanism</h2>
+<p>Implemented by adding calibrated noise (commonly Laplace or Gaussian) to outputs, queries, or transformations. Noise scale is determined by the sensitivity of the function and the privacy budget. The result is a quantitative bound on what an attacker could learn about any individual record from the output.</p>
+
+<h2>Application in the AI enablement data layer</h2>
+<p>In LLM Capsule, differential-privacy-based protection is applied during the structure-preserving encapsulation step. The capsule (AI-ready context) carries the differential-privacy guarantee on top of field-level tokenization. This addresses inference risks that field-level masking alone cannot bound — particularly for operational data where structure, sequence, and aggregate patterns themselves carry sensitive information.</p>
+
+<h2>What it is not</h2>
+<ul>
+  <li>Not a legal or compliance guarantee. It is a technical framework with a tunable parameter.</li>
+  <li>Not a yes/no guarantee. Privacy and utility trade off via the privacy budget.</li>
+  <li>Not a substitute for governance, audit, or policy.</li>
+</ul>
+
+<h2>Why it matters here</h2>
+<p>Operational data — network logs, configurations, OT manifests, clinical workflows — leaks through patterns, not just identifiers. Differential privacy is the framework that lets enterprise governance reason quantitatively about that leakage risk and enforce a budget per workflow.</p>
+
+<h2>Acceptable claims</h2>
+<ul>
+  <li>"Privacy-preserving with a defined risk-reduction scope"</li>
+  <li>"Bounded inference risk under the policy's privacy budget"</li>
+  <li>"Differential-privacy-based encapsulation"</li>
+</ul>
+
+<h2>Claims to avoid</h2>
+<ul>
+  <li>"Mathematically impossible to reconstruct"</li>
+  <li>"100% safe"</li>
+  <li>"GDPR guaranteed"</li>
+  <li>"Zero risk"</li>
+</ul>
+]]></source>
+        <target><![CDATA[
+<h2>Funktionsweise</h2>
+<p>Die Methode fügt kalibriertes Rauschen (typischerweise nach Laplace- oder Gaußverteilung) zu Ausgaben, Abfragen oder Transformationen hinzu. Die Rauschstärke ergibt sich aus der Sensitivität der Funktion und dem festgelegten Privacy-Budget. Das Ergebnis ist eine quantitative Schranke dafür, was ein Angreifer aus der Ausgabe über einzelne Datensätze ableiten kann.</p>
+
+<h2>Einsatz im AI enablement data layer</h2>
+<p>In LLM Capsule wird Differential-Privacy-basierter Schutz während des strukturerhaltenden Kapsulierungsschritts angewendet. Die Kapsel (KI-geeigneter Kontext) trägt die Differential-Privacy-Garantie zusätzlich zur feldbasierten Tokenisierung. Damit werden Inferenzrisiken adressiert, die durch feldbasiertes Masking allein nicht gebunden werden können — insbesondere bei operativen Daten, deren Struktur, Sequenz und Aggregatmuster selbst sensible Informationen enthalten.</p>
+
+<h2>Was es nicht ist</h2>
+<ul>
+  <li>Keine rechtliche oder regulatorische Garantie. Es handelt sich um ein technisches Rahmenwerk mit einem einstellbaren Parameter.</li>
+  <li>Keine Ja/Nein-Aussage. Datenschutz und Datennutzbarkeit sind über das Privacy-Budget gegeneinander abzuwägen.</li>
+  <li>Kein Ersatz für Governance, Auditierung oder Richtlinien.</li>
+</ul>
+
+<h2>Relevanz im Unternehmenseinsatz</h2>
+<p>Operative Daten — Netzwerkprotokolle, Konfigurationen, OT-Manifeste, klinische Workflows — lassen sich über Muster rekonstruieren, nicht nur über direkte Identifikatoren. Differential Privacy bietet den Rahmen, mit dem Unternehmens-Governance das Datenabfluss-Risiko quantitativ bewerten und ein Budget pro Workflow durchsetzen kann.</p>
+
+<h2>Zulässige Aussagen</h2>
+<ul>
+  <li>„Datenschutzerhaltend mit definiertem Risikominderungsumfang"</li>
+  <li>„Begrenztes Inferenzrisiko innerhalb des Policy-Privacy-Budgets"</li>
+  <li>„Differential-Privacy-basierte Kapsulierung"</li>
+</ul>
+
+<h2>Zu vermeidende Aussagen</h2>
+<ul>
+  <li>„Mathematisch unmöglich zu rekonstruieren"</li>
+  <li>„100 % sicher"</li>
+  <li>„DSGVO-konformität garantiert"</li>
+  <li>„Null-Risiko"</li>
+</ul>
+]]></target>
+        <note>Rich HTML body — all HTML tags preserved unchanged. "Laplace or Gaussian" retained as mathematical distribution names. "AI enablement data layer" retained as brand architecture term. "LLM Capsule" retained as product name. [native-review] "DSGVO (GDPR)" in claims-to-avoid → "DSGVO-konformität garantiert": the source claim is "GDPR guaranteed" (a compliance overclaim to avoid); parenthetical "(GDPR)" beside DSGVO is redundant in DE-DE context; rewritten as a natural DE overclaim pattern. "stehen in einem Gleichgewichtsverhältnis" → "sind gegeneinander abzuwägen" (sachlicher, fachsprachlich präziser). "Datenleck-Risiko" → "Datenabfluss-Risiko" (Datenleck is colloquial; Datenabfluss is the Fachsprache term used in DSGVO/BSI documentation). "Privacy-Budget" as established DE technical compound retained.</note>
+      </trans-unit>
+
+      <!-- ── Related terms ── -->
+
+      <trans-unit id="related1Label">
+        <source>Pillar guide: Differential privacy for enterprise AI</source>
+        <target>Leitfaden: Differential Privacy für den KI-Einsatz im Unternehmen</target>
+        <note>Resource link label — "Pillar guide" rendered as neutral "Leitfaden"; "enterprise AI" → "KI-Einsatz im Unternehmen" per DE localization term table</note>
+      </trans-unit>
+
+      <trans-unit id="related1Href">
+        <source>/resources/learn/differential-privacy-for-enterprise-llm</source>
+        <target>/resources/learn/differential-privacy-for-enterprise-llm</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related2Label">
+        <source>Structure-preserving encapsulation</source>
+        <target>Strukturerhaltende Kapsulierung</target>
+        <note>Technical concept label — consistent with existing DE glossary translations</note>
+      </trans-unit>
+
+      <trans-unit id="related2Href">
+        <source>/glossary/structure-preserving-encapsulation</source>
+        <target>/glossary/structure-preserving-encapsulation</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related3Label">
+        <source>AI enablement data layer</source>
+        <target>AI enablement data layer</target>
+        <note>Brand architecture term — retained in English per translation guide</note>
+      </trans-unit>
+
+      <trans-unit id="related3Href">
+        <source>/glossary/ai-ready-operational-layer</source>
+        <target>/glossary/ai-ready-operational-layer</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related4Label">
+        <source></source>
+        <target></target>
+        <note>Empty — no fourth related term defined</note>
+      </trans-unit>
+
+      <trans-unit id="related4Href">
+        <source></source>
+        <target></target>
+        <note>URL — empty</note>
+      </trans-unit>
+
+      <trans-unit id="related5Label">
+        <source></source>
+        <target></target>
+        <note>Empty — no fifth related term defined</note>
+      </trans-unit>
+
+      <trans-unit id="related5Href">
+        <source></source>
+        <target></target>
+        <note>URL — empty</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

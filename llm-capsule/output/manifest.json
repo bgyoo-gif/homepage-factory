@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-07 17:37:20",
+  "generated": "2026-05-07 17:49:53",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -317,6 +317,16 @@
         {
           "name": "_preview_GlossaryPage_BlockedAiWorkflow.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/blocked-ai-workflow/_preview_GlossaryPage_BlockedAiWorkflow.html",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "_preview_GlossaryPage_ConnectorLane.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/connector-lane/_preview_GlossaryPage_ConnectorLane.html",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "_preview.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/differential-privacy/_preview.html",
           "modified": "2026-05-07"
         },
         {
@@ -1612,8 +1622,28 @@
           "modified": "2026-05-07"
         },
         {
+          "name": "glossary-connector-lane-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-connector-lane-de-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "glossary-connector-lane-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-connector-lane-ko-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
           "name": "glossary-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-de-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "glossary-differential-privacy-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-differential-privacy-de-lines.md",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "glossary-differential-privacy-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-differential-privacy-ko-lines.md",
           "modified": "2026-05-07"
         },
         {
@@ -2406,6 +2436,16 @@
         {
           "name": "GlossaryPage_BlockedAiWorkflow.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/blocked-ai-workflow/GlossaryPage_BlockedAiWorkflow.tsx",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "GlossaryPage_ConnectorLane.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/connector-lane/GlossaryPage_ConnectorLane.tsx",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "GlossaryPage_DifferentialPrivacy.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/differential-privacy/GlossaryPage_DifferentialPrivacy.tsx",
           "modified": "2026-05-07"
         },
         {
