@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file
+    original="llm-capsule/output/framer/glossary/shadow-ai/GlossaryPage_ShadowAi.tsx"
+    source-language="en"
+    target-language="de-DE"
+    datatype="plaintext"
+    tool-id="homepage-factory-translator"
+  >
+    <header>
+      <note>mode: localize | page: glossary/shadow-ai | brand: llm-capsule</note>
+    </header>
+    <body>
+
+      <!-- ── Hero ── -->
+
+      <trans-unit id="backLabel">
+        <source>← Glossary</source>
+        <target>← Glossar</target>
+        <note>Navigation back link</note>
+      </trans-unit>
+
+      <trans-unit id="backHref">
+        <source>/glossary</source>
+        <target>/glossary</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="term">
+        <source>Shadow AI</source>
+        <target>Shadow AI</target>
+        <note>Industry concept term — retained in English as established term in DE security discourse</note>
+      </trans-unit>
+
+      <trans-unit id="lead">
+        <source>Employees using ChatGPT (or any external LLM) on personal devices or unapproved channels — because the official tooling can't handle the data the work depends on.</source>
+        <target>Mitarbeitende nutzen ChatGPT oder andere externe LLMs auf Privatgeräten und nicht genehmigten Kanälen. Der Grund: Die offiziellen KI-Werkzeuge können die für die Arbeit notwendigen Daten nicht verarbeiten.</target>
+        <note>EN single dash-clause rewritten as two DE sentences; "employees" → "Mitarbeitende" (gender-neutral DE standard)</note>
+      </trans-unit>
+
+      <trans-unit id="category">
+        <source>Risk concept</source>
+        <target>Risikokonzept</target>
+        <note>Category chip label — translated to German</note>
+      </trans-unit>
+
+      <!-- ── Definition block ── -->
+
+      <trans-unit id="definitionLabel">
+        <source>Definition</source>
+        <target>Definition</target>
+        <note>Section label — same in German</note>
+      </trans-unit>
+
+      <trans-unit id="definitionBody">
+        <source>Shadow AI is the unsanctioned use of external LLMs by enterprise employees outside approved channels — typically because the official AI tooling cannot handle the regulated data the work actually depends on. The root cause is not employee misbehavior; it is a missing AI enablement data layer. Employees taste productivity in pilots and early demos, then route around the controls when production tooling fails to deliver.</source>
+        <target>Shadow AI bezeichnet die nicht autorisierte Nutzung externer LLMs durch Unternehmensmitarbeitende außerhalb genehmigter Kanäle. Die eigentliche Ursache liegt nicht im Fehlverhalten der Mitarbeitenden, sondern im Fehlen eines AI enablement data layer: Offizielle KI-Werkzeuge können die regulierten Daten, auf die Arbeitsprozesse tatsächlich angewiesen sind, nicht verarbeiten. Mitarbeitende, die in Pilotprojekten Produktivitätsgewinne erlebt haben, suchen nach Wegen, die Einschränkungen zu umgehen, sobald die Produktivsysteme diese Gewinne nicht einlösen.</target>
+        <note>EN 3-sentence definition rewritten as 3 DE sentences with clearer causal structure; AI enablement data layer retained as brand term</note>
+      </trans-unit>
+
+      <!-- ── Body HTML ── -->
+
+      <trans-unit id="bodyHtml">
+        <source><![CDATA[
+<h2>Why it emerges</h2>
+<p>Shadow AI is a symptom, not a cause. The underlying pattern:</p>
+<ol>
+<li>An enterprise pilots AI on synthetic data. Employees see significant productivity gains.</li>
+<li>The pilot stalls in security review because real production data cannot be sent to external LLMs.</li>
+<li>The pilot is rescoped to an unusable subset. Productivity gains evaporate.</li>
+<li>Employees who tasted the productivity find workarounds — copy/paste anonymized snippets into ChatGPT on personal devices, screenshot redacted documents, use unapproved AI plugins.</li>
+<li>The enterprise now has the worst of both worlds: AI productivity outside governance, and no production AI inside governance.</li>
+</ol>
+
+<h2>The structural fix</h2>
+<p>Shadow AI does not get solved by policy enforcement alone — that is treating the symptom. The structural fix is an <strong>AI enablement data layer</strong> that lets official tooling handle real production data: encapsulate locally, process via approved external LLM (Path A) or on-prem local model (Path B), restore in-place. Once official tooling gives employees what they were tasting in pilots, shadow usage falls.</p>
+
+<h2>Where it shows up</h2>
+<ul>
+<li><strong>Telecom NOC analysts</strong> pasting anonymized ticket excerpts into ChatGPT for RCA help.</li>
+<li><strong>Hospital clinicians</strong> using AI tools on personal devices for documentation drafts.</li>
+<li><strong>Insurance underwriters</strong> testing AI outputs on de-identified claim summaries.</li>
+<li><strong>Legal associates</strong> summarizing redacted contracts with consumer AI tools.</li>
+<li><strong>Engineers</strong> using consumer AI tools on internal docs that contain sensitive identifiers.</li>
+</ul>
+
+<h2>Related terms</h2>
+<ul>
+<li><a href="/glossary/blocked-ai-workflow">Blocked AI workflow</a></li>
+<li><a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a></li>
+<li><a href="/learn/pilot-to-production-enterprise-ai">Learn: Why enterprise AI pilots stall</a></li>
+</ul>
+]]></source>
+        <target><![CDATA[
+<h2>Entstehungsursachen</h2>
+<p>Shadow AI ist ein Symptom, keine Ursache. Das typische Muster:</p>
+<ol>
+<li>Ein Unternehmen pilotiert KI mit synthetischen Daten. Mitarbeitende erleben messbare Produktivitätssteigerungen.</li>
+<li>Der Pilotbetrieb gerät in der Sicherheitsprüfung ins Stocken, weil echte Produktionsdaten nicht an externe LLMs übermittelt werden dürfen.</li>
+<li>Der Pilotbetrieb wird auf eine kaum verwendbare Datenteilmenge beschränkt. Die Produktivitätsgewinne entfallen.</li>
+<li>Mitarbeitende, die die Produktivitätssteigerung bereits erlebt haben, suchen nach Alternativen: Sie verarbeiten anonymisierte Ausschnitte via ChatGPT auf Privatgeräten, fotografieren geschwärzte Dokumente ab oder setzen nicht genehmigte KI-Plugins ein.</li>
+<li>Das Unternehmen vereint das Schlechteste beider Welten: KI-Produktivität außerhalb der Governance und kein produktiver KI-Einsatz innerhalb der Governance.</li>
+</ol>
+
+<h2>Die strukturelle Lösung</h2>
+<p>Shadow AI lässt sich nicht allein durch Richtliniendurchsetzung beheben — das behandelt nur das Symptom. Die strukturelle Lösung ist ein <strong>AI enablement data layer</strong>, der offizielle Werkzeuge befähigt, mit echten Produktionsdaten zu arbeiten: lokale Kapsulierung, Verarbeitung über ein zugelassenes externes LLM (Pfad A) oder ein lokales On-Premise-Modell (Pfad B), anschließend Wiederherstellung am ursprünglichen Ort. Sobald offizielle Werkzeuge das liefern, was Mitarbeitende in Pilotprojekten erlebt haben, sinkt die Shadow-Nutzung.</p>
+
+<h2>Typische Auftrittsbereiche</h2>
+<ul>
+<li><strong>Telekommunikations-NOC-Analysten</strong> fügen anonymisierte Ticket-Ausschnitte zur RCA-Unterstützung in ChatGPT ein.</li>
+<li><strong>Klinisches Personal in Krankenhäusern</strong> nutzt KI-Werkzeuge auf Privatgeräten zur Dokumentationserstellung.</li>
+<li><strong>Underwriter</strong> testen KI-Ausgaben auf de-identifizierten Schadenmeldungen.</li>
+<li><strong>Angestellte Rechtsanwälte</strong> fassen geschwärzte Verträge mit öffentlich zugänglichen KI-Diensten zusammen.</li>
+<li><strong>Ingenieure</strong> verwenden frei verfügbare KI-Werkzeuge auf internen Dokumenten mit sensiblen Kennzeichnern.</li>
+</ul>
+
+<h2>Verwandte Begriffe</h2>
+<ul>
+<li><a href="/glossary/blocked-ai-workflow">Blockierter KI-Workflow</a></li>
+<li><a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a></li>
+<li><a href="/learn/pilot-to-production-enterprise-ai">Learn: Warum KI-Pilotprojekte in Unternehmen ins Stocken geraten</a></li>
+</ul>
+]]></target>
+        <note>Rich HTML body — all HTML tags preserved. "AI" general context → "KI". "Shadow AI" retained as concept name. "AI enablement data layer" retained as brand term. "ChatGPT" retained per translation guide. "Schaden" compounds use no Fugen-s per DE style guide (Schadenmeldungen). "Insurance underwriters" → "Underwriter" (DE Fachsprache, established English loanword in German insurance industry; "Versicherungszeichner" is a false-friend direct translation not used in DE practice). "Legal associates" → "Angestellte Rechtsanwälte" (legal employees, not paralegals). Passive triple chain in li 4 restructured to active "Sie verarbeiten... / fotografieren... / setzen ein". "die produktiven Systeme" → "die Produktivsysteme" (IT Fachsprache compound). DSGVO not inserted — not contextually present in EN source.</note>
+      </trans-unit>
+
+      <!-- ── Related terms ── -->
+
+      <trans-unit id="related1Label">
+        <source>Blocked AI workflow</source>
+        <target>Blockierter KI-Workflow</target>
+        <note>Technical concept label — consistent with existing DE glossary translations</note>
+      </trans-unit>
+
+      <trans-unit id="related1Href">
+        <source>/glossary/blocked-ai-workflow</source>
+        <target>/glossary/blocked-ai-workflow</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related2Label">
+        <source>AI enablement data layer</source>
+        <target>AI enablement data layer</target>
+        <note>Brand term — do not translate per translation guide</note>
+      </trans-unit>
+
+      <trans-unit id="related2Href">
+        <source>/glossary/ai-enablement-data-layer</source>
+        <target>/glossary/ai-enablement-data-layer</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related3Label">
+        <source>Learn: Why enterprise AI pilots stall</source>
+        <target>Learn: Warum KI-Pilotprojekte in Unternehmen ins Stocken geraten</target>
+        <note>Learn article link label — "Learn:" prefix retained as section identifier; body translated</note>
+      </trans-unit>
+
+      <trans-unit id="related3Href">
+        <source>/learn/pilot-to-production-enterprise-ai</source>
+        <target>/learn/pilot-to-production-enterprise-ai</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related4Label">
+        <source></source>
+        <target></target>
+        <note>Empty — no related term 4</note>
+      </trans-unit>
+
+      <trans-unit id="related4Href">
+        <source></source>
+        <target></target>
+        <note>Empty — no related term 4</note>
+      </trans-unit>
+
+      <trans-unit id="related5Label">
+        <source></source>
+        <target></target>
+        <note>Empty — no related term 5</note>
+      </trans-unit>
+
+      <trans-unit id="related5Href">
+        <source></source>
+        <target></target>
+        <note>Empty — no related term 5</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

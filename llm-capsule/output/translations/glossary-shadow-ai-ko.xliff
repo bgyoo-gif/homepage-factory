@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file original="GlossaryPage_ShadowAi.tsx"
+        source-language="en"
+        target-language="ko"
+        datatype="plaintext">
+    <header>
+      <note>mode: literal | brand: llm-capsule | page: glossary/shadow-ai</note>
+    </header>
+    <body>
+
+      <!-- Hero -->
+      <trans-unit id="backLabel">
+        <source>← Glossary</source>
+        <target>← 용어 사전</target>
+      </trans-unit>
+
+      <trans-unit id="backHref">
+        <source>/glossary</source>
+        <target>/glossary</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="term">
+        <source>Shadow AI</source>
+        <target>Shadow AI</target>
+        <note>Brand/technical term — keep as-is</note>
+      </trans-unit>
+
+      <trans-unit id="lead">
+        <source>Employees using ChatGPT (or any external LLM) on personal devices or unapproved channels — because the official tooling can't handle the data the work depends on.</source>
+        <target>공식 도구가 업무에 필요한 데이터를 처리할 수 없기 때문에 — 직원들이 개인 기기나 비승인 채널에서 ChatGPT(또는 외부 LLM)를 사용합니다.</target>
+      </trans-unit>
+
+      <trans-unit id="category">
+        <source>Risk concept</source>
+        <target>리스크 개념</target>
+      </trans-unit>
+
+      <!-- Definition block -->
+      <trans-unit id="definitionLabel">
+        <source>Definition</source>
+        <target>정의</target>
+      </trans-unit>
+
+      <trans-unit id="definitionBody">
+        <source>Shadow AI is the unsanctioned use of external LLMs by enterprise employees outside approved channels — typically because the official AI tooling cannot handle the regulated data the work actually depends on. The root cause is not employee misbehavior; it is a missing AI enablement data layer. Employees taste productivity in pilots and early demos, then route around the controls when production tooling fails to deliver.</source>
+        <target>Shadow AI는 기업 직원이 승인된 채널 외부에서 외부 LLM을 무단으로 사용하는 행위입니다 — 주로 공식 AI 도구가 업무에 실제로 필요한 규제 데이터를 처리할 수 없기 때문입니다. 근본 원인은 직원의 일탈이 아닙니다. 데이터 레이어의 부재입니다. 직원들은 파일럿과 초기 데모에서 생산성을 경험하고, 운영 도구가 이를 제공하지 못하면 통제를 우회합니다.</target>
+      </trans-unit>
+
+      <!-- Body HTML -->
+      <trans-unit id="bodyHtml">
+        <source><![CDATA[
+<h2>Why it emerges</h2>
+<p>Shadow AI is a symptom, not a cause. The underlying pattern:</p>
+<ol>
+<li>An enterprise pilots AI on synthetic data. Employees see significant productivity gains.</li>
+<li>The pilot stalls in security review because real production data cannot be sent to external LLMs.</li>
+<li>The pilot is rescoped to an unusable subset. Productivity gains evaporate.</li>
+<li>Employees who tasted the productivity find workarounds — copy/paste anonymized snippets into ChatGPT on personal devices, screenshot redacted documents, use unapproved AI plugins.</li>
+<li>The enterprise now has the worst of both worlds: AI productivity outside governance, and no production AI inside governance.</li>
+</ol>
+
+<h2>The structural fix</h2>
+<p>Shadow AI does not get solved by policy enforcement alone — that is treating the symptom. The structural fix is an <strong>AI enablement data layer</strong> that lets official tooling handle real production data: encapsulate locally, process via approved external LLM (Path A) or on-prem local model (Path B), restore in-place. Once official tooling gives employees what they were tasting in pilots, shadow usage falls.</p>
+
+<h2>Where it shows up</h2>
+<ul>
+<li><strong>Telecom NOC analysts</strong> pasting anonymized ticket excerpts into ChatGPT for RCA help.</li>
+<li><strong>Hospital clinicians</strong> using AI tools on personal devices for documentation drafts.</li>
+<li><strong>Insurance underwriters</strong> testing AI outputs on de-identified claim summaries.</li>
+<li><strong>Legal associates</strong> summarizing redacted contracts with consumer AI tools.</li>
+<li><strong>Engineers</strong> using consumer AI tools on internal docs that contain sensitive identifiers.</li>
+</ul>
+
+<h2>Related terms</h2>
+<ul>
+<li><a href="/glossary/blocked-ai-workflow">Blocked AI workflow</a></li>
+<li><a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a></li>
+<li><a href="/learn/pilot-to-production-enterprise-ai">Learn: Why enterprise AI pilots stall</a></li>
+</ul>
+]]></source>
+        <target><![CDATA[
+<h2>발생 원인</h2>
+<p>Shadow AI는 원인이 아니라 증상입니다. 근본적인 패턴은 다음과 같습니다.</p>
+<ol>
+<li>기업이 합성 데이터로 AI 파일럿을 진행합니다. 직원들은 상당한 생산성 향상을 경험합니다.</li>
+<li>실제 운영 데이터를 외부 LLM으로 전송할 수 없어 보안 검토 단계에서 파일럿이 중단됩니다.</li>
+<li>파일럿 범위가 사용 불가능한 수준으로 축소됩니다. 생산성 향상은 사라집니다.</li>
+<li>생산성을 경험한 직원들이 우회책을 찾습니다 — 개인 기기에서 ChatGPT에 익명화된 스니펫을 복사·붙여넣기하거나, 삭제 처리된 문서를 캡처하거나, 비승인 AI 플러그인을 사용합니다.</li>
+<li>기업은 최악의 상황에 놓입니다. AI 생산성은 거버넌스 밖에서 이루어지고, 거버넌스 안에서는 운영 AI가 전혀 없습니다.</li>
+</ol>
+
+<h2>구조적 해결책</h2>
+<p>Shadow AI는 정책 강화만으로는 해결되지 않습니다 — 그것은 증상을 치료하는 것입니다. 구조적 해결책은 공식 도구가 실제 운영 데이터를 처리할 수 있도록 하는 <strong>데이터 레이어</strong>입니다. 로컬에서 캡슐화하고, 승인된 외부 LLM(Path A) 또는 온프레미스 로컬 모델(Path B)을 통해 처리한 뒤, 원위치에 복원합니다. 공식 도구가 파일럿에서 경험한 것을 제공하면 Shadow AI 사용은 줄어듭니다.</p>
+
+<h2>발생 사례</h2>
+<ul>
+<li><strong>통신사 NOC 분석가</strong>가 RCA 지원을 위해 익명화된 티켓 내용을 ChatGPT에 붙여넣습니다.</li>
+<li><strong>병원 임상의</strong>가 개인 기기에서 AI 도구를 이용해 문서 초안을 작성합니다.</li>
+<li><strong>보험 언더라이터</strong>가 비식별화된 청구 요약본으로 AI 출력을 테스트합니다.</li>
+<li><strong>법률 어소시에이트</strong>가 컨슈머 AI 도구로 삭제 처리된 계약서를 요약합니다.</li>
+<li><strong>엔지니어</strong>가 민감한 식별자가 포함된 내부 문서에 컨슈머 AI 도구를 사용합니다.</li>
+</ul>
+
+<h2>관련 용어</h2>
+<ul>
+<li><a href="/glossary/blocked-ai-workflow">차단된 AI 워크플로우</a></li>
+<li><a href="/glossary/ai-enablement-data-layer">데이터 레이어</a></li>
+<li><a href="/learn/pilot-to-production-enterprise-ai">Learn: 기업 AI 파일럿이 중단되는 이유</a></li>
+</ul>
+]]></target>
+        <note>HTML tags preserved. Text content translated to Korean. "Shadow AI" kept as-is per brand term rules.</note>
+      </trans-unit>
+
+      <!-- Related terms — labels only; hrefs preserved as-is -->
+      <trans-unit id="related1Label">
+        <source>Blocked AI workflow</source>
+        <target>차단된 AI 워크플로우</target>
+      </trans-unit>
+      <trans-unit id="related1Href">
+        <source>/glossary/blocked-ai-workflow</source>
+        <target>/glossary/blocked-ai-workflow</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related2Label">
+        <source>AI enablement data layer</source>
+        <target>데이터 레이어</target>
+      </trans-unit>
+      <trans-unit id="related2Href">
+        <source>/glossary/ai-enablement-data-layer</source>
+        <target>/glossary/ai-enablement-data-layer</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related3Label">
+        <source>Learn: Why enterprise AI pilots stall</source>
+        <target>Learn: 기업 AI 파일럿이 중단되는 이유</target>
+      </trans-unit>
+      <trans-unit id="related3Href">
+        <source>/learn/pilot-to-production-enterprise-ai</source>
+        <target>/learn/pilot-to-production-enterprise-ai</target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related4Label">
+        <source></source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="related4Href">
+        <source></source>
+        <target></target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+      <trans-unit id="related5Label">
+        <source></source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="related5Href">
+        <source></source>
+        <target></target>
+        <note>URL — do not translate</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>
