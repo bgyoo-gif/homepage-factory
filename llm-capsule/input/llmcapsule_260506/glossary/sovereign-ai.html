@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sovereign AI — Definition | LLM Capsule Glossary</title>
+<meta name="description" content="Sovereign AI means enterprise AI workflows where data, processing, and audit remain inside a defined regulatory and geographic boundary. Definition, why it matters under GDPR / EU AI Act / national data residency, and the architecture pattern that supports it.">
+<meta name="keywords" content="sovereign AI, sovereign AI definition, AI data residency, GDPR AI, EU AI Act, AI sovereignty, on-premise LLM, in-region AI">
+<link rel="canonical" href="https://llmcapsule.ai/glossary/sovereign-ai">
+
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "DefinedTerm",
+  "name": "Sovereign AI",
+  "description": "Enterprise AI workflows where data, processing, and audit remain inside a defined regulatory and geographic boundary."
+}
+</script>
+
+<link rel="stylesheet" href="../design-tokens.css">
+<link rel="stylesheet" href="../learn-article.css">
+</head>
+<body>
+
+<section class="article-hero">
+  <div class="container">
+    <a href="/glossary" class="back-link">← Glossary</a>
+    <h1>Sovereign AI</h1>
+    <p class="article-hero__lead">AI workflows that keep data, processing, and audit inside a defined regulatory and geographic boundary.</p>
+    <div class="article-meta"><span class="article-meta__chip">Concept</span></div>
+  </div>
+</section>
+
+<div class="tldr">
+  <div class="tldr__label">Definition</div>
+  <p class="tldr__body"><strong>Sovereign AI</strong> means enterprise AI workflows where the underlying data, the AI processing path, and the audit trail all remain inside a defined regulatory and geographic boundary. For European enterprises this typically means GDPR-compliant data handling, in-region LLM endpoints, and full audit for regulator review. For defense and public sector workflows it typically means fully on-prem execution with no external transmission. The practical architecture pattern uses an <strong>AI enablement data layer</strong> with two execution paths.</p>
+</div>
+
+<article class="article-body">
+
+<h2>Why it matters now</h2>
+<p>Regulator pressure has tightened: GDPR fines have crossed €4 billion cumulative, the EU AI Act entered into force August 2024, and national regulators (BaFin, ACPR, MAS, FSA, KISA) are increasingly explicit that financial and healthcare AI workflows must demonstrate data sovereignty. Defense and public sector workflows have always required it.</p>
+
+<h2>What sovereign AI actually requires</h2>
+<ul>
+<li><strong>Data residency</strong> — sensitive data does not leave the defined geographic / regulatory boundary in raw form.</li>
+<li><strong>Processing boundary</strong> — AI inference happens on infrastructure inside (or contractually equivalent to) the boundary.</li>
+<li><strong>Audit chain of custody</strong> — every data event is recorded with policy, model, and outcome.</li>
+<li><strong>Policy versioning</strong> — what counts as sensitive, and what's permitted to leave, must be explicitly versioned and auditable.</li>
+</ul>
+
+<h2>The two-path architecture</h2>
+<p>The pragmatic implementation: an AI enablement data layer with two execution paths under one governance framework. Path A (in-region external LLM with capsule data only) for workflows where the regulatory profile permits transmission of differentially-private capsules with appropriate contractual safeguards. Path B (on-prem local lightweight model) for workflows where any external endpoint is unacceptable. Path is policy-driven per workflow.</p>
+
+<h2>Common confusions</h2>
+<ul>
+<li><strong>Data residency ≠ sovereignty.</strong> An EU-hosted LLM endpoint is necessary but not sufficient. Raw data inside an EU-hosted LLM is still raw data.</li>
+<li><strong>Sovereign AI ≠ no LLM.</strong> Avoiding LLMs entirely is not a sovereign AI strategy; it's an avoidance strategy. Sovereign AI architecture lets you use AI under sovereignty constraints.</li>
+<li><strong>Sovereign AI ≠ binary.</strong> A single enterprise can support multiple paths. Some workflows external (with capsule), some on-prem.</li>
+</ul>
+
+<h2>Related terms</h2>
+<ul>
+<li><a href="/glossary/two-execution-paths">Two execution paths</a></li>
+<li><a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a></li>
+<li><a href="/glossary/differential-privacy">Differential privacy</a></li>
+<li><a href="/learn/sovereign-ai-european-enterprises">Learn: Sovereign AI for European enterprises</a></li>
+</ul>
+
+</article>
+
+</body>
+</html>

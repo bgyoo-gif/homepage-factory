@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Structure-Preserving Encapsulation | Glossary | LLM Capsule</title>
+<meta name="description" content="Structure-preserving encapsulation: the transformation step in an AI enablement data layer that tokenizes operational data while preserving table layout, log sequence, document hierarchy, and configuration tree, so AI processing quality stays intact.">
+<meta name="keywords" content="structure-preserving encapsulation, AI enablement data layer, AI-ready data, AI for regulated industries, differential privacy, on-premise LLM">
+<link rel="canonical" href="https://llmcapsule.ai/resources/glossary/structure-preserving-encapsulation">
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "DefinedTerm",
+  "name": "Structure-Preserving Encapsulation",
+  "description": "Structure-preserving encapsulation is the transformation step in an AI enablement data layer that converts operational data into AI-ready context while preserving table layout, log sequence, document hierarchy, configuration tree, and topology graph. Used together with differential-privacy-based protection inside LLM Capsule.",
+  "url": "https://llmcapsule.ai/resources/glossary/structure-preserving-encapsulation" }
+</script>
+<link rel="stylesheet" href="design-tokens.css">
+<link rel="stylesheet" href="../learn-article.css">
+</head>
+<body>
+<section class="article-hero"><div class="container">
+  <span class="article-meta__chip">GLOSSARY</span>
+  <h1>Structure-Preserving Encapsulation</h1>
+  <p class="article-hero__lead">Tokenize the identifiers. Preserve the structure. So the AI can still reason — and the result can still be restored.</p>
+</div></section>
+<article class="article-body">
+<h2>Definition</h2>
+<p><strong>Structure-preserving encapsulation</strong> is the transformation step in an AI enablement data layer that converts operational data into AI-ready context. It tokenizes operational identifiers (device IDs, site IDs, asset references, customer segments) while preserving the relational structure the LLM needs to reason — table layout, log sequence, document hierarchy, configuration tree, topology graph.</p>
+
+<h2>Why structure preservation matters</h2>
+<p>An LLM asked to draft an RCA from an alarm sequence cannot reason if the sequence is destroyed. An LLM asked to compare two configuration trees cannot compare if the tree relationships are flattened. Structure preservation is what makes the capsule <em>useful</em> to the model, not just <em>safe</em>.</p>
+
+<h2>What gets tokenized</h2>
+<ul>
+  <li>Operational identifiers: DEVICE_ID, SITE_ID, CIRCUIT_ID, ASSET_ID, MISSION_REF</li>
+  <li>Customer references and segments</li>
+  <li>Free-text fields with mixed identifiers (NER masking)</li>
+  <li>Sensitive attribute values (under DP budget)</li>
+</ul>
+
+<h2>What gets preserved</h2>
+<ul>
+  <li>Time order of events</li>
+  <li>Cause-effect relationships in incident sequences</li>
+  <li>Document structure (sections, lists, tables)</li>
+  <li>Configuration tree (parent-child, dependencies)</li>
+  <li>Topology graph (nodes, edges, paths)</li>
+</ul>
+
+<h2>Used together with</h2>
+<ul>
+  <li><a href="/resources/glossary/differential-privacy">Differential privacy</a> — bounds inference risk on the capsule</li>
+  <li><a href="/resources/glossary/state-vault-for-restoration">State vault for restoration</a> — restores tokens to original values inside the enterprise</li>
+  <li><a href="/resources/glossary/two-execution-paths">Two execution paths</a> — Path A or Path B per workflow policy</li>
+</ul>
+
+<h2>Reference statement</h2>
+<blockquote>Structure-preserving encapsulation makes the capsule useful. Differential-privacy-based protection makes it defensible. State vault makes it restorable. Together, they constitute the AI enablement data layer.</blockquote>
+</article>
+</body>
+</html>

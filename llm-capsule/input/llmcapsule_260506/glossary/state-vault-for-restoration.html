@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>State Vault for Restoration | Glossary | LLM Capsule</title>
+<meta name="description" content="The state vault is the local-only store that holds the token map between original operational identifiers and capsule tokens. It enables AI outputs to be restored back into the originating workflow with original identifiers — without the external LLM ever seeing them.">
+<meta name="keywords" content="state vault, restoration, AI enablement data layer, AI for regulated industries, on-premise LLM, regulated operations">
+<link rel="canonical" href="https://llmcapsule.ai/resources/glossary/state-vault-for-restoration">
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "DefinedTerm",
+  "name": "State Vault for Restoration",
+  "description": "The state vault is the local-only store that holds the token map between original operational identifiers and capsule tokens. It enables AI outputs to be restored back into the originating workflow with original identifiers — without the external LLM ever seeing them.",
+  "url": "https://llmcapsule.ai/resources/glossary/state-vault-for-restoration" }
+</script>
+<link rel="stylesheet" href="design-tokens.css">
+<link rel="stylesheet" href="../learn-article.css">
+</head>
+<body>
+<section class="article-hero"><div class="container">
+  <span class="article-meta__chip">GLOSSARY</span>
+  <h1>State Vault for Restoration</h1>
+  <p class="article-hero__lead">The local-only store that turns AI output back into business-ready output.</p>
+</div></section>
+<article class="article-body">
+<h2>Definition</h2>
+<p>The <strong>state vault</strong> is the local-only store that holds the token map between original operational identifiers and capsule tokens. It enables AI outputs to be restored back into the originating workflow with original identifiers — <em>inside the enterprise</em> — without the external LLM ever seeing the originals.</p>
+
+<h2>What it stores</h2>
+<ul>
+  <li>Token map: capsule tokens ↔ original operational identifiers</li>
+  <li>Workflow context: which capsule belongs to which incident, ticket, or runbook</li>
+  <li>Policy reference: which marker policy applied to this capsule</li>
+  <li>Privacy budget reference: how much of the workflow's DP budget this capsule consumed</li>
+</ul>
+
+<h2>Where it lives</h2>
+<p>Always local. The token map never traverses the external boundary. In Path A (external approved LLM), the LLM sees only capsule tokens; the state vault rehydrates after the response returns. In Path B (on-prem local lightweight model), everything is local end to end.</p>
+
+<h2>Why it matters</h2>
+<p>Without restoration, AI outputs are stuck as token salad. The operations team needs the result as a usable artifact in the originating workflow — a ticket update with real device IDs, a runbook step referencing the actual site, an RCA pointing to the actual incident reference. The state vault is what makes that possible while keeping the originals out of the model.</p>
+
+<h2>Outputs the state vault produces</h2>
+<ul>
+  <li>Restored RCA inserted into the ticket system</li>
+  <li>Restored runbook step inserted into the runbook</li>
+  <li>Restored summary inserted into the EHR or hospital portal</li>
+  <li>Restored mission summary inserted into the command system (Path B only)</li>
+  <li>Restored compliance review draft inserted into the review workflow</li>
+</ul>
+
+<h2>Auditability</h2>
+<p>Every restoration is logged. The audit trail records the capsule, the policy applied, the path used, the token map operations, and the destination of the restored output. Compliance teams can trace any restored field back to its capsule and policy.</p>
+
+<h2>Reference statement</h2>
+<blockquote>The capsule is what the AI sees. The state vault is what the business sees. The boundary between them is the operational guarantee.</blockquote>
+</article>
+</body>
+</html>

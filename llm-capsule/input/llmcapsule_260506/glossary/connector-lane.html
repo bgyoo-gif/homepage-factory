@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connector Lane | Glossary | LLM Capsule</title>
+<meta name="description" content="The connector lane is how LLM Capsule reads document, ticket, and operational sources that already live inside the customer environment — without moving raw data outside that environment. It is not a SaaS integration platform.">
+<meta name="keywords" content="connector lane, in-environment integration, AI enablement data layer, AI for regulated industries, enterprise AI adoption">
+<link rel="canonical" href="https://llmcapsule.ai/resources/glossary/connector-lane">
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "DefinedTerm",
+  "name": "Connector Lane",
+  "description": "The connector lane is how LLM Capsule reads document, ticket, and operational sources that already live inside the customer environment — without moving raw data outside that environment. Capsule itself runs inside the environment (on-prem, air-gapped, or VPC), reading sources in place and processing them locally.",
+  "url": "https://llmcapsule.ai/resources/glossary/connector-lane" }
+</script>
+<link rel="stylesheet" href="design-tokens.css">
+<link rel="stylesheet" href="../learn-article.css">
+</head>
+<body>
+<section class="article-hero"><div class="container">
+  <span class="article-meta__chip">GLOSSARY</span>
+  <h1>Connector Lane</h1>
+  <p class="article-hero__lead">How LLM Capsule reads the document, ticket, and operational sources that already live inside the customer environment — without moving raw data outside that environment.</p>
+</div></section>
+<article class="article-body">
+<h2>Definition</h2>
+<p>The <strong>connector lane</strong> describes how LLM Capsule, running inside the customer's environment (on-prem, air-gapped, or VPC), reads from the document, ticket, and operational systems that already live in that environment. It is <strong>not</strong> a SaaS integration platform that calls into customer systems from the outside, and it is not an API marketplace.</p>
+
+<h2>What it is — and what it isn't</h2>
+<p>The connector lane is the in-environment reading surface. Capsule sits next to existing systems on the customer's network, reads the document or record where it already is, encapsulates it locally, and returns the restored output to the originating workflow. Raw operational data does not traverse a public network or an external SaaS endpoint to reach Capsule.</p>
+<p>This is the opposite of how a typical "integration platform" works. Capsule is not an external service that pulls data out of customer systems — it is a layer running inside the environment those systems already trust.</p>
+
+<h2>What it reads</h2>
+<ul>
+  <li><strong>Document and record systems</strong> — SharePoint, internal DMS, S3 / blob storage in the customer's VPC, file repositories</li>
+  <li><strong>Ticket and ITSM systems</strong> — ServiceNow, Jira, Remedy, in-house ticketing</li>
+  <li><strong>CRM / ERP</strong> — Salesforce, Dynamics, Oracle, SAP, in-house systems</li>
+  <li><strong>Healthcare records</strong> — hospital information systems, clinical record stores, imaging metadata, all read inside the hospital network</li>
+  <li><strong>Operational systems</strong> — NOC consoles, OSS / BSS, OT historians, log platforms read in DMZ and processed in environment</li>
+  <li><strong>Custom and legacy systems</strong> — internal databases, file drops, queues, in-house tooling — Capsule adapts to what the customer already runs</li>
+</ul>
+
+<h2>Why this distinction matters</h2>
+<p>For regulated buyers — defense, healthcare, finance, telecom — "integration" usually means "data leaves my environment to reach a vendor." That is exactly the failure mode that blocks AI adoption on operational data. The connector lane is the opposite contract: Capsule comes to the data, the data does not go to Capsule.</p>
+
+<h2>Integration interfaces — how existing systems invoke Capsule</h2>
+<p>Once Capsule is deployed inside the environment, existing systems invoke it through whichever interface fits their stack:</p>
+<ul>
+  <li><strong>REST / gRPC</strong> — for modern operations tools, RAG pipelines, and custom orchestrators inside the environment</li>
+  <li><strong>JDBC / ODBC</strong> — for legacy database systems (Oracle, MSSQL, DB2) that need Capsule invocation as a stored procedure or job step</li>
+  <li><strong>Graph API</strong> — for DMS / ECM systems (SharePoint, etc.) where document events trigger Capsule processing</li>
+  <li><strong>Webhook / log tap</strong> — for incident- and event-driven workflows from NOC, ticket, OT, and SIEM-adjacent systems</li>
+  <li><strong>On-prem API</strong> — Capsule's own on-prem callable surface; same contract whether you're air-gapped, hybrid, or VPC</li>
+  <li><strong>Embedded SDK</strong> — library-level integration for ISVs and platform vendors who ship Capsule inside their own product</li>
+  <li><strong>Slack App</strong> — for teams using Slack as the operations UI; the runtime stays in the customer environment, the Slack App is the invocation surface</li>
+</ul>
+<p>All of these interfaces stay inside the customer network. None of them route raw operational data through an external SaaS endpoint to reach Capsule.</p>
+
+<h2>Reference statement</h2>
+<blockquote>The connector lane is what makes regulated AI deployment an integration instead of a data egress decision. Capsule reads existing systems where they already are. Raw operational data does not leave the environment.</blockquote>
+</article>
+</body>
+</html>

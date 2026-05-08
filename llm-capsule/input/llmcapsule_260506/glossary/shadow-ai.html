@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shadow AI — Definition | LLM Capsule Glossary</title>
+<meta name="description" content="Shadow AI is the unsanctioned use of external LLMs by enterprise employees on personal devices or unapproved channels, typically because official tooling cannot handle the regulated data the work depends on. Definition, root cause, and the structural fix.">
+<meta name="keywords" content="shadow AI, shadow AI definition, shadow AI risk, unsanctioned AI, ChatGPT enterprise risk, AI governance, AI compliance, AI for regulated industries">
+<link rel="canonical" href="https://llmcapsule.ai/glossary/shadow-ai">
+
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "DefinedTerm",
+  "name": "Shadow AI",
+  "description": "Unsanctioned use of external LLMs by enterprise employees on personal devices or unapproved channels, typically because official tooling cannot handle the regulated data the work depends on."
+}
+</script>
+
+<link rel="stylesheet" href="../design-tokens.css">
+<link rel="stylesheet" href="../learn-article.css">
+</head>
+<body>
+
+<section class="article-hero">
+  <div class="container">
+    <a href="/glossary" class="back-link">← Glossary</a>
+    <h1>Shadow AI</h1>
+    <p class="article-hero__lead">Employees using ChatGPT (or any external LLM) on personal devices or unapproved channels — because the official tooling can't handle the data the work depends on.</p>
+    <div class="article-meta"><span class="article-meta__chip">Risk concept</span></div>
+  </div>
+</section>
+
+<div class="tldr">
+  <div class="tldr__label">Definition</div>
+  <p class="tldr__body"><strong>Shadow AI</strong> is the unsanctioned use of external LLMs by enterprise employees outside approved channels — typically because the official AI tooling cannot handle the regulated data the work actually depends on. The root cause is not employee misbehavior; it is a missing AI enablement data layer. Employees taste productivity in pilots and early demos, then route around the controls when production tooling fails to deliver.</p>
+</div>
+
+<article class="article-body">
+
+<h2>Why it emerges</h2>
+<p>Shadow AI is a symptom, not a cause. The underlying pattern:</p>
+<ol>
+<li>An enterprise pilots AI on synthetic data. Employees see significant productivity gains.</li>
+<li>The pilot stalls in security review because real production data cannot be sent to external LLMs.</li>
+<li>The pilot is rescoped to an unusable subset. Productivity gains evaporate.</li>
+<li>Employees who tasted the productivity find workarounds — copy/paste anonymized snippets into ChatGPT on personal devices, screenshot redacted documents, use unapproved AI plugins.</li>
+<li>The enterprise now has the worst of both worlds: AI productivity outside governance, and no production AI inside governance.</li>
+</ol>
+
+<h2>The structural fix</h2>
+<p>Shadow AI does not get solved by policy enforcement alone — that is treating the symptom. The structural fix is an <strong>AI enablement data layer</strong> that lets official tooling handle real production data: encapsulate locally, process via approved external LLM (Path A) or on-prem local model (Path B), restore in-place. Once official tooling gives employees what they were tasting in pilots, shadow usage falls.</p>
+
+<h2>Where it shows up</h2>
+<ul>
+<li><strong>Telecom NOC analysts</strong> pasting anonymized ticket excerpts into ChatGPT for RCA help.</li>
+<li><strong>Hospital clinicians</strong> using AI tools on personal devices for documentation drafts.</li>
+<li><strong>Insurance underwriters</strong> testing AI outputs on de-identified claim summaries.</li>
+<li><strong>Legal associates</strong> summarizing redacted contracts with consumer AI tools.</li>
+<li><strong>Engineers</strong> using consumer AI tools on internal docs that contain sensitive identifiers.</li>
+</ul>
+
+<h2>Related terms</h2>
+<ul>
+<li><a href="/glossary/blocked-ai-workflow">Blocked AI workflow</a></li>
+<li><a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a></li>
+<li><a href="/learn/pilot-to-production-enterprise-ai">Learn: Why enterprise AI pilots stall</a></li>
+</ul>
+
+</article>
+
+</body>
+</html>
