@@ -35,109 +35,70 @@ Most enterprise AI pilots do not fail because the AI is bad. They fail because t
 
 <!-- 아래는 bodyHtml Props 번역입니다. HTML 태그 구조를 그대로 유지합니다. -->
 
-<h2>The standard pilot trajectory</h2>
 <h2>파일럿의 전형적인 경로</h2>
 
-<p>Months 0-2: leadership selects a use case (NOC RCA, clinical summarization, claim review, contract review). A vendor demos on a sanitized dataset. Excitement.</p>
 <p>0-2개월: 리더십이 유스케이스를 선정합니다(NOC RCA, 임상 요약, 청구 검토, 계약 검토). 벤더가 정제된 데이터셋으로 데모를 시연합니다. 기대감이 높아집니다.</p>
 
-<p>Months 2-4: the team integrates with the LLM provider, runs the workflow on synthetic data, gets impressive metrics. The pilot is "ready to go to production."</p>
 <p>2-4개월: 팀이 LLM 공급업체와 연동하고, 합성 데이터로 워크플로를 실행해 인상적인 지표를 얻습니다. 파일럿이 "프로덕션 투입 준비 완료" 상태가 됩니다.</p>
 
-<p>Months 4-6: security review opens. The CISO's team asks the obvious question: are we actually sending raw operational data — subscriber IDs, patient records, claim details — to the LLM? Sometimes the answer is "no, we'll use anonymization." The anonymization breaks the data; output quality drops 30-50%. Sometimes the answer is "yes, with a contract." That contract triggers DPO, regulator, and board-level review.</p>
 <p>4-6개월: 보안 검토가 시작됩니다. CISO 팀이 당연한 질문을 던집니다. 가입자 ID·환자 기록·청구 상세 정보 같은 실제 운영 데이터를 LLM에 직접 전송하고 있는 것인가요? "아니요, 익명화를 사용합니다"라는 답변이 나오면 데이터 품질이 훼손되고 출력 품질이 30-50% 떨어집니다. "네, 계약서가 있습니다"라는 답변이 나오면 DPO·규제 당국·이사회 검토가 시작됩니다.</p>
 
-<p>Months 6-12: the pilot is renamed, rescoped, paused, or quietly killed. Shadow AI emerges — engineers paste anonymized snippets into ChatGPT on personal devices to keep the productivity gains they tasted in the pilot.</p>
 <p>6-12개월: 파일럿이 이름을 바꾸거나 범위를 축소하거나 중단되거나 조용히 종료됩니다. 섀도우 AI가 등장합니다. 엔지니어들이 파일럿에서 경험한 생산성 향상을 유지하기 위해 개인 기기의 ChatGPT에 익명화된 스니펫을 붙여 넣습니다.</p>
 
-<h2>The four-part diagnosis</h2>
 <h2>4가지 진단</h2>
 
-<p>Why does this happen, repeatedly, across every regulated industry?</p>
 <p>왜 이 일이 모든 규제 산업에서 반복적으로 발생하는 걸까요?</p>
 
-<h3>Reason 1 — External LLMs raise enterprise ROI</h3>
 <h3>이유 1 — 외부 LLM은 기업 ROI를 높입니다</h3>
 
-<p>Approved external LLMs measurably improve productivity, processing speed, and automation ROI. Every regulated enterprise wants in. The pilot exists because the executive team genuinely sees the upside.</p>
 <p>승인된 외부 LLM은 생산성·처리 속도·자동화 ROI를 측정 가능하게 개선합니다. 모든 규제 기업이 도입을 원합니다. 파일럿이 시작되는 이유는 경영진이 실질적인 가치를 보기 때문입니다.</p>
 
-<h3>Reason 2 — PII guardrails alone are not enough</h3>
 <h3>이유 2 — PII 가드레일만으로는 충분하지 않습니다</h3>
 
-<p>The standard answer (PII detection at the API boundary) was built for individual identifiers — names, emails, phone numbers. Real regulated workflows run on structured operational data: ticket sequences, network configs, OT manifests, clinical workflows, claim records, mission context. PII guardrails don't see this. The data slips right through.</p>
 <p>표준 답변(API 경계의 PII 탐지)은 개인 식별자, 즉 이름·이메일·전화번호를 위해 만들어졌습니다. 실제 규제 워크플로는 구조화된 운영 데이터 위에서 작동합니다. 티켓 시퀀스·네트워크 구성·OT 매니페스트·임상 워크플로·청구 기록·미션 컨텍스트가 그것입니다. PII 가드레일은 이를 감지하지 못합니다. 데이터가 그냥 빠져나갑니다.</p>
 
-<h3>Reason 3 — DMZ and legacy operational data is complex and unstructured</h3>
 <h3>이유 3 — DMZ 및 레거시 운영 데이터는 복잡하고 비정형입니다</h3>
 
-<p>Mixed free text, network identifiers, system logs, user context, incident records, configurations. Sensitivity leaks through structure, sequence, and aggregate pattern — not just through field names. Field-level filtering misses entire categories of risk.</p>
 <p>자유 텍스트·네트워크 식별자·시스템 로그·사용자 컨텍스트·인시던트 기록·구성이 혼재합니다. 민감도는 필드명뿐 아니라 구조·시퀀스·집계 패턴을 통해 노출됩니다. 필드 수준 필터링은 위험의 전체 범주를 놓칩니다.</p>
 
-<h3>Reason 4 — Filtering alone leaves regulated risk standing</h3>
 <h3>이유 4 — 필터링만으로는 규제 리스크가 남습니다</h3>
 
-<p>GDPR, HIPAA, SOX, sector regulators, audit obligations, sovereignty constraints. Even if every field is masked, the residual risk of differential analysis, re-identification through context, and inference exposure is what regulators evaluate. Simple filtering cannot close that.</p>
 <p>GDPR·HIPAA·SOX·섹터 규제·감사 의무·데이터 주권 제약. 모든 필드를 마스킹하더라도, 차등 분석·컨텍스트를 통한 재식별·추론 노출의 잔류 위험은 규제 당국이 평가하는 대상입니다. 단순 필터링으로는 이를 닫을 수 없습니다.</p>
 
-<p><strong>Result:</strong> the pilot demonstrated value on synthetic data; the production deployment requires real data; the gap between them is the AI enablement data layer that wasn't there.</p>
 <p><strong>결과:</strong> 파일럿은 합성 데이터로 가치를 증명했습니다. 프로덕션 배포에는 실제 데이터가 필요합니다. 그 사이의 격차가 바로 존재하지 않았던 데이터 레이어입니다.</p>
 
-<h2>The pattern that gets pilots to production</h2>
 <h2>파일럿을 프로덕션까지 이끄는 패턴</h2>
 
-<p>Pilots that ship to production typically have these architectural features in place:</p>
 <p>프로덕션에 배포된 파일럿은 일반적으로 다음 아키텍처 요소를 갖추고 있습니다.</p>
 
-<ol>
 <li><strong>An AI enablement data layer between systems and AI.</strong> Not a guardrail. Not a gateway. A layer that transforms operational data into AI-ready capsules locally, executes the AI workflow, and restores results into the originating system.</li>
-<li><strong>시스템과 AI 사이의 데이터 레이어.</strong> 가드레일이 아닙니다. 게이트웨이도 아닙니다. 운영 데이터를 로컬에서 AI 처리 가능한 캡슐로 변환하고, AI 워크플로를 실행하고, 결과를 원본 시스템에 복원하는 레이어입니다.</li>
 <li><strong>Structure-preserving capsule.</strong> Tables, cross-references, configurations, document hierarchies survive intact. AI receives full context — not broken fragments.</li>
-<li><strong>문서 구조 보존 캡슐.</strong> 테이블·상호 참조·구성·문서 계층이 그대로 유지됩니다. AI는 파편화된 조각이 아닌 완전한 컨텍스트를 받습니다.</li>
 <li><strong>Differential-privacy-based protection.</strong> Beyond field masking — DP noise, k-anonymity, semantic tokenization — to address inference and aggregate-pattern risk that simple filtering can't close.</li>
-<li><strong>차등 프라이버시 기반 보호.</strong> 필드 마스킹을 넘어 DP 노이즈·k-익명성·시맨틱 토크나이제이션을 적용해 단순 필터링으로 닫을 수 없는 추론 및 집계 패턴 위험에 대응합니다.</li>
 <li><strong>Plug-in execution into existing legacy systems.</strong> No migration. The data layer reads where the document already lives.</li>
-<li><strong>기존 레거시 시스템에 플러그인 방식으로 실행.</strong> 마이그레이션이 없습니다. 데이터 레이어가 문서가 이미 있는 위치에서 직접 읽습니다.</li>
 <li><strong>Restoration into the originating workflow.</strong> The end-user works in their familiar tool with real values restored. AI doesn't create a new workflow; it lives inside the existing one.</li>
-<li><strong>원본 워크플로로 복원.</strong> 최종 사용자는 실제 값이 복원된 익숙한 도구에서 작업합니다. AI는 새로운 워크플로를 만들지 않습니다. 기존 워크플로 안에 자리합니다.</li>
 <li><strong>Two execution paths under one governance framework.</strong> External approved LLM with capsule data only, or on-prem local lightweight model. Path is policy-driven per workflow.</li>
-<li><strong>단일 거버넌스 프레임워크 아래 두 가지 실행 경로.</strong> 캡슐 데이터만으로 외부 승인 LLM을 사용하거나, 온프레미스 로컬 경량 모델을 사용합니다. 경로는 워크플로별 정책으로 결정됩니다.</li>
 <li><strong>Customer-defined markers + time-shifting policy.</strong> What's sensitive today isn't what's sensitive tomorrow. Define, version, time-shift.</li>
-<li><strong>고객 정의 마커 + 시간 이동 정책.</strong> 오늘 민감한 데이터가 내일도 민감한 것은 아닙니다. 정의하고, 버전을 관리하고, 시간을 이동시킵니다.</li>
 </ol>
 
-<h2>What changes for the executive</h2>
 <h2>경영진에게 무엇이 달라지는가</h2>
 
-<p>For the CDO / CAIO / CIO running an AI program:</p>
 <p>AI 프로그램을 운영하는 CDO·CAIO·CIO에게:</p>
 
-<ul>
 <li>The conversation shifts from "AI vs. security" to "AI through the data layer."</li>
-<li>논의가 "AI 대(對) 보안"에서 "데이터 레이어를 통한 AI"로 전환됩니다.</li>
 <li>The pilot exit criteria change from "demo on sanitized data" to "demo on real data with audit trail."</li>
-<li>파일럿 완료 기준이 "정제 데이터로 데모"에서 "감사 이력이 있는 실제 데이터로 데모"로 바뀝니다.</li>
 <li>Shadow AI risk falls — the productivity people tasted in the pilot becomes available in the official tooling.</li>
-<li>섀도우 AI 리스크가 줄어듭니다. 파일럿에서 경험한 생산성 향상이 공식 도구에서도 가능해집니다.</li>
 <li>Procurement simplifies — one data layer covers multiple AI use cases across multiple LLM providers.</li>
-<li>조달이 단순해집니다. 하나의 데이터 레이어가 여러 LLM 공급업체에 걸친 다수의 AI 유스케이스를 커버합니다.</li>
 <li>Regulator conversations have evidence — chain of custody, policy versioning, restoration audit.</li>
-<li>규제 당국과의 대화에 근거가 생깁니다. 보관 연속성·정책 버전 관리·복원 감사 이력이 바로 그것입니다.</li>
 </ul>
 
-<h2>How long does it take to get to production?</h2>
 <h2>프로덕션까지 얼마나 걸립니까?</h2>
 
-<p>With the data layer in place, regulated workflows typically reach production in 8-12 weeks (vs. 6-12 months stalled in the standard pattern). The gating items are usually internal — DPO sign-off, regulator notification (where required), security review of the policy. The technical integration is days, not months.</p>
 <p>데이터 레이어가 갖춰지면, 규제 대상 워크플로는 일반적으로 8-12주 안에 프로덕션에 도달합니다(전형적인 패턴에서 6-12개월 지체되는 것과 비교됩니다). 주요 게이팅 항목은 보통 내부적입니다. DPO 승인·규제 당국 통보(필요한 경우)·정책 보안 검토가 그것입니다. 기술 통합은 수개월이 아닌 수일이면 됩니다.</p>
 
-<h2>Getting started</h2>
 <h2>시작하는 방법</h2>
 
-<p>If you have an AI pilot that has stalled in security or compliance review, the diagnosis is usually a missing data layer. Bring one stalled use case and one regulatory constraint. We deploy LLM Capsule on a sample workflow within 30 minutes and produce an evaluation report on what changes when the data layer is in place.</p>
 <p>보안 또는 컴플라이언스 검토에서 멈춘 AI 파일럿이 있다면, 진단은 대개 데이터 레이어의 부재입니다. 멈춘 유스케이스 하나와 규제 제약 하나를 가져오세요. 30분 안에 샘플 워크플로에 LLM Capsule을 배포하고, 데이터 레이어가 있을 때 무엇이 달라지는지 평가 보고서를 제출합니다.</p>
 
-<p><a href="/request-a-demo" class="ptpa-btn ptpa-btn--primary">Request an evaluation</a></p>
 <p><a href="/request-a-demo" class="ptpa-btn ptpa-btn--primary">평가 신청하기</a></p>
 
 ## Section 04: Related Links
