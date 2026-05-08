@@ -115,53 +115,18 @@ Network operations data — NOC logs, alarm sequences, incident tickets, device 
 
 <h2>캡슐화되는 항목 — 그리고 원본으로 유지되는 항목</h2>
 
-<th>필드 유형</th>
-
-<th>캡슐 내 처리</th>
-
-<th>출력 시 복원 여부</th>
-
-<td>장비 ID (예: R-472)</td>
-
-<td>구조 보존 토크나이즈</td>
-
-<td>예 — 원본 ID 복원</td>
-
-<td>셀 사이트 ID (예: SEO-18)</td>
-
-<td>토크나이즈, 지리 힌트 일반화</td>
-
-<td>예</td>
-
-<td>회선 ID</td>
-
-<td>토크나이즈</td>
-
-<td>예</td>
-
-<td>고객명</td>
-
-<td>필드 수준 삭제</td>
-
-<td>예 (정책 허용 시)</td>
-
-<td>알람 시퀀스</td>
-
-<td>시퀀스 보존, 절대 타임스탬프 DP 퍼징</td>
-
-<td>예 — 원본 시퀀스 복원</td>
-
-<td>SLA 영향 값</td>
-
-<td>집계 추론을 위해 DP 버킷 처리</td>
-
-<td>원본 값 별도 보존</td>
-
-<td>토폴로지 그래프</td>
-
-<td>구조 보존, 식별자 토크나이즈</td>
-
-<td>예</td>
+<table class="compare-table">
+  <thead><tr><th>필드 유형</th><th>캡슐 내 처리</th><th>출력 시 복원 여부</th></tr></thead>
+  <tbody>
+    <tr><td>장비 ID (예: R-472)</td><td>구조 보존 토크나이즈</td><td>예 — 원본 ID 복원</td></tr>
+    <tr><td>셀 사이트 ID (예: SEO-18)</td><td>토크나이즈, 지리 힌트 일반화</td><td>예</td></tr>
+    <tr><td>회선 ID</td><td>토크나이즈</td><td>예</td></tr>
+    <tr><td>고객명</td><td>필드 수준 삭제</td><td>예 (정책 허용 시)</td></tr>
+    <tr><td>알람 시퀀스</td><td>시퀀스 보존, 절대 타임스탬프 DP 퍼징</td><td>예 — 원본 시퀀스 복원</td></tr>
+    <tr><td>SLA 영향 값</td><td>집계 추론을 위해 DP 버킷 처리</td><td>원본 값 별도 보존</td></tr>
+    <tr><td>토폴로지 그래프</td><td>구조 보존, 식별자 토크나이즈</td><td>예</td></tr>
+  </tbody>
+</table>
 
 <h2>통신사 환경에서 예상되는 패턴</h2>
 
