@@ -287,65 +287,42 @@ Traditional approaches — masking, redaction, tokenization, and prompt security
 These tools create a fundamental adoption barrier: without a data layer that makes sensitive data AI-ready while keeping it protected, enterprise AI projects stall before they can demonstrate value.
 이러한 도구는 근본적인 도입 장벽을 만듭니다. 민감 데이터를 보호하면서 AI에 사용할 수 있게 만드는 데이터 레이어 없이는 기업 AI 프로젝트가 가치를 입증하기 전에 정체됩니다.
 
-Approach
-접근 방식
-
-Method
-방법
-
-Limitation
-한계
-
-AI Workflow Impact
-AI 워크플로 영향
-
-Masking & Redaction
-마스킹 및 삭제
-
-Permanently removes data
-데이터를 영구 제거
-
-Destroys context AI needs
-AI에 필요한 맥락 파괴
-
-Unusable [REDACTED] outputs requiring manual reconstruction
-수작업 재구성이 필요한 사용 불가 [REDACTED] 출력
-
-Prompt Security Gateways
-프롬프트 보안 게이트웨이
-
-API-level prompt filtering
-API 수준 프롬프트 필터링
-
-No document-level protection
-문서 수준 보호 없음
-
-No output restoration capability
-출력 복원 기능 없음
-
-Synthetic Data Platforms
-합성 데이터 플랫폼
-
-Artificial data generation
-인공 데이터 생성
-
-Training/testing only
-학습/테스트 전용
-
-Cannot replace real documents in live AI workflows
-실시간 AI 워크플로에서 실제 문서를 대체할 수 없음
-
-Security Team Blocks AI
-보안팀 AI 차단
-
-Manual approval gate
-수동 승인 게이트
-
-Blocks all AI projects
-모든 AI 프로젝트 차단
-
-Projects never demonstrate value before being cancelled
-프로젝트가 취소되기 전에 가치를 입증하지 못함
+<table class="compare__table">
+  <thead>
+    <tr>
+      <th>접근 방식</th>
+      <th>방법</th>
+      <th>한계</th>
+      <th class="us">AI 워크플로 영향</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>마스킹 및 삭제</td>
+      <td>데이터를 영구 제거</td>
+      <td>AI에 필요한 맥락 파괴</td>
+      <td class="us-cell">수작업 재구성이 필요한 사용 불가 [REDACTED] 출력</td>
+    </tr>
+    <tr>
+      <td>프롬프트 보안 게이트웨이</td>
+      <td>API 수준 프롬프트 필터링</td>
+      <td>문서 수준 보호 없음</td>
+      <td class="us-cell">출력 복원 기능 없음</td>
+    </tr>
+    <tr>
+      <td>합성 데이터 플랫폼</td>
+      <td>인공 데이터 생성</td>
+      <td>학습/테스트 전용</td>
+      <td class="us-cell">실시간 AI 워크플로에서 실제 문서를 대체할 수 없음</td>
+    </tr>
+    <tr>
+      <td>보안팀 AI 차단</td>
+      <td>수동 승인 게이트</td>
+      <td>모든 AI 프로젝트 차단</td>
+      <td class="us-cell">프로젝트가 취소되기 전에 가치를 입증하지 못함</td>
+    </tr>
+  </tbody>
+</table>
 
 LLM Capsule sits between your documents and any AI model. It replaces sensitive data with safe placeholders inside your environment, lets AI process the protected version, then restores real data back into AI outputs — not at the model layer, not at the prompt layer, but at the data layer where it matters.
 LLM Capsule은 문서와 모든 AI 모델 사이에 위치합니다. 환경 내부에서 민감 데이터를 안전한 대체값으로 치환하고, AI가 보호된 버전을 처리한 뒤, 실제 데이터를 AI 출력에 복원합니다. 모델 레이어도, 프롬프트 레이어도 아닌, 중요한 데이터 레이어에서 작동합니다.

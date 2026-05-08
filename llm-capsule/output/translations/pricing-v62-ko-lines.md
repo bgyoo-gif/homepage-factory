@@ -138,161 +138,30 @@ What's included in each tier
 All three tiers include the full capability set. Differences are in scope, support, and procurement path.
 세 가지 요금제 모두 전체 기능 세트를 포함합니다. 차이는 범위, 지원 수준, 조달 방식에 있습니다.
 
-Feature
-기능
-
-Proof of Value
-Proof of Value
-
-Enterprise
-Enterprise
-
-AWS Marketplace
-AWS Marketplace
-
-Document volume
-문서 처리 건수
-
-Evaluation scope
-평가 범위 내
-
-Unlimited
-무제한
-
-Per AWS contract
-AWS 계약 기준
-
-Execution paths (A external + B on-prem)
-실행 경로 (Path A 외부 + Path B 온프레미스)
-
-Both
-모두 지원
-
-Both
-모두 지원
-
-Both
-모두 지원
-
-6 capability set including time-shifting policy
-타임시프팅 정책 포함 6가지 기능 세트
-
-Full
-전체 제공
-
-Full
-전체 제공
-
-Full
-전체 제공
-
-Custom marker definition
-커스텀 마커 정의
-
-Up to 25
-최대 25개
-
-Unlimited
-무제한
-
-Unlimited
-무제한
-
-Policy versioning + audit
-정책 버전 관리 + 감사
-
-90-day retention
-90일 보존
-
-7-year retention
-7년 보존
-
-7-year retention
-7년 보존
-
-RBAC + per-team scope
-RBAC + 팀 단위 권한 범위
-
-Standard
-표준
-
-Advanced (LDAP / SAML / SCIM)
-고급 (LDAP / SAML / SCIM)
-
-Advanced
-고급
-
-Deployment modes
-배포 방식
-
-On-prem / VPC
-온프레미스 / VPC
-
-All 6 modes
-6가지 방식 전체
-
-VPC (AWS)
-VPC (AWS)
-
-Connector library
-커넥터 라이브러리
-
-Standard 12
-표준 12종
-
-Standard + custom
-표준 + 커스텀
-
-Standard 12
-표준 12종
-
-Compliance frameworks
-규제 대응 프레임워크
-
-GDPR / HIPAA
-GDPR / HIPAA
-
-GDPR / HIPAA / SOX / EU AI Act
-GDPR / HIPAA / SOX / EU AI Act
-
-GDPR / HIPAA / SOX
-GDPR / HIPAA / SOX
-
-SLA
-SLA
-
-Best-effort
-최선 제공
-
-99.9% uptime, defined response time
-99.9% 가동률, 정의된 응답 시간
-
-Per AWS contract
-AWS 계약 기준
-
-Support
-지원
-
-Email / Slack
-이메일 / Slack
-
-Dedicated CSM, 24/7 P1 channel
-전담 CSM, 24/7 P1 채널
-
-Email / Slack + AWS
-이메일 / Slack + AWS
-
-DPA + Vendor Security Questionnaire
-DPA + 공급업체 보안 질문서
-
-Provided
-제공
-
-Provided + executed
-제공 및 체결
-
-AWS standard
-AWS 표준
+<table class="matrix">
+  <thead>
+    <tr>
+      <th>기능</th>
+      <th>Proof of Value</th>
+      <th class="featured">Enterprise</th>
+      <th>AWS Marketplace</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>문서 처리 건수</td><td>평가 범위 내</td><td class="featured yes">무제한</td><td>AWS 계약 기준</td></tr>
+    <tr><td>실행 경로 (Path A 외부 + Path B 온프레미스)</td><td class="yes">모두 지원</td><td class="featured yes">모두 지원</td><td class="yes">모두 지원</td></tr>
+    <tr><td>타임시프팅 정책 포함 6가지 기능 세트</td><td class="yes">전체 제공</td><td class="featured yes">전체 제공</td><td class="yes">전체 제공</td></tr>
+    <tr><td>커스텀 마커 정의</td><td class="yes">최대 25개</td><td class="featured yes">무제한</td><td class="yes">무제한</td></tr>
+    <tr><td>정책 버전 관리 + 감사</td><td class="yes">90일 보존</td><td class="featured yes">7년 보존</td><td class="yes">7년 보존</td></tr>
+    <tr><td>RBAC + 팀 단위 권한 범위</td><td class="yes">표준</td><td class="featured yes">고급 (LDAP / SAML / SCIM)</td><td class="yes">고급</td></tr>
+    <tr><td>배포 방식</td><td>온프레미스 / VPC</td><td class="featured yes">6가지 방식 전체</td><td>VPC (AWS)</td></tr>
+    <tr><td>커넥터 라이브러리</td><td>표준 12종</td><td class="featured yes">표준 + 커스텀</td><td>표준 12종</td></tr>
+    <tr><td>규제 대응 프레임워크</td><td>GDPR / HIPAA</td><td class="featured yes">GDPR / HIPAA / SOX / EU AI Act</td><td>GDPR / HIPAA / SOX</td></tr>
+    <tr><td>SLA</td><td>최선 제공</td><td class="featured yes">99.9% 가동률, 정의된 응답 시간</td><td>AWS 계약 기준</td></tr>
+    <tr><td>지원</td><td>이메일 / Slack</td><td class="featured yes">전담 CSM, 24/7 P1 채널</td><td>이메일 / Slack + AWS</td></tr>
+    <tr><td>DPA + 공급업체 보안 질문서</td><td class="yes">제공</td><td class="featured yes">제공 및 체결</td><td class="yes">AWS 표준</td></tr>
+  </tbody>
+</table>
 
 ---
 

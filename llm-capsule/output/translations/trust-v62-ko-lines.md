@@ -162,209 +162,68 @@ LLM Capsule 기능이 GDPR / HIPAA / SOX / EU AI Act 검토 워크플로우에 �
 LLM Capsule provides architectural controls that support GDPR, HIPAA, SOX, and EU AI Act review workflows. The matrix below maps each capability to the relevant article or section so compliance, security, and procurement teams have a starting reference. This is not a compliance certification — final compliance determination is the customer's, in their own deployment context.
 LLM Capsule은 GDPR, HIPAA, SOX, EU AI Act 검토 워크플로우를 지원하는 아키텍처 통제 수단을 제공합니다. 아래 매트릭스는 각 기능을 관련 조항에 매핑하여 컴플라이언스·보안·구매 팀의 검토 참고 자료로 활용할 수 있습니다. 이는 컴플라이언스 인증이 아닙니다. 최종 컴플라이언스 판단은 고객사의 배포 환경에서 고객사가 결정합니다.
 
-LLM Capsule capability
-LLM Capsule 기능
-
-GDPR
-GDPR
-
-HIPAA
-HIPAA
-
-SOX
-SOX
-
-EU AI Act
-EU AI Act
-
-Local encapsulation (data never leaves)
-로컬 캡슐화 (데이터 절대 외부로 나가지 않음)
-
-Art. 5 (lawfulness), Art. 32 (security of processing)
-Art. 5 (적법성), Art. 32 (처리 보안)
-
-Pseudonymization before transmission
-전송 전 가명처리
-
-164.502(d), 164.514(b)
-164.502(d), 164.514(b)
-
-De-identification methodology
-비식별화 방법론
-
-Section 404
-Section 404
-
-Internal control over data flow
-데이터 흐름에 대한 내부 통제
-
-Art. 10 (data governance), Art. 15 (cybersecurity)
-Art. 10 (데이터 거버넌스), Art. 15 (사이버보안)
-
-Data quality and protection requirements
-데이터 품질 및 보호 요건
-
-Local restoration (token vault)
-로컬 복원 (토큰 볼트)
-
-Art. 32
-Art. 32
-
-Pseudonymization is reversible only inside controlled environment
-가명처리는 통제된 환경 내에서만 역변환 가능
-
-164.514(c)
-164.514(c)
-
-Re-identification key separation
-재식별 키 분리
-
-Section 404
-Section 404
-
-Authorized re-identification only
-인가된 재식별만 허용
-
-Art. 10
-Art. 10
-
-Reversibility for legitimate use only
-정당한 사용에 한해 역변환 허용
-
-Audit logs (every event)
-감사 로그 (모든 이벤트)
-
-Art. 30
-Art. 30
-
-Records of processing activities
-처리 활동 기록
-
-164.312(b)
-164.312(b)
-
-Audit controls
-감사 통제
-
-Section 404, 802
-Section 404, 802
-
-Internal control + record retention
-내부 통제 + 기록 보관
-
-Art. 12, 13, 19
-Art. 12, 13, 19
-
-Logging, transparency, conformity
-로깅, 투명성, 적합성
-
-Policy versioning + time-shifting
-정책 버전 관리 + 시점 이동
-
-Art. 5(2), 24
-Art. 5(2), 24
-
-Accountability principle
-책임 원칙
-
-164.316
-164.316
-
-Policies and procedures
-정책 및 절차
-
-Section 302, 404
-Section 302, 404
-
-Internal control over policy changes
-정책 변경에 대한 내부 통제
-
-Art. 17, 18
-Art. 17, 18
-
-Quality and risk management system
-품질 및 리스크 관리 시스템
-
-RBAC + scope
-RBAC + 범위 설정
-
-Art. 32
-Art. 32
-
-Access control
-접근 통제
-
-164.308(a)(4), 164.312(a)
-164.308(a)(4), 164.312(a)
-
-Workforce security + access control
-인력 보안 + 접근 통제
-
-Section 404
-Section 404
-
-Segregation of duties
-직무 분리
-
-Art. 14
-Art. 14
-
-Human oversight
-인간 감독
-
-On-prem / Path B execution
-온프레미스 / Path B 실행
-
-Art. 44, Chapter V
-Art. 44, Chapter V
-
-International transfer restriction (avoidance)
-국제 이전 제한 (회피)
-
-164.308(a)(8)
-164.308(a)(8)
-
-Contingency plan, environment control
-비상 계획, 환경 통제
-
-Section 404
-Section 404
-
-Environment control
-환경 통제
-
-Art. 25
-Art. 25
-
-Conformity assessment when high-risk
-고위험 시 적합성 평가
-
-DPA, SCCs, Vendor Security
-DPA, SCCs, 벤더 보안
-
-Art. 28
-Art. 28
-
-Processor obligations
-처리자 의무
-
-BAA equivalent
-BAA 동등
-
-Business associate framework
-비즈니스 파트너 프레임워크
-
-Auditor reliance
-감사인 의존
-
-Vendor management
-벤더 관리
-
-Art. 28
-Art. 28
-
-Provider obligations
-제공자 의무
+<table class="comp-matrix">
+  <thead>
+    <tr>
+      <th>LLM Capsule 기능</th>
+      <th>GDPR</th>
+      <th>HIPAA</th>
+      <th>SOX</th>
+      <th>EU AI Act</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>로컬 캡슐화 (데이터 절대 외부로 나가지 않음)</td>
+      <td>Art. 5 (적법성), Art. 32 (처리 보안) <small>전송 전 가명처리</small></td>
+      <td>164.502(d), 164.514(b) <small>비식별화 방법론</small></td>
+      <td>Section 404 <small>데이터 흐름에 대한 내부 통제</small></td>
+      <td>Art. 10 (데이터 거버넌스), Art. 15 (사이버보안) <small>데이터 품질 및 보호 요건</small></td>
+    </tr>
+    <tr>
+      <td>로컬 복원 (토큰 볼트)</td>
+      <td>Art. 32 <small>가명처리는 통제된 환경 내에서만 역변환 가능</small></td>
+      <td>164.514(c) <small>재식별 키 분리</small></td>
+      <td>Section 404 <small>인가된 재식별만 허용</small></td>
+      <td>Art. 10 <small>정당한 사용에 한해 역변환 허용</small></td>
+    </tr>
+    <tr>
+      <td>감사 로그 (모든 이벤트)</td>
+      <td>Art. 30 <small>처리 활동 기록</small></td>
+      <td>164.312(b) <small>감사 통제</small></td>
+      <td>Section 404, 802 <small>내부 통제 + 기록 보관</small></td>
+      <td>Art. 12, 13, 19 <small>로깅, 투명성, 적합성</small></td>
+    </tr>
+    <tr>
+      <td>정책 버전 관리 + 시점 이동</td>
+      <td>Art. 5(2), 24 <small>책임 원칙</small></td>
+      <td>164.316 <small>정책 및 절차</small></td>
+      <td>Section 302, 404 <small>정책 변경에 대한 내부 통제</small></td>
+      <td>Art. 17, 18 <small>품질 및 리스크 관리 시스템</small></td>
+    </tr>
+    <tr>
+      <td>RBAC + 범위 설정</td>
+      <td>Art. 32 <small>접근 통제</small></td>
+      <td>164.308(a)(4), 164.312(a) <small>인력 보안 + 접근 통제</small></td>
+      <td>Section 404 <small>직무 분리</small></td>
+      <td>Art. 14 <small>인간 감독</small></td>
+    </tr>
+    <tr>
+      <td>온프레미스 / Path B 실행</td>
+      <td>Art. 44, Chapter V <small>국제 이전 제한 (회피)</small></td>
+      <td>164.308(a)(8) <small>비상 계획, 환경 통제</small></td>
+      <td>Section 404 <small>환경 통제</small></td>
+      <td>Art. 25 <small>고위험 시 적합성 평가</small></td>
+    </tr>
+    <tr>
+      <td>DPA, SCCs, 벤더 보안</td>
+      <td>Art. 28 <small>처리자 의무</small></td>
+      <td>BAA 동등 <small>비즈니스 파트너 프레임워크</small></td>
+      <td>감사인 의존 <small>벤더 관리</small></td>
+      <td>Art. 28 <small>제공자 의무</small></td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 

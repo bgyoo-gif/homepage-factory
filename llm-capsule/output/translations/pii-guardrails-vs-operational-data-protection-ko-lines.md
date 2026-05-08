@@ -69,12 +69,18 @@ PII 가드레일은 API 또는 프롬프트 레이어에서 식별 가능한 필
 
 <h2>직접 비교표</h2>
 
-(빈칸) | PII guardrails | AI security / prompt | LLM Capsule
-
-Layer / 레이어 | API wrapper / API 래퍼 | Prompt / gateway / 프롬프트 / 게이트웨이 | AI enablement data layer / AI enablement data layer
-Method / 방법 | Detect & mask / 탐지 & 마스킹 | Filter / sanitize prompts / 필터 / 프롬프트 정제 | Structure-preserving + DP-based encapsulation / 문서 구조 보존 + 차등 프라이버시 기반 캡슐화
-On-prem local execution / 온프레미스 로컬 실행 | No / 아니요 | Limited / 제한적 | Yes (Path B) / 예 (Path B)
-Governance / 거버넌스 | Detection logs / 탐지 로그 | Threat logs / 위협 로그 | Policy · audit · access · compliance / 정책 · 감사 이력 · 접근 제어 · 컴플라이언스
+<table class="compare-table">
+  <thead><tr><th></th><th>PII 가드레일</th><th>AI 보안 / 프롬프트</th><th class="us">LLM Capsule</th></tr></thead>
+  <tbody>
+    <tr><td>레이어</td><td>API 래퍼</td><td>프롬프트 / 게이트웨이</td><td class="us-cell">AI enablement data layer</td></tr>
+    <tr><td>범위</td><td>이름, ID, 필드</td><td>프롬프트 위협 + PII</td><td class="us-cell">운영 데이터 + 거버넌스</td></tr>
+    <tr><td>방법</td><td>탐지 &amp; 마스킹</td><td>필터 / 프롬프트 정제</td><td class="us-cell">문서 구조 보존 + 차등 프라이버시 기반 캡슐화</td></tr>
+    <tr><td>레거시 시스템 연동</td><td>아니요</td><td>아니요</td><td class="us-cell">예 (NOC, 티켓, OT, EHR, 미션)</td></tr>
+    <tr><td>온프레미스 로컬 실행</td><td>아니요</td><td>제한적</td><td class="us-cell">예 (Path B)</td></tr>
+    <tr><td>복원</td><td>단방향</td><td>단방향</td><td class="us-cell">State Vault를 통한 양방향</td></tr>
+    <tr><td>거버넌스</td><td>탐지 로그</td><td>위협 로그</td><td class="us-cell">정책 · 감사 이력 · 접근 제어 · 컴플라이언스</td></tr>
+  </tbody>
+</table>
 
 <h2>각 카테고리가 가장 잘하는 것</h2>
 
