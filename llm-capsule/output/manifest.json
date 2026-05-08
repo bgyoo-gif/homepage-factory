@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-06 17:53:01",
+  "generated": "2026-05-08 14:53:34",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1040,6 +1040,11 @@
           "modified": "2026-05-06"
         },
         {
+          "name": "06-trust-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/06-trust-b-type.html",
+          "modified": "2026-05-06"
+        },
+        {
           "name": "07-resources-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/07-resources-b-type.html",
           "modified": "2026-05-06"
@@ -1227,11 +1232,6 @@
           "modified": "2026-05-06"
         },
         {
-          "name": "02_product-spec.md",
-          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/02_product-spec.md",
-          "modified": "2026-05-06"
-        },
-        {
           "name": "03-architecture-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/03-architecture-spec.md",
           "modified": "2026-05-06"
@@ -1239,6 +1239,11 @@
         {
           "name": "05-pricing-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/05-pricing-spec.md",
+          "modified": "2026-05-06"
+        },
+        {
+          "name": "06-trust-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/06-trust-spec.md",
           "modified": "2026-05-06"
         },
         {
@@ -1402,6 +1407,16 @@
           "modified": "2026-04-23"
         },
         {
+          "name": "ai-on-network-operations-data-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/ai-on-network-operations-data-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "ai-on-network-operations-data-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/ai-on-network-operations-data-ko-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
           "name": "architecture-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/architecture-de-lines.md",
           "modified": "2026-04-28"
@@ -1415,6 +1430,16 @@
           "name": "architecture-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/architecture-ko-lines.md",
           "modified": "2026-04-20"
+        },
+        {
+          "name": "differential-privacy-for-enterprise-llm-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/differential-privacy-for-enterprise-llm-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "differential-privacy-for-enterprise-llm-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/differential-privacy-for-enterprise-llm-ko-lines.md",
+          "modified": "2026-05-08"
         },
         {
           "name": "downloads-de-lines.md",
@@ -1434,7 +1459,7 @@
         {
           "name": "enterprise-ai-data-protection-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/enterprise-ai-data-protection-de-lines.md",
-          "modified": "2026-04-28"
+          "modified": "2026-05-08"
         },
         {
           "name": "enterprise-ai-data-protection-ja-lines.md",
@@ -1444,12 +1469,12 @@
         {
           "name": "enterprise-ai-data-protection-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/enterprise-ai-data-protection-ko-lines.md",
-          "modified": "2026-04-20"
+          "modified": "2026-05-08"
         },
         {
           "name": "enterprise-ai-document-processing-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/enterprise-ai-document-processing-de-lines.md",
-          "modified": "2026-04-28"
+          "modified": "2026-05-08"
         },
         {
           "name": "enterprise-ai-document-processing-ja-lines.md",
@@ -1459,12 +1484,12 @@
         {
           "name": "enterprise-ai-document-processing-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/enterprise-ai-document-processing-ko-lines.md",
-          "modified": "2026-04-20"
+          "modified": "2026-05-08"
         },
         {
           "name": "enterprise-context-control-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/enterprise-context-control-de-lines.md",
-          "modified": "2026-04-28"
+          "modified": "2026-05-08"
         },
         {
           "name": "enterprise-context-control-ja-lines.md",
@@ -1474,12 +1499,62 @@
         {
           "name": "enterprise-context-control-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/enterprise-context-control-ko-lines.md",
-          "modified": "2026-04-20"
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-ai-enablement-data-layer-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-ai-enablement-data-layer-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-ai-enablement-data-layer-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-ai-enablement-data-layer-ko-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-ai-ready-operational-layer-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-ai-ready-operational-layer-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-ai-ready-operational-layer-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-ai-ready-operational-layer-ko-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-blocked-ai-workflow-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-blocked-ai-workflow-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-blocked-ai-workflow-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-blocked-ai-workflow-ko-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-connector-lane-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-connector-lane-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-connector-lane-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-connector-lane-ko-lines.md",
+          "modified": "2026-05-08"
         },
         {
           "name": "glossary-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-de-lines.md",
-          "modified": "2026-04-28"
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-differential-privacy-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-differential-privacy-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-differential-privacy-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-differential-privacy-ko-lines.md",
+          "modified": "2026-05-08"
         },
         {
           "name": "glossary-ja-lines.md",
@@ -1489,12 +1564,82 @@
         {
           "name": "glossary-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-ko-lines.md",
-          "modified": "2026-04-20"
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-operational-data-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-operational-data-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-operational-data-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-operational-data-ko-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-shadow-ai-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-shadow-ai-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-shadow-ai-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-shadow-ai-ko-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-sovereign-ai-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-sovereign-ai-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-sovereign-ai-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-sovereign-ai-ko-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-state-vault-for-restoration-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-state-vault-for-restoration-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-state-vault-for-restoration-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-state-vault-for-restoration-ko-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-structure-preserving-encapsulation-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-structure-preserving-encapsulation-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-structure-preserving-encapsulation-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-structure-preserving-encapsulation-ko-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-two-execution-paths-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-two-execution-paths-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "glossary-two-execution-paths-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-two-execution-paths-ko-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "hospital-ai-deployment-phi-protection-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/hospital-ai-deployment-phi-protection-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "hospital-ai-deployment-phi-protection-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/hospital-ai-deployment-phi-protection-ko-lines.md",
+          "modified": "2026-05-08"
         },
         {
           "name": "how-to-use-ai-on-sensitive-enterprise-data-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/how-to-use-ai-on-sensitive-enterprise-data-de-lines.md",
-          "modified": "2026-04-28"
+          "modified": "2026-05-08"
         },
         {
           "name": "how-to-use-ai-on-sensitive-enterprise-data-ja-lines.md",
@@ -1504,12 +1649,12 @@
         {
           "name": "how-to-use-ai-on-sensitive-enterprise-data-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/how-to-use-ai-on-sensitive-enterprise-data-ko-lines.md",
-          "modified": "2026-04-20"
+          "modified": "2026-05-08"
         },
         {
           "name": "index-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/index-de-lines.md",
-          "modified": "2026-05-06"
+          "modified": "2026-05-07"
         },
         {
           "name": "index-ja-lines.md",
@@ -1519,7 +1664,7 @@
         {
           "name": "index-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/index-ko-lines.md",
-          "modified": "2026-05-06"
+          "modified": "2026-05-07"
         },
         {
           "name": "learn-de-lines.md",
@@ -1539,7 +1684,7 @@
         {
           "name": "llm-capsule-vs-masking-tools-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/llm-capsule-vs-masking-tools-de-lines.md",
-          "modified": "2026-04-29"
+          "modified": "2026-05-08"
         },
         {
           "name": "llm-capsule-vs-masking-tools-ja-lines.md",
@@ -1549,12 +1694,12 @@
         {
           "name": "llm-capsule-vs-masking-tools-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/llm-capsule-vs-masking-tools-ko-lines.md",
-          "modified": "2026-04-29"
+          "modified": "2026-05-08"
         },
         {
           "name": "llm-capsule-vs-prompt-security-gateways-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/llm-capsule-vs-prompt-security-gateways-de-lines.md",
-          "modified": "2026-04-29"
+          "modified": "2026-05-08"
         },
         {
           "name": "llm-capsule-vs-prompt-security-gateways-ja-lines.md",
@@ -1564,12 +1709,12 @@
         {
           "name": "llm-capsule-vs-prompt-security-gateways-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/llm-capsule-vs-prompt-security-gateways-ko-lines.md",
-          "modified": "2026-04-29"
+          "modified": "2026-05-08"
         },
         {
           "name": "llm-capsule-vs-synthetic-data-platforms-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/llm-capsule-vs-synthetic-data-platforms-de-lines.md",
-          "modified": "2026-04-28"
+          "modified": "2026-05-08"
         },
         {
           "name": "llm-capsule-vs-synthetic-data-platforms-ja-lines.md",
@@ -1579,7 +1724,7 @@
         {
           "name": "llm-capsule-vs-synthetic-data-platforms-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/llm-capsule-vs-synthetic-data-platforms-ko-lines.md",
-          "modified": "2026-04-29"
+          "modified": "2026-05-08"
         },
         {
           "name": "local-restorationvs-anonymization-de-lines.md",
@@ -1597,6 +1742,16 @@
           "modified": "2026-04-29"
         },
         {
+          "name": "on-prem-llm-execution-path-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/on-prem-llm-execution-path-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "on-prem-llm-execution-path-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/on-prem-llm-execution-path-ko-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
           "name": "on-premise-vs-cloud-ai-data-protection-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/on-premise-vs-cloud-ai-data-protection-de-lines.md",
           "modified": "2026-04-29"
@@ -1612,6 +1767,16 @@
           "modified": "2026-04-20"
         },
         {
+          "name": "pii-guardrails-vs-operational-data-protection-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/pii-guardrails-vs-operational-data-protection-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "pii-guardrails-vs-operational-data-protection-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/pii-guardrails-vs-operational-data-protection-ko-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
           "name": "pii-protection-vs-enterprise-confidentiality-control-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/pii-protection-vs-enterprise-confidentiality-control-de-lines.md",
           "modified": "2026-04-28"
@@ -1625,6 +1790,16 @@
           "name": "pii-protection-vs-enterprise-confidentiality-control-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/pii-protection-vs-enterprise-confidentiality-control-ko-lines.md",
           "modified": "2026-04-20"
+        },
+        {
+          "name": "pilot-to-production-enterprise-ai-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/pilot-to-production-enterprise-ai-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "pilot-to-production-enterprise-ai-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/pilot-to-production-enterprise-ai-ko-lines.md",
+          "modified": "2026-05-08"
         },
         {
           "name": "pricing-de-lines.md",
@@ -1777,6 +1952,16 @@
           "modified": "2026-04-20"
         },
         {
+          "name": "sovereign-ai-european-enterprises-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/sovereign-ai-european-enterprises-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "sovereign-ai-european-enterprises-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/sovereign-ai-european-enterprises-ko-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
           "name": "structure-preserving-document-processing-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/structure-preserving-document-processing-de-lines.md",
           "modified": "2026-04-28"
@@ -1822,6 +2007,16 @@
           "modified": "2026-04-20"
         },
         {
+          "name": "telecom-noc-ai-deployment-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/telecom-noc-ai-deployment-de-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "telecom-noc-ai-deployment-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/telecom-noc-ai-deployment-ko-lines.md",
+          "modified": "2026-05-08"
+        },
+        {
           "name": "trust-center-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/trust-center-de-lines.md",
           "modified": "2026-04-28"
@@ -1854,7 +2049,7 @@
         {
           "name": "what-is-ai-data-capsule-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/what-is-ai-data-capsule-de-lines.md",
-          "modified": "2026-04-29"
+          "modified": "2026-05-08"
         },
         {
           "name": "what-is-ai-data-capsule-ja-lines.md",
@@ -1864,7 +2059,7 @@
         {
           "name": "what-is-ai-data-capsule-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/what-is-ai-data-capsule-ko-lines.md",
-          "modified": "2026-04-20"
+          "modified": "2026-05-08"
         },
         {
           "name": "why-redaction-breaks-enterprise-ai-workflows-de-lines.md",
@@ -1904,13 +2099,8 @@
           "modified": "2026-05-06"
         },
         {
-          "name": "CTAStrip.tsx",
-          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/_shared/CTAStrip.tsx",
-          "modified": "2026-05-06"
-        },
-        {
-          "name": "FAQAccordion.tsx",
-          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/_shared/FAQAccordion.tsx",
+          "name": "NotFound.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/404-v62/tsx/NotFound.tsx",
           "modified": "2026-05-06"
         },
         {
@@ -2296,7 +2486,7 @@
         {
           "name": "Section06_HowDiffers.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/llm-capsule-vs-masking-tools/tsx/Section06_HowDiffers.tsx",
-          "modified": "2026-05-06"
+          "modified": "2026-05-08"
         },
         {
           "name": "Section07_ComparisonTable.tsx",
@@ -2614,8 +2804,18 @@
           "modified": "2026-05-06"
         },
         {
+          "name": "RequestADemo.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/request-a-demo-v62/tsx/RequestADemo.tsx",
+          "modified": "2026-05-06"
+        },
+        {
           "name": "RequestPov.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/request-pov/RequestPov.tsx",
+          "modified": "2026-05-06"
+        },
+        {
+          "name": "RequestReceived.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/request-received/RequestReceived.tsx",
           "modified": "2026-05-06"
         },
         {
@@ -2762,6 +2962,36 @@
           "name": "Section07_CTA.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/secure-llm-usage/tsx/Section07_CTA.tsx",
           "modified": "2026-05-06"
+        },
+        {
+          "name": "CTAStrip.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/shared/CTAStrip.tsx",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "FAQAccordion.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/shared/FAQAccordion.tsx",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "GlossaryDetail.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/shared/GlossaryDetail.tsx",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "LearnArticle.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/shared/LearnArticle.tsx",
+          "modified": "2026-05-08"
+        },
+        {
+          "name": "LearnArticleBottom.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/shared/LearnArticleBottom.tsx",
+          "modified": "2026-05-07"
+        },
+        {
+          "name": "LearnArticleTop.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/shared/LearnArticleTop.tsx",
+          "modified": "2026-05-07"
         },
         {
           "name": "Section01_Hero.tsx",
@@ -2926,6 +3156,41 @@
         {
           "name": "Section05_CTA.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/trust-center/tsx/Section05_CTA.tsx",
+          "modified": "2026-05-06"
+        },
+        {
+          "name": "Section01_Hero.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/trust-v62/tsx/Section01_Hero.tsx",
+          "modified": "2026-05-06"
+        },
+        {
+          "name": "Section02_CredentialGrid.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/trust-v62/tsx/Section02_CredentialGrid.tsx",
+          "modified": "2026-05-06"
+        },
+        {
+          "name": "Section03_ComplianceMatrix.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/trust-v62/tsx/Section03_ComplianceMatrix.tsx",
+          "modified": "2026-05-06"
+        },
+        {
+          "name": "Section04_AuditFeatures.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/trust-v62/tsx/Section04_AuditFeatures.tsx",
+          "modified": "2026-05-06"
+        },
+        {
+          "name": "Section05_AdminConsole.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/trust-v62/tsx/Section05_AdminConsole.tsx",
+          "modified": "2026-05-06"
+        },
+        {
+          "name": "Section06_Downloads.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/trust-v62/tsx/Section06_Downloads.tsx",
+          "modified": "2026-05-06"
+        },
+        {
+          "name": "Section07_CTAStrip.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/trust-v62/tsx/Section07_CTAStrip.tsx",
           "modified": "2026-05-06"
         },
         {
