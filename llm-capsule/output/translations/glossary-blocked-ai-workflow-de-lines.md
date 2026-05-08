@@ -28,58 +28,42 @@ Ein blockierter KI-Workflow ist ein Geschäftsprozess, der vom KI-Einsatz profit
 
 ## Section 03: Body HTML
 
-### h2: Why it matters as a buying frame
 ### h2: Relevanz als Entscheidungsrahmen
 
-Most enterprise AI conversations start with capability ("can the model do X?"). For regulated operations, the binding constraint is rarely capability — it is the inability to bring the relevant operational data into the model. That is the blocked AI workflow. Naming it cleanly turns the buying conversation toward the layer that actually unblocks it.
 Die meisten KI-Gespräche in Unternehmen beginnen mit der Frage nach Fähigkeiten: Kann das Modell X? In regulierten Betrieben ist die eigentliche Einschränkung selten die Modellkompetenz — sie liegt darin, dass die relevanten operativen Daten das Modell nicht erreichen dürfen. Das ist der blockierte KI-Workflow. Wer dieses Problem präzise benennt, lenkt die Beschaffungsdiskussion auf die Schicht, die die Blockierung tatsächlich aufhebt.
 
 ---
 
-### h2: Common patterns
 ### h2: Typische Muster
 
-NOC RCA workflows blocked because network logs cannot leave the regulated jurisdiction
 NOC-RCA-Workflows blockiert, weil Netzwerkprotokolle die regulierte Jurisdiction nicht verlassen dürfen
 
-OT vulnerability triage blocked because asset references and plant zones cannot reach an external endpoint
 OT-Schwachstellentriage blockiert, weil Asset-Referenzen und Anlagenbereiche keinen externen Endpunkt erreichen dürfen
 
-Clinical workflow assistance blocked because PHI plus operational pattern is not safely handled by PII filtering
 Klinische Workflow-Unterstützung blockiert, weil PHI kombiniert mit operativen Mustern durch PII-Filterung allein nicht sicher verarbeitet werden kann
 
-Mission summary drafting blocked because air-gapped environments forbid any external transmission
 Erstellung von Missionszusammenfassungen blockiert, weil Air-Gapped-Umgebungen jede externe Übertragung untersagen
 
-Regulated finance review blocked because compliance posture forbids transmission of audit-trail content
 Regulierte Finanzprüfungen blockiert, weil die Compliance-Anforderungen die Übermittlung von Audit-Trail-Inhalten verbieten
 
 ---
 
-### h2: From blocked workflow to operational AI
 ### h2: Vom blockierten Workflow zum produktiven KI-Einsatz
 
-The unblock pattern is consistent across industries:
 Das Muster zur Aufhebung der Blockierung ist branchenübergreifend konsistent:
 
-Identify the operational data category that is blocking the workflow.
 Die operative Datenkategorie identifizieren, die den Workflow blockiert.
 
-Apply structure-preserving encapsulation with differential-privacy-based protection.
 Strukturerhaltende Kapsulierung mit Differential-Privacy-basiertem Schutz anwenden.
 
-Route through one of two execution paths per policy.
 Entsprechend der Richtlinie über einen der zwei Ausführungspfade weiterleiten.
 
-Restore via state vault back into the originating workflow.
 Über den State Vault in den ursprünglichen Workflow zurückführen.
 
 ---
 
-### h2: Reference statement
 ### h2: Kernaussage
 
-Most enterprise AI projects do not fail at the model. They fail at the data the model cannot reach. Naming that as a blocked AI workflow — and unblocking it through an AI enablement data layer — is the entry point for regulated operations.
 Die meisten KI-Projekte in Unternehmen scheitern nicht am Modell. Sie scheitern an den Daten, die das Modell nicht erreichen kann. Dieses Problem als blockierten KI-Workflow zu benennen — und die Blockierung über einen AI enablement data layer aufzuheben — ist der Einstiegspunkt für regulierte Betriebe.
 
 ---

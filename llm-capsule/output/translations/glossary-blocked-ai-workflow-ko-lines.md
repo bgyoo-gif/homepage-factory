@@ -28,52 +28,36 @@ A blocked AI workflow is a business process that would benefit from AI but canno
 
 ## Section 03: Article Body
 
-<h2>Why it matters as a buying frame</h2>
 <h2>구매 프레임으로서의 중요성</h2>
 
-<p>Most enterprise AI conversations start with capability ("can the model do X?"). For regulated operations, the binding constraint is rarely capability — it is the inability to bring the relevant operational data into the model. That is the blocked AI workflow. Naming it cleanly turns the buying conversation toward the layer that actually unblocks it.</p>
 <p>대부분의 기업 AI 대화는 기능 중심("모델이 X를 할 수 있는가?")으로 시작됩니다. 규제 환경의 운영에서 결정적 제약은 기능이 아닙니다 — 관련 운영 데이터를 모델에 투입할 수 없다는 것입니다. 그것이 바로 차단된 AI 워크플로우입니다. 이를 명확히 정의하면 구매 대화의 초점이 실제로 차단을 해제하는 레이어로 이동합니다.</p>
 
-<h2>Common patterns</h2>
 <h2>공통 패턴</h2>
 
-<li>NOC RCA workflows blocked because network logs cannot leave the regulated jurisdiction</li>
 <li>네트워크 로그가 규제 관할권 밖으로 나갈 수 없어 차단된 NOC RCA 워크플로우</li>
 
-<li>OT vulnerability triage blocked because asset references and plant zones cannot reach an external endpoint</li>
 <li>자산 참조 및 플랜트 구역 정보가 외부 엔드포인트에 도달할 수 없어 차단된 OT 취약점 분류</li>
 
-<li>Clinical workflow assistance blocked because PHI plus operational pattern is not safely handled by PII filtering</li>
 <li>PHI와 운영 패턴이 PII 필터링으로 안전하게 처리되지 않아 차단된 임상 워크플로우 지원</li>
 
-<li>Mission summary drafting blocked because air-gapped environments forbid any external transmission</li>
 <li>망분리 환경이 모든 외부 전송을 금지하여 차단된 미션 요약 작성</li>
 
-<li>Regulated finance review blocked because compliance posture forbids transmission of audit-trail content</li>
 <li>컴플라이언스 정책상 감사 이력 콘텐츠 전송이 금지되어 차단된 규제 금융 검토</li>
 
-<h2>From blocked workflow to operational AI</h2>
 <h2>차단된 워크플로우에서 운영 AI로</h2>
 
-<p>The unblock pattern is consistent across industries:</p>
 <p>차단 해제 패턴은 산업 전반에 걸쳐 일관됩니다.</p>
 
-<li>Identify the operational data category that is blocking the workflow.</li>
 <li>워크플로우를 차단하는 운영 데이터 카테고리를 식별합니다.</li>
 
-<li>Apply structure-preserving encapsulation with differential-privacy-based protection.</li>
 <li>문서 구조 보존 캡슐화와 차등 프라이버시 기반 보호를 적용합니다.</li>
 
-<li>Route through one of two execution paths per policy.</li>
 <li>정책에 따라 두 가지 실행 경로 중 하나로 라우팅합니다.</li>
 
-<li>Restore via state vault back into the originating workflow.</li>
 <li>state vault를 통해 원래 워크플로우로 복원합니다.</li>
 
-<h2>Reference statement</h2>
 <h2>참조 문장</h2>
 
-<blockquote><p>Most enterprise AI projects do not fail at the model. They fail at the data the model cannot reach. Naming that as a blocked AI workflow — and unblocking it through an AI enablement data layer — is the entry point for regulated operations.</p></blockquote>
 <blockquote><p>대부분의 기업 AI 프로젝트는 모델에서 실패하지 않습니다. 모델이 접근할 수 없는 데이터에서 실패합니다. 이를 차단된 AI 워크플로우로 정의하고 — 데이터 레이어를 통해 차단을 해제하는 것 — 이것이 규제 운영 환경의 진입점입니다.</p></blockquote>
 
 ---

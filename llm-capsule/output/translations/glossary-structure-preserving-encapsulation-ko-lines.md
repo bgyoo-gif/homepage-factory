@@ -24,61 +24,42 @@ Structure-preserving encapsulation is the transformation step in an AI enablemen
 
 ## Section 03: Article Body
 
-Why structure preservation matters
 구조 보존이 중요한 이유
 
-An LLM asked to draft an RCA from an alarm sequence cannot reason if the sequence is destroyed. An LLM asked to compare two configuration trees cannot compare if the tree relationships are flattened. Structure preservation is what makes the capsule useful to the model, not just safe.
 알람 시퀀스를 토대로 RCA를 작성하도록 요청받은 LLM은 시퀀스가 파괴되면 추론할 수 없습니다. 두 구성 트리를 비교하도록 요청받은 LLM은 트리 관계가 평탄화되면 비교할 수 없습니다. 구조 보존이야말로 캡슐을 모델에게 단순히 안전한 것이 아니라 유용한 것으로 만드는 핵심입니다.
 
-What gets tokenized
 토큰화 대상
 
-Operational identifiers: DEVICE_ID, SITE_ID, CIRCUIT_ID, ASSET_ID, MISSION_REF
 운영 식별자: DEVICE_ID, SITE_ID, CIRCUIT_ID, ASSET_ID, MISSION_REF
 
-Customer references and segments
 고객 참조 및 세그먼트
 
-Free-text fields with mixed identifiers (NER masking)
 복합 식별자가 포함된 자유 텍스트 필드 (NER 마스킹)
 
-Sensitive attribute values (under DP budget)
 민감 속성 값 (DP 예산 범위 내)
 
-What gets preserved
 보존 대상
 
-Time order of events
 이벤트의 시간 순서
 
-Cause-effect relationships in incident sequences
 인시던트 시퀀스 내 인과 관계
 
-Document structure (sections, lists, tables)
 문서 구조 (섹션·목록·테이블)
 
-Configuration tree (parent-child, dependencies)
 구성 트리 (부모-자식 관계, 의존성)
 
-Topology graph (nodes, edges, paths)
 토폴로지 그래프 (노드·엣지·경로)
 
-Used together with
 함께 사용되는 기능
 
-Differential privacy — bounds inference risk on the capsule
 차등 프라이버시 — 캡슐의 추론 위험을 수치로 제한합니다
 
-State vault for restoration — restores tokens to original values inside the enterprise
 복원용 상태 저장소 — 기업 내부에서 토큰을 원본 값으로 복원합니다
 
-Two execution paths — Path A or Path B per workflow policy
 두 가지 실행 경로 — 워크플로우 정책에 따라 Path A 또는 Path B를 선택합니다
 
-Reference statement
 참조 문장
 
-Structure-preserving encapsulation makes the capsule useful. Differential-privacy-based protection makes it defensible. State vault makes it restorable. Together, they constitute the AI enablement data layer.
 문서 구조 보존 캡슐화는 캡슐을 유용하게 만듭니다. 차등 프라이버시 기반 보호는 캡슐을 방어 가능하게 만듭니다. 복원용 상태 저장소는 캡슐을 복원 가능하게 만듭니다. 세 가지가 함께 데이터 레이어를 구성합니다.
 
 ## Section 04: Related Terms
