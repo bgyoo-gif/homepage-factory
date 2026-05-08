@@ -164,6 +164,11 @@ export default function LearnArticle({
           border-bottom: 1px solid var(--c-rule, #e5e7eb);
         }
 
+        .la-hero__inner {
+          max-width: 860px;
+          margin: 0 auto;
+        }
+
         .la-hero__back {
           display: inline-flex;
           align-items: center;
@@ -182,19 +187,16 @@ export default function LearnArticle({
           font-size: clamp(32px, 4.5vw, 56px);
           font-weight: 700;
           line-height: 1.12;
-          margin-left: auto;
-          margin-right: auto;
           letter-spacing: -0.02em;
           color: var(--c-ink, #0f1130);
           margin: 0 0 20px;
-          max-width: 860px;
         }
 
         .la-hero__lead {
           font-size: clamp(16px, 1.4vw, 19px);
           line-height: 1.65;
           color: var(--c-ink-soft, #3a3d5e);
-          margin: 0 auto 28px;
+          margin: 0 0 28px;
           max-width: 760px;
         }
 
@@ -203,8 +205,6 @@ export default function LearnArticle({
           flex-wrap: wrap;
           align-items: center;
           gap: 10px 16px;
-          max-width: 760px;
-          margin: 0 auto;
         }
 
         .la-meta__chip {
@@ -598,15 +598,17 @@ export default function LearnArticle({
         {/* ── 1. Article Hero ── */}
         <section className="la-hero">
           <div className="la-container">
-            <a href={backHref} className="la-hero__back">{backLabel}</a>
-            <h1 className="la-hero__title">{title}</h1>
-            <p className="la-hero__lead">{lead}</p>
-            <div className="la-hero__meta">
-              <span className="la-meta__chip">{category}</span>
-              <span className="la-meta__sep" aria-hidden="true" />
-              <span className="la-meta__time">{readTime}</span>
-              <span className="la-meta__sep" aria-hidden="true" />
-              <span className="la-meta__date">{dateUpdated}</span>
+            <div className="la-hero__inner">
+              <a href={backHref} className="la-hero__back">{backLabel}</a>
+              <h1 className="la-hero__title">{title}</h1>
+              <p className="la-hero__lead">{lead}</p>
+              <div className="la-hero__meta">
+                <span className="la-meta__chip">{category}</span>
+                <span className="la-meta__sep" aria-hidden="true" />
+                <span className="la-meta__time">{readTime}</span>
+                <span className="la-meta__sep" aria-hidden="true" />
+                <span className="la-meta__date">{dateUpdated}</span>
+              </div>
             </div>
           </div>
         </section>
