@@ -72,23 +72,23 @@ Most enterprise AI pilots do not fail because the AI is bad. They fail because t
 <p>프로덕션에 배포된 파일럿은 일반적으로 다음 아키텍처 요소를 갖추고 있습니다.</p>
 
 <li><strong>An AI enablement data layer between systems and AI.</strong> Not a guardrail. Not a gateway. A layer that transforms operational data into AI-ready capsules locally, executes the AI workflow, and restores results into the originating system.</li>
-<li><strong>Structure-preserving capsule.</strong> Tables, cross-references, configurations, document hierarchies survive intact. AI receives full context — not broken fragments.</li>
-<li><strong>Differential-privacy-based protection.</strong> Beyond field masking — DP noise, k-anonymity, semantic tokenization — to address inference and aggregate-pattern risk that simple filtering can't close.</li>
-<li><strong>Plug-in execution into existing legacy systems.</strong> No migration. The data layer reads where the document already lives.</li>
-<li><strong>Restoration into the originating workflow.</strong> The end-user works in their familiar tool with real values restored. AI doesn't create a new workflow; it lives inside the existing one.</li>
-<li><strong>Two execution paths under one governance framework.</strong> External approved LLM with capsule data only, or on-prem local lightweight model. Path is policy-driven per workflow.</li>
-<li><strong>Customer-defined markers + time-shifting policy.</strong> What's sensitive today isn't what's sensitive tomorrow. Define, version, time-shift.</li>
+<li><strong>문서 구조 보존 캡슐화.</strong> 테이블, 상호 참조, 설정, 문서 계층 구조가 그대로 유지됩니다. AI는 깨진 단편이 아닌 전체 컨텍스트를 받습니다.</li>
+<li><strong>차등 프라이버시 기반 보호.</strong> 단순 필드 마스킹을 넘어 — DP 노이즈, k-익명성, 시맨틱 토큰화 — 단순 필터링으로 막을 수 없는 추론 및 집계 패턴 위험까지 대응합니다.</li>
+<li><strong>기존 레거시 시스템에 플러그인 방식 실행.</strong> 마이그레이션 없이. 데이터 레이어가 문서가 이미 있는 곳에서 직접 읽어옵니다.</li>
+<li><strong>원래 워크플로우로 복원.</strong> 최종 사용자는 실제 값이 복원된 익숙한 도구에서 작업합니다. AI는 새 워크플로우를 만들지 않고, 기존 워크플로우 안에 들어갑니다.</li>
+<li><strong>하나의 거버넌스 프레임워크 아래 두 가지 실행 경로.</strong> 캡슐 데이터만 사용하는 외부 승인 LLM, 또는 온프레미스 로컬 경량 모델. 경로는 워크플로우별 정책으로 결정됩니다.</li>
+<li><strong>고객 정의 마커 + 시간 이동 정책.</strong> 오늘 민감한 것이 내일도 민감한 것은 아닙니다. 정의하고, 버전 관리하고, 시간 이동하십시오.</li>
 </ol>
 
 <h2>경영진에게 무엇이 달라지는가</h2>
 
 <p>AI 프로그램을 운영하는 CDO·CAIO·CIO에게:</p>
 
-<li>The conversation shifts from "AI vs. security" to "AI through the data layer."</li>
-<li>The pilot exit criteria change from "demo on sanitized data" to "demo on real data with audit trail."</li>
-<li>Shadow AI risk falls — the productivity people tasted in the pilot becomes available in the official tooling.</li>
-<li>Procurement simplifies — one data layer covers multiple AI use cases across multiple LLM providers.</li>
-<li>Regulator conversations have evidence — chain of custody, policy versioning, restoration audit.</li>
+<li>대화의 프레임이 "AI vs. 보안"에서 "데이터 레이어를 통한 AI"로 전환됩니다.</li>
+<li>파일럿 종료 기준이 "정제된 데이터로 데모"에서 "실제 데이터 + 감사 이력으로 데모"로 바뀝니다.</li>
+<li>섀도우 AI 위험이 감소합니다 — 파일럿에서 경험한 생산성이 공식 도구에서 제공됩니다.</li>
+<li>조달이 단순해집니다 — 하나의 데이터 레이어가 여러 LLM 제공업체에 걸쳐 다수의 AI 유스케이스를 커버합니다.</li>
+<li>규제 당국 대응에 증거가 생깁니다 — 관리 체인, 정책 버전 관리, 복원 감사.</li>
 </ul>
 
 <h2>프로덕션까지 얼마나 걸립니까?</h2>

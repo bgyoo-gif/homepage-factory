@@ -42,7 +42,6 @@ A telecom NOC AI deployment uses an AI enablement data layer to encapsulate subs
 
 <p>LLM Capsule 같은 <a href="/glossary/ai-enablement-data-layer">데이터 레이어</a>는 NOC의 기존 시스템(티켓 플랫폼, NOC 콘솔, 로그 뷰어, 런북 DB)과 LLM 엔드포인트 사이에 위치합니다. 이 레이어는 네 가지 역할을 수행합니다.</p>
 
-  <li>Reads NOC tickets and operational data from existing systems via REST/gRPC/JDBC connectors — no migration.</li>
   <li>기존 시스템에서 REST/gRPC/JDBC 커넥터를 통해 NOC 티켓 및 운영 데이터를 읽어옵니다 — 데이터 마이그레이션 없이.</li>
 
   <li><a href="/glossary/structure-preserving-encapsulation">문서 구조 보존 캡슐화</a>와 <a href="/glossary/differential-privacy">차등 프라이버시 기반 보호</a>를 적용해 민감 요소를 로컬에서 캡슐화합니다. 가입자 ID, 기기 ID, 회선 ID, IP 범위는 토큰으로 변환되고, 문서 구조(테이블 관계, 알람 시퀀스, 계층 구조)는 그대로 유지됩니다.</li>

@@ -81,10 +81,10 @@ PHI 보호가 적용된 병원 AI 배포는 데이터 레이어를 활용해 환
 
 <h2>배포 시 흔한 함정</h2>
 
-  <li><strong>Underestimating free-text PHI.</strong> The hardest data to protect is unstructured clinical notes. The data layer must include free-text NER masking — not just structured field detection.</li>
-  <li><strong>Skipping the privacy officer.</strong> HIPAA risk assessment must be done up front. Don't deploy and ask for forgiveness.</li>
-  <li><strong>One-size-fits-all policy.</strong> Mental health, substance use, and pediatric workflows need stricter policies than general medicine. Use per-workflow scope.</li>
-  <li><strong>Ignoring billing.</strong> Billing-related AI workflows often surprise privacy reviewers — claim records carry PHI too. Include billing in the initial policy.</li>
+  <li><strong>자유 텍스트 PHI 과소평가.</strong> 보호가 가장 어려운 데이터는 비구조화된 임상 노트입니다. 데이터 레이어에 구조화 필드 감지뿐 아니라 자유 텍스트 NER 마스킹이 포함되어야 합니다.</li>
+  <li><strong>프라이버시 담당자 건너뛰기.</strong> HIPAA 위험 평가는 사전에 수행해야 합니다. 배포 후 사후 승인을 구하지 마십시오.</li>
+  <li><strong>획일적 정책.</strong> 정신건강, 약물 사용, 소아과 워크플로우는 일반 의료보다 더 엄격한 정책이 필요합니다. 워크플로우별 범위를 사용하십시오.</li>
+  <li><strong>청구 무시.</strong> 청구 관련 AI 워크플로우는 프라이버시 검토자를 종종 놀라게 합니다 — 클레임 기록에도 PHI가 포함됩니다. 초기 정책에 청구를 포함시키십시오.</li>
 </ul>
 
 <h2>시작하기</h2>
