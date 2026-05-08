@@ -3468,10 +3468,10 @@ function renderStaticTable() {
     groups.forEach(function(group) {
       var htmlDocs = group.outputs.filter(function(o) { return o.type === 'html' || o.type === 'md'; });
       var tsxFiles = group.outputs.filter(function(o) { return o.type === 'tsx'; });
-      var baseName = group.input.replace('.html', '');
-      var koFile = baseName + '-ko-lines.md';
+      var baseName = group.input.replace('.html', '').replace(/^.*\//, '');
+      var koFile = group.koFile || baseName + '-ko-lines.md';
       var koPath = brandBase + 'output/translations/' + koFile;
-      var deFile = baseName + '-de-lines.md';
+      var deFile = group.deFile || baseName + '-de-lines.md';
       var dePath = brandBase + 'output/translations/' + deFile;
 
       html += '<tr style="border-bottom:1px solid var(--ds-color-surface-light);">';
@@ -3673,17 +3673,17 @@ function renderStaticTable() {
       { input: 'learn/differential-privacy-for-enterprise-llm.html', ipath: '../input/llmcapsule_260506/learn/differential-privacy-for-enterprise-llm.html', idate: '2026-05-07', version: 'llmcapsule_260506', outputs: [] },
       { input: 'learn/on-prem-llm-execution-path.html', ipath: '../input/llmcapsule_260506/learn/on-prem-llm-execution-path.html', idate: '2026-05-07', version: 'llmcapsule_260506', outputs: [] },
       // ── Glossary terms (11) ──
-      { input: 'glossary/ai-enablement-data-layer.html', ipath: '../input/llmcapsule_260506/glossary/ai-enablement-data-layer.html', idate: '2026-05-07', version: 'llmcapsule_260506', outputs: [] },
-      { input: 'glossary/ai-ready-operational-layer.html', ipath: '../input/llmcapsule_260506/glossary/ai-ready-operational-layer.html', idate: '2026-05-07', version: 'llmcapsule_260506', outputs: [] },
-      { input: 'glossary/blocked-ai-workflow.html', ipath: '../input/llmcapsule_260506/glossary/blocked-ai-workflow.html', idate: '2026-05-07', version: 'llmcapsule_260506', outputs: [] },
-      { input: 'glossary/connector-lane.html', ipath: '../input/llmcapsule_260506/glossary/connector-lane.html', idate: '2026-05-07', version: 'llmcapsule_260506', outputs: [] },
-      { input: 'glossary/differential-privacy.html', ipath: '../input/llmcapsule_260506/glossary/differential-privacy.html', idate: '2026-05-07', version: 'llmcapsule_260506', outputs: [] },
-      { input: 'glossary/operational-data.html', ipath: '../input/llmcapsule_260506/glossary/operational-data.html', idate: '2026-05-07', version: 'llmcapsule_260506', outputs: [] },
-      { input: 'glossary/shadow-ai.html', ipath: '../input/llmcapsule_260506/glossary/shadow-ai.html', idate: '2026-05-07', version: 'llmcapsule_260506', outputs: [] },
-      { input: 'glossary/sovereign-ai.html', ipath: '../input/llmcapsule_260506/glossary/sovereign-ai.html', idate: '2026-05-07', version: 'llmcapsule_260506', outputs: [] },
-      { input: 'glossary/state-vault-for-restoration.html', ipath: '../input/llmcapsule_260506/glossary/state-vault-for-restoration.html', idate: '2026-05-07', version: 'llmcapsule_260506', outputs: [] },
-      { input: 'glossary/structure-preserving-encapsulation.html', ipath: '../input/llmcapsule_260506/glossary/structure-preserving-encapsulation.html', idate: '2026-05-07', version: 'llmcapsule_260506', outputs: [] },
-      { input: 'glossary/two-execution-paths.html', ipath: '../input/llmcapsule_260506/glossary/two-execution-paths.html', idate: '2026-05-07', version: 'llmcapsule_260506', outputs: [] },
+      { input: 'glossary/ai-enablement-data-layer.html', ipath: '../input/llmcapsule_260506/glossary/ai-enablement-data-layer.html', idate: '2026-05-07', version: 'llmcapsule_260506', koFile: 'glossary-ai-enablement-data-layer-ko-lines.md', deFile: 'glossary-ai-enablement-data-layer-de-lines.md', outputs: [] },
+      { input: 'glossary/ai-ready-operational-layer.html', ipath: '../input/llmcapsule_260506/glossary/ai-ready-operational-layer.html', idate: '2026-05-07', version: 'llmcapsule_260506', koFile: 'glossary-ai-ready-operational-layer-ko-lines.md', deFile: 'glossary-ai-ready-operational-layer-de-lines.md', outputs: [] },
+      { input: 'glossary/blocked-ai-workflow.html', ipath: '../input/llmcapsule_260506/glossary/blocked-ai-workflow.html', idate: '2026-05-07', version: 'llmcapsule_260506', koFile: 'glossary-blocked-ai-workflow-ko-lines.md', deFile: 'glossary-blocked-ai-workflow-de-lines.md', outputs: [] },
+      { input: 'glossary/connector-lane.html', ipath: '../input/llmcapsule_260506/glossary/connector-lane.html', idate: '2026-05-07', version: 'llmcapsule_260506', koFile: 'glossary-connector-lane-ko-lines.md', deFile: 'glossary-connector-lane-de-lines.md', outputs: [] },
+      { input: 'glossary/differential-privacy.html', ipath: '../input/llmcapsule_260506/glossary/differential-privacy.html', idate: '2026-05-07', version: 'llmcapsule_260506', koFile: 'glossary-differential-privacy-ko-lines.md', deFile: 'glossary-differential-privacy-de-lines.md', outputs: [] },
+      { input: 'glossary/operational-data.html', ipath: '../input/llmcapsule_260506/glossary/operational-data.html', idate: '2026-05-07', version: 'llmcapsule_260506', koFile: 'glossary-operational-data-ko-lines.md', deFile: 'glossary-operational-data-de-lines.md', outputs: [] },
+      { input: 'glossary/shadow-ai.html', ipath: '../input/llmcapsule_260506/glossary/shadow-ai.html', idate: '2026-05-07', version: 'llmcapsule_260506', koFile: 'glossary-shadow-ai-ko-lines.md', deFile: 'glossary-shadow-ai-de-lines.md', outputs: [] },
+      { input: 'glossary/sovereign-ai.html', ipath: '../input/llmcapsule_260506/glossary/sovereign-ai.html', idate: '2026-05-07', version: 'llmcapsule_260506', koFile: 'glossary-sovereign-ai-ko-lines.md', deFile: 'glossary-sovereign-ai-de-lines.md', outputs: [] },
+      { input: 'glossary/state-vault-for-restoration.html', ipath: '../input/llmcapsule_260506/glossary/state-vault-for-restoration.html', idate: '2026-05-07', version: 'llmcapsule_260506', koFile: 'glossary-state-vault-for-restoration-ko-lines.md', deFile: 'glossary-state-vault-for-restoration-de-lines.md', outputs: [] },
+      { input: 'glossary/structure-preserving-encapsulation.html', ipath: '../input/llmcapsule_260506/glossary/structure-preserving-encapsulation.html', idate: '2026-05-07', version: 'llmcapsule_260506', koFile: 'glossary-structure-preserving-encapsulation-ko-lines.md', deFile: 'glossary-structure-preserving-encapsulation-de-lines.md', outputs: [] },
+      { input: 'glossary/two-execution-paths.html', ipath: '../input/llmcapsule_260506/glossary/two-execution-paths.html', idate: '2026-05-07', version: 'llmcapsule_260506', koFile: 'glossary-two-execution-paths-ko-lines.md', deFile: 'glossary-two-execution-paths-de-lines.md', outputs: [] },
       // ── v6.1 (이전 작업) ──
       { input: 'ai-data-pipeline-protection.html', idate: '2026-04-14', version: 'v6.1', outputs: [
         { type: 'html', name: 'ai-data-pipeline-protection-b-type.html', date: '2026-04-14' },
