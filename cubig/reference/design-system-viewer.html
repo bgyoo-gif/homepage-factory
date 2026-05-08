@@ -4042,7 +4042,7 @@ function renderStaticTable() {
     }
     var htmlFiles = group.outputs.filter(function(o) { return o.type === 'html' || o.type === 'md'; });
     var tsxFiles = group.outputs.filter(function(o) { return o.type === 'tsx'; });
-    var baseName = group.input.replace('.html', '');
+    var baseName = group.input.replace('.html', '').replace(/^.*\//, '');
     var koFile = group.koFile || (baseName + '-ko-lines.md');
     var deFile = group.deFile || (baseName + '-de-lines.md');
 
