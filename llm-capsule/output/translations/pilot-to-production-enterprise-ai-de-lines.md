@@ -30,116 +30,69 @@ Die meisten KI-Pilotprojekte in Unternehmen scheitern nicht an der Qualität der
 
 ## Section 03: Body HTML
 
-<!-- h2: The standard pilot trajectory -->
-Der typische Verlauf eines Pilotprojekts
+<h2>Der typische Verlauf eines Pilotprojekts</h2>
 
-<!-- p: Months 0-2 -->
-Monate 0–2: Die Geschäftsführung wählt einen Anwendungsfall aus — NOC-Root-Cause-Analyse, klinische Zusammenfassung, Schadenbearbeitung, Vertragsanalyse. Ein Anbieter demonstriert das System anhand bereinigter Datensätze. Die Erwartungen sind hoch.
+<p>Monate 0–2: Die Geschäftsführung wählt einen Anwendungsfall aus — NOC-Root-Cause-Analyse, klinische Zusammenfassung, Schadenbearbeitung, Vertragsanalyse. Ein Anbieter demonstriert das System anhand bereinigter Datensätze. Die Erwartungen sind hoch.</p>
 
-<!-- p: Months 2-4 -->
-Monate 2–4: Das Team integriert den LLM-Anbieter, führt den Workflow auf synthetischen Daten aus und erzielt beeindruckende Kennzahlen. Das Pilotprojekt gilt als produktionsreif.
+<p>Monate 2–4: Das Team integriert den LLM-Anbieter, führt den Workflow auf synthetischen Daten aus und erzielt beeindruckende Kennzahlen. Das Pilotprojekt gilt als produktionsreif.</p>
 
-<!-- p: Months 4-6 -->
-Monate 4–6: Die Sicherheitsprüfung beginnt. Das CISO-Team stellt die naheliegende Frage: Übermitteln wir tatsächlich rohe operative Daten — Teilnehmer-IDs, Patientenakten, Schadendetails — an das LLM? Lautet die Antwort „Nein, wir anonymisieren", verschlechtert sich die Ausgabequalität um 30–50 %. Lautet die Antwort „Ja, vertraglich geregelt", zieht das eine Prüfung durch den Datenschutzbeauftragten, die Aufsichtsbehörde und den Vorstand nach sich.
+<p>Monate 4–6: Die Sicherheitsprüfung beginnt. Das CISO-Team stellt die naheliegende Frage: Übermitteln wir tatsächlich rohe operative Daten — Teilnehmer-IDs, Patientenakten, Schadendetails — an das LLM? Lautet die Antwort „Nein, wir anonymisieren", verschlechtert sich die Ausgabequalität um 30–50 %. Lautet die Antwort „Ja, vertraglich geregelt", zieht das eine Prüfung durch den Datenschutzbeauftragten, die Aufsichtsbehörde und den Vorstand nach sich.</p>
 
-<!-- p: Months 6-12 -->
-Monate 6–12: Das Pilotprojekt wird umbenannt, neu ausgerichtet, pausiert oder stillschweigend eingestellt. Shadow-KI entsteht — Entwickler übertragen anonymisierte Ausschnitte in ChatGPT auf privaten Geräten, um die Produktivitätsgewinne aus dem Pilotprojekt zu erhalten.
+<p>Monate 6–12: Das Pilotprojekt wird umbenannt, neu ausgerichtet, pausiert oder stillschweigend eingestellt. Shadow-KI entsteht — Entwickler übertragen anonymisierte Ausschnitte in ChatGPT auf privaten Geräten, um die Produktivitätsgewinne aus dem Pilotprojekt zu erhalten.</p>
 
-<!-- h2: The four-part diagnosis -->
-Viergliedrige Diagnose
+<h2>Viergliedrige Diagnose</h2>
 
-<!-- p: Why does this happen -->
-Warum wiederholt sich dieses Muster branchenübergreifend in allen regulierten Branchen?
+<p>Warum wiederholt sich dieses Muster branchenübergreifend in allen regulierten Branchen?</p>
 
-<!-- h3: Reason 1 -->
-Grund 1 — Externe LLMs steigern den ROI im Unternehmen
+<h3>Grund 1 — Externe LLMs steigern den ROI im Unternehmen</h3>
+<p>Zugelassene externe LLMs verbessern Produktivität, Verarbeitungsgeschwindigkeit und Automatisierungsrendite nachweislich. Regulierte Unternehmen wollen dieses Potenzial nutzen. Das Pilotprojekt entsteht, weil die Unternehmensführung den Mehrwert klar erkennt.</p>
 
-<!-- p: Reason 1 body -->
-Zugelassene externe LLMs verbessern Produktivität, Verarbeitungsgeschwindigkeit und Automatisierungsrendite nachweislich. Regulierte Unternehmen wollen dieses Potenzial nutzen. Das Pilotprojekt entsteht, weil die Unternehmensführung den Mehrwert klar erkennt.
+<h3>Grund 2 — PII-Guardrails allein reichen nicht aus</h3>
+<p>Die gängige Antwort — PII-Erkennung an der API-Grenze — wurde für individuelle Identifikatoren konzipiert: Namen, E-Mail-Adressen, Telefonnummern. Reale regulierte Workflows basieren auf strukturierten operativen Daten: Ticket-Sequenzen, Netzwerkkonfigurationen, OT-Manifeste, klinische Workflows, Schadenakten, Missionskontext. PII-Guardrails erfassen diese Datentypen nicht. Sie passieren die Prüfung ungehindert.</p>
 
-<!-- h3: Reason 2 -->
-Grund 2 — PII-Guardrails allein reichen nicht aus
+<h3>Grund 3 — DMZ- und Legacy-Betriebsdaten sind komplex und unstrukturiert</h3>
+<p>Freier Text, Netzwerkidentifikatoren, Systemprotokolle, Nutzerkontext, Incident-Records, Konfigurationen — alles vermischt. Vertraulichkeit geht durch Struktur, Sequenz und aggregierte Muster verloren, nicht nur durch einzelne Feldnamen. Filterung auf Feldebene übersieht ganze Risikokategorien.</p>
 
-<!-- p: Reason 2 body -->
-Die gängige Antwort — PII-Erkennung an der API-Grenze — wurde für individuelle Identifikatoren konzipiert: Namen, E-Mail-Adressen, Telefonnummern. Reale regulierte Workflows basieren auf strukturierten operativen Daten: Ticket-Sequenzen, Netzwerkkonfigurationen, OT-Manifeste, klinische Workflows, Schadenakten, Missionskontext. PII-Guardrails erfassen diese Datentypen nicht. Sie passieren die Prüfung ungehindert.
+<h3>Grund 4 — Filtern allein schließt das regulatorische Restrisiko nicht</h3>
+<p>DSGVO (GDPR), HIPAA, SOX, sektorale Aufsichtsbehörden, Prüfpflichten, Datensouveränität. Selbst wenn alle Felder maskiert sind, bewertet die Aufsicht das Restrisiko aus differentieller Analyse, kontextbasierter Re-Identifikation und Inferenz-Exposition. Einfaches Filtern schließt diese Lücke nicht.</p>
 
-<!-- h3: Reason 3 -->
-Grund 3 — DMZ- und Legacy-Betriebsdaten sind komplex und unstrukturiert
+<p><strong>Ergebnis:</strong> Das Pilotprojekt bewies seinen Wert auf synthetischen Daten. Der Produktionsbetrieb erfordert echte Daten. Die Lücke zwischen beiden ist die fehlende KI-Datenschicht.</p>
 
-<!-- p: Reason 3 body -->
-Freier Text, Netzwerkidentifikatoren, Systemprotokolle, Nutzerkontext, Incident-Records, Konfigurationen — alles vermischt. Vertraulichkeit geht durch Struktur, Sequenz und aggregierte Muster verloren, nicht nur durch einzelne Feldnamen. Filterung auf Feldebene übersieht ganze Risikokategorien.
+<h2>Das Muster, das Pilotprojekte in die Produktion bringt</h2>
 
-<!-- h3: Reason 4 -->
-Grund 4 — Filtern allein schließt das regulatorische Restrisiko nicht
+<p>Pilotprojekte, die den Produktionsbetrieb erreichen, verfügen typischerweise über folgende architektonische Merkmale:</p>
 
-<!-- p: Reason 4 body -->
-DSGVO (GDPR), HIPAA, SOX, sektorale Aufsichtsbehörden, Prüfpflichten, Datensouveränität. Selbst wenn alle Felder maskiert sind, bewertet die Aufsicht das Restrisiko aus differentieller Analyse, kontextbasierter Re-Identifikation und Inferenz-Exposition. Einfaches Filtern schließt diese Lücke nicht.
+<ol>
+<li><strong>Eine KI-Datenschicht zwischen operativen Systemen und der KI.</strong> Kein Guardrail. Kein Gateway. Eine Schicht, die operative Daten lokal in KI-verarbeitbare Kapseln transformiert, den KI-Workflow ausführt und Ergebnisse in das Ausgangssystem zurückführt.</li>
+<li><strong>Strukturerhaltende Kapsel.</strong> Tabellen, Querverweise, Konfigurationen und Dokumenthierarchien bleiben vollständig erhalten. Die KI erhält vollständigen Kontext — keine fragmentierten Ausschnitte.</li>
+<li><strong>Differential-Privacy-basierter Schutz.</strong> Über Feldmaskierung hinaus — DP-Rauschen, k-Anonymität, semantische Tokenisierung — um Inferenz- und Aggregatmusterrisiken zu begegnen, die einfaches Filtern nicht schließen kann.</li>
+<li><strong>Plug-in-Ausführung in bestehenden Legacy-Systemen.</strong> Keine Migration erforderlich. Die Datenschicht liest die Daten dort, wo sie bereits gespeichert sind.</li>
+<li><strong>Wiederherstellung in den ursprünglichen Workflow.</strong> Der Endnutzer arbeitet im gewohnten Werkzeug mit wiederhergestellten Originalwerten. Die KI schafft keinen neuen Workflow — sie integriert sich in den bestehenden.</li>
+<li><strong>Zwei Ausführungspfade unter einem einheitlichen Governance-Rahmen.</strong> Externer zugelassener LLM mit ausschließlich Kapseldaten oder lokales On-Premise-Modell. Die Pfadwahl erfolgt richtliniengesteuert je Workflow.</li>
+<li><strong>Kundendefinierte Marker und zeitgesteuerte Richtlinien.</strong> Was heute als sensibel gilt, muss es morgen nicht mehr sein. Definieren, versionieren, zeitlich steuern.</li>
+</ol>
 
-<!-- p: Result -->
-Ergebnis: Das Pilotprojekt bewies seinen Wert auf synthetischen Daten. Der Produktionsbetrieb erfordert echte Daten. Die Lücke zwischen beiden ist die fehlende KI-Datenschicht.
+<h2>Was sich für Führungskräfte ändert</h2>
 
-<!-- h2: The pattern that gets pilots to production -->
-Das Muster, das Pilotprojekte in die Produktion bringt
+<p>Für CDOs, CAIOs und CIOs, die ein KI-Programm verantworten:</p>
 
-<!-- p: intro -->
-Pilotprojekte, die den Produktionsbetrieb erreichen, verfügen typischerweise über folgende architektonische Merkmale:
+<ul>
+<li>Die Diskussion wechselt von „KI versus Sicherheit" zu „KI durch die Datenschicht".</li>
+<li>Die Abnahmekriterien verschieben sich von „Demo mit bereinigten Daten" zu „Demo mit Echtdaten und Prüfprotokoll".</li>
+<li>Das Shadow-KI-Risiko sinkt — die im Pilotprojekt erlebten Produktivitätsgewinne werden in den offiziellen Werkzeugen verfügbar.</li>
+<li>Die Beschaffung vereinfacht sich — eine Datenschicht deckt mehrere KI-Anwendungsfälle bei mehreren LLM-Anbietern ab.</li>
+<li>Gespräche mit Aufsichtsbehörden werden durch Belege gestützt — Datenkette, Richtlinienversionierung, Wiederherstellungsprotokoll.</li>
+</ul>
 
-<!-- ol li 1 -->
-Eine KI-Datenschicht zwischen operativen Systemen und der KI. Kein Guardrail. Kein Gateway. Eine Schicht, die operative Daten lokal in KI-verarbeitbare Kapseln transformiert, den KI-Workflow ausführt und Ergebnisse in das Ausgangssystem zurückführt.
+<h2>Wie lange dauert der Weg in die Produktion?</h2>
 
-<!-- ol li 2 -->
-Strukturerhaltende Kapsel. Tabellen, Querverweise, Konfigurationen und Dokumenthierarchien bleiben vollständig erhalten. Die KI erhält vollständigen Kontext — keine fragmentierten Ausschnitte.
+<p>Mit vorhandener Datenschicht erreichen regulierte Workflows den Produktionsbetrieb typischerweise in 8–12 Wochen — gegenüber 6–12 Monaten im Standardmuster. Die hemmenden Faktoren sind meist intern: Freigabe durch den Datenschutzbeauftragten, behördliche Meldung (soweit erforderlich), Sicherheitsüberprüfung der Richtlinien. Die technische Integration dauert Tage, nicht Monate.</p>
 
-<!-- ol li 3 -->
-Differential-Privacy-basierter Schutz. Über Feldmaskierung hinaus — DP-Rauschen, k-Anonymität, semantische Tokenisierung — um Inferenz- und Aggregatmusterrisiken zu begegnen, die einfaches Filtern nicht schließen kann.
+<h2>Nächste Schritte</h2>
 
-<!-- ol li 4 -->
-Plug-in-Ausführung in bestehenden Legacy-Systemen. Keine Migration erforderlich. Die Datenschicht liest die Daten dort, wo sie bereits gespeichert sind.
+<p>Wenn Ihr KI-Pilotprojekt in der Sicherheits- oder Compliance-Prüfung feststeckt, liegt die Ursache in der Regel in einer fehlenden Datenschicht. Bringen Sie einen blockierten Anwendungsfall und eine regulatorische Anforderung mit. Wir setzen LLM Capsule innerhalb von 30 Minuten auf einem Beispiel-Workflow auf und erstellen einen Evaluierungsbericht, der zeigt, was sich mit der Datenschicht ändert.</p>
 
-<!-- ol li 5 -->
-Wiederherstellung in den ursprünglichen Workflow. Der Endnutzer arbeitet im gewohnten Werkzeug mit wiederhergestellten Originalwerten. Die KI schafft keinen neuen Workflow — sie integriert sich in den bestehenden.
-
-<!-- ol li 6 -->
-Zwei Ausführungspfade unter einem einheitlichen Governance-Rahmen. Externer zugelassener LLM mit ausschließlich Kapseldaten oder lokales On-Premise-Modell. Die Pfadwahl erfolgt richtliniengesteuert je Workflow.
-
-<!-- ol li 7 -->
-Kundendefinierte Marker und zeitgesteuerte Richtlinien. Was heute als sensibel gilt, muss es morgen nicht mehr sein. Definieren, versionieren, zeitlich steuern.
-
-<!-- h2: What changes for the executive -->
-Was sich für Führungskräfte ändert
-
-<!-- p: For the CDO intro -->
-Für CDOs, CAIOs und CIOs, die ein KI-Programm verantworten:
-
-<!-- ul li 1 -->
-Die Diskussion wechselt von „KI versus Sicherheit" zu „KI durch die Datenschicht".
-
-<!-- ul li 2 -->
-Die Abnahmekriterien verschieben sich von „Demo mit bereinigten Daten" zu „Demo mit Echtdaten und Prüfprotokoll".
-
-<!-- ul li 3 -->
-Das Shadow-KI-Risiko sinkt — die im Pilotprojekt erlebten Produktivitätsgewinne werden in den offiziellen Werkzeugen verfügbar.
-
-<!-- ul li 4 -->
-Die Beschaffung vereinfacht sich — eine Datenschicht deckt mehrere KI-Anwendungsfälle bei mehreren LLM-Anbietern ab.
-
-<!-- ul li 5 -->
-Gespräche mit Aufsichtsbehörden werden durch Belege gestützt — Datenkette, Richtlinienversionierung, Wiederherstellungsprotokoll.
-
-<!-- h2: How long does it take to get to production? -->
-Wie lange dauert der Weg in die Produktion?
-
-<!-- p: timeline -->
-Mit vorhandener Datenschicht erreichen regulierte Workflows den Produktionsbetrieb typischerweise in 8–12 Wochen — gegenüber 6–12 Monaten im Standardmuster. Die hemmenden Faktoren sind meist intern: Freigabe durch den Datenschutzbeauftragten, behördliche Meldung (soweit erforderlich), Sicherheitsüberprüfung der Richtlinien. Die technische Integration dauert Tage, nicht Monate.
-
-<!-- h2: Getting started -->
-Nächste Schritte
-
-<!-- p: getting started body -->
-Wenn Ihr KI-Pilotprojekt in der Sicherheits- oder Compliance-Prüfung feststeckt, liegt die Ursache in der Regel in einer fehlenden Datenschicht. Bringen Sie einen blockierten Anwendungsfall und eine regulatorische Anforderung mit. Wir setzen LLM Capsule innerhalb von 30 Minuten auf einem Beispiel-Workflow auf und erstellen einen Evaluierungsbericht, der zeigt, was sich mit der Datenschicht ändert.
-
-<!-- a button: Request an evaluation -->
-Evaluierung anfordern
+<p><a href="/request-a-demo" class="btn btn--primary">Evaluierung anfordern</a></p>
 
 ## Section 04: Related Links
 
