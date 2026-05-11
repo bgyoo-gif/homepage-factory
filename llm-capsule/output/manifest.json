@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-11 18:15:54",
+  "generated": "2026-05-11 18:36:40",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1295,6 +1295,16 @@
           "modified": "2026-04-21"
         },
         {
+          "name": "sllm-self-hosted-reality-check-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/sllm-self-hosted-reality-check-b-type.html",
+          "modified": "2026-05-11"
+        },
+        {
+          "name": "sllm-self-hosted-reality-check-bodyhtml.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/sllm-self-hosted-reality-check-bodyhtml.html",
+          "modified": "2026-05-11"
+        },
+        {
           "name": "solutions-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/solutions-b-type.html",
           "modified": "2026-04-21"
@@ -1495,6 +1505,16 @@
           "name": "secure-llm-usage-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/secure-llm-usage-spec.md",
           "modified": "2026-04-09"
+        },
+        {
+          "name": "sllm-self-hosted-reality-check-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/sllm-self-hosted-reality-check-qa-report.md",
+          "modified": "2026-05-11"
+        },
+        {
+          "name": "sllm-self-hosted-reality-check-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/sllm-self-hosted-reality-check-spec.md",
+          "modified": "2026-05-11"
         },
         {
           "name": "solutions-spec.md",
