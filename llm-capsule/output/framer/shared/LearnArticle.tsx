@@ -25,6 +25,9 @@ interface Props {
   // SEO / JSON-LD
   canonicalUrl?: string
   datePublished?: string
+  dateModified?: string
+  breadcrumbLabel?: string
+  faqJsonLd?: string
 
   // Related links
   relatedSectionLabel?: string
@@ -105,6 +108,9 @@ export default function LearnArticle({
   bodyHtml = DEFAULT_BODY_HTML,
   canonicalUrl = "https://llmcapsule.ai/resources/learn/pilot-to-production-enterprise-ai",
   datePublished = "2025-04-15",
+  dateModified = "",
+  breadcrumbLabel = "",
+  faqJsonLd = "",
   relatedSectionLabel = "Related articles",
   related1Title = "PII guardrails vs. operational data protection",
   related1Href = "/learn/pii-guardrails-vs-operational-data-protection",
@@ -122,7 +128,7 @@ export default function LearnArticle({
     { title: related4Title, href: related4Href },
   ].filter((r) => r.title && r.href)
 
-  const jsonLd = JSON.stringify({
+  const articleJsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "headline": title,
@@ -130,12 +136,32 @@ export default function LearnArticle({
     "author": { "@type": "Organization", "name": "CUBIG" },
     "publisher": { "@type": "Organization", "name": "CUBIG" },
     "datePublished": datePublished,
+    "dateModified": dateModified || datePublished,
     "mainEntityOfPage": canonicalUrl,
   })
 
+  const breadcrumbJsonLd = breadcrumbLabel
+    ? JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://llmcapsule.ai/" },
+          { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://llmcapsule.ai/resources" },
+          { "@type": "ListItem", "position": 3, "name": "Learn", "item": "https://llmcapsule.ai/resources/learn" },
+          { "@type": "ListItem", "position": 4, "name": breadcrumbLabel },
+        ],
+      })
+    : ""
+
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: articleJsonLd }} />
+      {breadcrumbJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }} />
+      )}
+      {faqJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+      )}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
@@ -675,6 +701,9 @@ addPropertyControls(LearnArticle, {
   // SEO
   canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/pilot-to-production-enterprise-ai" },
   datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2025-04-15" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: "", displayTextArea: true },
 
   // Related links
   relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "Related articles" },
