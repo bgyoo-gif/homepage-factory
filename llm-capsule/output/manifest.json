@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-11 17:13:21",
+  "generated": "2026-05-11 17:52:29",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1245,6 +1245,11 @@
           "modified": "2026-05-11"
         },
         {
+          "name": "public-sector-genai-three-approaches-bodyhtml.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/public-sector-genai-three-approaches-bodyhtml.html",
+          "modified": "2026-05-11"
+        },
+        {
           "name": "request-pov-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/request-pov-b-type.html",
           "modified": "2026-04-28"
@@ -1313,6 +1318,16 @@
           "name": "what-is-ai-data-capsule-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/what-is-ai-data-capsule-b-type.html",
           "modified": "2026-04-21"
+        },
+        {
+          "name": "what-is-n2sf-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/what-is-n2sf-b-type.html",
+          "modified": "2026-05-11"
+        },
+        {
+          "name": "what-is-n2sf-bodyhtml.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/what-is-n2sf-bodyhtml.html",
+          "modified": "2026-05-11"
         },
         {
           "name": "why-redaction-breaks-enterprise-ai-workflows-b-type.html",
@@ -1485,6 +1500,16 @@
           "name": "trust-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/trust-spec.md",
           "modified": "2026-04-09"
+        },
+        {
+          "name": "what-is-n2sf-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/what-is-n2sf-qa-report.md",
+          "modified": "2026-05-11"
+        },
+        {
+          "name": "what-is-n2sf-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/what-is-n2sf-spec.md",
+          "modified": "2026-05-11"
         },
         {
           "name": "zero-exposure-spec.md",
