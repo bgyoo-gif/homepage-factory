@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-11 14:39:47",
+  "generated": "2026-05-11 17:02:12",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1240,6 +1240,11 @@
           "modified": "2026-04-28"
         },
         {
+          "name": "public-sector-genai-three-approaches-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/public-sector-genai-three-approaches-b-type.html",
+          "modified": "2026-05-11"
+        },
+        {
           "name": "request-pov-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/request-pov-b-type.html",
           "modified": "2026-04-28"
@@ -1410,6 +1415,16 @@
           "name": "product-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/product-spec.md",
           "modified": "2026-04-09"
+        },
+        {
+          "name": "public-sector-genai-three-approaches-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/public-sector-genai-three-approaches-qa-report.md",
+          "modified": "2026-05-11"
+        },
+        {
+          "name": "public-sector-genai-three-approaches-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/public-sector-genai-three-approaches-spec.md",
+          "modified": "2026-05-11"
         },
         {
           "name": "request-pov-qa-report.md",
