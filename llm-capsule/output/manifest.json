@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-08 15:33:46",
+  "generated": "2026-05-11 14:39:47",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1785,6 +1785,16 @@
           "name": "index-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/index-ko-lines.md",
           "modified": "2026-05-08"
+        },
+        {
+          "name": "index-v62-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/index-v62-de-lines.md",
+          "modified": "2026-05-11"
+        },
+        {
+          "name": "index-v62-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/index-v62-ko-lines.md",
+          "modified": "2026-05-11"
         },
         {
           "name": "learn-de-lines.md",
