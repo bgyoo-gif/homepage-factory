@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-11 17:52:29",
+  "generated": "2026-05-11 18:15:54",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1220,6 +1220,16 @@
           "modified": "2026-04-21"
         },
         {
+          "name": "n2sf-model-2-explained-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/n2sf-model-2-explained-b-type.html",
+          "modified": "2026-05-11"
+        },
+        {
+          "name": "n2sf-model-2-explained-bodyhtml.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/n2sf-model-2-explained-bodyhtml.html",
+          "modified": "2026-05-11"
+        },
+        {
           "name": "on-premise-vs-cloud-ai-data-protection-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/on-premise-vs-cloud-ai-data-protection-b-type.html",
           "modified": "2026-04-21"
@@ -1415,6 +1425,16 @@
           "name": "learn-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/learn-spec.md",
           "modified": "2026-04-10"
+        },
+        {
+          "name": "n2sf-model-2-explained-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/n2sf-model-2-explained-qa-report.md",
+          "modified": "2026-05-11"
+        },
+        {
+          "name": "n2sf-model-2-explained-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/n2sf-model-2-explained-spec.md",
+          "modified": "2026-05-11"
         },
         {
           "name": "pricing-qa-report.md",
