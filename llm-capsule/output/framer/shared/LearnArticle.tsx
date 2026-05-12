@@ -26,6 +26,7 @@ interface Props {
   canonicalUrl?: string
   datePublished?: string
   dateModified?: string
+  inLanguage?: string
   breadcrumbLabel?: string
   faqJsonLd?: string
 
@@ -109,6 +110,7 @@ export default function LearnArticle({
   canonicalUrl = "https://llmcapsule.ai/resources/learn/pilot-to-production-enterprise-ai",
   datePublished = "2025-04-15",
   dateModified = "",
+  inLanguage = "en",
   breadcrumbLabel = "",
   faqJsonLd = "",
   relatedSectionLabel = "Related articles",
@@ -130,14 +132,15 @@ export default function LearnArticle({
 
   const articleJsonLd = JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "TechArticle",
+    "@type": "Article",
     "headline": title,
     "description": lead,
-    "author": { "@type": "Organization", "name": "CUBIG" },
-    "publisher": { "@type": "Organization", "name": "CUBIG" },
+    "inLanguage": inLanguage,
     "datePublished": datePublished,
     "dateModified": dateModified || datePublished,
-    "mainEntityOfPage": canonicalUrl,
+    "author": { "@type": "Organization", "name": "CUBIG" },
+    "publisher": { "@type": "Organization", "name": "CUBIG", "url": "https://cubig.ai" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
   })
 
   const breadcrumbJsonLd = breadcrumbLabel
@@ -702,6 +705,7 @@ addPropertyControls(LearnArticle, {
   canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/pilot-to-production-enterprise-ai" },
   datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2025-04-15" },
   dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "en" },
   breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "" },
   faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: "", displayTextArea: true },
 
