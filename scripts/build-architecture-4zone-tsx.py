@@ -54,6 +54,34 @@ def main():
         sys.exit(1)
     css = css_match.group(1).strip()
 
+    # 1-a. Adapt CSS for Framer Code Component:
+    #   - Convert all @media to @container (Framer Code Components don't reliably
+    #     respond to viewport @media queries; use Container Queries instead).
+    #   - Add container-type: inline-size to the component root (.section-soft).
+    #   - Scope universal/body resets to component root to avoid leaking into
+    #     other Framer components.
+    css = re.sub(r'@media\s*\(', '@container (', css)
+
+    # Inject container-type into .section-soft block (root).
+    css = re.sub(
+        r'(\.section-soft\s*\{[^}]*?)(font-family:[^;]*;)',
+        r'\1container-type: inline-size; \2',
+        css,
+        count=1,
+    )
+
+    # Scope `body { ... }` rules to .section-soft (Framer doesn't expose <body>).
+    css = re.sub(r'\bbody\s*\{', '.section-soft {', css)
+
+    # Scope universal `* { ... }` reset to component root, so it doesn't leak.
+    css = re.sub(
+        r'^\*\s*\{',
+        '.section-soft *, .tech-diagram-wrap *, .tech-diagram-annotation * {',
+        css,
+        count=1,
+        flags=re.MULTILINE,
+    )
+
     # 2. Extract body content
     body_match = re.search(r'<body>(.*?)</body>', html, re.DOTALL)
     if not body_match:

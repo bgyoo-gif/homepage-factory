@@ -536,7 +536,7 @@ const BODY_HTML = `<div class="section-soft">
   </div><!-- /.section-container -->
 </div><!-- /.section-soft -->`
 
-const CSS = `* { margin: 0; padding: 0; box-sizing: border-box; }
+const CSS = `.section-soft *, .tech-diagram-wrap *, .tech-diagram-annotation * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
     /* ── BASE ─ 3-layer hierarchy ── */
     --bg: #FAFBFC;
@@ -604,7 +604,7 @@ const CSS = `* { margin: 0; padding: 0; box-sizing: border-box; }
     --r-lg: 12px;
   }
   /* SIMPLE: 4/8/12/16/24/32 scale, borders-only */
-  body {
+  .section-soft {
     background: #f7f8fb;
     color: var(--text);
     font-family: var(--font-sans);
@@ -616,7 +616,7 @@ const CSS = `* { margin: 0; padding: 0; box-sizing: border-box; }
   .section-soft {
     background: #f7f8fb;
     padding: clamp(64px, 8vw, 128px) 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    container-type: inline-size; font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     letter-spacing: normal;
     -webkit-font-smoothing: antialiased;
   }
@@ -691,7 +691,7 @@ const CSS = `* { margin: 0; padding: 0; box-sizing: border-box; }
     gap: 24px;
     margin-top: 32px;
   }
-  @media (max-width: 800px) {
+  @container (max-width: 800px) {
     .tech-diagram-annotation { grid-template-columns: 1fr; }
   }
   .annotation-card {
@@ -1007,7 +1007,7 @@ const CSS = `* { margin: 0; padding: 0; box-sizing: border-box; }
     gap: 8px;
   }
   /* Wrapped body for primary content */
-  .block-body {
+  .block-.section-soft {
     background: var(--surface-muted);
     border: 1px solid var(--border);
     border-radius: var(--r-md);
@@ -1149,7 +1149,7 @@ const CSS = `* { margin: 0; padding: 0; box-sizing: border-box; }
     flex-shrink: 0;
     margin-top: 1px;
   }
-  .zero-mod-body {
+  .zero-mod-.section-soft {
     font-size: 10.5px;
     line-height: 1.55;
     color: var(--text);
@@ -1487,7 +1487,7 @@ const CSS = `* { margin: 0; padding: 0; box-sizing: border-box; }
     font-weight: 900;
     flex-shrink: 0;
   }
-  .local-guarantee-body {
+  .local-guarantee-.section-soft {
     font-size: 10.5px;
     line-height: 1.55;
     color: var(--text);
@@ -1563,7 +1563,7 @@ const CSS = `* { margin: 0; padding: 0; box-sizing: border-box; }
     font-weight: 900;
     flex-shrink: 0;
   }
-  .dmz-guarantee-body {
+  .dmz-guarantee-.section-soft {
     font-size: 10.5px;
     line-height: 1.55;
     color: var(--text);
@@ -1663,7 +1663,7 @@ const CSS = `* { margin: 0; padding: 0; box-sizing: border-box; }
     font-size: 11px;
     flex-shrink: 0;
   }
-  .guardrail-body {
+  .guardrail-.section-soft {
     font-size: 10.5px;
     line-height: 1.55;
     font-weight: 500;
@@ -1990,7 +1990,7 @@ const CSS = `* { margin: 0; padding: 0; box-sizing: border-box; }
 
   /* ─── 1024px (tablet landscape / small laptop) ─── */
   /* 4 zones → 2×2 grid, connectors repositioned, core 4+2 stacked */
-  @media (max-width: 1024px) {
+  @container (max-width: 1024px) {
     .canvas { width: 100%; max-width: 960px; }
     .tech-diagram-wrap { padding: 36px 20px 20px; }
     .section-head { margin-bottom: 24px; }
@@ -2039,8 +2039,8 @@ const CSS = `* { margin: 0; padding: 0; box-sizing: border-box; }
 
   /* ─── 768px (tablet portrait / small screen) ─── */
   /* All sections → single column stack */
-  @media (max-width: 768px) {
-    body { padding: 0; }
+  @container (max-width: 768px) {
+    .section-soft { padding: 0; }
     .section-container { padding: 32px 16px; }
     .tech-diagram-wrap { padding: 40px 16px 20px; border-radius: 12px; }
     .section-head { margin-bottom: 36px; }
@@ -2092,7 +2092,7 @@ const CSS = `* { margin: 0; padding: 0; box-sizing: border-box; }
 
   /* ─── 480px (mobile) ─── */
   /* Tight padding, compact text, core cells 1 col */
-  @media (max-width: 480px) {
+  @container (max-width: 480px) {
     .section-container { padding: 24px 12px; }
     .tech-diagram-wrap { padding: 32px 10px 14px; border-radius: 10px; }
     .section-head { margin-bottom: 28px; }
