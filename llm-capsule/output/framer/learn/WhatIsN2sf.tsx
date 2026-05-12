@@ -1,5 +1,4 @@
 // AUTO-GENERATED. Do not edit by hand.
-// Source: llm-capsule/output/html/what-is-n2sf-bodyhtml.html
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 

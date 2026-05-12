@@ -1,0 +1,143 @@
+// AUTO-GENERATED. Do not edit by hand.
+// Generator: scripts/build-learn-tsx.py
+// To regenerate: python3 scripts/build-learn-tsx.py
+
+import LearnArticle from "../shared/LearnArticle"
+
+const BODY_HTML = `<h2>The shape of network operations data</h2>
+<p>A typical NOC environment generates and consumes several classes of operational data, each with its own confidentiality profile:</p>
+<ul>
+  <li><strong>Network topology</strong> — routers, switches, optical paths, cell sites, BSC/MSC layout, peering points.</li>
+  <li><strong>Device and site identifiers</strong> — device IDs, cell site IDs, circuit IDs, port references.</li>
+  <li><strong>Alarms and events</strong> — fault types, severity, sequence, root indicators.</li>
+  <li><strong>Incident records</strong> — INC-IDs, ticket trails, escalation paths, customer-impact data, SLA risk.</li>
+  <li><strong>Configuration trees</strong> — running config, candidate config, diff between revisions.</li>
+  <li><strong>Performance counters</strong> — throughput, packet loss, latency baselines, anomaly thresholds.</li>
+  <li><strong>Outage history</strong> — patterns and recurrence.</li>
+</ul>
+<p>None of this is generic PII. All of it is operationally sensitive. PII guardrails do not protect it adequately because the patterns themselves — sequence, structure, aggregation — leak.</p>
+
+<h2>What AI can do here, when it can reach the data</h2>
+
+<h3>Incident RCA drafting</h3>
+<p>Given an incident with linked alarms, configuration history, and topology context, an LLM can draft a structured RCA: timeline, suspected root cause, contributing factors, recommended remediation. The NOC engineer reviews and finalizes. End-to-end RCA time drops from hours to minutes for routine incidents.</p>
+
+<h3>Alarm correlation</h3>
+<p>Correlate noisy alarm streams against known fault patterns. The LLM proposes a likely root fault and the chain of dependent alarms it explains, reducing alarm fatigue and accelerating triage.</p>
+
+<h3>Configuration drift detection and explanation</h3>
+<p>Compare configuration revisions across devices or sites. Surface drift that violates policy. Generate human-readable explanations of what changed and what the operational implication is.</p>
+
+<h3>Runbook generation and update</h3>
+<p>Draft new runbooks from incident response trails. Update existing runbooks when the resolution pattern shifts.</p>
+
+<h3>Customer-impact summarization</h3>
+<p>Summarize customer-impact data per incident with appropriate aggregation and audit trail — ready for SLA reporting and incident review.</p>
+
+<h2>Why this is blocked today</h2>
+<p>Most carriers face the same blockers when their network engineering teams ask for AI assistance:</p>
+<ol>
+  <li><strong>Data sovereignty.</strong> Network operational data cannot leave the regulated jurisdiction.</li>
+  <li><strong>Customer-impact sensitivity.</strong> Even with names removed, customer-impact data identifies segments.</li>
+  <li><strong>Topology disclosure.</strong> Network topology is itself a competitive and security asset.</li>
+  <li><strong>Audit and compliance.</strong> Regulators want a defensible trail of what data was transformed, by what policy, and where it went.</li>
+  <li><strong>PII guardrails fall short.</strong> Standard guardrails address customer names, not device or site or topology references.</li>
+</ol>
+
+<h2>The AI enablement data layer pattern</h2>
+<p>LLM Capsule sits between the existing NOC environment and the LLM. The pattern, end to end:</p>
+<ol>
+  <li>The NOC console, ticket system, or log viewer raises an event (incident opened, alarm correlated, runbook update requested).</li>
+  <li>The connector lane forwards the relevant data to the Capsule Runtime — REST API, webhook, log tap, or SDK call.</li>
+  <li>The Capsule Runtime applies <strong>structure-preserving encapsulation</strong>: device IDs, site IDs, circuit IDs, customer references, alarm sequences are tokenized while preserving the relational structure the LLM needs to reason.</li>
+  <li><strong>Differential-privacy-based protection</strong> is applied to bound inference risk on the capsule.</li>
+  <li>The capsule is routed to <strong>Path A</strong> (external approved LLM, no raw operational data exposure) or <strong>Path B</strong> (on-prem local lightweight model, zero external exposure) per policy.</li>
+  <li>The LLM produces a draft RCA, correlation, or summary.</li>
+  <li>The state vault <strong>restores</strong> the original operational identifiers in the output.</li>
+  <li>The result is inserted back into the ticket, runbook, or NOC view.</li>
+  <li>Governance records the policy applied, the privacy budget consumed, and the audit trail.</li>
+</ol>
+
+<h2>What gets capsulized — and what stays raw</h2>
+<table class="compare-table">
+  <thead><tr><th>Field type</th><th>Treatment in capsule</th><th class="us">Restored on output?</th></tr></thead>
+  <tbody>
+    <tr><td>Device ID (e.g. R-472)</td><td>Tokenized with structure preserved</td><td class="us-cell">Yes — original ID returned</td></tr>
+    <tr><td>Cell site ID (e.g. SEO-18)</td><td>Tokenized; geographic hint generalized</td><td class="us-cell">Yes</td></tr>
+    <tr><td>Circuit ID</td><td>Tokenized</td><td class="us-cell">Yes</td></tr>
+    <tr><td>Customer name</td><td>Field-level redaction</td><td class="us-cell">Yes (if policy allows)</td></tr>
+    <tr><td>Alarm sequence</td><td>Sequence preserved; absolute timestamps fuzzed by DP</td><td class="us-cell">Yes — original sequence returned</td></tr>
+    <tr><td>SLA impact value</td><td>Bucketed under DP for aggregate reasoning</td><td class="us-cell">Original value preserved separately</td></tr>
+    <tr><td>Topology graph</td><td>Structurally preserved, identifiers tokenized</td><td class="us-cell">Yes</td></tr>
+  </tbody>
+</table>
+
+<h2>Telecom-specific patterns to expect</h2>
+
+<h3>Incident-driven workflow</h3>
+<p>Most NOC AI workflows are incident-driven. The trigger is an alarm or ticket. The end state is an updated ticket or runbook. LLM Capsule's connector lane is designed to fit this loop without adding a separate UI.</p>
+
+<h3>Multi-tenancy and segment confidentiality</h3>
+<p>Carriers with multiple business units or wholesale customers need segment-level confidentiality even within their own AI workflows. Policy-driven marker control in the Capsule Runtime supports this: different policies per segment, audit per segment.</p>
+
+<h3>On-prem-first deployments</h3>
+<p>Telecom regulators and customer contracts often require on-prem or in-region execution. Path B (on-prem local lightweight model) with zero external exposure is the standard deployment for carriers in regulated markets.</p>
+
+<h2>Validation: Deutsche Telekom T Challenge 2026</h2>
+<p>LLM Capsule was validated at the <strong>Deutsche Telekom T Challenge 2026</strong>, finishing <strong>Top 12 in the Data Security &amp; Governance category</strong>. The challenge evaluated technologies for protecting and operationalizing sensitive enterprise data in AI workflows. The validation covered the operational data classes described above and the workflow integration pattern.</p>
+<div class="callout"><strong>What the validation tested.</strong> Whether the technology preserved enough operational structure for the LLM to produce useful output, while reducing inference and re-identification risk to a level acceptable for a regulated carrier's data security and governance posture.</div>
+
+<h2>What buying teams should evaluate</h2>
+<ol>
+  <li><strong>Connector lane coverage.</strong> Does it plug into your specific NOC, ticket, OSS/BSS, and log infrastructure?</li>
+  <li><strong>Marker categories beyond PII.</strong> Are network identifiers, system operational logs, and OT references handled as first-class markers?</li>
+  <li><strong>Two execution paths.</strong> Can the same workflow be re-routed from Path A to Path B without redesigning the integration?</li>
+  <li><strong>Privacy budget governance.</strong> Is the DP budget per workflow auditable?</li>
+  <li><strong>State vault restoration.</strong> Are restored outputs traceable to the originating capsule and policy?</li>
+  <li><strong>On-prem deployment depth.</strong> Air-gapped, hybrid, regional — which apply to your environment?</li>
+</ol>
+
+<div class="takeaways">
+  <div class="takeaways__h">Key takeaways</div>
+  <ul>
+    <li>Network operations data is structurally sensitive. PII filtering alone does not protect it.</li>
+    <li>The AI enablement data layer pattern: existing NOC → connector lane → capsule with structure-preserving DP-based protection → execution path → state vault restore → back to ticket / runbook.</li>
+    <li>Carriers typically deploy on Path B (on-prem local lightweight model) for regulatory and sovereignty reasons.</li>
+    <li>Validated at Deutsche Telekom T Challenge 2026, Top 12 in Data Security &amp; Governance.</li>
+    <li>Buying-team checklist: connector coverage, marker breadth, two execution paths, privacy budget governance, state vault, on-prem depth.</li>
+  </ul>
+</div>`
+
+const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "Why can't I just send NOC logs to an external LLM?", "acceptedAnswer": { "@type": "Answer", "text": "NOC logs contain device IDs, site references, circuit IDs, alarm sequences, customer-impact data, and SLA risk indicators. Sending them to an external LLM exposes network topology and operational sensitivity. Even with PII removed, the structural patterns identify the segment. Carriers in regulated jurisdictions face data sovereignty, GDPR, and audit risk. The AI enablement data layer with structure-preserving differential-privacy-based encapsulation addresses this." } }, { "@type": "Question", "name": "What kinds of NOC workflows can AI assist?", "acceptedAnswer": { "@type": "Answer", "text": "Incident RCA drafting, alarm correlation, configuration drift detection, runbook generation, customer-impact summarization, and outage history pattern recognition. The AI generates the analysis or draft from capsuled data; results are restored with original device and site references and inserted back into the ticket or runbook system." } }, { "@type": "Question", "name": "Has this been validated in production?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. LLM Capsule was validated at Deutsche Telekom T Challenge 2026, finishing in the Top 12 in the Data Security and Governance category. The validation covered network operational data and incident workflows." } }, { "@type": "Question", "name": "Does it work with existing NOC tools?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. LLM Capsule plugs into existing NOC consoles, ticket systems, OSS/BSS platforms, log viewers, and runbooks via the connector lane (REST API, webhook, file watch, log tap, SDK, or Slack App). The NOC team continues using their existing tools; the Capsule layer handles the AI workflow inside that environment." } } ] }`
+
+export default function AiOnNetworkOperationsData() {
+  return (
+    <LearnArticle
+      backLabel="← Learn"
+      backHref="/resources/learn"
+      title={"AI on Network Operations Data: NOC, Incident RCA, and Telecom Workflow Execution"}
+      lead={"The data NOC engineers need AI to read is the same data they cannot send to an external LLM. Here is how to close that gap with structure-preserving, differential-privacy-based encapsulation — validated at Deutsche Telekom T Challenge 2026."}
+      category={"USE CASE · Telecom"}
+      readTime={"12 min read"}
+      dateUpdated={"Updated May 2025"}
+      tldrLabel={"TL;DR"}
+      tldrBody={""}
+      bodyHtml={BODY_HTML}
+      canonicalUrl={"https://llmcapsule.ai/resources/learn/ai-on-network-operations-data"}
+      datePublished={"2025-05-01"}
+      dateModified={"2025-05-01"}
+      inLanguage={"en"}
+      breadcrumbLabel={"AI on Network Operations Data: NOC, Incident RCA, and Telecom Workflow Execution"}
+      faqJsonLd={FAQ_JSON_LD}
+      relatedSectionLabel="Related articles"
+      related1Title={"On-prem LLM execution path"}
+      related1Href={"/resources/learn/on-prem-llm-execution-path"}
+      related2Title={"Differential privacy for enterprise LLM"}
+      related2Href={"/resources/learn/differential-privacy-for-enterprise-llm"}
+      related3Title={"PII guardrails vs operational data protection"}
+      related3Href={"/resources/learn/pii-guardrails-vs-operational-data-protection"}
+      related4Title={""}
+      related4Href={""}
+    />
+  )
+}

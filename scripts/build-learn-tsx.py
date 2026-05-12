@@ -2,16 +2,19 @@
 """
 Build per-page TSX for each learn article.
 
-Reads:
-  - llm-capsule/output/html/{slug}-b-type.html (metadata extraction)
-  - llm-capsule/output/html/{slug}-bodyhtml.html (body content)
+Two source patterns supported:
+  - "bodyhtml": uses pre-extracted llm-capsule/output/html/{slug}-bodyhtml.html
+                + manually-curated metadata in ARTICLES.
+                (For learn_post_01~04 articles)
+  - "input":    parses llm-capsule/input/llmcapsule_260506/learn/{slug}.html
+                directly, auto-extracting all metadata.
+                (For original v6.2 learn articles)
 
-Writes:
-  - llm-capsule/output/framer/learn/{PascalCase}.tsx
+Outputs:
+  llm-capsule/output/framer/learn/{PascalCase}.tsx
 
 Each output TSX imports LearnArticle from shared/ and hardcodes all Props.
 User just drops the component into Framer; no Props input needed.
-
 Excludes CTA section (LearnArticle.tsx doesn't render CTA anyway).
 """
 
@@ -19,11 +22,20 @@ import re
 import sys
 from pathlib import Path
 
-# ── Per-article config (slug → metadata not extractable from HTML) ──
+# ── Paths ──
+ROOT = Path(__file__).resolve().parent.parent
+HTML_DIR = ROOT / "llm-capsule" / "output" / "html"
+INPUT_DIR = ROOT / "llm-capsule" / "input" / "llmcapsule_260506" / "learn"
+OUT_DIR = ROOT / "llm-capsule" / "output" / "framer" / "learn"
+
+
+# ── Articles config ──
 ARTICLES = [
+    # ── Pattern A: pre-extracted bodyhtml (learn_post_01~04) ──
     {
         "slug": "public-sector-genai-three-approaches",
         "component": "PublicSectorGenaiThreeApproaches",
+        "source_type": "bodyhtml",
         "title": "공공기관 생성형 AI 도입의 세 가지 길",
         "lead": "AI DLP·차단, sLLM 자체구축, 게이트웨이 방식 — N²SF 시대 공공기관의 선택지를 비용·성능·보안·정합성 관점에서 객관적으로 비교합니다.",
         "category": "정책 분석",
@@ -46,6 +58,7 @@ ARTICLES = [
     {
         "slug": "what-is-n2sf",
         "component": "WhatIsN2sf",
+        "source_type": "bodyhtml",
         "title": "N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리",
         "lead": "국가 망 보안체계(N²SF)는 망분리에서 다중계층보안(MLS)으로의 전환입니다. C/S/O 등급 체계, 「위치-주체-객체」 모델링, 보안원칙을 처음부터 끝까지 정리합니다.",
         "category": "정책 분석",
@@ -68,6 +81,7 @@ ARTICLES = [
     {
         "slug": "n2sf-model-2-explained",
         "component": "N2sfModel2Explained",
+        "source_type": "bodyhtml",
         "title": "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
         "lead": "국가정보원·NSR이 2025년 9월 발간한 「업무환경에서 생성형 AI 활용 모델 해설서」를 정보화담당관 관점에서 정리합니다. 21개 보안위협, 50여 개 보안통제 항목, AI 연계체계까지 처음부터 끝까지.",
         "category": "정책 분석",
@@ -90,6 +104,7 @@ ARTICLES = [
     {
         "slug": "sllm-self-hosted-reality-check",
         "component": "SllmSelfHostedRealityCheck",
+        "source_type": "bodyhtml",
         "title": "sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프",
         "lead": "공공기관 sLLM 자체구축의 진짜 비용(5년 28~38억), 상용 LLM 대비 성능 격차 추세, 잘못된 선택 패턴을 분석합니다.",
         "category": "정책 분석",
@@ -109,17 +124,20 @@ ARTICLES = [
             ("", ""),
         ],
     },
+    # ── Pattern B: auto-parse from v6.2 input HTML ──
+    {"slug": "pilot-to-production-enterprise-ai", "component": "PilotToProductionEnterpriseAi", "source_type": "input"},
+    {"slug": "telecom-noc-ai-deployment", "component": "TelecomNocAiDeployment", "source_type": "input"},
+    {"slug": "hospital-ai-deployment-phi-protection", "component": "HospitalAiDeploymentPhiProtection", "source_type": "input"},
+    {"slug": "ai-on-network-operations-data", "component": "AiOnNetworkOperationsData", "source_type": "input"},
+    {"slug": "pii-guardrails-vs-operational-data-protection", "component": "PiiGuardrailsVsOperationalDataProtection", "source_type": "input"},
+    {"slug": "sovereign-ai-european-enterprises", "component": "SovereignAiEuropeanEnterprises", "source_type": "input"},
+    {"slug": "differential-privacy-for-enterprise-llm", "component": "DifferentialPrivacyForEnterpriseLlm", "source_type": "input"},
+    {"slug": "on-prem-llm-execution-path", "component": "OnPremLlmExecutionPath", "source_type": "input"},
 ]
 
-# ── Paths ──
-ROOT = Path(__file__).resolve().parent.parent
-HTML_DIR = ROOT / "llm-capsule" / "output" / "html"
-OUT_DIR = ROOT / "llm-capsule" / "output" / "framer" / "learn"
 
-
+# ── Escape helpers ──
 def js_template_escape(s: str) -> str:
-    """Escape for embedding in a JS template literal (backtick string)."""
-    # Order matters: escape backslashes first
     s = s.replace("\\", "\\\\")
     s = s.replace("`", "\\`")
     s = s.replace("${", "\\${")
@@ -127,55 +145,250 @@ def js_template_escape(s: str) -> str:
 
 
 def js_string_escape(s: str) -> str:
-    """Escape for embedding in a JS double-quoted string."""
     s = s.replace("\\", "\\\\")
     s = s.replace('"', '\\"')
-    s = s.replace("\n", "\\n")
+    s = s.replace("\n", " ")
+    s = re.sub(r"\s+", " ", s).strip()
     return s
 
 
-def extract_faq_jsonld(b_type_html: str) -> str:
-    """Extract FAQPage JSON-LD from the b-type HTML, return as compact string."""
-    # Look for <script type="application/ld+json"> blocks
+def strip_html_tags(s: str) -> str:
+    """Strip HTML tags but keep entities decoded simply."""
+    s = re.sub(r"<[^>]+>", "", s)
+    s = s.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">").replace("&quot;", '"').replace("&#39;", "'")
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def extract_faq_jsonld(html: str) -> str:
     pattern = re.compile(
         r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>',
         re.DOTALL,
     )
-    for m in pattern.finditer(b_type_html):
+    for m in pattern.finditer(html):
         content = m.group(1).strip()
         if '"FAQPage"' in content:
-            # Compact: strip extra whitespace, keep valid JSON
             return re.sub(r"\s+", " ", content).strip()
     return ""
 
 
-def build_tsx(article: dict) -> str:
+# ── Pattern A: bodyhtml-based source ──
+def load_bodyhtml(article: dict) -> tuple[str, str]:
+    """Returns (body_html, faq_jsonld) from pre-extracted bodyhtml.html + b-type.html."""
     slug = article["slug"]
-    component = article["component"]
-
     bodyhtml_path = HTML_DIR / f"{slug}-bodyhtml.html"
     btype_path = HTML_DIR / f"{slug}-b-type.html"
-
     if not bodyhtml_path.exists():
         raise FileNotFoundError(f"Missing bodyhtml: {bodyhtml_path}")
-    if not btype_path.exists():
-        raise FileNotFoundError(f"Missing b-type: {btype_path}")
-
     body_html = bodyhtml_path.read_text(encoding="utf-8")
-    b_type_html = btype_path.read_text(encoding="utf-8")
-    faq_jsonld = extract_faq_jsonld(b_type_html)
+    faq = extract_faq_jsonld(btype_path.read_text(encoding="utf-8")) if btype_path.exists() else ""
+    return body_html, faq
 
-    # Build related links arrays
-    related_props = []
-    for i, (title, href) in enumerate(article["related"], start=1):
-        related_props.append(
-            f'      related{i}Title={{"{js_string_escape(title)}"}}\n'
-            f'      related{i}Href={{"{js_string_escape(href)}"}}'
+
+# ── Pattern B: parse from v6.2 input HTML directly ──
+RELATED_TITLE_OVERRIDES = {
+    # slug → (Korean display title for related card)
+    "pilot-to-production-enterprise-ai": "Why enterprise AI pilots stall — and how they get to production",
+    "telecom-noc-ai-deployment": "How to deploy AI in a telecom NOC without exposing network data",
+    "hospital-ai-deployment-phi-protection": "Hospital AI deployment with PHI protection",
+    "ai-on-network-operations-data": "AI on network operations data",
+    "pii-guardrails-vs-operational-data-protection": "PII guardrails vs operational data protection",
+    "sovereign-ai-european-enterprises": "Sovereign AI for European enterprises",
+    "differential-privacy-for-enterprise-llm": "Differential privacy for enterprise LLM",
+    "on-prem-llm-execution-path": "On-prem LLM execution path",
+}
+
+
+def parse_input_article(article: dict) -> dict:
+    """Parse metadata + body from input HTML (Pattern B)."""
+    slug = article["slug"]
+    path = INPUT_DIR / f"{slug}.html"
+    if not path.exists():
+        raise FileNotFoundError(f"Missing input: {path}")
+    html = path.read_text(encoding="utf-8")
+
+    # html lang
+    m = re.search(r'<html[^>]*lang="([^"]+)"', html)
+    lang = m.group(1) if m else "en"
+    in_language = "ko-KR" if lang.startswith("ko") else lang
+
+    # canonical
+    m = re.search(r'<link rel="canonical" href="([^"]+)"', html)
+    canonical = m.group(1) if m else f"https://llmcapsule.ai/resources/learn/{slug}"
+    # normalize old /learn/ → /resources/learn/
+    canonical = canonical.replace("/learn/", "/resources/learn/").replace("/resources/resources/", "/resources/")
+
+    # description (meta)
+    m = re.search(r'<meta name="description" content="([^"]+)"', html)
+    description = m.group(1) if m else ""
+
+    # title from <h1>
+    m = re.search(r"<h1[^>]*>(.*?)</h1>", html, re.DOTALL)
+    title_raw = m.group(1) if m else ""
+    title = strip_html_tags(title_raw)
+
+    # lead from article-hero__lead
+    m = re.search(r'<p[^>]*class="article-hero__lead"[^>]*>(.*?)</p>', html, re.DOTALL)
+    lead = strip_html_tags(m.group(1)) if m else description
+
+    # date published from JSON-LD or meta
+    m = re.search(r'"datePublished":\s*"([^"]+)"', html)
+    date_published = m.group(1) if m else "2025-04-15"
+
+    # meta chips from article-hero
+    hero_match = re.search(r'<section class="article-hero">(.*?)</section>', html, re.DOTALL)
+    category = ""
+    read_time = ""
+    date_updated = ""
+    if hero_match:
+        hero_html = hero_match.group(1)
+        chips = re.findall(r'<span[^>]*class="article-meta__chip"[^>]*>(.*?)</span>', hero_html, re.DOTALL)
+        time_m = re.search(r'<span[^>]*class="article-meta__time"[^>]*>(.*?)</span>', hero_html, re.DOTALL)
+        date_m = re.search(r'<span[^>]*class="article-meta__date"[^>]*>(.*?)</span>', hero_html, re.DOTALL)
+        if chips:
+            category = strip_html_tags(chips[0])
+        if time_m:
+            read_time = strip_html_tags(time_m.group(1))
+        if date_m:
+            date_updated = strip_html_tags(date_m.group(1))
+
+    if not category:
+        category = "Learn"
+    if not read_time:
+        read_time = "10 min read"
+    if not date_updated:
+        date_updated = f"Updated {date_published}"
+
+    # TL;DR
+    tldr_label = "TL;DR"
+    tldr_body = ""
+    tldr_match = re.search(
+        r'<section class="tldr"[^>]*>.*?<div class="tldr__label">(.*?)</div>\s*<p class="tldr__body">(.*?)</p>',
+        html,
+        re.DOTALL,
+    )
+    if not tldr_match:
+        tldr_match = re.search(
+            r'<div class="tldr"[^>]*>.*?<div class="tldr__label">(.*?)</div>\s*<p class="tldr__body">(.*?)</p>',
+            html,
+            re.DOTALL,
         )
-    related_block = "\n".join(related_props)
+    if tldr_match:
+        tldr_label = strip_html_tags(tldr_match.group(1))
+        # tldr body may contain <strong>; preserve inner HTML
+        tldr_body = tldr_match.group(2)
+        # Strip outer whitespace and normalize
+        tldr_body = re.sub(r"\s+", " ", tldr_body).strip()
+        # For passing to a Props string, strip HTML tags but keep readable
+        tldr_body = strip_html_tags(tldr_body)
+
+    # Body content: <article class="article-body">...</article>
+    body_match = re.search(r'<article class="article-body"[^>]*>(.*?)</article>', html, re.DOTALL)
+    body_html = body_match.group(1).strip() if body_match else ""
+
+    # Remove "Related" section from body if it appears as <h2>Related</h2> + following <div class="related"...
+    body_html = re.sub(
+        r'<h2>\s*Related[^<]*</h2>\s*<div\s+class="related[^"]*"[^>]*>.*?</div>',
+        "",
+        body_html,
+        flags=re.DOTALL | re.IGNORECASE,
+    )
+    body_html = re.sub(
+        r'<h2>\s*Related[^<]*</h2>\s*<ul[^>]*>.*?</ul>',
+        "",
+        body_html,
+        flags=re.DOTALL | re.IGNORECASE,
+    )
+    # Drop CTA-Strip if present
+    body_html = re.sub(r'<section class="cta[-_]strip[^"]*"[^>]*>.*?</section>', "", body_html, flags=re.DOTALL)
+
+    body_html = body_html.strip()
+
+    # FAQ JSON-LD
+    faq = extract_faq_jsonld(html)
+
+    # Breadcrumb label = title
+    breadcrumb_label = title
+
+    # Related items (up to 4) — extract hrefs from related section, then resolve titles
+    # via RELATED_TITLE_OVERRIDES (slug-keyed) so category labels in source HTML
+    # don't bleed into the link text.
+    related = []
+    related_section = re.search(
+        r'<section[^>]*class="related[^"]*"[^>]*>(.*?)</section>',
+        html,
+        re.DOTALL,
+    )
+    if related_section:
+        for ahref in re.findall(
+            r'<a[^>]+href="([^"]+)"',
+            related_section.group(1),
+        ):
+            href = ahref
+            if href.startswith("/learn/"):
+                href = "/resources/" + href.lstrip("/")
+            # extract slug from href
+            slug_match = re.search(r'/resources/learn/([^/?#]+)', href)
+            if not slug_match:
+                continue
+            ref_slug = slug_match.group(1)
+            if ref_slug == slug:  # skip self-reference
+                continue
+            text = RELATED_TITLE_OVERRIDES.get(ref_slug, ref_slug.replace("-", " ").title())
+            # de-dup
+            if any(r[1] == href for r in related):
+                continue
+            related.append((text, href))
+            if len(related) >= 4:
+                break
+    while len(related) < 4:
+        related.append(("", ""))
+
+    return {
+        "title": title,
+        "lead": lead,
+        "category": category,
+        "readTime": read_time,
+        "dateUpdated": date_updated,
+        "tldrLabel": tldr_label,
+        "tldrBody": tldr_body,
+        "canonicalUrl": canonical,
+        "datePublished": date_published,
+        "dateModified": date_published,
+        "inLanguage": in_language,
+        "breadcrumbLabel": breadcrumb_label,
+        "related": related,
+        "bodyHtml": body_html,
+        "faqJsonLd": faq,
+    }
+
+
+# ── TSX builder ──
+def build_tsx(article: dict) -> str:
+    component = article["component"]
+
+    if article["source_type"] == "bodyhtml":
+        body_html, faq_jsonld = load_bodyhtml(article)
+        meta = article  # uses curated metadata
+    elif article["source_type"] == "input":
+        parsed = parse_input_article(article)
+        meta = parsed
+        body_html = parsed["bodyHtml"]
+        faq_jsonld = parsed["faqJsonLd"]
+    else:
+        raise ValueError(f"Unknown source_type: {article['source_type']}")
+
+    related_props_lines = []
+    for i, (rtitle, rhref) in enumerate(meta["related"], start=1):
+        related_props_lines.append(
+            f'      related{i}Title={{"{js_string_escape(rtitle)}"}}\n'
+            f'      related{i}Href={{"{js_string_escape(rhref)}"}}'
+        )
+    related_block = "\n".join(related_props_lines)
+
+    back_label = "← Learn"
+    back_href = "/resources/learn"
 
     tsx = f"""// AUTO-GENERATED. Do not edit by hand.
-// Source: llm-capsule/output/html/{slug}-bodyhtml.html
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 
@@ -188,23 +401,23 @@ const FAQ_JSON_LD = `{js_template_escape(faq_jsonld)}`
 export default function {component}() {{
   return (
     <LearnArticle
-      backLabel="← Learn"
-      backHref="/resources/learn"
-      title={{"{js_string_escape(article["title"])}"}}
-      lead={{"{js_string_escape(article["lead"])}"}}
-      category={{"{js_string_escape(article["category"])}"}}
-      readTime={{"{js_string_escape(article["readTime"])}"}}
-      dateUpdated={{"{js_string_escape(article["dateUpdated"])}"}}
-      tldrLabel={{"{js_string_escape(article["tldrLabel"])}"}}
-      tldrBody={{"{js_string_escape(article["tldrBody"])}"}}
+      backLabel="{js_string_escape(back_label)}"
+      backHref="{js_string_escape(back_href)}"
+      title={{"{js_string_escape(meta["title"])}"}}
+      lead={{"{js_string_escape(meta["lead"])}"}}
+      category={{"{js_string_escape(meta["category"])}"}}
+      readTime={{"{js_string_escape(meta["readTime"])}"}}
+      dateUpdated={{"{js_string_escape(meta["dateUpdated"])}"}}
+      tldrLabel={{"{js_string_escape(meta["tldrLabel"])}"}}
+      tldrBody={{"{js_string_escape(meta["tldrBody"])}"}}
       bodyHtml={{BODY_HTML}}
-      canonicalUrl={{"{js_string_escape(article["canonicalUrl"])}"}}
-      datePublished={{"{article["datePublished"]}"}}
-      dateModified={{"{article["dateModified"]}"}}
-      inLanguage={{"{article["inLanguage"]}"}}
-      breadcrumbLabel={{"{js_string_escape(article["breadcrumbLabel"])}"}}
+      canonicalUrl={{"{js_string_escape(meta["canonicalUrl"])}"}}
+      datePublished={{"{meta["datePublished"]}"}}
+      dateModified={{"{meta.get("dateModified") or meta["datePublished"]}"}}
+      inLanguage={{"{meta["inLanguage"]}"}}
+      breadcrumbLabel={{"{js_string_escape(meta["breadcrumbLabel"])}"}}
       faqJsonLd={{FAQ_JSON_LD}}
-      relatedSectionLabel="함께 읽으면 좋은 글"
+      relatedSectionLabel="{js_string_escape("함께 읽으면 좋은 글" if meta["inLanguage"].startswith("ko") else "Related articles")}"
 {related_block}
     />
   )
@@ -228,7 +441,7 @@ def main():
             print(f"  ✗ {article['component']}.tsx  SKIP: {e}", file=sys.stderr)
             continue
 
-    print(f"\nDone. Drop these into Framer — no Props input needed.")
+    print(f"\nDone. {len(ARTICLES)} articles generated.")
 
 
 if __name__ == "__main__":

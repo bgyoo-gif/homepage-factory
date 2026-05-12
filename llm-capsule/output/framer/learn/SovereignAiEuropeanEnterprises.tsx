@@ -1,0 +1,98 @@
+// AUTO-GENERATED. Do not edit by hand.
+// Generator: scripts/build-learn-tsx.py
+// To regenerate: python3 scripts/build-learn-tsx.py
+
+import LearnArticle from "../shared/LearnArticle"
+
+const BODY_HTML = `<h2>Why sovereign AI matters now</h2>
+<p>The European regulatory landscape has tightened. GDPR enforcement actions have crossed €4 billion in cumulative fines. The EU AI Act (entered into force August 2024) requires high-risk AI systems — including those used in regulated sectors — to maintain demonstrable transparency, audit trails, and data governance. National regulators (BaFin in Germany, ACPR in France) increasingly expect financial institutions to demonstrate AI data sovereignty. Public sector and defense workflows have always required it.</p>
+<p>For European enterprises, this means: AI productivity gains are real, but the architecture has to support sovereignty by design. Sending raw enterprise data to a US-hosted LLM endpoint is no longer acceptable in most regulated workflows. At the same time, completely avoiding LLMs is not acceptable either — the productivity gap is too large.</p>
+
+<h2>The two-path architecture</h2>
+<p>The pragmatic architecture supports two execution paths under one governance framework:</p>
+
+<h3>Path A — In-region approved LLM with capsule data only</h3>
+<p>The capsule (structure-preserving, differential-privacy-protected) is transmitted to an approved external LLM endpoint hosted in-region (EU-hosted Anthropic, OpenAI EU, Mistral EU, or equivalent). Raw enterprise data does not leave the enterprise environment. Best for workflows where the regulatory profile allows external transmission of differentially-private capsules with appropriate contractual safeguards (DPA, SCCs, etc.).</p>
+
+<h3>Path B — On-prem local lightweight model</h3>
+<p>A small private lightweight model runs entirely inside the enterprise environment — Hugging Face quantized model on internal GPU, vLLM-served, or vendor-provided lightweight model. Zero external transmission. Used for workflows where any external endpoint is unacceptable: classified defense workflows, certain financial sector workflows under national regulator requirement, mental health / substance abuse healthcare data.</p>
+
+<p>Path selection is policy-driven per workflow, not per deployment. A single AI enablement data layer instance can route different ticket types, document classes, or business units through different paths.</p>
+
+<h2>GDPR alignment in practice</h2>
+<p>The data layer supports GDPR compliance through:</p>
+<ul>
+<li><strong>Data residency</strong> — encapsulation happens inside the enterprise EU environment; the capsule routes to in-region LLM endpoints; restoration happens locally.</li>
+<li><strong>Right to erasure</strong> — local token vault deletion ensures personal data references can be removed in alignment with Article 17.</li>
+<li><strong>Data minimization (Article 5)</strong> — only the protected capsule reaches the LLM, not the raw personal data.</li>
+<li><strong>Audit trail</strong> — every encapsulation, processing, and restoration event is logged with policy version, model used, latency, and detection summary.</li>
+</ul>
+<p>Note: this is a technical architecture pattern, not legal guidance. Each enterprise must validate its specific GDPR posture with its own DPO and legal counsel.</p>
+
+<h2>EU AI Act alignment</h2>
+<p>The EU AI Act categorizes AI systems by risk. Many enterprise workflows in regulated sectors (banking, insurance, healthcare, public services, employment) fall in the high-risk category, requiring conformity assessment, transparency, human oversight, and data governance. The data layer architecture supports these obligations:</p>
+<ul>
+<li><strong>Transparency</strong> — restored outputs carry an audit badge identifying the policy and model used.</li>
+<li><strong>Human oversight</strong> — the data layer does not act autonomously; it supports human-in-the-loop AI workflows.</li>
+<li><strong>Data governance</strong> — markers, policies, and audit trail provide demonstrable governance for the input data.</li>
+</ul>
+
+<h2>Validation: Deutsche Telekom T Challenge 2026</h2>
+<p>LLM Capsule was recognized in <strong>Deutsche Telekom T Challenge 2026 — Top 12 in Data Security &amp; Governance</strong>. The T Challenge specifically evaluates AI enablement under sovereign data and EU regulatory constraints. The evaluation criteria include data sovereignty architecture, audit governance, integration with operator-grade infrastructure, and on-premise deployability — all areas where the AI enablement data layer pattern matches the regulatory expectation.</p>
+
+<h2>Three deployment archetypes for European enterprises</h2>
+
+<h3>Archetype 1 — Tier-1 Telecom (Path A primary, Path B for sensitive workflows)</h3>
+<p>NOC, customer ops, and BSS workflows use Path A with EU-hosted LLM. Lawful intercept, regulator-restricted segments, and certain enterprise customer workflows use Path B.</p>
+
+<h3>Archetype 2 — Federal / national bank (Path B primary, Path A for low-sensitivity)</h3>
+<p>Risk review, transaction monitoring, and regulatory reporting use Path B (on-prem). Internal communications drafting and general document summarization may use Path A under DPA.</p>
+
+<h3>Archetype 3 — Defense / classified (Path B only)</h3>
+<p>All workflows on Path B. The data layer routes nothing to external endpoints. Audit feeds the command-level governance system.</p>
+
+<h2>Common pitfalls</h2>
+<ul>
+<li><strong>Treating sovereign AI as binary.</strong> The two-path architecture lets a single enterprise be pragmatic per workflow. Don't lock the whole enterprise into one path.</li>
+<li><strong>Confusing data residency with sovereignty.</strong> EU-hosted LLM endpoint helps, but doesn't substitute for capsule encapsulation. Raw data inside an EU LLM is still raw data.</li>
+<li><strong>Skipping the DPO conversation.</strong> Sovereign AI architecture decisions should be reviewed with the DPO + privacy / legal team early, not at the end.</li>
+<li><strong>Ignoring audit.</strong> Regulators will ask for chain of custody. The audit log must be live from day 1.</li>
+</ul>
+
+<h2>Getting started</h2>
+<p>Bring one regulated workflow (NOC ticket, claim record, clinical note, regulatory submission) and your enterprise's data residency / sovereignty constraints. LLM Capsule deploys on a sample workflow within 30 minutes and demonstrates Path A and Path B in your environment.</p>
+<p><a href="/request-a-demo" class="btn btn--primary">Request a sovereign AI demo</a></p>`
+
+const FAQ_JSON_LD = ``
+
+export default function SovereignAiEuropeanEnterprises() {
+  return (
+    <LearnArticle
+      backLabel="← Learn"
+      backHref="/resources/learn"
+      title={"Sovereign AI for European enterprises — a practical architecture"}
+      lead={"Bring AI into regulated European workflows under GDPR, EU AI Act, and national data residency — without choosing between productivity and compliance."}
+      category={"Architecture · Sovereign AI"}
+      readTime={"14 min read"}
+      dateUpdated={"Updated April 2025"}
+      tldrLabel={"TL;DR — Definition"}
+      tldrBody={"Sovereign AI means enterprise AI workflows where data, processing, and audit remain inside a defined regulatory and geographic boundary. For European enterprises, this typically means GDPR-compliant data handling, in-region LLM endpoints (EU-hosted LLM providers, or on-prem local models), and a full audit trail for regulator review. An AI enablement data layer like LLM Capsule provides two execution paths — in-region external LLM with capsule data only, or on-prem local lightweight model — so a single enterprise can adopt sovereign AI without giving up the productivity of best-in-class LLMs."}
+      bodyHtml={BODY_HTML}
+      canonicalUrl={"https://llmcapsule.ai/resources/learn/sovereign-ai-european-enterprises"}
+      datePublished={"2025-04-15"}
+      dateModified={"2025-04-15"}
+      inLanguage={"en"}
+      breadcrumbLabel={"Sovereign AI for European enterprises — a practical architecture"}
+      faqJsonLd={FAQ_JSON_LD}
+      relatedSectionLabel="Related articles"
+      related1Title={""}
+      related1Href={""}
+      related2Title={""}
+      related2Href={""}
+      related3Title={""}
+      related3Href={""}
+      related4Title={""}
+      related4Href={""}
+    />
+  )
+}
