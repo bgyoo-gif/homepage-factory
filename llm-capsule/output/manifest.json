@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-12 17:42:21",
+  "generated": "2026-05-12 17:45:15",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1665,6 +1665,16 @@
           "name": "ai-on-network-operations-data-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/ai-on-network-operations-data-ko-lines.md",
           "modified": "2026-05-08"
+        },
+        {
+          "name": "architecture-4zone-technical-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/architecture-4zone-technical-de-lines.md",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "architecture-4zone-technical-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/architecture-4zone-technical-ko-lines.md",
+          "modified": "2026-05-12"
         },
         {
           "name": "architecture-de-lines.md",
