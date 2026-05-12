@@ -1,0 +1,344 @@
+// AUTO-GENERATED. Do not edit by hand.
+// Source: llm-capsule/output/html/public-sector-genai-three-approaches-bodyhtml.html
+// Generator: scripts/build-learn-tsx.py
+// To regenerate: python3 scripts/build-learn-tsx.py
+
+import LearnArticle from "../shared/LearnArticle"
+
+const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그대로 붙여넣기 -->
+<!-- 일반 HTML 태그 + .callout + .takeaways만 사용 (기존 learn 아티클과 동일 패턴) -->
+
+<h2>1. N²SF가 만든 새로운 게임의 규칙</h2>
+<p>본격적인 비교에 앞서, 왜 지금 이 선택이 중요해졌는지부터 짚고 가겠습니다.</p>
+<p>기존 공공부문의 보안 패러다임은 <strong>물리적 망분리</strong>였습니다. 인터넷에 접속 가능한 외부망과 업무용 내부망을 분리하고, 두 망 사이의 정보 이동을 엄격히 통제했습니다. 이 체계 하에서 외부 생성형 AI(ChatGPT, Claude 등)는 업무에 사용할 수 없는 자원이었습니다. 사용 자체가 망분리 원칙 위반이었기 때문입니다.</p>
+<p>2024~2025년 발표된 N²SF(National Network Security Framework, 국가 망 보안체계)는 이 패러다임을 <strong>다중계층보안(MLS, Multi-Layered Security)</strong>으로 전환했습니다. 핵심은 정보를 C(Classified, 기밀)·S(Sensitive, 민감)·O(Open, 공개)의 세 등급으로 분류하고, 등급별로 다른 보안 통제를 적용하는 방식입니다. 모든 정보를 무차별 차단하는 것이 아니라, 정보의 등급에 맞는 보호를 적용하는 것입니다.</p>
+
+<figure style="margin: 32px 0;">
+  <svg width="100%" viewBox="0 0 680 380" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>N²SF 패러다임 전환 — 물리적 망분리에서 다중계층보안으로</title>
+    <desc>기존 망분리 방식과 N²SF 다중계층보안 방식의 차이를 비교한 도식</desc>
+    <defs>
+      <marker id="arrow1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <text x="40" y="32" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130">기존 — 물리적 망분리</text>
+    <rect x="40" y="56" width="280" height="200" rx="12" fill="#f7f8fb" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="4 4"/>
+    <rect x="60" y="80" width="240" height="60" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.5"/>
+    <text x="180" y="106" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130" text-anchor="middle">내부망</text>
+    <text x="180" y="124" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e" text-anchor="middle">모든 업무 데이터</text>
+    <line x1="180" y1="150" x2="180" y2="172" stroke="#6b7280" stroke-width="2"/>
+    <text x="195" y="166" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">차단</text>
+    <rect x="60" y="180" width="240" height="60" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.5"/>
+    <text x="180" y="206" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130" text-anchor="middle">외부망 / 인터넷</text>
+    <text x="180" y="224" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e" text-anchor="middle">접근 불가</text>
+    <text x="180" y="278" font-family="Inter, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">정보의 등급 무관, 일률 차단</text>
+    <line x1="335" y1="156" x2="365" y2="156" stroke="#5b4fe9" stroke-width="1.5" marker-end="url(#arrow1)"/>
+    <text x="380" y="32" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130">N²SF — 다중계층보안 (MLS)</text>
+    <rect x="380" y="56" width="280" height="56" rx="8" fill="#fce9e8" stroke="#ef5350" stroke-width="0.5"/>
+    <text x="400" y="80" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#c73e3a">C (Classified)</text>
+    <text x="400" y="98" font-family="Inter, sans-serif" font-size="12" fill="#ef5350">기밀 — 최고 등급 통제</text>
+    <rect x="380" y="120" width="280" height="56" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.5"/>
+    <text x="400" y="144" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#3a3d5e">S (Sensitive)</text>
+    <text x="400" y="162" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">민감 — 조건부 외부 연계 가능</text>
+    <rect x="380" y="184" width="280" height="56" rx="8" fill="#e6f7f6" stroke="#0ea5a4" stroke-width="0.5"/>
+    <text x="400" y="208" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0b7f7e">O (Open)</text>
+    <text x="400" y="226" font-family="Inter, sans-serif" font-size="12" fill="#0ea5a4">공개 — 외부 활용 가능</text>
+    <text x="520" y="278" font-family="Inter, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">정보 등급별 차등 보호</text>
+    <line x1="40" y1="304" x2="660" y2="304" stroke="#e5e7eb" stroke-width="0.5"/>
+    <text x="40" y="332" font-family="Inter, sans-serif" font-size="13" fill="#3a3d5e">기존: 모든 외부 AI 사용 = 망분리 위반</text>
+    <text x="40" y="354" font-family="Inter, sans-serif" font-size="13" fill="#3a3d5e">N²SF: 정보 등급과 보안 통제에 따라 외부 AI 활용 가능</text>
+  </svg>
+  <figcaption style="text-align: center; font-size: 13px; color: #6b7280; margin-top: 8px;">도식 1. N²SF 패러다임 전환</figcaption>
+</figure>
+
+<p>이 전환의 직접적 결과 중 하나가 부록 2-2 「업무환경에서 생성형 AI 활용」 모델 해설서입니다. 국가정보원과 국가보안기술연구소(NSR)가 2025년 9월에 발간한 이 문서는 공공기관이 외부 생성형 AI를 활용할 때 따라야 할 보안 원칙과 통제 항목을 구체적으로 제시합니다. 「위치-주체-객체」 모델링을 통한 C/S/O 평가, 정보 생산·저장 및 이동 보안원칙, 21개 보안위협 식별, 50개 이상의 보안통제 항목이 담겨 있습니다.</p>
+<p>다시 말해, 공공기관은 이제 "AI를 어떻게 안전하게 쓸 것인가"를 구체적으로 정의된 보안 프레임워크 안에서 답해야 합니다. 그리고 그 답은 세 갈래로 나뉩니다.</p>
+
+<h2>2. 선택지 A — AI DLP·차단 방식</h2>
+
+<h3>2.1 정의와 작동 방식</h3>
+<p>가장 보수적인 접근은 외부 생성형 AI에 대한 접근 자체를 차단하거나, 텍스트 전송 시 키워드·정규식 기반으로 검열하는 방식입니다. 일반적으로 AI DLP(Data Loss Prevention) 솔루션이라는 이름으로 시장에 나와 있습니다.</p>
+<p>작동 원리는 단순합니다. 기관 네트워크 경계에서 외부 AI 서비스(<code>chat.openai.com</code>, <code>claude.ai</code> 등) 도메인 자체를 차단하거나, 트래픽을 검사해서 민감 정보가 포함된 요청을 차단합니다. 일부 솔루션은 좀 더 정교하게 텍스트를 분석해서 주민등록번호·전화번호·계좌번호 등을 탐지하고 마스킹하거나 전송을 거부합니다.</p>
+
+<h3>2.2 장점</h3>
+<p>이 방식의 가장 큰 장점은 <strong>N²SF 보안원칙 위배 가능성의 원천 차단</strong>입니다. 외부로 나가는 정보가 없으니 정보 이동 원칙을 어길 일도 없고, 등급 평가의 복잡성도 발생하지 않습니다. 감사 대응 논리도 단순합니다. "우리 기관은 외부 AI 사용을 차단했다"는 한 줄로 끝납니다.</p>
+<p>도입 비용도 상대적으로 낮습니다. 기존 보안 솔루션 벤더들이 AI DLP 기능을 추가 모듈로 제공하는 경우가 많아, 기관이 이미 사용 중인 DLP·웹 필터링 솔루션을 확장하는 형태로 도입할 수 있습니다.</p>
+
+<h3>2.3 단점과 한계</h3>
+<p>문제는 <strong>AI 활용 자체를 포기하는 대가</strong>입니다. 생성형 AI가 제공하는 업무 효율성 — 문서 요약, 보고서 초안 작성, 코드 생성, 다국어 번역, 데이터 분석 — 을 직원들이 활용할 수 없습니다.</p>
+
+<div class="callout">
+  <div class="callout__icon">⚠️</div>
+  <div class="callout__body"><strong>더 큰 문제는 섀도우 AI(Shadow AI)입니다.</strong> 차단해도 직원들은 AI를 쓰고 싶어합니다. 결국 개인 스마트폰으로 ChatGPT에 접속해서 업무 자료를 입력하거나, 집 PC에서 작업한 결과물을 회사 메일로 보내거나, 자비로 결제한 ChatGPT Plus를 개인 노트북에서 사용합니다. 기관은 보안을 지켰다고 믿지만, 실제로는 통제 불가능한 형태로 AI가 사용되고 있을 가능성이 있습니다.</div>
+</div>
+
+<p>차단 솔루션은 통제의 범위 안에서만 효과를 발휘합니다. 통제 바깥으로 사용이 옮겨가면 솔루션은 그저 "통제 안에서는 안 보인다"는 가시성만 제공할 뿐입니다.</p>
+<p>또한 차단 방식은 <strong>장기적으로 지속 가능하지 않습니다.</strong> 디지털플랫폼정부 추진과 행정 효율화 정책이 가속화되는 가운데, "우리 기관만 AI를 못 쓴다"는 상태는 점차 정책적으로도 정당화하기 어려워집니다.</p>
+
+<h3>2.4 적합한 경우</h3>
+<p>차단 방식이 합리적 선택이 되는 경우가 분명히 존재합니다.</p>
+<ul>
+  <li><strong>국가안보·기밀 처리 비중이 절대적으로 높은 기관</strong>: 국정원, 국방부 일부 부서, 외교부 보안업무 부서. 이 경우 AI 활용 가치보다 보안 리스크가 압도적으로 큽니다.</li>
+  <li><strong>단기 임시 조치가 필요한 기관</strong>: AI 도입 정책이 아직 정해지지 않은 상황에서 일단 위반을 막아야 할 때.</li>
+  <li><strong>사용자 교육이 충분히 이뤄지지 않은 상태에서의 과도기 조치</strong>: 다른 도입 방식과 병행하는 임시 통제.</li>
+</ul>
+<p>다만 위 어느 경우에도 차단 방식이 장기 답안은 아니라는 점은 분명합니다.</p>
+
+<h2>3. 선택지 B — sLLM 자체구축 방식</h2>
+
+<h3>3.1 정의와 작동 방식</h3>
+<p>두 번째 접근은 기관 내부에 소형 LLM(small Language Model)을 직접 구축하고 운영하는 방식입니다. 일반적으로 7B~32B(파라미터 수 70억~320억) 규모의 오픈소스 모델(Llama, Mistral, Qwen, Polyglot-Ko 등)을 기관 데이터로 파인튜닝(fine-tuning)하여 자체 호스팅합니다.</p>
+<p>물리적 구성은 다음과 같습니다. 기관 전산망 내에 GPU 서버를 두고, 그 위에 LLM을 배포합니다. 사용자 단말은 내부망 웹 UI를 통해 이 LLM에 접근합니다. 모든 데이터·모델·추론 과정이 기관 내부에서 완결되며, 외부 인터넷과의 통신은 없습니다.</p>
+
+<h3>3.2 장점</h3>
+<p>가장 큰 장점은 <strong>완전한 데이터 통제</strong>입니다. 입력 프롬프트와 출력 응답 모두 기관 내부에서만 처리되므로, 외부 유출 가능성이 구조적으로 0입니다. N²SF 정합성 측면에서도 「위치-주체-객체」가 모두 S등급 내부망에 위치하므로 정보 이동 원칙 위배가 발생하지 않습니다.</p>
+<p>또한 <strong>기관 도메인 특화</strong>가 가능합니다. 자체 데이터로 파인튜닝하면 일반 모델보다 해당 기관 업무에 더 적합한 응답을 생성할 수 있습니다. 법령 해석에 강한 모델, 민원 응대에 특화된 모델 등을 만들 수 있습니다.</p>
+<p>데이터 주권 측면에서도 명확합니다. 기관 데이터가 외부 클라우드·외부 AI 서비스 제공자의 손에 들어가지 않습니다.</p>
+
+<h3>3.3 단점과 한계</h3>
+<p>문제는 <strong>비용과 성능의 비대칭</strong>입니다. 먼저 비용 측면입니다. 32B급 LLM을 안정적으로 서비스하려면 다음이 필요합니다.</p>
+<ul>
+  <li><strong>GPU 서버</strong>: H100 8장 1대 또는 동급 구성. 도입 비용 약 5억~6억 원</li>
+  <li><strong>부속 인프라</strong>: 네트워크, 스토리지, 백업, 모니터링 시스템. 약 1억 원</li>
+  <li><strong>운영 인력</strong>: AI/MLOps 엔지니어 최소 2명. 인건비 연 2~3억 원</li>
+  <li><strong>모델 라이선스·관리 도구</strong>: 연 수천만 원</li>
+</ul>
+<p>초기 구축 비용만 약 8억 원 수준이며, 연간 운영비도 3억~5억 원에 이릅니다. 중앙부처 본부급이 아니면 부담하기 어려운 규모입니다. 성능 측면은 더 본질적인 문제입니다.</p>
+<ul>
+  <li><strong>최신 상용 모델과의 격차</strong> — 32B 수준의 sLLM은 GPT-5, Claude Sonnet 4, Gemini 3 등 최신 상용 모델과 비교할 때 성능 격차가 명확합니다. 단순 정보 요약·번역은 비슷할 수 있어도, 복잡한 추론, 긴 문맥 처리, 다단계 사고가 필요한 작업에서 격차가 드러납니다.</li>
+  <li><strong>시간이 갈수록 벌어지는 격차</strong> — 상용 LLM 제공사들은 연 수천억 원을 모델 개발에 투입하고 있습니다. 그 속도를 한 공공기관이 자체 구축한 모델로 따라잡는 것은 사실상 불가능합니다.</li>
+  <li><strong>신규 모델 출시마다 재구축 부담</strong> — Llama 3에서 Llama 4로 베이스 모델을 바꾸려면 파인튜닝을 다시 해야 하고, 인프라 최적화도 다시 해야 합니다. 이 사이클은 보통 수개월에서 1년에 걸칩니다.</li>
+</ul>
+
+<h3>3.4 적합한 경우</h3>
+<p>sLLM 자체구축이 합리적 선택이 되는 경우는 다음과 같습니다.</p>
+<ul>
+  <li><strong>연 IT 예산 100억 원 이상의 대형 기관</strong>: 비용 부담이 상대적으로 작고, 전담 AI팀 구성이 가능</li>
+  <li><strong>외부 LLM 활용이 정책적·법적으로 완전히 금지된 분야</strong>: 일부 안보 관련 기관</li>
+  <li><strong>특정 도메인에 대한 깊은 파인튜닝이 핵심 가치인 경우</strong>: 예를 들어 법령 검색 특화 모델을 자체 자산으로 만드는 것이 기관 미션인 경우</li>
+  <li><strong>장기적으로 AI 모델 자체를 기관 핵심 자산으로 보유하려는 전략적 의지가 있는 경우</strong></li>
+</ul>
+<p>반대로 다음의 경우는 sLLM 자체구축이 과잉투자일 수 있습니다.</p>
+<ul>
+  <li>일반 행정업무 효율화가 1차 목표인 경우</li>
+  <li>AI 활용 범위가 문서 검색·요약·초안 작성 수준인 경우</li>
+  <li>예산이 연 5억 원 이하 규모인 경우</li>
+</ul>
+
+<h2>4. 선택지 C — 게이트웨이 방식</h2>
+
+<h3>4.1 정의와 작동 방식</h3>
+<p>세 번째 접근은 기관 내부에 <strong>보안 게이트웨이</strong>를 두고, 데이터를 안전하게 처리한 후 외부 LLM의 추론 능력을 활용하는 방식입니다. RAG(Retrieval-Augmented Generation)와 결합되어 다음과 같이 작동합니다.</p>
+<ol>
+  <li>사용자가 내부망 UI를 통해 질의를 입력</li>
+  <li>내부망의 RAG 시스템이 기관 문서를 검색하여 관련 자료 추출</li>
+  <li>게이트웨이가 추출된 자료에서 민감정보를 식별·보호 처리(캡슐화)</li>
+  <li>보호 처리된 내용만 외부 LLM에 전송, 추론 요청</li>
+  <li>외부 LLM의 응답을 내부망으로 수신</li>
+  <li>게이트웨이가 응답을 복원·정리하여 사용자에게 제공</li>
+</ol>
+<p>이 방식의 정보 흐름은 「위치(기관 전산망 S) - 주체(이용자 단말 S) - 객체(외부 생성형 AI O)」 모델에 해당하며, 정확히 N²SF 모델 2가 다루는 시나리오입니다.</p>
+
+<figure style="margin: 32px 0;">
+  <svg width="100%" viewBox="0 0 680 520" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title>게이트웨이 방식 정보 흐름도</title>
+    <desc>내부망의 RAG와 게이트웨이를 거쳐 외부 LLM으로 정보가 흐르는 6단계 과정</desc>
+    <defs>
+      <marker id="arrow3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <text x="40" y="32" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130">게이트웨이 방식 정보 흐름</text>
+    <rect x="40" y="60" width="600" height="86" rx="12" fill="#e6f7f6" stroke="#0ea5a4" stroke-width="0.5" stroke-dasharray="4 4" fill-opacity="0.3"/>
+    <text x="56" y="82" font-family="Inter, sans-serif" font-size="12" fill="#0ea5a4">인터넷 영역 (O등급)</text>
+    <rect x="270" y="96" width="140" height="40" rx="8" fill="#e6f7f6" stroke="#0ea5a4" stroke-width="0.5"/>
+    <text x="340" y="115" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0b7f7e" text-anchor="middle">외부 LLM</text>
+    <text x="340" y="130" font-family="Inter, sans-serif" font-size="12" fill="#0ea5a4" text-anchor="middle">GPT · Claude · Gemini</text>
+    <rect x="40" y="166" width="600" height="240" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.5" stroke-dasharray="4 4" fill-opacity="0.3"/>
+    <text x="56" y="188" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">기관 전산망 (S등급)</text>
+    <rect x="60" y="210" width="120" height="56" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.5"/>
+    <text x="120" y="234" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130" text-anchor="middle">사용자 단말</text>
+    <text x="120" y="252" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e" text-anchor="middle">내부망 UI</text>
+    <rect x="210" y="210" width="120" height="56" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.5"/>
+    <text x="270" y="234" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130" text-anchor="middle">RAG 엔진</text>
+    <text x="270" y="252" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e" text-anchor="middle">기관 문서 검색</text>
+    <rect x="360" y="210" width="160" height="56" rx="8" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1"/>
+    <text x="440" y="234" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#3b2fbf" text-anchor="middle">보안 게이트웨이</text>
+    <text x="440" y="252" font-family="Inter, sans-serif" font-size="12" fill="#5b4fe9" text-anchor="middle">민감정보 캡슐화</text>
+    <rect x="550" y="210" width="80" height="56" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.5"/>
+    <text x="590" y="234" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130" text-anchor="middle">보안 경계</text>
+    <text x="590" y="252" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e" text-anchor="middle">방화벽 · Proxy</text>
+    <line x1="180" y1="232" x2="208" y2="232" stroke="#5b4fe9" stroke-width="1.5" marker-end="url(#arrow3)"/>
+    <line x1="330" y1="232" x2="358" y2="232" stroke="#5b4fe9" stroke-width="1.5" marker-end="url(#arrow3)"/>
+    <line x1="520" y1="232" x2="548" y2="232" stroke="#5b4fe9" stroke-width="1.5" marker-end="url(#arrow3)"/>
+    <line x1="590" y1="210" x2="590" y2="146" stroke="#5b4fe9" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#arrow3)"/>
+    <text x="600" y="180" font-family="Inter, sans-serif" font-size="12" fill="#3b2fbf">전송</text>
+    <line x1="610" y1="146" x2="610" y2="210" stroke="#6b7280" stroke-width="1" opacity="0.6" marker-end="url(#arrow3)"/>
+    <text x="620" y="180" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">응답</text>
+    <rect x="60" y="306" width="560" height="80" rx="8" fill="#f7f8fb" stroke="#e5e7eb" stroke-width="0.5" fill-opacity="0.4"/>
+    <text x="80" y="328" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130">6단계 정보 흐름</text>
+    <text x="80" y="350" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">1. 질의 입력  →  2. RAG 검색  →  3. 게이트웨이 보호 처리</text>
+    <text x="80" y="370" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">4. 외부 LLM 추론  →  5. 응답 수신·복원  →  6. 사용자 응답</text>
+    <line x1="40" y1="426" x2="640" y2="426" stroke="#e5e7eb" stroke-width="0.5"/>
+    <text x="40" y="454" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130">게이트웨이의 핵심 역할</text>
+    <text x="40" y="478" font-family="Inter, sans-serif" font-size="13" fill="#3a3d5e">민감정보 식별 → 보호 처리(캡슐화) → 외부 전송 → 응답 복원</text>
+    <text x="40" y="500" font-family="Inter, sans-serif" font-size="13" fill="#3a3d5e">보호 방식의 수준(단순 마스킹 vs 차등정보보호)이 보안 강도를 결정</text>
+  </svg>
+  <figcaption style="text-align: center; font-size: 13px; color: #6b7280; margin-top: 8px;">도식 2. 게이트웨이 방식 정보 흐름도</figcaption>
+</figure>
+
+<h3>4.2 장점</h3>
+<p>게이트웨이 방식의 주요 장점은 다음과 같습니다.</p>
+<ul>
+  <li><strong>외부 LLM의 최신 성능 활용</strong> — GPT-5, Claude, Gemini 등 상용 모델의 추론 능력을 그대로 활용하면서도, 데이터는 게이트웨이에서 보호합니다. 신규 모델이 나오면 게이트웨이 설정 변경만으로 즉시 교체할 수 있어, 모델 최신화 부담이 거의 없습니다.</li>
+  <li><strong>비용 절감</strong> — sLLM 자체구축 대비 현저히 낮습니다. GPU 인프라가 필요 없고, 게이트웨이 솔루션 라이선스와 외부 LLM API 사용료(종량제)만 부담하면 됩니다. 일반적으로 sLLM 자체구축 비용의 10~20% 수준에서 도입 가능합니다.</li>
+  <li><strong>운영 인력 부담 최소화</strong> — AI 모델 자체를 운영할 필요가 없으므로, MLOps 엔지니어 없이도 기존 IT 운영 인력으로 충분히 관리 가능합니다.</li>
+  <li><strong>N²SF 정합성</strong> — 게이트웨이가 제공하는 보안 통제는 모델 2가 요구하는 AI 연계체계의 핵심 기능들과 직접 대응됩니다. 이용자·단말 인증, 콘텐츠 필터링, 보안등급 식별, Proxy 강제화, 일방향 정보흐름 통제, 감사 로그 등이 게이트웨이의 기본 기능입니다.</li>
+</ul>
+
+<h3>4.3 단점과 한계</h3>
+<p>게이트웨이 방식의 가치는 <strong>"내부에서 어떻게 보호하느냐"</strong>에 전적으로 달려 있습니다. 이 부분이 약하면 다른 모든 장점이 무의미해집니다.</p>
+<p>문제가 되는 보호 방식이 <strong>단순 마스킹(Masking)</strong>입니다. 정규식이나 키워드 기반으로 주민등록번호·전화번호 같은 패턴을 찾아 <code>***</code>로 치환하는 방식입니다. 이 방식의 한계는 다음과 같습니다.</p>
+<ul>
+  <li><strong>패턴에 없는 민감정보는 놓칩니다</strong>: 비정형 텍스트 안의 인명, 사건명, 지역명 등</li>
+  <li><strong>재식별 공격에 취약합니다</strong>: 마스킹된 데이터도 다른 정보와 조합하면 개인을 특정할 수 있습니다. 한국에서는 K-익명성(K-Anonymity) 연구가 이 문제를 다뤄왔습니다</li>
+  <li><strong>통계적 추론 공격에 무방비입니다</strong>: 마스킹된 데이터들의 분포를 분석하면 원본 값을 역추적할 수 있습니다</li>
+  <li><strong>AI 학습·추론 품질 저하</strong>: 마스킹된 데이터는 통계적 분포가 왜곡되어 AI가 제대로 처리하지 못합니다</li>
+</ul>
+<p>이런 한계 때문에, 마스킹 기반 게이트웨이는 <strong>N²SF 정합성 논증에 약점</strong>을 가집니다. "민감 정보를 마스킹했으니 안전하다"는 주장이 감사 단계에서 도전받을 수 있습니다.</p>
+
+<h3>4.4 게이트웨이의 보호 방식 — 단순 비식별화를 넘어</h3>
+<p>게이트웨이 방식이 완성되는 지점은 <strong>수학적으로 원본 추론이 불가능함을 보장하는 보호 기법</strong>이 적용될 때입니다. 이 영역의 대표적 기법이 <strong>차등정보보호(Differential Privacy)</strong>입니다.</p>
+<p>차등정보보호는 2006년 마이크로소프트 리서치의 Cynthia Dwork가 제안한 개념으로, 데이터에 수학적으로 정의된 노이즈를 삽입하여 공격자가 원본 데이터의 통계적 분포를 추론할 수 없도록 보장합니다. 단순 마스킹과 달리 데이터의 유용성(utility)을 일정 수준 유지하면서 프라이버시를 보장할 수 있다는 점에서 학술적·실무적으로 인정받아 왔습니다.</p>
+<p>차등정보보호 기반의 게이트웨이는 다음을 보장합니다.</p>
+<ul>
+  <li><strong>수학적 보안 보증</strong>: 정해진 프라이버시 예산(epsilon) 내에서 재식별 불가능</li>
+  <li><strong>데이터 유용성 유지</strong>: AI가 처리 가능한 형태로 데이터 유지</li>
+  <li><strong>공격 모델에 대한 견고함</strong>: 알려지지 않은 재식별 공격에도 이론적으로 보호</li>
+</ul>
+<p>이 기법이 적용된 게이트웨이는 단순 마스킹 게이트웨이와 <strong>본질적으로 다른 보안 수준</strong>을 제공합니다. N²SF 정합성 논증에서도 학술적 권위에 근거한 정당화가 가능해집니다.</p>
+<p>다만 차등정보보호 기반 솔루션은 아직 시장에서 소수입니다. 게이트웨이 솔루션을 검토하실 때 "어떤 보호 방식을 사용하는가"를 반드시 확인하시기 바랍니다.</p>
+
+<h3>4.5 적합한 경우</h3>
+<p>게이트웨이 방식은 다음 경우에 가장 합리적인 선택입니다.</p>
+<ul>
+  <li><strong>외부 LLM의 최신 성능이 업무 가치에 직결되는 경우</strong>: 복잡한 문서 분석, 다국어 처리, 코드 생성 등</li>
+  <li><strong>초기 도입 비용을 통제하면서 빠르게 시작하려는 경우</strong></li>
+  <li><strong>AI 모델 운영을 핵심 역량으로 가져갈 의지·자원이 없는 경우</strong></li>
+  <li><strong>점진적 확대를 원하는 경우</strong>: 작게 시작해서 효과 검증 후 확대</li>
+</ul>
+<p>규모로는 중앙부처 본부·청 단위부터 광역 지자체, 중대형 공공기관까지 적용 가능 범위가 가장 넓습니다.</p>
+
+<h2>5. 어떤 기관에 어떤 방식이 맞는가</h2>
+<p>지금까지 세 가지 접근법을 분석했습니다. 어느 하나가 절대적으로 우월하지 않으며, 기관 상황에 따라 합리적 선택이 달라집니다. 다음 표는 의사결정의 가이드라인입니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th>A. AI DLP·차단</th>
+      <th>B. sLLM 자체구축</th>
+      <th>C. 게이트웨이</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>초기 도입 비용</td><td>낮음 (1~3억)</td><td>높음 (약 8억)</td><td>낮음 (1~3억)</td></tr>
+    <tr><td>AI 성능</td><td>활용 불가</td><td>32B급 수준</td><td>최신 상용 LLM 수준</td></tr>
+    <tr><td>데이터 보안</td><td>완전 차단</td><td>완전 내부 처리</td><td>보호 방식이 결정</td></tr>
+    <tr><td>모델 최신화</td><td>해당 없음</td><td>재구축 필요</td><td>설정 변경만으로 즉시</td></tr>
+    <tr><td>N²SF 정합성</td><td>위배 없음</td><td>위배 없음</td><td>모델 2 준수 (보호 방식 검증 필요)</td></tr>
+    <tr><td>운영 인력 부담</td><td>낮음</td><td>매우 높음</td><td>중간</td></tr>
+    <tr><td>적합 규모</td><td>모든 규모</td><td>대형 기관 (예산 100억+)</td><td>모든 규모</td></tr>
+  </tbody>
+</table>
+
+<div class="takeaways">
+  <div class="takeaways__label">기관 상황별 권장 선택</div>
+  <ul>
+    <li>국가안보·기밀 비중이 절대적인 경우 — <strong>A. AI DLP·차단</strong> (장기적으로도 유효)</li>
+    <li>대형 기관, 도메인 특화 모델이 핵심 자산인 경우 — <strong>B. sLLM 자체구축</strong></li>
+    <li>일반 행정업무 효율화 목표, 모든 규모 — <strong>C. 게이트웨이</strong> (단, 보호 방식 검증 필수)</li>
+    <li>AI 도입 정책 미정 상태 — A로 단기 대응 후 C로 전환</li>
+  </ul>
+</div>
+
+<h2>6. 결론 — 보호 방식이 결정합니다</h2>
+<p>세 가지 선택지 중 어느 길을 가든, 그 길의 <strong>성공 여부는 결국 정보 보호 방식의 수준</strong>이 결정합니다.</p>
+<p>차단 방식은 가장 강한 보호를 제공하지만 보호의 대가로 활용을 포기합니다. sLLM 자체구축은 강한 보호와 활용을 동시에 추구하지만, 비용·성능 격차라는 다른 형태의 대가를 치릅니다. 게이트웨이 방식은 균형점을 찾으려 하지만, 그 균형은 게이트웨이 내부의 보호 기법이 얼마나 견고한가에 따라 무너지거나 유지됩니다.</p>
+
+<div class="callout">
+  <div class="callout__icon">✅</div>
+  <div class="callout__body"><strong>게이트웨이 솔루션 평가 시 반드시 던져야 할 질문 5가지</strong>
+    <ol style="margin-top: 12px; margin-bottom: 0;">
+      <li>어떤 정보 보호 기법을 사용하는가? (마스킹 / K-익명성 / 차등정보보호 / 기타)</li>
+      <li>그 보호 기법의 수학적·학술적 근거는 무엇인가?</li>
+      <li>재식별 공격·추론 공격에 대한 검증 결과가 있는가?</li>
+      <li>N²SF 모델 2의 보안통제 항목 중 어느 항목들을 어떻게 충족하는가?</li>
+      <li>보호 처리 후 데이터의 AI 활용 품질(utility)은 어떻게 검증되었는가?</li>
+    </ol>
+  </div>
+</div>
+
+<p>이 질문에 명확히 답할 수 있는 솔루션만이 기관 도입 검토 대상이 됩니다. 위 질문들의 답이 모호하다면, 그 솔루션은 N²SF 환경에서 지속 가능한 선택이 되기 어렵습니다.</p>
+<p>공공기관의 생성형 AI 도입은 이제 "할 것인가"의 문제가 아니라, "어떤 길로 갈 것인가"의 문제입니다. 그리고 그 길의 끝에 무엇이 있는지는, 길을 떠나기 전 충분한 분석에서 시작됩니다.</p>
+
+<h2>자주 묻는 질문</h2>
+
+<h3>AI DLP만으로도 N²SF 충족이 가능한가요?</h3>
+<p>가능합니다. 외부 AI 사용을 차단하면 정보 이동 자체가 발생하지 않으므로 N²SF 보안원칙 위배가 없습니다. 다만 이는 AI 활용 가치를 포기하는 대가로 얻는 안전성이며, 섀도우 AI 문제로 인해 실효적 통제가 약화될 수 있다는 점은 별도로 고려해야 합니다.</p>
+
+<h3>sLLM 자체구축 비용은 정확히 얼마나 드나요?</h3>
+<p>기관 규모와 활용 범위에 따라 다르지만, 32B급 모델 안정 운영 기준 초기 구축 비용은 약 8억 원 수준, 연간 운영비는 3억~5억 원이 일반적입니다. 7B 수준의 더 작은 모델로 시작하면 비용은 줄일 수 있으나 성능 한계가 더 명확해집니다.</p>
+
+<h3>게이트웨이 방식의 단점은 무엇인가요?</h3>
+<p>가장 큰 약점은 보호 방식의 수준이 게이트웨이마다 다르다는 점입니다. 단순 마스킹 기반 게이트웨이는 재식별 공격에 취약하고 N²SF 정합성 논증이 약합니다. 차등정보보호 같은 수학적으로 검증된 보호 기법을 사용하는 게이트웨이만이 본 방식의 가치를 온전히 실현할 수 있습니다.</p>
+
+<h3>우리 기관은 어떤 방식으로 시작해야 하나요?</h3>
+<p>다음 세 가지를 먼저 정리하시면 방향이 보입니다. (1) 우리 기관의 IT 예산 규모, (2) AI 활용의 1차 목표(일반 행정 효율화인지, 도메인 특화 활용인지), (3) 보안 등급 처리 비중(C등급 비중이 높은지). 일반 행정 효율화가 목표이고 C등급 비중이 절대적이지 않다면, 게이트웨이 방식이 가장 합리적 출발점입니다.</p>
+
+<h3>세 방식을 병행할 수도 있나요?</h3>
+<p>가능합니다. 실제로 많은 기관이 부서·업무별로 다른 방식을 적용하는 하이브리드 구조를 검토하고 있습니다. 예를 들어 일반 행정 부서는 게이트웨이 방식, 기밀 처리 부서는 차단 방식을 적용하는 식입니다. 다만 운영 복잡도와 거버넌스 부담이 늘어나므로, 충분한 검토와 거버넌스 설계가 필요합니다.</p>
+
+<h2>참고 자료</h2>
+<ul>
+  <li>국가정보원, 국가보안기술연구소(NSR), 「국가 망 보안체계 보안 가이드라인 — 정보서비스 모델 해설서: 모델 2. 업무환경에서 생성형 AI 활용」, 2025.9</li>
+  <li>국가정보원, 「국가 망 보안체계(N²SF) 보안 가이드라인」, 2024</li>
+  <li>Cynthia Dwork &amp; Aaron Roth, "The Algorithmic Foundations of Differential Privacy", Foundations and Trends in Theoretical Computer Science, 2014</li>
+  <li>디지털플랫폼정부위원회, 「디지털플랫폼정부 추진계획」</li>
+</ul>
+`
+
+const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"AI DLP만으로도 N²SF 충족이 가능한가요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 외부 AI 사용을 차단하면 정보 이동 자체가 발생하지 않으므로 N²SF 보안원칙 위배가 없습니다."}}, {"@type":"Question","name":"sLLM 자체구축 비용은 정확히 얼마나 드나요?","acceptedAnswer":{"@type":"Answer","text":"32B급 모델 안정 운영 기준 초기 구축 비용은 약 8억 원 수준, 연간 운영비는 3억~5억 원이 일반적입니다."}}, {"@type":"Question","name":"게이트웨이 방식의 단점은 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"가장 큰 약점은 보호 방식의 수준이 게이트웨이마다 다르다는 점입니다."}}, {"@type":"Question","name":"우리 기관은 어떤 방식으로 시작해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"IT 예산 규모, AI 활용 1차 목표, 보안 등급 처리 비중을 먼저 정리하시면 방향이 보입니다."}}, {"@type":"Question","name":"세 방식을 병행할 수도 있나요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 부서·업무별로 다른 방식을 적용하는 하이브리드 구조를 검토할 수 있습니다."}} ] }`
+
+export default function PublicSectorGenaiThreeApproaches() {
+  return (
+    <LearnArticle
+      backLabel="← Learn"
+      backHref="/resources/learn"
+      title={"공공기관 생성형 AI 도입의 세 가지 길"}
+      lead={"AI DLP·차단, sLLM 자체구축, 게이트웨이 방식 — N²SF 시대 공공기관의 선택지를 비용·성능·보안·정합성 관점에서 객관적으로 비교합니다."}
+      category={"정책 분석"}
+      readTime={"18분 읽기"}
+      dateUpdated={"2026년 5월 업데이트"}
+      tldrLabel={"TL;DR"}
+      tldrBody={"공공기관의 생성형 AI 도입은 AI DLP·차단, sLLM 자체구축, 게이트웨이 방식의 세 갈래로 나뉩니다. 차단 방식은 안전하지만 활용을 포기해야 하고, sLLM 자체구축은 7~13억 원의 초기 비용에 더해 최신 상용 모델과의 성능 격차가 누적됩니다. 게이트웨이 방식은 비용과 성능의 균형을 잡지만, 내부 보호 기법의 수준이 N²SF 정합성을 결정합니다. 단순 마스킹은 재식별 공격에 취약하며, 차등정보보호(Differential Privacy) 기반의 게이트웨이가 수학적으로 검증된 유일한 답에 가깝습니다."}
+      bodyHtml={BODY_HTML}
+      canonicalUrl={"https://llmcapsule.ai/resources/learn/public-sector-genai-three-approaches"}
+      datePublished={"2026-05-01"}
+      dateModified={"2026-05-01"}
+      inLanguage={"ko-KR"}
+      breadcrumbLabel={"공공기관 생성형 AI 도입의 세 가지 길"}
+      faqJsonLd={FAQ_JSON_LD}
+      relatedSectionLabel="함께 읽으면 좋은 글"
+      related1Title={"N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까"}
+      related1Href={"/resources/learn/n2sf-model-2-explained"}
+      related2Title={"N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리"}
+      related2Href={"/resources/learn/what-is-n2sf"}
+      related3Title={"sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프"}
+      related3Href={"/resources/learn/sllm-self-hosted-reality-check"}
+      related4Title={""}
+      related4Href={""}
+    />
+  )
+}
