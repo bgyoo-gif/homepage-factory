@@ -2,8 +2,38 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
-// Self-contained Framer Code Component.
-// No external imports — all LearnArticle logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with full Props for translation/CMS.
+// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
+
+import { addPropertyControls, ControlType } from "framer"
+
+interface Props {
+  backLabel?: string
+  backHref?: string
+  title?: string
+  lead?: string
+  category?: string
+  readTime?: string
+  dateUpdated?: string
+  tldrLabel?: string
+  tldrBody?: string
+  bodyHtml?: string
+  canonicalUrl?: string
+  datePublished?: string
+  dateModified?: string
+  inLanguage?: string
+  breadcrumbLabel?: string
+  faqJsonLd?: string
+  relatedSectionLabel?: string
+  related1Title?: string
+  related1Href?: string
+  related2Title?: string
+  related2Href?: string
+  related3Title?: string
+  related3Href?: string
+  related4Title?: string
+  related4Href?: string
+}
 
 const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그대로 붙여넣기 -->
 <!-- 일반 HTML 태그 + .callout + .takeaways만 사용 (기존 learn 아티클과 동일 패턴) -->
@@ -340,35 +370,33 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
 const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"N²SF는 의무 적용인가요?","acceptedAnswer":{"@type":"Answer","text":"국가정보원이 발간한 「국가 망 보안체계 보안 가이드라인」은 공공기관의 정보서비스 구축·운영 시 적용 기준을 제시합니다. 모든 기관이 즉시 전면 적용해야 하는 강행 규정의 형식은 아니지만, 신규 정보화 사업의 보안성 검토에서 사실상의 표준으로 작동하고 있습니다."}}, {"@type":"Question","name":"망분리는 완전히 폐지되나요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. C 등급 정보를 다루는 시스템에는 망분리 수준의 강한 통제가 여전히 적용됩니다. N²SF가 폐지한 것은 모든 정보에 일률적으로 망분리를 적용하는 방식입니다."}}, {"@type":"Question","name":"C/S/O 분류는 누가 정하나요?","acceptedAnswer":{"@type":"Answer","text":"각 기관이 자체적으로 정보자산을 식별하고 등급을 분류합니다. 다만 일부 영역은 외부 기준이 적용됩니다."}}, {"@type":"Question","name":"모델 해설서는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"국가정보원과 국가보안기술연구소(NSR)가 발간하는 「정보서비스 모델 해설서」 시리즈는 대표적인 정보서비스 시나리오에 N²SF를 적용한 분석 예시입니다."}}, {"@type":"Question","name":"N²SF 적용에 비용이 많이 드나요?","acceptedAnswer":{"@type":"Answer","text":"적용 자체에는 직접 비용이 들지 않지만, 정보자산 분류, 시스템 모델링, 보안 통제 도입 등의 작업에는 시간과 자원이 필요합니다."}} ] }`
 
-export default function WhatIsN2sf() {
-  // ── Page-specific values (replaces LearnArticle Props) ──
-  const backLabel = "← Learn"
-  const backHref = "/resources/learn"
-  const title = "N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리"
-  const lead = "국가 망 보안체계(N²SF)는 망분리에서 다중계층보안(MLS)으로의 전환입니다. C/S/O 등급 체계, 「위치-주체-객체」 모델링, 보안원칙을 처음부터 끝까지 정리합니다."
-  const category = "정책 분석"
-  const readTime = "20분 읽기"
-  const dateUpdated = "2026년 5월 업데이트"
-  const tldrLabel = "TL;DR"
-  const tldrBody = "N²SF는 공공부문 보안의 패러다임 전환입니다. 모든 외부 자원을 일률 차단하던 망분리에서, 정보를 C(기밀)·S(민감)·O(공개) 세 등급으로 분류하고 등급별로 다른 통제를 적용하는 다중계층보안으로 전환했습니다. 이 전환은 외부 생성형 AI 활용의 길을 열되, 「위치-주체-객체」 모델링·정보 이동 보안원칙·21개 보안위협 식별·50여 개 보안통제 항목이라는 구체적인 프레임워크 안에서만 가능합니다."
-  const bodyHtml = BODY_HTML
-  const canonicalUrl = "https://llmcapsule.ai/resources/learn/what-is-n2sf"
-  const datePublished = "2026-05-01"
-  const dateModified = "2026-05-01"
-  const inLanguage = "ko-KR"
-  const breadcrumbLabel = "N²SF란 무엇인가"
-  const faqJsonLd = FAQ_JSON_LD
-  const relatedSectionLabel = "함께 읽으면 좋은 글"
-  const related1Title = "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까"
-  const related1Href = "/resources/learn/n2sf-model-2-explained"
-  const related2Title = "공공기관 생성형 AI 도입의 세 가지 길"
-  const related2Href = "/resources/learn/public-sector-genai-three-approaches"
-  const related3Title = "기업 AI를 위한 차등 프라이버시"
-  const related3Href = "/resources/learn/differential-privacy-for-enterprise-llm"
-  const related4Title = ""
-  const related4Href = ""
-
-  // ── BEGIN inlined LearnArticle body ──
+export default function WhatIsN2sf({
+  backLabel = "← Learn",
+  backHref = "/resources/learn",
+  title = "N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리",
+  lead = "국가 망 보안체계(N²SF)는 망분리에서 다중계층보안(MLS)으로의 전환입니다. C/S/O 등급 체계, 「위치-주체-객체」 모델링, 보안원칙을 처음부터 끝까지 정리합니다.",
+  category = "정책 분석",
+  readTime = "20분 읽기",
+  dateUpdated = "2026년 5월 업데이트",
+  tldrLabel = "TL;DR",
+  tldrBody = "N²SF는 공공부문 보안의 패러다임 전환입니다. 모든 외부 자원을 일률 차단하던 망분리에서, 정보를 C(기밀)·S(민감)·O(공개) 세 등급으로 분류하고 등급별로 다른 통제를 적용하는 다중계층보안으로 전환했습니다. 이 전환은 외부 생성형 AI 활용의 길을 열되, 「위치-주체-객체」 모델링·정보 이동 보안원칙·21개 보안위협 식별·50여 개 보안통제 항목이라는 구체적인 프레임워크 안에서만 가능합니다.",
+  bodyHtml = BODY_HTML,
+  canonicalUrl = "https://llmcapsule.ai/resources/learn/what-is-n2sf",
+  datePublished = "2026-05-01",
+  dateModified = "2026-05-01",
+  inLanguage = "ko-KR",
+  breadcrumbLabel = "N²SF란 무엇인가",
+  faqJsonLd = FAQ_JSON_LD,
+  relatedSectionLabel = "함께 읽으면 좋은 글",
+  related1Title = "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
+  related1Href = "/resources/learn/n2sf-model-2-explained",
+  related2Title = "공공기관 생성형 AI 도입의 세 가지 길",
+  related2Href = "/resources/learn/public-sector-genai-three-approaches",
+  related3Title = "기업 AI를 위한 차등 프라이버시",
+  related3Href = "/resources/learn/differential-privacy-for-enterprise-llm",
+  related4Title = "",
+  related4Href = "",
+}: Props) {
   const relatedItems = [
     { title: related1Title, href: related1Href },
     { title: related2Title, href: related2Href },
@@ -928,5 +956,32 @@ export default function WhatIsN2sf() {
       </div>
     </>
   )
-  // ── END inlined LearnArticle body ──
 }
+
+addPropertyControls(WhatIsN2sf, {
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "국가 망 보안체계(N²SF)는 망분리에서 다중계층보안(MLS)으로의 전환입니다. C/S/O 등급 체계, 「위치-주체-객체」 모델링, 보안원칙을 처음부터 끝까지 정리합니다.", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "정책 분석" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "20분 읽기" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "2026년 5월 업데이트" },
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "N²SF는 공공부문 보안의 패러다임 전환입니다. 모든 외부 자원을 일률 차단하던 망분리에서, 정보를 C(기밀)·S(민감)·O(공개) 세 등급으로 분류하고 등급별로 다른 통제를 적용하는 다중계층보안으로 전환했습니다. 이 전환은 외부 생성형 AI 활용의 길을 열되, 「위치-주체-객체」 모델링·정보 이동 보안원칙·21개 보안위협 식별·50여 개 보안통제 항목이라는 구체적인 프레임워크 안에서만 가능합니다.", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/what-is-n2sf" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2026-05-01" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2026-05-01" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "ko-KR" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "N²SF란 무엇인가" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "함께 읽으면 좋은 글" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/n2sf-model-2-explained" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "공공기관 생성형 AI 도입의 세 가지 길" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/public-sector-genai-three-approaches" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "기업 AI를 위한 차등 프라이버시" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/differential-privacy-for-enterprise-llm" },
+  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
+  related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
+})

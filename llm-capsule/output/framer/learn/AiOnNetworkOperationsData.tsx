@@ -2,8 +2,38 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
-// Self-contained Framer Code Component.
-// No external imports — all LearnArticle logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with full Props for translation/CMS.
+// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
+
+import { addPropertyControls, ControlType } from "framer"
+
+interface Props {
+  backLabel?: string
+  backHref?: string
+  title?: string
+  lead?: string
+  category?: string
+  readTime?: string
+  dateUpdated?: string
+  tldrLabel?: string
+  tldrBody?: string
+  bodyHtml?: string
+  canonicalUrl?: string
+  datePublished?: string
+  dateModified?: string
+  inLanguage?: string
+  breadcrumbLabel?: string
+  faqJsonLd?: string
+  relatedSectionLabel?: string
+  related1Title?: string
+  related1Href?: string
+  related2Title?: string
+  related2Href?: string
+  related3Title?: string
+  related3Href?: string
+  related4Title?: string
+  related4Href?: string
+}
 
 const BODY_HTML = `<h2>The shape of network operations data</h2>
 <p>A typical NOC environment generates and consumes several classes of operational data, each with its own confidentiality profile:</p>
@@ -111,35 +141,33 @@ const BODY_HTML = `<h2>The shape of network operations data</h2>
 
 const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "Why can't I just send NOC logs to an external LLM?", "acceptedAnswer": { "@type": "Answer", "text": "NOC logs contain device IDs, site references, circuit IDs, alarm sequences, customer-impact data, and SLA risk indicators. Sending them to an external LLM exposes network topology and operational sensitivity. Even with PII removed, the structural patterns identify the segment. Carriers in regulated jurisdictions face data sovereignty, GDPR, and audit risk. The AI enablement data layer with structure-preserving differential-privacy-based encapsulation addresses this." } }, { "@type": "Question", "name": "What kinds of NOC workflows can AI assist?", "acceptedAnswer": { "@type": "Answer", "text": "Incident RCA drafting, alarm correlation, configuration drift detection, runbook generation, customer-impact summarization, and outage history pattern recognition. The AI generates the analysis or draft from capsuled data; results are restored with original device and site references and inserted back into the ticket or runbook system." } }, { "@type": "Question", "name": "Has this been validated in production?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. LLM Capsule was validated at Deutsche Telekom T Challenge 2026, finishing in the Top 12 in the Data Security and Governance category. The validation covered network operational data and incident workflows." } }, { "@type": "Question", "name": "Does it work with existing NOC tools?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. LLM Capsule plugs into existing NOC consoles, ticket systems, OSS/BSS platforms, log viewers, and runbooks via the connector lane (REST API, webhook, file watch, log tap, SDK, or Slack App). The NOC team continues using their existing tools; the Capsule layer handles the AI workflow inside that environment." } } ] }`
 
-export default function AiOnNetworkOperationsData() {
-  // ── Page-specific values (replaces LearnArticle Props) ──
-  const backLabel = "← Learn"
-  const backHref = "/resources/learn"
-  const title = "AI on Network Operations Data: NOC, Incident RCA, and Telecom Workflow Execution"
-  const lead = "The data NOC engineers need AI to read is the same data they cannot send to an external LLM. Here is how to close that gap with structure-preserving, differential-privacy-based encapsulation — validated at Deutsche Telekom T Challenge 2026."
-  const category = "USE CASE · Telecom"
-  const readTime = "12 min read"
-  const dateUpdated = "Updated May 2025"
-  const tldrLabel = "TL;DR"
-  const tldrBody = ""
-  const bodyHtml = BODY_HTML
-  const canonicalUrl = "https://llmcapsule.ai/resources/learn/ai-on-network-operations-data"
-  const datePublished = "2025-05-01"
-  const dateModified = "2025-05-01"
-  const inLanguage = "en"
-  const breadcrumbLabel = "AI on Network Operations Data: NOC, Incident RCA, and Telecom Workflow Execution"
-  const faqJsonLd = FAQ_JSON_LD
-  const relatedSectionLabel = "Related articles"
-  const related1Title = "On-prem LLM execution path"
-  const related1Href = "/resources/learn/on-prem-llm-execution-path"
-  const related2Title = "Differential privacy for enterprise LLM"
-  const related2Href = "/resources/learn/differential-privacy-for-enterprise-llm"
-  const related3Title = "PII guardrails vs operational data protection"
-  const related3Href = "/resources/learn/pii-guardrails-vs-operational-data-protection"
-  const related4Title = ""
-  const related4Href = ""
-
-  // ── BEGIN inlined LearnArticle body ──
+export default function AiOnNetworkOperationsData({
+  backLabel = "← Learn",
+  backHref = "/resources/learn",
+  title = "AI on Network Operations Data: NOC, Incident RCA, and Telecom Workflow Execution",
+  lead = "The data NOC engineers need AI to read is the same data they cannot send to an external LLM. Here is how to close that gap with structure-preserving, differential-privacy-based encapsulation — validated at Deutsche Telekom T Challenge 2026.",
+  category = "USE CASE · Telecom",
+  readTime = "12 min read",
+  dateUpdated = "Updated May 2025",
+  tldrLabel = "TL;DR",
+  tldrBody = "",
+  bodyHtml = BODY_HTML,
+  canonicalUrl = "https://llmcapsule.ai/resources/learn/ai-on-network-operations-data",
+  datePublished = "2025-05-01",
+  dateModified = "2025-05-01",
+  inLanguage = "en",
+  breadcrumbLabel = "AI on Network Operations Data: NOC, Incident RCA, and Telecom Workflow Execution",
+  faqJsonLd = FAQ_JSON_LD,
+  relatedSectionLabel = "Related articles",
+  related1Title = "On-prem LLM execution path",
+  related1Href = "/resources/learn/on-prem-llm-execution-path",
+  related2Title = "Differential privacy for enterprise LLM",
+  related2Href = "/resources/learn/differential-privacy-for-enterprise-llm",
+  related3Title = "PII guardrails vs operational data protection",
+  related3Href = "/resources/learn/pii-guardrails-vs-operational-data-protection",
+  related4Title = "",
+  related4Href = "",
+}: Props) {
   const relatedItems = [
     { title: related1Title, href: related1Href },
     { title: related2Title, href: related2Href },
@@ -699,5 +727,32 @@ export default function AiOnNetworkOperationsData() {
       </div>
     </>
   )
-  // ── END inlined LearnArticle body ──
 }
+
+addPropertyControls(AiOnNetworkOperationsData, {
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "AI on Network Operations Data: NOC, Incident RCA, and Telecom Workflow Execution" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "The data NOC engineers need AI to read is the same data they cannot send to an external LLM. Here is how to close that gap with structure-preserving, differential-privacy-based encapsulation — validated at Deutsche Telekom T Challenge 2026.", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "USE CASE · Telecom" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "12 min read" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "Updated May 2025" },
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/ai-on-network-operations-data" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2025-05-01" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2025-05-01" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "en" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "AI on Network Operations Data: NOC, Incident RCA, and Telecom Workflow Execution" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "Related articles" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "On-prem LLM execution path" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/on-prem-llm-execution-path" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "Differential privacy for enterprise LLM" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/differential-privacy-for-enterprise-llm" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "PII guardrails vs operational data protection" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/pii-guardrails-vs-operational-data-protection" },
+  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
+  related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
+})

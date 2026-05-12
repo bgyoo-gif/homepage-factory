@@ -2,8 +2,38 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
-// Self-contained Framer Code Component.
-// No external imports — all LearnArticle logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with full Props for translation/CMS.
+// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
+
+import { addPropertyControls, ControlType } from "framer"
+
+interface Props {
+  backLabel?: string
+  backHref?: string
+  title?: string
+  lead?: string
+  category?: string
+  readTime?: string
+  dateUpdated?: string
+  tldrLabel?: string
+  tldrBody?: string
+  bodyHtml?: string
+  canonicalUrl?: string
+  datePublished?: string
+  dateModified?: string
+  inLanguage?: string
+  breadcrumbLabel?: string
+  faqJsonLd?: string
+  relatedSectionLabel?: string
+  related1Title?: string
+  related1Href?: string
+  related2Title?: string
+  related2Href?: string
+  related3Title?: string
+  related3Href?: string
+  related4Title?: string
+  related4Href?: string
+}
 
 const BODY_HTML = `<h2>The standard pilot trajectory</h2>
 <p>Months 0-2: leadership selects a use case (NOC RCA, clinical summarization, claim review, contract review). A vendor demos on a sanitized dataset. Excitement.</p>
@@ -59,35 +89,33 @@ const BODY_HTML = `<h2>The standard pilot trajectory</h2>
 
 const FAQ_JSON_LD = ``
 
-export default function PilotToProductionEnterpriseAi() {
-  // ── Page-specific values (replaces LearnArticle Props) ──
-  const backLabel = "← Learn"
-  const backHref = "/resources/learn"
-  const title = "Why enterprise AI pilots stall — and how they get to production"
-  const lead = "A diagnostic for executives, CDOs, CAIOs, and CIOs whose AI pilot has run for months without reaching production."
-  const category = "Strategy · Pilot to production"
-  const readTime = "10 min read"
-  const dateUpdated = "Updated April 2025"
-  const tldrLabel = "TL;DR — Diagnosis"
-  const tldrBody = "Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without an AI enablement data layer, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths."
-  const bodyHtml = BODY_HTML
-  const canonicalUrl = "https://llmcapsule.ai/resources/learn/pilot-to-production-enterprise-ai"
-  const datePublished = "2025-04-15"
-  const dateModified = "2025-04-15"
-  const inLanguage = "en"
-  const breadcrumbLabel = "Why enterprise AI pilots stall — and how they get to production"
-  const faqJsonLd = FAQ_JSON_LD
-  const relatedSectionLabel = "Related articles"
-  const related1Title = ""
-  const related1Href = ""
-  const related2Title = ""
-  const related2Href = ""
-  const related3Title = ""
-  const related3Href = ""
-  const related4Title = ""
-  const related4Href = ""
-
-  // ── BEGIN inlined LearnArticle body ──
+export default function PilotToProductionEnterpriseAi({
+  backLabel = "← Learn",
+  backHref = "/resources/learn",
+  title = "Why enterprise AI pilots stall — and how they get to production",
+  lead = "A diagnostic for executives, CDOs, CAIOs, and CIOs whose AI pilot has run for months without reaching production.",
+  category = "Strategy · Pilot to production",
+  readTime = "10 min read",
+  dateUpdated = "Updated April 2025",
+  tldrLabel = "TL;DR — Diagnosis",
+  tldrBody = "Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without an AI enablement data layer, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.",
+  bodyHtml = BODY_HTML,
+  canonicalUrl = "https://llmcapsule.ai/resources/learn/pilot-to-production-enterprise-ai",
+  datePublished = "2025-04-15",
+  dateModified = "2025-04-15",
+  inLanguage = "en",
+  breadcrumbLabel = "Why enterprise AI pilots stall — and how they get to production",
+  faqJsonLd = FAQ_JSON_LD,
+  relatedSectionLabel = "Related articles",
+  related1Title = "",
+  related1Href = "",
+  related2Title = "",
+  related2Href = "",
+  related3Title = "",
+  related3Href = "",
+  related4Title = "",
+  related4Href = "",
+}: Props) {
   const relatedItems = [
     { title: related1Title, href: related1Href },
     { title: related2Title, href: related2Href },
@@ -647,5 +675,32 @@ export default function PilotToProductionEnterpriseAi() {
       </div>
     </>
   )
-  // ── END inlined LearnArticle body ──
 }
+
+addPropertyControls(PilotToProductionEnterpriseAi, {
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "Why enterprise AI pilots stall — and how they get to production" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "A diagnostic for executives, CDOs, CAIOs, and CIOs whose AI pilot has run for months without reaching production.", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "Strategy · Pilot to production" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "10 min read" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "Updated April 2025" },
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR — Diagnosis" },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without an AI enablement data layer, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/pilot-to-production-enterprise-ai" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2025-04-15" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2025-04-15" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "en" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "Why enterprise AI pilots stall — and how they get to production" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "Related articles" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "" },
+  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
+  related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
+})

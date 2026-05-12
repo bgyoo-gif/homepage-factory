@@ -2,8 +2,38 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
-// Self-contained Framer Code Component.
-// No external imports — all LearnArticle logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with full Props for translation/CMS.
+// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
+
+import { addPropertyControls, ControlType } from "framer"
+
+interface Props {
+  backLabel?: string
+  backHref?: string
+  title?: string
+  lead?: string
+  category?: string
+  readTime?: string
+  dateUpdated?: string
+  tldrLabel?: string
+  tldrBody?: string
+  bodyHtml?: string
+  canonicalUrl?: string
+  datePublished?: string
+  dateModified?: string
+  inLanguage?: string
+  breadcrumbLabel?: string
+  faqJsonLd?: string
+  relatedSectionLabel?: string
+  related1Title?: string
+  related1Href?: string
+  related2Title?: string
+  related2Href?: string
+  related3Title?: string
+  related3Href?: string
+  related4Title?: string
+  related4Href?: string
+}
 
 const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그대로 붙여넣기 -->
 <!-- 일반 HTML 태그 + .callout + .takeaways만 사용 (기존 learn 아티클과 동일 패턴) -->
@@ -272,35 +302,33 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
 const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"이 5가지 외에 다른 막힘은 없나요?","acceptedAnswer":{"@type":"Answer","text":"있습니다. 다만 위 5가지가 가장 자주, 그리고 가장 크게 막히는 지점입니다. 다른 막힘으로는 사용자 교육 미흡, 거버넌스 부재, 외부 자문 일정 확보 어려움 등이 있으며, 모두 위 5가지의 변형이거나 결과로 볼 수 있습니다."}}, {"@type":"Question","name":"5가지 모두를 한 사업에서 풀어야 하나요?","acceptedAnswer":{"@type":"Answer","text":"모두 동시에 풀려고 하면 사업이 한없이 길어집니다. 도입 단계별로 우선 풀어야 할 지점이 다르므로, 단계별로 가장 큰 막힘을 식별해서 그 지점을 우선 풀어내는 접근이 효율적입니다."}}, {"@type":"Question","name":"전자결재 API 연동은 어떻게 진행하나요?","acceptedAnswer":{"@type":"Answer","text":"대부분의 공공기관 전자결재 시스템은 표준 API를 제공합니다. 문서 메타데이터(보안등급, 문서종류, 부서, 결재 라인)를 조회하는 API를 사용해서 AI 솔루션이 등급을 자동 식별하도록 연동합니다."}}, {"@type":"Question","name":"단계적 도입(시나리오 A → B)이 정말 가능한가요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 시나리오 A로 시작해서 6~12개월 운영하면서 활용 패턴을 분석하고, 그 결과를 바탕으로 시나리오 B 확장 여부를 결정합니다."}}, {"@type":"Question","name":"도입 후 활용도가 낮으면 어떻게 진단하나요?","acceptedAnswer":{"@type":"Answer","text":"도입 후 3개월·6개월 시점에 부서별·업무별 사용 빈도, 차단된 요청 비율과 차단 사유, 사용자 만족도 조사를 측정합니다. 정량 데이터에 기반한 진단이 추측보다 훨씬 효과적입니다."}} ] }`
 
-export default function PublicSectorGenaiFiveStuckPoints() {
-  // ── Page-specific values (replaces LearnArticle Props) ──
-  const backLabel = "← Learn"
-  const backHref = "/resources/learn"
-  const title = "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지 — 현장 분석"
-  const lead = "정책은 알겠는데 실무에서 막힌다는 정보화담당관 분들의 목소리를 5개 막힘 지점으로 정리합니다. 등급 분류 부담, 시나리오 충돌, 솔루션 후보 부족, 예산 시점, 활용 실패."
-  const category = "현장 분석"
-  const readTime = "16분 읽기"
-  const dateUpdated = "2026년 5월 업데이트"
-  const tldrLabel = "TL;DR"
-  const tldrBody = "공공기관 생성형 AI 도입은 정책 자체보다 다음 다섯 가지 막힘 지점에서 멈춥니다. (1) 데이터 등급 분류 부담, (2) 활용 시나리오와 O 등급 충돌, (3) 솔루션 후보 부족, (4) 예산 시점 불일치, (5) 활용 실패. 다섯 지점을 관통하는 공통 진단은 '메타데이터·등급 자동화·차등정보보호 게이트웨이 같은 도구가 모두 갖춰져야 비로소 막힘이 풀린다'는 것입니다."
-  const bodyHtml = BODY_HTML
-  const canonicalUrl = "https://llmcapsule.ai/resources/learn/public-sector-genai-five-stuck-points"
-  const datePublished = "2026-05-01"
-  const dateModified = "2026-05-01"
-  const inLanguage = "ko-KR"
-  const breadcrumbLabel = "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지"
-  const faqJsonLd = FAQ_JSON_LD
-  const relatedSectionLabel = "함께 읽으면 좋은 글"
-  const related1Title = "공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵"
-  const related1Href = "/resources/learn/public-sector-external-llm-adoption-roadmap"
-  const related2Title = "공공기관 생성형 AI 도입의 세 가지 길"
-  const related2Href = "/resources/learn/public-sector-genai-three-approaches"
-  const related3Title = "sLLM 자체구축, 정말 답일까"
-  const related3Href = "/resources/learn/sllm-self-hosted-reality-check"
-  const related4Title = ""
-  const related4Href = ""
-
-  // ── BEGIN inlined LearnArticle body ──
+export default function PublicSectorGenaiFiveStuckPoints({
+  backLabel = "← Learn",
+  backHref = "/resources/learn",
+  title = "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지 — 현장 분석",
+  lead = "정책은 알겠는데 실무에서 막힌다는 정보화담당관 분들의 목소리를 5개 막힘 지점으로 정리합니다. 등급 분류 부담, 시나리오 충돌, 솔루션 후보 부족, 예산 시점, 활용 실패.",
+  category = "현장 분석",
+  readTime = "16분 읽기",
+  dateUpdated = "2026년 5월 업데이트",
+  tldrLabel = "TL;DR",
+  tldrBody = "공공기관 생성형 AI 도입은 정책 자체보다 다음 다섯 가지 막힘 지점에서 멈춥니다. (1) 데이터 등급 분류 부담, (2) 활용 시나리오와 O 등급 충돌, (3) 솔루션 후보 부족, (4) 예산 시점 불일치, (5) 활용 실패. 다섯 지점을 관통하는 공통 진단은 '메타데이터·등급 자동화·차등정보보호 게이트웨이 같은 도구가 모두 갖춰져야 비로소 막힘이 풀린다'는 것입니다.",
+  bodyHtml = BODY_HTML,
+  canonicalUrl = "https://llmcapsule.ai/resources/learn/public-sector-genai-five-stuck-points",
+  datePublished = "2026-05-01",
+  dateModified = "2026-05-01",
+  inLanguage = "ko-KR",
+  breadcrumbLabel = "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지",
+  faqJsonLd = FAQ_JSON_LD,
+  relatedSectionLabel = "함께 읽으면 좋은 글",
+  related1Title = "공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵",
+  related1Href = "/resources/learn/public-sector-external-llm-adoption-roadmap",
+  related2Title = "공공기관 생성형 AI 도입의 세 가지 길",
+  related2Href = "/resources/learn/public-sector-genai-three-approaches",
+  related3Title = "sLLM 자체구축, 정말 답일까",
+  related3Href = "/resources/learn/sllm-self-hosted-reality-check",
+  related4Title = "",
+  related4Href = "",
+}: Props) {
   const relatedItems = [
     { title: related1Title, href: related1Href },
     { title: related2Title, href: related2Href },
@@ -860,5 +888,32 @@ export default function PublicSectorGenaiFiveStuckPoints() {
       </div>
     </>
   )
-  // ── END inlined LearnArticle body ──
 }
+
+addPropertyControls(PublicSectorGenaiFiveStuckPoints, {
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지 — 현장 분석" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "정책은 알겠는데 실무에서 막힌다는 정보화담당관 분들의 목소리를 5개 막힘 지점으로 정리합니다. 등급 분류 부담, 시나리오 충돌, 솔루션 후보 부족, 예산 시점, 활용 실패.", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "현장 분석" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "16분 읽기" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "2026년 5월 업데이트" },
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "공공기관 생성형 AI 도입은 정책 자체보다 다음 다섯 가지 막힘 지점에서 멈춥니다. (1) 데이터 등급 분류 부담, (2) 활용 시나리오와 O 등급 충돌, (3) 솔루션 후보 부족, (4) 예산 시점 불일치, (5) 활용 실패. 다섯 지점을 관통하는 공통 진단은 '메타데이터·등급 자동화·차등정보보호 게이트웨이 같은 도구가 모두 갖춰져야 비로소 막힘이 풀린다'는 것입니다.", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/public-sector-genai-five-stuck-points" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2026-05-01" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2026-05-01" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "ko-KR" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "함께 읽으면 좋은 글" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/public-sector-external-llm-adoption-roadmap" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "공공기관 생성형 AI 도입의 세 가지 길" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/public-sector-genai-three-approaches" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "sLLM 자체구축, 정말 답일까" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/sllm-self-hosted-reality-check" },
+  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
+  related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
+})

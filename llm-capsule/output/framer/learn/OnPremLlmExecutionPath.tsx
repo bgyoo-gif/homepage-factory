@@ -2,8 +2,38 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
-// Self-contained Framer Code Component.
-// No external imports — all LearnArticle logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with full Props for translation/CMS.
+// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
+
+import { addPropertyControls, ControlType } from "framer"
+
+interface Props {
+  backLabel?: string
+  backHref?: string
+  title?: string
+  lead?: string
+  category?: string
+  readTime?: string
+  dateUpdated?: string
+  tldrLabel?: string
+  tldrBody?: string
+  bodyHtml?: string
+  canonicalUrl?: string
+  datePublished?: string
+  dateModified?: string
+  inLanguage?: string
+  breadcrumbLabel?: string
+  faqJsonLd?: string
+  relatedSectionLabel?: string
+  related1Title?: string
+  related1Href?: string
+  related2Title?: string
+  related2Href?: string
+  related3Title?: string
+  related3Href?: string
+  related4Title?: string
+  related4Href?: string
+}
 
 const BODY_HTML = `<h2>Why two paths instead of one</h2>
 <p>Enterprises rarely have one regulatory profile. A telecom carrier might run NOC analytics on Path A and mission-critical incident workflows on Path B. A hospital might use Path A for routine documentation and Path B for clinical decision support. A defense contractor might use Path B exclusively. Forcing a single path forces a single regulatory floor; offering two lets governance match the path to the workflow.</p>
@@ -104,35 +134,33 @@ const BODY_HTML = `<h2>Why two paths instead of one</h2>
 
 const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "What is the on-prem LLM execution path?", "acceptedAnswer": { "@type": "Answer", "text": "The on-prem LLM execution path (Path B) runs a small private lightweight model entirely inside the enterprise environment. No raw operational data and no capsule data leaves the boundary. It is used for air-gapped, classified, or strictly regulated operations where any external transmission is unacceptable." } }, { "@type": "Question", "name": "When should I use Path A vs Path B?", "acceptedAnswer": { "@type": "Answer", "text": "Path A (external approved LLM with capsule data only) is appropriate when the workflow's regulatory profile allows transmission of differentially-private capsule data to an approved external endpoint. Path B (on-prem local lightweight model) is required when no external transmission is allowed — air-gapped networks, classified operations, OT environments, or strict regulated industries with data sovereignty constraints." } }, { "@type": "Question", "name": "Can I switch between paths per workflow?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Path selection is policy-driven. Different workflows in the same enterprise can route to different paths based on regulatory profile, data sensitivity, and customer commitments. Governance records the path applied per workflow." } } ] }`
 
-export default function OnPremLlmExecutionPath() {
-  // ── Page-specific values (replaces LearnArticle Props) ──
-  const backLabel = "← Learn"
-  const backHref = "/resources/learn"
-  const title = "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations"
-  const lead = "Two execution paths inside a single AI enablement data layer. When external transmission is not an option, the on-prem local lightweight model handles the workflow inside your boundary — zero external exposure, full restoration."
-  const category = "ARCHITECTURE · Execution Path"
-  const readTime = "11 min read"
-  const dateUpdated = "Updated May 2025"
-  const tldrLabel = "TL;DR"
-  const tldrBody = ""
-  const bodyHtml = BODY_HTML
-  const canonicalUrl = "https://llmcapsule.ai/resources/learn/on-prem-llm-execution-path"
-  const datePublished = "2025-05-01"
-  const dateModified = "2025-05-01"
-  const inLanguage = "en"
-  const breadcrumbLabel = "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations"
-  const faqJsonLd = FAQ_JSON_LD
-  const relatedSectionLabel = "Related articles"
-  const related1Title = "Differential privacy for enterprise LLM"
-  const related1Href = "/resources/learn/differential-privacy-for-enterprise-llm"
-  const related2Title = "AI on network operations data"
-  const related2Href = "/resources/learn/ai-on-network-operations-data"
-  const related3Title = "PII guardrails vs operational data protection"
-  const related3Href = "/resources/learn/pii-guardrails-vs-operational-data-protection"
-  const related4Title = ""
-  const related4Href = ""
-
-  // ── BEGIN inlined LearnArticle body ──
+export default function OnPremLlmExecutionPath({
+  backLabel = "← Learn",
+  backHref = "/resources/learn",
+  title = "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations",
+  lead = "Two execution paths inside a single AI enablement data layer. When external transmission is not an option, the on-prem local lightweight model handles the workflow inside your boundary — zero external exposure, full restoration.",
+  category = "ARCHITECTURE · Execution Path",
+  readTime = "11 min read",
+  dateUpdated = "Updated May 2025",
+  tldrLabel = "TL;DR",
+  tldrBody = "",
+  bodyHtml = BODY_HTML,
+  canonicalUrl = "https://llmcapsule.ai/resources/learn/on-prem-llm-execution-path",
+  datePublished = "2025-05-01",
+  dateModified = "2025-05-01",
+  inLanguage = "en",
+  breadcrumbLabel = "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations",
+  faqJsonLd = FAQ_JSON_LD,
+  relatedSectionLabel = "Related articles",
+  related1Title = "Differential privacy for enterprise LLM",
+  related1Href = "/resources/learn/differential-privacy-for-enterprise-llm",
+  related2Title = "AI on network operations data",
+  related2Href = "/resources/learn/ai-on-network-operations-data",
+  related3Title = "PII guardrails vs operational data protection",
+  related3Href = "/resources/learn/pii-guardrails-vs-operational-data-protection",
+  related4Title = "",
+  related4Href = "",
+}: Props) {
   const relatedItems = [
     { title: related1Title, href: related1Href },
     { title: related2Title, href: related2Href },
@@ -692,5 +720,32 @@ export default function OnPremLlmExecutionPath() {
       </div>
     </>
   )
-  // ── END inlined LearnArticle body ──
 }
+
+addPropertyControls(OnPremLlmExecutionPath, {
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "Two execution paths inside a single AI enablement data layer. When external transmission is not an option, the on-prem local lightweight model handles the workflow inside your boundary — zero external exposure, full restoration.", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "ARCHITECTURE · Execution Path" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "11 min read" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "Updated May 2025" },
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/on-prem-llm-execution-path" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2025-05-01" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2025-05-01" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "en" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "Related articles" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "Differential privacy for enterprise LLM" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/differential-privacy-for-enterprise-llm" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "AI on network operations data" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/ai-on-network-operations-data" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "PII guardrails vs operational data protection" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/pii-guardrails-vs-operational-data-protection" },
+  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
+  related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
+})

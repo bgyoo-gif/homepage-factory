@@ -2,8 +2,38 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
-// Self-contained Framer Code Component.
-// No external imports — all LearnArticle logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with full Props for translation/CMS.
+// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
+
+import { addPropertyControls, ControlType } from "framer"
+
+interface Props {
+  backLabel?: string
+  backHref?: string
+  title?: string
+  lead?: string
+  category?: string
+  readTime?: string
+  dateUpdated?: string
+  tldrLabel?: string
+  tldrBody?: string
+  bodyHtml?: string
+  canonicalUrl?: string
+  datePublished?: string
+  dateModified?: string
+  inLanguage?: string
+  breadcrumbLabel?: string
+  faqJsonLd?: string
+  relatedSectionLabel?: string
+  related1Title?: string
+  related1Href?: string
+  related2Title?: string
+  related2Href?: string
+  related3Title?: string
+  related3Href?: string
+  related4Title?: string
+  related4Href?: string
+}
 
 const BODY_HTML = `<h2>The problem PII filtering doesn't solve</h2>
 <p>Most enterprise teams hit the same wall when they try to use external LLMs on real internal data: the data passes the PII filter, but the workflow still breaks. The names are gone. The phone numbers are gone. But the network configuration is still recognizable. The sequence of incidents still identifies the customer segment. The OT alert pattern still betrays the plant.</p>
@@ -91,35 +121,33 @@ const BODY_HTML = `<h2>The problem PII filtering doesn't solve</h2>
 
 const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "What is differential privacy in enterprise AI?", "acceptedAnswer": { "@type": "Answer", "text": "Differential privacy is a mathematical framework that bounds the influence any single record can have on a derived output. In enterprise AI, it is applied during the encapsulation step of an AI enablement data layer to reduce re-identification, inference, and sensitive context exposure risks when operational data — network logs, configurations, OT manifests, clinical workflows — is transformed into AI-ready context." } }, { "@type": "Question", "name": "How is differential-privacy-based encapsulation different from PII masking?", "acceptedAnswer": { "@type": "Answer", "text": "PII masking detects and replaces personal identifiers — names, IDs, financial fields. Differential-privacy-based encapsulation additionally protects against inference and re-identification across complex operational data such as network logs, incident records, and OT configurations, where structure and aggregate patterns themselves can leak sensitive information. It is a technical protection layer with a defined risk-reduction scope, not a substitute for compliance frameworks." } }, { "@type": "Question", "name": "Does differential privacy guarantee zero risk?", "acceptedAnswer": { "@type": "Answer", "text": "No. Differential privacy is not a legal guarantee or absolute claim. It is a mathematical framework for bounding the contribution of any single record to a derived output, with a tunable parameter that trades utility against privacy. LLM Capsule presents differential-privacy-based encapsulation as a technical protection layer with a defined risk-reduction scope, not as 100 percent safety, GDPR guarantee, or zero risk." } }, { "@type": "Question", "name": "When should an enterprise use differential-privacy-based protection?", "acceptedAnswer": { "@type": "Answer", "text": "When the data going into an LLM is operational, structured, and re-identifiable through context — such as network topology with device IDs, incident sequences with site references, OT manifests with asset and zone references, clinical workflows with patient journeys, or mission logs with unit and location references. PII filtering alone cannot adequately protect these classes of data." } } ] }`
 
-export default function DifferentialPrivacyForEnterpriseLlm() {
-  // ── Page-specific values (replaces LearnArticle Props) ──
-  const backLabel = "← Learn"
-  const backHref = "/resources/learn"
-  const title = "Differential Privacy for Enterprise AI: What It Is, Why It Matters, How It Applies to Operational Data"
-  const lead = "PII filtering reaches the names. Differential privacy reaches the patterns. Why differential-privacy-based encapsulation is the technical foundation of the AI enablement data layer."
-  const category = "PILLAR · Differential Privacy"
-  const readTime = "12 min read"
-  const dateUpdated = "Updated May 2025"
-  const tldrLabel = "TL;DR"
-  const tldrBody = ""
-  const bodyHtml = BODY_HTML
-  const canonicalUrl = "https://llmcapsule.ai/resources/learn/differential-privacy-for-enterprise-llm"
-  const datePublished = "2025-05-01"
-  const dateModified = "2025-05-01"
-  const inLanguage = "en"
-  const breadcrumbLabel = "Differential Privacy for Enterprise AI: What It Is, Why It Matters, How It Applies to Operational Data"
-  const faqJsonLd = FAQ_JSON_LD
-  const relatedSectionLabel = "Related articles"
-  const related1Title = "PII guardrails vs operational data protection"
-  const related1Href = "/resources/learn/pii-guardrails-vs-operational-data-protection"
-  const related2Title = "AI on network operations data"
-  const related2Href = "/resources/learn/ai-on-network-operations-data"
-  const related3Title = "On-prem LLM execution path"
-  const related3Href = "/resources/learn/on-prem-llm-execution-path"
-  const related4Title = ""
-  const related4Href = ""
-
-  // ── BEGIN inlined LearnArticle body ──
+export default function DifferentialPrivacyForEnterpriseLlm({
+  backLabel = "← Learn",
+  backHref = "/resources/learn",
+  title = "Differential Privacy for Enterprise AI: What It Is, Why It Matters, How It Applies to Operational Data",
+  lead = "PII filtering reaches the names. Differential privacy reaches the patterns. Why differential-privacy-based encapsulation is the technical foundation of the AI enablement data layer.",
+  category = "PILLAR · Differential Privacy",
+  readTime = "12 min read",
+  dateUpdated = "Updated May 2025",
+  tldrLabel = "TL;DR",
+  tldrBody = "",
+  bodyHtml = BODY_HTML,
+  canonicalUrl = "https://llmcapsule.ai/resources/learn/differential-privacy-for-enterprise-llm",
+  datePublished = "2025-05-01",
+  dateModified = "2025-05-01",
+  inLanguage = "en",
+  breadcrumbLabel = "Differential Privacy for Enterprise AI: What It Is, Why It Matters, How It Applies to Operational Data",
+  faqJsonLd = FAQ_JSON_LD,
+  relatedSectionLabel = "Related articles",
+  related1Title = "PII guardrails vs operational data protection",
+  related1Href = "/resources/learn/pii-guardrails-vs-operational-data-protection",
+  related2Title = "AI on network operations data",
+  related2Href = "/resources/learn/ai-on-network-operations-data",
+  related3Title = "On-prem LLM execution path",
+  related3Href = "/resources/learn/on-prem-llm-execution-path",
+  related4Title = "",
+  related4Href = "",
+}: Props) {
   const relatedItems = [
     { title: related1Title, href: related1Href },
     { title: related2Title, href: related2Href },
@@ -679,5 +707,32 @@ export default function DifferentialPrivacyForEnterpriseLlm() {
       </div>
     </>
   )
-  // ── END inlined LearnArticle body ──
 }
+
+addPropertyControls(DifferentialPrivacyForEnterpriseLlm, {
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "Differential Privacy for Enterprise AI: What It Is, Why It Matters, How It Applies to Operational Data" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "PII filtering reaches the names. Differential privacy reaches the patterns. Why differential-privacy-based encapsulation is the technical foundation of the AI enablement data layer.", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "PILLAR · Differential Privacy" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "12 min read" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "Updated May 2025" },
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/differential-privacy-for-enterprise-llm" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2025-05-01" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2025-05-01" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "en" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "Differential Privacy for Enterprise AI: What It Is, Why It Matters, How It Applies to Operational Data" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "Related articles" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "PII guardrails vs operational data protection" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/pii-guardrails-vs-operational-data-protection" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "AI on network operations data" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/ai-on-network-operations-data" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "On-prem LLM execution path" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/on-prem-llm-execution-path" },
+  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
+  related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
+})

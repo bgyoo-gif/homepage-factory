@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-12 14:35:32",
+  "generated": "2026-05-12 15:41:49",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -2662,6 +2662,61 @@
           "name": "Section06_CTA.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/enterprise-context-control/tsx/Section06_CTA.tsx",
           "modified": "2026-05-06"
+        },
+        {
+          "name": "AiEnablementDataLayer.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/AiEnablementDataLayer.tsx",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "AiReadyOperationalLayer.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/AiReadyOperationalLayer.tsx",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "BlockedAiWorkflow.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/BlockedAiWorkflow.tsx",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "ConnectorLane.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/ConnectorLane.tsx",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "DifferentialPrivacy.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/DifferentialPrivacy.tsx",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "OperationalData.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/OperationalData.tsx",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "ShadowAi.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/ShadowAi.tsx",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "SovereignAi.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/SovereignAi.tsx",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "StateVaultForRestoration.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/StateVaultForRestoration.tsx",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "StructurePreservingEncapsulation.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/StructurePreservingEncapsulation.tsx",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "TwoExecutionPaths.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/glossary/TwoExecutionPaths.tsx",
+          "modified": "2026-05-12"
         },
         {
           "name": "GlossaryPage_AiEnablementDataLayer.tsx",

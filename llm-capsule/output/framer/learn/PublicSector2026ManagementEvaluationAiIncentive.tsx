@@ -2,8 +2,38 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
-// Self-contained Framer Code Component.
-// No external imports — all LearnArticle logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with full Props for translation/CMS.
+// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
+
+import { addPropertyControls, ControlType } from "framer"
+
+interface Props {
+  backLabel?: string
+  backHref?: string
+  title?: string
+  lead?: string
+  category?: string
+  readTime?: string
+  dateUpdated?: string
+  tldrLabel?: string
+  tldrBody?: string
+  bodyHtml?: string
+  canonicalUrl?: string
+  datePublished?: string
+  dateModified?: string
+  inLanguage?: string
+  breadcrumbLabel?: string
+  faqJsonLd?: string
+  relatedSectionLabel?: string
+  related1Title?: string
+  related1Href?: string
+  related2Title?: string
+  related2Href?: string
+  related3Title?: string
+  related3Href?: string
+  related4Title?: string
+  related4Href?: string
+}
 
 const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그대로 붙여넣기 -->
 <!-- 일반 HTML 태그 + .callout + .takeaways만 사용 (기존 learn 아티클과 동일 패턴) -->
@@ -316,35 +346,33 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
 const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"우리 기관은 공기업인데 혁신 가점이 5점 중 1.5점입니까, 아니면 별도입니까?","acceptedAnswer":{"@type":"Answer","text":"유형에 따라 다릅니다. 공기업(SOC, 에너지, 산업진흥·서비스)과 준정부기관은 공공기관 혁신 노력과 성과 가점 5점 안에서 AI 활용 혁신 1.5점을 받을 수 있습니다. 반면 공기업(상장)은 별도로 혁신 프로젝트 범주 비계량 8점이 있고, 그 범주의 추진계획·집행·성과 모든 단계에 AI 평가가 명시되어 있습니다. 상장공기업의 경우 AI 도입이 8점 평가의 핵심 영향 요소로 작동합니다."}}, {"@type":"Question","name":"지방공기업 편람의 3.0점이 모두 AI 활용 평가인가요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 3.0점은 전략 및 혁신 지표의 경영혁신 추진 활동의 노력과 성과 전체 배점이며, 그 안에 경영혁신 추진계획의 적정성, 경영혁신 집행·성과·환류, AI 활용 등 디지털 기반 경영 구현 노력 및 성과, 적극행정 추진 노력 및 성과, 경영혁신 우수사례 실적의 노력과 성과가 함께 포함됩니다. 2026년 편람에서 이 항목 전체 배점이 2.0점에서 3.0점으로 1.0점 상향되었고, 그 안의 AI 활용 평가 방법이 명시적으로 개편되었습니다. AI 활용은 일반 배점 평가에 포함된 핵심 세부 항목으로 작동합니다."}}, {"@type":"Question","name":"2026년 평가 기간 안에 도입까지 마쳐야 가점을 받을 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"편람은 노력과 성과를 평가합니다. 즉 도입 완료뿐 아니라 도입 추진 과정의 노력도 평가 대상입니다. 다만 평가 자료 제출 시점에 일정 수준의 실적이 있어야 가점 인정이 가능합니다. 2026년 한 해 동안 도입 추진계획 수립·솔루션 도입·초기 운영까지 이루어지면 평가 기준을 충족할 수 있습니다."}}, {"@type":"Question","name":"AI 활용 가점과 N²SF는 어떤 관계가 있나요?","acceptedAnswer":{"@type":"Answer","text":"편람의 평가 기준에 명시된 정보보안 가이드라인, 개인정보보호 법·제도 준수, 데이터 거버넌스, 데이터 보안 관리체계가 모두 N²SF 가이드라인과 모델 2 해설서가 제시하는 보안 요건과 직접 연결됩니다. 즉 N²SF 모델 2 정합성을 갖춘 AI 도입이 곧 경영평가 가점 인정의 핵심 조건이 됩니다. 두 정책은 별개가 아니라 같은 방향을 가리키는 두 축입니다."}}, {"@type":"Question","name":"형식적 도입으로도 가점을 받을 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"어렵습니다. 편람은 노력과 성과를 함께 평가하며, 평가위원은 도입 사실뿐 아니라 활용도·성과·사용자 만족도 등을 함께 봅니다. 형식적 도입 시 활용 실적이 부실하면 가점 인정이 어려울 뿐 아니라, 평가위원의 신뢰도 측면에서 다른 항목 평가에도 부정적 영향을 줄 수 있습니다."}}, {"@type":"Question","name":"AI 도입 추진 단계의 우선순위는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"안전한 활용 체계 설계가 가장 먼저입니다. 편람의 평가 기준이 보안·윤리·데이터 거버넌스를 명시하고 있으므로, 이 기준을 충족하지 못하면 가점 인정이 어렵습니다. 그 다음으로 실제 활용도 확보, 평가 대응 자료 축적, 우수 사례 가시화의 순서로 진행하시는 것이 효율적입니다."}} ] }`
 
-export default function PublicSector2026ManagementEvaluationAiIncentive() {
-  // ── Page-specific values (replaces LearnArticle Props) ──
-  const backLabel = "← Learn"
-  const backHref = "/resources/learn"
-  const title = "2026 경영평가 'AI 활용 등 혁신' 가점 — 공공기관 핵심 경쟁력 분석"
-  const lead = "2026 경영평가편람에 신설된 'AI 활용 등 혁신' 가점 1.5점이 공공기관 경쟁력에 어떤 영향을 주는지, 어떻게 확보할 수 있는지 정보화담당관 관점에서 정리합니다."
-  const category = "정책 분석"
-  const readTime = "18분 읽기"
-  const dateUpdated = "2026년 5월 업데이트"
-  const tldrLabel = "TL;DR"
-  const tldrBody = "2026 경영평가편람은 'AI 활용 등 혁신'을 신설 가점 1.5점으로 명문화했습니다. 권장이 아니라 사실상의 의무로의 전환입니다. 가점 확보를 위해서는 활용 시나리오 정의, 보안·통제 체계, 정량 성과 측정, N²SF 정합성, 외부 검증의 다섯 가지 요건이 필요하며, 이를 분기별 로드맵으로 운영해야 합니다."
-  const bodyHtml = BODY_HTML
-  const canonicalUrl = "https://llmcapsule.ai/resources/learn/public-sector-2026-management-evaluation-ai-incentive"
-  const datePublished = "2026-05-01"
-  const dateModified = "2026-05-01"
-  const inLanguage = "ko-KR"
-  const breadcrumbLabel = "2026 경영평가 'AI 활용 등 혁신' 가점"
-  const faqJsonLd = FAQ_JSON_LD
-  const relatedSectionLabel = "함께 읽으면 좋은 글"
-  const related1Title = "공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵"
-  const related1Href = "/resources/learn/public-sector-external-llm-adoption-roadmap"
-  const related2Title = "공공기관 생성형 AI 도입의 세 가지 길"
-  const related2Href = "/resources/learn/public-sector-genai-three-approaches"
-  const related3Title = "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지"
-  const related3Href = "/resources/learn/public-sector-genai-five-stuck-points"
-  const related4Title = ""
-  const related4Href = ""
-
-  // ── BEGIN inlined LearnArticle body ──
+export default function PublicSector2026ManagementEvaluationAiIncentive({
+  backLabel = "← Learn",
+  backHref = "/resources/learn",
+  title = "2026 경영평가 'AI 활용 등 혁신' 가점 — 공공기관 핵심 경쟁력 분석",
+  lead = "2026 경영평가편람에 신설된 'AI 활용 등 혁신' 가점 1.5점이 공공기관 경쟁력에 어떤 영향을 주는지, 어떻게 확보할 수 있는지 정보화담당관 관점에서 정리합니다.",
+  category = "정책 분석",
+  readTime = "18분 읽기",
+  dateUpdated = "2026년 5월 업데이트",
+  tldrLabel = "TL;DR",
+  tldrBody = "2026 경영평가편람은 'AI 활용 등 혁신'을 신설 가점 1.5점으로 명문화했습니다. 권장이 아니라 사실상의 의무로의 전환입니다. 가점 확보를 위해서는 활용 시나리오 정의, 보안·통제 체계, 정량 성과 측정, N²SF 정합성, 외부 검증의 다섯 가지 요건이 필요하며, 이를 분기별 로드맵으로 운영해야 합니다.",
+  bodyHtml = BODY_HTML,
+  canonicalUrl = "https://llmcapsule.ai/resources/learn/public-sector-2026-management-evaluation-ai-incentive",
+  datePublished = "2026-05-01",
+  dateModified = "2026-05-01",
+  inLanguage = "ko-KR",
+  breadcrumbLabel = "2026 경영평가 'AI 활용 등 혁신' 가점",
+  faqJsonLd = FAQ_JSON_LD,
+  relatedSectionLabel = "함께 읽으면 좋은 글",
+  related1Title = "공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵",
+  related1Href = "/resources/learn/public-sector-external-llm-adoption-roadmap",
+  related2Title = "공공기관 생성형 AI 도입의 세 가지 길",
+  related2Href = "/resources/learn/public-sector-genai-three-approaches",
+  related3Title = "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지",
+  related3Href = "/resources/learn/public-sector-genai-five-stuck-points",
+  related4Title = "",
+  related4Href = "",
+}: Props) {
   const relatedItems = [
     { title: related1Title, href: related1Href },
     { title: related2Title, href: related2Href },
@@ -904,5 +932,32 @@ export default function PublicSector2026ManagementEvaluationAiIncentive() {
       </div>
     </>
   )
-  // ── END inlined LearnArticle body ──
 }
+
+addPropertyControls(PublicSector2026ManagementEvaluationAiIncentive, {
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "2026 경영평가 'AI 활용 등 혁신' 가점 — 공공기관 핵심 경쟁력 분석" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "2026 경영평가편람에 신설된 'AI 활용 등 혁신' 가점 1.5점이 공공기관 경쟁력에 어떤 영향을 주는지, 어떻게 확보할 수 있는지 정보화담당관 관점에서 정리합니다.", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "정책 분석" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "18분 읽기" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "2026년 5월 업데이트" },
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "2026 경영평가편람은 'AI 활용 등 혁신'을 신설 가점 1.5점으로 명문화했습니다. 권장이 아니라 사실상의 의무로의 전환입니다. 가점 확보를 위해서는 활용 시나리오 정의, 보안·통제 체계, 정량 성과 측정, N²SF 정합성, 외부 검증의 다섯 가지 요건이 필요하며, 이를 분기별 로드맵으로 운영해야 합니다.", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/public-sector-2026-management-evaluation-ai-incentive" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2026-05-01" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2026-05-01" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "ko-KR" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "2026 경영평가 'AI 활용 등 혁신' 가점" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "함께 읽으면 좋은 글" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/public-sector-external-llm-adoption-roadmap" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "공공기관 생성형 AI 도입의 세 가지 길" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/public-sector-genai-three-approaches" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/public-sector-genai-five-stuck-points" },
+  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
+  related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
+})

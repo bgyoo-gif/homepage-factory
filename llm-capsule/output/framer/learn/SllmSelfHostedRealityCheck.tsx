@@ -2,8 +2,38 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
-// Self-contained Framer Code Component.
-// No external imports — all LearnArticle logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with full Props for translation/CMS.
+// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
+
+import { addPropertyControls, ControlType } from "framer"
+
+interface Props {
+  backLabel?: string
+  backHref?: string
+  title?: string
+  lead?: string
+  category?: string
+  readTime?: string
+  dateUpdated?: string
+  tldrLabel?: string
+  tldrBody?: string
+  bodyHtml?: string
+  canonicalUrl?: string
+  datePublished?: string
+  dateModified?: string
+  inLanguage?: string
+  breadcrumbLabel?: string
+  faqJsonLd?: string
+  relatedSectionLabel?: string
+  related1Title?: string
+  related1Href?: string
+  related2Title?: string
+  related2Href?: string
+  related3Title?: string
+  related3Href?: string
+  related4Title?: string
+  related4Href?: string
+}
 
 const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그대로 붙여넣기 -->
 <!-- 일반 HTML 태그 + .callout + .takeaways만 사용 (기존 learn 아티클과 동일 패턴) -->
@@ -340,35 +370,33 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
 const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"7B 정도의 더 작은 모델로 시작하면 비용이 크게 줄지 않나요?","acceptedAnswer":{"@type":"Answer","text":"GPU 인프라 측면에서는 줄어들 수 있습니다. H100 8장 대신 1~2장으로도 7B 모델 운영이 가능합니다. 다만 운영 인력·전력·교체 부담 같은 비-GPU 비용은 거의 동일하게 발생하며, 7B 모델의 성능 격차는 더 큽니다."}}, {"@type":"Question","name":"sLLM과 게이트웨이 방식을 병행할 수도 있나요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 일부 부서는 sLLM 자체구축으로, 다른 부서는 게이트웨이 방식으로 운영하는 하이브리드 구조를 검토할 수 있습니다. 다만 두 시스템의 운영 거버넌스를 동시에 가져가는 부담이 있습니다."}}, {"@type":"Question","name":"오픈소스 모델 성능이 곧 상용 모델을 따라잡지 않을까요?","acceptedAnswer":{"@type":"Answer","text":"특정 벤치마크에서 일시적으로 좁혀지는 경우는 있지만, 종합 성능과 복잡한 추론·긴 문맥 처리에서는 격차가 여전히 큽니다. 다음 세대 모델이 나오면 격차가 다시 벌어지는 패턴이 반복됩니다."}}, {"@type":"Question","name":"자체구축 시 어떤 베이스 모델을 선택해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"Llama 계열, Qwen 계열, 한국어 특화 모델(Polyglot-Ko 등)이 주요 선택지입니다. 라이선스 조건·한국어 성능·커뮤니티 지원·활용 시나리오에 따라 달라지며, 1~2년 후 교체 부담을 처음부터 고려해야 합니다."}} ] }`
 
-export default function SllmSelfHostedRealityCheck() {
-  // ── Page-specific values (replaces LearnArticle Props) ──
-  const backLabel = "← Learn"
-  const backHref = "/resources/learn"
-  const title = "sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프"
-  const lead = "공공기관 sLLM 자체구축의 진짜 비용(5년 28~38억), 상용 LLM 대비 성능 격차 추세, 잘못된 선택 패턴을 분석합니다."
-  const category = "정책 분석"
-  const readTime = "18분 읽기"
-  const dateUpdated = "2026년 5월 업데이트"
-  const tldrLabel = "TL;DR"
-  const tldrBody = "sLLM 자체구축은 데이터 통제와 도메인 특화 측면에서 매력적이지만, 진짜 비용은 GPU 인프라뿐 아니라 운영 인력·전력·교체 부담을 합치면 5년 누적 28~38억 원에 달합니다. 더 본질적인 문제는 상용 LLM과의 성능 격차가 시간이 갈수록 벌어진다는 점입니다. sLLM 자체구축이 정답인 경우는 명확히 존재하지만, 일반 행정 효율화가 목적이라면 게이트웨이 방식이 더 합리적입니다."
-  const bodyHtml = BODY_HTML
-  const canonicalUrl = "https://llmcapsule.ai/resources/learn/sllm-self-hosted-reality-check"
-  const datePublished = "2026-05-01"
-  const dateModified = "2026-05-01"
-  const inLanguage = "ko-KR"
-  const breadcrumbLabel = "sLLM 자체구축, 정말 답일까"
-  const faqJsonLd = FAQ_JSON_LD
-  const relatedSectionLabel = "함께 읽으면 좋은 글"
-  const related1Title = "공공기관 생성형 AI 도입의 세 가지 길"
-  const related1Href = "/resources/learn/public-sector-genai-three-approaches"
-  const related2Title = "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까"
-  const related2Href = "/resources/learn/n2sf-model-2-explained"
-  const related3Title = "N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리"
-  const related3Href = "/resources/learn/what-is-n2sf"
-  const related4Title = ""
-  const related4Href = ""
-
-  // ── BEGIN inlined LearnArticle body ──
+export default function SllmSelfHostedRealityCheck({
+  backLabel = "← Learn",
+  backHref = "/resources/learn",
+  title = "sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프",
+  lead = "공공기관 sLLM 자체구축의 진짜 비용(5년 28~38억), 상용 LLM 대비 성능 격차 추세, 잘못된 선택 패턴을 분석합니다.",
+  category = "정책 분석",
+  readTime = "18분 읽기",
+  dateUpdated = "2026년 5월 업데이트",
+  tldrLabel = "TL;DR",
+  tldrBody = "sLLM 자체구축은 데이터 통제와 도메인 특화 측면에서 매력적이지만, 진짜 비용은 GPU 인프라뿐 아니라 운영 인력·전력·교체 부담을 합치면 5년 누적 28~38억 원에 달합니다. 더 본질적인 문제는 상용 LLM과의 성능 격차가 시간이 갈수록 벌어진다는 점입니다. sLLM 자체구축이 정답인 경우는 명확히 존재하지만, 일반 행정 효율화가 목적이라면 게이트웨이 방식이 더 합리적입니다.",
+  bodyHtml = BODY_HTML,
+  canonicalUrl = "https://llmcapsule.ai/resources/learn/sllm-self-hosted-reality-check",
+  datePublished = "2026-05-01",
+  dateModified = "2026-05-01",
+  inLanguage = "ko-KR",
+  breadcrumbLabel = "sLLM 자체구축, 정말 답일까",
+  faqJsonLd = FAQ_JSON_LD,
+  relatedSectionLabel = "함께 읽으면 좋은 글",
+  related1Title = "공공기관 생성형 AI 도입의 세 가지 길",
+  related1Href = "/resources/learn/public-sector-genai-three-approaches",
+  related2Title = "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
+  related2Href = "/resources/learn/n2sf-model-2-explained",
+  related3Title = "N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리",
+  related3Href = "/resources/learn/what-is-n2sf",
+  related4Title = "",
+  related4Href = "",
+}: Props) {
   const relatedItems = [
     { title: related1Title, href: related1Href },
     { title: related2Title, href: related2Href },
@@ -928,5 +956,32 @@ export default function SllmSelfHostedRealityCheck() {
       </div>
     </>
   )
-  // ── END inlined LearnArticle body ──
 }
+
+addPropertyControls(SllmSelfHostedRealityCheck, {
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "공공기관 sLLM 자체구축의 진짜 비용(5년 28~38억), 상용 LLM 대비 성능 격차 추세, 잘못된 선택 패턴을 분석합니다.", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "정책 분석" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "18분 읽기" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "2026년 5월 업데이트" },
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "sLLM 자체구축은 데이터 통제와 도메인 특화 측면에서 매력적이지만, 진짜 비용은 GPU 인프라뿐 아니라 운영 인력·전력·교체 부담을 합치면 5년 누적 28~38억 원에 달합니다. 더 본질적인 문제는 상용 LLM과의 성능 격차가 시간이 갈수록 벌어진다는 점입니다. sLLM 자체구축이 정답인 경우는 명확히 존재하지만, 일반 행정 효율화가 목적이라면 게이트웨이 방식이 더 합리적입니다.", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/sllm-self-hosted-reality-check" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2026-05-01" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2026-05-01" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "ko-KR" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "sLLM 자체구축, 정말 답일까" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "함께 읽으면 좋은 글" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "공공기관 생성형 AI 도입의 세 가지 길" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/public-sector-genai-three-approaches" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/n2sf-model-2-explained" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/what-is-n2sf" },
+  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
+  related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
+})

@@ -2,8 +2,38 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
-// Self-contained Framer Code Component.
-// No external imports — all LearnArticle logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with full Props for translation/CMS.
+// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
+
+import { addPropertyControls, ControlType } from "framer"
+
+interface Props {
+  backLabel?: string
+  backHref?: string
+  title?: string
+  lead?: string
+  category?: string
+  readTime?: string
+  dateUpdated?: string
+  tldrLabel?: string
+  tldrBody?: string
+  bodyHtml?: string
+  canonicalUrl?: string
+  datePublished?: string
+  dateModified?: string
+  inLanguage?: string
+  breadcrumbLabel?: string
+  faqJsonLd?: string
+  relatedSectionLabel?: string
+  related1Title?: string
+  related1Href?: string
+  related2Title?: string
+  related2Href?: string
+  related3Title?: string
+  related3Href?: string
+  related4Title?: string
+  related4Href?: string
+}
 
 const BODY_HTML = `<h2>Why sovereign AI matters now</h2>
 <p>The European regulatory landscape has tightened. GDPR enforcement actions have crossed €4 billion in cumulative fines. The EU AI Act (entered into force August 2024) requires high-risk AI systems — including those used in regulated sectors — to maintain demonstrable transparency, audit trails, and data governance. National regulators (BaFin in Germany, ACPR in France) increasingly expect financial institutions to demonstrate AI data sovereignty. Public sector and defense workflows have always required it.</p>
@@ -66,35 +96,33 @@ const BODY_HTML = `<h2>Why sovereign AI matters now</h2>
 
 const FAQ_JSON_LD = ``
 
-export default function SovereignAiEuropeanEnterprises() {
-  // ── Page-specific values (replaces LearnArticle Props) ──
-  const backLabel = "← Learn"
-  const backHref = "/resources/learn"
-  const title = "Sovereign AI for European enterprises — a practical architecture"
-  const lead = "Bring AI into regulated European workflows under GDPR, EU AI Act, and national data residency — without choosing between productivity and compliance."
-  const category = "Architecture · Sovereign AI"
-  const readTime = "14 min read"
-  const dateUpdated = "Updated April 2025"
-  const tldrLabel = "TL;DR — Definition"
-  const tldrBody = "Sovereign AI means enterprise AI workflows where data, processing, and audit remain inside a defined regulatory and geographic boundary. For European enterprises, this typically means GDPR-compliant data handling, in-region LLM endpoints (EU-hosted LLM providers, or on-prem local models), and a full audit trail for regulator review. An AI enablement data layer like LLM Capsule provides two execution paths — in-region external LLM with capsule data only, or on-prem local lightweight model — so a single enterprise can adopt sovereign AI without giving up the productivity of best-in-class LLMs."
-  const bodyHtml = BODY_HTML
-  const canonicalUrl = "https://llmcapsule.ai/resources/learn/sovereign-ai-european-enterprises"
-  const datePublished = "2025-04-15"
-  const dateModified = "2025-04-15"
-  const inLanguage = "en"
-  const breadcrumbLabel = "Sovereign AI for European enterprises — a practical architecture"
-  const faqJsonLd = FAQ_JSON_LD
-  const relatedSectionLabel = "Related articles"
-  const related1Title = ""
-  const related1Href = ""
-  const related2Title = ""
-  const related2Href = ""
-  const related3Title = ""
-  const related3Href = ""
-  const related4Title = ""
-  const related4Href = ""
-
-  // ── BEGIN inlined LearnArticle body ──
+export default function SovereignAiEuropeanEnterprises({
+  backLabel = "← Learn",
+  backHref = "/resources/learn",
+  title = "Sovereign AI for European enterprises — a practical architecture",
+  lead = "Bring AI into regulated European workflows under GDPR, EU AI Act, and national data residency — without choosing between productivity and compliance.",
+  category = "Architecture · Sovereign AI",
+  readTime = "14 min read",
+  dateUpdated = "Updated April 2025",
+  tldrLabel = "TL;DR — Definition",
+  tldrBody = "Sovereign AI means enterprise AI workflows where data, processing, and audit remain inside a defined regulatory and geographic boundary. For European enterprises, this typically means GDPR-compliant data handling, in-region LLM endpoints (EU-hosted LLM providers, or on-prem local models), and a full audit trail for regulator review. An AI enablement data layer like LLM Capsule provides two execution paths — in-region external LLM with capsule data only, or on-prem local lightweight model — so a single enterprise can adopt sovereign AI without giving up the productivity of best-in-class LLMs.",
+  bodyHtml = BODY_HTML,
+  canonicalUrl = "https://llmcapsule.ai/resources/learn/sovereign-ai-european-enterprises",
+  datePublished = "2025-04-15",
+  dateModified = "2025-04-15",
+  inLanguage = "en",
+  breadcrumbLabel = "Sovereign AI for European enterprises — a practical architecture",
+  faqJsonLd = FAQ_JSON_LD,
+  relatedSectionLabel = "Related articles",
+  related1Title = "",
+  related1Href = "",
+  related2Title = "",
+  related2Href = "",
+  related3Title = "",
+  related3Href = "",
+  related4Title = "",
+  related4Href = "",
+}: Props) {
   const relatedItems = [
     { title: related1Title, href: related1Href },
     { title: related2Title, href: related2Href },
@@ -654,5 +682,32 @@ export default function SovereignAiEuropeanEnterprises() {
       </div>
     </>
   )
-  // ── END inlined LearnArticle body ──
 }
+
+addPropertyControls(SovereignAiEuropeanEnterprises, {
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "Sovereign AI for European enterprises — a practical architecture" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "Bring AI into regulated European workflows under GDPR, EU AI Act, and national data residency — without choosing between productivity and compliance.", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "Architecture · Sovereign AI" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "14 min read" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "Updated April 2025" },
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR — Definition" },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "Sovereign AI means enterprise AI workflows where data, processing, and audit remain inside a defined regulatory and geographic boundary. For European enterprises, this typically means GDPR-compliant data handling, in-region LLM endpoints (EU-hosted LLM providers, or on-prem local models), and a full audit trail for regulator review. An AI enablement data layer like LLM Capsule provides two execution paths — in-region external LLM with capsule data only, or on-prem local lightweight model — so a single enterprise can adopt sovereign AI without giving up the productivity of best-in-class LLMs.", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/sovereign-ai-european-enterprises" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2025-04-15" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2025-04-15" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "en" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "Sovereign AI for European enterprises — a practical architecture" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "Related articles" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "" },
+  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
+  related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
+})

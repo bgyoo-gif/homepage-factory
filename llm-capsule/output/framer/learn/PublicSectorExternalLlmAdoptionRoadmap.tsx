@@ -2,8 +2,38 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
-// Self-contained Framer Code Component.
-// No external imports — all LearnArticle logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with full Props for translation/CMS.
+// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
+
+import { addPropertyControls, ControlType } from "framer"
+
+interface Props {
+  backLabel?: string
+  backHref?: string
+  title?: string
+  lead?: string
+  category?: string
+  readTime?: string
+  dateUpdated?: string
+  tldrLabel?: string
+  tldrBody?: string
+  bodyHtml?: string
+  canonicalUrl?: string
+  datePublished?: string
+  dateModified?: string
+  inLanguage?: string
+  breadcrumbLabel?: string
+  faqJsonLd?: string
+  relatedSectionLabel?: string
+  related1Title?: string
+  related1Href?: string
+  related2Title?: string
+  related2Href?: string
+  related3Title?: string
+  related3Href?: string
+  related4Title?: string
+  related4Href?: string
+}
 
 const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그대로 붙여넣기 -->
 <!-- 일반 HTML 태그 + .callout + .takeaways만 사용 (기존 learn 아티클과 동일 패턴) -->
@@ -458,35 +488,33 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
 const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"꼭 시나리오 A부터 시작해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"반드시 그렇지는 않습니다. 시나리오 B에서 처음부터 시작하는 것도 가능합니다. 다만 시나리오 B는 자체 위험평가와 보호 강도 검증이 추가되어 도입 기간이 길고, 운영 거버넌스의 부담도 큽니다. 조직 역량이 검증되지 않은 첫 도입 사업에서는 시나리오 A로 시작해 운영 노하우를 쌓은 후 확장하는 것이 안전합니다."}}, {"@type":"Question","name":"자체 위험평가는 누가 작성해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"기관 정보보안 책임관이 주관하고, 솔루션 벤더·외부 법무·정보보호 전문가가 자문하는 형태가 일반적입니다. 감사 대응에 직접 사용되는 문서이므로, 외부 감수자 명단을 명시하면 신뢰도가 크게 향상됩니다."}}, {"@type":"Question","name":"예산 편성 시점과 도입 일정을 어떻게 맞춰야 하나요?","acceptedAnswer":{"@type":"Answer","text":"공공기관 예산은 통상 7~8월에 다음 연도 예산이 편성됩니다. 만약 다음 연도부터 본격 도입을 원한다면, 6월 이전에 N²SF 1~2단계(준비, 위협 식별)를 완료해두는 것이 권장됩니다. 이렇게 하면 정확한 예산 산정이 가능하고, 예산 통과 즉시 3단계부터 진행할 수 있습니다."}}, {"@type":"Question","name":"활용 시나리오를 어떻게 구체화해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"AI로 업무 효율화라는 추상적 표현이 아니라, 다음과 같이 구체적으로 작성합니다. 예: 기획팀에서 정책 보도자료 초안 작성 시 기존 보도자료 데이터베이스를 참고해 초안 1차 안을 생성하는 데 활용. 월 30건 처리 예상. 활용 정보는 모두 외부 공개된 보도자료(O 등급). 이 정도의 구체성이 있어야 등급 분류와 솔루션 평가 기준이 명확해집니다."}}, {"@type":"Question","name":"PoC는 몇 개 솔루션을 대상으로 해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"서면 평가로 2~3개로 좁힌 뒤 모두 PoC를 진행하는 것이 가장 효과적입니다. 1개만 PoC하면 비교가 불가능하고, 4개 이상은 시간·자원 부담이 큽니다. 단, 시나리오 B의 경우 보호 레이어 솔루션 시장이 좁아서 후보가 2개에 그칠 수 있습니다."}} ] }`
 
-export default function PublicSectorExternalLlmAdoptionRoadmap() {
-  // ── Page-specific values (replaces LearnArticle Props) ──
-  const backLabel = "← Learn"
-  const backHref = "/resources/learn"
-  const title = "공공기관 외부 LLM 활용 도입 가이드 — 정보화담당관을 위한 분기 로드맵"
-  const lead = "정보화담당관 관점에서 외부 LLM 도입을 분기별 5단계로 정리합니다. 시나리오 A(공개 활용) 4개월 vs 시나리오 B(민감 업무) 6~8개월 로드맵 비교."
-  const category = "정책 분석"
-  const readTime = "20분 읽기"
-  const dateUpdated = "2026년 5월 업데이트"
-  const tldrLabel = "TL;DR"
-  const tldrBody = "공공기관의 외부 LLM 도입은 「위치-주체-객체」를 보안등급별로 평가하는 N²SF 정합성에서 출발합니다. 정보화담당관은 5단계(준비·위협 식별·연계체계 설계·통제 적용·검증)를 분기별로 운영하면서, 시나리오 A(O 등급 공개 활용)는 4개월, 시나리오 B(S 등급 민감 업무)는 6~8개월의 로드맵으로 분기하는 것이 일반적입니다."
-  const bodyHtml = BODY_HTML
-  const canonicalUrl = "https://llmcapsule.ai/resources/learn/public-sector-external-llm-adoption-roadmap"
-  const datePublished = "2026-05-01"
-  const dateModified = "2026-05-01"
-  const inLanguage = "ko-KR"
-  const breadcrumbLabel = "공공기관 외부 LLM 활용 도입 가이드"
-  const faqJsonLd = FAQ_JSON_LD
-  const relatedSectionLabel = "함께 읽으면 좋은 글"
-  const related1Title = "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까"
-  const related1Href = "/resources/learn/n2sf-model-2-explained"
-  const related2Title = "공공기관 생성형 AI 도입의 세 가지 길"
-  const related2Href = "/resources/learn/public-sector-genai-three-approaches"
-  const related3Title = "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지"
-  const related3Href = "/resources/learn/public-sector-genai-five-stuck-points"
-  const related4Title = ""
-  const related4Href = ""
-
-  // ── BEGIN inlined LearnArticle body ──
+export default function PublicSectorExternalLlmAdoptionRoadmap({
+  backLabel = "← Learn",
+  backHref = "/resources/learn",
+  title = "공공기관 외부 LLM 활용 도입 가이드 — 정보화담당관을 위한 분기 로드맵",
+  lead = "정보화담당관 관점에서 외부 LLM 도입을 분기별 5단계로 정리합니다. 시나리오 A(공개 활용) 4개월 vs 시나리오 B(민감 업무) 6~8개월 로드맵 비교.",
+  category = "정책 분석",
+  readTime = "20분 읽기",
+  dateUpdated = "2026년 5월 업데이트",
+  tldrLabel = "TL;DR",
+  tldrBody = "공공기관의 외부 LLM 도입은 「위치-주체-객체」를 보안등급별로 평가하는 N²SF 정합성에서 출발합니다. 정보화담당관은 5단계(준비·위협 식별·연계체계 설계·통제 적용·검증)를 분기별로 운영하면서, 시나리오 A(O 등급 공개 활용)는 4개월, 시나리오 B(S 등급 민감 업무)는 6~8개월의 로드맵으로 분기하는 것이 일반적입니다.",
+  bodyHtml = BODY_HTML,
+  canonicalUrl = "https://llmcapsule.ai/resources/learn/public-sector-external-llm-adoption-roadmap",
+  datePublished = "2026-05-01",
+  dateModified = "2026-05-01",
+  inLanguage = "ko-KR",
+  breadcrumbLabel = "공공기관 외부 LLM 활용 도입 가이드",
+  faqJsonLd = FAQ_JSON_LD,
+  relatedSectionLabel = "함께 읽으면 좋은 글",
+  related1Title = "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
+  related1Href = "/resources/learn/n2sf-model-2-explained",
+  related2Title = "공공기관 생성형 AI 도입의 세 가지 길",
+  related2Href = "/resources/learn/public-sector-genai-three-approaches",
+  related3Title = "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지",
+  related3Href = "/resources/learn/public-sector-genai-five-stuck-points",
+  related4Title = "",
+  related4Href = "",
+}: Props) {
   const relatedItems = [
     { title: related1Title, href: related1Href },
     { title: related2Title, href: related2Href },
@@ -1046,5 +1074,32 @@ export default function PublicSectorExternalLlmAdoptionRoadmap() {
       </div>
     </>
   )
-  // ── END inlined LearnArticle body ──
 }
+
+addPropertyControls(PublicSectorExternalLlmAdoptionRoadmap, {
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "공공기관 외부 LLM 활용 도입 가이드 — 정보화담당관을 위한 분기 로드맵" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "정보화담당관 관점에서 외부 LLM 도입을 분기별 5단계로 정리합니다. 시나리오 A(공개 활용) 4개월 vs 시나리오 B(민감 업무) 6~8개월 로드맵 비교.", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "정책 분석" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "20분 읽기" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "2026년 5월 업데이트" },
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "공공기관의 외부 LLM 도입은 「위치-주체-객체」를 보안등급별로 평가하는 N²SF 정합성에서 출발합니다. 정보화담당관은 5단계(준비·위협 식별·연계체계 설계·통제 적용·검증)를 분기별로 운영하면서, 시나리오 A(O 등급 공개 활용)는 4개월, 시나리오 B(S 등급 민감 업무)는 6~8개월의 로드맵으로 분기하는 것이 일반적입니다.", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/public-sector-external-llm-adoption-roadmap" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2026-05-01" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2026-05-01" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "ko-KR" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "공공기관 외부 LLM 활용 도입 가이드" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "함께 읽으면 좋은 글" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/n2sf-model-2-explained" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "공공기관 생성형 AI 도입의 세 가지 길" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/public-sector-genai-three-approaches" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/public-sector-genai-five-stuck-points" },
+  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
+  related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
+})

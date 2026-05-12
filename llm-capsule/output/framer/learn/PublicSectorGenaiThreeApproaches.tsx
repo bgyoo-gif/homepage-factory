@@ -2,8 +2,38 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
-// Self-contained Framer Code Component.
-// No external imports — all LearnArticle logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with full Props for translation/CMS.
+// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
+
+import { addPropertyControls, ControlType } from "framer"
+
+interface Props {
+  backLabel?: string
+  backHref?: string
+  title?: string
+  lead?: string
+  category?: string
+  readTime?: string
+  dateUpdated?: string
+  tldrLabel?: string
+  tldrBody?: string
+  bodyHtml?: string
+  canonicalUrl?: string
+  datePublished?: string
+  dateModified?: string
+  inLanguage?: string
+  breadcrumbLabel?: string
+  faqJsonLd?: string
+  relatedSectionLabel?: string
+  related1Title?: string
+  related1Href?: string
+  related2Title?: string
+  related2Href?: string
+  related3Title?: string
+  related3Href?: string
+  related4Title?: string
+  related4Href?: string
+}
 
 const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그대로 붙여넣기 -->
 <!-- 일반 HTML 태그 + .callout + .takeaways만 사용 (기존 learn 아티클과 동일 패턴) -->
@@ -311,35 +341,33 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
 const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"AI DLP만으로도 N²SF 충족이 가능한가요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 외부 AI 사용을 차단하면 정보 이동 자체가 발생하지 않으므로 N²SF 보안원칙 위배가 없습니다."}}, {"@type":"Question","name":"sLLM 자체구축 비용은 정확히 얼마나 드나요?","acceptedAnswer":{"@type":"Answer","text":"32B급 모델 안정 운영 기준 초기 구축 비용은 약 8억 원 수준, 연간 운영비는 3억~5억 원이 일반적입니다."}}, {"@type":"Question","name":"게이트웨이 방식의 단점은 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"가장 큰 약점은 보호 방식의 수준이 게이트웨이마다 다르다는 점입니다."}}, {"@type":"Question","name":"우리 기관은 어떤 방식으로 시작해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"IT 예산 규모, AI 활용 1차 목표, 보안 등급 처리 비중을 먼저 정리하시면 방향이 보입니다."}}, {"@type":"Question","name":"세 방식을 병행할 수도 있나요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 부서·업무별로 다른 방식을 적용하는 하이브리드 구조를 검토할 수 있습니다."}} ] }`
 
-export default function PublicSectorGenaiThreeApproaches() {
-  // ── Page-specific values (replaces LearnArticle Props) ──
-  const backLabel = "← Learn"
-  const backHref = "/resources/learn"
-  const title = "공공기관 생성형 AI 도입의 세 가지 길"
-  const lead = "AI DLP·차단, sLLM 자체구축, 게이트웨이 방식 — N²SF 시대 공공기관의 선택지를 비용·성능·보안·정합성 관점에서 객관적으로 비교합니다."
-  const category = "정책 분석"
-  const readTime = "18분 읽기"
-  const dateUpdated = "2026년 5월 업데이트"
-  const tldrLabel = "TL;DR"
-  const tldrBody = "공공기관의 생성형 AI 도입은 AI DLP·차단, sLLM 자체구축, 게이트웨이 방식의 세 갈래로 나뉩니다. 차단 방식은 안전하지만 활용을 포기해야 하고, sLLM 자체구축은 7~13억 원의 초기 비용에 더해 최신 상용 모델과의 성능 격차가 누적됩니다. 게이트웨이 방식은 비용과 성능의 균형을 잡지만, 내부 보호 기법의 수준이 N²SF 정합성을 결정합니다. 단순 마스킹은 재식별 공격에 취약하며, 차등정보보호(Differential Privacy) 기반의 게이트웨이가 수학적으로 검증된 유일한 답에 가깝습니다."
-  const bodyHtml = BODY_HTML
-  const canonicalUrl = "https://llmcapsule.ai/resources/learn/public-sector-genai-three-approaches"
-  const datePublished = "2026-05-01"
-  const dateModified = "2026-05-01"
-  const inLanguage = "ko-KR"
-  const breadcrumbLabel = "공공기관 생성형 AI 도입의 세 가지 길"
-  const faqJsonLd = FAQ_JSON_LD
-  const relatedSectionLabel = "함께 읽으면 좋은 글"
-  const related1Title = "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까"
-  const related1Href = "/resources/learn/n2sf-model-2-explained"
-  const related2Title = "N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리"
-  const related2Href = "/resources/learn/what-is-n2sf"
-  const related3Title = "sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프"
-  const related3Href = "/resources/learn/sllm-self-hosted-reality-check"
-  const related4Title = ""
-  const related4Href = ""
-
-  // ── BEGIN inlined LearnArticle body ──
+export default function PublicSectorGenaiThreeApproaches({
+  backLabel = "← Learn",
+  backHref = "/resources/learn",
+  title = "공공기관 생성형 AI 도입의 세 가지 길",
+  lead = "AI DLP·차단, sLLM 자체구축, 게이트웨이 방식 — N²SF 시대 공공기관의 선택지를 비용·성능·보안·정합성 관점에서 객관적으로 비교합니다.",
+  category = "정책 분석",
+  readTime = "18분 읽기",
+  dateUpdated = "2026년 5월 업데이트",
+  tldrLabel = "TL;DR",
+  tldrBody = "공공기관의 생성형 AI 도입은 AI DLP·차단, sLLM 자체구축, 게이트웨이 방식의 세 갈래로 나뉩니다. 차단 방식은 안전하지만 활용을 포기해야 하고, sLLM 자체구축은 7~13억 원의 초기 비용에 더해 최신 상용 모델과의 성능 격차가 누적됩니다. 게이트웨이 방식은 비용과 성능의 균형을 잡지만, 내부 보호 기법의 수준이 N²SF 정합성을 결정합니다. 단순 마스킹은 재식별 공격에 취약하며, 차등정보보호(Differential Privacy) 기반의 게이트웨이가 수학적으로 검증된 유일한 답에 가깝습니다.",
+  bodyHtml = BODY_HTML,
+  canonicalUrl = "https://llmcapsule.ai/resources/learn/public-sector-genai-three-approaches",
+  datePublished = "2026-05-01",
+  dateModified = "2026-05-01",
+  inLanguage = "ko-KR",
+  breadcrumbLabel = "공공기관 생성형 AI 도입의 세 가지 길",
+  faqJsonLd = FAQ_JSON_LD,
+  relatedSectionLabel = "함께 읽으면 좋은 글",
+  related1Title = "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
+  related1Href = "/resources/learn/n2sf-model-2-explained",
+  related2Title = "N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리",
+  related2Href = "/resources/learn/what-is-n2sf",
+  related3Title = "sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프",
+  related3Href = "/resources/learn/sllm-self-hosted-reality-check",
+  related4Title = "",
+  related4Href = "",
+}: Props) {
   const relatedItems = [
     { title: related1Title, href: related1Href },
     { title: related2Title, href: related2Href },
@@ -899,5 +927,32 @@ export default function PublicSectorGenaiThreeApproaches() {
       </div>
     </>
   )
-  // ── END inlined LearnArticle body ──
 }
+
+addPropertyControls(PublicSectorGenaiThreeApproaches, {
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "공공기관 생성형 AI 도입의 세 가지 길" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "AI DLP·차단, sLLM 자체구축, 게이트웨이 방식 — N²SF 시대 공공기관의 선택지를 비용·성능·보안·정합성 관점에서 객관적으로 비교합니다.", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "정책 분석" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "18분 읽기" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "2026년 5월 업데이트" },
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "공공기관의 생성형 AI 도입은 AI DLP·차단, sLLM 자체구축, 게이트웨이 방식의 세 갈래로 나뉩니다. 차단 방식은 안전하지만 활용을 포기해야 하고, sLLM 자체구축은 7~13억 원의 초기 비용에 더해 최신 상용 모델과의 성능 격차가 누적됩니다. 게이트웨이 방식은 비용과 성능의 균형을 잡지만, 내부 보호 기법의 수준이 N²SF 정합성을 결정합니다. 단순 마스킹은 재식별 공격에 취약하며, 차등정보보호(Differential Privacy) 기반의 게이트웨이가 수학적으로 검증된 유일한 답에 가깝습니다.", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/public-sector-genai-three-approaches" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2026-05-01" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2026-05-01" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "ko-KR" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "공공기관 생성형 AI 도입의 세 가지 길" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "함께 읽으면 좋은 글" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/n2sf-model-2-explained" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/what-is-n2sf" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/sllm-self-hosted-reality-check" },
+  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
+  related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
+})

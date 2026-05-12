@@ -43,6 +43,36 @@ def load_learn_article_body() -> str:
 LEARN_ARTICLE_BODY = load_learn_article_body()
 
 
+# ── Props specification (mirrors LearnArticle.tsx interface + addPropertyControls) ──
+PROPS_SPEC = [
+    {"name": "backLabel",          "title": "Back Label",            "textarea": False},
+    {"name": "backHref",           "title": "Back URL",              "textarea": False},
+    {"name": "title",              "title": "Title",                 "textarea": False},
+    {"name": "lead",               "title": "Lead",                  "textarea": True},
+    {"name": "category",           "title": "Category",              "textarea": False},
+    {"name": "readTime",           "title": "Read Time",             "textarea": False},
+    {"name": "dateUpdated",        "title": "Date Updated",          "textarea": False},
+    {"name": "tldrLabel",          "title": "TL;DR Label",           "textarea": False},
+    {"name": "tldrBody",           "title": "TL;DR Body",            "textarea": True},
+    {"name": "bodyHtml",           "title": "Body HTML",             "textarea": True},
+    {"name": "canonicalUrl",       "title": "Canonical URL",         "textarea": False},
+    {"name": "datePublished",      "title": "Date Published",        "textarea": False},
+    {"name": "dateModified",       "title": "Date Modified",         "textarea": False},
+    {"name": "inLanguage",         "title": "Language",              "textarea": False},
+    {"name": "breadcrumbLabel",    "title": "Breadcrumb Label",      "textarea": False},
+    {"name": "faqJsonLd",          "title": "FAQ JSON-LD (raw JSON)", "textarea": True},
+    {"name": "relatedSectionLabel", "title": "Related Section Label", "textarea": False},
+    {"name": "related1Title",      "title": "Related 1 Title",       "textarea": False},
+    {"name": "related1Href",       "title": "Related 1 URL",         "textarea": False},
+    {"name": "related2Title",      "title": "Related 2 Title",       "textarea": False},
+    {"name": "related2Href",       "title": "Related 2 URL",         "textarea": False},
+    {"name": "related3Title",      "title": "Related 3 Title",       "textarea": False},
+    {"name": "related3Href",       "title": "Related 3 URL",         "textarea": False},
+    {"name": "related4Title",      "title": "Related 4 Title",       "textarea": False},
+    {"name": "related4Href",       "title": "Related 4 URL",         "textarea": False},
+]
+
+
 # ── Articles config ──
 ARTICLES = [
     # ── Pattern A: pre-extracted bodyhtml (learn_post_01~04) ──
@@ -472,49 +502,91 @@ def build_tsx(article: dict) -> str:
     back_href = "/resources/learn"
     related_section_label = "함께 읽으면 좋은 글" if meta["inLanguage"].startswith("ko") else "Related articles"
 
-    # Build related Props as inline const declarations
-    related_consts = []
+    # Map of prop name → default value for this page
+    prop_values: dict[str, str] = {
+        "backLabel": back_label,
+        "backHref": back_href,
+        "title": meta["title"],
+        "lead": meta["lead"],
+        "category": meta["category"],
+        "readTime": meta["readTime"],
+        "dateUpdated": meta["dateUpdated"],
+        "tldrLabel": meta["tldrLabel"],
+        "tldrBody": meta["tldrBody"],
+        "bodyHtml": "__BODY_HTML__",  # reference to const, handled specially below
+        "canonicalUrl": meta["canonicalUrl"],
+        "datePublished": meta["datePublished"],
+        "dateModified": meta.get("dateModified") or meta["datePublished"],
+        "inLanguage": meta["inLanguage"],
+        "breadcrumbLabel": meta["breadcrumbLabel"],
+        "faqJsonLd": "__FAQ_JSON_LD__",  # reference to const
+        "relatedSectionLabel": related_section_label,
+    }
     for i, (rtitle, rhref) in enumerate(meta["related"], start=1):
-        related_consts.append(f'  const related{i}Title = "{js_string_escape(rtitle)}"')
-        related_consts.append(f'  const related{i}Href = "{js_string_escape(rhref)}"')
-    related_consts_block = "\n".join(related_consts)
+        prop_values[f"related{i}Title"] = rtitle
+        prop_values[f"related{i}Href"] = rhref
+
+    # Build interface block
+    iface_lines = [f"  {p['name']}?: string" for p in PROPS_SPEC]
+    iface_block = "\n".join(iface_lines)
+
+    # Build destructured Props with defaults block
+    default_lines = []
+    for p in PROPS_SPEC:
+        name = p["name"]
+        v = prop_values.get(name, "")
+        if v == "__BODY_HTML__":
+            default_lines.append(f"  {name} = BODY_HTML,")
+        elif v == "__FAQ_JSON_LD__":
+            default_lines.append(f"  {name} = FAQ_JSON_LD,")
+        else:
+            default_lines.append(f'  {name} = "{js_string_escape(v)}",')
+    defaults_block = "\n".join(default_lines)
+
+    # Build addPropertyControls block
+    control_lines = []
+    for p in PROPS_SPEC:
+        name = p["name"]
+        title_attr = p["title"]
+        textarea = ", displayTextArea: true" if p["textarea"] else ""
+        v = prop_values.get(name, "")
+        if v == "__BODY_HTML__":
+            dv = "BODY_HTML"
+            line = f'  {name}: {{ type: ControlType.String, title: "{title_attr}", defaultValue: {dv}{textarea} }},'
+        elif v == "__FAQ_JSON_LD__":
+            dv = "FAQ_JSON_LD"
+            line = f'  {name}: {{ type: ControlType.String, title: "{title_attr}", defaultValue: {dv}{textarea} }},'
+        else:
+            line = f'  {name}: {{ type: ControlType.String, title: "{title_attr}", defaultValue: "{js_string_escape(v)}"{textarea} }},'
+        control_lines.append(line)
+    controls_block = "\n".join(control_lines)
 
     tsx = f"""// AUTO-GENERATED. Do not edit by hand.
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
-// Self-contained Framer Code Component.
-// No external imports — all LearnArticle logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with full Props for translation/CMS.
+// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
+
+import {{ addPropertyControls, ControlType }} from "framer"
+
+interface Props {{
+{iface_block}
+}}
 
 const BODY_HTML = `{js_template_escape(body_html)}`
 
 const FAQ_JSON_LD = `{js_template_escape(faq_jsonld)}`
 
-export default function {component}() {{
-  // ── Page-specific values (replaces LearnArticle Props) ──
-  const backLabel = "{js_string_escape(back_label)}"
-  const backHref = "{js_string_escape(back_href)}"
-  const title = "{js_string_escape(meta["title"])}"
-  const lead = "{js_string_escape(meta["lead"])}"
-  const category = "{js_string_escape(meta["category"])}"
-  const readTime = "{js_string_escape(meta["readTime"])}"
-  const dateUpdated = "{js_string_escape(meta["dateUpdated"])}"
-  const tldrLabel = "{js_string_escape(meta["tldrLabel"])}"
-  const tldrBody = "{js_string_escape(meta["tldrBody"])}"
-  const bodyHtml = BODY_HTML
-  const canonicalUrl = "{js_string_escape(meta["canonicalUrl"])}"
-  const datePublished = "{meta["datePublished"]}"
-  const dateModified = "{meta.get("dateModified") or meta["datePublished"]}"
-  const inLanguage = "{meta["inLanguage"]}"
-  const breadcrumbLabel = "{js_string_escape(meta["breadcrumbLabel"])}"
-  const faqJsonLd = FAQ_JSON_LD
-  const relatedSectionLabel = "{js_string_escape(related_section_label)}"
-{related_consts_block}
-
-  // ── BEGIN inlined LearnArticle body ──
+export default function {component}({{
+{defaults_block}
+}}: Props) {{
 {LEARN_ARTICLE_BODY}
-  // ── END inlined LearnArticle body ──
 }}
+
+addPropertyControls({component}, {{
+{controls_block}
+}})
 """
     return tsx
 

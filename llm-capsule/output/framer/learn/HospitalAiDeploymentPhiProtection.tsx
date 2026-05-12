@@ -2,8 +2,38 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
-// Self-contained Framer Code Component.
-// No external imports — all LearnArticle logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with full Props for translation/CMS.
+// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
+
+import { addPropertyControls, ControlType } from "framer"
+
+interface Props {
+  backLabel?: string
+  backHref?: string
+  title?: string
+  lead?: string
+  category?: string
+  readTime?: string
+  dateUpdated?: string
+  tldrLabel?: string
+  tldrBody?: string
+  bodyHtml?: string
+  canonicalUrl?: string
+  datePublished?: string
+  dateModified?: string
+  inLanguage?: string
+  breadcrumbLabel?: string
+  faqJsonLd?: string
+  relatedSectionLabel?: string
+  related1Title?: string
+  related1Href?: string
+  related2Title?: string
+  related2Href?: string
+  related3Title?: string
+  related3Href?: string
+  related4Title?: string
+  related4Href?: string
+}
 
 const BODY_HTML = `<h2>The clinical AI adoption barrier</h2>
 <p>Every hospital wants AI to help with the documentation burden. Radiology backlog, clinical note-taking, discharge summaries, billing coding — all painful, all time-consuming, all driven by structured + unstructured data that includes deeply private patient information. Studies show 30-50% time reduction in clinical documentation when AI is permitted to assist.</p>
@@ -56,35 +86,33 @@ const BODY_HTML = `<h2>The clinical AI adoption barrier</h2>
 
 const FAQ_JSON_LD = ``
 
-export default function HospitalAiDeploymentPhiProtection() {
-  // ── Page-specific values (replaces LearnArticle Props) ──
-  const backLabel = "← Learn"
-  const backHref = "/resources/learn"
-  const title = "How to deploy AI in a hospital without exposing PHI"
-  const lead = "A practical guide for hospital CIOs, CMIOs, and clinical informatics teams to bring AI into radiology, clinical documentation, and care coordination — without sending PHI to external LLMs."
-  const category = "Industry · Healthcare"
-  const readTime = "11 min read"
-  const dateUpdated = "Updated April 2025"
-  const tldrLabel = "TL;DR — Definition"
-  const tldrBody = "A hospital AI deployment with PHI protection uses an AI enablement data layer to encapsulate patient names, MRN, diagnoses, lab results, prescriptions, and clinical workflow context locally before any data reaches an external LLM. The LLM drafts radiology reports, clinical summaries, and care coordination outputs on the protected capsule; outputs are restored back into the EHR inside the hospital network. HIPAA-aligned. Deployed at Ewha Womans University Medical Center (EUMC)."
-  const bodyHtml = BODY_HTML
-  const canonicalUrl = "https://llmcapsule.ai/resources/learn/hospital-ai-deployment-phi-protection"
-  const datePublished = "2025-04-15"
-  const dateModified = "2025-04-15"
-  const inLanguage = "en"
-  const breadcrumbLabel = "How to deploy AI in a hospital without exposing PHI"
-  const faqJsonLd = FAQ_JSON_LD
-  const relatedSectionLabel = "Related articles"
-  const related1Title = ""
-  const related1Href = ""
-  const related2Title = ""
-  const related2Href = ""
-  const related3Title = ""
-  const related3Href = ""
-  const related4Title = ""
-  const related4Href = ""
-
-  // ── BEGIN inlined LearnArticle body ──
+export default function HospitalAiDeploymentPhiProtection({
+  backLabel = "← Learn",
+  backHref = "/resources/learn",
+  title = "How to deploy AI in a hospital without exposing PHI",
+  lead = "A practical guide for hospital CIOs, CMIOs, and clinical informatics teams to bring AI into radiology, clinical documentation, and care coordination — without sending PHI to external LLMs.",
+  category = "Industry · Healthcare",
+  readTime = "11 min read",
+  dateUpdated = "Updated April 2025",
+  tldrLabel = "TL;DR — Definition",
+  tldrBody = "A hospital AI deployment with PHI protection uses an AI enablement data layer to encapsulate patient names, MRN, diagnoses, lab results, prescriptions, and clinical workflow context locally before any data reaches an external LLM. The LLM drafts radiology reports, clinical summaries, and care coordination outputs on the protected capsule; outputs are restored back into the EHR inside the hospital network. HIPAA-aligned. Deployed at Ewha Womans University Medical Center (EUMC).",
+  bodyHtml = BODY_HTML,
+  canonicalUrl = "https://llmcapsule.ai/resources/learn/hospital-ai-deployment-phi-protection",
+  datePublished = "2025-04-15",
+  dateModified = "2025-04-15",
+  inLanguage = "en",
+  breadcrumbLabel = "How to deploy AI in a hospital without exposing PHI",
+  faqJsonLd = FAQ_JSON_LD,
+  relatedSectionLabel = "Related articles",
+  related1Title = "",
+  related1Href = "",
+  related2Title = "",
+  related2Href = "",
+  related3Title = "",
+  related3Href = "",
+  related4Title = "",
+  related4Href = "",
+}: Props) {
   const relatedItems = [
     { title: related1Title, href: related1Href },
     { title: related2Title, href: related2Href },
@@ -644,5 +672,32 @@ export default function HospitalAiDeploymentPhiProtection() {
       </div>
     </>
   )
-  // ── END inlined LearnArticle body ──
 }
+
+addPropertyControls(HospitalAiDeploymentPhiProtection, {
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "How to deploy AI in a hospital without exposing PHI" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "A practical guide for hospital CIOs, CMIOs, and clinical informatics teams to bring AI into radiology, clinical documentation, and care coordination — without sending PHI to external LLMs.", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "Industry · Healthcare" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "11 min read" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "Updated April 2025" },
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR — Definition" },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "A hospital AI deployment with PHI protection uses an AI enablement data layer to encapsulate patient names, MRN, diagnoses, lab results, prescriptions, and clinical workflow context locally before any data reaches an external LLM. The LLM drafts radiology reports, clinical summaries, and care coordination outputs on the protected capsule; outputs are restored back into the EHR inside the hospital network. HIPAA-aligned. Deployed at Ewha Womans University Medical Center (EUMC).", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/hospital-ai-deployment-phi-protection" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2025-04-15" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2025-04-15" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "en" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "How to deploy AI in a hospital without exposing PHI" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "Related articles" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "" },
+  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
+  related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
+})

@@ -2,8 +2,38 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
-// Self-contained Framer Code Component.
-// No external imports — all LearnArticle logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with full Props for translation/CMS.
+// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
+
+import { addPropertyControls, ControlType } from "framer"
+
+interface Props {
+  backLabel?: string
+  backHref?: string
+  title?: string
+  lead?: string
+  category?: string
+  readTime?: string
+  dateUpdated?: string
+  tldrLabel?: string
+  tldrBody?: string
+  bodyHtml?: string
+  canonicalUrl?: string
+  datePublished?: string
+  dateModified?: string
+  inLanguage?: string
+  breadcrumbLabel?: string
+  faqJsonLd?: string
+  relatedSectionLabel?: string
+  related1Title?: string
+  related1Href?: string
+  related2Title?: string
+  related2Href?: string
+  related3Title?: string
+  related3Href?: string
+  related4Title?: string
+  related4Href?: string
+}
 
 const BODY_HTML = `<h2>Why this comparison matters</h2>
 <p>Buyers evaluating enterprise AI routinely encounter four kinds of products in the same shortlist: PII guardrails, prompt security gateways, AI security suites, and the AI enablement data layer. They are not equivalent. Treating them as interchangeable leads to deployments that pass the PII filter but still expose the sensitive part of the workflow.</p>
@@ -92,35 +122,33 @@ const BODY_HTML = `<h2>Why this comparison matters</h2>
 
 const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "Are PII guardrails the same as the AI enablement data layer?", "acceptedAnswer": { "@type": "Answer", "text": "No. PII guardrails detect and mask personal identifiers — names, IDs, financial fields. The AI enablement data layer covers complex enterprise data such as network logs, incident records, configurations, OT manifests, and clinical or mission context. Operational data leaks information through structure, sequence, and aggregate pattern, not just through identifiable fields. Field-level masking alone does not protect it." } }, { "@type": "Question", "name": "How does LLM Capsule compare with PII guardrail and AI security suite products?", "acceptedAnswer": { "@type": "Answer", "text": "PII guardrail and AI security suite products are optimized for risk control and policy enforcement at the API or prompt level — prompt injection defense, jailbreak resistance, and PII detection. LLM Capsule operates at a different layer: it transforms operational data into AI-ready capsules with differential-privacy-based protection, plugs into existing enterprise systems beyond the API gateway, preserves operational structure for AI to consume, and restores outputs back into the originating workflow. The two categories are adjacent and often complementary — they address different stages of the enterprise AI pipeline." } }, { "@type": "Question", "name": "When is a PII guardrail enough?", "acceptedAnswer": { "@type": "Answer", "text": "When the workflow's sensitive content is mostly identifiable individual fields — customer names, phone numbers, financial identifiers — and the surrounding context is not itself sensitive. Customer chat, contract review, and document summarization are common cases. When the context (network topology, incident sequence, OT alarms, mission rhythm) is the sensitive part, PII guardrails alone are not sufficient." } } ] }`
 
-export default function PiiGuardrailsVsOperationalDataProtection() {
-  // ── Page-specific values (replaces LearnArticle Props) ──
-  const backLabel = "← Learn"
-  const backHref = "/resources/learn"
-  const title = "Why PII Guardrails Don't Make Enterprise AI Work"
-  const lead = "PII guardrails, AI security suites, prompt security gateways — they all do something important. They do not all do the same thing. Here is a direct comparison and a clear answer to where each fits in enterprise AI adoption."
-  const category = "COMPARISON · Categories"
-  const readTime = "11 min read"
-  const dateUpdated = "Updated May 2025"
-  const tldrLabel = "TL;DR"
-  const tldrBody = ""
-  const bodyHtml = BODY_HTML
-  const canonicalUrl = "https://llmcapsule.ai/resources/learn/pii-guardrails-vs-operational-data-protection"
-  const datePublished = "2025-05-01"
-  const dateModified = "2025-05-01"
-  const inLanguage = "en"
-  const breadcrumbLabel = "Why PII Guardrails Don't Make Enterprise AI Work"
-  const faqJsonLd = FAQ_JSON_LD
-  const relatedSectionLabel = "Related articles"
-  const related1Title = "Differential privacy for enterprise LLM"
-  const related1Href = "/resources/learn/differential-privacy-for-enterprise-llm"
-  const related2Title = "AI on network operations data"
-  const related2Href = "/resources/learn/ai-on-network-operations-data"
-  const related3Title = "On-prem LLM execution path"
-  const related3Href = "/resources/learn/on-prem-llm-execution-path"
-  const related4Title = ""
-  const related4Href = ""
-
-  // ── BEGIN inlined LearnArticle body ──
+export default function PiiGuardrailsVsOperationalDataProtection({
+  backLabel = "← Learn",
+  backHref = "/resources/learn",
+  title = "Why PII Guardrails Don't Make Enterprise AI Work",
+  lead = "PII guardrails, AI security suites, prompt security gateways — they all do something important. They do not all do the same thing. Here is a direct comparison and a clear answer to where each fits in enterprise AI adoption.",
+  category = "COMPARISON · Categories",
+  readTime = "11 min read",
+  dateUpdated = "Updated May 2025",
+  tldrLabel = "TL;DR",
+  tldrBody = "",
+  bodyHtml = BODY_HTML,
+  canonicalUrl = "https://llmcapsule.ai/resources/learn/pii-guardrails-vs-operational-data-protection",
+  datePublished = "2025-05-01",
+  dateModified = "2025-05-01",
+  inLanguage = "en",
+  breadcrumbLabel = "Why PII Guardrails Don't Make Enterprise AI Work",
+  faqJsonLd = FAQ_JSON_LD,
+  relatedSectionLabel = "Related articles",
+  related1Title = "Differential privacy for enterprise LLM",
+  related1Href = "/resources/learn/differential-privacy-for-enterprise-llm",
+  related2Title = "AI on network operations data",
+  related2Href = "/resources/learn/ai-on-network-operations-data",
+  related3Title = "On-prem LLM execution path",
+  related3Href = "/resources/learn/on-prem-llm-execution-path",
+  related4Title = "",
+  related4Href = "",
+}: Props) {
   const relatedItems = [
     { title: related1Title, href: related1Href },
     { title: related2Title, href: related2Href },
@@ -680,5 +708,32 @@ export default function PiiGuardrailsVsOperationalDataProtection() {
       </div>
     </>
   )
-  // ── END inlined LearnArticle body ──
 }
+
+addPropertyControls(PiiGuardrailsVsOperationalDataProtection, {
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "Why PII Guardrails Don't Make Enterprise AI Work" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "PII guardrails, AI security suites, prompt security gateways — they all do something important. They do not all do the same thing. Here is a direct comparison and a clear answer to where each fits in enterprise AI adoption.", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "COMPARISON · Categories" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "11 min read" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "Updated May 2025" },
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/pii-guardrails-vs-operational-data-protection" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2025-05-01" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2025-05-01" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "en" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "Why PII Guardrails Don't Make Enterprise AI Work" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "Related articles" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "Differential privacy for enterprise LLM" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/differential-privacy-for-enterprise-llm" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "AI on network operations data" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/ai-on-network-operations-data" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "On-prem LLM execution path" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/on-prem-llm-execution-path" },
+  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
+  related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
+})
