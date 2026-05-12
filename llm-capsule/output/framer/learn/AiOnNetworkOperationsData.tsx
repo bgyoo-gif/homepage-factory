@@ -2,7 +2,7 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 
-import LearnArticle from "../shared/LearnArticle"
+import LearnArticle from "../LearnArticle"
 
 const BODY_HTML = `<h2>The shape of network operations data</h2>
 <p>A typical NOC environment generates and consumes several classes of operational data, each with its own confidentiality profile:</p>

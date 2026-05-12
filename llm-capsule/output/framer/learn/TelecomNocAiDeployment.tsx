@@ -2,7 +2,7 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 
-import LearnArticle from "../shared/LearnArticle"
+import LearnArticle from "../LearnArticle"
 
 const BODY_HTML = `<h2>The NOC AI adoption barrier</h2>
 <p>Every Tier-1 telecom operator wants AI in the NOC. The use cases are obvious: faster RCA, automated ticket triage, customer-impact analysis, network anomaly detection, runbook drafting. The economics are obvious too — 30-50% reduction in MTTR, 4-8x throughput on incident review, deflected escalations.</p>

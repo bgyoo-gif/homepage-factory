@@ -2,7 +2,7 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 
-import LearnArticle from "../shared/LearnArticle"
+import LearnArticle from "../LearnArticle"
 
 const BODY_HTML = `<h2>Why two paths instead of one</h2>
 <p>Enterprises rarely have one regulatory profile. A telecom carrier might run NOC analytics on Path A and mission-critical incident workflows on Path B. A hospital might use Path A for routine documentation and Path B for clinical decision support. A defense contractor might use Path B exclusively. Forcing a single path forces a single regulatory floor; offering two lets governance match the path to the workflow.</p>

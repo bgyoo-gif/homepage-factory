@@ -2,7 +2,7 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 
-import LearnArticle from "../shared/LearnArticle"
+import LearnArticle from "../LearnArticle"
 
 const BODY_HTML = `<h2>The clinical AI adoption barrier</h2>
 <p>Every hospital wants AI to help with the documentation burden. Radiology backlog, clinical note-taking, discharge summaries, billing coding — all painful, all time-consuming, all driven by structured + unstructured data that includes deeply private patient information. Studies show 30-50% time reduction in clinical documentation when AI is permitted to assist.</p>

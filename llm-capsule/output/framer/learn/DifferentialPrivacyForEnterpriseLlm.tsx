@@ -2,7 +2,7 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 
-import LearnArticle from "../shared/LearnArticle"
+import LearnArticle from "../LearnArticle"
 
 const BODY_HTML = `<h2>The problem PII filtering doesn't solve</h2>
 <p>Most enterprise teams hit the same wall when they try to use external LLMs on real internal data: the data passes the PII filter, but the workflow still breaks. The names are gone. The phone numbers are gone. But the network configuration is still recognizable. The sequence of incidents still identifies the customer segment. The OT alert pattern still betrays the plant.</p>

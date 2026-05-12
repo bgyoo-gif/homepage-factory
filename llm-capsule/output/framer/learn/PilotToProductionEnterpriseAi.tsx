@@ -2,7 +2,7 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 
-import LearnArticle from "../shared/LearnArticle"
+import LearnArticle from "../LearnArticle"
 
 const BODY_HTML = `<h2>The standard pilot trajectory</h2>
 <p>Months 0-2: leadership selects a use case (NOC RCA, clinical summarization, claim review, contract review). A vendor demos on a sanitized dataset. Excitement.</p>

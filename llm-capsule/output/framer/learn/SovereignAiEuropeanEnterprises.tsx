@@ -2,7 +2,7 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 
-import LearnArticle from "../shared/LearnArticle"
+import LearnArticle from "../LearnArticle"
 
 const BODY_HTML = `<h2>Why sovereign AI matters now</h2>
 <p>The European regulatory landscape has tightened. GDPR enforcement actions have crossed €4 billion in cumulative fines. The EU AI Act (entered into force August 2024) requires high-risk AI systems — including those used in regulated sectors — to maintain demonstrable transparency, audit trails, and data governance. National regulators (BaFin in Germany, ACPR in France) increasingly expect financial institutions to demonstrate AI data sovereignty. Public sector and defense workflows have always required it.</p>

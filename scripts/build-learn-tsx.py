@@ -461,7 +461,7 @@ def build_tsx(article: dict) -> str:
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 
-import LearnArticle from "../shared/LearnArticle"
+import LearnArticle from "../LearnArticle"
 
 const BODY_HTML = `{js_template_escape(body_html)}`
 

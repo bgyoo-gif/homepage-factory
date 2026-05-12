@@ -2,7 +2,7 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 
-import LearnArticle from "../shared/LearnArticle"
+import LearnArticle from "../LearnArticle"
 
 const BODY_HTML = `<h2>Why this comparison matters</h2>
 <p>Buyers evaluating enterprise AI routinely encounter four kinds of products in the same shortlist: PII guardrails, prompt security gateways, AI security suites, and the AI enablement data layer. They are not equivalent. Treating them as interchangeable leads to deployments that pass the PII filter but still expose the sensitive part of the workflow.</p>
