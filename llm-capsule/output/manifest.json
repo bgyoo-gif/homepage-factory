@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-12 15:41:49",
+  "generated": "2026-05-12 17:37:55",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -2467,6 +2467,11 @@
           "name": "Section07_CTABand.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/ai-data-pipeline-protection/tsx/Section07_CTABand.tsx",
           "modified": "2026-05-06"
+        },
+        {
+          "name": "ArchitectureFourZoneTechnical.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/architecture/ArchitectureFourZoneTechnical.tsx",
+          "modified": "2026-05-12"
         },
         {
           "name": "Section01_Hero.tsx",
