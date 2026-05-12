@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-12 12:06:28",
+  "generated": "2026-05-12 13:15:24",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1250,6 +1250,36 @@
           "modified": "2026-04-28"
         },
         {
+          "name": "public-sector-2026-management-evaluation-ai-incentive-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/public-sector-2026-management-evaluation-ai-incentive-b-type.html",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "public-sector-2026-management-evaluation-ai-incentive-bodyhtml.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/public-sector-2026-management-evaluation-ai-incentive-bodyhtml.html",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "public-sector-external-llm-adoption-roadmap-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/public-sector-external-llm-adoption-roadmap-b-type.html",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "public-sector-external-llm-adoption-roadmap-bodyhtml.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/public-sector-external-llm-adoption-roadmap-bodyhtml.html",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "public-sector-genai-five-stuck-points-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/public-sector-genai-five-stuck-points-b-type.html",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "public-sector-genai-five-stuck-points-bodyhtml.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/public-sector-genai-five-stuck-points-bodyhtml.html",
+          "modified": "2026-05-12"
+        },
+        {
           "name": "public-sector-genai-three-approaches-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/public-sector-genai-three-approaches-b-type.html",
           "modified": "2026-05-11"
@@ -1460,6 +1490,36 @@
           "name": "product-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/product-spec.md",
           "modified": "2026-04-09"
+        },
+        {
+          "name": "public-sector-2026-management-evaluation-ai-incentive-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/public-sector-2026-management-evaluation-ai-incentive-qa-report.md",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "public-sector-2026-management-evaluation-ai-incentive-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/public-sector-2026-management-evaluation-ai-incentive-spec.md",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "public-sector-external-llm-adoption-roadmap-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/public-sector-external-llm-adoption-roadmap-qa-report.md",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "public-sector-external-llm-adoption-roadmap-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/public-sector-external-llm-adoption-roadmap-spec.md",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "public-sector-genai-five-stuck-points-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/public-sector-genai-five-stuck-points-qa-report.md",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "public-sector-genai-five-stuck-points-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/public-sector-genai-five-stuck-points-spec.md",
+          "modified": "2026-05-12"
         },
         {
           "name": "public-sector-genai-three-approaches-qa-report.md",
@@ -2816,6 +2876,21 @@
         {
           "name": "PilotToProductionEnterpriseAi.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/PilotToProductionEnterpriseAi.tsx",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "PublicSector2026ManagementEvaluationAiIncentive.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/PublicSector2026ManagementEvaluationAiIncentive.tsx",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "PublicSectorExternalLlmAdoptionRoadmap.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/PublicSectorExternalLlmAdoptionRoadmap.tsx",
+          "modified": "2026-05-12"
+        },
+        {
+          "name": "PublicSectorGenaiFiveStuckPoints.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/PublicSectorGenaiFiveStuckPoints.tsx",
           "modified": "2026-05-12"
         },
         {
