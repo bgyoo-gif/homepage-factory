@@ -27,6 +27,20 @@ ROOT = Path(__file__).resolve().parent.parent
 HTML_DIR = ROOT / "llm-capsule" / "output" / "html"
 INPUT_DIR = ROOT / "llm-capsule" / "input" / "llmcapsule_260506" / "learn"
 OUT_DIR = ROOT / "llm-capsule" / "output" / "framer" / "learn"
+LEARN_ARTICLE_TSX = ROOT / "llm-capsule" / "output" / "framer" / "shared" / "LearnArticle.tsx"
+
+
+# ── Inline LearnArticle body (loaded from shared/LearnArticle.tsx) ──
+def load_learn_article_body() -> str:
+    """Extract the function body of LearnArticle (line 126 to before line 685)."""
+    text = LEARN_ARTICLE_TSX.read_text(encoding="utf-8")
+    lines = text.split("\n")
+    # 1-indexed: 126..684 inclusive. Python list is 0-indexed → 125..683
+    body_lines = lines[125:684]
+    return "\n".join(body_lines)
+
+
+LEARN_ARTICLE_BODY = load_learn_article_body()
 
 
 # ── Articles config ──
@@ -456,40 +470,50 @@ def build_tsx(article: dict) -> str:
 
     back_label = "← Learn"
     back_href = "/resources/learn"
+    related_section_label = "함께 읽으면 좋은 글" if meta["inLanguage"].startswith("ko") else "Related articles"
+
+    # Build related Props as inline const declarations
+    related_consts = []
+    for i, (rtitle, rhref) in enumerate(meta["related"], start=1):
+        related_consts.append(f'  const related{i}Title = "{js_string_escape(rtitle)}"')
+        related_consts.append(f'  const related{i}Href = "{js_string_escape(rhref)}"')
+    related_consts_block = "\n".join(related_consts)
 
     tsx = f"""// AUTO-GENERATED. Do not edit by hand.
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
-
-import LearnArticle from "../LearnArticle"
+//
+// Self-contained Framer Code Component.
+// No external imports — all LearnArticle logic inlined for Framer cross-folder compatibility.
 
 const BODY_HTML = `{js_template_escape(body_html)}`
 
 const FAQ_JSON_LD = `{js_template_escape(faq_jsonld)}`
 
 export default function {component}() {{
-  return (
-    <LearnArticle
-      backLabel="{js_string_escape(back_label)}"
-      backHref="{js_string_escape(back_href)}"
-      title={{"{js_string_escape(meta["title"])}"}}
-      lead={{"{js_string_escape(meta["lead"])}"}}
-      category={{"{js_string_escape(meta["category"])}"}}
-      readTime={{"{js_string_escape(meta["readTime"])}"}}
-      dateUpdated={{"{js_string_escape(meta["dateUpdated"])}"}}
-      tldrLabel={{"{js_string_escape(meta["tldrLabel"])}"}}
-      tldrBody={{"{js_string_escape(meta["tldrBody"])}"}}
-      bodyHtml={{BODY_HTML}}
-      canonicalUrl={{"{js_string_escape(meta["canonicalUrl"])}"}}
-      datePublished={{"{meta["datePublished"]}"}}
-      dateModified={{"{meta.get("dateModified") or meta["datePublished"]}"}}
-      inLanguage={{"{meta["inLanguage"]}"}}
-      breadcrumbLabel={{"{js_string_escape(meta["breadcrumbLabel"])}"}}
-      faqJsonLd={{FAQ_JSON_LD}}
-      relatedSectionLabel="{js_string_escape("함께 읽으면 좋은 글" if meta["inLanguage"].startswith("ko") else "Related articles")}"
-{related_block}
-    />
-  )
+  // ── Page-specific values (replaces LearnArticle Props) ──
+  const backLabel = "{js_string_escape(back_label)}"
+  const backHref = "{js_string_escape(back_href)}"
+  const title = "{js_string_escape(meta["title"])}"
+  const lead = "{js_string_escape(meta["lead"])}"
+  const category = "{js_string_escape(meta["category"])}"
+  const readTime = "{js_string_escape(meta["readTime"])}"
+  const dateUpdated = "{js_string_escape(meta["dateUpdated"])}"
+  const tldrLabel = "{js_string_escape(meta["tldrLabel"])}"
+  const tldrBody = "{js_string_escape(meta["tldrBody"])}"
+  const bodyHtml = BODY_HTML
+  const canonicalUrl = "{js_string_escape(meta["canonicalUrl"])}"
+  const datePublished = "{meta["datePublished"]}"
+  const dateModified = "{meta.get("dateModified") or meta["datePublished"]}"
+  const inLanguage = "{meta["inLanguage"]}"
+  const breadcrumbLabel = "{js_string_escape(meta["breadcrumbLabel"])}"
+  const faqJsonLd = FAQ_JSON_LD
+  const relatedSectionLabel = "{js_string_escape(related_section_label)}"
+{related_consts_block}
+
+  // ── BEGIN inlined LearnArticle body ──
+{LEARN_ARTICLE_BODY}
+  // ── END inlined LearnArticle body ──
 }}
 """
     return tsx

@@ -1,8 +1,9 @@
 // AUTO-GENERATED. Do not edit by hand.
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
-
-import LearnArticle from "../LearnArticle"
+//
+// Self-contained Framer Code Component.
+// No external imports — all LearnArticle logic inlined for Framer cross-folder compatibility.
 
 const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그대로 붙여넣기 -->
 <!-- 일반 HTML 태그 + .callout + .takeaways만 사용 (기존 learn 아티클과 동일 패턴) -->
@@ -272,33 +273,592 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"이 5가지 외에 다른 막힘은 없나요?","acceptedAnswer":{"@type":"Answer","text":"있습니다. 다만 위 5가지가 가장 자주, 그리고 가장 크게 막히는 지점입니다. 다른 막힘으로는 사용자 교육 미흡, 거버넌스 부재, 외부 자문 일정 확보 어려움 등이 있으며, 모두 위 5가지의 변형이거나 결과로 볼 수 있습니다."}}, {"@type":"Question","name":"5가지 모두를 한 사업에서 풀어야 하나요?","acceptedAnswer":{"@type":"Answer","text":"모두 동시에 풀려고 하면 사업이 한없이 길어집니다. 도입 단계별로 우선 풀어야 할 지점이 다르므로, 단계별로 가장 큰 막힘을 식별해서 그 지점을 우선 풀어내는 접근이 효율적입니다."}}, {"@type":"Question","name":"전자결재 API 연동은 어떻게 진행하나요?","acceptedAnswer":{"@type":"Answer","text":"대부분의 공공기관 전자결재 시스템은 표준 API를 제공합니다. 문서 메타데이터(보안등급, 문서종류, 부서, 결재 라인)를 조회하는 API를 사용해서 AI 솔루션이 등급을 자동 식별하도록 연동합니다."}}, {"@type":"Question","name":"단계적 도입(시나리오 A → B)이 정말 가능한가요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 시나리오 A로 시작해서 6~12개월 운영하면서 활용 패턴을 분석하고, 그 결과를 바탕으로 시나리오 B 확장 여부를 결정합니다."}}, {"@type":"Question","name":"도입 후 활용도가 낮으면 어떻게 진단하나요?","acceptedAnswer":{"@type":"Answer","text":"도입 후 3개월·6개월 시점에 부서별·업무별 사용 빈도, 차단된 요청 비율과 차단 사유, 사용자 만족도 조사를 측정합니다. 정량 데이터에 기반한 진단이 추측보다 훨씬 효과적입니다."}} ] }`
 
 export default function PublicSectorGenaiFiveStuckPoints() {
+  // ── Page-specific values (replaces LearnArticle Props) ──
+  const backLabel = "← Learn"
+  const backHref = "/resources/learn"
+  const title = "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지 — 현장 분석"
+  const lead = "정책은 알겠는데 실무에서 막힌다는 정보화담당관 분들의 목소리를 5개 막힘 지점으로 정리합니다. 등급 분류 부담, 시나리오 충돌, 솔루션 후보 부족, 예산 시점, 활용 실패."
+  const category = "현장 분석"
+  const readTime = "16분 읽기"
+  const dateUpdated = "2026년 5월 업데이트"
+  const tldrLabel = "TL;DR"
+  const tldrBody = "공공기관 생성형 AI 도입은 정책 자체보다 다음 다섯 가지 막힘 지점에서 멈춥니다. (1) 데이터 등급 분류 부담, (2) 활용 시나리오와 O 등급 충돌, (3) 솔루션 후보 부족, (4) 예산 시점 불일치, (5) 활용 실패. 다섯 지점을 관통하는 공통 진단은 '메타데이터·등급 자동화·차등정보보호 게이트웨이 같은 도구가 모두 갖춰져야 비로소 막힘이 풀린다'는 것입니다."
+  const bodyHtml = BODY_HTML
+  const canonicalUrl = "https://llmcapsule.ai/resources/learn/public-sector-genai-five-stuck-points"
+  const datePublished = "2026-05-01"
+  const dateModified = "2026-05-01"
+  const inLanguage = "ko-KR"
+  const breadcrumbLabel = "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지"
+  const faqJsonLd = FAQ_JSON_LD
+  const relatedSectionLabel = "함께 읽으면 좋은 글"
+  const related1Title = "공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵"
+  const related1Href = "/resources/learn/public-sector-external-llm-adoption-roadmap"
+  const related2Title = "공공기관 생성형 AI 도입의 세 가지 길"
+  const related2Href = "/resources/learn/public-sector-genai-three-approaches"
+  const related3Title = "sLLM 자체구축, 정말 답일까"
+  const related3Href = "/resources/learn/sllm-self-hosted-reality-check"
+  const related4Title = ""
+  const related4Href = ""
+
+  // ── BEGIN inlined LearnArticle body ──
+  const relatedItems = [
+    { title: related1Title, href: related1Href },
+    { title: related2Title, href: related2Href },
+    { title: related3Title, href: related3Href },
+    { title: related4Title, href: related4Href },
+  ].filter((r) => r.title && r.href)
+
+  const articleJsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": lead,
+    "inLanguage": inLanguage,
+    "datePublished": datePublished,
+    "dateModified": dateModified || datePublished,
+    "author": { "@type": "Organization", "name": "CUBIG" },
+    "publisher": { "@type": "Organization", "name": "CUBIG", "url": "https://cubig.ai" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+  })
+
+  const breadcrumbJsonLd = breadcrumbLabel
+    ? JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://llmcapsule.ai/" },
+          { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://llmcapsule.ai/resources" },
+          { "@type": "ListItem", "position": 3, "name": "Learn", "item": "https://llmcapsule.ai/resources/learn" },
+          { "@type": "ListItem", "position": 4, "name": breadcrumbLabel },
+        ],
+      })
+    : ""
+
   return (
-    <LearnArticle
-      backLabel="← Learn"
-      backHref="/resources/learn"
-      title={"공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지 — 현장 분석"}
-      lead={"정책은 알겠는데 실무에서 막힌다는 정보화담당관 분들의 목소리를 5개 막힘 지점으로 정리합니다. 등급 분류 부담, 시나리오 충돌, 솔루션 후보 부족, 예산 시점, 활용 실패."}
-      category={"현장 분석"}
-      readTime={"16분 읽기"}
-      dateUpdated={"2026년 5월 업데이트"}
-      tldrLabel={"TL;DR"}
-      tldrBody={"공공기관 생성형 AI 도입은 정책 자체보다 다음 다섯 가지 막힘 지점에서 멈춥니다. (1) 데이터 등급 분류 부담, (2) 활용 시나리오와 O 등급 충돌, (3) 솔루션 후보 부족, (4) 예산 시점 불일치, (5) 활용 실패. 다섯 지점을 관통하는 공통 진단은 '메타데이터·등급 자동화·차등정보보호 게이트웨이 같은 도구가 모두 갖춰져야 비로소 막힘이 풀린다'는 것입니다."}
-      bodyHtml={BODY_HTML}
-      canonicalUrl={"https://llmcapsule.ai/resources/learn/public-sector-genai-five-stuck-points"}
-      datePublished={"2026-05-01"}
-      dateModified={"2026-05-01"}
-      inLanguage={"ko-KR"}
-      breadcrumbLabel={"공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지"}
-      faqJsonLd={FAQ_JSON_LD}
-      relatedSectionLabel="함께 읽으면 좋은 글"
-      related1Title={"공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵"}
-      related1Href={"/resources/learn/public-sector-external-llm-adoption-roadmap"}
-      related2Title={"공공기관 생성형 AI 도입의 세 가지 길"}
-      related2Href={"/resources/learn/public-sector-genai-three-approaches"}
-      related3Title={"sLLM 자체구축, 정말 답일까"}
-      related3Href={"/resources/learn/sllm-self-hosted-reality-check"}
-      related4Title={""}
-      related4Href={""}
-    />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: articleJsonLd }} />
+      {breadcrumbJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }} />
+      )}
+      {faqJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+      )}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+        /* ── Root ─────────────────────────────────────────── */
+        .la-root {
+          width: 100%;
+          container-type: inline-size;
+          font-family: var(--f-display, 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif);
+          color: var(--c-ink, #0f1130);
+          background-color: var(--c-bg, #ffffff);
+          -webkit-font-smoothing: antialiased;
+          word-break: keep-all;
+          overflow-wrap: break-word;
+        }
+
+        /* ── Container ────────────────────────────────────── */
+        .la-container {
+          max-width: var(--container-max, 1280px);
+          margin: 0 auto;
+          padding: 0 var(--s-page, clamp(20px, 4vw, 80px));
+        }
+
+        /* ── 1. Article Hero ──────────────────────────────── */
+        .la-hero {
+          padding: clamp(60px, 8vw, 100px) 0 clamp(40px, 5vw, 64px);
+          border-bottom: 1px solid var(--c-rule, #e5e7eb);
+        }
+
+        .la-hero__inner {
+          max-width: 860px;
+          margin: 0 auto;
+        }
+
+        .la-hero__back {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--c-primary, #5b4fe9);
+          text-decoration: none;
+          letter-spacing: 0.01em;
+          margin-bottom: 28px;
+          transition: color 0.15s;
+        }
+        .la-hero__back:hover { color: var(--c-primary-dark, #3b2fbf); }
+
+        .la-hero__title {
+          font-size: clamp(32px, 4.5vw, 56px);
+          font-weight: 700;
+          line-height: 1.12;
+          letter-spacing: -0.02em;
+          color: var(--c-ink, #0f1130);
+          margin: 0 0 20px;
+        }
+
+        .la-hero__lead {
+          font-size: clamp(16px, 1.4vw, 19px);
+          line-height: 1.65;
+          color: var(--c-ink-soft, #3a3d5e);
+          margin: 0 0 28px;
+          max-width: 760px;
+        }
+
+        .la-hero__meta {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 10px 16px;
+        }
+
+        .la-meta__chip {
+          display: inline-flex;
+          align-items: center;
+          padding: 4px 12px;
+          border-radius: 999px;
+          background-color: var(--c-primary-soft, #eeebfe);
+          color: var(--c-primary, #5b4fe9);
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+        }
+
+        .la-meta__sep {
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: var(--c-rule, #e5e7eb);
+          flex-shrink: 0;
+        }
+
+        .la-meta__time,
+        .la-meta__date {
+          font-size: 13px;
+          color: var(--c-muted, #6b7280);
+          font-weight: 500;
+        }
+
+        /* ── 2. TL;DR block ───────────────────────────────── */
+        .la-tldr-wrap {
+          padding: clamp(40px, 5vw, 72px) 0;
+          border-bottom: 1px solid var(--c-rule, #e5e7eb);
+        }
+
+        .la-tldr {
+          max-width: 880px;
+          margin: 0 auto;
+          background-color: var(--c-bg-dark, #0f1130);
+          border-radius: var(--r-lg, 16px);
+          padding: 32px 36px;
+        }
+
+        .la-tldr__label {
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: var(--c-primary, #5b4fe9);
+          margin-bottom: 14px;
+        }
+
+        .la-tldr__body {
+          font-size: 16px;
+          line-height: 1.7;
+          color: rgba(255, 255, 255, 0.88);
+          margin: 0;
+        }
+
+        .la-tldr__body strong {
+          color: #ffffff;
+          font-weight: 700;
+        }
+
+        /* ── 3. Article Body ──────────────────────────────── */
+        .la-body-wrap {
+          padding: clamp(48px, 6vw, 96px) 0;
+          border-bottom: 1px solid var(--c-rule, #e5e7eb);
+        }
+
+        .la-body {
+          max-width: 760px;
+          margin: 0 auto;
+        }
+
+        /* Headings inside body */
+        .la-body h2 {
+          font-size: clamp(22px, 2.2vw, 28px);
+          font-weight: 700;
+          line-height: 1.2;
+          letter-spacing: -0.02em;
+          color: var(--c-ink, #0f1130);
+          margin: 0 0 18px;
+          padding-top: 40px;
+          border-top: 2px solid var(--c-rule, #e5e7eb);
+        }
+
+        .la-body h2:first-child {
+          padding-top: 0;
+          border-top: none;
+        }
+
+        .la-body h3 {
+          font-size: clamp(17px, 1.5vw, 20px);
+          font-weight: 700;
+          line-height: 1.25;
+          letter-spacing: -0.01em;
+          color: var(--c-ink, #0f1130);
+          margin: 32px 0 10px;
+        }
+
+        /* Paragraphs */
+        .la-body p {
+          font-size: 17px;
+          line-height: 1.75;
+          color: var(--c-ink-soft, #3a3d5e);
+          margin: 0 0 18px;
+        }
+
+        .la-body p:last-child { margin-bottom: 0; }
+
+        .la-body p strong {
+          color: var(--c-ink, #0f1130);
+          font-weight: 700;
+        }
+
+        /* Lists */
+        .la-body ul,
+        .la-body ol {
+          margin: 0 0 24px 0;
+          padding-left: 24px;
+        }
+
+        .la-body li {
+          font-size: 17px;
+          line-height: 1.7;
+          color: var(--c-ink-soft, #3a3d5e);
+          margin-bottom: 10px;
+        }
+
+        .la-body li strong {
+          color: var(--c-ink, #0f1130);
+          font-weight: 700;
+        }
+
+        .la-body li:last-child { margin-bottom: 0; }
+
+        /* Blockquote */
+        .la-body blockquote {
+          margin: 28px 0;
+          padding: 20px 24px;
+          border-left: 3px solid var(--c-primary, #5b4fe9);
+          background-color: var(--c-primary-soft, #eeebfe);
+          border-radius: 0 var(--r-sm, 6px) var(--r-sm, 6px) 0;
+        }
+
+        .la-body blockquote p {
+          margin: 0;
+          color: var(--c-ink, #0f1130);
+          font-style: italic;
+        }
+
+        /* Inline code */
+        .la-body code {
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 14px;
+          background-color: var(--c-bg-soft, #f7f8fb);
+          border: 1px solid var(--c-rule, #e5e7eb);
+          border-radius: var(--r-sm, 6px);
+          padding: 2px 7px;
+          color: var(--c-ink, #0f1130);
+        }
+
+        /* Code block (pre) */
+        .la-body pre {
+          background-color: var(--c-bg-dark, #0f1130);
+          border-radius: var(--r-md, 10px);
+          padding: 24px;
+          margin: 24px 0;
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+        .la-body pre::-webkit-scrollbar { display: none; }
+
+        .la-body pre code {
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 14px;
+          background: none;
+          border: none;
+          padding: 0;
+          color: rgba(255, 255, 255, 0.9);
+          line-height: 1.65;
+        }
+
+        /* Table */
+        .la-body table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 28px 0;
+          font-size: 15px;
+        }
+
+        .la-body th,
+        .la-body td {
+          padding: 12px 16px;
+          text-align: left;
+          border-bottom: 1px solid var(--c-rule, #e5e7eb);
+          line-height: 1.5;
+          color: var(--c-ink-soft, #3a3d5e);
+        }
+
+        .la-body th {
+          font-weight: 700;
+          color: var(--c-ink, #0f1130);
+          background-color: var(--c-bg-soft, #f7f8fb);
+        }
+
+        .la-body tr:last-child td { border-bottom: none; }
+
+        /* Callout (amber) — for <div class="callout"> inside bodyHtml */
+        .la-body .callout {
+          display: flex;
+          gap: 14px;
+          padding: 20px 24px;
+          background-color: var(--c-amber-soft, #fef3c7);
+          border-left: 3px solid var(--c-amber, #f59e0b);
+          border-radius: 0 var(--r-sm, 6px) var(--r-sm, 6px) 0;
+          margin: 28px 0;
+        }
+
+        .la-body .callout__icon {
+          font-size: 18px;
+          flex-shrink: 0;
+          line-height: 1.5;
+        }
+
+        .la-body .callout__body {
+          font-size: 15px;
+          line-height: 1.65;
+          color: var(--c-ink, #0f1130);
+          margin: 0;
+        }
+
+        /* Takeaways box */
+        .la-body .takeaways {
+          background-color: var(--c-bg-soft, #f7f8fb);
+          border: 1px solid var(--c-rule, #e5e7eb);
+          border-radius: var(--r-md, 10px);
+          padding: 24px 28px;
+          margin: 28px 0;
+        }
+
+        .la-body .takeaways__label {
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: var(--c-muted, #6b7280);
+          margin-bottom: 12px;
+        }
+
+        .la-body .takeaways ul {
+          margin: 0;
+          padding-left: 20px;
+        }
+
+        .la-body .takeaways li {
+          font-size: 15px;
+        }
+
+        /* Inline links inside body */
+        .la-body a {
+          color: var(--c-primary, #5b4fe9);
+          text-decoration: none;
+          border-bottom: 1px solid transparent;
+          transition: border-color 0.15s, color 0.15s;
+        }
+        .la-body a:hover {
+          color: var(--c-primary-dark, #3b2fbf);
+          border-bottom-color: var(--c-primary-dark, #3b2fbf);
+        }
+
+        /* Button inside body (e.g. CTA link) */
+        .la-body .la-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 13px 22px;
+          border-radius: var(--r-md, 10px);
+          font-weight: 600;
+          font-size: 15px;
+          cursor: pointer;
+          text-decoration: none;
+          border: 1px solid transparent;
+          transition: background-color 0.2s, color 0.2s;
+          border-bottom: none;
+        }
+        .la-body .la-btn:hover { border-bottom: none; }
+
+        .la-body .la-btn--primary {
+          background-color: var(--c-ink, #0f1130);
+          color: #ffffff;
+        }
+        .la-body .la-btn--primary:hover {
+          background-color: var(--c-primary, #5b4fe9);
+          color: #ffffff;
+        }
+
+        .la-body .la-btn--ghost {
+          background-color: var(--c-bg, #ffffff);
+          color: var(--c-ink, #0f1130);
+          border-color: var(--c-rule, #e5e7eb);
+        }
+        .la-body .la-btn--ghost:hover { border-color: var(--c-ink, #0f1130); }
+
+        /* ── 4. Related Links ─────────────────────────────── */
+        .la-related {
+          padding: clamp(48px, 6vw, 80px) 0;
+          background-color: var(--c-bg-soft, #f7f8fb);
+        }
+
+        .la-related__label {
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: var(--c-muted, #6b7280);
+          margin-bottom: 20px;
+        }
+
+        .la-related__grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 16px;
+        }
+
+        @container (max-width: 767px) {
+          .la-related__grid {
+            grid-template-columns: minmax(0, 1fr);
+          }
+        }
+
+        @container (min-width: 1024px) {
+          .la-related__grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+          }
+        }
+
+        .la-related__card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 16px;
+          padding: 20px 22px;
+          background-color: var(--c-bg, #ffffff);
+          border: 1px solid var(--c-rule, #e5e7eb);
+          border-radius: var(--r-md, 10px);
+          text-decoration: none;
+          color: var(--c-ink, #0f1130);
+          transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        .la-related__card:hover {
+          border-color: var(--c-primary, #5b4fe9);
+          box-shadow: 0 4px 16px rgba(91, 79, 233, 0.08);
+        }
+
+        .la-related__card-title {
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 1.4;
+          color: var(--c-ink, #0f1130);
+        }
+
+        .la-related__card-arrow {
+          font-size: 18px;
+          color: var(--c-primary, #5b4fe9);
+          line-height: 1;
+          align-self: flex-end;
+        }
+
+        /* ── Container query: mobile adjustments ─────────── */
+        @container (max-width: 767px) {
+          .la-hero { padding-top: 48px; }
+          .la-hero__title { font-size: 28px; }
+          .la-hero__lead { font-size: 16px; }
+          .la-tldr { padding: 24px 20px; border-radius: var(--r-md, 10px); }
+          .la-body p,
+          .la-body li { font-size: 16px; }
+          .la-body h2 { padding-top: 28px; }
+          .la-body table { font-size: 14px; display: block; overflow-x: auto; scrollbar-width: none; }
+          .la-body table::-webkit-scrollbar { display: none; }
+        }
+      `}</style>
+
+      <div className="la-root">
+
+        {/* ── 1. Article Hero ── */}
+        <section className="la-hero">
+          <div className="la-container">
+            <div className="la-hero__inner">
+              <a href={backHref} className="la-hero__back">{backLabel}</a>
+              <h1 className="la-hero__title">{title}</h1>
+              <p className="la-hero__lead">{lead}</p>
+              <div className="la-hero__meta">
+                <span className="la-meta__chip">{category}</span>
+                <span className="la-meta__sep" aria-hidden="true" />
+                <span className="la-meta__time">{readTime}</span>
+                <span className="la-meta__sep" aria-hidden="true" />
+                <span className="la-meta__date">{dateUpdated}</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 2. TL;DR ── */}
+        <div className="la-tldr-wrap">
+          <div className="la-container">
+            <div className="la-tldr">
+              <div className="la-tldr__label">{tldrLabel}</div>
+              <p className="la-tldr__body">{tldrBody}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* ── 3. Article Body ── */}
+        <div className="la-body-wrap">
+          <div className="la-container">
+            <article
+              className="la-body"
+              dangerouslySetInnerHTML={{ __html: bodyHtml }}
+            />
+          </div>
+        </div>
+
+        {/* ── 4. Related Links ── */}
+        {relatedItems.length > 0 && (
+          <div className="la-related">
+            <div className="la-container">
+              <div className="la-related__label">{relatedSectionLabel}</div>
+              <div className="la-related__grid">
+                {relatedItems.map((item, i) => (
+                  <a key={i} href={item.href} className="la-related__card">
+                    <span className="la-related__card-title">{item.title}</span>
+                    <span className="la-related__card-arrow" aria-hidden="true">→</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+      </div>
+    </>
   )
+  // ── END inlined LearnArticle body ──
 }
