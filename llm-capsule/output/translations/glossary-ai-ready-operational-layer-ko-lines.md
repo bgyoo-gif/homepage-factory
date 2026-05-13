@@ -28,7 +28,7 @@ AI-ready operational layer는 데이터 레이어의 동의어입니다. 규제 
 
 ## Section 03: Article Body
 
-<div class="garol-callout"><strong>용어 안내.</strong> "AI-ready operational layer"와 "AI enablement data layer"는 동일한 제품 카테고리를 가리킵니다. v6.1 기준 사이트의 공식 카테고리는 <strong>AI enablement data layer for regulated operations</strong>입니다. 두 용어 모두 기존 자료, 파트너 대화, 외부 참조에 등장하기 때문에 유지됩니다. 이전 용어로 유입된 독자는 이 페이지를 통해 공식 정의로 안내됩니다.</div>
+<div class="callout"><strong>용어 안내.</strong> "AI-ready operational layer"와 "AI enablement data layer"는 동일한 제품 카테고리를 가리킵니다. v6.1 기준 사이트의 공식 카테고리는 <strong>AI enablement data layer for regulated operations</strong>입니다. 두 용어 모두 기존 자료, 파트너 대화, 외부 참조에 등장하기 때문에 유지됩니다. 이전 용어로 유입된 독자는 이 페이지를 통해 공식 정의로 안내됩니다.</div>
 
 <h2>정의 (동의어)</h2>
 
@@ -44,17 +44,14 @@ AI-ready operational layer는 데이터 레이어의 동의어입니다. 규제 
 
 <h2>관련 항목</h2>
 
+<ul>
 <li><a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> — 공식 카테고리 페이지</li>
-
 <li><a href="/glossary/operational-data">운영 데이터</a></li>
-
 <li><a href="/glossary/two-execution-paths">두 가지 실행 경로</a></li>
-
 <li><a href="/glossary/structure-preserving-encapsulation">문서 구조 보존 캡슐화</a></li>
-
 <li><a href="/glossary/differential-privacy">차등 프라이버시</a></li>
-
 <li><a href="/glossary/state-vault-for-restoration">복원용 state vault</a></li>
+</ul>
 
 ---
 

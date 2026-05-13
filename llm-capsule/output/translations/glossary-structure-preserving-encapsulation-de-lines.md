@@ -28,53 +28,44 @@ Die strukturerhaltende Kapsulierung ist der Transformationsschritt innerhalb ein
 
 ## Section 03: Body HTML
 
-### h2: Warum die Strukturerhaltung entscheidend ist
 
-Ein LLM, das eine RCA aus einer Alarmmeldungssequenz erstellen soll, kann keine Schlussfolgerungen ziehen, wenn die Sequenz zerstört wurde. Ein LLM, das zwei Konfigurationsbäume vergleichen soll, kann keinen Vergleich durchführen, wenn die Baumbeziehungen eingeebnet wurden. Die Strukturerhaltung macht die Kapsel für das Modell nutzbar — nicht nur sicher.
+<h2>Warum die Strukturerhaltung entscheidend ist</h2>
 
----
+<p>Ein LLM, das eine RCA aus einer Alarmmeldungssequenz erstellen soll, kann keine Schlussfolgerungen ziehen, wenn die Sequenz zerstört wurde. Ein LLM, das zwei Konfigurationsbäume vergleichen soll, kann keinen Vergleich durchführen, wenn die Baumbeziehungen eingeebnet wurden. Die Strukturerhaltung macht die Kapsel für das Modell nutzbar — nicht nur sicher.</p>
 
-### h2: Was tokenisiert wird
+<h2>Was tokenisiert wird</h2>
 
-Operative Kennzeichner: DEVICE_ID, SITE_ID, CIRCUIT_ID, ASSET_ID, MISSION_REF
+<p>Operative Kennzeichner: DEVICE_ID, SITE_ID, CIRCUIT_ID, ASSET_ID, MISSION_REF</p>
 
-Kundenreferenzen und -segmente
+<p>Kundenreferenzen und -segmente</p>
 
-Freitextfelder mit gemischten Kennzeichnern (NER-Maskierung)
+<p>Freitextfelder mit gemischten Kennzeichnern (NER-Maskierung)</p>
 
-Sensible Attributwerte (im Rahmen des DP-Budgets)
+<p>Sensible Attributwerte (im Rahmen des DP-Budgets)</p>
 
----
+<h2>Was erhalten bleibt</h2>
 
-### h2: Was erhalten bleibt
+<p>Zeitliche Reihenfolge von Ereignissen</p>
 
-Zeitliche Reihenfolge von Ereignissen
+<p>Ursache-Wirkungs-Beziehungen in Vorfallssequenzen</p>
 
-Ursache-Wirkungs-Beziehungen in Vorfallssequenzen
+<p>Dokumentstruktur (Abschnitte, Listen, Tabellen)</p>
 
-Dokumentstruktur (Abschnitte, Listen, Tabellen)
+<p>Konfigurationsbaum (Eltern-Kind-Beziehungen, Abhängigkeiten)</p>
 
-Konfigurationsbaum (Eltern-Kind-Beziehungen, Abhängigkeiten)
+<p>Topologiegraph (Knoten, Kanten, Pfade)</p>
 
-Topologiegraph (Knoten, Kanten, Pfade)
+<h2>Zusammenwirken mit weiteren Komponenten</h2>
 
----
+<p>Differential Privacy — begrenzt das Inferenzrisiko der Kapsel</p>
 
-### h2: Zusammenwirken mit weiteren Komponenten
+<p>State Vault for Restoration — führt die Token unternehmensintern auf ihre Originalwerte zurück</p>
 
-Differential Privacy — begrenzt das Inferenzrisiko der Kapsel
+<p>Two execution paths — Pfad A oder Pfad B gemäß Workflow-Richtlinie</p>
 
-State Vault for Restoration — führt die Token unternehmensintern auf ihre Originalwerte zurück
+<h2>Leitsatz</h2>
 
-Two execution paths — Pfad A oder Pfad B gemäß Workflow-Richtlinie
-
----
-
-### h2: Leitsatz
-
-Die strukturerhaltende Kapsulierung macht die Kapsel nutzbar. Der auf Differential Privacy basierende Schutz macht sie verteidigbar. Der State Vault macht sie wiederherstellbar. Zusammen bilden sie den AI enablement data layer.
-
----
+<p>Die strukturerhaltende Kapsulierung macht die Kapsel nutzbar. Der auf Differential Privacy basierende Schutz macht sie verteidigbar. Der State Vault macht sie wiederherstellbar. Zusammen bilden sie den AI enablement data layer.</p>
 
 ## Section 04: Related Terms
 

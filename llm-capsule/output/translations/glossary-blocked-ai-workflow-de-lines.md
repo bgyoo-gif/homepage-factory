@@ -28,45 +28,38 @@ Ein blockierter KI-Workflow ist ein Geschäftsprozess, der vom KI-Einsatz profit
 
 ## Section 03: Body HTML
 
-### h2: Relevanz als Entscheidungsrahmen
 
-Die meisten KI-Gespräche in Unternehmen beginnen mit der Frage nach Fähigkeiten: Kann das Modell X? In regulierten Betrieben ist die eigentliche Einschränkung selten die Modellkompetenz — sie liegt darin, dass die relevanten operativen Daten das Modell nicht erreichen dürfen. Das ist der blockierte KI-Workflow. Wer dieses Problem präzise benennt, lenkt die Beschaffungsdiskussion auf die Schicht, die die Blockierung tatsächlich aufhebt.
+<h2>Relevanz als Entscheidungsrahmen</h2>
 
----
+<p>Die meisten KI-Gespräche in Unternehmen beginnen mit der Frage nach Fähigkeiten: Kann das Modell X? In regulierten Betrieben ist die eigentliche Einschränkung selten die Modellkompetenz — sie liegt darin, dass die relevanten operativen Daten das Modell nicht erreichen dürfen. Das ist der blockierte KI-Workflow. Wer dieses Problem präzise benennt, lenkt die Beschaffungsdiskussion auf die Schicht, die die Blockierung tatsächlich aufhebt.</p>
 
-### h2: Typische Muster
+<h2>Typische Muster</h2>
 
-NOC-RCA-Workflows blockiert, weil Netzwerkprotokolle die regulierte Jurisdiction nicht verlassen dürfen
+<p>NOC-RCA-Workflows blockiert, weil Netzwerkprotokolle die regulierte Jurisdiction nicht verlassen dürfen</p>
 
-OT-Schwachstellentriage blockiert, weil Asset-Referenzen und Anlagenbereiche keinen externen Endpunkt erreichen dürfen
+<p>OT-Schwachstellentriage blockiert, weil Asset-Referenzen und Anlagenbereiche keinen externen Endpunkt erreichen dürfen</p>
 
-Klinische Workflow-Unterstützung blockiert, weil PHI kombiniert mit operativen Mustern durch PII-Filterung allein nicht sicher verarbeitet werden kann
+<p>Klinische Workflow-Unterstützung blockiert, weil PHI kombiniert mit operativen Mustern durch PII-Filterung allein nicht sicher verarbeitet werden kann</p>
 
-Erstellung von Missionszusammenfassungen blockiert, weil Air-Gapped-Umgebungen jede externe Übertragung untersagen
+<p>Erstellung von Missionszusammenfassungen blockiert, weil Air-Gapped-Umgebungen jede externe Übertragung untersagen</p>
 
-Regulierte Finanzprüfungen blockiert, weil die Compliance-Anforderungen die Übermittlung von Audit-Trail-Inhalten verbieten
+<p>Regulierte Finanzprüfungen blockiert, weil die Compliance-Anforderungen die Übermittlung von Audit-Trail-Inhalten verbieten</p>
 
----
+<h2>Vom blockierten Workflow zum produktiven KI-Einsatz</h2>
 
-### h2: Vom blockierten Workflow zum produktiven KI-Einsatz
+<p>Das Muster zur Aufhebung der Blockierung ist branchenübergreifend konsistent:</p>
 
-Das Muster zur Aufhebung der Blockierung ist branchenübergreifend konsistent:
+<p>Die operative Datenkategorie identifizieren, die den Workflow blockiert.</p>
 
-Die operative Datenkategorie identifizieren, die den Workflow blockiert.
+<p>Strukturerhaltende Kapsulierung mit Differential-Privacy-basiertem Schutz anwenden.</p>
 
-Strukturerhaltende Kapsulierung mit Differential-Privacy-basiertem Schutz anwenden.
+<p>Entsprechend der Richtlinie über einen der zwei Ausführungspfade weiterleiten.</p>
 
-Entsprechend der Richtlinie über einen der zwei Ausführungspfade weiterleiten.
+<p>Über den State Vault in den ursprünglichen Workflow zurückführen.</p>
 
-Über den State Vault in den ursprünglichen Workflow zurückführen.
+<h2>Kernaussage</h2>
 
----
-
-### h2: Kernaussage
-
-Die meisten KI-Projekte in Unternehmen scheitern nicht am Modell. Sie scheitern an den Daten, die das Modell nicht erreichen kann. Dieses Problem als blockierten KI-Workflow zu benennen — und die Blockierung über einen AI enablement data layer aufzuheben — ist der Einstiegspunkt für regulierte Betriebe.
-
----
+<p>Die meisten KI-Projekte in Unternehmen scheitern nicht am Modell. Sie scheitern an den Daten, die das Modell nicht erreichen kann. Dieses Problem als blockierten KI-Workflow zu benennen — und die Blockierung über einen AI enablement data layer aufzuheben — ist der Einstiegspunkt für regulierte Betriebe.</p>
 
 ## Section 04: Related Terms
 

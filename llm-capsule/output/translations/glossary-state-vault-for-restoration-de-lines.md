@@ -28,55 +28,44 @@ Der State Vault ist ein ausschließlich lokal betriebener Datenspeicher, der das
 
 ## Section 03: Body HTML
 
-### h2: Gespeicherte Inhalte
 
-Token-Mapping: Capsule-Tokens ↔ ursprüngliche operative Kennzeichner
+<h2>Gespeicherte Inhalte</h2>
 
-Workflow-Kontext: Zuordnung jeder Kapsel zu einem Vorfall, Ticket oder Runbook
+<p>Token-Mapping: Capsule-Tokens ↔ ursprüngliche operative Kennzeichner</p>
 
-Policy-Referenz: welche Markierungsrichtlinie auf diese Kapsel angewendet wurde
+<p>Workflow-Kontext: Zuordnung jeder Kapsel zu einem Vorfall, Ticket oder Runbook</p>
 
-Privacy-Budget-Referenz: welchen Anteil des DP-Budgets dieses Workflows die Kapsel verbraucht hat
+<p>Policy-Referenz: welche Markierungsrichtlinie auf diese Kapsel angewendet wurde</p>
 
----
+<p>Privacy-Budget-Referenz: welchen Anteil des DP-Budgets dieses Workflows die Kapsel verbraucht hat</p>
 
-### h2: Betriebsort
+<h2>Betriebsort</h2>
 
-Der State Vault verbleibt ausnahmslos in der lokalen Unternehmensinfrastruktur. Das Token-Mapping überschreitet zu keinem Zeitpunkt die externe Grenze. In Pfad A (externes, zugelassenes LLM) erhält das Modell ausschließlich Capsule-Tokens; die Wiederherstellung erfolgt durch den State Vault erst nach Rückgabe der Antwort. In Pfad B (lokales On-Premise-Leichtgewichtsmodell) verbleibt die gesamte Verarbeitung Ende-zu-Ende innerhalb der eigenen Infrastruktur.
+<p>Der State Vault verbleibt ausnahmslos in der lokalen Unternehmensinfrastruktur. Das Token-Mapping überschreitet zu keinem Zeitpunkt die externe Grenze. In Pfad A (externes, zugelassenes LLM) erhält das Modell ausschließlich Capsule-Tokens; die Wiederherstellung erfolgt durch den State Vault erst nach Rückgabe der Antwort. In Pfad B (lokales On-Premise-Leichtgewichtsmodell) verbleibt die gesamte Verarbeitung Ende-zu-Ende innerhalb der eigenen Infrastruktur.</p>
 
----
+<h2>Relevanz im Betrieb</h2>
 
-### h2: Relevanz im Betrieb
+<p>Ohne Wiederherstellung liefert das KI-System lediglich unverwertbare Token-Ausgaben. Das Operations-Team benötigt das Ergebnis als verwertbares Artefakt im ursprünglichen Workflow: eine Ticket-Aktualisierung mit echten Geräte-IDs, einen Runbook-Schritt mit dem tatsächlichen Standortverweis, eine RCA mit dem konkreten Vorfallsbezug. Der State Vault ist die Komponente, die dies ermöglicht — ohne dass die Originaldaten das Modell jemals erreichen.</p>
 
-Ohne Wiederherstellung liefert das KI-System lediglich unverwertbare Token-Ausgaben. Das Operations-Team benötigt das Ergebnis als verwertbares Artefakt im ursprünglichen Workflow: eine Ticket-Aktualisierung mit echten Geräte-IDs, einen Runbook-Schritt mit dem tatsächlichen Standortverweis, eine RCA mit dem konkreten Vorfallsbezug. Der State Vault ist die Komponente, die dies ermöglicht — ohne dass die Originaldaten das Modell jemals erreichen.
+<h2>Ausgaben des State Vault</h2>
 
----
+<p>Wiederhergestellte RCA, eingefügt in das Ticket-System</p>
 
-### h2: Ausgaben des State Vault
+<p>Wiederhergestellter Runbook-Schritt, eingefügt in das Runbook</p>
 
-Wiederhergestellte RCA, eingefügt in das Ticket-System
+<p>Wiederhergestellte Zusammenfassung, eingefügt in das KIS oder Krankenhausportal</p>
 
-Wiederhergestellter Runbook-Schritt, eingefügt in das Runbook
+<p>Wiederhergestellte Einsatzzusammenfassung, eingefügt in das Einsatzsystem (nur Pfad B)</p>
 
-Wiederhergestellte Zusammenfassung, eingefügt in das KIS oder Krankenhausportal
+<p>Wiederhergestellter Compliance-Prüfentwurf, eingefügt in den Prüfworkflow</p>
 
-Wiederhergestellte Einsatzzusammenfassung, eingefügt in das Einsatzsystem (nur Pfad B)
+<h2>Nachvollziehbarkeit</h2>
 
-Wiederhergestellter Compliance-Prüfentwurf, eingefügt in den Prüfworkflow
+<p>Jede Wiederherstellung wird protokolliert. Das Revisionsprotokoll erfasst die Kapsel, die angewendete Richtlinie, den genutzten Ausführungspfad, die Token-Mapping-Operationen sowie das Ziel der wiederhergestellten Ausgabe. Compliance-Verantwortliche können jedes wiederhergestellte Feld lückenlos auf seine Kapsel und die zugehörige Richtlinie zurückverfolgen.</p>
 
----
+<h2>Leitsatz</h2>
 
-### h2: Nachvollziehbarkeit
-
-Jede Wiederherstellung wird protokolliert. Das Revisionsprotokoll erfasst die Kapsel, die angewendete Richtlinie, den genutzten Ausführungspfad, die Token-Mapping-Operationen sowie das Ziel der wiederhergestellten Ausgabe. Compliance-Verantwortliche können jedes wiederhergestellte Feld lückenlos auf seine Kapsel und die zugehörige Richtlinie zurückverfolgen.
-
----
-
-### h2: Leitsatz
-
-Die Kapsel ist das, was das KI-Modell verarbeitet. Der State Vault ist das, was der Fachbereich erhält. Die Grenze zwischen beiden ist die operative Gewährleistung.
-
----
+<p>Die Kapsel ist das, was das KI-Modell verarbeitet. Der State Vault ist das, was der Fachbereich erhält. Die Grenze zwischen beiden ist die operative Gewährleistung.</p>
 
 ## Section 04: Related Terms
 

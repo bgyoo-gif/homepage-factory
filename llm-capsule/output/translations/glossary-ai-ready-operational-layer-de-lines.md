@@ -30,55 +30,36 @@ AI-Ready Operational Layer ist ein Synonym für AI enablement data layer. Die La
 
 ---
 
-## Section 03: Body HTML (Callout)
+## Section 03: Body HTML
 
-Hinweis zur Terminologie. „AI-ready operational layer" und „AI enablement data layer" bezeichnen dieselbe Produktkategorie. Die aktuelle Kategoriebezeichnung ab v6.1 lautet AI enablement data layer for regulated operations. Beide Begriffe sind auffindbar, da sie in früheren Unterlagen, Partnergesprächen und externen Referenzen verwendet wurden. Leser, die über den älteren Begriff auf diese Seite gelangen, werden zur kanonischen Definition weitergeleitet.
+<div class="callout"><strong>Hinweis zur Terminologie.</strong> „AI-ready operational layer" und „AI enablement data layer" bezeichnen dieselbe Produktkategorie. Die aktuelle Kategoriebezeichnung ab v6.1 lautet <strong>AI enablement data layer for regulated operations</strong>. Beide Begriffe sind auffindbar, da sie in früheren Unterlagen, Partnergesprächen und externen Referenzen verwendet wurden. Leser, die über den älteren Begriff auf diese Seite gelangen, werden zur kanonischen Definition weitergeleitet.</div>
 
----
+<h2>Definition (Synonym)</h2>
 
-## Section 04: Body HTML — Definition (synonym)
+<p>Der <strong>AI enablement data layer</strong> (früher als <strong>AI-ready operational layer</strong> bezeichnet) ist eine Laufzeitschicht zwischen der regulierten Unternehmensumgebung — NOC-Konsolen, Ticket-Systeme, OT-Konsolen, EHR, Missionssysteme — und großen Sprachmodellen. Operative Daten — Netzwerkprotokolle, Incident-Datensätze, Konfigurationen, klinische Workflows, Missionskontext — werden mittels strukturerhaltender, Differential-Privacy-basierter Kapsulierung in KI-geeigneten Kontext überführt. KI-Workflows werden innerhalb der Unternehmensumgebung über zwei Ausführungspfade ausgeführt: ein externes freigegebenes LLM mit ausschließlich Kapseldaten oder ein lokales On-Premise-Leichtgewichtmodell. Ergebnisse werden über den State Vault in den ursprünglichen Workflow zurückgeführt. Der AI enablement data layer unterscheidet sich von PII-Schutzmaßnahmen und KI-Sicherheitslösungen in Umfang, Schicht und Ausführungsmodell.</p>
 
-Definition (Synonym)
+<h2>Warum zwei Bezeichnungen existieren</h2>
 
-Der AI enablement data layer (früher als AI-ready operational layer bezeichnet) ist eine Laufzeitschicht zwischen der regulierten Unternehmensumgebung — NOC-Konsolen, Ticket-Systeme, OT-Konsolen, EHR, Missionssysteme — und großen Sprachmodellen. Operative Daten — Netzwerkprotokolle, Incident-Datensätze, Konfigurationen, klinische Workflows, Missionskontext — werden mittels strukturerhaltender, Differential-Privacy-basierter Kapsulierung in KI-geeigneten Kontext überführt. KI-Workflows werden innerhalb der Unternehmensumgebung über zwei Ausführungspfade ausgeführt: ein externes freigegebenes LLM mit ausschließlich Kapseldaten oder ein lokales On-Premise-Leichtgewichtmodell. Ergebnisse werden über den State Vault in den ursprünglichen Workflow zurückgeführt. Der AI enablement data layer unterscheidet sich von PII-Schutzmaßnahmen und KI-Sicherheitslösungen in Umfang, Schicht und Ausführungsmodell.
+<p>„AI-ready operational layer" wurde in früheren Strategiepräsentationen, Partnerpräsentationen und Materialien des Deutsche Telekom T Challenge 2026 verwendet — mit dem Schwerpunkt auf <em>operativer Datenbereitschaft</em>. „AI enablement data layer for regulated operations" wurde mit v6.1 der kundenseitigen Website eingeführt, mit dem Schwerpunkt auf <em>KI-Aktivierung</em> auf Datenebene für Käufer aus <em>regulierten Branchen</em>. Das Produkt ist identisch — die Marketingsprache wurde stärker am Käufer ausgerichtet.</p>
 
----
+<h2>Kanonische Kategorieseite</h2>
 
-## Section 05: Body HTML — Why two terms exist
+<p>Die vollständige v6.1-Definition, Kundenreferenzen, die Vier-Zonen-Architektur (Corporate Internal Network · DMZ — Demilitarisierte Zone · In-House Team · Local — Auto Reconstruction) sowie die sechs Architekturpfeiler finden Sie unter <a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> und auf der Seite <a href="/architecture">Architecture</a>.</p>
 
-Warum zwei Bezeichnungen existieren
+<h2>Verwandte Begriffe</h2>
 
-„AI-ready operational layer" wurde in früheren Strategiepräsentationen, Partnerpräsentationen und Materialien des Deutsche Telekom T Challenge 2026 verwendet — mit dem Schwerpunkt auf operativer Datenbereitschaft. „AI enablement data layer for regulated operations" wurde mit v6.1 der kundenseitigen Website eingeführt, mit dem Schwerpunkt auf KI-Aktivierung auf Datenebene für Käufer aus regulierten Branchen. Das Produkt ist identisch — die Marketingsprache wurde stärker am Käufer ausgerichtet.
-
----
-
-## Section 06: Body HTML — Canonical category page
-
-Kanonische Kategorieseite
-
-Die vollständige v6.1-Definition, Kundenreferenzen, die Vier-Zonen-Architektur (Corporate Internal Network · DMZ — Demilitarisierte Zone · In-House Team · Local — Auto Reconstruction) sowie die sechs Architekturpfeiler finden Sie unter AI enablement data layer und auf der Seite Architecture.
-
----
-
-## Section 07: Body HTML — Related (inline list)
-
-Verwandte Begriffe
-
-AI enablement data layer — kanonische Kategorieseite
-
-Operative Daten
-
-Zwei Ausführungspfade
-
-Strukturerhaltende Kapsulierung
-
-Differential Privacy
-
-State Vault für die Wiederherstellung
+<ul>
+<li><a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> — kanonische Kategorieseite</li>
+<li><a href="/glossary/operational-data">Operative Daten</a></li>
+<li><a href="/glossary/two-execution-paths">Zwei Ausführungspfade</a></li>
+<li><a href="/glossary/structure-preserving-encapsulation">Strukturerhaltende Kapsulierung</a></li>
+<li><a href="/glossary/differential-privacy">Differential Privacy</a></li>
+<li><a href="/glossary/state-vault-for-restoration">State Vault für die Wiederherstellung</a></li>
+</ul>
 
 ---
 
-## Section 08: Related Terms Panel
+## Section 04: Related Terms Panel
 
 AI enablement data layer
 AI enablement data layer

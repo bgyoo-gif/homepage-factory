@@ -36,17 +36,14 @@ The connector lane describes how LLM Capsule, running inside the customer's envi
 
 <h2>읽는 대상</h2>
 
+<ul>
 <li><strong>문서 및 레코드 시스템</strong> — SharePoint, 내부 DMS, 고객 VPC의 S3 / blob 스토리지, 파일 저장소</li>
-
 <li><strong>티켓 및 ITSM 시스템</strong> — ServiceNow, Jira, Remedy, 사내 티켓 시스템</li>
-
 <li><strong>CRM / ERP</strong> — Salesforce, Dynamics, Oracle, SAP, 사내 시스템</li>
-
 <li><strong>의료 기록</strong> — 병원 정보 시스템, 임상 기록 저장소, 영상 메타데이터 — 모두 병원 네트워크 내부에서 읽습니다</li>
-
 <li><strong>운영 시스템</strong> — NOC 콘솔, OSS / BSS, OT 히스토리안, DMZ에서 읽고 환경 내에서 처리하는 로그 플랫폼</li>
-
 <li><strong>커스텀 및 레거시 시스템</strong> — 내부 데이터베이스, 파일 드롭, 큐, 사내 도구 — Capsule은 고객이 이미 운영 중인 환경에 맞게 적응합니다</li>
+</ul>
 
 <h2>이 구분이 중요한 이유</h2>
 
@@ -56,19 +53,15 @@ The connector lane describes how LLM Capsule, running inside the customer's envi
 
 <p>Capsule이 환경 내부에 배포되면, 기존 시스템은 각자의 스택에 맞는 인터페이스를 통해 호출합니다.</p>
 
+<ul>
 <li><strong>REST / gRPC</strong> — 환경 내부의 최신 운영 도구, RAG 파이프라인, 커스텀 오케스트레이터용</li>
-
 <li><strong>JDBC / ODBC</strong> — Capsule 호출을 저장 프로시저나 작업 단계로 필요로 하는 레거시 데이터베이스(Oracle, MSSQL, DB2)용</li>
-
 <li><strong>Graph API</strong> — 문서 이벤트가 Capsule 처리를 트리거하는 DMS / ECM 시스템(SharePoint 등)용</li>
-
 <li><strong>Webhook / log tap</strong> — NOC, 티켓, OT, SIEM 인접 시스템의 인시던트 및 이벤트 기반 워크플로우용</li>
-
 <li><strong>On-prem API</strong> — Capsule의 자체 온프레미스 호출 접점 — 망분리, 하이브리드, VPC 구성 모두 동일한 계약</li>
-
 <li><strong>Embedded SDK</strong> — 자사 제품 내에 Capsule을 내장하는 ISV 및 플랫폼 벤더를 위한 라이브러리 수준 통합</li>
-
 <li><strong>Slack App</strong> — Slack을 운영 UI로 사용하는 팀용 — 런타임은 고객 환경에 그대로 유지되며, Slack App이 호출 접점이 됩니다</li>
+</ul>
 
 <p>이 모든 인터페이스는 고객 네트워크 내부에 머무릅니다. 원본 운영 데이터를 외부 SaaS 엔드포인트를 통해 Capsule로 라우팅하는 인터페이스는 하나도 없습니다.</p>
 

@@ -28,55 +28,44 @@ Differential Privacy (DP) ist ein mathematisches Rahmenwerk zum Schutz einzelner
 
 ## Section 03: Body HTML
 
-### h2: Funktionsweise
 
-Die Methode fügt kalibriertes Rauschen (typischerweise nach Laplace- oder Gaußverteilung) zu Ausgaben, Abfragen oder Transformationen hinzu. Die Rauschstärke ergibt sich aus der Sensitivität der Funktion und dem festgelegten Privacy-Budget. Das Ergebnis ist eine quantitative Schranke dafür, was ein Angreifer aus der Ausgabe über einzelne Datensätze ableiten kann.
+<h2>Funktionsweise</h2>
 
----
+<p>Die Methode fügt kalibriertes Rauschen (typischerweise nach Laplace- oder Gaußverteilung) zu Ausgaben, Abfragen oder Transformationen hinzu. Die Rauschstärke ergibt sich aus der Sensitivität der Funktion und dem festgelegten Privacy-Budget. Das Ergebnis ist eine quantitative Schranke dafür, was ein Angreifer aus der Ausgabe über einzelne Datensätze ableiten kann.</p>
 
-### h2: Einsatz im AI enablement data layer
+<h2>Einsatz im AI enablement data layer</h2>
 
-In LLM Capsule wird Differential-Privacy-basierter Schutz während des strukturerhaltenden Kapsulierungsschritts angewendet. Die Kapsel (KI-geeigneter Kontext) trägt die Differential-Privacy-Garantie zusätzlich zur feldbasierten Tokenisierung. Damit werden Inferenzrisiken adressiert, die durch feldbasiertes Masking allein nicht gebunden werden können — insbesondere bei operativen Daten, deren Struktur, Sequenz und Aggregatmuster selbst sensible Informationen enthalten.
+<p>In LLM Capsule wird Differential-Privacy-basierter Schutz während des strukturerhaltenden Kapsulierungsschritts angewendet. Die Kapsel (KI-geeigneter Kontext) trägt die Differential-Privacy-Garantie zusätzlich zur feldbasierten Tokenisierung. Damit werden Inferenzrisiken adressiert, die durch feldbasiertes Masking allein nicht gebunden werden können — insbesondere bei operativen Daten, deren Struktur, Sequenz und Aggregatmuster selbst sensible Informationen enthalten.</p>
 
----
+<h2>Was es nicht ist</h2>
 
-### h2: Was es nicht ist
+<p>Keine rechtliche oder regulatorische Garantie. Es handelt sich um ein technisches Rahmenwerk mit einem einstellbaren Parameter.</p>
 
-Keine rechtliche oder regulatorische Garantie. Es handelt sich um ein technisches Rahmenwerk mit einem einstellbaren Parameter.
+<p>Keine Ja/Nein-Aussage. Datenschutz und Datennutzbarkeit sind über das Privacy-Budget gegeneinander abzuwägen.</p>
 
-Keine Ja/Nein-Aussage. Datenschutz und Datennutzbarkeit sind über das Privacy-Budget gegeneinander abzuwägen.
+<p>Kein Ersatz für Governance, Auditierung oder Richtlinien.</p>
 
-Kein Ersatz für Governance, Auditierung oder Richtlinien.
+<h2>Relevanz im Unternehmenseinsatz</h2>
 
----
+<p>Operative Daten — Netzwerkprotokolle, Konfigurationen, OT-Manifeste, klinische Workflows — lassen sich über Muster rekonstruieren, nicht nur über direkte Identifikatoren. Differential Privacy bietet den Rahmen, mit dem Unternehmens-Governance das Datenabfluss-Risiko quantitativ bewerten und ein Budget pro Workflow durchsetzen kann.</p>
 
-### h2: Relevanz im Unternehmenseinsatz
+<h2>Zulässige Aussagen</h2>
 
-Operative Daten — Netzwerkprotokolle, Konfigurationen, OT-Manifeste, klinische Workflows — lassen sich über Muster rekonstruieren, nicht nur über direkte Identifikatoren. Differential Privacy bietet den Rahmen, mit dem Unternehmens-Governance das Datenabfluss-Risiko quantitativ bewerten und ein Budget pro Workflow durchsetzen kann.
+<p>„Datenschutzerhaltend mit definiertem Risikominderungsumfang"</p>
 
----
+<p>„Begrenztes Inferenzrisiko innerhalb des Policy-Privacy-Budgets"</p>
 
-### h2: Zulässige Aussagen
+<p>„Differential-Privacy-basierte Kapsulierung"</p>
 
-„Datenschutzerhaltend mit definiertem Risikominderungsumfang"
+<h2>Zu vermeidende Aussagen</h2>
 
-„Begrenztes Inferenzrisiko innerhalb des Policy-Privacy-Budgets"
+<p>„Mathematisch unmöglich zu rekonstruieren"</p>
 
-„Differential-Privacy-basierte Kapsulierung"
+<p>„100 % sicher"</p>
 
----
+<p>„DSGVO-konformität garantiert"</p>
 
-### h2: Zu vermeidende Aussagen
-
-„Mathematisch unmöglich zu rekonstruieren"
-
-„100 % sicher"
-
-„DSGVO-konformität garantiert"
-
-„Null-Risiko"
-
----
+<p>„Null-Risiko"</p>
 
 ## Section 04: Related Terms
 

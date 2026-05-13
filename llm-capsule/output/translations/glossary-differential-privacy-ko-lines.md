@@ -38,11 +38,11 @@ Differential privacy (DP) is a mathematical framework for protecting individual 
 
 <h2>이것이 아닌 것</h2>
 
+<ul>
 <li>법적·규제적 보장이 아닙니다. 조정 가능한 파라미터를 가진 기술적 프레임워크입니다.</li>
-
 <li>이분법적 보장이 아닙니다. 프라이버시와 유용성은 프라이버시 예산을 통해 상충됩니다.</li>
-
 <li>거버넌스, 감사, 정책의 대체재가 아닙니다.</li>
+</ul>
 
 <h2>이것이 중요한 이유</h2>
 
@@ -50,21 +50,20 @@ Differential privacy (DP) is a mathematical framework for protecting individual 
 
 <h2>사용 가능한 표현</h2>
 
+<ul>
 <li>"정의된 위험 감소 범위 내에서 프라이버시를 보존합니다"</li>
-
 <li>"정책의 프라이버시 예산 내에서 추론 위험이 제한됩니다"</li>
-
 <li>"차등 프라이버시 기반 캡슐화"</li>
+</ul>
 
 <h2>사용을 피해야 할 표현</h2>
 
+<ul>
 <li>"수학적으로 복원이 불가능합니다"</li>
-
 <li>"100% 안전합니다"</li>
-
 <li>"GDPR이 보장됩니다"</li>
-
 <li>"위험이 전혀 없습니다"</li>
+</ul>
 
 ---
 

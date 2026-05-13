@@ -28,81 +28,60 @@ Der AI enablement data layer ist die Architekturkomponente, die zwischen regulie
 
 ## Section 03: Body HTML
 
-### h2: Funktionsweise (in drei Schritten)
+<h2>Funktionsweise (in drei Schritten)</h2>
 
-1. **Liest** operative Daten aus bestehenden Unternehmenssystemen über REST/gRPC/JDBC-Konnektoren.
+<p>1. <strong>Liest</strong> operative Daten aus bestehenden Unternehmenssystemen über REST/gRPC/JDBC-Konnektoren.<br>
+2. <strong>Kapsuliert</strong> sensible Inhalte lokal mit strukturerhaltender und Differential-Privacy-basierter Schutzschicht.<br>
+3. <strong>Stellt</strong> KI-Ausgaben innerhalb der Unternehmensumgebung in den ursprünglichen Workflow zurück.</p>
 
-2. **Kapsuliert** sensible Inhalte lokal mit strukturerhaltender und Differential-Privacy-basierter Schutzschicht.
+<h2>Was er nicht ist</h2>
 
-3. **Stellt** KI-Ausgaben innerhalb der Unternehmensumgebung in den ursprünglichen Workflow zurück.
+<ul>
+<li><strong>Keine PII-Schutzmaßnahme</strong>. PII-Schutzmaßnahmen erkennen individuelle Kennungen an der API-Grenze. Der AI enablement data layer verarbeitet strukturierte operative Daten — Ticket-Sequenzen, Netzwerkkonfigurationen, OT-Manifeste, klinische Workflows.</li>
+<li><strong>Kein KI/LLM-Sicherheits-Gateway</strong>. Sicherheits-Gateways konzentrieren sich auf Prompt-Injection, Laufzeitbedrohungen und Filterung auf API-Ebene. Der AI enablement data layer operiert eine Schicht tiefer — auf den Daten selbst.</li>
+<li><strong>Keine Plattform für synthetische Daten</strong>. Synthetische Daten erzeugen künstliche Datensätze für Training und Tests. Der AI enablement data layer arbeitet mit echten Produktionsdokumenten in Live-Workflows.</li>
+<li><strong>Kein CISO/SOC-Werkzeug</strong>. Zielgruppe sind KI-Teams, CDO/CAIO oder Geschäftsbereiche, die KI produktiv einsetzen möchten. Sicherheit ist notwendige Infrastruktur — nicht der primäre Produktzweck.</li>
+</ul>
 
----
+<h2>Die fünf Komponenten</h2>
 
-### h2: Was er nicht ist
+<ol>
+<li><strong>Encapsulation Engine</strong> — lokale Erkennung und Ersetzung, das Mapping verbleibt intern.</li>
+<li><strong>Policy Control</strong> — versionierte, bereichsbezogene, rollenbasiert gesteuerte Richtlinien.</li>
+<li><strong>Capsule Transmission</strong> — ausschließlich geschützte Kapseln überschreiten die Vertrauensgrenze.</li>
+<li><strong>Restoration Engine</strong> — lokaler Token Vault, Ausgabevalidierung, Kontext-Rückbindung.</li>
+<li><strong>Audit &amp; Compliance</strong> — jedes Ereignis wird für die DSGVO (GDPR) / HIPAA / SOX-Governance protokolliert.</li>
+</ol>
 
-**Keine PII-Schutzmaßnahme.** PII-Schutzmaßnahmen erkennen individuelle Kennungen an der API-Grenze. Der AI enablement data layer verarbeitet strukturierte operative Daten — Ticket-Sequenzen, Netzwerkkonfigurationen, OT-Manifeste, klinische Workflows.
+<h2>Die Vier-Zonen-Architektur (Referenz: diagram_v8)</h2>
 
-**Kein KI/LLM-Sicherheits-Gateway.** Sicherheits-Gateways konzentrieren sich auf Prompt-Injection, Laufzeitbedrohungen und Filterung auf API-Ebene. Der AI enablement data layer operiert eine Schicht tiefer — auf den Daten selbst.
+<p>Die Architektur gliedert sich in vier Zonen: <strong>Corporate Internal Network</strong> (bestehende Quellsysteme — ERP / CRM / Ticketing / DMS — werden vor Ort über REST / gRPC / JDBC / Graph API eingelesen) → <strong>DMZ — Demilitarisierte Zone</strong> (die Enhanced Encapsulation Layer wendet strukturerhaltenden, Differential-Privacy-basierten Schutz an) → <strong>In-House Team</strong> (Governance, Richtlinien und Routing entscheiden über Pfad A oder Pfad B) → <strong>Local — Auto Reconstruction</strong> (die KI-Antwort wird innerhalb der Organisation mit Originalwerten angereichert und als praxistaugliches Ergebnis in den ursprünglichen Workflow zurückgeführt). Operative Rohdaten überschreiten die Vertrauensgrenze nie — ausschließlich die geschützte Kapsel tut dies.</p>
 
-**Keine Plattform für synthetische Daten.** Synthetische Daten erzeugen künstliche Datensätze für Training und Tests. Der AI enablement data layer arbeitet mit echten Produktionsdokumenten in Live-Workflows.
+<h2>Sechs Architekturpfeiler</h2>
 
-**Kein CISO/SOC-Werkzeug.** Zielgruppe sind KI-Teams, CDO/CAIO oder Geschäftsbereiche, die KI produktiv einsetzen möchten. Sicherheit ist notwendige Infrastruktur — nicht der primäre Produktzweck.
+<ol>
+<li><strong>Über einfache PII-Schutzmaßnahmen hinaus</strong> — Freitextfelder wie Detailspalten in CS-Tickets lassen sich mit einfachen PII-Schutzmaßnahmen allein nicht sicher verarbeiten.</li>
+<li><strong>Keine Änderung bestehender Systeme</strong> — die Anbindung erfolgt durch einen einzigen API-Aufruf (REST / gRPC), Legacy-Systeme werden nicht umgebaut.</li>
+<li><strong>Über einfache Kapsulierung hinaus — Differential Privacy</strong> — DP wird zusätzlich zur Tokenisierung angewendet, um das Re-Identifikationsrisiko zu reduzieren.</li>
+<li><strong>Keine Offenlegung von Rohdaten gegenüber externen KI-Systemen</strong> — nur die Kapsel überschreitet die Vertrauensgrenze; durch DP-Verarbeitung lassen sich bei einem Datenaustritt keine Originalwerte rekonstruieren.</li>
+<li><strong>Automatische Wiederherstellung innerhalb der Unternehmensumgebung</strong> — die Wiederherstellung erfolgt ausschließlich intern; Daten, die die Grenze verlassen haben, lassen sich extern nicht rekonstruieren.</li>
+<li><strong>Governance, Richtlinien und fachlicher Kontext bleiben erhalten</strong> — die Unternehmensrichtlinie steuert Kapsulierung, Routing und Audit durchgehend.</li>
+</ol>
 
----
+<h2>Die zwei Ausführungspfade</h2>
 
-### h2: Die fünf Komponenten
+<ul>
+<li><strong>Pfad A</strong> — externes zugelassenes LLM (ChatGPT, Claude, Gemini, EU-regionale LLMs) — ausschließlich mit Kapseldaten. Keine Offenlegung operativer Rohdaten.</li>
+<li><strong>Pfad B</strong> — lokales On-Premise-Leichtgewichtmodell. Keine externe Datenübertragung. Für Air-Gapped-, klassifizierte, OT- und streng regulierte Workflows.</li>
+</ul>
 
-1. **Encapsulation Engine** — lokale Erkennung und Ersetzung, das Mapping verbleibt intern.
+<h2>Anwendungsszenarien</h2>
 
-2. **Policy Control** — versionierte, bereichsbezogene, rollenbasiert gesteuerte Richtlinien.
+<p>Immer wenn ein reguliertes Unternehmen KI auf echten Produktionsdaten einsetzen möchte — nicht auf synthetischen oder anonymisierten Datenauszügen — ohne Rohdaten an externe LLMs zu übermitteln und ohne bestehende Legacy-Systeme umzubauen. Anwendungsbereiche: Telekommunikations-NOC, klinische Workflows im Krankenhaus, Schadenbearbeitung in der Finanzbranche, Verteidigungsmissionen, OT-Betrieb, rechtliches Fallmanagement.</p>
 
-3. **Capsule Transmission** — ausschließlich geschützte Kapseln überschreiten die Vertrauensgrenze.
+<h2>Bestätigte Deployments</h2>
 
-4. **Restoration Engine** — lokaler Token Vault, Ausgabevalidierung, Kontext-Rückbindung.
-
-5. **Audit &amp; Compliance** — jedes Ereignis wird für die DSGVO (GDPR) / HIPAA / SOX-Governance protokolliert.
-
----
-
-### h2: Die Vier-Zonen-Architektur (Referenz: diagram_v8)
-
-Die Architektur gliedert sich in vier Zonen: **Corporate Internal Network** (bestehende Quellsysteme — ERP / CRM / Ticketing / DMS — werden vor Ort über REST / gRPC / JDBC / Graph API eingelesen) → **DMZ — Demilitarisierte Zone** (die Enhanced Encapsulation Layer wendet strukturerhaltenden, Differential-Privacy-basierten Schutz an) → **In-House Team** (Governance, Richtlinien und Routing entscheiden über Pfad A oder Pfad B) → **Local — Auto Reconstruction** (die KI-Antwort wird innerhalb der Organisation mit Originalwerten angereichert und als praxistaugliches Ergebnis in den ursprünglichen Workflow zurückgeführt). Operative Rohdaten überschreiten die Vertrauensgrenze nie — ausschließlich die geschützte Kapsel tut dies.
-
----
-
-### h2: Sechs Architekturpfeiler
-
-1. **Über einfache PII-Schutzmaßnahmen hinaus** — Freitextfelder wie Detailspalten in CS-Tickets lassen sich mit einfachen PII-Schutzmaßnahmen allein nicht sicher verarbeiten.
-
-2. **Keine Änderung bestehender Systeme** — die Anbindung erfolgt durch einen einzigen API-Aufruf (REST / gRPC), Legacy-Systeme werden nicht umgebaut.
-
-3. **Über einfache Kapsulierung hinaus — Differential Privacy** — DP wird zusätzlich zur Tokenisierung angewendet, um das Re-Identifikationsrisiko zu reduzieren.
-
-4. **Keine Offenlegung von Rohdaten gegenüber externen KI-Systemen** — nur die Kapsel überschreitet die Vertrauensgrenze; durch DP-Verarbeitung lassen sich bei einem Datenaustritt keine Originalwerte rekonstruieren.
-
-5. **Automatische Wiederherstellung innerhalb der Unternehmensumgebung** — die Wiederherstellung erfolgt ausschließlich intern; Daten, die die Grenze verlassen haben, lassen sich extern nicht rekonstruieren.
-
-6. **Governance, Richtlinien und fachlicher Kontext bleiben erhalten** — die Unternehmensrichtlinie steuert Kapsulierung, Routing und Audit durchgehend.
-
----
-
-### h2: Die zwei Ausführungspfade
-
-**Pfad A** — externes zugelassenes LLM (ChatGPT, Claude, Gemini, EU-regionale LLMs) — ausschließlich mit Kapseldaten. Keine Offenlegung operativer Rohdaten.
-
-**Pfad B** — lokales On-Premise-Leichtgewichtmodell. Keine externe Datenübertragung. Für Air-Gapped-, klassifizierte, OT- und streng regulierte Workflows.
-
----
-
-### h2: Anwendungsszenarien
-
-Immer wenn ein reguliertes Unternehmen KI auf echten Produktionsdaten einsetzen möchte — nicht auf synthetischen oder anonymisierten Datenauszügen — ohne Rohdaten an externe LLMs zu übermitteln und ohne bestehende Legacy-Systeme umzubauen. Anwendungsbereiche: Telekommunikations-NOC, klinische Workflows im Krankenhaus, Schadenbearbeitung in der Finanzbranche, Verteidigungsmissionen, OT-Betrieb, rechtliches Fallmanagement.
-
----
-
-### h2: Bestätigte Deployments
-
-SK Telecom (Telekommunikations-NOC), Deutsche Telekom T Challenge 2026 — Top 12 in Data Security &amp; Governance, Claroty (industrielle Cybersicherheit), EUMC (klinischer Krankenhausbetrieb), Kyobo / DB Insurance / IBK (Finanzwesen), Shin&amp;Kim (Rechtsberatung), Südkoreanisches Verteidigungsministerium (Missions-Workflows). Als Gartner Vendor anerkannt.
+<p>SK Telecom (Telekommunikations-NOC), Deutsche Telekom T Challenge 2026 — Top 12 in Data Security &amp; Governance, Claroty (industrielle Cybersicherheit), EUMC (klinischer Krankenhausbetrieb), Kyobo / DB Insurance / IBK (Finanzwesen), Shin&amp;Kim (Rechtsberatung), Südkoreanisches Verteidigungsministerium (Missions-Workflows). Als Gartner Vendor anerkannt.</p>
 
 ---
 

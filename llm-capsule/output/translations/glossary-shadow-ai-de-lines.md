@@ -28,51 +28,40 @@ Shadow AI bezeichnet die nicht autorisierte Nutzung externer LLMs durch Unterneh
 
 ## Section 03: Body HTML
 
-### h2: Entstehungsursachen
 
-Shadow AI ist ein Symptom, keine Ursache. Das typische Muster:
+<h2>Entstehungsursachen</h2>
 
-1. Ein Unternehmen pilotiert KI mit synthetischen Daten. Mitarbeitende erleben messbare Produktivitätssteigerungen.
+<p>Shadow AI ist ein Symptom, keine Ursache. Das typische Muster:</p>
 
-2. Der Pilotbetrieb gerät in der Sicherheitsprüfung ins Stocken, weil echte Produktionsdaten nicht an externe LLMs übermittelt werden dürfen.
+<ol>
+<li>Ein Unternehmen pilotiert KI mit synthetischen Daten. Mitarbeitende erleben messbare Produktivitätssteigerungen.</li>
+<li>Der Pilotbetrieb gerät in der Sicherheitsprüfung ins Stocken, weil echte Produktionsdaten nicht an externe LLMs übermittelt werden dürfen.</li>
+<li>Der Pilotbetrieb wird auf eine kaum verwendbare Datenteilmenge beschränkt. Die Produktivitätsgewinne entfallen.</li>
+<li>Mitarbeitende, die die Produktivitätssteigerung bereits erlebt haben, suchen nach Alternativen: Sie verarbeiten anonymisierte Ausschnitte via ChatGPT auf Privatgeräten, fotografieren geschwärzte Dokumente ab oder setzen nicht genehmigte KI-Plugins ein.</li>
+<li>Das Unternehmen vereint das Schlechteste beider Welten: KI-Produktivität außerhalb der Governance und kein produktiver KI-Einsatz innerhalb der Governance.</li>
+</ol>
 
-3. Der Pilotbetrieb wird auf eine kaum verwendbare Datenteilmenge beschränkt. Die Produktivitätsgewinne entfallen.
+<h2>Die strukturelle Lösung</h2>
 
-4. Mitarbeitende, die die Produktivitätssteigerung bereits erlebt haben, suchen nach Alternativen: Sie verarbeiten anonymisierte Ausschnitte via ChatGPT auf Privatgeräten, fotografieren geschwärzte Dokumente ab oder setzen nicht genehmigte KI-Plugins ein.
+<p>Shadow AI lässt sich nicht allein durch Richtliniendurchsetzung beheben — das behandelt nur das Symptom. Die strukturelle Lösung ist ein <strong>AI enablement data layer</strong>, der offizielle Werkzeuge befähigt, mit echten Produktionsdaten zu arbeiten: lokale Kapsulierung, Verarbeitung über ein zugelassenes externes LLM (Pfad A) oder ein lokales On-Premise-Modell (Pfad B), anschließend Wiederherstellung am ursprünglichen Ort. Sobald offizielle Werkzeuge das liefern, was Mitarbeitende in Pilotprojekten erlebt haben, sinkt die Shadow-Nutzung.</p>
 
-5. Das Unternehmen vereint das Schlechteste beider Welten: KI-Produktivität außerhalb der Governance und kein produktiver KI-Einsatz innerhalb der Governance.
+<h2>Typische Auftrittsbereiche</h2>
 
----
+<ul>
+<li><strong>Telekommunikations-NOC-Analysten</strong> fügen anonymisierte Ticket-Ausschnitte zur RCA-Unterstützung in ChatGPT ein.</li>
+<li><strong>Klinisches Personal in Krankenhäusern</strong> nutzt KI-Werkzeuge auf Privatgeräten zur Dokumentationserstellung.</li>
+<li><strong>Underwriter</strong> testen KI-Ausgaben auf de-identifizierten Schadenmeldungen.</li>
+<li><strong>Angestellte Rechtsanwälte</strong> fassen geschwärzte Verträge mit öffentlich zugänglichen KI-Diensten zusammen.</li>
+<li><strong>Ingenieure</strong> verwenden frei verfügbare KI-Werkzeuge auf internen Dokumenten mit sensiblen Kennzeichnern.</li>
+</ul>
 
-### h2: Die strukturelle Lösung
+<h2>Verwandte Begriffe</h2>
 
-Shadow AI lässt sich nicht allein durch Richtliniendurchsetzung beheben — das behandelt nur das Symptom. Die strukturelle Lösung ist ein **AI enablement data layer**, der offizielle Werkzeuge befähigt, mit echten Produktionsdaten zu arbeiten: lokale Kapsulierung, Verarbeitung über ein zugelassenes externes LLM (Pfad A) oder ein lokales On-Premise-Modell (Pfad B), anschließend Wiederherstellung am ursprünglichen Ort. Sobald offizielle Werkzeuge das liefern, was Mitarbeitende in Pilotprojekten erlebt haben, sinkt die Shadow-Nutzung.
+<p>Blockierter KI-Workflow</p>
 
----
+<p>AI enablement data layer</p>
 
-### h2: Typische Auftrittsbereiche
-
-**Telekommunikations-NOC-Analysten** fügen anonymisierte Ticket-Ausschnitte zur RCA-Unterstützung in ChatGPT ein.
-
-**Klinisches Personal in Krankenhäusern** nutzt KI-Werkzeuge auf Privatgeräten zur Dokumentationserstellung.
-
-**Underwriter** testen KI-Ausgaben auf de-identifizierten Schadenmeldungen.
-
-**Angestellte Rechtsanwälte** fassen geschwärzte Verträge mit öffentlich zugänglichen KI-Diensten zusammen.
-
-**Ingenieure** verwenden frei verfügbare KI-Werkzeuge auf internen Dokumenten mit sensiblen Kennzeichnern.
-
----
-
-### h2: Verwandte Begriffe
-
-Blockierter KI-Workflow
-
-AI enablement data layer
-
-Learn: Warum KI-Pilotprojekte in Unternehmen ins Stocken geraten
-
----
+<p>Learn: Warum KI-Pilotprojekte in Unternehmen ins Stocken geraten</p>
 
 ## Section 04: Related Terms
 

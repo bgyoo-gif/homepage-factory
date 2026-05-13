@@ -36,25 +36,22 @@ An AI enablement data layer is the architectural component that sits between reg
 
 <h2>이것이 아닌 것</h2>
 
+<ul>
 <li><strong>PII 가드레일이 아닙니다</strong>. PII 가드레일은 API 경계에서 개인 식별자를 탐지합니다. 데이터 레이어는 구조화된 운영 데이터 — 티켓 시퀀스, 네트워크 설정, OT 매니페스트, 임상 워크플로우 — 를 변환합니다.</li>
-
 <li><strong>AI/LLM 보안 게이트웨이가 아닙니다</strong>. 보안 게이트웨이는 프롬프트 인젝션, 런타임 위협, API 수준 필터링에 집중합니다. 데이터 레이어는 한 단계 더 깊은 곳, 데이터 자체에서 작동합니다.</li>
-
 <li><strong>합성 데이터 플랫폼이 아닙니다</strong>. 합성 데이터는 학습·테스트용 인공 레코드를 생성합니다. 데이터 레이어는 실제 운영 환경의 실제 문서 위에서 작동합니다.</li>
-
 <li><strong>CISO/SOC 도구가 아닙니다</strong>. 구매 주체는 AI 팀, CDO/CAIO, 또는 프로덕션에서 AI가 필요한 비즈니스 부서입니다. 보안은 필수 인프라이지 제품의 목적이 아닙니다.</li>
+</ul>
 
 <h2>5가지 구성 요소</h2>
 
+<ul>
 <li><strong>캡슐화 엔진</strong> — 로컬 탐지·치환, 매핑은 내부에 유지됩니다.</li>
-
 <li><strong>정책 제어</strong> — 버전 관리, 범위 지정, RBAC 적용 정책.</li>
-
 <li><strong>캡슐 전송</strong> — 보호된 캡슐만 신뢰 경계를 넘습니다.</li>
-
 <li><strong>복원 엔진</strong> — 로컬 토큰 보관소, 출력 검증, 컨텍스트 재바인딩.</li>
-
 <li><strong>감사 및 컴플라이언스</strong> — GDPR/HIPAA/SOX 거버넌스를 위해 모든 이벤트를 기록합니다.</li>
+</ul>
 
 <h2>4구역 아키텍처(diagram_v8 참조)</h2>
 
@@ -62,23 +59,21 @@ An AI enablement data layer is the architectural component that sits between reg
 
 <h2>6가지 아키텍처 기반 원칙</h2>
 
+<ul>
 <li><strong>단순 PII 가드레일을 넘어서</strong> — CS 티켓 상세 열처럼 자유 텍스트 필드는 단순 PII 가드레일만으로는 안전하게 처리할 수 없습니다.</li>
-
 <li><strong>기존 시스템 수정 없음</strong> — 단일 API 호출 추가(REST / gRPC)만으로 연결합니다. 레거시 시스템을 재구성하지 않습니다.</li>
-
 <li><strong>단순 캡슐화를 넘어 — 차등 프라이버시</strong> — 토큰화 위에 차등 프라이버시를 적용하여 재식별 위험을 줄입니다.</li>
-
 <li><strong>외부 AI에 원본 노출 없음</strong> — 캡슐만 신뢰 경계를 넘습니다. 차등 프라이버시 처리 덕분에 유출이 발생해도 원본 값은 복원되지 않습니다.</li>
-
 <li><strong>환경 내부 자동 복원</strong> — 복원은 기업 내부에서만 수행됩니다. 경계를 벗어난 데이터는 외부에서 복원할 수 없습니다.</li>
-
 <li><strong>거버넌스·정책·도메인 컨텍스트 유지</strong> — 조직 정책이 캡슐화, 라우팅, 감사를 엔드투엔드로 제어합니다.</li>
+</ul>
 
 <h2>두 가지 실행 경로</h2>
 
+<ul>
 <li><strong>경로 A</strong> — 외부 승인 LLM(ChatGPT, Claude, Gemini, EU 역내 LLM)에 캡슐 데이터만 전달합니다. 원시 운영 데이터는 절대 노출되지 않습니다.</li>
-
 <li><strong>경로 B</strong> — 온프레미스 로컬 경량 모델. 외부 전송 Zero Exposure. 망분리, 기밀, OT, 엄격한 규제 워크플로우에 적합합니다.</li>
+</ul>
 
 <h2>사용 시점</h2>
 

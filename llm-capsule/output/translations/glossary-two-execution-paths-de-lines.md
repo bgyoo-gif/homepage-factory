@@ -28,48 +28,39 @@ Die AI enablement data layer unterstützt zwei Ausführungspfade. Pfad A übermi
 
 ## Section 03: Body HTML
 
-### h2: Definition
 
-Die AI enablement data layer unterstützt **zwei Ausführungspfade** für den Modellschritt im Workflow:
+<h2>Definition</h2>
 
-**Pfad A — externes zugelassenes LLM, ausschließlich mit Capsule-Daten.** Die Kapsel wird an einen zugelassenen externen Endpunkt übermittelt (ChatGPT, Claude, Gemini, Perplexity oder eine beliebige LLM API). Operative Rohdaten verlassen das Unternehmen nicht.
+<p>Die AI enablement data layer unterstützt <strong>zwei Ausführungspfade</strong> für den Modellschritt im Workflow:</p>
 
-**Pfad B — lokales On-Premise-Leichtgewichtsmodell.** Ein kompaktes privates Modell wird vollständig innerhalb der Unternehmensumgebung ausgeführt. Keine externe Datenübertragung.
+<ul>
+<li><strong>Pfad A — externes zugelassenes LLM, ausschließlich mit Capsule-Daten.</strong> Die Kapsel wird an einen zugelassenen externen Endpunkt übermittelt (ChatGPT, Claude, Gemini, Perplexity oder eine beliebige LLM API). Operative Rohdaten verlassen das Unternehmen nicht.</li>
+<li><strong>Pfad B — lokales On-Premise-Leichtgewichtsmodell.</strong> Ein kompaktes privates Modell wird vollständig innerhalb der Unternehmensumgebung ausgeführt. Keine externe Datenübertragung.</li>
+</ul>
 
----
+<h2>Einsatzkriterien</h2>
 
-### h2: Einsatzkriterien
+<p>Factor / Path A / Path B Kriterium / Pfad A / Pfad B</p>
 
-Factor / Path A / Path B
-Kriterium / Pfad A / Pfad B
+<p>Externe Übertragung zulässig / Ja (nur Kapsel) / Nein</p>
 
-Externe Übertragung zulässig / Ja (nur Kapsel) / Nein
+<p>Air-Gapped-Netzwerk / — / Erforderlich</p>
 
-Air-Gapped-Netzwerk / — / Erforderlich
+<p>Frontier-Modell-Kapazität / Ja / Durch lokales Modell begrenzt</p>
 
-Frontier-Modell-Kapazität / Ja / Durch lokales Modell begrenzt
+<p>Compliance-Profil / „Keine Rohdaten-Offenlegung" / „Zero Exposure"</p>
 
-Compliance-Profil / „Keine Rohdaten-Offenlegung" / „Zero Exposure"
+<h2>Pfadauswahl</h2>
 
----
+<p>Die Auswahl erfolgt richtliniengesteuert je Workflow. Verschiedene Workflows desselben Unternehmens können unterschiedliche Pfade verwenden. Das Governance-System protokolliert den angewendeten Pfad je Anfrage, je Workflow und je Richtlinie.</p>
 
-### h2: Pfadauswahl
+<h2>Warum zwei Pfade notwendig sind</h2>
 
-Die Auswahl erfolgt richtliniengesteuert je Workflow. Verschiedene Workflows desselben Unternehmens können unterschiedliche Pfade verwenden. Das Governance-System protokolliert den angewendeten Pfad je Anfrage, je Workflow und je Richtlinie.
+<p>Ein einzelner Pfad erzwingt eine einheitliche regulatorische Mindestanforderung. Versicherungsträger, Krankenhäuser, OT-Betreiber und Rüstungsunternehmen verwalten innerhalb derselben Organisation typischerweise mehrere regulatorische Profile. Zwei Pfade ermöglichen es dem Governance-System, den jeweils passenden Pfad dem entsprechenden Workflow zuzuweisen.</p>
 
----
+<h2>Leitsatz</h2>
 
-### h2: Warum zwei Pfade notwendig sind
-
-Ein einzelner Pfad erzwingt eine einheitliche regulatorische Mindestanforderung. Versicherungsträger, Krankenhäuser, OT-Betreiber und Rüstungsunternehmen verwalten innerhalb derselben Organisation typischerweise mehrere regulatorische Profile. Zwei Pfade ermöglichen es dem Governance-System, den jeweils passenden Pfad dem entsprechenden Workflow zuzuweisen.
-
----
-
-### h2: Leitsatz
-
-Das Modell ist keine einheitliche Entscheidung — es sind zwei Pfade unter einer gemeinsamen Governance. Das ist es, was die AI enablement data layer für regulierte Organisationen geeignet macht, ohne sie auf eine einzige regulatorische Ebene festzulegen.
-
----
+<p>Das Modell ist keine einheitliche Entscheidung — es sind zwei Pfade unter einer gemeinsamen Governance. Das ist es, was die AI enablement data layer für regulierte Organisationen geeignet macht, ohne sie auf eine einzige regulatorische Ebene festzulegen.</p>
 
 ## Section 04: Related Terms
 

@@ -32,55 +32,57 @@ Operative Daten umfassen die strukturierten und unstrukturierten Unternehmensdat
 
 ## Section 03: Body HTML
 
-[h2] Abgrenzung zu personenbezogenen Daten
+<h2>Abgrenzung zu personenbezogenen Daten</h2>
 
-Operative Daten sind nicht gleichzusetzen mit personenbezogenen Daten (PII). PII bezeichnet identifizierbare Einzelfelder wie Namen, Kontaktdaten oder Finanzidentifikatoren. Operative Daten können PII als Teilmenge enthalten, ihre Schutzbedürftigkeit ergibt sich jedoch primär aus Struktur, Sequenz und aggregierten Mustern.
+<p>Operative Daten sind nicht gleichzusetzen mit personenbezogenen Daten (PII). PII bezeichnet identifizierbare Einzelfelder wie Namen, Kontaktdaten oder Finanzidentifikatoren. Operative Daten können PII als Teilmenge enthalten, ihre Schutzbedürftigkeit ergibt sich jedoch primär aus Struktur, Sequenz und aggregierten Mustern.</p>
 
-[h2] Beispiele nach Branche
+<h2>Beispiele nach Branche</h2>
 
-[h3] Telekommunikation
+<h3>Telekommunikation</h3>
 
-Netzwerktopologie, Geräte-IDs, Standort-IDs, Leitungs-IDs, IP-Adressbereiche
+<ul>
+<li>Netzwerktopologie, Geräte-IDs, Standort-IDs, Leitungs-IDs, IP-Adressbereiche</li>
+<li>Alarmsequenzen, Anomaliemuster im Datenverkehr</li>
+<li>Störungsprotokolle mit Kundenauswirkung und SLA-Risiko</li>
+<li>NOC-Reaktionshistorie, Runbooks, Change-Management-Unterlagen</li>
+</ul>
 
-Alarmsequenzen, Anomaliemuster im Datenverkehr
+<h3>OT / Industrie</h3>
 
-Störungsprotokolle mit Kundenauswirkung und SLA-Risiko
+<ul>
+<li>Asset-IDs, PLC/ICS-Alarme, Schwachstellenprotokolle</li>
+<li>Anlagenbetriebskontext, Patch-Einschränkungen</li>
+<li>Hersteller- und Geräteverweise</li>
+</ul>
 
-NOC-Reaktionshistorie, Runbooks, Change-Management-Unterlagen
+<h3>Gesundheitswesen</h3>
 
-[h3] OT / Industrie
+<ul>
+<li>Klinische Workflows, Laborergebnisfluss, Verschreibungsabläufe</li>
+<li>Krankenhausbetriebsprotokolle, Abrechnungsprüfung</li>
+</ul>
 
-Asset-IDs, PLC/ICS-Alarme, Schwachstellenprotokolle
+<h3>Verteidigung / Öffentlicher Sektor</h3>
 
-Anlagenbetriebskontext, Patch-Einschränkungen
+<ul>
+<li>Einsatzprotokolle, Lagebeschreibungen</li>
+<li>Zugriffsgeschützter Kontext, Befehlsabläufe</li>
+</ul>
 
-Hersteller- und Geräteverweise
+<h3>Finanzen / Versicherung</h3>
 
-[h3] Gesundheitswesen
+<ul>
+<li>Risikoprüfung, Transaktionsanomalien</li>
+<li>Prüfpfad, Genehmigungsworkflow, interne Kontrollnachweise</li>
+</ul>
 
-Klinische Workflows, Laborergebnisfluss, Verschreibungsabläufe
+<h2>Warum ein AI enablement data layer erforderlich ist</h2>
 
-Krankenhausbetriebsprotokolle, Abrechnungsprüfung
+<p>Operative Daten geben Informationen durch ihre Struktur preis (die Topologie selbst offenbart das Netzwerk), durch ihre Sequenz (das Alarmmuster legt die Fehlerkette offen) und durch Aggregate (die Störungshäufigkeit lässt Rückschlüsse auf das Kundensegment zu). Eine PII-Filterung kann diesen Informationsabfluss nicht begrenzen. Der AI enablement data layer wendet strukturerhaltende Kapsulierung mit Differential-Privacy-basiertem Schutz an, um operative Daten sicher in LLM-Workflows einzubinden.</p>
 
-[h3] Verteidigung / Öffentlicher Sektor
+<h2>Kernaussage</h2>
 
-Einsatzprotokolle, Lagebeschreibungen
-
-Zugriffsgeschützter Kontext, Befehlsabläufe
-
-[h3] Finanzen / Versicherung
-
-Risikoprüfung, Transaktionsanomalien
-
-Prüfpfad, Genehmigungsworkflow, interne Kontrollnachweise
-
-[h2] Warum ein AI enablement data layer erforderlich ist
-
-Operative Daten geben Informationen durch ihre Struktur preis (die Topologie selbst offenbart das Netzwerk), durch ihre Sequenz (das Alarmmuster legt die Fehlerkette offen) und durch Aggregate (die Störungshäufigkeit lässt Rückschlüsse auf das Kundensegment zu). Eine PII-Filterung kann diesen Informationsabfluss nicht begrenzen. Der AI enablement data layer wendet strukturerhaltende Kapsulierung mit Differential-Privacy-basiertem Schutz an, um operative Daten sicher in LLM-Workflows einzubinden.
-
-[h2] Kernaussage
-
-[blockquote] Operative Daten sind die Grundlage des Geschäftsbetriebs. KI kann über einen PII-Filter nicht auf sie zugreifen. Der AI enablement data layer wurde speziell für diese Datenkategorie entwickelt.
+<blockquote>Operative Daten sind die Grundlage des Geschäftsbetriebs. KI kann über einen PII-Filter nicht auf sie zugreifen. Der AI enablement data layer wurde speziell für diese Datenkategorie entwickelt.</blockquote>
 
 ---
 

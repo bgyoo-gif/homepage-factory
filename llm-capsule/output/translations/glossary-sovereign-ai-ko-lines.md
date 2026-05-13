@@ -32,13 +32,12 @@ Sovereign AI란 기반 데이터, AI 처리 경로, 감사 이력이 모두 규�
 
 <h2>Sovereign AI가 실제로 요구하는 것</h2>
 
+<ul>
 <li><strong>데이터 레지던시</strong> — 민감 데이터는 원시 형태로 정의된 지리적·규제적 경계를 벗어나지 않습니다.</li>
-
 <li><strong>처리 경계</strong> — AI 추론은 경계 내부(또는 계약상 동등한) 인프라에서 실행됩니다.</li>
-
 <li><strong>감사 이력 연속성</strong> — 모든 데이터 이벤트는 정책, 모델, 결과와 함께 기록됩니다.</li>
-
 <li><strong>정책 버전 관리</strong> — 무엇이 민감 데이터이며 외부 전송이 허용되는지를 명시적으로 버전화하고 감사 가능하게 관리해야 합니다.</li>
+</ul>
 
 <h2>두 가지 실행 경로 아키텍처</h2>
 
@@ -46,11 +45,11 @@ Sovereign AI란 기반 데이터, AI 처리 경로, 감사 이력이 모두 규�
 
 <h2>흔한 오해</h2>
 
+<ul>
 <li><strong>데이터 레지던시 ≠ 데이터 주권.</strong> EU 내 LLM 엔드포인트는 필요 조건이지만 충분 조건이 아닙니다. EU 내 LLM에 들어간 원시 데이터는 여전히 원시 데이터입니다.</li>
-
 <li><strong>Sovereign AI ≠ LLM 사용 금지.</strong> LLM 자체를 회피하는 것은 Sovereign AI 전략이 아니라 회피 전략입니다. Sovereign AI 아키텍처는 주권 제약 안에서 AI를 사용할 수 있도록 합니다.</li>
-
 <li><strong>Sovereign AI ≠ 이분법.</strong> 하나의 기업이 여러 경로를 지원할 수 있습니다. 일부 워크플로우는 외부 경로(캡슐 사용), 일부는 온프레미스로 운영합니다.</li>
+</ul>
 
 ## Section 04: Related Terms
 
