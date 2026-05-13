@@ -1,869 +1,529 @@
+// Learn index page (v6.2 design).
+// Self-contained Framer Code Component.
+// Hero + Category filter tabs + Card grid (30 articles).
+// No external imports — Framer cross-folder compatible.
+
 import { addPropertyControls, ControlType } from "framer"
+import { useState } from "react"
 
-// ─── Palette ───────────────────────────────────────────────────────────────────
-const P = {
-  brandPrimary:   "#5b4fe9",
-  brandSecondary: "#0ea5a4",
-  brandAccent:    "#0ea5a4",
-  brandLight:     "#eeebfe",
-  neutral900: "#0f1130",
-  neutral850: "#0f1130",
-  neutral800: "#0f1130",
-  neutral700: "#1b1d4a",
-  neutral500: "#3a3d5e",
-  neutral400: "#6b7280",
-  neutral350: "#6b7280",
-  neutral300: "#6b7280",
-  neutral200: "#e5e7eb",
-  neutral150: "#e5e7eb",
-  neutral100: "#f7f8fb",
-  neutral050: "#f7f8fb",
-  neutral025: "#f7f8fb",
-  white:      "#ffffff",
-  black:      "#0f1130",
-  textPrimary:   "#0f1130",
-  textSecondary: "#3a3d5e",
-  textTertiary:  "#6b7280",
-  textInverse:   "#ffffff",
-  borderDefault: "#e5e7eb",
-  borderStrong:  "#0f1130",
-  surfaceDark:  "#0f1130",
-  surfaceMid:   "#f7f8fb",
-  surfaceLight: "#f7f8fb",
-  surfaceWhite: "#ffffff",
-  gradientBrand: "linear-gradient(130deg, #5b4fe9 0%, #0ea5a4 50%, #0b7f7e 100%)",
+interface Props {
+  // Hero
+  eyebrow?: string
+  heroTitle?: string
+  heroLead?: string
+
+  // Category tab labels (translation-friendly)
+  labelAll?: string
+  labelPolicy?: string
+  labelIndustry?: string
+  labelArchitecture?: string
+  labelStrategy?: string
+  labelComparison?: string
+  labelDefinition?: string
+
+  // Read CTA label
+  readLabel?: string
 }
 
-// ─── JSON-LD ───────────────────────────────────────────────────────────────────
-const JSONLD_BREADCRUMB = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home",      "item": "https://llmcapsule.ai/" },
-    { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://llmcapsule.ai/resources" },
-    { "@type": "ListItem", "position": 3, "name": "Learn",     "item": "https://llmcapsule.ai/resources/learn" },
-  ],
-})
+type CategoryKey = "policy" | "industry" | "architecture" | "strategy" | "comparison" | "definition"
 
-const JSONLD_COLLECTION = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Learn — Enterprise AI Enablement Resources",
-  "description": "In-depth technical articles on enterprise AI enablement, secure AI workflows, structure-preserving processing, and restorable workflows.",
-  "url": "https://llmcapsule.ai/resources/learn",
-  "publisher": {
-    "@type": "Organization",
-    "name": "LLM Capsule",
-    "url": "https://llmcapsule.ai",
-  },
-})
-
-// ─── Article Card Data ─────────────────────────────────────────────────────────
-interface ArticleCard {
-  href: string
-  badgeType: "brand" | "neutral"
-  badgeLabel: string
+type Card = {
+  category: CategoryKey
+  categoryLabel: string
   title: string
-  iconPath: string
+  desc: string
+  href: string
 }
 
-const DEFAULT_CARDS: ArticleCard[] = [
+const CARDS: Card[] = [
+  // ── POLICY (7) ─────────────────────────────────────────────────
   {
-    href: "/resources/learn/secure-enterprise-ai-data-workflows",
-    badgeType: "brand",
-    badgeLabel: "Pillar",
-    title: "Secure Enterprise AI Data Workflows",
-    iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
+    category: "policy",
+    categoryLabel: "POLICY · 정책 분석",
+    title: "공공기관 생성형 AI 도입의 세 가지 길",
+    desc: "AI DLP·차단, sLLM 자체구축, 게이트웨이 방식 — N²SF 시대 공공기관의 선택지를 비용·성능·보안·정합성 관점에서 객관적으로 비교합니다.",
+    href: "/resources/learn/public-sector-genai-three-approaches",
   },
   {
-    href: "/resources/learn/enterprise-ai-enablement",
-    badgeType: "brand",
-    badgeLabel: "Pillar",
-    title: "Enterprise AI Enablement",
-    iconPath: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z",
+    category: "policy",
+    categoryLabel: "POLICY · 정책 분석",
+    title: "N²SF란 무엇인가 — 공공기관 보안의 새 패러다임",
+    desc: "국가 망 보안체계(N²SF)는 망분리에서 다중계층보안(MLS)으로의 전환입니다. C/S/O 등급 체계와 「위치-주체-객체」 모델링을 정리합니다.",
+    href: "/resources/learn/what-is-n2sf",
   },
   {
-    href: "/resources/learn/enterprise-ai-document-processing",
-    badgeType: "brand",
-    badgeLabel: "Pillar",
-    title: "Enterprise AI Document Processing",
-    iconPath: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z",
+    category: "policy",
+    categoryLabel: "POLICY · 정책 분석",
+    title: "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
+    desc: "국가정보원·NSR이 2025년 9월 발간한 「업무환경에서 생성형 AI 활용 모델 해설서」를 정보화담당관 관점에서 정리합니다.",
+    href: "/resources/learn/n2sf-model-2-explained",
   },
   {
-    href: "/resources/learn/what-is-ai-data-capsule",
-    badgeType: "neutral",
-    badgeLabel: "Article",
-    title: "What Is an AI Data Capsule",
-    iconPath: "M12 22c1-1 8-4 8-10V5l-8-3-8 3v7c0 6 7 9 8 10z",
+    category: "policy",
+    categoryLabel: "POLICY · 정책 분석",
+    title: "sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프",
+    desc: "공공기관 sLLM 자체구축의 진짜 비용(5년 28~38억), 상용 LLM 대비 성능 격차 추세, 잘못된 선택 패턴을 분석합니다.",
+    href: "/resources/learn/sllm-self-hosted-reality-check",
   },
   {
-    href: "/resources/learn/how-to-use-ai-on-sensitive-enterprise-data",
-    badgeType: "neutral",
-    badgeLabel: "Article",
-    title: "How to Use AI on Sensitive Enterprise Data",
-    iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
+    category: "policy",
+    categoryLabel: "POLICY · 정책 분석",
+    title: "공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵",
+    desc: "정보화담당관 관점에서 외부 LLM 도입을 분기별 5단계로 정리합니다. 시나리오 A 4개월 vs 시나리오 B 6~8개월 로드맵 비교.",
+    href: "/resources/learn/public-sector-external-llm-adoption-roadmap",
   },
   {
-    href: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
-    badgeType: "brand",
-    badgeLabel: "Featured",
-    title: "Why Redaction Breaks Enterprise AI Workflows",
-    iconPath: "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z",
+    category: "policy",
+    categoryLabel: "POLICY · 현장 분석",
+    title: "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지",
+    desc: "등급 분류 부담, 시나리오와 O 등급 충돌, 솔루션 후보 부족, 예산 시점 불일치, 활용 실패 — 다섯 막힘 지점.",
+    href: "/resources/learn/public-sector-genai-five-stuck-points",
   },
   {
-    href: "/resources/learn/structure-preserving-document-processing",
-    badgeType: "neutral",
-    badgeLabel: "Article",
-    title: "Structure-Preserving Document Processing",
-    iconPath: "M22 12h-4l-3 9L9 3l-3 9H2",
+    category: "policy",
+    categoryLabel: "POLICY · 정책 분석",
+    title: "2026 경영평가 'AI 활용 등 혁신' 가점 — 공공기관 핵심 경쟁력",
+    desc: "2026 경영평가편람에 신설된 'AI 활용 등 혁신' 가점 1.5점이 공공기관 경쟁력에 어떤 영향을 주는지 정리합니다.",
+    href: "/resources/learn/public-sector-2026-management-evaluation-ai-incentive",
+  },
+
+  // ── INDUSTRY (3) ───────────────────────────────────────────────
+  {
+    category: "industry",
+    categoryLabel: "INDUSTRY · TELECOM",
+    title: "How to deploy AI in a telecom NOC without exposing network data",
+    desc: "Step-by-step deployment guide. Validated at SK Telecom and Deutsche Telekom T Challenge 2026 Top 12.",
+    href: "/resources/learn/telecom-noc-ai-deployment",
   },
   {
-    href: "/resources/learn/pii-protection-vs-enterprise-confidentiality-control",
-    badgeType: "neutral",
-    badgeLabel: "Article",
-    title: "PII Protection vs Enterprise Confidentiality Control",
-    iconPath: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2",
+    category: "industry",
+    categoryLabel: "INDUSTRY · HEALTHCARE",
+    title: "How to deploy AI in a hospital without exposing PHI",
+    desc: "HIPAA-aligned playbook for hospital CIOs and clinical informatics. Deployed at EUMC.",
+    href: "/resources/learn/hospital-ai-deployment-phi-protection",
   },
   {
-    href: "/resources/learn/on-premise-vs-cloud-ai-data-protection",
-    badgeType: "neutral",
-    badgeLabel: "Article",
-    title: "On-Premise vs Cloud AI Data Protection",
-    iconPath: "M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z",
+    category: "industry",
+    categoryLabel: "INDUSTRY · TELECOM",
+    title: "AI on network operations data — NOC, RCA, and workflow execution",
+    desc: "How to bring AI to NOC logs, alarm sequences, incident tickets — without exposing operational identifiers.",
+    href: "/resources/learn/ai-on-network-operations-data",
+  },
+
+  // ── ARCHITECTURE (3) ───────────────────────────────────────────
+  {
+    category: "architecture",
+    categoryLabel: "ARCHITECTURE · ON-PREM",
+    title: "On-premise LLM execution path",
+    desc: "Path B architecture deep-dive: quantized model, internal GPU, vLLM, full air-gap.",
+    href: "/resources/learn/on-prem-llm-execution-path",
   },
   {
-    href: "/resources/learn/local-restoration-vs-anonymization",
-    badgeType: "neutral",
-    badgeLabel: "Article",
-    title: "Local Restoration vs Anonymization",
-    iconPath: "M1 4v6h6",
+    category: "architecture",
+    categoryLabel: "ARCHITECTURE · SOVEREIGN AI",
+    title: "Sovereign AI for European enterprises — practical architecture",
+    desc: "GDPR + EU AI Act + national data residency. Two execution paths under one governance framework.",
+    href: "/resources/learn/sovereign-ai-european-enterprises",
   },
   {
-    href: "/resources/learn/ai-data-pipeline-protection",
-    badgeType: "neutral",
-    badgeLabel: "Article",
-    title: "AI Data Pipeline Protection",
-    iconPath: "M16 4l-8 16",
+    category: "architecture",
+    categoryLabel: "ARCHITECTURE · DIFFERENTIAL PRIVACY",
+    title: "Differential privacy for enterprise LLM",
+    desc: "Beyond field masking — DP noise, k-anonymity, and semantic tokenization for operational data.",
+    href: "/resources/learn/differential-privacy-for-enterprise-llm",
+  },
+
+  // ── STRATEGY (1) ───────────────────────────────────────────────
+  {
+    category: "strategy",
+    categoryLabel: "STRATEGY · PILOT TO PRODUCTION",
+    title: "Why enterprise AI pilots stall — and how they get to production",
+    desc: "Diagnostic for executives running an AI program. The pattern that ships to production.",
+    href: "/resources/learn/pilot-to-production-enterprise-ai",
+  },
+
+  // ── COMPARISON (7) ─────────────────────────────────────────────
+  {
+    category: "comparison",
+    categoryLabel: "COMPARISON",
+    title: "PII guardrails vs operational data protection",
+    desc: "Field-level filters vs structure-preserving + DP-based encapsulation — what regulated workflows actually need.",
+    href: "/resources/learn/pii-guardrails-vs-operational-data-protection",
   },
   {
-    href: "/resources/glossary/restorable-workflow",
-    badgeType: "neutral",
-    badgeLabel: "Glossary",
-    title: "Restorable Workflow",
-    iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
-  },
-  {
-    href: "/resources/glossary/enterprise-context-control",
-    badgeType: "neutral",
-    badgeLabel: "Glossary",
-    title: "Enterprise Context Control",
-    iconPath: "M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z",
-  },
-  {
-    href: "/resources/learn/llm-capsule-vs-masking-tools",
-    badgeType: "neutral",
-    badgeLabel: "Comparison",
+    category: "comparison",
+    categoryLabel: "COMPARISON",
     title: "LLM Capsule vs Masking Tools",
-    iconPath: "M3 3v18h18",
+    desc: "Field-level masking vs structure-preserving capsule — what each does, what each leaves on the table.",
+    href: "/resources/learn/llm-capsule-vs-masking-tools",
   },
   {
-    href: "/resources/learn/llm-capsule-vs-prompt-security-gateways",
-    badgeType: "neutral",
-    badgeLabel: "Comparison",
+    category: "comparison",
+    categoryLabel: "COMPARISON",
     title: "LLM Capsule vs Prompt Security Gateways",
-    iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
+    desc: "Prompt-level threat defense vs data-layer enablement — where each layer fits.",
+    href: "/resources/learn/llm-capsule-vs-prompt-security-gateways",
   },
   {
-    href: "/resources/learn/llm-capsule-vs-synthetic-data-platforms",
-    badgeType: "neutral",
-    badgeLabel: "Comparison",
+    category: "comparison",
+    categoryLabel: "COMPARISON",
     title: "LLM Capsule vs Synthetic Data Platforms",
-    iconPath: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z",
+    desc: "Synthetic generation for training vs live capsule for production — different problems, different solutions.",
+    href: "/resources/learn/llm-capsule-vs-synthetic-data-platforms",
   },
   {
-    href: "/resources/learn/structure-preserving-processing-vs-flat-masking",
-    badgeType: "neutral",
-    badgeLabel: "Comparison",
+    category: "comparison",
+    categoryLabel: "COMPARISON",
+    title: "On-Premise vs Cloud AI Data Protection",
+    desc: "Deployment-mode trade-offs for regulated enterprise AI workflows.",
+    href: "/resources/learn/on-premise-vs-cloud-ai-data-protection",
+  },
+  {
+    category: "comparison",
+    categoryLabel: "COMPARISON",
+    title: "PII Protection vs Enterprise Confidentiality Control",
+    desc: "Standard PII detection vs context-aware enterprise confidentiality markers.",
+    href: "/resources/learn/pii-protection-vs-enterprise-confidentiality-control",
+  },
+  {
+    category: "comparison",
+    categoryLabel: "COMPARISON",
     title: "Structure-Preserving Processing vs Flat Masking",
-    iconPath: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z",
+    desc: "Why tables, sequences, and cross-references matter for AI workflow quality.",
+    href: "/resources/learn/structure-preserving-processing-vs-flat-masking",
+  },
+
+  // ── DEFINITION (9) ─────────────────────────────────────────────
+  {
+    category: "definition",
+    categoryLabel: "DEFINITION",
+    title: "Secure Enterprise AI Data Workflows",
+    desc: "What 'secure' means in enterprise AI workflows beyond field-level masking.",
+    href: "/resources/learn/secure-enterprise-ai-data-workflows",
+  },
+  {
+    category: "definition",
+    categoryLabel: "DEFINITION",
+    title: "Enterprise AI Document Processing",
+    desc: "How regulated enterprises process documents through AI while keeping sensitive elements local.",
+    href: "/resources/learn/enterprise-ai-document-processing",
+  },
+  {
+    category: "definition",
+    categoryLabel: "DEFINITION",
+    title: "What Is an AI Data Capsule",
+    desc: "The capsule pattern: structure-preserving encapsulation + restoration inside the trust boundary.",
+    href: "/resources/learn/what-is-ai-data-capsule",
+  },
+  {
+    category: "definition",
+    categoryLabel: "DEFINITION",
+    title: "How to Use AI on Sensitive Enterprise Data",
+    desc: "Practical patterns for AI workflows over regulated operational data.",
+    href: "/resources/learn/how-to-use-ai-on-sensitive-enterprise-data",
+  },
+  {
+    category: "definition",
+    categoryLabel: "DEFINITION",
+    title: "Why Redaction Breaks Enterprise AI Workflows",
+    desc: "Why permanent removal destroys the context AI needs to produce useful output.",
+    href: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
+  },
+  {
+    category: "definition",
+    categoryLabel: "DEFINITION",
+    title: "Structure-Preserving Document Processing",
+    desc: "Tables, layouts, and cross-references survive the process intact.",
+    href: "/resources/learn/structure-preserving-document-processing",
+  },
+  {
+    category: "definition",
+    categoryLabel: "DEFINITION",
+    title: "AI Data Pipeline Protection",
+    desc: "End-to-end protection across the enterprise AI data pipeline.",
+    href: "/resources/learn/ai-data-pipeline-protection",
+  },
+  {
+    category: "definition",
+    categoryLabel: "GLOSSARY",
+    title: "Restorable Workflow",
+    desc: "Workflows where the original values can be restored locally after AI processing.",
+    href: "/resources/glossary/restorable-workflow",
+  },
+  {
+    category: "definition",
+    categoryLabel: "GLOSSARY",
+    title: "Enterprise Context Control",
+    desc: "Organization-defined markers + policy versioning + time-shifting.",
+    href: "/resources/glossary/enterprise-context-control",
   },
 ]
 
-// ─── SVG Icons per card ────────────────────────────────────────────────────────
-function CardIcon({ index }: { index: number }) {
-  const iconSize = 20
-  switch (index) {
-    case 0:
-      return (
-        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        </svg>
-      )
-    case 1:
-      return (
-        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-        </svg>
-      )
-    case 2:
-      return (
-        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-          <polyline points="14 2 14 8 20 8" />
-          <line x1="16" y1="13" x2="8" y2="13" />
-          <line x1="16" y1="17" x2="8" y2="17" />
-          <polyline points="10 9 9 9 8 9" />
-        </svg>
-      )
-    case 3:
-      return (
-        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" />
-          <line x1="12" y1="8" x2="12" y2="12" />
-          <line x1="12" y1="16" x2="12.01" y2="16" />
-        </svg>
-      )
-    case 4:
-      return (
-        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-          <polyline points="9 12 11 14 15 10" />
-        </svg>
-      )
-    case 5:
-      return (
-        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" />
-          <line x1="12" y1="8" x2="12" y2="12" />
-          <line x1="12" y1="16" x2="12.01" y2="16" />
-        </svg>
-      )
-    case 6:
-      return (
-        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-        </svg>
-      )
-    case 7:
-      return (
-        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-        </svg>
-      )
-    case 8:
-      return (
-        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-          <circle cx="9" cy="7" r="4" />
-          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-        </svg>
-      )
-    case 9:
-      return (
-        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
-        </svg>
-      )
-    case 10:
-      return (
-        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="1 4 1 10 7 10" />
-          <path d="M3.51 15a9 9 0 1 0 .49-3.63" />
-        </svg>
-      )
-    case 11:
-      return (
-        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <line x1="16" y1="4" x2="8" y2="20" />
-          <circle cx="16" cy="4" r="1" fill="currentColor" />
-          <circle cx="8" cy="20" r="1" fill="currentColor" />
-          <path d="M3 9h3m12 0h3M3 15h3m12 0h3" />
-        </svg>
-      )
-    default:
-      return (
-        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" />
-        </svg>
-      )
-  }
-}
-
-// ─── Arrow SVG ─────────────────────────────────────────────────────────────────
-function ArrowIcon() {
-  return (
-    <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <line x1="5" y1="12" x2="19" y2="12" />
-      <polyline points="12 5 19 12 12 19" />
-    </svg>
-  )
-}
-
-// ─── Props ─────────────────────────────────────────────────────────────────────
-interface Props {
-  // Hero
-  heroTitle?: string
-  heroDescription?: string
-
-  // Card titles (12 cards)
-  card01Title?: string
-  card01Badge?: string
-  card01Href?: string
-  card02Title?: string
-  card02Badge?: string
-  card02Href?: string
-  card03Title?: string
-  card03Badge?: string
-  card03Href?: string
-  card04Title?: string
-  card04Badge?: string
-  card04Href?: string
-  card05Title?: string
-  card05Badge?: string
-  card05Href?: string
-  card06Title?: string
-  card06Badge?: string
-  card06Href?: string
-  card08Title?: string
-  card08Badge?: string
-  card08Href?: string
-  card09Title?: string
-  card09Badge?: string
-  card09Href?: string
-  card10Title?: string
-  card10Badge?: string
-  card10Href?: string
-  card11Title?: string
-  card11Badge?: string
-  card11Href?: string
-  card12Title?: string
-  card12Badge?: string
-  card12Href?: string
-  card13Title?: string
-  card13Badge?: string
-  card13Href?: string
-  card14Title?: string
-  card14Badge?: string
-  card14Href?: string
-  card15Title?: string
-  card15Badge?: string
-  card15Href?: string
-  card16Title?: string
-  card16Badge?: string
-  card16Href?: string
-  card17Title?: string
-  card17Badge?: string
-  card17Href?: string
-  card18Title?: string
-  card18Badge?: string
-  card18Href?: string
-
-  // Card link label (shared)
-  cardLinkLabel?: string
-
-  // CTA
-  ctaTitle?: string
-  ctaDescription?: string
-  ctaBtn1Label?: string
-  ctaBtn1Href?: string
-  ctaSecondaryLink2Label?: string
-  ctaSecondaryLink2Href?: string
-}
-
-// ─── Component ─────────────────────────────────────────────────────────────────
 export default function Learn({
-  heroTitle = "Enterprise AI Enablement — Learn",
-  heroDescription = "In-depth technical articles on enterprise AI enablement, secure AI workflows, structure-preserving processing, and restorable workflows.",
-
-  card01Title = "Secure Enterprise AI Data Workflows",
-  card01Badge = "Pillar",
-  card01Href = "/resources/learn/secure-enterprise-ai-data-workflows",
-  card02Title = "Enterprise AI Enablement",
-  card02Badge = "Pillar",
-  card02Href = "/resources/learn/enterprise-ai-enablement",
-  card03Title = "Enterprise AI Document Processing",
-  card03Badge = "Pillar",
-  card03Href = "/resources/learn/enterprise-ai-document-processing",
-  card04Title = "What Is an AI Data Capsule",
-  card04Badge = "Article",
-  card04Href = "/resources/learn/what-is-ai-data-capsule",
-  card05Title = "How to Use AI on Sensitive Enterprise Data",
-  card05Badge = "Article",
-  card05Href = "/resources/learn/how-to-use-ai-on-sensitive-enterprise-data",
-  card06Title = "Why Redaction Breaks Enterprise AI Workflows",
-  card06Badge = "Featured",
-  card06Href = "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
-  card08Title = "Structure-Preserving Document Processing",
-  card08Badge = "Article",
-  card08Href = "/resources/learn/structure-preserving-document-processing",
-  card09Title = "PII Protection vs Enterprise Confidentiality Control",
-  card09Badge = "Article",
-  card09Href = "/resources/learn/pii-protection-vs-enterprise-confidentiality-control",
-  card10Title = "On-Premise vs Cloud AI Data Protection",
-  card10Badge = "Article",
-  card10Href = "/resources/learn/on-premise-vs-cloud-ai-data-protection",
-  card11Title = "Local Restoration vs Anonymization",
-  card11Badge = "Article",
-  card11Href = "/resources/learn/local-restoration-vs-anonymization",
-  card12Title = "AI Data Pipeline Protection",
-  card12Badge = "Article",
-  card12Href = "/resources/learn/ai-data-pipeline-protection",
-  card13Title = "Restorable Workflow",
-  card13Badge = "Glossary",
-  card13Href = "/resources/glossary/restorable-workflow",
-  card14Title = "Enterprise Context Control",
-  card14Badge = "Glossary",
-  card14Href = "/resources/glossary/enterprise-context-control",
-  card15Title = "LLM Capsule vs Masking Tools",
-  card15Badge = "Comparison",
-  card15Href = "/resources/learn/llm-capsule-vs-masking-tools",
-  card16Title = "LLM Capsule vs Prompt Security Gateways",
-  card16Badge = "Comparison",
-  card16Href = "/resources/learn/llm-capsule-vs-prompt-security-gateways",
-  card17Title = "LLM Capsule vs Synthetic Data Platforms",
-  card17Badge = "Comparison",
-  card17Href = "/resources/learn/llm-capsule-vs-synthetic-data-platforms",
-  card18Title = "Structure-Preserving Processing vs Flat Masking",
-  card18Badge = "Comparison",
-  card18Href = "/resources/learn/structure-preserving-processing-vs-flat-masking",
-
-  cardLinkLabel = "Read article",
-
-  ctaTitle = "See how LLM Capsule works with your data",
-  ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
-  ctaBtn1Label = "Request a Demo",
-  ctaBtn1Href = "/request-a-demo",
-  ctaSecondaryLink2Label = "Available on AWS Marketplace",
-  ctaSecondaryLink2Href = "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa",
+  eyebrow = "Resources · Learn",
+  heroTitle = "Learn articles for regulated enterprise AI",
+  heroLead = "Industry deployment guides, architecture deep-dives, comparison frameworks, and Korean public-sector policy analysis.",
+  labelAll = "All",
+  labelPolicy = "Policy",
+  labelIndustry = "Industry",
+  labelArchitecture = "Architecture",
+  labelStrategy = "Strategy",
+  labelComparison = "Comparison",
+  labelDefinition = "Definition",
+  readLabel = "Read →",
 }: Props) {
-  // Resolved card data from props
-  const cards = [
-    { title: card01Title, badge: card01Badge, href: card01Href },
-    { title: card02Title, badge: card02Badge, href: card02Href },
-    { title: card03Title, badge: card03Badge, href: card03Href },
-    { title: card04Title, badge: card04Badge, href: card04Href },
-    { title: card05Title, badge: card05Badge, href: card05Href },
-    { title: card06Title, badge: card06Badge, href: card06Href },
-    { title: card08Title, badge: card08Badge, href: card08Href },
-    { title: card09Title, badge: card09Badge, href: card09Href },
-    { title: card10Title, badge: card10Badge, href: card10Href },
-    { title: card11Title, badge: card11Badge, href: card11Href },
-    { title: card12Title, badge: card12Badge, href: card12Href },
-    { title: card13Title, badge: card13Badge, href: card13Href },
-    { title: card14Title, badge: card14Badge, href: card14Href },
-    { title: card15Title, badge: card15Badge, href: card15Href },
-    { title: card16Title, badge: card16Badge, href: card16Href },
-    { title: card17Title, badge: card17Badge, href: card17Href },
-    { title: card18Title, badge: card18Badge, href: card18Href },
+  const [activeCategory, setActiveCategory] = useState<"all" | CategoryKey>("all")
+
+  const filters: Array<{ key: "all" | CategoryKey; label: string }> = [
+    { key: "all",          label: labelAll },
+    { key: "policy",       label: labelPolicy },
+    { key: "industry",     label: labelIndustry },
+    { key: "architecture", label: labelArchitecture },
+    { key: "strategy",     label: labelStrategy },
+    { key: "comparison",   label: labelComparison },
+    { key: "definition",   label: labelDefinition },
   ]
 
-  // Badge style resolver
-  const badgeStyle = (badge: string) => {
-    const isBrand = badge === "Pillar" || badge === "Featured"
-    return {
-      backgroundColor: isBrand ? P.brandLight : P.neutral150,
-      color: isBrand ? P.brandSecondary : P.textSecondary,
-    }
-  }
+  const visibleCards =
+    activeCategory === "all" ? CARDS : CARDS.filter((c) => c.category === activeCategory)
 
   return (
     <>
-      {/* JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSONLD_BREADCRUMB }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSONLD_COLLECTION }}
-      />
-
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-        /* ── Reset ───────────────────────────────────────────────── */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         .lrn-root {
-          font-family: var(--f-display, 'Inter'), sans-serif;
-          color: ${P.textPrimary};
-          background-color: ${P.surfaceWhite};
+          width: 100%;
+          container-type: inline-size;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+          color: var(--c-ink, #0f1130);
+          background-color: var(--c-bg, #ffffff);
           -webkit-font-smoothing: antialiased;
-          overflow-x: hidden;
           word-break: keep-all;
           overflow-wrap: break-word;
         }
-        .lrn-root a { text-decoration: none; color: inherit; }
-        .lrn-root img { max-width: 100%; display: block; }
-        .lrn-root p, .lrn-root li { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
-        .lrn-root h1, .lrn-root h2 { text-wrap: pretty; }
 
-        /* ── Container Query wrapper ─────────────────────────────── */
-        .lrn-inner { width: 100%; container-type: inline-size; }
-
-        /* ── Container ───────────────────────────────────────────── */
         .lrn-container {
-          width: 100%; margin: 0 auto;
-          padding: 0 16px;
-        }
-        @container (min-width: 768px)  { .lrn-container { padding: 0 32px; } }
-        @container (min-width: 1024px) { .lrn-container { padding: 0 32px; } }
-        @container (min-width: 1440px) { .lrn-container { padding: 0 120px; max-width: 1440px; } }
-
-        /* ── Section ─────────────────────────────────────────────── */
-        .lrn-section {
-          width: 100%; padding: 60px 0;
-          background-color: ${P.surfaceWhite};
-        }
-        .lrn-section--hero {
-          padding: 100px 0 0;
-          background-color: ${P.surfaceWhite};
+          max-width: 1280px;
+          margin: 0 auto;
+          padding: 0 clamp(20px, 4vw, 80px);
         }
 
-        /* ── Hero ────────────────────────────────────────────────── */
+        /* ── Hero ──────────────────────────────────────── */
+        .lrn-hero {
+          padding: clamp(80px, 9vw, 140px) 0 clamp(48px, 6vw, 72px);
+          text-align: center;
+          border-bottom: 1px solid var(--c-rule, #e5e7eb);
+        }
+        .lrn-hero__inner {
+          max-width: 860px;
+          margin: 0 auto;
+        }
+        .lrn-hero__eyebrow {
+          display: inline-block;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: var(--c-primary, #5b4fe9);
+          margin-bottom: 20px;
+        }
         .lrn-hero__title {
-          font-family: var(--f-display, 'Inter'), sans-serif;
-          font-size: 32px; font-weight: 700;
-          color: ${P.textPrimary};
-          line-height: 1.2; letter-spacing: -0.5px;
-          margin-bottom: 16px;
+          font-size: clamp(32px, 4.5vw, 56px);
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -0.02em;
+          color: var(--c-ink, #0f1130);
+          margin: 0 0 20px;
         }
-        @container (min-width: 768px)  { .lrn-hero__title { font-size: 40px; } }
-        @container (min-width: 1024px) { .lrn-hero__title { font-size: 48px; } }
-        @container (min-width: 1440px) { .lrn-hero__title { font-size: 64px; } }
-
-        .lrn-hero__description {
-          font-size: 18px; color: ${P.textSecondary};
-          line-height: 1.7; max-width: 100%;
+        .lrn-hero__lead {
+          font-size: clamp(16px, 1.4vw, 19px);
+          line-height: 1.65;
+          color: var(--c-ink-soft, #3a3d5e);
+          margin: 0 auto;
+          max-width: 720px;
         }
-        @container (min-width: 1024px) { .lrn-hero__description { max-width: 720px; } }
-        @container (min-width: 1440px) { .lrn-hero__description { max-width: 1080px; } }
 
-        /* ── Card Grid ───────────────────────────────────────────── */
-        .lrn-card-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 24px;
+        /* ── Filter tabs ───────────────────────────────── */
+        .lrn-tabs-wrap {
+          padding: clamp(32px, 4vw, 56px) 0 0;
         }
-        @container (min-width: 768px)  { .lrn-card-grid { grid-template-columns: repeat(2, 1fr); } }
-        @container (min-width: 1024px) { .lrn-card-grid { grid-template-columns: repeat(3, 1fr); } }
-
-        /* ── Article Card ────────────────────────────────────────── */
-        .lrn-article-card {
-          background-color: ${P.surfaceWhite};
-          border-radius: 18px;
-          border: 1px solid ${P.borderDefault};
-          padding: 24px;
-          box-shadow: 0px 24px 40px rgba(0,0,0,0.04);
-          display: flex; flex-direction: column;
-          transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-          text-decoration: none; color: inherit;
+        .lrn-tabs {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 8px;
+        }
+        .lrn-tab {
+          appearance: none;
+          background: var(--c-bg, #ffffff);
+          border: 1px solid var(--c-rule, #e5e7eb);
+          border-radius: 999px;
+          padding: 8px 18px;
+          font-family: inherit;
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          color: var(--c-ink-soft, #3a3d5e);
           cursor: pointer;
+          transition: background-color 0.15s, border-color 0.15s, color 0.15s;
         }
-        .lrn-article-card:hover {
-          border-color: ${P.brandSecondary};
-          box-shadow: 0px 12px 32px rgba(0,0,0,0.08);
+        .lrn-tab:hover {
+          border-color: var(--c-ink, #0f1130);
+          color: var(--c-ink, #0f1130);
+        }
+        .lrn-tab--active {
+          background-color: var(--c-ink, #0f1130);
+          border-color: var(--c-ink, #0f1130);
+          color: #ffffff;
+        }
+        .lrn-tab--active:hover {
+          background-color: var(--c-primary, #5b4fe9);
+          border-color: var(--c-primary, #5b4fe9);
+          color: #ffffff;
+        }
+
+        /* ── Card grid ─────────────────────────────────── */
+        .lrn-grid-wrap {
+          padding: clamp(32px, 4vw, 56px) 0 clamp(80px, 10vw, 140px);
+        }
+        .lrn-grid {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 20px;
+        }
+        @container (max-width: 1023px) {
+          .lrn-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @container (max-width: 639px) {
+          .lrn-grid { grid-template-columns: minmax(0, 1fr); }
+        }
+
+        .lrn-card {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          padding: 24px 22px;
+          background-color: var(--c-bg, #ffffff);
+          border: 1px solid var(--c-rule, #e5e7eb);
+          border-radius: 12px;
+          text-decoration: none;
+          color: var(--c-ink, #0f1130);
+          transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+        }
+        .lrn-card:hover {
+          border-color: var(--c-primary, #5b4fe9);
+          box-shadow: 0 4px 16px rgba(91, 79, 233, 0.08);
           transform: translateY(-2px);
         }
-        @container (min-width: 1440px) { .lrn-article-card { padding: 32px; } }
 
-        .lrn-article-card__header {
-          display: flex; align-items: flex-start; gap: 12px;
-          margin-bottom: 12px;
+        .lrn-card__cat {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          color: var(--c-primary, #5b4fe9);
         }
-        .lrn-article-card__icon {
-          flex-shrink: 0; width: 36px; height: 36px;
-          border-radius: 5px;
-          background-color: rgba(24,33,232,0.04);
-          display: flex; align-items: center; justify-content: center;
-          color: ${P.brandSecondary};
-          margin-top: 2px;
+        .lrn-card__title {
+          font-size: 17px;
+          font-weight: 700;
+          line-height: 1.35;
+          letter-spacing: -0.01em;
+          color: var(--c-ink, #0f1130);
+          margin: 0;
         }
-
-        /* ── Badge ───────────────────────────────────────────────── */
-        .lrn-badges { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 12px; }
-        .lrn-badge {
-          display: inline-flex; align-items: center; gap: 4px;
-          padding: 4px 8px; border-radius: 9999px;
-          font-size: 12px; font-weight: 500; line-height: 1; white-space: nowrap;
+        .lrn-card__desc {
+          font-size: 14px;
+          line-height: 1.6;
+          color: var(--c-ink-soft, #3a3d5e);
+          margin: 0;
+          flex: 1;
         }
-
-        /* ── Card Title + Link ───────────────────────────────────── */
-        .lrn-article-card__title {
-          font-size: 18px; font-weight: 700;
-          color: ${P.textPrimary}; line-height: 1.2;
-          margin-bottom: 8px; flex: 1;
+        .lrn-card__link {
+          align-self: flex-start;
+          margin-top: 4px;
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--c-primary, #5b4fe9);
         }
-        .lrn-article-card__link {
-          font-size: 14px; font-weight: 500;
-          color: ${P.brandSecondary};
-          display: flex; align-items: center; gap: 4px;
-          margin-top: auto; padding-top: 16px;
-          transition: gap 0.2s;
-        }
-        .lrn-article-card:hover .lrn-article-card__link { gap: 8px; }
-
-        /* ── CTA Band ────────────────────────────────────────────── */
-        .lrn-cta-band {
-          width: 100%; position: relative; overflow: hidden;
-          padding: 80px 16px; text-align: center;
-          background: ${P.gradientBrand};
-        }
-        .lrn-cta-band::before {
-          content: ''; position: absolute; inset: 0;
-          background-color: rgba(0,0,0,0.15); z-index: 0;
-        }
-        .lrn-cta-band > * { position: relative; z-index: 1; }
-
-        .lrn-cta-band__inner {
-          max-width: 100%; margin: 0 auto;
-          display: flex; flex-direction: column; align-items: center; gap: 24px;
-        }
-        @container (min-width: 1024px) { .lrn-cta-band__inner { max-width: 720px; } }
-        @container (min-width: 1440px) { .lrn-cta-band__inner { max-width: 1080px; } }
-
-        .lrn-cta-band__title {
-          font-family: var(--f-display, 'Inter'), sans-serif;
-          font-size: 40px; font-weight: 700;
-          color: ${P.white}; line-height: 1.2;
-          letter-spacing: -0.5px; margin: 0;
-        }
-        .lrn-text--product { font-family: var(--f-display, 'Inter'), sans-serif; font-weight: 700; }
-        @container (max-width: 767px) { .lrn-cta-band__title { font-size: 36px; } }
-        @container (min-width: 1440px) {
-          .lrn-cta-band { padding: 120px 120px; }
-          .lrn-cta-band__title { font-size: 50px; }
-        }
-        @container (min-width: 768px) { .lrn-cta-band { padding: 100px 32px; } }
-
-        .lrn-cta-band__description {
-          font-size: 18px; color: rgba(255,255,255,0.85);
-          line-height: 1.7; margin: 0;
-        }
-        .lrn-cta-band__actions {
-          display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
+        .lrn-card:hover .lrn-card__link {
+          color: var(--c-primary-dark, #3b2fbf);
         }
 
-        .lrn-btn {
-          display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-          border-radius: 9999px; font-family: var(--f-display, 'Inter'), sans-serif;
-          font-weight: 500; cursor: pointer; border: none;
-          transition: opacity 0.2s, background-color 0.2s;
-          white-space: nowrap; text-decoration: none;
-          padding: 12px 32px; font-size: 16px;
+        @container (max-width: 639px) {
+          .lrn-hero { padding-top: 60px; }
+          .lrn-hero__title { font-size: 28px; }
+          .lrn-hero__lead { font-size: 15px; }
+          .lrn-card { padding: 20px 18px; }
+          .lrn-card__title { font-size: 16px; }
         }
-        .lrn-cta-band__actions .lrn-btn {
-          background-color: rgba(255,255,255,0.92);
-          color: ${P.textPrimary};
-          border: 1px solid rgba(255,255,255,0.6);
-          backdrop-filter: blur(8px);
-        }
-        .lrn-cta-band__actions .lrn-btn:hover { background-color: ${P.white}; }
-
-        .lrn-cta-band__secondary {
-          display: flex; flex-wrap: wrap; align-items: center;
-          justify-content: center; gap: 32px;
-          font-size: 14px; color: rgba(255,255,255,0.85);
-        }
-        .lrn-cta-band__secondary a {
-          color: rgba(255,255,255,0.85);
-          transition: color 0.2s;
-        }
-        .lrn-cta-band__secondary a:hover { color: ${P.white}; }
       `}</style>
 
       <div className="lrn-root">
-        <div className="lrn-inner">
-          <main>
 
-            {/* ── Section 1: Hero ───────────────────────────────────────── */}
-            <section id="section-1" className="lrn-section lrn-section--hero">
-              <div className="lrn-container">
-                <h1 className="lrn-hero__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>{heroTitle}</h1>
-                <p className="lrn-hero__description">{heroDescription}</p>
-              </div>
-            </section>
+        {/* ── Hero ── */}
+        <section className="lrn-hero">
+          <div className="lrn-container">
+            <div className="lrn-hero__inner">
+              <div className="lrn-hero__eyebrow">{eyebrow}</div>
+              <h1 className="lrn-hero__title">{heroTitle}</h1>
+              <p className="lrn-hero__lead">{heroLead}</p>
+            </div>
+          </div>
+        </section>
 
-            {/* ── Section 2: Article Card Grid ──────────────────────────── */}
-            <section id="section-2" className="lrn-section">
-              <div className="lrn-container">
-                <div className="lrn-card-grid">
-                  {cards.map((card, i) => (
-                    <a
-                      key={i}
-                      href={card.href}
-                      className="lrn-article-card"
-                      aria-label={`Read article: ${card.title}`}
-                    >
-                      <div className="lrn-article-card__header">
-                        <div className="lrn-article-card__icon" aria-hidden="true">
-                          <CardIcon index={i} />
-                        </div>
-                      </div>
-                      <div className="lrn-badges">
-                        <span
-                          className="lrn-badge"
-                          style={badgeStyle(card.badge)}
-                        >
-                          {card.badge}
-                        </span>
-                      </div>
-                      <p className="lrn-article-card__title">{card.title}</p>
-                      <span className="lrn-article-card__link">
-                        {cardLinkLabel}
-                        <ArrowIcon />
-                      </span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* ── Section 3: CTA Band ───────────────────────────────────── */}
-            <section id="section-3" aria-label="Call to action">
-              <div className="lrn-cta-band">
-                <div className="lrn-cta-band__inner">
-                  <h2 className="lrn-cta-band__title" style={{ wordBreak: "keep-all", whiteSpace: "pre-line" }}>
-                    {ctaTitle}
-                  </h2>
-                  <p className="lrn-cta-band__description">{ctaDescription}</p>
-                  <div className="lrn-cta-band__actions">
-                    <a href={ctaBtn1Href} className="lrn-btn">{ctaBtn1Label}</a>
-                  </div>
-                  <div className="lrn-cta-band__secondary">
-                    <a href={ctaSecondaryLink2Href} target="_blank" rel="noopener">{ctaSecondaryLink2Label}</a>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-          </main>
+        {/* ── Filter tabs ── */}
+        <div className="lrn-tabs-wrap">
+          <div className="lrn-container">
+            <div className="lrn-tabs" role="tablist">
+              {filters.map((f) => (
+                <button
+                  key={f.key}
+                  type="button"
+                  role="tab"
+                  aria-selected={activeCategory === f.key}
+                  onClick={() => setActiveCategory(f.key)}
+                  className={`lrn-tab${activeCategory === f.key ? " lrn-tab--active" : ""}`}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
+
+        {/* ── Card grid ── */}
+        <div className="lrn-grid-wrap">
+          <div className="lrn-container">
+            <div className="lrn-grid">
+              {visibleCards.map((c, i) => (
+                <a key={i} href={c.href} className="lrn-card">
+                  <div className="lrn-card__cat">{c.categoryLabel}</div>
+                  <h3 className="lrn-card__title">{c.title}</h3>
+                  <p className="lrn-card__desc">{c.desc}</p>
+                  <span className="lrn-card__link">{readLabel}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
     </>
   )
 }
 
-// ─── Property Controls ─────────────────────────────────────────────────────────
 addPropertyControls(Learn, {
-  heroTitle: {
-    type: ControlType.String,
-    title: "Hero Title",
-    defaultValue: "Enterprise AI Enablement — Learn",
-  },
-  heroDescription: {
-    type: ControlType.String,
-    title: "Hero Description",
-    defaultValue: "In-depth technical articles on enterprise AI enablement, secure AI workflows, structure-preserving processing, and restorable workflows.",
-    displayTextArea: true,
-  },
-
-  // Card 1
-  card01Title: { type: ControlType.String, title: "Card 01 Title", defaultValue: "Secure Enterprise AI Data Workflows" },
-  card01Badge: { type: ControlType.String, title: "Card 01 Badge", defaultValue: "Pillar" },
-  card01Href:  { type: ControlType.String, title: "Card 01 URL",   defaultValue: "/resources/learn/secure-enterprise-ai-data-workflows" },
-
-  // Card 2
-  card02Title: { type: ControlType.String, title: "Card 02 Title", defaultValue: "Enterprise AI Enablement" },
-  card02Badge: { type: ControlType.String, title: "Card 02 Badge", defaultValue: "Pillar" },
-  card02Href:  { type: ControlType.String, title: "Card 02 URL",   defaultValue: "/resources/learn/enterprise-ai-enablement" },
-
-  // Card 3
-  card03Title: { type: ControlType.String, title: "Card 03 Title", defaultValue: "Enterprise AI Document Processing" },
-  card03Badge: { type: ControlType.String, title: "Card 03 Badge", defaultValue: "Pillar" },
-  card03Href:  { type: ControlType.String, title: "Card 03 URL",   defaultValue: "/resources/learn/enterprise-ai-document-processing" },
-
-  // Card 4
-  card04Title: { type: ControlType.String, title: "Card 04 Title", defaultValue: "What Is an AI Data Capsule" },
-  card04Badge: { type: ControlType.String, title: "Card 04 Badge", defaultValue: "Article" },
-  card04Href:  { type: ControlType.String, title: "Card 04 URL",   defaultValue: "/resources/learn/what-is-ai-data-capsule" },
-
-  // Card 5
-  card05Title: { type: ControlType.String, title: "Card 05 Title", defaultValue: "How to Use AI on Sensitive Enterprise Data" },
-  card05Badge: { type: ControlType.String, title: "Card 05 Badge", defaultValue: "Article" },
-  card05Href:  { type: ControlType.String, title: "Card 05 URL",   defaultValue: "/resources/learn/how-to-use-ai-on-sensitive-enterprise-data" },
-
-  // Card 6
-  card06Title: { type: ControlType.String, title: "Card 06 Title", defaultValue: "Why Redaction Breaks Enterprise AI Workflows" },
-  card06Badge: { type: ControlType.String, title: "Card 06 Badge", defaultValue: "Featured" },
-  card06Href:  { type: ControlType.String, title: "Card 06 URL",   defaultValue: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows" },
-
-  // Card 8
-  card08Title: { type: ControlType.String, title: "Card 08 Title", defaultValue: "Structure-Preserving Document Processing" },
-  card08Badge: { type: ControlType.String, title: "Card 08 Badge", defaultValue: "Article" },
-  card08Href:  { type: ControlType.String, title: "Card 08 URL",   defaultValue: "/resources/learn/structure-preserving-document-processing" },
-
-  // Card 9
-  card09Title: { type: ControlType.String, title: "Card 09 Title", defaultValue: "PII Protection vs Enterprise Confidentiality Control" },
-  card09Badge: { type: ControlType.String, title: "Card 09 Badge", defaultValue: "Article" },
-  card09Href:  { type: ControlType.String, title: "Card 09 URL",   defaultValue: "/resources/learn/pii-protection-vs-enterprise-confidentiality-control" },
-
-  // Card 10
-  card10Title: { type: ControlType.String, title: "Card 10 Title", defaultValue: "On-Premise vs Cloud AI Data Protection" },
-  card10Badge: { type: ControlType.String, title: "Card 10 Badge", defaultValue: "Article" },
-  card10Href:  { type: ControlType.String, title: "Card 10 URL",   defaultValue: "/resources/learn/on-premise-vs-cloud-ai-data-protection" },
-
-  // Card 11
-  card11Title: { type: ControlType.String, title: "Card 11 Title", defaultValue: "Local Restoration vs Anonymization" },
-  card11Badge: { type: ControlType.String, title: "Card 11 Badge", defaultValue: "Article" },
-  card11Href:  { type: ControlType.String, title: "Card 11 URL",   defaultValue: "/resources/learn/local-restoration-vs-anonymization" },
-
-  // Card 12
-  card12Title: { type: ControlType.String, title: "Card 12 Title", defaultValue: "AI Data Pipeline Protection" },
-  card12Badge: { type: ControlType.String, title: "Card 12 Badge", defaultValue: "Article" },
-  card12Href:  { type: ControlType.String, title: "Card 12 URL",   defaultValue: "/resources/learn/ai-data-pipeline-protection" },
-
-  // Card 13
-  card13Title: { type: ControlType.String, title: "Card 13 Title", defaultValue: "Restorable Workflow" },
-  card13Badge: { type: ControlType.String, title: "Card 13 Badge", defaultValue: "Glossary" },
-  card13Href:  { type: ControlType.String, title: "Card 13 URL",   defaultValue: "/resources/glossary/restorable-workflow" },
-
-  // Card 14
-  card14Title: { type: ControlType.String, title: "Card 14 Title", defaultValue: "Enterprise Context Control" },
-  card14Badge: { type: ControlType.String, title: "Card 14 Badge", defaultValue: "Glossary" },
-  card14Href:  { type: ControlType.String, title: "Card 14 URL",   defaultValue: "/resources/glossary/enterprise-context-control" },
-
-  // Card 15
-  card15Title: { type: ControlType.String, title: "Card 15 Title", defaultValue: "LLM Capsule vs Masking Tools" },
-  card15Badge: { type: ControlType.String, title: "Card 15 Badge", defaultValue: "Comparison" },
-  card15Href:  { type: ControlType.String, title: "Card 15 URL",   defaultValue: "/resources/learn/llm-capsule-vs-masking-tools" },
-
-  // Card 16
-  card16Title: { type: ControlType.String, title: "Card 16 Title", defaultValue: "LLM Capsule vs Prompt Security Gateways" },
-  card16Badge: { type: ControlType.String, title: "Card 16 Badge", defaultValue: "Comparison" },
-  card16Href:  { type: ControlType.String, title: "Card 16 URL",   defaultValue: "/resources/learn/llm-capsule-vs-prompt-security-gateways" },
-
-  // Card 17
-  card17Title: { type: ControlType.String, title: "Card 17 Title", defaultValue: "LLM Capsule vs Synthetic Data Platforms" },
-  card17Badge: { type: ControlType.String, title: "Card 17 Badge", defaultValue: "Comparison" },
-  card17Href:  { type: ControlType.String, title: "Card 17 URL",   defaultValue: "/resources/learn/llm-capsule-vs-synthetic-data-platforms" },
-
-  // Card 18
-  card18Title: { type: ControlType.String, title: "Card 18 Title", defaultValue: "Structure-Preserving Processing vs Flat Masking" },
-  card18Badge: { type: ControlType.String, title: "Card 18 Badge", defaultValue: "Comparison" },
-  card18Href:  { type: ControlType.String, title: "Card 18 URL",   defaultValue: "/resources/learn/structure-preserving-processing-vs-flat-masking" },
-
-  cardLinkLabel: {
-    type: ControlType.String,
-    title: "Card Link Label",
-    defaultValue: "Read article",
-  },
-
-  // CTA
-  ctaTitle: {
-    type: ControlType.String,
-    title: "CTA Title",
-    defaultValue: "See how LLM Capsule works with your data",
-  },
-  ctaDescription: {
-    type: ControlType.String,
-    title: "CTA Description",
-    defaultValue: "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate on your actual workflows.",
-    displayTextArea: true,
-  },
-  ctaBtn1Label: { type: ControlType.String, title: "CTA Button 1 Label", defaultValue: "Request a Demo" },
-  ctaBtn1Href:  { type: ControlType.String, title: "CTA Button 1 URL",   defaultValue: "/request-a-demo" },
-  ctaSecondaryLink2Label: { type: ControlType.String, title: "CTA Secondary Link 2 Label", defaultValue: "Available on AWS Marketplace" },
-  ctaSecondaryLink2Href:  { type: ControlType.String, title: "CTA Secondary Link 2 URL",   defaultValue: "https://aws.amazon.com/marketplace/pp/prodview-k4uxlhvsxm5rw?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" },
+  eyebrow: { type: ControlType.String, title: "Eyebrow", defaultValue: "Resources · Learn" },
+  heroTitle: { type: ControlType.String, title: "Hero Title", defaultValue: "Learn articles for regulated enterprise AI" },
+  heroLead: { type: ControlType.String, title: "Hero Lead", defaultValue: "Industry deployment guides, architecture deep-dives, comparison frameworks, and Korean public-sector policy analysis.", displayTextArea: true },
+  labelAll: { type: ControlType.String, title: "Tab: All", defaultValue: "All" },
+  labelPolicy: { type: ControlType.String, title: "Tab: Policy", defaultValue: "Policy" },
+  labelIndustry: { type: ControlType.String, title: "Tab: Industry", defaultValue: "Industry" },
+  labelArchitecture: { type: ControlType.String, title: "Tab: Architecture", defaultValue: "Architecture" },
+  labelStrategy: { type: ControlType.String, title: "Tab: Strategy", defaultValue: "Strategy" },
+  labelComparison: { type: ControlType.String, title: "Tab: Comparison", defaultValue: "Comparison" },
+  labelDefinition: { type: ControlType.String, title: "Tab: Definition", defaultValue: "Definition" },
+  readLabel: { type: ControlType.String, title: "Read Label", defaultValue: "Read →" },
 })
