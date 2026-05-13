@@ -159,6 +159,19 @@ def parse_glossary(entry: dict) -> dict:
     body_match = re.search(r'<article class="article-body"[^>]*>(.*?)</article>', html, re.DOTALL)
     body_html = body_match.group(1).strip() if body_match else ""
 
+    # Fallback for definition_body when there's no tldr box:
+    # use the first <p> in article-body (skipping callout/note boxes) as the definition.
+    # If still empty, fall back to the hero lead.
+    if not definition_body and body_html:
+        # Try the first <p> that's not inside a callout/note div
+        # Strip leading <div class="callout">...</div> blocks first
+        cleaned = re.sub(r'^\s*<div[^>]*class="(?:callout|note)[^"]*"[^>]*>.*?</div>\s*', '', body_html, flags=re.DOTALL)
+        first_p = re.search(r'<p>(.*?)</p>', cleaned, re.DOTALL)
+        if first_p:
+            definition_body = strip_html_tags(first_p.group(1))
+    if not definition_body:
+        definition_body = lead
+
     # Extract Related terms section BEFORE stripping it from body
     related = []
     related_terms_match = re.search(
