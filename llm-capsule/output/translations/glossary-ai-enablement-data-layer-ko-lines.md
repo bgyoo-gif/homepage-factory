@@ -30,8 +30,8 @@ An AI enablement data layer is the architectural component that sits between reg
 
 <h2>3줄로 요약하는 핵심 동작</h2>
 
-2. <strong>Encapsulates</strong> sensitive elements locally with structure-preserving + DP-based protection.<br>
 <p>1. <strong>읽기</strong> — REST/gRPC/JDBC 커넥터로 기존 기업 시스템에서 운영 데이터를 읽습니다.<br>
+2. <strong>캡슐화</strong> — 민감한 요소를 문서 구조 보존 + 차등 프라이버시 기반 보호로 로컬에서 캡슐화합니다.<br>
 3. <strong>복원</strong> — AI 출력 결과를 기업 환경 내부의 원래 워크플로우로 복원합니다.</p>
 
 <h2>이것이 아닌 것</h2>
