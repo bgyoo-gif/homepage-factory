@@ -355,6 +355,51 @@ export default function AiEnablementDataLayer({
           line-height: 1.65;
         }
 
+        /* Callout box (for <div class="callout"> inside bodyHtml) */
+        .gd-body .callout {
+          padding: 20px 24px;
+          background-color: var(--c-primary-soft, #eeebfe);
+          border-left: 3px solid var(--c-primary, #5b4fe9);
+          border-radius: 0 var(--r-sm, 6px) var(--r-sm, 6px) 0;
+          margin: 28px 0;
+          font-size: 15px;
+          line-height: 1.65;
+          color: var(--c-ink, #0f1130);
+        }
+
+        .gd-body .callout strong {
+          color: var(--c-ink, #0f1130);
+          font-weight: 700;
+        }
+
+        /* Takeaways box */
+        .gd-body .takeaways {
+          background-color: var(--c-bg-soft, #f7f8fb);
+          border: 1px solid var(--c-rule, #e5e7eb);
+          border-radius: var(--r-md, 10px);
+          padding: 24px 28px;
+          margin: 28px 0;
+        }
+
+        .gd-body .takeaways__label {
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: var(--c-muted, #6b7280);
+          margin-bottom: 12px;
+        }
+
+        .gd-body .takeaways ul {
+          margin: 0;
+          padding-left: 20px;
+        }
+
+        .gd-body .takeaways li {
+          font-size: 15px;
+        }
+
         /* Inline links inside body */
         .gd-body a {
           color: var(--c-primary, #5b4fe9);
