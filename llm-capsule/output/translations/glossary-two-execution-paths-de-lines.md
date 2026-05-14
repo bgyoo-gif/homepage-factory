@@ -40,15 +40,15 @@ Die AI enablement data layer unterstützt zwei Ausführungspfade. Pfad A übermi
 
 <h2>Einsatzkriterien</h2>
 
-<p>Factor / Path A / Path B Kriterium / Pfad A / Pfad B</p>
-
-<p>Externe Übertragung zulässig / Ja (nur Kapsel) / Nein</p>
-
-<p>Air-Gapped-Netzwerk / — / Erforderlich</p>
-
-<p>Frontier-Modell-Kapazität / Ja / Durch lokales Modell begrenzt</p>
-
-<p>Compliance-Profil / „Keine Rohdaten-Offenlegung" / „Zero Exposure"</p>
+<table>
+<thead><tr><th>Kriterium</th><th>Pfad A</th><th>Pfad B</th></tr></thead>
+<tbody>
+<tr><td>Externe Übertragung zulässig</td><td>Ja (nur Kapsel)</td><td>Nein</td></tr>
+<tr><td>Air-Gapped-Netzwerk</td><td>—</td><td>Erforderlich</td></tr>
+<tr><td>Frontier-Modell-Kapazität</td><td>Ja</td><td>Durch lokales Modell begrenzt</td></tr>
+<tr><td>Compliance-Profil</td><td>„Keine Rohdaten-Offenlegung"</td><td>„Zero Exposure"</td></tr>
+</tbody>
+</table>
 
 <h2>Pfadauswahl</h2>
 

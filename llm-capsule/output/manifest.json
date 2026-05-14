@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-14 12:24:12",
+  "generated": "2026-05-14 12:35:49",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1794,7 +1794,7 @@
         {
           "name": "glossary-blocked-ai-workflow-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-blocked-ai-workflow-de-lines.md",
-          "modified": "2026-05-13"
+          "modified": "2026-05-14"
         },
         {
           "name": "glossary-blocked-ai-workflow-ko-lines.md",
@@ -1804,7 +1804,7 @@
         {
           "name": "glossary-connector-lane-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-connector-lane-de-lines.md",
-          "modified": "2026-05-13"
+          "modified": "2026-05-14"
         },
         {
           "name": "glossary-connector-lane-ko-lines.md",
@@ -1819,7 +1819,7 @@
         {
           "name": "glossary-differential-privacy-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-differential-privacy-de-lines.md",
-          "modified": "2026-05-13"
+          "modified": "2026-05-14"
         },
         {
           "name": "glossary-differential-privacy-ko-lines.md",
@@ -1849,7 +1849,7 @@
         {
           "name": "glossary-shadow-ai-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-shadow-ai-de-lines.md",
-          "modified": "2026-05-13"
+          "modified": "2026-05-14"
         },
         {
           "name": "glossary-shadow-ai-ko-lines.md",
@@ -1859,7 +1859,7 @@
         {
           "name": "glossary-sovereign-ai-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-sovereign-ai-de-lines.md",
-          "modified": "2026-05-13"
+          "modified": "2026-05-14"
         },
         {
           "name": "glossary-sovereign-ai-ko-lines.md",
@@ -1869,7 +1869,7 @@
         {
           "name": "glossary-state-vault-for-restoration-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-state-vault-for-restoration-de-lines.md",
-          "modified": "2026-05-13"
+          "modified": "2026-05-14"
         },
         {
           "name": "glossary-state-vault-for-restoration-ko-lines.md",
@@ -1879,7 +1879,7 @@
         {
           "name": "glossary-structure-preserving-encapsulation-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-structure-preserving-encapsulation-de-lines.md",
-          "modified": "2026-05-13"
+          "modified": "2026-05-14"
         },
         {
           "name": "glossary-structure-preserving-encapsulation-ko-lines.md",
@@ -1889,7 +1889,7 @@
         {
           "name": "glossary-two-execution-paths-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/glossary-two-execution-paths-de-lines.md",
-          "modified": "2026-05-13"
+          "modified": "2026-05-14"
         },
         {
           "name": "glossary-two-execution-paths-ko-lines.md",

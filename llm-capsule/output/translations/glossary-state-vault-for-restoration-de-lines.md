@@ -31,13 +31,12 @@ Der State Vault ist ein ausschließlich lokal betriebener Datenspeicher, der das
 
 <h2>Gespeicherte Inhalte</h2>
 
-<p>Token-Mapping: Capsule-Tokens ↔ ursprüngliche operative Kennzeichner</p>
-
-<p>Workflow-Kontext: Zuordnung jeder Kapsel zu einem Vorfall, Ticket oder Runbook</p>
-
-<p>Policy-Referenz: welche Markierungsrichtlinie auf diese Kapsel angewendet wurde</p>
-
-<p>Privacy-Budget-Referenz: welchen Anteil des DP-Budgets dieses Workflows die Kapsel verbraucht hat</p>
+<ul>
+<li>Token-Mapping: Capsule-Tokens ↔ ursprüngliche operative Kennzeichner</li>
+<li>Workflow-Kontext: Zuordnung jeder Kapsel zu einem Vorfall, Ticket oder Runbook</li>
+<li>Policy-Referenz: welche Markierungsrichtlinie auf diese Kapsel angewendet wurde</li>
+<li>Privacy-Budget-Referenz: welchen Anteil des DP-Budgets dieses Workflows die Kapsel verbraucht hat</li>
+</ul>
 
 <h2>Betriebsort</h2>
 
@@ -49,15 +48,13 @@ Der State Vault ist ein ausschließlich lokal betriebener Datenspeicher, der das
 
 <h2>Ausgaben des State Vault</h2>
 
-<p>Wiederhergestellte RCA, eingefügt in das Ticket-System</p>
-
-<p>Wiederhergestellter Runbook-Schritt, eingefügt in das Runbook</p>
-
-<p>Wiederhergestellte Zusammenfassung, eingefügt in das KIS oder Krankenhausportal</p>
-
-<p>Wiederhergestellte Einsatzzusammenfassung, eingefügt in das Einsatzsystem (nur Pfad B)</p>
-
-<p>Wiederhergestellter Compliance-Prüfentwurf, eingefügt in den Prüfworkflow</p>
+<ul>
+<li>Wiederhergestellte RCA, eingefügt in das Ticket-System</li>
+<li>Wiederhergestellter Runbook-Schritt, eingefügt in das Runbook</li>
+<li>Wiederhergestellte Zusammenfassung, eingefügt in das KIS oder Krankenhausportal</li>
+<li>Wiederhergestellte Einsatzzusammenfassung, eingefügt in das Einsatzsystem (nur Pfad B)</li>
+<li>Wiederhergestellter Compliance-Prüfentwurf, eingefügt in den Prüfworkflow</li>
+</ul>
 
 <h2>Nachvollziehbarkeit</h2>
 

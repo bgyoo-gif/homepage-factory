@@ -57,11 +57,11 @@ Shadow AI bezeichnet die nicht autorisierte Nutzung externer LLMs durch Unterneh
 
 <h2>Verwandte Begriffe</h2>
 
-<p>Blockierter KI-Workflow</p>
-
-<p>AI enablement data layer</p>
-
-<p>Learn: Warum KI-Pilotprojekte in Unternehmen ins Stocken geraten</p>
+<ul>
+<li>Blockierter KI-Workflow</li>
+<li>AI enablement data layer</li>
+<li>Learn: Warum KI-Pilotprojekte in Unternehmen ins Stocken geraten</li>
+</ul>
 
 ## Section 04: Related Terms
 

@@ -37,17 +37,14 @@ Der Connector Lane beschreibt, wie LLM Capsule — betrieben innerhalb der Kunde
 
 <h2>Welche Systeme der Connector Lane liest</h2>
 
-<p>Dokument- und Datensatzsysteme — SharePoint, internes DMS, S3 / Blob-Speicher in der VPC des Kunden, Dateiablagen</p>
-
-<p>Ticket- und ITSM-Systeme — ServiceNow, Jira, Remedy, interne Ticketlösungen</p>
-
-<p>CRM / ERP — Salesforce, Dynamics, Oracle, SAP, interne Systeme</p>
-
-<p>Patientendaten im Gesundheitswesen — Krankenhausinformationssysteme, klinische Datenspeicher, Bildgebungsmetadaten — alles innerhalb des Krankenhausnetzwerks verarbeitet</p>
-
-<p>Operative Systeme — NOC-Konsolen, OSS / BSS, OT-Prozessdatenarchive, Protokollplattformen in der DMZ, Verarbeitung in der Umgebung</p>
-
-<p>Individual- und Altsysteme — interne Datenbanken, Dateiablagen, Warteschlangen, eigenentwickelte Werkzeuge — LLM Capsule passt sich der bestehenden Systemlandschaft des Kunden an</p>
+<ul>
+<li><strong>Dokument- und Datensatzsysteme</strong> — SharePoint, internes DMS, S3 / Blob-Speicher in der VPC des Kunden, Dateiablagen</li>
+<li><strong>Ticket- und ITSM-Systeme</strong> — ServiceNow, Jira, Remedy, interne Ticketlösungen</li>
+<li><strong>CRM / ERP</strong> — Salesforce, Dynamics, Oracle, SAP, interne Systeme</li>
+<li><strong>Patientendaten im Gesundheitswesen</strong> — Krankenhausinformationssysteme, klinische Datenspeicher, Bildgebungsmetadaten — alles innerhalb des Krankenhausnetzwerks verarbeitet</li>
+<li><strong>Operative Systeme</strong> — NOC-Konsolen, OSS / BSS, OT-Prozessdatenarchive, Protokollplattformen in der DMZ, Verarbeitung in der Umgebung</li>
+<li><strong>Individual- und Altsysteme</strong> — interne Datenbanken, Dateiablagen, Warteschlangen, eigenentwickelte Werkzeuge — LLM Capsule passt sich der bestehenden Systemlandschaft des Kunden an</li>
+</ul>
 
 <h2>Warum diese Unterscheidung entscheidend ist</h2>
 
@@ -57,19 +54,15 @@ Der Connector Lane beschreibt, wie LLM Capsule — betrieben innerhalb der Kunde
 
 <p>Nach der Bereitstellung in der Umgebung rufen bestehende Systeme LLM Capsule über die jeweils passende Schnittstelle auf:</p>
 
-<p>REST / gRPC — für moderne Betriebswerkzeuge, RAG-Pipelines und individuelle Orchestratoren innerhalb der Umgebung</p>
-
-<p>JDBC / ODBC — für Legacy-Datenbanksysteme (Oracle, MSSQL, DB2), die LLM Capsule als Stored Procedure oder Job-Schritt einbinden</p>
-
-<p>Graph API — für DMS- / ECM-Systeme (SharePoint u. a.), bei denen Dokumentereignisse die Verarbeitung durch LLM Capsule auslösen</p>
-
-<p>Webhook / Log Tap — für ereignisgesteuerte Workflows aus NOC-, Ticket-, OT- und SIEM-nahen Systemen</p>
-
-<p>On-Prem API — die eigene aufrufbare Oberfläche von LLM Capsule; einheitliches Vertragsmodell für Air-Gapped-, Hybrid- und VPC-Umgebungen</p>
-
-<p>Embedded SDK — Bibliotheksintegration für ISVs und Plattformanbieter, die LLM Capsule in ihr eigenes Produkt einbetten</p>
-
-<p>Slack App — für Teams, die Slack als Betriebsoberfläche nutzen; die Laufzeit verbleibt in der Kundenumgebung, die Slack App dient als Aufrufoberfläche</p>
+<ul>
+<li><strong>REST / gRPC</strong> — für moderne Betriebswerkzeuge, RAG-Pipelines und individuelle Orchestratoren innerhalb der Umgebung</li>
+<li><strong>JDBC / ODBC</strong> — für Legacy-Datenbanksysteme (Oracle, MSSQL, DB2), die LLM Capsule als Stored Procedure oder Job-Schritt einbinden</li>
+<li><strong>Graph API</strong> — für DMS- / ECM-Systeme (SharePoint u. a.), bei denen Dokumentereignisse die Verarbeitung durch LLM Capsule auslösen</li>
+<li><strong>Webhook / Log Tap</strong> — für ereignisgesteuerte Workflows aus NOC-, Ticket-, OT- und SIEM-nahen Systemen</li>
+<li><strong>On-Prem API</strong> — die eigene aufrufbare Oberfläche von LLM Capsule; einheitliches Vertragsmodell für Air-Gapped-, Hybrid- und VPC-Umgebungen</li>
+<li><strong>Embedded SDK</strong> — Bibliotheksintegration für ISVs und Plattformanbieter, die LLM Capsule in ihr eigenes Produkt einbetten</li>
+<li><strong>Slack App</strong> — für Teams, die Slack als Betriebsoberfläche nutzen; die Laufzeit verbleibt in der Kundenumgebung, die Slack App dient als Aufrufoberfläche</li>
+</ul>
 
 <p>Alle diese Schnittstellen verbleiben im Kundennetzwerk. Keine von ihnen leitet operative Rohdaten über einen externen SaaS-Endpunkt weiter.</p>
 

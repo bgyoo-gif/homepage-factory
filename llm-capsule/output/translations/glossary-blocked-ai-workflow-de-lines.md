@@ -35,27 +35,24 @@ Ein blockierter KI-Workflow ist ein Geschäftsprozess, der vom KI-Einsatz profit
 
 <h2>Typische Muster</h2>
 
-<p>NOC-RCA-Workflows blockiert, weil Netzwerkprotokolle die regulierte Jurisdiction nicht verlassen dürfen</p>
-
-<p>OT-Schwachstellentriage blockiert, weil Asset-Referenzen und Anlagenbereiche keinen externen Endpunkt erreichen dürfen</p>
-
-<p>Klinische Workflow-Unterstützung blockiert, weil PHI kombiniert mit operativen Mustern durch PII-Filterung allein nicht sicher verarbeitet werden kann</p>
-
-<p>Erstellung von Missionszusammenfassungen blockiert, weil Air-Gapped-Umgebungen jede externe Übertragung untersagen</p>
-
-<p>Regulierte Finanzprüfungen blockiert, weil die Compliance-Anforderungen die Übermittlung von Audit-Trail-Inhalten verbieten</p>
+<ul>
+<li>NOC-RCA-Workflows blockiert, weil Netzwerkprotokolle die regulierte Jurisdiction nicht verlassen dürfen</li>
+<li>OT-Schwachstellentriage blockiert, weil Asset-Referenzen und Anlagenbereiche keinen externen Endpunkt erreichen dürfen</li>
+<li>Klinische Workflow-Unterstützung blockiert, weil PHI kombiniert mit operativen Mustern durch PII-Filterung allein nicht sicher verarbeitet werden kann</li>
+<li>Erstellung von Missionszusammenfassungen blockiert, weil Air-Gapped-Umgebungen jede externe Übertragung untersagen</li>
+<li>Regulierte Finanzprüfungen blockiert, weil die Compliance-Anforderungen die Übermittlung von Audit-Trail-Inhalten verbieten</li>
+</ul>
 
 <h2>Vom blockierten Workflow zum produktiven KI-Einsatz</h2>
 
 <p>Das Muster zur Aufhebung der Blockierung ist branchenübergreifend konsistent:</p>
 
-<p>Die operative Datenkategorie identifizieren, die den Workflow blockiert.</p>
-
-<p>Strukturerhaltende Kapsulierung mit Differential-Privacy-basiertem Schutz anwenden.</p>
-
-<p>Entsprechend der Richtlinie über einen der zwei Ausführungspfade weiterleiten.</p>
-
-<p>Über den State Vault in den ursprünglichen Workflow zurückführen.</p>
+<ol>
+<li>Die operative Datenkategorie identifizieren, die den Workflow blockiert.</li>
+<li>Strukturerhaltende Kapsulierung mit Differential-Privacy-basiertem Schutz anwenden.</li>
+<li>Entsprechend der Richtlinie über einen der zwei Ausführungspfade weiterleiten.</li>
+<li>Über den State Vault in den ursprünglichen Workflow zurückführen.</li>
+</ol>
 
 <h2>Kernaussage</h2>
 

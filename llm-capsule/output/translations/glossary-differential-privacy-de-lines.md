@@ -39,11 +39,11 @@ Differential Privacy (DP) ist ein mathematisches Rahmenwerk zum Schutz einzelner
 
 <h2>Was es nicht ist</h2>
 
-<p>Keine rechtliche oder regulatorische Garantie. Es handelt sich um ein technisches Rahmenwerk mit einem einstellbaren Parameter.</p>
-
-<p>Keine Ja/Nein-Aussage. Datenschutz und Datennutzbarkeit sind über das Privacy-Budget gegeneinander abzuwägen.</p>
-
-<p>Kein Ersatz für Governance, Auditierung oder Richtlinien.</p>
+<ul>
+<li>Keine rechtliche oder regulatorische Garantie. Es handelt sich um ein technisches Rahmenwerk mit einem einstellbaren Parameter.</li>
+<li>Keine Ja/Nein-Aussage. Datenschutz und Datennutzbarkeit sind über das Privacy-Budget gegeneinander abzuwägen.</li>
+<li>Kein Ersatz für Governance, Auditierung oder Richtlinien.</li>
+</ul>
 
 <h2>Relevanz im Unternehmenseinsatz</h2>
 
@@ -51,21 +51,20 @@ Differential Privacy (DP) ist ein mathematisches Rahmenwerk zum Schutz einzelner
 
 <h2>Zulässige Aussagen</h2>
 
-<p>„Datenschutzerhaltend mit definiertem Risikominderungsumfang"</p>
-
-<p>„Begrenztes Inferenzrisiko innerhalb des Policy-Privacy-Budgets"</p>
-
-<p>„Differential-Privacy-basierte Kapsulierung"</p>
+<ul>
+<li>„Datenschutzerhaltend mit definiertem Risikominderungsumfang"</li>
+<li>„Begrenztes Inferenzrisiko innerhalb des Policy-Privacy-Budgets"</li>
+<li>„Differential-Privacy-basierte Kapsulierung"</li>
+</ul>
 
 <h2>Zu vermeidende Aussagen</h2>
 
-<p>„Mathematisch unmöglich zu rekonstruieren"</p>
-
-<p>„100 % sicher"</p>
-
-<p>„DSGVO-konformität garantiert"</p>
-
-<p>„Null-Risiko"</p>
+<ul>
+<li>„Mathematisch unmöglich zu rekonstruieren"</li>
+<li>„100 % sicher"</li>
+<li>„DSGVO-konformität garantiert"</li>
+<li>„Null-Risiko"</li>
+</ul>
 
 ## Section 04: Related Terms
 

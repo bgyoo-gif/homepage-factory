@@ -35,33 +35,30 @@ Die strukturerhaltende Kapsulierung ist der Transformationsschritt innerhalb ein
 
 <h2>Was tokenisiert wird</h2>
 
-<p>Operative Kennzeichner: DEVICE_ID, SITE_ID, CIRCUIT_ID, ASSET_ID, MISSION_REF</p>
-
-<p>Kundenreferenzen und -segmente</p>
-
-<p>Freitextfelder mit gemischten Kennzeichnern (NER-Maskierung)</p>
-
-<p>Sensible Attributwerte (im Rahmen des DP-Budgets)</p>
+<ul>
+<li>Operative Kennzeichner: DEVICE_ID, SITE_ID, CIRCUIT_ID, ASSET_ID, MISSION_REF</li>
+<li>Kundenreferenzen und -segmente</li>
+<li>Freitextfelder mit gemischten Kennzeichnern (NER-Maskierung)</li>
+<li>Sensible Attributwerte (im Rahmen des DP-Budgets)</li>
+</ul>
 
 <h2>Was erhalten bleibt</h2>
 
-<p>Zeitliche Reihenfolge von Ereignissen</p>
-
-<p>Ursache-Wirkungs-Beziehungen in Vorfallssequenzen</p>
-
-<p>Dokumentstruktur (Abschnitte, Listen, Tabellen)</p>
-
-<p>Konfigurationsbaum (Eltern-Kind-Beziehungen, Abhängigkeiten)</p>
-
-<p>Topologiegraph (Knoten, Kanten, Pfade)</p>
+<ul>
+<li>Zeitliche Reihenfolge von Ereignissen</li>
+<li>Ursache-Wirkungs-Beziehungen in Vorfallssequenzen</li>
+<li>Dokumentstruktur (Abschnitte, Listen, Tabellen)</li>
+<li>Konfigurationsbaum (Eltern-Kind-Beziehungen, Abhängigkeiten)</li>
+<li>Topologiegraph (Knoten, Kanten, Pfade)</li>
+</ul>
 
 <h2>Zusammenwirken mit weiteren Komponenten</h2>
 
-<p>Differential Privacy — begrenzt das Inferenzrisiko der Kapsel</p>
-
-<p>State Vault for Restoration — führt die Token unternehmensintern auf ihre Originalwerte zurück</p>
-
-<p>Two execution paths — Pfad A oder Pfad B gemäß Workflow-Richtlinie</p>
+<ul>
+<li>Differential Privacy — begrenzt das Inferenzrisiko der Kapsel</li>
+<li>State Vault for Restoration — führt die Token unternehmensintern auf ihre Originalwerte zurück</li>
+<li>Two execution paths — Pfad A oder Pfad B gemäß Workflow-Richtlinie</li>
+</ul>
 
 <h2>Leitsatz</h2>
 

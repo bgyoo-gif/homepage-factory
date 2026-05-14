@@ -35,13 +35,12 @@ Sovereign AI bezeichnet KI-Workflows im Unternehmenseinsatz, bei denen die zugru
 
 <h2>Anforderungen an Sovereign AI</h2>
 
-<p>[li] Datenhaltung (Data Residency) — Sensible Daten verlassen die definierte geografische und regulatorische Grenze nicht in ungeschützter Form.</p>
-
-<p>[li] Verarbeitungsgrenze — KI-Inferenz findet auf Infrastruktur innerhalb der Grenze statt (oder einer vertraglich gleichwertigen Umgebung).</p>
-
-<p>[li] Lückenlose Audit-Kette — Jedes Datenereignis wird mit zugehöriger Richtlinie, Modell und Ergebnis protokolliert.</p>
-
-<p>[li] Richtlinien-Versionierung — Was als sensibel gilt und was die Grenze verlassen darf, muss explizit versioniert und auditierbar sein.</p>
+<ul>
+<li><strong>Datenhaltung (Data Residency)</strong> — Sensible Daten verlassen die definierte geografische und regulatorische Grenze nicht in ungeschützter Form.</li>
+<li><strong>Verarbeitungsgrenze</strong> — KI-Inferenz findet auf Infrastruktur innerhalb der Grenze statt (oder einer vertraglich gleichwertigen Umgebung).</li>
+<li><strong>Lückenlose Audit-Kette</strong> — Jedes Datenereignis wird mit zugehöriger Richtlinie, Modell und Ergebnis protokolliert.</li>
+<li><strong>Richtlinien-Versionierung</strong> — Was als sensibel gilt und was die Grenze verlassen darf, muss explizit versioniert und auditierbar sein.</li>
+</ul>
 
 <h2>Die Zwei-Pfad-Architektur</h2>
 
@@ -49,11 +48,11 @@ Sovereign AI bezeichnet KI-Workflows im Unternehmenseinsatz, bei denen die zugru
 
 <h2>Häufige Missverständnisse</h2>
 
-<p>[li] Data Residency ≠ Souveränität. Ein in der EU gehosteter LLM-Endpunkt ist notwendig, aber nicht hinreichend. Rohdaten innerhalb eines EU-gehosteten LLM bleiben Rohdaten.</p>
-
-<p>[li] Sovereign AI ≠ kein LLM. LLMs vollständig zu meiden ist keine Sovereign-AI-Strategie, sondern eine Ausweichstrategie. Eine Sovereign-AI-Architektur ermöglicht den KI-Einsatz innerhalb der Souveränitätsgrenzen.</p>
-
-<p>[li] Sovereign AI ≠ binäre Entscheidung. Ein einzelnes Unternehmen kann mehrere Pfade unterstützen. Manche Workflows extern (mit Kapsel), andere On-Premise.</p>
+<ul>
+<li><strong>Data Residency ≠ Souveränität.</strong> Ein in der EU gehosteter LLM-Endpunkt ist notwendig, aber nicht hinreichend. Rohdaten innerhalb eines EU-gehosteten LLM bleiben Rohdaten.</li>
+<li><strong>Sovereign AI ≠ kein LLM.</strong> LLMs vollständig zu meiden ist keine Sovereign-AI-Strategie, sondern eine Ausweichstrategie. Eine Sovereign-AI-Architektur ermöglicht den KI-Einsatz innerhalb der Souveränitätsgrenzen.</li>
+<li><strong>Sovereign AI ≠ binäre Entscheidung.</strong> Ein einzelnes Unternehmen kann mehrere Pfade unterstützen. Manche Workflows extern (mit Kapsel), andere On-Premise.</li>
+</ul>
 
 ## Section 04: Related Terms
 
