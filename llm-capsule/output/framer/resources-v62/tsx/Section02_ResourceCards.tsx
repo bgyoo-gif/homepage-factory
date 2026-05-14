@@ -1,5 +1,6 @@
 import { addPropertyControls, ControlType } from "framer"
 
+import { useEffect, useState } from "react"
 interface Props {
   // Card 1 — Learn
   card1Icon?: string
@@ -49,6 +50,15 @@ export default function Section02_ResourceCards({
   card3LinkLabel = "Visit Trust Center →",
   card3LinkHref = "/trust",
 }: Props) {
+  // Auto-detect Framer locale prefix from current URL (/de/, /ja/, /ko/, etc.)
+  // SSG-safe: starts empty, populated after hydration.
+  const [localePrefix, setLocalePrefix] = useState<string>("")
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const m = window.location.pathname.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)(?:\/|$)/)
+    if (m) setLocalePrefix(`/${m[1]}`)
+  }, [])
+
   const cards = [
     {
       icon: CARD_SVGS[0],
@@ -198,7 +208,7 @@ export default function Section02_ResourceCards({
                   <span className="s2-count">{card.count}</span>
                   <h2 className="s2-card-title">{card.title}</h2>
                   <p className="s2-card-desc">{card.desc}</p>
-                  <a href={card.linkHref} className="s2-card-link">{card.linkLabel}</a>
+                  <a href={`${localePrefix}${card.linkHref}`} className="s2-card-link">{card.linkLabel}</a>
                 </article>
               ))}
             </div>

@@ -1,5 +1,5 @@
 import { addPropertyControls, ControlType } from "framer"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 // ArticleCard — CMS schema: LearnArticles { slug, title, description, category }
 interface ArticleCard {
@@ -95,6 +95,15 @@ export default function Section04_ArticlesByCategory({
   tab4Label = "Strategy",
   tab5Label = "Comparison",
 }: Props) {
+  // Auto-detect Framer locale prefix from current URL (/de/, /ja/, /ko/, etc.)
+  // SSG-safe: starts empty, populated after hydration.
+  const [localePrefix, setLocalePrefix] = useState<string>("")
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const m = window.location.pathname.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)(?:\/|$)/)
+    if (m) setLocalePrefix(`/${m[1]}`)
+  }, [])
+
   const [activeTab, setActiveTab] = useState(tab1Label)
 
   const allArticles: ArticleCard[] = [
@@ -314,7 +323,7 @@ export default function Section04_ArticlesByCategory({
                   <div className="s4-card-cat">{article.category}</div>
                   <h3 className="s4-card-title">{article.title}</h3>
                   <p className="s4-card-desc">{article.description}</p>
-                  <a href={article.slug} className="s4-card-link">Read →</a>
+                  <a href={`${localePrefix}${article.slug}`} className="s4-card-link">Read →</a>
                 </article>
               ))}
             </div>

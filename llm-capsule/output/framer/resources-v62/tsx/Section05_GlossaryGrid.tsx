@@ -1,5 +1,6 @@
 import { addPropertyControls, ControlType } from "framer"
 
+import { useEffect, useState } from "react"
 // GlossaryTermCard — CMS schema: Glossary { term, slug, definition }
 interface Props {
   eyebrow?: string
@@ -79,6 +80,15 @@ export default function Section05_GlossaryGrid({
   t11Definition = "Local key-value store mapping capsule tokens back to original values for restoration.",
   t11Slug = "/glossary/state-vault-for-restoration",
 }: Props) {
+  // Auto-detect Framer locale prefix from current URL (/de/, /ja/, /ko/, etc.)
+  // SSG-safe: starts empty, populated after hydration.
+  const [localePrefix, setLocalePrefix] = useState<string>("")
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const m = window.location.pathname.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)(?:\/|$)/)
+    if (m) setLocalePrefix(`/${m[1]}`)
+  }, [])
+
   const terms = [
     { term: t1Term, definition: t1Definition, slug: t1Slug },
     { term: t2Term, definition: t2Definition, slug: t2Slug },
@@ -214,7 +224,7 @@ export default function Section05_GlossaryGrid({
               {terms.map((t, i) => (
                 <article key={i} className="s5-term">
                   <h3 className="s5-term-title">
-                    <a href={t.slug} className="s5-term-link">{t.term}</a>
+                    <a href={`${localePrefix}${t.slug}`} className="s5-term-link">{t.term}</a>
                   </h3>
                   <p className="s5-term-def">{t.definition}</p>
                 </article>

@@ -1,5 +1,6 @@
 import { addPropertyControls, ControlType } from "framer"
 
+import { useEffect, useState } from "react"
 interface Props {
   label?: string
   title?: string
@@ -19,6 +20,15 @@ export default function Section03_FeaturedArticle({
   ctaHref = "/learn/pilot-to-production-enterprise-ai",
   featuredImage = "",
 }: Props) {
+  // Auto-detect Framer locale prefix from current URL (/de/, /ja/, /ko/, etc.)
+  // SSG-safe: starts empty, populated after hydration.
+  const [localePrefix, setLocalePrefix] = useState<string>("")
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const m = window.location.pathname.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)(?:\/|$)/)
+    if (m) setLocalePrefix(`/${m[1]}`)
+  }, [])
+
   const resolvedImg = featuredImage || DEFAULT_FEATURED_IMG
   return (
     <>
@@ -154,7 +164,7 @@ export default function Section03_FeaturedArticle({
                 <div className="s3-label">{label}</div>
                 <h2 className="s3-title">{title}</h2>
                 <p className="s3-desc">{description}</p>
-                <a className="s3-btn" href={ctaHref}>{ctaLabel}</a>
+                <a className="s3-btn" href={`${localePrefix}${ctaHref}`}>{ctaLabel}</a>
               </div>
               <div className="s3-visual">
                 <img src={resolvedImg} alt={title} loading="lazy" />

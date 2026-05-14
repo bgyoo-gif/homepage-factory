@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-14 14:04:20",
+  "generated": "2026-05-14 16:49:55",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -3406,22 +3406,22 @@
         {
           "name": "Section02_ResourceCards.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/resources-v62/tsx/Section02_ResourceCards.tsx",
-          "modified": "2026-05-06"
+          "modified": "2026-05-14"
         },
         {
           "name": "Section03_FeaturedArticle.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/resources-v62/tsx/Section03_FeaturedArticle.tsx",
-          "modified": "2026-05-06"
+          "modified": "2026-05-14"
         },
         {
           "name": "Section04_ArticlesByCategory.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/resources-v62/tsx/Section04_ArticlesByCategory.tsx",
-          "modified": "2026-05-06"
+          "modified": "2026-05-14"
         },
         {
           "name": "Section05_GlossaryGrid.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/resources-v62/tsx/Section05_GlossaryGrid.tsx",
-          "modified": "2026-05-06"
+          "modified": "2026-05-14"
         },
         {
           "name": "Section06_CTAStrip.tsx",
