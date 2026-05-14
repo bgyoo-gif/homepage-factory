@@ -86,6 +86,13 @@ const CARDS: Card[] = [
     desc: "2026 경영평가편람에 신설된 'AI 활용 등 혁신' 가점 1.5점이 공공기관 경쟁력에 어떤 영향을 주는지 정리합니다.",
     href: "/resources/learn/public-sector-2026-management-evaluation-ai-incentive",
   },
+  {
+    category: "policy",
+    categoryLabel: "POLICY · 정책 분석",
+    title: "ChatGPT 구독하는 공공기관, 어떤 정보까지 입력해도 될까",
+    desc: "외부 상용 LLM 구독 후 가장 자주 마주치는 질문 — 5가지 실무 사례로 판단의 어려움을 짚고, 세 가지 접근 방식(가이드라인 / LLM 제한 / 보호 레이어)을 정리.",
+    href: "/resources/learn/public-sector-chatgpt-input-guide",
+  },
 
   // ── INDUSTRY (3) ───────────────────────────────────────────────
   {

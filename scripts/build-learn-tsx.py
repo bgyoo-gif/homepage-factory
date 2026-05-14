@@ -237,6 +237,29 @@ ARTICLES = [
             ("", ""),
         ],
     },
+    {
+        "slug": "public-sector-chatgpt-input-guide",
+        "component": "PublicSectorChatgptInputGuide",
+        "source_type": "bodyhtml",
+        "title": "ChatGPT 구독하는 공공기관, 정작 어떤 정보까지 입력해도 될까",
+        "lead": "외부 상용 LLM 구독 후 가장 자주 마주치는 질문입니다. 답은 단순하지 않습니다. 5가지 실무 사례로 판단의 어려움을 짚고, 그 어려움을 다루는 세 가지 접근 방식을 정리했습니다.",
+        "category": "정책 분석",
+        "readTime": "16분 읽기",
+        "dateUpdated": "2026년 5월 업데이트",
+        "tldrLabel": "TL;DR",
+        "tldrBody": "ChatGPT·Claude·Gemini 같은 외부 상용 LLM을 구독한 공공기관이 가장 자주 마주치는 질문은 \"정작 어떤 업무 정보까지 입력해도 되는가\"입니다. N²SF 모델 2는 외부 상용 LLM에 입력 가능한 정보를 O 등급(공개)으로 한정하거나, 자체 위험평가 절차를 거치도록 규정합니다. 그러나 실제 직원이 쓰고 싶은 업무 정보 — 회의록, 정책 분석, 인사 자료 — 대부분은 O 등급이 아닙니다. 결과적으로 \"구독은 했는데 정작 쓸 수 있는 범위가 좁다\"는 상황이 생깁니다. 이 글은 5가지 실무 사례로 등급 판단의 실제 모습을 보여주고, 기관이 선택할 수 있는 세 가지 접근 방식(가이드라인 운영 / 외부 LLM 제한 / 보호 레이어 도입)을 정리합니다. 본문에서 단정적 등급 판단은 하지 않습니다. 최종 판단은 기관의 정보보안 담당자 영역입니다.",
+        "canonicalUrl": "https://llmcapsule.ai/resources/learn/public-sector-chatgpt-input-guide",
+        "datePublished": "2026-05-01",
+        "dateModified": "2026-05-01",
+        "inLanguage": "ko-KR",
+        "breadcrumbLabel": "ChatGPT 구독하는 공공기관, 어떤 정보까지 입력해도 될까",
+        "related": [
+            ("공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵", "/resources/learn/public-sector-external-llm-adoption-roadmap"),
+            ("N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까", "/resources/learn/n2sf-model-2-explained"),
+            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches"),
+            ("", ""),
+        ],
+    },
     # ── Pattern B: auto-parse from v6.2 input HTML ──
     {"slug": "pilot-to-production-enterprise-ai", "component": "PilotToProductionEnterpriseAi", "source_type": "input"},
     {"slug": "telecom-noc-ai-deployment", "component": "TelecomNocAiDeployment", "source_type": "input"},
@@ -422,31 +445,52 @@ def parse_input_article(article: dict) -> dict:
     # Breadcrumb label = title
     breadcrumb_label = title
 
-    # Related items (up to 4) — extract hrefs from related section, then resolve titles
-    # via RELATED_TITLE_OVERRIDES (slug-keyed) so category labels in source HTML
-    # don't bleed into the link text.
+    # Related items (up to 4) — extract hrefs from related section
+    # Tries 2 patterns:
+    #   1) <section class="related">...</section>
+    #   2) <h2>Related</h2><ul>...</ul> (legacy English learn pages)
     related = []
-    related_section = re.search(
+    related_html = ""
+    m1 = re.search(
         r'<section[^>]*class="related[^"]*"[^>]*>(.*?)</section>',
         html,
         re.DOTALL,
     )
-    if related_section:
-        for ahref in re.findall(
-            r'<a[^>]+href="([^"]+)"',
-            related_section.group(1),
+    if m1:
+        related_html = m1.group(1)
+    else:
+        m2 = re.search(
+            r'<h2>\s*Related[^<]*</h2>\s*<ul[^>]*>(.*?)</ul>',
+            html,
+            re.DOTALL | re.IGNORECASE,
+        )
+        if m2:
+            related_html = m2.group(1)
+
+    if related_html:
+        for ahref, atext in re.findall(
+            r'<a[^>]+href="([^"]+)"[^>]*>(.*?)</a>',
+            related_html,
+            re.DOTALL,
         ):
             href = ahref
             if href.startswith("/learn/"):
                 href = "/resources/" + href.lstrip("/")
-            # extract slug from href
-            slug_match = re.search(r'/resources/learn/([^/?#]+)', href)
-            if not slug_match:
+            if href.startswith("/glossary/"):
+                href = "/resources/" + href.lstrip("/")
+            # Determine slug + skip self-reference
+            slug_match = re.search(r'/resources/(?:learn|glossary)/([^/?#]+)', href)
+            if slug_match and slug_match.group(1) == slug:
                 continue
-            ref_slug = slug_match.group(1)
-            if ref_slug == slug:  # skip self-reference
+            # Determine label: prefer override (for known slugs), else use anchor text
+            ref_slug = slug_match.group(1) if slug_match else ""
+            text = (
+                RELATED_TITLE_OVERRIDES.get(ref_slug)
+                or strip_html_tags(atext)
+                or (ref_slug.replace("-", " ").title() if ref_slug else "")
+            )
+            if not text or not href:
                 continue
-            text = RELATED_TITLE_OVERRIDES.get(ref_slug, ref_slug.replace("-", " ").title())
             # de-dup
             if any(r[1] == href for r in related):
                 continue
