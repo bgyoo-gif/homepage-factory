@@ -129,6 +129,11 @@ export default function TwoExecutionPaths({
           border-bottom: 1px solid var(--c-rule, #e5e7eb);
         }
 
+        .gd-hero__inner {
+          max-width: 860px;
+          margin: 0 auto;
+        }
+
         .gd-hero__back {
           display: inline-flex;
           align-items: center;
@@ -189,6 +194,7 @@ export default function TwoExecutionPaths({
 
         .gd-def {
           max-width: 880px;
+          margin: 0 auto;
           background-color: var(--c-bg-dark, #0f1130);
           border-radius: var(--r-lg, 16px);
           padding: 32px 36px;
@@ -224,6 +230,7 @@ export default function TwoExecutionPaths({
 
         .gd-body {
           max-width: 760px;
+          margin: 0 auto;
         }
 
         /* Headings inside body */
@@ -431,11 +438,13 @@ export default function TwoExecutionPaths({
         {/* ── 1. Hero ── */}
         <section className="gd-hero">
           <div className="gd-container">
-            <a href={backHref} className="gd-hero__back">{backLabel}</a>
-            <h1 className="gd-hero__title">{term}</h1>
-            <p className="gd-hero__lead">{lead}</p>
-            <div className="gd-hero__meta">
-              <span className="gd-meta__chip">{category}</span>
+            <div className="gd-hero__inner">
+              <a href={backHref} className="gd-hero__back">{backLabel}</a>
+              <h1 className="gd-hero__title">{term}</h1>
+              <p className="gd-hero__lead">{lead}</p>
+              <div className="gd-hero__meta">
+                <span className="gd-meta__chip">{category}</span>
+              </div>
             </div>
           </div>
         </section>

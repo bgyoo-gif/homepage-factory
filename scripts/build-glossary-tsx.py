@@ -56,11 +56,25 @@ RELATED_LABELS = {
 
 # ── Inline GlossaryDetail body (loaded from shared/GlossaryDetail.tsx) ──
 def load_glossary_detail_body() -> str:
-    """Extract the function body of GlossaryDetail (line 106 to before line 506)."""
+    """Extract the function body of GlossaryDetail (auto-detect boundaries)."""
     text = GLOSSARY_DETAIL_TSX.read_text(encoding="utf-8")
     lines = text.split("\n")
-    # 1-indexed: 106..505 inclusive. Python list is 0-indexed → 105..504
-    body_lines = lines[105:505]
+    # Find the '}: Props) {' line and 'addPropertyControls(' line
+    start = end = None
+    for i, line in enumerate(lines):
+        if start is None and line.strip().startswith("}: Props) {"):
+            start = i + 1  # body starts after this line
+        if line.startswith("addPropertyControls("):
+            end = i - 1  # body ends before this line (and the function's closing })
+            break
+    if start is None or end is None:
+        raise RuntimeError("Could not find GlossaryDetail function body boundaries")
+    # Strip the trailing function-closing '}' line
+    body_lines = lines[start:end]
+    while body_lines and body_lines[-1].strip() == "":
+        body_lines.pop()
+    if body_lines and body_lines[-1].strip() == "}":
+        body_lines.pop()
     return "\n".join(body_lines)
 
 
