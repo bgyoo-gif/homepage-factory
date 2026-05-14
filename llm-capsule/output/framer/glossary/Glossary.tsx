@@ -4,7 +4,7 @@
 // No external imports — Framer cross-folder compatible.
 
 import { addPropertyControls, ControlType } from "framer"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 interface Props {
   // Hero
@@ -132,6 +132,15 @@ export default function Glossary({
   readLabel = "Read →",
 }: Props) {
   const [activeCategory, setActiveCategory] = useState<"all" | CategoryKey>("all")
+
+  // Auto-detect Framer locale prefix from current URL (/de/, /ja/, /ko/, etc.)
+  // SSG-safe: starts empty, populated after hydration.
+  const [localePrefix, setLocalePrefix] = useState<string>("")
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const m = window.location.pathname.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)(?:\/|$)/)
+    if (m) setLocalePrefix(`/${m[1]}`)
+  }, [])
 
   const filters: Array<{ key: "all" | CategoryKey; label: string }> = [
     { key: "all",        label: labelAll },
@@ -355,7 +364,7 @@ export default function Glossary({
           <div className="gls-container">
             <div className="gls-grid">
               {visibleCards.map((c, i) => (
-                <a key={i} href={c.href} className="gls-card">
+                <a key={i} href={`${localePrefix}${c.href}`} className="gls-card">
                   <div className="gls-card__cat">{c.categoryLabel}</div>
                   <h3 className="gls-card__title">{c.title}</h3>
                   <p className="gls-card__desc">{c.desc}</p>
