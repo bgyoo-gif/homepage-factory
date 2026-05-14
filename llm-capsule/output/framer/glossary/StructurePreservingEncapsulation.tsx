@@ -341,6 +341,31 @@ export default function StructurePreservingEncapsulation({
           line-height: 1.65;
         }
 
+        /* Table */
+        .gd-body table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 28px 0;
+          font-size: 15px;
+        }
+
+        .gd-body th,
+        .gd-body td {
+          padding: 12px 16px;
+          text-align: left;
+          border-bottom: 1px solid var(--c-rule, #e5e7eb);
+          line-height: 1.5;
+          color: var(--c-ink-soft, #3a3d5e);
+        }
+
+        .gd-body th {
+          font-weight: 700;
+          color: var(--c-ink, #0f1130);
+          background-color: var(--c-bg-soft, #f7f8fb);
+        }
+
+        .gd-body tr:last-child td { border-bottom: none; }
+
         /* Callout box (for <div class="callout"> inside bodyHtml) */
         .gd-body .callout {
           padding: 20px 24px;
