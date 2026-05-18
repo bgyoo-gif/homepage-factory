@@ -105,17 +105,17 @@ Die KI-Antwort wird ausschließlich innerhalb der Organisation automatisch vom T
 ### Connector · 1→2 Label
 conn1Label
 Unstructured Data In
-[TODO:DE]
+Unstrukturierte Daten — Eingang
 
 ### Connector · 2→3 Label
 conn2Label
 Protected Data Out
-[TODO:DE]
+Geschützte Daten — Ausgang
 
 ### Connector · 3→4 Label
 conn3Label
 AI Response (tokenized)
-[TODO:DE]
+KI-Antwort (tokenisiert)
 
 ---
 
@@ -124,147 +124,147 @@ AI Response (tokenized)
 ### Z1 · Step Title
 step1Title
 Source Data
-[TODO:DE]
+Quelldaten
 
 ### Z1 · Zone Label
 z1Label
 Corporate Internal Network
-[TODO:DE]
+Unternehmensinternes Netzwerk
 
 ### Z1 · Zone Sub
 z1Sub
 On-prem DB · Enterprise Systems
-[TODO:DE]
+On-Premise-DB · Unternehmenssysteme
 
 ### Z1 · DB Group Tag
 z1GroupTag
 Unstructured
-[TODO:DE]
+Unstrukturiert
 
 ### Z1 · DB1 Sub (use <br/>)
 z1Db1Sub
 Customer Data<br/>Personally Identifiable Info
-[TODO:DE]
+Kundendaten<br/>Personenbezogene Informationen
 
 ### Z1 · DB2 Sub (use <br/>)
 z1Db2Sub
 Ticket Data<br/>CS Tickets / Status
-[TODO:DE]
+Ticketdaten<br/>Support-Tickets / Status
 
 ### Z1 · DB3 Sub (use <br/>)
 z1Db3Sub
 Detail Data<br/>Unstructured Claims
-[TODO:DE]
+Detaildaten<br/>Unstrukturierte Schadenmeldungen
 
 ### Z1 · Raw Input Block Label
 z1FieldsLabel
 Raw Input Fields
-[TODO:DE]
+Rohdatenfelder
 
 ### Z1 · Field 1 Name
 z1F1Name
 Customer
-[TODO:DE]
+Kunde
 
 ### Z1 · Field 3 Name
 z1F2Name
 Free Text
-[TODO:DE]
+Freitext
 
 ### Z1 · Field 2 Name
 z1F2NameMid
 Ticket
-[TODO:DE]
+Ticket
 
 ### Z1 · Guardrail Title
 z1GuardStrong
 PII guardrails protect fields. Enterprises run on structures.
-[TODO:DE]
+PII-Filter schützen einzelne Felder. Unternehmen arbeiten auf Basis von Strukturen.
 
 ### Z1 · Guardrail Body (HTML)
 z1GuardBody
 We are not criticizing PII filters. We handle a <b>different category of data</b> — table schemas, cross-references, alarm sequences, and ticket threads that simple field-level masking cannot preserve.
-[TODO:DE]
+PII-Filter sind nicht das Problem. LLM Capsule adressiert eine <b>andere Datenkategorie</b> — Tabellenschemata, Querverweise, Alarmsequenzen und Ticket-Threads, die einfaches Feldmaskieren nicht erhalten kann.
 
 ### Z1 · Plug-in Tag
 z1PluginTag
 Plug-in for AI Teams
-[TODO:DE]
+Plug-in für KI-Teams
 
 ### Z1 · Sys 1 Sub
 z1Sys1Sub
 SAP·Oracle
-[TODO:DE]
+SAP·Oracle
 
 ### Z1 · Sys 2 Sub
 z1Sys2Sub
 Salesforce
-[TODO:DE]
+Salesforce
 
 ### Z1 · Sys 3 Sub
 z1Sys3Sub
 Vector DB
-[TODO:DE]
+Vector DB
 
 ### Z1 · Sys 4 Sub
 z1Sys4Sub
 Oracle
-[TODO:DE]
+Oracle
 
 ### Z1 · Sys 5 Sub
 z1Sys5Sub
 Jira·SN
-[TODO:DE]
+Jira·SN
 
 ### Z1 · Sys 6 Sub
 z1Sys6Sub
 SharePoint
-[TODO:DE]
+SharePoint
 
 ### Z1 · Sys 1 Name (ERP)
 z1Sys1Name
 ERP
-[TODO:DE]
+ERP
 
 ### Z1 · Sys 2 Name (CRM)
 z1Sys2Name
 CRM
-[TODO:DE]
+CRM
 
 ### Z1 · Sys 3 Name (RAG)
 z1Sys3Name
 RAG
-[TODO:DE]
+RAG
 
 ### Z1 · Sys 4 Name (Legacy)
 z1Sys4Name
 Legacy
-[TODO:DE]
+Legacy
 
 ### Z1 · Sys 5 Name (Ticket)
 z1Sys5Name
 Ticket
-[TODO:DE]
+Ticket
 
 ### Z1 · Sys 6 Name (DMS)
 z1Sys6Name
 DMS
-[TODO:DE]
+DMS
 
 ### Z1 · API List
 z1SysApi
 REST · gRPC · JDBC · Graph API
-[TODO:DE]
+REST · gRPC · JDBC · Graph API
 
 ### Z1 · Zero-Mod Title
 z1ZeroModStrong
 Zero System Modification
-[TODO:DE]
+Keine Systemänderungen erforderlich
 
 ### Z1 · Zero-Mod Body
 z1ZeroModBody
 Integrates via a single API call with zero modifications to existing ERP, CRM, or legacy systems
-[TODO:DE]
+Die Integration erfolgt über einen einzelnen API-Aufruf — ohne Änderungen an bestehenden ERP-, CRM- oder Legacy-Systemen.
 
 ---
 
@@ -273,102 +273,102 @@ Integrates via a single API call with zero modifications to existing ERP, CRM, o
 ### Z2 · Step Title
 step2Title
 DP Encapsulation
-[TODO:DE]
+DP-Kapselung
 
 ### Z2 · Zone Label
 z2Label
 DMZ — Differential Privacy
-[TODO:DE]
+DMZ — Differential Privacy
 
 ### Z2 · Zone Sub
 z2Sub
 Same Org · EU Region · GDPR Ready
-[TODO:DE]
+Gleiche Organisation · EU-Region · DSGVO-konform
 
 ### Z2 · DB Group Tag
 z2GroupTag
 Encapsulation Flow
-[TODO:DE]
+Kapselungsfluss
 
 ### Z2 · IN Sub
 z2InSub
 Raw Input<br/>Unstructured Data
-[TODO:DE]
+Roheingabe<br/>Unstrukturierte Daten
 
 ### Z2 · PROCESS Sub
 z2ProcessSub
 DP Engine<br/>Differential Privacy
-[TODO:DE]
+DP Engine<br/>Differential Privacy
 
 ### Z2 · OUT Sub
 z2OutSub
 Encapsulated<br/>Token Capsule
-[TODO:DE]
+Gekapselt<br/>Token-Kapsel
 
 ### Z2 · Block Label
 z2BlockLabel
 Encapsulation
-[TODO:DE]
+Kapselung
 
 ### Z2 · Protected Badge
 z2ProtectedBadge
 ✓ Protected
-[TODO:DE]
+✓ Geschützt
 
 ### Z2 · Field 1 Name
 z2F1Name
 Name
-[TODO:DE]
+Name
 
 ### Z2 · Field 2 Name
 z2F2Name
 Champ Id
-[TODO:DE]
+Champ Id
 
 ### Z2 · Field 3 Name
 z2F3Name
 Free Text
-[TODO:DE]
+Freitext
 
 ### Z2 · DP Engine Name
 z2DpEngineName
 DP Engine
-[TODO:DE]
+DP Engine
 
 ### Z2 · DP Engine Badge
 z2DpEngineBadge
 epsilon-DP Active
-[TODO:DE]
+epsilon-DP aktiv
 
 ### Z2 · DP Tech 1
 z2DpTech1
 Noise Injection (Laplace)
-[TODO:DE]
+Rausch-Injektion (Laplace)
 
 ### Z2 · DP Tech 2
 z2DpTech2
 k-Anonymity Enforcement
-[TODO:DE]
+k-Anonymität-Durchsetzung
 
 ### Z2 · DP Tech 3
 z2DpTech3
 Semantic Tokenization
-[TODO:DE]
+Semantische Tokenisierung
 
 ### Z2 · DP Tech 4
 z2DpTech4
 Free-Text NER Masking
-[TODO:DE]
+Freitext-NER-Maskierung
 
 ### Z2 · DMZ Title
 z2DmzStrong
 DMZ Guarantee
-[TODO:DE]
+DMZ-Garantie
 
 ### Z2 · DMZ Body
 z2DmzBody
 Goes beyond simple encapsulation. Differential privacy techniques make original sensitive data <b>mathematically irreversible</b>
-[TODO:DE]
+Über einfache Kapselung hinaus: Differential-Privacy-Verfahren machen ursprüngliche sensible Daten <b>mathematisch irreversibel</b>.
 
 ---
 
@@ -377,122 +377,122 @@ Goes beyond simple encapsulation. Differential privacy techniques make original 
 ### Z3 · Step Title
 step3Title
 AI Processing
-[TODO:DE]
+KI-Verarbeitung
 
 ### Z3 · Zone Label
 z3Label
 In-House Team
-[TODO:DE]
+Internes Team
 
 ### Z3 · Zone Sub
 z3Sub
 Same Org · Anonymized LLM Proxy
-[TODO:DE]
+Gleiche Organisation · Anonymisierter LLM-Proxy
 
 ### Z3 · Pipeline Block Label
 z3PipelineLabel
 LLM Pipeline
-[TODO:DE]
+LLM-Pipeline
 
 ### Z3 · Proxy Badge
 z3ProxyBadge
 LLM-a-Proxy
-[TODO:DE]
+LLM-a-Proxy
 
 ### Z3 · Proxy Sub
 z3ProxySub
 Anonymized Routing
-[TODO:DE]
+Anonymisiertes Routing
 
 ### Z3 · Path A Label
 z3PathA
 Path A · External
-[TODO:DE]
+Path A · Extern
 
 ### Z3 · Path B Label
 z3PathB
 Path B · On-prem
-[TODO:DE]
+Path B · On-Premise
 
 ### Z3 · Deploy A1 (External 1)
 z3DeployA1
 Public cloud
-[TODO:DE]
+Public Cloud
 
 ### Z3 · Deploy A2 (External 2)
 z3DeployA2
 Region-hosted
-[TODO:DE]
+Region-gehostet
 
 ### Z3 · Deploy B1 (On-prem 1)
 z3DeployB1
 Private
-[TODO:DE]
+Privat
 
 ### Z3 · Deploy B2 (On-prem 2)
 z3DeployB2
 On-prem
-[TODO:DE]
+On-Premise
 
 ### Z3 · Swap Note
 z3SwapNote
 swap any model — capsule contract stays the same
-[TODO:DE]
+Modell austauschbar — der Capsule-Vertrag bleibt unverändert.
 
 ### Z3 · Guardrail Title
 z3GuardStrong
 No Direct Access to Source DB
-[TODO:DE]
+Kein direkter Zugriff auf die Quelldatenbank
 
 ### Z3 · Guardrail Body
 z3GuardBody
 AI teams never touch the source database. They only receive structure-preserved, differentially-private data
-[TODO:DE]
+KI-Teams erhalten keinen Zugriff auf die Quelldatenbank. Sie empfangen ausschließlich Differential-Privacy-geschützte Daten mit erhaltener Datenstruktur.
 
 ### Z3 · Isolation Block Label
 z3IsoLabel
 Privacy Isolation Module
-[TODO:DE]
+Datenschutz-Isolationsmodul
 
 ### Z3 · PDESC Head
 z3PdescHead
 PDESC / ISOLA
-[TODO:DE]
+PDESC / ISOLA
 
 ### Z3 · PDESC Item 1
 z3PdescItem1
 Privacy Descriptor
-[TODO:DE]
+Datenschutz-Deskriptor
 
 ### Z3 · PDESC Item 2
 z3PdescItem2
 Isolated Computation Zone
-[TODO:DE]
+Isolierte Rechenzone
 
 ### Z3 · PDESC Item 3
 z3PdescItem3
 Output De-identification
-[TODO:DE]
+Ausgabe-Anonymisierung
 
 ### Z3 · PDESC Foot
 z3PdescFoot
 Re-identification attempts contained · Output validated
-[TODO:DE]
+Re-Identifizierungsversuche abgewehrt · Ausgabe validiert
 
 ### Z3 · Compliance Label
 z3ComplianceLabel
 Compliance
-[TODO:DE]
+Compliance
 
 ### Z3 · Compliance Badge 1
 z3Compliance1
 EU GDPR
-[TODO:DE]
+DSGVO (GDPR)
 
 ### Z3 · Compliance Badge 2
 z3Compliance2
 EU Region
-[TODO:DE]
+EU-Region
 
 ---
 
@@ -501,137 +501,137 @@ EU Region
 ### Z4 · Step Title
 step4Title
 Local Auto Reconstruction
-[TODO:DE]
+Lokale automatische Rekonstruktion
 
 ### Z4 · Zone Label
 z4Label
 Local — Auto Reconstruction
-[TODO:DE]
+Lokal — Automatische Rekonstruktion
 
 ### Z4 · Zone Sub
 z4Sub
 Internal Only · No External Egress
-[TODO:DE]
+Nur intern · Kein externer Datenabfluss
 
 ### Z4 · DB Group Tag
 z4GroupTag
 Reconstruction Flow
-[TODO:DE]
+Rekonstruktionsfluss
 
 ### Z4 · IN Sub
 z4InSub
 AI Token<br/>Tokenized Response
-[TODO:DE]
+KI-Token<br/>Tokenisierte Antwort
 
 ### Z4 · PROCESS Sub
 z4ProcessSub
 Reconstruction<br/>Local Restoration
-[TODO:DE]
+Rekonstruktion<br/>Lokale Wiederherstellung
 
 ### Z4 · OUT Sub
 z4OutSub
 Original Value<br/>Business-Ready
-[TODO:DE]
+Originalwert<br/>Direkt einsatzbereit
 
 ### Z4 · Token Block Label
 z4BlockLabel
 Token → Original
-[TODO:DE]
+Token → Original
 
 ### Z4 · Field 1 Name
 z4F1Name
 Customer
-[TODO:DE]
+Kunde
 
 ### Z4 · Field 2 Name
 z4F2Name
 Ticket
-[TODO:DE]
+Ticket
 
 ### Z4 · Field 3 Name
 z4F3Name
 Details
-[TODO:DE]
+Details
 
 ### Z4 · Recon Engine Name
 z4ReconName
 Reconstruction
-[TODO:DE]
+Rekonstruktion
 
 ### Z4 · Recon Engine Badge
 z4ReconBadge
 Local Only
-[TODO:DE]
+Nur lokal
 
 ### Z4 · Recon Tech 1
 z4ReconTech1
 Token Map Lookup
-[TODO:DE]
+Token-Map-Abfrage
 
 ### Z4 · Recon Tech 2
 z4ReconTech2
 Original Value Restore
-[TODO:DE]
+Originalwert-Wiederherstellung
 
 ### Z4 · Recon Tech 3
 z4ReconTech3
 Context Re-binding
-[TODO:DE]
+Kontext-Neuzuordnung
 
 ### Z4 · Recon Tech 4
 z4ReconTech4
 Output Validation
-[TODO:DE]
+Ausgabevalidierung
 
 ### Z4 · Local Guarantee Title
 z4LocalStrong
 Local Reconstruction Guarantee
-[TODO:DE]
+Lokale Rekonstruktionsgarantie
 
 ### Z4 · Local Guarantee Body
 z4LocalBody
 Token map exists only in local storage · <b>Delivers Business-Ready Output instantly</b>
-[TODO:DE]
+Die Token-Map verbleibt ausschließlich im lokalen Speicher · <b>Die Ausgabe ist sofort geschäftlich einsetzbar</b>
 
 ### Z4 · Output Properties Label
 z4OutputLabel
 Output Properties
-[TODO:DE]
+Ausgabeeigenschaften
 
 ### Z4 · Output Check 1
 z4OutCheck1
 Original Values Restored
-[TODO:DE]
+Originalwerte wiederhergestellt
 
 ### Z4 · Output Check 2
 z4OutCheck2
 Zero External Exposure
-[TODO:DE]
+Kein externer Datenaustritt
 
 ### Z4 · Output Check 3
 z4OutCheck3
 Context Fully Preserved
-[TODO:DE]
+Kontext vollständig erhalten
 
 ### Z4 · Output Check 4
 z4OutCheck4
 Business-Ready Output
-[TODO:DE]
+Direkt einsetzbare Ausgabe
 
 ### Z4 · Chip 1
 z4Chip1
 Auto Restore
-[TODO:DE]
+Automatische Wiederherstellung
 
 ### Z4 · Chip 2
 z4Chip2
 Local Only
-[TODO:DE]
+Nur lokal
 
 ### Z4 · Chip 3
 z4Chip3
 Data Residency
-[TODO:DE]
+Datenspeicherort (Data Residency)
 
 ---
 
@@ -640,22 +640,22 @@ Data Residency
 ### Core · Section Title
 coreTitle
 6 Core Capabilities
-[TODO:DE]
+6 Kernfunktionen
 
 ### Core · Workflow Group Label
 coreWorkflowGroup
 What Makes The Workflow Run
-[TODO:DE]
+Was den Workflow antreibt
 
 ### Core · Approval Group Label
 coreApprovalGroup
 What Gets The Approval
-[TODO:DE]
+Was die Freigabe sichert
 
 ### Core · Bottom Strip
 coreStrip
 01 and 02 lead the conversation. 05 and 06 anchor the approval.
-[TODO:DE]
+01 und 02 sind Grundlage des fachlichen Austauschs. 05 und 06 sichern die regulatorische Freigabe.
 
 ---
 
@@ -664,12 +664,12 @@ coreStrip
 ### Core 01 · Name
 core1Name
 Structure-Preserving
-[TODO:DE]
+Strukturerhaltend
 
 ### Core 01 · Description
 core1Desc
 Tables, logs, cross-references, and alarm sequences stay intact. AI reads structure, not just text.
-[TODO:DE]
+Tabellen, Protokolle, Querverweise und Alarmsequenzen bleiben unverändert. Die KI verarbeitet die vollständige Datenstruktur — nicht nur Text.
 
 ---
 
@@ -678,12 +678,12 @@ Tables, logs, cross-references, and alarm sequences stay intact. AI reads struct
 ### Core 02 · Name
 core2Name
 Enterprise Environment Execution
-[TODO:DE]
+Ausführung in der Unternehmensumgebung
 
 ### Core 02 · Description
 core2Desc
 Deploys inside your environment. Connects via API, SDK, connectors, or reverse proxy. No traffic re-routing.
-[TODO:DE]
+LLM Capsule wird innerhalb Ihrer bestehenden Infrastruktur betrieben. Die Anbindung erfolgt über API, SDK, Konnektoren oder Reverse Proxy — ohne Datenverkehrs-Umleitung.
 
 ---
 
@@ -692,12 +692,12 @@ Deploys inside your environment. Connects via API, SDK, connectors, or reverse p
 ### Core 03 · Name
 core3Name
 Business-Ready Reconstruction
-[TODO:DE]
+Geschäftsfertige Rekonstruktion
 
 ### Core 03 · Description
 core3Desc
 AI output is restored with real values. The result goes straight back to the originating ticket or workflow.
-[TODO:DE]
+Die KI-Ausgabe wird mit den Originalwerten wiederhergestellt. Das Ergebnis fließt direkt in das auslösende Ticket oder den Workflow zurück.
 
 ---
 
@@ -706,12 +706,12 @@ AI output is restored with real values. The result goes straight back to the ori
 ### Core 04 · Name
 core4Name
 Enterprise Context Control
-[TODO:DE]
+Unternehmenseigene Sensitivitätsdefinition
 
 ### Core 04 · Description
 core4Desc
 Your IT admin defines what counts as sensitive. Custom markers, regex rules, and tier policies. Set in 5 minutes.
-[TODO:DE]
+Ihr IT-Administrator legt fest, welche Daten als sensibel gelten. Benutzerdefinierte Marker, Regex-Regeln und Stufenrichtlinien — konfigurierbar in unter 5 Minuten.
 
 ---
 
@@ -720,12 +720,12 @@ Your IT admin defines what counts as sensitive. Custom markers, regex rules, and
 ### Core 05 · Name
 core5Name
 Zero Exposure &amp; Audit
-[TODO:DE]
+Zero Exposure &amp; Audit-Trail
 
 ### Core 05 · Description
 core5Desc
 Raw operational data stays inside. Every action logged, timestamped, SIEM-exportable.
-[TODO:DE]
+Operative Rohdaten verbleiben innerhalb der Organisation. Jede Aktion wird protokolliert, mit Zeitstempel versehen und ist SIEM-exportierbar.
 
 ---
 
@@ -734,9 +734,9 @@ Raw operational data stays inside. Every action logged, timestamped, SIEM-export
 ### Core 06 · Name
 core6Name
 Time-Shifting Policy
-[TODO:DE]
+Zeitabhängige Richtlinien
 
 ### Core 06 · Description
 core6Desc
 Sensitivity changes over time. Capsule versions every marker and policy for continuous compliance.
-[TODO:DE]
+Sensitivitätskriterien ändern sich im Zeitverlauf. Capsule versioniert jeden Marker und jede Richtlinie für eine kontinuierliche DSGVO- und regulatorische Konformität.

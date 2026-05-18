@@ -105,17 +105,17 @@ AI 응답은 조직 내부에서만 토큰에서 원본 값으로 자동 복원�
 ### Connector · 1→2 Label
 conn1Label
 Unstructured Data In
-[TODO:KO]
+비정형 데이터 입력
 
 ### Connector · 2→3 Label
 conn2Label
 Protected Data Out
-[TODO:KO]
+보호된 데이터 출력
 
 ### Connector · 3→4 Label
 conn3Label
 AI Response (tokenized)
-[TODO:KO]
+AI 응답 (토큰화)
 
 ---
 
@@ -124,147 +124,147 @@ AI Response (tokenized)
 ### Z1 · Step Title
 step1Title
 Source Data
-[TODO:KO]
+소스 데이터
 
 ### Z1 · Zone Label
 z1Label
 Corporate Internal Network
-[TODO:KO]
+기업 내부 네트워크
 
 ### Z1 · Zone Sub
 z1Sub
 On-prem DB · Enterprise Systems
-[TODO:KO]
+온프레미스 DB · 엔터프라이즈 시스템
 
 ### Z1 · DB Group Tag
 z1GroupTag
 Unstructured
-[TODO:KO]
+비정형
 
 ### Z1 · DB1 Sub (use <br/>)
 z1Db1Sub
 Customer Data<br/>Personally Identifiable Info
-[TODO:KO]
+고객 데이터<br/>개인 식별 정보(PII)
 
 ### Z1 · DB2 Sub (use <br/>)
 z1Db2Sub
 Ticket Data<br/>CS Tickets / Status
-[TODO:KO]
+티켓 데이터<br/>CS 티켓 / 상태
 
 ### Z1 · DB3 Sub (use <br/>)
 z1Db3Sub
 Detail Data<br/>Unstructured Claims
-[TODO:KO]
+상세 데이터<br/>비정형 클레임
 
 ### Z1 · Raw Input Block Label
 z1FieldsLabel
 Raw Input Fields
-[TODO:KO]
+원본 입력 필드
 
 ### Z1 · Field 1 Name
 z1F1Name
 Customer
-[TODO:KO]
+고객
 
 ### Z1 · Field 3 Name
 z1F2Name
 Free Text
-[TODO:KO]
+자유 입력
 
 ### Z1 · Field 2 Name
 z1F2NameMid
 Ticket
-[TODO:KO]
+티켓
 
 ### Z1 · Guardrail Title
 z1GuardStrong
 PII guardrails protect fields. Enterprises run on structures.
-[TODO:KO]
+PII 가드레일은 필드를 보호합니다. 기업은 구조 위에서 운영됩니다.
 
 ### Z1 · Guardrail Body (HTML)
 z1GuardBody
 We are not criticizing PII filters. We handle a <b>different category of data</b> — table schemas, cross-references, alarm sequences, and ticket threads that simple field-level masking cannot preserve.
-[TODO:KO]
+PII 필터를 비판하는 것이 아닙니다. 우리는 <b>다른 범주의 데이터</b>를 다룹니다 — 단순 필드 수준 마스킹으로는 보존할 수 없는 테이블 스키마, 상호 참조, 알람 시퀀스, 티켓 스레드입니다.
 
 ### Z1 · Plug-in Tag
 z1PluginTag
 Plug-in for AI Teams
-[TODO:KO]
+AI 팀을 위한 플러그인
 
 ### Z1 · Sys 1 Sub
 z1Sys1Sub
 SAP·Oracle
-[TODO:KO]
+SAP·Oracle
 
 ### Z1 · Sys 2 Sub
 z1Sys2Sub
 Salesforce
-[TODO:KO]
+Salesforce
 
 ### Z1 · Sys 3 Sub
 z1Sys3Sub
 Vector DB
-[TODO:KO]
+Vector DB
 
 ### Z1 · Sys 4 Sub
 z1Sys4Sub
 Oracle
-[TODO:KO]
+Oracle
 
 ### Z1 · Sys 5 Sub
 z1Sys5Sub
 Jira·SN
-[TODO:KO]
+Jira·SN
 
 ### Z1 · Sys 6 Sub
 z1Sys6Sub
 SharePoint
-[TODO:KO]
+SharePoint
 
 ### Z1 · Sys 1 Name (ERP)
 z1Sys1Name
 ERP
-[TODO:KO]
+ERP
 
 ### Z1 · Sys 2 Name (CRM)
 z1Sys2Name
 CRM
-[TODO:KO]
+CRM
 
 ### Z1 · Sys 3 Name (RAG)
 z1Sys3Name
 RAG
-[TODO:KO]
+RAG
 
 ### Z1 · Sys 4 Name (Legacy)
 z1Sys4Name
 Legacy
-[TODO:KO]
+레거시
 
 ### Z1 · Sys 5 Name (Ticket)
 z1Sys5Name
 Ticket
-[TODO:KO]
+티켓
 
 ### Z1 · Sys 6 Name (DMS)
 z1Sys6Name
 DMS
-[TODO:KO]
+DMS
 
 ### Z1 · API List
 z1SysApi
 REST · gRPC · JDBC · Graph API
-[TODO:KO]
+REST · gRPC · JDBC · Graph API
 
 ### Z1 · Zero-Mod Title
 z1ZeroModStrong
 Zero System Modification
-[TODO:KO]
+시스템 수정 없음
 
 ### Z1 · Zero-Mod Body
 z1ZeroModBody
 Integrates via a single API call with zero modifications to existing ERP, CRM, or legacy systems
-[TODO:KO]
+기존 ERP, CRM, 레거시 시스템에 어떠한 수정도 없이 단일 API 호출로 연동됩니다.
 
 ---
 
@@ -273,102 +273,102 @@ Integrates via a single API call with zero modifications to existing ERP, CRM, o
 ### Z2 · Step Title
 step2Title
 DP Encapsulation
-[TODO:KO]
+DP 캡슐화
 
 ### Z2 · Zone Label
 z2Label
 DMZ — Differential Privacy
-[TODO:KO]
+DMZ — 차등 프라이버시
 
 ### Z2 · Zone Sub
 z2Sub
 Same Org · EU Region · GDPR Ready
-[TODO:KO]
+동일 조직 · EU 리전 · GDPR 대응
 
 ### Z2 · DB Group Tag
 z2GroupTag
 Encapsulation Flow
-[TODO:KO]
+캡슐화 플로우
 
 ### Z2 · IN Sub
 z2InSub
 Raw Input<br/>Unstructured Data
-[TODO:KO]
+원본 입력<br/>비정형 데이터
 
 ### Z2 · PROCESS Sub
 z2ProcessSub
 DP Engine<br/>Differential Privacy
-[TODO:KO]
+DP 엔진<br/>차등 프라이버시
 
 ### Z2 · OUT Sub
 z2OutSub
 Encapsulated<br/>Token Capsule
-[TODO:KO]
+캡슐화됨<br/>토큰 캡슐
 
 ### Z2 · Block Label
 z2BlockLabel
 Encapsulation
-[TODO:KO]
+캡슐화
 
 ### Z2 · Protected Badge
 z2ProtectedBadge
 ✓ Protected
-[TODO:KO]
+✓ 보호됨
 
 ### Z2 · Field 1 Name
 z2F1Name
 Name
-[TODO:KO]
+이름
 
 ### Z2 · Field 2 Name
 z2F2Name
 Champ Id
-[TODO:KO]
+Champ Id
 
 ### Z2 · Field 3 Name
 z2F3Name
 Free Text
-[TODO:KO]
+자유 입력
 
 ### Z2 · DP Engine Name
 z2DpEngineName
 DP Engine
-[TODO:KO]
+DP 엔진
 
 ### Z2 · DP Engine Badge
 z2DpEngineBadge
 epsilon-DP Active
-[TODO:KO]
+epsilon-DP 활성
 
 ### Z2 · DP Tech 1
 z2DpTech1
 Noise Injection (Laplace)
-[TODO:KO]
+노이즈 주입 (Laplace)
 
 ### Z2 · DP Tech 2
 z2DpTech2
 k-Anonymity Enforcement
-[TODO:KO]
+k-Anonymity 적용
 
 ### Z2 · DP Tech 3
 z2DpTech3
 Semantic Tokenization
-[TODO:KO]
+의미 기반 토큰화
 
 ### Z2 · DP Tech 4
 z2DpTech4
 Free-Text NER Masking
-[TODO:KO]
+자유 텍스트 NER 마스킹
 
 ### Z2 · DMZ Title
 z2DmzStrong
 DMZ Guarantee
-[TODO:KO]
+DMZ 보장
 
 ### Z2 · DMZ Body
 z2DmzBody
 Goes beyond simple encapsulation. Differential privacy techniques make original sensitive data <b>mathematically irreversible</b>
-[TODO:KO]
+단순 캡슐화를 넘어섭니다. 차등 프라이버시 기법으로 원본 민감 데이터를 <b>수학적으로 복원 불가능하게</b> 만듭니다.
 
 ---
 
@@ -377,122 +377,122 @@ Goes beyond simple encapsulation. Differential privacy techniques make original 
 ### Z3 · Step Title
 step3Title
 AI Processing
-[TODO:KO]
+AI 처리
 
 ### Z3 · Zone Label
 z3Label
 In-House Team
-[TODO:KO]
+사내 팀
 
 ### Z3 · Zone Sub
 z3Sub
 Same Org · Anonymized LLM Proxy
-[TODO:KO]
+동일 조직 · 익명화 LLM 프록시
 
 ### Z3 · Pipeline Block Label
 z3PipelineLabel
 LLM Pipeline
-[TODO:KO]
+LLM 파이프라인
 
 ### Z3 · Proxy Badge
 z3ProxyBadge
 LLM-a-Proxy
-[TODO:KO]
+LLM-a-Proxy
 
 ### Z3 · Proxy Sub
 z3ProxySub
 Anonymized Routing
-[TODO:KO]
+익명화 라우팅
 
 ### Z3 · Path A Label
 z3PathA
 Path A · External
-[TODO:KO]
+Path A · 외부
 
 ### Z3 · Path B Label
 z3PathB
 Path B · On-prem
-[TODO:KO]
+Path B · 온프레미스
 
 ### Z3 · Deploy A1 (External 1)
 z3DeployA1
 Public cloud
-[TODO:KO]
+퍼블릭 클라우드
 
 ### Z3 · Deploy A2 (External 2)
 z3DeployA2
 Region-hosted
-[TODO:KO]
+리전 호스팅
 
 ### Z3 · Deploy B1 (On-prem 1)
 z3DeployB1
 Private
-[TODO:KO]
+프라이빗
 
 ### Z3 · Deploy B2 (On-prem 2)
 z3DeployB2
 On-prem
-[TODO:KO]
+온프레미스
 
 ### Z3 · Swap Note
 z3SwapNote
 swap any model — capsule contract stays the same
-[TODO:KO]
+어떤 모델로 교체해도 — 캡슐 계약은 그대로입니다.
 
 ### Z3 · Guardrail Title
 z3GuardStrong
 No Direct Access to Source DB
-[TODO:KO]
+소스 DB 직접 접근 없음
 
 ### Z3 · Guardrail Body
 z3GuardBody
 AI teams never touch the source database. They only receive structure-preserved, differentially-private data
-[TODO:KO]
+AI 팀은 소스 데이터베이스에 절대 접근하지 않습니다. 구조 보존·차등 프라이버시 적용 데이터만 전달받습니다.
 
 ### Z3 · Isolation Block Label
 z3IsoLabel
 Privacy Isolation Module
-[TODO:KO]
+프라이버시 격리 모듈
 
 ### Z3 · PDESC Head
 z3PdescHead
 PDESC / ISOLA
-[TODO:KO]
+PDESC / ISOLA
 
 ### Z3 · PDESC Item 1
 z3PdescItem1
 Privacy Descriptor
-[TODO:KO]
+프라이버시 디스크립터
 
 ### Z3 · PDESC Item 2
 z3PdescItem2
 Isolated Computation Zone
-[TODO:KO]
+격리 연산 존
 
 ### Z3 · PDESC Item 3
 z3PdescItem3
 Output De-identification
-[TODO:KO]
+출력 비식별화
 
 ### Z3 · PDESC Foot
 z3PdescFoot
 Re-identification attempts contained · Output validated
-[TODO:KO]
+재식별 시도 차단 · 출력 검증 완료
 
 ### Z3 · Compliance Label
 z3ComplianceLabel
 Compliance
-[TODO:KO]
+컴플라이언스
 
 ### Z3 · Compliance Badge 1
 z3Compliance1
 EU GDPR
-[TODO:KO]
+EU GDPR
 
 ### Z3 · Compliance Badge 2
 z3Compliance2
 EU Region
-[TODO:KO]
+EU 리전
 
 ---
 
@@ -501,137 +501,137 @@ EU Region
 ### Z4 · Step Title
 step4Title
 Local Auto Reconstruction
-[TODO:KO]
+로컬 자동 복원
 
 ### Z4 · Zone Label
 z4Label
 Local — Auto Reconstruction
-[TODO:KO]
+로컬 — 자동 복원
 
 ### Z4 · Zone Sub
 z4Sub
 Internal Only · No External Egress
-[TODO:KO]
+내부 전용 · 외부 반출 없음
 
 ### Z4 · DB Group Tag
 z4GroupTag
 Reconstruction Flow
-[TODO:KO]
+복원 플로우
 
 ### Z4 · IN Sub
 z4InSub
 AI Token<br/>Tokenized Response
-[TODO:KO]
+AI 토큰<br/>토큰화된 응답
 
 ### Z4 · PROCESS Sub
 z4ProcessSub
 Reconstruction<br/>Local Restoration
-[TODO:KO]
+복원<br/>로컬 복구
 
 ### Z4 · OUT Sub
 z4OutSub
 Original Value<br/>Business-Ready
-[TODO:KO]
+원본 값<br/>비즈니스 즉시 활용
 
 ### Z4 · Token Block Label
 z4BlockLabel
 Token → Original
-[TODO:KO]
+토큰 → 원본
 
 ### Z4 · Field 1 Name
 z4F1Name
 Customer
-[TODO:KO]
+고객
 
 ### Z4 · Field 2 Name
 z4F2Name
 Ticket
-[TODO:KO]
+티켓
 
 ### Z4 · Field 3 Name
 z4F3Name
 Details
-[TODO:KO]
+상세
 
 ### Z4 · Recon Engine Name
 z4ReconName
 Reconstruction
-[TODO:KO]
+복원
 
 ### Z4 · Recon Engine Badge
 z4ReconBadge
 Local Only
-[TODO:KO]
+로컬 전용
 
 ### Z4 · Recon Tech 1
 z4ReconTech1
 Token Map Lookup
-[TODO:KO]
+토큰 맵 조회
 
 ### Z4 · Recon Tech 2
 z4ReconTech2
 Original Value Restore
-[TODO:KO]
+원본 값 복원
 
 ### Z4 · Recon Tech 3
 z4ReconTech3
 Context Re-binding
-[TODO:KO]
+컨텍스트 재결합
 
 ### Z4 · Recon Tech 4
 z4ReconTech4
 Output Validation
-[TODO:KO]
+출력 검증
 
 ### Z4 · Local Guarantee Title
 z4LocalStrong
 Local Reconstruction Guarantee
-[TODO:KO]
+로컬 복원 보장
 
 ### Z4 · Local Guarantee Body
 z4LocalBody
 Token map exists only in local storage · <b>Delivers Business-Ready Output instantly</b>
-[TODO:KO]
+토큰 맵은 로컬 스토리지에만 존재합니다 · <b>즉시 비즈니스 활용 가능한 출력을 제공합니다</b>
 
 ### Z4 · Output Properties Label
 z4OutputLabel
 Output Properties
-[TODO:KO]
+출력 속성
 
 ### Z4 · Output Check 1
 z4OutCheck1
 Original Values Restored
-[TODO:KO]
+원본 값 복원 완료
 
 ### Z4 · Output Check 2
 z4OutCheck2
 Zero External Exposure
-[TODO:KO]
+외부 노출 없음
 
 ### Z4 · Output Check 3
 z4OutCheck3
 Context Fully Preserved
-[TODO:KO]
+컨텍스트 완전 보존
 
 ### Z4 · Output Check 4
 z4OutCheck4
 Business-Ready Output
-[TODO:KO]
+비즈니스 즉시 활용 출력
 
 ### Z4 · Chip 1
 z4Chip1
 Auto Restore
-[TODO:KO]
+자동 복원
 
 ### Z4 · Chip 2
 z4Chip2
 Local Only
-[TODO:KO]
+로컬 전용
 
 ### Z4 · Chip 3
 z4Chip3
 Data Residency
-[TODO:KO]
+데이터 레지던시
 
 ---
 
@@ -640,22 +640,22 @@ Data Residency
 ### Core · Section Title
 coreTitle
 6 Core Capabilities
-[TODO:KO]
+6가지 핵심 기능
 
 ### Core · Workflow Group Label
 coreWorkflowGroup
 What Makes The Workflow Run
-[TODO:KO]
+워크플로우를 작동시키는 것
 
 ### Core · Approval Group Label
 coreApprovalGroup
 What Gets The Approval
-[TODO:KO]
+승인을 이끌어내는 것
 
 ### Core · Bottom Strip
 coreStrip
 01 and 02 lead the conversation. 05 and 06 anchor the approval.
-[TODO:KO]
+01·02가 대화를 이끌고, 05·06이 승인을 뒷받침합니다.
 
 ---
 
@@ -664,12 +664,12 @@ coreStrip
 ### Core 01 · Name
 core1Name
 Structure-Preserving
-[TODO:KO]
+구조 보존
 
 ### Core 01 · Description
 core1Desc
 Tables, logs, cross-references, and alarm sequences stay intact. AI reads structure, not just text.
-[TODO:KO]
+테이블, 로그, 상호 참조, 알람 시퀀스가 그대로 유지됩니다. AI는 텍스트뿐만 아니라 구조를 읽습니다.
 
 ---
 
@@ -678,12 +678,12 @@ Tables, logs, cross-references, and alarm sequences stay intact. AI reads struct
 ### Core 02 · Name
 core2Name
 Enterprise Environment Execution
-[TODO:KO]
+엔터프라이즈 환경 내 실행
 
 ### Core 02 · Description
 core2Desc
 Deploys inside your environment. Connects via API, SDK, connectors, or reverse proxy. No traffic re-routing.
-[TODO:KO]
+고객사 환경 내부에 배포됩니다. API, SDK, 커넥터, 또는 리버스 프록시로 연결합니다. 트래픽 재라우팅이 없습니다.
 
 ---
 
@@ -692,12 +692,12 @@ Deploys inside your environment. Connects via API, SDK, connectors, or reverse p
 ### Core 03 · Name
 core3Name
 Business-Ready Reconstruction
-[TODO:KO]
+비즈니스 즉시 활용 복원
 
 ### Core 03 · Description
 core3Desc
 AI output is restored with real values. The result goes straight back to the originating ticket or workflow.
-[TODO:KO]
+AI 출력이 실제 값으로 복원됩니다. 결과물은 원래의 티켓이나 워크플로우로 바로 반환됩니다.
 
 ---
 
@@ -706,12 +706,12 @@ AI output is restored with real values. The result goes straight back to the ori
 ### Core 04 · Name
 core4Name
 Enterprise Context Control
-[TODO:KO]
+조직 정의 민감정보
 
 ### Core 04 · Description
 core4Desc
 Your IT admin defines what counts as sensitive. Custom markers, regex rules, and tier policies. Set in 5 minutes.
-[TODO:KO]
+IT 관리자가 직접 민감 기준을 정의합니다. 커스텀 마커, 정규식 규칙, 등급 정책을 5분 안에 설정합니다.
 
 ---
 
@@ -720,12 +720,12 @@ Your IT admin defines what counts as sensitive. Custom markers, regex rules, and
 ### Core 05 · Name
 core5Name
 Zero Exposure &amp; Audit
-[TODO:KO]
+Zero Exposure &amp; 감사
 
 ### Core 05 · Description
 core5Desc
 Raw operational data stays inside. Every action logged, timestamped, SIEM-exportable.
-[TODO:KO]
+원본 운영 데이터는 내부에 머뭅니다. 모든 행위가 기록·타임스탬프 처리되며 SIEM으로 내보낼 수 있습니다.
 
 ---
 
@@ -734,9 +734,9 @@ Raw operational data stays inside. Every action logged, timestamped, SIEM-export
 ### Core 06 · Name
 core6Name
 Time-Shifting Policy
-[TODO:KO]
+시간 변동 정책
 
 ### Core 06 · Description
 core6Desc
 Sensitivity changes over time. Capsule versions every marker and policy for continuous compliance.
-[TODO:KO]
+민감도 기준은 시간이 지남에 따라 변합니다. Capsule은 지속적인 규제 대응을 위해 모든 마커와 정책을 버전 관리합니다.
