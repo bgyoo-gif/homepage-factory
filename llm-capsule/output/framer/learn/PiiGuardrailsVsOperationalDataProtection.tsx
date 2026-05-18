@@ -2,12 +2,13 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
-// Self-contained Framer Code Component with full Props for translation/CMS.
-// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with locale dropdown (en/ko/de).
+// Set `locale` in Framer Properties panel to switch all text simultaneously.
 
 import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
+  locale?: "en" | "ko" | "de"
   backLabel?: string
   backHref?: string
   title?: string
@@ -122,54 +123,378 @@ const BODY_HTML = `<h2>Why this comparison matters</h2>
 
 const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "Are PII guardrails the same as the AI enablement data layer?", "acceptedAnswer": { "@type": "Answer", "text": "No. PII guardrails detect and mask personal identifiers — names, IDs, financial fields. The AI enablement data layer covers complex enterprise data such as network logs, incident records, configurations, OT manifests, and clinical or mission context. Operational data leaks information through structure, sequence, and aggregate pattern, not just through identifiable fields. Field-level masking alone does not protect it." } }, { "@type": "Question", "name": "How does LLM Capsule compare with PII guardrail and AI security suite products?", "acceptedAnswer": { "@type": "Answer", "text": "PII guardrail and AI security suite products are optimized for risk control and policy enforcement at the API or prompt level — prompt injection defense, jailbreak resistance, and PII detection. LLM Capsule operates at a different layer: it transforms operational data into AI-ready capsules with differential-privacy-based protection, plugs into existing enterprise systems beyond the API gateway, preserves operational structure for AI to consume, and restores outputs back into the originating workflow. The two categories are adjacent and often complementary — they address different stages of the enterprise AI pipeline." } }, { "@type": "Question", "name": "When is a PII guardrail enough?", "acceptedAnswer": { "@type": "Answer", "text": "When the workflow's sensitive content is mostly identifiable individual fields — customer names, phone numbers, financial identifiers — and the surrounding context is not itself sensitive. Customer chat, contract review, and document summarization are common cases. When the context (network topology, incident sequence, OT alarms, mission rhythm) is the sensitive part, PII guardrails alone are not sufficient." } } ] }`
 
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
+  en: {
+    backLabel: "← Learn",
+    backHref: "/resources/learn",
+    title: "Why PII Guardrails Don't Make Enterprise AI Work",
+    lead: "PII guardrails, AI security suites, prompt security gateways — they all do something important. They do not all do the same thing. Here is a direct comparison and a clear answer to where each fits in enterprise AI adoption.",
+    category: "COMPARISON · Categories",
+    readTime: "11 min read",
+    dateUpdated: "Updated May 2025",
+    tldrLabel: "TL;DR",
+    tldrBody: "",
+    bodyHtml: BODY_HTML,
+    canonicalUrl: "https://llmcapsule.ai/resources/learn/pii-guardrails-vs-operational-data-protection",
+    datePublished: "2025-05-01",
+    dateModified: "2025-05-01",
+    inLanguage: "en",
+    breadcrumbLabel: "Why PII Guardrails Don't Make Enterprise AI Work",
+    faqJsonLd: FAQ_JSON_LD,
+    relatedSectionLabel: "Related articles",
+    related1Title: "Differential privacy for enterprise LLM",
+    related1Href: "/resources/learn/differential-privacy-for-enterprise-llm",
+    related2Title: "AI on network operations data",
+    related2Href: "/resources/learn/ai-on-network-operations-data",
+    related3Title: "On-prem LLM execution path",
+    related3Href: "/resources/learn/on-prem-llm-execution-path",
+    related4Title: "",
+    related4Href: "",
+  },
+  ko: {
+    backLabel: "← Learn",
+    backHref: "/resources/learn",
+    title: "← Learn",
+    lead: "/learn",
+    category: "PII 가드레일만으로 기업 AI가 작동하지 않는 이유",
+    readTime: "PII 가드레일, AI 보안 스위트, 프롬프트 보안 게이트웨이 — 각각 중요한 역할을 합니다. 그러나 모두 같은 일을 하지는 않습니다. 각 카테고리가 기업 AI 도입에서 어디에 맞는지, 직접 비교와 명확한 답변을 제공합니다.",
+    dateUpdated: "COMPARISON · Categories",
+    tldrLabel: "Definition · TL;DR",
+    tldrBody: "PII 가드레일은 API 또는 프롬프트 레이어에서 식별 가능한 필드를 보호합니다. 데이터 레이어는 구조화된 기업 데이터 — 네트워크 로그, 설정 파일, 인시던트 레코드, OT 및 미션 컨텍스트 — 를 문서 구조 보존 방식의 차등 프라이버시 기반 캡슐화로 보호합니다. 두 카테고리는 기업 AI 파이프라인에서 인접하지만 서로 다른 레이어를 담당합니다.",
+    bodyHtml: `(아래는 bodyHtml Props의 HTML 태그를 유지하며 텍스트만 번역한 전체 본문입니다.)
+
+<h2>이 비교가 중요한 이유</h2>
+
+<p>기업 AI를 평가하는 구매 담당자는 같은 후보 목록에서 네 가지 유형의 제품을 자주 마주칩니다. PII 가드레일, 프롬프트 보안 게이트웨이, AI 보안 스위트, 그리고 데이터 레이어입니다. 이들은 동등하지 않습니다. 서로 교환 가능한 것으로 취급하면, PII 필터는 통과하지만 워크플로우의 민감한 부분은 여전히 노출되는 배포 결과를 낳습니다.</p>
+
+<p>이 아티클은 네 카테고리를 한 곳에 놓고 비교합니다. 각 카테고리가 무엇을 하는지, 파이프라인 어디에 위치하는지, 무엇을 커버하고 무엇을 커버하지 않는지 정의합니다.</p>
+
+<h2>네 가지 카테고리</h2>
+
+<h3>1. PII 가드레일 (API 레벨 필드 탐지)</h3>
+
+<p>LLM API 호출을 개인 식별자 탐지·대체, 콘텐츠 모더레이션, 안전 필터로 감싸는 개발자용 툴킷입니다. 빠르고 통합이 쉬우며, 소비자용 또는 규제 수준이 낮은 기업 워크플로우에 적합합니다.</p>
+
+<p><strong>레이어:</strong> API 호출 래퍼. <strong>범위:</strong> 필드 레벨. <strong>강점:</strong> 빠른 통합. <strong>제약:</strong> 운영 데이터의 구조적·집합적 패턴을 탐지하지 못합니다.</p>
+
+<h3>2. AI 보안 및 프롬프트 레벨 제품 (PII 가드레일, 프롬프트 보안 게이트웨이, AI 보안 스위트)</h3>
+
+<p>프롬프트 인젝션, 탈옥 저항, 출력 정책 적용, 런타임 위협 탐지에 집중합니다. PII 탐지는 보조 기능으로 포함되는 경우가 많습니다. 프롬프트 또는 API 게이트웨이에 위치합니다.</p>
+
+<p><strong>레이어:</strong> 프롬프트 / API 게이트웨이. <strong>범위:</strong> 프롬프트 레벨 위협 + PII. <strong>강점:</strong> 프롬프트 인젝션 방어. <strong>제약:</strong> 구조화된 운영 데이터를 모델에 도달하기 전에 변환하는 용도로 설계되지 않았습니다.</p>
+
+<h3>3. 합성 데이터 플랫폼</h3>
+
+<p>원본의 통계적 특성을 근사한 학습용 또는 평가용 데이터셋의 합성 버전을 생성합니다. AI 학습 파이프라인과 분석에 사용되며, 실시간 운영 데이터의 런타임 보호 용도가 아닙니다.</p>
+
+<p><strong>레이어:</strong> 데이터 파이프라인 (오프라인). <strong>범위:</strong> 데이터셋 생성. <strong>강점:</strong> ML 학습 데이터. <strong>제약:</strong> 실시간 워크플로우에서 동작하지 않습니다.</p>
+
+<h3>4. AI Enablement Data Layer (LLM Capsule)</h3>
+
+<p>기존 기업 환경(NOC, 티켓, OT, EHR, 미션 시스템)과 LLM 사이에 위치합니다. 문서 구조 보존 방식의 차등 프라이버시 기반 캡슐화로 규제 대상 운영 데이터를 AI 처리 가능한 컨텍스트로 변환합니다. 두 가지 실행 경로(외부 승인 LLM 또는 온프레미스 로컬 모델) 중 하나로 라우팅합니다. 결과물은 State Vault를 통해 워크플로우로 복원됩니다.</p>
+
+<p><strong>레이어:</strong> AI enablement data layer. <strong>범위:</strong> 운영 데이터 + 거버넌스. <strong>강점:</strong> 구조화된 운영 데이터, 두 가지 실행 경로, 레거시 시스템 연동. <strong>제약:</strong> 프롬프트 인젝션 방어 또는 합성 데이터 생성기가 아닙니다.</p>
+
+<h2>직접 비교표</h2>
+
+<table class="compare-table">
+  <thead><tr><th></th><th>PII 가드레일</th><th>AI 보안 / 프롬프트</th><th class="us">LLM Capsule</th></tr></thead>
+  <tbody>
+    <tr><td>레이어</td><td>API 래퍼</td><td>프롬프트 / 게이트웨이</td><td class="us-cell">AI enablement data layer</td></tr>
+    <tr><td>범위</td><td>이름, ID, 필드</td><td>프롬프트 위협 + PII</td><td class="us-cell">운영 데이터 + 거버넌스</td></tr>
+    <tr><td>방법</td><td>탐지 &amp; 마스킹</td><td>필터 / 프롬프트 정제</td><td class="us-cell">문서 구조 보존 + 차등 프라이버시 기반 캡슐화</td></tr>
+    <tr><td>레거시 시스템 연동</td><td>아니요</td><td>아니요</td><td class="us-cell">예 (NOC, 티켓, OT, EHR, 미션)</td></tr>
+    <tr><td>온프레미스 로컬 실행</td><td>아니요</td><td>제한적</td><td class="us-cell">예 (Path B)</td></tr>
+    <tr><td>복원</td><td>단방향</td><td>단방향</td><td class="us-cell">State Vault를 통한 양방향</td></tr>
+    <tr><td>거버넌스</td><td>탐지 로그</td><td>위협 로그</td><td class="us-cell">정책 · 감사 이력 · 접근 제어 · 컴플라이언스</td></tr>
+  </tbody>
+</table>
+
+<h2>각 카테고리가 가장 잘하는 것</h2>
+
+<p><strong>PII 가드레일</strong>은 민감 콘텐츠가 주로 개인 식별자인 LLM API 기반 AI 기능을 개발하는 개발자에게 적합한 출발점입니다.</p>
+
+<p><strong>AI 보안 / 프롬프트 레벨 제품</strong>은 위협 모델에 프롬프트 인젝션, 탈옥 시도, 행동적 남용이 포함될 때 추가해야 할 솔루션입니다.</p>
+
+<p><strong>합성 데이터 플랫폼</strong>은 원본이 아닌 대표성 있는 데이터셋으로 모델을 학습시키거나 분석을 활성화하는 것이 목표일 때 적합한 도구입니다. 실시간 워크플로우에서는 동작하지 않습니다.</p>
+
+<p><strong>LLM Capsule</strong>은 LLM으로 전달되는 데이터가 규제 대상 운영 데이터이고, 워크플로우가 AI가 대체가 아닌 연동해야 하는 레거시 기업 환경 안에서 동작할 때 필요한 레이어입니다.</p>
+
+<h2>격차를 보여주는 두 가지 실패 사례</h2>
+
+<h3>사례 1 · 통신사 인시던트 분석</h3>
+
+<p>한 통신사가 NOC 로그에서 RCA를 작성하기 위해 외부 LLM을 사용하고자 합니다. PII 가드레일이 인시던트 설명에서 고객 이름을 제거합니다. 남은 로그에는 여전히 네트워크의 영향받은 구간을 고유하게 식별하는 장치 ID, 사이트 참조, 알람 시퀀스, 토폴로지 경로가 포함되어 있습니다. PII 가드레일은 통과합니다. 운영 기밀은 침해됩니다.</p>
+
+<p><strong>LLM Capsule의 차별점:</strong> 문서 구조 보존 캡슐화가 장치 ID, 사이트 참조, 토폴로지 경로를 토큰화하면서도 LLM이 추론할 수 있도록 시퀀스 관계를 보존합니다. 차등 프라이버시 기반 보호가 집합적 추론 위험을 제한합니다. 캡슐은 원시 운영 데이터 노출 없이 Path A(외부 승인 LLM)로 라우팅되거나, 더 엄격한 규제 프로파일에는 Path B(온프레미스 로컬 모델)로 라우팅됩니다.</p>
+
+<h3>사례 2 · OT 취약점 검토</h3>
+
+<p>한 산업 운영자가 PLC 알람 전반에 걸쳐 AI 지원 취약점 분류를 원합니다. PII 가드레일은 제거할 것이 없습니다 — 고객 이름이 없습니다. 데이터는 그대로 외부 LLM으로 전달됩니다. 플랜트 구역, 자산 참조, 패치 제약 사항이 서드파티 모델에 노출됩니다.</p>
+
+<p><strong>LLM Capsule의 차별점:</strong> OT/자산 참조 마커(PLC 태그, 플랜트 구역, 자산 인벤토리 참조)가 탐지되어 캡슐화됩니다. 실행 경로는 정책 기반입니다 — OT의 경우 Path B(온프레미스 로컬)가 일반적이며, 외부 전송이 전혀 없습니다.</p>
+
+<h2>실제 구성 방식</h2>
+
+<p>PII 가드레일, 프롬프트 보안, 합성 데이터 플랫폼, 데이터 레이어는 상호 배타적이지 않습니다. 성숙한 기업 스택은 AI 파이프라인의 서로 다른 부분에서 네 가지 모두를 운영하는 경우가 많습니다.</p>
+
+PII guardrails — at the API call layer for low-regulation features
+PII 가드레일 — 규제 수준이 낮은 기능의 API 호출 레이어
+
+AI 보안 / 프롬프트 보호 — 프롬프트 위협 방어를 위한 게이트웨이
+
+합성 데이터 — 오프라인 학습 파이프라인
+
+LLM Capsule — 규제 대상 운영 데이터를 위한 AI enablement data layer
+
+<p>실수는 첫 번째를 네 번째인 것처럼 취급하는 것입니다. 필드 레벨 마스킹은 운영 데이터에 대한 분산적 보호의 대안이 아닙니다.</p>
+
+<strong>Buyer test.</strong> When the AI pipeline involves NOC logs, incident records, OT manifests, configuration trees, clinical workflows, or mission context — the AI enablement data layer is the right place to evaluate. PII guardrails are necessary but not sufficient.
+<strong>구매 판단 기준.</strong> AI 파이프라인에 NOC 로그, 인시던트 레코드, OT 매니페스트, 설정 트리, 임상 워크플로우, 또는 미션 컨텍스트가 포함된다면 — 데이터 레이어를 평가해야 합니다. PII 가드레일은 필요하지만 충분하지 않습니다.
+
+<h2>검증 사례</h2>
+
+<p>LLM Capsule은 규제 운영 환경에서 검증되었습니다.</p>
+
+<strong>Telecom</strong> — Deutsche Telekom T Challenge 2026, Top 12 in Data Security & Governance
+<strong>통신</strong> — Deutsche Telekom T Challenge 2026, 데이터 보안·거버넌스 부문 Top 12
+
+<strong>산업 사이버보안 / OT</strong> — Claroty와 파트너십
+
+<strong>의료</strong> — 이화여자대학교 의료원(EUMC) 도입
+
+<strong>금융·보험</strong> — IBK, 교보, DB손해보험 도입
+
+<strong>인증</strong> — ISO/IEC 27001, ISO/IEC 42001
+
+Key takeaways
+주요 시사점
+
+PII 가드레일과 데이터 레이어는 기업 AI 파이프라인의 서로 다른 레이어를 담당합니다.
+
+PII 가드레일, AI 보안 스위트, 프롬프트 보안 게이트웨이 — 각자의 범위(리스크 제어, 정책 적용, 프롬프트 레벨 보호)에서 강점을 가집니다. 그 중 어느 것도 차등 프라이버시 기반 캡슐화로 구조화된 운영 데이터를 변환하지는 않습니다.
+
+구매 판단 기준: 민감 콘텐츠가 구조적인 것(로그, 설정, OT, 임상, 미션)이라면, 가드레일만이 아닌 데이터 레이어가 필요합니다.
+
+각 카테고리는 함께 구성됩니다. 실수는 PII 가드레일이 운영 데이터를 커버하는 것처럼 취급하는 것입니다.
+
+LLM Capsule은 레거시 시스템 연동, 두 가지 실행 경로, 양방향 복원, 완전한 거버넌스를 제공합니다 — PII 가드레일이 필요한 곳에서는 대체가 아닌 함께 사용합니다.`,
+    canonicalUrl: "https://llmcapsule.ai/resources/learn/pii-guardrails-vs-operational-data-protection",
+    datePublished: "2025-05-01",
+    dateModified: "2025-05-01",
+    inLanguage: "en",
+    breadcrumbLabel: "Why PII Guardrails Don't Make Enterprise AI Work",
+    faqJsonLd: ``,
+    relatedSectionLabel: "Related articles",
+    related1Title: "Differential privacy for enterprise LLM",
+    related1Href: "/resources/learn/differential-privacy-for-enterprise-llm",
+    related2Title: "AI on network operations data",
+    related2Href: "/resources/learn/ai-on-network-operations-data",
+    related3Title: "On-prem LLM execution path",
+    related3Href: "/resources/learn/on-prem-llm-execution-path",
+    related4Title: "",
+    related4Href: "",
+  },
+  de: {
+    backLabel: "← Learn",
+    backHref: "/resources/learn",
+    title: "← Learn",
+    lead: "Warum PII-Guardrails allein den KI-Einsatz im Unternehmen nicht ermöglichen",
+    category: "PII-Guardrails, KI-Sicherheitssuiten, Prompt-Security-Gateways — sie alle erfüllen spezifische Aufgaben. Keine davon ist mit den anderen austauschbar. Dieser Artikel vergleicht die Kategorien direkt und zeigt, wo jede im KI-Einsatz des Unternehmens ihren Platz hat.",
+    readTime: "VERGLEICH · Kategorien",
+    dateUpdated: "11 Min. Lesezeit",
+    tldrLabel: "Definition · TL;DR",
+    tldrBody: "PII-Guardrails schützen identifizierbare Felder auf API- oder Prompt-Ebene. Die KI-Datenschicht schützt strukturierte Unternehmensdaten — Netzwerkprotokolle, Konfigurationen, Incident-Records, OT- und Missionskontext — durch strukturerhaltende Kapsulierung auf Basis von Differential Privacy. Beide decken unterschiedliche Ebenen der KI-Pipeline im Unternehmen ab.",
+    bodyHtml: `<h2>Warum dieser Vergleich relevant ist</h2>
+
+<p>Bei der Evaluierung von KI-Lösungen für Unternehmen begegnen Entscheider regelmäßig vier Produktkategorien auf derselben Shortlist: PII-Guardrails, Prompt-Security-Gateways, KI-Sicherheitssuiten und die KI-Datenschicht. Diese Kategorien sind nicht gleichwertig. Wer sie als austauschbar behandelt, riskiert Deployments, die den PII-Filter passieren, aber die sensiblen Teile des Workflows weiterhin exponieren.</p>
+
+<p>Dieser Artikel stellt alle vier Kategorien nebeneinander: mit Definition, Einordnung in die Pipeline, Abdeckungsbereich und Grenzen.</p>
+
+<h2>Die vier Kategorien</h2>
+
+<h3>1. PII-Guardrails (Felderkennung auf API-Ebene)</h3>
+<p>Entwicklerorientierte Toolkits, die LLM-API-Aufrufe mit Erkennung und Ersetzung personenbezogener Identifikatoren, Inhaltsmoderation und Sicherheitsfiltern umhüllen. Sie sind schnell integriert und eignen sich für Workflows mit geringen Regulierungsanforderungen.</p>
+<p><strong>Ebene:</strong> API-Wrapper. <strong>Umfang:</strong> Feldebene. <strong>Stärke:</strong> schnelle Integration. <strong>Einschränkung:</strong> keine Erkennung struktureller und aggregierter Muster in operativen Daten.</p>
+
+<h3>2. KI-Sicherheits- und Prompt-Level-Produkte</h3>
+<p>Diese Produkte behandeln Prompt-Injection, Jailbreak-Resistenz, Output-Richtliniendurchsetzung und Bedrohungserkennung zur Laufzeit. PII-Erkennung ist häufig eine sekundäre Funktion. Sie sind auf Prompt- oder API-Gateway-Ebene positioniert.</p>
+<p><strong>Ebene:</strong> Prompt- / API-Gateway. <strong>Umfang:</strong> Prompt-Bedrohungen und PII. <strong>Stärke:</strong> Schutz vor Prompt-Injection. <strong>Einschränkung:</strong> nicht für die Transformation strukturierter operativer Daten vor der Modellverarbeitung konzipiert.</p>
+
+<h3>3. Synthetische Datenplattformen</h3>
+<p>Diese Plattformen erzeugen synthetische Versionen von Trainings- oder Evaluierungsdatensätzen, die die statistischen Eigenschaften der Originaldaten annähern. Sie werden in KI-Trainingspipelines und für Analysen eingesetzt, nicht zum Laufzeitschutz produktiver operativer Daten.</p>
+<p><strong>Ebene:</strong> Datenpipeline (offline). <strong>Umfang:</strong> Datensatzgenerierung. <strong>Stärke:</strong> Trainingsdaten für ML. <strong>Einschränkung:</strong> kein Einsatz im Live-Workflow.</p>
+
+<h3>4. KI-Datenschicht — AI Enablement Data Layer (LLM Capsule)</h3>
+<p>Die KI-Datenschicht ist zwischen der bestehenden Unternehmensumgebung (NOC, Ticketsysteme, OT, EHR, Missionssysteme) und dem LLM positioniert. Sie transformiert regulierte operative Daten in KI-verarbeitbaren Kontext durch strukturerhaltende Kapsulierung auf Basis von Differential Privacy. Die Ausführung erfolgt über einen von zwei Pfaden — externer zugelassener LLM oder On-Premise-Modell. Ergebnisse werden über den State Vault in den Workflow zurückgeführt.</p>
+<p><strong>Ebene:</strong> KI-Datenschicht. <strong>Umfang:</strong> operative Daten und Governance. <strong>Stärke:</strong> strukturierte operative Daten, zwei Ausführungspfade, Integration in bestehende Systeme. <strong>Einschränkung:</strong> kein Schutz vor Prompt-Injection, keine Generierung synthetischer Daten.</p>
+
+<h2>Direkter Vergleich</h2>
+
+<table>
+<thead><tr><th></th><th>PII-Guardrails</th><th>KI-Sicherheit / Prompt</th><th>LLM Capsule</th></tr></thead>
+<tbody>
+<tr><td>Ebene</td><td>API-Wrapper</td><td>Prompt- / Gateway-Ebene</td><td>KI-Datenschicht</td></tr>
+<tr><td>Umfang</td><td>Namen, IDs, Felder</td><td>Prompt-Bedrohungen und PII</td><td>Operative Daten und Governance</td></tr>
+<tr><td>Methode</td><td>Erkennen und maskieren</td><td>Prompts filtern und bereinigen</td><td>Strukturerhaltende Kapsulierung auf Basis von Differential Privacy</td></tr>
+<tr><td>Integration in Bestandssysteme</td><td>Nein</td><td>Nein</td><td>Ja (NOC, Ticket, OT, EHR, Mission)</td></tr>
+<tr><td>On-Premise-Ausführung</td><td>Nein</td><td>Eingeschränkt</td><td>Ja (Pfad B)</td></tr>
+<tr><td>Wiederherstellung</td><td>Einseitig</td><td>Einseitig</td><td>Bidirektional über State Vault</td></tr>
+<tr><td>Governance</td><td>Erkennungsprotokolle</td><td>Bedrohungsprotokolle</td><td>Richtlinien · Audit · Zugriff · Compliance</td></tr>
+</tbody>
+</table>
+
+<h2>Einsatzbereiche der einzelnen Kategorien</h2>
+
+<p><strong>PII-Guardrails</strong> sind der richtige Ausgangspunkt für Entwickler, die KI-Funktionen auf Basis einer LLM-API erstellen, bei denen der sensible Inhalt überwiegend aus individuellen Identifikatoren besteht.</p>
+
+<p><strong>KI-Sicherheits- und Prompt-Level-Produkte</strong> sind die richtige Ergänzung, wenn das Bedrohungsmodell Prompt-Injection, Jailbreak-Versuche oder verhaltensbasierte Angriffe umfasst.</p>
+
+<p><strong>Synthetische Datenplattformen</strong> sind das richtige Werkzeug, wenn das Ziel das Modelltraining oder Analysen auf repräsentativen, aber nicht originalen Datensätzen ist. Sie laufen nicht in Live-Workflows.</p>
+
+<p><strong>LLM Capsule</strong> ist die richtige Schicht, wenn die Daten, die an das LLM übermittelt werden, regulierte operative Daten sind — und der Workflow in einer bestehenden Unternehmensumgebung läuft, in die sich die KI integrieren muss, anstatt sie zu ersetzen.</p>
+
+<h2>Zwei Szenarien, die die Lücke verdeutlichen</h2>
+
+<h3>Szenario 1 · Telekommunikation: Incident-Analyse</h3>
+<p>Ein Telekommunikationsanbieter möchte ein externes LLM einsetzen, um Root-Cause-Analysen aus NOC-Protokollen zu erstellen. Ein PII-Guardrail entfernt Kundennamen aus den Incident-Beschreibungen. Das verbleibende Protokoll enthält jedoch weiterhin Geräte-IDs, Standortverweise, Alarmsequenzen und Topologiepfade, die das betroffene Netzsegment eindeutig identifizieren. Der PII-Filter meldet keine Verletzung. Die operative Vertraulichkeit ist dennoch gefährdet.</p>
+<p><strong>Was LLM Capsule anders macht:</strong> Die strukturerhaltende Kapsulierung tokenisiert Geräte-IDs, Standortverweise und Topologiepfade und bewahrt dabei die Sequenzbeziehungen, damit das LLM weiterhin schlussfolgern kann. Der Differential-Privacy-basierte Schutz begrenzt das Inferenzrisiko auf aggregierter Ebene. Die Kapsel wird über Pfad A (externer zugelassener LLM) ohne Offenlegung operativer Rohdaten geleitet — oder über Pfad B (On-Premise-Modell) bei strengeren regulatorischen Anforderungen.</p>
+
+<h3>Szenario 2 · OT: Schwachstellenanalyse</h3>
+<p>Ein Industriebetreiber möchte KI-gestützte Schwachstellentriage für SPS-Alarmmeldungen einsetzen. Ein PII-Guardrail hat nichts zu entfernen — es gibt keine Kundennamen. Die Daten werden unverändert an das externe LLM übermittelt. Anlagenzonen, Asset-Referenzen und Patch-Beschränkungen sind für ein Drittanbietermodell sichtbar.</p>
+<p><strong>Was LLM Capsule anders macht:</strong> Die OT/Asset-Referenzmarker (SPS-Tag, Anlagenzone, Asset-Inventarreferenz) werden erkannt und kapsuliert. Der Ausführungspfad ist richtliniengesteuert — für OT ist Pfad B (On-Premise-lokal) typisch, bei dem keine Daten extern übertragen werden.</p>
+
+<h2>Zusammenspiel in der Praxis</h2>
+
+<p>PII-Guardrails, Prompt-Security, synthetische Datenplattformen und die KI-Datenschicht schließen sich nicht gegenseitig aus. Ein ausgereifter Unternehmens-Stack betreibt häufig alle vier in unterschiedlichen Teilen der KI-Pipeline:</p>
+
+<ul>
+<li>PII-Guardrails — auf der API-Aufrufebene für Funktionen mit geringen Regulierungsanforderungen</li>
+<li>KI-Sicherheit / Prompt-Schutz — am Gateway für den Schutz vor Prompt-Bedrohungen</li>
+<li>Synthetische Daten — in der Offline-Trainingspipeline</li>
+<li>LLM Capsule — auf der KI-Datenschicht für regulierte operative Daten</li>
+</ul>
+
+<p>Der Fehler liegt darin, die erste Kategorie so zu behandeln, als wäre sie die vierte. Feldebenenmaskierung ist kein Ersatz für aggregierten Schutz auf Verteilungsebene bei operativen Daten.</p>
+
+<div class="callout"><strong>Praxistest.</strong> Wenn die KI-Pipeline NOC-Protokolle, Incident-Records, OT-Manifeste, Konfigurationsbäume, klinische Workflows oder Missionskontext verarbeitet, ist die KI-Datenschicht der richtige Evaluierungspunkt. PII-Guardrails sind notwendig, aber nicht hinreichend.</div>
+
+<h2>Referenzen und Validierung</h2>
+
+<p>LLM Capsule ist in regulierten operativen Umgebungen validiert:</p>
+
+<ul>
+<li><strong>Telekommunikation</strong> — Deutsche Telekom T Challenge 2026, Top 12 in Data Security &amp; Governance</li>
+<li><strong>Industrielle Cybersicherheit / OT</strong> — Partnerschaft mit Claroty</li>
+<li><strong>Gesundheitswesen</strong> — im Einsatz am EUMC (Ewha Womans University Medical Center)</li>
+<li><strong>Finanz- und Versicherungsbranche</strong> — im Einsatz bei IBK, Kyobo, DB Insurance</li>
+<li><strong>Zertifizierungen</strong> — ISO/IEC 27001, ISO/IEC 42001</li>
+</ul>
+
+<div class="takeaways">
+<div class="takeaways__h">Kernaussagen</div>
+<ul>
+<li>PII-Guardrails und die KI-Datenschicht decken unterschiedliche Ebenen der KI-Pipeline im Unternehmen ab.</li>
+<li>PII-Guardrails, KI-Sicherheitssuiten und Prompt-Security-Gateways — jede Kategorie ist in ihrem eigenen Bereich leistungsstark (Risikokontrolle, Richtliniendurchsetzung, Prompt-Schutz). Keine davon transformiert strukturierte operative Daten mit Differential-Privacy-basierter Kapsulierung.</li>
+<li>Zur Orientierung: Wenn der sensible Inhalt struktureller Natur ist — Protokolle, Konfigurationen, OT, klinische Daten, Missionskontext — wird eine KI-Datenschicht benötigt, nicht nur ein Guardrail.</li>
+<li>Die Kategorien ergänzen sich. Der Fehler liegt darin, PII-Guardrails so zu behandeln, als deckten sie operative Daten ab.</li>
+<li>LLM Capsule bietet Integration in Bestandssysteme, zwei Ausführungspfade, bidirektionale Wiederherstellung und vollständige Governance — ergänzend zu PII-Guardrails, nicht als Ersatz, wo diese benötigt werden.</li>
+</ul>
+</div>`,
+    canonicalUrl: "https://llmcapsule.ai/resources/learn/pii-guardrails-vs-operational-data-protection",
+    datePublished: "2025-05-01",
+    dateModified: "2025-05-01",
+    inLanguage: "en",
+    breadcrumbLabel: "Why PII Guardrails Don't Make Enterprise AI Work",
+    faqJsonLd: ``,
+    relatedSectionLabel: "Related articles",
+    related1Title: "Differential privacy for enterprise LLM",
+    related1Href: "/resources/learn/differential-privacy-for-enterprise-llm",
+    related2Title: "AI on network operations data",
+    related2Href: "/resources/learn/ai-on-network-operations-data",
+    related3Title: "On-prem LLM execution path",
+    related3Href: "/resources/learn/on-prem-llm-execution-path",
+    related4Title: "",
+    related4Href: "",
+  },
+}
+
 export default function PiiGuardrailsVsOperationalDataProtection({
-  backLabel = "← Learn",
-  backHref = "/resources/learn",
-  title = "Why PII Guardrails Don't Make Enterprise AI Work",
-  lead = "PII guardrails, AI security suites, prompt security gateways — they all do something important. They do not all do the same thing. Here is a direct comparison and a clear answer to where each fits in enterprise AI adoption.",
-  category = "COMPARISON · Categories",
-  readTime = "11 min read",
-  dateUpdated = "Updated May 2025",
-  tldrLabel = "TL;DR",
+  locale = "en",
+  backLabel = "",
+  backHref = "",
+  title = "",
+  lead = "",
+  category = "",
+  readTime = "",
+  dateUpdated = "",
+  tldrLabel = "",
   tldrBody = "",
-  bodyHtml = BODY_HTML,
-  canonicalUrl = "https://llmcapsule.ai/resources/learn/pii-guardrails-vs-operational-data-protection",
-  datePublished = "2025-05-01",
-  dateModified = "2025-05-01",
-  inLanguage = "en",
-  breadcrumbLabel = "Why PII Guardrails Don't Make Enterprise AI Work",
-  faqJsonLd = FAQ_JSON_LD,
-  relatedSectionLabel = "Related articles",
-  related1Title = "Differential privacy for enterprise LLM",
-  related1Href = "/resources/learn/differential-privacy-for-enterprise-llm",
-  related2Title = "AI on network operations data",
-  related2Href = "/resources/learn/ai-on-network-operations-data",
-  related3Title = "On-prem LLM execution path",
-  related3Href = "/resources/learn/on-prem-llm-execution-path",
+  bodyHtml = "",
+  canonicalUrl = "",
+  datePublished = "",
+  dateModified = "",
+  inLanguage = "",
+  breadcrumbLabel = "",
+  faqJsonLd = "",
+  relatedSectionLabel = "",
+  related1Title = "",
+  related1Href = "",
+  related2Title = "",
+  related2Href = "",
+  related3Title = "",
+  related3Href = "",
   related4Title = "",
   related4Href = "",
 }: Props) {
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  const _backLabel = backLabel || T["backLabel"] || TRANSLATIONS.en["backLabel"]
+  const _backHref = backHref || T["backHref"] || TRANSLATIONS.en["backHref"]
+  const _title = title || T["title"] || TRANSLATIONS.en["title"]
+  const _lead = lead || T["lead"] || TRANSLATIONS.en["lead"]
+  const _category = category || T["category"] || TRANSLATIONS.en["category"]
+  const _readTime = readTime || T["readTime"] || TRANSLATIONS.en["readTime"]
+  const _dateUpdated = dateUpdated || T["dateUpdated"] || TRANSLATIONS.en["dateUpdated"]
+  const _tldrLabel = tldrLabel || T["tldrLabel"] || TRANSLATIONS.en["tldrLabel"]
+  const _tldrBody = tldrBody || T["tldrBody"] || TRANSLATIONS.en["tldrBody"]
+  const _bodyHtml = bodyHtml || T["bodyHtml"] || TRANSLATIONS.en["bodyHtml"]
+  const _canonicalUrl = canonicalUrl || T["canonicalUrl"] || TRANSLATIONS.en["canonicalUrl"]
+  const _datePublished = datePublished || T["datePublished"] || TRANSLATIONS.en["datePublished"]
+  const _dateModified = dateModified || T["dateModified"] || TRANSLATIONS.en["dateModified"]
+  const _inLanguage = inLanguage || T["inLanguage"] || TRANSLATIONS.en["inLanguage"]
+  const _breadcrumbLabel = breadcrumbLabel || T["breadcrumbLabel"] || TRANSLATIONS.en["breadcrumbLabel"]
+  const _faqJsonLd = faqJsonLd || T["faqJsonLd"] || TRANSLATIONS.en["faqJsonLd"]
+  const _relatedSectionLabel = relatedSectionLabel || T["relatedSectionLabel"] || TRANSLATIONS.en["relatedSectionLabel"]
+  const _related1Title = related1Title || T["related1Title"] || TRANSLATIONS.en["related1Title"]
+  const _related1Href = related1Href || T["related1Href"] || TRANSLATIONS.en["related1Href"]
+  const _related2Title = related2Title || T["related2Title"] || TRANSLATIONS.en["related2Title"]
+  const _related2Href = related2Href || T["related2Href"] || TRANSLATIONS.en["related2Href"]
+  const _related3Title = related3Title || T["related3Title"] || TRANSLATIONS.en["related3Title"]
+  const _related3Href = related3Href || T["related3Href"] || TRANSLATIONS.en["related3Href"]
+  const _related4Title = related4Title || T["related4Title"] || TRANSLATIONS.en["related4Title"]
+  const _related4Href = related4Href || T["related4Href"] || TRANSLATIONS.en["related4Href"]
+
   const relatedItems = [
-    { title: related1Title, href: related1Href },
-    { title: related2Title, href: related2Href },
-    { title: related3Title, href: related3Href },
-    { title: related4Title, href: related4Href },
+    { _title: _related1Title, href: _related1Href },
+    { _title: _related2Title, href: _related2Href },
+    { _title: _related3Title, href: _related3Href },
+    { _title: _related4Title, href: _related4Href },
   ].filter((r) => r.title && r.href)
 
   const articleJsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": title,
-    "description": lead,
-    "inLanguage": inLanguage,
-    "datePublished": datePublished,
-    "dateModified": dateModified || datePublished,
+    "headline": _title,
+    "description": _lead,
+    "inLanguage": _inLanguage,
+    "datePublished": _datePublished,
+    "dateModified": _dateModified || _datePublished,
     "author": { "@type": "Organization", "name": "CUBIG" },
     "publisher": { "@type": "Organization", "name": "CUBIG", "url": "https://cubig.ai" },
-    "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": _canonicalUrl },
   })
 
-  const breadcrumbJsonLd = breadcrumbLabel
+  const breadcrumbJsonLd = _breadcrumbLabel
     ? JSON.stringify({
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -177,7 +502,7 @@ export default function PiiGuardrailsVsOperationalDataProtection({
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://llmcapsule.ai/" },
           { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://llmcapsule.ai/resources" },
           { "@type": "ListItem", "position": 3, "name": "Learn", "item": "https://llmcapsule.ai/resources/learn" },
-          { "@type": "ListItem", "position": 4, "name": breadcrumbLabel },
+          { "@type": "ListItem", "position": 4, "name": _breadcrumbLabel },
         ],
       })
     : ""
@@ -188,8 +513,8 @@ export default function PiiGuardrailsVsOperationalDataProtection({
       {breadcrumbJsonLd && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }} />
       )}
-      {faqJsonLd && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+      {_faqJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: _faqJsonLd }} />
       )}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
@@ -471,7 +796,7 @@ export default function PiiGuardrailsVsOperationalDataProtection({
 
         .la-body tr:last-child td { border-bottom: none; }
 
-        /* Callout (amber) — for <div class="callout"> inside bodyHtml */
+        /* Callout (amber) — for <div class="callout"> inside _bodyHtml */
         .la-body .callout {
           display: flex;
           gap: 14px;
@@ -620,7 +945,7 @@ export default function PiiGuardrailsVsOperationalDataProtection({
           box-shadow: 0 4px 16px rgba(91, 79, 233, 0.08);
         }
 
-        .la-related__card-title {
+        .la-related__card-_title {
           font-size: 15px;
           font-weight: 600;
           line-height: 1.4;
@@ -654,15 +979,15 @@ export default function PiiGuardrailsVsOperationalDataProtection({
         <section className="la-hero">
           <div className="la-container">
             <div className="la-hero__inner">
-              <a href={backHref} className="la-hero__back">{backLabel}</a>
-              <h1 className="la-hero__title">{title}</h1>
-              <p className="la-hero__lead">{lead}</p>
+              <a href={_backHref} className="la-hero__back">{_backLabel}</a>
+              <h1 className="la-hero__title">{_title}</h1>
+              <p className="la-hero__lead">{_lead}</p>
               <div className="la-hero__meta">
-                <span className="la-meta__chip">{category}</span>
+                <span className="la-meta__chip">{_category}</span>
                 <span className="la-meta__sep" aria-hidden="true" />
-                <span className="la-meta__time">{readTime}</span>
+                <span className="la-meta__time">{_readTime}</span>
                 <span className="la-meta__sep" aria-hidden="true" />
-                <span className="la-meta__date">{dateUpdated}</span>
+                <span className="la-meta__date">{_dateUpdated}</span>
               </div>
             </div>
           </div>
@@ -672,8 +997,8 @@ export default function PiiGuardrailsVsOperationalDataProtection({
         <div className="la-tldr-wrap">
           <div className="la-container">
             <div className="la-tldr">
-              <div className="la-tldr__label">{tldrLabel}</div>
-              <p className="la-tldr__body">{tldrBody}</p>
+              <div className="la-tldr__label">{_tldrLabel}</div>
+              <p className="la-tldr__body">{_tldrBody}</p>
             </div>
           </div>
         </div>
@@ -683,7 +1008,7 @@ export default function PiiGuardrailsVsOperationalDataProtection({
           <div className="la-container">
             <article
               className="la-body"
-              dangerouslySetInnerHTML={{ __html: bodyHtml }}
+              dangerouslySetInnerHTML={{ __html: _bodyHtml }}
             />
           </div>
         </div>
@@ -692,11 +1017,11 @@ export default function PiiGuardrailsVsOperationalDataProtection({
         {relatedItems.length > 0 && (
           <div className="la-related">
             <div className="la-container">
-              <div className="la-related__label">{relatedSectionLabel}</div>
+              <div className="la-related__label">{_relatedSectionLabel}</div>
               <div className="la-related__grid">
                 {relatedItems.map((item, i) => (
                   <a key={i} href={item.href} className="la-related__card">
-                    <span className="la-related__card-title">{item.title}</span>
+                    <span className="la-related__card-_title">{item.title}</span>
                     <span className="la-related__card-arrow" aria-hidden="true">→</span>
                   </a>
                 ))}
@@ -711,29 +1036,30 @@ export default function PiiGuardrailsVsOperationalDataProtection({
 }
 
 addPropertyControls(PiiGuardrailsVsOperationalDataProtection, {
-  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
-  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
-  title: { type: ControlType.String, title: "Title", defaultValue: "Why PII Guardrails Don't Make Enterprise AI Work" },
-  lead: { type: ControlType.String, title: "Lead", defaultValue: "PII guardrails, AI security suites, prompt security gateways — they all do something important. They do not all do the same thing. Here is a direct comparison and a clear answer to where each fits in enterprise AI adoption.", displayTextArea: true },
-  category: { type: ControlType.String, title: "Category", defaultValue: "COMPARISON · Categories" },
-  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "11 min read" },
-  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "Updated May 2025" },
-  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "" },
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "" },
   tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "", displayTextArea: true },
-  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
-  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/pii-guardrails-vs-operational-data-protection" },
-  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2025-05-01" },
-  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2025-05-01" },
-  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "en" },
-  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "Why PII Guardrails Don't Make Enterprise AI Work" },
-  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
-  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "Related articles" },
-  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "Differential privacy for enterprise LLM" },
-  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/differential-privacy-for-enterprise-llm" },
-  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "AI on network operations data" },
-  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/ai-on-network-operations-data" },
-  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "On-prem LLM execution path" },
-  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/on-prem-llm-execution-path" },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: "", displayTextArea: true },
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: "", displayTextArea: true },
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "" },
   related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
   related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
 })

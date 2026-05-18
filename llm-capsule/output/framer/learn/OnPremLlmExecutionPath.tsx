@@ -2,12 +2,13 @@
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
-// Self-contained Framer Code Component with full Props for translation/CMS.
-// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with locale dropdown (en/ko/de).
+// Set `locale` in Framer Properties panel to switch all text simultaneously.
 
 import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
+  locale?: "en" | "ko" | "de"
   backLabel?: string
   backHref?: string
   title?: string
@@ -134,54 +135,382 @@ const BODY_HTML = `<h2>Why two paths instead of one</h2>
 
 const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "What is the on-prem LLM execution path?", "acceptedAnswer": { "@type": "Answer", "text": "The on-prem LLM execution path (Path B) runs a small private lightweight model entirely inside the enterprise environment. No raw operational data and no capsule data leaves the boundary. It is used for air-gapped, classified, or strictly regulated operations where any external transmission is unacceptable." } }, { "@type": "Question", "name": "When should I use Path A vs Path B?", "acceptedAnswer": { "@type": "Answer", "text": "Path A (external approved LLM with capsule data only) is appropriate when the workflow's regulatory profile allows transmission of differentially-private capsule data to an approved external endpoint. Path B (on-prem local lightweight model) is required when no external transmission is allowed — air-gapped networks, classified operations, OT environments, or strict regulated industries with data sovereignty constraints." } }, { "@type": "Question", "name": "Can I switch between paths per workflow?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Path selection is policy-driven. Different workflows in the same enterprise can route to different paths based on regulatory profile, data sensitivity, and customer commitments. Governance records the path applied per workflow." } } ] }`
 
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
+  en: {
+    backLabel: "← Learn",
+    backHref: "/resources/learn",
+    title: "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations",
+    lead: "Two execution paths inside a single AI enablement data layer. When external transmission is not an option, the on-prem local lightweight model handles the workflow inside your boundary — zero external exposure, full restoration.",
+    category: "ARCHITECTURE · Execution Path",
+    readTime: "11 min read",
+    dateUpdated: "Updated May 2025",
+    tldrLabel: "TL;DR",
+    tldrBody: "",
+    bodyHtml: BODY_HTML,
+    canonicalUrl: "https://llmcapsule.ai/resources/learn/on-prem-llm-execution-path",
+    datePublished: "2025-05-01",
+    dateModified: "2025-05-01",
+    inLanguage: "en",
+    breadcrumbLabel: "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations",
+    faqJsonLd: FAQ_JSON_LD,
+    relatedSectionLabel: "Related articles",
+    related1Title: "Differential privacy for enterprise LLM",
+    related1Href: "/resources/learn/differential-privacy-for-enterprise-llm",
+    related2Title: "AI on network operations data",
+    related2Href: "/resources/learn/ai-on-network-operations-data",
+    related3Title: "PII guardrails vs operational data protection",
+    related3Href: "/resources/learn/pii-guardrails-vs-operational-data-protection",
+    related4Title: "",
+    related4Href: "",
+  },
+  ko: {
+    backLabel: "← Learn",
+    backHref: "/resources/learn",
+    title: "← Learn",
+    lead: "온프레미스 LLM 실행 경로: 규제 환경을 위한 망분리·하이브리드·지역 내 AI",
+    category: "단일 AI 데이터 레이어 안에 두 가지 실행 경로가 존재합니다. 외부 전송이 불가한 환경에서는 온프레미스 경량 모델이 경계 내부에서 워크플로를 처리합니다. 외부 노출 Zero Exposure, 완전한 복원.",
+    readTime: "ARCHITECTURE · Execution Path",
+    dateUpdated: "11분 읽기",
+    tldrLabel: "Definition · TL;DR",
+    tldrBody: "LLM Capsule은 두 가지 실행 경로를 지원합니다. Path A는 캡슐 데이터를 외부 승인 LLM으로 전송합니다. 원본 운영 데이터는 외부로 나가지 않습니다. Path B는 소형 경량 모델을 기업 환경 내부에서 완전히 실행합니다. 외부 전송이 없습니다. 경로 선택은 워크플로별 정책이 결정합니다.",
+    bodyHtml: `<h2>하나가 아닌 두 가지 경로가 필요한 이유</h2>
+
+<p>기업은 대부분 단일 규제 프로파일을 갖지 않습니다. 통신사는 Path A로 NOC 분석을 실행하고, Path B로 미션 크리티컬 인시던트 워크플로를 처리할 수 있습니다. 병원은 일상적인 문서화에 Path A를, 임상 의사결정 지원에 Path B를 사용할 수 있습니다. 방산 업체는 Path B만 사용할 수도 있습니다. 단일 경로를 강제하면 단일 규제 기준도 강제됩니다. 두 경로를 제공하면 거버넌스가 워크플로에 맞는 경로를 선택할 수 있습니다.</p>
+
+<h2>Path A — 캡슐 데이터만 사용하는 외부 승인 LLM</h2>
+
+<p>캡슐(문서 구조 보존, 차등 프라이버시 적용)이 승인된 외부 LLM 엔드포인트 — ChatGPT, Claude, Gemini, Perplexity, 또는 임의의 LLM API — 로 전송됩니다. <strong>원본 운영 데이터는 기업 환경을 떠나지 않습니다.</strong> 캡슐만 전송됩니다. LLM은 캡슐을 처리하고 토큰화된 응답을 반환합니다. 상태 볼트가 기업 내부에서 응답을 복원합니다.</p>
+
+<ul>
+<li><strong>적합한 경우:</strong> 차등 프라이버시가 적용된 캡슐의 외부 전송을 허용하는 규제 프로파일을 가진 워크플로</li>
+<li><strong>강점:</strong> 최신 프런티어 모델 기능 활용 가능</li>
+<li><strong>제약:</strong> 승인된 외부 LLM 엔드포인트와 정책 정합이 필요합니다</li>
+</ul>
+
+<h2>Path B — 온프레미스 로컬 경량 모델</h2>
+
+<p>소형 경량 모델이 기업 환경 내부에서 완전히 실행됩니다. 캡슐은 로컬에서 처리됩니다. <strong>외부 전송이 없습니다.</strong> 외부 엔드포인트가 전혀 허용되지 않는 망분리·기밀·OT·엄격한 규제 환경에서 사용됩니다.</p>
+
+<ul>
+<li><strong>적합한 경우:</strong> 망분리 네트워크, 기밀 작전, OT 환경, 엄격한 데이터 주권 요구사항</li>
+<li><strong>강점:</strong> Zero Exposure, 완전한 데이터 레지던시</li>
+<li><strong>제약:</strong> 모델 성능이 로컬 경량 모델 범위 내로 제한됩니다</li>
+</ul>
+
+<div class="callout"><strong>내부 명칭.</strong> 내부 팀에서 "10G"라고 부르는 경우가 있습니다. 공개 문서에서는 <em>경량 온프레미스 모델</em>, <em>소형 프라이빗 모델</em>, <em>로컬 추론 경로</em>, 또는 <em>온프레미스/로컬 실행 경로</em>를 사용합니다. 정확한 크기는 하드웨어와 워크플로에 따른 배포 결정 사항입니다.</div>
+
+<h2>경로 선택: 의사결정 프레임워크</h2>
+
+<table>
+<thead><tr><th>요소</th><th>Path A</th><th>Path B</th></tr></thead>
+<tbody>
+<tr><td>외부 전송 허용 여부</td><td>예 (캡슐만)</td><td>아니오</td></tr>
+<tr><td>망분리 네트워크</td><td>해당 없음</td><td>필수</td></tr>
+<tr><td>프런티어 모델 성능 필요 여부</td><td>예</td><td>로컬 모델 범위 내</td></tr>
+<tr><td>지연 시간 프로파일</td><td>가변 (네트워크 의존)</td><td>로컬, 예측 가능</td></tr>
+<tr><td>컴플라이언스 태세</td><td>"원본 데이터 노출 없음"</td><td>"외부 노출 Zero Exposure"</td></tr>
+</tbody>
+</table>
+
+<h2>배포 토폴로지</h2>
+
+<h3>온프레미스</h3>
+<p>Capsule Runtime과 온프레미스 로컬 경량 모델을 기업 데이터센터 내부에 배포합니다. Path B가 기본값입니다. Path A는 정책에 의해 별도의 승인된 외부 엔드포인트가 허용 목록에 등록된 경우에만 사용 가능합니다.</p>
+
+<h3>망분리</h3>
+<p>Capsule Runtime과 온프레미스 로컬 경량 모델을 완전히 격리된 네트워크에 배포합니다. Path A는 설계상 사용 불가입니다. Path B가 모든 워크플로를 처리합니다. 기밀 작전·방위·고규제 OT 환경에서 일반적입니다.</p>
+
+<h3>하이브리드</h3>
+<p>Capsule Runtime은 온프레미스에 두고, 두 경로를 모두 활성화합니다. 정책이 개별 워크플로를 라우팅합니다. 일부 워크플로는 외부 엔드포인트를 허용하고 다른 워크플로는 로컬 실행이 필요한 통신사·금융권에서 일반적입니다.</p>
+
+<h3>지역 내 배포 (데이터 주권)</h3>
+<p>특정 지역(예: GDPR 적용 워크플로를 위한 EU)에 Capsule Runtime과 경량 모델을 배포합니다. Path A도 지역 내 외부 엔드포인트로만 허용될 수 있습니다. 지역별 데이터 레지던시 의무가 있는 다국적 기업에서 일반적입니다.</p>
+
+<h3>클라우드 (AWS Marketplace)</h3>
+<p>AWS Marketplace를 통해 Capsule Runtime을 배포하며, 고객의 클라우드 계정에서 런타임과 로컬 경량 모델을 모두 호스팅합니다. Path A는 정책에 따라 선택 사항입니다.</p>
+
+<h3>임베디드 통합</h3>
+<p>기존 애플리케이션(NOC 콘솔, 티켓 시스템, 병원 포털, 미션 시스템)에 Capsule SDK를 임베딩합니다. 두 경로 모두 지원되며, 임베딩된 애플리케이션이 워크플로별로 선택합니다.</p>
+
+<h3>Slack App</h3>
+<p>Slack 워크플로용 캡슐 플러그인입니다. 범용 팀은 Path A를 주로 사용하고, 온프레미스 런타임 위에서 Slack을 UI 레이어로 사용하는 규제 대상 팀은 Path B를 사용합니다.</p>
+
+<h2>Path B의 기술적 처리 과정</h2>
+
+<ol>
+<li>커넥터 레인이 운영 데이터를 Capsule Runtime으로 전달합니다 (REST, 웹훅, 로그 탭, SDK).</li>
+<li>문서 구조 보존 캡슐화가 시퀀스와 구조를 유지하면서 운영 식별자를 토큰화합니다.</li>
+<li>차등 프라이버시 기반 보호가 캡슐의 추론 위험을 제한합니다.</li>
+<li>캡슐이 동일 네트워크 내에서 실행 중인 로컬 경량 모델로 전달됩니다.</li>
+<li>모델이 토큰화된 출력을 생성합니다.</li>
+<li>상태 볼트가 출력 내 원본 운영 식별자를 복원합니다.</li>
+<li>결과가 원래 워크플로(티켓, 런북, EHR 필드, 미션 요약)에 다시 삽입됩니다.</li>
+<li>거버넌스가 적용된 경로, 호출된 정책, 감사 이력을 기록합니다.</li>
+</ol>
+
+<p><strong>Path B의 어떤 단계도 기업 경계 밖으로 나가지 않습니다.</strong></p>
+
+<h2>Zero Exposure 주장 — 올바른 범위 정의</h2>
+
+<p>"Zero Exposure"는 방어 가능하려면 범위가 정의되어야 하는 주장입니다. LLM Capsule이 사용하는 범위 한정 표현은 다음과 같습니다.</p>
+
+<ul>
+<li><strong>Path A:</strong> "외부 LLM에 원본 운영 데이터 노출 없음."</li>
+<li><strong>Path B:</strong> "온프레미스/로컬 실행 경로에서 Zero Exposure."</li>
+</ul>
+
+<p>범위가 없는 "Zero Exposure"를 최상위 슬로건으로 사용하지 마십시오. 기술적 보증은 경로별로 다르며 정책 조건에 따릅니다.</p>
+
+<h2>구매 담당자가 평가해야 할 항목</h2>
+
+<ol>
+<li><strong>경로 지원 범위.</strong> 두 경로 모두 지원되는가, 하나만 지원되는가?</li>
+<li><strong>경로 정책 세분화.</strong> 동일 거버넌스 하에서 워크플로마다 다른 경로를 사용할 수 있는가?</li>
+<li><strong>로컬 모델 사양.</strong> 온프레미스 경량 모델에 어떤 하드웨어가 필요한가?</li>
+<li><strong>망분리 지원 여부.</strong> 외부 연결 없이 런타임이 완전히 작동하는가?</li>
+<li><strong>상태 볼트 로컬 유지 여부.</strong> Path A에서도 상태 볼트가 로컬에 유지되는가?</li>
+<li><strong>경로별 감사.</strong> 요청별·워크플로별·정책별로 적용된 경로가 기록되는가?</li>
+</ol>
+
+<div class="takeaways">
+<div class="takeaways__h">핵심 요약</div>
+<ul>
+<li>하나의 AI 데이터 레이어 안에 두 가지 실행 경로: 캡슐을 사용하는 외부 승인 LLM(Path A) 또는 온프레미스 로컬 경량 모델(Path B).</li>
+<li>Path B는 외부 전송 없이 망분리·기밀·OT·엄격한 규제 환경을 처리합니다.</li>
+<li>경로 선택은 워크플로별 정책이 결정하며, 거버넌스가 적용된 경로를 기록합니다.</li>
+<li>6가지 배포 토폴로지: 온프레미스, 망분리, 하이브리드, 지역 내 배포, 클라우드, 임베디드, Slack App.</li>
+<li>"Zero Exposure" 주장은 경로에 따라 범위가 정해집니다. "외부 LLM에 원본 데이터 노출 없음"(Path A) 또는 "Zero Exposure"(Path B).</li>
+</ul>
+</div>
+
+---`,
+    canonicalUrl: "https://llmcapsule.ai/resources/learn/on-prem-llm-execution-path",
+    datePublished: "2025-05-01",
+    dateModified: "2025-05-01",
+    inLanguage: "en",
+    breadcrumbLabel: "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations",
+    faqJsonLd: ``,
+    relatedSectionLabel: "Related articles",
+    related1Title: "Differential privacy for enterprise LLM",
+    related1Href: "/resources/learn/differential-privacy-for-enterprise-llm",
+    related2Title: "AI on network operations data",
+    related2Href: "/resources/learn/ai-on-network-operations-data",
+    related3Title: "PII guardrails vs operational data protection",
+    related3Href: "/resources/learn/pii-guardrails-vs-operational-data-protection",
+    related4Title: "",
+    related4Href: "",
+  },
+  de: {
+    backLabel: "← Learn",
+    backHref: "/resources/learn",
+    title: "← Zurück",
+    lead: "On-Premise-Ausführungspfad für LLMs: Air-Gapped-, Hybrid- und regionsspezifische KI für regulierte Betriebsumgebungen",
+    category: "LLM Capsule bietet zwei Ausführungspfade innerhalb einer einzigen KI-Datenschicht. Wenn externe Übertragung regulatorisch ausgeschlossen ist, übernimmt das lokale On-Premise-Modell den gesamten Workflow innerhalb Ihrer Infrastruktur — ohne externe Datenübertragung, mit vollständiger Wiederherstellung.",
+    readTime: "ARCHITEKTUR · Ausführungspfad",
+    dateUpdated: "11 Min. Lesezeit",
+    tldrLabel: "Definition · Kurzfassung",
+    tldrBody: "LLM Capsule unterstützt zwei Ausführungspfade. Pfad A überträgt Kapseldaten an ein zugelassenes externes LLM — operative Rohdaten verlassen die Unternehmensumgebung nicht. Pfad B führt ein kleines lokales Modell vollständig innerhalb Ihrer Infrastruktur aus — ohne jede externe Datenübertragung. Die Pfadauswahl erfolgt richtliniengesteuert, je nach Workflow.",
+    bodyHtml: `<h2>Warum zwei Ausführungspfade notwendig sind</h2>
+
+<p>Unternehmen verfügen selten über ein einheitliches regulatorisches Profil. Ein Telekommunikationsanbieter kann NOC-Analysen über Pfad A und sicherheitskritische Incident-Workflows über Pfad B abwickeln. Ein Krankenhaus kann Pfad A für Routinedokumentation und Pfad B für die klinische Entscheidungsunterstützung nutzen. Ein Rüstungsunternehmen kann ausschließlich Pfad B einsetzen. Ein einziger Ausführungspfad erzwingt einen einzigen regulatorischen Mindeststandard. Zwei Pfade ermöglichen es der Governance, den Pfad dem Workflow anzupassen.</p>
+
+<h2>Pfad A — externes zugelassenes LLM, ausschließlich mit Kapseldaten</h2>
+
+<p>Die Kapsel (strukturerhaltend, Differential-Privacy-geschützt) wird an einen zugelassenen externen LLM-Endpunkt übertragen — ChatGPT, Claude, Gemini, Perplexity oder eine beliebige LLM API. <strong>Operative Rohdaten verlassen die Unternehmensumgebung nicht.</strong> Nur die Kapsel wird übertragen. Das LLM verarbeitet die Kapsel und liefert eine tokenisierte Antwort zurück. Der State Vault stellt die Antwort innerhalb der Unternehmensumgebung wieder her.</p>
+
+<ul>
+<li><strong>Stärke:</strong> Zugang zu leistungsfähigen Frontier-Modellen</li>
+<li><strong>Einschränkung:</strong> Erfordert einen zugelassenen externen LLM-Endpunkt und richtlinienkonforme Freigabe</li>
+</ul>
+
+<h2>Pfad B — lokales On-Premise-Leichtgewichtmodell</h2>
+
+<p>Ein kleines, privates Leichtgewichtmodell läuft vollständig innerhalb der Unternehmensumgebung. Die Kapsel wird lokal verarbeitet. <strong>Keine externe Datenübertragung.</strong> Einsatz bei Air-Gapped-Netzwerken, klassifizierten Betriebsumgebungen, OT-Umgebungen und streng regulierten Bereichen, in denen jeder externe Endpunkt ausgeschlossen ist.</p>
+
+<ul>
+<li><strong>Stärke:</strong> Keine externe Datenübertragung, vollständige Datenresidenz</li>
+<li><strong>Einschränkung:</strong> Modellleistung ist durch den lokalen Modell-Footprint begrenzt</li>
+</ul>
+
+<div class="callout"><strong>Interne Bezeichnung.</strong> Das interne Team verwendet gelegentlich den Begriff „10G" — in der öffentlichen Dokumentation werden die Begriffe <em>lokales On-Premise-Modell</em>, <em>kleines privates Modell</em>, <em>lokaler Inferenzpfad</em> oder <em>On-Premise-/lokaler Ausführungspfad</em> verwendet. Die genaue Modellgröße ist eine Deployment-Entscheidung, die von Hardware und Workflow abhängt.</div>
+
+<h2>Pfadauswahl: ein Entscheidungsrahmen</h2>
+
+<table>
+<thead><tr><th>Faktor</th><th>Pfad A</th><th>Pfad B</th></tr></thead>
+<tbody>
+<tr><td>Externe Übertragung zulässig</td><td>Ja (nur Kapsel)</td><td>Nein</td></tr>
+<tr><td>Air-Gapped-Netzwerk</td><td>Nicht anwendbar</td><td>Erforderlich</td></tr>
+<tr><td>Frontier-Modell-Leistung</td><td>Ja</td><td>Durch lokales Modell begrenzt</td></tr>
+<tr><td>Latenzprofil</td><td>Variabel (netzwerkabhängig)</td><td>Lokal, vorhersehbar</td></tr>
+<tr><td>Compliance-Posture</td><td>„Keine Offenlegung von Rohdaten"</td><td>„Keine externe Datenübertragung"</td></tr>
+</tbody>
+</table>
+
+<h2>Deployment-Topologien</h2>
+
+<h3>On-Premise</h3>
+<p>Capsule Runtime und lokales On-Premise-Leichtgewichtmodell werden innerhalb des unternehmenseigenen Rechenzentrums bereitgestellt. Pfad B ist der Standard. Pfad A ist nur verfügbar, wenn ein zugelassener externer Endpunkt durch Richtlinie freigegeben wurde.</p>
+
+<h3>Air-Gapped</h3>
+<p>Capsule Runtime und lokales On-Premise-Leichtgewichtmodell werden in einem vollständig isolierten Netzwerk betrieben. Pfad A ist konstruktionsbedingt nicht verfügbar. Pfad B übernimmt alle Workflows. Typisch für klassifizierte Operationen, Verteidigung und streng regulierte OT-Umgebungen.</p>
+
+<h3>Hybrid</h3>
+<p>Capsule Runtime On-Premise; beide Pfade aktiv. Richtlinien steuern die Zuordnung einzelner Workflows. Typisch für Telekommunikation und Finanzwesen, wo einige Workflows externe Endpunkte tolerieren und andere lokale Ausführung erfordern.</p>
+
+<h3>In-Region (Datensouveränität)</h3>
+<p>Capsule Runtime und Leichtgewichtmodell werden in einer bestimmten Region bereitgestellt (z. B. EU für DSGVO (GDPR)-pflichtige Workloads). Pfad A kann ebenfalls auf in-regionsspezifische externe Endpunkte beschränkt werden. Typisch für multinationale Unternehmen mit regionalen Datenhaltungspflichten.</p>
+
+<h3>Cloud (AWS Marketplace)</h3>
+<p>Capsule Runtime wird über den AWS Marketplace bereitgestellt. Das Cloud-Konto des Kunden hostet sowohl die Runtime als auch das lokale Leichtgewichtmodell. Pfad A optional, abhängig von der Richtlinie.</p>
+
+<h3>Embedded Integration</h3>
+<p>Capsule SDK wird in eine bestehende Anwendung eingebettet (NOC-Konsole, Ticket-System, Krankenhausportal, Missionssystem). Beide Pfade werden unterstützt; die eingebettete Anwendung wählt den Pfad je Workflow.</p>
+
+<h3>Slack App</h3>
+<p>Capsule-Plug-in für Slack-Workflows. Pfad A typisch für allgemeine Teams; Pfad B für regulierte Teams, die Slack als UI-Schicht über einer On-Premise-Runtime nutzen.</p>
+
+<h2>Technischer Ablauf innerhalb von Pfad B</h2>
+
+<ol>
+<li>Der Connector Lane leitet operative Daten an die Capsule Runtime weiter (REST, Webhook, Log Tap, SDK).</li>
+<li>Strukturerhaltende Kapsulierung — Operative Kennungen werden tokenisiert, Sequenz und Struktur bleiben erhalten.</li>
+<li>Differential-Privacy-basierter Schutz begrenzt das Inferenzrisiko auf der Kapsel.</li>
+<li>Die Kapsel wird an das lokale Leichtgewichtmodell im selben Netzwerk übermittelt.</li>
+<li>Das Modell erzeugt eine tokenisierte Ausgabe.</li>
+<li>Der State Vault stellt die originalen operativen Kennungen in der Ausgabe wieder her.</li>
+<li>Das Ergebnis wird in den ursprünglichen Workflow zurückgeführt (Ticket, Runbook, EHR, Missionszusammenfassung).</li>
+<li>Governance-Protokollierung — Pfad, angewandte Richtlinie und Prüfpfad werden aufgezeichnet.</li>
+</ol>
+
+<p><strong>Kein Schritt in Pfad B verlässt die Unternehmensgrenze.</strong></p>
+
+<h2>Die Zero Exposure-Aussage — korrekt abgegrenzt</h2>
+
+<p>"Zero Exposure" ist eine Aussage, die eines definierten Geltungsbereichs bedarf, um belastbar zu sein. Die von LLM Capsule verwendeten abgegrenzten Formulierungen:</p>
+
+<ul>
+<li><strong>Pfad A:</strong> „Keine Offenlegung operativer Rohdaten gegenüber externen LLMs."</li>
+<li><strong>Pfad B:</strong> „Keine externe Datenübertragung beim On-Premise-/lokalen Ausführungspfad."</li>
+</ul>
+
+<p>Die Verwendung von „Zero Exposure" als übergeordnetem Slogan ohne Geltungsbereich ist zu vermeiden. Die technische Garantie ist pfadspezifisch und richtlinienabhängig.</p>
+
+<h2>Bewertungskriterien für Einkäufer</h2>
+
+<ol>
+<li><strong>Pfadabdeckung.</strong> Werden beide Pfade unterstützt oder nur einer?</li>
+<li><strong>Granularität der Pfadzuweisung.</strong> Können verschiedene Workflows unter derselben Governance unterschiedliche Pfade nutzen?</li>
+<li><strong>Lokaler Modell-Footprint.</strong> Welche Hardware wird für das On-Premise-Leichtgewichtmodell benötigt?</li>
+<li><strong>Air-Gapped-Unterstützung.</strong> Ist die Runtime ohne externe Konnektivität vollständig betriebsfähig?</li>
+<li><strong>State Vault lokal.</strong> Bleibt der State Vault auch bei Pfad A lokal?</li>
+<li><strong>Pfad-Audit.</strong> Wird der angewandte Pfad je Anfrage, je Workflow und je Richtlinie protokolliert?</li>
+</ol>
+
+<div class="takeaways">
+<div class="takeaways__h">Kernaussagen</div>
+<ul>
+<li>Zwei Ausführungspfade in einer KI-Datenschicht: externes zugelassenes LLM mit Kapsel (Pfad A) oder lokales On-Premise-Leichtgewichtmodell (Pfad B).</li>
+<li>Pfad B bewältigt Air-Gapped-, klassifizierte, OT- und streng regulierte Betriebsumgebungen ohne externe Datenübertragung.</li>
+<li>Die Pfadauswahl erfolgt richtliniengesteuert je Workflow; die Governance protokolliert den angewandten Pfad.</li>
+<li>Sechs Deployment-Topologien: On-Premise, Air-Gapped, Hybrid, In-Region, Cloud, Embedded Integration, Slack App.</li>
+<li>Die Zero Exposure-Aussage ist pfadgebunden: „Keine Offenlegung von Rohdaten gegenüber externen LLMs" (Pfad A) oder „Keine externe Datenübertragung" (Pfad B).</li>
+</ul>
+</div>`,
+    canonicalUrl: "https://llmcapsule.ai/resources/learn/on-prem-llm-execution-path",
+    datePublished: "2025-05-01",
+    dateModified: "2025-05-01",
+    inLanguage: "en",
+    breadcrumbLabel: "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations",
+    faqJsonLd: ``,
+    relatedSectionLabel: "Related articles",
+    related1Title: "Differential privacy for enterprise LLM",
+    related1Href: "/resources/learn/differential-privacy-for-enterprise-llm",
+    related2Title: "AI on network operations data",
+    related2Href: "/resources/learn/ai-on-network-operations-data",
+    related3Title: "PII guardrails vs operational data protection",
+    related3Href: "/resources/learn/pii-guardrails-vs-operational-data-protection",
+    related4Title: "",
+    related4Href: "",
+  },
+}
+
 export default function OnPremLlmExecutionPath({
-  backLabel = "← Learn",
-  backHref = "/resources/learn",
-  title = "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations",
-  lead = "Two execution paths inside a single AI enablement data layer. When external transmission is not an option, the on-prem local lightweight model handles the workflow inside your boundary — zero external exposure, full restoration.",
-  category = "ARCHITECTURE · Execution Path",
-  readTime = "11 min read",
-  dateUpdated = "Updated May 2025",
-  tldrLabel = "TL;DR",
+  locale = "en",
+  backLabel = "",
+  backHref = "",
+  title = "",
+  lead = "",
+  category = "",
+  readTime = "",
+  dateUpdated = "",
+  tldrLabel = "",
   tldrBody = "",
-  bodyHtml = BODY_HTML,
-  canonicalUrl = "https://llmcapsule.ai/resources/learn/on-prem-llm-execution-path",
-  datePublished = "2025-05-01",
-  dateModified = "2025-05-01",
-  inLanguage = "en",
-  breadcrumbLabel = "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations",
-  faqJsonLd = FAQ_JSON_LD,
-  relatedSectionLabel = "Related articles",
-  related1Title = "Differential privacy for enterprise LLM",
-  related1Href = "/resources/learn/differential-privacy-for-enterprise-llm",
-  related2Title = "AI on network operations data",
-  related2Href = "/resources/learn/ai-on-network-operations-data",
-  related3Title = "PII guardrails vs operational data protection",
-  related3Href = "/resources/learn/pii-guardrails-vs-operational-data-protection",
+  bodyHtml = "",
+  canonicalUrl = "",
+  datePublished = "",
+  dateModified = "",
+  inLanguage = "",
+  breadcrumbLabel = "",
+  faqJsonLd = "",
+  relatedSectionLabel = "",
+  related1Title = "",
+  related1Href = "",
+  related2Title = "",
+  related2Href = "",
+  related3Title = "",
+  related3Href = "",
   related4Title = "",
   related4Href = "",
 }: Props) {
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  const _backLabel = backLabel || T["backLabel"] || TRANSLATIONS.en["backLabel"]
+  const _backHref = backHref || T["backHref"] || TRANSLATIONS.en["backHref"]
+  const _title = title || T["title"] || TRANSLATIONS.en["title"]
+  const _lead = lead || T["lead"] || TRANSLATIONS.en["lead"]
+  const _category = category || T["category"] || TRANSLATIONS.en["category"]
+  const _readTime = readTime || T["readTime"] || TRANSLATIONS.en["readTime"]
+  const _dateUpdated = dateUpdated || T["dateUpdated"] || TRANSLATIONS.en["dateUpdated"]
+  const _tldrLabel = tldrLabel || T["tldrLabel"] || TRANSLATIONS.en["tldrLabel"]
+  const _tldrBody = tldrBody || T["tldrBody"] || TRANSLATIONS.en["tldrBody"]
+  const _bodyHtml = bodyHtml || T["bodyHtml"] || TRANSLATIONS.en["bodyHtml"]
+  const _canonicalUrl = canonicalUrl || T["canonicalUrl"] || TRANSLATIONS.en["canonicalUrl"]
+  const _datePublished = datePublished || T["datePublished"] || TRANSLATIONS.en["datePublished"]
+  const _dateModified = dateModified || T["dateModified"] || TRANSLATIONS.en["dateModified"]
+  const _inLanguage = inLanguage || T["inLanguage"] || TRANSLATIONS.en["inLanguage"]
+  const _breadcrumbLabel = breadcrumbLabel || T["breadcrumbLabel"] || TRANSLATIONS.en["breadcrumbLabel"]
+  const _faqJsonLd = faqJsonLd || T["faqJsonLd"] || TRANSLATIONS.en["faqJsonLd"]
+  const _relatedSectionLabel = relatedSectionLabel || T["relatedSectionLabel"] || TRANSLATIONS.en["relatedSectionLabel"]
+  const _related1Title = related1Title || T["related1Title"] || TRANSLATIONS.en["related1Title"]
+  const _related1Href = related1Href || T["related1Href"] || TRANSLATIONS.en["related1Href"]
+  const _related2Title = related2Title || T["related2Title"] || TRANSLATIONS.en["related2Title"]
+  const _related2Href = related2Href || T["related2Href"] || TRANSLATIONS.en["related2Href"]
+  const _related3Title = related3Title || T["related3Title"] || TRANSLATIONS.en["related3Title"]
+  const _related3Href = related3Href || T["related3Href"] || TRANSLATIONS.en["related3Href"]
+  const _related4Title = related4Title || T["related4Title"] || TRANSLATIONS.en["related4Title"]
+  const _related4Href = related4Href || T["related4Href"] || TRANSLATIONS.en["related4Href"]
+
   const relatedItems = [
-    { title: related1Title, href: related1Href },
-    { title: related2Title, href: related2Href },
-    { title: related3Title, href: related3Href },
-    { title: related4Title, href: related4Href },
+    { _title: _related1Title, href: _related1Href },
+    { _title: _related2Title, href: _related2Href },
+    { _title: _related3Title, href: _related3Href },
+    { _title: _related4Title, href: _related4Href },
   ].filter((r) => r.title && r.href)
 
   const articleJsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": title,
-    "description": lead,
-    "inLanguage": inLanguage,
-    "datePublished": datePublished,
-    "dateModified": dateModified || datePublished,
+    "headline": _title,
+    "description": _lead,
+    "inLanguage": _inLanguage,
+    "datePublished": _datePublished,
+    "dateModified": _dateModified || _datePublished,
     "author": { "@type": "Organization", "name": "CUBIG" },
     "publisher": { "@type": "Organization", "name": "CUBIG", "url": "https://cubig.ai" },
-    "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": _canonicalUrl },
   })
 
-  const breadcrumbJsonLd = breadcrumbLabel
+  const breadcrumbJsonLd = _breadcrumbLabel
     ? JSON.stringify({
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -189,7 +518,7 @@ export default function OnPremLlmExecutionPath({
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://llmcapsule.ai/" },
           { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://llmcapsule.ai/resources" },
           { "@type": "ListItem", "position": 3, "name": "Learn", "item": "https://llmcapsule.ai/resources/learn" },
-          { "@type": "ListItem", "position": 4, "name": breadcrumbLabel },
+          { "@type": "ListItem", "position": 4, "name": _breadcrumbLabel },
         ],
       })
     : ""
@@ -200,8 +529,8 @@ export default function OnPremLlmExecutionPath({
       {breadcrumbJsonLd && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }} />
       )}
-      {faqJsonLd && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+      {_faqJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: _faqJsonLd }} />
       )}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
@@ -483,7 +812,7 @@ export default function OnPremLlmExecutionPath({
 
         .la-body tr:last-child td { border-bottom: none; }
 
-        /* Callout (amber) — for <div class="callout"> inside bodyHtml */
+        /* Callout (amber) — for <div class="callout"> inside _bodyHtml */
         .la-body .callout {
           display: flex;
           gap: 14px;
@@ -632,7 +961,7 @@ export default function OnPremLlmExecutionPath({
           box-shadow: 0 4px 16px rgba(91, 79, 233, 0.08);
         }
 
-        .la-related__card-title {
+        .la-related__card-_title {
           font-size: 15px;
           font-weight: 600;
           line-height: 1.4;
@@ -666,15 +995,15 @@ export default function OnPremLlmExecutionPath({
         <section className="la-hero">
           <div className="la-container">
             <div className="la-hero__inner">
-              <a href={backHref} className="la-hero__back">{backLabel}</a>
-              <h1 className="la-hero__title">{title}</h1>
-              <p className="la-hero__lead">{lead}</p>
+              <a href={_backHref} className="la-hero__back">{_backLabel}</a>
+              <h1 className="la-hero__title">{_title}</h1>
+              <p className="la-hero__lead">{_lead}</p>
               <div className="la-hero__meta">
-                <span className="la-meta__chip">{category}</span>
+                <span className="la-meta__chip">{_category}</span>
                 <span className="la-meta__sep" aria-hidden="true" />
-                <span className="la-meta__time">{readTime}</span>
+                <span className="la-meta__time">{_readTime}</span>
                 <span className="la-meta__sep" aria-hidden="true" />
-                <span className="la-meta__date">{dateUpdated}</span>
+                <span className="la-meta__date">{_dateUpdated}</span>
               </div>
             </div>
           </div>
@@ -684,8 +1013,8 @@ export default function OnPremLlmExecutionPath({
         <div className="la-tldr-wrap">
           <div className="la-container">
             <div className="la-tldr">
-              <div className="la-tldr__label">{tldrLabel}</div>
-              <p className="la-tldr__body">{tldrBody}</p>
+              <div className="la-tldr__label">{_tldrLabel}</div>
+              <p className="la-tldr__body">{_tldrBody}</p>
             </div>
           </div>
         </div>
@@ -695,7 +1024,7 @@ export default function OnPremLlmExecutionPath({
           <div className="la-container">
             <article
               className="la-body"
-              dangerouslySetInnerHTML={{ __html: bodyHtml }}
+              dangerouslySetInnerHTML={{ __html: _bodyHtml }}
             />
           </div>
         </div>
@@ -704,11 +1033,11 @@ export default function OnPremLlmExecutionPath({
         {relatedItems.length > 0 && (
           <div className="la-related">
             <div className="la-container">
-              <div className="la-related__label">{relatedSectionLabel}</div>
+              <div className="la-related__label">{_relatedSectionLabel}</div>
               <div className="la-related__grid">
                 {relatedItems.map((item, i) => (
                   <a key={i} href={item.href} className="la-related__card">
-                    <span className="la-related__card-title">{item.title}</span>
+                    <span className="la-related__card-_title">{item.title}</span>
                     <span className="la-related__card-arrow" aria-hidden="true">→</span>
                   </a>
                 ))}
@@ -723,29 +1052,30 @@ export default function OnPremLlmExecutionPath({
 }
 
 addPropertyControls(OnPremLlmExecutionPath, {
-  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
-  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
-  title: { type: ControlType.String, title: "Title", defaultValue: "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations" },
-  lead: { type: ControlType.String, title: "Lead", defaultValue: "Two execution paths inside a single AI enablement data layer. When external transmission is not an option, the on-prem local lightweight model handles the workflow inside your boundary — zero external exposure, full restoration.", displayTextArea: true },
-  category: { type: ControlType.String, title: "Category", defaultValue: "ARCHITECTURE · Execution Path" },
-  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "11 min read" },
-  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "Updated May 2025" },
-  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "" },
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "" },
   tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "", displayTextArea: true },
-  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
-  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/on-prem-llm-execution-path" },
-  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2025-05-01" },
-  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2025-05-01" },
-  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "en" },
-  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations" },
-  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
-  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "Related articles" },
-  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "Differential privacy for enterprise LLM" },
-  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/differential-privacy-for-enterprise-llm" },
-  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "AI on network operations data" },
-  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/ai-on-network-operations-data" },
-  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "PII guardrails vs operational data protection" },
-  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/pii-guardrails-vs-operational-data-protection" },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: "", displayTextArea: true },
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: "", displayTextArea: true },
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "" },
   related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
   related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
 })

@@ -28,6 +28,76 @@ HTML_DIR = ROOT / "llm-capsule" / "output" / "html"
 INPUT_DIR = ROOT / "llm-capsule" / "input" / "llmcapsule_260506" / "learn"
 OUT_DIR = ROOT / "llm-capsule" / "output" / "framer" / "learn"
 LEARN_ARTICLE_TSX = ROOT / "llm-capsule" / "output" / "framer" / "shared" / "LearnArticle.tsx"
+TRANSLATIONS_DIR = ROOT / "llm-capsule" / "output" / "translations"
+
+
+def parse_translation_md_learn(md_path):
+    """Parse learn article section-based md → {prop_name: translated_text}.
+
+    Expected section mapping:
+      Section 01 Hero: pairs → title, lead, category, readTime, dateUpdated
+      Section 02 TL;DR: pairs → tldrLabel, tldrBody
+      Section 03 (Article Body): entire HTML block → bodyHtml
+      Section 04+ Related: pairs → related titles (best-effort)
+    """
+    if not md_path.exists():
+        return {}
+
+    text = md_path.read_text(encoding="utf-8")
+    out = {}
+
+    sec01 = re.search(
+        r"##\s*Section\s*01[^\n]*\n(.*?)(?=##\s*Section|\Z)",
+        text, re.DOTALL | re.IGNORECASE,
+    )
+    if sec01:
+        pairs = _extract_md_pairs(sec01.group(1))
+        # Best-effort mapping: first 5 pairs map to title/lead/category/readTime/dateUpdated
+        hero_keys = ["title", "lead", "category", "readTime", "dateUpdated"]
+        for i, (en, tr) in enumerate(pairs[:len(hero_keys)]):
+            out[hero_keys[i]] = tr
+
+    sec02 = re.search(
+        r"##\s*Section\s*02[^\n]*\n(.*?)(?=##\s*Section|\Z)",
+        text, re.DOTALL | re.IGNORECASE,
+    )
+    if sec02:
+        pairs = _extract_md_pairs(sec02.group(1))
+        tldr_keys = ["tldrLabel", "tldrBody"]
+        for i, (en, tr) in enumerate(pairs[:len(tldr_keys)]):
+            out[tldr_keys[i]] = tr
+
+    sec03 = re.search(
+        r"##\s*Section\s*03[^\n]*\n(.*?)(?=##\s*Section|\Z)",
+        text, re.DOTALL | re.IGNORECASE,
+    )
+    if sec03:
+        body = sec03.group(1).strip()
+        if body:
+            out["bodyHtml"] = body
+
+    return out
+
+
+def _extract_md_pairs(text):
+    """Return [(en, translation)] pairs from section text, sequential order."""
+    pairs = []
+    lines = [ln.rstrip() for ln in text.split("\n")]
+    i = 0
+    while i < len(lines):
+        if not lines[i].strip():
+            i += 1
+            continue
+        en = lines[i].strip()
+        j = i + 1
+        while j < len(lines) and not lines[j].strip():
+            j += 1
+        if j >= len(lines):
+            break
+        tr = lines[j].strip()
+        pairs.append((en, tr))
+        i = j + 1
+    return pairs
 
 
 # ── Inline LearnArticle body (loaded from shared/LearnArticle.tsx) ──
@@ -616,42 +686,44 @@ def build_tsx(article: dict) -> str:
         prop_values[f"related{i}Title"] = rtitle
         prop_values[f"related{i}Href"] = rhref
 
-    # Build interface block
-    iface_lines = [f"  {p['name']}?: string" for p in PROPS_SPEC]
-    iface_block = "\n".join(iface_lines)
+    # Load ko/de translations from md files (if present).
+    slug = article["slug"]
+    ko_md = TRANSLATIONS_DIR / f"{slug}-ko-lines.md"
+    de_md = TRANSLATIONS_DIR / f"{slug}-de-lines.md"
+    ko_translations = parse_translation_md_learn(ko_md)
+    de_translations = parse_translation_md_learn(de_md)
+    has_locale = bool(ko_translations) or bool(de_translations)
 
-    # Build destructured Props with defaults block
-    default_lines = []
-    for p in PROPS_SPEC:
-        name = p["name"]
-        v = prop_values.get(name, "")
-        if v == "__BODY_HTML__":
-            default_lines.append(f"  {name} = BODY_HTML,")
-        elif v == "__FAQ_JSON_LD__":
-            default_lines.append(f"  {name} = FAQ_JSON_LD,")
-        else:
-            default_lines.append(f'  {name} = "{js_string_escape(v)}",')
-    defaults_block = "\n".join(default_lines)
-
-    # Build addPropertyControls block
-    control_lines = []
-    for p in PROPS_SPEC:
-        name = p["name"]
-        title_attr = p["title"]
-        textarea = ", displayTextArea: true" if p["textarea"] else ""
-        v = prop_values.get(name, "")
-        if v == "__BODY_HTML__":
-            dv = "BODY_HTML"
-            line = f'  {name}: {{ type: ControlType.String, title: "{title_attr}", defaultValue: {dv}{textarea} }},'
-        elif v == "__FAQ_JSON_LD__":
-            dv = "FAQ_JSON_LD"
-            line = f'  {name}: {{ type: ControlType.String, title: "{title_attr}", defaultValue: {dv}{textarea} }},'
-        else:
-            line = f'  {name}: {{ type: ControlType.String, title: "{title_attr}", defaultValue: "{js_string_escape(v)}"{textarea} }},'
-        control_lines.append(line)
-    controls_block = "\n".join(control_lines)
-
-    tsx = f"""// AUTO-GENERATED. Do not edit by hand.
+    # ── Without locale dropdown (legacy behavior) ──
+    if not has_locale:
+        iface_lines = [f"  {p['name']}?: string" for p in PROPS_SPEC]
+        iface_block = "\n".join(iface_lines)
+        default_lines = []
+        for p in PROPS_SPEC:
+            name = p["name"]
+            v = prop_values.get(name, "")
+            if v == "__BODY_HTML__":
+                default_lines.append(f"  {name} = BODY_HTML,")
+            elif v == "__FAQ_JSON_LD__":
+                default_lines.append(f"  {name} = FAQ_JSON_LD,")
+            else:
+                default_lines.append(f'  {name} = "{js_string_escape(v)}",')
+        defaults_block = "\n".join(default_lines)
+        control_lines = []
+        for p in PROPS_SPEC:
+            name = p["name"]
+            title_attr = p["title"]
+            textarea = ", displayTextArea: true" if p["textarea"] else ""
+            v = prop_values.get(name, "")
+            if v == "__BODY_HTML__":
+                line = f'  {name}: {{ type: ControlType.String, title: "{title_attr}", defaultValue: BODY_HTML{textarea} }},'
+            elif v == "__FAQ_JSON_LD__":
+                line = f'  {name}: {{ type: ControlType.String, title: "{title_attr}", defaultValue: FAQ_JSON_LD{textarea} }},'
+            else:
+                line = f'  {name}: {{ type: ControlType.String, title: "{title_attr}", defaultValue: "{js_string_escape(v)}"{textarea} }},'
+            control_lines.append(line)
+        controls_block = "\n".join(control_lines)
+        return f"""// AUTO-GENERATED. Do not edit by hand.
 // Generator: scripts/build-learn-tsx.py
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
@@ -678,7 +750,116 @@ addPropertyControls({component}, {{
 {controls_block}
 }})
 """
-    return tsx
+
+    # ── With locale dropdown (en/ko/de) ──
+    iface_block = '  locale?: "en" | "ko" | "de"\n' + \
+                  "\n".join(f"  {p['name']}?: string" for p in PROPS_SPEC)
+    default_lines = ['  locale = "en",']
+    for p in PROPS_SPEC:
+        default_lines.append(f'  {p["name"]} = "",')
+    defaults_block = "\n".join(default_lines)
+
+    locale_control = (
+        '  locale: { type: ControlType.Enum, title: "Locale", '
+        'options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], '
+        'defaultValue: "en" },'
+    )
+    control_lines = [locale_control]
+    for p in PROPS_SPEC:
+        name = p["name"]
+        title_attr = p["title"]
+        textarea = ", displayTextArea: true" if p["textarea"] else ""
+        control_lines.append(
+            f'  {name}: {{ type: ControlType.String, title: "{title_attr}", defaultValue: ""{textarea} }},'
+        )
+    controls_block = "\n".join(control_lines)
+
+    def render_dict(translations, is_en):
+        lines = []
+        for p in PROPS_SPEC:
+            name = p["name"]
+            if name == "bodyHtml":
+                if is_en:
+                    lines.append(f"    {name}: BODY_HTML,")
+                else:
+                    val = translations.get(name, "")
+                    lines.append(f"    {name}: `{js_template_escape(val)}`,")
+            elif name == "faqJsonLd":
+                if is_en:
+                    lines.append(f"    {name}: FAQ_JSON_LD,")
+                else:
+                    val = translations.get(name, "")
+                    lines.append(f"    {name}: `{js_template_escape(val)}`,")
+            else:
+                if is_en:
+                    val = prop_values.get(name, "")
+                else:
+                    val = translations.get(name, prop_values.get(name, ""))
+                lines.append(f'    {name}: "{js_string_escape(val)}",')
+        return "\n".join(lines)
+
+    en_dict = render_dict({}, is_en=True)
+    ko_dict = render_dict(ko_translations, is_en=False)
+    de_dict = render_dict(de_translations, is_en=False)
+
+    resolver_lines = ['  const T = TRANSLATIONS[locale] || TRANSLATIONS.en']
+    for p in PROPS_SPEC:
+        name = p["name"]
+        resolver_lines.append(
+            f'  const _{name} = {name} || T["{name}"] || TRANSLATIONS.en["{name}"]'
+        )
+    resolver_block = "\n".join(resolver_lines)
+
+    body = LEARN_ARTICLE_BODY
+    for p in PROPS_SPEC:
+        name = p["name"]
+        body = re.sub(
+            rf'(?<![\w."_]){re.escape(name)}(?![\w])',
+            f"_{name}",
+            body,
+        )
+
+    return f"""// AUTO-GENERATED. Do not edit by hand.
+// Generator: scripts/build-learn-tsx.py
+// To regenerate: python3 scripts/build-learn-tsx.py
+//
+// Self-contained Framer Code Component with locale dropdown (en/ko/de).
+// Set `locale` in Framer Properties panel to switch all text simultaneously.
+
+import {{ addPropertyControls, ControlType }} from "framer"
+
+interface Props {{
+{iface_block}
+}}
+
+const BODY_HTML = `{js_template_escape(body_html)}`
+
+const FAQ_JSON_LD = `{js_template_escape(faq_jsonld)}`
+
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {{
+  en: {{
+{en_dict}
+  }},
+  ko: {{
+{ko_dict}
+  }},
+  de: {{
+{de_dict}
+  }},
+}}
+
+export default function {component}({{
+{defaults_block}
+}}: Props) {{
+{resolver_block}
+
+{body}
+}}
+
+addPropertyControls({component}, {{
+{controls_block}
+}})
+"""
 
 
 def main():
