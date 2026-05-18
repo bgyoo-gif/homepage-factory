@@ -630,30 +630,7 @@ const BODY_HTML = `<div class="section-soft">
     </div><!-- /.tech-diagram-wrap -->
 
     <!-- Zone annotation cards (homepage exact copy) -->
-    <div class="tech-diagram-annotation">
-      <article class="annotation-card">
-        <div class="annotation-card__num">Zone 1 · Corporate Internal Network</div>
-        <h3 class="annotation-card__h">Where the operational systems already live</h3>
-        <p class="annotation-card__d">Existing enterprise systems — ERP, CRM, Ticketing, DMS / ECM, Legacy DB, RAG Pipeline — stay in place. Nothing migrates. Capsule reads from them via REST, gRPC, JDBC, or Graph API depending on the source.</p>
-      </article>
-      <article class="annotation-card">
-        <div class="annotation-card__num">Zone 2 · DMZ — Demilitarized Zone</div>
-        <h3 class="annotation-card__h">Where encapsulation happens</h3>
-        <p class="annotation-card__d">The Enhanced Encapsulation Layer detects sensitive elements, replaces them with safe tokens using structure-preserving, differential-privacy-based protection, and hands the capsule to the routing decision. Original values stay behind, retained in the local token map.</p>
-      </article>
-      <article class="annotation-card">
-        <div class="annotation-card__num">Zone 3 · In-House Team</div>
-        <h3 class="annotation-card__h">Where governance and routing happen</h3>
-        <p class="annotation-card__d">Organizational policy, permissions, and domain context decide where the capsule is processed — an approved external LLM (Path A) or an on-prem local model (Path B). The decision is policy-driven per workflow, with full audit retained inside the organization.</p>
-      </article>
-      <article class="annotation-card">
-        <div class="annotation-card__num">Zone 4 · Local — Auto Reconstruction</div>
-        <h3 class="annotation-card__h">Where the AI response becomes Business-Ready output</h3>
-        <p class="annotation-card__d">The AI response is automatically reconstructed from token to original value inside the organization only. Data that left the trust boundary cannot be reconstructed externally. The restored output is delivered back into the originating workflow.</p>
-      </article>
-    </div>
-
-  </div><!-- /.section-container -->
+    <!-- ANNOTATION_CARDS_PLACEHOLDER --><!-- /.section-container -->
 </div><!-- /.section-soft -->`
 
 const CSS = `.section-soft *, .tech-diagram-wrap *, .tech-diagram-annotation * { margin: 0; padding: 0; box-sizing: border-box; }

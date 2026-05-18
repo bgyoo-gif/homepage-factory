@@ -878,13 +878,23 @@ def main():
                     "d": strip_html_tags(m.group(3)),
                 }
             )
-        body = re.sub(
-            r'<div class="tech-diagram-annotation">.*?</div>\s*</div>\s*</div>',
-            "<!-- ANNOTATION_CARDS_PLACEHOLDER -->\n  </div>\n</div>",
+        # Match annotation block + its closing </div> only (NOT the trailing
+        # section-container/section-soft closers, since HTML comments between
+        # them break \s* matching). Replace with placeholder; trailing structure
+        # divs stay intact.
+        # Greedy `.*` so we match through the LAST </article> of the 4 cards,
+        # then the annotation div's own </div>. Annotation cards are the only
+        # <article> elements in the body, so greedy is safe.
+        new_body, n_sub = re.subn(
+            r'<div class="tech-diagram-annotation">.*</article>\s*</div>\s*</div>',
+            "<!-- ANNOTATION_CARDS_PLACEHOLDER -->",
             body,
             count=1,
             flags=re.DOTALL,
         )
+        if n_sub == 0:
+            print("⚠️  Failed to insert ANNOTATION_CARDS_PLACEHOLDER", file=sys.stderr)
+        body = new_body
 
     while len(cards) < 4:
         cards.append({"num": "", "h": "", "d": ""})
