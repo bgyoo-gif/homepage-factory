@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-18 13:37:58",
+  "generated": "2026-05-18 13:50:46",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -2501,6 +2501,16 @@
         {
           "name": "ArchitectureFourZoneTechnical.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/architecture/ArchitectureFourZoneTechnical.tsx",
+          "modified": "2026-05-18"
+        },
+        {
+          "name": "ArchitectureFourZoneTechnicalDe.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/architecture/ArchitectureFourZoneTechnicalDe.tsx",
+          "modified": "2026-05-18"
+        },
+        {
+          "name": "ArchitectureFourZoneTechnicalKo.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/architecture/ArchitectureFourZoneTechnicalKo.tsx",
           "modified": "2026-05-18"
         },
         {
