@@ -630,7 +630,8 @@ const BODY_HTML = `<div class="section-soft">
     </div><!-- /.tech-diagram-wrap -->
 
     <!-- Zone annotation cards (homepage exact copy) -->
-    <!-- ANNOTATION_CARDS_PLACEHOLDER --><!-- /.section-container -->
+    <!-- ANNOTATION_CARDS_PLACEHOLDER -->
+  </div><!-- /.section-container -->
 </div><!-- /.section-soft -->`
 
 const CSS = `.section-soft *, .tech-diagram-wrap *, .tech-diagram-annotation * { margin: 0; padding: 0; box-sizing: border-box; }

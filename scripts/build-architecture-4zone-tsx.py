@@ -885,9 +885,11 @@ def main():
         # Greedy `.*` so we match through the LAST </article> of the 4 cards,
         # then the annotation div's own </div>. Annotation cards are the only
         # <article> elements in the body, so greedy is safe.
+        # Regex consumes: annotation block + annotation's </div> + section-container's </div>.
+        # Replacement re-adds section-container's </div> so structure stays balanced.
         new_body, n_sub = re.subn(
             r'<div class="tech-diagram-annotation">.*</article>\s*</div>\s*</div>',
-            "<!-- ANNOTATION_CARDS_PLACEHOLDER -->",
+            "<!-- ANNOTATION_CARDS_PLACEHOLDER -->\n  </div>",
             body,
             count=1,
             flags=re.DOTALL,
