@@ -2,12 +2,15 @@
 // Generator: scripts/build-glossary-tsx.py
 // To regenerate: python3 scripts/build-glossary-tsx.py
 //
-// Self-contained Framer Code Component with full Props for translation/CMS.
-// No external imports — GlossaryDetail logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with locale dropdown (en/ko/de).
+// Embedded TRANSLATIONS dict drives default text per locale; individual Props
+// remain for per-instance overrides. Set `locale` in Framer Properties panel
+// to switch all text simultaneously.
 
 import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
+  locale?: "en" | "ko" | "de"
   backLabel?: string
   backHref?: string
   term?: string
@@ -62,15 +65,141 @@ const BODY_HTML = `<h2>Definition</h2>
   <li><a href="/resources/glossary/ai-ready-operational-layer">AI enablement data layer</a></li>
 </ul>`
 
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
+  en: {
+    backLabel: "← Glossary",
+    backHref: "/resources/glossary",
+    term: "Two Execution Paths",
+    lead: "External approved LLM — or on-prem local lightweight model. Policy decides per workflow.",
+    category: "GLOSSARY",
+    definitionLabel: "Definition",
+    definitionBody: "The AI enablement data layer supports two execution paths for the model step inside the workflow:",
+    bodyHtml: BODY_HTML,
+    related1Label: "",
+    related1Href: "",
+    related2Label: "",
+    related2Href: "",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+  ko: {
+    backLabel: "← 용어 사전",
+    backHref: "/resources/glossary",
+    term: "두 가지 실행 경로",
+    lead: "외부 승인 LLM — 또는 온프레미스 로컬 경량 모델. 워크플로우별로 정책이 결정합니다.",
+    category: "GLOSSARY",
+    definitionLabel: "정의",
+    definitionBody: "데이터 레이어가 지원하는 두 가지 실행 경로입니다. Path A는 원본 운영 데이터 노출 없이 캡슐 데이터를 외부 승인 LLM으로 전송합니다. Path B는 소규모 전용 경량 모델을 기업 환경 내부에서 완전히 실행하며 외부 전송이 전혀 없습니다. 경로 선택은 워크플로우별 정책으로 결정됩니다.",
+    bodyHtml: `<h2>정의</h2>
+
+<p>데이터 레이어는 워크플로우 내 모델 단계에서 <strong>두 가지 실행 경로</strong>를 지원합니다:</p>
+
+<ul>
+<li><strong>Path A — 캡슐 데이터만으로 외부 승인 LLM 사용.</strong> 캡슐이 승인된 외부 엔드포인트(ChatGPT, Claude, Gemini, Perplexity 또는 임의의 LLM API)로 전송됩니다. 원본 운영 데이터는 기업 외부로 나가지 않습니다.</li>
+<li><strong>Path B — 온프레미스 로컬 경량 모델.</strong> 소규모 전용 모델이 기업 환경 내부에서 완전히 실행됩니다. 외부 전송은 전혀 없습니다.</li>
+</ul>
+
+<h2>경로별 사용 기준</h2>
+
+<table>
+<thead><tr><th>항목</th><th>Path A</th><th>Path B</th></tr></thead>
+<tbody>
+<tr><td>외부 전송 허용</td><td>예 (캡슐만)</td><td>아니오</td></tr>
+<tr><td>망분리 네트워크</td><td>—</td><td>필수</td></tr>
+<tr><td>최신 모델 성능</td><td>예</td><td>로컬 모델 성능에 한정</td></tr>
+<tr><td>규제 대응 수준</td><td>"원본 데이터 노출 없음"</td><td>"Zero external exposure"</td></tr>
+</tbody>
+</table>
+
+<h2>경로 선택</h2>
+
+<p>워크플로우별 정책으로 결정됩니다. 동일 기업 내 서로 다른 워크플로우가 각각 다른 경로를 사용할 수 있습니다. 거버넌스는 요청별·워크플로우별·정책별로 적용된 경로를 기록합니다.</p>
+
+<h2>왜 하나가 아닌 두 가지인가</h2>
+
+<p>단일 경로는 단일 규제 기준을 강제합니다. 통신사·병원·OT 운영사·방산 업체는 동일 조직 내에서 여러 규제 프로파일을 동시에 운용하는 경우가 많습니다. 두 가지 경로가 있어야 거버넌스가 워크플로우에 맞는 경로를 적용할 수 있습니다.</p>
+
+<h2>참조 문장</h2>
+
+<blockquote>모델은 단일 결정이 아닙니다. 단일 거버넌스 아래 놓인 두 가지 경로입니다. 규제 대상 조직이 하나의 규제 기준에 묶이지 않고 데이터 레이어를 도입할 수 있는 이유가 바로 이것입니다.</blockquote>`,
+    related1Label: "",
+    related1Href: "",
+    related2Label: "",
+    related2Href: "",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+  de: {
+    backLabel: "← Glossar",
+    backHref: "/resources/glossary",
+    term: "Zwei Ausführungspfade",
+    lead: "Externes zugelassenes LLM oder lokales On-Premise-Leichtgewichtsmodell. Welcher Pfad zum Einsatz kommt, legt die Richtlinie je Workflow fest.",
+    category: "GLOSSAR",
+    definitionLabel: "Definition",
+    definitionBody: "Die AI enablement data layer unterstützt zwei Ausführungspfade. Pfad A übermittelt ausschließlich Capsule-Daten an ein externes, zugelassenes LLM — operative Rohdaten verlassen das Unternehmen nicht. Pfad B führt ein kompaktes privates Modell vollständig innerhalb der eigenen Unternehmensumgebung aus, ohne jegliche externe Datenübertragung. Die Pfadauswahl erfolgt richtliniengesteuert je Workflow.",
+    bodyHtml: `<h2>Definition</h2>
+
+<p>Die AI enablement data layer unterstützt <strong>zwei Ausführungspfade</strong> für den Modellschritt im Workflow:</p>
+
+<ul>
+<li><strong>Pfad A — externes zugelassenes LLM, ausschließlich mit Capsule-Daten.</strong> Die Kapsel wird an einen zugelassenen externen Endpunkt übermittelt (ChatGPT, Claude, Gemini, Perplexity oder eine beliebige LLM API). Operative Rohdaten verlassen das Unternehmen nicht.</li>
+<li><strong>Pfad B — lokales On-Premise-Leichtgewichtsmodell.</strong> Ein kompaktes privates Modell wird vollständig innerhalb der Unternehmensumgebung ausgeführt. Keine externe Datenübertragung.</li>
+</ul>
+
+<h2>Einsatzkriterien</h2>
+
+<table>
+<thead><tr><th>Kriterium</th><th>Pfad A</th><th>Pfad B</th></tr></thead>
+<tbody>
+<tr><td>Externe Übertragung zulässig</td><td>Ja (nur Kapsel)</td><td>Nein</td></tr>
+<tr><td>Air-Gapped-Netzwerk</td><td>—</td><td>Erforderlich</td></tr>
+<tr><td>Frontier-Modell-Kapazität</td><td>Ja</td><td>Durch lokales Modell begrenzt</td></tr>
+<tr><td>Compliance-Profil</td><td>„Keine Rohdaten-Offenlegung"</td><td>„Zero Exposure"</td></tr>
+</tbody>
+</table>
+
+<h2>Pfadauswahl</h2>
+
+<p>Die Auswahl erfolgt richtliniengesteuert je Workflow. Verschiedene Workflows desselben Unternehmens können unterschiedliche Pfade verwenden. Das Governance-System protokolliert den angewendeten Pfad je Anfrage, je Workflow und je Richtlinie.</p>
+
+<h2>Warum zwei Pfade notwendig sind</h2>
+
+<p>Ein einzelner Pfad erzwingt eine einheitliche regulatorische Mindestanforderung. Versicherungsträger, Krankenhäuser, OT-Betreiber und Rüstungsunternehmen verwalten innerhalb derselben Organisation typischerweise mehrere regulatorische Profile. Zwei Pfade ermöglichen es dem Governance-System, den jeweils passenden Pfad dem entsprechenden Workflow zuzuweisen.</p>
+
+<h2>Leitsatz</h2>
+
+<p>Das Modell ist keine einheitliche Entscheidung — es sind zwei Pfade unter einer gemeinsamen Governance. Das ist es, was die AI enablement data layer für regulierte Organisationen geeignet macht, ohne sie auf eine einzige regulatorische Ebene festzulegen.</p>`,
+    related1Label: "",
+    related1Href: "",
+    related2Label: "",
+    related2Href: "",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+}
+
 export default function TwoExecutionPaths({
-  backLabel = "← Glossary",
-  backHref = "/resources/glossary",
-  term = "Two Execution Paths",
-  lead = "External approved LLM — or on-prem local lightweight model. Policy decides per workflow.",
-  category = "GLOSSARY",
-  definitionLabel = "Definition",
-  definitionBody = "The AI enablement data layer supports two execution paths for the model step inside the workflow:",
-  bodyHtml = BODY_HTML,
+  locale = "en",
+  backLabel = "",
+  backHref = "",
+  term = "",
+  lead = "",
+  category = "",
+  definitionLabel = "",
+  definitionBody = "",
+  bodyHtml = "",
   related1Label = "",
   related1Href = "",
   related2Label = "",
@@ -82,20 +211,40 @@ export default function TwoExecutionPaths({
   related5Label = "",
   related5Href = "",
 }: Props) {
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  const _backLabel = backLabel || T["backLabel"] || TRANSLATIONS.en["backLabel"]
+  const _backHref = backHref || T["backHref"] || TRANSLATIONS.en["backHref"]
+  const _term = term || T["term"] || TRANSLATIONS.en["term"]
+  const _lead = lead || T["lead"] || TRANSLATIONS.en["lead"]
+  const _category = category || T["category"] || TRANSLATIONS.en["category"]
+  const _definitionLabel = definitionLabel || T["definitionLabel"] || TRANSLATIONS.en["definitionLabel"]
+  const _definitionBody = definitionBody || T["definitionBody"] || TRANSLATIONS.en["definitionBody"]
+  const _bodyHtml = bodyHtml || T["bodyHtml"] || TRANSLATIONS.en["bodyHtml"]
+  const _related1Label = related1Label || T["related1Label"] || TRANSLATIONS.en["related1Label"]
+  const _related1Href = related1Href || T["related1Href"] || TRANSLATIONS.en["related1Href"]
+  const _related2Label = related2Label || T["related2Label"] || TRANSLATIONS.en["related2Label"]
+  const _related2Href = related2Href || T["related2Href"] || TRANSLATIONS.en["related2Href"]
+  const _related3Label = related3Label || T["related3Label"] || TRANSLATIONS.en["related3Label"]
+  const _related3Href = related3Href || T["related3Href"] || TRANSLATIONS.en["related3Href"]
+  const _related4Label = related4Label || T["related4Label"] || TRANSLATIONS.en["related4Label"]
+  const _related4Href = related4Href || T["related4Href"] || TRANSLATIONS.en["related4Href"]
+  const _related5Label = related5Label || T["related5Label"] || TRANSLATIONS.en["related5Label"]
+  const _related5Href = related5Href || T["related5Href"] || TRANSLATIONS.en["related5Href"]
+
   const relatedItems = [
-    { label: related1Label, href: related1Href },
-    { label: related2Label, href: related2Href },
-    { label: related3Label, href: related3Href },
-    { label: related4Label, href: related4Href },
-    { label: related5Label, href: related5Href },
+    { label: _related1Label, href: _related1Href },
+    { label: _related2Label, href: _related2Href },
+    { label: _related3Label, href: _related3Href },
+    { label: _related4Label, href: _related4Href },
+    { label: _related5Label, href: _related5Href },
   ].filter((r) => r.label && r.href)
 
   // JSON-LD: DefinedTerm schema built from Props
   const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
-    "name": term,
-    "description": definitionBody,
+    "name": _term,
+    "description": _definitionBody,
     "inDefinedTermSet": "https://llmcapsule.ai/glossary",
   })
 
@@ -367,7 +516,7 @@ export default function TwoExecutionPaths({
 
         .gd-body tr:last-child td { border-bottom: none; }
 
-        /* Callout box (for <div class="callout"> inside bodyHtml) */
+        /* Callout box (for <div class="callout"> inside _bodyHtml) */
         .gd-body .callout {
           padding: 20px 24px;
           background-color: var(--c-primary-soft, #eeebfe);
@@ -509,11 +658,11 @@ export default function TwoExecutionPaths({
         <section className="gd-hero">
           <div className="gd-container">
             <div className="gd-hero__inner">
-              <a href={backHref} className="gd-hero__back">{backLabel}</a>
-              <h1 className="gd-hero__title">{term}</h1>
-              <p className="gd-hero__lead">{lead}</p>
+              <a href={_backHref} className="gd-hero__back">{_backLabel}</a>
+              <h1 className="gd-hero__title">{_term}</h1>
+              <p className="gd-hero__lead">{_lead}</p>
               <div className="gd-hero__meta">
-                <span className="gd-meta__chip">{category}</span>
+                <span className="gd-meta__chip">{_category}</span>
               </div>
             </div>
           </div>
@@ -523,8 +672,8 @@ export default function TwoExecutionPaths({
         <div className="gd-def-wrap">
           <div className="gd-container">
             <div className="gd-def">
-              <div className="gd-def__label">{definitionLabel}</div>
-              <p className="gd-def__body">{definitionBody}</p>
+              <div className="gd-def__label">{_definitionLabel}</div>
+              <p className="gd-def__body">{_definitionBody}</p>
             </div>
           </div>
         </div>
@@ -534,7 +683,7 @@ export default function TwoExecutionPaths({
           <div className="gd-container">
             <article
               className="gd-body"
-              dangerouslySetInnerHTML={{ __html: bodyHtml }}
+              dangerouslySetInnerHTML={{ __html: _bodyHtml }}
             />
           </div>
         </div>
@@ -564,14 +713,15 @@ export default function TwoExecutionPaths({
 }
 
 addPropertyControls(TwoExecutionPaths, {
-  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Glossary" },
-  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/glossary" },
-  term: { type: ControlType.String, title: "Term", defaultValue: "Two Execution Paths" },
-  lead: { type: ControlType.String, title: "Lead", defaultValue: "External approved LLM — or on-prem local lightweight model. Policy decides per workflow.", displayTextArea: true },
-  category: { type: ControlType.String, title: "Category", defaultValue: "GLOSSARY" },
-  definitionLabel: { type: ControlType.String, title: "Definition Label", defaultValue: "Definition" },
-  definitionBody: { type: ControlType.String, title: "Definition Body", defaultValue: "The AI enablement data layer supports two execution paths for the model step inside the workflow:", displayTextArea: true },
-  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "" },
+  term: { type: ControlType.String, title: "Term", defaultValue: "" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "" },
+  definitionLabel: { type: ControlType.String, title: "Definition Label", defaultValue: "" },
+  definitionBody: { type: ControlType.String, title: "Definition Body", defaultValue: "", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: "", displayTextArea: true },
   related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "" },
   related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "" },
   related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "" },

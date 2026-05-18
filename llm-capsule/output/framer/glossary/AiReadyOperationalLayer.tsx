@@ -2,12 +2,15 @@
 // Generator: scripts/build-glossary-tsx.py
 // To regenerate: python3 scripts/build-glossary-tsx.py
 //
-// Self-contained Framer Code Component with full Props for translation/CMS.
-// No external imports — GlossaryDetail logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with locale dropdown (en/ko/de).
+// Embedded TRANSLATIONS dict drives default text per locale; individual Props
+// remain for per-instance overrides. Set `locale` in Framer Properties panel
+// to switch all text simultaneously.
 
 import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
+  locale?: "en" | "ko" | "de"
   backLabel?: string
   backHref?: string
   term?: string
@@ -51,15 +54,129 @@ const BODY_HTML = `<div class="callout" style="border-left: 4px solid #4f46e5; b
   <li><a href="/glossary/state-vault-for-restoration">State vault for restoration</a></li>
 </ul>`
 
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
+  en: {
+    backLabel: "← Glossary",
+    backHref: "/resources/glossary",
+    term: "AI-Ready Operational Layer",
+    lead: "An earlier name for the same category. The current locked category is AI enablement data layer for regulated operations. This page is retained as a synonym definition for readers arriving via earlier collateral.",
+    category: "GLOSSARY · ALIAS / SYNONYM",
+    definitionLabel: "Definition",
+    definitionBody: "An AI enablement data layer (historically called an AI-ready operational layer) is a runtime layer between the existing regulated enterprise environment (NOC, ticket, OT consoles, EHR, mission systems) and large language models. It turns operational data — network logs, incident records, configurations, clinical workflows, mission context — into AI-ready context using structure-preserving, differential-privacy-based encapsulation; executes the AI workflow inside the enterprise environment via two execution paths (external approved LLM with capsule data, or on-prem local lightweight model); and restores results back to the originating workflow via state vault. Distinct from PII guardrails and AI security suites in scope, layer, and execution model.",
+    bodyHtml: BODY_HTML,
+    related1Label: "",
+    related1Href: "",
+    related2Label: "",
+    related2Href: "",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+  ko: {
+    backLabel: "← 용어 사전",
+    backHref: "/resources/glossary",
+    term: "AI-Ready Operational Layer",
+    lead: "동일한 카테고리의 이전 명칭입니다. 현재 공식 카테고리는 AI enablement data layer for regulated operations입니다. 이 페이지는 기존 자료를 통해 유입되는 독자를 위한 동의어 정의로 유지됩니다.",
+    category: "GLOSSARY · 별칭 / 동의어",
+    definitionLabel: "정의",
+    definitionBody: "AI-ready operational layer는 데이터 레이어의 동의어입니다. 규제 환경의 기업(NOC, 티켓, OT 콘솔, EHR, 미션 시스템)과 대규모 언어 모델 사이에 위치하는 런타임 레이어입니다. 문서 구조 보존·차등 프라이버시 기반 캡슐화로 운영 데이터를 AI 준비 컨텍스트로 변환하고, 두 가지 실행 경로를 통해 기업 환경 내부에서 AI 워크플로우를 실행한 뒤 state vault를 통해 원래 워크플로우로 결과를 복원합니다. LLM Capsule 사이트의 현재 공식 카테고리는 'AI enablement data layer for regulated operations'입니다.",
+    bodyHtml: `<div class="callout"><strong>용어 안내.</strong> "AI-ready operational layer"와 "AI enablement data layer"는 동일한 제품 카테고리를 가리킵니다. v6.1 기준 사이트의 공식 카테고리는 <strong>AI enablement data layer for regulated operations</strong>입니다. 두 용어 모두 기존 자료, 파트너 대화, 외부 참조에 등장하기 때문에 유지됩니다. 이전 용어로 유입된 독자는 이 페이지를 통해 공식 정의로 안내됩니다.</div>
+
+<h2>정의 (동의어)</h2>
+
+<p>데이터 레이어(이전에는 <strong>AI-ready operational layer</strong>로 불린)는 규제 환경의 기업(NOC, 티켓, OT 콘솔, EHR, 미션 시스템)과 대규모 언어 모델 사이에 위치하는 런타임 레이어입니다. 운영 데이터 — 네트워크 로그, 인시던트 기록, 설정, 임상 워크플로우, 미션 컨텍스트 — 를 문서 구조 보존·차등 프라이버시 기반 캡슐화로 AI 준비 컨텍스트로 변환합니다. 두 가지 실행 경로(캡슐 데이터만 사용하는 외부 승인 LLM, 또는 온프레미스 경량 로컬 모델)를 통해 기업 환경 내부에서 AI 워크플로우를 실행하고, state vault를 통해 원래 워크플로우로 결과를 복원합니다. 범위, 레이어, 실행 모델 측면에서 PII 가드레일 및 AI 보안 제품군과는 명확히 다릅니다.</p>
+
+<h2>두 용어가 공존하는 이유</h2>
+
+<p>"AI-ready operational layer"는 초기 전략 자료, 파트너 피칭, Deutsche Telekom T Challenge 2026 자료에서 사용되었으며 <em>운영 데이터 준비성</em>을 강조한 표현입니다. "AI enablement data layer for regulated operations"는 v6.1 고객 대면 사이트에서 채택된 명칭으로, <em>규제 운영</em> 구매자를 위한 데이터 레이어의 <em>AI 활성화</em>를 강조합니다. 제품은 동일합니다 — 마케팅 언어가 구매자 중심으로 전환된 것입니다.</p>
+
+<h2>공식 카테고리 페이지</h2>
+
+<p>v6.1 전체 정의, 고객 실증 사례, 4구역 아키텍처(기업 내부 네트워크 · DMZ — 비무장 지대 · 내부 팀 · 로컬 — 자동 복원), 6가지 아키텍처 기반 원칙은 <a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> 및 <a href="/architecture">아키텍처</a> 페이지를 참조하십시오.</p>
+
+<h2>관련 항목</h2>
+
+<ul>
+<li><a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> — 공식 카테고리 페이지</li>
+<li><a href="/glossary/operational-data">운영 데이터</a></li>
+<li><a href="/glossary/two-execution-paths">두 가지 실행 경로</a></li>
+<li><a href="/glossary/structure-preserving-encapsulation">문서 구조 보존 캡슐화</a></li>
+<li><a href="/glossary/differential-privacy">차등 프라이버시</a></li>
+<li><a href="/glossary/state-vault-for-restoration">복원용 state vault</a></li>
+</ul>
+
+---`,
+    related1Label: "",
+    related1Href: "",
+    related2Label: "",
+    related2Href: "",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+  de: {
+    backLabel: "← Glossar",
+    backHref: "/resources/glossary",
+    term: "AI-Ready Operational Layer",
+    lead: "Diese Bezeichnung wurde in früheren Strategiepräsentationen und Partnerunterlagen verwendet. Die aktuelle Kategorie lautet AI enablement data layer for regulated operations. Diese Seite dient als Synonymdefinition für Leser, die über ältere Materialien auf diese URL gelangen.",
+    category: "GLOSSAR · ALIAS / SYNONYM",
+    definitionLabel: "Definition",
+    definitionBody: "AI-Ready Operational Layer ist ein Synonym für AI enablement data layer. Die Laufzeitschicht positioniert sich zwischen der regulierten Unternehmensumgebung — NOC-Konsolen, Ticket-Systeme, OT-Konsolen, EHR, Missionssysteme — und großen Sprachmodellen. Operative Daten werden mittels strukturerhaltender, Differential-Privacy-basierter Kapsulierung in KI-geeigneten Kontext überführt. KI-Workflows werden über zwei Ausführungspfade innerhalb der Unternehmensumgebung ausgeführt. Die Ergebnisse werden über den State Vault in den ursprünglichen Workflow zurückgeführt. Die aktuelle Kategoriebezeichnung auf der LLM Capsule-Website lautet: AI enablement data layer for regulated operations.",
+    bodyHtml: `<div class="callout"><strong>Hinweis zur Terminologie.</strong> „AI-ready operational layer" und „AI enablement data layer" bezeichnen dieselbe Produktkategorie. Die aktuelle Kategoriebezeichnung ab v6.1 lautet <strong>AI enablement data layer for regulated operations</strong>. Beide Begriffe sind auffindbar, da sie in früheren Unterlagen, Partnergesprächen und externen Referenzen verwendet wurden. Leser, die über den älteren Begriff auf diese Seite gelangen, werden zur kanonischen Definition weitergeleitet.</div>
+
+<h2>Definition (Synonym)</h2>
+
+<p>Der <strong>AI enablement data layer</strong> (früher als <strong>AI-ready operational layer</strong> bezeichnet) ist eine Laufzeitschicht zwischen der regulierten Unternehmensumgebung — NOC-Konsolen, Ticket-Systeme, OT-Konsolen, EHR, Missionssysteme — und großen Sprachmodellen. Operative Daten — Netzwerkprotokolle, Incident-Datensätze, Konfigurationen, klinische Workflows, Missionskontext — werden mittels strukturerhaltender, Differential-Privacy-basierter Kapsulierung in KI-geeigneten Kontext überführt. KI-Workflows werden innerhalb der Unternehmensumgebung über zwei Ausführungspfade ausgeführt: ein externes freigegebenes LLM mit ausschließlich Kapseldaten oder ein lokales On-Premise-Leichtgewichtmodell. Ergebnisse werden über den State Vault in den ursprünglichen Workflow zurückgeführt. Der AI enablement data layer unterscheidet sich von PII-Schutzmaßnahmen und KI-Sicherheitslösungen in Umfang, Schicht und Ausführungsmodell.</p>
+
+<h2>Warum zwei Bezeichnungen existieren</h2>
+
+<p>„AI-ready operational layer" wurde in früheren Strategiepräsentationen, Partnerpräsentationen und Materialien des Deutsche Telekom T Challenge 2026 verwendet — mit dem Schwerpunkt auf <em>operativer Datenbereitschaft</em>. „AI enablement data layer for regulated operations" wurde mit v6.1 der kundenseitigen Website eingeführt, mit dem Schwerpunkt auf <em>KI-Aktivierung</em> auf Datenebene für Käufer aus <em>regulierten Branchen</em>. Das Produkt ist identisch — die Marketingsprache wurde stärker am Käufer ausgerichtet.</p>
+
+<h2>Kanonische Kategorieseite</h2>
+
+<p>Die vollständige v6.1-Definition, Kundenreferenzen, die Vier-Zonen-Architektur (Corporate Internal Network · DMZ — Demilitarisierte Zone · In-House Team · Local — Auto Reconstruction) sowie die sechs Architekturpfeiler finden Sie unter <a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> und auf der Seite <a href="/architecture">Architecture</a>.</p>
+
+<h2>Verwandte Begriffe</h2>
+
+<ul>
+<li><a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> — kanonische Kategorieseite</li>
+<li><a href="/glossary/operational-data">Operative Daten</a></li>
+<li><a href="/glossary/two-execution-paths">Zwei Ausführungspfade</a></li>
+<li><a href="/glossary/structure-preserving-encapsulation">Strukturerhaltende Kapsulierung</a></li>
+<li><a href="/glossary/differential-privacy">Differential Privacy</a></li>
+<li><a href="/glossary/state-vault-for-restoration">State Vault für die Wiederherstellung</a></li>
+</ul>
+
+---`,
+    related1Label: "",
+    related1Href: "",
+    related2Label: "",
+    related2Href: "",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+}
+
 export default function AiReadyOperationalLayer({
-  backLabel = "← Glossary",
-  backHref = "/resources/glossary",
-  term = "AI-Ready Operational Layer",
-  lead = "An earlier name for the same category. The current locked category is AI enablement data layer for regulated operations. This page is retained as a synonym definition for readers arriving via earlier collateral.",
-  category = "GLOSSARY · ALIAS / SYNONYM",
-  definitionLabel = "Definition",
-  definitionBody = "An AI enablement data layer (historically called an AI-ready operational layer) is a runtime layer between the existing regulated enterprise environment (NOC, ticket, OT consoles, EHR, mission systems) and large language models. It turns operational data — network logs, incident records, configurations, clinical workflows, mission context — into AI-ready context using structure-preserving, differential-privacy-based encapsulation; executes the AI workflow inside the enterprise environment via two execution paths (external approved LLM with capsule data, or on-prem local lightweight model); and restores results back to the originating workflow via state vault. Distinct from PII guardrails and AI security suites in scope, layer, and execution model.",
-  bodyHtml = BODY_HTML,
+  locale = "en",
+  backLabel = "",
+  backHref = "",
+  term = "",
+  lead = "",
+  category = "",
+  definitionLabel = "",
+  definitionBody = "",
+  bodyHtml = "",
   related1Label = "",
   related1Href = "",
   related2Label = "",
@@ -71,20 +188,40 @@ export default function AiReadyOperationalLayer({
   related5Label = "",
   related5Href = "",
 }: Props) {
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  const _backLabel = backLabel || T["backLabel"] || TRANSLATIONS.en["backLabel"]
+  const _backHref = backHref || T["backHref"] || TRANSLATIONS.en["backHref"]
+  const _term = term || T["term"] || TRANSLATIONS.en["term"]
+  const _lead = lead || T["lead"] || TRANSLATIONS.en["lead"]
+  const _category = category || T["category"] || TRANSLATIONS.en["category"]
+  const _definitionLabel = definitionLabel || T["definitionLabel"] || TRANSLATIONS.en["definitionLabel"]
+  const _definitionBody = definitionBody || T["definitionBody"] || TRANSLATIONS.en["definitionBody"]
+  const _bodyHtml = bodyHtml || T["bodyHtml"] || TRANSLATIONS.en["bodyHtml"]
+  const _related1Label = related1Label || T["related1Label"] || TRANSLATIONS.en["related1Label"]
+  const _related1Href = related1Href || T["related1Href"] || TRANSLATIONS.en["related1Href"]
+  const _related2Label = related2Label || T["related2Label"] || TRANSLATIONS.en["related2Label"]
+  const _related2Href = related2Href || T["related2Href"] || TRANSLATIONS.en["related2Href"]
+  const _related3Label = related3Label || T["related3Label"] || TRANSLATIONS.en["related3Label"]
+  const _related3Href = related3Href || T["related3Href"] || TRANSLATIONS.en["related3Href"]
+  const _related4Label = related4Label || T["related4Label"] || TRANSLATIONS.en["related4Label"]
+  const _related4Href = related4Href || T["related4Href"] || TRANSLATIONS.en["related4Href"]
+  const _related5Label = related5Label || T["related5Label"] || TRANSLATIONS.en["related5Label"]
+  const _related5Href = related5Href || T["related5Href"] || TRANSLATIONS.en["related5Href"]
+
   const relatedItems = [
-    { label: related1Label, href: related1Href },
-    { label: related2Label, href: related2Href },
-    { label: related3Label, href: related3Href },
-    { label: related4Label, href: related4Href },
-    { label: related5Label, href: related5Href },
+    { label: _related1Label, href: _related1Href },
+    { label: _related2Label, href: _related2Href },
+    { label: _related3Label, href: _related3Href },
+    { label: _related4Label, href: _related4Href },
+    { label: _related5Label, href: _related5Href },
   ].filter((r) => r.label && r.href)
 
   // JSON-LD: DefinedTerm schema built from Props
   const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
-    "name": term,
-    "description": definitionBody,
+    "name": _term,
+    "description": _definitionBody,
     "inDefinedTermSet": "https://llmcapsule.ai/glossary",
   })
 
@@ -356,7 +493,7 @@ export default function AiReadyOperationalLayer({
 
         .gd-body tr:last-child td { border-bottom: none; }
 
-        /* Callout box (for <div class="callout"> inside bodyHtml) */
+        /* Callout box (for <div class="callout"> inside _bodyHtml) */
         .gd-body .callout {
           padding: 20px 24px;
           background-color: var(--c-primary-soft, #eeebfe);
@@ -498,11 +635,11 @@ export default function AiReadyOperationalLayer({
         <section className="gd-hero">
           <div className="gd-container">
             <div className="gd-hero__inner">
-              <a href={backHref} className="gd-hero__back">{backLabel}</a>
-              <h1 className="gd-hero__title">{term}</h1>
-              <p className="gd-hero__lead">{lead}</p>
+              <a href={_backHref} className="gd-hero__back">{_backLabel}</a>
+              <h1 className="gd-hero__title">{_term}</h1>
+              <p className="gd-hero__lead">{_lead}</p>
               <div className="gd-hero__meta">
-                <span className="gd-meta__chip">{category}</span>
+                <span className="gd-meta__chip">{_category}</span>
               </div>
             </div>
           </div>
@@ -512,8 +649,8 @@ export default function AiReadyOperationalLayer({
         <div className="gd-def-wrap">
           <div className="gd-container">
             <div className="gd-def">
-              <div className="gd-def__label">{definitionLabel}</div>
-              <p className="gd-def__body">{definitionBody}</p>
+              <div className="gd-def__label">{_definitionLabel}</div>
+              <p className="gd-def__body">{_definitionBody}</p>
             </div>
           </div>
         </div>
@@ -523,7 +660,7 @@ export default function AiReadyOperationalLayer({
           <div className="gd-container">
             <article
               className="gd-body"
-              dangerouslySetInnerHTML={{ __html: bodyHtml }}
+              dangerouslySetInnerHTML={{ __html: _bodyHtml }}
             />
           </div>
         </div>
@@ -553,14 +690,15 @@ export default function AiReadyOperationalLayer({
 }
 
 addPropertyControls(AiReadyOperationalLayer, {
-  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Glossary" },
-  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/glossary" },
-  term: { type: ControlType.String, title: "Term", defaultValue: "AI-Ready Operational Layer" },
-  lead: { type: ControlType.String, title: "Lead", defaultValue: "An earlier name for the same category. The current locked category is AI enablement data layer for regulated operations. This page is retained as a synonym definition for readers arriving via earlier collateral.", displayTextArea: true },
-  category: { type: ControlType.String, title: "Category", defaultValue: "GLOSSARY · ALIAS / SYNONYM" },
-  definitionLabel: { type: ControlType.String, title: "Definition Label", defaultValue: "Definition" },
-  definitionBody: { type: ControlType.String, title: "Definition Body", defaultValue: "An AI enablement data layer (historically called an AI-ready operational layer) is a runtime layer between the existing regulated enterprise environment (NOC, ticket, OT consoles, EHR, mission systems) and large language models. It turns operational data — network logs, incident records, configurations, clinical workflows, mission context — into AI-ready context using structure-preserving, differential-privacy-based encapsulation; executes the AI workflow inside the enterprise environment via two execution paths (external approved LLM with capsule data, or on-prem local lightweight model); and restores results back to the originating workflow via state vault. Distinct from PII guardrails and AI security suites in scope, layer, and execution model.", displayTextArea: true },
-  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "" },
+  term: { type: ControlType.String, title: "Term", defaultValue: "" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "" },
+  definitionLabel: { type: ControlType.String, title: "Definition Label", defaultValue: "" },
+  definitionBody: { type: ControlType.String, title: "Definition Body", defaultValue: "", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: "", displayTextArea: true },
   related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "" },
   related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "" },
   related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "" },

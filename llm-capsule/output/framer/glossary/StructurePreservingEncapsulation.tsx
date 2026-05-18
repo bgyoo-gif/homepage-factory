@@ -2,12 +2,15 @@
 // Generator: scripts/build-glossary-tsx.py
 // To regenerate: python3 scripts/build-glossary-tsx.py
 //
-// Self-contained Framer Code Component with full Props for translation/CMS.
-// No external imports — GlossaryDetail logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with locale dropdown (en/ko/de).
+// Embedded TRANSLATIONS dict drives default text per locale; individual Props
+// remain for per-instance overrides. Set `locale` in Framer Properties panel
+// to switch all text simultaneously.
 
 import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
+  locale?: "en" | "ko" | "de"
   backLabel?: string
   backHref?: string
   term?: string
@@ -61,15 +64,149 @@ const BODY_HTML = `<h2>Definition</h2>
 <h2>Reference statement</h2>
 <blockquote>Structure-preserving encapsulation makes the capsule useful. Differential-privacy-based protection makes it defensible. State vault makes it restorable. Together, they constitute the AI enablement data layer.</blockquote>`
 
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
+  en: {
+    backLabel: "← Glossary",
+    backHref: "/resources/glossary",
+    term: "Structure-Preserving Encapsulation",
+    lead: "Tokenize the identifiers. Preserve the structure. So the AI can still reason — and the result can still be restored.",
+    category: "GLOSSARY",
+    definitionLabel: "Definition",
+    definitionBody: "Structure-preserving encapsulation is the transformation step in an AI enablement data layer that converts operational data into AI-ready context. It tokenizes operational identifiers (device IDs, site IDs, asset references, customer segments) while preserving the relational structure the LLM needs to reason — table layout, log sequence, document hierarchy, configuration tree, topology graph.",
+    bodyHtml: BODY_HTML,
+    related1Label: "",
+    related1Href: "",
+    related2Label: "",
+    related2Href: "",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+  ko: {
+    backLabel: "← 용어 사전",
+    backHref: "/resources/glossary",
+    term: "문서 구조 보존 캡슐화",
+    lead: "식별자를 토큰화합니다. 구조는 그대로 보존합니다. AI가 여전히 추론할 수 있도록 — 그리고 결과물은 반드시 복원됩니다.",
+    category: "GLOSSARY",
+    definitionLabel: "정의",
+    definitionBody: "문서 구조 보존 캡슐화는 데이터 레이어에서 운영 데이터를 AI가 바로 사용할 수 있는 컨텍스트로 변환하는 단계입니다. 운영 식별자(장치 ID, 사이트 ID, 자산 참조, 고객 세그먼트)를 토큰화하면서, LLM이 추론에 필요한 관계형 구조 — 테이블 레이아웃, 로그 순서, 문서 계층, 구성 트리, 토폴로지 그래프 — 를 그대로 보존합니다.",
+    bodyHtml: `<h2>정의</h2>
+
+<p><strong>문서 구조 보존 캡슐화</strong>는 데이터 레이어에서 운영 데이터를 AI가 바로 사용할 수 있는 컨텍스트로 변환하는 단계입니다. 운영 식별자(장치 ID, 사이트 ID, 자산 참조, 고객 세그먼트)를 토큰화하면서, LLM이 추론에 필요한 관계형 구조 — 테이블 레이아웃, 로그 순서, 문서 계층, 구성 트리, 토폴로지 그래프 — 를 그대로 보존합니다.</p>
+
+<h2>구조 보존이 중요한 이유</h2>
+
+<p>알람 시퀀스를 토대로 RCA를 작성하도록 요청받은 LLM은 시퀀스가 파괴되면 추론할 수 없습니다. 두 구성 트리를 비교하도록 요청받은 LLM은 트리 관계가 평탄화되면 비교할 수 없습니다. 구조 보존이야말로 캡슐을 모델에게 단순히 <em>안전한</em> 것이 아니라 <em>유용한</em> 것으로 만드는 핵심입니다.</p>
+
+<h2>토큰화 대상</h2>
+
+<ul>
+<li>운영 식별자: DEVICE_ID, SITE_ID, CIRCUIT_ID, ASSET_ID, MISSION_REF</li>
+<li>고객 참조 및 세그먼트</li>
+<li>복합 식별자가 포함된 자유 텍스트 필드 (NER 마스킹)</li>
+<li>민감 속성 값 (DP 예산 범위 내)</li>
+</ul>
+
+<h2>보존 대상</h2>
+
+<ul>
+<li>이벤트의 시간 순서</li>
+<li>인시던트 시퀀스 내 인과 관계</li>
+<li>문서 구조 (섹션·목록·테이블)</li>
+<li>구성 트리 (부모-자식 관계, 의존성)</li>
+<li>토폴로지 그래프 (노드·엣지·경로)</li>
+</ul>
+
+<h2>함께 사용되는 기능</h2>
+
+<ul>
+<li><a href="/resources/glossary/differential-privacy">차등 프라이버시</a> — 캡슐의 추론 위험을 수치로 제한합니다</li>
+<li><a href="/resources/glossary/state-vault-for-restoration">복원용 상태 저장소</a> — 기업 내부에서 토큰을 원본 값으로 복원합니다</li>
+<li><a href="/resources/glossary/two-execution-paths">두 가지 실행 경로</a> — 워크플로우 정책에 따라 Path A 또는 Path B를 선택합니다</li>
+</ul>
+
+<h2>참조 문장</h2>
+
+<blockquote>문서 구조 보존 캡슐화는 캡슐을 유용하게 만듭니다. 차등 프라이버시 기반 보호는 캡슐을 방어 가능하게 만듭니다. 복원용 상태 저장소는 캡슐을 복원 가능하게 만듭니다. 세 가지가 함께 데이터 레이어를 구성합니다.</blockquote>`,
+    related1Label: "",
+    related1Href: "",
+    related2Label: "",
+    related2Href: "",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+  de: {
+    backLabel: "← Glossar",
+    backHref: "/resources/glossary",
+    term: "Strukturerhaltende Kapsulierung",
+    lead: "Operative Kennzeichner werden tokenisiert, die relationale Struktur bleibt vollständig erhalten. Das KI-Modell kann weiterhin schlussfolgern — und die Ausgabe lässt sich im Unternehmen vollständig wiederherstellen.",
+    category: "GLOSSAR",
+    definitionLabel: "Definition",
+    definitionBody: "Die strukturerhaltende Kapsulierung ist der Transformationsschritt innerhalb eines AI enablement data layer, der operative Daten in KI-gerechten Kontext überführt. Operative Kennzeichner — Geräte-IDs, Standort-IDs, Asset-Referenzen, Kundensegmente — werden tokenisiert. Die relationale Struktur, die das LLM zur Inferenz benötigt, bleibt dabei unverändert erhalten: Tabellenlayout, Log-Sequenz, Dokumenthierarchie, Konfigurationsbaum und Topologiegraph.",
+    bodyHtml: `<h2>Warum die Strukturerhaltung entscheidend ist</h2>
+
+<p>Ein LLM, das eine RCA aus einer Alarmmeldungssequenz erstellen soll, kann keine Schlussfolgerungen ziehen, wenn die Sequenz zerstört wurde. Ein LLM, das zwei Konfigurationsbäume vergleichen soll, kann keinen Vergleich durchführen, wenn die Baumbeziehungen eingeebnet wurden. Die Strukturerhaltung macht die Kapsel für das Modell nutzbar — nicht nur sicher.</p>
+
+<h2>Was tokenisiert wird</h2>
+
+<ul>
+<li>Operative Kennzeichner: DEVICE_ID, SITE_ID, CIRCUIT_ID, ASSET_ID, MISSION_REF</li>
+<li>Kundenreferenzen und -segmente</li>
+<li>Freitextfelder mit gemischten Kennzeichnern (NER-Maskierung)</li>
+<li>Sensible Attributwerte (im Rahmen des DP-Budgets)</li>
+</ul>
+
+<h2>Was erhalten bleibt</h2>
+
+<ul>
+<li>Zeitliche Reihenfolge von Ereignissen</li>
+<li>Ursache-Wirkungs-Beziehungen in Vorfallssequenzen</li>
+<li>Dokumentstruktur (Abschnitte, Listen, Tabellen)</li>
+<li>Konfigurationsbaum (Eltern-Kind-Beziehungen, Abhängigkeiten)</li>
+<li>Topologiegraph (Knoten, Kanten, Pfade)</li>
+</ul>
+
+<h2>Zusammenwirken mit weiteren Komponenten</h2>
+
+<ul>
+<li>Differential Privacy — begrenzt das Inferenzrisiko der Kapsel</li>
+<li>State Vault for Restoration — führt die Token unternehmensintern auf ihre Originalwerte zurück</li>
+<li>Two execution paths — Pfad A oder Pfad B gemäß Workflow-Richtlinie</li>
+</ul>
+
+<h2>Leitsatz</h2>
+
+<p>Die strukturerhaltende Kapsulierung macht die Kapsel nutzbar. Der auf Differential Privacy basierende Schutz macht sie verteidigbar. Der State Vault macht sie wiederherstellbar. Zusammen bilden sie den AI enablement data layer.</p>`,
+    related1Label: "",
+    related1Href: "",
+    related2Label: "",
+    related2Href: "",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+}
+
 export default function StructurePreservingEncapsulation({
-  backLabel = "← Glossary",
-  backHref = "/resources/glossary",
-  term = "Structure-Preserving Encapsulation",
-  lead = "Tokenize the identifiers. Preserve the structure. So the AI can still reason — and the result can still be restored.",
-  category = "GLOSSARY",
-  definitionLabel = "Definition",
-  definitionBody = "Structure-preserving encapsulation is the transformation step in an AI enablement data layer that converts operational data into AI-ready context. It tokenizes operational identifiers (device IDs, site IDs, asset references, customer segments) while preserving the relational structure the LLM needs to reason — table layout, log sequence, document hierarchy, configuration tree, topology graph.",
-  bodyHtml = BODY_HTML,
+  locale = "en",
+  backLabel = "",
+  backHref = "",
+  term = "",
+  lead = "",
+  category = "",
+  definitionLabel = "",
+  definitionBody = "",
+  bodyHtml = "",
   related1Label = "",
   related1Href = "",
   related2Label = "",
@@ -81,20 +218,40 @@ export default function StructurePreservingEncapsulation({
   related5Label = "",
   related5Href = "",
 }: Props) {
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  const _backLabel = backLabel || T["backLabel"] || TRANSLATIONS.en["backLabel"]
+  const _backHref = backHref || T["backHref"] || TRANSLATIONS.en["backHref"]
+  const _term = term || T["term"] || TRANSLATIONS.en["term"]
+  const _lead = lead || T["lead"] || TRANSLATIONS.en["lead"]
+  const _category = category || T["category"] || TRANSLATIONS.en["category"]
+  const _definitionLabel = definitionLabel || T["definitionLabel"] || TRANSLATIONS.en["definitionLabel"]
+  const _definitionBody = definitionBody || T["definitionBody"] || TRANSLATIONS.en["definitionBody"]
+  const _bodyHtml = bodyHtml || T["bodyHtml"] || TRANSLATIONS.en["bodyHtml"]
+  const _related1Label = related1Label || T["related1Label"] || TRANSLATIONS.en["related1Label"]
+  const _related1Href = related1Href || T["related1Href"] || TRANSLATIONS.en["related1Href"]
+  const _related2Label = related2Label || T["related2Label"] || TRANSLATIONS.en["related2Label"]
+  const _related2Href = related2Href || T["related2Href"] || TRANSLATIONS.en["related2Href"]
+  const _related3Label = related3Label || T["related3Label"] || TRANSLATIONS.en["related3Label"]
+  const _related3Href = related3Href || T["related3Href"] || TRANSLATIONS.en["related3Href"]
+  const _related4Label = related4Label || T["related4Label"] || TRANSLATIONS.en["related4Label"]
+  const _related4Href = related4Href || T["related4Href"] || TRANSLATIONS.en["related4Href"]
+  const _related5Label = related5Label || T["related5Label"] || TRANSLATIONS.en["related5Label"]
+  const _related5Href = related5Href || T["related5Href"] || TRANSLATIONS.en["related5Href"]
+
   const relatedItems = [
-    { label: related1Label, href: related1Href },
-    { label: related2Label, href: related2Href },
-    { label: related3Label, href: related3Href },
-    { label: related4Label, href: related4Href },
-    { label: related5Label, href: related5Href },
+    { label: _related1Label, href: _related1Href },
+    { label: _related2Label, href: _related2Href },
+    { label: _related3Label, href: _related3Href },
+    { label: _related4Label, href: _related4Href },
+    { label: _related5Label, href: _related5Href },
   ].filter((r) => r.label && r.href)
 
   // JSON-LD: DefinedTerm schema built from Props
   const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
-    "name": term,
-    "description": definitionBody,
+    "name": _term,
+    "description": _definitionBody,
     "inDefinedTermSet": "https://llmcapsule.ai/glossary",
   })
 
@@ -366,7 +523,7 @@ export default function StructurePreservingEncapsulation({
 
         .gd-body tr:last-child td { border-bottom: none; }
 
-        /* Callout box (for <div class="callout"> inside bodyHtml) */
+        /* Callout box (for <div class="callout"> inside _bodyHtml) */
         .gd-body .callout {
           padding: 20px 24px;
           background-color: var(--c-primary-soft, #eeebfe);
@@ -508,11 +665,11 @@ export default function StructurePreservingEncapsulation({
         <section className="gd-hero">
           <div className="gd-container">
             <div className="gd-hero__inner">
-              <a href={backHref} className="gd-hero__back">{backLabel}</a>
-              <h1 className="gd-hero__title">{term}</h1>
-              <p className="gd-hero__lead">{lead}</p>
+              <a href={_backHref} className="gd-hero__back">{_backLabel}</a>
+              <h1 className="gd-hero__title">{_term}</h1>
+              <p className="gd-hero__lead">{_lead}</p>
               <div className="gd-hero__meta">
-                <span className="gd-meta__chip">{category}</span>
+                <span className="gd-meta__chip">{_category}</span>
               </div>
             </div>
           </div>
@@ -522,8 +679,8 @@ export default function StructurePreservingEncapsulation({
         <div className="gd-def-wrap">
           <div className="gd-container">
             <div className="gd-def">
-              <div className="gd-def__label">{definitionLabel}</div>
-              <p className="gd-def__body">{definitionBody}</p>
+              <div className="gd-def__label">{_definitionLabel}</div>
+              <p className="gd-def__body">{_definitionBody}</p>
             </div>
           </div>
         </div>
@@ -533,7 +690,7 @@ export default function StructurePreservingEncapsulation({
           <div className="gd-container">
             <article
               className="gd-body"
-              dangerouslySetInnerHTML={{ __html: bodyHtml }}
+              dangerouslySetInnerHTML={{ __html: _bodyHtml }}
             />
           </div>
         </div>
@@ -563,14 +720,15 @@ export default function StructurePreservingEncapsulation({
 }
 
 addPropertyControls(StructurePreservingEncapsulation, {
-  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Glossary" },
-  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/glossary" },
-  term: { type: ControlType.String, title: "Term", defaultValue: "Structure-Preserving Encapsulation" },
-  lead: { type: ControlType.String, title: "Lead", defaultValue: "Tokenize the identifiers. Preserve the structure. So the AI can still reason — and the result can still be restored.", displayTextArea: true },
-  category: { type: ControlType.String, title: "Category", defaultValue: "GLOSSARY" },
-  definitionLabel: { type: ControlType.String, title: "Definition Label", defaultValue: "Definition" },
-  definitionBody: { type: ControlType.String, title: "Definition Body", defaultValue: "Structure-preserving encapsulation is the transformation step in an AI enablement data layer that converts operational data into AI-ready context. It tokenizes operational identifiers (device IDs, site IDs, asset references, customer segments) while preserving the relational structure the LLM needs to reason — table layout, log sequence, document hierarchy, configuration tree, topology graph.", displayTextArea: true },
-  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "" },
+  term: { type: ControlType.String, title: "Term", defaultValue: "" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "" },
+  definitionLabel: { type: ControlType.String, title: "Definition Label", defaultValue: "" },
+  definitionBody: { type: ControlType.String, title: "Definition Body", defaultValue: "", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: "", displayTextArea: true },
   related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "" },
   related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "" },
   related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "" },

@@ -21,6 +21,75 @@ ROOT = Path(__file__).resolve().parent.parent
 INPUT_DIR = ROOT / "llm-capsule" / "input" / "llmcapsule_260506" / "glossary"
 OUT_DIR = ROOT / "llm-capsule" / "output" / "framer" / "glossary"
 GLOSSARY_DETAIL_TSX = ROOT / "llm-capsule" / "output" / "framer" / "shared" / "GlossaryDetail.tsx"
+TRANSLATIONS_DIR = ROOT / "llm-capsule" / "output" / "translations"
+
+
+def parse_translation_md(md_path):
+    """Parse glossary section-based md → {prop_name: translated_text} for the
+    known section→prop mapping (section 01 Hero / 02 Definition / 03 Article
+    Body / 04 Related)."""
+    if not md_path.exists():
+        return {}
+
+    text = md_path.read_text(encoding="utf-8")
+    out = {}
+
+    # Section 01 Hero: pairs in order → backLabel, term, lead, category
+    sec01 = re.search(
+        r"##\s*Section\s*01[^\n]*\n(.*?)(?=##\s*Section|\Z)",
+        text, re.DOTALL | re.IGNORECASE,
+    )
+    if sec01:
+        pairs = _extract_pairs(sec01.group(1))
+        hero_keys = ["backLabel", "term", "lead", "category"]
+        for i, (en, ko) in enumerate(pairs[:len(hero_keys)]):
+            out[hero_keys[i]] = ko
+
+    # Section 02 Definition: definitionLabel, definitionBody
+    sec02 = re.search(
+        r"##\s*Section\s*02[^\n]*\n(.*?)(?=##\s*Section|\Z)",
+        text, re.DOTALL | re.IGNORECASE,
+    )
+    if sec02:
+        pairs = _extract_pairs(sec02.group(1))
+        def_keys = ["definitionLabel", "definitionBody"]
+        for i, (en, ko) in enumerate(pairs[:len(def_keys)]):
+            out[def_keys[i]] = ko
+
+    # Section 03 Article Body: entire HTML block as bodyHtml
+    sec03 = re.search(
+        r"##\s*Section\s*03[^\n]*\n(.*?)(?=##\s*Section|\Z)",
+        text, re.DOTALL | re.IGNORECASE,
+    )
+    if sec03:
+        body = sec03.group(1).strip()
+        if body:
+            out["bodyHtml"] = body
+
+    return out
+
+
+def _extract_pairs(text):
+    """Extract (en, translation) pairs in sequential order from a section text."""
+    pairs = []
+    lines = [ln.rstrip() for ln in text.split("\n")]
+    i = 0
+    while i < len(lines):
+        # Skip blank lines
+        if not lines[i].strip():
+            i += 1
+            continue
+        en = lines[i].strip()
+        # Next non-blank line is the translation
+        j = i + 1
+        while j < len(lines) and not lines[j].strip():
+            j += 1
+        if j >= len(lines):
+            break
+        tr = lines[j].strip()
+        pairs.append((en, tr))
+        i = j + 1
+    return pairs
 
 
 # ── Glossary entries (all 11 v6.2 terms) ──
@@ -266,37 +335,92 @@ def build_tsx(entry: dict) -> str:
         prop_values[f"related{i}Label"] = label
         prop_values[f"related{i}Href"] = href
 
-    iface_block = "\n".join(f"  {p['name']}?: string" for p in PROPS_SPEC)
+    # Load ko/de translations from md files (section-based glossary format).
+    ko_md = TRANSLATIONS_DIR / f"glossary-{slug}-ko-lines.md"
+    de_md = TRANSLATIONS_DIR / f"glossary-{slug}-de-lines.md"
+    ko_translations = parse_translation_md(ko_md)
+    de_translations = parse_translation_md(de_md)
 
-    default_lines = []
+    # Localized hrefs (← Glossary in ko/de). Common Korean override:
+    if "backLabel" in ko_translations and "backHref" not in ko_translations:
+        ko_translations["backHref"] = back_href
+    if "backLabel" in de_translations and "backHref" not in de_translations:
+        de_translations["backHref"] = back_href
+
+    iface_block = '  locale?: "en" | "ko" | "de"\n' + \
+                  "\n".join(f"  {p['name']}?: string" for p in PROPS_SPEC)
+
+    default_lines = ['  locale = "en",']
     for p in PROPS_SPEC:
         name = p["name"]
-        v = prop_values.get(name, "")
-        if v == "__BODY_HTML__":
-            default_lines.append(f"  {name} = BODY_HTML,")
-        else:
-            default_lines.append(f'  {name} = "{js_string_escape(v)}",')
+        default_lines.append(f'  {name} = "",')
     defaults_block = "\n".join(default_lines)
 
-    control_lines = []
+    locale_control = (
+        '  locale: { type: ControlType.Enum, title: "Locale", '
+        'options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], '
+        'defaultValue: "en" },'
+    )
+    control_lines = [locale_control]
     for p in PROPS_SPEC:
         name = p["name"]
         title_attr = p["title"]
         textarea = ", displayTextArea: true" if p["textarea"] else ""
-        v = prop_values.get(name, "")
-        if v == "__BODY_HTML__":
-            line = f'  {name}: {{ type: ControlType.String, title: "{title_attr}", defaultValue: BODY_HTML{textarea} }},'
-        else:
-            line = f'  {name}: {{ type: ControlType.String, title: "{title_attr}", defaultValue: "{js_string_escape(v)}"{textarea} }},'
+        line = f'  {name}: {{ type: ControlType.String, title: "{title_attr}", defaultValue: ""{textarea} }},'
         control_lines.append(line)
     controls_block = "\n".join(control_lines)
+
+    # Build TRANSLATIONS dict (en uses original meta; ko/de from md; bodyHtml special).
+    def render_dict(translations: dict, is_en: bool) -> str:
+        lines = []
+        for p in PROPS_SPEC:
+            name = p["name"]
+            if name == "bodyHtml":
+                # bodyHtml stays as BODY_HTML reference for en, raw HTML for ko/de
+                if is_en:
+                    lines.append(f"    {name}: BODY_HTML,")
+                else:
+                    val = translations.get(name, "")
+                    lines.append(f"    {name}: `{js_template_escape(val)}`,")
+            else:
+                if is_en:
+                    val = prop_values.get(name, "")
+                else:
+                    val = translations.get(name, prop_values.get(name, ""))
+                lines.append(f'    {name}: "{js_string_escape(val)}",')
+        return "\n".join(lines)
+
+    en_dict = render_dict({}, is_en=True)
+    ko_dict = render_dict(ko_translations, is_en=False)
+    de_dict = render_dict(de_translations, is_en=False)
+
+    # Resolver block: const _name = name || T[name] || EN[name]
+    resolver_lines = ['  const T = TRANSLATIONS[locale] || TRANSLATIONS.en']
+    for p in PROPS_SPEC:
+        name = p["name"]
+        resolver_lines.append(
+            f'  const _{name} = {name} || T["{name}"] || TRANSLATIONS.en["{name}"]'
+        )
+    resolver_block = "\n".join(resolver_lines)
+
+    # Replace prop name refs in GLOSSARY_DETAIL_BODY with _name (word boundaries).
+    body = GLOSSARY_DETAIL_BODY
+    for p in PROPS_SPEC:
+        name = p["name"]
+        body = re.sub(
+            rf'(?<![\w."_]){re.escape(name)}(?![\w])',
+            f"_{name}",
+            body,
+        )
 
     tsx = f"""// AUTO-GENERATED. Do not edit by hand.
 // Generator: scripts/build-glossary-tsx.py
 // To regenerate: python3 scripts/build-glossary-tsx.py
 //
-// Self-contained Framer Code Component with full Props for translation/CMS.
-// No external imports — GlossaryDetail logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with locale dropdown (en/ko/de).
+// Embedded TRANSLATIONS dict drives default text per locale; individual Props
+// remain for per-instance overrides. Set `locale` in Framer Properties panel
+// to switch all text simultaneously.
 
 import {{ addPropertyControls, ControlType }} from "framer"
 
@@ -306,10 +430,24 @@ interface Props {{
 
 const BODY_HTML = `{js_template_escape(meta["bodyHtml"])}`
 
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {{
+  en: {{
+{en_dict}
+  }},
+  ko: {{
+{ko_dict}
+  }},
+  de: {{
+{de_dict}
+  }},
+}}
+
 export default function {component}({{
 {defaults_block}
 }}: Props) {{
-{GLOSSARY_DETAIL_BODY}
+{resolver_block}
+
+{body}
 }}
 
 addPropertyControls({component}, {{

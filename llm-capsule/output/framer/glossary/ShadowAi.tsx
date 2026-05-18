@@ -2,12 +2,15 @@
 // Generator: scripts/build-glossary-tsx.py
 // To regenerate: python3 scripts/build-glossary-tsx.py
 //
-// Self-contained Framer Code Component with full Props for translation/CMS.
-// No external imports — GlossaryDetail logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with locale dropdown (en/ko/de).
+// Embedded TRANSLATIONS dict drives default text per locale; individual Props
+// remain for per-instance overrides. Set `locale` in Framer Properties panel
+// to switch all text simultaneously.
 
 import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
+  locale?: "en" | "ko" | "de"
   backLabel?: string
   backHref?: string
   term?: string
@@ -50,19 +53,147 @@ const BODY_HTML = `<h2>Why it emerges</h2>
 <li><strong>Engineers</strong> using consumer AI tools on internal docs that contain sensitive identifiers.</li>
 </ul>`
 
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
+  en: {
+    backLabel: "← Glossary",
+    backHref: "/resources/glossary",
+    term: "Shadow AI",
+    lead: "Employees using ChatGPT (or any external LLM) on personal devices or unapproved channels — because the official tooling can't handle the data the work depends on.",
+    category: "Risk concept",
+    definitionLabel: "Definition",
+    definitionBody: "Shadow AI is the unsanctioned use of external LLMs by enterprise employees outside approved channels — typically because the official AI tooling cannot handle the regulated data the work actually depends on. The root cause is not employee misbehavior; it is a missing AI enablement data layer. Employees taste productivity in pilots and early demos, then route around the controls when production tooling fails to deliver.",
+    bodyHtml: BODY_HTML,
+    related1Label: "Blocked AI workflow",
+    related1Href: "/glossary/blocked-ai-workflow",
+    related2Label: "AI enablement data layer",
+    related2Href: "/glossary/ai-enablement-data-layer",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+  ko: {
+    backLabel: "← 용어 사전",
+    backHref: "/resources/glossary",
+    term: "Shadow AI",
+    lead: "공식 도구가 업무에 필요한 데이터를 처리할 수 없기 때문에 — 직원들이 개인 기기나 비승인 채널에서 ChatGPT(또는 외부 LLM)를 사용합니다.",
+    category: "리스크 개념",
+    definitionLabel: "정의",
+    definitionBody: "Shadow AI는 기업 직원이 승인된 채널 외부에서 외부 LLM을 무단으로 사용하는 행위입니다 — 주로 공식 AI 도구가 업무에 실제로 필요한 규제 데이터를 처리할 수 없기 때문입니다. 근본 원인은 직원의 일탈이 아닙니다. 데이터 레이어의 부재입니다. 직원들은 파일럿과 초기 데모에서 생산성을 경험하고, 운영 도구가 이를 제공하지 못하면 통제를 우회합니다.",
+    bodyHtml: `<h2>발생 원인</h2>
+
+<p>Shadow AI는 원인이 아니라 증상입니다. 근본적인 패턴은 다음과 같습니다.</p>
+
+<ol>
+<li>기업이 합성 데이터로 AI 파일럿을 진행합니다. 직원들은 상당한 생산성 향상을 경험합니다.</li>
+<li>실제 운영 데이터를 외부 LLM으로 전송할 수 없어 보안 검토 단계에서 파일럿이 중단됩니다.</li>
+<li>파일럿 범위가 사용 불가능한 수준으로 축소됩니다. 생산성 향상은 사라집니다.</li>
+<li>생산성을 경험한 직원들이 우회책을 찾습니다 — 개인 기기에서 ChatGPT에 익명화된 스니펫을 복사·붙여넣기하거나, 삭제 처리된 문서를 캡처하거나, 비승인 AI 플러그인을 사용합니다.</li>
+<li>기업은 최악의 상황에 놓입니다. AI 생산성은 거버넌스 밖에서 이루어지고, 거버넌스 안에서는 운영 AI가 전혀 없습니다.</li>
+</ol>
+
+<h2>구조적 해결책</h2>
+
+<p>Shadow AI는 정책 강화만으로는 해결되지 않습니다 — 그것은 증상을 치료하는 것입니다. 구조적 해결책은 공식 도구가 실제 운영 데이터를 처리할 수 있도록 하는 <strong>데이터 레이어</strong>입니다. 로컬에서 캡슐화하고, 승인된 외부 LLM(Path A) 또는 온프레미스 로컬 모델(Path B)을 통해 처리한 뒤, 원위치에 복원합니다. 공식 도구가 파일럿에서 경험한 것을 제공하면 Shadow AI 사용은 줄어듭니다.</p>
+
+<h2>발생 사례</h2>
+
+<ul>
+<li><strong>통신사 NOC 분석가</strong>가 RCA 지원을 위해 익명화된 티켓 내용을 ChatGPT에 붙여넣습니다.</li>
+<li><strong>병원 임상의</strong>가 개인 기기에서 AI 도구를 이용해 문서 초안을 작성합니다.</li>
+<li><strong>보험 언더라이터</strong>가 비식별화된 청구 요약본으로 AI 출력을 테스트합니다.</li>
+<li><strong>법률 어소시에이트</strong>가 컨슈머 AI 도구로 삭제 처리된 계약서를 요약합니다.</li>
+<li><strong>엔지니어</strong>가 민감한 식별자가 포함된 내부 문서에 컨슈머 AI 도구를 사용합니다.</li>
+</ul>
+
+<h2>관련 용어</h2>
+
+<ul>
+<li><a href="/glossary/blocked-ai-workflow">차단된 AI 워크플로우</a></li>
+<li><a href="/glossary/ai-enablement-data-layer">데이터 레이어</a></li>
+<li><a href="/learn/pilot-to-production-enterprise-ai">Learn: 기업 AI 파일럿이 중단되는 이유</a></li>
+</ul>`,
+    related1Label: "Blocked AI workflow",
+    related1Href: "/glossary/blocked-ai-workflow",
+    related2Label: "AI enablement data layer",
+    related2Href: "/glossary/ai-enablement-data-layer",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+  de: {
+    backLabel: "← Glossar",
+    backHref: "/resources/glossary",
+    term: "Shadow AI",
+    lead: "Mitarbeitende nutzen ChatGPT oder andere externe LLMs auf Privatgeräten und nicht genehmigten Kanälen. Der Grund: Die offiziellen KI-Werkzeuge können die für die Arbeit notwendigen Daten nicht verarbeiten.",
+    category: "Risikokonzept",
+    definitionLabel: "Definition",
+    definitionBody: "Shadow AI bezeichnet die nicht autorisierte Nutzung externer LLMs durch Unternehmensmitarbeitende außerhalb genehmigter Kanäle. Die eigentliche Ursache liegt nicht im Fehlverhalten der Mitarbeitenden, sondern im Fehlen eines AI enablement data layer: Offizielle KI-Werkzeuge können die regulierten Daten, auf die Arbeitsprozesse tatsächlich angewiesen sind, nicht verarbeiten. Mitarbeitende, die in Pilotprojekten Produktivitätsgewinne erlebt haben, suchen nach Wegen, die Einschränkungen zu umgehen, sobald die Produktivsysteme diese Gewinne nicht einlösen.",
+    bodyHtml: `<h2>Entstehungsursachen</h2>
+
+<p>Shadow AI ist ein Symptom, keine Ursache. Das typische Muster:</p>
+
+<ol>
+<li>Ein Unternehmen pilotiert KI mit synthetischen Daten. Mitarbeitende erleben messbare Produktivitätssteigerungen.</li>
+<li>Der Pilotbetrieb gerät in der Sicherheitsprüfung ins Stocken, weil echte Produktionsdaten nicht an externe LLMs übermittelt werden dürfen.</li>
+<li>Der Pilotbetrieb wird auf eine kaum verwendbare Datenteilmenge beschränkt. Die Produktivitätsgewinne entfallen.</li>
+<li>Mitarbeitende, die die Produktivitätssteigerung bereits erlebt haben, suchen nach Alternativen: Sie verarbeiten anonymisierte Ausschnitte via ChatGPT auf Privatgeräten, fotografieren geschwärzte Dokumente ab oder setzen nicht genehmigte KI-Plugins ein.</li>
+<li>Das Unternehmen vereint das Schlechteste beider Welten: KI-Produktivität außerhalb der Governance und kein produktiver KI-Einsatz innerhalb der Governance.</li>
+</ol>
+
+<h2>Die strukturelle Lösung</h2>
+
+<p>Shadow AI lässt sich nicht allein durch Richtliniendurchsetzung beheben — das behandelt nur das Symptom. Die strukturelle Lösung ist ein <strong>AI enablement data layer</strong>, der offizielle Werkzeuge befähigt, mit echten Produktionsdaten zu arbeiten: lokale Kapsulierung, Verarbeitung über ein zugelassenes externes LLM (Pfad A) oder ein lokales On-Premise-Modell (Pfad B), anschließend Wiederherstellung am ursprünglichen Ort. Sobald offizielle Werkzeuge das liefern, was Mitarbeitende in Pilotprojekten erlebt haben, sinkt die Shadow-Nutzung.</p>
+
+<h2>Typische Auftrittsbereiche</h2>
+
+<ul>
+<li><strong>Telekommunikations-NOC-Analysten</strong> fügen anonymisierte Ticket-Ausschnitte zur RCA-Unterstützung in ChatGPT ein.</li>
+<li><strong>Klinisches Personal in Krankenhäusern</strong> nutzt KI-Werkzeuge auf Privatgeräten zur Dokumentationserstellung.</li>
+<li><strong>Underwriter</strong> testen KI-Ausgaben auf de-identifizierten Schadenmeldungen.</li>
+<li><strong>Angestellte Rechtsanwälte</strong> fassen geschwärzte Verträge mit öffentlich zugänglichen KI-Diensten zusammen.</li>
+<li><strong>Ingenieure</strong> verwenden frei verfügbare KI-Werkzeuge auf internen Dokumenten mit sensiblen Kennzeichnern.</li>
+</ul>
+
+<h2>Verwandte Begriffe</h2>
+
+<ul>
+<li>Blockierter KI-Workflow</li>
+<li>AI enablement data layer</li>
+<li>Learn: Warum KI-Pilotprojekte in Unternehmen ins Stocken geraten</li>
+</ul>`,
+    related1Label: "Blocked AI workflow",
+    related1Href: "/glossary/blocked-ai-workflow",
+    related2Label: "AI enablement data layer",
+    related2Href: "/glossary/ai-enablement-data-layer",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+}
+
 export default function ShadowAi({
-  backLabel = "← Glossary",
-  backHref = "/resources/glossary",
-  term = "Shadow AI",
-  lead = "Employees using ChatGPT (or any external LLM) on personal devices or unapproved channels — because the official tooling can't handle the data the work depends on.",
-  category = "Risk concept",
-  definitionLabel = "Definition",
-  definitionBody = "Shadow AI is the unsanctioned use of external LLMs by enterprise employees outside approved channels — typically because the official AI tooling cannot handle the regulated data the work actually depends on. The root cause is not employee misbehavior; it is a missing AI enablement data layer. Employees taste productivity in pilots and early demos, then route around the controls when production tooling fails to deliver.",
-  bodyHtml = BODY_HTML,
-  related1Label = "Blocked AI workflow",
-  related1Href = "/glossary/blocked-ai-workflow",
-  related2Label = "AI enablement data layer",
-  related2Href = "/glossary/ai-enablement-data-layer",
+  locale = "en",
+  backLabel = "",
+  backHref = "",
+  term = "",
+  lead = "",
+  category = "",
+  definitionLabel = "",
+  definitionBody = "",
+  bodyHtml = "",
+  related1Label = "",
+  related1Href = "",
+  related2Label = "",
+  related2Href = "",
   related3Label = "",
   related3Href = "",
   related4Label = "",
@@ -70,20 +201,40 @@ export default function ShadowAi({
   related5Label = "",
   related5Href = "",
 }: Props) {
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  const _backLabel = backLabel || T["backLabel"] || TRANSLATIONS.en["backLabel"]
+  const _backHref = backHref || T["backHref"] || TRANSLATIONS.en["backHref"]
+  const _term = term || T["term"] || TRANSLATIONS.en["term"]
+  const _lead = lead || T["lead"] || TRANSLATIONS.en["lead"]
+  const _category = category || T["category"] || TRANSLATIONS.en["category"]
+  const _definitionLabel = definitionLabel || T["definitionLabel"] || TRANSLATIONS.en["definitionLabel"]
+  const _definitionBody = definitionBody || T["definitionBody"] || TRANSLATIONS.en["definitionBody"]
+  const _bodyHtml = bodyHtml || T["bodyHtml"] || TRANSLATIONS.en["bodyHtml"]
+  const _related1Label = related1Label || T["related1Label"] || TRANSLATIONS.en["related1Label"]
+  const _related1Href = related1Href || T["related1Href"] || TRANSLATIONS.en["related1Href"]
+  const _related2Label = related2Label || T["related2Label"] || TRANSLATIONS.en["related2Label"]
+  const _related2Href = related2Href || T["related2Href"] || TRANSLATIONS.en["related2Href"]
+  const _related3Label = related3Label || T["related3Label"] || TRANSLATIONS.en["related3Label"]
+  const _related3Href = related3Href || T["related3Href"] || TRANSLATIONS.en["related3Href"]
+  const _related4Label = related4Label || T["related4Label"] || TRANSLATIONS.en["related4Label"]
+  const _related4Href = related4Href || T["related4Href"] || TRANSLATIONS.en["related4Href"]
+  const _related5Label = related5Label || T["related5Label"] || TRANSLATIONS.en["related5Label"]
+  const _related5Href = related5Href || T["related5Href"] || TRANSLATIONS.en["related5Href"]
+
   const relatedItems = [
-    { label: related1Label, href: related1Href },
-    { label: related2Label, href: related2Href },
-    { label: related3Label, href: related3Href },
-    { label: related4Label, href: related4Href },
-    { label: related5Label, href: related5Href },
+    { label: _related1Label, href: _related1Href },
+    { label: _related2Label, href: _related2Href },
+    { label: _related3Label, href: _related3Href },
+    { label: _related4Label, href: _related4Href },
+    { label: _related5Label, href: _related5Href },
   ].filter((r) => r.label && r.href)
 
   // JSON-LD: DefinedTerm schema built from Props
   const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
-    "name": term,
-    "description": definitionBody,
+    "name": _term,
+    "description": _definitionBody,
     "inDefinedTermSet": "https://llmcapsule.ai/glossary",
   })
 
@@ -355,7 +506,7 @@ export default function ShadowAi({
 
         .gd-body tr:last-child td { border-bottom: none; }
 
-        /* Callout box (for <div class="callout"> inside bodyHtml) */
+        /* Callout box (for <div class="callout"> inside _bodyHtml) */
         .gd-body .callout {
           padding: 20px 24px;
           background-color: var(--c-primary-soft, #eeebfe);
@@ -497,11 +648,11 @@ export default function ShadowAi({
         <section className="gd-hero">
           <div className="gd-container">
             <div className="gd-hero__inner">
-              <a href={backHref} className="gd-hero__back">{backLabel}</a>
-              <h1 className="gd-hero__title">{term}</h1>
-              <p className="gd-hero__lead">{lead}</p>
+              <a href={_backHref} className="gd-hero__back">{_backLabel}</a>
+              <h1 className="gd-hero__title">{_term}</h1>
+              <p className="gd-hero__lead">{_lead}</p>
               <div className="gd-hero__meta">
-                <span className="gd-meta__chip">{category}</span>
+                <span className="gd-meta__chip">{_category}</span>
               </div>
             </div>
           </div>
@@ -511,8 +662,8 @@ export default function ShadowAi({
         <div className="gd-def-wrap">
           <div className="gd-container">
             <div className="gd-def">
-              <div className="gd-def__label">{definitionLabel}</div>
-              <p className="gd-def__body">{definitionBody}</p>
+              <div className="gd-def__label">{_definitionLabel}</div>
+              <p className="gd-def__body">{_definitionBody}</p>
             </div>
           </div>
         </div>
@@ -522,7 +673,7 @@ export default function ShadowAi({
           <div className="gd-container">
             <article
               className="gd-body"
-              dangerouslySetInnerHTML={{ __html: bodyHtml }}
+              dangerouslySetInnerHTML={{ __html: _bodyHtml }}
             />
           </div>
         </div>
@@ -552,18 +703,19 @@ export default function ShadowAi({
 }
 
 addPropertyControls(ShadowAi, {
-  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Glossary" },
-  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/glossary" },
-  term: { type: ControlType.String, title: "Term", defaultValue: "Shadow AI" },
-  lead: { type: ControlType.String, title: "Lead", defaultValue: "Employees using ChatGPT (or any external LLM) on personal devices or unapproved channels — because the official tooling can't handle the data the work depends on.", displayTextArea: true },
-  category: { type: ControlType.String, title: "Category", defaultValue: "Risk concept" },
-  definitionLabel: { type: ControlType.String, title: "Definition Label", defaultValue: "Definition" },
-  definitionBody: { type: ControlType.String, title: "Definition Body", defaultValue: "Shadow AI is the unsanctioned use of external LLMs by enterprise employees outside approved channels — typically because the official AI tooling cannot handle the regulated data the work actually depends on. The root cause is not employee misbehavior; it is a missing AI enablement data layer. Employees taste productivity in pilots and early demos, then route around the controls when production tooling fails to deliver.", displayTextArea: true },
-  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
-  related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "Blocked AI workflow" },
-  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/glossary/blocked-ai-workflow" },
-  related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "AI enablement data layer" },
-  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/glossary/ai-enablement-data-layer" },
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "" },
+  term: { type: ControlType.String, title: "Term", defaultValue: "" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "" },
+  definitionLabel: { type: ControlType.String, title: "Definition Label", defaultValue: "" },
+  definitionBody: { type: ControlType.String, title: "Definition Body", defaultValue: "", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: "", displayTextArea: true },
+  related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "" },
+  related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "" },
   related3Label: { type: ControlType.String, title: "Related 3 Label", defaultValue: "" },
   related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "" },
   related4Label: { type: ControlType.String, title: "Related 4 Label", defaultValue: "" },

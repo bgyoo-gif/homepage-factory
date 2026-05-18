@@ -2,12 +2,15 @@
 // Generator: scripts/build-glossary-tsx.py
 // To regenerate: python3 scripts/build-glossary-tsx.py
 //
-// Self-contained Framer Code Component with full Props for translation/CMS.
-// No external imports — GlossaryDetail logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with locale dropdown (en/ko/de).
+// Embedded TRANSLATIONS dict drives default text per locale; individual Props
+// remain for per-instance overrides. Set `locale` in Framer Properties panel
+// to switch all text simultaneously.
 
 import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
+  locale?: "en" | "ko" | "de"
   backLabel?: string
   backHref?: string
   term?: string
@@ -60,15 +63,149 @@ const BODY_HTML = `<h2>Definition</h2>
 <h2>Reference statement</h2>
 <blockquote>The capsule is what the AI sees. The state vault is what the business sees. The boundary between them is the operational guarantee.</blockquote>`
 
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
+  en: {
+    backLabel: "← Glossary",
+    backHref: "/resources/glossary",
+    term: "State Vault for Restoration",
+    lead: "The local-only store that turns AI output back into business-ready output.",
+    category: "GLOSSARY",
+    definitionLabel: "Definition",
+    definitionBody: "The state vault is the local-only store that holds the token map between original operational identifiers and capsule tokens. It enables AI outputs to be restored back into the originating workflow with original identifiers — inside the enterprise — without the external LLM ever seeing the originals.",
+    bodyHtml: BODY_HTML,
+    related1Label: "",
+    related1Href: "",
+    related2Label: "",
+    related2Href: "",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+  ko: {
+    backLabel: "← 용어 사전",
+    backHref: "/resources/glossary",
+    term: "복원용 상태 저장소",
+    lead: "AI 출력을 업무에 바로 쓸 수 있는 결과물로 되돌리는 로컬 전용 저장소입니다.",
+    category: "GLOSSARY",
+    definitionLabel: "정의",
+    definitionBody: "복원용 상태 저장소는 원본 운영 식별자와 캡슐 토큰 간의 토큰 맵을 보관하는 로컬 전용 저장소입니다. AI 출력을 원본 식별자가 담긴 상태로 원래 워크플로우에 복원합니다 — 기업 내부에서, 외부 LLM이 원본을 절대 보지 않은 채로.",
+    bodyHtml: `<h2>정의</h2>
+
+<p><strong>복원용 상태 저장소</strong>는 원본 운영 식별자와 캡슐 토큰 간의 토큰 맵을 보관하는 로컬 전용 저장소입니다. AI 출력을 원본 식별자가 담긴 상태로 원래 워크플로우에 복원합니다 — <em>기업 내부에서</em>, 외부 LLM이 원본을 절대 보지 않은 채로.</p>
+
+<h2>저장 내용</h2>
+
+<ul>
+<li>토큰 맵: 캡슐 토큰 ↔ 원본 운영 식별자</li>
+<li>워크플로우 컨텍스트: 어떤 캡슐이 어떤 인시던트·티켓·런북에 속하는지</li>
+<li>정책 참조: 이 캡슐에 적용된 마커 정책</li>
+<li>프라이버시 예산 참조: 이 캡슐이 워크플로우 DP 예산에서 소비한 양</li>
+</ul>
+
+<h2>저장 위치</h2>
+
+<p>항상 로컬입니다. 토큰 맵은 외부 경계를 절대 벗어나지 않습니다. Path A(외부 승인 LLM)에서는 LLM이 캡슐 토큰만 보고, 응답이 반환된 후 복원용 상태 저장소가 원본으로 복원합니다. Path B(온프레미스 로컬 경량 모델)에서는 전 과정이 로컬에서 완결됩니다.</p>
+
+<h2>왜 중요한가</h2>
+
+<p>복원 없이는 AI 출력이 토큰 덩어리로 남습니다. 운영 팀은 원래 워크플로우에서 바로 쓸 수 있는 결과물이 필요합니다 — 실제 장치 ID가 담긴 티켓 업데이트, 실제 사이트를 참조하는 런북 단계, 실제 인시던트 레퍼런스를 가리키는 RCA. 복원용 상태 저장소가 이를 가능하게 합니다 — 원본은 모델에서 절대 벗어나지 않은 채로.</p>
+
+<h2>복원용 상태 저장소의 출력물</h2>
+
+<ul>
+<li>티켓 시스템에 삽입되는 복원된 RCA</li>
+<li>런북에 삽입되는 복원된 런북 단계</li>
+<li>EHR 또는 병원 포털에 삽입되는 복원된 요약</li>
+<li>커맨드 시스템에 삽입되는 복원된 미션 요약 (Path B 전용)</li>
+<li>검토 워크플로우에 삽입되는 복원된 컴플라이언스 검토 초안</li>
+</ul>
+
+<h2>감사 추적</h2>
+
+<p>모든 복원은 기록됩니다. 감사 이력에는 캡슐, 적용된 정책, 사용된 경로, 토큰 맵 작업, 복원된 출력의 목적지가 남습니다. 컴플라이언스 팀은 복원된 모든 필드를 해당 캡슐과 정책까지 역추적할 수 있습니다.</p>
+
+<h2>참조 문장</h2>
+
+<blockquote>캡슐은 AI가 보는 것입니다. 복원용 상태 저장소는 비즈니스가 보는 것입니다. 그 경계가 바로 운영상의 보장입니다.</blockquote>`,
+    related1Label: "",
+    related1Href: "",
+    related2Label: "",
+    related2Href: "",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+  de: {
+    backLabel: "← Glossar",
+    backHref: "/resources/glossary",
+    term: "State Vault for Restoration",
+    lead: "Der lokal betriebene Datenspeicher, der KI-Ausgaben in direkt nutzbare Arbeitsergebnisse überführt.",
+    category: "GLOSSAR",
+    definitionLabel: "Definition",
+    definitionBody: "Der State Vault ist ein ausschließlich lokal betriebener Datenspeicher, der das Token-Mapping zwischen den ursprünglichen operativen Kennzeichnern und den Capsule-Tokens verwaltet. Er ermöglicht die Wiederherstellung von KI-Ausgaben in den ursprünglichen Workflow mit den Originalkennzeichnern — innerhalb der Unternehmensinfrastruktur — ohne dass das externe LLM die Originaldaten jemals einsehen kann.",
+    bodyHtml: `<h2>Gespeicherte Inhalte</h2>
+
+<ul>
+<li>Token-Mapping: Capsule-Tokens ↔ ursprüngliche operative Kennzeichner</li>
+<li>Workflow-Kontext: Zuordnung jeder Kapsel zu einem Vorfall, Ticket oder Runbook</li>
+<li>Policy-Referenz: welche Markierungsrichtlinie auf diese Kapsel angewendet wurde</li>
+<li>Privacy-Budget-Referenz: welchen Anteil des DP-Budgets dieses Workflows die Kapsel verbraucht hat</li>
+</ul>
+
+<h2>Betriebsort</h2>
+
+<p>Der State Vault verbleibt ausnahmslos in der lokalen Unternehmensinfrastruktur. Das Token-Mapping überschreitet zu keinem Zeitpunkt die externe Grenze. In Pfad A (externes, zugelassenes LLM) erhält das Modell ausschließlich Capsule-Tokens; die Wiederherstellung erfolgt durch den State Vault erst nach Rückgabe der Antwort. In Pfad B (lokales On-Premise-Leichtgewichtsmodell) verbleibt die gesamte Verarbeitung Ende-zu-Ende innerhalb der eigenen Infrastruktur.</p>
+
+<h2>Relevanz im Betrieb</h2>
+
+<p>Ohne Wiederherstellung liefert das KI-System lediglich unverwertbare Token-Ausgaben. Das Operations-Team benötigt das Ergebnis als verwertbares Artefakt im ursprünglichen Workflow: eine Ticket-Aktualisierung mit echten Geräte-IDs, einen Runbook-Schritt mit dem tatsächlichen Standortverweis, eine RCA mit dem konkreten Vorfallsbezug. Der State Vault ist die Komponente, die dies ermöglicht — ohne dass die Originaldaten das Modell jemals erreichen.</p>
+
+<h2>Ausgaben des State Vault</h2>
+
+<ul>
+<li>Wiederhergestellte RCA, eingefügt in das Ticket-System</li>
+<li>Wiederhergestellter Runbook-Schritt, eingefügt in das Runbook</li>
+<li>Wiederhergestellte Zusammenfassung, eingefügt in das KIS oder Krankenhausportal</li>
+<li>Wiederhergestellte Einsatzzusammenfassung, eingefügt in das Einsatzsystem (nur Pfad B)</li>
+<li>Wiederhergestellter Compliance-Prüfentwurf, eingefügt in den Prüfworkflow</li>
+</ul>
+
+<h2>Nachvollziehbarkeit</h2>
+
+<p>Jede Wiederherstellung wird protokolliert. Das Revisionsprotokoll erfasst die Kapsel, die angewendete Richtlinie, den genutzten Ausführungspfad, die Token-Mapping-Operationen sowie das Ziel der wiederhergestellten Ausgabe. Compliance-Verantwortliche können jedes wiederhergestellte Feld lückenlos auf seine Kapsel und die zugehörige Richtlinie zurückverfolgen.</p>
+
+<h2>Leitsatz</h2>
+
+<p>Die Kapsel ist das, was das KI-Modell verarbeitet. Der State Vault ist das, was der Fachbereich erhält. Die Grenze zwischen beiden ist die operative Gewährleistung.</p>`,
+    related1Label: "",
+    related1Href: "",
+    related2Label: "",
+    related2Href: "",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+}
+
 export default function StateVaultForRestoration({
-  backLabel = "← Glossary",
-  backHref = "/resources/glossary",
-  term = "State Vault for Restoration",
-  lead = "The local-only store that turns AI output back into business-ready output.",
-  category = "GLOSSARY",
-  definitionLabel = "Definition",
-  definitionBody = "The state vault is the local-only store that holds the token map between original operational identifiers and capsule tokens. It enables AI outputs to be restored back into the originating workflow with original identifiers — inside the enterprise — without the external LLM ever seeing the originals.",
-  bodyHtml = BODY_HTML,
+  locale = "en",
+  backLabel = "",
+  backHref = "",
+  term = "",
+  lead = "",
+  category = "",
+  definitionLabel = "",
+  definitionBody = "",
+  bodyHtml = "",
   related1Label = "",
   related1Href = "",
   related2Label = "",
@@ -80,20 +217,40 @@ export default function StateVaultForRestoration({
   related5Label = "",
   related5Href = "",
 }: Props) {
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  const _backLabel = backLabel || T["backLabel"] || TRANSLATIONS.en["backLabel"]
+  const _backHref = backHref || T["backHref"] || TRANSLATIONS.en["backHref"]
+  const _term = term || T["term"] || TRANSLATIONS.en["term"]
+  const _lead = lead || T["lead"] || TRANSLATIONS.en["lead"]
+  const _category = category || T["category"] || TRANSLATIONS.en["category"]
+  const _definitionLabel = definitionLabel || T["definitionLabel"] || TRANSLATIONS.en["definitionLabel"]
+  const _definitionBody = definitionBody || T["definitionBody"] || TRANSLATIONS.en["definitionBody"]
+  const _bodyHtml = bodyHtml || T["bodyHtml"] || TRANSLATIONS.en["bodyHtml"]
+  const _related1Label = related1Label || T["related1Label"] || TRANSLATIONS.en["related1Label"]
+  const _related1Href = related1Href || T["related1Href"] || TRANSLATIONS.en["related1Href"]
+  const _related2Label = related2Label || T["related2Label"] || TRANSLATIONS.en["related2Label"]
+  const _related2Href = related2Href || T["related2Href"] || TRANSLATIONS.en["related2Href"]
+  const _related3Label = related3Label || T["related3Label"] || TRANSLATIONS.en["related3Label"]
+  const _related3Href = related3Href || T["related3Href"] || TRANSLATIONS.en["related3Href"]
+  const _related4Label = related4Label || T["related4Label"] || TRANSLATIONS.en["related4Label"]
+  const _related4Href = related4Href || T["related4Href"] || TRANSLATIONS.en["related4Href"]
+  const _related5Label = related5Label || T["related5Label"] || TRANSLATIONS.en["related5Label"]
+  const _related5Href = related5Href || T["related5Href"] || TRANSLATIONS.en["related5Href"]
+
   const relatedItems = [
-    { label: related1Label, href: related1Href },
-    { label: related2Label, href: related2Href },
-    { label: related3Label, href: related3Href },
-    { label: related4Label, href: related4Href },
-    { label: related5Label, href: related5Href },
+    { label: _related1Label, href: _related1Href },
+    { label: _related2Label, href: _related2Href },
+    { label: _related3Label, href: _related3Href },
+    { label: _related4Label, href: _related4Href },
+    { label: _related5Label, href: _related5Href },
   ].filter((r) => r.label && r.href)
 
   // JSON-LD: DefinedTerm schema built from Props
   const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
-    "name": term,
-    "description": definitionBody,
+    "name": _term,
+    "description": _definitionBody,
     "inDefinedTermSet": "https://llmcapsule.ai/glossary",
   })
 
@@ -365,7 +522,7 @@ export default function StateVaultForRestoration({
 
         .gd-body tr:last-child td { border-bottom: none; }
 
-        /* Callout box (for <div class="callout"> inside bodyHtml) */
+        /* Callout box (for <div class="callout"> inside _bodyHtml) */
         .gd-body .callout {
           padding: 20px 24px;
           background-color: var(--c-primary-soft, #eeebfe);
@@ -507,11 +664,11 @@ export default function StateVaultForRestoration({
         <section className="gd-hero">
           <div className="gd-container">
             <div className="gd-hero__inner">
-              <a href={backHref} className="gd-hero__back">{backLabel}</a>
-              <h1 className="gd-hero__title">{term}</h1>
-              <p className="gd-hero__lead">{lead}</p>
+              <a href={_backHref} className="gd-hero__back">{_backLabel}</a>
+              <h1 className="gd-hero__title">{_term}</h1>
+              <p className="gd-hero__lead">{_lead}</p>
               <div className="gd-hero__meta">
-                <span className="gd-meta__chip">{category}</span>
+                <span className="gd-meta__chip">{_category}</span>
               </div>
             </div>
           </div>
@@ -521,8 +678,8 @@ export default function StateVaultForRestoration({
         <div className="gd-def-wrap">
           <div className="gd-container">
             <div className="gd-def">
-              <div className="gd-def__label">{definitionLabel}</div>
-              <p className="gd-def__body">{definitionBody}</p>
+              <div className="gd-def__label">{_definitionLabel}</div>
+              <p className="gd-def__body">{_definitionBody}</p>
             </div>
           </div>
         </div>
@@ -532,7 +689,7 @@ export default function StateVaultForRestoration({
           <div className="gd-container">
             <article
               className="gd-body"
-              dangerouslySetInnerHTML={{ __html: bodyHtml }}
+              dangerouslySetInnerHTML={{ __html: _bodyHtml }}
             />
           </div>
         </div>
@@ -562,14 +719,15 @@ export default function StateVaultForRestoration({
 }
 
 addPropertyControls(StateVaultForRestoration, {
-  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Glossary" },
-  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/glossary" },
-  term: { type: ControlType.String, title: "Term", defaultValue: "State Vault for Restoration" },
-  lead: { type: ControlType.String, title: "Lead", defaultValue: "The local-only store that turns AI output back into business-ready output.", displayTextArea: true },
-  category: { type: ControlType.String, title: "Category", defaultValue: "GLOSSARY" },
-  definitionLabel: { type: ControlType.String, title: "Definition Label", defaultValue: "Definition" },
-  definitionBody: { type: ControlType.String, title: "Definition Body", defaultValue: "The state vault is the local-only store that holds the token map between original operational identifiers and capsule tokens. It enables AI outputs to be restored back into the originating workflow with original identifiers — inside the enterprise — without the external LLM ever seeing the originals.", displayTextArea: true },
-  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "" },
+  term: { type: ControlType.String, title: "Term", defaultValue: "" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "" },
+  definitionLabel: { type: ControlType.String, title: "Definition Label", defaultValue: "" },
+  definitionBody: { type: ControlType.String, title: "Definition Body", defaultValue: "", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: "", displayTextArea: true },
   related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "" },
   related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "" },
   related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "" },

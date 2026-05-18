@@ -2,12 +2,15 @@
 // Generator: scripts/build-glossary-tsx.py
 // To regenerate: python3 scripts/build-glossary-tsx.py
 //
-// Self-contained Framer Code Component with full Props for translation/CMS.
-// No external imports — GlossaryDetail logic inlined for Framer cross-folder compatibility.
+// Self-contained Framer Code Component with locale dropdown (en/ko/de).
+// Embedded TRANSLATIONS dict drives default text per locale; individual Props
+// remain for per-instance overrides. Set `locale` in Framer Properties panel
+// to switch all text simultaneously.
 
 import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
+  locale?: "en" | "ko" | "de"
   backLabel?: string
   backHref?: string
   term?: string
@@ -55,15 +58,135 @@ const BODY_HTML = `<h2>Definition</h2>
 <h2>Reference statement</h2>
 <blockquote>Most enterprise AI projects do not fail at the model. They fail at the data the model cannot reach. Naming that as a blocked AI workflow — and unblocking it through an AI enablement data layer — is the entry point for regulated operations.</blockquote>`
 
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
+  en: {
+    backLabel: "← Glossary",
+    backHref: "/resources/glossary",
+    term: "Blocked AI Workflow",
+    lead: "The workflow exists. The data exists. The model exists. The integration is blocked because the data cannot leave.",
+    category: "GLOSSARY",
+    definitionLabel: "Definition",
+    definitionBody: "A blocked AI workflow is a business process that would benefit from AI but cannot be deployed because the operational data involved cannot be sent to an LLM under the regulatory or sovereignty profile of the workflow. The blocking is operational and regulatory, not capability.",
+    bodyHtml: BODY_HTML,
+    related1Label: "",
+    related1Href: "",
+    related2Label: "",
+    related2Href: "",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+  ko: {
+    backLabel: "← 용어 사전",
+    backHref: "/resources/glossary",
+    term: "차단된 AI 워크플로우",
+    lead: "워크플로우도 있습니다. 데이터도 있습니다. 모델도 있습니다. 데이터가 외부로 나갈 수 없기 때문에 통합이 차단됩니다.",
+    category: "GLOSSARY",
+    definitionLabel: "정의",
+    definitionBody: "차단된 AI 워크플로우란 AI를 활용하면 효과를 얻을 수 있지만, 관련 운영 데이터가 해당 워크플로우의 규제 또는 데이터 주권 프로파일상 LLM으로 전송될 수 없어 배포가 불가능한 비즈니스 프로세스입니다. 차단의 원인은 기능 부족이 아니라 운영·규제 제약입니다.",
+    bodyHtml: `<h2>구매 프레임으로서의 중요성</h2>
+
+<p>대부분의 기업 AI 대화는 기능 중심("모델이 X를 할 수 있는가?")으로 시작됩니다. 규제 환경의 운영에서 결정적 제약은 기능이 아닙니다 — 관련 운영 데이터를 모델에 투입할 수 없다는 것입니다. 그것이 바로 차단된 AI 워크플로우입니다. 이를 명확히 정의하면 구매 대화의 초점이 실제로 차단을 해제하는 레이어로 이동합니다.</p>
+
+<h2>공통 패턴</h2>
+
+<ul>
+<li>네트워크 로그가 규제 관할권 밖으로 나갈 수 없어 차단된 NOC RCA 워크플로우</li>
+<li>자산 참조 및 플랜트 구역 정보가 외부 엔드포인트에 도달할 수 없어 차단된 OT 취약점 분류</li>
+<li>PHI와 운영 패턴이 PII 필터링으로 안전하게 처리되지 않아 차단된 임상 워크플로우 지원</li>
+<li>망분리 환경이 모든 외부 전송을 금지하여 차단된 미션 요약 작성</li>
+<li>컴플라이언스 정책상 감사 이력 콘텐츠 전송이 금지되어 차단된 규제 금융 검토</li>
+</ul>
+
+<h2>차단된 워크플로우에서 운영 AI로</h2>
+
+<p>차단 해제 패턴은 산업 전반에 걸쳐 일관됩니다.</p>
+
+<ul>
+<li>워크플로우를 차단하는 운영 데이터 카테고리를 식별합니다.</li>
+<li>문서 구조 보존 캡슐화와 차등 프라이버시 기반 보호를 적용합니다.</li>
+<li>정책에 따라 두 가지 실행 경로 중 하나로 라우팅합니다.</li>
+<li>state vault를 통해 원래 워크플로우로 복원합니다.</li>
+</ul>
+
+<h2>참조 문장</h2>
+
+<blockquote><p>대부분의 기업 AI 프로젝트는 모델에서 실패하지 않습니다. 모델이 접근할 수 없는 데이터에서 실패합니다. 이를 차단된 AI 워크플로우로 정의하고 — 데이터 레이어를 통해 차단을 해제하는 것 — 이것이 규제 운영 환경의 진입점입니다.</p></blockquote>
+
+---`,
+    related1Label: "",
+    related1Href: "",
+    related2Label: "",
+    related2Href: "",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+  de: {
+    backLabel: "← Glossar",
+    backHref: "/resources/glossary",
+    term: "Blockierter KI-Workflow",
+    lead: "Der Prozess ist vorhanden, die Daten sind vorhanden, das Modell ist vorhanden. Die Integration scheitert daran, dass die operativen Daten die regulierte Umgebung nicht verlassen dürfen.",
+    category: "GLOSSAR",
+    definitionLabel: "Definition",
+    definitionBody: "Ein blockierter KI-Workflow ist ein Geschäftsprozess, der vom KI-Einsatz profitieren würde, jedoch nicht produktiv betrieben werden kann, weil die betreffenden operativen Daten unter den regulatorischen Anforderungen oder Datensouveränitätsvorgaben des Workflows nicht an ein LLM übermittelt werden dürfen. Die Blockierung ist operativer und regulatorischer Natur — nicht technologischer.",
+    bodyHtml: `<h2>Relevanz als Entscheidungsrahmen</h2>
+
+<p>Die meisten KI-Gespräche in Unternehmen beginnen mit der Frage nach Fähigkeiten: Kann das Modell X? In regulierten Betrieben ist die eigentliche Einschränkung selten die Modellkompetenz — sie liegt darin, dass die relevanten operativen Daten das Modell nicht erreichen dürfen. Das ist der blockierte KI-Workflow. Wer dieses Problem präzise benennt, lenkt die Beschaffungsdiskussion auf die Schicht, die die Blockierung tatsächlich aufhebt.</p>
+
+<h2>Typische Muster</h2>
+
+<ul>
+<li>NOC-RCA-Workflows blockiert, weil Netzwerkprotokolle die regulierte Jurisdiction nicht verlassen dürfen</li>
+<li>OT-Schwachstellentriage blockiert, weil Asset-Referenzen und Anlagenbereiche keinen externen Endpunkt erreichen dürfen</li>
+<li>Klinische Workflow-Unterstützung blockiert, weil PHI kombiniert mit operativen Mustern durch PII-Filterung allein nicht sicher verarbeitet werden kann</li>
+<li>Erstellung von Missionszusammenfassungen blockiert, weil Air-Gapped-Umgebungen jede externe Übertragung untersagen</li>
+<li>Regulierte Finanzprüfungen blockiert, weil die Compliance-Anforderungen die Übermittlung von Audit-Trail-Inhalten verbieten</li>
+</ul>
+
+<h2>Vom blockierten Workflow zum produktiven KI-Einsatz</h2>
+
+<p>Das Muster zur Aufhebung der Blockierung ist branchenübergreifend konsistent:</p>
+
+<ol>
+<li>Die operative Datenkategorie identifizieren, die den Workflow blockiert.</li>
+<li>Strukturerhaltende Kapsulierung mit Differential-Privacy-basiertem Schutz anwenden.</li>
+<li>Entsprechend der Richtlinie über einen der zwei Ausführungspfade weiterleiten.</li>
+<li>Über den State Vault in den ursprünglichen Workflow zurückführen.</li>
+</ol>
+
+<h2>Kernaussage</h2>
+
+<p>Die meisten KI-Projekte in Unternehmen scheitern nicht am Modell. Sie scheitern an den Daten, die das Modell nicht erreichen kann. Dieses Problem als blockierten KI-Workflow zu benennen — und die Blockierung über einen AI enablement data layer aufzuheben — ist der Einstiegspunkt für regulierte Betriebe.</p>`,
+    related1Label: "",
+    related1Href: "",
+    related2Label: "",
+    related2Href: "",
+    related3Label: "",
+    related3Href: "",
+    related4Label: "",
+    related4Href: "",
+    related5Label: "",
+    related5Href: "",
+  },
+}
+
 export default function BlockedAiWorkflow({
-  backLabel = "← Glossary",
-  backHref = "/resources/glossary",
-  term = "Blocked AI Workflow",
-  lead = "The workflow exists. The data exists. The model exists. The integration is blocked because the data cannot leave.",
-  category = "GLOSSARY",
-  definitionLabel = "Definition",
-  definitionBody = "A blocked AI workflow is a business process that would benefit from AI but cannot be deployed because the operational data involved cannot be sent to an LLM under the regulatory or sovereignty profile of the workflow. The blocking is operational and regulatory, not capability.",
-  bodyHtml = BODY_HTML,
+  locale = "en",
+  backLabel = "",
+  backHref = "",
+  term = "",
+  lead = "",
+  category = "",
+  definitionLabel = "",
+  definitionBody = "",
+  bodyHtml = "",
   related1Label = "",
   related1Href = "",
   related2Label = "",
@@ -75,20 +198,40 @@ export default function BlockedAiWorkflow({
   related5Label = "",
   related5Href = "",
 }: Props) {
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  const _backLabel = backLabel || T["backLabel"] || TRANSLATIONS.en["backLabel"]
+  const _backHref = backHref || T["backHref"] || TRANSLATIONS.en["backHref"]
+  const _term = term || T["term"] || TRANSLATIONS.en["term"]
+  const _lead = lead || T["lead"] || TRANSLATIONS.en["lead"]
+  const _category = category || T["category"] || TRANSLATIONS.en["category"]
+  const _definitionLabel = definitionLabel || T["definitionLabel"] || TRANSLATIONS.en["definitionLabel"]
+  const _definitionBody = definitionBody || T["definitionBody"] || TRANSLATIONS.en["definitionBody"]
+  const _bodyHtml = bodyHtml || T["bodyHtml"] || TRANSLATIONS.en["bodyHtml"]
+  const _related1Label = related1Label || T["related1Label"] || TRANSLATIONS.en["related1Label"]
+  const _related1Href = related1Href || T["related1Href"] || TRANSLATIONS.en["related1Href"]
+  const _related2Label = related2Label || T["related2Label"] || TRANSLATIONS.en["related2Label"]
+  const _related2Href = related2Href || T["related2Href"] || TRANSLATIONS.en["related2Href"]
+  const _related3Label = related3Label || T["related3Label"] || TRANSLATIONS.en["related3Label"]
+  const _related3Href = related3Href || T["related3Href"] || TRANSLATIONS.en["related3Href"]
+  const _related4Label = related4Label || T["related4Label"] || TRANSLATIONS.en["related4Label"]
+  const _related4Href = related4Href || T["related4Href"] || TRANSLATIONS.en["related4Href"]
+  const _related5Label = related5Label || T["related5Label"] || TRANSLATIONS.en["related5Label"]
+  const _related5Href = related5Href || T["related5Href"] || TRANSLATIONS.en["related5Href"]
+
   const relatedItems = [
-    { label: related1Label, href: related1Href },
-    { label: related2Label, href: related2Href },
-    { label: related3Label, href: related3Href },
-    { label: related4Label, href: related4Href },
-    { label: related5Label, href: related5Href },
+    { label: _related1Label, href: _related1Href },
+    { label: _related2Label, href: _related2Href },
+    { label: _related3Label, href: _related3Href },
+    { label: _related4Label, href: _related4Href },
+    { label: _related5Label, href: _related5Href },
   ].filter((r) => r.label && r.href)
 
   // JSON-LD: DefinedTerm schema built from Props
   const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
-    "name": term,
-    "description": definitionBody,
+    "name": _term,
+    "description": _definitionBody,
     "inDefinedTermSet": "https://llmcapsule.ai/glossary",
   })
 
@@ -360,7 +503,7 @@ export default function BlockedAiWorkflow({
 
         .gd-body tr:last-child td { border-bottom: none; }
 
-        /* Callout box (for <div class="callout"> inside bodyHtml) */
+        /* Callout box (for <div class="callout"> inside _bodyHtml) */
         .gd-body .callout {
           padding: 20px 24px;
           background-color: var(--c-primary-soft, #eeebfe);
@@ -502,11 +645,11 @@ export default function BlockedAiWorkflow({
         <section className="gd-hero">
           <div className="gd-container">
             <div className="gd-hero__inner">
-              <a href={backHref} className="gd-hero__back">{backLabel}</a>
-              <h1 className="gd-hero__title">{term}</h1>
-              <p className="gd-hero__lead">{lead}</p>
+              <a href={_backHref} className="gd-hero__back">{_backLabel}</a>
+              <h1 className="gd-hero__title">{_term}</h1>
+              <p className="gd-hero__lead">{_lead}</p>
               <div className="gd-hero__meta">
-                <span className="gd-meta__chip">{category}</span>
+                <span className="gd-meta__chip">{_category}</span>
               </div>
             </div>
           </div>
@@ -516,8 +659,8 @@ export default function BlockedAiWorkflow({
         <div className="gd-def-wrap">
           <div className="gd-container">
             <div className="gd-def">
-              <div className="gd-def__label">{definitionLabel}</div>
-              <p className="gd-def__body">{definitionBody}</p>
+              <div className="gd-def__label">{_definitionLabel}</div>
+              <p className="gd-def__body">{_definitionBody}</p>
             </div>
           </div>
         </div>
@@ -527,7 +670,7 @@ export default function BlockedAiWorkflow({
           <div className="gd-container">
             <article
               className="gd-body"
-              dangerouslySetInnerHTML={{ __html: bodyHtml }}
+              dangerouslySetInnerHTML={{ __html: _bodyHtml }}
             />
           </div>
         </div>
@@ -557,14 +700,15 @@ export default function BlockedAiWorkflow({
 }
 
 addPropertyControls(BlockedAiWorkflow, {
-  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Glossary" },
-  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/glossary" },
-  term: { type: ControlType.String, title: "Term", defaultValue: "Blocked AI Workflow" },
-  lead: { type: ControlType.String, title: "Lead", defaultValue: "The workflow exists. The data exists. The model exists. The integration is blocked because the data cannot leave.", displayTextArea: true },
-  category: { type: ControlType.String, title: "Category", defaultValue: "GLOSSARY" },
-  definitionLabel: { type: ControlType.String, title: "Definition Label", defaultValue: "Definition" },
-  definitionBody: { type: ControlType.String, title: "Definition Body", defaultValue: "A blocked AI workflow is a business process that would benefit from AI but cannot be deployed because the operational data involved cannot be sent to an LLM under the regulatory or sovereignty profile of the workflow. The blocking is operational and regulatory, not capability.", displayTextArea: true },
-  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "" },
+  term: { type: ControlType.String, title: "Term", defaultValue: "" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "" },
+  definitionLabel: { type: ControlType.String, title: "Definition Label", defaultValue: "" },
+  definitionBody: { type: ControlType.String, title: "Definition Body", defaultValue: "", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: "", displayTextArea: true },
   related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "" },
   related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "" },
   related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "" },
