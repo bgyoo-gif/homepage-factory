@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-18 16:40:50",
+  "generated": "2026-05-18 16:49:06",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1160,6 +1160,16 @@
           "modified": "2026-04-21"
         },
         {
+          "name": "chatgpt-teams-ciso-control-gap-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/chatgpt-teams-ciso-control-gap-b-type.html",
+          "modified": "2026-05-18"
+        },
+        {
+          "name": "chatgpt-teams-ciso-control-gap-bodyhtml.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/chatgpt-teams-ciso-control-gap-bodyhtml.html",
+          "modified": "2026-05-18"
+        },
+        {
           "name": "chatgpt-teams-korea-public-sector-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/chatgpt-teams-korea-public-sector-b-type.html",
           "modified": "2026-05-18"
@@ -1445,6 +1455,16 @@
           "name": "architecture-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/architecture-spec.md",
           "modified": "2026-04-09"
+        },
+        {
+          "name": "chatgpt-teams-ciso-control-gap-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/chatgpt-teams-ciso-control-gap-qa-report.md",
+          "modified": "2026-05-18"
+        },
+        {
+          "name": "chatgpt-teams-ciso-control-gap-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/chatgpt-teams-ciso-control-gap-spec.md",
+          "modified": "2026-05-18"
         },
         {
           "name": "chatgpt-teams-korea-public-sector-qa-report.md",
@@ -2956,6 +2976,11 @@
         {
           "name": "AiOnNetworkOperationsData.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/AiOnNetworkOperationsData.tsx",
+          "modified": "2026-05-18"
+        },
+        {
+          "name": "ChatgptTeamsCisoControlGap.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/ChatgptTeamsCisoControlGap.tsx",
           "modified": "2026-05-18"
         },
         {
