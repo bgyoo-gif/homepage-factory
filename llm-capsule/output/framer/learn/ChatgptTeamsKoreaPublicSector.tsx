@@ -36,16 +36,16 @@ interface Props {
 }
 
 const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그대로 붙여넣기 -->
-<!-- 일반 HTML 태그(h2, p, strong, table)만 사용 — LearnArticle의 dangerouslySetInnerHTML에 그대로 들어감 -->
+<!-- 일반 HTML 태그(h2, p, strong, table, ul)만 사용 — LearnArticle의 dangerouslySetInnerHTML에 그대로 들어감 -->
 
-<h2>1. 첫 번째 빈틈 — CSAP 인증의 부재</h2>
-<p>「클라우드컴퓨팅 발전 및 이용자 보호에 관한 법률」(이하 클라우드컴퓨팅법)과 「전자정부법」은 공공기관이 민간 클라우드 서비스를 이용할 때 <strong>클라우드 보안인증(CSAP)</strong>을 받은 서비스를 사용하도록 규정합니다. CSAP는 한국인터넷진흥원(KISA)이 운영하는 인증 체계로, 데이터 저장 위치·접근 통제·암호화·인력 검증 등 한국 공공 영역의 요구사항을 반영합니다.</p>
-<p>ChatGPT Teams는 CSAP 인증을 받지 않았습니다. OpenAI가 SOC 2와 ISO 27001을 보유하고 있다 해도 이는 미국·국제 표준이지 한국 공공 영역의 인증이 아닙니다. 따라서 원칙적으로 공공기관은 ChatGPT Teams를 업무에 도입하기 어렵습니다.</p>
-<p>예외 조항이 존재하기는 합니다. 비민감 정보·단순 업무 보조에 한해 자체 보안성 검토 후 사용하는 우회로입니다. 그러나 2024년 이후 공공부문 디지털 주권 강조 흐름에서 이 예외는 점점 좁아지고 있습니다. 감사원이 "비민감 정보의 범위"를 사후 판단할 수 있고, 그 판단이 도입 시점의 판단과 다를 때 책임은 도입 결정자에게 돌아옵니다.</p>
+<h2>1. CSAP 인증의 적용성</h2>
+<p>「클라우드컴퓨팅 발전 및 이용자 보호에 관한 법률」과 관련 정책에 따라, 공공기관은 민간 클라우드 서비스를 이용할 때 <strong>클라우드 보안인증(CSAP)</strong>을 받은 서비스를 우선 사용하도록 안내됩니다. CSAP는 한국인터넷진흥원(KISA)이 운영하는 인증 체계로, 데이터 저장 위치·접근 통제·암호화·인력 관리 등 한국 공공 영역의 요구사항을 반영합니다.</p>
+<p>현재까지 공개된 정보 기준으로 ChatGPT Teams는 CSAP 인증을 받지 않은 것으로 보입니다. OpenAI가 SOC 2와 ISO 27001 같은 국제 표준 인증을 보유하고 있지만, 이들은 한국 공공 영역의 인증 체계와는 별개입니다.</p>
+<p>CSAP 미인증 서비스를 공공기관에서 활용하려면 자체 보안성 검토 절차가 필요할 수 있으며, 그 검토 결과에 대한 책임 소재가 도입 기관에 남게 됩니다. 도입 시점의 보안성 판단과 사후 감사 시점의 판단이 다를 가능성도 함께 고려해야 하는 영역입니다.</p>
 
-<h2>2. 두 번째 빈틈 — 데이터 국외이전과 개정 개인정보보호법</h2>
-<p>2024년 시행된 개정 「개인정보보호법」은 개인정보의 국외이전 규제를 한층 강화했습니다. 정보주체 동의, 국외이전 사실의 명시적 고지, 이전 받는 자의 안전성 확보 조치 등이 요구됩니다.</p>
-<p>여기서 자주 혼동되는 지점이 있습니다. OpenAI의 "Teams 플랜은 학습에 사용하지 않는다"는 약속과 "데이터가 국외로 이전되지 않는다"는 명제는 <strong>전혀 다른 차원</strong>입니다. 학습 미사용은 모델 파라미터 업데이트에 쓰지 않는다는 뜻일 뿐, 데이터 전송·저장·처리는 여전히 OpenAI 인프라(주로 미국)에서 이루어집니다. 즉 ChatGPT Teams에 입력되는 모든 데이터는 정의상 <strong>국외이전된 데이터</strong>입니다.</p>
+<h2>2. 데이터 국외이전과 개인정보보호법</h2>
+<p>개정 「개인정보보호법」은 개인정보의 국외이전 규제를 강화했습니다. 정보주체 동의, 국외이전 사실의 명시적 고지, 이전 받는 자의 안전성 확보 조치 등이 요구됩니다.</p>
+<p>여기서 자주 혼동되는 지점이 있습니다. OpenAI의 "Teams 플랜은 학습에 사용하지 않는다"는 약속과 "데이터가 국외로 이전되지 않는다"는 명제는 <strong>서로 다른 차원</strong>입니다. 학습 미사용은 모델 파라미터 업데이트에 쓰지 않는다는 의미이며, 데이터의 전송·저장·처리는 여전히 OpenAI 인프라(주로 미국)에서 이루어집니다. 즉 ChatGPT Teams에 입력되는 모든 데이터는 정의상 <strong>국외이전된 데이터</strong>입니다.</p>
 <p>두 개념의 차이를 정리하면 다음과 같습니다.</p>
 
 <table>
@@ -64,123 +64,84 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
     </tr>
     <tr>
       <td><strong>데이터 위치</strong></td>
-      <td>미국 OpenAI 인프라</td>
-      <td>미국 OpenAI 인프라</td>
-    </tr>
-    <tr>
-      <td><strong>차단되는 행위</strong></td>
-      <td>학습 데이터로의 재사용</td>
-      <td>(해당 없음 — 이전 자체는 발생)</td>
+      <td>OpenAI 인프라(국외)</td>
+      <td>OpenAI 인프라(국외)</td>
     </tr>
     <tr>
       <td><strong>법적 함의</strong></td>
-      <td>영업비밀 노출 위험 일부 완화</td>
-      <td>정보주체 동의·고지 의무 발생</td>
-    </tr>
-    <tr>
-      <td><strong>공공기관 입장에서의 의미</strong></td>
-      <td>마케팅 약속</td>
-      <td>법령 위반 소지</td>
+      <td>학습 데이터로의 재사용 방지</td>
+      <td>정보주체 동의·고지 등 의무 발생</td>
     </tr>
   </tbody>
 </table>
 
-<p>공공기관이 민원인 정보·내부 인사 정보·정책 검토 자료를 ChatGPT Teams에 입력한다면, 이는 개인정보보호법상 국외이전에 해당합니다. 정보주체별 동의를 받지 않은 상태에서의 입력은 법 위반 소지가 있습니다. 일괄 동의로 갈음하려 해도 "구체적이고 분리된 동의"라는 요건을 충족하기 어렵습니다.</p>
-<p>이 지점은 SaaS 형태의 글로벌 LLM이 한국 공공 영역에서 갖는 가장 근본적인 제약입니다.</p>
+<p>공공기관이 민원인 정보·내부 인사 정보·정책 검토 자료를 ChatGPT Teams에 입력한다면, 이는 개인정보보호법상 국외이전에 해당하는 행위로 검토될 가능성이 있습니다. 정보주체별 동의 절차가 어떻게 마련되어 있는지, 일괄 동의로 갈음 가능한지(법은 "구체적이고 분리된 동의"를 요구합니다)에 대한 사전 정리가 필요한 영역입니다.</p>
 
-<h2>3. 세 번째 빈틈 — N²SF 등급 체계와의 충돌</h2>
-<p>국가정보원이 운영하는 <strong>N²SF(National Network Security Framework)</strong>는 공공 정보를 C(Confidential)·S(Secret)·TS(Top Secret) 등급으로 분류하고, 각 등급에 따라 처리 가능한 시스템 환경을 차등 규정합니다. S 등급 이상 정보는 인터넷 망과 분리된 환경에서 처리되어야 하며, 외부 클라우드 서비스 사용은 원칙적으로 금지됩니다.</p>
-<p>등급별 처리 환경 요건과 ChatGPT Teams의 적합성을 매핑하면 다음과 같습니다.</p>
+<h2>3. N²SF 등급 체계와의 정합성</h2>
+<p>국가정보원이 운영하는 <strong>N²SF(National Network Security Framework)</strong>는 공공 정보를 다음 세 등급으로 분류하고, 등급별로 처리 가능한 환경을 규정합니다.</p>
+
+<ul>
+  <li><strong>C (Classified)</strong> — 외부 유출 시 중대한 영향. 개인정보·국가 기밀 등</li>
+  <li><strong>S (Sensitive)</strong> — 외부 공개 시 업무·이해관계에 영향 있는 정보. 내부 검토·정책 초안·인사 자료 등</li>
+  <li><strong>O (Open)</strong> — 외부 공개 가능 정보. 보도자료·법령·공시 자료 등</li>
+</ul>
+
+<p>N²SF는 활용 환경을 세 가지 모델로 정의합니다. 모델 1은 내부망 폐쇄형(자체 sLLM 등), 모델 2는 외부 상용 LLM 활용, 모델 3은 하이브리드 환경입니다. ChatGPT Teams는 모델 2에 해당합니다.</p>
+<p>모델 2 가이드라인에 따르면 <strong>C 등급 정보는 외부 LLM 활용 대상에서 제외</strong>되며, <strong>S 등급 정보는 기관의 자체 위험평가 절차를 거친 후에 활용 가능</strong>합니다. <strong>O 등급 정보는 원칙적으로 활용 가능</strong>합니다.</p>
+<p>이를 ChatGPT Teams 활용 관점에서 정리하면 다음과 같습니다.</p>
 
 <table>
   <thead>
     <tr>
-      <th>등급</th>
-      <th>허용 처리 환경</th>
-      <th>ChatGPT Teams 적합성</th>
-      <th>비고</th>
+      <th>N²SF 등급</th>
+      <th>모델 2 활용 가능성</th>
+      <th>ChatGPT Teams 활용 시 검토 사항</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>C (Confidential)</strong></td>
-      <td>일반 업무망 + 보안성 검토 통과 시 외부 클라우드</td>
-      <td>△ 조건부</td>
-      <td>CSAP 미인증 이슈 잔존</td>
+      <td><strong>C (Classified)</strong></td>
+      <td>활용 대상 외</td>
+      <td>입력 자체가 정합성 문제</td>
     </tr>
     <tr>
-      <td><strong>S (Secret)</strong></td>
-      <td>인터넷 망 분리 환경</td>
-      <td>✗ 부적합</td>
-      <td>외부 클라우드 원칙적 금지</td>
+      <td><strong>S (Sensitive)</strong></td>
+      <td>자체 위험평가 후 가능</td>
+      <td>위험평가 절차 정비 + CSAP·국외이전 동시 검토</td>
     </tr>
     <tr>
-      <td><strong>TS (Top Secret)</strong></td>
-      <td>폐쇄망·전용 인프라</td>
-      <td>✗ 부적합</td>
-      <td>외부 서비스 사용 불가</td>
+      <td><strong>O (Open)</strong></td>
+      <td>원칙적 가능</td>
+      <td>CSAP·국외이전 이슈는 별도 검토 필요</td>
     </tr>
   </tbody>
 </table>
 
-<p>문제는 <strong>실무자가 자신이 입력하는 정보의 등급을 항상 정확히 인식하지는 못한다</strong>는 점입니다. 보고서 초안을 정리하다가 회의 메모를 붙여넣고, 그 안에 S 등급에 해당하는 정책 검토 내용이 포함되어 있는 경우는 흔합니다. ChatGPT Teams의 관리자 콘솔은 이 입력을 사전에 식별하지 못합니다. 사용자가 의식하지 못한 사이 S 등급 정보가 외부 클라우드로 이전되는 사고가 발생할 수 있고, 책임 소재 규명은 사후적으로만 가능합니다.</p>
-<p>이는 단순한 사용자 교육으로 해결되지 않는 구조적 문제입니다. 등급 분류는 정보 자체의 속성이지 사용자의 인식 여부에 좌우되지 않기 때문입니다.</p>
+<p>실무상 더 어려운 지점은 <strong>실무자가 자신이 입력하는 정보의 등급을 항상 정확히 인식하기 어렵다</strong>는 점입니다. 보고서 초안을 정리하다가 회의 메모를 붙여넣고, 그 안에 C 등급 또는 S 등급에 해당하는 내용이 포함되는 경우가 있을 수 있습니다. ChatGPT Teams의 관리자 콘솔은 입력 내용의 등급을 사전에 식별하는 기능을 제공하지는 않습니다. 등급 분류는 정보 자체의 속성이며, 사용자 인식 여부와 별개로 작동하는 영역입니다.</p>
+<p>N²SF와 모델 2에 대한 자세한 내용은 별도 글에 정리되어 있습니다: <a href="/resources/learn/what-is-n2sf">N²SF란 무엇인가</a>, <a href="/resources/learn/n2sf-model-2-explained">N²SF 모델 2 완벽 해설</a>.</p>
 
-<h2>4. 네 번째 빈틈 — 경영평가와 감사 관점의 역설</h2>
-<p>2026년부터 공공기관 경영평가에 디지털 혁신·생성형 AI 활용도 항목이 가점으로 반영될 가능성이 높아지고 있습니다. 표면적으로는 "생성형 AI를 적극 도입하라"는 신호입니다. 그러나 같은 시기 감사원·국가정보원의 보안 감사는 외부 클라우드 LLM 사용에 대한 통제를 강화하고 있습니다.</p>
-<p>이 두 흐름은 모순적으로 보이지만 같은 방향을 가리킵니다. <strong>"사용 안 함"보다 "통제된 사용"이 평가에서 더 높은 점수를 받는다</strong>는 점입니다. 즉 생성형 AI를 도입하되, 그 도입이 한국의 법령·인증·등급 체계 안에서 이루어졌음을 입증할 수 있어야 합니다.</p>
-<p>ChatGPT Teams의 경우 도입 자체가 위 1~3번 항목에서 입증 어려움에 부딪힙니다. 따라서 경영평가 가점을 노린 도입이 오히려 감사 리스크로 전환되는 역설이 발생합니다. "AI를 도입했다"는 사실보다 <strong>"적합한 방식으로 도입했다"</strong>는 입증 가능성이 더 중요하다는 점이 점점 분명해지고 있습니다.</p>
+<h2>4. 경영평가 가점과 감사 관점</h2>
+<p>2026년 공공기관·지방공기업 경영평가편람은 "전략 및 혁신" 분야의 "경영혁신 추진 활동"에서 AI 활용 등 디지털 기반 경영 혁신을 평가합니다. 자세한 내용은 별도 글에 정리되어 있습니다: <a href="/resources/learn/public-sector-2026-management-evaluation-ai-incentive">2026 경영평가 'AI 활용 등 혁신' 가점 분석</a>.</p>
+<p>이는 표면적으로 "생성형 AI를 적극 도입하라"는 신호로 읽히지만, 평가 기준 안에 "AI 윤리·정보보안 가이드라인을 고려한 기획 수준"과 "관련 법·제도 준수요건 반영 여부"가 포함되어 있다는 점을 함께 보아야 합니다. 즉 단순 도입 사실보다 <strong>도입의 정합성</strong>이 평가 대상입니다.</p>
+<p>ChatGPT Teams 도입의 경우 앞서 짚은 CSAP·국외이전·N²SF 정합성 검토 결과가 평가 자료의 일부가 됩니다. 도입 자체가 가점으로 직결되기보다, 도입 방식의 정합성이 어떻게 입증되는지가 가점 인정의 기준이 될 가능성이 큽니다.</p>
 
-<h2>5. 그렇다면 무엇이 가능할까</h2>
-<p>이상의 네 가지 빈틈은 ChatGPT Teams의 결함을 지적하기 위한 것이 아닙니다. OpenAI는 글로벌 SaaS 모델로 설계된 제품이며, 그 자체로는 잘 작동합니다. 다만 그 설계가 한국 공공 영역의 규제 환경과 본질적으로 맞지 않을 뿐입니다.</p>
-<p>대안의 방향은 세 가지로 정리됩니다. 각각이 앞서 분석한 네 가지 빈틈을 어떻게 해결하는지 정리하면 다음과 같습니다.</p>
+<h2>그렇다면 어떤 대안이 있을까</h2>
+<p>위 네 가지 검토 지점은 ChatGPT Teams를 부정하기 위한 것이 아닙니다. OpenAI의 제품은 글로벌 SaaS 모델로 설계되었고, 그 설계 자체로는 잘 작동합니다. 다만 그 설계가 한국 공공 영역의 규제 환경과 본질적 차이를 가집니다.</p>
+<p>한국 공공 영역에서 검토 가능한 대안의 방향은 크게 세 가지입니다.</p>
+<p><strong>옵션 A — CSAP 인증을 받은 국내 LLM 서비스 활용</strong>. 국내 클라우드 환경에서 제공되는 LLM 서비스를 활용하는 방식입니다. CSAP·국외이전 이슈는 일정 수준 해결되지만, S 등급 자체 위험평가 절차와 사용자 부주의 입력에 대한 사전 방어는 별도 장치가 필요합니다.</p>
+<p><strong>옵션 B — 자체 sLLM 구축(모델 1)</strong>. 모델 가중치를 기관 내부 인프라에 두고 운영하는 방식입니다. CSAP·국외이전·N²SF 등급 처리 이슈가 동시에 해결됩니다. 다만 모델 학습·운영·고도화에 상당한 자체 역량과 비용이 필요하며, 모델 성능이 외부 상용 LLM에 비해 제한적일 수 있습니다. 자세한 트레이드오프는 별도 글에서 다뤘습니다: <a href="/resources/learn/sllm-self-hosted-reality-check">sLLM 자체구축, 정말 답일까</a>.</p>
+<p><strong>옵션 C — 외부 LLM + 보호 레이어 결합</strong>. 외부 상용 LLM 앞단에 입력 정보의 가명화·보호 처리를 수행하는 레이어를 배치하는 방식입니다. 외부로 전송되는 데이터의 형태가 원문이 아닌 가명 처리된 상태가 되며, 응답은 내부망에서 원본 맥락으로 복원됩니다. N²SF 모델 2의 "원문 외부 전송 회피" 원칙과 부합하는 구조입니다.</p>
+<p>세 옵션 모두 각자의 트레이드오프가 있습니다. 자세한 비교는 별도 글에 정리되어 있습니다: <a href="/resources/learn/public-sector-genai-three-approaches">공공기관 AI 도입의 세 가지 길</a>.</p>
+<p>도입 검토 시 중요한 것은 "어느 옵션이 절대적으로 우수한가"가 아니라, 기관의 활용 우선순위·예산·운영 역량에 비추어 어느 옵션이 적합한지를 자체 위험평가 과정에서 정리하는 것입니다. 그 정리 결과 자체가 경영평가 가점 인정의 기반 자료가 됩니다.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>대안</th>
-      <th>CSAP 인증</th>
-      <th>국외이전 회피</th>
-      <th>N²SF S 등급 처리</th>
-      <th>사용자 실수 방어</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>ChatGPT Teams (참조)</strong></td>
-      <td>✗</td>
-      <td>✗</td>
-      <td>✗</td>
-      <td>✗</td>
-    </tr>
-    <tr>
-      <td><strong>① CSAP 인증 국내 LLM</strong> (예: 하이퍼클로바X, 솔라)</td>
-      <td>○</td>
-      <td>○</td>
-      <td>△</td>
-      <td>✗</td>
-    </tr>
-    <tr>
-      <td><strong>② 온프레미스·프라이빗 배포</strong></td>
-      <td>○</td>
-      <td>○</td>
-      <td>○</td>
-      <td>✗</td>
-    </tr>
-    <tr>
-      <td><strong>③ 온프레미스 + 사전 마스킹</strong></td>
-      <td>○</td>
-      <td>○</td>
-      <td>○</td>
-      <td>○</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>첫째, <strong>CSAP 인증을 받은 국내 LLM 서비스</strong>를 활용하는 방식입니다. 네이버 하이퍼클로바X, 업스테이지 솔라 등이 공공 영역 적합성을 갖춰가고 있습니다. CSAP·국외이전 문제는 해결되지만, S 등급 이상 정보 처리와 사용자의 부주의한 입력은 여전히 과제로 남습니다.</p>
-<p>둘째, <strong>온프레미스 또는 프라이빗 클라우드 배포</strong>입니다. 모델 가중치를 기관 내부 인프라에 두고, 데이터를 외부로 내보내지 않는 구조입니다. 국외이전·CSAP·N²SF S 등급 문제까지 동시에 해결할 수 있습니다. 다만 사용자가 의식하지 못한 채 입력하는 등급 정보·개인정보에 대한 사전 방어는 별도 장치가 없으면 작동하지 않습니다.</p>
-<p>셋째, 두 번째 방식에 <strong>입력 단계 마스킹</strong>을 결합하는 접근입니다. 사용자가 의식하지 못한 채 등급 정보·개인정보를 입력하더라도 시스템이 사전에 식별·치환합니다. 예컨대 큐빅의 LLM Capsule처럼 온프레미스 배포와 사전 마스킹을 결합한 솔루션은, N²SF S 등급 정보의 처리 가능성과 사용자 실수에 대한 구조적 방어를 동시에 제공한다는 점에서 한국 공공 영역의 요구사항을 정면으로 겨냥한 설계입니다.</p>
-<p>ChatGPT Teams가 "기업용 안전 옵션"이라는 마케팅은 글로벌 시장에서는 유효합니다. 그러나 한국 공공 영역의 의사결정자에게 더 중요한 질문은 <strong>"안전한가"가 아니라 "한국에서 합법적으로 운용 가능한가"</strong>입니다. 이 질문에 답하기 위해서는 보안 기술의 수준이 아니라 규제 환경과의 적합성을 따져야 합니다. 두 질문은 다른 질문입니다.</p>
+<h2>참고 자료</h2>
+<ul>
+  <li>국가정보원, 「N²SF 보안 가이드라인 1.0」 및 부록 2, 2025.9</li>
+  <li>기획재정부, 「2026년도 공공기관 경영평가편람」, 2026.1</li>
+  <li>행정안전부, 「2026년도 지방공기업 경영평가편람」, 2026.1</li>
+  <li>한국인터넷진흥원(KISA), 「클라우드 보안인증제(CSAP) 안내」</li>
+  <li>OpenAI, "ChatGPT Enterprise &amp; Teams" 제품 공개 자료</li>
+</ul>
 `
 
 const FAQ_JSON_LD = ``
@@ -189,18 +150,18 @@ export default function ChatgptTeamsKoreaPublicSector({
   backLabel = "← Learn",
   backHref = "/resources/learn",
   title = "안전하다는 ChatGPT Teams, 한국 공공 영역에서 사용해도 괜찮을까",
-  lead = "ChatGPT Teams의 보안 마케팅이 한국 공공 영역에서 작동하지 않는 이유. CSAP·개인정보보호법·N²SF·감사 체계와의 구조적 불일치를 분석합니다.",
+  lead = "ChatGPT Teams의 보안 마케팅이 한국 공공 영역에서 어떤 빈틈을 가지는지 분석합니다. CSAP·개인정보보호법·N²SF 모델 2·경영평가 체계와의 적합성을 짚고, 공공기관이 검토 가능한 대안 방향을 정리합니다.",
   category = "정책 분석",
-  readTime = "14분 읽기",
+  readTime = "12분 읽기",
   dateUpdated = "2026년 5월 업데이트",
   tldrLabel = "TL;DR",
-  tldrBody = "ChatGPT Teams의 보안 마케팅(학습에 안 씀, SOC 2 인증)은 글로벌 시장에서는 유효하지만 한국 공공 영역에서는 작동하지 않습니다. CSAP 미인증, 개인정보보호법상 국외이전 해당, N²SF 등급 체계 충돌, 감사 관점의 역설 — 네 가지 구조적 빈틈이 존재합니다. 대안은 CSAP 인증 국내 LLM, 온프레미스 배포, 그리고 온프레미스 + 사전 마스킹 결합이며, 셋 중 사용자 실수까지 방어하는 마지막 방식만이 한국 공공 영역의 요구사항을 정면으로 겨냥합니다.",
+  tldrBody = "ChatGPT Teams는 글로벌 기준으로는 진일보한 보안 옵션을 제공합니다. 다만 한국 공공 영역에서는 별도의 적합성 검토가 필요합니다. CSAP 인증의 적용성, 개인정보보호법상 국외이전, N²SF 모델 2 등급 체계, 경영평가·감사 관점 — 네 가지 적합성 지점을 짚습니다. 검토 가능한 대안 방향은 (A) CSAP 인증 국내 LLM, (B) 자체 sLLM 구축(모델 1), (C) 외부 LLM + 보호 레이어 결합 세 가지이며, 기관의 활용 우선순위·운영 역량에 따라 적합성이 달라집니다.",
   bodyHtml = BODY_HTML,
   canonicalUrl = "https://llmcapsule.ai/resources/learn/chatgpt-teams-korea-public-sector",
   datePublished = "2026-05-01",
-  dateModified = "2026-05-01",
+  dateModified = "2026-05-18",
   inLanguage = "ko-KR",
-  breadcrumbLabel = "공공기관의 ChatGPT Teams 사용, 감사에서 살아남을 수 있을까",
+  breadcrumbLabel = "공공기관의 ChatGPT Teams 사용 — 한국 규제 환경 적합성 분석",
   faqJsonLd = FAQ_JSON_LD,
   relatedSectionLabel = "함께 읽으면 좋은 글",
   related1Title = "공공기관 생성형 AI 도입의 세 가지 길",
@@ -777,18 +738,18 @@ addPropertyControls(ChatgptTeamsKoreaPublicSector, {
   backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
   backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
   title: { type: ControlType.String, title: "Title", defaultValue: "안전하다는 ChatGPT Teams, 한국 공공 영역에서 사용해도 괜찮을까" },
-  lead: { type: ControlType.String, title: "Lead", defaultValue: "ChatGPT Teams의 보안 마케팅이 한국 공공 영역에서 작동하지 않는 이유. CSAP·개인정보보호법·N²SF·감사 체계와의 구조적 불일치를 분석합니다.", displayTextArea: true },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "ChatGPT Teams의 보안 마케팅이 한국 공공 영역에서 어떤 빈틈을 가지는지 분석합니다. CSAP·개인정보보호법·N²SF 모델 2·경영평가 체계와의 적합성을 짚고, 공공기관이 검토 가능한 대안 방향을 정리합니다.", displayTextArea: true },
   category: { type: ControlType.String, title: "Category", defaultValue: "정책 분석" },
-  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "14분 읽기" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "12분 읽기" },
   dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "2026년 5월 업데이트" },
   tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
-  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "ChatGPT Teams의 보안 마케팅(학습에 안 씀, SOC 2 인증)은 글로벌 시장에서는 유효하지만 한국 공공 영역에서는 작동하지 않습니다. CSAP 미인증, 개인정보보호법상 국외이전 해당, N²SF 등급 체계 충돌, 감사 관점의 역설 — 네 가지 구조적 빈틈이 존재합니다. 대안은 CSAP 인증 국내 LLM, 온프레미스 배포, 그리고 온프레미스 + 사전 마스킹 결합이며, 셋 중 사용자 실수까지 방어하는 마지막 방식만이 한국 공공 영역의 요구사항을 정면으로 겨냥합니다.", displayTextArea: true },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "ChatGPT Teams는 글로벌 기준으로는 진일보한 보안 옵션을 제공합니다. 다만 한국 공공 영역에서는 별도의 적합성 검토가 필요합니다. CSAP 인증의 적용성, 개인정보보호법상 국외이전, N²SF 모델 2 등급 체계, 경영평가·감사 관점 — 네 가지 적합성 지점을 짚습니다. 검토 가능한 대안 방향은 (A) CSAP 인증 국내 LLM, (B) 자체 sLLM 구축(모델 1), (C) 외부 LLM + 보호 레이어 결합 세 가지이며, 기관의 활용 우선순위·운영 역량에 따라 적합성이 달라집니다.", displayTextArea: true },
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
   canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/chatgpt-teams-korea-public-sector" },
   datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2026-05-01" },
-  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2026-05-01" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2026-05-18" },
   inLanguage: { type: ControlType.String, title: "Language", defaultValue: "ko-KR" },
-  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "공공기관의 ChatGPT Teams 사용, 감사에서 살아남을 수 있을까" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "공공기관의 ChatGPT Teams 사용 — 한국 규제 환경 적합성 분석" },
   faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
   relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "함께 읽으면 좋은 글" },
   related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "공공기관 생성형 AI 도입의 세 가지 길" },
