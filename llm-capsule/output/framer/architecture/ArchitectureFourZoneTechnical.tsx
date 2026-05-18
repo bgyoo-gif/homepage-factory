@@ -3,13 +3,15 @@
 // To regenerate: python3 scripts/build-architecture-4zone-tsx.py
 //
 // Self-contained Framer Code Component for the 4-zone technical architecture page.
-// ALL translatable text inside the diagram is exposed as Props. Demo data
-// (David Lawson, CS-4203, tokenized samples), SVG icons, short ID labels
+// Single file with locale dropdown (en/ko/de). Internal TRANSLATIONS dictionary
+// drives default text per locale; individual Props remain for per-instance overrides.
+// Demo data (David Lawson, CS-4203, tokenized samples), SVG icons, short ID labels
 // (DB1/DB2/DB3, IN/PROCESS/OUT, ID/CD/BD), and step numbers remain hardcoded.
 
 import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
+  locale?: "en" | "ko" | "de"
   eyebrow?: string
   sectionTitle?: string
   sectionDescription?: string
@@ -2220,149 +2222,698 @@ const CSS = `.section-soft *, .tech-diagram-wrap *, .tech-diagram-annotation * {
     .db-card-sub { font-size: 8px; }
   }`
 
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
+  en: {
+    eyebrow: "Technical view · zone-based architecture",
+    sectionTitle: "The same architecture, in technical view",
+    sectionDescription: "For architects and security reviewers — the full zone-based view of how operational data, encapsulation, and how any LLM interacts.",
+    card1Num: "Zone 1 · Corporate Internal Network",
+    card1Title: "Where the operational systems already live",
+    card1Description: "Existing enterprise systems — ERP, CRM, Ticketing, DMS / ECM, Legacy DB, RAG Pipeline — stay in place. Nothing migrates. Capsule reads from them via REST, gRPC, JDBC, or Graph API depending on the source.",
+    card2Num: "Zone 2 · DMZ — Demilitarized Zone",
+    card2Title: "Where encapsulation happens",
+    card2Description: "The Enhanced Encapsulation Layer detects sensitive elements, replaces them with safe tokens using structure-preserving, differential-privacy-based protection, and hands the capsule to the routing decision. Original values stay behind, retained in the local token map.",
+    card3Num: "Zone 3 · In-House Team",
+    card3Title: "Where governance and routing happen",
+    card3Description: "Organizational policy, permissions, and domain context decide where the capsule is processed — an approved external LLM (Path A) or an on-prem local model (Path B). The decision is policy-driven per workflow, with full audit retained inside the organization.",
+    card4Num: "Zone 4 · Local — Auto Reconstruction",
+    card4Title: "Where the AI response becomes Business-Ready output",
+    card4Description: "The AI response is automatically reconstructed from token to original value inside the organization only. Data that left the trust boundary cannot be reconstructed externally. The restored output is delivered back into the originating workflow.",
+    step1Title: "Source Data",
+    step2Title: "DP Encapsulation",
+    step3Title: "AI Processing",
+    step4Title: "Local Auto Reconstruction",
+    z1Label: "Corporate Internal Network",
+    z1Sub: "On-prem DB · Enterprise Systems",
+    z2Label: "DMZ — Differential Privacy",
+    z2Sub: "Same Org · EU Region · GDPR Ready",
+    z3Label: "In-House Team",
+    z3Sub: "Same Org · Anonymized LLM Proxy",
+    z4Label: "Local — Auto Reconstruction",
+    z4Sub: "Internal Only · No External Egress",
+    conn1Label: "Unstructured Data In",
+    conn2Label: "Protected Data Out",
+    conn3Label: "AI Response (tokenized)",
+    z1GroupTag: "Unstructured",
+    z1Db1Sub: "Customer Data<br/>Personally Identifiable Info",
+    z1Db2Sub: "Ticket Data<br/>CS Tickets / Status",
+    z1Db3Sub: "Detail Data<br/>Unstructured Claims",
+    z1FieldsLabel: "Raw Input Fields",
+    z1F1Name: "Customer",
+    z1F2Name: "Free Text",
+    z1F2NameMid: "Ticket",
+    z1GuardStrong: "PII guardrails protect fields. Enterprises run on structures.",
+    z1GuardBody: "We are not criticizing PII filters. We handle a <b>different category of data</b> — table schemas, cross-references, alarm sequences, and ticket threads that simple field-level masking cannot preserve.",
+    z1PluginTag: "Plug-in for AI Teams",
+    z1Sys1Sub: "SAP·Oracle",
+    z1Sys2Sub: "Salesforce",
+    z1Sys3Sub: "Vector DB",
+    z1Sys4Sub: "Oracle",
+    z1Sys5Sub: "Jira·SN",
+    z1Sys6Sub: "SharePoint",
+    z1Sys1Name: "ERP",
+    z1Sys2Name: "CRM",
+    z1Sys3Name: "RAG",
+    z1Sys4Name: "Legacy",
+    z1Sys5Name: "Ticket",
+    z1Sys6Name: "DMS",
+    z1SysApi: "REST · gRPC · JDBC · Graph API",
+    z1ZeroModStrong: "Zero System Modification",
+    z1ZeroModBody: "Integrates via a single API call with zero modifications to existing ERP, CRM, or legacy systems",
+    z2GroupTag: "Encapsulation Flow",
+    z2InSub: "Raw Input<br/>Unstructured Data",
+    z2ProcessSub: "DP Engine<br/>Differential Privacy",
+    z2OutSub: "Encapsulated<br/>Token Capsule",
+    z2BlockLabel: "Encapsulation",
+    z2ProtectedBadge: "✓ Protected",
+    z2F1Name: "Name",
+    z2F2Name: "Champ Id",
+    z2F3Name: "Free Text",
+    z2DpEngineName: "DP Engine",
+    z2DpEngineBadge: "epsilon-DP Active",
+    z2DpTech1: "Noise Injection (Laplace)",
+    z2DpTech2: "k-Anonymity Enforcement",
+    z2DpTech3: "Semantic Tokenization",
+    z2DpTech4: "Free-Text NER Masking",
+    z2DmzStrong: "DMZ Guarantee",
+    z2DmzBody: "Goes beyond simple encapsulation. Differential privacy techniques make original sensitive data <b>mathematically irreversible</b>",
+    z3PipelineLabel: "LLM Pipeline",
+    z3ProxyBadge: "LLM-a-Proxy",
+    z3ProxySub: "Anonymized Routing",
+    z3PathA: "Path A · External",
+    z3PathB: "Path B · On-prem",
+    z3DeployA1: "Public cloud",
+    z3DeployA2: "Region-hosted",
+    z3DeployB1: "Private",
+    z3DeployB2: "On-prem",
+    z3SwapNote: "swap any model — capsule contract stays the same",
+    z3GuardStrong: "No Direct Access to Source DB",
+    z3GuardBody: "AI teams never touch the source database. They only receive structure-preserved, differentially-private data",
+    z3IsoLabel: "Privacy Isolation Module",
+    z3PdescHead: "PDESC / ISOLA",
+    z3PdescItem1: "Privacy Descriptor",
+    z3PdescItem2: "Isolated Computation Zone",
+    z3PdescItem3: "Output De-identification",
+    z3PdescFoot: "Re-identification attempts contained · Output validated",
+    z3ComplianceLabel: "Compliance",
+    z3Compliance1: "EU GDPR",
+    z3Compliance2: "EU Region",
+    z4GroupTag: "Reconstruction Flow",
+    z4InSub: "AI Token<br/>Tokenized Response",
+    z4ProcessSub: "Reconstruction<br/>Local Restoration",
+    z4OutSub: "Original Value<br/>Business-Ready",
+    z4BlockLabel: "Token → Original",
+    z4F1Name: "Customer",
+    z4F2Name: "Ticket",
+    z4F3Name: "Details",
+    z4ReconName: "Reconstruction",
+    z4ReconBadge: "Local Only",
+    z4ReconTech1: "Token Map Lookup",
+    z4ReconTech2: "Original Value Restore",
+    z4ReconTech3: "Context Re-binding",
+    z4ReconTech4: "Output Validation",
+    z4LocalStrong: "Local Reconstruction Guarantee",
+    z4LocalBody: "Token map exists only in local storage · <b>Delivers Business-Ready Output instantly</b>",
+    z4OutputLabel: "Output Properties",
+    z4OutCheck1: "Original Values Restored",
+    z4OutCheck2: "Zero External Exposure",
+    z4OutCheck3: "Context Fully Preserved",
+    z4OutCheck4: "Business-Ready Output",
+    z4Chip1: "Auto Restore",
+    z4Chip2: "Local Only",
+    z4Chip3: "Data Residency",
+    coreTitle: "6 Core Capabilities",
+    coreWorkflowGroup: "What Makes The Workflow Run",
+    coreApprovalGroup: "What Gets The Approval",
+    core1Name: "Structure-Preserving",
+    core1Desc: "Tables, logs, cross-references, and alarm sequences stay intact. AI reads structure, not just text.",
+    core2Name: "Enterprise Environment Execution",
+    core2Desc: "Deploys inside your environment. Connects via API, SDK, connectors, or reverse proxy. No traffic re-routing.",
+    core3Name: "Business-Ready Reconstruction",
+    core3Desc: "AI output is restored with real values. The result goes straight back to the originating ticket or workflow.",
+    core4Name: "Enterprise Context Control",
+    core4Desc: "Your IT admin defines what counts as sensitive. Custom markers, regex rules, and tier policies. Set in 5 minutes.",
+    core5Name: "Zero Exposure &amp; Audit",
+    core5Desc: "Raw operational data stays inside. Every action logged, timestamped, SIEM-exportable.",
+    core6Name: "Time-Shifting Policy",
+    core6Desc: "Sensitivity changes over time. Capsule versions every marker and policy for continuous compliance.",
+    coreStrip: "01 and 02 lead the conversation. 05 and 06 anchor the approval.",
+  },
+  ko: {
+    eyebrow: "기술적 관점 · 존 기반 아키텍처",
+    sectionTitle: "같은 아키텍처, 기술적 관점에서",
+    sectionDescription: "아키텍트와 보안 검토자를 위한 자료 — 운영 데이터, 캡슐화, 그리고 어떤 LLM이든 어떻게 상호작용하는지에 대한 존 기반 전체 뷰.",
+    card1Num: "Zone 1 · 기업 내부 네트워크",
+    card1Title: "운영 시스템이 이미 있는 곳",
+    card1Description: "기존 엔터프라이즈 시스템 — ERP, CRM, 티켓팅, DMS / ECM, 레거시 DB, RAG 파이프라인 — 그대로 유지됩니다. 마이그레이션은 없습니다. Capsule은 소스에 따라 REST, gRPC, JDBC, 또는 Graph API를 통해 이들로부터 읽어옵니다.",
+    card2Num: "Zone 2 · DMZ — 비무장지대",
+    card2Title: "캡슐화가 일어나는 곳",
+    card2Description: "Enhanced Encapsulation Layer가 민감한 요소를 탐지하고, 문서 구조 보존·차등 프라이버시 기반 보호로 안전한 토큰으로 대체한 뒤, 캡슐을 라우팅 결정에 전달합니다. 원본 값은 로컬 토큰 맵에 보관된 채 남습니다.",
+    card3Num: "Zone 3 · 사내 팀",
+    card3Title: "거버넌스와 라우팅이 일어나는 곳",
+    card3Description: "조직 정책, 권한, 도메인 컨텍스트가 캡슐을 어디에서 처리할지 결정합니다 — 승인된 외부 LLM(Path A) 또는 온프레미스 로컬 모델(Path B). 결정은 워크플로우별 정책 기반이며, 완전한 감사 이력은 조직 내부에 보관됩니다.",
+    card4Num: "Zone 4 · 로컬 — 자동 복원",
+    card4Title: "AI 응답이 비즈니스에 바로 쓰일 수 있는 출력이 되는 곳",
+    card4Description: "AI 응답은 조직 내부에서만 토큰에서 원본 값으로 자동 복원됩니다. 신뢰 경계를 벗어난 데이터는 외부에서 복원될 수 없습니다. 복원된 출력은 원래의 워크플로우로 다시 전달됩니다.",
+    step1Title: "소스 데이터",
+    step2Title: "DP 캡슐화",
+    step3Title: "AI 처리",
+    step4Title: "로컬 자동 복원",
+    z1Label: "기업 내부 네트워크",
+    z1Sub: "온프레미스 DB · 엔터프라이즈 시스템",
+    z2Label: "DMZ — 차등 프라이버시",
+    z2Sub: "동일 조직 · EU 리전 · GDPR 대응",
+    z3Label: "사내 팀",
+    z3Sub: "동일 조직 · 익명화 LLM 프록시",
+    z4Label: "로컬 — 자동 복원",
+    z4Sub: "내부 전용 · 외부 반출 없음",
+    conn1Label: "비정형 데이터 입력",
+    conn2Label: "보호된 데이터 출력",
+    conn3Label: "AI 응답 (토큰화)",
+    z1GroupTag: "비정형",
+    z1Db1Sub: "고객 데이터<br/>개인 식별 정보(PII)",
+    z1Db2Sub: "티켓 데이터<br/>CS 티켓 / 상태",
+    z1Db3Sub: "상세 데이터<br/>비정형 클레임",
+    z1FieldsLabel: "원본 입력 필드",
+    z1F1Name: "고객",
+    z1F2Name: "자유 입력",
+    z1F2NameMid: "티켓",
+    z1GuardStrong: "PII 가드레일은 필드를 보호합니다. 기업은 구조 위에서 운영됩니다.",
+    z1GuardBody: "PII 필터를 비판하는 것이 아닙니다. 우리는 <b>다른 범주의 데이터</b>를 다룹니다 — 단순 필드 수준 마스킹으로는 보존할 수 없는 테이블 스키마, 상호 참조, 알람 시퀀스, 티켓 스레드입니다.",
+    z1PluginTag: "AI 팀을 위한 플러그인",
+    z1Sys1Sub: "SAP·Oracle",
+    z1Sys2Sub: "Salesforce",
+    z1Sys3Sub: "Vector DB",
+    z1Sys4Sub: "Oracle",
+    z1Sys5Sub: "Jira·SN",
+    z1Sys6Sub: "SharePoint",
+    z1Sys1Name: "ERP",
+    z1Sys2Name: "CRM",
+    z1Sys3Name: "RAG",
+    z1Sys4Name: "레거시",
+    z1Sys5Name: "티켓",
+    z1Sys6Name: "DMS",
+    z1SysApi: "REST · gRPC · JDBC · Graph API",
+    z1ZeroModStrong: "시스템 수정 없음",
+    z1ZeroModBody: "기존 ERP, CRM, 레거시 시스템에 어떠한 수정도 없이 단일 API 호출로 연동됩니다.",
+    z2GroupTag: "캡슐화 플로우",
+    z2InSub: "원본 입력<br/>비정형 데이터",
+    z2ProcessSub: "DP 엔진<br/>차등 프라이버시",
+    z2OutSub: "캡슐화됨<br/>토큰 캡슐",
+    z2BlockLabel: "캡슐화",
+    z2ProtectedBadge: "✓ 보호됨",
+    z2F1Name: "이름",
+    z2F2Name: "Champ Id",
+    z2F3Name: "자유 입력",
+    z2DpEngineName: "DP 엔진",
+    z2DpEngineBadge: "epsilon-DP 활성",
+    z2DpTech1: "노이즈 주입 (Laplace)",
+    z2DpTech2: "k-Anonymity 적용",
+    z2DpTech3: "의미 기반 토큰화",
+    z2DpTech4: "자유 텍스트 NER 마스킹",
+    z2DmzStrong: "DMZ 보장",
+    z2DmzBody: "단순 캡슐화를 넘어섭니다. 차등 프라이버시 기법으로 원본 민감 데이터를 <b>수학적으로 복원 불가능하게</b> 만듭니다.",
+    z3PipelineLabel: "LLM 파이프라인",
+    z3ProxyBadge: "LLM-a-Proxy",
+    z3ProxySub: "익명화 라우팅",
+    z3PathA: "Path A · 외부",
+    z3PathB: "Path B · 온프레미스",
+    z3DeployA1: "퍼블릭 클라우드",
+    z3DeployA2: "리전 호스팅",
+    z3DeployB1: "프라이빗",
+    z3DeployB2: "온프레미스",
+    z3SwapNote: "어떤 모델로 교체해도 — 캡슐 계약은 그대로입니다.",
+    z3GuardStrong: "소스 DB 직접 접근 없음",
+    z3GuardBody: "AI 팀은 소스 데이터베이스에 절대 접근하지 않습니다. 구조 보존·차등 프라이버시 적용 데이터만 전달받습니다.",
+    z3IsoLabel: "프라이버시 격리 모듈",
+    z3PdescHead: "PDESC / ISOLA",
+    z3PdescItem1: "프라이버시 디스크립터",
+    z3PdescItem2: "격리 연산 존",
+    z3PdescItem3: "출력 비식별화",
+    z3PdescFoot: "재식별 시도 차단 · 출력 검증 완료",
+    z3ComplianceLabel: "컴플라이언스",
+    z3Compliance1: "EU GDPR",
+    z3Compliance2: "EU 리전",
+    z4GroupTag: "복원 플로우",
+    z4InSub: "AI 토큰<br/>토큰화된 응답",
+    z4ProcessSub: "복원<br/>로컬 복구",
+    z4OutSub: "원본 값<br/>비즈니스 즉시 활용",
+    z4BlockLabel: "토큰 → 원본",
+    z4F1Name: "고객",
+    z4F2Name: "티켓",
+    z4F3Name: "상세",
+    z4ReconName: "복원",
+    z4ReconBadge: "로컬 전용",
+    z4ReconTech1: "토큰 맵 조회",
+    z4ReconTech2: "원본 값 복원",
+    z4ReconTech3: "컨텍스트 재결합",
+    z4ReconTech4: "출력 검증",
+    z4LocalStrong: "로컬 복원 보장",
+    z4LocalBody: "토큰 맵은 로컬 스토리지에만 존재합니다 · <b>즉시 비즈니스 활용 가능한 출력을 제공합니다</b>",
+    z4OutputLabel: "출력 속성",
+    z4OutCheck1: "원본 값 복원 완료",
+    z4OutCheck2: "외부 노출 없음",
+    z4OutCheck3: "컨텍스트 완전 보존",
+    z4OutCheck4: "비즈니스 즉시 활용 출력",
+    z4Chip1: "자동 복원",
+    z4Chip2: "로컬 전용",
+    z4Chip3: "데이터 레지던시",
+    coreTitle: "6가지 핵심 기능",
+    coreWorkflowGroup: "워크플로우를 작동시키는 것",
+    coreApprovalGroup: "승인을 이끌어내는 것",
+    core1Name: "구조 보존",
+    core1Desc: "테이블, 로그, 상호 참조, 알람 시퀀스가 그대로 유지됩니다. AI는 텍스트뿐만 아니라 구조를 읽습니다.",
+    core2Name: "엔터프라이즈 환경 내 실행",
+    core2Desc: "고객사 환경 내부에 배포됩니다. API, SDK, 커넥터, 또는 리버스 프록시로 연결합니다. 트래픽 재라우팅이 없습니다.",
+    core3Name: "비즈니스 즉시 활용 복원",
+    core3Desc: "AI 출력이 실제 값으로 복원됩니다. 결과물은 원래의 티켓이나 워크플로우로 바로 반환됩니다.",
+    core4Name: "조직 정의 민감정보",
+    core4Desc: "IT 관리자가 직접 민감 기준을 정의합니다. 커스텀 마커, 정규식 규칙, 등급 정책을 5분 안에 설정합니다.",
+    core5Name: "Zero Exposure &amp; 감사",
+    core5Desc: "원본 운영 데이터는 내부에 머뭅니다. 모든 행위가 기록·타임스탬프 처리되며 SIEM으로 내보낼 수 있습니다.",
+    core6Name: "시간 변동 정책",
+    core6Desc: "민감도 기준은 시간이 지남에 따라 변합니다. Capsule은 지속적인 규제 대응을 위해 모든 마커와 정책을 버전 관리합니다.",
+    coreStrip: "01·02가 대화를 이끌고, 05·06이 승인을 뒷받침합니다.",
+  },
+  de: {
+    eyebrow: "Technische Ansicht · Zonenbasierte Architektur",
+    sectionTitle: "Dieselbe Architektur — aus technischer Sicht",
+    sectionDescription: "Für Architekten und Sicherheitsprüfer: die vollständige zonenbasierte Sicht auf operative Daten, Kapselung und LLM-Integration.",
+    card1Num: "Zone 1 · Unternehmensinternes Netzwerk",
+    card1Title: "Wo die operativen Systeme bereits laufen",
+    card1Description: "Bestehende Unternehmenssysteme — ERP, CRM, Ticketing, DMS / ECM, Legacy-DB, RAG-Pipeline — bleiben unverändert. Keine Migration. Capsule liest sie je nach Quelle über REST, gRPC, JDBC oder Graph API aus.",
+    card2Num: "Zone 2 · DMZ — Demilitarisierte Zone",
+    card2Title: "Wo die Kapselung stattfindet",
+    card2Description: "Die Enhanced Encapsulation Layer erkennt sensible Elemente, ersetzt sie durch sichere Token mittels strukturerhaltender, Differential-Privacy-basierter Schutzverfahren und übergibt die Kapsel an die Routing-Entscheidung. Originalwerte verbleiben lokal im Token-Map.",
+    card3Num: "Zone 3 · Internes Team",
+    card3Title: "Wo Governance und Routing stattfinden",
+    card3Description: "Organisationsrichtlinien, Berechtigungen und Domänenkontext entscheiden, wo die Kapsel verarbeitet wird — ein zugelassener externer LLM (Path A) oder ein lokales On-Prem-Modell (Path B). Die Entscheidung erfolgt richtlinienbasiert pro Workflow, mit vollständigem Audit-Trail innerhalb der Organisation.",
+    card4Num: "Zone 4 · Lokal — Automatische Rekonstruktion",
+    card4Title: "Wo die KI-Antwort zu geschäftsfertiger Ausgabe wird",
+    card4Description: "Die KI-Antwort wird ausschließlich innerhalb der Organisation automatisch vom Token in den Originalwert rückgeführt. Daten, die die Vertrauensgrenze verlassen haben, können extern nicht rekonstruiert werden. Die wiederhergestellte Ausgabe wird in den ursprünglichen Workflow zurückgespielt.",
+    step1Title: "Quelldaten",
+    step2Title: "DP-Kapselung",
+    step3Title: "KI-Verarbeitung",
+    step4Title: "Lokale automatische Rekonstruktion",
+    z1Label: "Unternehmensinternes Netzwerk",
+    z1Sub: "On-Premise-DB · Unternehmenssysteme",
+    z2Label: "DMZ — Differential Privacy",
+    z2Sub: "Gleiche Organisation · EU-Region · DSGVO-konform",
+    z3Label: "Internes Team",
+    z3Sub: "Gleiche Organisation · Anonymisierter LLM-Proxy",
+    z4Label: "Lokal — Automatische Rekonstruktion",
+    z4Sub: "Nur intern · Kein externer Datenabfluss",
+    conn1Label: "Unstrukturierte Daten — Eingang",
+    conn2Label: "Geschützte Daten — Ausgang",
+    conn3Label: "KI-Antwort (tokenisiert)",
+    z1GroupTag: "Unstrukturiert",
+    z1Db1Sub: "Kundendaten<br/>Personenbezogene Informationen",
+    z1Db2Sub: "Ticketdaten<br/>Support-Tickets / Status",
+    z1Db3Sub: "Detaildaten<br/>Unstrukturierte Schadenmeldungen",
+    z1FieldsLabel: "Rohdatenfelder",
+    z1F1Name: "Kunde",
+    z1F2Name: "Freitext",
+    z1F2NameMid: "Ticket",
+    z1GuardStrong: "PII-Filter schützen einzelne Felder. Unternehmen arbeiten auf Basis von Strukturen.",
+    z1GuardBody: "PII-Filter sind nicht das Problem. LLM Capsule adressiert eine <b>andere Datenkategorie</b> — Tabellenschemata, Querverweise, Alarmsequenzen und Ticket-Threads, die einfaches Feldmaskieren nicht erhalten kann.",
+    z1PluginTag: "Plug-in für KI-Teams",
+    z1Sys1Sub: "SAP·Oracle",
+    z1Sys2Sub: "Salesforce",
+    z1Sys3Sub: "Vector DB",
+    z1Sys4Sub: "Oracle",
+    z1Sys5Sub: "Jira·SN",
+    z1Sys6Sub: "SharePoint",
+    z1Sys1Name: "ERP",
+    z1Sys2Name: "CRM",
+    z1Sys3Name: "RAG",
+    z1Sys4Name: "Legacy",
+    z1Sys5Name: "Ticket",
+    z1Sys6Name: "DMS",
+    z1SysApi: "REST · gRPC · JDBC · Graph API",
+    z1ZeroModStrong: "Keine Systemänderungen erforderlich",
+    z1ZeroModBody: "Die Integration erfolgt über einen einzelnen API-Aufruf — ohne Änderungen an bestehenden ERP-, CRM- oder Legacy-Systemen.",
+    z2GroupTag: "Kapselungsfluss",
+    z2InSub: "Roheingabe<br/>Unstrukturierte Daten",
+    z2ProcessSub: "DP Engine<br/>Differential Privacy",
+    z2OutSub: "Gekapselt<br/>Token-Kapsel",
+    z2BlockLabel: "Kapselung",
+    z2ProtectedBadge: "✓ Geschützt",
+    z2F1Name: "Name",
+    z2F2Name: "Champ Id",
+    z2F3Name: "Freitext",
+    z2DpEngineName: "DP Engine",
+    z2DpEngineBadge: "epsilon-DP aktiv",
+    z2DpTech1: "Rausch-Injektion (Laplace)",
+    z2DpTech2: "k-Anonymität-Durchsetzung",
+    z2DpTech3: "Semantische Tokenisierung",
+    z2DpTech4: "Freitext-NER-Maskierung",
+    z2DmzStrong: "DMZ-Garantie",
+    z2DmzBody: "Über einfache Kapselung hinaus: Differential-Privacy-Verfahren machen ursprüngliche sensible Daten <b>mathematisch irreversibel</b>.",
+    z3PipelineLabel: "LLM-Pipeline",
+    z3ProxyBadge: "LLM-a-Proxy",
+    z3ProxySub: "Anonymisiertes Routing",
+    z3PathA: "Path A · Extern",
+    z3PathB: "Path B · On-Premise",
+    z3DeployA1: "Public Cloud",
+    z3DeployA2: "Region-gehostet",
+    z3DeployB1: "Privat",
+    z3DeployB2: "On-Premise",
+    z3SwapNote: "Modell austauschbar — der Capsule-Vertrag bleibt unverändert.",
+    z3GuardStrong: "Kein direkter Zugriff auf die Quelldatenbank",
+    z3GuardBody: "KI-Teams erhalten keinen Zugriff auf die Quelldatenbank. Sie empfangen ausschließlich Differential-Privacy-geschützte Daten mit erhaltener Datenstruktur.",
+    z3IsoLabel: "Datenschutz-Isolationsmodul",
+    z3PdescHead: "PDESC / ISOLA",
+    z3PdescItem1: "Datenschutz-Deskriptor",
+    z3PdescItem2: "Isolierte Rechenzone",
+    z3PdescItem3: "Ausgabe-Anonymisierung",
+    z3PdescFoot: "Re-Identifizierungsversuche abgewehrt · Ausgabe validiert",
+    z3ComplianceLabel: "Compliance",
+    z3Compliance1: "DSGVO (GDPR)",
+    z3Compliance2: "EU-Region",
+    z4GroupTag: "Rekonstruktionsfluss",
+    z4InSub: "KI-Token<br/>Tokenisierte Antwort",
+    z4ProcessSub: "Rekonstruktion<br/>Lokale Wiederherstellung",
+    z4OutSub: "Originalwert<br/>Direkt einsatzbereit",
+    z4BlockLabel: "Token → Original",
+    z4F1Name: "Kunde",
+    z4F2Name: "Ticket",
+    z4F3Name: "Details",
+    z4ReconName: "Rekonstruktion",
+    z4ReconBadge: "Nur lokal",
+    z4ReconTech1: "Token-Map-Abfrage",
+    z4ReconTech2: "Originalwert-Wiederherstellung",
+    z4ReconTech3: "Kontext-Neuzuordnung",
+    z4ReconTech4: "Ausgabevalidierung",
+    z4LocalStrong: "Lokale Rekonstruktionsgarantie",
+    z4LocalBody: "Die Token-Map verbleibt ausschließlich im lokalen Speicher · <b>Die Ausgabe ist sofort geschäftlich einsetzbar</b>",
+    z4OutputLabel: "Ausgabeeigenschaften",
+    z4OutCheck1: "Originalwerte wiederhergestellt",
+    z4OutCheck2: "Kein externer Datenaustritt",
+    z4OutCheck3: "Kontext vollständig erhalten",
+    z4OutCheck4: "Direkt einsetzbare Ausgabe",
+    z4Chip1: "Automatische Wiederherstellung",
+    z4Chip2: "Nur lokal",
+    z4Chip3: "Datenspeicherort (Data Residency)",
+    coreTitle: "6 Kernfunktionen",
+    coreWorkflowGroup: "Was den Workflow antreibt",
+    coreApprovalGroup: "Was die Freigabe sichert",
+    core1Name: "Strukturerhaltend",
+    core1Desc: "Tabellen, Protokolle, Querverweise und Alarmsequenzen bleiben unverändert. Die KI verarbeitet die vollständige Datenstruktur — nicht nur Text.",
+    core2Name: "Ausführung in der Unternehmensumgebung",
+    core2Desc: "LLM Capsule wird innerhalb Ihrer bestehenden Infrastruktur betrieben. Die Anbindung erfolgt über API, SDK, Konnektoren oder Reverse Proxy — ohne Datenverkehrs-Umleitung.",
+    core3Name: "Geschäftsfertige Rekonstruktion",
+    core3Desc: "Die KI-Ausgabe wird mit den Originalwerten wiederhergestellt. Das Ergebnis fließt direkt in das auslösende Ticket oder den Workflow zurück.",
+    core4Name: "Unternehmenseigene Sensitivitätsdefinition",
+    core4Desc: "Ihr IT-Administrator legt fest, welche Daten als sensibel gelten. Benutzerdefinierte Marker, Regex-Regeln und Stufenrichtlinien — konfigurierbar in unter 5 Minuten.",
+    core5Name: "Zero Exposure &amp; Audit-Trail",
+    core5Desc: "Operative Rohdaten verbleiben innerhalb der Organisation. Jede Aktion wird protokolliert, mit Zeitstempel versehen und ist SIEM-exportierbar.",
+    core6Name: "Zeitabhängige Richtlinien",
+    core6Desc: "Sensitivitätskriterien ändern sich im Zeitverlauf. Capsule versioniert jeden Marker und jede Richtlinie für eine kontinuierliche DSGVO- und regulatorische Konformität.",
+    coreStrip: "01 und 02 sind Grundlage des fachlichen Austauschs. 05 und 06 sichern die regulatorische Freigabe.",
+  },
+}
+
 export default function ArchitectureFourZoneTechnical({
-  eyebrow = "Technical view · zone-based architecture",
-  sectionTitle = "The same architecture, in technical view",
-  sectionDescription = "For architects and security reviewers — the full zone-based view of how operational data, encapsulation, and how any LLM interacts.",
-  card1Num = "Zone 1 · Corporate Internal Network",
-  card1Title = "Where the operational systems already live",
-  card1Description = "Existing enterprise systems — ERP, CRM, Ticketing, DMS / ECM, Legacy DB, RAG Pipeline — stay in place. Nothing migrates. Capsule reads from them via REST, gRPC, JDBC, or Graph API depending on the source.",
-  card2Num = "Zone 2 · DMZ — Demilitarized Zone",
-  card2Title = "Where encapsulation happens",
-  card2Description = "The Enhanced Encapsulation Layer detects sensitive elements, replaces them with safe tokens using structure-preserving, differential-privacy-based protection, and hands the capsule to the routing decision. Original values stay behind, retained in the local token map.",
-  card3Num = "Zone 3 · In-House Team",
-  card3Title = "Where governance and routing happen",
-  card3Description = "Organizational policy, permissions, and domain context decide where the capsule is processed — an approved external LLM (Path A) or an on-prem local model (Path B). The decision is policy-driven per workflow, with full audit retained inside the organization.",
-  card4Num = "Zone 4 · Local — Auto Reconstruction",
-  card4Title = "Where the AI response becomes Business-Ready output",
-  card4Description = "The AI response is automatically reconstructed from token to original value inside the organization only. Data that left the trust boundary cannot be reconstructed externally. The restored output is delivered back into the originating workflow.",
-  step1Title = "Source Data",
-  step2Title = "DP Encapsulation",
-  step3Title = "AI Processing",
-  step4Title = "Local Auto Reconstruction",
-  z1Label = "Corporate Internal Network",
-  z1Sub = "On-prem DB · Enterprise Systems",
-  z2Label = "DMZ — Differential Privacy",
-  z2Sub = "Same Org · EU Region · GDPR Ready",
-  z3Label = "In-House Team",
-  z3Sub = "Same Org · Anonymized LLM Proxy",
-  z4Label = "Local — Auto Reconstruction",
-  z4Sub = "Internal Only · No External Egress",
-  conn1Label = "Unstructured Data In",
-  conn2Label = "Protected Data Out",
-  conn3Label = "AI Response (tokenized)",
-  z1GroupTag = "Unstructured",
-  z1Db1Sub = "Customer Data<br/>Personally Identifiable Info",
-  z1Db2Sub = "Ticket Data<br/>CS Tickets / Status",
-  z1Db3Sub = "Detail Data<br/>Unstructured Claims",
-  z1FieldsLabel = "Raw Input Fields",
-  z1F1Name = "Customer",
-  z1F2Name = "Free Text",
-  z1F2NameMid = "Ticket",
-  z1GuardStrong = "PII guardrails protect fields. Enterprises run on structures.",
-  z1GuardBody = "We are not criticizing PII filters. We handle a <b>different category of data</b> — table schemas, cross-references, alarm sequences, and ticket threads that simple field-level masking cannot preserve.",
-  z1PluginTag = "Plug-in for AI Teams",
-  z1Sys1Sub = "SAP·Oracle",
-  z1Sys2Sub = "Salesforce",
-  z1Sys3Sub = "Vector DB",
-  z1Sys4Sub = "Oracle",
-  z1Sys5Sub = "Jira·SN",
-  z1Sys6Sub = "SharePoint",
-  z1Sys1Name = "ERP",
-  z1Sys2Name = "CRM",
-  z1Sys3Name = "RAG",
-  z1Sys4Name = "Legacy",
-  z1Sys5Name = "Ticket",
-  z1Sys6Name = "DMS",
-  z1SysApi = "REST · gRPC · JDBC · Graph API",
-  z1ZeroModStrong = "Zero System Modification",
-  z1ZeroModBody = "Integrates via a single API call with zero modifications to existing ERP, CRM, or legacy systems",
-  z2GroupTag = "Encapsulation Flow",
-  z2InSub = "Raw Input<br/>Unstructured Data",
-  z2ProcessSub = "DP Engine<br/>Differential Privacy",
-  z2OutSub = "Encapsulated<br/>Token Capsule",
-  z2BlockLabel = "Encapsulation",
-  z2ProtectedBadge = "✓ Protected",
-  z2F1Name = "Name",
-  z2F2Name = "Champ Id",
-  z2F3Name = "Free Text",
-  z2DpEngineName = "DP Engine",
-  z2DpEngineBadge = "epsilon-DP Active",
-  z2DpTech1 = "Noise Injection (Laplace)",
-  z2DpTech2 = "k-Anonymity Enforcement",
-  z2DpTech3 = "Semantic Tokenization",
-  z2DpTech4 = "Free-Text NER Masking",
-  z2DmzStrong = "DMZ Guarantee",
-  z2DmzBody = "Goes beyond simple encapsulation. Differential privacy techniques make original sensitive data <b>mathematically irreversible</b>",
-  z3PipelineLabel = "LLM Pipeline",
-  z3ProxyBadge = "LLM-a-Proxy",
-  z3ProxySub = "Anonymized Routing",
-  z3PathA = "Path A · External",
-  z3PathB = "Path B · On-prem",
-  z3DeployA1 = "Public cloud",
-  z3DeployA2 = "Region-hosted",
-  z3DeployB1 = "Private",
-  z3DeployB2 = "On-prem",
-  z3SwapNote = "swap any model — capsule contract stays the same",
-  z3GuardStrong = "No Direct Access to Source DB",
-  z3GuardBody = "AI teams never touch the source database. They only receive structure-preserved, differentially-private data",
-  z3IsoLabel = "Privacy Isolation Module",
-  z3PdescHead = "PDESC / ISOLA",
-  z3PdescItem1 = "Privacy Descriptor",
-  z3PdescItem2 = "Isolated Computation Zone",
-  z3PdescItem3 = "Output De-identification",
-  z3PdescFoot = "Re-identification attempts contained · Output validated",
-  z3ComplianceLabel = "Compliance",
-  z3Compliance1 = "EU GDPR",
-  z3Compliance2 = "EU Region",
-  z4GroupTag = "Reconstruction Flow",
-  z4InSub = "AI Token<br/>Tokenized Response",
-  z4ProcessSub = "Reconstruction<br/>Local Restoration",
-  z4OutSub = "Original Value<br/>Business-Ready",
-  z4BlockLabel = "Token → Original",
-  z4F1Name = "Customer",
-  z4F2Name = "Ticket",
-  z4F3Name = "Details",
-  z4ReconName = "Reconstruction",
-  z4ReconBadge = "Local Only",
-  z4ReconTech1 = "Token Map Lookup",
-  z4ReconTech2 = "Original Value Restore",
-  z4ReconTech3 = "Context Re-binding",
-  z4ReconTech4 = "Output Validation",
-  z4LocalStrong = "Local Reconstruction Guarantee",
-  z4LocalBody = "Token map exists only in local storage · <b>Delivers Business-Ready Output instantly</b>",
-  z4OutputLabel = "Output Properties",
-  z4OutCheck1 = "Original Values Restored",
-  z4OutCheck2 = "Zero External Exposure",
-  z4OutCheck3 = "Context Fully Preserved",
-  z4OutCheck4 = "Business-Ready Output",
-  z4Chip1 = "Auto Restore",
-  z4Chip2 = "Local Only",
-  z4Chip3 = "Data Residency",
-  coreTitle = "6 Core Capabilities",
-  coreWorkflowGroup = "What Makes The Workflow Run",
-  coreApprovalGroup = "What Gets The Approval",
-  core1Name = "Structure-Preserving",
-  core1Desc = "Tables, logs, cross-references, and alarm sequences stay intact. AI reads structure, not just text.",
-  core2Name = "Enterprise Environment Execution",
-  core2Desc = "Deploys inside your environment. Connects via API, SDK, connectors, or reverse proxy. No traffic re-routing.",
-  core3Name = "Business-Ready Reconstruction",
-  core3Desc = "AI output is restored with real values. The result goes straight back to the originating ticket or workflow.",
-  core4Name = "Enterprise Context Control",
-  core4Desc = "Your IT admin defines what counts as sensitive. Custom markers, regex rules, and tier policies. Set in 5 minutes.",
-  core5Name = "Zero Exposure &amp; Audit",
-  core5Desc = "Raw operational data stays inside. Every action logged, timestamped, SIEM-exportable.",
-  core6Name = "Time-Shifting Policy",
-  core6Desc = "Sensitivity changes over time. Capsule versions every marker and policy for continuous compliance.",
-  coreStrip = "01 and 02 lead the conversation. 05 and 06 anchor the approval.",
+  locale = "en",
+  eyebrow = "",
+  sectionTitle = "",
+  sectionDescription = "",
+  card1Num = "",
+  card1Title = "",
+  card1Description = "",
+  card2Num = "",
+  card2Title = "",
+  card2Description = "",
+  card3Num = "",
+  card3Title = "",
+  card3Description = "",
+  card4Num = "",
+  card4Title = "",
+  card4Description = "",
+  step1Title = "",
+  step2Title = "",
+  step3Title = "",
+  step4Title = "",
+  z1Label = "",
+  z1Sub = "",
+  z2Label = "",
+  z2Sub = "",
+  z3Label = "",
+  z3Sub = "",
+  z4Label = "",
+  z4Sub = "",
+  conn1Label = "",
+  conn2Label = "",
+  conn3Label = "",
+  z1GroupTag = "",
+  z1Db1Sub = "",
+  z1Db2Sub = "",
+  z1Db3Sub = "",
+  z1FieldsLabel = "",
+  z1F1Name = "",
+  z1F2Name = "",
+  z1F2NameMid = "",
+  z1GuardStrong = "",
+  z1GuardBody = "",
+  z1PluginTag = "",
+  z1Sys1Sub = "",
+  z1Sys2Sub = "",
+  z1Sys3Sub = "",
+  z1Sys4Sub = "",
+  z1Sys5Sub = "",
+  z1Sys6Sub = "",
+  z1Sys1Name = "",
+  z1Sys2Name = "",
+  z1Sys3Name = "",
+  z1Sys4Name = "",
+  z1Sys5Name = "",
+  z1Sys6Name = "",
+  z1SysApi = "",
+  z1ZeroModStrong = "",
+  z1ZeroModBody = "",
+  z2GroupTag = "",
+  z2InSub = "",
+  z2ProcessSub = "",
+  z2OutSub = "",
+  z2BlockLabel = "",
+  z2ProtectedBadge = "",
+  z2F1Name = "",
+  z2F2Name = "",
+  z2F3Name = "",
+  z2DpEngineName = "",
+  z2DpEngineBadge = "",
+  z2DpTech1 = "",
+  z2DpTech2 = "",
+  z2DpTech3 = "",
+  z2DpTech4 = "",
+  z2DmzStrong = "",
+  z2DmzBody = "",
+  z3PipelineLabel = "",
+  z3ProxyBadge = "",
+  z3ProxySub = "",
+  z3PathA = "",
+  z3PathB = "",
+  z3DeployA1 = "",
+  z3DeployA2 = "",
+  z3DeployB1 = "",
+  z3DeployB2 = "",
+  z3SwapNote = "",
+  z3GuardStrong = "",
+  z3GuardBody = "",
+  z3IsoLabel = "",
+  z3PdescHead = "",
+  z3PdescItem1 = "",
+  z3PdescItem2 = "",
+  z3PdescItem3 = "",
+  z3PdescFoot = "",
+  z3ComplianceLabel = "",
+  z3Compliance1 = "",
+  z3Compliance2 = "",
+  z4GroupTag = "",
+  z4InSub = "",
+  z4ProcessSub = "",
+  z4OutSub = "",
+  z4BlockLabel = "",
+  z4F1Name = "",
+  z4F2Name = "",
+  z4F3Name = "",
+  z4ReconName = "",
+  z4ReconBadge = "",
+  z4ReconTech1 = "",
+  z4ReconTech2 = "",
+  z4ReconTech3 = "",
+  z4ReconTech4 = "",
+  z4LocalStrong = "",
+  z4LocalBody = "",
+  z4OutputLabel = "",
+  z4OutCheck1 = "",
+  z4OutCheck2 = "",
+  z4OutCheck3 = "",
+  z4OutCheck4 = "",
+  z4Chip1 = "",
+  z4Chip2 = "",
+  z4Chip3 = "",
+  coreTitle = "",
+  coreWorkflowGroup = "",
+  coreApprovalGroup = "",
+  core1Name = "",
+  core1Desc = "",
+  core2Name = "",
+  core2Desc = "",
+  core3Name = "",
+  core3Desc = "",
+  core4Name = "",
+  core4Desc = "",
+  core5Name = "",
+  core5Desc = "",
+  core6Name = "",
+  core6Desc = "",
+  coreStrip = "",
 }: Props) {
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+
+  const _eyebrow = eyebrow || T["eyebrow"] || TRANSLATIONS.en["eyebrow"]
+  const _sectionTitle = sectionTitle || T["sectionTitle"] || TRANSLATIONS.en["sectionTitle"]
+  const _sectionDescription = sectionDescription || T["sectionDescription"] || TRANSLATIONS.en["sectionDescription"]
+  const _card1Num = card1Num || T["card1Num"] || TRANSLATIONS.en["card1Num"]
+  const _card1Title = card1Title || T["card1Title"] || TRANSLATIONS.en["card1Title"]
+  const _card1Description = card1Description || T["card1Description"] || TRANSLATIONS.en["card1Description"]
+  const _card2Num = card2Num || T["card2Num"] || TRANSLATIONS.en["card2Num"]
+  const _card2Title = card2Title || T["card2Title"] || TRANSLATIONS.en["card2Title"]
+  const _card2Description = card2Description || T["card2Description"] || TRANSLATIONS.en["card2Description"]
+  const _card3Num = card3Num || T["card3Num"] || TRANSLATIONS.en["card3Num"]
+  const _card3Title = card3Title || T["card3Title"] || TRANSLATIONS.en["card3Title"]
+  const _card3Description = card3Description || T["card3Description"] || TRANSLATIONS.en["card3Description"]
+  const _card4Num = card4Num || T["card4Num"] || TRANSLATIONS.en["card4Num"]
+  const _card4Title = card4Title || T["card4Title"] || TRANSLATIONS.en["card4Title"]
+  const _card4Description = card4Description || T["card4Description"] || TRANSLATIONS.en["card4Description"]
+  const _step1Title = step1Title || T["step1Title"] || TRANSLATIONS.en["step1Title"]
+  const _step2Title = step2Title || T["step2Title"] || TRANSLATIONS.en["step2Title"]
+  const _step3Title = step3Title || T["step3Title"] || TRANSLATIONS.en["step3Title"]
+  const _step4Title = step4Title || T["step4Title"] || TRANSLATIONS.en["step4Title"]
+  const _z1Label = z1Label || T["z1Label"] || TRANSLATIONS.en["z1Label"]
+  const _z1Sub = z1Sub || T["z1Sub"] || TRANSLATIONS.en["z1Sub"]
+  const _z2Label = z2Label || T["z2Label"] || TRANSLATIONS.en["z2Label"]
+  const _z2Sub = z2Sub || T["z2Sub"] || TRANSLATIONS.en["z2Sub"]
+  const _z3Label = z3Label || T["z3Label"] || TRANSLATIONS.en["z3Label"]
+  const _z3Sub = z3Sub || T["z3Sub"] || TRANSLATIONS.en["z3Sub"]
+  const _z4Label = z4Label || T["z4Label"] || TRANSLATIONS.en["z4Label"]
+  const _z4Sub = z4Sub || T["z4Sub"] || TRANSLATIONS.en["z4Sub"]
+  const _conn1Label = conn1Label || T["conn1Label"] || TRANSLATIONS.en["conn1Label"]
+  const _conn2Label = conn2Label || T["conn2Label"] || TRANSLATIONS.en["conn2Label"]
+  const _conn3Label = conn3Label || T["conn3Label"] || TRANSLATIONS.en["conn3Label"]
+  const _z1GroupTag = z1GroupTag || T["z1GroupTag"] || TRANSLATIONS.en["z1GroupTag"]
+  const _z1Db1Sub = z1Db1Sub || T["z1Db1Sub"] || TRANSLATIONS.en["z1Db1Sub"]
+  const _z1Db2Sub = z1Db2Sub || T["z1Db2Sub"] || TRANSLATIONS.en["z1Db2Sub"]
+  const _z1Db3Sub = z1Db3Sub || T["z1Db3Sub"] || TRANSLATIONS.en["z1Db3Sub"]
+  const _z1FieldsLabel = z1FieldsLabel || T["z1FieldsLabel"] || TRANSLATIONS.en["z1FieldsLabel"]
+  const _z1F1Name = z1F1Name || T["z1F1Name"] || TRANSLATIONS.en["z1F1Name"]
+  const _z1F2Name = z1F2Name || T["z1F2Name"] || TRANSLATIONS.en["z1F2Name"]
+  const _z1F2NameMid = z1F2NameMid || T["z1F2NameMid"] || TRANSLATIONS.en["z1F2NameMid"]
+  const _z1GuardStrong = z1GuardStrong || T["z1GuardStrong"] || TRANSLATIONS.en["z1GuardStrong"]
+  const _z1GuardBody = z1GuardBody || T["z1GuardBody"] || TRANSLATIONS.en["z1GuardBody"]
+  const _z1PluginTag = z1PluginTag || T["z1PluginTag"] || TRANSLATIONS.en["z1PluginTag"]
+  const _z1Sys1Sub = z1Sys1Sub || T["z1Sys1Sub"] || TRANSLATIONS.en["z1Sys1Sub"]
+  const _z1Sys2Sub = z1Sys2Sub || T["z1Sys2Sub"] || TRANSLATIONS.en["z1Sys2Sub"]
+  const _z1Sys3Sub = z1Sys3Sub || T["z1Sys3Sub"] || TRANSLATIONS.en["z1Sys3Sub"]
+  const _z1Sys4Sub = z1Sys4Sub || T["z1Sys4Sub"] || TRANSLATIONS.en["z1Sys4Sub"]
+  const _z1Sys5Sub = z1Sys5Sub || T["z1Sys5Sub"] || TRANSLATIONS.en["z1Sys5Sub"]
+  const _z1Sys6Sub = z1Sys6Sub || T["z1Sys6Sub"] || TRANSLATIONS.en["z1Sys6Sub"]
+  const _z1Sys1Name = z1Sys1Name || T["z1Sys1Name"] || TRANSLATIONS.en["z1Sys1Name"]
+  const _z1Sys2Name = z1Sys2Name || T["z1Sys2Name"] || TRANSLATIONS.en["z1Sys2Name"]
+  const _z1Sys3Name = z1Sys3Name || T["z1Sys3Name"] || TRANSLATIONS.en["z1Sys3Name"]
+  const _z1Sys4Name = z1Sys4Name || T["z1Sys4Name"] || TRANSLATIONS.en["z1Sys4Name"]
+  const _z1Sys5Name = z1Sys5Name || T["z1Sys5Name"] || TRANSLATIONS.en["z1Sys5Name"]
+  const _z1Sys6Name = z1Sys6Name || T["z1Sys6Name"] || TRANSLATIONS.en["z1Sys6Name"]
+  const _z1SysApi = z1SysApi || T["z1SysApi"] || TRANSLATIONS.en["z1SysApi"]
+  const _z1ZeroModStrong = z1ZeroModStrong || T["z1ZeroModStrong"] || TRANSLATIONS.en["z1ZeroModStrong"]
+  const _z1ZeroModBody = z1ZeroModBody || T["z1ZeroModBody"] || TRANSLATIONS.en["z1ZeroModBody"]
+  const _z2GroupTag = z2GroupTag || T["z2GroupTag"] || TRANSLATIONS.en["z2GroupTag"]
+  const _z2InSub = z2InSub || T["z2InSub"] || TRANSLATIONS.en["z2InSub"]
+  const _z2ProcessSub = z2ProcessSub || T["z2ProcessSub"] || TRANSLATIONS.en["z2ProcessSub"]
+  const _z2OutSub = z2OutSub || T["z2OutSub"] || TRANSLATIONS.en["z2OutSub"]
+  const _z2BlockLabel = z2BlockLabel || T["z2BlockLabel"] || TRANSLATIONS.en["z2BlockLabel"]
+  const _z2ProtectedBadge = z2ProtectedBadge || T["z2ProtectedBadge"] || TRANSLATIONS.en["z2ProtectedBadge"]
+  const _z2F1Name = z2F1Name || T["z2F1Name"] || TRANSLATIONS.en["z2F1Name"]
+  const _z2F2Name = z2F2Name || T["z2F2Name"] || TRANSLATIONS.en["z2F2Name"]
+  const _z2F3Name = z2F3Name || T["z2F3Name"] || TRANSLATIONS.en["z2F3Name"]
+  const _z2DpEngineName = z2DpEngineName || T["z2DpEngineName"] || TRANSLATIONS.en["z2DpEngineName"]
+  const _z2DpEngineBadge = z2DpEngineBadge || T["z2DpEngineBadge"] || TRANSLATIONS.en["z2DpEngineBadge"]
+  const _z2DpTech1 = z2DpTech1 || T["z2DpTech1"] || TRANSLATIONS.en["z2DpTech1"]
+  const _z2DpTech2 = z2DpTech2 || T["z2DpTech2"] || TRANSLATIONS.en["z2DpTech2"]
+  const _z2DpTech3 = z2DpTech3 || T["z2DpTech3"] || TRANSLATIONS.en["z2DpTech3"]
+  const _z2DpTech4 = z2DpTech4 || T["z2DpTech4"] || TRANSLATIONS.en["z2DpTech4"]
+  const _z2DmzStrong = z2DmzStrong || T["z2DmzStrong"] || TRANSLATIONS.en["z2DmzStrong"]
+  const _z2DmzBody = z2DmzBody || T["z2DmzBody"] || TRANSLATIONS.en["z2DmzBody"]
+  const _z3PipelineLabel = z3PipelineLabel || T["z3PipelineLabel"] || TRANSLATIONS.en["z3PipelineLabel"]
+  const _z3ProxyBadge = z3ProxyBadge || T["z3ProxyBadge"] || TRANSLATIONS.en["z3ProxyBadge"]
+  const _z3ProxySub = z3ProxySub || T["z3ProxySub"] || TRANSLATIONS.en["z3ProxySub"]
+  const _z3PathA = z3PathA || T["z3PathA"] || TRANSLATIONS.en["z3PathA"]
+  const _z3PathB = z3PathB || T["z3PathB"] || TRANSLATIONS.en["z3PathB"]
+  const _z3DeployA1 = z3DeployA1 || T["z3DeployA1"] || TRANSLATIONS.en["z3DeployA1"]
+  const _z3DeployA2 = z3DeployA2 || T["z3DeployA2"] || TRANSLATIONS.en["z3DeployA2"]
+  const _z3DeployB1 = z3DeployB1 || T["z3DeployB1"] || TRANSLATIONS.en["z3DeployB1"]
+  const _z3DeployB2 = z3DeployB2 || T["z3DeployB2"] || TRANSLATIONS.en["z3DeployB2"]
+  const _z3SwapNote = z3SwapNote || T["z3SwapNote"] || TRANSLATIONS.en["z3SwapNote"]
+  const _z3GuardStrong = z3GuardStrong || T["z3GuardStrong"] || TRANSLATIONS.en["z3GuardStrong"]
+  const _z3GuardBody = z3GuardBody || T["z3GuardBody"] || TRANSLATIONS.en["z3GuardBody"]
+  const _z3IsoLabel = z3IsoLabel || T["z3IsoLabel"] || TRANSLATIONS.en["z3IsoLabel"]
+  const _z3PdescHead = z3PdescHead || T["z3PdescHead"] || TRANSLATIONS.en["z3PdescHead"]
+  const _z3PdescItem1 = z3PdescItem1 || T["z3PdescItem1"] || TRANSLATIONS.en["z3PdescItem1"]
+  const _z3PdescItem2 = z3PdescItem2 || T["z3PdescItem2"] || TRANSLATIONS.en["z3PdescItem2"]
+  const _z3PdescItem3 = z3PdescItem3 || T["z3PdescItem3"] || TRANSLATIONS.en["z3PdescItem3"]
+  const _z3PdescFoot = z3PdescFoot || T["z3PdescFoot"] || TRANSLATIONS.en["z3PdescFoot"]
+  const _z3ComplianceLabel = z3ComplianceLabel || T["z3ComplianceLabel"] || TRANSLATIONS.en["z3ComplianceLabel"]
+  const _z3Compliance1 = z3Compliance1 || T["z3Compliance1"] || TRANSLATIONS.en["z3Compliance1"]
+  const _z3Compliance2 = z3Compliance2 || T["z3Compliance2"] || TRANSLATIONS.en["z3Compliance2"]
+  const _z4GroupTag = z4GroupTag || T["z4GroupTag"] || TRANSLATIONS.en["z4GroupTag"]
+  const _z4InSub = z4InSub || T["z4InSub"] || TRANSLATIONS.en["z4InSub"]
+  const _z4ProcessSub = z4ProcessSub || T["z4ProcessSub"] || TRANSLATIONS.en["z4ProcessSub"]
+  const _z4OutSub = z4OutSub || T["z4OutSub"] || TRANSLATIONS.en["z4OutSub"]
+  const _z4BlockLabel = z4BlockLabel || T["z4BlockLabel"] || TRANSLATIONS.en["z4BlockLabel"]
+  const _z4F1Name = z4F1Name || T["z4F1Name"] || TRANSLATIONS.en["z4F1Name"]
+  const _z4F2Name = z4F2Name || T["z4F2Name"] || TRANSLATIONS.en["z4F2Name"]
+  const _z4F3Name = z4F3Name || T["z4F3Name"] || TRANSLATIONS.en["z4F3Name"]
+  const _z4ReconName = z4ReconName || T["z4ReconName"] || TRANSLATIONS.en["z4ReconName"]
+  const _z4ReconBadge = z4ReconBadge || T["z4ReconBadge"] || TRANSLATIONS.en["z4ReconBadge"]
+  const _z4ReconTech1 = z4ReconTech1 || T["z4ReconTech1"] || TRANSLATIONS.en["z4ReconTech1"]
+  const _z4ReconTech2 = z4ReconTech2 || T["z4ReconTech2"] || TRANSLATIONS.en["z4ReconTech2"]
+  const _z4ReconTech3 = z4ReconTech3 || T["z4ReconTech3"] || TRANSLATIONS.en["z4ReconTech3"]
+  const _z4ReconTech4 = z4ReconTech4 || T["z4ReconTech4"] || TRANSLATIONS.en["z4ReconTech4"]
+  const _z4LocalStrong = z4LocalStrong || T["z4LocalStrong"] || TRANSLATIONS.en["z4LocalStrong"]
+  const _z4LocalBody = z4LocalBody || T["z4LocalBody"] || TRANSLATIONS.en["z4LocalBody"]
+  const _z4OutputLabel = z4OutputLabel || T["z4OutputLabel"] || TRANSLATIONS.en["z4OutputLabel"]
+  const _z4OutCheck1 = z4OutCheck1 || T["z4OutCheck1"] || TRANSLATIONS.en["z4OutCheck1"]
+  const _z4OutCheck2 = z4OutCheck2 || T["z4OutCheck2"] || TRANSLATIONS.en["z4OutCheck2"]
+  const _z4OutCheck3 = z4OutCheck3 || T["z4OutCheck3"] || TRANSLATIONS.en["z4OutCheck3"]
+  const _z4OutCheck4 = z4OutCheck4 || T["z4OutCheck4"] || TRANSLATIONS.en["z4OutCheck4"]
+  const _z4Chip1 = z4Chip1 || T["z4Chip1"] || TRANSLATIONS.en["z4Chip1"]
+  const _z4Chip2 = z4Chip2 || T["z4Chip2"] || TRANSLATIONS.en["z4Chip2"]
+  const _z4Chip3 = z4Chip3 || T["z4Chip3"] || TRANSLATIONS.en["z4Chip3"]
+  const _coreTitle = coreTitle || T["coreTitle"] || TRANSLATIONS.en["coreTitle"]
+  const _coreWorkflowGroup = coreWorkflowGroup || T["coreWorkflowGroup"] || TRANSLATIONS.en["coreWorkflowGroup"]
+  const _coreApprovalGroup = coreApprovalGroup || T["coreApprovalGroup"] || TRANSLATIONS.en["coreApprovalGroup"]
+  const _core1Name = core1Name || T["core1Name"] || TRANSLATIONS.en["core1Name"]
+  const _core1Desc = core1Desc || T["core1Desc"] || TRANSLATIONS.en["core1Desc"]
+  const _core2Name = core2Name || T["core2Name"] || TRANSLATIONS.en["core2Name"]
+  const _core2Desc = core2Desc || T["core2Desc"] || TRANSLATIONS.en["core2Desc"]
+  const _core3Name = core3Name || T["core3Name"] || TRANSLATIONS.en["core3Name"]
+  const _core3Desc = core3Desc || T["core3Desc"] || TRANSLATIONS.en["core3Desc"]
+  const _core4Name = core4Name || T["core4Name"] || TRANSLATIONS.en["core4Name"]
+  const _core4Desc = core4Desc || T["core4Desc"] || TRANSLATIONS.en["core4Desc"]
+  const _core5Name = core5Name || T["core5Name"] || TRANSLATIONS.en["core5Name"]
+  const _core5Desc = core5Desc || T["core5Desc"] || TRANSLATIONS.en["core5Desc"]
+  const _core6Name = core6Name || T["core6Name"] || TRANSLATIONS.en["core6Name"]
+  const _core6Desc = core6Desc || T["core6Desc"] || TRANSLATIONS.en["core6Desc"]
+  const _coreStrip = coreStrip || T["coreStrip"] || TRANSLATIONS.en["coreStrip"]
+
   let html = BODY_HTML
 
   const sectionHead = `
     <div class="section-head">
-      <div class="eyebrow">${eyebrow}</div>
-      <h2>${sectionTitle}</h2>
-      <p>${sectionDescription}</p>
+      <div class="eyebrow">${_eyebrow}</div>
+      <h2>${_sectionTitle}</h2>
+      <p>${_sectionDescription}</p>
     </div>
   `
   html = html.replace("<!-- SECTION_HEAD_PLACEHOLDER -->", sectionHead)
@@ -2370,149 +2921,149 @@ export default function ArchitectureFourZoneTechnical({
   const annotationCards = `
     <div class="tech-diagram-annotation">
       <article class="annotation-card">
-        <div class="annotation-card__num">${card1Num}</div>
-        <h3 class="annotation-card__h">${card1Title}</h3>
-        <p class="annotation-card__d">${card1Description}</p>
+        <div class="annotation-card__num">${_card1Num}</div>
+        <h3 class="annotation-card__h">${_card1Title}</h3>
+        <p class="annotation-card__d">${_card1Description}</p>
       </article>
       <article class="annotation-card">
-        <div class="annotation-card__num">${card2Num}</div>
-        <h3 class="annotation-card__h">${card2Title}</h3>
-        <p class="annotation-card__d">${card2Description}</p>
+        <div class="annotation-card__num">${_card2Num}</div>
+        <h3 class="annotation-card__h">${_card2Title}</h3>
+        <p class="annotation-card__d">${_card2Description}</p>
       </article>
       <article class="annotation-card">
-        <div class="annotation-card__num">${card3Num}</div>
-        <h3 class="annotation-card__h">${card3Title}</h3>
-        <p class="annotation-card__d">${card3Description}</p>
+        <div class="annotation-card__num">${_card3Num}</div>
+        <h3 class="annotation-card__h">${_card3Title}</h3>
+        <p class="annotation-card__d">${_card3Description}</p>
       </article>
       <article class="annotation-card">
-        <div class="annotation-card__num">${card4Num}</div>
-        <h3 class="annotation-card__h">${card4Title}</h3>
-        <p class="annotation-card__d">${card4Description}</p>
+        <div class="annotation-card__num">${_card4Num}</div>
+        <h3 class="annotation-card__h">${_card4Title}</h3>
+        <p class="annotation-card__d">${_card4Description}</p>
       </article>
     </div>
   `
   html = html.replace("<!-- ANNOTATION_CARDS_PLACEHOLDER -->", annotationCards)
 
   // Body placeholder substitutions
-  html = html.split("{{__P_step1Title__}}").join(step1Title)
-  html = html.split("{{__P_step2Title__}}").join(step2Title)
-  html = html.split("{{__P_step3Title__}}").join(step3Title)
-  html = html.split("{{__P_step4Title__}}").join(step4Title)
-  html = html.split("{{__P_z1Label__}}").join(z1Label)
-  html = html.split("{{__P_z1Sub__}}").join(z1Sub)
-  html = html.split("{{__P_z2Label__}}").join(z2Label)
-  html = html.split("{{__P_z2Sub__}}").join(z2Sub)
-  html = html.split("{{__P_z3Label__}}").join(z3Label)
-  html = html.split("{{__P_z3Sub__}}").join(z3Sub)
-  html = html.split("{{__P_z4Label__}}").join(z4Label)
-  html = html.split("{{__P_z4Sub__}}").join(z4Sub)
-  html = html.split("{{__P_conn1Label__}}").join(conn1Label)
-  html = html.split("{{__P_conn2Label__}}").join(conn2Label)
-  html = html.split("{{__P_conn3Label__}}").join(conn3Label)
-  html = html.split("{{__P_z1GroupTag__}}").join(z1GroupTag)
-  html = html.split("{{__P_z1Db1Sub__}}").join(z1Db1Sub)
-  html = html.split("{{__P_z1Db2Sub__}}").join(z1Db2Sub)
-  html = html.split("{{__P_z1Db3Sub__}}").join(z1Db3Sub)
-  html = html.split("{{__P_z1FieldsLabel__}}").join(z1FieldsLabel)
-  html = html.split("{{__P_z1F1Name__}}").join(z1F1Name)
-  html = html.split("{{__P_z1F2Name__}}").join(z1F2Name)
-  html = html.split("{{__P_z1F2NameMid__}}").join(z1F2NameMid)
-  html = html.split("{{__P_z1GuardStrong__}}").join(z1GuardStrong)
-  html = html.split("{{__P_z1GuardBody__}}").join(z1GuardBody)
-  html = html.split("{{__P_z1PluginTag__}}").join(z1PluginTag)
-  html = html.split("{{__P_z1Sys1Sub__}}").join(z1Sys1Sub)
-  html = html.split("{{__P_z1Sys2Sub__}}").join(z1Sys2Sub)
-  html = html.split("{{__P_z1Sys3Sub__}}").join(z1Sys3Sub)
-  html = html.split("{{__P_z1Sys4Sub__}}").join(z1Sys4Sub)
-  html = html.split("{{__P_z1Sys5Sub__}}").join(z1Sys5Sub)
-  html = html.split("{{__P_z1Sys6Sub__}}").join(z1Sys6Sub)
-  html = html.split("{{__P_z1Sys1Name__}}").join(z1Sys1Name)
-  html = html.split("{{__P_z1Sys2Name__}}").join(z1Sys2Name)
-  html = html.split("{{__P_z1Sys3Name__}}").join(z1Sys3Name)
-  html = html.split("{{__P_z1Sys4Name__}}").join(z1Sys4Name)
-  html = html.split("{{__P_z1Sys5Name__}}").join(z1Sys5Name)
-  html = html.split("{{__P_z1Sys6Name__}}").join(z1Sys6Name)
-  html = html.split("{{__P_z1SysApi__}}").join(z1SysApi)
-  html = html.split("{{__P_z1ZeroModStrong__}}").join(z1ZeroModStrong)
-  html = html.split("{{__P_z1ZeroModBody__}}").join(z1ZeroModBody)
-  html = html.split("{{__P_z2GroupTag__}}").join(z2GroupTag)
-  html = html.split("{{__P_z2InSub__}}").join(z2InSub)
-  html = html.split("{{__P_z2ProcessSub__}}").join(z2ProcessSub)
-  html = html.split("{{__P_z2OutSub__}}").join(z2OutSub)
-  html = html.split("{{__P_z2BlockLabel__}}").join(z2BlockLabel)
-  html = html.split("{{__P_z2ProtectedBadge__}}").join(z2ProtectedBadge)
-  html = html.split("{{__P_z2F1Name__}}").join(z2F1Name)
-  html = html.split("{{__P_z2F2Name__}}").join(z2F2Name)
-  html = html.split("{{__P_z2F3Name__}}").join(z2F3Name)
-  html = html.split("{{__P_z2DpEngineName__}}").join(z2DpEngineName)
-  html = html.split("{{__P_z2DpEngineBadge__}}").join(z2DpEngineBadge)
-  html = html.split("{{__P_z2DpTech1__}}").join(z2DpTech1)
-  html = html.split("{{__P_z2DpTech2__}}").join(z2DpTech2)
-  html = html.split("{{__P_z2DpTech3__}}").join(z2DpTech3)
-  html = html.split("{{__P_z2DpTech4__}}").join(z2DpTech4)
-  html = html.split("{{__P_z2DmzStrong__}}").join(z2DmzStrong)
-  html = html.split("{{__P_z2DmzBody__}}").join(z2DmzBody)
-  html = html.split("{{__P_z3PipelineLabel__}}").join(z3PipelineLabel)
-  html = html.split("{{__P_z3ProxyBadge__}}").join(z3ProxyBadge)
-  html = html.split("{{__P_z3ProxySub__}}").join(z3ProxySub)
-  html = html.split("{{__P_z3PathA__}}").join(z3PathA)
-  html = html.split("{{__P_z3PathB__}}").join(z3PathB)
-  html = html.split("{{__P_z3DeployA1__}}").join(z3DeployA1)
-  html = html.split("{{__P_z3DeployA2__}}").join(z3DeployA2)
-  html = html.split("{{__P_z3DeployB1__}}").join(z3DeployB1)
-  html = html.split("{{__P_z3DeployB2__}}").join(z3DeployB2)
-  html = html.split("{{__P_z3SwapNote__}}").join(z3SwapNote)
-  html = html.split("{{__P_z3GuardStrong__}}").join(z3GuardStrong)
-  html = html.split("{{__P_z3GuardBody__}}").join(z3GuardBody)
-  html = html.split("{{__P_z3IsoLabel__}}").join(z3IsoLabel)
-  html = html.split("{{__P_z3PdescHead__}}").join(z3PdescHead)
-  html = html.split("{{__P_z3PdescItem1__}}").join(z3PdescItem1)
-  html = html.split("{{__P_z3PdescItem2__}}").join(z3PdescItem2)
-  html = html.split("{{__P_z3PdescItem3__}}").join(z3PdescItem3)
-  html = html.split("{{__P_z3PdescFoot__}}").join(z3PdescFoot)
-  html = html.split("{{__P_z3ComplianceLabel__}}").join(z3ComplianceLabel)
-  html = html.split("{{__P_z3Compliance1__}}").join(z3Compliance1)
-  html = html.split("{{__P_z3Compliance2__}}").join(z3Compliance2)
-  html = html.split("{{__P_z4GroupTag__}}").join(z4GroupTag)
-  html = html.split("{{__P_z4InSub__}}").join(z4InSub)
-  html = html.split("{{__P_z4ProcessSub__}}").join(z4ProcessSub)
-  html = html.split("{{__P_z4OutSub__}}").join(z4OutSub)
-  html = html.split("{{__P_z4BlockLabel__}}").join(z4BlockLabel)
-  html = html.split("{{__P_z4F1Name__}}").join(z4F1Name)
-  html = html.split("{{__P_z4F2Name__}}").join(z4F2Name)
-  html = html.split("{{__P_z4F3Name__}}").join(z4F3Name)
-  html = html.split("{{__P_z4ReconName__}}").join(z4ReconName)
-  html = html.split("{{__P_z4ReconBadge__}}").join(z4ReconBadge)
-  html = html.split("{{__P_z4ReconTech1__}}").join(z4ReconTech1)
-  html = html.split("{{__P_z4ReconTech2__}}").join(z4ReconTech2)
-  html = html.split("{{__P_z4ReconTech3__}}").join(z4ReconTech3)
-  html = html.split("{{__P_z4ReconTech4__}}").join(z4ReconTech4)
-  html = html.split("{{__P_z4LocalStrong__}}").join(z4LocalStrong)
-  html = html.split("{{__P_z4LocalBody__}}").join(z4LocalBody)
-  html = html.split("{{__P_z4OutputLabel__}}").join(z4OutputLabel)
-  html = html.split("{{__P_z4OutCheck1__}}").join(z4OutCheck1)
-  html = html.split("{{__P_z4OutCheck2__}}").join(z4OutCheck2)
-  html = html.split("{{__P_z4OutCheck3__}}").join(z4OutCheck3)
-  html = html.split("{{__P_z4OutCheck4__}}").join(z4OutCheck4)
-  html = html.split("{{__P_z4Chip1__}}").join(z4Chip1)
-  html = html.split("{{__P_z4Chip2__}}").join(z4Chip2)
-  html = html.split("{{__P_z4Chip3__}}").join(z4Chip3)
-  html = html.split("{{__P_coreTitle__}}").join(coreTitle)
-  html = html.split("{{__P_coreWorkflowGroup__}}").join(coreWorkflowGroup)
-  html = html.split("{{__P_coreApprovalGroup__}}").join(coreApprovalGroup)
-  html = html.split("{{__P_core1Name__}}").join(core1Name)
-  html = html.split("{{__P_core1Desc__}}").join(core1Desc)
-  html = html.split("{{__P_core2Name__}}").join(core2Name)
-  html = html.split("{{__P_core2Desc__}}").join(core2Desc)
-  html = html.split("{{__P_core3Name__}}").join(core3Name)
-  html = html.split("{{__P_core3Desc__}}").join(core3Desc)
-  html = html.split("{{__P_core4Name__}}").join(core4Name)
-  html = html.split("{{__P_core4Desc__}}").join(core4Desc)
-  html = html.split("{{__P_core5Name__}}").join(core5Name)
-  html = html.split("{{__P_core5Desc__}}").join(core5Desc)
-  html = html.split("{{__P_core6Name__}}").join(core6Name)
-  html = html.split("{{__P_core6Desc__}}").join(core6Desc)
-  html = html.split("{{__P_coreStrip__}}").join(coreStrip)
+  html = html.split("{{__P_step1Title__}}").join(_step1Title)
+  html = html.split("{{__P_step2Title__}}").join(_step2Title)
+  html = html.split("{{__P_step3Title__}}").join(_step3Title)
+  html = html.split("{{__P_step4Title__}}").join(_step4Title)
+  html = html.split("{{__P_z1Label__}}").join(_z1Label)
+  html = html.split("{{__P_z1Sub__}}").join(_z1Sub)
+  html = html.split("{{__P_z2Label__}}").join(_z2Label)
+  html = html.split("{{__P_z2Sub__}}").join(_z2Sub)
+  html = html.split("{{__P_z3Label__}}").join(_z3Label)
+  html = html.split("{{__P_z3Sub__}}").join(_z3Sub)
+  html = html.split("{{__P_z4Label__}}").join(_z4Label)
+  html = html.split("{{__P_z4Sub__}}").join(_z4Sub)
+  html = html.split("{{__P_conn1Label__}}").join(_conn1Label)
+  html = html.split("{{__P_conn2Label__}}").join(_conn2Label)
+  html = html.split("{{__P_conn3Label__}}").join(_conn3Label)
+  html = html.split("{{__P_z1GroupTag__}}").join(_z1GroupTag)
+  html = html.split("{{__P_z1Db1Sub__}}").join(_z1Db1Sub)
+  html = html.split("{{__P_z1Db2Sub__}}").join(_z1Db2Sub)
+  html = html.split("{{__P_z1Db3Sub__}}").join(_z1Db3Sub)
+  html = html.split("{{__P_z1FieldsLabel__}}").join(_z1FieldsLabel)
+  html = html.split("{{__P_z1F1Name__}}").join(_z1F1Name)
+  html = html.split("{{__P_z1F2Name__}}").join(_z1F2Name)
+  html = html.split("{{__P_z1F2NameMid__}}").join(_z1F2NameMid)
+  html = html.split("{{__P_z1GuardStrong__}}").join(_z1GuardStrong)
+  html = html.split("{{__P_z1GuardBody__}}").join(_z1GuardBody)
+  html = html.split("{{__P_z1PluginTag__}}").join(_z1PluginTag)
+  html = html.split("{{__P_z1Sys1Sub__}}").join(_z1Sys1Sub)
+  html = html.split("{{__P_z1Sys2Sub__}}").join(_z1Sys2Sub)
+  html = html.split("{{__P_z1Sys3Sub__}}").join(_z1Sys3Sub)
+  html = html.split("{{__P_z1Sys4Sub__}}").join(_z1Sys4Sub)
+  html = html.split("{{__P_z1Sys5Sub__}}").join(_z1Sys5Sub)
+  html = html.split("{{__P_z1Sys6Sub__}}").join(_z1Sys6Sub)
+  html = html.split("{{__P_z1Sys1Name__}}").join(_z1Sys1Name)
+  html = html.split("{{__P_z1Sys2Name__}}").join(_z1Sys2Name)
+  html = html.split("{{__P_z1Sys3Name__}}").join(_z1Sys3Name)
+  html = html.split("{{__P_z1Sys4Name__}}").join(_z1Sys4Name)
+  html = html.split("{{__P_z1Sys5Name__}}").join(_z1Sys5Name)
+  html = html.split("{{__P_z1Sys6Name__}}").join(_z1Sys6Name)
+  html = html.split("{{__P_z1SysApi__}}").join(_z1SysApi)
+  html = html.split("{{__P_z1ZeroModStrong__}}").join(_z1ZeroModStrong)
+  html = html.split("{{__P_z1ZeroModBody__}}").join(_z1ZeroModBody)
+  html = html.split("{{__P_z2GroupTag__}}").join(_z2GroupTag)
+  html = html.split("{{__P_z2InSub__}}").join(_z2InSub)
+  html = html.split("{{__P_z2ProcessSub__}}").join(_z2ProcessSub)
+  html = html.split("{{__P_z2OutSub__}}").join(_z2OutSub)
+  html = html.split("{{__P_z2BlockLabel__}}").join(_z2BlockLabel)
+  html = html.split("{{__P_z2ProtectedBadge__}}").join(_z2ProtectedBadge)
+  html = html.split("{{__P_z2F1Name__}}").join(_z2F1Name)
+  html = html.split("{{__P_z2F2Name__}}").join(_z2F2Name)
+  html = html.split("{{__P_z2F3Name__}}").join(_z2F3Name)
+  html = html.split("{{__P_z2DpEngineName__}}").join(_z2DpEngineName)
+  html = html.split("{{__P_z2DpEngineBadge__}}").join(_z2DpEngineBadge)
+  html = html.split("{{__P_z2DpTech1__}}").join(_z2DpTech1)
+  html = html.split("{{__P_z2DpTech2__}}").join(_z2DpTech2)
+  html = html.split("{{__P_z2DpTech3__}}").join(_z2DpTech3)
+  html = html.split("{{__P_z2DpTech4__}}").join(_z2DpTech4)
+  html = html.split("{{__P_z2DmzStrong__}}").join(_z2DmzStrong)
+  html = html.split("{{__P_z2DmzBody__}}").join(_z2DmzBody)
+  html = html.split("{{__P_z3PipelineLabel__}}").join(_z3PipelineLabel)
+  html = html.split("{{__P_z3ProxyBadge__}}").join(_z3ProxyBadge)
+  html = html.split("{{__P_z3ProxySub__}}").join(_z3ProxySub)
+  html = html.split("{{__P_z3PathA__}}").join(_z3PathA)
+  html = html.split("{{__P_z3PathB__}}").join(_z3PathB)
+  html = html.split("{{__P_z3DeployA1__}}").join(_z3DeployA1)
+  html = html.split("{{__P_z3DeployA2__}}").join(_z3DeployA2)
+  html = html.split("{{__P_z3DeployB1__}}").join(_z3DeployB1)
+  html = html.split("{{__P_z3DeployB2__}}").join(_z3DeployB2)
+  html = html.split("{{__P_z3SwapNote__}}").join(_z3SwapNote)
+  html = html.split("{{__P_z3GuardStrong__}}").join(_z3GuardStrong)
+  html = html.split("{{__P_z3GuardBody__}}").join(_z3GuardBody)
+  html = html.split("{{__P_z3IsoLabel__}}").join(_z3IsoLabel)
+  html = html.split("{{__P_z3PdescHead__}}").join(_z3PdescHead)
+  html = html.split("{{__P_z3PdescItem1__}}").join(_z3PdescItem1)
+  html = html.split("{{__P_z3PdescItem2__}}").join(_z3PdescItem2)
+  html = html.split("{{__P_z3PdescItem3__}}").join(_z3PdescItem3)
+  html = html.split("{{__P_z3PdescFoot__}}").join(_z3PdescFoot)
+  html = html.split("{{__P_z3ComplianceLabel__}}").join(_z3ComplianceLabel)
+  html = html.split("{{__P_z3Compliance1__}}").join(_z3Compliance1)
+  html = html.split("{{__P_z3Compliance2__}}").join(_z3Compliance2)
+  html = html.split("{{__P_z4GroupTag__}}").join(_z4GroupTag)
+  html = html.split("{{__P_z4InSub__}}").join(_z4InSub)
+  html = html.split("{{__P_z4ProcessSub__}}").join(_z4ProcessSub)
+  html = html.split("{{__P_z4OutSub__}}").join(_z4OutSub)
+  html = html.split("{{__P_z4BlockLabel__}}").join(_z4BlockLabel)
+  html = html.split("{{__P_z4F1Name__}}").join(_z4F1Name)
+  html = html.split("{{__P_z4F2Name__}}").join(_z4F2Name)
+  html = html.split("{{__P_z4F3Name__}}").join(_z4F3Name)
+  html = html.split("{{__P_z4ReconName__}}").join(_z4ReconName)
+  html = html.split("{{__P_z4ReconBadge__}}").join(_z4ReconBadge)
+  html = html.split("{{__P_z4ReconTech1__}}").join(_z4ReconTech1)
+  html = html.split("{{__P_z4ReconTech2__}}").join(_z4ReconTech2)
+  html = html.split("{{__P_z4ReconTech3__}}").join(_z4ReconTech3)
+  html = html.split("{{__P_z4ReconTech4__}}").join(_z4ReconTech4)
+  html = html.split("{{__P_z4LocalStrong__}}").join(_z4LocalStrong)
+  html = html.split("{{__P_z4LocalBody__}}").join(_z4LocalBody)
+  html = html.split("{{__P_z4OutputLabel__}}").join(_z4OutputLabel)
+  html = html.split("{{__P_z4OutCheck1__}}").join(_z4OutCheck1)
+  html = html.split("{{__P_z4OutCheck2__}}").join(_z4OutCheck2)
+  html = html.split("{{__P_z4OutCheck3__}}").join(_z4OutCheck3)
+  html = html.split("{{__P_z4OutCheck4__}}").join(_z4OutCheck4)
+  html = html.split("{{__P_z4Chip1__}}").join(_z4Chip1)
+  html = html.split("{{__P_z4Chip2__}}").join(_z4Chip2)
+  html = html.split("{{__P_z4Chip3__}}").join(_z4Chip3)
+  html = html.split("{{__P_coreTitle__}}").join(_coreTitle)
+  html = html.split("{{__P_coreWorkflowGroup__}}").join(_coreWorkflowGroup)
+  html = html.split("{{__P_coreApprovalGroup__}}").join(_coreApprovalGroup)
+  html = html.split("{{__P_core1Name__}}").join(_core1Name)
+  html = html.split("{{__P_core1Desc__}}").join(_core1Desc)
+  html = html.split("{{__P_core2Name__}}").join(_core2Name)
+  html = html.split("{{__P_core2Desc__}}").join(_core2Desc)
+  html = html.split("{{__P_core3Name__}}").join(_core3Name)
+  html = html.split("{{__P_core3Desc__}}").join(_core3Desc)
+  html = html.split("{{__P_core4Name__}}").join(_core4Name)
+  html = html.split("{{__P_core4Desc__}}").join(_core4Desc)
+  html = html.split("{{__P_core5Name__}}").join(_core5Name)
+  html = html.split("{{__P_core5Desc__}}").join(_core5Desc)
+  html = html.split("{{__P_core6Name__}}").join(_core6Name)
+  html = html.split("{{__P_core6Desc__}}").join(_core6Desc)
+  html = html.split("{{__P_coreStrip__}}").join(_coreStrip)
 
   return (
     <>
@@ -2523,138 +3074,139 @@ export default function ArchitectureFourZoneTechnical({
 }
 
 addPropertyControls(ArchitectureFourZoneTechnical, {
-  eyebrow: { type: ControlType.String, title: "Section · Eyebrow", defaultValue: "Technical view · zone-based architecture" },
-  sectionTitle: { type: ControlType.String, title: "Section · Title", defaultValue: "The same architecture, in technical view" },
-  sectionDescription: { type: ControlType.String, title: "Section · Description", defaultValue: "For architects and security reviewers — the full zone-based view of how operational data, encapsulation, and how any LLM interacts.", displayTextArea: true },
-  card1Num: { type: ControlType.String, title: "Card 1 · Num", defaultValue: "Zone 1 · Corporate Internal Network" },
-  card1Title: { type: ControlType.String, title: "Card 1 · Title", defaultValue: "Where the operational systems already live" },
-  card1Description: { type: ControlType.String, title: "Card 1 · Description", defaultValue: "Existing enterprise systems — ERP, CRM, Ticketing, DMS / ECM, Legacy DB, RAG Pipeline — stay in place. Nothing migrates. Capsule reads from them via REST, gRPC, JDBC, or Graph API depending on the source.", displayTextArea: true },
-  card2Num: { type: ControlType.String, title: "Card 2 · Num", defaultValue: "Zone 2 · DMZ — Demilitarized Zone" },
-  card2Title: { type: ControlType.String, title: "Card 2 · Title", defaultValue: "Where encapsulation happens" },
-  card2Description: { type: ControlType.String, title: "Card 2 · Description", defaultValue: "The Enhanced Encapsulation Layer detects sensitive elements, replaces them with safe tokens using structure-preserving, differential-privacy-based protection, and hands the capsule to the routing decision. Original values stay behind, retained in the local token map.", displayTextArea: true },
-  card3Num: { type: ControlType.String, title: "Card 3 · Num", defaultValue: "Zone 3 · In-House Team" },
-  card3Title: { type: ControlType.String, title: "Card 3 · Title", defaultValue: "Where governance and routing happen" },
-  card3Description: { type: ControlType.String, title: "Card 3 · Description", defaultValue: "Organizational policy, permissions, and domain context decide where the capsule is processed — an approved external LLM (Path A) or an on-prem local model (Path B). The decision is policy-driven per workflow, with full audit retained inside the organization.", displayTextArea: true },
-  card4Num: { type: ControlType.String, title: "Card 4 · Num", defaultValue: "Zone 4 · Local — Auto Reconstruction" },
-  card4Title: { type: ControlType.String, title: "Card 4 · Title", defaultValue: "Where the AI response becomes Business-Ready output" },
-  card4Description: { type: ControlType.String, title: "Card 4 · Description", defaultValue: "The AI response is automatically reconstructed from token to original value inside the organization only. Data that left the trust boundary cannot be reconstructed externally. The restored output is delivered back into the originating workflow.", displayTextArea: true },
-  step1Title: { type: ControlType.String, title: "Z1 · Step Title", defaultValue: "Source Data" },
-  step2Title: { type: ControlType.String, title: "Z2 · Step Title", defaultValue: "DP Encapsulation" },
-  step3Title: { type: ControlType.String, title: "Z3 · Step Title", defaultValue: "AI Processing" },
-  step4Title: { type: ControlType.String, title: "Z4 · Step Title", defaultValue: "Local Auto Reconstruction" },
-  z1Label: { type: ControlType.String, title: "Z1 · Zone Label", defaultValue: "Corporate Internal Network" },
-  z1Sub: { type: ControlType.String, title: "Z1 · Zone Sub", defaultValue: "On-prem DB · Enterprise Systems" },
-  z2Label: { type: ControlType.String, title: "Z2 · Zone Label", defaultValue: "DMZ — Differential Privacy" },
-  z2Sub: { type: ControlType.String, title: "Z2 · Zone Sub", defaultValue: "Same Org · EU Region · GDPR Ready" },
-  z3Label: { type: ControlType.String, title: "Z3 · Zone Label", defaultValue: "In-House Team" },
-  z3Sub: { type: ControlType.String, title: "Z3 · Zone Sub", defaultValue: "Same Org · Anonymized LLM Proxy" },
-  z4Label: { type: ControlType.String, title: "Z4 · Zone Label", defaultValue: "Local — Auto Reconstruction" },
-  z4Sub: { type: ControlType.String, title: "Z4 · Zone Sub", defaultValue: "Internal Only · No External Egress" },
-  conn1Label: { type: ControlType.String, title: "Connector · 1→2 Label", defaultValue: "Unstructured Data In" },
-  conn2Label: { type: ControlType.String, title: "Connector · 2→3 Label", defaultValue: "Protected Data Out" },
-  conn3Label: { type: ControlType.String, title: "Connector · 3→4 Label", defaultValue: "AI Response (tokenized)" },
-  z1GroupTag: { type: ControlType.String, title: "Z1 · DB Group Tag", defaultValue: "Unstructured" },
-  z1Db1Sub: { type: ControlType.String, title: "Z1 · DB1 Sub (use <br/>)", defaultValue: "Customer Data<br/>Personally Identifiable Info" },
-  z1Db2Sub: { type: ControlType.String, title: "Z1 · DB2 Sub (use <br/>)", defaultValue: "Ticket Data<br/>CS Tickets / Status" },
-  z1Db3Sub: { type: ControlType.String, title: "Z1 · DB3 Sub (use <br/>)", defaultValue: "Detail Data<br/>Unstructured Claims" },
-  z1FieldsLabel: { type: ControlType.String, title: "Z1 · Raw Input Block Label", defaultValue: "Raw Input Fields" },
-  z1F1Name: { type: ControlType.String, title: "Z1 · Field 1 Name", defaultValue: "Customer" },
-  z1F2Name: { type: ControlType.String, title: "Z1 · Field 3 Name", defaultValue: "Free Text" },
-  z1F2NameMid: { type: ControlType.String, title: "Z1 · Field 2 Name", defaultValue: "Ticket" },
-  z1GuardStrong: { type: ControlType.String, title: "Z1 · Guardrail Title", defaultValue: "PII guardrails protect fields. Enterprises run on structures." },
-  z1GuardBody: { type: ControlType.String, title: "Z1 · Guardrail Body (HTML)", defaultValue: "We are not criticizing PII filters. We handle a <b>different category of data</b> — table schemas, cross-references, alarm sequences, and ticket threads that simple field-level masking cannot preserve.", displayTextArea: true },
-  z1PluginTag: { type: ControlType.String, title: "Z1 · Plug-in Tag", defaultValue: "Plug-in for AI Teams" },
-  z1Sys1Sub: { type: ControlType.String, title: "Z1 · Sys 1 Sub", defaultValue: "SAP·Oracle" },
-  z1Sys2Sub: { type: ControlType.String, title: "Z1 · Sys 2 Sub", defaultValue: "Salesforce" },
-  z1Sys3Sub: { type: ControlType.String, title: "Z1 · Sys 3 Sub", defaultValue: "Vector DB" },
-  z1Sys4Sub: { type: ControlType.String, title: "Z1 · Sys 4 Sub", defaultValue: "Oracle" },
-  z1Sys5Sub: { type: ControlType.String, title: "Z1 · Sys 5 Sub", defaultValue: "Jira·SN" },
-  z1Sys6Sub: { type: ControlType.String, title: "Z1 · Sys 6 Sub", defaultValue: "SharePoint" },
-  z1Sys1Name: { type: ControlType.String, title: "Z1 · Sys 1 Name (ERP)", defaultValue: "ERP" },
-  z1Sys2Name: { type: ControlType.String, title: "Z1 · Sys 2 Name (CRM)", defaultValue: "CRM" },
-  z1Sys3Name: { type: ControlType.String, title: "Z1 · Sys 3 Name (RAG)", defaultValue: "RAG" },
-  z1Sys4Name: { type: ControlType.String, title: "Z1 · Sys 4 Name (Legacy)", defaultValue: "Legacy" },
-  z1Sys5Name: { type: ControlType.String, title: "Z1 · Sys 5 Name (Ticket)", defaultValue: "Ticket" },
-  z1Sys6Name: { type: ControlType.String, title: "Z1 · Sys 6 Name (DMS)", defaultValue: "DMS" },
-  z1SysApi: { type: ControlType.String, title: "Z1 · API List", defaultValue: "REST · gRPC · JDBC · Graph API" },
-  z1ZeroModStrong: { type: ControlType.String, title: "Z1 · Zero-Mod Title", defaultValue: "Zero System Modification" },
-  z1ZeroModBody: { type: ControlType.String, title: "Z1 · Zero-Mod Body", defaultValue: "Integrates via a single API call with zero modifications to existing ERP, CRM, or legacy systems", displayTextArea: true },
-  z2GroupTag: { type: ControlType.String, title: "Z2 · DB Group Tag", defaultValue: "Encapsulation Flow" },
-  z2InSub: { type: ControlType.String, title: "Z2 · IN Sub", defaultValue: "Raw Input<br/>Unstructured Data" },
-  z2ProcessSub: { type: ControlType.String, title: "Z2 · PROCESS Sub", defaultValue: "DP Engine<br/>Differential Privacy" },
-  z2OutSub: { type: ControlType.String, title: "Z2 · OUT Sub", defaultValue: "Encapsulated<br/>Token Capsule" },
-  z2BlockLabel: { type: ControlType.String, title: "Z2 · Block Label", defaultValue: "Encapsulation" },
-  z2ProtectedBadge: { type: ControlType.String, title: "Z2 · Protected Badge", defaultValue: "✓ Protected" },
-  z2F1Name: { type: ControlType.String, title: "Z2 · Field 1 Name", defaultValue: "Name" },
-  z2F2Name: { type: ControlType.String, title: "Z2 · Field 2 Name", defaultValue: "Champ Id" },
-  z2F3Name: { type: ControlType.String, title: "Z2 · Field 3 Name", defaultValue: "Free Text" },
-  z2DpEngineName: { type: ControlType.String, title: "Z2 · DP Engine Name", defaultValue: "DP Engine" },
-  z2DpEngineBadge: { type: ControlType.String, title: "Z2 · DP Engine Badge", defaultValue: "epsilon-DP Active" },
-  z2DpTech1: { type: ControlType.String, title: "Z2 · DP Tech 1", defaultValue: "Noise Injection (Laplace)" },
-  z2DpTech2: { type: ControlType.String, title: "Z2 · DP Tech 2", defaultValue: "k-Anonymity Enforcement" },
-  z2DpTech3: { type: ControlType.String, title: "Z2 · DP Tech 3", defaultValue: "Semantic Tokenization" },
-  z2DpTech4: { type: ControlType.String, title: "Z2 · DP Tech 4", defaultValue: "Free-Text NER Masking" },
-  z2DmzStrong: { type: ControlType.String, title: "Z2 · DMZ Title", defaultValue: "DMZ Guarantee" },
-  z2DmzBody: { type: ControlType.String, title: "Z2 · DMZ Body", defaultValue: "Goes beyond simple encapsulation. Differential privacy techniques make original sensitive data <b>mathematically irreversible</b>", displayTextArea: true },
-  z3PipelineLabel: { type: ControlType.String, title: "Z3 · Pipeline Block Label", defaultValue: "LLM Pipeline" },
-  z3ProxyBadge: { type: ControlType.String, title: "Z3 · Proxy Badge", defaultValue: "LLM-a-Proxy" },
-  z3ProxySub: { type: ControlType.String, title: "Z3 · Proxy Sub", defaultValue: "Anonymized Routing" },
-  z3PathA: { type: ControlType.String, title: "Z3 · Path A Label", defaultValue: "Path A · External" },
-  z3PathB: { type: ControlType.String, title: "Z3 · Path B Label", defaultValue: "Path B · On-prem" },
-  z3DeployA1: { type: ControlType.String, title: "Z3 · Deploy A1 (External 1)", defaultValue: "Public cloud" },
-  z3DeployA2: { type: ControlType.String, title: "Z3 · Deploy A2 (External 2)", defaultValue: "Region-hosted" },
-  z3DeployB1: { type: ControlType.String, title: "Z3 · Deploy B1 (On-prem 1)", defaultValue: "Private" },
-  z3DeployB2: { type: ControlType.String, title: "Z3 · Deploy B2 (On-prem 2)", defaultValue: "On-prem" },
-  z3SwapNote: { type: ControlType.String, title: "Z3 · Swap Note", defaultValue: "swap any model — capsule contract stays the same" },
-  z3GuardStrong: { type: ControlType.String, title: "Z3 · Guardrail Title", defaultValue: "No Direct Access to Source DB" },
-  z3GuardBody: { type: ControlType.String, title: "Z3 · Guardrail Body", defaultValue: "AI teams never touch the source database. They only receive structure-preserved, differentially-private data", displayTextArea: true },
-  z3IsoLabel: { type: ControlType.String, title: "Z3 · Isolation Block Label", defaultValue: "Privacy Isolation Module" },
-  z3PdescHead: { type: ControlType.String, title: "Z3 · PDESC Head", defaultValue: "PDESC / ISOLA" },
-  z3PdescItem1: { type: ControlType.String, title: "Z3 · PDESC Item 1", defaultValue: "Privacy Descriptor" },
-  z3PdescItem2: { type: ControlType.String, title: "Z3 · PDESC Item 2", defaultValue: "Isolated Computation Zone" },
-  z3PdescItem3: { type: ControlType.String, title: "Z3 · PDESC Item 3", defaultValue: "Output De-identification" },
-  z3PdescFoot: { type: ControlType.String, title: "Z3 · PDESC Foot", defaultValue: "Re-identification attempts contained · Output validated" },
-  z3ComplianceLabel: { type: ControlType.String, title: "Z3 · Compliance Label", defaultValue: "Compliance" },
-  z3Compliance1: { type: ControlType.String, title: "Z3 · Compliance Badge 1", defaultValue: "EU GDPR" },
-  z3Compliance2: { type: ControlType.String, title: "Z3 · Compliance Badge 2", defaultValue: "EU Region" },
-  z4GroupTag: { type: ControlType.String, title: "Z4 · DB Group Tag", defaultValue: "Reconstruction Flow" },
-  z4InSub: { type: ControlType.String, title: "Z4 · IN Sub", defaultValue: "AI Token<br/>Tokenized Response" },
-  z4ProcessSub: { type: ControlType.String, title: "Z4 · PROCESS Sub", defaultValue: "Reconstruction<br/>Local Restoration" },
-  z4OutSub: { type: ControlType.String, title: "Z4 · OUT Sub", defaultValue: "Original Value<br/>Business-Ready" },
-  z4BlockLabel: { type: ControlType.String, title: "Z4 · Token Block Label", defaultValue: "Token → Original" },
-  z4F1Name: { type: ControlType.String, title: "Z4 · Field 1 Name", defaultValue: "Customer" },
-  z4F2Name: { type: ControlType.String, title: "Z4 · Field 2 Name", defaultValue: "Ticket" },
-  z4F3Name: { type: ControlType.String, title: "Z4 · Field 3 Name", defaultValue: "Details" },
-  z4ReconName: { type: ControlType.String, title: "Z4 · Recon Engine Name", defaultValue: "Reconstruction" },
-  z4ReconBadge: { type: ControlType.String, title: "Z4 · Recon Engine Badge", defaultValue: "Local Only" },
-  z4ReconTech1: { type: ControlType.String, title: "Z4 · Recon Tech 1", defaultValue: "Token Map Lookup" },
-  z4ReconTech2: { type: ControlType.String, title: "Z4 · Recon Tech 2", defaultValue: "Original Value Restore" },
-  z4ReconTech3: { type: ControlType.String, title: "Z4 · Recon Tech 3", defaultValue: "Context Re-binding" },
-  z4ReconTech4: { type: ControlType.String, title: "Z4 · Recon Tech 4", defaultValue: "Output Validation" },
-  z4LocalStrong: { type: ControlType.String, title: "Z4 · Local Guarantee Title", defaultValue: "Local Reconstruction Guarantee" },
-  z4LocalBody: { type: ControlType.String, title: "Z4 · Local Guarantee Body", defaultValue: "Token map exists only in local storage · <b>Delivers Business-Ready Output instantly</b>", displayTextArea: true },
-  z4OutputLabel: { type: ControlType.String, title: "Z4 · Output Properties Label", defaultValue: "Output Properties" },
-  z4OutCheck1: { type: ControlType.String, title: "Z4 · Output Check 1", defaultValue: "Original Values Restored" },
-  z4OutCheck2: { type: ControlType.String, title: "Z4 · Output Check 2", defaultValue: "Zero External Exposure" },
-  z4OutCheck3: { type: ControlType.String, title: "Z4 · Output Check 3", defaultValue: "Context Fully Preserved" },
-  z4OutCheck4: { type: ControlType.String, title: "Z4 · Output Check 4", defaultValue: "Business-Ready Output" },
-  z4Chip1: { type: ControlType.String, title: "Z4 · Chip 1", defaultValue: "Auto Restore" },
-  z4Chip2: { type: ControlType.String, title: "Z4 · Chip 2", defaultValue: "Local Only" },
-  z4Chip3: { type: ControlType.String, title: "Z4 · Chip 3", defaultValue: "Data Residency" },
-  coreTitle: { type: ControlType.String, title: "Core · Section Title", defaultValue: "6 Core Capabilities" },
-  coreWorkflowGroup: { type: ControlType.String, title: "Core · Workflow Group Label", defaultValue: "What Makes The Workflow Run" },
-  coreApprovalGroup: { type: ControlType.String, title: "Core · Approval Group Label", defaultValue: "What Gets The Approval" },
-  core1Name: { type: ControlType.String, title: "Core 01 · Name", defaultValue: "Structure-Preserving" },
-  core1Desc: { type: ControlType.String, title: "Core 01 · Description", defaultValue: "Tables, logs, cross-references, and alarm sequences stay intact. AI reads structure, not just text.", displayTextArea: true },
-  core2Name: { type: ControlType.String, title: "Core 02 · Name", defaultValue: "Enterprise Environment Execution" },
-  core2Desc: { type: ControlType.String, title: "Core 02 · Description", defaultValue: "Deploys inside your environment. Connects via API, SDK, connectors, or reverse proxy. No traffic re-routing.", displayTextArea: true },
-  core3Name: { type: ControlType.String, title: "Core 03 · Name", defaultValue: "Business-Ready Reconstruction" },
-  core3Desc: { type: ControlType.String, title: "Core 03 · Description", defaultValue: "AI output is restored with real values. The result goes straight back to the originating ticket or workflow.", displayTextArea: true },
-  core4Name: { type: ControlType.String, title: "Core 04 · Name", defaultValue: "Enterprise Context Control" },
-  core4Desc: { type: ControlType.String, title: "Core 04 · Description", defaultValue: "Your IT admin defines what counts as sensitive. Custom markers, regex rules, and tier policies. Set in 5 minutes.", displayTextArea: true },
-  core5Name: { type: ControlType.String, title: "Core 05 · Name", defaultValue: "Zero Exposure &amp; Audit" },
-  core5Desc: { type: ControlType.String, title: "Core 05 · Description", defaultValue: "Raw operational data stays inside. Every action logged, timestamped, SIEM-exportable.", displayTextArea: true },
-  core6Name: { type: ControlType.String, title: "Core 06 · Name", defaultValue: "Time-Shifting Policy" },
-  core6Desc: { type: ControlType.String, title: "Core 06 · Description", defaultValue: "Sensitivity changes over time. Capsule versions every marker and policy for continuous compliance.", displayTextArea: true },
-  coreStrip: { type: ControlType.String, title: "Core · Bottom Strip", defaultValue: "01 and 02 lead the conversation. 05 and 06 anchor the approval." },
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
+  eyebrow: { type: ControlType.String, title: "Section · Eyebrow", defaultValue: "" },
+  sectionTitle: { type: ControlType.String, title: "Section · Title", defaultValue: "" },
+  sectionDescription: { type: ControlType.String, title: "Section · Description", defaultValue: "", displayTextArea: true },
+  card1Num: { type: ControlType.String, title: "Card 1 · Num", defaultValue: "" },
+  card1Title: { type: ControlType.String, title: "Card 1 · Title", defaultValue: "" },
+  card1Description: { type: ControlType.String, title: "Card 1 · Description", defaultValue: "", displayTextArea: true },
+  card2Num: { type: ControlType.String, title: "Card 2 · Num", defaultValue: "" },
+  card2Title: { type: ControlType.String, title: "Card 2 · Title", defaultValue: "" },
+  card2Description: { type: ControlType.String, title: "Card 2 · Description", defaultValue: "", displayTextArea: true },
+  card3Num: { type: ControlType.String, title: "Card 3 · Num", defaultValue: "" },
+  card3Title: { type: ControlType.String, title: "Card 3 · Title", defaultValue: "" },
+  card3Description: { type: ControlType.String, title: "Card 3 · Description", defaultValue: "", displayTextArea: true },
+  card4Num: { type: ControlType.String, title: "Card 4 · Num", defaultValue: "" },
+  card4Title: { type: ControlType.String, title: "Card 4 · Title", defaultValue: "" },
+  card4Description: { type: ControlType.String, title: "Card 4 · Description", defaultValue: "", displayTextArea: true },
+  step1Title: { type: ControlType.String, title: "Z1 · Step Title", defaultValue: "" },
+  step2Title: { type: ControlType.String, title: "Z2 · Step Title", defaultValue: "" },
+  step3Title: { type: ControlType.String, title: "Z3 · Step Title", defaultValue: "" },
+  step4Title: { type: ControlType.String, title: "Z4 · Step Title", defaultValue: "" },
+  z1Label: { type: ControlType.String, title: "Z1 · Zone Label", defaultValue: "" },
+  z1Sub: { type: ControlType.String, title: "Z1 · Zone Sub", defaultValue: "" },
+  z2Label: { type: ControlType.String, title: "Z2 · Zone Label", defaultValue: "" },
+  z2Sub: { type: ControlType.String, title: "Z2 · Zone Sub", defaultValue: "" },
+  z3Label: { type: ControlType.String, title: "Z3 · Zone Label", defaultValue: "" },
+  z3Sub: { type: ControlType.String, title: "Z3 · Zone Sub", defaultValue: "" },
+  z4Label: { type: ControlType.String, title: "Z4 · Zone Label", defaultValue: "" },
+  z4Sub: { type: ControlType.String, title: "Z4 · Zone Sub", defaultValue: "" },
+  conn1Label: { type: ControlType.String, title: "Connector · 1→2 Label", defaultValue: "" },
+  conn2Label: { type: ControlType.String, title: "Connector · 2→3 Label", defaultValue: "" },
+  conn3Label: { type: ControlType.String, title: "Connector · 3→4 Label", defaultValue: "" },
+  z1GroupTag: { type: ControlType.String, title: "Z1 · DB Group Tag", defaultValue: "" },
+  z1Db1Sub: { type: ControlType.String, title: "Z1 · DB1 Sub (use <br/>)", defaultValue: "" },
+  z1Db2Sub: { type: ControlType.String, title: "Z1 · DB2 Sub (use <br/>)", defaultValue: "" },
+  z1Db3Sub: { type: ControlType.String, title: "Z1 · DB3 Sub (use <br/>)", defaultValue: "" },
+  z1FieldsLabel: { type: ControlType.String, title: "Z1 · Raw Input Block Label", defaultValue: "" },
+  z1F1Name: { type: ControlType.String, title: "Z1 · Field 1 Name", defaultValue: "" },
+  z1F2Name: { type: ControlType.String, title: "Z1 · Field 3 Name", defaultValue: "" },
+  z1F2NameMid: { type: ControlType.String, title: "Z1 · Field 2 Name", defaultValue: "" },
+  z1GuardStrong: { type: ControlType.String, title: "Z1 · Guardrail Title", defaultValue: "" },
+  z1GuardBody: { type: ControlType.String, title: "Z1 · Guardrail Body (HTML)", defaultValue: "", displayTextArea: true },
+  z1PluginTag: { type: ControlType.String, title: "Z1 · Plug-in Tag", defaultValue: "" },
+  z1Sys1Sub: { type: ControlType.String, title: "Z1 · Sys 1 Sub", defaultValue: "" },
+  z1Sys2Sub: { type: ControlType.String, title: "Z1 · Sys 2 Sub", defaultValue: "" },
+  z1Sys3Sub: { type: ControlType.String, title: "Z1 · Sys 3 Sub", defaultValue: "" },
+  z1Sys4Sub: { type: ControlType.String, title: "Z1 · Sys 4 Sub", defaultValue: "" },
+  z1Sys5Sub: { type: ControlType.String, title: "Z1 · Sys 5 Sub", defaultValue: "" },
+  z1Sys6Sub: { type: ControlType.String, title: "Z1 · Sys 6 Sub", defaultValue: "" },
+  z1Sys1Name: { type: ControlType.String, title: "Z1 · Sys 1 Name (ERP)", defaultValue: "" },
+  z1Sys2Name: { type: ControlType.String, title: "Z1 · Sys 2 Name (CRM)", defaultValue: "" },
+  z1Sys3Name: { type: ControlType.String, title: "Z1 · Sys 3 Name (RAG)", defaultValue: "" },
+  z1Sys4Name: { type: ControlType.String, title: "Z1 · Sys 4 Name (Legacy)", defaultValue: "" },
+  z1Sys5Name: { type: ControlType.String, title: "Z1 · Sys 5 Name (Ticket)", defaultValue: "" },
+  z1Sys6Name: { type: ControlType.String, title: "Z1 · Sys 6 Name (DMS)", defaultValue: "" },
+  z1SysApi: { type: ControlType.String, title: "Z1 · API List", defaultValue: "" },
+  z1ZeroModStrong: { type: ControlType.String, title: "Z1 · Zero-Mod Title", defaultValue: "" },
+  z1ZeroModBody: { type: ControlType.String, title: "Z1 · Zero-Mod Body", defaultValue: "", displayTextArea: true },
+  z2GroupTag: { type: ControlType.String, title: "Z2 · DB Group Tag", defaultValue: "" },
+  z2InSub: { type: ControlType.String, title: "Z2 · IN Sub", defaultValue: "" },
+  z2ProcessSub: { type: ControlType.String, title: "Z2 · PROCESS Sub", defaultValue: "" },
+  z2OutSub: { type: ControlType.String, title: "Z2 · OUT Sub", defaultValue: "" },
+  z2BlockLabel: { type: ControlType.String, title: "Z2 · Block Label", defaultValue: "" },
+  z2ProtectedBadge: { type: ControlType.String, title: "Z2 · Protected Badge", defaultValue: "" },
+  z2F1Name: { type: ControlType.String, title: "Z2 · Field 1 Name", defaultValue: "" },
+  z2F2Name: { type: ControlType.String, title: "Z2 · Field 2 Name", defaultValue: "" },
+  z2F3Name: { type: ControlType.String, title: "Z2 · Field 3 Name", defaultValue: "" },
+  z2DpEngineName: { type: ControlType.String, title: "Z2 · DP Engine Name", defaultValue: "" },
+  z2DpEngineBadge: { type: ControlType.String, title: "Z2 · DP Engine Badge", defaultValue: "" },
+  z2DpTech1: { type: ControlType.String, title: "Z2 · DP Tech 1", defaultValue: "" },
+  z2DpTech2: { type: ControlType.String, title: "Z2 · DP Tech 2", defaultValue: "" },
+  z2DpTech3: { type: ControlType.String, title: "Z2 · DP Tech 3", defaultValue: "" },
+  z2DpTech4: { type: ControlType.String, title: "Z2 · DP Tech 4", defaultValue: "" },
+  z2DmzStrong: { type: ControlType.String, title: "Z2 · DMZ Title", defaultValue: "" },
+  z2DmzBody: { type: ControlType.String, title: "Z2 · DMZ Body", defaultValue: "", displayTextArea: true },
+  z3PipelineLabel: { type: ControlType.String, title: "Z3 · Pipeline Block Label", defaultValue: "" },
+  z3ProxyBadge: { type: ControlType.String, title: "Z3 · Proxy Badge", defaultValue: "" },
+  z3ProxySub: { type: ControlType.String, title: "Z3 · Proxy Sub", defaultValue: "" },
+  z3PathA: { type: ControlType.String, title: "Z3 · Path A Label", defaultValue: "" },
+  z3PathB: { type: ControlType.String, title: "Z3 · Path B Label", defaultValue: "" },
+  z3DeployA1: { type: ControlType.String, title: "Z3 · Deploy A1 (External 1)", defaultValue: "" },
+  z3DeployA2: { type: ControlType.String, title: "Z3 · Deploy A2 (External 2)", defaultValue: "" },
+  z3DeployB1: { type: ControlType.String, title: "Z3 · Deploy B1 (On-prem 1)", defaultValue: "" },
+  z3DeployB2: { type: ControlType.String, title: "Z3 · Deploy B2 (On-prem 2)", defaultValue: "" },
+  z3SwapNote: { type: ControlType.String, title: "Z3 · Swap Note", defaultValue: "" },
+  z3GuardStrong: { type: ControlType.String, title: "Z3 · Guardrail Title", defaultValue: "" },
+  z3GuardBody: { type: ControlType.String, title: "Z3 · Guardrail Body", defaultValue: "", displayTextArea: true },
+  z3IsoLabel: { type: ControlType.String, title: "Z3 · Isolation Block Label", defaultValue: "" },
+  z3PdescHead: { type: ControlType.String, title: "Z3 · PDESC Head", defaultValue: "" },
+  z3PdescItem1: { type: ControlType.String, title: "Z3 · PDESC Item 1", defaultValue: "" },
+  z3PdescItem2: { type: ControlType.String, title: "Z3 · PDESC Item 2", defaultValue: "" },
+  z3PdescItem3: { type: ControlType.String, title: "Z3 · PDESC Item 3", defaultValue: "" },
+  z3PdescFoot: { type: ControlType.String, title: "Z3 · PDESC Foot", defaultValue: "" },
+  z3ComplianceLabel: { type: ControlType.String, title: "Z3 · Compliance Label", defaultValue: "" },
+  z3Compliance1: { type: ControlType.String, title: "Z3 · Compliance Badge 1", defaultValue: "" },
+  z3Compliance2: { type: ControlType.String, title: "Z3 · Compliance Badge 2", defaultValue: "" },
+  z4GroupTag: { type: ControlType.String, title: "Z4 · DB Group Tag", defaultValue: "" },
+  z4InSub: { type: ControlType.String, title: "Z4 · IN Sub", defaultValue: "" },
+  z4ProcessSub: { type: ControlType.String, title: "Z4 · PROCESS Sub", defaultValue: "" },
+  z4OutSub: { type: ControlType.String, title: "Z4 · OUT Sub", defaultValue: "" },
+  z4BlockLabel: { type: ControlType.String, title: "Z4 · Token Block Label", defaultValue: "" },
+  z4F1Name: { type: ControlType.String, title: "Z4 · Field 1 Name", defaultValue: "" },
+  z4F2Name: { type: ControlType.String, title: "Z4 · Field 2 Name", defaultValue: "" },
+  z4F3Name: { type: ControlType.String, title: "Z4 · Field 3 Name", defaultValue: "" },
+  z4ReconName: { type: ControlType.String, title: "Z4 · Recon Engine Name", defaultValue: "" },
+  z4ReconBadge: { type: ControlType.String, title: "Z4 · Recon Engine Badge", defaultValue: "" },
+  z4ReconTech1: { type: ControlType.String, title: "Z4 · Recon Tech 1", defaultValue: "" },
+  z4ReconTech2: { type: ControlType.String, title: "Z4 · Recon Tech 2", defaultValue: "" },
+  z4ReconTech3: { type: ControlType.String, title: "Z4 · Recon Tech 3", defaultValue: "" },
+  z4ReconTech4: { type: ControlType.String, title: "Z4 · Recon Tech 4", defaultValue: "" },
+  z4LocalStrong: { type: ControlType.String, title: "Z4 · Local Guarantee Title", defaultValue: "" },
+  z4LocalBody: { type: ControlType.String, title: "Z4 · Local Guarantee Body", defaultValue: "", displayTextArea: true },
+  z4OutputLabel: { type: ControlType.String, title: "Z4 · Output Properties Label", defaultValue: "" },
+  z4OutCheck1: { type: ControlType.String, title: "Z4 · Output Check 1", defaultValue: "" },
+  z4OutCheck2: { type: ControlType.String, title: "Z4 · Output Check 2", defaultValue: "" },
+  z4OutCheck3: { type: ControlType.String, title: "Z4 · Output Check 3", defaultValue: "" },
+  z4OutCheck4: { type: ControlType.String, title: "Z4 · Output Check 4", defaultValue: "" },
+  z4Chip1: { type: ControlType.String, title: "Z4 · Chip 1", defaultValue: "" },
+  z4Chip2: { type: ControlType.String, title: "Z4 · Chip 2", defaultValue: "" },
+  z4Chip3: { type: ControlType.String, title: "Z4 · Chip 3", defaultValue: "" },
+  coreTitle: { type: ControlType.String, title: "Core · Section Title", defaultValue: "" },
+  coreWorkflowGroup: { type: ControlType.String, title: "Core · Workflow Group Label", defaultValue: "" },
+  coreApprovalGroup: { type: ControlType.String, title: "Core · Approval Group Label", defaultValue: "" },
+  core1Name: { type: ControlType.String, title: "Core 01 · Name", defaultValue: "" },
+  core1Desc: { type: ControlType.String, title: "Core 01 · Description", defaultValue: "", displayTextArea: true },
+  core2Name: { type: ControlType.String, title: "Core 02 · Name", defaultValue: "" },
+  core2Desc: { type: ControlType.String, title: "Core 02 · Description", defaultValue: "", displayTextArea: true },
+  core3Name: { type: ControlType.String, title: "Core 03 · Name", defaultValue: "" },
+  core3Desc: { type: ControlType.String, title: "Core 03 · Description", defaultValue: "", displayTextArea: true },
+  core4Name: { type: ControlType.String, title: "Core 04 · Name", defaultValue: "" },
+  core4Desc: { type: ControlType.String, title: "Core 04 · Description", defaultValue: "", displayTextArea: true },
+  core5Name: { type: ControlType.String, title: "Core 05 · Name", defaultValue: "" },
+  core5Desc: { type: ControlType.String, title: "Core 05 · Description", defaultValue: "", displayTextArea: true },
+  core6Name: { type: ControlType.String, title: "Core 06 · Name", defaultValue: "" },
+  core6Desc: { type: ControlType.String, title: "Core 06 · Description", defaultValue: "", displayTextArea: true },
+  coreStrip: { type: ControlType.String, title: "Core · Bottom Strip", defaultValue: "" },
 })

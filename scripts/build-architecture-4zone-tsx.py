@@ -18,6 +18,31 @@ ROOT = Path(__file__).resolve().parent.parent
 INPUT_FILE = ROOT / "llm-capsule" / "input" / "llmcapsule_260506" / "architecture_4zone_technical-develop.html"
 OUT_DIR = ROOT / "llm-capsule" / "output" / "framer" / "architecture"
 COMPONENT_NAME = "ArchitectureFourZoneTechnical"
+KO_MD = ROOT / "llm-capsule" / "output" / "translations" / "architecture-4zone-technical-ko-lines.md"
+DE_MD = ROOT / "llm-capsule" / "output" / "translations" / "architecture-4zone-technical-de-lines.md"
+
+
+def parse_translations(md_path: Path) -> dict[str, str]:
+    """Parse translation md file: returns {prop_name: translated_text}.
+    Skips [TODO:*] markers."""
+    if not md_path.exists():
+        return {}
+    text = md_path.read_text(encoding="utf-8")
+    out: dict[str, str] = {}
+    for block in re.split(r"\n\s*\n", text):
+        lines = [ln.rstrip() for ln in block.split("\n") if ln.strip()]
+        lines = [ln for ln in lines if not ln.startswith("#")]
+        lines = [
+            ln for ln in lines
+            if not ln.startswith("각 항목") and not ln.startswith("순서대로")
+            and not ln.startswith("Each entry") and not ln.startswith("Apply in order")
+        ]
+        if len(lines) >= 3:
+            name = lines[0].strip()
+            trans = lines[2].strip()
+            if re.match(r"^[a-zA-Z][a-zA-Z0-9]*$", name) and not trans.startswith("[TODO:"):
+                out[name] = trans
+    return out
 
 
 def js_template_escape(s: str) -> str:
@@ -931,28 +956,57 @@ def main():
     if missing:
         print(f"⚠️  {len(missing)} prop patterns did not match: {missing}", file=sys.stderr)
 
-    # 6. Build TSX
-    iface_block = "\n".join(f"  {name}?: string" for name, _, _ in prop_meta)
-    defaults_block = "\n".join(
-        f'  {name} = "{js_string_escape(prop_values[name])}",' for name, _, _ in prop_meta
+    # 6. Read ko/de translations and build TRANSLATIONS dictionary
+    ko_translations = parse_translations(KO_MD)
+    de_translations = parse_translations(DE_MD)
+    print(f"  ko translations: {len(ko_translations)}, de translations: {len(de_translations)}")
+
+    def dict_lines(d: dict[str, str]) -> str:
+        return "\n".join(
+            f'    {name}: "{js_string_escape(d.get(name, prop_values[name]))}",'
+            for name, _, _ in prop_meta
+        )
+
+    en_dict = dict_lines(prop_values)
+    ko_dict = dict_lines(ko_translations)
+    de_dict = dict_lines(de_translations)
+
+    # Interface + signature defaults (all empty strings; resolved via dictionary)
+    iface_block = "  locale?: \"en\" | \"ko\" | \"de\"\n" + \
+                  "\n".join(f"  {name}?: string" for name, _, _ in prop_meta)
+    defaults_block = '  locale = "en",\n' + \
+                     "\n".join(f'  {name} = "",' for name, _, _ in prop_meta)
+
+    # Property controls: locale Enum + 134 String overrides with empty defaults
+    locale_control = (
+        '  locale: { type: ControlType.Enum, title: "Locale", '
+        'options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], '
+        'defaultValue: "en" },'
     )
-    controls_block = "\n".join(
+    controls_block = locale_control + "\n" + "\n".join(
         f'  {name}: {{ type: ControlType.String, title: "{title}", '
-        f'defaultValue: "{js_string_escape(prop_values[name])}"'
+        f'defaultValue: ""'
         f'{", displayTextArea: true" if textarea else ""} }},'
         for name, textarea, title in prop_meta
     )
 
-    # Build replaceAll block for placeholder substitution
+    # Resolver lines: const _name = name || T[name] || EN[name]
+    resolver_lines = []
+    for name, _, _ in prop_meta:
+        resolver_lines.append(
+            f'  const _{name} = {name} || T["{name}"] || TRANSLATIONS.en["{name}"]'
+        )
+    resolver_block = "\n".join(resolver_lines)
+
+    # Body placeholder substitutions (use resolved _name)
     replace_lines = []
     for name, _, _ in prop_meta:
         if name in ("eyebrow", "sectionTitle", "sectionDescription"):
             continue
         if name.startswith("card") and name.endswith(("Num", "Title", "Description")):
             continue
-        # placeholder format with double curly braces
         replace_lines.append(
-            f'  html = html.split("{{{{__P_{name}__}}}}").join({name})'
+            f'  html = html.split("{{{{__P_{name}__}}}}").join(_{name})'
         )
     replace_block = "\n".join(replace_lines)
 
@@ -961,8 +1015,9 @@ def main():
 // To regenerate: python3 scripts/build-architecture-4zone-tsx.py
 //
 // Self-contained Framer Code Component for the 4-zone technical architecture page.
-// ALL translatable text inside the diagram is exposed as Props. Demo data
-// (David Lawson, CS-4203, tokenized samples), SVG icons, short ID labels
+// Single file with locale dropdown (en/ko/de). Internal TRANSLATIONS dictionary
+// drives default text per locale; individual Props remain for per-instance overrides.
+// Demo data (David Lawson, CS-4203, tokenized samples), SVG icons, short ID labels
 // (DB1/DB2/DB3, IN/PROCESS/OUT, ID/CD/BD), and step numbers remain hardcoded.
 
 import {{ addPropertyControls, ControlType }} from "framer"
@@ -975,16 +1030,32 @@ const BODY_HTML = `{js_template_escape(body)}`
 
 const CSS = `{js_template_escape(css)}`
 
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {{
+  en: {{
+{en_dict}
+  }},
+  ko: {{
+{ko_dict}
+  }},
+  de: {{
+{de_dict}
+  }},
+}}
+
 export default function {COMPONENT_NAME}({{
 {defaults_block}
 }}: Props) {{
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+
+{resolver_block}
+
   let html = BODY_HTML
 
   const sectionHead = `
     <div class="section-head">
-      <div class="eyebrow">${{eyebrow}}</div>
-      <h2>${{sectionTitle}}</h2>
-      <p>${{sectionDescription}}</p>
+      <div class="eyebrow">${{_eyebrow}}</div>
+      <h2>${{_sectionTitle}}</h2>
+      <p>${{_sectionDescription}}</p>
     </div>
   `
   html = html.replace("<!-- SECTION_HEAD_PLACEHOLDER -->", sectionHead)
@@ -992,24 +1063,24 @@ export default function {COMPONENT_NAME}({{
   const annotationCards = `
     <div class="tech-diagram-annotation">
       <article class="annotation-card">
-        <div class="annotation-card__num">${{card1Num}}</div>
-        <h3 class="annotation-card__h">${{card1Title}}</h3>
-        <p class="annotation-card__d">${{card1Description}}</p>
+        <div class="annotation-card__num">${{_card1Num}}</div>
+        <h3 class="annotation-card__h">${{_card1Title}}</h3>
+        <p class="annotation-card__d">${{_card1Description}}</p>
       </article>
       <article class="annotation-card">
-        <div class="annotation-card__num">${{card2Num}}</div>
-        <h3 class="annotation-card__h">${{card2Title}}</h3>
-        <p class="annotation-card__d">${{card2Description}}</p>
+        <div class="annotation-card__num">${{_card2Num}}</div>
+        <h3 class="annotation-card__h">${{_card2Title}}</h3>
+        <p class="annotation-card__d">${{_card2Description}}</p>
       </article>
       <article class="annotation-card">
-        <div class="annotation-card__num">${{card3Num}}</div>
-        <h3 class="annotation-card__h">${{card3Title}}</h3>
-        <p class="annotation-card__d">${{card3Description}}</p>
+        <div class="annotation-card__num">${{_card3Num}}</div>
+        <h3 class="annotation-card__h">${{_card3Title}}</h3>
+        <p class="annotation-card__d">${{_card3Description}}</p>
       </article>
       <article class="annotation-card">
-        <div class="annotation-card__num">${{card4Num}}</div>
-        <h3 class="annotation-card__h">${{card4Title}}</h3>
-        <p class="annotation-card__d">${{card4Description}}</p>
+        <div class="annotation-card__num">${{_card4Num}}</div>
+        <h3 class="annotation-card__h">${{_card4Title}}</h3>
+        <p class="annotation-card__d">${{_card4Description}}</p>
       </article>
     </div>
   `
