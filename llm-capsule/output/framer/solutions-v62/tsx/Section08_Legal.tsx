@@ -193,8 +193,8 @@ export default function Section08_Legal({
           padding: 0 var(--s-page, clamp(20px, 4cqi, 80px));
         }
 
-        /* Legal: primary-dark _tag */
-        .s8-_tag {
+        /* Legal: primary-dark tag */
+        .s8-tag {
           display: inline-block;
           font-family: var(--f-mono, 'JetBrains Mono', monospace);
           font-size: 11px; font-weight: 700;
@@ -213,7 +213,7 @@ export default function Section08_Legal({
           word-break: keep-all; overflow-wrap: break-word;
         }
 
-        .s8-_lead {
+        .s8-lead {
           font-size: clamp(15px, 1.3cqi, 17px);
           color: var(--c-ink-soft, #3a3d5e); line-height: 1.65; max-width: 800px;
           word-break: keep-all; overflow-wrap: break-word;
@@ -229,8 +229,8 @@ export default function Section08_Legal({
           background-color: var(--c-bg, #ffffff); border: 1px solid var(--c-rule, #e5e7eb);
         }
 
-        .s8-state--_blocked { background-color: var(--c-coral-soft, #fce9e8); border-color: transparent; }
-        .s8-state--_enabled { background-color: var(--c-primary-soft, #eeebfe); border-color: transparent; }
+        .s8-state--blocked { background-color: var(--c-coral-soft, #fce9e8); border-color: transparent; }
+        .s8-state--enabled { background-color: var(--c-primary-soft, #eeebfe); border-color: transparent; }
 
         .s8-state__label {
           font-family: var(--f-mono, 'JetBrains Mono', monospace);
@@ -238,8 +238,8 @@ export default function Section08_Legal({
           text-transform: uppercase; margin-bottom: 8px;
         }
 
-        .s8-state--_blocked .s8-state__label { color: var(--c-coral-dark, #c73e3a); }
-        .s8-state--_enabled .s8-state__label { color: var(--c-primary-dark, #3b2fbf); }
+        .s8-state--blocked .s8-state__label { color: var(--c-coral-dark, #c73e3a); }
+        .s8-state--enabled .s8-state__label { color: var(--c-primary-dark, #3b2fbf); }
 
         .s8-state__h {
           font-size: 14px; font-weight: 700;
@@ -341,18 +341,18 @@ export default function Section08_Legal({
         <section className={`s8-section${altBg ? " s8-section--alt" : ""}`}>
           <div className="s8-container">
             <div className="s8-header">
-              <span className="s8-_tag">{_tag}</span>
+              <span className="s8-tag">{_tag}</span>
               <h2 className="s8-h2">{_title}</h2>
-              <p className="s8-_lead">{_lead}</p>
+              <p className="s8-lead">{_lead}</p>
             </div>
 
             <div className="s8-states">
-              <div className="s8-state s8-state--_blocked">
+              <div className="s8-state s8-state--blocked">
                 <div className="s8-state__label">{_blockedLabel}</div>
                 <div className="s8-state__h">{_blockedH}</div>
                 <div className="s8-state__d">{_blocked}</div>
               </div>
-              <div className="s8-state s8-state--_enabled">
+              <div className="s8-state s8-state--enabled">
                 <div className="s8-state__label">{_enabledLabel}</div>
                 <div className="s8-state__h">{_enabledH}</div>
                 <div className="s8-state__d">{_enabled}</div>

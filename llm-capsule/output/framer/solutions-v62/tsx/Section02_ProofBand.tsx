@@ -140,7 +140,7 @@ export default function Section02_ProofBand({
           overflow: hidden;
         }
 
-        .s2-_label {
+        .s2-label {
           font-size: 12px;
           font-weight: 700;
           text-transform: uppercase;
@@ -220,7 +220,7 @@ export default function Section02_ProofBand({
 
       <div className="s2-root">
         <section className="s2-section">
-          <div className="s2-_label">{_label}</div>
+          <div className="s2-label">{_label}</div>
           <div className="s2-track-wrap">
             <div className="s2-track">
               {/* Set 1 */}

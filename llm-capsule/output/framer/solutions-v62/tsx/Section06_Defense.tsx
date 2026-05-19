@@ -193,8 +193,8 @@ export default function Section06_Defense({
           padding: 0 var(--s-page, clamp(20px, 4cqi, 80px));
         }
 
-        /* Defense: ink _tag */
-        .s6-_tag {
+        /* Defense: ink tag */
+        .s6-tag {
           display: inline-block;
           font-family: var(--f-mono, 'JetBrains Mono', monospace);
           font-size: 11px; font-weight: 700;
@@ -214,7 +214,7 @@ export default function Section06_Defense({
           word-break: keep-all; overflow-wrap: break-word;
         }
 
-        .s6-_lead {
+        .s6-lead {
           font-size: clamp(15px, 1.3cqi, 17px);
           color: var(--c-ink-soft, #3a3d5e); line-height: 1.65; max-width: 800px;
           word-break: keep-all; overflow-wrap: break-word;
@@ -230,8 +230,8 @@ export default function Section06_Defense({
           background-color: var(--c-bg, #ffffff); border: 1px solid var(--c-rule, #e5e7eb);
         }
 
-        .s6-state--_blocked { background-color: var(--c-coral-soft, #fce9e8); border-color: transparent; }
-        .s6-state--_enabled { background-color: var(--c-bg-soft, #f7f8fb); border-color: var(--c-rule, #e5e7eb); }
+        .s6-state--blocked { background-color: var(--c-coral-soft, #fce9e8); border-color: transparent; }
+        .s6-state--enabled { background-color: var(--c-bg-soft, #f7f8fb); border-color: var(--c-rule, #e5e7eb); }
 
         .s6-state__label {
           font-family: var(--f-mono, 'JetBrains Mono', monospace);
@@ -239,8 +239,8 @@ export default function Section06_Defense({
           text-transform: uppercase; margin-bottom: 8px;
         }
 
-        .s6-state--_blocked .s6-state__label { color: var(--c-coral-dark, #c73e3a); }
-        .s6-state--_enabled .s6-state__label { color: var(--c-ink-soft, #3a3d5e); }
+        .s6-state--blocked .s6-state__label { color: var(--c-coral-dark, #c73e3a); }
+        .s6-state--enabled .s6-state__label { color: var(--c-ink-soft, #3a3d5e); }
 
         .s6-state__h {
           font-size: 14px; font-weight: 700;
@@ -344,18 +344,18 @@ export default function Section06_Defense({
         <section className={`s6-section${altBg ? " s6-section--alt" : ""}`}>
           <div className="s6-container">
             <div className="s6-header">
-              <span className="s6-_tag">{_tag}</span>
+              <span className="s6-tag">{_tag}</span>
               <h2 className="s6-h2">{_title}</h2>
-              <p className="s6-_lead">{_lead}</p>
+              <p className="s6-lead">{_lead}</p>
             </div>
 
             <div className="s6-states">
-              <div className="s6-state s6-state--_blocked">
+              <div className="s6-state s6-state--blocked">
                 <div className="s6-state__label">{_blockedLabel}</div>
                 <div className="s6-state__h">{_blockedH}</div>
                 <div className="s6-state__d">{_blocked}</div>
               </div>
-              <div className="s6-state s6-state--_enabled">
+              <div className="s6-state s6-state--enabled">
                 <div className="s6-state__label">{_enabledLabel}</div>
                 <div className="s6-state__h">{_enabledH}</div>
                 <div className="s6-state__d">{_enabled}</div>

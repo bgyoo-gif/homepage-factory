@@ -117,7 +117,7 @@ export default function Section01_Hero({
           padding: 0 var(--s-page, clamp(20px, 4cqi, 80px));
         }
 
-        .s1-_eyebrow {
+        .s1-eyebrow {
           display: inline-block;
           font-size: 12px;
           font-weight: 700;
@@ -192,7 +192,7 @@ export default function Section01_Hero({
       <div className="s1-root">
         <section className="s1-section">
           <div className="s1-container">
-            <span className="s1-_eyebrow">{_eyebrow}</span>
+            <span className="s1-eyebrow">{_eyebrow}</span>
             <h1 className="s1-h1">
               {_h1Plain}<span className="s1-highlight">{_h1Highlight}</span>
             </h1>

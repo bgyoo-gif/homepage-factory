@@ -195,7 +195,7 @@ export default function Section04_Healthcare({
           padding: 0 var(--s-page, clamp(20px, 4cqi, 80px));
         }
 
-        .s4-_tag {
+        .s4-tag {
           display: inline-block;
           font-family: var(--f-mono, 'JetBrains Mono', monospace);
           font-size: 11px;
@@ -222,7 +222,7 @@ export default function Section04_Healthcare({
           overflow-wrap: break-word;
         }
 
-        .s4-_lead {
+        .s4-lead {
           font-size: clamp(15px, 1.3cqi, 17px);
           color: var(--c-ink-soft, #3a3d5e);
           line-height: 1.65;
@@ -245,12 +245,12 @@ export default function Section04_Healthcare({
           border: 1px solid var(--c-rule, #e5e7eb);
         }
 
-        .s4-state--_blocked {
+        .s4-state--blocked {
           background-color: var(--c-coral-soft, #fce9e8);
           border-color: transparent;
         }
 
-        .s4-state--_enabled {
+        .s4-state--enabled {
           background-color: var(--c-teal-soft, #e6f7f6);
           border-color: transparent;
         }
@@ -264,8 +264,8 @@ export default function Section04_Healthcare({
           margin-bottom: 8px;
         }
 
-        .s4-state--_blocked .s4-state__label { color: var(--c-coral-dark, #c73e3a); }
-        .s4-state--_enabled .s4-state__label { color: var(--c-teal-dark, #0b7f7e); }
+        .s4-state--blocked .s4-state__label { color: var(--c-coral-dark, #c73e3a); }
+        .s4-state--enabled .s4-state__label { color: var(--c-teal-dark, #0b7f7e); }
 
         .s4-state__h {
           font-size: 14px;
@@ -425,18 +425,18 @@ export default function Section04_Healthcare({
         <section className={`s4-section${altBg ? " s4-section--alt" : ""}`}>
           <div className="s4-container">
             <div className="s4-header">
-              <span className="s4-_tag">{_tag}</span>
+              <span className="s4-tag">{_tag}</span>
               <h2 className="s4-h2">{_title}</h2>
-              <p className="s4-_lead">{_lead}</p>
+              <p className="s4-lead">{_lead}</p>
             </div>
 
             <div className="s4-states">
-              <div className="s4-state s4-state--_blocked">
+              <div className="s4-state s4-state--blocked">
                 <div className="s4-state__label">{_blockedLabel}</div>
                 <div className="s4-state__h">{_blockedH}</div>
                 <div className="s4-state__d">{_blocked}</div>
               </div>
-              <div className="s4-state s4-state--_enabled">
+              <div className="s4-state s4-state--enabled">
                 <div className="s4-state__label">{_enabledLabel}</div>
                 <div className="s4-state__h">{_enabledH}</div>
                 <div className="s4-state__d">{_enabled}</div>

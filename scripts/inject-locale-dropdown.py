@@ -275,13 +275,49 @@ def replace_prop_refs_with_resolved(
     body = tsx[body_start:body_end]
 
     # Replace `propName` as identifier with `_propName`. Use word boundaries
-    # but skip if preceded by `.`, `"`, or `_`.
+    # but skip if preceded by `.`, `"`, `_`, or `-` (CSS class hyphens) — and
+    # skip occurrences inside `className="..."` / `class="..."` string literals.
+    def replace_prop_in_body(text: str, name: str) -> str:
+        out = []
+        i = 0
+        n = len(text)
+        # Find string literals (double quotes) to skip
+        # Compile pattern once
+        pattern = re.compile(rf'(?<![\w."_\-]){re.escape(name)}(?![\w])')
+        # We iterate through text, skipping string literal content
+        in_string = False
+        in_template = False
+        last_idx = 0
+        result = []
+        i = 0
+        while i < n:
+            ch = text[i]
+            if not in_template and ch == '"' and (i == 0 or text[i - 1] != "\\"):
+                in_string = not in_string
+                result.append(ch)
+                i += 1
+                continue
+            if not in_string and ch == "`":
+                in_template = not in_template
+                result.append(ch)
+                i += 1
+                continue
+            if in_string or in_template:
+                result.append(ch)
+                i += 1
+                continue
+            # Outside strings: try to match the prop name at this position
+            m = pattern.match(text, i)
+            if m:
+                result.append(f"_{name}")
+                i = m.end()
+            else:
+                result.append(ch)
+                i += 1
+        return "".join(result)
+
     for name, _, _ in tsx_props:
-        body = re.sub(
-            rf'(?<![\w."_]){re.escape(name)}(?![\w])',
-            f"_{name}",
-            body,
-        )
+        body = replace_prop_in_body(body, name)
         # Repair: don't replace the resolver line itself: `const _name = name || ...`
         body = body.replace(f"const __{name}", f"const _{name}")
         body = body.replace(f"_{name} || T", f"{name} || T")  # restore RHS in resolver line

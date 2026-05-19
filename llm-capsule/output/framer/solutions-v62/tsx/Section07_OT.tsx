@@ -193,7 +193,7 @@ export default function Section07_OT({
           padding: 0 var(--s-page, clamp(20px, 4cqi, 80px));
         }
 
-        .s7-_tag {
+        .s7-tag {
           display: inline-block;
           font-family: var(--f-mono, 'JetBrains Mono', monospace);
           font-size: 11px; font-weight: 700;
@@ -212,7 +212,7 @@ export default function Section07_OT({
           word-break: keep-all; overflow-wrap: break-word;
         }
 
-        .s7-_lead {
+        .s7-lead {
           font-size: clamp(15px, 1.3cqi, 17px);
           color: var(--c-ink-soft, #3a3d5e); line-height: 1.65; max-width: 800px;
           word-break: keep-all; overflow-wrap: break-word;
@@ -228,8 +228,8 @@ export default function Section07_OT({
           background-color: var(--c-bg, #ffffff); border: 1px solid var(--c-rule, #e5e7eb);
         }
 
-        .s7-state--_blocked { background-color: var(--c-coral-soft, #fce9e8); border-color: transparent; }
-        .s7-state--_enabled { background-color: var(--c-coral-soft, #fce9e8); border-color: transparent; }
+        .s7-state--blocked { background-color: var(--c-coral-soft, #fce9e8); border-color: transparent; }
+        .s7-state--enabled { background-color: var(--c-coral-soft, #fce9e8); border-color: transparent; }
 
         .s7-state__label {
           font-family: var(--f-mono, 'JetBrains Mono', monospace);
@@ -237,8 +237,8 @@ export default function Section07_OT({
           text-transform: uppercase; margin-bottom: 8px;
         }
 
-        .s7-state--_blocked .s7-state__label { color: var(--c-coral-dark, #c73e3a); }
-        .s7-state--_enabled .s7-state__label { color: var(--c-coral, #ef5350); }
+        .s7-state--blocked .s7-state__label { color: var(--c-coral-dark, #c73e3a); }
+        .s7-state--enabled .s7-state__label { color: var(--c-coral, #ef5350); }
 
         .s7-state__h {
           font-size: 14px; font-weight: 700;
@@ -340,18 +340,18 @@ export default function Section07_OT({
         <section className={`s7-section${altBg ? " s7-section--alt" : ""}`}>
           <div className="s7-container">
             <div className="s7-header">
-              <span className="s7-_tag">{_tag}</span>
+              <span className="s7-tag">{_tag}</span>
               <h2 className="s7-h2">{_title}</h2>
-              <p className="s7-_lead">{_lead}</p>
+              <p className="s7-lead">{_lead}</p>
             </div>
 
             <div className="s7-states">
-              <div className="s7-state s7-state--_blocked">
+              <div className="s7-state s7-state--blocked">
                 <div className="s7-state__label">{_blockedLabel}</div>
                 <div className="s7-state__h">{_blockedH}</div>
                 <div className="s7-state__d">{_blocked}</div>
               </div>
-              <div className="s7-state s7-state--_enabled">
+              <div className="s7-state s7-state--enabled">
                 <div className="s7-state__label">{_enabledLabel}</div>
                 <div className="s7-state__h">{_enabledH}</div>
                 <div className="s7-state__d">{_enabled}</div>

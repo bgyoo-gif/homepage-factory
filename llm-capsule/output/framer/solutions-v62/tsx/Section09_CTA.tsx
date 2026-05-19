@@ -91,7 +91,7 @@ export default function Section09_CTA({
           margin: 0 auto;
         }
 
-        .s9-_title {
+        .s9-title {
           font-size: clamp(28px, 3.5cqi, 44px);
           font-weight: 700;
           line-height: 1.15;
@@ -173,7 +173,7 @@ export default function Section09_CTA({
       <div className="s9-root">
         <section className="s9-section">
           <div className="s9-inner">
-            <h2 className="s9-_title">{_title}</h2>
+            <h2 className="s9-title">{_title}</h2>
             <p className="s9-desc">{_description}</p>
             <div className="s9-actions">
               <a className="s9-btn s9-btn--invert" href={_cta1Href}>{_cta1Label}</a>
