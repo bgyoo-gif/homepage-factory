@@ -1,7 +1,7 @@
 import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
-  locale?: "en" | "ko" | "de"
+  langMode?: "en" | "ko" | "de"
   tag?: string
   title?: string
   lead?: string
@@ -113,7 +113,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
 
 
 export default function Section07_OT({
-  locale = "en",
+  langMode = "en",
   tag = "",
   title = "",
   lead = "",
@@ -141,7 +141,7 @@ export default function Section07_OT({
   readHref = "",
   altBg = false,
 }: Props) {
-  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  const T = TRANSLATIONS[langMode] || TRANSLATIONS.en
   const _tag = T["tag"] || TRANSLATIONS.en["tag"] || tag
   const _title = T["title"] || TRANSLATIONS.en["title"] || title
   const _lead = T["lead"] || TRANSLATIONS.en["lead"] || lead
@@ -171,7 +171,7 @@ export default function Section07_OT({
     <>
       {/* TEMP DEBUG: shows actual locale value in canvas — remove after diagnosis */}
       <div style={{ position: "fixed", top: 8, right: 8, zIndex: 9999, padding: "6px 10px", background: "#fff59d", border: "2px solid #f57f17", fontFamily: "monospace", fontSize: 13, fontWeight: 700, color: "#000" }}>
-        locale = "{locale}" | T["tag"] = "{T["tag"]?.slice(0, 40) ?? "undef"}"
+        langMode = "{langMode}" | T["tag"] = "{T["tag"]?.slice(0, 40) ?? "undef"}"
       </div>
 
       <style>{`
@@ -409,7 +409,7 @@ export default function Section07_OT({
 }
 
 addPropertyControls(Section07_OT, {
-  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
+  langMode: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
   tag:              { type: ControlType.String,  title: "Tag", defaultValue: "" },
   title:            { type: ControlType.String,  title: "Title", defaultValue: "", displayTextArea: true },
   lead:             { type: ControlType.String,  title: "Lead", defaultValue: "", displayTextArea: true },
