@@ -58,14 +58,14 @@ export default function Section09_CTA({
   cta3Href = "",
 }: Props) {
   const T = TRANSLATIONS[locale] || TRANSLATIONS.en
-  const _title = title || T["title"] || TRANSLATIONS.en["title"]
-  const _description = description || T["description"] || TRANSLATIONS.en["description"]
-  const _cta1Label = cta1Label || T["cta1Label"] || TRANSLATIONS.en["cta1Label"]
-  const _cta1Href = cta1Href || T["cta1Href"] || TRANSLATIONS.en["cta1Href"]
-  const _cta2Label = cta2Label || T["cta2Label"] || TRANSLATIONS.en["cta2Label"]
-  const _cta2Href = cta2Href || T["cta2Href"] || TRANSLATIONS.en["cta2Href"]
-  const _cta3Label = cta3Label || T["cta3Label"] || TRANSLATIONS.en["cta3Label"]
-  const _cta3Href = cta3Href || T["cta3Href"] || TRANSLATIONS.en["cta3Href"]
+  const _title = locale === "en" ? (title || T["title"]) : (T["title"] || TRANSLATIONS.en["title"] || title)
+  const _description = locale === "en" ? (description || T["description"]) : (T["description"] || TRANSLATIONS.en["description"] || description)
+  const _cta1Label = locale === "en" ? (cta1Label || T["cta1Label"]) : (T["cta1Label"] || TRANSLATIONS.en["cta1Label"] || cta1Label)
+  const _cta1Href = locale === "en" ? (cta1Href || T["cta1Href"]) : (T["cta1Href"] || TRANSLATIONS.en["cta1Href"] || cta1Href)
+  const _cta2Label = locale === "en" ? (cta2Label || T["cta2Label"]) : (T["cta2Label"] || TRANSLATIONS.en["cta2Label"] || cta2Label)
+  const _cta2Href = locale === "en" ? (cta2Href || T["cta2Href"]) : (T["cta2Href"] || TRANSLATIONS.en["cta2Href"] || cta2Href)
+  const _cta3Label = locale === "en" ? (cta3Label || T["cta3Label"]) : (T["cta3Label"] || TRANSLATIONS.en["cta3Label"] || cta3Label)
+  const _cta3Href = locale === "en" ? (cta3Href || T["cta3Href"]) : (T["cta3Href"] || TRANSLATIONS.en["cta3Href"] || cta3Href)
 
   return (
     <>

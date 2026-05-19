@@ -142,30 +142,30 @@ export default function Section07_OT({
   altBg = false,
 }: Props) {
   const T = TRANSLATIONS[locale] || TRANSLATIONS.en
-  const _tag = tag || T["tag"] || TRANSLATIONS.en["tag"]
-  const _title = title || T["title"] || TRANSLATIONS.en["title"]
-  const _lead = lead || T["lead"] || TRANSLATIONS.en["lead"]
-  const _blockedLabel = blockedLabel || T["blockedLabel"] || TRANSLATIONS.en["blockedLabel"]
-  const _blockedH = blockedH || T["blockedH"] || TRANSLATIONS.en["blockedH"]
-  const _blocked = blocked || T["blocked"] || TRANSLATIONS.en["blocked"]
-  const _enabledLabel = enabledLabel || T["enabledLabel"] || TRANSLATIONS.en["enabledLabel"]
-  const _enabledH = enabledH || T["enabledH"] || TRANSLATIONS.en["enabledH"]
-  const _enabled = enabled || T["enabled"] || TRANSLATIONS.en["enabled"]
-  const _workflowsHeading = workflowsHeading || T["workflowsHeading"] || TRANSLATIONS.en["workflowsHeading"]
-  const _wf1Title = wf1Title || T["wf1Title"] || TRANSLATIONS.en["wf1Title"]
-  const _wf1Desc = wf1Desc || T["wf1Desc"] || TRANSLATIONS.en["wf1Desc"]
-  const _wf2Title = wf2Title || T["wf2Title"] || TRANSLATIONS.en["wf2Title"]
-  const _wf2Desc = wf2Desc || T["wf2Desc"] || TRANSLATIONS.en["wf2Desc"]
-  const _wf3Title = wf3Title || T["wf3Title"] || TRANSLATIONS.en["wf3Title"]
-  const _wf3Desc = wf3Desc || T["wf3Desc"] || TRANSLATIONS.en["wf3Desc"]
-  const _wf4Title = wf4Title || T["wf4Title"] || TRANSLATIONS.en["wf4Title"]
-  const _wf4Desc = wf4Desc || T["wf4Desc"] || TRANSLATIONS.en["wf4Desc"]
-  const _customerLabel = customerLabel || T["customerLabel"] || TRANSLATIONS.en["customerLabel"]
-  const _customerName = customerName || T["customerName"] || TRANSLATIONS.en["customerName"]
-  const _customerDetail = customerDetail || T["customerDetail"] || TRANSLATIONS.en["customerDetail"]
-  const _screenshotAlt = screenshotAlt || T["screenshotAlt"] || TRANSLATIONS.en["screenshotAlt"]
-  const _readLabel = readLabel || T["readLabel"] || TRANSLATIONS.en["readLabel"]
-  const _readHref = readHref || T["readHref"] || TRANSLATIONS.en["readHref"]
+  const _tag = locale === "en" ? (tag || T["tag"]) : (T["tag"] || TRANSLATIONS.en["tag"] || tag)
+  const _title = locale === "en" ? (title || T["title"]) : (T["title"] || TRANSLATIONS.en["title"] || title)
+  const _lead = locale === "en" ? (lead || T["lead"]) : (T["lead"] || TRANSLATIONS.en["lead"] || lead)
+  const _blockedLabel = locale === "en" ? (blockedLabel || T["blockedLabel"]) : (T["blockedLabel"] || TRANSLATIONS.en["blockedLabel"] || blockedLabel)
+  const _blockedH = locale === "en" ? (blockedH || T["blockedH"]) : (T["blockedH"] || TRANSLATIONS.en["blockedH"] || blockedH)
+  const _blocked = locale === "en" ? (blocked || T["blocked"]) : (T["blocked"] || TRANSLATIONS.en["blocked"] || blocked)
+  const _enabledLabel = locale === "en" ? (enabledLabel || T["enabledLabel"]) : (T["enabledLabel"] || TRANSLATIONS.en["enabledLabel"] || enabledLabel)
+  const _enabledH = locale === "en" ? (enabledH || T["enabledH"]) : (T["enabledH"] || TRANSLATIONS.en["enabledH"] || enabledH)
+  const _enabled = locale === "en" ? (enabled || T["enabled"]) : (T["enabled"] || TRANSLATIONS.en["enabled"] || enabled)
+  const _workflowsHeading = locale === "en" ? (workflowsHeading || T["workflowsHeading"]) : (T["workflowsHeading"] || TRANSLATIONS.en["workflowsHeading"] || workflowsHeading)
+  const _wf1Title = locale === "en" ? (wf1Title || T["wf1Title"]) : (T["wf1Title"] || TRANSLATIONS.en["wf1Title"] || wf1Title)
+  const _wf1Desc = locale === "en" ? (wf1Desc || T["wf1Desc"]) : (T["wf1Desc"] || TRANSLATIONS.en["wf1Desc"] || wf1Desc)
+  const _wf2Title = locale === "en" ? (wf2Title || T["wf2Title"]) : (T["wf2Title"] || TRANSLATIONS.en["wf2Title"] || wf2Title)
+  const _wf2Desc = locale === "en" ? (wf2Desc || T["wf2Desc"]) : (T["wf2Desc"] || TRANSLATIONS.en["wf2Desc"] || wf2Desc)
+  const _wf3Title = locale === "en" ? (wf3Title || T["wf3Title"]) : (T["wf3Title"] || TRANSLATIONS.en["wf3Title"] || wf3Title)
+  const _wf3Desc = locale === "en" ? (wf3Desc || T["wf3Desc"]) : (T["wf3Desc"] || TRANSLATIONS.en["wf3Desc"] || wf3Desc)
+  const _wf4Title = locale === "en" ? (wf4Title || T["wf4Title"]) : (T["wf4Title"] || TRANSLATIONS.en["wf4Title"] || wf4Title)
+  const _wf4Desc = locale === "en" ? (wf4Desc || T["wf4Desc"]) : (T["wf4Desc"] || TRANSLATIONS.en["wf4Desc"] || wf4Desc)
+  const _customerLabel = locale === "en" ? (customerLabel || T["customerLabel"]) : (T["customerLabel"] || TRANSLATIONS.en["customerLabel"] || customerLabel)
+  const _customerName = locale === "en" ? (customerName || T["customerName"]) : (T["customerName"] || TRANSLATIONS.en["customerName"] || customerName)
+  const _customerDetail = locale === "en" ? (customerDetail || T["customerDetail"]) : (T["customerDetail"] || TRANSLATIONS.en["customerDetail"] || customerDetail)
+  const _screenshotAlt = locale === "en" ? (screenshotAlt || T["screenshotAlt"]) : (T["screenshotAlt"] || TRANSLATIONS.en["screenshotAlt"] || screenshotAlt)
+  const _readLabel = locale === "en" ? (readLabel || T["readLabel"]) : (T["readLabel"] || TRANSLATIONS.en["readLabel"] || readLabel)
+  const _readHref = locale === "en" ? (readHref || T["readHref"]) : (T["readHref"] || TRANSLATIONS.en["readHref"] || readHref)
 
   return (
     <>

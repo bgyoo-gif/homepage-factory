@@ -193,8 +193,15 @@ def insert_translations_dict(tsx: str, dict_block: str) -> str:
 def add_locale_default_and_resolver(
     tsx: str, tsx_props: "list[tuple[str, str, str]]"
 ) -> str:
-    """Add `locale = "en",` to function signature defaults and insert resolver lines."""
-    # Add locale to defaults — insert after `}({` opening brace line.
+    """Add `locale = "en",` to function signature defaults and insert resolver lines.
+
+    Resolver priority:
+      - When locale === "en": user override (prop value) > en dict > ""
+      - When locale !== "en": locale dict > en dict > user override
+
+    This ensures locale switching works even if Framer's component instance has
+    stale prop values stored from a previous version of the component code.
+    """
     tsx = re.sub(
         r"(export default function \w+\(\{\n)",
         r'\1  locale = "en",\n',
@@ -202,11 +209,12 @@ def add_locale_default_and_resolver(
         count=1,
     )
 
-    # Find `}: Props) {` and insert resolver lines after it.
     resolver_lines = ['  const T = TRANSLATIONS[locale] || TRANSLATIONS.en']
     for name, _, _ in tsx_props:
         resolver_lines.append(
-            f'  const _{name} = {name} || T["{name}"] || TRANSLATIONS.en["{name}"]'
+            f'  const _{name} = locale === "en" '
+            f'? ({name} || T["{name}"]) '
+            f': (T["{name}"] || TRANSLATIONS.en["{name}"] || {name})'
         )
     resolver_block = "\n".join(resolver_lines)
 
@@ -384,8 +392,11 @@ def inject(tsx_path: Path, ko_md: Path, de_md: Path) -> bool:
 
     tsx = add_locale_to_interface(tsx)
     tsx = insert_translations_dict(tsx, dict_block)
-    tsx = add_locale_default_and_resolver(tsx, tsx_props)
+    # IMPORTANT: replace prop refs BEFORE adding resolver. Otherwise the resolver
+    # lines' RHS (`name || T["name"] || ...`) would get their `name` replaced
+    # with `_name`, creating self-referencing constants.
     tsx = replace_prop_refs_with_resolved(tsx, tsx_props)
+    tsx = add_locale_default_and_resolver(tsx, tsx_props)
     tsx = empty_default_values(tsx)
     tsx = insert_locale_control(tsx)
 

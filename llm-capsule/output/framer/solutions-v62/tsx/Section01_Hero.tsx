@@ -78,18 +78,18 @@ export default function Section01_Hero({
   stat4Label = "",
 }: Props) {
   const T = TRANSLATIONS[locale] || TRANSLATIONS.en
-  const _eyebrow = eyebrow || T["eyebrow"] || TRANSLATIONS.en["eyebrow"]
-  const _h1Plain = h1Plain || T["h1Plain"] || TRANSLATIONS.en["h1Plain"]
-  const _h1Highlight = h1Highlight || T["h1Highlight"] || TRANSLATIONS.en["h1Highlight"]
-  const _description = description || T["description"] || TRANSLATIONS.en["description"]
-  const _stat1Num = stat1Num || T["stat1Num"] || TRANSLATIONS.en["stat1Num"]
-  const _stat1Label = stat1Label || T["stat1Label"] || TRANSLATIONS.en["stat1Label"]
-  const _stat2Num = stat2Num || T["stat2Num"] || TRANSLATIONS.en["stat2Num"]
-  const _stat2Label = stat2Label || T["stat2Label"] || TRANSLATIONS.en["stat2Label"]
-  const _stat3Num = stat3Num || T["stat3Num"] || TRANSLATIONS.en["stat3Num"]
-  const _stat3Label = stat3Label || T["stat3Label"] || TRANSLATIONS.en["stat3Label"]
-  const _stat4Num = stat4Num || T["stat4Num"] || TRANSLATIONS.en["stat4Num"]
-  const _stat4Label = stat4Label || T["stat4Label"] || TRANSLATIONS.en["stat4Label"]
+  const _eyebrow = locale === "en" ? (eyebrow || T["eyebrow"]) : (T["eyebrow"] || TRANSLATIONS.en["eyebrow"] || eyebrow)
+  const _h1Plain = locale === "en" ? (h1Plain || T["h1Plain"]) : (T["h1Plain"] || TRANSLATIONS.en["h1Plain"] || h1Plain)
+  const _h1Highlight = locale === "en" ? (h1Highlight || T["h1Highlight"]) : (T["h1Highlight"] || TRANSLATIONS.en["h1Highlight"] || h1Highlight)
+  const _description = locale === "en" ? (description || T["description"]) : (T["description"] || TRANSLATIONS.en["description"] || description)
+  const _stat1Num = locale === "en" ? (stat1Num || T["stat1Num"]) : (T["stat1Num"] || TRANSLATIONS.en["stat1Num"] || stat1Num)
+  const _stat1Label = locale === "en" ? (stat1Label || T["stat1Label"]) : (T["stat1Label"] || TRANSLATIONS.en["stat1Label"] || stat1Label)
+  const _stat2Num = locale === "en" ? (stat2Num || T["stat2Num"]) : (T["stat2Num"] || TRANSLATIONS.en["stat2Num"] || stat2Num)
+  const _stat2Label = locale === "en" ? (stat2Label || T["stat2Label"]) : (T["stat2Label"] || TRANSLATIONS.en["stat2Label"] || stat2Label)
+  const _stat3Num = locale === "en" ? (stat3Num || T["stat3Num"]) : (T["stat3Num"] || TRANSLATIONS.en["stat3Num"] || stat3Num)
+  const _stat3Label = locale === "en" ? (stat3Label || T["stat3Label"]) : (T["stat3Label"] || TRANSLATIONS.en["stat3Label"] || stat3Label)
+  const _stat4Num = locale === "en" ? (stat4Num || T["stat4Num"]) : (T["stat4Num"] || TRANSLATIONS.en["stat4Num"] || stat4Num)
+  const _stat4Label = locale === "en" ? (stat4Label || T["stat4Label"]) : (T["stat4Label"] || TRANSLATIONS.en["stat4Label"] || stat4Label)
 
   return (
     <>
