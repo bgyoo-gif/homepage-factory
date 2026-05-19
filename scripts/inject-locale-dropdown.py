@@ -220,7 +220,9 @@ def add_locale_default_and_resolver(
 
 
 def empty_default_values(tsx: str) -> str:
-    """Set both the signature defaults and addPropertyControls defaults to empty string."""
+    """Set both the signature defaults and addPropertyControls defaults to empty string.
+
+    Tolerates aligned whitespace (e.g. `tag:              { ... }`)."""
     # Signature defaults: `  propName = "anything"` (multiline, in function args)
     # Match only inside function arg list. Locale stays "en".
     tsx = re.sub(
@@ -230,17 +232,27 @@ def empty_default_values(tsx: str) -> str:
         flags=re.MULTILINE,
     )
 
-    # addPropertyControls defaults
+    # addPropertyControls defaults — tolerate aligned spacing between `:` and `{`
+    # and inside the brace. Preserve all other fields (title, displayTextArea, etc.).
+    # Re-emit fields with proper comma separation.
     def repl(m):
         name = m.group(1)
         if name == "locale":
             return m.group(0)
-        prefix = m.group(2)
-        suffix = m.group(3)
-        return f'  {name}: {{ {prefix}defaultValue: ""{suffix} }},'
+        indent = "  "
+        sep_after_name = m.group(2)  # spaces between `:` and `{`
+        prefix = m.group(3).strip().rstrip(",").strip()  # fields before defaultValue
+        suffix = m.group(4).strip().lstrip(",").strip()  # fields after defaultValue
+        parts = []
+        if prefix:
+            parts.append(prefix)
+        parts.append('defaultValue: ""')
+        if suffix:
+            parts.append(suffix)
+        return f"{indent}{name}:{sep_after_name}{{ " + ", ".join(parts) + " },"
 
     tsx = re.sub(
-        r'^  (\w+): \{ (.*?)defaultValue: "(?:[^"\\]|\\.)*"(.*?) \},$',
+        r'^  (\w+):(\s*)\{\s*(.*?)defaultValue:\s*"(?:[^"\\]|\\.)*"\s*,?\s*(.*?)\s*\},?\s*$',
         repl,
         tsx,
         flags=re.MULTILINE,

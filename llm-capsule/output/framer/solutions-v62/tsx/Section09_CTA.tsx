@@ -189,12 +189,12 @@ export default function Section09_CTA({
 
 addPropertyControls(Section09_CTA, {
   locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
-  title:       { type: ControlType.String, title: "Title",        defaultValue: "Bring your industry, your workflow, your data." },
-  description: { type: ControlType.String, title: "Description",  defaultValue: "", displayTextArea: true },
-  cta1Label:   { type: ControlType.String, title: "CTA 1 Label",  defaultValue: "Request an Industry Demo" },
-  cta1Href:    { type: ControlType.String, title: "CTA 1 URL",    defaultValue: "/request-a-demo" },
-  cta2Label:   { type: ControlType.String, title: "CTA 2 Label",  defaultValue: "View Architecture" },
-  cta2Href:    { type: ControlType.String, title: "CTA 2 URL",    defaultValue: "/architecture" },
-  cta3Label:   { type: ControlType.String, title: "CTA 3 Label",  defaultValue: "View Trust & Compliance" },
-  cta3Href:    { type: ControlType.String, title: "CTA 3 URL",    defaultValue: "/trust" },
+  title:       { type: ControlType.String, title: "Title", defaultValue: "" },
+  description: { type: ControlType.String, title: "Description", defaultValue: "", displayTextArea: true },
+  cta1Label:   { type: ControlType.String, title: "CTA 1 Label", defaultValue: "" },
+  cta1Href:    { type: ControlType.String, title: "CTA 1 URL", defaultValue: "" },
+  cta2Label:   { type: ControlType.String, title: "CTA 2 Label", defaultValue: "" },
+  cta2Href:    { type: ControlType.String, title: "CTA 2 URL", defaultValue: "" },
+  cta3Label:   { type: ControlType.String, title: "CTA 3 Label", defaultValue: "" },
+  cta3Href:    { type: ControlType.String, title: "CTA 3 URL", defaultValue: "" },
 })
