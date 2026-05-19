@@ -89,17 +89,17 @@ export default function Section02_ProofBand({
   logo10Alt = "",
 }: Props) {
   const T = TRANSLATIONS[locale] || TRANSLATIONS.en
-  const _label = locale === "en" ? (label || T["label"]) : (T["label"] || TRANSLATIONS.en["label"] || label)
-  const _logo1Alt = locale === "en" ? (logo1Alt || T["logo1Alt"]) : (T["logo1Alt"] || TRANSLATIONS.en["logo1Alt"] || logo1Alt)
-  const _logo2Alt = locale === "en" ? (logo2Alt || T["logo2Alt"]) : (T["logo2Alt"] || TRANSLATIONS.en["logo2Alt"] || logo2Alt)
-  const _logo3Alt = locale === "en" ? (logo3Alt || T["logo3Alt"]) : (T["logo3Alt"] || TRANSLATIONS.en["logo3Alt"] || logo3Alt)
-  const _logo4Alt = locale === "en" ? (logo4Alt || T["logo4Alt"]) : (T["logo4Alt"] || TRANSLATIONS.en["logo4Alt"] || logo4Alt)
-  const _logo5Alt = locale === "en" ? (logo5Alt || T["logo5Alt"]) : (T["logo5Alt"] || TRANSLATIONS.en["logo5Alt"] || logo5Alt)
-  const _logo6Text = locale === "en" ? (logo6Text || T["logo6Text"]) : (T["logo6Text"] || TRANSLATIONS.en["logo6Text"] || logo6Text)
-  const _logo7Text = locale === "en" ? (logo7Text || T["logo7Text"]) : (T["logo7Text"] || TRANSLATIONS.en["logo7Text"] || logo7Text)
-  const _logo8Text = locale === "en" ? (logo8Text || T["logo8Text"]) : (T["logo8Text"] || TRANSLATIONS.en["logo8Text"] || logo8Text)
-  const _logo9Alt = locale === "en" ? (logo9Alt || T["logo9Alt"]) : (T["logo9Alt"] || TRANSLATIONS.en["logo9Alt"] || logo9Alt)
-  const _logo10Alt = locale === "en" ? (logo10Alt || T["logo10Alt"]) : (T["logo10Alt"] || TRANSLATIONS.en["logo10Alt"] || logo10Alt)
+  const _label = T["label"] || TRANSLATIONS.en["label"] || label
+  const _logo1Alt = T["logo1Alt"] || TRANSLATIONS.en["logo1Alt"] || logo1Alt
+  const _logo2Alt = T["logo2Alt"] || TRANSLATIONS.en["logo2Alt"] || logo2Alt
+  const _logo3Alt = T["logo3Alt"] || TRANSLATIONS.en["logo3Alt"] || logo3Alt
+  const _logo4Alt = T["logo4Alt"] || TRANSLATIONS.en["logo4Alt"] || logo4Alt
+  const _logo5Alt = T["logo5Alt"] || TRANSLATIONS.en["logo5Alt"] || logo5Alt
+  const _logo6Text = T["logo6Text"] || TRANSLATIONS.en["logo6Text"] || logo6Text
+  const _logo7Text = T["logo7Text"] || TRANSLATIONS.en["logo7Text"] || logo7Text
+  const _logo8Text = T["logo8Text"] || TRANSLATIONS.en["logo8Text"] || logo8Text
+  const _logo9Alt = T["logo9Alt"] || TRANSLATIONS.en["logo9Alt"] || logo9Alt
+  const _logo10Alt = T["logo10Alt"] || TRANSLATIONS.en["logo10Alt"] || logo10Alt
 
   const r1 = logo1Img || `${IMAGE_BASE}partner-sktelecom.avif`
   const r2 = logo2Img || `${IMAGE_BASE}partner-deutsche-telekom.avif`

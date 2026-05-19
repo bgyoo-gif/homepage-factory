@@ -195,12 +195,9 @@ def add_locale_default_and_resolver(
 ) -> str:
     """Add `locale = "en",` to function signature defaults and insert resolver lines.
 
-    Resolver priority:
-      - When locale === "en": user override (prop value) > en dict > ""
-      - When locale !== "en": locale dict > en dict > user override
-
-    This ensures locale switching works even if Framer's component instance has
-    stale prop values stored from a previous version of the component code.
+    Resolver priority: dict[locale] is source of truth.
+      - _propName = T["propName"] || TRANSLATIONS.en["propName"] || propName
+      - This eliminates all stored-prop interference from Framer caching.
     """
     tsx = re.sub(
         r"(export default function \w+\(\{\n)",
@@ -212,9 +209,7 @@ def add_locale_default_and_resolver(
     resolver_lines = ['  const T = TRANSLATIONS[locale] || TRANSLATIONS.en']
     for name, _, _ in tsx_props:
         resolver_lines.append(
-            f'  const _{name} = locale === "en" '
-            f'? ({name} || T["{name}"]) '
-            f': (T["{name}"] || TRANSLATIONS.en["{name}"] || {name})'
+            f'  const _{name} = T["{name}"] || TRANSLATIONS.en["{name}"] || {name}'
         )
     resolver_block = "\n".join(resolver_lines)
 
