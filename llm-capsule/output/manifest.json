@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-19 14:42:28",
+  "generated": "2026-05-19 16:26:57",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -3666,47 +3666,47 @@
         {
           "name": "Section01_Hero.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/solutions-v62/tsx/Section01_Hero.tsx",
-          "modified": "2026-05-06"
+          "modified": "2026-05-19"
         },
         {
           "name": "Section02_ProofBand.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/solutions-v62/tsx/Section02_ProofBand.tsx",
-          "modified": "2026-05-06"
+          "modified": "2026-05-19"
         },
         {
           "name": "Section03_Telecom.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/solutions-v62/tsx/Section03_Telecom.tsx",
-          "modified": "2026-05-06"
+          "modified": "2026-05-19"
         },
         {
           "name": "Section04_Healthcare.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/solutions-v62/tsx/Section04_Healthcare.tsx",
-          "modified": "2026-05-06"
+          "modified": "2026-05-19"
         },
         {
           "name": "Section05_Finance.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/solutions-v62/tsx/Section05_Finance.tsx",
-          "modified": "2026-05-06"
+          "modified": "2026-05-19"
         },
         {
           "name": "Section06_Defense.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/solutions-v62/tsx/Section06_Defense.tsx",
-          "modified": "2026-05-06"
+          "modified": "2026-05-19"
         },
         {
           "name": "Section07_OT.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/solutions-v62/tsx/Section07_OT.tsx",
-          "modified": "2026-05-06"
+          "modified": "2026-05-19"
         },
         {
           "name": "Section08_Legal.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/solutions-v62/tsx/Section08_Legal.tsx",
-          "modified": "2026-05-06"
+          "modified": "2026-05-19"
         },
         {
           "name": "Section09_CTA.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/solutions-v62/tsx/Section09_CTA.tsx",
-          "modified": "2026-05-06"
+          "modified": "2026-05-19"
         },
         {
           "name": "StructurePreservingDocumentProcessing.tsx",

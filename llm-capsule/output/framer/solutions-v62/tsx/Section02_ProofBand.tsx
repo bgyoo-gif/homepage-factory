@@ -3,6 +3,7 @@ import { addPropertyControls, ControlType } from "framer"
 const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/"
 
 interface Props {
+  locale?: "en" | "ko" | "de"
   label?: string
   logo1Img?: string
   logo1Alt?: string
@@ -23,26 +24,83 @@ interface Props {
   logo10Alt?: string
 }
 
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
+  en: {
+    label: "Real production deployments — across telecom, healthcare, finance, defense, OT, and legal",
+    logo1Alt: "SK Telecom",
+    logo2Alt: "Deutsche Telekom",
+    logo3Alt: "Claroty",
+    logo4Alt: "EUMC",
+    logo5Alt: "Kyobo",
+    logo6Text: "DB Insurance",
+    logo7Text: "IBK",
+    logo8Text: "Shin&Kim",
+    logo9Alt: "Ministry of National Defense (KR)",
+    logo10Alt: "NAVER Cloud",
+  },
+  ko: {
+    label: "실제 프로덕션 배포 사례 — 통신·의료·금융·국방·OT·법률 전 산업",
+    logo1Alt: "SK Telecom",
+    logo2Alt: "Deutsche Telekom",
+    logo3Alt: "Claroty",
+    logo4Alt: "EUMC",
+    logo5Alt: "Kyobo",
+    logo6Text: "DB Insurance",
+    logo7Text: "IBK",
+    logo8Text: "Shin&Kim",
+    logo9Alt: "대한민국 국방부",
+    logo10Alt: "NAVER Cloud",
+  },
+  de: {
+    label: "Produktiveinsätze in Telekommunikation, Gesundheitswesen, Finanzwesen, Verteidigung, OT und Rechtsbranche",
+    logo1Alt: "SK Telecom",
+    logo2Alt: "Deutsche Telekom",
+    logo3Alt: "Claroty",
+    logo4Alt: "EUMC",
+    logo5Alt: "Kyobo",
+    logo6Text: "DB Insurance",
+    logo7Text: "IBK",
+    logo8Text: "Shin&Kim",
+    logo9Alt: "Verteidigungsministerium (KR)",
+    logo10Alt: "NAVER Cloud",
+  },
+}
+
+
 export default function Section02_ProofBand({
-  label = "Real production deployments — across telecom, healthcare, finance, defense, OT, and legal",
+  locale = "en",
+  label = "",
   logo1Img = "",
-  logo1Alt = "SK Telecom",
+  logo1Alt = "",
   logo2Img = "",
-  logo2Alt = "Deutsche Telekom",
+  logo2Alt = "",
   logo3Img = "",
-  logo3Alt = "Claroty",
+  logo3Alt = "",
   logo4Img = "",
-  logo4Alt = "EUMC",
+  logo4Alt = "",
   logo5Img = "",
-  logo5Alt = "Kyobo",
-  logo6Text = "DB Insurance",
-  logo7Text = "IBK",
-  logo8Text = "Shin&Kim",
+  logo5Alt = "",
+  logo6Text = "",
+  logo7Text = "",
+  logo8Text = "",
   logo9Img = "",
-  logo9Alt = "Ministry of National Defense (KR)",
+  logo9Alt = "",
   logo10Img = "",
-  logo10Alt = "NAVER Cloud",
+  logo10Alt = "",
 }: Props) {
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  const _label = label || T["label"] || TRANSLATIONS.en["label"]
+  const _logo1Alt = logo1Alt || T["logo1Alt"] || TRANSLATIONS.en["logo1Alt"]
+  const _logo2Alt = logo2Alt || T["logo2Alt"] || TRANSLATIONS.en["logo2Alt"]
+  const _logo3Alt = logo3Alt || T["logo3Alt"] || TRANSLATIONS.en["logo3Alt"]
+  const _logo4Alt = logo4Alt || T["logo4Alt"] || TRANSLATIONS.en["logo4Alt"]
+  const _logo5Alt = logo5Alt || T["logo5Alt"] || TRANSLATIONS.en["logo5Alt"]
+  const _logo6Text = logo6Text || T["logo6Text"] || TRANSLATIONS.en["logo6Text"]
+  const _logo7Text = logo7Text || T["logo7Text"] || TRANSLATIONS.en["logo7Text"]
+  const _logo8Text = logo8Text || T["logo8Text"] || TRANSLATIONS.en["logo8Text"]
+  const _logo9Alt = logo9Alt || T["logo9Alt"] || TRANSLATIONS.en["logo9Alt"]
+  const _logo10Alt = logo10Alt || T["logo10Alt"] || TRANSLATIONS.en["logo10Alt"]
+
   const r1 = logo1Img || `${IMAGE_BASE}partner-sktelecom.avif`
   const r2 = logo2Img || `${IMAGE_BASE}partner-deutsche-telekom.avif`
   const r3 = logo3Img || `${IMAGE_BASE}partner-claroty.png`
@@ -82,7 +140,7 @@ export default function Section02_ProofBand({
           overflow: hidden;
         }
 
-        .s2-label {
+        .s2-_label {
           font-size: 12px;
           font-weight: 700;
           text-transform: uppercase;
@@ -162,31 +220,31 @@ export default function Section02_ProofBand({
 
       <div className="s2-root">
         <section className="s2-section">
-          <div className="s2-label">{label}</div>
+          <div className="s2-_label">{_label}</div>
           <div className="s2-track-wrap">
             <div className="s2-track">
               {/* Set 1 */}
-              <div className="s2-logo"><img src={r1} alt={logo1Alt} loading="lazy" /></div>
-              <div className="s2-logo"><img src={r2} alt={logo2Alt} loading="lazy" /></div>
-              <div className="s2-logo"><img src={r3} alt={logo3Alt} loading="lazy" /></div>
-              <div className="s2-logo"><img src={r4} alt={logo4Alt} loading="lazy" /></div>
-              <div className="s2-logo"><img src={r5} alt={logo5Alt} loading="lazy" /></div>
-              <div className="s2-logo"><span className="s2-logo-text">{logo6Text}</span></div>
-              <div className="s2-logo"><span className="s2-logo-text">{logo7Text}</span></div>
-              <div className="s2-logo"><span className="s2-logo-text">{logo8Text}</span></div>
-              <div className="s2-logo"><img src={r9} alt={logo9Alt} loading="lazy" /></div>
-              <div className="s2-logo"><img src={r10} alt={logo10Alt} loading="lazy" /></div>
+              <div className="s2-logo"><img src={r1} alt={_logo1Alt} loading="lazy" /></div>
+              <div className="s2-logo"><img src={r2} alt={_logo2Alt} loading="lazy" /></div>
+              <div className="s2-logo"><img src={r3} alt={_logo3Alt} loading="lazy" /></div>
+              <div className="s2-logo"><img src={r4} alt={_logo4Alt} loading="lazy" /></div>
+              <div className="s2-logo"><img src={r5} alt={_logo5Alt} loading="lazy" /></div>
+              <div className="s2-logo"><span className="s2-logo-text">{_logo6Text}</span></div>
+              <div className="s2-logo"><span className="s2-logo-text">{_logo7Text}</span></div>
+              <div className="s2-logo"><span className="s2-logo-text">{_logo8Text}</span></div>
+              <div className="s2-logo"><img src={r9} alt={_logo9Alt} loading="lazy" /></div>
+              <div className="s2-logo"><img src={r10} alt={_logo10Alt} loading="lazy" /></div>
               {/* Set 2 — duplicate for seamless loop */}
-              <div className="s2-logo"><img src={r1} alt={logo1Alt} loading="lazy" /></div>
-              <div className="s2-logo"><img src={r2} alt={logo2Alt} loading="lazy" /></div>
-              <div className="s2-logo"><img src={r3} alt={logo3Alt} loading="lazy" /></div>
-              <div className="s2-logo"><img src={r4} alt={logo4Alt} loading="lazy" /></div>
-              <div className="s2-logo"><img src={r5} alt={logo5Alt} loading="lazy" /></div>
-              <div className="s2-logo"><span className="s2-logo-text">{logo6Text}</span></div>
-              <div className="s2-logo"><span className="s2-logo-text">{logo7Text}</span></div>
-              <div className="s2-logo"><span className="s2-logo-text">{logo8Text}</span></div>
-              <div className="s2-logo"><img src={r9} alt={logo9Alt} loading="lazy" /></div>
-              <div className="s2-logo"><img src={r10} alt={logo10Alt} loading="lazy" /></div>
+              <div className="s2-logo"><img src={r1} alt={_logo1Alt} loading="lazy" /></div>
+              <div className="s2-logo"><img src={r2} alt={_logo2Alt} loading="lazy" /></div>
+              <div className="s2-logo"><img src={r3} alt={_logo3Alt} loading="lazy" /></div>
+              <div className="s2-logo"><img src={r4} alt={_logo4Alt} loading="lazy" /></div>
+              <div className="s2-logo"><img src={r5} alt={_logo5Alt} loading="lazy" /></div>
+              <div className="s2-logo"><span className="s2-logo-text">{_logo6Text}</span></div>
+              <div className="s2-logo"><span className="s2-logo-text">{_logo7Text}</span></div>
+              <div className="s2-logo"><span className="s2-logo-text">{_logo8Text}</span></div>
+              <div className="s2-logo"><img src={r9} alt={_logo9Alt} loading="lazy" /></div>
+              <div className="s2-logo"><img src={r10} alt={_logo10Alt} loading="lazy" /></div>
             </div>
           </div>
         </section>
@@ -196,6 +254,7 @@ export default function Section02_ProofBand({
 }
 
 addPropertyControls(Section02_ProofBand, {
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
   label:      { type: ControlType.String, title: "Label",          defaultValue: "Real production deployments — across telecom, healthcare, finance, defense, OT, and legal" },
   logo1Img:   { type: ControlType.Image,  title: "Logo 1 (SK Telecom)" },
   logo1Alt:   { type: ControlType.String, title: "Logo 1 Alt",     defaultValue: "SK Telecom" },

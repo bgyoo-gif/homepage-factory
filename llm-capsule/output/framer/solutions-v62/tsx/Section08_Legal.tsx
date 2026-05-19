@@ -1,6 +1,7 @@
 import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
+  locale?: "en" | "ko" | "de"
   tag?: string
   title?: string
   lead?: string
@@ -29,34 +30,143 @@ interface Props {
   altBg?: boolean
 }
 
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
+  en: {
+    tag: "Legal",
+    title: "AI for matter management — privilege preserved, deal terms protected",
+    lead: "Legal workflows process privileged material — contracts, deal terms, M&A code names, litigation strategy, regulatory filings. Privilege preservation is non-negotiable. LLM Capsule encapsulates parties, deal terms, and privileged content locally; AI summarizes and analyzes the protected capsule; restoration happens inside the firm's matter management system.",
+    blockedLabel: "Without Capsule",
+    blockedH: "Outside-counsel AI blocked",
+    blocked: "Deal terms, party names, code names cannot reach external LLM. Associates fall back to manual review; AI value never materializes.",
+    enabledLabel: "With Capsule",
+    enabledH: "AI assist inside privileged workflow",
+    enabled: "Parties + terms encapsulated; AI drafts summaries, risk analyses, and clause comparisons; outputs restored in matter management with privilege preserved.",
+    workflowsHeading: "Production Workflows",
+    wf1Title: "Confidential contract review",
+    wf1Desc: "AI-drafted risk summary across long-form contracts",
+    wf2Title: "Due diligence summarization",
+    wf2Desc: "Multi-document M&A diligence with deal data protected",
+    wf3Title: "Regulatory filing draft",
+    wf3Desc: "Filing draft and compliance check with sensitive content masked",
+    wf4Title: "Matter triage",
+    wf4Desc: "Initial matter intake and routing with privileged data inside",
+    customerLabel: "Customer Proof",
+    customerName: "Shin&Kim",
+    customerDetail: "One of Korea's largest law firms. AI assist on privileged matter workflows with parties, deal terms, and code names encapsulated. Privilege preservation under firm governance.",
+    screenshotAlt: "Legal Industry Visual",
+    readLabel: "Read: AI enablement data layer (definition) →",
+    readHref: "/glossary/ai-enablement-data-layer",
+  },
+  ko: {
+    tag: "법률",
+    title: "사건 관리에 AI를 — 변호사 비밀 유지, 거래 조건 보호",
+    lead: "법률 워크플로우는 특권 자료를 처리합니다 — 계약서, 거래 조건, M&A 코드명, 소송 전략, 규제 신고서. 변호사-의뢰인 비밀 유지는 절대적입니다. LLM Capsule은 당사자, 거래 조건, 특권 콘텐츠를 로컬에서 캡슐화하고, AI가 보호된 캡슐을 요약·분석하며, 복원은 로펌의 사건 관리 시스템 내부에서 이루어집니다.",
+    blockedLabel: "Capsule 미사용 시",
+    blockedH: "외부 자문 AI 차단",
+    blocked: "거래 조건, 당사자 이름, 코드명이 외부 LLM에 도달할 수 없습니다. 어소시에이트는 수동 검토로 돌아가고, AI 가치는 실현되지 않습니다.",
+    enabledLabel: "Capsule 사용 시",
+    enabledH: "특권 워크플로우 내에서 AI 지원",
+    enabled: "당사자 및 거래 조건이 캡슐화되고, AI가 요약본, 리스크 분석, 조항 비교를 작성합니다. 결과물은 변호사 비밀 유지 상태로 사건 관리 시스템에 복원됩니다.",
+    workflowsHeading: "프로덕션 워크플로우",
+    wf1Title: "기밀 계약서 검토",
+    wf1Desc: "장문 계약서 전반에 걸친 AI 작성 리스크 요약",
+    wf2Title: "실사 요약",
+    wf2Desc: "거래 데이터 보호 상태에서 다중 문서 M&A 실사",
+    wf3Title: "규제 신고서 초안 작성",
+    wf3Desc: "민감 콘텐츠 마스킹 상태에서 신고서 초안 작성 및 컴플라이언스 확인",
+    wf4Title: "사건 트리아지",
+    wf4Desc: "특권 데이터 보호 상태에서 초기 사건 접수 및 배당",
+    customerLabel: "고객 도입 사례",
+    customerName: "Shin&Kim",
+    customerDetail: "국내 최대 규모 법률사무소 중 하나. 당사자, 거래 조건, 코드명을 캡슐화한 특권 사건 워크플로우에 AI 지원. 로펌 거버넌스 하에 변호사 비밀 유지.",
+    screenshotAlt: "법률 산업 비주얼",
+    readLabel: "읽기: AI 인에이블먼트 데이터 레이어 (정의) →",
+    readHref: "/glossary/ai-enablement-data-layer",
+  },
+  de: {
+    tag: "Rechtsbranche",
+    title: "KI für das Matter Management — Mandatsgeheimnis gewahrt, Vertragsdaten geschützt",
+    lead: "Rechtliche Workflows verarbeiten vertrauliches Material: Verträge, Transaktionsbedingungen, M&A-Projektnamen, Prozessstrategie und behördliche Einreichungen. Die Wahrung des Mandatsgeheimnisses ist nicht verhandelbar. LLM Capsule kapsuliert Parteien, Vertragsbedingungen und privilegierte Inhalte lokal; die KI analysiert und fasst die geschützte Kapsel zusammen; die Wiederherstellung erfolgt im Matter-Management-System der Kanzlei.",
+    blockedLabel: "Ohne Capsule",
+    blockedH: "KI-Einsatz in der Kanzlei blockiert",
+    blocked: "Transaktionsbedingungen, Parteinamen und Projektkennungen dürfen das externe LLM nicht erreichen. Associates kehren zur manuellen Prüfung zurück; der Mehrwert von KI bleibt unrealisiert.",
+    enabledLabel: "Mit Capsule",
+    enabledH: "KI-Unterstützung im mandatsgeschützten Workflow",
+    enabled: "Parteien und Bedingungen werden kapsuliert. Die KI erstellt Zusammenfassungen, Risikoanalysen und Klauselvergleiche. Die Ergebnisse werden im Matter Management unter Wahrung des Mandatsgeheimnisses wiederhergestellt.",
+    workflowsHeading: "Produktivworkflows",
+    wf1Title: "Vertrauliche Vertragsprüfung",
+    wf1Desc: "KI-gestützte Risikozusammenfassung langer Vertragswerke",
+    wf2Title: "Due-Diligence-Zusammenfassung",
+    wf2Desc: "Mehrdokumentenbezogene M&A-Due-Diligence mit geschützten Transaktionsdaten",
+    wf3Title: "Entwurf behördlicher Einreichungen",
+    wf3Desc: "Einreichungsentwurf und Compliance-Prüfung mit kapsulierten sensiblen Inhalten",
+    wf4Title: "Matter-Triage",
+    wf4Desc: "Ersterfassung und Weiterleitung von Mandaten mit geschützten Informationen",
+    customerLabel: "Kundenreferenz",
+    customerName: "Shin&Kim",
+    customerDetail: "Eine der größten Anwaltskanzleien Koreas. KI-Unterstützung bei privilegierten Matter-Workflows mit kapsulierten Parteien, Transaktionsbedingungen und Projektkennungen. Wahrung des Mandatsgeheimnisses unter der Governance der Kanzlei.",
+    screenshotAlt: "Rechtsbranche — Branchenvisualisierung",
+    readLabel: "Lesen: KI-Aktivierungsdatenschicht (Definition) →",
+    readHref: "/glossary/ai-enablement-data-layer",
+  },
+}
+
+
 export default function Section08_Legal({
-  tag = "Legal",
-  title = "AI for matter management — privilege preserved, deal terms protected",
-  lead = "Legal workflows process privileged material — contracts, deal terms, M&A code names, litigation strategy, regulatory filings. Privilege preservation is non-negotiable. LLM Capsule encapsulates parties, deal terms, and privileged content locally; AI summarizes and analyzes the protected capsule; restoration happens inside the firm's matter management system.",
-  blockedLabel = "Without Capsule",
-  blockedH = "Outside-counsel AI blocked",
-  blocked = "Deal terms, party names, code names cannot reach external LLM. Associates fall back to manual review; AI value never materializes.",
-  enabledLabel = "With Capsule",
-  enabledH = "AI assist inside privileged workflow",
-  enabled = "Parties + terms encapsulated; AI drafts summaries, risk analyses, and clause comparisons; outputs restored in matter management with privilege preserved.",
-  workflowsHeading = "Production Workflows",
-  wf1Title = "Confidential contract review",
-  wf1Desc = "AI-drafted risk summary across long-form contracts",
-  wf2Title = "Due diligence summarization",
-  wf2Desc = "Multi-document M&A diligence with deal data protected",
-  wf3Title = "Regulatory filing draft",
-  wf3Desc = "Filing draft and compliance check with sensitive content masked",
-  wf4Title = "Matter triage",
-  wf4Desc = "Initial matter intake and routing with privileged data inside",
-  customerLabel = "Customer Proof",
-  customerName = "Shin&Kim",
-  customerDetail = "One of Korea's largest law firms. AI assist on privileged matter workflows with parties, deal terms, and code names encapsulated. Privilege preservation under firm governance.",
+  locale = "en",
+  tag = "",
+  title = "",
+  lead = "",
+  blockedLabel = "",
+  blockedH = "",
+  blocked = "",
+  enabledLabel = "",
+  enabledH = "",
+  enabled = "",
+  workflowsHeading = "",
+  wf1Title = "",
+  wf1Desc = "",
+  wf2Title = "",
+  wf2Desc = "",
+  wf3Title = "",
+  wf3Desc = "",
+  wf4Title = "",
+  wf4Desc = "",
+  customerLabel = "",
+  customerName = "",
+  customerDetail = "",
   screenshotImg = "",
-  screenshotAlt = "Legal Industry Visual",
-  readLabel = "Read: AI enablement data layer (definition) →",
-  readHref = "/glossary/ai-enablement-data-layer",
+  screenshotAlt = "",
+  readLabel = "",
+  readHref = "",
   altBg = true,
 }: Props) {
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  const _tag = tag || T["tag"] || TRANSLATIONS.en["tag"]
+  const _title = title || T["title"] || TRANSLATIONS.en["title"]
+  const _lead = lead || T["lead"] || TRANSLATIONS.en["lead"]
+  const _blockedLabel = blockedLabel || T["blockedLabel"] || TRANSLATIONS.en["blockedLabel"]
+  const _blockedH = blockedH || T["blockedH"] || TRANSLATIONS.en["blockedH"]
+  const _blocked = blocked || T["blocked"] || TRANSLATIONS.en["blocked"]
+  const _enabledLabel = enabledLabel || T["enabledLabel"] || TRANSLATIONS.en["enabledLabel"]
+  const _enabledH = enabledH || T["enabledH"] || TRANSLATIONS.en["enabledH"]
+  const _enabled = enabled || T["enabled"] || TRANSLATIONS.en["enabled"]
+  const _workflowsHeading = workflowsHeading || T["workflowsHeading"] || TRANSLATIONS.en["workflowsHeading"]
+  const _wf1Title = wf1Title || T["wf1Title"] || TRANSLATIONS.en["wf1Title"]
+  const _wf1Desc = wf1Desc || T["wf1Desc"] || TRANSLATIONS.en["wf1Desc"]
+  const _wf2Title = wf2Title || T["wf2Title"] || TRANSLATIONS.en["wf2Title"]
+  const _wf2Desc = wf2Desc || T["wf2Desc"] || TRANSLATIONS.en["wf2Desc"]
+  const _wf3Title = wf3Title || T["wf3Title"] || TRANSLATIONS.en["wf3Title"]
+  const _wf3Desc = wf3Desc || T["wf3Desc"] || TRANSLATIONS.en["wf3Desc"]
+  const _wf4Title = wf4Title || T["wf4Title"] || TRANSLATIONS.en["wf4Title"]
+  const _wf4Desc = wf4Desc || T["wf4Desc"] || TRANSLATIONS.en["wf4Desc"]
+  const _customerLabel = customerLabel || T["customerLabel"] || TRANSLATIONS.en["customerLabel"]
+  const _customerName = customerName || T["customerName"] || TRANSLATIONS.en["customerName"]
+  const _customerDetail = customerDetail || T["customerDetail"] || TRANSLATIONS.en["customerDetail"]
+  const _screenshotAlt = screenshotAlt || T["screenshotAlt"] || TRANSLATIONS.en["screenshotAlt"]
+  const _readLabel = readLabel || T["readLabel"] || TRANSLATIONS.en["readLabel"]
+  const _readHref = readHref || T["readHref"] || TRANSLATIONS.en["readHref"]
+
   return (
     <>
       <style>{`
@@ -83,8 +193,8 @@ export default function Section08_Legal({
           padding: 0 var(--s-page, clamp(20px, 4cqi, 80px));
         }
 
-        /* Legal: primary-dark tag */
-        .s8-tag {
+        /* Legal: primary-dark _tag */
+        .s8-_tag {
           display: inline-block;
           font-family: var(--f-mono, 'JetBrains Mono', monospace);
           font-size: 11px; font-weight: 700;
@@ -103,7 +213,7 @@ export default function Section08_Legal({
           word-break: keep-all; overflow-wrap: break-word;
         }
 
-        .s8-lead {
+        .s8-_lead {
           font-size: clamp(15px, 1.3cqi, 17px);
           color: var(--c-ink-soft, #3a3d5e); line-height: 1.65; max-width: 800px;
           word-break: keep-all; overflow-wrap: break-word;
@@ -119,8 +229,8 @@ export default function Section08_Legal({
           background-color: var(--c-bg, #ffffff); border: 1px solid var(--c-rule, #e5e7eb);
         }
 
-        .s8-state--blocked { background-color: var(--c-coral-soft, #fce9e8); border-color: transparent; }
-        .s8-state--enabled { background-color: var(--c-primary-soft, #eeebfe); border-color: transparent; }
+        .s8-state--_blocked { background-color: var(--c-coral-soft, #fce9e8); border-color: transparent; }
+        .s8-state--_enabled { background-color: var(--c-primary-soft, #eeebfe); border-color: transparent; }
 
         .s8-state__label {
           font-family: var(--f-mono, 'JetBrains Mono', monospace);
@@ -128,8 +238,8 @@ export default function Section08_Legal({
           text-transform: uppercase; margin-bottom: 8px;
         }
 
-        .s8-state--blocked .s8-state__label { color: var(--c-coral-dark, #c73e3a); }
-        .s8-state--enabled .s8-state__label { color: var(--c-primary-dark, #3b2fbf); }
+        .s8-state--_blocked .s8-state__label { color: var(--c-coral-dark, #c73e3a); }
+        .s8-state--_enabled .s8-state__label { color: var(--c-primary-dark, #3b2fbf); }
 
         .s8-state__h {
           font-size: 14px; font-weight: 700;
@@ -231,43 +341,43 @@ export default function Section08_Legal({
         <section className={`s8-section${altBg ? " s8-section--alt" : ""}`}>
           <div className="s8-container">
             <div className="s8-header">
-              <span className="s8-tag">{tag}</span>
-              <h2 className="s8-h2">{title}</h2>
-              <p className="s8-lead">{lead}</p>
+              <span className="s8-_tag">{_tag}</span>
+              <h2 className="s8-h2">{_title}</h2>
+              <p className="s8-_lead">{_lead}</p>
             </div>
 
             <div className="s8-states">
-              <div className="s8-state s8-state--blocked">
-                <div className="s8-state__label">{blockedLabel}</div>
-                <div className="s8-state__h">{blockedH}</div>
-                <div className="s8-state__d">{blocked}</div>
+              <div className="s8-state s8-state--_blocked">
+                <div className="s8-state__label">{_blockedLabel}</div>
+                <div className="s8-state__h">{_blockedH}</div>
+                <div className="s8-state__d">{_blocked}</div>
               </div>
-              <div className="s8-state s8-state--enabled">
-                <div className="s8-state__label">{enabledLabel}</div>
-                <div className="s8-state__h">{enabledH}</div>
-                <div className="s8-state__d">{enabled}</div>
+              <div className="s8-state s8-state--_enabled">
+                <div className="s8-state__label">{_enabledLabel}</div>
+                <div className="s8-state__h">{_enabledH}</div>
+                <div className="s8-state__d">{_enabled}</div>
               </div>
             </div>
 
             <div className="s8-workflows">
-              <div className="s8-workflows__h">{workflowsHeading}</div>
+              <div className="s8-workflows__h">{_workflowsHeading}</div>
               <ul className="s8-workflows__list">
-                <li><strong>{wf1Title}</strong>{wf1Desc}</li>
-                <li><strong>{wf2Title}</strong>{wf2Desc}</li>
-                <li><strong>{wf3Title}</strong>{wf3Desc}</li>
-                <li><strong>{wf4Title}</strong>{wf4Desc}</li>
+                <li><strong>{_wf1Title}</strong>{_wf1Desc}</li>
+                <li><strong>{_wf2Title}</strong>{_wf2Desc}</li>
+                <li><strong>{_wf3Title}</strong>{_wf3Desc}</li>
+                <li><strong>{_wf4Title}</strong>{_wf4Desc}</li>
               </ul>
             </div>
 
             <div className="s8-customer">
-              <div className="s8-customer__label">{customerLabel}</div>
-              <div className="s8-customer__name">{customerName}</div>
-              <div className="s8-customer__detail">{customerDetail}</div>
+              <div className="s8-customer__label">{_customerLabel}</div>
+              <div className="s8-customer__name">{_customerName}</div>
+              <div className="s8-customer__detail">{_customerDetail}</div>
             </div>
 
             <div className="s8-screenshot">
               {screenshotImg ? (
-                <img src={screenshotImg} alt={screenshotAlt} />
+                <img src={screenshotImg} alt={_screenshotAlt} />
               ) : (
                 <div className="s8-placeholder">
                   <div className="s8-placeholder__icon">
@@ -278,14 +388,14 @@ export default function Section08_Legal({
                       <path d="M20 26v4" stroke="#3b2fbf" strokeWidth="1.5" strokeLinecap="round"/>
                     </svg>
                   </div>
-                  <div className="s8-placeholder__label">{screenshotAlt}</div>
+                  <div className="s8-placeholder__label">{_screenshotAlt}</div>
                   <div className="s8-placeholder__spec">Contract review · privilege preserved badge · 16:10 · ~640×400px</div>
                 </div>
               )}
             </div>
 
             <div className="s8-footer">
-              <a className="s8-read-link" href={readHref}>{readLabel}</a>
+              <a className="s8-read-link" href={_readHref}>{_readLabel}</a>
             </div>
           </div>
         </section>
@@ -295,6 +405,7 @@ export default function Section08_Legal({
 }
 
 addPropertyControls(Section08_Legal, {
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
   tag:              { type: ControlType.String,  title: "Tag",               defaultValue: "Legal" },
   title:            { type: ControlType.String,  title: "Title",             defaultValue: "AI for matter management — privilege preserved, deal terms protected", displayTextArea: true },
   lead:             { type: ControlType.String,  title: "Lead",              defaultValue: "Legal workflows process privileged material — contracts, deal terms, M&A code names, litigation strategy, regulatory filings. Privilege preservation is non-negotiable. LLM Capsule encapsulates parties, deal terms, and privileged content locally; AI summarizes and analyzes the protected capsule; restoration happens inside the firm's matter management system.", displayTextArea: true },
@@ -304,7 +415,7 @@ addPropertyControls(Section08_Legal, {
   enabledLabel:     { type: ControlType.String,  title: "Enabled Label",     defaultValue: "With Capsule" },
   enabledH:         { type: ControlType.String,  title: "Enabled Heading",   defaultValue: "AI assist inside privileged workflow" },
   enabled:          { type: ControlType.String,  title: "Enabled Text",      defaultValue: "Parties + terms encapsulated; AI drafts summaries, risk analyses, and clause comparisons; outputs restored in matter management with privilege preserved.", displayTextArea: true },
-  workflowsHeading: { type: ControlType.String,  title: "Workflows Heading", defaultValue: "Production Workflows" },
+  workflowsHeading: { type: ControlType.String,  title: "Workflows Heading", defaultValue: "" },
   wf1Title:         { type: ControlType.String,  title: "WF 1 Title",        defaultValue: "Confidential contract review" },
   wf1Desc:          { type: ControlType.String,  title: "WF 1 Desc",         defaultValue: "AI-drafted risk summary across long-form contracts" },
   wf2Title:         { type: ControlType.String,  title: "WF 2 Title",        defaultValue: "Due diligence summarization" },

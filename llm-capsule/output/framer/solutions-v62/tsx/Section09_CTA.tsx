@@ -1,6 +1,7 @@
 import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
+  locale?: "en" | "ko" | "de"
   title?: string
   description?: string
   cta1Label?: string
@@ -11,16 +12,61 @@ interface Props {
   cta3Href?: string
 }
 
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
+  en: {
+    title: "Bring your industry, your workflow, your data.",
+    description: "We deploy LLM Capsule on a sample workflow in your environment within 30 minutes — and produce an evaluation report on detection accuracy, restoration rate, and policy fit for your industry's regulatory profile.",
+    cta1Label: "Request an Industry Demo",
+    cta1Href: "/request-a-demo",
+    cta2Label: "View Architecture",
+    cta2Href: "/architecture",
+    cta3Label: "View Trust & Compliance",
+    cta3Href: "/trust",
+  },
+  ko: {
+    title: "귀사의 산업, 귀사의 워크플로우, 귀사의 데이터를 가져오세요.",
+    description: "30분",
+    cta1Label: "산업별 데모 요청",
+    cta1Href: "/request-a-demo",
+    cta2Label: "아키텍처 보기",
+    cta2Href: "/architecture",
+    cta3Label: "신뢰 및 컴플라이언스 보기",
+    cta3Href: "/trust",
+  },
+  de: {
+    title: "Bringen Sie Ihre Branche, Ihre Workflows und Ihre Daten mit.",
+    description: "30 Min.",
+    cta1Label: "Demo für Ihre Branche anfordern",
+    cta1Href: "/request-a-demo",
+    cta2Label: "Architektur ansehen",
+    cta2Href: "/architecture",
+    cta3Label: "Trust & Compliance ansehen",
+    cta3Href: "/trust",
+  },
+}
+
+
 export default function Section09_CTA({
-  title = "Bring your industry, your workflow, your data.",
-  description = "We deploy LLM Capsule on a sample workflow in your environment within 30 minutes — and produce an evaluation report on detection accuracy, restoration rate, and policy fit for your industry's regulatory profile.",
-  cta1Label = "Request an Industry Demo",
-  cta1Href = "/request-a-demo",
-  cta2Label = "View Architecture",
-  cta2Href = "/architecture",
-  cta3Label = "View Trust & Compliance",
-  cta3Href = "/trust",
+  locale = "en",
+  title = "",
+  description = "",
+  cta1Label = "",
+  cta1Href = "",
+  cta2Label = "",
+  cta2Href = "",
+  cta3Label = "",
+  cta3Href = "",
 }: Props) {
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  const _title = title || T["title"] || TRANSLATIONS.en["title"]
+  const _description = description || T["description"] || TRANSLATIONS.en["description"]
+  const _cta1Label = cta1Label || T["cta1Label"] || TRANSLATIONS.en["cta1Label"]
+  const _cta1Href = cta1Href || T["cta1Href"] || TRANSLATIONS.en["cta1Href"]
+  const _cta2Label = cta2Label || T["cta2Label"] || TRANSLATIONS.en["cta2Label"]
+  const _cta2Href = cta2Href || T["cta2Href"] || TRANSLATIONS.en["cta2Href"]
+  const _cta3Label = cta3Label || T["cta3Label"] || TRANSLATIONS.en["cta3Label"]
+  const _cta3Href = cta3Href || T["cta3Href"] || TRANSLATIONS.en["cta3Href"]
+
   return (
     <>
       <style>{`
@@ -45,7 +91,7 @@ export default function Section09_CTA({
           margin: 0 auto;
         }
 
-        .s9-title {
+        .s9-_title {
           font-size: clamp(28px, 3.5cqi, 44px);
           font-weight: 700;
           line-height: 1.15;
@@ -127,12 +173,12 @@ export default function Section09_CTA({
       <div className="s9-root">
         <section className="s9-section">
           <div className="s9-inner">
-            <h2 className="s9-title">{title}</h2>
-            <p className="s9-desc">{description}</p>
+            <h2 className="s9-_title">{_title}</h2>
+            <p className="s9-desc">{_description}</p>
             <div className="s9-actions">
-              <a className="s9-btn s9-btn--invert" href={cta1Href}>{cta1Label}</a>
-              <a className="s9-btn s9-btn--ghost" href={cta2Href}>{cta2Label}</a>
-              <a className="s9-btn s9-btn--ghost" href={cta3Href}>{cta3Label}</a>
+              <a className="s9-btn s9-btn--invert" href={_cta1Href}>{_cta1Label}</a>
+              <a className="s9-btn s9-btn--ghost" href={_cta2Href}>{_cta2Label}</a>
+              <a className="s9-btn s9-btn--ghost" href={_cta3Href}>{_cta3Label}</a>
             </div>
           </div>
         </section>
@@ -142,8 +188,9 @@ export default function Section09_CTA({
 }
 
 addPropertyControls(Section09_CTA, {
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
   title:       { type: ControlType.String, title: "Title",        defaultValue: "Bring your industry, your workflow, your data." },
-  description: { type: ControlType.String, title: "Description",  defaultValue: "We deploy LLM Capsule on a sample workflow in your environment within 30 minutes — and produce an evaluation report on detection accuracy, restoration rate, and policy fit for your industry's regulatory profile.", displayTextArea: true },
+  description: { type: ControlType.String, title: "Description",  defaultValue: "", displayTextArea: true },
   cta1Label:   { type: ControlType.String, title: "CTA 1 Label",  defaultValue: "Request an Industry Demo" },
   cta1Href:    { type: ControlType.String, title: "CTA 1 URL",    defaultValue: "/request-a-demo" },
   cta2Label:   { type: ControlType.String, title: "CTA 2 Label",  defaultValue: "View Architecture" },

@@ -1,6 +1,7 @@
 import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
+  locale?: "en" | "ko" | "de"
   eyebrow?: string
   h1Plain?: string
   h1Highlight?: string
@@ -15,20 +16,81 @@ interface Props {
   stat4Label?: string
 }
 
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
+  en: {
+    eyebrow: "Solutions",
+    h1Plain: "Make regulated workflows",
+    h1Highlight: "usable with AI",
+    description: "Six industries. Real production workflows. Real customers. One AI enablement data layer that removes the data exposure barrier blocking enterprise AI adoption — so AI runs on real data, inside your environment, under your governance.",
+    stat1Num: "6",
+    stat1Label: "Regulated industries",
+    stat2Num: "10+",
+    stat2Label: "Production customers",
+    stat3Num: "30 min",
+    stat3Label: "Time to first evaluation",
+    stat4Num: "0",
+    stat4Label: "Raw data to external LLM",
+  },
+  ko: {
+    eyebrow: "솔루션",
+    h1Plain: "규제 환경의 워크플로우를",
+    h1Highlight: "AI로 가동합니다",
+    description: "6개 산업. 실제 프로덕션 워크플로우. 실제 고객사. 기업 AI 도입을 막는 데이터 노출 장벽을 제거하는 데이터 레이어 — AI가 실제 데이터 위에서, 여러분의 환경 안에서, 여러분의 거버넌스 하에 작동합니다.",
+    stat1Num: "6",
+    stat1Label: "규제 산업",
+    stat2Num: "10+",
+    stat2Label: "실제 운영 고객사",
+    stat3Num: "30분",
+    stat3Label: "최초 평가 소요 시간",
+    stat4Num: "0",
+    stat4Label: "외부 LLM에 전달되는 원본 데이터",
+  },
+  de: {
+    eyebrow: "Lösungen",
+    h1Plain: "KI-gestützte Workflows in regulierten Branchen —",
+    h1Highlight: "ohne Offenlegung vertraulicher Daten",
+    description: "Sechs regulierte Branchen. Reale Produktivworkflows. Nachgewiesene Kundeneinsätze. Eine Datenschicht, die verhindert, dass vertrauliche Daten bei der KI-Verarbeitung nach außen gelangen — KI läuft auf echten Daten, in Ihrer Umgebung, unter Ihrer Kontrolle.",
+    stat1Num: "6",
+    stat1Label: "Regulierte Branchen",
+    stat2Num: "10+",
+    stat2Label: "Produktivkunden",
+    stat3Num: "30 Min.",
+    stat3Label: "Zeit bis zur ersten Evaluierung",
+    stat4Num: "0",
+    stat4Label: "Rohdaten an externe LLMs",
+  },
+}
+
+
 export default function Section01_Hero({
-  eyebrow = "Solutions",
-  h1Plain = "Make regulated workflows ",
-  h1Highlight = "usable with AI",
-  description = "Six industries. Real production workflows. Real customers. One AI enablement data layer that removes the data exposure barrier blocking enterprise AI adoption — so AI runs on real data, inside your environment, under your governance.",
-  stat1Num = "6",
-  stat1Label = "Regulated industries",
-  stat2Num = "10+",
-  stat2Label = "Production customers",
-  stat3Num = "30 min",
-  stat3Label = "Time to first evaluation",
-  stat4Num = "0",
-  stat4Label = "Raw data to external LLM",
+  locale = "en",
+  eyebrow = "",
+  h1Plain = "",
+  h1Highlight = "",
+  description = "",
+  stat1Num = "",
+  stat1Label = "",
+  stat2Num = "",
+  stat2Label = "",
+  stat3Num = "",
+  stat3Label = "",
+  stat4Num = "",
+  stat4Label = "",
 }: Props) {
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  const _eyebrow = eyebrow || T["eyebrow"] || TRANSLATIONS.en["eyebrow"]
+  const _h1Plain = h1Plain || T["h1Plain"] || TRANSLATIONS.en["h1Plain"]
+  const _h1Highlight = h1Highlight || T["h1Highlight"] || TRANSLATIONS.en["h1Highlight"]
+  const _description = description || T["description"] || TRANSLATIONS.en["description"]
+  const _stat1Num = stat1Num || T["stat1Num"] || TRANSLATIONS.en["stat1Num"]
+  const _stat1Label = stat1Label || T["stat1Label"] || TRANSLATIONS.en["stat1Label"]
+  const _stat2Num = stat2Num || T["stat2Num"] || TRANSLATIONS.en["stat2Num"]
+  const _stat2Label = stat2Label || T["stat2Label"] || TRANSLATIONS.en["stat2Label"]
+  const _stat3Num = stat3Num || T["stat3Num"] || TRANSLATIONS.en["stat3Num"]
+  const _stat3Label = stat3Label || T["stat3Label"] || TRANSLATIONS.en["stat3Label"]
+  const _stat4Num = stat4Num || T["stat4Num"] || TRANSLATIONS.en["stat4Num"]
+  const _stat4Label = stat4Label || T["stat4Label"] || TRANSLATIONS.en["stat4Label"]
+
   return (
     <>
       <style>{`
@@ -55,7 +117,7 @@ export default function Section01_Hero({
           padding: 0 var(--s-page, clamp(20px, 4cqi, 80px));
         }
 
-        .s1-eyebrow {
+        .s1-_eyebrow {
           display: inline-block;
           font-size: 12px;
           font-weight: 700;
@@ -130,27 +192,27 @@ export default function Section01_Hero({
       <div className="s1-root">
         <section className="s1-section">
           <div className="s1-container">
-            <span className="s1-eyebrow">{eyebrow}</span>
+            <span className="s1-_eyebrow">{_eyebrow}</span>
             <h1 className="s1-h1">
-              {h1Plain}<span className="s1-highlight">{h1Highlight}</span>
+              {_h1Plain}<span className="s1-highlight">{_h1Highlight}</span>
             </h1>
-            <p className="s1-desc">{description}</p>
+            <p className="s1-desc">{_description}</p>
             <div className="s1-stats">
               <div className="s1-stat">
-                <div className="s1-stat-num">{stat1Num}</div>
-                <div className="s1-stat-label">{stat1Label}</div>
+                <div className="s1-stat-num">{_stat1Num}</div>
+                <div className="s1-stat-label">{_stat1Label}</div>
               </div>
               <div className="s1-stat">
-                <div className="s1-stat-num">{stat2Num}</div>
-                <div className="s1-stat-label">{stat2Label}</div>
+                <div className="s1-stat-num">{_stat2Num}</div>
+                <div className="s1-stat-label">{_stat2Label}</div>
               </div>
               <div className="s1-stat">
-                <div className="s1-stat-num">{stat3Num}</div>
-                <div className="s1-stat-label">{stat3Label}</div>
+                <div className="s1-stat-num">{_stat3Num}</div>
+                <div className="s1-stat-label">{_stat3Label}</div>
               </div>
               <div className="s1-stat">
-                <div className="s1-stat-num">{stat4Num}</div>
-                <div className="s1-stat-label">{stat4Label}</div>
+                <div className="s1-stat-num">{_stat4Num}</div>
+                <div className="s1-stat-label">{_stat4Label}</div>
               </div>
             </div>
           </div>
@@ -161,16 +223,17 @@ export default function Section01_Hero({
 }
 
 addPropertyControls(Section01_Hero, {
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
   eyebrow:    { type: ControlType.String, title: "Eyebrow",      defaultValue: "Solutions" },
   h1Plain:    { type: ControlType.String, title: "H1 Plain",     defaultValue: "Make regulated workflows " },
   h1Highlight:{ type: ControlType.String, title: "H1 Highlight", defaultValue: "usable with AI" },
   description:{ type: ControlType.String, title: "Description",  defaultValue: "Six industries. Real production workflows. Real customers. One AI enablement data layer that removes the data exposure barrier blocking enterprise AI adoption — so AI runs on real data, inside your environment, under your governance.", displayTextArea: true },
   stat1Num:   { type: ControlType.String, title: "Stat 1 Number", defaultValue: "6" },
-  stat1Label: { type: ControlType.String, title: "Stat 1 Label",  defaultValue: "Regulated industries" },
+  stat1Label: { type: ControlType.String, title: "Stat 1 Label",  defaultValue: "" },
   stat2Num:   { type: ControlType.String, title: "Stat 2 Number", defaultValue: "10+" },
-  stat2Label: { type: ControlType.String, title: "Stat 2 Label",  defaultValue: "Production customers" },
+  stat2Label: { type: ControlType.String, title: "Stat 2 Label",  defaultValue: "" },
   stat3Num:   { type: ControlType.String, title: "Stat 3 Number", defaultValue: "30 min" },
-  stat3Label: { type: ControlType.String, title: "Stat 3 Label",  defaultValue: "Time to first evaluation" },
+  stat3Label: { type: ControlType.String, title: "Stat 3 Label",  defaultValue: "" },
   stat4Num:   { type: ControlType.String, title: "Stat 4 Number", defaultValue: "0" },
-  stat4Label: { type: ControlType.String, title: "Stat 4 Label",  defaultValue: "Raw data to external LLM" },
+  stat4Label: { type: ControlType.String, title: "Stat 4 Label",  defaultValue: "" },
 })

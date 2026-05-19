@@ -1,6 +1,7 @@
 import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
+  locale?: "en" | "ko" | "de"
   tag?: string
   title?: string
   lead?: string
@@ -29,34 +30,143 @@ interface Props {
   altBg?: boolean
 }
 
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
+  en: {
+    tag: "Public Sector / Defense",
+    title: "AI on classified mission workflows — fully on-prem, zero external transmission",
+    lead: "Defense, intelligence, and public-sector workflows demand zero external transmission. No external LLM endpoint is acceptable. LLM Capsule's Path B (on-prem local lightweight model) runs entirely inside the command's network — same Capsule instance, same audit framework, no external reach.",
+    blockedLabel: "Without Capsule",
+    blockedH: "AI categorically excluded",
+    blocked: "External LLM use is not permitted. Mission workflows continue without AI support; productivity gap persists.",
+    enabledLabel: "With Capsule",
+    enabledH: "AI inside command boundary",
+    enabled: "Quantized on-prem model + Capsule encapsulation + local audit. AI drafts mission briefs, intelligence summaries, and operational reports — entirely within the command.",
+    workflowsHeading: "Production Workflows",
+    wf1Title: "Mission brief drafting",
+    wf1Desc: "AI-drafted operational briefs from multi-source intelligence",
+    wf2Title: "Operational report summarization",
+    wf2Desc: "Multi-format report consolidation and impact synthesis",
+    wf3Title: "Doctrine reference assist",
+    wf3Desc: "Doctrine and procedure lookup with classification protection",
+    wf4Title: "After-action review draft",
+    wf4Desc: "Post-operation review with mission identifiers protected",
+    customerLabel: "Customer Proof",
+    customerName: "Ministry of National Defense (Korea)",
+    customerDetail: "Mission-grade workflows on Path B (on-prem local) with full audit feed to command-level governance. Mission references, geographic identifiers, and unit data encapsulated; restoration tightly scoped under RBAC.",
+    screenshotAlt: "Defense Industry Visual",
+    readLabel: "Read: Sovereign AI architecture →",
+    readHref: "/learn/sovereign-ai-european-enterprises",
+  },
+  ko: {
+    tag: "공공 부문 / 국방",
+    title: "기밀 임무 워크플로우에 AI를 — 완전 온프레미스, 외부 전송 제로",
+    lead: "국방·정보·공공 부문 워크플로우는 외부 전송 제로를 요구합니다. 외부 LLM 엔드포인트는 허용되지 않습니다. LLM Capsule의 Path B(온프레미스 로컬 경량 모델)는 사령부 네트워크 내부에서만 동작합니다 — 동일한 Capsule 인스턴스, 동일한 감사 프레임워크, 외부 연결 없음.",
+    blockedLabel: "Capsule 미사용 시",
+    blockedH: "AI, 전면 배제",
+    blocked: "외부 LLM 사용이 허용되지 않습니다. 임무 워크플로우는 AI 지원 없이 계속되고, 생산성 격차가 지속됩니다.",
+    enabledLabel: "Capsule 사용 시",
+    enabledH: "사령부 경계 내에서 AI 작동",
+    enabled: "양자화 온프레미스 모델 + Capsule 캡슐화 + 로컬 감사. AI가 임무 브리핑, 정보 요약, 작전 보고서를 작성합니다 — 전적으로 사령부 내부에서.",
+    workflowsHeading: "프로덕션 워크플로우",
+    wf1Title: "임무 브리핑 초안 작성",
+    wf1Desc: "다중 출처 정보를 기반으로 AI가 작전 브리핑 초안 작성",
+    wf2Title: "작전 보고서 요약",
+    wf2Desc: "다양한 형식의 보고서 통합 및 영향 종합",
+    wf3Title: "교리 참조 지원",
+    wf3Desc: "보안 등급 보호 하에 교리 및 절차 조회",
+    wf4Title: "사후 검토 보고서 초안 작성",
+    wf4Desc: "임무 식별자 보호 상태에서 작전 후 검토",
+    customerLabel: "고객 도입 사례",
+    customerName: "대한민국 국방부",
+    customerDetail: "Path B(온프레미스 로컬) 기반의 임무급 워크플로우, 사령부 수준 거버넌스에 전체 감사 이력 제공. 임무 참조 정보, 지리적 식별자, 부대 데이터 캡슐화. RBAC 기반으로 엄격하게 통제된 복원.",
+    screenshotAlt: "국방 산업 비주얼",
+    readLabel: "읽기: 소버린 AI 아키텍처 →",
+    readHref: "/learn/sovereign-ai-european-enterprises",
+  },
+  de: {
+    tag: "Öffentlicher Sektor / Verteidigung",
+    title: "KI für klassifizierte Einsatzworkflows — vollständig On-Premise, keine externe Datenübertragung",
+    lead: "Verteidigungs-, Nachrichten- und Behördenworkflows erfordern den vollständigen Verzicht auf externe Datenübertragung. Der Einsatz externer LLM-Endpunkte ist nicht zulässig. Pfad B von LLM Capsule (lokales On-Premise-Modell) läuft vollständig im internen Netz — dieselbe Capsule-Instanz, dasselbe Audit-Framework, keine externe Verbindung.",
+    blockedLabel: "Ohne Capsule",
+    blockedH: "KI grundsätzlich ausgeschlossen",
+    blocked: "Externe LLM-Dienste sind nicht erlaubt. Einsatzworkflows werden ohne KI-Unterstützung durchgeführt; Produktivitätsnachteile bleiben bestehen.",
+    enabledLabel: "Mit Capsule",
+    enabledH: "KI innerhalb des Kommandonetzes",
+    enabled: "Quantisiertes On-Premise-Modell, Capsule-Kapsulierung und lokale Auditierung. Die KI erstellt Lageberichte, Erkenntniszusammenfassungen und Einsatzberichte — vollständig innerhalb des Kommandos.",
+    workflowsHeading: "Produktivworkflows",
+    wf1Title: "Erstellung von Lageberichten",
+    wf1Desc: "KI-gestützte Lageberichte aus mehreren Quellen",
+    wf2Title: "Zusammenfassung von Einsatzberichten",
+    wf2Desc: "Konsolidierung mehrstufiger Berichte und Auswirkungsanalyse",
+    wf3Title: "Unterstützung bei Doktrinreferenzen",
+    wf3Desc: "Abfrage von Doktrin- und Verfahrensdokumenten mit Klassifizierungsschutz",
+    wf4Title: "Entwurf der Nachbetrachtung",
+    wf4Desc: "Einsatznachbereitung mit geschützten Einsatzkennungen",
+    customerLabel: "Kundenreferenz",
+    customerName: "Verteidigungsministerium (Korea)",
+    customerDetail: "Einsatzworkflows der höchsten Schutzklasse auf Pfad B (lokal, On-Premise) mit vollständigem Audit-Feed für die Governance auf Kommandobene. Einsatzbezüge, geografische Kennungen und Einheitsdaten werden kapsuliert; die Wiederherstellung ist strikt per RBAC eingeschränkt.",
+    screenshotAlt: "Verteidigung — Branchenvisualisierung",
+    readLabel: "Lesen: Souveräne KI-Architektur →",
+    readHref: "/learn/sovereign-ai-european-enterprises",
+  },
+}
+
+
 export default function Section06_Defense({
-  tag = "Public Sector / Defense",
-  title = "AI on classified mission workflows — fully on-prem, zero external transmission",
-  lead = "Defense, intelligence, and public-sector workflows demand zero external transmission. No external LLM endpoint is acceptable. LLM Capsule's Path B (on-prem local lightweight model) runs entirely inside the command's network — same Capsule instance, same audit framework, no external reach.",
-  blockedLabel = "Without Capsule",
-  blockedH = "AI categorically excluded",
-  blocked = "External LLM use is not permitted. Mission workflows continue without AI support; productivity gap persists.",
-  enabledLabel = "With Capsule",
-  enabledH = "AI inside command boundary",
-  enabled = "Quantized on-prem model + Capsule encapsulation + local audit. AI drafts mission briefs, intelligence summaries, and operational reports — entirely within the command.",
-  workflowsHeading = "Production Workflows",
-  wf1Title = "Mission brief drafting",
-  wf1Desc = "AI-drafted operational briefs from multi-source intelligence",
-  wf2Title = "Operational report summarization",
-  wf2Desc = "Multi-format report consolidation and impact synthesis",
-  wf3Title = "Doctrine reference assist",
-  wf3Desc = "Doctrine and procedure lookup with classification protection",
-  wf4Title = "After-action review draft",
-  wf4Desc = "Post-operation review with mission identifiers protected",
-  customerLabel = "Customer Proof",
-  customerName = "Ministry of National Defense (Korea)",
-  customerDetail = "Mission-grade workflows on Path B (on-prem local) with full audit feed to command-level governance. Mission references, geographic identifiers, and unit data encapsulated; restoration tightly scoped under RBAC.",
+  locale = "en",
+  tag = "",
+  title = "",
+  lead = "",
+  blockedLabel = "",
+  blockedH = "",
+  blocked = "",
+  enabledLabel = "",
+  enabledH = "",
+  enabled = "",
+  workflowsHeading = "",
+  wf1Title = "",
+  wf1Desc = "",
+  wf2Title = "",
+  wf2Desc = "",
+  wf3Title = "",
+  wf3Desc = "",
+  wf4Title = "",
+  wf4Desc = "",
+  customerLabel = "",
+  customerName = "",
+  customerDetail = "",
   screenshotImg = "",
-  screenshotAlt = "Defense Industry Visual",
-  readLabel = "Read: Sovereign AI architecture →",
-  readHref = "/learn/sovereign-ai-european-enterprises",
+  screenshotAlt = "",
+  readLabel = "",
+  readHref = "",
   altBg = true,
 }: Props) {
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  const _tag = tag || T["tag"] || TRANSLATIONS.en["tag"]
+  const _title = title || T["title"] || TRANSLATIONS.en["title"]
+  const _lead = lead || T["lead"] || TRANSLATIONS.en["lead"]
+  const _blockedLabel = blockedLabel || T["blockedLabel"] || TRANSLATIONS.en["blockedLabel"]
+  const _blockedH = blockedH || T["blockedH"] || TRANSLATIONS.en["blockedH"]
+  const _blocked = blocked || T["blocked"] || TRANSLATIONS.en["blocked"]
+  const _enabledLabel = enabledLabel || T["enabledLabel"] || TRANSLATIONS.en["enabledLabel"]
+  const _enabledH = enabledH || T["enabledH"] || TRANSLATIONS.en["enabledH"]
+  const _enabled = enabled || T["enabled"] || TRANSLATIONS.en["enabled"]
+  const _workflowsHeading = workflowsHeading || T["workflowsHeading"] || TRANSLATIONS.en["workflowsHeading"]
+  const _wf1Title = wf1Title || T["wf1Title"] || TRANSLATIONS.en["wf1Title"]
+  const _wf1Desc = wf1Desc || T["wf1Desc"] || TRANSLATIONS.en["wf1Desc"]
+  const _wf2Title = wf2Title || T["wf2Title"] || TRANSLATIONS.en["wf2Title"]
+  const _wf2Desc = wf2Desc || T["wf2Desc"] || TRANSLATIONS.en["wf2Desc"]
+  const _wf3Title = wf3Title || T["wf3Title"] || TRANSLATIONS.en["wf3Title"]
+  const _wf3Desc = wf3Desc || T["wf3Desc"] || TRANSLATIONS.en["wf3Desc"]
+  const _wf4Title = wf4Title || T["wf4Title"] || TRANSLATIONS.en["wf4Title"]
+  const _wf4Desc = wf4Desc || T["wf4Desc"] || TRANSLATIONS.en["wf4Desc"]
+  const _customerLabel = customerLabel || T["customerLabel"] || TRANSLATIONS.en["customerLabel"]
+  const _customerName = customerName || T["customerName"] || TRANSLATIONS.en["customerName"]
+  const _customerDetail = customerDetail || T["customerDetail"] || TRANSLATIONS.en["customerDetail"]
+  const _screenshotAlt = screenshotAlt || T["screenshotAlt"] || TRANSLATIONS.en["screenshotAlt"]
+  const _readLabel = readLabel || T["readLabel"] || TRANSLATIONS.en["readLabel"]
+  const _readHref = readHref || T["readHref"] || TRANSLATIONS.en["readHref"]
+
   return (
     <>
       <style>{`
@@ -83,8 +193,8 @@ export default function Section06_Defense({
           padding: 0 var(--s-page, clamp(20px, 4cqi, 80px));
         }
 
-        /* Defense: ink tag */
-        .s6-tag {
+        /* Defense: ink _tag */
+        .s6-_tag {
           display: inline-block;
           font-family: var(--f-mono, 'JetBrains Mono', monospace);
           font-size: 11px; font-weight: 700;
@@ -104,7 +214,7 @@ export default function Section06_Defense({
           word-break: keep-all; overflow-wrap: break-word;
         }
 
-        .s6-lead {
+        .s6-_lead {
           font-size: clamp(15px, 1.3cqi, 17px);
           color: var(--c-ink-soft, #3a3d5e); line-height: 1.65; max-width: 800px;
           word-break: keep-all; overflow-wrap: break-word;
@@ -120,8 +230,8 @@ export default function Section06_Defense({
           background-color: var(--c-bg, #ffffff); border: 1px solid var(--c-rule, #e5e7eb);
         }
 
-        .s6-state--blocked { background-color: var(--c-coral-soft, #fce9e8); border-color: transparent; }
-        .s6-state--enabled { background-color: var(--c-bg-soft, #f7f8fb); border-color: var(--c-rule, #e5e7eb); }
+        .s6-state--_blocked { background-color: var(--c-coral-soft, #fce9e8); border-color: transparent; }
+        .s6-state--_enabled { background-color: var(--c-bg-soft, #f7f8fb); border-color: var(--c-rule, #e5e7eb); }
 
         .s6-state__label {
           font-family: var(--f-mono, 'JetBrains Mono', monospace);
@@ -129,8 +239,8 @@ export default function Section06_Defense({
           text-transform: uppercase; margin-bottom: 8px;
         }
 
-        .s6-state--blocked .s6-state__label { color: var(--c-coral-dark, #c73e3a); }
-        .s6-state--enabled .s6-state__label { color: var(--c-ink-soft, #3a3d5e); }
+        .s6-state--_blocked .s6-state__label { color: var(--c-coral-dark, #c73e3a); }
+        .s6-state--_enabled .s6-state__label { color: var(--c-ink-soft, #3a3d5e); }
 
         .s6-state__h {
           font-size: 14px; font-weight: 700;
@@ -234,43 +344,43 @@ export default function Section06_Defense({
         <section className={`s6-section${altBg ? " s6-section--alt" : ""}`}>
           <div className="s6-container">
             <div className="s6-header">
-              <span className="s6-tag">{tag}</span>
-              <h2 className="s6-h2">{title}</h2>
-              <p className="s6-lead">{lead}</p>
+              <span className="s6-_tag">{_tag}</span>
+              <h2 className="s6-h2">{_title}</h2>
+              <p className="s6-_lead">{_lead}</p>
             </div>
 
             <div className="s6-states">
-              <div className="s6-state s6-state--blocked">
-                <div className="s6-state__label">{blockedLabel}</div>
-                <div className="s6-state__h">{blockedH}</div>
-                <div className="s6-state__d">{blocked}</div>
+              <div className="s6-state s6-state--_blocked">
+                <div className="s6-state__label">{_blockedLabel}</div>
+                <div className="s6-state__h">{_blockedH}</div>
+                <div className="s6-state__d">{_blocked}</div>
               </div>
-              <div className="s6-state s6-state--enabled">
-                <div className="s6-state__label">{enabledLabel}</div>
-                <div className="s6-state__h">{enabledH}</div>
-                <div className="s6-state__d">{enabled}</div>
+              <div className="s6-state s6-state--_enabled">
+                <div className="s6-state__label">{_enabledLabel}</div>
+                <div className="s6-state__h">{_enabledH}</div>
+                <div className="s6-state__d">{_enabled}</div>
               </div>
             </div>
 
             <div className="s6-workflows">
-              <div className="s6-workflows__h">{workflowsHeading}</div>
+              <div className="s6-workflows__h">{_workflowsHeading}</div>
               <ul className="s6-workflows__list">
-                <li><strong>{wf1Title}</strong>{wf1Desc}</li>
-                <li><strong>{wf2Title}</strong>{wf2Desc}</li>
-                <li><strong>{wf3Title}</strong>{wf3Desc}</li>
-                <li><strong>{wf4Title}</strong>{wf4Desc}</li>
+                <li><strong>{_wf1Title}</strong>{_wf1Desc}</li>
+                <li><strong>{_wf2Title}</strong>{_wf2Desc}</li>
+                <li><strong>{_wf3Title}</strong>{_wf3Desc}</li>
+                <li><strong>{_wf4Title}</strong>{_wf4Desc}</li>
               </ul>
             </div>
 
             <div className="s6-customer">
-              <div className="s6-customer__label">{customerLabel}</div>
-              <div className="s6-customer__name">{customerName}</div>
-              <div className="s6-customer__detail">{customerDetail}</div>
+              <div className="s6-customer__label">{_customerLabel}</div>
+              <div className="s6-customer__name">{_customerName}</div>
+              <div className="s6-customer__detail">{_customerDetail}</div>
             </div>
 
             <div className="s6-screenshot">
               {screenshotImg ? (
-                <img src={screenshotImg} alt={screenshotAlt} />
+                <img src={screenshotImg} alt={_screenshotAlt} />
               ) : (
                 <div className="s6-placeholder">
                   <div className="s6-placeholder__icon">
@@ -281,14 +391,14 @@ export default function Section06_Defense({
                       <path d="M20 26v4" stroke="#c8c4f7" strokeWidth="1.5" strokeLinecap="round"/>
                     </svg>
                   </div>
-                  <div className="s6-placeholder__label">{screenshotAlt}</div>
+                  <div className="s6-placeholder__label">{_screenshotAlt}</div>
                   <div className="s6-placeholder__spec">Mission brief · dark theme · Path B + audit badges · 16:10 · ~640×400px</div>
                 </div>
               )}
             </div>
 
             <div className="s6-footer">
-              <a className="s6-read-link" href={readHref}>{readLabel}</a>
+              <a className="s6-read-link" href={_readHref}>{_readLabel}</a>
             </div>
           </div>
         </section>
@@ -298,6 +408,7 @@ export default function Section06_Defense({
 }
 
 addPropertyControls(Section06_Defense, {
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
   tag:              { type: ControlType.String,  title: "Tag",               defaultValue: "Public Sector / Defense" },
   title:            { type: ControlType.String,  title: "Title",             defaultValue: "AI on classified mission workflows — fully on-prem, zero external transmission", displayTextArea: true },
   lead:             { type: ControlType.String,  title: "Lead",              defaultValue: "Defense, intelligence, and public-sector workflows demand zero external transmission. No external LLM endpoint is acceptable. LLM Capsule's Path B (on-prem local lightweight model) runs entirely inside the command's network — same Capsule instance, same audit framework, no external reach.", displayTextArea: true },
@@ -307,7 +418,7 @@ addPropertyControls(Section06_Defense, {
   enabledLabel:     { type: ControlType.String,  title: "Enabled Label",     defaultValue: "With Capsule" },
   enabledH:         { type: ControlType.String,  title: "Enabled Heading",   defaultValue: "AI inside command boundary" },
   enabled:          { type: ControlType.String,  title: "Enabled Text",      defaultValue: "Quantized on-prem model + Capsule encapsulation + local audit. AI drafts mission briefs, intelligence summaries, and operational reports — entirely within the command.", displayTextArea: true },
-  workflowsHeading: { type: ControlType.String,  title: "Workflows Heading", defaultValue: "Production Workflows" },
+  workflowsHeading: { type: ControlType.String,  title: "Workflows Heading", defaultValue: "" },
   wf1Title:         { type: ControlType.String,  title: "WF 1 Title",        defaultValue: "Mission brief drafting" },
   wf1Desc:          { type: ControlType.String,  title: "WF 1 Desc",         defaultValue: "AI-drafted operational briefs from multi-source intelligence" },
   wf2Title:         { type: ControlType.String,  title: "WF 2 Title",        defaultValue: "Operational report summarization" },
