@@ -43,7 +43,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
 <h3>1.1 데이터가 외부로 나가지 않는다는 안심감</h3>
 <p>가장 큰 매력은 <strong>완전한 데이터 통제</strong>입니다. 모든 프롬프트와 응답이 기관 내부에서만 처리되므로, 외부 유출 가능성이 구조적으로 0입니다. 보안담당관 입장에서 이만큼 명쾌한 답은 없습니다. "우리 데이터는 외부에 가지 않는다"는 한 문장으로 모든 의심을 해소할 수 있습니다.</p>
-<p>N²SF 정합성 측면에서도 명확합니다. 「위치-주체-객체」가 모두 기관 전산망 내부(S 등급)에 위치하므로, 정보 이동 보안원칙 위배가 발생하지 않습니다. 외부 AI 활용 시 발생하는 21개의 보안위협 상당수가 구조적으로 해소됩니다.</p>
+<p>N2SF 정합성 측면에서도 명확합니다. 「위치-주체-객체」가 모두 기관 전산망 내부(S 등급)에 위치하므로, 정보 이동 보안원칙 위배가 발생하지 않습니다. 외부 AI 활용 시 발생하는 21개의 보안위협 상당수가 구조적으로 해소됩니다.</p>
 
 <h3>1.2 데이터 주권과 자산화</h3>
 <p>두 번째 매력은 <strong>데이터 주권</strong>입니다. 기관이 보유한 데이터를 외부 클라우드나 외부 AI 제공자의 손에 맡기지 않고, 직접 자산으로 가져갈 수 있습니다. 자체 데이터로 파인튜닝한 모델은 기관의 핵심 자산이 되며, 정책 변화나 외부 의존성에 흔들리지 않습니다.</p>
@@ -311,7 +311,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 <p>현장에서 자주 관찰되는 "잘못된 선택 이유"들이 있습니다. 이 중 하나에 해당한다면, sLLM 자체구축 결정을 한 번 더 점검해보시기 바랍니다.</p>
 
 <h3>패턴 1 — "외부 AI는 위험하니까"</h3>
-<p>가장 흔한 패턴입니다. "외부 AI는 위험하다"는 추상적 우려에서 출발해서, 자세한 분석 없이 "그러니까 자체구축"으로 결론을 내리는 경우입니다. 그러나 N²SF 모델 2는 외부 AI 활용에 대한 구체적 보안 통제 체계를 제시하고 있으며, 적절한 보호 레이어를 사용하면 외부 AI도 안전하게 활용 가능합니다. "외부 = 위험, 내부 = 안전"이라는 이분법은 분석이 아니라 직관입니다.</p>
+<p>가장 흔한 패턴입니다. "외부 AI는 위험하다"는 추상적 우려에서 출발해서, 자세한 분석 없이 "그러니까 자체구축"으로 결론을 내리는 경우입니다. 그러나 N2SF 모델 2는 외부 AI 활용에 대한 구체적 보안 통제 체계를 제시하고 있으며, 적절한 보호 레이어를 사용하면 외부 AI도 안전하게 활용 가능합니다. "외부 = 위험, 내부 = 안전"이라는 이분법은 분석이 아니라 직관입니다.</p>
 
 <h3>패턴 2 — "데이터 주권이니까"</h3>
 <p>"우리 데이터를 외부에 보낼 수 없다"는 명분으로 출발하는 경우입니다. 그러나 실제 활용 시나리오를 보면, 다루는 정보가 대부분 O 등급(공개 정보)이거나 적절한 보호 처리로 외부 전송이 가능한 정보인 경우가 많습니다. "데이터 주권"이라는 추상적 가치가 구체적 시나리오 분석을 대체해서는 안 됩니다.</p>
@@ -359,7 +359,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
 <h2>참고 자료</h2>
 <ul>
-  <li>국가정보원, 「국가 망 보안체계(N²SF) 보안 가이드라인」, 2024</li>
+  <li>국가정보원, 「국가 망 보안체계(N2SF) 보안 가이드라인」, 2024</li>
   <li>국가정보원, 국가보안기술연구소(NSR), 「국가 망 보안체계 보안 가이드라인 — 정보서비스 모델 해설서: 모델 2. 업무환경에서 생성형 AI 활용」, 2025.9</li>
   <li>Wang et al., "MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark", 2024</li>
   <li>Hugging Face Open LLM Leaderboard, MMLU-Pro 벤치마크 (huggingface.co/spaces/open-llm-leaderboard)</li>
@@ -390,9 +390,9 @@ export default function SllmSelfHostedRealityCheck({
   relatedSectionLabel = "함께 읽으면 좋은 글",
   related1Title = "공공기관 생성형 AI 도입의 세 가지 길",
   related1Href = "/resources/learn/public-sector-genai-three-approaches",
-  related2Title = "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
+  related2Title = "N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
   related2Href = "/resources/learn/n2sf-model-2-explained",
-  related3Title = "N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리",
+  related3Title = "N2SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리",
   related3Href = "/resources/learn/what-is-n2sf",
   related4Title = "",
   related4Href = "",
@@ -978,9 +978,9 @@ addPropertyControls(SllmSelfHostedRealityCheck, {
   relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "함께 읽으면 좋은 글" },
   related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "공공기관 생성형 AI 도입의 세 가지 길" },
   related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/public-sector-genai-three-approaches" },
-  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까" },
   related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/n2sf-model-2-explained" },
-  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "N2SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리" },
   related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/what-is-n2sf" },
   related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
   related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },

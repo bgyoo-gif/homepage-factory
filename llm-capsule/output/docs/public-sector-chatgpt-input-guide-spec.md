@@ -44,7 +44,7 @@
 - Capsule brand tokens: `--c-primary`, `--c-teal`, `--c-coral`, `--c-amber`, `--c-ink`, `--c-bg-dark` etc.
 - Capsule button: solid ink bg + hover primary (gradient 버튼 폐기)
 - Internal links: Framer 상대경로 (`/request-a-demo` 등), `.html` 확장자 금지
-- N²SF 표기: `N<sup>2</sup>SF` (superscript 2) -- 본문 전체 적용
+- N2SF 표기: `N<sup>2</sup>SF` (superscript 2) -- 본문 전체 적용
 
 ---
 
@@ -54,7 +54,7 @@
 
 | # | 위치 | 변환 방식 |
 |---|------|----------|
-| Table 1 | Section 2 (N²SF 정보 등급 1분 복습) | `ds-table--responsive` 3열 3행 -- 등급/설명/외부 LLM 활용 |
+| Table 1 | Section 2 (N2SF 정보 등급 1분 복습) | `ds-table--responsive` 3열 3행 -- 등급/설명/외부 LLM 활용 |
 | Table 2 | Section 6 (수기 마스킹 vs 자동 가명화 비교) | `ds-table--responsive` 3열 5행 -- 구분/수기/자동 |
 
 **테이블 스타일 (capsule v6.2):**
@@ -183,7 +183,7 @@
 
 ---
 
-### Section 4: 2. N²SF 정보 등급 -- 1분 복습 -- `id="section-2"`
+### Section 4: 2. N2SF 정보 등급 -- 1분 복습 -- `id="section-2"`
 
 | Property | Value |
 |----------|-------|
@@ -201,7 +201,7 @@
 
 #### Body Content
 
-**단락 1:** "국정원 N²SF(국가 네트워크 보안 프레임워크) 가이드라인은 정보를 등급에 따라 분류하고, 등급별로 활용 가능한 환경을 다르게 규정합니다."
+**단락 1:** "국정원 N2SF(국가 네트워크 보안 프레임워크) 가이드라인은 정보를 등급에 따라 분류하고, 등급별로 활용 가능한 환경을 다르게 규정합니다."
 
 #### Comparison Table -- `ds-table--responsive`
 
@@ -221,8 +221,8 @@
 
 **단락 3 (관련 글 안내):** "자세한 설명은 별도 글로 정리되어 있습니다."
 - **관련 글 -> `ds-bullet--dot`** (2항목, 인라인 링크 형태):
-  - <a href="/resources/learn/what-is-n2sf">N²SF란 무엇인가 — 공공기관 보안의 새 패러다임</a>
-  - <a href="/resources/learn/n2sf-model-2-explained">N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까</a>
+  - <a href="/resources/learn/what-is-n2sf">N2SF란 무엇인가 — 공공기관 보안의 새 패러다임</a>
+  - <a href="/resources/learn/n2sf-model-2-explained">N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까</a>
 
 ---
 
@@ -422,7 +422,7 @@
 | 외부로 나가는 데이터 | 일부 익명 처리된 원문 | 가명 처리된 형태로만 전송, 원문 미전송 |
 | 응답 복원 | 직원이 수기로 | 내부망에서 자동 복원 |
 
-**단락 3:** "이 접근이 N²SF 모델 2 관점에서 의미 있는 이유는 "외부로 나가는 정보가 원문이 아니다"라는 점에 있습니다. N²SF 가이드라인이 다루는 핵심 우려가 "원문·민감 정보의 외부 전송"이라면, 가명화된 형태로만 외부에 나가는 구조는 이 우려를 직접적으로 줄입니다."
+**단락 3:** "이 접근이 N2SF 모델 2 관점에서 의미 있는 이유는 "외부로 나가는 정보가 원문이 아니다"라는 점에 있습니다. N2SF 가이드라인이 다루는 핵심 우려가 "원문·민감 정보의 외부 전송"이라면, 가명화된 형태로만 외부에 나가는 구조는 이 우려를 직접적으로 줄입니다."
 
 **단락 4:** "다만 이 접근에도 전제는 있습니다. 자동 가명화의 정확도, 결합 식별 가능성에 대한 대응 수준, 내부망 복원의 안전성 등이 기관 자체 위험평가 과정에서 검증되어야 합니다. "자동이니까 안전하다"는 단정이 아니라, "어떤 방식으로 처리되는지" 자체가 평가 대상입니다."
 
@@ -526,7 +526,7 @@
 - banner label: `핵심 정리`
 - **ds-bullet--dot** (7항목):
   - 외부 LLM 구독 후 가장 자주 마주치는 질문은 "어떤 정보까지 입력해도 되는가"
-  - N²SF 모델 2는 원칙적으로 O 등급으로 한정하고, S 등급은 자체 위험평가 후 가능
+  - N2SF 모델 2는 원칙적으로 O 등급으로 한정하고, S 등급은 자체 위험평가 후 가능
   - 실제 업무 정보는 회의록·정책 분석·인사 자료 등 S 등급에 가까운 경우가 많음
   - "문서 종류"가 아닌 "내용 단위"로 매번 판단해야 하므로 직원 자체 판단에 한계
   - 수기 마스킹은 단기 대응책으로 가능하나 일관성·결합 식별·관리 측면에서 한계
@@ -557,12 +557,12 @@
 
 | # | Question | Answer (원문 전문) |
 |---|----------|-------------------|
-| 1 | O 등급·S 등급·C 등급은 누가 분류하나요? | 기관의 정보보안 담당 부서가 정합니다. N²SF 가이드라인은 기본 원칙을 제시하지만, 구체적인 분류 기준은 각 기관의 정보보안 정책으로 정해집니다. 같은 종류의 문서라도 기관에 따라 등급이 다를 수 있습니다. |
-| 2 | "자체 위험평가"라는 건 구체적으로 어떻게 하는 건가요? | N²SF 가이드라인은 S 등급 정보를 외부 상용 LLM에 입력할 경우 기관 자체의 위험평가 절차를 거치도록 규정합니다. 일반적으로 다음 항목을 평가합니다: 외부 전송되는 정보의 실제 형태, 결합 식별 가능성, 외부 LLM 제공자의 데이터 처리 정책, 사고 발생 시 대응 체계. 평가 결과를 문서화하여 정보보안 책임자가 승인하는 형태로 운영됩니다. |
+| 1 | O 등급·S 등급·C 등급은 누가 분류하나요? | 기관의 정보보안 담당 부서가 정합니다. N2SF 가이드라인은 기본 원칙을 제시하지만, 구체적인 분류 기준은 각 기관의 정보보안 정책으로 정해집니다. 같은 종류의 문서라도 기관에 따라 등급이 다를 수 있습니다. |
+| 2 | "자체 위험평가"라는 건 구체적으로 어떻게 하는 건가요? | N2SF 가이드라인은 S 등급 정보를 외부 상용 LLM에 입력할 경우 기관 자체의 위험평가 절차를 거치도록 규정합니다. 일반적으로 다음 항목을 평가합니다: 외부 전송되는 정보의 실제 형태, 결합 식별 가능성, 외부 LLM 제공자의 데이터 처리 정책, 사고 발생 시 대응 체계. 평가 결과를 문서화하여 정보보안 책임자가 승인하는 형태로 운영됩니다. |
 | 3 | ChatGPT의 "데이터 학습 거부 설정"을 켜면 안전한가요? | ChatGPT의 학습 거부 설정은 OpenAI가 입력 데이터를 자사 모델 학습에 사용하지 않도록 하는 기능입니다. 데이터가 OpenAI 서버를 통과한다는 사실 자체는 동일합니다. 학습 거부 설정은 활용 범위를 일부 줄이는 효과는 있지만, 원문이 외부 서버를 거친다는 사실을 해소하지는 못합니다. 기관 정보보안 담당자가 검토할 때 이 점을 함께 고려해야 합니다. |
 | 4 | 수기 마스킹과 자동 가명화의 가장 큰 차이가 무엇인가요? | 처리 주체와 결합 식별 대응 수준이 다릅니다. 수기 마스킹은 직원이 자기 판단으로 이름·기관명 등을 가립니다. 자동 가명화는 시스템이 일관된 규칙으로 처리하며, 차등정보보호 같은 수학적 기법을 적용하면 단순 키워드 마스킹으로 잡히지 않는 결합 식별 가능성에도 대응 가능합니다. 다만 자동 가명화 솔루션도 그 처리 방식·정확도가 기관 자체 위험평가 대상이 됩니다. |
 | 5 | 차등정보보호(Differential Privacy)는 어떤 기법인가요? | 개인 정보를 통계적으로 보호하는 수학적 프레임워크입니다. 데이터에 일정한 노이즈를 더해, 결과만 보고는 원본을 역추적할 수 없게 만드는 방식입니다. 단순 키워드 마스킹이 "이름을 가린다" 수준이라면, 차등정보보호는 "결합 식별 가능성 자체를 수학적으로 차단한다" 수준입니다. 공공 통계·의료 데이터 분야에서 국제적으로 사용되는 기법입니다. |
-| 6 | 2026 경영평가 가점과 이 문제는 어떻게 연결되나요? | 2026년 경영평가 편람은 "AI 윤리 및 정보보안 가이드라인을 고려한 기획 수준", "개인정보보호 등 관련 법·제도 준수요건의 반영 여부"를 평가 기준으로 명시합니다. 외부 LLM을 도입했더라도, 그 도입 방식이 N²SF 가이드라인·개인정보보호법 요건을 어떻게 충족하는지 설명할 수 없다면 가점 인정이 어렵습니다. 자세한 내용은 별도 글로 정리되어 있습니다: <a href="/resources/learn/public-sector-2026-management-evaluation-ai-incentive">2026 경영평가 'AI 활용 등 혁신' 가점</a>. |
+| 6 | 2026 경영평가 가점과 이 문제는 어떻게 연결되나요? | 2026년 경영평가 편람은 "AI 윤리 및 정보보안 가이드라인을 고려한 기획 수준", "개인정보보호 등 관련 법·제도 준수요건의 반영 여부"를 평가 기준으로 명시합니다. 외부 LLM을 도입했더라도, 그 도입 방식이 N2SF 가이드라인·개인정보보호법 요건을 어떻게 충족하는지 설명할 수 없다면 가점 인정이 어렵습니다. 자세한 내용은 별도 글로 정리되어 있습니다: <a href="/resources/learn/public-sector-2026-management-evaluation-ai-incentive">2026 경영평가 'AI 활용 등 혁신' 가점</a>. |
 
 ---
 
@@ -585,7 +585,7 @@
 #### References -- `ds-bullet--dot`
 
 3개 참고문헌 (원문 그대로):
-1. 국가정보원, 「N²SF 보안 가이드라인 1.0 부록2: 모델 2 업무환경에서 생성형 AI 활용」, 2025.9
+1. 국가정보원, 「N2SF 보안 가이드라인 1.0 부록2: 모델 2 업무환경에서 생성형 AI 활용」, 2025.9
 2. 기획재정부, 「2026년도 공공기관 경영평가편람」, 2026.1
 3. 나라장터(국가종합전자조달시스템), 입찰공고 검색 결과 (2025.01~2026.05)
 
@@ -619,7 +619,7 @@
 
 | # | Tag (badge) | Title | URL (Framer 상대경로) |
 |---|-------------|-------|-----|
-| 1 | 정책 분석 | N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까 | `/resources/learn/n2sf-model-2-explained` |
+| 1 | 정책 분석 | N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까 | `/resources/learn/n2sf-model-2-explained` |
 | 2 | 현장 분석 | 공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지 | `/resources/learn/public-sector-genai-five-stuck-points` |
 | 3 | 정책 분석 | 2026 경영평가 'AI 활용 등 혁신' 가점 — 공공기관 핵심 경쟁력 분석 | `/resources/learn/public-sector-2026-management-evaluation-ai-incentive` |
 
@@ -734,7 +734,7 @@
 | 1 | Hero | Article hero | Full-width title |
 | 2 | TL;DR | Banner (brand tint) | Colored banner |
 | 3 | 상황 | Section header + body + dot bullets | Mixed text |
-| 4 | N²SF 정보 등급 | Section header + body + 3-col table | Text + table |
+| 4 | N2SF 정보 등급 | Section header + body + 3-col table | Text + table |
 | 5 | 5가지 실무 사례 | Section header + 5 sub-sections (icon + check bullets) | Multi-sub-section |
 | 6 | 세 가지 어려움 | Section header + 3 sub-sections (icon + body + dots) | Sub-sections |
 | 7 | 수기 마스킹 | Section header + body + number steps + dot bullets | Mixed |
@@ -756,7 +756,7 @@
 - [ ] TL;DR 전문 그대로 (축약 금지)
 - [ ] 본문 모든 단락 원문 유지 (수정·축약 금지)
 - [ ] strong 태그 원문 위치 그대로 유지
-- [ ] N²SF 표기 일관 (HTML `N<sup>2</sup>SF`)
+- [ ] N2SF 표기 일관 (HTML `N<sup>2</sup>SF`)
 - [ ] 5개 사례 각 시나리오·판단 포인트·마무리 단락 모두 보존
 - [ ] 사례 1: 판단 포인트 4항목 보존
 - [ ] 사례 2~5: 각 판단 포인트 3항목 보존
@@ -790,7 +790,7 @@
 | `.cta-strip` | `ds-cta-band` with bg image | DS CTA 밴드 |
 | `<ul>` 순서 없는 리스트 | `ds-bullet--check` 또는 `ds-bullet--dot` (컨텍스트에 따라) | DS 불릿 컴포넌트 |
 | `<ol>` 순서 리스트 (수기 마스킹 작동 방식) | `ds-bullet--number` | DS 번호 스텝 컴포넌트 |
-| 본문 인라인 링크 (N²SF 별도 글 안내) | `ds-bullet--dot` 형태 + 인라인 링크 | 가독성 향상 |
+| 본문 인라인 링크 (N2SF 별도 글 안내) | `ds-bullet--dot` 형태 + 인라인 링크 | 가독성 향상 |
 | 인라인 style 속성 | 전부 제거 | DS 규칙: inline style 금지 |
 | h3 sub-sections | `ds-section-title-icon` (Lucide 아이콘) | DS 아이콘 타이틀 컴포넌트 |
 | 외부 URL `/learn/...` | Framer 상대경로 `/resources/learn/...` | Framer 라우팅 규칙 |
@@ -807,7 +807,7 @@
 6. **capsule brand tokens** -- `:root`에 `--c-primary`, `--c-teal`, `--c-coral`, `--c-amber`, `--c-ink` 등 capsule 전용 변수 선언
 7. **Button style** -- `btn--primary`는 solid ink bg, hover primary. gradient 버튼 폐기
 8. **비교표 반응형** -- mobile에서 `overflow-x: auto` + scrollbar 숨김 (`scrollbar-width: none` + `::-webkit-scrollbar { display: none; }`)
-9. **N²SF 표기** -- 모든 본문에서 `N²SF`(superscript 2) 유지. HTML에서 `N<sup>2</sup>SF`
+9. **N2SF 표기** -- 모든 본문에서 `N2SF`(superscript 2) 유지. HTML에서 `N<sup>2</sup>SF`
 10. **Related articles URL** -- Framer 상대경로 사용 (`/resources/learn/...`), `.html` 확장자 금지
 11. **Meta tags** -- `<meta property="og:type" content="article">`, `<meta property="og:locale" content="ko_KR">`
 12. **JSON-LD** -- BreadcrumbList + FAQPage schema 포함 (FAQ 6개 항목)
@@ -835,6 +835,6 @@
     - C 등급 셀: `--c-coral` text + `--c-coral-soft` (선택) bg tint
     - 비교표 2(자동 가명화 컬럼): `--c-primary-soft` bg tint
 21. **FAQ 내부 링크** -- FAQ 6번째 답변 내 링크는 `/resources/learn/public-sector-2026-management-evaluation-ai-incentive` (Framer 상대경로)
-22. **본문 인라인 링크** -- Section 4 (N²SF 1분 복습) 마지막 단락의 별도 글 안내 링크 2개도 모두 Framer 상대경로 사용:
+22. **본문 인라인 링크** -- Section 4 (N2SF 1분 복습) 마지막 단락의 별도 글 안내 링크 2개도 모두 Framer 상대경로 사용:
     - `/resources/learn/what-is-n2sf`
     - `/resources/learn/n2sf-model-2-explained`

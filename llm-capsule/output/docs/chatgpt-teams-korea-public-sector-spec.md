@@ -14,8 +14,8 @@
 | Field | Value |
 |-------|-------|
 | URL Slug | chatgpt-teams-korea-public-sector |
-| SEO Title | ChatGPT Teams, 한국 공공기관에서 사용해도 괜찮을까 — CSAP·N²SF 적합성 검토 |
-| Meta Description | ChatGPT Teams의 보안 마케팅이 한국 공공 영역에서 어떤 빈틈을 가지는지 분석합니다. CSAP·개인정보보호법·N²SF 모델 2·경영평가 체계와의 적합성을 짚고, 공공기관이 검토 가능한 대안 방향을 정리합니다. |
+| SEO Title | ChatGPT Teams, 한국 공공기관에서 사용해도 괜찮을까 — CSAP·N2SF 적합성 검토 |
+| Meta Description | ChatGPT Teams의 보안 마케팅이 한국 공공 영역에서 어떤 빈틈을 가지는지 분석합니다. CSAP·개인정보보호법·N2SF 모델 2·경영평가 체계와의 적합성을 짚고, 공공기관이 검토 가능한 대안 방향을 정리합니다. |
 | OG Title | 공공기관의 ChatGPT Teams 사용 — 한국 규제 환경 적합성 분석 |
 | OG Description | 학습 미사용 약속과 국외이전은 다른 개념입니다. 한국 공공 영역에서 ChatGPT Teams를 검토할 때 짚어야 할 4가지 적합성 질문을 정리합니다. |
 
@@ -64,7 +64,7 @@
 | Reading time | "예상 읽기 시간 12분" |
 | Date | "2026년 5월" |
 | Title | `안전하다는 ChatGPT Teams, 한국 공공 영역에서 사용해도 괜찮을까` (brand 강조: "한국 공공 영역") |
-| Description | "ChatGPT Teams의 보안 마케팅이 한국 공공 영역에서 어떤 빈틈을 가지는지 분석합니다. CSAP·개인정보보호법·N²SF 모델 2·경영평가 체계와의 적합성을 짚고, 공공기관이 검토 가능한 대안 방향을 정리합니다." |
+| Description | "ChatGPT Teams의 보안 마케팅이 한국 공공 영역에서 어떤 빈틈을 가지는지 분석합니다. CSAP·개인정보보호법·N2SF 모델 2·경영평가 체계와의 적합성을 짚고, 공공기관이 검토 가능한 대안 방향을 정리합니다." |
 
 ---
 
@@ -74,7 +74,7 @@
 |---------|-------|
 | Pattern | `ds-banner ds-banner--brand` |
 | Label | "TL;DR" |
-| Body | ChatGPT Teams는 글로벌 기준으로는 진일보한 보안 옵션을 제공합니다. 다만 한국 공공 영역에서는 별도의 적합성 검토가 필요합니다. CSAP 인증의 적용성, 개인정보보호법상 국외이전, N²SF 모델 2 등급 체계, 경영평가·감사 관점 — 네 가지 적합성 지점을 짚습니다. 검토 가능한 대안 방향은 (A) CSAP 인증 국내 LLM, (B) 자체 sLLM 구축(모델 1), (C) 외부 LLM + 보호 레이어 결합 세 가지이며, 기관의 활용 우선순위·운영 역량에 따라 적합성이 달라집니다. |
+| Body | ChatGPT Teams는 글로벌 기준으로는 진일보한 보안 옵션을 제공합니다. 다만 한국 공공 영역에서는 별도의 적합성 검토가 필요합니다. CSAP 인증의 적용성, 개인정보보호법상 국외이전, N2SF 모델 2 등급 체계, 경영평가·감사 관점 — 네 가지 적합성 지점을 짚습니다. 검토 가능한 대안 방향은 (A) CSAP 인증 국내 LLM, (B) 자체 sLLM 구축(모델 1), (C) 외부 LLM + 보호 레이어 결합 세 가지이며, 기관의 활용 우선순위·운영 역량에 따라 적합성이 달라집니다. |
 
 ---
 
@@ -109,15 +109,15 @@
 
 ---
 
-### Section 6: N²SF 등급 체계와의 정합성 (`id="section-3"`)
+### Section 6: N2SF 등급 체계와의 정합성 (`id="section-3"`)
 
 | Element | Value |
 |---------|-------|
-| Section header | `3. <span class="ds-text--brand">N²SF 등급 체계</span>와의 정합성` |
-| Body | N²SF 소개 단락 + C/S/O 등급 불릿 + 모델 1/2/3 설명 + 모델 2 가이드라인 단락 + 활용 매핑 테이블 (3행) + 실무자 인식 단락 + 관련 글 링크 |
+| Section header | `3. <span class="ds-text--brand">N2SF 등급 체계</span>와의 정합성` |
+| Body | N2SF 소개 단락 + C/S/O 등급 불릿 + 모델 1/2/3 설명 + 모델 2 가이드라인 단락 + 활용 매핑 테이블 (3행) + 실무자 인식 단락 + 관련 글 링크 |
 | Bullets | `ds-bullet--dot` — C/S/O 3개 등급 정의 (revised: TS 등급 제거, O 등급 추가) |
 | Table | 등급 × 모델 2 활용 가능성 × ChatGPT Teams 검토 사항 — 3행 (C/S/O) |
-| 핵심 변화 | revised에서 N²SF 등급 체계가 C/S/TS에서 C/S/O로 변경됨. 모델 1/2/3 개념 도입. ChatGPT Teams = 모델 2 |
+| 핵심 변화 | revised에서 N2SF 등급 체계가 C/S/TS에서 C/S/O로 변경됨. 모델 1/2/3 개념 도입. ChatGPT Teams = 모델 2 |
 | Related links | `/resources/learn/n2sf-explained`, `/resources/learn/n2sf-model-2-explained` |
 
 ---
@@ -150,7 +150,7 @@
 |---------|-------|
 | Section header | `참고 자료` |
 | Body | 5개 참고 자료 불릿 |
-| References | 국정원 N²SF 보안 가이드라인, 기재부 2026 경영평가편람, 행안부 2026 지방공기업 경영평가편람, KISA CSAP 안내, OpenAI ChatGPT Enterprise & Teams 공개 자료 |
+| References | 국정원 N2SF 보안 가이드라인, 기재부 2026 경영평가편람, 행안부 2026 지방공기업 경영평가편람, KISA CSAP 안내, OpenAI ChatGPT Enterprise & Teams 공개 자료 |
 
 ---
 
@@ -184,6 +184,6 @@
 ## Related Articles (4)
 
 1. 공공기관 생성형 AI 도입의 세 가지 길 — `/resources/learn/public-sector-genai-three-approaches`
-2. N²SF 모델 2 완벽 해설 — `/resources/learn/n2sf-model-2-explained`
+2. N2SF 모델 2 완벽 해설 — `/resources/learn/n2sf-model-2-explained`
 3. ChatGPT 구독하는 공공기관, 어떤 정보까지 입력해도 될까 — `/resources/learn/public-sector-chatgpt-input-guide`
 4. 공공기관 외부 LLM 활용 도입 가이드 — `/resources/learn/public-sector-external-llm-adoption-roadmap`

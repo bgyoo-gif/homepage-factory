@@ -33,12 +33,12 @@
 
 | 항목 | 결과 |
 |------|------|
-| 모든 섹션 제목 존재 | PASS — 1.왜지금N²SF인가/2.정의와핵심개념/3.C/S/O등급/4.위치-주체-객체모델링/5.보안원칙/6.적용단계/7.가능성과새질문들/FAQ/참고자료/관련글 전부 포함 |
+| 모든 섹션 제목 존재 | PASS — 1.왜지금N2SF인가/2.정의와핵심개념/3.C/S/O등급/4.위치-주체-객체모델링/5.보안원칙/6.적용단계/7.가능성과새질문들/FAQ/참고자료/관련글 전부 포함 |
 | 모든 본문 텍스트 누락·변경 없음 | PASS — 원본 대비 텍스트 전문 보존 확인. TL;DR·본문 2단락·7개 챕터·callout·takeaways 5항목·FAQ 5개·참고자료 5개·Related 3개·CTA 전부 포함 |
 | 수치/데이터 정확성 | PASS — 21개 보안위협, 50여 개 보안통제 항목, 5단계(Prepare/Identify/Select/Implement/Operate), C/S/O 3등급 모두 원본과 일치 |
 | 목록 항목 수 일치 | PASS — 3대 구성요소 3개, 5단계 목록 5개, 취할 수 있는 3가지 실무 시작점 3개, 새로운 가능성 3개, 새로운 질문 5개, takeaways 5개, FAQ 5개, 참고자료 5개 |
 | 섹션 간 제목/설명 중복 없음 | PASS — Hero h1 제목이 섹션 1~7 헤더와 동일 텍스트 반복 없음 |
-| Hero description vs lead 중복 없음 | PASS — Hero desc: "국가 망 보안체계(N²SF)는 망분리에서..." / Lead 첫 문장: "2024년부터 한국 공공부문 보안 정책은..." — 상이함 |
+| Hero description vs lead 중복 없음 | PASS — Hero desc: "국가 망 보안체계(N2SF)는 망분리에서..." / Lead 첫 문장: "2024년부터 한국 공공부문 보안 정책은..." — 상이함 |
 
 ### [CAT-2] Design System 준수 — CONDITIONAL PASS (Low 결함 D-01 1건)
 
@@ -50,7 +50,7 @@
 | .ds- 접두사 사용 | PASS — 모든 DS 컴포넌트 클래스에 .ds- 접두사 있음 |
 | !important 없음 | PASS |
 | 인라인 style 없음 | PASS |
-| ds-text--brand 강조 적용 | PASS — h1 내 N²SF, 모든 섹션 h2 키워드, CTA band 제목에 적용됨(503·533·563·614·757·886·941·1005·1090·1220번 라인) |
+| ds-text--brand 강조 적용 | PASS — h1 내 N2SF, 모든 섹션 h2 키워드, CTA band 제목에 적용됨(503·533·563·614·757·886·941·1005·1090·1220번 라인) |
 | 주황/오렌지 색상 | PASS — amber(`#f59e0b`) 사용은 llm-capsule 브랜드에서 허용(v6.2). DS capsule에 `--c-amber: #f59e0b` 정의됨. SVG 도식에서 S등급 표현에만 사용 |
 | background shorthand 없음 | PASS |
 | ds-section--light 없음 | PASS (0건) |

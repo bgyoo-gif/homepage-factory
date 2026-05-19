@@ -350,7 +350,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 </ul>
 `
 
-const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"O 등급·S 등급·C 등급은 누가 분류하나요?","acceptedAnswer":{"@type":"Answer","text":"기관의 정보보안 담당 부서가 정합니다. N²SF 가이드라인은 기본 원칙을 제시하지만, 구체적인 분류 기준은 각 기관의 정보보안 정책으로 정해집니다. 같은 종류의 문서라도 기관에 따라 등급이 다를 수 있습니다."}}, {"@type":"Question","name":"자체 위험평가라는 건 구체적으로 어떻게 하는 건가요?","acceptedAnswer":{"@type":"Answer","text":"N²SF 가이드라인은 S 등급 정보를 외부 상용 LLM에 입력할 경우 기관 자체의 위험평가 절차를 거치도록 규정합니다. 일반적으로 다음 항목을 평가합니다: 외부 전송되는 정보의 실제 형태, 결합 식별 가능성, 외부 LLM 제공자의 데이터 처리 정책, 사고 발생 시 대응 체계. 평가 결과를 문서화하여 정보보안 책임자가 승인하는 형태로 운영됩니다."}}, {"@type":"Question","name":"ChatGPT의 데이터 학습 거부 설정을 켜면 안전한가요?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT의 학습 거부 설정은 OpenAI가 입력 데이터를 자사 모델 학습에 사용하지 않도록 하는 기능입니다. 데이터가 OpenAI 서버를 통과한다는 사실 자체는 동일합니다. 학습 거부 설정은 활용 범위를 일부 줄이는 효과는 있지만, 원문이 외부 서버를 거친다는 사실을 해소하지는 못합니다. 기관 정보보안 담당자가 검토할 때 이 점을 함께 고려해야 합니다."}}, {"@type":"Question","name":"수기 마스킹과 자동 가명화의 가장 큰 차이가 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"처리 주체와 결합 식별 대응 수준이 다릅니다. 수기 마스킹은 직원이 자기 판단으로 이름·기관명 등을 가립니다. 자동 가명화는 시스템이 일관된 규칙으로 처리하며, 차등정보보호 같은 수학적 기법을 적용하면 단순 키워드 마스킹으로 잡히지 않는 결합 식별 가능성에도 대응 가능합니다. 다만 자동 가명화 솔루션도 그 처리 방식·정확도가 기관 자체 위험평가 대상이 됩니다."}}, {"@type":"Question","name":"차등정보보호(Differential Privacy)는 어떤 기법인가요?","acceptedAnswer":{"@type":"Answer","text":"개인 정보를 통계적으로 보호하는 수학적 프레임워크입니다. 데이터에 일정한 노이즈를 더해, 결과만 보고는 원본을 역추적할 수 없게 만드는 방식입니다. 단순 키워드 마스킹이 이름을 가린다 수준이라면, 차등정보보호는 결합 식별 가능성 자체를 수학적으로 차단한다 수준입니다. 공공 통계·의료 데이터 분야에서 국제적으로 사용되는 기법입니다."}}, {"@type":"Question","name":"2026 경영평가 가점과 이 문제는 어떻게 연결되나요?","acceptedAnswer":{"@type":"Answer","text":"2026년 경영평가 편람은 AI 윤리 및 정보보안 가이드라인을 고려한 기획 수준, 개인정보보호 등 관련 법·제도 준수요건의 반영 여부를 평가 기준으로 명시합니다. 외부 LLM을 도입했더라도, 그 도입 방식이 N²SF 가이드라인·개인정보보호법 요건을 어떻게 충족하는지 설명할 수 없다면 가점 인정이 어렵습니다."}} ] }`
+const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"O 등급·S 등급·C 등급은 누가 분류하나요?","acceptedAnswer":{"@type":"Answer","text":"기관의 정보보안 담당 부서가 정합니다. N2SF 가이드라인은 기본 원칙을 제시하지만, 구체적인 분류 기준은 각 기관의 정보보안 정책으로 정해집니다. 같은 종류의 문서라도 기관에 따라 등급이 다를 수 있습니다."}}, {"@type":"Question","name":"자체 위험평가라는 건 구체적으로 어떻게 하는 건가요?","acceptedAnswer":{"@type":"Answer","text":"N2SF 가이드라인은 S 등급 정보를 외부 상용 LLM에 입력할 경우 기관 자체의 위험평가 절차를 거치도록 규정합니다. 일반적으로 다음 항목을 평가합니다: 외부 전송되는 정보의 실제 형태, 결합 식별 가능성, 외부 LLM 제공자의 데이터 처리 정책, 사고 발생 시 대응 체계. 평가 결과를 문서화하여 정보보안 책임자가 승인하는 형태로 운영됩니다."}}, {"@type":"Question","name":"ChatGPT의 데이터 학습 거부 설정을 켜면 안전한가요?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT의 학습 거부 설정은 OpenAI가 입력 데이터를 자사 모델 학습에 사용하지 않도록 하는 기능입니다. 데이터가 OpenAI 서버를 통과한다는 사실 자체는 동일합니다. 학습 거부 설정은 활용 범위를 일부 줄이는 효과는 있지만, 원문이 외부 서버를 거친다는 사실을 해소하지는 못합니다. 기관 정보보안 담당자가 검토할 때 이 점을 함께 고려해야 합니다."}}, {"@type":"Question","name":"수기 마스킹과 자동 가명화의 가장 큰 차이가 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"처리 주체와 결합 식별 대응 수준이 다릅니다. 수기 마스킹은 직원이 자기 판단으로 이름·기관명 등을 가립니다. 자동 가명화는 시스템이 일관된 규칙으로 처리하며, 차등정보보호 같은 수학적 기법을 적용하면 단순 키워드 마스킹으로 잡히지 않는 결합 식별 가능성에도 대응 가능합니다. 다만 자동 가명화 솔루션도 그 처리 방식·정확도가 기관 자체 위험평가 대상이 됩니다."}}, {"@type":"Question","name":"차등정보보호(Differential Privacy)는 어떤 기법인가요?","acceptedAnswer":{"@type":"Answer","text":"개인 정보를 통계적으로 보호하는 수학적 프레임워크입니다. 데이터에 일정한 노이즈를 더해, 결과만 보고는 원본을 역추적할 수 없게 만드는 방식입니다. 단순 키워드 마스킹이 이름을 가린다 수준이라면, 차등정보보호는 결합 식별 가능성 자체를 수학적으로 차단한다 수준입니다. 공공 통계·의료 데이터 분야에서 국제적으로 사용되는 기법입니다."}}, {"@type":"Question","name":"2026 경영평가 가점과 이 문제는 어떻게 연결되나요?","acceptedAnswer":{"@type":"Answer","text":"2026년 경영평가 편람은 AI 윤리 및 정보보안 가이드라인을 고려한 기획 수준, 개인정보보호 등 관련 법·제도 준수요건의 반영 여부를 평가 기준으로 명시합니다. 외부 LLM을 도입했더라도, 그 도입 방식이 N2SF 가이드라인·개인정보보호법 요건을 어떻게 충족하는지 설명할 수 없다면 가점 인정이 어렵습니다."}} ] }`
 
 export default function PublicSectorChatgptInputGuide({
   backLabel = "← Learn",
@@ -361,7 +361,7 @@ export default function PublicSectorChatgptInputGuide({
   readTime = "16분 읽기",
   dateUpdated = "2026년 5월 업데이트",
   tldrLabel = "TL;DR",
-  tldrBody = "ChatGPT·Claude·Gemini 같은 외부 상용 LLM을 구독한 공공기관이 가장 자주 마주치는 질문은 \"정작 어떤 업무 정보까지 입력해도 되는가\"입니다. N²SF 모델 2는 외부 상용 LLM에 입력 가능한 정보를 O 등급(공개)으로 한정하거나, 자체 위험평가 절차를 거치도록 규정합니다. 그러나 실제 직원이 쓰고 싶은 업무 정보 — 회의록, 정책 분석, 인사 자료 — 대부분은 O 등급이 아닙니다. 결과적으로 \"구독은 했는데 정작 쓸 수 있는 범위가 좁다\"는 상황이 생깁니다. 이 글은 5가지 실무 사례로 등급 판단의 실제 모습을 보여주고, 기관이 선택할 수 있는 세 가지 접근 방식(가이드라인 운영 / 외부 LLM 제한 / 보호 레이어 도입)을 정리합니다. 본문에서 단정적 등급 판단은 하지 않습니다. 최종 판단은 기관의 정보보안 담당자 영역입니다.",
+  tldrBody = "ChatGPT·Claude·Gemini 같은 외부 상용 LLM을 구독한 공공기관이 가장 자주 마주치는 질문은 \"정작 어떤 업무 정보까지 입력해도 되는가\"입니다. N2SF 모델 2는 외부 상용 LLM에 입력 가능한 정보를 O 등급(공개)으로 한정하거나, 자체 위험평가 절차를 거치도록 규정합니다. 그러나 실제 직원이 쓰고 싶은 업무 정보 — 회의록, 정책 분석, 인사 자료 — 대부분은 O 등급이 아닙니다. 결과적으로 \"구독은 했는데 정작 쓸 수 있는 범위가 좁다\"는 상황이 생깁니다. 이 글은 5가지 실무 사례로 등급 판단의 실제 모습을 보여주고, 기관이 선택할 수 있는 세 가지 접근 방식(가이드라인 운영 / 외부 LLM 제한 / 보호 레이어 도입)을 정리합니다. 본문에서 단정적 등급 판단은 하지 않습니다. 최종 판단은 기관의 정보보안 담당자 영역입니다.",
   bodyHtml = BODY_HTML,
   canonicalUrl = "https://llmcapsule.ai/resources/learn/public-sector-chatgpt-input-guide",
   datePublished = "2026-05-01",
@@ -372,7 +372,7 @@ export default function PublicSectorChatgptInputGuide({
   relatedSectionLabel = "함께 읽으면 좋은 글",
   related1Title = "공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵",
   related1Href = "/resources/learn/public-sector-external-llm-adoption-roadmap",
-  related2Title = "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
+  related2Title = "N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
   related2Href = "/resources/learn/n2sf-model-2-explained",
   related3Title = "공공기관 생성형 AI 도입의 세 가지 길",
   related3Href = "/resources/learn/public-sector-genai-three-approaches",
@@ -949,7 +949,7 @@ addPropertyControls(PublicSectorChatgptInputGuide, {
   readTime: { type: ControlType.String, title: "Read Time", defaultValue: "16분 읽기" },
   dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "2026년 5월 업데이트" },
   tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
-  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "ChatGPT·Claude·Gemini 같은 외부 상용 LLM을 구독한 공공기관이 가장 자주 마주치는 질문은 \"정작 어떤 업무 정보까지 입력해도 되는가\"입니다. N²SF 모델 2는 외부 상용 LLM에 입력 가능한 정보를 O 등급(공개)으로 한정하거나, 자체 위험평가 절차를 거치도록 규정합니다. 그러나 실제 직원이 쓰고 싶은 업무 정보 — 회의록, 정책 분석, 인사 자료 — 대부분은 O 등급이 아닙니다. 결과적으로 \"구독은 했는데 정작 쓸 수 있는 범위가 좁다\"는 상황이 생깁니다. 이 글은 5가지 실무 사례로 등급 판단의 실제 모습을 보여주고, 기관이 선택할 수 있는 세 가지 접근 방식(가이드라인 운영 / 외부 LLM 제한 / 보호 레이어 도입)을 정리합니다. 본문에서 단정적 등급 판단은 하지 않습니다. 최종 판단은 기관의 정보보안 담당자 영역입니다.", displayTextArea: true },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "ChatGPT·Claude·Gemini 같은 외부 상용 LLM을 구독한 공공기관이 가장 자주 마주치는 질문은 \"정작 어떤 업무 정보까지 입력해도 되는가\"입니다. N2SF 모델 2는 외부 상용 LLM에 입력 가능한 정보를 O 등급(공개)으로 한정하거나, 자체 위험평가 절차를 거치도록 규정합니다. 그러나 실제 직원이 쓰고 싶은 업무 정보 — 회의록, 정책 분석, 인사 자료 — 대부분은 O 등급이 아닙니다. 결과적으로 \"구독은 했는데 정작 쓸 수 있는 범위가 좁다\"는 상황이 생깁니다. 이 글은 5가지 실무 사례로 등급 판단의 실제 모습을 보여주고, 기관이 선택할 수 있는 세 가지 접근 방식(가이드라인 운영 / 외부 LLM 제한 / 보호 레이어 도입)을 정리합니다. 본문에서 단정적 등급 판단은 하지 않습니다. 최종 판단은 기관의 정보보안 담당자 영역입니다.", displayTextArea: true },
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
   canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/public-sector-chatgpt-input-guide" },
   datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2026-05-01" },
@@ -960,7 +960,7 @@ addPropertyControls(PublicSectorChatgptInputGuide, {
   relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "함께 읽으면 좋은 글" },
   related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵" },
   related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/public-sector-external-llm-adoption-roadmap" },
-  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까" },
   related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/n2sf-model-2-explained" },
   related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "공공기관 생성형 AI 도입의 세 가지 길" },
   related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/public-sector-genai-three-approaches" },

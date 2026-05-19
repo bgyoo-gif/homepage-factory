@@ -43,7 +43,7 @@
 - Capsule brand tokens: `--c-primary`, `--c-teal`, `--c-coral`, `--c-amber`, `--c-ink`, `--c-bg-dark` etc.
 - Capsule button: solid ink bg + hover primary (gradient 버튼 폐기)
 - Internal links: Framer 상대경로 (`/request-a-demo` 등), `.html` 확장자 금지
-- N²SF의 "²" superscript는 원문 그대로 유지 (HTML entity 또는 unicode)
+- N2SF의 "²" superscript는 원문 그대로 유지 (HTML entity 또는 unicode)
 
 ---
 
@@ -84,30 +84,30 @@
 
 | Element | Value |
 |---------|-------|
-| Breadcrumb | 홈 / 리소스 / Learn / N²SF란 무엇인가 |
+| Breadcrumb | 홈 / 리소스 / Learn / N2SF란 무엇인가 |
 | Category chip | `ds-badge--primary` "정책 분석" |
 | Reading time | "예상 읽기 시간 20분" |
 | Date | "2026년 5월" |
-| Title | `N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리` |
-| Title brand keyword | `<span class="ds-text--brand">N²SF</span>` |
-| Description (lead) | 국가 망 보안체계(N²SF)는 망분리에서 다중계층보안(MLS)으로의 전환입니다. C/S/O 등급 체계, 「위치-주체-객체」 모델링, 보안원칙을 처음부터 끝까지 정리합니다. |
+| Title | `N2SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리` |
+| Title brand keyword | `<span class="ds-text--brand">N2SF</span>` |
+| Description (lead) | 국가 망 보안체계(N2SF)는 망분리에서 다중계층보안(MLS)으로의 전환입니다. C/S/O 등급 체계, 「위치-주체-객체」 모델링, 보안원칙을 처음부터 끝까지 정리합니다. |
 
 #### Structure
 
 ```html
 <section id="section-hero" class="ds-section ds-section--hero">
   <div class="ds-article-container">
-    <nav class="ds-breadcrumb" aria-label="Breadcrumb">홈 / 리소스 / Learn / N²SF란 무엇인가</nav>
+    <nav class="ds-breadcrumb" aria-label="Breadcrumb">홈 / 리소스 / Learn / N2SF란 무엇인가</nav>
     <div class="ds-article-hero__meta">
       <span class="ds-badge ds-badge--primary">정책 분석</span>
       <span class="ds-article-hero__reading-time">예상 읽기 시간 20분</span>
       <span class="ds-article-hero__date">2026년 5월</span>
     </div>
     <h1 class="ds-article-hero__title">
-      <span class="ds-text--brand">N²SF</span>란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리
+      <span class="ds-text--brand">N2SF</span>란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리
     </h1>
     <p class="ds-article-hero__description">
-      국가 망 보안체계(N²SF)는 망분리에서 다중계층보안(MLS)으로의 전환입니다. C/S/O 등급 체계, 「위치-주체-객체」 모델링, 보안원칙을 처음부터 끝까지 정리합니다.
+      국가 망 보안체계(N2SF)는 망분리에서 다중계층보안(MLS)으로의 전환입니다. C/S/O 등급 체계, 「위치-주체-객체」 모델링, 보안원칙을 처음부터 끝까지 정리합니다.
     </p>
   </div>
 </section>
@@ -117,7 +117,7 @@
 - padding-top: 100px fixed
 - Hero title responsive: 32px / 40px / 48px / 64px (article hero scale)
 - No background image
-- N²SF 표기는 `N<sup>2</sup>SF` 또는 `N²SF` 중 후자(unicode) 사용 (HTML 단순화)
+- N2SF 표기는 `N<sup>2</sup>SF` 또는 `N2SF` 중 후자(unicode) 사용 (HTML 단순화)
 
 ---
 
@@ -135,7 +135,7 @@
 |---------|-------|
 | Banner label | `TL;DR` (ds-banner__label, font-code uppercase) |
 | Banner body | 원문 TL;DR 전문 그대로 사용 (축약 금지) |
-| Strong tags | "N²SF(National Network Security Framework)", "물리적 망분리", "다중계층보안(MLS)", "C(기밀)·S(민감)·O(공개)" |
+| Strong tags | "N2SF(National Network Security Framework)", "물리적 망분리", "다중계층보안(MLS)", "C(기밀)·S(민감)·O(공개)" |
 
 #### Structure
 
@@ -145,7 +145,7 @@
     <div class="ds-banner ds-banner--brand">
       <span class="ds-banner__label">TL;DR</span>
       <p>
-        <strong>N²SF(National Network Security Framework)</strong>는 국가정보원이 2024년부터 본격 도입한 공공부문 보안 체계로, 기존의 <strong>물리적 망분리</strong>를 <strong>다중계층보안(MLS)</strong>으로 전환한 정책 프레임워크입니다. 핵심은 정보를 <strong>C(기밀)·S(민감)·O(공개)</strong> 세 등급으로 분류하고, 「위치(Domain)-주체(Subject)-객체(Object)」 모델로 정보서비스를 분석하여, 등급별로 다른 보안 통제를 적용하는 방식입니다. 모든 정보를 무차별 차단하던 시대가 끝나고, 등급에 맞는 차등 보호가 시작되었습니다. 이 전환은 공공기관이 AI·클라우드를 안전하게 활용하는 길을 처음으로 열어주었습니다.
+        <strong>N2SF(National Network Security Framework)</strong>는 국가정보원이 2024년부터 본격 도입한 공공부문 보안 체계로, 기존의 <strong>물리적 망분리</strong>를 <strong>다중계층보안(MLS)</strong>으로 전환한 정책 프레임워크입니다. 핵심은 정보를 <strong>C(기밀)·S(민감)·O(공개)</strong> 세 등급으로 분류하고, 「위치(Domain)-주체(Subject)-객체(Object)」 모델로 정보서비스를 분석하여, 등급별로 다른 보안 통제를 적용하는 방식입니다. 모든 정보를 무차별 차단하던 시대가 끝나고, 등급에 맞는 차등 보호가 시작되었습니다. 이 전환은 공공기관이 AI·클라우드를 안전하게 활용하는 길을 처음으로 열어주었습니다.
       </p>
     </div>
   </div>
@@ -171,14 +171,14 @@
 
 2개 단락 (원문 그대로, 축약 금지):
 
-1. "2024년부터 한국 공공부문 보안 정책은 큰 전환점을 맞이했습니다. 국가정보원이 발표한 **국가 망 보안체계(N²SF, National Network Security Framework)**가 그 변화의 중심입니다..." (전문)
+1. "2024년부터 한국 공공부문 보안 정책은 큰 전환점을 맞이했습니다. 국가정보원이 발표한 **국가 망 보안체계(N2SF, National Network Security Framework)**가 그 변화의 중심입니다..." (전문)
 2. "이 변화는 단순한 정책 업데이트가 아닙니다. 공공기관이 ChatGPT를 쓸 수 있는지..." (전문)
 
 **연속 본문 단락 검사:** 2단락이므로 3단락 제한 규칙 위반 없음. 그대로 유지.
 
 ---
 
-### Section 4: 1. 왜 지금 N²SF인가 — 망분리의 한계 — `id="section-1"`
+### Section 4: 1. 왜 지금 N2SF인가 — 망분리의 한계 — `id="section-1"`
 
 | Property | Value |
 |----------|-------|
@@ -191,14 +191,14 @@
 | Element | Value |
 |---------|-------|
 | Component | `ds-article-section-header` |
-| Title | `1. 왜 지금 N²SF인가 — 망분리의 한계` |
+| Title | `1. 왜 지금 N2SF인가 — 망분리의 한계` |
 | Title brand keyword | `<span class="ds-text--brand">망분리의 한계</span>` |
 
 #### Body Content
 
 원문 단락 7개 (그대로 유지):
 
-1. "N²SF를 이해하려면 먼저 기존 체계가 왜 한계에 부딪혔는지부터 살펴봐야 합니다." (짧은 도입)
+1. "N2SF를 이해하려면 먼저 기존 체계가 왜 한계에 부딪혔는지부터 살펴봐야 합니다." (짧은 도입)
 2. "한국 공공부문의 보안 체계는 오랫동안 **물리적 망분리**를..." (전문)
 3. "이 체계는 단순하지만 강력했습니다..." (전문)
 4. "그러나 시대가 변했습니다. **두 가지 흐름**이 망분리의 효용을 약화시켰습니다." (전문)
@@ -209,11 +209,11 @@
 - **첫째 — 업무 환경의 클라우드·SaaS 전환:** 행정 업무는 점점 더 외부 서비스에 의존하고 있습니다. 클라우드 협업 도구, SaaS 행정 시스템, 외부 데이터 연계 — 이 모든 것이 망분리 원칙과 충돌합니다. 망분리를 엄격히 유지하면 클라우드를 쓸 수 없고, 클라우드를 쓰려면 망분리를 우회해야 합니다.
 - **둘째 — 생성형 AI의 등장:** ChatGPT, Claude, Gemini 같은 외부 AI 서비스가 업무 효율성에 결정적 영향을 미치기 시작했고, 직원들은 이를 활용하고 싶어합니다. 그러나 망분리 체계에서는 이 모든 AI 서비스가 "사용 불가" 영역이었습니다. 결과적으로 직원들이 개인 단말에서 비공식적으로 AI를 사용하는 **섀도우 AI** 현상이 광범위하게 발생했습니다. 기관은 보안을 지켰다고 믿지만, 실제로는 통제 바깥에서 AI 사용이 이루어지고 있는 상황입니다.
 
-5. (불릿 뒤 마무리) "국가정보원과 국가보안기술연구소(NSR)는 이런 시대적 변화를 인식하고, 망분리를 대체할 새로운 보안 체계를 설계했습니다. 그 결과물이 N²SF입니다."
+5. (불릿 뒤 마무리) "국가정보원과 국가보안기술연구소(NSR)는 이런 시대적 변화를 인식하고, 망분리를 대체할 새로운 보안 체계를 설계했습니다. 그 결과물이 N2SF입니다."
 
 ---
 
-### Section 5: 2. N²SF의 정의와 핵심 개념 — `id="section-2"`
+### Section 5: 2. N2SF의 정의와 핵심 개념 — `id="section-2"`
 
 | Property | Value |
 |----------|-------|
@@ -226,12 +226,12 @@
 | Element | Value |
 |---------|-------|
 | Component | `ds-article-section-header` |
-| Title | `2. N²SF의 정의와 핵심 개념` |
+| Title | `2. N2SF의 정의와 핵심 개념` |
 | Title brand keyword | `<span class="ds-text--brand">정의와 핵심 개념</span>` |
 
 #### Body Content
 
-**단락 1:** "N²SF는 **National Network Security Framework**의 약자로, 한국어로는 **국가 망 보안체계**로 번역됩니다. 한 줄로 정의하면 다음과 같습니다."
+**단락 1:** "N2SF는 **National Network Security Framework**의 약자로, 한국어로는 **국가 망 보안체계**로 번역됩니다. 한 줄로 정의하면 다음과 같습니다."
 
 **Blockquote → `ds-banner--quote`:**
 - "정보의 중요도와 시스템의 역할에 따라 보안 통제를 차등 적용하여, 신기술 활용과 보안을 동시에 달성하는 공공부문 보안 프레임워크."
@@ -241,12 +241,12 @@
 
 **단락 3:** "이런 사고 방식을 보안 업계에서는 **다중계층보안(MLS, Multi-Layered Security)**이라고 부릅니다..." (전문)
 
-#### Sub-section: N²SF의 3대 구성 요소 (h3)
+#### Sub-section: N2SF의 3대 구성 요소 (h3)
 
 - `ds-section-title-icon` (Layers 아이콘)
-- Sub title: `N²SF의 3대 구성 요소`
+- Sub title: `N2SF의 3대 구성 요소`
 
-**도입 단락:** "N²SF를 실무에 적용할 때는 다음 세 가지를 차례로 다루게 됩니다."
+**도입 단락:** "N2SF를 실무에 적용할 때는 다음 세 가지를 차례로 다루게 됩니다."
 
 **3대 구성 요소 → `ds-bullet--number` (3항목):**
 1. **정보 등급 분류 (C/S/O):** 우리 기관이 다루는 정보가 어느 등급에 해당하는지 식별
@@ -257,7 +257,7 @@
 
 ---
 
-### Section 6: 3. C/S/O 등급 — N²SF의 기본 분류 체계 — `id="section-3"`
+### Section 6: 3. C/S/O 등급 — N2SF의 기본 분류 체계 — `id="section-3"`
 
 | Property | Value |
 |----------|-------|
@@ -270,12 +270,12 @@
 | Element | Value |
 |---------|-------|
 | Component | `ds-article-section-header` |
-| Title | `3. C/S/O 등급 — N²SF의 기본 분류 체계` |
+| Title | `3. C/S/O 등급 — N2SF의 기본 분류 체계` |
 | Title brand keyword | `<span class="ds-text--brand">C/S/O 등급</span>` |
 
 #### Body Content
 
-**도입 단락:** "N²SF의 출발점은 정보 등급 분류입니다. 모든 업무 정보는 다음 세 등급 중 하나에 해당합니다."
+**도입 단락:** "N2SF의 출발점은 정보 등급 분류입니다. 모든 업무 정보는 다음 세 등급 중 하나에 해당합니다."
 
 **도식 1: C/S/O 정보 등급 분류 체계** — `ds-diagram` 컴포넌트
 - diagram-builder 에이전트 호출
@@ -316,7 +316,7 @@
 
 ---
 
-### Section 7: 4. 「위치-주체-객체」 모델링 — N²SF의 사고 방식 — `id="section-4"`
+### Section 7: 4. 「위치-주체-객체」 모델링 — N2SF의 사고 방식 — `id="section-4"`
 
 | Property | Value |
 |----------|-------|
@@ -329,12 +329,12 @@
 | Element | Value |
 |---------|-------|
 | Component | `ds-article-section-header` |
-| Title | `4. 「위치-주체-객체」 모델링 — N²SF의 사고 방식` |
+| Title | `4. 「위치-주체-객체」 모델링 — N2SF의 사고 방식` |
 | Title brand keyword | `<span class="ds-text--brand">「위치-주체-객체」 모델링</span>` |
 
 #### Body Content
 
-**단락 1:** "정보를 등급으로 분류했다면, 다음 단계는 **\"이 정보를 어떻게 사용할 것인가\"**를 분석하는 것입니다. N²SF는 이를 위해 「위치-주체-객체」라는 분석 모델을 제시합니다."
+**단락 1:** "정보를 등급으로 분류했다면, 다음 단계는 **\"이 정보를 어떻게 사용할 것인가\"**를 분석하는 것입니다. N2SF는 이를 위해 「위치-주체-객체」라는 분석 모델을 제시합니다."
 
 **단락 2:** "모든 정보서비스는 세 가지 축으로 분해할 수 있습니다."
 
@@ -368,7 +368,7 @@
 
 **단락 5:** "이 모델링이 보여주는 것은 단순히 \"외부 AI를 쓸 수 있느냐 없느냐\"가 아니라, **\"어떤 등급의 정보가 어떤 등급의 시스템으로 이동하는가\"**입니다. S 등급 영역의 정보가 O 등급 시스템으로 이동하는 시나리오이므로, 이 이동에 대한 보안 통제가 필요하다는 결론이 자연스럽게 도출됩니다."
 
-**단락 6:** "바로 이 분석 프레임워크가 N²SF의 가장 중요한 사고 도구입니다. 새로운 시스템이나 서비스를 도입할 때, 「위치-주체-객체」를 그려보고 등급을 부여하면, 어떤 보안 통제가 필요한지 체계적으로 도출할 수 있습니다."
+**단락 6:** "바로 이 분석 프레임워크가 N2SF의 가장 중요한 사고 도구입니다. 새로운 시스템이나 서비스를 도입할 때, 「위치-주체-객체」를 그려보고 등급을 부여하면, 어떤 보안 통제가 필요한지 체계적으로 도출할 수 있습니다."
 
 ---
 
@@ -390,7 +390,7 @@
 
 #### Body Content
 
-**도입 단락:** "「위치-주체-객체」 모델링이 분석 도구라면, 보안원칙은 그 분석 결과에 적용되는 판단 기준입니다. N²SF는 두 가지 핵심 보안원칙을 제시합니다."
+**도입 단락:** "「위치-주체-객체」 모델링이 분석 도구라면, 보안원칙은 그 분석 결과에 적용되는 판단 기준입니다. N2SF는 두 가지 핵심 보안원칙을 제시합니다."
 
 #### Sub-section: 5.1 「정보 생산·저장」 보안원칙 (h3)
 
@@ -423,7 +423,7 @@
 #### Callout (두 원칙이 함께 작동하는 방식) → `ds-banner--info`
 
 - banner label: `두 원칙이 함께 작동하는 방식`
-- body: "「위치-주체-객체」로 시나리오를 모델링한 뒤, 두 보안원칙에 비추어 어떤 부분이 원칙에 부합하고 어떤 부분에 추가 통제가 필요한지 판단합니다. 이것이 N²SF 보안 설계의 기본 흐름입니다."
+- body: "「위치-주체-객체」로 시나리오를 모델링한 뒤, 두 보안원칙에 비추어 어떤 부분이 원칙에 부합하고 어떤 부분에 추가 통제가 필요한지 판단합니다. 이것이 N2SF 보안 설계의 기본 흐름입니다."
 
 ---
 
@@ -445,7 +445,7 @@
 
 #### Body Content
 
-**도입 단락:** "N²SF는 추상적 정책 프레임워크지만, 실무 적용 시에는 구체적인 단계가 있습니다. 「N²SF 보안 가이드라인」은 정보서비스 도입·운영 과정을 다음 5단계로 정리합니다."
+**도입 단락:** "N2SF는 추상적 정책 프레임워크지만, 실무 적용 시에는 구체적인 단계가 있습니다. 「N2SF 보안 가이드라인」은 정보서비스 도입·운영 과정을 다음 5단계로 정리합니다."
 
 **5단계 프로세스 → `ds-bullet--number` (5항목):**
 1. **준비(Prepare):** 정보서비스 구성요소 분석, 사용 시나리오 정의
@@ -470,7 +470,7 @@
 
 ---
 
-### Section 10: 7. N²SF가 열어준 가능성과 새로운 질문들 — `id="section-7"`
+### Section 10: 7. N2SF가 열어준 가능성과 새로운 질문들 — `id="section-7"`
 
 | Property | Value |
 |----------|-------|
@@ -483,12 +483,12 @@
 | Element | Value |
 |---------|-------|
 | Component | `ds-article-section-header` |
-| Title | `7. N²SF가 열어준 가능성과 새로운 질문들` |
+| Title | `7. N2SF가 열어준 가능성과 새로운 질문들` |
 | Title brand keyword | `<span class="ds-text--brand">열어준 가능성</span>` |
 
 #### Body Content
 
-**도입 단락:** "N²SF의 도입은 공공기관에게 **새로운 가능성**을 열어주었습니다. 그동안 망분리 원칙 때문에 불가능했던 시도들이 이제 가능해졌습니다."
+**도입 단락:** "N2SF의 도입은 공공기관에게 **새로운 가능성**을 열어주었습니다. 그동안 망분리 원칙 때문에 불가능했던 시도들이 이제 가능해졌습니다."
 
 **열어준 가능성 → `ds-bullet--check` (3항목):**
 - **외부 생성형 AI의 합법적 활용:** O 등급 정보에 대해 외부 AI를 자유롭게 활용할 수 있으며, S 등급 정보도 적절한 보안 통제를 적용하면 외부 AI와 연계할 수 있습니다.
@@ -504,15 +504,15 @@
 - 특정 정보서비스에 어떤 모델 해설서를 적용해야 하는가?
 - 「위치-주체-객체」 모델링은 우리 기관이 직접 해야 하는가, 외부 컨설팅을 받아야 하는가?
 
-**마무리 단락 1:** "이런 질문들은 N²SF가 완성된 답안이 아니라 **새로운 사고 프레임워크**이기 때문에 발생합니다. 프레임워크는 길을 보여주지만, 그 길을 어떻게 걸을지는 각 기관이 결정해야 합니다. 그리고 이 결정은 단순히 보안 부서만의 일이 아니라, 정보화 정책, 업무 프로세스, 외부 솔루션 선정까지 연결되는 통합적 의사결정입니다."
+**마무리 단락 1:** "이런 질문들은 N2SF가 완성된 답안이 아니라 **새로운 사고 프레임워크**이기 때문에 발생합니다. 프레임워크는 길을 보여주지만, 그 길을 어떻게 걸을지는 각 기관이 결정해야 합니다. 그리고 이 결정은 단순히 보안 부서만의 일이 아니라, 정보화 정책, 업무 프로세스, 외부 솔루션 선정까지 연결되는 통합적 의사결정입니다."
 
-**마무리 단락 2:** "특히 생성형 AI 도입은 N²SF 적용에서 가장 활발히 논의되는 영역입니다. 국가정보원과 NSR은 이 영역을 위해 별도의 「업무환경에서 생성형 AI 활용 모델 해설서(모델 2)」를 발간했으며, 21개의 보안위협과 50여 개의 보안통제 항목을 구체적으로 제시하고 있습니다. 다음 글에서는 이 모델 2를 심층 해설하겠습니다."
+**마무리 단락 2:** "특히 생성형 AI 도입은 N2SF 적용에서 가장 활발히 논의되는 영역입니다. 국가정보원과 NSR은 이 영역을 위해 별도의 「업무환경에서 생성형 AI 활용 모델 해설서(모델 2)」를 발간했으며, 21개의 보안위협과 50여 개의 보안통제 항목을 구체적으로 제시하고 있습니다. 다음 글에서는 이 모델 2를 심층 해설하겠습니다."
 
 #### Takeaways (이 글의 핵심 요약) → `ds-banner--brand`
 
 - banner label: `이 글의 핵심 요약`
 - **ds-bullet--dot (5항목):**
-  - N²SF는 망분리에서 다중계층보안(MLS)으로의 패러다임 전환입니다
+  - N2SF는 망분리에서 다중계층보안(MLS)으로의 패러다임 전환입니다
   - 정보를 C(기밀)·S(민감)·O(공개)의 세 등급으로 분류하여 차등 보호합니다
   - 「위치-주체-객체」 모델로 정보서비스를 분석합니다
   - 「정보 생산·저장」과 「정보 이동」 두 보안원칙이 판단 기준이 됩니다
@@ -542,11 +542,11 @@
 
 | # | Question | Answer (원문 전문) |
 |---|----------|-------------------|
-| 1 | N²SF는 의무 적용인가요? | 국가정보원이 발간한 「국가 망 보안체계 보안 가이드라인」은 공공기관의 정보서비스 구축·운영 시 적용 기준을 제시합니다. 모든 기관이 즉시 전면 적용해야 하는 강행 규정의 형식은 아니지만, 신규 정보화 사업의 보안성 검토에서 사실상의 표준으로 작동하고 있습니다. 기관별 적용 시기와 범위는 정보보안 책임관과 협의해서 결정하게 됩니다. |
-| 2 | 망분리는 완전히 폐지되나요? | 아닙니다. C 등급 정보를 다루는 시스템에는 망분리 수준의 강한 통제가 여전히 적용됩니다. N²SF가 폐지한 것은 "모든 정보에 일률적으로 망분리를 적용"하는 방식이며, 정보 등급에 따라 적절한 수준의 통제를 차등 적용하는 방식으로 진화한 것입니다. 즉, 강한 보안이 필요한 곳에는 여전히 강한 보안이, 그렇지 않은 곳에는 적정 수준의 보안이 적용됩니다. |
+| 1 | N2SF는 의무 적용인가요? | 국가정보원이 발간한 「국가 망 보안체계 보안 가이드라인」은 공공기관의 정보서비스 구축·운영 시 적용 기준을 제시합니다. 모든 기관이 즉시 전면 적용해야 하는 강행 규정의 형식은 아니지만, 신규 정보화 사업의 보안성 검토에서 사실상의 표준으로 작동하고 있습니다. 기관별 적용 시기와 범위는 정보보안 책임관과 협의해서 결정하게 됩니다. |
+| 2 | 망분리는 완전히 폐지되나요? | 아닙니다. C 등급 정보를 다루는 시스템에는 망분리 수준의 강한 통제가 여전히 적용됩니다. N2SF가 폐지한 것은 "모든 정보에 일률적으로 망분리를 적용"하는 방식이며, 정보 등급에 따라 적절한 수준의 통제를 차등 적용하는 방식으로 진화한 것입니다. 즉, 강한 보안이 필요한 곳에는 여전히 강한 보안이, 그렇지 않은 곳에는 적정 수준의 보안이 적용됩니다. |
 | 3 | C/S/O 분류는 누가 정하나요? | 각 기관이 자체적으로 정보자산을 식별하고 등급을 분류합니다. 다만 일부 영역은 외부 기준이 적용됩니다. 예를 들어 C 등급에 해당하는 비밀 정보는 「보안업무규정」에 따라 분류되며, 개인정보는 「개인정보 보호법」 기준이 영향을 미칩니다. 일반적인 행정 정보의 등급 분류는 기관의 정보보안 책임관이 주관하여 결정합니다. |
-| 4 | 모델 해설서는 무엇인가요? | 국가정보원과 국가보안기술연구소(NSR)가 발간하는 「정보서비스 모델 해설서」 시리즈는 대표적인 정보서비스 시나리오에 N²SF를 적용한 분석 예시입니다. 모델 1은 일반 정보서비스, 모델 2는 업무환경에서 생성형 AI 활용을 다루고 있으며, 향후 더 많은 모델이 추가될 예정입니다. 각 기관은 자신의 시나리오와 유사한 모델을 참고하여 적용 절차를 설계할 수 있습니다. |
-| 5 | N²SF 적용에 비용이 많이 드나요? | 적용 자체에는 직접 비용이 들지 않지만, 정보자산 분류, 시스템 모델링, 보안 통제 도입 등의 작업에는 시간과 자원이 필요합니다. 기존 망분리 시스템을 유지하는 것보다 N²SF 기반으로 재설계하는 것이 단기적으로는 더 큰 작업이 될 수 있습니다. 다만 장기적으로는 클라우드·AI 활용을 통한 효율성 향상이 가능해지므로, 적용 비용을 상쇄하고 남는 가치가 있습니다. |
+| 4 | 모델 해설서는 무엇인가요? | 국가정보원과 국가보안기술연구소(NSR)가 발간하는 「정보서비스 모델 해설서」 시리즈는 대표적인 정보서비스 시나리오에 N2SF를 적용한 분석 예시입니다. 모델 1은 일반 정보서비스, 모델 2는 업무환경에서 생성형 AI 활용을 다루고 있으며, 향후 더 많은 모델이 추가될 예정입니다. 각 기관은 자신의 시나리오와 유사한 모델을 참고하여 적용 절차를 설계할 수 있습니다. |
+| 5 | N2SF 적용에 비용이 많이 드나요? | 적용 자체에는 직접 비용이 들지 않지만, 정보자산 분류, 시스템 모델링, 보안 통제 도입 등의 작업에는 시간과 자원이 필요합니다. 기존 망분리 시스템을 유지하는 것보다 N2SF 기반으로 재설계하는 것이 단기적으로는 더 큰 작업이 될 수 있습니다. 다만 장기적으로는 클라우드·AI 활용을 통한 효율성 향상이 가능해지므로, 적용 비용을 상쇄하고 남는 가치가 있습니다. |
 
 ---
 
@@ -568,7 +568,7 @@
 
 #### References — `ds-bullet--dot` (5항목, 원문 그대로)
 
-1. 국가정보원, 「국가 망 보안체계(N²SF) 보안 가이드라인」, 2024
+1. 국가정보원, 「국가 망 보안체계(N2SF) 보안 가이드라인」, 2024
 2. 국가정보원, 국가보안기술연구소(NSR), 「국가 망 보안체계 보안 가이드라인 — 정보서비스 모델 해설서: 모델 2. 업무환경에서 생성형 AI 활용」, 2025.9
 3. 「전자정부법」, 「국가정보보안기본지침」
 4. 「보안업무규정」, 「개인정보 보호법」
@@ -604,7 +604,7 @@
 
 | # | Tag (badge) | Title | URL |
 |---|-------------|-------|-----|
-| 1 | 정책 분석 | N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까 | `/resources/learn/n2sf-model-2-explained` |
+| 1 | 정책 분석 | N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까 | `/resources/learn/n2sf-model-2-explained` |
 | 2 | 정책 분석 | 공공기관 생성형 AI 도입의 세 가지 길 — AI DLP, sLLM, 레이어 방식 비교 | `/resources/learn/public-sector-genai-three-approaches` |
 | 3 | 기술 해설 | 단순 비식별화의 한계와 차등정보보호(Differential Privacy)란 무엇인가 | `#` (placeholder) |
 
@@ -640,9 +640,9 @@
 
 | Element | Value |
 |---------|-------|
-| Title | `N²SF 환경의 AI 도입을 검토하시나요?` |
+| Title | `N2SF 환경의 AI 도입을 검토하시나요?` |
 | Title brand keyword | `<span class="ds-text--brand">검토</span>` |
-| Description | 큐빅 <span class="ds-text--product">LLM Capsule</span>은 차등정보보호 기반의 보호 레이어로, 조달청 혁신제품 지정 및 다수 인증(GS 1등급, ISO 27001, ISO 42001)을 보유하고 있습니다. N²SF 모델 2에 부합하는 도입 방안을 함께 검토해드립니다. |
+| Description | 큐빅 <span class="ds-text--product">LLM Capsule</span>은 차등정보보호 기반의 보호 레이어로, 조달청 혁신제품 지정 및 다수 인증(GS 1등급, ISO 27001, ISO 42001)을 보유하고 있습니다. N2SF 모델 2에 부합하는 도입 방안을 함께 검토해드립니다. |
 | Primary CTA | "데모 신청하기 →" → `/request-a-demo` |
 | CTA style | `btn--invert` (dark bg → white button) |
 
@@ -652,10 +652,10 @@
 <section id="section-cta" class="ds-cta-band ds-bg--grad-deep">
   <div class="ds-cta-band__inner">
     <h2 class="ds-cta-band__title">
-      N²SF 환경의 AI 도입을 <span class="ds-text--brand">검토</span>하시나요?
+      N2SF 환경의 AI 도입을 <span class="ds-text--brand">검토</span>하시나요?
     </h2>
     <p class="ds-cta-band__description">
-      큐빅 <span class="ds-text--product">LLM Capsule</span>은 차등정보보호 기반의 보호 레이어로, 조달청 혁신제품 지정 및 다수 인증(GS 1등급, ISO 27001, ISO 42001)을 보유하고 있습니다. N²SF 모델 2에 부합하는 도입 방안을 함께 검토해드립니다.
+      큐빅 <span class="ds-text--product">LLM Capsule</span>은 차등정보보호 기반의 보호 레이어로, 조달청 혁신제품 지정 및 다수 인증(GS 1등급, ISO 27001, ISO 42001)을 보유하고 있습니다. N2SF 모델 2에 부합하는 도입 방안을 함께 검토해드립니다.
     </p>
     <div class="ds-cta-band__actions">
       <a href="/request-a-demo" class="ds-btn ds-btn--md btn--invert">데모 신청하기 &rarr;</a>
@@ -724,7 +724,7 @@
 | 1 | Hero | Article hero | Full-width title |
 | 2 | TL;DR | Banner (brand tint) | Colored banner |
 | 3 | Lead | Paragraphs | Text flow |
-| 4 | 1. 왜 N²SF인가 | Section header + body + dot list | Text + list |
+| 4 | 1. 왜 N2SF인가 | Section header + body + dot list | Text + list |
 | 5 | 2. 정의와 핵심 개념 | Section header + quote banner + numbered steps | Text + steps |
 | 6 | 3. C/S/O 등급 | Section header + diagram + 3 sub-h3 + info callout | Visual + sub-sections |
 | 7 | 4. 위치-주체-객체 | Section header + dot list + diagram + check list | Text + visual |
@@ -745,7 +745,7 @@
 - [ ] TL;DR 전문 그대로 (축약 금지)
 - [ ] 본문 모든 단락 원문 유지 (수정·축약 금지)
 - [ ] strong 태그 원문 위치 그대로 유지
-- [ ] N²SF 표기 정확 ("²" superscript)
+- [ ] N2SF 표기 정확 ("²" superscript)
 - [ ] C/S/O 등급 색상 매핑 정확 (C=coral / S=amber / O=teal)
 - [ ] 「위치-주체-객체」 한자 인용부호 유지
 - [ ] 보안원칙 blockquote 2개 전문 보존
@@ -838,7 +838,7 @@ B타입 HTML 생성 후, 다음 2개 다이어그램을 `diagram-builder` 에이
 5. **Oxanium 폐기** — 제품명도 Inter 사용. `ds-text--product` 클래스는 유지하되 font-family를 Inter로 변경
 6. **capsule brand tokens** — `:root`에 `--c-primary`, `--c-teal`, `--c-coral`, `--c-amber`, `--c-ink` 등 capsule 전용 변수 선언
 7. **Button style** — `btn--primary`는 solid ink bg, hover primary. gradient 버튼 폐기
-8. **N²SF 표기** — `N²SF` (unicode superscript ²) 사용. `<sup>` 태그 사용 시 모든 표기 일관성 유지
+8. **N2SF 표기** — `N2SF` (unicode superscript ²) 사용. `<sup>` 태그 사용 시 모든 표기 일관성 유지
 9. **SVG 도식 placeholder** — diagram-builder 완료 전까지 `<!-- DIAGRAM PLACEHOLDER -->` 주석으로 위치만 표시. diagram-builder 완료 후 삽입
 10. **Related articles URL** — Section 13 참조: 1번/2번은 실제 경로, 3번은 placeholder
 11. **Meta tags** — `<meta property="og:type" content="article">`, `<meta property="og:locale" content="ko_KR">`

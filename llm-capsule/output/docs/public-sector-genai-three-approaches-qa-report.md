@@ -17,7 +17,7 @@
 | F-03 | CAT-2 DS 준수 | Medium | line 1114 | `ds-bullet--number` 리스트에 `style="--ds-space-sm: 12px;"` 인라인 스타일 사용. 단, CSS 변수 전달 목적이므로 예외 허용 범위이나 `:root`에 이미 `--ds-space-sm: 12px`가 정의되어 있으므로 불필요한 오버라이드 | 이미 `:root`에 동일 값이 정의되어 있으므로 인라인 style 제거 가능 |
 | F-04 | CAT-2 DS 준수 | Medium | line 1275 | CTA 배경(`ds-bg--grad-deep`, 다크 딥 색상) 위에 `ds-text--brand`(`--c-primary: #5b4fe9` 보라색) 적용. 다크 배경 위 보라색은 대비 부족으로 가시성 저하 위험 | CLAUDE.md: "배경 이미지 위 텍스트: black 또는 white만 사용" 규칙 위반. CTA 타이틀 강조는 white로 유지해야 함 |
 | F-05 | CAT-3 코드 품질 | Medium | line 525~529 | `section-lead`에 연속 `<p>` 3개 — CLAUDE.md "연속 본문 3단락 이상 금지 → ds-bullet--dot 분리" 규칙 위반 | 아티클 리드 섹션으로 원본 흐름을 그대로 유지했으나 DS 규칙 적용 누락 |
-| F-06 | CAT-3 코드 품질 | Medium | line 538~543 | `section-1`(N²SF 섹션) 첫 `ds-article-body`에 연속 `<p>` 3개 — 동일 규칙 위반 | 동일 원인 |
+| F-06 | CAT-3 코드 품질 | Medium | line 538~543 | `section-1`(N2SF 섹션) 첫 `ds-article-body`에 연속 `<p>` 3개 — 동일 규칙 위반 | 동일 원인 |
 | F-07 | CAT-3 코드 품질 | Medium | line 706~710 | `section-3` sLLM 장점 섹션 `ds-article-body`에 연속 `<p>` 3개 — 동일 규칙 위반 | 동일 원인 |
 | F-08 | CAT-3 코드 품질 | Medium | line 740~745 | `section-3` sLLM 단점 섹션 `ds-article-body`에 연속 `<p>` 4개 — 동일 규칙 위반 (4개로 더 심각) | 동일 원인 |
 | F-09 | CAT-3 코드 품질 | Medium | line 908~913 | `section-4` 게이트웨이 장점 섹션 `ds-article-body`에 연속 `<p>` 4개 — 동일 규칙 위반 (4개) | 동일 원인 |
@@ -33,8 +33,8 @@
 - html lang="ko" 확인
 - 모든 섹션 제목 일치: h1, h2(1~6), h3(2.1~4.5) 전부 존재
 - TL;DR 수치 일치: "7~13억 원", "8억 원", "3억~5억 원", "32B", "10~20%", "1~3억", "100억+" 모두 정확
-- N²SF 가이드라인 "21개 보안위협", "50개 이상 보안통제" 수치 정확
-- 비교표 7행(초기 도입 비용/AI 성능/데이터 보안/모델 최신화/N²SF 정합성/운영 인력 부담/적합 규모) 모두 존재하고 내용 일치
+- N2SF 가이드라인 "21개 보안위협", "50개 이상 보안통제" 수치 정확
+- 비교표 7행(초기 도입 비용/AI 성능/데이터 보안/모델 최신화/N2SF 정합성/운영 인력 부담/적합 규모) 모두 존재하고 내용 일치
 - FAQ 5개 항목 전부 존재하고 내용 일치
 - 참고 자료 4건 누락 없음
 - 게이트웨이 솔루션 평가 질문 5개 누락 없음

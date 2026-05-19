@@ -43,7 +43,7 @@
 - Capsule brand tokens: `--c-primary`, `--c-teal`, `--c-coral`, `--c-amber`, `--c-ink`, `--c-bg-dark` etc.
 - Capsule button: solid ink bg + hover primary (gradient 버튼 폐기)
 - Internal links: Framer 상대경로 (`/request-a-demo` 등), `.html` 확장자 금지
-- N²SF의 "²" superscript는 원문 그대로 유지 (HTML entity 또는 unicode)
+- N2SF의 "²" superscript는 원문 그대로 유지 (HTML entity 또는 unicode)
 
 ---
 
@@ -84,11 +84,11 @@
 
 | Element | Value |
 |---------|-------|
-| Breadcrumb | 홈 / 리소스 / Learn / N²SF 모델 2 완벽 해설 |
+| Breadcrumb | 홈 / 리소스 / Learn / N2SF 모델 2 완벽 해설 |
 | Category chip | `ds-badge--primary` "정책 분석" |
 | Reading time | "예상 읽기 시간 22분" |
 | Date | "2026년 5월" |
-| Title | `N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까` |
+| Title | `N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까` |
 | Title brand keyword | `<span class="ds-text--brand">모델 2</span>` |
 | Description (lead) | 국가정보원이 2025년 9월 발간한 「업무환경에서 생성형 AI 활용 모델 해설서」를 정보화담당관 관점에서 쉽게 정리합니다. 21개 보안위협, 50여 개 보안통제 항목, 그리고 무엇이 가능하고 무엇이 제한되는지. |
 
@@ -97,14 +97,14 @@
 ```html
 <section id="section-hero" class="ds-section ds-section--hero">
   <div class="ds-article-container">
-    <nav class="ds-breadcrumb" aria-label="Breadcrumb">홈 / 리소스 / Learn / N²SF 모델 2 완벽 해설</nav>
+    <nav class="ds-breadcrumb" aria-label="Breadcrumb">홈 / 리소스 / Learn / N2SF 모델 2 완벽 해설</nav>
     <div class="ds-article-hero__meta">
       <span class="ds-badge ds-badge--primary">정책 분석</span>
       <span class="ds-article-hero__reading-time">예상 읽기 시간 22분</span>
       <span class="ds-article-hero__date">2026년 5월</span>
     </div>
     <h1 class="ds-article-hero__title">
-      N²SF <span class="ds-text--brand">모델 2</span> 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까
+      N2SF <span class="ds-text--brand">모델 2</span> 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까
     </h1>
     <p class="ds-article-hero__description">
       국가정보원이 2025년 9월 발간한 「업무환경에서 생성형 AI 활용 모델 해설서」를 정보화담당관 관점에서 쉽게 정리합니다. 21개 보안위협, 50여 개 보안통제 항목, 그리고 무엇이 가능하고 무엇이 제한되는지.
@@ -134,7 +134,7 @@
 |---------|-------|
 | Banner label | `TL;DR` (ds-banner__label, font-code uppercase) |
 | Banner body | 원문 TL;DR 전문 그대로 사용 (축약 금지) |
-| Strong tags | "「N²SF 보안 가이드라인 정보서비스 모델 해설서 — 모델 2. 업무환경에서 생성형 AI 활용」", "「위치(S) - 주체(S) - 객체(O)」", "O 등급으로 한정", "AI 연계체계" |
+| Strong tags | "「N2SF 보안 가이드라인 정보서비스 모델 해설서 — 모델 2. 업무환경에서 생성형 AI 활용」", "「위치(S) - 주체(S) - 객체(O)」", "O 등급으로 한정", "AI 연계체계" |
 
 #### Structure
 
@@ -143,7 +143,7 @@
   <div class="ds-article-container">
     <div class="ds-banner ds-banner--brand">
       <span class="ds-banner__label">TL;DR</span>
-      <p>국가정보원·NSR이 발간한 <strong>「N²SF 보안 가이드라인 정보서비스 모델 해설서 — 모델 2. 업무환경에서 생성형 AI 활용」</strong>은 공공기관이 외부 상용 AI(ChatGPT, Claude 등)를 활용할 때 따라야 할 보안 요구사항을 정리한 공식 문서입니다. 시나리오는 <strong>「위치(S) - 주체(S) - 객체(O)」</strong> 구조로 모델링되며, 활용 가능 정보는 <strong>O 등급으로 한정</strong>됩니다. S 등급 정보의 외부 AI 직접 전송은 보안원칙에 위배됩니다. 21개의 보안위협이 식별되고 50여 개의 보안통제 항목이 적용되어야 하며, 그 핵심은 <strong>AI 연계체계</strong>라는 중간 보호 장치입니다. 모델 2는 "외부 AI 활용의 공식 길"을 처음 열어준 문서지만, 동시에 그 길의 좁은 폭도 정의합니다.</p>
+      <p>국가정보원·NSR이 발간한 <strong>「N2SF 보안 가이드라인 정보서비스 모델 해설서 — 모델 2. 업무환경에서 생성형 AI 활용」</strong>은 공공기관이 외부 상용 AI(ChatGPT, Claude 등)를 활용할 때 따라야 할 보안 요구사항을 정리한 공식 문서입니다. 시나리오는 <strong>「위치(S) - 주체(S) - 객체(O)」</strong> 구조로 모델링되며, 활용 가능 정보는 <strong>O 등급으로 한정</strong>됩니다. S 등급 정보의 외부 AI 직접 전송은 보안원칙에 위배됩니다. 21개의 보안위협이 식별되고 50여 개의 보안통제 항목이 적용되어야 하며, 그 핵심은 <strong>AI 연계체계</strong>라는 중간 보호 장치입니다. 모델 2는 "외부 AI 활용의 공식 길"을 처음 열어준 문서지만, 동시에 그 길의 좁은 폭도 정의합니다.</p>
     </div>
   </div>
 </section>
@@ -162,7 +162,7 @@
 #### Content
 
 2개 단락 (원문 그대로):
-1. "우리 기관도 ChatGPT 쓸 수 있나요? — 2024년부터 정보화담당관실에 가장 많이 들어오는 질문 중 하나입니다. 이 질문에 대한 공식적인 답이 2025년 9월에 나왔습니다. 국가정보원과 국가보안기술연구소(NSR)가 발간한 **「N²SF 보안 가이드라인 정보서비스 모델 해설서 — 모델 2. 업무환경에서 생성형 AI 활용」**(이하 모델 2)이 그것입니다."
+1. "우리 기관도 ChatGPT 쓸 수 있나요? — 2024년부터 정보화담당관실에 가장 많이 들어오는 질문 중 하나입니다. 이 질문에 대한 공식적인 답이 2025년 9월에 나왔습니다. 국가정보원과 국가보안기술연구소(NSR)가 발간한 **「N2SF 보안 가이드라인 정보서비스 모델 해설서 — 모델 2. 업무환경에서 생성형 AI 활용」**(이하 모델 2)이 그것입니다."
 2. "이 문서는 30페이지 분량이지만, 정책 문서 특유의 정제된 표현과 다이어그램 중심 구성 때문에 처음 읽는 사람에게는 친절하지 않습니다. 이 글은 정보화담당관·보안담당관의 관점에서 모델 2가 무엇을 말하고 있는지, 무엇이 가능하고 무엇이 제한되는지, 그리고 우리 기관이 무엇을 해야 하는지를 처음부터 끝까지 정리합니다."
 
 **주의:** 2단락이므로 연속 3단락+ 규칙은 트리거되지 않음. 그대로 유지.
@@ -192,7 +192,7 @@
 **Blockquote → ds-banner--quote (또는 ds-banner--brand with quote style):**
 > 공공기관이 외부 상용 생성형 AI를 업무에 활용할 수 있는 **최초의 공식 길잡이**.
 
-**단락 1 (원문 그대로):** "이 문장이 갖는 무게를 이해하려면 그 이전 상태를 떠올려야 합니다. 모델 2 발간 이전에는..." (망분리 원칙, N²SF 2024 발표, 직원들 사용 욕구, 답을 줄 근거 부재)
+**단락 1 (원문 그대로):** "이 문장이 갖는 무게를 이해하려면 그 이전 상태를 떠올려야 합니다. 모델 2 발간 이전에는..." (망분리 원칙, N2SF 2024 발표, 직원들 사용 욕구, 답을 줄 근거 부재)
 
 **단락 2 (원문 그대로, strong 포함):** "모델 2는 이 공백을 메웠습니다... **"이렇게 하면 도입할 수 있다"는 길**을 처음으로 보여준 문서입니다."
 
@@ -232,7 +232,7 @@
 **Blockquote → ds-banner--quote (또는 ds-banner--brand with strong):**
 > **"기관 전산망(S 등급) 내부에 있는 공무원이, 자신의 업무 단말(S 등급)을 통해, 인터넷에 있는 상용 생성형 AI 서비스(O 등급)를 활용하는 시나리오."**
 
-**연결 단락:** "이 시나리오는 모델 2 문서의 [그림 2-1]에서 도식화되어 있으며, N²SF 체계의 「위치-주체-객체」 모델로 정확히 매핑됩니다."
+**연결 단락:** "이 시나리오는 모델 2 문서의 [그림 2-1]에서 도식화되어 있으며, N2SF 체계의 「위치-주체-객체」 모델로 정확히 매핑됩니다."
 
 #### 도식 1: 모델 2 시나리오 — `ds-diagram` 컴포넌트
 
@@ -278,7 +278,7 @@
 
 #### 도입 단락
 
-"모델 2의 분석은 N²SF의 두 가지 보안원칙을 시나리오에 적용하는 작업에서 시작됩니다. 두 원칙은 모델 2 문서의 p.13에 명시되어 있으며, 각각 무엇을 의미하는지 정확히 짚어보겠습니다."
+"모델 2의 분석은 N2SF의 두 가지 보안원칙을 시나리오에 적용하는 작업에서 시작됩니다. 두 원칙은 모델 2 문서의 p.13에 명시되어 있으며, 각각 무엇을 의미하는지 정확히 짚어보겠습니다."
 
 #### Sub-sections (h3)
 
@@ -554,7 +554,7 @@
 | # | Question | Answer (원문 전문) |
 |---|----------|-------------------|
 | 1 | 모델 2를 따르면 우리 기관 직원들이 ChatGPT를 자유롭게 쓸 수 있나요? | "자유롭게"라는 표현은 적절하지 않습니다. 모델 2 준수 환경에서도 활용 가능 정보는 O 등급으로 한정되며, AI 연계체계를 경유한 통제된 접근만 가능합니다. 직원이 ChatGPT 사이트에 직접 접속해서 자유롭게 쓰는 형태가 아니라, 기관이 운영하는 AI 연계체계 인터페이스를 통해 사전 승인된 범위에서 사용하게 됩니다. |
-| 2 | S 등급 정보로 외부 AI를 활용하려면 어떻게 해야 하나요? | 모델 2 범위 내에서는 불가능합니다. S 등급 정보의 외부 AI 활용을 검토하려면, 보호 처리(예: 비식별화·차등정보보호) 후 전송하는 별도의 아키텍처가 필요하며, 그 아키텍처의 N²SF 정합성에 대한 자체 위험 평가가 요구됩니다. 이 영역은 「공공기관 생성형 AI 도입의 세 가지 길」에서 자세히 다룹니다. |
+| 2 | S 등급 정보로 외부 AI를 활용하려면 어떻게 해야 하나요? | 모델 2 범위 내에서는 불가능합니다. S 등급 정보의 외부 AI 활용을 검토하려면, 보호 처리(예: 비식별화·차등정보보호) 후 전송하는 별도의 아키텍처가 필요하며, 그 아키텍처의 N2SF 정합성에 대한 자체 위험 평가가 요구됩니다. 이 영역은 「공공기관 생성형 AI 도입의 세 가지 길」에서 자세히 다룹니다. |
 | 3 | 모델 2의 21개 위협과 50개 통제를 모두 충족해야 하나요? | 문서의 "활용 방안" 절(p.9)에 명시되어 있듯이, 보안통제 항목은 절대적 기준이 아닌 검토 사항입니다. 기관 특성에 맞게 유연하게 적용할 수 있으며, 제시되지 않은 항목을 추가하거나 제시된 항목을 조정·삭제하는 것도 가능합니다. 다만 정당화 논리를 문서화해두는 것이 감사 대응에 필수입니다. |
 | 4 | AI 연계체계는 자체 구축이 가능한가요? | 이론상 가능하지만 현실적으로 매우 어렵습니다. 50여 개의 보안통제 항목을 충족하는 시스템을 자체 개발·운영하려면 상당한 인력·예산이 필요하며, 보안 검증의 부담도 큽니다. 대부분의 기관은 외부 솔루션 도입을 선택하며, 조달청 혁신제품 지정·각종 인증을 받은 솔루션이 선택지가 됩니다. |
 
@@ -580,7 +580,7 @@
 
 3개 참고문헌 (원문 그대로):
 1. 국가정보원, 국가보안기술연구소(NSR), 「국가 망 보안체계 보안 가이드라인 — 정보서비스 모델 해설서: 모델 2. 업무환경에서 생성형 AI 활용」, 2025.9
-2. 국가정보원, 「국가 망 보안체계(N²SF) 보안 가이드라인」, 2024
+2. 국가정보원, 「국가 망 보안체계(N2SF) 보안 가이드라인」, 2024
 3. 「전자정부법」, 「국가정보보안기본지침」, 「개인정보 보호법」
 
 #### Author Info
@@ -613,7 +613,7 @@
 
 | # | Tag (badge) | Title | URL |
 |---|-------------|-------|-----|
-| 1 | 정책 분석 | N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리 | `/resources/learn/what-is-n2sf` |
+| 1 | 정책 분석 | N2SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리 | `/resources/learn/what-is-n2sf` |
 | 2 | 정책 분석 | 공공기관 생성형 AI 도입의 세 가지 길 — AI DLP, sLLM, 레이어 방식 비교 | `/resources/learn/public-sector-genai-three-approaches` |
 | 3 | 기술 해설 | 단순 비식별화의 한계와 차등정보보호(Differential Privacy)란 무엇인가 | `#` (placeholder — 추후 교체) |
 
@@ -623,7 +623,7 @@
 <a href="/resources/learn/what-is-n2sf" class="ds-card ds-card--link">
   <div class="ds-card__body">
     <span class="ds-badge ds-badge--primary">정책 분석</span>
-    <h3 class="ds-card__title">N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리</h3>
+    <h3 class="ds-card__title">N2SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리</h3>
     <span class="ds-card__link-text">읽기</span>
   </div>
 </a>
@@ -751,7 +751,7 @@
 - [ ] 본문 모든 단락 원문 유지 (수정·축약 금지)
 - [ ] strong 태그 원문 위치 그대로 유지
 - [ ] 두 개의 blockquote 전문 보존 (Section 4, 5)
-- [ ] N²SF의 ² superscript 모든 위치 보존
+- [ ] N2SF의 ² superscript 모든 위치 보존
 - [ ] 보안위협 코드 TH-M2-1~21 모두 보존
 - [ ] 보안통제 표 13행 × 3열 전체 데이터 보존
 - [ ] 강조 행("생성형 AI 서비스 활용 시 데이터 보호") 시각 강조 적용
@@ -832,7 +832,7 @@ B타입 HTML 생성 후, 다음 2개 다이어그램을 `diagram-builder` 에이
 9. **Highlight row 처리** — 9번째 행에 `ds-table__row--highlight` 클래스 적용 → `background-color: var(--c-primary-soft)` + `font-weight: 600`
 10. **SVG 도식 placeholder** — diagram-builder 완료 전까지 `<!-- DIAGRAM PLACEHOLDER -->` 주석으로 위치만 표시. diagram-builder 완료 후 삽입
 11. **Related articles URL** — 1번/2번은 실제 경로 사용 (`/resources/learn/what-is-n2sf`, `/resources/learn/public-sector-genai-three-approaches`), 3번은 `#` placeholder
-12. **N²SF 표기** — 본문/제목/메타 모두 `N&sup2;SF` 또는 unicode `N²SF` 사용 (HTML breadcrumb 포함)
+12. **N2SF 표기** — 본문/제목/메타 모두 `N&sup2;SF` 또는 unicode `N2SF` 사용 (HTML breadcrumb 포함)
 13. **Blockquote 처리** — 두 개의 blockquote는 `ds-banner--quote` 또는 quote 스타일 배너 사용 (인용 부호 자동 렌더링). 두 번째 blockquote는 strong 처리된 핵심 문장이므로 시각적 강조 유지
 14. **Meta tags** — `<meta property="og:type" content="article">`, `<meta property="og:locale" content="ko_KR">`
 15. **JSON-LD** — BreadcrumbList + FAQPage schema 포함 (FAQ 4개 항목 모두)

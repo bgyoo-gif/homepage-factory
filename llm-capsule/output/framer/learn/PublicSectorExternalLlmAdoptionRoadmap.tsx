@@ -39,7 +39,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 <!-- 일반 HTML 태그 + .callout + .takeaways만 사용 (기존 learn 아티클과 동일 패턴) -->
 
 <h2>이 글이 다루는 범위</h2>
-<p>이 글은 공공기관이 <strong>외부 상용 LLM(ChatGPT, Claude, Gemini 등)을 업무에 안전하게 활용</strong>하기 위한 도입 절차를 안내하는 실무 가이드입니다. N²SF 모델 2에 부합하는 도입 경로이며, 정보화담당관·보안담당관이 사업 추진 시 단계별로 무엇을 다뤄야 하는지를 정리합니다.</p>
+<p>이 글은 공공기관이 <strong>외부 상용 LLM(ChatGPT, Claude, Gemini 등)을 업무에 안전하게 활용</strong>하기 위한 도입 절차를 안내하는 실무 가이드입니다. N2SF 모델 2에 부합하는 도입 경로이며, 정보화담당관·보안담당관이 사업 추진 시 단계별로 무엇을 다뤄야 하는지를 정리합니다.</p>
 <p>다음 경우는 이 글의 범위 밖이며, 별도 글을 참고하시기 바랍니다.</p>
 <ul>
   <li><strong>sLLM 자체구축 검토 중</strong>: 「sLLM 자체구축, 정말 답일까」 글에서 의사결정 기준을 먼저 정리하시기 바랍니다.</li>
@@ -63,8 +63,8 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 <h3>오해 3 — "한 번 도입하면 끝이다"</h3>
 <p>AI 도입은 1회성 사업이 아닙니다. 사용자 교육, 활용 모니터링, 정책 업데이트, 솔루션 갱신이 지속적으로 필요합니다. 마지막 운영 단계가 단순 마무리가 아니라 가장 중요한 단계인 이유입니다.</p>
 
-<h2>2. N²SF 가이드라인의 5단계 절차</h2>
-<p>외부 LLM 활용 도입은 N²SF 가이드라인이 제시하는 5단계 절차를 그대로 따릅니다. 이 5단계는 N²SF 기반의 모든 정보서비스 도입에 공통 적용되는 표준 절차입니다.</p>
+<h2>2. N2SF 가이드라인의 5단계 절차</h2>
+<p>외부 LLM 활용 도입은 N2SF 가이드라인이 제시하는 5단계 절차를 그대로 따릅니다. 이 5단계는 N2SF 기반의 모든 정보서비스 도입에 공통 적용되는 표준 절차입니다.</p>
 <ol>
   <li><strong>준비(Prepare)</strong>: 활용 시나리오 정의, 정보서비스 구성요소 식별</li>
   <li><strong>위협 식별(Identify)</strong>: 정보 등급 분류, 「위치-주체-객체」 모델링, 보안위협 도출</li>
@@ -84,13 +84,13 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
       </marker>
     </defs>
 
-    <text x="40" y="32" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130">N²SF 5단계 절차 + 시나리오 분기 구조</text>
+    <text x="40" y="32" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130">N2SF 5단계 절차 + 시나리오 분기 구조</text>
 
     <rect x="40" y="60" width="640" height="170" rx="12" fill="#eeebfe" stroke="#5b4fe9" stroke-width="0.5" stroke-dasharray="4 4" fill-opacity="0.5"/>
-    <text x="56" y="82" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#3b2fbf">공통 단계 — N²SF 5단계 중 1~2단계</text>
+    <text x="56" y="82" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#3b2fbf">공통 단계 — N2SF 5단계 중 1~2단계</text>
 
     <rect x="120" y="100" width="200" height="100" rx="8" fill="#eeebfe" stroke="#5b4fe9" stroke-width="0.5"/>
-    <text x="220" y="124" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#5b4fe9" text-anchor="middle">N²SF 1단계 — 준비</text>
+    <text x="220" y="124" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#5b4fe9" text-anchor="middle">N2SF 1단계 — 준비</text>
     <text x="220" y="146" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#3b2fbf" text-anchor="middle">활용 시나리오 정의</text>
     <text x="220" y="164" font-family="Inter, sans-serif" font-size="11" fill="#5b4fe9" text-anchor="middle">부서·업무·정보·기대효과</text>
     <text x="220" y="186" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">참고치: 2~3주</text>
@@ -98,7 +98,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
     <text x="340" y="156" font-family="Inter, sans-serif" font-size="16" fill="#5b4fe9" text-anchor="middle">→</text>
 
     <rect x="360" y="100" width="240" height="100" rx="8" fill="#eeebfe" stroke="#5b4fe9" stroke-width="0.5"/>
-    <text x="480" y="124" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#5b4fe9" text-anchor="middle">N²SF 2단계 — 위협 식별</text>
+    <text x="480" y="124" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#5b4fe9" text-anchor="middle">N2SF 2단계 — 위협 식별</text>
     <text x="480" y="146" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#3b2fbf" text-anchor="middle">정보 등급 분류 + 모델링</text>
     <text x="480" y="164" font-family="Inter, sans-serif" font-size="11" fill="#5b4fe9" text-anchor="middle">C/S/O 평가, 「위치-주체-객체」</text>
     <text x="480" y="186" font-family="Inter, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">참고치: 5~7주</text>
@@ -119,17 +119,17 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
     <text x="56" y="390" font-family="Inter, sans-serif" font-size="11" fill="#0ea5a4">모델 2 표준 절차</text>
 
     <rect x="60" y="404" width="280" height="56" rx="8" fill="#e6f7f6" stroke="#0ea5a4" stroke-width="0.5"/>
-    <text x="76" y="422" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#0ea5a4">N²SF 3단계 — 보안대책 수립</text>
+    <text x="76" y="422" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#0ea5a4">N2SF 3단계 — 보안대책 수립</text>
     <text x="76" y="440" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#0b7f7e">모델 2 준수 솔루션 평가·선정</text>
     <text x="76" y="454" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">참고치: 3~4주</text>
 
     <rect x="60" y="470" width="280" height="56" rx="8" fill="#e6f7f6" stroke="#0ea5a4" stroke-width="0.5"/>
-    <text x="76" y="488" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#0ea5a4">N²SF 4단계 — 구현</text>
+    <text x="76" y="488" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#0ea5a4">N2SF 4단계 — 구현</text>
     <text x="76" y="506" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#0b7f7e">PoC 및 도입</text>
     <text x="76" y="520" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">참고치: 3~4주</text>
 
     <rect x="60" y="536" width="280" height="56" rx="8" fill="#e6f7f6" stroke="#0ea5a4" stroke-width="0.5"/>
-    <text x="76" y="554" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#0ea5a4">N²SF 5단계 — 운영</text>
+    <text x="76" y="554" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#0ea5a4">N2SF 5단계 — 운영</text>
     <text x="76" y="572" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#0b7f7e">운영 체계 구축</text>
     <text x="76" y="586" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">참고치: 3~4주</text>
 
@@ -142,17 +142,17 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
     <text x="376" y="390" font-family="Inter, sans-serif" font-size="11" fill="#b97606">보호 레이어 + 자체 위험평가</text>
 
     <rect x="380" y="404" width="280" height="56" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.5"/>
-    <text x="396" y="422" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606">N²SF 3단계 — 보안대책 수립</text>
+    <text x="396" y="422" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606">N2SF 3단계 — 보안대책 수립</text>
     <text x="396" y="440" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#b97606">보호 레이어 평가 + 자체 위험평가</text>
     <text x="396" y="454" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">참고치: 7~10주</text>
 
     <rect x="380" y="470" width="280" height="56" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.5"/>
-    <text x="396" y="488" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606">N²SF 4단계 — 구현</text>
+    <text x="396" y="488" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606">N2SF 4단계 — 구현</text>
     <text x="396" y="506" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#b97606">PoC + 보호 강도 검증</text>
     <text x="396" y="520" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">참고치: 4~6주</text>
 
     <rect x="380" y="536" width="280" height="56" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.5"/>
-    <text x="396" y="554" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606">N²SF 5단계 — 운영</text>
+    <text x="396" y="554" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606">N2SF 5단계 — 운영</text>
     <text x="396" y="572" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#b97606">운영 체계 + 위험 재평가 체계</text>
     <text x="396" y="586" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">참고치: 3~4주</text>
 
@@ -162,10 +162,10 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
     <text x="360" y="700" font-family="Inter, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">※ 본 일정 수치는 일반적 IT 사업 추진 일정 기반의 참고치. 실제 일정은 기관 환경에 따라 크게 변동 가능.</text>
   </svg>
-  <figcaption style="text-align: center; font-size: 13px; color: #6b7280; margin-top: 8px;">도식 1. N²SF 5단계 절차에 매핑된 외부 LLM 활용 도입 로드맵</figcaption>
+  <figcaption style="text-align: center; font-size: 13px; color: #6b7280; margin-top: 8px;">도식 1. N2SF 5단계 절차에 매핑된 외부 LLM 활용 도입 로드맵</figcaption>
 </figure>
 
-<h2>3. N²SF 1단계 — 준비: 활용 시나리오 정의</h2>
+<h2>3. N2SF 1단계 — 준비: 활용 시나리오 정의</h2>
 <p>가장 먼저 해야 할 일은 <strong>"우리 기관이 외부 LLM을 어떤 업무에 어떻게 활용할 것인가"</strong>를 구체적으로 정의하는 것입니다. 추상적인 "AI 도입"이 아니라, 부서·업무·기대효과를 분명히 합니다.</p>
 <p>활용 시나리오 정의서에 포함될 내용입니다.</p>
 <ul>
@@ -184,11 +184,11 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
 <p>이 단계의 작업 시간은 워크숍을 집중적으로 진행할 경우 약 2~3주 정도가 일반적이지만, 부서 간 합의나 결재 절차가 추가되면 더 길어질 수 있습니다.</p>
 
-<h2>4. N²SF 2단계 — 위협 식별: 등급 분류와 모델링</h2>
-<p>N²SF의 두 번째 단계는 정보 등급 분류와 「위치-주체-객체」 모델링을 통해 보안위협을 식별하는 것입니다. 모델 2 문서는 이 단계의 분석 절차를 구체적으로 제시하고 있으므로, 그대로 따라가시면 됩니다.</p>
+<h2>4. N2SF 2단계 — 위협 식별: 등급 분류와 모델링</h2>
+<p>N2SF의 두 번째 단계는 정보 등급 분류와 「위치-주체-객체」 모델링을 통해 보안위협을 식별하는 것입니다. 모델 2 문서는 이 단계의 분석 절차를 구체적으로 제시하고 있으므로, 그대로 따라가시면 됩니다.</p>
 
 <h3>4.1 정보 등급 분류</h3>
-<p>1단계에서 정의한 입력 정보 예시들을 하나씩 <strong>C/S/O 등급</strong>으로 평가합니다. 분류 기준은 N²SF 가이드라인의 등급 정의를 따르되, 기관 내부 정보보안 정책과 정렬해야 합니다.</p>
+<p>1단계에서 정의한 입력 정보 예시들을 하나씩 <strong>C/S/O 등급</strong>으로 평가합니다. 분류 기준은 N2SF 가이드라인의 등급 정의를 따르되, 기관 내부 정보보안 정책과 정렬해야 합니다.</p>
 <p>산출물은 다음과 같습니다.</p>
 <ul>
   <li><strong>정보자산 등급 분류표</strong>: 각 정보 항목별 C/S/O 분류</li>
@@ -202,7 +202,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 </div>
 
 <h3>4.2 「위치-주체-객체」 모델링</h3>
-<p>등급 분류 결과를 바탕으로 활용 시나리오를 N²SF의 「위치-주체-객체」 모델로 분석합니다. 이 작업은 모델 2 문서의 분석 절차를 그대로 따라가시면 됩니다.</p>
+<p>등급 분류 결과를 바탕으로 활용 시나리오를 N2SF의 「위치-주체-객체」 모델로 분석합니다. 이 작업은 모델 2 문서의 분석 절차를 그대로 따라가시면 됩니다.</p>
 <ul>
   <li><strong>위치(Domain)</strong>: 정보가 처리·저장되는 영역의 등급 (대부분 기관 전산망 S)</li>
   <li><strong>주체(Subject)</strong>: 사용자 단말의 등급 (대부분 업무 단말 S)</li>
@@ -267,7 +267,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
 <h2>6. 시나리오 A 트랙 — O 등급만 활용</h2>
 
-<h3>6.1 N²SF 3단계 — 보안대책 수립: 모델 2 준수 솔루션 평가</h3>
+<h3>6.1 N2SF 3단계 — 보안대책 수립: 모델 2 준수 솔루션 평가</h3>
 <p>시나리오 A에서 필요한 솔루션은 <strong>모델 2의 AI 연계체계 요건을 충족하는 솔루션</strong>입니다. 평가 기준은 다음과 같습니다.</p>
 <ul>
   <li><strong>인증 및 자격</strong>: 조달청 혁신제품 지정, GS 인증, KISA 신속확인 등</li>
@@ -279,7 +279,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 </ul>
 <p>RFP에는 위 기준이 모두 명시되어야 하며, 후보 솔루션은 2~3개로 좁혀 비교하는 것이 효율적입니다. 작업 시간은 약 3~4주 정도가 일반적입니다.</p>
 
-<h3>6.2 N²SF 4단계 — 구현: PoC 및 도입</h3>
+<h3>6.2 N2SF 4단계 — 구현: PoC 및 도입</h3>
 <p>서면 평가만으로는 솔루션의 실제 적합성을 판단하기 어렵습니다. 2~3개 후보 솔루션에 대해 <strong>제한적 환경에서의 PoC(Proof of Concept)</strong>를 수행합니다.</p>
 <p>PoC 검증 항목:</p>
 <ul>
@@ -290,7 +290,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 </ul>
 <p>PoC 작업 시간은 약 3~4주 정도지만, 솔루션 환경 설정과 데이터 준비에 추가 시간이 필요할 수 있습니다.</p>
 
-<h3>6.3 N²SF 5단계 — 운영 체계 구축</h3>
+<h3>6.3 N2SF 5단계 — 운영 체계 구축</h3>
 <p>솔루션 도입과 함께 운영 체계를 마련합니다.</p>
 <ul>
   <li><strong>사용자 교육</strong>: 활용 가능 범위, 금지 사항, 사고 시 대응 절차</li>
@@ -303,7 +303,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
 <h2>7. 시나리오 B 트랙 — S 등급도 활용</h2>
 
-<h3>7.1 N²SF 3단계 — 보안대책 수립: 보호 레이어 평가 + 자체 위험평가</h3>
+<h3>7.1 N2SF 3단계 — 보안대책 수립: 보호 레이어 평가 + 자체 위험평가</h3>
 <p>시나리오 B의 3단계는 시나리오 A보다 복잡합니다. 두 가지 작업이 함께 진행됩니다.</p>
 <p><strong>(1) 보호 레이어 솔루션 평가</strong>: 시나리오 A의 모델 2 준수 요건에 더해 <strong>S 등급 정보를 보호 처리할 수 있는 기술</strong>을 평가합니다.</p>
 <ul>
@@ -313,7 +313,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
   <li><strong>데이터 유용성 유지</strong>: 보호 처리 후 AI 활용 품질(utility) 측정 결과</li>
   <li><strong>품질 인증</strong>: 개인정보보호위원회 품질 기준 등 외부 검증</li>
 </ul>
-<p>이 기준이 충족되지 않는 솔루션은 시나리오 B에 부적합합니다. 단순 마스킹 기반 솔루션은 N²SF 정합성 논증이 약하므로, S 등급 활용에 권장되지 않습니다.</p>
+<p>이 기준이 충족되지 않는 솔루션은 시나리오 B에 부적합합니다. 단순 마스킹 기반 솔루션은 N2SF 정합성 논증이 약하므로, S 등급 활용에 권장되지 않습니다.</p>
 <p><strong>(2) 자체 위험평가 수행</strong>: 모델 2가 다루지 않는 S 등급 활용 시나리오에 대해 기관이 자체적으로 다음을 정리합니다.</p>
 <ul>
   <li><strong>위험 식별</strong>: S 정보 보호 처리·외부 전송 과정의 위험 요인</li>
@@ -329,7 +329,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
 <p>두 작업을 합친 작업 시간은 약 7~10주 정도가 일반적이지만, 외부 자문 일정 확보가 큰 변수입니다.</p>
 
-<h3>7.2 N²SF 4단계 — 구현: PoC + 보호 강도 검증</h3>
+<h3>7.2 N2SF 4단계 — 구현: PoC + 보호 강도 검증</h3>
 <p>시나리오 B의 PoC는 시나리오 A의 기능·보안·성능 검증에 더해 <strong>보호 강도 검증</strong>이 추가됩니다.</p>
 <ul>
   <li><strong>보호 처리 정확도</strong>: 민감정보 식별·보호의 정확도</li>
@@ -339,7 +339,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 </ul>
 <p>작업 시간은 약 4~6주 정도가 일반적이지만, 보호 강도 검증의 깊이에 따라 더 길어질 수 있습니다.</p>
 
-<h3>7.3 N²SF 5단계 — 운영 + 위험 재평가 체계</h3>
+<h3>7.3 N2SF 5단계 — 운영 + 위험 재평가 체계</h3>
 <p>시나리오 A의 운영 체계 구축 항목에 더해 다음을 추가합니다.</p>
 <ul>
   <li><strong>보호 정책 정기 검토</strong>: 보호 기법·키워드·임계값의 주기적 갱신</li>
@@ -431,7 +431,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 <p>앞서 제시한 4개월·6~8개월 추정은 <strong>순수 작업 시간만</strong>을 가정한 수치입니다. 실제 공공기관 도입에서는 다음 행정 절차가 추가되며, 이 절차들이 전체 일정의 절반 이상을 차지하는 경우도 흔합니다.</p>
 
 <h3>9.1 예산 사이클</h3>
-<p>공공기관 예산은 통상 7~8월에 다음 연도 예산이 편성됩니다. 만약 다음 연도부터 본격 도입을 원한다면, 6월 이전에 N²SF 1~2단계(준비, 위협 식별)를 완료해두는 것이 권장됩니다. 이렇게 하면 정확한 예산 산정이 가능하고, 예산 통과 즉시 3단계부터 진행할 수 있습니다. 예산 편성 시점과 도입 시점의 간극으로 인해 사업이 1년 미뤄지는 경우가 흔합니다.</p>
+<p>공공기관 예산은 통상 7~8월에 다음 연도 예산이 편성됩니다. 만약 다음 연도부터 본격 도입을 원한다면, 6월 이전에 N2SF 1~2단계(준비, 위협 식별)를 완료해두는 것이 권장됩니다. 이렇게 하면 정확한 예산 산정이 가능하고, 예산 통과 즉시 3단계부터 진행할 수 있습니다. 예산 편성 시점과 도입 시점의 간극으로 인해 사업이 1년 미뤄지는 경우가 흔합니다.</p>
 
 <h3>9.2 보안성 검토</h3>
 <p>기관 내부 정보보안 책임관의 보안성 검토는 단계별로 여러 번 발생할 수 있습니다. 특히 시나리오 B의 자체 위험평가 결과에 대한 검토는 신중히 이루어지며, 검토에만 4~12주가 소요되는 경우가 있습니다.</p>
@@ -453,7 +453,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 <div class="takeaways">
   <div class="takeaways__label">도입 일정을 단축하는 방법</div>
   <ul>
-    <li>N²SF 1~2단계(준비, 위협 식별)를 예산 편성 전에 미리 완료해둡니다</li>
+    <li>N2SF 1~2단계(준비, 위협 식별)를 예산 편성 전에 미리 완료해둡니다</li>
     <li>조달청 혁신제품 지정 솔루션을 우선 검토합니다 (조달 절차 간소화)</li>
     <li>외부 자문 일정은 사업 시작 시점에 미리 확보해둡니다</li>
     <li>1단계 워크숍에 결재 라인의 의사결정자를 함께 참여시킵니다</li>
@@ -470,7 +470,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 <p>기관 정보보안 책임관이 주관하고, 솔루션 벤더·외부 법무·정보보호 전문가가 자문하는 형태가 일반적입니다. 감사 대응에 직접 사용되는 문서이므로, 외부 감수자 명단을 명시하면 신뢰도가 크게 향상됩니다.</p>
 
 <h3>예산 편성 시점과 도입 일정을 어떻게 맞춰야 하나요?</h3>
-<p>공공기관 예산은 통상 7~8월에 다음 연도 예산이 편성됩니다. 만약 다음 연도부터 본격 도입을 원한다면, 6월 이전에 N²SF 1~2단계(준비, 위협 식별)를 완료해두는 것이 권장됩니다. 이렇게 하면 정확한 예산 산정이 가능하고, 예산 통과 즉시 3단계부터 진행할 수 있습니다.</p>
+<p>공공기관 예산은 통상 7~8월에 다음 연도 예산이 편성됩니다. 만약 다음 연도부터 본격 도입을 원한다면, 6월 이전에 N2SF 1~2단계(준비, 위협 식별)를 완료해두는 것이 권장됩니다. 이렇게 하면 정확한 예산 산정이 가능하고, 예산 통과 즉시 3단계부터 진행할 수 있습니다.</p>
 
 <h3>활용 시나리오를 어떻게 구체화해야 하나요?</h3>
 <p>"AI로 업무 효율화"라는 추상적 표현이 아니라, 다음과 같이 구체적으로 작성합니다. 예: "기획팀에서 정책 보도자료 초안 작성 시 기존 보도자료 데이터베이스를 참고해 초안 1차 안을 생성하는 데 활용. 월 30건 처리 예상. 활용 정보는 모두 외부 공개된 보도자료(O 등급)." 이 정도의 구체성이 있어야 등급 분류와 솔루션 평가 기준이 명확해집니다.</p>
@@ -480,13 +480,13 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
 <h2>참고 자료</h2>
 <ul>
-  <li>국가정보원, 「국가 망 보안체계(N²SF) 보안 가이드라인」, 2024</li>
+  <li>국가정보원, 「국가 망 보안체계(N2SF) 보안 가이드라인」, 2024</li>
   <li>국가정보원, 국가보안기술연구소(NSR), 「국가 망 보안체계 보안 가이드라인 — 정보서비스 모델 해설서: 모델 2. 업무환경에서 생성형 AI 활용」, 2025.9</li>
   <li>「전자정부법」, 「국가정보보안기본지침」</li>
 </ul>
 `
 
-const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"꼭 시나리오 A부터 시작해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"반드시 그렇지는 않습니다. 시나리오 B에서 처음부터 시작하는 것도 가능합니다. 다만 시나리오 B는 자체 위험평가와 보호 강도 검증이 추가되어 도입 기간이 길고, 운영 거버넌스의 부담도 큽니다. 조직 역량이 검증되지 않은 첫 도입 사업에서는 시나리오 A로 시작해 운영 노하우를 쌓은 후 확장하는 것이 안전합니다."}}, {"@type":"Question","name":"자체 위험평가는 누가 작성해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"기관 정보보안 책임관이 주관하고, 솔루션 벤더·외부 법무·정보보호 전문가가 자문하는 형태가 일반적입니다. 감사 대응에 직접 사용되는 문서이므로, 외부 감수자 명단을 명시하면 신뢰도가 크게 향상됩니다."}}, {"@type":"Question","name":"예산 편성 시점과 도입 일정을 어떻게 맞춰야 하나요?","acceptedAnswer":{"@type":"Answer","text":"공공기관 예산은 통상 7~8월에 다음 연도 예산이 편성됩니다. 만약 다음 연도부터 본격 도입을 원한다면, 6월 이전에 N²SF 1~2단계(준비, 위협 식별)를 완료해두는 것이 권장됩니다. 이렇게 하면 정확한 예산 산정이 가능하고, 예산 통과 즉시 3단계부터 진행할 수 있습니다."}}, {"@type":"Question","name":"활용 시나리오를 어떻게 구체화해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"AI로 업무 효율화라는 추상적 표현이 아니라, 다음과 같이 구체적으로 작성합니다. 예: 기획팀에서 정책 보도자료 초안 작성 시 기존 보도자료 데이터베이스를 참고해 초안 1차 안을 생성하는 데 활용. 월 30건 처리 예상. 활용 정보는 모두 외부 공개된 보도자료(O 등급). 이 정도의 구체성이 있어야 등급 분류와 솔루션 평가 기준이 명확해집니다."}}, {"@type":"Question","name":"PoC는 몇 개 솔루션을 대상으로 해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"서면 평가로 2~3개로 좁힌 뒤 모두 PoC를 진행하는 것이 가장 효과적입니다. 1개만 PoC하면 비교가 불가능하고, 4개 이상은 시간·자원 부담이 큽니다. 단, 시나리오 B의 경우 보호 레이어 솔루션 시장이 좁아서 후보가 2개에 그칠 수 있습니다."}} ] }`
+const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"꼭 시나리오 A부터 시작해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"반드시 그렇지는 않습니다. 시나리오 B에서 처음부터 시작하는 것도 가능합니다. 다만 시나리오 B는 자체 위험평가와 보호 강도 검증이 추가되어 도입 기간이 길고, 운영 거버넌스의 부담도 큽니다. 조직 역량이 검증되지 않은 첫 도입 사업에서는 시나리오 A로 시작해 운영 노하우를 쌓은 후 확장하는 것이 안전합니다."}}, {"@type":"Question","name":"자체 위험평가는 누가 작성해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"기관 정보보안 책임관이 주관하고, 솔루션 벤더·외부 법무·정보보호 전문가가 자문하는 형태가 일반적입니다. 감사 대응에 직접 사용되는 문서이므로, 외부 감수자 명단을 명시하면 신뢰도가 크게 향상됩니다."}}, {"@type":"Question","name":"예산 편성 시점과 도입 일정을 어떻게 맞춰야 하나요?","acceptedAnswer":{"@type":"Answer","text":"공공기관 예산은 통상 7~8월에 다음 연도 예산이 편성됩니다. 만약 다음 연도부터 본격 도입을 원한다면, 6월 이전에 N2SF 1~2단계(준비, 위협 식별)를 완료해두는 것이 권장됩니다. 이렇게 하면 정확한 예산 산정이 가능하고, 예산 통과 즉시 3단계부터 진행할 수 있습니다."}}, {"@type":"Question","name":"활용 시나리오를 어떻게 구체화해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"AI로 업무 효율화라는 추상적 표현이 아니라, 다음과 같이 구체적으로 작성합니다. 예: 기획팀에서 정책 보도자료 초안 작성 시 기존 보도자료 데이터베이스를 참고해 초안 1차 안을 생성하는 데 활용. 월 30건 처리 예상. 활용 정보는 모두 외부 공개된 보도자료(O 등급). 이 정도의 구체성이 있어야 등급 분류와 솔루션 평가 기준이 명확해집니다."}}, {"@type":"Question","name":"PoC는 몇 개 솔루션을 대상으로 해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"서면 평가로 2~3개로 좁힌 뒤 모두 PoC를 진행하는 것이 가장 효과적입니다. 1개만 PoC하면 비교가 불가능하고, 4개 이상은 시간·자원 부담이 큽니다. 단, 시나리오 B의 경우 보호 레이어 솔루션 시장이 좁아서 후보가 2개에 그칠 수 있습니다."}} ] }`
 
 export default function PublicSectorExternalLlmAdoptionRoadmap({
   backLabel = "← Learn",
@@ -497,7 +497,7 @@ export default function PublicSectorExternalLlmAdoptionRoadmap({
   readTime = "20분 읽기",
   dateUpdated = "2026년 5월 업데이트",
   tldrLabel = "TL;DR",
-  tldrBody = "공공기관의 외부 LLM 도입은 「위치-주체-객체」를 보안등급별로 평가하는 N²SF 정합성에서 출발합니다. 정보화담당관은 5단계(준비·위협 식별·연계체계 설계·통제 적용·검증)를 분기별로 운영하면서, 시나리오 A(O 등급 공개 활용)는 4개월, 시나리오 B(S 등급 민감 업무)는 6~8개월의 로드맵으로 분기하는 것이 일반적입니다.",
+  tldrBody = "공공기관의 외부 LLM 도입은 「위치-주체-객체」를 보안등급별로 평가하는 N2SF 정합성에서 출발합니다. 정보화담당관은 5단계(준비·위협 식별·연계체계 설계·통제 적용·검증)를 분기별로 운영하면서, 시나리오 A(O 등급 공개 활용)는 4개월, 시나리오 B(S 등급 민감 업무)는 6~8개월의 로드맵으로 분기하는 것이 일반적입니다.",
   bodyHtml = BODY_HTML,
   canonicalUrl = "https://llmcapsule.ai/resources/learn/public-sector-external-llm-adoption-roadmap",
   datePublished = "2026-05-01",
@@ -506,7 +506,7 @@ export default function PublicSectorExternalLlmAdoptionRoadmap({
   breadcrumbLabel = "공공기관 외부 LLM 활용 도입 가이드",
   faqJsonLd = FAQ_JSON_LD,
   relatedSectionLabel = "함께 읽으면 좋은 글",
-  related1Title = "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
+  related1Title = "N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
   related1Href = "/resources/learn/n2sf-model-2-explained",
   related2Title = "공공기관 생성형 AI 도입의 세 가지 길",
   related2Href = "/resources/learn/public-sector-genai-three-approaches",
@@ -1085,7 +1085,7 @@ addPropertyControls(PublicSectorExternalLlmAdoptionRoadmap, {
   readTime: { type: ControlType.String, title: "Read Time", defaultValue: "20분 읽기" },
   dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "2026년 5월 업데이트" },
   tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
-  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "공공기관의 외부 LLM 도입은 「위치-주체-객체」를 보안등급별로 평가하는 N²SF 정합성에서 출발합니다. 정보화담당관은 5단계(준비·위협 식별·연계체계 설계·통제 적용·검증)를 분기별로 운영하면서, 시나리오 A(O 등급 공개 활용)는 4개월, 시나리오 B(S 등급 민감 업무)는 6~8개월의 로드맵으로 분기하는 것이 일반적입니다.", displayTextArea: true },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "공공기관의 외부 LLM 도입은 「위치-주체-객체」를 보안등급별로 평가하는 N2SF 정합성에서 출발합니다. 정보화담당관은 5단계(준비·위협 식별·연계체계 설계·통제 적용·검증)를 분기별로 운영하면서, 시나리오 A(O 등급 공개 활용)는 4개월, 시나리오 B(S 등급 민감 업무)는 6~8개월의 로드맵으로 분기하는 것이 일반적입니다.", displayTextArea: true },
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
   canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/public-sector-external-llm-adoption-roadmap" },
   datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2026-05-01" },
@@ -1094,7 +1094,7 @@ addPropertyControls(PublicSectorExternalLlmAdoptionRoadmap, {
   breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "공공기관 외부 LLM 활용 도입 가이드" },
   faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
   relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "함께 읽으면 좋은 글" },
-  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까" },
   related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/n2sf-model-2-explained" },
   related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "공공기관 생성형 AI 도입의 세 가지 길" },
   related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/public-sector-genai-three-approaches" },

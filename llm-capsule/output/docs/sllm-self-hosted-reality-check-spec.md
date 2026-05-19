@@ -197,7 +197,7 @@
 **1.1 데이터가 외부로 나가지 않는다는 안심감**
 - `ds-section-title-icon` (Shield 아이콘)
 - 단락 1: "가장 큰 매력은 **완전한 데이터 통제**입니다..." (strong: "완전한 데이터 통제")
-- 단락 2: "N²SF 정합성 측면에서도 명확합니다..."
+- 단락 2: "N2SF 정합성 측면에서도 명확합니다..."
 
 **1.2 데이터 주권과 자산화**
 - `ds-section-title-icon` (Database 아이콘)
@@ -537,7 +537,7 @@
 #### References — `ds-bullet--dot`
 
 6개 참고문헌 (원문 그대로):
-1. 국가정보원, 「국가 망 보안체계(N²SF) 보안 가이드라인」, 2024
+1. 국가정보원, 「국가 망 보안체계(N2SF) 보안 가이드라인」, 2024
 2. 국가정보원, 국가보안기술연구소(NSR), 「국가 망 보안체계 보안 가이드라인 — 정보서비스 모델 해설서: 모델 2. 업무환경에서 생성형 AI 활용」, 2025.9
 3. Wang et al., "MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark", 2024
 4. Hugging Face Open LLM Leaderboard, MMLU-Pro 벤치마크 (huggingface.co/spaces/open-llm-leaderboard)
@@ -575,7 +575,7 @@
 | # | Tag (badge) | Title | URL |
 |---|-------------|-------|-----|
 | 1 | 정책 분석 | 공공기관 생성형 AI 도입의 세 가지 길 — AI DLP, sLLM, 레이어 방식 비교 | `/resources/learn/public-sector-genai-three-approaches` |
-| 2 | 정책 분석 | N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까 | `/resources/learn/n2sf-model-2-explained` |
+| 2 | 정책 분석 | N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까 | `/resources/learn/n2sf-model-2-explained` |
 | 3 | 기술 해설 | 단순 비식별화의 한계와 차등정보보호(Differential Privacy)란 무엇인가 | `#` (placeholder, 해당 아티클 미생성 시) |
 
 #### Card Structure
@@ -607,7 +607,7 @@
 |---------|-------|
 | Title | `sLLM 자체구축의 대안을 찾고 계신가요?` |
 | Title brand keyword | `<span class="ds-text--brand">대안</span>` |
-| Description | 큐빅 <span class="ds-text--product">LLM Capsule</span>은 최신 상용 LLM의 성능과 차등정보보호 기반 보호 레이어를 결합한 솔루션입니다. sLLM 자체구축 대비 5년 TCO를 약 1/3 수준으로 낮추면서도, N²SF 모델 2의 보안 요건을 충족합니다. |
+| Description | 큐빅 <span class="ds-text--product">LLM Capsule</span>은 최신 상용 LLM의 성능과 차등정보보호 기반 보호 레이어를 결합한 솔루션입니다. sLLM 자체구축 대비 5년 TCO를 약 1/3 수준으로 낮추면서도, N2SF 모델 2의 보안 요건을 충족합니다. |
 | Primary CTA | "데모 신청하기 →" → `/request-a-demo` |
 | CTA style | `btn--invert` (dark bg → white button) |
 
@@ -620,7 +620,7 @@
       sLLM 자체구축의 <span class="ds-text--brand">대안</span>을 찾고 계신가요?
     </h2>
     <p class="ds-cta-band__description">
-      큐빅 <span class="ds-text--product">LLM Capsule</span>은 최신 상용 LLM의 성능과 차등정보보호 기반 보호 레이어를 결합한 솔루션입니다. sLLM 자체구축 대비 5년 TCO를 약 1/3 수준으로 낮추면서도, N²SF 모델 2의 보안 요건을 충족합니다.
+      큐빅 <span class="ds-text--product">LLM Capsule</span>은 최신 상용 LLM의 성능과 차등정보보호 기반 보호 레이어를 결합한 솔루션입니다. sLLM 자체구축 대비 5년 TCO를 약 1/3 수준으로 낮추면서도, N2SF 모델 2의 보안 요건을 충족합니다.
     </p>
     <div class="ds-cta-band__actions">
       <a href="/request-a-demo" class="ds-btn ds-btn--md btn--invert">데모 신청하기 &rarr;</a>

@@ -43,8 +43,8 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
 <blockquote>공공기관이 외부 상용 생성형 AI를 업무에 활용할 수 있는 <strong>최초의 공식 길잡이</strong>.</blockquote>
 
-<p>이 문장이 갖는 무게를 이해하려면 그 이전 상태를 떠올려야 합니다. 모델 2 발간 이전에는 공공기관이 ChatGPT나 Claude 같은 외부 AI를 업무에 쓸 수 있는 근거가 사실상 없었습니다. 망분리 원칙은 외부 인터넷 서비스 사용을 금지했고, N²SF는 2024년에 발표되었지만 "외부 AI는 어떻게 다뤄야 한다"는 구체적 가이드는 없었습니다. 직원들은 사용하고 싶어했고, 보안 부서는 막아야 했고, 정보화담당관은 답을 줄 근거가 없었습니다.</p>
-<p>모델 2는 이 공백을 메웠습니다. 외부 AI 활용이라는 시나리오를 N²SF 체계 안에서 어떻게 분석하고, 어떤 보안 통제를 적용해야 하는지를 구체적으로 제시합니다. 모든 답을 주지는 않지만, <strong>"이렇게 하면 도입할 수 있다"는 길</strong>을 처음으로 보여준 문서입니다.</p>
+<p>이 문장이 갖는 무게를 이해하려면 그 이전 상태를 떠올려야 합니다. 모델 2 발간 이전에는 공공기관이 ChatGPT나 Claude 같은 외부 AI를 업무에 쓸 수 있는 근거가 사실상 없었습니다. 망분리 원칙은 외부 인터넷 서비스 사용을 금지했고, N2SF는 2024년에 발표되었지만 "외부 AI는 어떻게 다뤄야 한다"는 구체적 가이드는 없었습니다. 직원들은 사용하고 싶어했고, 보안 부서는 막아야 했고, 정보화담당관은 답을 줄 근거가 없었습니다.</p>
+<p>모델 2는 이 공백을 메웠습니다. 외부 AI 활용이라는 시나리오를 N2SF 체계 안에서 어떻게 분석하고, 어떤 보안 통제를 적용해야 하는지를 구체적으로 제시합니다. 모든 답을 주지는 않지만, <strong>"이렇게 하면 도입할 수 있다"는 길</strong>을 처음으로 보여준 문서입니다.</p>
 <p>그리고 동시에, 모델 2는 그 길의 <strong>한계와 폭</strong>도 함께 정의합니다. 모든 정보를 외부 AI에 보낼 수 있는 것이 아니며, 모든 시나리오에 적용되는 것도 아닙니다. 이 글에서는 모델 2가 그어놓은 선이 어디인지를 명확히 보여드리겠습니다.</p>
 
 <h2>2. 모델 2가 다루는 시나리오 — 정확히 무엇인가</h2>
@@ -58,11 +58,11 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
 <blockquote><strong>"기관 전산망(S 등급) 내부에 있는 공무원이, 자신의 업무 단말(S 등급)을 통해, 인터넷에 있는 상용 생성형 AI 서비스(O 등급)를 활용하는 시나리오."</strong></blockquote>
 
-<p>이 시나리오는 모델 2 문서의 [그림 2-1]에서 도식화되어 있으며, N²SF 체계의 「위치-주체-객체」 모델로 정확히 매핑됩니다.</p>
+<p>이 시나리오는 모델 2 문서의 [그림 2-1]에서 도식화되어 있으며, N2SF 체계의 「위치-주체-객체」 모델로 정확히 매핑됩니다.</p>
 
 <figure style="margin: 32px 0;">
   <svg width="100%" viewBox="0 0 680 460" xmlns="http://www.w3.org/2000/svg">
-    <title>N²SF 모델 2 시나리오 개요</title>
+    <title>N2SF 모델 2 시나리오 개요</title>
     <desc>모델 2가 다루는 업무환경에서 생성형 AI 활용 시나리오의 구성요소와 등급 평가</desc>
     <defs>
       <marker id="m2arrowA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -131,7 +131,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 </div>
 
 <h2>3. 두 보안원칙의 적용 — 무엇이 위배되고 무엇이 허용되는가</h2>
-<p>모델 2의 분석은 N²SF의 두 가지 보안원칙을 시나리오에 적용하는 작업에서 시작됩니다. 두 원칙은 모델 2 문서의 p.13에 명시되어 있으며, 각각 무엇을 의미하는지 정확히 짚어보겠습니다.</p>
+<p>모델 2의 분석은 N2SF의 두 가지 보안원칙을 시나리오에 적용하는 작업에서 시작됩니다. 두 원칙은 모델 2 문서의 p.13에 명시되어 있으며, 각각 무엇을 의미하는지 정확히 짚어보겠습니다.</p>
 
 <h3>3.1 「정보 생산·저장」 보안원칙 적용</h3>
 <p>이 원칙은 "어느 등급의 시스템에서 어느 등급의 정보를 만들거나 저장할 수 있는가"를 다룹니다. 모델 2 시나리오에 적용한 결과는 다음과 같습니다.</p>
@@ -412,7 +412,7 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 <p>"자유롭게"라는 표현은 적절하지 않습니다. 모델 2 준수 환경에서도 활용 가능 정보는 O 등급으로 한정되며, AI 연계체계를 경유한 통제된 접근만 가능합니다. 직원이 ChatGPT 사이트에 직접 접속해서 자유롭게 쓰는 형태가 아니라, 기관이 운영하는 AI 연계체계 인터페이스를 통해 사전 승인된 범위에서 사용하게 됩니다.</p>
 
 <h3>S 등급 정보로 외부 AI를 활용하려면 어떻게 해야 하나요?</h3>
-<p>모델 2 범위 내에서는 불가능합니다. S 등급 정보의 외부 AI 활용을 검토하려면, 보호 처리(예: 비식별화·차등정보보호) 후 전송하는 별도의 아키텍처가 필요하며, 그 아키텍처의 N²SF 정합성에 대한 자체 위험 평가가 요구됩니다. 이 영역은 「공공기관 생성형 AI 도입의 세 가지 길」에서 자세히 다룹니다.</p>
+<p>모델 2 범위 내에서는 불가능합니다. S 등급 정보의 외부 AI 활용을 검토하려면, 보호 처리(예: 비식별화·차등정보보호) 후 전송하는 별도의 아키텍처가 필요하며, 그 아키텍처의 N2SF 정합성에 대한 자체 위험 평가가 요구됩니다. 이 영역은 「공공기관 생성형 AI 도입의 세 가지 길」에서 자세히 다룹니다.</p>
 
 <h3>모델 2의 21개 위협과 50개 통제를 모두 충족해야 하나요?</h3>
 <p>문서의 "활용 방안" 절(p.9)에 명시되어 있듯이, 보안통제 항목은 절대적 기준이 아닌 검토 사항입니다. 기관 특성에 맞게 유연하게 적용할 수 있으며, 제시되지 않은 항목을 추가하거나 제시된 항목을 조정·삭제하는 것도 가능합니다. 다만 정당화 논리를 문서화해두는 것이 감사 대응에 필수입니다.</p>
@@ -423,32 +423,32 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 <h2>참고 자료</h2>
 <ul>
   <li>국가정보원, 국가보안기술연구소(NSR), 「국가 망 보안체계 보안 가이드라인 — 정보서비스 모델 해설서: 모델 2. 업무환경에서 생성형 AI 활용」, 2025.9</li>
-  <li>국가정보원, 「국가 망 보안체계(N²SF) 보안 가이드라인」, 2024</li>
+  <li>국가정보원, 「국가 망 보안체계(N2SF) 보안 가이드라인」, 2024</li>
   <li>「전자정부법」, 「국가정보보안기본지침」, 「개인정보 보호법」</li>
 </ul>
 `
 
-const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"모델 2를 따르면 우리 기관 직원들이 ChatGPT를 자유롭게 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"\\"자유롭게\\"라는 표현은 적절하지 않습니다. 모델 2 준수 환경에서도 활용 가능 정보는 O 등급으로 한정되며, AI 연계체계를 경유한 통제된 접근만 가능합니다. 직원이 ChatGPT 사이트에 직접 접속해서 자유롭게 쓰는 형태가 아니라, 기관이 운영하는 AI 연계체계 인터페이스를 통해 사전 승인된 범위에서 사용하게 됩니다."}}, {"@type":"Question","name":"S 등급 정보로 외부 AI를 활용하려면 어떻게 해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"모델 2 범위 내에서는 불가능합니다. S 등급 정보의 외부 AI 활용을 검토하려면, 보호 처리(예: 비식별화·차등정보보호) 후 전송하는 별도의 아키텍처가 필요하며, 그 아키텍처의 N²SF 정합성에 대한 자체 위험 평가가 요구됩니다. 이 영역은 「공공기관 생성형 AI 도입의 세 가지 길」에서 자세히 다룹니다."}}, {"@type":"Question","name":"모델 2의 21개 위협과 50개 통제를 모두 충족해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"문서의 \\"활용 방안\\" 절(p.9)에 명시되어 있듯이, 보안통제 항목은 절대적 기준이 아닌 검토 사항입니다. 기관 특성에 맞게 유연하게 적용할 수 있으며, 제시되지 않은 항목을 추가하거나 제시된 항목을 조정·삭제하는 것도 가능합니다. 다만 정당화 논리를 문서화해두는 것이 감사 대응에 필수입니다."}}, {"@type":"Question","name":"AI 연계체계는 자체 구축이 가능한가요?","acceptedAnswer":{"@type":"Answer","text":"이론상 가능하지만 현실적으로 매우 어렵습니다. 50여 개의 보안통제 항목을 충족하는 시스템을 자체 개발·운영하려면 상당한 인력·예산이 필요하며, 보안 검증의 부담도 큽니다. 대부분의 기관은 외부 솔루션 도입을 선택하며, 조달청 혁신제품 지정·각종 인증을 받은 솔루션이 선택지가 됩니다."}} ] }`
+const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"모델 2를 따르면 우리 기관 직원들이 ChatGPT를 자유롭게 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"\\"자유롭게\\"라는 표현은 적절하지 않습니다. 모델 2 준수 환경에서도 활용 가능 정보는 O 등급으로 한정되며, AI 연계체계를 경유한 통제된 접근만 가능합니다. 직원이 ChatGPT 사이트에 직접 접속해서 자유롭게 쓰는 형태가 아니라, 기관이 운영하는 AI 연계체계 인터페이스를 통해 사전 승인된 범위에서 사용하게 됩니다."}}, {"@type":"Question","name":"S 등급 정보로 외부 AI를 활용하려면 어떻게 해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"모델 2 범위 내에서는 불가능합니다. S 등급 정보의 외부 AI 활용을 검토하려면, 보호 처리(예: 비식별화·차등정보보호) 후 전송하는 별도의 아키텍처가 필요하며, 그 아키텍처의 N2SF 정합성에 대한 자체 위험 평가가 요구됩니다. 이 영역은 「공공기관 생성형 AI 도입의 세 가지 길」에서 자세히 다룹니다."}}, {"@type":"Question","name":"모델 2의 21개 위협과 50개 통제를 모두 충족해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"문서의 \\"활용 방안\\" 절(p.9)에 명시되어 있듯이, 보안통제 항목은 절대적 기준이 아닌 검토 사항입니다. 기관 특성에 맞게 유연하게 적용할 수 있으며, 제시되지 않은 항목을 추가하거나 제시된 항목을 조정·삭제하는 것도 가능합니다. 다만 정당화 논리를 문서화해두는 것이 감사 대응에 필수입니다."}}, {"@type":"Question","name":"AI 연계체계는 자체 구축이 가능한가요?","acceptedAnswer":{"@type":"Answer","text":"이론상 가능하지만 현실적으로 매우 어렵습니다. 50여 개의 보안통제 항목을 충족하는 시스템을 자체 개발·운영하려면 상당한 인력·예산이 필요하며, 보안 검증의 부담도 큽니다. 대부분의 기관은 외부 솔루션 도입을 선택하며, 조달청 혁신제품 지정·각종 인증을 받은 솔루션이 선택지가 됩니다."}} ] }`
 
 export default function N2sfModel2Explained({
   backLabel = "← Learn",
   backHref = "/resources/learn",
-  title = "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
+  title = "N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
   lead = "국가정보원·NSR이 2025년 9월 발간한 「업무환경에서 생성형 AI 활용 모델 해설서」를 정보화담당관 관점에서 정리합니다. 21개 보안위협, 50여 개 보안통제 항목, AI 연계체계까지 처음부터 끝까지.",
   category = "정책 분석",
   readTime = "20분 읽기",
   dateUpdated = "2026년 5월 업데이트",
   tldrLabel = "TL;DR",
-  tldrBody = "N²SF 모델 2는 공공기관이 외부 생성형 AI를 활용할 때 따라야 할 구체적 보안 프레임워크입니다. 「위치(기관 전산망 S) - 주체(이용자 단말 S) - 객체(외부 생성형 AI O)」라는 흐름을 21개 보안위협으로 식별하고, 50여 개 보안통제 항목으로 대응책을 제시합니다. 핵심은 두 보안원칙(정보 생산·저장, 정보 이동)과 AI 연계체계입니다.",
+  tldrBody = "N2SF 모델 2는 공공기관이 외부 생성형 AI를 활용할 때 따라야 할 구체적 보안 프레임워크입니다. 「위치(기관 전산망 S) - 주체(이용자 단말 S) - 객체(외부 생성형 AI O)」라는 흐름을 21개 보안위협으로 식별하고, 50여 개 보안통제 항목으로 대응책을 제시합니다. 핵심은 두 보안원칙(정보 생산·저장, 정보 이동)과 AI 연계체계입니다.",
   bodyHtml = BODY_HTML,
   canonicalUrl = "https://llmcapsule.ai/resources/learn/n2sf-model-2-explained",
   datePublished = "2026-05-01",
   dateModified = "2026-05-01",
   inLanguage = "ko-KR",
-  breadcrumbLabel = "N²SF 모델 2 완벽 해설",
+  breadcrumbLabel = "N2SF 모델 2 완벽 해설",
   faqJsonLd = FAQ_JSON_LD,
   relatedSectionLabel = "함께 읽으면 좋은 글",
-  related1Title = "N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리",
+  related1Title = "N2SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리",
   related1Href = "/resources/learn/what-is-n2sf",
   related2Title = "공공기관 생성형 AI 도입의 세 가지 길",
   related2Href = "/resources/learn/public-sector-genai-three-approaches",
@@ -1021,22 +1021,22 @@ export default function N2sfModel2Explained({
 addPropertyControls(N2sfModel2Explained, {
   backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
   backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
-  title: { type: ControlType.String, title: "Title", defaultValue: "N²SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까" },
   lead: { type: ControlType.String, title: "Lead", defaultValue: "국가정보원·NSR이 2025년 9월 발간한 「업무환경에서 생성형 AI 활용 모델 해설서」를 정보화담당관 관점에서 정리합니다. 21개 보안위협, 50여 개 보안통제 항목, AI 연계체계까지 처음부터 끝까지.", displayTextArea: true },
   category: { type: ControlType.String, title: "Category", defaultValue: "정책 분석" },
   readTime: { type: ControlType.String, title: "Read Time", defaultValue: "20분 읽기" },
   dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "2026년 5월 업데이트" },
   tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
-  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "N²SF 모델 2는 공공기관이 외부 생성형 AI를 활용할 때 따라야 할 구체적 보안 프레임워크입니다. 「위치(기관 전산망 S) - 주체(이용자 단말 S) - 객체(외부 생성형 AI O)」라는 흐름을 21개 보안위협으로 식별하고, 50여 개 보안통제 항목으로 대응책을 제시합니다. 핵심은 두 보안원칙(정보 생산·저장, 정보 이동)과 AI 연계체계입니다.", displayTextArea: true },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "N2SF 모델 2는 공공기관이 외부 생성형 AI를 활용할 때 따라야 할 구체적 보안 프레임워크입니다. 「위치(기관 전산망 S) - 주체(이용자 단말 S) - 객체(외부 생성형 AI O)」라는 흐름을 21개 보안위협으로 식별하고, 50여 개 보안통제 항목으로 대응책을 제시합니다. 핵심은 두 보안원칙(정보 생산·저장, 정보 이동)과 AI 연계체계입니다.", displayTextArea: true },
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
   canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/n2sf-model-2-explained" },
   datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2026-05-01" },
   dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2026-05-01" },
   inLanguage: { type: ControlType.String, title: "Language", defaultValue: "ko-KR" },
-  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "N²SF 모델 2 완벽 해설" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "N2SF 모델 2 완벽 해설" },
   faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
   relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "함께 읽으면 좋은 글" },
-  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "N²SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "N2SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리" },
   related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/what-is-n2sf" },
   related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "공공기관 생성형 AI 도입의 세 가지 길" },
   related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/public-sector-genai-three-approaches" },
