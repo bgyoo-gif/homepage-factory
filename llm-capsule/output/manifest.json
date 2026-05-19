@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-19 17:20:14",
+  "generated": "2026-05-19 17:29:49",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -2502,6 +2502,11 @@
           "name": "NotFound.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/404-v62/tsx/NotFound.tsx",
           "modified": "2026-05-06"
+        },
+        {
+          "name": "LocaleTest.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/_test/LocaleTest.tsx",
+          "modified": "2026-05-19"
         },
         {
           "name": "Section01_Hero.tsx",
