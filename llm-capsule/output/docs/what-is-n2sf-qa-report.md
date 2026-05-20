@@ -95,7 +95,7 @@
 |------|------|
 | 내부 링크 .html 확장자 0건 | PASS |
 | 내부 링크 절대 URL(https://llmcapsule.ai) 0건 | PASS (canonical 메타 제외) |
-| 내부 링크 Framer 상대경로 | PASS — `/resources/learn/n2sf-model-2-explained`, `/resources/learn/public-sector-genai-three-approaches`, `/request-a-demo` 형태. 원본 A타입의 `/learn/` 경로는 Framer 표준 `/resources/learn/`으로 올바르게 변환됨 |
+| 내부 링크 Framer 상대경로 | PASS — `/resources/learn/n2sf-model-2-explained`, `/resources/learn/public-sector-genai-three-approaches-in-korea`, `/request-a-demo` 형태. 원본 A타입의 `/learn/` 경로는 Framer 표준 `/resources/learn/`으로 올바르게 변환됨 |
 | SVG 도식 CSS 변수 hex fallback | PASS — 도식 1(C/S/O 등급), 도식 2(위치-주체-객체) 모든 color 속성에 fallback 포함 |
 | FAQ 5개 아코디언 | PASS — 5개 ds-ac-card 확인(의무적용/망분리폐지/분류주체/모델해설서/비용) |
 | 비교표(table) | 해당 없음 — 원본 A타입에 비교표 없음 |

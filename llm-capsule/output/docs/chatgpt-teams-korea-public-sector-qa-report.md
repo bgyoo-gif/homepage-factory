@@ -93,7 +93,7 @@
 /resources/learn/n2sf-model-2-explained
 /resources/learn/public-sector-2026-management-evaluation-ai-incentive
 /resources/learn/public-sector-chatgpt-input-guide
-/resources/learn/public-sector-genai-three-approaches
+/resources/learn/public-sector-genai-three-approaches-in-korea
 /resources/learn/sllm-self-hosted-reality-check
 /resources/learn/what-is-n2sf
 /request-a-demo

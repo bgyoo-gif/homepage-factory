@@ -48,4 +48,4 @@
 - [x] "삼성도 막지 못한" 표현 잔여 0건 (HTML / bodyhtml / TSX / spec / build-learn-tsx.py 전수 확인)
 
 ## 결론
-**모든 항목 PASS.** revised 본문 기준 재생성 완료, 직전 작업(public-sector-genai-three-approaches revised)과 동일 패턴 유지, llm-capsule v6.2 토큰 준수.
+**모든 항목 PASS.** revised 본문 기준 재생성 완료, 직전 작업(public-sector-genai-three-approaches-in-korea revised)과 동일 패턴 유지, llm-capsule v6.2 토큰 준수.

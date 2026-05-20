@@ -614,7 +614,7 @@
 | # | Tag (badge) | Title | URL |
 |---|-------------|-------|-----|
 | 1 | 정책 분석 | N2SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리 | `/resources/learn/what-is-n2sf` |
-| 2 | 정책 분석 | 공공기관 생성형 AI 도입의 세 가지 길 — AI DLP, sLLM, 레이어 방식 비교 | `/resources/learn/public-sector-genai-three-approaches` |
+| 2 | 정책 분석 | 공공기관 생성형 AI 도입의 세 가지 길 — AI DLP, sLLM, 레이어 방식 비교 | `/resources/learn/public-sector-genai-three-approaches-in-korea` |
 | 3 | 기술 해설 | 단순 비식별화의 한계와 차등정보보호(Differential Privacy)란 무엇인가 | `#` (placeholder — 추후 교체) |
 
 #### Card Structure
@@ -831,7 +831,7 @@ B타입 HTML 생성 후, 다음 2개 다이어그램을 `diagram-builder` 에이
 8. **비교 카테고리 테이블 반응형** — mobile에서 `overflow-x: auto` + scrollbar 숨김 (`scrollbar-width: none` + `::-webkit-scrollbar { display: none; }`)
 9. **Highlight row 처리** — 9번째 행에 `ds-table__row--highlight` 클래스 적용 → `background-color: var(--c-primary-soft)` + `font-weight: 600`
 10. **SVG 도식 placeholder** — diagram-builder 완료 전까지 `<!-- DIAGRAM PLACEHOLDER -->` 주석으로 위치만 표시. diagram-builder 완료 후 삽입
-11. **Related articles URL** — 1번/2번은 실제 경로 사용 (`/resources/learn/what-is-n2sf`, `/resources/learn/public-sector-genai-three-approaches`), 3번은 `#` placeholder
+11. **Related articles URL** — 1번/2번은 실제 경로 사용 (`/resources/learn/what-is-n2sf`, `/resources/learn/public-sector-genai-three-approaches-in-korea`), 3번은 `#` placeholder
 12. **N2SF 표기** — 본문/제목/메타 모두 `N&sup2;SF` 또는 unicode `N2SF` 사용 (HTML breadcrumb 포함)
 13. **Blockquote 처리** — 두 개의 blockquote는 `ds-banner--quote` 또는 quote 스타일 배너 사용 (인용 부호 자동 렌더링). 두 번째 blockquote는 strong 처리된 핵심 문장이므로 시각적 강조 유지
 14. **Meta tags** — `<meta property="og:type" content="article">`, `<meta property="og:locale" content="ko_KR">`

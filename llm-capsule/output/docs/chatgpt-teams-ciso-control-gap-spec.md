@@ -35,7 +35,7 @@
 6. **Section 3: 다중 모델 환경에서의 통제 일관성** (텍스트 2단락 + 6행 비교 테이블 + 마무리 1단락)
 7. **Section 4: 위탁과 책임의 구분** (텍스트 3단락 + 3개 불릿 + 마무리 1단락)
 8. **Section 5: 사전 통제 모델이 필요한 이유** (텍스트 2단락 + 5행 비교 테이블 + 텍스트 2단락 + 참고 자료 ul + 저자 정보)
-9. **Related Articles** — 3개 카드(chatgpt-teams-korea-public-sector, public-sector-genai-three-approaches, public-sector-chatgpt-input-guide)
+9. **Related Articles** — 3개 카드(chatgpt-teams-korea-public-sector, public-sector-genai-three-approaches-in-korea, public-sector-chatgpt-input-guide)
 10. **CTA Band** — LLM Capsule 데모 신청 CTA
 
 ## 디자인 시스템 매핑

@@ -183,7 +183,7 @@
 
 ## Related Articles (4)
 
-1. 공공기관 생성형 AI 도입의 세 가지 길 — `/resources/learn/public-sector-genai-three-approaches`
+1. 공공기관 생성형 AI 도입의 세 가지 길 — `/resources/learn/public-sector-genai-three-approaches-in-korea`
 2. N2SF 모델 2 완벽 해설 — `/resources/learn/n2sf-model-2-explained`
 3. ChatGPT 구독하는 공공기관, 어떤 정보까지 입력해도 될까 — `/resources/learn/public-sector-chatgpt-input-guide`
 4. 공공기관 외부 LLM 활용 도입 가이드 — `/resources/learn/public-sector-external-llm-adoption-roadmap`

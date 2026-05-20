@@ -79,7 +79,7 @@
 
 ### 추가 검증 항목
 - CTA section이 `<section>` 태그이고 `<main>` 내부에 있음 (L.1326, main 종료 L.1340)
-- 내부 링크 Framer 상대경로 형식 준수: `/`, `/resources`, `/resources/learn`, `/resources/learn/what-is-n2sf`, `/resources/learn/public-sector-genai-three-approaches`, `/request-a-demo` — `.html` 확장자 없음, 절대 URL 없음
+- 내부 링크 Framer 상대경로 형식 준수: `/`, `/resources`, `/resources/learn`, `/resources/learn/what-is-n2sf`, `/resources/learn/public-sector-genai-three-approaches-in-korea`, `/request-a-demo` — `.html` 확장자 없음, 절대 URL 없음
 - Framer TSX: `llm-capsule/output/framer/learn/` 폴더는 존재하나 `n2sf-model-2-explained` 전용 TSX 없음 — 동기화 불필요
 - `ds-bg--grad-deep` 1페이지 1회 사용 (중복 없음)
 - 원본 임의 초록 (#7ab564, #e6f5e1 등) 잔존 0건 — DS teal 계열로 전환 완료

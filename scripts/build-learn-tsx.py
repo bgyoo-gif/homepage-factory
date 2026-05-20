@@ -147,7 +147,7 @@ PROPS_SPEC = [
 ARTICLES = [
     # ── Pattern A: pre-extracted bodyhtml (learn_post_01~04) ──
     {
-        "slug": "public-sector-genai-three-approaches",
+        "slug": "public-sector-genai-three-approaches-in-korea",
         "component": "PublicSectorGenaiThreeApproaches",
         "source_type": "bodyhtml",
         "title": "공공기관 생성형 AI 도입의 세 가지 길",
@@ -157,7 +157,7 @@ ARTICLES = [
         "dateUpdated": "2026년 5월 업데이트",
         "tldrLabel": "TL;DR",
         "tldrBody": "공공기관의 생성형 AI 도입은 AI DLP·차단, sLLM 자체구축, 게이트웨이 방식의 세 갈래로 나뉩니다. 차단 방식은 안전하지만 활용을 포기해야 하고, sLLM 자체구축은 7~13억 원의 초기 비용에 더해 최신 상용 모델과의 성능 격차가 누적됩니다. 게이트웨이 방식은 비용과 성능의 균형을 잡지만, 내부 보호 기법의 수준이 N2SF 정합성을 결정합니다. 단순 마스킹은 재식별 공격에 취약하며, 차등정보보호(Differential Privacy) 기반의 게이트웨이가 수학적으로 검증된 유일한 답에 가깝습니다.",
-        "canonicalUrl": "https://llmcapsule.ai/resources/learn/public-sector-genai-three-approaches",
+        "canonicalUrl": "https://llmcapsule.ai/resources/learn/public-sector-genai-three-approaches-in-korea",
         "datePublished": "2026-05-01",
         "dateModified": "2026-05-01",
         "inLanguage": "ko-KR",
@@ -187,7 +187,7 @@ ARTICLES = [
         "breadcrumbLabel": "N2SF란 무엇인가",
         "related": [
             ("N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까", "/resources/learn/n2sf-model-2-explained"),
-            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches"),
+            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches-in-korea"),
             ("기업 AI를 위한 차등 프라이버시", "/resources/learn/differential-privacy-for-enterprise-llm"),
             ("", ""),
         ],
@@ -210,7 +210,7 @@ ARTICLES = [
         "breadcrumbLabel": "N2SF 모델 2 완벽 해설",
         "related": [
             ("N2SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리", "/resources/learn/what-is-n2sf"),
-            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches"),
+            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches-in-korea"),
             ("sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프", "/resources/learn/sllm-self-hosted-reality-check"),
             ("", ""),
         ],
@@ -232,7 +232,7 @@ ARTICLES = [
         "inLanguage": "ko-KR",
         "breadcrumbLabel": "sLLM 자체구축, 정말 답일까",
         "related": [
-            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches"),
+            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches-in-korea"),
             ("N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까", "/resources/learn/n2sf-model-2-explained"),
             ("N2SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리", "/resources/learn/what-is-n2sf"),
             ("", ""),
@@ -256,7 +256,7 @@ ARTICLES = [
         "breadcrumbLabel": "공공기관 외부 LLM 활용 도입 가이드",
         "related": [
             ("N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까", "/resources/learn/n2sf-model-2-explained"),
-            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches"),
+            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches-in-korea"),
             ("공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지", "/resources/learn/public-sector-genai-five-stuck-points"),
             ("", ""),
         ],
@@ -279,7 +279,7 @@ ARTICLES = [
         "breadcrumbLabel": "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지",
         "related": [
             ("공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵", "/resources/learn/public-sector-external-llm-adoption-roadmap"),
-            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches"),
+            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches-in-korea"),
             ("sLLM 자체구축, 정말 답일까", "/resources/learn/sllm-self-hosted-reality-check"),
             ("", ""),
         ],
@@ -302,7 +302,7 @@ ARTICLES = [
         "breadcrumbLabel": "2026 경영평가 'AI 활용 등 혁신' 가점",
         "related": [
             ("공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵", "/resources/learn/public-sector-external-llm-adoption-roadmap"),
-            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches"),
+            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches-in-korea"),
             ("공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지", "/resources/learn/public-sector-genai-five-stuck-points"),
             ("", ""),
         ],
@@ -324,7 +324,7 @@ ARTICLES = [
         "inLanguage": "ko-KR",
         "breadcrumbLabel": "공공기관의 ChatGPT Teams 사용 — 한국 규제 환경 적합성 분석",
         "related": [
-            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches"),
+            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches-in-korea"),
             ("N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까", "/resources/learn/n2sf-model-2-explained"),
             ("ChatGPT 구독하는 공공기관, 어떤 정보까지 입력해도 될까", "/resources/learn/public-sector-chatgpt-input-guide"),
             ("공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵", "/resources/learn/public-sector-external-llm-adoption-roadmap"),
@@ -348,7 +348,7 @@ ARTICLES = [
         "breadcrumbLabel": "ChatGPT Teams의 관리자 콘솔, CISO에게 충분한가",
         "related": [
             ("안전하다는 ChatGPT Teams, 한국 공공 영역에서 사용해도 괜찮을까", "/resources/learn/chatgpt-teams-korea-public-sector"),
-            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches"),
+            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches-in-korea"),
             ("ChatGPT 구독하는 공공기관, 어떤 정보까지 입력해도 될까", "/resources/learn/public-sector-chatgpt-input-guide"),
             ("", ""),
         ],
@@ -372,7 +372,7 @@ ARTICLES = [
         "related": [
             ("공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵", "/resources/learn/public-sector-external-llm-adoption-roadmap"),
             ("N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까", "/resources/learn/n2sf-model-2-explained"),
-            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches"),
+            ("공공기관 생성형 AI 도입의 세 가지 길", "/resources/learn/public-sector-genai-three-approaches-in-korea"),
             ("", ""),
         ],
     },

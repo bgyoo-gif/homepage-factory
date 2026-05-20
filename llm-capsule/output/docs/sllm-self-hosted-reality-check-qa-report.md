@@ -65,7 +65,7 @@
 | CTA section 태그 + main 내부 | PASS — `<section id="section-cta">` L1232, `</main>` L1246 |
 | FAQ 아코디언 | PASS — 4개 질문 모두 `ds-ac-card` 구조, toggleAcCard JS 정상 |
 | JSON-LD 구조화 데이터 | PASS — Article + BreadcrumbList + FAQPage 3개 스키마 정의됨 |
-| 내부 링크 Framer 상대경로 | PASS — `/`, `/resources`, `/resources/learn`, `/resources/learn/public-sector-genai-three-approaches`, `/resources/learn/n2sf-model-2-explained`, `/request-a-demo` 모두 상대경로. `.html` 확장자 없음 |
+| 내부 링크 Framer 상대경로 | PASS — `/`, `/resources`, `/resources/learn`, `/resources/learn/public-sector-genai-three-approaches-in-korea`, `/resources/learn/n2sf-model-2-explained`, `/request-a-demo` 모두 상대경로. `.html` 확장자 없음 |
 | 절대 URL 사용 (잘못된) | PASS — canonical, og:url, breadcrumb JSON-LD의 llmcapsule.ai URL은 SEO 메타 용도로 적합 |
 | TSX 동기화 | N/A — `llm-capsule/output/framer/learn/` 폴더에 sllm-self-hosted-reality-check 미존재. 동기화 불필요 |
 

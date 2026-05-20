@@ -42,7 +42,7 @@ const CARDS: Card[] = [
     categoryLabel: "POLICY · 정책 분석",
     title: "공공기관 생성형 AI 도입의 세 가지 길",
     desc: "AI DLP·차단, sLLM 자체구축, 게이트웨이 방식 — N2SF 시대 공공기관의 선택지를 비용·성능·보안·정합성 관점에서 객관적으로 비교합니다.",
-    href: "/resources/learn/public-sector-genai-three-approaches",
+    href: "/resources/learn/public-sector-genai-three-approaches-in-korea",
   },
   {
     category: "policy",

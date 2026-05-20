@@ -375,7 +375,7 @@ export default function PublicSectorChatgptInputGuide({
   related2Title = "N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
   related2Href = "/resources/learn/n2sf-model-2-explained",
   related3Title = "공공기관 생성형 AI 도입의 세 가지 길",
-  related3Href = "/resources/learn/public-sector-genai-three-approaches",
+  related3Href = "/resources/learn/public-sector-genai-three-approaches-in-korea",
   related4Title = "",
   related4Href = "",
 }: Props) {
@@ -963,7 +963,7 @@ addPropertyControls(PublicSectorChatgptInputGuide, {
   related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까" },
   related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/n2sf-model-2-explained" },
   related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "공공기관 생성형 AI 도입의 세 가지 길" },
-  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/public-sector-genai-three-approaches" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/public-sector-genai-three-approaches-in-korea" },
   related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
   related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
 })

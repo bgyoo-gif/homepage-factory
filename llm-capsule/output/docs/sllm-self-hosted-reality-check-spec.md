@@ -574,7 +574,7 @@
 
 | # | Tag (badge) | Title | URL |
 |---|-------------|-------|-----|
-| 1 | 정책 분석 | 공공기관 생성형 AI 도입의 세 가지 길 — AI DLP, sLLM, 레이어 방식 비교 | `/resources/learn/public-sector-genai-three-approaches` |
+| 1 | 정책 분석 | 공공기관 생성형 AI 도입의 세 가지 길 — AI DLP, sLLM, 레이어 방식 비교 | `/resources/learn/public-sector-genai-three-approaches-in-korea` |
 | 2 | 정책 분석 | N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까 | `/resources/learn/n2sf-model-2-explained` |
 | 3 | 기술 해설 | 단순 비식별화의 한계와 차등정보보호(Differential Privacy)란 무엇인가 | `#` (placeholder, 해당 아티클 미생성 시) |
 
@@ -812,7 +812,7 @@ B타입 HTML 생성 후, 다음 2개 다이어그램을 `diagram-builder` 에이
 6. **capsule brand tokens** — `:root`에 `--c-primary`, `--c-teal`, `--c-coral`, `--c-amber`, `--c-ink` 등 capsule 전용 변수 선언
 7. **Button style** — `btn--primary`는 solid ink bg, hover primary. gradient 버튼 폐기
 8. **SVG 도식 placeholder** — diagram-builder 완료 전까지 `<!-- DIAGRAM PLACEHOLDER -->` 주석으로 위치만 표시. diagram-builder 완료 후 삽입
-9. **Related articles URL** — `/resources/learn/public-sector-genai-three-approaches` 및 `/resources/learn/n2sf-model-2-explained`는 실제 경로. 3번 카드는 `#` placeholder.
+9. **Related articles URL** — `/resources/learn/public-sector-genai-three-approaches-in-korea` 및 `/resources/learn/n2sf-model-2-explained`는 실제 경로. 3번 카드는 `#` placeholder.
 10. **Meta tags** — `<meta property="og:type" content="article">`, `<meta property="og:locale" content="ko_KR">`
 11. **JSON-LD** — Article + BreadcrumbList + FAQPage schema 포함
 12. **word-break: keep-all** — 한국어 텍스트 줄바꿈을 위해 필수
