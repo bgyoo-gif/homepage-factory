@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-19 17:29:49",
+  "generated": "2026-05-20 14:26:04",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -433,6 +433,11 @@
           "name": "_preview_LearnArticle_HospitalAiDeploymentPhiProtection.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/hospital-ai-deployment-phi-protection/_preview_LearnArticle_HospitalAiDeploymentPhiProtection.html",
           "modified": "2026-05-08"
+        },
+        {
+          "name": "learn_post_09_differential_privacy (2).html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/learn_post_09_differential_privacy (2).html",
+          "modified": "2026-05-20"
         },
         {
           "name": "_preview_LearnArticle_OnPremLlmExecutionPath.html",
@@ -1162,7 +1167,7 @@
         {
           "name": "chatgpt-teams-ciso-control-gap-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/chatgpt-teams-ciso-control-gap-b-type.html",
-          "modified": "2026-05-18"
+          "modified": "2026-05-20"
         },
         {
           "name": "chatgpt-teams-ciso-control-gap-bodyhtml.html",
@@ -1172,12 +1177,22 @@
         {
           "name": "chatgpt-teams-korea-public-sector-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/chatgpt-teams-korea-public-sector-b-type.html",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "chatgpt-teams-korea-public-sector-bodyhtml.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/chatgpt-teams-korea-public-sector-bodyhtml.html",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
+        },
+        {
+          "name": "differential-privacy-explained-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/differential-privacy-explained-b-type.html",
+          "modified": "2026-05-20"
+        },
+        {
+          "name": "differential-privacy-explained-bodyhtml.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/differential-privacy-explained-bodyhtml.html",
+          "modified": "2026-05-20"
         },
         {
           "name": "downloads-b-type.html",
@@ -1242,7 +1257,7 @@
         {
           "name": "n2sf-model-2-explained-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/n2sf-model-2-explained-b-type.html",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "n2sf-model-2-explained-bodyhtml.html",
@@ -1292,7 +1307,7 @@
         {
           "name": "public-sector-external-llm-adoption-roadmap-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/public-sector-external-llm-adoption-roadmap-b-type.html",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "public-sector-external-llm-adoption-roadmap-bodyhtml.html",
@@ -1302,7 +1317,7 @@
         {
           "name": "public-sector-genai-five-stuck-points-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/public-sector-genai-five-stuck-points-b-type.html",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "public-sector-genai-five-stuck-points-bodyhtml.html",
@@ -1312,7 +1327,7 @@
         {
           "name": "public-sector-genai-three-approaches-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/public-sector-genai-three-approaches-b-type.html",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "public-sector-genai-three-approaches-bodyhtml.html",
@@ -1357,7 +1372,7 @@
         {
           "name": "sllm-self-hosted-reality-check-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/sllm-self-hosted-reality-check-b-type.html",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "sllm-self-hosted-reality-check-bodyhtml.html",
@@ -1402,7 +1417,7 @@
         {
           "name": "what-is-n2sf-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/what-is-n2sf-b-type.html",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "what-is-n2sf-bodyhtml.html",
@@ -1459,27 +1474,37 @@
         {
           "name": "chatgpt-teams-ciso-control-gap-qa-report.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/chatgpt-teams-ciso-control-gap-qa-report.md",
-          "modified": "2026-05-18"
+          "modified": "2026-05-20"
         },
         {
           "name": "chatgpt-teams-ciso-control-gap-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/chatgpt-teams-ciso-control-gap-spec.md",
-          "modified": "2026-05-18"
+          "modified": "2026-05-20"
         },
         {
           "name": "chatgpt-teams-korea-public-sector-qa-report.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/chatgpt-teams-korea-public-sector-qa-report.md",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "chatgpt-teams-korea-public-sector-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/chatgpt-teams-korea-public-sector-spec.md",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "diagram-llm-capsule-qa-report.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/diagram-llm-capsule-qa-report.md",
           "modified": "2026-04-07"
+        },
+        {
+          "name": "differential-privacy-explained-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/differential-privacy-explained-qa-report.md",
+          "modified": "2026-05-20"
+        },
+        {
+          "name": "differential-privacy-explained-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/differential-privacy-explained-spec.md",
+          "modified": "2026-05-20"
         },
         {
           "name": "downloads-qa-report.md",
@@ -1519,12 +1544,12 @@
         {
           "name": "n2sf-model-2-explained-qa-report.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/n2sf-model-2-explained-qa-report.md",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "n2sf-model-2-explained-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/n2sf-model-2-explained-spec.md",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "pricing-qa-report.md",
@@ -1569,7 +1594,7 @@
         {
           "name": "public-sector-external-llm-adoption-roadmap-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/public-sector-external-llm-adoption-roadmap-spec.md",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "public-sector-genai-five-stuck-points-qa-report.md",
@@ -1579,17 +1604,17 @@
         {
           "name": "public-sector-genai-five-stuck-points-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/public-sector-genai-five-stuck-points-spec.md",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "public-sector-genai-three-approaches-qa-report.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/public-sector-genai-three-approaches-qa-report.md",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "public-sector-genai-three-approaches-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/public-sector-genai-three-approaches-spec.md",
-          "modified": "2026-05-11"
+          "modified": "2026-05-20"
         },
         {
           "name": "request-pov-qa-report.md",
@@ -1629,12 +1654,12 @@
         {
           "name": "sllm-self-hosted-reality-check-qa-report.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/sllm-self-hosted-reality-check-qa-report.md",
-          "modified": "2026-05-11"
+          "modified": "2026-05-20"
         },
         {
           "name": "sllm-self-hosted-reality-check-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/sllm-self-hosted-reality-check-spec.md",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "solutions-spec.md",
@@ -1664,12 +1689,12 @@
         {
           "name": "what-is-n2sf-qa-report.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/what-is-n2sf-qa-report.md",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "what-is-n2sf-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/what-is-n2sf-spec.md",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "zero-exposure-spec.md",
@@ -2504,11 +2529,6 @@
           "modified": "2026-05-06"
         },
         {
-          "name": "LocaleTest.tsx",
-          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/_test/LocaleTest.tsx",
-          "modified": "2026-05-19"
-        },
-        {
           "name": "Section01_Hero.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/ai-data-pipeline-protection/tsx/Section01_Hero.tsx",
           "modified": "2026-05-06"
@@ -2617,6 +2637,11 @@
           "name": "Section09_CTAStrip.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/architecture-v62/tsx/Section09_CTAStrip.tsx",
           "modified": "2026-05-06"
+        },
+        {
+          "name": "LocaleTest.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/diag/LocaleTest.tsx",
+          "modified": "2026-05-19"
         },
         {
           "name": "Section01_Hero.tsx",
@@ -2981,97 +3006,102 @@
         {
           "name": "AiOnNetworkOperationsData.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/AiOnNetworkOperationsData.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "ChatgptTeamsCisoControlGap.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/ChatgptTeamsCisoControlGap.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "ChatgptTeamsKoreaPublicSector.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/ChatgptTeamsKoreaPublicSector.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
+        },
+        {
+          "name": "DifferentialPrivacyExplained.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/DifferentialPrivacyExplained.tsx",
+          "modified": "2026-05-20"
         },
         {
           "name": "DifferentialPrivacyForEnterpriseLlm.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/DifferentialPrivacyForEnterpriseLlm.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "HospitalAiDeploymentPhiProtection.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/HospitalAiDeploymentPhiProtection.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "Learn.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/Learn.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "N2sfModel2Explained.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/N2sfModel2Explained.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "OnPremLlmExecutionPath.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/OnPremLlmExecutionPath.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "PiiGuardrailsVsOperationalDataProtection.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/PiiGuardrailsVsOperationalDataProtection.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "PilotToProductionEnterpriseAi.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/PilotToProductionEnterpriseAi.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "PublicSector2026ManagementEvaluationAiIncentive.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/PublicSector2026ManagementEvaluationAiIncentive.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "PublicSectorChatgptInputGuide.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/PublicSectorChatgptInputGuide.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "PublicSectorExternalLlmAdoptionRoadmap.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/PublicSectorExternalLlmAdoptionRoadmap.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "PublicSectorGenaiFiveStuckPoints.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/PublicSectorGenaiFiveStuckPoints.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "PublicSectorGenaiThreeApproaches.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/PublicSectorGenaiThreeApproaches.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "SllmSelfHostedRealityCheck.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/SllmSelfHostedRealityCheck.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "SovereignAiEuropeanEnterprises.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/SovereignAiEuropeanEnterprises.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "TelecomNocAiDeployment.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/TelecomNocAiDeployment.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "WhatIsN2sf.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/WhatIsN2sf.tsx",
-          "modified": "2026-05-19"
+          "modified": "2026-05-20"
         },
         {
           "name": "LearnArticle_AiOnNetworkOperationsData.tsx",
