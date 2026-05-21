@@ -885,6 +885,504 @@ addPropertyControls({component}, {{
 """
 
 
+# ─────────────────────────────────────────────────────────────────────────
+# Learn index (Learn.tsx) auto-generation — multi-locale + skipInIndex filter
+# ─────────────────────────────────────────────────────────────────────────
+
+# Per-slug category code + skipInIndex flag.
+# `category` matches a key in CATEGORY_LABELS.
+# `skipInIndex` excludes the article from the Learn index (e.g., Framer redirect sources).
+ARTICLE_INDEX_META = {
+    "public-sector-genai-three-approaches-in-korea": {"category": "policy", "skipInIndex": False},
+    "what-is-n2sf": {"category": "policy", "skipInIndex": False},
+    "n2sf-model-2-explained": {"category": "policy", "skipInIndex": False},
+    "sllm-self-hosted-reality-check": {"category": "policy", "skipInIndex": False},
+    "public-sector-external-llm-adoption-roadmap": {"category": "policy", "skipInIndex": False},
+    "public-sector-genai-five-stuck-points": {"category": "policy-field", "skipInIndex": False},
+    "public-sector-2026-management-evaluation-ai-incentive": {"category": "policy", "skipInIndex": False},
+    "chatgpt-teams-korea-public-sector": {"category": "policy", "skipInIndex": False},
+    "chatgpt-teams-ciso-control-gap": {"category": "policy", "skipInIndex": False},
+    "differential-privacy-explained": {"category": "definition", "skipInIndex": False},
+    "public-sector-chatgpt-input-guide": {"category": "policy", "skipInIndex": False},
+    "pilot-to-production-enterprise-ai": {"category": "strategy", "skipInIndex": False},
+    "telecom-noc-ai-deployment": {"category": "industry-telecom", "skipInIndex": False},
+    "hospital-ai-deployment-phi-protection": {"category": "industry-healthcare", "skipInIndex": False},
+    "ai-on-network-operations-data": {"category": "industry-telecom", "skipInIndex": False},
+    "pii-guardrails-vs-operational-data-protection": {"category": "comparison", "skipInIndex": False},
+    "sovereign-ai-european-enterprises": {"category": "architecture-sovereign", "skipInIndex": False},
+    "differential-privacy-for-enterprise-llm": {"category": "architecture-dp", "skipInIndex": False},
+    "on-prem-llm-execution-path": {"category": "architecture-onprem", "skipInIndex": False},
+}
+
+CATEGORY_LABELS = {
+    "policy":                {"en": "POLICY",                              "ko": "정책 분석",                       "de": "POLITIK"},
+    "policy-field":          {"en": "POLICY · FIELD",                      "ko": "정책 · 현장 분석",                "de": "POLITIK · FELD"},
+    "definition":            {"en": "DEFINITION",                          "ko": "정의",                            "de": "DEFINITION"},
+    "strategy":              {"en": "STRATEGY",                            "ko": "전략",                            "de": "STRATEGIE"},
+    "industry-telecom":      {"en": "INDUSTRY · TELECOM",                  "ko": "산업 · 통신",                     "de": "BRANCHE · TELEKOM"},
+    "industry-healthcare":   {"en": "INDUSTRY · HEALTHCARE",               "ko": "산업 · 헬스케어",                 "de": "BRANCHE · GESUNDHEIT"},
+    "comparison":            {"en": "COMPARISON",                          "ko": "비교",                            "de": "VERGLEICH"},
+    "architecture-sovereign": {"en": "ARCHITECTURE · SOVEREIGN AI",        "ko": "아키텍처 · 주권 AI",              "de": "ARCHITEKTUR · SOUVERÄNE KI"},
+    "architecture-dp":       {"en": "ARCHITECTURE · DIFFERENTIAL PRIVACY", "ko": "아키텍처 · 차등 프라이버시",       "de": "ARCHITEKTUR · DIFFERENTIELLE PRIVATSPHÄRE"},
+    "architecture-onprem":   {"en": "ARCHITECTURE · ON-PREM",              "ko": "아키텍처 · 온프레미스",           "de": "ARCHITEKTUR · ON-PREM"},
+}
+
+# Map category code → top-level filter tab key (used in the existing tabs UI).
+CATEGORY_TO_TAB = {
+    "policy": "policy",
+    "policy-field": "policy",
+    "definition": "definition",
+    "strategy": "strategy",
+    "industry-telecom": "industry",
+    "industry-healthcare": "industry",
+    "comparison": "comparison",
+    "architecture-sovereign": "architecture",
+    "architecture-dp": "architecture",
+    "architecture-onprem": "architecture",
+}
+
+
+def get_canonical_locale(in_language: str) -> str:
+    """ko-KR → ko, en-US → en, de-DE → de."""
+    return in_language.split("-")[0].lower() if in_language else "en"
+
+
+def collect_article_locale_data(article: dict) -> dict:
+    """For a given ARTICLES entry, return per-locale {title, desc}.
+    Sources:
+      - canonical language: from article fields (bodyhtml type) or parse_input_article (input type)
+      - other locales: from translation md files (Section 01 Hero pairs).
+    """
+    slug = article["slug"]
+
+    # Resolve canonical title/lead/inLanguage depending on source_type
+    if article.get("source_type") == "input":
+        try:
+            meta = parse_input_article(article)
+        except FileNotFoundError:
+            return {}
+        title = meta["title"]
+        lead = meta["lead"]
+        in_language = meta["inLanguage"]
+    else:
+        title = article.get("title", "")
+        lead = article.get("lead", "")
+        in_language = article.get("inLanguage", "en")
+
+    canonical = get_canonical_locale(in_language)
+    out = {canonical: {"title": title, "desc": lead}}
+
+    for lang in ("en", "ko", "de"):
+        if lang == canonical:
+            continue
+        md = TRANSLATIONS_DIR / f"{slug}-{lang}-lines.md"
+        translations = parse_translation_md_learn(md)
+        if translations.get("title") and translations.get("lead"):
+            out[lang] = {
+                "title": translations["title"],
+                "desc": translations["lead"],
+            }
+    return out
+
+
+def build_learn_index_tsx() -> str:
+    """Generate the complete Learn.tsx (index page) with multi-locale + skipInIndex."""
+
+    # Build LEARN_CARDS data
+    cards_data = []
+    for article in ARTICLES:
+        slug = article["slug"]
+        meta = ARTICLE_INDEX_META.get(slug)
+        if not meta:
+            print(f"  ⚠️  {slug}: no ARTICLE_INDEX_META — skipped", file=sys.stderr)
+            continue
+
+        per_locale = collect_article_locale_data(article)
+        available_locales = list(per_locale.keys())
+
+        cards_data.append({
+            "slug": slug,
+            "category": meta["category"],
+            "skipInIndex": meta["skipInIndex"],
+            "href": f"/resources/learn/{slug}",
+            "locales": available_locales,
+            "per_locale": per_locale,
+        })
+
+    # Emit LEARN_CARDS array
+    card_lines = []
+    for c in cards_data:
+        title_dict = ", ".join(
+            f'{loc}: "{js_string_escape(c["per_locale"][loc]["title"])}"'
+            for loc in c["locales"]
+        )
+        desc_dict = ", ".join(
+            f'{loc}: "{js_string_escape(c["per_locale"][loc]["desc"])}"'
+            for loc in c["locales"]
+        )
+        locales_arr = ", ".join(f'"{l}"' for l in c["locales"])
+        skip = "true" if c["skipInIndex"] else "false"
+        card_lines.append(
+            f'  {{ slug: "{c["slug"]}", category: "{c["category"]}", '
+            f'href: "{c["href"]}", locales: [{locales_arr}], skipInIndex: {skip}, '
+            f'title: {{ {title_dict} }}, desc: {{ {desc_dict} }} }},'
+        )
+    cards_block = "\n".join(card_lines)
+
+    # Emit CATEGORY_LABELS map (only the categories actually used)
+    used_categories = sorted({c["category"] for c in cards_data})
+    cat_lines = []
+    for cat in used_categories:
+        labels = CATEGORY_LABELS.get(cat, {"en": cat, "ko": cat, "de": cat})
+        cat_lines.append(
+            f'  "{cat}": {{ '
+            f'en: "{js_string_escape(labels["en"])}", '
+            f'ko: "{js_string_escape(labels["ko"])}", '
+            f'de: "{js_string_escape(labels["de"])}" '
+            f'}},'
+        )
+    cat_block = "\n".join(cat_lines)
+
+    # Emit CATEGORY_TO_TAB
+    tab_lines = []
+    for cat in used_categories:
+        tab = CATEGORY_TO_TAB.get(cat, "policy")
+        tab_lines.append(f'  "{cat}": "{tab}",')
+    tab_block = "\n".join(tab_lines)
+
+    return f"""// AUTO-GENERATED. Do not edit by hand.
+// Generator: scripts/build-learn-tsx.py (build_learn_index_tsx)
+// To regenerate: python3 scripts/build-learn-tsx.py
+//
+// Learn index page (v6.2 design) — multi-locale (en/ko/de) + skipInIndex filter.
+// LEARN_CARDS auto-synced with ARTICLES list. Per-locale title/desc extracted
+// from translation md files.
+
+import {{ addPropertyControls, ControlType }} from "framer"
+import {{ useState }} from "react"
+
+type Locale = "en" | "ko" | "de"
+
+interface Props {{
+  locale?: Locale
+  // Hero
+  eyebrow?: string
+  heroTitle?: string
+  heroLead?: string
+
+  // Tab labels
+  labelAll?: string
+  labelPolicy?: string
+  labelIndustry?: string
+  labelArchitecture?: string
+  labelStrategy?: string
+  labelComparison?: string
+  labelDefinition?: string
+
+  readLabel?: string
+}}
+
+type CardData = {{
+  slug: string
+  category: string
+  href: string
+  locales: Locale[]
+  skipInIndex: boolean
+  title: Partial<Record<Locale, string>>
+  desc: Partial<Record<Locale, string>>
+}}
+
+const LEARN_CARDS: CardData[] = [
+{cards_block}
+]
+
+const CATEGORY_LABELS: Record<string, Record<Locale, string>> = {{
+{cat_block}
+}}
+
+const CATEGORY_TO_TAB: Record<string, string> = {{
+{tab_block}
+}}
+
+// Hero text per locale (fallback to props if user overrides)
+const HERO_TRANSLATIONS: Record<Locale, {{ eyebrow: string; heroTitle: string; heroLead: string; readLabel: string }}> = {{
+  en: {{
+    eyebrow: "Resources · Learn",
+    heroTitle: "Learn articles for regulated enterprise AI",
+    heroLead: "Industry deployment guides, architecture deep-dives, comparison frameworks, and Korean public-sector policy analysis.",
+    readLabel: "Read →",
+  }},
+  ko: {{
+    eyebrow: "리소스 · Learn",
+    heroTitle: "규제 환경 엔터프라이즈 AI를 위한 Learn 아티클",
+    heroLead: "산업 도입 가이드, 아키텍처 심층 분석, 비교 프레임워크, 한국 공공 정책 분석을 다룹니다.",
+    readLabel: "읽기 →",
+  }},
+  de: {{
+    eyebrow: "Ressourcen · Learn",
+    heroTitle: "Learn-Artikel für regulierte Enterprise-KI",
+    heroLead: "Brancheneinsatz-Guides, Architektur-Analysen, Vergleichs-Frameworks und Politikanalysen aus dem koreanischen Public Sector.",
+    readLabel: "Lesen →",
+  }},
+}}
+
+const TAB_TRANSLATIONS: Record<string, Record<Locale, string>> = {{
+  all: {{ en: "All", ko: "전체", de: "Alle" }},
+  policy: {{ en: "Policy", ko: "정책", de: "Politik" }},
+  industry: {{ en: "Industry", ko: "산업", de: "Branche" }},
+  architecture: {{ en: "Architecture", ko: "아키텍처", de: "Architektur" }},
+  strategy: {{ en: "Strategy", ko: "전략", de: "Strategie" }},
+  comparison: {{ en: "Comparison", ko: "비교", de: "Vergleich" }},
+  definition: {{ en: "Definition", ko: "정의", de: "Definition" }},
+}}
+
+export default function Learn({{
+  locale = "en",
+  eyebrow = "",
+  heroTitle = "",
+  heroLead = "",
+  labelAll = "",
+  labelPolicy = "",
+  labelIndustry = "",
+  labelArchitecture = "",
+  labelStrategy = "",
+  labelComparison = "",
+  labelDefinition = "",
+  readLabel = "",
+}}: Props) {{
+  const hero = HERO_TRANSLATIONS[locale] || HERO_TRANSLATIONS.en
+  const _eyebrow = eyebrow || hero.eyebrow
+  const _heroTitle = heroTitle || hero.heroTitle
+  const _heroLead = heroLead || hero.heroLead
+  const _readLabel = readLabel || hero.readLabel
+
+  const t = (key: string) => TAB_TRANSLATIONS[key]?.[locale] || TAB_TRANSLATIONS[key]?.en || key
+  const filters = [
+    {{ key: "all", label: labelAll || t("all") }},
+    {{ key: "policy", label: labelPolicy || t("policy") }},
+    {{ key: "industry", label: labelIndustry || t("industry") }},
+    {{ key: "architecture", label: labelArchitecture || t("architecture") }},
+    {{ key: "strategy", label: labelStrategy || t("strategy") }},
+    {{ key: "comparison", label: labelComparison || t("comparison") }},
+    {{ key: "definition", label: labelDefinition || t("definition") }},
+  ]
+
+  const [activeTab, setActiveTab] = useState("all")
+
+  // Filter: locale availability + skipInIndex + active tab
+  const visibleCards = LEARN_CARDS.filter((c) => {{
+    if (c.skipInIndex) return false
+    if (!c.locales.includes(locale)) return false
+    if (activeTab !== "all" && CATEGORY_TO_TAB[c.category] !== activeTab) return false
+    return true
+  }})
+
+  const localePrefix = locale === "en" ? "" : `/${{locale}}`
+
+  return (
+    <>
+      <style>{{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+        .lrn-root {{
+          width: 100%;
+          container-type: inline-size;
+          font-family: var(--f-display, 'Inter', sans-serif);
+          color: var(--c-ink, #0f1130);
+          background-color: var(--c-bg, #ffffff);
+          -webkit-font-smoothing: antialiased;
+          word-break: keep-all;
+          overflow-wrap: break-word;
+        }}
+
+        .lrn-container {{
+          max-width: 1280px;
+          margin: 0 auto;
+          padding: 0 clamp(20px, 4vw, 80px);
+        }}
+
+        .lrn-hero {{
+          padding: clamp(80px, 9vw, 140px) 0 clamp(48px, 6vw, 72px);
+          text-align: center;
+          border-bottom: 1px solid var(--c-rule, #e5e7eb);
+        }}
+        .lrn-hero__inner {{ max-width: 860px; margin: 0 auto; }}
+        .lrn-hero__eyebrow {{
+          display: inline-block;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: var(--c-primary, #5b4fe9);
+          margin-bottom: 20px;
+        }}
+        .lrn-hero__title {{
+          font-size: clamp(32px, 4.5vw, 56px);
+          font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;
+          color: var(--c-ink, #0f1130); margin: 0 0 20px;
+        }}
+        .lrn-hero__lead {{
+          font-size: clamp(16px, 1.4vw, 19px);
+          line-height: 1.65; color: var(--c-ink-soft, #3a3d5e);
+          margin: 0 auto; max-width: 720px;
+        }}
+
+        .lrn-tabs-wrap {{ padding: clamp(32px, 4vw, 56px) 0 0; }}
+        .lrn-tabs {{
+          display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+        }}
+        .lrn-tab {{
+          appearance: none;
+          background: var(--c-bg, #ffffff);
+          border: 1px solid var(--c-rule, #e5e7eb);
+          border-radius: 999px; padding: 8px 18px;
+          font-family: inherit; font-size: 13px; font-weight: 600;
+          letter-spacing: -0.01em; color: var(--c-ink-soft, #3a3d5e);
+          cursor: pointer;
+          transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+        }}
+        .lrn-tab:hover {{
+          border-color: var(--c-ink, #0f1130); color: var(--c-ink, #0f1130);
+        }}
+        .lrn-tab--active {{
+          background-color: var(--c-ink, #0f1130);
+          border-color: var(--c-ink, #0f1130); color: #ffffff;
+        }}
+
+        .lrn-grid-wrap {{ padding: clamp(40px, 5vw, 72px) 0 clamp(80px, 9vw, 140px); }}
+        .lrn-grid {{
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          gap: clamp(16px, 2vw, 24px);
+        }}
+        .lrn-card {{
+          display: flex; flex-direction: column;
+          gap: 12px; padding: 24px;
+          background: var(--c-bg, #ffffff);
+          border: 1px solid var(--c-rule, #e5e7eb);
+          border-radius: 12px;
+          text-decoration: none; color: inherit;
+          transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+          min-height: 200px;
+        }}
+        .lrn-card:hover {{
+          border-color: var(--c-ink, #0f1130);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(15, 17, 48, 0.08);
+        }}
+        .lrn-card__cat {{
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: var(--c-primary, #5b4fe9);
+        }}
+        .lrn-card__title {{
+          font-size: 17px; font-weight: 700; line-height: 1.4;
+          letter-spacing: -0.01em; color: var(--c-ink, #0f1130);
+          margin: 0;
+        }}
+        .lrn-card__desc {{
+          font-size: 14px; line-height: 1.6;
+          color: var(--c-ink-soft, #3a3d5e);
+          margin: 0; flex: 1;
+        }}
+        .lrn-card__link {{
+          align-self: flex-start; margin-top: 4px;
+          font-size: 13px; font-weight: 600;
+          color: var(--c-primary, #5b4fe9);
+        }}
+        .lrn-card:hover .lrn-card__link {{
+          color: var(--c-primary-dark, #3b2fbf);
+        }}
+
+        .lrn-empty {{
+          text-align: center; padding: clamp(40px, 5vw, 72px) 0;
+          color: var(--c-muted, #6b7280); font-size: 15px;
+        }}
+
+        @container (max-width: 639px) {{
+          .lrn-hero {{ padding-top: 60px; }}
+          .lrn-hero__title {{ font-size: 28px; }}
+          .lrn-hero__lead {{ font-size: 15px; }}
+          .lrn-card {{ padding: 20px 18px; }}
+          .lrn-card__title {{ font-size: 16px; }}
+        }}
+      `}}</style>
+
+      <div className="lrn-root">
+        <section className="lrn-hero">
+          <div className="lrn-container">
+            <div className="lrn-hero__inner">
+              <div className="lrn-hero__eyebrow">{{_eyebrow}}</div>
+              <h1 className="lrn-hero__title">{{_heroTitle}}</h1>
+              <p className="lrn-hero__lead">{{_heroLead}}</p>
+            </div>
+          </div>
+        </section>
+
+        <div className="lrn-tabs-wrap">
+          <div className="lrn-container">
+            <div className="lrn-tabs" role="tablist">
+              {{filters.map((f) => (
+                <button
+                  key={{f.key}}
+                  type="button"
+                  role="tab"
+                  aria-selected={{activeTab === f.key}}
+                  onClick={{() => setActiveTab(f.key)}}
+                  className={{`lrn-tab${{activeTab === f.key ? " lrn-tab--active" : ""}}`}}
+                >
+                  {{f.label}}
+                </button>
+              ))}}
+            </div>
+          </div>
+        </div>
+
+        <div className="lrn-grid-wrap">
+          <div className="lrn-container">
+            {{visibleCards.length === 0 ? (
+              <div className="lrn-empty">No articles available for this locale yet.</div>
+            ) : (
+              <div className="lrn-grid">
+                {{visibleCards.map((c) => {{
+                  const title = c.title[locale] || c.title.en || c.slug
+                  const desc = c.desc[locale] || c.desc.en || ""
+                  const catLabel = CATEGORY_LABELS[c.category]?.[locale] || c.category
+                  return (
+                    <a key={{c.slug}} href={{`${{localePrefix}}${{c.href}}`}} className="lrn-card">
+                      <div className="lrn-card__cat">{{catLabel}}</div>
+                      <h3 className="lrn-card__title">{{title}}</h3>
+                      <p className="lrn-card__desc">{{desc}}</p>
+                      <span className="lrn-card__link">{{_readLabel}}</span>
+                    </a>
+                  )
+                }})}}
+              </div>
+            )}}
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}}
+
+addPropertyControls(Learn, {{
+  locale: {{ type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" }},
+  eyebrow: {{ type: ControlType.String, title: "Eyebrow", defaultValue: "" }},
+  heroTitle: {{ type: ControlType.String, title: "Hero Title", defaultValue: "" }},
+  heroLead: {{ type: ControlType.String, title: "Hero Lead", defaultValue: "", displayTextArea: true }},
+  labelAll: {{ type: ControlType.String, title: "Tab: All", defaultValue: "" }},
+  labelPolicy: {{ type: ControlType.String, title: "Tab: Policy", defaultValue: "" }},
+  labelIndustry: {{ type: ControlType.String, title: "Tab: Industry", defaultValue: "" }},
+  labelArchitecture: {{ type: ControlType.String, title: "Tab: Architecture", defaultValue: "" }},
+  labelStrategy: {{ type: ControlType.String, title: "Tab: Strategy", defaultValue: "" }},
+  labelComparison: {{ type: ControlType.String, title: "Tab: Comparison", defaultValue: "" }},
+  labelDefinition: {{ type: ControlType.String, title: "Tab: Definition", defaultValue: "" }},
+  readLabel: {{ type: ControlType.String, title: "Read Label", defaultValue: "" }},
+}})
+"""
+
+
 def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     print(f"Output: {OUT_DIR}")
@@ -901,6 +1399,16 @@ def main():
             continue
 
     print(f"\nDone. {len(ARTICLES)} articles generated.")
+
+    # Generate Learn.tsx index page
+    learn_index_path = OUT_DIR / "Learn.tsx"
+    try:
+        learn_tsx = build_learn_index_tsx()
+        learn_index_path.write_text(learn_tsx, encoding="utf-8")
+        size_kb = learn_index_path.stat().st_size / 1024
+        print(f"\n  ✓ Learn.tsx (index) ({size_kb:.1f} KB)")
+    except Exception as e:
+        print(f"  ✗ Learn.tsx (index) FAIL: {e}", file=sys.stderr)
 
 
 if __name__ == "__main__":

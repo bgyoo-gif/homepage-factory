@@ -1,18 +1,24 @@
-// Learn index page (v6.2 design).
-// Self-contained Framer Code Component.
-// Hero + Category filter tabs + Card grid (30 articles).
-// No external imports — Framer cross-folder compatible.
+// AUTO-GENERATED. Do not edit by hand.
+// Generator: scripts/build-learn-tsx.py (build_learn_index_tsx)
+// To regenerate: python3 scripts/build-learn-tsx.py
+//
+// Learn index page (v6.2 design) — multi-locale (en/ko/de) + skipInIndex filter.
+// LEARN_CARDS auto-synced with ARTICLES list. Per-locale title/desc extracted
+// from translation md files.
 
 import { addPropertyControls, ControlType } from "framer"
-import { useEffect, useState } from "react"
+import { useState } from "react"
+
+type Locale = "en" | "ko" | "de"
 
 interface Props {
+  locale?: Locale
   // Hero
   eyebrow?: string
   heroTitle?: string
   heroLead?: string
 
-  // Category tab labels (translation-friendly)
+  // Tab labels
   labelAll?: string
   labelPolicy?: string
   labelIndustry?: string
@@ -21,287 +27,141 @@ interface Props {
   labelComparison?: string
   labelDefinition?: string
 
-  // Read CTA label
   readLabel?: string
 }
 
-type CategoryKey = "policy" | "industry" | "architecture" | "strategy" | "comparison" | "definition"
-
-type Card = {
-  category: CategoryKey
-  categoryLabel: string
-  title: string
-  desc: string
+type CardData = {
+  slug: string
+  category: string
   href: string
+  locales: Locale[]
+  skipInIndex: boolean
+  title: Partial<Record<Locale, string>>
+  desc: Partial<Record<Locale, string>>
 }
 
-const CARDS: Card[] = [
-  // ── POLICY (7) ─────────────────────────────────────────────────
-  {
-    category: "policy",
-    categoryLabel: "POLICY · 정책 분석",
-    title: "공공기관 생성형 AI 도입의 세 가지 길",
-    desc: "AI DLP·차단, sLLM 자체구축, 게이트웨이 방식 — N2SF 시대 공공기관의 선택지를 비용·성능·보안·정합성 관점에서 객관적으로 비교합니다.",
-    href: "/resources/learn/public-sector-genai-three-approaches-in-korea",
-  },
-  {
-    category: "policy",
-    categoryLabel: "POLICY · 정책 분석",
-    title: "N2SF란 무엇인가 — 공공기관 보안의 새 패러다임",
-    desc: "국가 망 보안체계(N2SF)는 망분리에서 다중계층보안(MLS)으로의 전환입니다. C/S/O 등급 체계와 「위치-주체-객체」 모델링을 정리합니다.",
-    href: "/resources/learn/what-is-n2sf",
-  },
-  {
-    category: "policy",
-    categoryLabel: "POLICY · 정책 분석",
-    title: "N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
-    desc: "국가정보원·NSR이 2025년 9월 발간한 「업무환경에서 생성형 AI 활용 모델 해설서」를 정보화담당관 관점에서 정리합니다.",
-    href: "/resources/learn/n2sf-model-2-explained",
-  },
-  {
-    category: "policy",
-    categoryLabel: "POLICY · 정책 분석",
-    title: "sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프",
-    desc: "공공기관 sLLM 자체구축의 진짜 비용(5년 28~38억), 상용 LLM 대비 성능 격차 추세, 잘못된 선택 패턴을 분석합니다.",
-    href: "/resources/learn/sllm-self-hosted-reality-check",
-  },
-  {
-    category: "policy",
-    categoryLabel: "POLICY · 정책 분석",
-    title: "공공기관 외부 LLM 활용 도입 가이드 — 분기 로드맵",
-    desc: "정보화담당관 관점에서 외부 LLM 도입을 분기별 5단계로 정리합니다. 시나리오 A 4개월 vs 시나리오 B 6~8개월 로드맵 비교.",
-    href: "/resources/learn/public-sector-external-llm-adoption-roadmap",
-  },
-  {
-    category: "policy",
-    categoryLabel: "POLICY · 현장 분석",
-    title: "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지",
-    desc: "등급 분류 부담, 시나리오와 O 등급 충돌, 솔루션 후보 부족, 예산 시점 불일치, 활용 실패 — 다섯 막힘 지점.",
-    href: "/resources/learn/public-sector-genai-five-stuck-points",
-  },
-  {
-    category: "policy",
-    categoryLabel: "POLICY · 정책 분석",
-    title: "2026 경영평가 'AI 활용 등 혁신' 가점 — 공공기관 핵심 경쟁력",
-    desc: "2026 경영평가편람에 신설된 'AI 활용 등 혁신' 가점 1.5점이 공공기관 경쟁력에 어떤 영향을 주는지 정리합니다.",
-    href: "/resources/learn/public-sector-2026-management-evaluation-ai-incentive",
-  },
-  {
-    category: "policy",
-    categoryLabel: "POLICY · 정책 분석",
-    title: "ChatGPT 구독하는 공공기관, 어떤 정보까지 입력해도 될까",
-    desc: "외부 상용 LLM 구독 후 가장 자주 마주치는 질문 — 5가지 실무 사례로 판단의 어려움을 짚고, 세 가지 접근 방식(가이드라인 / LLM 제한 / 보호 레이어)을 정리.",
-    href: "/resources/learn/public-sector-chatgpt-input-guide",
-  },
-
-  // ── INDUSTRY (3) ───────────────────────────────────────────────
-  {
-    category: "industry",
-    categoryLabel: "INDUSTRY · TELECOM",
-    title: "How to deploy AI in a telecom NOC without exposing network data",
-    desc: "Step-by-step deployment guide. Validated at SK Telecom and Deutsche Telekom T Challenge 2026 Top 12.",
-    href: "/resources/learn/telecom-noc-ai-deployment",
-  },
-  {
-    category: "industry",
-    categoryLabel: "INDUSTRY · HEALTHCARE",
-    title: "How to deploy AI in a hospital without exposing PHI",
-    desc: "HIPAA-aligned playbook for hospital CIOs and clinical informatics. Deployed at EUMC.",
-    href: "/resources/learn/hospital-ai-deployment-phi-protection",
-  },
-  {
-    category: "industry",
-    categoryLabel: "INDUSTRY · TELECOM",
-    title: "AI on network operations data — NOC, RCA, and workflow execution",
-    desc: "How to bring AI to NOC logs, alarm sequences, incident tickets — without exposing operational identifiers.",
-    href: "/resources/learn/ai-on-network-operations-data",
-  },
-
-  // ── ARCHITECTURE (3) ───────────────────────────────────────────
-  {
-    category: "architecture",
-    categoryLabel: "ARCHITECTURE · ON-PREM",
-    title: "On-premise LLM execution path",
-    desc: "Path B architecture deep-dive: quantized model, internal GPU, vLLM, full air-gap.",
-    href: "/resources/learn/on-prem-llm-execution-path",
-  },
-  {
-    category: "architecture",
-    categoryLabel: "ARCHITECTURE · SOVEREIGN AI",
-    title: "Sovereign AI for European enterprises — practical architecture",
-    desc: "GDPR + EU AI Act + national data residency. Two execution paths under one governance framework.",
-    href: "/resources/learn/sovereign-ai-european-enterprises",
-  },
-  {
-    category: "architecture",
-    categoryLabel: "ARCHITECTURE · DIFFERENTIAL PRIVACY",
-    title: "Differential privacy for enterprise LLM",
-    desc: "Beyond field masking — DP noise, k-anonymity, and semantic tokenization for operational data.",
-    href: "/resources/learn/differential-privacy-for-enterprise-llm",
-  },
-
-  // ── STRATEGY (1) ───────────────────────────────────────────────
-  {
-    category: "strategy",
-    categoryLabel: "STRATEGY · PILOT TO PRODUCTION",
-    title: "Why enterprise AI pilots stall — and how they get to production",
-    desc: "Diagnostic for executives running an AI program. The pattern that ships to production.",
-    href: "/resources/learn/pilot-to-production-enterprise-ai",
-  },
-
-  // ── COMPARISON (7) ─────────────────────────────────────────────
-  {
-    category: "comparison",
-    categoryLabel: "COMPARISON",
-    title: "PII guardrails vs operational data protection",
-    desc: "Field-level filters vs structure-preserving + DP-based encapsulation — what regulated workflows actually need.",
-    href: "/resources/learn/pii-guardrails-vs-operational-data-protection",
-  },
-  {
-    category: "comparison",
-    categoryLabel: "COMPARISON",
-    title: "LLM Capsule vs Masking Tools",
-    desc: "Field-level masking vs structure-preserving capsule — what each does, what each leaves on the table.",
-    href: "/resources/learn/llm-capsule-vs-masking-tools",
-  },
-  {
-    category: "comparison",
-    categoryLabel: "COMPARISON",
-    title: "LLM Capsule vs Prompt Security Gateways",
-    desc: "Prompt-level threat defense vs data-layer enablement — where each layer fits.",
-    href: "/resources/learn/llm-capsule-vs-prompt-security-gateways",
-  },
-  {
-    category: "comparison",
-    categoryLabel: "COMPARISON",
-    title: "LLM Capsule vs Synthetic Data Platforms",
-    desc: "Synthetic generation for training vs live capsule for production — different problems, different solutions.",
-    href: "/resources/learn/llm-capsule-vs-synthetic-data-platforms",
-  },
-  {
-    category: "comparison",
-    categoryLabel: "COMPARISON",
-    title: "On-Premise vs Cloud AI Data Protection",
-    desc: "Deployment-mode trade-offs for regulated enterprise AI workflows.",
-    href: "/resources/learn/on-premise-vs-cloud-ai-data-protection",
-  },
-  {
-    category: "comparison",
-    categoryLabel: "COMPARISON",
-    title: "PII Protection vs Enterprise Confidentiality Control",
-    desc: "Standard PII detection vs context-aware enterprise confidentiality markers.",
-    href: "/resources/learn/pii-protection-vs-enterprise-confidentiality-control",
-  },
-  {
-    category: "comparison",
-    categoryLabel: "COMPARISON",
-    title: "Structure-Preserving Processing vs Flat Masking",
-    desc: "Why tables, sequences, and cross-references matter for AI workflow quality.",
-    href: "/resources/learn/structure-preserving-processing-vs-flat-masking",
-  },
-
-  // ── DEFINITION (9) ─────────────────────────────────────────────
-  {
-    category: "definition",
-    categoryLabel: "DEFINITION",
-    title: "Secure Enterprise AI Data Workflows",
-    desc: "What 'secure' means in enterprise AI workflows beyond field-level masking.",
-    href: "/resources/learn/secure-enterprise-ai-data-workflows",
-  },
-  {
-    category: "definition",
-    categoryLabel: "DEFINITION",
-    title: "Enterprise AI Document Processing",
-    desc: "How regulated enterprises process documents through AI while keeping sensitive elements local.",
-    href: "/resources/learn/enterprise-ai-document-processing",
-  },
-  {
-    category: "definition",
-    categoryLabel: "DEFINITION",
-    title: "What Is an AI Data Capsule",
-    desc: "The capsule pattern: structure-preserving encapsulation + restoration inside the trust boundary.",
-    href: "/resources/learn/what-is-ai-data-capsule",
-  },
-  {
-    category: "definition",
-    categoryLabel: "DEFINITION",
-    title: "How to Use AI on Sensitive Enterprise Data",
-    desc: "Practical patterns for AI workflows over regulated operational data.",
-    href: "/resources/learn/how-to-use-ai-on-sensitive-enterprise-data",
-  },
-  {
-    category: "definition",
-    categoryLabel: "DEFINITION",
-    title: "Why Redaction Breaks Enterprise AI Workflows",
-    desc: "Why permanent removal destroys the context AI needs to produce useful output.",
-    href: "/resources/learn/why-redaction-breaks-enterprise-ai-workflows",
-  },
-  {
-    category: "definition",
-    categoryLabel: "DEFINITION",
-    title: "Structure-Preserving Document Processing",
-    desc: "Tables, layouts, and cross-references survive the process intact.",
-    href: "/resources/learn/structure-preserving-document-processing",
-  },
-  {
-    category: "definition",
-    categoryLabel: "DEFINITION",
-    title: "AI Data Pipeline Protection",
-    desc: "End-to-end protection across the enterprise AI data pipeline.",
-    href: "/resources/learn/ai-data-pipeline-protection",
-  },
-  {
-    category: "definition",
-    categoryLabel: "GLOSSARY",
-    title: "Restorable Workflow",
-    desc: "Workflows where the original values can be restored locally after AI processing.",
-    href: "/resources/glossary/restorable-workflow",
-  },
-  {
-    category: "definition",
-    categoryLabel: "GLOSSARY",
-    title: "Enterprise Context Control",
-    desc: "Organization-defined markers + policy versioning + time-shifting.",
-    href: "/resources/glossary/enterprise-context-control",
-  },
+const LEARN_CARDS: CardData[] = [
+  { slug: "public-sector-genai-three-approaches-in-korea", category: "policy", href: "/resources/learn/public-sector-genai-three-approaches-in-korea", locales: ["ko"], skipInIndex: false, title: { ko: "공공기관 생성형 AI 도입의 세 가지 길" }, desc: { ko: "AI DLP·차단, sLLM 자체구축, 게이트웨이 방식 — N2SF 시대 공공기관의 선택지를 비용·성능·보안·정합성 관점에서 객관적으로 비교합니다." } },
+  { slug: "what-is-n2sf", category: "policy", href: "/resources/learn/what-is-n2sf", locales: ["ko"], skipInIndex: false, title: { ko: "N2SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리" }, desc: { ko: "국가 망 보안체계(N2SF)는 망분리에서 다중계층보안(MLS)으로의 전환입니다. C/S/O 등급 체계, 「위치-주체-객체」 모델링, 보안원칙을 처음부터 끝까지 정리합니다." } },
+  { slug: "n2sf-model-2-explained", category: "policy", href: "/resources/learn/n2sf-model-2-explained", locales: ["ko"], skipInIndex: false, title: { ko: "N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까" }, desc: { ko: "국가정보원·NSR이 2025년 9월 발간한 「업무환경에서 생성형 AI 활용 모델 해설서」를 정보화담당관 관점에서 정리합니다. 21개 보안위협, 50여 개 보안통제 항목, AI 연계체계까지 처음부터 끝까지." } },
+  { slug: "sllm-self-hosted-reality-check", category: "policy", href: "/resources/learn/sllm-self-hosted-reality-check", locales: ["ko"], skipInIndex: false, title: { ko: "sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프" }, desc: { ko: "공공기관 sLLM 자체구축의 진짜 비용(5년 28~38억), 상용 LLM 대비 성능 격차 추세, 잘못된 선택 패턴을 분석합니다." } },
+  { slug: "public-sector-external-llm-adoption-roadmap", category: "policy", href: "/resources/learn/public-sector-external-llm-adoption-roadmap", locales: ["ko"], skipInIndex: false, title: { ko: "공공기관 외부 LLM 활용 도입 가이드 — 정보화담당관을 위한 분기 로드맵" }, desc: { ko: "정보화담당관 관점에서 외부 LLM 도입을 분기별 5단계로 정리합니다. 시나리오 A(공개 활용) 4개월 vs 시나리오 B(민감 업무) 6~8개월 로드맵 비교." } },
+  { slug: "public-sector-genai-five-stuck-points", category: "policy-field", href: "/resources/learn/public-sector-genai-five-stuck-points", locales: ["ko"], skipInIndex: false, title: { ko: "공공기관 생성형 AI 도입 시 가장 많이 막히는 5가지 — 현장 분석" }, desc: { ko: "정책은 알겠는데 실무에서 막힌다는 정보화담당관 분들의 목소리를 5개 막힘 지점으로 정리합니다. 등급 분류 부담, 시나리오 충돌, 솔루션 후보 부족, 예산 시점, 활용 실패." } },
+  { slug: "public-sector-2026-management-evaluation-ai-incentive", category: "policy", href: "/resources/learn/public-sector-2026-management-evaluation-ai-incentive", locales: ["ko"], skipInIndex: false, title: { ko: "2026 경영평가 'AI 활용 등 혁신' 가점 — 공공기관 핵심 경쟁력 분석" }, desc: { ko: "2026 경영평가편람에 신설된 'AI 활용 등 혁신' 가점 1.5점이 공공기관 경쟁력에 어떤 영향을 주는지, 어떻게 확보할 수 있는지 정보화담당관 관점에서 정리합니다." } },
+  { slug: "chatgpt-teams-korea-public-sector", category: "policy", href: "/resources/learn/chatgpt-teams-korea-public-sector", locales: ["ko"], skipInIndex: false, title: { ko: "안전하다는 ChatGPT Teams, 한국 공공 영역에서 사용해도 괜찮을까" }, desc: { ko: "ChatGPT Teams의 보안 마케팅이 한국 공공 영역에서 어떤 빈틈을 가지는지 분석합니다. CSAP·개인정보보호법·N2SF 모델 2·경영평가 체계와의 적합성을 짚고, 공공기관이 검토 가능한 대안 방향을 정리합니다." } },
+  { slug: "chatgpt-teams-ciso-control-gap", category: "policy", href: "/resources/learn/chatgpt-teams-ciso-control-gap", locales: ["ko"], skipInIndex: false, title: { ko: "ChatGPT Teams의 관리자 콘솔이 보안팀에게 주는 것, 주지 못하는 것" }, desc: { ko: "ChatGPT Teams의 관리자 콘솔은 사후 가시성을 제공하지만 사전 통제는 다른 영역입니다. 입력 단계 통제·감사 추적·다중 모델 환경·책임 구조 네 가지 관점에서 보안팀이 마주하는 통제 공백을 분석합니다." } },
+  { slug: "differential-privacy-explained", category: "definition", href: "/resources/learn/differential-privacy-explained", locales: ["ko"], skipInIndex: false, title: { ko: "차등정보보호란 무엇인가 — 1분 요약부터 수학적 원리까지" }, desc: { ko: "차등정보보호(Differential Privacy)는 개인정보를 통계적으로 보호하는 수학적 프레임워크입니다. 단순 마스킹과 무엇이 다른지, 왜 미국 인구조사국·Apple·Google이 사용하는지, 공공기관 LLM 활용에 어떻게 연결되는지 정리했습니다." } },
+  { slug: "public-sector-chatgpt-input-guide", category: "policy", href: "/resources/learn/public-sector-chatgpt-input-guide", locales: ["ko"], skipInIndex: false, title: { ko: "ChatGPT 구독하는 공공기관, 정작 어떤 정보까지 입력해도 될까" }, desc: { ko: "외부 상용 LLM 구독 후 가장 자주 마주치는 질문입니다. 답은 단순하지 않습니다. 5가지 실무 사례로 판단의 어려움을 짚고, 그 어려움을 다루는 세 가지 접근 방식을 정리했습니다." } },
+  { slug: "pilot-to-production-enterprise-ai", category: "strategy", href: "/resources/learn/pilot-to-production-enterprise-ai", locales: ["en", "ko", "de"], skipInIndex: false, title: { en: "Why enterprise AI pilots stall — and how they get to production", ko: "← Learn", de: "← Learn" }, desc: { en: "A diagnostic for executives, CDOs, CAIOs, and CIOs whose AI pilot has run for months without reaching production.", ko: "/learn", de: "Warum KI-Pilotprojekte im Unternehmen ins Stocken geraten — und wie sie dennoch den Produktionsbetrieb erreichen" } },
+  { slug: "telecom-noc-ai-deployment", category: "industry-telecom", href: "/resources/learn/telecom-noc-ai-deployment", locales: ["en", "ko", "de"], skipInIndex: false, title: { en: "How to deploy AI in a telecom NOC without exposing network data", ko: "← 학습 자료", de: "KI im Telekommunikations-NOC einsetzen — ohne Offenlegung von Netzwerkdaten" }, desc: { en: "A practical guide for telecom operators bringing AI into the NOC, OSS/BSS, and customer operations — without exposing subscriber identities, call records, IP addresses, or network configurations.", ko: "네트워크 데이터를 노출하지 않고 통신사 NOC에 AI를 배포하는 방법", de: "Ein praxisorientierter Leitfaden für Telekommunikationsanbieter, die KI in den NOC, OSS/BSS und den Kundenbetrieb integrieren möchten — ohne Teilnehmeridentitäten, Anrufaufzeichnungen, IP-Adressen oder Netzwerkkonfigurationen offenzulegen." } },
+  { slug: "hospital-ai-deployment-phi-protection", category: "industry-healthcare", href: "/resources/learn/hospital-ai-deployment-phi-protection", locales: ["en", "ko", "de"], skipInIndex: false, title: { en: "How to deploy AI in a hospital without exposing PHI", ko: "← 돌아가기", de: "KI im Krankenhaus einsetzen — ohne Offenlegung von Patientendaten" }, desc: { en: "A practical guide for hospital CIOs, CMIOs, and clinical informatics teams to bring AI into radiology, clinical documentation, and care coordination — without sending PHI to external LLMs.", ko: "PHI를 외부에 노출하지 않고 병원에 AI를 도입하는 방법", de: "Ein praxisorientierter Leitfaden für IT-Leiter, Medizininformatiker und klinische Informatik-Teams: KI in Radiologie, klinische Dokumentation und Versorgungskoordination integrieren — ohne Patientendaten an externe LLMs zu übermitteln." } },
+  { slug: "ai-on-network-operations-data", category: "industry-telecom", href: "/resources/learn/ai-on-network-operations-data", locales: ["en", "ko", "de"], skipInIndex: false, title: { en: "AI on Network Operations Data: NOC, Incident RCA, and Telecom Workflow Execution", ko: "← 학습 자료", de: "← Zurück" }, desc: { en: "The data NOC engineers need AI to read is the same data they cannot send to an external LLM. Here is how to close that gap with structure-preserving, differential-privacy-based encapsulation — validated at Deutsche Telekom T Challenge 2026.", ko: "/learn", de: "KI für Netzwerkbetriebsdaten: NOC, Incident-RCA und Telekommunikations-Workflows" } },
+  { slug: "pii-guardrails-vs-operational-data-protection", category: "comparison", href: "/resources/learn/pii-guardrails-vs-operational-data-protection", locales: ["en", "ko", "de"], skipInIndex: false, title: { en: "Why PII Guardrails Don't Make Enterprise AI Work", ko: "← Learn", de: "← Learn" }, desc: { en: "PII guardrails, AI security suites, prompt security gateways — they all do something important. They do not all do the same thing. Here is a direct comparison and a clear answer to where each fits in enterprise AI adoption.", ko: "/learn", de: "Warum PII-Guardrails allein den KI-Einsatz im Unternehmen nicht ermöglichen" } },
+  { slug: "sovereign-ai-european-enterprises", category: "architecture-sovereign", href: "/resources/learn/sovereign-ai-european-enterprises", locales: ["en", "ko", "de"], skipInIndex: false, title: { en: "Sovereign AI for European enterprises — a practical architecture", ko: "← Learn", de: "← Zurück" }, desc: { en: "Bring AI into regulated European workflows under GDPR, EU AI Act, and national data residency — without choosing between productivity and compliance.", ko: "/learn", de: "Datensouveräne KI für europäische Unternehmen — eine praxisnahe Architektur" } },
+  { slug: "differential-privacy-for-enterprise-llm", category: "architecture-dp", href: "/resources/learn/differential-privacy-for-enterprise-llm", locales: ["en", "ko", "de"], skipInIndex: false, title: { en: "Differential Privacy for Enterprise AI: What It Is, Why It Matters, How It Applies to Operational Data", ko: "← Learn", de: "← Zurück" }, desc: { en: "PII filtering reaches the names. Differential privacy reaches the patterns. Why differential-privacy-based encapsulation is the technical foundation of the AI enablement data layer.", ko: "/learn", de: "Differential Privacy für den KI-Einsatz im Unternehmen: Grundlagen, Relevanz und Anwendung auf operative Daten" } },
+  { slug: "on-prem-llm-execution-path", category: "architecture-onprem", href: "/resources/learn/on-prem-llm-execution-path", locales: ["en", "ko", "de"], skipInIndex: false, title: { en: "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations", ko: "← Learn", de: "← Zurück" }, desc: { en: "Two execution paths inside a single AI enablement data layer. When external transmission is not an option, the on-prem local lightweight model handles the workflow inside your boundary — zero external exposure, full restoration.", ko: "온프레미스 LLM 실행 경로: 규제 환경을 위한 망분리·하이브리드·지역 내 AI", de: "On-Premise-Ausführungspfad für LLMs: Air-Gapped-, Hybrid- und regionsspezifische KI für regulierte Betriebsumgebungen" } },
 ]
 
+const CATEGORY_LABELS: Record<string, Record<Locale, string>> = {
+  "architecture-dp": { en: "ARCHITECTURE · DIFFERENTIAL PRIVACY", ko: "아키텍처 · 차등 프라이버시", de: "ARCHITEKTUR · DIFFERENTIELLE PRIVATSPHÄRE" },
+  "architecture-onprem": { en: "ARCHITECTURE · ON-PREM", ko: "아키텍처 · 온프레미스", de: "ARCHITEKTUR · ON-PREM" },
+  "architecture-sovereign": { en: "ARCHITECTURE · SOVEREIGN AI", ko: "아키텍처 · 주권 AI", de: "ARCHITEKTUR · SOUVERÄNE KI" },
+  "comparison": { en: "COMPARISON", ko: "비교", de: "VERGLEICH" },
+  "definition": { en: "DEFINITION", ko: "정의", de: "DEFINITION" },
+  "industry-healthcare": { en: "INDUSTRY · HEALTHCARE", ko: "산업 · 헬스케어", de: "BRANCHE · GESUNDHEIT" },
+  "industry-telecom": { en: "INDUSTRY · TELECOM", ko: "산업 · 통신", de: "BRANCHE · TELEKOM" },
+  "policy": { en: "POLICY", ko: "정책 분석", de: "POLITIK" },
+  "policy-field": { en: "POLICY · FIELD", ko: "정책 · 현장 분석", de: "POLITIK · FELD" },
+  "strategy": { en: "STRATEGY", ko: "전략", de: "STRATEGIE" },
+}
+
+const CATEGORY_TO_TAB: Record<string, string> = {
+  "architecture-dp": "architecture",
+  "architecture-onprem": "architecture",
+  "architecture-sovereign": "architecture",
+  "comparison": "comparison",
+  "definition": "definition",
+  "industry-healthcare": "industry",
+  "industry-telecom": "industry",
+  "policy": "policy",
+  "policy-field": "policy",
+  "strategy": "strategy",
+}
+
+// Hero text per locale (fallback to props if user overrides)
+const HERO_TRANSLATIONS: Record<Locale, { eyebrow: string; heroTitle: string; heroLead: string; readLabel: string }> = {
+  en: {
+    eyebrow: "Resources · Learn",
+    heroTitle: "Learn articles for regulated enterprise AI",
+    heroLead: "Industry deployment guides, architecture deep-dives, comparison frameworks, and Korean public-sector policy analysis.",
+    readLabel: "Read →",
+  },
+  ko: {
+    eyebrow: "리소스 · Learn",
+    heroTitle: "규제 환경 엔터프라이즈 AI를 위한 Learn 아티클",
+    heroLead: "산업 도입 가이드, 아키텍처 심층 분석, 비교 프레임워크, 한국 공공 정책 분석을 다룹니다.",
+    readLabel: "읽기 →",
+  },
+  de: {
+    eyebrow: "Ressourcen · Learn",
+    heroTitle: "Learn-Artikel für regulierte Enterprise-KI",
+    heroLead: "Brancheneinsatz-Guides, Architektur-Analysen, Vergleichs-Frameworks und Politikanalysen aus dem koreanischen Public Sector.",
+    readLabel: "Lesen →",
+  },
+}
+
+const TAB_TRANSLATIONS: Record<string, Record<Locale, string>> = {
+  all: { en: "All", ko: "전체", de: "Alle" },
+  policy: { en: "Policy", ko: "정책", de: "Politik" },
+  industry: { en: "Industry", ko: "산업", de: "Branche" },
+  architecture: { en: "Architecture", ko: "아키텍처", de: "Architektur" },
+  strategy: { en: "Strategy", ko: "전략", de: "Strategie" },
+  comparison: { en: "Comparison", ko: "비교", de: "Vergleich" },
+  definition: { en: "Definition", ko: "정의", de: "Definition" },
+}
+
 export default function Learn({
-  eyebrow = "Resources · Learn",
-  heroTitle = "Learn articles for regulated enterprise AI",
-  heroLead = "Industry deployment guides, architecture deep-dives, comparison frameworks, and Korean public-sector policy analysis.",
-  labelAll = "All",
-  labelPolicy = "Policy",
-  labelIndustry = "Industry",
-  labelArchitecture = "Architecture",
-  labelStrategy = "Strategy",
-  labelComparison = "Comparison",
-  labelDefinition = "Definition",
-  readLabel = "Read →",
+  locale = "en",
+  eyebrow = "",
+  heroTitle = "",
+  heroLead = "",
+  labelAll = "",
+  labelPolicy = "",
+  labelIndustry = "",
+  labelArchitecture = "",
+  labelStrategy = "",
+  labelComparison = "",
+  labelDefinition = "",
+  readLabel = "",
 }: Props) {
-  const [activeCategory, setActiveCategory] = useState<"all" | CategoryKey>("all")
+  const hero = HERO_TRANSLATIONS[locale] || HERO_TRANSLATIONS.en
+  const _eyebrow = eyebrow || hero.eyebrow
+  const _heroTitle = heroTitle || hero.heroTitle
+  const _heroLead = heroLead || hero.heroLead
+  const _readLabel = readLabel || hero.readLabel
 
-  // Auto-detect Framer locale prefix from current URL (/de/, /ja/, /ko/, etc.)
-  // SSG-safe: starts empty, populated after hydration.
-  const [localePrefix, setLocalePrefix] = useState<string>("")
-  useEffect(() => {
-    if (typeof window === "undefined") return
-    const m = window.location.pathname.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)(?:\/|$)/)
-    if (m) setLocalePrefix(`/${m[1]}`)
-  }, [])
-
-  const filters: Array<{ key: "all" | CategoryKey; label: string }> = [
-    { key: "all",          label: labelAll },
-    { key: "policy",       label: labelPolicy },
-    { key: "industry",     label: labelIndustry },
-    { key: "architecture", label: labelArchitecture },
-    { key: "strategy",     label: labelStrategy },
-    { key: "comparison",   label: labelComparison },
-    { key: "definition",   label: labelDefinition },
+  const t = (key: string) => TAB_TRANSLATIONS[key]?.[locale] || TAB_TRANSLATIONS[key]?.en || key
+  const filters = [
+    { key: "all", label: labelAll || t("all") },
+    { key: "policy", label: labelPolicy || t("policy") },
+    { key: "industry", label: labelIndustry || t("industry") },
+    { key: "architecture", label: labelArchitecture || t("architecture") },
+    { key: "strategy", label: labelStrategy || t("strategy") },
+    { key: "comparison", label: labelComparison || t("comparison") },
+    { key: "definition", label: labelDefinition || t("definition") },
   ]
 
-  const visibleCards =
-    activeCategory === "all" ? CARDS : CARDS.filter((c) => c.category === activeCategory)
+  const [activeTab, setActiveTab] = useState("all")
+
+  // Filter: locale availability + skipInIndex + active tab
+  const visibleCards = LEARN_CARDS.filter((c) => {
+    if (c.skipInIndex) return false
+    if (!c.locales.includes(locale)) return false
+    if (activeTab !== "all" && CATEGORY_TO_TAB[c.category] !== activeTab) return false
+    return true
+  })
+
+  const localePrefix = locale === "en" ? "" : `/${locale}`
 
   return (
     <>
@@ -311,7 +171,7 @@ export default function Learn({
         .lrn-root {
           width: 100%;
           container-type: inline-size;
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+          font-family: var(--f-display, 'Inter', sans-serif);
           color: var(--c-ink, #0f1130);
           background-color: var(--c-bg, #ffffff);
           -webkit-font-smoothing: antialiased;
@@ -325,146 +185,102 @@ export default function Learn({
           padding: 0 clamp(20px, 4vw, 80px);
         }
 
-        /* ── Hero ──────────────────────────────────────── */
         .lrn-hero {
           padding: clamp(80px, 9vw, 140px) 0 clamp(48px, 6vw, 72px);
           text-align: center;
           border-bottom: 1px solid var(--c-rule, #e5e7eb);
         }
-        .lrn-hero__inner {
-          max-width: 860px;
-          margin: 0 auto;
-        }
+        .lrn-hero__inner { max-width: 860px; margin: 0 auto; }
         .lrn-hero__eyebrow {
           display: inline-block;
           font-family: 'JetBrains Mono', monospace;
-          font-size: 12px;
-          font-weight: 700;
-          letter-spacing: 0.12em;
+          font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
           text-transform: uppercase;
           color: var(--c-primary, #5b4fe9);
           margin-bottom: 20px;
         }
         .lrn-hero__title {
           font-size: clamp(32px, 4.5vw, 56px);
-          font-weight: 700;
-          line-height: 1.15;
-          letter-spacing: -0.02em;
-          color: var(--c-ink, #0f1130);
-          margin: 0 0 20px;
+          font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;
+          color: var(--c-ink, #0f1130); margin: 0 0 20px;
         }
         .lrn-hero__lead {
           font-size: clamp(16px, 1.4vw, 19px);
-          line-height: 1.65;
-          color: var(--c-ink-soft, #3a3d5e);
-          margin: 0 auto;
-          max-width: 720px;
+          line-height: 1.65; color: var(--c-ink-soft, #3a3d5e);
+          margin: 0 auto; max-width: 720px;
         }
 
-        /* ── Filter tabs ───────────────────────────────── */
-        .lrn-tabs-wrap {
-          padding: clamp(32px, 4vw, 56px) 0 0;
-        }
+        .lrn-tabs-wrap { padding: clamp(32px, 4vw, 56px) 0 0; }
         .lrn-tabs {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 8px;
+          display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
         }
         .lrn-tab {
           appearance: none;
           background: var(--c-bg, #ffffff);
           border: 1px solid var(--c-rule, #e5e7eb);
-          border-radius: 999px;
-          padding: 8px 18px;
-          font-family: inherit;
-          font-size: 13px;
-          font-weight: 600;
-          letter-spacing: -0.01em;
-          color: var(--c-ink-soft, #3a3d5e);
+          border-radius: 999px; padding: 8px 18px;
+          font-family: inherit; font-size: 13px; font-weight: 600;
+          letter-spacing: -0.01em; color: var(--c-ink-soft, #3a3d5e);
           cursor: pointer;
           transition: background-color 0.15s, border-color 0.15s, color 0.15s;
         }
         .lrn-tab:hover {
-          border-color: var(--c-ink, #0f1130);
-          color: var(--c-ink, #0f1130);
+          border-color: var(--c-ink, #0f1130); color: var(--c-ink, #0f1130);
         }
         .lrn-tab--active {
           background-color: var(--c-ink, #0f1130);
-          border-color: var(--c-ink, #0f1130);
-          color: #ffffff;
-        }
-        .lrn-tab--active:hover {
-          background-color: var(--c-primary, #5b4fe9);
-          border-color: var(--c-primary, #5b4fe9);
-          color: #ffffff;
+          border-color: var(--c-ink, #0f1130); color: #ffffff;
         }
 
-        /* ── Card grid ─────────────────────────────────── */
-        .lrn-grid-wrap {
-          padding: clamp(32px, 4vw, 56px) 0 clamp(80px, 10vw, 140px);
-        }
+        .lrn-grid-wrap { padding: clamp(40px, 5vw, 72px) 0 clamp(80px, 9vw, 140px); }
         .lrn-grid {
           display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 20px;
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          gap: clamp(16px, 2vw, 24px);
         }
-        @container (max-width: 1023px) {
-          .lrn-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        }
-        @container (max-width: 639px) {
-          .lrn-grid { grid-template-columns: minmax(0, 1fr); }
-        }
-
         .lrn-card {
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-          padding: 24px 22px;
-          background-color: var(--c-bg, #ffffff);
+          display: flex; flex-direction: column;
+          gap: 12px; padding: 24px;
+          background: var(--c-bg, #ffffff);
           border: 1px solid var(--c-rule, #e5e7eb);
           border-radius: 12px;
-          text-decoration: none;
-          color: var(--c-ink, #0f1130);
-          transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+          text-decoration: none; color: inherit;
+          transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+          min-height: 200px;
         }
         .lrn-card:hover {
-          border-color: var(--c-primary, #5b4fe9);
-          box-shadow: 0 4px 16px rgba(91, 79, 233, 0.08);
+          border-color: var(--c-ink, #0f1130);
           transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(15, 17, 48, 0.08);
         }
-
         .lrn-card__cat {
           font-family: 'JetBrains Mono', monospace;
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.08em;
+          font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+          text-transform: uppercase;
           color: var(--c-primary, #5b4fe9);
         }
         .lrn-card__title {
-          font-size: 17px;
-          font-weight: 700;
-          line-height: 1.35;
-          letter-spacing: -0.01em;
-          color: var(--c-ink, #0f1130);
+          font-size: 17px; font-weight: 700; line-height: 1.4;
+          letter-spacing: -0.01em; color: var(--c-ink, #0f1130);
           margin: 0;
         }
         .lrn-card__desc {
-          font-size: 14px;
-          line-height: 1.6;
+          font-size: 14px; line-height: 1.6;
           color: var(--c-ink-soft, #3a3d5e);
-          margin: 0;
-          flex: 1;
+          margin: 0; flex: 1;
         }
         .lrn-card__link {
-          align-self: flex-start;
-          margin-top: 4px;
-          font-size: 13px;
-          font-weight: 600;
+          align-self: flex-start; margin-top: 4px;
+          font-size: 13px; font-weight: 600;
           color: var(--c-primary, #5b4fe9);
         }
         .lrn-card:hover .lrn-card__link {
           color: var(--c-primary-dark, #3b2fbf);
+        }
+
+        .lrn-empty {
+          text-align: center; padding: clamp(40px, 5vw, 72px) 0;
+          color: var(--c-muted, #6b7280); font-size: 15px;
         }
 
         @container (max-width: 639px) {
@@ -477,19 +293,16 @@ export default function Learn({
       `}</style>
 
       <div className="lrn-root">
-
-        {/* ── Hero ── */}
         <section className="lrn-hero">
           <div className="lrn-container">
             <div className="lrn-hero__inner">
-              <div className="lrn-hero__eyebrow">{eyebrow}</div>
-              <h1 className="lrn-hero__title">{heroTitle}</h1>
-              <p className="lrn-hero__lead">{heroLead}</p>
+              <div className="lrn-hero__eyebrow">{_eyebrow}</div>
+              <h1 className="lrn-hero__title">{_heroTitle}</h1>
+              <p className="lrn-hero__lead">{_heroLead}</p>
             </div>
           </div>
         </section>
 
-        {/* ── Filter tabs ── */}
         <div className="lrn-tabs-wrap">
           <div className="lrn-container">
             <div className="lrn-tabs" role="tablist">
@@ -498,9 +311,9 @@ export default function Learn({
                   key={f.key}
                   type="button"
                   role="tab"
-                  aria-selected={activeCategory === f.key}
-                  onClick={() => setActiveCategory(f.key)}
-                  className={`lrn-tab${activeCategory === f.key ? " lrn-tab--active" : ""}`}
+                  aria-selected={activeTab === f.key}
+                  onClick={() => setActiveTab(f.key)}
+                  className={`lrn-tab${activeTab === f.key ? " lrn-tab--active" : ""}`}
                 >
                   {f.label}
                 </button>
@@ -509,37 +322,45 @@ export default function Learn({
           </div>
         </div>
 
-        {/* ── Card grid ── */}
         <div className="lrn-grid-wrap">
           <div className="lrn-container">
-            <div className="lrn-grid">
-              {visibleCards.map((c, i) => (
-                <a key={i} href={`${localePrefix}${c.href}`} className="lrn-card">
-                  <div className="lrn-card__cat">{c.categoryLabel}</div>
-                  <h3 className="lrn-card__title">{c.title}</h3>
-                  <p className="lrn-card__desc">{c.desc}</p>
-                  <span className="lrn-card__link">{readLabel}</span>
-                </a>
-              ))}
-            </div>
+            {visibleCards.length === 0 ? (
+              <div className="lrn-empty">No articles available for this locale yet.</div>
+            ) : (
+              <div className="lrn-grid">
+                {visibleCards.map((c) => {
+                  const title = c.title[locale] || c.title.en || c.slug
+                  const desc = c.desc[locale] || c.desc.en || ""
+                  const catLabel = CATEGORY_LABELS[c.category]?.[locale] || c.category
+                  return (
+                    <a key={c.slug} href={`${localePrefix}${c.href}`} className="lrn-card">
+                      <div className="lrn-card__cat">{catLabel}</div>
+                      <h3 className="lrn-card__title">{title}</h3>
+                      <p className="lrn-card__desc">{desc}</p>
+                      <span className="lrn-card__link">{_readLabel}</span>
+                    </a>
+                  )
+                })}
+              </div>
+            )}
           </div>
         </div>
-
       </div>
     </>
   )
 }
 
 addPropertyControls(Learn, {
-  eyebrow: { type: ControlType.String, title: "Eyebrow", defaultValue: "Resources · Learn" },
-  heroTitle: { type: ControlType.String, title: "Hero Title", defaultValue: "Learn articles for regulated enterprise AI" },
-  heroLead: { type: ControlType.String, title: "Hero Lead", defaultValue: "Industry deployment guides, architecture deep-dives, comparison frameworks, and Korean public-sector policy analysis.", displayTextArea: true },
-  labelAll: { type: ControlType.String, title: "Tab: All", defaultValue: "All" },
-  labelPolicy: { type: ControlType.String, title: "Tab: Policy", defaultValue: "Policy" },
-  labelIndustry: { type: ControlType.String, title: "Tab: Industry", defaultValue: "Industry" },
-  labelArchitecture: { type: ControlType.String, title: "Tab: Architecture", defaultValue: "Architecture" },
-  labelStrategy: { type: ControlType.String, title: "Tab: Strategy", defaultValue: "Strategy" },
-  labelComparison: { type: ControlType.String, title: "Tab: Comparison", defaultValue: "Comparison" },
-  labelDefinition: { type: ControlType.String, title: "Tab: Definition", defaultValue: "Definition" },
-  readLabel: { type: ControlType.String, title: "Read Label", defaultValue: "Read →" },
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
+  eyebrow: { type: ControlType.String, title: "Eyebrow", defaultValue: "" },
+  heroTitle: { type: ControlType.String, title: "Hero Title", defaultValue: "" },
+  heroLead: { type: ControlType.String, title: "Hero Lead", defaultValue: "", displayTextArea: true },
+  labelAll: { type: ControlType.String, title: "Tab: All", defaultValue: "" },
+  labelPolicy: { type: ControlType.String, title: "Tab: Policy", defaultValue: "" },
+  labelIndustry: { type: ControlType.String, title: "Tab: Industry", defaultValue: "" },
+  labelArchitecture: { type: ControlType.String, title: "Tab: Architecture", defaultValue: "" },
+  labelStrategy: { type: ControlType.String, title: "Tab: Strategy", defaultValue: "" },
+  labelComparison: { type: ControlType.String, title: "Tab: Comparison", defaultValue: "" },
+  labelDefinition: { type: ControlType.String, title: "Tab: Definition", defaultValue: "" },
+  readLabel: { type: ControlType.String, title: "Read Label", defaultValue: "" },
 })
