@@ -52,7 +52,22 @@ def parse_translation_md_learn(md_path):
     )
     if sec01:
         pairs = _extract_md_pairs(sec01.group(1))
-        # Best-effort mapping: first 5 pairs map to title/lead/category/readTime/dateUpdated
+        # md format varies: some files start with backLabel ("← Learn"), backHref ("/learn"),
+        # or both. Skip leading nav-link pairs (short, starts with ← or /) so title aligns.
+        while pairs:
+            en = pairs[0][0].strip()
+            tr = pairs[0][1].strip()
+            # Skip nav-link pairs: backLabel ("← ..."), backHref ("/..."), or
+            # short prop-key labels ("backHref", "backLabel").
+            if (
+                en.startswith("←") or en.startswith("/")
+                or tr.startswith("←") or tr.startswith("/")
+                or en.lower() in ("backhref", "backlabel")
+                or len(en) < 8
+            ):
+                pairs = pairs[1:]
+                continue
+            break
         hero_keys = ["title", "lead", "category", "readTime", "dateUpdated"]
         for i, (en, tr) in enumerate(pairs[:len(hero_keys)]):
             out[hero_keys[i]] = tr
@@ -1321,10 +1336,6 @@ export default function Learn({{
       `}}</style>
 
       <div className="lrn-root">
-        {{/* TEMP DEBUG: shows actual locale value — remove after diagnosis */}}
-        <div style={{ {{ position: "fixed", top: 8, right: 8, zIndex: 9999, padding: "6px 10px", background: "#fff59d", border: "2px solid #f57f17", fontFamily: "monospace", fontSize: 13, fontWeight: 700, color: "#000" }} }}>
-          prop locale = "{{locale}}" | URL → "{{autoLocale}}" | effective = "{{effectiveLocale}}" | heroTitle = "{{hero.heroTitle?.slice(0, 25) ?? "undef"}}"
-        </div>
         <section className="lrn-hero">
           <div className="lrn-container">
             <div className="lrn-hero__inner">

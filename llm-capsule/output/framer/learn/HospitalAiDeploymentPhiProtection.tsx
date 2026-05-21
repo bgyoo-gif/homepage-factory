@@ -118,11 +118,11 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   ko: {
     backLabel: "← Learn",
     backHref: "/resources/learn",
-    title: "← 돌아가기",
-    lead: "PHI를 외부에 노출하지 않고 병원에 AI를 도입하는 방법",
-    category: "병원 CIO·CMIO·임상 정보팀을 위한 실무 가이드입니다. 영상의학·임상 문서화·케어 코디네이션에 AI를 도입하면서도 PHI를 외부 LLM으로 절대 전송하지 않습니다.",
-    readTime: "산업 · 의료",
-    dateUpdated: "11분 읽기",
+    title: "PHI를 외부에 노출하지 않고 병원에 AI를 도입하는 방법",
+    lead: "병원 CIO·CMIO·임상 정보팀을 위한 실무 가이드입니다. 영상의학·임상 문서화·케어 코디네이션에 AI를 도입하면서도 PHI를 외부 LLM으로 절대 전송하지 않습니다.",
+    category: "산업 · 의료",
+    readTime: "11분 읽기",
+    dateUpdated: "2025년 4월 업데이트",
     tldrLabel: "TL;DR — 정의",
     tldrBody: "PHI 보호가 적용된 병원 AI 배포는 데이터 레이어를 활용해 환자 이름·MRN·진단명·검사 결과·처방 정보·임상 워크플로우 컨텍스트를 로컬에서 캡슐화한 뒤 외부 LLM으로 전달합니다. LLM은 보호된 캡슐 위에서 영상 판독 보고서·임상 요약·케어 코디네이션 결과물을 작성하고, 출력은 병원 네트워크 내부에서 EHR로 복원됩니다. HIPAA 준수. 이화여자대학교의료원(EUMC) 배포 완료.",
     bodyHtml: `<!-- bodyHtml — HTML 태그 유지, 텍스트만 번역 -->

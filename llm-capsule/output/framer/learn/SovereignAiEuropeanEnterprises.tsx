@@ -128,11 +128,11 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   ko: {
     backLabel: "← Learn",
     backHref: "/resources/learn",
-    title: "← Learn",
-    lead: "/learn",
-    category: "유럽 기업을 위한 Sovereign AI — 실용적인 아키텍처",
-    readTime: "GDPR, EU AI Act, 국가별 데이터 레지던시 요건을 준수하면서 규제 환경의 유럽 워크플로에 AI를 도입합니다. 생산성과 컴플라이언스 중 하나를 포기하지 않아도 됩니다.",
-    dateUpdated: "ARCHITECTURE · Sovereign AI",
+    title: "유럽 기업을 위한 Sovereign AI — 실용적인 아키텍처",
+    lead: "GDPR, EU AI Act, 국가별 데이터 레지던시 요건을 준수하면서 규제 환경의 유럽 워크플로에 AI를 도입합니다. 생산성과 컴플라이언스 중 하나를 포기하지 않아도 됩니다.",
+    category: "ARCHITECTURE · Sovereign AI",
+    readTime: "14분 읽기",
+    dateUpdated: "2025년 4월 업데이트",
     tldrLabel: "TL;DR — Definition",
     tldrBody: "Sovereign AI란 데이터·처리·감사가 정의된 규제 및 지리적 경계 내에 머무는 기업 AI 워크플로를 의미합니다. 유럽 기업의 경우, GDPR 준수 데이터 처리, 지역 내 LLM 엔드포인트(EU 호스팅 LLM 공급자 또는 온프레미스 로컬 모델), 규제 기관 검토를 위한 완전한 감사 이력이 일반적으로 요구됩니다. LLM Capsule과 같은 AI 데이터 레이어는 두 가지 실행 경로를 제공합니다. 캡슐 데이터만 사용하는 지역 내 외부 LLM(Path A), 또는 온프레미스 로컬 경량 모델(Path B). 기업은 최고 수준 LLM의 생산성을 포기하지 않고도 Sovereign AI를 도입할 수 있습니다.",
     bodyHtml: `<h2>지금 Sovereign AI가 중요한 이유</h2>
@@ -239,11 +239,11 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   de: {
     backLabel: "← Learn",
     backHref: "/resources/learn",
-    title: "← Zurück",
-    lead: "Datensouveräne KI für europäische Unternehmen — eine praxisnahe Architektur",
-    category: "KI in regulierten europäischen Workflows einsetzen — unter Einhaltung von DSGVO (GDPR), EU AI Act und nationalen Datenhaltungspflichten. Ohne Kompromisse zwischen Produktivität und Compliance.",
-    readTime: "ARCHITEKTUR · Datensouveräne KI",
-    dateUpdated: "14 Min. Lesezeit",
+    title: "Datensouveräne KI für europäische Unternehmen — eine praxisnahe Architektur",
+    lead: "KI in regulierten europäischen Workflows einsetzen — unter Einhaltung von DSGVO (GDPR), EU AI Act und nationalen Datenhaltungspflichten. Ohne Kompromisse zwischen Produktivität und Compliance.",
+    category: "ARCHITEKTUR · Datensouveräne KI",
+    readTime: "14 Min. Lesezeit",
+    dateUpdated: "Aktualisiert April 2025",
     tldrLabel: "Kurzfassung — Definition",
     tldrBody: "Datensouveräne KI bezeichnet KI-Workflows im Unternehmen, bei denen Daten, Verarbeitung und Prüfpfad innerhalb eines definierten regulatorischen und geografischen Rahmens verbleiben. Für europäische Unternehmen bedeutet dies in der Regel DSGVO (GDPR)-konforme Datenverarbeitung, LLM-Endpunkte in der EU-Region sowie einen vollständigen Audit-Trail für Regulierungsbehörden. LLM Capsule als KI-Datenschicht bietet zwei Ausführungspfade: ein in der EU betriebenes externes LLM, ausschließlich mit Kapseldaten, oder ein lokales On-Premise-Leichtgewichtmodell. So können Unternehmen datensouveräne KI einführen, ohne auf leistungsstarke Sprachmodelle verzichten zu müssen.",
     bodyHtml: `<h2>Warum datensouveräne KI jetzt relevant ist</h2>

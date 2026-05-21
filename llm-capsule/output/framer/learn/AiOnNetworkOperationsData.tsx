@@ -173,11 +173,11 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   ko: {
     backLabel: "← Learn",
     backHref: "/resources/learn",
-    title: "← 학습 자료",
-    lead: "/learn",
-    category: "네트워크 운영 데이터와 AI: NOC, 인시던트 RCA, 통신사 워크플로우 실행",
-    readTime: "NOC 엔지니어가 AI에게 분석시키고 싶은 데이터는 외부 LLM에 보낼 수 없는 바로 그 데이터입니다. 문서 구조 보존과 차등 프라이버시 기반 캡슐화로 이 간격을 좁히는 방법 — Deutsche Telekom T Challenge 2026에서 검증되었습니다.",
-    dateUpdated: "USE CASE · Telecom",
+    title: "네트워크 운영 데이터와 AI: NOC, 인시던트 RCA, 통신사 워크플로우 실행",
+    lead: "NOC 엔지니어가 AI에게 분석시키고 싶은 데이터는 외부 LLM에 보낼 수 없는 바로 그 데이터입니다. 문서 구조 보존과 차등 프라이버시 기반 캡슐화로 이 간격을 좁히는 방법 — Deutsche Telekom T Challenge 2026에서 검증되었습니다.",
+    category: "USE CASE · Telecom",
+    readTime: "12분 읽기",
+    dateUpdated: "2025년 5월 업데이트",
     tldrLabel: "Definition · TL;DR",
     tldrBody: "네트워크 운영 데이터 — NOC 로그, 알람 시퀀스, 인시던트 티켓, 장비·사이트 ID, 설정 트리, 고객 영향 요약 — 는 고도로 구조화되어 있으며 문맥을 통해 재식별이 가능합니다. AI는 RCA, 알람 상관분석, 런북 생성을 획기적으로 가속할 수 있습니다. 단, 데이터를 AI가 처리할 수 있는 형태로 먼저 변환해야 합니다. LLM Capsule이 이 데이터 레이어를 제공합니다. Deutsche Telekom T Challenge 2026에서 검증, Data Security & Governance 부문 Top 12.",
     bodyHtml: `<!-- bodyHtml — HTML 태그를 유지하면서 텍스트만 번역 -->
@@ -339,11 +339,11 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   de: {
     backLabel: "← Learn",
     backHref: "/resources/learn",
-    title: "← Zurück",
-    lead: "KI für Netzwerkbetriebsdaten: NOC, Incident-RCA und Telekommunikations-Workflows",
-    category: "Die Daten, die NOC-Ingenieure für den KI-Einsatz benötigen, dürfen nicht an externe Sprachmodelle übertragen werden. Dieser Artikel beschreibt, wie strukturerhaltende Kapsulierung auf Basis von Differential Privacy diese Lücke schließt — validiert beim Deutsche Telekom T Challenge 2026.",
-    readTime: "ANWENDUNGSFALL · Telekommunikation",
-    dateUpdated: "12 Min. Lesezeit",
+    title: "KI für Netzwerkbetriebsdaten: NOC, Incident-RCA und Telekommunikations-Workflows",
+    lead: "Die Daten, die NOC-Ingenieure für den KI-Einsatz benötigen, dürfen nicht an externe Sprachmodelle übertragen werden. Dieser Artikel beschreibt, wie strukturerhaltende Kapsulierung auf Basis von Differential Privacy diese Lücke schließt — validiert beim Deutsche Telekom T Challenge 2026.",
+    category: "ANWENDUNGSFALL · Telekommunikation",
+    readTime: "12 Min. Lesezeit",
+    dateUpdated: "Aktualisiert Mai 2025",
     tldrLabel: "Definition · Kurzfassung",
     tldrBody: "Netzwerkbetriebsdaten — NOC-Logs, Alarmsequenzen, Incident-Tickets, Geräte- und Standort-IDs, Konfigurationsbäume, Kundenauswirkungen — sind hochstrukturiert und über den Kontext re-identifizierbar. KI kann RCA, Alarmkorrelation und Runbook-Erstellung erheblich beschleunigen. Voraussetzung ist jedoch, dass die Daten zuvor in einen KI-geeigneten Kontext überführt werden. LLM Capsule stellt diese Datenschicht bereit — validiert beim Deutsche Telekom T Challenge 2026, Top 12 in der Kategorie Data Security & Governance.",
     bodyHtml: `<h2>Struktur der Netzwerkbetriebsdaten</h2>

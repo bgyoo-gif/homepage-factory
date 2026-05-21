@@ -126,11 +126,11 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   ko: {
     backLabel: "← Learn",
     backHref: "/resources/learn",
-    title: "← 학습 자료",
-    lead: "네트워크 데이터를 노출하지 않고 통신사 NOC에 AI를 배포하는 방법",
-    category: "NOC, OSS/BSS, 고객 운영에 AI를 도입하려는 통신사를 위한 실무 가이드 — 가입자 정보, 통화 기록, IP 주소, 네트워크 구성은 절대 외부로 나가지 않습니다.",
-    readTime: "산업 · 통신",
-    dateUpdated: "12분 읽기",
+    title: "네트워크 데이터를 노출하지 않고 통신사 NOC에 AI를 배포하는 방법",
+    lead: "NOC, OSS/BSS, 고객 운영에 AI를 도입하려는 통신사를 위한 실무 가이드 — 가입자 정보, 통화 기록, IP 주소, 네트워크 구성은 절대 외부로 나가지 않습니다.",
+    category: "산업 · 통신",
+    readTime: "12분 읽기",
+    dateUpdated: "2025년 4월 업데이트",
     tldrLabel: "TL;DR — 정의",
     tldrBody: "통신사 NOC AI 배포는 데이터 레이어를 활용해 가입자 정보, 네트워크 식별자(DEVICE_ID, SITE_ID, CIRCUIT_ID), 통화 기록, IP 주소, 네트워크 구성을 외부 LLM에 전달되기 전에 로컬에서 캡슐화합니다. LLM은 보호된 캡슐을 기반으로 RCA, 고객 영향 분석, 티켓 권고안을 생성하며, 결과물은 운영사 환경 내 원본 티켓으로 자동 복원됩니다. SK Telecom에서 실증 검증되었으며, Deutsche Telekom T Challenge 2026 Data Security & Governance 부문 Top 12에 선정되었습니다.",
     bodyHtml: `<h2>NOC AI 도입의 장벽</h2>

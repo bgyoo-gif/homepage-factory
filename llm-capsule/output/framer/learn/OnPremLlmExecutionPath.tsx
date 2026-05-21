@@ -166,11 +166,11 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   ko: {
     backLabel: "← Learn",
     backHref: "/resources/learn",
-    title: "← Learn",
-    lead: "온프레미스 LLM 실행 경로: 규제 환경을 위한 망분리·하이브리드·지역 내 AI",
-    category: "단일 AI 데이터 레이어 안에 두 가지 실행 경로가 존재합니다. 외부 전송이 불가한 환경에서는 온프레미스 경량 모델이 경계 내부에서 워크플로를 처리합니다. 외부 노출 Zero Exposure, 완전한 복원.",
-    readTime: "ARCHITECTURE · Execution Path",
-    dateUpdated: "11분 읽기",
+    title: "온프레미스 LLM 실행 경로: 규제 환경을 위한 망분리·하이브리드·지역 내 AI",
+    lead: "단일 AI 데이터 레이어 안에 두 가지 실행 경로가 존재합니다. 외부 전송이 불가한 환경에서는 온프레미스 경량 모델이 경계 내부에서 워크플로를 처리합니다. 외부 노출 Zero Exposure, 완전한 복원.",
+    category: "ARCHITECTURE · Execution Path",
+    readTime: "11분 읽기",
+    dateUpdated: "2025년 5월 업데이트",
     tldrLabel: "Definition · TL;DR",
     tldrBody: "LLM Capsule은 두 가지 실행 경로를 지원합니다. Path A는 캡슐 데이터를 외부 승인 LLM으로 전송합니다. 원본 운영 데이터는 외부로 나가지 않습니다. Path B는 소형 경량 모델을 기업 환경 내부에서 완전히 실행합니다. 외부 전송이 없습니다. 경로 선택은 워크플로별 정책이 결정합니다.",
     bodyHtml: `<h2>하나가 아닌 두 가지 경로가 필요한 이유</h2>
@@ -303,11 +303,11 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   de: {
     backLabel: "← Learn",
     backHref: "/resources/learn",
-    title: "← Zurück",
-    lead: "On-Premise-Ausführungspfad für LLMs: Air-Gapped-, Hybrid- und regionsspezifische KI für regulierte Betriebsumgebungen",
-    category: "LLM Capsule bietet zwei Ausführungspfade innerhalb einer einzigen KI-Datenschicht. Wenn externe Übertragung regulatorisch ausgeschlossen ist, übernimmt das lokale On-Premise-Modell den gesamten Workflow innerhalb Ihrer Infrastruktur — ohne externe Datenübertragung, mit vollständiger Wiederherstellung.",
-    readTime: "ARCHITEKTUR · Ausführungspfad",
-    dateUpdated: "11 Min. Lesezeit",
+    title: "On-Premise-Ausführungspfad für LLMs: Air-Gapped-, Hybrid- und regionsspezifische KI für regulierte Betriebsumgebungen",
+    lead: "LLM Capsule bietet zwei Ausführungspfade innerhalb einer einzigen KI-Datenschicht. Wenn externe Übertragung regulatorisch ausgeschlossen ist, übernimmt das lokale On-Premise-Modell den gesamten Workflow innerhalb Ihrer Infrastruktur — ohne externe Datenübertragung, mit vollständiger Wiederherstellung.",
+    category: "ARCHITEKTUR · Ausführungspfad",
+    readTime: "11 Min. Lesezeit",
+    dateUpdated: "Aktualisiert Mai 2025",
     tldrLabel: "Definition · Kurzfassung",
     tldrBody: "LLM Capsule unterstützt zwei Ausführungspfade. Pfad A überträgt Kapseldaten an ein zugelassenes externes LLM — operative Rohdaten verlassen die Unternehmensumgebung nicht. Pfad B führt ein kleines lokales Modell vollständig innerhalb Ihrer Infrastruktur aus — ohne jede externe Datenübertragung. Die Pfadauswahl erfolgt richtliniengesteuert, je nach Workflow.",
     bodyHtml: `<h2>Warum zwei Ausführungspfade notwendig sind</h2>

@@ -121,11 +121,11 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   ko: {
     backLabel: "← Learn",
     backHref: "/resources/learn",
-    title: "← Learn",
-    lead: "/learn",
-    category: "기업 AI 파일럿이 멈추는 이유 — 그리고 프로덕션까지 가는 방법",
-    readTime: "몇 달이 지나도 프로덕션에 도달하지 못한 AI 파일럿을 진단합니다. CDO·CAIO·CIO를 위한 진단 가이드입니다.",
-    dateUpdated: "Strategy · Pilot to production",
+    title: "기업 AI 파일럿이 멈추는 이유 — 그리고 프로덕션까지 가는 방법",
+    lead: "몇 달이 지나도 프로덕션에 도달하지 못한 AI 파일럿을 진단합니다. CDO·CAIO·CIO를 위한 진단 가이드입니다.",
+    category: "Strategy · Pilot to production",
+    readTime: "10분 읽기",
+    dateUpdated: "2025년 4월 업데이트",
     tldrLabel: "TL;DR — 진단",
     tldrBody: "기업 AI 파일럿이 실패하는 이유는 AI가 나빠서가 아닙니다. AI와 운영 시스템 사이의 데이터 레이어가 없기 때문입니다. 데이터 레이어 없이는, 규제 산업 기업은 AI가 필요로 하는 데이터를 비즈니스가 노출할 수 있는 형태로 전달하지 못합니다. 파일럿은 합성 데이터나 익명화 데이터로는 작동하지만, 보안·프라이버시·컴플라이언스 검토가 시작되면 멈춥니다. 프로덕션까지 가는 패턴: 문서 구조 보존 캡슐 + 차등 프라이버시 기반 보호 + 플러그인 실행 + 복원 + 두 가지 실행 경로.",
     bodyHtml: `<!-- 아래는 bodyHtml Props 번역입니다. HTML 태그 구조를 그대로 유지합니다. -->
@@ -214,11 +214,11 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   de: {
     backLabel: "← Learn",
     backHref: "/resources/learn",
-    title: "← Learn",
-    lead: "Warum KI-Pilotprojekte im Unternehmen ins Stocken geraten — und wie sie dennoch den Produktionsbetrieb erreichen",
-    category: "Eine Analyse für Führungskräfte, CDOs, CAIOs und CIOs, deren KI-Pilotprojekt seit Monaten läuft, aber den Produktionsbetrieb nicht erreicht.",
-    readTime: "Strategie · Vom Pilotprojekt in die Produktion",
-    dateUpdated: "10 Min. Lesezeit",
+    title: "Warum KI-Pilotprojekte im Unternehmen ins Stocken geraten — und wie sie dennoch den Produktionsbetrieb erreichen",
+    lead: "Eine Analyse für Führungskräfte, CDOs, CAIOs und CIOs, deren KI-Pilotprojekt seit Monaten läuft, aber den Produktionsbetrieb nicht erreicht.",
+    category: "Strategie · Vom Pilotprojekt in die Produktion",
+    readTime: "10 Min. Lesezeit",
+    dateUpdated: "Aktualisiert April 2025",
     tldrLabel: "TL;DR — Diagnose",
     tldrBody: "Die meisten KI-Pilotprojekte in Unternehmen scheitern nicht an der Qualität der KI. Sie scheitern, weil die Datenschicht zwischen der KI und den operativen Systemen fehlt. Ohne eine KI-Datenschicht können regulierte Unternehmen die Daten, die die KI benötigt, nicht bereitstellen, ohne dabei Daten offenzulegen, die das Unternehmen nicht freigeben darf. Pilotprojekte bestehen ihre Tests auf Basis synthetischer oder anonymisierter Daten — und geraten ins Stocken, sobald die Sicherheits-, Datenschutz- und Compliance-Prüfung beginnt. Das Muster, das den Produktionsbetrieb erreicht: strukturerhaltende Kapsulierung + Differential-Privacy-basierter Schutz + Plug-in-Ausführung + Wiederherstellung + zwei Ausführungspfade.",
     bodyHtml: `<h2>Der typische Verlauf eines Pilotprojekts</h2>

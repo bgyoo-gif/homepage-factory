@@ -153,11 +153,11 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   ko: {
     backLabel: "← Learn",
     backHref: "/resources/learn",
-    title: "← Learn",
-    lead: "/learn",
-    category: "엔터프라이즈 AI를 위한 차등 프라이버시: 개념, 중요성, 운영 데이터 적용 방식",
-    readTime: "PII 필터링은 이름을 찾아냅니다. 차등 프라이버시는 패턴까지 막습니다. 차등 프라이버시 기반 캡슐화가 AI 데이터 레이어의 기술적 토대인 이유입니다.",
-    dateUpdated: "PILLAR · Differential Privacy",
+    title: "엔터프라이즈 AI를 위한 차등 프라이버시: 개념, 중요성, 운영 데이터 적용 방식",
+    lead: "PII 필터링은 이름을 찾아냅니다. 차등 프라이버시는 패턴까지 막습니다. 차등 프라이버시 기반 캡슐화가 AI 데이터 레이어의 기술적 토대인 이유입니다.",
+    category: "PILLAR · Differential Privacy",
+    readTime: "12분 읽기",
+    dateUpdated: "2025년 5월 업데이트",
     tldrLabel: "Definition · TL;DR",
     tldrBody: "차등 프라이버시 기반 캡슐화는 AI 데이터 레이어의 기술적 토대입니다. 규제 대상 운영 데이터를 AI 처리 가능한 컨텍스트로 변환하면서 구조(테이블 레이아웃, 로그 시퀀스, 문서 계층)를 보존하고, 재식별·추론·민감 컨텍스트 노출 위험을 줄이기 위한 차등 프라이버시 기반 보호를 적용합니다. 정의된 위험 감소 범위를 가진 기술적 보호 레이어입니다. 법적 보증이 아닙니다.",
     bodyHtml: `<h2>PII 필터링이 해결하지 못하는 문제</h2>
@@ -286,11 +286,11 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   de: {
     backLabel: "← Learn",
     backHref: "/resources/learn",
-    title: "← Zurück",
-    lead: "Differential Privacy für den KI-Einsatz im Unternehmen: Grundlagen, Relevanz und Anwendung auf operative Daten",
-    category: "PII-Filterung erfasst personenbezogene Felder. Differential Privacy schützt vor Rückschlüssen auf Musterebene. Warum strukturerhaltende Kapsulierung auf Basis von Differential Privacy die technische Grundlage der KI-Datenschicht bildet.",
-    readTime: "GRUNDLAGE · Differential Privacy",
-    dateUpdated: "12 Min. Lesezeit",
+    title: "Differential Privacy für den KI-Einsatz im Unternehmen: Grundlagen, Relevanz und Anwendung auf operative Daten",
+    lead: "PII-Filterung erfasst personenbezogene Felder. Differential Privacy schützt vor Rückschlüssen auf Musterebene. Warum strukturerhaltende Kapsulierung auf Basis von Differential Privacy die technische Grundlage der KI-Datenschicht bildet.",
+    category: "GRUNDLAGE · Differential Privacy",
+    readTime: "12 Min. Lesezeit",
+    dateUpdated: "Aktualisiert Mai 2025",
     tldrLabel: "Definition · Kurzfassung",
     tldrBody: "Differential-Privacy-basierte Kapsulierung ist die technische Grundlage der KI-Datenschicht. Sie überführt regulierte operative Daten in einen KI-geeigneten Kontext. Dabei bleibt die Struktur (Tabellenlayout, Log-Sequenz, Dokumenthierarchie) erhalten. Differential-Privacy-basierter Schutz reduziert Re-Identifikations-, Inferenz- und Kontextoffenlegungsrisiken. Es handelt sich um eine technische Schutzschicht mit definiertem Risikoreduktionsumfang — nicht um eine rechtliche Garantie.",
     bodyHtml: `<h2>Die Grenzen der PII-Filterung</h2>

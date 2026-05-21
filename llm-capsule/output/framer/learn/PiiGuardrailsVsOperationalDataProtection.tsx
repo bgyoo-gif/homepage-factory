@@ -154,11 +154,11 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   ko: {
     backLabel: "← Learn",
     backHref: "/resources/learn",
-    title: "← Learn",
-    lead: "/learn",
-    category: "PII 가드레일만으로 기업 AI가 작동하지 않는 이유",
-    readTime: "PII 가드레일, AI 보안 스위트, 프롬프트 보안 게이트웨이 — 각각 중요한 역할을 합니다. 그러나 모두 같은 일을 하지는 않습니다. 각 카테고리가 기업 AI 도입에서 어디에 맞는지, 직접 비교와 명확한 답변을 제공합니다.",
-    dateUpdated: "COMPARISON · Categories",
+    title: "PII 가드레일만으로 기업 AI가 작동하지 않는 이유",
+    lead: "PII 가드레일, AI 보안 스위트, 프롬프트 보안 게이트웨이 — 각각 중요한 역할을 합니다. 그러나 모두 같은 일을 하지는 않습니다. 각 카테고리가 기업 AI 도입에서 어디에 맞는지, 직접 비교와 명확한 답변을 제공합니다.",
+    category: "COMPARISON · Categories",
+    readTime: "11분 읽기",
+    dateUpdated: "2025년 5월 업데이트",
     tldrLabel: "Definition · TL;DR",
     tldrBody: "PII 가드레일은 API 또는 프롬프트 레이어에서 식별 가능한 필드를 보호합니다. 데이터 레이어는 구조화된 기업 데이터 — 네트워크 로그, 설정 파일, 인시던트 레코드, OT 및 미션 컨텍스트 — 를 문서 구조 보존 방식의 차등 프라이버시 기반 캡슐화로 보호합니다. 두 카테고리는 기업 AI 파이프라인에서 인접하지만 서로 다른 레이어를 담당합니다.",
     bodyHtml: `(아래는 bodyHtml Props의 HTML 태그를 유지하며 텍스트만 번역한 전체 본문입니다.)
@@ -298,11 +298,11 @@ LLM Capsule은 레거시 시스템 연동, 두 가지 실행 경로, 양방향 �
   de: {
     backLabel: "← Learn",
     backHref: "/resources/learn",
-    title: "← Learn",
-    lead: "Warum PII-Guardrails allein den KI-Einsatz im Unternehmen nicht ermöglichen",
-    category: "PII-Guardrails, KI-Sicherheitssuiten, Prompt-Security-Gateways — sie alle erfüllen spezifische Aufgaben. Keine davon ist mit den anderen austauschbar. Dieser Artikel vergleicht die Kategorien direkt und zeigt, wo jede im KI-Einsatz des Unternehmens ihren Platz hat.",
-    readTime: "VERGLEICH · Kategorien",
-    dateUpdated: "11 Min. Lesezeit",
+    title: "Warum PII-Guardrails allein den KI-Einsatz im Unternehmen nicht ermöglichen",
+    lead: "PII-Guardrails, KI-Sicherheitssuiten, Prompt-Security-Gateways — sie alle erfüllen spezifische Aufgaben. Keine davon ist mit den anderen austauschbar. Dieser Artikel vergleicht die Kategorien direkt und zeigt, wo jede im KI-Einsatz des Unternehmens ihren Platz hat.",
+    category: "VERGLEICH · Kategorien",
+    readTime: "11 Min. Lesezeit",
+    dateUpdated: "Aktualisiert Mai 2025",
     tldrLabel: "Definition · TL;DR",
     tldrBody: "PII-Guardrails schützen identifizierbare Felder auf API- oder Prompt-Ebene. Die KI-Datenschicht schützt strukturierte Unternehmensdaten — Netzwerkprotokolle, Konfigurationen, Incident-Records, OT- und Missionskontext — durch strukturerhaltende Kapsulierung auf Basis von Differential Privacy. Beide decken unterschiedliche Ebenen der KI-Pipeline im Unternehmen ab.",
     bodyHtml: `<h2>Warum dieser Vergleich relevant ist</h2>
