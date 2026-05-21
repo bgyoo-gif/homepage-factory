@@ -195,9 +195,9 @@ def add_locale_default_and_resolver(
 ) -> str:
     """Add `locale = "en",` to function signature defaults and insert resolver lines.
 
-    Resolver priority: dict[locale] is source of truth.
+    Resolver priority: URL auto-detect (Framer Localization) > prop > dict[en].
+      - effectiveLocale = URL `/ko/...` or `/de/...` → ko/de; else locale prop
       - _propName = T["propName"] || TRANSLATIONS.en["propName"] || propName
-      - This eliminates all stored-prop interference from Framer caching.
     """
     tsx = re.sub(
         r"(export default function \w+\(\{\n)",
@@ -206,7 +206,45 @@ def add_locale_default_and_resolver(
         count=1,
     )
 
-    resolver_lines = ['  const T = TRANSLATIONS[locale] || TRANSLATIONS.en']
+    # Ensure useState + useEffect are imported from react (for URL auto-detect).
+    if 'from "react"' in tsx:
+        tsx = re.sub(
+            r'import\s*\{([^}]*)\}\s*from\s*"react"',
+            lambda m: 'import { '
+            + ", ".join(
+                sorted(
+                    set(
+                        [x.strip() for x in m.group(1).split(",") if x.strip()]
+                        + ["useState", "useEffect"]
+                    )
+                )
+            )
+            + ' } from "react"',
+            tsx,
+            count=1,
+        )
+    else:
+        tsx = re.sub(
+            r'(import\s*\{[^}]*\}\s*from\s*"framer"\n)',
+            r'\1import { useState, useEffect } from "react"\n',
+            tsx,
+            count=1,
+        )
+
+    auto_locale_block = """  // Auto-detect locale from URL (Framer Localization sync).
+  const [autoLocale, setAutoLocale] = useState<"en" | "ko" | "de">("en")
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const m = window.location.pathname.match(/^\\/(ko|de)(?:\\/|$)/)
+    if (m) setAutoLocale(m[1] as "en" | "ko" | "de")
+  }, [])
+  const effectiveLocale: "en" | "ko" | "de" = locale && locale !== "en" ? locale : autoLocale
+"""
+
+    resolver_lines = [
+        auto_locale_block,
+        '  const T = TRANSLATIONS[effectiveLocale] || TRANSLATIONS.en',
+    ]
     for name, _, _ in tsx_props:
         resolver_lines.append(
             f'  const _{name} = T["{name}"] || TRANSLATIONS.en["{name}"] || {name}'

@@ -1,4 +1,5 @@
 import { addPropertyControls, ControlType } from "framer"
+import { useState, useEffect } from "react"
 
 const IMAGE_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/"
 
@@ -88,7 +89,16 @@ export default function Section02_ProofBand({
   logo10Img = "",
   logo10Alt = "",
 }: Props) {
-  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  // Auto-detect locale from URL (Framer Localization sync).
+  const [autoLocale, setAutoLocale] = useState<"en" | "ko" | "de">("en")
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const m = window.location.pathname.match(/^\/(ko|de)(?:\/|$)/)
+    if (m) setAutoLocale(m[1] as "en" | "ko" | "de")
+  }, [])
+  const effectiveLocale: "en" | "ko" | "de" = locale && locale !== "en" ? locale : autoLocale
+
+  const T = TRANSLATIONS[effectiveLocale] || TRANSLATIONS.en
   const _label = T["label"] || TRANSLATIONS.en["label"] || label
   const _logo1Alt = T["logo1Alt"] || TRANSLATIONS.en["logo1Alt"] || logo1Alt
   const _logo2Alt = T["logo2Alt"] || TRANSLATIONS.en["logo2Alt"] || logo2Alt

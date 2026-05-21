@@ -1,7 +1,8 @@
 import { addPropertyControls, ControlType } from "framer"
+import { useState, useEffect } from "react"
 
 interface Props {
-  langMode?: "en" | "ko" | "de"
+  locale?: "en" | "ko" | "de"
   tag?: string
   title?: string
   lead?: string
@@ -113,7 +114,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
 
 
 export default function Section07_OT({
-  langMode = "en",
+  locale = "en",
   tag = "",
   title = "",
   lead = "",
@@ -141,7 +142,16 @@ export default function Section07_OT({
   readHref = "",
   altBg = false,
 }: Props) {
-  const T = TRANSLATIONS[langMode] || TRANSLATIONS.en
+  // Auto-detect locale from URL (Framer Localization sync).
+  const [autoLocale, setAutoLocale] = useState<"en" | "ko" | "de">("en")
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const m = window.location.pathname.match(/^\/(ko|de)(?:\/|$)/)
+    if (m) setAutoLocale(m[1] as "en" | "ko" | "de")
+  }, [])
+  const effectiveLocale: "en" | "ko" | "de" = locale && locale !== "en" ? locale : autoLocale
+
+  const T = TRANSLATIONS[effectiveLocale] || TRANSLATIONS.en
   const _tag = T["tag"] || TRANSLATIONS.en["tag"] || tag
   const _title = T["title"] || TRANSLATIONS.en["title"] || title
   const _lead = T["lead"] || TRANSLATIONS.en["lead"] || lead
@@ -169,11 +179,6 @@ export default function Section07_OT({
 
   return (
     <>
-      {/* TEMP DEBUG: shows actual locale value in canvas — remove after diagnosis */}
-      <div style={{ position: "fixed", top: 8, right: 8, zIndex: 9999, padding: "6px 10px", background: "#fff59d", border: "2px solid #f57f17", fontFamily: "monospace", fontSize: 13, fontWeight: 700, color: "#000" }}>
-        langMode = "{langMode}" | T["tag"] = "{T["tag"]?.slice(0, 40) ?? "undef"}"
-      </div>
-
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
@@ -409,7 +414,7 @@ export default function Section07_OT({
 }
 
 addPropertyControls(Section07_OT, {
-  langMode: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
   tag:              { type: ControlType.String,  title: "Tag", defaultValue: "" },
   title:            { type: ControlType.String,  title: "Title", defaultValue: "", displayTextArea: true },
   lead:             { type: ControlType.String,  title: "Lead", defaultValue: "", displayTextArea: true },

@@ -1,4 +1,5 @@
 import { addPropertyControls, ControlType } from "framer"
+import { useState, useEffect } from "react"
 
 interface Props {
   locale?: "en" | "ko" | "de"
@@ -141,7 +142,16 @@ export default function Section05_Finance({
   readHref = "",
   altBg = false,
 }: Props) {
-  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  // Auto-detect locale from URL (Framer Localization sync).
+  const [autoLocale, setAutoLocale] = useState<"en" | "ko" | "de">("en")
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const m = window.location.pathname.match(/^\/(ko|de)(?:\/|$)/)
+    if (m) setAutoLocale(m[1] as "en" | "ko" | "de")
+  }, [])
+  const effectiveLocale: "en" | "ko" | "de" = locale && locale !== "en" ? locale : autoLocale
+
+  const T = TRANSLATIONS[effectiveLocale] || TRANSLATIONS.en
   const _tag = T["tag"] || TRANSLATIONS.en["tag"] || tag
   const _title = T["title"] || TRANSLATIONS.en["title"] || title
   const _lead = T["lead"] || TRANSLATIONS.en["lead"] || lead

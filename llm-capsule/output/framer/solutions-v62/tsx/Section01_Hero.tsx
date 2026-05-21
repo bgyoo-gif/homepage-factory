@@ -1,4 +1,5 @@
 import { addPropertyControls, ControlType } from "framer"
+import { useState, useEffect } from "react"
 
 interface Props {
   locale?: "en" | "ko" | "de"
@@ -77,7 +78,16 @@ export default function Section01_Hero({
   stat4Num = "",
   stat4Label = "",
 }: Props) {
-  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  // Auto-detect locale from URL (Framer Localization sync).
+  const [autoLocale, setAutoLocale] = useState<"en" | "ko" | "de">("en")
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const m = window.location.pathname.match(/^\/(ko|de)(?:\/|$)/)
+    if (m) setAutoLocale(m[1] as "en" | "ko" | "de")
+  }, [])
+  const effectiveLocale: "en" | "ko" | "de" = locale && locale !== "en" ? locale : autoLocale
+
+  const T = TRANSLATIONS[effectiveLocale] || TRANSLATIONS.en
   const _eyebrow = T["eyebrow"] || TRANSLATIONS.en["eyebrow"] || eyebrow
   const _h1Plain = T["h1Plain"] || TRANSLATIONS.en["h1Plain"] || h1Plain
   const _h1Highlight = T["h1Highlight"] || TRANSLATIONS.en["h1Highlight"] || h1Highlight

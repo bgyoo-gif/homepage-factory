@@ -7,7 +7,7 @@
 // from translation md files.
 
 import { addPropertyControls, ControlType } from "framer"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 type Locale = "en" | "ko" | "de"
 
@@ -134,15 +134,25 @@ export default function Learn({
   labelDefinition = "",
   readLabel = "",
 }: Props) {
-  const hero = HERO_TRANSLATIONS[locale] || HERO_TRANSLATIONS.en
-  // Dict-first resolver: locale dict overrides any stored prop value from Framer.
-  // For en locale, falls back to user-provided prop, then dict.
-  const _eyebrow = locale === "en" ? (eyebrow || hero.eyebrow) : (hero.eyebrow || eyebrow)
-  const _heroTitle = locale === "en" ? (heroTitle || hero.heroTitle) : (hero.heroTitle || heroTitle)
-  const _heroLead = locale === "en" ? (heroLead || hero.heroLead) : (hero.heroLead || heroLead)
-  const _readLabel = locale === "en" ? (readLabel || hero.readLabel) : (hero.readLabel || readLabel)
+  // Auto-detect locale from URL path (Framer Localization sync).
+  // /ko/... → ko, /de/... → de, else en. Overridden by `locale` prop if set to non-"en".
+  const [autoLocale, setAutoLocale] = useState<Locale>("en")
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const m = window.location.pathname.match(/^\/(ko|de)(?:\/|$)/)
+    if (m) setAutoLocale(m[1] as Locale)
+  }, [])
+  // Effective locale: explicit prop (non-en) > auto-detected from URL > "en"
+  const effectiveLocale: Locale = locale && locale !== "en" ? locale : autoLocale
 
-  const t = (key: string) => TAB_TRANSLATIONS[key]?.[locale] || TAB_TRANSLATIONS[key]?.en || key
+  const hero = HERO_TRANSLATIONS[effectiveLocale] || HERO_TRANSLATIONS.en
+  // Dict-first resolver: locale dict overrides any stored prop value from Framer.
+  const _eyebrow = effectiveLocale === "en" ? (eyebrow || hero.eyebrow) : (hero.eyebrow || eyebrow)
+  const _heroTitle = effectiveLocale === "en" ? (heroTitle || hero.heroTitle) : (hero.heroTitle || heroTitle)
+  const _heroLead = effectiveLocale === "en" ? (heroLead || hero.heroLead) : (hero.heroLead || heroLead)
+  const _readLabel = effectiveLocale === "en" ? (readLabel || hero.readLabel) : (hero.readLabel || readLabel)
+
+  const t = (key: string) => TAB_TRANSLATIONS[key]?.[effectiveLocale] || TAB_TRANSLATIONS[key]?.en || key
   const filters = [
     { key: "all", label: labelAll || t("all") },
     { key: "policy", label: labelPolicy || t("policy") },
@@ -158,12 +168,12 @@ export default function Learn({
   // Filter: locale availability + skipInIndex + active tab
   const visibleCards = LEARN_CARDS.filter((c) => {
     if (c.skipInIndex) return false
-    if (!c.locales.includes(locale)) return false
+    if (!c.locales.includes(effectiveLocale)) return false
     if (activeTab !== "all" && CATEGORY_TO_TAB[c.category] !== activeTab) return false
     return true
   })
 
-  const localePrefix = locale === "en" ? "" : `/${locale}`
+  const localePrefix = effectiveLocale === "en" ? "" : `/${effectiveLocale}`
 
   return (
     <>
@@ -297,7 +307,7 @@ export default function Learn({
       <div className="lrn-root">
         {/* TEMP DEBUG: shows actual locale value — remove after diagnosis */}
         <div style={ { position: "fixed", top: 8, right: 8, zIndex: 9999, padding: "6px 10px", background: "#fff59d", border: "2px solid #f57f17", fontFamily: "monospace", fontSize: 13, fontWeight: 700, color: "#000" } }>
-          locale = "{locale}" | hero.heroTitle = "{hero.heroTitle?.slice(0, 30) ?? "undef"}"
+          prop locale = "{locale}" | URL → "{autoLocale}" | effective = "{effectiveLocale}" | heroTitle = "{hero.heroTitle?.slice(0, 25) ?? "undef"}"
         </div>
         <section className="lrn-hero">
           <div className="lrn-container">
@@ -335,9 +345,9 @@ export default function Learn({
             ) : (
               <div className="lrn-grid">
                 {visibleCards.map((c) => {
-                  const title = c.title[locale] || c.title.en || c.slug
-                  const desc = c.desc[locale] || c.desc.en || ""
-                  const catLabel = CATEGORY_LABELS[c.category]?.[locale] || c.category
+                  const title = c.title[effectiveLocale] || c.title.en || c.slug
+                  const desc = c.desc[effectiveLocale] || c.desc.en || ""
+                  const catLabel = CATEGORY_LABELS[c.category]?.[effectiveLocale] || c.category
                   return (
                     <a key={c.slug} href={`${localePrefix}${c.href}`} className="lrn-card">
                       <div className="lrn-card__cat">{catLabel}</div>
