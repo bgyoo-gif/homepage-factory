@@ -34,10 +34,10 @@ type CardData = {
   slug: string
   category: string
   href: string
-  locales: Locale[]
+  locales: string[]
   skipInIndex: boolean
-  title: Partial<Record<Locale, string>>
-  desc: Partial<Record<Locale, string>>
+  title: Record<string, string>
+  desc: Record<string, string>
 }
 
 const LEARN_CARDS: CardData[] = [
@@ -135,10 +135,12 @@ export default function Learn({
   readLabel = "",
 }: Props) {
   const hero = HERO_TRANSLATIONS[locale] || HERO_TRANSLATIONS.en
-  const _eyebrow = eyebrow || hero.eyebrow
-  const _heroTitle = heroTitle || hero.heroTitle
-  const _heroLead = heroLead || hero.heroLead
-  const _readLabel = readLabel || hero.readLabel
+  // Dict-first resolver: locale dict overrides any stored prop value from Framer.
+  // For en locale, falls back to user-provided prop, then dict.
+  const _eyebrow = locale === "en" ? (eyebrow || hero.eyebrow) : (hero.eyebrow || eyebrow)
+  const _heroTitle = locale === "en" ? (heroTitle || hero.heroTitle) : (hero.heroTitle || heroTitle)
+  const _heroLead = locale === "en" ? (heroLead || hero.heroLead) : (hero.heroLead || heroLead)
+  const _readLabel = locale === "en" ? (readLabel || hero.readLabel) : (hero.readLabel || readLabel)
 
   const t = (key: string) => TAB_TRANSLATIONS[key]?.[locale] || TAB_TRANSLATIONS[key]?.en || key
   const filters = [
