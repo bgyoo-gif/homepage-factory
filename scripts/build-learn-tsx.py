@@ -117,11 +117,28 @@ def _extract_md_pairs(text):
 
 # ── Inline LearnArticle body (loaded from shared/LearnArticle.tsx) ──
 def load_learn_article_body() -> str:
-    """Extract the function body of LearnArticle (line 126 to before line 685)."""
+    """Extract the function body of LearnArticle — auto-detect boundaries.
+
+    Body starts after `}: Props) {` line and ends before `addPropertyControls(`,
+    minus the function's trailing closing `}` brace. Tolerates CSS additions
+    to the inlined component without breaking hardcoded line numbers.
+    """
     text = LEARN_ARTICLE_TSX.read_text(encoding="utf-8")
     lines = text.split("\n")
-    # 1-indexed: 126..684 inclusive. Python list is 0-indexed → 125..683
-    body_lines = lines[125:684]
+    start = end = None
+    for i, line in enumerate(lines):
+        if start is None and line.strip().startswith("}: Props) {"):
+            start = i + 1
+        if line.startswith("addPropertyControls("):
+            end = i - 1
+            break
+    if start is None or end is None:
+        raise RuntimeError("Could not find LearnArticle function body boundaries")
+    body_lines = lines[start:end]
+    while body_lines and body_lines[-1].strip() == "":
+        body_lines.pop()
+    if body_lines and body_lines[-1].strip() == "}":
+        body_lines.pop()
     return "\n".join(body_lines)
 
 

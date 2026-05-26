@@ -1092,6 +1092,38 @@ export default function AiOnNetworkOperationsData({
               <p className="la-tldr__body">{_tldrBody}</p>
             </div>
           </div>
+        </div>
+
+        {/* ── 3. Article Body ── */}
+        <div className="la-body-wrap">
+          <div className="la-container">
+            <article
+              className="la-body"
+              dangerouslySetInnerHTML={{ __html: _bodyHtml }}
+            />
+          </div>
+        </div>
+
+        {/* ── 4. Related Links ── */}
+        {relatedItems.length > 0 && (
+          <div className="la-related">
+            <div className="la-container">
+              <div className="la-related__label">{_relatedSectionLabel}</div>
+              <div className="la-related__grid">
+                {relatedItems.map((item, i) => (
+                  <a key={i} href={item.href} className="la-related__card">
+                    <span className="la-related__card-_title">{item.title}</span>
+                    <span className="la-related__card-arrow" aria-hidden="true">→</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+      </div>
+    </>
+  )
 }
 
 addPropertyControls(AiOnNetworkOperationsData, {
