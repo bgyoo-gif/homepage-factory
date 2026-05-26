@@ -60,6 +60,93 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 <p>The correct architecture is that reconstruction is colocated with the source systems and the mapping — on-premise, in the enterprise's own VPC, in whatever EU-region infrastructure the workflow runs in. <strong>The output of the LLM comes back tokenised, traverses to the reconstruction layer inside the boundary, and emerges from that layer as business-ready content.</strong> The external journey of the data ends at the reconstruction step.</p>
 <p>For workflows where the rest of the architecture is meticulous about boundaries — encapsulation inside, mapping inside, audit logs inside — and reconstruction is the one piece that wandered outside, the rest of the architecture's promises are weakened to whatever the reconstruction location can guarantee.</p>
 
+<figure class="ds-figure">
+  <div class="ds-figure__svg-wrap">
+    <svg class="ds-figure__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-labelledby="reconstruction-location-title reconstruction-location-desc">
+      <title id="reconstruction-location-title">Where reconstruction has to happen</title>
+      <desc id="reconstruction-location-desc">Two architectures side by side. On the left, reconstruction runs on external middleware, forcing the mapping to be replicated outside the enterprise — the protection collapses. On the right, reconstruction runs inside the enterprise environment colocated with the mapping, and the protection holds.</desc>
+
+      <defs>
+        <marker id="arrow-coral-rc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#c73e3a"/>
+        </marker>
+        <marker id="arrow-primary-rc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#5b4fe9"/>
+        </marker>
+      </defs>
+
+      
+      <g>
+        <rect x="20" y="20" width="440" height="32" rx="6" fill="#fce9e8" stroke="#ef5350" stroke-width="1"/>
+        <text x="240" y="41" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#c73e3a">✗ Reconstruction outside the enterprise</text>
+
+        <rect x="20" y="70" width="200" height="280" rx="10" fill="#ffffff" stroke="#0f1130" stroke-width="1.5"/>
+        <text x="40" y="92" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="500" fill="#6b7280" letter-spacing="1.2">ENTERPRISE</text>
+
+        <rect x="40" y="108" width="160" height="44" rx="6" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1"/>
+        <text x="120" y="127" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#0f1130">Tokenisation</text>
+        <text x="120" y="143" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">runs inside ✓</text>
+
+        <rect x="40" y="168" width="160" height="44" rx="6" fill="#e6f7f6" stroke="#0ea5a4" stroke-width="1"/>
+        <text x="120" y="187" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#0f1130">Mapping</text>
+        <text x="120" y="203" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">held inside ✓</text>
+
+        <line x1="200" y1="190" x2="290" y2="262" stroke="#c73e3a" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrow-coral-rc)"/>
+        <text x="200" y="248" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#c73e3a">mapping replicated</text>
+
+        <rect x="260" y="240" width="180" height="100" rx="10" fill="#fce9e8" stroke="#ef5350" stroke-width="1.5"/>
+        <text x="280" y="262" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="500" fill="#c73e3a" letter-spacing="1.2">VENDOR / MIDDLEWARE</text>
+        <rect x="280" y="276" width="140" height="44" rx="6" fill="#ffffff" stroke="#c73e3a" stroke-width="1"/>
+        <text x="350" y="295" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#c73e3a">Reconstruction</text>
+        <text x="350" y="311" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#c73e3a">runs OUTSIDE ✗</text>
+
+        <rect x="20" y="370" width="440" height="50" rx="6" fill="#fce9e8" stroke="none"/>
+        <text x="240" y="392" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#c73e3a">Protection collapses to whatever the external</text>
+        <text x="240" y="410" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#c73e3a">location can guarantee — usually less than the original promise.</text>
+      </g>
+
+      
+      <g>
+        <rect x="500" y="20" width="440" height="32" rx="6" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1"/>
+        <text x="720" y="41" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#5b4fe9">✓ Reconstruction inside the enterprise</text>
+
+        <rect x="500" y="70" width="320" height="280" rx="10" fill="#ffffff" stroke="#0f1130" stroke-width="1.5"/>
+        <text x="520" y="92" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="500" fill="#6b7280" letter-spacing="1.2">ENTERPRISE ENVIRONMENT</text>
+
+        <rect x="520" y="108" width="280" height="44" rx="6" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1"/>
+        <text x="660" y="127" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#0f1130">Tokenisation</text>
+        <text x="660" y="143" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">runs inside ✓</text>
+
+        <rect x="520" y="168" width="280" height="44" rx="6" fill="#e6f7f6" stroke="#0ea5a4" stroke-width="1"/>
+        <text x="660" y="187" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#0f1130">Mapping</text>
+        <text x="660" y="203" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">held inside ✓</text>
+
+        <rect x="520" y="228" width="280" height="44" rx="6" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1.5"/>
+        <text x="660" y="247" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#5b4fe9">Reconstruction</text>
+        <text x="660" y="263" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#5b4fe9">colocated with mapping ✓</text>
+
+        <rect x="520" y="288" width="280" height="44" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+        <text x="660" y="307" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#0f1130">Audit log</text>
+        <text x="660" y="323" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">separate access controls ✓</text>
+
+        <rect x="848" y="168" width="100" height="84" rx="8" fill="#0f1130" stroke="#0f1130" stroke-width="1.5"/>
+        <text x="898" y="190" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="500" fill="#9ca3af" letter-spacing="1.2">EXTERNAL LLM</text>
+        <text x="898" y="214" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff">sees only</text>
+        <text x="898" y="230" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff">tokens</text>
+
+        <line x1="800" y1="195" x2="846" y2="195" stroke="#5b4fe9" stroke-width="1.5" marker-end="url(#arrow-primary-rc)"/>
+        <line x1="846" y1="225" x2="800" y2="240" stroke="#5b4fe9" stroke-width="1.5" marker-end="url(#arrow-primary-rc)"/>
+
+        <rect x="500" y="370" width="440" height="50" rx="6" fill="#eeebfe" stroke="none"/>
+        <text x="720" y="392" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#5b4fe9">Mapping never leaves the boundary. The external</text>
+        <text x="720" y="410" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#5b4fe9">journey of the data ends at the reconstruction step.</text>
+      </g>
+    </svg>
+  </div>
+  <figcaption class="ds-figure__caption">Figure 1 · <strong>The most common architectural mistake — running reconstruction on external middleware because it's convenient — replicates the mapping outside the enterprise and collapses the protection the tokenisation provided.</strong></figcaption>
+</figure>
+
+
 <h2>3. How Reconstruction Integrates With the Workflow</h2>
 <p>Reconstruction is not a standalone step the user invokes. It is infrastructure that has to integrate into wherever the AI's output is delivered. Three integration patterns cover most enterprise deployments.</p>
 

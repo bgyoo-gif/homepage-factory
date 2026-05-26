@@ -1,0 +1,121 @@
+<h2>1. Why Masking and Redaction Are the First Thing Teams Try</h2>
+<p>A pattern repeats across enterprise AI pilots: the proof-of-concept works on clean text, the demo lands well with leadership, and then someone tries to run the same workflow on a real service ticket or a real operational document, and the output comes back unusable. The model is fine. The integration is fine. What broke is something more specific — and it almost always traces back to how the input data was prepared.</p>
+<p>The standard preparation step is some form of PII handling: a masking library, a guardrail API, a redaction pass. The team installs one of these, configures it for names and IDs, and assumes the privacy problem is solved. For a small class of documents — long-form text where the sensitive part is a name in a sentence — this works. For the documents that operational teams actually live in, it fails in ways that take a while to diagnose.</p>
+<p>The instinct is reasonable. The problem looks like <em>"sensitive data is in the document; AI shouldn't see it; remove the sensitive parts."</em> And the tools available — open-source PII detection libraries, commercial guardrail APIs, redaction engines built into document management platforms — all assume that frame. They take a document, identify named entities, and either replace them with placeholders or strip them out.</p>
+<p>This assumption holds reasonably well when the document is unstructured long-form prose with the sensitive content concentrated in a few named-entity mentions. A CV. A contract summary. A press release draft. In these, the customer or party name is a small fraction of the document, and removing it doesn't break the document's meaning.</p>
+<p><strong>The assumption stops holding the moment the document is operational. And operational documents are what enterprise AI is actually trying to process.</strong></p>
+
+<h2>2. Case 1 — The Service Ticket</h2>
+<p>Take a single customer service ticket from a telecom operations centre. The ticket has structure: a header with the customer account number, the device serial, the affected service, the date and time. A free-text description from the agent: <em>"Customer reports intermittent dropouts on Mobile-X line, escalated from level-1 after second call. Device shows reset event at 14:22 UTC. Subscriber confirms no physical damage but mentions slow speeds since the firmware push last Tuesday."</em> A linked attachment with a network log fragment. References to two other ticket IDs from the same customer over the past month. An asset reference to the cell site serving the affected line.</p>
+<p>A PII guardrail looks at this and finds: a customer name (if the name is in the description), maybe a phone number, possibly an email if the agent quoted the customer. Everything else is, from the guardrail's perspective, not sensitive.</p>
+<p>But for an EU telecom under sector-specific data location requirements, almost everything else <em>is</em> sensitive in some way. The cell site identifier reveals geographic location data. The asset reference, joined with the firmware push date, can identify the customer's hardware configuration. The cross-referenced ticket IDs reveal a behavioural pattern. The serial number is a unique identifier. <strong>Removing just the obvious PII leaves a document where most of what made it sensitive — and most of what made it useful to the AI — is untouched.</strong> The customer's name is gone; the customer is still identifiable to anyone with access to the operator's CRM.</p>
+<p>And here is the worse half: removing what the guardrail does flag also breaks the AI's ability to do its job. The agent's free-text description references <em>"the customer"</em> throughout. Replace the customer's name with <code>[REDACTED]</code> in the header and the free text now has dangling references. The AI summary that comes back will say things like <em>"the user mentioned slow speeds, but [REDACTED] also reported,"</em> which is useless to the next agent reading it.</p>
+<p>The ticket is a structure of identifiers, references, and contextual fragments that are mutually dependent. <strong>You cannot pull out the sensitive parts without breaking the dependencies, and the dependencies are what made the AI worth running in the first place.</strong></p>
+
+<h2>3. Case 2 — The Operational Log</h2>
+<p>A second example: a window of operational logs from a network operations centre, twenty minutes of alarm events leading up to a service outage. The format is structured: timestamp, severity, device ID, event code, free-text description, correlation ID.</p>
+<p>A PII guardrail looks at this and finds essentially nothing. There are no customer names. There are no email addresses or phone numbers. The fields are technical identifiers and event codes. <strong>The guardrail returns the log unchanged and the team feels safe sending it to an external LLM for root-cause analysis.</strong></p>
+<p>But sector-specific commitments for network operators in most EU countries cover the network topology itself. The device IDs reveal infrastructure layout. The alarm sequence, joined with the correlation ID, can reveal traffic routing decisions. The event codes are sometimes vendor-specific in ways that disclose what equipment runs which segments. For a network operator with customer commitments around where operational data is processed, sending the raw log to a third-country endpoint is the violation, even though the guardrail saw no PII.</p>
+<p>The structural information — what's connected to what, what failed in what order, which subsystem propagated the fault — is what the AI needs to do useful root-cause analysis. It's also what makes the log sensitive. Strip the structure and the AI has nothing to work with. Leave the structure and the data hasn't actually been protected.</p>
+<p>This is the part most teams discover the hard way: in operational data, <strong><em>the structure is the sensitivity</em></strong>. Field-level removal doesn't see it, can't model it, and can't preserve it.</p>
+
+<h2>4. Case 3 — The Clinical or Financial Document</h2>
+<p>A third case, less obvious but more common: a clinical workflow document or a financial review document. A patient record with cross-references to past visits, lab results, prescriptions, and a free-text clinician note. A loan file with applicant data, asset details, transaction history, and an underwriter's narrative.</p>
+<p>These documents have something the first two don't: explicit personal identifiers that a PII guardrail will catch — patient name, date of birth, account number, social security number. The team configures the guardrail, runs it, and the obvious identifiers are masked. The document looks clean.</p>
+<p>But the cross-references stay. The clinician's note refers to the patient as <em>"the patient"</em> — fine — but also references <em>"the result from the previous admission"</em> and <em>"the medication change on the third visit."</em> The lab results table has structured rows with dates, codes, and values. The financial document has a transaction history with merchant names, amounts, and timestamps.</p>
+<p>Two things break.</p>
+
+<ol>
+  <li><strong>Cross-references no longer resolve.</strong> The AI sees <em>"the result from the previous admission"</em> but the previous admission has been masked into a token that doesn't tell the AI anything about what it was. The summary the AI produces is correspondingly vague.</li>
+  <li><strong>The document remains identifiable even after the obvious masking.</strong> A patient's lab results trajectory, joined with rough timing, can identify the patient even without the name. A loan applicant's transaction pattern, joined with rough geography and an asset reference, can identify the applicant. These re-identification paths aren't theoretical; they're what privacy researchers demonstrate routinely. A guardrail that catches direct identifiers but leaves the structure intact doesn't actually achieve the privacy outcome the team thinks it has.</li>
+</ol>
+
+<p>The result is the worst of both worlds: <strong>the AI's output is degraded because cross-references broke, and the privacy posture hasn't actually been improved because the structural information that enables re-identification is still there.</strong></p>
+
+<h2>5. Why a Better Guardrail Doesn't Fix This</h2>
+<p>The natural response, after seeing these cases, is to ask for a better PII detection engine. Wider entity coverage. Custom rule definitions. Context-aware detection. The market has answered this — there are now PII guardrails with hundreds of entity types, configurable custom markers, and ML-based detection that goes beyond regex.</p>
+<p>These are improvements, but they don't change the underlying architecture. The architecture is still: detect sensitive elements, remove or replace them, send the result. <strong>The detection layer gets better; the removal layer is still removal.</strong> And removal breaks the same things it always breaks: cross-references, structural relationships, document coherence.</p>
+<p>A more honest framing of the problem is this: the AI workflow needs the structure of the document — the relationships, the references, the format, the sequence — to do useful work. The privacy constraint says certain elements of the document cannot be sent to the external model. These two facts only conflict if the only available move is to <em>remove</em>. If there's a way to send the structure without sending the identifying content, the conflict resolves.</p>
+<p>This is the architectural shift that distinguishes removal-based approaches (PII guardrails, masking, redaction) from transformation-based approaches. <strong>Removal-based tools optimise for <em>what's taken out</em>. Transformation-based tools optimise for <em>what remains usable</em></strong> — which is a different design constraint, and produces different architectures.</p>
+
+<figure class="ds-figure">
+  <div class="ds-figure__svg-wrap">
+    <svg class="ds-figure__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" role="img" aria-labelledby="removal-vs-transformation-title removal-vs-transformation-desc">
+      <title id="removal-vs-transformation-title">Removal-based vs Transformation-based approaches</title>
+      <desc id="removal-vs-transformation-desc">A side-by-side comparison showing the same service ticket processed by a removal-based approach (left) and a transformation-based approach (right). Removal leaves dangling references and broken structure; transformation preserves the structural roles so the AI can still reason about the document.</desc>
+
+      <rect x="320" y="20" width="320" height="116" rx="8" fill="#ffffff" stroke="#0f1130" stroke-width="1.5"/>
+      <text x="340" y="44" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" fill="#6b7280" letter-spacing="1.2">SOURCE: SERVICE TICKET</text>
+      <line x1="340" y1="54" x2="620" y2="54" stroke="#e5e7eb" stroke-width="1"/>
+      <text x="340" y="74" font-family="Inter, sans-serif" font-size="12" fill="#0f1130">Account: <tspan font-weight="600" fill="#5b4fe9">ACC-77821</tspan> · Customer: <tspan font-weight="600" fill="#5b4fe9">Jane Doe</tspan></text>
+      <text x="340" y="92" font-family="Inter, sans-serif" font-size="12" fill="#0f1130">Device: <tspan font-weight="600" fill="#5b4fe9">SN-A04F2</tspan> · Cell site: <tspan font-weight="600" fill="#5b4fe9">CS-Berlin-NE-12</tspan></text>
+      <text x="340" y="110" font-family="Inter, sans-serif" font-size="12" fill="#0f1130">Note: Customer reports dropouts; references prior</text>
+      <text x="340" y="126" font-family="Inter, sans-serif" font-size="12" fill="#0f1130">tickets <tspan font-weight="600" fill="#5b4fe9">TKT-9921</tspan>, <tspan font-weight="600" fill="#5b4fe9">TKT-9988</tspan></text>
+
+      <line x1="400" y1="140" x2="220" y2="180" stroke="#0f1130" stroke-width="1.5" marker-end="url(#arrow-dark)"/>
+      <line x1="560" y1="140" x2="740" y2="180" stroke="#0f1130" stroke-width="1.5" marker-end="url(#arrow-dark)"/>
+
+      <defs>
+        <marker id="arrow-dark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#0f1130"/>
+        </marker>
+        <marker id="arrow-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#c73e3a"/>
+        </marker>
+        <marker id="arrow-teal-fig" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#0b7f7e"/>
+        </marker>
+      </defs>
+
+      <rect x="40" y="180" width="360" height="32" rx="6" fill="#fce9e8" stroke="#ef5350" stroke-width="1"/>
+      <text x="220" y="201" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#c73e3a">Removal-based · masking / redaction</text>
+
+      <rect x="40" y="226" width="360" height="124" rx="8" fill="#ffffff" stroke="#ef5350" stroke-width="1.5"/>
+      <text x="60" y="248" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" fill="#c73e3a" letter-spacing="1.2">WHAT THE LLM SEES</text>
+      <line x1="60" y1="258" x2="380" y2="258" stroke="#fce9e8" stroke-width="1"/>
+      <text x="60" y="278" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Account: <tspan font-weight="600" fill="#c73e3a">[REDACTED]</tspan> · Customer: <tspan font-weight="600" fill="#c73e3a">[REDACTED]</tspan></text>
+      <text x="60" y="296" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Device: <tspan font-weight="600" fill="#9ca3af">SN-A04F2</tspan> · Cell site: <tspan font-weight="600" fill="#9ca3af">CS-Berlin-NE-12</tspan></text>
+      <text x="60" y="314" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Note: Customer reports dropouts; references prior</text>
+      <text x="60" y="332" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">tickets <tspan font-weight="600" fill="#9ca3af">TKT-9921</tspan>, <tspan font-weight="600" fill="#9ca3af">TKT-9988</tspan></text>
+
+      <rect x="40" y="370" width="360" height="74" rx="8" fill="#fce9e8" stroke="none"/>
+      <text x="60" y="392" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#c73e3a">✗ Dangling references — &ldquo;the user, but [REDACTED]&rdquo;</text>
+      <text x="60" y="410" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#c73e3a">✗ Structural identifiers still expose topology</text>
+      <text x="60" y="428" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#c73e3a">✗ Re-identification path unchanged</text>
+
+      <rect x="560" y="180" width="360" height="32" rx="6" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1"/>
+      <text x="740" y="201" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#5b4fe9">Transformation-based · structure-preserving tokens</text>
+
+      <rect x="560" y="226" width="360" height="124" rx="8" fill="#ffffff" stroke="#5b4fe9" stroke-width="1.5"/>
+      <text x="580" y="248" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" fill="#5b4fe9" letter-spacing="1.2">WHAT THE LLM SEES</text>
+      <line x1="580" y1="258" x2="900" y2="258" stroke="#eeebfe" stroke-width="1"/>
+      <text x="580" y="278" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Account: <tspan font-weight="600" fill="#5b4fe9">ACC-T0001</tspan> · Customer: <tspan font-weight="600" fill="#5b4fe9">CUST-T0001</tspan></text>
+      <text x="580" y="296" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Device: <tspan font-weight="600" fill="#5b4fe9">SN-T0014</tspan> · Cell site: <tspan font-weight="600" fill="#5b4fe9">SITE-T0007</tspan></text>
+      <text x="580" y="314" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Note: <tspan font-weight="600" fill="#5b4fe9">CUST-T0001</tspan> reports dropouts; references</text>
+      <text x="580" y="332" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">prior tickets <tspan font-weight="600" fill="#5b4fe9">TKT-T0042</tspan>, <tspan font-weight="600" fill="#5b4fe9">TKT-T0043</tspan></text>
+
+      <rect x="560" y="370" width="360" height="74" rx="8" fill="#e6f7f6" stroke="none"/>
+      <text x="580" y="392" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0b7f7e">✓ Cross-references still resolve consistently</text>
+      <text x="580" y="410" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0b7f7e">✓ Structural roles preserved; tokens have no</text>
+      <text x="580" y="425" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0b7f7e">  meaning outside the enterprise</text>
+      <text x="580" y="442" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0b7f7e">✓ Mapping back to originals stays inside</text>
+    </svg>
+  </div>
+  <figcaption class="ds-figure__caption">Figure 1 · <strong>The same service ticket, processed two ways. Removal breaks the references the AI needs; transformation preserves the structure while changing what the external model sees.</strong></figcaption>
+</figure>
+
+<h2>6. The Cases Where Masking Actually Does Work</h2>
+<p>It's worth being precise about where the traditional approach is fine. Three conditions, all of which have to hold:</p>
+
+<ul>
+  <li><strong>The document is long-form prose, not a structured operational artifact.</strong> The sensitive elements are a small fraction of the content and the document still reads coherently without them.</li>
+  <li><strong>The AI's task doesn't require resolving cross-references, preserving structure, or understanding sequence.</strong> Summarising a single-source narrative document is fine. Extracting key clauses from a contract may be fine if the parties are the only sensitive elements.</li>
+  <li><strong>The privacy constraint is about named entities, not structural information.</strong> If the concern is <em>"the customer's name shouldn't be visible to the external model,"</em> masking solves that. If the concern is <em>"this document, in aggregate, identifies a customer even without the name,"</em> masking doesn't.</li>
+</ul>
+
+<p>For these cases — and they exist — a well-configured PII guardrail is a reasonable tool. <strong>The mistake is assuming the rest of the enterprise's documents look the same as these.</strong></p>
+
+<h2>7. What This Means for the Workflow Architecture</h2>
+<p>The conclusion most teams reach, after running into these cases a few times, is that the data preparation layer needs to do something different than removal. <strong>It needs to preserve the document's structure and references while changing the elements that can't cross the boundary. Same shape, different content.</strong></p>
+<p>That preservation property — keeping the structure while replacing the sensitive elements with placeholders that behave the same way in context — is what distinguishes transformation-based approaches from masking and redaction. The AI still gets a document that looks like a service ticket, with a header and a free-text description and cross-references. The external model can still reason about the relationships. The output comes back referencing the same structural roles. Inside the enterprise environment, the placeholders are mapped back to the original values, and the result is a business-ready document with real names, real IDs, real references.</p>
+<p>This isn't a different configuration of masking. It's a different category of data preparation, one designed around the constraint that <em>enterprise documents are structured artifacts whose value to AI lives in their structure as much as their content</em>.</p>

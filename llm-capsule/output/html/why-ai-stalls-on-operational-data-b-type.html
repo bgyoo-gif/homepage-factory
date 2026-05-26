@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why AI Workflows Stall at Tables, Tickets, and Operational Documents — LLM Capsule</title>
+  <meta name="description" content="PII guardrails and field-level masking solve the easy half of the problem and break the rest of the workflow. A look at where AI stalls on real operational data — and why removal-based approaches can't fix it.">
+  <meta name="keywords" content="enterprise AI, operational data, PII masking, redaction, data guardrails, service ticket AI, operational logs, clinical data, financial data, re-identification, tokenisation, encapsulation layer, LLM Capsule">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://llmcapsule.ai/resources/learn/why-ai-stalls-on-operational-data">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Why AI Workflows Stall at Tables, Tickets, and Operational Documents — LLM Capsule">
+  <meta property="og:description" content="PII guardrails and field-level masking solve the easy half of the problem and break the rest of the workflow. A look at where AI stalls on real operational data — and why removal-based approaches can't fix it.">
+  <meta property="og:url" content="https://llmcapsule.ai/resources/learn/why-ai-stalls-on-operational-data">
+  <meta property="og:site_name" content="LLM Capsule">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},
+      {"@type":"ListItem","position":2,"name":"Resources","item":"https://llmcapsule.ai/resources"},
+      {"@type":"ListItem","position":3,"name":"Learn","item":"https://llmcapsule.ai/resources/learn"},
+      {"@type":"ListItem","position":4,"name":"Why AI Workflows Stall at Tables, Tickets, and Operational Documents"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Why isn't a better PII detection engine enough?","acceptedAnswer":{"@type":"Answer","text":"Better detection improves the first step — finding sensitive elements — but the underlying architecture is still detect, remove, send. The removal step is what breaks cross-references, structural relationships, and document coherence. Even with hundreds of entity types and ML-based detection, removal-based approaches optimise for what's taken out rather than what remains usable. The architectural problem is the removal, not the detection."}},
+      {"@type":"Question","name":"What is the difference between removal-based and transformation-based approaches?","acceptedAnswer":{"@type":"Answer","text":"Removal-based tools (PII guardrails, masking, redaction) detect sensitive elements and either strip them or replace them with redaction markers like [REDACTED]. They optimise for what's taken out. Transformation-based tools replace sensitive values with structured placeholders that preserve format, type, and the structural role the original played, so cross-references still resolve and the AI can still reason about relationships. They optimise for what remains usable. The mapping from placeholder back to original value stays inside the enterprise."}},
+      {"@type":"Question","name":"Are there cases where traditional PII masking is actually fine?","acceptedAnswer":{"@type":"Answer","text":"Yes — when three conditions all hold. First, the document is long-form prose rather than a structured operational artifact. Second, the AI's task doesn't require resolving cross-references, preserving structure, or understanding sequence. Third, the privacy constraint is about named entities rather than structural information. CV screening, contract summarisation, and press release drafting often meet all three. The mistake is assuming the rest of the enterprise's documents look the same."}},
+      {"@type":"Question","name":"What does 'the structure is the sensitivity' actually mean?","acceptedAnswer":{"@type":"Answer","text":"In operational data — service tickets, network logs, clinical records, financial files — the sensitive information often lives in the relationships between elements rather than in any single field. Device IDs joined with timestamps can reveal infrastructure topology. Lab results trajectories joined with rough timing can identify patients. Transaction patterns joined with rough geography can identify loan applicants. Removing only the obvious named entities leaves the structural information that enables re-identification untouched."}},
+      {"@type":"Question","name":"How does this relate to data location requirements?","acceptedAnswer":{"@type":"Answer","text":"Data location requirements often cover more than named-entity PII — network topology, infrastructure references, sector-specific identifiers, and structural information that can identify customers or operations. A PII guardrail that sees no obvious identifiers in a network log will pass it through to a third-country endpoint, even though the log's structural content is exactly what the data location commitment was designed to keep in. The constraint and the detection layer are looking at different things."}},
+      {"@type":"Question","name":"What does the data preparation layer have to do instead?","acceptedAnswer":{"@type":"Answer","text":"Preserve the document's structure and references while changing the elements that can't cross the boundary. Same shape, different content. The AI receives a document that still reads like a service ticket — with header, free-text description, cross-references — but the sensitive elements are placeholders that behave the same way in context. The external model reasons about the structure as usual. Inside the enterprise environment, the placeholders are mapped back to real values, producing a business-ready document."}}
+    ]
+  }
+  </script>
+
+  <!-- Fonts: Inter + JetBrains Mono (Capsule v6.2) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* 1. CSS Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--f-display);
+      color: var(--c-ink);
+      background-color: var(--c-bg);
+      padding-top: 58px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, video { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    p, li, blockquote { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
+    h1, h2, h3, h4 { text-wrap: balance; }
+
+    /* 2. :root */
+    :root {
+      /* Capsule Brand */
+      --c-primary: #5b4fe9;
+      --c-primary-dark: #3b2fbf;
+      --c-primary-soft: #eeebfe;
+      --c-teal: #0ea5a4;
+      --c-teal-dark: #0b7f7e;
+      --c-teal-soft: #e6f7f6;
+      --c-coral: #ef5350;
+      --c-coral-dark: #c73e3a;
+      --c-coral-soft: #fce9e8;
+      --c-amber: #f59e0b;
+      --c-amber-dark: #b45309;
+      --c-amber-soft: #fef3c7;
+      --c-bg: #ffffff;
+      --c-bg-soft: #f7f8fb;
+      --c-bg-dark: #0f1130;
+      --c-bg-dark-2: #1b1d4a;
+      --c-ink: #0f1130;
+      --c-ink-soft: #3a3d5e;
+      --c-muted: #6b7280;
+      --c-rule: #e5e7eb;
+      --f-display: 'Inter', -apple-system, system-ui, sans-serif;
+      --f-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+      /* DS Core tokens */
+      --ds-text-xs: 12px;
+      --ds-text-sm: 14px;
+      --ds-text-md: 16px;
+      --ds-text-lg: 18px;
+      --ds-text-xl: 20px;
+      --ds-text-2xl: 24px;
+      --ds-text-3xl: 30px;
+      --ds-text-4xl: 36px;
+      --ds-text-5xl: 40px;
+      --ds-text-6xl: 50px;
+      --ds-text-7xl: 64px;
+      --ds-weight-regular: 400;
+      --ds-weight-medium: 500;
+      --ds-weight-semibold: 600;
+      --ds-weight-bold: 700;
+      --ds-leading-tight: 1.2;
+      --ds-leading-normal: 1.5;
+      --ds-leading-relaxed: 1.7;
+      --ds-tracking-tight: -0.5px;
+      --ds-tracking-wide: 0.08em;
+      --ds-space-2xs: 4px;
+      --ds-space-xs: 8px;
+      --ds-space-sm: 12px;
+      --ds-space-md: 16px;
+      --ds-space-lg: 24px;
+      --ds-space-xl: 32px;
+      --ds-space-2xl: 48px;
+      --ds-space-3xl: 64px;
+      --ds-space-4xl: 80px;
+      --ds-space-5xl: 100px;
+      --ds-radius-xs: 5px;
+      --ds-radius-sm: 8px;
+      --ds-radius-md: 18px;
+      --ds-radius-lg: 24px;
+      --ds-radius-xl: 40px;
+      --ds-radius-pill: 9999px;
+      --ds-container-padding-mobile: 16px;
+      --ds-container-padding-tablet: 32px;
+      --ds-container-padding-desktop: 120px;
+      --s-page: clamp(20px, 4vw, 80px);
+      --s-section: clamp(64px, 8vw, 128px);
+      --r-md: 10px;
+      --container-max: 1280px;
+
+      /* Background images */
+      --ds-bg-img-grad-deep: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png');
+      --ds-overlay-dark-light: rgba(0,0,0,0.15);
+      --ds-overlay-white-85: rgba(255,255,255,0.85);
+    }
+
+    /* 3. Typography */
+    h1 { font-family: var(--f-display); font-size: 32px; font-weight: var(--ds-weight-bold); line-height: 1.15; letter-spacing: var(--ds-tracking-tight); }
+    h2 { font-family: var(--f-display); font-size: 20px; font-weight: var(--ds-weight-bold); line-height: 1.15; letter-spacing: var(--ds-tracking-tight); }
+    h3 { font-family: var(--f-display); font-size: var(--ds-text-xl); font-weight: var(--ds-weight-semibold); line-height: 1.15; }
+    @media (min-width: 768px) { h1 { font-size: 40px; } h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { h1 { font-size: 48px; } h2 { font-size: 24px; } h3 { font-size: 22px; } }
+    @media (min-width: 1440px) { h1 { font-size: 64px; } h2 { font-size: 28px; } }
+
+    /* 4. Base Components */
+    .ds-text--brand { color: var(--c-primary); }
+    .ds-text--product { font-family: var(--f-display); font-weight: var(--ds-weight-bold); }
+
+    /* Container */
+    .ds-container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 var(--ds-container-padding-mobile);
+    }
+    @media (min-width: 768px) { .ds-container { padding: 0 var(--ds-container-padding-tablet); } }
+    @media (min-width: 1024px) { .ds-container { padding: 0 var(--ds-container-padding-tablet); } }
+    @media (min-width: 1440px) { .ds-container { padding: 0 var(--ds-container-padding-desktop); max-width: 1280px; } }
+
+    /* Article Container (1080px) */
+    .ds-article-container {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 var(--ds-container-padding-mobile);
+    }
+    @media (min-width: 768px) { .ds-article-container { padding: 0 var(--ds-container-padding-tablet); max-width: 720px; } }
+    @media (min-width: 1024px) { .ds-article-container { max-width: 860px; } }
+    @media (min-width: 1280px) { .ds-article-container { max-width: 1080px; padding: 0; } }
+
+    /* Section */
+    .ds-section { width: 100%; padding: var(--ds-space-4xl) 0; }
+    .ds-section--hero { padding: 100px 0 var(--ds-space-3xl); }
+    .ds-section--article-body { padding: var(--ds-space-2xl) 0; }
+
+    /* Badge */
+    .ds-badge {
+      display: inline-flex; align-items: center; gap: var(--ds-space-2xs);
+      padding: var(--ds-space-2xs) var(--ds-space-xs);
+      border-radius: var(--ds-radius-pill);
+      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-semibold);
+      line-height: 1; white-space: nowrap;
+    }
+    .ds-badge--primary { background-color: var(--c-primary); color: var(--c-bg); }
+
+    /* Back link (guide pattern) */
+    .ds-article-hero__back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: var(--ds-text-sm); font-weight: 600;
+      color: var(--c-primary); text-decoration: none;
+      letter-spacing: 0.01em; margin-bottom: var(--ds-space-2xl);
+      transition: color 0.15s;
+    }
+    .ds-article-hero__back:hover { color: var(--c-primary-dark, #3b2fbf); }
+
+    /* Hero — guide pattern: back → title → description → meta */
+    .ds-article-hero__title {
+      font-family: var(--f-display);
+      margin-bottom: var(--ds-space-lg);
+    }
+    .ds-article-hero__description {
+      font-size: var(--ds-text-lg); color: var(--c-ink-soft);
+      line-height: var(--ds-leading-relaxed);
+      max-width: 860px;
+      margin-bottom: var(--ds-space-2xl);
+    }
+    .ds-article-hero__meta {
+      display: flex; align-items: center; gap: var(--ds-space-md);
+      flex-wrap: wrap;
+    }
+    .ds-article-hero__meta-sep {
+      width: 4px; height: 4px; border-radius: 50%;
+      background-color: var(--c-rule); flex-shrink: 0;
+    }
+    .ds-article-hero__reading-time,
+    .ds-article-hero__date {
+      font-size: var(--ds-text-sm); color: var(--c-muted);
+    }
+
+    /* Banner */
+    .ds-banner {
+      padding: var(--ds-space-lg);
+      border-radius: 0; border: none;
+      border-top: 1px solid var(--c-rule);
+      border-bottom: 1px solid var(--c-rule);
+      font-size: var(--ds-text-sm); line-height: var(--ds-leading-relaxed);
+      text-align: left;
+      margin: var(--ds-space-2xl) 0;
+    }
+    .ds-banner--brand { background-color: var(--c-primary-soft); }
+    .ds-banner__label {
+      font-family: var(--f-mono); font-size: var(--ds-text-xs);
+      text-transform: uppercase; letter-spacing: var(--ds-tracking-wide);
+      color: var(--c-muted); margin-bottom: var(--ds-space-xs); display: block;
+      font-weight: var(--ds-weight-medium);
+    }
+    .ds-banner p { font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed); color: var(--c-ink); }
+    .ds-banner strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
+    .ds-banner .ds-bullet { margin: var(--ds-space-sm) 0 0 0; }
+
+    /* Related Articles (guide pattern: small label + minimal cards) */
+    .ds-related-section {
+      background-color: var(--c-bg-soft);
+      padding: clamp(48px, 6vw, 80px) 0;
+    }
+    .ds-related-section__label {
+      font-family: var(--f-mono); font-size: var(--ds-text-xs);
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--c-muted); margin-bottom: var(--ds-space-md);
+      font-weight: var(--ds-weight-medium);
+    }
+    .ds-related-section__card {
+      display: flex; flex-direction: column;
+      justify-content: space-between;
+      gap: var(--ds-space-md);
+      padding: 20px 22px;
+      background-color: var(--c-bg);
+      border: 1px solid var(--c-rule);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--c-ink);
+      transition: border-color 0.15s, box-shadow 0.15s;
+      min-height: 100px;
+    }
+    .ds-related-section__card:hover {
+      border-color: var(--c-primary);
+      box-shadow: 0 4px 16px rgba(91, 79, 233, 0.08);
+    }
+    .ds-related-section__card-title {
+      font-size: 15px; font-weight: 600;
+      line-height: 1.4; color: var(--c-ink);
+    }
+    .ds-related-section__card-arrow {
+      font-size: 18px; color: var(--c-primary);
+      line-height: 1; align-self: flex-end;
+    }
+
+    /* Article section header */
+    .ds-article-section-header {
+      margin-bottom: var(--ds-space-xl);
+      padding-bottom: var(--ds-space-md);
+      border-bottom: 1px solid var(--c-rule);
+    }
+    .ds-article-section-header h2 { margin: 0; }
+
+    /* Section title icon */
+    .ds-section-title-icon {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: var(--ds-space-lg); margin-top: var(--ds-space-2xl);
+    }
+    .ds-section-title-icon__icon {
+      width: 28px; height: 28px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--c-primary);
+    }
+    .ds-section-title-icon__text {
+      font-family: var(--f-display); font-size: var(--ds-text-xl);
+      font-weight: var(--ds-weight-semibold); color: var(--c-ink);
+      line-height: var(--ds-leading-tight);
+    }
+
+    /* Article body paragraphs */
+    .ds-article-body p {
+      font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed);
+      color: var(--c-ink-soft); margin-bottom: var(--ds-space-md);
+    }
+    .ds-article-body p:last-child { margin-bottom: 0; }
+    .ds-article-body strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
+    .ds-article-body em { color: var(--c-ink-soft); font-style: italic; }
+    .ds-article-body a { color: var(--c-primary); text-decoration: underline; text-underline-offset: 3px; }
+    .ds-article-body a:hover { color: var(--c-primary-dark); }
+    .ds-article-body sup { font-size: 0.6em; vertical-align: super; line-height: 0; }
+    .ds-article-body code { font-family: var(--f-mono); font-size: 0.92em; background-color: var(--c-bg-soft); padding: 2px 6px; border-radius: 4px; color: var(--c-ink); }
+
+    /* Bullet lists */
+    .ds-bullet { list-style: none; padding: 0; margin: var(--ds-space-md) 0; display: flex; flex-direction: column; gap: var(--ds-space-sm); }
+    .ds-bullet__item { display: flex; align-items: flex-start; gap: var(--ds-space-xs); font-size: var(--ds-text-md); line-height: var(--ds-leading-normal); color: var(--c-ink-soft); }
+    .ds-bullet__icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; display: inline-flex; align-items: center; justify-content: center; }
+    .ds-bullet__text { flex: 1; }
+    .ds-bullet__text strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
+    .ds-bullet__text em { font-style: italic; }
+    .ds-bullet__text a { color: var(--c-primary); text-decoration: underline; text-underline-offset: 3px; }
+    .ds-bullet__text a:hover { color: var(--c-primary-dark); }
+    .ds-bullet__text sup { font-size: 0.6em; vertical-align: super; line-height: 0; }
+    .ds-bullet__text code { font-family: var(--f-mono); font-size: 0.92em; background-color: var(--c-bg-soft); padding: 2px 6px; border-radius: 4px; color: var(--c-ink); }
+
+    .ds-bullet--check .ds-bullet__icon::before { content: "\2713"; color: var(--c-teal); font-weight: var(--ds-weight-bold); }
+    .ds-bullet--number { counter-reset: bullet-counter; }
+    .ds-bullet--number .ds-bullet__item { counter-increment: bullet-counter; }
+    .ds-bullet--number .ds-bullet__icon::before {
+      content: counter(bullet-counter);
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 20px; height: 20px; border-radius: 50%;
+      background-color: var(--c-primary); color: var(--c-bg);
+      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-bold);
+    }
+    .ds-bullet--dot .ds-bullet__icon::before { content: "\2022"; color: var(--c-primary); font-size: var(--ds-text-xl); line-height: 1; }
+
+    /* Accordion */
+    .ds-ac-list { display: flex; flex-direction: column; gap: 2px; margin: var(--ds-space-xl) 0; }
+    .ds-ac-card {
+      border: 1px solid var(--c-rule); border-radius: var(--ds-radius-sm);
+      background-color: var(--c-bg); overflow: hidden; transition: background-color 0.2s;
+    }
+    .ds-ac-card:hover { background-color: var(--c-bg-soft); }
+    .ds-ac-card__header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: var(--ds-space-md); padding: var(--ds-space-lg); cursor: pointer; user-select: none;
+    }
+    .ds-ac-card__title {
+      font-family: var(--f-display); font-size: var(--ds-text-lg);
+      font-weight: var(--ds-weight-medium); line-height: var(--ds-leading-tight);
+      color: var(--c-ink); flex: 1;
+    }
+    .ds-ac-card__toggle {
+      width: 28px; height: 28px; border-radius: 6px;
+      border: 0.5px solid var(--c-rule); background-color: var(--c-bg-soft);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; cursor: pointer; transition: border-color 0.15s, background 0.15s;
+    }
+    .ds-ac-card__toggle:hover { border-color: var(--c-ink); background-color: var(--c-rule); }
+    .ds-ac-card__toggle-icon { width: 12px; height: 12px; position: relative; flex-shrink: 0; }
+    .ds-ac-card__toggle-icon::before, .ds-ac-card__toggle-icon::after {
+      content: ''; position: absolute; background-color: var(--c-muted); border-radius: 1px; transition: opacity 0.2s;
+    }
+    .ds-ac-card__toggle-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .ds-ac-card__toggle-icon::after { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; }
+    .ds-ac-card.ds-ac--open .ds-ac-card__toggle-icon::after { opacity: 0; }
+    .ds-ac-card.ds-ac--open .ds-ac-card__toggle-icon::before { background-color: var(--c-ink-soft); }
+    .ds-ac-card__body {
+      display: none; padding: var(--ds-space-lg); border-top: 1px solid var(--c-rule);
+      background-color: var(--c-bg-soft);
+    }
+    .ds-ac-card.ds-ac--open .ds-ac-card__body { display: block; }
+    .ds-ac-card__body p {
+      font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed); color: var(--c-ink-soft);
+    }
+    .ds-ac-card__body strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
+    .ds-ac-card__body em { font-style: italic; }
+    .ds-ac-card__body a { color: var(--c-primary); text-decoration: underline; text-underline-offset: 3px; }
+    .ds-ac-card__body a:hover { color: var(--c-primary-dark); }
+    .ds-ac-card__body sup { font-size: 0.6em; vertical-align: super; line-height: 0; }
+
+    /* Card grid (used in related cards) */
+    .ds-card-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+    @media (min-width: 768px) { .ds-card-grid--3col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .ds-card-grid--3col { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+    /* Button */
+    .ds-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-xs);
+      border-radius: var(--ds-radius-pill);
+      font-family: var(--f-display); font-weight: var(--ds-weight-medium); font-size: var(--ds-text-md);
+      cursor: pointer; border: none; transition: background-color 0.2s;
+      white-space: nowrap; text-decoration: none;
+    }
+    .ds-btn--md { padding: var(--ds-space-sm) var(--ds-space-xl); }
+    .btn--invert { background-color: var(--c-bg); color: var(--c-ink); }
+    .btn--invert:hover { background-color: var(--c-primary-soft); }
+
+    /* CTA Band */
+    .ds-cta-band {
+      width: 100%; position: relative; overflow: hidden;
+      padding: 80px var(--ds-container-padding-mobile);
+      text-align: center;
+      background-color: var(--c-bg-dark);
+      background-size: cover; background-position: center;
+    }
+    .ds-cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: var(--ds-overlay-dark-light); z-index: 0;
+    }
+    .ds-cta-band > * { position: relative; z-index: 1; }
+    .ds-cta-band__inner {
+      max-width: 100%; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: var(--ds-space-lg);
+    }
+    @media (min-width: 1024px) { .ds-cta-band__inner { max-width: 720px; } }
+    @media (min-width: 1440px) { .ds-cta-band__inner { max-width: 860px; } }
+    .ds-cta-band__title {
+      font-family: var(--f-display); font-size: var(--ds-text-5xl);
+      font-weight: var(--ds-weight-bold); color: var(--c-bg);
+      line-height: var(--ds-leading-tight); letter-spacing: var(--ds-tracking-tight);
+    }
+    .ds-cta-band__description {
+      font-size: var(--ds-text-md); color: var(--ds-overlay-white-85);
+      line-height: var(--ds-leading-relaxed);
+    }
+    .ds-cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .ds-bg--grad-deep {
+      background-image: var(--ds-bg-img-grad-deep);
+      background-size: cover; background-position: center;
+    }
+    @media (min-width: 768px) { .ds-cta-band { padding: 100px var(--ds-container-padding-tablet); } }
+    @media (min-width: 1440px) { .ds-cta-band { padding: 120px var(--ds-container-padding-desktop); max-width: 1280px; margin: 0 auto; } }
+    @media (max-width: 767px) {
+      .ds-cta-band__title { font-size: var(--ds-text-4xl); }
+      .ds-cta-band__actions { flex-direction: column; align-items: center; }
+      .ds-cta-band__actions .ds-btn { width: 100%; max-width: 320px; }
+      .ds-bg--grad-deep { background-image: none; }
+    }
+    @media (min-width: 1440px) { .ds-cta-band__title { font-size: var(--ds-text-6xl); } }
+
+    /* Author info */
+    .ds-author-info {
+      margin-top: var(--ds-space-3xl); padding-top: var(--ds-space-lg);
+      border-top: 1px solid var(--c-rule);
+      font-size: var(--ds-text-sm); color: var(--c-muted); line-height: var(--ds-leading-relaxed);
+    }
+    .ds-author-info strong { color: var(--c-ink-soft); font-weight: var(--ds-weight-medium); }
+
+    /* h1 sup */
+    h1 sup, h2 sup, h3 sup { font-size: 0.55em; vertical-align: super; line-height: 0; font-weight: inherit; }
+
+    /* Figure (inline diagram) */
+    .ds-figure {
+      margin: var(--ds-space-xl) 0;
+      padding: var(--ds-space-lg);
+      background-color: var(--c-bg-soft);
+      border: 1px solid var(--c-rule);
+      border-radius: var(--ds-radius-sm);
+    }
+    .ds-figure__svg-wrap {
+      width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .ds-figure__svg-wrap::-webkit-scrollbar { display: none; }
+    .ds-figure__svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-width: 640px;
+      max-width: 100%;
+    }
+    .ds-figure__caption {
+      margin-top: var(--ds-space-md);
+      font-family: var(--f-mono);
+      font-size: var(--ds-text-xs);
+      text-transform: uppercase;
+      letter-spacing: var(--ds-tracking-wide);
+      color: var(--c-muted);
+      text-align: center;
+    }
+    .ds-figure__caption strong { color: var(--c-ink-soft); font-weight: var(--ds-weight-medium); }
+
+    /* Responsive adjustments */
+    @media (min-width: 768px) {
+      .ds-section-title-icon__text { font-size: 22px; }
+    }
+    @media (min-width: 1024px) {
+      .ds-article-hero__description { font-size: var(--ds-text-xl); }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+
+    <!-- Section 1: Hero (guide pattern: back -> title -> description -> meta) -->
+    <section id="section-hero" class="ds-section ds-section--hero">
+      <div class="ds-article-container">
+        <a href="/resources/learn" class="ds-article-hero__back">&larr; Learn</a>
+        <h1 class="ds-article-hero__title">
+          Why AI Workflows Stall at <span class="ds-text--brand">Tables, Tickets, and Operational Documents</span>
+        </h1>
+        <p class="ds-article-hero__description">
+          PII guardrails and field-level masking solve the easy half of the problem and break the rest of the workflow. A look at where AI stalls on real operational data &mdash; and why removal-based approaches can't fix it.
+        </p>
+        <div class="ds-article-hero__meta">
+          <span class="ds-badge ds-badge--primary">AI Architecture</span>
+          <span class="ds-article-hero__meta-sep" aria-hidden="true"></span>
+          <span class="ds-article-hero__reading-time">~8 min read</span>
+          <span class="ds-article-hero__meta-sep" aria-hidden="true"></span>
+          <span class="ds-article-hero__date">Updated May 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: TL;DR -->
+    <section id="section-tldr" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-banner ds-banner--brand">
+          <span class="ds-banner__label">TL;DR</span>
+          <p>Enterprise AI pilots work on clean text, then fail when run against real service tickets, operational logs, and clinical or financial documents. The cause is rarely the model &mdash; it's the data-preparation layer. <strong>PII guardrails, masking, and redaction assume sensitive content is a small set of named entities in long-form prose.</strong> Operational data isn't shaped that way. The sensitive information lives in the structure: cross-references, identifiers, sequence, topology. Removal-based approaches optimise for <em>what's taken out</em> and break the cross-references the AI needs to reason about &mdash; while leaving the structural information that enables re-identification untouched. Three concrete failure cases &mdash; a telecom service ticket, a network operations log, a clinical or financial document &mdash; show the same pattern: <strong>removal makes the AI's output worse and the privacy posture no better</strong>. A better detection engine doesn't fix this; the architecture has to be transformation-based, not removal-based &mdash; keeping the structure while changing the elements that can't cross the boundary.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 1. Why masking is the first thing teams try -->
+    <section id="section-1" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>1. Why <span class="ds-text--brand">Masking and Redaction</span> Are the First Thing Teams Try</h2>
+        </div>
+        <div class="ds-article-body">
+          <p>A pattern repeats across enterprise AI pilots: the proof-of-concept works on clean text, the demo lands well with leadership, and then someone tries to run the same workflow on a real service ticket or a real operational document, and the output comes back unusable. The model is fine. The integration is fine. What broke is something more specific &mdash; and it almost always traces back to how the input data was prepared.</p>
+          <p>The standard preparation step is some form of PII handling: a masking library, a guardrail API, a redaction pass. The team installs one of these, configures it for names and IDs, and assumes the privacy problem is solved. For a small class of documents &mdash; long-form text where the sensitive part is a name in a sentence &mdash; this works. For the documents that operational teams actually live in, it fails in ways that take a while to diagnose.</p>
+          <p>The instinct is reasonable. The problem looks like <em>"sensitive data is in the document; AI shouldn't see it; remove the sensitive parts."</em> And the tools available &mdash; open-source PII detection libraries, commercial guardrail APIs, redaction engines built into document management platforms &mdash; all assume that frame. They take a document, identify named entities, and either replace them with placeholders or strip them out.</p>
+          <p>This assumption holds reasonably well when the document is unstructured long-form prose with the sensitive content concentrated in a few named-entity mentions. A CV. A contract summary. A press release draft. In these, the customer or party name is a small fraction of the document, and removing it doesn't break the document's meaning.</p>
+          <p><strong>The assumption stops holding the moment the document is operational. And operational documents are what enterprise AI is actually trying to process.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: 2. Case 1 - Service ticket -->
+    <section id="section-2" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>2. Case 1 &mdash; <span class="ds-text--brand">The Service Ticket</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>Take a single customer service ticket from a telecom operations centre. The ticket has structure: a header with the customer account number, the device serial, the affected service, the date and time. A free-text description from the agent: <em>"Customer reports intermittent dropouts on Mobile-X line, escalated from level-1 after second call. Device shows reset event at 14:22 UTC. Subscriber confirms no physical damage but mentions slow speeds since the firmware push last Tuesday."</em> A linked attachment with a network log fragment. References to two other ticket IDs from the same customer over the past month. An asset reference to the cell site serving the affected line.</p>
+          <p>A PII guardrail looks at this and finds: a customer name (if the name is in the description), maybe a phone number, possibly an email if the agent quoted the customer. Everything else is, from the guardrail's perspective, not sensitive.</p>
+          <p>But for an EU telecom under sector-specific data location requirements, almost everything else <em>is</em> sensitive in some way. The cell site identifier reveals geographic location data. The asset reference, joined with the firmware push date, can identify the customer's hardware configuration. The cross-referenced ticket IDs reveal a behavioural pattern. The serial number is a unique identifier. <strong>Removing just the obvious PII leaves a document where most of what made it sensitive &mdash; and most of what made it useful to the AI &mdash; is untouched.</strong> The customer's name is gone; the customer is still identifiable to anyone with access to the operator's CRM.</p>
+          <p>And here is the worse half: removing what the guardrail does flag also breaks the AI's ability to do its job. The agent's free-text description references <em>"the customer"</em> throughout. Replace the customer's name with <code>[REDACTED]</code> in the header and the free text now has dangling references. The AI summary that comes back will say things like <em>"the user mentioned slow speeds, but [REDACTED] also reported,"</em> which is useless to the next agent reading it.</p>
+          <p>The ticket is a structure of identifiers, references, and contextual fragments that are mutually dependent. <strong>You cannot pull out the sensitive parts without breaking the dependencies, and the dependencies are what made the AI worth running in the first place.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: 3. Case 2 - Operational log -->
+    <section id="section-3" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>3. Case 2 &mdash; <span class="ds-text--brand">The Operational Log</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>A second example: a window of operational logs from a network operations centre, twenty minutes of alarm events leading up to a service outage. The format is structured: timestamp, severity, device ID, event code, free-text description, correlation ID.</p>
+          <p>A PII guardrail looks at this and finds essentially nothing. There are no customer names. There are no email addresses or phone numbers. The fields are technical identifiers and event codes. <strong>The guardrail returns the log unchanged and the team feels safe sending it to an external LLM for root-cause analysis.</strong></p>
+          <p>But sector-specific commitments for network operators in most EU countries cover the network topology itself. The device IDs reveal infrastructure layout. The alarm sequence, joined with the correlation ID, can reveal traffic routing decisions. The event codes are sometimes vendor-specific in ways that disclose what equipment runs which segments. For a network operator with customer commitments around where operational data is processed, sending the raw log to a third-country endpoint is the violation, even though the guardrail saw no PII.</p>
+          <p>The structural information &mdash; what's connected to what, what failed in what order, which subsystem propagated the fault &mdash; is what the AI needs to do useful root-cause analysis. It's also what makes the log sensitive. Strip the structure and the AI has nothing to work with. Leave the structure and the data hasn't actually been protected.</p>
+          <p>This is the part most teams discover the hard way: in operational data, <strong><em>the structure is the sensitivity</em></strong>. Field-level removal doesn't see it, can't model it, and can't preserve it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: 4. Case 3 - Clinical/financial -->
+    <section id="section-4" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>4. Case 3 &mdash; <span class="ds-text--brand">The Clinical or Financial Document</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>A third case, less obvious but more common: a clinical workflow document or a financial review document. A patient record with cross-references to past visits, lab results, prescriptions, and a free-text clinician note. A loan file with applicant data, asset details, transaction history, and an underwriter's narrative.</p>
+          <p>These documents have something the first two don't: explicit personal identifiers that a PII guardrail will catch &mdash; patient name, date of birth, account number, social security number. The team configures the guardrail, runs it, and the obvious identifiers are masked. The document looks clean.</p>
+          <p>But the cross-references stay. The clinician's note refers to the patient as <em>"the patient"</em> &mdash; fine &mdash; but also references <em>"the result from the previous admission"</em> and <em>"the medication change on the third visit."</em> The lab results table has structured rows with dates, codes, and values. The financial document has a transaction history with merchant names, amounts, and timestamps.</p>
+          <p>Two things break.</p>
+        </div>
+
+        <ul class="ds-bullet ds-bullet--number">
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Cross-references no longer resolve.</strong> The AI sees <em>"the result from the previous admission"</em> but the previous admission has been masked into a token that doesn't tell the AI anything about what it was. The summary the AI produces is correspondingly vague.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>The document remains identifiable even after the obvious masking.</strong> A patient's lab results trajectory, joined with rough timing, can identify the patient even without the name. A loan applicant's transaction pattern, joined with rough geography and an asset reference, can identify the applicant. These re-identification paths aren't theoretical; they're what privacy researchers demonstrate routinely. A guardrail that catches direct identifiers but leaves the structure intact doesn't actually achieve the privacy outcome the team thinks it has.</span>
+          </li>
+        </ul>
+
+        <div class="ds-article-body">
+          <p>The result is the worst of both worlds: <strong>the AI's output is degraded because cross-references broke, and the privacy posture hasn't actually been improved because the structural information that enables re-identification is still there.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: 5. Why a better guardrail doesn't fix this -->
+    <section id="section-5" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>5. Why a <span class="ds-text--brand">Better Guardrail</span> Doesn't Fix This</h2>
+        </div>
+        <div class="ds-article-body">
+          <p>The natural response, after seeing these cases, is to ask for a better PII detection engine. Wider entity coverage. Custom rule definitions. Context-aware detection. The market has answered this &mdash; there are now PII guardrails with hundreds of entity types, configurable custom markers, and ML-based detection that goes beyond regex.</p>
+          <p>These are improvements, but they don't change the underlying architecture. The architecture is still: detect sensitive elements, remove or replace them, send the result. <strong>The detection layer gets better; the removal layer is still removal.</strong> And removal breaks the same things it always breaks: cross-references, structural relationships, document coherence.</p>
+          <p>A more honest framing of the problem is this: the AI workflow needs the structure of the document &mdash; the relationships, the references, the format, the sequence &mdash; to do useful work. The privacy constraint says certain elements of the document cannot be sent to the external model. These two facts only conflict if the only available move is to <em>remove</em>. If there's a way to send the structure without sending the identifying content, the conflict resolves.</p>
+          <p>This is the architectural shift that distinguishes removal-based approaches (PII guardrails, masking, redaction) from transformation-based approaches. <strong>Removal-based tools optimise for <em>what's taken out</em>. Transformation-based tools optimise for <em>what remains usable</em></strong> &mdash; which is a different design constraint, and produces different architectures.</p>
+        </div>
+
+        <figure class="ds-figure">
+          <div class="ds-figure__svg-wrap">
+            <svg class="ds-figure__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" role="img" aria-labelledby="removal-vs-transformation-title removal-vs-transformation-desc">
+              <title id="removal-vs-transformation-title">Removal-based vs Transformation-based approaches</title>
+              <desc id="removal-vs-transformation-desc">A side-by-side comparison showing the same service ticket processed by a removal-based approach (left) and a transformation-based approach (right). Removal leaves dangling references and broken structure; transformation preserves the structural roles so the AI can still reason about the document.</desc>
+
+              <g>
+                <rect x="320" y="20" width="320" height="116" rx="8" fill="#ffffff" stroke="#0f1130" stroke-width="1.5"/>
+                <text x="340" y="44" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" fill="#6b7280" letter-spacing="1.2">SOURCE: SERVICE TICKET</text>
+                <line x1="340" y1="54" x2="620" y2="54" stroke="#e5e7eb" stroke-width="1"/>
+                <text x="340" y="74" font-family="Inter, sans-serif" font-size="12" fill="#0f1130">Account: <tspan font-weight="600" fill="#5b4fe9">ACC-77821</tspan> · Customer: <tspan font-weight="600" fill="#5b4fe9">Jane Doe</tspan></text>
+                <text x="340" y="92" font-family="Inter, sans-serif" font-size="12" fill="#0f1130">Device: <tspan font-weight="600" fill="#5b4fe9">SN-A04F2</tspan> · Cell site: <tspan font-weight="600" fill="#5b4fe9">CS-Berlin-NE-12</tspan></text>
+                <text x="340" y="110" font-family="Inter, sans-serif" font-size="12" fill="#0f1130">Note: Customer reports dropouts; references prior</text>
+                <text x="340" y="126" font-family="Inter, sans-serif" font-size="12" fill="#0f1130">tickets <tspan font-weight="600" fill="#5b4fe9">TKT-9921</tspan>, <tspan font-weight="600" fill="#5b4fe9">TKT-9988</tspan></text>
+              </g>
+
+              <line x1="400" y1="140" x2="220" y2="180" stroke="#0f1130" stroke-width="1.5" marker-end="url(#arrow-dark)"/>
+              <line x1="560" y1="140" x2="740" y2="180" stroke="#0f1130" stroke-width="1.5" marker-end="url(#arrow-dark)"/>
+
+              <defs>
+                <marker id="arrow-dark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#0f1130"/>
+                </marker>
+                <marker id="arrow-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#c73e3a"/>
+                </marker>
+                <marker id="arrow-teal-fig" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#0b7f7e"/>
+                </marker>
+              </defs>
+
+              <g>
+                <rect x="40" y="180" width="360" height="32" rx="6" fill="#fce9e8" stroke="#ef5350" stroke-width="1"/>
+                <text x="220" y="201" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#c73e3a">Removal-based · masking / redaction</text>
+
+                <rect x="40" y="226" width="360" height="124" rx="8" fill="#ffffff" stroke="#ef5350" stroke-width="1.5"/>
+                <text x="60" y="248" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" fill="#c73e3a" letter-spacing="1.2">WHAT THE LLM SEES</text>
+                <line x1="60" y1="258" x2="380" y2="258" stroke="#fce9e8" stroke-width="1"/>
+                <text x="60" y="278" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Account: <tspan font-weight="600" fill="#c73e3a">[REDACTED]</tspan> · Customer: <tspan font-weight="600" fill="#c73e3a">[REDACTED]</tspan></text>
+                <text x="60" y="296" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Device: <tspan font-weight="600" fill="#9ca3af">SN-A04F2</tspan> · Cell site: <tspan font-weight="600" fill="#9ca3af">CS-Berlin-NE-12</tspan></text>
+                <text x="60" y="314" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Note: Customer reports dropouts; references prior</text>
+                <text x="60" y="332" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">tickets <tspan font-weight="600" fill="#9ca3af">TKT-9921</tspan>, <tspan font-weight="600" fill="#9ca3af">TKT-9988</tspan></text>
+
+                <rect x="40" y="370" width="360" height="74" rx="8" fill="#fce9e8" stroke="none"/>
+                <text x="60" y="392" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#c73e3a">&#10007; Dangling references &mdash; &ldquo;the user, but [REDACTED]&rdquo;</text>
+                <text x="60" y="410" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#c73e3a">&#10007; Structural identifiers still expose topology</text>
+                <text x="60" y="428" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#c73e3a">&#10007; Re-identification path unchanged</text>
+              </g>
+
+              <g>
+                <rect x="560" y="180" width="360" height="32" rx="6" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1"/>
+                <text x="740" y="201" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#5b4fe9">Transformation-based · structure-preserving tokens</text>
+
+                <rect x="560" y="226" width="360" height="124" rx="8" fill="#ffffff" stroke="#5b4fe9" stroke-width="1.5"/>
+                <text x="580" y="248" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" fill="#5b4fe9" letter-spacing="1.2">WHAT THE LLM SEES</text>
+                <line x1="580" y1="258" x2="900" y2="258" stroke="#eeebfe" stroke-width="1"/>
+                <text x="580" y="278" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Account: <tspan font-weight="600" fill="#5b4fe9">ACC-T0001</tspan> · Customer: <tspan font-weight="600" fill="#5b4fe9">CUST-T0001</tspan></text>
+                <text x="580" y="296" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Device: <tspan font-weight="600" fill="#5b4fe9">SN-T0014</tspan> · Cell site: <tspan font-weight="600" fill="#5b4fe9">SITE-T0007</tspan></text>
+                <text x="580" y="314" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Note: <tspan font-weight="600" fill="#5b4fe9">CUST-T0001</tspan> reports dropouts; references</text>
+                <text x="580" y="332" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">prior tickets <tspan font-weight="600" fill="#5b4fe9">TKT-T0042</tspan>, <tspan font-weight="600" fill="#5b4fe9">TKT-T0043</tspan></text>
+
+                <rect x="560" y="370" width="360" height="74" rx="8" fill="#e6f7f6" stroke="none"/>
+                <text x="580" y="392" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0b7f7e">&#10003; Cross-references still resolve consistently</text>
+                <text x="580" y="410" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0b7f7e">&#10003; Structural roles preserved; tokens have no</text>
+                <text x="580" y="425" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0b7f7e">  meaning outside the enterprise</text>
+                <text x="580" y="442" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0b7f7e">&#10003; Mapping back to originals stays inside</text>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="ds-figure__caption">Figure 1 &middot; <strong>The same service ticket, processed two ways. Removal breaks the references the AI needs; transformation preserves the structure while changing what the external model sees.</strong></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Section 8: 6. The cases where masking actually works -->
+    <section id="section-6" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>6. The Cases Where <span class="ds-text--brand">Masking Actually Does Work</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>It's worth being precise about where the traditional approach is fine. Three conditions, all of which have to hold:</p>
+        </div>
+
+        <ul class="ds-bullet ds-bullet--check">
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>The document is long-form prose, not a structured operational artifact.</strong> The sensitive elements are a small fraction of the content and the document still reads coherently without them.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>The AI's task doesn't require resolving cross-references, preserving structure, or understanding sequence.</strong> Summarising a single-source narrative document is fine. Extracting key clauses from a contract may be fine if the parties are the only sensitive elements.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>The privacy constraint is about named entities, not structural information.</strong> If the concern is <em>"the customer's name shouldn't be visible to the external model,"</em> masking solves that. If the concern is <em>"this document, in aggregate, identifies a customer even without the name,"</em> masking doesn't.</span>
+          </li>
+        </ul>
+
+        <div class="ds-article-body">
+          <p>For these cases &mdash; and they exist &mdash; a well-configured PII guardrail is a reasonable tool. <strong>The mistake is assuming the rest of the enterprise's documents look the same as these.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: 7. What this means for the workflow architecture -->
+    <section id="section-7" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>7. What This Means for the <span class="ds-text--brand">Workflow Architecture</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>The conclusion most teams reach, after running into these cases a few times, is that the data preparation layer needs to do something different than removal. <strong>It needs to preserve the document's structure and references while changing the elements that can't cross the boundary. Same shape, different content.</strong></p>
+          <p>That preservation property &mdash; keeping the structure while replacing the sensitive elements with placeholders that behave the same way in context &mdash; is what distinguishes transformation-based approaches from masking and redaction. The AI still gets a document that looks like a service ticket, with a header and a free-text description and cross-references. The external model can still reason about the relationships. The output comes back referencing the same structural roles. Inside the enterprise environment, the placeholders are mapped back to the original values, and the result is a business-ready document with real names, real IDs, real references.</p>
+          <p>This isn't a different configuration of masking. It's a different category of data preparation, one designed around the constraint that <em>enterprise documents are structured artifacts whose value to AI lives in their structure as much as their content</em>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Takeaways -->
+    <section id="section-takeaways" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-banner ds-banner--brand">
+          <span class="ds-banner__label">Key Takeaways</span>
+          <ul class="ds-bullet ds-bullet--dot">
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">AI pilots work on clean text and stall on real operational documents &mdash; the model is fine; the data-preparation layer is the bottleneck</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">PII guardrails assume sensitive content is named entities in prose; operational data isn't shaped that way</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">In operational data, <em>the structure is the sensitivity</em> &mdash; cross-references, topology, sequence, identifiers &mdash; and field-level removal can't see it</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Three failure cases share a pattern: AI output degrades because references broke, and privacy doesn't improve because structural identifiers remain</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">A better detection engine doesn't fix this &mdash; the removal architecture itself is the problem</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Masking is reasonable for long-form prose, named-entity sensitivity, and AI tasks that don't depend on structure &mdash; three conditions that rarely all hold for operational data</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Transformation-based approaches preserve the document's structure and references while changing the elements that can't cross the boundary &mdash; same shape, different content</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 11: FAQ -->
+    <section id="section-faq" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>Frequently Asked <span class="ds-text--brand">Questions</span></h2>
+        </div>
+
+        <div class="ds-ac-list">
+          <div class="ds-ac-card ds-ac--open">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">Why isn't a better PII detection engine enough?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Better detection improves the first step &mdash; finding sensitive elements &mdash; but the underlying architecture is still <em>detect, remove, send</em>. The removal step is what breaks cross-references, structural relationships, and document coherence. Even with hundreds of entity types and ML-based detection, removal-based approaches optimise for <em>what's taken out</em> rather than <em>what remains usable</em>. The architectural problem is the removal, not the detection.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">What is the difference between removal-based and transformation-based approaches?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Removal-based tools (PII guardrails, masking, redaction) detect sensitive elements and either strip them or replace them with redaction markers like <code>[REDACTED]</code>. They optimise for <em>what's taken out</em>. Transformation-based tools replace sensitive values with structured placeholders that preserve format, type, and the structural role the original played, so cross-references still resolve and the AI can still reason about relationships. They optimise for <em>what remains usable</em>. The mapping from placeholder back to original value stays inside the enterprise.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">Are there cases where traditional PII masking is actually fine?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Yes &mdash; when three conditions all hold. First, the document is long-form prose rather than a structured operational artifact. Second, the AI's task doesn't require resolving cross-references, preserving structure, or understanding sequence. Third, the privacy constraint is about named entities rather than structural information. CV screening, contract summarisation, and press release drafting often meet all three. The mistake is assuming the rest of the enterprise's documents look the same.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">What does "the structure is the sensitivity" actually mean?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>In operational data &mdash; service tickets, network logs, clinical records, financial files &mdash; the sensitive information often lives in the <em>relationships</em> between elements rather than in any single field. Device IDs joined with timestamps can reveal infrastructure topology. Lab results trajectories joined with rough timing can identify patients. Transaction patterns joined with rough geography can identify loan applicants. Removing only the obvious named entities leaves the structural information that enables re-identification untouched.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">How does this relate to data location requirements?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Data location requirements often cover more than named-entity PII &mdash; network topology, infrastructure references, sector-specific identifiers, and structural information that can identify customers or operations. A PII guardrail that sees no obvious identifiers in a network log will pass it through to a third-country endpoint, even though the log's structural content is exactly what the data location commitment was designed to keep in. The constraint and the detection layer are looking at different things.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">What does the data preparation layer have to do instead?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Preserve the document's structure and references while changing the elements that can't cross the boundary. <em>Same shape, different content.</em> The AI receives a document that still reads like a service ticket &mdash; with header, free-text description, cross-references &mdash; but the sensitive elements are placeholders that behave the same way in context. The external model reasons about the structure as usual. Inside the enterprise environment, the placeholders are mapped back to real values, producing a business-ready document.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 12: Author info -->
+    <section id="section-author" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-author-info">
+          <p><strong>Author</strong>: CUBIG Policy &amp; Architecture Team</p>
+          <p><strong>Published</strong>: May 2026</p>
+          <p><strong>Last updated</strong>: May 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 13: Related Articles (guide pattern: small label + minimal cards) -->
+    <section id="section-related" class="ds-related-section">
+      <div class="ds-article-container">
+        <div class="ds-related-section__label">Where to Read Next</div>
+        <div class="ds-card-grid ds-card-grid--3col">
+          <a href="/resources/learn/external-llm-on-sensitive-enterprise-data" class="ds-related-section__card">
+            <span class="ds-related-section__card-title">Running External LLMs on Data Your Company Can't Send Externally</span>
+            <span class="ds-related-section__card-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="/resources/learn/tokenization-for-llm-inputs" class="ds-related-section__card">
+            <span class="ds-related-section__card-title">Tokenization for LLM Inputs: How AI Reads What It Doesn't See</span>
+            <span class="ds-related-section__card-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="/resources/learn/reconstructing-ai-output" class="ds-related-section__card">
+            <span class="ds-related-section__card-title">Reconstructing AI Output: The Last Mile Between Model Response and Business Reality</span>
+            <span class="ds-related-section__card-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 14: CTA Band -->
+    <section id="section-cta" class="ds-cta-band ds-bg--grad-deep">
+      <div class="ds-cta-band__inner">
+        <h2 class="ds-cta-band__title">
+          AI workflow stalled on <span class="ds-text--brand">operational data</span>?
+        </h2>
+        <p class="ds-cta-band__description">
+          <span class="ds-text--product">LLM Capsule</span> implements this preparation layer as an <strong style="color: var(--c-bg);">encapsulation layer</strong> &mdash; combining tokenisation (the standard substitution mechanism), structure preservation, and additional protections &mdash; that runs inside the enterprise environment as part of an AI enablement data layer. The <a href="/architecture" style="color: var(--c-bg); text-decoration: underline;">architecture page</a> walks through what that looks like end-to-end across the four zones. For a working session against your own documents, request a demo below.
+        </p>
+        <div class="ds-cta-band__actions">
+          <a href="/request-a-demo" class="ds-btn ds-btn--md btn--invert">Request a Demo &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function toggleAcCard(header) {
+      var card = header.closest('.ds-ac-card');
+      card.classList.toggle('ds-ac--open');
+    }
+  </script>
+
+</body>
+</html>

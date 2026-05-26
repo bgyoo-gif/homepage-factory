@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-26 15:44:26",
+  "generated": "2026-05-26 16:00:03",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1455,6 +1455,16 @@
           "modified": "2026-05-19"
         },
         {
+          "name": "why-ai-stalls-on-operational-data-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/why-ai-stalls-on-operational-data-b-type.html",
+          "modified": "2026-05-26"
+        },
+        {
+          "name": "why-ai-stalls-on-operational-data-bodyhtml.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/why-ai-stalls-on-operational-data-bodyhtml.html",
+          "modified": "2026-05-26"
+        },
+        {
           "name": "why-redaction-breaks-enterprise-ai-workflows-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/why-redaction-breaks-enterprise-ai-workflows-b-type.html",
           "modified": "2026-04-21"
@@ -1755,6 +1765,16 @@
           "name": "what-is-n2sf-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/what-is-n2sf-spec.md",
           "modified": "2026-05-20"
+        },
+        {
+          "name": "why-ai-stalls-on-operational-data-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/why-ai-stalls-on-operational-data-qa-report.md",
+          "modified": "2026-05-26"
+        },
+        {
+          "name": "why-ai-stalls-on-operational-data-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/why-ai-stalls-on-operational-data-spec.md",
+          "modified": "2026-05-26"
         },
         {
           "name": "zero-exposure-spec.md",
@@ -3176,6 +3196,11 @@
         {
           "name": "WhatIsN2sf.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/WhatIsN2sf.tsx",
+          "modified": "2026-05-26"
+        },
+        {
+          "name": "WhyAiStallsOnOperationalData.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/WhyAiStallsOnOperationalData.tsx",
           "modified": "2026-05-26"
         },
         {

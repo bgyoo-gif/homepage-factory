@@ -500,6 +500,29 @@ ARTICLES = [
             ("", ""),
         ],
     },
+    {
+        "slug": "why-ai-stalls-on-operational-data",
+        "component": "WhyAiStallsOnOperationalData",
+        "source_type": "bodyhtml",
+        "title": "Why AI Workflows Stall at Tables, Tickets, and Operational Documents",
+        "lead": "PII guardrails and field-level masking solve the easy half of the problem and break the rest of the workflow. A look at where AI stalls on real operational data — and why removal-based approaches can't fix it.",
+        "category": "AI Architecture",
+        "readTime": "~8 min read",
+        "dateUpdated": "Updated May 2026",
+        "tldrLabel": "TL;DR",
+        "tldrBody": "Enterprise AI pilots work on clean text, then fail when run against real service tickets, operational logs, and clinical or financial documents. The cause is rarely the model — it's the data-preparation layer. PII guardrails, masking, and redaction assume sensitive content is a small set of named entities in long-form prose. Operational data isn't shaped that way. The sensitive information lives in the structure: cross-references, identifiers, sequence, topology. Removal-based approaches optimise for what's taken out and break the cross-references the AI needs to reason about — while leaving the structural information that enables re-identification untouched. Three concrete failure cases — a telecom service ticket, a network operations log, a clinical or financial document — show the same pattern: removal makes the AI's output worse and the privacy posture no better. A better detection engine doesn't fix this; the architecture has to be transformation-based, not removal-based — keeping the structure while changing the elements that can't cross the boundary.",
+        "canonicalUrl": "https://llmcapsule.ai/resources/learn/why-ai-stalls-on-operational-data",
+        "datePublished": "2026-05-01",
+        "dateModified": "2026-05-01",
+        "inLanguage": "en-GB",
+        "breadcrumbLabel": "Why AI Workflows Stall on Operational Data",
+        "related": [
+            ("Running External LLMs on Data Your Company Can't Send Externally", "/resources/learn/external-llm-on-sensitive-enterprise-data"),
+            ("Tokenization for LLM Inputs: How AI Reads What It Doesn't See", "/resources/learn/tokenization-for-llm-inputs"),
+            ("Reconstructing AI Output: The Last Mile Between Model Response and Business Reality", "/resources/learn/reconstructing-ai-output"),
+            ("", ""),
+        ],
+    },
     # ── Pattern B: auto-parse from v6.2 input HTML ──
     {"slug": "pilot-to-production-enterprise-ai", "component": "PilotToProductionEnterpriseAi", "source_type": "input"},
     {"slug": "telecom-noc-ai-deployment", "component": "TelecomNocAiDeployment", "source_type": "input"},
@@ -1017,6 +1040,7 @@ ARTICLE_INDEX_META = {
     "external-llm-on-sensitive-enterprise-data": {"category": "architecture-onprem", "skipInIndex": False},
     "reconstructing-ai-output": {"category": "architecture-onprem", "skipInIndex": False},
     "tokenization-for-llm-inputs": {"category": "architecture-onprem", "skipInIndex": False},
+    "why-ai-stalls-on-operational-data": {"category": "comparison", "skipInIndex": False},
 }
 
 CATEGORY_LABELS = {
