@@ -414,6 +414,29 @@ ARTICLES = [
             ("", ""),
         ],
     },
+    {
+        "slug": "external-llm-on-sensitive-enterprise-data",
+        "component": "ExternalLlmOnSensitiveEnterpriseData",
+        "source_type": "bodyhtml",
+        "title": "Running External LLMs on Data Your Company Can't Send Externally",
+        "lead": "Most enterprise AI workflows stall when external LLMs require data the company can't expose. A look at the architectural patterns that move past the stall — and what trade-offs each one carries.",
+        "category": "AI Architecture",
+        "readTime": "~10 min read",
+        "dateUpdated": "May 2026",
+        "tldrLabel": "TL;DR",
+        "tldrBody": "External LLMs produce measurably better output than what most enterprises can run internally — but regulated companies can't send their actual operational data to them. The three standard responses — send and accept the risk, mask and redact, or run an on-premise model — each break at a predictable point. A different approach changes what crosses the boundary rather than whether to cross it: sensitive elements are replaced with structure-preserving tokens inside the enterprise environment, the external LLM works on the tokenised version, and the response is reconstructed internally. The original data never leaves; the frontier-model capability is preserved. This isn't universal — it fits analytical workflows where sensitive elements are identifiable in advance, not personalisation or verification tasks that require the literal identifier. Four design properties define a sound implementation: transformation inside the enterprise environment, exclusive enterprise control of the mapping, a sensitivity definition that evolves with the business, and reconstruction that runs as infrastructure rather than as a manual step.",
+        "canonicalUrl": "https://llmcapsule.ai/resources/learn/external-llm-on-sensitive-enterprise-data",
+        "datePublished": "2026-05-01",
+        "dateModified": "2026-05-01",
+        "inLanguage": "en-GB",
+        "breadcrumbLabel": "Running External LLMs on Sensitive Enterprise Data",
+        "related": [
+            ("Differential privacy for enterprise LLM", "/resources/learn/differential-privacy-for-enterprise-llm"),
+            ("Sovereign AI for European enterprises", "/resources/learn/sovereign-ai-european-enterprises"),
+            ("On-prem LLM execution path", "/resources/learn/on-prem-llm-execution-path"),
+            ("AI on network operations data", "/resources/learn/ai-on-network-operations-data"),
+        ],
+    },
     # ── Pattern B: auto-parse from v6.2 input HTML ──
     {"slug": "pilot-to-production-enterprise-ai", "component": "PilotToProductionEnterpriseAi", "source_type": "input"},
     {"slug": "telecom-noc-ai-deployment", "component": "TelecomNocAiDeployment", "source_type": "input"},
@@ -927,6 +950,7 @@ ARTICLE_INDEX_META = {
     "sovereign-ai-european-enterprises": {"category": "architecture-sovereign", "skipInIndex": False},
     "differential-privacy-for-enterprise-llm": {"category": "architecture-dp", "skipInIndex": False},
     "on-prem-llm-execution-path": {"category": "architecture-onprem", "skipInIndex": False},
+    "external-llm-on-sensitive-enterprise-data": {"category": "architecture-onprem", "skipInIndex": False},
 }
 
 CATEGORY_LABELS = {
