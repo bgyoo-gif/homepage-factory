@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tokenization for LLM Inputs: How AI Reads What It Doesn't See — LLM Capsule</title>
+  <meta name="description" content="The architectural choices that make pre-LLM tokenisation work in production — deterministic vs randomised, format preservation, mapping storage, and the questions teams have to settle before deployment.">
+  <meta name="keywords" content="tokenisation, tokenization, LLM input, pre-LLM tokenization, deterministic tokenization, randomised tokenization, format-preserving tokenization, entity resolution, mapping storage, encapsulation layer, differential privacy, k-anonymity, LLM Capsule">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://llmcapsule.ai/resources/learn/tokenization-for-llm-inputs">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Tokenization for LLM Inputs: How AI Reads What It Doesn't See — LLM Capsule">
+  <meta property="og:description" content="The architectural choices that make pre-LLM tokenisation work in production — deterministic vs randomised, format preservation, mapping storage, and the questions teams have to settle before deployment.">
+  <meta property="og:url" content="https://llmcapsule.ai/resources/learn/tokenization-for-llm-inputs">
+  <meta property="og:site_name" content="LLM Capsule">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},
+      {"@type":"ListItem","position":2,"name":"Resources","item":"https://llmcapsule.ai/resources"},
+      {"@type":"ListItem","position":3,"name":"Learn","item":"https://llmcapsule.ai/resources/learn"},
+      {"@type":"ListItem","position":4,"name":"Tokenization for LLM Inputs"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Is tokenisation here the same as NLP tokenisation?","acceptedAnswer":{"@type":"Answer","text":"No — they share a word and almost nothing else. In NLP, tokenisation means splitting text into subword units that a model consumes (BPE, WordPiece, SentencePiece). In data protection, tokenisation means replacing a sensitive value with a non-sensitive placeholder that can be mapped back to the original. The two run at completely different layers of the stack. The data-protection sense is what this article is about."}},
+      {"@type":"Question","name":"When should deterministic tokenisation be used instead of randomised?","acceptedAnswer":{"@type":"Answer","text":"Deterministic tokenisation produces the same token for the same value every time, which is what enables cross-document analytics: fraud detection patterns, customer history summaries, cohort analysis. Randomised tokenisation produces a different token each occurrence, which avoids cross-document linkage but breaks workflows that depend on it. Most production deployments end up hybrid — deterministic within a workflow scope (so a multi-turn conversation stays coherent), randomised across scopes (so analytics from one workflow can't be cross-referenced with another)."}},
+      {"@type":"Question","name":"Why do placeholders like [REDACTED] degrade LLM output?","acceptedAnswer":{"@type":"Answer","text":"Because the LLM's reasoning is shaped by the surface form of the input. A document that reads as a coherent operational record produces normal-quality output. The same document littered with [CUSTOMER] and [ACCOUNT_NUMBER] markers reads as a template or a redaction notice, and the model's output degrades accordingly — summaries become more abstract, extraction loses precision, and the model occasionally drifts into commentary about the redaction itself. Format-preserving tokens (plausible-looking names, real dates in a plausible range, account numbers of the same length and format) avoid this entirely."}},
+      {"@type":"Question","name":"Where does the token-to-value mapping have to live?","acceptedAnswer":{"@type":"Answer","text":"Inside the enterprise environment, in storage colocated with the source systems rather than with the AI endpoint. The mapping is in effect the key that re-identifies the data — if it leaves the environment, the protection collapses. Three properties have to hold: exclusive enterprise control, integrity protection (so tampering is detectable), and access controls separate from the LLM workflow itself. Storage technology is secondary to these properties."}},
+      {"@type":"Question","name":"What is entity resolution and why does it matter for tokenisation?","acceptedAnswer":{"@type":"Answer","text":"A document may refer to the same person as 'the customer,' 'Mr Schmidt,' 'Marlene,' and 'the subscriber' — four mentions, one entity. A naive tokeniser produces four different tokens and breaks the LLM's ability to track them as one person. Entity resolution is the step that identifies which mentions refer to the same underlying entity, so they all map to the same token. Enterprise documents usually have structural cues (header IDs, naming conventions, schema relationships) that make this tractable."}},
+      {"@type":"Question","name":"When is tokenisation alone not enough?","acceptedAnswer":{"@type":"Answer","text":"When the residual risk lies not in the tokens themselves but in the patterns the tokens form — frequencies, co-occurrences, sequences, ratios that could enable re-identification even without the raw values. This is most relevant for high-cardinality data, long time series, or workflows where many tokenised outputs accumulate over time. Differential privacy, k-anonymity, and related statistical protections can be applied on top of tokenisation. The trade-off is some analytical precision in exchange for stronger guarantees. The decision is best made workflow by workflow rather than as a global setting."}}
+    ]
+  }
+  </script>
+
+  <!-- Fonts: Inter + JetBrains Mono (Capsule v6.2) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* 1. CSS Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--f-display);
+      color: var(--c-ink);
+      background-color: var(--c-bg);
+      padding-top: 58px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, video { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    p, li, blockquote { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
+    h1, h2, h3, h4 { text-wrap: balance; }
+
+    /* 2. :root */
+    :root {
+      /* Capsule Brand */
+      --c-primary: #5b4fe9;
+      --c-primary-dark: #3b2fbf;
+      --c-primary-soft: #eeebfe;
+      --c-teal: #0ea5a4;
+      --c-teal-dark: #0b7f7e;
+      --c-teal-soft: #e6f7f6;
+      --c-coral: #ef5350;
+      --c-coral-dark: #c73e3a;
+      --c-coral-soft: #fce9e8;
+      --c-amber: #f59e0b;
+      --c-amber-dark: #b45309;
+      --c-amber-soft: #fef3c7;
+      --c-bg: #ffffff;
+      --c-bg-soft: #f7f8fb;
+      --c-bg-dark: #0f1130;
+      --c-bg-dark-2: #1b1d4a;
+      --c-ink: #0f1130;
+      --c-ink-soft: #3a3d5e;
+      --c-muted: #6b7280;
+      --c-rule: #e5e7eb;
+      --f-display: 'Inter', -apple-system, system-ui, sans-serif;
+      --f-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+      /* DS Core tokens */
+      --ds-text-xs: 12px;
+      --ds-text-sm: 14px;
+      --ds-text-md: 16px;
+      --ds-text-lg: 18px;
+      --ds-text-xl: 20px;
+      --ds-text-2xl: 24px;
+      --ds-text-3xl: 30px;
+      --ds-text-4xl: 36px;
+      --ds-text-5xl: 40px;
+      --ds-text-6xl: 50px;
+      --ds-text-7xl: 64px;
+      --ds-weight-regular: 400;
+      --ds-weight-medium: 500;
+      --ds-weight-semibold: 600;
+      --ds-weight-bold: 700;
+      --ds-leading-tight: 1.2;
+      --ds-leading-normal: 1.5;
+      --ds-leading-relaxed: 1.7;
+      --ds-tracking-tight: -0.5px;
+      --ds-tracking-wide: 0.08em;
+      --ds-space-2xs: 4px;
+      --ds-space-xs: 8px;
+      --ds-space-sm: 12px;
+      --ds-space-md: 16px;
+      --ds-space-lg: 24px;
+      --ds-space-xl: 32px;
+      --ds-space-2xl: 48px;
+      --ds-space-3xl: 64px;
+      --ds-space-4xl: 80px;
+      --ds-space-5xl: 100px;
+      --ds-radius-xs: 5px;
+      --ds-radius-sm: 8px;
+      --ds-radius-md: 18px;
+      --ds-radius-lg: 24px;
+      --ds-radius-xl: 40px;
+      --ds-radius-pill: 9999px;
+      --ds-container-padding-mobile: 16px;
+      --ds-container-padding-tablet: 32px;
+      --ds-container-padding-desktop: 120px;
+      --s-page: clamp(20px, 4vw, 80px);
+      --s-section: clamp(64px, 8vw, 128px);
+      --r-md: 10px;
+      --container-max: 1280px;
+
+      /* Background images */
+      --ds-bg-img-grad-deep: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png');
+      --ds-overlay-dark-light: rgba(0,0,0,0.15);
+      --ds-overlay-white-85: rgba(255,255,255,0.85);
+    }
+
+    /* 3. Typography */
+    h1 { font-family: var(--f-display); font-size: 32px; font-weight: var(--ds-weight-bold); line-height: 1.15; letter-spacing: var(--ds-tracking-tight); }
+    h2 { font-family: var(--f-display); font-size: 20px; font-weight: var(--ds-weight-bold); line-height: 1.15; letter-spacing: var(--ds-tracking-tight); }
+    h3 { font-family: var(--f-display); font-size: var(--ds-text-xl); font-weight: var(--ds-weight-semibold); line-height: 1.15; }
+    @media (min-width: 768px) { h1 { font-size: 40px; } h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { h1 { font-size: 48px; } h2 { font-size: 24px; } h3 { font-size: 22px; } }
+    @media (min-width: 1440px) { h1 { font-size: 64px; } h2 { font-size: 28px; } }
+
+    /* 4. Base Components */
+    .ds-text--brand { color: var(--c-primary); }
+    .ds-text--product { font-family: var(--f-display); font-weight: var(--ds-weight-bold); }
+
+    /* Container */
+    .ds-container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 var(--ds-container-padding-mobile);
+    }
+    @media (min-width: 768px) { .ds-container { padding: 0 var(--ds-container-padding-tablet); } }
+    @media (min-width: 1024px) { .ds-container { padding: 0 var(--ds-container-padding-tablet); } }
+    @media (min-width: 1440px) { .ds-container { padding: 0 var(--ds-container-padding-desktop); max-width: 1280px; } }
+
+    /* Article Container (1080px) */
+    .ds-article-container {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 var(--ds-container-padding-mobile);
+    }
+    @media (min-width: 768px) { .ds-article-container { padding: 0 var(--ds-container-padding-tablet); max-width: 720px; } }
+    @media (min-width: 1024px) { .ds-article-container { max-width: 860px; } }
+    @media (min-width: 1280px) { .ds-article-container { max-width: 1080px; padding: 0; } }
+
+    /* Section */
+    .ds-section { width: 100%; padding: var(--ds-space-4xl) 0; }
+    .ds-section--hero { padding: 100px 0 var(--ds-space-3xl); }
+    .ds-section--article-body { padding: var(--ds-space-2xl) 0; }
+
+    /* Badge */
+    .ds-badge {
+      display: inline-flex; align-items: center; gap: var(--ds-space-2xs);
+      padding: var(--ds-space-2xs) var(--ds-space-xs);
+      border-radius: var(--ds-radius-pill);
+      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-semibold);
+      line-height: 1; white-space: nowrap;
+    }
+    .ds-badge--primary { background-color: var(--c-primary); color: var(--c-bg); }
+
+    /* Back link (guide pattern) */
+    .ds-article-hero__back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: var(--ds-text-sm); font-weight: 600;
+      color: var(--c-primary); text-decoration: none;
+      letter-spacing: 0.01em; margin-bottom: var(--ds-space-2xl);
+      transition: color 0.15s;
+    }
+    .ds-article-hero__back:hover { color: var(--c-primary-dark, #3b2fbf); }
+
+    /* Hero — guide pattern: back → title → description → meta */
+    .ds-article-hero__title {
+      font-family: var(--f-display);
+      margin-bottom: var(--ds-space-lg);
+    }
+    .ds-article-hero__description {
+      font-size: var(--ds-text-lg); color: var(--c-ink-soft);
+      line-height: var(--ds-leading-relaxed);
+      max-width: 860px;
+      margin-bottom: var(--ds-space-2xl);
+    }
+    .ds-article-hero__meta {
+      display: flex; align-items: center; gap: var(--ds-space-md);
+      flex-wrap: wrap;
+    }
+    .ds-article-hero__meta-sep {
+      width: 4px; height: 4px; border-radius: 50%;
+      background-color: var(--c-rule); flex-shrink: 0;
+    }
+    .ds-article-hero__reading-time,
+    .ds-article-hero__date {
+      font-size: var(--ds-text-sm); color: var(--c-muted);
+    }
+
+    /* Banner */
+    .ds-banner {
+      padding: var(--ds-space-lg);
+      border-radius: 0; border: none;
+      border-top: 1px solid var(--c-rule);
+      border-bottom: 1px solid var(--c-rule);
+      font-size: var(--ds-text-sm); line-height: var(--ds-leading-relaxed);
+      text-align: left;
+      margin: var(--ds-space-2xl) 0;
+    }
+    .ds-banner--brand { background-color: var(--c-primary-soft); }
+    .ds-banner__label {
+      font-family: var(--f-mono); font-size: var(--ds-text-xs);
+      text-transform: uppercase; letter-spacing: var(--ds-tracking-wide);
+      color: var(--c-muted); margin-bottom: var(--ds-space-xs); display: block;
+      font-weight: var(--ds-weight-medium);
+    }
+    .ds-banner p { font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed); color: var(--c-ink); }
+    .ds-banner strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
+    .ds-banner .ds-bullet { margin: var(--ds-space-sm) 0 0 0; }
+
+    /* Related Articles (guide pattern: small label + minimal cards) */
+    .ds-related-section {
+      background-color: var(--c-bg-soft);
+      padding: clamp(48px, 6vw, 80px) 0;
+    }
+    .ds-related-section__label {
+      font-family: var(--f-mono); font-size: var(--ds-text-xs);
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--c-muted); margin-bottom: var(--ds-space-md);
+      font-weight: var(--ds-weight-medium);
+    }
+    .ds-related-section__card {
+      display: flex; flex-direction: column;
+      justify-content: space-between;
+      gap: var(--ds-space-md);
+      padding: 20px 22px;
+      background-color: var(--c-bg);
+      border: 1px solid var(--c-rule);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--c-ink);
+      transition: border-color 0.15s, box-shadow 0.15s;
+      min-height: 100px;
+    }
+    .ds-related-section__card:hover {
+      border-color: var(--c-primary);
+      box-shadow: 0 4px 16px rgba(91, 79, 233, 0.08);
+    }
+    .ds-related-section__card-title {
+      font-size: 15px; font-weight: 600;
+      line-height: 1.4; color: var(--c-ink);
+    }
+    .ds-related-section__card-arrow {
+      font-size: 18px; color: var(--c-primary);
+      line-height: 1; align-self: flex-end;
+    }
+
+    /* Article section header */
+    .ds-article-section-header {
+      margin-bottom: var(--ds-space-xl);
+      padding-bottom: var(--ds-space-md);
+      border-bottom: 1px solid var(--c-rule);
+    }
+    .ds-article-section-header h2 { margin: 0; }
+
+    /* Section title icon */
+    .ds-section-title-icon {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: var(--ds-space-lg); margin-top: var(--ds-space-2xl);
+    }
+    .ds-section-title-icon__icon {
+      width: 28px; height: 28px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--c-primary);
+    }
+    .ds-section-title-icon__text {
+      font-family: var(--f-display); font-size: var(--ds-text-xl);
+      font-weight: var(--ds-weight-semibold); color: var(--c-ink);
+      line-height: var(--ds-leading-tight);
+    }
+
+    /* Article body paragraphs */
+    .ds-article-body p {
+      font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed);
+      color: var(--c-ink-soft); margin-bottom: var(--ds-space-md);
+    }
+    .ds-article-body p:last-child { margin-bottom: 0; }
+    .ds-article-body strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
+    .ds-article-body em { color: var(--c-ink-soft); font-style: italic; }
+    .ds-article-body a { color: var(--c-primary); text-decoration: underline; text-underline-offset: 3px; }
+    .ds-article-body a:hover { color: var(--c-primary-dark); }
+    .ds-article-body sup { font-size: 0.6em; vertical-align: super; line-height: 0; }
+    .ds-article-body code { font-family: var(--f-mono); font-size: 0.92em; background-color: var(--c-bg-soft); padding: 2px 6px; border-radius: 4px; color: var(--c-ink); }
+
+    /* Bullet lists */
+    .ds-bullet { list-style: none; padding: 0; margin: var(--ds-space-md) 0; display: flex; flex-direction: column; gap: var(--ds-space-sm); }
+    .ds-bullet__item { display: flex; align-items: flex-start; gap: var(--ds-space-xs); font-size: var(--ds-text-md); line-height: var(--ds-leading-normal); color: var(--c-ink-soft); }
+    .ds-bullet__icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; display: inline-flex; align-items: center; justify-content: center; }
+    .ds-bullet__text { flex: 1; }
+    .ds-bullet__text strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
+    .ds-bullet__text em { font-style: italic; }
+    .ds-bullet__text a { color: var(--c-primary); text-decoration: underline; text-underline-offset: 3px; }
+    .ds-bullet__text a:hover { color: var(--c-primary-dark); }
+    .ds-bullet__text sup { font-size: 0.6em; vertical-align: super; line-height: 0; }
+    .ds-bullet__text code { font-family: var(--f-mono); font-size: 0.92em; background-color: var(--c-bg-soft); padding: 2px 6px; border-radius: 4px; color: var(--c-ink); }
+
+    .ds-bullet--check .ds-bullet__icon::before { content: "\2713"; color: var(--c-teal); font-weight: var(--ds-weight-bold); }
+    .ds-bullet--number { counter-reset: bullet-counter; }
+    .ds-bullet--number .ds-bullet__item { counter-increment: bullet-counter; }
+    .ds-bullet--number .ds-bullet__icon::before {
+      content: counter(bullet-counter);
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 20px; height: 20px; border-radius: 50%;
+      background-color: var(--c-primary); color: var(--c-bg);
+      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-bold);
+    }
+    .ds-bullet--dot .ds-bullet__icon::before { content: "\2022"; color: var(--c-primary); font-size: var(--ds-text-xl); line-height: 1; }
+
+    /* Compare Table */
+    .ds-table-wrap {
+      margin: var(--ds-space-xl) 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .ds-table-wrap::-webkit-scrollbar { display: none; }
+    .ds-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--ds-text-sm);
+      min-width: 560px;
+    }
+    .ds-table thead th {
+      text-align: left;
+      padding: var(--ds-space-sm) var(--ds-space-md);
+      font-weight: var(--ds-weight-semibold);
+      font-size: var(--ds-text-sm);
+      line-height: var(--ds-leading-tight);
+      border: 1px solid var(--c-ink);
+      background-color: var(--c-ink);
+      color: var(--c-bg);
+    }
+    .ds-table thead th.ds-table__th--primary {
+      background-color: var(--c-primary);
+      border-color: var(--c-primary);
+    }
+    .ds-table tbody td {
+      padding: var(--ds-space-sm) var(--ds-space-md);
+      border: 1px solid var(--c-rule);
+      color: var(--c-ink-soft);
+      line-height: var(--ds-leading-relaxed);
+      vertical-align: top;
+    }
+    .ds-table tbody td.ds-table__td--primary {
+      background-color: var(--c-primary-soft);
+      color: var(--c-ink);
+    }
+    .ds-table tbody tr:hover td { filter: brightness(0.98); }
+
+    /* Accordion */
+    .ds-ac-list { display: flex; flex-direction: column; gap: 2px; margin: var(--ds-space-xl) 0; }
+    .ds-ac-card {
+      border: 1px solid var(--c-rule); border-radius: var(--ds-radius-sm);
+      background-color: var(--c-bg); overflow: hidden; transition: background-color 0.2s;
+    }
+    .ds-ac-card:hover { background-color: var(--c-bg-soft); }
+    .ds-ac-card__header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: var(--ds-space-md); padding: var(--ds-space-lg); cursor: pointer; user-select: none;
+    }
+    .ds-ac-card__title {
+      font-family: var(--f-display); font-size: var(--ds-text-lg);
+      font-weight: var(--ds-weight-medium); line-height: var(--ds-leading-tight);
+      color: var(--c-ink); flex: 1;
+    }
+    .ds-ac-card__toggle {
+      width: 28px; height: 28px; border-radius: 6px;
+      border: 0.5px solid var(--c-rule); background-color: var(--c-bg-soft);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; cursor: pointer; transition: border-color 0.15s, background 0.15s;
+    }
+    .ds-ac-card__toggle:hover { border-color: var(--c-ink); background-color: var(--c-rule); }
+    .ds-ac-card__toggle-icon { width: 12px; height: 12px; position: relative; flex-shrink: 0; }
+    .ds-ac-card__toggle-icon::before, .ds-ac-card__toggle-icon::after {
+      content: ''; position: absolute; background-color: var(--c-muted); border-radius: 1px; transition: opacity 0.2s;
+    }
+    .ds-ac-card__toggle-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .ds-ac-card__toggle-icon::after { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; }
+    .ds-ac-card.ds-ac--open .ds-ac-card__toggle-icon::after { opacity: 0; }
+    .ds-ac-card.ds-ac--open .ds-ac-card__toggle-icon::before { background-color: var(--c-ink-soft); }
+    .ds-ac-card__body {
+      display: none; padding: var(--ds-space-lg); border-top: 1px solid var(--c-rule);
+      background-color: var(--c-bg-soft);
+    }
+    .ds-ac-card.ds-ac--open .ds-ac-card__body { display: block; }
+    .ds-ac-card__body p {
+      font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed); color: var(--c-ink-soft);
+    }
+    .ds-ac-card__body strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
+    .ds-ac-card__body em { font-style: italic; }
+    .ds-ac-card__body a { color: var(--c-primary); text-decoration: underline; text-underline-offset: 3px; }
+    .ds-ac-card__body a:hover { color: var(--c-primary-dark); }
+    .ds-ac-card__body sup { font-size: 0.6em; vertical-align: super; line-height: 0; }
+    .ds-ac-card__body code { font-family: var(--f-mono); font-size: 0.92em; background-color: var(--c-bg); padding: 2px 6px; border-radius: 4px; color: var(--c-ink); }
+
+    /* Card grid (used for Related Articles minimal cards) */
+    .ds-card-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+    @media (min-width: 768px) { .ds-card-grid--3col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .ds-card-grid--3col { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+    /* Button */
+    .ds-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-xs);
+      border-radius: var(--ds-radius-pill);
+      font-family: var(--f-display); font-weight: var(--ds-weight-medium); font-size: var(--ds-text-md);
+      cursor: pointer; border: none; transition: background-color 0.2s;
+      white-space: nowrap; text-decoration: none;
+    }
+    .ds-btn--md { padding: var(--ds-space-sm) var(--ds-space-xl); }
+    .btn--invert { background-color: var(--c-bg); color: var(--c-ink); }
+    .btn--invert:hover { background-color: var(--c-primary-soft); }
+
+    /* CTA Band */
+    .ds-cta-band {
+      width: 100%; position: relative; overflow: hidden;
+      padding: 80px var(--ds-container-padding-mobile);
+      text-align: center;
+      background-color: var(--c-bg-dark);
+      background-size: cover; background-position: center;
+    }
+    .ds-cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: var(--ds-overlay-dark-light); z-index: 0;
+    }
+    .ds-cta-band > * { position: relative; z-index: 1; }
+    .ds-cta-band__inner {
+      max-width: 100%; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: var(--ds-space-lg);
+    }
+    @media (min-width: 1024px) { .ds-cta-band__inner { max-width: 720px; } }
+    @media (min-width: 1440px) { .ds-cta-band__inner { max-width: 860px; } }
+    .ds-cta-band__title {
+      font-family: var(--f-display); font-size: var(--ds-text-5xl);
+      font-weight: var(--ds-weight-bold); color: var(--c-bg);
+      line-height: var(--ds-leading-tight); letter-spacing: var(--ds-tracking-tight);
+    }
+    .ds-cta-band__description {
+      font-size: var(--ds-text-md); color: var(--ds-overlay-white-85);
+      line-height: var(--ds-leading-relaxed);
+    }
+    .ds-cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .ds-bg--grad-deep {
+      background-image: var(--ds-bg-img-grad-deep);
+      background-size: cover; background-position: center;
+    }
+    @media (min-width: 768px) { .ds-cta-band { padding: 100px var(--ds-container-padding-tablet); } }
+    @media (min-width: 1440px) { .ds-cta-band { padding: 120px var(--ds-container-padding-desktop); max-width: 1280px; margin: 0 auto; } }
+    @media (max-width: 767px) {
+      .ds-cta-band__title { font-size: var(--ds-text-4xl); }
+      .ds-cta-band__actions { flex-direction: column; align-items: center; }
+      .ds-cta-band__actions .ds-btn { width: 100%; max-width: 320px; }
+      .ds-bg--grad-deep { background-image: none; }
+    }
+    @media (min-width: 1440px) { .ds-cta-band__title { font-size: var(--ds-text-6xl); } }
+
+    /* Author info */
+    .ds-author-info {
+      margin-top: var(--ds-space-3xl); padding-top: var(--ds-space-lg);
+      border-top: 1px solid var(--c-rule);
+      font-size: var(--ds-text-sm); color: var(--c-muted); line-height: var(--ds-leading-relaxed);
+    }
+    .ds-author-info strong { color: var(--c-ink-soft); font-weight: var(--ds-weight-medium); }
+
+    /* h1 sup */
+    h1 sup, h2 sup, h3 sup { font-size: 0.55em; vertical-align: super; line-height: 0; font-weight: inherit; }
+
+    /* Figure (inline diagram) */
+    .ds-figure {
+      margin: var(--ds-space-xl) 0;
+      padding: var(--ds-space-lg);
+      background-color: var(--c-bg-soft);
+      border: 1px solid var(--c-rule);
+      border-radius: var(--ds-radius-sm);
+    }
+    .ds-figure__svg-wrap {
+      width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .ds-figure__svg-wrap::-webkit-scrollbar { display: none; }
+    .ds-figure__svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-width: 640px;
+      max-width: 100%;
+    }
+    .ds-figure__caption {
+      margin-top: var(--ds-space-md);
+      font-family: var(--f-mono);
+      font-size: var(--ds-text-xs);
+      text-transform: uppercase;
+      letter-spacing: var(--ds-tracking-wide);
+      color: var(--c-muted);
+      text-align: center;
+    }
+    .ds-figure__caption strong { color: var(--c-ink-soft); font-weight: var(--ds-weight-medium); }
+
+    /* Responsive adjustments */
+    @media (min-width: 768px) {
+      .ds-section-title-icon__text { font-size: 22px; }
+    }
+    @media (min-width: 1024px) {
+      .ds-article-hero__description { font-size: var(--ds-text-xl); }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+
+    <!-- Section 1: Hero (guide pattern: back → title → description → meta) -->
+    <section id="section-hero" class="ds-section ds-section--hero">
+      <div class="ds-article-container">
+        <a href="/resources/learn" class="ds-article-hero__back">← Learn</a>
+        <h1 class="ds-article-hero__title">
+          <span class="ds-text--brand">Tokenization</span> for LLM Inputs — How AI Reads What It Doesn't See
+        </h1>
+        <p class="ds-article-hero__description">
+          The architectural choices that make pre-LLM tokenisation work in production — deterministic vs randomised, format preservation, mapping storage, and the questions teams have to settle before deployment.
+        </p>
+        <div class="ds-article-hero__meta">
+          <span class="ds-badge ds-badge--primary">AI Architecture</span>
+          <span class="ds-article-hero__meta-sep" aria-hidden="true"></span>
+          <span class="ds-article-hero__reading-time">~9 min read</span>
+          <span class="ds-article-hero__meta-sep" aria-hidden="true"></span>
+          <span class="ds-article-hero__date">Updated May 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: TL;DR -->
+    <section id="section-tldr" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-banner ds-banner--brand">
+          <span class="ds-banner__label">TL;DR</span>
+          <p>Pre-LLM tokenisation is the substitution step that lets an enterprise document cross the boundary to an external model without exposing sensitive content. It works by giving the LLM <strong>referential integrity without semantic disclosure</strong> — placeholders that the model can reason about consistently across a document, without recovering the underlying identity. Production-grade implementations have to settle a set of architectural questions explicitly: <strong>deterministic vs randomised (cross-document linkage vs re-identification surface), format-preserving vs marker-style (output quality vs simplicity), where the mapping lives (exclusive enterprise control is non-negotiable), entity resolution across mentions, and what not to tokenise</strong>. Tokenisation alone is sufficient for most workflows. For high-cardinality data, long time series, or defence-in-depth postures, statistical protections (differential privacy, k-anonymity) layer on top. The definition of what counts as sensitive is the layer where most teams under-invest at the start — and where most of the long-term operational cost lives.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 1. What tokenisation actually does -->
+    <section id="section-1" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>1. What <span class="ds-text--brand">Tokenisation</span> Actually Does in This Context</h2>
+        </div>
+        <div class="ds-article-body">
+          <p>The transformation step that sits between an enterprise document and an external LLM is, conceptually, simple: identify the elements that can't cross the boundary, replace them with placeholders that preserve their structural role, send the result to the model. In practice, the simplicity hides a set of architectural decisions that determine whether the approach works at production scale or breaks under load.</p>
+          <p>This article walks through those decisions. It is not a tutorial on a specific library or product. It is the set of choices any team adopting pre-LLM tokenisation has to make explicit, with the trade-offs each choice carries.</p>
+          <p>The term <em>tokenisation</em> is used here in the data-protection sense — replacing sensitive values with non-sensitive placeholders that can be mapped back — not in the NLP sense, where it means splitting text into subword units for model input. <strong>The two share a word and almost nothing else.</strong></p>
+          <p>A related note on terminology: in CUBIG's architecture, tokenisation is the core substitution mechanism inside a broader <strong>encapsulation layer</strong> that also includes detection, format preservation, and optional statistical protections. This article focuses on the tokenisation mechanism specifically — the design decisions are largely the same whether the implementation calls itself tokenisation, encapsulation, or any of the other names used in the field.</p>
+          <p>When an enterprise document is prepared for an external LLM, the goal is that the model sees a version of the document that retains everything it needs for the task and removes everything the boundary was set up to keep in. Tokenisation is the mechanism that achieves the second half: identifying sensitive elements and substituting placeholders.</p>
+          <p>A useful frame: the LLM doesn't need to know that the customer is named <em>Marlene Schmidt</em>. It needs to know that there is a customer, that the customer is referenced in three different places in the document, and that the references all point to the same entity. A token like <code>CUST-7F2A</code> carries the same information — a referenceable entity that appears in multiple places consistently — without carrying the identity.</p>
+          <p>That is the core property tokenisation provides: <strong>referential integrity without semantic disclosure</strong>. The model can reason about <em>"the customer"</em> across a document because the token threads through the document consistently. The model cannot recover the identity because the token doesn't encode it.</p>
+          <p>Everything else in this article is variations on how that property is implemented, and what additional properties layer on top of it.</p>
+        </div>
+
+        <figure class="ds-figure">
+          <div class="ds-figure__svg-wrap">
+            <svg class="ds-figure__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" role="img" aria-labelledby="referential-integrity-title referential-integrity-desc">
+              <title id="referential-integrity-title">Referential integrity without semantic disclosure</title>
+              <desc id="referential-integrity-desc">A diagram showing a source document where the same customer is referenced three different ways, all resolved to a single consistent token in the version the LLM sees, with the mapping table held inside the enterprise.</desc>
+
+              <defs>
+                <marker id="arrow-primary-tk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#5b4fe9"/>
+                </marker>
+                <marker id="arrow-teal-tk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#0b7f7e"/>
+                </marker>
+              </defs>
+
+              <!-- LEFT: Source document -->
+              <g>
+                <rect x="20" y="40" width="340" height="200" rx="8" fill="#ffffff" stroke="#0f1130" stroke-width="1.5"/>
+                <text x="40" y="64" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" fill="#6b7280" letter-spacing="1.2">SOURCE DOCUMENT</text>
+                <line x1="40" y1="74" x2="340" y2="74" stroke="#e5e7eb" stroke-width="1"/>
+
+                <text x="40" y="100" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Header: Customer <tspan font-weight="700" fill="#c73e3a">Marlene Schmidt</tspan></text>
+                <text x="40" y="118" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">called regarding account dropouts.</text>
+
+                <text x="40" y="148" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Agent note: &ldquo;<tspan font-weight="700" fill="#c73e3a">Mr Schmidt</tspan> reports the</text>
+                <text x="40" y="166" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">issue started last Tuesday.&rdquo;</text>
+
+                <text x="40" y="196" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Resolution: &ldquo;<tspan font-weight="700" fill="#c73e3a">Marlene</tspan> confirmed</text>
+                <text x="40" y="214" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">service restored after firmware roll-back.&rdquo;</text>
+              </g>
+
+              <!-- Middle: Entity resolution + tokenisation arrow -->
+              <g>
+                <line x1="370" y1="140" x2="490" y2="140" stroke="#5b4fe9" stroke-width="2" marker-end="url(#arrow-primary-tk)"/>
+                <rect x="380" y="98" width="100" height="32" rx="4" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1"/>
+                <text x="430" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#5b4fe9">Entity resolution</text>
+                <rect x="380" y="150" width="100" height="32" rx="4" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1"/>
+                <text x="430" y="170" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#5b4fe9">Tokenisation</text>
+              </g>
+
+              <!-- RIGHT: Tokenised document -->
+              <g>
+                <rect x="500" y="40" width="340" height="200" rx="8" fill="#ffffff" stroke="#5b4fe9" stroke-width="1.5"/>
+                <text x="520" y="64" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" fill="#5b4fe9" letter-spacing="1.2">WHAT THE LLM SEES</text>
+                <line x1="520" y1="74" x2="820" y2="74" stroke="#eeebfe" stroke-width="1"/>
+
+                <text x="520" y="100" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Header: Customer <tspan font-family="'JetBrains Mono', monospace" font-weight="700" fill="#5b4fe9">CUST-7F2A</tspan></text>
+                <text x="520" y="118" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">called regarding account dropouts.</text>
+
+                <text x="520" y="148" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Agent note: &ldquo;<tspan font-family="'JetBrains Mono', monospace" font-weight="700" fill="#5b4fe9">CUST-7F2A</tspan> reports the</text>
+                <text x="520" y="166" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">issue started last Tuesday.&rdquo;</text>
+
+                <text x="520" y="196" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">Resolution: &ldquo;<tspan font-family="'JetBrains Mono', monospace" font-weight="700" fill="#5b4fe9">CUST-7F2A</tspan> confirmed</text>
+                <text x="520" y="214" font-family="Inter, sans-serif" font-size="12" fill="#3a3d5e">service restored after firmware roll-back.&rdquo;</text>
+              </g>
+
+              <!-- Mapping table at bottom -->
+              <g>
+                <rect x="280" y="280" width="400" height="80" rx="8" fill="#e6f7f6" stroke="#0ea5a4" stroke-width="1.5"/>
+                <text x="300" y="304" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" fill="#0b7f7e" letter-spacing="1.2">TOKEN ↔ VALUE MAPPING · enterprise only</text>
+                <line x1="300" y1="314" x2="660" y2="314" stroke="#a7e0df" stroke-width="1"/>
+                <text x="300" y="334" font-family="Inter, sans-serif" font-size="12" fill="#0f1130"><tspan font-family="'JetBrains Mono', monospace" font-weight="700" fill="#5b4fe9">CUST-7F2A</tspan> &nbsp;&rarr;&nbsp; Marlene Schmidt &nbsp;<tspan font-style="italic" fill="#6b7280">(also &ldquo;Mr Schmidt&rdquo;, &ldquo;Marlene&rdquo;)</tspan></text>
+                <text x="300" y="352" font-family="Inter, sans-serif" font-size="11" fill="#6b7280" font-style="italic">mapping never leaves the enterprise boundary</text>
+              </g>
+
+              <!-- Arrows from tokenised doc and source doc to mapping -->
+              <line x1="190" y1="240" x2="380" y2="285" stroke="#0b7f7e" stroke-width="1.2" stroke-dasharray="3 3"/>
+              <line x1="670" y1="240" x2="580" y2="285" stroke="#0b7f7e" stroke-width="1.2" stroke-dasharray="3 3"/>
+            </svg>
+          </div>
+          <figcaption class="ds-figure__caption">Figure 1 &middot; <strong>Three different mentions of the same customer all resolve to one consistent token. The LLM can reason about &ldquo;the customer&rdquo; throughout the document; the mapping back to the real identity stays inside the enterprise.</strong></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Section 4: 2. Deterministic vs Randomised -->
+    <section id="section-2" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>2. <span class="ds-text--brand">Deterministic</span> vs <span class="ds-text--brand">Randomised</span> Tokenisation</h2>
+        </div>
+        <div class="ds-article-body">
+          <p>The first architectural decision is whether a given sensitive value always produces the same token, or whether it produces a different token each time.</p>
+        </div>
+
+        <div class="ds-section-title-icon">
+          <span class="ds-section-title-icon__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+          </span>
+          <h3 class="ds-section-title-icon__text">2.1 Deterministic Tokenisation</h3>
+        </div>
+        <div class="ds-article-body">
+          <p><strong>Deterministic tokenisation</strong> means <em>Marlene Schmidt</em> always becomes <code>CUST-7F2A</code>, in every document, in every workflow. The token is a function of the value (and usually a secret key).</p>
+          <p>The benefit is consistency across documents. If two tickets reference the same customer, the LLM sees the same token in both, and analytics that depend on cross-document linkage continue to work. For workflows that aggregate or compare across documents — fraud detection patterns, customer history summaries, cohort analysis — deterministic is usually the only viable choice.</p>
+          <p>The cost is that determinism creates a <strong>re-identification surface</strong>. An attacker who observes enough tokenised documents and has side information about which customers appear where can correlate tokens to identities. The risk is real for high-volume workflows or for cases where the same entity appears in many tokenised outputs over time.</p>
+        </div>
+
+        <div class="ds-section-title-icon">
+          <span class="ds-section-title-icon__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg>
+          </span>
+          <h3 class="ds-section-title-icon__text">2.2 Randomised Tokenisation</h3>
+        </div>
+        <div class="ds-article-body">
+          <p><strong>Randomised tokenisation</strong> generates a different token for each occurrence, even of the same value. <em>Marlene Schmidt</em> might become <code>CUST-7F2A</code> in one document and <code>CUST-3B91</code> in another.</p>
+          <p>The benefit is that no cross-document linkage is exposed. Each tokenised document is a closed system.</p>
+          <p>The cost is that cross-document analytics break. The LLM can't tell that two tokens refer to the same customer, because at the structural level they don't. For workflows that don't need cross-document linkage — summarising a single document, extracting clauses from a single contract — randomisation is fine. For workflows that do, randomisation forces the linkage to be reconstructed after the LLM responds, which adds complexity.</p>
+        </div>
+
+        <div class="ds-section-title-icon">
+          <span class="ds-section-title-icon__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M21 3l-7 7"/><path d="M8 21H3v-5"/><path d="M3 21l7-7"/></svg>
+          </span>
+          <h3 class="ds-section-title-icon__text">2.3 The Hybrid Pattern Most Production Deployments Use</h3>
+        </div>
+        <div class="ds-article-body">
+          <p>Most production deployments end up with a hybrid: <strong>deterministic <em>within a workflow scope</em></strong> (so a multi-turn conversation about a customer stays coherent), <strong>randomised <em>across workflow scopes</em></strong> (so analytics from one workflow can't be cross-referenced with another). The boundary of the scope is itself a design decision — by session, by user, by document, by tenant — and is one of the things a team has to settle before the architecture goes live.</p>
+        </div>
+
+        <div class="ds-table-wrap">
+          <table class="ds-table">
+            <thead>
+              <tr>
+                <th scope="col">Choice</th>
+                <th scope="col">Benefit</th>
+                <th scope="col">Cost</th>
+                <th scope="col" class="ds-table__th--primary">Best fit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Deterministic</td>
+                <td>Cross-document linkage preserved; analytics work across workflows</td>
+                <td>Creates re-identification surface over high-volume workflows</td>
+                <td class="ds-table__td--primary">Fraud detection, customer history, cohort analysis</td>
+              </tr>
+              <tr>
+                <td>Randomised</td>
+                <td>Each tokenised document is a closed system; no cross-document linkage exposed</td>
+                <td>Cross-document analytics break; linkage must be reconstructed post-LLM</td>
+                <td class="ds-table__td--primary">Single-document summarisation, single-contract extraction</td>
+              </tr>
+              <tr>
+                <td>Hybrid (deterministic within scope, randomised across)</td>
+                <td>Coherent within a session/user/tenant boundary; isolated across</td>
+                <td>The scope boundary itself becomes a design decision</td>
+                <td class="ds-table__td--primary">Most production deployments</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: 3. Format-preserving -->
+    <section id="section-3" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>3. <span class="ds-text--brand">Format-Preserving</span> Tokenisation — Why Placeholder Strings Aren't Enough</h2>
+        </div>
+        <div class="ds-article-body">
+          <p>A naive implementation replaces sensitive values with generic placeholders: <code>[CUSTOMER]</code>, <code>[ACCOUNT_NUMBER]</code>, <code>[DATE]</code>. The LLM sees a document littered with these markers and tries to reason about it.</p>
+          <p>This works poorly in practice for a specific reason: the LLM's reasoning is shaped by the surface form of the input. A document that reads <em>"Customer Marlene Schmidt called on 2026-03-15 about account 4471-9028"</em> is, to the model, a coherent operational record. The same document with placeholders — <em>"Customer [CUSTOMER] called on [DATE] about account [ACCOUNT_NUMBER]"</em> — reads as a template or a redaction notice. <strong>Models are sensitive to that signal, and their outputs degrade accordingly</strong>: summaries become more abstract, extraction becomes less precise, and the model occasionally lapses into commentary about the redaction itself.</p>
+          <p><strong>Format-preserving tokenisation</strong> generates tokens that look like the values they replace. A name becomes a plausible-looking name token: <code>Lyra Vesper</code>. A date becomes a real date in a plausible range. An account number becomes a number of the same length, in the same format, that isn't a real account number.</p>
+          <p>The document the LLM sees reads as a coherent operational document with anonymous-but-realistic stand-ins. The model's outputs come back at the quality the model can actually produce, rather than degraded by the perception that it's being asked to reason about a template.</p>
+          <p>Format preservation has its own design choices: how plausible to make the tokens, whether to draw from a fixed pool of fake names or generate them on the fly, how to handle dates and numerics where the <em>value</em> itself has analytical meaning (a date in 2019 vs a date in 2024 may matter to the analysis even if the exact date is sensitive). <strong>The general rule is that the token has to preserve whatever analytical property the original value carried, no more and no less.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: 4. Where the mapping lives -->
+    <section id="section-4" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>4. Where the <span class="ds-text--brand">Mapping</span> Lives</h2>
+        </div>
+        <div class="ds-article-body">
+          <p>Tokenisation only protects the data if the mapping — the table that connects tokens to original values — stays inside the enterprise environment. <strong>This is the part of the architecture that most consistently determines whether the approach actually delivers its protection.</strong></p>
+          <p>Three properties of the mapping have to hold:</p>
+        </div>
+
+        <ul class="ds-bullet ds-bullet--number">
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>It stays in the enterprise's exclusive control.</strong> The mapping is, in effect, the key that re-identifies the data. If it leaves the environment, the protection collapses to whatever protection the new location provides. For workflows where data must stay in the EU region or other defined boundaries, the mapping has to live within that same boundary — colocated with the source systems, not with the AI endpoint.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>It is integrity-protected.</strong> Tampering with the mapping changes what gets reconstructed when the LLM's response comes back. An attacker who can modify the mapping can substitute identities in the output. Standard practice is to apply integrity checks to the mapping itself — signed entries, audit logs of access — so that any tampering is detectable.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>It is access-controlled separately from the LLM workflow.</strong> The team that operates the LLM integration doesn't need read access to the mapping. The reconstruction step pulls from the mapping programmatically; it doesn't require humans to see the original values. Separating those two access paths means the mapping can be governed under stricter controls than the LLM workflow itself.</span>
+          </li>
+        </ul>
+
+        <div class="ds-article-body">
+          <p>Storage technology is secondary to these properties. The mapping can live in a dedicated database, a key-value store, an encrypted file, or a hardware-backed vault — the architectural choice depends on volume, latency requirements, and existing infrastructure. <strong>What matters is that the three properties above are non-negotiable design constraints, not configurable options.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: 5. Token consistency -->
+    <section id="section-5" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>5. <span class="ds-text--brand">Token Consistency</span> — Same Entity, Same Token</h2>
+        </div>
+        <div class="ds-article-body">
+          <p>A subtler design problem: ensuring that the same entity gets the same token, consistently, even when the entity is referenced in different ways across a document.</p>
+          <p>A service ticket might mention <em>"the customer,"</em> then <em>"Mr Schmidt,"</em> then <em>"Marlene,"</em> then <em>"the subscriber"</em> — all referring to the same person. A naive tokeniser sees four different mentions and produces four different tokens, breaking the LLM's ability to track that these all refer to one entity. <strong>The summary that comes back may treat them as four people.</strong></p>
+          <p>Resolving this requires <strong>entity resolution</strong> before tokenisation: identifying which mentions in a document refer to the same underlying entity, and ensuring they all map to the same token. This is a non-trivial problem in general — entity resolution is a research field of its own — but in practice it's tractable because enterprise documents have structural cues (a customer ID in the header tying together free-text mentions, formal naming conventions in operational logs, schema-defined relationships in structured records).</p>
+          <p>The other half of consistency is across documents within a workflow scope. If two tickets reference the same customer, and the workflow needs to treat them as related, the tokenisation has to produce the same token for the customer in both. This is where the deterministic-vs-randomised choice from earlier interacts: <strong>deterministic-within-scope is what enables the LLM to see <em>"the same customer appears in three tickets"</em> without learning who the customer is.</strong></p>
+          <p>A well-designed tokenisation layer handles both kinds of consistency — within-document and within-scope — as part of the transformation, not as an afterthought. Teams that retrofit consistency onto a per-mention tokeniser usually find the workflow degrades in ways that look like model quality problems but are actually data preparation problems.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: 6. Additional protection layers -->
+    <section id="section-6" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>6. <span class="ds-text--brand">Additional Protection Layers</span> — When Tokenisation Alone Isn't Enough</h2>
+        </div>
+        <div class="ds-article-body">
+          <p>Tokenisation handles the substitution problem. For most workflows, well-implemented tokenisation with the mapping under the enterprise's exclusive control is sufficient. For some workflows, an additional layer of protection is worth adding on top.</p>
+          <p>The case for additional protection arises when the residual risk is not in the tokens themselves but in <strong>the patterns the tokens form</strong>. A tokenised document may contain enough structural information — frequencies, co-occurrences, sequences, ratios — that a sophisticated correlator could re-identify entities even without the raw values. The risk is particularly relevant for high-cardinality data, long time series, and workflows where many tokenised outputs accumulate over time.</p>
+          <p>The standard responses are differential privacy, k-anonymity, and similar statistical protections applied to the tokenised data. Each adds noise or aggregation in a controlled way that limits how much an attacker can learn from the tokenised output, at the cost of some analytical precision. Whether the trade-off is worth it depends on the threat model and the workflow's tolerance for noise.</p>
+          <p>For most enterprise AI workflows this layer is optional. For workflows where the data is highly sensitive, the volume is high, or the data posture demands defence in depth, it is worth the complexity. <strong>The decision is best made workflow by workflow, not as a global setting.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: 7. What not to tokenise -->
+    <section id="section-7" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>7. <span class="ds-text--brand">What Not to Tokenise</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>A final design question that often gets answered by accident: what <em>not</em> to tokenise.</p>
+          <p>Tokenising the wrong things degrades the AI's output without improving protection. A tokeniser that replaces every proper noun produces unreadable documents. A tokeniser that replaces every numeric field destroys analytical signal. The temptation is to be aggressive — <em>"tokenise everything that could conceivably be sensitive"</em> — but the cost shows up immediately in output quality.</p>
+          <p>The disciplined approach is to define sensitivity explicitly, in the enterprise's own terms, and tokenise only those elements. <strong>Generic PII categories are a starting point, not a complete list.</strong> Internal project codes, customer-segment identifiers, sector-specific references — whatever the enterprise's data posture treats as protected — go on the list. Everything else stays.</p>
+          <p>The list has to be versioned, because what counts as sensitive changes over time. It also has to be auditable, because an audit review of the workflow will want to know what was tokenised, when, under which definition. <strong>The definition layer is where most of the long-term operational cost of this architecture lives, and where most teams under-invest at the start.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: 8. The next step -->
+    <section id="section-8" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>8. The <span class="ds-text--brand">Next Step</span> in the Workflow</h2>
+        </div>
+        <div class="ds-article-body">
+          <p>Tokenisation prepares the document for the external model. The model processes the tokenised document and returns a tokenised response. <strong>The response, on its own, is not yet useful to the workflow</strong> — the tokens have to be mapped back to original values inside the enterprise environment before the output reaches the user.</p>
+          <p>That reconstruction step is the subject of the next article in this series. For the broader pattern this article is part of, see the pillar overview on <a href="/resources/learn/external-llm-on-sensitive-enterprise-data">running external LLMs on sensitive enterprise data</a>. For why masking and redaction don't substitute for tokenisation in operational workflows, see the article on <a href="/resources/learn/why-ai-stalls-on-operational-data">why AI workflows stall on operational data</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 11: Takeaways -->
+    <section id="section-takeaways" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-banner ds-banner--brand">
+          <span class="ds-banner__label">Key Takeaways</span>
+          <ul class="ds-bullet ds-bullet--dot">
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Tokenisation in this context means data-protection substitution — not NLP subword splitting; the two share a word and nothing else</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Core property: <em>referential integrity without semantic disclosure</em> — the LLM can reason about &ldquo;the customer&rdquo; consistently without learning who it is</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Deterministic preserves cross-document analytics but creates a re-identification surface; randomised closes that surface but breaks linkage; hybrid (deterministic-within-scope) is the production default</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Generic <code>[REDACTED]</code> markers degrade LLM output because they signal a template; format-preserving tokens keep the document looking like a real document</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Mapping storage has three non-negotiable properties: exclusive enterprise control, integrity protection, separate access control from the LLM workflow</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Entity resolution before tokenisation is what makes &ldquo;Marlene,&rdquo; &ldquo;Mr Schmidt,&rdquo; and &ldquo;the subscriber&rdquo; collapse to one consistent token</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Statistical protections (DP, k-anonymity) layer on top for high-cardinality, long-time-series, or defence-in-depth workflows — workflow by workflow, not as a global setting</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Over-tokenising degrades output without improving protection — the sensitivity definition is where most teams under-invest, and where most long-term cost lives</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 12: FAQ -->
+    <section id="section-faq" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>Frequently Asked <span class="ds-text--brand">Questions</span></h2>
+        </div>
+
+        <div class="ds-ac-list">
+          <div class="ds-ac-card ds-ac--open">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">Is tokenisation here the same as NLP tokenisation?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>No — they share a word and almost nothing else. In NLP, tokenisation means splitting text into subword units that a model consumes (BPE, WordPiece, SentencePiece). In data protection, tokenisation means replacing a sensitive value with a non-sensitive placeholder that can be mapped back to the original. The two run at completely different layers of the stack. The data-protection sense is what this article is about.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">When should deterministic tokenisation be used instead of randomised?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Deterministic tokenisation produces the same token for the same value every time, which is what enables cross-document analytics: fraud detection patterns, customer history summaries, cohort analysis. Randomised tokenisation produces a different token each occurrence, which avoids cross-document linkage but breaks workflows that depend on it. Most production deployments end up hybrid — deterministic <em>within</em> a workflow scope (so a multi-turn conversation stays coherent), randomised <em>across</em> scopes (so analytics from one workflow can't be cross-referenced with another).</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">Why do placeholders like [REDACTED] degrade LLM output?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Because the LLM's reasoning is shaped by the surface form of the input. A document that reads as a coherent operational record produces normal-quality output. The same document littered with <code>[CUSTOMER]</code> and <code>[ACCOUNT_NUMBER]</code> markers reads as a template or a redaction notice, and the model's output degrades accordingly — summaries become more abstract, extraction loses precision, and the model occasionally drifts into commentary about the redaction itself. Format-preserving tokens (plausible-looking names, real dates in a plausible range, account numbers of the same length and format) avoid this entirely.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">Where does the token-to-value mapping have to live?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Inside the enterprise environment, in storage colocated with the source systems rather than with the AI endpoint. The mapping is in effect the key that re-identifies the data — if it leaves the environment, the protection collapses. Three properties have to hold: exclusive enterprise control, integrity protection (so tampering is detectable), and access controls separate from the LLM workflow itself. Storage technology is secondary to these properties.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">What is entity resolution and why does it matter for tokenisation?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>A document may refer to the same person as <em>"the customer,"</em> <em>"Mr Schmidt,"</em> <em>"Marlene,"</em> and <em>"the subscriber"</em> — four mentions, one entity. A naive tokeniser produces four different tokens and breaks the LLM's ability to track them as one person. Entity resolution is the step that identifies which mentions refer to the same underlying entity, so they all map to the same token. Enterprise documents usually have structural cues (header IDs, naming conventions, schema relationships) that make this tractable.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">When is tokenisation alone not enough?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>When the residual risk lies not in the tokens themselves but in the patterns the tokens form — frequencies, co-occurrences, sequences, ratios that could enable re-identification even without the raw values. This is most relevant for high-cardinality data, long time series, or workflows where many tokenised outputs accumulate over time. Differential privacy, k-anonymity, and related statistical protections can be applied on top of tokenisation. The trade-off is some analytical precision in exchange for stronger guarantees. The decision is best made workflow by workflow rather than as a global setting.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 13: Author info -->
+    <section id="section-author" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-author-info">
+          <p><strong>Author</strong>: CUBIG Policy &amp; Architecture Team</p>
+          <p><strong>Published</strong>: May 2026</p>
+          <p><strong>Last updated</strong>: May 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 14: Related Articles (guide pattern: small label + minimal cards) -->
+    <section id="section-related" class="ds-related-section">
+      <div class="ds-article-container">
+        <div class="ds-related-section__label">Where to Read Next</div>
+        <div class="ds-card-grid ds-card-grid--3col">
+          <a href="/resources/learn/reconstructing-ai-output" class="ds-related-section__card">
+            <span class="ds-related-section__card-title">Reconstructing AI Output: The Last Mile Between Model Response and Business Reality</span>
+            <span class="ds-related-section__card-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="/resources/learn/external-llm-on-sensitive-enterprise-data" class="ds-related-section__card">
+            <span class="ds-related-section__card-title">Running External LLMs on Data Your Company Can't Send Externally</span>
+            <span class="ds-related-section__card-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="/resources/learn/why-ai-stalls-on-operational-data" class="ds-related-section__card">
+            <span class="ds-related-section__card-title">Why AI Workflows Stall at Tables, Tickets, and Operational Documents</span>
+            <span class="ds-related-section__card-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 15: CTA Band -->
+    <section id="section-cta" class="ds-cta-band ds-bg--grad-deep">
+      <div class="ds-cta-band__inner">
+        <h2 class="ds-cta-band__title">
+          Designing the <span class="ds-text--brand">tokenisation layer</span> for your own document types?
+        </h2>
+        <p class="ds-cta-band__description">
+          <span class="ds-text--product">LLM Capsule</span> implements these tokenisation patterns inside its <strong style="color: var(--c-bg);">encapsulation layer</strong> — combining tokenisation with structure preservation, format-preserving stand-ins, and optional statistical protections — running inside the enterprise environment with the mapping retained under exclusive enterprise control. The <a href="/architecture" style="color: var(--c-bg); text-decoration: underline;">architecture page</a> shows the end-to-end flow across the four zones. For a working session on tokenisation patterns against your own document types, request a demo below.
+        </p>
+        <div class="ds-cta-band__actions">
+          <a href="/request-a-demo" class="ds-btn ds-btn--md btn--invert">Request a Demo &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function toggleAcCard(header) {
+      var card = header.closest('.ds-ac-card');
+      card.classList.toggle('ds-ac--open');
+    }
+  </script>
+
+</body>
+</html>

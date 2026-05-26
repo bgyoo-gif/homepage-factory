@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-26 15:29:30",
+  "generated": "2026-05-26 15:44:26",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1420,6 +1420,16 @@
           "modified": "2026-04-21"
         },
         {
+          "name": "tokenization-for-llm-inputs-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/tokenization-for-llm-inputs-b-type.html",
+          "modified": "2026-05-26"
+        },
+        {
+          "name": "tokenization-for-llm-inputs-bodyhtml.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/tokenization-for-llm-inputs-bodyhtml.html",
+          "modified": "2026-05-26"
+        },
+        {
           "name": "trust-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/trust-b-type.html",
           "modified": "2026-04-21"
@@ -1705,6 +1715,16 @@
           "name": "solutions-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/solutions-spec.md",
           "modified": "2026-04-09"
+        },
+        {
+          "name": "tokenization-for-llm-inputs-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/tokenization-for-llm-inputs-qa-report.md",
+          "modified": "2026-05-26"
+        },
+        {
+          "name": "tokenization-for-llm-inputs-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/tokenization-for-llm-inputs-spec.md",
+          "modified": "2026-05-26"
         },
         {
           "name": "trust-center-qa-report.md",
@@ -3146,6 +3166,11 @@
         {
           "name": "TelecomNocAiDeployment.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/TelecomNocAiDeployment.tsx",
+          "modified": "2026-05-26"
+        },
+        {
+          "name": "TokenizationForLlmInputs.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/TokenizationForLlmInputs.tsx",
           "modified": "2026-05-26"
         },
         {

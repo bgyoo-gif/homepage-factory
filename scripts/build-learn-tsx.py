@@ -455,6 +455,29 @@ ARTICLES = [
         ],
     },
     {
+        "slug": "tokenization-for-llm-inputs",
+        "component": "TokenizationForLlmInputs",
+        "source_type": "bodyhtml",
+        "title": "Tokenization for LLM Inputs: How AI Reads What It Doesn't See",
+        "lead": "The architectural choices that make pre-LLM tokenisation work in production — deterministic vs randomised, format preservation, mapping storage, and the questions teams have to settle before deployment.",
+        "category": "AI Architecture",
+        "readTime": "~9 min read",
+        "dateUpdated": "Updated May 2026",
+        "tldrLabel": "TL;DR",
+        "tldrBody": "Pre-LLM tokenisation is the substitution step that lets an enterprise document cross the boundary to an external model without exposing sensitive content. It works by giving the LLM referential integrity without semantic disclosure — placeholders that the model can reason about consistently across a document, without recovering the underlying identity. Production-grade implementations have to settle a set of architectural questions explicitly: deterministic vs randomised (cross-document linkage vs re-identification surface), format-preserving vs marker-style (output quality vs simplicity), where the mapping lives (exclusive enterprise control is non-negotiable), entity resolution across mentions, and what not to tokenise. Tokenisation alone is sufficient for most workflows. For high-cardinality data, long time series, or defence-in-depth postures, statistical protections (differential privacy, k-anonymity) layer on top. The definition of what counts as sensitive is the layer where most teams under-invest at the start — and where most of the long-term operational cost lives.",
+        "canonicalUrl": "https://llmcapsule.ai/resources/learn/tokenization-for-llm-inputs",
+        "datePublished": "2026-05-01",
+        "dateModified": "2026-05-01",
+        "inLanguage": "en-GB",
+        "breadcrumbLabel": "Tokenization for LLM Inputs",
+        "related": [
+            ("Reconstructing AI Output: The Last Mile Between Model Response and Business Reality", "/resources/learn/reconstructing-ai-output"),
+            ("Running External LLMs on Data Your Company Can't Send Externally", "/resources/learn/external-llm-on-sensitive-enterprise-data"),
+            ("Why AI Workflows Stall at Tables, Tickets, and Operational Documents", "/resources/learn/why-ai-stalls-on-operational-data"),
+            ("", ""),
+        ],
+    },
+    {
         "slug": "reconstructing-ai-output",
         "component": "ReconstructingAiOutput",
         "source_type": "bodyhtml",
@@ -993,6 +1016,7 @@ ARTICLE_INDEX_META = {
     "on-prem-llm-execution-path": {"category": "architecture-onprem", "skipInIndex": False},
     "external-llm-on-sensitive-enterprise-data": {"category": "architecture-onprem", "skipInIndex": False},
     "reconstructing-ai-output": {"category": "architecture-onprem", "skipInIndex": False},
+    "tokenization-for-llm-inputs": {"category": "architecture-onprem", "skipInIndex": False},
 }
 
 CATEGORY_LABELS = {
