@@ -246,6 +246,43 @@
     .ds-banner strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
     .ds-banner .ds-bullet { margin: var(--ds-space-sm) 0 0 0; }
 
+    /* Related Articles (guide pattern: small label + minimal cards) */
+    .ds-related-section {
+      background-color: var(--c-bg-soft);
+      padding: clamp(48px, 6vw, 80px) 0;
+    }
+    .ds-related-section__label {
+      font-family: var(--f-mono); font-size: var(--ds-text-xs);
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--c-muted); margin-bottom: var(--ds-space-md);
+      font-weight: var(--ds-weight-medium);
+    }
+    .ds-related-section__card {
+      display: flex; flex-direction: column;
+      justify-content: space-between;
+      gap: var(--ds-space-md);
+      padding: 20px 22px;
+      background-color: var(--c-bg);
+      border: 1px solid var(--c-rule);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--c-ink);
+      transition: border-color 0.15s, box-shadow 0.15s;
+      min-height: 100px;
+    }
+    .ds-related-section__card:hover {
+      border-color: var(--c-primary);
+      box-shadow: 0 4px 16px rgba(91, 79, 233, 0.08);
+    }
+    .ds-related-section__card-title {
+      font-size: 15px; font-weight: 600;
+      line-height: 1.4; color: var(--c-ink);
+    }
+    .ds-related-section__card-arrow {
+      font-size: 18px; color: var(--c-primary);
+      line-height: 1; align-self: flex-end;
+    }
+
     /* Article section header */
     .ds-article-section-header {
       margin-bottom: var(--ds-space-xl);
@@ -1144,33 +1181,22 @@
       </div>
     </section>
 
-    <!-- Section 15: Related Articles -->
-    <section id="section-related" class="ds-section--article-body">
+    <!-- Section 15: Related Articles (guide pattern: small label + minimal cards) -->
+    <section id="section-related" class="ds-related-section">
       <div class="ds-article-container">
-        <div class="ds-article-section-header">
-          <h2>Where to <span class="ds-text--brand">Read Next</span></h2>
-        </div>
+        <div class="ds-related-section__label">Where to Read Next</div>
         <div class="ds-card-grid ds-card-grid--3col">
-          <a href="/resources/learn/why-ai-stalls-on-operational-data" class="ds-card ds-card--link">
-            <div class="ds-card__body">
-              <span class="ds-badge ds-badge--primary">AI Architecture</span>
-              <h3 class="ds-card__title">Why AI Workflows Stall at Tables, Tickets, and Operational Documents</h3>
-              <span class="ds-card__link-text">Read &rarr;</span>
-            </div>
+          <a href="/resources/learn/why-ai-stalls-on-operational-data" class="ds-related-section__card">
+            <span class="ds-related-section__card-title">Why AI Workflows Stall at Tables, Tickets, and Operational Documents</span>
+            <span class="ds-related-section__card-arrow" aria-hidden="true">&rarr;</span>
           </a>
-          <a href="/resources/learn/tokenization-for-llm-inputs" class="ds-card ds-card--link">
-            <div class="ds-card__body">
-              <span class="ds-badge ds-badge--primary">AI Architecture</span>
-              <h3 class="ds-card__title">Tokenization for LLM Inputs: How AI Reads What It Doesn't See</h3>
-              <span class="ds-card__link-text">Read &rarr;</span>
-            </div>
+          <a href="/resources/learn/tokenization-for-llm-inputs" class="ds-related-section__card">
+            <span class="ds-related-section__card-title">Tokenization for LLM Inputs: How AI Reads What It Doesn't See</span>
+            <span class="ds-related-section__card-arrow" aria-hidden="true">&rarr;</span>
           </a>
-          <a href="/resources/learn/reconstructing-ai-output" class="ds-card ds-card--link">
-            <div class="ds-card__body">
-              <span class="ds-badge ds-badge--primary">AI Architecture</span>
-              <h3 class="ds-card__title">Reconstructing AI Output: The Last Mile Between Model Response and Business Reality</h3>
-              <span class="ds-card__link-text">Read &rarr;</span>
-            </div>
+          <a href="/resources/learn/reconstructing-ai-output" class="ds-related-section__card">
+            <span class="ds-related-section__card-title">Reconstructing AI Output: The Last Mile Between Model Response and Business Reality</span>
+            <span class="ds-related-section__card-arrow" aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </div>
