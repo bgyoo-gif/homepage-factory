@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-26 18:24:39",
+  "generated": "2026-05-26 18:42:05",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -2532,6 +2532,16 @@
           "modified": "2026-05-08"
         },
         {
+          "name": "tokenization-for-llm-inputs-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/tokenization-for-llm-inputs-de-lines.md",
+          "modified": "2026-05-26"
+        },
+        {
+          "name": "tokenization-for-llm-inputs-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/tokenization-for-llm-inputs-ko-lines.md",
+          "modified": "2026-05-26"
+        },
+        {
           "name": "trust-center-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/trust-center-de-lines.md",
           "modified": "2026-04-28"
@@ -2585,6 +2595,16 @@
           "name": "what-is-ai-data-capsule-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/what-is-ai-data-capsule-ko-lines.md",
           "modified": "2026-05-08"
+        },
+        {
+          "name": "why-ai-stalls-on-operational-data-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/why-ai-stalls-on-operational-data-de-lines.md",
+          "modified": "2026-05-26"
+        },
+        {
+          "name": "why-ai-stalls-on-operational-data-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/why-ai-stalls-on-operational-data-ko-lines.md",
+          "modified": "2026-05-26"
         },
         {
           "name": "why-redaction-breaks-enterprise-ai-workflows-de-lines.md",
