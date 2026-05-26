@@ -574,14 +574,15 @@ def parse_input_article(article: dict) -> dict:
     # TL;DR
     tldr_label = "TL;DR"
     tldr_body = ""
+    # Match both <p class="tldr__body"> (legacy) and <div class="tldr__body"> (newer pages).
     tldr_match = re.search(
-        r'<section class="tldr"[^>]*>.*?<div class="tldr__label">(.*?)</div>\s*<p class="tldr__body">(.*?)</p>',
+        r'<section class="tldr"[^>]*>.*?<div class="tldr__label">(.*?)</div>\s*<(?:p|div) class="tldr__body">(.*?)</(?:p|div)>',
         html,
         re.DOTALL,
     )
     if not tldr_match:
         tldr_match = re.search(
-            r'<div class="tldr"[^>]*>.*?<div class="tldr__label">(.*?)</div>\s*<p class="tldr__body">(.*?)</p>',
+            r'<div class="tldr"[^>]*>.*?<div class="tldr__label">(.*?)</div>\s*<(?:p|div) class="tldr__body">(.*?)</(?:p|div)>',
             html,
             re.DOTALL,
         )
