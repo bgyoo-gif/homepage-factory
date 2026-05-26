@@ -437,6 +437,29 @@ ARTICLES = [
             ("AI on network operations data", "/resources/learn/ai-on-network-operations-data"),
         ],
     },
+    {
+        "slug": "reconstructing-ai-output",
+        "component": "ReconstructingAiOutput",
+        "source_type": "bodyhtml",
+        "title": "Reconstructing AI Output: The Last Mile Between Model Response and Business Reality",
+        "lead": "The tokenised response from an external LLM is not yet usable. Reconstruction is what turns it into business-ready output — and where most teams underinvest until the workflow stalls in production.",
+        "category": "AI Architecture",
+        "readTime": "~9 min read",
+        "dateUpdated": "Updated May 2026",
+        "tldrLabel": "TL;DR",
+        "tldrBody": "Reconstruction — the step that maps tokenised LLM output back to original values — is technically straightforward and architecturally critical. Most enterprise AI pilots underinvest in it and stall at production for the same reason: the model works, the integration works, but the output requires manual cleanup and the productivity gain evaporates. Real reconstruction is more than a swap-back: the LLM generates new text that references tokens in novel contexts, sometimes with formatting drift, sometimes hallucinated, sometimes streamed token-by-token. It has to run inside the enterprise environment, colocated with the mapping — running it on convenient external middleware collapses the protection the tokenisation provided. Three integration patterns (inline, streaming, event-driven) cover most workflows. Hallucinated tokens need an explicit policy (flag, drop, or re-prompt). Every operation has to be audited, in logs held separately under the mapping's own access controls. Five operational mistakes recur — manual cleanup, wrong location, static substitution, no logging, provider lock-in. When reconstruction is right, it becomes invisible infrastructure. When it's wrong, the entire architecture's promise quietly fails on the last mile.",
+        "canonicalUrl": "https://llmcapsule.ai/resources/learn/reconstructing-ai-output",
+        "datePublished": "2026-05-01",
+        "dateModified": "2026-05-01",
+        "inLanguage": "en-GB",
+        "breadcrumbLabel": "Reconstructing AI Output",
+        "related": [
+            ("Running External LLMs on Data Your Company Can't Send Externally", "/resources/learn/external-llm-on-sensitive-enterprise-data"),
+            ("Tokenization for LLM Inputs: How AI Reads What It Doesn't See", "/resources/learn/tokenization-for-llm-inputs"),
+            ("Why AI Workflows Stall at Tables, Tickets, and Operational Documents", "/resources/learn/why-ai-stalls-on-operational-data"),
+            ("", ""),
+        ],
+    },
     # ── Pattern B: auto-parse from v6.2 input HTML ──
     {"slug": "pilot-to-production-enterprise-ai", "component": "PilotToProductionEnterpriseAi", "source_type": "input"},
     {"slug": "telecom-noc-ai-deployment", "component": "TelecomNocAiDeployment", "source_type": "input"},
@@ -952,6 +975,7 @@ ARTICLE_INDEX_META = {
     "differential-privacy-for-enterprise-llm": {"category": "architecture-dp", "skipInIndex": False},
     "on-prem-llm-execution-path": {"category": "architecture-onprem", "skipInIndex": False},
     "external-llm-on-sensitive-enterprise-data": {"category": "architecture-onprem", "skipInIndex": False},
+    "reconstructing-ai-output": {"category": "architecture-onprem", "skipInIndex": False},
 }
 
 CATEGORY_LABELS = {

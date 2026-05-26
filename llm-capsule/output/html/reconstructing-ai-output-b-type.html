@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reconstructing AI Output: The Last Mile Between Model Response and Business Reality — LLM Capsule</title>
+  <meta name="description" content="The tokenised response from an external LLM is not yet usable. Reconstruction is what turns it into business-ready output — and where most teams underinvest until the workflow stalls in production.">
+  <meta name="keywords" content="reconstruction, AI output reconstruction, tokenised response, LLM integration, inline reconstruction, streaming reconstruction, event-driven reconstruction, token hallucination, audit trail, encapsulation layer, LLM Capsule">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://llmcapsule.ai/resources/learn/reconstructing-ai-output">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Reconstructing AI Output: The Last Mile Between Model Response and Business Reality — LLM Capsule">
+  <meta property="og:description" content="The tokenised response from an external LLM is not yet usable. Reconstruction is what turns it into business-ready output — and where most teams underinvest until the workflow stalls in production.">
+  <meta property="og:url" content="https://llmcapsule.ai/resources/learn/reconstructing-ai-output">
+  <meta property="og:site_name" content="LLM Capsule">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},
+      {"@type":"ListItem","position":2,"name":"Resources","item":"https://llmcapsule.ai/resources"},
+      {"@type":"ListItem","position":3,"name":"Learn","item":"https://llmcapsule.ai/resources/learn"},
+      {"@type":"ListItem","position":4,"name":"Reconstructing AI Output"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Why isn't reconstruction just a simple swap-back?","acceptedAnswer":{"@type":"Answer","text":"The LLM doesn't just copy tokens from input to output — it generates new text that reasons over them. Tokens appear in contexts the input never had, in combinations the model invented, sometimes with formatting drift (CUST-7F2A coming back as CUST 7F2A or the customer designated 7F2A). A naive exact-match swap fails on these cases, leaving token fragments visible in the output. Real reconstruction is robust token recognition across diverse generative output forms, with substitution that preserves grammatical coherence."}},
+      {"@type":"Question","name":"Where does reconstruction have to run?","acceptedAnswer":{"@type":"Answer","text":"Inside the enterprise environment, colocated with the mapping and the source systems. Reconstruction requires reading the mapping; if reconstruction runs outside the enterprise — on a vendor's infrastructure, in a third-country region, or on middleware the enterprise doesn't fully control — the mapping has to be replicated to that location, which collapses the protection the tokenisation provided. This is the most common architectural mistake in deployments of this pattern."}},
+      {"@type":"Question","name":"What are the three integration patterns for reconstruction?","acceptedAnswer":{"@type":"Answer","text":"Inline reconstruction (the AI integration layer performs reconstruction before returning the response — works for synchronous request-response workflows like contract review). Streaming reconstruction (works on token-by-token streams, buffering enough to recognise data-protection tokens as they appear — needed for chat-style UIs and live summarisation). Event-driven reconstruction (happens at the boundary between AI integration and a downstream system like a CRM, ticketing platform, or document store — reconstruction occurs just before the data is written into the system the user will see)."}},
+      {"@type":"Question","name":"What should happen when the model hallucinates a token?","acceptedAnswer":{"@type":"Answer","text":"Three reasonable responses, and the choice should be configurable per workflow. Flag the hallucinated token and surface it as an explicit gap (preserves transparency at the cost of cleanliness). Drop the hallucinated reference and rewrite the surrounding sentence (cleaner output but obscures that the model produced something not grounded in the input). Reject the response and re-prompt the model with a constraint to use only input tokens (highest quality, adds latency and cost). A summarisation for internal review may prefer flagging; a document going to a customer may prefer re-prompting."}},
+      {"@type":"Question","name":"What does a reconstruction audit log need to contain?","acceptedAnswer":{"@type":"Answer","text":"Enough metadata to answer 'who triggered the reconstruction of which token, when, in service of which workflow, and where did the result go.' It does not need to contain the original values themselves — that would defeat the access controls — but it has to make the operation traceable. Logs should be retained separately from the workflow logs, with different access controls, and under the same boundary constraints as the mapping itself. They are, in effect, an audit trail of the most sensitive operation in the architecture."}},
+      {"@type":"Question","name":"What are the most common reconstruction mistakes?","acceptedAnswer":{"@type":"Answer","text":"Five recur. Building reconstruction as a manual cleanup step users have to perform (they will skip it). Running reconstruction in a vendor cloud or middleware service because it's convenient (it collapses the protection). Treating reconstruction as static string substitution (it fails on the messy real output from production models). Not logging reconstruction (the team cannot defend the architecture or do incident response). Coupling reconstruction tightly to a specific LLM provider (it breaks when the workflow switches vendor, even if the underlying tokenisation didn't change)."}}
+    ]
+  }
+  </script>
+
+  <!-- Fonts: Inter + JetBrains Mono (Capsule v6.2) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* 1. CSS Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--f-display);
+      color: var(--c-ink);
+      background-color: var(--c-bg);
+      padding-top: 58px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, video { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    p, li, blockquote { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
+    h1, h2, h3, h4 { text-wrap: balance; }
+
+    /* 2. :root */
+    :root {
+      /* Capsule Brand */
+      --c-primary: #5b4fe9;
+      --c-primary-dark: #3b2fbf;
+      --c-primary-soft: #eeebfe;
+      --c-teal: #0ea5a4;
+      --c-teal-dark: #0b7f7e;
+      --c-teal-soft: #e6f7f6;
+      --c-coral: #ef5350;
+      --c-coral-dark: #c73e3a;
+      --c-coral-soft: #fce9e8;
+      --c-amber: #f59e0b;
+      --c-amber-dark: #b45309;
+      --c-amber-soft: #fef3c7;
+      --c-bg: #ffffff;
+      --c-bg-soft: #f7f8fb;
+      --c-bg-dark: #0f1130;
+      --c-bg-dark-2: #1b1d4a;
+      --c-ink: #0f1130;
+      --c-ink-soft: #3a3d5e;
+      --c-muted: #6b7280;
+      --c-rule: #e5e7eb;
+      --f-display: 'Inter', -apple-system, system-ui, sans-serif;
+      --f-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+      /* DS Core tokens */
+      --ds-text-xs: 12px;
+      --ds-text-sm: 14px;
+      --ds-text-md: 16px;
+      --ds-text-lg: 18px;
+      --ds-text-xl: 20px;
+      --ds-text-2xl: 24px;
+      --ds-text-3xl: 30px;
+      --ds-text-4xl: 36px;
+      --ds-text-5xl: 40px;
+      --ds-text-6xl: 50px;
+      --ds-text-7xl: 64px;
+      --ds-weight-regular: 400;
+      --ds-weight-medium: 500;
+      --ds-weight-semibold: 600;
+      --ds-weight-bold: 700;
+      --ds-leading-tight: 1.2;
+      --ds-leading-normal: 1.5;
+      --ds-leading-relaxed: 1.7;
+      --ds-tracking-tight: -0.5px;
+      --ds-tracking-wide: 0.08em;
+      --ds-space-2xs: 4px;
+      --ds-space-xs: 8px;
+      --ds-space-sm: 12px;
+      --ds-space-md: 16px;
+      --ds-space-lg: 24px;
+      --ds-space-xl: 32px;
+      --ds-space-2xl: 48px;
+      --ds-space-3xl: 64px;
+      --ds-space-4xl: 80px;
+      --ds-space-5xl: 100px;
+      --ds-radius-xs: 5px;
+      --ds-radius-sm: 8px;
+      --ds-radius-md: 18px;
+      --ds-radius-lg: 24px;
+      --ds-radius-xl: 40px;
+      --ds-radius-pill: 9999px;
+      --ds-container-padding-mobile: 16px;
+      --ds-container-padding-tablet: 32px;
+      --ds-container-padding-desktop: 120px;
+      --r-md: 10px;
+      --container-max: 1280px;
+
+      /* Background images */
+      --ds-bg-img-grad-deep: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png');
+      --ds-overlay-dark-light: rgba(0,0,0,0.15);
+      --ds-overlay-white-85: rgba(255,255,255,0.85);
+    }
+
+    /* 3. Typography */
+    h1 { font-family: var(--f-display); font-size: 32px; font-weight: var(--ds-weight-bold); line-height: 1.15; letter-spacing: var(--ds-tracking-tight); }
+    h2 { font-family: var(--f-display); font-size: 20px; font-weight: var(--ds-weight-bold); line-height: 1.15; letter-spacing: var(--ds-tracking-tight); }
+    h3 { font-family: var(--f-display); font-size: var(--ds-text-xl); font-weight: var(--ds-weight-semibold); line-height: 1.15; }
+    @media (min-width: 768px) { h1 { font-size: 40px; } h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { h1 { font-size: 48px; } h2 { font-size: 24px; } h3 { font-size: 22px; } }
+    @media (min-width: 1440px) { h1 { font-size: 64px; } h2 { font-size: 28px; } }
+
+    /* 4. Base Components */
+    .ds-text--brand { color: var(--c-primary); }
+    .ds-text--product { font-family: var(--f-display); font-weight: var(--ds-weight-bold); }
+
+    /* Container */
+    .ds-container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 var(--ds-container-padding-mobile);
+    }
+    @media (min-width: 768px) { .ds-container { padding: 0 var(--ds-container-padding-tablet); } }
+    @media (min-width: 1024px) { .ds-container { padding: 0 var(--ds-container-padding-tablet); } }
+    @media (min-width: 1440px) { .ds-container { padding: 0 var(--ds-container-padding-desktop); max-width: 1280px; } }
+
+    /* Article Container (1080px) */
+    .ds-article-container {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 var(--ds-container-padding-mobile);
+    }
+    @media (min-width: 768px) { .ds-article-container { padding: 0 var(--ds-container-padding-tablet); max-width: 720px; } }
+    @media (min-width: 1024px) { .ds-article-container { max-width: 860px; } }
+    @media (min-width: 1280px) { .ds-article-container { max-width: 1080px; padding: 0; } }
+
+    /* Section */
+    .ds-section { width: 100%; padding: var(--ds-space-4xl) 0; }
+    .ds-section--hero { padding: 100px 0 var(--ds-space-3xl); }
+    .ds-section--article-body { padding: var(--ds-space-2xl) 0; }
+
+    /* Badge */
+    .ds-badge {
+      display: inline-flex; align-items: center; gap: var(--ds-space-2xs);
+      padding: var(--ds-space-2xs) var(--ds-space-xs);
+      border-radius: var(--ds-radius-pill);
+      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-semibold);
+      line-height: 1; white-space: nowrap;
+    }
+    .ds-badge--primary { background-color: var(--c-primary); color: var(--c-bg); }
+
+    /* Back link (guide pattern) */
+    .ds-article-hero__back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: var(--ds-text-sm); font-weight: 600;
+      color: var(--c-primary); text-decoration: none;
+      letter-spacing: 0.01em; margin-bottom: var(--ds-space-2xl);
+      transition: color 0.15s;
+    }
+    .ds-article-hero__back:hover { color: var(--c-primary-dark, #3b2fbf); }
+
+    /* Hero — guide pattern: back → title → description → meta */
+    .ds-article-hero__title {
+      font-family: var(--f-display);
+      margin-bottom: var(--ds-space-lg);
+    }
+    .ds-article-hero__description {
+      font-size: var(--ds-text-lg); color: var(--c-ink-soft);
+      line-height: var(--ds-leading-relaxed);
+      max-width: 860px;
+      margin-bottom: var(--ds-space-2xl);
+    }
+    .ds-article-hero__meta {
+      display: flex; align-items: center; gap: var(--ds-space-md);
+      flex-wrap: wrap;
+    }
+    .ds-article-hero__meta-sep {
+      width: 4px; height: 4px; border-radius: 50%;
+      background-color: var(--c-rule); flex-shrink: 0;
+    }
+    .ds-article-hero__reading-time,
+    .ds-article-hero__date {
+      font-size: var(--ds-text-sm); color: var(--c-muted);
+    }
+
+    /* Banner */
+    .ds-banner {
+      padding: var(--ds-space-lg);
+      border-radius: 0; border: none;
+      border-top: 1px solid var(--c-rule);
+      border-bottom: 1px solid var(--c-rule);
+      font-size: var(--ds-text-sm); line-height: var(--ds-leading-relaxed);
+      text-align: left;
+      margin: var(--ds-space-2xl) 0;
+    }
+    .ds-banner--brand { background-color: var(--c-primary-soft); }
+    .ds-banner__label {
+      font-family: var(--f-mono); font-size: var(--ds-text-xs);
+      text-transform: uppercase; letter-spacing: var(--ds-tracking-wide);
+      color: var(--c-muted); margin-bottom: var(--ds-space-xs); display: block;
+      font-weight: var(--ds-weight-medium);
+    }
+    .ds-banner p { font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed); color: var(--c-ink); }
+    .ds-banner strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
+    .ds-banner .ds-bullet { margin: var(--ds-space-sm) 0 0 0; }
+
+    /* Related Articles (guide pattern: small label + minimal cards) */
+    .ds-related-section {
+      background-color: var(--c-bg-soft);
+      padding: clamp(48px, 6vw, 80px) 0;
+    }
+    .ds-related-section__label {
+      font-family: var(--f-mono); font-size: var(--ds-text-xs);
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--c-muted); margin-bottom: var(--ds-space-md);
+      font-weight: var(--ds-weight-medium);
+    }
+    .ds-related-section__card {
+      display: flex; flex-direction: column;
+      justify-content: space-between;
+      gap: var(--ds-space-md);
+      padding: 20px 22px;
+      background-color: var(--c-bg);
+      border: 1px solid var(--c-rule);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--c-ink);
+      transition: border-color 0.15s, box-shadow 0.15s;
+      min-height: 100px;
+    }
+    .ds-related-section__card:hover {
+      border-color: var(--c-primary);
+      box-shadow: 0 4px 16px rgba(91, 79, 233, 0.08);
+    }
+    .ds-related-section__card-title {
+      font-size: 15px; font-weight: 600;
+      line-height: 1.4; color: var(--c-ink);
+    }
+    .ds-related-section__card-arrow {
+      font-size: 18px; color: var(--c-primary);
+      line-height: 1; align-self: flex-end;
+    }
+
+    /* Article section header */
+    .ds-article-section-header {
+      margin-bottom: var(--ds-space-xl);
+      padding-bottom: var(--ds-space-md);
+      border-bottom: 1px solid var(--c-rule);
+    }
+    .ds-article-section-header h2 { margin: 0; }
+
+    /* Section title icon */
+    .ds-section-title-icon {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: var(--ds-space-lg); margin-top: var(--ds-space-2xl);
+    }
+    .ds-section-title-icon__icon {
+      width: 28px; height: 28px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--c-primary);
+    }
+    .ds-section-title-icon__text {
+      font-family: var(--f-display); font-size: var(--ds-text-xl);
+      font-weight: var(--ds-weight-semibold); color: var(--c-ink);
+      line-height: var(--ds-leading-tight);
+    }
+
+    /* Article body paragraphs */
+    .ds-article-body p {
+      font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed);
+      color: var(--c-ink-soft); margin-bottom: var(--ds-space-md);
+    }
+    .ds-article-body p:last-child { margin-bottom: 0; }
+    .ds-article-body strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
+    .ds-article-body em { color: var(--c-ink-soft); font-style: italic; }
+    .ds-article-body a { color: var(--c-primary); text-decoration: underline; text-underline-offset: 3px; }
+    .ds-article-body a:hover { color: var(--c-primary-dark); }
+    .ds-article-body sup { font-size: 0.6em; vertical-align: super; line-height: 0; }
+    .ds-article-body code { font-family: var(--f-mono); font-size: 0.92em; background-color: var(--c-bg-soft); padding: 2px 6px; border-radius: 4px; color: var(--c-ink); }
+
+    /* Bullet lists */
+    .ds-bullet { list-style: none; padding: 0; margin: var(--ds-space-md) 0; display: flex; flex-direction: column; gap: var(--ds-space-sm); }
+    .ds-bullet__item { display: flex; align-items: flex-start; gap: var(--ds-space-xs); font-size: var(--ds-text-md); line-height: var(--ds-leading-normal); color: var(--c-ink-soft); }
+    .ds-bullet__icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; display: inline-flex; align-items: center; justify-content: center; }
+    .ds-bullet__text { flex: 1; }
+    .ds-bullet__text strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
+    .ds-bullet__text em { font-style: italic; }
+    .ds-bullet__text a { color: var(--c-primary); text-decoration: underline; text-underline-offset: 3px; }
+    .ds-bullet__text a:hover { color: var(--c-primary-dark); }
+    .ds-bullet__text sup { font-size: 0.6em; vertical-align: super; line-height: 0; }
+    .ds-bullet__text code { font-family: var(--f-mono); font-size: 0.92em; background-color: var(--c-bg-soft); padding: 2px 6px; border-radius: 4px; color: var(--c-ink); }
+
+    .ds-bullet--check .ds-bullet__icon::before { content: "\2713"; color: var(--c-teal); font-weight: var(--ds-weight-bold); }
+    .ds-bullet--cross .ds-bullet__icon::before { content: "\2717"; color: var(--c-coral-dark); font-weight: var(--ds-weight-bold); }
+    .ds-bullet--number { counter-reset: bullet-counter; }
+    .ds-bullet--number .ds-bullet__item { counter-increment: bullet-counter; }
+    .ds-bullet--number .ds-bullet__icon::before {
+      content: counter(bullet-counter);
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 20px; height: 20px; border-radius: 50%;
+      background-color: var(--c-primary); color: var(--c-bg);
+      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-bold);
+    }
+    .ds-bullet--dot .ds-bullet__icon::before { content: "\2022"; color: var(--c-primary); font-size: var(--ds-text-xl); line-height: 1; }
+
+    /* Accordion */
+    .ds-ac-list { display: flex; flex-direction: column; gap: 2px; margin: var(--ds-space-xl) 0; }
+    .ds-ac-card {
+      border: 1px solid var(--c-rule); border-radius: var(--ds-radius-sm);
+      background-color: var(--c-bg); overflow: hidden; transition: background-color 0.2s;
+    }
+    .ds-ac-card:hover { background-color: var(--c-bg-soft); }
+    .ds-ac-card__header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: var(--ds-space-md); padding: var(--ds-space-lg); cursor: pointer; user-select: none;
+    }
+    .ds-ac-card__title {
+      font-family: var(--f-display); font-size: var(--ds-text-lg);
+      font-weight: var(--ds-weight-medium); line-height: var(--ds-leading-tight);
+      color: var(--c-ink); flex: 1;
+    }
+    .ds-ac-card__toggle {
+      width: 28px; height: 28px; border-radius: 6px;
+      border: 0.5px solid var(--c-rule); background-color: var(--c-bg-soft);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; cursor: pointer; transition: border-color 0.15s, background 0.15s;
+    }
+    .ds-ac-card__toggle:hover { border-color: var(--c-ink); background-color: var(--c-rule); }
+    .ds-ac-card__toggle-icon { width: 12px; height: 12px; position: relative; flex-shrink: 0; }
+    .ds-ac-card__toggle-icon::before, .ds-ac-card__toggle-icon::after {
+      content: ''; position: absolute; background-color: var(--c-muted); border-radius: 1px; transition: opacity 0.2s;
+    }
+    .ds-ac-card__toggle-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .ds-ac-card__toggle-icon::after { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; }
+    .ds-ac-card.ds-ac--open .ds-ac-card__toggle-icon::after { opacity: 0; }
+    .ds-ac-card.ds-ac--open .ds-ac-card__toggle-icon::before { background-color: var(--c-ink-soft); }
+    .ds-ac-card__body {
+      display: none; padding: var(--ds-space-lg); border-top: 1px solid var(--c-rule);
+      background-color: var(--c-bg-soft);
+    }
+    .ds-ac-card.ds-ac--open .ds-ac-card__body { display: block; }
+    .ds-ac-card__body p { font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed); color: var(--c-ink-soft); }
+    .ds-ac-card__body strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
+    .ds-ac-card__body em { font-style: italic; }
+    .ds-ac-card__body a { color: var(--c-primary); text-decoration: underline; text-underline-offset: 3px; }
+    .ds-ac-card__body a:hover { color: var(--c-primary-dark); }
+    .ds-ac-card__body sup { font-size: 0.6em; vertical-align: super; line-height: 0; }
+    .ds-ac-card__body code { font-family: var(--f-mono); font-size: 0.92em; background-color: var(--c-bg); padding: 2px 6px; border-radius: 4px; color: var(--c-ink); }
+
+    /* Button */
+    .ds-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-xs);
+      border-radius: var(--ds-radius-pill);
+      font-family: var(--f-display); font-weight: var(--ds-weight-medium); font-size: var(--ds-text-md);
+      cursor: pointer; border: none; transition: background-color 0.2s;
+      white-space: nowrap; text-decoration: none;
+    }
+    .ds-btn--md { padding: var(--ds-space-sm) var(--ds-space-xl); }
+    .btn--invert { background-color: var(--c-bg); color: var(--c-ink); }
+    .btn--invert:hover { background-color: var(--c-primary-soft); }
+
+    /* CTA Band */
+    .ds-cta-band {
+      width: 100%; position: relative; overflow: hidden;
+      padding: 80px var(--ds-container-padding-mobile);
+      text-align: center;
+      background-color: var(--c-bg-dark);
+      background-size: cover; background-position: center;
+    }
+    .ds-cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: var(--ds-overlay-dark-light); z-index: 0;
+    }
+    .ds-cta-band > * { position: relative; z-index: 1; }
+    .ds-cta-band__inner {
+      max-width: 100%; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: var(--ds-space-lg);
+    }
+    @media (min-width: 1024px) { .ds-cta-band__inner { max-width: 720px; } }
+    @media (min-width: 1440px) { .ds-cta-band__inner { max-width: 860px; } }
+    .ds-cta-band__title {
+      font-family: var(--f-display); font-size: var(--ds-text-5xl);
+      font-weight: var(--ds-weight-bold); color: var(--c-bg);
+      line-height: var(--ds-leading-tight); letter-spacing: var(--ds-tracking-tight);
+    }
+    .ds-cta-band__description {
+      font-size: var(--ds-text-md); color: var(--ds-overlay-white-85);
+      line-height: var(--ds-leading-relaxed);
+    }
+    .ds-cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .ds-bg--grad-deep {
+      background-image: var(--ds-bg-img-grad-deep);
+      background-size: cover; background-position: center;
+    }
+    @media (min-width: 768px) { .ds-cta-band { padding: 100px var(--ds-container-padding-tablet); } }
+    @media (min-width: 1440px) { .ds-cta-band { padding: 120px var(--ds-container-padding-desktop); max-width: 1280px; margin: 0 auto; } }
+    @media (max-width: 767px) {
+      .ds-cta-band__title { font-size: var(--ds-text-4xl); }
+      .ds-cta-band__actions { flex-direction: column; align-items: center; }
+      .ds-cta-band__actions .ds-btn { width: 100%; max-width: 320px; }
+      .ds-bg--grad-deep { background-image: none; }
+    }
+    @media (min-width: 1440px) { .ds-cta-band__title { font-size: var(--ds-text-6xl); } }
+
+    /* Author info */
+    .ds-author-info {
+      margin-top: var(--ds-space-3xl); padding-top: var(--ds-space-lg);
+      border-top: 1px solid var(--c-rule);
+      font-size: var(--ds-text-sm); color: var(--c-muted); line-height: var(--ds-leading-relaxed);
+    }
+    .ds-author-info strong { color: var(--c-ink-soft); font-weight: var(--ds-weight-medium); }
+
+    /* h1 sup */
+    h1 sup, h2 sup, h3 sup { font-size: 0.55em; vertical-align: super; line-height: 0; font-weight: inherit; }
+
+    /* Figure (inline diagram) */
+    .ds-figure {
+      margin: var(--ds-space-xl) 0;
+      padding: var(--ds-space-lg);
+      background-color: var(--c-bg-soft);
+      border: 1px solid var(--c-rule);
+      border-radius: var(--ds-radius-sm);
+    }
+    .ds-figure__svg-wrap {
+      width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .ds-figure__svg-wrap::-webkit-scrollbar { display: none; }
+    .ds-figure__svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-width: 640px;
+      max-width: 100%;
+    }
+    .ds-figure__caption {
+      margin-top: var(--ds-space-md);
+      font-family: var(--f-mono);
+      font-size: var(--ds-text-xs);
+      text-transform: uppercase;
+      letter-spacing: var(--ds-tracking-wide);
+      color: var(--c-muted);
+      text-align: center;
+    }
+    .ds-figure__caption strong { color: var(--c-ink-soft); font-weight: var(--ds-weight-medium); }
+
+    /* Card grid (related) */
+    .ds-card-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+    @media (min-width: 768px) { .ds-card-grid--3col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .ds-card-grid--3col { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+    /* Responsive adjustments */
+    @media (min-width: 768px) {
+      .ds-section-title-icon__text { font-size: 22px; }
+    }
+    @media (min-width: 1024px) {
+      .ds-article-hero__description { font-size: var(--ds-text-xl); }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+
+    <!-- Section 1: Hero (guide pattern: back → title → description → meta) -->
+    <section id="section-hero" class="ds-section ds-section--hero">
+      <div class="ds-article-container">
+        <a href="/resources/learn" class="ds-article-hero__back">← Learn</a>
+        <h1 class="ds-article-hero__title">
+          <span class="ds-text--brand">Reconstructing AI Output</span> — The Last Mile Between Model Response and Business Reality
+        </h1>
+        <p class="ds-article-hero__description">
+          The tokenised response from an external LLM is not yet usable. Reconstruction is what turns it into business-ready output — and where most teams underinvest until the workflow stalls in production.
+        </p>
+        <div class="ds-article-hero__meta">
+          <span class="ds-badge ds-badge--primary">AI Architecture</span>
+          <span class="ds-article-hero__meta-sep" aria-hidden="true"></span>
+          <span class="ds-article-hero__reading-time">~9 min read</span>
+          <span class="ds-article-hero__meta-sep" aria-hidden="true"></span>
+          <span class="ds-article-hero__date">Updated May 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: TL;DR -->
+    <section id="section-tldr" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-banner ds-banner--brand">
+          <span class="ds-banner__label">TL;DR</span>
+          <p>Reconstruction — the step that maps tokenised LLM output back to original values — is technically straightforward and architecturally critical. <strong>Most enterprise AI pilots underinvest in it and stall at production for the same reason: the model works, the integration works, but the output requires manual cleanup and the productivity gain evaporates.</strong> Real reconstruction is more than a swap-back: the LLM generates new text that references tokens in novel contexts, sometimes with formatting drift, sometimes hallucinated, sometimes streamed token-by-token. It has to run <em>inside the enterprise environment, colocated with the mapping</em> — running it on convenient external middleware collapses the protection the tokenisation provided. Three integration patterns (inline, streaming, event-driven) cover most workflows. Hallucinated tokens need an explicit policy (flag, drop, or re-prompt). Every operation has to be audited, in logs held separately under the mapping's own access controls. Five operational mistakes recur — manual cleanup, wrong location, static substitution, no logging, provider lock-in. When reconstruction is right, it becomes invisible infrastructure. When it's wrong, the entire architecture's promise quietly fails on the last mile.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 1. Why reconstruction is more than a swap-back -->
+    <section id="section-1" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>1. Why Reconstruction Is <span class="ds-text--brand">More Than a Swap-Back</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>When enterprise AI teams design a workflow that sends tokenised documents to an external LLM, most of the attention goes to the preparation step: detection, transformation, what crosses the boundary. The response side gets less thought. The assumption is that once the model returns its output, the workflow just needs to swap the tokens back and the result is ready.</p>
+          <p>That assumption is approximately right and operationally wrong. The reconstruction step is technically straightforward — look up tokens in a mapping, substitute back — and architecturally critical. <strong>It is where the difference between a pilot that demos well and a workflow that runs in production gets decided.</strong> Teams that treat reconstruction as an afterthought consistently find their AI projects stalling at the same point: the model works, the integration works, but the output is not in a form anyone can actually use without manual cleanup, and the productivity gain that justified the project evaporates.</p>
+          <p>In the simplest case, reconstruction is symmetric with tokenisation. The input had <em>Marlene Schmidt</em> replaced with <code>CUST-7F2A</code>; the output references <code>CUST-7F2A</code>; the reconstruction step swaps <code>CUST-7F2A</code> back to <em>Marlene Schmidt</em> and the workflow continues.</p>
+          <p>If every workflow looked like this, reconstruction would be a trivial concern. Workflows don't look like this for a few reasons.</p>
+        </div>
+
+        <ul class="ds-bullet ds-bullet--dot">
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>The model's response is generative, not just substitutive.</strong> The LLM doesn't just copy tokens from input to output; it produces new text that reasons over the tokens. The output references tokens in new sentences, in new combinations, sometimes paraphrased, sometimes summarised, sometimes synthesised across multiple input tokens. A reconstruction layer has to handle tokens appearing in contexts the input never had.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>The response can contain tokens the input didn't.</strong> A summarisation task that reasons over five tickets might produce a sentence like <em>"Three of the affected customers</em> (<code>CUST-7F2A</code>, <code>CUST-3B91</code>, <code>CUST-9D2C</code>) <em>share the same firmware version."</em> That construction is new. The reconstruction layer has to find each token, look it up, and substitute back into a sentence the model wrote.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>The response sometimes contains <em>malformed</em> references to tokens.</strong> Models occasionally lose track of token formatting, especially across long outputs. A token that went in as <code>CUST-7F2A</code> might come back as <code>CUST 7F2A</code>, <code>CUST7F2A</code>, or simply <em>"the customer designated 7F2A."</em> A reconstruction layer that only does exact string matching fails in these cases, and the output to the user contains visible token fragments that should have been resolved.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>The response may include the model's commentary or hedging.</strong> <em>"Based on the information about customer</em> <code>CUST-7F2A</code><em>, the most likely root cause is..."</em> The reconstruction has to handle the token appearing in a clause the model added on its own, with the same correctness as a token that appears in a direct extraction.</span>
+          </li>
+        </ul>
+
+        <div class="ds-article-body">
+          <p>What looks like swap-back, then, is actually a small but real text-processing problem: <strong>robust token recognition across diverse output forms, with the substitution happening in a way that preserves the grammatical coherence of the model's response.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: 2. Where reconstruction has to happen -->
+    <section id="section-2" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>2. Where Reconstruction <span class="ds-text--brand">Has to Happen</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>The location of reconstruction is non-negotiable: <strong>it has to happen inside the enterprise environment, before the output reaches the user or any downstream system.</strong></p>
+          <p>The reason is the same reason the mapping has to stay in the enterprise environment. Reconstruction requires reading the mapping. If reconstruction happens outside the enterprise — on a vendor's infrastructure, in a third-country region, on any system the enterprise doesn't fully control — then the mapping has to be made available to that location, which collapses the protection the tokenisation provided in the first place.</p>
+          <p>This is <strong>the most common architectural mistake in deployments of this pattern</strong>: teams set up tokenisation inside the environment, send to the external LLM, and then run reconstruction in a cloud service or middleware that happens to be convenient. The convenience is real. The protection is gone. The mapping that was supposed to stay under the enterprise's exclusive control has been replicated to a location where the original promises no longer hold.</p>
+          <p>The correct architecture is that reconstruction is colocated with the source systems and the mapping — on-premise, in the enterprise's own VPC, in whatever EU-region infrastructure the workflow runs in. <strong>The output of the LLM comes back tokenised, traverses to the reconstruction layer inside the boundary, and emerges from that layer as business-ready content.</strong> The external journey of the data ends at the reconstruction step.</p>
+          <p>For workflows where the rest of the architecture is meticulous about boundaries — encapsulation inside, mapping inside, audit logs inside — and reconstruction is the one piece that wandered outside, the rest of the architecture's promises are weakened to whatever the reconstruction location can guarantee.</p>
+        </div>
+
+        <figure class="ds-figure">
+          <div class="ds-figure__svg-wrap">
+            <svg class="ds-figure__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-labelledby="reconstruction-location-title reconstruction-location-desc">
+              <title id="reconstruction-location-title">Where reconstruction has to happen</title>
+              <desc id="reconstruction-location-desc">Two architectures side by side. On the left, reconstruction runs on external middleware, forcing the mapping to be replicated outside the enterprise — the protection collapses. On the right, reconstruction runs inside the enterprise environment colocated with the mapping, and the protection holds.</desc>
+
+              <defs>
+                <marker id="arrow-coral-rc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#c73e3a"/>
+                </marker>
+                <marker id="arrow-primary-rc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#5b4fe9"/>
+                </marker>
+              </defs>
+
+              <!-- LEFT: Wrong location -->
+              <g>
+                <rect x="20" y="20" width="440" height="32" rx="6" fill="#fce9e8" stroke="#ef5350" stroke-width="1"/>
+                <text x="240" y="41" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#c73e3a">✗ Reconstruction outside the enterprise</text>
+
+                <rect x="20" y="70" width="200" height="280" rx="10" fill="#ffffff" stroke="#0f1130" stroke-width="1.5"/>
+                <text x="40" y="92" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="500" fill="#6b7280" letter-spacing="1.2">ENTERPRISE</text>
+
+                <rect x="40" y="108" width="160" height="44" rx="6" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1"/>
+                <text x="120" y="127" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#0f1130">Tokenisation</text>
+                <text x="120" y="143" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">runs inside ✓</text>
+
+                <rect x="40" y="168" width="160" height="44" rx="6" fill="#e6f7f6" stroke="#0ea5a4" stroke-width="1"/>
+                <text x="120" y="187" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#0f1130">Mapping</text>
+                <text x="120" y="203" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">held inside ✓</text>
+
+                <line x1="200" y1="190" x2="290" y2="262" stroke="#c73e3a" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrow-coral-rc)"/>
+                <text x="200" y="248" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#c73e3a">mapping replicated</text>
+
+                <rect x="260" y="240" width="180" height="100" rx="10" fill="#fce9e8" stroke="#ef5350" stroke-width="1.5"/>
+                <text x="280" y="262" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="500" fill="#c73e3a" letter-spacing="1.2">VENDOR / MIDDLEWARE</text>
+                <rect x="280" y="276" width="140" height="44" rx="6" fill="#ffffff" stroke="#c73e3a" stroke-width="1"/>
+                <text x="350" y="295" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#c73e3a">Reconstruction</text>
+                <text x="350" y="311" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#c73e3a">runs OUTSIDE ✗</text>
+
+                <rect x="20" y="370" width="440" height="50" rx="6" fill="#fce9e8" stroke="none"/>
+                <text x="240" y="392" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#c73e3a">Protection collapses to whatever the external</text>
+                <text x="240" y="410" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#c73e3a">location can guarantee — usually less than the original promise.</text>
+              </g>
+
+              <!-- RIGHT: Correct location -->
+              <g>
+                <rect x="500" y="20" width="440" height="32" rx="6" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1"/>
+                <text x="720" y="41" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#5b4fe9">✓ Reconstruction inside the enterprise</text>
+
+                <rect x="500" y="70" width="320" height="280" rx="10" fill="#ffffff" stroke="#0f1130" stroke-width="1.5"/>
+                <text x="520" y="92" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="500" fill="#6b7280" letter-spacing="1.2">ENTERPRISE ENVIRONMENT</text>
+
+                <rect x="520" y="108" width="280" height="44" rx="6" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1"/>
+                <text x="660" y="127" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#0f1130">Tokenisation</text>
+                <text x="660" y="143" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">runs inside ✓</text>
+
+                <rect x="520" y="168" width="280" height="44" rx="6" fill="#e6f7f6" stroke="#0ea5a4" stroke-width="1"/>
+                <text x="660" y="187" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#0f1130">Mapping</text>
+                <text x="660" y="203" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">held inside ✓</text>
+
+                <rect x="520" y="228" width="280" height="44" rx="6" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1.5"/>
+                <text x="660" y="247" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#5b4fe9">Reconstruction</text>
+                <text x="660" y="263" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#5b4fe9">colocated with mapping ✓</text>
+
+                <rect x="520" y="288" width="280" height="44" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+                <text x="660" y="307" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#0f1130">Audit log</text>
+                <text x="660" y="323" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">separate access controls ✓</text>
+
+                <rect x="848" y="168" width="100" height="84" rx="8" fill="#0f1130" stroke="#0f1130" stroke-width="1.5"/>
+                <text x="898" y="190" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="500" fill="#9ca3af" letter-spacing="1.2">EXTERNAL LLM</text>
+                <text x="898" y="214" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff">sees only</text>
+                <text x="898" y="230" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff">tokens</text>
+
+                <line x1="800" y1="195" x2="846" y2="195" stroke="#5b4fe9" stroke-width="1.5" marker-end="url(#arrow-primary-rc)"/>
+                <line x1="846" y1="225" x2="800" y2="240" stroke="#5b4fe9" stroke-width="1.5" marker-end="url(#arrow-primary-rc)"/>
+
+                <rect x="500" y="370" width="440" height="50" rx="6" fill="#eeebfe" stroke="none"/>
+                <text x="720" y="392" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#5b4fe9">Mapping never leaves the boundary. The external</text>
+                <text x="720" y="410" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#5b4fe9">journey of the data ends at the reconstruction step.</text>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="ds-figure__caption">Figure 1 · <strong>The most common architectural mistake — running reconstruction on external middleware because it's convenient — replicates the mapping outside the enterprise and collapses the protection the tokenisation provided.</strong></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Section 5: 3. How reconstruction integrates with the workflow -->
+    <section id="section-3" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>3. How Reconstruction <span class="ds-text--brand">Integrates With the Workflow</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>Reconstruction is not a standalone step the user invokes. It is infrastructure that has to integrate into wherever the AI's output is delivered. Three integration patterns cover most enterprise deployments.</p>
+        </div>
+
+        <div class="ds-section-title-icon">
+          <span class="ds-section-title-icon__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+          <h3 class="ds-section-title-icon__text">3.1 Inline Reconstruction in the Response Path</h3>
+        </div>
+        <div class="ds-article-body">
+          <p>The AI integration layer — whatever middleware sits between the workflow and the LLM endpoint — performs reconstruction before returning the response to the calling system. The calling system never sees tokens; it receives the business-ready output. <strong>This is the cleanest pattern and works for synchronous request-response workflows</strong>: contract review, summarisation, classification.</p>
+        </div>
+
+        <div class="ds-section-title-icon">
+          <span class="ds-section-title-icon__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M2 8h20"/><path d="M2 16h20"/><path d="M2 20h20"/><path d="M2 4h20"/></svg>
+          </span>
+          <h3 class="ds-section-title-icon__text">3.2 Streaming Reconstruction</h3>
+        </div>
+        <div class="ds-article-body">
+          <p>For LLM responses that stream token-by-token (in the NLP sense, not the data-protection sense — note the unfortunate vocabulary collision), reconstruction has to work on the stream, recognising data-protection tokens as they appear and substituting in real time. <strong>This is harder than batch reconstruction because the data-protection token may be partially streamed at any given moment</strong>, and the reconstruction layer has to buffer enough to recognise it. Workflows that use streaming UIs (chat-style interfaces, live summarisation feeds) need this pattern; workflows that wait for the full response don't.</p>
+        </div>
+
+        <div class="ds-section-title-icon">
+          <span class="ds-section-title-icon__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </span>
+          <h3 class="ds-section-title-icon__text">3.3 Event-Driven Reconstruction</h3>
+        </div>
+        <div class="ds-article-body">
+          <p>For workflows where the AI's output triggers downstream actions — creating a ticket in the operations platform, writing a report into the document management system, updating a record in the CRM — reconstruction has to happen at the boundary between the AI integration and the downstream system. <strong>The tokenised response can be processed for routing, classification, or triage in the integration layer; reconstruction happens just before the data is written into the system the user will see.</strong></p>
+          <p>The architecture has to make explicit which of these patterns applies to which workflow. A misalignment — running streaming reconstruction on a workflow that should be event-driven, or inline reconstruction on a workflow that should stream — produces user-visible defects that look like AI quality problems but are actually integration problems.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: 4. When the model produces tokens that don't exist -->
+    <section id="section-4" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>4. When the Model Produces <span class="ds-text--brand">Tokens That Don't Exist</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>A specific failure mode worth treating carefully: <strong>the model occasionally hallucinates tokens</strong>. It produces a string that looks like a token in the system's format but doesn't correspond to anything in the mapping.</p>
+          <p>This happens for predictable reasons. The model has seen <code>CUST-7F2A</code> and <code>CUST-3B91</code> in the input and produces <code>CUST-5D44</code> in the output, drawing on the pattern. Or the model summarises and invents a token-shaped placeholder for an entity it inferred. Or, more rarely, the model echoes a token format from its training data that happens to collide with the enterprise's token format.</p>
+          <p>The reconstruction layer <strong>cannot silently substitute a hallucinated token</strong>, because there is nothing to substitute it with. It also <strong>cannot leave the hallucinated token in the output</strong>, because the user will see a fragment that looks like a system identifier. There are three reasonable responses.</p>
+        </div>
+
+        <ul class="ds-bullet ds-bullet--number">
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Flag the hallucinated token in the output and surface it to the user as an explicit gap</strong> — for example, <em>"[Reference to an entity the model produced but the system cannot resolve.]"</em> This preserves transparency at the cost of some output cleanliness.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Drop the hallucinated reference and rewrite the surrounding sentence.</strong> This produces cleaner output but requires the reconstruction layer to do non-trivial text manipulation, and may obscure that the model produced something not grounded in the input.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Reject the response and re-prompt the model</strong>, with a system instruction that constrains it to use only the tokens that appeared in the input. This produces the highest-quality output but adds latency and cost.</span>
+          </li>
+        </ul>
+
+        <div class="ds-article-body">
+          <p>Different workflows want different responses. A summarisation for internal review may prefer the first option (flag and surface). A document going to a customer may prefer the third (re-prompt). <strong>The choice should be configurable at the workflow level, not hard-coded into the reconstruction layer.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: 5. Audit and traceability -->
+    <section id="section-5" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>5. <span class="ds-text--brand">Audit and Traceability</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>Reconstruction is the moment where the original sensitive values re-enter the workflow. From an audit perspective, <strong>it is one of the most important moments in the architecture</strong>, because it is where the access controls on the original data are exercised.</p>
+          <p>A well-designed reconstruction layer logs every operation: which token was looked up, when, in service of which workflow, by which integration. The log doesn't need to contain the original values — that would defeat the point of access controls — but it has to contain enough metadata to answer the question <em>"who triggered the reconstruction of which token, and where did the result go."</em></p>
+          <p>This matters operationally for two reasons. First, it makes the architecture auditable: an internal review of the workflow can verify that reconstruction is happening only for legitimate workflows and that the integration is behaving as designed. Second, it makes incident response possible: <strong>if a reconstruction integration is misbehaving, the log shows what happened and what was exposed.</strong></p>
+          <p>The audit also matters for the failure case where reconstruction emits to a downstream system that shouldn't have received the original values. If a reconstruction integration accidentally writes business-ready output to a logging system that wasn't supposed to see customer names, the audit trail is what tells the team what was exposed and to whom. Without the log, the team is guessing.</p>
+          <p>Reconstruction logs should be retained separately from the workflow logs, with different access controls, and under the same boundary constraints as the mapping itself. <strong>They are, in effect, an audit trail of the most sensitive operation in the architecture.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: 6. The operational mistakes most teams make -->
+    <section id="section-6" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>6. The Operational Mistakes <span class="ds-text--brand">Most Teams Make</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>Across deployments of this pattern, a small set of mistakes show up repeatedly. They are worth naming explicitly.</p>
+        </div>
+
+        <ul class="ds-bullet ds-bullet--cross">
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Building reconstruction as a manual cleanup step.</strong> The most common mistake. The team gets tokenisation working, sees the AI output coming back tokenised, and adds a manual <em>"now find and replace the tokens"</em> step to the user's workflow. Users skip the step. Or they do it inconsistently. Or they paste tokenised output into a system that wasn't supposed to see it, and the cleanup never happens. <strong>Reconstruction has to be infrastructure, automatic and invisible.</strong> If it requires a human action, it will fail intermittently in ways that are hard to detect.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Running reconstruction in the wrong location.</strong> Discussed above. The convenience of running reconstruction in a vendor cloud or middleware service is real; the protection cost is also real. The architecture promises the original values stay in the enterprise environment, and reconstruction has to honour that promise.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Treating reconstruction as a static substitution.</strong> Real reconstruction has to handle malformed tokens, hallucinated tokens, tokens in unexpected contexts, and streaming responses. A naive implementation that does exact string match-and-replace will work in the demo and fail in production where the model's actual output is messier than the demo cases.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Not logging reconstruction.</strong> Reconstruction without an audit trail is reconstruction the team cannot defend. The first time someone asks <em>"did the AI ever see this customer's name, and if so, where did the result go,"</em> the team without reconstruction logs cannot answer.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Coupling reconstruction tightly to a specific LLM provider.</strong> Reconstruction logic that assumes ChatGPT's response format will break when the workflow switches to Claude or Gemini, even though the underlying tokenisation didn't change. <strong>The reconstruction layer should be provider-agnostic, treating the model's response as text-to-process rather than a known structure.</strong></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 9: 7. What good reconstruction looks like -->
+    <section id="section-7" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>7. What <span class="ds-text--brand">Good Reconstruction</span> Looks Like</h2>
+        </div>
+        <div class="ds-article-body">
+          <p>A reconstruction layer that works in production has a small set of properties.</p>
+        </div>
+
+        <ul class="ds-bullet ds-bullet--check">
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text">Runs inside the enterprise environment, colocated with the mapping</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text">Invoked automatically at the integration boundary, never as a manual step</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text">Handles streaming, batch, and event-driven workflows through different invocation patterns but a shared core</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text">Recognises tokens robustly across the variations real model output produces — formatting drift, partial references, paraphrases</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text">Distinguishes between legitimate tokens and hallucinated token-shaped strings, and handles each according to a configurable policy</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text">Logs every operation in a separate audit trail under the enterprise's exclusive control</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text">Provider-agnostic, so the workflow can swap LLM endpoints without rewriting the reconstruction layer</span>
+          </li>
+        </ul>
+
+        <div class="ds-article-body">
+          <p>When these properties hold, <strong>reconstruction becomes invisible infrastructure</strong>. The user submits a document, the workflow runs, the result comes back with real values in real structure, and the user never sees a token. The architecture's promise — that sensitive data stayed inside the boundary while the AI did useful work — holds across both halves of the workflow.</p>
+          <p>When these properties don't hold, reconstruction is the place the workflow breaks. The tokenisation can be perfect, the model can be excellent, the boundaries can be meticulous — and the user still ends up with output they can't use, or with sensitive data accidentally appearing in a downstream system that wasn't supposed to receive it. <strong>The last mile is where the architecture either delivers on its promise or quietly fails to.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: 8. Where this fits in the broader pattern -->
+    <section id="section-8" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>8. Where This Fits in the <span class="ds-text--brand">Broader Pattern</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>Reconstruction is one of the four stages of the broader pattern — detection, transformation (tokenisation), external processing, reconstruction — that lets external LLMs operate on data that cannot leave the enterprise environment in raw form. <strong>The four stages compose. The strength of the architecture is the weakest of the four.</strong></p>
+          <p>For the architecture as a whole, and the design decisions that the other three stages carry, see the pillar overview on running external LLMs on sensitive enterprise data. For why removal-based approaches (masking, redaction, PII guardrails) break on operational data — and why this pattern was needed in the first place — see the article on why AI workflows stall at tables, tickets, and operational documents. For the tokenisation patterns on the input side that this article's reconstruction reverses, see the article on tokenisation for LLM inputs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 11: Takeaways -->
+    <section id="section-takeaways" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-banner ds-banner--brand">
+          <span class="ds-banner__label">Key Takeaways</span>
+          <ul class="ds-bullet ds-bullet--dot">
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Reconstruction is technically straightforward and architecturally critical — it's where pilots that demo well diverge from workflows that run in production</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">It's not a simple swap-back: LLM output is generative, contains new token combinations, suffers formatting drift, and sometimes hallucinates token-shaped strings</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Location is non-negotiable — reconstruction has to run inside the enterprise environment, colocated with the mapping; external reconstruction collapses the protection</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Three integration patterns cover most workflows: inline, streaming, and event-driven — and misaligning the pattern produces defects that look like model problems</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Hallucinated tokens need an explicit, configurable policy: flag and surface, drop and rewrite, or reject and re-prompt</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Audit is essential — reconstruction is the moment original values re-enter the workflow, and logs are how the team defends or investigates that moment</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Five recurring mistakes: manual cleanup, wrong location, static substitution, no logging, provider lock-in</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Good reconstruction is invisible infrastructure; bad reconstruction is where the architecture quietly fails on the last mile</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 12: FAQ -->
+    <section id="section-faq" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>Frequently Asked <span class="ds-text--brand">Questions</span></h2>
+        </div>
+
+        <div class="ds-ac-list">
+          <div class="ds-ac-card ds-ac--open">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">Why isn't reconstruction just a simple swap-back?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>The LLM doesn't just copy tokens from input to output — it generates new text that reasons over them. Tokens appear in contexts the input never had, in combinations the model invented, sometimes with formatting drift (<code>CUST-7F2A</code> coming back as <code>CUST 7F2A</code> or <em>"the customer designated 7F2A"</em>). A naive exact-match swap fails on these cases, leaving token fragments visible in the output. Real reconstruction is robust token recognition across diverse generative output forms, with substitution that preserves grammatical coherence.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">Where does reconstruction have to run?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Inside the enterprise environment, colocated with the mapping and the source systems. Reconstruction requires reading the mapping; if reconstruction runs outside the enterprise — on a vendor's infrastructure, in a third-country region, or on middleware the enterprise doesn't fully control — the mapping has to be replicated to that location, which collapses the protection the tokenisation provided. This is the most common architectural mistake in deployments of this pattern.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">What are the three integration patterns for reconstruction?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p><strong>Inline reconstruction</strong> — the AI integration layer performs reconstruction before returning the response. Works for synchronous request-response workflows like contract review. <strong>Streaming reconstruction</strong> — works on token-by-token streams, buffering enough to recognise data-protection tokens as they appear. Needed for chat-style UIs and live summarisation. <strong>Event-driven reconstruction</strong> — happens at the boundary between AI integration and a downstream system like a CRM, ticketing platform, or document store; reconstruction occurs just before the data is written into the system the user will see.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">What should happen when the model hallucinates a token?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Three reasonable responses, and the choice should be configurable per workflow. <em>Flag</em> the hallucinated token and surface it as an explicit gap — preserves transparency at the cost of cleanliness. <em>Drop</em> the hallucinated reference and rewrite the surrounding sentence — cleaner output but obscures that the model produced something not grounded in the input. <em>Reject</em> the response and re-prompt the model with a constraint to use only input tokens — highest quality, adds latency and cost. A summarisation for internal review may prefer flagging; a document going to a customer may prefer re-prompting.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">What does a reconstruction audit log need to contain?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Enough metadata to answer <em>"who triggered the reconstruction of which token, when, in service of which workflow, and where did the result go."</em> It does not need to contain the original values themselves — that would defeat the access controls — but it has to make the operation traceable. Logs should be retained separately from the workflow logs, with different access controls, and under the same boundary constraints as the mapping itself. They are, in effect, an audit trail of the most sensitive operation in the architecture.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">What are the most common reconstruction mistakes?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Five recur. <strong>Manual cleanup</strong> — building reconstruction as a step users have to perform; they will skip it. <strong>Wrong location</strong> — running reconstruction in a vendor cloud because it's convenient; it collapses the protection. <strong>Static substitution</strong> — treating reconstruction as exact string match-and-replace; it fails on the messy real output from production models. <strong>No logging</strong> — the team cannot defend the architecture or do incident response. <strong>Provider lock-in</strong> — coupling reconstruction logic to a specific LLM's response format; it breaks when the workflow switches vendor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 13: Author info -->
+    <section id="section-author" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-author-info">
+          <p><strong>Author</strong>: CUBIG Policy &amp; Architecture Team</p>
+          <p><strong>Published</strong>: May 2026</p>
+          <p><strong>Last updated</strong>: May 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 14: Related Articles (guide pattern: small label + minimal cards) -->
+    <section id="section-related" class="ds-related-section">
+      <div class="ds-article-container">
+        <div class="ds-related-section__label">Where to Read Next</div>
+        <div class="ds-card-grid ds-card-grid--3col">
+          <a href="/resources/learn/external-llm-on-sensitive-enterprise-data" class="ds-related-section__card">
+            <span class="ds-related-section__card-title">Running External LLMs on Data Your Company Can't Send Externally</span>
+            <span class="ds-related-section__card-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="/resources/learn/tokenization-for-llm-inputs" class="ds-related-section__card">
+            <span class="ds-related-section__card-title">Tokenization for LLM Inputs: How AI Reads What It Doesn't See</span>
+            <span class="ds-related-section__card-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="/resources/learn/why-ai-stalls-on-operational-data" class="ds-related-section__card">
+            <span class="ds-related-section__card-title">Why AI Workflows Stall at Tables, Tickets, and Operational Documents</span>
+            <span class="ds-related-section__card-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 15: CTA Band -->
+    <section id="section-cta" class="ds-cta-band ds-bg--grad-deep">
+      <div class="ds-cta-band__inner">
+        <h2 class="ds-cta-band__title">
+          Where does <span class="ds-text--brand">reconstruction</span> sit in your AI workflow today?
+        </h2>
+        <p class="ds-cta-band__description">
+          <span class="ds-text--product">LLM Capsule</span> implements reconstruction inside its <strong style="color: var(--c-bg);">encapsulation layer</strong> — colocated with the mapping under the enterprise's exclusive control, automatic at the integration boundary, with full audit retained inside the organisation. The <a href="/architecture" style="color: var(--c-bg); text-decoration: underline;">architecture page</a> shows the reconstruction step in the context of the four-zone architecture. For a working session on integrating reconstruction into your existing AI workflows, request a demo below.
+        </p>
+        <div class="ds-cta-band__actions">
+          <a href="/request-a-demo" class="ds-btn ds-btn--md btn--invert">Request a Demo &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function toggleAcCard(header) {
+      var card = header.closest('.ds-ac-card');
+      card.classList.toggle('ds-ac--open');
+    }
+  </script>
+
+</body>
+</html>

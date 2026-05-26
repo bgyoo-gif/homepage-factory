@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-05-26 14:54:22",
+  "generated": "2026-05-26 15:06:45",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1345,6 +1345,16 @@
           "modified": "2026-05-19"
         },
         {
+          "name": "reconstructing-ai-output-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/reconstructing-ai-output-b-type.html",
+          "modified": "2026-05-26"
+        },
+        {
+          "name": "reconstructing-ai-output-bodyhtml.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/reconstructing-ai-output-bodyhtml.html",
+          "modified": "2026-05-26"
+        },
+        {
           "name": "request-pov-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/request-pov-b-type.html",
           "modified": "2026-04-28"
@@ -1635,6 +1645,16 @@
           "name": "public-sector-genai-three-approaches-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/public-sector-genai-three-approaches-spec.md",
           "modified": "2026-05-20"
+        },
+        {
+          "name": "reconstructing-ai-output-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/reconstructing-ai-output-qa-report.md",
+          "modified": "2026-05-26"
+        },
+        {
+          "name": "reconstructing-ai-output-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/reconstructing-ai-output-spec.md",
+          "modified": "2026-05-26"
         },
         {
           "name": "request-pov-qa-report.md",
@@ -3107,6 +3127,11 @@
           "name": "PublicSectorGenaiThreeApproaches.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/PublicSectorGenaiThreeApproaches.tsx",
           "modified": "2026-05-20"
+        },
+        {
+          "name": "ReconstructingAiOutput.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/ReconstructingAiOutput.tsx",
+          "modified": "2026-05-26"
         },
         {
           "name": "SllmSelfHostedRealityCheck.tsx",
