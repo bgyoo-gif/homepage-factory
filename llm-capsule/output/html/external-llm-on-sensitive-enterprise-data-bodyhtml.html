@@ -1,6 +1,3 @@
-<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그대로 붙여넣기 -->
-<!-- 일반 HTML 태그(h2, h3, p, ul, ol, table, strong, em, code) + .callout + .takeaways만 사용 -->
-
 <h2>1. The Quiet Contradiction at the Centre of Enterprise AI</h2>
 <p>There is a quiet contradiction at the centre of most enterprise AI strategies in 2026.</p>
 <p>The external large language models — ChatGPT, Claude, Gemini, and the others — produce measurably better output than anything most enterprises can run internally. They handle context windows that internal models struggle with. They get better every few months without the enterprise paying for retraining. They are, on most dimensions that matter to a business, the obvious choice.</p>
@@ -89,17 +86,17 @@
         </marker>
       </defs>
 
-      <!-- Enterprise environment container -->
+      
       <rect x="20" y="40" width="540" height="340" rx="12" fill="#ffffff" stroke="#0f1130" stroke-width="1.5"/>
       <text x="40" y="68" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500" fill="#6b7280" letter-spacing="1.2">ENTERPRISE ENVIRONMENT</text>
 
-      <!-- Original Data box -->
+      
       <rect x="50" y="100" width="180" height="76" rx="8" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1.5"/>
       <text x="140" y="130" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0f1130">Original Data</text>
       <text x="140" y="152" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e">customer records,</text>
       <text x="140" y="166" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e">tickets, logs, documents</text>
 
-      <!-- Transformation Layer -->
+      
       <rect x="280" y="80" width="240" height="116" rx="8" fill="#ffffff" stroke="#5b4fe9" stroke-width="2"/>
       <text x="400" y="108" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#5b4fe9">Transformation Layer</text>
       <line x1="304" y1="124" x2="496" y2="124" stroke="#e5e7eb" stroke-width="1"/>
@@ -107,48 +104,48 @@
       <text x="400" y="162" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e">2. Replace with structured tokens</text>
       <text x="400" y="178" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e">3. Reconstruct from tokenised response</text>
 
-      <!-- Mapping store -->
+      
       <rect x="280" y="230" width="240" height="76" rx="8" fill="#e6f7f6" stroke="#0ea5a4" stroke-width="1.5"/>
       <text x="400" y="258" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0b7f7e">Token ↔ Value Mapping</text>
       <text x="400" y="280" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e">held exclusively by the enterprise</text>
       <text x="400" y="294" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-style="italic" fill="#3a3d5e">never leaves the boundary</text>
 
-      <!-- Business-ready output -->
+      
       <rect x="50" y="320" width="180" height="48" rx="8" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1.5"/>
       <text x="140" y="342" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0f1130">Business-Ready Output</text>
       <text x="140" y="358" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e">real names, real figures</text>
 
-      <!-- Internal arrows -->
-      <!-- Original Data → Transformation (top) -->
+      
+      
       <line x1="230" y1="125" x2="278" y2="125" stroke="#5b4fe9" stroke-width="1.5" marker-end="url(#arrow-primary)"/>
-      <!-- Transformation ↔ Mapping (vertical) -->
+      
       <line x1="400" y1="198" x2="400" y2="228" stroke="#0ea5a4" stroke-width="1.5" stroke-dasharray="4 3"/>
       <line x1="395" y1="208" x2="395" y2="218" stroke="#0ea5a4" stroke-width="1.5"/>
       <line x1="405" y1="208" x2="405" y2="218" stroke="#0ea5a4" stroke-width="1.5"/>
-      <!-- Transformation → Business-ready (bottom return) -->
+      
       <path d="M 280 175 Q 240 250 230 343" fill="none" stroke="#5b4fe9" stroke-width="1.5" marker-end="url(#arrow-primary)"/>
 
-      <!-- Boundary line (dashed) -->
+      
       <line x1="580" y1="40" x2="580" y2="380" stroke="#ef5350" stroke-width="2" stroke-dasharray="6 5"/>
       <text x="580" y="32" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" fill="#c73e3a" letter-spacing="1.2">BOUNDARY</text>
 
-      <!-- External LLM box -->
+      
       <rect x="640" y="140" width="280" height="140" rx="12" fill="#0f1130" stroke="#0f1130" stroke-width="1.5"/>
       <text x="660" y="168" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500" fill="#9ca3af" letter-spacing="1.2">EXTERNAL LLM</text>
       <text x="780" y="208" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#ffffff">ChatGPT · Claude · Gemini</text>
       <text x="780" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">sees only tokenised data</text>
       <text x="780" y="252" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">returns tokenised response</text>
 
-      <!-- Cross-boundary arrows -->
-      <!-- Outbound: tokenised data → External LLM -->
+      
+      
       <line x1="520" y1="160" x2="638" y2="180" stroke="#5b4fe9" stroke-width="2" marker-end="url(#arrow-primary)"/>
       <text x="585" y="155" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#5b4fe9">tokenised data</text>
 
-      <!-- Inbound: tokenised response → Transformation -->
+      
       <line x1="638" y1="244" x2="520" y2="190" stroke="#5b4fe9" stroke-width="2" marker-end="url(#arrow-primary)"/>
       <text x="585" y="275" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#5b4fe9">tokenised response</text>
 
-      <!-- Legend -->
+      
       <g transform="translate(640, 320)">
         <rect x="0" y="0" width="280" height="56" rx="6" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
         <line x1="12" y1="18" x2="32" y2="18" stroke="#ef5350" stroke-width="2" stroke-dasharray="4 3"/>
