@@ -191,24 +191,17 @@
     }
     .ds-badge--primary { background-color: var(--c-primary); color: var(--c-bg); }
 
-    /* Breadcrumb */
-    .ds-breadcrumb {
-      font-size: var(--ds-text-sm); color: var(--c-muted);
-      margin-bottom: var(--ds-space-lg);
+    /* Back link (guide pattern) */
+    .ds-article-hero__back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: var(--ds-text-sm); font-weight: 600;
+      color: var(--c-primary); text-decoration: none;
+      letter-spacing: 0.01em; margin-bottom: var(--ds-space-2xl);
+      transition: color 0.15s;
     }
-    .ds-breadcrumb a { color: var(--c-muted); }
-    .ds-breadcrumb a:hover { color: var(--c-ink); }
+    .ds-article-hero__back:hover { color: var(--c-primary-dark, #3b2fbf); }
 
-    /* Hero */
-    .ds-article-hero__meta {
-      display: flex; align-items: center; gap: var(--ds-space-sm);
-      flex-wrap: wrap;
-      margin-bottom: var(--ds-space-lg);
-    }
-    .ds-article-hero__reading-time,
-    .ds-article-hero__date {
-      font-size: var(--ds-text-sm); color: var(--c-muted);
-    }
+    /* Hero — guide pattern: back → title → description → meta */
     .ds-article-hero__title {
       font-family: var(--f-display);
       margin-bottom: var(--ds-space-lg);
@@ -217,6 +210,19 @@
       font-size: var(--ds-text-lg); color: var(--c-ink-soft);
       line-height: var(--ds-leading-relaxed);
       max-width: 860px;
+      margin-bottom: var(--ds-space-2xl);
+    }
+    .ds-article-hero__meta {
+      display: flex; align-items: center; gap: var(--ds-space-md);
+      flex-wrap: wrap;
+    }
+    .ds-article-hero__meta-sep {
+      width: 4px; height: 4px; border-radius: 50%;
+      background-color: var(--c-rule); flex-shrink: 0;
+    }
+    .ds-article-hero__reading-time,
+    .ds-article-hero__date {
+      font-size: var(--ds-text-sm); color: var(--c-muted);
     }
 
     /* Banner */
@@ -522,23 +528,23 @@
 
   <main>
 
-    <!-- Section 1: Hero -->
+    <!-- Section 1: Hero (guide pattern: back → title → description → meta) -->
     <section id="section-hero" class="ds-section ds-section--hero">
       <div class="ds-article-container">
-        <nav class="ds-breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Home</a> / <a href="/resources">Resources</a> / <a href="/resources/learn">Learn</a> / Running External LLMs on Data Your Company Can't Send Externally
-        </nav>
-        <div class="ds-article-hero__meta">
-          <span class="ds-badge ds-badge--primary">AI Architecture</span>
-          <span class="ds-article-hero__reading-time">~10 min read</span>
-          <span class="ds-article-hero__date">May 2026</span>
-        </div>
+        <a href="/resources/learn" class="ds-article-hero__back">← Learn</a>
         <h1 class="ds-article-hero__title">
           Running <span class="ds-text--brand">External LLMs</span> on Data Your Company Can't Send Externally
         </h1>
         <p class="ds-article-hero__description">
           Most enterprise AI workflows stall when external LLMs require data the company can't expose. A look at the architectural patterns that move past the stall — and what trade-offs each one carries.
         </p>
+        <div class="ds-article-hero__meta">
+          <span class="ds-badge ds-badge--primary">AI Architecture</span>
+          <span class="ds-article-hero__meta-sep" aria-hidden="true"></span>
+          <span class="ds-article-hero__reading-time">~10 min read</span>
+          <span class="ds-article-hero__meta-sep" aria-hidden="true"></span>
+          <span class="ds-article-hero__date">Updated May 2026</span>
+        </div>
       </div>
     </section>
 
