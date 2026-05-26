@@ -736,6 +736,38 @@ export default function HospitalAiDeploymentPhiProtection({
           font-size: 15px;
         }
 
+        /* Figure (inline diagram with SVG) */
+        .la-body .ds-figure {
+          margin: 28px 0;
+          padding: 20px;
+          background-color: var(--c-bg-soft, #f7f8fb);
+          border: 1px solid var(--c-rule, #e5e7eb);
+          border-radius: var(--r-sm, 6px);
+        }
+        .la-body .ds-figure__svg-wrap {
+          width: 100%;
+          overflow-x: auto;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
+        .la-body .ds-figure__svg-wrap::-webkit-scrollbar { display: none; }
+        .la-body .ds-figure__svg {
+          display: block;
+          width: 100%;
+          height: auto;
+          min-width: 640px;
+          max-width: 100%;
+        }
+        .la-body .ds-figure__caption {
+          margin-top: 12px;
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 12px;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: var(--c-muted, #6b7280);
+          text-align: center;
+        }
+
         /* Inline links inside body */
         .la-body a {
           color: var(--c-primary, #5b4fe9);
@@ -889,38 +921,6 @@ export default function HospitalAiDeploymentPhiProtection({
               <p className="la-tldr__body">{_tldrBody}</p>
             </div>
           </div>
-        </div>
-
-        {/* ── 3. Article Body ── */}
-        <div className="la-body-wrap">
-          <div className="la-container">
-            <article
-              className="la-body"
-              dangerouslySetInnerHTML={{ __html: _bodyHtml }}
-            />
-          </div>
-        </div>
-
-        {/* ── 4. Related Links ── */}
-        {relatedItems.length > 0 && (
-          <div className="la-related">
-            <div className="la-container">
-              <div className="la-related__label">{_relatedSectionLabel}</div>
-              <div className="la-related__grid">
-                {relatedItems.map((item, i) => (
-                  <a key={i} href={item.href} className="la-related__card">
-                    <span className="la-related__card-_title">{item.title}</span>
-                    <span className="la-related__card-arrow" aria-hidden="true">→</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-
-      </div>
-    </>
-  )
 }
 
 addPropertyControls(HospitalAiDeploymentPhiProtection, {

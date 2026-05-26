@@ -111,6 +111,94 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 <p>This isn't masking, because the tokens preserve structure and format. It isn't synthetic data, because the workflow runs on real production data. It isn't on-premise deployment, because the heavy lifting still happens on the frontier external models. <strong>It's a transformation layer that sits between the enterprise environment and the external AI, and it changes what the external AI sees without changing what the enterprise environment knows.</strong></p>
 <p>Different communities use different names for parts of this approach. In data-protection practice the substitution step is usually called <strong>tokenisation</strong> — replacing sensitive values with placeholders that can be mapped back. When tokenisation is combined with structure preservation, format-preserving stand-ins, and optional statistical protections, the resulting data-preparation layer is sometimes referred to as an <strong>encapsulation layer</strong> — a broader architecture that contains tokenisation as its core mechanism. The terminology varies; the architectural idea is consistent: the boundary doesn't move, and the AI capability doesn't shrink. What changes is the form of the data that crosses.</p>
 
+<figure class="ds-figure">
+  <div class="ds-figure__svg-wrap">
+    <svg class="ds-figure__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="boundary-diagram-title boundary-diagram-desc">
+      <title id="boundary-diagram-title">What crosses the enterprise boundary</title>
+      <desc id="boundary-diagram-desc">A diagram showing original data and the token-to-value mapping staying inside the enterprise environment, while only tokenised data and tokenised responses cross the boundary to the external LLM.</desc>
+
+      <defs>
+        <marker id="arrow-primary" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#5b4fe9"/>
+        </marker>
+        <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#0ea5a4"/>
+        </marker>
+      </defs>
+
+      <!-- Enterprise environment container -->
+      <rect x="20" y="40" width="540" height="340" rx="12" fill="#ffffff" stroke="#0f1130" stroke-width="1.5"/>
+      <text x="40" y="68" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500" fill="#6b7280" letter-spacing="1.2">ENTERPRISE ENVIRONMENT</text>
+
+      <!-- Original Data box -->
+      <rect x="50" y="100" width="180" height="76" rx="8" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1.5"/>
+      <text x="140" y="130" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0f1130">Original Data</text>
+      <text x="140" y="152" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e">customer records,</text>
+      <text x="140" y="166" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e">tickets, logs, documents</text>
+
+      <!-- Transformation Layer -->
+      <rect x="280" y="80" width="240" height="116" rx="8" fill="#ffffff" stroke="#5b4fe9" stroke-width="2"/>
+      <text x="400" y="108" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#5b4fe9">Transformation Layer</text>
+      <line x1="304" y1="124" x2="496" y2="124" stroke="#e5e7eb" stroke-width="1"/>
+      <text x="400" y="146" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e">1. Detect sensitive elements</text>
+      <text x="400" y="162" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e">2. Replace with structured tokens</text>
+      <text x="400" y="178" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e">3. Reconstruct from tokenised response</text>
+
+      <!-- Mapping store -->
+      <rect x="280" y="230" width="240" height="76" rx="8" fill="#e6f7f6" stroke="#0ea5a4" stroke-width="1.5"/>
+      <text x="400" y="258" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0b7f7e">Token ↔ Value Mapping</text>
+      <text x="400" y="280" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e">held exclusively by the enterprise</text>
+      <text x="400" y="294" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-style="italic" fill="#3a3d5e">never leaves the boundary</text>
+
+      <!-- Business-ready output -->
+      <rect x="50" y="320" width="180" height="48" rx="8" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1.5"/>
+      <text x="140" y="342" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0f1130">Business-Ready Output</text>
+      <text x="140" y="358" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e">real names, real figures</text>
+
+      <!-- Internal arrows -->
+      <!-- Original Data → Transformation (top) -->
+      <line x1="230" y1="125" x2="278" y2="125" stroke="#5b4fe9" stroke-width="1.5" marker-end="url(#arrow-primary)"/>
+      <!-- Transformation ↔ Mapping (vertical) -->
+      <line x1="400" y1="198" x2="400" y2="228" stroke="#0ea5a4" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <line x1="395" y1="208" x2="395" y2="218" stroke="#0ea5a4" stroke-width="1.5"/>
+      <line x1="405" y1="208" x2="405" y2="218" stroke="#0ea5a4" stroke-width="1.5"/>
+      <!-- Transformation → Business-ready (bottom return) -->
+      <path d="M 280 175 Q 240 250 230 343" fill="none" stroke="#5b4fe9" stroke-width="1.5" marker-end="url(#arrow-primary)"/>
+
+      <!-- Boundary line (dashed) -->
+      <line x1="580" y1="40" x2="580" y2="380" stroke="#ef5350" stroke-width="2" stroke-dasharray="6 5"/>
+      <text x="580" y="32" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" fill="#c73e3a" letter-spacing="1.2">BOUNDARY</text>
+
+      <!-- External LLM box -->
+      <rect x="640" y="140" width="280" height="140" rx="12" fill="#0f1130" stroke="#0f1130" stroke-width="1.5"/>
+      <text x="660" y="168" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500" fill="#9ca3af" letter-spacing="1.2">EXTERNAL LLM</text>
+      <text x="780" y="208" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#ffffff">ChatGPT · Claude · Gemini</text>
+      <text x="780" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">sees only tokenised data</text>
+      <text x="780" y="252" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">returns tokenised response</text>
+
+      <!-- Cross-boundary arrows -->
+      <!-- Outbound: tokenised data → External LLM -->
+      <line x1="520" y1="160" x2="638" y2="180" stroke="#5b4fe9" stroke-width="2" marker-end="url(#arrow-primary)"/>
+      <text x="585" y="155" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#5b4fe9">tokenised data</text>
+
+      <!-- Inbound: tokenised response → Transformation -->
+      <line x1="638" y1="244" x2="520" y2="190" stroke="#5b4fe9" stroke-width="2" marker-end="url(#arrow-primary)"/>
+      <text x="585" y="275" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#5b4fe9">tokenised response</text>
+
+      <!-- Legend -->
+      <g transform="translate(640, 320)">
+        <rect x="0" y="0" width="280" height="56" rx="6" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+        <line x1="12" y1="18" x2="32" y2="18" stroke="#ef5350" stroke-width="2" stroke-dasharray="4 3"/>
+        <text x="40" y="22" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e">boundary the data cannot cross</text>
+        <line x1="12" y1="38" x2="32" y2="38" stroke="#0ea5a4" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text x="40" y="42" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e">mapping stays inside the enterprise</text>
+      </g>
+    </svg>
+  </div>
+  <figcaption class="ds-figure__caption">Figure 1 · <strong>The original data and the mapping never leave the enterprise. Only tokenised data and tokenised responses cross the boundary.</strong></figcaption>
+</figure>
+
+
 <div class="callout">
   <span class="callout__icon">●</span>
   <p class="callout__body"><strong>The architecture in one sentence.</strong> Original data and the token-to-value mapping stay inside the enterprise environment; only tokenised data and tokenised responses cross the boundary to the external LLM.</p>
@@ -627,6 +715,38 @@ export default function ExternalLlmOnSensitiveEnterpriseData({
           font-size: 15px;
         }
 
+        /* Figure (inline diagram with SVG) */
+        .la-body .ds-figure {
+          margin: 28px 0;
+          padding: 20px;
+          background-color: var(--c-bg-soft, #f7f8fb);
+          border: 1px solid var(--c-rule, #e5e7eb);
+          border-radius: var(--r-sm, 6px);
+        }
+        .la-body .ds-figure__svg-wrap {
+          width: 100%;
+          overflow-x: auto;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
+        .la-body .ds-figure__svg-wrap::-webkit-scrollbar { display: none; }
+        .la-body .ds-figure__svg {
+          display: block;
+          width: 100%;
+          height: auto;
+          min-width: 640px;
+          max-width: 100%;
+        }
+        .la-body .ds-figure__caption {
+          margin-top: 12px;
+          font-family: var(--f-mono, 'JetBrains Mono', 'SF Mono', Consolas, monospace);
+          font-size: 12px;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: var(--c-muted, #6b7280);
+          text-align: center;
+        }
+
         /* Inline links inside body */
         .la-body a {
           color: var(--c-primary, #5b4fe9);
@@ -780,38 +900,6 @@ export default function ExternalLlmOnSensitiveEnterpriseData({
               <p className="la-tldr__body">{tldrBody}</p>
             </div>
           </div>
-        </div>
-
-        {/* ── 3. Article Body ── */}
-        <div className="la-body-wrap">
-          <div className="la-container">
-            <article
-              className="la-body"
-              dangerouslySetInnerHTML={{ __html: bodyHtml }}
-            />
-          </div>
-        </div>
-
-        {/* ── 4. Related Links ── */}
-        {relatedItems.length > 0 && (
-          <div className="la-related">
-            <div className="la-container">
-              <div className="la-related__label">{relatedSectionLabel}</div>
-              <div className="la-related__grid">
-                {relatedItems.map((item, i) => (
-                  <a key={i} href={item.href} className="la-related__card">
-                    <span className="la-related__card-title">{item.title}</span>
-                    <span className="la-related__card-arrow" aria-hidden="true">→</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-
-      </div>
-    </>
-  )
 }
 
 addPropertyControls(ExternalLlmOnSensitiveEnterpriseData, {
