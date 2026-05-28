@@ -1,0 +1,548 @@
+// N2SF Model 2 — Part 1: Nav + Hero + Logo Band + Regulation·Trend + Case Studies + Market Chart
+// @framerSupportedLayoutWidth any
+// @framerSupportedLayoutHeight any
+
+import { addPropertyControls, ControlType } from "framer"
+import { useRef, useEffect, useState } from "react"
+
+const BASE_IMG = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/"
+const CUBIG_IMG = "https://cubig.ai/wp-content/themes/cubig/assets/images/clients/"
+
+const DEFAULT_LOGOS = [
+  { name: "제주국제자유도시개발센터", src: `${BASE_IMG}JDC.png` },
+  { name: "서대문구도시관리공단", src: `${BASE_IMG}서대문구도시관리공단.jpg` },
+  { name: "충남도립대학교", src: `${BASE_IMG}충남도립대학교.svg` },
+  { name: "SK텔레콤", src: `${CUBIG_IMG}sk-telecom.png` },
+  { name: "교보", src: `${CUBIG_IMG}kyobo.png` },
+  { name: "대한민국 육군", src: `${CUBIG_IMG}rok-army.png` },
+  { name: "대한민국 공군", src: `${CUBIG_IMG}rok-air-force.png` },
+  { name: "국가데이터처", src: `${CUBIG_IMG}mods.jpg` },
+  { name: "IBK", src: `${CUBIG_IMG}ibk.png` },
+  { name: "우리은행", src: `${CUBIG_IMG}woori-bank.png` },
+  { name: "국가유산청", src: `${CUBIG_IMG}korea-heritage.jpg` },
+  { name: "이화여대 목동병원", src: `${CUBIG_IMG}eumc.png` },
+  { name: "아마존 AWS", src: `${CUBIG_IMG}aws.png` },
+  { name: "NVIDIA", src: `${CUBIG_IMG}nvidia.png` },
+  { name: "Gartner", src: `${CUBIG_IMG}gartner.png` },
+  { name: "네이버 클라우드", src: `${CUBIG_IMG}naver-cloud.png` },
+]
+
+const DEFAULT_STATS = [
+  { num: "77%", label: "2025년 공공기관 생성형 AI 도입 비중 (전년 34%)" },
+  { num: "10조", label: "2026년 정부 AI 투자 예산 (전년 대비 3배)" },
+  { num: "300+", label: "국가정보원 조사 대상 기관 (중앙·공공·지자체)" },
+]
+
+const DEFAULT_KPI = [
+  { label: "2026 신설", value: "AI 활용 가점" },
+  { label: "평가 주관", value: "기재부 · 행안부 공통" },
+  { label: "인정 기준", value: "N²SF 모델 2 정합성" },
+]
+
+const DEFAULT_NEWS = [
+  { tag: "정부", year: "2025", title: "국민권익위, 국민신문고에 AI 민원 응답 도입", body: "민원 응답 초안 자동 생성과 다국어 번역까지 지원합니다.", source: "전자신문" },
+  { tag: "정부", year: "2025", title: "산업부, 해외인증 AI 에이전트로 상담 3배 처리", body: "수출기업 상담 월 70건이 210건으로, 컨설팅은 7일에서 3일로 단축됐습니다.", source: "AI타임즈" },
+  { tag: "정부", year: "2025.12", title: "국세청, AI 음성 상담 도입 후 통화 성공률 26%에서 98%로", body: "AI가 종합소득세 상담 106만 건, 전체의 74%를 처리했습니다.", source: "한국세정신문" },
+  { tag: "정부", year: "2025.04", title: "관세청, AI 위험선별로 수입신고 오류 95% 감소", body: "통관 전반에 AI 기반 위험선별을 적용하고, AI CCTV로 의심 동선을 추적합니다.", source: "세정일보" },
+  { tag: "공기업", year: "2025", title: "한국전력, AI 설비 진단으로 연간 72억 원 절감", body: "설비 예지정비와 전력망 운영 최적화에서 가시적 성과를 냈습니다.", source: "전기신문" },
+  { tag: "공기업", year: "2025", title: "인천공항공사, 공항 혼잡관리 AI로 국무총리상 수상", body: "AI·빅데이터 기반 여객흐름 예측 시스템이 2025 공공 AI 챌린지 대상을 받았습니다.", source: "머니투데이" },
+  { tag: "공기업", year: "2025", title: "LH, 전국 311개 건설현장에 AI 안전관리 시스템 적용", body: "현장 CCTV가 안전모 미착용, 쓰러짐, 추락을 실시간 감지합니다.", source: "헤럴드경제" },
+  { tag: "공기업", year: "2025.09", title: "한국가스공사, 에너지 공공기관 최초 하이브리드 생성형 AI 플랫폼", body: "사내 전용 AI와 민간 초거대 AI를 결합해 업무 효율을 높입니다.", source: "에너지코리아뉴스" },
+  { tag: "공기업", year: "2025", title: "한국수자원공사, 세계 최초 AI 정수장으로 WEF 글로벌 등대상", body: "AI First 전략기획단을 출범시키고 물관리 전반에 AI를 접목하고 있습니다.", source: "이슈온" },
+  { tag: "준정부", year: "2026.04", title: "건보공단, AI 상담 NHIS-CALL 300회선 가동", body: "연간 5400만 건 민원 중 단순 반복 응대를 AI가 분담합니다.", source: "헤럴드경제" },
+]
+
+const DEFAULT_MARKET = [
+  { label: "국가기관", sub: "52/64 기관", pct: 81.3, total: "5조 5,404억", meta: "2,705건 (47.1%)" },
+  { label: "광역 지자체", sub: "17/17 기관", pct: 100, total: "2조 3,510억", meta: "2,187건 (20.0%)" },
+  { label: "준정부기관", sub: "48/57 기관", pct: 84.2, total: "2조 5,372억", meta: "1,091건 (21.5%)" },
+  { label: "기타공공기관", sub: "136/243 기관", pct: 56.0, total: "1조 3,453억", meta: "654건 (11.4%)" },
+]
+
+const fallbackImg = (prop: string | undefined, fallback: string) =>
+  prop && prop.length > 0 ? prop : fallback
+const fallbackArr = <T,>(arr: T[] | undefined, def: T[]): T[] =>
+  arr && arr.length > 0 ? arr : def
+
+export default function N2sfPart1({
+  // Hero
+  heroKicker = "외부 반출이 불가능한 공공 문서, AI와 함께",
+  heroHeadline = "공공 AX, 우리 기관은\n어디부터 시작하면 좋을까요?",
+  heroSub = "공공기관 10곳 중 7곳은 이미 AI를 쓰고, 2026년부터는 평가에도 AI 활용 점수가 생겼습니다.\n우리 기관은 어디부터 어떻게 시작하면 좋을까요?",
+  heroCtaLabel = "기관 AI 도입 상담 신청",
+  heroCtaLink = "#form",
+  // Logo Band
+  logoBandTitle = "CUBIG과 함께한 공공·금융·국방·교육 기관",
+  logos = DEFAULT_LOGOS,
+  // Section 1 — Regulation/Trend
+  s1Kicker = "REGULATION · TREND",
+  s1Headline = "공공기관의 AI 도입은 이미 시작됐고,\n정부 평가에도 반영되고 있습니다.",
+  // Block 1
+  b1Label = "규제 / 트렌드",
+  b1Headline = "2025년, 공공부문 생성형 AI 도입이 본격화됐습니다.",
+  b1Body = "국가정보원이 공공기관을 조사한 결과, 생성형 AI 도입 비중이 2023~2024년 34%에서 2025년 77%로 늘었습니다. 보고서 작성, 민원 대응에 AI를 쓰는 기관이 두 배 이상 늘어난 셈입니다.",
+  b1Stats = DEFAULT_STATS,
+  b1Source = "출처. 국가정보원 「국가·공공기관 AI보안 가이드북」 (2025.12)",
+  // Block 2
+  b2Label = "평가 · 가점",
+  b2Headline = "2026년 경영평가, AI 활용 가점 신설",
+  b2Body = "2026년 공공기관 경영평가편람(기재부)과 지방공기업 경영평가편람(행안부)에 AI 활용 가점이 신설되었습니다. 단순 도입 여부가 아닌 정보보안 가이드라인·개인정보보호·데이터 거버넌스 기준을 충족하는 도입만 가점으로 인정되며, 이는 N²SF 모델 2가 요구하는 보안 요건과 직접 연결됩니다.",
+  b2Kpi = DEFAULT_KPI,
+  b2Source = "출처. 기획재정부 「2026년도 공공기관 경영평가편람」 · 행정안전부 「2026년도 지방공기업 경영평가편람」 (2026.1)",
+  // Case Studies
+  csKicker = "CASE STUDIES",
+  csHeadline = "AI 도입은 이미 시작됐습니다.\n우리 기관만 늦은 건 아닐까요?",
+  csDescription = "광역 지자체 17곳 전부, 국가기관의 81.3%가 이미 AI 도입을 마쳤습니다. 같은 환경의 기관들이 어떤 업무에 어떻게 적용했는지 먼저 보시고, 다음 단계를 결정해 보세요.",
+  newsCards = DEFAULT_NEWS,
+  // Market Chart
+  mcTitle = "기관별 도입 현황 (~24년 누적)",
+  mcSub = "도입률 + 계약 건수·금액으로 본 공공부문 AI 활용 현황",
+  mcRows = DEFAULT_MARKET,
+  mcSource = "출처. 한국지능정보사회진흥원(NIA) 「2024 공공부문 AI 도입 현황 조사」",
+}: Props) {
+  const marqueeRef = useRef<HTMLDivElement>(null)
+
+  const _logos = fallbackArr(logos, DEFAULT_LOGOS)
+  const _b1Stats = fallbackArr(b1Stats, DEFAULT_STATS)
+  const _b2Kpi = fallbackArr(b2Kpi, DEFAULT_KPI)
+  const _newsCards = fallbackArr(newsCards, DEFAULT_NEWS)
+  const _mcRows = fallbackArr(mcRows, DEFAULT_MARKET)
+
+  const nl = (s: string) =>
+    s.split("\n").map((line, i, arr) => (
+      <span key={i}>
+        {line}
+        {i < arr.length - 1 && <br />}
+      </span>
+    ))
+
+  const accentNl = (s: string) => {
+    const parts = s.split("\n")
+    return parts.map((line, i) => {
+      const isAccent = i > 0
+      return (
+        <span key={i}>
+          {isAccent ? <span className="p1-accent">{line}</span> : line}
+          {i < parts.length - 1 && <br />}
+        </span>
+      )
+    })
+  }
+
+  return (
+    <div className="p1-root">
+      <style>{CSS}</style>
+
+      {/* JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                name: "CUBIG",
+                url: "https://cubig.ai",
+                brand: { "@type": "Brand", name: "LLM Capsule" },
+              },
+              {
+                "@type": "WebPage",
+                name: "공공 AX, 우리 기관은 어디부터 시작하면 좋을까요?",
+                description:
+                  "N2SF 모델 2 대응 LLM Capsule — 공공기관 전용 AI 연계체계. 민감정보 캡슐화, 자동 복원, 감사 로그.",
+                publisher: { "@type": "Organization", name: "CUBIG" },
+              },
+            ],
+          }),
+        }}
+      />
+
+      {/* HERO */}
+      <section className="p1-hero">
+        <div className="p1-container-sm">
+          <span className="p1-kicker">{heroKicker}</span>
+          <h1 className="p1-h1">{nl(heroHeadline)}</h1>
+          <p className="p1-hero-sub">{nl(heroSub)}</p>
+          <a href={heroCtaLink} className="p1-cta-primary">
+            {heroCtaLabel}
+          </a>
+        </div>
+      </section>
+
+      {/* LOGO BAND */}
+      <div className="p1-logo-band">
+        <div className="p1-container">
+          <div className="p1-logo-band-title">{logoBandTitle}</div>
+          <div className="p1-logo-marquee" ref={marqueeRef}>
+            {[..._logos, ..._logos].map((l, i) => (
+              <div className="p1-logo-item" key={i}>
+                <img src={fallbackImg(l.src, DEFAULT_LOGOS[i % _logos.length]?.src || "")} alt={l.name} />
+                <span className="p1-logo-name">{l.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* SECTION 1 — REGULATION / TREND */}
+      <section className="p1-s">
+        <div className="p1-container">
+          <span className="p1-sh-kicker">{s1Kicker}</span>
+          <h2 className="p1-sh-big">{accentNl(s1Headline)}</h2>
+
+          <div className="p1-s1-stack">
+            {/* Block 1 */}
+            <div className="p1-s1-block">
+              <div className="p1-s1-text">
+                <div className="p1-label">{b1Label}</div>
+                <h3>{b1Headline}</h3>
+                <p>{b1Body}</p>
+              </div>
+              <div className="p1-s1-visual">
+                <div className="p1-stats">
+                  {_b1Stats.map((s, i) => (
+                    <div className="p1-stat-card" key={i}>
+                      <div className="p1-stat-num">{s.num}</div>
+                      <div className="p1-stat-label">{s.label}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="p1-stats-source">{b1Source}</div>
+              </div>
+            </div>
+
+            {/* Block 2 */}
+            <div className="p1-s1-block">
+              <div className="p1-s1-text">
+                <div className="p1-label">{b2Label}</div>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: b2Headline.replace(
+                      /(AI 활용 가점 신설)/,
+                      "<strong>$1</strong>"
+                    ),
+                  }}
+                />
+                <p>{b2Body}</p>
+              </div>
+              <div className="p1-s1-visual">
+                <div className="p1-eval-kpi">
+                  {_b2Kpi.map((k, i) => (
+                    <div className="p1-eval-kpi-row" key={i}>
+                      <div className="p1-eval-kpi-label">{k.label}</div>
+                      <div className="p1-eval-kpi-value">{k.value}</div>
+                    </div>
+                  ))}
+                  <div className="p1-eval-kpi-source">{b2Source}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CASE STUDIES + MARKET CHART */}
+      <section className="p1-news-section">
+        <div className="p1-container">
+          <span className="p1-sh-kicker">{csKicker}</span>
+          <h2 className="p1-sh-big">{accentNl(csHeadline)}</h2>
+          <p className="p1-section-lead p1-news-lead">{nl(csDescription)}</p>
+
+          <div className="p1-news-marquee-wrap">
+            <div className="p1-news-marquee">
+              {[..._newsCards, ..._newsCards].map((c, i) => (
+                <div className="p1-news-card" key={i}>
+                  <div className="p1-news-meta">
+                    <span className="p1-news-tag">{c.tag}</span>
+                    <span>{c.year}</span>
+                  </div>
+                  <h4>{c.title}</h4>
+                  <p>{c.body}</p>
+                  <div className="p1-news-src">출처. {c.source}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="p1-market-chart-wrap">
+            <div className="p1-market-chart">
+              <div className="p1-mc-title">{mcTitle}</div>
+              <div className="p1-mc-sub">{mcSub}</div>
+              <div className="p1-mc-rows">
+                {_mcRows.map((r, i) => (
+                  <div className="p1-mc-row" key={i}>
+                    <div className="p1-mc-row-label">
+                      {r.label}
+                      <span className="p1-mc-row-label-sub">{r.sub}</span>
+                    </div>
+                    <div className="p1-mc-bar-track">
+                      <div
+                        className="p1-mc-bar-done"
+                        style={{ width: `${r.pct}%` }}
+                      />
+                    </div>
+                    <div className="p1-mc-bar-total">{r.pct}%</div>
+                    <div className="p1-mc-row-meta">
+                      <strong>{r.total}</strong>
+                      {r.meta}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="p1-mc-source">{mcSource}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+interface Props {
+  heroKicker?: string
+  heroHeadline?: string
+  heroSub?: string
+  heroCtaLabel?: string
+  heroCtaLink?: string
+  logoBandTitle?: string
+  logos?: { name: string; src: string }[]
+  s1Kicker?: string
+  s1Headline?: string
+  b1Label?: string
+  b1Headline?: string
+  b1Body?: string
+  b1Stats?: { num: string; label: string }[]
+  b1Source?: string
+  b2Label?: string
+  b2Headline?: string
+  b2Body?: string
+  b2Kpi?: { label: string; value: string }[]
+  b2Source?: string
+  csKicker?: string
+  csHeadline?: string
+  csDescription?: string
+  newsCards?: { tag: string; year: string; title: string; body: string; source: string }[]
+  mcTitle?: string
+  mcSub?: string
+  mcRows?: { label: string; sub: string; pct: number; total: string; meta: string }[]
+  mcSource?: string
+}
+
+addPropertyControls(N2sfPart1, {
+  heroKicker: { type: ControlType.String, title: "Hero Kicker", defaultValue: "외부 반출이 불가능한 공공 문서, AI와 함께" },
+  heroHeadline: { type: ControlType.String, title: "Hero Headline", displayTextArea: true, defaultValue: "공공 AX, 우리 기관은\n어디부터 시작하면 좋을까요?" },
+  heroSub: { type: ControlType.String, title: "Hero Sub", displayTextArea: true, defaultValue: "공공기관 10곳 중 7곳은 이미 AI를 쓰고, 2026년부터는 평가에도 AI 활용 점수가 생겼습니다.\n우리 기관은 어디부터 어떻게 시작하면 좋을까요?" },
+  heroCtaLabel: { type: ControlType.String, title: "Hero CTA", defaultValue: "기관 AI 도입 상담 신청" },
+  heroCtaLink: { type: ControlType.Link, title: "Hero CTA Link" },
+  logoBandTitle: { type: ControlType.String, title: "Logo Band Title", defaultValue: "CUBIG과 함께한 공공·금융·국방·교육 기관" },
+  logos: {
+    type: ControlType.Array,
+    title: "Logos",
+    control: {
+      type: ControlType.Object,
+      controls: {
+        name: { type: ControlType.String, title: "Name" },
+        src: { type: ControlType.Image, title: "Image" },
+      },
+    },
+  },
+  s1Kicker: { type: ControlType.String, title: "S1 Kicker", defaultValue: "REGULATION · TREND" },
+  s1Headline: { type: ControlType.String, title: "S1 Headline", displayTextArea: true, defaultValue: "공공기관의 AI 도입은 이미 시작됐고,\n정부 평가에도 반영되고 있습니다." },
+  b1Label: { type: ControlType.String, title: "Block1 Label", defaultValue: "규제 / 트렌드" },
+  b1Headline: { type: ControlType.String, title: "Block1 Headline", defaultValue: "2025년, 공공부문 생성형 AI 도입이 본격화됐습니다." },
+  b1Body: { type: ControlType.String, title: "Block1 Body", displayTextArea: true, defaultValue: "국가정보원이 공공기관을 조사한 결과, 생성형 AI 도입 비중이 2023~2024년 34%에서 2025년 77%로 늘었습니다. 보고서 작성, 민원 대응에 AI를 쓰는 기관이 두 배 이상 늘어난 셈입니다." },
+  b1Stats: {
+    type: ControlType.Array,
+    title: "Block1 Stats",
+    control: {
+      type: ControlType.Object,
+      controls: {
+        num: { type: ControlType.String, title: "Number" },
+        label: { type: ControlType.String, title: "Label" },
+      },
+    },
+  },
+  b1Source: { type: ControlType.String, title: "Block1 Source", defaultValue: "출처. 국가정보원 「국가·공공기관 AI보안 가이드북」 (2025.12)" },
+  b2Label: { type: ControlType.String, title: "Block2 Label", defaultValue: "평가 · 가점" },
+  b2Headline: { type: ControlType.String, title: "Block2 Headline", defaultValue: "2026년 경영평가, AI 활용 가점 신설" },
+  b2Body: { type: ControlType.String, title: "Block2 Body", displayTextArea: true, defaultValue: "2026년 공공기관 경영평가편람(기재부)과 지방공기업 경영평가편람(행안부)에 AI 활용 가점이 신설되었습니다. 단순 도입 여부가 아닌 정보보안 가이드라인·개인정보보호·데이터 거버넌스 기준을 충족하는 도입만 가점으로 인정되며, 이는 N²SF 모델 2가 요구하는 보안 요건과 직접 연결됩니다." },
+  b2Kpi: {
+    type: ControlType.Array,
+    title: "Block2 KPI",
+    control: {
+      type: ControlType.Object,
+      controls: {
+        label: { type: ControlType.String, title: "Label" },
+        value: { type: ControlType.String, title: "Value" },
+      },
+    },
+  },
+  b2Source: { type: ControlType.String, title: "Block2 Source", defaultValue: "출처. 기획재정부 「2026년도 공공기관 경영평가편람」 · 행정안전부 「2026년도 지방공기업 경영평가편람」 (2026.1)" },
+  csKicker: { type: ControlType.String, title: "CS Kicker", defaultValue: "CASE STUDIES" },
+  csHeadline: { type: ControlType.String, title: "CS Headline", displayTextArea: true, defaultValue: "AI 도입은 이미 시작됐습니다.\n우리 기관만 늦은 건 아닐까요?" },
+  csDescription: { type: ControlType.String, title: "CS Description", displayTextArea: true, defaultValue: "광역 지자체 17곳 전부, 국가기관의 81.3%가 이미 AI 도입을 마쳤습니다. 같은 환경의 기관들이 어떤 업무에 어떻게 적용했는지 먼저 보시고, 다음 단계를 결정해 보세요." },
+  newsCards: {
+    type: ControlType.Array,
+    title: "News Cards",
+    control: {
+      type: ControlType.Object,
+      controls: {
+        tag: { type: ControlType.String, title: "Tag" },
+        year: { type: ControlType.String, title: "Year" },
+        title: { type: ControlType.String, title: "Title" },
+        body: { type: ControlType.String, title: "Body" },
+        source: { type: ControlType.String, title: "Source" },
+      },
+    },
+  },
+  mcTitle: { type: ControlType.String, title: "Chart Title", defaultValue: "기관별 도입 현황 (~24년 누적)" },
+  mcSub: { type: ControlType.String, title: "Chart Sub", defaultValue: "도입률 + 계약 건수·금액으로 본 공공부문 AI 활용 현황" },
+  mcRows: {
+    type: ControlType.Array,
+    title: "Chart Rows",
+    control: {
+      type: ControlType.Object,
+      controls: {
+        label: { type: ControlType.String, title: "Label" },
+        sub: { type: ControlType.String, title: "Sub" },
+        pct: { type: ControlType.Number, title: "%", min: 0, max: 100 },
+        total: { type: ControlType.String, title: "Total" },
+        meta: { type: ControlType.String, title: "Meta" },
+      },
+    },
+  },
+  mcSource: { type: ControlType.String, title: "Chart Source", defaultValue: "출처. 한국지능정보사회진흥원(NIA) 「2024 공공부문 AI 도입 현황 조사」" },
+})
+
+const CSS = `
+:root{
+  --p1-primary:#2B155B;--p1-primary-soft:#3D2378;--p1-primary-deep:#0E0B1A;
+  --p1-cyan:#00D9F5;--p1-ink:#0E0B1A;--p1-ink-2:#444151;--p1-ink-3:#6B6878;
+  --p1-bg:#FFFFFF;--p1-bg-soft:#F8F7FA;--p1-bg-tint:#F0EBFB;
+  --p1-line:#E8E6EE;--p1-radius-md:12px;--p1-radius-lg:16px;--p1-radius-sm:8px;
+  --p1-shadow-md:0 4px 6px rgba(14,11,26,.04),0 12px 32px rgba(14,11,26,.08);
+  --p1-fs-body:16px;--p1-fs-lead:18px;--p1-fs-card:15px;--p1-fs-meta:13px;--p1-fs-micro:11px;
+}
+.p1-root{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:var(--p1-bg);color:var(--p1-ink);line-height:1.6;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+.p1-root *{box-sizing:border-box;margin:0;padding:0}
+.p1-container{max-width:1160px;margin:0 auto;padding:0 24px}
+.p1-container-sm{max-width:880px;margin:0 auto;padding:0 24px}
+.p1-accent{color:var(--p1-primary)}
+
+/* HERO */
+.p1-hero{padding:120px 0 100px;background:linear-gradient(180deg,#FBFAFE 0%,#FFFFFF 100%);text-align:center}
+.p1-kicker{display:inline-block;padding:6px 14px;border-radius:999px;background:#EFEAFD;color:var(--p1-primary);font-size:13px;font-weight:600;margin-bottom:28px}
+.p1-h1{font-size:clamp(36px,5vw,60px);font-weight:700;letter-spacing:-.025em;line-height:1.2;color:var(--p1-ink);margin-bottom:24px}
+.p1-hero-sub{font-size:var(--p1-fs-lead);color:var(--p1-ink-2);max-width:680px;margin:0 auto 40px;line-height:1.7}
+.p1-cta-primary{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;border-radius:999px;background:var(--p1-primary);color:#fff;font-weight:600;font-size:16px;text-decoration:none;box-shadow:var(--p1-shadow-md);transition:transform .2s,background .2s}
+.p1-cta-primary:hover{background:var(--p1-primary-soft);transform:translateY(-2px)}
+.p1-cta-primary::after{content:"→";font-weight:400}
+
+/* LOGO BAND */
+.p1-logo-band{padding:48px 0;border-top:1px solid var(--p1-line);border-bottom:1px solid var(--p1-line);background:#fff;overflow:hidden}
+.p1-logo-band-title{text-align:center;font-size:13px;color:var(--p1-ink-3);font-weight:500;margin-bottom:28px;letter-spacing:.02em}
+.p1-logo-marquee{display:flex;gap:72px;animation:p1Scroll 50s linear infinite;width:max-content;align-items:center}
+.p1-logo-marquee:hover{animation-play-state:paused}
+.p1-logo-item{display:inline-flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0}
+.p1-logo-item img{height:56px;width:auto;object-fit:contain;opacity:.85;transition:opacity .3s}
+.p1-logo-item:hover img{opacity:1}
+.p1-logo-name{font-size:12px;color:var(--p1-ink-3);font-weight:500;white-space:nowrap;letter-spacing:-.01em}
+@keyframes p1Scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTION BASE */
+.p1-s{padding:120px 0}
+.p1-sh-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:var(--p1-ink);color:#fff;font-size:12px;font-weight:600;letter-spacing:.04em;margin-bottom:28px;text-transform:uppercase}
+.p1-sh-kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--p1-cyan)}
+.p1-sh-big{font-size:clamp(32px,4.4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1.12;color:var(--p1-ink);margin-bottom:28px;max-width:920px}
+.p1-section-lead{font-size:var(--p1-fs-lead);color:var(--p1-ink-2);line-height:1.8;max-width:680px;margin-bottom:64px}
+
+/* S1 STACK */
+.p1-s1-stack{display:flex;flex-direction:column;margin-top:48px}
+.p1-s1-block{display:grid;grid-template-columns:1fr 1fr;gap:64px;padding:48px 0;align-items:center}
+.p1-s1-block:first-child{padding-top:0}
+.p1-s1-block:last-child{padding-bottom:0}
+.p1-s1-block + .p1-s1-block{border-top:1px solid var(--p1-line)}
+.p1-label{font-size:12px;font-weight:700;color:var(--p1-primary);letter-spacing:.08em;margin-bottom:14px;text-transform:uppercase}
+.p1-s1-text h3{font-size:clamp(22px,2.4vw,30px);font-weight:700;color:var(--p1-ink);margin-bottom:18px;letter-spacing:-.02em;line-height:1.35}
+.p1-s1-text h3 strong{color:var(--p1-primary);font-weight:800}
+.p1-s1-text p{color:var(--p1-ink-2);font-size:var(--p1-fs-body);line-height:1.85}
+.p1-s1-text p strong{color:var(--p1-ink);font-weight:700}
+.p1-s1-visual{display:flex;flex-direction:column;gap:16px}
+.p1-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.p1-stat-card{padding:22px 18px;background:var(--p1-bg);border:1px solid var(--p1-line);border-radius:12px;box-shadow:0 1px 2px rgba(14,11,26,.04)}
+.p1-stat-num{font-size:32px;font-weight:700;color:var(--p1-primary);letter-spacing:-.02em;margin-bottom:6px}
+.p1-stat-label{font-size:13px;color:var(--p1-ink-3);line-height:1.5}
+.p1-stats-source{font-size:var(--p1-fs-micro);color:var(--p1-ink-3);margin-top:14px;font-weight:500}
+
+/* EVAL KPI */
+.p1-eval-kpi{padding:24px 28px;background:linear-gradient(135deg,#F8F5FF 0%,#F0EBFB 100%);border:1px solid #E0D5F2;border-radius:14px;box-shadow:0 4px 16px rgba(43,21,91,.06)}
+.p1-eval-kpi-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid rgba(43,21,91,.10)}
+.p1-eval-kpi-row:first-child{padding-top:0}
+.p1-eval-kpi-row:last-of-type{border-bottom:0;padding-bottom:14px}
+.p1-eval-kpi-label{font-size:var(--p1-fs-micro);font-weight:700;color:var(--p1-primary);letter-spacing:.08em;text-transform:uppercase;flex-shrink:0}
+.p1-eval-kpi-value{font-size:16px;font-weight:700;color:var(--p1-ink);text-align:right;letter-spacing:-.01em;line-height:1.4}
+.p1-eval-kpi-source{margin-top:14px;padding-top:14px;border-top:1px solid rgba(43,21,91,.10);font-size:var(--p1-fs-micro);color:var(--p1-ink-3);line-height:1.6}
+
+/* NEWS SECTION */
+.p1-news-section{padding:120px 0;background:var(--p1-bg)}
+.p1-news-section .p1-sh-big{margin-bottom:24px}
+.p1-news-lead{margin-bottom:48px;max-width:760px}
+.p1-news-marquee-wrap{overflow:hidden;position:relative;mask-image:linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%)}
+.p1-news-marquee{display:flex;gap:18px;animation:p1NewsScroll 60s linear infinite;width:max-content;align-items:stretch}
+.p1-news-marquee:hover{animation-play-state:paused}
+@keyframes p1NewsScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.p1-news-card{flex-shrink:0;width:320px;padding:22px;border:1px solid var(--p1-line);border-radius:var(--p1-radius-md);background:var(--p1-bg-soft);color:inherit;display:flex;flex-direction:column;gap:10px;position:relative}
+.p1-news-card::before{content:"";position:absolute;top:18px;right:18px;width:18px;height:18px;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B6878' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2'/><path d='M18 14h-8'/><path d='M15 18h-5'/><path d='M10 6h8v4h-8V6z'/></svg>");background-repeat:no-repeat;background-size:contain;opacity:.7}
+.p1-news-meta{display:flex;gap:8px;font-size:12px;color:var(--p1-ink-3);align-items:center}
+.p1-news-tag{padding:2px 8px;border-radius:4px;background:#EFEAFD;color:var(--p1-primary);font-weight:600}
+.p1-news-card h4{font-size:15px;font-weight:700;color:var(--p1-ink);line-height:1.5;padding-right:24px}
+.p1-news-card p{font-size:13px;color:var(--p1-ink-2);line-height:1.6;flex:1}
+.p1-news-src{font-size:11px;color:var(--p1-ink-3);margin-top:auto;display:flex;align-items:center;gap:6px}
+
+/* MARKET CHART */
+.p1-market-chart-wrap{margin-top:56px;margin-bottom:56px}
+.p1-market-chart{margin:0;padding:28px 32px;background:#fff;border:1px solid var(--p1-line);border-radius:14px;box-shadow:0 1px 2px rgba(14,11,26,.04)}
+.p1-mc-title{font-size:16px;font-weight:700;color:var(--p1-ink);letter-spacing:-.01em;margin-bottom:4px}
+.p1-mc-sub{font-size:13px;color:var(--p1-ink-3);margin-bottom:24px;line-height:1.6}
+.p1-mc-rows{display:flex;flex-direction:column;gap:0}
+.p1-mc-row{display:grid;grid-template-columns:120px 1fr 70px 140px;gap:18px;align-items:center;padding:18px 0;border-bottom:1px solid var(--p1-line)}
+.p1-mc-row:last-child{border-bottom:0}
+.p1-mc-row-label{font-size:14px;font-weight:600;color:var(--p1-ink);line-height:1.3}
+.p1-mc-row-label-sub{display:block;font-size:var(--p1-fs-micro);color:var(--p1-ink-3);font-weight:500;margin-top:3px;letter-spacing:.02em}
+.p1-mc-bar-track{position:relative;height:22px;background:#F3F1F8;border-radius:6px;overflow:hidden}
+.p1-mc-bar-done{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,var(--p1-primary) 0%,#4B2D8A 100%);border-radius:6px;transition:width .8s ease}
+.p1-mc-bar-total{font-size:15px;font-weight:800;color:var(--p1-primary);text-align:right;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.p1-mc-row-meta{font-size:var(--p1-fs-meta);color:var(--p1-ink-3);text-align:right;line-height:1.5;font-variant-numeric:tabular-nums}
+.p1-mc-row-meta strong{display:block;color:var(--p1-ink);font-weight:700;font-size:13px}
+.p1-mc-source{margin-top:14px;padding:0 4px;font-size:var(--p1-fs-micro);color:var(--p1-ink-3);text-align:right}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .p1-s{padding:80px 0}
+  .p1-hero{padding:80px 0 60px}
+  .p1-s1-block{grid-template-columns:1fr;gap:28px;padding:32px 0}
+  .p1-stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .p1-stat-card{padding:16px 12px}
+  .p1-news-section{padding:80px 0}
+}
+@media(max-width:768px){
+  .p1-sh-big{font-size:clamp(28px,7vw,38px);letter-spacing:-.025em}
+  .p1-sh-kicker{font-size:11px;padding:6px 12px;margin-bottom:20px}
+  .p1-sh-big br{display:none}
+  .p1-mc-row{grid-template-columns:90px 1fr 50px;gap:10px}
+  .p1-mc-row-meta{display:none}
+  .p1-mc-row-label{font-size:12px}
+  .p1-mc-bar-track{height:18px}
+  .p1-market-chart{padding:20px 18px}
+}
+@media(max-width:600px){
+  .p1-container{padding:0 16px}
+  .p1-hero{padding:64px 0 48px}
+  .p1-h1{margin-bottom:18px}
+  .p1-hero-sub{font-size:15px;margin-bottom:28px}
+  .p1-cta-primary{padding:14px 24px;font-size:15px}
+  .p1-news-card{width:280px}
+  .p1-section-lead{font-size:15px;margin-bottom:40px}
+}
+`
