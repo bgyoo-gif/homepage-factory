@@ -210,28 +210,6 @@ export default function N2sfPart3({
         </div>
       </section>
 
-      {/* RESOURCES */}
-      <section className="p3-s">
-        <div className="p3-container">
-          <div className="p3-sh-wrap-center">
-            <span className="p3-sh-kicker">{resKicker}</span>
-            <h2 className="p3-sh-big p3-center">{accentNl(resHeadline)}</h2>
-          </div>
-          <div className="p3-resource-grid">
-            {_resourceCards.map((r, i) => (
-              <a href={r.link} target="_blank" rel="noopener noreferrer" className="p3-resource-card" key={i}>
-                <div className="p3-resource-num">{r.num}</div>
-                <div className="p3-resource-category">{r.category}</div>
-                <div className="p3-resource-body">
-                  <div className="p3-resource-title">{r.title}</div>
-                  <p className="p3-resource-summary">{r.summary}</p>
-                </div>
-                <div className="p3-resource-arrow">→</div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FORM */}
       <section className="p3-form-section" id="p3-form">
@@ -269,7 +247,7 @@ export default function N2sfPart3({
                 if (hutk) context.hutk = hutk
                 try {
                   const res = await fetch(
-                    "https://api.hsforms.com/submissions/v3/integration/submit/244718287/8aaf14a5-100c-4466-bb93-117fe012c90f",
+                    "https://api-na2.hsforms.com/submissions/v3/integration/submit/244718287/8aaf14a5-100c-4466-bb93-117fe012c90f",
                     {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
@@ -352,11 +330,29 @@ export default function N2sfPart3({
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="p3-footer">
-        <span className="p3-brand-foot">{footerBrand}</span>
-        {footerCopy}
-      </footer>
+      {/* RESOURCES */}
+      <section className="p3-s">
+        <div className="p3-container">
+          <div className="p3-sh-wrap-center">
+            <span className="p3-sh-kicker">{resKicker}</span>
+            <h2 className="p3-sh-big p3-center">{accentNl(resHeadline)}</h2>
+          </div>
+          <div className="p3-resource-grid">
+            {_resourceCards.map((r, i) => (
+              <a href={r.link} target="_blank" rel="noopener noreferrer" className="p3-resource-card" key={i}>
+                <div className="p3-resource-num">{r.num}</div>
+                <div className="p3-resource-category">{r.category}</div>
+                <div className="p3-resource-body">
+                  <div className="p3-resource-title">{r.title}</div>
+                  <p className="p3-resource-summary">{r.summary}</p>
+                </div>
+                <div className="p3-resource-arrow">→</div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* FLOATING CTA */}
       <div className={`p3-float-cta${showFloat ? " p3-float-show" : ""}`}>
