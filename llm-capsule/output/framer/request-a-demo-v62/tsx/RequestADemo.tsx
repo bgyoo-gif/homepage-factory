@@ -527,7 +527,7 @@ export default function RequestPov({
                         }
                         try {
                           const res = await fetch(
-                            "https://api.hsforms.com/submissions/v3/integration/submit/244718287/5156eb97-45fd-468e-91c2-16971c3d0252",
+                            "https://api-na2.hsforms.com/submissions/v3/integration/submit/244718287/5156eb97-45fd-468e-91c2-16971c3d0252",
                             {
                               method: "POST",
                               headers: { "Content-Type": "application/json" },
