@@ -48,6 +48,70 @@ Der Eigenbetrieb eines sLLM erscheint attraktiv — vollständige Datenkontrolle
 <h2>2. Die tatsächlichen Kosten — was Angebote verschweigen</h2>
 <p>Kostendiskussionen über sLLM-Eigenbetrieb beginnen häufig mit dem GPU-Server-Preis und enden dort. Die tatsächlichen Gesamtbetriebskosten (TCO, Total Cost of Ownership) liegen jedoch um ein Vielfaches höher. Auf fünf Jahre gerechnet ergibt sich folgendes Bild.</p>
 
+<figure style="margin: 32px 0;">
+  <svg width="100%" viewBox="0 0 680 540" xmlns="http://www.w3.org/2000/svg">
+    <title>5-Jahres-TCO für sLLM-Eigenbetrieb (32B-Modell, DACH-Marktpreise)</title>
+    <desc>Initiale Aufbaukosten, jährliche Betriebskosten und kumulierter 5-Jahres-TCO für einen 32B-sLLM im Eigenbetrieb</desc>
+
+    <text x="40" y="32" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130">5-Jahres-TCO: sLLM-Eigenbetrieb (32B-Modell, Richtwerte DACH)</text>
+
+    <text x="40" y="68" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#c73e3a">Initiale Aufbaukosten — ca. 400.000 EUR</text>
+
+    <rect x="40" y="80" width="600" height="40" rx="8" fill="#fce9e8" stroke="#ef5350" stroke-width="0.5"/>
+    <rect x="40" y="80" width="450" height="40" rx="8" fill="#ef5350" stroke="#ef5350" stroke-width="0"/>
+    <text x="60" y="100" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#fff">GPU-Server (H100 ×8)</text>
+    <text x="60" y="114" font-family="Inter, sans-serif" font-size="11" fill="#fff">ca. 250.000–300.000 EUR</text>
+
+    <rect x="490" y="80" width="80" height="40" rx="0" fill="#c73e3a" stroke="#c73e3a" stroke-width="0"/>
+    <text x="500" y="100" font-family="Inter, sans-serif" font-size="11" fill="#fff">Infrastruktur</text>
+    <text x="500" y="114" font-family="Inter, sans-serif" font-size="11" fill="#fff">~50.000 EUR</text>
+
+    <rect x="570" y="80" width="70" height="40" rx="0" fill="#c73e3a" stroke="#c73e3a" stroke-width="0" opacity="0.85"/>
+    <text x="580" y="100" font-family="Inter, sans-serif" font-size="11" fill="#fff">Setup-Personal</text>
+    <text x="580" y="114" font-family="Inter, sans-serif" font-size="11" fill="#fff">~50.000 EUR</text>
+
+    <text x="40" y="158" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#b97606">Jährliche Betriebskosten — ca. 200.000 EUR / Jahr</text>
+
+    <rect x="40" y="170" width="600" height="40" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.5"/>
+    <rect x="40" y="170" width="320" height="40" rx="8" fill="#f59e0b" stroke="#f59e0b" stroke-width="0"/>
+    <text x="60" y="190" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#fff">Fachpersonal (MLOps, 2+ Personen)</text>
+    <text x="60" y="204" font-family="Inter, sans-serif" font-size="11" fill="#fff">120.000–150.000 EUR</text>
+
+    <rect x="360" y="170" width="160" height="40" rx="0" fill="#b97606" stroke="#b97606" stroke-width="0"/>
+    <text x="370" y="190" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#fff">Energie &amp; Wartung</text>
+    <text x="370" y="204" font-family="Inter, sans-serif" font-size="11" fill="#fff">25.000–50.000 EUR</text>
+
+    <rect x="520" y="170" width="120" height="40" rx="0" fill="#b97606" stroke="#b97606" stroke-width="0" opacity="0.85"/>
+    <text x="530" y="190" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#fff">SW-Lizenzen</text>
+    <text x="530" y="204" font-family="Inter, sans-serif" font-size="11" fill="#fff">einige Tausend EUR</text>
+
+    <text x="40" y="248" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#3b2fbf">Zusatzkosten — unregelmäßig anfallend</text>
+
+    <rect x="40" y="260" width="290" height="60" rx="8" fill="#eeebfe" stroke="#5b4fe9" stroke-width="0.5"/>
+    <text x="56" y="282" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#3b2fbf">Basismodell-Wechsel</text>
+    <text x="56" y="300" font-family="Inter, sans-serif" font-size="11" fill="#5b4fe9">Fine-Tuning und Infrastruktur-Reoptimierung</text>
+    <text x="56" y="314" font-family="Inter, sans-serif" font-size="11" fill="#5b4fe9">ca. 100.000–150.000 EUR alle 1–2 Jahre</text>
+
+    <rect x="350" y="260" width="290" height="60" rx="8" fill="#eeebfe" stroke="#5b4fe9" stroke-width="0.5"/>
+    <text x="366" y="282" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#3b2fbf">GPU-Erneuerung</text>
+    <text x="366" y="300" font-family="Inter, sans-serif" font-size="11" fill="#5b4fe9">Hardware-Erneuerung alle 3–5 Jahre</text>
+    <text x="366" y="314" font-family="Inter, sans-serif" font-size="11" fill="#5b4fe9">Abschreibung + Neubeschaffung</text>
+
+    <line x1="40" y1="346" x2="640" y2="346" stroke="#e5e7eb" stroke-width="0.5"/>
+
+    <text x="40" y="376" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130">5-Jahres-TCO (Gesamtschätzung)</text>
+
+    <rect x="40" y="394" width="600" height="68" rx="8" fill="#fce9e8" stroke="#ef5350" stroke-width="0.5"/>
+    <text x="60" y="420" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#c73e3a">ca. 1,4 Mio. EUR (konservativ) bis ca. 1,9 Mio. EUR</text>
+    <text x="60" y="440" font-family="Inter, sans-serif" font-size="12" fill="#ef5350">Aufbau 400k + (Betrieb 200k × 5 Jahre) + Modellwechsel 100–300k</text>
+    <text x="60" y="456" font-family="Inter, sans-serif" font-size="12" fill="#ef5350">+ variable GPU-Erneuerungskosten</text>
+
+    <text x="40" y="494" font-family="Inter, sans-serif" font-size="13" fill="#3a3d5e">Vergleich: 5-Jahres-TCO beim Gateway-Ansatz typischerweise 400.000–600.000 EUR</text>
+    <text x="40" y="516" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">※ Richtwerte auf Basis allgemeiner Marktpreise (DACH). Tatsächliche Kosten abhängig von Unternehmensgröße und Vertragskonditionen.</text>
+  </svg>
+  <figcaption style="text-align: center; font-size: 13px; color: #6b7280; margin-top: 8px;">Abbildung 1. 5-Jahres-TCO-Struktur für sLLM-Eigenbetrieb (32B-Modell)</figcaption>
+</figure>
+
 <h3>2.1 Die versteckten Initialkosten</h3>
 <p>Die häufige Annahme, dass „GPU-Server für 250.000–300.000 EUR" die gesamten Aufbaukosten abdecken, ist ein typischer Planungsfehler. Tatsächlich sind darüber hinaus erforderlich:</p>
 <ul>
@@ -76,8 +140,118 @@ Der Eigenbetrieb eines sLLM erscheint attraktiv — vollständige Datenkontrolle
 </ul>
 <p>Dieser Zyklus wiederholt sich alle ein bis zwei Jahre und verursacht jeweils Kosten von 100.000–150.000 EUR. Über fünf Jahre sind mindestens zwei Wechselzyklen zu kalkulieren.</p>
 
+<div class="callout">
+  <div class="callout__icon">💡</div>
+  <div class="callout__body"><strong>TCO im Vergleich:</strong> Der 5-Jahres-TCO für sLLM-Eigenbetrieb liegt konservativ bei rund 1,4 Mio. EUR. Beim Gateway-Ansatz mit externen kommerziellen LLMs liegt der vergleichbare TCO typischerweise bei 400.000–600.000 EUR. <strong>Der Kostenfaktor beträgt damit rund das Dreifache.</strong></div>
+</div>
+
 <h2>3. Die Leistungslücke — warum sie sich nicht schließt</h2>
 <p>Angenommen, die Kosten sind tragbar. Die nächste Frage lautet: Welche Leistung wird dafür erbracht? Hier zeigt sich das zweite strukturelle Problem des sLLM-Eigenbetriebs.</p>
+
+<figure style="margin: 32px 0;">
+  <svg width="100%" viewBox="0 0 720 600" xmlns="http://www.w3.org/2000/svg">
+    <title>Kommerzielle Top-LLMs vs. selbst betriebene sLLMs (7–8B) — wachsende Leistungslücke</title>
+    <desc>MMLU-Pro-Benchmark: Leistungslücke zwischen kommerziellen Top-LLMs und 7–8B-sLLMs wächst von 36 Punkten (2024 H1) auf prognostizierte 46+ Punkte (2028)</desc>
+
+    <text x="40" y="32" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130">Kommerzielle Top-LLMs vs. sLLM-Eigenbetrieb (7–8B) — wachsende Leistungslücke</text>
+
+    <text x="55" y="80" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">MMLU-Pro</text>
+    <text x="55" y="120" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">100</text>
+    <text x="55" y="160" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">90</text>
+    <text x="55" y="200" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">80</text>
+    <text x="55" y="240" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">70</text>
+    <text x="55" y="280" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">60</text>
+    <text x="55" y="320" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">50</text>
+    <text x="55" y="360" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">40</text>
+    <text x="55" y="400" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">30</text>
+
+    <line x1="60" y1="120" x2="700" y2="120" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="60" y1="160" x2="700" y2="160" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="60" y1="200" x2="700" y2="200" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="60" y1="240" x2="700" y2="240" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="60" y1="280" x2="700" y2="280" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="60" y1="320" x2="700" y2="320" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="60" y1="360" x2="700" y2="360" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="60" y1="400" x2="700" y2="400" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+    <line x1="60" y1="420" x2="700" y2="420" stroke="#3a3d5e" stroke-width="1"/>
+    <line x1="60" y1="80" x2="60" y2="420" stroke="#3a3d5e" stroke-width="1"/>
+
+    <rect x="450" y="80" width="250" height="340" fill="#f7f8fb" fill-opacity="0.6"/>
+    <text x="575" y="100" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">Trendbasierte Prognose</text>
+
+    <text x="100" y="440" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="middle">2024 H1</text>
+    <text x="200" y="440" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="middle">2024 H2</text>
+    <text x="300" y="440" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="middle">2025 H1</text>
+    <text x="400" y="440" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="middle">2025 H2</text>
+    <text x="500" y="440" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="middle">2026</text>
+    <text x="600" y="440" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="middle">2027</text>
+    <text x="680" y="440" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="middle">2028</text>
+
+    <path d="M 100 248 L 200 200 L 300 140 L 400 128" fill="none" stroke="#5b4fe9" stroke-width="2.5"/>
+    <circle cx="100" cy="248" r="5" fill="#5b4fe9"/>
+    <circle cx="200" cy="200" r="5" fill="#5b4fe9"/>
+    <circle cx="300" cy="140" r="5" fill="#5b4fe9"/>
+    <circle cx="400" cy="128" r="5" fill="#5b4fe9"/>
+
+    <path d="M 400 128 L 500 112 L 600 104 L 680 100" fill="none" stroke="#5b4fe9" stroke-width="2.5" stroke-dasharray="5 4"/>
+    <circle cx="500" cy="112" r="5" fill="#5b4fe9" fill-opacity="0.4" stroke="#5b4fe9" stroke-width="1.5"/>
+    <circle cx="600" cy="104" r="5" fill="#5b4fe9" fill-opacity="0.4" stroke="#5b4fe9" stroke-width="1.5"/>
+    <circle cx="680" cy="100" r="5" fill="#5b4fe9" fill-opacity="0.4" stroke="#5b4fe9" stroke-width="1.5"/>
+
+    <text x="100" y="236" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#3b2fbf" text-anchor="middle">68</text>
+    <text x="200" y="188" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#3b2fbf" text-anchor="middle">76</text>
+    <text x="300" y="128" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#3b2fbf" text-anchor="middle">~85</text>
+    <text x="400" y="116" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#3b2fbf" text-anchor="middle">~88</text>
+    <text x="500" y="100" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#3b2fbf" text-anchor="middle">~92</text>
+    <text x="600" y="92" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#3b2fbf" text-anchor="middle">~94</text>
+    <text x="680" y="88" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#3b2fbf" text-anchor="middle">~95</text>
+
+    <path d="M 100 392 L 200 364 L 300 340 L 400 332" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+    <circle cx="100" cy="392" r="5" fill="#f59e0b"/>
+    <circle cx="200" cy="364" r="5" fill="#f59e0b"/>
+    <circle cx="300" cy="340" r="5" fill="#f59e0b"/>
+    <circle cx="400" cy="332" r="5" fill="#f59e0b"/>
+
+    <path d="M 400 332 L 500 328 L 600 328 L 680 324" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="5 4"/>
+    <circle cx="500" cy="328" r="5" fill="#f59e0b" fill-opacity="0.4" stroke="#f59e0b" stroke-width="1.5"/>
+    <circle cx="600" cy="328" r="5" fill="#f59e0b" fill-opacity="0.4" stroke="#f59e0b" stroke-width="1.5"/>
+    <circle cx="680" cy="324" r="5" fill="#f59e0b" fill-opacity="0.4" stroke="#f59e0b" stroke-width="1.5"/>
+
+    <text x="100" y="384" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606" text-anchor="middle">32</text>
+    <text x="200" y="356" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606" text-anchor="middle">39</text>
+    <text x="300" y="332" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606" text-anchor="middle">~45</text>
+    <text x="400" y="324" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606" text-anchor="middle">~47</text>
+    <text x="500" y="320" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606" text-anchor="middle">~48</text>
+    <text x="600" y="320" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606" text-anchor="middle">~48</text>
+    <text x="680" y="316" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606" text-anchor="middle">~49</text>
+
+    <line x1="100" y1="248" x2="100" y2="392" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <rect x="65" y="309" width="50" height="22" rx="11" fill="#fce9e8" stroke="#ef5350" stroke-width="0.5"/>
+    <text x="90" y="324" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#c73e3a" text-anchor="middle">36 Pkt.</text>
+
+    <line x1="400" y1="128" x2="400" y2="332" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <rect x="408" y="219" width="50" height="22" rx="11" fill="#fce9e8" stroke="#ef5350" stroke-width="0.5"/>
+    <text x="433" y="234" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#c73e3a" text-anchor="middle">41 Pkt.</text>
+
+    <line x1="680" y1="100" x2="680" y2="324" stroke="#c73e3a" stroke-width="2" stroke-dasharray="2 2"/>
+    <rect x="645" y="205" width="60" height="22" rx="11" fill="#c73e3a" stroke="#c73e3a" stroke-width="0.5"/>
+    <text x="675" y="220" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#fff" text-anchor="middle">46+ Pkt.</text>
+
+    <rect x="100" y="468" width="14" height="14" rx="2" fill="#5b4fe9"/>
+    <text x="122" y="480" font-family="Inter, sans-serif" font-size="12" fill="#0f1130">Kommerzielle Top-LLMs (GPT-4o → GPT-5, Claude 3.5/4 Sonnet u. a.)</text>
+
+    <rect x="100" y="492" width="14" height="14" rx="2" fill="#f59e0b"/>
+    <text x="122" y="504" font-family="Inter, sans-serif" font-size="12" fill="#0f1130">sLLM-Eigenbetrieb, unteres Segment 7–8B (Llama 3/3.1/3.3 8B, Qwen 2.5 7B)</text>
+
+    <line x1="100" y1="522" x2="120" y2="522" stroke="#5b4fe9" stroke-width="2.5" stroke-dasharray="5 4"/>
+    <text x="125" y="526" font-family="Inter, sans-serif" font-size="11" fill="#6b7280">Gestrichelte Linie = trendbasierte Prognose für die nächsten 3 Jahre</text>
+
+    <text x="60" y="554" font-family="Inter, sans-serif" font-size="11" fill="#6b7280">※ Lücke wächst klar: 36 Pkt. → 41 Pkt. → 46+ Pkt. 7–8B-Modelle nähern sich durch Größenbeschränkung einer Sättigungsgrenze.</text>
+    <text x="60" y="572" font-family="Inter, sans-serif" font-size="11" fill="#6b7280">※ Inference-Time-Scaling (o1/extended thinking) beschleunigt den Anstieg kommerzieller Modelle. Werte ab 2026 sind Schätzungen.</text>
+  </svg>
+  <figcaption style="text-align: center; font-size: 13px; color: #6b7280; margin-top: 8px;">Abbildung 2. MMLU-Pro-Benchmark: Die Leistungslücke wächst kontinuierlich</figcaption>
+</figure>
 
 <h3>3.1 Warum sich die Lücke vergrößert statt zu schließen</h3>
 <p>Viele Evaluierungsberichte für sLLM-Eigenbetrieb heben hervor, dass sich Open-Source-Modelle schnell verbessern. In absoluten Punktzahlen stimmt das. Der MMLU-Pro-Score von Llama 3 8B stieg von etwa 32 Punkten auf rund 47 Punkte mit Llama 3.3 8B und Qwen 2.5 7B — ein Zuwachs von 15 Punkten in eineinhalb Jahren.</p>
@@ -146,6 +320,21 @@ Der Eigenbetrieb eines sLLM erscheint attraktiv — vollständige Datenkontrolle
 <h2>7. Entscheidungs-Checkliste für sLLM-Eigenbetrieb</h2>
 <p>Wenn Sie den sLLM-Eigenbetrieb ernsthaft erwägen, beantworten Sie bitte die folgenden Fragen. Überwiegen die Ja-Antworten, ist Eigenbetrieb eine rational begründete Option. Sind viele Fragen offen oder mit Nein zu beantworten, sollten Alternativen systematisch geprüft werden.</p>
 
+<div class="takeaways">
+  <div class="takeaways__label">Eignungs-Checkliste: sLLM-Eigenbetrieb</div>
+  <ul>
+    <li>Ist ein Budget von mindestens 1,4 Mio. EUR TCO über fünf Jahre genehmigt und tragbar?</li>
+    <li>Können mindestens zwei dedizierte KI/MLOps-Stellen dauerhaft besetzt werden?</li>
+    <li>Wurde in einem PoC nachgewiesen, dass der sLLM in der eigenen Domäne ausreichend performt?</li>
+    <li>Ist der Aufwand für Modellwechsel alle ein bis zwei Jahre organisatorisch und finanziell plan- und tragbar?</li>
+    <li>Ist die Nutzung externer KI-Dienste durch Regulierung, Gesetz oder bindende interne Richtlinie ausgeschlossen?</li>
+    <li>Ist das KI-Modell selbst ein langfristiges strategisches Asset der Organisation?</li>
+    <li>Wurden Alternativen (Gateway-Ansatz, LLM Capsule, DLP-Ebene) objektiv verglichen?</li>
+  </ul>
+</div>
+
+<p>sLLM-Eigenbetrieb ist keine leichte Entscheidung. Sie binden damit erhebliche Ressourcen für fünf und mehr Jahre. Eine sorgfältige Prüfung, die alle Kostendimensionen, die Leistungsrealität und die Betriebslast berücksichtigt, ist die Mindestanforderung, bevor eine solche Verpflichtung eingegangen wird.</p>
+
 <h2>Häufig gestellte Fragen</h2>
 
 <h3>Reduzieren kleinere Modelle (7B) die Kosten wesentlich?</h3>
@@ -159,6 +348,16 @@ Der Eigenbetrieb eines sLLM erscheint attraktiv — vollständige Datenkontrolle
 
 <h3>Welches Basismodell sollte für den Eigenbetrieb gewählt werden?</h3>
 <p>Aktuell sind Llama-Modelle (Meta), Qwen-Modelle (Alibaba) und für deutschsprachige Anwendungen optimierte Varianten die gängigen Optionen. Die Wahl hängt von Lizenzbedingungen, Leistung auf der eigenen Domäne, Community-Support und konkreten Anwendungsszenarien ab. Unabhängig von der Wahl gilt: In ein bis zwei Jahren wird es bessere Modelle geben. Der Aufwand für den Wechsel muss von Anfang an eingeplant werden.</p>
+
+<h2>Quellen und weiterführende Literatur</h2>
+<ul>
+  <li>Wang et al., "MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark", 2024</li>
+  <li>Hugging Face Open LLM Leaderboard, MMLU-Pro-Benchmark (huggingface.co/spaces/open-llm-leaderboard)</li>
+  <li>Kaplan et al., "Scaling Laws for Neural Language Models", 2020</li>
+  <li>Hoffmann et al., "Training Compute-Optimal Large Language Models" (Chinchilla), 2022</li>
+  <li>Bundesamt für Sicherheit in der Informationstechnik (BSI), C5-Anforderungskatalog (Cloud Computing Compliance Criteria Catalogue), aktuelle Fassung</li>
+  <li>Europäische Kommission, Verordnung (EU) 2024/1689 — EU AI Act, 2024</li>
+</ul>
 
 ## Section 04: Related Articles
 
