@@ -4,7 +4,6 @@
 //
 // Self-contained Framer Code Component with locale dropdown (en/ko/de).
 // Set `locale` in Framer Properties panel to switch all text simultaneously.
-// No external imports — LearnArticle logic inlined for Framer cross-folder compatibility.
 
 import { addPropertyControls, ControlType } from "framer"
 
@@ -372,342 +371,72 @@ const BODY_HTML = `<!-- bodyHtml — LearnArticle.tsx의 bodyHtml Props에 그�
 
 const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"7B 정도의 더 작은 모델로 시작하면 비용이 크게 줄지 않나요?","acceptedAnswer":{"@type":"Answer","text":"GPU 인프라 측면에서는 줄어들 수 있습니다. H100 8장 대신 1~2장으로도 7B 모델 운영이 가능합니다. 다만 운영 인력·전력·교체 부담 같은 비-GPU 비용은 거의 동일하게 발생하며, 7B 모델의 성능 격차는 더 큽니다."}}, {"@type":"Question","name":"sLLM과 게이트웨이 방식을 병행할 수도 있나요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 일부 부서는 sLLM 자체구축으로, 다른 부서는 게이트웨이 방식으로 운영하는 하이브리드 구조를 검토할 수 있습니다. 다만 두 시스템의 운영 거버넌스를 동시에 가져가는 부담이 있습니다."}}, {"@type":"Question","name":"오픈소스 모델 성능이 곧 상용 모델을 따라잡지 않을까요?","acceptedAnswer":{"@type":"Answer","text":"특정 벤치마크에서 일시적으로 좁혀지는 경우는 있지만, 종합 성능과 복잡한 추론·긴 문맥 처리에서는 격차가 여전히 큽니다. 다음 세대 모델이 나오면 격차가 다시 벌어지는 패턴이 반복됩니다."}}, {"@type":"Question","name":"자체구축 시 어떤 베이스 모델을 선택해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"Llama 계열, Qwen 계열, 한국어 특화 모델(Polyglot-Ko 등)이 주요 선택지입니다. 라이선스 조건·한국어 성능·커뮤니티 지원·활용 시나리오에 따라 달라지며, 1~2년 후 교체 부담을 처음부터 고려해야 합니다."}} ] }`
 
-const BODY_HTML_EN = `<!-- bodyHtml — paste directly into the bodyHtml prop of LearnArticle.tsx -->
-<!-- Standard HTML tags + .callout + .takeaways only (same pattern as existing learn articles) -->
-
-<h2>1. Why self-hosting an sLLM looks attractive</h2>
-<p>First, it is worth acknowledging why so many organisations are drawn to self-hosting an sLLM. The appeal is not without merit.</p>
-
-<h3>1.1 The reassurance of data that never leaves</h3>
-<p>The greatest attraction is <strong>complete data control</strong>. Every prompt and response is processed entirely within the organisation's own infrastructure, making external data leakage structurally impossible. From a security officer's perspective, this is about as clear-cut an answer as you can get. The single statement "our data never leaves the building" resolves every doubt in the room.</p>
-<p>The position is equally straightforward from an N2SF compliance standpoint. Because the "location–subject–object" triad all reside within the organisation's internal network (S-grade), no breach of the information-movement security principle arises. A substantial number of the 21 security threats associated with using external AI services are structurally eliminated.</p>
-
-<h3>1.2 Data sovereignty and asset ownership</h3>
-<p>The second attraction is <strong>data sovereignty</strong>. Rather than entrusting the organisation's data to an external cloud provider or external AI vendor, the organisation can treat that data as a direct asset. A model fine-tuned on proprietary data becomes a core organisational asset, insulated from policy shifts or external dependencies.</p>
-<p>If an organisation's mission is specifically to build a domain-specialist AI model, this goes beyond mere appeal. An organisation whose core value lies in owning a legislation-search AI, for example, would find that a self-hosted model is itself the instrument of mission delivery.</p>
-
-<h3>1.3 The potential for domain specialisation</h3>
-<p>The third attraction is <strong>fine-tuning freedom</strong>. Training a model on proprietary data creates the possibility of generating responses better suited to the organisation's work than a general-purpose model can. Better performance than off-the-shelf ChatGPT on legislation interpretation, citizen enquiry handling, and policy analysis all becomes plausible.</p>
-<p>All three of these attractions are legitimate. The issue is that you need to see clearly what price those attractions carry — and whether they actually materialise in practice.</p>
-
-<h2>2. The real cost — what the catalogue does not show</h2>
-<p>Discussions of sLLM self-hosting costs typically start with "the price of a GPU server" and end there. In reality, the true Total Cost of Ownership (TCO) is several times that figure. Over a five-year operating horizon, the picture looks like this.</p>
-
-<figure style="margin: 32px 0;">
-  <svg width="100%" viewBox="0 0 680 540" xmlns="http://www.w3.org/2000/svg">
-    <title>5-Year Total Cost Structure for sLLM Self-Hosting (32B-class)</title>
-    <desc>Analysis of initial build cost, annual operating cost, and cumulative 5-year TCO for a 32B-class sLLM self-hosting deployment</desc>
-
-    <text x="40" y="32" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130">5-Year Total Cost — sLLM Self-Hosting (32B-class)</text>
-
-    <text x="40" y="68" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#c73e3a">Initial Build Cost — approx. KRW 800 million</text>
-
-    <rect x="40" y="80" width="600" height="40" rx="8" fill="#fce9e8" stroke="#ef5350" stroke-width="0.5"/>
-    <rect x="40" y="80" width="450" height="40" rx="8" fill="#ef5350" stroke="#ef5350" stroke-width="0"/>
-    <text x="60" y="100" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#fff">GPU server (8× H100)</text>
-    <text x="60" y="114" font-family="Inter, sans-serif" font-size="11" fill="#fff">approx. KRW 500–600 million</text>
-
-    <rect x="490" y="80" width="80" height="40" rx="0" fill="#c73e3a" stroke="#c73e3a" stroke-width="0"/>
-    <text x="500" y="100" font-family="Inter, sans-serif" font-size="11" fill="#fff">Supporting infra</text>
-    <text x="500" y="114" font-family="Inter, sans-serif" font-size="11" fill="#fff">KRW 100m</text>
-
-    <rect x="570" y="80" width="70" height="40" rx="0" fill="#c73e3a" stroke="#c73e3a" stroke-width="0" opacity="0.85"/>
-    <text x="580" y="100" font-family="Inter, sans-serif" font-size="11" fill="#fff">Setup labour</text>
-    <text x="580" y="114" font-family="Inter, sans-serif" font-size="11" fill="#fff">KRW 100m</text>
-
-    <text x="40" y="158" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#b97606">Annual Operating Cost — approx. KRW 400 million / yr</text>
-
-    <rect x="40" y="170" width="600" height="40" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="0.5"/>
-    <rect x="40" y="170" width="320" height="40" rx="8" fill="#f59e0b" stroke="#f59e0b" stroke-width="0"/>
-    <text x="60" y="190" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#fff">Specialist staff (MLOps, 2+ FTEs)</text>
-    <text x="60" y="204" font-family="Inter, sans-serif" font-size="11" fill="#fff">KRW 200–300 million</text>
-
-    <rect x="360" y="170" width="160" height="40" rx="0" fill="#b97606" stroke="#b97606" stroke-width="0"/>
-    <text x="370" y="190" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#fff">Power &amp; maintenance</text>
-    <text x="370" y="204" font-family="Inter, sans-serif" font-size="11" fill="#fff">KRW 50–100 million</text>
-
-    <rect x="520" y="170" width="120" height="40" rx="0" fill="#b97606" stroke="#b97606" stroke-width="0" opacity="0.85"/>
-    <text x="530" y="190" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#fff">SW licences</text>
-    <text x="530" y="204" font-family="Inter, sans-serif" font-size="11" fill="#fff">tens of millions</text>
-
-    <text x="40" y="248" font-family="Inter, sans-serif" font-size="13" font-weight="500" fill="#3b2fbf">Additional Costs — recurring irregularly</text>
-
-    <rect x="40" y="260" width="290" height="60" rx="8" fill="#eeebfe" stroke="#5b4fe9" stroke-width="0.5"/>
-    <text x="56" y="282" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#3b2fbf">Base model replacement</text>
-    <text x="56" y="300" font-family="Inter, sans-serif" font-size="11" fill="#5b4fe9">Re-fine-tuning &amp; infra re-optimisation</text>
-    <text x="56" y="314" font-family="Inter, sans-serif" font-size="11" fill="#5b4fe9">approx. KRW 200–300m every 1–2 years</text>
-
-    <rect x="350" y="260" width="290" height="60" rx="8" fill="#eeebfe" stroke="#5b4fe9" stroke-width="0.5"/>
-    <text x="366" y="282" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#3b2fbf">GPU upgrade</text>
-    <text x="366" y="300" font-family="Inter, sans-serif" font-size="11" fill="#5b4fe9">Hardware refresh every 3–5 years</text>
-    <text x="366" y="314" font-family="Inter, sans-serif" font-size="11" fill="#5b4fe9">Depreciation + new procurement cost</text>
-
-    <line x1="40" y1="346" x2="640" y2="346" stroke="#e5e7eb" stroke-width="0.5"/>
-
-    <text x="40" y="376" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130">Estimated 5-Year Cumulative TCO</text>
-
-    <rect x="40" y="394" width="600" height="68" rx="8" fill="#fce9e8" stroke="#ef5350" stroke-width="0.5"/>
-    <text x="60" y="420" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#c73e3a">approx. KRW 2.8 billion (min) — KRW 3.8 billion (max)</text>
-    <text x="60" y="440" font-family="Inter, sans-serif" font-size="12" fill="#ef5350">Initial KRW 800m + (annual opex KRW 400m × 5 yrs) + base model replacement KRW 200–600m</text>
-    <text x="60" y="456" font-family="Inter, sans-serif" font-size="12" fill="#ef5350">+ variable GPU upgrade costs</text>
-
-    <text x="40" y="494" font-family="Inter, sans-serif" font-size="13" fill="#3a3d5e">Comparison: gateway-approach 5-year TCO is typically KRW 800 million – 1.2 billion</text>
-    <text x="40" y="516" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">※ Figures are estimates based on general market quotations; actual costs vary by organisation environment and contract terms.</text>
-  </svg>
-  <figcaption style="text-align: center; font-size: 13px; color: #6b7280; margin-top: 8px;">Figure 1. 5-year total cost structure for sLLM self-hosting</figcaption>
-</figure>
-
-<h3>2.1 The trap in the initial build cost</h3>
-<p>Assuming "KRW 500–600 million for a GPU server" covers the entire initial outlay is a common misconception. In practice, beyond the GPUs you also need the following.</p>
-<ul>
-  <li><strong>Network and storage infrastructure</strong>: high-bandwidth network switches, NVMe storage, and backup systems</li>
-  <li><strong>Power and cooling facilities</strong>: 8× H100 GPUs consume upwards of 5 kW; data-centre environment assessments and upgrades are frequently required</li>
-  <li><strong>Security infrastructure</strong>: model protection, access controls, and audit-log systems</li>
-  <li><strong>Initial setup labour</strong>: the cost of dedicated staff for the first three to six months covering model selection, fine-tuning, and infrastructure build-out</li>
-</ul>
-
-<h3>2.2 The true nature of annual operating costs — people</h3>
-<p>The real cost of sLLM self-hosting is not GPUs — it is <strong>people</strong>. Running a model requires the following roles.</p>
-<ul>
-  <li>MLOps engineers: model deployment, operations, and monitoring</li>
-  <li>AI engineers: fine-tuning, performance improvement, and evaluation of new models</li>
-  <li>Infrastructure engineers: GPU server management and incident response</li>
-</ul>
-<p>At minimum two, and typically three to four, specialist staff are required. For public-sector organisations, securing this talent is not simply a matter of salary budget. Recruiting and retaining people in a field with explosive market demand, within the constraints of public-sector pay scales, is itself a significant challenge. Choosing to outsource operations only drives costs higher and creates external knowledge dependencies.</p>
-
-<h3>2.3 The hidden cost — base model replacement</h3>
-<p>The most commonly overlooked cost is the <strong>burden of base model replacement</strong>. The open-source LLM ecosystem evolves extremely rapidly. Every time a new model arrives — from Llama 3 to Llama 4 or another successor — the following cycle repeats.</p>
-<ul>
-  <li>Re-running fine-tuning on the new base model (weeks to months)</li>
-  <li>Reworking infrastructure optimisation</li>
-  <li>Performance comparison and validation</li>
-  <li>Service downtime or the burden of running old and new models in parallel</li>
-</ul>
-<p>This cycle recurs every one to two years, generating costs in the region of KRW 200–300 million each time. Assuming five years of operation, at least two replacement cycles should be expected, and these costs accumulate in the TCO.</p>
-
-<div class="callout">
-  <div class="callout__icon">💡</div>
-  <div class="callout__body"><strong>Total cost comparison</strong> — The 5-year TCO for sLLM self-hosting is conservatively KRW 2.8 billion or more. By contrast, using an external commercial LLM via a gateway approach typically yields a 5-year TCO in the range of KRW 800 million to 1.2 billion. That is <strong>roughly a threefold cost difference</strong>.</div>
-</div>
-
-<h2>3. The nature of the performance gap — why it is not closing</h2>
-<p>Let us assume, for argument's sake, that the cost can be absorbed. The next question is: "What about performance?" This is where the second fundamental problem with sLLM self-hosting comes into view.</p>
-
-<figure style="margin: 32px 0;">
-  <svg width="100%" viewBox="0 0 720 600" xmlns="http://www.w3.org/2000/svg">
-    <title>Top-tier commercial LLMs vs self-hosted sLLM lowest tier (7–8B) — widening gap trend</title>
-    <desc>From 2024 to 2028, the performance gap between top-tier commercial LLMs and 7–8B-class sLLMs widens from 36 points to 46 points on MMLU-Pro</desc>
-
-    <text x="40" y="32" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#0f1130">Top-tier commercial LLMs vs self-hosted sLLM lowest tier (7–8B) — widening gap trend</text>
-
-    <text x="55" y="80" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">MMLU-Pro</text>
-    <text x="55" y="120" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">100</text>
-    <text x="55" y="160" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">90</text>
-    <text x="55" y="200" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">80</text>
-    <text x="55" y="240" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">70</text>
-    <text x="55" y="280" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">60</text>
-    <text x="55" y="320" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">50</text>
-    <text x="55" y="360" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">40</text>
-    <text x="55" y="400" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="end">30</text>
-
-    <line x1="60" y1="120" x2="700" y2="120" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="3 3"/>
-    <line x1="60" y1="160" x2="700" y2="160" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="3 3"/>
-    <line x1="60" y1="200" x2="700" y2="200" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="3 3"/>
-    <line x1="60" y1="240" x2="700" y2="240" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="3 3"/>
-    <line x1="60" y1="280" x2="700" y2="280" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="3 3"/>
-    <line x1="60" y1="320" x2="700" y2="320" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="3 3"/>
-    <line x1="60" y1="360" x2="700" y2="360" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="3 3"/>
-    <line x1="60" y1="400" x2="700" y2="400" stroke="#e5e7eb" stroke-width="0.5" stroke-dasharray="3 3"/>
-
-    <line x1="60" y1="420" x2="700" y2="420" stroke="#3a3d5e" stroke-width="1"/>
-    <line x1="60" y1="80" x2="60" y2="420" stroke="#3a3d5e" stroke-width="1"/>
-
-    <rect x="450" y="80" width="250" height="340" fill="#f7f8fb" fill-opacity="0.6"/>
-    <text x="575" y="100" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#6b7280" text-anchor="middle">Trend-based projection</text>
-
-    <text x="100" y="440" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="middle">2024 H1</text>
-    <text x="200" y="440" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="middle">2024 H2</text>
-    <text x="300" y="440" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="middle">2025 H1</text>
-    <text x="400" y="440" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="middle">2025 H2</text>
-    <text x="500" y="440" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="middle">2026</text>
-    <text x="600" y="440" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="middle">2027</text>
-    <text x="680" y="440" font-family="Inter, sans-serif" font-size="11" fill="#3a3d5e" text-anchor="middle">2028</text>
-
-    <path d="M 100 248 L 200 200 L 300 140 L 400 128" fill="none" stroke="#5b4fe9" stroke-width="2.5"/>
-    <circle cx="100" cy="248" r="5" fill="#5b4fe9"/>
-    <circle cx="200" cy="200" r="5" fill="#5b4fe9"/>
-    <circle cx="300" cy="140" r="5" fill="#5b4fe9"/>
-    <circle cx="400" cy="128" r="5" fill="#5b4fe9"/>
-
-    <path d="M 400 128 L 500 112 L 600 104 L 680 100" fill="none" stroke="#5b4fe9" stroke-width="2.5" stroke-dasharray="5 4"/>
-    <circle cx="500" cy="112" r="5" fill="#5b4fe9" fill-opacity="0.4" stroke="#5b4fe9" stroke-width="1.5"/>
-    <circle cx="600" cy="104" r="5" fill="#5b4fe9" fill-opacity="0.4" stroke="#5b4fe9" stroke-width="1.5"/>
-    <circle cx="680" cy="100" r="5" fill="#5b4fe9" fill-opacity="0.4" stroke="#5b4fe9" stroke-width="1.5"/>
-
-    <text x="100" y="236" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#3b2fbf" text-anchor="middle">68</text>
-    <text x="200" y="188" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#3b2fbf" text-anchor="middle">76</text>
-    <text x="300" y="128" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#3b2fbf" text-anchor="middle">~85</text>
-    <text x="400" y="116" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#3b2fbf" text-anchor="middle">~88</text>
-    <text x="500" y="100" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#3b2fbf" text-anchor="middle">~92</text>
-    <text x="600" y="92" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#3b2fbf" text-anchor="middle">~94</text>
-    <text x="680" y="88" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#3b2fbf" text-anchor="middle">~95</text>
-
-    <path d="M 100 392 L 200 364 L 300 340 L 400 332" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
-    <circle cx="100" cy="392" r="5" fill="#f59e0b"/>
-    <circle cx="200" cy="364" r="5" fill="#f59e0b"/>
-    <circle cx="300" cy="340" r="5" fill="#f59e0b"/>
-    <circle cx="400" cy="332" r="5" fill="#f59e0b"/>
-
-    <path d="M 400 332 L 500 328 L 600 328 L 680 324" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="5 4"/>
-    <circle cx="500" cy="328" r="5" fill="#f59e0b" fill-opacity="0.4" stroke="#f59e0b" stroke-width="1.5"/>
-    <circle cx="600" cy="328" r="5" fill="#f59e0b" fill-opacity="0.4" stroke="#f59e0b" stroke-width="1.5"/>
-    <circle cx="680" cy="324" r="5" fill="#f59e0b" fill-opacity="0.4" stroke="#f59e0b" stroke-width="1.5"/>
-
-    <text x="100" y="384" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606" text-anchor="middle">32</text>
-    <text x="200" y="356" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606" text-anchor="middle">39</text>
-    <text x="300" y="332" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606" text-anchor="middle">~45</text>
-    <text x="400" y="324" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606" text-anchor="middle">~47</text>
-    <text x="500" y="320" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606" text-anchor="middle">~48</text>
-    <text x="600" y="320" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606" text-anchor="middle">~48</text>
-    <text x="680" y="316" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#b97606" text-anchor="middle">~49</text>
-
-    <line x1="100" y1="248" x2="100" y2="392" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="2 2"/>
-    <rect x="65" y="309" width="50" height="22" rx="11" fill="#fce9e8" stroke="#ef5350" stroke-width="0.5"/>
-    <text x="90" y="324" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#c73e3a" text-anchor="middle">36 pts</text>
-
-    <line x1="400" y1="128" x2="400" y2="332" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="2 2"/>
-    <rect x="408" y="219" width="50" height="22" rx="11" fill="#fce9e8" stroke="#ef5350" stroke-width="0.5"/>
-    <text x="433" y="234" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#c73e3a" text-anchor="middle">41 pts</text>
-
-    <line x1="680" y1="100" x2="680" y2="324" stroke="#c73e3a" stroke-width="2" stroke-dasharray="2 2"/>
-    <rect x="645" y="205" width="60" height="22" rx="11" fill="#c73e3a" stroke="#c73e3a" stroke-width="0.5"/>
-    <text x="675" y="220" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#fff" text-anchor="middle">46 pts+</text>
-
-    <rect x="100" y="468" width="14" height="14" rx="2" fill="#5b4fe9"/>
-    <text x="122" y="480" font-family="Inter, sans-serif" font-size="12" fill="#0f1130">Top-tier commercial LLMs (GPT-4o → GPT-5, Claude 3.5/4 Sonnet, etc.)</text>
-
-    <rect x="100" y="492" width="14" height="14" rx="2" fill="#f59e0b"/>
-    <text x="122" y="504" font-family="Inter, sans-serif" font-size="12" fill="#0f1130">Self-hosted sLLM lowest tier 7–8B (Llama 3/3.1/3.3 8B, Qwen 2.5 7B)</text>
-
-    <line x1="100" y1="522" x2="120" y2="522" stroke="#5b4fe9" stroke-width="2.5" stroke-dasharray="5 4"/>
-    <text x="125" y="526" font-family="Inter, sans-serif" font-size="11" fill="#6b7280">Dashed area = trend-based projection for the next 3 years</text>
-
-    <text x="60" y="554" font-family="Inter, sans-serif" font-size="11" fill="#6b7280">※ The gap widens clearly: 36 pts → 41 pts → 46 pts+. 7–8B models are expected to plateau near 50 pts due to fundamental size constraints.</text>
-    <text x="60" y="572" font-family="Inter, sans-serif" font-size="11" fill="#6b7280">※ Inference-time scaling (o1/extended thinking, etc.) is accelerating the commercial LLM curve. Post-2026 values are estimates.</text>
-  </svg>
-  <figcaption style="text-align: center; font-size: 13px; color: #6b7280; margin-top: 8px;">Figure 2. MMLU-Pro benchmark gap — a trend clearly widening over time</figcaption>
-</figure>
-
-<h3>3.1 Why the gap is widening rather than closing</h3>
-<p>Many sLLM evaluation reports emphasise that "open-source model performance is improving rapidly." Looking at absolute scores alone, this is true. The MMLU-Pro score for 7–8B-class models — the tier that is realistically deployable in a self-hosting scenario — has climbed from around 32 for Llama 3 8B to roughly 47 via Llama 3.3 8B and Qwen 2.5 7B. A clear 15-point improvement over 18 months.</p>
-<p>However, commercial LLMs advanced even faster over the same period. From Claude 3 Opus at approximately 68 in early 2024, to Claude 3.5 Sonnet at approximately 76 in late 2024, to Claude 4 Sonnet and GPT-5 reaching approximately 85–88 in 2025. <strong>The gap actually widened — from 36 points in H1 2024 to 41 points in H2 2025.</strong></p>
-<p>The more fundamental concern is the trajectory over the next three years. 7–8B models are expected to plateau near an MMLU-Pro score of 50 due to fundamental limitations imposed by model size. Commercial LLMs, meanwhile, have entered a new paradigm: <strong>inference-time scaling</strong>. OpenAI's o1 and o3 series, and Claude's extended thinking capability, are examples of this shift. The approach boosts performance by allocating more compute at inference time — a gap that cannot simply be bridged by model size alone. Applying the same technique to 7–8B models makes inference costs prohibitively expensive, so smaller models are structurally excluded from this wave of improvement. As a result, by around 2028 the gap is likely to exceed 46 points. The expectation that "building an sLLM now will let us catch up soon" has already been disproved by the past two years of data, and the next three years of technology trends point in the same direction.</p>
-<p>The reasons the gap is not closing are straightforward.</p>
-<ul>
-  <li><strong>Scale of investment</strong>: OpenAI, Anthropic, and Google each invest in the order of trillions of KRW annually in model development. The combined investment of the entire open-source ecosystem does not match this.</li>
-  <li><strong>Scaling Laws</strong>: Current AI performance improves in proportion to model size, data volume, and compute. Commercial models handle hundreds of billions to trillions of parameters; the largest models realistically self-hostable are in the 7–32B range. A difference of tens to hundreds of times in scale translates directly into performance differences.</li>
-  <li><strong>Infrastructure gap</strong>: Commercial models are trained on clusters of tens of thousands of GPUs. A single organisation's 8× H100 system starts from an entirely different baseline.</li>
-  <li><strong>Inference-time scaling barrier</strong>: The inference-time scaling paradigm, which began in earnest in late 2024, is economically impractical to apply to small models. A new dimension of performance improvement has opened that only commercial models can exploit.</li>
-</ul>
-
-<h3>3.2 Can domain specialisation close the gap?</h3>
-<p>The argument that "we need a model specialised for our domain, so lower general performance is acceptable as long as domain performance is superior" is frequently raised. There is partial truth to it, but accepting it uncritically is risky.</p>
-<p>The reality is as follows.</p>
-<ul>
-  <li><strong>General capability as a foundation</strong>: Domain-specialist tasks ultimately rest on general language understanding and reasoning ability. Where general capability is low, the ceiling on domain specialisation is correspondingly clear.</li>
-  <li><strong>In-context learning in commercial models</strong>: Modern commercial LLMs, combined with RAG, adapt immediately to domain-specific data — achieving domain performance without any prior fine-tuning.</li>
-  <li><strong>Limits of fine-tuning</strong>: Fine-tuning an sLLM on domain data does produce measurable gains, but those gains are often insufficient to overcome the general-performance gap.</li>
-</ul>
-<p>This is not a denial that domain specialisation has genuine value. It is simply a caution that the assertion "domain specialisation renders the performance gap irrelevant" requires verification. Making a commitment without first running a POC to measure how your sLLM actually performs in your organisation's domain relative to a commercial LLM is a significant risk.</p>
-
-<h2>4. The weight of operations — staffing and accountability</h2>
-<p>Beyond cost and performance, the third most commonly underestimated factor is the <strong>weight of ongoing operations</strong>. An sLLM is not "build once and done." It must be maintained as a live system for five years or more.</p>
-
-<h3>4.1 The difficulty of securing dedicated staff</h3>
-<p>AI engineers and MLOps specialists are currently among the most sought-after professionals in the market. In an environment where large enterprises and AI start-ups are offering salaries of KRW 150–200 million, recruiting and retaining these individuals within public-sector pay constraints is extremely difficult. Choosing to outsource operations does not solve the problem — it simply raises costs and creates external knowledge dependencies.</p>
-
-<h3>4.2 The weight of incidents and accountability</h3>
-<p>Operating your own system entails accountability. When an external commercial AI has an outage, the provider handles initial response; when a self-hosted sLLM fails, the organisation bears full responsibility. GPU hardware failures, degraded model response quality, security incidents — all accountability remains entirely within the organisation.</p>
-
-<h3>4.3 The burden of model evolution</h3>
-<p>Base model replacement, which was discussed as a cost consideration above, is also a significant operational burden. Each new model release triggers an evaluation-adoption-migration cycle that is a separate project on top of day-to-day operations. The cognitive and time load on the operations team accumulates.</p>
-
-<h2>5. When sLLM self-hosting is nevertheless the right answer</h2>
-<p>Now for balance. There are clearly cases where sLLM self-hosting is the right choice. If the following conditions are met, self-hosting is a rational decision.</p>
-<ul>
-  <li><strong>Large organisations with an annual IT budget exceeding KRW 10 billion</strong>: organisations with the financial capacity to absorb a 5-year TCO of KRW 2.8–3.8 billion and the scale to form a dedicated AI team</li>
-  <li><strong>Domains where use of external LLMs is completely prohibited by policy or law</strong>: in some national security and defence contexts, use of external AI is simply not an option</li>
-  <li><strong>Organisations whose mission is to own a specific domain model</strong>: for example, an organisation whose core value is holding a nationally owned, legislation-search AI as a public asset</li>
-  <li><strong>High-volume, high-frequency usage scenarios</strong>: in environments generating hundreds of thousands of AI calls per day, self-hosting may become advantageous on a per-call cost basis versus pay-per-use API pricing</li>
-  <li><strong>A clearly defined long-term asset strategy</strong>: a genuine strategic intent to hold AI models as a sustained organisational asset, not merely as a tool</li>
-</ul>
-<p>If most of these five conditions are met, self-hosting an sLLM is entirely worth evaluating. If, however, none of the above applies and an organisation is nonetheless choosing self-hosting, the rationale behind that decision deserves renewed scrutiny.</p>
-
-<h2>6. Patterns of choosing sLLM for the wrong reasons</h2>
-<p>There are frequently observed patterns of flawed decision-making in the field. If your situation matches any of the following, it is worth re-examining the decision to self-host.</p>
-
-<h3>Pattern 1 — "External AI is risky"</h3>
-<p>The most common pattern. Starting from an abstract concern that "external AI is dangerous," and concluding — without detailed analysis — that "therefore we must self-host." In reality, N2SF Model 2 sets out a concrete security control framework for the use of external AI services, and with appropriate protective layers in place, external AI can be used safely. The binary of "external = dangerous, internal = safe" is intuition, not analysis.</p>
-
-<h3>Pattern 2 — "It is about data sovereignty"</h3>
-<p>Starting from the premise that "we cannot send our data outside." In practice, when you examine actual usage scenarios, the information being handled is often classified at the O grade (publicly available) or can be processed externally after appropriate protective treatment. The abstract value of "data sovereignty" must not substitute for concrete scenario analysis.</p>
-
-<h3>Pattern 3 — "Other organisations are doing it"</h3>
-<p>Following suit when a similar-sized or similar-type organisation announces an sLLM self-hosting initiative. The fact that another organisation made that choice is no guarantee it is the right choice for yours. You need to verify whether the reasons behind their decision align with your organisation's situation.</p>
-
-<h3>Pattern 4 — "The budget has been allocated"</h3>
-<p>Cases where sLLM self-hosting is selected because an "AI build project" budget has been approved and there is pressure to spend it. Having a budget does not mean you must choose the most expensive option. Selecting a more efficient option and redirecting the remaining budget to other digital transformation initiatives is the rational approach.</p>
-
-<h3>Pattern 5 — "The vendor recommended it"</h3>
-<p>GPU, infrastructure, and SI vendors will naturally recommend self-hosting — it aligns with their revenue model. A vendor recommendation is one piece of information, not a basis for decision-making. Objective comparative analysis is required.</p>
-
-<h2>7. sLLM self-hosting decision checklist</h2>
-<p>If you are evaluating sLLM self-hosting, work through the questions below. If most answers are "yes," self-hosting is a rational choice. If answers are unclear or most are "no," other options should be evaluated alongside it.</p>
-
-<div class="takeaways">
-  <div class="takeaways__label">sLLM Self-Hosting Suitability Checklist</div>
-  <ul>
-    <li>Is there confirmed budget to absorb a TCO of KRW 2.8 billion or more over five years?</li>
-    <li>Is there a plan to recruit and retain two or more dedicated AI/MLOps staff?</li>
-    <li>Has a POC demonstrated that sLLM performance is sufficient in your organisation's domain?</li>
-    <li>Can the cost and effort of base model replacement every one to two years be sustained?</li>
-    <li>Is use of external AI prohibited in your organisation by policy or law?</li>
-    <li>Is there a mission requirement for an AI model to become a long-term organisational asset?</li>
-    <li>Has an objective comparative analysis been conducted against alternatives (gateway, DLP, etc.)?</li>
-  </ul>
-</div>
-
-<p>Self-hosting an sLLM is an appealing prospect, but it is by no means a light undertaking. Consider carefully where your organisation will stand five years from now, and whether this is genuinely the path you need to take.</p>
-
-<h2>Frequently asked questions</h2>
-
-<h3>Would starting with a smaller 7B model not reduce costs significantly?</h3>
-<p>On the GPU infrastructure side, yes. Operating a 7B model is possible with just one or two H100 cards rather than eight, so initial build costs can be reduced to less than half. However, the non-GPU costs — operational staff, power, and model replacement — arise in almost equal measure. And because a 7B model shows an even larger performance gap relative to 32B, its practical utility warrants careful reassessment.</p>
-
-<h3>Can a hybrid approach combining sLLM and a gateway be used?</h3>
-<p>It is possible. Some organisations are exploring hybrid structures in which certain departments operate a self-hosted sLLM while others use the gateway approach. However, carrying the operational governance of two systems simultaneously is a significant burden. Whether both approaches are genuinely required should be assessed carefully. In most cases, starting with one approach and expanding as needed proves to be the more efficient path.</p>
-
-<h3>Will open-source models not catch up with commercial models soon?</h3>
-<p>There are cases where specific open-source models score comparably to commercial models on particular benchmarks. However, in real-world task performance — especially complex reasoning and long-context handling — the gap remains substantial. Commercial models are not standing still. Even when the gap temporarily narrows, the pattern of it widening again with the next generation of models is repeating.</p>
-
-<h3>Which base model should be chosen for self-hosting?</h3>
-<p>At the current time, the Llama family, the Qwen family, and Korean-language specialist models (such as Polyglot-Ko) are the primary options. The choice depends on licence terms, Korean-language performance, community support, and your organisation's use cases. Regardless of which model is selected, the probability of a superior model emerging within one to two years is very high, and the replacement burden should be factored in from the outset.</p>
-
-<h2>References</h2>
-<ul>
-  <li>National Intelligence Service (NIS), "National Network Security Framework (N2SF) Security Guidelines," 2024</li>
-  <li>National Intelligence Service (NIS) / National Security Research Institute (NSR), "N2SF Security Guidelines — Information Service Model Commentary: Model 2. Use of Generative AI in the Work Environment," September 2025</li>
-  <li>Wang et al., "MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark," 2024</li>
-  <li>Hugging Face Open LLM Leaderboard, MMLU-Pro benchmark (huggingface.co/spaces/open-llm-leaderboard)</li>
-  <li>Kaplan et al., "Scaling Laws for Neural Language Models," 2020</li>
-  <li>Hoffmann et al., "Training Compute-Optimal Large Language Models" (Chinchilla), 2022</li>
-</ul>`
-
-const FAQ_JSON_LD_EN = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"Would starting with a smaller 7B model not reduce costs significantly?","acceptedAnswer":{"@type":"Answer","text":"On the GPU infrastructure side, yes. Operating a 7B model is possible with just one or two H100 cards, so initial build costs can be reduced to less than half. However, the non-GPU costs — operational staff, power, and model replacement — arise in almost equal measure. A 7B model also shows an even larger performance gap, so its practical utility warrants careful reassessment."}}, {"@type":"Question","name":"Can a hybrid approach combining sLLM and a gateway be used?","acceptedAnswer":{"@type":"Answer","text":"It is possible. Some organisations are exploring hybrid structures in which certain departments operate a self-hosted sLLM while others use the gateway approach. However, carrying the operational governance of two systems simultaneously is a significant burden. In most cases, starting with one approach and expanding as needed proves to be the more efficient path."}}, {"@type":"Question","name":"Will open-source models not catch up with commercial models soon?","acceptedAnswer":{"@type":"Answer","text":"There are cases where specific open-source models score comparably to commercial models on particular benchmarks. However, in real-world task performance — especially complex reasoning and long-context handling — the gap remains substantial. Even when the gap temporarily narrows, the pattern of it widening again with the next generation of models is repeating."}}, {"@type":"Question","name":"Which base model should be chosen for self-hosting?","acceptedAnswer":{"@type":"Answer","text":"At the current time, the Llama family, the Qwen family, and Korean-language specialist models (such as Polyglot-Ko) are the primary options. The choice depends on licence terms, performance, community support, and use cases. Regardless of which model is selected, the probability of a superior model emerging within one to two years is very high, and the replacement burden should be factored in from the outset."}} ] }`
-
-const BODY_HTML_DE = `<!-- bodyHtml — Deutsche Lokalisierung für DACH-Markt (Banken, Versicherungen, Telko, Krankenhäuser, Verwaltung) -->
-
-<h2>1. Warum der Eigenbetrieb eines sLLM verlockend erscheint</h2>
+const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
+  en: {
+    backLabel: "← Learn",
+    backHref: "/resources/learn",
+    title: "sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프",
+    lead: "공공기관 sLLM 자체구축의 진짜 비용(5년 28~38억), 상용 LLM 대비 성능 격차 추세, 잘못된 선택 패턴을 분석합니다.",
+    category: "정책 분석",
+    readTime: "18분 읽기",
+    dateUpdated: "2026년 5월 업데이트",
+    tldrLabel: "TL;DR",
+    tldrBody: "sLLM 자체구축은 데이터 통제와 도메인 특화 측면에서 매력적이지만, 진짜 비용은 GPU 인프라뿐 아니라 운영 인력·전력·교체 부담을 합치면 5년 누적 28~38억 원에 달합니다. 더 본질적인 문제는 상용 LLM과의 성능 격차가 시간이 갈수록 벌어진다는 점입니다. sLLM 자체구축이 정답인 경우는 명확히 존재하지만, 일반 행정 효율화가 목적이라면 게이트웨이 방식이 더 합리적입니다.",
+    bodyHtml: BODY_HTML,
+    canonicalUrl: "https://llmcapsule.ai/resources/learn/sllm-self-hosted-reality-check",
+    datePublished: "2026-05-01",
+    dateModified: "2026-05-01",
+    inLanguage: "ko-KR",
+    breadcrumbLabel: "sLLM 자체구축, 정말 답일까",
+    faqJsonLd: FAQ_JSON_LD,
+    relatedSectionLabel: "함께 읽으면 좋은 글",
+    related1Title: "공공기관 생성형 AI 도입의 세 가지 길",
+    related1Href: "/resources/learn/public-sector-genai-three-approaches-in-korea",
+    related2Title: "N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
+    related2Href: "/resources/learn/n2sf-model-2-explained",
+    related3Title: "N2SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리",
+    related3Href: "/resources/learn/what-is-n2sf",
+    related4Title: "",
+    related4Href: "",
+  },
+  ko: {
+    backLabel: "← Learn",
+    backHref: "/resources/learn",
+    title: "sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프",
+    lead: "공공기관 sLLM 자체구축의 진짜 비용(5년 28~38억), 상용 LLM 대비 성능 격차 추세, 잘못된 선택 패턴을 분석합니다.",
+    category: "정책 분석",
+    readTime: "18분 읽기",
+    dateUpdated: "2026년 5월 업데이트",
+    tldrLabel: "TL;DR",
+    tldrBody: "sLLM 자체구축은 데이터 통제와 도메인 특화 측면에서 매력적이지만, 진짜 비용은 GPU 인프라뿐 아니라 운영 인력·전력·교체 부담을 합치면 5년 누적 28~38억 원에 달합니다. 더 본질적인 문제는 상용 LLM과의 성능 격차가 시간이 갈수록 벌어진다는 점입니다. sLLM 자체구축이 정답인 경우는 명확히 존재하지만, 일반 행정 효율화가 목적이라면 게이트웨이 방식이 더 합리적입니다.",
+    bodyHtml: ``,
+    canonicalUrl: "https://llmcapsule.ai/resources/learn/sllm-self-hosted-reality-check",
+    datePublished: "2026-05-01",
+    dateModified: "2026-05-01",
+    inLanguage: "ko-KR",
+    breadcrumbLabel: "sLLM 자체구축, 정말 답일까",
+    faqJsonLd: ``,
+    relatedSectionLabel: "함께 읽으면 좋은 글",
+    related1Title: "공공기관 생성형 AI 도입의 세 가지 길",
+    related1Href: "/resources/learn/public-sector-genai-three-approaches-in-korea",
+    related2Title: "N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
+    related2Href: "/resources/learn/n2sf-model-2-explained",
+    related3Title: "N2SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리",
+    related3Href: "/resources/learn/what-is-n2sf",
+    related4Title: "",
+    related4Href: "",
+  },
+  de: {
+    backLabel: "← Learn",
+    backHref: "/resources/learn",
+    title: "Eigenbetrieb eines sLLM — Lohnt sich das wirklich? Kosten, Leistung und die echten Trade-offs",
+    lead: "Eine nüchterne Analyse der tatsächlichen TCO-Kosten (5 Jahre, 1–2 Mio. EUR), der wachsenden Leistungslücke gegenüber kommerziellen LLMs sowie typischer Entscheidungsfehler in regulierten DACH-Unternehmen.",
+    category: "Technologie-Analyse",
+    readTime: "~18 Min. Lesezeit",
+    dateUpdated: "Mai 2026",
+    tldrLabel: "TL;DR",
+    tldrBody: "Der Eigenbetrieb eines sLLM erscheint attraktiv — vollständige Datenkontrolle, keine Abhängigkeit von externen Anbietern. Die tatsächlichen Gesamtkosten über fünf Jahre liegen jedoch typischerweise zwischen 1,4 und 1,9 Mio. EUR, wenn man neben der GPU-Infrastruktur auch Betriebspersonal, Energie und den regelmäßigen Modellwechsel einrechnet. Gravierender ist ein strukturelles Problem: Der Leistungsabstand zu kommerziellen Spitzenmodellen vergrößert sich über die Zeit, anstatt sich zu schließen. Für Organisationen mit konkreten regulatorischen Anforderungen (DSGVO, BSI C5, EU AI Act) kann Eigenbetrieb die richtige Wahl sein. Für die Mehrheit der Unternehmen, die primär operative Effizienz anstreben, ist ein Gateway-Ansatz wirtschaftlich überlegen.",
+    bodyHtml: `<h2>1. Warum der Eigenbetrieb eines sLLM verlockend erscheint</h2>
 <p>Zunächst zur Frage, warum sich so viele Organisationen für den Eigenbetrieb eines sLLM entscheiden. Die Gründe sind nicht von der Hand zu weisen — und in Teilen auch berechtigt.</p>
 
 <h3>1.1 Vollständige Kontrolle über sensible Daten</h3>
@@ -1034,53 +763,13 @@ const BODY_HTML_DE = `<!-- bodyHtml — Deutsche Lokalisierung für DACH-Markt (
   <li>Hoffmann et al., "Training Compute-Optimal Large Language Models" (Chinchilla), 2022</li>
   <li>Bundesamt für Sicherheit in der Informationstechnik (BSI), C5-Anforderungskatalog (Cloud Computing Compliance Criteria Catalogue), aktuelle Fassung</li>
   <li>Europäische Kommission, Verordnung (EU) 2024/1689 — EU AI Act, 2024</li>
-</ul>`
-
-const FAQ_JSON_LD_DE = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ {"@type":"Question","name":"Reduzieren kleinere Modelle (7B) die Kosten wesentlich?","acceptedAnswer":{"@type":"Answer","text":"Bei der GPU-Infrastruktur ja: Für 7B-Modelle reichen ein bis zwei H100-Karten aus, was die Anfangsinvestition deutlich senkt. Personalkosten, Energiekosten und der Aufwand für Modellwechsel bleiben jedoch nahezu identisch. Die Leistungslücke bei 7B-Modellen gegenüber kommerziellen Spitzenmodellen ist zudem noch größer als bei 32B-Modellen."}}, {"@type":"Question","name":"Ist ein Hybrid-Modell aus sLLM und Gateway-Ansatz sinnvoll?","acceptedAnswer":{"@type":"Answer","text":"Grundsätzlich möglich. Allerdings bedeutet das, zwei unterschiedliche Betriebsmodelle und Governance-Strukturen parallel zu managen. In den meisten Fällen ist es sinnvoller, mit einem Ansatz zu beginnen und bei Bedarf zu erweitern."}}, {"@type":"Question","name":"Werden Open-Source-Modelle kommerzielle LLMs nicht bald einholen?","acceptedAnswer":{"@type":"Answer","text":"In bestimmten Benchmarks gibt es temporäre Annäherungen. In der Praxis — insbesondere bei komplexer Schlussfolgerung und langen Kontexten — bleibt die Lücke erheblich. Das Inference-Time-Scaling-Paradigma öffnet für kommerzielle Modelle eine neue Leistungsdimension, die strukturell für kleine Modelle unzugänglich bleibt. Das Muster der Annäherung gefolgt von erneuter Divergenz wiederholt sich mit jeder Modellgeneration."}}, {"@type":"Question","name":"Welches Basismodell sollte für den Eigenbetrieb gewählt werden?","acceptedAnswer":{"@type":"Answer","text":"Llama-Modelle (Meta) und Qwen-Modelle (Alibaba) sind gängige Optionen; für deutschsprachige Anwendungen gibt es optimierte Varianten. Die Wahl hängt von Lizenzbedingungen, Domänenleistung und Anwendungsszenarien ab. Unabhängig von der Wahl: In ein bis zwei Jahren wird es bessere Modelle geben. Der Modellwechselaufwand muss von Anfang an eingeplant werden."}} ] }`
-
-const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
-  en: {
-    backLabel: "← Learn",
-    backHref: "/resources/learn",
-    title: "Is Self-Hosting an sLLM Really the Answer? — The True Trade-offs of Cost, Performance, and Security",
-    lead: "We analyse the true cost of self-hosting an sLLM in the public sector (5-year TCO: KRW 2.8–3.8 billion), the widening performance gap versus commercial LLMs, and the patterns that lead organisations to make the wrong choice.",
-    category: "Policy Analysis",
-    readTime: "18 min read",
-    dateUpdated: "Updated May 2026",
-    tldrLabel: "TL;DR",
-    tldrBody: "Self-hosting an sLLM is appealing for data control and domain specialisation, but the true cost — once you add operational staff, power, and recurring model-replacement work — reaches KRW 2.8–3.8 billion over five years. More fundamentally, the performance gap between self-hosted models and commercial LLMs is widening over time, not closing. There are clear cases where self-hosting is the right answer, but if the goal is general administrative efficiency, a gateway approach is the more rational choice.",
-    canonicalUrl: "https://llmcapsule.ai/resources/learn/sllm-self-hosted-reality-check",
-    datePublished: "2026-05-01",
-    dateModified: "2026-05-01",
-    inLanguage: "en-GB",
-    breadcrumbLabel: "Is Self-Hosting an sLLM Really the Answer?",
-    relatedSectionLabel: "Related articles",
-    related1Title: "Three approaches to generative AI adoption in the public sector",
-    related1Href: "/resources/learn/public-sector-genai-three-approaches-in-korea",
-    related2Title: "N2SF Model 2 explained — can public agencies use ChatGPT?",
-    related2Href: "/resources/learn/n2sf-model-2-explained",
-    related3Title: "What is N2SF — the new security paradigm for public agencies",
-    related3Href: "/resources/learn/what-is-n2sf",
-    related4Title: "",
-    related4Href: "",
-    bodyHtml: BODY_HTML_EN,
-    faqJsonLd: FAQ_JSON_LD_EN,
-  },
-  ko: {
-    backLabel: "← Learn",
-    backHref: "/resources/learn",
-    title: "sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프",
-    lead: "공공기관 sLLM 자체구축의 진짜 비용(5년 28~38억), 상용 LLM 대비 성능 격차 추세, 잘못된 선택 패턴을 분석합니다.",
-    category: "정책 분석",
-    readTime: "18분 읽기",
-    dateUpdated: "2026년 5월 업데이트",
-    tldrLabel: "TL;DR",
-    tldrBody: "sLLM 자체구축은 데이터 통제와 도메인 특화 측면에서 매력적이지만, 진짜 비용은 GPU 인프라뿐 아니라 운영 인력·전력·교체 부담을 합치면 5년 누적 28~38억 원에 달합니다. 더 본질적인 문제는 상용 LLM과의 성능 격차가 시간이 갈수록 벌어진다는 점입니다. sLLM 자체구축이 정답인 경우는 명확히 존재하지만, 일반 행정 효율화가 목적이라면 게이트웨이 방식이 더 합리적입니다.",
+</ul>`,
     canonicalUrl: "https://llmcapsule.ai/resources/learn/sllm-self-hosted-reality-check",
     datePublished: "2026-05-01",
     dateModified: "2026-05-01",
     inLanguage: "ko-KR",
     breadcrumbLabel: "sLLM 자체구축, 정말 답일까",
+    faqJsonLd: ``,
     relatedSectionLabel: "함께 읽으면 좋은 글",
     related1Title: "공공기관 생성형 AI 도입의 세 가지 길",
     related1Href: "/resources/learn/public-sector-genai-three-approaches-in-korea",
@@ -1090,98 +779,69 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     related3Href: "/resources/learn/what-is-n2sf",
     related4Title: "",
     related4Href: "",
-    bodyHtml: BODY_HTML,
-    faqJsonLd: FAQ_JSON_LD,
-  },
-  de: {
-    backLabel: "← Learn",
-    backHref: "/resources/learn",
-    title: "Eigenbetrieb eines sLLM — Lohnt sich das wirklich? Kosten, Leistung und die echten Trade-offs",
-    lead: "Eine nüchterne Analyse der tatsächlichen TCO-Kosten (5 Jahre, 1–2 Mio. EUR), der wachsenden Leistungslücke gegenüber kommerziellen LLMs sowie typischer Entscheidungsfehler in regulierten DACH-Unternehmen.",
-    category: "Technologie-Analyse",
-    readTime: "~18 Min. Lesezeit",
-    dateUpdated: "Mai 2026",
-    tldrLabel: "TL;DR",
-    tldrBody: "Der Eigenbetrieb eines sLLM erscheint attraktiv — vollständige Datenkontrolle, keine Abhängigkeit von externen Anbietern. Die tatsächlichen Gesamtkosten über fünf Jahre liegen jedoch typischerweise zwischen 1,4 und 1,9 Mio. EUR, wenn man neben der GPU-Infrastruktur auch Betriebspersonal, Energie und den regelmäßigen Modellwechsel einrechnet. Gravierender ist ein strukturelles Problem: Der Leistungsabstand zu kommerziellen Spitzenmodellen vergrößert sich über die Zeit, anstatt sich zu schließen. Für Organisationen mit konkreten regulatorischen Anforderungen (DSGVO, BSI C5, EU AI Act) kann Eigenbetrieb die richtige Wahl sein. Für die Mehrheit der Unternehmen, die primär operative Effizienz anstreben, ist ein Gateway-Ansatz wirtschaftlich überlegen.",
-    canonicalUrl: "https://llmcapsule.ai/de/resources/learn/sllm-self-hosted-reality-check",
-    datePublished: "2026-05-01",
-    dateModified: "2026-05-01",
-    inLanguage: "de-DE",
-    breadcrumbLabel: "Eigenbetrieb eines sLLM — Lohnt sich das?",
-    relatedSectionLabel: "Weiterführende Artikel",
-    related1Title: "Drei Wege zur generativen KI im öffentlichen Sektor",
-    related1Href: "/de/resources/learn/public-sector-genai-three-approaches-in-korea",
-    related2Title: "N2SF Modell 2 — dürfen Behörden ChatGPT nutzen?",
-    related2Href: "/de/resources/learn/n2sf-model-2-explained",
-    related3Title: "Was ist N2SF — das neue Sicherheitsparadigma für Behörden",
-    related3Href: "/de/resources/learn/what-is-n2sf",
-    related4Title: "",
-    related4Href: "",
-    bodyHtml: BODY_HTML_DE,
-    faqJsonLd: FAQ_JSON_LD_DE,
   },
 }
 
 export default function SllmSelfHostedRealityCheck({
-  locale = "ko",
-  backLabel = "← Learn",
-  backHref = "/resources/learn",
-  title = "sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프",
-  lead = "공공기관 sLLM 자체구축의 진짜 비용(5년 28~38억), 상용 LLM 대비 성능 격차 추세, 잘못된 선택 패턴을 분석합니다.",
-  category = "정책 분석",
-  readTime = "18분 읽기",
-  dateUpdated = "2026년 5월 업데이트",
-  tldrLabel = "TL;DR",
-  tldrBody = "sLLM 자체구축은 데이터 통제와 도메인 특화 측면에서 매력적이지만, 진짜 비용은 GPU 인프라뿐 아니라 운영 인력·전력·교체 부담을 합치면 5년 누적 28~38억 원에 달합니다. 더 본질적인 문제는 상용 LLM과의 성능 격차가 시간이 갈수록 벌어진다는 점입니다. sLLM 자체구축이 정답인 경우는 명확히 존재하지만, 일반 행정 효율화가 목적이라면 게이트웨이 방식이 더 합리적입니다.",
-  bodyHtml = BODY_HTML,
-  canonicalUrl = "https://llmcapsule.ai/resources/learn/sllm-self-hosted-reality-check",
-  datePublished = "2026-05-01",
-  dateModified = "2026-05-01",
-  inLanguage = "ko-KR",
-  breadcrumbLabel = "sLLM 자체구축, 정말 답일까",
-  faqJsonLd = FAQ_JSON_LD,
-  relatedSectionLabel = "함께 읽으면 좋은 글",
-  related1Title = "공공기관 생성형 AI 도입의 세 가지 길",
-  related1Href = "/resources/learn/public-sector-genai-three-approaches-in-korea",
-  related2Title = "N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까",
-  related2Href = "/resources/learn/n2sf-model-2-explained",
-  related3Title = "N2SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리",
-  related3Href = "/resources/learn/what-is-n2sf",
+  locale = "en",
+  backLabel = "",
+  backHref = "",
+  title = "",
+  lead = "",
+  category = "",
+  readTime = "",
+  dateUpdated = "",
+  tldrLabel = "",
+  tldrBody = "",
+  bodyHtml = "",
+  canonicalUrl = "",
+  datePublished = "",
+  dateModified = "",
+  inLanguage = "",
+  breadcrumbLabel = "",
+  faqJsonLd = "",
+  relatedSectionLabel = "",
+  related1Title = "",
+  related1Href = "",
+  related2Title = "",
+  related2Href = "",
+  related3Title = "",
+  related3Href = "",
   related4Title = "",
   related4Href = "",
 }: Props) {
-  const T = TRANSLATIONS[locale] || TRANSLATIONS.ko
-  const _backLabel = backLabel || T["backLabel"] || TRANSLATIONS.ko["backLabel"]
-  const _backHref = backHref || T["backHref"] || TRANSLATIONS.ko["backHref"]
-  const _title = title || T["title"] || TRANSLATIONS.ko["title"]
-  const _lead = lead || T["lead"] || TRANSLATIONS.ko["lead"]
-  const _category = category || T["category"] || TRANSLATIONS.ko["category"]
-  const _readTime = readTime || T["readTime"] || TRANSLATIONS.ko["readTime"]
-  const _dateUpdated = dateUpdated || T["dateUpdated"] || TRANSLATIONS.ko["dateUpdated"]
-  const _tldrLabel = tldrLabel || T["tldrLabel"] || TRANSLATIONS.ko["tldrLabel"]
-  const _tldrBody = tldrBody || T["tldrBody"] || TRANSLATIONS.ko["tldrBody"]
-  const _bodyHtml = bodyHtml || T["bodyHtml"] || TRANSLATIONS.ko["bodyHtml"]
-  const _canonicalUrl = canonicalUrl || T["canonicalUrl"] || TRANSLATIONS.ko["canonicalUrl"]
-  const _datePublished = datePublished || T["datePublished"] || TRANSLATIONS.ko["datePublished"]
-  const _dateModified = dateModified || T["dateModified"] || TRANSLATIONS.ko["dateModified"]
-  const _inLanguage = inLanguage || T["inLanguage"] || TRANSLATIONS.ko["inLanguage"]
-  const _breadcrumbLabel = breadcrumbLabel || T["breadcrumbLabel"] || TRANSLATIONS.ko["breadcrumbLabel"]
-  const _faqJsonLd = faqJsonLd || T["faqJsonLd"] || TRANSLATIONS.ko["faqJsonLd"]
-  const _relatedSectionLabel = relatedSectionLabel || T["relatedSectionLabel"] || TRANSLATIONS.ko["relatedSectionLabel"]
-  const _related1Title = related1Title || T["related1Title"] || TRANSLATIONS.ko["related1Title"]
-  const _related1Href = related1Href || T["related1Href"] || TRANSLATIONS.ko["related1Href"]
-  const _related2Title = related2Title || T["related2Title"] || TRANSLATIONS.ko["related2Title"]
-  const _related2Href = related2Href || T["related2Href"] || TRANSLATIONS.ko["related2Href"]
-  const _related3Title = related3Title || T["related3Title"] || TRANSLATIONS.ko["related3Title"]
-  const _related3Href = related3Href || T["related3Href"] || TRANSLATIONS.ko["related3Href"]
-  const _related4Title = related4Title || T["related4Title"] || ""
-  const _related4Href = related4Href || T["related4Href"] || ""
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  const _backLabel = backLabel || T["backLabel"] || TRANSLATIONS.en["backLabel"]
+  const _backHref = backHref || T["backHref"] || TRANSLATIONS.en["backHref"]
+  const _title = title || T["title"] || TRANSLATIONS.en["title"]
+  const _lead = lead || T["lead"] || TRANSLATIONS.en["lead"]
+  const _category = category || T["category"] || TRANSLATIONS.en["category"]
+  const _readTime = readTime || T["readTime"] || TRANSLATIONS.en["readTime"]
+  const _dateUpdated = dateUpdated || T["dateUpdated"] || TRANSLATIONS.en["dateUpdated"]
+  const _tldrLabel = tldrLabel || T["tldrLabel"] || TRANSLATIONS.en["tldrLabel"]
+  const _tldrBody = tldrBody || T["tldrBody"] || TRANSLATIONS.en["tldrBody"]
+  const _bodyHtml = bodyHtml || T["bodyHtml"] || TRANSLATIONS.en["bodyHtml"]
+  const _canonicalUrl = canonicalUrl || T["canonicalUrl"] || TRANSLATIONS.en["canonicalUrl"]
+  const _datePublished = datePublished || T["datePublished"] || TRANSLATIONS.en["datePublished"]
+  const _dateModified = dateModified || T["dateModified"] || TRANSLATIONS.en["dateModified"]
+  const _inLanguage = inLanguage || T["inLanguage"] || TRANSLATIONS.en["inLanguage"]
+  const _breadcrumbLabel = breadcrumbLabel || T["breadcrumbLabel"] || TRANSLATIONS.en["breadcrumbLabel"]
+  const _faqJsonLd = faqJsonLd || T["faqJsonLd"] || TRANSLATIONS.en["faqJsonLd"]
+  const _relatedSectionLabel = relatedSectionLabel || T["relatedSectionLabel"] || TRANSLATIONS.en["relatedSectionLabel"]
+  const _related1Title = related1Title || T["related1Title"] || TRANSLATIONS.en["related1Title"]
+  const _related1Href = related1Href || T["related1Href"] || TRANSLATIONS.en["related1Href"]
+  const _related2Title = related2Title || T["related2Title"] || TRANSLATIONS.en["related2Title"]
+  const _related2Href = related2Href || T["related2Href"] || TRANSLATIONS.en["related2Href"]
+  const _related3Title = related3Title || T["related3Title"] || TRANSLATIONS.en["related3Title"]
+  const _related3Href = related3Href || T["related3Href"] || TRANSLATIONS.en["related3Href"]
+  const _related4Title = related4Title || T["related4Title"] || TRANSLATIONS.en["related4Title"]
+  const _related4Href = related4Href || T["related4Href"] || TRANSLATIONS.en["related4Href"]
 
   const relatedItems = [
-    { title: _related1Title, href: _related1Href },
-    { title: _related2Title, href: _related2Href },
-    { title: _related3Title, href: _related3Href },
-    { title: _related4Title, href: _related4Href },
+    { _title: _related1Title, href: _related1Href },
+    { _title: _related2Title, href: _related2Href },
+    { _title: _related3Title, href: _related3Href },
+    { _title: _related4Title, href: _related4Href },
   ].filter((r) => r.title && r.href)
 
   const articleJsonLd = JSON.stringify({
@@ -1499,7 +1159,7 @@ export default function SllmSelfHostedRealityCheck({
 
         .la-body tr:last-child td { border-bottom: none; }
 
-        /* Callout (amber) — for <div class="callout"> inside bodyHtml */
+        /* Callout (amber) — for <div class="callout"> inside _bodyHtml */
         .la-body .callout {
           display: flex;
           gap: 14px;
@@ -1680,7 +1340,7 @@ export default function SllmSelfHostedRealityCheck({
           box-shadow: 0 4px 16px rgba(91, 79, 233, 0.08);
         }
 
-        .la-related__card-title {
+        .la-related__card-_title {
           font-size: 15px;
           font-weight: 600;
           line-height: 1.4;
@@ -1756,7 +1416,7 @@ export default function SllmSelfHostedRealityCheck({
               <div className="la-related__grid">
                 {relatedItems.map((item, i) => (
                   <a key={i} href={item.href} className="la-related__card">
-                    <span className="la-related__card-title">{item.title}</span>
+                    <span className="la-related__card-_title">{item.title}</span>
                     <span className="la-related__card-arrow" aria-hidden="true">→</span>
                   </a>
                 ))}
@@ -1771,30 +1431,30 @@ export default function SllmSelfHostedRealityCheck({
 }
 
 addPropertyControls(SllmSelfHostedRealityCheck, {
-  locale: { type: ControlType.Enum, options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "ko", title: "Locale" },
-  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "← Learn" },
-  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "/resources/learn" },
-  title: { type: ControlType.String, title: "Title", defaultValue: "sLLM 자체구축, 정말 답일까 — 비용·성능·보안의 진짜 트레이드오프" },
-  lead: { type: ControlType.String, title: "Lead", defaultValue: "공공기관 sLLM 자체구축의 진짜 비용(5년 28~38억), 상용 LLM 대비 성능 격차 추세, 잘못된 선택 패턴을 분석합니다.", displayTextArea: true },
-  category: { type: ControlType.String, title: "Category", defaultValue: "정책 분석" },
-  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "18분 읽기" },
-  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "2026년 5월 업데이트" },
-  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR" },
-  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "sLLM 자체구축은 데이터 통제와 도메인 특화 측면에서 매력적이지만, 진짜 비용은 GPU 인프라뿐 아니라 운영 인력·전력·교체 부담을 합치면 5년 누적 28~38억 원에 달합니다. 더 본질적인 문제는 상용 LLM과의 성능 격차가 시간이 갈수록 벌어진다는 점입니다. sLLM 자체구축이 정답인 경우는 명확히 존재하지만, 일반 행정 효율화가 목적이라면 게이트웨이 방식이 더 합리적입니다.", displayTextArea: true },
-  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: BODY_HTML, displayTextArea: true },
-  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "https://llmcapsule.ai/resources/learn/sllm-self-hosted-reality-check" },
-  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "2026-05-01" },
-  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "2026-05-01" },
-  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "ko-KR" },
-  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "sLLM 자체구축, 정말 답일까" },
-  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: FAQ_JSON_LD, displayTextArea: true },
-  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "함께 읽으면 좋은 글" },
-  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "공공기관 생성형 AI 도입의 세 가지 길" },
-  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "/resources/learn/public-sector-genai-three-approaches-in-korea" },
-  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "N2SF 모델 2 완벽 해설 — 공공기관에서 ChatGPT를 쓸 수 있을까" },
-  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "/resources/learn/n2sf-model-2-explained" },
-  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "N2SF란 무엇인가 — 공공기관 보안의 새 패러다임 완벽 정리" },
-  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "/resources/learn/what-is-n2sf" },
+  locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
+  backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "" },
+  backHref: { type: ControlType.String, title: "Back URL", defaultValue: "" },
+  title: { type: ControlType.String, title: "Title", defaultValue: "" },
+  lead: { type: ControlType.String, title: "Lead", defaultValue: "", displayTextArea: true },
+  category: { type: ControlType.String, title: "Category", defaultValue: "" },
+  readTime: { type: ControlType.String, title: "Read Time", defaultValue: "" },
+  dateUpdated: { type: ControlType.String, title: "Date Updated", defaultValue: "" },
+  tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "" },
+  tldrBody: { type: ControlType.String, title: "TL;DR Body", defaultValue: "", displayTextArea: true },
+  bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: "", displayTextArea: true },
+  canonicalUrl: { type: ControlType.String, title: "Canonical URL", defaultValue: "" },
+  datePublished: { type: ControlType.String, title: "Date Published", defaultValue: "" },
+  dateModified: { type: ControlType.String, title: "Date Modified", defaultValue: "" },
+  inLanguage: { type: ControlType.String, title: "Language", defaultValue: "" },
+  breadcrumbLabel: { type: ControlType.String, title: "Breadcrumb Label", defaultValue: "" },
+  faqJsonLd: { type: ControlType.String, title: "FAQ JSON-LD (raw JSON)", defaultValue: "", displayTextArea: true },
+  relatedSectionLabel: { type: ControlType.String, title: "Related Section Label", defaultValue: "" },
+  related1Title: { type: ControlType.String, title: "Related 1 Title", defaultValue: "" },
+  related1Href: { type: ControlType.String, title: "Related 1 URL", defaultValue: "" },
+  related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "" },
+  related2Href: { type: ControlType.String, title: "Related 2 URL", defaultValue: "" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "" },
+  related3Href: { type: ControlType.String, title: "Related 3 URL", defaultValue: "" },
   related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
   related4Href: { type: ControlType.String, title: "Related 4 URL", defaultValue: "" },
 })

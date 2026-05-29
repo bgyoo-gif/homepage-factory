@@ -523,6 +523,29 @@ ARTICLES = [
             ("", ""),
         ],
     },
+    {
+        "slug": "where-to-run-enterprise-ai",
+        "component": "WhereToRunEnterpriseAi",
+        "source_type": "bodyhtml",
+        "title": "Where to Run Enterprise AI: External, On-Premise, or Both",
+        "lead": "The deployment question for enterprise AI isn't binary. External LLMs, on-premise models, and hybrid topologies each fit a specific class of workflows — and most enterprises end up needing more than one. A decision framework.",
+        "category": "AI Architecture",
+        "readTime": "~12 min read",
+        "dateUpdated": "May 2026",
+        "tldrLabel": "TL;DR",
+        "tldrBody": "The deployment question isn't \"external or on-premise\" — it's which workflows belong where. A typical enterprise has dozens of workflows with different sensitivity, capability requirements, and constraints; forcing them into a single bucket produces architecture that's wrong for some of them. External LLMs offer frontier capability with contractual (not architectural) protection; on-premise solves data location by definition but lags the frontier by 12–18 months and is dominated by ongoing team cost. Hybrid isn't a compromise — it's the architecturally honest answer. Four questions (sensitivity, capability requirement, constraint structure, capability tolerance) sort workflows into four categories with different deployment fits. Hybrid works when four components are in place: a unified integration layer, policy-driven routing, a transformation layer for the external path, and shared governance. The failure modes of all-external (shadow AI) and all-on-premise (capability gap) share the same structure — a single-path policy that doesn't account for workflow heterogeneity gets bypassed in the workflows that don't fit. The realistic deployment for most regulated enterprises has both Path A (external + transformation) and Path B (on-premise) under one policy and audit framework.",
+        "canonicalUrl": "https://llmcapsule.ai/resources/learn/where-to-run-enterprise-ai",
+        "datePublished": "2026-05-06",
+        "dateModified": "2026-05-06",
+        "inLanguage": "en-GB",
+        "breadcrumbLabel": "Where to Run Enterprise AI",
+        "related": [
+            ("Running External LLMs on Data Your Company Can't Send Externally", "/resources/learn/external-llm-on-sensitive-enterprise-data"),
+            ("When AI Must Run Without Network Access", "/resources/learn/when-ai-must-run-without-network-access"),
+            ("Routing AI Workflows Between Cloud and Local Models", "/resources/learn/routing-ai-workflows-between-cloud-and-local-models"),
+            ("", ""),
+        ],
+    },
     # ── Pattern B: auto-parse from v6.2 input HTML ──
     {"slug": "pilot-to-production-enterprise-ai", "component": "PilotToProductionEnterpriseAi", "source_type": "input"},
     {"slug": "telecom-noc-ai-deployment", "component": "TelecomNocAiDeployment", "source_type": "input"},
@@ -1041,6 +1064,7 @@ ARTICLE_INDEX_META = {
     "reconstructing-ai-output": {"category": "architecture-onprem", "skipInIndex": False},
     "tokenization-for-llm-inputs": {"category": "architecture-onprem", "skipInIndex": False},
     "why-ai-stalls-on-operational-data": {"category": "comparison", "skipInIndex": False},
+    "where-to-run-enterprise-ai": {"category": "architecture-onprem", "skipInIndex": False},
 }
 
 CATEGORY_LABELS = {
