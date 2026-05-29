@@ -162,3 +162,21 @@ translator → native-reviewer → 수정 반영 → 번역 md 파일 생성
 - native-reviewer: 직역투/톤 불일치/용어 오용 검수
 - 번역 파일은 `{brand}/output/translations/[페이지명]-ko-lines.md`
 - Props 추가/변경 시 번역 파일도 반드시 재생성
+
+### Learn article 번역 md 검증 (필수)
+
+build-learn-tsx.py로 빌드되는 Learn article을 번역한 직후 반드시 확인:
+
+```bash
+# Section 03 bodyHtml 영문 누수 검사 — 다음 두 값이 일치해야 한다
+grep -c "^<h2>" {brand}/output/translations/{slug}-{lang}-lines.md
+grep -c "^<h2>" {brand}/output/html/{slug}-bodyhtml.html
+```
+
+ko/de 파일의 `<h2>` 개수가 영문 bodyhtml.html의 2배이면 **영문 원문이 Section 03에 섞여 들어간 것**. parser가 영문+번역을 모두 bodyHtml에 합쳐 넣어 페이지 상단에 영문이 노출된다. Section 03은 번역된 HTML만 포함해야 하며, 영문 원본 블록은 제거 후 빌드한다.
+
+빌드 후 추가 검증:
+```bash
+# 생성된 TSX의 ko/de bodyHtml이 번역어로 시작하는지
+awk '/^  ko: \{/{flag=1} flag && /bodyHtml: `/{print; exit}' {brand}/output/framer/learn/{Component}.tsx
+```

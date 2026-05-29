@@ -97,6 +97,42 @@ LearnArticle 등 `bodyHtml` prop을 포함하는 TSX를 번역할 때:
 - **마크다운 금지**: `### h3`, `**bold**`, `- 리스트` 형태로 출력 절대 금지 — `dangerouslySetInnerHTML`로 렌더링되므로 마크다운 깨짐
 - **검증**: 번역 md의 `<h2>` 개수와 `<p>` 개수가 영문 bodyhtml.html과 일치해야 함
 
+### Section 03 (Article Body) 출력 형식 (Critical)
+
+build-learn-tsx.py의 parse_translation_md_learn()은 **Section 03 전체를 통째로 bodyHtml prop에 대입**한다. 따라서:
+
+- **Section 03에는 번역된 HTML만 작성한다 — 영문 원문 포함 금지**
+- 다른 섹션(01 Hero, 02 TL;DR, 04 Related)은 `영문 / 번역` 페어 형식이지만, **Section 03만 예외**
+- 영문/번역 페어 또는 영문 전체 + 번역 전체 배치도 금지 — parser가 두 언어를 모두 bodyHtml에 합쳐 넣어 영문이 페이지 상단에 노출되는 결함 발생
+
+**잘못된 예시:**
+```markdown
+## Section 03: Article Body
+
+<h2>1. The English Heading</h2>
+<p>English paragraph...</p>
+
+<h2>1. 한국어 헤딩</h2>
+<p>한국어 단락...</p>
+```
+
+**올바른 예시:**
+```markdown
+## Section 03: Article Body
+
+<h2>1. 한국어 헤딩</h2>
+<p>한국어 단락...</p>
+```
+
+### bodyHtml 결함 자가 검증
+
+번역 완료 후 다음을 직접 확인:
+```bash
+grep -c "^<h2>" {brand}/output/translations/{slug}-{lang}-lines.md
+grep -c "^<h2>" {brand}/output/html/{slug}-bodyhtml.html
+# 두 숫자가 같아야 함. ko/de 파일이 영문 원본의 2배라면 영문이 섞여 들어간 것.
+```
+
 ```markdown
 # 잘못된 예시 (마크다운 — 금지)
 ### 왜 중요한가
