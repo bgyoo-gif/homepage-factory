@@ -256,6 +256,9 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     related2Href: "/resources/learn/routing-ai-workflows-between-cloud-and-local-models",
     related3Title: "When AI Must Run Without Network Access",
     related3Href: "/resources/learn/when-ai-must-run-without-network-access",
+    related4Title: "",
+    related4Href: "",
+  },
   ko: {
     backLabel: "← Learn",
     backHref: "/resources/learn",
