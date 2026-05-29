@@ -6,8 +6,7 @@
 // LEARN_CARDS auto-synced with ARTICLES list. Per-locale title/desc extracted
 // from translation md files.
 
-import { addPropertyControls, ControlType } from "framer"
-import { useState, useEffect } from "react"
+import { addPropertyControls, ControlType, useLocaleInfo } from "framer"
 
 type Locale = "en" | "ko" | "de"
 
@@ -139,16 +138,11 @@ export default function Learn({
   labelDefinition = "",
   readLabel = "",
 }: Props) {
-  // Auto-detect locale from URL path (Framer Localization sync).
-  // /ko/... → ko, /de/... → de, else en. Overridden by `locale` prop if set to non-"en".
-  const [autoLocale, setAutoLocale] = useState<Locale>("en")
-  useEffect(() => {
-    if (typeof window === "undefined") return
-    const m = window.location.pathname.match(/^\/(ko|de)(?:\/|$)/)
-    if (m) setAutoLocale(m[1] as Locale)
-  }, [])
-  // Effective locale: explicit prop (non-en) > auto-detected from URL > "en"
-  const effectiveLocale: Locale = locale && locale !== "en" ? locale : autoLocale
+  const { activeLocale } = useLocaleInfo()
+  const framerLocale = (activeLocale as any)?.slug as string | undefined
+  const effectiveLocale: Locale =
+    (framerLocale === "ko" || framerLocale === "de") ? framerLocale :
+    (locale && locale !== "en") ? locale : "en"
 
   const hero = HERO_TRANSLATIONS[effectiveLocale] || HERO_TRANSLATIONS.en
   // Dict-first resolver: locale dict overrides any stored prop value from Framer.
@@ -310,10 +304,6 @@ export default function Learn({
       `}</style>
 
       <div className="lrn-root">
-        {/* TEMP DEBUG: locale state — remove after diagnosis */}
-        <div style={ { position: "fixed", top: 8, right: 8, zIndex: 9999, padding: "6px 10px", background: "#fff59d", border: "2px solid #f57f17", fontFamily: "monospace", fontSize: 12, fontWeight: 700, color: "#000", maxWidth: 400 } }>
-          prop locale="{locale}" | URL autoLocale="{autoLocale}" | effective="{effectiveLocale}"
-        </div>
         <section className="lrn-hero">
           <div className="lrn-container">
             <div className="lrn-hero__inner">

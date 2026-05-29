@@ -277,8 +277,8 @@ Low 결함만 남은 경우 CONDITIONAL PASS.
 34. **bodyhtml figure 누락** → B타입 → bodyhtml 추출 시 `<figure class="ds-figure">` 블록 포함 필수. `grep -c '<figure'` 로 원본 수와 일치 확인
 35. **bodyhtml SVG 주석 잔존** → bodyhtml 안 `<!--...-->` 주석은 TSX template literal에서 ECMAScript Annex B 에러 유발. 추출 시 모두 제거 필수
 36. **번역 md 마크다운 출력** → bodyHtml prop 번역 시 마크다운(`### h3`, `**bold**`, `- list`) 사용 금지. HTML 태그 구조 그대로 유지 + 텍스트만 번역
-37. **Framer locale stored prop 간섭** → locale resolver는 dict-first 패턴 필수. `locale !== "en"`일 때 `T[key]` 우선 사용 — prop stored 값 통과 방지
-38. **Framer Localization URL 미동기화** → TSX에 `useEffect` + `window.location.pathname` 파싱 필수. 없으면 Framer Localization 모드에서 locale 전환 안 됨
+37. **Framer locale stored prop 간섭** → locale resolver는 dict-first 패턴 필수. `locale !== "en"`일 때 `T[key]` 우선 사용 — prop stored 값 통과 방지. resolver 함수: `const r = (prop, key) => isNonEn ? (T[key] || prop || TRANSLATIONS.en[key]) : (prop || T[key] || TRANSLATIONS.en[key])`
+38. **Framer Localization 감지: `useLocaleInfo()` 필수** → `import { useLocaleInfo } from "framer"` 사용. `useEffect` + `window.location.pathname` 파싱은 Framer 캔버스에서 작동하지 않음(폐기). 올바른 패턴: `const { activeLocale } = useLocaleInfo(); const framerLocale = (activeLocale as any)?.slug; effectiveLocale = framerLocale || locale prop || "en"`. Framer API 우선 → locale prop fallback → "en" 기본값
 39. **영문 learn article hero 패턴 오류** → 신규 영문 learn article은 `la-hero` 패턴(← Learn + title + desc + meta). 한국어 learn의 `ds-article-hero` (breadcrumb) 패턴 사용 금지
 
 ---

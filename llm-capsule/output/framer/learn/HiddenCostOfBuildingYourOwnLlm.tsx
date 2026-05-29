@@ -1277,14 +1277,6 @@ export default function HiddenCostOfBuildingYourOwnLlm({
 
       <div className="la-root">
 
-        {/* TEMP DEBUG — remove after diagnosis */}
-        <div style={{position:'fixed',top:0,left:0,right:0,background:'#ef4444',color:'#fff',padding:'8px 16px',zIndex:99999,fontFamily:'monospace',fontSize:'12px',lineHeight:'1.6'}}>
-          <div>framerLocale="{framerLocale}" | prop locale="{locale}" | effectiveLocale="{effectiveLocale}"</div>
-          <div>activeLocale={JSON.stringify(activeLocale)}</div>
-          <div>isNonEn={String(isNonEn)} | T.title="{(T["title"] || "").substring(0,40)}…"</div>
-          <div>_title="{(_title || "").substring(0,40)}…" | _bodyHtml len={_bodyHtml?.length || 0}</div>
-        </div>
-
         {/* ── 1. Article Hero ── */}
         <section className="la-hero">
           <div className="la-container">
