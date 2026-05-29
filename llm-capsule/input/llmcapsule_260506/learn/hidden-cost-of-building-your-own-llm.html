@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hidden Cost of Building Your Own Enterprise LLM — LLM Capsule</title>
+  <meta name="description" content="Running your own LLM in production is a defensible choice — but the cost structure is asymmetric. The model is the cheap part. A realistic look at what self-hosted AI actually costs, where teams under-budget, and when it's the right answer.">
+  <meta name="keywords" content="enterprise LLM, self-hosted LLM, on-premise AI cost, AI infrastructure cost, ML team cost, model maintenance, hybrid AI deployment, Path A Path B, encapsulation layer, LLM Capsule">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://llmcapsule.ai/resources/learn/hidden-cost-of-building-your-own-llm">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="The Hidden Cost of Building Your Own Enterprise LLM — LLM Capsule">
+  <meta property="og:description" content="Running your own LLM in production is a defensible choice — but the cost structure is asymmetric. The model is the cheap part. A realistic look at what self-hosted AI actually costs, where teams under-budget, and when it's the right answer.">
+  <meta property="og:url" content="https://llmcapsule.ai/resources/learn/hidden-cost-of-building-your-own-llm">
+  <meta property="og:site_name" content="LLM Capsule">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},
+      {"@type":"ListItem","position":2,"name":"Resources","item":"https://llmcapsule.ai/resources"},
+      {"@type":"ListItem","position":3,"name":"Learn","item":"https://llmcapsule.ai/resources/learn"},
+      {"@type":"ListItem","position":4,"name":"The Hidden Cost of Building Your Own Enterprise LLM"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Isn't self-hosted AI cheaper than paying per-token for external APIs?","acceptedAnswer":{"@type":"Answer","text":"Only when the calculation includes everything, not just the model. The model itself is free — Llama, Mistral, Qwen, and their successors are released under enterprise-friendly licences with no per-token fees. Where the calculation usually breaks is everything else: GPU infrastructure (budgeted reasonably), the team to operate it (underbudgeted), the time between deciding and being in production (compounds as opportunity cost), and ongoing maintenance (doesn't end). Over a three-year horizon, the people cost typically exceeds the infrastructure cost by a factor of two or three. The break-even point versus API billing is further out than most enterprises think."}},
+      {"@type":"Question","name":"How big does the team need to be to run a serious internal LLM?","acceptedAnswer":{"@type":"Answer","text":"For a few business units, six to ten people. For a larger deployment serving multiple business units across a complex enterprise, fifteen to twenty. The composition is ML platform engineers (2–4), ML operations engineers (2–3), evaluation engineers (1–2), workflow integration engineers (2–3 per major workflow domain), and technical leadership (at minimum one senior engineer). These are small headcounts but expensive burn rates — ML engineers with the right skills earn well above the general engineering market. The team cost is what most projections under-budget."}},
+      {"@type":"Question","name":"When is self-hosting actually the right answer?","acceptedAnswer":{"@type":"Answer","text":"Three specific cases. First, when data location constraints are absolute — workflows that cannot send data to any external endpoint regardless of safeguards must run internally; the cost is the cost of meeting the constraint. Second, when workflow volume justifies the fixed cost — sustained millions of requests per day amortise infrastructure and team costs across enough work to come out ahead of per-token billing. Third, when the strategic case is explicit and funded — building internal AI capability as a long-term investment, with full visibility into the multi-year cost rather than as a side effect of 'we'll save on API fees.'"}},
+      {"@type":"Question","name":"When is self-hosting the wrong answer?","acceptedAnswer":{"@type":"Answer","text":"Three specific cases. When the data location constraint can be addressed by transformation — for workflows where data can stay in the EU region through encapsulation, tokenisation, and customer-controlled mapping, the external endpoint with appropriate safeguards is faster, cheaper, and more capable. When the workflow needs frontier capability — internal models lag the frontier on complex reasoning, long context, and unfamiliar document types; self-hosting workflows that can't tolerate this gap produces systems that work but underperform. When the cost projection didn't include the full team — programs funded only for infrastructure end up understaffed or quietly absorbing budgets meant for other work."}},
+      {"@type":"Question","name":"What's the realistic timeline from deciding to self-host to running production AI?","acceptedAnswer":{"@type":"Answer","text":"Nine to eighteen months for most enterprises. Procurement takes weeks, initial serving-stack deployment takes more weeks, getting the first workflow integrated and useful takes months, and operational maturity to run multiple workflows reliably takes longer still. During this window the enterprise has no AI in the workflows the project is meant to serve, or it has AI through the external endpoints the project was meant to replace. The opportunity cost is real, and during the same window the external LLM landscape continues to advance — the internal model that finally goes into production may already be behind."}},
+      {"@type":"Question","name":"Does the cost stop once the system is running?","acceptedAnswer":{"@type":"Answer","text":"No — it shifts categories. Model updates (new open-source releases every few months requiring evaluation, migration, parallel evaluation, cutover). Quality monitoring (workflows evolve, input distributions shift, evaluation infrastructure has to catch drift). Infrastructure updates (serving stack updates, GPU driver changes, security patches, cloud deprecations). Workflow evolution (new prompts to develop, old prompts to deprecate, integrations to update). This is the cost hardest to project because it doesn't appear in the initial budget — it shows up over multi-year horizons as the team's sustained burn against a growing workflow portfolio."}},
+      {"@type":"Question","name":"What pattern do most enterprises end up with?","acceptedAnswer":{"@type":"Answer","text":"Hybrid — not as a political compromise but as the architecture that matches each workflow category's cost profile to its actual constraint. Self-hosted infrastructure handles workflows that genuinely require it (absolute-constraint cases, strategic-investment cases, volume cases where the math works out). External endpoints with transformation handle the rest. The team operates one routing layer, one governance framework, and two backends — at substantially lower total cost than running one backend that has to handle everything."}}
+    ]
+  }
+  </script>
+
+  <!-- Fonts: Inter + JetBrains Mono (Capsule v6.2) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* 1. CSS Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--f-display);
+      color: var(--c-ink);
+      background-color: var(--c-bg);
+      padding-top: 58px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, video { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    p, li, blockquote { word-break: keep-all; overflow-wrap: break-word; text-wrap: pretty; }
+    h1, h2, h3, h4 { text-wrap: balance; }
+
+    /* 2. :root */
+    :root {
+      --c-primary: #5b4fe9;
+      --c-primary-dark: #3b2fbf;
+      --c-primary-soft: #eeebfe;
+      --c-teal: #0ea5a4;
+      --c-teal-dark: #0b7f7e;
+      --c-teal-soft: #e6f7f6;
+      --c-coral: #ef5350;
+      --c-coral-dark: #c73e3a;
+      --c-coral-soft: #fce9e8;
+      --c-amber: #f59e0b;
+      --c-amber-dark: #b45309;
+      --c-amber-soft: #fef3c7;
+      --c-bg: #ffffff;
+      --c-bg-soft: #f7f8fb;
+      --c-bg-dark: #0f1130;
+      --c-bg-dark-2: #1b1d4a;
+      --c-ink: #0f1130;
+      --c-ink-soft: #3a3d5e;
+      --c-muted: #6b7280;
+      --c-rule: #e5e7eb;
+      --f-display: 'Inter', -apple-system, system-ui, sans-serif;
+      --f-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+      --ds-text-xs: 12px;
+      --ds-text-sm: 14px;
+      --ds-text-md: 16px;
+      --ds-text-lg: 18px;
+      --ds-text-xl: 20px;
+      --ds-text-2xl: 24px;
+      --ds-text-3xl: 30px;
+      --ds-text-4xl: 36px;
+      --ds-text-5xl: 40px;
+      --ds-text-6xl: 50px;
+      --ds-text-7xl: 64px;
+      --ds-weight-regular: 400;
+      --ds-weight-medium: 500;
+      --ds-weight-semibold: 600;
+      --ds-weight-bold: 700;
+      --ds-leading-tight: 1.2;
+      --ds-leading-normal: 1.5;
+      --ds-leading-relaxed: 1.7;
+      --ds-tracking-tight: -0.5px;
+      --ds-tracking-wide: 0.08em;
+      --ds-space-2xs: 4px;
+      --ds-space-xs: 8px;
+      --ds-space-sm: 12px;
+      --ds-space-md: 16px;
+      --ds-space-lg: 24px;
+      --ds-space-xl: 32px;
+      --ds-space-2xl: 48px;
+      --ds-space-3xl: 64px;
+      --ds-space-4xl: 80px;
+      --ds-space-5xl: 100px;
+      --ds-radius-xs: 5px;
+      --ds-radius-sm: 8px;
+      --ds-radius-md: 18px;
+      --ds-radius-lg: 24px;
+      --ds-radius-xl: 40px;
+      --ds-radius-pill: 9999px;
+      --ds-container-padding-mobile: 16px;
+      --ds-container-padding-tablet: 32px;
+      --ds-container-padding-desktop: 120px;
+      --r-md: 10px;
+      --container-max: 1280px;
+
+      --ds-bg-img-grad-deep: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-gradient-deep-teal.png');
+      --ds-overlay-dark-light: rgba(0,0,0,0.15);
+      --ds-overlay-white-85: rgba(255,255,255,0.85);
+    }
+
+    /* 3. Typography */
+    h1 { font-family: var(--f-display); font-size: 32px; font-weight: var(--ds-weight-bold); line-height: 1.15; letter-spacing: var(--ds-tracking-tight); }
+    h2 { font-family: var(--f-display); font-size: 20px; font-weight: var(--ds-weight-bold); line-height: 1.15; letter-spacing: var(--ds-tracking-tight); }
+    h3 { font-family: var(--f-display); font-size: var(--ds-text-xl); font-weight: var(--ds-weight-semibold); line-height: 1.15; }
+    @media (min-width: 768px) { h1 { font-size: 40px; } h2 { font-size: 22px; } }
+    @media (min-width: 1024px) { h1 { font-size: 48px; } h2 { font-size: 24px; } h3 { font-size: 22px; } }
+    @media (min-width: 1440px) { h1 { font-size: 64px; } h2 { font-size: 28px; } }
+
+    /* 4. Base Components */
+    .ds-text--brand { color: var(--c-primary); }
+    .ds-text--product { font-family: var(--f-display); font-weight: var(--ds-weight-bold); }
+
+    .ds-container {
+      width: 100%; margin: 0 auto;
+      padding: 0 var(--ds-container-padding-mobile);
+    }
+    @media (min-width: 768px) { .ds-container { padding: 0 var(--ds-container-padding-tablet); } }
+    @media (min-width: 1024px) { .ds-container { padding: 0 var(--ds-container-padding-tablet); } }
+    @media (min-width: 1440px) { .ds-container { padding: 0 var(--ds-container-padding-desktop); max-width: 1280px; } }
+
+    .ds-article-container {
+      width: 100%; max-width: 100%; margin: 0 auto;
+      padding: 0 var(--ds-container-padding-mobile);
+    }
+    @media (min-width: 768px) { .ds-article-container { padding: 0 var(--ds-container-padding-tablet); max-width: 720px; } }
+    @media (min-width: 1024px) { .ds-article-container { max-width: 860px; } }
+    @media (min-width: 1280px) { .ds-article-container { max-width: 1080px; padding: 0; } }
+
+    .ds-section { width: 100%; padding: var(--ds-space-4xl) 0; }
+    .ds-section--hero { padding: 100px 0 var(--ds-space-3xl); }
+    .ds-section--article-body { padding: var(--ds-space-2xl) 0; }
+
+    .ds-badge {
+      display: inline-flex; align-items: center; gap: var(--ds-space-2xs);
+      padding: var(--ds-space-2xs) var(--ds-space-xs);
+      border-radius: var(--ds-radius-pill);
+      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-semibold);
+      line-height: 1; white-space: nowrap;
+    }
+    .ds-badge--primary { background-color: var(--c-primary); color: var(--c-bg); }
+
+    .ds-breadcrumb {
+      font-size: var(--ds-text-sm); color: var(--c-muted);
+      margin-bottom: var(--ds-space-lg);
+    }
+    .ds-breadcrumb a { color: var(--c-muted); }
+    .ds-breadcrumb a:hover { color: var(--c-ink); }
+
+    .ds-article-hero__meta {
+      display: flex; align-items: center; gap: var(--ds-space-sm);
+      flex-wrap: wrap; margin-bottom: var(--ds-space-lg);
+    }
+    .ds-article-hero__reading-time,
+    .ds-article-hero__date { font-size: var(--ds-text-sm); color: var(--c-muted); }
+    .ds-article-hero__title {
+      font-family: var(--f-display); margin-bottom: var(--ds-space-lg);
+    }
+    .ds-article-hero__description {
+      font-size: var(--ds-text-lg); color: var(--c-ink-soft);
+      line-height: var(--ds-leading-relaxed); max-width: 860px;
+    }
+
+    .ds-banner {
+      padding: var(--ds-space-lg);
+      border-radius: 0; border: none;
+      border-top: 1px solid var(--c-rule);
+      border-bottom: 1px solid var(--c-rule);
+      font-size: var(--ds-text-sm); line-height: var(--ds-leading-relaxed);
+      text-align: left; margin: var(--ds-space-2xl) 0;
+    }
+    .ds-banner--brand { background-color: var(--c-primary-soft); }
+    .ds-banner__label {
+      font-family: var(--f-mono); font-size: var(--ds-text-xs);
+      text-transform: uppercase; letter-spacing: var(--ds-tracking-wide);
+      color: var(--c-muted); margin-bottom: var(--ds-space-xs); display: block;
+      font-weight: var(--ds-weight-medium);
+    }
+    .ds-banner p { font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed); color: var(--c-ink); }
+    .ds-banner strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
+    .ds-banner .ds-bullet { margin: var(--ds-space-sm) 0 0 0; }
+
+    .ds-article-section-header {
+      margin-bottom: var(--ds-space-xl);
+      padding-bottom: var(--ds-space-md);
+      border-bottom: 1px solid var(--c-rule);
+    }
+    .ds-article-section-header h2 { margin: 0; }
+
+    .ds-section-title-icon {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: var(--ds-space-lg); margin-top: var(--ds-space-2xl);
+    }
+    .ds-section-title-icon__icon {
+      width: 28px; height: 28px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--c-primary);
+    }
+    .ds-section-title-icon__text {
+      font-family: var(--f-display); font-size: var(--ds-text-xl);
+      font-weight: var(--ds-weight-semibold); color: var(--c-ink);
+      line-height: var(--ds-leading-tight);
+    }
+
+    .ds-article-body p {
+      font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed);
+      color: var(--c-ink-soft); margin-bottom: var(--ds-space-md);
+    }
+    .ds-article-body p:last-child { margin-bottom: 0; }
+    .ds-article-body strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
+    .ds-article-body em { color: var(--c-ink-soft); font-style: italic; }
+    .ds-article-body a { color: var(--c-primary); text-decoration: underline; text-underline-offset: 3px; }
+    .ds-article-body a:hover { color: var(--c-primary-dark); }
+    .ds-article-body sup { font-size: 0.6em; vertical-align: super; line-height: 0; }
+    .ds-article-body code { font-family: var(--f-mono); font-size: 0.92em; background-color: var(--c-bg-soft); padding: 2px 6px; border-radius: 4px; color: var(--c-ink); }
+
+    .ds-bullet { list-style: none; padding: 0; margin: var(--ds-space-md) 0; display: flex; flex-direction: column; gap: var(--ds-space-sm); }
+    .ds-bullet__item { display: flex; align-items: flex-start; gap: var(--ds-space-xs); font-size: var(--ds-text-md); line-height: var(--ds-leading-normal); color: var(--c-ink-soft); }
+    .ds-bullet__icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; display: inline-flex; align-items: center; justify-content: center; }
+    .ds-bullet__text { flex: 1; }
+    .ds-bullet__text strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
+    .ds-bullet__text em { font-style: italic; }
+    .ds-bullet__text a { color: var(--c-primary); text-decoration: underline; text-underline-offset: 3px; }
+    .ds-bullet__text a:hover { color: var(--c-primary-dark); }
+    .ds-bullet__text sup { font-size: 0.6em; vertical-align: super; line-height: 0; }
+    .ds-bullet__text code { font-family: var(--f-mono); font-size: 0.92em; background-color: var(--c-bg-soft); padding: 2px 6px; border-radius: 4px; color: var(--c-ink); }
+
+    .ds-bullet--check .ds-bullet__icon::before { content: "\2713"; color: var(--c-teal); font-weight: var(--ds-weight-bold); }
+    .ds-bullet--cross .ds-bullet__icon::before { content: "\2717"; color: var(--c-coral-dark); font-weight: var(--ds-weight-bold); }
+    .ds-bullet--number { counter-reset: bullet-counter; }
+    .ds-bullet--number .ds-bullet__item { counter-increment: bullet-counter; }
+    .ds-bullet--number .ds-bullet__icon::before {
+      content: counter(bullet-counter);
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 20px; height: 20px; border-radius: 50%;
+      background-color: var(--c-primary); color: var(--c-bg);
+      font-size: var(--ds-text-xs); font-weight: var(--ds-weight-bold);
+    }
+    .ds-bullet--dot .ds-bullet__icon::before { content: "\2022"; color: var(--c-primary); font-size: var(--ds-text-xl); line-height: 1; }
+
+    .ds-table-wrap {
+      margin: var(--ds-space-xl) 0; overflow-x: auto;
+      scrollbar-width: none; -ms-overflow-style: none;
+    }
+    .ds-table-wrap::-webkit-scrollbar { display: none; }
+    .ds-table {
+      width: 100%; border-collapse: collapse;
+      font-size: var(--ds-text-sm); min-width: 560px;
+    }
+    .ds-table thead th {
+      text-align: left;
+      padding: var(--ds-space-sm) var(--ds-space-md);
+      font-weight: var(--ds-weight-semibold);
+      font-size: var(--ds-text-sm); line-height: var(--ds-leading-tight);
+      border: 1px solid var(--c-ink);
+      background-color: var(--c-ink); color: var(--c-bg);
+    }
+    .ds-table thead th.ds-table__th--primary {
+      background-color: var(--c-primary); border-color: var(--c-primary);
+    }
+    .ds-table tbody td {
+      padding: var(--ds-space-sm) var(--ds-space-md);
+      border: 1px solid var(--c-rule);
+      color: var(--c-ink-soft); line-height: var(--ds-leading-relaxed);
+      vertical-align: top;
+    }
+    .ds-table tbody td.ds-table__td--primary {
+      background-color: var(--c-primary-soft); color: var(--c-ink);
+    }
+    .ds-table tbody tr:hover td { filter: brightness(0.98); }
+
+    .ds-ac-list { display: flex; flex-direction: column; gap: 2px; margin: var(--ds-space-xl) 0; }
+    .ds-ac-card {
+      border: 1px solid var(--c-rule); border-radius: var(--ds-radius-sm);
+      background-color: var(--c-bg); overflow: hidden; transition: background-color 0.2s;
+    }
+    .ds-ac-card:hover { background-color: var(--c-bg-soft); }
+    .ds-ac-card__header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: var(--ds-space-md); padding: var(--ds-space-lg); cursor: pointer; user-select: none;
+    }
+    .ds-ac-card__title {
+      font-family: var(--f-display); font-size: var(--ds-text-lg);
+      font-weight: var(--ds-weight-medium); line-height: var(--ds-leading-tight);
+      color: var(--c-ink); flex: 1;
+    }
+    .ds-ac-card__toggle {
+      width: 28px; height: 28px; border-radius: 6px;
+      border: 0.5px solid var(--c-rule); background-color: var(--c-bg-soft);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; cursor: pointer; transition: border-color 0.15s, background 0.15s;
+    }
+    .ds-ac-card__toggle:hover { border-color: var(--c-ink); background-color: var(--c-rule); }
+    .ds-ac-card__toggle-icon { width: 12px; height: 12px; position: relative; flex-shrink: 0; }
+    .ds-ac-card__toggle-icon::before, .ds-ac-card__toggle-icon::after {
+      content: ''; position: absolute; background-color: var(--c-muted); border-radius: 1px; transition: opacity 0.2s;
+    }
+    .ds-ac-card__toggle-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .ds-ac-card__toggle-icon::after { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; }
+    .ds-ac-card.ds-ac--open .ds-ac-card__toggle-icon::after { opacity: 0; }
+    .ds-ac-card.ds-ac--open .ds-ac-card__toggle-icon::before { background-color: var(--c-ink-soft); }
+    .ds-ac-card__body {
+      display: none; padding: var(--ds-space-lg); border-top: 1px solid var(--c-rule);
+      background-color: var(--c-bg-soft);
+    }
+    .ds-ac-card.ds-ac--open .ds-ac-card__body { display: block; }
+    .ds-ac-card__body p { font-size: var(--ds-text-md); line-height: var(--ds-leading-relaxed); color: var(--c-ink-soft); }
+    .ds-ac-card__body strong { color: var(--c-ink); font-weight: var(--ds-weight-semibold); }
+    .ds-ac-card__body em { font-style: italic; }
+    .ds-ac-card__body a { color: var(--c-primary); text-decoration: underline; text-underline-offset: 3px; }
+    .ds-ac-card__body a:hover { color: var(--c-primary-dark); }
+    .ds-ac-card__body sup { font-size: 0.6em; vertical-align: super; line-height: 0; }
+    .ds-ac-card__body code { font-family: var(--f-mono); font-size: 0.92em; background-color: var(--c-bg); padding: 2px 6px; border-radius: 4px; color: var(--c-ink); }
+
+    .ds-card-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+    @media (min-width: 768px) { .ds-card-grid--3col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .ds-card-grid--3col { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .ds-card {
+      background-color: var(--c-bg); border-radius: var(--r-md);
+      border: 1px solid var(--c-rule); padding: var(--ds-space-lg);
+      display: flex; flex-direction: column; box-shadow: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .ds-card:hover { border-color: var(--c-ink); }
+    .ds-card--link { cursor: pointer; }
+    .ds-card__body { display: flex; flex-direction: column; gap: var(--ds-space-sm); flex: 1; }
+    .ds-card__title {
+      font-family: var(--f-display); font-size: var(--ds-text-lg);
+      font-weight: var(--ds-weight-semibold); color: var(--c-ink);
+      line-height: var(--ds-leading-tight);
+    }
+    .ds-card__title sup { font-size: 0.6em; vertical-align: super; line-height: 0; }
+    .ds-card__link-text {
+      font-size: var(--ds-text-sm); color: var(--c-primary);
+      font-weight: var(--ds-weight-medium); margin-top: auto; padding-top: var(--ds-space-sm);
+    }
+
+    .ds-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-xs);
+      border-radius: var(--ds-radius-pill);
+      font-family: var(--f-display); font-weight: var(--ds-weight-medium); font-size: var(--ds-text-md);
+      cursor: pointer; border: none; transition: background-color 0.2s;
+      white-space: nowrap; text-decoration: none;
+    }
+    .ds-btn--md { padding: var(--ds-space-sm) var(--ds-space-xl); }
+    .btn--invert { background-color: var(--c-bg); color: var(--c-ink); }
+    .btn--invert:hover { background-color: var(--c-primary-soft); }
+
+    .ds-cta-band {
+      width: 100%; position: relative; overflow: hidden;
+      padding: 80px var(--ds-container-padding-mobile);
+      text-align: center;
+      background-color: var(--c-bg-dark);
+      background-size: cover; background-position: center;
+    }
+    .ds-cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-color: var(--ds-overlay-dark-light); z-index: 0;
+    }
+    .ds-cta-band > * { position: relative; z-index: 1; }
+    .ds-cta-band__inner {
+      max-width: 100%; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: var(--ds-space-lg);
+    }
+    @media (min-width: 1024px) { .ds-cta-band__inner { max-width: 720px; } }
+    @media (min-width: 1440px) { .ds-cta-band__inner { max-width: 860px; } }
+    .ds-cta-band__title {
+      font-family: var(--f-display); font-size: var(--ds-text-5xl);
+      font-weight: var(--ds-weight-bold); color: var(--c-bg);
+      line-height: var(--ds-leading-tight); letter-spacing: var(--ds-tracking-tight);
+    }
+    .ds-cta-band__description {
+      font-size: var(--ds-text-md); color: var(--ds-overlay-white-85);
+      line-height: var(--ds-leading-relaxed);
+    }
+    .ds-cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .ds-bg--grad-deep {
+      background-image: var(--ds-bg-img-grad-deep);
+      background-size: cover; background-position: center;
+    }
+    @media (min-width: 768px) { .ds-cta-band { padding: 100px var(--ds-container-padding-tablet); } }
+    @media (min-width: 1440px) { .ds-cta-band { padding: 120px var(--ds-container-padding-desktop); max-width: 1280px; margin: 0 auto; } }
+    @media (max-width: 767px) {
+      .ds-cta-band__title { font-size: var(--ds-text-4xl); }
+      .ds-cta-band__actions { flex-direction: column; align-items: center; }
+      .ds-cta-band__actions .ds-btn { width: 100%; max-width: 320px; }
+      .ds-bg--grad-deep { background-image: none; }
+    }
+    @media (min-width: 1440px) { .ds-cta-band__title { font-size: var(--ds-text-6xl); } }
+
+    .ds-author-info {
+      margin-top: var(--ds-space-3xl); padding-top: var(--ds-space-lg);
+      border-top: 1px solid var(--c-rule);
+      font-size: var(--ds-text-sm); color: var(--c-muted); line-height: var(--ds-leading-relaxed);
+    }
+    .ds-author-info strong { color: var(--c-ink-soft); font-weight: var(--ds-weight-medium); }
+
+    h1 sup, h2 sup, h3 sup { font-size: 0.55em; vertical-align: super; line-height: 0; font-weight: inherit; }
+
+    /* Figure */
+    .ds-figure {
+      margin: var(--ds-space-xl) 0;
+      padding: var(--ds-space-lg);
+      background-color: var(--c-bg-soft);
+      border: 1px solid var(--c-rule);
+      border-radius: var(--ds-radius-sm);
+    }
+    .ds-figure__svg-wrap {
+      width: 100%; overflow-x: auto;
+      scrollbar-width: none; -ms-overflow-style: none;
+    }
+    .ds-figure__svg-wrap::-webkit-scrollbar { display: none; }
+    .ds-figure__svg {
+      display: block; width: 100%; height: auto;
+      min-width: 640px; max-width: 100%;
+    }
+    .ds-figure__caption {
+      margin-top: var(--ds-space-md);
+      font-family: var(--f-mono); font-size: var(--ds-text-xs);
+      text-transform: uppercase; letter-spacing: var(--ds-tracking-wide);
+      color: var(--c-muted); text-align: center;
+    }
+    .ds-figure__caption strong { color: var(--c-ink-soft); font-weight: var(--ds-weight-medium); }
+
+    @media (min-width: 768px) { .ds-section-title-icon__text { font-size: 22px; } }
+    @media (min-width: 1024px) { .ds-article-hero__description { font-size: var(--ds-text-xl); } }
+  </style>
+</head>
+<body>
+
+  <main>
+
+    <!-- Section 1: Hero -->
+    <section id="section-hero" class="ds-section ds-section--hero">
+      <div class="ds-article-container">
+        <nav class="ds-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a> / <a href="/resources">Resources</a> / <a href="/resources/learn">Learn</a> / The Hidden Cost of Building Your Own Enterprise LLM
+        </nav>
+        <div class="ds-article-hero__meta">
+          <span class="ds-badge ds-badge--primary">AI Architecture</span>
+          <span class="ds-article-hero__reading-time">~10 min read</span>
+          <span class="ds-article-hero__date">May 2026</span>
+        </div>
+        <h1 class="ds-article-hero__title">
+          The <span class="ds-text--brand">Hidden Cost</span> of Building Your Own Enterprise LLM
+        </h1>
+        <p class="ds-article-hero__description">
+          Running your own LLM in production is a defensible choice — but the cost structure is asymmetric. The model is the cheap part. A realistic look at what self-hosted AI actually costs, where teams under-budget, and when it's the right answer.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: TL;DR -->
+    <section id="section-tldr" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-banner ds-banner--brand">
+          <span class="ds-banner__label">TL;DR</span>
+          <p>Self-hosting an LLM is a defensible choice — but the cost structure is asymmetric and most projections miss it. <strong>The model itself is free.</strong> Infrastructure is real and usually budgeted. <strong>People are the layer that most consistently breaks the projection</strong> — six to ten engineers minimum, fifteen to twenty for larger deployments, in a market where ML talent earns well above general engineering rates. <em>Over a three-year horizon the people cost typically exceeds infrastructure by two or three times.</em> Time compounds as opportunity cost: nine to eighteen months from decision to running production AI, during which the workflows the project was meant to serve either go without AI or use the external endpoints the project was meant to replace. Maintenance doesn't end — model updates, quality monitoring, infrastructure patches, workflow evolution accumulate as sustained team burn. Self-hosting is right when constraints are absolute, volume justifies the fixed cost, or the strategic case is explicit and funded. <strong>It's wrong when transformation could address the constraint, when workflows need frontier capability, or when the projection didn't include the full team.</strong> The pattern most enterprises end up with is hybrid: self-hosted for workflows that need it, external endpoints with transformation for the rest, under one routing layer and one governance framework.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 1. Why teams choose to self-host -->
+    <section id="section-1" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>1. Why Teams Choose to <span class="ds-text--brand">Self-Host in the First Place</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>The decision to run an LLM on the enterprise's own infrastructure is reasonable. There are workflows where it's the right answer, environments where it's the only answer, and strategic reasons to invest in internal AI capability even when external options exist. <strong>None of this is the question.</strong></p>
+          <p>The question is whether the team making the decision understands what they're actually committing to. In a striking number of enterprise AI programs, the choice to run internally was made based on a model of cost that turns out to be wrong in predictable ways. The model itself — the actual weights, the open-source release the team is going to deploy — <strong>is the cheapest part of the deployment</strong>. The rest of the cost structure is where the surprises live, and most of those surprises arrive months after the commitment is too far along to reverse.</p>
+          <p>This article walks through the cost layers of running a serious LLM internally, what each one actually involves, and where teams consistently under-budget. <em>It's not an argument against self-hosting. It's an attempt to make the decision an informed one.</em></p>
+          <p>Before getting into the costs, it's worth being precise about the reasons that lead enterprises to self-host. The reasons are real and the architecture should match them.</p>
+        </div>
+
+        <ul class="ds-bullet ds-bullet--dot">
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Data location constraints are absolute.</strong> Some workflows cannot send data to any external endpoint, regardless of transformation or safeguards. Defence operations, certain regulated healthcare categories, lawful intercept handling, classified financial workflows. For these, self-hosting isn't a choice — it's the only architecture that works. The cost analysis is then about <em>which</em> internal deployment, not <em>whether</em> to deploy internally.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Sector-specific commitments restrict the deployment topology.</strong> A telecom operator under sector-specific data location requirements may need parts of its operational AI to run inside the operator's own network even when transformation-based approaches could theoretically address the constraint. The contract or the data posture is binding regardless of architecture.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Strategic capability investment.</strong> Some enterprises view AI as a long-term capability they need to own, not rent. The reasoning is that AI is going to be central to the business, the vendor landscape is uncertain, and the company prefers to build internal expertise. This is a defensible position that doesn't depend on data location constraints at all.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Cost projection at scale.</strong> For workflows with very high request volumes, the per-token cost of external API calls eventually exceeds the fixed cost of running infrastructure. For most enterprises this point is further out than they think, but the projection is sometimes the explicit reason for self-hosting.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Operational predictability.</strong> External LLM vendors change models, prices, terms, and availability without the enterprise's approval. For workflows where this volatility is unacceptable, controlling the model lifecycle internally has real value.</span>
+          </li>
+        </ul>
+
+        <div class="ds-article-body">
+          <p>Each of these is a legitimate basis for self-hosting. <strong>The mistake isn't in the reasoning — it's in the budget assumed once the decision is made.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: 2. The model: cheap part -->
+    <section id="section-2" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>2. The Model — <span class="ds-text--brand">The Cheap Part</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>The first surprise for teams new to this is that <strong>the model itself costs very little</strong>.</p>
+          <p>The leading open-source models — Llama, Mistral, Qwen, and their successors — are released under licences that allow enterprise use without per-token fees. Downloading the weights costs nothing. Quantising them to run on the available hardware costs nothing. There are no licensing negotiations, no usage-based billing, no per-seat costs for the model as such.</p>
+          <p>This is the visible part of the cost analysis, and it's where the optimistic projections come from. <em>"The model is free; running it ourselves must be cheaper than the API."</em> The calculation looks decisive when only the model cost is in it.</p>
+          <p><strong>What the calculation is missing is everything else.</strong></p>
+        </div>
+
+        <figure class="ds-figure">
+          <div class="ds-figure__svg-wrap">
+            <svg class="ds-figure__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="cost-layers-title cost-layers-desc">
+              <title id="cost-layers-title">The asymmetric cost layers of self-hosted LLMs</title>
+              <desc id="cost-layers-desc">A diagram showing five cost layers of self-hosted LLM deployment, stacked from smallest (model) to largest (people), with time and maintenance shown as bands that compound over the multi-year horizon.</desc>
+
+              <defs>
+                <marker id="arrow-time" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+                </marker>
+              </defs>
+
+              <!-- Header -->
+              <text x="40" y="34" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" fill="#6b7280" letter-spacing="1.2">SELF-HOSTED LLM · COST LAYERS</text>
+              <text x="920" y="34" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" fill="#6b7280" letter-spacing="1.2">3-YEAR HORIZON</text>
+
+              <!-- Left labels column header -->
+              <text x="160" y="68" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#3a3d5e">Layer</text>
+              <text x="540" y="68" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#3a3d5e">Relative cost weight</text>
+              <text x="860" y="68" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#3a3d5e">Budgeted?</text>
+
+              <!-- Layer 1: Model (smallest) -->
+              <g>
+                <rect x="40" y="86" width="240" height="44" rx="6" fill="#e6f7f6" stroke="#0ea5a4" stroke-width="1.5"/>
+                <text x="60" y="106" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#0b7f7e">Model</text>
+                <text x="60" y="122" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">weights · licence · quantisation</text>
+
+                <!-- Bar -->
+                <rect x="300" y="92" width="60" height="32" rx="4" fill="#0ea5a4"/>
+                <text x="370" y="113" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#0b7f7e">Free</text>
+
+                <!-- Budgeted column -->
+                <text x="860" y="113" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#0b7f7e">Yes ✓</text>
+              </g>
+
+              <!-- Layer 2: Infrastructure -->
+              <g>
+                <rect x="40" y="140" width="240" height="60" rx="6" fill="#eeebfe" stroke="#5b4fe9" stroke-width="1.5"/>
+                <text x="60" y="160" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#5b4fe9">Infrastructure</text>
+                <text x="60" y="176" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">GPU · serving stack · monitoring</text>
+                <text x="60" y="190" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">storage · network · scaling</text>
+
+                <!-- Bar (medium) -->
+                <rect x="300" y="152" width="200" height="36" rx="4" fill="#5b4fe9"/>
+                <text x="510" y="175" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#5b4fe9">Medium</text>
+
+                <text x="860" y="175" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#5b4fe9">Usually ✓</text>
+              </g>
+
+              <!-- Layer 3: People (largest) -->
+              <g>
+                <rect x="40" y="210" width="240" height="100" rx="6" fill="#fce9e8" stroke="#ef5350" stroke-width="2"/>
+                <text x="60" y="232" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#c73e3a">People</text>
+                <text x="60" y="248" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">ML platform engineers (2–4)</text>
+                <text x="60" y="262" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">ML ops engineers (2–3)</text>
+                <text x="60" y="276" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">Evaluation engineers (1–2)</text>
+                <text x="60" y="290" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">Workflow integration (2–3 per domain)</text>
+                <text x="60" y="304" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">Technical leadership</text>
+
+                <!-- Bar (largest - 2-3x infrastructure) -->
+                <rect x="300" y="232" width="520" height="56" rx="4" fill="#ef5350"/>
+                <text x="560" y="266" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#ffffff">2–3× infrastructure cost over 3 years</text>
+
+                <text x="860" y="266" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#c73e3a">Under-budgeted ✗</text>
+              </g>
+
+              <!-- Divider line -->
+              <line x1="40" y1="332" x2="920" y2="332" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4 3"/>
+              <text x="40" y="354" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="500" fill="#6b7280" letter-spacing="1.2">COMPOUNDS OVER TIME</text>
+
+              <!-- Layer 4: Time (band) -->
+              <g>
+                <rect x="40" y="368" width="880" height="56" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="60" y="388" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#b45309">Time</text>
+                <text x="60" y="406" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">9–18 months from decision to production AI</text>
+                <text x="60" y="418" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">opportunity cost on workflows that wait · external models advance during the build</text>
+
+                <!-- Timeline indicator -->
+                <line x1="680" y1="396" x2="900" y2="396" stroke="#b45309" stroke-width="1.5" marker-end="url(#arrow-time)"/>
+                <text x="790" y="388" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#b45309">opportunity cost</text>
+              </g>
+
+              <!-- Layer 5: Maintenance (band) -->
+              <g>
+                <rect x="40" y="432" width="880" height="56" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="60" y="452" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#b45309">Maintenance</text>
+                <text x="60" y="470" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">Model updates · quality monitoring · infrastructure patches · workflow evolution</text>
+                <text x="60" y="482" font-family="Inter, sans-serif" font-size="10" font-style="italic" fill="#6b7280">sustained team burn against a growing portfolio of workflows — doesn't appear in initial budget</text>
+
+                <line x1="680" y1="460" x2="900" y2="460" stroke="#b45309" stroke-width="1.5" marker-end="url(#arrow-time)"/>
+                <text x="790" y="452" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#b45309">never ends</text>
+              </g>
+
+              <!-- Bottom annotation -->
+              <text x="480" y="510" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-style="italic" fill="#3a3d5e">The model is the visible part. The cost lives in the layers below.</text>
+            </svg>
+          </div>
+          <figcaption class="ds-figure__caption">Figure 1 · <strong>The model is the cheapest layer. People consistently dominate the multi-year cost. Time and maintenance compound — and don't appear in the initial budget.</strong></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Section 5: 3. Infrastructure -->
+    <section id="section-3" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>3. <span class="ds-text--brand">Infrastructure</span> — The Layer Most Teams Budget For</h2>
+        </div>
+        <div class="ds-article-body">
+          <p>The next layer of cost is infrastructure, and <strong>this is the layer most teams do budget for, often realistically</strong>.</p>
+          <p>Running a serious open-source model in production means GPUs. The exact specification depends on the model size, the quantisation level, the throughput required, and the latency targets. A small deployment running a quantised mid-size model for low-throughput internal workflows might fit on a few enterprise GPUs at modest cost. A serious deployment running a larger model for high-throughput production workflows needs a dedicated GPU cluster with the cooling, power, and networking that implies.</p>
+          <p>The GPU cost can be calculated. A team that's done the work knows what they need and what it costs, whether that's hardware capex or cloud reserved instances or some combination. <strong>The capex side gets reasonable budget attention.</strong></p>
+          <p>What's often less well-budgeted at this layer is the supporting infrastructure that makes the GPUs useful: the model serving stack (<code>vLLM</code>, <code>TGI</code>, or equivalent), the request routing and load balancing in front of the serving layer, the storage for model weights and caches, the network capacity to handle the request volume, the monitoring infrastructure that watches all of it. These aren't expensive individually but they add up, and they require deliberate planning. The serving stack in particular has matured significantly in recent years; <em>it's no longer a research artefact, but it's still infrastructure that the team has to deploy and operate</em>.</p>
+          <p>Beyond the initial deployment, the infrastructure has to scale with usage. A workflow that grows from a hundred requests per day to ten thousand requests per day needs proportionally more capacity. This is the routine cost of running production systems, but it's worth factoring into the multi-year projection rather than assuming the day-one budget covers the long term.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: 4. People -->
+    <section id="section-4" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>4. <span class="ds-text--brand">People</span> — The Layer Most Teams Underestimate</h2>
+        </div>
+        <div class="ds-article-body">
+          <p>The layer where the projections most consistently break down is people. <strong>Running a production LLM is not a thing the existing infrastructure team does on the side.</strong> It requires a dedicated team with specific skills, and those skills are expensive in the current market.</p>
+          <p>A minimal team for serious internal LLM deployment includes:</p>
+        </div>
+
+        <ul class="ds-bullet ds-bullet--dot">
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>ML platform engineers</strong> who understand model serving, quantisation, throughput optimisation, and the operational characteristics of the inference stack. <em>Two to four engineers</em>, depending on scale.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>ML operations engineers</strong> who handle the monitoring, alerting, capacity planning, and on-call rotation for the inference infrastructure. <em>Two to three engineers</em>, often overlapping with the platform engineers in smaller teams.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Evaluation engineers</strong> who maintain the golden datasets, the evaluation pipelines, the quality monitoring, and the regression testing for model updates. <em>One to two engineers</em>, with significant input from the workflow teams that use the model.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Workflow integration engineers</strong> who build and maintain the layer between the model API and the actual workflows in the business. The number scales with the number of workflows; <em>typically two to three engineers per major workflow domain</em>.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Technical leadership</strong> with enough ML and infrastructure experience to make the architectural decisions and review the work. <em>One senior engineer at minimum</em>, often a small leadership group for larger deployments.</span>
+          </li>
+        </ul>
+
+        <div class="ds-article-body">
+          <p>For an enterprise running internal LLMs for a few business units, this is <strong>six to ten people</strong>. For a larger deployment serving multiple business units across a complex enterprise, it's <strong>fifteen to twenty</strong>.</p>
+          <p>The cost of these teams, in any major market, is substantial. ML engineers with the right skills earn well above the general engineering market. <strong>The team is small in headcount but expensive in burn rate.</strong> Over a three-year horizon, the people cost typically exceeds the infrastructure cost by a meaningful margin — for many deployments, <em>by a factor of two or three</em>.</p>
+          <p>This is the calculation that most often shifts when the team that proposed the project doesn't initially own the people cost. The infrastructure budget gets sponsored; the team has to be hired; and when the team is hired, the rest of the program has to fund it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: 5. Time -->
+    <section id="section-5" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>5. <span class="ds-text--brand">Time</span> — The Cost That Compounds</h2>
+        </div>
+        <div class="ds-article-body">
+          <p>A category that's harder to put a number on but easy to underestimate: time. Specifically, <strong>the gap between deciding to self-host and having a useful workflow in production</strong>.</p>
+          <p>The decision is fast. The procurement of hardware or cloud commitment takes weeks. The initial deployment of the serving stack and a first model takes more weeks. Getting the first workflow integrated and useful takes months. Achieving the operational maturity to run multiple workflows reliably takes longer still.</p>
+          <p>For most enterprises, the realistic timeline from <em>"we'll build our own"</em> to <em>"we're running production AI on it"</em> is somewhere between <strong>nine and eighteen months</strong>. Some teams move faster; many move slower. During this window, the enterprise either has no AI in the workflows the project is meant to serve, or it has AI through external endpoints that the project was meant to replace.</p>
+          <p>This matters for two reasons. The first is the <strong>opportunity cost</strong>: the workflows that would have been improved by AI aren't improved during the build period, and the business value of that delay is real. The second is the <strong>strategic risk</strong>: during the same window, the external LLM landscape continues to advance, and the internal model that finally goes into production may already be two iterations behind what the external alternative offers.</p>
+          <p>A common pattern: <em>the internal model arrives at production quality just in time for the team to discover that the workflow it was supposed to support has been re-architected around external endpoints in the interim.</em> <strong>The project succeeds technically and fails strategically.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: 6. Maintenance -->
+    <section id="section-6" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>6. <span class="ds-text--brand">Maintenance</span> — The Cost That Doesn't End</h2>
+        </div>
+        <div class="ds-article-body">
+          <p>Once the system is running, the costs don't stop. <strong>They shift to a different category.</strong></p>
+        </div>
+
+        <ul class="ds-bullet ds-bullet--dot">
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Model updates.</strong> Every few months, new open-source models get released with meaningfully better capabilities. The team has to evaluate each release, decide whether to upgrade, plan the migration, run the parallel evaluation, and execute the cutover. For a single model, this is a recurring engineering project — not enormous, but <em>ongoing</em>. For multiple models supporting different workflows, it's a significant portion of the team's time.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Evaluation and quality monitoring.</strong> The model that worked well last quarter may not work as well on this quarter's input distribution. Workflows evolve, documents change, business contexts shift. The evaluation infrastructure has to catch quality drift <em>before</em> users complain. This is sustained engineering work, not something the team can set up once and forget.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Infrastructure updates.</strong> The serving stack gets updates; the underlying GPU drivers change; security patches arrive; the cloud platforms deprecate things. None of this is dramatic, but it requires the team to stay current and apply changes without breaking the production workflows.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>Workflow evolution.</strong> As the business changes, the workflows the model supports change. New prompts have to be developed, evaluated, and rolled out. Old prompts have to be deprecated. Workflow integrations have to be updated. <em>The team that built the system is the team that maintains the workflows it serves</em>, which is more work than the initial build implied.</span>
+          </li>
+        </ul>
+
+        <div class="ds-article-body">
+          <p>The maintenance cost is the cost that's hardest to project because <strong>it doesn't appear in the initial budget</strong>. It shows up over the multi-year horizon as the team's sustained burn against a growing portfolio of workflows. <em>Enterprises that succeed with self-hosted AI tend to be the ones that planned for the maintenance investment from the start; enterprises that struggle are usually the ones that treated the initial deployment as the cost.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: 7. Where self-hosting is right -->
+    <section id="section-7" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>7. Where Self-Hosting Is <span class="ds-text--brand">the Right Answer</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>Given all this, the cases where self-hosting is the clearly right answer are specific.</p>
+        </div>
+
+        <ul class="ds-bullet ds-bullet--check">
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>When data location constraints are absolute.</strong> Workflows that cannot send data to any external endpoint must run internally. The cost is the cost of meeting the constraint, and the alternative is not having AI in the workflow at all.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>When the workflow volume justifies the fixed cost.</strong> Very high request volumes — <em>millions of requests per day at sustained scale</em> — amortise the infrastructure and people costs across enough work to come out ahead of per-token billing. The break-even point is further out than most enterprises think, but for some workflows it's clearly inside the planning horizon.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>When the strategic case is explicit and funded.</strong> Building internal AI capability as a long-term investment is defensible. <em>The decision should be made with full visibility into the multi-year cost</em>, not as a side effect of <em>"we'll save on API fees."</em></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 10: 8. Where self-hosting is wrong -->
+    <section id="section-8" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>8. Where Self-Hosting Is <span class="ds-text--brand">the Wrong Answer</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>The cases where self-hosting is the wrong answer are also specific.</p>
+        </div>
+
+        <ul class="ds-bullet ds-bullet--cross">
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>When the data location constraint can be addressed by transformation.</strong> For workflows where the data can stay in the EU region through architectural means — encapsulation, tokenisation, customer-controlled mapping — <em>the external endpoint with appropriate safeguards is a faster, cheaper, more capable solution</em>. The cost analysis usually doesn't favour self-hosting for these workflows.</span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>When the workflow needs frontier capability.</strong> The internal model lags the frontier external model on the dimensions that matter most for complex reasoning, long context handling, and unfamiliar document types. Some workflows can live with the gap; some can't. <em>Self-hosting for the workflows that can't produces a system that works but underperforms.</em></span>
+          </li>
+          <li class="ds-bullet__item">
+            <span class="ds-bullet__icon"></span>
+            <span class="ds-bullet__text"><strong>When the cost projection didn't include the full team.</strong> A self-hosting program funded only for infrastructure ends up either limping along understaffed or quietly absorbing the budget that was meant for other work. <em>Either way, the actual cost catches up with the optimistic projection.</em></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 11: 9. The pattern most enterprises end up with -->
+    <section id="section-9" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>9. The Pattern Most Enterprises <span class="ds-text--brand">End Up With</span></h2>
+        </div>
+        <div class="ds-article-body">
+          <p>Across enterprises that have worked through this, the deployment that emerges usually isn't pure self-hosting. <strong>It's a hybrid</strong> where the self-hosted infrastructure handles the workflows that genuinely require it — the absolute-constraint cases, the strategic-investment cases, the volume cases where the math works out — and external endpoints with transformation handle the rest.</p>
+          <p>The hybrid pattern isn't a compromise. <strong>It's the architecture that matches the cost profile of each workflow category to its actual constraint.</strong> Workflows that need self-hosting get self-hosting. Workflows that don't get external endpoints with safeguards. The team operates one routing layer, one governance framework, and two backends — <em>at a substantially lower total cost than running one backend that has to handle everything</em>.</p>
+          <p>For the broader argument about why hybrid is the architecturally honest answer rather than a political compromise, see the pillar on where to run enterprise AI. For the routing layer that makes hybrid actually work, see the article on routing AI workflows between cloud and local models. For the workflows at the strictest end of the self-hosting case — where no external endpoint is acceptable — see the article on when AI must run without network access.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 12: Takeaways -->
+    <section id="section-takeaways" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-banner ds-banner--brand">
+          <span class="ds-banner__label">Key Takeaways</span>
+          <ul class="ds-bullet ds-bullet--dot">
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">The model itself is free — the surprises live in every other layer of the cost structure</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Infrastructure (GPU + serving stack + monitoring) is real but typically budgeted reasonably</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">People are the layer that most consistently breaks the projection — 6–10 engineers minimum, 15–20 for larger deployments, exceeding infrastructure cost by 2–3× over three years</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Time compounds as opportunity cost — 9–18 months from decision to production AI, during which the workflows wait and the external frontier advances</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Maintenance doesn't end — model updates, quality drift, infrastructure patches, workflow evolution accumulate as sustained team burn</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Right when: constraints are absolute · volume justifies the fixed cost · the strategic case is explicit and funded</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">Wrong when: transformation could address the constraint · the workflow needs frontier capability · the projection didn't include the full team</span>
+            </li>
+            <li class="ds-bullet__item">
+              <span class="ds-bullet__icon"></span>
+              <span class="ds-bullet__text">The pattern most enterprises end up with is hybrid — self-hosted for the workflows that need it, external endpoints with transformation for the rest, under one routing layer and one governance framework</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 13: FAQ -->
+    <section id="section-faq" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>Frequently Asked <span class="ds-text--brand">Questions</span></h2>
+        </div>
+
+        <div class="ds-ac-list">
+          <div class="ds-ac-card ds-ac--open">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">Isn't self-hosted AI cheaper than paying per-token for external APIs?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Only when the calculation includes everything, not just the model. The model itself is free — Llama, Mistral, Qwen, and their successors are released under enterprise-friendly licences with no per-token fees. Where the calculation usually breaks is everything else: GPU infrastructure (budgeted reasonably), the team to operate it (underbudgeted), the time between deciding and being in production (compounds as opportunity cost), and ongoing maintenance (doesn't end). Over a three-year horizon, the people cost typically exceeds the infrastructure cost by a factor of two or three. <strong>The break-even point versus API billing is further out than most enterprises think.</strong></p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">How big does the team need to be to run a serious internal LLM?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>For a few business units, <strong>six to ten people</strong>. For a larger deployment serving multiple business units across a complex enterprise, <strong>fifteen to twenty</strong>. The composition is ML platform engineers (2–4), ML operations engineers (2–3), evaluation engineers (1–2), workflow integration engineers (2–3 per major workflow domain), and technical leadership (at minimum one senior engineer). These are small headcounts but expensive burn rates — ML engineers with the right skills earn well above the general engineering market. <em>The team cost is what most projections under-budget.</em></p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">When is self-hosting actually the right answer?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Three specific cases. First, when <strong>data location constraints are absolute</strong> — workflows that cannot send data to any external endpoint regardless of safeguards must run internally; the cost is the cost of meeting the constraint. Second, when <strong>workflow volume justifies the fixed cost</strong> — sustained millions of requests per day amortise infrastructure and team costs across enough work to come out ahead of per-token billing. Third, when <strong>the strategic case is explicit and funded</strong> — building internal AI capability as a long-term investment, with full visibility into the multi-year cost rather than as a side effect of <em>"we'll save on API fees."</em></p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">When is self-hosting the wrong answer?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Three specific cases. When <strong>the data location constraint can be addressed by transformation</strong> — for workflows where data can stay in the EU region through encapsulation, tokenisation, and customer-controlled mapping, the external endpoint with appropriate safeguards is faster, cheaper, and more capable. When <strong>the workflow needs frontier capability</strong> — internal models lag the frontier on complex reasoning, long context, and unfamiliar document types; self-hosting workflows that can't tolerate this gap produces systems that work but underperform. When <strong>the cost projection didn't include the full team</strong> — programs funded only for infrastructure end up understaffed or quietly absorbing budgets meant for other work.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">What's the realistic timeline from deciding to self-host to running production AI?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p><strong>Nine to eighteen months</strong> for most enterprises. Procurement takes weeks, initial serving-stack deployment takes more weeks, getting the first workflow integrated and useful takes months, and operational maturity to run multiple workflows reliably takes longer still. During this window the enterprise has no AI in the workflows the project is meant to serve, or it has AI through the external endpoints the project was meant to replace. <em>The opportunity cost is real</em>, and during the same window the external LLM landscape continues to advance — the internal model that finally goes into production may already be behind.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">Does the cost stop once the system is running?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>No — it shifts categories. <strong>Model updates</strong> (new open-source releases every few months requiring evaluation, migration, parallel evaluation, cutover). <strong>Quality monitoring</strong> (workflows evolve, input distributions shift, evaluation infrastructure has to catch drift). <strong>Infrastructure updates</strong> (serving stack updates, GPU driver changes, security patches, cloud deprecations). <strong>Workflow evolution</strong> (new prompts to develop, old prompts to deprecate, integrations to update). This is the cost hardest to project because it doesn't appear in the initial budget — <em>it shows up over multi-year horizons as the team's sustained burn against a growing workflow portfolio</em>.</p>
+            </div>
+          </div>
+
+          <div class="ds-ac-card">
+            <div class="ds-ac-card__header" onclick="toggleAcCard(this)">
+              <span class="ds-ac-card__title">What pattern do most enterprises end up with?</span>
+              <div class="ds-ac-card__toggle"><span class="ds-ac-card__toggle-icon"></span></div>
+            </div>
+            <div class="ds-ac-card__body">
+              <p>Hybrid — not as a political compromise but as the architecture that matches each workflow category's cost profile to its actual constraint. Self-hosted infrastructure handles workflows that genuinely require it (absolute-constraint cases, strategic-investment cases, volume cases where the math works out). External endpoints with transformation handle the rest. <strong>The team operates one routing layer, one governance framework, and two backends</strong> — at substantially lower total cost than running one backend that has to handle everything.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 14: Author info -->
+    <section id="section-author" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-author-info">
+          <p><strong>Author</strong>: CUBIG Policy &amp; Architecture Team</p>
+          <p><strong>Published</strong>: May 2026</p>
+          <p><strong>Last updated</strong>: May 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 15: Related Articles -->
+    <section id="section-related" class="ds-section--article-body">
+      <div class="ds-article-container">
+        <div class="ds-article-section-header">
+          <h2>Where to <span class="ds-text--brand">Read Next</span></h2>
+        </div>
+        <div class="ds-card-grid ds-card-grid--3col">
+          <a href="/resources/learn/where-to-run-enterprise-ai" class="ds-card ds-card--link">
+            <div class="ds-card__body">
+              <span class="ds-badge ds-badge--primary">AI Architecture</span>
+              <h3 class="ds-card__title">Where to Run Enterprise AI: External, On-Premise, or Both</h3>
+              <span class="ds-card__link-text">Read &rarr;</span>
+            </div>
+          </a>
+          <a href="/resources/learn/routing-ai-workflows-between-cloud-and-local-models" class="ds-card ds-card--link">
+            <div class="ds-card__body">
+              <span class="ds-badge ds-badge--primary">AI Architecture</span>
+              <h3 class="ds-card__title">Routing AI Workflows Between Cloud and Local Models</h3>
+              <span class="ds-card__link-text">Read &rarr;</span>
+            </div>
+          </a>
+          <a href="/resources/learn/when-ai-must-run-without-network-access" class="ds-card ds-card--link">
+            <div class="ds-card__body">
+              <span class="ds-badge ds-badge--primary">AI Architecture</span>
+              <h3 class="ds-card__title">When AI Must Run Without Network Access</h3>
+              <span class="ds-card__link-text">Read &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 16: CTA Band -->
+    <section id="section-cta" class="ds-cta-band ds-bg--grad-deep">
+      <div class="ds-cta-band__inner">
+        <h2 class="ds-cta-band__title">
+          Doing the <span class="ds-text--brand">cost analysis</span> for your own workflow mix?
+        </h2>
+        <p class="ds-cta-band__description">
+          <span class="ds-text--product">LLM Capsule</span> operates both deployment paths under a single architecture. <strong style="color: var(--c-bg);">Path B</strong> runs the on-premise local model for workflows where self-hosting is the right answer; <strong style="color: var(--c-bg);">Path A</strong> routes other workflows to external endpoints through the encapsulation layer. The team operates one system with one audit trail regardless of which backend handles a given request. The <a href="/architecture" style="color: var(--c-bg); text-decoration: underline;">architecture page</a> shows how the two paths compose. For a working session on the cost analysis for your specific workflow mix, request a demo below.
+        </p>
+        <div class="ds-cta-band__actions">
+          <a href="/request-a-demo" class="ds-btn ds-btn--md btn--invert">Request a Demo &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function toggleAcCard(header) {
+      var card = header.closest('.ds-ac-card');
+      card.classList.toggle('ds-ac--open');
+    }
+  </script>
+
+</body>
+</html>
