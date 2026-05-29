@@ -32,6 +32,37 @@
     </thead>
     <tbody>
       <tr>
+        <td>2026-05-28</td>
+        <td><span class="badge badge--rule">규칙 추가</span></td>
+        <td>
+          learn article 변환 시행착오 13가지 workflow 전파:<br>
+          1. bodyhtml figure 누락 — B타입 → bodyhtml 추출 시 &lt;figure&gt; 블록 포함 필수, grep -c 검증 필수<br>
+          2. bodyhtml SVG 주석 → Framer ECMAScript Annex B 에러 — figure 내부 HTML 주석 제거 필수<br>
+          3. 번역 md 마크다운 출력 금지 — bodyHtml prop 번역 시 HTML 태그 구조 유지, 마크다운(###/**/-) 금지<br>
+          4. build 스크립트 line range 하드코딩 금지 — 패턴 기반 자동 boundary 감지 사용<br>
+          5. 영문 learn article hero 패턴 — la-hero 패턴(← Learn + title + desc + meta), ds-article-hero 금지<br>
+          6. 영문 learn related 섹션 — ds-related-section* + minimal card 패턴<br>
+          7. CardData union type widening — locales: string[], title/desc: Record&lt;string,string&gt; 타입 완화<br>
+          8. Framer locale resolver dict-first 패턴 — locale!==en 시 T[key] 우선, stored prop override 방지<br>
+          9. URL 자동 감지 useEffect 필수 — Framer Localization 동기화<br>
+          10. Learn 인덱스 Hero 페어 순서 — leading nav-link skip 휴리스틱 적용<br>
+          11. locale dropdown 미작동 디버그 — 인스턴스 삭제 재추가 + 디버그 박스 확인<br>
+          12. inject 스크립트 CSS 클래스명 오치환 — lookbehind 하이픈 추가 + string literal 내부 skip<br>
+          13. N2SF 표기 통일 — 상첨자 ² 사용 금지, SEO 비호환
+        </td>
+        <td>
+          <span class="tag-file">CLAUDE.md</span>
+          <span class="tag-file">.claude/agents/frontend-dev.md</span>
+          <span class="tag-file">.claude/agents/framer-dev.md</span>
+          <span class="tag-file">.claude/agents/translator.md</span>
+          <span class="tag-file">memory/feedback_tsx_lessons.md</span>
+          <span class="tag-file">memory/feedback_locale_variants.md</span>
+          <span class="tag-file">memory/feedback_build_script.md</span>
+          <span class="tag-file">memory/MEMORY.md</span>
+        </td>
+        <td>feedback-sync</td>
+      </tr>
+      <tr>
         <td>2026-04-14</td>
         <td><span class="badge badge--rule">규칙 추가</span></td>
         <td>

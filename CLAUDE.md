@@ -273,6 +273,13 @@ Low 결함만 남은 경우 CONDITIONAL PASS.
 30. **배경 이미지 중복 사용** → 동일 `ds-bg--*` 클래스를 한 페이지에서 2회 이상 사용 금지 (CLAUDE.md 기존 규칙 재강조 — FAIL 트리거)
 31. **컬러 라인 꾸밈 금지 (AI 클리셰)** → `border-top: Npx solid colored`, `border-left: Npx solid colored` 카드 꾸밈 금지. 색상 분기는 icon/badge/number 색상으로만 처리
 32. **내부 링크 Framer 상대경로 필수** → `/request-a-demo`, `/architecture`, `/product`, `/pricing`, `/trust`, `/solutions`, `/resources/learn/...` 형태. 절대 URL(`https://llmcapsule.ai/...`) 금지, `.html` 확장자 금지. 외부 링크(AWS Marketplace 등)만 절대 URL 허용
+33. **N2SF 표기 통일** → `N²SF` (상첨자 ²) 사용 금지. `N2SF`로 통일. 상첨자 유니코드는 검색엔진 인식 불가 (SEO 비호환)
+34. **bodyhtml figure 누락** → B타입 → bodyhtml 추출 시 `<figure class="ds-figure">` 블록 포함 필수. `grep -c '<figure'` 로 원본 수와 일치 확인
+35. **bodyhtml SVG 주석 잔존** → bodyhtml 안 `<!--...-->` 주석은 TSX template literal에서 ECMAScript Annex B 에러 유발. 추출 시 모두 제거 필수
+36. **번역 md 마크다운 출력** → bodyHtml prop 번역 시 마크다운(`### h3`, `**bold**`, `- list`) 사용 금지. HTML 태그 구조 그대로 유지 + 텍스트만 번역
+37. **Framer locale stored prop 간섭** → locale resolver는 dict-first 패턴 필수. `locale !== "en"`일 때 `T[key]` 우선 사용 — prop stored 값 통과 방지
+38. **Framer Localization URL 미동기화** → TSX에 `useEffect` + `window.location.pathname` 파싱 필수. 없으면 Framer Localization 모드에서 locale 전환 안 됨
+39. **영문 learn article hero 패턴 오류** → 신규 영문 learn article은 `la-hero` 패턴(← Learn + title + desc + meta). 한국어 learn의 `ds-article-hero` (breadcrumb) 패턴 사용 금지
 
 ---
 

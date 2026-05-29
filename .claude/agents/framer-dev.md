@@ -285,3 +285,74 @@ addPropertyControls(SectionNN_Name, {
 **v6.1+ CSS 변수 사용.** `const P/C/PALETTE = {}` 하드코딩 폐기.
 `var(--c-primary, #5b4fe9)` 형태로 참조.
 Eyebrow 허용. Brand font(Oxanium) 폐기 → Inter 통일.
+
+---
+
+## Locale Dropdown TSX 심화 규칙
+
+### Resolver dict-first 패턴 (필수)
+Framer는 컴포넌트 인스턴스의 prop 값을 영구 저장한다.
+영문 default 값이 stored되어 있으면 locale 전환 시 `prop || dict[locale]` 패턴에서 prop이 truthy로 통과 → 영문이 그대로 표시된다.
+
+**올바른 resolver 패턴:**
+```tsx
+// locale이 en이 아닐 때는 dict를 우선 사용
+const resolve = (prop: string | undefined, key: string) =>
+  locale === "en"
+    ? (prop || T[key] || "")
+    : (T[key] || TRANSLATIONS.en[key] || prop || "")
+```
+
+`locale !== "en"` 일 때 dict 값을 무조건 우선시해야 Framer stored prop override 문제가 해결된다.
+
+### URL 자동 감지 useEffect (필수)
+Framer Localization 모드에서 페이지가 `/ko/`, `/de/`로 번역되어도 코드 컴포넌트의 locale prop은 default "en"을 유지한다.
+`useEffect`로 URL pathname을 파싱해 locale을 자동 동기화해야 한다.
+
+```tsx
+import { useState, useEffect } from "react"
+
+export default function Component({ locale: localeProp = "en", ... }: Props) {
+  const [effectiveLocale, setEffectiveLocale] = useState(localeProp)
+
+  useEffect(() => {
+    const path = window.location.pathname
+    if (path.startsWith("/ko/") || path === "/ko") setEffectiveLocale("ko")
+    else if (path.startsWith("/de/") || path === "/de") setEffectiveLocale("de")
+    else setEffectiveLocale(localeProp)
+  }, [localeProp])
+
+  const T = TRANSLATIONS[effectiveLocale] || TRANSLATIONS.en
+  // ... 이후 effectiveLocale 사용
+}
+```
+
+URL 자동 감지가 없으면 Framer Localization 모드에서 locale 전환이 작동하지 않는다.
+
+### Locale 미작동 디버그 방법
+locale dropdown을 변경해도 텍스트가 바뀌지 않을 때:
+1. 컴포넌트 인스턴스를 삭제하고 새로 추가 (stored prop 초기화)
+2. 디버그 박스로 `effectiveLocale` 값을 직접 확인:
+   ```tsx
+   {process.env.NODE_ENV !== "production" && (
+     <div style={{ position: "fixed", bottom: 8, right: 8, background: "red", color: "#fff", fontSize: 11, padding: "2px 6px", zIndex: 9999 }}>
+       locale={effectiveLocale}
+     </div>
+   )}
+   ```
+
+### Union type literal 배열 widening 주의
+Framer TSX에서 `["ko"]` 같은 string literal 배열은 `string[]`으로 widening될 수 있어 union type과 불일치 발생.
+
+```tsx
+// 위험 — CardData.locales: Locale[] 와 불일치
+const CARDS = [{ locales: ["ko"], title: { ko: "..." } }]
+
+// 안전 — string[]로 타입 완화
+interface CardData {
+  locales: string[]
+  title: Record<string, string>
+  desc: Record<string, string>
+}
+```
+Framer CMS 연동 타입은 `string[]`, `Record<string, string>` 사용 권장.

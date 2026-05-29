@@ -126,6 +126,7 @@ a { text-decoration: none; color: inherit; }
 11. **ds-bullet--check 아이콘 HTML 삽입 금지**: `<span class="ds-bullet__icon"></span>` 비워둘 것 — `&#10003;` 등 HTML 텍스트 삽입 시 체크 2개 표시
 12. **section header description 잘림 금지**: 원본 단락 전문 사용 — 첫 문장만 넣지 않는다. lead와 동일 문장으로 시작하는 중복 금지
 13. **overflow-x: auto scrollbar 숨김 필수**: `overflow-x: auto` 사용 시 반드시 `scrollbar-width: none;` + `::-webkit-scrollbar { display: none; }` 동반
+14. **bodyhtml figure 포함 필수**: B타입 → bodyhtml 추출 시 `<figure>` 블록 반드시 포함. figure 내부 HTML 주석(`<!--...-->`) 제거 필수 (Framer TSX template literal 안에서 컴파일 에러 유발)
 
 #### 반응형 규칙 (Mobile-first, 4단계 필수)
 ```css
@@ -206,6 +207,14 @@ grep -n 'scrollbar-width: none' {brand}/output/html/[파일명]-b-type.html
 
 # 15. TSX 동기화 대상 확인
 ls {brand}/output/framer/ 2>/dev/null
+
+# 16. bodyhtml 추출 시 figure 포함 확인 (learn article만 해당)
+# grep -c '<figure' {brand}/output/html/[파일명]-bodyhtml.html
+# grep -c '<figure' {brand}/output/html/[파일명]-b-type.html
+# → 두 수치 일치해야 PASS
+
+# 17. bodyhtml 내부 HTML 주석 확인 (0건이어야 Framer 컴파일 안전)
+# grep -c '<!--' {brand}/output/html/[파일명]-bodyhtml.html
 ```
 
 → 모든 검증을 통과한 후에만 Step 6으로 진행한다.
@@ -229,6 +238,29 @@ QA 검증 요청합니다.
 - spec에 다이어그램/스크린샷이 필요한 섹션이 명시되면, `diagram-builder` 에이전트에 위임한다
 - 직접 다이어그램 HTML을 만들지 않는다 — diagram-builder가 생성한 snippet을 삽입만 한다
 - diagram-builder가 완료되면 `diagram-qa`를 호출하여 검증 후, PASS된 snippet만 삽입한다
+
+---
+
+## Learn Article 변환 규칙 (신규 영문 learn article 전용)
+
+### bodyhtml 추출 규칙 (Critical)
+B타입 HTML에서 `bodyhtml.html` 파일을 추출할 때:
+- `<figure class="ds-figure">` 블록이 반드시 포함되어야 한다 — SVG 다이어그램, 이미지 figure 모두 포함
+- 추출 후 반드시 검증: `grep -c '<figure' bodyhtml.html` 결과가 원본 B타입 HTML의 figure 수와 일치해야 함
+- **figure 내부 HTML 주석 제거 필수**: `<figure>` 블록 안의 `<!--...-->` 주석은 ECMAScript Annex B HTML-like comment로 잘못 해석되어 Framer 컴파일 에러 발생 (`Expected ',', got '{'` 등)
+- 검증: `grep -c '<!--' bodyhtml.html` 결과 0건이어야 안전 (단, 파일 최상단 `<!-- bodyHtml` 주석 제외)
+
+### 영문 learn article Hero 패턴 (LearnArticle 컴포넌트 준수)
+신규 영문 learn article을 B타입 HTML로 변환할 때는 LearnArticle 컴포넌트의 **la-hero 패턴**을 따른다:
+- 구조: `← Learn` 백링크 + title + description + meta (날짜, 읽기 시간 등)
+- 한국어 learn 아티클의 `ds-article-hero` (breadcrumb + meta + title) 패턴 사용 금지
+- 레퍼런스: `llm-capsule/output/html/external-llm-on-sensitive-enterprise-data-b-type.html`
+
+### 영문 learn article Related 섹션 패턴
+신규 영문 learn related 섹션은 minimal card 패턴을 사용한다:
+- 클래스: `ds-related-section`, `ds-related-card` 계열
+- 구성: 작은 mono uppercase label + title + arrow 우하단 + 회색 배경 카드
+- 한국어 learn related 섹션(큰 h2 + badge + "Read →" 텍스트 카드) 패턴 사용 금지
 
 ## 절대 규칙
 - 원문 텍스트를 단 한 글자도 바꾸지 않는다

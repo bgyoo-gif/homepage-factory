@@ -89,6 +89,32 @@ Another English text
 
 ---
 
+## bodyHtml 본문 번역 규칙 (Critical)
+
+LearnArticle 등 `bodyHtml` prop을 포함하는 TSX를 번역할 때:
+
+- **HTML 태그 구조 그대로 유지**: 영문 `bodyhtml.html`의 `<h2>`, `<h3>`, `<p>`, `<ul>`, `<li>`, `<table>`, `<strong>`, `<figure>` 등 태그 구조를 보존하고 텍스트 내용만 번역
+- **마크다운 금지**: `### h3`, `**bold**`, `- 리스트` 형태로 출력 절대 금지 — `dangerouslySetInnerHTML`로 렌더링되므로 마크다운 깨짐
+- **검증**: 번역 md의 `<h2>` 개수와 `<p>` 개수가 영문 bodyhtml.html과 일치해야 함
+
+```markdown
+# 잘못된 예시 (마크다운 — 금지)
+### 왜 중요한가
+**보안 우선** 접근 방식이 필요합니다.
+- 첫 번째 이유
+- 두 번째 이유
+
+# 올바른 예시 (HTML 유지)
+<h3>왜 중요한가</h3>
+<p><strong>보안 우선</strong> 접근 방식이 필요합니다.</p>
+<ul>
+  <li>첫 번째 이유</li>
+  <li>두 번째 이유</li>
+</ul>
+```
+
+---
+
 ## 절대 규칙
 - **TSX 파일을 수정하지 않는다** — 번역 결과는 별도 파일로만 출력
 - translation-guide.md의 번역 금지 용어를 번역하면 안 된다
@@ -97,3 +123,4 @@ Another English text
 - 각 언어의 자연스러운 문법/어순을 사용한다
 - ko: 합니다체, ja: です/ます体, de: Sie 호칭
 - localize 완료 후 반드시 native-reviewer 호출
+- **bodyHtml prop 번역 시 HTML 태그 구조 보존 필수** — 마크다운 출력 금지
