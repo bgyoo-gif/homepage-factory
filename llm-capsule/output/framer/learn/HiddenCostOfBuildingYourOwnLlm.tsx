@@ -4,8 +4,7 @@
 // Self-contained Framer Code Component with locale dropdown (en/ko/de).
 // Set `locale` in Framer Properties panel to switch all text simultaneously.
 
-import { addPropertyControls, ControlType } from "framer"
-import { useState, useEffect } from "react"
+import { addPropertyControls, ControlType, useLocaleInfo } from "framer"
 
 interface Props {
   locale?: "en" | "ko" | "de"
@@ -708,12 +707,11 @@ export default function HiddenCostOfBuildingYourOwnLlm({
   related4Title = "",
   related4Href = "",
 }: Props) {
-  const [autoLocale, setAutoLocale] = useState<"en" | "ko" | "de">("en")
-  useEffect(() => {
-    const m = window.location.pathname.match(/^\/(ko|de)(?:\/|$)/)
-    if (m) setAutoLocale(m[1] as "en" | "ko" | "de")
-  }, [])
-  const effectiveLocale: "en" | "ko" | "de" = locale && locale !== "en" ? locale : autoLocale
+  const { activeLocale } = useLocaleInfo()
+  const framerLocale = (activeLocale as any)?.slug as string | undefined
+  const effectiveLocale: "en" | "ko" | "de" =
+    (framerLocale === "ko" || framerLocale === "de") ? framerLocale :
+    (locale && locale !== "en") ? locale : "en"
 
   const T = TRANSLATIONS[effectiveLocale] || TRANSLATIONS.en
   const isNonEn = effectiveLocale !== "en"
@@ -1281,7 +1279,8 @@ export default function HiddenCostOfBuildingYourOwnLlm({
 
         {/* TEMP DEBUG — remove after diagnosis */}
         <div style={{position:'fixed',top:0,left:0,right:0,background:'#ef4444',color:'#fff',padding:'8px 16px',zIndex:99999,fontFamily:'monospace',fontSize:'12px',lineHeight:'1.6'}}>
-          <div>prop locale="{locale}" | autoLocale="{autoLocale}" | effectiveLocale="{effectiveLocale}"</div>
+          <div>framerLocale="{framerLocale}" | prop locale="{locale}" | effectiveLocale="{effectiveLocale}"</div>
+          <div>activeLocale={JSON.stringify(activeLocale)}</div>
           <div>isNonEn={String(isNonEn)} | T.title="{(T["title"] || "").substring(0,40)}…"</div>
           <div>_title="{(_title || "").substring(0,40)}…" | _bodyHtml len={_bodyHtml?.length || 0}</div>
         </div>
