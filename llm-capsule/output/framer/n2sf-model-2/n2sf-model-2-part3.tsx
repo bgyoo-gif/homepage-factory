@@ -40,7 +40,8 @@ const DEFAULT_RESOURCES = [
   { num: "05", category: "기술 비교", title: "자체 sLLM 구축, 현실은 어떨까", summary: "사내 GPT·프라이빗 LLM 구축의 실제 비용·운영 부담 점검", link: "https://llmcapsule.ai/ko/resources/learn/sllm-self-hosted-reality-check" },
 ]
 
-const DEFAULT_CHECKBOXES = ["민원·공문 처리", "보고서 작성", "회의록 요약", "계약서 검토", "기타"]
+const DEFAULT_AI_STATUS = ["미도입", "일부 팀만 자체 사용", "전사 Team/Enterprise 지원", "sLLM 자체 구축", "기타"]
+const DEFAULT_N2SF_STATUS = ["구체적 검토 중 (아키텍처, C/S/O 문서 분류 등)", "가이드라인 학습 중", "검토한 적 없음", "기타"]
 const DEFAULT_TIMELINES = ["1개월 이내", "3개월 이내", "6개월 이내", "정보 수집 단계"]
 
 const fallbackImg = (prop: string | undefined, fallback: string) =>
@@ -70,7 +71,8 @@ export default function N2sfPart3({
   formSub = "5분 진단으로 기관 환경에 맞는 적용 시나리오, 예상 도입 일정, 조달 옵션을 정리해서 회신드립니다.",
   formCtaLabel = "기관 AI 도입 상담 신청",
   formNote = "영업일 기준 1일 이내 회신 · 진단은 무료입니다.",
-  formCheckboxes = DEFAULT_CHECKBOXES,
+  formAiStatus = DEFAULT_AI_STATUS,
+  formN2sfStatus = DEFAULT_N2SF_STATUS,
   formTimelines = DEFAULT_TIMELINES,
   // Footer
   footerBrand = "LLM Capsule by CUBIG",
@@ -84,7 +86,8 @@ export default function N2sfPart3({
   const _reasonCards = fallbackArr(reasonCards, DEFAULT_REASONS)
   const _certCards = fallbackArr(certCards, DEFAULT_CERTS)
   const _resourceCards = fallbackArr(resourceCards, DEFAULT_RESOURCES)
-  const _formCheckboxes = fallbackArr(formCheckboxes, DEFAULT_CHECKBOXES)
+  const _formAiStatus = fallbackArr(formAiStatus, DEFAULT_AI_STATUS)
+  const _formN2sfStatus = fallbackArr(formN2sfStatus, DEFAULT_N2SF_STATUS)
   const _formTimelines = fallbackArr(formTimelines, DEFAULT_TIMELINES)
 
   const [showFloat, setShowFloat] = useState(false)
@@ -234,17 +237,19 @@ export default function N2sfPart3({
                 setFormStatus("submitting")
                 const form = e.currentTarget
                 const data = new FormData(form)
-                const checked = Array.from(form.querySelectorAll("input[name='n2sf_use_case']:checked"))
-                  .map((el) => (el as HTMLInputElement).value)
-                  .join(";")
+                const radio = (name: string) => {
+                  const el = form.querySelector(`input[name='${name}']:checked`) as HTMLInputElement | null
+                  return el?.value ?? ""
+                }
                 const fields = [
                   { name: "company", value: String(data.get("company") ?? "") },
                   { name: "firstname", value: String(data.get("firstname") ?? "") },
                   { name: "jobtitle", value: String(data.get("jobtitle") ?? "") },
                   { name: "phone", value: String(data.get("phone") ?? "") },
                   { name: "email", value: String(data.get("email") ?? "") },
-                  { name: "n2sf_use_case", value: checked },
-                  { name: "n2sf_timeline", value: String(data.get("n2sf_timeline") ?? "") },
+                  { name: "ai_adoption_status", value: radio("ai_adoption_status") },
+                  { name: "n2sf_review_status", value: radio("n2sf_review_status") },
+                  { name: "n2sf_timeline", value: radio("n2sf_timeline") },
                   { name: "message", value: String(data.get("message") ?? "") },
                   { name: "privacy_consent", value: privacyConsent ? "동의" : "미동의" },
                   { name: "marketing_consent", value: marketingConsent ? "동의" : "미동의" },
@@ -305,21 +310,34 @@ export default function N2sfPart3({
                 </div>
               </div>
               <div className="p3-field">
-                <label>검토 중인 적용 범위 (복수 선택)</label>
-                <div className="p3-checkbox-grid">
-                  {_formCheckboxes.map((cb, i) => (
-                    <label className="p3-checkbox-item" key={i}>
-                      <input type="checkbox" name="n2sf_use_case" value={cb} /> {cb}
+                <label>생성형 AI 도입 현황</label>
+                <div className="p3-radio-group">
+                  {_formAiStatus.map((opt, i) => (
+                    <label className="p3-radio-item" key={i}>
+                      <input type="radio" name="ai_adoption_status" value={opt} /> {opt}
+                    </label>
+                  ))}
+                </div>
+              </div>
+              <div className="p3-field">
+                <label>N2SF 검토 여부</label>
+                <div className="p3-radio-group">
+                  {_formN2sfStatus.map((opt, i) => (
+                    <label className="p3-radio-item" key={i}>
+                      <input type="radio" name="n2sf_review_status" value={opt} /> {opt}
                     </label>
                   ))}
                 </div>
               </div>
               <div className="p3-field">
                 <label>도입 검토 시점</label>
-                <select name="n2sf_timeline">
-                  <option value="">선택해주세요</option>
-                  {_formTimelines.map((t, i) => <option key={i} value={t}>{t}</option>)}
-                </select>
+                <div className="p3-radio-group">
+                  {_formTimelines.map((t, i) => (
+                    <label className="p3-radio-item" key={i}>
+                      <input type="radio" name="n2sf_timeline" value={t} /> {t}
+                    </label>
+                  ))}
+                </div>
               </div>
               <div className="p3-field">
                 <label>추가 문의 사항</label>
@@ -442,7 +460,7 @@ interface Props {
   certCards?: CertCard[]
   resKicker?: string; resHeadline?: string; resourceCards?: ResourceCard[]
   formHeadline?: string; formSub?: string; formCtaLabel?: string; formNote?: string
-  formCheckboxes?: string[]; formTimelines?: string[]
+  formAiStatus?: string[]; formN2sfStatus?: string[]; formTimelines?: string[]
   footerBrand?: string; footerCopy?: string
   floatMsg?: string; floatCtaLabel?: string; floatCtaLink?: string
 }
@@ -489,7 +507,8 @@ addPropertyControls(N2sfPart3, {
   formSub: { type: ControlType.String, title: "Form Sub", displayTextArea: true, defaultValue: "5분 진단으로 기관 환경에 맞는 적용 시나리오, 예상 도입 일정, 조달 옵션을 정리해서 회신드립니다." },
   formCtaLabel: { type: ControlType.String, title: "Form CTA", defaultValue: "기관 AI 도입 상담 신청" },
   formNote: { type: ControlType.String, title: "Form Note", defaultValue: "영업일 기준 1일 이내 회신 · 진단은 무료입니다." },
-  formCheckboxes: { type: ControlType.Array, title: "Checkboxes", control: { type: ControlType.String } },
+  formAiStatus: { type: ControlType.Array, title: "AI Status Options", control: { type: ControlType.String } },
+  formN2sfStatus: { type: ControlType.Array, title: "N2SF Status Options", control: { type: ControlType.String } },
   formTimelines: { type: ControlType.Array, title: "Timelines", control: { type: ControlType.String } },
   footerBrand: { type: ControlType.String, title: "Footer Brand", defaultValue: "LLM Capsule by CUBIG" },
   footerCopy: { type: ControlType.String, title: "Footer Copy", defaultValue: "© 2025 CUBIG Inc. All rights reserved." },
@@ -596,9 +615,10 @@ const CSS = `
 .p3-field select{color:var(--p3-ink-2)}
 .p3-field input:focus,.p3-field select:focus,.p3-field textarea:focus{outline:none;border-color:var(--p3-primary);box-shadow:0 0 0 3px rgba(0,217,245,.12)}
 .p3-field textarea{min-height:96px;resize:vertical}
-.p3-checkbox-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:8px}
-.p3-checkbox-item{display:flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid var(--p3-line);border-radius:var(--p3-radius-sm);cursor:pointer;background:var(--p3-bg-soft);font-size:14px;color:var(--p3-ink-2)}
-.p3-checkbox-item input{width:auto;margin:0}
+.p3-radio-group{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.p3-radio-item{display:flex;align-items:center;gap:10px;padding:11px 16px;border:1px solid var(--p3-line);border-radius:var(--p3-radius-sm);cursor:pointer;background:var(--p3-bg-soft);font-size:14px;color:var(--p3-ink-2);transition:border-color .2s,background .2s}
+.p3-radio-item:hover{border-color:var(--p3-primary);background:#FBFAFE}
+.p3-radio-item input{width:auto;margin:0;accent-color:var(--p3-primary);cursor:pointer}
 .p3-cta-submit{width:100%;padding:18px;border:0;border-radius:999px;background:var(--p3-primary);color:#fff;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer;transition:background .2s,transform .2s}
 .p3-cta-submit:hover{background:var(--p3-primary-soft);transform:translateY(-1px)}
 .p3-form-note{text-align:center;font-size:13px;color:var(--p3-ink-3);margin-top:16px}
@@ -653,7 +673,6 @@ const CSS = `
   .p3-resource-card{grid-template-columns:60px 1fr auto;gap:20px;padding:20px 8px}
   .p3-resource-category{display:none}
   .p3-form-card{padding:40px 24px}
-  .p3-checkbox-grid{grid-template-columns:1fr}
   .p3-field-row{grid-template-columns:1fr;gap:0}
   .p3-consent-row{padding:12px 14px;font-size:13px}
   .p3-consent-table td:first-child{white-space:normal;width:80px}
