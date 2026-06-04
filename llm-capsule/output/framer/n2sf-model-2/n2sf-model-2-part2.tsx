@@ -7,30 +7,6 @@ import { useState, useEffect, useRef } from "react"
 
 const BASE_IMG = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/"
 
-const DEFAULT_CSO = [
-  {
-    grade: "C",
-    name: "Classified · 기밀",
-    items: ["국가안보·수사·방위 기밀", "핵심 보안 정책과 취약점", "유출 시 피해가 큰 자료"],
-    aiItems: ["외부 AI 연결이 어렵습니다", "별도 폐쇄망 검토가 필요합니다", "일반 AI 활용과 분리해 봐야 합니다"],
-    badge: "외부 전송 대상이 아닙니다",
-  },
-  {
-    grade: "S",
-    name: "Sensitive · 민감",
-    items: ["민원·회의록·계약서·보고서", "개인정보와 업무 맥락이 섞인 문서", "로그·티켓·예산·감사 자료"],
-    aiItems: ["가장 쓰고 싶지만 가장 많이 막힙니다", "원문을 그대로 보내면 문제가 됩니다", "가리고 기록하고 복원하는 구조가 필요합니다"],
-    badge: "가장 먼저 봐야 할 등급",
-  },
-  {
-    grade: "O",
-    name: "Open · 공개",
-    items: ["보도자료·공지·공개 통계", "외부 공개가 가능한 문서", "민감정보가 없는 자료"],
-    aiItems: ["외부 AI 활용이 비교적 자유롭습니다", "업무 효과는 제한적일 수 있습니다", "S등급까지 다루려면 별도 구조가 필요합니다"],
-    badge: "공개자료 중심 활용",
-  },
-]
-
 const DEFAULT_IMPL = [
   { title: "인증·접근 통제", req: "인증 서버, 비인가 접근 차단", solution: "기관 ID 연동, 이용자 권한 분리" },
   { title: "콘텐츠 통제", req: "자료유형 통제, 프롬프트·콘텐츠 필터링", solution: "민감정보 자동 비식별화 및 응답 복원" },
@@ -90,12 +66,6 @@ const fallbackArr = <T,>(arr: T[] | undefined, def: T[]): T[] =>
   arr && arr.length > 0 ? arr : def
 
 export default function N2sfPart2({
-  // N2SF Framework
-  n2sfKicker = "N2SF FRAMEWORK",
-  n2sfHeadline = "국가정보원에서\n국가·공공기관 망 보안 프레임워크(N2SF)를\n발표했습니다.",
-  n2sfDescription = "국가사이버보안기본지침이 '필수 망분리'에서 '다중계층 보안'으로 전환되면서, 정부·공공기관은 모든 정보를 C·S·O 세 등급으로 나누고 등급에 맞는 보안체계를 갖춰야 합니다. 그 기준이 N2SF입니다.",
-  n2sfCoverImage = `${BASE_IMG}n2sf-cover.png`,
-  csoCards = DEFAULT_CSO,
   // Model 2
   m2Eyebrow = "MODEL 2 · AI 연계체계",
   m2Headline = "N2SF의 「모델 2」프레임워크로\nAI를 안전하게 업무에 활용할 수 있습니다.",
@@ -136,7 +106,6 @@ export default function N2sfPart2({
   ucDescription = "문서 구조나 양식을 유지한채 문제가 될 수 있는 민감한 내용만 알아서 처리합니다. 결과는 다시 알아서 복원하여 업무에 바로 쓸 수 있는 그대로 확인할 수 있습니다.",
   ucTabs = DEFAULT_UC_TABS,
 }: Props) {
-  const _csoCards = fallbackArr(csoCards, DEFAULT_CSO)
   const _m2ImplCards = fallbackArr(m2ImplCards, DEFAULT_IMPL)
   const _painCases = fallbackArr(painCases, DEFAULT_CASES)
   const _altHeaders = fallbackArr(altHeaders, DEFAULT_ALT_HEADERS)
@@ -190,45 +159,6 @@ export default function N2sfPart2({
   return (
     <div className="p2-root">
       <style>{CSS}</style>
-
-      {/* N2SF FRAMEWORK (DARK) */}
-      <section className="p2-s p2-s-dark">
-        <div className="p2-container">
-          <span className="p2-sh-kicker">{n2sfKicker}</span>
-          <h2 className="p2-sh-big">{accentNl(n2sfHeadline)}</h2>
-          <p className="p2-section-lead">{n2sfDescription}</p>
-          <div className="p2-cso-grid">
-            <div className="p2-cso-cover">
-              <div className="p2-cso-cover-imgwrap">
-                <img className="p2-cso-cover-img" src={fallbackImg(n2sfCoverImage, `${BASE_IMG}n2sf-cover.png`)} alt="N2SF 가이드라인 표지" />
-              </div>
-              <div className="p2-cso-cover-foot">
-                <div className="p2-cap-label">National Intelligence Service</div>
-                <div className="p2-cap-title">국가 망 보안체계<br />보안 가이드라인 (2025.9)</div>
-              </div>
-            </div>
-            {_csoCards.map((c, i) => (
-              <div className={`p2-cso-rich p2-cso-${c.grade.toLowerCase()}`} key={i}>
-                <div className="p2-cso-head">
-                  <div className="p2-cso-grade">{c.grade}</div>
-                  <div className="p2-cso-name">{c.name}</div>
-                </div>
-                <div className="p2-cso-body">
-                  <div>
-                    <h5>어떤 자료인가요</h5>
-                    <ul>{c.items.map((it, j) => <li key={j}>{it}</li>)}</ul>
-                  </div>
-                  <div>
-                    <h5>AI 활용 기준</h5>
-                    <ul>{c.aiItems.map((it, j) => <li key={j}>{it}</li>)}</ul>
-                  </div>
-                  <div className="p2-cso-badge">{c.badge}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* MODEL 2 DIAGRAM */}
       <section className="p2-s p2-s-alt">
@@ -442,7 +372,6 @@ export default function N2sfPart2({
   )
 }
 
-interface CsoCard { grade: string; name: string; items: string[]; aiItems: string[]; badge: string }
 interface ImplCard { title: string; req: string; solution: string }
 interface PainCase { badge: string; title: string; desc: string; tags: string[]; image: string }
 interface AltRow { label: string; cols: string[]; marks: string[] }
@@ -452,8 +381,6 @@ interface StrengthCard { icon: string; title: string; body: string; highlight: s
 interface UcTab { label: string; image: string }
 
 interface Props {
-  n2sfKicker?: string; n2sfHeadline?: string; n2sfDescription?: string; n2sfCoverImage?: string
-  csoCards?: CsoCard[]
   m2Eyebrow?: string; m2Headline?: string; m2Sub?: string; m2ImplCards?: ImplCard[]; m2DiagramCaption?: string
   painKicker?: string; painHeadline?: string; painBody1?: string; painBody2?: string
   painEmphasis1?: string; painEmphasis2?: string; painCaseLabel?: string; painCases?: PainCase[]
@@ -465,11 +392,6 @@ interface Props {
 }
 
 addPropertyControls(N2sfPart2, {
-  n2sfKicker: { type: ControlType.String, title: "N2SF Kicker", defaultValue: "N2SF FRAMEWORK" },
-  n2sfHeadline: { type: ControlType.String, title: "N2SF Headline", displayTextArea: true, defaultValue: "국가정보원에서\n국가·공공기관 망 보안 프레임워크(N2SF)를\n발표했습니다." },
-  n2sfDescription: { type: ControlType.String, title: "N2SF Desc", displayTextArea: true, defaultValue: "국가사이버보안기본지침이 '필수 망분리'에서 '다중계층 보안'으로 전환되면서, 정부·공공기관은 모든 정보를 C·S·O 세 등급으로 나누고 등급에 맞는 보안체계를 갖춰야 합니다. 그 기준이 N2SF입니다." },
-  n2sfCoverImage: { type: ControlType.Image, title: "N2SF Cover" },
-  csoCards: { type: ControlType.Array, title: "CSO Cards", control: { type: ControlType.Object, controls: { grade: { type: ControlType.String, title: "Grade" }, name: { type: ControlType.String, title: "Name" }, items: { type: ControlType.Array, title: "Items", control: { type: ControlType.String } }, aiItems: { type: ControlType.Array, title: "AI Items", control: { type: ControlType.String } }, badge: { type: ControlType.String, title: "Badge" } } } },
   m2Eyebrow: { type: ControlType.String, title: "M2 Eyebrow", defaultValue: "MODEL 2 · AI 연계체계" },
   m2Headline: { type: ControlType.String, title: "M2 Headline", displayTextArea: true, defaultValue: "N2SF의 「모델 2」프레임워크로\nAI를 안전하게 업무에 활용할 수 있습니다." },
   m2Sub: { type: ControlType.String, title: "M2 Sub", displayTextArea: true, defaultValue: "N2SF가 제시하는 11가지 보안 모델 중, 「모델 2」는 업무환경에서 외부 생성형 AI를 활용하는 표준입니다. LLM Capsule은 이 표준 시나리오의 「AI 연계체계」 위치에서, 단말과 외부 AI 사이의 정보 흐름을 안전하게 처리합니다." },
@@ -537,25 +459,6 @@ const CSS = `
 .p2-sh-kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--p2-cyan)}
 .p2-sh-big{font-size:clamp(32px,4.4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1.12;color:var(--p2-ink);margin-bottom:28px;max-width:920px}
 .p2-section-lead{font-size:var(--p2-fs-lead);color:var(--p2-ink-2);line-height:1.8;max-width:680px;margin-bottom:64px}
-
-/* CSO GRID */
-.p2-cso-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin:56px 0;align-items:stretch}
-.p2-cso-cover{border-radius:var(--p2-radius-lg);overflow:hidden;border:1px solid var(--p2-line);background:#fff;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(14,11,26,.10)}
-.p2-cso-cover-imgwrap{flex:1;padding:18px;display:flex;align-items:center;justify-content:center;background:#fff;min-height:0}
-.p2-cso-cover-img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
-.p2-cso-cover-foot{padding:14px 16px;border-top:1px solid var(--p2-line);background:var(--p2-bg-soft)}
-.p2-cap-label{font-size:var(--p2-fs-micro);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--p2-ink-3);margin-bottom:4px}
-.p2-cap-title{font-size:14px;font-weight:700;color:var(--p2-ink);line-height:1.4}
-.p2-cso-rich{border-radius:var(--p2-radius-lg);border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);padding:28px 22px;display:flex;flex-direction:column;gap:18px}
-.p2-cso-head{display:flex;align-items:center;gap:12px}
-.p2-cso-grade{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#fff;background:var(--p2-primary-soft)}
-.p2-cso-name{font-size:15px;font-weight:700;color:rgba(255,255,255,.9)}
-.p2-cso-body{font-size:13px;color:rgba(255,255,255,.7);line-height:1.7;display:flex;flex-direction:column;gap:14px;flex:1}
-.p2-cso-body h5{font-size:12px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.05em;margin-bottom:8px;text-transform:uppercase}
-.p2-cso-body ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px}
-.p2-cso-body ul li{padding-left:16px;position:relative}
-.p2-cso-body ul li::before{content:"·";position:absolute;left:0;color:rgba(255,255,255,.4)}
-.p2-cso-badge{margin-top:auto;padding:6px 14px;border-radius:var(--p2-radius-sm);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);font-size:12px;font-weight:600;color:rgba(255,255,255,.8);text-align:center}
 
 /* MODEL 2 */
 .p2-m2-header{max-width:880px;margin-bottom:48px}
@@ -661,7 +564,6 @@ const CSS = `
 /* RESPONSIVE */
 @media(max-width:1000px){
   .p2-m2-impl{grid-template-columns:1fr}
-  .p2-cso-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:900px){
   .p2-s{padding:80px 0}
@@ -672,7 +574,6 @@ const CSS = `
 @media(max-width:768px){
   .p2-sh-big{font-size:clamp(28px,7vw,38px);letter-spacing:-.025em}
   .p2-sh-kicker{font-size:11px;padding:6px 12px;margin-bottom:20px}
-  .p2-cso-grid{grid-template-columns:1fr}
   .p2-uc-tabs{gap:8px;margin-top:32px}
   .p2-uc-tab{padding:10px 18px;font-size:13px}
 }

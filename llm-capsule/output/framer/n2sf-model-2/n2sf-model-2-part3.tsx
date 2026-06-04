@@ -89,6 +89,16 @@ export default function N2sfPart3({
 
   const [showFloat, setShowFloat] = useState(false)
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
+  const [privacyConsent, setPrivacyConsent] = useState(false)
+  const [marketingConsent, setMarketingConsent] = useState(false)
+  const [privacyExpanded, setPrivacyExpanded] = useState(false)
+  const [marketingExpanded, setMarketingExpanded] = useState(false)
+  const allConsent = privacyConsent && marketingConsent
+  const toggleAllConsent = () => {
+    const next = !allConsent
+    setPrivacyConsent(next)
+    setMarketingConsent(next)
+  }
 
   useEffect(() => {
     let dismissed = false
@@ -236,6 +246,8 @@ export default function N2sfPart3({
                   { name: "n2sf_use_case", value: checked },
                   { name: "n2sf_timeline", value: String(data.get("n2sf_timeline") ?? "") },
                   { name: "message", value: String(data.get("message") ?? "") },
+                  { name: "privacy_consent", value: privacyConsent ? "동의" : "미동의" },
+                  { name: "marketing_consent", value: marketingConsent ? "동의" : "미동의" },
                 ]
                 const hutk = typeof document !== "undefined"
                   ? document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*=\s*([^;]*).*$)|^.*$/, "$1")
@@ -313,7 +325,59 @@ export default function N2sfPart3({
                 <label>추가 문의 사항</label>
                 <textarea name="message" placeholder="기관 환경, 검토 중인 업무, 보안 정책 등 자유롭게 작성해주세요." />
               </div>
-              <button type="submit" className="p3-cta-submit" disabled={formStatus === "submitting"}>
+
+              {/* CONSENT */}
+              <div className="p3-consent">
+                <label className="p3-consent-row p3-consent-all">
+                  <input type="checkbox" checked={allConsent} onChange={toggleAllConsent} />
+                  <span>모두 선택</span>
+                </label>
+                <div className="p3-consent-divider" />
+                <div className="p3-consent-item">
+                  <label className="p3-consent-row">
+                    <input type="checkbox" checked={privacyConsent} onChange={() => setPrivacyConsent(!privacyConsent)} />
+                    <span><span className="p3-consent-badge p3-consent-badge--req">필수</span> 개인정보 수집 및 이용 동의</span>
+                    <button type="button" className="p3-consent-toggle" onClick={() => setPrivacyExpanded(!privacyExpanded)}>{privacyExpanded ? "접기" : "전문 보기"}</button>
+                  </label>
+                  {privacyExpanded && (
+                    <div className="p3-consent-detail">
+                      <table className="p3-consent-table">
+                        <thead><tr><th>항목</th><th>내용</th></tr></thead>
+                        <tbody>
+                          <tr><td>수집 항목</td><td>소속 기관명, 성함, 직책, 연락처, 이메일 주소, 검토 적용 범위, 도입 검토 시점, 추가 문의 사항</td></tr>
+                          <tr><td>수집·이용 목적</td><td>기관 AI 도입 상담 신청 접수 및 회신, 맞춤형 적용 시나리오·도입 일정·조달 옵션 안내</td></tr>
+                          <tr><td>보유 기간</td><td>수집일로부터 1년 (목적 달성 후 지체 없이 파기). 별도 동의 시 마케팅 목적 보유 기간은 아래 참조</td></tr>
+                          <tr><td>국외 이전</td><td>본 양식은 HubSpot Inc. (미국) 서버를 통해 처리됩니다. 이전 항목·목적·보유 기간은 위와 동일하며, HubSpot의 보안 인증(SOC 2 Type II, ISO 27001)에 따라 보호됩니다</td></tr>
+                          <tr><td>거부 권리</td><td>동의를 거부할 수 있으나, 거부 시 상담 신청이 접수되지 않습니다</td></tr>
+                        </tbody>
+                      </table>
+                      <p className="p3-consent-link">전체 개인정보 처리방침은 <a href="/privacy" target="_blank" rel="noopener noreferrer">여기</a>에서 확인하실 수 있습니다.</p>
+                    </div>
+                  )}
+                </div>
+                <div className="p3-consent-item">
+                  <label className="p3-consent-row">
+                    <input type="checkbox" checked={marketingConsent} onChange={() => setMarketingConsent(!marketingConsent)} />
+                    <span><span className="p3-consent-badge p3-consent-badge--opt">선택</span> 홍보 및 마케팅 정보 수신 동의</span>
+                    <button type="button" className="p3-consent-toggle" onClick={() => setMarketingExpanded(!marketingExpanded)}>{marketingExpanded ? "접기" : "전문 보기"}</button>
+                  </label>
+                  {marketingExpanded && (
+                    <div className="p3-consent-detail">
+                      <table className="p3-consent-table">
+                        <thead><tr><th>항목</th><th>내용</th></tr></thead>
+                        <tbody>
+                          <tr><td>수집 목적</td><td>LLM Capsule 제품 업데이트, 공공 AI 도입 사례·정책 변경 안내, 세미나·웨비나 초대 등 홍보·마케팅 정보 제공</td></tr>
+                          <tr><td>수집 항목</td><td>이메일 주소, 소속 기관명, 성함</td></tr>
+                          <tr><td>보유 기간</td><td>동의 철회 시까지 (수신 거부 링크를 통해 언제든 철회 가능)</td></tr>
+                        </tbody>
+                      </table>
+                      <p className="p3-consent-link">동의하지 않아도 상담 신청은 정상적으로 접수됩니다.</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <button type="submit" className="p3-cta-submit" disabled={formStatus === "submitting" || !privacyConsent}>
                 {formStatus === "submitting" ? "제출 중..." : formCtaLabel}
               </button>
               {formStatus === "success" && (
@@ -543,6 +607,27 @@ const CSS = `
 .p3-form-status--err{color:#E53E3E;background:#FFF0F0}
 .p3-cta-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
 
+/* CONSENT */
+.p3-consent{margin-bottom:28px;border:1px solid var(--p3-line);border-radius:var(--p3-radius-md);overflow:hidden}
+.p3-consent-row{display:flex;align-items:center;gap:10px;padding:14px 18px;cursor:pointer;font-size:14px;color:var(--p3-ink);line-height:1.4;margin:0}
+.p3-consent-row input[type="checkbox"]{width:18px;height:18px;flex-shrink:0;accent-color:var(--p3-primary);margin:0;cursor:pointer}
+.p3-consent-all{background:var(--p3-bg-soft);font-weight:700}
+.p3-consent-divider{height:1px;background:var(--p3-line)}
+.p3-consent-item{border-top:1px solid var(--p3-line)}
+.p3-consent-item:first-of-type{border-top:0}
+.p3-consent-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;margin-right:4px;vertical-align:middle}
+.p3-consent-badge--req{background:#FFF0F0;color:var(--p3-accent-red)}
+.p3-consent-badge--opt{background:var(--p3-bg-tint);color:var(--p3-primary)}
+.p3-consent-toggle{margin-left:auto;flex-shrink:0;background:none;border:none;color:var(--p3-ink-3);font-size:13px;font-weight:500;cursor:pointer;padding:4px 0;font-family:inherit;text-decoration:underline;text-underline-offset:2px}
+.p3-consent-toggle:hover{color:var(--p3-primary)}
+.p3-consent-detail{padding:0 18px 18px;font-size:13px;color:var(--p3-ink-2);line-height:1.7}
+.p3-consent-table{width:100%;border-collapse:collapse;margin-bottom:12px;font-size:13px}
+.p3-consent-table th{text-align:left;padding:10px 12px;background:var(--p3-bg-soft);border:1px solid var(--p3-line);font-weight:600;color:var(--p3-ink);font-size:12px;white-space:nowrap}
+.p3-consent-table td{padding:10px 12px;border:1px solid var(--p3-line);vertical-align:top;color:var(--p3-ink-2)}
+.p3-consent-table td:first-child{white-space:nowrap;font-weight:600;color:var(--p3-ink);width:120px}
+.p3-consent-link{font-size:12px;color:var(--p3-ink-3)}
+.p3-consent-link a{color:var(--p3-primary);text-decoration:underline}
+
 /* FOOTER */
 .p3-footer{padding:48px 0;background:#0E0B1A;color:rgba(255,255,255,.6);text-align:center;font-size:13px;line-height:1.7}
 .p3-brand-foot{color:#fff;font-weight:700;font-size:16px;margin-bottom:12px;display:block}
@@ -570,6 +655,8 @@ const CSS = `
   .p3-form-card{padding:40px 24px}
   .p3-checkbox-grid{grid-template-columns:1fr}
   .p3-field-row{grid-template-columns:1fr;gap:0}
+  .p3-consent-row{padding:12px 14px;font-size:13px}
+  .p3-consent-table td:first-child{white-space:normal;width:80px}
 }
 @media(max-width:768px){
   .p3-sh-big{font-size:clamp(28px,7vw,38px);letter-spacing:-.025em}
