@@ -615,7 +615,7 @@ const CSS = `
 .p3-field select{color:var(--p3-ink-2)}
 .p3-field input:focus,.p3-field select:focus,.p3-field textarea:focus{outline:none;border-color:var(--p3-primary);box-shadow:0 0 0 3px rgba(0,217,245,.12)}
 .p3-field textarea{min-height:96px;resize:vertical}
-.p3-radio-group{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.p3-radio-group{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:8px}
 .p3-radio-item{display:flex;align-items:center;gap:10px;padding:11px 16px;border:1px solid var(--p3-line);border-radius:var(--p3-radius-sm);cursor:pointer;background:var(--p3-bg-soft);font-size:14px;color:var(--p3-ink-2);transition:border-color .2s,background .2s}
 .p3-radio-item:hover{border-color:var(--p3-primary);background:#FBFAFE}
 .p3-radio-item input{width:auto;margin:0;accent-color:var(--p3-primary);cursor:pointer}
@@ -674,6 +674,7 @@ const CSS = `
   .p3-resource-category{display:none}
   .p3-form-card{padding:40px 24px}
   .p3-field-row{grid-template-columns:1fr;gap:0}
+  .p3-radio-group{grid-template-columns:1fr}
   .p3-consent-row{padding:12px 14px;font-size:13px}
   .p3-consent-table td:first-child{white-space:normal;width:80px}
 }
