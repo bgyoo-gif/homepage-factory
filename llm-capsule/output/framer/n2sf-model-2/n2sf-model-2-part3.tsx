@@ -330,7 +330,7 @@ export default function N2sfPart3({
                 </div>
               </div>
               <div className="p3-field">
-                <label>도입 검토 시점</label>
+                <label>도입 예상 시점</label>
                 <div className="p3-radio-group">
                   {_formTimelines.map((t, i) => (
                     <label className="p3-radio-item" key={i}>
@@ -362,7 +362,7 @@ export default function N2sfPart3({
                       <table className="p3-consent-table">
                         <thead><tr><th>항목</th><th>내용</th></tr></thead>
                         <tbody>
-                          <tr><td>수집 항목</td><td>소속 기관명, 성함, 직책, 연락처, 이메일 주소, 검토 적용 범위, 도입 검토 시점, 추가 문의 사항</td></tr>
+                          <tr><td>수집 항목</td><td>소속 기관명, 성함, 직책, 연락처, 이메일 주소, 생성형 AI 도입 현황, N2SF 검토 여부, 도입 예상 시점, 추가 문의 사항</td></tr>
                           <tr><td>수집·이용 목적</td><td>기관 AI 도입 상담 신청 접수 및 회신, 맞춤형 적용 시나리오·도입 일정·조달 옵션 안내</td></tr>
                           <tr><td>보유 기간</td><td>수집일로부터 1년 (목적 달성 후 지체 없이 파기). 별도 동의 시 마케팅 목적 보유 기간은 아래 참조</td></tr>
                           <tr><td>국외 이전</td><td>본 양식은 HubSpot Inc. (미국) 서버를 통해 처리됩니다. 이전 항목·목적·보유 기간은 위와 동일하며, HubSpot의 보안 인증(SOC 2 Type II, ISO 27001)에 따라 보호됩니다</td></tr>
