@@ -160,7 +160,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
   heroDescription = "Compare LLM Capsule with prompt security gateways. Gateways filter at the API layer; LLM Capsule enables AI adoption at the data layer with structure-preserving encapsulation.",
 
   // Overview
-  overviewText = "Prompt security gateways sit between the user and the AI model, scanning prompts for sensitive content and filtering or blocking requests that contain flagged patterns. They operate at the API interaction layer. LLM Capsule operates as an AI enablement data layer — transforming the data itself before it enters any AI workflow, enabling AI adoption rather than blocking it.",
+  overviewText = "Prompt security gateways sit between the user and the AI model, scanning prompts for sensitive content and filtering or blocking requests that contain flagged patterns. They operate at the API interaction layer. LLM Capsule operates as a context-preserving data layer for AI — transforming the data itself before it enters any AI workflow, enabling AI adoption rather than blocking it.",
 
   // Gateways Work
   gatewaysWorkTitle = "How Prompt Security Gateways Work",
@@ -185,7 +185,7 @@ export default function LlmCapsuleVsPromptSecurityGateways({
   thCapsule = "LLM Capsule",
   row1Cap = "Operating layer",
   row1Col2 = "API / prompt level",
-  row1Col3 = "AI enablement data layer",
+  row1Col3 = "context-preserving data layer for AI",
   row2Cap = "Scope",
   row2Col2 = "Prompt text only",
   row2Col3 = "Full data pipeline",
@@ -923,7 +923,7 @@ addPropertyControls(LlmCapsuleVsPromptSecurityGateways, {
   overviewText: {
     type: ControlType.String,
     title: "Overview Text",
-    defaultValue: "Prompt security gateways sit between the user and the AI model, scanning prompts for sensitive content and filtering or blocking requests that contain flagged patterns. They operate at the API interaction layer. LLM Capsule operates as an AI enablement data layer — transforming the data itself before it enters any AI workflow, enabling AI adoption rather than blocking it.",
+    defaultValue: "Prompt security gateways sit between the user and the AI model, scanning prompts for sensitive content and filtering or blocking requests that contain flagged patterns. They operate at the API interaction layer. LLM Capsule operates as a context-preserving data layer for AI — transforming the data itself before it enters any AI workflow, enabling AI adoption rather than blocking it.",
     displayTextArea: true,
   },
   gatewaysWorkTitle: {
@@ -1016,7 +1016,7 @@ addPropertyControls(LlmCapsuleVsPromptSecurityGateways, {
   row1Col3: {
     type: ControlType.String,
     title: "Row 1: Capsule",
-    defaultValue: "AI enablement data layer",
+    defaultValue: "context-preserving data layer for AI",
   },
   row2Cap: {
     type: ControlType.String,

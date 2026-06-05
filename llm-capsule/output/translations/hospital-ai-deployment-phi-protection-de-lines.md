@@ -31,7 +31,7 @@ Aktualisiert April 2025
 TL;DR — Definition
 Definition · Kurzfassung
 
-A hospital AI deployment with PHI protection uses an AI enablement data layer to encapsulate patient names, MRN, diagnoses, lab results, prescriptions, and clinical workflow context locally before any data reaches an external LLM. The LLM drafts radiology reports, clinical summaries, and care coordination outputs on the protected capsule; outputs are restored back into the EHR inside the hospital network. HIPAA-aligned. Deployed at Ewha Womans University Medical Center (EUMC).
+A hospital AI deployment with PHI protection uses a context-preserving data layer for AI to encapsulate patient names, MRN, diagnoses, lab results, prescriptions, and clinical workflow context locally before any data reaches an external LLM. The LLM drafts radiology reports, clinical summaries, and care coordination outputs on the protected capsule; outputs are restored back into the EHR inside the hospital network. HIPAA-aligned. Deployed at Ewha Womans University Medical Center (EUMC).
 Ein KI-Einsatz im Krankenhaus mit PHI-Schutz nutzt eine KI-Datenschicht, um Patientennamen, MRN, Diagnosen, Laborbefunde, Verordnungen und klinischen Workflow-Kontext lokal zu kapsulieren — bevor Daten ein externes LLM erreichen. Das LLM erstellt Radiologieberichte, klinische Zusammenfassungen und Ergebnisse der Versorgungskoordination auf der geschützten Kapsel. Die Ausgaben werden innerhalb des Krankenhausnetzwerks in das EHR zurückgeführt. HIPAA-konform ausgelegt. Im Einsatz am Ewha Womans University Medical Center (EUMC).
 
 ---
@@ -48,7 +48,7 @@ Ein KI-Einsatz im Krankenhaus mit PHI-Schutz nutzt eine KI-Datenschicht, um Pati
 
 <h2>Was die KI-Datenschicht verändert</h2>
 
-<p>Eine <a href="/glossary/ai-enablement-data-layer">KI-Datenschicht</a> wie LLM Capsule positioniert sich zwischen dem EHR (Epic, Cerner oder einem internen KIS) und dem LLM. PHI wird lokal kapsuliert — Patientenname wird zu ⟨P_xxxx⟩, MRN zu ⟨MR_yyyy⟩, die Dokumentstruktur bleibt erhalten. Das LLM erstellt die Radiologiezusammenfassung auf Basis der Kapsel. Die Ausgabe wird lokal, innerhalb des Krankenhausnetzwerks, wiederhergestellt und in den EHR-Datensatz zurückgeführt. Der LLM-Anbieter erhält zu keinem Zeitpunkt Zugriff auf PHI.</p>
+<p>Eine <a href="/glossary/context-preserving-data-layer">KI-Datenschicht</a> wie LLM Capsule positioniert sich zwischen dem EHR (Epic, Cerner oder einem internen KIS) und dem LLM. PHI wird lokal kapsuliert — Patientenname wird zu ⟨P_xxxx⟩, MRN zu ⟨MR_yyyy⟩, die Dokumentstruktur bleibt erhalten. Das LLM erstellt die Radiologiezusammenfassung auf Basis der Kapsel. Die Ausgabe wird lokal, innerhalb des Krankenhausnetzwerks, wiederhergestellt und in den EHR-Datensatz zurückgeführt. Der LLM-Anbieter erhält zu keinem Zeitpunkt Zugriff auf PHI.</p>
 
 <h2>Fünf klinische Datenkategorien unter dem Schutz der Datenschicht</h2>
 

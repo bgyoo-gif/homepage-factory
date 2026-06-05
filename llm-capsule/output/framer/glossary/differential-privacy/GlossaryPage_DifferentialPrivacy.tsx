@@ -38,7 +38,7 @@ const DEFAULT_BODY_HTML = `
 <h2>Mechanism</h2>
 <p>Implemented by adding calibrated noise (commonly Laplace or Gaussian) to outputs, queries, or transformations. Noise scale is determined by the sensitivity of the function and the privacy budget. The result is a quantitative bound on what an attacker could learn about any individual record from the output.</p>
 
-<h2>Application in the AI enablement data layer</h2>
+<h2>Application in the context-preserving data layer for AI</h2>
 <p>In LLM Capsule, differential-privacy-based protection is applied during the structure-preserving encapsulation step. The capsule (AI-ready context) carries the differential-privacy guarantee on top of field-level tokenization. This addresses inference risks that field-level masking alone cannot bound — particularly for operational data where structure, sequence, and aggregate patterns themselves carry sensitive information.</p>
 
 <h2>What it is not</h2>
@@ -80,7 +80,7 @@ export default function GlossaryPage_DifferentialPrivacy({
   related1Href = "/resources/learn/differential-privacy-for-enterprise-llm",
   related2Label = "Structure-preserving encapsulation",
   related2Href = "/glossary/structure-preserving-encapsulation",
-  related3Label = "AI enablement data layer",
+  related3Label = "context-preserving data layer for AI",
   related3Href = "/glossary/ai-ready-operational-layer",
   related4Label = "",
   related4Href = "",
@@ -100,7 +100,7 @@ export default function GlossaryPage_DifferentialPrivacy({
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
     "name": term,
-    "description": "Differential privacy is a mathematical framework that bounds how much any single record can influence a derived output. In the AI enablement data layer, it is applied during encapsulation to reduce re-identification, inference, and sensitive context exposure risks. Calibrated against a privacy budget (epsilon). It is a technical protection layer with a defined risk-reduction scope, not a legal guarantee.",
+    "description": "Differential privacy is a mathematical framework that bounds how much any single record can influence a derived output. In the context-preserving data layer for AI, it is applied during encapsulation to reduce re-identification, inference, and sensitive context exposure risks. Calibrated against a privacy budget (epsilon). It is a technical protection layer with a defined risk-reduction scope, not a legal guarantee.",
     "url": "https://llmcapsule.ai/resources/glossary/differential-privacy",
     "inDefinedTermSet": "https://llmcapsule.ai/glossary",
   })
@@ -508,7 +508,7 @@ addPropertyControls(GlossaryPage_DifferentialPrivacy, {
   related1Href:  { type: ControlType.String, title: "Related 1 URL",   defaultValue: "/resources/learn/differential-privacy-for-enterprise-llm" },
   related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "Structure-preserving encapsulation" },
   related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/glossary/structure-preserving-encapsulation" },
-  related3Label: { type: ControlType.String, title: "Related 3 Label", defaultValue: "AI enablement data layer" },
+  related3Label: { type: ControlType.String, title: "Related 3 Label", defaultValue: "context-preserving data layer for AI" },
   related3Href:  { type: ControlType.String, title: "Related 3 URL",   defaultValue: "/glossary/ai-ready-operational-layer" },
   related4Label: { type: ControlType.String, title: "Related 4 Label", defaultValue: "" },
   related4Href:  { type: ControlType.String, title: "Related 4 URL",   defaultValue: "" },

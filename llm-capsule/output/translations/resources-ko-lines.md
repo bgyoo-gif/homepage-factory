@@ -2,13 +2,13 @@
 
 ## Section 01: Hero
 
-Enterprise AI Enablement
+Context-Preserving Data Layer for AI
 기업 AI 도입
 
 Resources
 리소스
 
-Technical documentation, learning resources, glossary, and trust information for enterprise AI enablement with LLM Capsule.
+Technical documentation, learning resources, glossary, and trust information for enterprise context-preserving data layer for AI with LLM Capsule.
 LLM Capsule을 활용한 기업 AI 도입을 위한 기술 문서, 학습 리소스, 용어 사전, 신뢰 정보를 제공합니다.
 
 ## Section 02: Resource Hub
@@ -25,7 +25,7 @@ Browse documentation, learning materials, key terms, and trust information.
 Learn
 Learn
 
-In-depth articles on enterprise AI enablement, secure LLM usage, structure-preserving processing, and restorable workflows.
+In-depth articles on enterprise context-preserving data layer for AI, secure LLM usage, structure-preserving processing, and restorable workflows.
 기업 AI 도입, 보안 LLM 활용, 구조 보존 처리, 복원 가능 워크플로우에 대한 심층 아티클을 제공합니다.
 
 Browse Learn

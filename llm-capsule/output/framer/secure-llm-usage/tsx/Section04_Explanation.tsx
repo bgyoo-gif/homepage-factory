@@ -19,7 +19,7 @@ export default function Section04_Explanation({
   sectionTitlePrefix = "Explanation",
   sectionTitleMain = "",
   paragraph1 = "Secure LLM usage is distinct from model-level security measures like prompt filtering or output scanning. Those approaches monitor the interaction with the AI model but do not prevent the data itself from being transmitted. Secure LLM usage operates at the data layer — transforming what the AI receives so that sensitive information never reaches the model.",
-  paragraph2 = "This approach is model-agnostic. Whether the enterprise uses ChatGPT, Claude, Gemini, Perplexity, or any other LLM API, the AI enablement data layer remains consistent because it operates before the data reaches any model — enabling cross-model execution from a single AI enablement layer.",
+  paragraph2 = "This approach is model-agnostic. Whether the enterprise uses ChatGPT, Claude, Gemini, Perplexity, or any other LLM API, the context-preserving data layer for AI remains consistent because it operates before the data reaches any model — enabling cross-model execution from a single context-preserving data layer for AI.",
 }: Props) {
   return (
     <>
@@ -132,6 +132,6 @@ addPropertyControls(Section04_Explanation, {
   paragraph2: {
     type: ControlType.String,
     title: "Paragraph 2",
-    defaultValue: "This approach is model-agnostic. Whether the enterprise uses ChatGPT, Claude, Gemini, Perplexity, or any other LLM API, the AI enablement data layer remains consistent because it operates before the data reaches any model — enabling cross-model execution from a single AI enablement layer.",
+    defaultValue: "This approach is model-agnostic. Whether the enterprise uses ChatGPT, Claude, Gemini, Perplexity, or any other LLM API, the context-preserving data layer for AI remains consistent because it operates before the data reaches any model — enabling cross-model execution from a single context-preserving data layer for AI.",
   },
 })

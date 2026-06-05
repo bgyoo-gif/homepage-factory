@@ -21,7 +21,7 @@ interface Props {
 export default function Section04_Definition({
   sectionLabel = "Definition",
   bannerLabel = "AI Data Capsule",
-  bannerText = "An AI data capsule is a locally generated AI enablement layer that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.",
+  bannerText = "An AI data capsule is a locally generated context-preserving data layer for AI that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.",
 }: Props) {
   return (
     <>
@@ -140,7 +140,7 @@ addPropertyControls(Section04_Definition, {
   bannerText: {
     type: ControlType.String,
     title: "Banner Text",
-    defaultValue: "An AI data capsule is a locally generated AI enablement layer that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.",
+    defaultValue: "An AI data capsule is a locally generated context-preserving data layer for AI that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.",
     displayTextArea: true,
   },
 })

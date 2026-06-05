@@ -5,7 +5,7 @@
 PII Protection vs Enterprise Confidentiality Control
 PII保護 vs エンタープライズ機密制御
 
-Why protecting only personal data is insufficient for enterprise AI enablement. Business-critical information requires enterprise confidentiality control to truly enable AI adoption.
+Why protecting only personal data is insufficient for enterprise context-preserving data layer for AI. Business-critical information requires enterprise confidentiality control to truly enable AI adoption.
 個人データのみの保護ではエンタープライズAI活用に不十分な理由。ビジネスクリティカルな情報には、AI導入を真に実現するためのエンタープライズ機密制御が必要です。
 
 Learn
@@ -16,7 +16,7 @@ Learn
 Problem
 課題
 
-Most AI data protection solutions focus on personally identifiable information (PII) — names, social security numbers, email addresses. But true enterprise AI enablement requires protecting far more than PII. Enterprise documents contain trade secrets, acquisition targets, pricing models, internal performance metrics, strategic plans, and client relationship details — all enterprise-sensitive but not classified as PII.
+Most AI data protection solutions focus on personally identifiable information (PII) — names, social security numbers, email addresses. But true enterprise context-preserving data layer for AI requires protecting far more than PII. Enterprise documents contain trade secrets, acquisition targets, pricing models, internal performance metrics, strategic plans, and client relationship details — all enterprise-sensitive but not classified as PII.
 ほとんどのAIデータ保護ソリューションは、個人を特定できる情報（PII）— 名前、社会保障番号、メールアドレス — に焦点を当てています。しかし、真のエンタープライズAI活用には、PIIをはるかに超えた保護が必要です。エンタープライズ文書には、営業秘密、買収ターゲット、価格モデル、社内業績指標、戦略計画、顧客関係の詳細が含まれており — すべてエンタープライズの機密情報ですが、PIIには分類されません。
 
 A legal memo about a pending acquisition contains no PII. It contains deal structure, valuation ranges, and strategic rationale — all of which would be damaging if exposed to an AI provider's training pipeline or logging system.

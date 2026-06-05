@@ -13,7 +13,7 @@ Make regulated workflows
 usable with AI
 AI로 가동합니다
 
-Six industries. Real production workflows. Real customers. One AI enablement data layer that removes the data exposure barrier blocking enterprise AI adoption — so AI runs on real data, inside your environment, under your governance.
+Six industries. Real production workflows. Real customers. One context-preserving data layer for AI that removes the data exposure barrier blocking enterprise AI adoption — so AI runs on real data, inside your environment, under your governance.
 6개 산업. 실제 프로덕션 워크플로우. 실제 고객사. 기업 AI 도입을 막는 데이터 노출 장벽을 제거하는 데이터 레이어 — AI가 실제 데이터 위에서, 여러분의 환경 안에서, 여러분의 거버넌스 하에 작동합니다.
 
 6
@@ -512,8 +512,8 @@ One of Korea's largest law firms. AI assist on privileged matter workflows with 
 Legal Industry Visual
 법률 산업 비주얼
 
-Read: AI enablement data layer (definition) →
-읽기: AI 인에이블먼트 데이터 레이어 (정의) →
+Read: context-preserving data layer for AI (definition) →
+읽기: AI를 위한 컨텍스트 보존 데이터 레이어 (정의) →
 
 ---
 

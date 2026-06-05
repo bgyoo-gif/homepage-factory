@@ -37,7 +37,7 @@ const BODY_HTML = `<h2>Definition</h2>
 <h2>Mechanism</h2>
 <p>Implemented by adding calibrated noise (commonly Laplace or Gaussian) to outputs, queries, or transformations. Noise scale is determined by the sensitivity of the function and the privacy budget. The result is a quantitative bound on what an attacker could learn about any individual record from the output.</p>
 
-<h2>Application in the AI enablement data layer</h2>
+<h2>Application in the context-preserving data layer for AI</h2>
 <p>In LLM Capsule, differential-privacy-based protection is applied during the structure-preserving encapsulation step. The capsule (AI-ready context) carries the differential-privacy guarantee on top of field-level tokenization. This addresses inference risks that field-level masking alone cannot bound — particularly for operational data where structure, sequence, and aggregate patterns themselves carry sensitive information.</p>
 
 <h2>What it is not</h2>
@@ -69,7 +69,7 @@ const BODY_HTML = `<h2>Definition</h2>
 <ul>
   <li><a href="/resources/learn/differential-privacy-for-enterprise-llm">Pillar guide: Differential privacy for enterprise AI</a></li>
   <li><a href="/resources/glossary/structure-preserving-encapsulation">Structure-preserving encapsulation</a></li>
-  <li><a href="/resources/glossary/ai-ready-operational-layer">AI enablement data layer</a></li>
+  <li><a href="/resources/glossary/ai-ready-operational-layer">context-preserving data layer for AI</a></li>
 </ul>`
 
 const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
@@ -162,7 +162,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
 
 <p>Die Methode fügt kalibriertes Rauschen (typischerweise nach Laplace- oder Gaußverteilung) zu Ausgaben, Abfragen oder Transformationen hinzu. Die Rauschstärke ergibt sich aus der Sensitivität der Funktion und dem festgelegten Privacy-Budget. Das Ergebnis ist eine quantitative Schranke dafür, was ein Angreifer aus der Ausgabe über einzelne Datensätze ableiten kann.</p>
 
-<h2>Einsatz im AI enablement data layer</h2>
+<h2>Einsatz im context-preserving data layer for AI</h2>
 
 <p>In LLM Capsule wird Differential-Privacy-basierter Schutz während des strukturerhaltenden Kapsulierungsschritts angewendet. Die Kapsel (KI-geeigneter Kontext) trägt die Differential-Privacy-Garantie zusätzlich zur feldbasierten Tokenisierung. Damit werden Inferenzrisiken adressiert, die durch feldbasiertes Masking allein nicht gebunden werden können — insbesondere bei operativen Daten, deren Struktur, Sequenz und Aggregatmuster selbst sensible Informationen enthalten.</p>
 

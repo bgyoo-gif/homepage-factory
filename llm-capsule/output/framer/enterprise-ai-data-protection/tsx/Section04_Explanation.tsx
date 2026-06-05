@@ -42,7 +42,7 @@ export default function Section04_Explanation({
   ext1Text = "Document layout, entity relationships, and semantic context are maintained during encapsulation. AI models receive structurally intact documents, producing high-quality outputs.",
   ext2Label = "+2: Cross-Model Execution.",
   ext2Text = "Because protection operates at the data layer before transmission, it works with any external AI service — ChatGPT, Claude, Gemini, or any LLM API — without model-specific integration.",
-  bannerText = " is an AI enablement data layer and plugin. It enables AI adoption by protecting data at the data layer — not by blocking AI, but by making AI safe to use on real enterprise data.",
+  bannerText = " is a context-preserving data layer for AI and plugin. It enables AI adoption by protecting data at the data layer — not by blocking AI, but by making AI safe to use on real enterprise data.",
 }: Props) {
   const bullets = [
     { label: core1Label, text: core1Text },
@@ -243,7 +243,7 @@ addPropertyControls(Section04_Explanation, {
   },
   bannerText: {
     type: ControlType.String, title: "Banner Text (after product name)",
-    defaultValue: " is an AI enablement data layer and plugin. It enables AI adoption by protecting data at the data layer — not by blocking AI, but by making AI safe to use on real enterprise data.",
+    defaultValue: " is a context-preserving data layer for AI and plugin. It enables AI adoption by protecting data at the data layer — not by blocking AI, but by making AI safe to use on real enterprise data.",
     displayTextArea: true,
   },
 })

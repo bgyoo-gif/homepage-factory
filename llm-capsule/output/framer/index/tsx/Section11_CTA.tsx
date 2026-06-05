@@ -20,7 +20,7 @@ interface Props {
 
 export default function Section11_CTA({
   ctaTitle = "See how LLM Capsule enables AI on your enterprise documents",
-  ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate how the AI enablement data layer works on your actual data, in your environment, against your compliance requirements.",
+  ctaDescription = "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate how the context-preserving data layer for AI works on your actual data, in your environment, against your compliance requirements.",
   ctaBtn1Label = "Request a Demo",
   ctaBtn1Href = "/request-a-demo",
   ctaBtn4Label = "Available on AWS Marketplace",
@@ -118,7 +118,7 @@ export default function Section11_CTA({
 
 addPropertyControls(Section11_CTA, {
   ctaTitle:        { type: ControlType.String, title: "CTA Title",        defaultValue: "See how LLM Capsule enables AI on your enterprise documents", displayTextArea: true },
-  ctaDescription:  { type: ControlType.String, title: "CTA Description",  defaultValue: "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate how the AI enablement data layer works on your actual data, in your environment, against your compliance requirements.", displayTextArea: true },
+  ctaDescription:  { type: ControlType.String, title: "CTA Description",  defaultValue: "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate how the context-preserving data layer for AI works on your actual data, in your environment, against your compliance requirements.", displayTextArea: true },
   ctaBtn1Label:    { type: ControlType.String, title: "CTA Btn 1",        defaultValue: "Request a Demo" },
   ctaBtn1Href:     { type: ControlType.String, title: "CTA Btn 1 URL",    defaultValue: "/request-a-demo" },
   ctaBtn4Label:    { type: ControlType.String, title: "CTA Btn 4",        defaultValue: "Available on AWS Marketplace" },

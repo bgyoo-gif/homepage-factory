@@ -13,7 +13,7 @@
 - **Page type:** Solutions / Industry use cases landing page
 - **Tone:** Persuasive, enterprise-facing, industry-specific enablement
 - **Total sections:** 4 (Hero + Industry Use Cases + KPI Proof + CTA)
-- **Key message:** Regulated and document-heavy industries can now safely adopt AI on real enterprise data using LLM Capsule as an AI enablement data layer
+- **Key message:** Regulated and document-heavy industries can now safely adopt AI on real enterprise data using LLM Capsule as a context-preserving data layer for AI
 
 ### Section Inventory
 
@@ -39,7 +39,7 @@
 #### Content
 - **h1 (ds-hero__title):** `AI, Now Safe for Every Industry`
   - Brand emphasis: `<span class="ds-text--brand">Every Industry</span>`
-- **Description (ds-hero__description):** "Regulated and document-heavy industries can now adopt AI on real enterprise data. <span class="ds-text--product">LLM Capsule</span> is an AI enablement data layer and plugin that removes the data exposure barrier blocking enterprise AI adoption -- enabling AI first, protecting data at the data layer."
+- **Description (ds-hero__description):** "Regulated and document-heavy industries can now adopt AI on real enterprise data. <span class="ds-text--product">LLM Capsule</span> is a context-preserving data layer for AI and plugin that removes the data exposure barrier blocking enterprise AI adoption -- enabling AI first, protecting data at the data layer."
 - **Screenshot frame:**
   - Class: `ds-hero__screenshot-frame ds-bg--paint-blue`
   - Fallback bg: `var(--ds-color-neutral-100)`

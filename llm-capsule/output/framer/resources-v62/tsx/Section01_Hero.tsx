@@ -9,7 +9,7 @@ interface Props {
 
 export default function Section01_Hero({
   eyebrow = "Resources",
-  title = "Enterprise AI enablement",
+  title = "Context-preserving data layer for AI",
   titleHighlight = "resources",
   subtitle = "Technical documentation, learning articles, glossary, and trust resources — for architects, CDOs, CISOs, privacy officers, and industry buyers building regulated AI workflows.",
 }: Props) {
@@ -99,7 +99,7 @@ export default function Section01_Hero({
 
 addPropertyControls(Section01_Hero, {
   eyebrow:        { type: ControlType.String, title: "Eyebrow",         defaultValue: "Resources" },
-  title:          { type: ControlType.String, title: "Title",           defaultValue: "Enterprise AI enablement" },
+  title:          { type: ControlType.String, title: "Title",           defaultValue: "Context-preserving data layer for AI" },
   titleHighlight: { type: ControlType.String, title: "Title Highlight", defaultValue: "resources" },
   subtitle:       { type: ControlType.String, title: "Subtitle",        defaultValue: "Technical documentation, learning articles, glossary, and trust resources — for architects, CDOs, CISOs, privacy officers, and industry buyers building regulated AI workflows.", displayTextArea: true },
 })

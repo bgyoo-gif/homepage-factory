@@ -32,7 +32,7 @@
 
 <div class="tldr">
   <div class="tldr__label">Definition</div>
-  <p class="tldr__body"><strong>Sovereign AI</strong> means enterprise AI workflows where the underlying data, the AI processing path, and the audit trail all remain inside a defined regulatory and geographic boundary. For European enterprises this typically means GDPR-compliant data handling, in-region LLM endpoints, and full audit for regulator review. For defense and public sector workflows it typically means fully on-prem execution with no external transmission. The practical architecture pattern uses an <strong>AI enablement data layer</strong> with two execution paths.</p>
+  <p class="tldr__body"><strong>Sovereign AI</strong> means enterprise AI workflows where the underlying data, the AI processing path, and the audit trail all remain inside a defined regulatory and geographic boundary. For European enterprises this typically means GDPR-compliant data handling, in-region LLM endpoints, and full audit for regulator review. For defense and public sector workflows it typically means fully on-prem execution with no external transmission. The practical architecture pattern uses an <strong>context-preserving data layer for AI</strong> with two execution paths.</p>
 </div>
 
 <article class="article-body">
@@ -49,7 +49,7 @@
 </ul>
 
 <h2>The two-path architecture</h2>
-<p>The pragmatic implementation: an AI enablement data layer with two execution paths under one governance framework. Path A (in-region external LLM with capsule data only) for workflows where the regulatory profile permits transmission of differentially-private capsules with appropriate contractual safeguards. Path B (on-prem local lightweight model) for workflows where any external endpoint is unacceptable. Path is policy-driven per workflow.</p>
+<p>The pragmatic implementation: a context-preserving data layer for AI with two execution paths under one governance framework. Path A (in-region external LLM with capsule data only) for workflows where the regulatory profile permits transmission of differentially-private capsules with appropriate contractual safeguards. Path B (on-prem local lightweight model) for workflows where any external endpoint is unacceptable. Path is policy-driven per workflow.</p>
 
 <h2>Common confusions</h2>
 <ul>
@@ -61,7 +61,7 @@
 <h2>Related terms</h2>
 <ul>
 <li><a href="/glossary/two-execution-paths">Two execution paths</a></li>
-<li><a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a></li>
+<li><a href="/glossary/context-preserving-data-layer">context-preserving data layer for AI</a></li>
 <li><a href="/glossary/differential-privacy">Differential privacy</a></li>
 <li><a href="/learn/sovereign-ai-european-enterprises">Learn: Sovereign AI for European enterprises</a></li>
 </ul>

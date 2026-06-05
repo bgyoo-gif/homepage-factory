@@ -83,7 +83,7 @@ const DEFAULT_BODY_HTML = `
   <li><strong>PII guardrails fall short.</strong> Standard guardrails address customer names, not device or site or topology references.</li>
 </ol>
 
-<h2>The AI enablement data layer pattern</h2>
+<h2>The context-preserving data layer for AI pattern</h2>
 <p>LLM Capsule sits between the existing NOC environment and the LLM. The pattern, end to end:</p>
 <ol>
   <li>The NOC console, ticket system, or log viewer raises an event (incident opened, alarm correlated, runbook update requested).</li>
@@ -148,7 +148,7 @@ const DEFAULT_BODY_HTML = `
   <div class="takeaways__label">Key takeaways</div>
   <ul>
     <li>Network operations data is structurally sensitive. PII filtering alone does not protect it.</li>
-    <li>The AI enablement data layer pattern: existing NOC → connector lane → capsule with structure-preserving DP-based protection → execution path → state vault restore → back to ticket / runbook.</li>
+    <li>The context-preserving data layer for AI pattern: existing NOC → connector lane → capsule with structure-preserving DP-based protection → execution path → state vault restore → back to ticket / runbook.</li>
     <li>Carriers typically deploy on Path B (on-prem local lightweight model) for regulatory and sovereignty reasons.</li>
     <li>Validated at Deutsche Telekom T Challenge 2026, Top 12 in Data Security &amp; Governance.</li>
     <li>Buying-team checklist: connector coverage, marker breadth, two execution paths, privacy budget governance, state vault, on-prem depth.</li>
@@ -165,7 +165,7 @@ export default function LearnArticle_AiOnNetworkOperationsData({
   readTime = "12 min read",
   dateUpdated = "Updated May 2025",
   tldrLabel = "Definition · TL;DR",
-  tldrBody = "Network operations data — NOC logs, alarm sequences, incident tickets, device and site IDs, configuration trees, customer-impact summaries — is highly structured and re-identifiable through context. AI can dramatically accelerate RCA, alarm correlation, and runbook generation, but only if the data is transformed into AI-ready context first. LLM Capsule provides this AI enablement data layer, validated at Deutsche Telekom T Challenge 2026, Top 12 in Data Security & Governance.",
+  tldrBody = "Network operations data — NOC logs, alarm sequences, incident tickets, device and site IDs, configuration trees, customer-impact summaries — is highly structured and re-identifiable through context. AI can dramatically accelerate RCA, alarm correlation, and runbook generation, but only if the data is transformed into AI-ready context first. LLM Capsule provides this context-preserving data layer for AI, validated at Deutsche Telekom T Challenge 2026, Top 12 in Data Security & Governance.",
   bodyHtml = DEFAULT_BODY_HTML,
   canonicalUrl = "https://llmcapsule.ai/resources/learn/ai-on-network-operations-data",
   datePublished = "2025-05-01",
@@ -212,7 +212,7 @@ export default function LearnArticle_AiOnNetworkOperationsData({
         "name": "Why can't I just send NOC logs to an external LLM?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "NOC logs contain device IDs, site references, circuit IDs, alarm sequences, customer-impact data, and SLA risk indicators. Sending them to an external LLM exposes network topology and operational sensitivity. Even with PII removed, the structural patterns identify the segment. Carriers in regulated jurisdictions face data sovereignty, GDPR, and audit risk. The AI enablement data layer with structure-preserving differential-privacy-based encapsulation addresses this.",
+          "text": "NOC logs contain device IDs, site references, circuit IDs, alarm sequences, customer-impact data, and SLA risk indicators. Sending them to an external LLM exposes network topology and operational sensitivity. Even with PII removed, the structural patterns identify the segment. Carriers in regulated jurisdictions face data sovereignty, GDPR, and audit risk. The context-preserving data layer for AI with structure-preserving differential-privacy-based encapsulation addresses this.",
         },
       },
       {
@@ -827,7 +827,7 @@ addPropertyControls(LearnArticle_AiOnNetworkOperationsData, {
 
   // TL;DR
   tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "Definition · TL;DR" },
-  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "Network operations data — NOC logs, alarm sequences, incident tickets, device and site IDs, configuration trees, customer-impact summaries — is highly structured and re-identifiable through context. AI can dramatically accelerate RCA, alarm correlation, and runbook generation, but only if the data is transformed into AI-ready context first. LLM Capsule provides this AI enablement data layer, validated at Deutsche Telekom T Challenge 2026, Top 12 in Data Security & Governance.", displayTextArea: true },
+  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "Network operations data — NOC logs, alarm sequences, incident tickets, device and site IDs, configuration trees, customer-impact summaries — is highly structured and re-identifiable through context. AI can dramatically accelerate RCA, alarm correlation, and runbook generation, but only if the data is transformed into AI-ready context first. LLM Capsule provides this context-preserving data layer for AI, validated at Deutsche Telekom T Challenge 2026, Top 12 in Data Security & Governance.", displayTextArea: true },
 
   // Body HTML
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: DEFAULT_BODY_HTML, displayTextArea: true },

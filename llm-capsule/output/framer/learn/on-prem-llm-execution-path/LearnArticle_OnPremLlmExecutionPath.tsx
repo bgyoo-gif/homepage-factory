@@ -136,7 +136,7 @@ const DEFAULT_BODY_HTML = `
 <div class="takeaways">
   <div class="takeaways__h">Key takeaways</div>
   <ul>
-    <li>Two execution paths in one AI enablement data layer: external approved LLM with capsule (Path A) or on-prem local lightweight model (Path B).</li>
+    <li>Two execution paths in one context-preserving data layer for AI: external approved LLM with capsule (Path A) or on-prem local lightweight model (Path B).</li>
     <li>Path B handles air-gapped, classified, OT, and strictly regulated operations with zero external transmission.</li>
     <li>Selection is policy-driven per workflow; governance records the path applied.</li>
     <li>Six deployment topologies: on-premise, air-gapped, hybrid, in-region, cloud, embedded, Slack App.</li>
@@ -149,7 +149,7 @@ export default function LearnArticle_OnPremLlmExecutionPath({
   backLabel = "← Learn",
   backHref = "/learn",
   title = "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations",
-  lead = "Two execution paths inside a single AI enablement data layer. When external transmission is not an option, the on-prem local lightweight model handles the workflow inside your boundary — zero external exposure, full restoration.",
+  lead = "Two execution paths inside a single context-preserving data layer for AI. When external transmission is not an option, the on-prem local lightweight model handles the workflow inside your boundary — zero external exposure, full restoration.",
   category = "ARCHITECTURE · Execution Path",
   readTime = "11 min read",
   dateUpdated = "Updated May 2025",
@@ -801,7 +801,7 @@ addPropertyControls(LearnArticle_OnPremLlmExecutionPath, {
   backLabel:   { type: ControlType.String, title: "Back Label",    defaultValue: "← Learn" },
   backHref:    { type: ControlType.String, title: "Back URL",      defaultValue: "/learn" },
   title:       { type: ControlType.String, title: "Title",         defaultValue: "On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations" },
-  lead:        { type: ControlType.String, title: "Lead",          defaultValue: "Two execution paths inside a single AI enablement data layer. When external transmission is not an option, the on-prem local lightweight model handles the workflow inside your boundary — zero external exposure, full restoration.", displayTextArea: true },
+  lead:        { type: ControlType.String, title: "Lead",          defaultValue: "Two execution paths inside a single context-preserving data layer for AI. When external transmission is not an option, the on-prem local lightweight model handles the workflow inside your boundary — zero external exposure, full restoration.", displayTextArea: true },
   category:    { type: ControlType.String, title: "Category",      defaultValue: "ARCHITECTURE · Execution Path" },
   readTime:    { type: ControlType.String, title: "Read Time",     defaultValue: "11 min read" },
   dateUpdated: { type: ControlType.String, title: "Date Updated",  defaultValue: "Updated May 2025" },

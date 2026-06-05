@@ -25,7 +25,7 @@ Updated April 2025
 TL;DR — Definition
 TL;DR — 정의
 
-A telecom NOC AI deployment uses an AI enablement data layer to encapsulate subscriber identities, network identifiers (DEVICE_ID, SITE_ID, CIRCUIT_ID), call records, IP addresses, and network configurations locally before any data reaches an external LLM. The LLM generates RCA, customer-impact analysis, and ticket recommendations on the protected capsule; outputs are restored back into the originating ticket inside the operator's environment. Validated at SK Telecom and recognized at Deutsche Telekom T Challenge 2026 Top 12 in Data Security & Governance.
+A telecom NOC AI deployment uses a context-preserving data layer for AI to encapsulate subscriber identities, network identifiers (DEVICE_ID, SITE_ID, CIRCUIT_ID), call records, IP addresses, and network configurations locally before any data reaches an external LLM. The LLM generates RCA, customer-impact analysis, and ticket recommendations on the protected capsule; outputs are restored back into the originating ticket inside the operator's environment. Validated at SK Telecom and recognized at Deutsche Telekom T Challenge 2026 Top 12 in Data Security & Governance.
 통신사 NOC AI 배포는 데이터 레이어를 활용해 가입자 정보, 네트워크 식별자(DEVICE_ID, SITE_ID, CIRCUIT_ID), 통화 기록, IP 주소, 네트워크 구성을 외부 LLM에 전달되기 전에 로컬에서 캡슐화합니다. LLM은 보호된 캡슐을 기반으로 RCA, 고객 영향 분석, 티켓 권고안을 생성하며, 결과물은 운영사 환경 내 원본 티켓으로 자동 복원됩니다. SK Telecom에서 실증 검증되었으며, Deutsche Telekom T Challenge 2026 Data Security & Governance 부문 Top 12에 선정되었습니다.
 
 ## Section 03: Body HTML
@@ -40,7 +40,7 @@ A telecom NOC AI deployment uses an AI enablement data layer to encapsulate subs
 
 <h2>데이터 레이어가 바꾸는 것</h2>
 
-<p>LLM Capsule 같은 <a href="/glossary/ai-enablement-data-layer">데이터 레이어</a>는 NOC의 기존 시스템(티켓 플랫폼, NOC 콘솔, 로그 뷰어, 런북 DB)과 LLM 엔드포인트 사이에 위치합니다. 이 레이어는 네 가지 역할을 수행합니다.</p>
+<p>LLM Capsule 같은 <a href="/glossary/context-preserving-data-layer">데이터 레이어</a>는 NOC의 기존 시스템(티켓 플랫폼, NOC 콘솔, 로그 뷰어, 런북 DB)과 LLM 엔드포인트 사이에 위치합니다. 이 레이어는 네 가지 역할을 수행합니다.</p>
 
   <li>기존 시스템에서 REST/gRPC/JDBC 커넥터를 통해 NOC 티켓 및 운영 데이터를 읽어옵니다 — 데이터 마이그레이션 없이.</li>
 
@@ -97,7 +97,7 @@ A telecom NOC AI deployment uses an AI enablement data layer to encapsulate subs
 
 <h2>배포 시 흔한 실수</h2>
 
-  <li><strong>Treating it as a security tool.</strong> LLM Capsule is an AI enablement data layer, not a security gateway. Position the project as "AI for the NOC" — not "AI risk reduction."</li>
+  <li><strong>Treating it as a security tool.</strong> LLM Capsule is a context-preserving data layer for AI, not a security gateway. Position the project as "AI for the NOC" — not "AI risk reduction."</li>
   <li><strong>보안 툴로 접근하는 것.</strong> LLM Capsule은 AI 활성화를 위한 데이터 레이어이지, 보안 게이트웨이가 아닙니다. 프로젝트를 "AI 위험 감소"가 아닌 "NOC를 위한 AI"로 포지셔닝합니다.</li>
 
   <li><strong>마커 정의를 건너뛰는 것.</strong> 스타터 팩만 사용하는 운영사는 운영사 고유 식별자를 그대로 노출합니다. 1주차에 커스텀 마커를 직접 정의합니다.</li>
@@ -120,7 +120,7 @@ A telecom NOC AI deployment uses an AI enablement data layer to encapsulate subs
 
   <li><a href="/learn/on-prem-llm-execution-path">온프레미스 LLM 실행 경로</a></li>
 
-  <li><a href="/glossary/ai-enablement-data-layer">용어집: AI enablement data layer</a></li>
+  <li><a href="/glossary/context-preserving-data-layer">용어집: context-preserving data layer for AI</a></li>
 
   <li><a href="/solutions">솔루션: 통신 산업 심층 분석</a></li>
 </ul>
@@ -136,8 +136,8 @@ AI on network operations data
 On-premise LLM execution path
 온프레미스 LLM 실행 경로
 
-Glossary: AI enablement data layer
-용어집: AI enablement data layer
+Glossary: context-preserving data layer for AI
+용어집: context-preserving data layer for AI
 
 ## Section 05: CTA Strip
 

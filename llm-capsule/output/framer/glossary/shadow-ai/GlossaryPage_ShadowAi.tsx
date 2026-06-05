@@ -46,7 +46,7 @@ const DEFAULT_BODY_HTML = `
 </ol>
 
 <h2>The structural fix</h2>
-<p>Shadow AI does not get solved by policy enforcement alone — that is treating the symptom. The structural fix is an <strong>AI enablement data layer</strong> that lets official tooling handle real production data: encapsulate locally, process via approved external LLM (Path A) or on-prem local model (Path B), restore in-place. Once official tooling gives employees what they were tasting in pilots, shadow usage falls.</p>
+<p>Shadow AI does not get solved by policy enforcement alone — that is treating the symptom. The structural fix is an <strong>context-preserving data layer for AI</strong> that lets official tooling handle real production data: encapsulate locally, process via approved external LLM (Path A) or on-prem local model (Path B), restore in-place. Once official tooling gives employees what they were tasting in pilots, shadow usage falls.</p>
 
 <h2>Where it shows up</h2>
 <ul>
@@ -60,7 +60,7 @@ const DEFAULT_BODY_HTML = `
 <h2>Related terms</h2>
 <ul>
 <li><a href="/glossary/blocked-ai-workflow">Blocked AI workflow</a></li>
-<li><a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a></li>
+<li><a href="/glossary/context-preserving-data-layer">context-preserving data layer for AI</a></li>
 <li><a href="/learn/pilot-to-production-enterprise-ai">Learn: Why enterprise AI pilots stall</a></li>
 </ul>
 `
@@ -72,12 +72,12 @@ export default function GlossaryPage_ShadowAi({
   lead = "Employees using ChatGPT (or any external LLM) on personal devices or unapproved channels — because the official tooling can't handle the data the work depends on.",
   category = "Risk concept",
   definitionLabel = "Definition",
-  definitionBody = "Shadow AI is the unsanctioned use of external LLMs by enterprise employees outside approved channels — typically because the official AI tooling cannot handle the regulated data the work actually depends on. The root cause is not employee misbehavior; it is a missing AI enablement data layer. Employees taste productivity in pilots and early demos, then route around the controls when production tooling fails to deliver.",
+  definitionBody = "Shadow AI is the unsanctioned use of external LLMs by enterprise employees outside approved channels — typically because the official AI tooling cannot handle the regulated data the work actually depends on. The root cause is not employee misbehavior; it is a missing context-preserving data layer for AI. Employees taste productivity in pilots and early demos, then route around the controls when production tooling fails to deliver.",
   bodyHtml = DEFAULT_BODY_HTML,
   related1Label = "Blocked AI workflow",
   related1Href = "/glossary/blocked-ai-workflow",
-  related2Label = "AI enablement data layer",
-  related2Href = "/glossary/ai-enablement-data-layer",
+  related2Label = "context-preserving data layer for AI",
+  related2Href = "/glossary/context-preserving-data-layer",
   related3Label = "Learn: Why enterprise AI pilots stall",
   related3Href = "/learn/pilot-to-production-enterprise-ai",
   related4Label = "",
@@ -493,7 +493,7 @@ addPropertyControls(GlossaryPage_ShadowAi, {
   definitionBody:  {
     type: ControlType.String,
     title: "Definition Body",
-    defaultValue: "Shadow AI is the unsanctioned use of external LLMs by enterprise employees outside approved channels — typically because the official AI tooling cannot handle the regulated data the work actually depends on. The root cause is not employee misbehavior; it is a missing AI enablement data layer. Employees taste productivity in pilots and early demos, then route around the controls when production tooling fails to deliver.",
+    defaultValue: "Shadow AI is the unsanctioned use of external LLMs by enterprise employees outside approved channels — typically because the official AI tooling cannot handle the regulated data the work actually depends on. The root cause is not employee misbehavior; it is a missing context-preserving data layer for AI. Employees taste productivity in pilots and early demos, then route around the controls when production tooling fails to deliver.",
     displayTextArea: true,
   },
 
@@ -503,8 +503,8 @@ addPropertyControls(GlossaryPage_ShadowAi, {
   // Related terms
   related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "Blocked AI workflow" },
   related1Href:  { type: ControlType.String, title: "Related 1 URL",   defaultValue: "/glossary/blocked-ai-workflow" },
-  related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "AI enablement data layer" },
-  related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/glossary/ai-enablement-data-layer" },
+  related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "context-preserving data layer for AI" },
+  related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/glossary/context-preserving-data-layer" },
   related3Label: { type: ControlType.String, title: "Related 3 Label", defaultValue: "Learn: Why enterprise AI pilots stall" },
   related3Href:  { type: ControlType.String, title: "Related 3 URL",   defaultValue: "/learn/pilot-to-production-enterprise-ai" },
   related4Label: { type: ControlType.String, title: "Related 4 Label", defaultValue: "" },

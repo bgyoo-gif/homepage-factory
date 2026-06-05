@@ -38,15 +38,15 @@ const CARDS: Card[] = [
   {
     category: "concept",
     categoryLabel: "CONCEPT · CORE CATEGORY",
-    title: "AI enablement data layer",
+    title: "context-preserving data layer for AI",
     desc: "The architectural component that turns regulated operational data into AI-ready capsules locally, executes AI workflows on the protected capsule, and restores outputs back into the originating system.",
-    href: "/resources/glossary/ai-enablement-data-layer",
+    href: "/resources/glossary/context-preserving-data-layer",
   },
   {
     category: "concept",
     categoryLabel: "CONCEPT · SYNONYM",
     title: "AI-ready operational layer",
-    desc: "Earlier name for the same category. The current canonical term is 'AI enablement data layer for regulated operations'. Retained as a synonym definition for readers arriving via earlier collateral.",
+    desc: "Earlier name for the same category. The current canonical term is 'context-preserving data layer for AI for regulated operations'. Retained as a synonym definition for readers arriving via earlier collateral.",
     href: "/resources/glossary/ai-ready-operational-layer",
   },
   {
@@ -123,7 +123,7 @@ const CARDS: Card[] = [
 export default function Glossary({
   eyebrow = "Resources · Glossary",
   heroTitle = "Glossary for regulated enterprise AI",
-  heroLead = "Definitions for the core concepts, protection techniques, workflow patterns, and governance terms behind the AI enablement data layer.",
+  heroLead = "Definitions for the core concepts, protection techniques, workflow patterns, and governance terms behind the context-preserving data layer for AI.",
   labelAll = "All",
   labelConcept = "Concept",
   labelProtection = "Protection",
@@ -383,7 +383,7 @@ export default function Glossary({
 addPropertyControls(Glossary, {
   eyebrow: { type: ControlType.String, title: "Eyebrow", defaultValue: "Resources · Glossary" },
   heroTitle: { type: ControlType.String, title: "Hero Title", defaultValue: "Glossary for regulated enterprise AI" },
-  heroLead: { type: ControlType.String, title: "Hero Lead", defaultValue: "Definitions for the core concepts, protection techniques, workflow patterns, and governance terms behind the AI enablement data layer.", displayTextArea: true },
+  heroLead: { type: ControlType.String, title: "Hero Lead", defaultValue: "Definitions for the core concepts, protection techniques, workflow patterns, and governance terms behind the context-preserving data layer for AI.", displayTextArea: true },
   labelAll: { type: ControlType.String, title: "Tab: All", defaultValue: "All" },
   labelConcept: { type: ControlType.String, title: "Tab: Concept", defaultValue: "Concept" },
   labelProtection: { type: ControlType.String, title: "Tab: Protection", defaultValue: "Protection" },

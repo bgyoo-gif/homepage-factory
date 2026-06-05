@@ -2,7 +2,7 @@
 
 ## Section 01: Hero
 
-The AI enablement
+The context-preserving data layer for AI
 AI活性化
 
 data layer and plugin
@@ -11,7 +11,7 @@ data layer and plugin
 LLM Capsule enables enterprise AI adoption by keeping raw data inside your environment, preserving document structure and business context during AI processing, and restoring usable outputs through local restoration — so enterprise teams can safely use any LLM on real documents in production workflows.
 LLM Capsuleは、元データを環境内に保持したまま、AI処理中の文書構造とビジネスコンテキストを保存し、ローカル復元によりすぐに使用可能な出力を生成します — 企業チームが本番ワークフローで実際の文書にあらゆるLLMを安全に接続できます。
 
-Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and cross-model execution means no vendor lock-in. This enables enterprise AI enablement on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.
+Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and cross-model execution means no vendor lock-in. This enables enterprise context-preserving data layer for AI on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.
 ほとんどのエンタープライズAIセキュリティツールは、AI利用を完全にブロックするか、マスキングやリダクションで重要なコンテキストを除去し、実際のビジネスプロセスで使用できない出力を生成します。LLM Capsuleは異なるアプローチを取ります — ローカルカプセル化がAI処理前に機密要素を保護し、構造保存処理がAI理解のための文書の完全性を維持し、ローカル復元が元の企業データでAI出力を自動復元し、クロスモデル実行によりベンダーロックインがありません。契約書、保険金請求、規制申告、医療記録、内部レポートなど文書中心のワークフローでエンタープライズAI活性化を実現します。
 
 Request a Demo
@@ -28,7 +28,7 @@ LLM Capsuleダッシュボード — リアルタイムカプセル化パイプ�
 
 ## Section 02: Core Differentiation
 
-Enterprise AI enablement through five core
+Context-preserving data layer for AI through five core
 5つのコア
 
 capabilities
@@ -37,7 +37,7 @@ capabilities
 LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 architecture — three core enablement capabilities plus structure-preserving processing and cross-model execution.
 LLM Capsuleは3+2アーキテクチャにより機密データ上でのエンタープライズAI導入を実現します — 3つのコア機能に構造保存処理とクロスモデル実行を加えた構成です。
 
-These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise AI enablement from traditional masking tools.
+These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise context-preserving data layer for AI from traditional masking tools.
 これらの機能により、企業はデータ保護やワークフローの利便性を犠牲にすることなくAIを導入できます。従来のマスキングツールとの根本的な違いです。
 
 Core 1
@@ -140,7 +140,7 @@ Enable AI without breaking enterprise
 workflows
 ワークフローを壊すことなくAIを活性化します
 
-LLM Capsule does more than hide data. It auto-restores usable output inside the environment after AI processing so enterprise teams can actually use the result in real workflows. This is a restorable workflow — not just protection, but AI enablement with usable output.
+LLM Capsule does more than hide data. It auto-restores usable output inside the environment after AI processing so enterprise teams can actually use the result in real workflows. This is a restorable workflow — not just protection, but context-preserving data layer for AI with usable output.
 LLM Capsuleは単にデータを隠すだけではありません。AI処理後に環境内部ですぐに使用可能な出力を自動復元します。保護だけでなく、使用可能な出力を生成するAI活性化です。
 
 Traditional masking protects data by removing meaning. That may reduce risk, but it also reduces output quality and business usability. Restored outputs from LLM Capsule are directly usable in: claims documents with real policyholder data, legal reviews with real party names and clause references, regulatory reports with real customer and account data, and internal analysis with real business metrics.
@@ -336,10 +336,10 @@ lock-in
 Enterprise teams do not always standardize on a single AI model.
 企業チームが常に単一のAIモデルに標準化しているわけではありません。
 
-Enterprise teams do not always standardize on a single AI model. Evaluation, governance, and operational workflows may span multiple providers and multiple model choices over time. LLM Capsule fits this reality as an AI enablement data layer for cross-model enterprise AI deployment.
+Enterprise teams do not always standardize on a single AI model. Evaluation, governance, and operational workflows may span multiple providers and multiple model choices over time. LLM Capsule fits this reality as a context-preserving data layer for AI for cross-model enterprise AI deployment.
 企業チームが常に単一のAIモデルに標準化しているわけではありません。評価、ガバナンス、運用ワークフローは時間の経過とともに複数のプロバイダーと複数のモデル選択にまたがる可能性があります。LLM Capsuleはこの現実に対応する、クロスモデルエンタープライズAIデプロイメント用のデータレイヤーです。
 
-Because LLM Capsule operates at the data layer — not the model layer — protection and enablement remain stable even when model vendors change. ChatGPT, Claude, Gemini, Perplexity, or any LLM API can be used interchangeably without reconfiguring the pipeline. This is cross-model execution — enterprise AI enablement independent of any specific AI provider, eliminating vendor lock-in.
+Because LLM Capsule operates at the data layer — not the model layer — protection and enablement remain stable even when model vendors change. ChatGPT, Claude, Gemini, Perplexity, or any LLM API can be used interchangeably without reconfiguring the pipeline. This is cross-model execution — enterprise context-preserving data layer for AI independent of any specific AI provider, eliminating vendor lock-in.
 LLM Capsuleはモデルレイヤーではなくデータレイヤーで動作します — モデルベンダーが変わっても保護と活性化は安定的に維持されます。ChatGPT、Claude、Gemini、Perplexity、またはあらゆるLLM APIをパイプラインの再設定なしに相互に使用できます。特定のAIプロバイダーに依存しないエンタープライズAI活性化です。
 
 ChatGPT, Claude, Gemini, Perplexity, or any LLM API — protection stays consistent regardless of which model you choose.
@@ -444,7 +444,7 @@ approaches
 Not all protection approaches are designed for usable enterprise AI workflows. Traditional masking protects data by reducing usability. LLM Capsule protects data while preserving enterprise workflow value.
 すべての保護アプローチが使用可能なエンタープライズAIワークフロー向けに設計されているわけではありません。従来のマスキングは利便性を低下させてデータを保護します。LLM Capsuleはエンタープライズワークフローの価値を保持しながらデータを保護します。
 
-AI results are auto-restored through local restoration. This is the fundamental capability that separates LLM Capsule from every other approach — enterprise AI enablement that produces usable outputs, not abstracted placeholders.
+AI results are auto-restored through local restoration. This is the fundamental capability that separates LLM Capsule from every other approach — enterprise context-preserving data layer for AI that produces usable outputs, not abstracted placeholders.
 AI結果はローカル復元を通じて自動復元されます。LLM Capsuleを他のすべてのアプローチと区別する根本的な機能 — 抽象化されたプレースホルダーではなく、使用可能な出力を生成するエンタープライズAI活性化です。
 
 Traditional Masking / Redaction
@@ -456,7 +456,7 @@ Prompt Security Gateways
 LLM Capsule
 LLM Capsule
 
-AI enablement layer
+context-preserving data layer for AI
 AI活性化レイヤー
 
 Pre-processing data removal
@@ -661,5 +661,5 @@ Glossary
 See how LLM Capsule fits your environment, documents, and controls
 LLM Capsuleが貴社の環境、文書、制御体制にどのように適合するかをご確認ください
 
-Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.
+Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise context-preserving data layer for AI on your actual data, in your environment, against your compliance requirements.
 貴社の文書、デプロイメント要件、評価基準をお持ちください。実際のデータ上で、実際の環境で、実際の規制要件に対してエンタープライズAI活性化をデモンストレーションいたします。

@@ -58,7 +58,7 @@ Definition
 AI Data Capsule
 AI Data Capsule
 
-An AI data capsule is a locally generated AI enablement layer that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.
+An AI data capsule is a locally generated context-preserving data layer for AI that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.
 Eine KI-Datenkapsel ist eine lokal erzeugte KI-Enablement-Datenschicht, die sensible Unternehmensdaten vor dem Versand an einen externen KI-Dienst schützt. Die Kapsel erhält Dokumentstruktur und Kontext, während sensible Elemente durch reversible Repräsentationen ersetzt werden. Nach der KI-Verarbeitung ermöglicht sie eine lokale Wiederherstellung: KI-Ergebnisse werden mit den Originaldaten angereichert, ohne dass diese die Unternehmensumgebung jemals verlassen.
 
 ---
@@ -68,7 +68,7 @@ Eine KI-Datenkapsel ist eine lokal erzeugte KI-Enablement-Datenschicht, die sens
 Explanation
 Funktionsweise
 
-An AI data capsule operates as an AI enablement data layer through three stages within a restorable workflow:
+An AI data capsule operates as a context-preserving data layer for AI through three stages within a restorable workflow:
 Eine KI-Datenkapsel arbeitet als KI-Enablement-Datenschicht in drei Stufen innerhalb eines wiederherstellbaren Workflows:
 
 Local Encapsulation. Sensitive elements in enterprise documents — names, account numbers, dates, medical codes, contract terms — are detected and replaced with structure-preserving representations. The mapping between original and replaced values is stored locally, never transmitted.
@@ -112,7 +112,7 @@ FAQ
 What is an AI data capsule?
 Was ist eine KI-Datenkapsel?
 
-An AI data capsule is a locally generated AI enablement layer that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.
+An AI data capsule is a locally generated context-preserving data layer for AI that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.
 Eine KI-Datenkapsel ist eine lokal erzeugte KI-Enablement-Datenschicht, die sensible Unternehmensdaten kapsuliert, bevor sie an externe KI-Dienste übermittelt werden. Nach der KI-Verarbeitung ermöglicht die Kapsel eine lokale Wiederherstellung, sodass die Ergebnisse direkt in Geschäftsprozessen verwendbar bleiben.
 
 How does an AI data capsule differ from data masking?

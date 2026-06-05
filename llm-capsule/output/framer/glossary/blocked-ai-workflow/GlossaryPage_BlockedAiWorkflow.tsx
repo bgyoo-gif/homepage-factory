@@ -57,7 +57,7 @@ const DEFAULT_BODY_HTML = `
 </ol>
 
 <h2>Reference statement</h2>
-<blockquote><p>Most enterprise AI projects do not fail at the model. They fail at the data the model cannot reach. Naming that as a blocked AI workflow — and unblocking it through an AI enablement data layer — is the entry point for regulated operations.</p></blockquote>
+<blockquote><p>Most enterprise AI projects do not fail at the model. They fail at the data the model cannot reach. Naming that as a blocked AI workflow — and unblocking it through a context-preserving data layer for AI — is the entry point for regulated operations.</p></blockquote>
 `
 
 export default function GlossaryPage_BlockedAiWorkflow({
@@ -69,8 +69,8 @@ export default function GlossaryPage_BlockedAiWorkflow({
   definitionLabel = "Definition",
   definitionBody = "A blocked AI workflow is a business process that would benefit from AI but cannot be deployed because the operational data involved cannot be sent to an LLM under the regulatory or sovereignty profile of the workflow. The blocking is operational and regulatory, not capability.",
   bodyHtml = DEFAULT_BODY_HTML,
-  related1Label = "AI enablement data layer",
-  related1Href = "/glossary/ai-enablement-data-layer",
+  related1Label = "context-preserving data layer for AI",
+  related1Href = "/glossary/context-preserving-data-layer",
   related2Label = "Structure-preserving encapsulation",
   related2Href = "/glossary/structure-preserving-encapsulation",
   related3Label = "Differential privacy",
@@ -497,8 +497,8 @@ addPropertyControls(GlossaryPage_BlockedAiWorkflow, {
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: DEFAULT_BODY_HTML, displayTextArea: true },
 
   // Related terms
-  related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "AI enablement data layer" },
-  related1Href:  { type: ControlType.String, title: "Related 1 URL",   defaultValue: "/glossary/ai-enablement-data-layer" },
+  related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "context-preserving data layer for AI" },
+  related1Href:  { type: ControlType.String, title: "Related 1 URL",   defaultValue: "/glossary/context-preserving-data-layer" },
   related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "Structure-preserving encapsulation" },
   related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/glossary/structure-preserving-encapsulation" },
   related3Label: { type: ControlType.String, title: "Related 3 Label", defaultValue: "Differential privacy" },

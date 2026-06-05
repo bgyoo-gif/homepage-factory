@@ -78,8 +78,8 @@ export default function GlossaryPage_ConnectorLane({
   definitionLabel = "Definition",
   definitionBody = "The connector lane describes how LLM Capsule, running inside the customer's environment (on-prem, air-gapped, or VPC), reads from the document, ticket, and operational systems that already live in that environment. It is not a SaaS integration platform that calls into customer systems from the outside, and it is not an API marketplace.",
   bodyHtml = DEFAULT_BODY_HTML,
-  related1Label = "AI enablement data layer",
-  related1Href = "/glossary/ai-enablement-data-layer",
+  related1Label = "context-preserving data layer for AI",
+  related1Href = "/glossary/context-preserving-data-layer",
   related2Label = "Structure-preserving encapsulation",
   related2Href = "/glossary/structure-preserving-encapsulation",
   related3Label = "Two execution paths",
@@ -506,8 +506,8 @@ addPropertyControls(GlossaryPage_ConnectorLane, {
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: DEFAULT_BODY_HTML, displayTextArea: true },
 
   // Related terms
-  related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "AI enablement data layer" },
-  related1Href:  { type: ControlType.String, title: "Related 1 URL",   defaultValue: "/glossary/ai-enablement-data-layer" },
+  related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "context-preserving data layer for AI" },
+  related1Href:  { type: ControlType.String, title: "Related 1 URL",   defaultValue: "/glossary/context-preserving-data-layer" },
   related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "Structure-preserving encapsulation" },
   related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/glossary/structure-preserving-encapsulation" },
   related3Label: { type: ControlType.String, title: "Related 3 Label", defaultValue: "Two execution paths" },

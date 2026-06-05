@@ -4,10 +4,10 @@
 ## Learn
 
 
-Enterprise AI Enablement — Learn
-Enterprise AI Enablement — Wissensbereich
+Context-Preserving Data Layer for AI — Learn
+Context-Preserving Data Layer for AI — Wissensbereich
 
-In-depth technical articles on enterprise AI enablement, secure AI workflows, structure-preserving processing, and restorable workflows.
+In-depth technical articles on enterprise context-preserving data layer for AI, secure AI workflows, structure-preserving processing, and restorable workflows.
 Technische Fachartikel zu KI-Enablement im Unternehmen, sicheren KI-Workflows, strukturerhaltendem Dokumentenschutz und wiederherstellbaren Verarbeitungsprozessen.
 
 Secure Enterprise AI Data Workflows
@@ -16,8 +16,8 @@ Sichere KI-Datenverarbeitung im Unternehmen
 Pillar
 Leitartikel
 
-Enterprise AI Enablement
-Enterprise AI Enablement
+Context-Preserving Data Layer for AI
+Context-Preserving Data Layer for AI
 
 Pillar
 Leitartikel

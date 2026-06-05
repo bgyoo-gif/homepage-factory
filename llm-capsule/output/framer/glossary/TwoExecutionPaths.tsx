@@ -32,7 +32,7 @@ interface Props {
 }
 
 const BODY_HTML = `<h2>Definition</h2>
-<p>The AI enablement data layer supports <strong>two execution paths</strong> for the model step inside the workflow:</p>
+<p>The context-preserving data layer for AI supports <strong>two execution paths</strong> for the model step inside the workflow:</p>
 <ul>
   <li><strong>Path A — external approved LLM with capsule data only.</strong> The capsule is transmitted to an approved external endpoint (ChatGPT, Claude, Gemini, Perplexity, or any LLM API). Raw operational data does not leave the enterprise.</li>
   <li><strong>Path B — on-prem local lightweight model.</strong> A small private model runs entirely inside the enterprise environment. Zero external transmission.</li>
@@ -56,13 +56,13 @@ const BODY_HTML = `<h2>Definition</h2>
 <p>A single path forces a single regulatory floor. Carriers, hospitals, OT operators, and defense contractors typically run multiple regulatory profiles within the same organization. Two paths let governance match the path to the workflow.</p>
 
 <h2>Reference statement</h2>
-<blockquote>The model is not a single decision; it is two paths under a single governance. That is what makes the AI enablement data layer fit regulated organizations without forcing them to one regulatory floor.</blockquote>
+<blockquote>The model is not a single decision; it is two paths under a single governance. That is what makes the context-preserving data layer for AI fit regulated organizations without forcing them to one regulatory floor.</blockquote>
 
 <h2>Related</h2>
 <ul>
   <li><a href="/resources/learn/on-prem-llm-execution-path">Pillar guide: On-prem LLM execution path</a></li>
   <li><a href="/resources/glossary/state-vault-for-restoration">State vault for restoration</a></li>
-  <li><a href="/resources/glossary/ai-ready-operational-layer">AI enablement data layer</a></li>
+  <li><a href="/resources/glossary/ai-ready-operational-layer">context-preserving data layer for AI</a></li>
 </ul>`
 
 const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
@@ -73,7 +73,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     lead: "External approved LLM — or on-prem local lightweight model. Policy decides per workflow.",
     category: "GLOSSARY",
     definitionLabel: "Definition",
-    definitionBody: "The AI enablement data layer supports two execution paths for the model step inside the workflow:",
+    definitionBody: "The context-preserving data layer for AI supports two execution paths for the model step inside the workflow:",
     bodyHtml: BODY_HTML,
     related1Label: "",
     related1Href: "",
@@ -144,10 +144,10 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     lead: "Externes zugelassenes LLM oder lokales On-Premise-Leichtgewichtsmodell. Welcher Pfad zum Einsatz kommt, legt die Richtlinie je Workflow fest.",
     category: "GLOSSAR",
     definitionLabel: "Definition",
-    definitionBody: "Die AI enablement data layer unterstützt zwei Ausführungspfade. Pfad A übermittelt ausschließlich Capsule-Daten an ein externes, zugelassenes LLM — operative Rohdaten verlassen das Unternehmen nicht. Pfad B führt ein kompaktes privates Modell vollständig innerhalb der eigenen Unternehmensumgebung aus, ohne jegliche externe Datenübertragung. Die Pfadauswahl erfolgt richtliniengesteuert je Workflow.",
+    definitionBody: "Die context-preserving data layer for AI unterstützt zwei Ausführungspfade. Pfad A übermittelt ausschließlich Capsule-Daten an ein externes, zugelassenes LLM — operative Rohdaten verlassen das Unternehmen nicht. Pfad B führt ein kompaktes privates Modell vollständig innerhalb der eigenen Unternehmensumgebung aus, ohne jegliche externe Datenübertragung. Die Pfadauswahl erfolgt richtliniengesteuert je Workflow.",
     bodyHtml: `<h2>Definition</h2>
 
-<p>Die AI enablement data layer unterstützt <strong>zwei Ausführungspfade</strong> für den Modellschritt im Workflow:</p>
+<p>Die context-preserving data layer for AI unterstützt <strong>zwei Ausführungspfade</strong> für den Modellschritt im Workflow:</p>
 
 <ul>
 <li><strong>Pfad A — externes zugelassenes LLM, ausschließlich mit Capsule-Daten.</strong> Die Kapsel wird an einen zugelassenen externen Endpunkt übermittelt (ChatGPT, Claude, Gemini, Perplexity oder eine beliebige LLM API). Operative Rohdaten verlassen das Unternehmen nicht.</li>
@@ -176,7 +176,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
 
 <h2>Leitsatz</h2>
 
-<p>Das Modell ist keine einheitliche Entscheidung — es sind zwei Pfade unter einer gemeinsamen Governance. Das ist es, was die AI enablement data layer für regulierte Organisationen geeignet macht, ohne sie auf eine einzige regulatorische Ebene festzulegen.</p>`,
+<p>Das Modell ist keine einheitliche Entscheidung — es sind zwei Pfade unter einer gemeinsamen Governance. Das ist es, was die context-preserving data layer for AI für regulierte Organisationen geeignet macht, ohne sie auf eine einzige regulatorische Ebene festzulegen.</p>`,
     related1Label: "",
     related1Href: "",
     related2Label: "",

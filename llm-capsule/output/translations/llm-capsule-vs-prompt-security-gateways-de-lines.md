@@ -10,7 +10,7 @@ Prompt-Sicherheits-Gateways filtern auf API-Ebene. LLM Capsule schützt Daten au
 
 ## Section 03: Overview
 
-Prompt security gateways sit between the user and the AI model, scanning prompts for sensitive content and filtering or blocking requests that contain flagged patterns. They operate at the API interaction layer. LLM Capsule operates as an AI enablement data layer — transforming the data itself before it enters any AI workflow, enabling AI adoption rather than blocking it.
+Prompt security gateways sit between the user and the AI model, scanning prompts for sensitive content and filtering or blocking requests that contain flagged patterns. They operate at the API interaction layer. LLM Capsule operates as a context-preserving data layer for AI — transforming the data itself before it enters any AI workflow, enabling AI adoption rather than blocking it.
 Prompt-Sicherheits-Gateways befinden sich zwischen dem Benutzer und dem KI-Modell. Sie scannen Prompts auf sensible Inhalte und filtern oder blockieren Anfragen mit markierten Mustern. Ihr Wirkungsbereich ist die API-Interaktionsebene. LLM Capsule setzt früher an: als Datenschicht, die Daten transformiert, bevor sie in einen KI-Workflow gelangen. Das Ziel ist nicht Blockierung, sondern kontrollierter KI-Einsatz im Unternehmen.
 
 ## Section 04: How Prompt Security Gateways Work
@@ -69,7 +69,7 @@ Wirkungsebene
 API / prompt level
 API- / Prompt-Ebene
 
-AI enablement data layer
+context-preserving data layer for AI
 Datenschicht für KI-Einsatz
 
 Scope

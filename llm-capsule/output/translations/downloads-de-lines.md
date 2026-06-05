@@ -10,7 +10,7 @@ Dokumentation und
 Downloads
 Downloads
 
-Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation.
+Architecture briefs, technical documentation, and deployment guides for enterprise context-preserving data layer for AI evaluation.
 Architekturübersichten, technische Dokumentation und Bereitstellungsleitfäden für die Evaluierung von KI-Enablement im Unternehmen.
 
 ## Section02_DownloadsGrid
@@ -22,7 +22,7 @@ Verfügbare
 Resources
 Ressourcen
 
-Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation.
+Architecture briefs, technical documentation, and deployment guides for enterprise context-preserving data layer for AI evaluation.
 Architekturübersichten, technische Dokumentation und Bereitstellungsleitfäden für die Evaluierung von KI-Enablement im Unternehmen.
 
 Architecture Brief

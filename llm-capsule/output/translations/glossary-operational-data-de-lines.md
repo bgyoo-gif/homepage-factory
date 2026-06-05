@@ -76,20 +76,20 @@ Operative Daten umfassen die strukturierten und unstrukturierten Unternehmensdat
 <li>Prüfpfad, Genehmigungsworkflow, interne Kontrollnachweise</li>
 </ul>
 
-<h2>Warum ein AI enablement data layer erforderlich ist</h2>
+<h2>Warum ein context-preserving data layer for AI erforderlich ist</h2>
 
-<p>Operative Daten geben Informationen durch ihre Struktur preis (die Topologie selbst offenbart das Netzwerk), durch ihre Sequenz (das Alarmmuster legt die Fehlerkette offen) und durch Aggregate (die Störungshäufigkeit lässt Rückschlüsse auf das Kundensegment zu). Eine PII-Filterung kann diesen Informationsabfluss nicht begrenzen. Der AI enablement data layer wendet strukturerhaltende Kapsulierung mit Differential-Privacy-basiertem Schutz an, um operative Daten sicher in LLM-Workflows einzubinden.</p>
+<p>Operative Daten geben Informationen durch ihre Struktur preis (die Topologie selbst offenbart das Netzwerk), durch ihre Sequenz (das Alarmmuster legt die Fehlerkette offen) und durch Aggregate (die Störungshäufigkeit lässt Rückschlüsse auf das Kundensegment zu). Eine PII-Filterung kann diesen Informationsabfluss nicht begrenzen. Der context-preserving data layer for AI wendet strukturerhaltende Kapsulierung mit Differential-Privacy-basiertem Schutz an, um operative Daten sicher in LLM-Workflows einzubinden.</p>
 
 <h2>Kernaussage</h2>
 
-<blockquote>Operative Daten sind die Grundlage des Geschäftsbetriebs. KI kann über einen PII-Filter nicht auf sie zugreifen. Der AI enablement data layer wurde speziell für diese Datenkategorie entwickelt.</blockquote>
+<blockquote>Operative Daten sind die Grundlage des Geschäftsbetriebs. KI kann über einen PII-Filter nicht auf sie zugreifen. Der context-preserving data layer for AI wurde speziell für diese Datenkategorie entwickelt.</blockquote>
 
 ---
 
 ## Section 04: Related Terms
 
-AI enablement data layer
-AI enablement data layer
+context-preserving data layer for AI
+context-preserving data layer for AI
 
 Structure-preserving encapsulation
 Strukturerhaltende Kapsulierung
@@ -103,7 +103,7 @@ Differential Privacy
 
 - "Operational Data" → "Operative Daten": established DE term in IT/OT Fachsprache; "operationale Daten" avoided (unnatural)
 - Hero lead: EN fragments ("Not the same as PII. Not protected the same way.") — combined into two complete DE sentences per localize brief rule (EN fragments → DE independent sentences)
-- "AI" in body → "KI"; "AI enablement data layer", "LLM Capsule", "LLM workflows" retained as brand/architecture terms per translation guide
+- "AI" in body → "KI"; "context-preserving data layer for AI", "LLM Capsule", "LLM workflows" retained as brand/architecture terms per translation guide
 - "Reference statement" → "Kernaussage": "Referenzaussage" is awkward DE; "Kernaussage" is precise and sachlich
 - "What it is not" → "Abgrenzung zu personenbezogenen Daten": rewritten as a clear DE section heading indicating the content
 - DSGVO not injected: source contains no compliance/regulatory framing; adding DSGVO would be over-insertion per brief ("DSGVO 과잉 삽입 금지")

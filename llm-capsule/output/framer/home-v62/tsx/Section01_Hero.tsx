@@ -48,12 +48,12 @@ interface Props {
 }
 
 export default function Section01_Hero({
-  eyebrow = "AI ENABLEMENT DATA LAYER",
+  eyebrow = "CONTEXT-PRESERVING DATA LAYER FOR AI",
   h1Line1 = "Make ",
   h1Highlight = "sensitive workflows",
   h1Suffix = " run with AI.",
-  description = "From blocked workflows to operational AI — without breaking documents, systems, or context. LLM Capsule is the AI enablement data layer for regulated enterprise operations. It plugs into the systems you already run — on-premise, air-gapped, or hybrid — and AI receives the operational structure it needs. Sensitive data stays inside your environment. Outputs return business-ready, in the originating workflow.",
-  tag = "The AI enablement data layer for regulated operations.",
+  description = "From blocked workflows to operational AI — without breaking documents, systems, or context. LLM Capsule is the context-preserving data layer for AI for regulated enterprise operations. It plugs into the systems you already run — on-premise, air-gapped, or hybrid — and AI receives the operational structure it needs. Sensitive data stays inside your environment. Outputs return business-ready, in the originating workflow.",
+  tag = "The context-preserving data layer for AI for regulated operations.",
   cta1Label = "Request a Demo",
   cta1Href = "/request-a-demo",
   cta2Label = "See the Architecture",
@@ -428,12 +428,12 @@ export default function Section01_Hero({
 }
 
 addPropertyControls(Section01_Hero, {
-  eyebrow:      { type: ControlType.String, title: "Eyebrow",       defaultValue: "AI ENABLEMENT DATA LAYER" },
+  eyebrow:      { type: ControlType.String, title: "Eyebrow",       defaultValue: "CONTEXT-PRESERVING DATA LAYER FOR AI" },
   h1Line1:      { type: ControlType.String, title: "H1 Prefix",     defaultValue: "Make " },
   h1Highlight:  { type: ControlType.String, title: "H1 Highlight",  defaultValue: "sensitive workflows" },
   h1Suffix:     { type: ControlType.String, title: "H1 Suffix",     defaultValue: " run with AI." },
-  description:  { type: ControlType.String, title: "Description",   defaultValue: "From blocked workflows to operational AI — without breaking documents, systems, or context. LLM Capsule is the AI enablement data layer for regulated enterprise operations. It plugs into the systems you already run — on-premise, air-gapped, or hybrid — and AI receives the operational structure it needs. Sensitive data stays inside your environment. Outputs return business-ready, in the originating workflow.", multiLine: true },
-  tag:          { type: ControlType.String, title: "Tag",           defaultValue: "The AI enablement data layer for regulated operations." },
+  description:  { type: ControlType.String, title: "Description",   defaultValue: "From blocked workflows to operational AI — without breaking documents, systems, or context. LLM Capsule is the context-preserving data layer for AI for regulated enterprise operations. It plugs into the systems you already run — on-premise, air-gapped, or hybrid — and AI receives the operational structure it needs. Sensitive data stays inside your environment. Outputs return business-ready, in the originating workflow.", multiLine: true },
+  tag:          { type: ControlType.String, title: "Tag",           defaultValue: "The context-preserving data layer for AI for regulated operations." },
   cta1Label:    { type: ControlType.String, title: "CTA 1 Label",   defaultValue: "Request a Demo" },
   cta1Href:     { type: ControlType.String, title: "CTA 1 URL",     defaultValue: "/request-a-demo" },
   cta2Label:    { type: ControlType.String, title: "CTA 2 Label",   defaultValue: "See the Architecture" },

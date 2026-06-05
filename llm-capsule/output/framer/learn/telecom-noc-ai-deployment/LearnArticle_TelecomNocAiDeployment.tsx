@@ -50,8 +50,8 @@ const DEFAULT_BODY_HTML = `
 <p>But the data is the problem. NOC tickets carry subscriber identities, device IDs, circuit IDs, IP ranges, call records, and network configurations. Field-level PII guardrails detect names and emails, but they don't see the operational data — the alarm sequences, the topology graphs, the SLA risk scores, the BSS records — that real NOC analysis depends on. And the regulatory profile (national telecom regulator + GDPR + sovereign data requirements) means raw operational data cannot be transmitted to an external LLM endpoint.</p>
 <p>Most operators stall here. Pilot stays pilot. AI projects never demonstrate value. Shadow AI emerges — engineers paste anonymized snippets into ChatGPT, getting half-useful answers without governance.</p>
 
-<h2>What the AI enablement data layer changes</h2>
-<p>An <a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> like LLM Capsule sits between the NOC's existing systems (ticket platform, NOC console, log viewer, runbook DB) and the LLM endpoint. It does four things:</p>
+<h2>What the context-preserving data layer for AI changes</h2>
+<p>An <a href="/glossary/context-preserving-data-layer">context-preserving data layer for AI</a> like LLM Capsule sits between the NOC's existing systems (ticket platform, NOC console, log viewer, runbook DB) and the LLM endpoint. It does four things:</p>
 <ol>
   <li>Reads NOC tickets and operational data from existing systems via REST/gRPC/JDBC connectors — no migration.</li>
   <li>Encapsulates sensitive elements locally using <a href="/glossary/structure-preserving-encapsulation">structure-preserving encapsulation</a> with <a href="/glossary/differential-privacy">differential-privacy-based protection</a>. Subscriber IDs, device IDs, circuit IDs, IP ranges become tokens; the document structure (table relationships, alarm sequence, hierarchy) survives intact.</li>
@@ -88,11 +88,11 @@ const DEFAULT_BODY_HTML = `
 
 <h2>Real customer outcomes</h2>
 <p>SK Telecom adopted LLM Capsule for NOC RCA generation and customer-impact analysis. Subscriber data, call records, IP addresses, and network configs are de-identified before any LLM call.</p>
-<p>Deutsche Telekom recognized LLM Capsule in <strong>T Challenge 2026 — Top 12 in Data Security &amp; Governance</strong>. The challenge specifically evaluates AI enablement under sovereign data and EU regulatory constraints. LLM Capsule's structure-preserving capsule + DP protection + on-prem execution path matched the operator-grade requirements.</p>
+<p>Deutsche Telekom recognized LLM Capsule in <strong>T Challenge 2026 — Top 12 in Data Security &amp; Governance</strong>. The challenge specifically evaluates context-preserving data layer for AI under sovereign data and EU regulatory constraints. LLM Capsule's structure-preserving capsule + DP protection + on-prem execution path matched the operator-grade requirements.</p>
 
 <h2>Common deployment pitfalls</h2>
 <ul>
-  <li><strong>Treating it as a security tool.</strong> LLM Capsule is an AI enablement data layer, not a security gateway. Position the project as "AI for the NOC" — not "AI risk reduction."</li>
+  <li><strong>Treating it as a security tool.</strong> LLM Capsule is a context-preserving data layer for AI, not a security gateway. Position the project as "AI for the NOC" — not "AI risk reduction."</li>
   <li><strong>Skipping marker definition.</strong> Operators that lean on the starter pack alone leave operator-specific identifiers exposed. Define your custom markers in week 1.</li>
   <li><strong>Single execution path.</strong> Deploying only Path A leaves stricter workflows blocked. Both paths should be live before pilot exit.</li>
   <li><strong>Audit treated as afterthought.</strong> Telecom regulators expect chain-of-custody for AI interactions. The audit dashboard must be live from day 1, not bolted on at production.</li>
@@ -106,7 +106,7 @@ const DEFAULT_BODY_HTML = `
 <ul>
   <li><a href="/learn/ai-on-network-operations-data">AI on network operations data</a></li>
   <li><a href="/learn/on-prem-llm-execution-path">On-premise LLM execution path</a></li>
-  <li><a href="/glossary/ai-enablement-data-layer">Glossary: AI enablement data layer</a></li>
+  <li><a href="/glossary/context-preserving-data-layer">Glossary: context-preserving data layer for AI</a></li>
   <li><a href="/solutions">Solutions: Telecom industry deep dive</a></li>
 </ul>
 `
@@ -120,7 +120,7 @@ export default function LearnArticle_TelecomNocAiDeployment({
   readTime = "12 min read",
   dateUpdated = "Updated April 2025",
   tldrLabel = "TL;DR — Definition",
-  tldrBody = "A telecom NOC AI deployment uses an AI enablement data layer to encapsulate subscriber identities, network identifiers (DEVICE_ID, SITE_ID, CIRCUIT_ID), call records, IP addresses, and network configurations locally before any data reaches an external LLM. The LLM generates RCA, customer-impact analysis, and ticket recommendations on the protected capsule; outputs are restored back into the originating ticket inside the operator's environment. Validated at SK Telecom and recognized at Deutsche Telekom T Challenge 2026 Top 12 in Data Security & Governance.",
+  tldrBody = "A telecom NOC AI deployment uses a context-preserving data layer for AI to encapsulate subscriber identities, network identifiers (DEVICE_ID, SITE_ID, CIRCUIT_ID), call records, IP addresses, and network configurations locally before any data reaches an external LLM. The LLM generates RCA, customer-impact analysis, and ticket recommendations on the protected capsule; outputs are restored back into the originating ticket inside the operator's environment. Validated at SK Telecom and recognized at Deutsche Telekom T Challenge 2026 Top 12 in Data Security & Governance.",
   bodyHtml = DEFAULT_BODY_HTML,
   canonicalUrl = "https://llmcapsule.ai/learn/telecom-noc-ai-deployment",
   datePublished = "2025-04-15",
@@ -129,8 +129,8 @@ export default function LearnArticle_TelecomNocAiDeployment({
   related1Href = "/learn/ai-on-network-operations-data",
   related2Title = "On-premise LLM execution path",
   related2Href = "/learn/on-prem-llm-execution-path",
-  related3Title = "Glossary: AI enablement data layer",
-  related3Href = "/glossary/ai-enablement-data-layer",
+  related3Title = "Glossary: context-preserving data layer for AI",
+  related3Href = "/glossary/context-preserving-data-layer",
   related4Title = "",
   related4Href = "",
   ctaTitle = "NOC AI without sending the network outside.",
@@ -183,7 +183,7 @@ export default function LearnArticle_TelecomNocAiDeployment({
         "name": "Has LLM Capsule been validated in a telecom environment?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. SK Telecom adopted LLM Capsule for NOC RCA generation and customer-impact analysis. Deutsche Telekom recognized LLM Capsule at T Challenge 2026, finishing Top 12 in the Data Security & Governance category. The challenge evaluated AI enablement under sovereign data and EU regulatory constraints.",
+          "text": "Yes. SK Telecom adopted LLM Capsule for NOC RCA generation and customer-impact analysis. Deutsche Telekom recognized LLM Capsule at T Challenge 2026, finishing Top 12 in the Data Security & Governance category. The challenge evaluated context-preserving data layer for AI under sovereign data and EU regulatory constraints.",
         },
       },
       {
@@ -191,7 +191,7 @@ export default function LearnArticle_TelecomNocAiDeployment({
         "name": "What are the most common deployment pitfalls?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Four common pitfalls: treating LLM Capsule as a security tool rather than an AI enablement layer; skipping custom marker definition beyond the starter pack; deploying only one execution path; and treating the audit dashboard as an afterthought. Telecom regulators expect chain-of-custody for AI interactions from day 1.",
+          "text": "Four common pitfalls: treating LLM Capsule as a security tool rather than a context-preserving data layer for AI; skipping custom marker definition beyond the starter pack; deploying only one execution path; and treating the audit dashboard as an afterthought. Telecom regulators expect chain-of-custody for AI interactions from day 1.",
         },
       },
     ],
@@ -782,7 +782,7 @@ addPropertyControls(LearnArticle_TelecomNocAiDeployment, {
 
   // TL;DR
   tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR — Definition" },
-  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "A telecom NOC AI deployment uses an AI enablement data layer to encapsulate subscriber identities, network identifiers (DEVICE_ID, SITE_ID, CIRCUIT_ID), call records, IP addresses, and network configurations locally before any data reaches an external LLM. The LLM generates RCA, customer-impact analysis, and ticket recommendations on the protected capsule; outputs are restored back into the originating ticket inside the operator's environment. Validated at SK Telecom and recognized at Deutsche Telekom T Challenge 2026 Top 12 in Data Security & Governance.", displayTextArea: true },
+  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "A telecom NOC AI deployment uses a context-preserving data layer for AI to encapsulate subscriber identities, network identifiers (DEVICE_ID, SITE_ID, CIRCUIT_ID), call records, IP addresses, and network configurations locally before any data reaches an external LLM. The LLM generates RCA, customer-impact analysis, and ticket recommendations on the protected capsule; outputs are restored back into the originating ticket inside the operator's environment. Validated at SK Telecom and recognized at Deutsche Telekom T Challenge 2026 Top 12 in Data Security & Governance.", displayTextArea: true },
 
   // Body HTML
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: DEFAULT_BODY_HTML, displayTextArea: true },
@@ -797,8 +797,8 @@ addPropertyControls(LearnArticle_TelecomNocAiDeployment, {
   related1Href:  { type: ControlType.String, title: "Related 1 URL",   defaultValue: "/learn/ai-on-network-operations-data" },
   related2Title: { type: ControlType.String, title: "Related 2 Title", defaultValue: "On-premise LLM execution path" },
   related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/learn/on-prem-llm-execution-path" },
-  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "Glossary: AI enablement data layer" },
-  related3Href:  { type: ControlType.String, title: "Related 3 URL",   defaultValue: "/glossary/ai-enablement-data-layer" },
+  related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "Glossary: context-preserving data layer for AI" },
+  related3Href:  { type: ControlType.String, title: "Related 3 URL",   defaultValue: "/glossary/context-preserving-data-layer" },
   related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "" },
   related4Href:  { type: ControlType.String, title: "Related 4 URL",   defaultValue: "" },
 

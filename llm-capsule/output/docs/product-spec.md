@@ -13,7 +13,7 @@
 - **Page type:** Product landing page
 - **Tone:** Technical, persuasive, enterprise B2B
 - **Total sections:** 13 (Hero + 11 body + CTA)
-- **Key message:** LLM Capsule is an AI enablement data layer with zero exposure, restoration, enterprise context control, structure-preserving processing, and cross-model execution
+- **Key message:** LLM Capsule is a context-preserving data layer for AI with zero exposure, restoration, enterprise context control, structure-preserving processing, and cross-model execution
 
 ### Section Inventory
 
@@ -49,7 +49,7 @@
 - Not applicable (hero has its own structure)
 
 #### Content
-- **h1:** `The AI enablement data layer and plugin for enterprise`
+- **h1:** `The context-preserving data layer for AI and plugin for enterprise`
   - Brand emphasis: `<span class="ds-text--brand">data layer and plugin</span>`
   - Product name: `<span class="ds-text--product">LLM Capsule</span>` where applicable
 - **Description (ds-hero__description):** "LLM Capsule enables enterprise AI adoption by keeping raw data inside your environment, preserving document structure and business context during AI processing, and restoring usable outputs through local restoration -- so enterprise teams can safely use any LLM on real documents in production workflows."
@@ -74,7 +74,7 @@
 
 #### Section Header (`ds-section-header ds-section-header--underline`)
 - eyebrow: (none -- removed per rules)
-- title: `Enterprise AI enablement through five core <span class="ds-text--brand">capabilities</span>`
+- title: `Context-preserving data layer for AI through five core <span class="ds-text--brand">capabilities</span>`
 - Brand keyword: "capabilities"
 - description: "LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 architecture -- three core enablement capabilities plus structure-preserving processing and cross-model execution."
 
@@ -123,7 +123,7 @@
 
 #### Banner/Callout
 - `ds-banner ds-banner--brand`
-- Text: "These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise AI enablement from traditional masking tools."
+- Text: "These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise context-preserving data layer for AI from traditional masking tools."
 
 ---
 
@@ -303,8 +303,8 @@ Back to Section 7:
 - description: "Enterprise teams do not always standardize on a single AI model."
 
 #### Body Text
-- First paragraph (ds-body-m): "Enterprise teams do not always standardize on a single AI model. Evaluation, governance, and operational workflows may span multiple providers and multiple model choices over time. LLM Capsule fits this reality as an AI enablement data layer for cross-model enterprise AI deployment."
-- Second paragraph (ds-body-m): "Because LLM Capsule operates at the data layer -- not the model layer -- protection and enablement remain stable even when model vendors change. ChatGPT, Claude, Gemini, Perplexity, or any LLM API can be used interchangeably without reconfiguring the pipeline. This is cross-model execution -- enterprise AI enablement independent of any specific AI provider, eliminating vendor lock-in."
+- First paragraph (ds-body-m): "Enterprise teams do not always standardize on a single AI model. Evaluation, governance, and operational workflows may span multiple providers and multiple model choices over time. LLM Capsule fits this reality as a context-preserving data layer for AI for cross-model enterprise AI deployment."
+- Second paragraph (ds-body-m): "Because LLM Capsule operates at the data layer -- not the model layer -- protection and enablement remain stable even when model vendors change. ChatGPT, Claude, Gemini, Perplexity, or any LLM API can be used interchangeably without reconfiguring the pipeline. This is cross-model execution -- enterprise context-preserving data layer for AI independent of any specific AI provider, eliminating vendor lock-in."
 
 #### Banner Callout
 - `ds-banner ds-banner--info`
@@ -397,7 +397,7 @@ Back to Section 7:
 #### Banner Callout
 - `ds-banner ds-banner--brand`
 - Bold lead: "AI results are auto-restored through local restoration."
-- Body: "This is the fundamental capability that separates LLM Capsule from every other approach -- enterprise AI enablement that produces usable outputs, not abstracted placeholders."
+- Body: "This is the fundamental capability that separates LLM Capsule from every other approach -- enterprise context-preserving data layer for AI that produces usable outputs, not abstracted placeholders."
 
 ---
 
@@ -442,7 +442,7 @@ Back to Section 7:
 
 #### Content
 - **Title (ds-cta-band__title):** "See how LLM Capsule fits your environment, documents, and controls"
-- **Description (ds-cta-band__description):** "Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements."
+- **Description (ds-cta-band__description):** "Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise context-preserving data layer for AI on your actual data, in your environment, against your compliance requirements."
 - **Actions (ds-cta-band__actions):**
   - "Request PoV" -> request-pov.html
   - "Talk to an Architect" -> architecture.html

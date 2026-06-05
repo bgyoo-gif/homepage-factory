@@ -8,7 +8,7 @@
 Differential Privacy for Enterprise AI: What It Is, Why It Matters, How It Applies to Operational Data
 Differential Privacy für den KI-Einsatz im Unternehmen: Grundlagen, Relevanz und Anwendung auf operative Daten
 
-PII filtering reaches the names. Differential privacy reaches the patterns. Why differential-privacy-based encapsulation is the technical foundation of the AI enablement data layer.
+PII filtering reaches the names. Differential privacy reaches the patterns. Why differential-privacy-based encapsulation is the technical foundation of the context-preserving data layer for AI.
 PII-Filterung erfasst personenbezogene Felder. Differential Privacy schützt vor Rückschlüssen auf Musterebene. Warum strukturerhaltende Kapsulierung auf Basis von Differential Privacy die technische Grundlage der KI-Datenschicht bildet.
 
 PILLAR · Differential Privacy
@@ -25,7 +25,7 @@ Aktualisiert Mai 2025
 Definition · TL;DR
 Definition · Kurzfassung
 
-Differential-privacy-based encapsulation is the technical foundation of the AI enablement data layer. It transforms regulated operational data into AI-ready context while preserving structure (table layout, log sequence, document hierarchy) and applying differential-privacy-based protection to reduce re-identification, inference, and sensitive context exposure risks. It is a technical protection layer with a defined risk-reduction scope — not a legal guarantee.
+Differential-privacy-based encapsulation is the technical foundation of the context-preserving data layer for AI. It transforms regulated operational data into AI-ready context while preserving structure (table layout, log sequence, document hierarchy) and applying differential-privacy-based protection to reduce re-identification, inference, and sensitive context exposure risks. It is a technical protection layer with a defined risk-reduction scope — not a legal guarantee.
 Differential-Privacy-basierte Kapsulierung ist die technische Grundlage der KI-Datenschicht. Sie überführt regulierte operative Daten in einen KI-geeigneten Kontext. Dabei bleibt die Struktur (Tabellenlayout, Log-Sequenz, Dokumenthierarchie) erhalten. Differential-Privacy-basierter Schutz reduziert Re-Identifikations-, Inferenz- und Kontextoffenlegungsrisiken. Es handelt sich um eine technische Schutzschicht mit definiertem Risikoreduktionsumfang — nicht um eine rechtliche Garantie.
 
 ## Section 03: Body HTML

@@ -24,7 +24,7 @@ export default function Section02_Definition({
   productName = "LLM Capsule",
 }: Props) {
   const definitionSuffix =
-    "'s AI enablement data layer in which original sensitive enterprise data never leaves the enterprise environment during AI processing. Only encapsulated representations — with sensitive values replaced by structure-preserving tokens — cross the trust boundary to external AI services. Zero exposure is what enables enterprises to adopt AI confidently on their most sensitive data."
+    "'s context-preserving data layer for AI in which original sensitive enterprise data never leaves the enterprise environment during AI processing. Only encapsulated representations — with sensitive values replaced by structure-preserving tokens — cross the trust boundary to external AI services. Zero exposure is what enables enterprises to adopt AI confidently on their most sensitive data."
 
   return (
     <>

@@ -46,9 +46,9 @@ DS: design-system-core.md + design-system-capsule.md
 
 **헤더 구조:**
 - eyebrow: 없음 (A타입에 "Glossary" eyebrow 있으나 B타입에서 삭제)
-- 타이틀: `Enterprise AI Enablement Glossary`
+- 타이틀: `Context-Preserving Data Layer for AI Glossary`
 - 타이틀 강조 키워드: "Enablement" -> `<span class="ds-text--brand">Enablement</span>`
-- description: "Key terms and definitions for enterprise AI enablement, LLM data privacy, and secure enterprise AI workflows."
+- description: "Key terms and definitions for enterprise context-preserving data layer for AI, LLM data privacy, and secure enterprise AI workflows."
 - 제품명: 텍스트 내 "LLM" 단독 키워드가 아닌 일반 용어이므로 `ds-text--product` 적용하지 않음
 - 정렬: center
 
@@ -162,8 +162,8 @@ DS: design-system-core.md + design-system-capsule.md
 - 원문 footer 구조 그대로 유지
 - 5열 그리드: Brand | Product | Solutions | Resources | Company
 - Brand 텍스트: `<span class="ds-text--product">LLM Capsule</span>`
-- "Enterprise AI enablement by CUBIG. Enable AI. Protect data. Restore results."
-- 하단: copyright + "Enterprise AI Enablement"
+- "Context-preserving data layer for AI by CUBIG. Enable AI. Protect data. Restore results."
+- 하단: copyright + "Context-Preserving Data Layer for AI"
 - 반응형: mobile 1col, tablet 2col
 
 ---

@@ -191,7 +191,7 @@
 - **Actions:**
   - `ds-btn ds-btn--lg` (white/glass style per CTA band rules) -- "Request PoV" -> request-pov.html
   - `ds-btn ds-btn--lg` (white/glass style) -- "View Product" -> product.html
-- **Footnote:** `ds-cta-band__footnote` -- "Enterprise AI Enablement by CUBIG"
+- **Footnote:** `ds-cta-band__footnote` -- "Context-Preserving Data Layer for AI by CUBIG"
 
 #### Notes
 - CTA band breaks out of 860px article container to full width

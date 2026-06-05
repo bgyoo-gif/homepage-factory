@@ -578,7 +578,7 @@
     <div class="tnoc-container">
       <div class="tnoc-tldr">
         <div class="tnoc-tldr__label">TL;DR — Definition</div>
-        <p class="tnoc-tldr__body">A <strong>telecom NOC AI deployment</strong> uses an AI enablement data layer to encapsulate subscriber identities, network identifiers (DEVICE_ID, SITE_ID, CIRCUIT_ID), call records, IP addresses, and network configurations locally before any data reaches an external LLM. The LLM generates RCA, customer-impact analysis, and ticket recommendations on the protected capsule; outputs are restored back into the originating ticket inside the operator's environment. Validated at SK Telecom and recognized at <strong>Deutsche Telekom T Challenge 2026 Top 12 in Data Security &amp; Governance</strong>.</p>
+        <p class="tnoc-tldr__body">A <strong>telecom NOC AI deployment</strong> uses a context-preserving data layer for AI to encapsulate subscriber identities, network identifiers (DEVICE_ID, SITE_ID, CIRCUIT_ID), call records, IP addresses, and network configurations locally before any data reaches an external LLM. The LLM generates RCA, customer-impact analysis, and ticket recommendations on the protected capsule; outputs are restored back into the originating ticket inside the operator's environment. Validated at SK Telecom and recognized at <strong>Deutsche Telekom T Challenge 2026 Top 12 in Data Security &amp; Governance</strong>.</p>
       </div>
     </div>
   </div>
@@ -593,8 +593,8 @@
         <p>But the data is the problem. NOC tickets carry subscriber identities, device IDs, circuit IDs, IP ranges, call records, and network configurations. Field-level PII guardrails detect names and emails, but they don't see the operational data — the alarm sequences, the topology graphs, the SLA risk scores, the BSS records — that real NOC analysis depends on. And the regulatory profile (national telecom regulator + GDPR + sovereign data requirements) means raw operational data cannot be transmitted to an external LLM endpoint.</p>
         <p>Most operators stall here. Pilot stays pilot. AI projects never demonstrate value. Shadow AI emerges — engineers paste anonymized snippets into ChatGPT, getting half-useful answers without governance.</p>
 
-        <h2>What the AI enablement data layer changes</h2>
-        <p>An <a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> like LLM Capsule sits between the NOC's existing systems (ticket platform, NOC console, log viewer, runbook DB) and the LLM endpoint. It does four things:</p>
+        <h2>What the context-preserving data layer for AI changes</h2>
+        <p>An <a href="/glossary/context-preserving-data-layer">context-preserving data layer for AI</a> like LLM Capsule sits between the NOC's existing systems (ticket platform, NOC console, log viewer, runbook DB) and the LLM endpoint. It does four things:</p>
         <ol>
           <li>Reads NOC tickets and operational data from existing systems via REST/gRPC/JDBC connectors — no migration.</li>
           <li>Encapsulates sensitive elements locally using <a href="/glossary/structure-preserving-encapsulation">structure-preserving encapsulation</a> with <a href="/glossary/differential-privacy">differential-privacy-based protection</a>. Subscriber IDs, device IDs, circuit IDs, IP ranges become tokens; the document structure (table relationships, alarm sequence, hierarchy) survives intact.</li>
@@ -631,11 +631,11 @@
 
         <h2>Real customer outcomes</h2>
         <p>SK Telecom adopted LLM Capsule for NOC RCA generation and customer-impact analysis. Subscriber data, call records, IP addresses, and network configs are de-identified before any LLM call.</p>
-        <p>Deutsche Telekom recognized LLM Capsule in <strong>T Challenge 2026 — Top 12 in Data Security &amp; Governance</strong>. The challenge specifically evaluates AI enablement under sovereign data and EU regulatory constraints. LLM Capsule's structure-preserving capsule + DP protection + on-prem execution path matched the operator-grade requirements.</p>
+        <p>Deutsche Telekom recognized LLM Capsule in <strong>T Challenge 2026 — Top 12 in Data Security &amp; Governance</strong>. The challenge specifically evaluates context-preserving data layer for AI under sovereign data and EU regulatory constraints. LLM Capsule's structure-preserving capsule + DP protection + on-prem execution path matched the operator-grade requirements.</p>
 
         <h2>Common deployment pitfalls</h2>
         <ul>
-          <li><strong>Treating it as a security tool.</strong> LLM Capsule is an AI enablement data layer, not a security gateway. Position the project as "AI for the NOC" — not "AI risk reduction."</li>
+          <li><strong>Treating it as a security tool.</strong> LLM Capsule is a context-preserving data layer for AI, not a security gateway. Position the project as "AI for the NOC" — not "AI risk reduction."</li>
           <li><strong>Skipping marker definition.</strong> Operators that lean on the starter pack alone leave operator-specific identifiers exposed. Define your custom markers in week 1.</li>
           <li><strong>Single execution path.</strong> Deploying only Path A leaves stricter workflows blocked. Both paths should be live before pilot exit.</li>
           <li><strong>Audit treated as afterthought.</strong> Telecom regulators expect chain-of-custody for AI interactions. The audit dashboard must be live from day 1, not bolted on at production.</li>
@@ -649,7 +649,7 @@
         <ul>
           <li><a href="/learn/ai-on-network-operations-data">AI on network operations data</a></li>
           <li><a href="/learn/on-prem-llm-execution-path">On-premise LLM execution path</a></li>
-          <li><a href="/glossary/ai-enablement-data-layer">Glossary: AI enablement data layer</a></li>
+          <li><a href="/glossary/context-preserving-data-layer">Glossary: context-preserving data layer for AI</a></li>
           <li><a href="/solutions">Solutions: Telecom industry deep dive</a></li>
         </ul>
 
@@ -670,8 +670,8 @@
           <span class="tnoc-related__card-title">On-premise LLM execution path</span>
           <span class="tnoc-related__card-arrow" aria-hidden="true">→</span>
         </a>
-        <a href="/glossary/ai-enablement-data-layer" class="tnoc-related__card">
-          <span class="tnoc-related__card-title">Glossary: AI enablement data layer</span>
+        <a href="/glossary/context-preserving-data-layer" class="tnoc-related__card">
+          <span class="tnoc-related__card-title">Glossary: context-preserving data layer for AI</span>
           <span class="tnoc-related__card-arrow" aria-hidden="true">→</span>
         </a>
       </div>

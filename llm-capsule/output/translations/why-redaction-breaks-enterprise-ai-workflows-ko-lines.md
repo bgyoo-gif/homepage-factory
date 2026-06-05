@@ -92,7 +92,7 @@ AI 결과는 원본 엔터프라이즈 데이터로 로컬에서 자동 복원�
 LLM Capsule
 LLM Capsule
 
- as an AI enablement data layer from static redaction tools.
+ as a context-preserving data layer for AI from static redaction tools.
 은 정적 삭제 도구와 달리 AI 지원 데이터 레이어로서 작동합니다.
 
 ## Section 05: Comparison Table
@@ -112,7 +112,7 @@ Capability
 Redaction / Masking Tools
 삭제 / 마스킹 도구
 
-LLM Capsule (AI Enablement Data Layer)
+LLM Capsule (Context-Preserving Data Layer for AI)
 LLM Capsule (AI 지원 데이터 레이어)
 
 Data protection

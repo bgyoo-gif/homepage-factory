@@ -18,7 +18,7 @@ interface Props {
 export default function Section02_Overview({
   sectionLabel = "Overview",
   brandName = "LLM Capsule",
-  paragraph = "Synthetic data platforms generate artificial datasets that mimic the statistical properties of real data. They are used for model training, testing, and analytics where real data cannot be used. LLM Capsule addresses a different problem: it is an AI enablement data layer that enables AI processing on real enterprise documents while protecting sensitive elements and restoring usable outputs.",
+  paragraph = "Synthetic data platforms generate artificial datasets that mimic the statistical properties of real data. They are used for model training, testing, and analytics where real data cannot be used. LLM Capsule addresses a different problem: it is a context-preserving data layer for AI that enables AI processing on real enterprise documents while protecting sensitive elements and restoring usable outputs.",
 }: Props) {
   return (
     <>
@@ -130,7 +130,7 @@ addPropertyControls(Section02_Overview, {
   paragraph: {
     type: ControlType.String,
     title: "Paragraph",
-    defaultValue: "Synthetic data platforms generate artificial datasets that mimic the statistical properties of real data. They are used for model training, testing, and analytics where real data cannot be used. LLM Capsule addresses a different problem: it is an AI enablement data layer that enables AI processing on real enterprise documents while protecting sensitive elements and restoring usable outputs.",
+    defaultValue: "Synthetic data platforms generate artificial datasets that mimic the statistical properties of real data. They are used for model training, testing, and analytics where real data cannot be used. LLM Capsule addresses a different problem: it is a context-preserving data layer for AI that enables AI processing on real enterprise documents while protecting sensitive elements and restoring usable outputs.",
     displayTextArea: true,
   },
 })

@@ -68,7 +68,7 @@ The state vault is the local-only store that holds the token map between origina
 Related terms
 관련 용어
 
-AI enablement data layer
+context-preserving data layer for AI
 데이터 레이어
 
 Structure-preserving encapsulation

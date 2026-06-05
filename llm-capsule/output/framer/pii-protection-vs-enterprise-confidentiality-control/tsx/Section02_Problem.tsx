@@ -20,7 +20,7 @@ interface Props {
 
 export default function Section02_Problem({
   sectionLabel = "Problem",
-  paragraph1   = "Most AI data protection solutions focus on personally identifiable information (PII) — names, social security numbers, email addresses. But true enterprise AI enablement requires protecting far more than PII. Enterprise documents contain trade secrets, acquisition targets, pricing models, internal performance metrics, strategic plans, and client relationship details — all enterprise-sensitive but not classified as PII.",
+  paragraph1   = "Most AI data protection solutions focus on personally identifiable information (PII) — names, social security numbers, email addresses. But true enterprise context-preserving data layer for AI requires protecting far more than PII. Enterprise documents contain trade secrets, acquisition targets, pricing models, internal performance metrics, strategic plans, and client relationship details — all enterprise-sensitive but not classified as PII.",
   paragraph2   = "A legal memo about a pending acquisition contains no PII. It contains deal structure, valuation ranges, and strategic rationale — all of which would be damaging if exposed to an AI provider's training pipeline or logging system.",
   locale       = "en",
 }: Props) {
@@ -122,7 +122,7 @@ addPropertyControls(Section02_Problem, {
   paragraph1: {
     type: ControlType.String,
     title: "Paragraph 1",
-    defaultValue: "Most AI data protection solutions focus on personally identifiable information (PII) — names, social security numbers, email addresses. But true enterprise AI enablement requires protecting far more than PII. Enterprise documents contain trade secrets, acquisition targets, pricing models, internal performance metrics, strategic plans, and client relationship details — all enterprise-sensitive but not classified as PII.",
+    defaultValue: "Most AI data protection solutions focus on personally identifiable information (PII) — names, social security numbers, email addresses. But true enterprise context-preserving data layer for AI requires protecting far more than PII. Enterprise documents contain trade secrets, acquisition targets, pricing models, internal performance metrics, strategic plans, and client relationship details — all enterprise-sensitive but not classified as PII.",
     displayTextArea: true,
   },
   paragraph2: {

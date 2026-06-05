@@ -22,7 +22,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     eyebrow: "Solutions",
     h1Plain: "Make regulated workflows",
     h1Highlight: "usable with AI",
-    description: "Six industries. Real production workflows. Real customers. One AI enablement data layer that removes the data exposure barrier blocking enterprise AI adoption — so AI runs on real data, inside your environment, under your governance.",
+    description: "Six industries. Real production workflows. Real customers. One context-preserving data layer for AI that removes the data exposure barrier blocking enterprise AI adoption — so AI runs on real data, inside your environment, under your governance.",
     stat1Num: "6",
     stat1Label: "Regulated industries",
     stat2Num: "10+",

@@ -101,7 +101,7 @@ export default function Section03_Definition({
             <div className="s3-banner">
               <span className="s3-banner-label">{bannerLabel}</span>
               <p className="s3-banner-text">
-                {definitionText} <span className="s3-product-name">{productName}</span> enables secure LLM usage through its AI enablement data layer: pre-processing encapsulation and post-processing restoration that work across any LLM.
+                {definitionText} <span className="s3-product-name">{productName}</span> enables secure LLM usage through its context-preserving data layer for AI: pre-processing encapsulation and post-processing restoration that work across any LLM.
               </p>
             </div>
           </div>

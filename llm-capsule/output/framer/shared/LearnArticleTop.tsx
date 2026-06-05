@@ -29,7 +29,7 @@ export default function LearnArticleTop({
   readTime = "10 min read",
   dateUpdated = "Updated April 2025",
   tldrLabel = "TL;DR — Diagnosis",
-  tldrBody = "Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without an AI enablement data layer, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.",
+  tldrBody = "Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without a context-preserving data layer for AI, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.",
 }: Props) {
   return (
     <>
@@ -220,5 +220,5 @@ addPropertyControls(LearnArticleTop, {
 
   // TL;DR
   tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR — Diagnosis" },
-  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without an AI enablement data layer, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.", displayTextArea: true },
+  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without a context-preserving data layer for AI, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.", displayTextArea: true },
 })

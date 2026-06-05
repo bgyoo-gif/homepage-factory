@@ -35,7 +35,7 @@ const DEFAULT_JSON_LD_FAQ = {
       name: "What is an AI data capsule?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "An AI data capsule is a locally generated AI enablement layer that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.",
+        text: "An AI data capsule is a locally generated context-preserving data layer for AI that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.",
       },
     },
     {

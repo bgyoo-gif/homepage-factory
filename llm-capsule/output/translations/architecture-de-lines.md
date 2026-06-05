@@ -4,8 +4,8 @@
 ## Section01_Hero
 
 
-AI Enablement
-AI Enablement
+Context-Preserving Data Layer for AI
+Context-Preserving Data Layer for AI
 
 Architecture
 Architektur
@@ -13,8 +13,8 @@ Architektur
 for Enterprise AI
 für KI im Unternehmen
 
-LLM Capsule is an AI enablement data layer and plugin that enables enterprises to adopt any AI model safely. It sits between enterprise data systems and external AI services — protecting data in transit while unlocking the full power of AI across every workflow.
-LLM Capsule ist ein AI Enablement Data Layer und Plugin für den sicheren KI-Einsatz im Unternehmen. Die Lösung sitzt zwischen unternehmensinternen Datensystemen und externen KI-Diensten. Daten werden bei der Übertragung geschützt, während die volle Leistungsfähigkeit der KI in jedem Workflow nutzbar bleibt.
+LLM Capsule is a context-preserving data layer for AI and plugin that enables enterprises to adopt any AI model safely. It sits between enterprise data systems and external AI services — protecting data in transit while unlocking the full power of AI across every workflow.
+LLM Capsule ist ein Context-Preserving Data Layer for AI und Plugin für den sicheren KI-Einsatz im Unternehmen. Die Lösung sitzt zwischen unternehmensinternen Datensystemen und externen KI-Diensten. Daten werden bei der Übertragung geschützt, während die volle Leistungsfähigkeit der KI in jedem Workflow nutzbar bleibt.
 
 LLM Capsule
 LLM Capsule
@@ -28,7 +28,7 @@ Architektur
 Overview
 Übersicht
 
-LLM Capsule operates as an AI enablement data layer that encapsulates sensitive enterprise data locally, transmits only protected representations to any external AI service, and restores AI outputs within the enterprise environment — enabling safe AI adoption at scale.
+LLM Capsule operates as a context-preserving data layer for AI that encapsulates sensitive enterprise data locally, transmits only protected representations to any external AI service, and restores AI outputs within the enterprise environment — enabling safe AI adoption at scale.
 LLM Capsule arbeitet als KI-Enablement-Datenschicht. Sensible Unternehmensdaten werden lokal kapsuliert. Nur geschützte Repräsentationen werden an externe KI-Dienste übermittelt. KI-Ergebnisse werden innerhalb der Unternehmensumgebung automatisch mit Originaldaten angereichert. So lässt sich KI sicher und skalierbar einführen.
 
 LLM Capsule
@@ -133,7 +133,7 @@ Unterschiedliche Dokumenttypen oder Sensibilitätsstufen werden innerhalb einer 
 Embedded Integration
 Eingebettete Integration
 
-LLM Capsule embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within your software stack.
+LLM Capsule embedded into existing enterprise applications and platforms, operating as a context-preserving data layer for AI within your software stack.
 LLM Capsule wird in bestehende Unternehmensanwendungen und -plattformen eingebettet und arbeitet als KI-Enablement-Datenschicht innerhalb des Software-Stacks.
 
 Slack App

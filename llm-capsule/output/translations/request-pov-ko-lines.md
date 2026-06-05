@@ -8,7 +8,7 @@ Proof of
 Demo
 Demo 요청
 
-Test LLM Capsule using your own enterprise documents and workflows. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.
+Test LLM Capsule using your own enterprise documents and workflows. We demonstrate enterprise context-preserving data layer for AI on your actual data, in your environment, against your compliance requirements.
 실제 기업 문서와 워크플로우로 LLM Capsule을 직접 테스트하세요. 실제 데이터, 실제 환경, 실제 컴플라이언스 요건에서 기업 AI 도입을 시연합니다.
 
 ## Section 02: Process Steps

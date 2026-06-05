@@ -11,7 +11,7 @@ Trust Center
 Certifications, compliance documentation, and security information for
 인증, 컴플라이언스 문서, 보안 정보를 제공합니다 —
 
-enterprise AI enablement.
+enterprise context-preserving data layer for AI.
 기업 AI 도입을 위한 LLM Capsule의 보안 기반입니다.
 
 ## Section 02: Certifications & Compliance

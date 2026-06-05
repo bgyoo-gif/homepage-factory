@@ -19,7 +19,7 @@ Risk concept
 Definition
 정의
 
-Shadow AI is the unsanctioned use of external LLMs by enterprise employees outside approved channels — typically because the official AI tooling cannot handle the regulated data the work actually depends on. The root cause is not employee misbehavior; it is a missing AI enablement data layer. Employees taste productivity in pilots and early demos, then route around the controls when production tooling fails to deliver.
+Shadow AI is the unsanctioned use of external LLMs by enterprise employees outside approved channels — typically because the official AI tooling cannot handle the regulated data the work actually depends on. The root cause is not employee misbehavior; it is a missing context-preserving data layer for AI. Employees taste productivity in pilots and early demos, then route around the controls when production tooling fails to deliver.
 Shadow AI는 기업 직원이 승인된 채널 외부에서 외부 LLM을 무단으로 사용하는 행위입니다 — 주로 공식 AI 도구가 업무에 실제로 필요한 규제 데이터를 처리할 수 없기 때문입니다. 근본 원인은 직원의 일탈이 아닙니다. 데이터 레이어의 부재입니다. 직원들은 파일럿과 초기 데모에서 생산성을 경험하고, 운영 도구가 이를 제공하지 못하면 통제를 우회합니다.
 
 ## Section 03: Body HTML
@@ -54,7 +54,7 @@ Shadow AI는 기업 직원이 승인된 채널 외부에서 외부 LLM을 무단
 
 <ul>
 <li><a href="/glossary/blocked-ai-workflow">차단된 AI 워크플로우</a></li>
-<li><a href="/glossary/ai-enablement-data-layer">데이터 레이어</a></li>
+<li><a href="/glossary/context-preserving-data-layer">데이터 레이어</a></li>
 <li><a href="/learn/pilot-to-production-enterprise-ai">Learn: 기업 AI 파일럿이 중단되는 이유</a></li>
 </ul>
 
@@ -63,7 +63,7 @@ Shadow AI는 기업 직원이 승인된 채널 외부에서 외부 LLM을 무단
 Blocked AI workflow
 차단된 AI 워크플로우
 
-AI enablement data layer
+context-preserving data layer for AI
 데이터 레이어
 
 Learn: Why enterprise AI pilots stall

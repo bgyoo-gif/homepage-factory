@@ -80,7 +80,7 @@ Q&A und RAG.
 AI answers questions about enterprise document collections. Documents are encapsulated before indexing in RAG pipelines. Retrieved context is protected during generation, and responses are restored before delivery to users.
 KI beantwortet Fragen zu Dokumentensammlungen des Unternehmens. Die Dokumente werden vor der Indizierung in RAG-Pipelines gekapselt. Der abgerufene Kontext bleibt während der Generierung geschützt. Vor der Auslieferung werden die Antworten mit den Originaldaten wiederhergestellt.
 
-enables AI document processing by protecting data at the data layer. Structure-preserving processing with local restoration delivers both AI enablement and data protection simultaneously.
+enables AI document processing by protecting data at the data layer. Structure-preserving processing with local restoration delivers both context-preserving data layer for AI and data protection simultaneously.
 ermöglicht KI-Dokumentenverarbeitung durch Schutz auf der Datenebene. Strukturerhaltende Verarbeitung mit lokaler Wiederherstellung gewährleistet KI-Nutzung und Datenschutz gleichzeitig.
 
 LLM Capsule

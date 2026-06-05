@@ -72,11 +72,11 @@ const BODY_HTML = `<h2>Definition</h2>
   <li>Audit trail, approval workflow, internal control evidence</li>
 </ul>
 
-<h2>Why it needs an AI enablement data layer</h2>
-<p>Operational data leaks information through structure (the topology itself reveals the network), sequence (the alarm pattern reveals the fault chain), and aggregate (the incident frequency reveals the customer segment). PII filtering does not bound this leakage. The <a href="/resources/glossary/ai-ready-operational-layer">AI enablement data layer</a> applies <a href="/resources/glossary/structure-preserving-encapsulation">structure-preserving encapsulation</a> with <a href="/resources/glossary/differential-privacy">differential-privacy-based protection</a> to bring operational data safely into LLM workflows.</p>
+<h2>Why it needs a context-preserving data layer for AI</h2>
+<p>Operational data leaks information through structure (the topology itself reveals the network), sequence (the alarm pattern reveals the fault chain), and aggregate (the incident frequency reveals the customer segment). PII filtering does not bound this leakage. The <a href="/resources/glossary/ai-ready-operational-layer">context-preserving data layer for AI</a> applies <a href="/resources/glossary/structure-preserving-encapsulation">structure-preserving encapsulation</a> with <a href="/resources/glossary/differential-privacy">differential-privacy-based protection</a> to bring operational data safely into LLM workflows.</p>
 
 <h2>Reference statement</h2>
-<blockquote>Operational data is the data your business runs on. AI cannot reach it through a PII guardrail. The AI enablement data layer was built for this category specifically.</blockquote>`
+<blockquote>Operational data is the data your business runs on. AI cannot reach it through a PII guardrail. The context-preserving data layer for AI was built for this category specifically.</blockquote>`
 
 const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   en: {
@@ -223,13 +223,13 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
 <li>Prüfpfad, Genehmigungsworkflow, interne Kontrollnachweise</li>
 </ul>
 
-<h2>Warum ein AI enablement data layer erforderlich ist</h2>
+<h2>Warum ein context-preserving data layer for AI erforderlich ist</h2>
 
-<p>Operative Daten geben Informationen durch ihre Struktur preis (die Topologie selbst offenbart das Netzwerk), durch ihre Sequenz (das Alarmmuster legt die Fehlerkette offen) und durch Aggregate (die Störungshäufigkeit lässt Rückschlüsse auf das Kundensegment zu). Eine PII-Filterung kann diesen Informationsabfluss nicht begrenzen. Der AI enablement data layer wendet strukturerhaltende Kapsulierung mit Differential-Privacy-basiertem Schutz an, um operative Daten sicher in LLM-Workflows einzubinden.</p>
+<p>Operative Daten geben Informationen durch ihre Struktur preis (die Topologie selbst offenbart das Netzwerk), durch ihre Sequenz (das Alarmmuster legt die Fehlerkette offen) und durch Aggregate (die Störungshäufigkeit lässt Rückschlüsse auf das Kundensegment zu). Eine PII-Filterung kann diesen Informationsabfluss nicht begrenzen. Der context-preserving data layer for AI wendet strukturerhaltende Kapsulierung mit Differential-Privacy-basiertem Schutz an, um operative Daten sicher in LLM-Workflows einzubinden.</p>
 
 <h2>Kernaussage</h2>
 
-<blockquote>Operative Daten sind die Grundlage des Geschäftsbetriebs. KI kann über einen PII-Filter nicht auf sie zugreifen. Der AI enablement data layer wurde speziell für diese Datenkategorie entwickelt.</blockquote>
+<blockquote>Operative Daten sind die Grundlage des Geschäftsbetriebs. KI kann über einen PII-Filter nicht auf sie zugreifen. Der context-preserving data layer for AI wurde speziell für diese Datenkategorie entwickelt.</blockquote>
 
 ---`,
     related1Label: "",

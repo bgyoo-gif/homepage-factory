@@ -14,8 +14,8 @@ const JSONLD_BREADCRUMB = JSON.stringify({
 const JSONLD_WEBPAGE = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Request a Demo — LLM Capsule Enterprise AI Enablement",
-  "description": "Test LLM Capsule with your own enterprise documents. Demonstrate AI enablement on real data, in your environment, against your compliance requirements.",
+  "name": "Request a Demo — LLM Capsule Context-Preserving Data Layer for AI",
+  "description": "Test LLM Capsule with your own enterprise documents. Demonstrate context-preserving data layer for AI on real data, in your environment, against your compliance requirements.",
   "url": "https://llmcapsule.ai/request-a-demo",
   "isPartOf": {
     "@type": "WebSite",
@@ -78,7 +78,7 @@ export default function RequestPov({
   // Hero
   heroTitle = "Request a",
   heroTitleHighlight = "Demo",
-  heroDescription = "Test LLM Capsule using your own enterprise documents and workflows. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.",
+  heroDescription = "Test LLM Capsule using your own enterprise documents and workflows. We demonstrate enterprise context-preserving data layer for AI on your actual data, in your environment, against your compliance requirements.",
 
   // Process Column
   processTitle = "What to",
@@ -670,7 +670,7 @@ addPropertyControls(RequestPov, {
   heroDescription: {
     type: ControlType.String,
     title: "Hero Description",
-    defaultValue: "Test LLM Capsule using your own enterprise documents and workflows. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.",
+    defaultValue: "Test LLM Capsule using your own enterprise documents and workflows. We demonstrate enterprise context-preserving data layer for AI on your actual data, in your environment, against your compliance requirements.",
     displayTextArea: true,
   },
 

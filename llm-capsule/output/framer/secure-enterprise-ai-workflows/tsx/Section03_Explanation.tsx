@@ -35,7 +35,7 @@ const defaultBullets: BulletItem[] = [
   },
   {
     label: "Model independence.",
-    body: "The AI enablement layer must work with any LLM provider. Enterprises should not be locked into a single AI vendor to maintain AI data pipeline protection.",
+    body: "The context-preserving data layer for AI must work with any LLM provider. Enterprises should not be locked into a single AI vendor to maintain AI data pipeline protection.",
   },
   {
     label: "Output Restoration.",
@@ -47,7 +47,7 @@ export default function Section03_Explanation({
   sectionLabel = "Explanation",
   intro = "A secure enterprise AI workflow has four properties:",
   bullets = defaultBullets,
-  bannerText = "Enterprise AI enablement requires an AI-ready data layer, not model-layer security.",
+  bannerText = "Context-preserving data layer for AI requires an AI-ready data layer, not model-layer security.",
   bannerProductName = "LLM Capsule",
 }: Props) {
   return (
@@ -189,7 +189,7 @@ export default function Section03_Explanation({
               ))}
             </ul>
             <div className="s3-banner">
-              <strong>Enterprise AI enablement</strong> requires an AI-ready data layer, not model-layer security. <span className="s3-product-text">{bannerProductName}</span> operates before data leaves and after results return — enabling AI adoption while protecting data.
+              <strong>Context-preserving data layer for AI</strong> requires an AI-ready data layer, not model-layer security. <span className="s3-product-text">{bannerProductName}</span> operates before data leaves and after results return — enabling AI adoption while protecting data.
             </div>
           </div>
         </div>
@@ -213,7 +213,7 @@ addPropertyControls(Section03_Explanation, {
   bannerText: {
     type: ControlType.String,
     title: "Banner Text",
-    defaultValue: "Enterprise AI enablement requires an AI-ready data layer, not model-layer security.",
+    defaultValue: "Context-preserving data layer for AI requires an AI-ready data layer, not model-layer security.",
     displayTextArea: true,
   },
   bannerProductName: {

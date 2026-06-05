@@ -26,7 +26,7 @@ interface Props {
 }
 
 export default function Section03_WhyStoryline({
-  eyebrow = "WHY AN AI ENABLEMENT DATA LAYER",
+  eyebrow = "WHY A CONTEXT-PRESERVING DATA LAYER FOR AI",
   heading = "The data AI needs is the data your business can't ",
   headingHighlight = "expose",
   description = "Not four separate problems. One storyline — read it through.",
@@ -47,7 +47,7 @@ export default function Section03_WhyStoryline({
   step4Body = "GDPR, HIPAA, SOX, sector regulators, audit obligations, sovereignty constraints — the risk of differential analysis, re-identification, and inference exposure that simple filtering cannot close. Pilots stall. Shadow AI emerges. Production never ships.",
   resultBadge = "→ Result",
   resultTitle = "LLM Capsule turns blocked workflows into running AI workflows.",
-  resultDetail = "Structure-preserving capsule + differential-privacy-based protection + in-environment execution alongside existing legacy systems + restoration into the originating workflow + two execution paths (external approved LLM or on-prem local) + customer-defined markers that change with your business. The AI enablement data layer for regulated operations.",
+  resultDetail = "Structure-preserving capsule + differential-privacy-based protection + in-environment execution alongside existing legacy systems + restoration into the originating workflow + two execution paths (external approved LLM or on-prem local) + customer-defined markers that change with your business. The context-preserving data layer for AI for regulated operations.",
 }: Props) {
   return (
     <>
@@ -287,7 +287,7 @@ export default function Section03_WhyStoryline({
 }
 
 addPropertyControls(Section03_WhyStoryline, {
-  eyebrow:         { type: ControlType.String, title: "Eyebrow",          defaultValue: "WHY AN AI ENABLEMENT DATA LAYER" },
+  eyebrow:         { type: ControlType.String, title: "Eyebrow",          defaultValue: "WHY A CONTEXT-PRESERVING DATA LAYER FOR AI" },
   heading:         { type: ControlType.String, title: "H2 Text",          defaultValue: "The data AI needs is the data your business can't " },
   headingHighlight:{ type: ControlType.String, title: "H2 Highlight",     defaultValue: "expose" },
   description:     { type: ControlType.String, title: "Description",      defaultValue: "Not four separate problems. One storyline — read it through." },
@@ -308,5 +308,5 @@ addPropertyControls(Section03_WhyStoryline, {
   step4Body:       { type: ControlType.String, title: "Step 4 Body",      defaultValue: "GDPR, HIPAA, SOX, sector regulators, audit obligations, sovereignty constraints — the risk of differential analysis, re-identification, and inference exposure that simple filtering cannot close. Pilots stall. Shadow AI emerges. Production never ships.", multiLine: true },
   resultBadge:     { type: ControlType.String, title: "Result Badge",     defaultValue: "→ Result" },
   resultTitle:     { type: ControlType.String, title: "Result Title",     defaultValue: "LLM Capsule turns blocked workflows into running AI workflows." },
-  resultDetail:    { type: ControlType.String, title: "Result Detail",    defaultValue: "Structure-preserving capsule + differential-privacy-based protection + in-environment execution alongside existing legacy systems + restoration into the originating workflow + two execution paths (external approved LLM or on-prem local) + customer-defined markers that change with your business. The AI enablement data layer for regulated operations.", multiLine: true },
+  resultDetail:    { type: ControlType.String, title: "Result Detail",    defaultValue: "Structure-preserving capsule + differential-privacy-based protection + in-environment execution alongside existing legacy systems + restoration into the originating workflow + two execution paths (external approved LLM or on-prem local) + customer-defined markers that change with your business. The context-preserving data layer for AI for regulated operations.", multiLine: true },
 })

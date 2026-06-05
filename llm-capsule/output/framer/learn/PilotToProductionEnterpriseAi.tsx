@@ -57,12 +57,12 @@ const BODY_HTML = `<h2>The standard pilot trajectory</h2>
 <h3>Reason 4 — Filtering alone leaves regulated risk standing</h3>
 <p>GDPR, HIPAA, SOX, sector regulators, audit obligations, sovereignty constraints. Even if every field is masked, the residual risk of differential analysis, re-identification through context, and inference exposure is what regulators evaluate. Simple filtering cannot close that.</p>
 
-<p><strong>Result:</strong> the pilot demonstrated value on synthetic data; the production deployment requires real data; the gap between them is the AI enablement data layer that wasn't there.</p>
+<p><strong>Result:</strong> the pilot demonstrated value on synthetic data; the production deployment requires real data; the gap between them is the context-preserving data layer for AI that wasn't there.</p>
 
 <h2>The pattern that gets pilots to production</h2>
 <p>Pilots that ship to production typically have these architectural features in place:</p>
 <ol>
-<li><strong>An AI enablement data layer between systems and AI.</strong> Not a guardrail. Not a gateway. A layer that transforms operational data into AI-ready capsules locally, executes the AI workflow, and restores results into the originating system.</li>
+<li><strong>A context-preserving data layer for AI between systems and AI.</strong> Not a guardrail. Not a gateway. A layer that transforms operational data into AI-ready capsules locally, executes the AI workflow, and restores results into the originating system.</li>
 <li><strong>Structure-preserving capsule.</strong> Tables, cross-references, configurations, document hierarchies survive intact. AI receives full context — not broken fragments.</li>
 <li><strong>Differential-privacy-based protection.</strong> Beyond field masking — DP noise, k-anonymity, semantic tokenization — to address inference and aggregate-pattern risk that simple filtering can't close.</li>
 <li><strong>Plug-in execution into existing legacy systems.</strong> No migration. The data layer reads where the document already lives.</li>
@@ -100,7 +100,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     readTime: "10 min read",
     dateUpdated: "Updated April 2025",
     tldrLabel: "TL;DR — Diagnosis",
-    tldrBody: "Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without an AI enablement data layer, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.",
+    tldrBody: "Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without a context-preserving data layer for AI, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.",
     bodyHtml: BODY_HTML,
     canonicalUrl: "https://llmcapsule.ai/resources/learn/pilot-to-production-enterprise-ai",
     datePublished: "2025-04-15",
@@ -115,8 +115,8 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     related2Href: "/resources/learn/sovereign-ai-european-enterprises",
     related3Title: "Glossary: Blocked AI workflow",
     related3Href: "/resources/glossary/blocked-ai-workflow",
-    related4Title: "Glossary: AI enablement data layer",
-    related4Href: "/resources/glossary/ai-enablement-data-layer",
+    related4Title: "Glossary: context-preserving data layer for AI",
+    related4Href: "/resources/glossary/context-preserving-data-layer",
   },
   ko: {
     backLabel: "← Learn",
@@ -166,7 +166,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
 
 <p>프로덕션에 배포된 파일럿은 일반적으로 다음 아키텍처 요소를 갖추고 있습니다.</p>
 
-<li><strong>An AI enablement data layer between systems and AI.</strong> Not a guardrail. Not a gateway. A layer that transforms operational data into AI-ready capsules locally, executes the AI workflow, and restores results into the originating system.</li>
+<li><strong>A context-preserving data layer for AI between systems and AI.</strong> Not a guardrail. Not a gateway. A layer that transforms operational data into AI-ready capsules locally, executes the AI workflow, and restores results into the originating system.</li>
 <li><strong>문서 구조 보존 캡슐화.</strong> 테이블, 상호 참조, 설정, 문서 계층 구조가 그대로 유지됩니다. AI는 깨진 단편이 아닌 전체 컨텍스트를 받습니다.</li>
 <li><strong>차등 프라이버시 기반 보호.</strong> 단순 필드 마스킹을 넘어 — DP 노이즈, k-익명성, 시맨틱 토큰화 — 단순 필터링으로 막을 수 없는 추론 및 집계 패턴 위험까지 대응합니다.</li>
 <li><strong>기존 레거시 시스템에 플러그인 방식 실행.</strong> 마이그레이션 없이. 데이터 레이어가 문서가 이미 있는 곳에서 직접 읽어옵니다.</li>
@@ -208,8 +208,8 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     related2Href: "/resources/learn/sovereign-ai-european-enterprises",
     related3Title: "Glossary: Blocked AI workflow",
     related3Href: "/resources/glossary/blocked-ai-workflow",
-    related4Title: "Glossary: AI enablement data layer",
-    related4Href: "/resources/glossary/ai-enablement-data-layer",
+    related4Title: "Glossary: context-preserving data layer for AI",
+    related4Href: "/resources/glossary/context-preserving-data-layer",
   },
   de: {
     backLabel: "← Learn",
@@ -297,8 +297,8 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     related2Href: "/resources/learn/sovereign-ai-european-enterprises",
     related3Title: "Glossary: Blocked AI workflow",
     related3Href: "/resources/glossary/blocked-ai-workflow",
-    related4Title: "Glossary: AI enablement data layer",
-    related4Href: "/resources/glossary/ai-enablement-data-layer",
+    related4Title: "Glossary: context-preserving data layer for AI",
+    related4Href: "/resources/glossary/context-preserving-data-layer",
   },
 }
 

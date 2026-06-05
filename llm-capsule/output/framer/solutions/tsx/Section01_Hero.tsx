@@ -27,7 +27,7 @@ interface Props {
 export default function Section01_Hero({
   titleLine1 = "AI, Now Safe for",
   titleHighlight = "Every Industry",
-  description = "Regulated and document-heavy industries can now adopt AI on real enterprise data. LLM Capsule is an AI enablement data layer and plugin that removes the data exposure barrier blocking enterprise AI adoption — enabling AI first, protecting data at the data layer.",
+  description = "Regulated and document-heavy industries can now adopt AI on real enterprise data. LLM Capsule is a context-preserving data layer for AI and plugin that removes the data exposure barrier blocking enterprise AI adoption — enabling AI first, protecting data at the data layer.",
   heroImageSrc = "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/images/solution-hero.png",
   heroImageAlt = "LLM Capsule — AI-powered document processing across regulated industries",
   primaryBtnLabel = "Request a Demo",
@@ -202,7 +202,7 @@ addPropertyControls(Section01_Hero, {
     type: ControlType.String,
     title: "Description",
     defaultValue:
-      "Regulated and document-heavy industries can now adopt AI on real enterprise data. LLM Capsule is an AI enablement data layer and plugin that removes the data exposure barrier blocking enterprise AI adoption — enabling AI first, protecting data at the data layer.",
+      "Regulated and document-heavy industries can now adopt AI on real enterprise data. LLM Capsule is a context-preserving data layer for AI and plugin that removes the data exposure barrier blocking enterprise AI adoption — enabling AI first, protecting data at the data layer.",
     displayTextArea: true,
   },
   heroImageSrc: {

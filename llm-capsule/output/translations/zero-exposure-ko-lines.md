@@ -16,7 +16,7 @@ DEFINITION
 Zero exposure is a core capability of
 Zero Exposure는 다음의 핵심 기능입니다 —
 
-'s AI enablement data layer in which original sensitive enterprise data never leaves the enterprise environment during AI processing. Only encapsulated representations — with sensitive values replaced by structure-preserving tokens — cross the trust boundary to external AI services. Zero exposure is what enables enterprises to adopt AI confidently on their most sensitive data.
+'s context-preserving data layer for AI in which original sensitive enterprise data never leaves the enterprise environment during AI processing. Only encapsulated representations — with sensitive values replaced by structure-preserving tokens — cross the trust boundary to external AI services. Zero exposure is what enables enterprises to adopt AI confidently on their most sensitive data.
 LLM Capsule의 AI 지원 데이터 레이어에서 원본 민감 기업 데이터는 AI 처리 중 절대 기업 환경을 벗어나지 않습니다. 민감 값이 구조 보존 토큰으로 대체된 캡슐화된 표현만 외부 AI 서비스로의 신뢰 경계를 넘습니다. Zero Exposure는 기업이 가장 민감한 데이터에서 AI를 자신 있게 도입할 수 있게 하는 핵심 요소입니다.
 
 ## Section 03: Explanation
@@ -93,5 +93,5 @@ Request a Demo
 View Product
 제품 보기
 
-Enterprise AI Enablement by CUBIG
-Enterprise AI Enablement by CUBIG
+Context-Preserving Data Layer for AI by CUBIG
+Context-Preserving Data Layer for AI by CUBIG

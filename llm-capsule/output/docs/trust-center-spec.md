@@ -10,7 +10,7 @@
 ## Page Meta
 
 - title: "Trust Center -- LLM Capsule Security & Compliance"
-- description: "Security certifications, compliance documentation, and data handling principles for LLM Capsule enterprise AI enablement."
+- description: "Security certifications, compliance documentation, and data handling principles for LLM Capsule enterprise context-preserving data layer for AI."
 - canonical: https://llmcapsule.ai/resources/trust-center
 - lang: en
 - JSON-LD: BreadcrumbList (Home > Resources > Trust Center) -- preserve from A-type source
@@ -34,7 +34,7 @@
 ### Content
 - **title:** "Security & Compliance <span class="ds-text--brand">Trust Center</span>"
   - brand keyword: "Trust Center"
-- **description:** "Certifications, compliance documentation, and security information for <span class="ds-text--product">LLM Capsule</span> enterprise AI enablement."
+- **description:** "Certifications, compliance documentation, and security information for <span class="ds-text--product">LLM Capsule</span> enterprise context-preserving data layer for AI."
 - **eyebrow:** NONE (eyebrow banned in B-type)
 - **breadcrumb:** NONE (breadcrumbs are not a DS component; omit)
 - **actions:** none

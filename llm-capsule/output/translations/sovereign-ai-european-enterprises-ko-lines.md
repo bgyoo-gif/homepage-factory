@@ -28,7 +28,7 @@ Updated April 2025
 TL;DR — Definition
 TL;DR — Definition
 
-Sovereign AI means enterprise AI workflows where data, processing, and audit remain inside a defined regulatory and geographic boundary. For European enterprises, this typically means GDPR-compliant data handling, in-region LLM endpoints (EU-hosted LLM providers, or on-prem local models), and a full audit trail for regulator review. An AI enablement data layer like LLM Capsule provides two execution paths — in-region external LLM with capsule data only, or on-prem local lightweight model — so a single enterprise can adopt sovereign AI without giving up the productivity of best-in-class LLMs.
+Sovereign AI means enterprise AI workflows where data, processing, and audit remain inside a defined regulatory and geographic boundary. For European enterprises, this typically means GDPR-compliant data handling, in-region LLM endpoints (EU-hosted LLM providers, or on-prem local models), and a full audit trail for regulator review. A context-preserving data layer for AI like LLM Capsule provides two execution paths — in-region external LLM with capsule data only, or on-prem local lightweight model — so a single enterprise can adopt sovereign AI without giving up the productivity of best-in-class LLMs.
 Sovereign AI란 데이터·처리·감사가 정의된 규제 및 지리적 경계 내에 머무는 기업 AI 워크플로를 의미합니다. 유럽 기업의 경우, GDPR 준수 데이터 처리, 지역 내 LLM 엔드포인트(EU 호스팅 LLM 공급자 또는 온프레미스 로컬 모델), 규제 기관 검토를 위한 완전한 감사 이력이 일반적으로 요구됩니다. LLM Capsule과 같은 AI 데이터 레이어는 두 가지 실행 경로를 제공합니다. 캡슐 데이터만 사용하는 지역 내 외부 LLM(Path A), 또는 온프레미스 로컬 경량 모델(Path B). 기업은 최고 수준 LLM의 생산성을 포기하지 않고도 Sovereign AI를 도입할 수 있습니다.
 
 ## Section 03: Body HTML

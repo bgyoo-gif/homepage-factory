@@ -45,7 +45,7 @@ interface Props {
 }
 
 export default function Section05_StepTabs({
-  tabsHeading = "Enterprise AI enablement through a 3+2 architecture",
+  tabsHeading = "Context-preserving data layer for AI through a 3+2 architecture",
   tabsSubheading = "LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 data layer architecture: three core enablement pillars plus two additional value capabilities that ensure output quality and model flexibility.",
   tabCore1Image = "",
   tabCore2Image = "",
@@ -242,7 +242,7 @@ export default function Section05_StepTabs({
 }
 
 addPropertyControls(Section05_StepTabs, {
-  tabsHeading:    { type: ControlType.String, title: "Tabs Heading",    defaultValue: "Enterprise AI enablement through a 3+2 architecture", displayTextArea: true },
+  tabsHeading:    { type: ControlType.String, title: "Tabs Heading",    defaultValue: "Context-preserving data layer for AI through a 3+2 architecture", displayTextArea: true },
   tabsSubheading: { type: ControlType.String, title: "Tabs Subheading", defaultValue: "LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 data layer architecture: three core enablement pillars plus two additional value capabilities that ensure output quality and model flexibility.", displayTextArea: true },
   tab1Label:      { type: ControlType.String, title: "Tab 1 Label",     defaultValue: "Core 1 — Zero Exposure" },
   tab1Title:      { type: ControlType.String, title: "Tab 1 Title",     defaultValue: "Zero Exposure" },

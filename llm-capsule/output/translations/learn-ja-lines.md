@@ -2,10 +2,10 @@
 
 ## Section 01: Hero
 
-Enterprise AI Enablement — Learn
+Context-Preserving Data Layer for AI — Learn
 エンタープライズAI導入 — Learn
 
-In-depth technical articles on enterprise AI enablement, secure AI workflows, structure-preserving processing, and restorable workflows.
+In-depth technical articles on enterprise context-preserving data layer for AI, secure AI workflows, structure-preserving processing, and restorable workflows.
 エンタープライズAI導入、セキュアAIワークフロー、構造保存処理、復元可能ワークフローに関する詳細な技術記事を提供いたします。
 
 ## Section 02: Article Cards
@@ -16,7 +16,7 @@ Secure Enterprise AI Data Workflows
 Pillar
 コアガイド
 
-Enterprise AI Enablement
+Context-Preserving Data Layer for AI
 エンタープライズAI導入
 
 Enterprise AI Document Processing

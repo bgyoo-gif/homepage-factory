@@ -28,7 +28,7 @@ Updated May 2025
 Definition · TL;DR
 Definition · TL;DR
 
-PII guardrails protect identifiable fields at the API or prompt layer. The AI enablement data layer protects structured enterprise data — network logs, configurations, incident records, OT and mission context — using structure-preserving, differential-privacy-based encapsulation. They address adjacent but different layers of the enterprise AI pipeline.
+PII guardrails protect identifiable fields at the API or prompt layer. The context-preserving data layer for AI protects structured enterprise data — network logs, configurations, incident records, OT and mission context — using structure-preserving, differential-privacy-based encapsulation. They address adjacent but different layers of the enterprise AI pipeline.
 PII 가드레일은 API 또는 프롬프트 레이어에서 식별 가능한 필드를 보호합니다. 데이터 레이어는 구조화된 기업 데이터 — 네트워크 로그, 설정 파일, 인시던트 레코드, OT 및 미션 컨텍스트 — 를 문서 구조 보존 방식의 차등 프라이버시 기반 캡슐화로 보호합니다. 두 카테고리는 기업 AI 파이프라인에서 인접하지만 서로 다른 레이어를 담당합니다.
 
 ## Section 03: Body HTML
@@ -61,18 +61,18 @@ PII 가드레일은 API 또는 프롬프트 레이어에서 식별 가능한 필
 
 <p><strong>레이어:</strong> 데이터 파이프라인 (오프라인). <strong>범위:</strong> 데이터셋 생성. <strong>강점:</strong> ML 학습 데이터. <strong>제약:</strong> 실시간 워크플로우에서 동작하지 않습니다.</p>
 
-<h3>4. AI Enablement Data Layer (LLM Capsule)</h3>
+<h3>4. Context-Preserving Data Layer for AI (LLM Capsule)</h3>
 
 <p>기존 기업 환경(NOC, 티켓, OT, EHR, 미션 시스템)과 LLM 사이에 위치합니다. 문서 구조 보존 방식의 차등 프라이버시 기반 캡슐화로 규제 대상 운영 데이터를 AI 처리 가능한 컨텍스트로 변환합니다. 두 가지 실행 경로(외부 승인 LLM 또는 온프레미스 로컬 모델) 중 하나로 라우팅합니다. 결과물은 State Vault를 통해 워크플로우로 복원됩니다.</p>
 
-<p><strong>레이어:</strong> AI enablement data layer. <strong>범위:</strong> 운영 데이터 + 거버넌스. <strong>강점:</strong> 구조화된 운영 데이터, 두 가지 실행 경로, 레거시 시스템 연동. <strong>제약:</strong> 프롬프트 인젝션 방어 또는 합성 데이터 생성기가 아닙니다.</p>
+<p><strong>레이어:</strong> context-preserving data layer for AI. <strong>범위:</strong> 운영 데이터 + 거버넌스. <strong>강점:</strong> 구조화된 운영 데이터, 두 가지 실행 경로, 레거시 시스템 연동. <strong>제약:</strong> 프롬프트 인젝션 방어 또는 합성 데이터 생성기가 아닙니다.</p>
 
 <h2>직접 비교표</h2>
 
 <table class="compare-table">
   <thead><tr><th></th><th>PII 가드레일</th><th>AI 보안 / 프롬프트</th><th class="us">LLM Capsule</th></tr></thead>
   <tbody>
-    <tr><td>레이어</td><td>API 래퍼</td><td>프롬프트 / 게이트웨이</td><td class="us-cell">AI enablement data layer</td></tr>
+    <tr><td>레이어</td><td>API 래퍼</td><td>프롬프트 / 게이트웨이</td><td class="us-cell">context-preserving data layer for AI</td></tr>
     <tr><td>범위</td><td>이름, ID, 필드</td><td>프롬프트 위협 + PII</td><td class="us-cell">운영 데이터 + 거버넌스</td></tr>
     <tr><td>방법</td><td>탐지 &amp; 마스킹</td><td>필터 / 프롬프트 정제</td><td class="us-cell">문서 구조 보존 + 차등 프라이버시 기반 캡슐화</td></tr>
     <tr><td>레거시 시스템 연동</td><td>아니요</td><td>아니요</td><td class="us-cell">예 (NOC, 티켓, OT, EHR, 미션)</td></tr>
@@ -117,11 +117,11 @@ AI 보안 / 프롬프트 보호 — 프롬프트 위협 방어를 위한 게이�
 
 합성 데이터 — 오프라인 학습 파이프라인
 
-LLM Capsule — 규제 대상 운영 데이터를 위한 AI enablement data layer
+LLM Capsule — 규제 대상 운영 데이터를 위한 context-preserving data layer for AI
 
 <p>실수는 첫 번째를 네 번째인 것처럼 취급하는 것입니다. 필드 레벨 마스킹은 운영 데이터에 대한 분산적 보호의 대안이 아닙니다.</p>
 
-<strong>Buyer test.</strong> When the AI pipeline involves NOC logs, incident records, OT manifests, configuration trees, clinical workflows, or mission context — the AI enablement data layer is the right place to evaluate. PII guardrails are necessary but not sufficient.
+<strong>Buyer test.</strong> When the AI pipeline involves NOC logs, incident records, OT manifests, configuration trees, clinical workflows, or mission context — the context-preserving data layer for AI is the right place to evaluate. PII guardrails are necessary but not sufficient.
 <strong>구매 판단 기준.</strong> AI 파이프라인에 NOC 로그, 인시던트 레코드, OT 매니페스트, 설정 트리, 임상 워크플로우, 또는 미션 컨텍스트가 포함된다면 — 데이터 레이어를 평가해야 합니다. PII 가드레일은 필요하지만 충분하지 않습니다.
 
 <h2>검증 사례</h2>
@@ -192,7 +192,7 @@ On-prem LLM execution path
 Map your stack against the categories.
 카테고리별로 현재 스택을 점검해 보세요.
 
-30-minute review of where PII guardrails, prompt security, and the AI enablement data layer fit in your AI pipeline.
+30-minute review of where PII guardrails, prompt security, and the context-preserving data layer for AI fit in your AI pipeline.
 30분 리뷰로 PII 가드레일, 프롬프트 보안, 데이터 레이어가 AI 파이프라인 어디에 맞는지 확인합니다.
 
 Request a Demo

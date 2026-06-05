@@ -29,7 +29,7 @@ interface Props {
 
 export default function Section01_Hero({
   title = "Restorable Workflow",
-  description = "An AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling LLM Capsule to automatically restore original enterprise data into AI outputs.",
+  description = "A context-preserving data layer for AI pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling LLM Capsule to automatically restore original enterprise data into AI outputs.",
 }: Props) {
 
   return (
@@ -159,7 +159,7 @@ addPropertyControls(Section01_Hero, {
   description: {
     type: ControlType.String,
     title: "Description",
-    defaultValue: "An AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling LLM Capsule to automatically restore original enterprise data into AI outputs.",
+    defaultValue: "A context-preserving data layer for AI pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling LLM Capsule to automatically restore original enterprise data into AI outputs.",
     displayTextArea: true,
   },
 })

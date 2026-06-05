@@ -2,13 +2,13 @@
 
 ## Section 01: Hero
 
-AI Enablement
+Context-Preserving Data Layer for AI
 AI活性化
 
 Architecture
 アーキテクチャ
 
-LLM Capsule is an AI enablement data layer and plugin that enables enterprises to adopt any AI model safely. It sits between enterprise data systems and external AI services — protecting data in transit while unlocking the full power of AI across every workflow.
+LLM Capsule is a context-preserving data layer for AI and plugin that enables enterprises to adopt any AI model safely. It sits between enterprise data systems and external AI services — protecting data in transit while unlocking the full power of AI across every workflow.
 LLM Capsuleは、企業があらゆるAIモデルを安全に導入できるようにするデータレイヤーおよびプラグインです。企業データシステムと外部AIサービスの間に位置し、転送中のデータを保護しながら、すべてのワークフローでAIの潜在能力を最大限に引き出します。
 
 ## Section 02: Architecture Overview
@@ -19,7 +19,7 @@ Architecture
 Overview
 概要
 
-LLM Capsule operates as an AI enablement data layer that encapsulates sensitive enterprise data locally, transmits only protected representations to any external AI service, and restores AI outputs within the enterprise environment — enabling safe AI adoption at scale.
+LLM Capsule operates as a context-preserving data layer for AI that encapsulates sensitive enterprise data locally, transmits only protected representations to any external AI service, and restores AI outputs within the enterprise environment — enabling safe AI adoption at scale.
 LLM Capsuleは、機密性の高い企業データをローカルでカプセル化し、保護された表現のみを外部AIサービスに送信し、企業環境内でAI出力を復元するデータレイヤーとして動作します — 大規模なAI導入を安全に実現します。
 
 ## Section 03: Architecture Components
@@ -116,7 +116,7 @@ Different document types or sensitivity levels route through different deploymen
 Embedded Integration
 エンベデッド統合
 
-LLM Capsule embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within your software stack.
+LLM Capsule embedded into existing enterprise applications and platforms, operating as a context-preserving data layer for AI within your software stack.
 LLM Capsuleを既存の企業アプリケーションおよびプラットフォームに組み込み、ソフトウェアスタック内のデータレイヤーとして動作させます。
 
 Slack App

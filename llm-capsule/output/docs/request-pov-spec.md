@@ -38,7 +38,7 @@
 #### Content
 - **h1 (ds-hero__title):** `Request a Proof of <span class="ds-text--brand">Value</span>`
   - Brand keyword: "Value"
-- **Description (ds-hero__description):** "Test <span class="ds-text--product">LLM Capsule</span> using your own enterprise documents and workflows. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements."
+- **Description (ds-hero__description):** "Test <span class="ds-text--product">LLM Capsule</span> using your own enterprise documents and workflows. We demonstrate enterprise context-preserving data layer for AI on your actual data, in your environment, against your compliance requirements."
 - **No CTA buttons in hero** (the form in next section is the primary action)
 
 #### Notes

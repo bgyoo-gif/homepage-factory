@@ -19,7 +19,7 @@ GLOSSARY
 Definition
 정의
 
-Two execution paths in the AI enablement data layer. Path A sends capsule data to an external approved LLM with no raw operational data exposure. Path B runs a small private lightweight model entirely inside the enterprise environment with zero external transmission. Selection is policy-driven per workflow.
+Two execution paths in the context-preserving data layer for AI. Path A sends capsule data to an external approved LLM with no raw operational data exposure. Path B runs a small private lightweight model entirely inside the enterprise environment with zero external transmission. Selection is policy-driven per workflow.
 데이터 레이어가 지원하는 두 가지 실행 경로입니다. Path A는 원본 운영 데이터 노출 없이 캡슐 데이터를 외부 승인 LLM으로 전송합니다. Path B는 소규모 전용 경량 모델을 기업 환경 내부에서 완전히 실행하며 외부 전송이 전혀 없습니다. 경로 선택은 워크플로우별 정책으로 결정됩니다.
 
 ## Section 03: Body HTML
@@ -65,5 +65,5 @@ Pillar guide: On-prem LLM execution path
 State vault for restoration
 복원용 상태 저장소
 
-AI enablement data layer
+context-preserving data layer for AI
 데이터 레이어

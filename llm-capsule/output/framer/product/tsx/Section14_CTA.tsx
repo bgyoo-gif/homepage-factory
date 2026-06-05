@@ -24,7 +24,7 @@ interface Props {
 
 export default function Section14_CTA({
   title       = "See how LLM Capsule fits your environment, documents, and controls",
-  description = "Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.",
+  description = "Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise context-preserving data layer for AI on your actual data, in your environment, against your compliance requirements.",
   cta1Label   = "Request a Demo",
   cta1Href    = "/request-a-demo",
   footnote2Label = "View on AWS Marketplace",
@@ -191,7 +191,7 @@ export default function Section14_CTA({
 
 addPropertyControls(Section14_CTA, {
   title:          { type: ControlType.String, title: "Title",          defaultValue: "See how LLM Capsule fits your environment, documents, and controls" },
-  description:    { type: ControlType.String, title: "Description",    defaultValue: "Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.", displayTextArea: true },
+  description:    { type: ControlType.String, title: "Description",    defaultValue: "Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise context-preserving data layer for AI on your actual data, in your environment, against your compliance requirements.", displayTextArea: true },
   cta1Label:      { type: ControlType.String, title: "CTA 1 Label",    defaultValue: "Request a Demo" },
   cta1Href:       { type: ControlType.String, title: "CTA 1 URL",      defaultValue: "/request-a-demo" },
   footnote2Label: { type: ControlType.String, title: "Footnote 2",     defaultValue: "View on AWS Marketplace" },

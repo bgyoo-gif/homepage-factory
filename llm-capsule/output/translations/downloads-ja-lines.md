@@ -8,7 +8,7 @@ Documentation &
 Downloads
 ダウンロード
 
-Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation.
+Architecture briefs, technical documentation, and deployment guides for enterprise context-preserving data layer for AI evaluation.
 エンタープライズAI導入評価のためのアーキテクチャブリーフ、技術文書、デプロイメントガイドを提供します。
 
 ## Section 02: Downloads Grid
@@ -19,7 +19,7 @@ Available
 Resources
 リソース
 
-Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation.
+Architecture briefs, technical documentation, and deployment guides for enterprise context-preserving data layer for AI evaluation.
 エンタープライズAI導入評価のためのアーキテクチャブリーフ、技術文書、デプロイメントガイドを提供します。
 
 Architecture Brief

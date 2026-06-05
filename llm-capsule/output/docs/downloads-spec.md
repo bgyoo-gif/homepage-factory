@@ -43,7 +43,7 @@ ds-section ds-section--hero
       h1.ds-hero__title
         "Documentation & " + span.ds-text--brand "Downloads"
       p.ds-hero__description
-        "Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation."
+        "Architecture briefs, technical documentation, and deployment guides for enterprise context-preserving data layer for AI evaluation."
 ```
 
 ### Content Mapping
@@ -52,7 +52,7 @@ ds-section ds-section--hero
 |---------|--------|----------|
 | Title | "Documentation & Downloads" | `ds-hero__title` |
 | Title emphasis keyword | "Downloads" | `ds-text--brand` |
-| Description | "Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation." | `ds-hero__description` |
+| Description | "Architecture briefs, technical documentation, and deployment guides for enterprise context-preserving data layer for AI evaluation." | `ds-hero__description` |
 | Breadcrumb | Home / Resources / Downloads | Omit -- B-type does not include breadcrumb in hero |
 | Eyebrow "Downloads" | A-type has eyebrow | **Delete** (eyebrow forbidden) |
 
@@ -75,14 +75,14 @@ ds-section-header ds-section-header--underline
   h2.ds-section-header__title
     "Available " + span.ds-text--brand "Resources"
   p.ds-section-header__description
-    "Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation."
+    "Architecture briefs, technical documentation, and deployment guides for enterprise context-preserving data layer for AI evaluation."
 ```
 
 | Element | Value |
 |---------|-------|
 | Title | "Available Resources" |
 | Title emphasis keyword | "Resources" |
-| Description | "Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation." (derived from hero/page description -- A-type has no explicit section header for this grid) |
+| Description | "Architecture briefs, technical documentation, and deployment guides for enterprise context-preserving data layer for AI evaluation." (derived from hero/page description -- A-type has no explicit section header for this grid) |
 | Alignment | center |
 
 ### Cards (3 gradient cards in 3-col grid)

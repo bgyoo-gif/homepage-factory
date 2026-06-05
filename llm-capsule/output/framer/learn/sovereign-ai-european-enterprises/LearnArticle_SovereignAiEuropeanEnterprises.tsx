@@ -60,7 +60,7 @@ const DEFAULT_BODY_HTML = `
 <h3>Path B — On-prem local lightweight model</h3>
 <p>A small private lightweight model runs entirely inside the enterprise environment — Hugging Face quantized model on internal GPU, vLLM-served, or vendor-provided lightweight model. Zero external transmission. Used for workflows where any external endpoint is unacceptable: classified defense workflows, certain financial sector workflows under national regulator requirement, mental health / substance abuse healthcare data.</p>
 
-<p>Path selection is policy-driven per workflow, not per deployment. A single AI enablement data layer instance can route different ticket types, document classes, or business units through different paths.</p>
+<p>Path selection is policy-driven per workflow, not per deployment. A single context-preserving data layer for AI instance can route different ticket types, document classes, or business units through different paths.</p>
 
 <h2>GDPR alignment in practice</h2>
 <p>The data layer supports GDPR compliance through:</p>
@@ -81,7 +81,7 @@ const DEFAULT_BODY_HTML = `
 </ul>
 
 <h2>Validation: Deutsche Telekom T Challenge 2026</h2>
-<p>LLM Capsule was recognized in <strong>Deutsche Telekom T Challenge 2026 — Top 12 in Data Security &amp; Governance</strong>. The T Challenge specifically evaluates AI enablement under sovereign data and EU regulatory constraints. The evaluation criteria include data sovereignty architecture, audit governance, integration with operator-grade infrastructure, and on-premise deployability — all areas where the AI enablement data layer pattern matches the regulatory expectation.</p>
+<p>LLM Capsule was recognized in <strong>Deutsche Telekom T Challenge 2026 — Top 12 in Data Security &amp; Governance</strong>. The T Challenge specifically evaluates context-preserving data layer for AI under sovereign data and EU regulatory constraints. The evaluation criteria include data sovereignty architecture, audit governance, integration with operator-grade infrastructure, and on-premise deployability — all areas where the context-preserving data layer for AI pattern matches the regulatory expectation.</p>
 
 <h2>Three deployment archetypes for European enterprises</h2>
 
@@ -116,7 +116,7 @@ export default function LearnArticle_SovereignAiEuropeanEnterprises({
   readTime = "14 min read",
   dateUpdated = "Updated April 2025",
   tldrLabel = "TL;DR — Definition",
-  tldrBody = "Sovereign AI means enterprise AI workflows where data, processing, and audit remain inside a defined regulatory and geographic boundary. For European enterprises, this typically means GDPR-compliant data handling, in-region LLM endpoints (EU-hosted LLM providers, or on-prem local models), and a full audit trail for regulator review. An AI enablement data layer like LLM Capsule provides two execution paths — in-region external LLM with capsule data only, or on-prem local lightweight model — so a single enterprise can adopt sovereign AI without giving up the productivity of best-in-class LLMs.",
+  tldrBody = "Sovereign AI means enterprise AI workflows where data, processing, and audit remain inside a defined regulatory and geographic boundary. For European enterprises, this typically means GDPR-compliant data handling, in-region LLM endpoints (EU-hosted LLM providers, or on-prem local models), and a full audit trail for regulator review. A context-preserving data layer for AI like LLM Capsule provides two execution paths — in-region external LLM with capsule data only, or on-prem local lightweight model — so a single enterprise can adopt sovereign AI without giving up the productivity of best-in-class LLMs.",
   bodyHtml = DEFAULT_BODY_HTML,
   canonicalUrl = "https://llmcapsule.ai/learn/sovereign-ai-european-enterprises",
   datePublished = "2025-04-15",
@@ -781,7 +781,7 @@ addPropertyControls(LearnArticle_SovereignAiEuropeanEnterprises, {
 
   // TL;DR
   tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR — Definition" },
-  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "Sovereign AI means enterprise AI workflows where data, processing, and audit remain inside a defined regulatory and geographic boundary. For European enterprises, this typically means GDPR-compliant data handling, in-region LLM endpoints (EU-hosted LLM providers, or on-prem local models), and a full audit trail for regulator review. An AI enablement data layer like LLM Capsule provides two execution paths — in-region external LLM with capsule data only, or on-prem local lightweight model — so a single enterprise can adopt sovereign AI without giving up the productivity of best-in-class LLMs.", displayTextArea: true },
+  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "Sovereign AI means enterprise AI workflows where data, processing, and audit remain inside a defined regulatory and geographic boundary. For European enterprises, this typically means GDPR-compliant data handling, in-region LLM endpoints (EU-hosted LLM providers, or on-prem local models), and a full audit trail for regulator review. A context-preserving data layer for AI like LLM Capsule provides two execution paths — in-region external LLM with capsule data only, or on-prem local lightweight model — so a single enterprise can adopt sovereign AI without giving up the productivity of best-in-class LLMs.", displayTextArea: true },
 
   // Body HTML
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: DEFAULT_BODY_HTML, displayTextArea: true },

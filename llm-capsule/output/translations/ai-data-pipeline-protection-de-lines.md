@@ -67,7 +67,7 @@ Stufe 5: Bereitstellung
 Restored outputs are routed to downstream business systems — compliance platforms, case management, analytics dashboards — ready for immediate use.
 Die wiederhergestellten Ergebnisse werden an nachgelagerte Geschäftssysteme weitergeleitet: Compliance-Plattformen, Fallmanagement, Analyse-Dashboards. Die Daten sind sofort einsetzbar.
 
- is not a single checkpoint, but a continuous AI enablement data layer that protects data from ingestion to delivery, enabling enterprise AI adoption at every stage.
+ is not a single checkpoint, but a continuous context-preserving data layer for AI that protects data from ingestion to delivery, enabling enterprise AI adoption at every stage.
  ist kein einzelner Kontrollpunkt, sondern eine durchgängige Datenschicht für den KI-Einsatz. Sie schützt Daten von der Aufnahme bis zur Bereitstellung und sichert die KI-Nutzung in jeder Phase ab.
 
 AI data pipeline protection

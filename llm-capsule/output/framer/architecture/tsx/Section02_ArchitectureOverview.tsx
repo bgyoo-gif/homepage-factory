@@ -41,7 +41,7 @@ interface Props {
 export default function Section02_ArchitectureOverview({
   sectionTitle = "Architecture",
   sectionTitleHighlight = "Overview",
-  sectionDescription = "LLM Capsule operates as an AI enablement data layer that encapsulates sensitive enterprise data locally, transmits only protected representations to any external AI service, and restores AI outputs within the enterprise environment — enabling safe AI adoption at scale.",
+  sectionDescription = "LLM Capsule operates as a context-preserving data layer for AI that encapsulates sensitive enterprise data locally, transmits only protected representations to any external AI service, and restores AI outputs within the enterprise environment — enabling safe AI adoption at scale.",
   productName = "LLM Capsule",
   sectionBgImage = `${IMAGE_BASE}/bg-gradient-blue-violet.png`,
   diagramImage = "",
@@ -481,7 +481,7 @@ addPropertyControls(Section02_ArchitectureOverview, {
   sectionDescription: {
     type: ControlType.String,
     title: "Description",
-    defaultValue: "LLM Capsule operates as an AI enablement data layer that encapsulates sensitive enterprise data locally, transmits only protected representations to any external AI service, and restores AI outputs within the enterprise environment — enabling safe AI adoption at scale.",
+    defaultValue: "LLM Capsule operates as a context-preserving data layer for AI that encapsulates sensitive enterprise data locally, transmits only protected representations to any external AI service, and restores AI outputs within the enterprise environment — enabling safe AI adoption at scale.",
     displayTextArea: true,
   },
   productName: {

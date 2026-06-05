@@ -5,7 +5,7 @@
 Resources
 리소스
 
-Enterprise AI enablement
+Context-preserving data layer for AI
 엔터프라이즈 AI 도입
 
 resources
@@ -24,7 +24,7 @@ Technical documentation, learning articles, glossary, and trust resources — fo
 Learn
 학습 자료
 
-In-depth articles on enterprise AI enablement — architecture patterns, industry deployment guides (telecom, healthcare, finance, defense), pilot-to-production playbooks, sovereign AI under GDPR / EU AI Act.
+In-depth articles on enterprise context-preserving data layer for AI — architecture patterns, industry deployment guides (telecom, healthcare, finance, defense), pilot-to-production playbooks, sovereign AI under GDPR / EU AI Act.
 엔터프라이즈 AI 도입에 관한 심층 아티클 — 아키텍처 패턴, 산업별 배포 가이드(통신·의료·금융·국방), 파일럿-투-프로덕션 플레이북, GDPR/EU AI Act 기반 Sovereign AI.
 
 Browse Learn articles →
@@ -36,7 +36,7 @@ Browse Learn articles →
 Glossary
 용어집
 
-Definitions of category and architectural concepts — AI enablement data layer, structure-preserving encapsulation, two execution paths, sovereign AI, shadow AI, differential privacy. Each term with definition and cross-links.
+Definitions of category and architectural concepts — context-preserving data layer for AI, structure-preserving encapsulation, two execution paths, sovereign AI, shadow AI, differential privacy. Each term with definition and cross-links.
 카테고리 및 아키텍처 개념 정의 — 데이터 레이어, 문서 구조 보존 캡슐화, 두 가지 실행 경로, Sovereign AI, Shadow AI, 차등 프라이버시. 각 용어에 정의와 연관 링크 포함.
 
 Browse Glossary terms →
@@ -183,8 +183,8 @@ Category and architectural terms
 11 definitions for buyers, architects, and security teams. Each term with Schema.org DefinedTerm markup.
 구매 담당자, 아키텍트, 보안 팀을 위한 정의 11개. 각 용어에 Schema.org DefinedTerm 마크업 포함.
 
-AI enablement data layer
-AI 활성화 데이터 레이어
+context-preserving data layer for AI
+AI를 위한 컨텍스트 보존 데이터 레이어
 
 The category. Architectural component between regulated systems and LLMs.
 카테고리 명칭. 규제 시스템과 LLM 사이의 아키텍처 구성 요소.
@@ -228,8 +228,8 @@ AI workflows where data, processing, and audit stay inside a defined boundary.
 Shadow AI
 Shadow AI
 
-Unsanctioned external LLM use; symptom of missing AI enablement data layer.
-비공인 외부 LLM 사용. AI 활성화 데이터 레이어 부재의 징후.
+Unsanctioned external LLM use; symptom of missing context-preserving data layer for AI.
+비공인 외부 LLM 사용. AI를 위한 컨텍스트 보존 데이터 레이어 부재의 징후.
 
 Blocked AI workflow
 차단된 AI 워크플로우

@@ -61,8 +61,8 @@ const JSONLD_BREADCRUMB = JSON.stringify({
 const JSONLD_WEBPAGE = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Resources — LLM Capsule Enterprise AI Enablement",
-  "description": "Technical resources for enterprise AI enablement. Learn articles, glossary, downloads, and trust center.",
+  "name": "Resources — LLM Capsule Context-Preserving Data Layer for AI",
+  "description": "Technical resources for enterprise context-preserving data layer for AI. Learn articles, glossary, downloads, and trust center.",
   "url": "https://llmcapsule.ai/resources",
   "isPartOf": {
     "@type": "WebSite",
@@ -131,9 +131,9 @@ interface Props {
 // ─── Component ─────────────────────────────────────────────────────────────────
 export default function Resources({
   // Section 1 — Hero
-  heroTitle = "Enterprise AI Enablement",
+  heroTitle = "Context-Preserving Data Layer for AI",
   heroTitleBrand = "Resources",
-  heroDescription = "Technical documentation, learning resources, glossary, and trust information for enterprise AI enablement with LLM Capsule.",
+  heroDescription = "Technical documentation, learning resources, glossary, and trust information for enterprise context-preserving data layer for AI with LLM Capsule.",
 
   // Section 2 — Resource Hub
   s2SectionTitle = "Explore",
@@ -141,7 +141,7 @@ export default function Resources({
   s2SectionDescription = "Browse documentation, learning materials, key terms, and trust information.",
 
   s2Card1Title = "Learn",
-  s2Card1Description = "In-depth articles on enterprise AI enablement, secure LLM usage, structure-preserving processing, and restorable workflows.",
+  s2Card1Description = "In-depth articles on enterprise context-preserving data layer for AI, secure LLM usage, structure-preserving processing, and restorable workflows.",
   s2Card1BtnLabel = "Browse Learn →",
   s2Card1Href = "/resources/learn",
 
@@ -156,8 +156,8 @@ export default function Resources({
   s2Card3Href = "/trust",
 
   // Section 3 — Core Guides
-  s3SectionTitle = "Core guides for enterprise AI",
-  s3SectionTitleBrand = "enablement",
+  s3SectionTitle = "Core guides for the",
+  s3SectionTitleBrand = "context-preserving data layer",
   s3SectionDescription = "Start with the documents that explain the operating model, the failure of redaction-based approaches, and the architecture behind usable AI outputs.",
 
   s3Guide1Title = "Secure Enterprise AI Data Workflows",
@@ -453,7 +453,7 @@ export default function Resources({
                     {heroTitle} <span className="res-text--brand">{heroTitleBrand}</span>
                   </h1>
                   <p className="res-hero__description">
-                    Technical documentation, learning resources, glossary, and downloads for enterprise AI enablement with{" "}
+                    Technical documentation, learning resources, glossary, and downloads for enterprise context-preserving data layer for AI with{" "}
                     <span className="res-text--product">LLM Capsule</span>.
                   </p>
                 </div>
@@ -621,7 +621,7 @@ addPropertyControls(Resources, {
   heroTitle: {
     type: ControlType.String,
     title: "Hero Title",
-    defaultValue: "Enterprise AI Enablement",
+    defaultValue: "Context-Preserving Data Layer for AI",
   },
   heroTitleBrand: {
     type: ControlType.String,
@@ -631,7 +631,7 @@ addPropertyControls(Resources, {
   heroDescription: {
     type: ControlType.String,
     title: "Hero Description",
-    defaultValue: "Technical documentation, learning resources, glossary, and downloads for enterprise AI enablement with LLM Capsule.",
+    defaultValue: "Technical documentation, learning resources, glossary, and downloads for enterprise context-preserving data layer for AI with LLM Capsule.",
     displayTextArea: true,
   },
 
@@ -660,7 +660,7 @@ addPropertyControls(Resources, {
   s2Card1Description: {
     type: ControlType.String,
     title: "S2 Card 1 Description",
-    defaultValue: "In-depth articles on enterprise AI enablement, secure LLM usage, structure-preserving processing, and restorable workflows.",
+    defaultValue: "In-depth articles on enterprise context-preserving data layer for AI, secure LLM usage, structure-preserving processing, and restorable workflows.",
     displayTextArea: true,
   },
   s2Card1BtnLabel: {
@@ -725,7 +725,7 @@ addPropertyControls(Resources, {
   s3SectionTitleBrand: {
     type: ControlType.String,
     title: "S3 Section Title (Brand)",
-    defaultValue: "enablement",
+    defaultValue: "context-preserving data layer",
   },
   s3SectionDescription: {
     type: ControlType.String,

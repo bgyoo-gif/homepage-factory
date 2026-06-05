@@ -1,12 +1,12 @@
-# GlossaryPage_AiEnablementDataLayer — Deutsche Übersetzung (localize)
+# GlossaryPage_ContextPreservingDataLayer — Deutsche Übersetzung (localize)
 
 ## Section 01: Hero
 
 ← Glossary
 ← Glossar
 
-AI enablement data layer
-AI enablement data layer
+context-preserving data layer for AI
+context-preserving data layer for AI
 
 The architectural component that makes regulated enterprise AI workflows actually work — between operational systems and large language models.
 Die Architekturkomponente, die regulierte KI-Workflows im Unternehmen praxistauglich macht — zwischen operativen Systemen und großen Sprachmodellen.
@@ -21,8 +21,8 @@ P0 · Kategoriebeschreibung
 Definition
 Definition
 
-An AI enablement data layer is the architectural component that sits between regulated enterprise systems (NOC consoles, EHR, claim platforms, mission systems, legacy DBs) and large language models. It turns operational data into AI-ready capsules using structure-preserving, differential-privacy-based encapsulation, executes AI workflows on the protected capsule, and restores outputs back into the originating system. It supports two execution paths — external approved LLM with capsule data only, or on-prem local lightweight model — under a single governance framework.
-Der AI enablement data layer ist die Architekturkomponente, die zwischen regulierten Unternehmenssystemen (NOC-Konsolen, EHR, Schadenplattformen, Missionssysteme, Legacy-Datenbanken) und großen Sprachmodellen angesiedelt ist. Er überführt operative Daten mittels strukturerhaltender, Differential-Privacy-basierter Kapsulierung in KI-geeignete Kapseln, führt KI-Workflows auf der geschützten Kapsel aus und stellt die Ergebnisse in das ursprüngliche System zurück. Das System unterstützt zwei Ausführungspfade — ein externes zugelassenes LLM mit ausschließlich Kapseldaten oder ein lokales On-Premise-Leichtgewichtmodell — unter einem einheitlichen Governance-Rahmen.
+A context-preserving data layer for AI is the architectural component that sits between regulated enterprise systems (NOC consoles, EHR, claim platforms, mission systems, legacy DBs) and large language models. It turns operational data into AI-ready capsules using structure-preserving, differential-privacy-based encapsulation, executes AI workflows on the protected capsule, and restores outputs back into the originating system. It supports two execution paths — external approved LLM with capsule data only, or on-prem local lightweight model — under a single governance framework.
+Der context-preserving data layer for AI ist die Architekturkomponente, die zwischen regulierten Unternehmenssystemen (NOC-Konsolen, EHR, Schadenplattformen, Missionssysteme, Legacy-Datenbanken) und großen Sprachmodellen angesiedelt ist. Er überführt operative Daten mittels strukturerhaltender, Differential-Privacy-basierter Kapsulierung in KI-geeignete Kapseln, führt KI-Workflows auf der geschützten Kapsel aus und stellt die Ergebnisse in das ursprüngliche System zurück. Das System unterstützt zwei Ausführungspfade — ein externes zugelassenes LLM mit ausschließlich Kapseldaten oder ein lokales On-Premise-Leichtgewichtmodell — unter einem einheitlichen Governance-Rahmen.
 
 ---
 
@@ -37,9 +37,9 @@ Der AI enablement data layer ist die Architekturkomponente, die zwischen regulie
 <h2>Was er nicht ist</h2>
 
 <ul>
-<li><strong>Keine PII-Schutzmaßnahme</strong>. PII-Schutzmaßnahmen erkennen individuelle Kennungen an der API-Grenze. Der AI enablement data layer verarbeitet strukturierte operative Daten — Ticket-Sequenzen, Netzwerkkonfigurationen, OT-Manifeste, klinische Workflows.</li>
-<li><strong>Kein KI/LLM-Sicherheits-Gateway</strong>. Sicherheits-Gateways konzentrieren sich auf Prompt-Injection, Laufzeitbedrohungen und Filterung auf API-Ebene. Der AI enablement data layer operiert eine Schicht tiefer — auf den Daten selbst.</li>
-<li><strong>Keine Plattform für synthetische Daten</strong>. Synthetische Daten erzeugen künstliche Datensätze für Training und Tests. Der AI enablement data layer arbeitet mit echten Produktionsdokumenten in Live-Workflows.</li>
+<li><strong>Keine PII-Schutzmaßnahme</strong>. PII-Schutzmaßnahmen erkennen individuelle Kennungen an der API-Grenze. Der context-preserving data layer for AI verarbeitet strukturierte operative Daten — Ticket-Sequenzen, Netzwerkkonfigurationen, OT-Manifeste, klinische Workflows.</li>
+<li><strong>Kein KI/LLM-Sicherheits-Gateway</strong>. Sicherheits-Gateways konzentrieren sich auf Prompt-Injection, Laufzeitbedrohungen und Filterung auf API-Ebene. Der context-preserving data layer for AI operiert eine Schicht tiefer — auf den Daten selbst.</li>
+<li><strong>Keine Plattform für synthetische Daten</strong>. Synthetische Daten erzeugen künstliche Datensätze für Training und Tests. Der context-preserving data layer for AI arbeitet mit echten Produktionsdokumenten in Live-Workflows.</li>
 <li><strong>Kein CISO/SOC-Werkzeug</strong>. Zielgruppe sind KI-Teams, CDO/CAIO oder Geschäftsbereiche, die KI produktiv einsetzen möchten. Sicherheit ist notwendige Infrastruktur — nicht der primäre Produktzweck.</li>
 </ul>
 
@@ -90,8 +90,8 @@ Der AI enablement data layer ist die Architekturkomponente, die zwischen regulie
 Related terms
 Verwandte Begriffe
 
-AI enablement data layer
-AI enablement data layer
+context-preserving data layer for AI
+context-preserving data layer for AI
 
 /glossary/ai-ready-operational-layer
 /glossary/ai-ready-operational-layer

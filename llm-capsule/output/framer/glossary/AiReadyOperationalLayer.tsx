@@ -32,21 +32,21 @@ interface Props {
 }
 
 const BODY_HTML = `<div class="callout" style="border-left: 4px solid #4f46e5; background: #eef2ff; padding: 16px 20px; margin: 0 0 28px 0; border-radius: 6px;">
-<strong>Note on terminology.</strong> "AI-ready operational layer" and "AI enablement data layer" describe the same product category. The site's locked category as of v6.1 is <strong>AI enablement data layer for regulated operations</strong>. Both terms are retained because they appear in earlier collateral, partner conversations, and external references; readers arriving via the older term land here and are routed to the canonical definition.
+<strong>Note on terminology.</strong> "AI-ready operational layer" and "context-preserving data layer for AI" describe the same product category. The site's locked category as of v6.1 is <strong>context-preserving data layer for AI for regulated operations</strong>. Both terms are retained because they appear in earlier collateral, partner conversations, and external references; readers arriving via the older term land here and are routed to the canonical definition.
 </div>
 
 <h2>Definition (synonym)</h2>
-<p>An <strong>AI enablement data layer</strong> (historically called an <strong>AI-ready operational layer</strong>) is a runtime layer between the existing regulated enterprise environment (NOC, ticket, OT consoles, EHR, mission systems) and large language models. It turns operational data — network logs, incident records, configurations, clinical workflows, mission context — into AI-ready context using structure-preserving, differential-privacy-based encapsulation; executes the AI workflow inside the enterprise environment via two execution paths (external approved LLM with capsule data, or on-prem local lightweight model); and restores results back to the originating workflow via state vault. Distinct from PII guardrails and AI security suites in scope, layer, and execution model.</p>
+<p>An <strong>context-preserving data layer for AI</strong> (historically called an <strong>AI-ready operational layer</strong>) is a runtime layer between the existing regulated enterprise environment (NOC, ticket, OT consoles, EHR, mission systems) and large language models. It turns operational data — network logs, incident records, configurations, clinical workflows, mission context — into AI-ready context using structure-preserving, differential-privacy-based encapsulation; executes the AI workflow inside the enterprise environment via two execution paths (external approved LLM with capsule data, or on-prem local lightweight model); and restores results back to the originating workflow via state vault. Distinct from PII guardrails and AI security suites in scope, layer, and execution model.</p>
 
 <h2>Why two terms exist</h2>
-<p>"AI-ready operational layer" was used in earlier strategy decks, partner pitches, and Deutsche Telekom T Challenge 2026 materials, with the emphasis on <em>operational data readiness</em>. "AI enablement data layer for regulated operations" was adopted in v6.1 of the customer-facing site, with the emphasis on <em>AI enablement</em> at the data layer for the <em>regulated operations</em> buyer. The product is the same — the marketing language shifted to be more buyer-anchored.</p>
+<p>"AI-ready operational layer" was used in earlier strategy decks, partner pitches, and Deutsche Telekom T Challenge 2026 materials, with the emphasis on <em>operational data readiness</em>. "context-preserving data layer for AI for regulated operations" was adopted in v6.1 of the customer-facing site, with the emphasis on <em>context-preserving data layer for AI</em> at the data layer for the <em>regulated operations</em> buyer. The product is the same — the marketing language shifted to be more buyer-anchored.</p>
 
 <h2>Canonical category page</h2>
-<p>For the full v6.1 definition, customer proof, the four-zone architecture (Corporate Internal Network · DMZ — Demilitarized Zone · In-House Team · Local — Auto Reconstruction), and the six architectural pillars, see <a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> and the <a href="/architecture">Architecture</a> page.</p>
+<p>For the full v6.1 definition, customer proof, the four-zone architecture (Corporate Internal Network · DMZ — Demilitarized Zone · In-House Team · Local — Auto Reconstruction), and the six architectural pillars, see <a href="/glossary/context-preserving-data-layer">context-preserving data layer for AI</a> and the <a href="/architecture">Architecture</a> page.</p>
 
 <h2>Related</h2>
 <ul>
-  <li><a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> — canonical category page</li>
+  <li><a href="/glossary/context-preserving-data-layer">context-preserving data layer for AI</a> — canonical category page</li>
   <li><a href="/glossary/operational-data">Operational data</a></li>
   <li><a href="/glossary/two-execution-paths">Two execution paths</a></li>
   <li><a href="/glossary/structure-preserving-encapsulation">Structure-preserving encapsulation</a></li>
@@ -59,10 +59,10 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     backLabel: "← Glossary",
     backHref: "/resources/glossary",
     term: "AI-Ready Operational Layer",
-    lead: "An earlier name for the same category. The current locked category is AI enablement data layer for regulated operations. This page is retained as a synonym definition for readers arriving via earlier collateral.",
+    lead: "An earlier name for the same category. The current locked category is context-preserving data layer for AI for regulated operations. This page is retained as a synonym definition for readers arriving via earlier collateral.",
     category: "GLOSSARY · ALIAS / SYNONYM",
     definitionLabel: "Definition",
-    definitionBody: "An AI enablement data layer (historically called an AI-ready operational layer) is a runtime layer between the existing regulated enterprise environment (NOC, ticket, OT consoles, EHR, mission systems) and large language models. It turns operational data — network logs, incident records, configurations, clinical workflows, mission context — into AI-ready context using structure-preserving, differential-privacy-based encapsulation; executes the AI workflow inside the enterprise environment via two execution paths (external approved LLM with capsule data, or on-prem local lightweight model); and restores results back to the originating workflow via state vault. Distinct from PII guardrails and AI security suites in scope, layer, and execution model.",
+    definitionBody: "A context-preserving data layer for AI (historically called an AI-ready operational layer) is a runtime layer between the existing regulated enterprise environment (NOC, ticket, OT consoles, EHR, mission systems) and large language models. It turns operational data — network logs, incident records, configurations, clinical workflows, mission context — into AI-ready context using structure-preserving, differential-privacy-based encapsulation; executes the AI workflow inside the enterprise environment via two execution paths (external approved LLM with capsule data, or on-prem local lightweight model); and restores results back to the originating workflow via state vault. Distinct from PII guardrails and AI security suites in scope, layer, and execution model.",
     bodyHtml: BODY_HTML,
     related1Label: "",
     related1Href: "",
@@ -79,11 +79,11 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     backLabel: "← 용어 사전",
     backHref: "/resources/glossary",
     term: "AI-Ready Operational Layer",
-    lead: "동일한 카테고리의 이전 명칭입니다. 현재 공식 카테고리는 AI enablement data layer for regulated operations입니다. 이 페이지는 기존 자료를 통해 유입되는 독자를 위한 동의어 정의로 유지됩니다.",
+    lead: "동일한 카테고리의 이전 명칭입니다. 현재 공식 카테고리는 context-preserving data layer for AI for regulated operations입니다. 이 페이지는 기존 자료를 통해 유입되는 독자를 위한 동의어 정의로 유지됩니다.",
     category: "GLOSSARY · 별칭 / 동의어",
     definitionLabel: "정의",
-    definitionBody: "AI-ready operational layer는 데이터 레이어의 동의어입니다. 규제 환경의 기업(NOC, 티켓, OT 콘솔, EHR, 미션 시스템)과 대규모 언어 모델 사이에 위치하는 런타임 레이어입니다. 문서 구조 보존·차등 프라이버시 기반 캡슐화로 운영 데이터를 AI 준비 컨텍스트로 변환하고, 두 가지 실행 경로를 통해 기업 환경 내부에서 AI 워크플로우를 실행한 뒤 state vault를 통해 원래 워크플로우로 결과를 복원합니다. LLM Capsule 사이트의 현재 공식 카테고리는 'AI enablement data layer for regulated operations'입니다.",
-    bodyHtml: `<div class="callout"><strong>용어 안내.</strong> "AI-ready operational layer"와 "AI enablement data layer"는 동일한 제품 카테고리를 가리킵니다. v6.1 기준 사이트의 공식 카테고리는 <strong>AI enablement data layer for regulated operations</strong>입니다. 두 용어 모두 기존 자료, 파트너 대화, 외부 참조에 등장하기 때문에 유지됩니다. 이전 용어로 유입된 독자는 이 페이지를 통해 공식 정의로 안내됩니다.</div>
+    definitionBody: "AI-ready operational layer는 데이터 레이어의 동의어입니다. 규제 환경의 기업(NOC, 티켓, OT 콘솔, EHR, 미션 시스템)과 대규모 언어 모델 사이에 위치하는 런타임 레이어입니다. 문서 구조 보존·차등 프라이버시 기반 캡슐화로 운영 데이터를 AI 준비 컨텍스트로 변환하고, 두 가지 실행 경로를 통해 기업 환경 내부에서 AI 워크플로우를 실행한 뒤 state vault를 통해 원래 워크플로우로 결과를 복원합니다. LLM Capsule 사이트의 현재 공식 카테고리는 'context-preserving data layer for AI for regulated operations'입니다.",
+    bodyHtml: `<div class="callout"><strong>용어 안내.</strong> "AI-ready operational layer"와 "context-preserving data layer for AI"는 동일한 제품 카테고리를 가리킵니다. v6.1 기준 사이트의 공식 카테고리는 <strong>context-preserving data layer for AI for regulated operations</strong>입니다. 두 용어 모두 기존 자료, 파트너 대화, 외부 참조에 등장하기 때문에 유지됩니다. 이전 용어로 유입된 독자는 이 페이지를 통해 공식 정의로 안내됩니다.</div>
 
 <h2>정의 (동의어)</h2>
 
@@ -91,16 +91,16 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
 
 <h2>두 용어가 공존하는 이유</h2>
 
-<p>"AI-ready operational layer"는 초기 전략 자료, 파트너 피칭, Deutsche Telekom T Challenge 2026 자료에서 사용되었으며 <em>운영 데이터 준비성</em>을 강조한 표현입니다. "AI enablement data layer for regulated operations"는 v6.1 고객 대면 사이트에서 채택된 명칭으로, <em>규제 운영</em> 구매자를 위한 데이터 레이어의 <em>AI 활성화</em>를 강조합니다. 제품은 동일합니다 — 마케팅 언어가 구매자 중심으로 전환된 것입니다.</p>
+<p>"AI-ready operational layer"는 초기 전략 자료, 파트너 피칭, Deutsche Telekom T Challenge 2026 자료에서 사용되었으며 <em>운영 데이터 준비성</em>을 강조한 표현입니다. "context-preserving data layer for AI for regulated operations"는 v6.1 고객 대면 사이트에서 채택된 명칭으로, <em>규제 운영</em> 구매자를 위한 데이터 레이어의 <em>AI 활성화</em>를 강조합니다. 제품은 동일합니다 — 마케팅 언어가 구매자 중심으로 전환된 것입니다.</p>
 
 <h2>공식 카테고리 페이지</h2>
 
-<p>v6.1 전체 정의, 고객 실증 사례, 4구역 아키텍처(기업 내부 네트워크 · DMZ — 비무장 지대 · 내부 팀 · 로컬 — 자동 복원), 6가지 아키텍처 기반 원칙은 <a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> 및 <a href="/architecture">아키텍처</a> 페이지를 참조하십시오.</p>
+<p>v6.1 전체 정의, 고객 실증 사례, 4구역 아키텍처(기업 내부 네트워크 · DMZ — 비무장 지대 · 내부 팀 · 로컬 — 자동 복원), 6가지 아키텍처 기반 원칙은 <a href="/glossary/context-preserving-data-layer">context-preserving data layer for AI</a> 및 <a href="/architecture">아키텍처</a> 페이지를 참조하십시오.</p>
 
 <h2>관련 항목</h2>
 
 <ul>
-<li><a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> — 공식 카테고리 페이지</li>
+<li><a href="/glossary/context-preserving-data-layer">context-preserving data layer for AI</a> — 공식 카테고리 페이지</li>
 <li><a href="/glossary/operational-data">운영 데이터</a></li>
 <li><a href="/glossary/two-execution-paths">두 가지 실행 경로</a></li>
 <li><a href="/glossary/structure-preserving-encapsulation">문서 구조 보존 캡슐화</a></li>
@@ -124,28 +124,28 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     backLabel: "← Glossar",
     backHref: "/resources/glossary",
     term: "AI-Ready Operational Layer",
-    lead: "Diese Bezeichnung wurde in früheren Strategiepräsentationen und Partnerunterlagen verwendet. Die aktuelle Kategorie lautet AI enablement data layer for regulated operations. Diese Seite dient als Synonymdefinition für Leser, die über ältere Materialien auf diese URL gelangen.",
+    lead: "Diese Bezeichnung wurde in früheren Strategiepräsentationen und Partnerunterlagen verwendet. Die aktuelle Kategorie lautet context-preserving data layer for AI for regulated operations. Diese Seite dient als Synonymdefinition für Leser, die über ältere Materialien auf diese URL gelangen.",
     category: "GLOSSAR · ALIAS / SYNONYM",
     definitionLabel: "Definition",
-    definitionBody: "AI-Ready Operational Layer ist ein Synonym für AI enablement data layer. Die Laufzeitschicht positioniert sich zwischen der regulierten Unternehmensumgebung — NOC-Konsolen, Ticket-Systeme, OT-Konsolen, EHR, Missionssysteme — und großen Sprachmodellen. Operative Daten werden mittels strukturerhaltender, Differential-Privacy-basierter Kapsulierung in KI-geeigneten Kontext überführt. KI-Workflows werden über zwei Ausführungspfade innerhalb der Unternehmensumgebung ausgeführt. Die Ergebnisse werden über den State Vault in den ursprünglichen Workflow zurückgeführt. Die aktuelle Kategoriebezeichnung auf der LLM Capsule-Website lautet: AI enablement data layer for regulated operations.",
-    bodyHtml: `<div class="callout"><strong>Hinweis zur Terminologie.</strong> „AI-ready operational layer" und „AI enablement data layer" bezeichnen dieselbe Produktkategorie. Die aktuelle Kategoriebezeichnung ab v6.1 lautet <strong>AI enablement data layer for regulated operations</strong>. Beide Begriffe sind auffindbar, da sie in früheren Unterlagen, Partnergesprächen und externen Referenzen verwendet wurden. Leser, die über den älteren Begriff auf diese Seite gelangen, werden zur kanonischen Definition weitergeleitet.</div>
+    definitionBody: "AI-Ready Operational Layer ist ein Synonym für context-preserving data layer for AI. Die Laufzeitschicht positioniert sich zwischen der regulierten Unternehmensumgebung — NOC-Konsolen, Ticket-Systeme, OT-Konsolen, EHR, Missionssysteme — und großen Sprachmodellen. Operative Daten werden mittels strukturerhaltender, Differential-Privacy-basierter Kapsulierung in KI-geeigneten Kontext überführt. KI-Workflows werden über zwei Ausführungspfade innerhalb der Unternehmensumgebung ausgeführt. Die Ergebnisse werden über den State Vault in den ursprünglichen Workflow zurückgeführt. Die aktuelle Kategoriebezeichnung auf der LLM Capsule-Website lautet: context-preserving data layer for AI for regulated operations.",
+    bodyHtml: `<div class="callout"><strong>Hinweis zur Terminologie.</strong> „AI-ready operational layer" und „context-preserving data layer for AI" bezeichnen dieselbe Produktkategorie. Die aktuelle Kategoriebezeichnung ab v6.1 lautet <strong>context-preserving data layer for AI for regulated operations</strong>. Beide Begriffe sind auffindbar, da sie in früheren Unterlagen, Partnergesprächen und externen Referenzen verwendet wurden. Leser, die über den älteren Begriff auf diese Seite gelangen, werden zur kanonischen Definition weitergeleitet.</div>
 
 <h2>Definition (Synonym)</h2>
 
-<p>Der <strong>AI enablement data layer</strong> (früher als <strong>AI-ready operational layer</strong> bezeichnet) ist eine Laufzeitschicht zwischen der regulierten Unternehmensumgebung — NOC-Konsolen, Ticket-Systeme, OT-Konsolen, EHR, Missionssysteme — und großen Sprachmodellen. Operative Daten — Netzwerkprotokolle, Incident-Datensätze, Konfigurationen, klinische Workflows, Missionskontext — werden mittels strukturerhaltender, Differential-Privacy-basierter Kapsulierung in KI-geeigneten Kontext überführt. KI-Workflows werden innerhalb der Unternehmensumgebung über zwei Ausführungspfade ausgeführt: ein externes freigegebenes LLM mit ausschließlich Kapseldaten oder ein lokales On-Premise-Leichtgewichtmodell. Ergebnisse werden über den State Vault in den ursprünglichen Workflow zurückgeführt. Der AI enablement data layer unterscheidet sich von PII-Schutzmaßnahmen und KI-Sicherheitslösungen in Umfang, Schicht und Ausführungsmodell.</p>
+<p>Der <strong>context-preserving data layer for AI</strong> (früher als <strong>AI-ready operational layer</strong> bezeichnet) ist eine Laufzeitschicht zwischen der regulierten Unternehmensumgebung — NOC-Konsolen, Ticket-Systeme, OT-Konsolen, EHR, Missionssysteme — und großen Sprachmodellen. Operative Daten — Netzwerkprotokolle, Incident-Datensätze, Konfigurationen, klinische Workflows, Missionskontext — werden mittels strukturerhaltender, Differential-Privacy-basierter Kapsulierung in KI-geeigneten Kontext überführt. KI-Workflows werden innerhalb der Unternehmensumgebung über zwei Ausführungspfade ausgeführt: ein externes freigegebenes LLM mit ausschließlich Kapseldaten oder ein lokales On-Premise-Leichtgewichtmodell. Ergebnisse werden über den State Vault in den ursprünglichen Workflow zurückgeführt. Der context-preserving data layer for AI unterscheidet sich von PII-Schutzmaßnahmen und KI-Sicherheitslösungen in Umfang, Schicht und Ausführungsmodell.</p>
 
 <h2>Warum zwei Bezeichnungen existieren</h2>
 
-<p>„AI-ready operational layer" wurde in früheren Strategiepräsentationen, Partnerpräsentationen und Materialien des Deutsche Telekom T Challenge 2026 verwendet — mit dem Schwerpunkt auf <em>operativer Datenbereitschaft</em>. „AI enablement data layer for regulated operations" wurde mit v6.1 der kundenseitigen Website eingeführt, mit dem Schwerpunkt auf <em>KI-Aktivierung</em> auf Datenebene für Käufer aus <em>regulierten Branchen</em>. Das Produkt ist identisch — die Marketingsprache wurde stärker am Käufer ausgerichtet.</p>
+<p>„AI-ready operational layer" wurde in früheren Strategiepräsentationen, Partnerpräsentationen und Materialien des Deutsche Telekom T Challenge 2026 verwendet — mit dem Schwerpunkt auf <em>operativer Datenbereitschaft</em>. „context-preserving data layer for AI for regulated operations" wurde mit v6.1 der kundenseitigen Website eingeführt, mit dem Schwerpunkt auf <em>KI-Aktivierung</em> auf Datenebene für Käufer aus <em>regulierten Branchen</em>. Das Produkt ist identisch — die Marketingsprache wurde stärker am Käufer ausgerichtet.</p>
 
 <h2>Kanonische Kategorieseite</h2>
 
-<p>Die vollständige v6.1-Definition, Kundenreferenzen, die Vier-Zonen-Architektur (Corporate Internal Network · DMZ — Demilitarisierte Zone · In-House Team · Local — Auto Reconstruction) sowie die sechs Architekturpfeiler finden Sie unter <a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> und auf der Seite <a href="/architecture">Architecture</a>.</p>
+<p>Die vollständige v6.1-Definition, Kundenreferenzen, die Vier-Zonen-Architektur (Corporate Internal Network · DMZ — Demilitarisierte Zone · In-House Team · Local — Auto Reconstruction) sowie die sechs Architekturpfeiler finden Sie unter <a href="/glossary/context-preserving-data-layer">context-preserving data layer for AI</a> und auf der Seite <a href="/architecture">Architecture</a>.</p>
 
 <h2>Verwandte Begriffe</h2>
 
 <ul>
-<li><a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> — kanonische Kategorieseite</li>
+<li><a href="/glossary/context-preserving-data-layer">context-preserving data layer for AI</a> — kanonische Kategorieseite</li>
 <li><a href="/glossary/operational-data">Operative Daten</a></li>
 <li><a href="/glossary/two-execution-paths">Zwei Ausführungspfade</a></li>
 <li><a href="/glossary/structure-preserving-encapsulation">Strukturerhaltende Kapsulierung</a></li>

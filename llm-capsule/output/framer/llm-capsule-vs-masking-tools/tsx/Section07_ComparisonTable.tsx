@@ -45,7 +45,7 @@ export default function Section07_ComparisonTable({
   colHeader1 = "Capability",
   colHeader2 = "Masking Tools",
   colHeader3Product = "LLM Capsule",
-  colHeader3 = "(AI Enablement Data Layer)",
+  colHeader3 = "(Context-Preserving Data Layer for AI)",
   row1Cap = "Protection method",
   row1Masking = "Permanent removal / replacement",
   row1Capsule = "Reversible encapsulation",
@@ -267,7 +267,7 @@ addPropertyControls(Section07_ComparisonTable, {
   colHeader3: {
     type: ControlType.String,
     title: "Col 3 Subtitle",
-    defaultValue: "(AI Enablement Data Layer)",
+    defaultValue: "(Context-Preserving Data Layer for AI)",
   },
   row1Cap: {
     type: ControlType.String,

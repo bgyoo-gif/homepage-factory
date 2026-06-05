@@ -42,7 +42,7 @@ const BODY_HTML = `<h2>Why it emerges</h2>
 </ol>
 
 <h2>The structural fix</h2>
-<p>Shadow AI does not get solved by policy enforcement alone — that is treating the symptom. The structural fix is an <strong>AI enablement data layer</strong> that lets official tooling handle real production data: encapsulate locally, process via approved external LLM (Path A) or on-prem local model (Path B), restore in-place. Once official tooling gives employees what they were tasting in pilots, shadow usage falls.</p>
+<p>Shadow AI does not get solved by policy enforcement alone — that is treating the symptom. The structural fix is an <strong>context-preserving data layer for AI</strong> that lets official tooling handle real production data: encapsulate locally, process via approved external LLM (Path A) or on-prem local model (Path B), restore in-place. Once official tooling gives employees what they were tasting in pilots, shadow usage falls.</p>
 
 <h2>Where it shows up</h2>
 <ul>
@@ -61,12 +61,12 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     lead: "Employees using ChatGPT (or any external LLM) on personal devices or unapproved channels — because the official tooling can't handle the data the work depends on.",
     category: "Risk concept",
     definitionLabel: "Definition",
-    definitionBody: "Shadow AI is the unsanctioned use of external LLMs by enterprise employees outside approved channels — typically because the official AI tooling cannot handle the regulated data the work actually depends on. The root cause is not employee misbehavior; it is a missing AI enablement data layer. Employees taste productivity in pilots and early demos, then route around the controls when production tooling fails to deliver.",
+    definitionBody: "Shadow AI is the unsanctioned use of external LLMs by enterprise employees outside approved channels — typically because the official AI tooling cannot handle the regulated data the work actually depends on. The root cause is not employee misbehavior; it is a missing context-preserving data layer for AI. Employees taste productivity in pilots and early demos, then route around the controls when production tooling fails to deliver.",
     bodyHtml: BODY_HTML,
     related1Label: "Blocked AI workflow",
     related1Href: "/glossary/blocked-ai-workflow",
-    related2Label: "AI enablement data layer",
-    related2Href: "/glossary/ai-enablement-data-layer",
+    related2Label: "context-preserving data layer for AI",
+    related2Href: "/glossary/context-preserving-data-layer",
     related3Label: "",
     related3Href: "",
     related4Label: "",
@@ -112,13 +112,13 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
 
 <ul>
 <li><a href="/glossary/blocked-ai-workflow">차단된 AI 워크플로우</a></li>
-<li><a href="/glossary/ai-enablement-data-layer">데이터 레이어</a></li>
+<li><a href="/glossary/context-preserving-data-layer">데이터 레이어</a></li>
 <li><a href="/learn/pilot-to-production-enterprise-ai">Learn: 기업 AI 파일럿이 중단되는 이유</a></li>
 </ul>`,
     related1Label: "Blocked AI workflow",
     related1Href: "/glossary/blocked-ai-workflow",
-    related2Label: "AI enablement data layer",
-    related2Href: "/glossary/ai-enablement-data-layer",
+    related2Label: "context-preserving data layer for AI",
+    related2Href: "/glossary/context-preserving-data-layer",
     related3Label: "",
     related3Href: "",
     related4Label: "",
@@ -133,7 +133,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     lead: "Mitarbeitende nutzen ChatGPT oder andere externe LLMs auf Privatgeräten und nicht genehmigten Kanälen. Der Grund: Die offiziellen KI-Werkzeuge können die für die Arbeit notwendigen Daten nicht verarbeiten.",
     category: "Risikokonzept",
     definitionLabel: "Definition",
-    definitionBody: "Shadow AI bezeichnet die nicht autorisierte Nutzung externer LLMs durch Unternehmensmitarbeitende außerhalb genehmigter Kanäle. Die eigentliche Ursache liegt nicht im Fehlverhalten der Mitarbeitenden, sondern im Fehlen eines AI enablement data layer: Offizielle KI-Werkzeuge können die regulierten Daten, auf die Arbeitsprozesse tatsächlich angewiesen sind, nicht verarbeiten. Mitarbeitende, die in Pilotprojekten Produktivitätsgewinne erlebt haben, suchen nach Wegen, die Einschränkungen zu umgehen, sobald die Produktivsysteme diese Gewinne nicht einlösen.",
+    definitionBody: "Shadow AI bezeichnet die nicht autorisierte Nutzung externer LLMs durch Unternehmensmitarbeitende außerhalb genehmigter Kanäle. Die eigentliche Ursache liegt nicht im Fehlverhalten der Mitarbeitenden, sondern im Fehlen eines context-preserving data layer for AI: Offizielle KI-Werkzeuge können die regulierten Daten, auf die Arbeitsprozesse tatsächlich angewiesen sind, nicht verarbeiten. Mitarbeitende, die in Pilotprojekten Produktivitätsgewinne erlebt haben, suchen nach Wegen, die Einschränkungen zu umgehen, sobald die Produktivsysteme diese Gewinne nicht einlösen.",
     bodyHtml: `<h2>Entstehungsursachen</h2>
 
 <p>Shadow AI ist ein Symptom, keine Ursache. Das typische Muster:</p>
@@ -148,7 +148,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
 
 <h2>Die strukturelle Lösung</h2>
 
-<p>Shadow AI lässt sich nicht allein durch Richtliniendurchsetzung beheben — das behandelt nur das Symptom. Die strukturelle Lösung ist ein <strong>AI enablement data layer</strong>, der offizielle Werkzeuge befähigt, mit echten Produktionsdaten zu arbeiten: lokale Kapsulierung, Verarbeitung über ein zugelassenes externes LLM (Pfad A) oder ein lokales On-Premise-Modell (Pfad B), anschließend Wiederherstellung am ursprünglichen Ort. Sobald offizielle Werkzeuge das liefern, was Mitarbeitende in Pilotprojekten erlebt haben, sinkt die Shadow-Nutzung.</p>
+<p>Shadow AI lässt sich nicht allein durch Richtliniendurchsetzung beheben — das behandelt nur das Symptom. Die strukturelle Lösung ist ein <strong>context-preserving data layer for AI</strong>, der offizielle Werkzeuge befähigt, mit echten Produktionsdaten zu arbeiten: lokale Kapsulierung, Verarbeitung über ein zugelassenes externes LLM (Pfad A) oder ein lokales On-Premise-Modell (Pfad B), anschließend Wiederherstellung am ursprünglichen Ort. Sobald offizielle Werkzeuge das liefern, was Mitarbeitende in Pilotprojekten erlebt haben, sinkt die Shadow-Nutzung.</p>
 
 <h2>Typische Auftrittsbereiche</h2>
 
@@ -164,13 +164,13 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
 
 <ul>
 <li>Blockierter KI-Workflow</li>
-<li>AI enablement data layer</li>
+<li>context-preserving data layer for AI</li>
 <li>Learn: Warum KI-Pilotprojekte in Unternehmen ins Stocken geraten</li>
 </ul>`,
     related1Label: "Blocked AI workflow",
     related1Href: "/glossary/blocked-ai-workflow",
-    related2Label: "AI enablement data layer",
-    related2Href: "/glossary/ai-enablement-data-layer",
+    related2Label: "context-preserving data layer for AI",
+    related2Href: "/glossary/context-preserving-data-layer",
     related3Label: "",
     related3Href: "",
     related4Label: "",

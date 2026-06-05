@@ -32,7 +32,7 @@ interface Props {
 }
 
 const BODY_HTML = `<h2>Definition</h2>
-<p><strong>Structure-preserving encapsulation</strong> is the transformation step in an AI enablement data layer that converts operational data into AI-ready context. It tokenizes operational identifiers (device IDs, site IDs, asset references, customer segments) while preserving the relational structure the LLM needs to reason — table layout, log sequence, document hierarchy, configuration tree, topology graph.</p>
+<p><strong>Structure-preserving encapsulation</strong> is the transformation step in a context-preserving data layer for AI that converts operational data into AI-ready context. It tokenizes operational identifiers (device IDs, site IDs, asset references, customer segments) while preserving the relational structure the LLM needs to reason — table layout, log sequence, document hierarchy, configuration tree, topology graph.</p>
 
 <h2>Why structure preservation matters</h2>
 <p>An LLM asked to draft an RCA from an alarm sequence cannot reason if the sequence is destroyed. An LLM asked to compare two configuration trees cannot compare if the tree relationships are flattened. Structure preservation is what makes the capsule <em>useful</em> to the model, not just <em>safe</em>.</p>
@@ -62,7 +62,7 @@ const BODY_HTML = `<h2>Definition</h2>
 </ul>
 
 <h2>Reference statement</h2>
-<blockquote>Structure-preserving encapsulation makes the capsule useful. Differential-privacy-based protection makes it defensible. State vault makes it restorable. Together, they constitute the AI enablement data layer.</blockquote>`
+<blockquote>Structure-preserving encapsulation makes the capsule useful. Differential-privacy-based protection makes it defensible. State vault makes it restorable. Together, they constitute the context-preserving data layer for AI.</blockquote>`
 
 const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   en: {
@@ -72,7 +72,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     lead: "Tokenize the identifiers. Preserve the structure. So the AI can still reason — and the result can still be restored.",
     category: "GLOSSARY",
     definitionLabel: "Definition",
-    definitionBody: "Structure-preserving encapsulation is the transformation step in an AI enablement data layer that converts operational data into AI-ready context. It tokenizes operational identifiers (device IDs, site IDs, asset references, customer segments) while preserving the relational structure the LLM needs to reason — table layout, log sequence, document hierarchy, configuration tree, topology graph.",
+    definitionBody: "Structure-preserving encapsulation is the transformation step in a context-preserving data layer for AI that converts operational data into AI-ready context. It tokenizes operational identifiers (device IDs, site IDs, asset references, customer segments) while preserving the relational structure the LLM needs to reason — table layout, log sequence, document hierarchy, configuration tree, topology graph.",
     bodyHtml: BODY_HTML,
     related1Label: "",
     related1Href: "",
@@ -149,7 +149,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     lead: "Operative Kennzeichner werden tokenisiert, die relationale Struktur bleibt vollständig erhalten. Das KI-Modell kann weiterhin schlussfolgern — und die Ausgabe lässt sich im Unternehmen vollständig wiederherstellen.",
     category: "GLOSSAR",
     definitionLabel: "Definition",
-    definitionBody: "Die strukturerhaltende Kapsulierung ist der Transformationsschritt innerhalb eines AI enablement data layer, der operative Daten in KI-gerechten Kontext überführt. Operative Kennzeichner — Geräte-IDs, Standort-IDs, Asset-Referenzen, Kundensegmente — werden tokenisiert. Die relationale Struktur, die das LLM zur Inferenz benötigt, bleibt dabei unverändert erhalten: Tabellenlayout, Log-Sequenz, Dokumenthierarchie, Konfigurationsbaum und Topologiegraph.",
+    definitionBody: "Die strukturerhaltende Kapsulierung ist der Transformationsschritt innerhalb eines context-preserving data layer for AI, der operative Daten in KI-gerechten Kontext überführt. Operative Kennzeichner — Geräte-IDs, Standort-IDs, Asset-Referenzen, Kundensegmente — werden tokenisiert. Die relationale Struktur, die das LLM zur Inferenz benötigt, bleibt dabei unverändert erhalten: Tabellenlayout, Log-Sequenz, Dokumenthierarchie, Konfigurationsbaum und Topologiegraph.",
     bodyHtml: `<h2>Warum die Strukturerhaltung entscheidend ist</h2>
 
 <p>Ein LLM, das eine RCA aus einer Alarmmeldungssequenz erstellen soll, kann keine Schlussfolgerungen ziehen, wenn die Sequenz zerstört wurde. Ein LLM, das zwei Konfigurationsbäume vergleichen soll, kann keinen Vergleich durchführen, wenn die Baumbeziehungen eingeebnet wurden. Die Strukturerhaltung macht die Kapsel für das Modell nutzbar — nicht nur sicher.</p>
@@ -183,7 +183,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
 
 <h2>Leitsatz</h2>
 
-<p>Die strukturerhaltende Kapsulierung macht die Kapsel nutzbar. Der auf Differential Privacy basierende Schutz macht sie verteidigbar. Der State Vault macht sie wiederherstellbar. Zusammen bilden sie den AI enablement data layer.</p>`,
+<p>Die strukturerhaltende Kapsulierung macht die Kapsel nutzbar. Der auf Differential Privacy basierende Schutz macht sie verteidigbar. Der State Vault macht sie wiederherstellbar. Zusammen bilden sie den context-preserving data layer for AI.</p>`,
     related1Label: "",
     related1Href: "",
     related2Label: "",

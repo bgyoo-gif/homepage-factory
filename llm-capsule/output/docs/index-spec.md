@@ -11,7 +11,7 @@ DS: design-system-core.md + design-system-capsule.md
 ## 전체 구조 요약
 
 - 섹션 수: 12개
-- 문서 성격: 설득형 (제품 홈페이지 -- AI enablement data layer)
+- 문서 성격: 설득형 (제품 홈페이지 -- context-preserving data layer for AI)
 - 브랜드 컬러: `--ds-color-brand-primary: #1821E8` (인디고), `--ds-color-brand-secondary: #5690D4` (블루), `--ds-color-brand-accent: #55B45D` (그린)
 - design-system-capsule.md 사용: CSS 변수 별도 `:root` 오버라이드 불필요 -- DS 파일 토큰 그대로 사용
 - 특이사항:
@@ -256,7 +256,7 @@ Core 3개 (3col 그리드):
 
 **섹션 헤더 (ds-section-header ds-section-header--underline):**
 - eyebrow: 없음
-- 타이틀: `Enterprise AI enablement through a 3+2 architecture`
+- 타이틀: `Context-preserving data layer for AI through a 3+2 architecture`
 - 타이틀 강조 키워드: "3+2 architecture" -> `ds-text--brand`
 - description: "LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 data layer architecture: three core enablement pillars plus two additional value capabilities that ensure output quality and model flexibility."
 - 정렬: center
@@ -296,7 +296,7 @@ Core 3개 (3col 그리드):
    - Industry label: "+2"
    - Title: "Cross-Model Execution"
    - Meta badges: `ds-badge--neutral` "Any LLM"
-   - Body: "Works with any AI model. Switch between ChatGPT, Claude, Gemini, or any LLM API instantly -- no re-engineering, no vendor lock-in." + "LLM Capsule acts as a model-agnostic AI enablement layer for all AI models. Swap or mix models anytime -- zero re-engineering, no vendor lock-in, consistent protection across every provider. Connect to any model simultaneously, including CUBIG's own SynTitan platform."
+   - Body: "Works with any AI model. Switch between ChatGPT, Claude, Gemini, or any LLM API instantly -- no re-engineering, no vendor lock-in." + "LLM Capsule acts as a model-agnostic context-preserving data layer for AI for all AI models. Swap or mix models anytime -- zero re-engineering, no vendor lock-in, consistent protection across every provider. Connect to any model simultaneously, including CUBIG's own SynTitan platform."
 
 **JS:** `toggleAcCard()` 함수 (ds-ac-card 표준 JS)
 
@@ -549,7 +549,7 @@ Right card (ds-card):
 - 타이틀: `See how LLM Capsule enables AI on your enterprise documents`
   - "LLM Capsule" -> `<span class="ds-text--product">LLM Capsule</span>`
   - 강조 키워드: "enables AI" -> 타이틀은 CTA band이므로 `ds-text--brand` 미적용 (white on dark bg)
-- description: "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate how the AI enablement data layer works on your actual data, in your environment, against your compliance requirements."
+- description: "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate how the context-preserving data layer for AI works on your actual data, in your environment, against your compliance requirements."
 
 **버튼 (ds-cta-band__actions):**
 - "Request PoV" -> `ds-btn ds-btn--md` (CTA band 내부 스타일)
@@ -581,7 +581,7 @@ Right card (ds-card):
 
 1. `ds-ac-card ds-ac--open`
    - Q: "How does LLM Capsule protect enterprise data during AI processing?"
-   - A: "LLM Capsule acts as an AI enablement data layer that encapsulates sensitive data locally before it leaves the enterprise environment. Only protected representations are sent to AI models. After processing, outputs are restored locally so they remain usable for real enterprise workflows. The original data never reaches external AI services -- this is what makes it an AI enablement plugin rather than a monitoring or filtering tool."
+   - A: "LLM Capsule acts as a context-preserving data layer for AI that encapsulates sensitive data locally before it leaves the enterprise environment. Only protected representations are sent to AI models. After processing, outputs are restored locally so they remain usable for real enterprise workflows. The original data never reaches external AI services -- this is what makes it a context-preserving data layer for AI plugin rather than a monitoring or filtering tool."
 
 2. `ds-ac-card`
    - Q: "How is LLM Capsule different from data masking and redaction tools?"
@@ -589,7 +589,7 @@ Right card (ds-card):
 
 3. `ds-ac-card`
    - Q: "What is the difference between LLM Capsule and prompt security gateways?"
-   - A: "Prompt security gateways filter at the API level -- they scan prompts for sensitive patterns and block or strip flagged content. They cannot protect enterprise documents processed through RAG pipelines or batch workflows, and they provide no output restoration. LLM Capsule operates as a data layer plugin, encapsulating sensitive elements before any AI processing occurs and restoring outputs afterward. The two approaches can be complementary, but only a data-layer approach provides end-to-end AI enablement on enterprise data."
+   - A: "Prompt security gateways filter at the API level -- they scan prompts for sensitive patterns and block or strip flagged content. They cannot protect enterprise documents processed through RAG pipelines or batch workflows, and they provide no output restoration. LLM Capsule operates as a data layer plugin, encapsulating sensitive elements before any AI processing occurs and restoring outputs afterward. The two approaches can be complementary, but only a data-layer approach provides end-to-end context-preserving data layer for AI on enterprise data."
 
 4. `ds-ac-card`
    - Q: "Where can LLM Capsule be deployed?"
@@ -597,7 +597,7 @@ Right card (ds-card):
 
 5. `ds-ac-card`
    - Q: "What is enterprise AI data protection?"
-   - A: "Enterprise AI enablement is the practice of making sensitive enterprise data AI-ready so organizations can adopt LLMs without exposing original information. LLM Capsule achieves this at the data layer through local encapsulation, structure-preserving processing, and local restoration -- ensuring zero exposure of original data while enabling full AI workflow adoption. Unlike model-level approaches that block or filter, the data layer plugin transforms data itself to make enterprise AI possible."
+   - A: "Context-preserving data layer for AI is the practice of making sensitive enterprise data AI-ready so organizations can adopt LLMs without exposing original information. LLM Capsule achieves this at the data layer through local encapsulation, structure-preserving processing, and local restoration -- ensuring zero exposure of original data while enabling full AI workflow adoption. Unlike model-level approaches that block or filter, the data layer plugin transforms data itself to make enterprise AI possible."
 
 6. `ds-ac-card`
    - Q: "What certifications does LLM Capsule hold?"
@@ -661,7 +661,7 @@ Right card (ds-card):
     <!-- 5열 그리드: 브랜드 2fr + 메뉴 4열 각 1fr -->
     <div> <!-- Brand column -->
       <span class="ds-text--product">LLM Capsule</span>
-      <p>Enterprise AI enablement by CUBIG. Enable AI. Protect data. Restore results.</p>
+      <p>Context-preserving data layer for AI by CUBIG. Enable AI. Protect data. Restore results.</p>
     </div>
     <!-- Product column -->
     <div>
@@ -705,7 +705,7 @@ Right card (ds-card):
   </div>
   <div class="ds-container">
     <p>&copy; 2025 LLM Capsule by CUBIG. All rights reserved.</p>
-    <span>Enterprise AI Enablement</span>
+    <span>Context-Preserving Data Layer for AI</span>
   </div>
 </footer>
 ```

@@ -2,7 +2,7 @@
 
 ## Section 01: Hero
 
-The AI enablement
+The context-preserving data layer for AI
 AI 활성화
 
 data layer and plugin
@@ -11,7 +11,7 @@ data layer and plugin
 LLM Capsule enables enterprise AI adoption by keeping raw data inside your environment, preserving document structure and business context during AI processing, and restoring usable outputs through local restoration — so enterprise teams can safely use any LLM on real documents in production workflows.
 LLM Capsule은 원본 데이터를 내부에 유지한 채, 문서 구조와 업무 맥락을 보존하며 AI를 처리하고, 로컬 복원으로 바로 쓸 수 있는 결과물을 만듭니다 — 기업 팀이 실제 문서에 어떤 LLM이든 안전하게 연결할 수 있습니다.
 
-Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and cross-model execution means no vendor lock-in. This enables enterprise AI enablement on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.
+Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and cross-model execution means no vendor lock-in. This enables enterprise context-preserving data layer for AI on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.
 대부분의 기업 AI 보안 툴은 AI 사용을 완전히 차단하거나, 마스킹과 리댁션으로 핵심 맥락을 제거해서 실제 업무에 쓸 수 없는 결과물을 만듭니다. LLM Capsule은 다른 접근법을 취합니다 — 로컬 캡슐화가 AI 처리 전에 민감 요소를 보호하고, 구조 보존 처리가 AI 이해를 위한 문서 무결성을 유지하며, 로컬 복원이 원본 기업 데이터로 AI 결과물을 자동 복원하고, 크로스 모델 실행으로 벤더 종속이 없습니다. 계약서, 클레임, 규제 서류, 의료 기록, 내부 보고서 등 문서 중심 워크플로우에서 기업 AI 활성화를 실현합니다.
 
 Request a Demo
@@ -28,7 +28,7 @@ LLM Capsule 대시보드 — 실시간 캡슐화 파이프라인과 문서 처�
 
 ## Section 02: Core Differentiation
 
-Enterprise AI enablement through five core
+Context-preserving data layer for AI through five core
 5가지 핵심
 
 capabilities
@@ -37,7 +37,7 @@ capabilities
 LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 architecture — three core enablement capabilities plus structure-preserving processing and cross-model execution.
 LLM Capsule은 3+2 아키텍처로 민감 데이터 위에서 기업 AI 도입을 실현합니다 — 핵심 3가지 기능에 문서 구조 보존과 크로스 모델 실행을 더합니다.
 
-These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise AI enablement from traditional masking tools.
+These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise context-preserving data layer for AI from traditional masking tools.
 이 기능들로 기업은 데이터 보호와 워크플로우 활용성을 포기하지 않고 AI를 도입합니다. 기존 마스킹 툴과의 근본적인 차이입니다.
 
 Core 1
@@ -140,7 +140,7 @@ Enable AI without breaking enterprise
 workflows
 워크플로우를 깨뜨리지 않고 AI를 활성화합니다
 
-LLM Capsule does more than hide data. It auto-restores usable output inside the environment after AI processing so enterprise teams can actually use the result in real workflows. This is a restorable workflow — not just protection, but AI enablement with usable output.
+LLM Capsule does more than hide data. It auto-restores usable output inside the environment after AI processing so enterprise teams can actually use the result in real workflows. This is a restorable workflow — not just protection, but context-preserving data layer for AI with usable output.
 LLM Capsule은 단순히 데이터를 숨기는 것이 아닙니다. AI 처리 후 환경 내부에서 바로 쓸 수 있는 결과물을 자동 복원합니다. 보호만이 아니라, 쓸 수 있는 결과물을 만드는 AI 활성화입니다.
 
 Traditional masking protects data by removing meaning. That may reduce risk, but it also reduces output quality and business usability. Restored outputs from LLM Capsule are directly usable in: claims documents with real policyholder data, legal reviews with real party names and clause references, regulatory reports with real customer and account data, and internal analysis with real business metrics.
@@ -336,10 +336,10 @@ lock-in
 Enterprise teams do not always standardize on a single AI model.
 기업 팀이 항상 단일 AI 모델을 표준화하지는 않습니다.
 
-Enterprise teams do not always standardize on a single AI model. Evaluation, governance, and operational workflows may span multiple providers and multiple model choices over time. LLM Capsule fits this reality as an AI enablement data layer for cross-model enterprise AI deployment.
+Enterprise teams do not always standardize on a single AI model. Evaluation, governance, and operational workflows may span multiple providers and multiple model choices over time. LLM Capsule fits this reality as a context-preserving data layer for AI for cross-model enterprise AI deployment.
 기업 팀이 항상 단일 AI 모델을 표준화하지는 않습니다. 평가, 거버넌스, 운영 워크플로우가 시간이 지나면서 여러 제공업체와 여러 모델 선택에 걸칠 수 있습니다. LLM Capsule은 이 현실에 맞는 크로스 모델 기업 AI 배포용 데이터 레이어입니다.
 
-Because LLM Capsule operates at the data layer — not the model layer — protection and enablement remain stable even when model vendors change. ChatGPT, Claude, Gemini, Perplexity, or any LLM API can be used interchangeably without reconfiguring the pipeline. This is cross-model execution — enterprise AI enablement independent of any specific AI provider, eliminating vendor lock-in.
+Because LLM Capsule operates at the data layer — not the model layer — protection and enablement remain stable even when model vendors change. ChatGPT, Claude, Gemini, Perplexity, or any LLM API can be used interchangeably without reconfiguring the pipeline. This is cross-model execution — enterprise context-preserving data layer for AI independent of any specific AI provider, eliminating vendor lock-in.
 LLM Capsule은 모델 레이어가 아닌 데이터 레이어에서 동작합니다 — 모델 벤더가 바뀌어도 보호와 활성화가 안정적으로 유지됩니다. ChatGPT, Claude, Gemini, Perplexity, 또는 어떤 LLM API든 파이프라인 재설정 없이 교체 사용할 수 있습니다. 특정 AI 제공업체에 종속되지 않는 기업 AI 활성화입니다.
 
 ChatGPT, Claude, Gemini, Perplexity, or any LLM API — protection stays consistent regardless of which model you choose.
@@ -444,7 +444,7 @@ approaches
 Not all protection approaches are designed for usable enterprise AI workflows. Traditional masking protects data by reducing usability. LLM Capsule protects data while preserving enterprise workflow value.
 모든 보호 접근 방식이 쓸 수 있는 기업 AI 워크플로우를 위해 설계된 것은 아닙니다. 기존 마스킹은 활용성을 줄여서 데이터를 보호합니다. LLM Capsule은 기업 워크플로우의 가치를 보존하면서 데이터를 보호합니다.
 
-AI results are auto-restored through local restoration. This is the fundamental capability that separates LLM Capsule from every other approach — enterprise AI enablement that produces usable outputs, not abstracted placeholders.
+AI results are auto-restored through local restoration. This is the fundamental capability that separates LLM Capsule from every other approach — enterprise context-preserving data layer for AI that produces usable outputs, not abstracted placeholders.
 AI 결과물은 로컬 복원을 통해 자동 복원됩니다. LLM Capsule을 다른 모든 접근 방식과 구분 짓는 핵심 기능 — 추상화된 플레이스홀더가 아닌, 바로 쓸 수 있는 결과물을 만드는 기업 AI 활성화입니다.
 
 Traditional Masking / Redaction
@@ -456,8 +456,8 @@ Prompt Security Gateways
 LLM Capsule
 LLM Capsule
 
-AI enablement layer
-AI 활성화 레이어
+context-preserving data layer for AI
+AI를 위한 컨텍스트 보존 데이터 레이어
 
 Pre-processing data removal
 전처리 데이터 제거
@@ -661,7 +661,7 @@ Glossary
 See how LLM Capsule fits your environment, documents, and controls
 LLM Capsule이 우리 환경, 문서, 통제 체계에 어떻게 맞는지 직접 확인하세요
 
-Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.
+Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise context-preserving data layer for AI on your actual data, in your environment, against your compliance requirements.
 우리 회사 문서, 배포 환경, 평가 기준을 가져오세요. 실제 데이터 위에서, 실제 환경에서, 실제 규제 요건에 맞춰 기업 AI 활성화를 시연합니다.
 
 Request a Demo

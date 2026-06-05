@@ -10,7 +10,7 @@
 ## A-Type Analysis Summary
 
 ### Page Purpose
-Enterprise AI enablement architecture page for LLM Capsule. Explains how the product encapsulates sensitive data, sends only protected representations to external AI services, and restores outputs locally.
+Context-preserving data layer for AI architecture page for LLM Capsule. Explains how the product encapsulates sensitive data, sends only protected representations to external AI services, and restores outputs locally.
 
 ### Tone
 Technical/educational with persuasive undertone. Developer/architect audience.
@@ -19,7 +19,7 @@ Technical/educational with persuasive undertone. Developer/architect audience.
 
 | # | Section | Content Type | Key Content |
 |---|---------|-------------|-------------|
-| 1 | Hero | Text hero | Title + subtitle describing LLM Capsule as AI enablement data layer |
+| 1 | Hero | Text hero | Title + subtitle describing LLM Capsule as context-preserving data layer for AI |
 | 2 | Architecture Overview | Diagram + description | SVG architecture diagram (Internal -> Trust Boundary -> Data Flow -> Trust Boundary -> External AI) |
 | 3 | Architecture Components | Text descriptive (5 sub-sections) | Local Encapsulation Engine, Policy Control Layer, Outbound Capsule Transmission, Local Restoration Engine, Audit & Compliance Layer |
 | 4 | Deployment Options | Card grid (5 items) | On-Premise, Air-Gapped, Cloud (AWS), Hybrid, Embedded Integration |
@@ -35,9 +35,9 @@ Technical/educational with persuasive undertone. Developer/architect audience.
 
 #### Section Header
 - eyebrow: **none** (삭제 -- A타입의 "Architecture" eyebrow 제거)
-- title: `AI Enablement <span class="ds-text--brand">Architecture</span> for Enterprise AI`
+- title: `Context-Preserving Data Layer for AI <span class="ds-text--brand">Architecture</span> for Enterprise AI`
 - title 강조 키워드: "Architecture" -> `ds-text--brand`
-- description: `<span class="ds-text--product">LLM Capsule</span> is an AI enablement data layer and plugin that enables enterprises to adopt any AI model safely. It sits between enterprise data systems and external AI services — protecting data in transit while unlocking the full power of AI across every workflow.`
+- description: `<span class="ds-text--product">LLM Capsule</span> is a context-preserving data layer for AI and plugin that enables enterprises to adopt any AI model safely. It sits between enterprise data systems and external AI services — protecting data in transit while unlocking the full power of AI across every workflow.`
 
 #### Structure
 ```
@@ -67,7 +67,7 @@ Technical/educational with persuasive undertone. Developer/architect audience.
 - eyebrow: **none**
 - title: `Architecture <span class="ds-text--brand">Overview</span>`
 - title 강조 키워드: "Overview" -> `ds-text--brand`
-- description: `<span class="ds-text--product">LLM Capsule</span> operates as an AI enablement data layer that encapsulates sensitive enterprise data locally, transmits only protected representations to any external AI service, and restores AI outputs within the enterprise environment — enabling safe AI adoption at scale.`
+- description: `<span class="ds-text--product">LLM Capsule</span> operates as a context-preserving data layer for AI that encapsulates sensitive enterprise data locally, transmits only protected representations to any external AI service, and restores AI outputs within the enterprise environment — enabling safe AI adoption at scale.`
 - 정렬: center
 
 #### Diagram Component
@@ -189,7 +189,7 @@ The A-type contains a complex SVG architecture diagram showing:
 **Card 5: Embedded Integration** (ds-card--gradient-silver)
 - Icon: `blocks`
 - Title: "Embedded Integration"
-- Description: "<span class='ds-text--product'>LLM Capsule</span> embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within your software stack."
+- Description: "<span class='ds-text--product'>LLM Capsule</span> embedded into existing enterprise applications and platforms, operating as a context-preserving data layer for AI within your software stack."
 
 #### Gradient Card Colors (Capsule brand)
 - indigo: On-Premise (핵심 기능)

@@ -64,7 +64,7 @@ A blocked AI workflow is a business process that would benefit from AI but canno
 Related terms
 관련 용어
 
-AI enablement data layer
+context-preserving data layer for AI
 데이터 레이어
 
 Structure-preserving encapsulation

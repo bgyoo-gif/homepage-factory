@@ -86,13 +86,13 @@ const DEFAULT_BODY_HTML = `
 export default function GlossaryDetail({
   backLabel = "← Glossary",
   backHref = "/glossary",
-  term = "AI enablement data layer",
+  term = "context-preserving data layer for AI",
   lead = "The architectural component that makes regulated enterprise AI workflows actually work — between operational systems and large language models.",
   category = "P0 · Category definition",
   definitionLabel = "Definition",
-  definitionBody = "An AI enablement data layer is the architectural component that sits between regulated enterprise systems (NOC consoles, EHR, claim platforms, mission systems, legacy DBs) and large language models. It turns operational data into AI-ready capsules using structure-preserving, differential-privacy-based encapsulation, executes AI workflows on the protected capsule, and restores outputs back into the originating system. It supports two execution paths — external approved LLM with capsule data only, or on-prem local lightweight model — under a single governance framework.",
+  definitionBody = "A context-preserving data layer for AI is the architectural component that sits between regulated enterprise systems (NOC consoles, EHR, claim platforms, mission systems, legacy DBs) and large language models. It turns operational data into AI-ready capsules using structure-preserving, differential-privacy-based encapsulation, executes AI workflows on the protected capsule, and restores outputs back into the originating system. It supports two execution paths — external approved LLM with capsule data only, or on-prem local lightweight model — under a single governance framework.",
   bodyHtml = DEFAULT_BODY_HTML,
-  related1Label = "AI enablement data layer",
+  related1Label = "context-preserving data layer for AI",
   related1Href = "/glossary/ai-ready-operational-layer",
   related2Label = "Structure-preserving encapsulation",
   related2Href = "/glossary/structure-preserving-encapsulation",
@@ -588,19 +588,19 @@ addPropertyControls(GlossaryDetail, {
   // Hero
   backLabel: { type: ControlType.String, title: "Back Label",   defaultValue: "← Glossary" },
   backHref:  { type: ControlType.String, title: "Back URL",     defaultValue: "/glossary" },
-  term:      { type: ControlType.String, title: "Term",         defaultValue: "AI enablement data layer" },
+  term:      { type: ControlType.String, title: "Term",         defaultValue: "context-preserving data layer for AI" },
   lead:      { type: ControlType.String, title: "Lead",         defaultValue: "The architectural component that makes regulated enterprise AI workflows actually work — between operational systems and large language models.", displayTextArea: true },
   category:  { type: ControlType.String, title: "Category",     defaultValue: "P0 · Category definition" },
 
   // Definition block
   definitionLabel: { type: ControlType.String, title: "Definition Label", defaultValue: "Definition" },
-  definitionBody:  { type: ControlType.String, title: "Definition Body",  defaultValue: "An AI enablement data layer is the architectural component that sits between regulated enterprise systems (NOC consoles, EHR, claim platforms, mission systems, legacy DBs) and large language models. It turns operational data into AI-ready capsules using structure-preserving, differential-privacy-based encapsulation, executes AI workflows on the protected capsule, and restores outputs back into the originating system. It supports two execution paths — external approved LLM with capsule data only, or on-prem local lightweight model — under a single governance framework.", displayTextArea: true },
+  definitionBody:  { type: ControlType.String, title: "Definition Body",  defaultValue: "A context-preserving data layer for AI is the architectural component that sits between regulated enterprise systems (NOC consoles, EHR, claim platforms, mission systems, legacy DBs) and large language models. It turns operational data into AI-ready capsules using structure-preserving, differential-privacy-based encapsulation, executes AI workflows on the protected capsule, and restores outputs back into the originating system. It supports two execution paths — external approved LLM with capsule data only, or on-prem local lightweight model — under a single governance framework.", displayTextArea: true },
 
   // Body HTML
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: DEFAULT_BODY_HTML, displayTextArea: true },
 
   // Related terms
-  related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "AI enablement data layer" },
+  related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "context-preserving data layer for AI" },
   related1Href:  { type: ControlType.String, title: "Related 1 URL",   defaultValue: "/glossary/ai-ready-operational-layer" },
   related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "Structure-preserving encapsulation" },
   related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/glossary/structure-preserving-encapsulation" },

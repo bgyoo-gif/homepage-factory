@@ -16,7 +16,7 @@
 | description | Zero exposure: original sensitive data never leaves your environment during AI processing. Only encapsulated data crosses the trust boundary. |
 | canonical | https://llmcapsule.ai/resources/glossary/zero-exposure |
 | og:type | article |
-| keywords | enterprise AI enablement, AI-ready data layer, AI adoption enabler, LLM plugin, cross-model execution |
+| keywords | enterprise context-preserving data layer for AI, AI-ready data layer, AI adoption enabler, LLM plugin, cross-model execution |
 | JSON-LD | BreadcrumbList — Home > Resources > Glossary > Zero Exposure (원본 그대로) |
 
 ---
@@ -106,7 +106,7 @@
 1. **Banner** (`ds-banner ds-banner--brand`)
    - Label (`ds-banner__label`): "DEFINITION"
    - 본문 (`<p>`):
-     "Zero exposure is a core capability of <span class="ds-text--product">LLM Capsule</span>'s AI enablement data layer in which original sensitive enterprise data never leaves the enterprise environment during AI processing. Only encapsulated representations — with sensitive values replaced by structure-preserving tokens — cross the trust boundary to external AI services. Zero exposure is what enables enterprises to adopt AI confidently on their most sensitive data."
+     "Zero exposure is a core capability of <span class="ds-text--product">LLM Capsule</span>'s context-preserving data layer for AI in which original sensitive enterprise data never leaves the enterprise environment during AI processing. Only encapsulated representations — with sensitive values replaced by structure-preserving tokens — cross the trust boundary to external AI services. Zero exposure is what enables enterprises to adopt AI confidently on their most sensitive data."
    - 강조 키워드: 없음 (원문 그대로 유지)
 
 ---
@@ -217,7 +217,7 @@
    - CTA 버튼 스타일: white 반투명 배경 (restoration-b-type.html과 동일)
 
 5. **Footnote** (`ds-cta-band__footnote`)
-   - "Enterprise AI Enablement by CUBIG"
+   - "Context-Preserving Data Layer for AI by CUBIG"
    - color: `var(--ds-overlay-white-70)`
 
 ---
@@ -239,9 +239,9 @@ restoration-b-type.html과 동일한 Nav 구조 복사:
 restoration-b-type.html과 동일한 Footer 구조 복사:
 
 - Brand: "LLM Capsule" (`ds-footer__brand`, Oxanium)
-- Desc: "Enterprise AI enablement by CUBIG. Enable AI. Protect data. Restore results."
+- Desc: "Context-preserving data layer for AI by CUBIG. Enable AI. Protect data. Restore results."
 - 4열: Product / Solutions / Resources / Company
-- Bottom: "(c) 2025 LLM Capsule by CUBIG. All rights reserved." | "Enterprise AI Enablement"
+- Bottom: "(c) 2025 LLM Capsule by CUBIG. All rights reserved." | "Context-Preserving Data Layer for AI"
 
 ---
 

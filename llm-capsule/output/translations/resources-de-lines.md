@@ -4,13 +4,13 @@
 ## Resources
 
 
-Enterprise AI Enablement
-Enterprise AI Enablement
+Context-Preserving Data Layer for AI
+Context-Preserving Data Layer for AI
 
 Resources
 Ressourcen
 
-Technical documentation, learning resources, glossary, and trust information for enterprise AI enablement with LLM Capsule.
+Technical documentation, learning resources, glossary, and trust information for enterprise context-preserving data layer for AI with LLM Capsule.
 Technische Dokumentation, Fachartikel, Glossar und Informationen zu Sicherheitszertifizierungen fuer das KI-Enablement im Unternehmen mit LLM Capsule.
 
 Explore
@@ -25,7 +25,7 @@ Dokumentation, Fachartikel, zentrale Begriffe und Informationen zu Zertifizierun
 Learn
 Lernen
 
-In-depth articles on enterprise AI enablement, secure LLM usage, structure-preserving processing, and restorable workflows.
+In-depth articles on enterprise context-preserving data layer for AI, secure LLM usage, structure-preserving processing, and restorable workflows.
 Fachartikel zu KI-Enablement im Unternehmen, sicherer LLM-Nutzung, strukturerhaltendem Dokumentenschutz und wiederherstellbaren Verarbeitungsprozessen.
 
 Browse Learn →

@@ -115,7 +115,7 @@ export default function Restoration({
   ctaBtn1Href = "/request-a-demo",
   ctaBtn2Label = "View Product",
   ctaBtn2Href = "/product",
-  ctaFootnote = "Enterprise AI Enablement by CUBIG",
+  ctaFootnote = "Context-Preserving Data Layer for AI by CUBIG",
 
 }: Props) {
   return (
@@ -683,6 +683,6 @@ addPropertyControls(Restoration, {
   ctaFootnote: {
     type: ControlType.String,
     title: "CTA Footnote",
-    defaultValue: "Enterprise AI Enablement by CUBIG",
+    defaultValue: "Context-Preserving Data Layer for AI by CUBIG",
   },
 })

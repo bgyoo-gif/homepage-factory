@@ -19,7 +19,7 @@ Concept
 Definition
 정의
 
-Sovereign AI means enterprise AI workflows where the underlying data, the AI processing path, and the audit trail all remain inside a defined regulatory and geographic boundary. For European enterprises this typically means GDPR-compliant data handling, in-region LLM endpoints, and full audit for regulator review. For defense and public sector workflows it typically means fully on-prem execution with no external transmission. The practical architecture pattern uses an AI enablement data layer with two execution paths.
+Sovereign AI means enterprise AI workflows where the underlying data, the AI processing path, and the audit trail all remain inside a defined regulatory and geographic boundary. For European enterprises this typically means GDPR-compliant data handling, in-region LLM endpoints, and full audit for regulator review. For defense and public sector workflows it typically means fully on-prem execution with no external transmission. The practical architecture pattern uses a context-preserving data layer for AI with two execution paths.
 Sovereign AI란 기반 데이터, AI 처리 경로, 감사 이력이 모두 규정된 규제·지리적 경계 안에 유지되는 기업 AI 워크플로우를 의미합니다. 유럽 기업의 경우 일반적으로 GDPR 준수 데이터 처리, 역내 LLM 엔드포인트, 규제 기관 검토를 위한 완전한 감사 이력을 갖춰야 합니다. 국방·공공 부문 워크플로우의 경우 외부 전송 없이 완전한 온프레미스 실행이 기본입니다. 실용적인 아키텍처 패턴은 두 가지 실행 경로를 갖춘 데이터 레이어를 사용합니다.
 
 ## Section 03: Body HTML
@@ -56,7 +56,7 @@ Sovereign AI란 기반 데이터, AI 처리 경로, 감사 이력이 모두 규�
 Two execution paths
 두 가지 실행 경로
 
-AI enablement data layer
+context-preserving data layer for AI
 데이터 레이어
 
 Differential privacy

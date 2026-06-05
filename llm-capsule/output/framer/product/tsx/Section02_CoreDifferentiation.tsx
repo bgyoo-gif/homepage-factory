@@ -44,10 +44,10 @@ interface Props {
 }
 
 export default function Section02_CoreDifferentiation({
-  sectionTitle = "Enterprise AI enablement through five core",
+  sectionTitle = "Context-preserving data layer for AI through five core",
   sectionTitleBrand = "capabilities",
   sectionDescription = "LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 architecture — three core enablement capabilities plus structure-preserving processing and enterprise environment execution.",
-  bannerText = "These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise AI enablement from traditional masking tools.",
+  bannerText = "These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise context-preserving data layer for AI from traditional masking tools.",
   card1Category = "Core 1",
   card1Title = "Zero Exposure",
   card1Desc = "Sensitive data is encapsulated locally before leaving the environment. Raw data never reaches external AI services. Even if the provider logged or stored the data, no enterprise information would be exposed.",
@@ -280,10 +280,10 @@ export default function Section02_CoreDifferentiation({
 }
 
 addPropertyControls(Section02_CoreDifferentiation, {
-  sectionTitle:       { type: ControlType.String, title: "Title",         defaultValue: "Enterprise AI enablement through five core" },
+  sectionTitle:       { type: ControlType.String, title: "Title",         defaultValue: "Context-preserving data layer for AI through five core" },
   sectionTitleBrand:  { type: ControlType.String, title: "Title (brand)", defaultValue: "capabilities" },
   sectionDescription: { type: ControlType.String, title: "Description",   defaultValue: "LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 architecture — three core enablement capabilities plus structure-preserving processing and enterprise environment execution.", displayTextArea: true },
-  bannerText:         { type: ControlType.String, title: "Banner",        defaultValue: "These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise AI enablement from traditional masking tools.", displayTextArea: true },
+  bannerText:         { type: ControlType.String, title: "Banner",        defaultValue: "These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise context-preserving data layer for AI from traditional masking tools.", displayTextArea: true },
   card1Category: { type: ControlType.String, title: "Card 1 Category", defaultValue: "Core 1" },
   card1Title:    { type: ControlType.String, title: "Card 1 Title",    defaultValue: "Zero Exposure" },
   card1Desc:     { type: ControlType.String, title: "Card 1 Desc",     defaultValue: "Sensitive data is encapsulated locally before leaving the environment. Raw data never reaches external AI services. Even if the provider logged or stored the data, no enterprise information would be exposed.", displayTextArea: true },

@@ -34,7 +34,7 @@
 | CTA 제목 | "See how LLM Capsule works with your data" | 동일 | PASS |
 | CTA 설명 | "Bring your documents, deployment constraints, and evaluation criteria..." | 동일 | PASS |
 | CTA 버튼 | "Request PoV" / "Talk to an Architect" / "Download Architecture Brief" / "Available on AWS Marketplace" | 동일 | PASS |
-| Footer | Enterprise AI enablement by CUBIG. Enable AI. Protect data. Restore results. | 동일 | PASS |
+| Footer | Context-preserving data layer for AI by CUBIG. Enable AI. Protect data. Restore results. | 동일 | PASS |
 
 **CAT-1 판정: PASS** (원본 누락/변경 없음)
 

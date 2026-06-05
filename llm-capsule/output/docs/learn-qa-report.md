@@ -22,7 +22,7 @@
 
 | 항목 | 결과 |
 |------|------|
-| 모든 섹션 제목 존재 | PASS — Hero 제목 "Enterprise AI Enablement — Learn", Article Grid 섹션 모두 존재 |
+| 모든 섹션 제목 존재 | PASS — Hero 제목 "Context-Preserving Data Layer for AI — Learn", Article Grid 섹션 모두 존재 |
 | 본문 텍스트 누락/변경 없음 | PASS — Hero description 일치. A타입 텍스트 완전 보존 |
 | 수치/데이터 일치 | PASS — 수치 없음 |
 | 목록 항목 수 일치 | PASS — A타입 12개 아티클 카드 모두 존재 (Card 1~12 확인) |

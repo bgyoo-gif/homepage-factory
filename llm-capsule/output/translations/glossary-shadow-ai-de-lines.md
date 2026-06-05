@@ -21,8 +21,8 @@ Risikokonzept
 Definition
 Definition
 
-Shadow AI is the unsanctioned use of external LLMs by enterprise employees outside approved channels — typically because the official AI tooling cannot handle the regulated data the work actually depends on. The root cause is not employee misbehavior; it is a missing AI enablement data layer. Employees taste productivity in pilots and early demos, then route around the controls when production tooling fails to deliver.
-Shadow AI bezeichnet die nicht autorisierte Nutzung externer LLMs durch Unternehmensmitarbeitende außerhalb genehmigter Kanäle. Die eigentliche Ursache liegt nicht im Fehlverhalten der Mitarbeitenden, sondern im Fehlen eines AI enablement data layer: Offizielle KI-Werkzeuge können die regulierten Daten, auf die Arbeitsprozesse tatsächlich angewiesen sind, nicht verarbeiten. Mitarbeitende, die in Pilotprojekten Produktivitätsgewinne erlebt haben, suchen nach Wegen, die Einschränkungen zu umgehen, sobald die Produktivsysteme diese Gewinne nicht einlösen.
+Shadow AI is the unsanctioned use of external LLMs by enterprise employees outside approved channels — typically because the official AI tooling cannot handle the regulated data the work actually depends on. The root cause is not employee misbehavior; it is a missing context-preserving data layer for AI. Employees taste productivity in pilots and early demos, then route around the controls when production tooling fails to deliver.
+Shadow AI bezeichnet die nicht autorisierte Nutzung externer LLMs durch Unternehmensmitarbeitende außerhalb genehmigter Kanäle. Die eigentliche Ursache liegt nicht im Fehlverhalten der Mitarbeitenden, sondern im Fehlen eines context-preserving data layer for AI: Offizielle KI-Werkzeuge können die regulierten Daten, auf die Arbeitsprozesse tatsächlich angewiesen sind, nicht verarbeiten. Mitarbeitende, die in Pilotprojekten Produktivitätsgewinne erlebt haben, suchen nach Wegen, die Einschränkungen zu umgehen, sobald die Produktivsysteme diese Gewinne nicht einlösen.
 
 ---
 
@@ -43,7 +43,7 @@ Shadow AI bezeichnet die nicht autorisierte Nutzung externer LLMs durch Unterneh
 
 <h2>Die strukturelle Lösung</h2>
 
-<p>Shadow AI lässt sich nicht allein durch Richtliniendurchsetzung beheben — das behandelt nur das Symptom. Die strukturelle Lösung ist ein <strong>AI enablement data layer</strong>, der offizielle Werkzeuge befähigt, mit echten Produktionsdaten zu arbeiten: lokale Kapsulierung, Verarbeitung über ein zugelassenes externes LLM (Pfad A) oder ein lokales On-Premise-Modell (Pfad B), anschließend Wiederherstellung am ursprünglichen Ort. Sobald offizielle Werkzeuge das liefern, was Mitarbeitende in Pilotprojekten erlebt haben, sinkt die Shadow-Nutzung.</p>
+<p>Shadow AI lässt sich nicht allein durch Richtliniendurchsetzung beheben — das behandelt nur das Symptom. Die strukturelle Lösung ist ein <strong>context-preserving data layer for AI</strong>, der offizielle Werkzeuge befähigt, mit echten Produktionsdaten zu arbeiten: lokale Kapsulierung, Verarbeitung über ein zugelassenes externes LLM (Pfad A) oder ein lokales On-Premise-Modell (Pfad B), anschließend Wiederherstellung am ursprünglichen Ort. Sobald offizielle Werkzeuge das liefern, was Mitarbeitende in Pilotprojekten erlebt haben, sinkt die Shadow-Nutzung.</p>
 
 <h2>Typische Auftrittsbereiche</h2>
 
@@ -59,7 +59,7 @@ Shadow AI bezeichnet die nicht autorisierte Nutzung externer LLMs durch Unterneh
 
 <ul>
 <li>Blockierter KI-Workflow</li>
-<li>AI enablement data layer</li>
+<li>context-preserving data layer for AI</li>
 <li>Learn: Warum KI-Pilotprojekte in Unternehmen ins Stocken geraten</li>
 </ul>
 
@@ -74,11 +74,11 @@ Blockierter KI-Workflow
 /glossary/blocked-ai-workflow
 /glossary/blocked-ai-workflow
 
-AI enablement data layer
-AI enablement data layer
+context-preserving data layer for AI
+context-preserving data layer for AI
 
-/glossary/ai-enablement-data-layer
-/glossary/ai-enablement-data-layer
+/glossary/context-preserving-data-layer
+/glossary/context-preserving-data-layer
 
 Learn: Why enterprise AI pilots stall
 Learn: Warum KI-Pilotprojekte in Unternehmen ins Stocken geraten

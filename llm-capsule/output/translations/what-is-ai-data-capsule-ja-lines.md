@@ -26,12 +26,12 @@ The result is a binary choice: expose data to use AI, or protect data and get un
 AI Data Capsule
 AIデータカプセル
 
-An AI data capsule is a locally generated AI enablement layer that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.
+An AI data capsule is a locally generated context-preserving data layer for AI that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.
 AIデータカプセルは、外部AIサービスに送信される前に機密エンタープライズデータを包むローカル生成のAI活用レイヤーです。カプセルは機密要素を可逆的な表現に置換しながら、文書の構造とコンテキストを保存します。AI処理後、カプセルはローカル復元を可能にします — 元のデータを外部に公開することなく、AI出力を完全なエンタープライズコンテキストに復元します。
 
 ## Section 05: Explanation
 
-An AI data capsule operates as an AI enablement data layer through three stages within a restorable workflow:
+An AI data capsule operates as a context-preserving data layer for AI through three stages within a restorable workflow:
 AIデータカプセルは、復元可能なワークフロー内の3つのステージを通じてAI活用データレイヤーとして機能します。
 
 Local Encapsulation.
@@ -71,7 +71,7 @@ LLM Capsuleを使用することで、銀行はすべての文書をローカル
 What is an AI data capsule?
 AIデータカプセルとは何ですか？
 
-An AI data capsule is a locally generated AI enablement layer that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.
+An AI data capsule is a locally generated context-preserving data layer for AI that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.
 AIデータカプセルは、機密エンタープライズデータが外部AIサービスに送信される前にカプセル化するローカル生成のAI活用レイヤーです。AI処理後、カプセルはローカル復元を可能にし、出力が実際のエンタープライズワークフローで使用可能な状態を維持します。
 
 How does an AI data capsule differ from data masking?

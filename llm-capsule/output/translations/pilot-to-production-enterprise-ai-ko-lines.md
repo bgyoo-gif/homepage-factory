@@ -28,7 +28,7 @@ Updated April 2025
 TL;DR — Diagnosis
 TL;DR — 진단
 
-Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without an AI enablement data layer, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.
+Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without a context-preserving data layer for AI, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.
 기업 AI 파일럿이 실패하는 이유는 AI가 나빠서가 아닙니다. AI와 운영 시스템 사이의 데이터 레이어가 없기 때문입니다. 데이터 레이어 없이는, 규제 산업 기업은 AI가 필요로 하는 데이터를 비즈니스가 노출할 수 있는 형태로 전달하지 못합니다. 파일럿은 합성 데이터나 익명화 데이터로는 작동하지만, 보안·프라이버시·컴플라이언스 검토가 시작되면 멈춥니다. 프로덕션까지 가는 패턴: 문서 구조 보존 캡슐 + 차등 프라이버시 기반 보호 + 플러그인 실행 + 복원 + 두 가지 실행 경로.
 
 ## Section 03: Body HTML
@@ -71,7 +71,7 @@ Most enterprise AI pilots do not fail because the AI is bad. They fail because t
 
 <p>프로덕션에 배포된 파일럿은 일반적으로 다음 아키텍처 요소를 갖추고 있습니다.</p>
 
-<li><strong>An AI enablement data layer between systems and AI.</strong> Not a guardrail. Not a gateway. A layer that transforms operational data into AI-ready capsules locally, executes the AI workflow, and restores results into the originating system.</li>
+<li><strong>A context-preserving data layer for AI between systems and AI.</strong> Not a guardrail. Not a gateway. A layer that transforms operational data into AI-ready capsules locally, executes the AI workflow, and restores results into the originating system.</li>
 <li><strong>문서 구조 보존 캡슐화.</strong> 테이블, 상호 참조, 설정, 문서 계층 구조가 그대로 유지됩니다. AI는 깨진 단편이 아닌 전체 컨텍스트를 받습니다.</li>
 <li><strong>차등 프라이버시 기반 보호.</strong> 단순 필드 마스킹을 넘어 — DP 노이즈, k-익명성, 시맨틱 토큰화 — 단순 필터링으로 막을 수 없는 추론 및 집계 패턴 위험까지 대응합니다.</li>
 <li><strong>기존 레거시 시스템에 플러그인 방식 실행.</strong> 마이그레이션 없이. 데이터 레이어가 문서가 이미 있는 곳에서 직접 읽어옵니다.</li>
@@ -124,11 +124,11 @@ Glossary: Blocked AI workflow
 /glossary/blocked-ai-workflow
 /glossary/blocked-ai-workflow
 
-Glossary: AI enablement data layer
+Glossary: context-preserving data layer for AI
 용어 사전: AI 데이터 레이어
 
-/glossary/ai-enablement-data-layer
-/glossary/ai-enablement-data-layer
+/glossary/context-preserving-data-layer
+/glossary/context-preserving-data-layer
 
 ## Section 05: CTA Strip
 

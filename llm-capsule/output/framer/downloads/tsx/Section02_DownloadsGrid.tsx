@@ -85,7 +85,7 @@ function CogIcon() {
 export default function Section02_DownloadsGrid({
   sectionTitle = "Available",
   sectionTitleHighlight = "Resources",
-  sectionDescription = "Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation.",
+  sectionDescription = "Architecture briefs, technical documentation, and deployment guides for enterprise context-preserving data layer for AI evaluation.",
   card1Title = "Architecture Brief",
   card1Description = "Technical overview of the LLM Capsule architecture -- encapsulation, trust boundary, restoration, and deployment models.",
   card1ButtonLabel = "Download PDF (coming soon)",
@@ -351,7 +351,7 @@ addPropertyControls(Section02_DownloadsGrid, {
   sectionDescription: {
     type: ControlType.String,
     title: "Section Description",
-    defaultValue: "Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation.",
+    defaultValue: "Architecture briefs, technical documentation, and deployment guides for enterprise context-preserving data layer for AI evaluation.",
     displayTextArea: true,
   },
   card1Title: {

@@ -25,7 +25,7 @@ Aktualisiert Mai 2025
 Definition · TL;DR
 Definition · TL;DR
 
-PII guardrails protect identifiable fields at the API or prompt layer. The AI enablement data layer protects structured enterprise data — network logs, configurations, incident records, OT and mission context — using structure-preserving, differential-privacy-based encapsulation. They address adjacent but different layers of the enterprise AI pipeline.
+PII guardrails protect identifiable fields at the API or prompt layer. The context-preserving data layer for AI protects structured enterprise data — network logs, configurations, incident records, OT and mission context — using structure-preserving, differential-privacy-based encapsulation. They address adjacent but different layers of the enterprise AI pipeline.
 PII-Guardrails schützen identifizierbare Felder auf API- oder Prompt-Ebene. Die KI-Datenschicht schützt strukturierte Unternehmensdaten — Netzwerkprotokolle, Konfigurationen, Incident-Records, OT- und Missionskontext — durch strukturerhaltende Kapsulierung auf Basis von Differential Privacy. Beide decken unterschiedliche Ebenen der KI-Pipeline im Unternehmen ab.
 
 ## Section 03: Body HTML
@@ -50,7 +50,7 @@ PII-Guardrails schützen identifizierbare Felder auf API- oder Prompt-Ebene. Die
 <p>Diese Plattformen erzeugen synthetische Versionen von Trainings- oder Evaluierungsdatensätzen, die die statistischen Eigenschaften der Originaldaten annähern. Sie werden in KI-Trainingspipelines und für Analysen eingesetzt, nicht zum Laufzeitschutz produktiver operativer Daten.</p>
 <p><strong>Ebene:</strong> Datenpipeline (offline). <strong>Umfang:</strong> Datensatzgenerierung. <strong>Stärke:</strong> Trainingsdaten für ML. <strong>Einschränkung:</strong> kein Einsatz im Live-Workflow.</p>
 
-<h3>4. KI-Datenschicht — AI Enablement Data Layer (LLM Capsule)</h3>
+<h3>4. KI-Datenschicht — Context-Preserving Data Layer for AI (LLM Capsule)</h3>
 <p>Die KI-Datenschicht ist zwischen der bestehenden Unternehmensumgebung (NOC, Ticketsysteme, OT, EHR, Missionssysteme) und dem LLM positioniert. Sie transformiert regulierte operative Daten in KI-verarbeitbaren Kontext durch strukturerhaltende Kapsulierung auf Basis von Differential Privacy. Die Ausführung erfolgt über einen von zwei Pfaden — externer zugelassener LLM oder On-Premise-Modell. Ergebnisse werden über den State Vault in den Workflow zurückgeführt.</p>
 <p><strong>Ebene:</strong> KI-Datenschicht. <strong>Umfang:</strong> operative Daten und Governance. <strong>Stärke:</strong> strukturierte operative Daten, zwei Ausführungspfade, Integration in bestehende Systeme. <strong>Einschränkung:</strong> kein Schutz vor Prompt-Injection, keine Generierung synthetischer Daten.</p>
 
@@ -158,7 +158,7 @@ On-Premise-Ausführungspfad für LLMs
 Map your stack against the categories.
 Ordnen Sie Ihren Stack den Kategorien zu.
 
-30-minute review of where PII guardrails, prompt security, and the AI enablement data layer fit in your AI pipeline.
+30-minute review of where PII guardrails, prompt security, and the context-preserving data layer for AI fit in your AI pipeline.
 In einem 30-minütigen Gespräch analysieren wir, wo PII-Guardrails, Prompt-Security und die KI-Datenschicht in Ihre KI-Pipeline passen.
 
 Request a Demo

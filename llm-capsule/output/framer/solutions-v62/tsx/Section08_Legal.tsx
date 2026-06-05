@@ -55,8 +55,8 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     customerName: "Shin&Kim",
     customerDetail: "One of Korea's largest law firms. AI assist on privileged matter workflows with parties, deal terms, and code names encapsulated. Privilege preservation under firm governance.",
     screenshotAlt: "Legal Industry Visual",
-    readLabel: "Read: AI enablement data layer (definition) →",
-    readHref: "/glossary/ai-enablement-data-layer",
+    readLabel: "Read: context-preserving data layer for AI (definition) →",
+    readHref: "/glossary/context-preserving-data-layer",
   },
   ko: {
     tag: "법률",
@@ -81,8 +81,8 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     customerName: "Shin&Kim",
     customerDetail: "국내 최대 규모 법률사무소 중 하나. 당사자, 거래 조건, 코드명을 캡슐화한 특권 사건 워크플로우에 AI 지원. 로펌 거버넌스 하에 변호사 비밀 유지.",
     screenshotAlt: "법률 산업 비주얼",
-    readLabel: "읽기: AI 인에이블먼트 데이터 레이어 (정의) →",
-    readHref: "/glossary/ai-enablement-data-layer",
+    readLabel: "읽기: AI를 위한 컨텍스트 보존 데이터 레이어 (정의) →",
+    readHref: "/glossary/context-preserving-data-layer",
   },
   de: {
     tag: "Rechtsbranche",
@@ -107,8 +107,8 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     customerName: "Shin&Kim",
     customerDetail: "Eine der größten Anwaltskanzleien Koreas. KI-Unterstützung bei privilegierten Matter-Workflows mit kapsulierten Parteien, Transaktionsbedingungen und Projektkennungen. Wahrung des Mandatsgeheimnisses unter der Governance der Kanzlei.",
     screenshotAlt: "Rechtsbranche — Branchenvisualisierung",
-    readLabel: "Lesen: KI-Aktivierungsdatenschicht (Definition) →",
-    readHref: "/glossary/ai-enablement-data-layer",
+    readLabel: "Lesen: Kontexterhaltende Datenschicht für KI (Definition) →",
+    readHref: "/glossary/context-preserving-data-layer",
   },
 }
 

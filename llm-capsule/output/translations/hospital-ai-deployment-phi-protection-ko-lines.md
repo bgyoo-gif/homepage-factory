@@ -25,7 +25,7 @@ Updated April 2025
 TL;DR — Definition
 TL;DR — 정의
 
-A hospital AI deployment with PHI protection uses an AI enablement data layer to encapsulate patient names, MRN, diagnoses, lab results, prescriptions, and clinical workflow context locally before any data reaches an external LLM. The LLM drafts radiology reports, clinical summaries, and care coordination outputs on the protected capsule; outputs are restored back into the EHR inside the hospital network. HIPAA-aligned. Deployed at Ewha Womans University Medical Center (EUMC).
+A hospital AI deployment with PHI protection uses a context-preserving data layer for AI to encapsulate patient names, MRN, diagnoses, lab results, prescriptions, and clinical workflow context locally before any data reaches an external LLM. The LLM drafts radiology reports, clinical summaries, and care coordination outputs on the protected capsule; outputs are restored back into the EHR inside the hospital network. HIPAA-aligned. Deployed at Ewha Womans University Medical Center (EUMC).
 PHI 보호가 적용된 병원 AI 배포는 데이터 레이어를 활용해 환자 이름·MRN·진단명·검사 결과·처방 정보·임상 워크플로우 컨텍스트를 로컬에서 캡슐화한 뒤 외부 LLM으로 전달합니다. LLM은 보호된 캡슐 위에서 영상 판독 보고서·임상 요약·케어 코디네이션 결과물을 작성하고, 출력은 병원 네트워크 내부에서 EHR로 복원됩니다. HIPAA 준수. 이화여자대학교의료원(EUMC) 배포 완료.
 
 ## Section 03: Body HTML
@@ -42,7 +42,7 @@ PHI 보호가 적용된 병원 AI 배포는 데이터 레이어를 활용해 환
 
 <h2>데이터 레이어가 바꾸는 것</h2>
 
-<p>LLM Capsule과 같은 <a href="/glossary/ai-enablement-data-layer">데이터 레이어</a>는 EHR(Epic, Cerner, 내부 HIS)과 LLM 사이에 위치합니다. PHI는 로컬에서 캡슐화됩니다 — 환자 이름은 ⟨P_xxxx⟩, MRN은 ⟨MR_yyyy⟩로 치환되며, 문서 구조는 그대로 보존됩니다. LLM은 캡슐 위에서 영상 판독 요약을 작성합니다. 출력은 병원 네트워크 내부에서 로컬 복원되어 EHR 레코드에 삽입됩니다. LLM 제공업체는 PHI를 절대 볼 수 없습니다.</p>
+<p>LLM Capsule과 같은 <a href="/glossary/context-preserving-data-layer">데이터 레이어</a>는 EHR(Epic, Cerner, 내부 HIS)과 LLM 사이에 위치합니다. PHI는 로컬에서 캡슐화됩니다 — 환자 이름은 ⟨P_xxxx⟩, MRN은 ⟨MR_yyyy⟩로 치환되며, 문서 구조는 그대로 보존됩니다. LLM은 캡슐 위에서 영상 판독 요약을 작성합니다. 출력은 병원 네트워크 내부에서 로컬 복원되어 EHR 레코드에 삽입됩니다. LLM 제공업체는 PHI를 절대 볼 수 없습니다.</p>
 
 <h2>데이터 레이어가 보호하는 5가지 임상 데이터 범주</h2>
 

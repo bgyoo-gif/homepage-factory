@@ -20,8 +20,8 @@ interface Props {
 
 export default function Section03_Definition({
   sectionLabel = "Definition",
-  bannerLabel = "Enterprise AI Enablement",
-  bannerText = " operates as an AI enablement data layer and plugin — protecting sensitive information through local encapsulation, structure-preserving processing, and local restoration while enabling full AI-powered workflows across any LLM.",
+  bannerLabel = "Context-Preserving Data Layer for AI",
+  bannerText = " operates as a context-preserving data layer for AI and plugin — protecting sensitive information through local encapsulation, structure-preserving processing, and local restoration while enabling full AI-powered workflows across any LLM.",
   productName = "LLM Capsule",
 }: Props) {
   return (
@@ -124,7 +124,7 @@ export default function Section03_Definition({
             <div className="s3-banner">
               <span className="s3-banner-label">{bannerLabel}</span>
               <p>
-                Enterprise AI enablement is a data-layer approach that enables enterprises to adopt AI on sensitive data without exposure risk.{" "}
+                Context-preserving data layer for AI is a data-layer approach that enables enterprises to adopt AI on sensitive data without exposure risk.{" "}
                 <span className="s3-product-name">{productName}</span>
                 {bannerText}
               </p>
@@ -145,12 +145,12 @@ addPropertyControls(Section03_Definition, {
   bannerLabel: {
     type: ControlType.String,
     title: "Banner Label",
-    defaultValue: "Enterprise AI Enablement",
+    defaultValue: "Context-Preserving Data Layer for AI",
   },
   bannerText: {
     type: ControlType.String,
     title: "Banner Text (after product name)",
-    defaultValue: " operates as an AI enablement data layer and plugin — protecting sensitive information through local encapsulation, structure-preserving processing, and local restoration while enabling full AI-powered workflows across any LLM.",
+    defaultValue: " operates as a context-preserving data layer for AI and plugin — protecting sensitive information through local encapsulation, structure-preserving processing, and local restoration while enabling full AI-powered workflows across any LLM.",
     displayTextArea: true,
   },
   productName: {

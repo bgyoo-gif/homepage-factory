@@ -74,8 +74,8 @@ export default function GlossaryPage_StateVaultForRestoration({
   definitionLabel = "Definition",
   definitionBody = "The state vault is the local-only store that holds the token map between original operational identifiers and capsule tokens. It enables AI outputs to be restored back into the originating workflow with original identifiers — inside the enterprise — without the external LLM ever seeing the originals.",
   bodyHtml = DEFAULT_BODY_HTML,
-  related1Label = "AI enablement data layer",
-  related1Href = "/glossary/ai-enablement-data-layer",
+  related1Label = "context-preserving data layer for AI",
+  related1Href = "/glossary/context-preserving-data-layer",
   related2Label = "Structure-preserving encapsulation",
   related2Href = "/glossary/structure-preserving-encapsulation",
   related3Label = "Capsule token",
@@ -502,8 +502,8 @@ addPropertyControls(GlossaryPage_StateVaultForRestoration, {
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: DEFAULT_BODY_HTML, displayTextArea: true },
 
   // Related terms
-  related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "AI enablement data layer" },
-  related1Href:  { type: ControlType.String, title: "Related 1 URL",   defaultValue: "/glossary/ai-enablement-data-layer" },
+  related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "context-preserving data layer for AI" },
+  related1Href:  { type: ControlType.String, title: "Related 1 URL",   defaultValue: "/glossary/context-preserving-data-layer" },
   related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "Structure-preserving encapsulation" },
   related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/glossary/structure-preserving-encapsulation" },
   related3Label: { type: ControlType.String, title: "Related 3 Label", defaultValue: "Capsule token" },

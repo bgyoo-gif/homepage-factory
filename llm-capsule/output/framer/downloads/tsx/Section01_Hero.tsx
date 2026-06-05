@@ -24,7 +24,7 @@ interface Props {
 export default function Section01_Hero({
   title = "Documentation &",
   titleHighlight = "Downloads",
-  description = "Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation.",
+  description = "Architecture briefs, technical documentation, and deployment guides for enterprise context-preserving data layer for AI evaluation.",
 }: Props) {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -137,7 +137,7 @@ addPropertyControls(Section01_Hero, {
   description: {
     type: ControlType.String,
     title: "Description",
-    defaultValue: "Architecture briefs, technical documentation, and deployment guides for enterprise AI enablement evaluation.",
+    defaultValue: "Architecture briefs, technical documentation, and deployment guides for enterprise context-preserving data layer for AI evaluation.",
     displayTextArea: true,
   },
 })

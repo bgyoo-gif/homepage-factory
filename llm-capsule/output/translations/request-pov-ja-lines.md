@@ -8,7 +8,7 @@ Proof of
 Value
 Value リクエスト
 
-Test LLM Capsule using your own enterprise documents and workflows. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.
+Test LLM Capsule using your own enterprise documents and workflows. We demonstrate enterprise context-preserving data layer for AI on your actual data, in your environment, against your compliance requirements.
 実際のエンタープライズ文書とワークフローでLLM Capsuleをテストしてください。実際のデータ、実際の環境、実際のコンプライアンス要件でエンタープライズAI導入を実演いたします。
 
 ## Section 02: Process Steps

@@ -106,7 +106,7 @@ export default function Section01_Hero({
                 {title} <span className="s1-title-highlight">{titleHighlight}</span>
               </h1>
               <p className="s1-description">
-                {description} <span className="s1-product-name">{productName}</span> enterprise AI enablement.
+                {description} <span className="s1-product-name">{productName}</span> enterprise context-preserving data layer for AI.
               </p>
             </div>
           </div>

@@ -8,7 +8,7 @@ KI-Grundbegriffe
 Enablement
 für Unternehmen
 
-Key terms and definitions for enterprise AI enablement, LLM data privacy, and secure enterprise AI workflows.
+Key terms and definitions for enterprise context-preserving data layer for AI, LLM data privacy, and secure enterprise AI workflows.
 Fachbegriffe und Definitionen zu KI-Einsatz im Unternehmen, LLM-Datenschutz und sicheren KI-Workflows.
 
 Home

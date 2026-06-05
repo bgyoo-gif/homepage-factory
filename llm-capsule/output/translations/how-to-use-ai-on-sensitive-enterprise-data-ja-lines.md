@@ -38,13 +38,13 @@ Sensitive data must be identified and replaced before it leaves the enterprise. 
 2. Model-agnostic processing.
 2. モデル非依存処理。
 
-The AI enablement layer must work with any LLM — not just one provider's API. Enterprises use multiple AI models for different tasks. The AI enablement data layer must operate independently of the model layer.
+The context-preserving data layer for AI must work with any LLM — not just one provider's API. Enterprises use multiple AI models for different tasks. The context-preserving data layer for AI must operate independently of the model layer.
 AI活用レイヤーは、特定のプロバイダーのAPIだけでなく、あらゆるLLMで動作する必要があります。企業はさまざまなタスクに複数のAIモデルを使用しています。AI活用データレイヤーは、モデルレイヤーから独立して動作する必要があります。
 
 3. Output Restoration (Restoration).
 3. 出力復元。
 
-AI results are restored locally. Without this, AI outputs are abstracted and unusable. Enterprise AI enablement requires that outputs contain real names, real account numbers, and real references — restored locally after AI processing completes.
+AI results are restored locally. Without this, AI outputs are abstracted and unusable. Context-preserving data layer for AI requires that outputs contain real names, real account numbers, and real references — restored locally after AI processing completes.
 AI結果はローカルで復元されます。これがなければ、AI出力は抽象的で使用不可能です。エンタープライズAI活用には、出力に実際の名前、実際の口座番号、実際の参照が含まれている必要があります — AI処理完了後にローカルで復元されます。
 
 ## Section 05: How It Works
@@ -52,7 +52,7 @@ AI結果はローカルで復元されます。これがなければ、AI出力�
 LLM Capsule Enables This
 LLM Capsuleがこれを実現します
 
-LLM Capsule operates as an AI enablement data layer between enterprise data systems and external AI services. The process follows four steps:
+LLM Capsule operates as a context-preserving data layer for AI between enterprise data systems and external AI services. The process follows four steps:
 LLM Capsuleは、エンタープライズデータシステムと外部AIサービスの間でAI活用データレイヤーとして機能します。プロセスは4つのステップに従います。
 
 Step 1: Sensitive Detection. LLM Capsule automatically identifies sensitive elements within enterprise documents — names, account numbers, dates, financial figures, project codes, and organization-defined entities beyond standard PII.
@@ -153,5 +153,5 @@ Request a Demo
 View Product
 製品を見る
 
-Enterprise AI Enablement by CUBIG
+Context-Preserving Data Layer for AI by CUBIG
 CUBIGによるエンタープライズAI活用支援

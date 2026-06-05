@@ -2,11 +2,11 @@
 
 ## Section 01: Hero
 
-Enterprise AI Enablement
+Context-Preserving Data Layer for AI
 KI im Unternehmen sicher einsetzen
 
-LLM Capsule's AI enablement data layer uses encapsulation, zero exposure, and local restoration to enable enterprises to adopt AI without data risk.
-Die AI Enablement Data Layer von LLM Capsule schützt vertrauliche Unternehmensdaten durch lokale Kapsulierung, Zero Exposure und automatische Wiederherstellung. Unternehmen nutzen KI-Dienste, ohne sensible Informationen an externe Systeme zu übermitteln.
+LLM Capsule's context-preserving data layer for AI uses encapsulation, zero exposure, and local restoration to enable enterprises to adopt AI without data risk.
+Die Context-Preserving Data Layer for AI von LLM Capsule schützt vertrauliche Unternehmensdaten durch lokale Kapsulierung, Zero Exposure und automatische Wiederherstellung. Unternehmen nutzen KI-Dienste, ohne sensible Informationen an externe Systeme zu übermitteln.
 
 LLM Capsule
 LLM Capsule
@@ -27,10 +27,10 @@ Für regulierte Organisationen ist dieses Risiko nicht verhandelbar. Der Grund l
 Definition
 Definition
 
-Enterprise AI Enablement
+Context-Preserving Data Layer for AI
 KI-Einsatz im Unternehmen
 
- operates as an AI enablement data layer and plugin — protecting sensitive information through local encapsulation, structure-preserving processing, and local restoration while enabling full AI-powered workflows across any LLM.
+ operates as a context-preserving data layer for AI and plugin — protecting sensitive information through local encapsulation, structure-preserving processing, and local restoration while enabling full AI-powered workflows across any LLM.
  fungiert als Datenschicht und Plugin für den sicheren KI-Einsatz im Unternehmen. Vertrauliche Informationen werden lokal identifiziert und durch geschützte Datenrepräsentationen ersetzt. Nach der Verarbeitung durch das KI-Modell erfolgt die Anreicherung mit Originaldaten automatisch — innerhalb der eigenen Infrastruktur. KI-Workflows lassen sich so über jedes beliebige LLM betreiben.
 
 LLM Capsule
@@ -77,7 +77,7 @@ Dokumentenlayout, Entitätsbeziehungen und semantischer Kontext bleiben bei der 
 Because protection operates at the data layer before transmission, it works with any external AI service — ChatGPT, Claude, Gemini, or any LLM API — without model-specific integration.
 Da der Schutz auf der Datenebene vor der Übertragung greift, funktioniert er mit jedem externen KI-Dienst — ChatGPT, Claude, Gemini oder jeder LLM-API — ohne modellspezifische Integration.
 
- is an AI enablement data layer and plugin. It enables AI adoption by protecting data at the data layer — not by blocking AI, but by making AI safe to use on real enterprise data.
+ is a context-preserving data layer for AI and plugin. It enables AI adoption by protecting data at the data layer — not by blocking AI, but by making AI safe to use on real enterprise data.
  ist eine Datenschicht und ein Plugin für den sicheren KI-Einsatz. Das Produkt schützt Daten auf der Datenebene und ermöglicht so die KI-Nutzung — nicht durch Blockade von KI-Diensten, sondern durch den sicheren Umgang mit echten Unternehmensdaten.
 
 ## Section 05: Enterprise Examples

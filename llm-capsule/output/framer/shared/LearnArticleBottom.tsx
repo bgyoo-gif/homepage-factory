@@ -32,8 +32,8 @@ export default function LearnArticleBottom({
   related2Href = "/learn/sovereign-ai-european-enterprises",
   related3Title = "Glossary: Blocked AI workflow",
   related3Href = "/glossary/blocked-ai-workflow",
-  related4Title = "Glossary: AI enablement data layer",
-  related4Href = "/glossary/ai-enablement-data-layer",
+  related4Title = "Glossary: context-preserving data layer for AI",
+  related4Href = "/glossary/context-preserving-data-layer",
   ctaTitle = "Ready to unblock your AI pilot?",
   ctaDescription = "Bring one stalled use case and one regulatory constraint. We deploy LLM Capsule on a sample workflow within 30 minutes.",
   ctaLabel = "Request an evaluation",
@@ -241,8 +241,8 @@ addPropertyControls(LearnArticleBottom, {
   related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/learn/sovereign-ai-european-enterprises" },
   related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "Glossary: Blocked AI workflow" },
   related3Href:  { type: ControlType.String, title: "Related 3 URL",   defaultValue: "/glossary/blocked-ai-workflow" },
-  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "Glossary: AI enablement data layer" },
-  related4Href:  { type: ControlType.String, title: "Related 4 URL",   defaultValue: "/glossary/ai-enablement-data-layer" },
+  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "Glossary: context-preserving data layer for AI" },
+  related4Href:  { type: ControlType.String, title: "Related 4 URL",   defaultValue: "/glossary/context-preserving-data-layer" },
 
   // CTA strip
   ctaTitle:       { type: ControlType.String, title: "CTA Title",       defaultValue: "Ready to unblock your AI pilot?" },

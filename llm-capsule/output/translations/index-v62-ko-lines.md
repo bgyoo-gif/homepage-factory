@@ -2,17 +2,17 @@
 
 ## Section 01: Hero
 
-AI Enablement Data Layer
-AI Enablement Data Layer
+Context-Preserving Data Layer for AI
+Context-Preserving Data Layer for AI
 
 Make sensitive workflows run with AI.
 민감한 워크플로우를 AI로 실행하세요.
 
-From blocked workflows to operational AI — without breaking documents, systems, or context. LLM Capsule is the AI enablement data layer for regulated enterprise operations. It plugs into the systems you already run — on-premise, air-gapped, or hybrid — and AI receives the operational structure it needs. Sensitive data stays inside your environment. Outputs return business-ready, in the originating workflow.
+From blocked workflows to operational AI — without breaking documents, systems, or context. LLM Capsule is the context-preserving data layer for AI for regulated enterprise operations. It plugs into the systems you already run — on-premise, air-gapped, or hybrid — and AI receives the operational structure it needs. Sensitive data stays inside your environment. Outputs return business-ready, in the originating workflow.
 차단된 워크플로우에서 운영 AI로 — 문서, 시스템, 컨텍스트를 깨뜨리지 않고. LLM Capsule은 규제 대상 기업 운영을 위한 데이터 레이어입니다. 이미 운영 중인 시스템에 그대로 연결됩니다 — 온프레미스, 망분리, 하이브리드 — AI는 필요한 운영 구조를 그대로 받습니다. 민감 데이터는 환경 내부에 그대로 유지됩니다. 결과물은 원래 워크플로우에서 바로 사용할 수 있는 상태로 돌아옵니다.
 
-The AI enablement data layer for regulated operations.
-규제 대상 운영을 위한 AI enablement data layer.
+The context-preserving data layer for AI for regulated operations.
+규제 대상 운영을 위한 context-preserving data layer for AI.
 
 Request a Demo
 데모 요청
@@ -58,8 +58,8 @@ Telecom · Industrial cybersecurity · Healthcare · Finance · Public sector ·
 
 ## Section 03: Why
 
-Why an AI enablement data layer
-왜 AI enablement data layer인가
+Why a context-preserving data layer for AI
+왜 context-preserving data layer for AI인가
 
 The data AI needs is the data your business can't expose.
 AI에 필요한 데이터는 기업이 외부에 노출할 수 없는 데이터입니다.
@@ -118,8 +118,8 @@ GDPR, HIPAA, SOX, 업종 규제, 감사 의무, 주권 제약 — 단순 필터�
 LLM Capsule turns blocked workflows into running AI workflows.
 LLM Capsule은 차단된 워크플로우를 실행되는 AI 워크플로우로 전환합니다.
 
-Structure-preserving capsule + differential-privacy-based protection + in-environment execution alongside existing legacy systems + restoration into the originating workflow + two execution paths (external approved LLM or on-prem local) + customer-defined markers that change with your business. The AI enablement data layer for regulated operations.
-문서 구조 보존 캡슐 + 차등 프라이버시 기반 보호 + 기존 레거시 시스템과 함께 환경 내 실행 + 원래 워크플로우로 복원 + 두 가지 실행 경로(외부 승인 LLM 또는 온프레미스 로컬) + 비즈니스 변화에 맞춰 바뀌는 고객 정의 마커. 규제 대상 운영을 위한 AI enablement data layer.
+Structure-preserving capsule + differential-privacy-based protection + in-environment execution alongside existing legacy systems + restoration into the originating workflow + two execution paths (external approved LLM or on-prem local) + customer-defined markers that change with your business. The context-preserving data layer for AI for regulated operations.
+문서 구조 보존 캡슐 + 차등 프라이버시 기반 보호 + 기존 레거시 시스템과 함께 환경 내 실행 + 원래 워크플로우로 복원 + 두 가지 실행 경로(외부 승인 LLM 또는 온프레미스 로컬) + 비즈니스 변화에 맞춰 바뀌는 고객 정의 마커. 규제 대상 운영을 위한 context-preserving data layer for AI.
 
 ---
 
@@ -290,8 +290,8 @@ Where it sits
 Not masking. Not a prompt gateway. Not synthetic data.
 마스킹이 아닙니다. 프롬프트 게이트웨이가 아닙니다. 합성 데이터가 아닙니다.
 
-An AI enablement data layer for regulated workflows.
-규제 워크플로우를 위한 AI enablement data layer.
+A context-preserving data layer for AI for regulated workflows.
+규제 워크플로우를 위한 context-preserving data layer for AI.
 
 <table class="compare__table">
   <thead>
@@ -404,17 +404,17 @@ FAQ
 Frequently Asked Questions
 자주 묻는 질문
 
-What is an AI enablement data layer?
-AI enablement data layer란 무엇인가요?
+What is a context-preserving data layer for AI?
+context-preserving data layer for AI란 무엇인가요?
 
-An AI enablement data layer sits between the existing regulated enterprise environment (NOC, ticket, OSS/BSS, OT consoles, EHR, mission systems, document portals) and large language models. It turns operational data into AI-ready context using structure-preserving, differential-privacy-based encapsulation, executes the AI workflow inside the enterprise environment, and restores results back into the originating workflow. It moves AI projects from pilot to production on real enterprise data.
-AI enablement data layer는 기존 규제 대상 기업 환경(NOC, 티켓, OSS/BSS, OT 콘솔, EHR, 미션 시스템, 문서 포털)과 대규모 언어 모델 사이에 위치합니다. 문서 구조 보존 방식의 차등 프라이버시 기반 캡슐화로 운영 데이터를 AI 처리 가능한 컨텍스트로 변환하고, 기업 환경 내에서 AI 워크플로우를 실행하며, 결과를 원래 워크플로우로 복원합니다. 실제 기업 데이터로 AI 프로젝트를 파일럿에서 프로덕션으로 전환합니다.
+A context-preserving data layer for AI sits between the existing regulated enterprise environment (NOC, ticket, OSS/BSS, OT consoles, EHR, mission systems, document portals) and large language models. It turns operational data into AI-ready context using structure-preserving, differential-privacy-based encapsulation, executes the AI workflow inside the enterprise environment, and restores results back into the originating workflow. It moves AI projects from pilot to production on real enterprise data.
+context-preserving data layer for AI는 기존 규제 대상 기업 환경(NOC, 티켓, OSS/BSS, OT 콘솔, EHR, 미션 시스템, 문서 포털)과 대규모 언어 모델 사이에 위치합니다. 문서 구조 보존 방식의 차등 프라이버시 기반 캡슐화로 운영 데이터를 AI 처리 가능한 컨텍스트로 변환하고, 기업 환경 내에서 AI 워크플로우를 실행하며, 결과를 원래 워크플로우로 복원합니다. 실제 기업 데이터로 AI 프로젝트를 파일럿에서 프로덕션으로 전환합니다.
 
 How is LLM Capsule different from PII guardrails or AI security tools?
 LLM Capsule은 PII 가드레일이나 AI 보안 도구와 어떻게 다른가요?
 
-PII guardrails detect and mask personal identifiers at the API or prompt level. AI security tools focus on prompt injection and runtime threats. LLM Capsule operates one layer deeper — at the AI enablement data layer. It transforms structured operational data using structure-preserving, differential-privacy-based encapsulation, supports both external LLM and on-prem local execution paths, and provides two-way restoration via state vault. It plugs into legacy enterprise systems with no architectural change required.
-PII 가드레일은 API 또는 프롬프트 수준에서 개인 식별자를 탐지하고 마스킹합니다. AI 보안 도구는 프롬프트 인젝션과 런타임 위협에 집중합니다. LLM Capsule은 한 단계 더 깊은 곳에서 작동합니다 — AI enablement data layer에서. 문서 구조 보존 방식의 차등 프라이버시 기반 캡슐화로 구조화된 운영 데이터를 변환하고, 외부 LLM과 온프레미스 로컬 실행 경로를 모두 지원하며, State Vault를 통한 양방향 복원을 제공합니다. 아키텍처 변경 없이 레거시 기업 시스템에 연결됩니다.
+PII guardrails detect and mask personal identifiers at the API or prompt level. AI security tools focus on prompt injection and runtime threats. LLM Capsule operates one layer deeper — at the context-preserving data layer for AI. It transforms structured operational data using structure-preserving, differential-privacy-based encapsulation, supports both external LLM and on-prem local execution paths, and provides two-way restoration via state vault. It plugs into legacy enterprise systems with no architectural change required.
+PII 가드레일은 API 또는 프롬프트 수준에서 개인 식별자를 탐지하고 마스킹합니다. AI 보안 도구는 프롬프트 인젝션과 런타임 위협에 집중합니다. LLM Capsule은 한 단계 더 깊은 곳에서 작동합니다 — context-preserving data layer for AI에서. 문서 구조 보존 방식의 차등 프라이버시 기반 캡슐화로 구조화된 운영 데이터를 변환하고, 외부 LLM과 온프레미스 로컬 실행 경로를 모두 지원하며, State Vault를 통한 양방향 복원을 제공합니다. 아키텍처 변경 없이 레거시 기업 시스템에 연결됩니다.
 
 Can our team define what counts as sensitive?
 우리 팀이 민감 정보 기준을 직접 정의할 수 있나요?

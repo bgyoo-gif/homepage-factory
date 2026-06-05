@@ -21,8 +21,8 @@ GLOSSAR
 Definition
 Definition
 
-Two execution paths in the AI enablement data layer. Path A sends capsule data to an external approved LLM with no raw operational data exposure. Path B runs a small private lightweight model entirely inside the enterprise environment with zero external transmission. Selection is policy-driven per workflow.
-Die AI enablement data layer unterstützt zwei Ausführungspfade. Pfad A übermittelt ausschließlich Capsule-Daten an ein externes, zugelassenes LLM — operative Rohdaten verlassen das Unternehmen nicht. Pfad B führt ein kompaktes privates Modell vollständig innerhalb der eigenen Unternehmensumgebung aus, ohne jegliche externe Datenübertragung. Die Pfadauswahl erfolgt richtliniengesteuert je Workflow.
+Two execution paths in the context-preserving data layer for AI. Path A sends capsule data to an external approved LLM with no raw operational data exposure. Path B runs a small private lightweight model entirely inside the enterprise environment with zero external transmission. Selection is policy-driven per workflow.
+Die context-preserving data layer for AI unterstützt zwei Ausführungspfade. Pfad A übermittelt ausschließlich Capsule-Daten an ein externes, zugelassenes LLM — operative Rohdaten verlassen das Unternehmen nicht. Pfad B führt ein kompaktes privates Modell vollständig innerhalb der eigenen Unternehmensumgebung aus, ohne jegliche externe Datenübertragung. Die Pfadauswahl erfolgt richtliniengesteuert je Workflow.
 
 ---
 
@@ -31,7 +31,7 @@ Die AI enablement data layer unterstützt zwei Ausführungspfade. Pfad A übermi
 
 <h2>Definition</h2>
 
-<p>Die AI enablement data layer unterstützt <strong>zwei Ausführungspfade</strong> für den Modellschritt im Workflow:</p>
+<p>Die context-preserving data layer for AI unterstützt <strong>zwei Ausführungspfade</strong> für den Modellschritt im Workflow:</p>
 
 <ul>
 <li><strong>Pfad A — externes zugelassenes LLM, ausschließlich mit Capsule-Daten.</strong> Die Kapsel wird an einen zugelassenen externen Endpunkt übermittelt (ChatGPT, Claude, Gemini, Perplexity oder eine beliebige LLM API). Operative Rohdaten verlassen das Unternehmen nicht.</li>
@@ -60,7 +60,7 @@ Die AI enablement data layer unterstützt zwei Ausführungspfade. Pfad A übermi
 
 <h2>Leitsatz</h2>
 
-<p>Das Modell ist keine einheitliche Entscheidung — es sind zwei Pfade unter einer gemeinsamen Governance. Das ist es, was die AI enablement data layer für regulierte Organisationen geeignet macht, ohne sie auf eine einzige regulatorische Ebene festzulegen.</p>
+<p>Das Modell ist keine einheitliche Entscheidung — es sind zwei Pfade unter einer gemeinsamen Governance. Das ist es, was die context-preserving data layer for AI für regulierte Organisationen geeignet macht, ohne sie auf eine einzige regulatorische Ebene festzulegen.</p>
 
 ## Section 04: Related Terms
 
@@ -79,8 +79,8 @@ State Vault for Restoration
 /resources/glossary/state-vault-for-restoration
 /resources/glossary/state-vault-for-restoration
 
-AI enablement data layer
-AI enablement data layer
+context-preserving data layer for AI
+context-preserving data layer for AI
 
 /resources/glossary/ai-ready-operational-layer
 /resources/glossary/ai-ready-operational-layer

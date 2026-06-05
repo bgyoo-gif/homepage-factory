@@ -15,12 +15,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="What Is an AI Data Capsule? — Enterprise Data Encapsulation for Secure LLM Usage | LLM Capsule">
 <meta name="twitter:description" content="An AI data capsule encapsulates sensitive enterprise data before AI processing and enables local restoration after. Learn how encapsulation differs from masking and redaction.">
-<meta name="keywords" content="enterprise AI enablement, AI-ready data layer, AI adoption enabler, LLM plugin, cross-model execution">
+<meta name="keywords" content="enterprise context-preserving data layer for AI, AI-ready data layer, AI adoption enabler, LLM plugin, cross-model execution">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://llmcapsule.ai/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://llmcapsule.ai/resources"},{"@type":"ListItem","position":3,"name":"Learn","item":"https://llmcapsule.ai/resources/learn"},{"@type":"ListItem","position":4,"name":"What Is an AI Data Capsule?","item":"https://llmcapsule.ai/resources/learn/what-is-ai-data-capsule"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an AI data capsule?","acceptedAnswer":{"@type":"Answer","text":"An AI data capsule is a locally generated AI enablement layer that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows."}},{"@type":"Question","name":"How does an AI data capsule differ from data masking?","acceptedAnswer":{"@type":"Answer","text":"Data masking permanently removes sensitive information, making AI outputs unusable for enterprise workflows. An AI data capsule preserves data structure and enables restoration, so AI results can be restored to their full enterprise context locally."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an AI data capsule?","acceptedAnswer":{"@type":"Answer","text":"An AI data capsule is a locally generated context-preserving data layer for AI that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows."}},{"@type":"Question","name":"How does an AI data capsule differ from data masking?","acceptedAnswer":{"@type":"Answer","text":"Data masking permanently removes sensitive information, making AI outputs unusable for enterprise workflows. An AI data capsule preserves data structure and enables restoration, so AI results can be restored to their full enterprise context locally."}}]}</script>
 <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --green-900:#042116;--green-800:#0A3622;--green-700:#0E4D31;--green-600:#198038;--green-500:#24A148;--green-400:#42BE65;--green-300:#6FDC8C;--green-200:#A7F0BA;--green-100:#DEFBE6;--green-50:#F2FFF6;
@@ -248,11 +248,11 @@ a{color:inherit;text-decoration:none}
   <h2>Definition</h2>
   <div class="definition-box">
     <div class="def-label">AI Data Capsule</div>
-    <p>An AI data capsule is a locally generated AI enablement layer that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.</p>
+    <p>An AI data capsule is a locally generated context-preserving data layer for AI that wraps sensitive enterprise data before it is sent to an external AI service. The capsule preserves document structure and context while replacing sensitive elements with reversible representations. After AI processing, the capsule enables local restoration — restoring AI outputs to their full enterprise context without exposing the original data externally.</p>
   </div>
 
   <h2>Explanation</h2>
-  <p>An AI data capsule operates as an AI enablement data layer through three stages within a restorable workflow:</p>
+  <p>An AI data capsule operates as a context-preserving data layer for AI through three stages within a restorable workflow:</p>
   <p><strong>Local Encapsulation.</strong> Sensitive elements in enterprise documents — names, account numbers, dates, medical codes, contract terms — are detected and replaced with structure-preserving representations. The mapping between original and replaced values is stored locally, never transmitted.</p>
   <p><strong>Protected AI Processing.</strong> The encapsulated document is sent to any external LLM. Because document structure is preserved, the AI model can perform summarization, extraction, classification, and translation effectively. No original sensitive data leaves the enterprise environment.</p>
   <p><strong>Local Restoration.</strong> AI results are automatically restored locally with original enterprise data. The locally stored mapping is applied to reconstruct outputs with real names, amounts, and references, producing results that are directly usable in business workflows.</p>
@@ -268,7 +268,7 @@ a{color:inherit;text-decoration:none}
 
   <div class="faq">
     <h2>FAQ</h2>
-    <div class="faq__item"><div class="faq__q">What is an AI data capsule?</div><div class="faq__a">An AI data capsule is a locally generated AI enablement layer that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.</div></div>
+    <div class="faq__item"><div class="faq__q">What is an AI data capsule?</div><div class="faq__a">An AI data capsule is a locally generated context-preserving data layer for AI that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.</div></div>
     <div class="faq__item"><div class="faq__q">How does an AI data capsule differ from data masking?</div><div class="faq__a">Data masking permanently removes sensitive information, making AI outputs unusable for enterprise workflows. An AI data capsule preserves data structure and enables restoration, so AI results can be restored to their full enterprise context locally.</div></div>
     <div class="faq__item"><div class="faq__q">Does the AI data capsule work with any LLM?</div><div class="faq__a">Yes. Because the capsule operates at the data layer before transmission, it works with any external AI service — ChatGPT, Claude, Gemini, or any LLM API.</div></div>
     <div class="faq__item"><div class="faq__q">Where is the mapping data stored?</div><div class="faq__a">The mapping between original and encapsulated values is stored entirely within the enterprise environment. It is never transmitted to external services.</div></div>
@@ -299,7 +299,7 @@ a{color:inherit;text-decoration:none}
 </div></div>
 <footer class="footer"><div class="container">
 <div class="footer__grid">
-  <div class="footer__brand">LLM Capsule<p>Enterprise AI enablement by CUBIG. Enable AI. Protect data. Restore results.</p></div>
+  <div class="footer__brand">LLM Capsule<p>Context-preserving data layer for AI by CUBIG. Enable AI. Protect data. Restore results.</p></div>
   <div class="footer__col"><h4>Product</h4><ul>
     <li><a href="product.html">Product</a></li>
     <li><a href="architecture.html">Architecture</a></li>
@@ -324,7 +324,7 @@ a{color:inherit;text-decoration:none}
     <li><a href="#">Terms</a></li>
   </ul></div>
 </div>
-<div class="footer__bottom"><span>&copy; 2025 LLM Capsule by CUBIG. All rights reserved.</span><span>Enterprise AI Enablement</span></div>
+<div class="footer__bottom"><span>&copy; 2025 LLM Capsule by CUBIG. All rights reserved.</span><span>Context-Preserving Data Layer for AI</span></div>
 </div></footer>
 <script>document.querySelectorAll('.faq__q').forEach(function(b){b.addEventListener('click',function(){var i=this.closest('.faq__item');var w=i.classList.contains('open');i.parentElement.querySelectorAll('.faq__item').forEach(function(x){x.classList.remove('open')});if(!w)i.classList.add('open')})});</script>
 </body>

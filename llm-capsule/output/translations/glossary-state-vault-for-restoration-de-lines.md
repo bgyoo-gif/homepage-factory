@@ -69,11 +69,11 @@ Der State Vault ist ein ausschließlich lokal betriebener Datenspeicher, der das
 Related terms
 Verwandte Begriffe
 
-AI enablement data layer
-AI enablement data layer
+context-preserving data layer for AI
+context-preserving data layer for AI
 
-/glossary/ai-enablement-data-layer
-/glossary/ai-enablement-data-layer
+/glossary/context-preserving-data-layer
+/glossary/context-preserving-data-layer
 
 Structure-preserving encapsulation
 Strukturerhaltende Kapsulierung

@@ -21,8 +21,8 @@ GLOSSAR
 Definition
 Definition
 
-Structure-preserving encapsulation is the transformation step in an AI enablement data layer that converts operational data into AI-ready context. It tokenizes operational identifiers (device IDs, site IDs, asset references, customer segments) while preserving the relational structure the LLM needs to reason — table layout, log sequence, document hierarchy, configuration tree, topology graph.
-Die strukturerhaltende Kapsulierung ist der Transformationsschritt innerhalb eines AI enablement data layer, der operative Daten in KI-gerechten Kontext überführt. Operative Kennzeichner — Geräte-IDs, Standort-IDs, Asset-Referenzen, Kundensegmente — werden tokenisiert. Die relationale Struktur, die das LLM zur Inferenz benötigt, bleibt dabei unverändert erhalten: Tabellenlayout, Log-Sequenz, Dokumenthierarchie, Konfigurationsbaum und Topologiegraph.
+Structure-preserving encapsulation is the transformation step in a context-preserving data layer for AI that converts operational data into AI-ready context. It tokenizes operational identifiers (device IDs, site IDs, asset references, customer segments) while preserving the relational structure the LLM needs to reason — table layout, log sequence, document hierarchy, configuration tree, topology graph.
+Die strukturerhaltende Kapsulierung ist der Transformationsschritt innerhalb eines context-preserving data layer for AI, der operative Daten in KI-gerechten Kontext überführt. Operative Kennzeichner — Geräte-IDs, Standort-IDs, Asset-Referenzen, Kundensegmente — werden tokenisiert. Die relationale Struktur, die das LLM zur Inferenz benötigt, bleibt dabei unverändert erhalten: Tabellenlayout, Log-Sequenz, Dokumenthierarchie, Konfigurationsbaum und Topologiegraph.
 
 ---
 
@@ -62,7 +62,7 @@ Die strukturerhaltende Kapsulierung ist der Transformationsschritt innerhalb ein
 
 <h2>Leitsatz</h2>
 
-<p>Die strukturerhaltende Kapsulierung macht die Kapsel nutzbar. Der auf Differential Privacy basierende Schutz macht sie verteidigbar. Der State Vault macht sie wiederherstellbar. Zusammen bilden sie den AI enablement data layer.</p>
+<p>Die strukturerhaltende Kapsulierung macht die Kapsel nutzbar. Der auf Differential Privacy basierende Schutz macht sie verteidigbar. Der State Vault macht sie wiederherstellbar. Zusammen bilden sie den context-preserving data layer for AI.</p>
 
 ## Section 04: Related Terms
 
@@ -87,8 +87,8 @@ Zwei Ausführungspfade
 /glossary/two-execution-paths
 /glossary/two-execution-paths
 
-AI enablement data layer
-AI enablement data layer
+context-preserving data layer for AI
+context-preserving data layer for AI
 
-/glossary/ai-enablement-data-layer
-/glossary/ai-enablement-data-layer
+/glossary/context-preserving-data-layer
+/glossary/context-preserving-data-layer

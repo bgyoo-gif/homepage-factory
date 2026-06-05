@@ -36,7 +36,7 @@ interface Props {
 
 const DEFAULT_BODY_HTML = `
 <h2>Definition</h2>
-<p>The AI enablement data layer supports <strong>two execution paths</strong> for the model step inside the workflow:</p>
+<p>The context-preserving data layer for AI supports <strong>two execution paths</strong> for the model step inside the workflow:</p>
 <ul>
   <li><strong>Path A — external approved LLM with capsule data only.</strong> The capsule is transmitted to an approved external endpoint (ChatGPT, Claude, Gemini, Perplexity, or any LLM API). Raw operational data does not leave the enterprise.</li>
   <li><strong>Path B — on-prem local lightweight model.</strong> A small private model runs entirely inside the enterprise environment. Zero external transmission.</li>
@@ -62,7 +62,7 @@ const DEFAULT_BODY_HTML = `
 <p>A single path forces a single regulatory floor. Carriers, hospitals, OT operators, and defense contractors typically run multiple regulatory profiles within the same organization. Two paths let governance match the path to the workflow.</p>
 
 <h2>Reference statement</h2>
-<blockquote><p>The model is not a single decision; it is two paths under a single governance. That is what makes the AI enablement data layer fit regulated organizations without forcing them to one regulatory floor.</p></blockquote>
+<blockquote><p>The model is not a single decision; it is two paths under a single governance. That is what makes the context-preserving data layer for AI fit regulated organizations without forcing them to one regulatory floor.</p></blockquote>
 `
 
 export default function GlossaryPage_TwoExecutionPaths({
@@ -72,13 +72,13 @@ export default function GlossaryPage_TwoExecutionPaths({
   lead = "External approved LLM — or on-prem local lightweight model. Policy decides per workflow.",
   category = "GLOSSARY",
   definitionLabel = "Definition",
-  definitionBody = "Two execution paths in the AI enablement data layer. Path A sends capsule data to an external approved LLM with no raw operational data exposure. Path B runs a small private lightweight model entirely inside the enterprise environment with zero external transmission. Selection is policy-driven per workflow.",
+  definitionBody = "Two execution paths in the context-preserving data layer for AI. Path A sends capsule data to an external approved LLM with no raw operational data exposure. Path B runs a small private lightweight model entirely inside the enterprise environment with zero external transmission. Selection is policy-driven per workflow.",
   bodyHtml = DEFAULT_BODY_HTML,
   related1Label = "Pillar guide: On-prem LLM execution path",
   related1Href = "/resources/learn/on-prem-llm-execution-path",
   related2Label = "State vault for restoration",
   related2Href = "/resources/glossary/state-vault-for-restoration",
-  related3Label = "AI enablement data layer",
+  related3Label = "context-preserving data layer for AI",
   related3Href = "/resources/glossary/ai-ready-operational-layer",
   related4Label = "",
   related4Href = "",
@@ -546,7 +546,7 @@ addPropertyControls(GlossaryPage_TwoExecutionPaths, {
   definitionBody:  {
     type: ControlType.String,
     title: "Definition Body",
-    defaultValue: "Two execution paths in the AI enablement data layer. Path A sends capsule data to an external approved LLM with no raw operational data exposure. Path B runs a small private lightweight model entirely inside the enterprise environment with zero external transmission. Selection is policy-driven per workflow.",
+    defaultValue: "Two execution paths in the context-preserving data layer for AI. Path A sends capsule data to an external approved LLM with no raw operational data exposure. Path B runs a small private lightweight model entirely inside the enterprise environment with zero external transmission. Selection is policy-driven per workflow.",
     displayTextArea: true,
   },
 
@@ -558,7 +558,7 @@ addPropertyControls(GlossaryPage_TwoExecutionPaths, {
   related1Href:  { type: ControlType.String, title: "Related 1 URL",   defaultValue: "/resources/learn/on-prem-llm-execution-path" },
   related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "State vault for restoration" },
   related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/resources/glossary/state-vault-for-restoration" },
-  related3Label: { type: ControlType.String, title: "Related 3 Label", defaultValue: "AI enablement data layer" },
+  related3Label: { type: ControlType.String, title: "Related 3 Label", defaultValue: "context-preserving data layer for AI" },
   related3Href:  { type: ControlType.String, title: "Related 3 URL",   defaultValue: "/resources/glossary/ai-ready-operational-layer" },
   related4Label: { type: ControlType.String, title: "Related 4 Label", defaultValue: "" },
   related4Href:  { type: ControlType.String, title: "Related 4 URL",   defaultValue: "" },

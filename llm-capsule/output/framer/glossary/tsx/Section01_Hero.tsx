@@ -12,7 +12,7 @@ interface Props {
 export default function Section01_Hero({
   title = "Enterprise AI ",
   titleHighlight = "Enablement",
-  description = "Key terms and definitions for enterprise AI enablement, LLM data privacy, and secure enterprise AI workflows.",
+  description = "Key terms and definitions for enterprise context-preserving data layer for AI, LLM data privacy, and secure enterprise AI workflows.",
   breadcrumbHome = "Home",
   breadcrumbResources = "Resources",
   breadcrumbCurrent = "Glossary",
@@ -179,7 +179,7 @@ addPropertyControls(Section01_Hero, {
   description: {
     type: ControlType.String,
     title: "Description",
-    defaultValue: "Key terms and definitions for enterprise AI enablement, LLM data privacy, and secure enterprise AI workflows.",
+    defaultValue: "Key terms and definitions for enterprise context-preserving data layer for AI, LLM data privacy, and secure enterprise AI workflows.",
     displayTextArea: true,
   },
   breadcrumbHome: {

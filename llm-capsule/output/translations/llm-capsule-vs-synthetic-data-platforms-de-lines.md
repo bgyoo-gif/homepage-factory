@@ -23,7 +23,7 @@ Overview
 LLM Capsule
 LLM Capsule
 
-Synthetic data platforms generate artificial datasets that mimic the statistical properties of real data. They are used for model training, testing, and analytics where real data cannot be used. LLM Capsule addresses a different problem: it is an AI enablement data layer that enables AI processing on real enterprise documents while protecting sensitive elements and restoring usable outputs.
+Synthetic data platforms generate artificial datasets that mimic the statistical properties of real data. They are used for model training, testing, and analytics where real data cannot be used. LLM Capsule addresses a different problem: it is a context-preserving data layer for AI that enables AI processing on real enterprise documents while protecting sensitive elements and restoring usable outputs.
 Synthetische Datenplattformen erzeugen künstliche Datensätze, die statistische Eigenschaften realer Daten nachbilden. Sie werden für Modelltraining, Tests und Analysen eingesetzt, wo echte Daten nicht verwendet werden dürfen. LLM Capsule löst eine grundlegend andere Aufgabe: Als KI-Enablement-Datenschicht ermöglicht es die KI-Verarbeitung echter Unternehmensdokumente — sensible Inhalte werden geschützt, die Ausgaben lokal wiederhergestellt.
 
 

@@ -78,5 +78,5 @@ Request a Demo
 View Product
 製品を見る
 
-Enterprise AI Enablement by CUBIG
-Enterprise AI Enablement by CUBIG
+Context-Preserving Data Layer for AI by CUBIG
+Context-Preserving Data Layer for AI by CUBIG

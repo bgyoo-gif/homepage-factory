@@ -47,7 +47,7 @@ interface Props {
 
 const DEFAULT_BODY_HTML = `
 <h2>Why this comparison matters</h2>
-<p>Buyers evaluating enterprise AI routinely encounter four kinds of products in the same shortlist: PII guardrails, prompt security gateways, AI security suites, and the AI enablement data layer. They are not equivalent. Treating them as interchangeable leads to deployments that pass the PII filter but still expose the sensitive part of the workflow.</p>
+<p>Buyers evaluating enterprise AI routinely encounter four kinds of products in the same shortlist: PII guardrails, prompt security gateways, AI security suites, and the context-preserving data layer for AI. They are not equivalent. Treating them as interchangeable leads to deployments that pass the PII filter but still expose the sensitive part of the workflow.</p>
 <p>This article puts them on the same page. It defines what each category does, where it fits in the pipeline, what it covers, and what it leaves uncovered.</p>
 
 <h2>The four categories</h2>
@@ -64,9 +64,9 @@ const DEFAULT_BODY_HTML = `
 <p>Generate synthetic versions of training or evaluation datasets that approximate the statistical properties of the original. Used for AI training pipelines and analytics, not for runtime protection of live operational data.</p>
 <p><strong>Layer:</strong> data pipeline (offline). <strong>Scope:</strong> dataset generation. <strong>Strength:</strong> training data for ML. <strong>Limitation:</strong> does not run in the live workflow.</p>
 
-<h3>4. AI Enablement Data Layer (LLM Capsule)</h3>
+<h3>4. Context-Preserving Data Layer for AI (LLM Capsule)</h3>
 <p>Sits between the existing enterprise environment (NOC, ticket, OT, EHR, mission systems) and the LLM. Transforms regulated operational data into AI-ready context using structure-preserving, differential-privacy-based encapsulation. Routes through one of two execution paths (external approved LLM or on-prem local model). Restores results back to the workflow via state vault.</p>
-<p><strong>Layer:</strong> AI enablement data layer. <strong>Scope:</strong> operational data + governance. <strong>Strength:</strong> structured operational data, two execution paths, plug-in to legacy systems. <strong>Limitation:</strong> is not a prompt injection defense or a synthetic data generator.</p>
+<p><strong>Layer:</strong> context-preserving data layer for AI. <strong>Scope:</strong> operational data + governance. <strong>Strength:</strong> structured operational data, two execution paths, plug-in to legacy systems. <strong>Limitation:</strong> is not a prompt injection defense or a synthetic data generator.</p>
 
 <h2>Direct comparison table</h2>
 <table>
@@ -79,7 +79,7 @@ const DEFAULT_BODY_HTML = `
     </tr>
   </thead>
   <tbody>
-    <tr><td>Layer</td><td>API wrapper</td><td>Prompt / gateway</td><td>AI enablement data layer</td></tr>
+    <tr><td>Layer</td><td>API wrapper</td><td>Prompt / gateway</td><td>context-preserving data layer for AI</td></tr>
     <tr><td>Scope</td><td>Names, IDs, fields</td><td>Prompt threats + PII</td><td>Operational data + governance</td></tr>
     <tr><td>Method</td><td>Detect &amp; mask</td><td>Filter / sanitize prompts</td><td>Structure-preserving + DP-based encapsulation</td></tr>
     <tr><td>Plug into legacy systems</td><td>No</td><td>No</td><td>Yes (NOC, Ticket, OT, EHR, Mission)</td></tr>
@@ -106,16 +106,16 @@ const DEFAULT_BODY_HTML = `
 <p><strong>What LLM Capsule does differently:</strong> the OT/asset reference markers (PLC tag, plant zone, asset inventory ref) are detected and encapsulated. The execution path is policy-driven — for OT, Path B (on-prem local) is typical, providing zero external transmission.</p>
 
 <h2>How they compose in practice</h2>
-<p>PII guardrails, prompt security, synthetic data platforms, and the AI enablement data layer are not mutually exclusive. A mature enterprise stack often runs all four in different parts of the AI pipeline:</p>
+<p>PII guardrails, prompt security, synthetic data platforms, and the context-preserving data layer for AI are not mutually exclusive. A mature enterprise stack often runs all four in different parts of the AI pipeline:</p>
 <ul>
   <li>PII guardrails — at the API call layer for low-regulation features</li>
   <li>AI security / prompt protection — at the gateway for prompt threat defense</li>
   <li>Synthetic data — in the offline training pipeline</li>
-  <li>LLM Capsule — at the AI enablement data layer for regulated operational data</li>
+  <li>LLM Capsule — at the context-preserving data layer for AI for regulated operational data</li>
 </ul>
 <p>The mistake is treating the first as if it were the fourth. Field-level masking is not a substitute for distributional protection on operational data.</p>
 
-<div class="callout"><strong>Buyer test.</strong> When the AI pipeline involves NOC logs, incident records, OT manifests, configuration trees, clinical workflows, or mission context — the AI enablement data layer is the right place to evaluate. PII guardrails are necessary but not sufficient.</div>
+<div class="callout"><strong>Buyer test.</strong> When the AI pipeline involves NOC logs, incident records, OT manifests, configuration trees, clinical workflows, or mission context — the context-preserving data layer for AI is the right place to evaluate. PII guardrails are necessary but not sufficient.</div>
 
 <h2>Where to verify</h2>
 <p>LLM Capsule is validated in regulated operational settings:</p>
@@ -130,9 +130,9 @@ const DEFAULT_BODY_HTML = `
 <div class="takeaways">
   <div class="takeaways__label">Key takeaways</div>
   <ul>
-    <li>PII guardrails and the AI enablement data layer address different layers of the enterprise AI pipeline.</li>
+    <li>PII guardrails and the context-preserving data layer for AI address different layers of the enterprise AI pipeline.</li>
     <li>PII guardrails, AI security suites, and prompt security gateways — each is strong in its own scope (risk control, policy enforcement, prompt-level protection). None of them transforms structured operational data with differential-privacy-based encapsulation.</li>
-    <li>The buyer test: if the sensitive content is structural (logs, configs, OT, clinical, mission), you need an AI enablement data layer, not just a guardrail.</li>
+    <li>The buyer test: if the sensitive content is structural (logs, configs, OT, clinical, mission), you need a context-preserving data layer for AI, not just a guardrail.</li>
     <li>The categories compose. The mistake is treating PII guardrails as if they covered operational data.</li>
     <li>LLM Capsule provides plug-in to legacy systems, two execution paths, two-way restoration, and full governance — alongside, not instead of, PII guardrails where they are needed.</li>
   </ul>
@@ -148,7 +148,7 @@ export default function LearnArticle_PiiGuardrailsVsOperationalDataProtection({
   readTime = "11 min read",
   dateUpdated = "Updated May 2025",
   tldrLabel = "Definition · TL;DR",
-  tldrBody = "PII guardrails protect identifiable fields at the API or prompt layer. The AI enablement data layer protects structured enterprise data — network logs, configurations, incident records, OT and mission context — using structure-preserving, differential-privacy-based encapsulation. They address adjacent but different layers of the enterprise AI pipeline.",
+  tldrBody = "PII guardrails protect identifiable fields at the API or prompt layer. The context-preserving data layer for AI protects structured enterprise data — network logs, configurations, incident records, OT and mission context — using structure-preserving, differential-privacy-based encapsulation. They address adjacent but different layers of the enterprise AI pipeline.",
   bodyHtml = DEFAULT_BODY_HTML,
   canonicalUrl = "https://llmcapsule.ai/resources/learn/pii-guardrails-vs-operational-data-protection",
   datePublished = "2025-05-01",
@@ -163,7 +163,7 @@ export default function LearnArticle_PiiGuardrailsVsOperationalDataProtection({
   related3Title = "On-prem LLM execution path",
   related3Href = "/resources/learn/on-prem-llm-execution-path",
   ctaTitle = "Map your stack against the categories.",
-  ctaDescription = "30-minute review of where PII guardrails, prompt security, and the AI enablement data layer fit in your AI pipeline.",
+  ctaDescription = "30-minute review of where PII guardrails, prompt security, and the context-preserving data layer for AI fit in your AI pipeline.",
   ctaLabel = "Request a Demo",
   ctaHref = "/request-a-demo",
 }: Props) {
@@ -177,7 +177,7 @@ export default function LearnArticle_PiiGuardrailsVsOperationalDataProtection({
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "headline": "PII Guardrails vs Operational Data Protection",
-    "description": "A direct comparison: where PII guardrails fit, what they miss, and how the AI enablement data layer differs.",
+    "description": "A direct comparison: where PII guardrails fit, what they miss, and how the context-preserving data layer for AI differs.",
     "author": { "@type": "Organization", "name": "CUBIG" },
     "publisher": { "@type": "Organization", "name": "CUBIG" },
     "datePublished": datePublished,
@@ -192,10 +192,10 @@ export default function LearnArticle_PiiGuardrailsVsOperationalDataProtection({
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Are PII guardrails the same as the AI enablement data layer?",
+        "name": "Are PII guardrails the same as the context-preserving data layer for AI?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. PII guardrails detect and mask personal identifiers — names, IDs, financial fields. The AI enablement data layer covers complex enterprise data such as network logs, incident records, configurations, OT manifests, and clinical or mission context. Operational data leaks information through structure, sequence, and aggregate pattern, not just through identifiable fields. Field-level masking alone does not protect it.",
+          "text": "No. PII guardrails detect and mask personal identifiers — names, IDs, financial fields. The context-preserving data layer for AI covers complex enterprise data such as network logs, incident records, configurations, OT manifests, and clinical or mission context. Operational data leaks information through structure, sequence, and aggregate pattern, not just through identifiable fields. Field-level masking alone does not protect it.",
         },
       },
       {
@@ -822,7 +822,7 @@ addPropertyControls(LearnArticle_PiiGuardrailsVsOperationalDataProtection, {
 
   // TL;DR
   tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "Definition · TL;DR" },
-  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "PII guardrails protect identifiable fields at the API or prompt layer. The AI enablement data layer protects structured enterprise data — network logs, configurations, incident records, OT and mission context — using structure-preserving, differential-privacy-based encapsulation. They address adjacent but different layers of the enterprise AI pipeline.", displayTextArea: true },
+  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "PII guardrails protect identifiable fields at the API or prompt layer. The context-preserving data layer for AI protects structured enterprise data — network logs, configurations, incident records, OT and mission context — using structure-preserving, differential-privacy-based encapsulation. They address adjacent but different layers of the enterprise AI pipeline.", displayTextArea: true },
 
   // Body HTML
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: DEFAULT_BODY_HTML, displayTextArea: true },
@@ -845,7 +845,7 @@ addPropertyControls(LearnArticle_PiiGuardrailsVsOperationalDataProtection, {
 
   // CTA strip
   ctaTitle:       { type: ControlType.String, title: "CTA Title",        defaultValue: "Map your stack against the categories." },
-  ctaDescription: { type: ControlType.String, title: "CTA Description",  defaultValue: "30-minute review of where PII guardrails, prompt security, and the AI enablement data layer fit in your AI pipeline.", displayTextArea: true },
+  ctaDescription: { type: ControlType.String, title: "CTA Description",  defaultValue: "30-minute review of where PII guardrails, prompt security, and the context-preserving data layer for AI fit in your AI pipeline.", displayTextArea: true },
   ctaLabel:       { type: ControlType.String, title: "CTA Button Label", defaultValue: "Request a Demo" },
   ctaHref:        { type: ControlType.String, title: "CTA Button URL",   defaultValue: "/request-a-demo" },
 })

@@ -24,7 +24,7 @@ export default function Section06_CTA({
   primaryButtonHref = "/request-a-demo",
   secondaryButtonLabel = "View Product",
   secondaryButtonHref = "/product",
-  footnote = "Enterprise AI Enablement by CUBIG",
+  footnote = "Context-Preserving Data Layer for AI by CUBIG",
   jsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -231,6 +231,6 @@ addPropertyControls(Section06_CTA, {
   footnote: {
     type: ControlType.String,
     title: "Footnote",
-    defaultValue: "Enterprise AI Enablement by CUBIG",
+    defaultValue: "Context-Preserving Data Layer for AI by CUBIG",
   },
 })

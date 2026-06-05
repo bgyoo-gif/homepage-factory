@@ -43,8 +43,8 @@ Erläuterung
 Secure LLM usage is distinct from model-level security measures like prompt filtering or output scanning. Those approaches monitor the interaction with the AI model but do not prevent the data itself from being transmitted. Secure LLM usage operates at the data layer — transforming what the AI receives so that sensitive information never reaches the model.
 Sichere LLM-Nutzung unterscheidet sich grundlegend von Sicherheitsmassnahmen auf Modellebene wie Prompt-Filterung oder Output-Scanning. Diese Ansaetze ueberwachen die Interaktion mit dem KI-Modell, verhindern aber nicht die Uebertragung der Daten selbst. Sichere LLM-Nutzung setzt an der Datenebene an und transformiert die Eingabedaten so, dass vertrauliche Informationen das Modell nicht erreichen.
 
-This approach is model-agnostic. Whether the enterprise uses ChatGPT, Claude, Gemini, Perplexity, or any other LLM API, the AI enablement data layer remains consistent because it operates before the data reaches any model — enabling cross-model execution from a single AI enablement layer.
-Dieser Ansatz ist modellunabhaengig. Ob ein Unternehmen ChatGPT, Claude, Gemini, Perplexity oder eine andere LLM-API nutzt, die AI Enablement-Datenschicht arbeitet einheitlich vor der Datenuebermittlung an ein Modell. So ist eine modelluebergreifende Verarbeitung ueber eine einzige Datenschicht moeglich.
+This approach is model-agnostic. Whether the enterprise uses ChatGPT, Claude, Gemini, Perplexity, or any other LLM API, the context-preserving data layer for AI remains consistent because it operates before the data reaches any model — enabling cross-model execution from a single context-preserving data layer for AI.
+Dieser Ansatz ist modellunabhaengig. Ob ein Unternehmen ChatGPT, Claude, Gemini, Perplexity oder eine andere LLM-API nutzt, die Context-Preserving Data Layer for AI-Datenschicht arbeitet einheitlich vor der Datenuebermittlung an ein Modell. So ist eine modelluebergreifende Verarbeitung ueber eine einzige Datenschicht moeglich.
 
 ## Section05_Example
 
@@ -91,8 +91,8 @@ sichere LLM-Nutzung
  for Your Enterprise
  in Ihrem Unternehmen
 
-Process sensitive data through any LLM without exposure. Experience the AI enablement data layer.
-Verarbeiten Sie vertrauliche Daten ueber beliebige LLM-Dienste, ohne Originaldaten preiszugeben. Die AI Enablement-Datenschicht schuetzt Ihre Daten auf Dokumentenebene.
+Process sensitive data through any LLM without exposure. Experience the context-preserving data layer for AI.
+Verarbeiten Sie vertrauliche Daten ueber beliebige LLM-Dienste, ohne Originaldaten preiszugeben. Die Context-Preserving Data Layer for AI-Datenschicht schuetzt Ihre Daten auf Dokumentenebene.
 
 Request a Demo
 Demo anfordern
@@ -100,5 +100,5 @@ Demo anfordern
 View Product
 Produkt ansehen
 
-Enterprise AI Enablement by CUBIG
-Enterprise AI Enablement von CUBIG
+Context-Preserving Data Layer for AI by CUBIG
+Context-Preserving Data Layer for AI von CUBIG

@@ -92,7 +92,7 @@ AI結果は元のエンタープライズデータでローカルに自動的に
 LLM Capsule
 LLM Capsule
 
- as an AI enablement data layer from static redaction tools.
+ as a context-preserving data layer for AI from static redaction tools.
 静的リダクションツールとは異なるAI活用データレイヤーとして。
 
 ## Section 05: Comparison Table
@@ -112,7 +112,7 @@ Capability
 Redaction / Masking Tools
 リダクション / マスキングツール
 
-LLM Capsule (AI Enablement Data Layer)
+LLM Capsule (Context-Preserving Data Layer for AI)
 LLM Capsule（AI活用データレイヤー）
 
 Data protection

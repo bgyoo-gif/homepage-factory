@@ -1,7 +1,7 @@
 import { addPropertyControls, ControlType } from "framer"
 
-// GlossaryPage_AiEnablementDataLayer
-// Content component for /glossary/ai-enablement-data-layer
+// GlossaryPage_ContextPreservingDataLayer
+// Content component for /glossary/context-preserving-data-layer
 // Uses GlossaryDetail layout: Hero → Definition → Article Body → Related Terms
 // v6.2 rules: var(--c-*) tokens, @container queries, Inter font, no gradient buttons, no !important
 // Props match GlossaryDetail CMS Collection schema
@@ -83,16 +83,16 @@ const DEFAULT_BODY_HTML = `
 <p>SK Telecom (telecom NOC), Deutsche Telekom T Challenge 2026 Top 12 in Data Security &amp; Governance, Claroty (industrial cybersecurity), EUMC (hospital clinical), Kyobo / DB Insurance / IBK (finance), Shin&amp;Kim (legal), Ministry of National Defense Korea (mission workflows). Recognized as Gartner Vendor.</p>
 `
 
-export default function GlossaryPage_AiEnablementDataLayer({
+export default function GlossaryPage_ContextPreservingDataLayer({
   backLabel = "← Glossary",
   backHref = "/glossary",
-  term = "AI enablement data layer",
+  term = "context-preserving data layer for AI",
   lead = "The architectural component that makes regulated enterprise AI workflows actually work — between operational systems and large language models.",
   category = "P0 · Category definition",
   definitionLabel = "Definition",
-  definitionBody = "An AI enablement data layer is the architectural component that sits between regulated enterprise systems (NOC consoles, EHR, claim platforms, mission systems, legacy DBs) and large language models. It turns operational data into AI-ready capsules using structure-preserving, differential-privacy-based encapsulation, executes AI workflows on the protected capsule, and restores outputs back into the originating system. It supports two execution paths — external approved LLM with capsule data only, or on-prem local lightweight model — under a single governance framework.",
+  definitionBody = "A context-preserving data layer for AI is the architectural component that sits between regulated enterprise systems (NOC consoles, EHR, claim platforms, mission systems, legacy DBs) and large language models. It turns operational data into AI-ready capsules using structure-preserving, differential-privacy-based encapsulation, executes AI workflows on the protected capsule, and restores outputs back into the originating system. It supports two execution paths — external approved LLM with capsule data only, or on-prem local lightweight model — under a single governance framework.",
   bodyHtml = DEFAULT_BODY_HTML,
-  related1Label = "AI enablement data layer",
+  related1Label = "context-preserving data layer for AI",
   related1Href = "/glossary/ai-ready-operational-layer",
   related2Label = "Structure-preserving encapsulation",
   related2Href = "/glossary/structure-preserving-encapsulation",
@@ -498,11 +498,11 @@ export default function GlossaryPage_AiEnablementDataLayer({
   )
 }
 
-addPropertyControls(GlossaryPage_AiEnablementDataLayer, {
+addPropertyControls(GlossaryPage_ContextPreservingDataLayer, {
   // Hero
   backLabel: { type: ControlType.String, title: "Back Label",   defaultValue: "← Glossary" },
   backHref:  { type: ControlType.String, title: "Back URL",     defaultValue: "/glossary" },
-  term:      { type: ControlType.String, title: "Term",         defaultValue: "AI enablement data layer" },
+  term:      { type: ControlType.String, title: "Term",         defaultValue: "context-preserving data layer for AI" },
   lead:      { type: ControlType.String, title: "Lead",         defaultValue: "The architectural component that makes regulated enterprise AI workflows actually work — between operational systems and large language models.", displayTextArea: true },
   category:  { type: ControlType.String, title: "Category",     defaultValue: "P0 · Category definition" },
 
@@ -511,7 +511,7 @@ addPropertyControls(GlossaryPage_AiEnablementDataLayer, {
   definitionBody:  {
     type: ControlType.String,
     title: "Definition Body",
-    defaultValue: "An AI enablement data layer is the architectural component that sits between regulated enterprise systems (NOC consoles, EHR, claim platforms, mission systems, legacy DBs) and large language models. It turns operational data into AI-ready capsules using structure-preserving, differential-privacy-based encapsulation, executes AI workflows on the protected capsule, and restores outputs back into the originating system. It supports two execution paths — external approved LLM with capsule data only, or on-prem local lightweight model — under a single governance framework.",
+    defaultValue: "A context-preserving data layer for AI is the architectural component that sits between regulated enterprise systems (NOC consoles, EHR, claim platforms, mission systems, legacy DBs) and large language models. It turns operational data into AI-ready capsules using structure-preserving, differential-privacy-based encapsulation, executes AI workflows on the protected capsule, and restores outputs back into the originating system. It supports two execution paths — external approved LLM with capsule data only, or on-prem local lightweight model — under a single governance framework.",
     displayTextArea: true,
   },
 
@@ -519,7 +519,7 @@ addPropertyControls(GlossaryPage_AiEnablementDataLayer, {
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: DEFAULT_BODY_HTML, displayTextArea: true },
 
   // Related terms
-  related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "AI enablement data layer" },
+  related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "context-preserving data layer for AI" },
   related1Href:  { type: ControlType.String, title: "Related 1 URL",   defaultValue: "/glossary/ai-ready-operational-layer" },
   related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "Structure-preserving encapsulation" },
   related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/glossary/structure-preserving-encapsulation" },

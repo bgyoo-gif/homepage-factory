@@ -27,7 +27,7 @@ B타입 HTML 4개 카테고리 검증 (CAT-1 ~ CAT-4).
 
 | 항목 | 결과 |
 |------|------|
-| 모든 섹션 제목 존재 | PASS — "Enterprise AI Enablement Resources", "Explore Resources", "Core guides for enterprise AI enablement", "See how LLM Capsule works with your data" 모두 존재 |
+| 모든 섹션 제목 존재 | PASS — "Context-Preserving Data Layer for AI Resources", "Explore Resources", "Core guides for enterprise context-preserving data layer for AI", "See how LLM Capsule works with your data" 모두 존재 |
 | 모든 본문 텍스트 누락/변경 없음 | PASS — Learn/Glossary/Downloads/Trust Center 4개 허브 카드 설명문, 3개 Core Guide 카드 설명문, CTA 설명문 원본과 일치 |
 | 수치/데이터 정확 일치 | PASS — 수치 데이터 없음 |
 | 목록 항목 수 일치 | PASS — 허브 카드 4개(원본 4개), 코어 가이드 3개(원본 3개), CTA 링크 2개(원본 2개) |

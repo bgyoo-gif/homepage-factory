@@ -15,8 +15,8 @@
 | Field | Value |
 |-------|-------|
 | title | Resources \| LLM Capsule — Learn, Glossary, Trust Center |
-| description | Technical documentation, learning articles, glossary, and trust resources for enterprise AI enablement with LLM Capsule. Industry deployment guides for telecom, healthcare, finance, defense. |
-| keywords | LLM Capsule resources, enterprise AI documentation, AI enablement learning, AI glossary |
+| description | Technical documentation, learning articles, glossary, and trust resources for enterprise context-preserving data layer for AI with LLM Capsule. Industry deployment guides for telecom, healthcare, finance, defense. |
+| keywords | LLM Capsule resources, enterprise AI documentation, context-preserving data layer for AI learning, AI glossary |
 | canonical | https://llmcapsule.ai/resources |
 | JSON-LD | CollectionPage + BreadcrumbList |
 
@@ -39,15 +39,15 @@ Section padding: `var(--s-section, clamp(64px, 8vw, 128px))`
 **Layout:** centered, no background image
 **Content:**
 - Eyebrow: "Resources" (purple, uppercase, mono)
-- h1: "Enterprise AI enablement **resources**" (bold in `<strong>`)
+- h1: "Context-preserving data layer for AI **resources**" (bold in `<strong>`)
 - Subtitle: "Technical documentation, learning articles, glossary, and trust resources — for architects, CDOs, CISOs, privacy officers, and industry buyers building regulated AI workflows."
 - Background: soft gradient `#fafbff → #ffffff`, border-bottom 1px rule
 
 ### Section 2 — Resource Cards (3-column)
 **Layout:** 3-col grid, 1-col mobile
 **Cards:**
-1. **Learn** — icon 📖, count chip "8 articles · GEO-optimized", description: "In-depth articles on enterprise AI enablement — architecture patterns, industry deployment guides (telecom, healthcare, finance, defense), pilot-to-production playbooks, sovereign AI under GDPR / EU AI Act.", CTA link "Browse Learn articles →" → `#articles`
-2. **Glossary** — icon 📚, count chip "11 terms · Schema.org", description: "Definitions of category and architectural concepts — AI enablement data layer, structure-preserving encapsulation, two execution paths, sovereign AI, shadow AI, differential privacy. Each term with definition and cross-links.", CTA link "Browse Glossary terms →" → `#glossary`
+1. **Learn** — icon 📖, count chip "8 articles · GEO-optimized", description: "In-depth articles on enterprise context-preserving data layer for AI — architecture patterns, industry deployment guides (telecom, healthcare, finance, defense), pilot-to-production playbooks, sovereign AI under GDPR / EU AI Act.", CTA link "Browse Learn articles →" → `#articles`
+2. **Glossary** — icon 📚, count chip "11 terms · Schema.org", description: "Definitions of category and architectural concepts — context-preserving data layer for AI, structure-preserving encapsulation, two execution paths, sovereign AI, shadow AI, differential privacy. Each term with definition and cross-links.", CTA link "Browse Glossary terms →" → `#glossary`
 3. **Trust Center** — icon 🛡️, count chip "12 certifications · Compliance", description: "Security certifications, compliance frameworks (GDPR / HIPAA / SOX / EU AI Act), audit documentation, DPA template, vendor security questionnaire. Everything compliance and security teams need for evaluation.", CTA link "Visit Trust Center →" → `/trust`
 
 **Card style:** white bg, 1px rule border, radius `--r-lg (16px)`, NO colored border-top/left, NO box-shadow
@@ -106,14 +106,14 @@ Section padding: `var(--s-section, clamp(64px, 8vw, 128px))`
 - Description: "11 definitions for buyers, architects, and security teams. Each term with Schema.org DefinedTerm markup."
 
 **11 Glossary term cards:**
-1. term: "AI enablement data layer" | definition: "The category. Architectural component between regulated systems and LLMs." | href: `/glossary/ai-enablement-data-layer`
+1. term: "context-preserving data layer for AI" | definition: "The category. Architectural component between regulated systems and LLMs." | href: `/glossary/context-preserving-data-layer`
 2. term: "AI-ready operational layer" | definition: "Operational data made AI-consumable while sensitive elements are protected." | href: `/glossary/ai-ready-operational-layer`
 3. term: "Structure-preserving encapsulation" | definition: "Replacing sensitive elements while keeping document structure intact." | href: `/glossary/structure-preserving-encapsulation`
 4. term: "Differential privacy" | definition: "Mathematical framework for privacy-preserving data transformation with bounded risk." | href: `/glossary/differential-privacy`
 5. term: "Two execution paths" | definition: "Path A (external LLM with capsule) and Path B (on-prem local model) under one governance." | href: `/glossary/two-execution-paths`
 6. term: "Operational data" | definition: "Workflow data — tickets, configs, clinical notes, claims — that real AI work runs on." | href: `/glossary/operational-data`
 7. term: "Sovereign AI" | definition: "AI workflows where data, processing, and audit stay inside a defined boundary." | href: `/glossary/sovereign-ai`
-8. term: "Shadow AI" | definition: "Unsanctioned external LLM use; symptom of missing AI enablement data layer." | href: `/glossary/shadow-ai`
+8. term: "Shadow AI" | definition: "Unsanctioned external LLM use; symptom of missing context-preserving data layer for AI." | href: `/glossary/shadow-ai`
 9. term: "Blocked AI workflow" | definition: "A workflow where AI value is real but data exposure rules block deployment." | href: `/glossary/blocked-ai-workflow`
 10. term: "Connector lane" | definition: "How Capsule reads document, ticket, and operational sources that already live inside the customer environment — without moving raw data outside that environment." | href: `/glossary/connector-lane`
 11. term: "State vault for restoration" | definition: "Local key-value store mapping capsule tokens back to original values for restoration." | href: `/glossary/state-vault-for-restoration`

@@ -66,13 +66,13 @@ Ein sicherer LLM-Einsatz auf sensiblen Unternehmensdaten erfordert das Zusammens
 2. Model-agnostic processing.
 2. Modellunabhängige Verarbeitung.
 
- The AI enablement layer must work with any LLM — not just one provider's API. Enterprises use multiple AI models for different tasks. The AI enablement data layer must operate independently of the model layer.
+ The context-preserving data layer for AI must work with any LLM — not just one provider's API. Enterprises use multiple AI models for different tasks. The context-preserving data layer for AI must operate independently of the model layer.
  Die Datenschicht für den KI-Einsatz muss mit jedem Sprachmodell funktionieren — nicht nur mit der API eines einzelnen Anbieters. Unternehmen setzen für unterschiedliche Aufgaben verschiedene Modelle ein. Die Datenschicht muss daher unabhängig vom Modellanbieter betrieben werden können.
 
 3. Output Restoration (Restoration).
 3. Ausgabe-Wiederherstellung.
 
- AI results are restored locally. Without this, AI outputs are abstracted and unusable. Enterprise AI enablement requires that outputs contain real names, real account numbers, and real references — restored locally after AI processing completes.
+ AI results are restored locally. Without this, AI outputs are abstracted and unusable. Context-preserving data layer for AI requires that outputs contain real names, real account numbers, and real references — restored locally after AI processing completes.
  Die KI-Ergebnisse werden lokal mit den Originaldaten angereichert. Ohne diesen Schritt sind die Ausgaben abstrahiert und fachlich nicht verwendbar. Für den produktiven KI-Einsatz müssen Ausgaben die tatsächlichen Namen, Kontonummern und Referenzen enthalten — wiederhergestellt in der eigenen Infrastruktur nach Abschluss der KI-Verarbeitung.
 
 ---
@@ -88,7 +88,7 @@ LLM Capsule
 Enables This
 funktioniert
 
-LLM Capsule operates as an AI enablement data layer between enterprise data systems and external AI services. The process follows four steps:
+LLM Capsule operates as a context-preserving data layer for AI between enterprise data systems and external AI services. The process follows four steps:
 LLM Capsule fungiert als Datenschicht zwischen unternehmensinternen Datensystemen und externen KI-Diensten. Der Prozess gliedert sich in vier Schritte:
 
 Step 1: Sensitive Detection. LLM Capsule automatically identifies sensitive elements within enterprise documents — names, account numbers, dates, financial figures, project codes, and organization-defined entities beyond standard PII.
@@ -209,5 +209,5 @@ Demo anfordern
 View Product
 Produkt ansehen
 
-Enterprise AI Enablement by CUBIG
+Context-Preserving Data Layer for AI by CUBIG
 KI-Einsatz im Unternehmen — ermöglicht durch CUBIG

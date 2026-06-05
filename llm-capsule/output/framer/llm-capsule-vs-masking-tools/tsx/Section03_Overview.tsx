@@ -15,7 +15,7 @@ interface Props {
 
 export default function Section03_Overview({
   heading = "Overview",
-  paragraph = "Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. LLM Capsule takes a fundamentally different approach as an AI enablement data layer and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.",
+  paragraph = "Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. LLM Capsule takes a fundamentally different approach as a context-preserving data layer for AI and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.",
 }: Props) {
   return (
     <>
@@ -106,7 +106,7 @@ addPropertyControls(Section03_Overview, {
   paragraph: {
     type: ControlType.String,
     title: "Paragraph",
-    defaultValue: "Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. LLM Capsule takes a fundamentally different approach as an AI enablement data layer and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.",
+    defaultValue: "Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. LLM Capsule takes a fundamentally different approach as a context-preserving data layer for AI and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.",
     displayTextArea: true,
   },
 })

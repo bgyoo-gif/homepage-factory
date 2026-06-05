@@ -21,7 +21,7 @@ const JSONLD_ORG = JSON.stringify({
   "@type": "Organization",
   "name": "LLM Capsule",
   "url": "https://llmcapsule.ai",
-  "description": "Enterprise AI enablement data layer and plugin by CUBIG. Enable any organization to adopt AI on sensitive enterprise data without exposing original information.",
+  "description": "Enterprise context-preserving data layer for AI and plugin by CUBIG. Enable any organization to adopt AI on sensitive enterprise data without exposing original information.",
   "parentOrganization": { "@type": "Organization", "name": "CUBIG", "url": "https://cubig.ai" },
 })
 
@@ -29,7 +29,7 @@ const JSONLD_PRODUCT = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "LLM Capsule",
-  "description": "Enterprise AI enablement data layer and plugin. Enable AI. Protect data. Restore results.",
+  "description": "Enterprise context-preserving data layer for AI and plugin. Enable AI. Protect data. Restore results.",
   "brand": { "@type": "Brand", "name": "CUBIG" },
 })
 
@@ -40,7 +40,7 @@ const JSONLD_FAQ = JSON.stringify({
     {
       "@type": "Question",
       "name": "How does LLM Capsule protect enterprise data during AI processing?",
-      "acceptedAnswer": { "@type": "Answer", "text": "LLM Capsule acts as an AI enablement data layer that encapsulates sensitive data locally before it leaves the enterprise environment. Only protected representations are sent to AI models. After processing, outputs are restored locally so they remain usable for real enterprise workflows. The original data never reaches external AI services." },
+      "acceptedAnswer": { "@type": "Answer", "text": "LLM Capsule acts as a context-preserving data layer for AI that encapsulates sensitive data locally before it leaves the enterprise environment. Only protected representations are sent to AI models. After processing, outputs are restored locally so they remain usable for real enterprise workflows. The original data never reaches external AI services." },
     },
     {
       "@type": "Question",
@@ -60,7 +60,7 @@ const JSONLD_FAQ = JSON.stringify({
     {
       "@type": "Question",
       "name": "What is enterprise AI data protection?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Enterprise AI enablement is the practice of making sensitive enterprise data AI-ready so organizations can adopt LLMs without exposing original information. LLM Capsule achieves this at the data layer through local encapsulation, structure-preserving processing, and local restoration." },
+      "acceptedAnswer": { "@type": "Answer", "text": "Context-preserving data layer for AI is the practice of making sensitive enterprise data AI-ready so organizations can adopt LLMs without exposing original information. LLM Capsule achieves this at the data layer through local encapsulation, structure-preserving processing, and local restoration." },
     },
     {
       "@type": "Question",

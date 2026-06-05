@@ -31,7 +31,7 @@ Aktualisiert April 2025
 TL;DR — Definition
 Definition · Kurzfassung
 
-A telecom NOC AI deployment uses an AI enablement data layer to encapsulate subscriber identities, network identifiers (DEVICE_ID, SITE_ID, CIRCUIT_ID), call records, IP addresses, and network configurations locally before any data reaches an external LLM. The LLM generates RCA, customer-impact analysis, and ticket recommendations on the protected capsule; outputs are restored back into the originating ticket inside the operator's environment. Validated at SK Telecom and recognized at Deutsche Telekom T Challenge 2026 Top 12 in Data Security & Governance.
+A telecom NOC AI deployment uses a context-preserving data layer for AI to encapsulate subscriber identities, network identifiers (DEVICE_ID, SITE_ID, CIRCUIT_ID), call records, IP addresses, and network configurations locally before any data reaches an external LLM. The LLM generates RCA, customer-impact analysis, and ticket recommendations on the protected capsule; outputs are restored back into the originating ticket inside the operator's environment. Validated at SK Telecom and recognized at Deutsche Telekom T Challenge 2026 Top 12 in Data Security & Governance.
 Ein NOC-KI-Deployment im Telekommunikationsbereich nutzt eine KI-Datenschicht, um Teilnehmeridentitäten, Netzwerkkennungen (DEVICE_ID, SITE_ID, CIRCUIT_ID), Anrufaufzeichnungen, IP-Adressen und Netzwerkkonfigurationen lokal zu kapsulieren — bevor Daten ein externes LLM erreichen. Das LLM erstellt RCA-Analysen, Kundenwirkungsanalysen und Ticket-Empfehlungen auf der geschützten Kapsel. Die Ausgaben werden innerhalb der Betreiberumgebung in das ursprüngliche Ticket zurückgeführt. Produktiv bei SK Telecom validiert und beim Deutsche Telekom T Challenge 2026 als Top 12 in Data Security &amp; Governance ausgezeichnet.
 
 ---
@@ -48,7 +48,7 @@ Ein NOC-KI-Deployment im Telekommunikationsbereich nutzt eine KI-Datenschicht, u
 
 <h2>Was die KI-Datenschicht verändert</h2>
 
-<p>Eine <a href="/glossary/ai-enablement-data-layer">KI-Datenschicht</a> wie LLM Capsule positioniert sich zwischen den bestehenden NOC-Systemen (Ticket-Plattform, NOC-Konsole, Log-Viewer, Runbook-Datenbank) und dem LLM-Endpunkt. Sie übernimmt vier Aufgaben:</p>
+<p>Eine <a href="/glossary/context-preserving-data-layer">KI-Datenschicht</a> wie LLM Capsule positioniert sich zwischen den bestehenden NOC-Systemen (Ticket-Plattform, NOC-Konsole, Log-Viewer, Runbook-Datenbank) und dem LLM-Endpunkt. Sie übernimmt vier Aufgaben:</p>
 
 <ol>
 <li>Operative Daten und NOC-Tickets werden über REST/gRPC/JDBC-Konnektoren aus den bestehenden Systemen ausgelesen — ohne Datenmigration.</li>
@@ -112,7 +112,7 @@ Ein NOC-KI-Deployment im Telekommunikationsbereich nutzt eine KI-Datenschicht, u
 <ul>
 <li><a href="/learn/ai-on-network-operations-data">KI auf Netzwerkbetriebsdaten</a></li>
 <li><a href="/learn/on-prem-llm-execution-path">On-Premise-Ausführungspfad für LLMs</a></li>
-<li><a href="/glossary/ai-enablement-data-layer">Glossar: KI-Datenschicht</a></li>
+<li><a href="/glossary/context-preserving-data-layer">Glossar: KI-Datenschicht</a></li>
 <li><a href="/solutions">Lösungen: Telekommunikationsbranche</a></li>
 </ul>
 
@@ -129,7 +129,7 @@ KI auf Netzwerkbetriebsdaten
 On-premise LLM execution path
 On-Premise-Ausführungspfad für LLMs
 
-Glossary: AI enablement data layer
+Glossary: context-preserving data layer for AI
 Glossar: KI-Datenschicht
 
 ---

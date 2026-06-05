@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Why Enterprise AI Pilots Stall — and How They Get to Production | LLM Capsule</title>
-<meta name="description" content="80% of enterprise AI pilots never ship to production. The reasons are predictable: data exposure barriers, broken document context, residual compliance risk, shadow AI emergence. The pattern that gets pilots to production is an AI enablement data layer.">
-<meta name="keywords" content="pilot to production, enterprise AI adoption, AI productionization, AI deployment, AI implementation, AI ROI, shadow AI, AI pilot fatigue, AI for regulated industries, AI enablement data layer">
+<meta name="description" content="80% of enterprise AI pilots never ship to production. The reasons are predictable: data exposure barriers, broken document context, residual compliance risk, shadow AI emergence. The pattern that gets pilots to production is a context-preserving data layer for AI.">
+<meta name="keywords" content="pilot to production, enterprise AI adoption, AI productionization, AI deployment, AI implementation, AI ROI, shadow AI, AI pilot fatigue, AI for regulated industries, context-preserving data layer for AI">
 <meta property="og:title" content="Why Enterprise AI Pilots Stall — and How They Get to Production">
 <meta property="og:description" content="80% of pilots never ship. Here's the pattern that does.">
 <link rel="canonical" href="https://llmcapsule.ai/learn/pilot-to-production-enterprise-ai">
@@ -40,7 +40,7 @@
 
 <div class="tldr">
   <div class="tldr__label">TL;DR — Diagnosis</div>
-  <p class="tldr__body">Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without an <strong>AI enablement data layer</strong>, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.</p>
+  <p class="tldr__body">Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without an <strong>context-preserving data layer for AI</strong>, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.</p>
 </div>
 
 <article class="article-body">
@@ -66,12 +66,12 @@
 <h3>Reason 4 — Filtering alone leaves regulated risk standing</h3>
 <p>GDPR, HIPAA, SOX, sector regulators, audit obligations, sovereignty constraints. Even if every field is masked, the residual risk of differential analysis, re-identification through context, and inference exposure is what regulators evaluate. Simple filtering cannot close that.</p>
 
-<p><strong>Result:</strong> the pilot demonstrated value on synthetic data; the production deployment requires real data; the gap between them is the AI enablement data layer that wasn't there.</p>
+<p><strong>Result:</strong> the pilot demonstrated value on synthetic data; the production deployment requires real data; the gap between them is the context-preserving data layer for AI that wasn't there.</p>
 
 <h2>The pattern that gets pilots to production</h2>
 <p>Pilots that ship to production typically have these architectural features in place:</p>
 <ol>
-<li><strong>An AI enablement data layer between systems and AI.</strong> Not a guardrail. Not a gateway. A layer that transforms operational data into AI-ready capsules locally, executes the AI workflow, and restores results into the originating system.</li>
+<li><strong>A context-preserving data layer for AI between systems and AI.</strong> Not a guardrail. Not a gateway. A layer that transforms operational data into AI-ready capsules locally, executes the AI workflow, and restores results into the originating system.</li>
 <li><strong>Structure-preserving capsule.</strong> Tables, cross-references, configurations, document hierarchies survive intact. AI receives full context — not broken fragments.</li>
 <li><strong>Differential-privacy-based protection.</strong> Beyond field masking — DP noise, k-anonymity, semantic tokenization — to address inference and aggregate-pattern risk that simple filtering can't close.</li>
 <li><strong>Plug-in execution into existing legacy systems.</strong> No migration. The data layer reads where the document already lives.</li>
@@ -102,7 +102,7 @@
 <li><a href="/learn/pii-guardrails-vs-operational-data-protection">PII guardrails vs. operational data protection</a></li>
 <li><a href="/learn/sovereign-ai-european-enterprises">Sovereign AI for European enterprises</a></li>
 <li><a href="/glossary/blocked-ai-workflow">Glossary: Blocked AI workflow</a></li>
-<li><a href="/glossary/ai-enablement-data-layer">Glossary: AI enablement data layer</a></li>
+<li><a href="/glossary/context-preserving-data-layer">Glossary: context-preserving data layer for AI</a></li>
 </ul>
 
 </article>

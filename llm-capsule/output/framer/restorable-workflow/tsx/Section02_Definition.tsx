@@ -25,7 +25,7 @@ interface Props {
 
 export default function Section02_Definition({
   label = "DEFINITION",
-  bodyText = "A restorable workflow is an AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which LLM Capsule enables AI adoption on sensitive data.",
+  bodyText = "A restorable workflow is a context-preserving data layer for AI pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which LLM Capsule enables AI adoption on sensitive data.",
 }: Props) {
 
   return (
@@ -130,7 +130,7 @@ addPropertyControls(Section02_Definition, {
   bodyText: {
     type: ControlType.String,
     title: "Body Text",
-    defaultValue: "A restorable workflow is an AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which LLM Capsule enables AI adoption on sensitive data.",
+    defaultValue: "A restorable workflow is a context-preserving data layer for AI pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which LLM Capsule enables AI adoption on sensitive data.",
     displayTextArea: true,
   },
 })

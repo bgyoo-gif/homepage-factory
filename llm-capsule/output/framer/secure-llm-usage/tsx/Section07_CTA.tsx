@@ -41,12 +41,12 @@ export default function Section07_CTA({
   titlePrefix = "Enable ",
   productName = "Secure LLM Usage",
   titleSuffix = " for Your Enterprise",
-  description = "Process sensitive data through any LLM without exposure. Experience the AI enablement data layer.",
+  description = "Process sensitive data through any LLM without exposure. Experience the context-preserving data layer for AI.",
   cta1Label = "Request a Demo",
   cta1Href = "/request-a-demo",
   cta2Label = "View Product",
   cta2Href = "/product",
-  footnote = "Enterprise AI Enablement by CUBIG",
+  footnote = "Context-Preserving Data Layer for AI by CUBIG",
   jsonLd = DEFAULT_JSON_LD,
 }: Props) {
   return (
@@ -204,7 +204,7 @@ addPropertyControls(Section07_CTA, {
   description: {
     type: ControlType.String,
     title: "Description",
-    defaultValue: "Process sensitive data through any LLM without exposure. Experience the AI enablement data layer.",
+    defaultValue: "Process sensitive data through any LLM without exposure. Experience the context-preserving data layer for AI.",
   },
   cta1Label: {
     type: ControlType.String,
@@ -229,6 +229,6 @@ addPropertyControls(Section07_CTA, {
   footnote: {
     type: ControlType.String,
     title: "Footnote",
-    defaultValue: "Enterprise AI Enablement by CUBIG",
+    defaultValue: "Context-Preserving Data Layer for AI by CUBIG",
   },
 })

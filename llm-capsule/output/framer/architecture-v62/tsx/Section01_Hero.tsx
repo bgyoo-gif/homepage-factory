@@ -9,7 +9,7 @@ interface Props {
 export default function Section01_Hero({
   eyebrow = "Architecture",
   title = "How LLM Capsule plugs AI into the systems you already run",
-  subtitle = "Three zones. Four steps. Five components. Two execution paths. One governance framework. The AI enablement data layer for regulated operations — at the architectural level.",
+  subtitle = "Three zones. Four steps. Five components. Two execution paths. One governance framework. The context-preserving data layer for AI for regulated operations — at the architectural level.",
 }: Props) {
   return (
     <>
@@ -82,5 +82,5 @@ export default function Section01_Hero({
 addPropertyControls(Section01_Hero, {
   eyebrow: { type: ControlType.String, title: "Eyebrow", defaultValue: "Architecture" },
   title: { type: ControlType.String, title: "Title", defaultValue: "How LLM Capsule plugs AI into the systems you already run" },
-  subtitle: { type: ControlType.String, title: "Subtitle", defaultValue: "Three zones. Four steps. Five components. Two execution paths. One governance framework. The AI enablement data layer for regulated operations — at the architectural level." },
+  subtitle: { type: ControlType.String, title: "Subtitle", defaultValue: "Three zones. Four steps. Five components. Two execution paths. One governance framework. The context-preserving data layer for AI for regulated operations — at the architectural level." },
 })

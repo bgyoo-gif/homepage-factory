@@ -614,6 +614,6 @@ No `ds-grid--1` appears 3+ times consecutively. Layout variety is sufficient.
 
 ```html
 <title>LLM Capsule Product | Watch It Run on Real Enterprise Workflows</title>
-<meta name="description" content="See LLM Capsule running on real enterprise workflows -- telecom NOC, hospital clinical, finance claims, defense mission. 2-minute demo, interactive product tour, real customer screenshots, admin console walkthrough. The AI enablement data layer for regulated operations.">
+<meta name="description" content="See LLM Capsule running on real enterprise workflows -- telecom NOC, hospital clinical, finance claims, defense mission. 2-minute demo, interactive product tour, real customer screenshots, admin console walkthrough. The context-preserving data layer for AI for regulated operations.">
 <link rel="canonical" href="https://llmcapsule.ai/product">
 ```

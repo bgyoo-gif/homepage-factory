@@ -37,7 +37,7 @@ interface Props {
 }
 
 const BODY_HTML = `<h2>Why this comparison matters</h2>
-<p>Buyers evaluating enterprise AI routinely encounter four kinds of products in the same shortlist: PII guardrails, prompt security gateways, AI security suites, and the AI enablement data layer. They are not equivalent. Treating them as interchangeable leads to deployments that pass the PII filter but still expose the sensitive part of the workflow.</p>
+<p>Buyers evaluating enterprise AI routinely encounter four kinds of products in the same shortlist: PII guardrails, prompt security gateways, AI security suites, and the context-preserving data layer for AI. They are not equivalent. Treating them as interchangeable leads to deployments that pass the PII filter but still expose the sensitive part of the workflow.</p>
 <p>This article puts them on the same page. It defines what each category does, where it fits in the pipeline, what it covers, and what it leaves uncovered.</p>
 
 <h2>The four categories</h2>
@@ -54,15 +54,15 @@ const BODY_HTML = `<h2>Why this comparison matters</h2>
 <p>Generate synthetic versions of training or evaluation datasets that approximate the statistical properties of the original. Used for AI training pipelines and analytics, not for runtime protection of live operational data.</p>
 <p><strong>Layer:</strong> data pipeline (offline). <strong>Scope:</strong> dataset generation. <strong>Strength:</strong> training data for ML. <strong>Limitation:</strong> does not run in the live workflow.</p>
 
-<h3>4. AI Enablement Data Layer (LLM Capsule)</h3>
+<h3>4. Context-Preserving Data Layer for AI (LLM Capsule)</h3>
 <p>Sits between the existing enterprise environment (NOC, ticket, OT, EHR, mission systems) and the LLM. Transforms regulated operational data into AI-ready context using structure-preserving, differential-privacy-based encapsulation. Routes through one of two execution paths (external approved LLM or on-prem local model). Restores results back to the workflow via state vault.</p>
-<p><strong>Layer:</strong> AI enablement data layer. <strong>Scope:</strong> operational data + governance. <strong>Strength:</strong> structured operational data, two execution paths, plug-in to legacy systems. <strong>Limitation:</strong> is not a prompt injection defense or a synthetic data generator.</p>
+<p><strong>Layer:</strong> context-preserving data layer for AI. <strong>Scope:</strong> operational data + governance. <strong>Strength:</strong> structured operational data, two execution paths, plug-in to legacy systems. <strong>Limitation:</strong> is not a prompt injection defense or a synthetic data generator.</p>
 
 <h2>Direct comparison table</h2>
 <table class="compare-table">
   <thead><tr><th></th><th>PII guardrails</th><th>AI security / prompt</th><th class="us">LLM Capsule</th></tr></thead>
   <tbody>
-    <tr><td>Layer</td><td>API wrapper</td><td>Prompt / gateway</td><td class="us-cell">AI enablement data layer</td></tr>
+    <tr><td>Layer</td><td>API wrapper</td><td>Prompt / gateway</td><td class="us-cell">context-preserving data layer for AI</td></tr>
     <tr><td>Scope</td><td>Names, IDs, fields</td><td>Prompt threats + PII</td><td class="us-cell">Operational data + governance</td></tr>
     <tr><td>Method</td><td>Detect &amp; mask</td><td>Filter / sanitize prompts</td><td class="us-cell">Structure-preserving + DP-based encapsulation</td></tr>
     <tr><td>Plug into legacy systems</td><td>No</td><td>No</td><td class="us-cell">Yes (NOC, Ticket, OT, EHR, Mission)</td></tr>
@@ -89,16 +89,16 @@ const BODY_HTML = `<h2>Why this comparison matters</h2>
 <p><strong>What LLM Capsule does differently:</strong> the OT/asset reference markers (PLC tag, plant zone, asset inventory ref) are detected and encapsulated. The execution path is policy-driven — for OT, Path B (on-prem local) is typical, providing zero external transmission.</p>
 
 <h2>How they compose in practice</h2>
-<p>PII guardrails, prompt security, synthetic data platforms, and the AI enablement data layer are not mutually exclusive. A mature enterprise stack often runs all four in different parts of the AI pipeline:</p>
+<p>PII guardrails, prompt security, synthetic data platforms, and the context-preserving data layer for AI are not mutually exclusive. A mature enterprise stack often runs all four in different parts of the AI pipeline:</p>
 <ul>
   <li>PII guardrails — at the API call layer for low-regulation features</li>
   <li>AI security / prompt protection — at the gateway for prompt threat defense</li>
   <li>Synthetic data — in the offline training pipeline</li>
-  <li>LLM Capsule — at the AI enablement data layer for regulated operational data</li>
+  <li>LLM Capsule — at the context-preserving data layer for AI for regulated operational data</li>
 </ul>
 <p>The mistake is treating the first as if it were the fourth. Field-level masking is not a substitute for distributional protection on operational data.</p>
 
-<div class="callout"><strong>Buyer test.</strong> When the AI pipeline involves NOC logs, incident records, OT manifests, configuration trees, clinical workflows, or mission context — the AI enablement data layer is the right place to evaluate. PII guardrails are necessary but not sufficient.</div>
+<div class="callout"><strong>Buyer test.</strong> When the AI pipeline involves NOC logs, incident records, OT manifests, configuration trees, clinical workflows, or mission context — the context-preserving data layer for AI is the right place to evaluate. PII guardrails are necessary but not sufficient.</div>
 
 <h2>Where to verify</h2>
 <p>LLM Capsule is validated in regulated operational settings:</p>
@@ -113,15 +113,15 @@ const BODY_HTML = `<h2>Why this comparison matters</h2>
 <div class="takeaways">
   <div class="takeaways__h">Key takeaways</div>
   <ul>
-    <li>PII guardrails and the AI enablement data layer address different layers of the enterprise AI pipeline.</li>
+    <li>PII guardrails and the context-preserving data layer for AI address different layers of the enterprise AI pipeline.</li>
     <li>PII guardrails, AI security suites, and prompt security gateways — each is strong in its own scope (risk control, policy enforcement, prompt-level protection). None of them transforms structured operational data with differential-privacy-based encapsulation.</li>
-    <li>The buyer test: if the sensitive content is structural (logs, configs, OT, clinical, mission), you need an AI enablement data layer, not just a guardrail.</li>
+    <li>The buyer test: if the sensitive content is structural (logs, configs, OT, clinical, mission), you need a context-preserving data layer for AI, not just a guardrail.</li>
     <li>The categories compose. The mistake is treating PII guardrails as if they covered operational data.</li>
     <li>LLM Capsule provides plug-in to legacy systems, two execution paths, two-way restoration, and full governance — alongside, not instead of, PII guardrails where they are needed.</li>
   </ul>
 </div>`
 
-const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "Are PII guardrails the same as the AI enablement data layer?", "acceptedAnswer": { "@type": "Answer", "text": "No. PII guardrails detect and mask personal identifiers — names, IDs, financial fields. The AI enablement data layer covers complex enterprise data such as network logs, incident records, configurations, OT manifests, and clinical or mission context. Operational data leaks information through structure, sequence, and aggregate pattern, not just through identifiable fields. Field-level masking alone does not protect it." } }, { "@type": "Question", "name": "How does LLM Capsule compare with PII guardrail and AI security suite products?", "acceptedAnswer": { "@type": "Answer", "text": "PII guardrail and AI security suite products are optimized for risk control and policy enforcement at the API or prompt level — prompt injection defense, jailbreak resistance, and PII detection. LLM Capsule operates at a different layer: it transforms operational data into AI-ready capsules with differential-privacy-based protection, plugs into existing enterprise systems beyond the API gateway, preserves operational structure for AI to consume, and restores outputs back into the originating workflow. The two categories are adjacent and often complementary — they address different stages of the enterprise AI pipeline." } }, { "@type": "Question", "name": "When is a PII guardrail enough?", "acceptedAnswer": { "@type": "Answer", "text": "When the workflow's sensitive content is mostly identifiable individual fields — customer names, phone numbers, financial identifiers — and the surrounding context is not itself sensitive. Customer chat, contract review, and document summarization are common cases. When the context (network topology, incident sequence, OT alarms, mission rhythm) is the sensitive part, PII guardrails alone are not sufficient." } } ] }`
+const FAQ_JSON_LD = `{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "Are PII guardrails the same as the context-preserving data layer for AI?", "acceptedAnswer": { "@type": "Answer", "text": "No. PII guardrails detect and mask personal identifiers — names, IDs, financial fields. The context-preserving data layer for AI covers complex enterprise data such as network logs, incident records, configurations, OT manifests, and clinical or mission context. Operational data leaks information through structure, sequence, and aggregate pattern, not just through identifiable fields. Field-level masking alone does not protect it." } }, { "@type": "Question", "name": "How does LLM Capsule compare with PII guardrail and AI security suite products?", "acceptedAnswer": { "@type": "Answer", "text": "PII guardrail and AI security suite products are optimized for risk control and policy enforcement at the API or prompt level — prompt injection defense, jailbreak resistance, and PII detection. LLM Capsule operates at a different layer: it transforms operational data into AI-ready capsules with differential-privacy-based protection, plugs into existing enterprise systems beyond the API gateway, preserves operational structure for AI to consume, and restores outputs back into the originating workflow. The two categories are adjacent and often complementary — they address different stages of the enterprise AI pipeline." } }, { "@type": "Question", "name": "When is a PII guardrail enough?", "acceptedAnswer": { "@type": "Answer", "text": "When the workflow's sensitive content is mostly identifiable individual fields — customer names, phone numbers, financial identifiers — and the surrounding context is not itself sensitive. Customer chat, contract review, and document summarization are common cases. When the context (network topology, incident sequence, OT alarms, mission rhythm) is the sensitive part, PII guardrails alone are not sufficient." } } ] }`
 
 const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   en: {
@@ -133,7 +133,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     readTime: "11 min read",
     dateUpdated: "Updated May 2025",
     tldrLabel: "Definition · TL;DR",
-    tldrBody: "PII guardrails protect identifiable fields at the API or prompt layer. The AI enablement data layer protects structured enterprise data — network logs, configurations, incident records, OT and mission context — using structure-preserving, differential-privacy-based encapsulation. They address adjacent but different layers of the enterprise AI pipeline.",
+    tldrBody: "PII guardrails protect identifiable fields at the API or prompt layer. The context-preserving data layer for AI protects structured enterprise data — network logs, configurations, incident records, OT and mission context — using structure-preserving, differential-privacy-based encapsulation. They address adjacent but different layers of the enterprise AI pipeline.",
     bodyHtml: BODY_HTML,
     canonicalUrl: "https://llmcapsule.ai/resources/learn/pii-guardrails-vs-operational-data-protection",
     datePublished: "2025-05-01",
@@ -189,18 +189,18 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
 
 <p><strong>레이어:</strong> 데이터 파이프라인 (오프라인). <strong>범위:</strong> 데이터셋 생성. <strong>강점:</strong> ML 학습 데이터. <strong>제약:</strong> 실시간 워크플로우에서 동작하지 않습니다.</p>
 
-<h3>4. AI Enablement Data Layer (LLM Capsule)</h3>
+<h3>4. Context-Preserving Data Layer for AI (LLM Capsule)</h3>
 
 <p>기존 기업 환경(NOC, 티켓, OT, EHR, 미션 시스템)과 LLM 사이에 위치합니다. 문서 구조 보존 방식의 차등 프라이버시 기반 캡슐화로 규제 대상 운영 데이터를 AI 처리 가능한 컨텍스트로 변환합니다. 두 가지 실행 경로(외부 승인 LLM 또는 온프레미스 로컬 모델) 중 하나로 라우팅합니다. 결과물은 State Vault를 통해 워크플로우로 복원됩니다.</p>
 
-<p><strong>레이어:</strong> AI enablement data layer. <strong>범위:</strong> 운영 데이터 + 거버넌스. <strong>강점:</strong> 구조화된 운영 데이터, 두 가지 실행 경로, 레거시 시스템 연동. <strong>제약:</strong> 프롬프트 인젝션 방어 또는 합성 데이터 생성기가 아닙니다.</p>
+<p><strong>레이어:</strong> context-preserving data layer for AI. <strong>범위:</strong> 운영 데이터 + 거버넌스. <strong>강점:</strong> 구조화된 운영 데이터, 두 가지 실행 경로, 레거시 시스템 연동. <strong>제약:</strong> 프롬프트 인젝션 방어 또는 합성 데이터 생성기가 아닙니다.</p>
 
 <h2>직접 비교표</h2>
 
 <table class="compare-table">
   <thead><tr><th></th><th>PII 가드레일</th><th>AI 보안 / 프롬프트</th><th class="us">LLM Capsule</th></tr></thead>
   <tbody>
-    <tr><td>레이어</td><td>API 래퍼</td><td>프롬프트 / 게이트웨이</td><td class="us-cell">AI enablement data layer</td></tr>
+    <tr><td>레이어</td><td>API 래퍼</td><td>프롬프트 / 게이트웨이</td><td class="us-cell">context-preserving data layer for AI</td></tr>
     <tr><td>범위</td><td>이름, ID, 필드</td><td>프롬프트 위협 + PII</td><td class="us-cell">운영 데이터 + 거버넌스</td></tr>
     <tr><td>방법</td><td>탐지 &amp; 마스킹</td><td>필터 / 프롬프트 정제</td><td class="us-cell">문서 구조 보존 + 차등 프라이버시 기반 캡슐화</td></tr>
     <tr><td>레거시 시스템 연동</td><td>아니요</td><td>아니요</td><td class="us-cell">예 (NOC, 티켓, OT, EHR, 미션)</td></tr>
@@ -245,11 +245,11 @@ AI 보안 / 프롬프트 보호 — 프롬프트 위협 방어를 위한 게이�
 
 합성 데이터 — 오프라인 학습 파이프라인
 
-LLM Capsule — 규제 대상 운영 데이터를 위한 AI enablement data layer
+LLM Capsule — 규제 대상 운영 데이터를 위한 context-preserving data layer for AI
 
 <p>실수는 첫 번째를 네 번째인 것처럼 취급하는 것입니다. 필드 레벨 마스킹은 운영 데이터에 대한 분산적 보호의 대안이 아닙니다.</p>
 
-<strong>Buyer test.</strong> When the AI pipeline involves NOC logs, incident records, OT manifests, configuration trees, clinical workflows, or mission context — the AI enablement data layer is the right place to evaluate. PII guardrails are necessary but not sufficient.
+<strong>Buyer test.</strong> When the AI pipeline involves NOC logs, incident records, OT manifests, configuration trees, clinical workflows, or mission context — the context-preserving data layer for AI is the right place to evaluate. PII guardrails are necessary but not sufficient.
 <strong>구매 판단 기준.</strong> AI 파이프라인에 NOC 로그, 인시던트 레코드, OT 매니페스트, 설정 트리, 임상 워크플로우, 또는 미션 컨텍스트가 포함된다면 — 데이터 레이어를 평가해야 합니다. PII 가드레일은 필요하지만 충분하지 않습니다.
 
 <h2>검증 사례</h2>
@@ -325,7 +325,7 @@ LLM Capsule은 레거시 시스템 연동, 두 가지 실행 경로, 양방향 �
 <p>Diese Plattformen erzeugen synthetische Versionen von Trainings- oder Evaluierungsdatensätzen, die die statistischen Eigenschaften der Originaldaten annähern. Sie werden in KI-Trainingspipelines und für Analysen eingesetzt, nicht zum Laufzeitschutz produktiver operativer Daten.</p>
 <p><strong>Ebene:</strong> Datenpipeline (offline). <strong>Umfang:</strong> Datensatzgenerierung. <strong>Stärke:</strong> Trainingsdaten für ML. <strong>Einschränkung:</strong> kein Einsatz im Live-Workflow.</p>
 
-<h3>4. KI-Datenschicht — AI Enablement Data Layer (LLM Capsule)</h3>
+<h3>4. KI-Datenschicht — Context-Preserving Data Layer for AI (LLM Capsule)</h3>
 <p>Die KI-Datenschicht ist zwischen der bestehenden Unternehmensumgebung (NOC, Ticketsysteme, OT, EHR, Missionssysteme) und dem LLM positioniert. Sie transformiert regulierte operative Daten in KI-verarbeitbaren Kontext durch strukturerhaltende Kapsulierung auf Basis von Differential Privacy. Die Ausführung erfolgt über einen von zwei Pfaden — externer zugelassener LLM oder On-Premise-Modell. Ergebnisse werden über den State Vault in den Workflow zurückgeführt.</p>
 <p><strong>Ebene:</strong> KI-Datenschicht. <strong>Umfang:</strong> operative Daten und Governance. <strong>Stärke:</strong> strukturierte operative Daten, zwei Ausführungspfade, Integration in bestehende Systeme. <strong>Einschränkung:</strong> kein Schutz vor Prompt-Injection, keine Generierung synthetischer Daten.</p>
 

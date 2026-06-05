@@ -2,13 +2,13 @@
 
 ## Section 01: Hero
 
-AI Enablement
+Context-Preserving Data Layer for AI
 AI 활성화
 
 Architecture
 아키텍처
 
-LLM Capsule is an AI enablement data layer and plugin that enables enterprises to adopt any AI model safely. It sits between enterprise data systems and external AI services — protecting data in transit while unlocking the full power of AI across every workflow.
+LLM Capsule is a context-preserving data layer for AI and plugin that enables enterprises to adopt any AI model safely. It sits between enterprise data systems and external AI services — protecting data in transit while unlocking the full power of AI across every workflow.
 LLM Capsule은 기업이 어떤 AI 모델이든 안전하게 도입할 수 있도록 지원하는 데이터 레이어이자 플러그인입니다. 기업 데이터 시스템과 외부 AI 서비스 사이에 위치하여 — 전송 중인 데이터를 보호하면서 모든 워크플로우에서 AI의 잠재력을 완전히 활용합니다.
 
 ## Section 02: Architecture Overview
@@ -19,7 +19,7 @@ Architecture
 Overview
 개요
 
-LLM Capsule operates as an AI enablement data layer that encapsulates sensitive enterprise data locally, transmits only protected representations to any external AI service, and restores AI outputs within the enterprise environment — enabling safe AI adoption at scale.
+LLM Capsule operates as a context-preserving data layer for AI that encapsulates sensitive enterprise data locally, transmits only protected representations to any external AI service, and restores AI outputs within the enterprise environment — enabling safe AI adoption at scale.
 LLM Capsule은 민감한 기업 데이터를 로컬에서 캡슐화하고, 보호된 표현만 외부 AI 서비스로 전송한 뒤, 기업 환경 내에서 AI 결과물을 복원하는 데이터 레이어입니다 — 대규모 AI 도입을 안전하게 실현합니다.
 
 ## Section 03: Architecture Components
@@ -116,7 +116,7 @@ Different document types or sensitivity levels route through different deploymen
 Embedded Integration
 임베디드 통합
 
-LLM Capsule embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within your software stack.
+LLM Capsule embedded into existing enterprise applications and platforms, operating as a context-preserving data layer for AI within your software stack.
 LLM Capsule을 기존 기업 애플리케이션과 플랫폼에 내장하여, 소프트웨어 스택 내 데이터 레이어로 작동합니다.
 
 Slack App

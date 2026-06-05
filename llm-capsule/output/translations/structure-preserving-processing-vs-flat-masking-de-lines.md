@@ -31,8 +31,8 @@ Inkonsistente Ersetzung. Dieselbe Entität kann an verschiedenen Stellen im Doku
 Structure-preserving processing maintains document integrity during data protection. Entity consistency is enforced across the entire document. Table structures, cross-references, and semantic relationships are preserved. AI receives a structurally complete document that supports accurate processing.
 Strukturerhaltende Verarbeitung wahrt die Dokumentintegrität beim Datenschutz. Entitätskonsistenz wird über das gesamte Dokument durchgesetzt. Tabellenstrukturen, Querverweise und semantische Beziehungen bleiben erhalten. Die KI erhält ein strukturell vollständiges Dokument für eine korrekte Verarbeitung.
 
-AI results are automatically restored locally with original enterprise data. LLM Capsule's AI enablement data layer protects sensitive data while preserving the document structure AI needs for accurate outputs.
-KI-Ergebnisse werden lokal automatisch mit den Originaldaten des Unternehmens angereichert. Die AI Enablement Data Layer von LLM Capsule schützt vertrauliche Daten und bewahrt gleichzeitig die Dokumentstruktur, die KI für korrekte Ergebnisse benötigt.
+AI results are automatically restored locally with original enterprise data. LLM Capsule's context-preserving data layer for AI protects sensitive data while preserving the document structure AI needs for accurate outputs.
+KI-Ergebnisse werden lokal automatisch mit den Originaldaten des Unternehmens angereichert. Die Context-Preserving Data Layer for AI von LLM Capsule schützt vertrauliche Daten und bewahrt gleichzeitig die Dokumentstruktur, die KI für korrekte Ergebnisse benötigt.
 
 Multi-Party Financial Analysis
 Mehrparteien-Finanzanalyse

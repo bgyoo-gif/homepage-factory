@@ -49,7 +49,7 @@ export default function Section03_Explanation({
   stage4Text = "AI results are restored through local restoration. The locally stored mapping is applied to reconstruct outputs with real enterprise data.",
   stage5Label = "Stage 5: Delivery",
   stage5Text = "Restored outputs are routed to downstream business systems — compliance platforms, case management, analytics dashboards — ready for immediate use.",
-  keyMessage = " is not a single checkpoint, but a continuous AI enablement data layer that protects data from ingestion to delivery, enabling enterprise AI adoption at every stage.",
+  keyMessage = " is not a single checkpoint, but a continuous context-preserving data layer for AI that protects data from ingestion to delivery, enabling enterprise AI adoption at every stage.",
   keyMessageHighlight = "AI data pipeline protection",
   productName = "LLM Capsule",
 }: Props) {
@@ -240,6 +240,6 @@ addPropertyControls(Section03_Explanation, {
   stage5Label:  { type: ControlType.String, title: "Stage 5 Label", defaultValue: "Stage 5: Delivery" },
   stage5Text:   { type: ControlType.String, title: "Stage 5 Text",  defaultValue: "Restored outputs are routed to downstream business systems — compliance platforms, case management, analytics dashboards — ready for immediate use." },
   keyMessageHighlight: { type: ControlType.String, title: "Key Msg Highlight", defaultValue: "AI data pipeline protection" },
-  keyMessage:   { type: ControlType.String, title: "Key Message Suffix", defaultValue: " is not a single checkpoint, but a continuous AI enablement data layer that protects data from ingestion to delivery, enabling enterprise AI adoption at every stage." },
+  keyMessage:   { type: ControlType.String, title: "Key Message Suffix", defaultValue: " is not a single checkpoint, but a continuous context-preserving data layer for AI that protects data from ingestion to delivery, enabling enterprise AI adoption at every stage." },
   productName:  { type: ControlType.String, title: "Product Name", defaultValue: "LLM Capsule" },
 })

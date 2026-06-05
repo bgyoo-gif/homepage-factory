@@ -11,7 +11,7 @@ Trust Center
 Certifications, compliance documentation, and security information for
 認証、コンプライアンス文書、セキュリティ情報を提供します —
 
-enterprise AI enablement.
+enterprise context-preserving data layer for AI.
 エンタープライズAI導入のためのLLM Capsuleのセキュリティ基盤です。
 
 ## Section 02: Certifications & Compliance

@@ -10,7 +10,7 @@ Architektur
 How LLM Capsule plugs AI into the systems you already run
 Wie LLM Capsule KI in Ihre bestehenden Systeme integriert
 
-Three zones. Four steps. Five components. Two execution paths. One governance framework. The AI enablement data layer for regulated operations — at the architectural level.
+Three zones. Four steps. Five components. Two execution paths. One governance framework. The context-preserving data layer for AI for regulated operations — at the architectural level.
 Drei Zonen. Vier Schritte. Fünf Komponenten. Zwei Ausführungspfade. Ein Governance-Rahmen. LLM Capsule bildet die Datenschicht für den KI-Einsatz in regulierten Umgebungen — dargestellt auf Architekturebene.
 
 ---

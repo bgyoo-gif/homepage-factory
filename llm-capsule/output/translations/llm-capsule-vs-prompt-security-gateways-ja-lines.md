@@ -10,7 +10,7 @@ LLM Capsuleとプロンプトセキュリティゲートウェイを比較しま
 
 ## Section 02: Overview
 
-Prompt security gateways sit between the user and the AI model, scanning prompts for sensitive content and filtering or blocking requests that contain flagged patterns. They operate at the API interaction layer. LLM Capsule operates as an AI enablement data layer — transforming the data itself before it enters any AI workflow, enabling AI adoption rather than blocking it.
+Prompt security gateways sit between the user and the AI model, scanning prompts for sensitive content and filtering or blocking requests that contain flagged patterns. They operate at the API interaction layer. LLM Capsule operates as a context-preserving data layer for AI — transforming the data itself before it enters any AI workflow, enabling AI adoption rather than blocking it.
 プロンプトセキュリティゲートウェイは、ユーザーとAIモデルの間に位置し、プロンプト内の機密コンテンツをスキャンし、フラグ付きパターンを含むリクエストをフィルタリングまたはブロックします。APIインタラクションレイヤーで動作します。LLM CapsuleはAI活用データレイヤーとして機能し、データがAIワークフローに入る前にデータ自体を変換し、ブロックではなくAI導入を可能にします。
 
 ## Section 03: How Gateways Work
@@ -69,7 +69,7 @@ Operating layer
 API / prompt level
 API / プロンプトレベル
 
-AI enablement data layer
+context-preserving data layer for AI
 AI活用データレイヤー
 
 Scope

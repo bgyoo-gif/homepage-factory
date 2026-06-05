@@ -21,7 +21,7 @@ interface Props {
 
 export default function Section05_Explanation({
   sectionLabel = "Explanation",
-  introText = "An AI data capsule operates as an AI enablement data layer through three stages within a restorable workflow:",
+  introText = "An AI data capsule operates as a context-preserving data layer for AI through three stages within a restorable workflow:",
   bullet1 = "Local Encapsulation. Sensitive elements in enterprise documents — names, account numbers, dates, medical codes, contract terms — are detected and replaced with structure-preserving representations. The mapping between original and replaced values is stored locally, never transmitted.",
   bullet2 = "Protected AI Processing. The encapsulated document is sent to any external LLM. Because document structure is preserved, the AI model can perform summarization, extraction, classification, and translation effectively. No original sensitive data leaves the enterprise environment.",
   bullet3 = "Local Restoration. AI results are automatically restored locally with original enterprise data. The locally stored mapping is applied to reconstruct outputs with real names, amounts, and references, producing results that are directly usable in business workflows.",
@@ -181,7 +181,7 @@ addPropertyControls(Section05_Explanation, {
   introText: {
     type: ControlType.String,
     title: "Intro Text",
-    defaultValue: "An AI data capsule operates as an AI enablement data layer through three stages within a restorable workflow:",
+    defaultValue: "An AI data capsule operates as a context-preserving data layer for AI through three stages within a restorable workflow:",
     displayTextArea: true,
   },
   bullet1: {

@@ -130,7 +130,7 @@ See industry solutions
 
 ## Section 05: Step Tabs
 
-Enterprise AI enablement through a 3+2 architecture
+Context-preserving data layer for AI through a 3+2 architecture
 3+2アーキテクチャによるエンタープライズAIの実現
 
 LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 data layer architecture: three core enablement pillars plus two additional value capabilities that ensure output quality and model flexibility.
@@ -529,7 +529,7 @@ AIを有効化。データを保護。結果を復元。すべてを追跡。
 See how LLM Capsule enables AI on your enterprise documents
 LLM Capsuleが貴社のエンタープライズ文書でAIをどう実現するかをご覧ください
 
-Bring your documents, deployment constraints, and evaluation criteria. We demonstrate how the AI enablement data layer works on your actual data, in your environment, against your compliance requirements.
+Bring your documents, deployment constraints, and evaluation criteria. We demonstrate how the context-preserving data layer for AI works on your actual data, in your environment, against your compliance requirements.
 貴社の文書、デプロイメント制約、評価基準をお持ちください。AI活性化データレイヤーが貴社の実際のデータで、貴社の環境内で、貴社のコンプライアンス要件に対してどのように機能するかをデモンストレーションいたします。
 
 Request a Demo
@@ -546,7 +546,7 @@ Frequently Asked Questions
 How does LLM Capsule protect enterprise data during AI processing?
 LLM CapsuleはAI処理中にエンタープライズデータをどのように保護しますか？
 
-LLM Capsule acts as an AI enablement data layer that encapsulates sensitive data locally before it leaves the enterprise environment. Only protected representations are sent to AI models. After processing, outputs are restored locally so they remain usable for real enterprise workflows. The original data never reaches external AI services — this is what makes it an AI enablement plugin rather than a monitoring or filtering tool.
+LLM Capsule acts as a context-preserving data layer for AI that encapsulates sensitive data locally before it leaves the enterprise environment. Only protected representations are sent to AI models. After processing, outputs are restored locally so they remain usable for real enterprise workflows. The original data never reaches external AI services — this is what makes it a context-preserving data layer for AI plugin rather than a monitoring or filtering tool.
 LLM CapsuleはAI活性化データレイヤーとして機能し、エンタープライズ環境を離れる前に機密データをローカルでカプセル化します。AIモデルには保護された表現のみが送信されます。処理後、出力はローカルで復元され、実際のエンタープライズワークフローで使用可能な状態を保ちます。元データは外部AIサービスに到達することはありません — これこそが、監視やフィルタリングツールではなくAI活性化プラグインである理由です。
 
 How is LLM Capsule different from data masking and redaction tools?
@@ -558,7 +558,7 @@ Masking and redaction permanently remove data, destroying the context AI models 
 What is the difference between LLM Capsule and prompt security gateways?
 LLM Capsuleとプロンプトセキュリティゲートウェイの違いは何ですか？
 
-Prompt security gateways filter at the API level — they scan prompts for sensitive patterns and block or strip flagged content. They cannot protect enterprise documents processed through RAG pipelines or batch workflows, and they provide no output restoration. LLM Capsule operates as a data layer plugin, encapsulating sensitive elements before any AI processing occurs and restoring outputs afterward. The two approaches can be complementary, but only a data-layer approach provides end-to-end AI enablement on enterprise data.
+Prompt security gateways filter at the API level — they scan prompts for sensitive patterns and block or strip flagged content. They cannot protect enterprise documents processed through RAG pipelines or batch workflows, and they provide no output restoration. LLM Capsule operates as a data layer plugin, encapsulating sensitive elements before any AI processing occurs and restoring outputs afterward. The two approaches can be complementary, but only a data-layer approach provides end-to-end context-preserving data layer for AI on enterprise data.
 プロンプトセキュリティゲートウェイはAPIレベルでフィルタリングします — プロンプトの機密パターンをスキャンし、フラグが立ったコンテンツをブロックまたは除去します。RAGパイプラインやバッチワークフローで処理されるエンタープライズ文書を保護することはできず、出力の復元機能もありません。LLM Capsuleはデータレイヤープラグインとして機能し、あらゆるAI処理が行われる前に機密要素をカプセル化し、処理後に出力を復元します。両アプローチは補完的に使用できますが、エンタープライズデータでのエンドツーエンドのAI活性化を提供できるのはデータレイヤーアプローチのみです。
 
 Where can LLM Capsule be deployed?
@@ -570,7 +570,7 @@ LLM Capsuleはオンプレミス、エアギャップ、クラウド（AWS Marke
 What is enterprise AI data protection?
 エンタープライズAIデータ保護とは何ですか？
 
-Enterprise AI enablement is the practice of making sensitive enterprise data AI-ready so organizations can adopt LLMs without exposing original information. LLM Capsule achieves this at the data layer through local encapsulation, structure-preserving processing, and local restoration — ensuring zero exposure of original data while enabling full AI workflow adoption. Unlike model-level approaches that block or filter, the data layer plugin transforms data itself to make enterprise AI possible.
+Context-preserving data layer for AI is the practice of making sensitive enterprise data AI-ready so organizations can adopt LLMs without exposing original information. LLM Capsule achieves this at the data layer through local encapsulation, structure-preserving processing, and local restoration — ensuring zero exposure of original data while enabling full AI workflow adoption. Unlike model-level approaches that block or filter, the data layer plugin transforms data itself to make enterprise AI possible.
 エンタープライズAI活性化とは、機密性の高いエンタープライズデータをAI対応にし、元の情報を露出させることなくLLMを導入できるようにする実践です。LLM Capsuleはローカルカプセル化、構造保存処理、ローカル復元を通じてデータレイヤーでこれを実現します — 元データの露出ゼロを確保しながら、AIワークフローの完全な導入を可能にします。ブロックやフィルタリングを行うモデルレベルのアプローチとは異なり、データレイヤープラグインはデータ自体を変換してエンタープライズAIを可能にします。
 
 What certifications does LLM Capsule hold?

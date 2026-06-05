@@ -8,7 +8,7 @@ Enterprise AI
 Enablement
 도입
 
-Key terms and definitions for enterprise AI enablement, LLM data privacy, and secure enterprise AI workflows.
+Key terms and definitions for enterprise context-preserving data layer for AI, LLM data privacy, and secure enterprise AI workflows.
 기업 AI 도입, LLM 데이터 프라이버시, 안전한 기업 AI 워크플로우의 핵심 용어와 정의를 제공합니다.
 
 Home

@@ -61,8 +61,8 @@ const DEFAULT_BODY_HTML = `
   <li>It does not eliminate risk. It bounds and characterizes risk so engineers and compliance teams can reason about it.</li>
 </ul>
 
-<h2>Why DP belongs in the AI enablement data layer</h2>
-<p>The AI enablement data layer is where regulated operational data crosses from "private" to "usable by an LLM." In a typical PII-only pipeline, the layer detects identifiable fields, replaces them with tokens, forwards the result to the LLM, and restores the tokens after. This works for a customer service chat or a contract review workflow where the sensitive content is mostly individual identifiers.</p>
+<h2>Why DP belongs in the context-preserving data layer for AI</h2>
+<p>The context-preserving data layer for AI is where regulated operational data crosses from "private" to "usable by an LLM." In a typical PII-only pipeline, the layer detects identifiable fields, replaces them with tokens, forwards the result to the LLM, and restores the tokens after. This works for a customer service chat or a contract review workflow where the sensitive content is mostly individual identifiers.</p>
 <p>It does not work when the sensitive information is the network topology of a national carrier, the alarm sequence preceding an outage, the configuration drift between two PLCs, or the operational rhythm of a hospital ward. In those cases, the field-level masks pass, but the underlying patterns are still legible to anyone who reconstructs context.</p>
 <p>Differential-privacy-based encapsulation adds a distributional protection layer to the field-level mask. It is applied during the encapsulation step — before the data reaches the LLM — and is calibrated against the operational data's sensitivity profile.</p>
 
@@ -140,9 +140,9 @@ const DEFAULT_BODY_HTML = `
 </ul>
 <p>These are claims the security and legal teams of regulated buyers can engage with. Absolute claims are claims that get challenged.</p>
 
-<h2>Where this fits in the broader AI enablement data layer</h2>
+<h2>Where this fits in the broader context-preserving data layer for AI</h2>
 <p>Differential-privacy-based encapsulation is one capability inside the LLM Capsule runtime. The runtime also includes structure-preserving transformation, policy-based marker control, state vault for restoration, and an audit trail. The differential-privacy component makes the capsule defensible against pattern-level inference attacks; the structure-preserving component makes it useful to the LLM; the state vault makes the result restorable to the workflow.</p>
-<p>All three together — and the connector lane that plugs them into existing NOC, ticket, OT, EHR, and mission systems — are why LLM Capsule is positioned as an <strong>AI enablement data layer</strong> rather than as a privacy product or PII tool.</p>
+<p>All three together — and the connector lane that plugs them into existing NOC, ticket, OT, EHR, and mission systems — are why LLM Capsule is positioned as an <strong>context-preserving data layer for AI</strong> rather than as a privacy product or PII tool.</p>
 
 <div class="takeaways">
   <div class="takeaways__label">Key takeaways</div>
@@ -161,12 +161,12 @@ export default function LearnArticle_DifferentialPrivacyForEnterpriseLlm({
   backLabel = "← Learn",
   backHref = "/learn",
   title = "Differential Privacy for Enterprise AI: What It Is, Why It Matters, How It Applies to Operational Data",
-  lead = "PII filtering reaches the names. Differential privacy reaches the patterns. Why differential-privacy-based encapsulation is the technical foundation of the AI enablement data layer.",
+  lead = "PII filtering reaches the names. Differential privacy reaches the patterns. Why differential-privacy-based encapsulation is the technical foundation of the context-preserving data layer for AI.",
   category = "PILLAR · Differential Privacy",
   readTime = "12 min read",
   dateUpdated = "Updated May 2025",
   tldrLabel = "Definition · TL;DR",
-  tldrBody = "Differential-privacy-based encapsulation is the technical foundation of the AI enablement data layer. It transforms regulated operational data into AI-ready context while preserving structure (table layout, log sequence, document hierarchy) and applying differential-privacy-based protection to reduce re-identification, inference, and sensitive context exposure risks. It is a technical protection layer with a defined risk-reduction scope — not a legal guarantee.",
+  tldrBody = "Differential-privacy-based encapsulation is the technical foundation of the context-preserving data layer for AI. It transforms regulated operational data into AI-ready context while preserving structure (table layout, log sequence, document hierarchy) and applying differential-privacy-based protection to reduce re-identification, inference, and sensitive context exposure risks. It is a technical protection layer with a defined risk-reduction scope — not a legal guarantee.",
   bodyHtml = DEFAULT_BODY_HTML,
   canonicalUrl = "https://llmcapsule.ai/resources/learn/differential-privacy-for-enterprise-llm",
   datePublished = "2025-05-01",
@@ -213,7 +213,7 @@ export default function LearnArticle_DifferentialPrivacyForEnterpriseLlm({
         "name": "What is differential privacy in enterprise AI?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Differential privacy is a mathematical framework that bounds the influence any single record can have on a derived output. In enterprise AI, it is applied during the encapsulation step of an AI enablement data layer to reduce re-identification, inference, and sensitive context exposure risks when operational data — network logs, configurations, OT manifests, clinical workflows — is transformed into AI-ready context.",
+          "text": "Differential privacy is a mathematical framework that bounds the influence any single record can have on a derived output. In enterprise AI, it is applied during the encapsulation step of a context-preserving data layer for AI to reduce re-identification, inference, and sensitive context exposure risks when operational data — network logs, configurations, OT manifests, clinical workflows — is transformed into AI-ready context.",
         },
       },
       {
@@ -837,14 +837,14 @@ addPropertyControls(LearnArticle_DifferentialPrivacyForEnterpriseLlm, {
   backLabel:   { type: ControlType.String, title: "Back Label",    defaultValue: "← Learn" },
   backHref:    { type: ControlType.String, title: "Back URL",      defaultValue: "/learn" },
   title:       { type: ControlType.String, title: "Title",         defaultValue: "Differential Privacy for Enterprise AI: What It Is, Why It Matters, How It Applies to Operational Data" },
-  lead:        { type: ControlType.String, title: "Lead",          defaultValue: "PII filtering reaches the names. Differential privacy reaches the patterns. Why differential-privacy-based encapsulation is the technical foundation of the AI enablement data layer.", displayTextArea: true },
+  lead:        { type: ControlType.String, title: "Lead",          defaultValue: "PII filtering reaches the names. Differential privacy reaches the patterns. Why differential-privacy-based encapsulation is the technical foundation of the context-preserving data layer for AI.", displayTextArea: true },
   category:    { type: ControlType.String, title: "Category",      defaultValue: "PILLAR · Differential Privacy" },
   readTime:    { type: ControlType.String, title: "Read Time",     defaultValue: "12 min read" },
   dateUpdated: { type: ControlType.String, title: "Date Updated",  defaultValue: "Updated May 2025" },
 
   // TL;DR
   tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "Definition · TL;DR" },
-  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "Differential-privacy-based encapsulation is the technical foundation of the AI enablement data layer. It transforms regulated operational data into AI-ready context while preserving structure (table layout, log sequence, document hierarchy) and applying differential-privacy-based protection to reduce re-identification, inference, and sensitive context exposure risks. It is a technical protection layer with a defined risk-reduction scope — not a legal guarantee.", displayTextArea: true },
+  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "Differential-privacy-based encapsulation is the technical foundation of the context-preserving data layer for AI. It transforms regulated operational data into AI-ready context while preserving structure (table layout, log sequence, document hierarchy) and applying differential-privacy-based protection to reduce re-identification, inference, and sensitive context exposure risks. It is a technical protection layer with a defined risk-reduction scope — not a legal guarantee.", displayTextArea: true },
 
   // Body HTML
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: DEFAULT_BODY_HTML, displayTextArea: true },

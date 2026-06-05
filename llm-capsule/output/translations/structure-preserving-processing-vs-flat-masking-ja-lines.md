@@ -37,7 +37,7 @@ Inconsistent replacement. The same entity may receive different tokens in differ
 Structure-preserving processing maintains document integrity during data protection. Entity consistency is enforced across the entire document. Table structures, cross-references, and semantic relationships are preserved. AI receives a structurally complete document that supports accurate processing.
 構造保持処理はデータ保護中の文書整合性を維持します。文書全体にわたってエンティティの一貫性が適用されます。テーブル構造、相互参照、意味的関係が保持されます。AIは正確な処理をサポートする構造的に完全な文書を受け取ります。
 
-AI results are automatically restored locally with original enterprise data. LLM Capsule's AI enablement data layer protects sensitive data while preserving the document structure AI needs for accurate outputs.
+AI results are automatically restored locally with original enterprise data. LLM Capsule's context-preserving data layer for AI protects sensitive data while preserving the document structure AI needs for accurate outputs.
 AI結果は元の企業データとともにローカルで自動的に復元されます。LLM CapsuleのAIイネーブルメントデータレイヤーは、正確な出力のためにAIが必要とする文書構造を保持しながら、機密データを保護します。
 
 ## Section 06: Enterprise Workflow Example

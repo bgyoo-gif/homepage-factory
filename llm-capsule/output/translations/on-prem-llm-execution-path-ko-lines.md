@@ -8,7 +8,7 @@
 On-Prem LLM Execution Path: Air-Gapped, Hybrid, and In-Region AI for Regulated Operations
 온프레미스 LLM 실행 경로: 규제 환경을 위한 망분리·하이브리드·지역 내 AI
 
-Two execution paths inside a single AI enablement data layer. When external transmission is not an option, the on-prem local lightweight model handles the workflow inside your boundary — zero external exposure, full restoration.
+Two execution paths inside a single context-preserving data layer for AI. When external transmission is not an option, the on-prem local lightweight model handles the workflow inside your boundary — zero external exposure, full restoration.
 단일 AI 데이터 레이어 안에 두 가지 실행 경로가 존재합니다. 외부 전송이 불가한 환경에서는 온프레미스 경량 모델이 경계 내부에서 워크플로를 처리합니다. 외부 노출 Zero Exposure, 완전한 복원.
 
 ARCHITECTURE · Execution Path

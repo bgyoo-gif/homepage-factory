@@ -48,7 +48,7 @@ Stage 5: Delivery
 Restored outputs are routed to downstream business systems — compliance platforms, case management, analytics dashboards — ready for immediate use.
 復元された出力がダウンストリームのビジネスシステム — コンプライアンスプラットフォーム、ケース管理、分析ダッシュボード — にルーティングされ、即座に使用可能です。
 
-AI data pipeline protection is not a single checkpoint, but a continuous AI enablement data layer that protects data from ingestion to delivery, enabling enterprise AI adoption at every stage.
+AI data pipeline protection is not a single checkpoint, but a continuous context-preserving data layer for AI that protects data from ingestion to delivery, enabling enterprise AI adoption at every stage.
 AIデータパイプライン保護は単一のチェックポイントではなく、取り込みから配信までデータを保護し、あらゆる段階で企業のAI導入を実現する、継続的なAIイネーブルメントデータレイヤーです。
 
 ## Section 04: Enterprise Example

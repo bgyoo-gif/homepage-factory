@@ -4,14 +4,14 @@
 
 | Prop | English | Korean |
 |------|---------|--------|
-| heroTitle | Enterprise AI Enablement | 엔터프라이즈 AI 활성화 |
+| heroTitle | Context-Preserving Data Layer for AI | AI를 위한 컨텍스트 보존 데이터 레이어 |
 | heroTitleBrand | Resources | 리소스 |
-| heroDescription | Technical documentation, learning resources, glossary, and downloads for enterprise AI enablement with LLM Capsule. | LLM Capsule 기반 엔터프라이즈 AI 활성화를 위한 기술 문서, 학습 자료, 용어집 및 다운로드를 제공합니다. |
+| heroDescription | Technical documentation, learning resources, glossary, and downloads for enterprise context-preserving data layer for AI with LLM Capsule. | LLM Capsule 기반 AI를 위한 컨텍스트 보존 데이터 레이어를 위한 기술 문서, 학습 자료, 용어집 및 다운로드를 제공합니다. |
 | s2SectionTitle | Explore | 탐색하기 |
 | s2SectionTitleBrand | Resources | 리소스 |
 | s2SectionDescription | Browse documentation, learning materials, key terms, and trust information. | 문서, 학습 자료, 핵심 용어, 신뢰 정보를 확인하세요. |
 | s2Card1Title | Learn | 학습 |
-| s2Card1Description | In-depth articles on enterprise AI enablement, secure LLM usage, structure-preserving processing, and restorable workflows. | 엔터프라이즈 AI 활성화, 안전한 LLM 활용, structure-preserving processing, 복원 가능한 워크플로에 대한 심층 아티클을 제공합니다. |
+| s2Card1Description | In-depth articles on enterprise context-preserving data layer for AI, secure LLM usage, structure-preserving processing, and restorable workflows. | AI를 위한 컨텍스트 보존 데이터 레이어, 안전한 LLM 활용, structure-preserving processing, 복원 가능한 워크플로에 대한 심층 아티클을 제공합니다. |
 | s2Card1BtnLabel | Browse Learn → | 학습 자료 보기 → |
 | s2Card1Href | learn.html | learn.html |
 | s2Card2Title | Glossary | 용어집 |
@@ -22,8 +22,8 @@
 | s2Card3Description | Security certifications, compliance documentation, and audit information. | 보안 인증, 컴플라이언스 문서 및 감사 정보를 제공합니다. |
 | s2Card3BtnLabel | Browse Trust Center → | 트러스트 센터 보기 → |
 | s2Card3Href | trust-center.html | trust-center.html |
-| s3SectionTitle | Core guides for enterprise AI | 엔터프라이즈 AI를 위한 핵심 가이드 |
-| s3SectionTitleBrand | enablement | 활성화 |
+| s3SectionTitle | Core guides for the | 핵심 가이드: |
+| s3SectionTitleBrand | context-preserving data layer | 컨텍스트 보존 데이터 레이어 |
 | s3SectionDescription | Start with the documents that explain the operating model, the failure of redaction-based approaches, and the architecture behind usable AI outputs. | 운영 모델, 편집 기반 접근 방식의 한계, 그리고 실용적인 AI 출력을 가능하게 하는 아키텍처를 설명하는 문서부터 시작하세요. |
 | s3Guide1Title | Secure Enterprise AI Data Workflows | 안전한 엔터프라이즈 AI 데이터 워크플로 |
 | s3Guide1Description | The end-to-end operating model for protecting sensitive data across AI workflows while restoring usable outputs locally. | AI 워크플로 전반에서 민감 데이터를 보호하고 로컬에서 사용 가능한 출력물을 복원하는 엔드투엔드 운영 모델입니다. |
@@ -50,14 +50,14 @@
 
 | Prop | English | Japanese |
 |------|---------|----------|
-| heroTitle | Enterprise AI Enablement | エンタープライズ AI 活用支援 |
+| heroTitle | Context-Preserving Data Layer for AI | エンタープライズ AI 活用支援 |
 | heroTitleBrand | Resources | リソース |
-| heroDescription | Technical documentation, learning resources, glossary, and downloads for enterprise AI enablement with LLM Capsule. | LLM Capsule によるエンタープライズ AI 活用支援のための技術ドキュメント、学習資料、用語集、およびダウンロードを提供しています。 |
+| heroDescription | Technical documentation, learning resources, glossary, and downloads for enterprise context-preserving data layer for AI with LLM Capsule. | LLM Capsule によるエンタープライズ AI 活用支援のための技術ドキュメント、学習資料、用語集、およびダウンロードを提供しています。 |
 | s2SectionTitle | Explore | 探索する |
 | s2SectionTitleBrand | Resources | リソース |
 | s2SectionDescription | Browse documentation, learning materials, key terms, and trust information. | ドキュメント、学習資料、主要用語、トラスト情報をご覧ください。 |
 | s2Card1Title | Learn | 学習 |
-| s2Card1Description | In-depth articles on enterprise AI enablement, secure LLM usage, structure-preserving processing, and restorable workflows. | エンタープライズ AI 活用支援、安全な LLM 利用、structure-preserving processing、復元可能なワークフローに関する詳細記事を提供しています。 |
+| s2Card1Description | In-depth articles on enterprise context-preserving data layer for AI, secure LLM usage, structure-preserving processing, and restorable workflows. | エンタープライズ AI 活用支援、安全な LLM 利用、structure-preserving processing、復元可能なワークフローに関する詳細記事を提供しています。 |
 | s2Card1BtnLabel | Browse Learn → | 学習資料を見る → |
 | s2Card1Href | learn.html | learn.html |
 | s2Card2Title | Glossary | 用語集 |
@@ -68,8 +68,8 @@
 | s2Card3Description | Security certifications, compliance documentation, and audit information. | セキュリティ認証、コンプライアンスドキュメント、監査情報を提供しています。 |
 | s2Card3BtnLabel | Browse Trust Center → | トラストセンターを見る → |
 | s2Card3Href | trust-center.html | trust-center.html |
-| s3SectionTitle | Core guides for enterprise AI | エンタープライズ AI のためのコアガイド |
-| s3SectionTitleBrand | enablement | 活用支援 |
+| s3SectionTitle | Core guides for the | コアガイド: |
+| s3SectionTitleBrand | context-preserving data layer | コンテキスト保持データレイヤー |
 | s3SectionDescription | Start with the documents that explain the operating model, the failure of redaction-based approaches, and the architecture behind usable AI outputs. | 運用モデル、編集ベースのアプローチの限界、そして実用的な AI 出力を実現するアーキテクチャを説明するドキュメントからお始めください。 |
 | s3Guide1Title | Secure Enterprise AI Data Workflows | セキュアなエンタープライズ AI データワークフロー |
 | s3Guide1Description | The end-to-end operating model for protecting sensitive data across AI workflows while restoring usable outputs locally. | AI ワークフロー全体で機密データを保護しながら、ローカルで利用可能な出力を復元するエンドツーエンドの運用モデルです。 |
@@ -96,14 +96,14 @@
 
 | Prop | English | German |
 |------|---------|--------|
-| heroTitle | Enterprise AI Enablement | Enterprise-AI-Enablement |
+| heroTitle | Context-Preserving Data Layer for AI | Context-Preserving Data Layer for AI |
 | heroTitleBrand | Resources | Ressourcen |
-| heroDescription | Technical documentation, learning resources, glossary, and downloads for enterprise AI enablement with LLM Capsule. | Technische Dokumentation, Lernmaterialien, Glossar und Downloads für das Enterprise-AI-Enablement mit LLM Capsule. |
+| heroDescription | Technical documentation, learning resources, glossary, and downloads for enterprise context-preserving data layer for AI with LLM Capsule. | Technische Dokumentation, Lernmaterialien, Glossar und Downloads für das Context-Preserving Data Layer for AI mit LLM Capsule. |
 | s2SectionTitle | Explore | Entdecken |
 | s2SectionTitleBrand | Resources | Ressourcen |
 | s2SectionDescription | Browse documentation, learning materials, key terms, and trust information. | Durchsuchen Sie Dokumentation, Lernmaterialien, Schlüsselbegriffe und Trust-Informationen. |
 | s2Card1Title | Learn | Lernen |
-| s2Card1Description | In-depth articles on enterprise AI enablement, secure LLM usage, structure-preserving processing, and restorable workflows. | Ausführliche Artikel zu Enterprise-AI-Enablement, sicherem LLM-Einsatz, Structure-Preserving Processing und wiederherstellbaren Workflows. |
+| s2Card1Description | In-depth articles on enterprise context-preserving data layer for AI, secure LLM usage, structure-preserving processing, and restorable workflows. | Ausführliche Artikel zu Context-Preserving Data Layer for AI, sicherem LLM-Einsatz, Structure-Preserving Processing und wiederherstellbaren Workflows. |
 | s2Card1BtnLabel | Browse Learn → | Lernmaterialien ansehen → |
 | s2Card1Href | learn.html | learn.html |
 | s2Card2Title | Glossary | Glossar |
@@ -114,8 +114,8 @@
 | s2Card3Description | Security certifications, compliance documentation, and audit information. | Sicherheitszertifizierungen, Compliance-Dokumentation und Audit-Informationen. |
 | s2Card3BtnLabel | Browse Trust Center → | Trust Center ansehen → |
 | s2Card3Href | trust-center.html | trust-center.html |
-| s3SectionTitle | Core guides for enterprise AI | Kernleitfäden für Enterprise-KI |
-| s3SectionTitleBrand | enablement | Enablement |
+| s3SectionTitle | Core guides for the | Kernleitfäden für die |
+| s3SectionTitleBrand | context-preserving data layer | kontexterhaltende Datenschicht |
 | s3SectionDescription | Start with the documents that explain the operating model, the failure of redaction-based approaches, and the architecture behind usable AI outputs. | Beginnen Sie mit den Dokumenten, die das Betriebsmodell, die Grenzen redaktionsbasierter Ansätze und die Architektur hinter nutzbaren KI-Ausgaben erläutern. |
 | s3Guide1Title | Secure Enterprise AI Data Workflows | Sichere Enterprise-AI-Daten-Workflows |
 | s3Guide1Description | The end-to-end operating model for protecting sensitive data across AI workflows while restoring usable outputs locally. | Das End-to-End-Betriebsmodell zum Schutz sensibler Daten in KI-Workflows bei gleichzeitiger lokaler Wiederherstellung nutzbarer Ausgaben. |

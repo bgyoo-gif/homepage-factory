@@ -5,8 +5,8 @@
 PII Protection vs Enterprise Confidentiality Control
 PII 보호 vs 엔터프라이즈 기밀 제어
 
-Why protecting only personal data is insufficient for enterprise AI enablement. Business-critical information requires enterprise confidentiality control to truly enable AI adoption.
-개인 데이터만 보호하는 것이 엔터프라이즈 AI 활성화에 불충분한 이유. 비즈니스 핵심 정보는 AI 도입을 진정으로 가능하게 하기 위해 엔터프라이즈 기밀 제어가 필요합니다.
+Why protecting only personal data is insufficient for enterprise context-preserving data layer for AI. Business-critical information requires enterprise confidentiality control to truly enable AI adoption.
+개인 데이터만 보호하는 것이 AI를 위한 컨텍스트 보존 데이터 레이어에 불충분한 이유. 비즈니스 핵심 정보는 AI 도입을 진정으로 가능하게 하기 위해 엔터프라이즈 기밀 제어가 필요합니다.
 
 Learn
 학습
@@ -16,8 +16,8 @@ Learn
 Problem
 문제
 
-Most AI data protection solutions focus on personally identifiable information (PII) — names, social security numbers, email addresses. But true enterprise AI enablement requires protecting far more than PII. Enterprise documents contain trade secrets, acquisition targets, pricing models, internal performance metrics, strategic plans, and client relationship details — all enterprise-sensitive but not classified as PII.
-대부분의 AI 데이터 보호 솔루션은 개인 식별 정보(PII) — 이름, 주민등록번호, 이메일 주소 — 에 초점을 맞춥니다. 그러나 진정한 엔터프라이즈 AI 활성화에는 PII 이상의 보호가 필요합니다. 기업 문서에는 영업 비밀, 인수 대상, 가격 모델, 내부 성과 지표, 전략 계획, 고객 관계 정보가 포함되어 있으며 — 모두 기업 민감정보이지만 PII로 분류되지 않습니다.
+Most AI data protection solutions focus on personally identifiable information (PII) — names, social security numbers, email addresses. But true enterprise context-preserving data layer for AI requires protecting far more than PII. Enterprise documents contain trade secrets, acquisition targets, pricing models, internal performance metrics, strategic plans, and client relationship details — all enterprise-sensitive but not classified as PII.
+대부분의 AI 데이터 보호 솔루션은 개인 식별 정보(PII) — 이름, 주민등록번호, 이메일 주소 — 에 초점을 맞춥니다. 그러나 진정한 AI를 위한 컨텍스트 보존 데이터 레이어에는 PII 이상의 보호가 필요합니다. 기업 문서에는 영업 비밀, 인수 대상, 가격 모델, 내부 성과 지표, 전략 계획, 고객 관계 정보가 포함되어 있으며 — 모두 기업 민감정보이지만 PII로 분류되지 않습니다.
 
 A legal memo about a pending acquisition contains no PII. It contains deal structure, valuation ranges, and strategic rationale — all of which would be damaging if exposed to an AI provider's training pipeline or logging system.
 인수 진행 중인 법적 메모에는 PII가 없습니다. 거래 구조, 가치 평가 범위, 전략적 근거가 포함되어 있으며 — AI 제공업체의 훈련 파이프라인이나 로깅 시스템에 노출되면 모두 피해를 줄 수 있습니다.

@@ -1,11 +1,11 @@
-# glossary/ai-enablement-data-layer — 한국어 번역
+# glossary/context-preserving-data-layer — 한국어 번역
 
 ## Section 01: Hero
 
 ← Glossary
 ← 용어 사전
 
-AI enablement data layer
+context-preserving data layer for AI
 데이터 레이어
 
 The architectural component that makes regulated enterprise AI workflows actually work — between operational systems and large language models.
@@ -21,7 +21,7 @@ P0 · 카테고리 정의
 Definition
 정의
 
-An AI enablement data layer is the architectural component that sits between regulated enterprise systems (NOC consoles, EHR, claim platforms, mission systems, legacy DBs) and large language models. It turns operational data into AI-ready capsules using structure-preserving, differential-privacy-based encapsulation, executes AI workflows on the protected capsule, and restores outputs back into the originating system. It supports two execution paths — external approved LLM with capsule data only, or on-prem local lightweight model — under a single governance framework.
+A context-preserving data layer for AI is the architectural component that sits between regulated enterprise systems (NOC consoles, EHR, claim platforms, mission systems, legacy DBs) and large language models. It turns operational data into AI-ready capsules using structure-preserving, differential-privacy-based encapsulation, executes AI workflows on the protected capsule, and restores outputs back into the originating system. It supports two execution paths — external approved LLM with capsule data only, or on-prem local lightweight model — under a single governance framework.
 데이터 레이어는 규제 환경의 기업 시스템(NOC 콘솔, EHR, 청구 플랫폼, 미션 시스템, 레거시 DB)과 대규모 언어 모델 사이에 위치하는 아키텍처 구성 요소입니다. 운영 데이터를 문서 구조 보존·차등 프라이버시 기반 캡슐화로 AI 준비 캡슐로 변환하고, 보호된 캡슐에서 AI 워크플로우를 실행한 뒤 출력 결과를 원래 시스템으로 복원합니다. 단일 거버넌스 프레임워크 하에 두 가지 실행 경로를 지원합니다 — 캡슐 데이터만 사용하는 외부 승인 LLM, 또는 온프레미스 경량 로컬 모델.
 
 ---
@@ -90,7 +90,7 @@ An AI enablement data layer is the architectural component that sits between reg
 Related terms
 관련 용어
 
-AI enablement data layer
+context-preserving data layer for AI
 데이터 레이어
 
 Structure-preserving encapsulation

@@ -33,7 +33,7 @@ Differential Privacy (DP) ist ein mathematisches Rahmenwerk zum Schutz einzelner
 
 <p>Die Methode fügt kalibriertes Rauschen (typischerweise nach Laplace- oder Gaußverteilung) zu Ausgaben, Abfragen oder Transformationen hinzu. Die Rauschstärke ergibt sich aus der Sensitivität der Funktion und dem festgelegten Privacy-Budget. Das Ergebnis ist eine quantitative Schranke dafür, was ein Angreifer aus der Ausgabe über einzelne Datensätze ableiten kann.</p>
 
-<h2>Einsatz im AI enablement data layer</h2>
+<h2>Einsatz im context-preserving data layer for AI</h2>
 
 <p>In LLM Capsule wird Differential-Privacy-basierter Schutz während des strukturerhaltenden Kapsulierungsschritts angewendet. Die Kapsel (KI-geeigneter Kontext) trägt die Differential-Privacy-Garantie zusätzlich zur feldbasierten Tokenisierung. Damit werden Inferenzrisiken adressiert, die durch feldbasiertes Masking allein nicht gebunden werden können — insbesondere bei operativen Daten, deren Struktur, Sequenz und Aggregatmuster selbst sensible Informationen enthalten.</p>
 
@@ -83,8 +83,8 @@ Strukturerhaltende Kapsulierung
 /glossary/structure-preserving-encapsulation
 /glossary/structure-preserving-encapsulation
 
-AI enablement data layer
-AI enablement data layer
+context-preserving data layer for AI
+context-preserving data layer for AI
 
 /glossary/ai-ready-operational-layer
 /glossary/ai-ready-operational-layer

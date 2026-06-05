@@ -15,7 +15,7 @@
 | description | Secure LLM usage enables enterprises to process sensitive data through large language models without exposing original information to external AI services. |
 | canonical | https://llmcapsule.ai/resources/glossary/secure-llm-usage |
 | og:type | article |
-| keywords | enterprise AI enablement, AI-ready data layer, AI adoption enabler, LLM plugin, cross-model execution |
+| keywords | enterprise context-preserving data layer for AI, AI-ready data layer, AI adoption enabler, LLM plugin, cross-model execution |
 | JSON-LD | BreadcrumbList (Home > Resources > Glossary > Secure LLM Usage) -- 원본 그대로 사용 |
 
 ---
@@ -103,7 +103,7 @@
 - `ds-banner ds-banner--brand`
   - `ds-banner__label`: "DEFINITION"
   - `<p>`: 원문 그대로 --
-    "Secure LLM usage is the practice of using large language models for enterprise tasks -- summarization, extraction, classification, translation -- without exposing original sensitive data to the AI provider. <span class="ds-text--product">LLM Capsule</span> enables secure LLM usage through its AI enablement data layer: pre-processing encapsulation and post-processing restoration that work across any LLM."
+    "Secure LLM usage is the practice of using large language models for enterprise tasks -- summarization, extraction, classification, translation -- without exposing original sensitive data to the AI provider. <span class="ds-text--product">LLM Capsule</span> enables secure LLM usage through its context-preserving data layer for AI: pre-processing encapsulation and post-processing restoration that work across any LLM."
 
 ### Notes
 - banner 텍스트 가운데 정렬
@@ -130,7 +130,7 @@
    "Secure LLM usage is distinct from model-level security measures like prompt filtering or output scanning. Those approaches monitor the interaction with the AI model but do not prevent the data itself from being transmitted. Secure LLM usage operates at the data layer -- transforming what the AI receives so that sensitive information never reaches the model."
 
    **Paragraph 2:**
-   "This approach is model-agnostic. Whether the enterprise uses ChatGPT, Claude, Gemini, Perplexity, or any other LLM API, the AI enablement data layer remains consistent because it operates before the data reaches any model -- enabling cross-model execution from a single AI enablement layer."
+   "This approach is model-agnostic. Whether the enterprise uses ChatGPT, Claude, Gemini, Perplexity, or any other LLM API, the context-preserving data layer for AI remains consistent because it operates before the data reaches any model -- enabling cross-model execution from a single context-preserving data layer for AI."
 
 ### Notes
 - 원문 2개 단락 모두 유지
@@ -209,12 +209,12 @@
     "Enable <span class="ds-text--product">Secure LLM Usage</span> for Your Enterprise"
     - 강조 키워드: 없음 (ds-text--product으로 제품 강조 충분)
   - **Description** -- `ds-cta-band__description`:
-    "Process sensitive data through any LLM without exposure. Experience the AI enablement data layer."
+    "Process sensitive data through any LLM without exposure. Experience the context-preserving data layer for AI."
   - **Actions** -- `ds-cta-band__actions`:
     - `<a href="request-pov.html" class="ds-btn ds-btn--lg">Request PoV</a>`
     - `<a href="product.html" class="ds-btn ds-btn--lg">View Product</a>`
   - **Footnote** -- `ds-cta-band__footnote`:
-    "Enterprise AI Enablement by CUBIG"
+    "Context-Preserving Data Layer for AI by CUBIG"
 
 ### Notes
 - 배경: `var(--ds-gradient-brand)` (CTA band fallback gradient)

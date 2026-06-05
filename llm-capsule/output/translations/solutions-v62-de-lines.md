@@ -13,7 +13,7 @@ KI-gestützte Workflows in regulierten Branchen —
 usable with AI
 ohne Offenlegung vertraulicher Daten
 
-Six industries. Real production workflows. Real customers. One AI enablement data layer that removes the data exposure barrier blocking enterprise AI adoption — so AI runs on real data, inside your environment, under your governance.
+Six industries. Real production workflows. Real customers. One context-preserving data layer for AI that removes the data exposure barrier blocking enterprise AI adoption — so AI runs on real data, inside your environment, under your governance.
 Sechs regulierte Branchen. Reale Produktivworkflows. Nachgewiesene Kundeneinsätze. Eine Datenschicht, die verhindert, dass vertrauliche Daten bei der KI-Verarbeitung nach außen gelangen — KI läuft auf echten Daten, in Ihrer Umgebung, unter Ihrer Kontrolle.
 
 6
@@ -512,8 +512,8 @@ Eine der größten Anwaltskanzleien Koreas. KI-Unterstützung bei privilegierten
 Legal Industry Visual
 Rechtsbranche — Branchenvisualisierung
 
-Read: AI enablement data layer (definition) →
-Lesen: KI-Aktivierungsdatenschicht (Definition) →
+Read: context-preserving data layer for AI (definition) →
+Lesen: Kontexterhaltende Datenschicht für KI (Definition) →
 
 ---
 

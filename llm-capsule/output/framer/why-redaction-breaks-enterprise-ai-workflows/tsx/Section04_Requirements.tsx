@@ -43,7 +43,7 @@ export default function Section04_Requirements({
   check3Rest = " AI results are automatically restored locally with original enterprise data. Outputs contain real names, real amounts, real dates — ready for direct use in business processes.",
   bannerBold = "AI results are automatically restored locally with original enterprise data.",
   bannerProductName = "LLM Capsule",
-  bannerRest = " as an AI enablement data layer from static redaction tools.",
+  bannerRest = " as a context-preserving data layer for AI from static redaction tools.",
 }: Props) {
   const checks = [
     { strong: check1Strong, rest: check1Rest },
@@ -267,6 +267,6 @@ addPropertyControls(Section04_Requirements, {
   bannerRest: {
     type: ControlType.String,
     title: "Banner (Rest)",
-    defaultValue: " as an AI enablement data layer from static redaction tools.",
+    defaultValue: " as a context-preserving data layer for AI from static redaction tools.",
   },
 })

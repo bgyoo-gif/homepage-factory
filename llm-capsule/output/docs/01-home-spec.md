@@ -71,10 +71,10 @@ Revised background plan:
 section.hero
   div.container.hero__grid (grid: 1.05fr 1fr, gap 64px, align-items center)
     div (text column)
-      span.eyebrow             -- "AI Enablement Data Layer"
+      span.eyebrow             -- "Context-Preserving Data Layer for AI"
       h1.hero__h1              -- "Make <strong>sensitive workflows</strong> run with AI."
       p.hero__sub              -- full paragraph (see content below)
-      div.hero__tag            -- pill badge: "The AI enablement data layer for regulated operations."
+      div.hero__tag            -- pill badge: "The context-preserving data layer for AI for regulated operations."
       div.hero__cta            -- 2 buttons
       div.hero__metrics        -- 4 metric items (grid 4-col)
     div.hero__visual           -- product mock / illustration placeholder
@@ -82,11 +82,11 @@ section.hero
 
 ### Content (verbatim)
 
-- **Eyebrow:** `AI ENABLEMENT DATA LAYER`
+- **Eyebrow:** `CONTEXT-PRESERVING DATA LAYER FOR AI`
 - **Title:** `Make sensitive workflows run with AI.`
 - **Title brand keyword:** `sensitive workflows` -> wrap in `<strong>` with `color: var(--c-primary)`
-- **Description:** "From blocked workflows to operational AI -- without breaking documents, systems, or context. LLM Capsule is the AI enablement data layer for regulated enterprise operations. It plugs into the systems you already run -- on-premise, air-gapped, or hybrid -- and AI receives the operational structure it needs. Sensitive data stays inside your environment. Outputs return business-ready, in the originating workflow."
-- **Tag pill:** "The AI enablement data layer for regulated operations." -- `background: var(--c-primary-soft); color: var(--c-primary-dark); border-radius: 999px; font-size: 13px; font-weight: 600;`
+- **Description:** "From blocked workflows to operational AI -- without breaking documents, systems, or context. LLM Capsule is the context-preserving data layer for AI for regulated enterprise operations. It plugs into the systems you already run -- on-premise, air-gapped, or hybrid -- and AI receives the operational structure it needs. Sensitive data stays inside your environment. Outputs return business-ready, in the originating workflow."
+- **Tag pill:** "The context-preserving data layer for AI for regulated operations." -- `background: var(--c-primary-soft); color: var(--c-primary-dark); border-radius: 999px; font-size: 13px; font-weight: 600;`
 - **CTA 1:** "Request a Demo" -> `btn btn--primary` -> href `/request-a-demo`
 - **CTA 2:** "See the Architecture" -> `btn btn--ghost` -> href `/architecture`
 - **Metrics (4):**
@@ -123,11 +123,11 @@ Metrics grid separated from CTAs by `border-top: 1px solid var(--c-rule); margin
 
 | Prop | Type | Default |
 |------|------|---------|
-| eyebrow | string | "AI ENABLEMENT DATA LAYER" |
+| eyebrow | string | "CONTEXT-PRESERVING DATA LAYER FOR AI" |
 | title | string | "Make sensitive workflows run with AI." |
 | titleBrandKeyword | string | "sensitive workflows" |
 | description | string | (full paragraph above) |
-| tagText | string | "The AI enablement data layer for regulated operations." |
+| tagText | string | "The context-preserving data layer for AI for regulated operations." |
 | cta1Label | string | "Request a Demo" |
 | cta1Href | string | "/request-a-demo" |
 | cta2Label | string | "See the Architecture" |
@@ -208,7 +208,7 @@ section.proof
 
 ### Section Header
 
-- **Eyebrow:** `WHY AN AI ENABLEMENT DATA LAYER`
+- **Eyebrow:** `WHY A CONTEXT-PRESERVING DATA LAYER FOR AI`
 - **Title:** `The data AI needs is the data your business can't <span class="ds-text--brand">expose</span>.`
 - **Title brand keyword:** `expose`
 - **Description:** "Not four separate problems. One storyline -- read it through."
@@ -260,7 +260,7 @@ section#section-3
 
 - **Badge:** `-> Result` (mono, uppercase, pill border `#6358e8`)
 - **Title:** "LLM Capsule turns blocked workflows into running AI workflows."
-- **Detail:** "Structure-preserving capsule + differential-privacy-based protection + in-environment execution alongside existing legacy systems + restoration into the originating workflow + two execution paths (external approved LLM or on-prem local) + customer-defined markers that change with your business. The AI enablement data layer for regulated operations."
+- **Detail:** "Structure-preserving capsule + differential-privacy-based protection + in-environment execution alongside existing legacy systems + restoration into the originating workflow + two execution paths (external approved LLM or on-prem local) + customer-defined markers that change with your business. The context-preserving data layer for AI for regulated operations."
 - **Background:** `var(--c-primary-dark)` (#3b2fbf), text white
 - **Layout:** grid `auto 1fr`, gap 28px. Mobile: single column.
 
@@ -452,7 +452,7 @@ div.ww (grid: 1fr 1fr, gap 20px)
 - **Eyebrow:** `WHERE IT SITS`
 - **Title:** `Not masking. Not a prompt gateway. Not <span class="ds-text--brand">synthetic data</span>.`
 - **Title brand keyword:** `synthetic data`
-- **Description:** "An AI enablement data layer for regulated workflows."
+- **Description:** "A context-preserving data layer for AI for regulated workflows."
 - **Alignment:** center
 
 ### Table
@@ -571,8 +571,8 @@ Each card: white bg, `border: 1px solid var(--c-rule)`, `border-radius: var(--r-
 
 | # | Question | Answer |
 |---|----------|--------|
-| 1 | What is an AI enablement data layer? | An AI enablement data layer sits between the existing regulated enterprise environment (NOC, ticket, OSS/BSS, OT consoles, EHR, mission systems, document portals) and large language models. It turns operational data into AI-ready context using structure-preserving, differential-privacy-based encapsulation, executes the AI workflow inside the enterprise environment, and restores results back into the originating workflow. It moves AI projects from pilot to production on real enterprise data. |
-| 2 | How is LLM Capsule different from PII guardrails or AI security tools? | PII guardrails detect and mask personal identifiers at the API or prompt level. AI security tools focus on prompt injection and runtime threats. LLM Capsule operates one layer deeper -- at the AI enablement data layer. It transforms structured operational data using structure-preserving, differential-privacy-based encapsulation, supports both external LLM and on-prem local execution paths, and provides two-way restoration via state vault. It plugs into legacy enterprise systems with no architectural change required. |
+| 1 | What is a context-preserving data layer for AI? | A context-preserving data layer for AI sits between the existing regulated enterprise environment (NOC, ticket, OSS/BSS, OT consoles, EHR, mission systems, document portals) and large language models. It turns operational data into AI-ready context using structure-preserving, differential-privacy-based encapsulation, executes the AI workflow inside the enterprise environment, and restores results back into the originating workflow. It moves AI projects from pilot to production on real enterprise data. |
+| 2 | How is LLM Capsule different from PII guardrails or AI security tools? | PII guardrails detect and mask personal identifiers at the API or prompt level. AI security tools focus on prompt injection and runtime threats. LLM Capsule operates one layer deeper -- at the context-preserving data layer for AI. It transforms structured operational data using structure-preserving, differential-privacy-based encapsulation, supports both external LLM and on-prem local execution paths, and provides two-way restoration via state vault. It plugs into legacy enterprise systems with no architectural change required. |
 | 3 | Can our team define what counts as sensitive? | Yes. Context-aware data control lets your team define, add, remove, and version confidentiality markers as your operations and regulatory landscape evolve. Standard PII categories are not enough -- define project codes, deal terms, internal IDs, network identifiers, asset references, mission references, and any business-specific marker. Yesterday's sensitive data isn't tomorrow's; the policy adapts. |
 | 4 | Can LLM Capsule run on-premise or air-gapped? | Yes. Six deployment modes: on-premise, air-gapped, hybrid, cloud (AWS Marketplace), embedded SDK, and Slack App. Two execution paths: external approved LLM with capsule data only (no raw operational data exposure) or on-prem local lightweight model (zero external transmission). Path selection is policy-driven per workflow. Capsule runs inside the customer environment in every mode -- integration interfaces (REST / gRPC / JDBC / Graph API / on-prem API / SDK / Slack App) let existing enterprise systems invoke it from inside the environment. |
 | 5 | Which industries and customers use LLM Capsule? | Telecom (Deutsche Telekom T Challenge 2026 Top 12 in Data Security & Governance, SK Telecom), industrial cybersecurity and OT (partner: Claroty), healthcare (EUMC), finance and insurance (Kyobo, DB Insurance, IBK), legal (Shin&Kim), public sector / defense (Ministry of National Defense, South Korea), and cloud sovereignty (NAVER Cloud). Recognized as a Gartner Vendor and listed on AWS Marketplace. |

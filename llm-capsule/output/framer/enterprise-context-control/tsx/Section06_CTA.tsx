@@ -34,7 +34,7 @@ export default function Section06_CTA({
   cta1Href = "/request-a-demo",
   cta2Label = "View Product",
   cta2Href = "/product",
-  footnote = "Enterprise AI Enablement by CUBIG",
+  footnote = "Context-Preserving Data Layer for AI by CUBIG",
 }: Props) {
   return (
     <>
@@ -227,6 +227,6 @@ addPropertyControls(Section06_CTA, {
   footnote: {
     type: ControlType.String,
     title: "Footnote",
-    defaultValue: "Enterprise AI Enablement by CUBIG",
+    defaultValue: "Context-Preserving Data Layer for AI by CUBIG",
   },
 })

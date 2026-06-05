@@ -104,7 +104,7 @@ KI-Ergebnisse werden lokal automatisch mit den ursprünglichen Unternehmensdaten
 LLM Capsule
 LLM Capsule
 
- as an AI enablement data layer from static redaction tools.
+ as a context-preserving data layer for AI from static redaction tools.
  als KI-Enablement-Datenschicht von statischen Schwärzungswerkzeugen unterscheidet.
 
 ---
@@ -126,7 +126,7 @@ Fähigkeit
 Redaction / Masking Tools
 Schwärzung / Maskierung
 
-LLM Capsule (AI Enablement Data Layer)
+LLM Capsule (Context-Preserving Data Layer for AI)
 LLM Capsule (KI-Enablement-Datenschicht)
 
 Data protection

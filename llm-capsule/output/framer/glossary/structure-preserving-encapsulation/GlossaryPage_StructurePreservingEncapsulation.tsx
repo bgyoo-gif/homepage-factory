@@ -63,7 +63,7 @@ const DEFAULT_BODY_HTML = `
 </ul>
 
 <h2>Reference statement</h2>
-<blockquote>Structure-preserving encapsulation makes the capsule useful. Differential-privacy-based protection makes it defensible. State vault makes it restorable. Together, they constitute the AI enablement data layer.</blockquote>
+<blockquote>Structure-preserving encapsulation makes the capsule useful. Differential-privacy-based protection makes it defensible. State vault makes it restorable. Together, they constitute the context-preserving data layer for AI.</blockquote>
 `
 
 export default function GlossaryPage_StructurePreservingEncapsulation({
@@ -73,7 +73,7 @@ export default function GlossaryPage_StructurePreservingEncapsulation({
   lead = "Tokenize the identifiers. Preserve the structure. So the AI can still reason — and the result can still be restored.",
   category = "GLOSSARY",
   definitionLabel = "Definition",
-  definitionBody = "Structure-preserving encapsulation is the transformation step in an AI enablement data layer that converts operational data into AI-ready context. It tokenizes operational identifiers (device IDs, site IDs, asset references, customer segments) while preserving the relational structure the LLM needs to reason — table layout, log sequence, document hierarchy, configuration tree, topology graph.",
+  definitionBody = "Structure-preserving encapsulation is the transformation step in a context-preserving data layer for AI that converts operational data into AI-ready context. It tokenizes operational identifiers (device IDs, site IDs, asset references, customer segments) while preserving the relational structure the LLM needs to reason — table layout, log sequence, document hierarchy, configuration tree, topology graph.",
   bodyHtml = DEFAULT_BODY_HTML,
   related1Label = "Differential privacy",
   related1Href = "/glossary/differential-privacy",
@@ -81,8 +81,8 @@ export default function GlossaryPage_StructurePreservingEncapsulation({
   related2Href = "/glossary/state-vault-for-restoration",
   related3Label = "Two execution paths",
   related3Href = "/glossary/two-execution-paths",
-  related4Label = "AI enablement data layer",
-  related4Href = "/glossary/ai-enablement-data-layer",
+  related4Label = "context-preserving data layer for AI",
+  related4Href = "/glossary/context-preserving-data-layer",
   related5Label = "",
   related5Href = "",
 }: Props) {
@@ -495,7 +495,7 @@ addPropertyControls(GlossaryPage_StructurePreservingEncapsulation, {
   definitionBody:  {
     type: ControlType.String,
     title: "Definition Body",
-    defaultValue: "Structure-preserving encapsulation is the transformation step in an AI enablement data layer that converts operational data into AI-ready context. It tokenizes operational identifiers (device IDs, site IDs, asset references, customer segments) while preserving the relational structure the LLM needs to reason — table layout, log sequence, document hierarchy, configuration tree, topology graph.",
+    defaultValue: "Structure-preserving encapsulation is the transformation step in a context-preserving data layer for AI that converts operational data into AI-ready context. It tokenizes operational identifiers (device IDs, site IDs, asset references, customer segments) while preserving the relational structure the LLM needs to reason — table layout, log sequence, document hierarchy, configuration tree, topology graph.",
     displayTextArea: true,
   },
 
@@ -509,8 +509,8 @@ addPropertyControls(GlossaryPage_StructurePreservingEncapsulation, {
   related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/glossary/state-vault-for-restoration" },
   related3Label: { type: ControlType.String, title: "Related 3 Label", defaultValue: "Two execution paths" },
   related3Href:  { type: ControlType.String, title: "Related 3 URL",   defaultValue: "/glossary/two-execution-paths" },
-  related4Label: { type: ControlType.String, title: "Related 4 Label", defaultValue: "AI enablement data layer" },
-  related4Href:  { type: ControlType.String, title: "Related 4 URL",   defaultValue: "/glossary/ai-enablement-data-layer" },
+  related4Label: { type: ControlType.String, title: "Related 4 Label", defaultValue: "context-preserving data layer for AI" },
+  related4Href:  { type: ControlType.String, title: "Related 4 URL",   defaultValue: "/glossary/context-preserving-data-layer" },
   related5Label: { type: ControlType.String, title: "Related 5 Label", defaultValue: "" },
   related5Href:  { type: ControlType.String, title: "Related 5 URL",   defaultValue: "" },
 })

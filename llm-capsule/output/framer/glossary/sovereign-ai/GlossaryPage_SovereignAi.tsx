@@ -47,7 +47,7 @@ const DEFAULT_BODY_HTML = `
 </ul>
 
 <h2>The two-path architecture</h2>
-<p>The pragmatic implementation: an AI enablement data layer with two execution paths under one governance framework. Path A (in-region external LLM with capsule data only) for workflows where the regulatory profile permits transmission of differentially-private capsules with appropriate contractual safeguards. Path B (on-prem local lightweight model) for workflows where any external endpoint is unacceptable. Path is policy-driven per workflow.</p>
+<p>The pragmatic implementation: a context-preserving data layer for AI with two execution paths under one governance framework. Path A (in-region external LLM with capsule data only) for workflows where the regulatory profile permits transmission of differentially-private capsules with appropriate contractual safeguards. Path B (on-prem local lightweight model) for workflows where any external endpoint is unacceptable. Path is policy-driven per workflow.</p>
 
 <h2>Common confusions</h2>
 <ul>
@@ -64,12 +64,12 @@ export default function GlossaryPage_SovereignAi({
   lead = "AI workflows that keep data, processing, and audit inside a defined regulatory and geographic boundary.",
   category = "Concept",
   definitionLabel = "Definition",
-  definitionBody = "Sovereign AI means enterprise AI workflows where the underlying data, the AI processing path, and the audit trail all remain inside a defined regulatory and geographic boundary. For European enterprises this typically means GDPR-compliant data handling, in-region LLM endpoints, and full audit for regulator review. For defense and public sector workflows it typically means fully on-prem execution with no external transmission. The practical architecture pattern uses an AI enablement data layer with two execution paths.",
+  definitionBody = "Sovereign AI means enterprise AI workflows where the underlying data, the AI processing path, and the audit trail all remain inside a defined regulatory and geographic boundary. For European enterprises this typically means GDPR-compliant data handling, in-region LLM endpoints, and full audit for regulator review. For defense and public sector workflows it typically means fully on-prem execution with no external transmission. The practical architecture pattern uses a context-preserving data layer for AI with two execution paths.",
   bodyHtml = DEFAULT_BODY_HTML,
   related1Label = "Two execution paths",
   related1Href = "/glossary/two-execution-paths",
-  related2Label = "AI enablement data layer",
-  related2Href = "/glossary/ai-enablement-data-layer",
+  related2Label = "context-preserving data layer for AI",
+  related2Href = "/glossary/context-preserving-data-layer",
   related3Label = "Differential privacy",
   related3Href = "/glossary/differential-privacy",
   related4Label = "Learn: Sovereign AI for European enterprises",
@@ -485,7 +485,7 @@ addPropertyControls(GlossaryPage_SovereignAi, {
   definitionBody:  {
     type: ControlType.String,
     title: "Definition Body",
-    defaultValue: "Sovereign AI means enterprise AI workflows where the underlying data, the AI processing path, and the audit trail all remain inside a defined regulatory and geographic boundary. For European enterprises this typically means GDPR-compliant data handling, in-region LLM endpoints, and full audit for regulator review. For defense and public sector workflows it typically means fully on-prem execution with no external transmission. The practical architecture pattern uses an AI enablement data layer with two execution paths.",
+    defaultValue: "Sovereign AI means enterprise AI workflows where the underlying data, the AI processing path, and the audit trail all remain inside a defined regulatory and geographic boundary. For European enterprises this typically means GDPR-compliant data handling, in-region LLM endpoints, and full audit for regulator review. For defense and public sector workflows it typically means fully on-prem execution with no external transmission. The practical architecture pattern uses a context-preserving data layer for AI with two execution paths.",
     displayTextArea: true,
   },
 
@@ -495,8 +495,8 @@ addPropertyControls(GlossaryPage_SovereignAi, {
   // Related terms
   related1Label: { type: ControlType.String, title: "Related 1 Label", defaultValue: "Two execution paths" },
   related1Href:  { type: ControlType.String, title: "Related 1 URL",   defaultValue: "/glossary/two-execution-paths" },
-  related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "AI enablement data layer" },
-  related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/glossary/ai-enablement-data-layer" },
+  related2Label: { type: ControlType.String, title: "Related 2 Label", defaultValue: "context-preserving data layer for AI" },
+  related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/glossary/context-preserving-data-layer" },
   related3Label: { type: ControlType.String, title: "Related 3 Label", defaultValue: "Differential privacy" },
   related3Href:  { type: ControlType.String, title: "Related 3 URL",   defaultValue: "/glossary/differential-privacy" },
   related4Label: { type: ControlType.String, title: "Related 4 Label", defaultValue: "Learn: Sovereign AI for European enterprises" },

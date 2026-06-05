@@ -30,7 +30,7 @@ Explanation
 On-premise deployment.
 온프레미스 배포.
 
-The encapsulation engine runs entirely within the enterprise data center. Sensitive data never traverses any network boundary. The AI enablement data layer operates within existing security perimeters. Only encapsulated data is sent to external AI services when needed.
+The encapsulation engine runs entirely within the enterprise data center. Sensitive data never traverses any network boundary. The context-preserving data layer for AI operates within existing security perimeters. Only encapsulated data is sent to external AI services when needed.
 캡슐화 엔진은 완전히 기업 데이터 센터 내에서 실행됩니다. 민감한 데이터는 어떤 네트워크 경계도 통과하지 않습니다. AI 지원 데이터 레이어는 기존 보안 경계 내에서 작동합니다. 필요 시 캡슐화된 데이터만 외부 AI 서비스로 전송됩니다.
 
 Air-gapped deployment.
@@ -54,7 +54,7 @@ Different document types or sensitivity levels route through different deploymen
 Embedded integration.
 임베디드 통합.
 
-LLM Capsule can be embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within the enterprise's own software stack.
+LLM Capsule can be embedded into existing enterprise applications and platforms, operating as a context-preserving data layer for AI within the enterprise's own software stack.
 LLM Capsule은 기존 엔터프라이즈 애플리케이션과 플랫폼에 임베드되어 기업 자체 소프트웨어 스택 내에서 AI 지원 데이터 레이어로 작동할 수 있습니다.
 
 One enablement model, any deployment. The encapsulation and restoration logic is identical regardless of where LLM Capsule runs. AI results are restored locally in every deployment scenario.

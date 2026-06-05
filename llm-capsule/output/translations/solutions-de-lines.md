@@ -10,8 +10,8 @@ KI, jetzt sicher für
 Every Industry
 jede Branche
 
-Regulated and document-heavy industries can now adopt AI on real enterprise data. LLM Capsule is an AI enablement data layer and plugin that removes the data exposure barrier blocking enterprise AI adoption — enabling AI first, protecting data at the data layer.
-Regulierte und dokumentenlastige Branchen können jetzt KI auf echten Unternehmensdaten einsetzen. LLM Capsule ist ein AI Enablement Data Layer und Plugin, das die Barriere der Datenoffenlegung beseitigt. Der KI-Einsatz wird ermöglicht, der Datenschutz auf der Datenebene sichergestellt.
+Regulated and document-heavy industries can now adopt AI on real enterprise data. LLM Capsule is a context-preserving data layer for AI and plugin that removes the data exposure barrier blocking enterprise AI adoption — enabling AI first, protecting data at the data layer.
+Regulierte und dokumentenlastige Branchen können jetzt KI auf echten Unternehmensdaten einsetzen. LLM Capsule ist ein Context-Preserving Data Layer for AI und Plugin, das die Barriere der Datenoffenlegung beseitigt. Der KI-Einsatz wird ermöglicht, der Datenschutz auf der Datenebene sichergestellt.
 
 Request a Demo
 Demo anfordern

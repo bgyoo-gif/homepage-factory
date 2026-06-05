@@ -4,7 +4,7 @@
 ---
 
 ## Meta & SEO (preserve verbatim)
-- **Title:** `Pricing | LLM Capsule — Enterprise AI Enablement Pricing`
+- **Title:** `Pricing | LLM Capsule — Context-Preserving Data Layer for AI Pricing`
 - **Description:** `Pricing for secure AI workflow deployment. Workflow Proof of Value, Enterprise (annual license), AWS Marketplace. Volume-based, tailored to document processing workload, deployment, and regulatory profile.`
 - **Canonical:** `https://llmcapsule.ai/pricing`
 - **JSON-LD:** BreadcrumbList (Home → Pricing) + FAQPage schema for 6 FAQ items

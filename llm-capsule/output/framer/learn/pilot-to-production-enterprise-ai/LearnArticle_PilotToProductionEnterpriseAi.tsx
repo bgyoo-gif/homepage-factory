@@ -66,12 +66,12 @@ const DEFAULT_BODY_HTML = `
 <h3>Reason 4 — Filtering alone leaves regulated risk standing</h3>
 <p>GDPR, HIPAA, SOX, sector regulators, audit obligations, sovereignty constraints. Even if every field is masked, the residual risk of differential analysis, re-identification through context, and inference exposure is what regulators evaluate. Simple filtering cannot close that.</p>
 
-<p><strong>Result:</strong> the pilot demonstrated value on synthetic data; the production deployment requires real data; the gap between them is the AI enablement data layer that wasn't there.</p>
+<p><strong>Result:</strong> the pilot demonstrated value on synthetic data; the production deployment requires real data; the gap between them is the context-preserving data layer for AI that wasn't there.</p>
 
 <h2>The pattern that gets pilots to production</h2>
 <p>Pilots that ship to production typically have these architectural features in place:</p>
 <ol>
-<li><strong>An AI enablement data layer between systems and AI.</strong> Not a guardrail. Not a gateway. A layer that transforms operational data into AI-ready capsules locally, executes the AI workflow, and restores results into the originating system.</li>
+<li><strong>A context-preserving data layer for AI between systems and AI.</strong> Not a guardrail. Not a gateway. A layer that transforms operational data into AI-ready capsules locally, executes the AI workflow, and restores results into the originating system.</li>
 <li><strong>Structure-preserving capsule.</strong> Tables, cross-references, configurations, document hierarchies survive intact. AI receives full context — not broken fragments.</li>
 <li><strong>Differential-privacy-based protection.</strong> Beyond field masking — DP noise, k-anonymity, semantic tokenization — to address inference and aggregate-pattern risk that simple filtering can't close.</li>
 <li><strong>Plug-in execution into existing legacy systems.</strong> No migration. The data layer reads where the document already lives.</li>
@@ -107,7 +107,7 @@ export default function LearnArticle_PilotToProductionEnterpriseAi({
   readTime = "10 min read",
   dateUpdated = "Updated April 2025",
   tldrLabel = "TL;DR — Diagnosis",
-  tldrBody = "Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without an AI enablement data layer, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.",
+  tldrBody = "Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without a context-preserving data layer for AI, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.",
   bodyHtml = DEFAULT_BODY_HTML,
   canonicalUrl = "https://llmcapsule.ai/learn/pilot-to-production-enterprise-ai",
   datePublished = "2025-04-15",
@@ -118,8 +118,8 @@ export default function LearnArticle_PilotToProductionEnterpriseAi({
   related2Href = "/learn/sovereign-ai-european-enterprises",
   related3Title = "Glossary: Blocked AI workflow",
   related3Href = "/glossary/blocked-ai-workflow",
-  related4Title = "Glossary: AI enablement data layer",
-  related4Href = "/glossary/ai-enablement-data-layer",
+  related4Title = "Glossary: context-preserving data layer for AI",
+  related4Href = "/glossary/context-preserving-data-layer",
   ctaTitle = "Your pilot stalled. Let's unblock it.",
   ctaDescription = "Bring one stalled use case and one regulatory constraint. We deploy LLM Capsule on a sample workflow within 30 minutes.",
   ctaLabel = "Request an evaluation",
@@ -143,7 +143,7 @@ export default function LearnArticle_PilotToProductionEnterpriseAi({
     "dateModified": "2025-04-15",
     "mainEntityOfPage": canonicalUrl,
     "wordCount": 900,
-    "keywords": "pilot to production, enterprise AI adoption, AI productionization, AI deployment, AI implementation, AI ROI, shadow AI, AI pilot fatigue, AI for regulated industries, AI enablement data layer",
+    "keywords": "pilot to production, enterprise AI adoption, AI productionization, AI deployment, AI implementation, AI ROI, shadow AI, AI pilot fatigue, AI for regulated industries, context-preserving data layer for AI",
   })
 
   const faqJsonLd = JSON.stringify({
@@ -160,10 +160,10 @@ export default function LearnArticle_PilotToProductionEnterpriseAi({
       },
       {
         "@type": "Question",
-        "name": "What is the AI enablement data layer?",
+        "name": "What is the context-preserving data layer for AI?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "An AI enablement data layer sits between operational systems and the LLM. It transforms operational data into structure-preserving AI-ready capsules locally, applies differential-privacy-based protection, executes the AI workflow, and restores results into the originating system — without requiring data migration or exposing raw operational data to external services.",
+          "text": "A context-preserving data layer for AI sits between operational systems and the LLM. It transforms operational data into structure-preserving AI-ready capsules locally, applies differential-privacy-based protection, executes the AI workflow, and restores results into the originating system — without requiring data migration or exposing raw operational data to external services.",
         },
       },
       {
@@ -171,7 +171,7 @@ export default function LearnArticle_PilotToProductionEnterpriseAi({
         "name": "How long does it take to get an AI pilot to production with LLM Capsule?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "With the AI enablement data layer in place, regulated workflows typically reach production in 8-12 weeks, compared to 6-12 months stalled in the standard pattern. The gating items are usually internal — DPO sign-off, regulator notification (where required), and security review of the policy. The technical integration takes days, not months.",
+          "text": "With the context-preserving data layer for AI in place, regulated workflows typically reach production in 8-12 weeks, compared to 6-12 months stalled in the standard pattern. The gating items are usually internal — DPO sign-off, regulator notification (where required), and security review of the policy. The technical integration takes days, not months.",
         },
       },
       {
@@ -770,7 +770,7 @@ addPropertyControls(LearnArticle_PilotToProductionEnterpriseAi, {
 
   // TL;DR
   tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR — Diagnosis" },
-  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without an AI enablement data layer, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.", displayTextArea: true },
+  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without a context-preserving data layer for AI, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.", displayTextArea: true },
 
   // Body HTML
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: DEFAULT_BODY_HTML, displayTextArea: true },
@@ -787,8 +787,8 @@ addPropertyControls(LearnArticle_PilotToProductionEnterpriseAi, {
   related2Href:  { type: ControlType.String, title: "Related 2 URL",   defaultValue: "/learn/sovereign-ai-european-enterprises" },
   related3Title: { type: ControlType.String, title: "Related 3 Title", defaultValue: "Glossary: Blocked AI workflow" },
   related3Href:  { type: ControlType.String, title: "Related 3 URL",   defaultValue: "/glossary/blocked-ai-workflow" },
-  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "Glossary: AI enablement data layer" },
-  related4Href:  { type: ControlType.String, title: "Related 4 URL",   defaultValue: "/glossary/ai-enablement-data-layer" },
+  related4Title: { type: ControlType.String, title: "Related 4 Title", defaultValue: "Glossary: context-preserving data layer for AI" },
+  related4Href:  { type: ControlType.String, title: "Related 4 URL",   defaultValue: "/glossary/context-preserving-data-layer" },
 
   // CTA strip
   ctaTitle:       { type: ControlType.String, title: "CTA Title",        defaultValue: "Your pilot stalled. Let's unblock it." },

@@ -56,7 +56,7 @@ const BODY_HTML = `<h2>Definition</h2>
 </ol>
 
 <h2>Reference statement</h2>
-<blockquote>Most enterprise AI projects do not fail at the model. They fail at the data the model cannot reach. Naming that as a blocked AI workflow — and unblocking it through an AI enablement data layer — is the entry point for regulated operations.</blockquote>`
+<blockquote>Most enterprise AI projects do not fail at the model. They fail at the data the model cannot reach. Naming that as a blocked AI workflow — and unblocking it through a context-preserving data layer for AI — is the entry point for regulated operations.</blockquote>`
 
 const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   en: {
@@ -163,7 +163,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
 
 <h2>Kernaussage</h2>
 
-<p>Die meisten KI-Projekte in Unternehmen scheitern nicht am Modell. Sie scheitern an den Daten, die das Modell nicht erreichen kann. Dieses Problem als blockierten KI-Workflow zu benennen — und die Blockierung über einen AI enablement data layer aufzuheben — ist der Einstiegspunkt für regulierte Betriebe.</p>`,
+<p>Die meisten KI-Projekte in Unternehmen scheitern nicht am Modell. Sie scheitern an den Daten, die das Modell nicht erreichen kann. Dieses Problem als blockierten KI-Workflow zu benennen — und die Blockierung über einen context-preserving data layer for AI aufzuheben — ist der Einstiegspunkt für regulierte Betriebe.</p>`,
     related1Label: "",
     related1Href: "",
     related2Label: "",

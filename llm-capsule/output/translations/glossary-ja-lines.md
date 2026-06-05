@@ -11,7 +11,7 @@ Enablement
 Glossary
 用語集
 
-Key terms and definitions for enterprise AI enablement, LLM data privacy, and secure enterprise AI workflows.
+Key terms and definitions for enterprise context-preserving data layer for AI, LLM data privacy, and secure enterprise AI workflows.
 エンタープライズAI導入、LLMデータプライバシー、セキュアエンタープライズAIワークフローの主要用語と定義を提供いたします。
 
 Resources

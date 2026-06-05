@@ -59,7 +59,7 @@ Q&AおよびRAG。
 AI answers questions about enterprise document collections. Documents are encapsulated before indexing in RAG pipelines. Retrieved context is protected during generation, and responses are restored before delivery to users.
 AIが企業文書コレクションに関する質問に回答します。文書はRAGパイプラインでのインデックス作成前にカプセル化されます。取得されたコンテキストは生成中に保護され、応答はユーザーに配信される前に復元されます。
 
-LLM Capsule enables AI document processing by protecting data at the data layer. Structure-preserving processing with local restoration delivers both AI enablement and data protection simultaneously.
+LLM Capsule enables AI document processing by protecting data at the data layer. Structure-preserving processing with local restoration delivers both context-preserving data layer for AI and data protection simultaneously.
 LLM Capsuleはデータレイヤーでデータを保護することにより、AI文書処理を実現します。ローカル復元と組み合わせた構造保持処理が、AIイネーブルメントとデータ保護を同時に提供します。
 
 ## Section 05: Examples

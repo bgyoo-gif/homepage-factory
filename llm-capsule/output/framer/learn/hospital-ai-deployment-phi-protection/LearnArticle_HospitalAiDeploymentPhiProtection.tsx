@@ -50,8 +50,8 @@ const DEFAULT_BODY_HTML = `
 <p>But PHI cannot leave the hospital network. HIPAA, regional privacy laws (GDPR in EU hospitals, K-PIPA in Korean hospitals), and increasingly hospital boards' own data governance policies forbid sending patient identifiers to external LLM endpoints. PII guardrails detect names but miss the operational data — clinical workflow context, lab results sequence, medication history pattern, care pathway — that real clinical AI summarization needs.</p>
 <p>Most hospitals stall at pilot. AI vendors over-promise; security teams block; physicians use shadow AI on personal devices. The pilot never reaches the EHR.</p>
 
-<h2>What the AI enablement data layer changes</h2>
-<p>An <a href="/glossary/ai-enablement-data-layer">AI enablement data layer</a> like LLM Capsule sits between the EHR (Epic, Cerner, internal HIS) and the LLM. PHI is encapsulated locally — patient name becomes ⟨P_xxxx⟩, MRN becomes ⟨MR_yyyy⟩, structure preserved. The LLM drafts the radiology summary on the capsule. The output is restored locally, inside the hospital network, and inserted back into the EHR record. The LLM provider never sees PHI.</p>
+<h2>What the context-preserving data layer for AI changes</h2>
+<p>An <a href="/glossary/context-preserving-data-layer">context-preserving data layer for AI</a> like LLM Capsule sits between the EHR (Epic, Cerner, internal HIS) and the LLM. PHI is encapsulated locally — patient name becomes ⟨P_xxxx⟩, MRN becomes ⟨MR_yyyy⟩, structure preserved. The LLM drafts the radiology summary on the capsule. The output is restored locally, inside the hospital network, and inserted back into the EHR record. The LLM provider never sees PHI.</p>
 
 <h2>Five clinical data categories the data layer protects</h2>
 <ul>
@@ -112,7 +112,7 @@ export default function LearnArticle_HospitalAiDeploymentPhiProtection({
   readTime = "11 min read",
   dateUpdated = "Updated April 2025",
   tldrLabel = "TL;DR — Definition",
-  tldrBody = "A hospital AI deployment with PHI protection uses an AI enablement data layer to encapsulate patient names, MRN, diagnoses, lab results, prescriptions, and clinical workflow context locally before any data reaches an external LLM. The LLM drafts radiology reports, clinical summaries, and care coordination outputs on the protected capsule; outputs are restored back into the EHR inside the hospital network. HIPAA-aligned. Deployed at Ewha Womans University Medical Center (EUMC).",
+  tldrBody = "A hospital AI deployment with PHI protection uses a context-preserving data layer for AI to encapsulate patient names, MRN, diagnoses, lab results, prescriptions, and clinical workflow context locally before any data reaches an external LLM. The LLM drafts radiology reports, clinical summaries, and care coordination outputs on the protected capsule; outputs are restored back into the EHR inside the hospital network. HIPAA-aligned. Deployed at Ewha Womans University Medical Center (EUMC).",
   bodyHtml = DEFAULT_BODY_HTML,
   canonicalUrl = "https://llmcapsule.ai/learn/hospital-ai-deployment-phi-protection",
   datePublished = "2025-04-15",
@@ -159,7 +159,7 @@ export default function LearnArticle_HospitalAiDeploymentPhiProtection({
         "name": "Why can't hospitals just use anonymization before sending data to an LLM?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Standard anonymization strips names and obvious identifiers but removes the clinical context the LLM needs to produce useful output. Output quality drops 30–50%. The AI enablement data layer uses structure-preserving encapsulation — PHI is tokenized, not removed — so the LLM receives enough context to draft accurate clinical summaries while PHI never leaves the hospital network in raw form.",
+          "text": "Standard anonymization strips names and obvious identifiers but removes the clinical context the LLM needs to produce useful output. Output quality drops 30–50%. The context-preserving data layer for AI uses structure-preserving encapsulation — PHI is tokenized, not removed — so the LLM receives enough context to draft accurate clinical summaries while PHI never leaves the hospital network in raw form.",
         },
       },
       {
@@ -746,7 +746,7 @@ addPropertyControls(LearnArticle_HospitalAiDeploymentPhiProtection, {
 
   // TL;DR
   tldrLabel: { type: ControlType.String, title: "TL;DR Label", defaultValue: "TL;DR — Definition" },
-  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "A hospital AI deployment with PHI protection uses an AI enablement data layer to encapsulate patient names, MRN, diagnoses, lab results, prescriptions, and clinical workflow context locally before any data reaches an external LLM. The LLM drafts radiology reports, clinical summaries, and care coordination outputs on the protected capsule; outputs are restored back into the EHR inside the hospital network. HIPAA-aligned. Deployed at Ewha Womans University Medical Center (EUMC).", displayTextArea: true },
+  tldrBody:  { type: ControlType.String, title: "TL;DR Body",  defaultValue: "A hospital AI deployment with PHI protection uses a context-preserving data layer for AI to encapsulate patient names, MRN, diagnoses, lab results, prescriptions, and clinical workflow context locally before any data reaches an external LLM. The LLM drafts radiology reports, clinical summaries, and care coordination outputs on the protected capsule; outputs are restored back into the EHR inside the hospital network. HIPAA-aligned. Deployed at Ewha Womans University Medical Center (EUMC).", displayTextArea: true },
 
   // Body HTML
   bodyHtml: { type: ControlType.String, title: "Body HTML", defaultValue: DEFAULT_BODY_HTML, displayTextArea: true },

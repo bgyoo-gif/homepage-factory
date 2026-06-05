@@ -379,7 +379,7 @@
     <div class="gsa-container">
       <div class="gsa-def">
         <div class="gsa-def__label">Definition</div>
-        <p class="gsa-def__body"><strong>Sovereign AI</strong> means enterprise AI workflows where the underlying data, the AI processing path, and the audit trail all remain inside a defined regulatory and geographic boundary. For European enterprises this typically means GDPR-compliant data handling, in-region LLM endpoints, and full audit for regulator review. For defense and public sector workflows it typically means fully on-prem execution with no external transmission. The practical architecture pattern uses an <strong>AI enablement data layer</strong> with two execution paths.</p>
+        <p class="gsa-def__body"><strong>Sovereign AI</strong> means enterprise AI workflows where the underlying data, the AI processing path, and the audit trail all remain inside a defined regulatory and geographic boundary. For European enterprises this typically means GDPR-compliant data handling, in-region LLM endpoints, and full audit for regulator review. For defense and public sector workflows it typically means fully on-prem execution with no external transmission. The practical architecture pattern uses an <strong>context-preserving data layer for AI</strong> with two execution paths.</p>
       </div>
     </div>
   </div>
@@ -401,7 +401,7 @@
         </ul>
 
         <h2>The two-path architecture</h2>
-        <p>The pragmatic implementation: an AI enablement data layer with two execution paths under one governance framework. Path A (in-region external LLM with capsule data only) for workflows where the regulatory profile permits transmission of differentially-private capsules with appropriate contractual safeguards. Path B (on-prem local lightweight model) for workflows where any external endpoint is unacceptable. Path is policy-driven per workflow.</p>
+        <p>The pragmatic implementation: a context-preserving data layer for AI with two execution paths under one governance framework. Path A (in-region external LLM with capsule data only) for workflows where the regulatory profile permits transmission of differentially-private capsules with appropriate contractual safeguards. Path B (on-prem local lightweight model) for workflows where any external endpoint is unacceptable. Path is policy-driven per workflow.</p>
 
         <h2>Common confusions</h2>
         <ul>
@@ -426,8 +426,8 @@
           </a>
         </li>
         <li class="gsa-related__item">
-          <a href="/glossary/ai-enablement-data-layer" class="gsa-related__link">
-            <span>AI enablement data layer</span>
+          <a href="/glossary/context-preserving-data-layer" class="gsa-related__link">
+            <span>context-preserving data layer for AI</span>
             <span class="gsa-related__link-arrow" aria-hidden="true">→</span>
           </a>
         </li>

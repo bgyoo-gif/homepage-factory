@@ -56,14 +56,14 @@ Sensitive data must be identified and replaced before it leaves the enterprise. 
 2. Model-agnostic processing.
 2. 모델 무관 처리.
 
-The AI enablement layer must work with any LLM — not just one provider's API. Enterprises use multiple AI models for different tasks. The AI enablement data layer must operate independently of the model layer.
-AI 활성화 레이어는 특정 제공자의 API가 아닌 모든 LLM과 작동해야 합니다. 기업은 다양한 작업에 여러 AI 모델을 사용합니다. AI 활성화 데이터 레이어는 모델 레이어와 독립적으로 운영되어야 합니다.
+The context-preserving data layer for AI must work with any LLM — not just one provider's API. Enterprises use multiple AI models for different tasks. The context-preserving data layer for AI must operate independently of the model layer.
+AI를 위한 컨텍스트 보존 데이터 레이어는 특정 제공자의 API가 아닌 모든 LLM과 작동해야 합니다. 기업은 다양한 작업에 여러 AI 모델을 사용합니다. AI를 위한 컨텍스트 보존 데이터 레이어는 모델 레이어와 독립적으로 운영되어야 합니다.
 
 3. Output Restoration (Restoration).
 3. 출력 복원.
 
-AI results are restored locally. Without this, AI outputs are abstracted and unusable. Enterprise AI enablement requires that outputs contain real names, real account numbers, and real references — restored locally after AI processing completes.
-AI 결과는 로컬에서 복원됩니다. 이것 없이는 AI 출력이 추상적이고 사용 불가능합니다. 엔터프라이즈 AI 활성화는 출력에 실제 이름, 실제 계좌번호, 실제 참조가 포함되어야 합니다 — AI 처리 완료 후 로컬에서 복원됩니다.
+AI results are restored locally. Without this, AI outputs are abstracted and unusable. Context-preserving data layer for AI requires that outputs contain real names, real account numbers, and real references — restored locally after AI processing completes.
+AI 결과는 로컬에서 복원됩니다. 이것 없이는 AI 출력이 추상적이고 사용 불가능합니다. AI를 위한 컨텍스트 보존 데이터 레이어는 출력에 실제 이름, 실제 계좌번호, 실제 참조가 포함되어야 합니다 — AI 처리 완료 후 로컬에서 복원됩니다.
 
 ## Section 05: How It Works
 
@@ -76,8 +76,8 @@ LLM Capsule
 Enables This
 이 기능을 활성화하는 방법
 
-LLM Capsule operates as an AI enablement data layer between enterprise data systems and external AI services. The process follows four steps:
-LLM Capsule은 기업 데이터 시스템과 외부 AI 서비스 사이에서 AI 활성화 데이터 레이어로 작동합니다. 프로세스는 4단계를 따릅니다.
+LLM Capsule operates as a context-preserving data layer for AI between enterprise data systems and external AI services. The process follows four steps:
+LLM Capsule은 기업 데이터 시스템과 외부 AI 서비스 사이에서 AI를 위한 컨텍스트 보존 데이터 레이어로 작동합니다. 프로세스는 4단계를 따릅니다.
 
 Step 1: Sensitive Detection. LLM Capsule automatically identifies sensitive elements within enterprise documents — names, account numbers, dates, financial figures, project codes, and organization-defined entities beyond standard PII.
 1단계: 민감도 감지. LLM Capsule이 기업 문서 내 민감 요소를 자동으로 식별합니다 — 이름, 계좌번호, 날짜, 재무 수치, 프로젝트 코드, 표준 PII를 넘어서는 조직 정의 엔터티.
@@ -189,5 +189,5 @@ Request a Demo
 View Product
 제품 보기
 
-Enterprise AI Enablement by CUBIG
-CUBIG의 엔터프라이즈 AI 활성화
+Context-Preserving Data Layer for AI by CUBIG
+CUBIG의 AI를 위한 컨텍스트 보존 데이터 레이어

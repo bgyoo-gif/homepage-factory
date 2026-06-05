@@ -7,7 +7,7 @@
 Restorable Workflow
 Wiederherstellbarer Workflow
 
-An AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling
+A context-preserving data layer for AI pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling
 Ein KI-Enablement-Muster, bei dem vertrauliche Unternehmensdaten vor der KI-Verarbeitung durch reversible, strukturerhaltende Repraesentationen ersetzt werden. Ermoeglicht durch
 
 LLM Capsule
@@ -19,7 +19,7 @@ LLM Capsule
 DEFINITION
 DEFINITION
 
-A restorable workflow is an AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which
+A restorable workflow is a context-preserving data layer for AI pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which
 Ein wiederherstellbarer Workflow ist ein KI-Enablement-Muster, bei dem vertrauliche Unternehmensdaten vor der KI-Verarbeitung durch reversible, strukturerhaltende Repraesentationen ersetzt werden. Nach der KI-Verarbeitung fuehrt die lokale Wiederherstellung die Originaldaten automatisch in die Ergebnisse zurueck. So entstehen direkt einsetzbare Ergebnisse ohne manuelle Nachbearbeitung. Dies ist der zentrale Mechanismus von
 
 LLM Capsule
@@ -112,5 +112,5 @@ Demo anfordern
 View Product
 Produkt ansehen
 
-Enterprise AI Enablement by CUBIG
-Enterprise AI Enablement von CUBIG
+Context-Preserving Data Layer for AI by CUBIG
+Context-Preserving Data Layer for AI von CUBIG

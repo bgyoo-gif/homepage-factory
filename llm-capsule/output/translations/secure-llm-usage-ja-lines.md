@@ -29,7 +29,7 @@ Explanation
 Secure LLM usage is distinct from model-level security measures like prompt filtering or output scanning. Those approaches monitor the interaction with the AI model but do not prevent the data itself from being transmitted. Secure LLM usage operates at the data layer — transforming what the AI receives so that sensitive information never reaches the model.
 セキュアLLM活用は、プロンプトフィルタリングや出力スキャニングなどのモデルレベルのセキュリティ対策とは異なります。それらのアプローチはAIモデルとのインタラクションを監視しますが、データ自体の送信を防止しません。セキュアLLM活用はデータレイヤーで動作します ― AIが受信するデータを変換し、機密情報がモデルに到達しないようにします。
 
-This approach is model-agnostic. Whether the enterprise uses ChatGPT, Claude, Gemini, Perplexity, or any other LLM API, the AI enablement data layer remains consistent because it operates before the data reaches any model — enabling cross-model execution from a single AI enablement layer.
+This approach is model-agnostic. Whether the enterprise uses ChatGPT, Claude, Gemini, Perplexity, or any other LLM API, the context-preserving data layer for AI remains consistent because it operates before the data reaches any model — enabling cross-model execution from a single context-preserving data layer for AI.
 このアプローチはモデルに依存しません。エンタープライズがChatGPT、Claude、Gemini、Perplexity、またはその他のLLM APIを使用する場合でも、AI支援データレイヤーはデータがモデルに到達する前に動作するため一貫性を維持します ― 単一のAI支援レイヤーからクロスモデル実行を可能にします。
 
 ## Section 05: Example
@@ -65,7 +65,7 @@ Request a Demo
 Enable Secure LLM Usage for Your Enterprise
 貴社のセキュアLLM活用を実現
 
-Process sensitive data through any LLM without exposure. Experience the AI enablement data layer.
+Process sensitive data through any LLM without exposure. Experience the context-preserving data layer for AI.
 機密データを公開することなく、あらゆるLLMで処理できます。AI支援データレイヤーを直接ご体験ください。
 
 Request a Demo
@@ -74,5 +74,5 @@ Request a Demo
 View Product
 製品を見る
 
-Enterprise AI Enablement by CUBIG
-Enterprise AI Enablement by CUBIG
+Context-Preserving Data Layer for AI by CUBIG
+Context-Preserving Data Layer for AI by CUBIG

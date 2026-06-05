@@ -19,7 +19,7 @@ GLOSSARY
 Definition
 정의
 
-Structure-preserving encapsulation is the transformation step in an AI enablement data layer that converts operational data into AI-ready context. It tokenizes operational identifiers (device IDs, site IDs, asset references, customer segments) while preserving the relational structure the LLM needs to reason — table layout, log sequence, document hierarchy, configuration tree, topology graph.
+Structure-preserving encapsulation is the transformation step in a context-preserving data layer for AI that converts operational data into AI-ready context. It tokenizes operational identifiers (device IDs, site IDs, asset references, customer segments) while preserving the relational structure the LLM needs to reason — table layout, log sequence, document hierarchy, configuration tree, topology graph.
 문서 구조 보존 캡슐화는 데이터 레이어에서 운영 데이터를 AI가 바로 사용할 수 있는 컨텍스트로 변환하는 단계입니다. 운영 식별자(장치 ID, 사이트 ID, 자산 참조, 고객 세그먼트)를 토큰화하면서, LLM이 추론에 필요한 관계형 구조 — 테이블 레이아웃, 로그 순서, 문서 계층, 구성 트리, 토폴로지 그래프 — 를 그대로 보존합니다.
 
 ## Section 03: Article Body
@@ -77,5 +77,5 @@ State vault for restoration
 Two execution paths
 두 가지 실행 경로
 
-AI enablement data layer
+context-preserving data layer for AI
 데이터 레이어

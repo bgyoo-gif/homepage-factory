@@ -83,7 +83,7 @@ AI가 기업 문서 컬렉션에 대한 질문에 답합니다. 문서는 RAG �
 LLM Capsule
 LLM Capsule
 
-enables AI document processing by protecting data at the data layer. Structure-preserving processing with local restoration delivers both AI enablement and data protection simultaneously.
+enables AI document processing by protecting data at the data layer. Structure-preserving processing with local restoration delivers both context-preserving data layer for AI and data protection simultaneously.
 데이터 레이어에서 데이터를 보호하여 AI 문서 처리를 가능하게 합니다. 로컬 복원과 결합된 문서 구조 보존 처리 방식은 AI 활성화와 데이터 보호를 동시에 제공합니다.
 
 ## Section 05: Examples

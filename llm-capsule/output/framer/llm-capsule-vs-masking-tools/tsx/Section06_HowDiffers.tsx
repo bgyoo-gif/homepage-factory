@@ -29,7 +29,7 @@ export default function Section06_HowDiffers({
   paragraphProduct = "LLM Capsule",
   bannerStrong = "AI results are automatically restored locally with original enterprise data.",
   bannerProduct = "LLM Capsule",
-  bannerText = " is an AI enablement data layer that protects sensitive data while enabling usable enterprise AI outputs.",
+  bannerText = " is a context-preserving data layer for AI that protects sensitive data while enabling usable enterprise AI outputs.",
 }: Props) {
   return (
     <>
@@ -177,7 +177,7 @@ addPropertyControls(Section06_HowDiffers, {
   bannerText: {
     type: ControlType.String,
     title: "Banner Text",
-    defaultValue: " is an AI enablement data layer that protects sensitive data while enabling usable enterprise AI outputs.",
+    defaultValue: " is a context-preserving data layer for AI that protects sensitive data while enabling usable enterprise AI outputs.",
     displayTextArea: true,
   },
 })

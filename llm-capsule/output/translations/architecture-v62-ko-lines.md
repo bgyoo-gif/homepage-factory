@@ -10,7 +10,7 @@ Architecture
 How LLM Capsule plugs AI into the systems you already run
 지금 운영 중인 시스템에 AI를 연결하는 방법, LLM Capsule
 
-Three zones. Four steps. Five components. Two execution paths. One governance framework. The AI enablement data layer for regulated operations — at the architectural level.
+Three zones. Four steps. Five components. Two execution paths. One governance framework. The context-preserving data layer for AI for regulated operations — at the architectural level.
 3개 존. 4단계 처리. 5개 컴포넌트. 2가지 실행 경로. 하나의 거버넌스 프레임워크. 규제 환경의 기업 운영을 위한 데이터 레이어 — 아키텍처 수준에서.
 
 ---

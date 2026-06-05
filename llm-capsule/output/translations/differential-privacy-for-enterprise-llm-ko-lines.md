@@ -11,7 +11,7 @@
 Differential Privacy for Enterprise AI: What It Is, Why It Matters, How It Applies to Operational Data
 엔터프라이즈 AI를 위한 차등 프라이버시: 개념, 중요성, 운영 데이터 적용 방식
 
-PII filtering reaches the names. Differential privacy reaches the patterns. Why differential-privacy-based encapsulation is the technical foundation of the AI enablement data layer.
+PII filtering reaches the names. Differential privacy reaches the patterns. Why differential-privacy-based encapsulation is the technical foundation of the context-preserving data layer for AI.
 PII 필터링은 이름을 찾아냅니다. 차등 프라이버시는 패턴까지 막습니다. 차등 프라이버시 기반 캡슐화가 AI 데이터 레이어의 기술적 토대인 이유입니다.
 
 PILLAR · Differential Privacy
@@ -28,7 +28,7 @@ Updated May 2025
 Definition · TL;DR
 Definition · TL;DR
 
-Differential-privacy-based encapsulation is the technical foundation of the AI enablement data layer. It transforms regulated operational data into AI-ready context while preserving structure (table layout, log sequence, document hierarchy) and applying differential-privacy-based protection to reduce re-identification, inference, and sensitive context exposure risks. It is a technical protection layer with a defined risk-reduction scope — not a legal guarantee.
+Differential-privacy-based encapsulation is the technical foundation of the context-preserving data layer for AI. It transforms regulated operational data into AI-ready context while preserving structure (table layout, log sequence, document hierarchy) and applying differential-privacy-based protection to reduce re-identification, inference, and sensitive context exposure risks. It is a technical protection layer with a defined risk-reduction scope — not a legal guarantee.
 차등 프라이버시 기반 캡슐화는 AI 데이터 레이어의 기술적 토대입니다. 규제 대상 운영 데이터를 AI 처리 가능한 컨텍스트로 변환하면서 구조(테이블 레이아웃, 로그 시퀀스, 문서 계층)를 보존하고, 재식별·추론·민감 컨텍스트 노출 위험을 줄이기 위한 차등 프라이버시 기반 보호를 적용합니다. 정의된 위험 감소 범위를 가진 기술적 보호 레이어입니다. 법적 보증이 아닙니다.
 
 ## Section 03: Body HTML

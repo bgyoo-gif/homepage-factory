@@ -33,7 +33,7 @@ interface Props {
 export default function Section03_Explanation({
   sectionLabel = "Explanation",
   step1Title = "On-premise deployment.",
-  step1Body = "The encapsulation engine runs entirely within the enterprise data center. Sensitive data never traverses any network boundary. The AI enablement data layer operates within existing security perimeters. Only encapsulated data is sent to external AI services when needed.",
+  step1Body = "The encapsulation engine runs entirely within the enterprise data center. Sensitive data never traverses any network boundary. The context-preserving data layer for AI operates within existing security perimeters. Only encapsulated data is sent to external AI services when needed.",
   step2Title = "Air-gapped deployment.",
   step2Body = "For the most sensitive environments, LLM Capsule can operate within air-gapped networks. Documents are encapsulated locally, transferred to an AI-connected environment through controlled channels, processed, and results are transferred back for local restoration.",
   step3Title = "Cloud deployment.",
@@ -41,7 +41,7 @@ export default function Section03_Explanation({
   step4Title = "Hybrid deployment.",
   step4Body = "Different document types or sensitivity levels route through different deployment modes within a single LLM Capsule instance.",
   step5Title = "Embedded integration.",
-  step5Body = "LLM Capsule can be embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within the enterprise's own software stack.",
+  step5Body = "LLM Capsule can be embedded into existing enterprise applications and platforms, operating as a context-preserving data layer for AI within the enterprise's own software stack.",
   bannerText = "One enablement model, any deployment. The encapsulation and restoration logic is identical regardless of where LLM Capsule runs. AI results are restored locally in every deployment scenario.",
 }: Props) {
   const steps = [
@@ -210,7 +210,7 @@ addPropertyControls(Section03_Explanation, {
     defaultValue: "Explanation",
   },
   step1Title: { type: ControlType.String, title: "Step 1 Title", defaultValue: "On-premise deployment." },
-  step1Body: { type: ControlType.String, title: "Step 1 Body", defaultValue: "The encapsulation engine runs entirely within the enterprise data center. Sensitive data never traverses any network boundary. The AI enablement data layer operates within existing security perimeters. Only encapsulated data is sent to external AI services when needed.", displayTextArea: true },
+  step1Body: { type: ControlType.String, title: "Step 1 Body", defaultValue: "The encapsulation engine runs entirely within the enterprise data center. Sensitive data never traverses any network boundary. The context-preserving data layer for AI operates within existing security perimeters. Only encapsulated data is sent to external AI services when needed.", displayTextArea: true },
   step2Title: { type: ControlType.String, title: "Step 2 Title", defaultValue: "Air-gapped deployment." },
   step2Body: { type: ControlType.String, title: "Step 2 Body", defaultValue: "For the most sensitive environments, LLM Capsule can operate within air-gapped networks. Documents are encapsulated locally, transferred to an AI-connected environment through controlled channels, processed, and results are transferred back for local restoration.", displayTextArea: true },
   step3Title: { type: ControlType.String, title: "Step 3 Title", defaultValue: "Cloud deployment." },
@@ -218,6 +218,6 @@ addPropertyControls(Section03_Explanation, {
   step4Title: { type: ControlType.String, title: "Step 4 Title", defaultValue: "Hybrid deployment." },
   step4Body: { type: ControlType.String, title: "Step 4 Body", defaultValue: "Different document types or sensitivity levels route through different deployment modes within a single LLM Capsule instance.", displayTextArea: true },
   step5Title: { type: ControlType.String, title: "Step 5 Title", defaultValue: "Embedded integration." },
-  step5Body: { type: ControlType.String, title: "Step 5 Body", defaultValue: "LLM Capsule can be embedded into existing enterprise applications and platforms, operating as an AI enablement data layer within the enterprise's own software stack.", displayTextArea: true },
+  step5Body: { type: ControlType.String, title: "Step 5 Body", defaultValue: "LLM Capsule can be embedded into existing enterprise applications and platforms, operating as a context-preserving data layer for AI within the enterprise's own software stack.", displayTextArea: true },
   bannerText: { type: ControlType.String, title: "Banner Text", defaultValue: "One enablement model, any deployment. The encapsulation and restoration logic is identical regardless of where LLM Capsule runs. AI results are restored locally in every deployment scenario.", displayTextArea: true },
 })

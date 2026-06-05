@@ -5,7 +5,7 @@
 Restorable Workflow
 복원 가능한 워크플로우
 
-An AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling
+A context-preserving data layer for AI pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing — enabling
 민감한 기업 데이터를 AI 처리 전에 가역적이고 구조를 보존하는 표현으로 대체하는 AI 활성화 패턴입니다 —
 
 to automatically restore original enterprise data into AI outputs.
@@ -16,7 +16,7 @@ LLM Capsule이 AI 결과물에 원본 기업 데이터를 자동으로 복원할
 DEFINITION
 정의
 
-A restorable workflow is an AI enablement pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which
+A restorable workflow is a context-preserving data layer for AI pattern in which sensitive enterprise data is replaced with reversible, structure-preserving representations before AI processing. After the AI model generates outputs, local restoration automatically restores original enterprise data into the results, producing enterprise-ready outputs without manual post-processing. This is the core mechanism by which
 복원 가능한 워크플로우는 AI 처리 전에 민감한 기업 데이터를 가역적이고 구조를 보존하는 표현으로 대체하는 AI 활성화 패턴입니다. AI 모델이 결과물을 생성한 후, 로컬 복원이 원본 기업 데이터를 결과물에 자동으로 복원하여 수동 후처리 없이 기업용 결과물을 생성합니다. 이것이 다음의 핵심 메커니즘입니다 —
 
 enables AI adoption on sensitive data.
@@ -90,5 +90,5 @@ Request a Demo
 View Product
 제품 보기
 
-Enterprise AI Enablement by CUBIG
-Enterprise AI Enablement by CUBIG
+Context-Preserving Data Layer for AI by CUBIG
+Context-Preserving Data Layer for AI by CUBIG

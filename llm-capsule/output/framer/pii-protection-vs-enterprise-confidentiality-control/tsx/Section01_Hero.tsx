@@ -49,7 +49,7 @@ export default function Section01_Hero({
   breadcrumbLearn   = "Learn",
   breadcrumbCurrent = "PII Protection vs Enterprise Confidentiality Control",
   title       = "PII Protection vs Enterprise Confidentiality Control",
-  description = "Why protecting only personal data is insufficient for enterprise AI enablement. Business-critical information requires enterprise confidentiality control to truly enable AI adoption.",
+  description = "Why protecting only personal data is insufficient for enterprise context-preserving data layer for AI. Business-critical information requires enterprise confidentiality control to truly enable AI adoption.",
   locale      = "en",
 }: Props) {
   return (
@@ -184,7 +184,7 @@ addPropertyControls(Section01_Hero, {
   description: {
     type: ControlType.String,
     title: "Description",
-    defaultValue: "Why protecting only personal data is insufficient for enterprise AI enablement. Business-critical information requires enterprise confidentiality control to truly enable AI adoption.",
+    defaultValue: "Why protecting only personal data is insufficient for enterprise context-preserving data layer for AI. Business-critical information requires enterprise confidentiality control to truly enable AI adoption.",
     displayTextArea: true,
   },
   locale: {

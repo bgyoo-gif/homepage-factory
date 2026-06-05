@@ -25,7 +25,7 @@ Aktualisiert April 2025
 TL;DR — Diagnosis
 TL;DR — Diagnose
 
-Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without an AI enablement data layer, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.
+Most enterprise AI pilots do not fail because the AI is bad. They fail because the data layer between the AI and the operational systems is missing. Without a context-preserving data layer for AI, regulated enterprises cannot send the data AI needs to the data the business can expose. Pilots prove out on synthetic or anonymized data, then stall when the security, privacy, and compliance review opens. The pattern that ships to production: structure-preserving capsule + differential-privacy-based protection + plug-in execution + restoration + two execution paths.
 Die meisten KI-Pilotprojekte in Unternehmen scheitern nicht an der Qualität der KI. Sie scheitern, weil die Datenschicht zwischen der KI und den operativen Systemen fehlt. Ohne eine KI-Datenschicht können regulierte Unternehmen die Daten, die die KI benötigt, nicht bereitstellen, ohne dabei Daten offenzulegen, die das Unternehmen nicht freigeben darf. Pilotprojekte bestehen ihre Tests auf Basis synthetischer oder anonymisierter Daten — und geraten ins Stocken, sobald die Sicherheits-, Datenschutz- und Compliance-Prüfung beginnt. Das Muster, das den Produktionsbetrieb erreicht: strukturerhaltende Kapsulierung + Differential-Privacy-basierter Schutz + Plug-in-Ausführung + Wiederherstellung + zwei Ausführungspfade.
 
 ## Section 03: Body HTML
@@ -117,11 +117,11 @@ Glossar: Blockierter KI-Workflow
 /glossary/blocked-ai-workflow
 /glossary/blocked-ai-workflow
 
-Glossary: AI enablement data layer
+Glossary: context-preserving data layer for AI
 Glossar: KI-Datenschicht
 
-/glossary/ai-enablement-data-layer
-/glossary/ai-enablement-data-layer
+/glossary/context-preserving-data-layer
+/glossary/context-preserving-data-layer
 
 ## Section 05: CTA Strip
 

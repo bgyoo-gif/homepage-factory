@@ -13,7 +13,7 @@ PII-Schutz vs. unternehmensweite Vertraulichkeitskontrolle
 PII Protection vs Enterprise Confidentiality Control
 PII-Schutz vs. unternehmensweite Vertraulichkeitskontrolle
 
-Why protecting only personal data is insufficient for enterprise AI enablement. Business-critical information requires enterprise confidentiality control to truly enable AI adoption.
+Why protecting only personal data is insufficient for enterprise context-preserving data layer for AI. Business-critical information requires enterprise confidentiality control to truly enable AI adoption.
 Warum der Schutz personenbezogener Daten allein für den KI-Einsatz im Unternehmen nicht ausreicht. Geschäftskritische Informationen erfordern eine unternehmensweite Vertraulichkeitskontrolle, um KI produktiv nutzen zu können.
 
 ## Section02_Problem
@@ -22,7 +22,7 @@ Warum der Schutz personenbezogener Daten allein für den KI-Einsatz im Unternehm
 Problem
 Problem
 
-Most AI data protection solutions focus on personally identifiable information (PII) — names, social security numbers, email addresses. But true enterprise AI enablement requires protecting far more than PII. Enterprise documents contain trade secrets, acquisition targets, pricing models, internal performance metrics, strategic plans, and client relationship details — all enterprise-sensitive but not classified as PII.
+Most AI data protection solutions focus on personally identifiable information (PII) — names, social security numbers, email addresses. But true enterprise context-preserving data layer for AI requires protecting far more than PII. Enterprise documents contain trade secrets, acquisition targets, pricing models, internal performance metrics, strategic plans, and client relationship details — all enterprise-sensitive but not classified as PII.
 Die meisten KI-Datenschutzlösungen konzentrieren sich auf personenbezogene Daten (PII) — Namen, Sozialversicherungsnummern, E-Mail-Adressen. Für den produktiven KI-Einsatz im Unternehmen muss jedoch weit mehr als PII geschützt werden. Unternehmensdokumente enthalten Geschäftsgeheimnisse, Akquisitionsziele, Preismodelle, interne Leistungskennzahlen, strategische Pläne und Details zu Kundenbeziehungen. All diese Informationen sind unternehmenssensibel, gelten aber nicht als personenbezogene Daten im Sinne der DSGVO (GDPR).
 
 A legal memo about a pending acquisition contains no PII. It contains deal structure, valuation ranges, and strategic rationale — all of which would be damaging if exposed to an AI provider's training pipeline or logging system.

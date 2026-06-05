@@ -56,18 +56,18 @@ Ein blockierter KI-Workflow ist ein Geschäftsprozess, der vom KI-Einsatz profit
 
 <h2>Kernaussage</h2>
 
-<p>Die meisten KI-Projekte in Unternehmen scheitern nicht am Modell. Sie scheitern an den Daten, die das Modell nicht erreichen kann. Dieses Problem als blockierten KI-Workflow zu benennen — und die Blockierung über einen AI enablement data layer aufzuheben — ist der Einstiegspunkt für regulierte Betriebe.</p>
+<p>Die meisten KI-Projekte in Unternehmen scheitern nicht am Modell. Sie scheitern an den Daten, die das Modell nicht erreichen kann. Dieses Problem als blockierten KI-Workflow zu benennen — und die Blockierung über einen context-preserving data layer for AI aufzuheben — ist der Einstiegspunkt für regulierte Betriebe.</p>
 
 ## Section 04: Related Terms
 
 Related terms
 Verwandte Begriffe
 
-AI enablement data layer
-AI enablement data layer
+context-preserving data layer for AI
+context-preserving data layer for AI
 
-/glossary/ai-enablement-data-layer
-/glossary/ai-enablement-data-layer
+/glossary/context-preserving-data-layer
+/glossary/context-preserving-data-layer
 
 Structure-preserving encapsulation
 Strukturerhaltende Kapsulierung

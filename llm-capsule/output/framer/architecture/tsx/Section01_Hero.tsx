@@ -30,10 +30,10 @@ interface Props {
 }
 
 export default function Section01_Hero({
-  title = "AI Enablement",
+  title = "Context-Preserving Data Layer for AI",
   titleHighlight = "Architecture",
   titleSuffix = "for Enterprise AI",
-  description = "LLM Capsule is an AI enablement data layer and plugin that enables enterprises to adopt any AI model safely. It sits between enterprise data systems and external AI services — protecting data in transit while unlocking the full power of AI across every workflow.",
+  description = "LLM Capsule is a context-preserving data layer for AI and plugin that enables enterprises to adopt any AI model safely. It sits between enterprise data systems and external AI services — protecting data in transit while unlocking the full power of AI across every workflow.",
   productName = "LLM Capsule",
 }: Props) {
   return (
@@ -161,7 +161,7 @@ addPropertyControls(Section01_Hero, {
   title: {
     type: ControlType.String,
     title: "Title",
-    defaultValue: "AI Enablement",
+    defaultValue: "Context-Preserving Data Layer for AI",
   },
   titleHighlight: {
     type: ControlType.String,
@@ -176,7 +176,7 @@ addPropertyControls(Section01_Hero, {
   description: {
     type: ControlType.String,
     title: "Description",
-    defaultValue: "LLM Capsule is an AI enablement data layer and plugin that enables enterprises to adopt any AI model safely. It sits between enterprise data systems and external AI services — protecting data in transit while unlocking the full power of AI across every workflow.",
+    defaultValue: "LLM Capsule is a context-preserving data layer for AI and plugin that enables enterprises to adopt any AI model safely. It sits between enterprise data systems and external AI services — protecting data in transit while unlocking the full power of AI across every workflow.",
     displayTextArea: true,
   },
   productName: {

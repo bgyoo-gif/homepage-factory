@@ -21,7 +21,7 @@ Masking vs. Encapsulation — Side-by-side output comparison showing restored vs
 Overview
 概要
 
-Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. LLM Capsule takes a fundamentally different approach as an AI enablement data layer and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.
+Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. LLM Capsule takes a fundamentally different approach as a context-preserving data layer for AI and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.
 マスキングツール（墨消しエンジン、トークン化ユーティリティ、PII除去ツール）は、コンプライアンスレポートおよび静的データの匿名化を目的として設計されました。これらのツールは機密データを恒久的に削除または置換することでデータを保護します。LLM Capsuleは、AI活用データレイヤーおよびプラグインとして根本的に異なるアプローチを採用しています。カプセル化とローカル復元によりデータを保護しながらAI導入を実現し、活用可能なエンタープライズAI出力を維持します。
 
 ## Section 04 — How Traditional Masking Works (2 props)
@@ -78,7 +78,7 @@ AI結果は、元のエンタープライズデータを用いてローカルで
 LLM Capsule
 LLM Capsule
 
- is an AI enablement data layer that protects sensitive data while enabling usable enterprise AI outputs.
+ is a context-preserving data layer for AI that protects sensitive data while enabling usable enterprise AI outputs.
  は、機密データを保護しながら活用可能なエンタープライズAI出力を実現するAI活用データレイヤーです。
 
 ## Section 07 — Comparison Table (25 props)
@@ -95,7 +95,7 @@ Masking Tools
 LLM Capsule
 LLM Capsule
 
-(AI Enablement Data Layer)
+(Context-Preserving Data Layer for AI)
 （AI活用データレイヤー）
 
 Protection method

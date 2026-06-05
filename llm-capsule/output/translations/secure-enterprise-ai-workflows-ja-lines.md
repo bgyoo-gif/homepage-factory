@@ -42,7 +42,7 @@ Protected data must retain its document structure, entity relationships, and sem
 Model independence.
 モデル非依存性。
 
-The AI enablement layer must work with any LLM provider. Enterprises should not be locked into a single AI vendor to maintain AI data pipeline protection.
+The context-preserving data layer for AI must work with any LLM provider. Enterprises should not be locked into a single AI vendor to maintain AI data pipeline protection.
 AIイネーブルメントレイヤーは、あらゆるLLMプロバイダーと連携する必要があります。企業は、AIデータパイプライン保護を維持するために単一のAIベンダーにロックインされるべきではありません。
 
 Output Restoration.
@@ -51,7 +51,7 @@ Output Restoration.
 AI results are restored locally. Enterprise AI workflows produce enterprise-ready outputs — with real names, real figures, real references — without requiring manual post-processing.
 AI結果はローカルで復元されます。エンタープライズAIワークフローは、手動の後処理を必要とせずに — 実名、実数値、実際の参照を含む — 企業で即座に利用可能な出力を生成します。
 
-Enterprise AI enablement requires an AI-ready data layer, not model-layer security.
+Context-preserving data layer for AI requires an AI-ready data layer, not model-layer security.
 エンタープライズAIイネーブルメントには、モデルレイヤーのセキュリティではなく、AI対応のデータレイヤーが必要です。
 
 ## Section 04: Enterprise Example

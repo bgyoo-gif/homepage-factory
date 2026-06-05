@@ -121,7 +121,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
   limitBullet4 = "Inconsistent replacement. The same entity may receive different tokens in different document locations, breaking AI's ability to track entities across sections.",
 
   capsuleDifferBody = "Structure-preserving processing maintains document integrity during data protection. Entity consistency is enforced across the entire document. Table structures, cross-references, and semantic relationships are preserved. AI receives a structurally complete document that supports accurate processing.",
-  capsuleDifferBanner = "AI results are automatically restored locally with original enterprise data. LLM Capsule's AI enablement data layer protects sensitive data while preserving the document structure AI needs for accurate outputs.",
+  capsuleDifferBanner = "AI results are automatically restored locally with original enterprise data. LLM Capsule's context-preserving data layer for AI protects sensitive data while preserving the document structure AI needs for accurate outputs.",
 
   exampleCardTitle = "Multi-Party Financial Analysis",
   exampleCardBody1 = "An investment bank analyzes term sheets involving three parties — lead investor, co-investor, and target company. Each term sheet contains overlapping entity names in different roles.",
@@ -586,7 +586,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
                 <div className="spp-banner">
                   <p>
                     <strong>AI results are automatically restored locally with original enterprise data.</strong>{" "}
-                    <span className="spp-text--product">LLM Capsule</span>'s AI enablement data layer protects sensitive data while preserving the document structure AI needs for accurate outputs.
+                    <span className="spp-text--product">LLM Capsule</span>'s context-preserving data layer for AI protects sensitive data while preserving the document structure AI needs for accurate outputs.
                   </p>
                 </div>
               </div>
@@ -605,7 +605,7 @@ export default function StructurePreservingProcessingVsFlatMasking({
                         <th>Capability</th>
                         <th>Flat Masking</th>
                         <th className="spp-table__th--highlight">
-                          <span className="spp-text--product">LLM Capsule</span> (AI Enablement Data Layer)
+                          <span className="spp-text--product">LLM Capsule</span> (Context-Preserving Data Layer for AI)
                         </th>
                       </tr>
                     </thead>
@@ -830,7 +830,7 @@ addPropertyControls(StructurePreservingProcessingVsFlatMasking, {
   capsuleDifferBanner: {
     type: ControlType.String,
     title: "LLM Capsule Differs Banner",
-    defaultValue: "AI results are automatically restored locally with original enterprise data. LLM Capsule's AI enablement data layer protects sensitive data while preserving the document structure AI needs for accurate outputs.",
+    defaultValue: "AI results are automatically restored locally with original enterprise data. LLM Capsule's context-preserving data layer for AI protects sensitive data while preserving the document structure AI needs for accurate outputs.",
     displayTextArea: true,
   },
   exampleCardTitle: {

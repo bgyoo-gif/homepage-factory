@@ -56,10 +56,10 @@
 | Element | Value |
 |---------|-------|
 | Breadcrumb | Home / Resources / Learn |
-| Title | `Enterprise AI Enablement — Learn` |
+| Title | `Context-Preserving Data Layer for AI — Learn` |
 | Title brand keyword | `<span class="ds-text--brand">Learn</span>` |
 | Product name | None in title |
-| Description | "In-depth technical articles on enterprise AI enablement, secure AI workflows, structure-preserving processing, and restorable workflows." |
+| Description | "In-depth technical articles on enterprise context-preserving data layer for AI, secure AI workflows, structure-preserving processing, and restorable workflows." |
 | CTA buttons | None |
 
 #### Structure
@@ -69,7 +69,7 @@
   <div class="ds-container">
     <nav class="ds-breadcrumb">Home / Resources / Learn</nav>
     <h1 class="ds-hero__title">
-      Enterprise AI Enablement — <span class="ds-text--brand">Learn</span>
+      Context-Preserving Data Layer for AI — <span class="ds-text--brand">Learn</span>
     </h1>
     <p class="ds-hero__description">...</p>
   </div>
@@ -130,7 +130,7 @@ Each card follows this structure:
 | # | Title | Badge | URL |
 |---|-------|-------|-----|
 | 1 | Secure Enterprise AI Data Workflows | `ds-badge--purple` "Pillar" | secure-enterprise-ai-data-workflows.html |
-| 2 | Enterprise AI Enablement | `ds-badge--purple` "Pillar" | enterprise-ai-data-protection.html |
+| 2 | Context-Preserving Data Layer for AI | `ds-badge--purple` "Pillar" | enterprise-ai-data-protection.html |
 | 3 | Enterprise AI Document Processing | `ds-badge--purple` "Pillar" | enterprise-ai-document-processing.html |
 | 4 | What Is an AI Data Capsule | None | what-is-ai-data-capsule.html |
 | 5 | How to Use AI on Sensitive Enterprise Data | None | how-to-use-ai-on-sensitive-enterprise-data.html |

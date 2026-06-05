@@ -27,7 +27,7 @@ Maskierung vs. Kapsulierung — Gegenüberstellung: wiederhergestellte Ausgabe l
 Overview
 Übersicht
 
-Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. LLM Capsule takes a fundamentally different approach as an AI enablement data layer and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.
+Masking tools (redaction engines, tokenization utilities, PII strippers) were designed for compliance reporting and static data anonymization. They protect data by permanently removing or replacing sensitive values. LLM Capsule takes a fundamentally different approach as a context-preserving data layer for AI and plugin — it enables AI adoption by protecting data through encapsulation and local restoration, preserving usable enterprise AI outputs.
 Maskierungstools — Schwärzungssysteme, Tokenisierungsdienste, PII-Filter — wurden für Compliance-Berichte und die statische Anonymisierung von Daten entwickelt. Sie schützen vertrauliche Informationen durch dauerhafte Entfernung oder Ersetzung. LLM Capsule verfolgt als KI-Enablement-Datenschicht einen grundlegend anderen Ansatz: Daten werden kapsuliert und lokal wiederhergestellt, sodass KI-Ergebnisse im Unternehmen direkt einsetzbar bleiben.
 
 
@@ -96,7 +96,7 @@ KI-Ergebnisse werden lokal automatisch mit den originalen Unternehmensdaten zusa
 LLM Capsule
 LLM Capsule
 
- is an AI enablement data layer that protects sensitive data while enabling usable enterprise AI outputs.
+ is a context-preserving data layer for AI that protects sensitive data while enabling usable enterprise AI outputs.
  ist eine KI-Enablement-Datenschicht, die vertrauliche Informationen schützt und gleichzeitig fachlich nutzbare KI-Ergebnisse ermöglicht.
 
 
@@ -115,8 +115,8 @@ Maskierungstools
 LLM Capsule
 LLM Capsule
 
-(AI Enablement Data Layer)
-(AI Enablement Data Layer)
+(Context-Preserving Data Layer for AI)
+(Context-Preserving Data Layer for AI)
 
 Protection method
 Schutzmethode

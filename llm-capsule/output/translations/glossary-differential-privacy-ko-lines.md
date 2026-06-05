@@ -78,5 +78,5 @@ Pillar guide: Differential privacy for enterprise AI
 Structure-preserving encapsulation
 문서 구조 보존 캡슐화
 
-AI enablement data layer
+context-preserving data layer for AI
 데이터 레이어

@@ -4,7 +4,7 @@
 
 ## 전체 구조 요약
 - 섹션 수: 12개 (Hero, Trust, 5 Capabilities, Industry Proof, Core Differentiation 3+2, Use Cases, Problem, Before/After, Architecture, Proof/KPI, Final CTA, FAQ)
-- 문서 성격: 설득형 (제품 홈페이지 - AI enablement data layer)
+- 문서 성격: 설득형 (제품 홈페이지 - context-preserving data layer for AI)
 - 브랜드: LLM Capsule (CUBIG이 아닌 LLM Capsule 독립 브랜드)
 - 브랜드 컬러: #1821E8 (인디고), #5690D4 (블루), #55B45D (그린) -- DS capsule 토큰 사용
 - 특이사항:
@@ -185,7 +185,7 @@
 
 ### 섹션 5: Core Differentiation (3+2 Architecture)
 - 헤더 eyebrow: 없음
-- 헤더 타이틀: "Enterprise AI enablement through a 3+2 architecture"
+- 헤더 타이틀: "Context-preserving data layer for AI through a 3+2 architecture"
 - 타이틀 강조 키워드: "3+2 architecture" → `ds-text--brand`
 - 헤더 description: "Three core enablement pillars plus two additional value capabilities."
 - 헤더 정렬: center
@@ -361,7 +361,7 @@
 - 헤더 타이틀: "See how LLM Capsule enables AI on your enterprise documents"
   - 타이틀 내 "LLM Capsule"은 ds-text--product 적용
 - 타이틀 강조 키워드: "enables AI" → `ds-text--brand`
-- 헤더 description: "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate how the AI enablement data layer works on your actual data, in your environment, against your compliance requirements."
+- 헤더 description: "Bring your documents, deployment constraints, and evaluation criteria. We demonstrate how the context-preserving data layer for AI works on your actual data, in your environment, against your compliance requirements."
 - 배경: bg-image (CTA이므로 배경 이미지 사용)
 - 배경 bg-image 적용 위치: ds-cta-band 자체 (ds-bg--paint-blue-iridescent)
 - 사용 컴포넌트: ds-cta-band
@@ -461,7 +461,7 @@ design-system-capsule.md가 아직 없으므로, B타입 HTML 내 `:root`에서 
 
 ## Footer
 
-- 텍스트: "LLM Capsule -- Enterprise AI enablement by CUBIG. Enable AI. Protect data. Restore results."
+- 텍스트: "LLM Capsule -- Context-preserving data layer for AI by CUBIG. Enable AI. Protect data. Restore results."
 - 카피라이트: "2025 LLM Capsule by CUBIG. All rights reserved."
 - 컴포넌트: 별도 footer 컴포넌트 (ds-section--dark 배경)
 

@@ -30,7 +30,7 @@ export default function Section04_Explanation({
   item4Text = "AI translates enterprise documents across languages. Encapsulation protects names, numbers, and proprietary terms while allowing AI to translate surrounding content accurately. Restoration restores protected elements in the translated output.",
   item5Title = "Q&A and RAG.",
   item5Text = "AI answers questions about enterprise document collections. Documents are encapsulated before indexing in RAG pipelines. Retrieved context is protected during generation, and responses are restored before delivery to users.",
-  bannerText = "enables AI document processing by protecting data at the data layer. Structure-preserving processing with local restoration delivers both AI enablement and data protection simultaneously.",
+  bannerText = "enables AI document processing by protecting data at the data layer. Structure-preserving processing with local restoration delivers both context-preserving data layer for AI and data protection simultaneously.",
   productName = "LLM Capsule",
 }: Props) {
   const items = [
@@ -202,5 +202,5 @@ addPropertyControls(Section04_Explanation, {
   item5Title: { type: ControlType.String, title: "Item 5 Title", defaultValue: "Q&A and RAG." },
   item5Text: { type: ControlType.String, title: "Item 5 Text", defaultValue: "AI answers questions about enterprise document collections. Documents are encapsulated before indexing in RAG pipelines. Retrieved context is protected during generation, and responses are restored before delivery to users." },
   productName: { type: ControlType.String, title: "Product Name", defaultValue: "LLM Capsule" },
-  bannerText: { type: ControlType.String, title: "Banner Text", defaultValue: "enables AI document processing by protecting data at the data layer. Structure-preserving processing with local restoration delivers both AI enablement and data protection simultaneously." },
+  bannerText: { type: ControlType.String, title: "Banner Text", defaultValue: "enables AI document processing by protecting data at the data layer. Structure-preserving processing with local restoration delivers both context-preserving data layer for AI and data protection simultaneously." },
 })

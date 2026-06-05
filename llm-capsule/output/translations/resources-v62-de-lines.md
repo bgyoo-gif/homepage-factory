@@ -5,7 +5,7 @@
 Resources
 Ressourcen
 
-Enterprise AI enablement
+Context-preserving data layer for AI
 KI-Einsatz im Unternehmen
 
 resources
@@ -24,7 +24,7 @@ Technische Dokumentation, Fachartikel, Glossar und Trust-Center-Inhalte — für
 Learn
 Wissen
 
-In-depth articles on enterprise AI enablement — architecture patterns, industry deployment guides (telecom, healthcare, finance, defense), pilot-to-production playbooks, sovereign AI under GDPR / EU AI Act.
+In-depth articles on enterprise context-preserving data layer for AI — architecture patterns, industry deployment guides (telecom, healthcare, finance, defense), pilot-to-production playbooks, sovereign AI under GDPR / EU AI Act.
 Technische Fachartikel zum KI-Einsatz im Unternehmen: Architekturmuster, branchenspezifische Deployment-Leitfäden (Telekommunikation, Gesundheitswesen, Finanzwesen, Verteidigung), Pilot-to-Production-Playbooks sowie Sovereign-AI-Strategien unter DSGVO (GDPR) und EU AI Act.
 
 Browse Learn articles →
@@ -36,8 +36,8 @@ Alle Artikel ansehen →
 Glossary
 Glossar
 
-Definitions of category and architectural concepts — AI enablement data layer, structure-preserving encapsulation, two execution paths, sovereign AI, shadow AI, differential privacy. Each term with definition and cross-links.
-Definitionen zentraler Kategorie- und Architekturkonzepte: AI Enablement Data Layer, strukturerhaltende Kapsulierung, zwei Ausführungspfade, Sovereign AI, Shadow AI, Differential Privacy. Jeder Begriff mit Erläuterung und Querverweisen.
+Definitions of category and architectural concepts — context-preserving data layer for AI, structure-preserving encapsulation, two execution paths, sovereign AI, shadow AI, differential privacy. Each term with definition and cross-links.
+Definitionen zentraler Kategorie- und Architekturkonzepte: Context-Preserving Data Layer for AI, strukturerhaltende Kapsulierung, zwei Ausführungspfade, Sovereign AI, Shadow AI, Differential Privacy. Jeder Begriff mit Erläuterung und Querverweisen.
 
 Browse Glossary terms →
 Alle Glossareinträge ansehen →
@@ -183,8 +183,8 @@ Kategorie- und Architekturkonzepte
 11 definitions for buyers, architects, and security teams. Each term with Schema.org DefinedTerm markup.
 11 Definitionen für Einkäufer, Architekten und Sicherheitsteams. Jeder Begriff mit Schema.org DefinedTerm-Auszeichnung.
 
-AI enablement data layer
-AI Enablement Data Layer
+context-preserving data layer for AI
+Context-Preserving Data Layer for AI
 
 The category. Architectural component between regulated systems and LLMs.
 Die Kategorie. Architekturkomponente zwischen regulierten Systemen und LLMs.
@@ -228,8 +228,8 @@ KI-Workflows, bei denen Daten, Verarbeitung und Audit innerhalb einer definierte
 Shadow AI
 Shadow AI
 
-Unsanctioned external LLM use; symptom of missing AI enablement data layer.
-Nicht autorisierte Nutzung externer LLMs; Symptom einer fehlenden AI Enablement Data Layer.
+Unsanctioned external LLM use; symptom of missing context-preserving data layer for AI.
+Nicht autorisierte Nutzung externer LLMs; Symptom einer fehlenden Context-Preserving Data Layer for AI.
 
 Blocked AI workflow
 Blockierter KI-Workflow

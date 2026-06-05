@@ -4,7 +4,7 @@
 ## Section01_Hero
 
 
-The AI enablement
+The context-preserving data layer for AI
 Die Datenschicht und das Plugin
 
 data layer and plugin for enterprise
@@ -13,7 +13,7 @@ für KI-Enablement im Unternehmen
 LLM Capsule enables enterprise AI adoption by keeping raw data inside your environment, preserving document structure and business context during AI processing, and restoring usable outputs through local restoration — so enterprise teams can safely use any LLM on real documents in production workflows.
 LLM Capsule ermöglicht den produktiven KI-Einsatz im Unternehmen. Rohdaten verbleiben in der eigenen Umgebung, Dokumentstruktur und Fachkontext bleiben während der KI-Verarbeitung erhalten. Die lokale Wiederherstellung liefert direkt einsetzbare Ergebnisse. So lässt sich jedes beliebige LLM sicher auf echten Dokumenten in Produktiv-Workflows nutzen.
 
-Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and enterprise environment execution means no vendor lock-in. This enables enterprise AI enablement on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.
+Most enterprise AI security tools either block AI usage entirely or strip critical context through masking and redaction, producing outputs that cannot be used in real business processes. LLM Capsule takes a different approach: local encapsulation protects sensitive elements before AI processing, structure-preserving processing maintains document integrity for AI comprehension, local restoration auto-restores AI outputs with original enterprise data, and enterprise environment execution means no vendor lock-in. This enables enterprise context-preserving data layer for AI on document-heavy workflows including contracts, claims, regulatory filings, medical records, and internal reports.
 Herkömmliche KI-Sicherheitslösungen blockieren die KI-Nutzung vollständig oder entfernen durch Maskierung und Schwärzung den fachlichen Kontext. Die Ergebnisse sind dann in der Praxis nicht verwendbar. LLM Capsule verfolgt einen anderen Ansatz: Sensible Elemente werden vor der KI-Verarbeitung lokal geschützt. Die strukturerhaltende Verarbeitung bewahrt die Dokumentintegrität für das KI-Verständnis. Die lokale Wiederherstellung reichert KI-Ergebnisse automatisch mit den Originaldaten an. Die Ausführung erfolgt in der eigenen Infrastruktur ohne Herstellerbindung. Damit eignet sich LLM Capsule für dokumentenlastige Workflows wie Verträge, Schadenmeldungen, behördliche Anträge, Krankenakten und interne Berichte.
 
 Request a Demo
@@ -31,7 +31,7 @@ LLM Capsule Dashboard — Echtzeit-Kapsulierungspipeline mit Dokumentenverarbeit
 ## Section02_CoreDifferentiation
 
 
-Enterprise AI enablement through five core
+Context-preserving data layer for AI through five core
 KI-Enablement im Unternehmen durch fünf Kern-
 
 capabilities
@@ -40,7 +40,7 @@ funktionen
 LLM Capsule enables enterprise AI adoption on sensitive data through a 3+2 architecture — three core enablement capabilities plus structure-preserving processing and enterprise environment execution.
 LLM Capsule ermöglicht den KI-Einsatz auf sensiblen Daten durch eine 3+2-Architektur: drei Kernfunktionen für das KI-Enablement, ergänzt durch strukturerhaltende Verarbeitung und Ausführung in der Unternehmensumgebung.
 
-These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise AI enablement from traditional masking tools.
+These capabilities let enterprises adopt AI without sacrificing data protection or workflow usability. This is what separates enterprise context-preserving data layer for AI from traditional masking tools.
 Unternehmen können KI nutzen, ohne beim Datenschutz oder bei der Praxistauglichkeit der Ergebnisse Abstriche zu machen. Genau das unterscheidet KI-Enablement von herkömmlichen Maskierungswerkzeugen.
 
 Core 1
@@ -139,7 +139,7 @@ KI nutzen, ohne Unternehmens-
 workflows
 Workflows zu unterbrechen
 
-LLM Capsule does more than hide data. It auto-restores usable output inside the environment after AI processing so enterprise teams can actually use the result in real workflows. This is a restorable workflow — not just protection, but AI enablement with usable output.
+LLM Capsule does more than hide data. It auto-restores usable output inside the environment after AI processing so enterprise teams can actually use the result in real workflows. This is a restorable workflow — not just protection, but context-preserving data layer for AI with usable output.
 LLM Capsule geht über reine Datenverschleierung hinaus. Nach der KI-Verarbeitung werden die Ergebnisse automatisch innerhalb der Unternehmensumgebung mit den Originaldaten angereichert. Fachteams können die Ergebnisse direkt in ihren Workflows verwenden. Das ist kein reiner Schutz, sondern KI-Enablement mit direkt einsetzbaren Ergebnissen.
 
 Traditional masking protects data by removing meaning. That may reduce risk, but it also reduces output quality and business usability. Restored outputs from LLM Capsule are directly usable in: claims documents with real policyholder data, legal reviews with real party names and clause references, regulatory reports with real customer and account data, and internal analysis with real business metrics.
@@ -445,7 +445,7 @@ Ansätzen unterscheidet
 Not all protection approaches are designed for usable enterprise AI workflows. Traditional masking protects data by reducing usability. LLM Capsule protects data while preserving enterprise workflow value.
 Nicht alle Schutzansätze sind auf praxistaugliche KI-Workflows in Unternehmen ausgelegt. Herkömmliche Maskierung schützt Daten auf Kosten der Nutzbarkeit. LLM Capsule schützt Daten und bewahrt gleichzeitig den fachlichen Wert der Ergebnisse.
 
-AI results are auto-restored through local restoration. This is the fundamental capability that separates LLM Capsule from every other approach — enterprise AI enablement that produces usable outputs, not abstracted placeholders.
+AI results are auto-restored through local restoration. This is the fundamental capability that separates LLM Capsule from every other approach — enterprise context-preserving data layer for AI that produces usable outputs, not abstracted placeholders.
 KI-Ergebnisse werden durch lokale Wiederherstellung automatisch mit Originaldaten angereichert. Diese Funktion unterscheidet LLM Capsule grundlegend von allen anderen Ansätzen: KI-Enablement, das fachlich nutzbare Ergebnisse liefert — keine abstrakten Platzhalter.
 
 Traditional Masking / Redaction
@@ -457,7 +457,7 @@ Prompt Security Gateways
 LLM Capsule
 LLM Capsule
 
-AI enablement layer
+context-preserving data layer for AI
 KI-Enablement-Schicht
 
 Pre-processing data removal
@@ -664,7 +664,7 @@ LLM Capsule ist modellunabhängig. Da der Schutz auf der Datenebene und nicht au
 See how LLM Capsule fits your environment, documents, and controls
 Wir analysieren, wie LLM Capsule in Ihre Umgebung, Dokumenttypen und Kontrollstrukturen passt
 
-Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise AI enablement on your actual data, in your environment, against your compliance requirements.
+Bring your documents, deployment constraints, and evaluation questions. We demonstrate enterprise context-preserving data layer for AI on your actual data, in your environment, against your compliance requirements.
 Wir analysieren Ihre Anforderungen und demonstrieren LLM Capsule anhand Ihrer eigenen Daten, in Ihrer Umgebung und unter Berücksichtigung Ihrer Compliance-Vorgaben.
 
 Request a Demo

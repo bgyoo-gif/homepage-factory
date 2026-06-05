@@ -47,12 +47,12 @@ export default function Section04_Requirements({
   item1_text_ko = " 민감한 데이터는 기업을 떠나기 전에 식별되고 교체되어야 합니다. 이는 단순한 키워드 매칭이 아닙니다 — 기업 문서는 맥락에 따라 다른 민감도를 가집니다. 계약서의 이름은 공개 디렉토리의 동일한 이름과 다른 위험을 가집니다. 구조 보존 처리는 AI 이해를 위해 문서의 의미적 관계가 온전히 유지되도록 합니다.",
   item2_strong_en = "2. Model-agnostic processing.",
   item2_strong_ko = "2. 모델 무관 처리.",
-  item2_text_en = " The AI enablement layer must work with any LLM — not just one provider's API. Enterprises use multiple AI models for different tasks. The AI enablement data layer must operate independently of the model layer.",
-  item2_text_ko = " AI 활성화 레이어는 하나의 제공업체 API만이 아닌 모든 LLM과 함께 작동해야 합니다. 기업들은 다양한 작업에 여러 AI 모델을 사용합니다. AI 활성화 데이터 레이어는 모델 레이어와 독립적으로 운영되어야 합니다.",
+  item2_text_en = " The context-preserving data layer for AI must work with any LLM — not just one provider's API. Enterprises use multiple AI models for different tasks. The context-preserving data layer for AI must operate independently of the model layer.",
+  item2_text_ko = " AI를 위한 컨텍스트 보존 데이터 레이어는 하나의 제공업체 API만이 아닌 모든 LLM과 함께 작동해야 합니다. 기업들은 다양한 작업에 여러 AI 모델을 사용합니다. AI를 위한 컨텍스트 보존 데이터 레이어는 모델 레이어와 독립적으로 운영되어야 합니다.",
   item3_strong_en = "3. Output Restoration (Restoration).",
   item3_strong_ko = "3. 출력 복원.",
-  item3_text_en = " AI results are restored locally. Without this, AI outputs are abstracted and unusable. Enterprise AI enablement requires that outputs contain real names, real account numbers, and real references — restored locally after AI processing completes.",
-  item3_text_ko = " AI 결과는 로컬에서 복원됩니다. 이 없이는 AI 출력이 추상적이고 사용 불가능합니다. 엔터프라이즈 AI 활성화는 출력에 실제 이름, 실제 계좌 번호, 실제 참조가 포함되도록 요구합니다 — AI 처리 완료 후 로컬에서 복원됩니다.",
+  item3_text_en = " AI results are restored locally. Without this, AI outputs are abstracted and unusable. Context-preserving data layer for AI requires that outputs contain real names, real account numbers, and real references — restored locally after AI processing completes.",
+  item3_text_ko = " AI 결과는 로컬에서 복원됩니다. 이 없이는 AI 출력이 추상적이고 사용 불가능합니다. AI를 위한 컨텍스트 보존 데이터 레이어는 출력에 실제 이름, 실제 계좌 번호, 실제 참조가 포함되도록 요구합니다 — AI 처리 완료 후 로컬에서 복원됩니다.",
 }: Props) {
   const t = locale === "ko"
     ? {
@@ -264,8 +264,8 @@ addPropertyControls(Section04_Requirements, {
   item1_text_ko: { type: ControlType.String, title: "Item 1 Text (KO)", defaultValue: " 민감한 데이터는 기업을 떠나기 전에 식별되고 교체되어야 합니다...", displayTextArea: true },
   item2_strong_en: { type: ControlType.String, title: "Item 2 Bold (EN)", defaultValue: "2. Model-agnostic processing." },
   item2_strong_ko: { type: ControlType.String, title: "Item 2 Bold (KO)", defaultValue: "2. 모델 무관 처리." },
-  item2_text_en: { type: ControlType.String, title: "Item 2 Text (EN)", defaultValue: " The AI enablement layer must work with any LLM...", displayTextArea: true },
-  item2_text_ko: { type: ControlType.String, title: "Item 2 Text (KO)", defaultValue: " AI 활성화 레이어는 하나의 제공업체 API만이 아닌 모든 LLM과 함께 작동해야 합니다...", displayTextArea: true },
+  item2_text_en: { type: ControlType.String, title: "Item 2 Text (EN)", defaultValue: " The context-preserving data layer for AI must work with any LLM...", displayTextArea: true },
+  item2_text_ko: { type: ControlType.String, title: "Item 2 Text (KO)", defaultValue: " AI를 위한 컨텍스트 보존 데이터 레이어는 하나의 제공업체 API만이 아닌 모든 LLM과 함께 작동해야 합니다...", displayTextArea: true },
   item3_strong_en: { type: ControlType.String, title: "Item 3 Bold (EN)", defaultValue: "3. Output Restoration (Restoration)." },
   item3_strong_ko: { type: ControlType.String, title: "Item 3 Bold (KO)", defaultValue: "3. 출력 복원." },
   item3_text_en: { type: ControlType.String, title: "Item 3 Text (EN)", defaultValue: " AI results are restored locally...", displayTextArea: true },

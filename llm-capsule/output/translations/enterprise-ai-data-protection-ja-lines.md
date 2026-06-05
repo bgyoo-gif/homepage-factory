@@ -2,10 +2,10 @@
 
 ## Section 01: Hero
 
-Enterprise AI Enablement
+Context-Preserving Data Layer for AI
 エンタープライズAIイネーブルメント
 
-LLM Capsule's AI enablement data layer uses encapsulation, zero exposure, and local restoration to enable enterprises to adopt AI without data risk.
+LLM Capsule's context-preserving data layer for AI uses encapsulation, zero exposure, and local restoration to enable enterprises to adopt AI without data risk.
 LLM Capsuleの AIイネーブルメントデータレイヤーは、カプセル化、Zero Exposure、ローカル復元を活用し、データリスクなしで企業がAIを導入できるようにします。
 
 ## Section 02: Problem
@@ -18,7 +18,7 @@ For regulated enterprises, this exposure is often non-negotiable — not because
 
 ## Section 03: Definition
 
-LLM Capsule operates as an AI enablement data layer and plugin — protecting sensitive information through local encapsulation, structure-preserving processing, and local restoration while enabling full AI-powered workflows across any LLM.
+LLM Capsule operates as a context-preserving data layer for AI and plugin — protecting sensitive information through local encapsulation, structure-preserving processing, and local restoration while enabling full AI-powered workflows across any LLM.
 LLM Capsuleは、AIイネーブルメントデータレイヤーおよびプラグインとして動作します — ローカルカプセル化、構造保持処理、ローカル復元を通じて機密情報を保護しながら、あらゆるLLMでAI駆動型ワークフローを完全に実現します。
 
 ## Section 04: Explanation
@@ -56,7 +56,7 @@ Document layout, entity relationships, and semantic context are maintained durin
 Because protection operates at the data layer before transmission, it works with any external AI service — ChatGPT, Claude, Gemini, or any LLM API — without model-specific integration.
 保護は送信前のデータレイヤーで動作するため、モデル固有の統合なしに、あらゆる外部AIサービス — ChatGPT、Claude、Gemini、またはあらゆるLLM API — と連携します。
 
-LLM Capsule is an AI enablement data layer and plugin. It enables AI adoption by protecting data at the data layer — not by blocking AI, but by making AI safe to use on real enterprise data.
+LLM Capsule is a context-preserving data layer for AI and plugin. It enables AI adoption by protecting data at the data layer — not by blocking AI, but by making AI safe to use on real enterprise data.
 LLM CapsuleはAIイネーブルメントデータレイヤーおよびプラグインです。AIを遮断するのではなく、実際の企業データでAIを安全に使用できるようにすることで、データレイヤーにおけるデータ保護を通じてAI導入を実現します。
 
 ## Section 05: Enterprise Examples

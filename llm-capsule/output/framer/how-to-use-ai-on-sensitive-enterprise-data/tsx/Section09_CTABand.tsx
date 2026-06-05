@@ -47,8 +47,8 @@ export default function Section09_CTABand({
   btn2_label_en = "View Product",
   btn2_label_ko = "제품 보기",
   btn2_href = "/product",
-  footnote_en = "Enterprise AI Enablement by CUBIG",
-  footnote_ko = "CUBIG의 엔터프라이즈 AI 활성화",
+  footnote_en = "Context-Preserving Data Layer for AI by CUBIG",
+  footnote_ko = "CUBIG의 AI를 위한 컨텍스트 보존 데이터 레이어",
 }: Props) {
   const t = locale === "ko"
     ? {
@@ -224,6 +224,6 @@ addPropertyControls(Section09_CTABand, {
   btn2_label_en: { type: ControlType.String, title: "Button 2 (EN)", defaultValue: "View Product" },
   btn2_label_ko: { type: ControlType.String, title: "Button 2 (KO)", defaultValue: "제품 보기" },
   btn2_href: { type: ControlType.String, title: "Button 2 URL", defaultValue: "/product" },
-  footnote_en: { type: ControlType.String, title: "Footnote (EN)", defaultValue: "Enterprise AI Enablement by CUBIG" },
-  footnote_ko: { type: ControlType.String, title: "Footnote (KO)", defaultValue: "CUBIG의 엔터프라이즈 AI 활성화" },
+  footnote_en: { type: ControlType.String, title: "Footnote (EN)", defaultValue: "Context-Preserving Data Layer for AI by CUBIG" },
+  footnote_ko: { type: ControlType.String, title: "Footnote (KO)", defaultValue: "CUBIG의 AI를 위한 컨텍스트 보존 데이터 레이어" },
 })

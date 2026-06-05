@@ -106,7 +106,7 @@ function AccordionCard({ question, answer, defaultOpen = false }: { question: st
 export default function Section07_FAQ({
   sectionLabel = "FAQ",
   faq1Q = "What is an AI data capsule?",
-  faq1A = "An AI data capsule is a locally generated AI enablement layer that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.",
+  faq1A = "An AI data capsule is a locally generated context-preserving data layer for AI that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.",
   faq2Q = "How does an AI data capsule differ from data masking?",
   faq2A = "Data masking permanently removes sensitive information, making AI outputs unusable for enterprise workflows. An AI data capsule preserves data structure and enables restoration, so AI results can be restored to their full enterprise context locally.",
   faq3Q = "Does the AI data capsule work with any LLM?",
@@ -235,7 +235,7 @@ addPropertyControls(Section07_FAQ, {
   faq1A: {
     type: ControlType.String,
     title: "FAQ 1 Answer",
-    defaultValue: "An AI data capsule is a locally generated AI enablement layer that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.",
+    defaultValue: "An AI data capsule is a locally generated context-preserving data layer for AI that encapsulates sensitive enterprise data before it is sent to external AI services. After AI processing, the capsule enables local restoration so outputs remain usable in real enterprise workflows.",
     displayTextArea: true,
   },
   faq2Q: {

@@ -8,7 +8,7 @@
 ## Page Meta
 
 ```
-title: Architecture | LLM Capsule — AI Enablement Data Layer for Regulated Operations
+title: Architecture | LLM Capsule — Context-Preserving Data Layer for AI for Regulated Operations
 canonical: https://llmcapsule.ai/architecture
 description: The architecture of LLM Capsule — four zones (Corporate Internal Network → DMZ → In-House Team → Local Auto Reconstruction) connected through the Enhanced Encapsulation Layer with structure-preserving, differential-privacy-based protection, governance-driven routing, and in-environment auto-restoration. Two execution paths under one governance framework. Runs inside the customer environment, integrating with existing systems (ERP, CRM, Ticketing, DMS, Legacy DB, RAG Pipeline) without moving raw data outside that environment.
 og:title: LLM Capsule Architecture
@@ -42,7 +42,7 @@ JSON-LD: TechArticle (headline, description, author, publisher)
 | Eyebrow | Architecture |
 | h1 | How LLM Capsule plugs AI into the systems you already run |
 | h1 strong | (none — no inline color highlights needed) |
-| Sub | Three zones. Four steps. Five components. Two execution paths. One governance framework. The AI enablement data layer for regulated operations — at the architectural level. |
+| Sub | Three zones. Four steps. Five components. Two execution paths. One governance framework. The context-preserving data layer for AI for regulated operations — at the architectural level. |
 
 **Notes:**
 - h1 `font-size: clamp(36px, 5vw, 64px)`, weight 700, line-height 1.15

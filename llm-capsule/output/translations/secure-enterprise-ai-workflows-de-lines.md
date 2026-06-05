@@ -31,7 +31,7 @@ Erläuterung
 A secure enterprise AI workflow has four properties:
 Ein sicherer KI-Workflow im Unternehmen hat vier Eigenschaften:
 
-Enterprise AI enablement requires an AI-ready data layer, not model-layer security.
+Context-preserving data layer for AI requires an AI-ready data layer, not model-layer security.
 KI-Enablement im Unternehmen erfordert eine KI-faehige Datenschicht, keine Sicherheitsloesung auf Modellebene.
 
 LLM Capsule

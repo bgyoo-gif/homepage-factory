@@ -58,10 +58,10 @@ DS: design-system-core.md + design-system-capsule.md
 
 **구조:**
 - eyebrow: 없음 (A타입의 "Resources" eyebrow 삭제)
-- 타이틀: `Enterprise AI Enablement Resources`
+- 타이틀: `Context-Preserving Data Layer for AI Resources`
 - 타이틀 강조 키워드: "Resources" -> `<span class="ds-text--brand">Resources</span>`
 - 제품명: 없음 (타이틀에 제품명 미포함)
-- description: "Technical documentation, learning resources, glossary, and downloads for enterprise AI enablement with <span class=\"ds-text--product\">LLM Capsule</span>."
+- description: "Technical documentation, learning resources, glossary, and downloads for enterprise context-preserving data layer for AI with <span class=\"ds-text--product\">LLM Capsule</span>."
 
 **버튼 (ds-hero__actions):**
 - 없음 (A타입에 Hero 버튼 없음)
@@ -94,7 +94,7 @@ DS: design-system-core.md + design-system-capsule.md
 
 | # | 타이틀 | 설명 (원문 그대로) | Gradient 변형 | Lucide 아이콘 | href |
 |---|--------|-------------------|---------------|---------------|------|
-| 1 | Learn | In-depth articles on enterprise AI enablement, secure LLM usage, structure-preserving processing, and restorable workflows. | `ds-card--gradient-indigo` | `book-open` | learn.html |
+| 1 | Learn | In-depth articles on enterprise context-preserving data layer for AI, secure LLM usage, structure-preserving processing, and restorable workflows. | `ds-card--gradient-indigo` | `book-open` | learn.html |
 | 2 | Glossary | Definitions of key concepts -- restoration, zero exposure, enterprise context control, and structure-preserving processing. | `ds-card--gradient-blue` | `book-text` | glossary.html |
 | 3 | Downloads | Architecture briefs, technical documentation, and deployment guides for enterprise evaluation. | `ds-card--gradient-green` | `download` | downloads.html |
 | 4 | Trust Center | Security certifications, compliance documentation, and audit information. | `ds-card--gradient-silver` | `shield-check` | trust-center.html |
