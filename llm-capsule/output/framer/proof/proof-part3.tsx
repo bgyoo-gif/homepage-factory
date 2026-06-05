@@ -29,8 +29,48 @@ const TRANSLATIONS: Record<string, Record<string, string>> = {
     researchGroup4Title: "Foundations & survey",
     researchNote: "Selected publications by the CUBIG founding team and collaborators. Full publication list and citation counts available on request.",
   },
-  ko: {},
-  de: {},
+  ko: {
+    // Certifications
+    certsHeading: "보안 및 컴플라이언스",
+    certsHeadingAccent: "인증",
+    certsDesc: "LLM Capsule이 취득한 독립 감사 기반 인증입니다.",
+    // Patents
+    patentsHeading: "특허 및",
+    patentsHeadingAccent: "출원",
+    patentsDesc: "LLM Capsule의 등록 특허 및 출원 현황입니다. 개인정보를 노출하지 않고 AI를 활용하기 위한 기술적 기반이 문서로 증명됩니다.",
+    // Research
+    researchHeading: "보호 기술의 토대가 된",
+    researchHeadingAccent: "연구",
+    researchDesc: "LLM Capsule은 창업팀이 동료 심사 학술지에 발표한 프라이버시·보안 연구를 기반으로 합니다. 비식별화, 멤버십 추론 공격 방어, 분산 머신러닝 보안 분야의 연구 성과입니다. 아래 각 논문에는 해당 연구가 무엇을 했는지, 그 원리가 오늘날 데이터 레이어에서 어떻게 구현되는지를 함께 설명합니다.",
+    researchGroup1Title: "비식별화 및 민감 데이터 보호",
+    researchGroup2Title: "멤버십 및 추론 공격 방어",
+    researchExpandClosed: "논문 4편 더 보기 — 분산 학습 보안 및 기초 연구",
+    researchExpandOpen: "접기",
+    researchGroup3Title: "연합 학습 및 분산 학습 보안",
+    researchGroup4Title: "기초 연구 및 서베이",
+    researchNote: "CUBIG 창업팀 및 공동 연구자의 주요 논문입니다. 전체 논문 목록 및 인용 현황은 별도 요청으로 확인하실 수 있습니다.",
+  },
+  de: {
+    // Certifications
+    certsHeading: "Sicherheits- und Compliance-",
+    certsHeadingAccent: "Zertifizierungen",
+    certsDesc: "Unabhängig auditierte Zertifizierungen, die LLM Capsule nachweisbar absichern.",
+    // Patents
+    patentsHeading: "Patente und",
+    patentsHeadingAccent: "Anmeldungen",
+    patentsDesc: "LLM Capsule ist durch eingetragene Patente und laufende Anmeldungen geschützt. Diese Schutzrechte belegen die technische Grundlage dafür, KI einzusetzen, ohne vertrauliche Informationen offenzulegen.",
+    // Research
+    researchHeading: "Die Forschung hinter dem",
+    researchHeadingAccent: "Schutz",
+    researchDesc: "LLM Capsule basiert auf Datenschutz- und Sicherheitsforschung, die das Gründungsteam in begutachteten Fachzeitschriften veröffentlicht hat. Die Schwerpunkte liegen auf Datenanonymisierung, Abwehr von Membership-Inference-Angriffen und Sicherheit im verteilten maschinellen Lernen. Zu jedem Ergebnis ist angegeben, was die Arbeit geleistet hat und wie dieses Prinzip heute in der Datenschicht von LLM Capsule umgesetzt ist.",
+    researchGroup1Title: "Anonymisierung und Schutz sensibler Daten",
+    researchGroup2Title: "Abwehr von Membership- und Inference-Angriffen",
+    researchExpandClosed: "4 weitere Publikationen anzeigen — Sicherheit im verteilten Lernen & Grundlagen",
+    researchExpandOpen: "Weniger anzeigen",
+    researchGroup3Title: "Sicherheit im Federated und verteilten Lernen",
+    researchGroup4Title: "Grundlagen und Übersichtsarbeiten",
+    researchNote: "Ausgewählte Publikationen des CUBIG-Gründungsteams und seiner Kooperationspartner. Die vollständige Publikationsliste sowie Zitationszahlen sind auf Anfrage erhältlich.",
+  },
 }
 
 interface CardItem {
