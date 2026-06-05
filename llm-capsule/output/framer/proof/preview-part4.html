@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proof Part 4 Preview — Awards + Partnerships + Press + FAQ + CTA | LLM Capsule</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is operational evidence for an AI data layer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Operational evidence is concrete, verifiable documentation that an AI system behaves as claimed in real production conditions — what was blocked before, what changed after deployment, the deployment reference, and the certifications, patents, and peer-reviewed research that back it. It is the difference between a marketing claim and a record a procurement or audit team can verify."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is LLM Capsule's protection independently validated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Through third-party certifications (ISO/IEC 27001, ISO/IEC 42001, KISA Information Security Fast Track, GS Certification), registered patents covering privacy-preserving AI services and on-device AI security, peer-reviewed publications by the founding team, and deployment references across regulated industries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do certifications and patents matter for AI data protection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Certifications show an independent body has audited the security and AI-management practices; patents show the protection method is novel and documented; peer-reviewed research shows the underlying techniques withstand academic scrutiny. Together they let a buyer rely on more than the vendor's own word."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the external AI ever receive the original sensitive data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Across every record on this page, only the encapsulated capsule context is shared with AI. Sensitive values stay inside the environment through structure-preserving, differential-privacy-based encapsulation, and outputs are restored locally into the originating workflow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I independently verify the certifications, patents, and research listed here?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The certifications, patents, research papers, and press items on this page each cite a primary source you can check independently — without taking our word for it. The certifications have issuing-body certificate numbers confirmable with the certifier; the patents list their official KIPO numbers, lookupable in the national registry or Google Patents; the papers cite venue and authors traceable through DBLP; and every press item links to its original article."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What counts as credible, verifiable proof that an AI tool protects sensitive data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Credible proof is evidence a third party can verify without relying on the vendor's word — not a testimonial or a marketing line. For an AI data layer that means several signals together: operational records of what was blocked and what changed, independent certifications, registered patents in a public registry, and peer-reviewed publications by the founding team. Any one alone is weak; together they let a buyer rely on more than a promise."
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── TOKEN DEFAULTS ── */
+:root {
+  --c-primary: #5b4fe9;
+  --c-primary-dark: #3b2fbf;
+  --c-primary-soft: #eeebfe;
+  --c-ink: #0f1130;
+  --c-ink-soft: #3a3d5e;
+  --c-muted: #6b7280;
+  --c-bg: #ffffff;
+  --c-bg-soft: #f7f8fb;
+  --c-bg-dark: #0f1130;
+  --c-rule: #e5e7eb;
+  --f-display: 'Inter', -apple-system, system-ui, sans-serif;
+  --f-mono: 'JetBrains Mono', monospace;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --container-max: 1280px;
+  --s-section: clamp(64px, 8vw, 128px);
+  --s-page: clamp(20px, 4vw, 80px);
+}
+
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--f-display);
+  color: var(--c-ink);
+  background-color: var(--c-bg);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.55;
+}
+img, video { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* ── CONTAINER ── */
+.pf4-container {
+  max-width: var(--container-max, 1280px);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+@media (min-width: 768px) { .pf4-container { padding: 0 32px; } }
+@media (min-width: 1440px) { .pf4-container { padding: 0 120px; } }
+
+/* ── SECTION ── */
+.pf4-section {
+  padding: var(--s-section) 0;
+}
+
+/* ── SECTION HEADER ── */
+.pf4-section-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.pf4-section-head h2 {
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 700;
+  color: var(--c-ink);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.pf4-section-head p {
+  font-size: clamp(15px, 1.2vw, 17px);
+  color: var(--c-ink-soft);
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto;
+}
+@media (min-width: 1440px) { .pf4-section-head p { max-width: 860px; } }
+.pf4-accent { color: var(--c-primary); }
+
+/* ── CARD GRID ── */
+.pf4-card-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 600px) {
+  .pf4-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 980px) {
+  .pf4-card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* ── CARD ── */
+.pf4-card {
+  background-color: var(--c-bg);
+  border: 1px solid var(--c-rule);
+  border-radius: var(--r-md);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  transition: border-color 0.2s;
+}
+.pf4-card:hover {
+  border-color: color-mix(in srgb, var(--c-rule) 85%, var(--c-ink));
+}
+.pf4-badge {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--c-primary);
+}
+.pf4-badge--gray { color: var(--c-muted); }
+.pf4-card-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--c-ink);
+  line-height: 1.35;
+}
+.pf4-card-title a { color: var(--c-ink); transition: color 0.2s; }
+.pf4-card-title a:hover { color: var(--c-primary); }
+.pf4-card-meta {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  color: var(--c-muted);
+  line-height: 1.5;
+}
+.pf4-card-body {
+  font-size: 13px;
+  color: var(--c-ink-soft);
+  line-height: 1.55;
+}
+
+/* ── PARTNERS SECTION (bg-image) ── */
+.pf4-partners-section {
+  padding: var(--s-section) 0;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/bg-paint-white-teal.webp');
+}
+.pf4-partners-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.88);
+  pointer-events: none;
+}
+.pf4-partners-inner {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 767px) {
+  .pf4-partners-section {
+    background-image: none;
+    background-color: var(--c-bg-soft);
+  }
+}
+
+/* ── FAQ ── */
+.pf4-faq-item {
+  border-bottom: 1px solid var(--c-rule);
+}
+.pf4-faq-item:first-child {
+  border-top: 1px solid var(--c-rule);
+}
+.pf4-faq-q {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 20px 0;
+  text-align: left;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--c-ink);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  line-height: 1.4;
+  font-family: var(--f-display);
+  transition: color 0.2s;
+}
+.pf4-faq-q:hover { color: var(--c-primary); }
+.pf4-faq-ic {
+  flex-shrink: 0;
+  font-size: 24px;
+  color: var(--c-muted);
+  line-height: 1;
+  font-weight: 300;
+  transition: transform 0.2s;
+}
+.pf4-faq-item--open .pf4-faq-ic {
+  transform: rotate(45deg);
+}
+.pf4-faq-body {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+.pf4-faq-item--open .pf4-faq-body {
+  max-height: 600px;
+}
+.pf4-faq-body-in {
+  padding-bottom: 20px;
+  color: var(--c-ink-soft);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ── CTA ── */
+.pf4-cta {
+  background-color: var(--c-bg-dark, #0f1130);
+  position: relative;
+  overflow: hidden;
+}
+.pf4-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 60% 80% at 70% 0%,
+    color-mix(in srgb, var(--c-primary) 50%, transparent),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+.pf4-cta-in {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--s-section) 16px;
+  text-align: center;
+}
+@media (min-width: 768px) { .pf4-cta-in { padding-left: 32px; padding-right: 32px; } }
+@media (min-width: 1440px) { .pf4-cta-in { padding-left: 120px; padding-right: 120px; } }
+.pf4-cta-h {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--c-bg);
+  line-height: 1.2;
+  margin-bottom: 22px;
+}
+@media (min-width: 768px) { .pf4-cta-h { font-size: 40px; } }
+@media (min-width: 1440px) { .pf4-cta-h { font-size: 50px; } }
+.pf4-cta-d {
+  color: color-mix(in srgb, var(--c-primary-soft) 85%, var(--c-bg));
+  max-width: 620px;
+  margin: 0 auto 30px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.pf4-cta-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── BUTTONS ── */
+.pf4-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--r-md);
+  font-family: var(--f-display);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: background-color 0.18s, color 0.18s, border-color 0.18s;
+}
+.pf4-btn--invert {
+  background-color: var(--c-bg);
+  color: var(--c-ink);
+}
+.pf4-btn--invert:hover {
+  background-color: var(--c-primary-soft);
+  color: var(--c-primary-dark);
+}
+.pf4-btn--invert-ghost {
+  background-color: transparent;
+  color: var(--c-bg);
+  border: 1.5px solid color-mix(in srgb, var(--c-primary) 60%, transparent);
+}
+.pf4-btn--invert-ghost:hover {
+  border-color: color-mix(in srgb, var(--c-bg) 80%, transparent);
+}
+
+/* ── PREVIEW LABEL ── */
+.preview-label {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--c-muted);
+  background-color: var(--c-bg-soft);
+  border-bottom: 1px solid var(--c-rule);
+  padding: 10px 16px;
+}
+</style>
+</head>
+<body>
+
+<div class="preview-label">// preview — proof-part4.tsx · Awards + Partnerships + Press + FAQ + CTA · llm-capsule brand</div>
+
+<!-- SECTION 05: AWARDS -->
+<section class="pf4-section" id="awards">
+<div class="pf4-container">
+  <div class="pf4-section-head">
+    <h2>Awards and <span class="pf4-accent">recognition</span></h2>
+    <p>Each entry lists the issuing body, date, and exactly what was recognized — the verifiable basis behind the recognition, for buyers who need more than a logo.</p>
+  </div>
+  <div class="pf4-card-grid">
+
+    <div class="pf4-card">
+      <div class="pf4-badge">Industry Award</div>
+      <div class="pf4-card-title">Deutsche Telekom T-Challenge 2026 — 2nd Place</div>
+      <div class="pf4-card-meta">T-Mobile / Deutsche Telekom · 2026</div>
+      <p class="pf4-card-body">Placed 2nd in the global open-innovation program with de-identification and local restoration technology.</p>
+    </div>
+
+    <div class="pf4-card">
+      <div class="pf4-badge">Government Award</div>
+      <div class="pf4-card-title">Information Security Product Innovation Award — Minister of Science and ICT Prize</div>
+      <div class="pf4-card-meta">Ministry of Science and ICT · 2024-11-26</div>
+      <p class="pf4-card-body">Grand Prize, Information &amp; Physical Security category.</p>
+    </div>
+
+    <div class="pf4-card">
+      <div class="pf4-badge pf4-badge--gray">Recognition</div>
+      <div class="pf4-card-title">2026 Emerging AI+X Top 100</div>
+      <div class="pf4-card-meta">Korea AI Industry Association · 2026</div>
+      <p class="pf4-card-body">Selected for the zero-access architecture and privacy technology.</p>
+    </div>
+
+    <div class="pf4-card">
+      <div class="pf4-badge pf4-badge--gray">Startup Recognition</div>
+      <div class="pf4-card-title">NVIDIA Inception · SKT &times; Hana Bank AI Accelerator</div>
+      <div class="pf4-card-meta">2024–2025</div>
+      <p class="pf4-card-body">NVIDIA Inception member and joint AI startup accelerator selection.</p>
+    </div>
+
+    <div class="pf4-card">
+      <div class="pf4-badge pf4-badge--gray">Recognition</div>
+      <div class="pf4-card-title">Startup World Cup Finalist · NextRise Global Innovator</div>
+      <div class="pf4-card-meta">2024</div>
+      <p class="pf4-card-body">Global startup competition finalist and innovator selection.</p>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- SECTION 06: PARTNERSHIPS -->
+<section class="pf4-partners-section" id="partners">
+  <div class="pf4-partners-inner">
+    <div class="pf4-container">
+      <div class="pf4-section-head">
+        <h2>Technology and ecosystem <span class="pf4-accent">partners</span></h2>
+        <p>What each partnership concretely provides — deployment channel, infrastructure, or validation — not just a logo wall.</p>
+      </div>
+      <div class="pf4-card-grid">
+
+        <div class="pf4-card">
+          <div class="pf4-badge">Marketplace</div>
+          <div class="pf4-card-title">AWS Marketplace</div>
+          <div class="pf4-card-meta">LLM Capsule listed · procurement-ready</div>
+          <p class="pf4-card-body">Available for direct purchase and private-offer deployment through AWS, simplifying enterprise procurement.</p>
+        </div>
+
+        <div class="pf4-card">
+          <div class="pf4-badge pf4-badge--gray">Infrastructure</div>
+          <div class="pf4-card-title">NVIDIA Inception</div>
+          <div class="pf4-card-meta">Member program</div>
+          <p class="pf4-card-body">Access to NVIDIA's technology and go-to-market resources supporting on-prem and accelerated deployment.</p>
+        </div>
+
+        <div class="pf4-card">
+          <div class="pf4-badge pf4-badge--gray">Cloud</div>
+          <div class="pf4-card-title">NAVER Cloud</div>
+          <div class="pf4-card-meta">Deployment partner</div>
+          <p class="pf4-card-body">Korean public/enterprise cloud deployment path, relevant for data-residency-constrained customers.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 07: PRESS -->
+<section class="pf4-section" id="press">
+<div class="pf4-container">
+  <div class="pf4-section-head">
+    <h2>In the <span class="pf4-accent">press</span></h2>
+    <p>Coverage and interviews relevant to LLM Capsule and the secure-AI approach.</p>
+  </div>
+  <div class="pf4-card-grid">
+
+    <div class="pf4-card">
+      <div class="pf4-badge">Press Coverage</div>
+      <div class="pf4-card-title">
+        <a href="https://magazine.hankyung.com/business/article/202604228133b" target="_blank" rel="noopener">
+          CUBIG Validates LLM Capsule's Technical Efficacy Across Global Industrial Sites ↗
+        </a>
+      </div>
+      <div class="pf4-card-meta">Korea Economic Daily Business · April 22, 2026</div>
+      <p class="pf4-card-body">Coverage of LLM Capsule's Zero Exposure AI Gateway architecture being validated in production alongside global industrial cybersecurity firm Claroty, with original data never reaching external LLM vendors.</p>
+    </div>
+
+    <div class="pf4-card">
+      <div class="pf4-badge">Press Coverage</div>
+      <div class="pf4-card-title">
+        <a href="https://www.etnews.com/20250730000110" target="_blank" rel="noopener">
+          CUBIG Listed in Gartner Hyper-Synthetic Data Report — Only Asian Vendor Named ↗
+        </a>
+      </div>
+      <div class="pf4-card-meta">Electronic Times (etnews) · July 30, 2025</div>
+      <p class="pf4-card-body">Gartner's "Emerging Tech: Trends for Hyper-Synthetic Data" (June 2025) named CUBIG as one of 26 global key vendors following a 4-month deep-dive interview process and analysis of 60+ real-world use cases. The only Asia-based company on the list.</p>
+    </div>
+
+    <div class="pf4-card">
+      <div class="pf4-badge">Press Coverage</div>
+      <div class="pf4-card-title">
+        <a href="https://www.hankyung.com/article/202504012381O" target="_blank" rel="noopener">
+          LLM Capsule Emerges as Essential Tool for Safe Enterprise AI Adoption ↗
+        </a>
+      </div>
+      <div class="pf4-card-meta">Korea Economic Daily · April 1, 2025</div>
+      <p class="pf4-card-body">As enterprises and public institutions hesitate to deploy generative AI over data leakage concerns, LLM Capsule's real-time sensitive-data blocking for ChatGPT, Claude, and Gemini is gaining recognition as the go-to solution for compliant AI use.</p>
+    </div>
+
+    <div class="pf4-card">
+      <div class="pf4-badge pf4-badge--gray">Interview</div>
+      <div class="pf4-card-title">
+        <a href="https://www.newspim.com/news/view/20250604000703" target="_blank" rel="noopener">
+          [VivaTech 2025] CUBIG — "Designing the Future of AI Data Security" ↗
+        </a>
+      </div>
+      <div class="pf4-card-meta">NewsPim · June 4, 2025</div>
+      <p class="pf4-card-body">CEO Bae Ho interviewed at VivaTech 2025 in Paris, covering CUBIG's three core technologies — DTS, LLM Capsule, and DataXpert — and explaining why air-gapped deployment is driving rapid uptake in finance, healthcare, and defense.</p>
+    </div>
+
+    <div class="pf4-card">
+      <div class="pf4-badge">Press Coverage</div>
+      <div class="pf4-card-title">
+        <a href="https://www.epnc.co.kr/news/articleView.html?idxno=317379" target="_blank" rel="noopener">
+          LLM Capsule Selected for South Korea's Government Tech Pilot Purchase Program ↗
+        </a>
+      </div>
+      <div class="pf4-card-meta">TechWorld News · June 2, 2025</div>
+      <p class="pf4-card-body">The Ministry of SMEs and Startups selected LLM Capsule for its technology pilot procurement program, clearing rigorous evaluation on technical capability, market viability, and innovation — opening a direct public-sector deployment path.</p>
+    </div>
+
+    <div class="pf4-card">
+      <div class="pf4-badge">Press Coverage</div>
+      <div class="pf4-card-title">
+        <a href="https://us.aving.net/news/articleView.html?idxno=52264" target="_blank" rel="noopener">
+          CUBIG to Unveil Next-Generation Synthetic Data Technology at World IT Show 2025 ↗
+        </a>
+      </div>
+      <div class="pf4-card-meta">AVING News · April 22, 2025</div>
+      <p class="pf4-card-body">CUBIG showcased LLM Capsule at WIS 2025 at COEX Seoul, highlighting standalone air-gapped operation, beta testing with global SaaS and healthcare companies, and planned cloud integration with AWS and Google Cloud.</p>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- SECTION 08: FAQ -->
+<section class="pf4-section" id="faq">
+<div class="pf4-container">
+  <div class="pf4-section-head">
+    <h2>Common <span class="pf4-accent">questions</span></h2>
+  </div>
+  <div class="pf4-faq">
+
+    <div class="pf4-faq-item pf4-faq-item--open">
+      <button class="pf4-faq-q" onclick="toggleFaq(this)">
+        <span>What is operational evidence for an AI data layer?</span>
+        <span class="pf4-faq-ic">+</span>
+      </button>
+      <div class="pf4-faq-body">
+        <div class="pf4-faq-body-in">Operational evidence is concrete, verifiable documentation that an AI system behaves as claimed in real production conditions — what was blocked before, what changed after deployment, the deployment reference, and the certifications, patents, and peer-reviewed research that back it. It is the difference between a marketing claim and a record a procurement or audit team can verify.</div>
+      </div>
+    </div>
+
+    <div class="pf4-faq-item">
+      <button class="pf4-faq-q" onclick="toggleFaq(this)">
+        <span>How is LLM Capsule's protection independently validated?</span>
+        <span class="pf4-faq-ic">+</span>
+      </button>
+      <div class="pf4-faq-body">
+        <div class="pf4-faq-body-in">Through third-party certifications (ISO/IEC 27001, ISO/IEC 42001, KISA Information Security Fast Track, GS Certification), registered patents covering privacy-preserving AI services and on-device AI security, peer-reviewed publications by the founding team, and deployment references across regulated industries.</div>
+      </div>
+    </div>
+
+    <div class="pf4-faq-item">
+      <button class="pf4-faq-q" onclick="toggleFaq(this)">
+        <span>Why do certifications and patents matter for AI data protection?</span>
+        <span class="pf4-faq-ic">+</span>
+      </button>
+      <div class="pf4-faq-body">
+        <div class="pf4-faq-body-in">Certifications show an independent body has audited the security and AI-management practices; patents show the protection method is novel and documented; peer-reviewed research shows the underlying techniques withstand academic scrutiny. Together they let a buyer rely on more than the vendor's own word.</div>
+      </div>
+    </div>
+
+    <div class="pf4-faq-item">
+      <button class="pf4-faq-q" onclick="toggleFaq(this)">
+        <span>Does the external AI ever receive the original sensitive data?</span>
+        <span class="pf4-faq-ic">+</span>
+      </button>
+      <div class="pf4-faq-body">
+        <div class="pf4-faq-body-in">No. Across every record on this page, only the encapsulated capsule context is shared with AI. Sensitive values stay inside the environment through structure-preserving, differential-privacy-based encapsulation, and outputs are restored locally into the originating workflow.</div>
+      </div>
+    </div>
+
+    <div class="pf4-faq-item">
+      <button class="pf4-faq-q" onclick="toggleFaq(this)">
+        <span>How can I independently verify the certifications, patents, and research listed here?</span>
+        <span class="pf4-faq-ic">+</span>
+      </button>
+      <div class="pf4-faq-body">
+        <div class="pf4-faq-body-in">The certifications, patents, research papers, and press items on this page each cite a primary source you can check independently — without taking our word for it. The certifications have issuing-body certificate numbers confirmable with the certifier; the patents list their official KIPO numbers, lookupable in the national registry or Google Patents; the papers cite venue and authors traceable through DBLP; and every press item links to its original article.</div>
+      </div>
+    </div>
+
+    <div class="pf4-faq-item">
+      <button class="pf4-faq-q" onclick="toggleFaq(this)">
+        <span>What counts as credible, verifiable proof that an AI tool protects sensitive data?</span>
+        <span class="pf4-faq-ic">+</span>
+      </button>
+      <div class="pf4-faq-body">
+        <div class="pf4-faq-body-in">Credible proof is evidence a third party can verify without relying on the vendor's word — not a testimonial or a marketing line. For an AI data layer that means several signals together: operational records of what was blocked and what changed, independent certifications, registered patents in a public registry, and peer-reviewed publications by the founding team. Any one alone is weak; together they let a buyer rely on more than a promise.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="pf4-cta">
+  <div class="pf4-cta-in">
+    <h2 class="pf4-cta-h">Want the evidence applied to your own workflow?</h2>
+    <p class="pf4-cta-d">Bring one workflow that's blocked today because of data exposure. We'll show what the proof looks like on your data, your systems, your constraints.</p>
+    <div class="pf4-cta-btns">
+      <a class="pf4-btn pf4-btn--invert" href="/request-a-demo">Request a Demo</a>
+      <a class="pf4-btn pf4-btn--invert-ghost" href="/architecture">See the Architecture</a>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleFaq(btn) {
+  var item = btn.closest('.pf4-faq-item');
+  item.classList.toggle('pf4-faq-item--open');
+}
+</script>
+</body>
+</html>

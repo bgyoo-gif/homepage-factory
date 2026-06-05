@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview — Proof Part 1: Hero + Trust Strip | LLM Capsule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://bgyoo-gif.github.io/homepage-factory/llm-capsule/reference/tokens.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-display,'Inter',sans-serif);color:var(--c-ink,#0f1130);background-color:var(--c-bg,#fff);word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.55}
+img,video{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* PREVIEW LABEL */
+.preview-label{position:fixed;top:8px;right:12px;z-index:9999;font-family:var(--f-mono,'JetBrains Mono',monospace);font-size:10px;padding:4px 10px;background-color:var(--c-ink,#0f1130);color:#fff;border-radius:4px;opacity:.7;pointer-events:none}
+
+/* ---- COMPONENT STYLES (mirrors TSX) ---- */
+.pf1-root {
+  width: 100%;
+  font-family: var(--f-display, 'Inter', -apple-system, system-ui, sans-serif);
+  color: var(--c-ink, #0f1130);
+  background-color: var(--c-bg, #fff);
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-height: 1.55;
+}
+
+.pf1-hero {
+  padding-top: 96px;
+  padding-bottom: var(--s-section, clamp(64px, 8vw, 128px));
+}
+.pf1-hero-inner {
+  max-width: var(--container-max, 1280px);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+@media (min-width: 768px) {
+  .pf1-hero-inner { padding: 0 32px; }
+}
+@media (min-width: 1440px) {
+  .pf1-hero-inner { padding: 0 120px; }
+}
+.pf1-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border: 1px solid var(--c-rule, #e5e7eb);
+  border-radius: 999px;
+  font-family: var(--f-mono, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  color: var(--c-ink-soft, #3a3d5e);
+  margin-bottom: 22px;
+}
+.pf1-hero-tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--c-teal, #0ea5a4);
+  animation: pf1-pulse 2s infinite;
+  flex-shrink: 0;
+}
+@keyframes pf1-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.pf1-h1 {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1.08;
+  max-width: 17ch;
+  color: var(--c-ink, #0f1130);
+}
+.pf1-h1-accent {
+  color: var(--c-primary, #5b4fe9);
+}
+.pf1-hero-sub {
+  font-size: clamp(16px, 1.4vw, 19px);
+  color: var(--c-ink-soft, #3a3d5e);
+  line-height: 1.6;
+  max-width: 680px;
+  margin-top: 22px;
+}
+
+/* BANNER */
+.pf1-banner {
+  margin-top: 28px;
+  padding: 20px 22px;
+  background-color: var(--c-primary-soft, #eeebfe);
+  border: 1px solid color-mix(in srgb, var(--c-primary, #5b4fe9) 20%, transparent);
+  border-radius: var(--r-md, 10px);
+  max-width: 760px;
+  font-size: 15.5px;
+  color: var(--c-ink, #0f1130);
+  line-height: 1.65;
+}
+.pf1-banner strong {
+  color: var(--c-primary-dark, #3b2fbf);
+  font-weight: 700;
+}
+
+/* KPI BAND */
+.pf1-kpi-band {
+  margin-top: 38px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background-color: var(--c-rule, #e5e7eb);
+  max-width: 780px;
+  border: 1px solid var(--c-rule, #e5e7eb);
+  border-radius: var(--r-md, 10px);
+  overflow: hidden;
+}
+@media (min-width: 680px) {
+  .pf1-kpi-band { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.pf1-kpi-item {
+  background-color: var(--c-bg, #fff);
+  padding: 20px 22px;
+}
+.pf1-kpi-num {
+  font-size: clamp(24px, 2.6vw, 30px);
+  font-weight: 800;
+  color: var(--c-primary, #5b4fe9);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.pf1-kpi-num--sm {
+  font-size: clamp(18px, 2vw, 22px);
+}
+.pf1-kpi-label {
+  font-size: 12px;
+  color: var(--c-muted, #6b7280);
+  line-height: 1.45;
+}
+
+/* TRUST STRIP */
+.pf1-trust-strip {
+  padding: 30px 0;
+  border-bottom: 1px solid var(--c-rule, #e5e7eb);
+  background-color: var(--c-bg-soft, #f7f8fb);
+}
+.pf1-trust-strip-inner {
+  max-width: var(--container-max, 1280px);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+@media (min-width: 768px) {
+  .pf1-trust-strip-inner { padding: 0 32px; }
+}
+@media (min-width: 1440px) {
+  .pf1-trust-strip-inner { padding: 0 120px; }
+}
+.pf1-trust-label {
+  font-family: var(--f-mono, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  color: var(--c-muted, #6b7280);
+  margin-bottom: 20px;
+}
+.pf1-trust-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .pf1-trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+  .pf1-trust-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.pf1-trust-group-title {
+  font-family: var(--f-mono, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--c-primary, #5b4fe9);
+  margin-bottom: 12px;
+}
+.pf1-trust-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.pf1-trust-pill {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--c-ink-soft, #3a3d5e);
+  padding: 5px 11px;
+  border: 1px solid var(--c-rule, #e5e7eb);
+  border-radius: 999px;
+  background-color: var(--c-bg, #fff);
+  white-space: nowrap;
+}
+</style>
+</head>
+<body>
+
+<div class="preview-label">proof-part1 · preview</div>
+
+<div class="pf1-root">
+
+  <!-- HERO -->
+  <section class="pf1-hero">
+    <div class="pf1-hero-inner">
+      <div class="pf1-hero-tag">
+        <span class="pf1-hero-tag-dot"></span>
+        Trust Evidence
+      </div>
+      <h1 class="pf1-h1">Proof. <span class="pf1-h1-accent">The evidence behind the layer.</span></h1>
+      <p class="pf1-hero-sub">Operational case records. Security certifications. Patents. Research. Awards. Partnerships. The trust signals procurement, security, and audit teams need&mdash;consolidated.</p>
+      <div class="pf1-banner">
+        <strong>Secure AI usage</strong> means sensitive data stays inside your environment: only a protected capsule is processed by the AI, and outputs are reconstructed locally into the originating workflow&mdash;usable, privacy-safe, and verifiable.
+      </div>
+      <div class="pf1-kpi-band">
+        <div class="pf1-kpi-item">
+          <div class="pf1-kpi-num">0%</div>
+          <div class="pf1-kpi-label">raw data egress to external AI (air-gapped case)</div>
+        </div>
+        <div class="pf1-kpi-item">
+          <div class="pf1-kpi-num">0.94</div>
+          <div class="pf1-kpi-label">PII detection F1 in automated de-identification</div>
+        </div>
+        <div class="pf1-kpi-item">
+          <div class="pf1-kpi-num pf1-kpi-num--sm">Blocked &rarr; Enabled</div>
+          <div class="pf1-kpi-label">external LLM use on data that was previously off-limits</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="pf1-trust-strip">
+    <div class="pf1-trust-strip-inner">
+      <div class="pf1-trust-label">// Deployed across regulated industries &mdash; finance &middot; public sector &middot; defense &middot; healthcare &middot; telecom</div>
+      <div class="pf1-trust-grid">
+        <div>
+          <div class="pf1-trust-group-title">Customers</div>
+          <div class="pf1-trust-items">
+            <span class="pf1-trust-pill">Woori Bank</span>
+            <span class="pf1-trust-pill">KYOBO</span>
+            <span class="pf1-trust-pill">Hana Bank</span>
+            <span class="pf1-trust-pill">Samsung Securities</span>
+            <span class="pf1-trust-pill">SK telecom</span>
+            <span class="pf1-trust-pill">EUMC</span>
+            <span class="pf1-trust-pill">Claroty</span>
+          </div>
+        </div>
+        <div>
+          <div class="pf1-trust-group-title">Certifications</div>
+          <div class="pf1-trust-items">
+            <span class="pf1-trust-pill">ISO 27001</span>
+            <span class="pf1-trust-pill">ISO 42001</span>
+            <span class="pf1-trust-pill">GS Certified &middot; Grade 1</span>
+            <span class="pf1-trust-pill">KISA Fast Track</span>
+          </div>
+        </div>
+        <div>
+          <div class="pf1-trust-group-title">Partners</div>
+          <div class="pf1-trust-items">
+            <span class="pf1-trust-pill">AWS Marketplace</span>
+            <span class="pf1-trust-pill">NVIDIA Inception</span>
+            <span class="pf1-trust-pill">Naver Cloud</span>
+          </div>
+        </div>
+        <div>
+          <div class="pf1-trust-group-title">Awards &amp; Recognition</div>
+          <div class="pf1-trust-items">
+            <span class="pf1-trust-pill">Minister of Science &amp; ICT Prize</span>
+            <span class="pf1-trust-pill">Emerging AI+X Top 100</span>
+            <span class="pf1-trust-pill">T-Challenge 2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

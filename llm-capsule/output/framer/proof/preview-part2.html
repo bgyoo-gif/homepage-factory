@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview — ProofPart2: Operational Evidence | LLM Capsule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── Token Simulation ── */
+:root {
+  --c-primary: #5b4fe9;
+  --c-primary-dark: #3b2fbf;
+  --c-primary-soft: #eeebfe;
+  --c-teal: #0ea5a4;
+  --c-teal-dark: #0b7f7e;
+  --c-teal-soft: #e6f7f6;
+  --c-coral: #ef5350;
+  --c-coral-dark: #c73e3a;
+  --c-coral-soft: #fce9e8;
+  --c-amber: #f59e0b;
+  --c-ink: #0f1130;
+  --c-ink-soft: #3a3d5e;
+  --c-muted: #6b7280;
+  --c-bg: #ffffff;
+  --c-bg-soft: #f7f8fb;
+  --c-bg-dark: #0f1130;
+  --c-bg-dark-2: #1b1d4a;
+  --c-rule: #e5e7eb;
+  --f-display: 'Inter', -apple-system, system-ui, sans-serif;
+  --f-mono: 'JetBrains Mono', monospace;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --container-max: 1280px;
+  --s-section: clamp(64px, 8vw, 128px);
+  --s-page: clamp(20px, 4vw, 80px);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--f-display);
+  color: var(--c-ink);
+  background-color: #f0f0f4;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-height: 1.55;
+}
+
+/* ── Preview Frame ── */
+.preview-frame {
+  max-width: 1280px;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 48px rgba(15,17,48,0.10);
+}
+.preview-label {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--c-muted);
+  text-align: center;
+  padding: 10px 0 6px;
+  background: var(--c-bg-soft);
+  border-bottom: 1px solid var(--c-rule);
+  letter-spacing: 0.08em;
+}
+
+/* ── Component Styles (mirroring TSX embedded CSS) ── */
+.pf2-root {
+  width: 100%;
+  font-family: var(--f-display);
+  color: var(--c-ink);
+  background-color: var(--c-bg);
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-height: 1.55;
+}
+.pf2-root *, .pf2-root *::before, .pf2-root *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.pf2-section {
+  width: 100%;
+  padding: var(--s-section) 0;
+}
+.pf2-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+@media (min-width: 768px) { .pf2-container { padding: 0 32px; } }
+@media (min-width: 1440px) { .pf2-container { padding: 0 120px; } }
+
+/* SECTION HEADER */
+.pf2-section-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.pf2-section-head h2 {
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 700;
+  color: var(--c-ink);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.pf2-section-head p {
+  font-size: clamp(15px, 1.2vw, 17px);
+  color: var(--c-ink-soft);
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto;
+}
+@media (min-width: 1280px) { .pf2-section-head p { max-width: 860px; } }
+.pf2-accent { color: var(--c-primary); }
+
+/* FILTER */
+.pf2-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.pf2-filter__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--c-rule);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--c-ink-soft);
+  background-color: var(--c-bg);
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  font-family: var(--f-display);
+  line-height: 1;
+}
+.pf2-filter__btn:hover {
+  border-color: var(--c-primary);
+  color: var(--c-primary);
+}
+.pf2-filter__btn--active {
+  background-color: var(--c-primary);
+  border-color: var(--c-primary);
+  color: #fff;
+}
+
+/* FILTER DOTS */
+.pf2-filter__dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.pf2-filter__dot--all {
+  background: linear-gradient(90deg, var(--c-primary), var(--c-teal), var(--c-amber));
+}
+.pf2-filter__dot--primary { background-color: var(--c-primary); }
+.pf2-filter__dot--teal    { background-color: var(--c-teal); }
+.pf2-filter__dot--amber   { background-color: var(--c-amber); }
+
+/* FILTER COUNT */
+.pf2-filter__count {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  color: var(--c-muted);
+  margin-bottom: 24px;
+}
+
+/* ACCORDION CARD */
+.pf2-ac-card {
+  background-color: var(--c-bg);
+  border: 1px solid var(--c-rule);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  margin-bottom: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.pf2-ac-card:hover {
+  border-color: color-mix(in srgb, var(--c-rule) 85%, var(--c-ink));
+  box-shadow: 0 4px 16px rgba(15,17,48,0.04);
+}
+.pf2-ac--hidden { display: none; }
+
+/* ACCORDION HEADER */
+.pf2-ac-card__header {
+  padding: 22px 26px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: start;
+  user-select: none;
+}
+.pf2-ac-card__industry {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-bottom: 9px;
+}
+.pf2-ac-card__industry-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.pf2-ac-card__industry-dot--primary { background-color: var(--c-primary); }
+.pf2-ac-card__industry-dot--coral   { background-color: var(--c-coral); }
+.pf2-ac-card__industry-dot--teal    { background-color: var(--c-teal); }
+.pf2-ac-card__industry-dot--amber   { background-color: var(--c-amber); }
+.pf2-ac-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--c-ink);
+  line-height: 1.3;
+}
+.pf2-ac-card__toggle {
+  font-size: 24px;
+  line-height: 1;
+  color: var(--c-muted);
+  font-weight: 300;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+.pf2-ac--open .pf2-ac-card__toggle { transform: rotate(45deg); }
+
+/* ACCORDION BODY */
+.pf2-ac-card__body {
+  display: none;
+  padding: 0 26px 28px;
+}
+.pf2-ac--open .pf2-ac-card__body { display: block; }
+
+/* METRICS */
+.pf2-ac-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin-bottom: 6px;
+}
+.pf2-ac-metric { padding: 14px 0; }
+.pf2-ac-metric__val {
+  font-size: 22px;
+  font-weight: 800;
+  display: block;
+  line-height: 1;
+  color: var(--c-ink);
+}
+.pf2-ac-metric__val--warning { color: var(--c-amber); }
+.pf2-ac-metric__val--success { color: var(--c-teal-dark); }
+.pf2-ac-metric__label {
+  font-size: 11.5px;
+  color: var(--c-muted);
+  margin-top: 7px;
+  line-height: 1.4;
+  display: block;
+}
+
+/* ROWS */
+.pf2-ac-rows { margin-top: 8px; }
+.pf2-ac-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 18px;
+  align-items: start;
+  border-top: 1px solid var(--c-rule);
+  padding: 14px 0;
+}
+.pf2-ac-row__label {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+}
+.pf2-ac-row__label--before  { color: var(--c-coral-dark); }
+.pf2-ac-row__label--after   { color: var(--c-teal-dark); }
+.pf2-ac-row__label--changed { color: var(--c-primary); }
+.pf2-ac-row__label--reproduce { color: var(--c-amber); }
+.pf2-ac-row__text {
+  font-size: 14px;
+  color: var(--c-ink-soft);
+  line-height: 1.6;
+}
+.pf2-ac-row__text strong {
+  color: var(--c-ink);
+  font-weight: 600;
+}
+@media (max-width: 620px) {
+  .pf2-ac-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+/* BULLETS */
+.pf2-ac-bullets {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+.pf2-ac-bullets li {
+  position: relative;
+  padding: 7px 0 7px 18px;
+  font-size: 13.5px;
+  color: var(--c-ink-soft);
+  line-height: 1.55;
+  border-top: 1px solid var(--c-rule);
+}
+.pf2-ac-bullets li:first-child { border-top: none; }
+.pf2-ac-bullets li::before {
+  content: '\00B7';
+  position: absolute;
+  left: 2px;
+  top: 6px;
+  color: var(--c-muted);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.pf2-ac-bullets li strong {
+  color: var(--c-ink);
+  font-weight: 600;
+}
+
+/* TRUST BOUNDARY */
+.pf2-ac-boundary {
+  margin-top: 18px;
+  padding: 12px 14px;
+  border: 1px dashed var(--c-coral);
+  border-radius: var(--r-sm);
+  font-family: var(--f-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--c-coral-dark);
+  background-color: color-mix(in srgb, var(--c-coral) 4%, var(--c-bg));
+}
+.pf2-ac-boundary--brand {
+  border-color: var(--c-primary);
+  color: var(--c-primary-dark);
+  background-color: color-mix(in srgb, var(--c-primary) 4%, var(--c-bg));
+}
+
+/* ARTIFACTS */
+.pf2-ac-artifacts {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  border-top: 1px solid var(--c-rule);
+  margin-top: 4px;
+}
+.pf2-ac-artifact {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  padding: 4px 9px;
+  background-color: var(--c-bg-soft);
+  border: 1px solid var(--c-rule);
+  border-radius: 4px;
+  color: var(--c-ink-soft);
+}
+</style>
+</head>
+<body>
+
+<div class="preview-frame">
+  <div class="preview-label">ProofPart2 — Operational Evidence Section · proof-part2.tsx</div>
+
+  <div class="pf2-root">
+    <section class="pf2-section" id="evidence">
+      <div class="pf2-container">
+
+        <!-- Section Header -->
+        <div class="pf2-section-head">
+          <h2>Operational case <span class="pf2-accent">records</span></h2>
+          <p>Real workflows that were blocked by data exposure, then unblocked with LLM Capsule. Each record shows what changed, the protection mechanism, and how it can be reproduced for audit. Filter by capability; click any record to expand.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="pf2-filter">
+          <button class="pf2-filter__btn pf2-filter__btn--active" onclick="setFilter('all',this)">
+            <span class="pf2-filter__dot pf2-filter__dot--all"></span>All Evidence
+          </button>
+          <button class="pf2-filter__btn" onclick="setFilter('secure',this)">
+            <span class="pf2-filter__dot pf2-filter__dot--primary"></span>Secure LLM Usage
+          </button>
+          <button class="pf2-filter__btn" onclick="setFilter('data',this)">
+            <span class="pf2-filter__dot pf2-filter__dot--teal"></span>Data Usability
+          </button>
+          <button class="pf2-filter__btn" onclick="setFilter('stable',this)">
+            <span class="pf2-filter__dot pf2-filter__dot--amber"></span>Execution Stability
+          </button>
+        </div>
+        <div class="pf2-filter__count" id="ev-count">6 records &middot; filtered: all</div>
+
+        <!-- Card 1: Insurance — secure -->
+        <article class="pf2-ac-card pf2-ac--open" data-tag="secure">
+          <div class="pf2-ac-card__header" onclick="toggleCard(this)">
+            <div>
+              <div class="pf2-ac-card__industry">
+                <span class="pf2-ac-card__industry-dot pf2-ac-card__industry-dot--primary"></span>
+                Insurance
+              </div>
+              <div class="pf2-ac-card__title">LLM-assisted claims processing &mdash; sensitive data protection</div>
+            </div>
+            <div><span class="pf2-ac-card__toggle">+</span></div>
+          </div>
+          <div class="pf2-ac-card__body">
+            <div class="pf2-ac-metrics">
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val pf2-ac-metric__val--warning">Exposed</span>
+                <span class="pf2-ac-metric__label">Sensitive data in prompts (before)</span>
+              </div>
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val pf2-ac-metric__val--success">Substituted</span>
+                <span class="pf2-ac-metric__label">Sensitive fields (after)</span>
+              </div>
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val">Preserved</span>
+                <span class="pf2-ac-metric__label">Output usability</span>
+              </div>
+            </div>
+            <div class="pf2-ac-rows">
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--before">Before</div>
+                <p class="pf2-ac-row__text">Claims documents containing <strong>policyholder names, ID numbers, and medical details</strong> were sent directly to an external LLM API. The compliance team blocked the workflow.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--after">After</div>
+                <p class="pf2-ac-row__text">LLM Capsule substituted sensitive fields with restorable stand-ins before submission. Outputs returned and were reconstructed locally for downstream system use.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--changed">What Changed</div>
+                <p class="pf2-ac-row__text">The LLM Capsule layer was inserted into the workflow. Substitution covered names, IDs, dates, and medical field patterns. Sensitive raw values stayed in the local token vault.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--reproduce">Reproduce</div>
+                <p class="pf2-ac-row__text">Each substitution run is logged and bound to a fixed release state, so the workflow is reproducible with the same substitution logic for audit and regression verification.</p>
+              </div>
+            </div>
+            <ul class="pf2-ac-bullets">
+              <li>Detection &mdash; <strong>names, IDs, dates, medical field patterns</strong></li>
+              <li>Substitution &mdash; restorable stand-ins before submission</li>
+              <li>Capsule transmission &mdash; only the protected capsule reaches the LLM</li>
+              <li>Restoration &mdash; outputs reconstructed locally for downstream systems</li>
+            </ul>
+            <div class="pf2-ac-boundary">&uarr; Trust boundary &mdash; raw policyholder &amp; medical data never crosses</div>
+            <div class="pf2-ac-artifacts">
+              <span class="pf2-ac-artifact">State Card</span>
+              <span class="pf2-ac-artifact">Substitution Log</span>
+              <span class="pf2-ac-artifact">Token Vault Record</span>
+              <span class="pf2-ac-artifact">Re-run Record</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Public Sector / Defense — secure -->
+        <article class="pf2-ac-card" data-tag="secure">
+          <div class="pf2-ac-card__header" onclick="toggleCard(this)">
+            <div>
+              <div class="pf2-ac-card__industry">
+                <span class="pf2-ac-card__industry-dot pf2-ac-card__industry-dot--coral"></span>
+                Public Sector / Defense
+              </div>
+              <div class="pf2-ac-card__title">Air-gapped LLM workflow &mdash; classified context protection</div>
+            </div>
+            <div><span class="pf2-ac-card__toggle">+</span></div>
+          </div>
+          <div class="pf2-ac-card__body">
+            <div class="pf2-ac-metrics">
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val pf2-ac-metric__val--warning">Blocked</span>
+                <span class="pf2-ac-metric__label">External LLM (before)</span>
+              </div>
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val pf2-ac-metric__val--success">Enabled</span>
+                <span class="pf2-ac-metric__label">External LLM (after)</span>
+              </div>
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val">0%</span>
+                <span class="pf2-ac-metric__label">Raw data egress</span>
+              </div>
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val">N2SF</span>
+                <span class="pf2-ac-metric__label">Guideline aligned</span>
+              </div>
+            </div>
+            <div class="pf2-ac-rows">
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--before">Before</div>
+                <p class="pf2-ac-row__text">In a network-separated (air-gapped) environment, external LLMs could not be used at all, and concern over <strong>classified-context exposure</strong> blocked AI adoption entirely.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--after">After</div>
+                <p class="pf2-ac-row__text">LLM Capsule encapsulates the sensitive context locally &mdash; only the protected capsule, not the original, is processed by the external LLM, and the result is rehydrated locally inside the boundary. The raw classified context never crosses the boundary, aligned with N2SF guidelines.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--changed">What Changed</div>
+                <p class="pf2-ac-row__text">Sensitive context is substituted with local stand-ins before processing and reconstructed locally after &mdash; no original data leaves the enclave.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--reproduce">Reproduce</div>
+                <p class="pf2-ac-row__text">Every encapsulation/restoration event is logged locally, so any processed request can be reconstructed and inspected within the boundary.</p>
+              </div>
+            </div>
+            <ul class="pf2-ac-bullets">
+              <li>Sensitive context &mdash; <strong>classified operation detail</strong></li>
+              <li>Encapsulation &mdash; performed locally inside the enclave</li>
+              <li>Execution &mdash; capsule processed, 0% raw data egress</li>
+              <li>Restoration &mdash; rehydrated locally; N2SF guideline aligned</li>
+            </ul>
+            <div class="pf2-ac-boundary pf2-ac-boundary--brand">&uarr; Trust boundary &mdash; nothing crosses the air gap; raw context stays inside</div>
+            <div class="pf2-ac-artifacts">
+              <span class="pf2-ac-artifact">Local Token Vault</span>
+              <span class="pf2-ac-artifact">Audit Log</span>
+              <span class="pf2-ac-artifact">N2SF Alignment</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Enterprise / Knowledge Work — secure -->
+        <article class="pf2-ac-card" data-tag="secure">
+          <div class="pf2-ac-card__header" onclick="toggleCard(this)">
+            <div>
+              <div class="pf2-ac-card__industry">
+                <span class="pf2-ac-card__industry-dot pf2-ac-card__industry-dot--primary"></span>
+                Enterprise / Knowledge Work
+              </div>
+              <div class="pf2-ac-card__title">Internal document Q&amp;A &mdash; PII-safe use of external LLMs</div>
+            </div>
+            <div><span class="pf2-ac-card__toggle">+</span></div>
+          </div>
+          <div class="pf2-ac-card__body">
+            <div class="pf2-ac-metrics">
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val pf2-ac-metric__val--warning">Blocked</span>
+                <span class="pf2-ac-metric__label">LLM on internal docs (before)</span>
+              </div>
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val pf2-ac-metric__val--success">Enabled</span>
+                <span class="pf2-ac-metric__label">Secure LLM use (after)</span>
+              </div>
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val">Local</span>
+                <span class="pf2-ac-metric__label">PII detect &amp; restore</span>
+              </div>
+            </div>
+            <div class="pf2-ac-rows">
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--before">Before</div>
+                <p class="pf2-ac-row__text">Internal documents &mdash; contracts, HR records, customer files holding <strong>personal and confidential information</strong> &mdash; could not be sent to ChatGPT, Claude, or Gemini for summarization or search. The security team blocked it.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--after">After</div>
+                <p class="pf2-ac-row__text">LLM Capsule detects and substitutes personal and confidential fields locally before the request reaches an external LLM, then restores the original values in the response &mdash; so staff can summarize and query internal documents without raw data leaving the organization.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--changed">What Changed</div>
+                <p class="pf2-ac-row__text">The LLM Capsule gateway was placed between internal tools and the external LLM. Detection covered names, contacts, IDs, and account/contract identifiers; raw values stayed in the local token vault.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--reproduce">Reproduce</div>
+                <p class="pf2-ac-row__text">Each request's substitution is logged and bound to a fixed release state, so a given document-Q&amp;A run can be reconstructed for audit.</p>
+              </div>
+            </div>
+            <ul class="pf2-ac-bullets">
+              <li>Detection &mdash; <strong>names, contacts, IDs, account/contract identifiers</strong></li>
+              <li>Substitution &mdash; restorable stand-ins before the request leaves</li>
+              <li>Gateway &mdash; only the protected request reaches ChatGPT / Claude / Gemini</li>
+              <li>Restoration &mdash; original values rehydrated locally in the response</li>
+            </ul>
+            <div class="pf2-ac-boundary">&uarr; Trust boundary &mdash; raw internal documents never reach the external LLM vendor</div>
+            <div class="pf2-ac-artifacts">
+              <span class="pf2-ac-artifact">Substitution Log</span>
+              <span class="pf2-ac-artifact">Token Vault Record</span>
+              <span class="pf2-ac-artifact">Audit Log</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Healthcare — data -->
+        <article class="pf2-ac-card" data-tag="data">
+          <div class="pf2-ac-card__header" onclick="toggleCard(this)">
+            <div>
+              <div class="pf2-ac-card__industry">
+                <span class="pf2-ac-card__industry-dot pf2-ac-card__industry-dot--teal"></span>
+                Healthcare
+              </div>
+              <div class="pf2-ac-card__title">Clinical AI validation &mdash; restricted patient data replacement</div>
+            </div>
+            <div><span class="pf2-ac-card__toggle">+</span></div>
+          </div>
+          <div class="pf2-ac-card__body">
+            <div class="pf2-ac-metrics">
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val pf2-ac-metric__val--warning">Blocked</span>
+                <span class="pf2-ac-metric__label">Validation status (before)</span>
+              </div>
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val pf2-ac-metric__val--success">Unblocked</span>
+                <span class="pf2-ac-metric__label">Validation status (after)</span>
+              </div>
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val">DP-safe</span>
+                <span class="pf2-ac-metric__label">Privacy method</span>
+              </div>
+            </div>
+            <div class="pf2-ac-rows">
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--before">Before</div>
+                <p class="pf2-ac-row__text">Real patient records required for model validation <strong>could not be accessed</strong> due to regulatory constraints. The validation pipeline stalled.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--after">After</div>
+                <p class="pf2-ac-row__text">Differential-privacy-safe (DP-safe) replacement records matching real distribution characteristics &mdash; without containing real identifiable information &mdash; unblocked the validation pipeline.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--changed">What Changed</div>
+                <p class="pf2-ac-row__text">Non-accessible real records were replaced with DP-safe equivalents. Data distribution preserved, compliance review passed, validation pipeline resumed without modification.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--reproduce">Reproduce</div>
+                <p class="pf2-ac-row__text">The replacement dataset is versioned and bound to a fixed data state, so the validation run is reproducible with the same distribution on demand. Audit trail maintained throughout.</p>
+              </div>
+            </div>
+            <ul class="pf2-ac-bullets">
+              <li>Restricted input &mdash; <strong>real patient records</strong> (regulatory block)</li>
+              <li>Replacement &mdash; DP-safe, distribution-matched equivalents</li>
+              <li>Privacy &mdash; no real identifiable information in the dataset</li>
+              <li>Outcome &mdash; validation unblocked; compliance review passed</li>
+            </ul>
+            <div class="pf2-ac-boundary">&uarr; Trust boundary &mdash; real patient identifiers never enter the pipeline</div>
+            <div class="pf2-ac-artifacts">
+              <span class="pf2-ac-artifact">State Card</span>
+              <span class="pf2-ac-artifact">DP Audit Log</span>
+              <span class="pf2-ac-artifact">Dataset Version</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5: Industrial / OT Security — data -->
+        <article class="pf2-ac-card" data-tag="data">
+          <div class="pf2-ac-card__header" onclick="toggleCard(this)">
+            <div>
+              <div class="pf2-ac-card__industry">
+                <span class="pf2-ac-card__industry-dot pf2-ac-card__industry-dot--teal"></span>
+                Industrial / OT Security
+              </div>
+              <div class="pf2-ac-card__title">OT network data &mdash; AI-ready transformation for threat analysis</div>
+            </div>
+            <div><span class="pf2-ac-card__toggle">+</span></div>
+          </div>
+          <div class="pf2-ac-card__body">
+            <div class="pf2-ac-metrics">
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val pf2-ac-metric__val--warning">Restricted</span>
+                <span class="pf2-ac-metric__label">Raw OT data (before)</span>
+              </div>
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val pf2-ac-metric__val--success">Enabled</span>
+                <span class="pf2-ac-metric__label">AI threat analysis (after)</span>
+              </div>
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val">Structure-preserving</span>
+                <span class="pf2-ac-metric__label">De-identification</span>
+              </div>
+            </div>
+            <div class="pf2-ac-rows">
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--before">Before</div>
+                <p class="pf2-ac-row__text">OT/ICS network data carried <strong>sensitive operational details</strong>, so it could not be sent to an external AI for automated threat analysis.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--after">After</div>
+                <p class="pf2-ac-row__text">Structure-preserving de-identification lets an AI agent analyze the network data and answer threat questions &mdash; sensitive values replaced with stand-ins while relationships are preserved. (Integrated with a global OT security platform's detection solution.)</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--changed">What Changed</div>
+                <p class="pf2-ac-row__text">Network-data sensitive fields are substituted while topology and relationships are kept intact, so the agent can reason over realistic context.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--reproduce">Reproduce</div>
+                <p class="pf2-ac-row__text">The de-identified dataset and the agent's analysis are bound to a fixed data state, so the same analysis can be re-run and verified.</p>
+              </div>
+            </div>
+            <ul class="pf2-ac-bullets">
+              <li>Restricted input &mdash; <strong>OT/ICS network data with operational detail</strong></li>
+              <li>De-identification &mdash; structure-preserving (topology kept intact)</li>
+              <li>Analysis &mdash; AI agent reasons over realistic, safe context</li>
+              <li>Integration &mdash; works with a global OT security detection platform</li>
+            </ul>
+            <div class="pf2-ac-boundary">&uarr; Trust boundary &mdash; sensitive operational values never leave de-identified</div>
+            <div class="pf2-ac-artifacts">
+              <span class="pf2-ac-artifact">De-identified Dataset</span>
+              <span class="pf2-ac-artifact">Agent Analysis Log</span>
+              <span class="pf2-ac-artifact">Structure Map</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6: Public Sector / Data Center — stable -->
+        <article class="pf2-ac-card" data-tag="stable">
+          <div class="pf2-ac-card__header" onclick="toggleCard(this)">
+            <div>
+              <div class="pf2-ac-card__industry">
+                <span class="pf2-ac-card__industry-dot pf2-ac-card__industry-dot--amber"></span>
+                Public Sector / Data Center
+              </div>
+              <div class="pf2-ac-card__title">Aggregate-data release &mdash; automated de-identification &amp; audit trail</div>
+            </div>
+            <div><span class="pf2-ac-card__toggle">+</span></div>
+          </div>
+          <div class="pf2-ac-card__body">
+            <div class="pf2-ac-metrics">
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val pf2-ac-metric__val--warning">Manual</span>
+                <span class="pf2-ac-metric__label">Release screening (before)</span>
+              </div>
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val pf2-ac-metric__val--success">Automated</span>
+                <span class="pf2-ac-metric__label">Screening (after)</span>
+              </div>
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val">0.94</span>
+                <span class="pf2-ac-metric__label">PII detection F1</span>
+              </div>
+              <div class="pf2-ac-metric">
+                <span class="pf2-ac-metric__val">Multi-agent</span>
+                <span class="pf2-ac-metric__label">Detect &middot; trace &middot; de-identify</span>
+              </div>
+            </div>
+            <div class="pf2-ac-rows">
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--before">Before</div>
+                <p class="pf2-ac-row__text">Users exporting sensitive aggregate statistics required <strong>manual, per-desk de-identification</strong> and release review &mdash; inconsistent and hard to audit.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--after">After</div>
+                <p class="pf2-ac-row__text">A per-desk de-identification module plus a multi-agent pipeline detects, traces, and de-identifies personal information in aggregate data, automating and standardizing the release-review process.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--changed">What Changed</div>
+                <p class="pf2-ac-row__text">Release State fingerprints the data before and after de-identification, so which records were transformed &mdash; and how &mdash; is traceable for audit.</p>
+              </div>
+              <div class="pf2-ac-row">
+                <div class="pf2-ac-row__label pf2-ac-row__label--reproduce">Reproduce</div>
+                <p class="pf2-ac-row__text">A prior release can be replayed against its bound Release State, reproducing the screening process for regulatory inspection.</p>
+              </div>
+            </div>
+            <ul class="pf2-ac-bullets">
+              <li>Before &mdash; <strong>manual, per-desk de-identification</strong> (hard to audit)</li>
+              <li>Detection &mdash; multi-agent PII detection (F1 0.94)</li>
+              <li>Pipeline &mdash; detect, trace, de-identify, standardize</li>
+              <li>Audit &mdash; release state fingerprinted before &amp; after</li>
+            </ul>
+            <div class="pf2-ac-boundary">&uarr; Trust boundary &mdash; PII removed and traced before any release</div>
+            <div class="pf2-ac-artifacts">
+              <span class="pf2-ac-artifact">De-identification Report</span>
+              <span class="pf2-ac-artifact">Release Audit Log</span>
+              <span class="pf2-ac-artifact">Detection Trace</span>
+              <span class="pf2-ac-artifact">State Card</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+function toggleCard(header) {
+  header.closest('.pf2-ac-card').classList.toggle('pf2-ac--open');
+}
+
+function setFilter(f, btn) {
+  document.querySelectorAll('.pf2-filter__btn').forEach(function(b) {
+    b.classList.remove('pf2-filter__btn--active');
+  });
+  btn.classList.add('pf2-filter__btn--active');
+  var n = 0;
+  document.querySelectorAll('.pf2-ac-card[data-tag]').forEach(function(c) {
+    var tag = c.getAttribute('data-tag');
+    if (f === 'all' || tag === f) {
+      c.classList.remove('pf2-ac--hidden');
+      n++;
+    } else {
+      c.classList.add('pf2-ac--hidden');
+    }
+  });
+  var labels = { all: 'all', secure: 'Secure LLM Usage', data: 'Data Usability', stable: 'Execution Stability' };
+  document.getElementById('ev-count').textContent = n + ' records · filtered: ' + labels[f];
+}
+</script>
+
+</body>
+</html>
