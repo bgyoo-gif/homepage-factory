@@ -251,8 +251,7 @@ export default function N2sfPart3({
                   { name: "n2sf_review_status", value: radio("n2sf_review_status") },
                   { name: "n2sf_timeline", value: radio("n2sf_timeline") },
                   { name: "message", value: String(data.get("message") ?? "") },
-                  { name: "privacy_consent", value: privacyConsent ? "동의" : "미동의" },
-                  { name: "marketing_consent", value: marketingConsent ? "동의" : "미동의" },
+                  { name: "marketing_consent", value: marketingConsent ? "obtained" : "not_obtained" },
                 ]
                 const hutk = typeof document !== "undefined"
                   ? document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*=\s*([^;]*).*$)|^.*$/, "$1")

@@ -161,38 +161,38 @@ export default function N2sfPart2({
       <style>{CSS}</style>
 
       {/* MODEL 2 DIAGRAM */}
-      <section className="p2-s p2-s-alt">
+      <section className="p2-s p2-s-dark">
         <div className="p2-container">
           <div className="p2-m2-section">
             <div className="p2-m2-header">
               <div className="p2-m2-eyebrow">{m2Eyebrow}</div>
-              <h3 className="p2-m2-h">{nl(m2Headline)}</h3>
+              <h2 className="p2-m2-h">{nl(m2Headline)}</h2>
               <p className="p2-m2-sub">{m2Sub}</p>
             </div>
             <div className="p2-m2-diagram-wrap">
               <svg className="p2-m2-diagram" viewBox="0 0 1100 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="N2SF 모델 2 다이어그램">
                 <defs>
-                  <linearGradient id="p2liaisonGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#F0EBFB" /><stop offset="100%" stopColor="#E8F8FB" /></linearGradient>
+                  <linearGradient id="p2liaisonGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="rgba(43,21,91,.45)" /><stop offset="100%" stopColor="rgba(0,217,245,.08)" /></linearGradient>
                   <linearGradient id="p2capsuleGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stopColor="#2B155B" /><stop offset="100%" stopColor="#3D2378" /></linearGradient>
-                  <marker id="p2arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#444151" /></marker>
+                  <marker id="p2arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A879A" /></marker>
                   <marker id="p2arrowCyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00D9F5" /></marker>
                 </defs>
-                <g><rect x="10" y="120" width="150" height="120" rx="14" fill="#F8F9FB" stroke="#E8E6EE" strokeWidth="1.5" /><text x="85" y="148" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="700" fill="#7C3AED" letterSpacing="0.05em">S 등급</text><text x="85" y="174" textAnchor="middle" fontFamily="Pretendard" fontSize="18" fontWeight="700" fill="#0E0B1A">이용자 단말</text><text x="85" y="196" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fill="#6B6878">기관 업무 환경</text><text x="85" y="215" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fill="#6B6878">민원·공문·회의록</text></g>
-                <g><rect x="260" y="40" width="580" height="280" rx="20" fill="url(#p2liaisonGrad)" stroke="#D9CFF0" strokeWidth="2" /><text x="550" y="74" textAnchor="middle" fontFamily="Pretendard" fontSize="15" fontWeight="700" fill="#2B155B" letterSpacing="0.06em">AI 연계체계 · LLM CAPSULE</text>
-                  <g><rect x="290" y="100" width="160" height="92" rx="12" fill="#fff" stroke="#D9CFF0" strokeWidth="1.5" /><text x="370" y="125" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="700" fill="#2B155B">인증 서버</text><text x="370" y="148" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#6B6878">기관 ID 연동</text><text x="370" y="165" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#6B6878">비인가 접근 차단</text><text x="370" y="182" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#6B6878">권한 분리·관리</text></g>
-                  <g><rect x="470" y="100" width="160" height="92" rx="12" fill="url(#p2capsuleGrad)" stroke="#2B155B" strokeWidth="1.5" /><text x="550" y="125" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="700" fill="#00D9F5">콘텐츠 통제</text><text x="550" y="148" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#fff">비식별·익명화</text><text x="550" y="165" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#fff">프롬프트 필터링</text><text x="550" y="182" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#fff">자료 유형 식별</text></g>
-                  <g><rect x="650" y="100" width="160" height="92" rx="12" fill="#fff" stroke="#D9CFF0" strokeWidth="1.5" /><text x="730" y="125" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="700" fill="#2B155B">감사 로그</text><text x="730" y="148" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#6B6878">일방향 통신 기록</text><text x="730" y="165" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#6B6878">통제 이력 보관</text><text x="730" y="182" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#6B6878">실적 보고서 자동</text></g>
-                  <g><rect x="290" y="220" width="520" height="68" rx="12" fill="#fff" stroke="#D9CFF0" strokeWidth="1.5" strokeDasharray="6 4" /><text x="550" y="245" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="700" fill="#2B155B">응답 복원 (Restoration)</text><text x="550" y="266" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#6B6878">AI 응답이 돌아오면 캡슐 토큰이 원본 정보로 자동 복원되어 업무에 바로 사용</text></g>
+                <g><rect x="10" y="120" width="150" height="120" rx="14" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.12)" strokeWidth="1.5" /><text x="85" y="148" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="700" fill="#7C3AED" letterSpacing="0.05em">S 등급</text><text x="85" y="174" textAnchor="middle" fontFamily="Pretendard" fontSize="18" fontWeight="700" fill="#fff">이용자 단말</text><text x="85" y="196" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fill="#B8B5C5">기관 업무 환경</text><text x="85" y="215" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fill="#B8B5C5">민원·공문·회의록</text></g>
+                <g><rect x="260" y="40" width="580" height="280" rx="20" fill="url(#p2liaisonGrad)" stroke="rgba(217,207,240,.25)" strokeWidth="2" /><text x="550" y="74" textAnchor="middle" fontFamily="Pretendard" fontSize="15" fontWeight="700" fill="#00D9F5" letterSpacing="0.06em">AI 연계체계 · LLM CAPSULE</text>
+                  <g><rect x="290" y="100" width="160" height="92" rx="12" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.12)" strokeWidth="1.5" /><text x="370" y="125" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="700" fill="#fff">인증 서버</text><text x="370" y="148" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#B8B5C5">기관 ID 연동</text><text x="370" y="165" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#B8B5C5">비인가 접근 차단</text><text x="370" y="182" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#B8B5C5">권한 분리·관리</text></g>
+                  <g><rect x="470" y="100" width="160" height="92" rx="12" fill="url(#p2capsuleGrad)" stroke="#3D2378" strokeWidth="1.5" /><text x="550" y="125" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="700" fill="#00D9F5">콘텐츠 통제</text><text x="550" y="148" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#fff">비식별·익명화</text><text x="550" y="165" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#fff">프롬프트 필터링</text><text x="550" y="182" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#fff">자료 유형 식별</text></g>
+                  <g><rect x="650" y="100" width="160" height="92" rx="12" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.12)" strokeWidth="1.5" /><text x="730" y="125" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="700" fill="#fff">감사 로그</text><text x="730" y="148" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#B8B5C5">일방향 통신 기록</text><text x="730" y="165" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#B8B5C5">통제 이력 보관</text><text x="730" y="182" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#B8B5C5">실적 보고서 자동</text></g>
+                  <g><rect x="290" y="220" width="520" height="68" rx="12" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.10)" strokeWidth="1.5" strokeDasharray="6 4" /><text x="550" y="245" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="700" fill="#00D9F5">응답 복원 (Restoration)</text><text x="550" y="266" textAnchor="middle" fontFamily="Pretendard" fontSize="13" fill="#B8B5C5">AI 응답이 돌아오면 캡슐 토큰이 원본 정보로 자동 복원되어 업무에 바로 사용</text></g>
                 </g>
-                <g><rect x="940" y="120" width="150" height="120" rx="14" fill="#F8F9FB" stroke="#E8E6EE" strokeWidth="1.5" /><text x="1015" y="148" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="700" fill="#2A9788" letterSpacing="0.05em">O 등급</text><text x="1015" y="174" textAnchor="middle" fontFamily="Pretendard" fontSize="18" fontWeight="700" fill="#0E0B1A">외부 생성형 AI</text><text x="1015" y="196" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fill="#6B6878">ChatGPT · Claude</text><text x="1015" y="215" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fill="#6B6878">Gemini · 외부 LLM</text></g>
-                <line x1="170" y1="160" x2="252" y2="160" stroke="#444151" strokeWidth="2" markerEnd="url(#p2arrow)" />
-                <line x1="848" y1="160" x2="932" y2="160" stroke="#444151" strokeWidth="2" markerEnd="url(#p2arrow)" />
+                <g><rect x="940" y="120" width="150" height="120" rx="14" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.12)" strokeWidth="1.5" /><text x="1015" y="148" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="700" fill="#2A9788" letterSpacing="0.05em">O 등급</text><text x="1015" y="174" textAnchor="middle" fontFamily="Pretendard" fontSize="18" fontWeight="700" fill="#fff">외부 생성형 AI</text><text x="1015" y="196" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fill="#B8B5C5">ChatGPT · Claude</text><text x="1015" y="215" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fill="#B8B5C5">Gemini · 외부 LLM</text></g>
+                <line x1="170" y1="160" x2="252" y2="160" stroke="#8A879A" strokeWidth="2" markerEnd="url(#p2arrow)" />
+                <line x1="848" y1="160" x2="932" y2="160" stroke="#8A879A" strokeWidth="2" markerEnd="url(#p2arrow)" />
                 <line x1="932" y1="210" x2="848" y2="210" stroke="#00D9F5" strokeWidth="2" markerEnd="url(#p2arrowCyan)" />
                 <line x1="252" y1="210" x2="170" y2="210" stroke="#00D9F5" strokeWidth="2" markerEnd="url(#p2arrowCyan)" />
-                <text x="211" y="150" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="600" fill="#444151">요청</text>
-                <text x="890" y="150" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="600" fill="#444151">캡슐화 후</text>
-                <text x="890" y="232" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="600" fill="#0E8FA5">응답</text>
-                <text x="211" y="232" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="600" fill="#0E8FA5">복원 후</text>
+                <text x="211" y="150" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="600" fill="#8A879A">요청</text>
+                <text x="890" y="150" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="600" fill="#8A879A">캡슐화 후</text>
+                <text x="890" y="232" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="600" fill="#00D9F5">응답</text>
+                <text x="211" y="232" textAnchor="middle" fontFamily="Pretendard" fontSize="14" fontWeight="600" fill="#00D9F5">복원 후</text>
               </svg>
               <div className="p2-m2-diagram-caption">{m2DiagramCaption}</div>
             </div>
@@ -463,9 +463,21 @@ const CSS = `
 /* MODEL 2 */
 .p2-m2-header{max-width:880px;margin-bottom:48px}
 .p2-m2-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:var(--p2-ink);color:#fff;font-size:12px;font-weight:600;letter-spacing:.04em;margin-bottom:20px;text-transform:uppercase}
-.p2-m2-h{font-size:clamp(24px,3vw,36px);font-weight:700;letter-spacing:-.02em;line-height:1.3;color:var(--p2-ink);margin-bottom:18px}
-.p2-m2-h em{font-style:normal;color:var(--p2-primary);font-weight:800}
-.p2-m2-sub{font-size:var(--p2-fs-body);color:var(--p2-ink-2);line-height:1.8}
+.p2-m2-h{font-size:clamp(32px,4.4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1.12;margin-bottom:18px}
+.p2-m2-h em{font-style:normal;font-weight:800}
+.p2-m2-sub{font-size:var(--p2-fs-body);line-height:1.8}
+.p2-s-dark .p2-m2-h{color:#fff}
+.p2-s-dark .p2-m2-h em{color:var(--p2-cyan)}
+.p2-s-dark .p2-m2-eyebrow{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15)}
+.p2-s-dark .p2-m2-sub{color:#B8B5C5}
+.p2-s-dark .p2-m2-sub strong{color:#fff;font-weight:700}
+.p2-s-dark .p2-m2-diagram-caption{color:#8A879A}
+.p2-s-dark .p2-m2-impl-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
+.p2-s-dark .p2-m2-impl-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.p2-s-dark .p2-m2-impl-title{color:#8A879A}
+.p2-s-dark .p2-m2-impl-req{color:#fff}
+.p2-s-dark .p2-m2-impl-arrow{color:var(--p2-cyan)}
+.p2-s-dark .p2-m2-impl-llm{color:#B8B5C5}
 .p2-m2-sub strong{color:var(--p2-ink);font-weight:700}
 .p2-m2-diagram-wrap{margin-bottom:48px}
 .p2-m2-diagram{width:100%;height:auto;display:block}
