@@ -311,10 +311,6 @@ export default function Learn({
       `}</style>
 
       <div className="lrn-root">
-        {/* TEMP DEBUG: locale state — remove after diagnosis */}
-        <div style={ { position: "fixed", top: 8, right: 8, zIndex: 9999, padding: "6px 10px", background: "#fff59d", border: "2px solid #f57f17", fontFamily: "monospace", fontSize: 12, fontWeight: 700, color: "#000", maxWidth: 400 } }>
-          prop locale="{locale}" | URL autoLocale="{autoLocale}" | effective="{effectiveLocale}"
-        </div>
         <section className="lrn-hero">
           <div className="lrn-container">
             <div className="lrn-hero__inner">
