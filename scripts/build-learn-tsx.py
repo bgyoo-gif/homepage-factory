@@ -996,12 +996,18 @@ addPropertyControls({component}, {{
     ko_dict = render_dict(ko_translations, is_en=False)
     de_dict = render_dict(de_translations, is_en=False)
 
-    # dict-first resolver: when locale !== "en", dict overrides any stored prop value
-    # (Framer instances persist English defaults — without dict-first, switching locale
-    # leaves English on screen because prop is truthy.)
+    # Locale detection: Framer Localization (useLocaleInfo) takes precedence over
+    # the Properties-panel `locale` prop so /ko/ pages auto-switch even when the
+    # instance has the default "en" prop value stored.
+    # dict-first resolver: when effectiveLocale !== "en", dict overrides any stored
+    # prop value (Framer instances persist English defaults — without dict-first,
+    # switching locale leaves English on screen because prop is truthy).
     resolver_lines = [
-        '  const T = TRANSLATIONS[locale] || TRANSLATIONS.en',
-        '  const _isNonEn = locale !== "en"',
+        '  const { activeLocale } = useLocaleInfo()',
+        '  const framerLocale = (activeLocale as any)?.slug as ("en" | "ko" | "de" | undefined)',
+        '  const effectiveLocale: "en" | "ko" | "de" = framerLocale || locale || "en"',
+        '  const T = TRANSLATIONS[effectiveLocale] || TRANSLATIONS.en',
+        '  const _isNonEn = effectiveLocale !== "en"',
     ]
     for p in PROPS_SPEC:
         name = p["name"]
@@ -1026,9 +1032,10 @@ addPropertyControls({component}, {{
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
 // Self-contained Framer Code Component with locale dropdown (en/ko/de).
-// Set `locale` in Framer Properties panel to switch all text simultaneously.
+// Set `locale` in Framer Properties panel or rely on Framer Localization for auto-switch.
 
 import {{ addPropertyControls, ControlType }} from "framer"
+import {{ useLocaleInfo }} from "framer"
 
 interface Props {{
 {iface_block}

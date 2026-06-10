@@ -3,9 +3,10 @@
 // To regenerate: python3 scripts/build-learn-tsx.py
 //
 // Self-contained Framer Code Component with locale dropdown (en/ko/de).
-// Set `locale` in Framer Properties panel to switch all text simultaneously.
+// Set `locale` in Framer Properties panel or rely on Framer Localization for auto-switch.
 
 import { addPropertyControls, ControlType } from "framer"
+import { useLocaleInfo } from "framer"
 
 interface Props {
   locale?: "en" | "ko" | "de"
@@ -364,8 +365,11 @@ export default function SovereignAiEuropeanEnterprises({
   related4Title = "",
   related4Href = "",
 }: Props) {
-  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
-  const _isNonEn = locale !== "en"
+  const { activeLocale } = useLocaleInfo()
+  const framerLocale = (activeLocale as any)?.slug as ("en" | "ko" | "de" | undefined)
+  const effectiveLocale: "en" | "ko" | "de" = framerLocale || locale || "en"
+  const T = TRANSLATIONS[effectiveLocale] || TRANSLATIONS.en
+  const _isNonEn = effectiveLocale !== "en"
   const _backLabel = _isNonEn ? (T["backLabel"] || TRANSLATIONS.en["backLabel"] || backLabel) : (backLabel || T["backLabel"] || TRANSLATIONS.en["backLabel"])
   const _backHref = _isNonEn ? (T["backHref"] || TRANSLATIONS.en["backHref"] || backHref) : (backHref || T["backHref"] || TRANSLATIONS.en["backHref"])
   const _title = _isNonEn ? (T["title"] || TRANSLATIONS.en["title"] || title) : (title || T["title"] || TRANSLATIONS.en["title"])
