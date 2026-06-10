@@ -73,6 +73,64 @@ article-specific 패턴 클래스(`ds-article-hero__*`, `ds-article-lead-seconda
 
 ---
 
+## 3차 QA (2026-06-10) — TSX 렌더링 깨짐 수정 후 재검증
+
+### 검증 배경
+
+Framer paste 시 TL;DR 영역 깨짐 + 섹션 타이틀 간격 이상 보고. 원인: bodyhtml에 `.ds-banner`, `.ds-article-section-header` 등 LearnArticle `.la-body`가 cover하지 않는 wrapper 클래스 포함 + TL;DR 중복 렌더링. 수정: bodyhtml + ko/de 번역 Section 03을 plain HTML 구조로 단순화, TSX 재빌드 완료 (1320 → 1317줄).
+
+### [검증 1] TSX bodyhtml `.la-body` 호환성
+
+| 항목 | 결과 |
+|------|------|
+| 금지 클래스 검출 (ds-banner, ds-article-*, ds-bullet, ds-faq-wrap, ds-ac-card 등) | **0건** — bodyhtml 및 TSX 내 ko/de bodyHtml 양쪽 모두 PASS |
+| 허용 태그/클래스만 사용 여부 | h2/h3/p/ul/li/figure/figure__svg-wrap/figure__svg/figure__caption 확인 |
+
+### [검증 2] TL;DR 중복 검사
+
+| 항목 | 결과 |
+|------|------|
+| bodyhtml 내 `TL;DR` / `tldr` 콘텐츠 | **0건** — L2 주석(`<!-- Contains: TL;DR... -->`)만 존재, 실제 HTML 콘텐츠 없음 |
+| TSX ko bodyHtml 내 TL;DR 텍스트 | **0건** — `tldrBody` prop 별도 관리, bodyHtml 블록 내 없음 |
+| TSX de bodyHtml 내 TL;DR 텍스트 | **0건** — `tldrBody` prop 별도 관리, bodyHtml 블록 내 없음 |
+
+### [검증 3] 3개 언어 구조 일치
+
+| 언어 | h2 | h3 | figure | 결과 |
+|------|----|----|--------|------|
+| EN (bodyhtml) | 6 | 7 | 2 | PASS |
+| KO (TSX TRANSLATIONS.ko.bodyHtml) | 6 | 7 | 2 | PASS |
+| DE (TSX TRANSLATIONS.de.bodyHtml) | 6 | 7 | 2 | PASS |
+
+### [검증 4] FAQ 패턴 단순화
+
+`<h3>질문</h3>\n<p>답</p>` 패턴 7쌍 확인. ds-ac-card / ds-faq-wrap 0건. PASS.
+
+### [검증 5] TSX 빌드 무결성
+
+| 항목 | 결과 |
+|------|------|
+| 중괄호 balance `{` / `}` | open=172, close=172, diff=0 — PASS |
+| 소괄호 balance `(` / `)` | open=163, close=163, diff=0 — PASS |
+| ko bodyHtml 시작 언어 | 한국어 (`이 카테고리가 지금 존재하는 이유`) — PASS |
+| de bodyHtml 시작 언어 | 독일어 (`Warum diese Kategorie jetzt entsteht`) — PASS |
+| 최종 라인 수 | 1317줄 |
+
+### [검증 6] 회귀 검사 — b-type HTML 변경 없음
+
+| 항목 | 결과 |
+|------|------|
+| b-type HTML DS wrapper 클래스 잔존 여부 | `ds-banner` 등 84건 — **정상** (페이지용 HTML은 변경 의도 없음) |
+| b-type HTML 파일 무결성 | 변경 없음 확인 |
+
+### [3차 신규 결함] D-09
+
+| ID | 카테고리 | 심각도 | 위치 | 내용 | 조치 |
+|----|----------|--------|------|------|------|
+| D-09 | CAT-F (TSX) | Medium | TSX L39–41 (수정전) | `BODY_HTML` template literal 안에 HTML 주석 3줄 포함 — CLAUDE.md 규칙 35번 위반 (ECMAScript Annex B 에러 유발 가능) | **수정완료** → 주석 3줄 제거, `const BODY_HTML = \`` 직후 바로 `<h2>` 시작 |
+
+---
+
 ## 통과 항목 요약
 
 **CAT-1 내용 무결성 — PASS**
@@ -118,11 +176,21 @@ article-specific 패턴 클래스(`ds-article-hero__*`, `ds-article-lead-seconda
 - card grid mobile 1열
 - CTA title 36/40/50px 반응형 (mobile text-4xl / default text-5xl / desktop text-6xl)
 
+**CAT-F TSX 검증 — PASS**
+- `.la-body` 호환 클래스만 사용 (금지 wrapper 0건)
+- TL;DR prop 분리, bodyHtml 중복 0건
+- EN/KO/DE 구조 일치 (h2=6, h3=7, figure=2)
+- FAQ h3+p 패턴 7쌍 정상
+- 괄호 balance 완전 (중괄호 0차이, 소괄호 0차이)
+- HTML 주석 template literal 제거 완료 (D-09 수정)
+
 ---
 
 ## 통계
-- 1차 검출 결함 총수: 7개 → 2차 신규 발견: 1개 (D-08 Low)
-- 수정 완료: 3개 (D-01 High×3개소, D-02 High, D-03 Medium)
+- 1차 검출 결함 총수: 7개
+- 2차 신규 발견: 1개 (D-08 Low)
+- 3차 신규 발견: 1개 (D-09 Medium → 즉시 수정)
+- 수정 완료: 4개 (D-01 High×3개소, D-02 High, D-03 Medium, D-09 Medium)
 - 미수정 잔여: 5개 (Low만)
 - Critical: 0개 / High: 0개 / Medium: 0개 / Low: 5개
 
@@ -132,7 +200,7 @@ article-specific 패턴 클래스(`ds-article-hero__*`, `ds-article-lead-seconda
 
 **CONDITIONAL PASS**
 
-1차 High/Medium 결함 전량 수정 완료. 사용자 피드백 3건(tagline 삭제, hero padding-bottom 축소, lead-secondary margin-bottom: 0) 정확히 적용 확인. 회귀 없음. 잔여 결함은 Low 5건(SVG 내 DS 미정의 gray 색상 3종 + dead code 변수 + bodyhtml 주석 stale 텍스트)으로만 구성됨.
+3차 QA 통과. bodyhtml + TSX 모든 금지 wrapper 0건, TL;DR 중복 0건, EN/KO/DE 구조 완전 일치, 괄호 balance 정상. 신규 결함 D-09(HTML 주석 template literal 잔존)는 즉시 수정 완료. 잔여 결함은 Low 5건(SVG 내 DS 미정의 gray 색상 3종 + dead code 변수 + bodyhtml 주석 stale 텍스트)으로만 구성됨.
 
 ---
 
@@ -140,6 +208,7 @@ article-specific 패턴 클래스(`ds-article-hero__*`, `ds-article-lead-seconda
 
 **CONDITIONAL PASS**: 변환 완료.
 `llm-capsule/output/html/cpdl-article-integrated-b-type.html`이 최종 B타입 파일입니다.
+`llm-capsule/output/framer/learn/CpdlArticleIntegrated.tsx`가 최종 TSX 파일입니다.
 
 Low 잔여 결함(D-04~D-08)은 선택적 수정 대상:
 - D-04/05/06: SVG Figure 1/2 내 `#b0b7c3`, `#9ca3af`, `#d1d5db` → `var(--c-rule)` / `var(--c-muted)` 교체

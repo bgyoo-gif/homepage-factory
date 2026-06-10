@@ -2,66 +2,20 @@
 <!-- Contains: TL;DR banner + H2 sections + figures + FAQ + author info -->
 <!-- Does NOT contain: hero, related articles, CTA band, scripts, nav -->
 
-<div class="ds-banner ds-banner--brand">
-  <span class="ds-banner__label">TL;DR</span>
-  <ul class="ds-bullet ds-bullet--dot">
-    <li class="ds-bullet__item">
-      <span class="ds-bullet__icon"></span>
-      <span class="ds-bullet__text"><strong>What it is.</strong> A layer that sits at the boundary between an organization&rsquo;s sensitive data and an AI model. It transforms the data into a protected but still-usable form before inference, then restores the original values locally afterward.</span>
-    </li>
-    <li class="ds-bullet__item">
-      <span class="ds-bullet__icon"></span>
-      <span class="ds-bullet__text"><strong>The problem it solves.</strong> Masking and DLP protect a value by removing it. But the moment a value is part of a relationship&mdash;Asset ID &harr; Asset Name, Host &harr; IP &harr; VLAN, Contract Clause &harr; Counterparty, Patient &harr; Diagnosis&mdash;removing the value destroys the relationship the model needs to reason. The data is safe; the output is useless.</span>
-    </li>
-    <li class="ds-bullet__item">
-      <span class="ds-bullet__icon"></span>
-      <span class="ds-bullet__text"><strong>The shift.</strong> The model never needs to see the real data to be effective. Protection and usability stop being a trade-off.</span>
-    </li>
-    <li class="ds-bullet__item">
-      <span class="ds-bullet__icon"></span>
-      <span class="ds-bullet__text"><strong>What it is not.</strong> Not DLP or masking (they delete context). Not RAG or a vector DB (they add context <em>into</em> the model). Not an AI gateway or MCP layer (they route and broker calls).</span>
-    </li>
-    <li class="ds-bullet__item">
-      <span class="ds-bullet__icon"></span>
-      <span class="ds-bullet__text"><strong>Where it sits.</strong> Embedded inside the stack at the model boundary&mdash;not a console end users log into.</span>
-    </li>
-  </ul>
-</div>
-
-<div class="ds-article-section-header">
-  <h2>Why this category exists now</h2>
-</div>
-<div class="ds-article-body">
-  <p>Enterprises and public-sector organizations want to put generative AI to work on their most valuable data: operational records, contracts, source code, asset inventories, network configurations, clinical notes. But that data is exactly the data they are not allowed to send to an external model.</p>
+<h2>Why this category exists now</h2>
+<p>Enterprises and public-sector organizations want to put generative AI to work on their most valuable data: operational records, contracts, source code, asset inventories, network configurations, clinical notes. But that data is exactly the data they are not allowed to send to an external model.</p>
   <p>This creates an adoption gap. The work that would benefit most from AI is the work that is hardest to expose to it. As regulation tightens and GenAI moves from pilots into production systems, this gap stops being an edge case and becomes the central blocker to enterprise AI.</p>
   <p>The instinctive answer is to strip the sensitive parts out before the data reaches the model. That is where the real problem starts.</p>
-</div>
 
-<div class="ds-article-section-header">
-  <h2>The problem isn&rsquo;t the data. It&rsquo;s the relationships.</h2>
-</div>
-<div class="ds-article-body">
-  <p>Masking, redaction, and DLP were built for one job: stopping sensitive values from leaving a network. They are good at that job. They were never designed so that a model could read what is left behind.</p>
+<h2>The problem isn&rsquo;t the data. It&rsquo;s the relationships.</h2>
+<p>Masking, redaction, and DLP were built for one job: stopping sensitive values from leaving a network. They are good at that job. They were never designed so that a model could read what is left behind.</p>
   <p>Traditional masking systems optimize for data protection. AI systems optimize for reasoning. The moment a masked value participates in a relationship, protecting the value often destroys the relationship itself.</p>
   <p>That is the part most teams miss. The risk to AI usefulness is not that a single value is hidden&mdash;it is that hiding the value severs the connections the model needs to think. Consider what disappears the moment you mask:</p>
-</div>
-<ul class="ds-bullet ds-bullet--dot">
-  <li class="ds-bullet__item">
-    <span class="ds-bullet__icon"></span>
-    <span class="ds-bullet__text"><strong>Asset ID &harr; Asset Name</strong>&mdash;redact the ID and the model can no longer tie a vulnerability to the machine it lives on.</span>
-  </li>
-  <li class="ds-bullet__item">
-    <span class="ds-bullet__icon"></span>
-    <span class="ds-bullet__text"><strong>Host &harr; IP &harr; VLAN</strong>&mdash;flatten these and the model cannot reason about which segment an alert actually came from.</span>
-  </li>
-  <li class="ds-bullet__item">
-    <span class="ds-bullet__icon"></span>
-    <span class="ds-bullet__text"><strong>Contract clause &harr; Counterparty</strong>&mdash;blank the party and a renewal-risk or obligation question becomes unanswerable.</span>
-  </li>
-  <li class="ds-bullet__item">
-    <span class="ds-bullet__icon"></span>
-    <span class="ds-bullet__text"><strong>Patient &harr; Treatment &harr; Diagnosis</strong>&mdash;strip the identifiers and the clinical chain the model is asked to summarize is gone.</span>
-  </li>
+<ul>
+  <li><strong>Asset ID &harr; Asset Name</strong>&mdash;redact the ID and the model can no longer tie a vulnerability to the machine it lives on.</li>
+  <li><strong>Host &harr; IP &harr; VLAN</strong>&mdash;flatten these and the model cannot reason about which segment an alert actually came from.</li>
+  <li><strong>Contract clause &harr; Counterparty</strong>&mdash;blank the party and a renewal-risk or obligation question becomes unanswerable.</li>
+  <li><strong>Patient &harr; Treatment &harr; Diagnosis</strong>&mdash;strip the identifiers and the clinical chain the model is asked to summarize is gone.</li>
 </ul>
 
 <figure class="ds-figure">
@@ -137,17 +91,11 @@
   <p class="ds-figure__caption"><strong>Figure 1.</strong> Masking severs the host&ndash;IP&ndash;VLAN relationship; a context-preserving data layer tokenizes the values but keeps the relationship intact.</p>
 </figure>
 
-<div class="ds-article-body">
-  <p>The input is safe. The output is useless. Most teams accept this as the cost of doing AI safely&mdash;<em>protect the data, or use it with a model, but not both.</em> A context-preserving data layer exists specifically to break that trade-off.</p>
-</div>
+<p>The input is safe. The output is useless. Most teams accept this as the cost of doing AI safely&mdash;<em>protect the data, or use it with a model, but not both.</em> A context-preserving data layer exists specifically to break that trade-off.</p>
 
-<div class="ds-article-section-header">
-  <h2>What a context-preserving data layer does</h2>
-</div>
-<div class="ds-article-body">
-  <p>Instead of deleting sensitive values, it <strong>transforms</strong> them&mdash;and it preserves the structure and relationships around them, so the model still receives something that behaves like real data. The model works on protected data. On the way back, the layer <strong>restores</strong> the original values locally, inside the trust boundary, so the output lands in the workflow as if the model had seen the real thing.</p>
+<h2>What a context-preserving data layer does</h2>
+<p>Instead of deleting sensitive values, it <strong>transforms</strong> them&mdash;and it preserves the structure and relationships around them, so the model still receives something that behaves like real data. The model works on protected data. On the way back, the layer <strong>restores</strong> the original values locally, inside the trust boundary, so the output lands in the workflow as if the model had seen the real thing.</p>
   <p>The model never sees the real data. More precisely: the model never <em>needs</em> to.</p>
-</div>
 
 <figure class="ds-figure">
   <div class="ds-figure__svg-wrap">
@@ -185,131 +133,44 @@
   <p class="ds-figure__caption"><strong>Figure 2.</strong> The layer transforms data before the AI model and restores values locally, inside the trust boundary.</p>
 </figure>
 
-<div class="ds-article-body">
-  <p>A few properties define the category:</p>
-</div>
-<ul class="ds-bullet ds-bullet--dot">
-  <li class="ds-bullet__item">
-    <span class="ds-bullet__icon"></span>
-    <span class="ds-bullet__text"><strong>Custom-defined protection, not just generic PII.</strong> What must never cross the model boundary in clear form is decided by the work itself&mdash;project codes, asset and equipment IDs, contract terms, network identifiers, clinical expressions, source code, internal identifiers. Generic PII is a subset of what it protects, not the point.</span>
-  </li>
-  <li class="ds-bullet__item">
-    <span class="ds-bullet__icon"></span>
-    <span class="ds-bullet__text"><strong>Relationships preserved, not flattened.</strong> Asset-to-name, host-to-IP-to-VLAN, clause-to-counterparty, patient-to-diagnosis&mdash;the connections survive the transformation, because the connections are what the model reasons over.</span>
-  </li>
-  <li class="ds-bullet__item">
-    <span class="ds-bullet__icon"></span>
-    <span class="ds-bullet__text"><strong>Restoration inside the trust boundary.</strong> Tokens map back to original values locally after inference, so the result is usable in the workflow&mdash;and the original data never has to leave to make the output whole.</span>
-  </li>
+<p>A few properties define the category:</p>
+<ul>
+  <li><strong>Custom-defined protection, not just generic PII.</strong> What must never cross the model boundary in clear form is decided by the work itself&mdash;project codes, asset and equipment IDs, contract terms, network identifiers, clinical expressions, source code, internal identifiers. Generic PII is a subset of what it protects, not the point.</li>
+  <li><strong>Relationships preserved, not flattened.</strong> Asset-to-name, host-to-IP-to-VLAN, clause-to-counterparty, patient-to-diagnosis&mdash;the connections survive the transformation, because the connections are what the model reasons over.</li>
+  <li><strong>Restoration inside the trust boundary.</strong> Tokens map back to original values locally after inference, so the result is usable in the workflow&mdash;and the original data never has to leave to make the output whole.</li>
 </ul>
 
-<div class="ds-article-section-header">
-  <h2>How it differs from what you already have</h2>
-</div>
-<div class="ds-article-body">
-  <p>Because it sits near the model, a context-preserving data layer gets compared to things it is not:</p>
-</div>
-<ul class="ds-bullet ds-bullet--dot">
-  <li class="ds-bullet__item">
-    <span class="ds-bullet__icon"></span>
-    <span class="ds-bullet__text"><strong>It is not DLP or masking.</strong> Those protect the input by removing it. This protects the input by transforming it, so the context survives.</span>
-  </li>
-  <li class="ds-bullet__item">
-    <span class="ds-bullet__icon"></span>
-    <span class="ds-bullet__text"><strong>It is not RAG or a vector database.</strong> RAG brings <em>additional</em> context <em>into</em> a model. A context-preserving data layer governs the <em>sensitive</em> context <em>already leaving</em> the organization. One adds knowledge; the other guards what departs.</span>
-  </li>
-  <li class="ds-bullet__item">
-    <span class="ds-bullet__icon"></span>
-    <span class="ds-bullet__text"><strong>It is not an AI gateway or an MCP layer.</strong> Those route, broker, and orchestrate model calls. A context-preserving data layer transforms the <em>content</em> of what crosses the boundary&mdash;and is typically embedded inside a stack, not a console an end user logs into.</span>
-  </li>
+<h2>How it differs from what you already have</h2>
+<p>Because it sits near the model, a context-preserving data layer gets compared to things it is not:</p>
+<ul>
+  <li><strong>It is not DLP or masking.</strong> Those protect the input by removing it. This protects the input by transforming it, so the context survives.</li>
+  <li><strong>It is not RAG or a vector database.</strong> RAG brings <em>additional</em> context <em>into</em> a model. A context-preserving data layer governs the <em>sensitive</em> context <em>already leaving</em> the organization. One adds knowledge; the other guards what departs.</li>
+  <li><strong>It is not an AI gateway or an MCP layer.</strong> Those route, broker, and orchestrate model calls. A context-preserving data layer transforms the <em>content</em> of what crosses the boundary&mdash;and is typically embedded inside a stack, not a console an end user logs into.</li>
 </ul>
 
-<div class="ds-article-section-header">
-  <h2>A new layer in the enterprise stack</h2>
-</div>
-<div class="ds-article-body">
-  <p>AI introduced a new architectural requirement that traditional security stacks were never designed to solve. Organizations need a layer that protects sensitive data without removing the context AI depends on. That layer did not previously exist in enterprise architecture. We call it a context-preserving data layer.</p>
+<h2>A new layer in the enterprise stack</h2>
+<p>AI introduced a new architectural requirement that traditional security stacks were never designed to solve. Organizations need a layer that protects sensitive data without removing the context AI depends on. That layer did not previously exist in enterprise architecture. We call it a context-preserving data layer.</p>
   <p>Every platform shift names the layer that makes it work&mdash;Databricks named the lakehouse, Snowflake the data cloud, Palantir the ontology. The shift to running enterprise AI on sensitive data needs its own: the layer where data is protected and still usable, at the exact point it meets the model.</p>
   <p>It replaces the old assumption&mdash;<em>protect the data or use it, not both</em>&mdash;with a layer that does both at once.</p>
-</div>
 
-<div class="ds-faq-wrap">
-  <h2>Frequently asked questions</h2>
-  <div class="ds-ac-list">
+<h2>Frequently asked questions</h2>
+  <h3>What is a context-preserving data layer for AI?</h3>
+<p>A context-preserving data layer is a software layer that sits between an organization&rsquo;s sensitive data and an AI model. It transforms sensitive data into a protected but semantically usable form before inference, then restores the original values locally afterward&mdash;so the model can reason over real-world structure without ever receiving the original data.</p>
 
-    <div class="ds-ac-card ds-ac--open">
-      <div class="ds-ac-card__header" role="button" tabindex="0" aria-expanded="true">
-        <span class="ds-ac-card__title">What is a context-preserving data layer for AI?</span>
-        <span class="ds-ac-card__toggle" aria-hidden="true"><span class="ds-ac-card__toggle-icon"></span></span>
-      </div>
-      <div class="ds-ac-card__body">
-        <p>A context-preserving data layer is a software layer that sits between an organization&rsquo;s sensitive data and an AI model. It transforms sensitive data into a protected but semantically usable form before inference, then restores the original values locally afterward&mdash;so the model can reason over real-world structure without ever receiving the original data.</p>
-      </div>
-    </div>
+    <h3>How is it different from data masking or DLP?</h3>
+<p>Masking and DLP protect a value by deleting or redacting it. That works for stopping data exfiltration, but it also destroys the relationships around the value&mdash;and those relationships are exactly what an AI model needs to reason. A context-preserving data layer protects the value while keeping the relationship intact, so the model&rsquo;s output stays usable.</p>
 
-    <div class="ds-ac-card">
-      <div class="ds-ac-card__header" role="button" tabindex="0" aria-expanded="false">
-        <span class="ds-ac-card__title">How is it different from data masking or DLP?</span>
-        <span class="ds-ac-card__toggle" aria-hidden="true"><span class="ds-ac-card__toggle-icon"></span></span>
-      </div>
-      <div class="ds-ac-card__body">
-        <p>Masking and DLP protect a value by deleting or redacting it. That works for stopping data exfiltration, but it also destroys the relationships around the value&mdash;and those relationships are exactly what an AI model needs to reason. A context-preserving data layer protects the value while keeping the relationship intact, so the model&rsquo;s output stays usable.</p>
-      </div>
-    </div>
+    <h3>Is a context-preserving data layer the same as RAG?</h3>
+<p>No. RAG (retrieval-augmented generation) brings <em>additional</em> context <em>into</em> a model to improve its answers. A context-preserving data layer does the opposite job: it governs the <em>sensitive</em> context that is <em>already leaving</em> the organization on its way to the model. RAG adds knowledge; this guards what departs. They can be used together.</p>
 
-    <div class="ds-ac-card">
-      <div class="ds-ac-card__header" role="button" tabindex="0" aria-expanded="false">
-        <span class="ds-ac-card__title">Is a context-preserving data layer the same as RAG?</span>
-        <span class="ds-ac-card__toggle" aria-hidden="true"><span class="ds-ac-card__toggle-icon"></span></span>
-      </div>
-      <div class="ds-ac-card__body">
-        <p>No. RAG (retrieval-augmented generation) brings <em>additional</em> context <em>into</em> a model to improve its answers. A context-preserving data layer does the opposite job: it governs the <em>sensitive</em> context that is <em>already leaving</em> the organization on its way to the model. RAG adds knowledge; this guards what departs. They can be used together.</p>
-      </div>
-    </div>
+    <h3>How is it different from an AI gateway or an MCP layer?</h3>
+<p>AI gateways and MCP layers route, broker, and orchestrate model calls&mdash;they manage <em>which</em> model gets called and <em>how</em>. A context-preserving data layer transforms the <em>content</em> of the data crossing the boundary. It is concerned with what the model can and cannot see, not with traffic routing, and it is typically embedded inside a stack rather than run as a console.</p>
 
-    <div class="ds-ac-card">
-      <div class="ds-ac-card__header" role="button" tabindex="0" aria-expanded="false">
-        <span class="ds-ac-card__title">How is it different from an AI gateway or an MCP layer?</span>
-        <span class="ds-ac-card__toggle" aria-hidden="true"><span class="ds-ac-card__toggle-icon"></span></span>
-      </div>
-      <div class="ds-ac-card__body">
-        <p>AI gateways and MCP layers route, broker, and orchestrate model calls&mdash;they manage <em>which</em> model gets called and <em>how</em>. A context-preserving data layer transforms the <em>content</em> of the data crossing the boundary. It is concerned with what the model can and cannot see, not with traffic routing, and it is typically embedded inside a stack rather than run as a console.</p>
-      </div>
-    </div>
+    <h3>Does the AI model ever see the real data?</h3>
+<p>No. The model only ever receives the transformed, protected form. The original values are restored locally, inside the organization&rsquo;s trust boundary, after inference. The point of the category is that the model never <em>needs</em> the real data to be effective.</p>
 
-    <div class="ds-ac-card">
-      <div class="ds-ac-card__header" role="button" tabindex="0" aria-expanded="false">
-        <span class="ds-ac-card__title">Does the AI model ever see the real data?</span>
-        <span class="ds-ac-card__toggle" aria-hidden="true"><span class="ds-ac-card__toggle-icon"></span></span>
-      </div>
-      <div class="ds-ac-card__body">
-        <p>No. The model only ever receives the transformed, protected form. The original values are restored locally, inside the organization&rsquo;s trust boundary, after inference. The point of the category is that the model never <em>needs</em> the real data to be effective.</p>
-      </div>
-    </div>
+    <h3>Is this just PII protection?</h3>
+<p>No. Generic PII is a subset of what a context-preserving data layer protects, not the focus. What must stay protected is defined by the work itself&mdash;project codes, asset and equipment IDs, contract terms, network identifiers, clinical expressions, source code, and internal identifiers&mdash;much of which falls outside any standard PII list.</p>
 
-    <div class="ds-ac-card">
-      <div class="ds-ac-card__header" role="button" tabindex="0" aria-expanded="false">
-        <span class="ds-ac-card__title">Is this just PII protection?</span>
-        <span class="ds-ac-card__toggle" aria-hidden="true"><span class="ds-ac-card__toggle-icon"></span></span>
-      </div>
-      <div class="ds-ac-card__body">
-        <p>No. Generic PII is a subset of what a context-preserving data layer protects, not the focus. What must stay protected is defined by the work itself&mdash;project codes, asset and equipment IDs, contract terms, network identifiers, clinical expressions, source code, and internal identifiers&mdash;much of which falls outside any standard PII list.</p>
-      </div>
-    </div>
-
-    <div class="ds-ac-card">
-      <div class="ds-ac-card__header" role="button" tabindex="0" aria-expanded="false">
-        <span class="ds-ac-card__title">Where does it sit in the enterprise architecture?</span>
-        <span class="ds-ac-card__toggle" aria-hidden="true"><span class="ds-ac-card__toggle-icon"></span></span>
-      </div>
-      <div class="ds-ac-card__body">
-        <p>At the boundary where sensitive data meets the AI model, embedded inside the stack rather than exposed as an end-user product. It is the layer that makes running AI on protected enterprise data possible without forcing a choice between protection and usefulness.</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="ds-author-info">
-  <strong>CUBIG Policy &amp; Architecture Team</strong> &middot; Published 1 May 2026 &middot; Last updated 1 May 2026
-</div>
+    <h3>Where does it sit in the enterprise architecture?</h3>
+<p>At the boundary where sensitive data meets the AI model, embedded inside the stack rather than exposed as an end-user product. It is the layer that makes running AI on protected enterprise data possible without forcing a choice between protection and usefulness.</p>
