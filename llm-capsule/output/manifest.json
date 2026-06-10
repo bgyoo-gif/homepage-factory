@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-06-10 17:29:06",
+  "generated": "2026-06-10 18:35:10",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1220,16 +1220,6 @@
           "modified": "2026-06-05"
         },
         {
-          "name": "cpdl-article-integrated-b-type.html",
-          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/cpdl-article-integrated-b-type.html",
-          "modified": "2026-06-10"
-        },
-        {
-          "name": "cpdl-article-integrated-bodyhtml.html",
-          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/cpdl-article-integrated-bodyhtml.html",
-          "modified": "2026-06-10"
-        },
-        {
           "name": "differential-privacy-explained-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/differential-privacy-explained-b-type.html",
           "modified": "2026-06-05"
@@ -1495,6 +1485,16 @@
           "modified": "2026-06-05"
         },
         {
+          "name": "what-is-context-preserving-data-layer-for-ai-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/what-is-context-preserving-data-layer-for-ai-b-type.html",
+          "modified": "2026-06-10"
+        },
+        {
+          "name": "what-is-context-preserving-data-layer-for-ai-bodyhtml.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/what-is-context-preserving-data-layer-for-ai-bodyhtml.html",
+          "modified": "2026-06-10"
+        },
+        {
           "name": "what-is-n2sf-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/what-is-n2sf-b-type.html",
           "modified": "2026-06-05"
@@ -1590,16 +1590,6 @@
           "name": "chatgpt-teams-korea-public-sector-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/chatgpt-teams-korea-public-sector-spec.md",
           "modified": "2026-06-05"
-        },
-        {
-          "name": "cpdl-article-integrated-qa-report.md",
-          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/cpdl-article-integrated-qa-report.md",
-          "modified": "2026-06-10"
-        },
-        {
-          "name": "cpdl-article-integrated-spec.md",
-          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/cpdl-article-integrated-spec.md",
-          "modified": "2026-06-10"
         },
         {
           "name": "diagram-llm-capsule-qa-report.md",
@@ -1832,6 +1822,16 @@
           "modified": "2026-06-05"
         },
         {
+          "name": "what-is-context-preserving-data-layer-for-ai-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/what-is-context-preserving-data-layer-for-ai-qa-report.md",
+          "modified": "2026-06-10"
+        },
+        {
+          "name": "what-is-context-preserving-data-layer-for-ai-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/what-is-context-preserving-data-layer-for-ai-spec.md",
+          "modified": "2026-06-10"
+        },
+        {
           "name": "what-is-n2sf-qa-report.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/what-is-n2sf-qa-report.md",
           "modified": "2026-06-05"
@@ -1940,16 +1940,6 @@
           "name": "architecture-v62-ko-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/architecture-v62-ko-lines.md",
           "modified": "2026-06-05"
-        },
-        {
-          "name": "cpdl-article-integrated-de-lines.md",
-          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/cpdl-article-integrated-de-lines.md",
-          "modified": "2026-06-10"
-        },
-        {
-          "name": "cpdl-article-integrated-ko-lines.md",
-          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/cpdl-article-integrated-ko-lines.md",
-          "modified": "2026-06-10"
         },
         {
           "name": "differential-privacy-for-enterprise-llm-de-lines.md",
@@ -2697,6 +2687,16 @@
           "modified": "2026-06-05"
         },
         {
+          "name": "what-is-context-preserving-data-layer-for-ai-de-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/what-is-context-preserving-data-layer-for-ai-de-lines.md",
+          "modified": "2026-06-10"
+        },
+        {
+          "name": "what-is-context-preserving-data-layer-for-ai-ko-lines.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/what-is-context-preserving-data-layer-for-ai-ko-lines.md",
+          "modified": "2026-06-10"
+        },
+        {
           "name": "where-to-run-enterprise-ai-de-lines.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/translations/where-to-run-enterprise-ai-de-lines.md",
           "modified": "2026-06-05"
@@ -3249,11 +3249,6 @@
           "modified": "2026-06-10"
         },
         {
-          "name": "CpdlArticleIntegrated.tsx",
-          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/CpdlArticleIntegrated.tsx",
-          "modified": "2026-06-10"
-        },
-        {
           "name": "DifferentialPrivacyExplained.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/DifferentialPrivacyExplained.tsx",
           "modified": "2026-06-10"
@@ -3351,6 +3346,11 @@
         {
           "name": "TokenizationForLlmInputs.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/TokenizationForLlmInputs.tsx",
+          "modified": "2026-06-10"
+        },
+        {
+          "name": "WhatIsContextPreservingDataLayerForAi.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/learn/WhatIsContextPreservingDataLayerForAi.tsx",
           "modified": "2026-06-10"
         },
         {

@@ -37,7 +37,7 @@ interface Props {
   related4Href?: string
 }
 
-const BODY_HTML = `<!-- bodyHtml: cpdl-article-integrated — article body fragment for TSX template literal -->
+const BODY_HTML = `<!-- bodyHtml: what-is-context-preserving-data-layer-for-ai — article body fragment for TSX template literal -->
 <!-- Contains: TL;DR banner + H2 sections + figures + FAQ + author info -->
 <!-- Does NOT contain: hero, related articles, CTA band, scripts, nav -->
 
@@ -229,7 +229,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     tldrLabel: "TL;DR",
     tldrBody: "A context-preserving data layer sits at the boundary between an organization's sensitive data and an AI model. It transforms the data into a protected but still-usable form before inference, then restores the original values locally afterward. Masking and DLP protect a value by removing it — but the moment a value is part of a relationship (Asset ID ↔ Asset Name, Host ↔ IP ↔ VLAN, Contract Clause ↔ Counterparty, Patient ↔ Diagnosis), removing the value destroys the relationship the model needs to reason. The data is safe; the output is useless. A context-preserving data layer breaks that trade-off: the model never needs to see the real data to be effective. It is not DLP or masking (they delete context), not RAG or a vector DB (they add context into the model), and not an AI gateway or MCP layer (they route and broker calls). It is embedded inside the stack at the model boundary — not a console end users log into. The goal is not to hide data from the model. The goal is to make the model effective without ever requiring access to the original data.",
     bodyHtml: BODY_HTML,
-    canonicalUrl: "https://llmcapsule.ai/resources/learn/cpdl-article-integrated",
+    canonicalUrl: "https://llmcapsule.ai/resources/learn/what-is-context-preserving-data-layer-for-ai",
     datePublished: "2026-05-06",
     dateModified: "2026-05-06",
     inLanguage: "en-GB",
@@ -427,7 +427,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
 
     <h3>엔터프라이즈 아키텍처에서 어디에 위치합니까?</h3>
 <p>민감한 데이터가 AI 모델을 만나는 경계에, 최종 사용자 제품으로 노출되지 않고 스택 내부에 임베드됩니다. 보호와 유용성 중 하나를 선택하도록 강요하지 않고 보호된 엔터프라이즈 데이터에서 AI를 실행할 수 있게 하는 레이어입니다.</p>`,
-    canonicalUrl: "https://llmcapsule.ai/resources/learn/cpdl-article-integrated",
+    canonicalUrl: "https://llmcapsule.ai/resources/learn/what-is-context-preserving-data-layer-for-ai",
     datePublished: "2026-05-06",
     dateModified: "2026-05-06",
     inLanguage: "en-GB",
@@ -625,7 +625,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
 
     <h3>Wo ist er in der Unternehmensarchitektur angesiedelt?</h3>
 <p>An der Grenze, an der sensible Daten auf das KI-Modell treffen, tief im Stack eingebettet &mdash; nicht als Endnutzerprodukt exponiert. Er ist die Schicht, die den KI-Einsatz auf geschützten Unternehmensdaten ermöglicht, ohne eine Entscheidung zwischen Schutz und Nutzbarkeit zu erzwingen.</p>`,
-    canonicalUrl: "https://llmcapsule.ai/resources/learn/cpdl-article-integrated",
+    canonicalUrl: "https://llmcapsule.ai/resources/learn/what-is-context-preserving-data-layer-for-ai",
     datePublished: "2026-05-06",
     dateModified: "2026-05-06",
     inLanguage: "en-GB",
@@ -643,7 +643,7 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
   },
 }
 
-export default function CpdlArticleIntegrated({
+export default function WhatIsContextPreservingDataLayerForAi({
   locale = "en",
   backLabel = "",
   backHref = "",
@@ -1295,7 +1295,7 @@ export default function CpdlArticleIntegrated({
   )
 }
 
-addPropertyControls(CpdlArticleIntegrated, {
+addPropertyControls(WhatIsContextPreservingDataLayerForAi, {
   locale: { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
   backLabel: { type: ControlType.String, title: "Back Label", defaultValue: "" },
   backHref: { type: ControlType.String, title: "Back URL", defaultValue: "" },

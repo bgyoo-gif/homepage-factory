@@ -2,12 +2,12 @@
 
 ## Meta
 - **Brand**: llm-capsule (v6.2)
-- **Slug**: `cpdl-article-integrated` (keep as-is from input filename — used as Framer route and TSX target)
-- **Canonical URL**: `https://llmcapsule.ai/resources/learn/cpdl-article-integrated`
-- **Source file**: `llm-capsule/input/llmcapsule_260506/learn/cpdl-article-integrated.html`
-- **B-type output**: `llm-capsule/output/html/cpdl-article-integrated-b-type.html`
-- **bodyhtml output**: `llm-capsule/output/html/cpdl-article-integrated-bodyhtml.html`
-- **TSX target**: `llm-capsule/output/framer/learn/CpdlArticleIntegrated.tsx`
+- **Slug**: `what-is-context-preserving-data-layer-for-ai` (keep as-is from input filename — used as Framer route and TSX target)
+- **Canonical URL**: `https://llmcapsule.ai/resources/learn/what-is-context-preserving-data-layer-for-ai`
+- **Source file**: `llm-capsule/input/llmcapsule_260506/learn/what-is-context-preserving-data-layer-for-ai.html`
+- **B-type output**: `llm-capsule/output/html/what-is-context-preserving-data-layer-for-ai-b-type.html`
+- **bodyhtml output**: `llm-capsule/output/html/what-is-context-preserving-data-layer-for-ai-bodyhtml.html`
+- **TSX target**: `llm-capsule/output/framer/learn/WhatIsContextPreservingDataLayerForAi.tsx`
 - **Locale**: `en-GB` (og:locale `en_GB`)
 - **Title**: What Is a Context-Preserving Data Layer for AI?
 - **Description (meta)**: A context-preserving data layer transforms sensitive enterprise data into a protected but semantically usable form before it reaches an AI model, then restores the original values locally after inference — protecting data without severing the relationships AI needs to reason.
@@ -117,7 +117,7 @@ Article-page layout (Learn pattern) — reading column 720 → 860 → 1080px re
 ## Build-script entry (bodyhtml pattern A)
 
 Per-slug metadata (manually-curated):
-- `slug`: `cpdl-article-integrated`
+- `slug`: `what-is-context-preserving-data-layer-for-ai`
 - `source_type`: `bodyhtml`
 - `title`: What Is a Context-Preserving Data Layer for AI?
 - `lead`: (full lead paragraph — see Hero section)
@@ -152,7 +152,7 @@ Per-slug metadata (manually-curated):
 
 1. **No dark-mode SVG.** Original A-type ships paired `.svg-light` + `.svg-dark` variants with a theme toggle button. Drop the toggle and all `.svg-dark` markup — Learn articles are light-theme only (matches all existing Learn B-types).
 2. **Colour palette swap.** Original uses teal `#0E9C92` as the "good side" accent. Capsule brand is purple `#5b4fe9` — swap teal→primary throughout both SVG figures. Coral stays coral (warning/wrong side) — Capsule allows coral as accent.
-3. **Slug stays `cpdl-article-integrated`.** It's descriptive enough and matches input filename. Could be `what-is-a-context-preserving-data-layer-for-ai` for SEO, but build script uses slug for path lookups and rename adds risk. **Recommendation: keep as-is.**
+3. **Slug stays `what-is-context-preserving-data-layer-for-ai`.** It's descriptive enough and matches input filename. Could be `what-is-a-context-preserving-data-layer-for-ai` for SEO, but build script uses slug for path lookups and rename adds risk. **Recommendation: keep as-is.**
 4. **No `<table>` in this article.** Differs from reference articles (tokenisation, external-llm) which use ds-table. Section 4 "How it differs" stays as `ds-bullet--dot` — the 3 distinctions don't need columns.
 5. **No `ds-bullet--check` / `--cross` / `--number`.** This article is conceptual, not procedural. All lists are `ds-bullet--dot`.
 6. **CLAUDE.md figure rules respected.** All `<figure>` blocks use `class="ds-figure"`. bodyhtml extraction must include both figures (`grep -c '<figure'` should return 2). SVG comments stripped from bodyhtml (Annex B compat).
@@ -161,6 +161,6 @@ Per-slug metadata (manually-curated):
 
 ## Files to produce
 
-- `llm-capsule/output/html/cpdl-article-integrated-b-type.html` (standalone, head + body + figures + script-free)
-- `llm-capsule/output/html/cpdl-article-integrated-bodyhtml.html` (body article fragment only, for TSX template literal)
-- `llm-capsule/output/framer/learn/CpdlArticleIntegrated.tsx` (built via `build-learn-tsx.py` after bodyhtml ready)
+- `llm-capsule/output/html/what-is-context-preserving-data-layer-for-ai-b-type.html` (standalone, head + body + figures + script-free)
+- `llm-capsule/output/html/what-is-context-preserving-data-layer-for-ai-bodyhtml.html` (body article fragment only, for TSX template literal)
+- `llm-capsule/output/framer/learn/WhatIsContextPreservingDataLayerForAi.tsx` (built via `build-learn-tsx.py` after bodyhtml ready)

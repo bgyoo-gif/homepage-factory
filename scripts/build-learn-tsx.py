@@ -524,8 +524,8 @@ ARTICLES = [
         ],
     },
     {
-        "slug": "cpdl-article-integrated",
-        "component": "CpdlArticleIntegrated",
+        "slug": "what-is-context-preserving-data-layer-for-ai",
+        "component": "WhatIsContextPreservingDataLayerForAi",
         "source_type": "bodyhtml",
         "title": "What Is a Context-Preserving Data Layer for AI?",
         "lead": "A context-preserving data layer is a software layer that transforms sensitive enterprise data into a protected but semantically usable form before it reaches an AI model, then restores the original values locally after inference. Unlike masking or DLP, which protect data by removing it — and so leave the model's output unusable — a context-preserving data layer protects the data while keeping the relationships the model needs to reason.",
@@ -534,7 +534,7 @@ ARTICLES = [
         "dateUpdated": "Updated May 2026",
         "tldrLabel": "TL;DR",
         "tldrBody": "A context-preserving data layer sits at the boundary between an organization's sensitive data and an AI model. It transforms the data into a protected but still-usable form before inference, then restores the original values locally afterward. Masking and DLP protect a value by removing it — but the moment a value is part of a relationship (Asset ID ↔ Asset Name, Host ↔ IP ↔ VLAN, Contract Clause ↔ Counterparty, Patient ↔ Diagnosis), removing the value destroys the relationship the model needs to reason. The data is safe; the output is useless. A context-preserving data layer breaks that trade-off: the model never needs to see the real data to be effective. It is not DLP or masking (they delete context), not RAG or a vector DB (they add context into the model), and not an AI gateway or MCP layer (they route and broker calls). It is embedded inside the stack at the model boundary — not a console end users log into. The goal is not to hide data from the model. The goal is to make the model effective without ever requiring access to the original data.",
-        "canonicalUrl": "https://llmcapsule.ai/resources/learn/cpdl-article-integrated",
+        "canonicalUrl": "https://llmcapsule.ai/resources/learn/what-is-context-preserving-data-layer-for-ai",
         "datePublished": "2026-05-06",
         "dateModified": "2026-05-06",
         "inLanguage": "en-GB",
@@ -1103,7 +1103,7 @@ ARTICLE_INDEX_META = {
     "tokenization-for-llm-inputs": {"category": "architecture-onprem", "skipInIndex": False},
     "why-ai-stalls-on-operational-data": {"category": "comparison", "skipInIndex": False},
     "where-to-run-enterprise-ai": {"category": "architecture-onprem", "skipInIndex": False},
-    "cpdl-article-integrated": {"category": "definition", "skipInIndex": False},
+    "what-is-context-preserving-data-layer-for-ai": {"category": "definition", "skipInIndex": False},
 }
 
 CATEGORY_LABELS = {

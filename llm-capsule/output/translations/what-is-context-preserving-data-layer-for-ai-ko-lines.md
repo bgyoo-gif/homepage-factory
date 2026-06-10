@@ -1,4 +1,4 @@
-# cpdl-article-integrated — 한국어 번역 (literal)
+# what-is-context-preserving-data-layer-for-ai — 한국어 번역 (literal)
 
 ## Section 01: Hero
 

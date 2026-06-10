@@ -1,8 +1,8 @@
 # QA Report
 - 검증일: 2026-06-10
-- 대상 파일: llm-capsule/output/html/cpdl-article-integrated-b-type.html
-- 원본 파일: llm-capsule/input/llmcapsule_260506/learn/cpdl-article-integrated.html
-- 명세서: llm-capsule/output/docs/cpdl-article-integrated-spec.md
+- 대상 파일: llm-capsule/output/html/what-is-context-preserving-data-layer-for-ai-b-type.html
+- 원본 파일: llm-capsule/input/llmcapsule_260506/learn/what-is-context-preserving-data-layer-for-ai.html
+- 명세서: llm-capsule/output/docs/what-is-context-preserving-data-layer-for-ai-spec.md
 - QA 엔지니어: qa-agent
 
 ---
@@ -207,8 +207,8 @@ Framer paste 시 TL;DR 영역 깨짐 + 섹션 타이틀 간격 이상 보고. �
 ## 다음 액션
 
 **CONDITIONAL PASS**: 변환 완료.
-`llm-capsule/output/html/cpdl-article-integrated-b-type.html`이 최종 B타입 파일입니다.
-`llm-capsule/output/framer/learn/CpdlArticleIntegrated.tsx`가 최종 TSX 파일입니다.
+`llm-capsule/output/html/what-is-context-preserving-data-layer-for-ai-b-type.html`이 최종 B타입 파일입니다.
+`llm-capsule/output/framer/learn/WhatIsContextPreservingDataLayerForAi.tsx`가 최종 TSX 파일입니다.
 
 Low 잔여 결함(D-04~D-08)은 선택적 수정 대상:
 - D-04/05/06: SVG Figure 1/2 내 `#b0b7c3`, `#9ca3af`, `#d1d5db` → `var(--c-rule)` / `var(--c-muted)` 교체
