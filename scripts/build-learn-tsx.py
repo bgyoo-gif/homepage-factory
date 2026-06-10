@@ -996,11 +996,19 @@ addPropertyControls({component}, {{
     ko_dict = render_dict(ko_translations, is_en=False)
     de_dict = render_dict(de_translations, is_en=False)
 
-    resolver_lines = ['  const T = TRANSLATIONS[locale] || TRANSLATIONS.en']
+    # dict-first resolver: when locale !== "en", dict overrides any stored prop value
+    # (Framer instances persist English defaults — without dict-first, switching locale
+    # leaves English on screen because prop is truthy.)
+    resolver_lines = [
+        '  const T = TRANSLATIONS[locale] || TRANSLATIONS.en',
+        '  const _isNonEn = locale !== "en"',
+    ]
     for p in PROPS_SPEC:
         name = p["name"]
         resolver_lines.append(
-            f'  const _{name} = {name} || T["{name}"] || TRANSLATIONS.en["{name}"]'
+            f'  const _{name} = _isNonEn'
+            f' ? (T["{name}"] || TRANSLATIONS.en["{name}"] || {name})'
+            f' : ({name} || T["{name}"] || TRANSLATIONS.en["{name}"])'
         )
     resolver_block = "\n".join(resolver_lines)
 
