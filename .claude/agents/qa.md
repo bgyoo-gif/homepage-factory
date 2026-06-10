@@ -128,7 +128,7 @@ grep -n "scrollbar-width: none" {brand}/output/html/[파일명]-b-type.html
 - [ ] 모든 CSS 변수가 design-system 파일에 정의된 것만 사용됐는가
 - [ ] 균등 그리드에 `minmax(0, 1fr)` 사용됐는가 (단순 `1fr` 금지)
 - [ ] `ds-bullet--check`의 `ds-bullet__icon`이 비어 있는가 (HTML 텍스트 삽입 금지)
-- [ ] `overflow-x: auto` 사용 시 `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }` 있는가
+- [ ] `overflow-x: auto` 사용 시 `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }` 있는가 (단, `.ds-figure__svg-wrap`는 예외 — scrollbar 표시 허용)
 - [ ] section header description이 원본 단락 전문이며 lead와 동일 문장으로 시작하지 않는가
 
 **반복 결함 필수 검사 (FAIL 트리거):**
@@ -169,7 +169,7 @@ ls {brand}/output/framer/ 2>/dev/null
 - [ ] 배경 이미지 CSS 변수가 `:root`에 정의된 것인가 (미정의 변수 사용 금지)
 - [ ] 균등 그리드에 `minmax(0, 1fr)` 사용됐는가
 - [ ] `ds-bullet--check` 아이콘이 비어있는가 (HTML 텍스트 이중 삽입 금지)
-- [ ] `overflow-x: auto` 사용 시 scrollbar 숨김 처리됐는가
+- [ ] `overflow-x: auto` 사용 시 scrollbar 숨김 처리됐는가 (단, `.ds-figure__svg-wrap`는 예외 — scrollbar 표시 허용)
 - [ ] section header description이 lead와 중복되지 않는가
 
 ### [CAT-3] 코드 품질 (Medium)
@@ -249,7 +249,7 @@ grep -n "min-width: 1440px" {brand}/output/html/[파일명]-b-type.html
 - ds-section--light 사용 (CAT-2 High)
 - 균등 그리드에 `1fr` 단독 사용 (CAT-2 High)
 - `ds-bullet--check` 아이콘 HTML 이중 삽입 (CAT-3 Medium)
-- `overflow-x: auto` scrollbar 미숨김 (CAT-3 Medium)
+- `overflow-x: auto` scrollbar 미숨김 (CAT-3 Medium) — `.ds-figure__svg-wrap`는 예외
 - section header description lead 중복 (CAT-1 High)
 - 동일 `ds-bg--*` 한 페이지 2회 이상 사용 (CAT-2 High)
 

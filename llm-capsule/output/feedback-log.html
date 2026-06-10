@@ -32,6 +32,24 @@
     </thead>
     <tbody>
       <tr>
+        <td>2026-06-10</td>
+        <td><span class="badge badge--rule">규칙 수정</span></td>
+        <td>
+          <strong>Figure SVG scrollbar 예외 추가 — rule #44 예외 처리</strong><br>
+          배경: cpdl-article-integrated Figure 1/2 SVG(viewBox 820px)가 모바일에서 .ds-figure__svg-wrap의 overflow-x: auto로 처리되나, rule #44 scrollbar 숨김으로 인해 사용자가 스크롤 가능 여부를 인지하지 못하는 문제.<br>
+          결정: .ds-figure__svg-wrap는 scrollbar-width: none / ::-webkit-scrollbar { display: none } 적용 금지.<br>
+          원칙: 데이터 가독성 vs UI 깔끔함 충돌 시 가독성 우선 — figure/diagram에 한해 scrollbar 노출 허용. 테이블/탭 nav 등 장식적 스크롤은 숨김 유지.
+        </td>
+        <td>
+          <span class="tag-file">.claude/skills/design-system-core.md</span>
+          <span class="tag-file">CLAUDE.md</span>
+          <span class="tag-file">.claude/agents/frontend-dev.md</span>
+          <span class="tag-file">.claude/agents/qa.md</span>
+          <span class="tag-file">memory/feedback_figure_scrollbar.md</span>
+        </td>
+        <td>feedback-sync</td>
+      </tr>
+      <tr>
         <td>2026-05-28</td>
         <td><span class="badge badge--rule">규칙 추가</span></td>
         <td>

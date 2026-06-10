@@ -203,7 +203,7 @@ deploy (gh-pages push)
 - 균등 분할 그리드: `repeat(N, 1fr)` 대신 `repeat(N, minmax(0, 1fr))` 필수
 - `ds-bullet--check` 아이콘 HTML 삽입 금지: `ds-bullet__icon`은 비워둘 것 (CSS `::before` 자동 생성)
 - section header description 전문 사용: 원본 단락 전문을 넣을 것, lead와 동일 문장으로 시작 금지
-- `overflow-x: auto` 사용 시 scrollbar 숨김 필수: `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }`
+- `overflow-x: auto` 사용 시 scrollbar 숨김 필수: `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }` — **단, `.ds-figure__svg-wrap`는 예외 (scrollbar 표시 유지)**
 
 ---
 
@@ -269,7 +269,7 @@ Low 결함만 남은 경우 CONDITIONAL PASS.
 32. **TSX CSS 클래스명 충돌** → 같은 페이지 내 섹션 간 동일 클래스명 사용 시 스타일 충돌. 섹션별 접두사(`s1-`, `s2-`) 사용
 33. **번역 파일 Props 동기화** → Props 추가/변경 시 번역 md 파일 재생성 필수. 이전 번역 파일은 신규 Props가 빠짐
 28. **section header description 잘림 + lead 중복** → header description에 원문 첫 문장만 넣고 lead에서 전문 반복 금지. header description은 원본 단락 전문 사용, lead와 동일 문장으로 시작하면 FAIL
-29. **overflow-x: auto scrollbar 미숨김** → `overflow-x: auto` 사용 시 반드시 `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }` 동반
+29. **overflow-x: auto scrollbar 미숨김** → `overflow-x: auto` 사용 시 반드시 `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }` 동반. **단, `.ds-figure__svg-wrap`는 예외** — Figure SVG scrollbar 강제 숨김 금지: 모바일에서 viewBox 초과 SVG 다이어그램이 잘려 보이고 스크롤 가능 여부 인지 불가. `.ds-figure__svg-wrap`는 `overflow-x: auto` + scrollbar 표시 유지 (데이터 가독성 우선 원칙)
 30. **배경 이미지 중복 사용** → 동일 `ds-bg--*` 클래스를 한 페이지에서 2회 이상 사용 금지 (CLAUDE.md 기존 규칙 재강조 — FAIL 트리거)
 31. **컬러 라인 꾸밈 금지 (AI 클리셰)** → `border-top: Npx solid colored`, `border-left: Npx solid colored` 카드 꾸밈 금지. 색상 분기는 icon/badge/number 색상으로만 처리
 32. **내부 링크 Framer 상대경로 필수** → `/request-a-demo`, `/architecture`, `/product`, `/pricing`, `/trust`, `/solutions`, `/resources/learn/...` 형태. 절대 URL(`https://llmcapsule.ai/...`) 금지, `.html` 확장자 금지. 외부 링크(AWS Marketplace 등)만 절대 URL 허용

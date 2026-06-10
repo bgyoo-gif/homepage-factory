@@ -5,7 +5,7 @@
 // Self-contained Framer Code Component with locale dropdown (en/ko/de).
 // Set `locale` in Framer Properties panel to switch all text simultaneously.
 
-import { addPropertyControls, ControlType, useLocaleInfo } from "framer"
+import { addPropertyControls, ControlType } from "framer"
 
 interface Props {
   locale?: "en" | "ko" | "de"
@@ -998,41 +998,32 @@ export default function WhereToRunEnterpriseAi({
   related4Title = "",
   related4Href = "",
 }: Props) {
-  const { activeLocale } = useLocaleInfo()
-  const framerLocale = (activeLocale as any)?.slug as string | undefined
-  const effectiveLocale: "en" | "ko" | "de" =
-    (framerLocale === "ko" || framerLocale === "de") ? framerLocale :
-    (locale && locale !== "en") ? locale : "en"
-
-  const T = TRANSLATIONS[effectiveLocale] || TRANSLATIONS.en
-  const isNonEn = effectiveLocale !== "en"
-  const r = (prop: string, key: string) =>
-    isNonEn ? (T[key] || prop || TRANSLATIONS.en[key]) : (prop || T[key] || TRANSLATIONS.en[key])
-  const _backLabel = r(backLabel, "backLabel")
-  const _backHref = r(backHref, "backHref")
-  const _title = r(title, "title")
-  const _lead = r(lead, "lead")
-  const _category = r(category, "category")
-  const _readTime = r(readTime, "readTime")
-  const _dateUpdated = r(dateUpdated, "dateUpdated")
-  const _tldrLabel = r(tldrLabel, "tldrLabel")
-  const _tldrBody = r(tldrBody, "tldrBody")
-  const _bodyHtml = r(bodyHtml, "bodyHtml")
-  const _canonicalUrl = r(canonicalUrl, "canonicalUrl")
-  const _datePublished = r(datePublished, "datePublished")
-  const _dateModified = r(dateModified, "dateModified")
-  const _inLanguage = r(inLanguage, "inLanguage")
-  const _breadcrumbLabel = r(breadcrumbLabel, "breadcrumbLabel")
-  const _faqJsonLd = r(faqJsonLd, "faqJsonLd")
-  const _relatedSectionLabel = r(relatedSectionLabel, "relatedSectionLabel")
-  const _related1Title = r(related1Title, "related1Title")
-  const _related1Href = r(related1Href, "related1Href")
-  const _related2Title = r(related2Title, "related2Title")
-  const _related2Href = r(related2Href, "related2Href")
-  const _related3Title = r(related3Title, "related3Title")
-  const _related3Href = r(related3Href, "related3Href")
-  const _related4Title = r(related4Title, "related4Title")
-  const _related4Href = r(related4Href, "related4Href")
+  const T = TRANSLATIONS[locale] || TRANSLATIONS.en
+  const _backLabel = backLabel || T["backLabel"] || TRANSLATIONS.en["backLabel"]
+  const _backHref = backHref || T["backHref"] || TRANSLATIONS.en["backHref"]
+  const _title = title || T["title"] || TRANSLATIONS.en["title"]
+  const _lead = lead || T["lead"] || TRANSLATIONS.en["lead"]
+  const _category = category || T["category"] || TRANSLATIONS.en["category"]
+  const _readTime = readTime || T["readTime"] || TRANSLATIONS.en["readTime"]
+  const _dateUpdated = dateUpdated || T["dateUpdated"] || TRANSLATIONS.en["dateUpdated"]
+  const _tldrLabel = tldrLabel || T["tldrLabel"] || TRANSLATIONS.en["tldrLabel"]
+  const _tldrBody = tldrBody || T["tldrBody"] || TRANSLATIONS.en["tldrBody"]
+  const _bodyHtml = bodyHtml || T["bodyHtml"] || TRANSLATIONS.en["bodyHtml"]
+  const _canonicalUrl = canonicalUrl || T["canonicalUrl"] || TRANSLATIONS.en["canonicalUrl"]
+  const _datePublished = datePublished || T["datePublished"] || TRANSLATIONS.en["datePublished"]
+  const _dateModified = dateModified || T["dateModified"] || TRANSLATIONS.en["dateModified"]
+  const _inLanguage = inLanguage || T["inLanguage"] || TRANSLATIONS.en["inLanguage"]
+  const _breadcrumbLabel = breadcrumbLabel || T["breadcrumbLabel"] || TRANSLATIONS.en["breadcrumbLabel"]
+  const _faqJsonLd = faqJsonLd || T["faqJsonLd"] || TRANSLATIONS.en["faqJsonLd"]
+  const _relatedSectionLabel = relatedSectionLabel || T["relatedSectionLabel"] || TRANSLATIONS.en["relatedSectionLabel"]
+  const _related1Title = related1Title || T["related1Title"] || TRANSLATIONS.en["related1Title"]
+  const _related1Href = related1Href || T["related1Href"] || TRANSLATIONS.en["related1Href"]
+  const _related2Title = related2Title || T["related2Title"] || TRANSLATIONS.en["related2Title"]
+  const _related2Href = related2Href || T["related2Href"] || TRANSLATIONS.en["related2Href"]
+  const _related3Title = related3Title || T["related3Title"] || TRANSLATIONS.en["related3Title"]
+  const _related3Href = related3Href || T["related3Href"] || TRANSLATIONS.en["related3Href"]
+  const _related4Title = related4Title || T["related4Title"] || TRANSLATIONS.en["related4Title"]
+  const _related4Href = related4Href || T["related4Href"] || TRANSLATIONS.en["related4Href"]
 
   const relatedItems = [
     { _title: _related1Title, href: _related1Href },

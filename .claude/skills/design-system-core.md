@@ -1465,4 +1465,4 @@ document.querySelectorAll('[data-step-tabs]').forEach(function(root) {
 41. 균등 분할 그리드 — `repeat(N, 1fr)` 대신 `repeat(N, minmax(0, 1fr))` 필수
 42. `ds-bullet--check` 아이콘 HTML 삽입 금지 — `ds-bullet__icon`은 비워둘 것 (CSS `::before`가 ✓ 자동 생성). 내부에 `&#10003;` 등 텍스트 삽입 시 체크 2개 표시
 43. section header description 전문 사용 — 원본 단락 첫 문장만 넣지 않고 전문 사용. lead와 동일 문장으로 시작 금지
-44. `overflow-x: auto` scrollbar 숨김 필수 — 반드시 `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }` 동반
+44. `overflow-x: auto` scrollbar 숨김 필수 — 반드시 `scrollbar-width: none` + `::-webkit-scrollbar { display: none; }` 동반. **예외: `.ds-figure__svg-wrap`는 데이터 가독성 보존을 위해 scrollbar 표시 허용** — 모바일에서 SVG viewBox 초과 시 가로 스크롤 가능함을 사용자가 시각적으로 인지해야 하므로 `scrollbar-width: none` / `::-webkit-scrollbar { display: none; }` 적용 금지

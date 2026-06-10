@@ -125,7 +125,7 @@ a { text-decoration: none; color: inherit; }
 10. **균등 분할 그리드**: `repeat(N, 1fr)` 금지 → `repeat(N, minmax(0, 1fr))` 사용 필수
 11. **ds-bullet--check 아이콘 HTML 삽입 금지**: `<span class="ds-bullet__icon"></span>` 비워둘 것 — `&#10003;` 등 HTML 텍스트 삽입 시 체크 2개 표시
 12. **section header description 잘림 금지**: 원본 단락 전문 사용 — 첫 문장만 넣지 않는다. lead와 동일 문장으로 시작하는 중복 금지
-13. **overflow-x: auto scrollbar 숨김 필수**: `overflow-x: auto` 사용 시 반드시 `scrollbar-width: none;` + `::-webkit-scrollbar { display: none; }` 동반
+13. **overflow-x: auto scrollbar 숨김 필수**: `overflow-x: auto` 사용 시 반드시 `scrollbar-width: none;` + `::-webkit-scrollbar { display: none; }` 동반. **예외: `.ds-figure__svg-wrap`는 scrollbar 표시 유지** — 모바일 SVG 다이어그램 가독성 보존을 위해 scrollbar 숨김 금지
 14. **bodyhtml figure 포함 필수**: B타입 → bodyhtml 추출 시 `<figure>` 블록 반드시 포함. figure 내부 HTML 주석(`<!--...-->`) 제거 필수 (Framer TSX template literal 안에서 컴파일 에러 유발)
 
 #### 반응형 규칙 (Mobile-first, 4단계 필수)
