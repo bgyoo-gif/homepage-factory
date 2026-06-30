@@ -286,14 +286,14 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
         .p5-ind-t{display:flex;align-items:baseline;gap:9px}
         .p5-ind-n{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#5b4fe9}
         .p5-ind h4{font-size:15.5px;font-weight:700;font-family:'Inter',sans-serif;color:#0f1130}
-        .p5-ind-lab{margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6b7280;font-weight:700}
-        .p5-ind-data{font-size:13.5px;color:#3a3d5e;margin-top:4px;font-family:'JetBrains Mono',monospace;font-size:11.5px;line-height:1.7}
+        .p5-ind-lab{margin-top:12px;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6b7280;font-weight:700}
+        .p5-ind-data{margin-top:4px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#3a3d5e;line-height:1.7}
         .p5-ind-dep{margin-top:10px;font-size:12.5px;color:#0ea5a4;font-weight:600;font-family:'Inter',sans-serif}
 
         /* Handoff dark */
-        .p5-handoff{background:linear-gradient(120deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:30px;text-align:center}
-        .p5-ho-row{display:flex;gap:14px;margin-top:18px;align-items:center;justify-content:center;flex-wrap:wrap}
-        .p5-ho{flex:1;min-width:210px;max-width:320px;padding:18px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(255,255,255,.05);text-align:left}
+        .p5-handoff{background:linear-gradient(120deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:30px}
+        .p5-ho-row{display:flex;gap:14px;margin-top:18px;align-items:center;flex-wrap:wrap}
+        .p5-ho{flex:1;min-width:210px;padding:18px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(255,255,255,.05)}
         .p5-ho.p5-exit .p5-ho-tag{color:#0ea5a4}
         .p5-ho-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#9d95f5;font-weight:700}
         .p5-ho h4{margin-top:6px;font-size:16px;font-family:'Inter',sans-serif;color:#fff}
@@ -422,8 +422,8 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
           <div className="p5-wrap">
             <div className="p5-handoff">
               <span className="p5-eye">{r(props.hoEyebrow, "hoEyebrow")}</span>
-              <h2 className="p5-h2" style={{ fontSize: 26, marginTop: 10, maxWidth: "none" }}>{r(props.hoTitle, "hoTitle")}</h2>
-              <p className="p5-sub" style={{ maxWidth: "none", margin: "10px auto 0" }}>{r(props.hoDesc, "hoDesc")}</p>
+              <h2 className="p5-h2" style={{ fontSize: 26, marginTop: 10 }}>{r(props.hoTitle, "hoTitle")}</h2>
+              <p className="p5-sub">{r(props.hoDesc, "hoDesc")}</p>
               <div className="p5-ho-row">
                 <div className="p5-ho">
                   <div className="p5-ho-tag">{ho.cap.tag}</div>
