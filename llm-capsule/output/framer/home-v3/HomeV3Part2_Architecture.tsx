@@ -211,7 +211,7 @@ export default function HomeV3Part2_Architecture({
         .p2-sub{margin-top:14px;font-size:17px;color:rgba(255,255,255,.70);max-width:720px;font-family:'Inter',sans-serif;line-height:1.62}
         @container p2 (max-width:640px){.p2-bk{display:none}}
 
-        .p2-rt2{max-width:1100px;margin:14px 0 0}
+        .p2-rt2{margin:14px 0 0}
         .p2-rt2-stage{display:flex;align-items:center;gap:16px}
         .p2-rt2-env{flex:1;min-width:0;border:1.5px dashed rgba(91,79,233,.55);border-radius:16px;background:rgba(255,255,255,.045);padding:14px}
         .p2-envlab{font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#9d95f5;margin-bottom:12px;font-family:'Inter',sans-serif}

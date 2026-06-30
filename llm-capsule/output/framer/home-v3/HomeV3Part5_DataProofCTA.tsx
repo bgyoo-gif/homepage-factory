@@ -267,7 +267,7 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
         .p5-dark .p5-eye{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16)}
         .p5-dark .p5-h2{color:#fff}
         .p5-dark .p5-sub{color:rgba(255,255,255,.70)}
-        .p5-dt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px;max-width:1100px}
+        .p5-dt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px}
         .p5-dt{border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px;background:rgba(255,255,255,.04);transition:.15s}
         .p5-dt:hover{border-color:rgba(91,79,233,.7);box-shadow:0 10px 30px -18px rgba(0,0,0,.7)}
         .p5-dt-ic{width:34px;height:34px;border-radius:9px;background:rgba(91,79,233,.28);display:flex;align-items:center;justify-content:center;color:#c8c0f5;margin-bottom:11px}
@@ -282,7 +282,7 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
         .p5-foot{margin-top:26px;font-size:13.5px;color:#3a3d5e;max-width:760px;font-family:'Inter',sans-serif;line-height:1.7}
 
         /* Use cases */
-        .p5-ind-grid{display:grid;grid-template-columns:repeat(2,minmax(280px,1fr));gap:16px;margin-top:24px;max-width:1100px}
+        .p5-ind-grid{display:grid;grid-template-columns:repeat(2,minmax(280px,1fr));gap:16px;margin-top:24px}
         .p5-ind{padding:20px;border:1px solid #e5e7eb;border-radius:14px;background:#fff}
         .p5-ind-t{display:flex;align-items:baseline;gap:9px}
         .p5-ind-n{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#5b4fe9}
