@@ -183,7 +183,7 @@ export default function HomeV3Part4_Capabilities(props: Props) {
         .p4-wrap{max-width:1280px;margin:0 auto;padding:0 28px}
         .p4-eye{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:999px;background:#0f1130;color:#fff;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-family:'Inter',sans-serif}
         .p4-eye::before{content:"";width:6px;height:6px;border-radius:50%;background:#0ea5a4;flex:0 0 auto}
-        .p4-sec-head{max-width:700px}
+        .p4-sec-head{max-width:720px}
         .p4-h2{font-size:clamp(28px,3.9vw,46px);line-height:1.12;font-weight:700;letter-spacing:-.03em;margin-top:10px;max-width:800px;font-family:'Inter',sans-serif;color:#0f1130}
         .p4-sub{margin-top:14px;font-size:17px;color:#3a3d5e;max-width:680px;font-family:'Inter',sans-serif;line-height:1.62}
         .p4-cap{display:flex;gap:38px;align-items:center;padding:40px 0;border-bottom:1px solid #e5e7eb;min-height:252px;flex-direction:row-reverse}
