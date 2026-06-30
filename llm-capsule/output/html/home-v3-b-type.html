@@ -41,13 +41,7 @@
   :focus-visible{outline:2px solid var(--violet);outline-offset:2px}
   .sec-head{max-width:700px}
 
-  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
   .logo{font-weight:800;font-size:18px}.logo b{color:var(--violet)}
-  .nav-links{display:flex;gap:24px;font-size:14.5px;color:var(--ink-soft);font-weight:500}
-  .nav-links a:hover{color:var(--ink)}
-  .nav-cta{display:flex;gap:10px;align-items:center}.nav-cta .btn{padding:9px 16px;font-size:14px}
-  @media(max-width:880px){.nav-links{display:none}.nav-cta .btn-ghost{display:none}}
 
   .hero{padding:96px 0 72px;background:linear-gradient(180deg,#f7f8fb 0%,#fff 100%)}
   .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center}
@@ -228,27 +222,12 @@
   .logo-marquee:hover{animation-play-state:paused}
   @keyframes logoScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   .logo-tile{flex:0 0 auto;width:132px;height:132px;border:1px solid var(--line);border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;font-weight:700;color:#6b7280;font-size:13px;line-height:1.35;box-shadow:0 1px 2px rgba(15,17,48,.04)}
+  .logo-tile img{max-width:96px;max-height:72px;object-fit:contain;filter:grayscale(1) opacity(.55);transition:filter .3s}
+  .logo-tile:hover img{filter:grayscale(0) opacity(1)}
   @media(prefers-reduced-motion:reduce){.logo-marquee{animation:none;flex-wrap:wrap;width:auto;justify-content:center}}
 </style>
 </head>
 <body>
-
-<nav>
-  <div class="wrap nav-in">
-    <div class="logo">LLM <b>Capsule</b></div>
-    <div class="nav-links">
-      <a href="#data">What it handles</a>
-      <a href="#capabilities">Product</a>
-      <a href="#architecture">Architecture</a>
-      <a href="#usecase">Solutions</a>
-      <a href="#faq">FAQ</a>
-    </div>
-    <div class="nav-cta">
-      <a class="btn btn-ghost" href="#">AWS Marketplace</a>
-      <a class="btn btn-primary" href="#demo">Request a Demo</a>
-    </div>
-  </div>
-</nav>
 
 <!-- HERO -->
 <header class="hero">
@@ -288,7 +267,7 @@
   <div class="wrap">
     <div class="ind">Proven on operational data that can't leave, in <b>telecom, industrial / OT, healthcare, finance and public sector</b></div>
 <div class="logo-marquee-wrap">
-      <div class="logo-marquee"><div class="logo-tile">Deutsche Telekom</div><div class="logo-tile">SK Telecom</div><div class="logo-tile">Claroty</div><div class="logo-tile">IBK</div><div class="logo-tile">DB Insurance</div><div class="logo-tile">Shin &amp; Kim</div><div class="logo-tile">EUMC</div><div class="logo-tile">Ministry of National Defense</div><div class="logo-tile">AWS Marketplace</div><div class="logo-tile">Deutsche Telekom</div><div class="logo-tile">SK Telecom</div><div class="logo-tile">Claroty</div><div class="logo-tile">IBK</div><div class="logo-tile">DB Insurance</div><div class="logo-tile">Shin &amp; Kim</div><div class="logo-tile">EUMC</div><div class="logo-tile">Ministry of National Defense</div><div class="logo-tile">AWS Marketplace</div></div>
+      <div class="logo-marquee"><div class="logo-tile"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-deutsche-telekom.avif" alt="Deutsche Telekom" loading="lazy"></div><div class="logo-tile"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-sktelecom.avif" alt="SK Telecom" loading="lazy"></div><div class="logo-tile"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-claroty.png" alt="Claroty" loading="lazy"></div><div class="logo-tile">IBK</div><div class="logo-tile">DB Insurance</div><div class="logo-tile">Shin &amp; Kim</div><div class="logo-tile"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-eumc.avif" alt="EUMC" loading="lazy"></div><div class="logo-tile"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-korea%20army.avif" alt="Ministry of National Defense" loading="lazy"></div><div class="logo-tile">AWS Marketplace</div><div class="logo-tile"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-deutsche-telekom.avif" alt="Deutsche Telekom" loading="lazy"></div><div class="logo-tile"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-sktelecom.avif" alt="SK Telecom" loading="lazy"></div><div class="logo-tile"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-claroty.png" alt="Claroty" loading="lazy"></div><div class="logo-tile">IBK</div><div class="logo-tile">DB Insurance</div><div class="logo-tile">Shin &amp; Kim</div><div class="logo-tile"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-eumc.avif" alt="EUMC" loading="lazy"></div><div class="logo-tile"><img src="https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/partner-korea%20army.avif" alt="Ministry of National Defense" loading="lazy"></div><div class="logo-tile">AWS Marketplace</div></div>
     </div>
   </div>
 </div>

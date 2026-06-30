@@ -1,10 +1,17 @@
 import { addPropertyControls, ControlType } from "framer"
 import { useLocaleInfo } from "framer"
 
-const LOGOS = [
-  "Deutsche Telekom", "SK Telecom", "Claroty", "IBK",
-  "DB Insurance", "Shin & Kim", "EUMC",
-  "Ministry of National Defense", "AWS Marketplace",
+const IMG_BASE = "https://bgyoo-gif.github.io/homepage-factory/cubig/reference/images/"
+const LOGOS: Array<{name: string, img?: string}> = [
+  { name: "Deutsche Telekom", img: "partner-deutsche-telekom.avif" },
+  { name: "SK Telecom", img: "partner-sktelecom.avif" },
+  { name: "Claroty", img: "partner-claroty.png" },
+  { name: "IBK" },
+  { name: "DB Insurance" },
+  { name: "Shin & Kim" },
+  { name: "EUMC", img: "partner-eumc.avif" },
+  { name: "Ministry of National Defense", img: "partner-korea%20army.avif" },
+  { name: "AWS Marketplace" },
 ]
 
 const TRANSLATIONS: Record<string, Record<string, string>> = {
@@ -21,13 +28,6 @@ const TRANSLATIONS: Record<string, Record<string, string>> = {
     animRejects: "model rejects it",
     animCapsule: "LLM Capsule",
     animRuns: "model runs",
-    navData: "What it handles",
-    navProduct: "Product",
-    navArch: "Architecture",
-    navSolutions: "Solutions",
-    navFaq: "FAQ",
-    navMkt: "AWS Marketplace",
-    navDemo: "Request a Demo",
   },
   ko: {
     heroEyebrow: "AI 파일럿이 멈춤 이유는 딱 하나입니다: 데이터가 나갈 수 없습니다",
@@ -42,13 +42,6 @@ const TRANSLATIONS: Record<string, Record<string, string>> = {
     animRejects: "모델이 거부함",
     animCapsule: "LLM Capsule",
     animRuns: "모델이 실행됨",
-    navData: "처리 데이터",
-    navProduct: "제품",
-    navArch: "아키텍처",
-    navSolutions: "솔루션",
-    navFaq: "FAQ",
-    navMkt: "AWS Marketplace",
-    navDemo: "데모 요청",
   },
   de: {
     heroEyebrow: "Ihr KI-Pilotprojekt steckt fest — aus einem Grund: Die Daten dürfen nicht raus",
@@ -63,13 +56,6 @@ const TRANSLATIONS: Record<string, Record<string, string>> = {
     animRejects: "Modell lehnt ab",
     animCapsule: "LLM Capsule",
     animRuns: "Modell läuft",
-    navData: "Datentypen",
-    navProduct: "Produkt",
-    navArch: "Architektur",
-    navSolutions: "Lösungen",
-    navFaq: "FAQ",
-    navMkt: "AWS Marketplace",
-    navDemo: "Demo anfordern",
   },
 }
 
@@ -121,14 +107,6 @@ export default function HomeV3Part1_HeroTrust({
   const _animRejects = T.animRejects || TRANSLATIONS.en.animRejects
   const _animCapsule = T.animCapsule || TRANSLATIONS.en.animCapsule
   const _animRuns = T.animRuns || TRANSLATIONS.en.animRuns
-  const _navData = T.navData || TRANSLATIONS.en.navData
-  const _navProd = T.navProduct || TRANSLATIONS.en.navProduct
-  const _navArch = T.navArch || TRANSLATIONS.en.navArch
-  const _navSol = T.navSolutions || TRANSLATIONS.en.navSolutions
-  const _navFaq = T.navFaq || TRANSLATIONS.en.navFaq
-  const _navMkt = T.navMkt || TRANSLATIONS.en.navMkt
-  const _navDemo = T.navDemo || TRANSLATIONS.en.navDemo
-
   const renderLead = (text: string) => {
     const code = "node=████"
     const idx = text.indexOf(code)
@@ -150,16 +128,6 @@ export default function HomeV3Part1_HeroTrust({
         .p1-root *{box-sizing:border-box;margin:0;padding:0}
         .p1-root a{color:inherit;text-decoration:none}
         .p1-wrap{max-width:1280px;margin:0 auto;padding:0 28px}
-
-        .p1-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);border-bottom:1px solid #e5e7eb}
-        .p1-nav-in{display:flex;align-items:center;justify-content:space-between;height:66px;max-width:1280px;margin:0 auto;padding:0 28px}
-        .p1-logo{font-weight:800;font-size:18px;font-family:'Inter',sans-serif;color:#0f1130}
-        .p1-logo b{color:#5b4fe9}
-        .p1-nav-links{display:flex;gap:24px;font-size:14.5px;color:#3a3d5e;font-weight:500;font-family:'Inter',sans-serif}
-        .p1-nav-links a:hover{color:#0f1130}
-        .p1-nav-cta{display:flex;gap:10px;align-items:center}
-        .p1-nav-cta .p1-btn{padding:9px 16px;font-size:14px}
-        @container p1 (max-width:880px){.p1-nav-links{display:none}.p1-nav-cta .p1-btn-ghost{display:none}}
 
         .p1-btn{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;padding:14px 26px;border-radius:999px;transition:transform .2s,background .2s,border-color .2s,color .2s;font-family:'Inter',sans-serif;text-decoration:none;color:inherit}
         .p1-btn-primary{background:#5b4fe9;color:#fff;box-shadow:0 4px 6px rgba(15,17,48,.04),0 12px 32px rgba(15,17,48,.10)}
@@ -230,27 +198,12 @@ export default function HomeV3Part1_HeroTrust({
         .p1-marquee:hover{animation-play-state:paused}
         @keyframes p1LogoScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
         .p1-tile{flex:0 0 auto;width:132px;height:132px;border:1px solid #e5e7eb;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;font-weight:700;color:#6b7280;font-size:13px;line-height:1.35;box-shadow:0 1px 2px rgba(15,17,48,.04);font-family:'Inter',sans-serif}
+        .p1-tile img{max-width:96px;max-height:72px;object-fit:contain;filter:grayscale(1) opacity(.55);transition:filter .3s}
+        .p1-tile:hover img{filter:grayscale(0) opacity(1)}
         @media(prefers-reduced-motion:reduce){.p1-marquee{animation:none;flex-wrap:wrap;width:auto;justify-content:center}}
         :focus-visible{outline:2px solid #5b4fe9;outline-offset:2px}
       `}</style>
       <div className="p1-root">
-        <nav className="p1-nav">
-          <div className="p1-nav-in">
-            <div className="p1-logo">LLM <b>Capsule</b></div>
-            <div className="p1-nav-links">
-              <a href="#data">{_navData}</a>
-              <a href="#capabilities">{_navProd}</a>
-              <a href="#architecture">{_navArch}</a>
-              <a href="#usecase">{_navSol}</a>
-              <a href="#faq">{_navFaq}</a>
-            </div>
-            <div className="p1-nav-cta">
-              <a className="p1-btn p1-btn-ghost" href="#">{_navMkt}</a>
-              <a className="p1-btn p1-btn-primary" href={ctaPrimaryHref}>{_navDemo}</a>
-            </div>
-          </div>
-        </nav>
-
         <header className="p1-hero">
           <div className="p1-wrap p1-hero-grid">
             <div>
@@ -286,8 +239,12 @@ export default function HomeV3Part1_HeroTrust({
             <div className="p1-ind">{_trustInd} <b>{_trustBold}</b></div>
             <div className="p1-marquee-wrap">
               <div className="p1-marquee">
-                {[...LOGOS, ...LOGOS].map((name, i) => (
-                  <div key={i} className="p1-tile">{name}</div>
+                {[...LOGOS, ...LOGOS].map((logo, i) => (
+                  <div key={i} className="p1-tile">
+                    {logo.img
+                      ? <img src={`${IMG_BASE}${logo.img}`} alt={logo.name} loading="lazy"/>
+                      : logo.name}
+                  </div>
                 ))}
               </div>
             </div>
