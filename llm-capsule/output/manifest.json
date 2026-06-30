@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-06-30 14:48:05",
+  "generated": "2026-06-30 15:24:00",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -54,6 +54,31 @@
         }
       ],
       "tsx": [
+        {
+          "name": "HomeV3Part1_HeroTrust.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/home-v3/HomeV3Part1_HeroTrust.tsx",
+          "modified": "2026-06-30"
+        },
+        {
+          "name": "HomeV3Part2_Architecture.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/home-v3/HomeV3Part2_Architecture.tsx",
+          "modified": "2026-06-30"
+        },
+        {
+          "name": "HomeV3Part3_ArchDetail.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/home-v3/HomeV3Part3_ArchDetail.tsx",
+          "modified": "2026-06-30"
+        },
+        {
+          "name": "HomeV3Part4_Capabilities.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/home-v3/HomeV3Part4_Capabilities.tsx",
+          "modified": "2026-06-30"
+        },
+        {
+          "name": "HomeV3Part5_DataProofCTA.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/home-v3/HomeV3Part5_DataProofCTA.tsx",
+          "modified": "2026-06-30"
+        },
         {
           "name": "Section01_Hero.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/home-v62/tsx/Section01_Hero.tsx",
