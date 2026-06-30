@@ -177,7 +177,6 @@ const TRANSLATIONS: Record<string, Record<string, string>> = {
     ansEyebrow: "Straight answers", ansTitle: "The questions people ask before they trust this",
     faqEyebrow: "FAQ", faqTitle: "Frequently asked questions",
     ctaTitle: "Bring one workflow that can't send its data raw.", ctaDesc: "A log, PDF, topology graph, ticket, runbook or config that can't go raw into an LLM. We'll show what stays inside, what the model works on, and how the result comes back usable.", ctaPrimaryLabel: "Request a Demo", ctaGhost1Label: "See how it works", ctaGhost2Label: "View Pricing",
-    footerTagline: "Context-preserving data layer for AI workflows · CUBIG",
   },
   ko: {
     dtEyebrow: "구축 대상", dtTitle: "PII만이 아닙니다. 실제 업무가 의존하는 운영 레코드입니다.", dtDesc: "일반적인 PII 탐지기는 이름과 번호만 찾습니다. AI를 막는 데이터는 로그, 설정, 토폴로지, 계약서입니다. Capsule은 실제 값을 내부에 유지하면서 이 모든 것을 AI가 사용할 수 있게 합니다.",
@@ -187,7 +186,6 @@ const TRANSLATIONS: Record<string, Record<string, string>> = {
     ansEyebrow: "명확한 답변", ansTitle: "신뢰하기 전에 사람들이 묻는 질문",
     faqEyebrow: "FAQ", faqTitle: "자주 묻는 질문",
     ctaTitle: "원본 데이터를 그대로 보낼 수 없는 워크플로우 하나를 가져오세요.", ctaDesc: "LLM에 원본 그대로 넣을 수 없는 로그, PDF, 토폴로지 그래프, 티켓, 런북 또는 설정. 무엇이 내부에 유지되는지, 모델이 무엇으로 작업하는지, 결과가 어떻게 사용 가능하게 돌아오는지 보여드립니다.", ctaPrimaryLabel: "데모 요청", ctaGhost1Label: "작동 방식 보기", ctaGhost2Label: "가격 보기",
-    footerTagline: "AI 워크플로우를 위한 컨텍스트 보존 데이터 레이어 · CUBIG",
   },
   de: {
     dtEyebrow: "Wofür es gebaut ist", dtTitle: "Nicht nur PII. Die Betriebsdatensätze, auf denen Ihre Arbeit tatsächlich läuft.", dtDesc: "Ein generischer PII-Detektor sucht nach Namen und Nummern. Die Daten, die Ihre KI blockieren, sind Logs, Konfigurationen, Topologie und Verträge. Capsule hält all diese für die KI nutzbar, während die echten Werte drinnen bleiben.",
@@ -197,7 +195,6 @@ const TRANSLATIONS: Record<string, Record<string, string>> = {
     ansEyebrow: "Klare Antworten", ansTitle: "Die Fragen, die Menschen stellen, bevor sie vertrauen",
     faqEyebrow: "FAQ", faqTitle: "Häufig gestellte Fragen",
     ctaTitle: "Bringen Sie einen Workflow, dessen Daten nicht roh gesendet werden können.", ctaDesc: "Ein Log, PDF, Topologiegraph, Ticket, Runbook oder eine Konfiguration, die nicht roh in ein LLM eingehen kann. Wir zeigen, was drinnen bleibt, womit das Modell arbeitet, und wie das Ergebnis nutzbar zurückkommt.", ctaPrimaryLabel: "Demo anfragen", ctaGhost1Label: "So funktioniert es", ctaGhost2Label: "Preise ansehen",
-    footerTagline: "Kontexterhaltende Datenschicht für KI-Workflows · CUBIG",
   },
 }
 
@@ -212,12 +209,12 @@ interface Props {
   ctaPrimaryLabel?: string; ctaPrimaryHref?: string
   ctaGhost1Label?: string; ctaGhost1Href?: string
   ctaGhost2Label?: string; ctaGhost2Href?: string
-  footerTagline?: string
+  ctaImage?: string
   locale?: string
 }
 
 export default function HomeV3Part5_DataProofCTA(props: Props) {
-  const { locale = "en", ctaPrimaryHref = "/request-a-demo", ctaGhost1Href = "#architecture", ctaGhost2Href = "/pricing" } = props
+  const { locale = "en", ctaPrimaryHref = "/request-a-demo", ctaGhost1Href = "#architecture", ctaGhost2Href = "/pricing", ctaImage = "" } = props
   const { activeLocale } = useLocaleInfo()
   const eff = (activeLocale as any)?.slug || locale || "en"
   const isNonEn = eff !== "en"
@@ -328,11 +325,9 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
         .p5-btn-ghost{background-color:transparent;border:1px solid #d1d5db;color:#0f1130}
         .p5-btn-ghost:hover{border-color:#5b4fe9;color:#5b4fe9}
 
-        /* Footer */
-        .p5-footer{border-top:1px solid #e5e7eb;padding:40px 0;font-size:13px;color:#6b7280;font-family:'Inter',sans-serif}
-        .p5-foot-grid{display:flex;justify-content:space-between;max-width:1280px;margin:0 auto;padding:0 28px}
-        .p5-logo{font-size:16px;font-weight:400;color:#0f1130}
-        .p5-logo b{font-weight:700}
+        /* CTA image */
+        .p5-cta-img{margin-top:32px;border-radius:14px;overflow:hidden;max-width:680px;margin-left:auto;margin-right:auto}
+        .p5-cta-img img{width:100%;height:auto;display:block;border-radius:14px}
 
         @container p5 (max-width:820px){
           .p5-dt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -341,7 +336,6 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
           .p5-ho-row{flex-direction:column;align-items:center}
           .p5-arrow{transform:rotate(90deg)}
           .p5-ans-grid{grid-template-columns:1fr}
-          .p5-foot-grid{flex-direction:column;gap:20px}
         }
         @container p5 (max-width:520px){
           .p5-dt-grid{grid-template-columns:1fr}
@@ -492,25 +486,14 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
                 <a className="p5-btn p5-btn-ghost" href={ctaGhost1Href}>{r(props.ctaGhost1Label, "ctaGhost1Label")}</a>
                 <a className="p5-btn p5-btn-ghost" href={ctaGhost2Href}>{r(props.ctaGhost2Label, "ctaGhost2Label")}</a>
               </div>
+              {ctaImage && (
+                <div className="p5-cta-img">
+                  <img src={ctaImage} alt="" loading="lazy"/>
+                </div>
+              )}
             </div>
           </div>
         </section>
-
-        {/* FOOTER */}
-        <footer className="p5-footer">
-          <div className="p5-foot-grid">
-            <div>
-              <div className="p5-logo">LLM <b>Capsule</b></div>
-              <div style={{ marginTop: 8 }}>{r(props.footerTagline, "footerTagline")}</div>
-            </div>
-            <div>
-              <b style={{ color: "#0f1130" }}>CUBIG LTD (United Kingdom)</b><br/>
-              Company Number: NI735459<br/>
-              21 Arthur Street, Belfast, Antrim, BT1 4GA<br/>
-              Email: contact@cubig.ai
-            </div>
-          </div>
-        </footer>
       </div>
     </>
   )
@@ -542,6 +525,6 @@ addPropertyControls(HomeV3Part5_DataProofCTA, {
   ctaGhost1Href:   { type: ControlType.String, title: "CTA Href 1",  defaultValue: "#architecture" },
   ctaGhost2Label:  { type: ControlType.String, title: "CTA Ghost 2", defaultValue: "View Pricing" },
   ctaGhost2Href:   { type: ControlType.String, title: "CTA Href 2",  defaultValue: "/pricing" },
-  footerTagline:   { type: ControlType.String, title: "Footer",      defaultValue: "Context-preserving data layer for AI workflows · CUBIG" },
+  ctaImage:        { type: ControlType.Image, title: "CTA Image" },
   locale:      { type: ControlType.Enum, title: "Locale", options: ["en", "ko", "de"], optionTitles: ["English", "한국어", "Deutsch"], defaultValue: "en" },
 })
