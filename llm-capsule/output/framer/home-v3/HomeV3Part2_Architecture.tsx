@@ -208,7 +208,7 @@ export default function HomeV3Part2_Architecture({
         .p2-eye::before{content:"";width:6px;height:6px;border-radius:50%;background:#0ea5a4;flex:0 0 auto}
         .p2-sec-head{max-width:720px}
         .p2-h2{font-size:clamp(28px,3.9vw,46px);line-height:1.12;font-weight:700;letter-spacing:-.03em;color:#fff;max-width:800px;margin-top:10px;font-family:'Inter',sans-serif}
-        .p2-sub{margin-top:14px;font-size:17px;color:rgba(255,255,255,.70);max-width:680px;font-family:'Inter',sans-serif;line-height:1.62}
+        .p2-sub{margin-top:14px;font-size:17px;color:rgba(255,255,255,.70);max-width:720px;font-family:'Inter',sans-serif;line-height:1.62}
         @container p2 (max-width:640px){.p2-bk{display:none}}
 
         .p2-rt2{max-width:1100px;margin:14px 0 0}

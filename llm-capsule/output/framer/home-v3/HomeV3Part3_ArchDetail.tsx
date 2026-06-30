@@ -95,7 +95,7 @@ export default function HomeV3Part3_ArchDetail({
         .p3-eye{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:999px;background:#0f1130;color:#fff;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-family:'Inter',sans-serif}
         .p3-eye::before{content:"";width:6px;height:6px;border-radius:50%;background:#0ea5a4;flex:0 0 auto}
         .p3-h3{font-size:21px;font-weight:700;letter-spacing:-.02em;margin-top:14px;font-family:'Inter',sans-serif;color:#0f1130}
-        .p3-sub{margin-top:10px;font-size:17px;color:#3a3d5e;max-width:680px;font-family:'Inter',sans-serif;line-height:1.62}
+        .p3-sub{margin-top:10px;font-size:17px;color:#3a3d5e;max-width:720px;font-family:'Inter',sans-serif;line-height:1.62}
         .p3-arch{margin-top:28px;border:1px solid #e5e7eb;border-radius:16px;padding:8px;background:#f7f8fb;max-width:1100px}
         .p3-arch svg{width:100%;height:auto;display:block}
         .p3-cmp{width:100%;border-collapse:separate;border-spacing:0;margin-top:24px;font-size:14px;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;max-width:1100px;font-family:'Inter',sans-serif}

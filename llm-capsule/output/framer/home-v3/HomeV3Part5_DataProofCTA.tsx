@@ -258,8 +258,9 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
         .p5-eye{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:999px;background:#0f1130;color:#fff;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-family:'Inter',sans-serif}
         .p5-eye::before{content:"";width:6px;height:6px;border-radius:50%;background:#0ea5a4;flex:0 0 auto}
         .p5-h2{font-size:clamp(28px,3.9vw,46px);line-height:1.12;font-weight:700;letter-spacing:-.03em;margin-top:10px;max-width:800px;font-family:'Inter',sans-serif;color:#0f1130}
-        .p5-sub{margin-top:14px;font-size:17px;color:#3a3d5e;max-width:680px;font-family:'Inter',sans-serif;line-height:1.62}
+        .p5-sub{margin-top:14px;font-size:17px;color:#3a3d5e;max-width:720px;font-family:'Inter',sans-serif;line-height:1.62}
         .p5-code{font-family:ui-monospace,monospace;background:#f7f8fb;padding:1px 5px;border-radius:4px;font-size:inherit}
+        .p5-sec-head{max-width:720px}
 
         /* Data types dark */
         .p5-dark{border-top:0;color:#fff;background:radial-gradient(900px 440px at 26% -4%,rgba(14,165,164,.10),transparent 60%),radial-gradient(1000px 560px at 82% 16%,rgba(91,79,233,.24),transparent 60%),linear-gradient(180deg,#0f1130,#0f1130)}
@@ -348,7 +349,7 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
         {/* DATA TYPES — dark */}
         <section className="p5-section p5-dark" id="data">
           <div className="p5-wrap">
-            <div>
+            <div className="p5-sec-head">
               <span className="p5-eye">{r(props.dtEyebrow, "dtEyebrow")}</span>
               <h2 className="p5-h2">{r(props.dtTitle, "dtTitle")}</h2>
               <p className="p5-sub">{r(props.dtDesc, "dtDesc")}</p>
@@ -368,7 +369,7 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
         {/* PROOF */}
         <section className="p5-section" id="proof">
           <div className="p5-wrap">
-            <div>
+            <div className="p5-sec-head">
               <span className="p5-eye">{r(props.proofEyebrow, "proofEyebrow")}</span>
               <h2 className="p5-h2">{r(props.proofTitle, "proofTitle")}</h2>
             </div>
@@ -397,7 +398,7 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
         {/* USE CASES */}
         <section className="p5-section" id="usecase">
           <div className="p5-wrap">
-            <div>
+            <div className="p5-sec-head">
               <span className="p5-eye">{r(props.ucEyebrow, "ucEyebrow")}</span>
               <h2 className="p5-h2">{r(props.ucTitle, "ucTitle")}</h2>
               <p className="p5-sub">{r(props.ucDesc, "ucDesc")}</p>
@@ -444,7 +445,7 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
         {/* ANSWERS */}
         <section className="p5-section p5-ans-bg" id="answers">
           <div className="p5-wrap">
-            <div>
+            <div className="p5-sec-head">
               <span className="p5-eye">{r(props.ansEyebrow, "ansEyebrow")}</span>
               <h2 className="p5-h2">{r(props.ansTitle, "ansTitle")}</h2>
             </div>
@@ -462,7 +463,7 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
         {/* FAQ */}
         <section className="p5-section" id="faq">
           <div className="p5-wrap">
-            <div>
+            <div className="p5-sec-head">
               <span className="p5-eye">{r(props.faqEyebrow, "faqEyebrow")}</span>
               <h2 className="p5-h2">{r(props.faqTitle, "faqTitle")}</h2>
             </div>
