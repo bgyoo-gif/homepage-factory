@@ -253,7 +253,7 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
         .p5-root{container-type:inline-size;container-name:p5;width:100%;word-break:keep-all;overflow-wrap:break-word}
         .p5-root *{box-sizing:border-box;margin:0;padding:0}
-        .p5-section{padding:92px 0}
+        .p5-section{padding:92px 0;border-top:1px solid #e5e7eb}
         .p5-wrap{max-width:1280px;margin:0 auto;padding:0 28px}
         .p5-eye{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:999px;background:#0f1130;color:#fff;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-family:'Inter',sans-serif}
         .p5-eye::before{content:"";width:6px;height:6px;border-radius:50%;background:#0ea5a4;flex:0 0 auto}
@@ -262,11 +262,11 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
         .p5-code{font-family:ui-monospace,monospace;background:#f7f8fb;padding:1px 5px;border-radius:4px;font-size:inherit}
 
         /* Data types dark */
-        .p5-dark{background-color:#0f1130;color:#fff}
-        .p5-dark .p5-eye{background:rgba(255,255,255,.08)}
+        .p5-dark{border-top:0;color:#fff;background:radial-gradient(900px 440px at 26% -4%,rgba(14,165,164,.10),transparent 60%),radial-gradient(1000px 560px at 82% 16%,rgba(91,79,233,.24),transparent 60%),linear-gradient(180deg,#0f1130,#0f1130)}
+        .p5-dark .p5-eye{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16)}
         .p5-dark .p5-h2{color:#fff}
         .p5-dark .p5-sub{color:#9a93a8}
-        .p5-dt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px}
+        .p5-dt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px;max-width:1100px}
         .p5-dt{border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px;background:rgba(255,255,255,.04);transition:.15s}
         .p5-dt:hover{border-color:rgba(91,79,233,.7);box-shadow:0 10px 30px -18px rgba(0,0,0,.7)}
         .p5-dt-ic{width:34px;height:34px;border-radius:9px;background:rgba(91,79,233,.28);display:flex;align-items:center;justify-content:center;color:#c8c0f5;margin-bottom:11px}
@@ -275,13 +275,13 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
         .p5-dt-ex{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:rgba(255,255,255,.6);margin-top:6px}
 
         /* Proof */
-        .p5-ring-row{display:flex;justify-content:space-between;max-width:1040px;margin:34px auto 0;align-items:flex-start;flex-wrap:wrap}
+        .p5-ring-row{display:flex;gap:24px;justify-content:space-between;max-width:1040px;margin:34px auto 0;align-items:flex-start;flex-wrap:wrap}
         .p5-ring{text-align:center;width:124px}
         .p5-ring-lbl{margin-top:6px;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#6b7280;font-family:'Inter',sans-serif}
-        .p5-foot{margin-top:24px;font-size:13px;color:#6b7280;max-width:760px;font-family:'Inter',sans-serif;line-height:1.6}
+        .p5-foot{margin-top:26px;font-size:13.5px;color:#3a3d5e;max-width:760px;font-family:'Inter',sans-serif;line-height:1.7}
 
         /* Use cases */
-        .p5-ind-grid{display:grid;grid-template-columns:repeat(2,minmax(280px,1fr));gap:16px;margin-top:24px}
+        .p5-ind-grid{display:grid;grid-template-columns:repeat(2,minmax(280px,1fr));gap:16px;margin-top:24px;max-width:1100px}
         .p5-ind{padding:20px;border:1px solid #e5e7eb;border-radius:14px;background:#fff}
         .p5-ind-t{display:flex;align-items:baseline;gap:9px}
         .p5-ind-n{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#5b4fe9}
@@ -320,9 +320,10 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
         .p5-final h2{font-size:36px;font-weight:700;letter-spacing:-.03em;font-family:'Inter',sans-serif;color:#fff;max-width:760px;margin-left:auto;margin-right:auto}
         .p5-final>p{margin:16px auto 0;max-width:640px;color:#9d95f5;font-size:16px;font-family:'Inter',sans-serif;line-height:1.62}
         .p5-cta-row{display:flex;gap:12px;margin-top:28px;justify-content:center;flex-wrap:wrap}
-        .p5-btn{display:inline-flex;align-items:center;padding:12px 26px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;font-family:'Inter',sans-serif;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+        .p5-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-size:15px;font-weight:600;text-decoration:none;font-family:'Inter',sans-serif;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,color .2s}
         .p5-btn-primary{background-color:#5b4fe9;color:#fff;box-shadow:0 4px 6px rgba(15,17,48,.04),0 12px 32px rgba(15,17,48,.10)}
-        .p5-btn-primary:hover{background-color:#3b2fbf}
+        .p5-btn-primary:hover{background-color:#3b2fbf;transform:translateY(-2px)}
+        .p5-btn-primary::after{content:"\\2192";font-weight:400}
         .p5-btn-ghost{background-color:transparent;border:1px solid #1b1d4a;color:#fff}
         .p5-btn-ghost:hover{border-color:#fff;color:#fff}
 
@@ -394,7 +395,7 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
         </section>
 
         {/* USE CASES */}
-        <section className="p5-section" id="usecase" style={{ borderTop: "1px solid #e5e7eb" }}>
+        <section className="p5-section" id="usecase">
           <div className="p5-wrap">
             <div>
               <span className="p5-eye">{r(props.ucEyebrow, "ucEyebrow")}</span>
@@ -459,7 +460,7 @@ export default function HomeV3Part5_DataProofCTA(props: Props) {
         </section>
 
         {/* FAQ */}
-        <section className="p5-section" id="faq" style={{ borderTop: "1px solid #e5e7eb" }}>
+        <section className="p5-section" id="faq">
           <div className="p5-wrap">
             <div>
               <span className="p5-eye">{r(props.faqEyebrow, "faqEyebrow")}</span>
