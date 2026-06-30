@@ -193,9 +193,9 @@
   .a-id{animation:hmId 8s ease-in-out infinite}
   .a-cross{animation:hmCross 8s ease-in-out infinite}
   .a-end{animation:hmEnd 8s ease-in-out infinite}
-  @keyframes hmId{0%,3%{left:24px;opacity:0}9%{opacity:1}22%{left:32%;opacity:1}27%{left:34%;opacity:0}100%{opacity:0}}
-  @keyframes hmCross{0%,24%{left:32%;opacity:0;transform:scale(.9)}29%{opacity:1;transform:scale(1)}46%{left:62%;opacity:1}56%{left:62%;opacity:1}70%{left:32%;opacity:1}75%{left:30%;opacity:0;transform:scale(.9)}100%{opacity:0}}
-  @keyframes hmEnd{0%,74%{left:24px;opacity:0}80%{opacity:1}95%{opacity:1}100%{opacity:0}}
+  @keyframes hmId{0%,3%{left:24px;opacity:0}9%{left:24px;opacity:1}22%{left:32%;opacity:1}27%{left:34%;opacity:0}100%{left:34%;opacity:0}}
+  @keyframes hmCross{0%,24%{left:32%;opacity:0;transform:scale(.9)}29%{left:32%;opacity:1;transform:scale(1)}46%{left:62%;opacity:1}56%{left:62%;opacity:1}70%{left:32%;opacity:1}75%{left:32%;opacity:0;transform:scale(.9)}100%{left:32%;opacity:0;transform:scale(.9)}}
+  @keyframes hmEnd{0%,74%{left:24px;opacity:0}80%{left:24px;opacity:1}95%{left:24px;opacity:1}100%{left:24px;opacity:0}}
   @keyframes hmFail{0%,46%{box-shadow:0 0 0 0 rgba(239,83,80,0);transform:translateX(0)}49%{transform:translateX(-3px)}51%{box-shadow:0 0 0 8px rgba(239,83,80,.3);transform:translateX(3px)}54%{transform:translateX(-2px)}57%{transform:translateX(0)}60%{box-shadow:0 0 0 0 rgba(239,83,80,0)}100%{box-shadow:0 0 0 0 rgba(239,83,80,0)}}
   @keyframes hmOk{0%,46%{box-shadow:0 0 0 0 rgba(157,149,245,0)}53%{box-shadow:0 0 0 9px rgba(91,79,233,.34)}60%{box-shadow:0 0 0 0 rgba(94,224,176,0)}100%{box-shadow:0 0 0 0 rgba(157,149,245,0)}}
   @keyframes hmDim{0%,46%{opacity:1}51%{opacity:.12}59%{opacity:.12}64%{opacity:1}100%{opacity:1}}
@@ -665,28 +665,28 @@
         <div class="ilab">Internal: Reconstruction</div>
       </div>
       <div class="viz">
-        <svg class="dgm" viewBox="0 0 360 184" role="img" aria-label="Masking ends in an unusable output; Capsule runs the round trip and reconstructs the real value.">
+        <svg class="dgm" viewBox="0 0 360 200" role="img" aria-label="Masking ends in an unusable output; Capsule runs the round trip and reconstructs the real value.">
           <text x="16" y="24" class="fs" font-family="var(--sans)" font-size="11" fill="#6b7280">Masking</text>
           <g font-family="ui-monospace,monospace" font-size="10.5">
             <rect x="16" y="32" width="50" height="26" rx="6" fill="#fff" stroke="#e5e7eb"/><text x="41" y="49" fill="#0f1130" text-anchor="middle">CKT-77</text>
             <text x="70" y="49" fill="#6b7280">&#8594;</text>
-            <rect x="82" y="32" width="44" height="26" rx="6" fill="#FBEEE8" stroke="#f3d8cb"/><text x="104" y="49" fill="#ef5350" text-anchor="middle">&#9608;&#9608;&#9608;</text>
+            <rect x="82" y="32" width="44" height="26" rx="6" fill="#fce9e8" stroke="#f3d8cb"/><text x="104" y="49" fill="#ef5350" text-anchor="middle">&#9608;&#9608;&#9608;</text>
             <text x="130" y="49" fill="#6b7280">&#8594;</text>
             <rect x="142" y="32" width="124" height="26" rx="6" fill="#fff" stroke="#f3d8cb"/><text x="204" y="49" fill="#ef5350" text-anchor="middle">can&#8217;t act on it &#10007;</text>
           </g>
           <line x1="16" y1="82" x2="344" y2="82" stroke="#e5e7eb" stroke-dasharray="3 3"/>
           <text x="16" y="106" font-family="var(--sans)" font-size="11" fill="#5b4fe9" font-weight="700">Capsule</text>
           <g font-family="ui-monospace,monospace" font-size="10">
-            <rect x="16" y="114" width="50" height="24" rx="6" fill="#fff" stroke="#e5e7eb"/><text x="41" y="130" fill="#0f1130" text-anchor="middle">CKT-77</text>
-            <text x="70" y="130" fill="#5b4fe9">&#8594;</text>
-            <rect x="80" y="114" width="128" height="24" rx="6" fill="#eeebfe" stroke="#d4d0f5"/><text x="144" y="130" fill="#5b4fe9" text-anchor="middle">&langle;capsule:circuit_1&rangle;</text>
-            <text x="213" y="130" fill="#5b4fe9">&#8594;</text>
-            <rect x="224" y="114" width="120" height="24" rx="6" fill="#0f1130"/><text x="284" y="130" fill="#5ee0b0" text-anchor="middle">RCA result</text>
+            <rect x="16" y="114" width="50" height="28" rx="6" fill="#fff" stroke="#e5e7eb"/><text x="41" y="132" fill="#0f1130" text-anchor="middle">CKT-77</text>
+            <text x="70" y="132" fill="#5b4fe9">&#8594;</text>
+            <rect x="80" y="114" width="128" height="28" rx="6" fill="#eeebfe" stroke="#d4d0f5"/><text x="144" y="132" fill="#5b4fe9" text-anchor="middle">&langle;capsule:circuit_1&rangle;</text>
+            <text x="213" y="132" fill="#5b4fe9">&#8594;</text>
+            <rect x="224" y="114" width="120" height="28" rx="6" fill="#0f1130"/><text x="284" y="132" fill="#5ee0b0" text-anchor="middle">RCA result</text>
           </g>
-          <path d="M280 142 Q160 150 58 156" fill="none" stroke="#0ea5a4" stroke-width="1.4" marker-end="url(#r1)"/>
+          <path d="M284 144 L284 160" fill="none" stroke="#0ea5a4" stroke-width="1.6" marker-end="url(#r1)"/>
           <defs><marker id="r1" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0ea5a4"/></marker></defs>
-          <rect x="16" y="158" width="150" height="22" rx="6" fill="#e6f7f6" stroke="#c4e6da"/><text x="91" y="173" font-family="ui-monospace,monospace" font-size="11" fill="#0ea5a4" text-anchor="middle">RCA for CKT-77 &#10003;</text>
-          <text x="176" y="173" font-family="var(--sans)" font-size="10" fill="#0ea5a4">reconstructed output</text>
+          <rect x="164" y="168" width="180" height="26" rx="6" fill="#e6f7f6" stroke="#c4e6da"/><text x="254" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#0ea5a4" text-anchor="middle">RCA for CKT-77 &#10003;</text>
+          <text x="16" y="185" font-family="var(--sans)" font-size="10" fill="#0ea5a4">reconstructed output &#8594;</text>
         </svg>
       </div>
     </div>
