@@ -128,12 +128,8 @@ export default function Section02_ResourceCards({
 
         .s2-grid {
           display: grid;
-          grid-template-columns: repeat(4, minmax(0, 1fr));
+          grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 20px;
-        }
-
-        @container (max-width: 1023px) {
-          .s2-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
 
         @container (max-width: 599px) {
