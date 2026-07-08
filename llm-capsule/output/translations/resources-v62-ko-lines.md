@@ -55,13 +55,13 @@ Visit Trust Center →
 트러스트 센터 방문하기 →
 
 FAQ · Contact · Trial support
-FAQ · 문의 · 체험판 지원
+FAQ · 문의 · 데모 지원
 
 Support
 지원
 
 Find answers about free trials, product usage, sensitive data handling, source uploads, account access, and enterprise adoption.
-무료 체험, 제품 사용법, 민감 데이터 처리, 소스 업로드, 계정 접근, 기업 도입에 관한 답변을 확인하세요.
+무료 데모, 제품 사용법, 민감 데이터 처리, 소스 업로드, 계정 접근, 기업 도입에 관한 답변을 확인하세요.
 
 Get support →
 지원 받기 →
