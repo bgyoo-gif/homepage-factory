@@ -54,6 +54,18 @@ Sicherheitszertifizierungen, regulatorische Konformitätsnachweise (DSGVO (GDPR)
 Visit Trust Center →
 Trust Center aufrufen →
 
+FAQ · Contact · Trial support
+FAQ · Kontakt · Testversion-Support
+
+Support
+Support
+
+Find answers about free trials, product usage, sensitive data handling, source uploads, account access, and enterprise adoption.
+Antworten zu kostenlosen Testversionen, Produktnutzung, Umgang mit sensiblen Daten, Quell-Uploads, Kontozugang und Unternehmenseinführung.
+
+Get support →
+Support aufrufen →
+
 ---
 
 ## Section 03: Featured Article
