@@ -1,7 +1,80 @@
 import { addPropertyControls, ControlType } from "framer"
-
+import { useLocaleInfo } from "framer"
 import { useEffect, useState } from "react"
+
+const TRANSLATIONS = {
+  en: {
+    card1Count: "8 articles · GEO-optimized",
+    card1Title: "Learn",
+    card1Desc: "In-depth articles on enterprise context-preserving data layer for AI — architecture patterns, industry deployment guides (telecom, healthcare, finance, defense), pilot-to-production playbooks, sovereign AI under GDPR / EU AI Act.",
+    card1LinkLabel: "Browse Learn articles →",
+    card1LinkHref: "#articles",
+    card2Count: "11 terms · Schema.org",
+    card2Title: "Glossary",
+    card2Desc: "Definitions of category and architectural concepts — context-preserving data layer for AI, structure-preserving encapsulation, two execution paths, sovereign AI, shadow AI, differential privacy. Each term with definition and cross-links.",
+    card2LinkLabel: "Browse Glossary terms →",
+    card2LinkHref: "#glossary",
+    card3Count: "12 certifications · Compliance",
+    card3Title: "Trust Center",
+    card3Desc: "Security certifications, compliance frameworks (GDPR / HIPAA / SOX / EU AI Act), audit documentation, DPA template, vendor security questionnaire. Everything compliance and security teams need for evaluation.",
+    card3LinkLabel: "Visit Trust Center →",
+    card3LinkHref: "/trust",
+    card4Count: "FAQ · Contact · Trial support",
+    card4Title: "Support",
+    card4Desc: "Find answers about free trials, product usage, sensitive data handling, source uploads, account access, and enterprise adoption.",
+    card4LinkLabel: "Get support →",
+    card4LinkHref: "/resources/support",
+  },
+  ko: {
+    card1Count: "아티클 8편 · GEO 최적화",
+    card1Title: "학습 자료",
+    card1Desc: "엔터프라이즈 AI 도입에 관한 심층 아티클 — 아키텍처 패턴, 산업별 배포 가이드(통신·의료·금융·국방), 파일럿-투-프로덕션 플레이북, GDPR/EU AI Act 기반 Sovereign AI.",
+    card1LinkLabel: "학습 아티클 둘러보기 →",
+    card1LinkHref: "#articles",
+    card2Count: "용어 11개 · Schema.org",
+    card2Title: "용어집",
+    card2Desc: "카테고리 및 아키텍처 개념 정의 — 데이터 레이어, 문서 구조 보존 캡슐화, 두 가지 실행 경로, Sovereign AI, Shadow AI, 차등 프라이버시. 각 용어에 정의와 연관 링크 포함.",
+    card2LinkLabel: "용어집 둘러보기 →",
+    card2LinkHref: "#glossary",
+    card3Count: "인증 12개 · 컴플라이언스",
+    card3Title: "트러스트 센터",
+    card3Desc: "보안 인증, 컴플라이언스 프레임워크(GDPR / HIPAA / SOX / EU AI Act), 감사 문서, DPA 템플릿, 벤더 보안 질문지. 컴플라이언스·보안 팀의 평가에 필요한 모든 자료를 제공합니다.",
+    card3LinkLabel: "트러스트 센터 방문하기 →",
+    card3LinkHref: "/trust",
+    card4Count: "FAQ · 문의 · 데모 지원",
+    card4Title: "지원",
+    card4Desc: "무료 데모, 제품 사용법, 민감 데이터 처리, 소스 업로드, 계정 접근, 기업 도입에 관한 답변을 확인하세요.",
+    card4LinkLabel: "지원 받기 →",
+    card4LinkHref: "/resources/support",
+  },
+  de: {
+    card1Count: "8 Artikel · GEO-optimiert",
+    card1Title: "Wissen",
+    card1Desc: "Technische Fachartikel zum KI-Einsatz im Unternehmen: Architekturmuster, branchenspezifische Deployment-Leitfäden (Telekommunikation, Gesundheitswesen, Finanzwesen, Verteidigung), Pilot-to-Production-Playbooks sowie Sovereign-AI-Strategien unter DSGVO (GDPR) und EU AI Act.",
+    card1LinkLabel: "Alle Artikel ansehen →",
+    card1LinkHref: "#articles",
+    card2Count: "11 Begriffe · Schema.org",
+    card2Title: "Glossar",
+    card2Desc: "Definitionen zentraler Kategorie- und Architekturkonzepte: Context-Preserving Data Layer for AI, strukturerhaltende Kapsulierung, zwei Ausführungspfade, Sovereign AI, Shadow AI, Differential Privacy. Jeder Begriff mit Erläuterung und Querverweisen.",
+    card2LinkLabel: "Alle Glossareinträge ansehen →",
+    card2LinkHref: "#glossary",
+    card3Count: "12 Zertifizierungen · Compliance",
+    card3Title: "Trust Center",
+    card3Desc: "Sicherheitszertifizierungen, regulatorische Konformitätsnachweise (DSGVO (GDPR) / HIPAA / SOX / EU AI Act), Prüfdokumentation, DPA-Vorlage sowie ein Fragebogen zur Lieferantensicherheit. Alle Unterlagen, die Compliance- und Sicherheitsteams für die Evaluierung benötigen.",
+    card3LinkLabel: "Trust Center aufrufen →",
+    card3LinkHref: "/trust",
+    card4Count: "FAQ · Kontakt · Demo-Support",
+    card4Title: "Support",
+    card4Desc: "Antworten zu kostenlosen Demos, Produktnutzung, Umgang mit sensiblen Daten, Quell-Uploads, Kontozugang und Unternehmenseinführung.",
+    card4LinkLabel: "Support aufrufen →",
+    card4LinkHref: "/resources/support",
+  },
+} as const
+
+type LKey = keyof typeof TRANSLATIONS.en
+
 interface Props {
+  locale?: string
   card1Count?: string
   card1Title?: string
   card1Desc?: string
@@ -32,72 +105,75 @@ const CARD_SVGS = [
 ]
 
 export default function Section02_ResourceCards({
-  card1Count = "8 articles · GEO-optimized",
-  card1Title = "Learn",
-  card1Desc = "In-depth articles on enterprise context-preserving data layer for AI — architecture patterns, industry deployment guides (telecom, healthcare, finance, defense), pilot-to-production playbooks, sovereign AI under GDPR / EU AI Act.",
-  card1LinkLabel = "Browse Learn articles →",
-  card1LinkHref = "#articles",
-  card2Count = "11 terms · Schema.org",
-  card2Title = "Glossary",
-  card2Desc = "Definitions of category and architectural concepts — context-preserving data layer for AI, structure-preserving encapsulation, two execution paths, sovereign AI, shadow AI, differential privacy. Each term with definition and cross-links.",
-  card2LinkLabel = "Browse Glossary terms →",
-  card2LinkHref = "#glossary",
-  card3Count = "12 certifications · Compliance",
-  card3Title = "Trust Center",
-  card3Desc = "Security certifications, compliance frameworks (GDPR / HIPAA / SOX / EU AI Act), audit documentation, DPA template, vendor security questionnaire. Everything compliance and security teams need for evaluation.",
-  card3LinkLabel = "Visit Trust Center →",
-  card3LinkHref = "/trust",
-  card4Count = "FAQ · Contact · Trial support",
-  card4Title = "Support",
-  card4Desc = "Find answers about free trials, product usage, sensitive data handling, source uploads, account access, and enterprise adoption.",
-  card4LinkLabel = "Get support →",
-  card4LinkHref = "/resources/support",
+  locale = "en",
+  card1Count = "",
+  card1Title = "",
+  card1Desc = "",
+  card1LinkLabel = "",
+  card1LinkHref = "",
+  card2Count = "",
+  card2Title = "",
+  card2Desc = "",
+  card2LinkLabel = "",
+  card2LinkHref = "",
+  card3Count = "",
+  card3Title = "",
+  card3Desc = "",
+  card3LinkLabel = "",
+  card3LinkHref = "",
+  card4Count = "",
+  card4Title = "",
+  card4Desc = "",
+  card4LinkLabel = "",
+  card4LinkHref = "",
 }: Props) {
-  const [localePrefix, setLocalePrefix] = useState<string>("")
-  useEffect(() => {
-    if (typeof window === "undefined") return
-    const m = window.location.pathname.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)(?:\/|$)/)
-    if (m) setLocalePrefix(`/${m[1]}`)
-  }, [])
+  const { activeLocale } = useLocaleInfo()
+  const framerLocale = (activeLocale as any)?.slug
+  const effectiveLocale = framerLocale || locale || "en"
+  const isNonEn = effectiveLocale !== "en"
+  const T = TRANSLATIONS[effectiveLocale as keyof typeof TRANSLATIONS] || TRANSLATIONS.en
+
+  const r = (prop: string, key: LKey) =>
+    isNonEn ? (T[key] || prop || TRANSLATIONS.en[key]) : (prop || T[key] || TRANSLATIONS.en[key])
 
   const cards = [
     {
       icon: CARD_SVGS[0],
-      count: card1Count,
-      title: card1Title,
-      desc: card1Desc,
-      linkLabel: card1LinkLabel,
-      linkHref: card1LinkHref,
+      count: r(card1Count, "card1Count"),
+      title: r(card1Title, "card1Title"),
+      desc: r(card1Desc, "card1Desc"),
+      linkLabel: r(card1LinkLabel, "card1LinkLabel"),
+      linkHref: r(card1LinkHref, "card1LinkHref"),
       iconVariant: "primary",
       highlight: false,
     },
     {
       icon: CARD_SVGS[1],
-      count: card2Count,
-      title: card2Title,
-      desc: card2Desc,
-      linkLabel: card2LinkLabel,
-      linkHref: card2LinkHref,
+      count: r(card2Count, "card2Count"),
+      title: r(card2Title, "card2Title"),
+      desc: r(card2Desc, "card2Desc"),
+      linkLabel: r(card2LinkLabel, "card2LinkLabel"),
+      linkHref: r(card2LinkHref, "card2LinkHref"),
       iconVariant: "teal",
       highlight: false,
     },
     {
       icon: CARD_SVGS[2],
-      count: card3Count,
-      title: card3Title,
-      desc: card3Desc,
-      linkLabel: card3LinkLabel,
-      linkHref: card3LinkHref,
+      count: r(card3Count, "card3Count"),
+      title: r(card3Title, "card3Title"),
+      desc: r(card3Desc, "card3Desc"),
+      linkLabel: r(card3LinkLabel, "card3LinkLabel"),
+      linkHref: r(card3LinkHref, "card3LinkHref"),
       iconVariant: "muted",
       highlight: false,
     },
     {
       icon: CARD_SVGS[3],
-      count: card4Count,
-      title: card4Title,
-      desc: card4Desc,
-      linkLabel: card4LinkLabel,
-      linkHref: card4LinkHref,
+      count: r(card4Count, "card4Count"),
+      title: r(card4Title, "card4Title"),
+      desc: r(card4Desc, "card4Desc"),
+      linkLabel: r(card4LinkLabel, "card4LinkLabel"),
+      linkHref: r(card4LinkHref, "card4LinkHref"),
       iconVariant: "teal",
       highlight: true,
     },
@@ -226,7 +302,7 @@ export default function Section02_ResourceCards({
                   <span className="s2-count">{card.count}</span>
                   <h2 className="s2-card-title">{card.title}</h2>
                   <p className="s2-card-desc">{card.desc}</p>
-                  <a href={`${localePrefix}${card.linkHref}`} className="s2-card-link">{card.linkLabel}</a>
+                  <a href={card.linkHref} className="s2-card-link">{card.linkLabel}</a>
                 </article>
               ))}
             </div>
@@ -238,6 +314,13 @@ export default function Section02_ResourceCards({
 }
 
 addPropertyControls(Section02_ResourceCards, {
+  locale: {
+    type: ControlType.Enum,
+    title: "Locale",
+    defaultValue: "en",
+    options: ["en", "ko", "de"],
+    optionTitles: ["English", "한국어", "Deutsch"],
+  },
   card1Count:      { type: ControlType.String, title: "Card 1 Count",     defaultValue: "8 articles · GEO-optimized" },
   card1Title:      { type: ControlType.String, title: "Card 1 Title",     defaultValue: "Learn" },
   card1Desc:       { type: ControlType.String, title: "Card 1 Desc",      defaultValue: "In-depth articles on enterprise context-preserving data layer for AI — architecture patterns, industry deployment guides (telecom, healthcare, finance, defense), pilot-to-production playbooks, sovereign AI under GDPR / EU AI Act.", displayTextArea: true },
