@@ -59,8 +59,8 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     heroSub: "Considering LLM Capsule for your organization? From free trials to how we handle sensitive data, we have compiled the most frequently asked questions before deployment. For anything else, reach out by email anytime.",
     heroBtnEmailLabel: "Email Us",
     heroBtnEmailHref: "mailto:contact@cubig.ai",
-    heroBtnProductLabel: "Visit Product",
-    heroBtnProductHref: "/product",
+    heroBtnProductLabel: "Request a Demo",
+    heroBtnProductHref: "/request-a-demo",
 
     faqTitlePre: "Frequently Asked",
     faqTitleHighlight: "Questions",
@@ -108,8 +108,8 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     heroSub: "LLM Capsule 도입을 검토 중이신가요? 무료 체험부터 민감 정보 처리 방식까지, 도입 전에 가장 많이 묻는 질문을 정리했습니다. 더 궁금한 점이 있으면 언제든 이메일로 문의해 주세요.",
     heroBtnEmailLabel: "이메일 문의",
     heroBtnEmailHref: "mailto:contact@cubig.ai",
-    heroBtnProductLabel: "제품 보기",
-    heroBtnProductHref: "/product",
+    heroBtnProductLabel: "데모 요청",
+    heroBtnProductHref: "/request-a-demo",
 
     faqTitlePre: "자주 묻는",
     faqTitleHighlight: "질문",
@@ -157,8 +157,8 @@ const TRANSLATIONS: Record<"en" | "ko" | "de", Record<string, string>> = {
     heroSub: "Erwägen Sie LLM Capsule für Ihr Unternehmen? Von der kostenlosen Testversion bis zum Umgang mit sensiblen Daten haben wir die häufigsten Fragen vor der Einführung zusammengestellt. Bei weiteren Fragen erreichen Sie uns jederzeit per E-Mail.",
     heroBtnEmailLabel: "E-Mail senden",
     heroBtnEmailHref: "mailto:contact@cubig.ai",
-    heroBtnProductLabel: "Produkt ansehen",
-    heroBtnProductHref: "/product",
+    heroBtnProductLabel: "Demo anfragen",
+    heroBtnProductHref: "/request-a-demo",
 
     faqTitlePre: "Häufig gestellte",
     faqTitleHighlight: "Fragen",
