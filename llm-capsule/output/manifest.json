@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-06-30 16:57:19",
+  "generated": "2026-07-08 14:26:27",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -1005,6 +1005,11 @@
           "modified": "2026-06-05"
         },
         {
+          "name": "_preview_support.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/support/html/_preview_support.html",
+          "modified": "2026-07-08"
+        },
+        {
           "name": "_preview_section01.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/trust/html/_preview_section01.html",
           "modified": "2026-06-05"
@@ -1490,6 +1495,11 @@
           "modified": "2026-06-05"
         },
         {
+          "name": "support-b-type.html",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/support-b-type.html",
+          "modified": "2026-07-08"
+        },
+        {
           "name": "tokenization-for-llm-inputs-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/tokenization-for-llm-inputs-b-type.html",
           "modified": "2026-06-05"
@@ -1820,6 +1830,16 @@
           "name": "solutions-spec.md",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/solutions-spec.md",
           "modified": "2026-06-05"
+        },
+        {
+          "name": "support-qa-report.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/support-qa-report.md",
+          "modified": "2026-07-08"
+        },
+        {
+          "name": "support-spec.md",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/docs/support-spec.md",
+          "modified": "2026-07-08"
         },
         {
           "name": "tokenization-for-llm-inputs-qa-report.md",
@@ -3846,7 +3866,7 @@
         {
           "name": "Section02_ResourceCards.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/resources-v62/tsx/Section02_ResourceCards.tsx",
-          "modified": "2026-06-05"
+          "modified": "2026-07-08"
         },
         {
           "name": "Section03_FeaturedArticle.tsx",
@@ -4112,6 +4132,11 @@
           "name": "StructurePreservingProcessingVsFlatMasking.tsx",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/structure-preserving-processing-vs-flat-masking/StructurePreservingProcessingVsFlatMasking.tsx",
           "modified": "2026-06-05"
+        },
+        {
+          "name": "Support.tsx",
+          "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/framer/support/Support.tsx",
+          "modified": "2026-07-08"
         },
         {
           "name": "Section01_Hero.tsx",

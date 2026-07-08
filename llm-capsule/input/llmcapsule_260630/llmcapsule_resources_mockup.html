@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLM Capsule — Resources Mockup</title>
+  <meta name="description" content="LLM Capsule resource hub mockup with Learn, Glossary, Trust Center, and Support." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#FFFFFF;
+      --surface:#FFFFFF;
+      --surface-soft:#F7F8FA;
+      --surface-line:#E6E8EE;
+      --surface-line-soft:#EEF0F4;
+      --ink:#0B1020;
+      --ink-2:#2A3147;
+      --ink-3:#5A6379;
+      --ink-4:#8892A6;
+      --accent:#0EA5B7;
+      --accent-2:#0891A2;
+      --accent-soft:#E6F6F8;
+      --radius:12px;
+      --radius-lg:18px;
+      --container:1280px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink)}
+    body{
+      font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      font-size:15px;
+    }
+    a{color:inherit;text-decoration:none}
+    a:hover{text-decoration:none}
+    .mono,.eyebrow{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+
+    /* GNB */
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:saturate(180%) blur(10px);
+      -webkit-backdrop-filter:saturate(180%) blur(10px);
+      border-bottom:1px solid var(--surface-line);
+    }
+    .topbar-inner{
+      max-width:var(--container);margin:0 auto;height:64px;padding:0 24px;
+      display:flex;align-items:center;justify-content:space-between;gap:24px;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);font-size:15.5px;letter-spacing:-.01em}
+    .brand-mark{
+      width:24px;height:24px;border-radius:6px;
+      background:linear-gradient(135deg,#5EEAD4 0%,#0EA5B7 50%,#4A154B 100%);
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.4);
+    }
+    .gnb{display:flex;align-items:center;gap:6px;color:var(--ink-2);font-size:14px;font-weight:500}
+    .gnb > a{color:var(--ink-2);padding:8px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:6px;line-height:1}
+    .gnb > a:hover{color:var(--ink);background:var(--surface-soft)}
+    .gnb > a.active{color:var(--ink);font-weight:600;background:var(--surface-soft)}
+    .topbar .right{display:flex;align-items:center;gap:10px}
+    .cta-ghost{color:var(--ink-2);font-size:13.5px;font-weight:600;padding:8px 14px;border-radius:8px;border:1px solid var(--surface-line)}
+    .cta-ghost:hover{color:var(--ink);border-color:var(--ink-4)}
+    .cta-primary{color:#fff;background:var(--ink);font-size:13.5px;font-weight:600;padding:8px 14px;border-radius:8px}
+    .cta-primary:hover{background:#1A2240}
+    @media (max-width: 1100px){ .gnb{display:none} }
+    @media (max-width: 720px){ .topbar .right .cta-ghost{display:none} }
+
+    /* Hero */
+    .hero{
+      border-bottom:1px solid var(--surface-line);
+      background:
+        radial-gradient(900px 420px at 82% -15%, rgba(14,165,183,.12), transparent 62%),
+        linear-gradient(180deg,#ffffff 0%,#f7f8fa 100%);
+    }
+    .hero-inner{max-width:var(--container);margin:0 auto;padding:86px 24px 72px}
+    .hero-content{max-width:780px}
+    .eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2);font-weight:700;margin:0 0 16px}
+    .hero h1{font-size:56px;line-height:1.05;letter-spacing:-.045em;font-weight:700;margin:0 0 18px;color:var(--ink)}
+    .hero p{font-size:18px;color:var(--ink-3);margin:0;max-width:690px}
+
+    /* Resource Hub */
+    .resource-hub{background:#fff;border-bottom:1px solid var(--surface-line);padding:64px 24px 56px}
+    .resource-hub__inner{max-width:var(--container);margin:0 auto}
+    .resource-hub__head{display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:28px}
+    .resource-hub__head-text{max-width:720px}
+    .resource-hub__head h2{margin:0 0 12px;font-size:34px;line-height:1.14;letter-spacing:-.03em;color:var(--ink)}
+    .resource-hub__head p{margin:0;font-size:16px;color:var(--ink-3);max-width:680px}
+    .resource-hub__label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4);margin:0 0 10px}
+    .resource-hub__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .resource-card{
+      display:flex;flex-direction:column;min-height:280px;padding:24px;border:1px solid var(--surface-line);border-radius:18px;background:#fff;color:var(--ink);
+      transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease;
+    }
+    .resource-card:hover{transform:translateY(-3px);border-color:#cfd5df;box-shadow:0 16px 40px rgba(11,16,32,.08)}
+    .resource-card__meta{margin-bottom:18px;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-4)}
+    .resource-card h3{margin:0 0 12px;font-size:22px;line-height:1.2;letter-spacing:-.02em}
+    .resource-card p{margin:0;font-size:14px;line-height:1.65;color:var(--ink-3)}
+    .resource-card span{margin-top:auto;padding-top:28px;font-size:14px;font-weight:700;color:var(--accent-2)}
+    .resource-card--support{background:radial-gradient(500px 220px at 100% 0%, rgba(14,165,183,.12), transparent 60%),#fff}
+
+    /* Featured */
+    .featured{background:var(--surface-soft);padding:64px 24px;border-bottom:1px solid var(--surface-line)}
+    .featured-inner{max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:24px;align-items:stretch}
+    .featured-copy{padding:34px;border:1px solid var(--surface-line);border-radius:22px;background:#fff}
+    .featured-copy h2{margin:0 0 12px;font-size:32px;line-height:1.15;letter-spacing:-.03em}
+    .featured-copy p{margin:0 0 22px;color:var(--ink-3);font-size:15.5px}
+    .featured-link{display:inline-flex;font-weight:700;color:var(--accent-2)}
+    .featured-article{display:flex;flex-direction:column;padding:34px;border:1px solid var(--surface-line);border-radius:22px;background:#fff;min-height:310px}
+    .tag{display:inline-flex;align-self:flex-start;margin-bottom:18px;padding:6px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent-2);font-size:12px;font-weight:700}
+    .featured-article h3{font-size:30px;line-height:1.16;letter-spacing:-.03em;margin:0 0 14px}
+    .featured-article p{color:var(--ink-3);margin:0;max-width:720px}
+    .featured-article .read{margin-top:auto;padding-top:28px;font-weight:700;color:var(--accent-2)}
+
+    /* Articles */
+    .articles{background:#fff;padding:64px 24px 80px}
+    .articles-inner{max-width:var(--container);margin:0 auto}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:24px}
+    .section-head h2{margin:0;font-size:34px;line-height:1.15;letter-spacing:-.03em}
+    .section-head p{margin:8px 0 0;color:var(--ink-3)}
+    .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+    .filter{border:1px solid var(--surface-line);background:#fff;color:var(--ink-3);padding:9px 13px;border-radius:999px;font-size:13px;font-weight:600}
+    .filter.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .article-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .article-card{display:flex;flex-direction:column;min-height:260px;border:1px solid var(--surface-line);border-radius:18px;background:#fff;padding:22px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+    .article-card:hover{transform:translateY(-2px);border-color:#cfd5df;box-shadow:0 12px 34px rgba(11,16,32,.07)}
+    .article-card .category{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent-2);margin-bottom:18px}
+    .article-card h3{margin:0 0 12px;font-size:20px;line-height:1.25;letter-spacing:-.02em}
+    .article-card p{margin:0;color:var(--ink-3);font-size:14px;line-height:1.65}
+    .article-card .meta{margin-top:auto;padding-top:24px;color:var(--ink-4);font-size:13px}
+
+    /* CTA */
+    .bottom-cta{padding:72px 24px;background:var(--ink);color:#fff}
+    .bottom-cta-inner{max-width:var(--container);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px}
+    .bottom-cta h2{font-size:36px;line-height:1.12;letter-spacing:-.03em;margin:0 0 10px}
+    .bottom-cta p{margin:0;color:rgba(255,255,255,.72)}
+    .bottom-cta a{background:#fff;color:var(--ink);padding:12px 18px;border-radius:10px;font-weight:700;white-space:nowrap}
+
+    /* Footer */
+    .docfoot{border-top:1px solid var(--surface-line);background:#fff;padding:56px 0 28px}
+    .docfoot-inner{max-width:var(--container);margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:32px}
+    .docfoot h5{font-size:12px;letter-spacing:.02em;color:var(--ink);margin:0 0 14px;font-weight:700}
+    .docfoot a{display:block;color:var(--ink-3);font-size:13.5px;margin-bottom:10px}
+    .docfoot a:hover{color:var(--ink)}
+    .brand-block .brand-row{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:700;font-size:16px;margin-bottom:14px}
+    .brand-block p{color:var(--ink-3);font-size:13.5px;margin:0 0 14px;max-width:300px;line-height:1.65}
+    .docfoot-mid{max-width:var(--container);margin:36px auto 0;padding:24px 24px 0;border-top:1px solid var(--surface-line);color:var(--ink-4);font-size:12.5px;line-height:1.7}
+    .docfoot-bottom{max-width:var(--container);margin:20px auto 0;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--ink-4);font-size:12.5px}
+    .docfoot-bottom .legal{display:flex;gap:18px;flex-wrap:wrap}
+
+    @media (max-width:1040px){
+      .hero h1{font-size:46px}
+      .resource-hub__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .featured-inner{grid-template-columns:1fr}
+      .article-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .docfoot-inner{grid-template-columns:1fr 1fr 1fr}
+    }
+    @media (max-width:680px){
+      .hero-inner{padding:64px 20px 52px}
+      .hero h1{font-size:38px}
+      .resource-hub,.featured,.articles,.bottom-cta{padding-left:20px;padding-right:20px}
+      .resource-hub__head{display:block}
+      .resource-hub__head h2,.section-head h2{font-size:30px}
+      .resource-hub__grid,.article-grid{grid-template-columns:1fr}
+      .resource-card{min-height:auto}
+      .bottom-cta-inner{display:block}
+      .bottom-cta a{display:inline-flex;margin-top:24px}
+      .docfoot-inner{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true"></span>
+        LLM Capsule
+      </a>
+      <nav class="gnb" aria-label="Main navigation">
+        <a href="#">Product</a>
+        <a href="#">Architecture</a>
+        <a href="#">Solutions</a>
+        <a href="#">Pricing</a>
+        <a href="#">Trust</a>
+        <a href="#" class="active">Resources</a>
+      </nav>
+      <div class="right">
+        <a href="mailto:contact@cubig.ai" class="cta-ghost">Contact us</a>
+        <a href="#" class="cta-primary">Request Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="eyebrow">Resources</p>
+        <h1>Insights for secure enterprise AI adoption.</h1>
+        <p>Explore technical articles, glossary definitions, trust materials, and support resources for evaluating and deploying LLM Capsule.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="resource-hub" aria-labelledby="resource-hub-title">
+    <div class="resource-hub__inner">
+      <div class="resource-hub__head">
+        <div class="resource-hub__head-text">
+          <p class="resource-hub__label">Resource Hub</p>
+          <h2 id="resource-hub-title">Find the right resource for your evaluation.</h2>
+          <p>Use this section as the top-level navigator before browsing individual articles. Support can live here without adding another GNB item.</p>
+        </div>
+      </div>
+
+      <div class="resource-hub__grid">
+        <a class="resource-card" href="/resources/learn">
+          <div class="resource-card__meta">21 articles</div>
+          <h3>Learn</h3>
+          <p>In-depth articles on enterprise AI enablement, architecture patterns, deployment guides, and pilot-to-production playbooks.</p>
+          <span>Browse Learn articles →</span>
+        </a>
+
+        <a class="resource-card" href="/resources/glossary">
+          <div class="resource-card__meta">11 terms</div>
+          <h3>Glossary</h3>
+          <p>Definitions of category and architectural concepts, including AI enablement data layer, encapsulation, and sovereign AI.</p>
+          <span>Browse Glossary terms →</span>
+        </a>
+
+        <a class="resource-card" href="/trust">
+          <div class="resource-card__meta">Security · Compliance</div>
+          <h3>Trust Center</h3>
+          <p>Security certifications, compliance frameworks, audit documentation, DPA template, and vendor security materials.</p>
+          <span>Visit Trust Center →</span>
+        </a>
+
+        <a class="resource-card resource-card--support" href="/support">
+          <div class="resource-card__meta">FAQ · Contact · Trial support</div>
+          <h3>Support</h3>
+          <p>Find answers about free trials, product usage, sensitive data handling, source uploads, account access, and enterprise adoption.</p>
+          <span>Get support →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured">
+    <div class="featured-inner">
+      <div class="featured-copy">
+        <p class="eyebrow">Featured</p>
+        <h2>Start with the core concept.</h2>
+        <p>The Learn section remains the main content body, while the new hub above gives users a way to reach Support, Trust, and Glossary without crowding the navigation.</p>
+        <a class="featured-link" href="#">View all resources →</a>
+      </div>
+      <a class="featured-article" href="#">
+        <span class="tag">Architecture</span>
+        <h3>What is a context-preserving data layer for AI?</h3>
+        <p>A practical explanation of the component that sits between sensitive enterprise data and AI models, preserving usability while reducing exposure.</p>
+        <span class="read">Read article →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="articles">
+    <div class="articles-inner">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Learn</p>
+          <h2>Latest articles</h2>
+          <p>Browse technical and strategic resources for secure AI deployment.</p>
+        </div>
+      </div>
+
+      <div class="filters" aria-label="Article categories">
+        <button class="filter active">All</button>
+        <button class="filter">Policy</button>
+        <button class="filter">Industry</button>
+        <button class="filter">Architecture</button>
+        <button class="filter">Security</button>
+        <button class="filter">Deployment</button>
+      </div>
+
+      <div class="article-grid">
+        <a class="article-card" href="#">
+          <div class="category">Policy</div>
+          <h3>Why sovereign AI starts at the data boundary</h3>
+          <p>Model geography matters, but regulated data flows begin before the model is ever invoked.</p>
+          <div class="meta">6 min read</div>
+        </a>
+        <a class="article-card" href="#">
+          <div class="category">Architecture</div>
+          <h3>Masking vs. context-preserving transformation</h3>
+          <p>Why traditional masking often protects data by destroying the context AI systems need.</p>
+          <div class="meta">8 min read</div>
+        </a>
+        <a class="article-card" href="#">
+          <div class="category">Deployment</div>
+          <h3>From AI pilot to production-grade workflow</h3>
+          <p>The operational requirements enterprises need before connecting sensitive records to AI tools.</p>
+          <div class="meta">7 min read</div>
+        </a>
+        <a class="article-card" href="#">
+          <div class="category">Security</div>
+          <h3>What zero exposure means in an LLM workflow</h3>
+          <p>A clearer way to explain data protection before prompts and documents reach external systems.</p>
+          <div class="meta">5 min read</div>
+        </a>
+        <a class="article-card" href="#">
+          <div class="category">Industry</div>
+          <h3>AI adoption blockers in regulated enterprises</h3>
+          <p>Why finance, public sector, healthcare, and legal teams struggle to use AI on valuable data.</p>
+          <div class="meta">9 min read</div>
+        </a>
+        <a class="article-card" href="#">
+          <div class="category">Architecture</div>
+          <h3>How restoration changes the AI privacy tradeoff</h3>
+          <p>Preserve usability at the output layer without sending sensitive values into the model.</p>
+          <div class="meta">6 min read</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-cta">
+    <div class="bottom-cta-inner">
+      <div>
+        <h2>Need help evaluating LLM Capsule?</h2>
+        <p>Get answers about trial access, security review, deployment, and enterprise adoption.</p>
+      </div>
+      <a href="/support">Visit Support</a>
+    </div>
+  </section>
+
+  <footer class="docfoot" role="contentinfo">
+    <div class="docfoot-inner">
+      <div class="brand-block">
+        <div class="brand-row">
+          <span class="brand-mark" aria-hidden="true"></span>
+          LLM Capsule
+        </div>
+        <p>Use AI with sensitive enterprise data while preserving context, structure, and control.</p>
+        <a href="mailto:contact@cubig.ai">contact@cubig.ai</a>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <a href="#">Product</a>
+        <a href="#">Architecture</a>
+        <a href="#">Trust</a>
+        <a href="#">Pricing</a>
+      </div>
+      <div>
+        <h5>Resources</h5>
+        <a href="#">Learn</a>
+        <a href="#">Glossary</a>
+        <a href="#">Support</a>
+        <a href="#">Trust Center</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="https://cubig.ai">CUBIG</a>
+        <a href="mailto:contact@cubig.ai">Contact</a>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+    <div class="docfoot-mid">
+      <div><b>CUBIG LTD</b> · Company number NI735459 · 21 Arthur Street, Belfast, Antrim, BT1 4GA</div>
+      <div><b>CUBIG CORP</b> · 4F NAVER 1784, Seongnam-si, Republic of Korea</div>
+    </div>
+    <div class="docfoot-bottom">
+      <div>© 2026 CUBIG Corp. All rights reserved.</div>
+      <div class="legal">
+        <a href="#">Cookie Policy</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
