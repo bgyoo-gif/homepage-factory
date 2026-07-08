@@ -324,10 +324,10 @@
 
     /* --- Card Grid --- */
     .ds-card-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-    @media (min-width: 768px)  { .ds-card-grid--4col { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 768px)  { .ds-card-grid--3col { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1024px) { .ds-card-grid--4col { grid-template-columns: repeat(4, 1fr); } }
-    @media (min-width: 1024px) { .ds-card-grid--3col { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 768px)  { .ds-card-grid--4col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 768px)  { .ds-card-grid--3col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .ds-card-grid--4col { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .ds-card-grid--3col { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
     /* --- Card --- */
     .ds-card {
@@ -337,10 +337,33 @@
       display: flex; flex-direction: column;
     }
     @media (min-width: 1440px) { .ds-card { padding: var(--ds-space-xl); } }
-    .ds-card__icon-wrap { margin-bottom: var(--ds-space-sm); color: var(--ds-color-brand-secondary); }
-    .ds-card__title { font-size: var(--ds-text-2xl); font-weight: var(--ds-weight-bold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); margin-bottom: var(--ds-space-sm); }
+    .ds-card__icon-wrap {
+      width: 48px; height: 48px; border-radius: var(--ds-radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: var(--ds-space-md); flex-shrink: 0;
+    }
+    .ds-card__icon-wrap--primary { background-color: var(--ds-color-brand-light); color: var(--ds-color-brand-primary); }
+    .ds-card__icon-wrap--teal { background-color: #e6f7f6; color: var(--ds-color-brand-secondary); }
+    .ds-card__icon-wrap--muted { background-color: var(--ds-color-surface-soft); color: var(--ds-color-text-tertiary); }
+    .ds-card__count {
+      font-family: var(--ds-font-code); font-size: 11px; font-weight: 600;
+      color: var(--ds-color-text-tertiary); letter-spacing: 0.08em;
+      padding: 5px 10px; background-color: var(--ds-color-surface-soft);
+      border-radius: 999px; align-self: flex-start; margin-bottom: var(--ds-space-sm);
+    }
+    .ds-card__title { font-size: 20px; font-weight: var(--ds-weight-bold); color: var(--ds-color-text-primary); line-height: var(--ds-leading-tight); margin-bottom: var(--ds-space-sm); }
     .ds-card__title--sm { font-size: var(--ds-text-lg); font-weight: var(--ds-weight-semibold); }
     .ds-card__description { font-size: var(--ds-text-sm); color: var(--ds-color-text-secondary); line-height: var(--ds-leading-relaxed); flex: 1; }
+    .ds-card__link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: var(--ds-text-sm); font-weight: 600; color: var(--ds-color-brand-primary);
+      padding-top: var(--ds-space-md); border-top: var(--ds-border-default);
+      text-decoration: none; margin-top: auto;
+    }
+    .ds-card__link:hover { color: var(--ds-color-brand-dark); }
+    .ds-card--highlight {
+      background: radial-gradient(500px 220px at 100% 0%, rgba(91,79,233,.06), transparent 60%), var(--ds-color-surface-white);
+    }
     .ds-card__button { margin-top: var(--ds-space-lg); }
 
     /* --- Gradient Card --- */
@@ -485,73 +508,59 @@
         <div class="ds-card-grid ds-card-grid--4col">
 
           <!-- Card 1: Learn -->
-          <a href="/resources/learn" class="ds-card--gradient ds-card--gradient-indigo">
-            <div class="ds-card--gradient__inner">
-              <div class="ds-card--gradient__icon">
-                <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                </svg>
-              </div>
-              <h3 class="ds-card--gradient__title">Learn</h3>
-              <p class="ds-card--gradient__description">In-depth articles on enterprise context-preserving data layer for AI, secure LLM usage, structure-preserving processing, and restorable workflows.</p>
-              <div class="ds-card--gradient__button">
-                <span class="ds-btn ds-btn--ghost">Browse Learn &#8594;</span>
-              </div>
+          <article class="ds-card">
+            <div class="ds-card__icon-wrap ds-card__icon-wrap--primary">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
             </div>
-          </a>
+            <span class="ds-card__count">8 articles · GEO-optimized</span>
+            <h3 class="ds-card__title">Learn</h3>
+            <p class="ds-card__description">In-depth articles on enterprise context-preserving data layer for AI &#8212; architecture patterns, industry deployment guides (telecom, healthcare, finance, defense), pilot-to-production playbooks, sovereign AI under GDPR / EU AI Act.</p>
+            <a href="/resources/learn" class="ds-card__link">Browse Learn articles &#8594;</a>
+          </article>
 
           <!-- Card 2: Glossary -->
-          <a href="/resources/glossary" class="ds-card--gradient ds-card--gradient-blue">
-            <div class="ds-card--gradient__inner">
-              <div class="ds-card--gradient__icon">
-                <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                  <line x1="8" y1="7" x2="15" y2="7"/>
-                  <line x1="8" y1="11" x2="15" y2="11"/>
-                </svg>
-              </div>
-              <h3 class="ds-card--gradient__title">Glossary</h3>
-              <p class="ds-card--gradient__description">Definitions of key concepts &#8212; restoration, zero exposure, enterprise context control, and structure-preserving processing.</p>
-              <div class="ds-card--gradient__button">
-                <span class="ds-btn ds-btn--ghost">Browse Glossary &#8594;</span>
-              </div>
+          <article class="ds-card">
+            <div class="ds-card__icon-wrap ds-card__icon-wrap--teal">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
             </div>
-          </a>
+            <span class="ds-card__count">11 terms · Schema.org</span>
+            <h3 class="ds-card__title">Glossary</h3>
+            <p class="ds-card__description">Definitions of category and architectural concepts &#8212; context-preserving data layer for AI, structure-preserving encapsulation, two execution paths, sovereign AI, shadow AI, differential privacy. Each term with definition and cross-links.</p>
+            <a href="/resources/glossary" class="ds-card__link">Browse Glossary terms &#8594;</a>
+          </article>
 
           <!-- Card 3: Trust Center -->
-          <a href="/trust" class="ds-card--gradient ds-card--gradient-silver">
-            <div class="ds-card--gradient__inner">
-              <div class="ds-card--gradient__icon">
-                <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                  <path d="m9 12 2 2 4-4"/>
-                </svg>
-              </div>
-              <h3 class="ds-card--gradient__title">Trust Center</h3>
-              <p class="ds-card--gradient__description">Security certifications, compliance documentation, and audit information.</p>
-              <div class="ds-card--gradient__button">
-                <span class="ds-btn ds-btn--ghost">Browse Trust Center &#8594;</span>
-              </div>
+          <article class="ds-card">
+            <div class="ds-card__icon-wrap ds-card__icon-wrap--muted">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
             </div>
-          </a>
+            <span class="ds-card__count">12 certifications · Compliance</span>
+            <h3 class="ds-card__title">Trust Center</h3>
+            <p class="ds-card__description">Security certifications, compliance frameworks (GDPR / HIPAA / SOX / EU AI Act), audit documentation, DPA template, vendor security questionnaire. Everything compliance and security teams need for evaluation.</p>
+            <a href="/trust" class="ds-card__link">Visit Trust Center &#8594;</a>
+          </article>
 
           <!-- Card 4: Support -->
-          <a href="/resources/support" class="ds-card--gradient ds-card--gradient-green">
-            <div class="ds-card--gradient__inner">
-              <div class="ds-card--gradient__icon">
-                <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                </svg>
-              </div>
-              <h3 class="ds-card--gradient__title">Support</h3>
-              <p class="ds-card--gradient__description">Find answers about free trials, product usage, sensitive data handling, source uploads, account access, and enterprise adoption.</p>
-              <div class="ds-card--gradient__button">
-                <span class="ds-btn ds-btn--ghost">Get Support &#8594;</span>
-              </div>
+          <article class="ds-card ds-card--highlight">
+            <div class="ds-card__icon-wrap ds-card__icon-wrap--teal">
+              <svg class="ds-icon ds-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
             </div>
-          </a>
+            <span class="ds-card__count">FAQ · Contact · Trial support</span>
+            <h3 class="ds-card__title">Support</h3>
+            <p class="ds-card__description">Find answers about free trials, product usage, sensitive data handling, source uploads, account access, and enterprise adoption.</p>
+            <a href="/resources/support" class="ds-card__link">Get support &#8594;</a>
+          </article>
 
         </div>
       </div>
