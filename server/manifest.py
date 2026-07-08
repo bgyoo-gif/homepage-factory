@@ -23,14 +23,15 @@ def scan(brand: str):
     inputs = {}
     orphans = {"html": [], "docs": [], "tsx": [], "preview": []}
 
-    # Scan input files
+    # Scan input files (including subdirectories)
     if input_dir.exists():
-        for p in sorted(input_dir.glob("*.html")):
+        for p in sorted(input_dir.rglob("*.html")):
             base = p.stem
+            rel_input = str(p.relative_to(PROJECT_ROOT))
             inputs[base] = {
                 "input": {
                     "name": p.name,
-                    "path": f"{GITHUB_BASE}/{brand}/input/{p.name}",
+                    "path": f"{GITHUB_BASE}/{rel_input}",
                     "modified": time.strftime("%Y-%m-%d", time.localtime(p.stat().st_mtime)),
                 },
                 "html": [],
