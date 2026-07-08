@@ -1,6 +1,6 @@
 {
   "brand": "llm-capsule",
-  "generated": "2026-07-08 14:44:51",
+  "generated": "2026-07-08 14:48:34",
   "github_base": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule",
   "groups": [
     {
@@ -2587,7 +2587,7 @@
         {
           "name": "resources-b-type.html",
           "path": "https://bgyoo-gif.github.io/homepage-factory/llm-capsule/output/html/resources-b-type.html",
-          "modified": "2026-06-05"
+          "modified": "2026-07-08"
         }
       ],
       "docs": [
